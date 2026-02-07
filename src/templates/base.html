@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+    {% include "includes/head.html" %}
+    {% if schema_type %}
+    {% include "includes/schema.html" %}
+    {% endif %}
+</head>
+<body>
+    {% include "includes/nav.html" %}
+    
+    <!-- CONTENU DE LA PAGE -->
+    {{page_content}}
+    
+    {% include "includes/footer.html" %}
+    
+    {% include "includes/scripts.html" %}
+</body>
+</html>
+

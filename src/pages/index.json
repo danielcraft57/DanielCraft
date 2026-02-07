@@ -1,0 +1,10 @@
+{
+  "page_title": "Loïc DANIEL - Développeur Full-Stack TypeScript, Python & PHP | IA, Data & Sites Vitrines performants",
+  "page_description": "Développeur Full-Stack TypeScript, Python & PHP à Metz avec plus de 7 ans d'expérience. Création de sites vitrines performants, automatisation, APIs, analyse de données, IA, machine learning, deep learning, projets finance/crypto/NFT.",
+  "page_keywords": "développeur freelance, full-stack, TypeScript, Python, PHP, React, Node.js, Next.js, IA, machine learning, deep learning, analyse de données, big data, trading crypto, NFT, site vitrine, automatisation, Metz, France",
+  "page_url": "https://danielcraft.fr/",
+  "current_page": "index",
+  "page_scripts": ["main.js", "portfolio.js"],
+  "schema_type": "home"
+}
+

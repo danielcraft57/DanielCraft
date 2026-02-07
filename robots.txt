@@ -1,0 +1,14 @@
+# robots.txt pour danielcraft.fr
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://danielcraft.fr/sitemap.xml
+
+# Interdire l'indexation du dossier blog (si on veut le garder privé)
+Disallow: /blog/
+
+# Autoriser les assets
+Allow: /assets/
+

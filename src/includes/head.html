@@ -1,0 +1,78 @@
+<!-- Bloc HEAD réutilisable -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{page_title}}</title>
+<meta name="description" content="{{page_description}}">
+<meta name="keywords" content="{{page_keywords}}">
+<meta name="author" content="Loïc DANIEL">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="{{page_url}}">
+
+<!-- Google Verification (Search Console) -->
+<!-- Vérification effectuée via DNS TXT record : google-site-verification=YCJxWstMUnz66PNyUF1JsgpqpXATeyl5D6gM1nSfJ88 -->
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN3CKFP14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4VN3CKFP14');
+</script>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:url" content="{{page_url}}">
+<meta property="og:title" content="{{page_title}}">
+<meta property="og:description" content="{{page_description}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:secure_url" content="{{og_image}}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{page_title}}">
+<meta property="og:site_name" content="DanielCraft">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{page_url}}">
+<meta name="twitter:title" content="{{page_title}}">
+<meta name="twitter:description" content="{{page_description}}">
+<meta name="twitter:image" content="{{og_image}}">
+<meta name="twitter:image:alt" content="{{page_title}}">
+
+<!-- DNS Prefetch pour améliorer les performances -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+<!-- Fonts - Optimisé avec subset et display swap -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap&subset=latin" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- CSS - Preload pour optimiser le chargement -->
+<link rel="preload" href="assets/css/main.css" as="style">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="preload" href="assets/css/animations.css" as="style">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="preload" href="assets/css/responsive.css" as="style">
+<link rel="stylesheet" href="assets/css/responsive.css">
+{% if extra_css %}
+<link rel="preload" href="assets/css/{{extra_css}}" as="style">
+<link rel="stylesheet" href="assets/css/{{extra_css}}">
+{% endif %}
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+

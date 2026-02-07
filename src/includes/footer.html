@@ -1,0 +1,82 @@
+<!-- Footer réutilisable -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span class="logo-text">LD</span>
+                </div>
+                <h3 class="footer-brand-name">Loïc DANIEL</h3>
+                <p class="footer-description">
+                    Développeur Full-Stack TypeScript freelance avec plus de 7 ans d'expérience. 
+                    Spécialisé en React, Node.js et développement d'applications modernes.
+                </p>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/loicdaniel" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/likedevGit" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#portfolio">Portfolio</a></li>
+                    <li><a href="/#about">À Propos</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Pages</h4>
+                <ul class="footer-links">
+                    <li><a href="/processus">Processus</a></li>
+                    <li><a href="/projets">Projets</a></li>
+                    <li><a href="/statistiques">Statistiques</a></li>
+                    <li><a href="/metz">Metz</a></li>
+                    {% if blog_enabled %}
+                    <li><a href="/blog">Blog</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:contact@danielcraft.fr">contact@danielcraft.fr</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <a href="tel:+33387780916">03 87 78 09 16</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>57000 Metz, France</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">&copy; 2025 Loïc DANIEL - Développeur Full-Stack TypeScript. SIRET 823 417 050 000 23. Tous droits réservés.</p>
+                <div class="footer-legal-links">
+                    <a href="/mentions-legales">Mentions légales</a>
+                    <span class="separator">•</span>
+                    <a href="/cgv">CGV</a>
+                    <span class="separator">•</span>
+                    <a href="/cgu">CGU</a>
+                    <span class="separator">•</span>
+                    <a href="/politique-confidentialite">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

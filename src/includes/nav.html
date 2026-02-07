@@ -1,0 +1,65 @@
+<!-- Navigation réutilisable -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container">
+        <div class="nav-logo">
+            {% if current_page == 'index' %}
+            <a href="#home" class="logo-link" aria-label="Retour à l'accueil">
+            {% else %}
+            <a href="/" class="logo-link" aria-label="Retour à l'accueil">
+            {% endif %}
+                <div class="logo-icon" aria-hidden="true">
+                    <span class="logo-text">LD</span>
+                </div>
+                <span class="logo-name">Loïc DANIEL</span>
+            </a>
+        </div>
+        
+        <div class="nav-menu" id="navMenu" role="menubar">
+            {% if current_page == 'index' %}
+            <a href="#home" class="nav-link active" data-section="home" role="menuitem">Accueil</a>
+            <a href="#services" class="nav-link" data-section="services" role="menuitem">Services</a>
+            <a href="#portfolio" class="nav-link" data-section="portfolio" role="menuitem">Portfolio</a>
+            <a href="#about" class="nav-link" data-section="about" role="menuitem">À Propos</a>
+            <a href="#contact" class="nav-link" data-section="contact" role="menuitem">Contact</a>
+            {% else %}
+            <a href="/#home" class="nav-link" role="menuitem">Accueil</a>
+            <a href="/#services" class="nav-link" role="menuitem">Services</a>
+            <a href="/#portfolio" class="nav-link" role="menuitem">Portfolio</a>
+            <a href="/#about" class="nav-link" role="menuitem">À Propos</a>
+            <a href="/#contact" class="nav-link" role="menuitem">Contact</a>
+            {% endif %}
+            
+            <!-- Menu déroulant "Plus" pour regrouper les pages secondaires -->
+            <div class="nav-dropdown">
+                <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="moreMenu">
+                    Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
+                    <li><a href="/processus" class="nav-dropdown-link{% if current_page == 'processus' %} active{% endif %}" role="menuitem">Processus</a></li>
+                    <li><a href="/metz" class="nav-dropdown-link{% if current_page == 'metz' %} active{% endif %}" role="menuitem">Metz</a></li>
+                    <li><a href="/projets" class="nav-dropdown-link{% if current_page == 'projets' %} active{% endif %}" role="menuitem">Projets</a></li>
+                    <li><a href="/statistiques" class="nav-dropdown-link{% if current_page == 'statistiques' %} active{% endif %}" role="menuitem">Statistiques</a></li>
+                    {% if blog_enabled %}
+                    <li><a href="/blog" class="nav-dropdown-link{% if current_page == 'blog' %} active{% endif %}" role="menuitem">Blog</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            {% if current_page == 'index' %}
+            <a href="#contact" class="btn btn-primary nav-cta" aria-label="Demander un devis gratuit">
+            {% else %}
+            <a href="/#contact" class="btn btn-primary nav-cta" aria-label="Demander un devis gratuit">
+            {% endif %}
+                <span>Devis gratuit</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+                <span class="hamburger-line" aria-hidden="true"></span>
+                <span class="hamburger-line" aria-hidden="true"></span>
+                <span class="hamburger-line" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</nav>
