@@ -80,24 +80,23 @@ class DanielCraftApp {
   initNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
+    if (!navLinks.length || !sections.length) return;
 
-    window.addEventListener('scroll', () => {
+    const updateActiveSection = () => {
+      const scrollY = window.scrollY;
       let current = '';
-      sections.forEach(section => {
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
+        if (scrollY >= sectionTop - 200) current = section.getAttribute('id');
+      }
+      for (let i = 0; i < navLinks.length; i++) {
+        const link = navLinks[i];
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      }
+    };
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
+    window.addEventListener('scroll', this.throttle(updateActiveSection, 150));
   }
 
   updateActiveNavLink(targetId) {

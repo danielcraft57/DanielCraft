@@ -43,10 +43,22 @@ Write-Host $buildOutput
 Write-ColorOutput "Build Python termine avec succes" "Green"
 Write-Host ""
 
-# 2. Vérifier que dist/ existe et contient index.html
+# 2. Verifier que dist/ existe et contient index.html + placeholder projets
 if (-not (Test-Path "$DIST_DIR/index.html")) {
     Write-ColorOutput "Erreur: index.html non trouve dans $DIST_DIR/. Le build a peut-etre echoue." "Red"
     exit 1
+}
+$placeholderPath = "$DIST_DIR/assets/images/projets/placeholder.svg"
+if (-not (Test-Path $placeholderPath)) {
+    Write-ColorOutput "Attention: placeholder.svg absent dans $DIST_DIR/assets/images/projets/" "Yellow"
+    Write-ColorOutput "Les vignettes projet afficheront un fond rouge. Copie du source si possible..." "Yellow"
+    $srcPlaceholder = "assets/images/projets/placeholder.svg"
+    if (Test-Path $srcPlaceholder) {
+        $projetsDir = "$DIST_DIR/assets/images/projets"
+        if (-not (Test-Path $projetsDir)) { New-Item -ItemType Directory -Path $projetsDir -Force | Out-Null }
+        Copy-Item $srcPlaceholder -Destination $placeholderPath -Force
+        Write-ColorOutput "  -> placeholder.svg copie dans dist" "Green"
+    }
 }
 
 # 2. Lister les fichiers à déployer depuis dist/
@@ -247,8 +259,8 @@ $apiCheckCmd = "test -f $ServerPath/api/send-contact.php && echo 'OK: api/send-c
 $apiCheckResult = ssh "${ServerUser}@${ServerHost}" $apiCheckCmd
 Write-Host $apiCheckResult
 
-# Vérifier que les images des projets sont présentes (assets/images/projets)
-$imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then n=$(ls -1 ' + $ServerPath + '/assets/images/projets/*.jpg 2>/dev/null | wc -l); echo "OK: assets/images/projets present ($n images .jpg)"; else echo "ATTENTION: assets/images/projets manquant"; fi'
+# Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
+$imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'
 $imagesProjetsResult = ssh "${ServerUser}@${ServerHost}" $imagesProjetsCmd
 Write-Host $imagesProjetsResult
 

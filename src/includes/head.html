@@ -56,15 +56,11 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<!-- CSS - Preload pour optimiser le chargement -->
-<link rel="preload" href="assets/css/main.css" as="style">
+<!-- CSS - Chargement direct (preload retiré car chargement immédiat) -->
 <link rel="stylesheet" href="assets/css/main.css">
-<link rel="preload" href="assets/css/animations.css" as="style">
 <link rel="stylesheet" href="assets/css/animations.css">
-<link rel="preload" href="assets/css/responsive.css" as="style">
 <link rel="stylesheet" href="assets/css/responsive.css">
 {% if extra_css %}
-<link rel="preload" href="assets/css/{{extra_css}}" as="style">
 <link rel="stylesheet" href="assets/css/{{extra_css}}">
 {% endif %}
 
@@ -72,9 +68,9 @@
 <link rel="preload" href="assets/js/image-loader.js" as="script">
 <script src="assets/js/image-loader.js" defer></script>
 
-<!-- Favicon -->
+<!-- Favicon : /favicon.ico en premier (cree par le build) pour eviter 404 -->
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="icon" type="image/png" href="assets/icons/favicons/favicon.ico">
 <link rel="shortcut icon" href="assets/icons/favicons/favicon.ico">
 
 <!-- Apple Touch Icons -->
@@ -95,7 +91,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png">
 
 <!-- Manifest -->
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="assets/icons/favicons/manifest.json">
 
 <!-- Microsoft Tiles -->
 <meta name="msapplication-config" content="browserconfig.xml">

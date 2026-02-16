@@ -312,20 +312,39 @@ def main():
     assets_src = BASE_DIR / 'assets'
     assets_dst = OUTPUT_DIR / 'assets'
     if assets_src.exists():
+        do_full_copytree = True
         if assets_dst.exists():
-            # Suppression plus robuste pour Windows
             try:
                 shutil.rmtree(assets_dst)
-            except PermissionError:
-                # Sur Windows, parfois les fichiers sont verrouillés
-                # On essaie de supprimer fichier par fichier
+            except (PermissionError, OSError):
                 import stat
                 def handle_remove_readonly(func, path, exc):
                     os.chmod(path, stat.S_IWRITE)
                     func(path)
-                shutil.rmtree(assets_dst, onerror=handle_remove_readonly)
-        shutil.copytree(assets_src, assets_dst)
-        print(f"[OK] Assets copies dans {assets_dst}")
+                try:
+                    shutil.rmtree(assets_dst, onerror=handle_remove_readonly)
+                except (PermissionError, OSError):
+                    # Fichier verrouillé : copie par ecrasement sans supprimer
+                    for path in assets_src.rglob('*'):
+                        if path.is_file():
+                            rel = path.relative_to(assets_src)
+                            dest = assets_dst / rel
+                            dest.parent.mkdir(parents=True, exist_ok=True)
+                            try:
+                                shutil.copy2(path, dest)
+                            except (PermissionError, OSError):
+                                pass
+                    placeholder_dst = assets_dst / 'images' / 'projets' / 'placeholder.svg'
+                    if not placeholder_dst.exists():
+                        placeholder_src = assets_src / 'images' / 'projets' / 'placeholder.svg'
+                        if placeholder_src.exists():
+                            placeholder_dst.parent.mkdir(parents=True, exist_ok=True)
+                            shutil.copy2(placeholder_src, placeholder_dst)
+                    print(f"[OK] Assets mis a jour (fichiers verrouilles, copie par ecrasement)")
+                    do_full_copytree = False
+        if do_full_copytree:
+            shutil.copytree(assets_src, assets_dst)
+            print(f"[OK] Assets copies dans {assets_dst}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)
         generate_webp_variants(assets_dst)
     

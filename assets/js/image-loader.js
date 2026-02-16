@@ -2,6 +2,9 @@
    IMAGE LOADER - WebP avec fallback et cache
    ======================================== */
 
+/** URL de l'image de remplacement en cas d'echec de chargement */
+const PLACEHOLDER_IMAGE_URL = 'assets/images/projets/placeholder.svg';
+
 /**
  * Gestionnaire de chargement d'images optimisé avec support WebP et cache navigateur
  */
@@ -10,6 +13,7 @@ class ImageLoader {
     constructor() {
         this.webpSupported = null;
         this.imageCache = new Map();
+        this.placeholderUrl = PLACEHOLDER_IMAGE_URL;
         this.preloadQueue = [];
         this.maxCacheSize = 50; // Nombre max d'images en cache mémoire
         this.dbName = 'danielcraft-image-cache';
@@ -217,16 +221,30 @@ class ImageLoader {
             };
 
             imgElement.onerror = () => {
-                // Si WebP échoue, essaie l'original
+                const clearPictureWebPSource = () => {
+                    const picture = imgElement.closest('picture');
+                    if (picture) {
+                        const source = picture.querySelector('source[type="image/webp"]');
+                        if (source) source.removeAttribute('srcset');
+                    }
+                };
                 if (useWebP && finalUrl !== imageUrl) {
                     imgElement.src = imageUrl;
                     imgElement.onerror = () => {
+                        clearPictureWebPSource();
+                        imgElement.onload = () => imgElement.classList.add('loaded');
+                        imgElement.src = this.placeholderUrl;
+                        imgElement.classList.add('image-missing');
                         if (onError) onError();
-                        reject(new Error(`Impossible de charger l'image: ${imageUrl}`));
+                        resolve();
                     };
                 } else {
+                    clearPictureWebPSource();
+                    imgElement.onload = () => imgElement.classList.add('loaded');
+                    imgElement.src = this.placeholderUrl;
+                    imgElement.classList.add('image-missing');
                     if (onError) onError();
-                    reject(new Error(`Impossible de charger l'image: ${imageUrl}`));
+                    resolve();
                 }
             };
 
@@ -267,7 +285,7 @@ class ImageLoader {
         for (let i = 0; i < images.length; i++) {
             const img = images[i];
             
-            // Si l'image est dans un picture, on utilise le source WebP si disponible
+            // Si l'image est dans un picture, on utilise le source WebP si disponible (evite srcset="null")
             const picture = img.closest('picture');
             if (picture && useWebP) {
                 const source = picture.querySelector('source[data-src]');
@@ -275,8 +293,10 @@ class ImageLoader {
                     const webpSrc = source.getAttribute('data-src');
                     const delay = i < eagerCount ? 0 : (i - eagerCount) * staggerMs;
                     setTimeout(() => {
-                        source.srcset = webpSrc;
-                        source.removeAttribute('data-src');
+                        if (webpSrc) {
+                            source.srcset = webpSrc;
+                            source.removeAttribute('data-src');
+                        }
                     }, delay);
                 }
             }
