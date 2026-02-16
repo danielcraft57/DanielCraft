@@ -27,3 +27,8 @@ Thumbs.db
 # Logs
 *.log
 
+# Images lourdes / générées (Open Graph + hero + projets)
+# On ignore tout le contenu de ces dossiers (peu importe l'extension)
+assets/images/*
+assets/icons/*
+Previous_Versions/*

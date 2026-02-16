@@ -1,0 +1,44 @@
+<section class="section page-projets" aria-label="Projets">
+    <div class="container">
+        <span class="section-badge">Projets</span>
+        <h1 class="section-title">Projets et réalisations</h1>
+        <p class="section-description">Une sélection de projets personnels et professionnels : applications web, outils, mobile. Données issues de GitHub.</p>
+
+        <div class="filter-group" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;" role="group" aria-label="Filtrer par catégorie">
+            <span style="margin-right: 0.5rem; font-weight: 600;">Catégorie :</span>
+            <button type="button" class="filter-btn active" data-filter="all">Tous</button>
+            <button type="button" class="filter-btn" data-filter="web">Web</button>
+            <button type="button" class="filter-btn" data-filter="mobile">Mobile</button>
+            <button type="button" class="filter-btn" data-filter="tools">Outils</button>
+            <button type="button" class="filter-btn" data-filter="specialized">Spécialisé</button>
+            <button type="button" class="filter-btn" data-filter="learning">Apprentissage</button>
+            <button type="button" class="filter-btn" data-filter="iot">IoT</button>
+        </div>
+        <div class="filter-group" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;" role="group" aria-label="Filtrer par année">
+            <span style="margin-right: 0.5rem; font-weight: 600;">Année :</span>
+            <button type="button" class="filter-btn active" data-year="all">Toutes</button>
+            <button type="button" class="filter-btn" data-year="2026">2026</button>
+            <button type="button" class="filter-btn" data-year="2025">2025</button>
+            <button type="button" class="filter-btn" data-year="2024">2024</button>
+        </div>
+        <div class="filter-group" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;" role="group" aria-label="Filtrer par statut">
+            <span style="margin-right: 0.5rem; font-weight: 600;">Statut :</span>
+            <button type="button" class="filter-btn active" data-status="all">Tous</button>
+            <button type="button" class="filter-btn" data-status="active">Actif</button>
+            <button type="button" class="filter-btn" data-status="archived">Archivé</button>
+        </div>
+
+        <div id="projectsGrid" class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2rem;"></div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Technologies utilisées</h2>
+        <div id="technologiesGrid" class="technologies-grid" style="display: grid; gap: 1rem; margin-top: 1rem;"></div>
+
+        <nav class="legal-page-links" style="margin-top: 3rem;" aria-label="Navigation">
+            <a href="/">Retour à l'accueil</a>
+            <span class="separator">·</span>
+            <a href="/#portfolio">Portfolio</a>
+            <span class="separator">·</span>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </div>
+</section>

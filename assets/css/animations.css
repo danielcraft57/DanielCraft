@@ -92,3 +92,35 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
+/* Respect des préférences utilisateur : réduire les animations */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-reveal.revealed,
+  .scroll-reveal-left.revealed,
+  .scroll-reveal-right.revealed,
+  .scroll-reveal-scale.revealed {
+    transform: none;
+  }
+
+  .badge-pulse {
+    animation: none;
+    opacity: 1;
+  }
+
+  .scroll-arrow {
+    animation: none;
+  }
+
+  .scroll-arrow i {
+    animation: none;
+  }
+}
+

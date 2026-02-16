@@ -76,15 +76,27 @@ Chaque page inclut :
 - `<link rel="canonical">` - URL canonique
 - `<html lang="fr">` - Langue de la page
 
-## Image Open Graph
+## Images Open Graph et visuels marketing
 
-**IMPORTANT** : Il faut créer une image Open Graph à placer dans `assets/images/og-image.jpg`
+**IMPORTANT** : Les images Open Graph sont désormais organisées par page dans `assets/images/og/`
 
-Spécifications :
+Architecture recommandée :
+- `assets/images/og/home-1200x630.jpg` - Page d'accueil
+- `assets/images/og/portfolio-1200x630.jpg` - Page portfolio
+- `assets/images/og/prestations-1200x630.jpg` - Page autres prestations
+- `assets/images/og/metz-1200x630.jpg` - Page développeur à Metz
+
+Spécifications communes :
 - Format : JPEG
 - Dimensions : 1200x630px (ratio 1.91:1)
 - Poids : < 1MB recommandé
-- Contenu : Logo + texte "DanielCraft - Développeur Full-Stack TypeScript"
+- Style : cohérent avec danielcraft.fr (fond clair, accent rouge `#dc2626`, typographie type Inter)
+
+En complément, des visuels marketing sont générés pour :
+- Le **hero** de la page d'accueil (`assets/images/hero/`)
+- Certains **projets** du portfolio (`assets/images/projects/`)
+
+Ces images peuvent être lourdes (JPEG haute qualité) et sont donc ignorées par Git via `.gitignore`. Elles sont considérées comme des assets générés à partir des prompts documentés dans `docs/prompt_og_image.md`.
 
 Outils pour créer l'image :
 - Canva (template "Facebook Post")
@@ -116,7 +128,7 @@ Pour valider le SEO :
 
 - [x] Ajouter Google Analytics (configuré avec G-4VN3CKFP14)
 - [x] Ajouter Google Search Console (vérifié via DNS)
-- [ ] Créer l'image og-image.jpg (1200x630px)
+- [ ] Créer / mettre à jour les 4 images OG (`home-1200x630.jpg`, `portfolio-1200x630.jpg`, `prestations-1200x630.jpg`, `metz-1200x630.jpg`) dans `assets/images/og/`
 - [ ] Soumettre le sitemap dans Google Search Console
 - [ ] Optimiser les images (compression, WebP)
 - [ ] Ajouter des balises hreflang si multilingue

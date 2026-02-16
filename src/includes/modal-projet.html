@@ -1,0 +1,34 @@
+<!-- Modale details d'un projet (realisation loupix57) -->
+<div id="modalProjet" class="modal-projet" role="dialog" aria-modal="true" aria-labelledby="modalProjetTitle" aria-hidden="true">
+    <div class="modal-projet-backdrop" id="modalProjetBackdrop" aria-hidden="true"></div>
+    <div class="modal-projet-box" id="modalProjetBox">
+        <header class="modal-projet-header">
+            <h2 id="modalProjetTitle" class="modal-projet-title">Details du projet</h2>
+            <button type="button" class="modal-projet-close" id="modalProjetClose" aria-label="Fermer">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </header>
+        <div class="modal-projet-body">
+            <div id="modalProjetLoading" class="modal-projet-loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                <span>Chargement...</span>
+            </div>
+            <div id="modalProjetContent" class="modal-projet-content" style="display: none;">
+                <div class="modal-projet-image-wrap" id="modalProjetImageWrap"></div>
+                <p class="modal-projet-desc" id="modalProjetDesc"></p>
+                <dl class="modal-projet-meta" id="modalProjetMeta"></dl>
+                <div class="modal-projet-tech" id="modalProjetTech"></div>
+                <div class="modal-projet-topics" id="modalProjetTopics"></div>
+                <a href="#" id="modalProjetLink" class="btn btn-primary modal-projet-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>Voir sur GitHub</span>
+                </a>
+            </div>
+            <div id="modalProjetError" class="modal-projet-error" style="display: none;">
+                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                <p>Projet non trouve ou donnees indisponibles.</p>
+                <a href="https://github.com/loupix57?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir tous les depots</a>
+            </div>
+        </div>
+    </div>
+</div>

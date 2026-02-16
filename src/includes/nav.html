@@ -35,6 +35,7 @@
                     Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
+                    <li><a href="/autres-prestations" class="nav-dropdown-link{% if current_page == 'autres-prestations' %} active{% endif %}" role="menuitem">Autres prestations</a></li>
                     <li><a href="/processus" class="nav-dropdown-link{% if current_page == 'processus' %} active{% endif %}" role="menuitem">Processus</a></li>
                     <li><a href="/metz" class="nav-dropdown-link{% if current_page == 'metz' %} active{% endif %}" role="menuitem">Metz</a></li>
                     <li><a href="/projets" class="nav-dropdown-link{% if current_page == 'projets' %} active{% endif %}" role="menuitem">Projets</a></li>
@@ -47,14 +48,10 @@
         </div>
         
         <div class="nav-actions">
-            {% if current_page == 'index' %}
-            <a href="#contact" class="btn btn-primary nav-cta" aria-label="Demander un devis gratuit">
-            {% else %}
-            <a href="/#contact" class="btn btn-primary nav-cta" aria-label="Demander un devis gratuit">
-            {% endif %}
+            <button type="button" class="btn btn-primary nav-cta nav-cta-devis" id="navCtaDevis" aria-label="Ouvrir la modale devis gratuit" aria-haspopup="dialog" aria-expanded="false">
                 <span>Devis gratuit</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
-            </a>
+            </button>
             <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
                 <span class="hamburger-line" aria-hidden="true"></span>
                 <span class="hamburger-line" aria-hidden="true"></span>

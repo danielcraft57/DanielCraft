@@ -43,8 +43,26 @@ function renderProjects(filters = {}) {
             ? '<span class="fork-badge">Fork</span>' 
             : '';
 
+        let imageContent = '';
+        if (project.imageUrl) {
+            // Utilise picture avec source WebP si ImageLoader est disponible
+            if (window.imageLoader) {
+                const webpUrl = project.imageUrl.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+                imageContent = `
+                    <div class="project-card-image">
+                        <picture>
+                            <source data-src="${webpUrl}" type="image/webp">
+                            <img data-src="${project.imageUrl}" alt="" class="project-card-img" loading="lazy" decoding="async">
+                        </picture>
+                    </div>`;
+            } else {
+                imageContent = `<div class="project-card-image"><img data-src="${project.imageUrl}" alt="" class="project-card-img" loading="lazy" decoding="async"></div>`;
+            }
+        }
+
         return `
             <div class="project-card" data-category="${project.category}" data-year="${project.year}" data-status="${project.status}">
+                ${imageContent}
                 <div class="project-header">
                     <h3 class="project-title">${project.title}</h3>
                     <div class="project-badges">
@@ -77,11 +95,30 @@ function renderProjects(filters = {}) {
                         <span>${project.account}</span>
                     </div>
                 </div>
+
+                <button type="button" class="project-details-btn" onclick="typeof showProjectDetails === 'function' && showProjectDetails('${project.id}')" aria-label="Voir les details du projet">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                    Voir les details
+                </button>
                 
                 ${project.featured ? '<div class="featured-badge">Projet phare</div>' : ''}
             </div>
         `;
     }).join('');
+
+    // Charge les images avec WebP et cache via ImageLoader
+    if (typeof window.scheduleStaggeredImageLoad === 'function') {
+        window.scheduleStaggeredImageLoad(grid, '.project-card-img', 100, 6);
+    } else if (window.imageLoader) {
+        // Fallback direct avec ImageLoader
+        const imgs = grid.querySelectorAll('.project-card-img');
+        window.imageLoader.loadImagesStaggered(imgs, {
+            staggerMs: 100,
+            eagerCount: 6,
+            useWebP: true,
+            useCache: true
+        });
+    }
 }
 
 function renderTechnologies() {

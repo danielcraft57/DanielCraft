@@ -14,6 +14,13 @@ class DanielCraftApp {
     this.initMobileMenu();
     this.initDropdownMenu();
     this.initScrollAnimations();
+    this.initFaqAccordion();
+    this.initBackToTop();
+  }
+
+  /** Affiche/masque le bouton "retour en haut" au scroll (logique dans handleNavbarScroll). */
+  initBackToTop() {
+    // Le clic et la visibilité du bouton #backToTop sont gérés dans setupEventListeners et handleNavbarScroll
   }
 
   setupEventListeners() {
@@ -24,6 +31,15 @@ class DanielCraftApp {
 
     // Navbar scroll effect
     window.addEventListener('scroll', this.throttle(this.handleNavbarScroll.bind(this), 16));
+
+    // Back to top : clic scroll en haut
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   }
 
   handleSmoothScroll(e) {
@@ -49,13 +65,15 @@ class DanielCraftApp {
     if (navbar) {
       const scrolled = window.scrollY > 50;
       navbar.classList.toggle('scrolled', scrolled);
-      
-      // Optimisation : réduire la navbar après un certain scroll
       if (window.scrollY > 200) {
         navbar.classList.add('compact');
       } else {
         navbar.classList.remove('compact');
       }
+    }
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      backToTop.classList.toggle('is-visible', window.scrollY > 400);
     }
   }
 
@@ -197,11 +215,14 @@ class DanielCraftApp {
         if (res.ok && data.success) {
           showFeedback('Merci pour votre message. Je vous répondrai rapidement.');
           form.reset();
+          feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
           showFeedback(data.error || 'Une erreur est survenue. Réessayez ou écrivez à contact@danielcraft.fr.', true);
+          feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } catch (err) {
         showFeedback('Erreur de connexion. Vérifiez votre réseau ou écrivez à contact@danielcraft.fr.', true);
+        feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } finally {
         submitBtn.disabled = false;
         submitBtn.classList.remove('is-loading');
@@ -335,8 +356,48 @@ class DanielCraftApp {
       });
     }, observerOptions);
 
-    document.querySelectorAll('.scroll-reveal').forEach(el => {
-      observer.observe(el);
+    const selectors = ['.scroll-reveal', '.scroll-reveal-left', '.scroll-reveal-right', '.scroll-reveal-scale'];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => observer.observe(el));
+    });
+  }
+
+  /**
+   * FAQ accordéon : une question ouverte à la fois, aria-expanded et hidden gérés.
+   */
+  initFaqAccordion() {
+    const buttons = document.querySelectorAll('[data-faq-toggle]');
+    const items = document.querySelectorAll('.faq-item');
+    if (!buttons.length) return;
+
+    const firstBtn = buttons[0];
+    const firstPanel = firstBtn && document.getElementById(firstBtn.getAttribute('aria-controls'));
+    if (firstBtn && firstPanel) {
+      firstBtn.setAttribute('aria-expanded', 'true');
+      firstPanel.hidden = false;
+      firstBtn.closest('.faq-item').classList.add('is-open');
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const panel = document.getElementById(btn.getAttribute('aria-controls'));
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        items.forEach(it => {
+          const b = it.querySelector('[data-faq-toggle]');
+          const p = b && document.getElementById(b.getAttribute('aria-controls'));
+          if (b) b.setAttribute('aria-expanded', 'false');
+          if (p) p.hidden = true;
+          it.classList.remove('is-open');
+        });
+
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          if (panel) panel.hidden = false;
+          item.classList.add('is-open');
+        }
+      });
     });
   }
 

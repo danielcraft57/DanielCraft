@@ -1,0 +1,7 @@
+{
+  "page_title": "Projets et réalisations - Loïc DANIEL / DanielCraft",
+  "page_description": "Projets open source et réalisations : applications web, outils, mobile. TypeScript, React, Node.js, Python.",
+  "page_keywords": "projets, portfolio, GitHub, réalisations, open source, TypeScript, React",
+  "page_url": "https://danielcraft.fr/projets",
+  "page_scripts": ["main.js", "github-projects.js", "portfolio.js", "projets-page.js"]
+}

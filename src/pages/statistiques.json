@@ -1,0 +1,8 @@
+{
+  "page_title": "Statistiques - Loïc DANIEL / DanielCraft",
+  "page_description": "Quelques chiffres : projets livrés, technologies, années d'expérience. Vue d'ensemble de l'activité de développement.",
+  "page_keywords": "statistiques, projets, expérience, technologies, développement",
+  "page_url": "https://danielcraft.fr/statistiques",
+  "page_scripts": ["main.js", "stats-page.js"],
+  "extra_css": "stats.css"
+}

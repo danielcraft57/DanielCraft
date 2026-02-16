@@ -7,12 +7,18 @@
     {% endif %}
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
     {% include "includes/nav.html" %}
     
     <!-- CONTENU DE LA PAGE -->
+    <main id="main-content" tabindex="-1">
     {{page_content}}
+    </main>
     
     {% include "includes/footer.html" %}
+
+    {% include "includes/modal-devis.html" %}
+    {% include "includes/modal-projet.html" %}
     
     {% include "includes/scripts.html" %}
 </body>

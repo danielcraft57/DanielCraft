@@ -37,7 +37,8 @@ DEFAULT_VARS = {
     'page_description': 'Développeur Full-Stack TypeScript freelance avec plus de 7 ans d\'expérience.',
     'page_keywords': 'développeur freelance, full-stack, TypeScript, React, Node.js',
     'page_url': 'https://danielcraft.fr/',
-    'og_image': 'https://danielcraft.fr/assets/images/og-image.jpg',
+    # Image OG par défaut (home) - architecture dediee dans assets/images/og/
+    'og_image': 'https://danielcraft.fr/assets/images/og/home-1200x630.jpg',
     'og_type': 'website',
     'current_page': '',
     'page_scripts': [],
@@ -228,6 +229,48 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         return False
 
 
+def generate_webp_variants(assets_root: Path) -> None:
+    """
+    Génère des variantes WebP pour les images PNG/JPEG du dossier assets.
+    Cette étape est optionnelle et nécessite Pillow (pip install pillow).
+    """
+    try:
+        from PIL import Image  # type: ignore
+    except ImportError:
+        print("[WARN] Pillow non installe - generation des WebP ignoree. Installez-le avec: pip install pillow")
+        return
+
+    exts = {".png", ".jpg", ".jpeg"}
+    generated = 0
+
+    for img_path in assets_root.rglob("*"):
+        if not img_path.is_file():
+            continue
+        if img_path.suffix.lower() not in exts:
+            continue
+
+        webp_path = img_path.with_suffix(".webp")
+        if webp_path.exists():
+            continue
+
+        try:
+            with Image.open(img_path) as img:
+                # WebP supporte la transparence, on convertit en RGBA par securite
+                converted = img.convert("RGBA")
+                converted.save(
+                    webp_path,
+                    "WEBP",
+                    quality=85,
+                    method=6,
+                )
+            generated += 1
+        except Exception as e:
+            print(f"[WARN] Impossible de generer WebP pour {img_path}: {e}")
+
+    if generated > 0:
+        print(f"[OK] {generated} image(s) WebP generee(s) dans {assets_root}")
+
+
 def main():
     """Fonction principale."""
     global OUTPUT_DIR
@@ -283,6 +326,8 @@ def main():
                 shutil.rmtree(assets_dst, onerror=handle_remove_readonly)
         shutil.copytree(assets_src, assets_dst)
         print(f"[OK] Assets copies dans {assets_dst}")
+        # Génère les variantes WebP pour les images (optimisation UX / perf)
+        generate_webp_variants(assets_dst)
     
     # Copie robots.txt et sitemap.xml
     for file in ['robots.txt', 'sitemap.xml']:
@@ -291,6 +336,25 @@ def main():
         if src_file.exists():
             shutil.copy2(src_file, dst_file)
             print(f"[OK] {file} copie")
+    
+    # Copie manifest.json et browserconfig.xml à la racine
+    # manifest.json peut être référencé depuis n'importe où, mais on le met à la racine pour simplicité
+    manifest_src = BASE_DIR / 'assets' / 'icons' / 'favicons' / 'manifest.json'
+    manifest_dst = OUTPUT_DIR / 'manifest.json'
+    if manifest_src.exists():
+        shutil.copy2(manifest_src, manifest_dst)
+        print(f"[OK] manifest.json copie a la racine")
+    
+    # browserconfig.xml doit être à la racine (convention Microsoft)
+    # On crée une version avec les chemins relatifs depuis la racine
+    browserconfig_src = BASE_DIR / 'assets' / 'icons' / 'favicons' / 'browserconfig.xml'
+    browserconfig_dst = OUTPUT_DIR / 'browserconfig.xml'
+    if browserconfig_src.exists():
+        # Lit le contenu et ajuste les chemins pour qu'ils soient relatifs depuis la racine
+        browserconfig_content = browserconfig_src.read_text(encoding='utf-8')
+        # Les chemins dans browserconfig.xml pointent déjà vers assets/icons/favicons/, c'est bon
+        browserconfig_dst.write_text(browserconfig_content, encoding='utf-8')
+        print(f"[OK] browserconfig.xml copie a la racine")
 
     # Copie du dossier api/ (PHP formulaire contact) vers dist/
     api_src = BASE_DIR / 'api'
@@ -302,14 +366,15 @@ def main():
                 shutil.copy2(f, api_dst / f.name)
         print(f"[OK] api/ copie dans {api_dst}")
 
-    # Crée un favicon.ico à la racine (redirection vers SVG)
-    # Note: On crée un fichier vide, nginx redirigera vers le SVG
+    # Copie le favicon.svg vers favicon.ico à la racine
+    # Note: nginx redirigera /favicon.ico vers /assets/icons/favicon.svg
+    favicon_svg_src = BASE_DIR / 'assets' / 'icons' / 'favicon.svg'
     favicon_ico = OUTPUT_DIR / 'favicon.ico'
-    if not favicon_ico.exists():
-        # Crée un fichier SVG minimal comme favicon.ico
-        favicon_svg_content = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2563eb" rx="20"/><text x="50" y="70" font-family="Arial" font-size="60" font-weight="bold" fill="white" text-anchor="middle">LD</text></svg>'
+    if favicon_svg_src.exists():
+        # Copie le contenu du SVG vers favicon.ico (pour compatibilité)
+        favicon_svg_content = favicon_svg_src.read_text(encoding='utf-8')
         favicon_ico.write_text(favicon_svg_content, encoding='utf-8')
-        print(f"[OK] favicon.ico cree (redirection vers SVG)")
+        print(f"[OK] favicon.ico cree depuis favicon.svg")
     
     # Initialise le moteur de template
     template_engine = TemplateEngine(SRC_DIR)
@@ -328,6 +393,7 @@ def main():
     # Liste des pages à builder
     pages = [
         'index',
+        'autres-prestations',
         'processus',
         'metz',
         'portfolio',

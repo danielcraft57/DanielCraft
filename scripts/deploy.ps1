@@ -36,18 +36,36 @@ if (-not (Test-Path "build.py")) {
 
 # 1.5. Lancer le build Python
 Write-ColorOutput "[0/6] Lancement du build Python..." "Yellow"
-$buildOutput = python3 build.py 2>&1 | Out-String
+
+# On essaie d'utiliser 'python' en priorité (là où Pillow est installé),
+# et on tombe sur 'python3' si besoin.
+$pythonCmd = "python"
+try {
+    Get-Command $pythonCmd -ErrorAction Stop | Out-Null
+} catch {
+    $pythonCmd = "python3"
+}
+
+$buildOutput = & $pythonCmd build.py 2>&1 | Out-String
 if ($LASTEXITCODE -ne 0) {
-    Write-ColorOutput "Erreur lors du build Python:" "Red"
+    Write-ColorOutput "Erreur lors du build Python (commande: $pythonCmd build.py):" "Red"
     Write-Host $buildOutput
     exit 1
 }
 Write-Host $buildOutput
+
+# Info UX/perf: compter les WebP generees dans dist/assets
+$DIST_DIR = "dist"
+if (Test-Path "$DIST_DIR/assets") {
+    $webpFiles = Get-ChildItem -Path "$DIST_DIR/assets" -Recurse -Filter *.webp -ErrorAction SilentlyContinue
+    $webpCount = ($webpFiles | Measure-Object).Count
+    Write-ColorOutput "Images WebP detectees dans dist/assets: $webpCount" "Yellow"
+}
+
 Write-ColorOutput "Build Python termine avec succes" "Green"
 Write-Host ""
 
 # Vérifier que le dossier dist/ existe et contient index.html
-$DIST_DIR = "dist"
 if (-not (Test-Path "$DIST_DIR/index.html")) {
     Write-ColorOutput "Erreur: index.html non trouve dans $DIST_DIR/. Le build a peut-etre echoue." "Red"
     exit 1
@@ -108,6 +126,12 @@ try {
     
     Write-ColorOutput "Transfert scp termine" "Green"
 }
+
+# 3.5 Vérification rapide des images hero sur le serveur
+Write-ColorOutput "[Check] Verification des images du hero (assets/images/hero)..." "Yellow"
+$checkHeroCmd = 'if test -d ' + $SERVER_PATH + '/assets/images/hero; then n=$(ls -1 ' + $SERVER_PATH + '/assets/images/hero/*.{png,jpg,jpeg,webp} 2>/dev/null | wc -l); echo "OK: assets/images/hero present ($n images)"; else echo "ATTENTION: assets/images/hero manquant (mockups hero)"; fi'
+$checkHeroResult = ssh "${SERVER_USER}@${SERVER_HOST}" $checkHeroCmd
+Write-Host $checkHeroResult
 
 # Mode contenu uniquement : on s'arrête ici
 if ($ContentOnly) {

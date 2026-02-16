@@ -1,0 +1,46 @@
+<!-- Modale Devis gratuit : infos GitHub loupix57 + CTA -->
+<div id="modalDevis" class="modal-devis" role="dialog" aria-modal="true" aria-labelledby="modalDevisTitle" aria-hidden="true">
+    <div class="modal-devis-backdrop" id="modalDevisBackdrop" aria-hidden="true"></div>
+    <div class="modal-devis-box" id="modalDevisBox">
+        <header class="modal-devis-header">
+            <h2 id="modalDevisTitle" class="modal-devis-title">Devis gratuit</h2>
+            <button type="button" class="modal-devis-close" id="modalDevisClose" aria-label="Fermer la modale">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </header>
+        <div class="modal-devis-body">
+            <div id="modalDevisLoading" class="modal-devis-loading">
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                <span>Chargement des infos...</span>
+            </div>
+            <div id="modalDevisContent" class="modal-devis-content" style="display: none;">
+                <section class="modal-devis-profile" id="modalDevisProfile">
+                    <div class="modal-devis-avatar-wrap">
+                        <img id="modalDevisAvatar" src="" alt="" class="modal-devis-avatar" width="80" height="80">
+                    </div>
+                    <div class="modal-devis-profile-info">
+                        <p class="modal-devis-name" id="modalDevisName"></p>
+                        <p class="modal-devis-bio" id="modalDevisBio"></p>
+                        <ul class="modal-devis-meta" id="modalDevisMeta"></ul>
+                    </div>
+                </section>
+                <section class="modal-devis-repos" id="modalDevisReposSection">
+                    <h3 class="modal-devis-subtitle">Projets GitHub récents</h3>
+                    <ul class="modal-devis-repos-list" id="modalDevisReposList"></ul>
+                </section>
+                <section class="modal-devis-cta">
+                    <p class="modal-devis-cta-text">Un projet en tête ? Demandez un devis personnalisé, sans engagement.</p>
+                    <a href="/#contact" class="btn btn-primary modal-devis-cta-btn" id="modalDevisCtaBtn">
+                        <span>Demander un devis</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </section>
+            </div>
+            <div id="modalDevisError" class="modal-devis-error" style="display: none;">
+                <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                <p>Impossible de charger le profil GitHub. <a href="https://github.com/loupix57" target="_blank" rel="noopener noreferrer">Voir le profil</a>.</p>
+                <a href="/#contact" class="btn btn-primary">Demander un devis</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,9 @@
 param(
     [string]$ServerUser = "pi",
     [string]$ServerHost = "node12.lan",
-    [string]$ServerPath = "/var/www/danielcraft.fr"
+    [string]$ServerPath = "/var/www/danielcraft.fr",
+    # Optionnel : chemin explicite vers rsync (par ex. C:\cygwin64\bin\rsync.exe)
+    [string]$RsyncPath = ""
 )
 
 # Configuration
@@ -51,6 +53,7 @@ if (-not (Test-Path "$DIST_DIR/index.html")) {
 Write-ColorOutput "[1/4] Verification des fichiers dans $DIST_DIR/..." "Yellow"
 $filesToDeploy = @(
     "$DIST_DIR/index.html",
+    "$DIST_DIR/autres-prestations.html",
     "$DIST_DIR/processus.html",
     "$DIST_DIR/metz.html",
     "$DIST_DIR/portfolio.html",
@@ -84,13 +87,42 @@ if ($missingFiles.Count -gt 0) {
 
 # 3. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[2/4] Creation du repertoire sur le serveur (si necessaire)..." "Yellow"
-$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/api"
+$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api"
 try {
     ssh "${ServerUser}@${ServerHost}" $createDirCmd
-    Write-ColorOutput "Repertoire cree/verifie" "Green"
+    Write-ColorOutput "Repertoire cree/verifie (dont assets/images/projets et assets/images/hero pour les images)" "Green"
 } catch {
     Write-ColorOutput "Erreur lors de la creation du repertoire: $_" "Red"
     exit 1
+}
+
+# Fonction utilitaire pour comparer la taille locale et distante d'un fichier
+function Should-TransferFile {
+    param(
+        [string]$LocalPath,
+        [string]$RemotePath
+    )
+
+    if (-not (Test-Path $LocalPath)) {
+        return $false
+    }
+
+    $localSize = (Get-Item $LocalPath).Length
+
+    # Récupère la taille distante (en octets) sans pipe
+    $remoteCmd = "if [ -f '$RemotePath' ]; then stat -c %s '$RemotePath'; else echo 0; fi"
+    $remoteSizeRaw = ssh "${ServerUser}@${ServerHost}" $remoteCmd
+
+    # Si ssh échoue, on renvoie true pour forcer le transfert
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($remoteSizeRaw)) {
+        return $true
+    }
+
+    $remoteSizeRaw = $remoteSizeRaw.Trim()
+    [long]$remoteSize = 0
+    [void][long]::TryParse($remoteSizeRaw, [ref]$remoteSize)
+
+    return ($localSize -ne $remoteSize)
 }
 
 # 4. Transférer les fichiers avec rsync (ou scp en fallback)
@@ -111,13 +143,19 @@ $excludes = @(
 
 $excludeArgs = $excludes -join " "
 
-# Vérifier si rsync est disponible
+# Vérifier si rsync est disponible (via RsyncPath explicite ou via PATH)
 try {
-    $rsyncCheck = Get-Command rsync -ErrorAction Stop
+    if ($RsyncPath -and (Test-Path $RsyncPath)) {
+        $rsyncExe = $RsyncPath
+    } else {
+        $rsyncCmd = Get-Command rsync -ErrorAction Stop
+        $rsyncExe = $rsyncCmd.Source
+    }
+
     Write-ColorOutput "Utilisation de rsync (transfert optimise)..." "Yellow"
     
-    $rsyncCmd = "rsync -avz --delete $excludeArgs $DIST_DIR/ ${ServerUser}@${ServerHost}:${ServerPath}/"
-    Invoke-Expression $rsyncCmd
+    $rsyncCommandLine = "`"$rsyncExe`" -avz --delete $excludeArgs $DIST_DIR/ ${ServerUser}@${ServerHost}:${ServerPath}/"
+    Invoke-Expression $rsyncCommandLine
     
     if ($LASTEXITCODE -eq 0) {
         Write-ColorOutput "Transfert rsync reussi" "Green"
@@ -126,15 +164,16 @@ try {
         exit 1
     }
 } catch {
-    Write-ColorOutput "rsync non trouve, utilisation de scp (plus lent)..." "Yellow"
+    Write-ColorOutput "rsync non trouve, fallback scp (optimise par taille)..." "Yellow"
     
     # Transfert fichier par fichier avec scp depuis dist/
     $htmlFiles = @(
-        "index.html", 
-        "processus.html", 
-        "metz.html", 
-        "portfolio.html", 
-        "projets.html", 
+        "index.html",
+        "autres-prestations.html",
+        "processus.html",
+        "metz.html",
+        "portfolio.html",
+        "projets.html",
         "statistiques.html",
         "mentions-legales.html",
         "cgv.html",
@@ -145,21 +184,27 @@ try {
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file
-        if (Test-Path $filePath) {
-            Write-Host "  Transfert: $file"
+        $remotePath = "$ServerPath/$file"
+        if ((Test-Path $filePath) -and (Should-TransferFile -LocalPath $filePath -RemotePath $remotePath)) {
+            Write-Host "  Transfert (modifie): $file"
             scp $filePath "${ServerUser}@${ServerHost}:${ServerPath}/"
+        } else {
+            Write-Host "  Skip (inchangé): $file"
         }
     }
     
     foreach ($file in $otherFiles) {
         $filePath = Join-Path $DIST_DIR $file
-        if (Test-Path $filePath) {
-            Write-Host "  Transfert: $file"
+        $remotePath = "$ServerPath/$file"
+        if ((Test-Path $filePath) -and (Should-TransferFile -LocalPath $filePath -RemotePath $remotePath)) {
+            Write-Host "  Transfert (modifie): $file"
             scp $filePath "${ServerUser}@${ServerHost}:${ServerPath}/"
+        } else {
+            Write-Host "  Skip (inchangé): $file"
         }
     }
     
-    # Transfert du dossier assets
+    # Transfert du dossier assets (toujours complet en fallback, plus simple que comparer fichier par fichier)
     $assetsPath = Join-Path $DIST_DIR "assets"
     if (Test-Path $assetsPath) {
         Write-Host "  Transfert: assets/ (peut prendre du temps...)"
@@ -201,6 +246,16 @@ Write-Host $checkResult
 $apiCheckCmd = "test -f $ServerPath/api/send-contact.php && echo 'OK: api/send-contact.php present' || echo 'ATTENTION: api/send-contact.php manquant (formulaire contact)'"
 $apiCheckResult = ssh "${ServerUser}@${ServerHost}" $apiCheckCmd
 Write-Host $apiCheckResult
+
+# Vérifier que les images des projets sont présentes (assets/images/projets)
+$imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then n=$(ls -1 ' + $ServerPath + '/assets/images/projets/*.jpg 2>/dev/null | wc -l); echo "OK: assets/images/projets present ($n images .jpg)"; else echo "ATTENTION: assets/images/projets manquant"; fi'
+$imagesProjetsResult = ssh "${ServerUser}@${ServerHost}" $imagesProjetsCmd
+Write-Host $imagesProjetsResult
+
+# Vérifier que les images du hero sont présentes (assets/images/hero)
+$imagesHeroCmd = 'if test -d ' + $ServerPath + '/assets/images/hero; then n=$(ls -1 ' + $ServerPath + '/assets/images/hero/*.{png,jpg,jpeg} 2>/dev/null | wc -l); echo "OK: assets/images/hero present ($n images)"; else echo "ATTENTION: assets/images/hero manquant (mockups hero)"; fi'
+$imagesHeroResult = ssh "${ServerUser}@${ServerHost}" $imagesHeroCmd
+Write-Host $imagesHeroResult
 
 # Lister les fichiers déployés
 $listCmd = "ls -lh $ServerPath/*.html 2>/dev/null | wc -l"
