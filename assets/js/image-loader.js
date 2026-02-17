@@ -186,11 +186,27 @@ class ImageLoader {
             onError = null
         } = options;
 
-        // Vérifie le cache mémoire
+        // Verifie le cache memoire (au changement d'onglet/filtre, les memes URLs reviennent)
         if (useCache && this.imageCache.has(imageUrl)) {
             const cachedUrl = this.imageCache.get(imageUrl);
             imgElement.src = cachedUrl;
-            if (onLoad) imgElement.addEventListener('load', onLoad, { once: true });
+            const applyLoaded = () => {
+                imgElement.classList.add('loaded');
+                if (onLoad) onLoad();
+            };
+            imgElement.addEventListener('load', applyLoaded, { once: true });
+            imgElement.addEventListener('error', () => {
+                const picture = imgElement.closest('picture');
+                if (picture) {
+                    const source = picture.querySelector('source[type="image/webp"]');
+                    if (source) source.removeAttribute('srcset');
+                }
+                imgElement.onload = () => imgElement.classList.add('loaded');
+                imgElement.src = this.placeholderUrl;
+                imgElement.classList.add('image-missing');
+                if (onError) onError();
+            }, { once: true });
+            if (imgElement.complete) applyLoaded();
             return;
         }
 

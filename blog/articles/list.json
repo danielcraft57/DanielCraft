@@ -1,5 +1,47 @@
 [
   {
+    "title": "GEO : outils et optimisation pour les moteurs génératifs",
+    "slug": "geo-outils-optimisation-moteurs-generatifs",
+    "date": "2026-02-16T10:00:00.000000",
+    "excerpt": "Le GEO (Generative Engine Optimization) vise à être cité par les IA (ChatGPT, Perplexity, SGE). Voici des outils concrets et une checklist pour optimiser ton contenu.",
+    "topic": "GEO, SEO, moteurs génératifs, référencement IA"
+  },
+  {
+    "title": "GEO vs SEO : différences et complémentarité",
+    "slug": "geo-vs-seo-differences-complementarite",
+    "date": "2026-02-16T10:05:00.000000",
+    "excerpt": "GEO et SEO ne s'opposent pas : objectifs, métriques et cas d'usage. Quand privilégier la citation IA et quand viser le classement SERP.",
+    "topic": "GEO, SEO, SERP, moteurs génératifs"
+  },
+  {
+    "title": "Outils GEO : audit, suivi et vérification des citations",
+    "slug": "outils-geo-audit-suivi-citations",
+    "date": "2026-02-16T10:10:00.000000",
+    "excerpt": "Geoptie, Otterly AI, LightSite AI, GPTZero, Veru : comparatif et usage des outils d'audit GEO et de vérification des citations IA.",
+    "topic": "GEO, outils, audit, citations IA"
+  },
+  {
+    "title": "GEO technique : indexabilité, HTML et performance",
+    "slug": "geo-technique-indexabilite-html-performance",
+    "date": "2026-02-16T10:15:00.000000",
+    "excerpt": "robots.txt, balisage sémantique, contenu dans le HTML initial (JS/SSR), vitesse de chargement : ce que les moteurs génératifs doivent voir.",
+    "topic": "GEO, technique, indexabilité, HTML, performance"
+  },
+  {
+    "title": "GEO et contenu : structure, formats et checklist",
+    "slug": "geo-contenu-structure-formats-checklist",
+    "date": "2026-02-16T10:20:00.000000",
+    "excerpt": "Unités de sens, FAQ, listes, E-E-A-T et checklist rédactionnelle pour des contenus repris par les IA.",
+    "topic": "GEO, contenu, structure, FAQ, E-E-A-T"
+  },
+  {
+    "title": "GEO hors-site : mentions et autorité",
+    "slug": "geo-off-site-mentions-autorite",
+    "date": "2026-02-16T10:25:00.000000",
+    "excerpt": "Empreinte web, présence sur d'autres plateformes, netlinking vs mentions : construire l'autorité pour les moteurs génératifs.",
+    "topic": "GEO, hors-site, mentions, autorité"
+  },
+  {
     "title": "Les frameworks frontend en 2025 : React, Vue, Angular",
     "slug": "les-frameworks-frontend-en-2025-react-vue-angular",
     "date": "2026-01-02T11:18:52.434420",
