@@ -88,7 +88,6 @@ if command -v rsync &> /dev/null; then
         --exclude=build.py \
         --exclude=.gitignore \
         --exclude=README.md \
-        --exclude=blog \
         ./ "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     
     if [ $? -eq 0 ]; then

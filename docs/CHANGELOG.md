@@ -2,6 +2,35 @@
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
+## [1.1.0] - 2026-02-21
+
+### Blog et contenu
+- Blog : serie Communication (15 articles, classique et digitale)
+- Page index blog : bloc "A decouvrir" (4 articles mis en avant) + section "Tous les articles"
+- Page article : lien article precedent/suivant, bloc "Articles recommandes" (meme serie puis autres)
+- Menu "Plus" corrige sur les pages blog (chargement de main.js dans les templates)
+- Liens blog en `/blog/` (slash final) pour un affichage correct
+- Nginx : rewrite des .html limite aux pages racine (plus de conflit avec /blog/index.html)
+
+### Sitemaps et SEO
+- Sitemaps generes au build : sitemap.xml (index), sitemap-pages.xml, blog/sitemap-blog.xml
+- sitemap-blog : lastmod sur index et series, namespace xsi pour validation
+- JSON-LD enrichi : inLanguage fr-FR, publisher.logo, blogPost/itemListElement sur index et collections
+
+### Deploiement
+- deploy.ps1 : rsync avec timeout 300s et keepalive SSH ; fallback scp complet (dont blog) si rsync echoue
+- deploy-content.ps1 : dossier blog et sitemap-pages.xml inclus ; verification blog deploye
+- Verification de la presence de blog/index.html apres transfert
+
+### Documentation et menage
+- README : section Blog, structure projet a jour, sitemaps et deploiement
+- blog/README.md : refonte (structure actuelle, build, recommandations, menu Plus)
+- docs/INDEX.md : section Blog et images OG, structure projet
+- docs/DEPLOYMENT-PS.md : blog dans le transfert, depannage rsync/fallback
+- CHANGELOG : entree 1.1.0
+
+---
+
 ## [1.0.0] - 2025-01-XX
 
 ### 🎉 Version Initiale - Release Majeure

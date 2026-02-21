@@ -1,192 +1,45 @@
-# Blog Automatique DanielCraft
+# Blog DanielCraft
 
-Système de blog qui génère automatiquement des articles pour danielcraft.fr.
+Blog integre au site : articles en Markdown, compilation en HTML, series (GEO, SEO, Marketing digital, Communication).
 
-## Installation
+## Structure
 
-### 1. Installer les dépendances Python
-
-```bash
-cd blog
-pip3 install -r requirements.txt
-```
-
-### 2. Configuration de l'API (optionnel)
-
-Pour générer des articles avec l'IA, tu peux utiliser OpenAI ou une autre API :
-
-```bash
-export OPENAI_API_KEY='ta-clé-api'
-```
-
-Si tu n'as pas de clé API, le script génère des articles exemple.
+- **content/articles/** : fichiers `.md` (front matter YAML + contenu)
+- **content/collections/** : fichiers `.json` (series : geo-serie, seo-serie, marketing-digital-serie, communication-serie)
+- **templates/** : article.html, blog_index.html, collection.html
+- **build_blog.py** : compile le blog vers le dossier de sortie (ex. dist/blog)
 
 ## Utilisation
 
-### Générer un article manuellement
+### Compilation seule
 
 ```bash
-python3 generate_article.py "Le sujet de ton article"
+# Depuis la racine du projet
+python blog/build_blog.py --output dist/blog
 ```
 
-Exemple :
-```bash
-python3 generate_article.py "Les meilleures pratiques en développement web"
-```
+Le build principal (`python build.py`) appelle automatiquement le build du blog et genere ensuite les sitemaps.
 
-### Générer un article quotidien automatiquement
+### Contenu
 
-```bash
-python3 generate_daily.py
-```
+- **Articles** : titre, date, excerpt, tags, series, og_image. Les schemas SVG sont dans `assets/images/blog/`.
+- **Page index** : bloc "A decouvrir" (4 articles mis en avant) + grille "Tous les articles".
+- **Page article** : lien precedent/suivant, bloc "Articles recommandes" (meme serie puis autres).
+- **Menu "Plus"** : fonctionnel sur le blog grace au chargement de `main.js` dans les templates.
 
-### Mettre à jour l'index du blog
+### Images OG
 
-```bash
-python3 update_blog_index.py
-```
+Les images de partage social (1200x630) sont dans `assets/images/og/`. Prompts dans `docs/prompt_og_images_articles_*.md`. Optimisation et generation WebP : `python scripts/optimize_images.py`.
 
-## Automatisation avec Cron
+## URLs generees
 
-Pour générer un article chaque jour automatiquement, ajoute cette ligne dans ton crontab :
+- Index : `/blog/` (fichier `blog/index.html`)
+- Article : `/blog/articles/<slug>.html`
+- Serie : `/blog/series/<slug>.html`
+- Sitemap blog : `/blog/sitemap-blog.xml`
 
-```bash
-crontab -e
-```
+## Documentation
 
-Ajoute :
-```
-0 9 * * * cd /var/www/danielcraft.fr/blog && /usr/bin/python3 generate_daily.py >> /var/log/blog-generation.log 2>&1
-```
-
-Cela génère un article chaque jour à 9h.
-
-## Structure des fichiers
-
-```
-blog/
-├── articles/          # Articles générés (HTML + JSON)
-│   ├── article-1.html
-│   ├── article-1.json
-│   └── list.json      # Liste de tous les articles (généré automatiquement)
-├── generate_article.py    # Script principal de génération
-├── generate_daily.py      # Script pour génération quotidienne
-├── update_blog_index.py   # Met à jour l'index
-├── article_template.html  # Template HTML pour les articles
-├── blog.html             # Page qui liste tous les articles
-└── requirements.txt      # Dépendances Python
-```
-
-## Intégration au site
-
-1. Les articles sont générés dans `blog/articles/`
-2. La page `blog.html` liste automatiquement tous les articles
-3. Ajoute un lien vers le blog dans la navigation principale
-
-## Personnalisation
-
-### Modifier les sujets d'articles
-
-Édite le fichier `generate_daily.py` et modifie la liste `TOPICS`.
-
-### Changer le template
-
-Modifie `article_template.html` pour personnaliser l'apparence des articles.
-
-### Utiliser une autre API
-
-Modifie la fonction `generate_article_content()` dans `generate_article.py` pour utiliser une autre API (Anthropic, etc.).
-
-## Performance sur Raspberry Pi 3B+
-
-Cette solution est optimisée pour un Raspberry Pi 3B+ :
-- Génération d'articles en Python (léger)
-- Fichiers statiques servis par nginx (pas de serveur à faire tourner)
-- Pas de base de données (fichiers JSON simples)
-- Consommation mémoire minimale
-
-## Notes
-
-- Les articles sont générés en HTML statique
-- Pas besoin de serveur backend pour afficher les articles
-- Le script peut tourner en arrière-plan via cron
-- Compatible avec nginx existant
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- **blog/GUIDE_DEMARRAGE.md** : guide de demarrage
+- **docs/SEO_README.md** : SEO et sitemaps
+- **assets/images/og/README.md** : liste des images OG attendues

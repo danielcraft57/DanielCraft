@@ -77,8 +77,10 @@ $filesToDeploy = @(
     "$DIST_DIR/politique-confidentialite.html",
     "$DIST_DIR/robots.txt",
     "$DIST_DIR/sitemap.xml",
+    "$DIST_DIR/sitemap-pages.xml",
     "$DIST_DIR/assets",
-    "$DIST_DIR/api"
+    "$DIST_DIR/api",
+    "$DIST_DIR/blog"
 )
 
 $missingFiles = @()
@@ -140,7 +142,7 @@ function Should-TransferFile {
 # 4. Transférer les fichiers avec rsync (ou scp en fallback)
 Write-ColorOutput "[3/4] Transfert des fichiers..." "Yellow"
 
-# Exclusions
+# Exclusions (le blog est dans dist/blog/ et est deploye)
 $excludes = @(
     "--exclude=node_modules",
     "--exclude=.git",
@@ -149,8 +151,7 @@ $excludes = @(
     "--exclude=src",
     "--exclude=build.py",
     "--exclude=.gitignore",
-    "--exclude=README.md",
-    "--exclude=blog"
+    "--exclude=README.md"
 )
 
 $excludeArgs = $excludes -join " "
@@ -229,7 +230,14 @@ try {
         Write-Host "  Transfert: api/"
         scp -r $apiPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
-    
+
+    # Transfert du blog (index, articles, series, sitemap-blog)
+    $blogPath = Join-Path $DIST_DIR "blog"
+    if (Test-Path $blogPath) {
+        Write-Host "  Transfert: blog/"
+        scp -r $blogPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
     Write-ColorOutput "Transfert scp termine" "Green"
 }
 
@@ -258,6 +266,11 @@ Write-Host $checkResult
 $apiCheckCmd = "test -f $ServerPath/api/send-contact.php && echo 'OK: api/send-contact.php present' || echo 'ATTENTION: api/send-contact.php manquant (formulaire contact)'"
 $apiCheckResult = ssh "${ServerUser}@${ServerHost}" $apiCheckCmd
 Write-Host $apiCheckResult
+
+# Verifier que le blog est deploye
+$blogCheckCmd = "test -f $ServerPath/blog/index.html && echo 'OK: blog/index.html present' || echo 'ATTENTION: blog manquant - relancer build.py puis deploy'"
+$blogCheckResult = ssh "${ServerUser}@${ServerHost}" $blogCheckCmd
+Write-Host $blogCheckResult
 
 # Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
 $imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'

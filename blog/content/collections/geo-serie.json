@@ -1,0 +1,15 @@
+{
+  "id": "geo-serie",
+  "title": "Série GEO - Référencement dans les moteurs génératifs",
+  "description": "Articles sur le GEO (Generative Engine Optimization) : optimisation pour ChatGPT, Perplexity, SGE et autres IA.",
+  "slug": "geo-serie",
+  "articles": [
+    "geo-nouveau-seo-ia-guide-complet",
+    "geo-vs-seo-differences-complementarite",
+    "outils-geo-audit-suivi-citations",
+    "geo-technique-indexabilite-html-performance",
+    "geo-contenu-structure-formats-checklist",
+    "geo-off-site-mentions-autorite",
+    "geo-optimiser-chatgpt-perplexity-sge"
+  ]
+}

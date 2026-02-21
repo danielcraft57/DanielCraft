@@ -1,0 +1,403 @@
+/**
+ * Styles du blog DanielCraft
+ * Articles, index, collections - reutilise les variables de main.css
+ */
+
+/* ---- Page article ---- */
+.blog-article-section {
+  padding-top: 6rem;
+  min-height: 60vh;
+}
+
+.blog-article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-500);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+.blog-article-header {
+  margin-bottom: 2rem;
+}
+
+.blog-article-header h1 {
+  font-size: 2rem;
+  color: var(--gray-800);
+  line-height: 1.3;
+}
+
+.blog-article .article-meta {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ---- Prose (contenu article) ---- */
+.prose {
+  line-height: 1.75;
+  color: var(--gray-700);
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: var(--gray-800);
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose ul,
+.prose ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.prose code {
+  background: var(--gray-100);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.prose pre {
+  background: var(--gray-900);
+  color: var(--gray-100);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Schemas et images dans les articles */
+.prose figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.prose figure img,
+.prose figure svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+
+.prose figcaption {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-top: 0.5rem;
+}
+
+.prose .schema-inline {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+}
+
+/* ---- Page index blog ---- */
+.blog-page-section {
+  padding-top: 6rem;
+  min-height: 70vh;
+}
+
+.blog-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.blog-header .section-badge {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-header .section-title {
+  font-size: 2rem;
+  color: var(--gray-800);
+  margin-bottom: 0.5rem;
+}
+
+.blog-header .section-description {
+  color: var(--gray-500);
+  font-size: 1rem;
+}
+
+/* ---- Grille articles ---- */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.article-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.article-type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.article-card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--gray-800);
+  line-height: 1.4;
+}
+
+.article-card .article-meta {
+  color: var(--gray-500);
+  font-size: 0.8rem;
+}
+
+.article-card .article-excerpt {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* ---- Collection / serie ---- */
+.blog-page .back-link {
+  margin-bottom: 1rem;
+}
+
+.articles-grid .article-card {
+  box-shadow: var(--shadow-sm);
+}
+
+.articles-grid .article-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Section "A decouvrir" et "Tous les articles" */
+.blog-section-title {
+  font-size: 1.35rem;
+  color: var(--gray-800);
+  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.blog-all-articles {
+  margin-top: 2rem;
+}
+
+.recommendations-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.recommendation-featured {
+  border-left: 3px solid var(--primary-color);
+}
+
+/* Article : precedent / suivant */
+.article-prev-next {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.prev-next-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.prev-next-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--gray-700);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid var(--gray-200);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.prev-next-link:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.prev-next-link.next-link {
+  text-align: right;
+}
+
+.prev-next-link.empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Recommandations en bas d'article */
+.article-recommendations {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.recommendations-title {
+  font-size: 1.25rem;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.recommendation-card h3 {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+
+/* ---- Section "A découvrir" (index blog) ---- */
+.blog-section-title {
+  font-size: 1.5rem;
+  color: var(--gray-800);
+  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+}
+
+.blog-recommendations-index {
+  margin-bottom: 2.5rem;
+}
+
+.recommendations-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.recommendation-featured {
+  border-left: 3px solid var(--primary-color);
+}
+
+.blog-all-articles {
+  margin-top: 2rem;
+}
+
+/* ---- Article : precedent / suivant ---- */
+.article-prev-next {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.prev-next-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.prev-next-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--gray-700);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--gray-200);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.prev-next-link:hover {
+  border-color: var(--primary-color);
+  background: var(--gray-50);
+  color: var(--primary-color);
+}
+
+.prev-next-link.next-link {
+  text-align: right;
+}
+
+.prev-next-link.empty {
+  border-color: transparent;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ---- Article : recommandations ---- */
+.article-recommendations {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.recommendations-title {
+  font-size: 1.25rem;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.recommendation-card h3 {
+  font-size: 1.05rem;
+  margin: 0.4rem 0;
+}

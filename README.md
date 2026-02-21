@@ -23,12 +23,23 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 ### SEO et Performance
 - **Google Analytics** : Intégration GA4 complète
 - **Google Search Console** : Vérification DNS configurée
-- **Meta tags** : Open Graph, Twitter Cards, Schema.org
-- **URLs propres** : Sans extension .html avec redirections 301
+- **Meta tags** : Open Graph, Twitter Cards, Schema.org (Person, LocalBusiness, WebSite, BlogPosting)
+- **Sitemaps** : Génération à chaque build (sitemap.xml index, sitemap-pages.xml, blog/sitemap-blog.xml)
+- **URLs propres** : Sans extension .html avec redirections 301 (hors blog)
 - **Optimisations** : Preload, defer, DNS prefetch, compression
+
+### Blog
+- **Blog** (`/blog/`) : articles et tutoriels (GEO, SEO, Marketing digital, Communication)
+- Contenu en Markdown (`blog/content/articles/`), build via `blog/build_blog.py`
+- Séries : GEO, SEO, Marketing digital, Communication (classique et digitale)
+- Page index avec bloc "À découvrir" et grille de tous les articles
+- Pages article avec lien précédent/suivant et articles recommandés
+- Sitemap blog et JSON-LD optimisés (BlogPosting, BreadcrumbList, CollectionPage)
+- Menu "Plus" fonctionnel sur les pages blog (chargement de main.js)
 
 ### Pages Disponibles
 - Accueil avec sections complètes (Hero, Services, Portfolio, À Propos, Contact)
+- Blog et articles
 - Processus de travail
 - Présentation Metz
 - Portfolio de projets
@@ -38,16 +49,18 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 ## 📁 Structure du Projet
 
 ```
-V6/
-├── src/                    # Sources
-│   ├── includes/           # Composants réutilisables
-│   ├── templates/          # Templates de base
-│   └── pages/             # Contenu des pages
-├── assets/                # Assets statiques (CSS, JS, images)
-├── dist/                   # Fichiers générés (ne pas éditer)
-├── docs/                   # Documentation complète
-├── scripts/                # Scripts de déploiement et config Nginx
-├── build.py               # Script de build Python
+DanielCraftFr/
+├── src/                    # Sources (templates, includes, pages)
+├── assets/                 # CSS, JS, images (dont blog/, og/)
+├── blog/                   # Blog (Markdown -> HTML)
+│   ├── content/articles/   # Articles .md
+│   ├── content/collections/# Séries (GEO, SEO, Marketing, Communication)
+│   ├── templates/         # article.html, blog_index.html, collection.html
+│   └── build_blog.py       # Compilation du blog
+├── dist/                   # Fichiers générés (build + blog)
+├── docs/                   # Documentation
+├── scripts/                # Déploiement, nginx, optimize_images
+├── build.py                # Build principal (pages + blog + sitemaps)
 └── README.md
 ```
 
@@ -71,10 +84,10 @@ cd V6
 
 3. **Build le projet**
 ```bash
-python3 build.py
+python build.py
 ```
 
-Les fichiers générés sont dans `dist/`.
+Génère les pages dans `dist/`, le blog dans `dist/blog/`, et les sitemaps (sitemap.xml, sitemap-pages.xml, blog/sitemap-blog.xml).
 
 4. **Tester localement**
 ```bash
@@ -152,7 +165,7 @@ La configuration Nginx est dans `scripts/nginx.conf`. Elle inclut :
 - **Icons** : Font Awesome 6.5.0
 - **Analytics** : Google Analytics 4
 - **Server** : Nginx
-- **Déploiement** : rsync, scp
+- **Déploiement** : rsync (avec timeout/keepalive), fallback scp si rsync échoue ; blog inclus dans `dist/blog/`
 
 ## 📝 License
 

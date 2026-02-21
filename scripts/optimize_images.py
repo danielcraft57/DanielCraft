@@ -129,32 +129,55 @@ def optimize_image(
             img.save(img_path)
 
 
+def generate_webp_for_path(img_path: Path, quality: int = 82) -> None:
+    """
+    Genere une version WebP a cote du fichier image (jpg/png).
+    Ne fait rien si le WebP existe deja ou si le format n'est pas pris en charge.
+    """
+    if img_path.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
+        return
+    webp_path = img_path.with_suffix(".webp")
+    if webp_path.exists():
+        return
+    try:
+        with Image.open(img_path) as img:
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGBA")
+            else:
+                img = img.convert("RGB")
+            img.save(webp_path, "WEBP", quality=quality, method=6)
+        print(f"[INFO] WebP genere : {webp_path.name}")
+    except Exception as e:
+        print(f"[WARN] WebP non genere pour {img_path}: {e}")
+
+
 def process_folder_og() -> None:
     """
     Optimise les images Open Graph (ratio 1200x630).
-
-    - Recadrage centré au ratio 1200/630
+    - Recadrage centre au ratio 1200/630
     - Redimensionnement exact 1200x630
-    - Qualité JPEG à 82 pour un bon compromis poids/qualité
+    - Qualite JPEG a 82 pour un bon compromis poids/qualite
+    - Generation d'une version WebP pour chaque image (optimisation chargement)
     """
     og_dir = ASSETS_DIR / "og"
     if not og_dir.exists():
         return
 
     ratio_og = 1200 / 630
-    for img_path in og_dir.iterdir():
-        if img_path.is_file() and img_path.suffix.lower() in {
-            ".jpg",
-            ".jpeg",
-            ".png",
-            ".webp",
-        }:
+    for img_path in sorted(og_dir.iterdir()):
+        if not img_path.is_file():
+            continue
+        suffix = img_path.suffix.lower()
+        if suffix in {".jpg", ".jpeg", ".png"}:
             optimize_image(
                 img_path,
                 target_ratio=ratio_og,
                 exact_size=(1200, 630),
                 quality=82,
             )
+            generate_webp_for_path(img_path, quality=82)
+        elif suffix == ".webp":
+            continue
 
 
 def process_folder_generic(subfolder: str, max_size: Tuple[int, int]) -> None:

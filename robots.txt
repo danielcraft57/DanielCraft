@@ -5,9 +5,10 @@ Allow: /
 
 # Sitemap
 Sitemap: https://danielcraft.fr/sitemap.xml
+Sitemap: https://danielcraft.fr/blog/sitemap-blog.xml
 
-# Interdire l'indexation du dossier blog (si on veut le garder privé)
-Disallow: /blog/
+# Autoriser le blog (indexation SEO et GEO)
+Allow: /blog/
 
 # Autoriser les assets
 Allow: /assets/

@@ -30,6 +30,22 @@ TEMPLATES_DIR = SRC_DIR / 'templates'
 PAGES_DIR = SRC_DIR / 'pages'
 # Dossier de sortie par défaut : dist/ (peut être modifié via --output)
 OUTPUT_DIR = BASE_DIR / 'dist'
+SITE_BASE = 'https://danielcraft.fr'
+
+# Pages statiques pour le sitemap (path, changefreq, priority)
+SITEMAP_PAGES = [
+    ('/', 'weekly', '1.0'),
+    ('/autres-prestations', 'monthly', '0.8'),
+    ('/processus', 'monthly', '0.8'),
+    ('/metz', 'monthly', '0.8'),
+    ('/portfolio', 'monthly', '0.7'),
+    ('/projets', 'monthly', '0.6'),
+    ('/statistiques', 'monthly', '0.5'),
+    ('/mentions-legales', 'yearly', '0.3'),
+    ('/cgv', 'yearly', '0.3'),
+    ('/cgu', 'yearly', '0.3'),
+    ('/politique-confidentialite', 'yearly', '0.3'),
+]
 
 # Variables par défaut
 DEFAULT_VARS = {
@@ -43,7 +59,7 @@ DEFAULT_VARS = {
     'current_page': '',
     'page_scripts': [],
     'extra_css': None,
-    'blog_enabled': False
+    'blog_enabled': True
 }
 
 
@@ -271,6 +287,40 @@ def generate_webp_variants(assets_root: Path) -> None:
         print(f"[OK] {generated} image(s) WebP generee(s) dans {assets_root}")
 
 
+def generate_sitemap_pages(output_dir: Path) -> None:
+    """Genere sitemap-pages.xml avec les pages statiques du site."""
+    lastmod = datetime.now().strftime('%Y-%m-%d')
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
+        '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
+        'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
+    ]
+    for path, changefreq, priority in SITEMAP_PAGES:
+        loc = SITE_BASE + path if path != '/' else SITE_BASE + '/'
+        lines.append(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod>'
+                     f'<changefreq>{changefreq}</changefreq><priority>{priority}</priority></url>')
+    lines.append('</urlset>')
+    (output_dir / 'sitemap-pages.xml').write_text('\n'.join(lines), encoding='utf-8')
+
+
+def generate_sitemap_index(output_dir: Path) -> None:
+    """Genere sitemap.xml (index) pointant vers sitemap-pages et blog."""
+    lastmod = datetime.now().strftime('%Y-%m-%d')
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
+        '              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
+        'http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">',
+        f'  <sitemap><loc>{SITE_BASE}/sitemap-pages.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
+        f'  <sitemap><loc>{SITE_BASE}/blog/sitemap-blog.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
+        '</sitemapindex>',
+    ]
+    (output_dir / 'sitemap.xml').write_text('\n'.join(lines), encoding='utf-8')
+
+
 def main():
     """Fonction principale."""
     global OUTPUT_DIR
@@ -348,13 +398,13 @@ def main():
         # Génère les variantes WebP pour les images (optimisation UX / perf)
         generate_webp_variants(assets_dst)
     
-    # Copie robots.txt et sitemap.xml
-    for file in ['robots.txt', 'sitemap.xml']:
-        src_file = BASE_DIR / file
-        dst_file = OUTPUT_DIR / file
-        if src_file.exists():
-            shutil.copy2(src_file, dst_file)
-            print(f"[OK] {file} copie")
+    # Copie robots.txt
+    robots_src = BASE_DIR / 'robots.txt'
+    if robots_src.exists():
+        shutil.copy2(robots_src, OUTPUT_DIR / 'robots.txt')
+        print("[OK] robots.txt copie")
+
+    # Sitemaps : generes apres le build du blog (voir plus bas)
     
     # Copie manifest.json et browserconfig.xml à la racine
     # manifest.json peut être référencé depuis n'importe où, mais on le met à la racine pour simplicité
@@ -428,7 +478,35 @@ def main():
     for page in pages:
         if build_page(page, template_engine):
             success_count += 1
-    
+
+    # Build du blog (articles Markdown -> HTML)
+    blog_dir = BASE_DIR / 'blog'
+    if blog_dir.exists():
+        import subprocess
+        try:
+            blog_output = str((OUTPUT_DIR / 'blog').relative_to(BASE_DIR))
+        except ValueError:
+            blog_output = str(OUTPUT_DIR / 'blog')
+        try:
+            result = subprocess.run(
+                [sys.executable, str(blog_dir / 'build_blog.py'), '--output', blog_output],
+                cwd=str(BASE_DIR),
+                capture_output=True,
+                text=True,
+                timeout=60
+            )
+            if result.returncode == 0:
+                print(result.stdout or '')
+            else:
+                print(f"[WARN] Build blog echoue : {result.stderr or result.stdout}")
+        except Exception as e:
+            print(f"[WARN] Build blog non execute : {e}")
+
+    # Generation des sitemaps (index + pages statiques)
+    generate_sitemap_pages(OUTPUT_DIR)
+    generate_sitemap_index(OUTPUT_DIR)
+    print("[OK] sitemap.xml et sitemap-pages.xml generes")
+
     print(f"\n[OK] Build termine ! {success_count}/{len(pages)} page(s) generee(s) dans {OUTPUT_DIR}.")
     
     # Mode watch

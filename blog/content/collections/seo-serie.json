@@ -1,0 +1,16 @@
+{
+  "id": "seo-serie",
+  "title": "Série SEO - Référencement naturel et visibilité web",
+  "description": "Articles sur le SEO : bases du référencement, technique, contenu, local, backlinks et mesure. Stratégies pour améliorer ta visibilité sur Google.",
+  "slug": "seo-serie",
+  "articles": [
+    "seo-fondamentaux-referencement-naturel",
+    "seo-technique-audit-core-web-vitals",
+    "seo-contenu-mots-cles-intention-redaction",
+    "seo-local-google-business-avis",
+    "seo-backlinks-netlinking-strategie",
+    "seo-mesurer-search-console-analytics-kpis",
+    "seo-schema-org-donnees-structurees",
+    "seo-vs-sea-quand-choisir"
+  ]
+}

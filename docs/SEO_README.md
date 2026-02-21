@@ -85,6 +85,7 @@ Architecture recommandée :
 - `assets/images/og/portfolio-1200x630.jpg` - Page portfolio
 - `assets/images/og/prestations-1200x630.jpg` - Page autres prestations
 - `assets/images/og/metz-1200x630.jpg` - Page développeur à Metz
+- `assets/images/og/blog-1200x630.jpg` - Blog et articles (voir `prompt_og_image_blog.md`)
 
 Spécifications communes :
 - Format : JPEG

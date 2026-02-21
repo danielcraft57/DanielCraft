@@ -78,54 +78,55 @@ Write-ColorOutput "[1/6] Creation du repertoire sur le serveur..." "Yellow"
 $createDirCmd = "sudo mkdir -p $SERVER_PATH && sudo chown -R ${SERVER_USER}:www-data $SERVER_PATH && sudo chmod -R 755 $SERVER_PATH"
 ssh "${SERVER_USER}@${SERVER_HOST}" $createDirCmd
 
-# 3. Transférer les fichiers depuis dist/ avec rsync
+# 3. Transférer les fichiers depuis dist/ avec rsync (timeout + keepalive pour eviter coupure)
 Write-ColorOutput "[2/6] Transfert des fichiers depuis $DIST_DIR/..." "Yellow"
 
-# Vérifier si rsync est disponible (sinon utiliser scp)
+$rsyncOk = $false
 try {
     $rsyncCheck = Get-Command rsync -ErrorAction Stop
-    Write-ColorOutput "Utilisation de rsync (transfert optimise)..." "Yellow"
-    $rsyncCmd = "rsync -avz --delete $DIST_DIR/ ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
+    Write-ColorOutput "Utilisation de rsync (timeout 300s, keepalive SSH)..." "Yellow"
+    $sshOpts = "-o ServerAliveInterval=30 -o ServerAliveCountMax=10 -o ConnectTimeout=15"
+    $rsyncCmd = "rsync -avz --delete --timeout=300 -e `"ssh $sshOpts`" $DIST_DIR/ ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     Invoke-Expression $rsyncCmd
-    
-    if ($LASTEXITCODE -eq 0) {
-        Write-ColorOutput "Transfert rsync reussi" "Green"
-    } else {
-        Write-ColorOutput "Erreur lors du transfert rsync" "Red"
-        exit 1
-    }
+    $rsyncOk = ($LASTEXITCODE -eq 0)
 } catch {
-    Write-ColorOutput "rsync non trouve, utilisation de scp..." "Yellow"
-    # Alternative avec scp (moins efficace mais fonctionne)
-    # Transfère tous les fichiers HTML et le dossier assets
-    Get-ChildItem -Path $DIST_DIR -Filter *.html | ForEach-Object {
+    Write-ColorOutput "rsync non disponible: $_" "Yellow"
+}
+
+if (-not $rsyncOk) {
+    Write-ColorOutput "Fallback scp (transfert complet, peut etre long)..." "Yellow"
+    Get-ChildItem -Path $DIST_DIR -Filter *.html -File | ForEach-Object {
         Write-Host "  Transfert: $($_.Name)"
         scp $_.FullName "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
-    
-    # Transfère robots.txt et sitemap.xml
-    foreach ($file in @("robots.txt", "sitemap.xml")) {
+    foreach ($file in @("robots.txt", "sitemap.xml", "sitemap-pages.xml")) {
         $filePath = Join-Path $DIST_DIR $file
         if (Test-Path $filePath) {
             Write-Host "  Transfert: $file"
             scp $filePath "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
         }
     }
-    
-    # Transfère le dossier assets
     if (Test-Path "$DIST_DIR/assets") {
         Write-Host "  Transfert: assets/ (peut prendre du temps...)"
         scp -r "$DIST_DIR/assets" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
-
-    # Transfère le dossier api (formulaire contact PHP)
     if (Test-Path "$DIST_DIR/api") {
         Write-Host "  Transfert: api/"
         scp -r "$DIST_DIR/api" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
-    
+    if (Test-Path "$DIST_DIR/blog") {
+        Write-Host "  Transfert: blog/"
+        scp -r "$DIST_DIR/blog" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
+    }
     Write-ColorOutput "Transfert scp termine" "Green"
+} else {
+    Write-ColorOutput "Transfert rsync reussi" "Green"
 }
+
+# 3.2 Verifier que le blog a bien ete deploye
+$blogCheckCmd = "test -f $SERVER_PATH/blog/index.html && echo 'OK: blog deploye' || echo 'ATTENTION: blog/index.html manquant'"
+$blogCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $blogCheckCmd
+Write-Host $blogCheck
 
 # 3.5 Vérification rapide des images hero sur le serveur
 Write-ColorOutput "[Check] Verification des images du hero (assets/images/hero)..." "Yellow"

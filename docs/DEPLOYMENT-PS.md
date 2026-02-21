@@ -13,7 +13,7 @@ cd V6
 .\scripts\deploy.ps1 -Domain "danielcraft.fr"
 ```
 
-Transfère tout depuis `dist/` (HTML, assets, **api/**), applique les permissions, copie la config nginx (avec le bloc PHP pour le formulaire de contact) et recharge nginx. À faire au moins une fois, puis après chaque modification de `scripts/nginx.conf`.
+Lance le build Python (pages + blog + sitemaps), transfère tout depuis `dist/` (HTML, assets, **api/**, **blog/**), applique les permissions, copie la config nginx et recharge nginx. À faire au moins une fois, puis après chaque modification de `scripts/nginx.conf`.
 
 ### Déploiement contenu uniquement (rapide)
 
@@ -22,7 +22,7 @@ cd V6
 .\scripts\deploy-content.ps1
 ```
 
-Lance le build Python puis transfère uniquement le contenu de `dist/` (HTML, assets, **api/**). Ne modifie pas nginx. Idéal pour les mises à jour fréquentes (textes, CSS, JS, formulaire PHP).
+Lance le build Python puis transfère le contenu de `dist/` (HTML, assets, **api/**, **blog/**). Ne modifie pas nginx. Idéal pour les mises à jour fréquentes (textes, CSS, JS, articles du blog).
 
 ### Formulaire de contact (PHP)
 
@@ -103,9 +103,13 @@ Site disponible sur: https://danielcraft.fr
 ### Erreur "ssh : commande introuvable"
 - Installer OpenSSH : `Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0`
 
+### Erreur rsync (connexion fermée, code 12)
+- `deploy.ps1` utilise un timeout (300s) et un keepalive SSH pour limiter les coupures. En cas d'échec, un **fallback scp** transfère tout (dont `blog/`) automatiquement.
+- Si le transfert échoue souvent : vérifier la connexion réseau, ou laisser le fallback scp terminer (plus long mais fiable).
+
 ### Erreur "rsync : commande introuvable"
-- Le script utilise automatiquement `scp` en fallback
-- Pour installer rsync : utiliser WSL ou installer via Chocolatey
+- Le script utilise automatiquement `scp` en fallback (dont le dossier blog).
+- Pour installer rsync : utiliser WSL ou installer via Chocolatey.
 
 ### Erreur de permissions
 - Vérifier que le certificat SSH est bien configuré

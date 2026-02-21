@@ -1,5 +1,20 @@
-<!-- Schema.org JSON-LD pour la page d'accueil -->
+<!-- Schema.org JSON-LD pour la page d'accueil (optimise RDF/SEO) -->
 {% if schema_type == 'home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DanielCraft",
+  "url": "https://danielcraft.fr",
+  "inLanguage": "fr-FR",
+  "publisher": { "@type": "Organization", "name": "DanielCraft", "url": "https://danielcraft.fr" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": { "@type": "EntryPoint", "urlTemplate": "https://danielcraft.fr/blog?q={search_term_string}" },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -7,6 +22,7 @@
   "name": "Loïc DANIEL",
   "jobTitle": "Développeur Full-Stack TypeScript, Python & PHP | IA & Data",
   "url": "https://danielcraft.fr",
+  "inLanguage": "fr-FR",
   "sameAs": [
     "https://linkedin.com/in/loicdaniel",
     "https://github.com/danielcraft57"
@@ -51,6 +67,7 @@
   "image": "https://danielcraft.fr/assets/images/og/home-1200x630.jpg",
   "@id": "https://danielcraft.fr",
   "url": "https://danielcraft.fr",
+  "inLanguage": "fr-FR",
   "telephone": "+33387780916",
   "email": "contact@danielcraft.fr",
   "address": {
@@ -90,6 +107,7 @@
   "@type": "ProfessionalService",
   "name": "DanielCraft - Développement Web, IA & Data",
   "description": "Services de développement web, mobile et logiciels en TypeScript, Python & PHP. Sites vitrines performants, automatisation, APIs, analyse de données, IA, machine learning, deep learning, optimisation et audit de performances.",
+  "inLanguage": "fr-FR",
   "provider": {
     "@type": "Person",
     "name": "Loïc DANIEL"

@@ -1,0 +1,16 @@
+{
+  "id": "marketing-digital-serie",
+  "title": "Série Marketing Digital - Visibilité et conversion en ligne",
+  "description": "Articles sur le marketing digital : stratégie, réseaux sociaux, email, contenu, analytics et conversion. Développer ta présence et tes ventes en ligne.",
+  "slug": "marketing-digital-serie",
+  "articles": [
+    "marketing-digital-strategie-visibilite",
+    "marketing-reseaux-sociaux-strategie",
+    "marketing-email-nurturing-conversion",
+    "marketing-contenu-inbound",
+    "marketing-analytics-pilotage",
+    "marketing-conversion-optimisation",
+    "marketing-automatisation-outils",
+    "marketing-budget-roi-priorisation"
+  ]
+}
