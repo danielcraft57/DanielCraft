@@ -96,10 +96,10 @@ function renderProjects(filters = {}) {
                     </div>
                 </div>
 
-                <button type="button" class="project-details-btn" onclick="typeof showProjectDetails === 'function' && showProjectDetails('${project.id}')" aria-label="Voir les details du projet">
+                <a href="/projets/${project.id}" class="project-details-btn" aria-label="Voir la page du projet ${project.title}">
                     <i class="fas fa-eye" aria-hidden="true"></i>
                     Voir les details
-                </button>
+                </a>
                 
                 ${project.featured ? '<div class="featured-badge">Projet phare</div>' : ''}
             </div>

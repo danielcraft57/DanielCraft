@@ -118,6 +118,10 @@ if (-not $rsyncOk) {
         Write-Host "  Transfert: blog/"
         scp -r "$DIST_DIR/blog" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
+    if (Test-Path "$DIST_DIR/projets") {
+        Write-Host "  Transfert: projets/"
+        scp -r "$DIST_DIR/projets" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
+    }
     Write-ColorOutput "Transfert scp termine" "Green"
 } else {
     Write-ColorOutput "Transfert rsync reussi" "Green"
@@ -127,6 +131,11 @@ if (-not $rsyncOk) {
 $blogCheckCmd = "test -f $SERVER_PATH/blog/index.html && echo 'OK: blog deploye' || echo 'ATTENTION: blog/index.html manquant'"
 $blogCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $blogCheckCmd
 Write-Host $blogCheck
+
+# 3.3 Verifier que les pages projet sont deployees
+$projetsCheckCmd = 'test -d ' + $SERVER_PATH + '/projets && (n=$(ls -1 ' + $SERVER_PATH + '/projets/*.html 2>/dev/null | wc -l); echo "OK: projets deploye ($n pages)") || echo ''ATTENTION: projets/ manquant'''
+$projetsCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $projetsCheckCmd
+Write-Host $projetsCheck
 
 # 3.5 Vérification rapide des images hero sur le serveur
 Write-ColorOutput "[Check] Verification des images du hero (assets/images/hero)..." "Yellow"

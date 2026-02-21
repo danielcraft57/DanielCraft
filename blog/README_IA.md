@@ -18,7 +18,7 @@ blog/
 ## Creer un article
 
 1. Cree un fichier `.md` dans `content/articles/`
-2. Nom du fichier = slug de l'URL (ex: `mon-super-article.md` -> `/blog/articles/mon-super-article.html`)
+2. Nom du fichier = slug de l'URL (ex: `mon-super-article.md` -> URL `/blog/articles/mon-super-article`, fichier `mon-super-article.html`)
 3. Format avec front matter YAML :
 
 ```markdown

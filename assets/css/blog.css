@@ -3,16 +3,21 @@
  * Articles, index, collections - reutilise les variables de main.css
  */
 
-/* ---- Page article ---- */
+/* ---- Page article (meme largeur contenu que pages projet) ---- */
 .blog-article-section {
   padding-top: 6rem;
   min-height: 60vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .blog-article {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem var(--space-4);
+  box-sizing: border-box;
 }
 
 .back-link {
@@ -124,16 +129,21 @@
   max-width: 100%;
 }
 
-/* ---- Page index blog ---- */
+/* ---- Page index blog (container = meme largeur que site) ---- */
 .blog-page-section {
   padding-top: 6rem;
   min-height: 70vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .blog-page {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem var(--space-4);
+  box-sizing: border-box;
 }
 
 .blog-header {

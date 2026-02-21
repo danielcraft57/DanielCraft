@@ -168,3 +168,21 @@
 </script>
 {% endif %}
 
+{% if schema_type == 'project' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "{{project_title}}",
+  "description": "{{project_description}}",
+  "inLanguage": "fr-FR",
+  "url": "{{page_url}}",
+  "codeRepository": "{{project_github_url}}",
+  "programmingLanguage": "{{project_language}}",
+  "author": { "@type": "Person", "name": "Loïc DANIEL", "url": "https://danielcraft.fr" },
+  "copyrightYear": "{{project_year}}",
+  "license": "{{project_licence}}"
+}
+</script>
+{% endif %}
+

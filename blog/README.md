@@ -34,8 +34,8 @@ Les images de partage social (1200x630) sont dans `assets/images/og/`. Prompts d
 ## URLs generees
 
 - Index : `/blog/` (fichier `blog/index.html`)
-- Article : `/blog/articles/<slug>.html`
-- Serie : `/blog/series/<slug>.html`
+- Article : `/blog/articles/<slug>` (fichier `blog/articles/<slug>.html`)
+- Serie : `/blog/series/<slug>` (fichier `blog/series/<slug>.html`)
 - Sitemap blog : `/blog/sitemap-blog.xml`
 
 ## Documentation

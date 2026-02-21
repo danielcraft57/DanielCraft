@@ -13,6 +13,7 @@ Usage:
     python3 build.py index        # Build une page spécifique
 """
 
+import html
 import os
 import re
 import sys
@@ -28,9 +29,16 @@ SRC_DIR = BASE_DIR / 'src'
 INCLUDES_DIR = SRC_DIR / 'includes'
 TEMPLATES_DIR = SRC_DIR / 'templates'
 PAGES_DIR = SRC_DIR / 'pages'
+DATA_DIR = SRC_DIR / 'data'
+PROJECTS_JSON = DATA_DIR / 'projects.json'
+READMES_DIR = DATA_DIR / 'readmes'
 # Dossier de sortie par défaut : dist/ (peut être modifié via --output)
 OUTPUT_DIR = BASE_DIR / 'dist'
 SITE_BASE = 'https://danielcraft.fr'
+
+# Libelles categories et statuts (pages projet)
+CATEGORY_LABELS = {'web': 'Web', 'tools': 'Outils', 'mobile': 'Mobile', 'iot': 'IoT', 'specialized': 'Specialise', 'learning': 'Apprentissage', 'desktop': 'Desktop'}
+STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 
 # Pages statiques pour le sitemap (path, changefreq, priority)
 SITEMAP_PAGES = [
@@ -192,6 +200,239 @@ def load_page_config(page_name: str) -> Dict:
     return {}
 
 
+def load_projects() -> List[Dict]:
+    """Charge la liste des projets depuis src/data/projects.json. Lance le script de gen si absent."""
+    if not PROJECTS_JSON.exists():
+        script = BASE_DIR / 'scripts' / 'build_projects_data.py'
+        if script.exists():
+            try:
+                import subprocess
+                subprocess.run(
+                    [sys.executable, str(script)],
+                    cwd=str(BASE_DIR),
+                    capture_output=True,
+                    timeout=30,
+                    check=True
+                )
+            except Exception as e:
+                print(f"[WARN] Gen projects.json : {e}")
+        if not PROJECTS_JSON.exists():
+            return []
+    with open(PROJECTS_JSON, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def _markdown_to_html_fallback(raw: str) -> str:
+    """Conversion Markdown -> HTML sans dependance externe (fallback si 'markdown' absent)."""
+    out = raw
+    # Fenced code blocks (```...``` ou ```lang...```)
+    def _code_block(m):
+        lang = (m.group(1) or '').strip()
+        code = html.escape(m.group(2))
+        cls = f' class="language-{lang}"' if lang else ''
+        return f'<pre><code{cls}>{code}</code></pre>'
+    out = re.sub(r'```(\w*)\n(.*?)```', _code_block, out, flags=re.DOTALL)
+    # Inline code (echappe le HTML dans le code)
+    out = re.sub(r'`([^`]+)`', lambda m: '<code>' + html.escape(m.group(1)) + '</code>', out)
+    # Liens [text](url)
+    out = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>', out)
+    # Gras **...**
+    out = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', out)
+    out = re.sub(r'__([^_]+)__', r'<strong>\1</strong>', out)
+    # Italique *...*
+    out = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', out)
+    out = re.sub(r'_([^_]+)_', r'<em>\1</em>', out)
+    # Titres (h6 -> h1 pour garder l'ordre)
+    for i in range(6, 0, -1):
+        prefix = '#' * i
+        out = re.sub(r'^' + prefix + r'\s+(.+)$', f'<h{i}>\\1</h{i}>', out, flags=re.MULTILINE)
+    # Ligne horizontale
+    out = re.sub(r'^---+$', '<hr>', out, flags=re.MULTILINE)
+    out = re.sub(r'^\*\*\*+$', '<hr>', out, flags=re.MULTILINE)
+    # Blockquote > ...
+    lines = out.split('\n')
+    result = []
+    in_blockquote = False
+    for line in lines:
+        if line.strip().startswith('>'):
+            content = line.lstrip('> ').strip()
+            if not in_blockquote:
+                result.append('<blockquote>')
+                in_blockquote = True
+            result.append(content + ' ')
+        else:
+            if in_blockquote:
+                result.append('</blockquote>')
+                in_blockquote = False
+            result.append(line)
+    if in_blockquote:
+        result.append('</blockquote>')
+    out = '\n'.join(result)
+    # Listes non ordonnees (- ou *)
+    out = re.sub(r'^[\*\-]\s+(.+)$', r'<li>\1</li>', out, flags=re.MULTILINE)
+    out = re.sub(r'(<li>.*?</li>\n?)+', lambda m: '<ul>' + m.group(0) + '</ul>', out, flags=re.DOTALL)
+    # Listes ordonnees 1. ...
+    out = re.sub(r'^\d+\.\s+(.+)$', r'<li>\1</li>', out, flags=re.MULTILINE)
+    # Paragraphes: blocs de lignes non vides entoures de <p> si pas deja une balise block
+    parts = re.split(r'\n\s*\n', out)
+    final = []
+    for p in parts:
+        p = p.strip()
+        if not p:
+            final.append(p)
+            continue
+        if p.startswith('<') and re.match(r'^<(?:h[1-6]|ul|ol|pre|blockquote|hr|table|p)', p):
+            final.append(p)
+        else:
+            if not p.startswith('<'):
+                p = '<p>' + p + '</p>'
+            final.append(p)
+    out = '\n'.join(final)
+    return out
+
+
+def _readme_to_html(slug: str) -> str:
+    """Convertit le README Markdown en HTML si le fichier existe. Retourne une chaine vide sinon."""
+    path = READMES_DIR / f'{slug}.md'
+    if not path.exists():
+        path_legacy = READMES_DIR / f'{slug}-l57.md'
+        path = path_legacy if path_legacy.exists() else path
+    if not path.exists():
+        return ''
+    try:
+        raw = path.read_text(encoding='utf-8')
+    except Exception:
+        return ''
+    try:
+        import markdown
+        html_out = markdown.markdown(
+            raw,
+            extensions=['fenced_code', 'tables', 'nl2br', 'sane_lists'],
+            extension_configs={'fenced_code': {}}
+        )
+        return html_out or ''
+    except ImportError:
+        return _markdown_to_html_fallback(raw)
+    except Exception:
+        return _markdown_to_html_fallback(raw)
+
+
+def _project_prev_next_html(projects: List[dict], current_slug: str) -> str:
+    """Genere le bloc HTML projet precedent / suivant (ordre de la liste)."""
+    idx = next((i for i, pr in enumerate(projects) if (pr.get('slug') or pr.get('id', '')) == current_slug), -1)
+    if idx < 0:
+        return ''
+    prev_p = projects[idx - 1] if idx > 0 else None
+    next_p = projects[idx + 1] if idx < len(projects) - 1 else None
+    parts = ['<div class="prev-next-links">']
+    if prev_p:
+        s = prev_p.get('slug') or prev_p.get('id', '')
+        t = prev_p.get('title', s)
+        parts.append(f'<a href="/projets/{s}" class="prev-next-link prev-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> {t}</a>')
+    else:
+        parts.append('<span class="prev-next-link prev-link empty"></span>')
+    if next_p:
+        s = next_p.get('slug') or next_p.get('id', '')
+        t = next_p.get('title', s)
+        parts.append(f'<a href="/projets/{s}" class="prev-next-link next-link">{t} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>')
+    else:
+        parts.append('<span class="prev-next-link next-link empty"></span>')
+    parts.append('</div>')
+    return '\n'.join(parts)
+
+
+def _project_recommendations_html(projects: List[dict], current_project: dict, max_n: int = 4) -> str:
+    """Genere le bloc HTML des projets recommandes (meme categorie en priorite, puis autres)."""
+    current_slug = current_project.get('slug') or current_project.get('id', '')
+    category = current_project.get('category', '')
+    same_cat = [pr for pr in projects if (pr.get('slug') or pr.get('id', '')) != current_slug and (pr.get('category') or '') == category]
+    others = [pr for pr in projects if (pr.get('slug') or pr.get('id', '')) != current_slug and pr not in same_cat]
+    recommended = same_cat[:max_n] + [pr for pr in others if pr not in same_cat][:max_n - len(same_cat)]
+    recommended = recommended[:max_n]
+    if not recommended:
+        return ''
+    lines = ['<h2 class="projet-recommendations-title">Projets suggeres</h2>', '<div class="projet-recommendations-grid">']
+    for pr in recommended:
+        s = pr.get('slug') or pr.get('id', '')
+        title = pr.get('title', s)
+        desc = (pr.get('description') or '')[:120] + ('...' if len(pr.get('description') or '') > 120 else '')
+        cat_label = CATEGORY_LABELS.get(pr.get('category', ''), pr.get('category', 'Projet'))
+        lines.append(f'''<a href="/projets/{s}" class="projet-card">
+            <span class="projet-card-type">{cat_label}</span>
+            <h3 class="projet-card-title">{title}</h3>
+            <p class="projet-card-excerpt">{desc}</p>
+        </a>''')
+    lines.append('</div>')
+    return '\n'.join(lines)
+
+
+def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
+    """Genere les pages HTML pour chaque projet dans output_dir/projets/. Retourne la liste des slugs."""
+    projects = load_projects()
+    if not projects:
+        print("[WARN] Aucun projet dans projects.json - pages projet non generees")
+        return []
+    out_projets = output_dir / 'projets'
+    out_projets.mkdir(parents=True, exist_ok=True)
+    template_path = TEMPLATES_DIR / 'base.html'
+    content_path = PAGES_DIR / 'projet.html'
+    if not content_path.exists():
+        print("[WARN] src/pages/projet.html manquant")
+        return []
+    content_tpl = content_path.read_text(encoding='utf-8')
+    slugs = []
+    for p in projects:
+        slug = p.get('slug') or p.get('id', '')
+        if not slug:
+            continue
+        techs = p.get('technologies') or []
+        tech_html = ''.join(f'<span class="tech-tag">{t}</span>' for t in techs)
+        img_url = p.get('imageUrl') or ''
+        if img_url and not img_url.startswith('http'):
+            img_url = SITE_BASE + '/' + img_url
+        readme_html = _readme_to_html(slug)
+        prev_next_html = _project_prev_next_html(projects, slug)
+        recommendations_html = _project_recommendations_html(projects, p)
+        vars_dict = DEFAULT_VARS.copy()
+        vars_dict.update({
+            'current_page': 'projet',
+            'page_title': f"{p.get('title', slug)} - Projets | DanielCraft",
+            'page_description': (p.get('description') or '')[:160],
+            'page_keywords': ', '.join(techs[:5]) if techs else 'projet, open source',
+            'page_url': f"{SITE_BASE}/projets/{slug}",
+            'og_image': img_url or DEFAULT_VARS['og_image'],
+            'og_type': 'website',
+            'schema_type': 'project',
+            'page_content': '',  # sera remplace par le rendu du fragment
+            'project_title': p.get('title', slug),
+            'project_description': p.get('description') or '',
+            'project_category_label': CATEGORY_LABELS.get(p.get('category', ''), p.get('category', 'Projet')),
+            'project_technologies_html': tech_html,
+            'project_year': p.get('year', ''),
+            'project_account': p.get('account', ''),
+            'project_licence': p.get('licence') or '',
+            'project_status': p.get('status', ''),
+            'project_status_label': STATUS_LABELS.get(p.get('status', ''), p.get('status', '')),
+            'project_image_url': '/' + p.get('imageUrl', '') if p.get('imageUrl') and not p.get('imageUrl', '').startswith('http') else (p.get('imageUrl') or ''),
+            'project_github_url': p.get('github_url') or '',
+            'project_stars': p.get('stars', 0),
+            'project_forks': p.get('forks', 0),
+            'project_language': p.get('language') or '',
+            'project_readme_html': readme_html,
+            'project_prev_next_html': prev_next_html,
+            'project_recommendations_html': recommendations_html,
+        })
+        content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
+        content_rendered = template_engine.process_includes(content_rendered, vars_dict)
+        vars_dict['page_content'] = content_rendered
+        vars_dict['page_scripts_content'] = '<script src="/assets/js/main.js" defer></script>\n<link rel="preload" href="/assets/js/main.js" as="script">'
+        html_output = template_engine.render(template_path, vars_dict)
+        (out_projets / f'{slug}.html').write_text(html_output, encoding='utf-8')
+        slugs.append(slug)
+    print(f"[OK] {len(slugs)} page(s) projet genere(s) dans {out_projets}")
+    return slugs
+
+
 def build_page(page_name: str, template_engine: TemplateEngine):
     """Build une page HTML."""
     # Charge la config de la page
@@ -287,8 +528,8 @@ def generate_webp_variants(assets_root: Path) -> None:
         print(f"[OK] {generated} image(s) WebP generee(s) dans {assets_root}")
 
 
-def generate_sitemap_pages(output_dir: Path) -> None:
-    """Genere sitemap-pages.xml avec les pages statiques du site."""
+def generate_sitemap_pages(output_dir: Path, project_slugs: Optional[List[str]] = None) -> None:
+    """Genere sitemap-pages.xml avec les pages statiques et les pages projet."""
     lastmod = datetime.now().strftime('%Y-%m-%d')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -301,6 +542,9 @@ def generate_sitemap_pages(output_dir: Path) -> None:
         loc = SITE_BASE + path if path != '/' else SITE_BASE + '/'
         lines.append(f'  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod>'
                      f'<changefreq>{changefreq}</changefreq><priority>{priority}</priority></url>')
+    for slug in (project_slugs or []):
+        lines.append(f'  <url><loc>{SITE_BASE}/projets/{slug}</loc><lastmod>{lastmod}</lastmod>'
+                     '<changefreq>monthly</changefreq><priority>0.5</priority></url>')
     lines.append('</urlset>')
     (output_dir / 'sitemap-pages.xml').write_text('\n'.join(lines), encoding='utf-8')
 
@@ -502,8 +746,11 @@ def main():
         except Exception as e:
             print(f"[WARN] Build blog non execute : {e}")
 
-    # Generation des sitemaps (index + pages statiques)
-    generate_sitemap_pages(OUTPUT_DIR)
+    # Pages projet (projets/<slug>.html)
+    project_slugs = build_project_pages(template_engine, OUTPUT_DIR)
+
+    # Generation des sitemaps (pages statiques + projets)
+    generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs)
     generate_sitemap_index(OUTPUT_DIR)
     print("[OK] sitemap.xml et sitemap-pages.xml generes")
 

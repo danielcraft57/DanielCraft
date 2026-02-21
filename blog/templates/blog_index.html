@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | DanielCraft - Articles et tutoriels</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <meta name="author" content="Loïc DANIEL">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="{{PAGE_URL}}">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN3CKFP14"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4VN3CKFP14');
+    </script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{PAGE_URL}}">
+    <meta property="og:title" content="Blog | DanielCraft - Articles et tutoriels">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:image:secure_url" content="{{OG_IMAGE}}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="DanielCraft">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | DanielCraft - Articles et tutoriels">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/main.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+{{SCHEMA_JSON_LD}}
+</head>
+<body>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ROOT}}/" class="logo-link" aria-label="Retour à l'accueil">
+                    <div class="logo-icon" aria-hidden="true"><span class="logo-text">LD</span></div>
+                    <span class="logo-name">Loïc DANIEL</span>
+                </a>
+            </div>
+            <div class="nav-menu" role="menubar">
+                <a href="{{ROOT}}/#home" class="nav-link">Accueil</a>
+                <a href="{{ROOT}}/#services" class="nav-link">Services</a>
+                <a href="{{ROOT}}/#portfolio" class="nav-link">Portfolio</a>
+                <a href="{{ROOT}}/#about" class="nav-link">À Propos</a>
+                <a href="{{ROOT}}/#contact" class="nav-link">Contact</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Plus <i class="fas fa-chevron-down"></i></button>
+                    <ul class="nav-dropdown-menu" role="menu">
+                        <li><a href="{{ROOT}}/autres-prestations" class="nav-dropdown-link">Autres prestations</a></li>
+                        <li><a href="{{ROOT}}/processus" class="nav-dropdown-link">Processus</a></li>
+                        <li><a href="{{ROOT}}/metz" class="nav-dropdown-link">Metz</a></li>
+                        <li><a href="{{ROOT}}/projets" class="nav-dropdown-link">Projets</a></li>
+                        <li><a href="{{ROOT}}/statistiques" class="nav-dropdown-link">Statistiques</a></li>
+                        <li><a href="{{ROOT}}/blog/" class="nav-dropdown-link active">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button type="button" class="btn btn-primary nav-cta nav-cta-devis" id="navCtaDevis" aria-label="Ouvrir la modale devis gratuit">
+                    <span>Devis gratuit</span><i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="blog-page-section" itemscope itemtype="https://schema.org/Blog">
+        <div class="container blog-page">
+            <header class="blog-header">
+                <span class="section-badge">Blog</span>
+                <h1 class="section-title" itemprop="name">Articles et tutoriels</h1>
+                <p class="section-description" itemprop="description">{{META_DESCRIPTION}}</p>
+            </header>
+
+            {{RECOMMENDATIONS_INDEX}}
+            <section class="blog-all-articles" aria-label="Tous les articles">
+                <h2 class="blog-section-title">Tous les articles</h2>
+                <div class="articles-grid" itemprop="blogPost">
+                    {{ARTICLES_GRID}}
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="{{ASSETS}}/js/main.js" defer></script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Loïc DANIEL - Développeur Full-Stack TypeScript</p>
+                <div class="footer-legal-links">
+                    <a href="{{ROOT}}/mentions-legales">Mentions légales</a>
+                    <span class="separator">•</span>
+                    <a href="{{ROOT}}/politique-confidentialite">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

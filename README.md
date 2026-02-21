@@ -2,11 +2,9 @@
 
 Site web professionnel pour Loïc DANIEL, développeur Full-Stack TypeScript freelance avec plus de 7 ans d'expérience.
 
-## 🚀 Version 1.0.0
-
 Site statique moderne avec système de build Python, optimisé pour le SEO, les performances et l'expérience utilisateur.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 ### Architecture Modulaire
 - **Système de build** : Génération statique avec Python
@@ -25,17 +23,24 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 - **Google Search Console** : Vérification DNS configurée
 - **Meta tags** : Open Graph, Twitter Cards, Schema.org (Person, LocalBusiness, WebSite, BlogPosting)
 - **Sitemaps** : Génération à chaque build (sitemap.xml index, sitemap-pages.xml, blog/sitemap-blog.xml)
-- **URLs propres** : Sans extension .html avec redirections 301 (hors blog)
+- **URLs propres** : Sans extension .html (blog, projets, pages) avec redirections 301
 - **Optimisations** : Preload, defer, DNS prefetch, compression
 
 ### Blog
 - **Blog** (`/blog/`) : articles et tutoriels (GEO, SEO, Marketing digital, Communication)
 - Contenu en Markdown (`blog/content/articles/`), build via `blog/build_blog.py`
+- URLs sans .html : `/blog/articles/<slug>`, `/blog/series/<slug>`
 - Séries : GEO, SEO, Marketing digital, Communication (classique et digitale)
 - Page index avec bloc "À découvrir" et grille de tous les articles
 - Pages article avec lien précédent/suivant et articles recommandés
+- Google Analytics (GA4) sur toutes les pages blog
 - Sitemap blog et JSON-LD optimisés (BlogPosting, BreadcrumbList, CollectionPage)
-- Menu "Plus" fonctionnel sur les pages blog (chargement de main.js)
+
+### Projets
+- **Projets** (`/projets`, `/projets/<slug>`) : pages dédiées par projet, URLs sans .html et sans suffixe -l57
+- Données depuis `src/data/projects.json` (généré par `scripts/build_projects_data.py`)
+- README GitHub téléchargés et affichés en HTML sur chaque page projet
+- Liens projet précédent/suivant et bloc "Projets suggérés" (même catégorie en priorité)
 
 ### Pages Disponibles
 - Accueil avec sections complètes (Hero, Services, Portfolio, À Propos, Contact)
@@ -46,7 +51,7 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 - Statistiques
 - Pages légales (Mentions légales, CGV, CGU, Politique de confidentialité)
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 DanielCraftFr/
@@ -64,7 +69,7 @@ DanielCraftFr/
 └── README.md
 ```
 
-## 🛠️ Installation et Utilisation
+## Installation et Utilisation
 
 ### Prérequis
 - Python 3.7+
@@ -116,7 +121,7 @@ python3 -m http.server 8000 -d dist
 ./scripts/deploy-content.sh
 ```
 
-## 📚 Documentation
+## Documentation
 
 Toute la documentation est disponible dans le dossier `docs/` :
 
@@ -130,14 +135,14 @@ Toute la documentation est disponible dans le dossier `docs/` :
 - **[PERFORMANCE.md](docs/PERFORMANCE.md)** - Optimisations de performance
 - **[CHANGELOG.md](docs/CHANGELOG.md)** - Historique des versions
 
-## 🎯 Quick Start
+## Quick Start
 
 1. **Modifier une page** : Éditer `src/pages/index.html` ou créer une nouvelle page
 2. **Ajouter une variable** : Créer/modifier `src/pages/index.json`
 3. **Build** : `python3 build.py`
 4. **Déployer** : `.\scripts\deploy-content.ps1` (Windows) ou `./scripts/deploy-content.sh` (Linux)
 
-## 🔧 Configuration
+## Configuration
 
 ### Variables d'Environnement
 Les scripts de déploiement utilisent des variables par défaut :
@@ -157,7 +162,7 @@ La configuration Nginx est dans `scripts/nginx.conf`. Elle inclut :
 - Blocage des requêtes suspectes
 - SSL/TLS
 
-## 🚀 Technologies
+## Technologies
 
 - **Frontend** : HTML5, CSS3, JavaScript (ES6+)
 - **Build** : Python 3
@@ -167,11 +172,11 @@ La configuration Nginx est dans `scripts/nginx.conf`. Elle inclut :
 - **Server** : Nginx
 - **Déploiement** : rsync (avec timeout/keepalive), fallback scp si rsync échoue ; blog inclus dans `dist/blog/`
 
-## 📝 License
+## License
 
 © 2025 Loïc DANIEL - Tous droits réservés
 
-## 👤 Auteur
+## Auteur
 
 **Loïc DANIEL**
 - Email : loic5488@gmail.com
@@ -180,13 +185,11 @@ La configuration Nginx est dans `scripts/nginx.conf`. Elle inclut :
 - LinkedIn : [linkedin.com/in/loicdaniel](https://linkedin.com/in/loicdaniel)
 - GitHub : [github.com/likedevGit](https://github.com/likedevGit)
 
-## 🎉 Version 1.0.0
+## Version
 
-Cette version marque la première release stable du site avec :
+Voir [CHANGELOG.md](docs/CHANGELOG.md) pour l'historique. Version 1.0.0 : première release stable avec
 - Architecture modulaire complète
 - Système de build fonctionnel
 - SEO et performance optimisés
 - Navigation et footer améliorés
 - Documentation complète
-
-Voir [CHANGELOG.md](docs/CHANGELOG.md) pour plus de détails.

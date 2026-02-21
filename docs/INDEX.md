@@ -65,7 +65,7 @@ DanielCraftFr/
 
 ## Version actuelle
 
-**Version 1.1.0** - Blog enrichi (recommandations, prev/next, menu Plus), sitemaps generes, deploiement avec fallback rsync.
+**Version 1.2.0** - Projets sans -l57, prev/next et suggestions, README GitHub sur pages projet. Blog : liens sans .html, GA4 partout. Doc et menage.
 
-Voir [CHANGELOG.md](./CHANGELOG.md) pour les détails complets.
+Voir [CHANGELOG.md](./CHANGELOG.md) pour les details complets.
 

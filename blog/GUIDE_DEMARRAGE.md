@@ -42,7 +42,7 @@ python3 update_blog_index.py
 
 ### 4. Vérifier que ça marche
 
-Ouvre `https://danielcraft.fr/blog/blog.html` dans ton navigateur.
+Ouvre `https://danielcraft.fr/blog/` dans ton navigateur.
 
 ## Automatisation quotidienne
 

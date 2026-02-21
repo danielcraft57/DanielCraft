@@ -1,0 +1,82 @@
+<section class="section page-projet-detail" aria-label="Détail du projet">
+    <div class="container">
+
+        <article class="projet-article">
+            <header class="projet-header">
+                <span class="section-badge">{{project_category_label}}</span>
+                <h1 class="section-title">{{project_title}}</h1>
+                <div class="projet-meta-inline">
+                    <span class="meta-item"><i class="fas fa-calendar" aria-hidden="true"></i> {{project_year}}</span>
+                    <span class="meta-item"><i class="fas fa-user" aria-hidden="true"></i> {{project_account}}</span>
+                    {% if project_licence %}
+                    <span class="meta-item licence-badge">{{project_licence}}</span>
+                    {% endif %}
+                    {% if project_status %}
+                    <span class="status-badge {{project_status}}">{{project_status_label}}</span>
+                    {% endif %}
+                </div>
+            </header>
+
+            {% if project_image_url %}
+            <figure class="projet-figure">
+                <img src="{{project_image_url}}" alt="{{project_title}}" loading="eager" width="800" height="450" class="projet-hero-img">
+            </figure>
+            {% endif %}
+
+            <div class="projet-body">
+                <p class="projet-description">{{project_description}}</p>
+
+                {% if project_technologies_html %}
+                <div class="projet-tech">
+                    <h2 class="projet-h2">Technologies</h2>
+                    <div class="tech-tags">{{project_technologies_html}}</div>
+                </div>
+                {% endif %}
+
+                {% if project_readme_html %}
+                <div class="projet-readme-wrap" id="documentation-projet">
+                    <h2 class="projet-readme-title">
+                        <span class="projet-readme-title-icon" aria-hidden="true"></span>
+                        Documentation du projet
+                    </h2>
+                    <div class="projet-readme prose">{{project_readme_html}}</div>
+                </div>
+                {% endif %}
+
+                {% if project_github_url %}
+                <div class="projet-github-box">
+                    <h2 class="projet-h2">Code source</h2>
+                    <p>Projet open source hébergé sur GitHub.</p>
+                    <ul class="projet-github-stats">
+                        <li><i class="fas fa-star" aria-hidden="true"></i> <strong>{{project_stars}}</strong> étoiles</li>
+                        <li><i class="fas fa-code-branch" aria-hidden="true"></i> <strong>{{project_forks}}</strong> forks</li>
+                        {% if project_language %}
+                        <li><i class="fas fa-code" aria-hidden="true"></i> {{project_language}}</li>
+                        {% endif %}
+                    </ul>
+                    <a href="{{project_github_url}}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fab fa-github" aria-hidden="true"></i> Voir le dépôt GitHub
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+            <nav class="projet-prev-next" aria-label="Projet precedent et suivant">
+                {{project_prev_next_html}}
+            </nav>
+            {% if project_recommendations_html %}
+            <section class="projet-recommendations" aria-label="Projets suggeres">
+                {{project_recommendations_html}}
+            </section>
+            {% endif %}
+        </article>
+
+        <nav class="legal-page-links" style="margin-top: 2rem;" aria-label="Navigation">
+            <a href="/projets">Retour aux projets</a>
+            <span class="separator">·</span>
+            <a href="/">Accueil</a>
+            <span class="separator">·</span>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </div>
+</section>

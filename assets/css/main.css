@@ -34,6 +34,9 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-20: 5rem;
+
+  /* Largeur contenu (articles, pages projet) - meme partout, responsive */
+  --content-max-width: 56rem;
   
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -1679,6 +1682,7 @@ section {
   border-radius: 8px;
   cursor: pointer;
   transition: all var(--transition);
+  text-decoration: none;
 }
 .project-details-btn:hover {
   background: var(--primary-color);
@@ -1722,6 +1726,410 @@ section {
   text-align: center;
   padding: var(--space-12);
   color: var(--gray-600);
+}
+
+/* Page detail projet (projets/<slug>.html) - meme largeur que blog, centree */
+.page-projet-detail .container {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+.page-projet-detail .breadcrumb {
+  margin-bottom: var(--space-6);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+.page-projet-detail .breadcrumb .separator {
+  margin: 0 var(--space-2);
+  color: var(--gray-400);
+}
+.page-projet-detail .breadcrumb a:hover {
+  color: var(--primary-color);
+}
+.projet-article {
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.projet-header .projet-meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+.projet-figure {
+  margin: var(--space-6) 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.projet-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.projet-body .projet-description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.projet-h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: var(--space-6) 0 var(--space-3);
+  color: var(--gray-800);
+}
+.projet-body .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.projet-github-box {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background: var(--gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+}
+.projet-github-stats {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.projet-github-stats li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.projet-github-stats i {
+  color: var(--primary-color);
+}
+
+/* Projet : precedent / suivant (comme blog) */
+.projet-prev-next {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--gray-200);
+}
+.projet-prev-next .prev-next-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+.projet-prev-next .prev-next-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--gray-700);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  transition: border-color 0.2s, background 0.2s;
+}
+.projet-prev-next .prev-next-link:hover {
+  border-color: var(--primary-color);
+  background: var(--gray-50);
+  color: var(--primary-color);
+}
+.projet-prev-next .prev-next-link.next-link {
+  text-align: right;
+}
+.projet-prev-next .prev-next-link.empty {
+  border-color: transparent;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Projet : suggestions (projets recommandes) */
+.projet-recommendations {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--gray-200);
+}
+.projet-recommendations-title {
+  font-size: 1.25rem;
+  color: var(--gray-800);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
+}
+.projet-recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+.projet-card {
+  display: block;
+  padding: var(--space-4);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.projet-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+.projet-card-type {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.projet-card-title {
+  font-size: 1.1rem;
+  margin: 0.35rem 0 0.5rem;
+  color: var(--gray-800);
+  line-height: 1.35;
+}
+.projet-card-excerpt {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Bloc README (documentation projet) - style carte, UX lisible */
+.projet-readme-wrap {
+  margin-top: var(--space-8);
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  border-top: 3px solid var(--primary-color);
+  scroll-margin-top: 2rem;
+}
+.projet-readme-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-5);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.02em;
+}
+.projet-readme-title-icon {
+  display: inline-block;
+  width: 4px;
+  height: 1.25em;
+  background: var(--primary-color);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.projet-readme.prose {
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.8;
+  color: var(--gray-700);
+  font-size: 0.9375rem;
+}
+/* Premier titre du README = accroche visuelle */
+.projet-readme.prose h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: var(--gray-900);
+  letter-spacing: -0.02em;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+.projet-readme.prose h1:first-child { margin-top: 0; }
+/* Sections (h2) = blocs bien separes */
+.projet-readme.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--gray-800);
+  padding-top: 0.25rem;
+}
+.projet-readme.prose h2:first-child { margin-top: 0; }
+.projet-readme.prose h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--gray-800);
+}
+.projet-readme.prose h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--gray-700);
+}
+.projet-readme.prose p {
+  margin-bottom: 1.25rem;
+}
+/* Listes plus aerées, puces visibles */
+.projet-readme.prose ul {
+  margin: 0.75rem 0 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+.projet-readme.prose ul li::marker {
+  color: var(--primary-color);
+}
+.projet-readme.prose ol {
+  margin: 0.75rem 0 1.25rem;
+  padding-left: 1.75rem;
+  list-style-type: decimal;
+}
+.projet-readme.prose ol li::marker {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+.projet-readme.prose li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+.projet-readme.prose li > ul,
+.projet-readme.prose li > ol {
+  margin: 0.5rem 0 0.25rem;
+}
+/* Code inline */
+.projet-readme.prose code {
+  background: var(--gray-100);
+  color: var(--gray-800);
+  padding: 0.2em 0.5em;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  font-weight: 500;
+  border: 1px solid var(--gray-200);
+}
+/* Blocs code = zone sombre, accent rouge */
+.projet-readme.prose pre {
+  background: var(--gray-800);
+  color: var(--gray-100);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 10px 10px 0;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border-left: 4px solid var(--primary-color);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.projet-readme.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-weight: 400;
+  border: none;
+}
+/* Tableaux avec scroll horizontal sur mobile */
+.projet-readme.prose table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: block;
+  overflow-x: auto;
+}
+.projet-readme.prose th,
+.projet-readme.prose td {
+  border: 1px solid var(--gray-200);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: var(--white);
+}
+.projet-readme.prose th {
+  background: var(--gray-100);
+  font-weight: 600;
+  color: var(--gray-800);
+}
+.projet-readme.prose table tr:nth-child(even) td {
+  background: var(--gray-50);
+}
+.projet-readme.prose table tr:hover td {
+  background: var(--gray-100);
+}
+/* Liens + focus accessibilité */
+.projet-readme.prose a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.projet-readme.prose a:hover {
+  color: var(--primary-dark);
+  border-bottom-color: var(--primary-dark);
+}
+.projet-readme.prose a:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Citations */
+.projet-readme.prose blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: 0.75rem 0 0.75rem 1.25rem;
+  margin: 1.25rem 0;
+  color: var(--gray-600);
+  background: var(--gray-50);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+.projet-readme.prose hr {
+  border: none;
+  height: 1px;
+  background: var(--gray-200);
+  margin: 2rem 0;
+}
+/* Images dans le README */
+.projet-readme.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  margin: 1rem 0;
+  display: block;
+}
+@media (max-width: 768px) {
+  .projet-readme-wrap {
+    padding: var(--space-4);
+    border-top-width: 4px;
+  }
+  .projet-readme-title {
+    font-size: 1.125rem;
+  }
+  .projet-readme.prose {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .projet-readme.prose pre {
+    padding: 1rem;
+    font-size: 0.8125rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .projet-readme.prose table {
+    font-size: 0.8125rem;
+  }
+  .projet-prev-next .prev-next-links {
+    grid-template-columns: 1fr;
+  }
+  .projet-prev-next .prev-next-link.next-link {
+    text-align: left;
+  }
+  .projet-recommendations-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== TECHNOLOGIES SECTION ===== */

@@ -167,7 +167,7 @@ def _get_article_og_image(article: dict) -> str:
 
 def _schema_article(article: dict) -> str:
     """Genere le JSON-LD schema.org BlogPosting pour un article (optimise RDF/SEO)."""
-    url = f"{SITE_BASE}/blog/articles/{article['slug']}.html"
+    url = f"{SITE_BASE}/blog/articles/{article['slug']}"
     schema = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -226,7 +226,7 @@ def _schema_blog_index(articles: list[dict]) -> str:
     if articles:
         schema['numberOfPosts'] = len(articles)
         schema['blogPost'] = [
-            {'@type': 'BlogPosting', 'url': f'{SITE_BASE}/blog/articles/{a["slug"]}.html', 'headline': a['title']}
+            {'@type': 'BlogPosting', 'url': f'{SITE_BASE}/blog/articles/{a["slug"]}', 'headline': a['title']}
             for a in articles[:50]
         ]
     breadcrumb = {
@@ -242,7 +242,7 @@ def _schema_blog_index(articles: list[dict]) -> str:
 
 def _schema_collection(collection: dict, items: list) -> str:
     """Genere le JSON-LD schema.org CollectionPage pour une serie (optimise RDF/SEO)."""
-    url = f"{SITE_BASE}/blog/series/{collection.get('slug', collection.get('id', ''))}.html"
+    url = f"{SITE_BASE}/blog/series/{collection.get('slug', collection.get('id', ''))}"
     schema = {
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
@@ -256,7 +256,7 @@ def _schema_collection(collection: dict, items: list) -> str:
             '@type': 'ItemList',
             'numberOfItems': len(items),
             'itemListElement': [
-                {'@type': 'ListItem', 'position': i + 1, 'url': f'{SITE_BASE}/blog/articles/{a["slug"]}.html', 'name': a['title']}
+                {'@type': 'ListItem', 'position': i + 1, 'url': f'{SITE_BASE}/blog/articles/{a["slug"]}', 'name': a['title']}
                 for i, a in enumerate(items[:100])
             ]
         }
@@ -312,7 +312,7 @@ def _recommendations_index_html(articles: list[dict], collections: list[dict]) -
         except Exception:
             date_fr = date_str
         excerpt = (a.get('excerpt') or '')[:140] + ('...' if len(a.get('excerpt') or '') > 140 else '')
-        lines.append(f'''<a href="articles/{a["slug"]}.html" class="article-card recommendation-featured">
+        lines.append(f'''<a href="articles/{a["slug"]}" class="article-card recommendation-featured">
             <span class="article-type">Article</span>
             <h2>{a["title"]}</h2>
             <div class="article-meta">{date_fr}</div>
@@ -331,11 +331,11 @@ def _prev_next_html(articles: list[dict], current_slug: str) -> str:
     next_a = articles[idx + 1] if idx < len(articles) - 1 else None
     parts = ['<div class="prev-next-links">']
     if prev_a:
-        parts.append(f'<a href="{prev_a["slug"]}.html" class="prev-next-link prev-link"><i class="fas fa-arrow-left"></i> {prev_a["title"]}</a>')
+        parts.append(f'<a href="{prev_a["slug"]}" class="prev-next-link prev-link"><i class="fas fa-arrow-left"></i> {prev_a["title"]}</a>')
     else:
         parts.append('<span class="prev-next-link prev-link empty"></span>')
     if next_a:
-        parts.append(f'<a href="{next_a["slug"]}.html" class="prev-next-link next-link">{next_a["title"]} <i class="fas fa-arrow-right"></i></a>')
+        parts.append(f'<a href="{next_a["slug"]}" class="prev-next-link next-link">{next_a["title"]} <i class="fas fa-arrow-right"></i></a>')
     else:
         parts.append('<span class="prev-next-link next-link empty"></span>')
     parts.append('</div>')
@@ -361,7 +361,7 @@ def _recommendations_html(articles: list[dict], current_article: dict, max_n: in
         except Exception:
             date_fr = date_str
         excerpt = (a.get('excerpt') or '')[:120] + ('...' if len(a.get('excerpt') or '') > 120 else '')
-        lines.append(f'''<a href="{a["slug"]}.html" class="article-card recommendation-card">
+        lines.append(f'''<a href="{a["slug"]}" class="article-card recommendation-card">
             <span class="article-type">Article</span>
             <h3>{a["title"]}</h3>
             <div class="article-meta">{date_fr}</div>
@@ -384,7 +384,7 @@ def render_article_page(article: dict, articles: list[dict], output_dir: Path, a
         date_obj = datetime.now()
     date_fr = date_obj.strftime('%d %B %Y')
 
-    page_url = f"{SITE_BASE}/blog/articles/{article['slug']}.html"
+    page_url = f"{SITE_BASE}/blog/articles/{article['slug']}"
     keywords = ', '.join(article.get('tags', [])) or 'développement web, TypeScript, blog'
     excerpt = _escape_html(article.get('excerpt', ''))
     title = _escape_html(article['title'])
@@ -468,7 +468,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
         excerpt = (a.get('excerpt') or '')[:160]
         type_label = 'Tutoriel' if a.get('type') == 'tutorial' else 'Article'
         cards_html.append(f'''
-        <a href="articles/{a['slug']}.html" class="article-card">
+        <a href="articles/{a['slug']}" class="article-card">
             <span class="article-type">{type_label}</span>
             <h2>{a['title']}</h2>
             <div class="article-meta">{date_fr}</div>
@@ -559,10 +559,10 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
             date_fr = dt.strftime('%d %B %Y')
         except Exception:
             date_fr = date_str
-        cards.append(f'<a href="articles/{a["slug"]}.html" class="article-card"><h2>{a["title"]}</h2><div class="article-meta">{date_fr}</div><div class="article-excerpt">{a.get("excerpt","")}</div></a>')
+        cards.append(f'<a href="../articles/{a["slug"]}" class="article-card"><h2>{a["title"]}</h2><div class="article-meta">{date_fr}</div><div class="article-excerpt">{a.get("excerpt","")}</div></a>')
 
     slug = collection.get('slug', collection.get('id', 'serie'))
-    page_url = f'{SITE_BASE}/blog/series/{slug}.html'
+    page_url = f'{SITE_BASE}/blog/series/{slug}'
     title = collection.get('title', 'Serie')
     desc = collection.get('description', '')
     keywords = ', '.join({tag for a in items for tag in a.get('tags', [])}) or 'blog, série'
@@ -595,13 +595,13 @@ def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_
         f'<changefreq>weekly</changefreq><priority>0.8</priority></url>',
     ]
     for a in articles:
-        url = f'{SITE_BASE}/blog/articles/{a["slug"]}.html'
+        url = f'{SITE_BASE}/blog/articles/{a["slug"]}'
         date = str(a.get('date', ''))[:10]
         lines.append(f'  <url><loc>{url}</loc><lastmod>{date}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>')
     for c in collections:
         slug = c.get('slug', c.get('id', ''))
         if slug:
-            url = f'{SITE_BASE}/blog/series/{slug}.html'
+            url = f'{SITE_BASE}/blog/series/{slug}'
             # lastmod serie = dernier article de la serie si possible
             coll_articles = [a for a in articles if a.get('series') == c.get('id')]
             lastmod_c = max((str(a.get('date', ''))[:10] for a in coll_articles), default=lastmod_blog)

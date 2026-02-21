@@ -2,6 +2,26 @@
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
+## [1.2.0] - 2026-02-21
+
+### Projets
+- URLs projet sans suffixe -l57 : `/projets/<slug>` (ex. `/projets/dispycluster`)
+- Pages projet : bloc precedent/suivant et section "Projets suggeres" (meme categorie en priorite)
+- README GitHub : telecharges via `scripts/fetch_readmes.py`, convertis en HTML (Markdown ou fallback), affichage style prose sur chaque page
+- Largeur contenu harmonisee : variable CSS `--content-max-width` (56rem) pour blog et pages projet, centrage et responsive
+- Projet CallAttendant retire (pas a moi)
+
+### Blog
+- Liens et sitemap sans .html : URLs `/blog/articles/<slug>`, `/blog/series/<slug>`
+- Google Analytics (GA4) ajoute sur toutes les pages blog (article, index, collection)
+
+### Documentation
+- README : section Projets, URLs sans .html (blog + projets), suppression emojis
+- blog/README.md et README_IA.md : URLs sans .html documentees
+- CHANGELOG : entree 1.2.0
+
+---
+
 ## [1.1.0] - 2026-02-21
 
 ### Blog et contenu

@@ -80,7 +80,8 @@ $filesToDeploy = @(
     "$DIST_DIR/sitemap-pages.xml",
     "$DIST_DIR/assets",
     "$DIST_DIR/api",
-    "$DIST_DIR/blog"
+    "$DIST_DIR/blog",
+    "$DIST_DIR/projets"
 )
 
 $missingFiles = @()
@@ -101,7 +102,7 @@ if ($missingFiles.Count -gt 0) {
 
 # 3. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[2/4] Creation du repertoire sur le serveur (si necessaire)..." "Yellow"
-$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api"
+$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/projets"
 try {
     ssh "${ServerUser}@${ServerHost}" $createDirCmd
     Write-ColorOutput "Repertoire cree/verifie (dont assets/images/projets et assets/images/hero pour les images)" "Green"
@@ -238,6 +239,13 @@ try {
         scp -r $blogPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
+    # Transfert des pages projet (projets/<slug>.html)
+    $projetsPath = Join-Path $DIST_DIR "projets"
+    if (Test-Path $projetsPath) {
+        Write-Host "  Transfert: projets/"
+        scp -r $projetsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
     Write-ColorOutput "Transfert scp termine" "Green"
 }
 
@@ -271,6 +279,11 @@ Write-Host $apiCheckResult
 $blogCheckCmd = "test -f $ServerPath/blog/index.html && echo 'OK: blog/index.html present' || echo 'ATTENTION: blog manquant - relancer build.py puis deploy'"
 $blogCheckResult = ssh "${ServerUser}@${ServerHost}" $blogCheckCmd
 Write-Host $blogCheckResult
+
+# Verifier que les pages projet sont deployees
+$projetsCheckCmd = 'test -d ' + $ServerPath + '/projets && (n=$(ls -1 ' + $ServerPath + '/projets/*.html 2>/dev/null | wc -l); echo "OK: projets/ deploye ($n pages)") || echo ''ATTENTION: projets/ manquant - relancer build puis deploy'''
+$projetsCheckResult = ssh "${ServerUser}@${ServerHost}" $projetsCheckCmd
+Write-Host $projetsCheckResult
 
 # Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
 $imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'

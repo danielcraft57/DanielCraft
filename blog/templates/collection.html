@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} | Blog DanielCraft</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <meta name="author" content="Loïc DANIEL">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{PAGE_URL}}">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN3CKFP14"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4VN3CKFP14');
+    </script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{PAGE_URL}}">
+    <meta property="og:title" content="{{TITLE}} | Blog DanielCraft">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:site_name" content="DanielCraft">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}} | Blog DanielCraft">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/main.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+{{SCHEMA_JSON_LD}}
+</head>
+<body>
+    <nav class="navbar" id="navbar" role="navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ROOT}}/" class="logo-link"><div class="logo-icon"><span class="logo-text">LD</span></div><span class="logo-name">Loïc DANIEL</span></a>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ROOT}}/#home" class="nav-link">Accueil</a>
+                <a href="{{ROOT}}/blog" class="nav-link active">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-page-section">
+        <div class="container blog-page">
+            <nav aria-label="Fil d'Ariane">
+                <a href="{{ROOT}}/blog" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
+            </nav>
+            <header class="blog-header">
+                <h1>{{TITLE}}</h1>
+                <p class="section-description">{{DESCRIPTION}}</p>
+            </header>
+            <div class="articles-grid">
+                {{ARTICLES_GRID}}
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Loïc DANIEL - Développeur Full-Stack TypeScript</p>
+                <div class="footer-legal-links">
+                    <a href="{{ROOT}}/mentions-legales">Mentions légales</a>
+                    <span class="separator">•</span>
+                    <a href="{{ROOT}}/politique-confidentialite">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
