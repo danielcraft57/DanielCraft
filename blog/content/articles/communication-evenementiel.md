@@ -1,6 +1,6 @@
 ---
 title: "Communication événementielle : salons, conférences et networking"
-date: 2026-02-21
+date: 2025-05-05
 excerpt: "Utiliser l'événementiel pour communiquer : salons professionnels, conférences, afterworks. Préparer, animer et capitaliser sur tes présences pour maximiser l'impact."
 type: article
 tags: [communication, événementiel, salons, conférences, networking]

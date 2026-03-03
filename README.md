@@ -145,13 +145,13 @@ Toute la documentation est disponible dans le dossier `docs/` :
 ## Configuration
 
 ### Variables d'Environnement
-Les scripts de déploiement utilisent des variables par défaut :
-- **Domaine** : `danielcraft.fr`
-- **Utilisateur SSH** : `pi`
-- **Serveur** : `node12.lan`
-- **Chemin serveur** : `/var/www/danielcraft.fr`
+Les scripts de déploiement utilisent des variables d'exemple par défaut :
+- **Domaine** : `votre-domaine.fr`
+- **Utilisateur SSH** : `deploy`
+- **Serveur** : `serveur.local`
+- **Chemin serveur** : `/var/www/votre-domaine.fr`
 
-Modifier les scripts si nécessaire.
+Adapte ces valeurs à ton propre environnement (domaine, serveur, chemin) ou surcharge-les via les variables d'environnement documentées dans les scripts.
 
 ### Nginx
 La configuration Nginx est dans `scripts/nginx.conf`. Elle inclut :

@@ -11,6 +11,7 @@ convertit en HTML et genere les pages dans le dossier de sortie.
 """
 
 import json
+import os
 import re
 import sys
 from datetime import datetime
@@ -25,7 +26,7 @@ except ImportError as e:
     sys.exit(1)
 
 # Configuration
-SITE_BASE = 'https://danielcraft.fr'
+SITE_BASE = os.environ.get('SITE_BASE', 'https://example.com')
 OG_IMAGE_BLOG = f'{SITE_BASE}/assets/images/og/blog-1200x630.jpg'
 OG_IMAGE_HOME = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
 BLOG_DIR = Path(__file__).parent

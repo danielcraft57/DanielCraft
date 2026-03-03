@@ -1,6 +1,6 @@
 ---
 title: "Marketing digital : stratégie de visibilité en ligne"
-date: 2026-02-21
+date: 2025-07-20
 excerpt: "Définir une stratégie marketing digital cohérente : objectifs, canaux, cibles. Les piliers de la visibilité en ligne pour les PME et freelances."
 type: article
 tags: [marketing digital, stratégie, visibilité, canaux, objectifs]

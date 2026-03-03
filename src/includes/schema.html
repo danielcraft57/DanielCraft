@@ -5,12 +5,12 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "DanielCraft",
-  "url": "https://danielcraft.fr",
+  "url": "{{site_base}}",
   "inLanguage": "fr-FR",
-  "publisher": { "@type": "Organization", "name": "DanielCraft", "url": "https://danielcraft.fr" },
+  "publisher": { "@type": "Organization", "name": "DanielCraft", "url": "{{site_base}}" },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": { "@type": "EntryPoint", "urlTemplate": "https://danielcraft.fr/blog?q={search_term_string}" },
+    "target": { "@type": "EntryPoint", "urlTemplate": "{{site_base}}/blog?q={search_term_string}" },
     "query-input": "required name=search_term_string"
   }
 }
@@ -21,18 +21,18 @@
   "@type": "Person",
   "name": "Loïc DANIEL",
   "jobTitle": "Développeur Full-Stack TypeScript, Python & PHP | IA & Data",
-  "url": "https://danielcraft.fr",
+  "url": "{{site_base}}",
   "inLanguage": "fr-FR",
   "sameAs": [
     "https://linkedin.com/in/loicdaniel",
     "https://github.com/danielcraft57"
   ],
-  "email": "contact@danielcraft.fr",
-  "telephone": "+33387780916",
+  "email": "contact@example.com",
+  "telephone": "+33000000000",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
+    "addressLocality": "Ville",
+    "postalCode": "00000",
     "addressCountry": "FR"
   },
   "knowsAbout": [
@@ -64,23 +64,23 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "DanielCraft",
-  "image": "https://danielcraft.fr/assets/images/og/home-1200x630.jpg",
-  "@id": "https://danielcraft.fr",
-  "url": "https://danielcraft.fr",
+  "image": "{{site_base}}/assets/images/og/home-1200x630.jpg",
+  "@id": "{{site_base}}",
+  "url": "{{site_base}}",
   "inLanguage": "fr-FR",
-  "telephone": "+33387780916",
-  "email": "contact@danielcraft.fr",
+  "telephone": "+33000000000",
+  "email": "contact@example.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
+    "addressLocality": "Ville",
+    "postalCode": "00000",
     "addressCountry": "FR"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 49.1193,
-    "longitude": 6.1757
+    "latitude": 0,
+    "longitude": 0
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -97,7 +97,7 @@
   "priceRange": "€€",
   "areaServed": {
     "@type": "City",
-    "name": "Metz"
+    "name": "Ville"
   }
 }
 </script>
@@ -179,7 +179,7 @@
   "url": "{{page_url}}",
   "codeRepository": "{{project_github_url}}",
   "programmingLanguage": "{{project_language}}",
-  "author": { "@type": "Person", "name": "Loïc DANIEL", "url": "https://danielcraft.fr" },
+  "author": { "@type": "Person", "name": "Loïc DANIEL", "url": "{{site_base}}" },
   "copyrightYear": "{{project_year}}",
   "license": "{{project_licence}}"
 }

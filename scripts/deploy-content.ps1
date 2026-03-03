@@ -3,9 +3,17 @@
 # Usage: .\deploy-content.ps1
 
 param(
-    [string]$ServerUser = "pi",
-    [string]$ServerHost = "node12.lan",
-    [string]$ServerPath = "/var/www/danielcraft.fr",
+    # Ne mets pas de valeurs perso en dur ici.
+    # Exemple:
+    #   .\scripts\deploy-content.ps1 -ServerUser "deploy" -ServerHost "server.local" -ServerPath "/var/www/example.com"
+    [string]$ServerUser = "deploy",
+    [string]$ServerHost = "server.local",
+    [string]$ServerPath = "/var/www/example.com",
+    # Base URL utilisee pendant le build (canoniques, OG, sitemaps).
+    # Exemple: -SiteBase "https://ton-domaine.com"
+    [string]$SiteBase = "https://example.com",
+    # Nom utilise pour les fichiers de logs nginx (ex: example.com -> /var/log/nginx/example.com-error.log)
+    [string]$NginxLogName = "example.com",
     # Optionnel : chemin explicite vers rsync (par ex. C:\cygwin64\bin\rsync.exe)
     [string]$RsyncPath = ""
 )
@@ -33,7 +41,9 @@ if (-not (Test-Path "build.py")) {
 # 1.5. Lancer le build Python (toujours avant le transfert, comme dans deploy.ps1)
 $DIST_DIR = "dist"
 Write-ColorOutput "[0/4] Lancement du build Python..." "Yellow"
-$buildOutput = python3 build.py 2>&1 | Out-String
+$env:SITE_BASE = $SiteBase
+$buildLines = & python3 build.py 2>&1
+$buildOutput = [string]::Join("`n", $buildLines)
 if ($LASTEXITCODE -ne 0) {
     Write-ColorOutput "Erreur lors du build Python:" "Red"
     Write-Host $buildOutput
@@ -309,5 +319,5 @@ Write-ColorOutput "Si tu veux recharger nginx (sans modifier la config):" "Yello
 Write-Host "ssh ${ServerUser}@${ServerHost} 'sudo systemctl reload nginx'"
 Write-Host ""
 Write-ColorOutput "Pour verifier les logs d'erreur nginx:" "Yellow"
-Write-Host "ssh ${ServerUser}@${ServerHost} 'sudo tail -f /var/log/nginx/danielcraft.fr-error.log'"
+Write-Host "ssh ${ServerUser}@${ServerHost} 'sudo tail -f /var/log/nginx/${NginxLogName}-error.log'"
 

@@ -8,7 +8,7 @@ Image utilisee pour le partage des articles du blog : `assets/images/og/blog-120
 
 - Dimensions : 1200x630 px (ratio 1.91:1)
 - Format : JPEG haute qualite (< 1 MB)
-- Style : coherent avec danielcraft.fr (fond clair, accent rouge #dc2626)
+- Style : coherent avec le design du site (fond clair, accent rouge #dc2626)
 
 ## Prompt pour Midjourney / DALL-E / Stable Diffusion
 
@@ -31,7 +31,7 @@ Contenu :
 
 Style :
 - Moderne, epure, tech sans etre froid
-- Coherent avec danielcraft.fr
+- Coherent avec le design global du site
 - Pas de texte lisible excessif
 - Pas de visage, pas de personnage
 

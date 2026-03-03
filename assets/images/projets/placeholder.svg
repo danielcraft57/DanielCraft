@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f1f5f9"/>
+  <g fill="#94a3b8" stroke="#cbd5e1" stroke-width="2">
+    <rect x="320" y="160" width="160" height="130" rx="8"/>
+    <circle cx="400" cy="200" r="30"/>
+    <path d="M300 320 L380 250 L450 300 L500 220 L620 320 Z"/>
+  </g>
+  <text x="400" y="400" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="18">Projet</text>
+</svg>

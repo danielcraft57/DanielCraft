@@ -19,22 +19,22 @@ Si tu dois corriger les permissions manuellement :
 
 ```bash
 # Sur le serveur
-ssh pi@node12.lan
+ssh pi@serveur.local
 
 # Aller dans le répertoire du site
-cd /var/www/danielcraft.fr
+cd /var/www/votre-domaine.fr
 
 # Configurer le propriétaire et le groupe
-sudo chown -R pi:www-data /var/www/danielcraft.fr
+sudo chown -R pi:www-data /var/www/votre-domaine.fr
 
 # Permissions pour les répertoires (755)
-sudo find /var/www/danielcraft.fr -type d -exec chmod 755 {} \;
+sudo find /var/www/votre-domaine.fr -type d -exec chmod 755 {} \;
 
 # Permissions pour les fichiers (644)
-sudo find /var/www/danielcraft.fr -type f -exec chmod 644 {} \;
+sudo find /var/www/votre-domaine.fr -type f -exec chmod 644 {} \;
 
 # Vérifier que nginx peut lire
-sudo -u www-data test -r /var/www/danielcraft.fr/index.html && echo "OK" || echo "ERREUR"
+sudo -u www-data test -r /var/www/votre-domaine.fr/index.html && echo "OK" || echo "ERREUR"
 ```
 
 ### Vérification
@@ -43,13 +43,13 @@ Pour vérifier que tout fonctionne :
 
 ```bash
 # Vérifier les permissions d'un fichier
-ls -la /var/www/danielcraft.fr/index.html
+ls -la /var/www/votre-domaine.fr/index.html
 
 # Devrait afficher quelque chose comme :
 # -rw-r--r-- 1 pi www-data 12345 Dec 25 12:00 index.html
 
 # Tester si nginx peut lire
-sudo -u www-data cat /var/www/danielcraft.fr/index.html
+sudo -u www-data cat /var/www/votre-domaine.fr/index.html
 ```
 
 ### Erreurs Courantes
@@ -57,16 +57,16 @@ sudo -u www-data cat /var/www/danielcraft.fr/index.html
 #### Erreur 403 (Forbidden)
 - **Cause** : Nginx ne peut pas lire les fichiers (mauvaises permissions)
 - **Solution** : `sudo chmod 644` sur les fichiers, `sudo chmod 755` sur les répertoires
-- **Vérifier** : `sudo -u www-data test -r /var/www/danielcraft.fr/index.html`
+- **Vérifier** : `sudo -u www-data test -r /var/www/votre-domaine.fr/index.html`
 
 #### Erreur 404 (Not Found)
 - **Cause** : Fichier non trouvé ou chemin incorrect
-- **Solution** : Vérifier que les fichiers sont bien dans `/var/www/danielcraft.fr/`
-- **Vérifier** : `ls -la /var/www/danielcraft.fr/`
+- **Solution** : Vérifier que les fichiers sont bien dans `/var/www/votre-domaine.fr/`
+- **Vérifier** : `ls -la /var/www/votre-domaine.fr/`
 
 #### Erreur 500 (Internal Server Error)
 - **Cause** : Problème de configuration nginx ou permissions sur les logs
-- **Solution** : Vérifier les logs nginx : `sudo tail -f /var/log/nginx/danielcraft.fr-error.log`
+- **Solution** : Vérifier les logs nginx : `sudo tail -f /var/log/nginx/votre-domaine.fr-error.log`
 
 ## Le Script deploy.sh
 

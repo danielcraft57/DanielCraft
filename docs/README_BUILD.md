@@ -81,7 +81,7 @@ Chaque page a un fichier JSON dans `src/pages/` :
 {
   "page_title": "Titre",
   "page_description": "Description",
-  "page_url": "https://danielcraft.fr/page",
+  "page_url": "https://votre-domaine.fr/page",
   "current_page": "page",
   "page_scripts": ["main.js", "autre.js"]
 }

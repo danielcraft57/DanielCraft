@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 90">
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="20" y="25" width="70" height="40" rx="6"/>
+  <text x="55" y="50" text-anchor="middle" font-size="10" fill="#374151">HTML</text>
+  <line x1="95" y1="45" x2="125" y2="45" stroke="#dc2626" stroke-width="2"/>
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="130" y="25" width="70" height="40" rx="6"/>
+  <text x="165" y="50" text-anchor="middle" font-size="10" fill="#374151">robots</text>
+  <line x1="205" y1="45" x2="235" y2="45" stroke="#dc2626" stroke-width="2"/>
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="240" y="25" width="90" height="40" rx="6"/>
+  <text x="285" y="50" text-anchor="middle" font-size="10" fill="#374151">Schema.org</text>
+  <line x1="335" y1="45" x2="365" y2="45" stroke="#dc2626" stroke-width="2"/>
+  <rect fill="#fef2f2" stroke="#dc2626" x="370" y="25" width="25" height="40" rx="4"/>
+  <text x="382" y="50" text-anchor="middle" font-size="8" fill="#dc2626">OK</text>
+</svg>

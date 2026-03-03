@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 70" role="img" aria-labelledby="inbound-title">
+  <title id="inbound-title">Inbound : Attirer, Convertir, Fermer</title>
+  <defs>
+    <style>.phase{fill:#f8f9fa;stroke:#e5e7eb;rx:6}.arr{stroke:#dc2626;stroke-width:2;fill:none;marker-end:url(#m)}.txt{font:12px Inter,sans-serif;fill:#374151}</style>
+    <marker id="m" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto"><polygon points="0 0, 6 2.5, 0 5" fill="#dc2626"/></marker>
+  </defs>
+  <rect class="phase" x="20" y="15" width="100" height="40"/>
+  <text class="txt" x="70" y="40" text-anchor="middle">Attirer</text>
+  <path class="arr" d="M130 35 L150 35"/>
+  <rect class="phase" x="160" y="15" width="80" height="40"/>
+  <text class="txt" x="200" y="40" text-anchor="middle">Convertir</text>
+  <path class="arr" d="M250 35 L270 35"/>
+  <rect class="phase" x="280" y="15" width="100" height="40"/>
+  <text class="txt" x="330" y="40" text-anchor="middle">Fermer</text>
+</svg>

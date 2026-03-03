@@ -17,7 +17,7 @@ Un autre processus (souvent une autre instance de nginx) écoute déjà sur les 
 
 ```bash
 # Sur le serveur
-ssh pi@node12.lan
+ssh pi@serveur.local
 
 # Vérifier le port 80
 sudo lsof -i:80
@@ -85,7 +85,7 @@ sudo systemctl status nginx
 
 ### Symptôme
 ```
-cannot load certificate "/etc/letsencrypt/live/danielcraft.fr/fullchain.pem": No such file or directory
+cannot load certificate "/etc/letsencrypt/live/votre-domaine.fr/fullchain.pem": No such file or directory
 ```
 
 ### Solution
@@ -102,9 +102,9 @@ Voir `PERMISSIONS.md` pour les détails complets.
 
 Rapide :
 ```bash
-sudo chown -R pi:www-data /var/www/danielcraft.fr
-sudo find /var/www/danielcraft.fr -type d -exec chmod 755 {} \;
-sudo find /var/www/danielcraft.fr -type f -exec chmod 644 {} \;
+sudo chown -R pi:www-data /var/www/votre-domaine.fr
+sudo find /var/www/votre-domaine.fr -type d -exec chmod 755 {} \;
+sudo find /var/www/votre-domaine.fr -type f -exec chmod 644 {} \;
 ```
 
 ## Vérification Rapide
@@ -117,9 +117,9 @@ sudo systemctl status nginx
 sudo nginx -t
 
 # Logs d'erreur
-sudo tail -f /var/log/nginx/danielcraft.fr-error.log
+sudo tail -f /var/log/nginx/votre-domaine.fr-error.log
 
 # Logs d'accès
-sudo tail -f /var/log/nginx/danielcraft.fr-access.log
+sudo tail -f /var/log/nginx/votre-domaine.fr-access.log
 ```
 

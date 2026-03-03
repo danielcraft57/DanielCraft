@@ -1,0 +1,15 @@
+{
+  "id": "kubernetes-serie",
+  "title": "Série Kubernetes - Orchestration de conteneurs en production",
+  "description": "Série avancée pour passer de Docker seul à un cluster Kubernetes : concepts de base, architecture, déploiements, services, configuration, observabilité et intégration CI/CD.",
+  "slug": "kubernetes-serie",
+  "articles": [
+    "kubernetes-concepts-pods-nodes",
+    "kubernetes-architecture-cluster",
+    "kubernetes-deployments-services",
+    "kubernetes-configmaps-secrets",
+    "kubernetes-observabilite-logs-metrics",
+    "kubernetes-ci-cd-deploiement-continu"
+  ]
+}
+

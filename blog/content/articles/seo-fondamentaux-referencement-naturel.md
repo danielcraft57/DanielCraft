@@ -1,6 +1,6 @@
 ---
 title: "SEO : les fondamentaux du référencement naturel"
-date: 2026-02-21
+date: 2025-08-29
 excerpt: "Comprendre les bases du SEO : comment Google classe les pages, les piliers du référencement (technique, contenu, autorité) et les premiers pas pour améliorer ta visibilité."
 type: article
 tags: [SEO, référencement, Google, fondamentaux, visibilité]

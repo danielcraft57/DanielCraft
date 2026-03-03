@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100">
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="20" y="15" width="150" height="70" rx="6"/>
+  <text x="95" y="45" text-anchor="middle" font-size="11" fill="#6b7280">Investissement</text>
+  <text x="95" y="65" text-anchor="middle" font-size="14" fill="#374151">Couts</text>
+  <text x="175" y="55" text-anchor="middle" font-size="16" fill="#dc2626">vers</text>
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="180" y="15" width="150" height="70" rx="6"/>
+  <text x="255" y="45" text-anchor="middle" font-size="11" fill="#6b7280">Retour</text>
+  <text x="255" y="65" text-anchor="middle" font-size="14" fill="#374151">Gains</text>
+  <text x="175" y="95" text-anchor="middle" font-size="10" fill="#374151">ROI = Gains moins Couts divise par Couts</text>
+</svg>

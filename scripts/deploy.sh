@@ -11,13 +11,15 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# Configuration
-SERVER_USER="pi"
-SERVER_HOST="node12.lan"
-SERVER_PATH="/var/www/danielcraft.fr"
+# Configuration (anonymisee)
+# Surcharge possible via variables d'environnement:
+#   SERVER_USER, SERVER_HOST, SERVER_PATH, SITE_BASE
+SERVER_USER="${SERVER_USER:-deploy}"
+SERVER_HOST="${SERVER_HOST:-server.local}"
+SERVER_PATH="${SERVER_PATH:-/var/www/example.com}"
 NGINX_SITES_AVAILABLE="/etc/nginx/sites-available"
 NGINX_SITES_ENABLED="/etc/nginx/sites-enabled"
-CONFIG_NAME="danielcraft.fr"
+CONFIG_NAME="${CONFIG_NAME:-example.com}"
 DOMAIN=""
 
 # Vérifier si un domaine est passé en argument
@@ -28,17 +30,38 @@ if [ -z "$1" ]; then
 fi
 
 DOMAIN="$1"
+SITE_BASE="${SITE_BASE:-https://${DOMAIN}}"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo -e "${GREEN}=== Déploiement DanielCraft V6 ===${NC}"
 echo -e "Domaine: ${YELLOW}${DOMAIN}${NC}"
 echo -e "Serveur: ${YELLOW}${SERVER_USER}@${SERVER_HOST}${NC}"
 echo ""
 
-# 1. Vérifier que nous sommes dans le bon répertoire
-if [ ! -f "index.html" ]; then
-    echo -e "${RED}Erreur: index.html non trouvé. Exécute ce script depuis le dossier V6.${NC}"
+# 1. Vérifier que nous sommes dans le bon répertoire (racine du repo)
+if [ ! -f "build.py" ]; then
+    echo -e "${RED}Erreur: build.py non trouvé. Exécute ce script depuis la racine du projet.${NC}"
     exit 1
 fi
+
+# 1.5. Build local dans dist/ (inclut pages + blog + sitemaps)
+echo -e "${YELLOW}[0/6]${NC} Build du site dans dist/..."
+export SITE_BASE
+PYTHON_CMD="${PYTHON_CMD:-python3}"
+if ! command -v "$PYTHON_CMD" >/dev/null 2>&1; then
+  if command -v python >/dev/null 2>&1; then
+    PYTHON_CMD="python"
+  fi
+fi
+"$PYTHON_CMD" build.py
+
+DIST_DIR="dist"
+if [ ! -f "${DIST_DIR}/index.html" ]; then
+    echo -e "${RED}Erreur: ${DIST_DIR}/index.html manquant. Le build a peut-être échoué.${NC}"
+    exit 1
+fi
+echo -e "${GREEN}Build terminé. Déploiement depuis ${DIST_DIR}/...${NC}"
 
 # 2. Créer le répertoire sur le serveur si nécessaire
 echo -e "${YELLOW}[1/6]${NC} Création du répertoire sur le serveur..."
@@ -47,15 +70,7 @@ ssh ${SERVER_USER}@${SERVER_HOST} "sudo mkdir -p ${SERVER_PATH} && sudo chown -R
 # 3. Transférer les fichiers
 echo -e "${YELLOW}[2/6]${NC} Transfert des fichiers..."
 rsync -avz --delete \
-    --exclude 'node_modules' \
-    --exclude '.git' \
-    --exclude 'docs' \
-    --exclude 'scripts' \
-    --exclude 'src' \
-    --exclude 'build.py' \
-    --exclude '.gitignore' \
-    --exclude 'README.md' \
-    ./ ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/
+    "${DIST_DIR}/" ${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/
 
 # 4. Configurer les permissions (CRITIQUE pour nginx/www-data)
 echo -e "${YELLOW}[3/6]${NC} Configuration des permissions (chown/chmod pour www-data)..."
@@ -81,13 +96,13 @@ CERT_EXISTS=$(ssh ${SERVER_USER}@${SERVER_HOST} "test -f /etc/letsencrypt/live/$
 
 if [ "$CERT_EXISTS" = "yes" ]; then
     echo -e "${GREEN}Certificats SSL trouvés, utilisation de la config complète${NC}"
-    # Copier nginx.conf avec SSL (déjà configuré pour danielcraft.fr)
-    cp nginx.conf "${TMP_FILE}"
+    # Copier nginx.conf avec SSL (exemple de configuration générique pour un domaine)
+    cp "${SCRIPT_DIR}/nginx.conf" "${TMP_FILE}"
 else
     echo -e "${YELLOW}Certificats SSL non trouvés, utilisation de la config sans SSL${NC}"
     echo -e "${YELLOW}Certbot ajoutera automatiquement le bloc SSL après création${NC}"
     # Copier nginx.conf sans SSL (pour permettre à Certbot de créer les certificats)
-    cp nginx.conf.no-ssl "${TMP_FILE}"
+    cp "${SCRIPT_DIR}/nginx.conf.no-ssl" "${TMP_FILE}"
 fi
 
 # Transférer la config sur le serveur

@@ -14,10 +14,10 @@ Pour un Raspberry Pi 3B+, j'ai choisi une approche **ultra-légère** :
 
 ```bash
 # Se connecter au Pi
-ssh pi@node12.lan
+ssh pi@serveur.local
 
 # Aller dans le dossier du blog
-cd /var/www/danielcraft.fr/blog
+cd /var/www/votre-domaine.fr/blog
 
 # Installer les dépendances Python
 pip3 install -r requirements.txt
@@ -42,7 +42,7 @@ python3 update_blog_index.py
 
 ### 4. Vérifier que ça marche
 
-Ouvre `https://danielcraft.fr/blog/` dans ton navigateur.
+Ouvre `https://votre-domaine.fr/blog/` dans ton navigateur.
 
 ## Automatisation quotidienne
 
@@ -53,7 +53,7 @@ Pour générer un article chaque jour automatiquement :
 crontab -e
 
 # Ajouter cette ligne (génère un article chaque jour à 9h)
-0 9 * * * cd /var/www/danielcraft.fr/blog && /usr/bin/python3 generate_daily.py >> /var/log/blog-generation.log 2>&1
+0 9 * * * cd /var/www/votre-domaine.fr/blog && /usr/bin/python3 generate_daily.py >> /var/log/blog-generation.log 2>&1
 ```
 
 ## Configuration de l'API (optionnel)
@@ -117,7 +117,7 @@ tail -f /var/log/blog-generation.log
 ## Structure finale
 
 ```
-/var/www/danielcraft.fr/
+/var/www/votre-domaine.fr/
 ├── blog/
 │   ├── articles/
 │   │   ├── article-1.html

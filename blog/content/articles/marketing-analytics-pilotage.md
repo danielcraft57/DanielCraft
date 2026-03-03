@@ -1,6 +1,6 @@
 ---
 title: "Marketing analytics : piloter tes actions avec les données"
-date: 2026-02-21
+date: 2025-06-20
 excerpt: "Google Analytics, pixels, tableaux de bord. Mesurer le trafic, les conversions et le ROI de tes campagnes marketing. Décisions basées sur les données."
 type: article
 tags: [marketing digital, analytics, données, ROI, pilotage]

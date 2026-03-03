@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 80">
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="10" y="15" width="85" height="50" rx="6"/>
+  <text x="52" y="42" text-anchor="middle" font-size="10" fill="#374151">Requetes</text>
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="105" y="15" width="85" height="50" rx="6"/>
+  <text x="147" y="42" text-anchor="middle" font-size="10" fill="#374151">Citations</text>
+  <rect fill="#fef2f2" stroke="#dc2626" x="200" y="15" width="85" height="50" rx="6"/>
+  <text x="242" y="42" text-anchor="middle" font-size="10" font-weight="bold" fill="#dc2626">Cite</text>
+  <rect fill="#f8f9fa" stroke="#e5e7eb" x="295" y="15" width="85" height="50" rx="6"/>
+  <text x="337" y="42" text-anchor="middle" font-size="10" fill="#374151">Rapport</text>
+</svg>

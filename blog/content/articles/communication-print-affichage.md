@@ -1,6 +1,6 @@
 ---
 title: "Communication print et affichage : brochures et visibilite locale"
-date: 2026-02-21
+date: 2025-05-25
 excerpt: "Print et affichage : quand les utiliser, quoi produire, comment les lier au digital (QR code, landing page)."
 type: article
 tags: [communication, print, affichage, brochure]

@@ -11,8 +11,8 @@ Certbot ne peut pas créer les certificats car nginx.conf référence des certif
 Sur le serveur, remplace la config nginx par la version sans SSL :
 
 ```bash
-ssh pi@node12.lan
-sudo cp /var/www/danielcraft.fr/nginx.conf.no-ssl /etc/nginx/sites-available/danielcraft.fr
+ssh deploy@server.local
+sudo cp /var/www/example.com/nginx.conf.no-ssl /etc/nginx/sites-available/example.com
 sudo nginx -t
 sudo systemctl reload nginx
 ```
@@ -20,7 +20,7 @@ sudo systemctl reload nginx
 2. **Créer les certificats avec Certbot**
 
 ```bash
-sudo certbot --nginx -d danielcraft.fr -d www.danielcraft.fr --non-interactive --agree-tos --email loic5488@gmail.com --redirect
+sudo certbot --nginx -d example.com -d www.example.com --non-interactive --agree-tos --email contact@example.com --redirect
 ```
 
 Certbot va :
@@ -33,7 +33,7 @@ Certbot va :
 Si tu veux utiliser la version complète de nginx.conf (avec toutes les optimisations SSL), tu peux la restaurer :
 
 ```bash
-sudo cp /var/www/danielcraft.fr/nginx.conf /etc/nginx/sites-available/danielcraft.fr
+sudo cp /var/www/example.com/nginx.conf /etc/nginx/sites-available/example.com
 sudo nginx -t
 sudo systemctl reload nginx
 ```

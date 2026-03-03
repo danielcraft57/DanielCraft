@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEO technique : indexabilité, HTML et performance | Blog DanielCraft</title>
+    <meta name="description" content="robots.txt, balisage sémantique, contenu dans le HTML initial (JS/SSR), vitesse de chargement : ce que les moteurs génératifs doivent voir.">
+    <meta name="keywords" content="GEO, technique, indexabilité, HTML, performance, robots.txt, SSR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+        .blog-article{max-width:800px;margin:0 auto;padding:2rem;}
+        .blog-article article{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+        .blog-article header{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid #e0e0e0;}
+        .blog-article h1{font-size:2.5rem;margin-bottom:1rem;color:#333;}
+        .article-meta{color:#666;font-size:0.9rem;}
+        .article-content{line-height:1.8;color:#444;}
+        .article-content h2{margin-top:2rem;margin-bottom:1rem;color:#333;font-size:1.8rem;}
+        .article-content h3{margin-top:1.5rem;margin-bottom:0.5rem;color:#333;font-size:1.3rem;}
+        .article-content p{margin-bottom:1rem;}
+        .article-content ul,.article-content ol{margin:1rem 0;padding-left:2rem;}
+        .article-content li{margin-bottom:0.5rem;}
+        .article-content a{color:#007bff;text-decoration:none;}
+        .article-content a:hover{text-decoration:underline;}
+        .article-content code{background:#f0f0f0;padding:0.2em 0.4em;border-radius:4px;font-size:0.9em;}
+        footer{text-align:center;margin-top:3rem;padding:2rem;}
+        footer a{color:#007bff;text-decoration:none;}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html" class="logo-link">
+                    <div class="logo-icon"><span class="logo-text">DC</span></div>
+                    <span class="logo-name">DanielCraft</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Accueil</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+    <main class="blog-article">
+        <article>
+            <header>
+                <h1>GEO technique : indexabilité, HTML et performance</h1>
+                <div class="article-meta"><time datetime="2026-02-16">16 février 2026</time></div>
+            </header>
+            <div class="article-content">
+
+<section>
+<h2>Indexabilité</h2>
+<p>Si ton contenu n'est pas explorable par les robots, il est invisible pour les moteurs génératifs. À vérifier :</p>
+<ul>
+<li><strong>robots.txt</strong> : autoriser ou bloquer explicitement les user-agents des IA selon ta stratégie (certains veulent être cités, d'autres non).</li>
+<li>Pas de <code>noindex</code> / <code>noarchive</code> sur les pages que tu veux voir citer.</li>
+<li>Pas d'erreurs bloquantes (5xx, contenu derrière auth non prévu pour les bots).</li>
+</ul>
+</section>
+
+<section>
+<h2>Structure HTML sémantique</h2>
+<p>Les crawlers des moteurs génératifs découpent le contenu en blocs (chunks). Une hiérarchie claire aide à contextualiser et extraire les bonnes parties.</p>
+<ul>
+<li><strong>H1 puis H2, H3</strong> : une idée par section.</li>
+<li><strong>section, article, main</strong> : organisation logique du DOM.</li>
+<li><strong>ul, ol, dl</strong> : listes, étapes, définitions.</li>
+<li><strong>strong, em, blockquote</strong> : signaler les passages clés ou citations.</li>
+<li>Éviter des <code>div</code> sans sens, des imbrications trop profondes, des IDs dupliqués.</li>
+</ul>
+</section>
+
+<section>
+<h2>Contenu dans le HTML initial (JS)</h2>
+<p>Contrairement à Google (WRS pour exécuter le JS), beaucoup de moteurs génératifs n'exécutent pas le JavaScript. Si ton contenu est injecté dynamiquement (React, Vue, Angular sans SSR/SSG, accordéons, chargement au scroll), il peut être invisible.</p>
+<p>À privilégier : contenu critique présent dans le HTML initial, ou SSR/SSG pour les SPA. Éviter : textes importants uniquement dans des onglets/accordéons JS, blocs chargés en AJAX après interaction.</p>
+</section>
+
+<section>
+<h2>Performance</h2>
+<p>Pas de preuve formelle que la vitesse influence directement le GEO, mais un moteur génératif enchaîne requête, crawl, extraction, reformulation. Une page lente ou instable peut être ignorée au profit d'une source plus rapide. Bonnes pratiques : médias compressés (WebP), scripts allégés, contenu principal rendu rapidement, hébergement réactif.</p>
+</section>
+
+<section>
+<h2>Suite de la série GEO</h2>
+<p><a href="geo-outils-optimisation-moteurs-generatifs.html">Introduction au GEO</a> – <a href="geo-vs-seo-differences-complementarite.html">GEO vs SEO</a> – <a href="outils-geo-audit-suivi-citations.html">Outils GEO</a> – <a href="geo-contenu-structure-formats-checklist.html">GEO et contenu</a> – <a href="geo-off-site-mentions-autorite.html">GEO hors-site</a></p>
+</section>
+
+            </div>
+        </article>
+    </main>
+    <footer><p><a href="blog.html">Retour au blog</a></p></footer>
+</body>
+</html>

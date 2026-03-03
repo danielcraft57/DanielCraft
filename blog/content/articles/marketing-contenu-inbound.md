@@ -1,6 +1,6 @@
 ---
 title: "Marketing de contenu et inbound : attirer plutôt que pousser"
-date: 2026-02-21
+date: 2025-07-08
 excerpt: "L'inbound marketing attire les prospects via du contenu utile. Blog, guides, vidéos : créer une machine à leads qui fonctionne sur la durée."
 type: article
 tags: [marketing digital, contenu, inbound, blog, leads]

@@ -1,7 +1,5 @@
 # Fichiers générés par le build
 dist/
-*.html
-!src/**/*.html
 
 # Python
 __pycache__/
@@ -28,7 +26,27 @@ Thumbs.db
 *.log
 
 # Images lourdes / générées (Open Graph + hero + projets)
-# On ignore tout le contenu de ces dossiers (peu importe l'extension)
-assets/images/*
-assets/icons/*
+# On ignore les dossiers d'images générées, mais pas les icônes/source légers.
+assets/images/hero/*
+assets/images/projects/*
+assets/images/og/*
+
+# Garder le placeholder projet versionné
+!assets/images/projects/placeholder.svg
+
+# Favicons générés en masse, on garde uniquement le SVG source principal
+assets/icons/favicons/*
+!assets/icons/favicon.svg
+
+# Anciennes versions volumineuses / archives
 Previous_Versions/*
+
+# README téléchargés pour les projets (générés)
+src/data/readmes/*
+
+# Secrets / config locales
+.env
+.env.*
+*.env
+*.pem
+*.key

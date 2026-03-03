@@ -1,6 +1,6 @@
 ---
 title: "SEO backlinks : stratégie de netlinking et autorité"
-date: 2026-02-21
+date: 2025-08-15
 excerpt: "Les backlinks transmettent l'autorité et améliorent le classement. Stratégies de netlinking : contenu invité, partenariats, liens naturels. Éviter les techniques black hat."
 type: article
 tags: [SEO, backlinks, netlinking, autorité, liens]

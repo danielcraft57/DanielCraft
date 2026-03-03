@@ -1,18 +1,18 @@
 # Configuration Nginx pour DanielCraft V6 (version sans SSL - pour Certbot)
-# Domaine : danielcraft.fr
+# Domaine : example.com (remplace par ton domaine)
 # Cette version est utilisée AVANT que Certbot crée les certificats SSL
 # Certbot ajoutera automatiquement le bloc SSL après création des certificats
 
 server {
     listen 80;
     listen [::]:80;
-    server_name danielcraft.fr www.danielcraft.fr;
+    server_name example.com www.example.com;
     
     # Redirection HTTP vers HTTPS (sera activée par Certbot)
     # return 301 https://$host$request_uri;
     
     # Chemin vers les fichiers du site
-    root /var/www/danielcraft.fr;
+    root /var/www/example.com;
     index index.html;
     
     # Headers de sécurité
@@ -71,8 +71,8 @@ server {
     }
     
     # Logs
-    access_log /var/log/nginx/danielcraft.fr-access.log;
-    error_log /var/log/nginx/danielcraft.fr-error.log;
+    access_log /var/log/nginx/example.com-access.log;
+    error_log /var/log/nginx/example.com-error.log;
     
     # Taille max des uploads (si formulaire de contact)
     client_max_body_size 10M;

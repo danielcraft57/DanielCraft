@@ -34,7 +34,10 @@ PROJECTS_JSON = DATA_DIR / 'projects.json'
 READMES_DIR = DATA_DIR / 'readmes'
 # Dossier de sortie par défaut : dist/ (peut être modifié via --output)
 OUTPUT_DIR = BASE_DIR / 'dist'
-SITE_BASE = 'https://danielcraft.fr'
+# Base URL du site (utilisée pour canoniques/OG/sitemaps).
+# Pour éviter toute donnée perso en dur, configure via variable d'environnement :
+#   SITE_BASE="https://ton-domaine.com"
+SITE_BASE = os.environ.get('SITE_BASE', 'https://example.com')
 
 # Libelles categories et statuts (pages projet)
 CATEGORY_LABELS = {'web': 'Web', 'tools': 'Outils', 'mobile': 'Mobile', 'iot': 'IoT', 'specialized': 'Specialise', 'learning': 'Apprentissage', 'desktop': 'Desktop'}
@@ -60,9 +63,10 @@ DEFAULT_VARS = {
     'page_title': 'Loïc DANIEL - Développeur Full-Stack TypeScript Freelance',
     'page_description': 'Développeur Full-Stack TypeScript freelance avec plus de 7 ans d\'expérience.',
     'page_keywords': 'développeur freelance, full-stack, TypeScript, React, Node.js',
-    'page_url': 'https://danielcraft.fr/',
+    'site_base': SITE_BASE,
+    'page_url': f'{SITE_BASE}/',
     # Image OG par défaut (home) - architecture dediee dans assets/images/og/
-    'og_image': 'https://danielcraft.fr/assets/images/og/home-1200x630.jpg',
+    'og_image': f'{SITE_BASE}/assets/images/og/home-1200x630.jpg',
     'og_type': 'website',
     'current_page': '',
     'page_scripts': [],
@@ -91,11 +95,11 @@ class TemplateEngine:
         content = full_path.read_text(encoding='utf-8')
         self.includes_cache[include_path] = content
         return content
-    
+
     def process_includes(self, content: str, vars_dict: Dict) -> str:
         """Traite les directives {% include %}."""
         pattern = r'\{%\s*include\s+["\']([^"\']+)["\']\s*%\}'
-        
+
         def replace_include(match):
             include_path = match.group(1)
             include_content = self.load_include(include_path)
@@ -104,57 +108,58 @@ class TemplateEngine:
             # Remplace les variables dans l'include
             include_content = self.replace_variables(include_content, vars_dict)
             return include_content
-        
+
         max_iterations = 20
         for _ in range(max_iterations):
             new_content = re.sub(pattern, replace_include, content)
             if new_content == content:
                 break
             content = new_content
-        
+
         return content
-    
+
     def replace_variables(self, content: str, vars_dict: Dict) -> str:
         """Remplace les variables {{variable}}."""
+
         def replace_var(match):
             var_name = match.group(1)
             value = vars_dict.get(var_name, '')
-            
+
             return str(value) if value is not None else ''
-        
+
         # Remplace {{variable}}
         content = re.sub(r'\{\{(\w+)\}\}', replace_var, content)
-        
+
         # Traite les conditions {% if %}
         content = self.process_conditions(content, vars_dict)
-        
+
         return content
-    
+
     def process_conditions(self, content: str, vars_dict: Dict) -> str:
         """Traite les conditions {% if %} {% else %} {% endif %}."""
         # Pattern pour {% if var == "value" %} ... {% else %} ... {% endif %}
         pattern1 = r'\{%\s*if\s+(\w+)\s*==\s*["\']([^"\']+)["\']\s*%\}(.*?)(?:\{%\s*else\s*%\}(.*?))?\{%\s*endif\s*%\}'
-        
+
         # Pattern pour {% if var %} ... {% else %} ... {% endif %}
         pattern2 = r'\{%\s*if\s+(\w+)\s*%\}(.*?)(?:\{%\s*else\s*%\}(.*?))?\{%\s*endif\s*%\}'
-        
+
         def replace_condition1(match):
             var_name = match.group(1)
             expected_value = match.group(2)
             if_content = match.group(3) or ''
             else_content = match.group(4) or ''
             actual_value = vars_dict.get(var_name, '')
-            
+
             if str(actual_value) == expected_value:
                 return if_content
             return else_content
-        
+
         def replace_condition2(match):
             var_name = match.group(1)
             if_content = match.group(2) or ''
             else_content = match.group(3) or ''
             actual_value = vars_dict.get(var_name, '')
-            
+
             # Vérifie si la variable existe et est "truthy"
             if actual_value and actual_value != 'False' and actual_value != 'false':
                 if isinstance(actual_value, list) and len(actual_value) > 0:
@@ -162,7 +167,7 @@ class TemplateEngine:
                 elif not isinstance(actual_value, list):
                     return if_content
             return else_content
-        
+
         max_iterations = 10
         for _ in range(max_iterations):
             new_content = re.sub(pattern1, replace_condition1, content, flags=re.DOTALL)
@@ -170,23 +175,48 @@ class TemplateEngine:
             if new_content == content:
                 break
             content = new_content
-        
+
         return content
-    
+
     def render(self, template_path: Path, vars_dict: Dict) -> str:
         """Rend un template avec les variables données."""
         if not template_path.exists():
             raise FileNotFoundError(f"Template non trouvé : {template_path}")
-        
+
         content = template_path.read_text(encoding='utf-8')
-        
+
         # Traite les includes
         content = self.process_includes(content, vars_dict)
-        
+
         # Remplace les variables
         content = self.replace_variables(content, vars_dict)
-        
+
         return content
+
+
+def generate_robots_txt(output_dir: Path) -> None:
+    """
+    Genere robots.txt dans dist/ avec des URLs basees sur SITE_BASE.
+
+    Ca evite de versionner un domaine "reel" dans le repo, tout en ayant des
+    sitemaps absolus corrects au moment du build/deploiement.
+    """
+    base = SITE_BASE.rstrip('/')
+    content = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "\n"
+        "# Sitemap\n"
+        f"Sitemap: {base}/sitemap.xml\n"
+        f"Sitemap: {base}/blog/sitemap-blog.xml\n"
+        "\n"
+        "# Autoriser le blog\n"
+        "Allow: /blog/\n"
+        "\n"
+        "# Autoriser les assets\n"
+        "Allow: /assets/\n"
+    )
+    (output_dir / 'robots.txt').write_text(content, encoding='utf-8')
 
 
 def load_page_config(page_name: str) -> Dict:
@@ -198,6 +228,59 @@ def load_page_config(page_name: str) -> Dict:
             return json.load(f)
     
     return {}
+
+
+def _to_absolute_url(url_or_path: str) -> str:
+    """
+    Convertit un chemin ou une URL en URL absolue basee sur SITE_BASE.
+
+    Règles :
+    - si c'est deja une URL http(s), on la retourne telle quelle (mais on remplace
+      l'eventuel domaine historique par SITE_BASE si on detecte '/assets/' ou un path local)
+    - si ca commence par '/', on prefixe avec SITE_BASE
+    - sinon, on prefixe avec SITE_BASE + '/'
+    """
+    if not url_or_path:
+        return url_or_path
+
+    base = SITE_BASE.rstrip('/')
+    s = url_or_path.strip()
+
+    if s.startswith('http://') or s.startswith('https://'):
+        # Si l'URL contient un path local du site, on peut rebaser sur SITE_BASE
+        try:
+            from urllib.parse import urlparse
+
+            p = urlparse(s)
+            if p.path.startswith('/'):
+                return base + p.path + (('?' + p.query) if p.query else '') + (('#' + p.fragment) if p.fragment else '')
+        except Exception:
+            return s
+        return s
+
+    if s.startswith('/'):
+        return base + s
+    return base + '/' + s
+
+
+def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
+    """
+    Normalise `page_url` et `og_image` pour eviter les domaines en dur.
+    """
+    # Canonical: si absent, on derive d'apres la page
+    page_url = vars_dict.get('page_url')
+    if not page_url:
+        if page_name == 'index':
+            page_url = '/'
+        else:
+            page_url = '/' + page_name
+        vars_dict['page_url'] = page_url
+
+    vars_dict['page_url'] = _to_absolute_url(str(vars_dict.get('page_url', '')))
+
+    og_image = vars_dict.get('og_image')
+    if og_image:
+        vars_dict['og_image'] = _to_absolute_url(str(og_image))
 
 
 def load_projects() -> List[Dict]:
@@ -442,6 +525,9 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     vars_dict = DEFAULT_VARS.copy()
     vars_dict.update(page_config)
     vars_dict['current_page'] = page_name
+
+    # Normalise canonical/OG a partir de SITE_BASE
+    _normalize_page_meta(vars_dict, page_name)
     
     # Génère le contenu des scripts
     scripts = vars_dict.get('page_scripts', [])
@@ -641,12 +727,10 @@ def main():
             print(f"[OK] Assets copies dans {assets_dst}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)
         generate_webp_variants(assets_dst)
-    
-    # Copie robots.txt
-    robots_src = BASE_DIR / 'robots.txt'
-    if robots_src.exists():
-        shutil.copy2(robots_src, OUTPUT_DIR / 'robots.txt')
-        print("[OK] robots.txt copie")
+
+    # Genere robots.txt (base sur SITE_BASE)
+    generate_robots_txt(OUTPUT_DIR)
+    print("[OK] robots.txt genere")
 
     # Sitemaps : generes apres le build du blog (voir plus bas)
     

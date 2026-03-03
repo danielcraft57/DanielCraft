@@ -1,0 +1,15 @@
+{
+  "id": "docker-serie",
+  "title": "Série Docker - Conteneurs, images et environnements de dev",
+  "description": "Série complète pour comprendre Docker de A à Z : concepts, installation, images, conteneurs, volumes, réseaux, docker-compose, optimisation et bonnes pratiques pour le développement et la production.",
+  "slug": "docker-serie",
+  "articles": [
+    "docker-fondamentaux-images-conteneurs",
+    "docker-installation-bonnes-pratiques",
+    "docker-volumes-reseaux",
+    "docker-compose-environnements-local",
+    "docker-build-optimisation-images",
+    "docker-production-registry-securite"
+  ]
+}
+

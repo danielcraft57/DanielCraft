@@ -1,6 +1,6 @@
 ---
 title: "Mesurer le SEO : Search Console, Analytics et KPIs"
-date: 2026-02-21
+date: 2025-09-12
 excerpt: "Google Search Console, Google Analytics, KPIs SEO : impressions, clics, positions, trafic organique. Définir des objectifs et suivre l'évolution de ton référencement."
 type: article
 tags: [SEO, mesure, Search Console, Analytics, KPIs]

@@ -1,6 +1,6 @@
 ---
 title: "Reseaux sociaux et community management : animer et engager"
-date: 2026-02-21
+date: 2025-06-09
 excerpt: "Community management : publier, repondre, moderer et mesurer. Animer une communaute sur les reseaux pour renforcer la notoriete et la fidelisation."
 type: article
 tags: [communication, reseaux sociaux, community management, engagement, animation]

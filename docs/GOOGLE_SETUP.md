@@ -1,6 +1,6 @@
 # Configuration Google Verification et Google Analytics
 
-Ce guide explique comment obtenir et configurer Google Search Console (vérification) et Google Analytics pour danielcraft.fr.
+Ce guide explique comment obtenir et configurer Google Search Console (vérification) et Google Analytics pour votre site (par exemple `votre-domaine.fr`).
 
 ## ✅ Configuration Actuelle
 
@@ -22,7 +22,7 @@ Google Search Console permet de suivre les performances de votre site dans les r
 
 2. **Ajouter une propriété**
    - Cliquez sur "Ajouter une propriété"
-   - Entrez votre URL : `https://danielcraft.fr`
+   - Entrez l'URL de votre site : par exemple `https://votre-domaine.fr`
    - Cliquez sur "Continuer"
 
 3. **Choisir la méthode de vérification**
@@ -64,14 +64,14 @@ Google Analytics permet de suivre le trafic et le comportement des visiteurs sur
    - Cliquez sur "Commencer la mesure"
    - Remplissez les informations demandées :
      - Nom du compte : "DanielCraft" (ou ce que vous voulez)
-     - Nom de la propriété : "danielcraft.fr"
+     - Nom de la propriété : par exemple "votre-domaine.fr"
      - Fuseau horaire : "Europe/Paris"
      - Devise : "Euro (€)"
    - Cliquez sur "Suivant"
 
 3. **Configurer la propriété**
    - Sélectionnez "Web" comme plateforme
-   - URL du site web : `https://danielcraft.fr`
+   - URL du site web : par exemple `https://votre-domaine.fr`
    - Nom du flux de données : "Site web principal"
    - Cliquez sur "Créer le flux"
 
@@ -86,7 +86,7 @@ Google Analytics permet de suivre le trafic et le comportement des visiteurs sur
    - Sauvegardez les fichiers
 
 6. **Vérifier que ça fonctionne**
-   - Visitez votre site : https://danielcraft.fr
+- Visitez votre site : par exemple `https://votre-domaine.fr`
    - Retournez sur Google Analytics
    - Allez dans "Rapports" > "Temps réel"
    - Vous devriez voir votre visite apparaître dans les 30 secondes
@@ -128,7 +128,7 @@ Après avoir ajouté les codes :
 
 1. **Google Search Console**
    - Vérifiez que votre propriété est vérifiée
-   - Soumettez votre sitemap : `https://danielcraft.fr/sitemap.xml`
+- Soumettez votre sitemap : par exemple `https://votre-domaine.fr/sitemap.xml`
    - Allez dans "Sitemaps" > "Ajouter un nouveau sitemap"
 
 2. **Google Analytics**

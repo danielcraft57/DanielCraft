@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-- Serveur nginx sur `pi@node12.lan`
+- Serveur nginx sur `deploy@server.local` (exemple)
 - Nom de domaine configuré (DNS pointant vers le serveur)
 - Accès SSH au serveur
 - rsync installé (généralement déjà présent)
@@ -36,14 +36,14 @@ Le script va automatiquement :
 
 ```bash
 # Se connecter au serveur
-ssh pi@node12.lan
+ssh deploy@server.local
 
 # Créer le répertoire pour le site
-sudo mkdir -p /var/www/danielcraft-v6
+sudo mkdir -p /var/www/example.com
 
 # Donner les permissions appropriées
-sudo chown -R pi:www-data /var/www/danielcraft-v6
-sudo chmod -R 755 /var/www/danielcraft-v6
+sudo chown -R deploy:www-data /var/www/example.com
+sudo chmod -R 755 /var/www/example.com
 ```
 
 ### 2. Transférer les fichiers
@@ -52,14 +52,14 @@ Depuis ta machine locale :
 
 ```bash
 # Depuis le dossier V6
-rsync -avz --exclude 'node_modules' --exclude '.git' --exclude '*.md' --exclude 'deploy.sh' --exclude 'nginx.conf' ./ pi@node12.lan:/var/www/danielcraft-v6/
+rsync -avz --exclude 'node_modules' --exclude '.git' --exclude '*.md' --exclude 'deploy.sh' --exclude 'nginx.conf' ./ deploy@server.local:/var/www/example.com/
 ```
 
 ### 3. Configurer Nginx
 
 ```bash
 # Se connecter au serveur
-ssh pi@node12.lan
+ssh deploy@server.local
 
 # Copier et adapter la config nginx (remplacer 'ton-domaine.com' par ton domaine)
 sed "s/ton-domaine.com/TON-DOMAINE/g" nginx.conf | sudo tee /etc/nginx/sites-available/danielcraft-v6
@@ -93,7 +93,7 @@ Ajouter un enregistrement DNS A pour ton domaine :
 ```
 Type: A
 Nom: @ (ou ton-domaine.com)
-Valeur: IP de node12.lan
+Valeur: IP de ton serveur
 TTL: 3600
 ```
 
@@ -101,14 +101,14 @@ Pour www :
 ```
 Type: A
 Nom: www
-Valeur: IP de node12.lan
+Valeur: IP de ton serveur
 TTL: 3600
 ```
 
 ### 6. Obtenir le certificat SSL
 
 ```bash
-ssh pi@node12.lan
+ssh deploy@server.local
 sudo certbot --nginx -d ton-domaine.com -d www.ton-domaine.com
 ```
 
@@ -124,10 +124,10 @@ Pour mettre à jour le site après des modifications :
 
 ```bash
 # Depuis ta machine locale, dans le dossier V6
-rsync -avz --exclude 'node_modules' --exclude '.git' ./ pi@node12.lan:/var/www/danielcraft-v6/
+rsync -avz --exclude 'node_modules' --exclude '.git' ./ deploy@server.local:/var/www/example.com/
 
 # Sur le serveur, recharger nginx si nécessaire
-ssh pi@node12.lan "sudo systemctl reload nginx"
+ssh deploy@server.local "sudo systemctl reload nginx"
 ```
 
 ## Dépannage

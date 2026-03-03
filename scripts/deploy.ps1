@@ -1,21 +1,31 @@
 # Script PowerShell de déploiement pour DanielCraft V6
 # Usage: .\deploy.ps1
-#        .\deploy.ps1 -Domain "danielcraft.fr"
+#        .\deploy.ps1 -Domain "example.com"
 #        .\deploy.ps1 -ContentOnly  (déploiement contenu uniquement)
 
 param(
-    [string]$Domain = "danielcraft.fr",
+    # Ne mets pas de valeurs perso en dur ici.
+    # Exemple:
+    #   .\scripts\deploy.ps1 -Domain "ton-domaine.com" -ServerHost "ton-serveur.lan" -ServerUser "deploy"
+    [string]$Domain = "example.com",
+    [string]$ServerUser = "deploy",
+    [string]$ServerHost = "server.local",
+    [string]$ServerPath = "/var/www/example.com",
+    [string]$ConfigName = "example.com",
+    # Base URL utilisee pendant le build (canoniques, OG, sitemaps).
+    # Par defaut on derive depuis -Domain.
+    [string]$SiteBase = "",
     [switch]$ContentOnly
 )
 
 # Configuration
 $ErrorActionPreference = "Stop"
-$SERVER_USER = "pi"
-$SERVER_HOST = "node12.lan"
-$SERVER_PATH = "/var/www/danielcraft.fr"
+$SERVER_USER = $ServerUser
+$SERVER_HOST = $ServerHost
+$SERVER_PATH = $ServerPath
 $NGINX_SITES_AVAILABLE = "/etc/nginx/sites-available"
 $NGINX_SITES_ENABLED = "/etc/nginx/sites-enabled"
-$CONFIG_NAME = "danielcraft.fr"
+$CONFIG_NAME = $ConfigName
 
 # Couleurs pour les messages
 function Write-ColorOutput {
@@ -37,16 +47,23 @@ if (-not (Test-Path "build.py")) {
 # 1.5. Lancer le build Python
 Write-ColorOutput "[0/6] Lancement du build Python..." "Yellow"
 
+# Injecter SITE_BASE pour eviter un domaine en dur dans le code
+if ([string]::IsNullOrWhiteSpace($SiteBase)) {
+    $SiteBase = "https://$Domain"
+}
+$env:SITE_BASE = $SiteBase
+
 # On essaie d'utiliser 'python' en priorité (là où Pillow est installé),
 # et on tombe sur 'python3' si besoin.
 $pythonCmd = "python"
 try {
-    Get-Command $pythonCmd -ErrorAction Stop | Out-Null
+    $null = Get-Command $pythonCmd -ErrorAction Stop
 } catch {
     $pythonCmd = "python3"
 }
 
-$buildOutput = & $pythonCmd build.py 2>&1 | Out-String
+$buildLines = & $pythonCmd build.py 2>&1
+$buildOutput = [string]::Join("`n", $buildLines)
 if ($LASTEXITCODE -ne 0) {
     Write-ColorOutput "Erreur lors du build Python (commande: $pythonCmd build.py):" "Red"
     Write-Host $buildOutput
@@ -58,7 +75,7 @@ Write-Host $buildOutput
 $DIST_DIR = "dist"
 if (Test-Path "$DIST_DIR/assets") {
     $webpFiles = Get-ChildItem -Path "$DIST_DIR/assets" -Recurse -Filter *.webp -ErrorAction SilentlyContinue
-    $webpCount = ($webpFiles | Measure-Object).Count
+    $webpCount = @($webpFiles).Count
     Write-ColorOutput "Images WebP detectees dans dist/assets: $webpCount" "Yellow"
 }
 
@@ -75,7 +92,7 @@ Write-Host ""
 
 # 2. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[1/6] Creation du repertoire sur le serveur..." "Yellow"
-$createDirCmd = "sudo mkdir -p $SERVER_PATH && sudo chown -R ${SERVER_USER}:www-data $SERVER_PATH && sudo chmod -R 755 $SERVER_PATH"
+$createDirCmd = "sudo mkdir -p $SERVER_PATH; sudo chown -R ${SERVER_USER}:www-data $SERVER_PATH; sudo chmod -R 755 $SERVER_PATH"
 ssh "${SERVER_USER}@${SERVER_HOST}" $createDirCmd
 
 # 3. Transférer les fichiers depuis dist/ avec rsync (timeout + keepalive pour eviter coupure)
@@ -95,9 +112,10 @@ try {
 
 if (-not $rsyncOk) {
     Write-ColorOutput "Fallback scp (transfert complet, peut etre long)..." "Yellow"
-    Get-ChildItem -Path $DIST_DIR -Filter *.html -File | ForEach-Object {
-        Write-Host "  Transfert: $($_.Name)"
-        scp $_.FullName "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
+    $htmlFiles = Get-ChildItem -Path $DIST_DIR -Filter *.html -File -ErrorAction SilentlyContinue
+    foreach ($f in $htmlFiles) {
+        Write-Host "  Transfert: $($f.Name)"
+        scp $f.FullName "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
     foreach ($file in @("robots.txt", "sitemap.xml", "sitemap-pages.xml")) {
         $filePath = Join-Path $DIST_DIR $file
@@ -128,18 +146,18 @@ if (-not $rsyncOk) {
 }
 
 # 3.2 Verifier que le blog a bien ete deploye
-$blogCheckCmd = "test -f $SERVER_PATH/blog/index.html && echo 'OK: blog deploye' || echo 'ATTENTION: blog/index.html manquant'"
+$blogCheckCmd = "if test -f $SERVER_PATH/blog/index.html; then echo 'OK: blog deploye'; else echo 'ATTENTION: blog/index.html manquant'; fi"
 $blogCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $blogCheckCmd
 Write-Host $blogCheck
 
 # 3.3 Verifier que les pages projet sont deployees
-$projetsCheckCmd = 'test -d ' + $SERVER_PATH + '/projets && (n=$(ls -1 ' + $SERVER_PATH + '/projets/*.html 2>/dev/null | wc -l); echo "OK: projets deploye ($n pages)") || echo ''ATTENTION: projets/ manquant'''
+$projetsCheckCmd = 'if test -d ' + $SERVER_PATH + '/projets; then echo "OK: projets deploye"; else echo "ATTENTION: projets/ manquant"; fi'
 $projetsCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $projetsCheckCmd
 Write-Host $projetsCheck
 
 # 3.5 Vérification rapide des images hero sur le serveur
 Write-ColorOutput "[Check] Verification des images du hero (assets/images/hero)..." "Yellow"
-$checkHeroCmd = 'if test -d ' + $SERVER_PATH + '/assets/images/hero; then n=$(ls -1 ' + $SERVER_PATH + '/assets/images/hero/*.{png,jpg,jpeg,webp} 2>/dev/null | wc -l); echo "OK: assets/images/hero present ($n images)"; else echo "ATTENTION: assets/images/hero manquant (mockups hero)"; fi'
+$checkHeroCmd = 'if test -d ' + $SERVER_PATH + '/assets/images/hero; then echo "OK: assets/images/hero present"; else echo "ATTENTION: assets/images/hero manquant (mockups hero)"; fi'
 $checkHeroResult = ssh "${SERVER_USER}@${SERVER_HOST}" $checkHeroCmd
 Write-Host $checkHeroResult
 
@@ -154,14 +172,14 @@ if ($ContentOnly) {
 
 # 4. Configurer les permissions (CRITIQUE pour nginx/www-data)
 Write-ColorOutput "[3/6] Configuration des permissions (chown/chmod pour www-data)..." "Yellow"
-$permissionsCmd = "sudo chown -R ${SERVER_USER}:www-data $SERVER_PATH; sudo find $SERVER_PATH -type d -exec chmod 755 {} ';'; sudo find $SERVER_PATH -type f -exec chmod 644 {} ';'; sudo -u www-data test -r $SERVER_PATH/index.html && echo 'Permissions OK' || echo 'ERREUR: nginx ne peut pas lire les fichiers'"
+$permissionsCmd = "sudo chown -R ${SERVER_USER}:www-data $SERVER_PATH; sudo find $SERVER_PATH -type d -exec chmod 755 {} ';'; sudo find $SERVER_PATH -type f -exec chmod 644 {} ';'; if sudo -u www-data test -r $SERVER_PATH/index.html; then echo 'Permissions OK'; else echo 'ERREUR: nginx ne peut pas lire les fichiers'; fi"
 ssh "${SERVER_USER}@${SERVER_HOST}" $permissionsCmd
 
 # 5. Préparer la config nginx
 Write-ColorOutput "[4/6] Preparation de la configuration nginx..." "Yellow"
 
 # Vérifier si les certificats SSL existent déjà
-$certCheckCmd = "test -f /etc/letsencrypt/live/$Domain/fullchain.pem && echo 'yes' || echo 'no'"
+$certCheckCmd = "if test -f /etc/letsencrypt/live/$Domain/fullchain.pem; then echo 'yes'; else echo 'no'; fi"
 $certExists = (ssh "${SERVER_USER}@${SERVER_HOST}" $certCheckCmd).Trim()
 
 $tmpFile = [System.IO.Path]::GetTempFileName() + ".conf"
@@ -200,7 +218,9 @@ $nginxTestResult = $LASTEXITCODE
 if ($nginxTestResult -ne 0) {
     Write-ColorOutput "Erreur dans la configuration nginx." "Red"
     Write-ColorOutput "Diagnostic des ports 80/443..." "Yellow"
-    ssh "${SERVER_USER}@${SERVER_HOST}" "echo '=== Port 80 ==='; sudo lsof -i:80 2>/dev/null || echo 'Libre'; echo ''; echo '=== Port 443 ==='; sudo lsof -i:443 2>/dev/null || echo 'Libre'; echo ''; echo '=== Sites actives ==='; ls -la ${NGINX_SITES_ENABLED}/"
+    ssh "${SERVER_USER}@${SERVER_HOST}" "echo '=== Port 80 ==='; if sudo lsof -i:80 2>/dev/null; then true; else echo 'Libre'; fi"
+    ssh "${SERVER_USER}@${SERVER_HOST}" "echo '=== Port 443 ==='; if sudo lsof -i:443 2>/dev/null; then true; else echo 'Libre'; fi"
+    ssh "${SERVER_USER}@${SERVER_HOST}" "echo '=== Sites actives ==='; ls -la ${NGINX_SITES_ENABLED}/"
     Write-ColorOutput "Note: Si les ports sont utilises par nginx lui-meme, c'est normal." "Yellow"
     Write-ColorOutput "Le probleme vient probablement d'une configuration invalide. Verifie les logs ci-dessus." "Yellow"
     exit 1
@@ -223,7 +243,7 @@ if ($certExists -eq "yes") {
 Write-ColorOutput "[Finalisation] Verification finale des permissions et rechargement de nginx..." "Yellow"
 $finalPermissionsCmd = "sudo chown -R ${SERVER_USER}:www-data $SERVER_PATH; sudo find $SERVER_PATH -type d -exec chmod 755 {} ';'; sudo find $SERVER_PATH -type f -exec chmod 644 {} ';'"
 ssh "${SERVER_USER}@${SERVER_HOST}" $finalPermissionsCmd
-$reloadNginxCmd = "sudo systemctl reload nginx; sleep 1; if sudo systemctl is-active --quiet nginx; then echo 'OK: Nginx est actif et fonctionne correctement'; sudo systemctl status nginx --no-pager -l | head -10; else echo 'ERREUR: Nginx n est pas actif'; sudo journalctl -u nginx -n 20 --no-pager; exit 1; fi"
+$reloadNginxCmd = "sudo systemctl reload nginx; sleep 1; if sudo systemctl is-active --quiet nginx; then echo 'OK: Nginx est actif et fonctionne correctement'; sudo systemctl status nginx --no-pager -l --lines=10; else echo 'ERREUR: Nginx n est pas actif'; sudo journalctl -u nginx -n 20 --no-pager; exit 1; fi"
 ssh "${SERVER_USER}@${SERVER_HOST}" $reloadNginxCmd
 
 Write-Host ""

@@ -4,7 +4,7 @@ Chaque article du blog peut avoir une image OG dédiée. Place les images dans `
 
 **Important : tous les textes visibles dans les images doivent être en français.**
 
-Format commun : 1200x630 px, ratio 1.91:1, JPEG, style cohérent avec danielcraft.fr (fond clair, accent rouge #dc2626).
+Format commun : 1200x630 px, ratio 1.91:1, JPEG, style cohérent avec le site (fond clair, accent rouge #dc2626).
 
 ---
 

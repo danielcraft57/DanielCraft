@@ -1,6 +1,6 @@
 ---
 title: "Prise de parole et discours : communiquer a l'oral avec impact"
-date: 2026-02-21
+date: 2025-05-30
 excerpt: "Preparer et livrer un discours ou une prise de parole : structure, message cle, gestion du stress. Renforcer ton impact en conference, meetup ou rendez-vous client."
 type: article
 tags: [communication, prise de parole, discours, conference, presentation]

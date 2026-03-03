@@ -13,12 +13,12 @@ Ce dossier contient les fichiers de configuration Nginx pour le site.
 
 1. Copier la configuration dans le dossier nginx :
 ```bash
-sudo cp scripts/nginx.conf /etc/nginx/sites-available/danielcraft.fr
+sudo cp scripts/nginx.conf /etc/nginx/sites-available/example.com
 ```
 
 2. Créer le lien symbolique :
 ```bash
-sudo ln -s /etc/nginx/sites-available/danielcraft.fr /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
 ```
 
 3. Tester la configuration :
@@ -36,7 +36,7 @@ sudo systemctl reload nginx
 La configuration utilise Let's Encrypt avec Certbot. Pour installer les certificats :
 
 ```bash
-sudo certbot --nginx -d danielcraft.fr -d www.danielcraft.fr
+sudo certbot --nginx -d example.com -d www.example.com
 ```
 
 ## Fonctionnalités
@@ -61,5 +61,5 @@ sudo certbot --nginx -d danielcraft.fr -d www.danielcraft.fr
 
 - Les fichiers HTML sont servis sans extension (URLs propres)
 - Les anciennes URLs avec .html sont redirigées en 301
-- Le dossier racine est `/var/www/danielcraft.fr`
+- Le dossier racine est `/var/www/example.com`
 

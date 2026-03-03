@@ -1,6 +1,6 @@
 # SEO - Optimisation Référencement
 
-Ce document explique les optimisations SEO mises en place sur danielcraft.fr.
+Ce document explique les optimisations SEO mises en place sur le site (par exemple `votre-domaine.fr`).
 
 ## Balises Open Graph
 
@@ -91,7 +91,7 @@ Spécifications communes :
 - Format : JPEG
 - Dimensions : 1200x630px (ratio 1.91:1)
 - Poids : < 1MB recommandé
-- Style : cohérent avec danielcraft.fr (fond clair, accent rouge `#dc2626`, typographie type Inter)
+- Style : cohérent avec le site (fond clair, accent rouge `#dc2626`, typographie type Inter)
 
 En complément, des visuels marketing sont générés pour :
 - Le **hero** de la page d'accueil (`assets/images/hero/`)

@@ -3,7 +3,7 @@
 ## Prompt pour Midjourney / DALL-E / Stable Diffusion
 
 ```
-Create a professional, modern social media image for a freelance web developer portfolio called "DanielCraft", visually consistent with the homepage of danielcraft.fr.
+Create a professional, modern social media image for a freelance web developer portfolio called "DanielCraft", visually consistent with the homepage design of the site.
 
 Technical specifications:
 - Dimensions: 1200x630 pixels (1.91:1 aspect ratio)
@@ -31,13 +31,13 @@ Avoid:
 - Overly complex graphics or fake dashboards
 - Stock photos or realistic people
 
-The image should look like a modern landing-page hero visual, matching the identity of danielcraft.fr, and remain professional on LinkedIn, Facebook, Twitter, and other social platforms.
+The image should look like a modern landing-page hero visual, matching the visual identity of the site, and remain professional on LinkedIn, Facebook, Twitter, and other social platforms.
 ```
 
 ## Prompt pour ChatGPT / Claude (avec génération d'image)
 
 ```
-Génère une image Open Graph (1200x630px) pour mon site portfolio de développeur freelance, visuellement cohérente avec la page d'accueil de danielcraft.fr.
+Génère une image Open Graph (1200x630px) pour mon site portfolio de développeur freelance, visuellement cohérente avec la page d'accueil du site.
 
 Contenu :
 - Titre principal : "DanielCraft" (grand, en gras, en très foncé, style Inter ou équivalent)
@@ -49,7 +49,7 @@ Contenu :
 
 Style :
 - Moderne, épuré, professionnel
-- Identité proche du site danielcraft.fr : fond clair, accent rouge #dc2626, typographie type Inter
+- Identité proche du design du site : fond clair, accent rouge #dc2626, typographie type Inter
 - Haute lisibilité pour le partage social
 - Composition centrée ou légèrement décentrée, très aérée, avec un léger effet de profondeur via les ombres
 

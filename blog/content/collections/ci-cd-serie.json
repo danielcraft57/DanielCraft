@@ -1,0 +1,19 @@
+{
+  "id": "ci-cd-serie",
+  "title": "Série CI/CD - Du commit à la production",
+  "description": "Une série complète sur la CI/CD : pipelines, tests, build d'images, gestion des secrets, déploiement (Docker/Kubernetes), GitOps, stratégies de release et bonnes pratiques pour livrer vite sans casser.",
+  "slug": "ci-cd-serie",
+  "articles": [
+    "ci-cd-fondamentaux-pipelines",
+    "ci-cd-tests-qualite-gates",
+    "ci-cd-build-images-docker",
+    "ci-cd-secrets-variables-environnement",
+    "ci-cd-github-actions-workflow-complet",
+    "ci-cd-gitlab-ci-pipeline-complet",
+    "ci-cd-kubernetes-deploiement-strategies",
+    "ci-cd-gitops-argo-flux",
+    "ci-cd-versioning-releases-rollbacks",
+    "ci-cd-observabilite-deploiements"
+  ]
+}
+

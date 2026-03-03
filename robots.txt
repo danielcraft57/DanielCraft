@@ -1,11 +1,14 @@
-# robots.txt pour danielcraft.fr
+# robots.txt (exemple)
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://danielcraft.fr/sitemap.xml
-Sitemap: https://danielcraft.fr/blog/sitemap-blog.xml
+Sitemap: https://example.com/sitemap.xml
+Sitemap: https://example.com/blog/sitemap-blog.xml
+#
+# Important: pense a regenerer robots.txt avec ton domaine si tu veux des URLs absolues.
+# Sinon, tu peux laisser ces valeurs ou passer par ton process de build/deploiement.
 
 # Autoriser le blog (indexation SEO et GEO)
 Allow: /blog/

@@ -75,7 +75,7 @@ Chaque page a un fichier JSON de configuration dans `src/pages/` :
   "page_title": "Titre de la page",
   "page_description": "Description de la page",
   "page_keywords": "mot-clé1, mot-clé2",
-  "page_url": "https://danielcraft.fr/ma-page",
+  "page_url": "https://votre-domaine.fr/ma-page",
   "current_page": "ma-page",
   "page_scripts": ["main.js", "autre-script.js"],
   "extra_css": "stats.css",

@@ -10,7 +10,7 @@ Un script PowerShell (`deploy.ps1`) a été créé pour faciliter le déploiemen
 
 ```powershell
 cd V6
-.\scripts\deploy.ps1 -Domain "danielcraft.fr"
+.\scripts\deploy.ps1 -Domain "example.com" -ServerUser "deploy" -ServerHost "server.local" -ServerPath "/var/www/example.com" -ConfigName "example.com"
 ```
 
 Lance le build Python (pages + blog + sitemaps), transfère tout depuis `dist/` (HTML, assets, **api/**, **blog/**), applique les permissions, copie la config nginx et recharge nginx. À faire au moins une fois, puis après chaque modification de `scripts/nginx.conf`.
@@ -19,7 +19,7 @@ Lance le build Python (pages + blog + sitemaps), transfère tout depuis `dist/` 
 
 ```powershell
 cd V6
-.\scripts\deploy-content.ps1
+.\scripts\deploy-content.ps1 -ServerUser "deploy" -ServerHost "server.local" -ServerPath "/var/www/example.com"
 ```
 
 Lance le build Python puis transfère le contenu de `dist/` (HTML, assets, **api/**, **blog/**). Ne modifie pas nginx. Idéal pour les mises à jour fréquentes (textes, CSS, JS, articles du blog).
@@ -30,13 +30,13 @@ Le dossier `dist/api/` contient `send-contact.php`. Pour que le formulaire fonct
 
 1. **PHP-FPM** doit être installé et actif : `sudo systemctl status php*-fpm`
 2. La config nginx doit inclure le bloc pour `/api/*.php` (déjà présent dans `scripts/nginx.conf`). Si le socket PHP diffère (ex. `php8.1-fpm.sock`), adapter la ligne `fastcgi_pass` dans `nginx.conf`.
-3. Après un déploiement complet, recharger nginx : `ssh pi@node12.lan 'sudo systemctl reload nginx'`
+3. Après un déploiement complet, recharger nginx : `ssh deploy@server.local 'sudo systemctl reload nginx'`
 
 ### Prérequis
 
 - **SSH** : Doit être installé et configuré (généralement inclus dans Windows 10/11)
 - **rsync** (optionnel) : Pour un transfert plus efficace. Si absent, le script utilise `scp`
-- **Accès SSH** : Certificat SSH configuré pour `pi@node12.lan`
+- **Accès SSH** : Certificat SSH configuré pour `deploy@server.local`
 
 ### Vérifier les Prérequis
 
@@ -48,7 +48,7 @@ ssh -V
 rsync --version
 
 # Tester la connexion
-ssh pi@node12.lan "echo 'Connexion OK'"
+ssh deploy@server.local "echo 'Connexion OK'"
 ```
 
 ## Fonctionnalités du Script
@@ -77,8 +77,9 @@ Le script `deploy.ps1` fait automatiquement :
 
 ```
 === Deploiement DanielCraft V6 ===
-Domaine: danielcraft.fr
-Serveur: pi@node12.lan
+Domaine: votre-domaine.fr
+... (remplace par ton domaine)
+Serveur: deploy@server.local
 
 [1/6] Creation du repertoire sur le serveur...
 [2/6] Transfert des fichiers...
@@ -95,7 +96,7 @@ Certificats SSL deja presents, configuration OK.
 OK: Nginx est actif et fonctionne correctement
 
 === Deploiement termine avec succes ! ===
-Site disponible sur: https://danielcraft.fr
+Site disponible sur: https://example.com
 ```
 
 ## Dépannage
@@ -113,7 +114,7 @@ Site disponible sur: https://danielcraft.fr
 
 ### Erreur de permissions
 - Vérifier que le certificat SSH est bien configuré
-- Tester manuellement : `ssh pi@node12.lan`
+- Tester manuellement : `ssh deploy@server.local`
 
 ### Erreur nginx
 - Voir `troubleshooting.md` pour les solutions détaillées

@@ -160,17 +160,17 @@ Pour vérifier les performances :
 
 ### Vérifier la compression Gzip
 ```bash
-curl -H "Accept-Encoding: gzip" -I https://danielcraft.fr/assets/css/main.css
+curl -H "Accept-Encoding: gzip" -I https://votre-domaine.fr/assets/css/main.css
 ```
 
 ### Vérifier les headers de cache
 ```bash
-curl -I https://danielcraft.fr/assets/css/main.css
+curl -I https://votre-domaine.fr/assets/css/main.css
 ```
 
 ### Tester la taille des ressources
 ```bash
-curl -s https://danielcraft.fr/assets/css/main.css | wc -c
+curl -s https://votre-domaine.fr/assets/css/main.css | wc -c
 ```
 
 ## Notes Importantes

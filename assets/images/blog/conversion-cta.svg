@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
+  <rect fill="#f3f4f6" stroke="#d1d5db" x="10" y="25" width="80" height="30" rx="6"/>
+  <text x="50" y="45" text-anchor="middle" font-size="12" fill="#374151">Visite</text>
+  <rect fill="#f3f4f6" stroke="#d1d5db" x="110" y="25" width="80" height="30" rx="6"/>
+  <text x="150" y="45" text-anchor="middle" font-size="12" fill="#374151">Interet</text>
+  <rect fill="#f3f4f6" stroke="#d1d5db" x="210" y="25" width="80" height="30" rx="6"/>
+  <text x="250" y="45" text-anchor="middle" font-size="12" fill="#374151">Decision</text>
+  <rect fill="#dc2626" stroke="#b91c1c" x="310" y="25" width="80" height="30" rx="6"/>
+  <text x="350" y="45" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CTA</text>
+</svg>

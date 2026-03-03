@@ -1,10 +1,10 @@
 #!/bin/bash
-# Script de déploiement du blog sur le Raspberry Pi
+# Script de déploiement du blog (exemple)
 
-DOMAIN="danielcraft.fr"
-REMOTE_USER="pi"
-REMOTE_HOST="node12.lan"  # Ajuste selon ton setup
-REMOTE_PATH="/var/www/${DOMAIN}/blog"
+DOMAIN="${DOMAIN:-example.com}"
+REMOTE_USER="${REMOTE_USER:-deploy}"
+REMOTE_HOST="${REMOTE_HOST:-server.local}"
+REMOTE_PATH="${REMOTE_PATH:-/var/www/${DOMAIN}/blog}"
 
 echo "Déploiement du blog sur ${REMOTE_HOST}..."
 
