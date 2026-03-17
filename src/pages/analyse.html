@@ -1,0 +1,94 @@
+<section class="section" aria-label="Analyse de site web">
+  <div class="container">
+    <span class="section-badge">Analyse</span>
+    <h1 class="section-title">Rapport d’analyse d’un site web</h1>
+    <p class="section-description">
+      Collez une URL pour afficher (ou générer) un rapport d’audit. Vous pourrez ensuite partager un lien vers ce rapport.
+    </p>
+
+    <div class="pl-card pl-card--form" style="margin-top: 2rem;">
+      <form class="pl-form" id="plForm" novalidate>
+        <div class="form-group pl-url-group">
+          <label for="plUrl">URL du site</label>
+          <div class="pl-url-row">
+            <input
+              id="plUrl"
+              name="url"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="https://exemple.com"
+              required
+            />
+            <button type="submit" class="pl-url-submit" id="plSubmitBtn" aria-label="Analyser l’URL">
+              <span class="pl-btn-text"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></span>
+              <span class="pl-btn-loading" aria-live="polite"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="pl-form-actions">
+          <button type="button" class="btn btn-secondary" id="plClearBtn">
+            <i class="fas fa-rotate-left" aria-hidden="true"></i>Réinitialiser
+          </button>
+        </div>
+
+        <div class="form-feedback form-feedback--error" id="plFeedback" hidden></div>
+        <p class="pl-hint">
+          Astuce : vous pouvez aussi ouvrir directement <code>/analyse?website=https://exemple.com&amp;full=1</code>.
+        </p>
+      </form>
+    </div>
+
+    <section class="pl-report" id="plReport" aria-label="Résultats" hidden>
+      <div class="pl-report-header">
+        <div class="pl-report-title">
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Résultats</h2>
+          <p class="section-description" id="plReportMeta" style="margin: 0;"></p>
+        </div>
+        <div class="pl-report-actions">
+          <button type="button" class="btn btn-secondary" id="plCopyLinkBtn">
+            <i class="fas fa-link" aria-hidden="true"></i>Copier le lien
+          </button>
+          <a class="btn btn-primary" id="plOpenSiteBtn" href="#" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Ouvrir le site
+          </a>
+        </div>
+      </div>
+
+      <div class="pl-grid">
+        <div class="pl-panel">
+          <h3 class="pl-panel-title">Scores</h3>
+          <div class="pl-scores" id="plScores"></div>
+        </div>
+
+        <div class="pl-panel">
+          <h3 class="pl-panel-title">Aperçu</h3>
+          <div class="pl-preview">
+            <div class="pl-preview-shot" id="plScreenshot" aria-label="Capture d’écran du site"></div>
+            <dl class="pl-kv" id="plKeyValues"></dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-panel" style="margin-top: 1.6rem;">
+        <h3 class="pl-panel-title">Points clés</h3>
+        <div class="pl-audits" id="plHighlights"></div>
+      </div>
+
+      <div class="pl-panel" style="margin-top: 1.6rem;">
+        <h3 class="pl-panel-title">Détails</h3>
+        <div class="pl-details" id="plDetails"></div>
+      </div>
+
+      <nav class="legal-page-links" style="margin-top: 2.4rem;" aria-label="Navigation">
+        <a href="/">Retour à l’accueil</a>
+        <span class="separator">·</span>
+        <a href="/projets">Voir les projets</a>
+        <span class="separator">·</span>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </section>
+  </div>
+</section>
+

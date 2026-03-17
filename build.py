@@ -52,6 +52,7 @@ SITEMAP_PAGES = [
     ('/portfolio', 'monthly', '0.7'),
     ('/projets', 'monthly', '0.6'),
     ('/statistiques', 'monthly', '0.5'),
+    ('/analyse', 'monthly', '0.6'),
     ('/mentions-legales', 'yearly', '0.3'),
     ('/cgv', 'yearly', '0.3'),
     ('/cgu', 'yearly', '0.3'),
@@ -758,6 +759,14 @@ def main():
     api_dst = OUTPUT_DIR / 'api'
     if api_src.exists():
         api_dst.mkdir(exist_ok=True)
+        # Nettoie les anciens fichiers pour éviter de garder des endpoints supprimés
+        try:
+            for existing in api_dst.iterdir():
+                if existing.is_file():
+                    existing.unlink(missing_ok=True)  # py3.8+ sur Windows ok
+        except Exception:
+            # Si suppression impossible (verrou), on continue quand même la copie
+            pass
         for f in api_src.iterdir():
             if f.is_file():
                 shutil.copy2(f, api_dst / f.name)
@@ -796,6 +805,7 @@ def main():
         'portfolio',
         'projets',
         'statistiques',
+        'analyse',
         'mentions-legales',
         'cgv',
         'cgu',
