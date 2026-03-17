@@ -143,16 +143,26 @@
   }
 
   function renderPreview(preview) {
-    const { finalUrl, entreprise, technical, seo, pentest, osint } = preview || {};
+    const { finalUrl, entreprise, technical, seo, pentest, osint, screenshotUrl } = preview || {};
 
     if (els.screenshot) {
       els.screenshot.innerHTML = '';
-      const box = document.createElement('div');
-      box.className = 'pl-skeleton';
-      box.style.width = '100%';
-      box.style.height = '100%';
-      box.setAttribute('aria-hidden', 'true');
-      els.screenshot.appendChild(box);
+      if (screenshotUrl) {
+        const img = document.createElement('img');
+        img.src = screenshotUrl;
+        img.alt = 'Aperçu visuel du site analysé';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.referrerPolicy = 'no-referrer';
+        els.screenshot.appendChild(img);
+      } else {
+        const box = document.createElement('div');
+        box.className = 'pl-skeleton';
+        box.style.width = '100%';
+        box.style.height = '100%';
+        box.setAttribute('aria-hidden', 'true');
+        els.screenshot.appendChild(box);
+      }
     }
 
     if (els.openSite && finalUrl) {
@@ -313,6 +323,38 @@
     });
 
     const pagesSummary = tLatest?.pages_summary || {};
+    const pages = toArray(tLatest?.pages);
+
+    // Image d'aperçu : priorité aux meta icônes / images, puis fallback pages.
+    const scrLatest = scraping?.latest || {};
+    const icons = scrLatest?.metadata?.icons || {};
+    let screenshotUrl =
+      icons.main_image ||
+      icons.og_image ||
+      icons.twitter_image ||
+      icons.logo ||
+      entreprise.og_image ||
+      entreprise.favicon ||
+      null;
+
+    // Si aucune image "meta", on tente de choisir une image depuis les pages.
+    if (!screenshotUrl && pages.length) {
+      for (let i = 0; i < pages.length; i++) {
+        const p = pages[i] || {};
+        const details = p.details || {};
+        const ct = (details.content_type || p.content_type || '').toLowerCase();
+        const url = details.final_url || p.final_url || p.page_url || p.url;
+        if (!url) continue;
+        if (ct.startsWith('image/')) {
+          screenshotUrl = url;
+          break;
+        }
+      }
+      if (!screenshotUrl) {
+        const fallback = pages.find(p => (p?.final_url || p?.page_url || '').includes('/wp-content/')) || pages[0];
+        screenshotUrl = (fallback?.details?.final_url || fallback?.final_url || fallback?.page_url || null) || null;
+      }
+    }
     const techRows = [
       ['CMS', tLatest?.cms || '—'],
       ['Version', tLatest?.cms_version || '—'],
@@ -418,6 +460,7 @@
       scoreCards,
       highlights,
       sections,
+      screenshotUrl,
       metaLine: entreprise?.date_analyse ? formatDate(entreprise.date_analyse) : null
     };
   }
