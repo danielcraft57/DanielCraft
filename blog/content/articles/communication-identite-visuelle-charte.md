@@ -1,6 +1,6 @@
 ---
 title: "Identité visuelle et charte graphique : cohérence de ta communication"
-date: 2025-05-10
+date: 2024-03-28
 excerpt: "Logo, couleurs, typographies : construire une identité visuelle claire et une charte graphique pour que tous tes supports communiquent la même image."
 type: article
 tags: [communication, identité visuelle, charte graphique, logo, marque]

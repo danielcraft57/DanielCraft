@@ -1,6 +1,6 @@
 ---
 title: "Docker : bien utiliser les volumes et les réseaux"
-date: 2025-12-11
+date: 2024-11-12
 excerpt: "Connecter tes conteneurs entre eux et gérer les données persistantes avec les volumes et les réseaux Docker, sans te retrouver avec une base de données effacée par erreur."
 type: article
 tags: [Docker, volumes, réseaux, data, DevOps]

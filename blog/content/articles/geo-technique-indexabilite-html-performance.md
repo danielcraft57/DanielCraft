@@ -1,6 +1,6 @@
 ---
 title: "GEO technique : indexabilité, HTML et performance"
-date: 2025-11-17
+date: 2024-09-17
 excerpt: "robots.txt, balisage sémantique, contenu dans le HTML initial (JS/SSR), vitesse de chargement : ce que les moteurs génératifs doivent voir pour citer ton site."
 type: article
 tags: [GEO, technique, indexabilité, HTML, performance, SSR, Core Web Vitals]

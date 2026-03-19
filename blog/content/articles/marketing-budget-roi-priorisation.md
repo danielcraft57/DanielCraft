@@ -1,6 +1,6 @@
 ---
 title: "Marketing : budget, ROI et priorisation des canaux"
-date: 2025-07-02
+date: 2024-05-14
 excerpt: "Allouer son budget marketing : calcul du ROI par canal, priorisation, arbitrages. Maximiser l'impact avec des ressources limitées."
 type: article
 tags: [marketing digital, budget, ROI, priorisation, canaux]

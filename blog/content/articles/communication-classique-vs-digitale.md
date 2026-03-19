@@ -1,6 +1,6 @@
 ---
 title: "Communication classique vs digitale : differences et complementarite"
-date: 2025-04-10
+date: 2024-03-07
 excerpt: "Communication traditionnelle (presse, print, evenementiel) et digitale (web, reseaux sociaux) : avantages, limites et comment les combiner."
 type: article
 tags: [communication, classique, digitale, strategie, canaux]

@@ -1,6 +1,6 @@
 ---
 title: "SEO technique : audit, Core Web Vitals et indexation"
-date: 2025-09-26
+date: 2024-07-23
 excerpt: "Audit technique SEO : indexabilité, Core Web Vitals (LCP, FID, CLS), structure des URLs, balisage. Les fondations techniques pour un bon référencement."
 type: article
 tags: [SEO, technique, Core Web Vitals, audit, performance]

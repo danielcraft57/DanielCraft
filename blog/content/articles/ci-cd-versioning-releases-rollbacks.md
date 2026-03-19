@@ -1,6 +1,6 @@
 ---
 title: "Versioning, releases et rollbacks : livrer sans casser"
-date: 2026-02-18
+date: 2025-04-01
 excerpt: "Tags, sémantique, changelog, environnements et rollbacks : une stratégie de release cohérente pour la CI/CD et la traçabilité."
 type: article
 tags: [CI/CD, versioning, releases, rollback, sémantique]

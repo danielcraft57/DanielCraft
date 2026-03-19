@@ -1,6 +1,6 @@
 ---
 title: "Marketing email : nurturing et conversion"
-date: 2025-07-26
+date: 2024-05-28
 excerpt: "Newsletters, séquences d'emails, automatisation. Utiliser l'email pour nourrir tes leads et les convertir en clients. Bonnes pratiques et outils."
 type: article
 tags: [marketing digital, email, newsletter, nurturing, conversion]

@@ -1,6 +1,6 @@
 ---
 title: "GEO vs SEO : différences, métriques et complémentarité"
-date: 2025-11-24
+date: 2024-09-19
 excerpt: "GEO et SEO ne s'opposent pas : objectifs, métriques et cas d'usage diffèrent. Quand privilégier la citation IA et quand viser le classement SERP. Stratégie intégrée pour maximiser ta visibilité."
 type: article
 tags: [GEO, SEO, SERP, moteurs génératifs, stratégie, référencement]

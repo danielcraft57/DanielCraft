@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes et CI/CD : déploiement continu propre"
-date: 2026-01-25
+date: 2025-01-23
 excerpt: "Brancher ton cluster Kubernetes sur ta CI/CD : build d'images, push vers un registry, mise à jour des manifests et stratégies de déploiement."
 type: article
 tags: [Kubernetes, CI/CD, déploiement continu, DevOps]

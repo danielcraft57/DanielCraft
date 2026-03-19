@@ -1,6 +1,6 @@
 ---
 title: "CI/CD sur Kubernetes : stratégies de déploiement (rolling, blue/green, canary)"
-date: 2026-02-14
+date: 2025-03-25
 excerpt: "Déployer sur Kubernetes sans stress : rolling updates, blue/green, canary, readiness probes, rollbacks et comment choisir la bonne stratégie."
 type: article
 tags: [CI/CD, Kubernetes, déploiement, canary, rollback]

@@ -1,6 +1,6 @@
 ---
 title: "Schema.org et données structurées pour le SEO"
-date: 2025-09-19
+date: 2024-07-18
 excerpt: "JSON-LD, types Schema.org (Article, LocalBusiness, FAQPage), Rich Snippets. Comment structurer tes données pour améliorer l'affichage dans les résultats Google."
 type: article
 tags: [SEO, Schema.org, JSON-LD, données structurées, Rich Snippets]

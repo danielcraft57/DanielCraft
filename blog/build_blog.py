@@ -16,6 +16,7 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 try:
     import markdown
@@ -167,11 +168,27 @@ def _get_article_og_image(article: dict) -> str:
 
 
 def _schema_article(article: dict) -> str:
-    """Genere le JSON-LD schema.org BlogPosting pour un article (optimise RDF/SEO)."""
+    """Genere le JSON-LD schema.org pour un article (optimise RDF/SEO).
+
+    Le champ `type` du front matter ajuste:
+    - le libelle articleSection/genre
+    - parfois le @type schema.org (HowTo / TechArticle / Report)
+    """
     url = f"{SITE_BASE}/blog/articles/{article['slug']}"
+    raw_type = (article.get('type') or 'article').strip().lower()
+    label = _type_label(article)
+
+    schema_type = 'BlogPosting'
+    if raw_type in {'tutorial', 'tutoriel', 'checklist', 'template'}:
+        schema_type = 'HowTo'
+    elif raw_type in {'guide', 'framework', 'methode', 'method'}:
+        schema_type = 'TechArticle'
+    elif raw_type in {'case-study', 'case_study', 'etude_cas', 'etude-de-cas', 'etude de cas', 'rex', 'retour-experience', 'retour_experience'}:
+        schema_type = 'Report'
+
     schema = {
         '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
+        '@type': schema_type,
         'headline': article['title'],
         'description': article.get('excerpt', ''),
         'url': url,
@@ -179,6 +196,8 @@ def _schema_article(article: dict) -> str:
         'datePublished': article.get('date', '')[:10],
         'dateModified': article.get('date', '')[:10],
         'inLanguage': 'fr-FR',
+        'articleSection': label,
+        'genre': label,
         'author': {
             '@type': 'Person',
             'name': 'Loïc DANIEL',
@@ -239,6 +258,47 @@ def _schema_blog_index(articles: list[dict]) -> str:
         ]
     }
     return f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>\n<script type="application/ld+json">\n{json.dumps(breadcrumb, ensure_ascii=False, indent=2)}\n</script>'
+
+
+def _type_label(article: dict) -> str:
+    """
+    Retourne un libelle humain a partir du champ type du front matter.
+
+    Exemples (type normalise en minuscules):
+    - article / vide                    -> "Article"
+    - tutorial / tutoriel               -> "Tutoriel"
+    - guide                             -> "Guide"
+    - comparatif                        -> "Comparatif"
+    - case-study / etude_cas            -> "Étude de cas"
+    - checklist                         -> "Checklist"
+    - framework / methode / method      -> "Framework / Méthode"
+    - glossary / glossaire / reference  -> "Référence"
+    - toolbox / outils                  -> "Boîte à outils"
+    - template                          -> "Template"
+    - rex / retour-experience           -> "Retour d’expérience"
+    """
+    t = (article.get("type") or "article").strip().lower()
+    if t in {"tutorial", "tutoriel"}:
+        return "Tutoriel"
+    if t in {"guide"}:
+        return "Guide"
+    if t in {"comparatif", "comparison"}:
+        return "Comparatif"
+    if t in {"case-study", "case_study", "etude_cas", "etude-de-cas", "etude de cas"}:
+        return "Étude de cas"
+    if t in {"checklist"}:
+        return "Checklist"
+    if t in {"framework", "methode", "method"}:
+        return "Framework / Méthode"
+    if t in {"reference", "glossaire", "glossary"}:
+        return "Référence"
+    if t in {"toolbox", "boite_outils", "outils"}:
+        return "Boîte à outils"
+    if t in {"template"}:
+        return "Template"
+    if t in {"rex", "retour-experience", "retour_experience"}:
+        return "Retour d’expérience"
+    return "Article"
 
 
 def _schema_collection(collection: dict, items: list) -> str:
@@ -313,8 +373,9 @@ def _recommendations_index_html(articles: list[dict], collections: list[dict]) -
         except Exception:
             date_fr = date_str
         excerpt = (a.get('excerpt') or '')[:140] + ('...' if len(a.get('excerpt') or '') > 140 else '')
+        type_label = _type_label(a)
         lines.append(f'''<a href="articles/{a["slug"]}" class="article-card recommendation-featured">
-            <span class="article-type">Article</span>
+            <span class="article-type">{type_label}</span>
             <h2>{a["title"]}</h2>
             <div class="article-meta">{date_fr}</div>
             <div class="article-excerpt">{excerpt}</div>
@@ -362,8 +423,9 @@ def _recommendations_html(articles: list[dict], current_article: dict, max_n: in
         except Exception:
             date_fr = date_str
         excerpt = (a.get('excerpt') or '')[:120] + ('...' if len(a.get('excerpt') or '') > 120 else '')
+        type_label = _type_label(a)
         lines.append(f'''<a href="{a["slug"]}" class="article-card recommendation-card">
-            <span class="article-type">Article</span>
+            <span class="article-type">{type_label}</span>
             <h3>{a["title"]}</h3>
             <div class="article-meta">{date_fr}</div>
             <div class="article-excerpt">{excerpt}</div>
@@ -372,7 +434,7 @@ def _recommendations_html(articles: list[dict], current_article: dict, max_n: in
     return '\n'.join(lines)
 
 
-def render_article_page(article: dict, articles: list[dict], output_dir: Path, assets_prefix: str, assets_prefix_article: str) -> None:
+def render_article_page(article: dict, articles: list[dict], collections: list[dict], output_dir: Path, assets_prefix: str, assets_prefix_article: str) -> None:
     """Genere la page HTML d'un article (avec prev/next et recommandations)."""
     template = load_template('article.html')
     if not template:
@@ -386,6 +448,8 @@ def render_article_page(article: dict, articles: list[dict], output_dir: Path, a
     date_fr = date_obj.strftime('%d %B %Y')
 
     page_url = f"{SITE_BASE}/blog/articles/{article['slug']}"
+    share_twitter_url = 'https://twitter.com/intent/tweet?url=' + quote(page_url, safe='') + '&text=' + quote(article['title'], safe='')
+    share_linkedin_url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + quote(page_url, safe='')
     keywords = ', '.join(article.get('tags', [])) or 'développement web, TypeScript, blog'
     excerpt = _escape_html(article.get('excerpt', ''))
     title = _escape_html(article['title'])
@@ -393,6 +457,20 @@ def render_article_page(article: dict, articles: list[dict], output_dir: Path, a
 
     prev_next = _prev_next_html(articles, article['slug'])
     recommendations = _recommendations_html(articles, article)
+
+    # Serie (collection) pour la sidebar
+    series_id = article.get('series')
+    series_title = ''
+    series_url = ''
+    series_html = ''
+    if series_id and collections:
+        for coll in collections:
+            if coll.get('id') == series_id or coll.get('slug') == series_id:
+                series_title = coll.get('title', series_id)
+                slug = coll.get('slug', coll.get('id', series_id))
+                series_url = f"{SITE_BASE}/blog/series/{slug}"
+                series_html = f'<span class="sidebar-label">Série</span><a href="{series_url}" class="sidebar-series-link">' + _escape_html(series_title) + '</a>'
+                break
 
     html = template.replace('{{TITLE}}', title)
     html = html.replace('{{EXCERPT}}', excerpt)
@@ -402,11 +480,14 @@ def render_article_page(article: dict, articles: list[dict], output_dir: Path, a
     html = html.replace('{{ASSETS}}', assets_prefix_article)
     html = html.replace('{{ROOT}}', '../../')
     html = html.replace('{{PAGE_URL}}', page_url)
+    html = html.replace('{{SHARE_TWITTER_URL}}', share_twitter_url)
+    html = html.replace('{{SHARE_LINKEDIN_URL}}', share_linkedin_url)
     html = html.replace('{{OG_IMAGE}}', og_img_url)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_article(article))
     html = html.replace('{{PREV_NEXT}}', prev_next)
     html = html.replace('{{RECOMMENDATIONS}}', recommendations)
+    html = html.replace('{{SERIES_HTML}}', series_html)
 
     out_file = output_dir / 'articles' / f"{article['slug']}.html"
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -467,7 +548,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
         except Exception:
             date_fr = date_str
         excerpt = (a.get('excerpt') or '')[:160]
-        type_label = 'Tutoriel' if a.get('type') == 'tutorial' else 'Article'
+        type_label = _type_label(a)
         cards_html.append(f'''
         <a href="articles/{a['slug']}" class="article-card">
             <span class="article-type">{type_label}</span>
@@ -560,7 +641,16 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
             date_fr = dt.strftime('%d %B %Y')
         except Exception:
             date_fr = date_str
-        cards.append(f'<a href="../articles/{a["slug"]}" class="article-card"><h2>{a["title"]}</h2><div class="article-meta">{date_fr}</div><div class="article-excerpt">{a.get("excerpt","")}</div></a>')
+        type_label = _type_label(a)
+        excerpt = a.get("excerpt", "")
+        cards.append(
+            f'<a href="../articles/{a["slug"]}" class="article-card">'
+            f'<span class="article-type">{type_label}</span>'
+            f'<h2>{a["title"]}</h2>'
+            f'<div class="article-meta">{date_fr}</div>'
+            f'<div class="article-excerpt">{excerpt}</div>'
+            f'</a>'
+        )
 
     slug = collection.get('slug', collection.get('id', 'serie'))
     page_url = f'{SITE_BASE}/blog/series/{slug}'
@@ -581,6 +671,99 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     out_file = output_dir / 'series' / f'{slug}.html'
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(html, encoding='utf-8')
+
+
+def _type_slug(article_type: str) -> str:
+    """Slug propre pour une page de type (tutoriels, guides, etudes-de-cas...)."""
+    t = (article_type or '').strip().lower()
+    if not t:
+        return ''
+    return t.replace('_', '-').replace(' ', '-')
+
+
+def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str, assets_prefix_types: str) -> None:
+    """Genere des pages /blog/types/<type> pour chaque type d'article non vide."""
+    template = load_template('collection.html')
+    if not template:
+        return
+
+    # Regrouper les articles par type (hors 'article' vide)
+    by_type: Dict[str, List[dict]] = {}
+    for a in articles:
+        t = (a.get('type') or '').strip().lower()
+        if not t or t == 'article':
+            continue
+        by_type.setdefault(t, []).append(a)
+
+    if not by_type:
+        return
+
+    type_title_map = {
+        'tutorial': 'Tutoriels',
+        'tutoriel': 'Tutoriels',
+        'guide': 'Guides',
+        'comparatif': 'Comparatifs',
+        'case-study': 'Études de cas',
+        'case_study': 'Études de cas',
+        'etude_cas': 'Études de cas',
+        'etude-de-cas': 'Études de cas',
+        'etude de cas': 'Études de cas',
+        'checklist': 'Checklists',
+        'framework': 'Frameworks & méthodes',
+        'methode': 'Frameworks & méthodes',
+        'method': 'Frameworks & méthodes',
+        'glossaire': 'Glossaires & références',
+        'glossary': 'Glossaires & références',
+        'reference': 'Glossaires & références',
+        'toolbox': 'Boîtes à outils',
+        'outils': 'Boîtes à outils',
+        'boite_outils': 'Boîtes à outils',
+        'template': 'Templates',
+        'rex': 'Retours d’expérience',
+        'retour-experience': 'Retours d’expérience',
+        'retour_experience': 'Retours d’expérience',
+    }
+
+    for t, items in by_type.items():
+        if not items:
+            continue
+        slug = _type_slug(t)
+        title = type_title_map.get(t, _type_label({'type': t}))
+        desc = f"{title} DanielCraft : tous les contenus de type {title.lower()}."
+
+        cards: List[str] = []
+        for a in sorted(items, key=lambda x: x.get('date', ''), reverse=True):
+            date_str = a.get('date', '')[:10]
+            try:
+                dt = datetime.fromisoformat(a.get('date', ''))
+                date_fr = dt.strftime('%d %B %Y')
+            except Exception:
+                date_fr = date_str
+            type_label = _type_label(a)
+            excerpt = a.get('excerpt', '')
+            cards.append(
+                f'<a href="../articles/{a["slug"]}" class="article-card">'
+                f'<span class="article-type">{type_label}</span>'
+                f'<h2>{a["title"]}</h2>'
+                f'<div class="article-meta">{date_fr}</div>'
+                f'<div class="article-excerpt">{excerpt}</div>'
+                f'</a>'
+            )
+
+        page_url = f'{SITE_BASE}/blog/types/{slug}'
+        html = template.replace('{{TITLE}}', _escape_html(title))
+        html = html.replace('{{DESCRIPTION}}', _escape_html(desc))
+        html = html.replace('{{ARTICLES_GRID}}', '\n'.join(cards))
+        html = html.replace('{{ASSETS}}', assets_prefix_types)
+        html = html.replace('{{ROOT}}', '../..')
+        html = html.replace('{{PAGE_URL}}', page_url)
+        html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
+        html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
+        html = html.replace('{{SCHEMA_JSON_LD}}', '')  # optionnel: on pourrait generer un schema type
+
+        out_file = output_dir / 'types' / f'{slug}.html'
+        out_file.parent.mkdir(parents=True, exist_ok=True)
+        out_file.write_text(html, encoding='utf-8')
 
 
 def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_dir: Path) -> None:
@@ -607,6 +790,19 @@ def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_
             coll_articles = [a for a in articles if a.get('series') == c.get('id')]
             lastmod_c = max((str(a.get('date', ''))[:10] for a in coll_articles), default=lastmod_blog)
             lines.append(f'  <url><loc>{url}</loc><lastmod>{lastmod_c}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>')
+    # Pages par type (dossiers tutoriels, guides, études de cas, etc.)
+    type_slugs: Dict[str, str] = {}
+    for a in articles:
+        t = (a.get('type') or 'article').strip().lower()
+        if not t or t == 'article':
+            continue
+        if t not in type_slugs:
+            slug = t.replace('_', '-').replace(' ', '-')
+            type_slugs[t] = slug
+    for t, slug in type_slugs.items():
+        url = f'{SITE_BASE}/blog/types/{slug}'
+        lastmod_t = lastmod_blog
+        lines.append(f'  <url><loc>{url}</loc><lastmod>{lastmod_t}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>')
     lines.append('</urlset>')
     (output_dir / 'sitemap-blog.xml').write_text('\n'.join(lines), encoding='utf-8')
 
@@ -665,20 +861,27 @@ def main():
 
     assets_prefix_article = '../' + assets_prefix  # depuis blog/articles/ -> ../../assets
     for article in articles:
-        render_article_page(article, articles, output_dir, assets_prefix, assets_prefix_article)
+        render_article_page(article, articles, collections, output_dir, assets_prefix, assets_prefix_article)
         print(f"  [OK] {article['slug']}.html")
 
+    # Index principal du blog
     render_blog_index(articles, collections, output_dir, assets_prefix)
     print("  [OK] index.html")
 
+    # JSON list.json + sitemap (incl. series + types)
     save_list_json(articles, output_dir)
     generate_sitemap_blog(articles, collections, output_dir)
     print("  [OK] sitemap-blog.xml")
 
+    # Pages de series
     assets_prefix_series = '../../assets'  # depuis dist/blog/series/
     for coll in collections:
         render_collection_page(coll, articles, output_dir, assets_prefix, assets_prefix_series)
         print(f"  [OK] series/{coll.get('slug', coll.get('id'))}.html")
+
+    # Pages par type (tutoriels, guides, études de cas, etc.)
+    assets_prefix_types = '../../assets'  # depuis dist/blog/types/
+    render_type_pages(articles, output_dir, assets_prefix, assets_prefix_types)
 
     print(f"\n[BLOG] Termine : {len(articles)} article(s), {len(collections)} collection(s)")
 

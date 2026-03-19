@@ -51,33 +51,46 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="{{ROOT}}/" class="logo-link" aria-label="Retour à l'accueil">
-                    <div class="logo-icon" aria-hidden="true"><span class="logo-text">LD</span></div>
-                    <span class="logo-name">Loïc DANIEL</span>
+                    <div class="logo-icon" aria-hidden="true">
+                        <span class="logo-text">DC</span>
+                    </div>
+                    <span class="logo-name">DanielCraft</span>
                 </a>
             </div>
-            <div class="nav-menu" role="menubar">
-                <a href="{{ROOT}}/#home" class="nav-link">Accueil</a>
-                <a href="{{ROOT}}/#services" class="nav-link">Services</a>
-                <a href="{{ROOT}}/#portfolio" class="nav-link">Portfolio</a>
-                <a href="{{ROOT}}/#about" class="nav-link">À Propos</a>
-                <a href="{{ROOT}}/#contact" class="nav-link">Contact</a>
+            
+            <div class="nav-menu" id="navMenu" role="menubar">
+                <a href="{{ROOT}}/#home" class="nav-link" role="menuitem">Accueil</a>
+                <a href="{{ROOT}}/#services" class="nav-link" role="menuitem">Services</a>
+                <a href="{{ROOT}}/#portfolio" class="nav-link" role="menuitem">Portfolio</a>
+                <a href="{{ROOT}}/#about" class="nav-link" role="menuitem">À Propos</a>
+                <a href="{{ROOT}}/#contact" class="nav-link" role="menuitem">Contact</a>
+                
+                <!-- Menu déroulant "Plus" pour regrouper les pages secondaires -->
                 <div class="nav-dropdown">
-                    <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Plus <i class="fas fa-chevron-down"></i></button>
-                    <ul class="nav-dropdown-menu" role="menu">
-                        <li><a href="{{ROOT}}/autres-prestations" class="nav-dropdown-link">Autres prestations</a></li>
-                        <li><a href="{{ROOT}}/processus" class="nav-dropdown-link">Processus</a></li>
-                        <li><a href="{{ROOT}}/metz" class="nav-dropdown-link">Metz</a></li>
-                        <li><a href="{{ROOT}}/projets" class="nav-dropdown-link">Projets</a></li>
-                        <li><a href="{{ROOT}}/statistiques" class="nav-dropdown-link">Statistiques</a></li>
-                        <li><a href="{{ROOT}}/blog/" class="nav-dropdown-link active">Blog</a></li>
+                    <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="moreMenu">
+                        Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
+                        <li><a href="{{ROOT}}/autres-prestations" class="nav-dropdown-link" role="menuitem">Autres prestations</a></li>
+                        <li><a href="{{ROOT}}/processus" class="nav-dropdown-link" role="menuitem">Processus</a></li>
+                        <li><a href="{{ROOT}}/metz" class="nav-dropdown-link" role="menuitem">Metz</a></li>
+                        <li><a href="{{ROOT}}/projets" class="nav-dropdown-link" role="menuitem">Projets</a></li>
+                        <li><a href="{{ROOT}}/statistiques" class="nav-dropdown-link" role="menuitem">Statistiques</a></li>
+                        <li><a href="{{ROOT}}/blog/" class="nav-dropdown-link active" role="menuitem">Blog</a></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="nav-actions">
-                <button type="button" class="btn btn-primary nav-cta nav-cta-devis" id="navCtaDevis" aria-label="Ouvrir la modale devis gratuit">
-                    <span>Devis gratuit</span><i class="fas fa-arrow-right"></i>
+                <button type="button" class="btn btn-primary nav-cta nav-cta-devis" id="navCtaDevis" aria-label="Ouvrir la modale devis gratuit" aria-haspopup="dialog" aria-expanded="false">
+                    <span>Devis gratuit</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </button>
-                <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+                <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -89,25 +102,57 @@
                     <a href="{{ROOT}}/blog/" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
                 </nav>
                 <h1 itemprop="headline">{{TITLE}}</h1>
-                <div class="article-meta">
-                    <time datetime="{{DATE_ISO}}" itemprop="datePublished">{{DATE_FR}}</time>
-                </div>
                 <figure class="blog-article-hero" aria-hidden="true">
                     <img src="{{OG_IMAGE}}" alt="{{TITLE}}" class="blog-article-hero-image" loading="eager">
                 </figure>
             </header>
-            <div class="article-content prose" itemprop="articleBody">
-                {{CONTENT}}
+            <div class="blog-article-layout">
+                <aside class="blog-article-sidebar" aria-label="Infos article">
+                    <div class="sidebar-block sidebar-meta">
+                        <time datetime="{{DATE_ISO}}" itemprop="datePublished">{{DATE_FR}}</time>
+                    </div>
+                    <div class="sidebar-block sidebar-share">
+                        <span class="sidebar-label">Partager</span>
+                        <div class="share-links">
+                            <a href="{{SHARE_TWITTER_URL}}" target="_blank" rel="noopener noreferrer" class="share-link" aria-label="Partager sur Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="{{SHARE_LINKEDIN_URL}}" target="_blank" rel="noopener noreferrer" class="share-link" aria-label="Partager sur LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <button type="button" class="share-link share-copy" data-url="{{PAGE_URL}}" aria-label="Copier le lien"><i class="fas fa-link"></i><span>Copier</span></button>
+                        </div>
+                    </div>
+                    <div class="sidebar-block sidebar-series">
+                        {{SERIES_HTML}}
+                    </div>
+                </aside>
+                <div class="blog-article-main">
+                    <div class="article-content prose" itemprop="articleBody">
+                        {{CONTENT}}
+                    </div>
+                    <nav class="article-prev-next" aria-label="Article precedent et suivant">
+                        {{PREV_NEXT}}
+                    </nav>
+                    <section class="article-recommendations" aria-label="Articles recommandes">
+                        {{RECOMMENDATIONS}}
+                    </section>
+                </div>
             </div>
-            <nav class="article-prev-next" aria-label="Article precedent et suivant">
-                {{PREV_NEXT}}
-            </nav>
-            <section class="article-recommendations" aria-label="Articles recommandes">
-                {{RECOMMENDATIONS}}
-            </section>
         </article>
     </main>
     <script src="{{ASSETS}}/js/main.js" defer></script>
+    <script>
+      (function() {
+        document.querySelectorAll('.share-copy').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var url = this.getAttribute('data-url');
+            if (url && navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(url).then(function() {
+                var span = btn.querySelector('span');
+                if (span) { span.textContent = 'Copié !'; setTimeout(function() { span.textContent = 'Copier'; }, 2000); }
+              });
+            }
+          });
+        });
+      })();
+    </script>
 
     <footer class="footer">
         <div class="container">

@@ -195,6 +195,19 @@ if (-not (Test-Path $nginxConfigPath)) {
 Write-ColorOutput "Utilisation de la configuration nginx avec SSL" "Green"
 Copy-Item $nginxConfigPath $tmpFile
 
+# Remplacer les placeholders "example.com" et les chemins par la config réelle
+# (sinon nginx -t échoue : certificats / server_name / root / logs incorrects).
+# IMPORTANT: on écrit en UTF-8 **sans BOM** + sauts de ligne LF,
+# sinon nginx peut planter avec "unknown directive '#'" (BOM / CRLF).
+$nginxContent = Get-Content -Path $tmpFile -Raw
+$nginxContent = $nginxContent.Replace("example.com", $Domain)
+# Root : toujours aligné sur -ServerPath (peut différer du domaine)
+$nginxContent = $nginxContent -replace "root\\s+/var/www/[^;]+;", ("root " + $SERVER_PATH + ";")
+# Normaliser les fins de lignes en LF
+$nginxContent = $nginxContent -replace "`r`n", "`n"
+# Écrire en UTF-8 sans BOM
+[System.IO.File]::WriteAllText($tmpFile, $nginxContent, (New-Object System.Text.UTF8Encoding($false)))
+
 # Transférer la config sur le serveur
 scp $tmpFile "${SERVER_USER}@${SERVER_HOST}:/tmp/nginx-${CONFIG_NAME}.conf"
 

@@ -1,6 +1,6 @@
 ---
 title: "CI/CD : builder et pousser des images Docker (tags, cache, multi-stage)"
-date: 2026-02-06
+date: 2025-03-11
 excerpt: "Comment construire des images Docker en CI sans exploser les temps de build : stratégie de tags, cache, multi-stage builds et registry."
 type: article
 tags: [CI/CD, Docker, images, registry, DevOps]

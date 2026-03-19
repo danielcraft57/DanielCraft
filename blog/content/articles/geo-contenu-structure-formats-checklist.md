@@ -1,6 +1,6 @@
 ---
 title: "GEO et contenu : structure, formats et checklist rédactionnelle"
-date: 2025-10-20
+date: 2024-09-03
 excerpt: "Unités de sens, FAQ, listes, E-E-A-T et checklist rédactionnelle pour des contenus repris par les IA. Comment structurer ton texte pour maximiser les citations."
 type: article
 tags: [GEO, contenu, structure, FAQ, E-E-A-T, rédaction]

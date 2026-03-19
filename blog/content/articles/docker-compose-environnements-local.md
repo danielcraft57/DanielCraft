@@ -1,6 +1,6 @@
 ---
 title: "Docker Compose : un environnement complet en une commande"
-date: 2025-12-15
+date: 2024-11-14
 excerpt: "Assembler plusieurs services Docker (API, base, front, worker) dans un fichier docker-compose pour lancer un environnement complet de dev en une seule commande."
 type: article
 tags: [Docker, docker-compose, environnement, dev]

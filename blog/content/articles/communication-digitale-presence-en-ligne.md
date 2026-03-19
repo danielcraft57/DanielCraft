@@ -1,6 +1,6 @@
 ---
 title: "Communication digitale : presence et coherence en ligne"
-date: 2025-04-25
+date: 2024-03-19
 excerpt: "Site web, profils sociaux, contenu : construire une presence en ligne coherente et credible."
 type: article
 tags: [communication, digital, site web, presence en ligne]

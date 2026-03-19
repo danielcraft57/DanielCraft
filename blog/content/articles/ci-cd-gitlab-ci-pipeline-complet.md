@@ -1,6 +1,6 @@
 ---
 title: "CI/CD : pipeline GitLab CI complet (stages, cache, déploiement)"
-date: 2026-02-12
+date: 2025-03-20
 excerpt: "Un pipeline GitLab CI lisible : stages, cache, artefacts, build d'image, push registry et déploiement. Les mêmes idées que GitHub Actions, côté GitLab."
 type: article
 tags: [CI/CD, GitLab CI, Docker, pipeline, DevOps]

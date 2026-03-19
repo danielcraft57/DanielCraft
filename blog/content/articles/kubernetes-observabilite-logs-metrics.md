@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes : observabilité, logs et métriques"
-date: 2026-01-21
+date: 2025-01-21
 excerpt: "Surveiller un cluster Kubernetes : logs de pods, events, métriques (CPU/RAM), probes de santé et briques d'observabilité à mettre en place."
 type: article
 tags: [Kubernetes, observabilité, logs, métriques, monitoring]

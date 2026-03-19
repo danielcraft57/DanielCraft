@@ -1,6 +1,6 @@
 ---
 title: "CI/CD : comprendre les pipelines (vraiment) - du commit au déploiement"
-date: 2026-02-02
+date: 2025-03-04
 excerpt: "La CI/CD expliquée clairement : pourquoi on l'utilise, comment penser un pipeline, quelles étapes mettre, et comment éviter les usines à gaz."
 type: article
 tags: [CI/CD, DevOps, pipeline, Git, déploiement]

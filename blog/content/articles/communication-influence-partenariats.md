@@ -1,6 +1,6 @@
 ---
 title: "Communication et influence : partenariats et ambassadeurs"
-date: 2025-05-15
+date: 2024-04-02
 excerpt: "Travailer avec des influenceurs, partenaires ou ambassadeurs pour elargir ta portee et renforcer ta credibilite."
 type: article
 tags: [communication, influence, partenariats, ambassadeurs, visibilite]

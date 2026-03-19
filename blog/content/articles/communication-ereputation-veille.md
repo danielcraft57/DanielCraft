@@ -1,6 +1,6 @@
 ---
 title: "E-reputation et veille : ecouter et proteger ton image en ligne"
-date: 2025-04-30
+date: 2024-03-21
 excerpt: "Surveiller ce qui se dit sur toi en ligne : outils de veille, alertes, reponse aux avis. Protéger et ameliorer ton e-reputation."
 type: article
 tags: [communication, e-reputation, veille, avis, image en ligne]

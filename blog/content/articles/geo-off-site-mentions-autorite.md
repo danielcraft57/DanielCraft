@@ -1,6 +1,6 @@
 ---
 title: "GEO hors-site : mentions, autorité et empreinte web"
-date: 2025-11-03
+date: 2024-09-10
 excerpt: "Empreinte web, présence sur d'autres plateformes, netlinking vs mentions : construire l'autorité pour les moteurs génératifs. Le hors-site n'est pas que du SEO."
 type: article
 tags: [GEO, hors-site, mentions, autorité, netlinking, empreinte web]

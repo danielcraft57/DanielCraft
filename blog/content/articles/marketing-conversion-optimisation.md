@@ -1,6 +1,6 @@
 ---
 title: "Optimisation du taux de conversion : CRO et UX"
-date: 2025-07-14
+date: 2024-05-21
 excerpt: "Conversion Rate Optimization : améliorer le taux de transformation des visiteurs en leads ou clients. CTA, formulaires, parcours utilisateur et tests A/B."
 type: article
 tags: [marketing digital, conversion, CRO, UX, CTA]

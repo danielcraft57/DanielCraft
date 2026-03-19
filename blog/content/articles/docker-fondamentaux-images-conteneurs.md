@@ -1,6 +1,6 @@
 ---
 title: "Docker : comprendre les images et les conteneurs"
-date: 2025-12-03
+date: 2024-11-05
 excerpt: "Les bases indispensables de Docker : différence entre image et conteneur, registres, cycle de vie et premiers réflexes pour travailler proprement."
 type: article
 tags: [Docker, conteneurs, images, DevOps, fondamentaux]

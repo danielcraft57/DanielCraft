@@ -26,6 +26,38 @@
     padding-right: var(--space-4);
   }
 
+  .blog-search-hero {
+    margin-top: 2rem;
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+
+  .blog-all-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog-article-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .blog-article-sidebar {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .blog-article-sidebar .sidebar-block {
+    margin-bottom: 0;
+  }
+
+  .blog-article-sidebar .sidebar-block.sidebar-series {
+    width: 100%;
+  }
+
   .nav-container {
     padding: var(--space-3) var(--space-4);
   }

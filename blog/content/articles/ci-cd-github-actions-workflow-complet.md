@@ -1,6 +1,6 @@
 ---
 title: "CI/CD : un workflow GitHub Actions complet (Docker + déploiement)"
-date: 2026-02-10
+date: 2025-03-18
 excerpt: "Un exemple complet et réaliste de GitHub Actions : quality checks, tests, build d'image Docker, push registry, déploiement et vérification."
 type: article
 tags: [CI/CD, GitHub Actions, Docker, DevOps, déploiement]

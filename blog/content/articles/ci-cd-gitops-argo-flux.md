@@ -1,6 +1,6 @@
 ---
 title: "GitOps : déployer avec Argo CD ou Flux (et arrêter les kubectl à la main)"
-date: 2026-02-16
+date: 2025-03-27
 excerpt: "Le Git devient la source de vérité de ton cluster Kubernetes : manifests versionnés, synchronisation automatique, audit et rollbacks propres avec Argo CD ou Flux."
 type: article
 tags: [CI/CD, GitOps, Kubernetes, Argo CD, Flux]

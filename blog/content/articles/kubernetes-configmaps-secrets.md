@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes : gérer la configuration avec ConfigMaps et Secrets"
-date: 2026-01-17
+date: 2025-01-16
 excerpt: "Séparer le code de la configuration : variables d'environnement, fichiers de config, secrets (mots de passe, clés API) avec ConfigMaps et Secrets Kubernetes."
 type: article
 tags: [Kubernetes, ConfigMap, Secret, configuration]

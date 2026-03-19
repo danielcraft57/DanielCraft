@@ -1,6 +1,6 @@
 ---
 title: "Communication interne : informer et federer"
-date: 2025-05-20
+date: 2024-04-04
 excerpt: "Objectifs et canaux de la communication interne : email, intranet, reunions. Aligner les equipes et renforcer la culture."
 type: article
 tags: [communication, interne, entreprise, equipes]

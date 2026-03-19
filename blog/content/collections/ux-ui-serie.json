@@ -1,0 +1,19 @@
+{
+  "id": "ux-ui-serie",
+  "title": "Série UX/UI Design - Ergonomie, UI et expérience utilisateur",
+  "description": "Une série complète sur l’UX/UI Design : ergonomie, heuristiques, recherche utilisateur, wireframes & prototypage, design systems, accessibilité, UI (typo/couleurs), micro‑interactions et mesure de l’impact (analytics, tests, A/B).",
+  "slug": "ux-ui-serie",
+  "articles": [
+    "ux-ui-fondamentaux-differences",
+    "ergonomie-heuristiques-nielsen",
+    "wireframes-prototypage-fidelite",
+    "ux-recherche-utilisateur-interviews-tests",
+    "parcours-utilisateur-mapping-jtbd",
+    "design-system-composants-tokens",
+    "accessibilite-wcag-checklist",
+    "ui-typographie-couleurs-grille",
+    "micro-interactions-feedback-etats",
+    "mesurer-ux-kpis-analytics-ab-testing"
+  ]
+}
+

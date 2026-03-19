@@ -1,6 +1,6 @@
 ---
 title: "GEO, le nouveau SEO pour l'IA : guide complet"
-date: 2025-10-27
+date: 2024-09-05
 excerpt: "Le GEO (Generative Engine Optimization) remet en jeu le référencement : ChatGPT, Perplexity, SGE et autres moteurs génératifs citent désormais le web. Ce guide explique comment optimiser ton contenu pour être visible et recommandé par les IA."
 type: article
 tags: [GEO, SEO, IA, ChatGPT, Perplexity, référencement, moteurs génératifs, SGE]

@@ -1,6 +1,6 @@
 ---
 title: "Content et storytelling : raconter pour marquer les esprits"
-date: 2025-04-15
+date: 2024-03-12
 excerpt: "Utiliser le contenu et le storytelling pour differencier ta marque : recits, cas clients, valeurs. Captiver et fidéliser."
 type: article
 tags: [communication, content, storytelling, marque, recit]

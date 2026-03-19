@@ -1,6 +1,6 @@
 ---
 title: "Préparer Docker pour la production : registry, tags et sécurité"
-date: 2025-12-23
+date: 2024-11-21
 excerpt: "Passer de Docker en local à un usage plus sérieux : registry privé, stratégie de tags, bonnes pratiques de sécurité de base et liens avec Kubernetes."
 type: article
 tags: [Docker, production, registry, sécurité, DevOps]

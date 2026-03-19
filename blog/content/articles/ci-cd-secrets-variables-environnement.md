@@ -1,6 +1,6 @@
 ---
 title: "CI/CD : gérer les secrets et variables d'environnement (sans fuite)"
-date: 2026-02-08
+date: 2025-03-13
 excerpt: "API keys, mots de passe, kubeconfig, tokens de registry : où les stocker, comment les injecter dans le pipeline, et quoi éviter absolument."
 type: article
 tags: [CI/CD, secrets, sécurité, variables, DevOps]

@@ -1,6 +1,6 @@
 ---
 title: "SEO vs SEA : quand privilégier l'un ou l'autre"
-date: 2025-10-03
+date: 2024-07-25
 excerpt: "SEO (référencement naturel) et SEA (publicité Google Ads) : différences, avantages, inconvénients. Stratégie combinée pour maximiser la visibilité et le ROI."
 type: article
 tags: [SEO, SEA, Google Ads, stratégie, référencement payant]

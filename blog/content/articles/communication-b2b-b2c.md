@@ -1,6 +1,6 @@
 ---
 title: "Communication B2B vs B2C : adapter message et canaux"
-date: 2025-04-05
+date: 2024-03-05
 excerpt: "Differences entre communication B2B (entreprises) et B2C (particuliers) : cibles, canaux, ton, objectifs. Choisir la bonne approche."
 type: article
 tags: [communication, B2B, B2C, cible, strategie]

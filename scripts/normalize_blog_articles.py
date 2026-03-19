@@ -34,7 +34,7 @@ class ScheduleRule:
     """Regle de planification (date depart, pas en jours, ordre des slugs)."""
 
     start: date
-    step_days: int
+    step_pattern_days: List[int]
     slugs: List[str]
 
 
@@ -132,6 +132,10 @@ def _build_schedule_rules() -> List[ScheduleRule]:
     docker = _load_collection_slugs("docker-serie")
     k8s = _load_collection_slugs("kubernetes-serie")
     cicd = _load_collection_slugs("ci-cd-serie")
+    aws = _load_collection_slugs("aws-serie") if (COLLECTIONS_DIR / "aws-serie.json").exists() else []
+    api = _load_collection_slugs("api-rest-graphql-serie") if (COLLECTIONS_DIR / "api-rest-graphql-serie.json").exists() else []
+    uxui = _load_collection_slugs("ux-ui-serie") if (COLLECTIONS_DIR / "ux-ui-serie.json").exists() else []
+    cyber = _load_collection_slugs("cybersecurite-secops-serie") if (COLLECTIONS_DIR / "cybersecurite-secops-serie.json").exists() else []
 
     all_slugs = _list_article_slugs()
 
@@ -143,14 +147,26 @@ def _build_schedule_rules() -> List[ScheduleRule]:
     if "outils-geo-audit-suivi-citations" in all_slugs and "outils-geo-audit-suivi-citations" not in geo:
         geo.append("outils-geo-audit-suivi-citations")
 
+    # Rythme "humain" : mardi/jeudi (cycle +2 / +5 jours)
+    tue_thu = [2, 5]
+
     return [
-        ScheduleRule(start=date(2025, 4, 5), step_days=5, slugs=communication),
-        ScheduleRule(start=date(2025, 6, 20), step_days=6, slugs=marketing),
-        ScheduleRule(start=date(2025, 8, 15), step_days=7, slugs=seo),
-        ScheduleRule(start=date(2025, 10, 20), step_days=7, slugs=geo),
-        ScheduleRule(start=date(2025, 12, 3), step_days=4, slugs=docker),
-        ScheduleRule(start=date(2026, 1, 5), step_days=4, slugs=k8s),
-        ScheduleRule(start=date(2026, 2, 2), step_days=2, slugs=cicd),
+        # 2024 : thèmes business (communication/marketing/SEO/GEO)
+        ScheduleRule(start=date(2024, 3, 5), step_pattern_days=tue_thu, slugs=communication),
+        ScheduleRule(start=date(2024, 5, 7), step_pattern_days=tue_thu, slugs=marketing),
+        ScheduleRule(start=date(2024, 7, 2), step_pattern_days=tue_thu, slugs=seo),
+        ScheduleRule(start=date(2024, 9, 3), step_pattern_days=tue_thu, slugs=geo),
+
+        # 2024/2025 : séries techniques (conteneurs, k8s, CI/CD, cloud)
+        ScheduleRule(start=date(2024, 11, 5), step_pattern_days=tue_thu, slugs=docker),
+        ScheduleRule(start=date(2025, 1, 7), step_pattern_days=tue_thu, slugs=k8s),
+        ScheduleRule(start=date(2025, 3, 4), step_pattern_days=tue_thu, slugs=cicd),
+        ScheduleRule(start=date(2025, 5, 6), step_pattern_days=tue_thu, slugs=aws),
+
+        # 2025 : comparatifs & produit
+        ScheduleRule(start=date(2025, 7, 1), step_pattern_days=tue_thu, slugs=api),
+        ScheduleRule(start=date(2025, 9, 2), step_pattern_days=tue_thu, slugs=uxui),
+        ScheduleRule(start=date(2025, 11, 4), step_pattern_days=tue_thu, slugs=cyber),
     ]
 
 
@@ -159,19 +175,25 @@ def _make_date_map(rules: List[ScheduleRule], all_slugs: List[str]) -> Dict[str,
     mapping: Dict[str, date] = {}
     for rule in rules:
         d = rule.start
+        step_idx = 0
         for slug in rule.slugs:
             mapping[slug] = d
-            d = d + timedelta(days=rule.step_days)
+            if rule.step_pattern_days:
+                d = d + timedelta(days=rule.step_pattern_days[step_idx % len(rule.step_pattern_days)])
+                step_idx += 1
 
     # fallback pour les slugs non couverts (au cas ou)
     remaining = [s for s in all_slugs if s not in mapping]
     if remaining:
         # on se cale apres la derniere date connue
-        last = max(mapping.values()) if mapping else date(2025, 1, 1)
-        d = last + timedelta(days=3)
+        last = max(mapping.values()) if mapping else date(2024, 1, 1)
+        d = last + timedelta(days=2)
+        step_pattern = [2, 5]
+        step_idx = 0
         for slug in sorted(remaining):
             mapping[slug] = d
-            d = d + timedelta(days=3)
+            d = d + timedelta(days=step_pattern[step_idx % len(step_pattern)])
+            step_idx += 1
     return mapping
 
 

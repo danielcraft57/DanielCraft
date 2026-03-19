@@ -1,6 +1,6 @@
 ---
 title: "SEO contenu : mots-clés, intention de recherche et rédaction"
-date: 2025-08-22
+date: 2024-07-04
 excerpt: "Stratégie de contenu SEO : recherche de mots-clés, intention de recherche (informatif, transactionnel, navigationnel), structure des articles et bonnes pratiques rédactionnelles."
 type: article
 tags: [SEO, contenu, mots-clés, intention, rédaction]

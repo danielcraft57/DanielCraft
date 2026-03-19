@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes : comprendre les pods, les nodes et les ressources de base"
-date: 2026-01-05
+date: 2025-01-07
 excerpt: "Avant de déployer quoi que ce soit sur Kubernetes, il faut comprendre les briques de base : cluster, node, pod, container, namespace et ressources. Cette intro pose un vocabulaire clair."
 type: article
 tags: [Kubernetes, pods, nodes, cluster, DevOps]

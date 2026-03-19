@@ -1,6 +1,6 @@
 ---
 title: "Déployer une appli sur Kubernetes : Deployments et Services"
-date: 2026-01-13
+date: 2025-01-14
 excerpt: "Passer d'un simple pod à un déploiement géré : Deployments, ReplicaSets, Services (ClusterIP, NodePort, LoadBalancer) et stratégie de mise à jour."
 type: article
 tags: [Kubernetes, Deployments, Services, réseau]

@@ -1,0 +1,19 @@
+{
+  "id": "cybersecurite-secops-serie",
+  "title": "Série Cybersécurité & SecOps - SOC, EDR, conformité et réponse à incident",
+  "description": "Une série complète pour comprendre et mettre en place une posture cybersécurité moderne : fondamentaux, SecOps, SOC, SIEM, EDR/XDR, gestion des vulnérabilités, IAM, sécurité cloud, DevSecOps, réponse à incident, ainsi que les principales règles et lois (RGPD, NIS2, ISO 27001) avec une approche pragmatique orientée production.",
+  "slug": "cybersecurite-secops-serie",
+  "articles": [
+    "cybersecurite-fondamentaux-menaces-risques",
+    "secops-soc-fonctions-process",
+    "siem-log-management-detection",
+    "edr-xdr-endpoint-detection-response",
+    "gestion-vulnerabilites-cve-patching",
+    "iam-mfa-principes-zero-trust",
+    "incident-response-runbook-postmortem",
+    "securite-cloud-cspm-cwpp",
+    "devsecops-sast-dast-sbom",
+    "conformite-rgpd-nis2-iso27001"
+  ]
+}
+

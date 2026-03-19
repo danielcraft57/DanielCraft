@@ -1,6 +1,6 @@
 ---
 title: "CI/CD : tests, qualité et 'gates' (ce qui bloque un déploiement)"
-date: 2026-02-04
+date: 2025-03-06
 excerpt: "Comment organiser lint, typecheck, tests unitaires et intégration pour sécuriser tes releases. Les quality gates qui empêchent de casser la prod."
 type: article
 tags: [CI/CD, tests, qualité, DevOps, automatisation]

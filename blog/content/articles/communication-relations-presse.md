@@ -1,6 +1,6 @@
 ---
 title: "Relations presse : communiqués, contacts médias et visibilité"
-date: 2025-06-04
+date: 2024-04-16
 excerpt: "Comment travailler avec la presse : communiqué de presse, base de contacts, angle rédactionnel. Obtenir des retombées médias pour renforcer ta notoriété."
 type: article
 tags: [communication, relations presse, médias, communiqué, visibilité]

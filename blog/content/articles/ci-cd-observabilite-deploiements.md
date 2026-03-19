@@ -1,6 +1,6 @@
 ---
 title: "Observabilité des déploiements : logs, métriques, alertes"
-date: 2026-02-20
+date: 2025-04-03
 excerpt: "Après un déploiement, savoir si tout va bien : logs de release, métriques, health checks, alertes et bonnes pratiques pour réagir vite."
 type: article
 tags: [CI/CD, observabilité, logs, métriques, alertes]

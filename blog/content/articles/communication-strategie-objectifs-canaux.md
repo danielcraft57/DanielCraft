@@ -1,6 +1,6 @@
 ---
 title: "Communication : stratégie, objectifs et canaux"
-date: 2025-06-14
+date: 2024-04-23
 excerpt: "Construire une stratégie de communication cohérente : définir les objectifs, choisir les canaux (classique et digital) et aligner le message. Bases pour PME et freelances."
 type: article
 tags: [communication, stratégie, objectifs, canaux, visibilité]

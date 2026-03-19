@@ -1,6 +1,6 @@
 ---
 title: "Optimiser tes Dockerfile et la taille de tes images"
-date: 2025-12-19
+date: 2024-11-19
 excerpt: "Réduire la taille de tes images Docker, accélérer les builds et éviter les mauvaises surprises en prod grâce à quelques patterns simples."
 type: article
 tags: [Docker, Dockerfile, optimisation, images]

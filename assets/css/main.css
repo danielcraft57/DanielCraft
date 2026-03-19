@@ -320,7 +320,8 @@ body {
 .hero-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  /* espacement vertical central inspiré de phi */
+  gap: 2.6rem;
   align-items: stretch;
 }
 
@@ -510,8 +511,8 @@ body {
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: var(--space-12);
-  margin-bottom: var(--space-8);
+  gap: 2.6rem;
+  margin-bottom: 2.6rem;
 }
 
 .stat-item {
@@ -534,13 +535,13 @@ body {
 .hero-actions {
   display: flex;
   justify-content: center;
-  gap: var(--space-4);
-  margin-bottom: var(--space-8);
+  gap: 1.6rem;
+  margin-bottom: 2.6rem;
   flex-wrap: wrap;
 }
 
 .hero-tech {
-  margin-top: var(--space-8);
+  margin-top: 2.6rem;
 }
 
 .tech-label {
@@ -608,7 +609,7 @@ section {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto var(--space-12);
+  margin: 0 auto 2.6rem;
 }
 
 .section-badge {
@@ -664,8 +665,8 @@ section {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-6);
-  margin-top: var(--space-12);
+  gap: 1.6rem;
+  margin-top: 2.6rem;
 }
 
 .service-card {
@@ -811,13 +812,13 @@ section {
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-6);
-  margin-bottom: var(--space-12);
+  gap: 1.6rem;
+  margin-bottom: 2.6rem;
 }
 
 .why-card {
   background: var(--white);
-  padding: var(--space-6);
+  padding: 1.6rem;
   border-radius: 16px;
   box-shadow: var(--shadow-md);
   transition: all var(--transition);
@@ -890,7 +891,7 @@ section {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: var(--space-6);
+  gap: 1.6rem;
 }
 
 .portfolio-item {
@@ -1081,7 +1082,7 @@ section {
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-12);
+  gap: 2.6rem;
   align-items: flex-start;
 }
 
@@ -2639,15 +2640,69 @@ section {
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-6);
-  margin-top: var(--space-8);
+  gap: 1.6rem;
+  margin-top: 2.6rem;
 }
 
 .faq-item {
   background: var(--gray-50);
   border-radius: 16px;
-  padding: var(--space-6);
+  padding: 0;
   box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  overflow: hidden;
+  transition: box-shadow 220ms ease, border-color 200ms ease, transform 180ms ease, background-color 200ms ease;
+}
+
+.faq-item.is-open {
+  background: #ffffff;
+  border-color: var(--primary-color);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+  transform: translateY(-1px);
+}
+
+.faq-question-btn {
+  width: 100%;
+  padding: 1.1rem 1.25rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question-btn span {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.faq-chevron {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--primary-color);
+}
+
+.faq-answer-wrap {
+  padding: 0 1.25rem 0.85rem;
+  max-height: 0;
+  opacity: 0;
+  transform-origin: top;
+  transition: max-height 260ms ease, opacity 220ms ease;
+}
+
+.faq-item.is-open .faq-answer-wrap {
+  padding-top: 0.2rem;
+  max-height: 500px;
+  opacity: 1;
 }
 
 .faq-question {

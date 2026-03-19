@@ -1,6 +1,6 @@
 ---
 title: "Installer Docker correctement sur ta machine de dev"
-date: 2025-12-07
+date: 2024-11-07
 excerpt: "Installer Docker Desktop ou Docker Engine sans te tirer une balle dans le pied : Linux, macOS, Windows/WSL, droits sudo et premiers réglages utiles."
 type: article
 tags: [Docker, installation, Linux, WSL, macOS]

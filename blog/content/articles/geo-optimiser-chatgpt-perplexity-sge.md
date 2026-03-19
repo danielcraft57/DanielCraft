@@ -1,6 +1,6 @@
 ---
 title: "Optimiser pour ChatGPT, Perplexity et Google SGE"
-date: 2025-11-10
+date: 2024-09-12
 excerpt: "Spécificités de chaque moteur génératif : comment ChatGPT, Perplexity et Google SGE sélectionnent et citent les sources. Stratégies adaptées par plateforme."
 type: article
 tags: [GEO, ChatGPT, Perplexity, SGE, Google, optimisation]

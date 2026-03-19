@@ -1,6 +1,6 @@
 ---
 title: "SEO local : Google Business, avis et visibilité géographique"
-date: 2025-09-05
+date: 2024-07-11
 excerpt: "Optimiser sa visibilité locale : fiche Google Business Profile, avis clients, NAP, zone de chalandise. Stratégies pour apparaître dans les résultats locaux et le pack 3."
 type: article
 tags: [SEO, local, Google Business, avis, visibilité géographique]

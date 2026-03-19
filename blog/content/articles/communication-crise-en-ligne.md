@@ -1,6 +1,6 @@
 ---
 title: "Communication de crise en ligne : reagir et proteger l'image"
-date: 2025-04-20
+date: 2024-03-14
 excerpt: "Gestion de crise sur le web et les reseaux : detection, reponse, message unique. Limiter les degats et retablir la confiance."
 type: article
 tags: [communication, crise, e-reputation, reseaux sociaux, gestion de crise]

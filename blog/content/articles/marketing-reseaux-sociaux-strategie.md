@@ -1,6 +1,6 @@
 ---
 title: "Marketing réseaux sociaux : stratégie et bonnes pratiques"
-date: 2025-08-01
+date: 2024-05-30
 excerpt: "LinkedIn, Instagram, Facebook : choisir les bons réseaux, créer du contenu engageant, planifier et mesurer. Stratégie réseaux sociaux pour les professionnels."
 type: article
 tags: [marketing digital, réseaux sociaux, LinkedIn, Instagram, stratégie]

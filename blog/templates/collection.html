@@ -39,14 +39,50 @@
 {{SCHEMA_JSON_LD}}
 </head>
 <body>
-    <nav class="navbar" id="navbar" role="navigation">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="{{ROOT}}/" class="logo-link"><div class="logo-icon"><span class="logo-text">LD</span></div><span class="logo-name">Loïc DANIEL</span></a>
+                <a href="{{ROOT}}/" class="logo-link" aria-label="Retour à l'accueil">
+                    <div class="logo-icon" aria-hidden="true">
+                        <span class="logo-text">DC</span>
+                    </div>
+                    <span class="logo-name">DanielCraft</span>
+                </a>
             </div>
-            <div class="nav-menu">
-                <a href="{{ROOT}}/#home" class="nav-link">Accueil</a>
-                <a href="{{ROOT}}/blog" class="nav-link active">Blog</a>
+            
+            <div class="nav-menu" id="navMenu" role="menubar">
+                <a href="{{ROOT}}/#home" class="nav-link" role="menuitem">Accueil</a>
+                <a href="{{ROOT}}/#services" class="nav-link" role="menuitem">Services</a>
+                <a href="{{ROOT}}/#portfolio" class="nav-link" role="menuitem">Portfolio</a>
+                <a href="{{ROOT}}/#about" class="nav-link" role="menuitem">À Propos</a>
+                <a href="{{ROOT}}/#contact" class="nav-link" role="menuitem">Contact</a>
+                
+                <!-- Menu déroulant "Plus" pour regrouper les pages secondaires -->
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="moreMenu">
+                        Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
+                        <li><a href="{{ROOT}}/autres-prestations" class="nav-dropdown-link" role="menuitem">Autres prestations</a></li>
+                        <li><a href="{{ROOT}}/processus" class="nav-dropdown-link" role="menuitem">Processus</a></li>
+                        <li><a href="{{ROOT}}/metz" class="nav-dropdown-link" role="menuitem">Metz</a></li>
+                        <li><a href="{{ROOT}}/projets" class="nav-dropdown-link" role="menuitem">Projets</a></li>
+                        <li><a href="{{ROOT}}/statistiques" class="nav-dropdown-link" role="menuitem">Statistiques</a></li>
+                        <li><a href="{{ROOT}}/blog/" class="nav-dropdown-link active" role="menuitem">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button type="button" class="btn btn-primary nav-cta nav-cta-devis" id="navCtaDevis" aria-label="Ouvrir la modale devis gratuit" aria-haspopup="dialog" aria-expanded="false">
+                    <span>Devis gratuit</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>

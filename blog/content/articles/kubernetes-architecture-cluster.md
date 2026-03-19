@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes : architecture d'un cluster (API server, etcd, scheduler)"
-date: 2026-01-09
+date: 2025-01-09
 excerpt: "Plonger sous le capot de Kubernetes : rôle de l'API server, d'etcd, du scheduler et des contrôleurs. Comprendre comment le control plane prend ses décisions."
 type: article
 tags: [Kubernetes, architecture, control plane, etcd, scheduler]

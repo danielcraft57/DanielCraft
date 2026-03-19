@@ -1,6 +1,6 @@
 ---
 title: "Outils GEO : audit, suivi et vérification des citations IA"
-date: 2025-12-01
+date: 2024-09-24
 excerpt: "Geoptie, Otterly AI, LightSite AI, GPTZero, Veru : comparatif et usage des outils d'audit GEO et de vérification des citations IA. Méthodes manuelles et bonnes pratiques."
 type: article
 tags: [GEO, outils, audit, citations IA, ChatGPT, Perplexity]

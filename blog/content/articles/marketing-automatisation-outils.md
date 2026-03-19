@@ -1,6 +1,6 @@
 ---
 title: "Marketing automation : outils et workflows"
-date: 2025-06-26
+date: 2024-05-09
 excerpt: "Automatiser les tâches marketing : séquences d'emails, scoring de leads, workflows. Gagner du temps et personnaliser à l'échelle avec les bons outils."
 type: article
 tags: [marketing digital, automatisation, workflows, leads, outils]

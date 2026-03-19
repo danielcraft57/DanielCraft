@@ -1,0 +1,19 @@
+{
+  "id": "aws-serie",
+  "title": "Série AWS - Serveurs, services managés et architectures cloud",
+  "description": "Une série complète sur les services Amazon Web Services (AWS) : compute, stockage, bases de données, réseau, sécurité, observabilité, architectures et optimisation des coûts pour concevoir et exploiter des applications modernes.",
+  "slug": "aws-serie",
+  "articles": [
+    "aws-fondamentaux-cloud-aws-services",
+    "aws-compute-ec2-lambda-ecs-eks",
+    "aws-stockage-s3-ebs-efs",
+    "aws-bases-donnees-rds-dynamodb-aurora",
+    "aws-reseaux-vpc-route53-cloudfront",
+    "aws-securite-iam-kms-waf",
+    "aws-observabilite-cloudwatch-xray-cloudtrail",
+    "aws-architectures-ha-scalabilite",
+    "aws-optimisation-couts-reserved-savings-spot",
+    "aws-devops-ci-cd-codepipeline-codebuild"
+  ]
+}
+
