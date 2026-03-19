@@ -806,6 +806,7 @@ def main():
         'projets',
         'statistiques',
         'analyse',
+        'desabonnement',
         'mentions-legales',
         'cgv',
         'cgu',

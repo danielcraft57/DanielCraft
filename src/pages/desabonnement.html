@@ -1,0 +1,153 @@
+<section class="section" aria-label="Désabonnement">
+  <div class="container">
+    <header class="section-header">
+      <p class="section-kicker">Désabonnement</p>
+      <h1 class="section-title">Ne plus recevoir d’emails</h1>
+      <p class="section-description">
+        Confirmez votre désabonnement pour ne plus recevoir de prospection, publicité ou relances.
+      </p>
+    </header>
+
+    <div class="unsub-card" style="margin-top: 1.5rem;">
+      <div class="unsub-card__top">
+        <div class="unsub-kv">
+          <div class="unsub-site">
+            <div class="unsub-site__label">Site concerné</div>
+            <div class="unsub-site__value pl-mono" id="plUnsubWebsite">—</div>
+          </div>
+          <div class="unsub-status">
+            <span class="unsub-pill unsub-pill--warn" id="plUnsubStatusPill">Vérification…</span>
+          </div>
+        </div>
+      </div>
+
+        <div
+          class="form-feedback form-feedback--error"
+          id="plUnsubFeedback"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+
+      <div class="unsub-card__body">
+        <div id="plUnsubLoading" class="unsub-state">
+          <p class="unsub-title">Vérification du statut</p>
+          <p class="unsub-muted">Un instant…</p>
+        </div>
+
+        <div id="plUnsubAlready" class="unsub-state" hidden>
+          <p class="unsub-title">Vous êtes déjà désabonné</p>
+          <p class="unsub-desc">
+            Aucun autre action n’est nécessaire. Vous ne recevrez plus d’emails de prospection pour ce site.
+          </p>
+          <div class="unsub-actions">
+            <a class="btn btn-secondary unsub-btn" href="/" id="plUnsubHomeLink2">Retour à l’accueil</a>
+          </div>
+        </div>
+
+        <div id="plUnsubNotFound" class="unsub-state" hidden>
+          <p class="unsub-title">Entreprise introuvable</p>
+          <p class="unsub-desc">
+            Nous ne retrouvons pas d’entreprise associée à ce site. Si besoin, contactez
+            <a href="mailto:contact@danielcraft.fr">contact@danielcraft.fr</a>.
+          </p>
+          <div class="unsub-actions">
+            <a class="btn btn-secondary unsub-btn" href="/" id="plUnsubHomeLink4">Retour à l’accueil</a>
+          </div>
+        </div>
+
+        <div id="plUnsubSuccess" class="unsub-state" hidden>
+          <p class="unsub-title">Désabonnement confirmé</p>
+          <p class="unsub-desc" id="plUnsubSuccessText">
+            Votre demande a bien été prise en compte.
+          </p>
+          <div class="unsub-actions">
+            <a class="btn btn-primary unsub-btn" href="/" id="plUnsubHomeLink3">Retour à l’accueil</a>
+          </div>
+        </div>
+
+        <div id="plUnsubForm" class="unsub-state" hidden>
+          <p class="unsub-title">Confirmer le désabonnement</p>
+          <p class="unsub-desc">Choisissez une raison (facultatif) pour nous aider à améliorer nos messages.</p>
+
+          <div class="unsub-choices" role="radiogroup" aria-label="Motif de désabonnement">
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Je ne souhaite plus recevoir d’emails de prospection / publicité." checked />
+              <span class="unsub-choice__label">Je ne souhaite plus recevoir d’emails de prospection / publicité.</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Je n’ai pas demandé à être contacté(e) (désabonnement demandé)." />
+              <span class="unsub-choice__label">Je n’ai pas demandé à être contacté(e) (désabonnement demandé).</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Vous me recontactez malgré un précédent désabonnement / demande." />
+              <span class="unsub-choice__label">Vous me recontactez malgré un précédent désabonnement / demande.</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Je souhaite me désinscrire de cette liste d’emails (arrêt des relances)." />
+              <span class="unsub-choice__label">Je souhaite me désinscrire de cette liste d’emails (arrêt des relances).</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Erreur de destinataire (mauvaise entreprise / mauvais contact)." />
+              <span class="unsub-choice__label">Erreur de destinataire (mauvaise entreprise / mauvais contact).</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Je demande la suppression de mes données (RGPD / droit d’effacement)." />
+              <span class="unsub-choice__label">Je demande la suppression de mes données (RGPD / droit d’effacement).</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="Je considère cet email comme du spam / abus." />
+              <span class="unsub-choice__label">Je considère cet email comme du spam / abus.</span>
+            </label>
+
+            <label class="unsub-choice">
+              <input type="radio" name="plUnsubNote" value="other" />
+              <span class="unsub-choice__label">Autre</span>
+            </label>
+          </div>
+
+          <div id="plUnsubNoteOtherWrap" hidden style="display:grid; gap:0.5rem;">
+            <label for="plUnsubNoteOther" style="color: var(--gray-700); font-weight: 700;">
+              Votre précision (facultatif)
+            </label>
+            <textarea
+              id="plUnsubNoteOther"
+              name="plUnsubNoteOther"
+              rows="3"
+              maxlength="500"
+              placeholder="Ex : stop au contact, merci de retirer mon entreprise de votre liste, demande RGPD, etc."
+              class="unsub-textarea"
+            ></textarea>
+          </div>
+
+          <div class="unsub-actions">
+            <div class="unsub-actions__left">
+              <button type="button" class="btn btn-primary unsub-btn" id="plUnsubBtn">
+                <span class="unsub-spinner" aria-hidden="true"></span>
+                Confirmer le désabonnement
+              </button>
+              <button type="button" class="btn btn-secondary unsub-btn" id="plUnsubSkipBtn">
+                Continuer sans motif
+              </button>
+            </div>
+            <div class="unsub-actions__right">
+              <a class="btn btn-secondary unsub-btn" href="/" id="plUnsubHomeLink">Retour à l’accueil</a>
+            </div>
+          </div>
+        </div>
+
+        <p class="pl-hint unsub-hint" style="margin: 0.5rem 0 0 0;">
+          Si le lien est incomplet ou expiré, contactez
+          <a href="mailto:contact@danielcraft.fr">contact@danielcraft.fr</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+

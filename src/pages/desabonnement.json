@@ -1,0 +1,10 @@
+{
+  "page_title": "Désabonnement | DanielCraft",
+  "page_description": "Confirmez votre désabonnement pour ne plus recevoir de prospection, publicité ou relances.",
+  "page_keywords": "désabonnement, opt-out, prospection, publicité, confidentialité",
+  "page_url": "/desabonnement",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "extra_css": "desabonnement.css",
+  "page_scripts": ["main.js", "desabonnement.js"]
+}
+

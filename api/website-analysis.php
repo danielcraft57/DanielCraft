@@ -44,7 +44,12 @@ load_dotenv(__DIR__ . '/../.env');
 
 // Variables attendues dans .env
 $apiToken = getenv('PROSPECTLAB_TOKEN') ?: '';
-$apiEndpoint = getenv('PROSPECTLAB_ENDPOINT') ?: 'https://prospectlab.danielcraft.fr/api/public/website-analysis';
+// Simplification: on derive depuis PROSPECTLAB_BASE_URL (fallback: anciennes vars)
+$baseUrl = rtrim(getenv('PROSPECTLAB_BASE_URL') ?: 'https://prospectlab.danielcraft.fr', '/');
+$apiEndpoint =
+    (getenv('PROSPECTLAB_ENDPOINT') ?: '') !== ''
+        ? (string) getenv('PROSPECTLAB_ENDPOINT')
+        : ($baseUrl . '/api/public/website-analysis');
 
 // Rate limit (par IP)
 const LIMIT_PER_SECOND = 2;  // max 2 req/s

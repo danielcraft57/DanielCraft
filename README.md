@@ -49,7 +49,19 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 - Présentation Metz
 - Portfolio de projets
 - Statistiques
+- Désabonnement emails (prospection / publicité) (`/desabonnement`)
 - Pages légales (Mentions légales, CGV, CGU, Politique de confidentialité)
+
+### API (PHP) et variables d’environnement
+- Les endpoints PHP sont servis sous `/api/*.php` (voir `scripts/nginx.conf`)
+- Les secrets (token API, base d'URL) sont à mettre dans un fichier `.env` **à la racine** (non versionné)
+
+#### Désabonnement (entreprise par URL)
+- **Page**: `/desabonnement?website=<url-ou-domaine>`
+- **Endpoint**: `/api/unsubscribe.php`
+- **Logique serveur**:
+  - recherche de l'entreprise via `/api/public/entreprises/by-website`
+  - marquage “désabonné” via `POST /api/public/entreprises/<id>/unsubscribe`
 
 ## Structure du Projet
 
