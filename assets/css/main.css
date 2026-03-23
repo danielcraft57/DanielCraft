@@ -2937,6 +2937,29 @@ body.contact-time-overlay-active {
   min-height: 140px;
 }
 
+.form-group--error input,
+.form-group--error select,
+.form-group--error textarea {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  background: #fff;
+}
+
+.field-error {
+  margin-top: 6px;
+  color: #b91c1c;
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.field-hint {
+  margin-top: 6px;
+  color: var(--gray-500);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
 .form-actions {
   margin-top: var(--space-8);
   padding-top: var(--space-4);

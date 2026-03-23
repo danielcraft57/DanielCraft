@@ -228,7 +228,9 @@
       selectedServicePrice: '',
       sending: false,
       timeOverlayOpen: false,
-      timeOverlayReturnFocus: null
+      timeOverlayReturnFocus: null,
+      personalizationContext: null,
+      usedAutoSkipCoords: false
     };
 
     const timeOverlay = document.getElementById('contactTimeOverlay');
@@ -251,10 +253,17 @@
     const wizardBackFromCoords = document.getElementById('wizardBackFromCoords');
     const wizardBackFromMessage = document.getElementById('wizardBackFromMessage');
     const messageEl = form.querySelector('#message');
+    const emailEl = form.querySelector('#email');
+    const nameEl = form.querySelector('#name');
+    const phoneEl = form.querySelector('#phone');
     const recapTypeEl = form.querySelector('#contactRecapType');
     const recapServiceEl = form.querySelector('#contactRecapService');
     const recapDateEl = form.querySelector('#contactRecapDate');
     const recapTimeEl = form.querySelector('#contactRecapTime');
+    const recapNameEl = form.querySelector('#contactRecapName');
+    const recapEmailEl = form.querySelector('#contactRecapEmail');
+    const recapPhoneEl = form.querySelector('#contactRecapPhone');
+    const autoSkipNoteEl = form.querySelector('#contactAutoSkipNote');
     const validationRecapBlock = form.querySelector('.contact-validation-recap');
     const pendingBlock = form.querySelector('#contactValidationPending');
     const successBlock = form.querySelector('#contactValidationSuccess');
@@ -266,6 +275,229 @@
 
     const today = startOfDay(new Date());
     const maxDate = addDays(today, MAX_CALENDAR_RANGE_DAYS);
+
+    function ensureFieldErrorEl(inputEl) {
+      if (!inputEl) return null;
+      const group = inputEl.closest('.form-group');
+      if (!group) return null;
+      let err = group.querySelector('.field-error');
+      if (!err) {
+        err = document.createElement('div');
+        err.className = 'field-error';
+        err.setAttribute('aria-live', 'polite');
+        group.appendChild(err);
+      }
+      return { group, err };
+    }
+
+    function setFieldError(inputEl, message) {
+      const ref = ensureFieldErrorEl(inputEl);
+      if (!ref) return;
+      ref.group.classList.add('form-group--error');
+      if (inputEl) {
+        inputEl.setAttribute('aria-invalid', 'true');
+        inputEl.setAttribute('aria-describedby', inputEl.id + '-error');
+      }
+      ref.err.id = (inputEl && inputEl.id ? inputEl.id : 'field') + '-error';
+      ref.err.textContent = message || '';
+      ref.err.hidden = !message;
+    }
+
+    function clearFieldError(inputEl) {
+      const ref = ensureFieldErrorEl(inputEl);
+      if (!ref) return;
+      ref.group.classList.remove('form-group--error');
+      if (inputEl) {
+        inputEl.removeAttribute('aria-invalid');
+        inputEl.removeAttribute('aria-describedby');
+      }
+      ref.err.textContent = '';
+      ref.err.hidden = true;
+    }
+
+    function clearCoordsFieldErrors() {
+      clearFieldError(nameEl);
+      clearFieldError(emailEl);
+      clearFieldError(phoneEl);
+    }
+
+    function ensurePhoneHintEl() {
+      if (!phoneEl) return null;
+      const group = phoneEl.closest('.form-group');
+      if (!group) return null;
+      let hint = group.querySelector('.field-hint');
+      if (!hint) {
+        hint = document.createElement('div');
+        hint.className = 'field-hint';
+        hint.id = 'phone-format-hint';
+        group.appendChild(hint);
+      }
+      return hint;
+    }
+
+    function normalizePhoneRaw(raw) {
+      let s = String(raw || '').trim();
+      if (!s) return '';
+      s = s.replace(/[^\d+]/g, '');
+      if (s.startsWith('00')) s = '+' + s.slice(2);
+      return s;
+    }
+
+    function formatByCountry(cc, localDigits) {
+      if (cc === '33') {
+        const d = localDigits.slice(0, 9);
+        return '+33 ' + [d.slice(0, 1), d.slice(1, 3), d.slice(3, 5), d.slice(5, 7), d.slice(7, 9)].filter(Boolean).join(' ');
+      }
+      if (cc === '32') {
+        const d = localDigits.slice(0, 9);
+        if (d.length <= 8) return '+32 ' + d.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+        return '+32 ' + [d.slice(0, 3), d.slice(3, 5), d.slice(5, 7), d.slice(7, 9)].filter(Boolean).join(' ');
+      }
+      if (cc === '352') {
+        const d = localDigits.slice(0, 11);
+        return '+352 ' + d.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+      }
+      if (cc === '49') {
+        const d = localDigits.slice(0, 13);
+        // Numérotation DE variable: on groupe par 3 pour lisibilité.
+        return '+49 ' + d.replace(/(\d{3})(?=\d)/g, '$1 ').trim();
+      }
+      // Fallback international
+      const d = localDigits.slice(0, 14);
+      return '+' + cc + ' ' + d.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+    }
+
+    function parseAndFormatPhone(raw) {
+      const normalized = normalizePhoneRaw(raw);
+      if (!normalized) {
+        return { valid: false, display: '', e164: '', country: '', reason: 'empty' };
+      }
+
+      // National FR (0X XX XX XX XX) -> +33X...
+      if (normalized.startsWith('0')) {
+        const digits = normalized.replace(/\D/g, '').slice(0, 10);
+        if (/^0\d{9}$/.test(digits)) {
+          const e164 = '+33' + digits.slice(1);
+          return {
+            valid: true,
+            display: digits.replace(/(\d{2})(?=\d)/g, '$1 ').trim(),
+            e164,
+            country: 'FR'
+          };
+        }
+        return { valid: false, display: raw, e164: '', country: 'FR', reason: 'fr-invalid' };
+      }
+
+      // International +...
+      if (normalized.startsWith('+')) {
+        const rest = normalized.slice(1).replace(/\D/g, '');
+        const known = ['352', '33', '32', '49'];
+        let cc = '';
+        for (const k of known) {
+          if (rest.startsWith(k)) {
+            cc = k;
+            break;
+          }
+        }
+        if (!cc) {
+          // pays inconnu: on autorise E.164 générique 6..14
+          if (/^\d{6,14}$/.test(rest)) {
+            return {
+              valid: true,
+              display: '+' + rest.replace(/(\d{2})(?=\d)/g, '$1 ').trim(),
+              e164: '+' + rest,
+              country: 'INTL'
+            };
+          }
+          return { valid: false, display: raw, e164: '', country: 'INTL', reason: 'intl-invalid' };
+        }
+        const local = rest.slice(cc.length);
+        let ok = false;
+        if (cc === '33') ok = /^\d{9}$/.test(local);
+        if (cc === '32') ok = /^\d{8,9}$/.test(local);
+        if (cc === '352') ok = /^\d{8,11}$/.test(local);
+        if (cc === '49') ok = /^\d{7,13}$/.test(local);
+        if (!ok) return { valid: false, display: raw, e164: '', country: cc, reason: 'cc-invalid' };
+        return {
+          valid: true,
+          display: formatByCountry(cc, local),
+          e164: '+' + cc + local,
+          country: cc
+        };
+      }
+
+      // Sans + et sans 0 => tentative internationale brute (ex: 352...)
+      const digits = normalized.replace(/\D/g, '');
+      if (/^\d{8,15}$/.test(digits)) {
+        return {
+          valid: true,
+          display: '+' + digits.replace(/(\d{2})(?=\d)/g, '$1 ').trim(),
+          e164: '+' + digits,
+          country: 'INTL'
+        };
+      }
+      return { valid: false, display: raw, e164: '', country: '', reason: 'invalid' };
+    }
+
+    function updatePhoneHint() {
+      const hint = ensurePhoneHintEl();
+      if (!hint || !phoneEl) return;
+      const parsed = parseAndFormatPhone(phoneEl.value);
+      if (!phoneEl.value) {
+        hint.textContent = 'Formats acceptés: 🇫🇷 FR (06 12 34 56 78), 🇧🇪 BE (+32 ...), 🇱🇺 LU (+352 ...), 🇩🇪 DE (+49 ...).';
+        return;
+      }
+      if (!parsed.valid) {
+        hint.textContent = 'Format invalide. Utilisez 🇫🇷 06... / +33..., 🇧🇪 +32..., 🇱🇺 +352... ou 🇩🇪 +49...';
+        return;
+      }
+      if (parsed.country === 'FR' || parsed.country === '33') hint.textContent = '🇫🇷 Format France détecté.';
+      else if (parsed.country === '32') hint.textContent = '🇧🇪 Format Belgique détecté.';
+      else if (parsed.country === '352') hint.textContent = '🇱🇺 Format Luxembourg détecté.';
+      else if (parsed.country === '49') hint.textContent = '🇩🇪 Format Allemagne détecté.';
+      else hint.textContent = '🌍 Format international détecté.';
+    }
+
+    async function ensurePersonalizationContext() {
+      if (!window.Personalization || typeof window.Personalization.getContext !== 'function') {
+        return null;
+      }
+      const emailCandidate = (emailEl && emailEl.value ? String(emailEl.value).trim() : '');
+      if (!emailCandidate && state.personalizationContext) {
+        return state.personalizationContext;
+      }
+      const ctx = await window.Personalization.getContext({
+        email: emailCandidate,
+        website: '',
+        useCache: true
+      });
+      if (ctx && ctx.success) {
+        state.personalizationContext = ctx;
+        const prefill = ctx.prefill || {};
+        if (nameEl && !String(nameEl.value || '').trim() && prefill.name) {
+          nameEl.value = String(prefill.name);
+        }
+        if (emailEl && !String(emailEl.value || '').trim() && prefill.email) {
+          emailEl.value = String(prefill.email);
+        }
+        if (phoneEl && !String(phoneEl.value || '').trim() && prefill.phone) {
+          phoneEl.value = formatPhoneForInput(String(prefill.phone));
+        }
+        return ctx;
+      }
+      return null;
+    }
+
+    function formatPhoneForInput(raw) {
+      const parsed = parseAndFormatPhone(raw);
+      if (!parsed.valid) return String(raw || '').trim();
+      if (parsed.country === 'FR' || parsed.country === '33') {
+        // UX FR locale dans le champ.
+        const frLocal = '0' + parsed.e164.replace('+33', '');
+        return frLocal.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+      }
+      return parsed.display;
+    }
 
     function updateSummary() {
       if (!summaryDate) return;
@@ -352,6 +584,9 @@
       const typeObj = CONTACT_PROJECT_TYPES.find((x) => x.slug === typeSlug);
       recapTypeEl.textContent = typeObj?.label || '—';
       recapServiceEl.textContent = state.selectedServiceTitle || '—';
+      if (recapNameEl) recapNameEl.textContent = (nameEl?.value || '').trim() || '—';
+      if (recapEmailEl) recapEmailEl.textContent = (emailEl?.value || '').trim() || '—';
+      if (recapPhoneEl) recapPhoneEl.textContent = (phoneEl?.value || '').trim() || '—';
 
       recapDateEl.textContent = state.selectedDate ? formatFrenchLong(state.selectedDate) : '—';
 
@@ -525,6 +760,14 @@
 
       if (n === 5) {
         updateValidationRecap();
+        if (autoSkipNoteEl) {
+          autoSkipNoteEl.hidden = !state.usedAutoSkipCoords;
+        }
+      }
+
+      // Evite d'afficher une erreur ancienne quand on arrive sur une nouvelle étape.
+      if (n === 4 || n === 5) {
+        hideFeedback();
       }
 
       let focusTarget = null;
@@ -661,8 +904,12 @@
       const items = selectedPt
         ? CONTACT_SERVICE_ITEMS.filter((it) => it.tags.includes(selectedPt))
         : [];
+      const rankedItems =
+        state.personalizationContext && window.Personalization && typeof window.Personalization.rankServices === 'function'
+          ? window.Personalization.rankServices(items, state.personalizationContext)
+          : items;
 
-      if (!selectedPt || !pt || !items.length) {
+      if (!selectedPt || !pt || !rankedItems.length) {
         const msg = document.createElement('p');
         msg.className = 'contact-step__intro';
         msg.textContent = 'Aucune offre trouvée pour ce type de projet.';
@@ -682,7 +929,7 @@
       grid.className = 'contact-service-grid';
       grid.setAttribute('role', 'list');
 
-      items.forEach((item, cardIndex) => {
+      rankedItems.forEach((item, cardIndex) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'contact-service-card';
@@ -697,6 +944,13 @@
         const desc = extractDescriptionFromHint(item.hint);
         const descHtml = desc ? '<span class="contact-service-card__hint">' + escapeHtml(desc) + '</span>' : '';
 
+        const reasons = Array.isArray(item._personalizationReasons) ? item._personalizationReasons : [];
+        const reasonText = reasons.length ? reasons.slice(0, 2).join(' + ') : 'votre contexte';
+        const recoTag =
+          cardIndex === 0 && state.personalizationContext
+            ? '<span class="contact-service-card__hint">Recommandé: ' + escapeHtml(reasonText) + '</span>'
+            : '';
+
         btn.innerHTML =
           '<span class="contact-service-card__icon" aria-hidden="true"><i class="fas ' +
           item.icon +
@@ -704,6 +958,7 @@
           '<span class="contact-service-card__title">' +
           item.title +
           '</span>' +
+          recoTag +
           descHtml +
           '<span class="contact-service-card__go" aria-hidden="true"><i class="fas fa-arrow-right"></i> Créneau</span>';
 
@@ -966,12 +1221,48 @@
       const email = (form.querySelector('#email')?.value || '').trim();
       const phone = (form.querySelector('#phone')?.value || '').trim();
 
-      if (!name || !email || !phone) {
-        showFeedback('Nom, email et téléphone sont obligatoires.', true);
+      clearCoordsFieldErrors();
+      const missing = [];
+      if (!name) missing.push('nom');
+      if (!email) missing.push('email');
+      if (!phone) missing.push('téléphone');
+
+      if (missing.length > 0) {
+        const firstMissingEl = !name ? nameEl : (!email ? emailEl : phoneEl);
+        if (!name) setFieldError(nameEl, 'Nom requis.');
+        if (!email) setFieldError(emailEl, 'Email requis.');
+        if (!phone) setFieldError(phoneEl, 'Téléphone requis.');
+        hideFeedback();
+        if (firstMissingEl && typeof firstMissingEl.focus === 'function') {
+          firstMissingEl.focus({ preventScroll: true });
+        }
         return false;
       }
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        setFieldError(emailEl, 'Format d’email invalide.');
+        hideFeedback();
+        emailEl?.focus({ preventScroll: true });
+        return false;
+      }
+      const phoneParsed = parseAndFormatPhone(phone);
+      if (!phoneParsed.valid) {
+        setFieldError(phoneEl, 'Format téléphone invalide (FR, BE, LU, DE ou international).');
+        hideFeedback();
+        phoneEl?.focus({ preventScroll: true });
+        return false;
+      }
+      // Normalisation finale du champ pour conserver un format propre.
+      if (phoneEl) phoneEl.value = formatPhoneForInput(phoneParsed.display);
       hideFeedback();
       return true;
+    }
+
+    function hasCoordsFilled() {
+      const name = (form.querySelector('#name')?.value || '').trim();
+      const email = (form.querySelector('#email')?.value || '').trim();
+      const phone = (form.querySelector('#phone')?.value || '').trim();
+      return !!(name && email && phone);
     }
 
     btnChangeService?.addEventListener('click', () => {
@@ -991,6 +1282,16 @@
 
     wizardNextFromCalendar?.addEventListener('click', () => {
       if (!validateStepCalendar()) return;
+      // Si les coordonnées sont déjà présentes (prefill), on saute l'étape 4.
+      if (hasCoordsFilled()) {
+        state.usedAutoSkipCoords = true;
+        hideFeedback();
+        announce('Coordonnées déjà remplies, étape contact sautée.');
+        setStep(5);
+        sendContactRequest();
+        return;
+      }
+      state.usedAutoSkipCoords = false;
       setStep(4);
     });
 
@@ -1072,6 +1373,45 @@
       sendContactRequest();
     });
 
+    emailEl?.addEventListener('blur', async () => {
+      const before = state.personalizationContext;
+      const ctx = await ensurePersonalizationContext();
+      if (ctx && (!before || before.source !== ctx.source) && state.step === 2) {
+        renderServiceGrid();
+      }
+    });
+
+    // Auto-format téléphone pendant la saisie (convention FR lisible).
+    phoneEl?.addEventListener('input', () => {
+      const formatted = formatPhoneForInput(phoneEl.value);
+      if (formatted && formatted !== phoneEl.value) {
+        phoneEl.value = formatted;
+      }
+      updatePhoneHint();
+    });
+    phoneEl?.addEventListener('blur', () => {
+      const formatted = formatPhoneForInput(phoneEl.value);
+      if (formatted && formatted !== phoneEl.value) {
+        phoneEl.value = formatted;
+      }
+      updatePhoneHint();
+    });
+    nameEl?.addEventListener('input', () => clearFieldError(nameEl));
+    emailEl?.addEventListener('input', () => clearFieldError(emailEl));
+    phoneEl?.addEventListener('input', () => clearFieldError(phoneEl));
+    updatePhoneHint();
+
+    // Préremplit l'email depuis ?email=... (emails de prospection)
+    if (emailEl && !emailEl.value) {
+      const trackedEmail =
+        window.Personalization && typeof window.Personalization.getTrackedEmail === 'function'
+          ? window.Personalization.getTrackedEmail()
+          : '';
+      if (trackedEmail) {
+        emailEl.value = trackedEmail;
+      }
+    }
+
     wizardBackFromMessage?.addEventListener('click', () => {
       hideFeedback();
       setStep(4);
@@ -1101,6 +1441,9 @@
     });
 
     renderProjectTypes();
+    ensurePersonalizationContext().then(() => {
+      if (state.step === 2) renderServiceGrid();
+    });
     renderCalendar();
     renderTimeSlots();
     updateSummary();

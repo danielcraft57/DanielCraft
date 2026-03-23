@@ -130,6 +130,23 @@ if (-not (Test-Path $distDir)) {
   exit 1
 }
 
+$apiSrcDir = Join-Path $root "api"
+$apiDistDir = Join-Path $distDir "api"
+if (-not (Test-Path $apiDistDir)) {
+  New-Item -ItemType Directory -Path $apiDistDir -Force | Out-Null
+}
+
+function Sync-ApiToDist {
+  param(
+    [string]$SourceDir,
+    [string]$TargetDir
+  )
+  if (-not (Test-Path $SourceDir)) { return }
+  # /MIR = inclut créations, modifs et suppressions.
+  # /NFL /NDL /NJH /NJS /NP réduisent fortement le bruit terminal.
+  $null = robocopy $SourceDir $TargetDir *.php /MIR /R:1 /W:1 /NFL /NDL /NJH /NJS /NP
+}
+
 if (-not $NoKillPort) {
   $listeners = Get-NetTCPConnection -LocalPort $ServerPort -State Listen -ErrorAction SilentlyContinue
   if ($listeners) {
@@ -159,9 +176,24 @@ Write-Host "Lancement serveur PHP: http://$ServerHost`:$ServerPort" -ForegroundC
 $server = Start-Process -FilePath $phpExe -ArgumentList @("-c", $phpDir, "-S", "$ServerHost`:$ServerPort", "-t", $distDir) -NoNewWindow -PassThru
 
 try {
-  Write-Host "Build watch (Ctrl+C pour stopper)..." -ForegroundColor Cyan
-  python build.py --watch --no-webp
+  Write-Host "Sync API initiale -> dist/api..." -ForegroundColor Cyan
+  Sync-ApiToDist -SourceDir $apiSrcDir -TargetDir $apiDistDir
+
+  Write-Host "Build watch + sync API (Ctrl+C pour stopper)..." -ForegroundColor Cyan
+  $buildWatch = Start-Process -FilePath "python" -ArgumentList @("build.py", "--watch", "--no-webp") -NoNewWindow -PassThru
+
+  while (-not $buildWatch.HasExited) {
+    Sync-ApiToDist -SourceDir $apiSrcDir -TargetDir $apiDistDir
+    Start-Sleep -Seconds 1
+  }
+
+  if ($buildWatch.ExitCode -ne 0) {
+    exit $buildWatch.ExitCode
+  }
 } finally {
+  if ($buildWatch -and -not $buildWatch.HasExited) {
+    Stop-Process -Id $buildWatch.Id -Force -ErrorAction SilentlyContinue | Out-Null
+  }
   if ($server -and -not $server.HasExited) {
     Write-Host "Arrêt serveur PHP..." -ForegroundColor Yellow
     Stop-Process -Id $server.Id -Force | Out-Null

@@ -247,6 +247,7 @@ const PORTFOLIO_IMAGE_STAGGER_MS = 80;
 
 /** Nombre d'images à charger immédiatement (premier écran). */
 const PORTFOLIO_IMAGE_EAGER_COUNT = 3;
+let portfolioPersonalizationContext = null;
 
 /**
  * Programme le chargement des images avec des délais décalés pour limiter les requêtes simultanées.
@@ -288,7 +289,14 @@ function renderPortfolio(filter = 'all') {
     const grid = document.getElementById('portfolioGrid');
     if (!grid) return;
 
-    const projects = PortfolioData.getProjectsByCategory(filter);
+    let projects = PortfolioData.getProjectsByCategory(filter);
+    if (
+        portfolioPersonalizationContext &&
+        window.Personalization &&
+        typeof window.Personalization.rankProjects === 'function'
+    ) {
+        projects = window.Personalization.rankProjects(projects, portfolioPersonalizationContext);
+    }
     
     grid.innerHTML = projects.map(project => {
         let imageContent = '';
@@ -320,6 +328,11 @@ function renderPortfolio(filter = 'all') {
                 </div>
             </div>
             <div class="portfolio-content">
+                ${
+                  (portfolioPersonalizationContext && Array.isArray(project._personalizationReasons) && project._personalizationReasons.length)
+                    ? `<p class="article-type">Recommandé: ${project._personalizationReasons.slice(0, 2).join(' + ')}</p>`
+                    : ''
+                }
                 <h3 class="portfolio-title">${project.title}</h3>
                 <p class="portfolio-description">${project.description}</p>
                 <div class="portfolio-tech">
@@ -352,13 +365,25 @@ function renderPortfolio(filter = 'all') {
     }
 }
 
+async function initPortfolioPersonalization() {
+    if (!window.Personalization || typeof window.Personalization.getContext !== 'function') return;
+    // Sur le portfolio, on force un refresh pour aligner la mise en avant.
+    const ctx = await window.Personalization.getContext({ useCache: false });
+    if (ctx && ctx.success) {
+        portfolioPersonalizationContext = ctx;
+        renderPortfolio('all');
+    }
+}
+
 // Initialisation
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         renderPortfolio('all');
+        initPortfolioPersonalization();
     });
 } else {
     renderPortfolio('all');
+    initPortfolioPersonalization();
 }
 
 /** URL du JSON des depots loupix57 (genere par scripts/generate-repos-loupix57.ps1) */

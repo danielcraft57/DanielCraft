@@ -1,4 +1,5 @@
 // ===== PROJETS PAGE - Rendu des projets GitHub =====
+let projectsPersonalizationContext = null;
 
 function renderProjects(filters = {}) {
     const grid = document.getElementById('projectsGrid');
@@ -25,6 +26,10 @@ function renderProjects(filters = {}) {
         return new Date(b.lastUpdate) - new Date(a.lastUpdate);
     });
 
+    if (projectsPersonalizationContext && window.Personalization && typeof window.Personalization.rankProjects === 'function') {
+        projects = window.Personalization.rankProjects(projects, projectsPersonalizationContext);
+    }
+
     if (projects.length === 0) {
         grid.innerHTML = '<div class="no-projects"><p>Aucun projet trouvé avec ces filtres.</p></div>';
         return;
@@ -41,6 +46,13 @@ function renderProjects(filters = {}) {
         
         const forkBadge = project.isFork 
             ? '<span class="fork-badge">Fork</span>' 
+            : '';
+        const personalizationReason = (
+            projectsPersonalizationContext &&
+            Array.isArray(project._personalizationReasons) &&
+            project._personalizationReasons.length > 0
+        )
+            ? `<span class="licence-badge">Recommandé: ${project._personalizationReasons.slice(0, 2).join(' + ')}</span>`
             : '';
 
         let imageContent = '';
@@ -66,6 +78,7 @@ function renderProjects(filters = {}) {
                 <div class="project-header">
                     <h3 class="project-title">${project.title}</h3>
                     <div class="project-badges">
+                        ${personalizationReason}
                         ${statusBadge}
                         ${licenceBadge}
                         ${forkBadge}
@@ -118,6 +131,16 @@ function renderProjects(filters = {}) {
             useWebP: true,
             useCache: true
         });
+    }
+}
+
+async function initProjectsPersonalization() {
+    if (!window.Personalization || typeof window.Personalization.getContext !== 'function') return;
+    // Sur la page projets, on force un refresh pour éviter un contexte obsolète.
+    const ctx = await window.Personalization.getContext({ useCache: false });
+    if (ctx && ctx.success) {
+        projectsPersonalizationContext = ctx;
+        renderProjects();
     }
 }
 
@@ -188,10 +211,12 @@ if (document.readyState === 'loading') {
         renderProjects();
         renderTechnologies();
         initFilters();
+        initProjectsPersonalization();
     });
 } else {
     renderProjects();
     renderTechnologies();
     initFilters();
+    initProjectsPersonalization();
 }
 

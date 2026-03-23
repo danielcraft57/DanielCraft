@@ -47,6 +47,38 @@
     return { ...a, _norm: { title, excerpt, type, tags } };
   });
 
+  function reorderCardsBySlugs(slugs) {
+    if (!Array.isArray(slugs) || !slugs.length) return;
+    const frag = document.createDocumentFragment();
+    slugs.forEach((slug) => {
+      const card = cardsBySlug[slug];
+      if (card) frag.appendChild(card);
+    });
+    grid.appendChild(frag);
+  }
+
+  async function applyPersonalizationRanking() {
+    if (!window.Personalization || typeof window.Personalization.getContext !== 'function') return;
+    const ctx = await window.Personalization.getContext({ useCache: true });
+    if (!ctx || !ctx.success || typeof window.Personalization.rankArticles !== 'function') return;
+    const ranked = window.Personalization.rankArticles(normalizedArticles, ctx);
+    const slugs = ranked.map((a) => a.slug).filter(Boolean);
+    reorderCardsBySlugs(slugs);
+    ranked.slice(0, 6).forEach((article) => {
+      const card = cardsBySlug[article.slug];
+      if (!card) return;
+      const reasons = Array.isArray(article._personalizationReasons) ? article._personalizationReasons : [];
+      if (!reasons.length) return;
+      let badge = card.querySelector('.article-type');
+      if (!badge) {
+        badge = document.createElement('div');
+        badge.className = 'article-type';
+        card.insertBefore(badge, card.firstChild);
+      }
+      badge.textContent = 'Recommandé: ' + reasons.slice(0, 2).join(' + ');
+    });
+  }
+
   function computeScore(article, tokens) {
     const { title, excerpt, type, tags } = article._norm;
     let score = 0;
@@ -149,5 +181,7 @@
   if (window.location.hash === '#blog-search') {
     setTimeout(() => input.focus(), 300);
   }
+
+  applyPersonalizationRanking();
 })();
 

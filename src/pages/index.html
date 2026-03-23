@@ -879,8 +879,23 @@
                             <div class="contact-step" data-step="5" role="group" aria-labelledby="contact-step4-title" aria-hidden="true">
                                 <h3 id="contact-step4-title" class="contact-step__title">Validation</h3>
                                 <p class="contact-step__intro">Dernier récap avant envoi.</p>
+                                <p class="contact-step__intro" id="contactAutoSkipNote" hidden>
+                                    Coordonnées détectées automatiquement, étape contact sautée.
+                                </p>
 
                                 <div class="contact-validation-recap" role="group" aria-label="Récapitulatif">
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Nom</span>
+                                        <span class="contact-validation-value" id="contactRecapName">—</span>
+                                    </div>
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Email</span>
+                                        <span class="contact-validation-value" id="contactRecapEmail">—</span>
+                                    </div>
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Téléphone</span>
+                                        <span class="contact-validation-value" id="contactRecapPhone">—</span>
+                                    </div>
                                     <div class="contact-validation-row">
                                         <span class="contact-validation-label">Type de projet</span>
                                         <span class="contact-validation-value" id="contactRecapType">—</span>
