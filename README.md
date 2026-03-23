@@ -107,11 +107,18 @@ python build.py
 Génère les pages dans `dist/`, le blog dans `dist/blog/`, et les sitemaps (sitemap.xml, sitemap-pages.xml, blog/sitemap-blog.xml).
 
 4. **Tester localement**
+
+Les pages utilisent des chemins **absolus** (`/assets/...`, `/favicon.ico`). Il faut donc servir le dossier **`dist/` comme racine** du serveur HTTP — pas la racine du dépôt avec une URL du type `/dist/index.html` (sinon 404 sur JS/CSS).
+
 ```bash
-# Ouvrir dist/index.html dans un navigateur
-# Ou utiliser un serveur local :
-python3 -m http.server 8000 -d dist
+python3 build.py --no-webp
+python3 -m http.server 8000 --directory dist
+# Puis ouvrir : http://localhost:8000/
 ```
+
+Windows (PowerShell) : `.\scripts\serve_local.ps1` (build + serveur).
+
+**À éviter** : `python -m http.server 8000` à la racine du repo puis `http://localhost:8000/dist/index.html` → `/assets/js/...` pointe hors de `dist/` et provoque des 404.
 
 ### Déploiement
 
@@ -188,14 +195,9 @@ La configuration Nginx est dans `scripts/nginx.conf`. Elle inclut :
 
 © 2025 Loïc DANIEL - Tous droits réservés
 
-## Auteur
+## Contact
 
-**Loïc DANIEL**
-- Email : loic5488@gmail.com
-- Téléphone : 03 87 78 09 16
-- Localisation : 57000 Metz, France
-- LinkedIn : [linkedin.com/in/loicdaniel](https://linkedin.com/in/loicdaniel)
-- GitHub : [github.com/likedevGit](https://github.com/likedevGit)
+Pour toute question sur ce projet, utilisez les canaux de contact configurés sur le site déployé.
 
 ## Version
 

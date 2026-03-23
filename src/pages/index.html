@@ -1,4 +1,4 @@
-    <!-- Hero Section -->
+    <!-- Hero Section - Inspiré des best practices (Momentum Templates) -->
     <section id="home" class="hero">
         <div class="hero-background">
             <div class="hero-gradient"></div>
@@ -7,24 +7,33 @@
         <div class="hero-content">
             <div class="hero-layout">
                 <div class="hero-main">
-                    <div class="hero-badge">
-                        <span class="badge-text">Développeur web freelance · Metz</span>
-                        <div class="badge-pulse"></div>
-                    </div>
-                    
                     <h1 class="hero-title">
-                        <span class="title-line">Des sites qui parlent</span>
-                        <span class="title-line highlight">le langage de vos clients</span>
+                        <span class="title-line">Un site clair, rapide,</span>
+                        <span class="title-line highlight">qui transforme vos visites en contacts</span>
                     </h1>
                     
-                    <p class="hero-description">
-                        Vous avez déjà assez de choses à gérer. Je conçois pour vous un site ou une application métier
-                        qui <strong>explique clairement ce que vous faites</strong> et <strong>donne envie de vous contacter</strong>.
+                    <p class="hero-description hero-lead">
+                        Stratégie, design, développement et SEO dans un même flux :
+                        <strong>un seul interlocuteur</strong>, de l'idée au lancement.
                     </p>
-                    <p class="hero-description">
-                        Stratégie, design, développement et SEO dans une même approche : un seul interlocuteur, 
-                        un parcours fluide de la première visite jusqu'au rendez-vous.
-                    </p>
+                    
+                    <div class="hero-reassurance">
+                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Devis gratuit 24h</span>
+                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Sans engagement</span>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary btn-large">
+                            <span>Démarrer une demande</span>
+                            <i class="fas fa-calendar-check"></i>
+                        </a>
+                        <a href="#portfolio" class="btn btn-secondary btn-large">
+                            <span>Voir le portfolio</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                    </div>
+                    
+                    <p class="hero-cta-hint">Réponse sous 24h</p>
                     
                     <div class="hero-stats">
                         <div class="stat-item">
@@ -37,52 +46,23 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-number" data-target="100">0</div>
-                            <div class="stat-label">% Satisfaction client</div>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary btn-large">
-                            <span>Planifier un appel découverte</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#portfolio" class="btn btn-secondary btn-large">
-                            <span>Voir des cas concrets</span>
-                            <i class="fas fa-rocket"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="hero-tech">
-                        <span class="tech-label">Spécialisé en projets qui mixent :</span>
-                        <div class="tech-stack">
-                            <div class="tech-item">
-                                <i class="fas fa-bullseye"></i>
-                                <span>Marketing & positionnement</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-sitemap"></i>
-                                <span>UX claire & parcours simple</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-search"></i>
-                                <span>SEO Google & IA</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-database"></i>
-                                <span>Applications métier & data</span>
-                            </div>
+                            <div class="stat-label">% Satisfaction</div>
                         </div>
                     </div>
                 </div>
 
                 <aside class="hero-visual" aria-label="Aperçu visuel de projets clients">
+                    <div class="hero-visual-head">
+                        <p class="hero-visual-kicker">Exemples concrets</p>
+                        <h3 class="hero-visual-title">Ce que vos clients voient en premier</h3>
+                    </div>
                     <div class="hero-mockup">
                         <div class="hero-mockup-slide hero-mockup-slide-1" aria-hidden="true"></div>
                         <div class="hero-mockup-slide hero-mockup-slide-2" aria-hidden="true"></div>
                         <div class="hero-mockup-slide hero-mockup-slide-3" aria-hidden="true"></div>
                         <div class="hero-mockup-overlay">
                             <span class="hero-mockup-tag">UX / UI pensée business</span>
-                            <p>Vue directe sur le résultat: interfaces lisibles sur laptop et mobile, prêtes à convertir.</p>
+                            <p>Interfaces lisibles sur laptop et mobile, prêtes à convertir.</p>
                         </div>
                     </div>
 
@@ -101,6 +81,32 @@
                 <div class="scroll-arrow">
                     <i class="fas fa-chevron-down"></i>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-badge">Portfolio</span>
+                <h2 class="section-title">Projets qui transforment</h2>
+                <p class="section-description">
+                    Découvrez mes réalisations qui ont impacté positivement 
+                    mes clients et leurs utilisateurs.
+                </p>
+            </div>
+            
+            <div class="portfolio-filter scroll-reveal">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="desktop">Desktop</button>
+                <button class="filter-btn" data-filter="tools">Outils</button>
+                <button class="filter-btn" data-filter="specialized">Spécialisé</button>
+            </div>
+            
+            <div class="portfolio-grid scroll-reveal" id="portfolioGrid">
+                <!-- Les projets seront injectés par JavaScript -->
             </div>
         </div>
     </section>
@@ -142,12 +148,8 @@
                         <li>Code source inclus (repo GitHub)</li>
                         <li>14 jours de support</li>
                     </ul>
-                    <div class="service-price">
-                        <span class="price-label">Forfait</span>
-                        <span class="price-amount">490€</span>
-                    </div>
-                    <a href="#contact" class="service-cta">
-                        <span>Obtenir un devis gratuit</span>
+                    <a href="#tarifs" class="service-cta">
+                        <span>Voir le budget</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -167,12 +169,8 @@
                         <li>Image professionnelle et cohérente</li>
                         <li>14 jours de support</li>
                     </ul>
-                    <div class="service-price">
-                        <span class="price-label">Forfait</span>
-                        <span class="price-amount">990€</span>
-                    </div>
-                    <a href="#contact" class="service-cta">
-                        <span>Obtenir un devis gratuit</span>
+                    <a href="#tarifs" class="service-cta">
+                        <span>Voir le budget</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -191,12 +189,8 @@
                         <li>Contenus et données structurées</li>
                         <li>14 jours de support</li>
                     </ul>
-                    <div class="service-price">
-                        <span class="price-label">Pack</span>
-                        <span class="price-amount">699€</span>
-                    </div>
-                    <a href="#contact" class="service-cta">
-                        <span>Obtenir un devis gratuit</span>
+                    <a href="#tarifs" class="service-cta">
+                        <span>Voir le budget</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -234,10 +228,10 @@
                     <div class="why-icon">
                         <i class="fas fa-euro-sign"></i>
                     </div>
-                    <h3 class="why-title">Tarif fixe, pas de surprise</h3>
+                    <h3 class="why-title">Budget cadré, pas de surprise</h3>
                     <p class="why-description">
-                        Prix clair dès le départ. Pas d'heures supplémentaires cachées, 
-                        pas de frais cachés. Vous savez exactement ce que vous payez.
+                        Enveloppe validée dès le départ. Pas de frais cachés,
+                        on ajuste avec vous selon vos priorités business.
                     </p>
                 </div>
                 
@@ -370,32 +364,6 @@
             </div>
         </div>
     </section> -->
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-badge">Portfolio</span>
-                <h2 class="section-title">Projets qui transforment</h2>
-                <p class="section-description">
-                    Découvrez mes réalisations qui ont impacté positivement 
-                    mes clients et leurs utilisateurs.
-                </p>
-            </div>
-            
-            <div class="portfolio-filter scroll-reveal">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="desktop">Desktop</button>
-                <button class="filter-btn" data-filter="tools">Outils</button>
-                <button class="filter-btn" data-filter="specialized">Spécialisé</button>
-            </div>
-            
-            <div class="portfolio-grid scroll-reveal" id="portfolioGrid">
-                <!-- Les projets seront injectés par JavaScript -->
-            </div>
-        </div>
-    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -552,6 +520,66 @@
         </div>
     </section>
 
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="tarifs">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-badge">Budget</span>
+                <h2 class="section-title">Un budget cadré, sans pression</h2>
+                <p class="section-description">
+                    Enveloppes indicatives et ajustables selon vos priorités.
+                    Objectif : trouver le meilleur impact pour votre projet.
+                </p>
+            </div>
+            
+            <div class="tarifs-grid scroll-reveal">
+                <div class="tarif-card">
+                    <h3 class="tarif-title">Site Vitrine</h3>
+                    <div class="tarif-price">
+                        <span class="price-amount">490€</span>
+                        <span class="price-label">Forfait</span>
+                    </div>
+                    <p class="tarif-desc">Site professionnel responsive, prêt à convertir</p>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Obtenir un devis</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="tarif-card featured">
+                    <span class="tarif-badge">Populaire</span>
+                    <h3 class="tarif-title">Identité & visibilité</h3>
+                    <div class="tarif-price">
+                        <span class="price-amount">990€</span>
+                        <span class="price-label">Forfait</span>
+                    </div>
+                    <p class="tarif-desc">Image pro unifiée : site + réseaux + documents</p>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Obtenir un devis</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="tarif-card">
+                    <h3 class="tarif-title">SEO (Google + ChatGPT)</h3>
+                    <div class="tarif-price">
+                        <span class="price-amount">699€</span>
+                        <span class="price-label">Pack</span>
+                    </div>
+                    <p class="tarif-desc">Visible sur Google et recommandé par les IA</p>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Obtenir un devis</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <p class="tarifs-more">
+                <a href="/autres-prestations">Voir toutes les prestations</a> et demander un devis personnalisé
+            </p>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
@@ -643,7 +671,7 @@
                 </p>
             </div>
             
-            <div class="contact-content scroll-reveal">
+            <div class="contact-content contact-content--form-first scroll-reveal">
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -697,54 +725,202 @@
                 
                 <div class="contact-form-container">
                     <div id="formFeedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
-                    <form class="contact-form" id="contactForm" novalidate>
+                    <span class="contact-wizard-live sr-only" aria-live="polite" aria-atomic="true"></span>
+                    <div class="contact-error-overlay" id="contactErrorOverlay" aria-hidden="true">
+                        <div class="contact-error-overlay__backdrop" id="contactErrorOverlayBackdrop"></div>
+                        <div class="contact-error-overlay__dialog" role="dialog" aria-modal="true" aria-labelledby="contactErrorOverlayTitle">
+                            <button type="button" class="contact-error-overlay__close" id="contactErrorOverlayClose" aria-label="Fermer">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                            </button>
+                            <h4 class="contact-error-overlay__title" id="contactErrorOverlayTitle">Envoi impossible</h4>
+                            <p class="contact-error-overlay__message" id="contactErrorOverlayMessage"></p>
+                            <ul class="contact-error-overlay__tips" id="contactErrorOverlayTips">
+                                <li>Vérifiez votre adresse email.</li>
+                                <li>Essayez de nouveau dans quelques instants.</li>
+                                <li>Si le problème persiste, écrivez à contact@danielcraft.fr.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form class="contact-form contact-wizard-form" id="contactForm" data-contact-wizard="true" novalidate>
+                        <input type="hidden" name="preferred_date" id="preferred_date" value="">
+                        <input type="hidden" name="preferred_time" id="preferred_time" value="">
+
+                        <input type="hidden" name="service" id="service" value="">
+                        <input type="hidden" name="budget" id="budget" value="">
+                        <input type="hidden" name="project_type" id="project_type" value="">
+
+                        <ol class="contact-progress-min" role="list" aria-label="Progression du formulaire en cinq étapes">
+                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 5</span></li>
+                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 5</span></li>
+                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 5</span></li>
+                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 4 sur 5</span></li>
+                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 5 sur 5</span></li>
+                        </ol>
+
+                        <div class="contact-form-steps">
+                            <!-- Étape 1 : type de projet -->
+                            <div class="contact-step is-active" data-step="1" role="group" aria-labelledby="contact-step1-title">
+                                <h3 id="contact-step1-title" class="contact-step__title">Type de projet</h3>
+                                <p class="contact-step__intro">Choisissez la <strong>nature</strong> de votre besoin.</p>
+                                <p class="contact-substep-hint contact-substep-hint--tight">Site, API, mobile, outils, spécialisé…</p>
+                                <div id="contactProjectTypeMount" class="contact-type-mount" role="group" aria-label="Type de projet"></div>
+                            </div>
+
+                            <!-- Étape 2 : prestation -->
+                            <div class="contact-step" data-step="2" role="group" aria-labelledby="contact-step2a-title" aria-hidden="true">
+                                <h3 id="contact-step2a-title" class="contact-step__title">Prestation souhaitée</h3>
+                                <p class="contact-step__intro">Offres pour votre type. Clic = <strong>créneau</strong>.</p>
+                                <div id="contactServiceMount" class="contact-service-mount"></div>
+                                <div class="contact-step-actions contact-step-actions--split">
+                                    <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromService">
+                                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                        Type de projet
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Étape 3 : calendrier + heure -->
+                            <div class="contact-step" data-step="3" role="group" aria-labelledby="contact-step2-title" aria-hidden="true">
+                                <h3 id="contact-step2-title" class="contact-step__title">Choisissez un créneau</h3>
+                                <p class="contact-picked-service" id="contactPickedServiceWrap" hidden>
+                                    <span class="contact-picked-service__label">Prestation :</span>
+                                    <strong id="contactPickedServiceTitle"></strong>
+                                    <span class="contact-picked-service__price" id="contactPickedServicePrice" hidden></span>
+                                    <button type="button" class="contact-picked-service__change" id="contactChangeService">Modifier</button>
+                                </p>
+                                <p class="contact-step__intro">Jour ouvré, puis <strong>heure</strong>.</p>
+
+                                <div class="contact-calendar-wrap">
+                                    <div class="calendar-toolbar">
+                                        <button type="button" class="calendar-nav-btn" id="calendarPrev" aria-label="Mois précédent">
+                                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                        </button>
+                                        <h4 class="calendar-month-label" id="calendarMonthLabel"></h4>
+                                        <button type="button" class="calendar-nav-btn" id="calendarNext" aria-label="Mois suivant">
+                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="calendar-weekdays" id="calendarWeekdays" aria-hidden="true">
+                                        <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                                    </div>
+                                    <div class="calendar-grid" id="calendarGrid" role="grid" aria-labelledby="calendarMonthLabel"></div>
+                                </div>
+
+                                <div
+                                    class="contact-time-overlay"
+                                    id="contactTimeOverlay"
+                                    aria-hidden="true"
+                                >
+                                    <div class="contact-time-overlay__backdrop" id="contactTimeOverlayBackdrop" tabindex="-1"></div>
+                                    <div
+                                        class="contact-time-overlay__dialog"
+                                        role="dialog"
+                                        aria-modal="true"
+                                        aria-labelledby="contactTimeOverlayTitle"
+                                    >
+                                        <button type="button" class="contact-time-overlay__close" id="contactTimeOverlayClose" aria-label="Fermer">
+                                            <i class="fas fa-times" aria-hidden="true"></i>
+                                        </button>
+                                        <h4 id="contactTimeOverlayTitle" class="contact-time-overlay__title">Choisissez un horaire</h4>
+                                        <p class="contact-time-overlay__date" id="contactTimeOverlayDateLine"></p>
+                                        <p class="contact-time-label contact-time-overlay__slots-label" id="contactTimeLabel">Créneaux proposés (rythme circadien)</p>
+                                        <div class="contact-time-slots" id="contactTimeSlots" role="group" aria-labelledby="contactTimeLabel"></div>
+                                    </div>
+                                </div>
+
+                                <p class="contact-date-summary" aria-live="polite">
+                                    <span class="contact-date-summary__label">Votre choix :</span>
+                                    <strong id="contactSummaryDate">—</strong>
+                                </p>
+
+                                <div class="contact-step-actions contact-step-actions--split">
+                                    <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromCalendar">
+                                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                        Prestation
+                                    </button>
+                                    <button type="button" class="btn btn-primary btn-large" id="wizardNextFromCalendar">
+                                        Continuer
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Étape 4 : coordonnées -->
+                            <div class="contact-step" data-step="4" role="group" aria-labelledby="contact-step3-title" aria-hidden="true">
+                                <h3 id="contact-step3-title" class="contact-step__title">Vos coordonnées</h3>
+                                <p class="contact-step__intro">Pour vous recontacter.</p>
+
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
-                            <input type="text" id="name" name="name" required placeholder="Votre nom">
+                                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Votre nom">
                         </div>
-                        
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+                                    <input type="email" id="email" name="email" required autocomplete="email" placeholder="votre@email.fr">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+                                    <label for="phone">Téléphone *</label>
+                                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="06 12 34 56 78" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="service">Type de projet *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Sélectionnez un service</option>
-                                <option value="web">Développement Web</option>
-                                <option value="backend">Backend & APIs</option>
-                                <option value="mobile">Application Mobile</option>
-                                <option value="other">Autre</option>
-                            </select>
+                                <div class="contact-step-actions contact-step-actions--split">
+                                    <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromCoords">
+                                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                        Créneau
+                                    </button>
+                                    <button type="button" class="btn btn-primary btn-large" id="wizardNextFromCoords">
+                                        Continuer
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="budget">Service souhaité</label>
-                            <select id="budget" name="budget">
-                                <option value="">Sélectionnez un service</option>
-                                <option value="490">490€ - Site Vitrine</option>
-                                <option value="990">990€ - Identité & visibilité</option>
-                                <option value="699">699€ - SEO (Google + ChatGPT)</option>
-                                <option value="custom">Devis personnalisé</option>
-                            </select>
+                            <!-- Étape 5 : validation -->
+                            <div class="contact-step" data-step="5" role="group" aria-labelledby="contact-step4-title" aria-hidden="true">
+                                <h3 id="contact-step4-title" class="contact-step__title">Validation</h3>
+                                <p class="contact-step__intro">Dernier récap avant envoi.</p>
+
+                                <div class="contact-validation-recap" role="group" aria-label="Récapitulatif">
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Type de projet</span>
+                                        <span class="contact-validation-value" id="contactRecapType">—</span>
+                                    </div>
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Prestation</span>
+                                        <span class="contact-validation-value" id="contactRecapService">—</span>
+                                    </div>
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Date</span>
+                                        <span class="contact-validation-value" id="contactRecapDate">—</span>
+                                    </div>
+                                    <div class="contact-validation-row">
+                                        <span class="contact-validation-label">Heure</span>
+                                        <span class="contact-validation-value" id="contactRecapTime">—</span>
+                                    </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                                <div class="form-group" hidden>
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande..."></textarea>
                         </div>
                         
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary btn-large btn-submit" id="contactSubmitBtn">
-                                <span class="btn-text"><i class="fas fa-paper-plane" aria-hidden="true"></i> Envoyer le message</span>
-                                <span class="btn-loading" aria-hidden="true"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi en cours...</span>
-                            </button>
+                                <div class="contact-validation-pending" id="contactValidationPending" hidden aria-live="polite">
+                                    <i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i>
+                                    <span>Validation d’email et envoi en cours…</span>
+                                </div>
+
+                                <div class="contact-validation-success" id="contactValidationSuccess" hidden aria-live="polite">
+                                    <div class="contact-validation-success__icon" aria-hidden="true">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="contact-validation-success__text">
+                                        <p class="contact-validation-success__title">Demande envoyée</p>
+                                        <p class="contact-validation-success__body">
+                                            Merci pour votre message. Un récapitulatif vient de vous être envoyé par email&nbsp;; je reviens vers vous rapidement.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -16,6 +16,7 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 from urllib.parse import quote
 
 try:
@@ -77,7 +78,7 @@ def md_to_html(md_content: str) -> str:
         return markdown.markdown(md_content, extensions=[])
 
 
-def load_article(md_path: Path) -> dict | None:
+def load_article(md_path: Path) -> Optional[dict]:
     """
     Charge un article/tutoriel depuis un fichier Markdown.
     Retourne un dict avec title, slug, date, excerpt, content_html, type, etc.

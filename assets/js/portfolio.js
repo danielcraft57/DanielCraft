@@ -2,6 +2,19 @@
    PORTFOLIO DATA - Projets réels
    ======================================== */
 
+/**
+ * Indice de teinte complémentaire (0–5), stable par id de projet
+ * (ne change pas quand on filtre la grille — même rendu couleur par carte).
+ */
+function portfolioTintFromId(id) {
+    const s = String(id || '');
+    let h = 0;
+    for (let i = 0; i < s.length; i += 1) {
+        h = Math.imul(31, h) + s.charCodeAt(i) | 0;
+    }
+    return Math.abs(h) % 6;
+}
+
 const PortfolioData = {
     projects: [
         {
@@ -298,9 +311,10 @@ function renderPortfolio(filter = 'all') {
                 ${imageContent}
                 <div class="portfolio-overlay">
                     <div class="portfolio-actions">
-                        <button class="portfolio-btn" onclick="showProjectDetails('${project.id}')">
-                            <i class="fas fa-eye"></i>
-                            Voir les détails
+                        <button type="button" class="portfolio-btn" onclick="showProjectDetails('${project.id}')" aria-label="Découvrir ce projet">
+                            <i class="fas fa-layer-group portfolio-btn-icon" aria-hidden="true"></i>
+                            <span class="portfolio-btn-text">Découvrir le projet</span>
+                            <i class="fas fa-arrow-right portfolio-btn-icon portfolio-btn-icon--arrow" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>

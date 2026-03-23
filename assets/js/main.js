@@ -169,6 +169,8 @@ class DanielCraftApp {
     const feedbackEl = document.getElementById('formFeedback');
     const submitBtn = document.getElementById('contactSubmitBtn');
     if (!form || !feedbackEl || !submitBtn) return;
+    /* Parcours multi-étapes + calendrier : assets/js/contact-wizard.js */
+    if (form.dataset.contactWizard === 'true') return;
 
     function showFeedback(message, isError = false) {
       feedbackEl.textContent = message;

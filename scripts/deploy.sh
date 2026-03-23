@@ -20,6 +20,7 @@ SERVER_PATH="${SERVER_PATH:-/var/www/example.com}"
 NGINX_SITES_AVAILABLE="/etc/nginx/sites-available"
 NGINX_SITES_ENABLED="/etc/nginx/sites-enabled"
 CONFIG_NAME="${CONFIG_NAME:-example.com}"
+CERTBOT_EMAIL="${CERTBOT_EMAIL:-admin@example.com}"
 DOMAIN=""
 
 # Vérifier si un domaine est passé en argument
@@ -146,7 +147,7 @@ if [ "$CERT_EXISTS" = "no" ]; then
     echo
     if [[ $REPLY =~ ^[Oo]$ ]]; then
         echo -e "${YELLOW}Création des certificats SSL avec Certbot...${NC}"
-        ssh ${SERVER_USER}@${SERVER_HOST} "sudo certbot --nginx -d ${DOMAIN} -d www.${DOMAIN} --non-interactive --agree-tos --email loic5488@gmail.com --redirect"
+        ssh ${SERVER_USER}@${SERVER_HOST} "sudo certbot --nginx -d ${DOMAIN} -d www.${DOMAIN} --non-interactive --agree-tos --email ${CERTBOT_EMAIL} --redirect"
     
         if [ $? -eq 0 ]; then
             echo -e "${GREEN}Certificat SSL configuré avec succès !${NC}"

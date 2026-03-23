@@ -1,5 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#dc2626"/>
-  <text x="16" y="22" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle">D</text>
-  <text x="16" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="white" text-anchor="middle">&lt;/&gt;</text>
+  <defs>
+    <linearGradient id="dcMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9fd4ea"/>
+      <stop offset="28%" stop-color="#5faed8"/>
+      <stop offset="62%" stop-color="#2f78a6"/>
+      <stop offset="100%" stop-color="#184c70"/>
+    </linearGradient>
+  </defs>
+  <!-- Aligné sur .logo-icon (navbar) : dégradé bleu métal + léger relief -->
+  <rect width="32" height="32" rx="6" fill="url(#dcMetal)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+  <text x="16" y="21" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">DC</text>
 </svg>

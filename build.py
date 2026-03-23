@@ -10,6 +10,7 @@ Ce script :
 Usage:
     python3 build.py              # Build toutes les pages
     python3 build.py --watch      # Mode watch (rebuild automatique)
+    python3 build.py --no-webp    # Omet la conversion WebP (build plus rapide en local)
     python3 build.py index        # Build une page spécifique
 """
 
@@ -509,7 +510,7 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
         content_rendered = template_engine.process_includes(content_rendered, vars_dict)
         vars_dict['page_content'] = content_rendered
-        vars_dict['page_scripts_content'] = '<script src="/assets/js/main.js" defer></script>\n<link rel="preload" href="/assets/js/main.js" as="script">'
+        vars_dict['page_scripts_content'] = '<script src="/assets/js/main.js" defer></script>'
         html_output = template_engine.render(template_path, vars_dict)
         (out_projets / f'{slug}.html').write_text(html_output, encoding='utf-8')
         slugs.append(slug)
@@ -534,11 +535,11 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     scripts = vars_dict.get('page_scripts', [])
     if scripts:
         scripts_content = '\n'.join([
-            f'<script src="assets/js/{script}" defer></script>\n<link rel="preload" href="assets/js/{script}" as="script">'
+            f'<script src="/assets/js/{script}" defer></script>'
             for script in scripts
         ])
     else:
-        scripts_content = '<script src="assets/js/main.js" defer></script>\n<link rel="preload" href="assets/js/main.js" as="script">'
+        scripts_content = '<script src="/assets/js/main.js" defer></script>'
     vars_dict['page_scripts_content'] = scripts_content
     
     # Détermine le template à utiliser
@@ -580,12 +581,17 @@ def generate_webp_variants(assets_root: Path) -> None:
     """
     try:
         from PIL import Image  # type: ignore
+        from PIL import ImageFile  # type: ignore
     except ImportError:
         print("[WARN] Pillow non installe - generation des WebP ignoree. Installez-le avec: pip install pillow")
         return
 
+    # PNG/JPEG incomplets (copie interrompue, etc.) : tenter de charger le maximum de données
+    ImageFile.LOAD_TRUNCATED_IMAGES = True
+
     exts = {".png", ".jpg", ".jpeg"}
     generated = 0
+    skipped = 0
 
     for img_path in assets_root.rglob("*"):
         if not img_path.is_file():
@@ -599,20 +605,24 @@ def generate_webp_variants(assets_root: Path) -> None:
 
         try:
             with Image.open(img_path) as img:
-                # WebP supporte la transparence, on convertit en RGBA par securite
+                img.load()
                 converted = img.convert("RGBA")
+                # method=4 : bien plus rapide que 6 (qualité encore correcte à quality=85)
                 converted.save(
                     webp_path,
                     "WEBP",
                     quality=85,
-                    method=6,
+                    method=4,
                 )
             generated += 1
         except Exception as e:
+            skipped += 1
             print(f"[WARN] Impossible de generer WebP pour {img_path}: {e}")
 
     if generated > 0:
         print(f"[OK] {generated} image(s) WebP generee(s) dans {assets_root}")
+    if skipped > 0:
+        print(f"[INFO] {skipped} fichier(s) ignore(s) pour WebP (image corrompue ou illisible). Reparer ou remplacer le PNG source si besoin.")
 
 
 def generate_sitemap_pages(output_dir: Path, project_slugs: Optional[List[str]] = None) -> None:
@@ -660,6 +670,7 @@ def main():
     output_dir_arg = None
     watch_mode = False
     page_name = None
+    skip_webp = False
     
     i = 1
     while i < len(sys.argv):
@@ -669,6 +680,9 @@ def main():
             i += 2
         elif arg == '--watch':
             watch_mode = True
+            i += 1
+        elif arg == '--no-webp':
+            skip_webp = True
             i += 1
         elif not arg.startswith('--'):
             page_name = arg
@@ -727,7 +741,10 @@ def main():
             shutil.copytree(assets_src, assets_dst)
             print(f"[OK] Assets copies dans {assets_dst}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)
-        generate_webp_variants(assets_dst)
+        if not skip_webp:
+            generate_webp_variants(assets_dst)
+        else:
+            print("[INFO] Generation WebP ignoree (--no-webp)")
 
     # Genere robots.txt (base sur SITE_BASE)
     generate_robots_txt(OUTPUT_DIR)
@@ -758,18 +775,13 @@ def main():
     api_src = BASE_DIR / 'api'
     api_dst = OUTPUT_DIR / 'api'
     if api_src.exists():
-        api_dst.mkdir(exist_ok=True)
-        # Nettoie les anciens fichiers pour éviter de garder des endpoints supprimés
-        try:
-            for existing in api_dst.iterdir():
-                if existing.is_file():
-                    existing.unlink(missing_ok=True)  # py3.8+ sur Windows ok
-        except Exception:
-            # Si suppression impossible (verrou), on continue quand même la copie
-            pass
-        for f in api_src.iterdir():
-            if f.is_file():
-                shutil.copy2(f, api_dst / f.name)
+        # Copie récursive (fichiers + sous-dossiers), utile pour vendor/ (PHPMailer)
+        if api_dst.exists():
+            try:
+                shutil.rmtree(api_dst)
+            except Exception:
+                pass
+        shutil.copytree(api_src, api_dst, dirs_exist_ok=True)
         print(f"[OK] api/ copie dans {api_dst}")
 
     # Copie le favicon.svg vers favicon.ico à la racine
@@ -852,7 +864,7 @@ def main():
     print(f"\n[OK] Build termine ! {success_count}/{len(pages)} page(s) generee(s) dans {OUTPUT_DIR}.")
     
     # Mode watch
-    if len(sys.argv) > 1 and sys.argv[1] == '--watch':
+    if watch_mode:
         print("\n[WATCH] Mode watch active. Appuyez sur Ctrl+C pour arreter.")
         try:
             import time
@@ -860,18 +872,74 @@ def main():
             from watchdog.events import FileSystemEventHandler
             
             class BuildHandler(FileSystemEventHandler):
+                def __init__(self):
+                    self._last_event = {}
+
+                def _is_debounced(self, key: str, delay_s: float = 0.25) -> bool:
+                    now = time.time()
+                    prev = self._last_event.get(key, 0.0)
+                    if (now - prev) < delay_s:
+                        return True
+                    self._last_event[key] = now
+                    return False
+
+                def _copy_asset_file(self, src_path: Path):
+                    if not src_path.exists() or not src_path.is_file():
+                        return
+                    try:
+                        rel = src_path.relative_to(assets_src)
+                    except ValueError:
+                        return
+                    dst_path = assets_dst / rel
+                    dst_path.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(src_path, dst_path)
+                    print(f"[ASSET] Copie: {rel}")
+
+                def _rebuild_all_pages(self):
+                    ok = 0
+                    for p in pages:
+                        if build_page(p, template_engine):
+                            ok += 1
+                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s)")
+
                 def on_modified(self, event):
-                    if event.src_path.endswith(('.html', '.json')):
-                        print(f"\n📝 Fichier modifié : {event.src_path}")
-                        # Détermine quelle page rebuilder
-                        for page in pages:
-                            if page in event.src_path:
-                                build_page(page, template_engine)
-                                break
+                    if event.is_directory:
+                        return
+
+                    src = Path(event.src_path)
+                    src_str = str(src)
+                    ext = src.suffix.lower()
+
+                    if self._is_debounced(src_str):
+                        return
+
+                    # Changement dans assets (css/js/images/...) => copie live vers dist/assets
+                    if assets_src in src.parents:
+                        if ext in {'.css', '.js', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.gif', '.json', '.woff', '.woff2', '.ttf'}:
+                            self._copy_asset_file(src)
+                            return
+
+                    # Changement de page source => rebuild ciblé si possible
+                    if ext in {'.html', '.json'} and PAGES_DIR in src.parents:
+                        page = src.stem
+                        print(f"\n📝 Page modifiee : {src.name}")
+                        if page in pages:
+                            build_page(page, template_engine)
+                        else:
+                            self._rebuild_all_pages()
+                        return
+
+                    # Changement template/include => rebuild global
+                    if ext in {'.html', '.json'} and (TEMPLATES_DIR in src.parents or INCLUDES_DIR in src.parents):
+                        print(f"\n🧩 Template/include modifie : {src.name}")
+                        self._rebuild_all_pages()
+                        return
             
             event_handler = BuildHandler()
             observer = Observer()
             observer.schedule(event_handler, str(SRC_DIR), recursive=True)
+            if assets_src.exists():
+                observer.schedule(event_handler, str(assets_src), recursive=True)
             observer.start()
             
             while True:

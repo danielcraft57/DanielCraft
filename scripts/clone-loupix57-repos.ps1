@@ -2,7 +2,7 @@
 # Usage : executer dans PowerShell depuis V6 ou DanielCraft
 
 $ErrorActionPreference = "Stop"
-$baseDir = if ($PSScriptRoot) { Split-Path $PSScriptRoot } else { "c:\Users\loicDaniel\Documents\DanielCraft" }
+$baseDir = if ($PSScriptRoot) { Split-Path $PSScriptRoot } else { (Get-Location).Path }
 $targetDir = Join-Path $baseDir "repos-loupix57"
 
 if (-not (Test-Path $targetDir)) {
