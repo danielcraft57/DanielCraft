@@ -238,3 +238,8 @@ footer a {
 section .section-lede {
   color: var(--md-sys-color-on-surface-variant);
 }
+
+.figure-banner figcaption {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface-variant);
+}

@@ -62,3 +62,6 @@ src/data/readmes/*
 
 dist-test/
 coaching/
+
+# Captures Playwright (showcase) — régénérables
+showcase/screenshots/

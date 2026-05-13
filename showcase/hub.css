@@ -26,9 +26,32 @@ body {
 }
 
 .wrap {
-  max-width: 1040px;
+  max-width: min(100%, 1480px);
   margin: 0 auto;
   padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+@media (min-width: 1280px) {
+  .wrap {
+    padding-left: clamp(2rem, 5vw, 4rem);
+    padding-right: clamp(2rem, 5vw, 4rem);
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1600px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+  }
 }
 
 .badge {
@@ -58,15 +81,62 @@ h1 {
 
 .lead {
   margin: 0 0 2rem;
-  max-width: 52ch;
+  max-width: min(95ch, 92vw);
   color: var(--md-sys-color-on-surface-variant);
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 0.6vw + 0.95rem, 1.35rem);
+  line-height: 1.55;
 }
 
-.grid {
+.hub-prose {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  font-size: clamp(0.95rem, 0.35vw + 0.88rem, 1.12rem);
+  line-height: 1.65;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.hub-prose h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 1.2vw + 1rem, 2rem);
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+}
+
+.hub-prose p + p {
+  margin-top: 1rem;
+}
+
+.hub-kpi {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px 20px;
+  margin: 1.5rem 0 0;
+  padding: 1.25rem;
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.hub-kpi div {
+  text-align: center;
+}
+
+.hub-kpi strong {
+  display: block;
+  font-size: clamp(1.25rem, 1.5vw, 1.85rem);
+  color: var(--md-sys-color-primary);
+}
+
+.hub-kpi span {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+footer {
+  margin-top: 2.5rem;
+  font-size: var(--md-sys-typescale-label-large-size);
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 .card {
@@ -114,12 +184,6 @@ h1 {
   font-size: 0.9rem;
   color: var(--md-sys-color-on-surface-variant);
   line-height: 1.45;
-}
-
-footer {
-  margin-top: 2.5rem;
-  font-size: var(--md-sys-typescale-label-large-size);
-  color: var(--md-sys-color-on-surface-variant);
 }
 
 @media (prefers-reduced-motion: reduce) {

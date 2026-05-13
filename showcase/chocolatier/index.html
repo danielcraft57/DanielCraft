@@ -11,27 +11,40 @@
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
   <link rel="stylesheet" href="../shared/media.css">
+  <link rel="stylesheet" href="../shared/layout-desktop.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
-  <header>
-    <div class="logo">Maison <span>Cacao &amp; Fleur</span></div>
-    <nav aria-label="Navigation principale">
-      <a href="#produits">Produits</a>
-      <a href="#gammes">Gammes</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="site-head site-head--sticky">
+    <header>
+      <div class="site-head__top">
+        <div class="logo">Maison <span>Cacao &amp; Fleur</span></div>
+        <nav aria-label="Navigation principale">
+          <a href="#produits">Produits</a>
+          <a href="#gammes">Gammes</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#avis">Avis</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <nav class="subnav" aria-label="Sur cette page">
+        <a href="#produits">Boutique</a>
+        <a href="#gammes">Gammes</a>
+        <a href="#tarifs">Dégustation</a>
+        <a href="#avis">Avis</a>
+        <a href="#journal">Cacao &amp; nous</a>
+        <a href="#contact">Accès</a>
+      </nav>
+    </header>
+  </div>
   <main id="contenu">
     <section class="hero hero--photo" aria-labelledby="hero-title">
       <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
       <div class="hero__veil" aria-hidden="true"></div>
       <div class="hero__inner">
-        <h1 id="hero-title">Le goût du bean-to-bar, à Metz</h1>
-        <p>Tablettes, pralinés et ganaches — recettes fictives, photos générées pour démo portfolio uniquement.</p>
+        <h1 id="hero-title" class="density-hero-title">Le goût du bean-to-bar, à Metz</h1>
+        <p class="density-lead">Tablettes, pralinés et ganaches — recettes fictives, photos générées pour démo portfolio uniquement. Sur grand écran, cette maquette vise à remplir l’espace avec une hiérarchie lisible : titres amples, paragraphes longs et repères de navigation locale pour parcourir une page dense sans se perdre.</p>
         <a class="btn" href="#produits">Voir la boutique</a>
       </div>
     </section>
@@ -39,7 +52,7 @@
     <section id="produits" aria-labelledby="produits-title">
       <h2 id="produits-title">Coups de cœur du moment</h2>
       <p class="section-lede">Prix indicatifs TTC inventés. Aucune vente réelle.</p>
-      <div class="grid grid-products">
+      <div class="grid grid-products grid-xl-4">
         <article class="product-card">
           <div class="product-card__media">
             <img src="images/produit-1.png" width="800" height="600" alt="Assortiment de pralines dans un coffret ouvert" loading="lazy" decoding="async">
@@ -169,9 +182,45 @@
       </div>
     </section>
 
+    <section id="journal" class="layout-wide" aria-labelledby="journal-title">
+      <h2 id="journal-title" class="density-hero-title" style="font-size: clamp(1.75rem, 2.5vw, 2.75rem);">Cacao &amp; nous — journal de fabrication (texte de démonstration)</h2>
+      <p class="density-lead">Ce bloc allonge volontairement le fil pour tester le responsive : alinéas multiples, listes, encadré latéral sticky sur desktop et colonnes doubles sur très grands écrans. Aucune recette ni aucun chiffre n’est contractuel.</p>
+      <div class="desktop-2col" style="margin-top: 2rem;">
+        <div class="desktop-2col__main density-stack">
+          <div class="prose-columns density-body">
+            <h3>De la fève à la tablette, un récit imaginaire</h3>
+            <p>Nous prétendons suivre un lot de fèves « variété Nova-17 » depuis un port fictif jusqu’à notre atelier : torréfaction lente, cassage, conchage sur trois jours, températures notées au tableau blanc, dégustations à l’aveugle par un jury inventé de douze personnes. Ce paragraphe sert uniquement à occuper l’horizontal sur un moniteur large et à vérifier que les interlignes restent confortables lorsque la densité augmente.</p>
+            <p>Les tablettes « Origines » existent ici comme étiquettes graphiques : Papouasie démo, Pérou démo, Madagascar démo, Haïti démo. Chaque barre affiche un pourcentage de cacao, une note de torréfaction et un temps de broyage — valeurs sans correspondance réelle. Nous ajoutons encore du texte pour pousser le scroll : le chocolat noir révèle des tanins proches du café, le lait tempère l’acidité, le blanc imaginaire joue sur la vanille et le beurre de cacao filtré.</p>
+            <h3>Hygiène, traçabilité, poids — tout est simulé</h3>
+            <p>Nous décrivons des salles blanches, des balances calibrées « série Z », des carnets de lot numérotés CCF-2026-001 à CCF-2026-999, des allergènes affichés en gros caractères et des pictogrammes inventés. Les opérateurs portent des charlottes bleues, des gants nitrile, des tabliers cuir végétal marron : détails scénographiques pour remplir l’écran.</p>
+            <ul>
+              <li>Tempérage : courbe cible 29&nbsp;°C → 31&nbsp;°C → 27&nbsp;°C (exemple).</li>
+              <li>Stockage : 16&nbsp;°C, 45&nbsp;% HR, caisses empilées maxi cinq hauteurs (fictif).</li>
+              <li>Livraison express démo : colis isotherme + gel pack réutilisable (non vendu).</li>
+              <li>Carte cadeau numérique : montants 15 / 30 / 50 / 100&nbsp;€ (illustration).</li>
+            </ul>
+          </div>
+          <figure class="figure-banner" style="margin-top: 1.5rem;">
+            <img src="images/atelier.png" width="1600" height="686" alt="Atelier chocolat : cuves et tables de travail (image générée)" loading="lazy" decoding="async">
+            <figcaption>Visuel généré — atelier de démonstration sans lieu réel.</figcaption>
+          </figure>
+        </div>
+        <aside class="desktop-2col__aside" aria-labelledby="kpi-title">
+          <h3 id="kpi-title" style="margin:0 0 12px;font-size:1rem;">Chiffres clés (démo)</h3>
+          <dl class="kpi-strip" style="border:none;padding:0;">
+            <div><dt>Tablettes / an</dt><dd>18&nbsp;000</dd></div>
+            <div><dt>Recettes actives</dt><dd>64</dd></div>
+            <div><dt>Ateliers / mois</dt><dd>12</dd></div>
+            <div><dt>Âge moyen client</dt><dd>38&nbsp;ans</dd></div>
+          </dl>
+          <p class="density-body" style="margin-top:1rem;font-size:0.9rem;opacity:0.9;">Encadré sticky sur desktop : utile pour parcourir une longue page sans perdre le contexte des KPI fictifs.</p>
+        </aside>
+      </div>
+    </section>
+
     <section id="histoire" class="story" aria-labelledby="histoire-title">
       <h2 id="histoire-title">Une maison familiale (fictive)</h2>
-      <p class="section-lede">Depuis 1998, la Maison Cacao &amp; Fleur imagine des recettes inspirées du Grand Est. Identité et dates sont des exemples pour maquette.</p>
+      <p class="section-lede density-body">Depuis 1998, la Maison Cacao &amp; Fleur imagine des recettes inspirées du Grand Est. Identité et dates sont des exemples pour maquette. Nous ajoutons ici un second volet narratif uniquement pour la volumétrie d’écran : un dimanche pluvieux, une fenêtre qui tremble, une ode de vanille qui traverse la boutique, des enfants qui collent leur nez à la vitrine, une vendeuse qui sourit, une balance qui affiche 0,247&nbsp;kg de pralines noisettes, une caisse enregistreuse qui sonne une mélodie imaginaire, un carnet de commandes entreprise ouvert à la page 12, un stylo qui fuit, une tache de chocolat sur le poignet, un torchon humide, une radio qui diffuse du jazz démo, une horloge qui avance de trois minutes pour le stress scénique du texte.</p>
     </section>
 
     <section id="contact" aria-labelledby="contact-title">

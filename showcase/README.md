@@ -11,7 +11,38 @@ Les fichiers `showcase/*/images/*.png` sont des **visuels générés** (ambiance
 - **Material Design 3** : surfaces tonales, formes (coins), élévation, typo **Roboto**, courbes de mouvement — [m3.material.io/styles](https://m3.material.io/styles).
 - **UX « sites primés »** : hiérarchie typographique claire, cartes avec élévation et survol discret, en-têtes sticky où pertinent, `prefers-reduced-motion`, focus visible.
 
-Fichiers partagés : `shared/reset.css`, `shared/tokens.css` (jetons M3). Hub : `hub.css`.
+Fichiers partagés : `shared/reset.css`, `shared/tokens.css`, `shared/media.css`, **`shared/layout-desktop.css`** (grilles XL, colonnes, sous-nav ancrage, blocs « densité » typographique). Hub : `hub.css`.
+
+## Desktop & ergonomie
+
+- **Chocolatier** : en-tête regroupé (`site-head`) sticky sur grand écran, **sous-navigation** « Sur cette page » (masquée en dessous de 1024px de large), section journal en **2 colonnes** + encadré KPI sticky, grille produits jusqu’à **4 colonnes** (≥ 1400px).
+- **Autres vitrines** : `layout-desktop.css` pour textes **pleine largeur** (lead, colonnes type journal ≥ 1320px), bannières image 21:9, grilles denses.
+- Le dossier `showcase/screenshots/` (généré par le script ci-dessous) est **ignoré par Git** — régénérez-le après changements CSS.
+
+## Captures multi-viewports (Playwright)
+
+Installez une fois :
+
+```bash
+pip install -r showcase/requirements-screenshots.txt
+playwright install chromium
+```
+
+Puis à la racine du dépôt :
+
+```bash
+python showcase/screenshot_showcases.py
+```
+
+Sortie : `showcase/screenshots/<hub|chocolatier|…>/desktop_1440x900.png`, `tablet_834x1112.png`, `mobile_390x844.png` (PNG **pleine page** pour chaque viewport).
+
+PowerShell :
+
+```powershell
+.\scripts\screenshot_showcases.ps1
+```
+
+Utilisez ces images pour ajuster marges, tailles de police et points de rupture responsive.
 
 ## Prévisualisation locale (recommandé)
 

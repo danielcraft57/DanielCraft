@@ -1,0 +1,2 @@
+# Captures multi-viewports (showcase/screenshot_showcases.py)
+playwright>=1.40.0

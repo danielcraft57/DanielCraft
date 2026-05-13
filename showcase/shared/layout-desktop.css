@@ -1,0 +1,198 @@
+/**
+ * Améliorations desktop : largeurs, grilles, colonnes, hiérarchie typographique « plein écran ».
+ */
+
+:root {
+  --layout-max: min(100%, 1480px);
+  --layout-gutter: clamp(16px, 3vw, 40px);
+  --section-y-desktop: clamp(3rem, 6vw, 5.5rem);
+  --text-display-xl: clamp(2.4rem, 3.2vw + 1rem, 4.25rem);
+  --text-lead-xl: clamp(1.15rem, 0.8vw + 0.9rem, 1.55rem);
+  --text-body-lg: clamp(1.02rem, 0.35vw + 0.95rem, 1.2rem);
+}
+
+.site-head {
+  position: relative;
+  z-index: 40;
+}
+
+@media (min-width: 1024px) {
+  .site-head--sticky {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.site-head__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 10px 0 0;
+  margin-top: 8px;
+  border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.subnav a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  opacity: 0.92;
+  border: 1px solid transparent;
+}
+
+.subnav a:hover {
+  opacity: 1;
+  border-color: color-mix(in srgb, currentColor 18%, transparent);
+}
+
+@media (max-width: 1023px) {
+  .subnav {
+    display: none;
+  }
+}
+
+.layout-wide {
+  width: 100%;
+  max-width: var(--layout-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--layout-gutter);
+  padding-right: var(--layout-gutter);
+}
+
+@media (min-width: 1280px) {
+  main > section.layout-bleed {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .desktop-2col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+    gap: clamp(24px, 3vw, 48px);
+    align-items: start;
+  }
+
+  .desktop-2col__main {
+    min-width: 0;
+  }
+
+  .desktop-2col__aside {
+    position: sticky;
+    top: 100px;
+    padding: 20px 22px;
+    border-radius: var(--md-sys-shape-corner-large, 16px);
+    border: 1px solid var(--md-sys-color-outline-variant, rgba(0, 0, 0, 0.1));
+    background: var(--md-sys-color-surface-container-high, rgba(0, 0, 0, 0.04));
+    box-shadow: var(--md-elevation-1, 0 1px 2px rgba(0, 0, 0, 0.08));
+  }
+}
+
+@media (min-width: 1320px) {
+  .prose-columns {
+    column-count: 2;
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+    column-rule: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant, #ccc) 80%, transparent);
+  }
+
+  .prose-columns h3 {
+    break-after: avoid;
+  }
+
+  .prose-columns p,
+  .prose-columns li {
+    break-inside: avoid;
+  }
+}
+
+@media (max-width: 1319px) {
+  .prose-columns {
+    column-count: 1;
+  }
+}
+
+.density-hero-title {
+  font-size: var(--text-display-xl);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.density-lead {
+  font-size: var(--text-lead-xl);
+  line-height: 1.55;
+  max-width: min(95ch, 92vw);
+}
+
+.density-body {
+  font-size: var(--text-body-lg);
+  line-height: 1.65;
+}
+
+.density-stack > * + * {
+  margin-top: clamp(1rem, 2vw, 1.75rem);
+}
+
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px 20px;
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--md-sys-shape-corner-large, 16px);
+  border: 1px solid var(--md-sys-color-outline-variant, rgba(0, 0, 0, 0.1));
+}
+
+.kpi-strip dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.kpi-strip dd {
+  margin: 4px 0 0;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 1400px) {
+  .grid-xl-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+.figure-banner {
+  margin: 0;
+  border-radius: var(--md-sys-shape-corner-large, 16px);
+  overflow: hidden;
+  box-shadow: var(--md-elevation-2, 0 2px 8px rgba(0, 0, 0, 0.12));
+}
+
+.figure-banner img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+.figure-banner figcaption {
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  opacity: 0.85;
+  background: var(--md-sys-color-surface-container, #f5f5f5);
+}

@@ -38,16 +38,31 @@ body {
   color: var(--md-sys-color-on-primary);
 }
 
-header {
+.site-head header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 16px clamp(16px, 4vw, 28px);
+  background: var(--choco-header);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: var(--md-elevation-1);
+}
+
+.site-head__top {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px clamp(16px, 4vw, 28px);
-  background: var(--choco-header);
-  color: var(--md-sys-color-on-primary);
-  box-shadow: var(--md-elevation-1);
+}
+
+.site-head .subnav {
+  color: color-mix(in srgb, var(--md-sys-color-on-primary) 88%, transparent);
+}
+
+.site-head .subnav a {
+  color: inherit;
 }
 
 .logo {
@@ -61,7 +76,7 @@ header {
   color: var(--gold);
 }
 
-nav {
+.site-head__top nav {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
@@ -69,14 +84,14 @@ nav {
   font-weight: var(--md-sys-typescale-label-large-weight);
 }
 
-nav a {
+.site-head__top nav a {
   text-decoration: none;
   padding: 8px 12px;
   border-radius: var(--md-sys-shape-corner-full);
   color: color-mix(in srgb, var(--md-sys-color-on-primary) 88%, transparent);
 }
 
-nav a:hover {
+.site-head__top nav a:hover {
   background: color-mix(in srgb, var(--md-sys-color-on-primary) 12%, transparent);
 }
 
@@ -92,20 +107,22 @@ nav a:hover {
   );
 }
 
-.hero.hero--photo h1 {
+.hero.hero--photo h1.density-hero-title {
   margin: 0 0 12px;
   font-family: "Fraunces", Georgia, serif;
-  font-size: var(--md-sys-typescale-display-small-size);
-  line-height: var(--md-sys-typescale-display-small-leading);
+  font-size: var(--text-display-xl);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   font-weight: 400;
   color: #fff8f2;
   text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
 }
 
-.hero.hero--photo p {
+.hero.hero--photo p.density-lead {
   margin: 0 auto 24px;
-  max-width: 40ch;
-  font-size: 1.05rem;
+  max-width: min(95ch, 92vw);
+  font-size: var(--text-lead-xl);
+  line-height: 1.55;
   color: color-mix(in srgb, #fff8f2 92%, transparent);
   text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
 }

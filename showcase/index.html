@@ -9,13 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="shared/reset.css">
   <link rel="stylesheet" href="shared/tokens.css">
+  <link rel="stylesheet" href="shared/layout-desktop.css">
   <link rel="stylesheet" href="hub.css">
 </head>
 <body>
   <div class="wrap">
     <p class="badge">Contenu fictif</p>
     <h1>Vitrines démo par secteur</h1>
-    <p class="lead">Pages statiques pour tests visuels et captures multi-formats. Design inspiré des systèmes type Material&nbsp;3 (surfaces, élévation, typo Roboto) et des interfaces primées (hiérarchie, micro-interactions légères).</p>
+    <p class="lead">Pages statiques pour tests visuels et captures multi-formats (script Python Playwright : <code>showcase/screenshot_showcases.py</code>). Design inspiré Material&nbsp;3 et interfaces primées. Sur très grand écran, cette introduction s’élargit volontairement pour occuper l’espace horizontal et valider la lisibilité des longues lignes.</p>
     <div class="grid">
       <a class="card" href="chocolatier/index.html">
         <span class="badge">Artisanat</span>
@@ -48,6 +49,19 @@
         <p>Réseau Main Tendue 57 — solidarité, bénévolat, dons.</p>
       </a>
     </div>
+
+    <section class="hub-prose" aria-labelledby="guide-title">
+      <h2 id="guide-title">Guide express pour la revue responsive (texte de démo)</h2>
+      <p>Ce hub centralise six maquettes sectorielles : chaque page mélange héros photographique, tableaux tarifaires inventés, avis clients fictifs et sections longues pour stresser le scroll. Utilisez les captures desktop / tablette / mobile pour repérer les débordements, les contrastes insuffisants ou les zones où la typographie devrait encore respirer.</p>
+      <p>Deuxième paragraphe dense : les chemins relatifs fonctionnent derrière un serveur statique ; les polices Google se chargent si le réseau est disponible ; les images PNG sont générées et ne représentent aucun lieu réel ; les couleurs respectent un schéma sombre ici et des schémas clairs ou sombres sur les sous-sites ; les focus visibles sont conservés pour l’accessibilité ; les ancres internes permettent de tester la navigation clavier sur les pages les plus longues.</p>
+      <div class="hub-kpi" aria-label="Indicateurs fictifs">
+        <div><strong>6</strong><span>vitrines</span></div>
+        <div><strong>3</strong><span>formats capture</span></div>
+        <div><strong>18+</strong><span>PNG démo</span></div>
+        <div><strong>∞</strong><span>caractères de lorem métier</span></div>
+      </div>
+    </section>
+
     <footer>DanielCraft — démos portfolio uniquement.</footer>
   </div>
 </body>

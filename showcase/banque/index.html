@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
   <link rel="stylesheet" href="../shared/media.css">
+  <link rel="stylesheet" href="../shared/layout-desktop.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -145,6 +146,30 @@
 
     <section id="securite" class="legal-strip" aria-labelledby="sec-title">
       <p id="sec-title"><strong>Sécurité :</strong> ne saisissez jamais de données réelles sur une maquette. Cette page est hors production.</p>
+    </section>
+
+    <section id="conseil" class="layout-wide" aria-labelledby="conseil-title" style="max-width:1100px;margin:0 auto;padding:clamp(28px,5vw,48px) clamp(16px,4vw,28px);">
+      <h2 id="conseil-title" class="density-hero-title" style="font-size: clamp(1.55rem, 2vw, 2.35rem); color: var(--md-sys-color-primary);">Espace conseil — relation client (texte de démo)</h2>
+      <p class="density-lead">Bloc dense pour grands écrans : entretiens budgétaires imaginaires, simulateurs d’épargne, ateliers « anti-arnaque » pour seniors fictifs, webinaires enregistrés, FAQ de 40 questions inventées, charte graphique sobre, typographie large.</p>
+      <figure class="figure-banner">
+        <img src="images/conseil.png" width="1600" height="686" alt="Entretien conseiller bancaire (image générée)" loading="lazy" decoding="async">
+        <figcaption>Visuel généré — aucune agence réelle.</figcaption>
+      </figure>
+      <div class="desktop-2col" style="margin-top:2rem;">
+        <div class="desktop-2col__main prose-columns density-body">
+          <h3>Processus de souscription démo</h3>
+          <p>Étape une : identification à deux facteurs simulée. Étape deux : choix d’offre avec comparateur à trois colonnes. Étape trois : signature électronique avec code OTP fictif. Étape quatre : activation sous 48&nbsp;h ouvrées « en démo ». Nous répétons des phrases pour tester les retours à la ligne sur ultra-large : gestion de trésorerie, encours autorisés, tableaux d’amortissement, assurance emprunteur, frais de tenue de compte, plafonds carte, catégories de dépenses dans l’application mobile, alertes SMS, opposition carte, verrouillage temporaire depuis l’étranger, support chatbot 8h–20h imaginaire.</p>
+          <p>Deuxième paragraphe volontairement long : les taux affichés sont des exemples graphiques ; les mentions « sous réserve d’acceptation » sont omniprésentes ; les pieds de page juridiques s’allongent ; les numéros de téléphone sont des 0800 fictifs ; les adresses e-mail se terminent par -demo.local ; les logos de cartes sont absents volontairement ; les pictogrammes de sécurité sont génériques.</p>
+        </div>
+        <aside class="desktop-2col__aside" aria-label="Indicateurs démo">
+          <h3 style="margin:0 0 10px;font-size:1rem;">Indicateurs (fictifs)</h3>
+          <dl class="kpi-strip" style="border:none;padding:0;">
+            <div><dt>Clients actifs</dt><dd>128&nbsp;000</dd></div>
+            <div><dt>Agences</dt><dd>42</dd></div>
+            <div><dt>Conseillers</dt><dd>310</dd></div>
+          </dl>
+        </aside>
+      </div>
     </section>
   </main>
   <footer>
