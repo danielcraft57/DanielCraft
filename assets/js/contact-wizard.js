@@ -188,7 +188,7 @@
     {
       slug: 'projet_sur_mesure',
       title: 'Projet sur mesure / autre',
-      hint: 'Devis personnalisé',
+      hint: 'Estimation sur mesure',
       icon: 'fa-puzzle-piece',
       tags: ['web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other']
     }
@@ -747,6 +747,14 @@
         closeTimeOverlay();
       }
 
+      const leaving = form.querySelector(`.contact-step[data-step="${state.step}"]`);
+      if (leaving && leaving !== entering) {
+        const activeEl = document.activeElement;
+        if (activeEl && leaving.contains(activeEl) && typeof activeEl.blur === 'function') {
+          activeEl.blur();
+        }
+      }
+
       state.step = n;
 
       steps.forEach((stepEl) => {
@@ -754,6 +762,24 @@
         const active = sn === n;
         stepEl.classList.toggle('is-active', active);
         stepEl.setAttribute('aria-hidden', active ? 'false' : 'true');
+        if ('inert' in stepEl) {
+          stepEl.inert = !active;
+        } else {
+          // Fallback léger pour les navigateurs sans inert.
+          stepEl.querySelectorAll('button, [href], input, select, textarea, [tabindex]').forEach((el) => {
+            if (active) {
+              if (el.hasAttribute('data-prev-tabindex')) {
+                const prev = el.getAttribute('data-prev-tabindex');
+                if (prev === '') el.removeAttribute('tabindex');
+                else el.setAttribute('tabindex', prev);
+                el.removeAttribute('data-prev-tabindex');
+              }
+            } else if (!el.hasAttribute('data-prev-tabindex')) {
+              el.setAttribute('data-prev-tabindex', el.getAttribute('tabindex') || '');
+              el.setAttribute('tabindex', '-1');
+            }
+          });
+        }
       });
 
       updateProgress();
@@ -1120,6 +1146,7 @@
           updateSummary();
           announce(`Créneau ${btn.textContent} sélectionné`);
           closeTimeOverlay();
+          proceedAfterTimeSelection();
         });
         timeSlotsEl.appendChild(btn);
       });
@@ -1148,6 +1175,7 @@
         updateSummary();
         announce('Créneau flexible sélectionné');
         closeTimeOverlay();
+        proceedAfterTimeSelection();
       });
       timeSlotsEl.appendChild(flex);
     }
@@ -1216,6 +1244,21 @@
       return true;
     }
 
+    function proceedAfterTimeSelection() {
+      if (!validateStepCalendar()) return;
+      // Si les coordonnées sont déjà présentes (prefill), on saute l'étape 4.
+      if (hasCoordsFilled()) {
+        state.usedAutoSkipCoords = true;
+        hideFeedback();
+        announce('Coordonnées déjà remplies, étape contact sautée.');
+        setStep(5);
+        sendContactRequest();
+        return;
+      }
+      state.usedAutoSkipCoords = false;
+      setStep(4);
+    }
+
     function validateStepCoords() {
       const name = (form.querySelector('#name')?.value || '').trim();
       const email = (form.querySelector('#email')?.value || '').trim();
@@ -1281,18 +1324,7 @@
     });
 
     wizardNextFromCalendar?.addEventListener('click', () => {
-      if (!validateStepCalendar()) return;
-      // Si les coordonnées sont déjà présentes (prefill), on saute l'étape 4.
-      if (hasCoordsFilled()) {
-        state.usedAutoSkipCoords = true;
-        hideFeedback();
-        announce('Coordonnées déjà remplies, étape contact sautée.');
-        setStep(5);
-        sendContactRequest();
-        return;
-      }
-      state.usedAutoSkipCoords = false;
-      setStep(4);
+      proceedAfterTimeSelection();
     });
 
     wizardBackFromCoords?.addEventListener('click', () => {

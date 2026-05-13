@@ -6,14 +6,16 @@ param(
     # Ne mets pas de valeurs perso en dur ici.
     # Exemple:
     #   .\scripts\deploy-content.ps1 -ServerUser "deploy" -ServerHost "server.local" -ServerPath "/var/www/example.com"
-    [string]$ServerUser = "deploy",
-    [string]$ServerHost = "server.local",
-    [string]$ServerPath = "/var/www/example.com",
+    # Les valeurs par défaut sont injectées depuis .env/.env.local (variables DEPLOY_*).
+    # Les paramètres CLI gardent la priorité.
+    [string]$ServerUser = "",
+    [string]$ServerHost = "",
+    [string]$ServerPath = "",
     # Base URL utilisee pendant le build (canoniques, OG, sitemaps).
     # Exemple: -SiteBase "https://ton-domaine.com"
-    [string]$SiteBase = "https://example.com",
+    [string]$SiteBase = "",
     # Nom utilise pour les fichiers de logs nginx (ex: example.com -> /var/log/nginx/example.com-error.log)
-    [string]$NginxLogName = "example.com",
+    [string]$NginxLogName = "",
     # Optionnel : chemin explicite vers rsync (par ex. C:\cygwin64\bin\rsync.exe)
     [string]$RsyncPath = ""
 )
@@ -27,9 +29,81 @@ function Write-ColorOutput {
     Write-Host $Message -ForegroundColor $Color
 }
 
+function Import-DotEnvFile {
+    param([string]$Path)
+
+    if (-not (Test-Path $Path)) { return }
+
+    Get-Content $Path | ForEach-Object {
+        $line = $_.Trim()
+        if (-not $line) { return }
+        if ($line.StartsWith("#")) { return }
+
+        $idx = $line.IndexOf("=")
+        if ($idx -lt 1) { return }
+
+        $key = $line.Substring(0, $idx).Trim()
+        $val = $line.Substring($idx + 1).Trim()
+
+        if (-not $key) { return }
+
+        # Strip simple surrounding quotes.
+        if (($val.StartsWith('"') -and $val.EndsWith('"')) -or ($val.StartsWith("'") -and $val.EndsWith("'"))) {
+            $val = $val.Substring(1, $val.Length - 2)
+        }
+
+        # Inject as process env var (non persistant).
+        Set-Item -Path ("Env:" + $key) -Value $val
+    }
+}
+
+function Load-DeployDefaultsFromEnv {
+    # Charge .env.local puis .env (priorité au plus local).
+    Import-DotEnvFile ".env.local"
+    Import-DotEnvFile ".env"
+
+    if (-not $PSBoundParameters.ContainsKey('ServerUser') -or [string]::IsNullOrWhiteSpace($ServerUser)) {
+        if ($env:DEPLOY_SERVER_USER) { $script:ServerUser = $env:DEPLOY_SERVER_USER }
+    }
+    if (-not $PSBoundParameters.ContainsKey('ServerHost') -or [string]::IsNullOrWhiteSpace($ServerHost)) {
+        if ($env:DEPLOY_SERVER_HOST) { $script:ServerHost = $env:DEPLOY_SERVER_HOST }
+    }
+    if (-not $PSBoundParameters.ContainsKey('ServerPath') -or [string]::IsNullOrWhiteSpace($ServerPath)) {
+        if ($env:DEPLOY_SERVER_PATH) { $script:ServerPath = $env:DEPLOY_SERVER_PATH }
+    }
+    if (-not $PSBoundParameters.ContainsKey('SiteBase') -or [string]::IsNullOrWhiteSpace($SiteBase)) {
+        if ($env:DEPLOY_SITE_BASE) { $script:SiteBase = $env:DEPLOY_SITE_BASE }
+        elseif ($env:SITE_BASE) { $script:SiteBase = $env:SITE_BASE }
+    }
+    if (-not $PSBoundParameters.ContainsKey('NginxLogName') -or [string]::IsNullOrWhiteSpace($NginxLogName)) {
+        if ($env:DEPLOY_NGINX_LOG_NAME) { $script:NginxLogName = $env:DEPLOY_NGINX_LOG_NAME }
+    }
+    if (-not $PSBoundParameters.ContainsKey('RsyncPath') -or [string]::IsNullOrWhiteSpace($RsyncPath)) {
+        if ($env:DEPLOY_RSYNC_PATH) { $script:RsyncPath = $env:DEPLOY_RSYNC_PATH }
+    }
+}
+
+Load-DeployDefaultsFromEnv
+
+if ([string]::IsNullOrWhiteSpace($ServerUser) -or [string]::IsNullOrWhiteSpace($ServerHost) -or [string]::IsNullOrWhiteSpace($ServerPath)) {
+    Write-ColorOutput "Erreur: parametres de deploiement incomplets." "Red"
+    Write-ColorOutput "Renseigne DEPLOY_SERVER_USER / DEPLOY_SERVER_HOST / DEPLOY_SERVER_PATH dans .env(.local) ou passe-les en parametres." "Yellow"
+    exit 1
+}
+if ([string]::IsNullOrWhiteSpace($SiteBase)) {
+    Write-ColorOutput "Erreur: DEPLOY_SITE_BASE (ou SITE_BASE) manquant." "Red"
+    Write-ColorOutput "Ce champ sert au build (canoniques, OG, sitemaps)." "Yellow"
+    exit 1
+}
+if ([string]::IsNullOrWhiteSpace($NginxLogName)) {
+    Write-ColorOutput "Erreur: DEPLOY_NGINX_LOG_NAME manquant (nom des logs nginx)." "Red"
+    exit 1
+}
+
 Write-ColorOutput "=== Deploiement CONTENU - DanielCraft V6 ===" "Green"
 Write-ColorOutput "Serveur: ${ServerUser}@${ServerHost}" "Yellow"
 Write-ColorOutput "Chemin: ${ServerPath}" "Yellow"
+Write-ColorOutput "Base URL (build): ${SiteBase}" "Yellow"
 Write-Host ""
 
 # 1. Vérifier que nous sommes dans le bon répertoire

@@ -16,7 +16,9 @@ pip install -r requirements-scripts.txt
 | **`reduce_blue_cast.py`** | Réduit une **dominante bleue** trop forte (pixels B dominants) : réchauffe légèrement, baisse le bleu. |
 | **`apply_complementary_grades.py`** | **6 variantes** + `--blend dark\|wide\|midtone\|full` (défaut **dark** pour UI sombres) + `--punch` pour amplifier les teintes. |
 | **`portfolio_image_pipeline.py`** | Enchaîne : soften → reduce_blue → grades (sous-processus). |
+| **`og_image_pipeline.py`** | Images **Open Graph** (`assets/images/og/`) : bleu métal → reduce_blue → grades complémentaires → optionnel 1200×630 + WebP (`optimize_images`). |
 | `generate_favicon_pngs.py` | Pack favicons depuis le SVG. |
+| **`rasterize_about_hero.py`** | PNG + WebP 1200×1200 (ou `--size`) pour `about-section-hero`, même composition que le SVG (Pillow, sans Cairo). |
 
 ## Module partagé
 

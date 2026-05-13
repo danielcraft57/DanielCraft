@@ -2045,23 +2045,30 @@ section {
 }
 
 .about-image {
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  /* Fond discret si l’image tarde ; évite le « bloc » bleu sous l’illustration */
+  background: var(--gray-100);
   border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.about-image picture {
-  width: 100%;
-  height: 100%;
+.about-image > picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  margin: 0;
 }
 
-.about-image img {
+.about-image > picture img,
+.about-image > img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  margin: 0;
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
@@ -2123,6 +2130,7 @@ section {
   .contact-content--form-first .contact-info {
     grid-column: 1;
     grid-row: 1;
+    margin-top: inherit;
   }
 }
 
@@ -2210,11 +2218,11 @@ section {
 
 @media (max-width: 959px) {
   .contact-content--form-first .contact-info {
-    order: 1;
+    grid-row: 2;
   }
 
   .contact-content--form-first .contact-form-container {
-    order: 2;
+    grid-row: 1;
   }
 }
 

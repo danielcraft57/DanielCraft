@@ -3,7 +3,7 @@
 Adoucit les fonds blancs / gris très clairs des visuels pour les fondre
 dans la palette du site (bleus pastel #e8f2fc, #ecf6ff) au lieu d'un blanc pur.
 
-Traite : assets/images/projets/*.jpg, about-section-hero.png/.webp,
+Traite : assets/images/projets/*.jpg, about-section-hero.png/.webp (raster depuis `rasterize_about_hero.py`) si présents,
          et assets/images/hero/* si présent (hors gitignore local).
 
 Usage :

@@ -6,6 +6,7 @@
 - Nom de domaine configuré (DNS pointant vers le serveur)
 - Accès SSH au serveur
 - rsync installé (généralement déjà présent)
+- Sous Windows : `ssh`/`scp` disponibles (OpenSSH) et idéalement `rsync` (sinon fallback `scp` dans `deploy-content.ps1`)
 
 ## Déploiement Automatique (Recommandé)
 
@@ -28,6 +29,41 @@ Le script va automatiquement :
 **Exemple :**
 ```bash
 ./deploy.sh portfolio-likedev.fr
+```
+
+## Déploiement contenu uniquement (Windows / PowerShell)
+
+Si nginx + SSL sont déjà en place et que tu veux uniquement publier le contenu généré dans `dist/`, utilise `scripts/deploy-content.ps1`.
+
+- Ce script lance `python3 build.py`, puis transfère `dist/` sur le serveur.
+- Il **ne modifie pas** nginx, Certbot, ni la configuration serveur.
+- Il utilise **rsync** si dispo, sinon bascule en **scp**.
+- Il lit sa config depuis `.env.local` puis `.env` (variables `DEPLOY_*`). Les paramètres CLI gardent la priorité.
+
+### Exemple pour `node12.lan`
+
+Depuis la racine du repo :
+
+```powershell
+.\scripts\deploy-content.ps1 `
+  -ServerUser "pi" `
+  -ServerHost "node12.lan" `
+  -ServerPath "/var/www/danielcraft.fr" `
+  -SiteBase "https://danielcraft.fr" `
+  -NginxLogName "danielcraft.fr"
+```
+
+### Notes utiles
+
+- Si `rsync` n’est pas trouvé, le script te le dira et passera en fallback `scp`.
+- `SiteBase` sert au build (canoniques, OG, sitemaps) : mets l’URL publique finale.
+- Variante “sans paramètres” (recommandé) : mets ces valeurs dans `.env.local` :
+  - `DEPLOY_SERVER_USER`, `DEPLOY_SERVER_HOST`, `DEPLOY_SERVER_PATH`
+  - `DEPLOY_SITE_BASE`, `DEPLOY_NGINX_LOG_NAME`
+- Pour consulter les logs nginx (si tu as les droits) :
+
+```bash
+ssh deploy@node12.lan "sudo tail -f /var/log/nginx/danielcraft.fr-error.log"
 ```
 
 ## Déploiement Manuel

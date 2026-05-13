@@ -3,6 +3,8 @@
   'use strict';
 
   const ENDPOINT = '/api/prospect-context.php';
+  const ENDPOINT_CACHE_KEY = 'dc_pl_endpoint_v1';
+  const ENDPOINT_FAIL_TS_KEY = 'dc_pl_endpoint_fail_ts_v1';
   // v2 pour invalider les anciens contextes sans prefill enrichi
   const STORAGE_KEY = 'dc_pl_ctx_v2';
   const STORAGE_TS_KEY = 'dc_pl_ctx_ts_v2';
@@ -121,17 +123,59 @@
     }
   }
 
-  async function fetchContext(params) {
-    const u = new URL(ENDPOINT, window.location.origin);
-    if (params.email) u.searchParams.set('email', params.email);
-    else if (params.website) u.searchParams.set('website', params.website);
-    else return null;
+  function getEndpointCandidates() {
+    const out = [];
+    try {
+      const cached = String(sessionStorage.getItem(ENDPOINT_CACHE_KEY) || '').trim();
+      if (cached) out.push(cached);
+    } catch (_) {
+      // ignore
+    }
+    if (!out.includes(ENDPOINT)) out.push(ENDPOINT);
+    return out;
+  }
 
-    const res = await fetch(u.toString(), { method: 'GET' });
-    const data = await res.json().catch(() => null);
-    if (!res.ok || !data || data.success !== true) return null;
-    writeCachedContext(data);
-    return data;
+  function shouldSkipEndpointFetch() {
+    try {
+      const ts = Number(sessionStorage.getItem(ENDPOINT_FAIL_TS_KEY) || '0');
+      if (!Number.isFinite(ts) || ts <= 0) return false;
+      // Evite de retenter en boucle pendant la saisie si l'endpoint est indisponible.
+      return (nowMs() - ts) < 10 * 60 * 1000;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  async function fetchContext(params) {
+    if (!params.email && !params.website) return null;
+    if (shouldSkipEndpointFetch()) return null;
+
+    const endpoints = getEndpointCandidates();
+    for (const endpoint of endpoints) {
+      const u = new URL(endpoint, window.location.origin);
+      if (params.email) u.searchParams.set('email', params.email);
+      else if (params.website) u.searchParams.set('website', params.website);
+
+      const res = await fetch(u.toString(), { method: 'GET' });
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data || data.success !== true) continue;
+      try {
+        sessionStorage.setItem(ENDPOINT_CACHE_KEY, endpoint);
+        sessionStorage.removeItem(ENDPOINT_FAIL_TS_KEY);
+      } catch (_) {
+        // ignore
+      }
+      writeCachedContext(data);
+      return data;
+    }
+
+    try {
+      sessionStorage.setItem(ENDPOINT_FAIL_TS_KEY, String(nowMs()));
+    } catch (_) {
+      // ignore
+    }
+
+    return null;
   }
 
   async function getContext(opts) {

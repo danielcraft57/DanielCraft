@@ -180,7 +180,7 @@ try {
   Sync-ApiToDist -SourceDir $apiSrcDir -TargetDir $apiDistDir
 
   Write-Host "Build watch + sync API (Ctrl+C pour stopper)..." -ForegroundColor Cyan
-  $buildWatch = Start-Process -FilePath "python" -ArgumentList @("build.py", "--watch", "--no-webp") -NoNewWindow -PassThru
+  $buildWatch = Start-Process -FilePath "python" -ArgumentList @("build.py", "--watch") -NoNewWindow -PassThru
 
   while (-not $buildWatch.HasExited) {
     Sync-ApiToDist -SourceDir $apiSrcDir -TargetDir $apiDistDir

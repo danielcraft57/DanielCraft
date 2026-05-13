@@ -132,7 +132,7 @@ def grade_rgba(
 
     lum = 0.299 * r + 0.587 * g + 0.114 * b
     t = _blend_weight(lum, blend, strength)
-    t = t[..., np.newaxis]
+    # Poids 2D uniquement (évite erreurs broadcast numpy 2.x entre r,g,b 2D et t 3D)
 
     tr = r * mr
     tg = g * mg

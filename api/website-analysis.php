@@ -127,6 +127,83 @@ function sanitize_website(string $website): string {
     return $website;
 }
 
+function parse_http_status_from_headers(array $headers): int {
+    foreach ($headers as $line) {
+        if (preg_match('#^HTTP/\S+\s+(\d{3})#', (string) $line, $m)) {
+            return (int) $m[1];
+        }
+    }
+    return 0;
+}
+
+/**
+ * Appel GET robuste:
+ * - cURL avec 1 retry court sur erreur réseau
+ * - fallback file_get_contents si cURL indisponible/échoue
+ */
+function call_api_get(string $url, array $headers): array {
+    $lastErr = '';
+
+    if (function_exists('curl_init')) {
+        $attempts = 2;
+        for ($i = 0; $i < $attempts; $i++) {
+            $ch = curl_init();
+            curl_setopt_array($ch, [
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_CONNECTTIMEOUT => 8,
+                CURLOPT_TIMEOUT => 45,
+                CURLOPT_HTTPHEADER => $headers,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+                CURLOPT_USERAGENT => 'DanielCraftProxy/1.0 (+website-analysis)',
+            ]);
+            $body = curl_exec($ch);
+            $errNo = (int) curl_errno($ch);
+            $err = (string) curl_error($ch);
+            $status = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+            curl_close($ch);
+
+            if ($body !== false) {
+                return ['ok' => true, 'status' => $status, 'body' => (string) $body];
+            }
+
+            $lastErr = ($err !== '' ? $err : 'inconnue') . ($errNo > 0 ? ' (errno ' . $errNo . ')' : '');
+            if ($i + 1 < $attempts) {
+                usleep(250000);
+            }
+        }
+    }
+
+    $headersRaw = implode("\r\n", $headers);
+    $context = stream_context_create([
+        'http' => [
+            'method' => 'GET',
+            'header' => $headersRaw . "\r\n",
+            'ignore_errors' => true,
+            'timeout' => 45,
+        ],
+        'ssl' => [
+            'verify_peer' => true,
+            'verify_peer_name' => true,
+        ],
+    ]);
+    $body = @file_get_contents($url, false, $context);
+    if ($body === false) {
+        $prefix = $lastErr !== '' ? ('cURL: ' . $lastErr . ' | ') : '';
+        return ['ok' => false, 'status' => 502, 'error' => $prefix . 'HTTP fallback: échec de connexion.'];
+    }
+
+    $status = 200;
+    if (isset($http_response_header) && is_array($http_response_header)) {
+        $parsed = parse_http_status_from_headers($http_response_header);
+        if ($parsed > 0) $status = $parsed;
+    }
+
+    return ['ok' => true, 'status' => $status, 'body' => (string) $body];
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(204);
     exit;
@@ -155,28 +232,15 @@ if ($apiToken === '' || $apiToken === 'REPLACE_ME') {
 }
 
 $url = rtrim($apiEndpoint, '/') . '?website=' . rawurlencode($website) . '&full=' . rawurlencode($full);
-
-$ch = curl_init();
-curl_setopt_array($ch, [
-    CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_CONNECTTIMEOUT => 8,
-    CURLOPT_TIMEOUT => 45,
-    CURLOPT_HTTPHEADER => [
-        'Authorization: Bearer ' . $apiToken,
-        'Accept: application/json',
-    ],
+$res = call_api_get($url, [
+    'Authorization: Bearer ' . $apiToken,
+    'Accept: application/json',
 ]);
-
-$body = curl_exec($ch);
-$err = curl_error($ch);
-$status = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
-curl_close($ch);
-
-if ($body === false) {
-    json_error(502, 'Erreur proxy (cURL): ' . ($err ?: 'inconnue'));
+if (!$res['ok']) {
+    json_error((int) ($res['status'] ?? 502), (string) ($res['error'] ?? 'Erreur proxy.'));
 }
+$body = (string) ($res['body'] ?? '');
+$status = (int) ($res['status'] ?? 200);
 
 if ($status >= 400) {
     http_response_code($status);
