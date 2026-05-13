@@ -6,231 +6,317 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Démo fictive — chocolatier artisanal.">
   <title>Maison Cacao &amp; Fleur — Chocolatier (fictif)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../shared/reset.css">
-  <link rel="stylesheet" href="../shared/tokens.css">
-  <link rel="stylesheet" href="../shared/media.css">
-  <link rel="stylesheet" href="../shared/layout-desktop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#contenu">Aller au contenu</a>
-  <div class="site-head site-head--sticky">
-    <header>
-      <div class="site-head__top">
-        <div class="logo">Maison <span>Cacao &amp; Fleur</span></div>
-        <nav aria-label="Navigation principale">
-          <a href="#produits">Produits</a>
-          <a href="#gammes">Gammes</a>
-          <a href="#tarifs">Tarifs</a>
-          <a href="#avis">Avis</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <nav class="subnav" aria-label="Sur cette page">
-        <a href="#produits">Boutique</a>
-        <a href="#gammes">Gammes</a>
-        <a href="#tarifs">Dégustation</a>
-        <a href="#avis">Avis</a>
-        <a href="#journal">Cacao &amp; nous</a>
-        <a href="#contact">Accès</a>
-      </nav>
-    </header>
-  </div>
-  <main id="contenu">
-    <section class="hero hero--photo" aria-labelledby="hero-title">
-      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
-      <div class="hero__veil" aria-hidden="true"></div>
-      <div class="hero__inner">
-        <h1 id="hero-title" class="density-hero-title">Le goût du bean-to-bar, à Metz</h1>
-        <p class="density-lead">Tablettes, pralinés et ganaches — recettes fictives, photos générées pour démo portfolio uniquement. Sur grand écran, cette maquette vise à remplir l’espace avec une hiérarchie lisible : titres amples, paragraphes longs et repères de navigation locale pour parcourir une page dense sans se perdre.</p>
-        <a class="btn" href="#produits">Voir la boutique</a>
-      </div>
-    </section>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-    <section id="produits" aria-labelledby="produits-title">
-      <h2 id="produits-title">Coups de cœur du moment</h2>
-      <p class="section-lede">Prix indicatifs TTC inventés. Aucune vente réelle.</p>
-      <div class="grid grid-products grid-xl-4">
-        <article class="product-card">
-          <div class="product-card__media">
-            <img src="images/produit-1.png" width="800" height="600" alt="Assortiment de pralines dans un coffret ouvert" loading="lazy" decoding="async">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Coffret « Forêt noire »</h3>
-            <p class="product-card__desc">24 pralinés ganache cerise, écorces d’orange confite (démo).</p>
-            <div class="product-card__price">
-              <span class="price-value">42&nbsp;€</span>
-              <span class="price-unit">les 320&nbsp;g</span>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-card__media">
-            <img src="images/produit-2.png" width="800" height="600" alt="Tablettes de chocolat empilées sur bois" loading="lazy" decoding="async">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Tablette Équateur 72&nbsp;%</h3>
-            <p class="product-card__desc">Notes figue et tabac doux, fève pure origine imaginaire.</p>
-            <div class="product-card__price">
-              <span class="price-value">8,50&nbsp;€</span>
-              <span class="price-unit">85&nbsp;g</span>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-card__media">
-            <img src="images/produit-3.png" width="800" height="600" alt="Tablette de chocolat noir cassée" loading="lazy" decoding="async">
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">Mendiants du vignoble</h3>
-            <p class="product-card__desc">Raisin muscat, amande torréfiée, sel de Guérande fictif.</p>
-            <div class="product-card__price">
-              <span class="price-value">16&nbsp;€</span>
-              <span class="price-unit">sachet 150&nbsp;g</span>
-            </div>
-          </div>
-        </article>
+  <nav class="navbar is-warning is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
+    <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5 has-text-dark" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i></span><span>Maison Cacao &amp; Fleur</span></span></a>
       </div>
-    </section>
-
-    <section id="gammes" aria-labelledby="gammes-title">
-      <h2 id="gammes-title">Nos gammes &amp; services</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Origines</h3>
-          <p>Quatre tablettes au cacao « équitable démo » : Madagascar, Pérou, Haïti, Papouasie (noms inventés).</p>
-        </article>
-        <article class="card">
-          <h3>Atelier parent-enfant</h3>
-          <p>1h30, 8 places, tablier fourni — <strong>35&nbsp;€</strong> / duo (fictif).</p>
-        </article>
-        <article class="card">
-          <h3>Sur mesure entreprises</h3>
-          <p>Coffrets logo chocolat noir — devis à partir de <strong>180&nbsp;€</strong> HT pour 30 unités (démo).</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="tarifs" class="story" aria-labelledby="tarifs-title">
-      <h2 id="tarifs-title">Formules dégustation (fictives)</h2>
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th scope="col">Formule</th>
-            <th scope="col">Contenu</th>
-            <th scope="col">Prix</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Découverte</td>
-            <td>4 carrés + café ou thé</td>
-            <td>12&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Signature</td>
-            <td>8 mignardises + accord chocolat / vin sans alcool</td>
-            <td>28&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Chef invité</td>
-            <td>Démonstration + dégustation 45&nbsp;min</td>
-            <td>55&nbsp;€</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="avis" aria-labelledby="avis-title">
-      <h2 id="avis-title">Ils nous ont laissé un mot (fictif)</h2>
-      <div class="reviews">
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#c9a227;color:#3d2314;">CM</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Camille M.</p>
-              <p class="review-card__date">12 fév. 2026 · Metz</p>
-            </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
-          </div>
-          <p class="review-card__text">«&nbsp;Le coffret Forêt noire a fait un carton au bureau. Livraison express imaginaire le lendemain.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#5c3d2e;color:#fff8f2;">JL</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Julien L.</p>
-              <p class="review-card__date">3 janv. 2026</p>
-            </div>
-            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
-          </div>
-          <p class="review-card__text">«&nbsp;Atelier parent-enfant très pédagogique. J’aurais aimé une version 100&nbsp;% sans sucre — note pour la démo.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#8b4513;color:#fff;">SK</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Soraya K.</p>
-              <p class="review-card__date">18 nov. 2025</p>
-            </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
-          </div>
-          <p class="review-card__text">«&nbsp;Les mendiants du vignoble : équilibre parfait sucre / fruit sec. Je recommande (avis inventé).&nbsp;»</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="journal" class="layout-wide" aria-labelledby="journal-title">
-      <h2 id="journal-title" class="density-hero-title" style="font-size: clamp(1.75rem, 2.5vw, 2.75rem);">Cacao &amp; nous — journal de fabrication (texte de démonstration)</h2>
-      <p class="density-lead">Ce bloc allonge volontairement le fil pour tester le responsive : alinéas multiples, listes, encadré latéral sticky sur desktop et colonnes doubles sur très grands écrans. Aucune recette ni aucun chiffre n’est contractuel.</p>
-      <div class="desktop-2col" style="margin-top: 2rem;">
-        <div class="desktop-2col__main density-stack">
-          <div class="prose-columns density-body">
-            <h3>De la fève à la tablette, un récit imaginaire</h3>
-            <p>Nous prétendons suivre un lot de fèves « variété Nova-17 » depuis un port fictif jusqu’à notre atelier : torréfaction lente, cassage, conchage sur trois jours, températures notées au tableau blanc, dégustations à l’aveugle par un jury inventé de douze personnes. Ce paragraphe sert uniquement à occuper l’horizontal sur un moniteur large et à vérifier que les interlignes restent confortables lorsque la densité augmente.</p>
-            <p>Les tablettes « Origines » existent ici comme étiquettes graphiques : Papouasie démo, Pérou démo, Madagascar démo, Haïti démo. Chaque barre affiche un pourcentage de cacao, une note de torréfaction et un temps de broyage — valeurs sans correspondance réelle. Nous ajoutons encore du texte pour pousser le scroll : le chocolat noir révèle des tanins proches du café, le lait tempère l’acidité, le blanc imaginaire joue sur la vanille et le beurre de cacao filtré.</p>
-            <h3>Hygiène, traçabilité, poids — tout est simulé</h3>
-            <p>Nous décrivons des salles blanches, des balances calibrées « série Z », des carnets de lot numérotés CCF-2026-001 à CCF-2026-999, des allergènes affichés en gros caractères et des pictogrammes inventés. Les opérateurs portent des charlottes bleues, des gants nitrile, des tabliers cuir végétal marron : détails scénographiques pour remplir l’écran.</p>
-            <ul>
-              <li>Tempérage : courbe cible 29&nbsp;°C → 31&nbsp;°C → 27&nbsp;°C (exemple).</li>
-              <li>Stockage : 16&nbsp;°C, 45&nbsp;% HR, caisses empilées maxi cinq hauteurs (fictif).</li>
-              <li>Livraison express démo : colis isotherme + gel pack réutilisable (non vendu).</li>
-              <li>Carte cadeau numérique : montants 15 / 30 / 50 / 100&nbsp;€ (illustration).</li>
-            </ul>
-          </div>
-          <figure class="figure-banner" style="margin-top: 1.5rem;">
-            <img src="images/atelier.png" width="1600" height="686" alt="Atelier chocolat : cuves et tables de travail (image générée)" loading="lazy" decoding="async">
-            <figcaption>Visuel généré — atelier de démonstration sans lieu réel.</figcaption>
-          </figure>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item has-text-dark" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
+          <a class="navbar-item has-text-dark" href="#boutique"><span class="icon-text"><span class="icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span><span>Boutique</span></span></a>
+          <a class="navbar-item has-text-dark" href="#savoir-faire"><span class="icon-text"><span class="icon"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i></span><span>Savoir-faire</span></span></a>
+          <a class="navbar-item has-text-dark" href="#ateliers"><span class="icon-text"><span class="icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span><span>Ateliers</span></span></a>
+          <a class="navbar-item has-text-dark" href="#avis"><span class="icon-text"><span class="icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span><span>Avis</span></span></a>
+          <a class="navbar-item has-text-dark" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
+          <a class="navbar-item has-text-dark" href="#coffrets"><span class="icon-text"><span class="icon"><i class="fa-solid fa-gift" aria-hidden="true"></i></span><span>Coffrets pro</span></span></a>
+          <a class="navbar-item has-text-dark" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
         </div>
-        <aside class="desktop-2col__aside" aria-labelledby="kpi-title">
-          <h3 id="kpi-title" style="margin:0 0 12px;font-size:1rem;">Chiffres clés (démo)</h3>
-          <dl class="kpi-strip" style="border:none;padding:0;">
-            <div><dt>Tablettes / an</dt><dd>18&nbsp;000</dd></div>
-            <div><dt>Recettes actives</dt><dd>64</dd></div>
-            <div><dt>Ateliers / mois</dt><dd>12</dd></div>
-            <div><dt>Âge moyen client</dt><dd>38&nbsp;ans</dd></div>
-          </dl>
-          <p class="density-body" style="margin-top:1rem;font-size:0.9rem;opacity:0.9;">Encadré sticky sur desktop : utile pour parcourir une longue page sans perdre le contexte des KPI fictifs.</p>
-        </aside>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenu" tabindex="-1">
+    <section id="accueil" class="hero is-warning is-medium choco-hero">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title is-1 has-text-dark">Le goût du bean-to-bar, à Metz</p>
+          <p class="subtitle is-4 has-text-dark" style="max-width: 44rem; opacity: 0.92;">
+            Tablettes, pralinés et ateliers — tout est fictif pour démo portfolio. Cadres larges, prix lisibles.
+          </p>
+          <div class="buttons mt-5">
+            <a class="button is-dark is-medium" href="#boutique">Voir la boutique</a>
+            <a class="button is-white is-medium has-text-dark" href="#contact">Nous rendre visite</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="histoire" class="story" aria-labelledby="histoire-title">
-      <h2 id="histoire-title">Une maison familiale (fictive)</h2>
-      <p class="section-lede density-body">Depuis 1998, la Maison Cacao &amp; Fleur imagine des recettes inspirées du Grand Est. Identité et dates sont des exemples pour maquette. Nous ajoutons ici un second volet narratif uniquement pour la volumétrie d’écran : un dimanche pluvieux, une fenêtre qui tremble, une ode de vanille qui traverse la boutique, des enfants qui collent leur nez à la vitrine, une vendeuse qui sourit, une balance qui affiche 0,247&nbsp;kg de pralines noisettes, une caisse enregistreuse qui sonne une mélodie imaginaire, un carnet de commandes entreprise ouvert à la page 12, un stylo qui fuit, une tache de chocolat sur le poignet, un torchon humide, une radio qui diffuse du jazz démo, une horloge qui avance de trois minutes pour le stress scénique du texte.</p>
+    <section class="section vitrine-cta-banner has-background-warning" aria-label="Appel à l’action">
+      <div class="container is-widescreen">
+        <div class="columns is-vcentered">
+          <div class="column is-8">
+            <p class="title is-4 has-text-dark">Commander un coffret ou réserver un atelier (démo)</p>
+            <p class="subtitle is-6 has-text-dark mb-0" style="opacity: 0.9;">Aucune commande réelle — CTA pour captures portfolio.</p>
+          </div>
+          <div class="column is-4 has-text-right-tablet">
+            <a class="button is-dark is-medium" href="#coffrets">Devis coffret</a>
+            <a class="button is-white is-medium has-text-dark ml-2" href="#ateliers">Voir les ateliers</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Nous rendre visite</h2>
-      <p class="section-lede">12 rue des Primevères, 57000 Ville-Fictive · Lun–Sam 10h–19h · 03 00 00 00 42</p>
+    <section class="section is-vitrine" id="boutique" aria-labelledby="t-boutique">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-boutique">Coups de cœur</h2>
+        <div class="columns is-multiline mt-5">
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine p-0" style="overflow: hidden;">
+              <figure class="image is-4by3 mb-0">
+                <img src="images/produit-1.png" width="800" height="600" alt="Coffret pralines" loading="lazy" decoding="async">
+              </figure>
+              <div class="p-5">
+                <p class="title is-4">Coffret « Forêt noire »</p>
+                <p class="content is-size-5">24 pralinés ganache cerise (démo).</p>
+                <p class="title is-3 has-text-dark">42&nbsp;€</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine p-0" style="overflow: hidden;">
+              <figure class="image is-4by3 mb-0">
+                <img src="images/produit-2.png" width="800" height="600" alt="Tablettes" loading="lazy" decoding="async">
+              </figure>
+              <div class="p-5">
+                <p class="title is-4">Tablette Équateur 72&nbsp;%</p>
+                <p class="content is-size-5">Notes figue &amp; tabac doux (imaginaire).</p>
+                <p class="title is-3 has-text-dark">8,50&nbsp;€</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine p-0" style="overflow: hidden;">
+              <figure class="image is-4by3 mb-0">
+                <img src="images/produit-3.png" width="800" height="600" alt="Mendiants" loading="lazy" decoding="async">
+              </figure>
+              <div class="p-5">
+                <p class="title is-4">Mendiants du vignoble</p>
+                <p class="content is-size-5">Raisin, amande, sel de Guérande fictif.</p>
+                <p class="title is-3 has-text-dark">16&nbsp;€</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/cacao-origines.png" width="1200" height="900" alt="Fèves de cacao (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="savoir-faire" aria-labelledby="t-sf">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-sf">Savoir-faire &amp; origines</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
+          Ce bloc prolonge la narration artisanale avec du texte réaliste en longueur moyenne&nbsp;: torréfaction fictive, températures de cristallisation inventées, partenaires cacao imaginaires. L’image aquarelle ci-dessous joue le rôle de «&nbsp;dessin&nbsp;» décoratif, complétée par une photo plateau pour varier les styles visuels.
+        </p>
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/choco-aquarelle-coffrets.png" width="1200" height="900" alt="Illustration aquarelle coffrets chocolat (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-6">
+            <div class="box is-vitrine content is-size-5">
+              <p class="tags"><span class="tag is-dark">Bean-to-bar</span><span class="tag is-warning">Sans recette réelle</span></p>
+              <p class="mt-4">Indicateurs de «&nbsp;maturité aromatique&nbsp;» (démo)&nbsp;:</p>
+              <p class="mt-2"><strong>Équateur 72&nbsp;%</strong></p>
+              <progress class="progress is-warning" value="78" max="100">78&nbsp;%</progress>
+              <p class="mt-3"><strong>Madagascar milk</strong></p>
+              <progress class="progress is-dark" value="64" max="100">64&nbsp;%</progress>
+            </div>
+            <article class="message is-warning is-light mt-4">
+              <div class="message-body is-size-6">Allergènes listés uniquement à titre d’exemple sur cette maquette — ne pas utiliser pour une information consommateur réelle.</div>
+            </article>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/choco-degustation-plateau.png" width="1200" height="900" alt="Plateau dégustation chocolats (image générée)" loading="lazy" decoding="async">
+        </figure>
+        <div class="tile is-ancestor mt-5">
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box is-vitrine-child">
+              <p class="title is-5">Fèves</p>
+              <p class="is-size-6">Lots numérotés fictifs, traçabilité simulée.</p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box is-vitrine-child">
+              <p class="title is-5">Conchyage</p>
+              <p class="is-size-6">72&nbsp;h imaginaires, température cible 55&nbsp;°C (démo).</p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box is-vitrine-child notification is-warning is-light">
+              <p class="title is-5">Saison</p>
+              <p class="is-size-6">Édition Pâques / Fêtes — stocks symboliques.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="ateliers" aria-labelledby="t-atel">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-atel">Ateliers &amp; formules</h2>
+        <div class="columns mt-5">
+          <div class="column is-4">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-4">Origines</p>
+              <p class="content is-size-5">Quatre tablettes « démo » : Madagascar, Pérou, Haïti, Papouasie (noms fictifs).</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-4">Parent / enfant</p>
+              <p class="content is-size-5">1h30, 8 places — <strong>35&nbsp;€</strong> le duo (exemple).</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-4">Entreprises</p>
+              <p class="content is-size-5">Coffrets logo — devis à partir de <strong>180&nbsp;€</strong> HT / 30 unités (démo).</p>
+            </div>
+          </div>
+        </div>
+        <div class="table-container is-vitrine mt-5">
+          <table class="table is-fullwidth is-size-5">
+            <thead><tr><th>Formule</th><th>Contenu</th><th>Prix</th></tr></thead>
+            <tbody>
+              <tr><td>Découverte</td><td>4 carrés + boisson</td><td>12&nbsp;€</td></tr>
+              <tr><td>Signature</td><td>8 mignardises + accord</td><td>28&nbsp;€</td></tr>
+              <tr><td>Chef invité</td><td>Démo 45&nbsp;min</td><td>55&nbsp;€</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/atelier.png" width="1600" height="686" alt="Atelier chocolat (image générée)" loading="lazy" decoding="async">
+        </figure>
+        <div class="has-text-centered mt-5">
+          <a class="button is-dark is-medium" href="#coffrets">Demander un devis entreprise</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="avis" aria-labelledby="t-avis">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-avis">Avis (inventés)</h2>
+        <div class="columns mt-5">
+          <div class="column is-4">
+            <div class="box is-vitrine"><p class="title is-5">Camille M.</p><p class="content is-size-5">«&nbsp;Coffret adopté au bureau — livraison imaginaire.&nbsp;»</p></div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine"><p class="title is-5">Julien L.</p><p class="content is-size-5">«&nbsp;Atelier pédagogique — note démo sans sucre.&nbsp;»</p></div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine"><p class="title is-5">Soraya K.</p><p class="content is-size-5">«&nbsp;Mendiants équilibrés — avis fictif.&nbsp;»</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-faq">Questions (démo)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large has-text-warning" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <path d="M8 36 L22 8 L36 36 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Livraison&nbsp;?</strong> Zones et délais inventés — aucun transport réel.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large has-text-dark" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <rect x="6" y="10" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Conservation&nbsp;?</strong> Conseils génériques pour remplir la carte — pas de fiche produit officielle.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="coffrets" aria-labelledby="t-coff">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-10-tablet is-7-desktop">
+            <h2 class="title is-2 has-text-centered" id="t-coff">Coffrets sur mesure (fictif)</h2>
+            <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans backend — test des champs Bulma.</p>
+            <div class="box is-vitrine vitrine-form-panel">
+              <form action="#" method="get" class="content">
+                <div class="field"><label class="label" for="cf-entreprise">Entreprise</label><div class="control"><input class="input" type="text" id="cf-entreprise" name="entreprise" autocomplete="organization"></div></div>
+                <div class="field"><label class="label" for="cf-qte">Quantité</label><div class="control"><input class="input" type="number" id="cf-qte" name="qte" min="10" value="30"></div></div>
+                <div class="field"><label class="label" for="cf-date">Date souhaitée</label><div class="control"><input class="input" type="date" id="cf-date" name="date"></div></div>
+                <div class="field"><label class="label" for="cf-msg">Message</label><div class="control"><textarea class="textarea" id="cf-msg" name="msg" rows="3" placeholder="Logo, goûts, contraintes fictives…"></textarea></div></div>
+                <button type="button" class="button is-dark is-medium is-fullwidth">Envoyer la demande (démo)</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vitrine-cta-banner has-background-dark has-text-white" aria-label="Second appel à l’action">
+      <div class="container is-widescreen has-text-centered">
+        <p class="title is-4 has-text-white">Passer en boutique (maquette)</p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-warning is-medium" href="#contact">Horaires &amp; adresse</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-warning-light" id="contact" aria-labelledby="t-contact">
+      <div class="container is-widescreen">
+        <h2 class="title is-2" id="t-contact">Nous rendre visite</h2>
+        <div class="notification is-white is-size-4 box mt-4" style="padding: 2rem; max-width: 48rem;">
+          <p>12 rue des Primevères, 57000 Ville-Fictive</p>
+          <p class="mt-4">Lun–Sam 10h–19h · 03 00 00 00 42 (fictif)</p>
+        </div>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour au hub des démos</a></p>
+      </div>
     </section>
   </main>
-  <footer>
-    <p><strong>Maison Cacao &amp; Fleur</strong> — vitrine de démonstration.</p>
-    <p><a href="../index.html">Retour au hub des démos</a></p>
+
+  <footer class="footer has-background-dark is-vitrine-footer">
+    <div class="container is-widescreen">
+      <div class="columns is-multiline has-text-grey-light">
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Maison Cacao &amp; Fleur</p>
+          <p class="is-size-6">Vitrine de démonstration.</p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Explorer</p>
+          <p class="is-size-6"><a class="has-text-grey-lighter" href="#savoir-faire">Savoir-faire</a> · <a class="has-text-grey-lighter" href="#coffrets">Coffrets</a></p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Crédits</p>
+          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-grey-lighter" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,0 +1,19 @@
+:root {
+  --auto-orange: #f0a020;
+  --auto-graphite: #1a1a1a;
+  --auto-stripe: rgba(240, 160, 32, 0.15);
+}
+
+.auto-hero {
+  background:
+    linear-gradient(115deg, rgba(28, 28, 28, 0.98) 0%, rgba(43, 43, 43, 0.95) 40%, rgba(17, 17, 17, 0.99) 100%),
+    repeating-linear-gradient(-12deg, transparent, transparent 40px, var(--auto-stripe) 40px, var(--auto-stripe) 41px);
+}
+
+.auto-hero .title {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+}
+
+.box.is-auto-ring {
+  border: 1px solid rgba(240, 160, 32, 0.35);
+}

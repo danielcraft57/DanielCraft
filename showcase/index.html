@@ -11,58 +11,159 @@
   <link rel="stylesheet" href="shared/tokens.css">
   <link rel="stylesheet" href="shared/layout-desktop.css">
   <link rel="stylesheet" href="hub.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-  <div class="wrap">
-    <p class="badge">Contenu fictif</p>
-    <h1>Vitrines démo par secteur</h1>
-    <p class="lead">Pages statiques pour tests visuels et captures multi-formats (script Python Playwright : <code>showcase/screenshot_showcases.py</code>). Design inspiré Material&nbsp;3 et interfaces primées. Sur très grand écran, cette introduction s’élargit volontairement pour occuper l’espace horizontal et valider la lisibilité des longues lignes.</p>
-    <div class="grid">
-      <a class="card" href="chocolatier/index.html">
-        <span class="badge">Artisanat</span>
-        <h2>Chocolatier</h2>
-        <p>Maison Cacao &amp; Fleur — boutique, gammes, histoire.</p>
-      </a>
-      <a class="card" href="odontologie/index.html">
-        <span class="badge">Santé</span>
-        <h2>Odontologie</h2>
-        <p>Cabinet Sourire Lorraine — soins, équipe, prise de rendez-vous.</p>
-      </a>
-      <a class="card" href="banque/index.html">
-        <span class="badge">Finance</span>
-        <h2>Banque régionale</h2>
-        <p>Banque des Vosges du Nord — particuliers, pro, sécurité.</p>
-      </a>
-      <a class="card" href="industrie/index.html">
-        <span class="badge">Industrie</span>
-        <h2>Industrie</h2>
-        <p>Atelier Mécano-Precision 54 — usinage, qualité, certifications.</p>
-      </a>
-      <a class="card" href="comptable/index.html">
-        <span class="badge">Conseil</span>
-        <h2>Cabinet comptable</h2>
-        <p>Bilan Carré Experts — PME, paie, pilotage.</p>
-      </a>
-      <a class="card" href="association/index.html">
-        <span class="badge">ESS</span>
-        <h2>Association</h2>
-        <p>Réseau Main Tendue 57 — solidarité, bénévolat, dons.</p>
-      </a>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+  <header class="hub-header">
+    <div class="showcase-container hub-header__inner">
+      <div class="hub-header__brand">
+        <p class="badge">Contenu fictif</p>
+        <p class="hub-header__tagline"><a href="#accueil" class="site-logo-link">DanielCraft · portfolio</a></p>
+      </div>
+      <nav class="nav-primary hub-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#accueil"><i class="fa-solid fa-house fa-fw" aria-hidden="true"></i> Accueil</a></li>
+          <li><a href="#vitrines"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> Vitrines secteurs</a></li>
+          <li><a href="#guide"><i class="fa-solid fa-book fa-fw" aria-hidden="true"></i> Guide QA</a></li>
+          <li><a href="#indicateurs"><i class="fa-solid fa-chart-simple fa-fw" aria-hidden="true"></i> Indicateurs</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-address-card fa-fw" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <section class="hub-prose" aria-labelledby="guide-title">
-      <h2 id="guide-title">Guide express pour la revue responsive (texte de démo)</h2>
-      <p>Ce hub centralise six maquettes sectorielles : chaque page mélange héros photographique, tableaux tarifaires inventés, avis clients fictifs et sections longues pour stresser le scroll. Utilisez les captures desktop / tablette / mobile pour repérer les débordements, les contrastes insuffisants ou les zones où la typographie devrait encore respirer.</p>
-      <p>Deuxième paragraphe dense : les chemins relatifs fonctionnent derrière un serveur statique ; les polices Google se chargent si le réseau est disponible ; les images PNG sont générées et ne représentent aucun lieu réel ; les couleurs respectent un schéma sombre ici et des schémas clairs ou sombres sur les sous-sites ; les focus visibles sont conservés pour l’accessibilité ; les ancres internes permettent de tester la navigation clavier sur les pages les plus longues.</p>
-      <div class="hub-kpi" aria-label="Indicateurs fictifs">
-        <div><strong>6</strong><span>vitrines</span></div>
-        <div><strong>3</strong><span>formats capture</span></div>
-        <div><strong>18+</strong><span>PNG démo</span></div>
-        <div><strong>∞</strong><span>caractères de lorem métier</span></div>
+  <main id="contenu" class="hub-main" tabindex="-1">
+    <section id="accueil" class="hub-hero" aria-labelledby="hub-title">
+      <div class="showcase-container">
+        <h1 id="hub-title">Vitrines démo par secteur</h1>
+        <p class="lead">Catalogue statique de <strong>quatorze</strong> maquettes sectorielles : chaque vitrine applique une <strong>arborescence différente</strong> (libellés de menu et regroupement de contenu) pour coller aux usages WordPress, Joomla ou Bootstrap, tout en restant sur une seule URL pour les captures Playwright (<code>showcase/screenshot_showcases.py</code>). Aucune statistique de marché n’est affichée&nbsp;: uniquement du contenu fictif pour la mise en page.</p>
       </div>
     </section>
 
-    <footer>DanielCraft — démos portfolio uniquement.</footer>
-  </div>
+    <section id="vitrines" class="hub-section hub-section--elevated" aria-labelledby="vitrines-title">
+      <div class="showcase-container">
+        <h2 id="vitrines-title">Vitrines secteurs — accès direct</h2>
+        <p class="hub-section__lede">Équivalent d’un plan de site « une page par secteur » : chaque carte ouvre une maquette complète avec sa propre hiérarchie de navigation.</p>
+        <div class="grid hub-grid">
+          <a class="card" href="technologie/index.html">
+            <span class="badge">Tech</span>
+            <h3><i class="fa-solid fa-microchip fa-fw" aria-hidden="true"></i> Technologie</h3>
+            <p>NovaStack Labs 57 — SaaS, API et data fictifs&nbsp;: parcours produit, démo et documentation graphique.</p>
+          </a>
+          <a class="card" href="services/index.html">
+            <span class="badge">Services</span>
+            <h3><i class="fa-solid fa-broom fa-fw" aria-hidden="true"></i> Services</h3>
+            <p>Hexa Services — nettoyage, facility et conciergerie imaginaires pour tester listes et formulaires.</p>
+          </a>
+          <a class="card" href="restauration/index.html">
+            <span class="badge">HCR</span>
+            <h3><i class="fa-solid fa-utensils fa-fw" aria-hidden="true"></i> Restauration</h3>
+            <p>Bistro Ligne &amp; Comptoir — carte, réservations et événements inventés, photos générées.</p>
+          </a>
+          <a class="card" href="commerce/index.html">
+            <span class="badge">Retail</span>
+            <h3><i class="fa-solid fa-basket-shopping fa-fw" aria-hidden="true"></i> Commerce</h3>
+            <p>Marché Express — drive, rayons et fidélité fictifs, mises en page type grande distribution.</p>
+          </a>
+          <a class="card" href="education/index.html">
+            <span class="badge">Formation</span>
+            <h3><i class="fa-solid fa-graduation-cap fa-fw" aria-hidden="true"></i> Éducation</h3>
+            <p>Campus Lumière — catalogue de modules, inscriptions et pédagogie entièrement factices.</p>
+          </a>
+          <a class="card" href="etablissement/index.html">
+            <span class="badge">Hôtellerie</span>
+            <h3><i class="fa-solid fa-hotel fa-fw" aria-hidden="true"></i> Établissement</h3>
+            <p>Hôtel des Arcades &amp; Spa — chambres, séminaires et réservation démo sur fond sombre.</p>
+          </a>
+          <a class="card" href="beaute/index.html">
+            <span class="badge">Bien-être</span>
+            <h3><i class="fa-solid fa-spa fa-fw" aria-hidden="true"></i> Beauté</h3>
+            <p>Maison Éclat Pur — soins, spa et institut imaginaire avec palette rose et bordeaux.</p>
+          </a>
+          <a class="card" href="automobile/index.html">
+            <span class="badge">Mobilité</span>
+            <h3><i class="fa-solid fa-car fa-fw" aria-hidden="true"></i> Automobile</h3>
+            <p>Garage Delta Moteurs — atelier, pneus et rendez-vous fictifs, style garage premium sombre.</p>
+          </a>
+          <a class="card" href="chocolatier/index.html">
+            <span class="badge">Artisanat</span>
+            <h3><i class="fa-solid fa-cookie-bite fa-fw" aria-hidden="true"></i> Chocolatier</h3>
+            <p>Maison Cacao &amp; Fleur — logique <strong>commerce</strong> : maison, boutique &amp; dégustations, goûts &amp; avis.</p>
+          </a>
+          <a class="card" href="odontologie/index.html">
+            <span class="badge">Santé</span>
+            <h3><i class="fa-solid fa-tooth fa-fw" aria-hidden="true"></i> Odontologie</h3>
+            <p>Cabinet Sourire Lorraine — fil <strong>patient</strong> : cabinet, soins, parcours &amp; avis.</p>
+          </a>
+          <a class="card" href="banque/index.html">
+            <span class="badge">Finance</span>
+            <h3><i class="fa-solid fa-building-columns fa-fw" aria-hidden="true"></i> Banque régionale</h3>
+            <p>Banque des Vosges du Nord — découpage <strong>institutionnel</strong> : institution, offres, confiance.</p>
+          </a>
+          <a class="card" href="industrie/index.html">
+            <span class="badge">Industrie</span>
+            <h3><i class="fa-solid fa-gears fa-fw" aria-hidden="true"></i> Industrie</h3>
+            <p>Atelier Mécano-Precision 54 — trame <strong>usine</strong> : capacités, prestations, qualité.</p>
+          </a>
+          <a class="card" href="comptable/index.html">
+            <span class="badge">Conseil</span>
+            <h3><i class="fa-solid fa-file-invoice-dollar fa-fw" aria-hidden="true"></i> Cabinet comptable</h3>
+            <p>Bilan Carré Experts — squelette <strong>cabinet</strong> : le cabinet, expertises, références.</p>
+          </a>
+          <a class="card" href="association/index.html">
+            <span class="badge">ESS</span>
+            <h3><i class="fa-solid fa-hand-holding-heart fa-fw" aria-hidden="true"></i> Association</h3>
+            <p>Réseau Main Tendue 57 — parcours <strong>solidarité</strong> : mission, agir, impact.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="hub-section" aria-labelledby="guide-title">
+      <div class="showcase-container">
+        <h2 id="guide-title">Guide express pour la revue responsive</h2>
+        <div class="hub-prose hub-prose--standalone">
+          <p>Ce hub joue le rôle d’une page « ressources / documentation » dans une arborescence réelle : il complète le catalogue de vitrines sans les dupliquer. Utilisez les captures desktop, tablette et mobile pour repérer débordements, contrastes et respiration typographique.</p>
+          <p>Les chemins relatifs fonctionnent derrière un serveur statique ; les images PNG sont générées ou de démo et ne représentent aucun lieu réel ; les ancres permettent de valider le <code>scroll-margin</code> et la navigation clavier sur les pages longues.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="indicateurs" class="hub-section hub-section--elevated" aria-labelledby="indicateurs-title">
+      <div class="showcase-container">
+        <h2 id="indicateurs-title">Indicateurs de couverture (démo)</h2>
+        <p class="hub-section__lede">Bloc « preuve » chiffrée — équivalent d’une barre KPI sur une landing Bootstrap ou un bandeau statistiques Joomla.</p>
+        <div class="hub-kpi" aria-label="Indicateurs fictifs">
+          <div><strong>14</strong><span>vitrines</span></div>
+          <div><strong>3</strong><span>formats capture</span></div>
+          <div><strong>1</strong><span>SVG partagé vitrines</span></div>
+          <div><strong>∞</strong><span>caractères de lorem métier</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="hub-section" aria-labelledby="contact-title">
+      <div class="showcase-container">
+        <h2 id="contact-title">Contact</h2>
+        <div class="contact-grid contact-grid--2">
+          <div class="callout-soft">
+            <p class="hub-contact__p"><strong>Usage</strong> — démonstrations internes et portfolio uniquement. Aucune donnée réelle à saisir.</p>
+          </div>
+          <div class="callout-soft">
+            <p class="hub-contact__p"><strong>Retour</strong> — les vitrines renvoient ici via le lien en pied de page.</p>
+            <p class="hub-contact__p"><a href="https://danielcraft.fr">danielcraft.fr</a> (exemple)</p>
+          </div>
+        </div>
+        <p class="showcase-template-ref">Arborescence type <strong>catalogue + ressources</strong> (liste de catégories, guide, KPI, contact) — proche d’un plan de site Joomla ou d’une page d’index ThemeForest, avec hero marketing façon <a href="https://getbootstrap.com/docs/5.3/examples/heroes/">exemples Bootstrap · Heroes</a>. Hiérarchie et profondeur : voir <a href="https://www.pilot-in.com/blog/arborescence-site-web/">Pilot’in — construire l’arborescence d’un site web</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hub-footer">
+    <div class="showcase-container">
+      <p>DanielCraft — démos portfolio uniquement.</p>
+    </div>
+  </footer>
 </body>
 </html>

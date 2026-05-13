@@ -1,0 +1,23 @@
+:root {
+  --srv-teal: #0d7377;
+  --srv-teal-light: #14a3a8;
+  --srv-sand: #f4f7f6;
+}
+
+.srv-hero {
+  background:
+    linear-gradient(120deg, rgba(26, 83, 92, 0.96) 0%, rgba(13, 59, 67, 0.94) 50%, rgba(9, 40, 48, 0.98) 100%),
+    radial-gradient(600px 300px at 20% 80%, rgba(20, 163, 168, 0.25), transparent 50%);
+}
+
+.srv-accent-border {
+  border-left: 4px solid var(--srv-teal-light);
+}
+
+.has-text-srv-teal {
+  color: var(--srv-teal-light) !important;
+}
+
+.section.is-srv-muted {
+  background-color: var(--srv-sand) !important;
+}

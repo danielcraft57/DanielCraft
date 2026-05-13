@@ -6,142 +6,302 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Démo fictive — cabinet comptable.">
   <title>Bilan Carré Experts — Comptabilité (fictif)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../shared/reset.css">
-  <link rel="stylesheet" href="../shared/tokens.css">
-  <link rel="stylesheet" href="../shared/media.css">
-  <link rel="stylesheet" href="../shared/layout-desktop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Bilan Carré <span>Experts</span></div>
-    <nav aria-label="Navigation">
-      <a href="#offres">Offres</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero hero--photo" aria-labelledby="hero-title">
-      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
-      <div class="hero__veil" aria-hidden="true"></div>
-      <div class="hero__inner">
-        <h1 id="hero-title">Piloter votre entreprise avec des chiffres clairs</h1>
-        <p>Forfaits, missions et témoignages inventés — démo portfolio sans valeur juridique.</p>
-        <a class="btn" href="#contact">Planifier un échange (démo)</a>
-      </div>
-    </section>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
-    <section id="offres" aria-labelledby="offres-title">
-      <h2 id="offres-title">Offres d’accompagnement (fictives)</h2>
-      <p class="section-lede">Formules indicatives pour TPE / PME jusqu’à 15 salariés.</p>
-      <ul class="list">
-        <li>
-          <span class="check" aria-hidden="true">✓</span>
-          <span><strong>Essentiel</strong> — tenue, liasse fiscale, 2 rendez-vous / an — <strong>à partir de 220&nbsp;€ HT/mois</strong>.</span>
-        </li>
-        <li>
-          <span class="check" aria-hidden="true">✓</span>
-          <span><strong>Confort</strong> — Essentiel + paie jusqu’à 8 bulletins + DSN — <strong>380&nbsp;€ HT/mois</strong>.</span>
-        </li>
-        <li>
-          <span class="check" aria-hidden="true">✓</span>
-          <span><strong>Pilotage</strong> — Confort + tableaux de bord trimestriels + prévisionnel — <strong>590&nbsp;€ HT/mois</strong>.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="tarifs" class="cols" aria-labelledby="tarifs-title">
-      <div>
-        <h2 id="tarifs-title">Prestations à la carte</h2>
-        <table class="price-table">
-          <thead>
-            <tr>
-              <th scope="col">Mission</th>
-              <th scope="col">Prix indicatif</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Bilan annuel simplifié</td>
-              <td>1&nbsp;450&nbsp;€ HT</td>
-            </tr>
-            <tr>
-              <td>Création société + formalités</td>
-              <td>890&nbsp;€ HT</td>
-            </tr>
-            <tr>
-              <td>Restructuration dette (mission flash)</td>
-              <td>1&nbsp;200&nbsp;€ HT</td>
-            </tr>
-            <tr>
-              <td>Audit interne 3 jours</td>
-              <td>2&nbsp;800&nbsp;€ HT</td>
-            </tr>
-          </tbody>
-        </table>
+  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
+    <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil"><span class="icon-text"><span class="icon has-text-info"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i></span><span>Bilan Carré Experts</span></span></a>
       </div>
-      <div>
-        <h2>Pour les PME locales</h2>
-        <p class="note">Restaurants, artisans, cabinets libéraux : segmentation marketing inventée pour le rendu visuel.</p>
-        <h2 class="cols-subhead">Transparence</h2>
-        <p class="note">Premier rendez-vous découverte 45&nbsp;min — <strong>offert en démo</strong>. Aucune signature possible sur ce site.</p>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
+          <a class="navbar-item" href="#cabinet"><span class="icon-text"><span class="icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span><span>Cabinet</span></span></a>
+          <a class="navbar-item" href="#process"><span class="icon-text"><span class="icon"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i></span><span>Process</span></span></a>
+          <a class="navbar-item" href="#forfaits"><span class="icon-text"><span class="icon"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i></span><span>Forfaits</span></span></a>
+          <a class="navbar-item" href="#missions"><span class="icon-text"><span class="icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span><span>Missions</span></span></a>
+          <a class="navbar-item" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
+          <a class="navbar-item" href="#bilan-flash"><span class="icon-text"><span class="icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span><span>Bilan flash</span></span></a>
+          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
+        </div>
       </div>
-    </section>
+    </div>
+  </nav>
 
-    <section id="avis" aria-labelledby="avis-title">
-      <h2 id="avis-title">Ils nous confient leurs chiffres (fictif)</h2>
-      <div class="reviews">
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#1e4d8c;color:#fff;">ÉR</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Élodie R. — Sarl Atelier du Rempart (fictif)</p>
-              <p class="review-card__date">27 fév. 2026</p>
-            </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+  <main id="contenu" tabindex="-1">
+    <section id="accueil" class="hero is-info is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title is-1">Des chiffres clairs pour piloter</p>
+          <p class="subtitle is-4 has-text-white-ter" style="max-width: 44rem;">
+            Forfaits et missions inventés — démo portfolio, aucune valeur juridique.
+          </p>
+          <div class="buttons mt-5">
+            <a class="button is-warning is-medium has-text-weight-semibold" href="#forfaits">Voir les forfaits</a>
+            <a class="button is-white is-outlined is-medium" href="#contact">Planifier un échange (fictif)</a>
           </div>
-          <p class="review-card__text">«&nbsp;Formule Confort : bulletins toujours à jour, zéro retard DSN sur l’année démo.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#d6e4ff;color:#001b3c;">GF</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Gilles F.</p>
-              <p class="review-card__date">9 déc. 2025</p>
-            </div>
-            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
-          </div>
-          <p class="review-card__text">«&nbsp;Pilotage très utile avant levée de fonds imaginaire. Rapports un peu denses au début.&nbsp;»</p>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Rendez-vous</h2>
-      <p class="note">contact@bilan-carre-demo.local · 03 00 00 00 01 · 8 rue du Parc, 57000 Ville-Fictive</p>
+    <section class="section vitrine-cta-banner has-background-info has-text-white" aria-label="Appel à l’action">
+      <div class="container is-widescreen">
+        <div class="columns is-vcentered">
+          <div class="column is-8">
+            <p class="title is-4 has-text-white">Obtenir une proposition de forfait (démo)</p>
+            <p class="subtitle is-6 has-text-white-ter mb-0">Réponse sous 48&nbsp;h fictives — aucun engagement.</p>
+          </div>
+          <div class="column is-4 has-text-right-tablet">
+            <a class="button is-warning is-medium has-text-weight-semibold" href="#bilan-flash">Bilan flash offert*</a>
+            <p class="is-size-7 mt-2 has-text-white-ter">*Offre imaginaire</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="cabinet-vie" class="layout-wide" aria-labelledby="cv-title" style="max-width:1000px;margin:0 auto;padding:clamp(28px,5vw,48px) clamp(16px,4vw,28px);">
-      <h2 id="cv-title" class="density-hero-title" style="font-size: clamp(1.55rem, 2vw, 2.35rem); color: var(--md-sys-color-primary);">La vie du cabinet — récit dense (fictif)</h2>
-      <p class="density-lead">Bloc pour moniteurs larges : réunion de associés imaginaire, tableau de missions, photo d’équipe générée, listes et colonnes.</p>
-      <figure class="figure-banner">
-        <img src="images/reunion.png" width="1600" height="686" alt="Réunion d’équipe comptable autour d’un écran (image générée)" loading="lazy" decoding="async">
-        <figcaption>Visuel généré — personnes et logos non réels.</figcaption>
-      </figure>
-      <div class="prose-columns density-body">
-        <h3>Semaine type inventée</h3>
-        <p>Lundi : clôtures paie retail. Mardi : TVA intracommunautaire fictive. Mercredi : atelier trésorerie PME. Jeudi : revue des engagements hors bilan. Vendredi : point juniors / seniors. Chaque phrase allonge le paragraphe pour valider les césures et les espacements lorsque la fenêtre dépasse 1600&nbsp;px de large.</p>
-        <p>Nous empilons encore du contenu : liasse fiscale 2069, liasse 2571, liasse 2033, liasse 2031, liasse 2035, déclarations de TVA CA3, CA12, CVAE, IFU, liasse sociale N4DS, DSN arrêt de travail, DSN fin de contrat, annexes libres, commentaires internes, codes couleur vert orange rouge, filtres Excel imaginaires, tableaux croisés dynamiques, exports CSV, sauvegardes nocturnes sur disque dur externe fictif.</p>
+    <section class="section is-vitrine" id="cabinet" aria-labelledby="t-cab">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-cab">Le cabinet</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 40rem; margin-left: auto; margin-right: auto;">
+          TPE / PME jusqu’à 15 salariés — cibles et associés entièrement fictifs.
+        </p>
+        <div class="columns is-vcentered">
+          <div class="column is-6">
+            <div class="box is-vitrine content is-size-5">
+              <p>Premier rendez-vous « découverte » 45&nbsp;min offert en démo. Aucune signature en ligne.</p>
+              <p class="mt-4">Six collaborateurs inventés, deux associés fictifs, charte qualité graphique.</p>
+            </div>
+          </div>
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/conseil-client.png" width="1200" height="900" alt="Conseil comptable (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="process" aria-labelledby="t-pro">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-pro">Process &amp; méthode</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
+          Paragraphe dense pour valider la grille éditoriale&nbsp;: diagnostic fictif, mapping des flux financiers inventés, calendrier fiscal d’exemple et points de contrôle internes simulés. Les visuels combinent une photo «&nbsp;bureau comptable&nbsp;» et un croquis type dessin technique pour varier les tons.
+        </p>
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/compta-bureau-plat.png" width="1200" height="900" alt="Bureau comptable vue du dessus (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-6">
+            <div class="box is-vitrine content is-size-5">
+              <p class="tags"><span class="tag is-info">TPE</span><span class="tag is-light">PME</span><span class="tag is-warning">Pilotage</span></p>
+              <p class="mt-4"><strong>Charge utile moyenne (démo)</strong></p>
+              <progress class="progress is-info" value="70" max="100">70&nbsp;%</progress>
+              <p class="mt-3"><strong>DSN à jour (fictif)</strong></p>
+              <progress class="progress is-success" value="92" max="100">92&nbsp;%</progress>
+            </div>
+            <article class="message is-info is-light mt-4">
+              <div class="message-body is-size-6">Les missions décrites sur cette page n’ont pas de valeur comptable ou juridique — maquette portfolio.</div>
+            </article>
+          </div>
+        </div>
+        <div class="columns is-vcentered is-multiline mt-5">
+          <div class="column is-5">
+            <figure class="vitrine-figure">
+              <img src="images/compta-croquis-engrenage.png" width="1200" height="900" alt="Croquis engrenage et pied à coulisse (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-7">
+            <div class="tile is-ancestor">
+              <div class="tile is-parent is-6">
+                <article class="tile is-child box is-vitrine-child">
+                  <p class="title is-5">Onboarding</p>
+                  <p class="is-size-6">Collecte dossiers fictive, accès coffre numérique simulé.</p>
+                </article>
+              </div>
+              <div class="tile is-parent is-6">
+                <article class="tile is-child box is-vitrine-child notification is-info is-light">
+                  <p class="title is-5">Suivi</p>
+                  <p class="is-size-6">Points trimestuels, tableaux de bord d’exemple.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="forfaits" aria-labelledby="t-forf">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-forf">Forfaits (fictifs)</h2>
+        <div class="columns mt-5">
+          <div class="column is-4">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-4">Essentiel</p>
+              <p class="content is-size-5">Tenue, liasse, 2 RDV / an.</p>
+              <p class="title is-3 has-text-info">220&nbsp;€ HT / mois</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-4">Confort</p>
+              <p class="content is-size-5">Essentiel + paie 8 bulletins + DSN.</p>
+              <p class="title is-3 has-text-info">380&nbsp;€ HT / mois</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-4">Pilotage</p>
+              <p class="content is-size-5">Confort + tableaux de bord trimestriels.</p>
+              <p class="title is-3 has-text-info">590&nbsp;€ HT / mois</p>
+            </div>
+          </div>
+        </div>
+        <div class="has-text-centered mt-5">
+          <a class="button is-info is-medium" href="#bilan-flash">Demander un bilan flash (fictif)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="missions" aria-labelledby="t-mis">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-mis">Missions à la carte</h2>
+        <div class="table-container is-vitrine mt-5">
+          <table class="table is-fullwidth is-striped is-size-5">
+            <thead><tr><th>Mission</th><th>Prix indicatif</th></tr></thead>
+            <tbody>
+              <tr><td>Bilan annuel simplifié</td><td>1&nbsp;450&nbsp;€ HT</td></tr>
+              <tr><td>Création société + formalités</td><td>890&nbsp;€ HT</td></tr>
+              <tr><td>Restructuration dette (flash)</td><td>1&nbsp;200&nbsp;€ HT</td></tr>
+              <tr><td>Audit interne 3 jours</td><td>2&nbsp;800&nbsp;€ HT</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/reunion.png" width="1600" height="686" alt="Réunion d’équipe (image générée)" loading="lazy" decoding="async">
+        </figure>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <div class="box is-vitrine"><p class="title is-5">Élodie R.</p><p class="content is-size-5">«&nbsp;Confort : DSN à jour sur l’année démo.&nbsp;»</p></div>
+          </div>
+          <div class="column is-6">
+            <div class="box is-vitrine"><p class="title is-5">Gilles F.</p><p class="content is-size-5">«&nbsp;Pilotage utile avant levée fictive.&nbsp;»</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-faq">FAQ cabinet (démo)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large has-text-info" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <path d="M8 32V8h24v24H8z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 16h12M14 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Intervention à distance&nbsp;?</strong> Oui en fiction — visioconférence simulée.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large has-text-info" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 34c0-6 20-6 20 0" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Confidentialité&nbsp;?</strong> Mentions génériques — aucun secret professionnel réel ici.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="bilan-flash" aria-labelledby="t-bf">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-10-tablet is-7-desktop">
+            <h2 class="title is-2 has-text-centered" id="t-bf">Bilan flash — prise de contact (fictif)</h2>
+            <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans envoi — test radio et fichier.</p>
+            <div class="box is-vitrine vitrine-form-panel">
+              <form action="#" method="get" class="content">
+                <div class="field"><label class="label" for="bf-societe">Société</label><div class="control"><input class="input" type="text" id="bf-societe" name="societe"></div></div>
+                <div class="field"><label class="label" for="bf-siren">SIREN (fictif)</label><div class="control"><input class="input" type="text" id="bf-siren" name="siren" maxlength="9" placeholder="123456789"></div></div>
+                <div class="field">
+                  <label class="label">Effectif (démo)</label>
+                  <div class="control">
+                    <label class="radio mr-4"><input type="radio" name="eff" value="1-5"> 1–5</label>
+                    <label class="radio mr-4"><input type="radio" name="eff" value="6-15"> 6–15</label>
+                    <label class="radio"><input type="radio" name="eff" value="15+"> 15+</label>
+                  </div>
+                </div>
+                <div class="field"><label class="label" for="bf-file">Dernier bilan (fictif)</label><div class="control"><input type="file" id="bf-file" name="file" disabled aria-describedby="bf-file-hint"><p id="bf-file-hint" class="help">Champ désactivé — aucun fichier n’est traité.</p></div></div>
+                <button type="button" class="button is-info is-medium is-fullwidth">Envoyer (démo)</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vitrine-cta-banner has-background-grey-darker has-text-white" aria-label="Second appel à l’action">
+      <div class="container is-widescreen has-text-centered">
+        <p class="title is-4 has-text-white">Passer au forfait «&nbsp;Pilotage&nbsp;» (maquette)</p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-warning is-medium" href="#contact">Contacter le cabinet</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="contact" aria-labelledby="t-contact">
+      <div class="container is-widescreen">
+        <h2 class="title is-2" id="t-contact">Contact</h2>
+        <div class="notification is-info is-light is-size-5 box mt-4" style="padding: 2rem; max-width: 48rem;">
+          <p><a href="mailto:contact@bilan-carre-demo.local">contact@bilan-carre-demo.local</a></p>
+          <p class="mt-4">03 00 00 00 01 (fictif)</p>
+          <p class="mt-4">8 rue du Parc, 57000 Ville-Fictive</p>
+        </div>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour au hub des démos</a></p>
       </div>
     </section>
   </main>
-  <footer>
-    <p>Bilan Carré Experts — identité et contenus inventés pour portfolio.</p>
-    <p><a href="../index.html">Retour au hub des démos</a></p>
+
+  <footer class="footer has-background-dark is-vitrine-footer">
+    <div class="container is-widescreen">
+      <div class="columns is-multiline has-text-grey-light">
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Bilan Carré Experts</p>
+          <p class="is-size-6">Identité et contenus inventés.</p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Navigation</p>
+          <p class="is-size-6"><a class="has-text-grey-lighter" href="#process">Process</a> · <a class="has-text-grey-lighter" href="#bilan-flash">Bilan flash</a></p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Crédits</p>
+          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-grey-lighter" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

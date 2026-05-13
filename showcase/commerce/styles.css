@@ -1,0 +1,23 @@
+:root {
+  --com-leaf: #2d6a4f;
+  --com-mint: #95d5b2;
+  --com-cream: #f1faee;
+}
+
+.com-hero {
+  background:
+    linear-gradient(115deg, rgba(27, 67, 50, 0.96) 0%, rgba(45, 106, 79, 0.9) 45%, rgba(27, 67, 50, 0.98) 100%),
+    radial-gradient(700px 360px at 10% 30%, rgba(149, 213, 178, 0.2), transparent 50%);
+}
+
+.has-text-com-mint {
+  color: var(--com-mint) !important;
+}
+
+.section.is-com-cream {
+  background-color: var(--com-cream) !important;
+}
+
+.box.is-com-tint {
+  border-top: 3px solid var(--com-leaf);
+}

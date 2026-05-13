@@ -6,173 +6,294 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Démo fictive — cabinet dentaire.">
   <title>Cabinet Sourire Lorraine — Odontologie (fictif)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../shared/reset.css">
-  <link rel="stylesheet" href="../shared/tokens.css">
-  <link rel="stylesheet" href="../shared/media.css">
-  <link rel="stylesheet" href="../shared/layout-desktop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Cabinet <span>Sourire Lorraine</span></div>
-    <nav aria-label="Navigation">
-      <a href="#soins">Soins &amp; tarifs</a>
-      <a href="#equipe">Équipe</a>
-      <a href="#avis">Avis</a>
-      <a href="#rdv">Rendez-vous</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero-split" aria-labelledby="hero-title">
-      <div class="hero-split__copy">
-        <h1 id="hero-title">Une dentition sereine, au quotidien</h1>
-        <p>Soins conservateurs, esthétique et urgences — grille tarifaire et praticiens entièrement fictifs.</p>
-        <a class="btn" href="#rdv">Prendre rendez-vous</a>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
+    <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5 odo-brand" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-tooth" aria-hidden="true"></i></span><span>Cabinet Sourire Lorraine</span></span></a>
       </div>
-      <div class="hero-split__media" role="presentation">
-        <img src="images/hero.png" width="1200" height="900" alt="Salle d’attente lumineuse d’un cabinet dentaire moderne" decoding="async" fetchpriority="high">
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
+          <a class="navbar-item" href="#cabinet"><span class="icon-text"><span class="icon"><i class="fa-solid fa-hospital" aria-hidden="true"></i></span><span>Cabinet</span></span></a>
+          <a class="navbar-item" href="#prevention"><span class="icon-text"><span class="icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></span><span>Prévention</span></span></a>
+          <a class="navbar-item" href="#soins"><span class="icon-text"><span class="icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span><span>Soins</span></span></a>
+          <a class="navbar-item" href="#avis"><span class="icon-text"><span class="icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span><span>Avis</span></span></a>
+          <a class="navbar-item" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
+          <a class="navbar-item" href="#rappel"><span class="icon-text"><span class="icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></span><span>Rappel</span></span></a>
+          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
+        </div>
       </div>
-    </section>
+    </div>
+  </nav>
 
-    <section class="block block--tight" aria-labelledby="horaires-title">
-      <aside class="panel panel--inline" aria-labelledby="horaires-title">
-        <h2 id="horaires-title">Horaires d’accueil</h2>
-        <ul class="hours">
-          <li><span>Lundi – Jeudi</span><span>8h30 – 18h30</span></li>
-          <li><span>Vendredi</span><span>8h30 – 17h00</span></li>
-          <li><span>Urgences dentaires</span><span>15h – 17h</span></li>
-        </ul>
-      </aside>
-    </section>
-
-    <section id="soins" class="block" aria-labelledby="soins-title">
-      <h2 id="soins-title">Soins &amp; tarifs indicatifs (démo)</h2>
-      <p class="section-lede">Montants TTC inventés, non contractuels. Aucune prise en charge réelle.</p>
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th scope="col">Acte</th>
-            <th scope="col">Description</th>
-            <th scope="col">À partir de</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Bilan bucco-dentaire</td>
-            <td>Examen clinique + petites radios si besoin (fictif)</td>
-            <td>45&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Détartrage complet</td>
-            <td>2 arcades, brossage démo</td>
-            <td>68&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Facette céramique</td>
-            <td>Par dent, simulation numérique incluse</td>
-            <td>520&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Blanchiment ambulatoire</td>
-            <td>2 séances, gouttières perso « démo »</td>
-            <td>390&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Couronne zircone</td>
-            <td>Pilier standard, délai 10 jours ouvrés fictif</td>
-            <td>780&nbsp;€</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="cards cards--spaced">
-        <article class="mini">
-          <h3>Parodontologie</h3>
-          <p>Surfaçage radiculaire secteur — <strong>85&nbsp;€</strong> / secteur (exemple).</p>
-        </article>
-        <article class="mini">
-          <h3>Pédodontie</h3>
-          <p>Scellement sillons 6 ans — <strong>28&nbsp;€</strong> / dent (fictif).</p>
-        </article>
-        <article class="mini">
-          <h3>Urgence</h3>
-          <p>Consultation douleur week-end — <strong>55&nbsp;€</strong> (démo).</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="equipe" class="block alt" aria-labelledby="equipe-title">
-      <h2 id="equipe-title">Équipe soignante (fictive)</h2>
-      <p class="section-lede">Dr Inès Morlot (chirurgien-dentiste), Dr Hélène Varga (orthodontie démo), 3 assistantes stérilisation — diplômes et RPPS inventés.</p>
-    </section>
-
-    <section id="avis" class="block" aria-labelledby="avis-title">
-      <h2 id="avis-title">Avis patients (inventés)</h2>
-      <div class="reviews">
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#006b6b;color:#fff;">TB</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Thomas B.</p>
-              <p class="review-card__date">8 mars 2026</p>
+  <main id="contenu" tabindex="-1">
+    <section id="accueil" class="hero odo-hero is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column is-6">
+              <p class="title is-1 has-text-white">Une dentition sereine</p>
+              <p class="subtitle is-4 has-text-white-ter" style="max-width: 36rem;">
+                Soins, esthétique et urgences — grille et praticiens entièrement fictifs.
+              </p>
+              <a class="button is-white is-medium mt-4" href="#contact">Prendre rendez-vous (démo)</a>
+              <a class="button is-light is-outlined is-medium mt-2 ml-3" href="#prevention">Prévention</a>
             </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
-          </div>
-          <p class="review-card__text">«&nbsp;Détartrage sans douleur, explications claires sur le brossage interdentaire. Accueil top.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#9cf0ef;color:#002020;">AL</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Amina L.</p>
-              <p class="review-card__date">21 janv. 2026</p>
+            <div class="column is-6">
+              <figure class="vitrine-figure">
+                <img src="images/hero.png" width="1200" height="900" alt="Salle d’attente lumineuse (photo générée)" decoding="async" fetchpriority="high">
+              </figure>
             </div>
-            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
           </div>
-          <p class="review-card__text">«&nbsp;Facettes très naturelles. Seul bémol : délai de 3 semaines pour la couleur finale — ok pour la maquette.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#dbe8e6;color:#094848;">PG</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Patricia G.</p>
-              <p class="review-card__date">2 déc. 2025</p>
-            </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
-          </div>
-          <p class="review-card__text">«&nbsp;Urgence un dimanche : rappel sous 20&nbsp;min, rendez-vous le lundi matin. Rassurant.&nbsp;»</p>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section id="rdv" class="block" aria-labelledby="rdv-title">
-      <h2 id="rdv-title">Contact</h2>
-      <p class="section-lede">03 00 00 00 00 · contact@sourire-lorraine-demo.local · Parking gratuit (fictif)</p>
+    <section class="section vitrine-cta-banner odo-cta-banner has-text-white" aria-label="Appel à l’action">
+      <div class="container is-widescreen">
+        <div class="columns is-vcentered">
+          <div class="column is-8">
+            <p class="title is-4 has-text-white">Bilan bucco-dentaire + détartrage (démo)</p>
+            <p class="subtitle is-6 has-text-white-ter mb-0">Offre graphique sans acte médical réel — CTA pour la maquette.</p>
+          </div>
+          <div class="column is-4 has-text-right-tablet">
+            <a class="button is-white is-medium" href="#rappel">Être rappelé</a>
+            <a class="button is-light is-outlined is-medium ml-2" href="#contact">Téléphone</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="parcours" class="block layout-wide" aria-labelledby="parcours-title">
-      <h2 id="parcours-title" class="density-hero-title" style="font-size: clamp(1.6rem, 2.2vw, 2.5rem); color: var(--md-sys-color-on-primary-container);">Parcours de soin — documentation fictive pour remplir l’écran</h2>
-      <p class="density-lead">Sur desktop, ce bloc teste la lecture longue, les listes et une image panoramique sous légende. Aucun acte médical réel n’est proposé.</p>
-      <figure class="figure-banner" style="margin: 1.5rem 0;">
-        <img src="images/salle.png" width="1600" height="686" alt="Salle de soins dentaire lumineuse (image générée)" loading="lazy" decoding="async">
-        <figcaption>Visuel généré — équipement de démonstration.</figcaption>
-      </figure>
-      <div class="prose-columns density-body">
-        <h3>Accueil, anamnèse, traitement, suivi (simulation)</h3>
-        <p>Nous décrivons un parcours patient imaginaire : questionnaire médical numérisé, prise de tension au bras droit, discussion sur les habitudes de brossage, radiographie bitewing si « zone d’ombre » détectée, proposition de plan de traitement en trois volets, devis séparé pour chaque phase, signature électronique fictive sur tablette, rappel SMS J-1, stationnement P2 avec ticket validé à l’accueil, magazine de salle d’attente daté de février 2026, fontaine à eau avec gobelets compostables, musique d’ambiance piano, lumière indirecte 3000&nbsp;K, chaise ergonomique taupe, instruments emballés stérile visible en vitrine pédagogique.</p>
-        <p>Nous ajoutons des paragraphes pour la volumétrie : la prévention reste le pilier de la politique santé bucco-dentaire démo ; les détartrages réguliers limitent l’inflammation gingivale ; les brossettes interdentaires sont montrées sur modèle en résine ; le fil dentaire est décrit comme un allié des espaces étroits ; le bain de bouche est présenté sans marque ; la brosse à dents électrique est évoquée comme option sans recommandation commerciale réelle.</p>
-        <ul>
-          <li>Durée moyenne fictive d’un bilan : 45&nbsp;minutes.</li>
-          <li>Délai moyen imaginaire entre deux blanchiments : 14&nbsp;jours.</li>
-          <li>Taux de satisfaction affiché « interne » : 96&nbsp;% (démo).</li>
-        </ul>
+    <section class="section is-vitrine" id="cabinet" aria-labelledby="t-cab">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-cab">Cabinet &amp; horaires</h2>
+        <div class="columns mt-5">
+          <div class="column is-5">
+            <div class="box is-vitrine content is-size-5">
+              <p class="title is-4 odo-accent-text">Horaires</p>
+              <p><strong>Lun – Jeu</strong> · 8h30 – 18h30</p>
+              <p><strong>Vendredi</strong> · 8h30 – 17h00</p>
+              <p><strong>Urgences</strong> · 15h – 17h (fictif)</p>
+            </div>
+          </div>
+          <div class="column is-7">
+            <div class="box is-vitrine content is-size-5">
+              <p class="title is-4 odo-accent-text">Équipe (fictive)</p>
+              <p>Dr Inès Morlot, Dr Hélène Varga, trois assistantes — diplômes inventés.</p>
+            </div>
+            <figure class="vitrine-figure mt-5">
+              <img src="images/equipe-soins.png" width="1200" height="900" alt="Équipe soignante (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="prevention" aria-labelledby="t-prev">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-prev">Prévention &amp; pédagogie</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
+          Ce bloc prolonge le discours santé avec du contenu éditorial de démonstration&nbsp;: rappels de brossage imaginaires, séances d’hygiène fictives pour enfants et adultes, et rappels de contrôle semestriel sans valeur médicale. L’illustration colorée et la photo de salle servent à contraster styles «&nbsp;dessin&nbsp;» et «&nbsp;photo clinique&nbsp;».
+        </p>
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/odo-illus-brossage.png" width="900" height="900" alt="Illustration brossage assisté (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-6">
+            <div class="box is-vitrine content is-size-5">
+              <p class="tags"><span class="tag is-primary is-light">Enfant</span><span class="tag is-info is-light">Adulte</span><span class="tag is-warning">Sport</span></p>
+              <p class="mt-4"><strong>Adoption des gestes (démo)</strong></p>
+              <progress class="progress is-primary" value="76" max="100">76&nbsp;%</progress>
+              <p class="mt-3"><strong>Rappel RDV préventif (fictif)</strong></p>
+              <progress class="progress is-info" value="64" max="100">64&nbsp;%</progress>
+            </div>
+            <article class="message is-primary is-light mt-4">
+              <div class="message-body is-size-6">Aucun diagnostic ni conseil personnalisé sur ce site — contenu strictement factice pour portfolio.</div>
+            </article>
+          </div>
+        </div>
+        <div class="columns is-vcentered is-multiline mt-5">
+          <div class="column is-7">
+            <div class="tile is-ancestor">
+              <div class="tile is-parent is-6">
+                <article class="tile is-child box is-vitrine-child">
+                  <p class="title is-5 odo-accent-text">Scellement</p>
+                  <p class="is-size-6">Prévention caries sillons — texte d’exemple.</p>
+                </article>
+              </div>
+              <div class="tile is-parent is-6">
+                <article class="tile is-child box is-vitrine-child">
+                  <p class="title is-5 odo-accent-text">Fluoration</p>
+                  <p class="is-size-6">Séances collectives fictives, âges indicatifs.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="column is-5">
+            <figure class="vitrine-figure">
+              <img src="images/odo-salle-soins-vide.png" width="1200" height="675" alt="Salle de soins vide (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="soins" aria-labelledby="t-soins">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-soins">Soins &amp; tarifs indicatifs</h2>
+        <p class="subtitle is-5 has-text-centered mb-5">Montants TTC inventés — aucune prise en charge réelle.</p>
+        <div class="columns">
+          <div class="column is-7">
+            <div class="table-container is-vitrine">
+              <table class="table is-fullwidth is-striped is-size-5">
+                <thead><tr><th>Acte</th><th>Description</th><th>À partir de</th></tr></thead>
+                <tbody>
+                  <tr><td>Bilan</td><td>Examen + radios si besoin</td><td>45&nbsp;€</td></tr>
+                  <tr><td>Détartrage</td><td>2 arcades</td><td>68&nbsp;€</td></tr>
+                  <tr><td>Facette</td><td>Par dent, numérique</td><td>520&nbsp;€</td></tr>
+                  <tr><td>Blanchiment</td><td>2 séances démo</td><td>390&nbsp;€</td></tr>
+                  <tr><td>Couronne</td><td>Zircone, 10 jours fictifs</td><td>780&nbsp;€</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="column is-5">
+            <div class="box is-vitrine mb-4"><p class="title is-5">Parodontologie</p><p class="is-size-5">Surfaçage secteur — <strong>85&nbsp;€</strong> (exemple).</p></div>
+            <div class="box is-vitrine mb-4"><p class="title is-5">Pédodontie</p><p class="is-size-5">Scellement — <strong>28&nbsp;€</strong> / dent (fictif).</p></div>
+            <div class="box is-vitrine"><p class="title is-5">Urgence</p><p class="is-size-5">Consultation week-end — <strong>55&nbsp;€</strong> (démo).</p></div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/salle.png" width="1600" height="686" alt="Salle de soins (image générée)" loading="lazy" decoding="async">
+        </figure>
+        <div class="has-text-centered mt-5">
+          <a class="button is-primary is-medium" href="#rappel">Demander un rappel (fictif)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="avis" aria-labelledby="t-avis">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-avis">Avis patients (inventés)</h2>
+        <div class="columns mt-5">
+          <div class="column is-4">
+            <div class="box is-vitrine"><p class="title is-5">Thomas B.</p><p class="is-size-5">«&nbsp;Détartrage sans douleur, explications claires.&nbsp;»</p></div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine"><p class="title is-5">Amina L.</p><p class="is-size-5">«&nbsp;Facettes naturelles — délai noté en démo.&nbsp;»</p></div>
+          </div>
+          <div class="column is-4">
+            <div class="box is-vitrine"><p class="title is-5">Patricia G.</p><p class="is-size-5">«&nbsp;Urgence : rappel rapide (fictif).&nbsp;»</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-faq">Questions fréquentes (démo)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large odo-accent-text" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <path d="M8 20h24M20 8v24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Douleur après soin&nbsp;?</strong> Réponse générique — pas de téléconsultation réelle.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large odo-accent-text" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <circle cx="20" cy="18" r="8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 34c2-8 18-8 20 0" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Mutuelle&nbsp;?</strong> Aucune prise en charge n’est calculée sur cette page.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="rappel" aria-labelledby="t-rappel">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-10-tablet is-7-desktop">
+            <h2 class="title is-2 has-text-centered" id="t-rappel">Être rappelé (fictif)</h2>
+            <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans envoi — créneaux inventés.</p>
+            <div class="box is-vitrine vitrine-form-panel">
+              <form action="#" method="get" class="content">
+                <div class="field"><label class="label" for="rp-tel">Téléphone</label><div class="control"><input class="input" type="tel" id="rp-tel" name="tel" autocomplete="tel" placeholder="06 00 00 00 00"></div></div>
+                <div class="field"><label class="label" for="rp-motif">Motif</label><div class="control"><div class="select is-fullwidth"><select id="rp-motif" name="motif"><option>Urgence dentaire</option><option>Bilan</option><option>Esthétique</option></select></div></div></div>
+                <div class="field"><label class="label" for="rp-creneau">Créneau souhaité</label><div class="control"><input class="input" type="text" id="rp-creneau" name="creneau" placeholder="Matin / après-midi (fictif)"></div></div>
+                <button type="button" class="button is-primary is-medium is-fullwidth">Demander le rappel (démo)</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vitrine-cta-banner odo-cta-banner has-text-white" aria-label="Second appel à l’action">
+      <div class="container is-widescreen has-text-centered">
+        <p class="title is-4 has-text-white">Première visite&nbsp;: parcours découverte (maquette)</p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-white is-medium" href="#contact">Itinéraire &amp; parking</a>
+          <a class="button is-light is-outlined is-medium" href="../index.html">Hub des démos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine odo-contact-section" id="contact" aria-labelledby="t-contact">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-white" id="t-contact">Contact</h2>
+        <div class="notification is-white is-size-5 mt-4 box" style="padding: 2rem; max-width: 40rem;">
+          <p>03 00 00 00 00 (fictif)</p>
+          <p class="mt-4"><a href="mailto:contact@sourire-lorraine-demo.local">contact@sourire-lorraine-demo.local</a></p>
+          <p class="mt-4">Parking gratuit (démo)</p>
+        </div>
+        <p class="mt-5"><a class="button is-white is-medium" href="../index.html">← Retour au hub des démos</a></p>
       </div>
     </section>
   </main>
-  <footer>
-    <p>Cabinet Sourire Lorraine — site de démonstration uniquement.</p>
-    <p><a href="../index.html">Retour au hub des démos</a></p>
+
+  <footer class="footer has-background-dark is-vitrine-footer">
+    <div class="container is-widescreen">
+      <div class="columns is-multiline has-text-grey-light">
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Cabinet Sourire Lorraine</p>
+          <p class="is-size-6">Site de démonstration uniquement.</p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Liens</p>
+          <p class="is-size-6"><a class="has-text-grey-lighter" href="#prevention">Prévention</a> · <a class="has-text-grey-lighter" href="#rappel">Rappel</a></p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Crédits</p>
+          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-grey-lighter" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

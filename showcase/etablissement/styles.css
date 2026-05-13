@@ -1,0 +1,19 @@
+:root {
+  --etab-gold: #c4a35a;
+  --etab-bronze: #8b6914;
+  --etab-wine: #3d2f2a;
+}
+
+.etab-hero {
+  background:
+    linear-gradient(130deg, rgba(45, 37, 32, 0.96) 0%, rgba(26, 21, 18, 0.95) 50%, rgba(15, 12, 10, 0.99) 100%),
+    radial-gradient(600px 320px at 30% 10%, rgba(196, 163, 90, 0.12), transparent 55%);
+}
+
+.has-text-etab-gold {
+  color: var(--etab-gold) !important;
+}
+
+.box.is-etab-frame {
+  border: 1px solid rgba(196, 163, 90, 0.25);
+}

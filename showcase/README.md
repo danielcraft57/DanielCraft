@@ -34,7 +34,7 @@ Puis à la racine du dépôt :
 python showcase/screenshot_showcases.py
 ```
 
-Sortie : `showcase/screenshots/<hub|chocolatier|…>/desktop_1440x900.png`, `tablet_834x1112.png`, `mobile_390x844.png` (PNG **pleine page** pour chaque viewport).
+Sortie : `showcase/screenshots/<hub|chocolatier|…>/<desktop|tablet|mobile>_<WxH>.jpg` (ou `.webp` si `WEBSITE_SCREENSHOT_CAPTURE_FORMAT=webp`). Les tailles de viewport, délais, `wait_until`, qualités JPEG/WebP, `device_scale_factor`, blocage trackers, `reduced_motion` et désactivation des animations suivent les variables d’environnement **`WEBSITE_SCREENSHOT_*`** (mêmes noms que la config Celery du site). Capture PNG pleine page côté Playwright, puis **redimensionnement** selon `WEBSITE_SCREENSHOT_MAX_WIDTH_*` et export via **Pillow** (inclus dans `requirements-screenshots.txt`).
 
 PowerShell :
 

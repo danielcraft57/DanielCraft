@@ -6,148 +6,312 @@
   <meta name="color-scheme" content="dark">
   <meta name="description" content="Démo fictive — sous-traitance industrielle.">
   <title>Atelier Mécano-Precision 54 — Industrie (fictif)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../shared/reset.css">
-  <link rel="stylesheet" href="../shared/tokens.css">
-  <link rel="stylesheet" href="../shared/media.css">
-  <link rel="stylesheet" href="../shared/layout-desktop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <div class="logo">Atelier <span>Mécano-Precision 54</span></div>
-    <nav aria-label="Navigation">
-      <a href="#expertise">Expertise</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#avis">Références</a>
-      <a href="#contact">Usine</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero hero--photo" aria-labelledby="hero-title">
-      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
-      <div class="hero__veil" aria-hidden="true"></div>
-      <div class="hero__inner">
-        <h1 id="hero-title">Usinage &amp; assemblage pour l’industrie lourde</h1>
-        <p>Pièces unitaires et petites séries — délais et tarifs d’exemple pour portfolio.</p>
-        <a class="btn" href="#contact">Demander une étude (fictif)</a>
-        <div class="stats" aria-label="Indicateurs de démonstration">
-          <div class="stat">
-            <strong>ISO*</strong>
-            <span>*certification imaginaire</span>
+<body class="industrie-body">
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <nav class="navbar is-dark is-spaced" role="navigation" aria-label="Navigation principale">
+    <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5 has-text-warning" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-industry" aria-hidden="true"></i></span><span>Mécano-Precision 54</span></span></a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item has-text-light" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
+          <a class="navbar-item has-text-light" href="#usine"><span class="icon-text"><span class="icon"><i class="fa-solid fa-warehouse" aria-hidden="true"></i></span><span>Usine</span></span></a>
+          <a class="navbar-item has-text-light" href="#chaine"><span class="icon-text"><span class="icon"><i class="fa-solid fa-link" aria-hidden="true"></i></span><span>Chaîne</span></span></a>
+          <a class="navbar-item has-text-light" href="#prestations"><span class="icon-text"><span class="icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span><span>Prestations</span></span></a>
+          <a class="navbar-item has-text-light" href="#qualite"><span class="icon-text"><span class="icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span><span>Qualité</span></span></a>
+          <a class="navbar-item has-text-light" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
+          <a class="navbar-item has-text-light" href="#devis"><span class="icon-text"><span class="icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span><span>Devis</span></span></a>
+          <a class="navbar-item has-text-light" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenu" tabindex="-1">
+    <section id="accueil" class="hero is-dark is-medium industrie-hero">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title is-1 has-text-warning">Usinage &amp; assemblage</p>
+          <p class="subtitle is-4 has-text-grey-lighter" style="max-width: 44rem;">
+            Pièces unitaires et petites séries — délais et tarifs d’exemple pour captures portfolio.
+          </p>
+          <div class="buttons mt-5">
+            <a class="button is-warning is-medium" href="#prestations">Voir les prestations</a>
+            <a class="button is-light is-outlined is-medium" href="#contact">Demander une étude (fictif)</a>
           </div>
-          <div class="stat">
-            <strong>24 h</strong>
-            <span>prototype express démo</span>
-          </div>
-          <div class="stat">
-            <strong>±2 µm</strong>
-            <span>tolérance cible</span>
+          <div class="columns is-multiline mt-6">
+            <div class="column is-4">
+              <div class="box has-background-grey-darker has-text-light" style="padding: 1.75rem;">
+                <p class="title is-4 has-text-warning">ISO*</p>
+                <p class="is-size-6">*certification imaginaire</p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box has-background-grey-darker has-text-light" style="padding: 1.75rem;">
+                <p class="title is-4 has-text-warning">24 h</p>
+                <p class="is-size-6">prototype express démo</p>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box has-background-grey-darker has-text-light" style="padding: 1.75rem;">
+                <p class="title is-4 has-text-warning">±2 µm</p>
+                <p class="is-size-6">tolérance cible fictive</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="expertise" aria-labelledby="exp-title">
-      <h2 id="exp-title">Expertise &amp; prestations</h2>
-      <p class="section-lede">Matières : acier 42CrMo4, inox 316L, aluminium 7075 — références inventées.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>Fraisage 5 axes</h3>
-          <p>Poche complexe, surfacage finition Ra 0,8 — <strong>à partir de 185&nbsp;€ HT</strong> / heure machine (démo).</p>
-        </article>
-        <article class="card">
-          <h3>Tournage CN</h3>
-          <p>Ø max 420&nbsp;mm fictif — barres et flasques — <strong>95&nbsp;€ HT</strong> / heure.</p>
-        </article>
-        <article class="card">
-          <h3>Contrôle 3D</h3>
-          <p>Rapport PDF + nuage de points — <strong>120&nbsp;€ HT</strong> / pièce simple (exemple).</p>
+    <section class="section vitrine-cta-banner has-background-warning py-5" aria-label="Appel à l’action">
+      <div class="container is-widescreen">
+        <div class="columns is-vcentered">
+          <div class="column is-8">
+            <p class="title is-4 has-text-dark">Étude de faisabilité 24&nbsp;h (démo)</p>
+            <p class="subtitle is-6 has-text-dark mb-0" style="opacity: 0.88;">Envoyez un plan — aucun fichier n’est traité sur cette vitrine.</p>
+          </div>
+          <div class="column is-4 has-text-right-tablet">
+            <a class="button is-dark is-medium" href="#devis">Formulaire devis</a>
+            <a class="button is-white is-medium has-text-dark ml-2" href="#prestations">Voir tarifs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-black-ter" id="usine" aria-labelledby="t-usine">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-usine">Moyens &amp; matières</h2>
+        <div class="columns is-vcentered mt-5">
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/ligne-production.png" width="1200" height="900" alt="Ligne d’usinage (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-6">
+            <div class="box has-background-grey-darker has-text-light content is-size-5" style="padding: 2rem;">
+              <p>Acer 42CrMo4, inox 316L, alu 7075 — références inventées. 4&nbsp;500&nbsp;m² imaginaires, deux lignes CN, cellule climatisée fictive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-black-bis" id="chaine" aria-labelledby="t-chaine">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-chaine">Chaîne de valeur &amp; atelier</h2>
+        <p class="subtitle is-5 has-text-centered has-text-grey mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
+          Section longue pour tester contrastes sur fond sombre&nbsp;: flux matière imaginaire, ordres de fabrication fictifs, indicateurs OEE d’exemple et revues outils simulées. Les photographies ci-dessous (soudure, plan sur établi) complètent les rendus déjà présents sur la page.
+        </p>
+        <div class="columns is-multiline">
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/industrie-soudure.png" width="1200" height="675" alt="Poste de soudure en atelier (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/industrie-plan-usine.png" width="1200" height="675" alt="Plan technique sur établi (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+        <div class="tile is-ancestor mt-5">
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-background-grey-darker has-text-light">
+              <p class="title is-5 has-text-warning">Moyens</p>
+              <p class="is-size-6">Parc machines inventé — pas de capacité réelle.</p>
+              <p class="mt-3"><strong>Charge atelier (démo)</strong></p>
+              <progress class="progress is-warning" value="58" max="100">58&nbsp;%</progress>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-background-grey-darker has-text-light">
+              <p class="title is-5 has-text-warning">Séries</p>
+              <p class="is-size-6">Lancement fictif, kitting, contrôle intermédiaire.</p>
+              <p class="mt-3"><span class="tag is-warning">CN</span> <span class="tag is-dark">3D</span> <span class="tag is-light">MQ</span></p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-background-grey-darker has-text-light">
+              <p class="title is-5 has-text-warning">Délais</p>
+              <p class="is-size-6">Gantt symbolique — planning non contractuel.</p>
+              <p class="mt-3"><strong>Respect démo</strong></p>
+              <progress class="progress is-success" value="81" max="100">81&nbsp;%</progress>
+            </article>
+          </div>
+        </div>
+        <article class="message is-dark mt-5">
+          <div class="message-body has-text-grey-lighter is-size-6">Message Bulma sur fond sombre — rappel que toutes les certifications et tolérances sont imaginaires.</div>
         </article>
       </div>
     </section>
 
-    <section id="tarifs" aria-labelledby="tarifs-title">
-      <h2 id="tarifs-title">Lots indicatifs (fictifs)</h2>
-      <table class="price-table price-table--dark">
-        <thead>
-          <tr>
-            <th scope="col">Lot</th>
-            <th scope="col">Détail</th>
-            <th scope="col">Budget type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10 flasques usinées</td>
-            <td>Inox, fraisage + polissage</td>
-            <td>2&nbsp;400 – 2&nbsp;900&nbsp;€ HT</td>
-          </tr>
-          <tr>
-            <td>Prototype arbre cannelé</td>
-            <td>Traitement thermique inclus (démo)</td>
-            <td>1&nbsp;100&nbsp;€ HT</td>
-          </tr>
-          <tr>
-            <td>Série 250 pièces</td>
-            <td>Alu, cycle automatisé</td>
-            <td>8&nbsp;€ HT / pièce</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="avis" aria-labelledby="avis-title">
-      <h2 id="avis-title">Ils nous font confiance (fictif)</h2>
-      <div class="reviews">
-        <article class="review-card review-card--dark">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#ff8c42;color:#1a0b00;">LH</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Lucas H. — HydroTech Est (marque inventée)</p>
-              <p class="review-card__date">19 janv. 2026</p>
+    <section class="section is-vitrine has-background-black-ter" id="prestations" aria-labelledby="t-presta">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-presta">Prestations &amp; budgets</h2>
+        <div class="columns is-multiline mt-5">
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem; min-height: 12rem;">
+              <p class="title is-4 has-text-warning">Fraisage 5 axes</p>
+              <p class="is-size-5">À partir de <strong>185&nbsp;€ HT</strong> / h machine (démo).</p>
             </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
           </div>
-          <p class="review-card__text">«&nbsp;Délai prototype 22&nbsp;h respecté sur notre vilebrequin démo. BE intégré très pro.&nbsp;»</p>
-        </article>
-        <article class="review-card review-card--dark">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#262a32;color:#eceef2;">NP</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Nadia P.</p>
-              <p class="review-card__date">3 nov. 2025</p>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem; min-height: 12rem;">
+              <p class="title is-4 has-text-warning">Tournage CN</p>
+              <p class="is-size-5"><strong>95&nbsp;€ HT</strong> / h — Ø max fictif 420&nbsp;mm.</p>
             </div>
-            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
           </div>
-          <p class="review-card__text">«&nbsp;Série 250 pièces nickel. Communication planning pourrait être + fréquente — retour maquette.&nbsp;»</p>
-        </article>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem; min-height: 12rem;">
+              <p class="title is-4 has-text-warning">Contrôle 3D</p>
+              <p class="is-size-5"><strong>120&nbsp;€ HT</strong> / pièce simple (exemple).</p>
+            </div>
+          </div>
+        </div>
+        <div class="table-container mt-5" style="border-radius: 10px; overflow: hidden; border: 1px solid #4a4a4a;">
+          <table class="table is-fullwidth is-striped has-background-grey-darker has-text-light is-size-5">
+            <thead class="has-background-grey-dark">
+              <tr><th>Lot</th><th>Détail</th><th>Budget type</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>10 flasques</td><td>Inox, fraisage + poli</td><td>2&nbsp;400 – 2&nbsp;900&nbsp;€ HT</td></tr>
+              <tr><td>Prototype arbre</td><td>TTH inclus (démo)</td><td>1&nbsp;100&nbsp;€ HT</td></tr>
+              <tr><td>Série 250</td><td>Alu automatisé</td><td>8&nbsp;€ HT / pièce</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="has-text-centered mt-5">
+          <a class="button is-warning is-medium" href="#devis">Demander un chiffrage (fictif)</a>
+        </div>
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Site de production (fictif)</h2>
-      <p class="section-lede">Z.I. des Charmes, 54000 Ville-Industrie-Démo · contact@mecano-precision54-demo.local</p>
+    <section class="section is-vitrine has-background-black-ter" id="qualite" aria-labelledby="t-qual">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-qual">Qualité &amp; références</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem;">
+              <p class="title is-5 has-text-warning">Lucas H.</p>
+              <p class="is-size-5">«&nbsp;Prototype 22&nbsp;h respecté — BE intégré pro sur maquette.&nbsp;»</p>
+            </div>
+          </div>
+          <div class="column is-6">
+            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem;">
+              <p class="title is-5 has-text-warning">Nadia P.</p>
+              <p class="is-size-5">«&nbsp;Série 250 nickel — communication à renforcer (fictif).&nbsp;»</p>
+            </div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/controle.png" width="1600" height="686" alt="Contrôle pièce (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
     </section>
 
-    <section id="qualite-visuel" class="layout-wide" aria-labelledby="qv-title" style="max-width:1120px;margin:0 auto;padding:clamp(28px,5vw,48px) clamp(16px,4vw,28px);">
-      <h2 id="qv-title" class="density-hero-title" style="font-size: clamp(1.5rem, 2vw, 2.25rem);">Contrôle &amp; métrologie — rapport imaginaire plein écran</h2>
-      <p class="density-lead">Section supplémentaire pour desktop : image large, texte en colonnes sur XL, vocabulaire technique inventé.</p>
-      <figure class="figure-banner">
-        <img src="images/controle.png" width="1600" height="686" alt="Contrôle dimensionnel pièce usinée (image générée)" loading="lazy" decoding="async">
-        <figcaption>Visuel généré — pas de certification réelle.</figcaption>
-      </figure>
-      <div class="prose-columns density-body" style="color: var(--md-sys-color-on-surface-variant);">
-        <h3 style="color: var(--md-sys-color-on-surface);">Armoire 3D &amp; rapport PDF (démo)</h3>
-        <p>Nous simulons un contrôle sur bride moteur : plan de palpage 42 points, tolérance géométrique sur diamètre fictif, compensation thermique pièce/machine, graphique SPC sur cinq derniers lots, commentaire automatique « process sous contrôle », signature du contrôleur « L.M. », cachet numérique, QR code vers archive introuvable, annexe photos huit vues, glossaire des abréviations Cp Cpk Pp Ppk inventées pour la démo.</p>
-        <p>Paragraphe additionnel pour allonger : EPI obligatoires, consignes levée, cariste certificat CACES démo, rack palettes Europe, chariot élévateur orange, ligne jaune au sol, extincteur CO2, porte coupe-feu, alarme sonore test mensuel, registre sécurité rempli au crayon, stylo rouge pour les anomalies, café dans un gobelet réutilisable marron.</p>
+    <section class="section is-vitrine has-background-black-bis" id="faq" aria-labelledby="t-faq">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-faq">FAQ technique (démo)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <article class="media box has-background-grey-darker has-text-light">
+              <figure class="media-left">
+                <span class="icon is-large has-text-warning" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <rect x="6" y="8" width="30" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 18h18M12 24h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>Fichiers STEP&nbsp;?</strong> Dépôt fictif — aucune CAO réelle traitée.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="media box has-background-grey-darker has-text-light">
+              <figure class="media-left">
+                <span class="icon is-large has-text-warning" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <circle cx="21" cy="21" r="14" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 14v10M14 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p><strong>NDA&nbsp;?</strong> Texte juridique absent — maquette seulement.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-black-ter" id="devis" aria-labelledby="t-devis">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-10-tablet is-7-desktop">
+            <h2 class="title is-2 has-text-centered has-text-light" id="t-devis">Devis express (fictif)</h2>
+            <p class="subtitle is-6 has-text-centered has-text-grey mb-5">Formulaire sans envoi — composants Bulma sur fond sombre.</p>
+            <div class="box has-background-grey-darker has-text-light vitrine-form-panel">
+              <form action="#" method="get" class="content">
+                <div class="field"><label class="label has-text-grey-lighter" for="dv-societe">Société</label><div class="control"><input class="input" type="text" id="dv-societe" name="societe"></div></div>
+                <div class="field"><label class="label has-text-grey-lighter" for="dv-mat">Matière</label><div class="control"><div class="select is-fullwidth"><select id="dv-mat" name="mat"><option>Inox</option><option>Alu</option><option>Acier</option></select></div></div></div>
+                <div class="field"><label class="label has-text-grey-lighter" for="dv-qte">Quantité</label><div class="control"><input class="input" type="number" id="dv-qte" name="qte" min="1" value="10"></div></div>
+                <div class="field"><label class="label has-text-grey-lighter" for="dv-notes">Notes BE</label><div class="control"><textarea class="textarea" id="dv-notes" name="notes" rows="3" placeholder="Cotes, finitions… (fictif)"></textarea></div></div>
+                <button type="button" class="button is-warning is-medium is-fullwidth">Envoyer (démo)</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vitrine-cta-banner has-background-grey-darker py-5" aria-label="Second appel à l’action">
+      <div class="container is-widescreen has-text-centered">
+        <p class="title is-4 has-text-white">Lancer un prototype (maquette)</p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-warning is-medium" href="#contact">Coordonnées</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-black-bis" id="contact" aria-labelledby="t-contact">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-light" id="t-contact">Contact</h2>
+        <div class="notification is-dark is-size-5 mt-4" style="padding: 2rem; max-width: 42rem;">
+          <p>Z.I. des Charmes, 54000 Ville-Industrie-Démo</p>
+          <p class="mt-4"><a class="has-text-warning" href="mailto:contact@mecano-precision54-demo.local">contact@mecano-precision54-demo.local</a></p>
+        </div>
+        <p class="mt-5"><a class="button is-warning is-medium" href="../index.html">← Retour au hub des démos</a></p>
       </div>
     </section>
   </main>
-  <footer>
-    <p>Atelier Mécano-Precision 54 — vitrine de démonstration.</p>
-    <p><a href="../index.html">Retour au hub des démos</a></p>
+
+  <footer class="footer has-background-black-ter is-vitrine-footer">
+    <div class="container is-widescreen">
+      <div class="columns is-multiline has-text-grey">
+        <div class="column is-4">
+          <p class="title is-6 has-text-warning">Mécano-Precision 54</p>
+          <p class="is-size-6 has-text-grey-light">Vitrine de démonstration.</p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-warning">Liens</p>
+          <p class="is-size-6"><a class="has-text-grey-lighter" href="#chaine">Chaîne</a> · <a class="has-text-grey-lighter" href="#devis">Devis</a></p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-warning">Crédits</p>
+          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-warning" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

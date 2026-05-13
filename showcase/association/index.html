@@ -6,132 +6,347 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Démo fictive — association solidaire.">
   <title>Réseau Main Tendue 57 — Association (fictif)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../shared/reset.css">
-  <link rel="stylesheet" href="../shared/tokens.css">
-  <link rel="stylesheet" href="../shared/media.css">
-  <link rel="stylesheet" href="../shared/layout-desktop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Réseau Main Tendue 57</div>
-    <nav aria-label="Navigation">
-      <a href="#missions">Missions</a>
-      <a href="#dons">Soutenir</a>
-      <a href="#avis">Témoignages</a>
-      <a href="#benevoles">Bénévolat</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero hero--photo" aria-labelledby="hero-title">
-      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
-      <div class="hero__veil" aria-hidden="true"></div>
-      <div class="hero__inner">
-        <h1 id="hero-title">Solidarité de proximité, sans attendre</h1>
-        <p>Maraude, jeunesse, insertion — montants et bénévoles fictifs. Photos générées pour démo.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#dons">Soutenir le réseau (simulation)</a>
-          <a class="btn btn-ghost" href="#benevoles">Devenir bénévole</a>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
+    <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil"><span class="icon-text"><span class="icon has-text-success"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span><span>Main Tendue 57</span></span></a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
+          <a class="navbar-item" href="#actions"><span class="icon-text"><span class="icon"><i class="fa-solid fa-hands-holding-circle" aria-hidden="true"></i></span><span>Actions</span></span></a>
+          <a class="navbar-item" href="#engagement"><span class="icon-text"><span class="icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span><span>Engagement</span></span></a>
+          <a class="navbar-item" href="#soutenir"><span class="icon-text"><span class="icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span><span>Soutenir</span></span></a>
+          <a class="navbar-item" href="#temoignages"><span class="icon-text"><span class="icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></span><span>Témoignages</span></span></a>
+          <a class="navbar-item" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
+          <a class="navbar-item" href="#benevolat"><span class="icon-text"><span class="icon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span><span>Bénévolat</span></span></a>
+          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenu" tabindex="-1">
+    <section id="accueil" class="hero is-success is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title is-1">Solidarité de proximité</p>
+          <p class="subtitle is-4 has-text-white-ter" style="max-width: 42rem;">
+            Maraude, jeunesse, cuisines solidaires — contenu entièrement fictif pour maquette portfolio.
+          </p>
+          <div class="buttons mt-5">
+            <a class="button is-warning is-medium has-text-weight-semibold" href="#actions">Découvrir nos actions</a>
+            <a class="button is-white is-outlined is-medium" href="#contact">Nous écrire</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="missions" aria-labelledby="mis-title">
-      <h2 id="mis-title">Nos actions &amp; besoins</h2>
-      <p class="section-lede">Chiffres et bénéficiaires inventés pour la mise en page.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>Maraude nocturne</h3>
-          <p>120 repas chauds / semaine (exemple) — fourgons réfrigérés démo.</p>
-          <p class="card-price">Coût : <strong>4,20&nbsp;€</strong> / repas (fictif)</p>
-        </article>
-        <article class="card">
-          <h3>Aide aux devoirs</h3>
-          <p>18 collégiens suivis — 2 séances hebdo — matériel fourni.</p>
-          <p class="card-price">Adhésion famille : <strong>12&nbsp;€/an</strong> (démo)</p>
-        </article>
-        <article class="card">
-          <h3>Insertion pro</h3>
-          <p>Ateliers CV + simulations d’entretiens — 6 mois par parcours.</p>
-          <p class="card-price">Financement : <strong>partenaires imaginaires</strong></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="dons" class="don-grid" aria-labelledby="dons-title">
-      <h2 id="dons-title">Montants suggérés (non réels)</h2>
-      <div class="don-cards">
-        <article class="don-card">
-          <h3>Soutien ponctuel</h3>
-          <p class="don-amount">15&nbsp;€</p>
-          <p>Colis hygiène (démo)</p>
-        </article>
-        <article class="don-card">
-          <h3>Maraude</h3>
-          <p class="don-amount">40&nbsp;€</p>
-          <p>10 repas fictifs</p>
-        </article>
-        <article class="don-card">
-          <h3>Mécénat</h3>
-          <p class="don-amount">150&nbsp;€</p>
-          <p>Matériel scolaire trimestre</p>
-        </article>
-      </div>
-      <p class="don-note">Aucun paiement n’est traité sur ce site.</p>
-    </section>
-
-    <section id="avis" aria-labelledby="avis-title">
-      <h2 id="avis-title">Bénévoles &amp; familles (avis inventés)</h2>
-      <div class="reviews">
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#1f6f54;color:#fff;">IN</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Isabelle N. — bénévole maraude</p>
-              <p class="review-card__date">4 mars 2026</p>
-            </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+    <section class="section vitrine-cta-banner has-background-success has-text-white" aria-label="Appel à l’action">
+      <div class="container is-widescreen">
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-8">
+            <p class="title is-4 has-text-white">Rejoignez une maraude ou un atelier cuisine (démo)</p>
+            <p class="subtitle is-6 has-text-white-ter mb-0">Aucune inscription réelle — boutons de maquette pour tester les CTA.</p>
           </div>
-          <p class="review-card__text">«&nbsp;Équipe soudée, briefings clairs avant chaque tournée. Horaires respectés sur la maquette.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#e07a5f;color:#fff;">KD</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Karim D. — parent</p>
-              <p class="review-card__date">22 janv. 2026</p>
+          <div class="column is-4 has-text-right-tablet">
+            <div class="buttons is-right">
+              <a class="button is-warning is-medium has-text-weight-semibold" href="#benevolat">Formulaire bénévolat</a>
+              <a class="button is-white is-outlined is-medium" href="#soutenir">Voir les dons</a>
             </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
           </div>
-          <p class="review-card__text">«&nbsp;Mon fils a repris confiance en maths grâce aux séances du mercredi — histoire fictive.&nbsp;»</p>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section id="benevoles" class="banner" aria-labelledby="ben-title">
-      <h2 id="ben-title" class="visually-hidden">Bénévolat</h2>
-      <p>Deux réunions plénières / trimestre (exemple), charte signée jour 1 — coordonnées inventées : benevoles@main-tendue-57-demo.local</p>
+    <section class="section is-vitrine" id="actions" aria-labelledby="t-actions">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-actions">Nos actions sur le terrain</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 40rem; margin-left: auto; margin-right: auto;">
+          Trois blocs larges pour tester la lisibilité : chiffres inventés, aucune permanence réelle.
+        </p>
+        <div class="columns is-multiline">
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine">
+              <p class="heading">Terrain</p>
+              <p class="title is-4">Maraude nocturne</p>
+              <p class="content is-size-5">Environ 120 repas chauds / semaine (exemple). Fourgons et tournées imaginaires.</p>
+              <p class="has-text-weight-bold has-text-success">~ 4,20&nbsp;€ / repas (démo)</p>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine">
+              <p class="heading">Jeunesse</p>
+              <p class="title is-4">Aide aux devoirs</p>
+              <p class="content is-size-5">18 collégiens suivis, deux séances hebdomadaires, matériel fourni (fictif).</p>
+              <p class="has-text-weight-bold has-text-success">12&nbsp;€ / an famille (démo)</p>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine">
+              <p class="heading">Insertion</p>
+              <p class="title is-4">Ateliers CV</p>
+              <p class="content is-size-5">Simulations d’entretiens sur six mois — partenaires et emplois inventés.</p>
+              <p class="has-text-weight-bold has-text-success">Financement démo</p>
+            </div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/mission-benevoles.png" width="1200" height="900" alt="Bénévoles en réunion (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
     </section>
 
-    <section id="terrain" class="layout-wide" aria-labelledby="terrain-title" style="max-width:960px;margin:0 auto;padding:clamp(28px,5vw,48px) clamp(16px,4vw,28px);">
-      <h2 id="terrain-title" class="density-hero-title" style="font-size: clamp(1.6rem, 2.2vw, 2.5rem); color: var(--md-sys-color-primary);">Terrain &amp; cuisines solidaires — récit long (démo)</h2>
-      <p class="density-lead">Image large + texte pour remplir les grands moniteurs : chaîne de plonge, rotation des bénévoles, stocks de conserves imaginaires.</p>
-      <figure class="figure-banner">
-        <img src="images/cuisine.png" width="1600" height="686" alt="Bénévoles en cuisine collective (image générée)" loading="lazy" decoding="async">
-        <figcaption>Visuel généré — pas de lieu réel.</figcaption>
-      </figure>
-      <div class="prose-columns density-body">
-        <h3>Logistique du mercredi soir (fictif)</h3>
-        <p>Arrivée des camions à 17h30, déchargement sous tente, pesée des cartons, étiquetage couleur, répartition nord/sud/est, sacs isothermes numérotés, checklist signée, photo de groupe floutée volontairement, compte-rendu envoyé à une mailing-list inexistante, remerciements lus à voix haute, rangement des chaises, extinction des lumières, clé remise au gardien imaginaire.</p>
-        <p>Nous continuons : charte anti-discrimination affichée, formation obligatoire « accueil dignité » de 90&nbsp;minutes, badge bénévole orange, gants nitrile bleus, masques si stock disponible, gel hydroalcoolique parfum citron démo, balance de cuisine pour portions, menus végétariens deux fois par mois, desserts donnés par pâtisserie partenaire fictive, jus de fruits dilués, eau plate en carafe, gobelets compostables empilés près de l’évier.</p>
+    <section class="section is-vitrine has-background-light" id="engagement" aria-labelledby="t-eng">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-eng">Engagement &amp; transparence</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
+          Paragraphes longs pour tester la colonne texte : le réseau «&nbsp;Main Tendue 57&nbsp;» est une fiction graphique. Les pourcentages, budgets et bénéficiaires ci-dessous servent uniquement à valider grilles, contrastes et hiérarchie typographique sur fond clair.
+        </p>
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-6">
+            <article class="message is-success">
+              <div class="message-header"><p>Campagne hiver (fictif)</p></div>
+              <div class="message-body content is-size-5">
+                <p>Objectif&nbsp;: 12&nbsp;000&nbsp;€ symboliques pour couvrir carburant et denrées imaginaires. Les barres ci-dessous illustrent un composant <strong>progress</strong> Bulma.</p>
+                <p class="mt-4"><span class="tag is-success is-medium">Maraude</span> <span class="tag is-light is-medium">Jeunesse</span> <span class="tag is-warning is-medium">Urgence</span></p>
+                <p class="mt-4"><strong>Collecte générale</strong></p>
+                <progress class="progress is-success" value="72" max="100">72&nbsp;%</progress>
+                <p class="mt-3"><strong>Fonds dédié jeunesse</strong></p>
+                <progress class="progress is-warning" value="45" max="100">45&nbsp;%</progress>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/assoc-poster-illu.png" width="1200" height="900" alt="Affiche illustrative solidarité (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+        <div class="tile is-ancestor mt-5">
+          <div class="tile is-vertical is-8">
+            <div class="tile">
+              <div class="tile is-parent is-vertical">
+                <article class="tile is-child box is-vitrine-child">
+                  <p class="title is-5">Cartographie des besoins</p>
+                  <p class="content is-size-6">Zones Nord et Est inventées — cartes et données sans lien avec un territoire réel.</p>
+                </article>
+                <article class="tile is-child box is-vitrine-child">
+                  <p class="title is-5">Partenaires cités</p>
+                  <p class="content is-size-6">Mairies fictives, épiceries solidaires imaginaires, associations sœurs inventées pour remplir la tuile.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box is-vitrine-child notification is-success is-light">
+              <p class="title is-5">Chiffre du mois</p>
+              <p class="title is-2 has-text-success-dark">+180</p>
+              <p class="subtitle is-6">repas distribués (exemple)</p>
+            </article>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/assoc-fete-quartier.png" width="1200" height="900" alt="Fête de quartier conviviale (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="soutenir" aria-labelledby="t-soutenir">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-soutenir">Soutenir le réseau</h2>
+        <p class="subtitle is-5 has-text-centered mb-6">Montants indicatifs — aucun paiement sur ce site.</p>
+        <div class="columns">
+          <div class="column">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-3 has-text-centered">15&nbsp;€</p>
+              <p class="content is-size-5 has-text-centered">Colis hygiène (démo)</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-3 has-text-centered">40&nbsp;€</p>
+              <p class="content is-size-5 has-text-centered">Dix repas maraude (fictif)</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box is-vitrine has-background-white">
+              <p class="title is-3 has-text-centered">150&nbsp;€</p>
+              <p class="content is-size-5 has-text-centered">Matériel scolaire (exemple)</p>
+            </div>
+          </div>
+        </div>
+        <div class="has-text-centered mt-6">
+          <a class="button is-success is-medium has-text-weight-semibold" href="#contact">Parler à l’équipe (fictif)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="temoignages" aria-labelledby="t-tem">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-tem">Témoignages (inventés)</h2>
+        <div class="columns mt-5">
+          <div class="column">
+            <div class="box is-vitrine">
+              <p class="title is-5">Isabelle N.</p>
+              <p class="subtitle is-6">Bénévole maraude · mars 2026</p>
+              <p class="content is-size-5">«&nbsp;Briefings clairs avant chaque tournée — tout est simulé pour la maquette.&nbsp;»</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box is-vitrine">
+              <p class="title is-5">Karim D.</p>
+              <p class="subtitle is-6">Parent · janvier 2026</p>
+              <p class="content is-size-5">«&nbsp;Les séances du mercredi : histoire fictive pour remplir l’espace de citation.&nbsp;»</p>
+            </div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/cuisine.png" width="1600" height="686" alt="Cuisine collective (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-faq">Questions fréquentes (démo)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large has-text-success" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 26c3 6 17 6 20 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p class="heading">Délais</p>
+                <p><strong>Puis-je venir sans rendez-vous&nbsp;?</strong> Non en démo&nbsp;: permanences listées à titre d’exemple.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="media box is-vitrine">
+              <figure class="media-left">
+                <span class="icon is-large has-text-success" aria-hidden="true">
+                  <svg class="vitrine-svg-deco" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+                    <rect x="8" y="10" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 22h16M16 28h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </figure>
+              <div class="media-content content is-size-5">
+                <p class="heading">Dons</p>
+                <p><strong>Les dons sont-ils déductibles&nbsp;?</strong> Texte juridique absent — vitrine sans valeur fiscale.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="benevolat" aria-labelledby="t-ben">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-10-tablet is-8-desktop">
+        <h2 class="title is-2 has-text-centered" id="t-ben">Candidature bénévolat (fictif)</h2>
+        <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans envoi — champs pour tester <strong>field</strong>, <strong>select</strong> et <strong>checkbox</strong>.</p>
+        <div class="box is-vitrine vitrine-form-panel">
+          <form action="#" method="get" class="content">
+            <div class="field">
+              <label class="label" for="ben-nom">Nom</label>
+              <div class="control"><input class="input is-medium" type="text" id="ben-nom" name="nom" autocomplete="name" placeholder="Dupont"></div>
+            </div>
+            <div class="field">
+              <label class="label" for="ben-mail">Courriel</label>
+              <div class="control"><input class="input is-medium" type="email" id="ben-mail" name="mail" autocomplete="email" placeholder="vous@exemple.fr"></div>
+            </div>
+            <div class="field">
+              <label class="label" for="ben-pole">Pôle souhaité</label>
+              <div class="control">
+                <div class="select is-medium is-fullwidth">
+                  <select id="ben-pole" name="pole">
+                    <option>Maraude</option>
+                    <option>Jeunesse</option>
+                    <option>Cuisine</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox" name="charte"> J’ai lu la charte fictive
+              </label>
+            </div>
+            <div class="field is-grouped is-grouped-multiline">
+              <div class="control"><button type="button" class="button is-success is-medium">Envoyer (démo)</button></div>
+              <div class="control"><button type="reset" class="button is-light is-medium">Effacer</button></div>
+            </div>
+          </form>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vitrine-cta-banner has-background-grey-darker has-text-white" aria-label="Second appel à l’action">
+      <div class="container is-widescreen has-text-centered">
+        <p class="title is-4 has-text-white">Besoin d’un partenariat associatif (maquette)&nbsp;?</p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-warning is-medium" href="#contact">Écrire au réseau</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="contact" aria-labelledby="t-contact">
+      <div class="container is-widescreen">
+        <h2 class="title is-2" id="t-contact">Contact</h2>
+        <div class="columns mt-4">
+          <div class="column is-6">
+            <div class="notification is-success is-light is-size-5 box" style="padding: 2rem;">
+              <p><strong>Adresse fictive</strong><br>12 rue des Primevères, 57000 Ville-Démo</p>
+              <p class="mt-4"><strong>Permanence (exemple)</strong><br>Mer. 14h–17h</p>
+            </div>
+          </div>
+          <div class="column is-6">
+            <div class="notification is-white is-size-5 box" style="padding: 2rem;">
+              <p><a href="mailto:contact@main-tendue-57-demo.local">contact@main-tendue-57-demo.local</a></p>
+              <p class="mt-4"><a href="mailto:benevoles@main-tendue-57-demo.local">benevoles@main-tendue-57-demo.local</a></p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour au hub des démos</a></p>
       </div>
     </section>
   </main>
-  <footer>
-    <p>Réseau Main Tendue 57 — association et contenus entièrement fictifs.</p>
-    <p><a href="../index.html">Retour au hub des démos</a></p>
+
+  <footer class="footer has-background-dark is-vitrine-footer">
+    <div class="container is-widescreen">
+      <div class="columns is-multiline has-text-grey-light">
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Main Tendue 57</p>
+          <p class="is-size-6">Association et contenus entièrement fictifs.</p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Liens utiles (démo)</p>
+          <p class="is-size-6"><a class="has-text-grey-lighter" href="#faq">FAQ</a> · <a class="has-text-grey-lighter" href="#benevolat">Bénévolat</a></p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Crédits</p>
+          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-grey-lighter" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

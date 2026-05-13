@@ -6,175 +6,324 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Démo fictive — banque régionale.">
   <title>Banque des Vosges du Nord — Finance (fictif)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../shared/reset.css">
-  <link rel="stylesheet" href="../shared/tokens.css">
-  <link rel="stylesheet" href="../shared/media.css">
-  <link rel="stylesheet" href="../shared/layout-desktop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="topbar">
-    <span>Agences · 0800 000 000 (fictif)</span>
-    <span>Espace sécurisé — démo</span>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <div class="notification is-link is-light mb-0 is-radiusless py-3">
+    <div class="container is-widescreen">
+      <div class="level is-mobile mb-0">
+        <div class="level-left">
+          <p class="is-size-6 mb-0"><span class="icon-text"><span class="icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span><span><strong>Agences</strong> · 0800 000 000 (fictif)</span></span></p>
+        </div>
+        <div class="level-right">
+          <p class="is-size-6 mb-0"><span class="icon-text"><span class="icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></span><span>Espace sécurisé — démo</span></span></p>
+        </div>
+      </div>
+    </div>
   </div>
-  <header>
-    <div class="logo">Banque des <span>Vosges du Nord</span></div>
-    <nav aria-label="Navigation">
-      <a href="#particuliers">Particuliers</a>
-      <a href="#pro">Professionnels</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#avis">Avis</a>
-      <a href="#securite">Sécurité</a>
-    </nav>
-  </header>
-  <main>
-    <section class="hero hero--photo" aria-labelledby="hero-title">
-      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
-      <div class="hero__veil" aria-hidden="true"></div>
-      <div class="hero__inner">
-        <h1 id="hero-title">Financer vos projets avec exigence</h1>
-        <p>Offres, taux et avis inventés. Aucun agrément bancaire — maquette portfolio.</p>
-        <div class="row">
-          <a class="btn btn-primary" href="#particuliers">Découvrir nos offres</a>
-          <a class="btn btn-ghost" href="#pro">Espace pro</a>
+
+  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
+    <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil"><span class="icon-text"><span class="icon has-text-link"><i class="fa-solid fa-landmark" aria-hidden="true"></i></span><span>Banque des Vosges du Nord</span></span></a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
+          <a class="navbar-item" href="#offres"><span class="icon-text"><span class="icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span><span>Offres</span></span></a>
+          <a class="navbar-item" href="#transparence"><span class="icon-text"><span class="icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span><span>Transparence</span></span></a>
+          <a class="navbar-item" href="#tarifs"><span class="icon-text"><span class="icon"><i class="fa-solid fa-table-list" aria-hidden="true"></i></span><span>Tarifs</span></span></a>
+          <a class="navbar-item" href="#confiance"><span class="icon-text"><span class="icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span><span>Confiance</span></span></a>
+          <a class="navbar-item" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
+          <a class="navbar-item" href="#simulation"><span class="icon-text"><span class="icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></span><span>Simulation</span></span></a>
+          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="contenu" tabindex="-1">
+    <section id="accueil" class="hero is-link is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title is-1">Financer vos projets avec exigence</p>
+          <p class="subtitle is-4 has-text-white-ter" style="max-width: 44rem;">
+            Offres, tarifs et témoignages inventés — aucun agrément bancaire, maquette portfolio uniquement.
+          </p>
+          <div class="buttons mt-5">
+            <a class="button is-warning is-medium has-text-weight-semibold" href="#offres">Découvrir les offres</a>
+            <a class="button is-white is-outlined is-medium" href="#contact">Agence pilote (fictif)</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="particuliers" aria-labelledby="p-title">
-      <h2 id="p-title">Particuliers — produits démo</h2>
-      <p class="section-lede">Conditions et tarifs sans valeur contractuelle.</p>
-      <div class="grid">
-        <article class="tile">
-          <h3>Compte « Horizon »</h3>
-          <p>Carte Visa Classic fictive, 2 virements SEPA gratuits / mois.</p>
-          <p class="tile-price">Gratuit <span>ou 4&nbsp;€/mois version premium démo</span></p>
-        </article>
-        <article class="tile">
-          <h3>Livret Patrimoine (imaginaire)</h3>
-          <p>Versements plafonnés 22&nbsp;950&nbsp;€ — taux variable affiché 2,80&nbsp;% (exemple).</p>
-        </article>
-        <article class="tile">
-          <h3>Prêt Perso Express</h3>
-          <p>De 1&nbsp;000 à 25&nbsp;000&nbsp;€ sur 12 à 84 mois — TAEG indicatif 5,9&nbsp;% (fictif).</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="tarifs" aria-labelledby="tarifs-title">
-      <h2 id="tarifs-title">Grille tarifaire illustration</h2>
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th scope="col">Service</th>
-            <th scope="col">Détail</th>
-            <th scope="col">Tarif</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tenue de compte</td>
-            <td>Option « Horizon+ »</td>
-            <td>4&nbsp;€/mois</td>
-          </tr>
-          <tr>
-            <td>Virement instantané</td>
-            <td>Zone euro démo</td>
-            <td>0,50&nbsp;€</td>
-          </tr>
-          <tr>
-            <td>Assurance habitation pack</td>
-            <td>Logement T3 fictif Metz</td>
-            <td>18&nbsp;€/mois</td>
-          </tr>
-          <tr>
-            <td>Conseiller dédié</td>
-            <td>4 rendez-vous / an visio</td>
-            <td>Inclus premium</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="pro" aria-labelledby="pro-title">
-      <h2 id="pro-title">Professionnels</h2>
-      <div class="grid">
-        <article class="tile">
-          <h3>Compte Pro Flux</h3>
-          <p>500 opérations / mois incluses, ROE fictif — <strong>22&nbsp;€ HT/mois</strong>.</p>
-        </article>
-        <article class="tile">
-          <h3>Caution marché public</h3>
-          <p>Commission indicative <strong>1,2&nbsp;%</strong> du montant cautionné (démo).</p>
-        </article>
-        <article class="tile">
-          <h3>Encaissement CB</h3>
-          <p>TPE virtuel — <strong>1,35&nbsp;%</strong> + 0,10&nbsp;€ par transaction (fictif).</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="avis" aria-labelledby="avis-title">
-      <h2 id="avis-title">Témoignages (inventés)</h2>
-      <div class="reviews">
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#1b4f8c;color:#fff;">VR</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Valérie R. — Boulangerie « Le fournil des Roches » (fictif)</p>
-              <p class="review-card__date">14 fév. 2026</p>
+    <section class="section vitrine-cta-banner has-background-link has-text-white" aria-label="Appel à l’action">
+      <div class="container is-widescreen">
+        <div class="level is-mobile is-multiline">
+          <div class="level-left level-item has-text-centered-mobile" style="flex-grow: 1;">
+            <div>
+              <p class="title is-4 has-text-white">Ouvrir un compte «&nbsp;Horizon&nbsp;» (maquette)</p>
+              <p class="subtitle is-6 has-text-white-ter mb-0">Parcours fictif — boutons pour valider les CTA sur fond institutionnel.</p>
             </div>
-            <span class="stars" aria-label="5 sur 5">★★★★★</span>
           </div>
-          <p class="review-card__text">«&nbsp;Passage au Pro Flux sans coupure : virements fournisseurs le jour J. Conseiller réactif sur la maquette.&nbsp;»</p>
-        </article>
-        <article class="review-card">
-          <div class="review-card__head">
-            <div class="avatar" style="background:#c6a35a;color:#0a1628;">MK</div>
-            <div class="review-card__meta">
-              <p class="review-card__name">Marc K.</p>
-              <p class="review-card__date">6 janv. 2026</p>
+          <div class="level-right level-item">
+            <div class="buttons">
+              <a class="button is-warning is-medium has-text-weight-semibold" href="#simulation">Simulation express</a>
+              <a class="button is-white is-outlined is-medium" href="#contact">Prendre rendez-vous</a>
             </div>
-            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
           </div>
-          <p class="review-card__text">«&nbsp;Livret Patrimoine clair sur l’appli. J’aurais aimé un chatbot 24h/24 — note pour la démo.&nbsp;»</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="securite" class="legal-strip" aria-labelledby="sec-title">
-      <p id="sec-title"><strong>Sécurité :</strong> ne saisissez jamais de données réelles sur une maquette. Cette page est hors production.</p>
-    </section>
-
-    <section id="conseil" class="layout-wide" aria-labelledby="conseil-title" style="max-width:1100px;margin:0 auto;padding:clamp(28px,5vw,48px) clamp(16px,4vw,28px);">
-      <h2 id="conseil-title" class="density-hero-title" style="font-size: clamp(1.55rem, 2vw, 2.35rem); color: var(--md-sys-color-primary);">Espace conseil — relation client (texte de démo)</h2>
-      <p class="density-lead">Bloc dense pour grands écrans : entretiens budgétaires imaginaires, simulateurs d’épargne, ateliers « anti-arnaque » pour seniors fictifs, webinaires enregistrés, FAQ de 40 questions inventées, charte graphique sobre, typographie large.</p>
-      <figure class="figure-banner">
-        <img src="images/conseil.png" width="1600" height="686" alt="Entretien conseiller bancaire (image générée)" loading="lazy" decoding="async">
-        <figcaption>Visuel généré — aucune agence réelle.</figcaption>
-      </figure>
-      <div class="desktop-2col" style="margin-top:2rem;">
-        <div class="desktop-2col__main prose-columns density-body">
-          <h3>Processus de souscription démo</h3>
-          <p>Étape une : identification à deux facteurs simulée. Étape deux : choix d’offre avec comparateur à trois colonnes. Étape trois : signature électronique avec code OTP fictif. Étape quatre : activation sous 48&nbsp;h ouvrées « en démo ». Nous répétons des phrases pour tester les retours à la ligne sur ultra-large : gestion de trésorerie, encours autorisés, tableaux d’amortissement, assurance emprunteur, frais de tenue de compte, plafonds carte, catégories de dépenses dans l’application mobile, alertes SMS, opposition carte, verrouillage temporaire depuis l’étranger, support chatbot 8h–20h imaginaire.</p>
-          <p>Deuxième paragraphe volontairement long : les taux affichés sont des exemples graphiques ; les mentions « sous réserve d’acceptation » sont omniprésentes ; les pieds de page juridiques s’allongent ; les numéros de téléphone sont des 0800 fictifs ; les adresses e-mail se terminent par -demo.local ; les logos de cartes sont absents volontairement ; les pictogrammes de sécurité sont génériques.</p>
         </div>
-        <aside class="desktop-2col__aside" aria-label="Indicateurs démo">
-          <h3 style="margin:0 0 10px;font-size:1rem;">Indicateurs (fictifs)</h3>
-          <dl class="kpi-strip" style="border:none;padding:0;">
-            <div><dt>Clients actifs</dt><dd>128&nbsp;000</dd></div>
-            <div><dt>Agences</dt><dd>42</dd></div>
-            <div><dt>Conseillers</dt><dd>310</dd></div>
-          </dl>
-        </aside>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="offres" aria-labelledby="t-offres">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-offres">Offres particuliers &amp; pro</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 42rem; margin-left: auto; margin-right: auto;">
+          Grandes cartes type vitrine institutionnelle — conditions sans valeur contractuelle.
+        </p>
+        <div class="columns is-multiline">
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine">
+              <p class="heading">Particuliers</p>
+              <p class="title is-4">Compte « Horizon »</p>
+              <p class="content is-size-5">2 virements SEPA gratuits / mois, carte Visa Classic fictive.</p>
+              <p class="has-text-weight-bold has-text-link">Gratuit ou 4&nbsp;€/mois premium démo</p>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine">
+              <p class="heading">Épargne</p>
+              <p class="title is-4">Livret Patrimoine</p>
+              <p class="content is-size-5">Plafond et taux affichés à titre d’exemple graphique uniquement.</p>
+              <p class="has-text-weight-bold has-text-link">Taux indicatif 2,80&nbsp;% (fictif)</p>
+            </div>
+          </div>
+          <div class="column is-4-desktop is-6-tablet">
+            <div class="box is-vitrine">
+              <p class="heading">Professionnels</p>
+              <p class="title is-4">Compte Pro Flux</p>
+              <p class="content is-size-5">500 opérations incluses, ROE fictif — tarif démo.</p>
+              <p class="has-text-weight-bold has-text-link">22&nbsp;€ HT / mois</p>
+            </div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/agences.png" width="1200" height="900" alt="Accueil d’agence bancaire (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="transparence" aria-labelledby="t-trans">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-trans">Transparence &amp; pédagogie</h2>
+        <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
+          Cette section allonge le texte pour tester la lecture sur deux colonnes&nbsp;: frais, plafonds et services sont des libellés graphiques. Aucun contrat, aucune offre réelle n’est proposé ici — l’objectif est de montrer comment une banque fictive peut structurer l’information (encadrés, infographie, poignée de main symbolique).
+        </p>
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-6">
+            <figure class="vitrine-figure">
+              <img src="images/banque-infographic.png" width="1200" height="900" alt="Infographie services bancaires (image générée)" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="column is-6">
+            <div class="box is-vitrine content is-size-5">
+              <p class="tags"><span class="tag is-link">Particuliers</span><span class="tag is-light">Pro</span><span class="tag is-warning">Épargne</span></p>
+              <p class="mt-4">Les indicateurs ci-dessous utilisent le composant <strong>progress</strong> sans valeur contractuelle.</p>
+              <p class="mt-3"><strong>Satisfaction «&nbsp;appli mobile&nbsp;» (démo)</strong></p>
+              <progress class="progress is-link" value="88" max="100">88&nbsp;%</progress>
+              <p class="mt-3"><strong>Objectif ouverture de comptes (fictif)</strong></p>
+              <progress class="progress is-warning" value="62" max="100">62&nbsp;%</progress>
+            </div>
+            <article class="media box is-vitrine mt-4">
+              <figure class="media-left">
+                <p class="image is-96x96">
+                  <img src="images/banque-poignee-main.png" width="96" height="96" alt="" loading="lazy" decoding="async">
+                </p>
+              </figure>
+              <div class="media-content content is-size-6">
+                <p class="heading">Relation client</p>
+                <p><strong>Conseiller dédié</strong> — créneaux visio inventés, messagerie sécurisée simulée sur cette maquette.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-ancestor mt-5">
+          <div class="tile is-parent is-6">
+            <article class="tile is-child box is-vitrine-child notification is-link is-light">
+              <p class="title is-5">Sécurité</p>
+              <p class="is-size-6">SCA, alertes SMS et plafonds — vocabulaire d’exemple pour remplir la tuile sans données réelles.</p>
+            </article>
+          </div>
+          <div class="tile is-parent is-6">
+            <article class="tile is-child box is-vitrine-child">
+              <p class="title is-5">Durabilité</p>
+              <p class="is-size-6">Financement «&nbsp;vert&nbsp;» fictif, critères d’éligibilité inventés pour la démo portfolio.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="tarifs" aria-labelledby="t-tarifs">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-tarifs">Grille tarifaire (illustration)</h2>
+        <div class="table-container is-vitrine mt-5">
+          <table class="table is-fullwidth is-striped is-size-5">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Détail</th>
+                <th>Tarif</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Tenue de compte</td><td>Option « Horizon+ »</td><td>4&nbsp;€/mois</td></tr>
+              <tr><td>Virement instantané</td><td>Zone euro démo</td><td>0,50&nbsp;€</td></tr>
+              <tr><td>Assurance habitation</td><td>Pack T3 fictif Metz</td><td>18&nbsp;€/mois</td></tr>
+              <tr><td>Conseiller dédié</td><td>4 RDV / an visio</td><td>Inclus premium</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="has-text-centered mt-5">
+          <a class="button is-link is-medium" href="#simulation">Estimer un besoin (fictif)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="confiance" aria-labelledby="t-conf">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-conf">Ils nous font confiance (fictif)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <div class="box is-vitrine">
+              <p class="title is-5">Valérie R.</p>
+              <p class="subtitle is-6">Boulangerie « Le fournil des Roches »</p>
+              <p class="content is-size-5">«&nbsp;Passage au Pro Flux sans coupure sur la maquette.&nbsp;»</p>
+            </div>
+          </div>
+          <div class="column is-6">
+            <div class="box is-vitrine">
+              <p class="title is-5">Marc K.</p>
+              <p class="subtitle is-6">Particulier</p>
+              <p class="content is-size-5">«&nbsp;Livret clair sur l’appli — chatbot 24h/24 souhaité en note démo.&nbsp;»</p>
+            </div>
+          </div>
+        </div>
+        <figure class="vitrine-figure mt-6">
+          <img src="images/conseil.png" width="1600" height="686" alt="Entretien conseiller (image générée)" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+      <div class="container is-widescreen">
+        <h2 class="title is-2 has-text-centered" id="t-faq">FAQ (illustration)</h2>
+        <div class="columns mt-5">
+          <div class="column is-6">
+            <article class="message is-link is-light">
+              <div class="message-body content is-size-5">
+                <p><strong>Les taux sont-ils garantis&nbsp;?</strong> Non — tout est indicatif sur cette vitrine.</p>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6">
+            <article class="message is-warning is-light">
+              <div class="message-body content is-size-5">
+                <p><strong>Puis-je souscrire en ligne&nbsp;?</strong> Aucun tunnel de souscription réel n’est branché.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine" id="simulation" aria-labelledby="t-sim">
+      <div class="container is-widescreen">
+        <div class="columns is-centered">
+          <div class="column is-10-tablet is-7-desktop">
+            <h2 class="title is-2 has-text-centered" id="t-sim">Simulation prêt (démo)</h2>
+            <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans calcul serveur — bouton pour tester l’UI.</p>
+            <div class="box is-vitrine vitrine-form-panel">
+              <form action="#" method="get" class="content">
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal"><label class="label" for="sim-montant">Montant</label></div>
+                  <div class="field-body">
+                    <div class="field"><div class="control"><input class="input" type="text" id="sim-montant" name="montant" inputmode="decimal" placeholder="150&nbsp;000"></div></div>
+                  </div>
+                </div>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal"><label class="label" for="sim-duree">Durée (mois)</label></div>
+                  <div class="field-body">
+                    <div class="field"><div class="control"><input class="input" type="number" id="sim-duree" name="duree" min="12" max="300" value="240"></div></div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="sim-profil">Profil</label>
+                  <div class="control"><div class="select is-fullwidth"><select id="sim-profil" name="profil"><option>Particulier</option><option>Professionnel</option></select></div></div>
+                </div>
+                <div class="field"><label class="checkbox"><input type="checkbox" name="assurance"> Assurance emprunteur fictive</label></div>
+                <button type="button" class="button is-link is-medium is-fullwidth">Afficher une estimation (démo)</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vitrine-cta-banner has-background-grey-darker has-text-white" aria-label="Second appel à l’action">
+      <div class="container is-widescreen has-text-centered">
+        <p class="title is-4 has-text-white">Parler à un conseiller (fictif)</p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-warning is-medium" href="#contact">Coordonnées agence</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-vitrine has-background-light" id="contact" aria-labelledby="t-contact">
+      <div class="container is-widescreen">
+        <h2 class="title is-2" id="t-contact">Contact</h2>
+        <div class="columns mt-4">
+          <div class="column is-6">
+            <div class="notification is-link is-light is-size-5 box" style="padding: 2rem;">
+              <p><strong>Téléphone (fictif)</strong><br>0800 000 000</p>
+              <p class="mt-4"><strong>Courriel</strong><br><a href="mailto:accueil@bvdn-demo.local">accueil@bvdn-demo.local</a></p>
+            </div>
+          </div>
+          <div class="column is-6">
+            <div class="notification is-white is-size-5 box" style="padding: 2rem;">
+              <p><strong>Agence pilote</strong><br>12 avenue des Vosges, 57000 Ville-Démo</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour au hub des démos</a></p>
       </div>
     </section>
   </main>
-  <footer>
-    <p>Banque des Vosges du Nord — marque et contenus inventés.</p>
-    <p><a href="../index.html">Retour au hub des démos</a></p>
+
+  <footer class="footer has-background-dark is-vitrine-footer">
+    <div class="container is-widescreen">
+      <div class="columns is-multiline has-text-grey-light">
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Banque des Vosges du Nord</p>
+          <p class="is-size-6">Marque et contenus inventés.</p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Accès rapide</p>
+          <p class="is-size-6"><a class="has-text-grey-lighter" href="#tarifs">Tarifs</a> · <a class="has-text-grey-lighter" href="#simulation">Simulation</a></p>
+        </div>
+        <div class="column is-4">
+          <p class="title is-6 has-text-white">Crédits</p>
+          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-grey-lighter" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

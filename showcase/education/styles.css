@@ -1,0 +1,23 @@
+:root {
+  --edu-navy: #1e3a5f;
+  --edu-gold: #c9a227;
+  --edu-paper: #f8fafc;
+}
+
+.edu-hero {
+  background:
+    linear-gradient(120deg, rgba(30, 58, 95, 0.97) 0%, rgba(44, 82, 130, 0.92) 50%, rgba(26, 54, 93, 0.98) 100%),
+    radial-gradient(500px 280px at 90% 20%, rgba(201, 162, 39, 0.15), transparent 55%);
+}
+
+.has-text-edu-gold {
+  color: var(--edu-gold) !important;
+}
+
+.section.is-edu-paper {
+  background-color: var(--edu-paper) !important;
+}
+
+.edu-border-accent {
+  border-left: 4px solid var(--edu-gold);
+}

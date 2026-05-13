@@ -1,0 +1,24 @@
+:root {
+  --beaute-rose: #c08497;
+  --beaute-mauve: #6b3d4d;
+  --beaute-cream: #fff5f8;
+}
+
+.beaute-hero {
+  background:
+    linear-gradient(125deg, rgba(92, 61, 77, 0.95) 0%, rgba(61, 40, 51, 0.93) 48%, rgba(42, 27, 36, 0.98) 100%),
+    radial-gradient(500px 280px at 15% 25%, rgba(192, 132, 151, 0.2), transparent 50%);
+}
+
+.has-text-beaute-rose {
+  color: #ffd6e4 !important;
+}
+
+.section.is-beaute-cream {
+  background-color: var(--beaute-cream) !important;
+}
+
+.box.is-beaute-glow {
+  box-shadow: 0 8px 28px rgba(107, 61, 77, 0.12);
+  border: 1px solid rgba(192, 132, 151, 0.35);
+}
