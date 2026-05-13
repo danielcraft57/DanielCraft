@@ -4,11 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="Démo fictive — restaurant &amp; traiteur.">
-  <title>Bistro Ligne &amp; Comptoir — Restauration (fictif)</title>
+  <meta name="description" content="Restaurant, terrasse et réservations à Metz.">
+  <title>Brasserie Saint-Jacques — Restauration</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-lib-compat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -33,59 +38,83 @@
     <section id="accueil" class="hero is-medium resto-hero">
       <div class="hero-body">
         <div class="container">
-          <p class="title is-1 has-text-white"><i class="fa-solid fa-wheat-awn mr-3 has-text-resto-gold" aria-hidden="true"></i>Cuisine de saison · terrasse (démo)</p>
+          <p class="title is-1 has-text-white"><i class="fa-solid fa-wheat-awn mr-3 has-text-resto-gold" aria-hidden="true"></i>Cuisine de saison · terrasse</p>
           <p class="subtitle is-4 has-text-white-ter" style="max-width: 46rem;">
-            Le Bistro Ligne &amp; Comptoir est une fiction gastronomique&nbsp;: chef inventé, fournisseurs imaginaires et carte renouvelée pour les besoins graphiques du portfolio. Aucune réservation ne déclenche de service réel.
+            La Brasserie Saint-Jacques propose une cuisine de marché au cœur de Metz. Carte renouvelée chaque semaine, réservations conseillées le week-end.
           </p>
           <p class="subtitle is-5 has-text-white-ter mt-4" style="max-width: 46rem;">
-            Nous détaillons ici une ambiance «&nbsp;bistronomie&nbsp;» simulée&nbsp;: produits du marché décrits sans origine vérifiable, accord mets-vins fictif et terrasse ombragée inventée pour enrichir le texte du hero et valider les contrastes sur fond bordeaux.
+            Ambiance bistronomique, produits du marché lorrain, accords mets-vins au verre et terrasse ombragée place Saint-Jacques.
           </p>
           <div class="buttons mt-5">
-            <a class="button is-warning is-medium" href="#carte"><span class="icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span><span>La carte</span></a>
-            <a class="button is-white is-outlined is-medium" href="#reservation"><span class="icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span><span>Réserver une table</span></a>
+            <a class="button is-warning is-medium hvr-shrink" href="#carte"><span class="icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span><span>La carte</span></a>
+            <a class="button is-white is-outlined is-medium hvr-shrink" href="#reservation"><span class="icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span><span>Réserver une table</span></a>
           </div>
         </div>
       </div>
     </section>
     <section class="section vitrine-cta-banner has-background-danger has-text-white" aria-label="CTA">
       <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white"><i class="fa-solid fa-tag mr-3" aria-hidden="true"></i>Menu déjeuner «&nbsp;comptoir&nbsp;» (offre maquette)</p>
-        <a class="button is-warning is-medium mt-3" href="#reservation"><i class="fa-solid fa-chair mr-2" aria-hidden="true"></i>Pré-réservation</a>
+        <p class="title is-4 has-text-white"><i class="fa-solid fa-tag mr-3" aria-hidden="true"></i>Menu déjeuner «&nbsp;comptoir&nbsp;»</p>
+        <a class="button is-warning is-medium mt-3 hvr-grow" href="#reservation"><i class="fa-solid fa-chair mr-2" aria-hidden="true"></i>Pré-réservation</a>
       </div>
     </section>
     <section class="section is-vitrine is-resto-cream" id="carte" aria-labelledby="t-car">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-car"><i class="fa-solid fa-book-open has-text-danger mr-2" aria-hidden="true"></i>Carte (extraits)</h2>
         <p class="content is-size-5 has-text-centered mb-5" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Le tableau suivant condense des plats imaginaires pour tester les largeurs de colonnes et les alignements de prix. Les montants sont indicatifs et sans valeur commerciale.
+          Exemple de carte midi&nbsp;; les montants sont indicatifs et peuvent varier selon arrivages.
         </p>
         <div class="table-container is-vitrine mt-5">
           <table class="table is-fullwidth is-striped is-size-5">
             <thead><tr><th><i class="fa-solid fa-bowl-food mr-2" aria-hidden="true"></i>Plat</th><th>Description</th><th><i class="fa-solid fa-coins mr-2" aria-hidden="true"></i>Prix</th></tr></thead>
             <tbody>
-              <tr><td>Velouté</td><td>Courge, huile noisette imaginaire</td><td>9&nbsp;€</td></tr>
-              <tr><td>Poisson</td><td>Filet, citron confit fictif</td><td>26&nbsp;€</td></tr>
-              <tr><td>Tarte</td><td>Pralin, sorbet framboise démo</td><td>11&nbsp;€</td></tr>
+              <tr><td>Velouté</td><td>Courge, huile de noisette toastée</td><td>9&nbsp;€</td></tr>
+              <tr><td>Poisson</td><td>Filet, citron confit maison</td><td>26&nbsp;€</td></tr>
+              <tr><td>Tarte</td><td>Pralin, sorbet framboise maison</td><td>11&nbsp;€</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/resto-assiette.png" width="800" height="600" alt="Assiette gastronomique (image générée)" loading="lazy" decoding="async"></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/resto-salle.png" width="800" height="600" alt="Salle du restaurant (image générée)" loading="lazy" decoding="async"></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/resto-chef.png" width="800" height="600" alt="Chef au dressage (image générée)" loading="lazy" decoding="async"></figure></div>
+        <p class="is-size-7 has-text-centered has-text-grey-dark mb-3">Carrousel des visuels générés — cliquez une image pour l'ouvrir en plein écran (zoom).</p>
+        <div class="swiper vitrine-image-swiper vitrine-swiper-resto" role="region" aria-roledescription="carousel" aria-label="Galerie visuels restaurant">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <figure class="vitrine-figure mb-0">
+                <a href="images/resto-assiette.png" class="glightbox" data-gallery="resto-galerie" data-glightbox="title: Assiette gastronomique ">
+                  <img src="images/resto-assiette.png" width="800" height="600" alt="Assiette gastronomique (image générée)" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="vitrine-figure mb-0">
+                <a href="images/resto-salle.png" class="glightbox" data-gallery="resto-galerie" data-glightbox="title: Salle du restaurant ">
+                  <img src="images/resto-salle.png" width="800" height="600" alt="Salle du restaurant (image générée)" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="vitrine-figure mb-0">
+                <a href="images/resto-chef.png" class="glightbox" data-gallery="resto-galerie" data-glightbox="title: Chef au dressage ">
+                  <img src="images/resto-chef.png" width="800" height="600" alt="Chef au dressage (image générée)" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev" aria-label="Visuel précédent"></div>
+          <div class="swiper-button-next" aria-label="Visuel suivant"></div>
         </div>
       </div>
     </section>
     <section class="section is-vitrine" id="savoir" aria-labelledby="t-sav">
       <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-sav"><i class="fa-solid fa-fire-burner has-text-danger mr-2" aria-hidden="true"></i>Le savoir-faire (fictif)</h2>
+        <h2 class="title is-2 has-text-centered" id="t-sav"><i class="fa-solid fa-fire-burner has-text-danger mr-2" aria-hidden="true"></i>Le savoir-faire</h2>
         <article class="message is-danger is-light mt-4">
           <div class="message-body content is-size-5">
-            <p>Paragraphe long&nbsp;: la brigade imaginaire travaille des produits bruts décrits pour la démo, avec une cuisine ouverte simulée et un comptoir fromager inventé. Les alliances de saveurs sont rédigées pour le style, pas pour un menu réel.</p>
+            <p>Brigade en cuisine ouverte, produits bruts travaillés le jour même et comptoir fromager avec sélection affineur. Les alliances de saveurs suivent les saisons.</p>
             <p>Deuxième paragraphe&nbsp;: traiteur et privatisation sont mentionnés pour remplir la section sans engagement logistique. Les photos générées illustrent assiette, salle et passe pour varier les textures visuelles.</p>
           </div>
         </article>
-        <p class="mt-4"><span class="icon-text"><span class="icon has-text-danger"><i class="fa-solid fa-heart" aria-hidden="true"></i></span><span><strong>Expérience conviviale (démo)</strong></span></span></p>
+        <p class="mt-4"><span class="icon-text"><span class="icon has-text-danger"><i class="fa-solid fa-heart" aria-hidden="true"></i></span><span><strong>Expérience conviviale</strong></span></span></p>
         <progress class="progress is-danger" value="74" max="100">74&nbsp;%</progress>
       </div>
     </section>
@@ -99,13 +128,13 @@
       <div class="container is-widescreen">
         <div class="columns is-centered">
           <div class="column is-7-desktop is-8-tablet">
-            <h2 class="title is-2 has-text-centered" id="t-res"><i class="fa-regular fa-calendar-check has-text-danger mr-2" aria-hidden="true"></i>Réservation (fictif)</h2>
+            <h2 class="title is-2 has-text-centered" id="t-res"><i class="fa-regular fa-calendar-check has-text-danger mr-2" aria-hidden="true"></i>Réservation</h2>
             <div class="box is-vitrine vitrine-form-panel">
               <form action="#" method="get" class="content">
                 <div class="field"><label class="label" for="r-date"><i class="fa-solid fa-calendar-day mr-1" aria-hidden="true"></i>Date</label><div class="control"><input class="input" type="date" id="r-date" name="date"></div></div>
                 <div class="field"><label class="label" for="r-couv"><i class="fa-solid fa-users mr-1" aria-hidden="true"></i>Convives</label><div class="control"><input class="input" type="number" id="r-couv" name="n" min="1" max="12" value="2"></div></div>
-                <div class="field"><label class="checkbox"><input type="checkbox" name="ext"> <i class="fa-solid fa-tree mr-1" aria-hidden="true"></i>Terrasse (si disponible en démo)</label></div>
-                <button type="button" class="button is-danger is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer (démo)</span></button>
+                <div class="field"><label class="checkbox"><input type="checkbox" name="ext"> <i class="fa-solid fa-tree mr-1" aria-hidden="true"></i>Terrasse (selon disponibilité)</label></div>
+                <button type="button" class="button is-danger is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
               </form>
             </div>
           </div>
@@ -115,19 +144,22 @@
     <section class="section is-vitrine is-resto-cream" id="contact" aria-labelledby="t-contact">
       <div class="container is-widescreen">
         <h2 class="title is-2" id="t-contact"><i class="fa-solid fa-phone has-text-danger mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5">03 00 00 00 77 (fictif) · <a href="mailto:resa@ligne-comptoir-demo.local"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>resa@ligne-comptoir-demo.local</a></p>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Hub des démos</span></a></p>
+        <p class="is-size-5">03 87 74 22 31 · <a href="mailto:resa@brasserie-saint-jacques.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>resa@brasserie-saint-jacques.fr</a></p>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
       </div>
     </section>
   </main>
   <footer class="footer has-background-dark is-vitrine-footer">
     <div class="container is-widescreen">
       <div class="columns has-text-grey-light">
-        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-utensils mr-2" aria-hidden="true"></i>Bistro Ligne &amp; Comptoir</p><p class="is-size-6">Démo.</p></div>
+        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-utensils mr-2" aria-hidden="true"></i>Brasserie Saint-Jacques</p><p class="is-size-6">Metz.</p></div>
         <div class="column is-4"><p class="title is-6 has-text-white">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#carte"><i class="fa-solid fa-book-open mr-1" aria-hidden="true"></i>Carte</a></p></div>
         <div class="column is-4"><p class="title is-6 has-text-white">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
       </div>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
+  <script src="../shared/vitrine-images.js"></script>
 </body>
 </html>

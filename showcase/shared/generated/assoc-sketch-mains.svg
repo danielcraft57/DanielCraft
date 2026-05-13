@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="t2">
+  <title id="t2">Dessin vectoriel fictif  entraide</title>
+  <rect width="320" height="200" fill="#e8f5e9"/>
+  <g class="vitrine-sketch-stroke" fill="none" stroke="#2e7d32" stroke-width="3.2" stroke-linecap="round">
+    <path d="M80 130 Q160 40 240 130"/>
+    <path d="M100 150 Q160 90 220 150"/>
+    <circle cx="160" cy="72" r="18" fill="#fff8e1" stroke="#43a047" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,195 @@
+/**
+ * Compléments visuels : carrousels Swiper, lightbox GLightbox, zoom léger.
+ */
+
+/* ——— Swiper (vitrines image) ——— */
+.vitrine-image-swiper {
+  position: relative;
+  padding-bottom: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.vitrine-image-swiper .swiper-slide {
+  height: auto;
+}
+
+.vitrine-image-swiper .vitrine-figure {
+  margin-bottom: 0;
+}
+
+.vitrine-image-swiper .vitrine-figure img,
+.vitrine-image-swiper figure.image img {
+  width: 100%;
+  max-height: min(50vh, 520px);
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+}
+
+.vitrine-image-swiper .swiper-button-prev,
+.vitrine-image-swiper .swiper-button-next {
+  color: #ff3860;
+}
+
+.vitrine-image-swiper.vitrine-swiper-edu .swiper-button-prev,
+.vitrine-image-swiper.vitrine-swiper-edu .swiper-button-next {
+  color: #3273dc;
+}
+
+.vitrine-image-swiper .swiper-pagination-bullet-active {
+  background: currentColor;
+}
+
+/* ——— GLightbox : zone cliquable pleine largeur ——— */
+figure.image.is-4by3 a.glightbox {
+  display: block;
+  height: 100%;
+}
+
+figure.image.is-4by3 a.glightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure.vitrine-figure a.glightbox,
+figure.image a.glightbox {
+  display: block;
+  cursor: zoom-in;
+  outline-offset: 4px;
+}
+
+figure.vitrine-figure a.glightbox:focus-visible,
+figure.image a.glightbox:focus-visible {
+  outline: 2px solid #3273dc;
+}
+
+/* ——— Ken Burns discret (image pleine largeur) ——— */
+.vitrine-figure--ken {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.vitrine-figure--ken img {
+  display: block;
+  width: 100%;
+  max-height: min(48vh, 500px);
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: 55% 45%;
+  animation: vitrine-ken-burns 22s ease-in-out infinite alternate;
+}
+
+@keyframes vitrine-ken-burns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.07) translate(-1.2%, -0.8%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-figure--ken img {
+    animation: none;
+  }
+}
+
+/* ——— Apparition au scroll (figures / colonnes) ——— */
+.vitrine-img-reveal {
+  opacity: 0;
+  transform: translateY(1.35rem) scale(0.98);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.vitrine-img-reveal.is-inview {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.vitrine-img-reveal:nth-child(1) {
+  transition-delay: 0.04s;
+}
+.vitrine-img-reveal:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.vitrine-img-reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-img-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ——— Survol : léger relief + image ——— */
+.vitrine-figure--motion {
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.45s ease;
+}
+
+.vitrine-figure--motion:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+.vitrine-figure--motion img {
+  transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.vitrine-figure--motion:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-figure--motion:hover,
+  .vitrine-figure--motion:hover img {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ——— SVG inline « dessin » animé ——— */
+.vitrine-svg-inline-wrap {
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.vitrine-svg-inline-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vitrine-sketch-stroke {
+  stroke-dasharray: 10 8;
+  animation: vitrine-sketch-dash 16s linear infinite;
+}
+
+@keyframes vitrine-sketch-dash {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-sketch-stroke {
+    animation: none;
+    stroke-dasharray: 0;
+  }
+}
+

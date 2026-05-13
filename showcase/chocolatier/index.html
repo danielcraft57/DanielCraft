@@ -4,11 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="Démo fictive — chocolatier artisanal.">
-  <title>Maison Cacao &amp; Fleur — Chocolatier (fictif)</title>
+  <meta name="description" content="Chocolatier artisanal — boutique &amp; ateliers.">
+  <title>Chocolaterie Vialson — Chocolatier</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-lib-compat.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -16,7 +22,7 @@
   <nav class="navbar is-warning is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
     <div class="container is-fluid">
       <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-dark" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i></span><span>Maison Cacao &amp; Fleur</span></span></a>
+        <a class="navbar-item has-text-weight-bold is-size-5 has-text-dark" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i></span><span>Chocolaterie Vialson</span></span></a>
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
@@ -34,12 +40,12 @@
   </nav>
 
   <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-warning is-medium choco-hero">
+    <section id="accueil" class="hero is-warning is-medium choco-hero vitrine-hero-animate is-vitrine-prejs">
       <div class="hero-body">
         <div class="container">
           <p class="title is-1 has-text-dark">Le goût du bean-to-bar, à Metz</p>
           <p class="subtitle is-4 has-text-dark" style="max-width: 44rem; opacity: 0.92;">
-            Tablettes, pralinés et ateliers — tout est fictif pour démo portfolio. Cadres larges, prix lisibles.
+            Tablettes, pralinés et ateliers découverte. Cadres larges, origines lisibles et prix nets.
           </p>
           <div class="buttons mt-5">
             <a class="button is-dark is-medium" href="#boutique">Voir la boutique</a>
@@ -49,11 +55,11 @@
       </div>
     </section>
 
-    <section class="section vitrine-cta-banner has-background-warning" aria-label="Appel à l’action">
+    <section class="section vitrine-cta-banner vitrine-cta-shimmer has-background-warning" aria-label="Appel à l'action">
       <div class="container is-widescreen">
         <div class="columns is-vcentered">
           <div class="column is-8">
-            <p class="title is-4 has-text-dark">Commander un coffret ou réserver un atelier (démo)</p>
+            <p class="title is-4 has-text-dark">Commander un coffret ou réserver un atelier</p>
             <p class="subtitle is-6 has-text-dark mb-0" style="opacity: 0.9;">Aucune commande réelle — CTA pour captures portfolio.</p>
           </div>
           <div class="column is-4 has-text-right-tablet">
@@ -64,93 +70,105 @@
       </div>
     </section>
 
-    <section class="section is-vitrine" id="boutique" aria-labelledby="t-boutique">
+    <section class="section is-vitrine" id="boutique" aria-labelledby="t-boutique" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-boutique">Coups de cœur</h2>
         <div class="columns is-multiline mt-5">
           <div class="column is-4-desktop is-6-tablet">
-            <div class="box is-vitrine p-0" style="overflow: hidden;">
+            <div class="box is-vitrine p-0 hvr-float" style="overflow: hidden;">
               <figure class="image is-4by3 mb-0">
-                <img src="images/produit-1.png" width="800" height="600" alt="Coffret pralines" loading="lazy" decoding="async">
+                <a href="images/produit-1.png" class="glightbox" data-gallery="choco-boutique" data-glightbox="title: Coffret « Forêt noire »">
+                  <img src="images/produit-1.png" width="800" height="600" alt="Coffret pralines" loading="lazy" decoding="async">
+                </a>
               </figure>
               <div class="p-5">
                 <p class="title is-4">Coffret « Forêt noire »</p>
-                <p class="content is-size-5">24 pralinés ganache cerise (démo).</p>
+                <p class="content is-size-5">24 pralinés ganache cerise.</p>
                 <p class="title is-3 has-text-dark">42&nbsp;€</p>
               </div>
             </div>
           </div>
           <div class="column is-4-desktop is-6-tablet">
-            <div class="box is-vitrine p-0" style="overflow: hidden;">
+            <div class="box is-vitrine p-0 hvr-float" style="overflow: hidden;">
               <figure class="image is-4by3 mb-0">
-                <img src="images/produit-2.png" width="800" height="600" alt="Tablettes" loading="lazy" decoding="async">
+                <a href="images/produit-2.png" class="glightbox" data-gallery="choco-boutique" data-glightbox="title: Tablette 72&nbsp;%">
+                  <img src="images/produit-2.png" width="800" height="600" alt="Tablettes" loading="lazy" decoding="async">
+                </a>
               </figure>
               <div class="p-5">
                 <p class="title is-4">Tablette Équateur 72&nbsp;%</p>
-                <p class="content is-size-5">Notes figue &amp; tabac doux (imaginaire).</p>
+                <p class="content is-size-5">Notes figue &amp; tabac doux, finale cacao 72&nbsp;%.</p>
                 <p class="title is-3 has-text-dark">8,50&nbsp;€</p>
               </div>
             </div>
           </div>
           <div class="column is-4-desktop is-6-tablet">
-            <div class="box is-vitrine p-0" style="overflow: hidden;">
+            <div class="box is-vitrine p-0 hvr-float" style="overflow: hidden;">
               <figure class="image is-4by3 mb-0">
-                <img src="images/produit-3.png" width="800" height="600" alt="Mendiants" loading="lazy" decoding="async">
+                <a href="images/produit-3.png" class="glightbox" data-gallery="choco-boutique" data-glightbox="title: Mendiants">
+                  <img src="images/produit-3.png" width="800" height="600" alt="Mendiants" loading="lazy" decoding="async">
+                </a>
               </figure>
               <div class="p-5">
                 <p class="title is-4">Mendiants du vignoble</p>
-                <p class="content is-size-5">Raisin, amande, sel de Guérande fictif.</p>
+                <p class="content is-size-5">Raisin, amande, sel de Guérande AOP.</p>
                 <p class="title is-3 has-text-dark">16&nbsp;€</p>
               </div>
             </div>
           </div>
         </div>
         <figure class="vitrine-figure mt-6">
-          <img src="images/cacao-origines.png" width="1200" height="900" alt="Fèves de cacao (image générée)" loading="lazy" decoding="async">
+          <a href="images/cacao-origines.png" class="glightbox" data-gallery="choco-visuels" data-glightbox="title: Fèves de cacao">
+            <img src="images/cacao-origines.png" width="1200" height="900" alt="Fèves de cacao (image générée)" loading="lazy" decoding="async">
+          </a>
         </figure>
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="savoir-faire" aria-labelledby="t-sf">
+    <section class="section is-vitrine has-background-light" id="savoir-faire" aria-labelledby="t-sf" data-aos="fade-up" data-aos-delay="50">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-sf">Savoir-faire &amp; origines</h2>
         <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
-          Ce bloc prolonge la narration artisanale avec du texte réaliste en longueur moyenne&nbsp;: torréfaction fictive, températures de cristallisation inventées, partenaires cacao imaginaires. L’image aquarelle ci-dessous joue le rôle de «&nbsp;dessin&nbsp;» décoratif, complétée par une photo plateau pour varier les styles visuels.
+          Ce bloc prolonge la narration artisanale&nbsp;: torréfaction maison, températures de cristallisation contrôlées et partenaires cacao en Amérique latine. L’aquarelle ci-dessous complète une photo plateau pour varier les styles visuels.
         </p>
         <div class="columns is-vcentered is-multiline">
           <div class="column is-6">
             <figure class="vitrine-figure">
-              <img src="images/choco-aquarelle-coffrets.png" width="1200" height="900" alt="Illustration aquarelle coffrets chocolat (image générée)" loading="lazy" decoding="async">
+              <a href="images/choco-aquarelle-coffrets.png" class="glightbox" data-gallery="choco-visuels" data-glightbox="title: Aquarelle coffrets">
+                <img src="images/choco-aquarelle-coffrets.png" width="1200" height="900" alt="Illustration aquarelle coffrets chocolat (image générée)" loading="lazy" decoding="async">
+              </a>
             </figure>
           </div>
           <div class="column is-6">
             <div class="box is-vitrine content is-size-5">
               <p class="tags"><span class="tag is-dark">Bean-to-bar</span><span class="tag is-warning">Sans recette réelle</span></p>
-              <p class="mt-4">Indicateurs de «&nbsp;maturité aromatique&nbsp;» (démo)&nbsp;:</p>
+              <p class="mt-4">Indicateurs de «&nbsp;maturité aromatique&nbsp;»&nbsp;:</p>
               <p class="mt-2"><strong>Équateur 72&nbsp;%</strong></p>
               <progress class="progress is-warning" value="78" max="100">78&nbsp;%</progress>
               <p class="mt-3"><strong>Madagascar milk</strong></p>
               <progress class="progress is-dark" value="64" max="100">64&nbsp;%</progress>
             </div>
             <article class="message is-warning is-light mt-4">
-              <div class="message-body is-size-6">Allergènes listés uniquement à titre d’exemple sur cette maquette — ne pas utiliser pour une information consommateur réelle.</div>
+              <div class="message-body is-size-6">Allergènes affichés en boutique et sur les étiquettes — demandez la fiche produit pour toute question.</div>
             </article>
           </div>
         </div>
         <figure class="vitrine-figure mt-6">
-          <img src="images/choco-degustation-plateau.png" width="1200" height="900" alt="Plateau dégustation chocolats (image générée)" loading="lazy" decoding="async">
+          <a href="images/choco-degustation-plateau.png" class="glightbox" data-gallery="choco-visuels" data-glightbox="title: Plateau dégustation">
+            <img src="images/choco-degustation-plateau.png" width="1200" height="900" alt="Plateau dégustation chocolats (image générée)" loading="lazy" decoding="async">
+          </a>
         </figure>
         <div class="tile is-ancestor mt-5">
           <div class="tile is-parent is-4">
             <article class="tile is-child box is-vitrine-child">
               <p class="title is-5">Fèves</p>
-              <p class="is-size-6">Lots numérotés fictifs, traçabilité simulée.</p>
+              <p class="is-size-6">Lots numérotés, traçabilité fèves et températures conservées.</p>
             </article>
           </div>
           <div class="tile is-parent is-4">
             <article class="tile is-child box is-vitrine-child">
               <p class="title is-5">Conchyage</p>
-              <p class="is-size-6">72&nbsp;h imaginaires, température cible 55&nbsp;°C (démo).</p>
+              <p class="is-size-6">72&nbsp;h indicatifs, température cible 55&nbsp;°C.</p>
             </article>
           </div>
           <div class="tile is-parent is-4">
@@ -163,14 +181,14 @@
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="ateliers" aria-labelledby="t-atel">
+    <section class="section is-vitrine has-background-light" id="ateliers" aria-labelledby="t-atel" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-atel">Ateliers &amp; formules</h2>
         <div class="columns mt-5">
           <div class="column is-4">
             <div class="box is-vitrine has-background-white">
               <p class="title is-4">Origines</p>
-              <p class="content is-size-5">Quatre tablettes « démo » : Madagascar, Pérou, Haïti, Papouasie (noms fictifs).</p>
+              <p class="content is-size-5">Quatre tablettes permanentes&nbsp;: Madagascar, Pérou, Haïti, Papouasie.</p>
             </div>
           </div>
           <div class="column is-4">
@@ -182,7 +200,7 @@
           <div class="column is-4">
             <div class="box is-vitrine has-background-white">
               <p class="title is-4">Entreprises</p>
-              <p class="content is-size-5">Coffrets logo — devis à partir de <strong>180&nbsp;€</strong> HT / 30 unités (démo).</p>
+              <p class="content is-size-5">Coffrets logo — devis à partir de <strong>180&nbsp;€</strong> HT / 30 unités.</p>
             </div>
           </div>
         </div>
@@ -192,12 +210,14 @@
             <tbody>
               <tr><td>Découverte</td><td>4 carrés + boisson</td><td>12&nbsp;€</td></tr>
               <tr><td>Signature</td><td>8 mignardises + accord</td><td>28&nbsp;€</td></tr>
-              <tr><td>Chef invité</td><td>Démo 45&nbsp;min</td><td>55&nbsp;€</td></tr>
+              <tr><td>Chef invité</td><td>Atelier 45&nbsp;min</td><td>55&nbsp;€</td></tr>
             </tbody>
           </table>
         </div>
         <figure class="vitrine-figure mt-6">
-          <img src="images/atelier.png" width="1600" height="686" alt="Atelier chocolat (image générée)" loading="lazy" decoding="async">
+          <a href="images/atelier.png" class="glightbox" data-gallery="choco-visuels" data-glightbox="title: Atelier">
+            <img src="images/atelier.png" width="1600" height="686" alt="Atelier chocolat (image générée)" loading="lazy" decoding="async">
+          </a>
         </figure>
         <div class="has-text-centered mt-5">
           <a class="button is-dark is-medium" href="#coffrets">Demander un devis entreprise</a>
@@ -205,26 +225,26 @@
       </div>
     </section>
 
-    <section class="section is-vitrine" id="avis" aria-labelledby="t-avis">
+    <section class="section is-vitrine" id="avis" aria-labelledby="t-avis" data-aos="fade-up" data-aos-delay="70">
       <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-avis">Avis (inventés)</h2>
+        <h2 class="title is-2 has-text-centered" id="t-avis">Avis clients</h2>
         <div class="columns mt-5">
           <div class="column is-4">
-            <div class="box is-vitrine"><p class="title is-5">Camille M.</p><p class="content is-size-5">«&nbsp;Coffret adopté au bureau — livraison imaginaire.&nbsp;»</p></div>
+            <div class="box is-vitrine hvr-float"><p class="title is-5">Camille M.</p><p class="content is-size-5">«&nbsp;Coffret adopté au bureau — livraison soignée.&nbsp;»</p></div>
           </div>
           <div class="column is-4">
-            <div class="box is-vitrine"><p class="title is-5">Julien L.</p><p class="content is-size-5">«&nbsp;Atelier pédagogique — note démo sans sucre.&nbsp;»</p></div>
+            <div class="box is-vitrine hvr-float"><p class="title is-5">Julien L.</p><p class="content is-size-5">«&nbsp;Atelier pédagogique — dégustation sans sucre ajouté au top.&nbsp;»</p></div>
           </div>
           <div class="column is-4">
-            <div class="box is-vitrine"><p class="title is-5">Soraya K.</p><p class="content is-size-5">«&nbsp;Mendiants équilibrés — avis fictif.&nbsp;»</p></div>
+            <div class="box is-vitrine hvr-float"><p class="title is-5">Soraya K.</p><p class="content is-size-5">«&nbsp;Mendiants équilibrés, cacao franc et fruits secs au top.&nbsp;»</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq" data-aos="fade-up">
       <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-faq">Questions (démo)</h2>
+        <h2 class="title is-2 has-text-centered" id="t-faq">Questions</h2>
         <div class="columns mt-5">
           <div class="column is-6">
             <article class="media box is-vitrine">
@@ -236,7 +256,7 @@
                 </span>
               </figure>
               <div class="media-content content is-size-5">
-                <p><strong>Livraison&nbsp;?</strong> Zones et délais inventés — aucun transport réel.</p>
+                <p><strong>Livraison&nbsp;?</strong> Metz et agglomération sous 48&nbsp;h ouvrées, France métropolitaine sous 72&nbsp;h.</p>
               </div>
             </article>
           </div>
@@ -258,11 +278,11 @@
       </div>
     </section>
 
-    <section class="section is-vitrine" id="coffrets" aria-labelledby="t-coff">
+    <section class="section is-vitrine" id="coffrets" aria-labelledby="t-coff" data-aos="fade-up">
       <div class="container is-widescreen">
         <div class="columns is-centered">
           <div class="column is-10-tablet is-7-desktop">
-            <h2 class="title is-2 has-text-centered" id="t-coff">Coffrets sur mesure (fictif)</h2>
+            <h2 class="title is-2 has-text-centered" id="t-coff">Coffrets sur mesure</h2>
             <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans backend — test des champs Bulma.</p>
             <div class="box is-vitrine vitrine-form-panel">
               <form action="#" method="get" class="content">
@@ -270,7 +290,7 @@
                 <div class="field"><label class="label" for="cf-qte">Quantité</label><div class="control"><input class="input" type="number" id="cf-qte" name="qte" min="10" value="30"></div></div>
                 <div class="field"><label class="label" for="cf-date">Date souhaitée</label><div class="control"><input class="input" type="date" id="cf-date" name="date"></div></div>
                 <div class="field"><label class="label" for="cf-msg">Message</label><div class="control"><textarea class="textarea" id="cf-msg" name="msg" rows="3" placeholder="Logo, goûts, contraintes fictives…"></textarea></div></div>
-                <button type="button" class="button is-dark is-medium is-fullwidth">Envoyer la demande (démo)</button>
+                <button type="button" class="button is-dark is-medium is-fullwidth">Envoyer la demande</button>
               </form>
             </div>
           </div>
@@ -278,24 +298,24 @@
       </div>
     </section>
 
-    <section class="section vitrine-cta-banner has-background-dark has-text-white" aria-label="Second appel à l’action">
+    <section class="section vitrine-cta-banner vitrine-cta-shimmer has-background-dark has-text-white" aria-label="Second appel à l'action">
       <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white">Passer en boutique (maquette)</p>
+        <p class="title is-4 has-text-white">Passer en boutique</p>
         <div class="buttons is-centered mt-4">
           <a class="button is-warning is-medium" href="#contact">Horaires &amp; adresse</a>
-          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Index des vitrines</a>
         </div>
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-warning-light" id="contact" aria-labelledby="t-contact">
+    <section class="section is-vitrine has-background-warning-light" id="contact" aria-labelledby="t-contact" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2" id="t-contact">Nous rendre visite</h2>
         <div class="notification is-white is-size-4 box mt-4" style="padding: 2rem; max-width: 48rem;">
           <p>12 rue des Primevères, 57000 Ville-Fictive</p>
-          <p class="mt-4">Lun–Sam 10h–19h · 03 00 00 00 42 (fictif)</p>
+          <p class="mt-4">Lun–Sam 10h–19h · 03 87 32 18 90</p>
         </div>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour au hub des démos</a></p>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour à l’index des vitrines</a></p>
       </div>
     </section>
   </main>
@@ -304,8 +324,8 @@
     <div class="container is-widescreen">
       <div class="columns is-multiline has-text-grey-light">
         <div class="column is-4">
-          <p class="title is-6 has-text-white">Maison Cacao &amp; Fleur</p>
-          <p class="is-size-6">Vitrine de démonstration.</p>
+          <p class="title is-6 has-text-white">Chocolaterie Vialson</p>
+          <p class="is-size-6">Maison fondée à Metz.</p>
         </div>
         <div class="column is-4">
           <p class="title is-6 has-text-white">Explorer</p>
@@ -318,5 +338,10 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../shared/vitrine-animations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
+  <script src="../shared/vitrine-images.js"></script>
 </body>
 </html>

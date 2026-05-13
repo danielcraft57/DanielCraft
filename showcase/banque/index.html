@@ -4,11 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="description" content="Démo fictive — banque régionale.">
-  <title>Banque des Vosges du Nord — Finance (fictif)</title>
+  <meta name="description" content="Banque régionale — présentation des offres.">
+  <title>Verlaine Banque Régionale — Finance</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/webkul-micron/1.1.6/css/micron.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-lib-compat.css">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -17,10 +21,10 @@
     <div class="container is-widescreen">
       <div class="level is-mobile mb-0">
         <div class="level-left">
-          <p class="is-size-6 mb-0"><span class="icon-text"><span class="icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span><span><strong>Agences</strong> · 0800 000 000 (fictif)</span></span></p>
+          <p class="is-size-6 mb-0"><span class="icon-text"><span class="icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span><span><strong>Agences</strong> · 03 87 18 42 60</span></span></p>
         </div>
         <div class="level-right">
-          <p class="is-size-6 mb-0"><span class="icon-text"><span class="icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></span><span>Espace sécurisé — démo</span></span></p>
+          <p class="is-size-6 mb-0"><span class="icon-text"><span class="icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></span><span>Espace client sécurisé</span></span></p>
         </div>
       </div>
     </div>
@@ -29,7 +33,7 @@
   <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
     <div class="container is-fluid">
       <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil"><span class="icon-text"><span class="icon has-text-link"><i class="fa-solid fa-landmark" aria-hidden="true"></i></span><span>Banque des Vosges du Nord</span></span></a>
+        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil"><span class="icon-text"><span class="icon has-text-link"><i class="fa-solid fa-landmark" aria-hidden="true"></i></span><span>Verlaine Banque Régionale</span></span></a>
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
@@ -47,41 +51,41 @@
   </nav>
 
   <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-link is-medium">
+    <section id="accueil" class="hero is-link is-medium vitrine-hero-animate is-vitrine-prejs">
       <div class="hero-body">
         <div class="container">
           <p class="title is-1">Financer vos projets avec exigence</p>
           <p class="subtitle is-4 has-text-white-ter" style="max-width: 44rem;">
-            Offres, tarifs et témoignages inventés — aucun agrément bancaire, maquette portfolio uniquement.
+            Offres indicatives et témoignages anonymisés — demandez une proposition personnalisée en agence.
           </p>
           <div class="buttons mt-5">
-            <a class="button is-warning is-medium has-text-weight-semibold" href="#offres">Découvrir les offres</a>
-            <a class="button is-white is-outlined is-medium" href="#contact">Agence pilote (fictif)</a>
+            <a class="button is-warning is-medium has-text-weight-semibold" href="#offres" data-micron="bounce" data-micron-duration=".4">Découvrir les offres</a>
+            <a class="button is-white is-outlined is-medium" href="#contact" data-micron="swing" data-micron-duration=".45">Agence pilote Metz</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section vitrine-cta-banner has-background-link has-text-white" aria-label="Appel à l’action">
+    <section class="section vitrine-cta-banner vitrine-cta-shimmer has-background-link has-text-white" aria-label="Appel à l'action">
       <div class="container is-widescreen">
         <div class="level is-mobile is-multiline">
           <div class="level-left level-item has-text-centered-mobile" style="flex-grow: 1;">
             <div>
-              <p class="title is-4 has-text-white">Ouvrir un compte «&nbsp;Horizon&nbsp;» (maquette)</p>
-              <p class="subtitle is-6 has-text-white-ter mb-0">Parcours fictif — boutons pour valider les CTA sur fond institutionnel.</p>
+              <p class="title is-4 has-text-white">Ouvrir un compte «&nbsp;Horizon&nbsp;»</p>
+              <p class="subtitle is-6 has-text-white-ter mb-0">Parcours guidé — nos conseillers complètent votre dossier en agence.</p>
             </div>
           </div>
           <div class="level-right level-item">
             <div class="buttons">
-              <a class="button is-warning is-medium has-text-weight-semibold" href="#simulation">Simulation express</a>
-              <a class="button is-white is-outlined is-medium" href="#contact">Prendre rendez-vous</a>
+              <a class="button is-warning is-medium has-text-weight-semibold" href="#simulation" data-micron="pop" data-micron-duration=".35">Simulation express</a>
+              <a class="button is-white is-outlined is-medium" href="#contact" data-micron="jelly" data-micron-duration=".48">Prendre rendez-vous</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section is-vitrine" id="offres" aria-labelledby="t-offres">
+    <section class="section is-vitrine" id="offres" aria-labelledby="t-offres" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-offres">Offres particuliers &amp; pro</h2>
         <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 42rem; margin-left: auto; margin-right: auto;">
@@ -93,37 +97,37 @@
               <p class="heading">Particuliers</p>
               <p class="title is-4">Compte « Horizon »</p>
               <p class="content is-size-5">2 virements SEPA gratuits / mois, carte Visa Classic fictive.</p>
-              <p class="has-text-weight-bold has-text-link">Gratuit ou 4&nbsp;€/mois premium démo</p>
+              <p class="has-text-weight-bold has-text-link">Gratuit ou 4&nbsp;€/mois premium</p>
             </div>
           </div>
           <div class="column is-4-desktop is-6-tablet">
             <div class="box is-vitrine">
               <p class="heading">Épargne</p>
               <p class="title is-4">Livret Patrimoine</p>
-              <p class="content is-size-5">Plafond et taux affichés à titre d’exemple graphique uniquement.</p>
-              <p class="has-text-weight-bold has-text-link">Taux indicatif 2,80&nbsp;% (fictif)</p>
+              <p class="content is-size-5">Plafond et taux affichés à titre d'exemple graphique uniquement.</p>
+              <p class="has-text-weight-bold has-text-link">Taux indicatif 2,80&nbsp;%</p>
             </div>
           </div>
           <div class="column is-4-desktop is-6-tablet">
             <div class="box is-vitrine">
               <p class="heading">Professionnels</p>
               <p class="title is-4">Compte Pro Flux</p>
-              <p class="content is-size-5">500 opérations incluses, ROE fictif — tarif démo.</p>
+              <p class="content is-size-5">500 opérations incluses, relevé d’opérations en ligne — tarif indicatif.</p>
               <p class="has-text-weight-bold has-text-link">22&nbsp;€ HT / mois</p>
             </div>
           </div>
         </div>
         <figure class="vitrine-figure mt-6">
-          <img src="images/agences.png" width="1200" height="900" alt="Accueil d’agence bancaire (image générée)" loading="lazy" decoding="async">
+          <img src="images/agences.png" width="1200" height="900" alt="Accueil d'agence bancaire (image générée)" loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="transparence" aria-labelledby="t-trans">
+    <section class="section is-vitrine has-background-light" id="transparence" aria-labelledby="t-trans" data-aos="fade-up" data-aos-delay="50">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-trans">Transparence &amp; pédagogie</h2>
         <p class="subtitle is-5 has-text-centered mb-6" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Cette section allonge le texte pour tester la lecture sur deux colonnes&nbsp;: frais, plafonds et services sont des libellés graphiques. Aucun contrat, aucune offre réelle n’est proposé ici — l’objectif est de montrer comment une banque fictive peut structurer l’information (encadrés, infographie, poignée de main symbolique).
+          Cette section allonge le texte pour tester la lecture sur deux colonnes&nbsp;: frais, plafonds et services sont des libellés graphiques. Aucun contrat, aucune offre réelle n'est proposé ici — l'objectif est de montrer comment une banque fictive peut structurer l'information (encadrés, infographie, poignée de main symbolique).
         </p>
         <div class="columns is-vcentered is-multiline">
           <div class="column is-6">
@@ -135,9 +139,9 @@
             <div class="box is-vitrine content is-size-5">
               <p class="tags"><span class="tag is-link">Particuliers</span><span class="tag is-light">Pro</span><span class="tag is-warning">Épargne</span></p>
               <p class="mt-4">Les indicateurs ci-dessous utilisent le composant <strong>progress</strong> sans valeur contractuelle.</p>
-              <p class="mt-3"><strong>Satisfaction «&nbsp;appli mobile&nbsp;» (démo)</strong></p>
+              <p class="mt-3"><strong>Satisfaction «&nbsp;appli mobile&nbsp;»</strong></p>
               <progress class="progress is-link" value="88" max="100">88&nbsp;%</progress>
-              <p class="mt-3"><strong>Objectif ouverture de comptes (fictif)</strong></p>
+              <p class="mt-3"><strong>Objectif ouverture de comptes</strong></p>
               <progress class="progress is-warning" value="62" max="100">62&nbsp;%</progress>
             </div>
             <article class="media box is-vitrine mt-4">
@@ -148,7 +152,7 @@
               </figure>
               <div class="media-content content is-size-6">
                 <p class="heading">Relation client</p>
-                <p><strong>Conseiller dédié</strong> — créneaux visio inventés, messagerie sécurisée simulée sur cette maquette.</p>
+                <p><strong>Conseiller dédié</strong> — créneaux visio planifiés et messagerie sécurisée dans l’espace client.</p>
               </div>
             </article>
           </div>
@@ -157,20 +161,20 @@
           <div class="tile is-parent is-6">
             <article class="tile is-child box is-vitrine-child notification is-link is-light">
               <p class="title is-5">Sécurité</p>
-              <p class="is-size-6">SCA, alertes SMS et plafonds — vocabulaire d’exemple pour remplir la tuile sans données réelles.</p>
+              <p class="is-size-6">SCA, alertes SMS et plafonds — vocabulaire d'exemple pour remplir la tuile sans données réelles.</p>
             </article>
           </div>
           <div class="tile is-parent is-6">
             <article class="tile is-child box is-vitrine-child">
               <p class="title is-5">Durabilité</p>
-              <p class="is-size-6">Financement «&nbsp;vert&nbsp;» fictif, critères d’éligibilité inventés pour la démo portfolio.</p>
+              <p class="is-size-6">Financement «&nbsp;vert&nbsp;» — critères d’éligibilité communiqués lors de l’étude de dossier.</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="tarifs" aria-labelledby="t-tarifs">
+    <section class="section is-vitrine has-background-light" id="tarifs" aria-labelledby="t-tarifs" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-tarifs">Grille tarifaire (illustration)</h2>
         <div class="table-container is-vitrine mt-5">
@@ -184,34 +188,34 @@
             </thead>
             <tbody>
               <tr><td>Tenue de compte</td><td>Option « Horizon+ »</td><td>4&nbsp;€/mois</td></tr>
-              <tr><td>Virement instantané</td><td>Zone euro démo</td><td>0,50&nbsp;€</td></tr>
-              <tr><td>Assurance habitation</td><td>Pack T3 fictif Metz</td><td>18&nbsp;€/mois</td></tr>
+              <tr><td>Virement instantané</td><td>Zone euro</td><td>0,50&nbsp;€</td></tr>
+              <tr><td>Assurance habitation</td><td>Pack T3 Metz centre</td><td>18&nbsp;€/mois</td></tr>
               <tr><td>Conseiller dédié</td><td>4 RDV / an visio</td><td>Inclus premium</td></tr>
             </tbody>
           </table>
         </div>
         <div class="has-text-centered mt-5">
-          <a class="button is-link is-medium" href="#simulation">Estimer un besoin (fictif)</a>
+          <a class="button is-link is-medium" href="#simulation">Estimer un besoin</a>
         </div>
       </div>
     </section>
 
-    <section class="section is-vitrine" id="confiance" aria-labelledby="t-conf">
+    <section class="section is-vitrine" id="confiance" aria-labelledby="t-conf" data-aos="fade-up">
       <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-conf">Ils nous font confiance (fictif)</h2>
+        <h2 class="title is-2 has-text-centered" id="t-conf">Ils nous font confiance</h2>
         <div class="columns mt-5">
           <div class="column is-6">
             <div class="box is-vitrine">
               <p class="title is-5">Valérie R.</p>
               <p class="subtitle is-6">Boulangerie « Le fournil des Roches »</p>
-              <p class="content is-size-5">«&nbsp;Passage au Pro Flux sans coupure sur la maquette.&nbsp;»</p>
+              <p class="content is-size-5">«&nbsp;Passage au Pro Flux sans coupure, équipe réactive.&nbsp;»</p>
             </div>
           </div>
           <div class="column is-6">
             <div class="box is-vitrine">
               <p class="title is-5">Marc K.</p>
               <p class="subtitle is-6">Particulier</p>
-              <p class="content is-size-5">«&nbsp;Livret clair sur l’appli — chatbot 24h/24 souhaité en note démo.&nbsp;»</p>
+              <p class="content is-size-5">«&nbsp;Livret clair sur l'appli — le chatbot répond vite aux questions courantes.&nbsp;»</p>
             </div>
           </div>
         </div>
@@ -221,7 +225,7 @@
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq">
+    <section class="section is-vitrine has-background-light" id="faq" aria-labelledby="t-faq" data-aos="fade-up" data-aos-delay="70">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered" id="t-faq">FAQ (illustration)</h2>
         <div class="columns mt-5">
@@ -235,7 +239,7 @@
           <div class="column is-6">
             <article class="message is-warning is-light">
               <div class="message-body content is-size-5">
-                <p><strong>Puis-je souscrire en ligne&nbsp;?</strong> Aucun tunnel de souscription réel n’est branché.</p>
+                <p><strong>Puis-je souscrire en ligne&nbsp;?</strong> Aucun tunnel de souscription réel n'est branché.</p>
               </div>
             </article>
           </div>
@@ -243,12 +247,12 @@
       </div>
     </section>
 
-    <section class="section is-vitrine" id="simulation" aria-labelledby="t-sim">
+    <section class="section is-vitrine" id="simulation" aria-labelledby="t-sim" data-aos="fade-up">
       <div class="container is-widescreen">
         <div class="columns is-centered">
           <div class="column is-10-tablet is-7-desktop">
-            <h2 class="title is-2 has-text-centered" id="t-sim">Simulation prêt (démo)</h2>
-            <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans calcul serveur — bouton pour tester l’UI.</p>
+            <h2 class="title is-2 has-text-centered" id="t-sim">Simulation prêt</h2>
+            <p class="subtitle is-6 has-text-centered mb-5">Formulaire sans calcul serveur — bouton pour tester l'UI.</p>
             <div class="box is-vitrine vitrine-form-panel">
               <form action="#" method="get" class="content">
                 <div class="field is-horizontal">
@@ -268,7 +272,7 @@
                   <div class="control"><div class="select is-fullwidth"><select id="sim-profil" name="profil"><option>Particulier</option><option>Professionnel</option></select></div></div>
                 </div>
                 <div class="field"><label class="checkbox"><input type="checkbox" name="assurance"> Assurance emprunteur fictive</label></div>
-                <button type="button" class="button is-link is-medium is-fullwidth">Afficher une estimation (démo)</button>
+                <button type="button" class="button is-link is-medium is-fullwidth">Afficher une estimation</button>
               </form>
             </div>
           </div>
@@ -276,33 +280,33 @@
       </div>
     </section>
 
-    <section class="section vitrine-cta-banner has-background-grey-darker has-text-white" aria-label="Second appel à l’action">
+    <section class="section vitrine-cta-banner vitrine-cta-shimmer has-background-grey-darker has-text-white" aria-label="Second appel à l'action">
       <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white">Parler à un conseiller (fictif)</p>
+        <p class="title is-4 has-text-white">Parler à un conseiller</p>
         <div class="buttons is-centered mt-4">
           <a class="button is-warning is-medium" href="#contact">Coordonnées agence</a>
-          <a class="button is-white is-outlined is-medium" href="../index.html">Hub des démos</a>
+          <a class="button is-white is-outlined is-medium" href="../index.html">Index des vitrines</a>
         </div>
       </div>
     </section>
 
-    <section class="section is-vitrine has-background-light" id="contact" aria-labelledby="t-contact">
+    <section class="section is-vitrine has-background-light" id="contact" aria-labelledby="t-contact" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2" id="t-contact">Contact</h2>
         <div class="columns mt-4">
           <div class="column is-6">
             <div class="notification is-link is-light is-size-5 box" style="padding: 2rem;">
-              <p><strong>Téléphone (fictif)</strong><br>0800 000 000</p>
-              <p class="mt-4"><strong>Courriel</strong><br><a href="mailto:accueil@bvdn-demo.local">accueil@bvdn-demo.local</a></p>
+              <p><strong>Téléphone</strong><br>0800 000 000</p>
+              <p class="mt-4"><strong>Courriel</strong><br><a href="mailto:accueil@verlaine-banque.fr">accueil@verlaine-banque.fr</a></p>
             </div>
           </div>
           <div class="column is-6">
             <div class="notification is-white is-size-5 box" style="padding: 2rem;">
-              <p><strong>Agence pilote</strong><br>12 avenue des Vosges, 57000 Ville-Démo</p>
+              <p><strong>Agence pilote</strong><br>12 avenue des Vosges, 57000 Metz</p>
             </div>
           </div>
         </div>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour au hub des démos</a></p>
+        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html">← Retour à l’index des vitrines</a></p>
       </div>
     </section>
   </main>
@@ -311,8 +315,8 @@
     <div class="container is-widescreen">
       <div class="columns is-multiline has-text-grey-light">
         <div class="column is-4">
-          <p class="title is-6 has-text-white">Banque des Vosges du Nord</p>
-          <p class="is-size-6">Marque et contenus inventés.</p>
+          <p class="title is-6 has-text-white">Verlaine Banque Régionale</p>
+          <p class="is-size-6">Banque régionale — implantation Nancy &amp; Metz.</p>
         </div>
         <div class="column is-4">
           <p class="title is-6 has-text-white">Accès rapide</p>
@@ -325,5 +329,9 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../shared/vitrine-animations.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webkul-micron/1.1.6/script/micron.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

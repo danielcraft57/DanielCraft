@@ -4,18 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Démo fictive — garage &amp; carrosserie.">
-  <title>Garage Delta Moteurs — Automobile (fictif)</title>
+  <meta name="description" content="Garage, mécanique, pneus et carrosserie près de Metz.">
+  <title>Garage Central Plappeville — Automobile</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
   <nav class="navbar is-dark is-spaced" role="navigation" aria-label="Navigation principale">
     <div class="container is-fluid">
       <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-warning" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-car" aria-hidden="true"></i></span><span>Delta Moteurs</span></span></a>
+        <a class="navbar-item has-text-weight-bold is-size-5 has-text-warning" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-car" aria-hidden="true"></i></span><span>Garage Central</span></span></a>
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
@@ -30,15 +35,15 @@
     </div>
   </nav>
   <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium auto-hero">
+    <section id="accueil" class="hero is-medium auto-hero vitrine-hero-animate is-vitrine-prejs">
       <div class="hero-body">
         <div class="container">
-          <p class="title is-1 has-text-warning"><i class="fa-solid fa-wrench mr-3" aria-hidden="true"></i>Mécanique · diagnostic · pneus (démo)</p>
+          <p class="title is-1 has-text-warning"><i class="fa-solid fa-wrench mr-3" aria-hidden="true"></i>Mécanique · diagnostic · pneus</p>
           <p class="subtitle is-4 has-text-grey-lighter" style="max-width: 46rem;">
-            Delta Moteurs est un garage fictif&nbsp;: mécaniciens inventés, équipements imaginaires et tarifs indicatifs pour captures d’écran. Aucune intervention réelle n’est planifiée via ce site statique.
+            Garage Central Plappeville accueille particuliers et professionnels&nbsp;: mécanique générale, pneumatiques et carrosserie. Tarifs indicatifs&nbsp;; devis gratuit sur rendez-vous.
           </p>
           <p class="subtitle is-5 has-text-grey mt-4" style="max-width: 46rem;">
-            Ce bloc prolonge le message avec des engagements qualité simulés (contrôle visuel inventé, essai routier fictif, garantie pièces graphique) et une mention de flotte entreprise imaginaire pour tester le texte sur fond graphite.
+            Contrôle visuel systématique, essai routier après réparation et garantie pièces et main-d'œuvre. Flotte entreprise&nbsp;: planning d'entretien et véhicule de courtoisie sur demande.
           </p>
           <div class="buttons mt-5">
             <a class="button is-warning is-medium" href="#atelier"><span class="icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span><span>Prestations</span></a>
@@ -47,19 +52,19 @@
         </div>
       </div>
     </section>
-    <section class="section vitrine-cta-banner has-background-grey-darker has-text-white" aria-label="CTA">
+    <section class="section vitrine-cta-banner vitrine-cta-shimmer has-background-grey-darker has-text-white" aria-label="CTA">
       <div class="container is-widescreen columns is-vcentered">
-        <div class="column is-8"><p class="title is-4 has-text-white"><i class="fa-solid fa-clipboard-check mr-3" aria-hidden="true"></i>Contrôle technique partenaire (fictif)</p></div>
+        <div class="column is-8"><p class="title is-4 has-text-white"><i class="fa-solid fa-clipboard-check mr-3" aria-hidden="true"></i>Contrôle technique partenaire</p></div>
         <div class="column is-4 has-text-right-tablet"><a class="button is-warning is-medium" href="#rdv"><i class="fa-solid fa-clock mr-2" aria-hidden="true"></i>Créneaux</a></div>
       </div>
     </section>
-    <section class="section is-vitrine has-background-black-ter" id="atelier" aria-labelledby="t-at">
+    <section class="section is-vitrine has-background-black-ter" id="atelier" aria-labelledby="t-at" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered has-text-light" id="t-at"><i class="fa-solid fa-gears has-text-warning mr-2" aria-hidden="true"></i>Atelier</h2>
         <p class="has-text-centered has-text-grey mb-5" style="max-width: 46rem; margin-left: auto; margin-right: auto;">Tableau indicatif pour alignements et pictogrammes dans les cellules — durées et prix sans valeur contractuelle.</p>
         <div class="table-container mt-5" style="border-radius: 10px; overflow: hidden; border: 1px solid #4a4a4a;">
           <table class="table is-fullwidth is-striped has-background-grey-darker has-text-light is-size-5">
-            <thead class="has-background-grey-dark"><tr><th><i class="fa-solid fa-screwdriver-wrench mr-2" aria-hidden="true"></i>Prestation</th><th><i class="fa-solid fa-hourglass-half mr-2" aria-hidden="true"></i>Temps indicatif</th><th><i class="fa-solid fa-euro-sign mr-2" aria-hidden="true"></i>Prix démo</th></tr></thead>
+            <thead class="has-background-grey-dark"><tr><th><i class="fa-solid fa-screwdriver-wrench mr-2" aria-hidden="true"></i>Prestation</th><th><i class="fa-solid fa-hourglass-half mr-2" aria-hidden="true"></i>Temps indicatif</th><th><i class="fa-solid fa-euro-sign mr-2" aria-hidden="true"></i>Tarif indicatif</th></tr></thead>
             <tbody>
               <tr><td>Vidange</td><td>30&nbsp;min</td><td>79&nbsp;€</td></tr>
               <tr><td>Freinage avant</td><td>1&nbsp;h</td><td>220&nbsp;€</td></tr>
@@ -67,63 +72,93 @@
             </tbody>
           </table>
         </div>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/auto-pont.png" width="800" height="450" alt="Véhicule sur pont (image générée)" loading="lazy" decoding="async"></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/auto-mecanique.png" width="800" height="450" alt="Mécanicien au diagnostic (image générée)" loading="lazy" decoding="async"></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/auto-pneus.png" width="800" height="450" alt="Pneumatiques (image générée)" loading="lazy" decoding="async"></figure></div>
+        <p class="is-size-7 has-text-centered has-text-grey mb-3">Carrousel atelier — ouvrez une photo en plein écran pour zoomer.</p>
+        <div class="swiper vitrine-image-swiper vitrine-swiper-auto" role="region" aria-roledescription="carousel" aria-label="Galerie atelier">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <figure class="vitrine-figure mb-0">
+                <a href="images/auto-pont.png" class="glightbox" data-gallery="auto-atelier" data-glightbox="title: Véhicule sur pont ">
+                  <img src="images/auto-pont.png" width="800" height="450" alt="Véhicule sur pont (image générée)" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="vitrine-figure mb-0">
+                <a href="images/auto-mecanique.png" class="glightbox" data-gallery="auto-atelier" data-glightbox="title: Diagnostic ">
+                  <img src="images/auto-mecanique.png" width="800" height="450" alt="Mécanicien au diagnostic (image générée)" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure class="vitrine-figure mb-0">
+                <a href="images/auto-pneus.png" class="glightbox" data-gallery="auto-atelier" data-glightbox="title: Pneumatiques ">
+                  <img src="images/auto-pneus.png" width="800" height="450" alt="Pneumatiques (image générée)" loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev" aria-label="Visuel précédent"></div>
+          <div class="swiper-button-next" aria-label="Visuel suivant"></div>
         </div>
       </div>
     </section>
-    <section class="section is-vitrine has-background-black-bis" id="expertise" aria-labelledby="t-ex">
+    <section class="section is-vitrine has-background-black-bis" id="expertise" aria-labelledby="t-ex" data-aos="fade-up" data-aos-delay="60">
       <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-ex"><i class="fa-solid fa-medal has-text-warning mr-2" aria-hidden="true"></i>Expertise &amp; carrosserie (fictif)</h2>
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-ex"><i class="fa-solid fa-medal has-text-warning mr-2" aria-hidden="true"></i>Expertise &amp; carrosserie</h2>
         <div class="columns mt-5">
-          <div class="column is-6"><div class="box has-background-grey-darker has-text-light is-auto-ring"><p class="title is-5 has-text-warning"><i class="fa-solid fa-car-side mr-2" aria-hidden="true"></i>Carrosserie</p><p class="is-size-5">Devis imaginaire, peinture fictive, cabine de séchage simulée.</p></div></div>
-          <div class="column is-6"><div class="box has-background-grey-darker has-text-light is-auto-ring"><p class="title is-5 has-text-warning"><i class="fa-solid fa-van-shuttle mr-2" aria-hidden="true"></i>Flotte pro</p><p class="is-size-5">Contrats entreprise inventés, planning d’entretien graphique.</p></div></div>
+          <div class="column is-6"><div class="box has-background-grey-darker has-text-light is-auto-ring"><p class="title is-5 has-text-warning"><i class="fa-solid fa-car-side mr-2" aria-hidden="true"></i>Carrosserie</p><p class="is-size-5">Devis photo, peinture bi-couche et cabine de séchage contrôlée.</p></div></div>
+          <div class="column is-6"><div class="box has-background-grey-darker has-text-light is-auto-ring"><p class="title is-5 has-text-warning"><i class="fa-solid fa-van-shuttle mr-2" aria-hidden="true"></i>Flotte pro</p><p class="is-size-5">Contrats entreprise, planning d'entretien et relevé kilométrique.</p></div></div>
         </div>
-        <article class="message is-dark mt-4"><div class="message-body has-text-grey-lighter content is-size-5"><p>Paragraphe long sur la méthode de diagnostic imaginaire&nbsp;: prise en charge prioritaire simulée, prêt véhicule fictif et historique d’interventions rédigé pour la démo.</p></div></article>
-        <p class="mt-4 has-text-grey-lighter"><i class="fa-solid fa-industry mr-2 has-text-warning" aria-hidden="true"></i><strong>Occupation des ponts (démo)</strong></p>
+        <article class="message is-dark mt-4"><div class="message-body has-text-grey-lighter content is-size-5"><p>Diagnostic prioritaire pour les véhicules immobilisés, prêt véhicule selon disponibilité et historique d'interventions consultable à l'atelier.</p></div></article>
+        <p class="mt-4 has-text-grey-lighter"><i class="fa-solid fa-industry mr-2 has-text-warning" aria-hidden="true"></i><strong>Occupation des ponts</strong></p>
         <progress class="progress is-warning" value="62" max="100">62&nbsp;%</progress>
       </div>
     </section>
-    <section class="section is-vitrine has-background-black-ter" id="pneus" aria-labelledby="t-pn">
+    <section class="section is-vitrine has-background-black-ter" id="pneus" aria-labelledby="t-pn" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered has-text-light" id="t-pn"><i class="fa-solid fa-circle-notch has-text-warning mr-2" aria-hidden="true"></i>Pneumatiques</h2>
         <article class="message is-dark"><div class="message-body has-text-grey-lighter"><i class="fa-solid fa-arrows-rotate mr-2" aria-hidden="true"></i>Montage, équilibrage, géométrie — marques citées à titre graphique uniquement.</div></article>
       </div>
     </section>
-    <section class="section is-vitrine has-background-black-bis" id="rdv" aria-labelledby="t-rd">
+    <section class="section is-vitrine has-background-black-bis" id="rdv" aria-labelledby="t-rd" data-aos="fade-up">
       <div class="container is-widescreen">
         <div class="columns is-centered">
           <div class="column is-7-desktop">
-            <h2 class="title is-2 has-text-centered has-text-light" id="t-rd"><i class="fa-regular fa-calendar-check has-text-warning mr-2" aria-hidden="true"></i>Rendez-vous (fictif)</h2>
+            <h2 class="title is-2 has-text-centered has-text-light" id="t-rd"><i class="fa-regular fa-calendar-check has-text-warning mr-2" aria-hidden="true"></i>Prendre rendez-vous</h2>
             <div class="box has-background-grey-darker has-text-light vitrine-form-panel">
               <form action="#" method="get" class="content">
                 <div class="field"><label class="label has-text-grey-lighter" for="a-immat"><i class="fa-solid fa-id-card mr-1" aria-hidden="true"></i>Immatriculation</label><div class="control"><input class="input" type="text" id="a-immat" name="immat" placeholder="AA-000-AA"></div></div>
                 <div class="field"><label class="label has-text-grey-lighter" for="a-motif"><i class="fa-solid fa-wrench mr-1" aria-hidden="true"></i>Motif</label><div class="control"><div class="select is-fullwidth"><select id="a-motif" name="motif"><option>Révision</option><option>Pneus</option><option>Carrosserie</option></select></div></div></div>
-                <button type="button" class="button is-warning is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer (démo)</span></button>
+                <button type="button" class="button is-warning is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section is-vitrine has-background-black-ter" id="contact" aria-labelledby="t-contact">
+    <section class="section is-vitrine has-background-black-ter" id="contact" aria-labelledby="t-contact" data-aos="fade-up">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-light" id="t-contact"><i class="fa-solid fa-location-dot has-text-warning mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5 has-text-grey-lighter mt-3"><a class="has-text-warning" href="mailto:atelier@delta-moteurs-demo.local"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>atelier@delta-moteurs-demo.local</a> · ZI fictive</p>
-        <p class="mt-5"><a class="button is-warning is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Hub des démos</span></a></p>
+        <p class="is-size-5 has-text-grey-lighter mt-3"><a class="has-text-warning" href="mailto:garage@central-plappeville.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>garage@central-plappeville.fr</a> · ZI Actipôle, 57140 Norroy-le-Veneur</p>
+        <p class="mt-5"><a class="button is-warning is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
       </div>
     </section>
   </main>
   <footer class="footer has-background-black-bis is-vitrine-footer">
     <div class="container is-widescreen">
       <div class="columns has-text-grey">
-        <div class="column is-4"><p class="title is-6 has-text-warning"><i class="fa-solid fa-car mr-2" aria-hidden="true"></i>Delta Moteurs</p><p class="is-size-6 has-text-grey-light">Fictif.</p></div>
+        <div class="column is-4"><p class="title is-6 has-text-warning"><i class="fa-solid fa-car mr-2" aria-hidden="true"></i>Garage Central</p><p class="is-size-6 has-text-grey-light">Grand Est.</p></div>
         <div class="column is-4"><p class="title is-6 has-text-warning">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#atelier"><i class="fa-solid fa-gears mr-1" aria-hidden="true"></i>Atelier</a></p></div>
         <div class="column is-4"><p class="title is-6 has-text-warning">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
       </div>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../shared/vitrine-animations.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
+  <script src="../shared/vitrine-images.js"></script>
 </body>
 </html>

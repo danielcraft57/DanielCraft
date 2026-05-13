@@ -86,11 +86,40 @@ section[id] {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.12);
 }
 
+/* Visuels : cadre lisible sans monopoliser l’écran (lightbox conserve le détail) */
+.vitrine-figure a.glightbox {
+  display: block;
+}
+
 .vitrine-figure img {
   display: block;
   width: 100%;
+  max-height: min(48vh, 500px);
   height: auto;
+  object-fit: cover;
+  object-position: center;
   vertical-align: middle;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1);
+}
+
+.vitrine-figure:hover img {
+  transform: scale(1.03);
+}
+
+.hero .vitrine-figure img,
+.vitrine-hero-animate .vitrine-figure img {
+  max-height: min(40vh, 400px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-figure img {
+    transition: none;
+  }
+
+  .vitrine-figure:hover img {
+    transform: none;
+  }
 }
 
 .table-container.is-vitrine {

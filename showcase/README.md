@@ -6,10 +6,22 @@ Sites statiques **100 % fictifs** pour captures d’écran (desktop, tablette, m
 
 Les fichiers `showcase/*/images/*.png` sont des **visuels générés** (ambiance photographique) pour la démo ; **aucune** entreprise réelle n’est représentée.
 
+Pour régénérer les **mosaïques PNG** (éducation + association) sans IA externe, à la racine du dépôt : `python scripts/generate_showcase_vitrine_visuals.py` (Pillow). Les SVG de référence optionnels sont dans `showcase/shared/generated/`.
+
 ## Design (références)
 
 - **Material Design 3** : surfaces tonales, formes (coins), élévation, typo **Roboto**, courbes de mouvement — [m3.material.io/styles](https://m3.material.io/styles).
 - **UX « sites primés »** : hiérarchie typographique claire, cartes avec élévation et survol discret, en-têtes sticky où pertinent, `prefers-reduced-motion`, focus visible.
+
+## Animations (certaines vitrines)
+
+Sur **technologie**, **chocolatier**, **beaute**, **banque**, **automobile** : [AOS](https://michalsnik.github.io/aos/) (apparition au scroll), [anime.js](https://animejs.com/) (entrée du hero), CSS partagé `shared/vitrine-animations.css` (reflet léger sur bandeaux CTA, état pré-JS du hero). Choix alignés avec la veille [librairies JS utiles au front](https://www.codeur.com/blog/meilleures-librairies-javascript/) (AOS, anime.js). Les scripts CDN sont chargés dans chaque page concernée ; `prefers-reduced-motion: reduce` désactive AOS et l’animation hero.
+
+En complément (sélection inspirée de [27 librairies d’animation web CSS et JS — Blog du Webdesign](https://www.blogduwebdesign.com/blog/webdesign/librairies-d-animation-web-css-javascript.html)) : **Hover.css** (survol « léger » sur cartes ou boutons), **Animate.css** (entrées hero sur **odontologie**, **education**), **Micron.js** (micro-interactions au clic sur **technologie** et **banque**). Fichier `shared/vitrine-lib-compat.css` atténue Hover / Animate lorsque l’utilisateur demande moins de mouvement.
+
+Effets **maison** (sans dépendance npm) dans `shared/vitrine-creative.css` + `shared/vitrine-creative.js` : barre de progression de lecture en haut de page, halo souris sur hero (**industrie**, **services**), cartes « usine » en perspective (**industrie**), titre métal animé + boutons magnétiques (**services**), aurora conique sur CTA (**association**), lignes de tableau en cascade (**comptable**), constellation CSS sur hero hôtel (**etablissement**). Le script désactive halo et magnétisme si `prefers-reduced-motion: reduce` ; la barre de progression reste utilisable.
+
+**Images** : [GLightbox](https://github.com/biati-digital/glightbox) (galerie plein écran, zoom, navigation clavier/tactile) et [Swiper](https://swiperjs.com/) (carrousel **coverflow** + autopause au survol) via `shared/vitrine-images.css` et `shared/vitrine-images.js`. Swiper sur **restauration**, **automobile**, **education** (visuels Pillow) et **association** ; GLightbox sur ces pages plus **beaute**, **commerce**, **services**, **etablissement**, **chocolatier**, **technologie** (galerie + effet **Ken Burns** CSS sur le visuel réseau). Transitions **`.vitrine-img-reveal`** (IntersectionObserver) et **`.vitrine-figure--motion`** (survol) + traits SVG **`.vitrine-sketch-stroke`**. `prefers-reduced-motion` raccourcit ou coupe autoplay Swiper, effets d’ouverture GLightbox, traits animés et reveals.
 
 Fichiers partagés : `shared/reset.css`, `shared/tokens.css`, `shared/media.css`, **`shared/layout-desktop.css`** (grilles XL, colonnes, sous-nav ancrage, blocs « densité » typographique). Hub : `hub.css`.
 

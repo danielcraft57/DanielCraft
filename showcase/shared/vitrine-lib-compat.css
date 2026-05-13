@@ -1,0 +1,17 @@
+/**
+ * Compat Bulma + libs externes (Hover.css, Animate.css, Micron) et accessibilité.
+ * Réf. veille animations : https://www.blogduwebdesign.com/blog/webdesign/librairies-d-animation-web-css-javascript.html
+ */
+@media (prefers-reduced-motion: reduce) {
+  [class*="hvr-"] {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+
+  .animate__animated {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

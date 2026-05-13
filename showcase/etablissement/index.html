@@ -4,18 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Démo fictive — hôtel &amp; établissement d’accueil.">
-  <title>Hôtel des Arcades &amp; Spa — Établissement (fictif)</title>
+  <meta name="description" content="Hôtel 4 étoiles, spa et séminaires à Nancy.">
+  <title>Hôtel Stanislas Collection — Établissement</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="../shared/vitrine-bulma.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../shared/vitrine-creative.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+  <div class="vitrine-read-progress" aria-hidden="true"></div>
   <nav class="navbar is-black is-spaced" role="navigation" aria-label="Navigation principale">
     <div class="container is-fluid">
       <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-warning" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-hotel" aria-hidden="true"></i></span><span>Hôtel des Arcades</span></span></a>
+        <a class="navbar-item has-text-weight-bold is-size-5 has-text-warning" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-hotel" aria-hidden="true"></i></span><span>Hôtel Stanislas Collection</span></span></a>
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
@@ -30,15 +34,15 @@
     </div>
   </nav>
   <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium etab-hero">
+    <section id="accueil" class="hero is-medium etab-hero vitrine-hero-stars">
       <div class="hero-body">
         <div class="container">
-          <p class="title is-1 has-text-white"><i class="fa-solid fa-spa mr-3 has-text-etab-gold" aria-hidden="true"></i>Chambres · spa · réceptions (démo)</p>
+          <p class="title is-1 has-text-white"><i class="fa-solid fa-spa mr-3 has-text-etab-gold" aria-hidden="true"></i>Chambres · spa · réceptions</p>
           <p class="subtitle is-4 has-text-grey-lighter" style="max-width: 46rem;">
-            L’hôtel des Arcades est une fiction hôtelière complète&nbsp;: chambres, suites et espaces bien-être décrits pour le portfolio. Aucune réservation en ligne ne confirme un séjour réel.
+            Le Stanislas Collection est un hôtel-boutique au cœur de Nancy&nbsp;: chambres rénovées, suites familiales et espace bien-être. Les tarifs affichés sont indicatifs&nbsp;; la disponibilité est confirmée par le secrétariat ou les OTA partenaires.
           </p>
           <p class="subtitle is-5 has-text-grey mt-4" style="max-width: 46rem;">
-            Nous développons ici une promesse d’expérience imaginaire&nbsp;: petit-déjeuner buffet simulé, conciergerie inventée et partenariats culturels fictifs pour allonger le texte du hero sur fond sombre chaud.
+            Petit-déjeuner buffet, conciergerie 7j/7 et partenariats culturels avec les institutions du centre historique.
           </p>
           <div class="buttons mt-5">
             <a class="button is-warning is-medium" href="#chambres"><span class="icon"><i class="fa-solid fa-bed" aria-hidden="true"></i></span><span>Voir les chambres</span></a>
@@ -49,56 +53,56 @@
     </section>
     <section class="section vitrine-cta-banner has-background-warning py-5" aria-label="CTA">
       <div class="container is-widescreen columns is-vcentered">
-        <div class="column is-8"><p class="title is-4 has-text-dark"><i class="fa-solid fa-champagne-glasses mr-3" aria-hidden="true"></i>Week-end «&nbsp;Spa &amp; dîner&nbsp;» — offre maquette</p></div>
+        <div class="column is-8"><p class="title is-4 has-text-dark"><i class="fa-solid fa-champagne-glasses mr-3" aria-hidden="true"></i>Week-end «&nbsp;Spa &amp; dîner&nbsp;»</p></div>
         <div class="column is-4 has-text-right-tablet"><a class="button is-dark is-medium" href="#reservation"><i class="fa-solid fa-key mr-2" aria-hidden="true"></i>Réserver</a></div>
       </div>
     </section>
     <section class="section is-vitrine has-background-black-ter" id="chambres" aria-labelledby="t-ch">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered has-text-light" id="t-ch"><i class="fa-solid fa-door-open has-text-warning mr-2" aria-hidden="true"></i>Chambres &amp; suites</h2>
-        <p class="has-text-centered has-text-grey mb-5" style="max-width: 46rem; margin-left: auto; margin-right: auto;">Trois niveaux de confort pour tester cartes homogènes, prix indicatifs et icônes dorées sur fond anthracite.</p>
+        <p class="has-text-centered has-text-grey mb-5" style="max-width: 46rem; margin-left: auto; margin-right: auto;">Trois niveaux de confort, tarifs indicatifs et services inclus clairement listés.</p>
         <div class="columns is-multiline mt-5">
-          <div class="column is-4"><div class="box has-background-grey-darker has-text-light is-etab-frame"><p class="title is-5 has-text-warning"><i class="fa-solid fa-moon mr-2" aria-hidden="true"></i>Classique</p><p>Literie imaginaire, plateau courtoisie fictif.</p></div></div>
-          <div class="column is-4"><div class="box has-background-grey-darker has-text-light is-etab-frame"><p class="title is-5 has-text-warning"><i class="fa-solid fa-star mr-2" aria-hidden="true"></i>Deluxe</p><p>Vue cour intérieure inventée, machine à café démo.</p></div></div>
-          <div class="column is-4"><div class="box has-background-grey-darker has-text-light is-etab-frame"><p class="title is-5 has-text-warning"><i class="fa-solid fa-crown mr-2" aria-hidden="true"></i>Suite</p><p>Salon séparé simulé, bain balnéo graphique.</p></div></div>
+          <div class="column is-4"><div class="box has-background-grey-darker has-text-light is-etab-frame"><p class="title is-5 has-text-warning"><i class="fa-solid fa-moon mr-2" aria-hidden="true"></i>Classique</p><p>Literie haut de gamme, plateau courtoisie et sélection de thés.</p></div></div>
+          <div class="column is-4"><div class="box has-background-grey-darker has-text-light is-etab-frame"><p class="title is-5 has-text-warning"><i class="fa-solid fa-star mr-2" aria-hidden="true"></i>Deluxe</p><p>Vue cour intérieure, machine à espresso et literie premium.</p></div></div>
+          <div class="column is-4"><div class="box has-background-grey-darker has-text-light is-etab-frame"><p class="title is-5 has-text-warning"><i class="fa-solid fa-crown mr-2" aria-hidden="true"></i>Suite</p><p>Salon séparé, bain balnéo et service de pressing express.</p></div></div>
         </div>
         <div class="columns is-multiline mt-5">
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/etab-lobby.png" width="800" height="450" alt="Hall d’hôtel (image générée)" loading="lazy" decoding="async"></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/etab-chambre.png" width="800" height="450" alt="Chambre hôtel (image générée)" loading="lazy" decoding="async"></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><img src="images/etab-seminaire.png" width="800" height="450" alt="Salle séminaire (image générée)" loading="lazy" decoding="async"></figure></div>
+          <div class="column is-4"><figure class="vitrine-figure"><a href="images/etab-lobby.png" class="glightbox" data-gallery="etab-visuels" data-glightbox="title: Hall "><img src="images/etab-lobby.png" width="800" height="450" alt="Hall d'hôtel (image générée)" loading="lazy" decoding="async"></a></figure></div>
+          <div class="column is-4"><figure class="vitrine-figure"><a href="images/etab-chambre.png" class="glightbox" data-gallery="etab-visuels" data-glightbox="title: Chambre "><img src="images/etab-chambre.png" width="800" height="450" alt="Chambre hôtel (image générée)" loading="lazy" decoding="async"></a></figure></div>
+          <div class="column is-4"><figure class="vitrine-figure"><a href="images/etab-seminaire.png" class="glightbox" data-gallery="etab-visuels" data-glightbox="title: Séminaire "><img src="images/etab-seminaire.png" width="800" height="450" alt="Salle séminaire (image générée)" loading="lazy" decoding="async"></a></figure></div>
         </div>
       </div>
     </section>
     <section class="section is-vitrine has-background-black-bis" id="experience" aria-labelledby="t-ex">
       <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-ex"><i class="fa-solid fa-heart has-text-warning mr-2" aria-hidden="true"></i>Expérience hôte (fictif)</h2>
+        <h2 class="title is-2 has-text-centered has-text-light" id="t-ex"><i class="fa-solid fa-heart has-text-warning mr-2" aria-hidden="true"></i>Expérience hôte</h2>
         <article class="message is-dark mt-4" style="max-width: 50rem; margin: 0 auto;">
           <div class="message-body has-text-grey-lighter content is-size-5">
-            <p>Paragraphe long&nbsp;: spa imaginaire avec piscine à jets dessinée, sauna finlandais fictif et rituels massages inventés pour remplir la colonne centrale sans promesse thérapeutique.</p>
-            <p>Deuxième paragraphe sur la restauration de l’établissement simulée&nbsp;: chef invité imaginaire, menu dégustation rédigé pour la démo et cave à vins décorative.</p>
+            <p>Espace bien-être avec bassin à jets, sauna finlandais et rituels massages bien-être sur réservation (non médicaux).</p>
+            <p>Notre chef propose une carte de saison, menu dégustation le vendredi et cave à vins sélectionnée par le sommelier.</p>
           </div>
         </article>
-        <p class="mt-5 has-text-grey-lighter"><i class="fa-solid fa-chart-simple mr-2 has-text-warning" aria-hidden="true"></i><strong>Fluidité du parcours client (démo)</strong></p>
+        <p class="mt-5 has-text-grey-lighter"><i class="fa-solid fa-chart-simple mr-2 has-text-warning" aria-hidden="true"></i><strong>Fluidité du parcours client</strong></p>
         <progress class="progress is-warning" value="66" max="100">66&nbsp;%</progress>
       </div>
     </section>
     <section class="section is-vitrine has-background-black-ter" id="seminaires" aria-labelledby="t-se">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-centered has-text-light" id="t-se"><i class="fa-solid fa-chalkboard has-text-warning mr-2" aria-hidden="true"></i>Séminaires</h2>
-        <article class="message is-dark"><div class="message-body has-text-grey-lighter"><i class="fa-solid fa-tv mr-2" aria-hidden="true"></i>Salles modulables 10–120 places — équipements inventés, pauses café simulées.</div></article>
+        <article class="message is-dark"><div class="message-body has-text-grey-lighter"><i class="fa-solid fa-tv mr-2" aria-hidden="true"></i>Salles modulables 10–120 places — vidéoprojecteur 4K, micros sans fil et pauses café gérées par l’équipe événements.</div></article>
       </div>
     </section>
     <section class="section is-vitrine has-background-black-bis" id="reservation" aria-labelledby="t-res">
       <div class="container is-widescreen">
         <div class="columns is-centered">
           <div class="column is-7-desktop">
-            <h2 class="title is-2 has-text-centered has-text-light" id="t-res"><i class="fa-regular fa-calendar-check has-text-warning mr-2" aria-hidden="true"></i>Réservation (fictif)</h2>
+            <h2 class="title is-2 has-text-centered has-text-light" id="t-res"><i class="fa-regular fa-calendar-check has-text-warning mr-2" aria-hidden="true"></i>Réservation</h2>
             <div class="box has-background-grey-darker has-text-light vitrine-form-panel">
               <form action="#" method="get" class="content">
                 <div class="field"><label class="label has-text-grey-lighter" for="e-arr"><i class="fa-solid fa-arrow-right-to-bracket mr-1" aria-hidden="true"></i>Arrivée</label><div class="control"><input class="input" type="date" id="e-arr" name="arr"></div></div>
                 <div class="field"><label class="label has-text-grey-lighter" for="e-dep"><i class="fa-solid fa-arrow-right-from-bracket mr-1" aria-hidden="true"></i>Départ</label><div class="control"><input class="input" type="date" id="e-dep" name="dep"></div></div>
                 <div class="field"><label class="label has-text-grey-lighter" for="e-ch"><i class="fa-solid fa-bed mr-1" aria-hidden="true"></i>Chambre</label><div class="control"><div class="select is-fullwidth"><select id="e-ch" name="ch"><option>Classique</option><option>Deluxe</option><option>Suite</option></select></div></div></div>
-                <button type="button" class="button is-warning is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer (démo)</span></button>
+                <button type="button" class="button is-warning is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
               </form>
             </div>
           </div>
@@ -108,19 +112,22 @@
     <section class="section is-vitrine has-background-black-ter" id="contact" aria-labelledby="t-contact">
       <div class="container is-widescreen">
         <h2 class="title is-2 has-text-light" id="t-contact"><i class="fa-solid fa-address-book has-text-warning mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5 has-text-grey-lighter mt-3"><a class="has-text-warning" href="mailto:booking@hotel-arcades-demo.local"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>booking@hotel-arcades-demo.local</a></p>
-        <p class="mt-5"><a class="button is-warning is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Hub des démos</span></a></p>
+        <p class="is-size-5 has-text-grey-lighter mt-3"><a class="has-text-warning" href="mailto:reservations@stanislas-collection.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>reservations@stanislas-collection.fr</a></p>
+        <p class="mt-5"><a class="button is-warning is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
       </div>
     </section>
   </main>
   <footer class="footer has-background-black-bis is-vitrine-footer">
     <div class="container is-widescreen">
       <div class="columns has-text-grey">
-        <div class="column is-4"><p class="title is-6 has-text-warning"><i class="fa-solid fa-hotel mr-2" aria-hidden="true"></i>Hôtel des Arcades</p><p class="is-size-6 has-text-grey-light">Fictif.</p></div>
+        <div class="column is-4"><p class="title is-6 has-text-warning"><i class="fa-solid fa-hotel mr-2" aria-hidden="true"></i>Hôtel Stanislas Collection</p><p class="is-size-6 has-text-grey-light">Nancy.</p></div>
         <div class="column is-4"><p class="title is-6 has-text-warning">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#chambres"><i class="fa-solid fa-bed mr-1" aria-hidden="true"></i>Chambres</a></p></div>
         <div class="column is-4"><p class="title is-6 has-text-warning">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
       </div>
     </div>
   </footer>
+  <script src="../shared/vitrine-creative.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
+  <script src="../shared/vitrine-images.js"></script>
 </body>
 </html>
