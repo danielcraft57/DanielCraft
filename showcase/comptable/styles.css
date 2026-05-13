@@ -168,11 +168,8 @@ section h2 {
   }
 }
 
-.cols h2 {
-  margin: 0 0 8px;
-  font-size: var(--md-sys-typescale-title-large-size);
-  font-weight: 600;
-  color: var(--md-sys-color-on-surface);
+.cols-subhead {
+  margin-top: 1.5rem;
 }
 
 .note {
@@ -190,4 +187,28 @@ footer {
 
 footer a {
   color: #9ec5ff;
+}
+
+.hero.hero--photo .hero__veil {
+  background: linear-gradient(135deg, rgba(30, 77, 140, 0.75) 0%, rgba(26, 35, 50, 0.88) 100%);
+}
+
+.hero.hero--photo h1 {
+  margin: 0 0 8px;
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  line-height: var(--md-sys-typescale-headline-medium-leading);
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
+}
+
+.hero.hero--photo p {
+  margin: 0 0 20px;
+  max-width: 50ch;
+  color: color-mix(in srgb, white 92%, transparent);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+}
+
+section .section-lede {
+  color: var(--md-sys-color-on-surface-variant);
 }

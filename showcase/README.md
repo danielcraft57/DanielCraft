@@ -2,6 +2,10 @@
 
 Sites statiques **100 % fictifs** pour captures d’écran (desktop, tablette, mobile). Aucune marque réelle.
 
+## Images
+
+Les fichiers `showcase/*/images/*.png` sont des **visuels générés** (ambiance photographique) pour la démo ; **aucune** entreprise réelle n’est représentée.
+
 ## Design (références)
 
 - **Material Design 3** : surfaces tonales, formes (coins), élévation, typo **Roboto**, courbes de mouvement — [m3.material.io/styles](https://m3.material.io/styles).

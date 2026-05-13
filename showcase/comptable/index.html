@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="../shared/media.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,48 +18,110 @@
     <div class="logo">Bilan Carré <span>Experts</span></div>
     <nav aria-label="Navigation">
       <a href="#offres">Offres</a>
-      <a href="#pme">PME</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
+    <section class="hero hero--photo" aria-labelledby="hero-title">
+      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
         <h1 id="hero-title">Piloter votre entreprise avec des chiffres clairs</h1>
-        <p>Cabinet comptable entièrement fictif : expertises, missions et résultats décrits à titre d’exemple pour une maquette web.</p>
+        <p>Forfaits, missions et témoignages inventés — démo portfolio sans valeur juridique.</p>
         <a class="btn" href="#contact">Planifier un échange (démo)</a>
       </div>
     </section>
+
     <section id="offres" aria-labelledby="offres-title">
-      <h2 id="offres-title">Ce que nous accompagnons (fictif)</h2>
+      <h2 id="offres-title">Offres d’accompagnement (fictives)</h2>
+      <p class="section-lede">Formules indicatives pour TPE / PME jusqu’à 15 salariés.</p>
       <ul class="list">
         <li>
           <span class="check" aria-hidden="true">✓</span>
-          <span><strong>Tenue et révision</strong> — dossiers imaginaires, pas de lien avec une société réelle.</span>
+          <span><strong>Essentiel</strong> — tenue, liasse fiscale, 2 rendez-vous / an — <strong>à partir de 220&nbsp;€ HT/mois</strong>.</span>
         </li>
         <li>
           <span class="check" aria-hidden="true">✓</span>
-          <span><strong>Social &amp; paie</strong> — bulletins et déclarations présentés comme démonstration graphique.</span>
+          <span><strong>Confort</strong> — Essentiel + paie jusqu’à 8 bulletins + DSN — <strong>380&nbsp;€ HT/mois</strong>.</span>
         </li>
         <li>
           <span class="check" aria-hidden="true">✓</span>
-          <span><strong>Conseil</strong> — tableaux de bord indicatifs, non opposables.</span>
+          <span><strong>Pilotage</strong> — Confort + tableaux de bord trimestriels + prévisionnel — <strong>590&nbsp;€ HT/mois</strong>.</span>
         </li>
       </ul>
     </section>
-    <section id="pme" class="cols" aria-labelledby="pme-title">
+
+    <section id="tarifs" class="cols" aria-labelledby="tarifs-title">
       <div>
-        <h2 id="pme-title">Pour les PME locales</h2>
-        <p class="note">Restaurants, artisans, cabinets libéraux : segmentation marketing inventée pour le rendu visuel.</p>
+        <h2 id="tarifs-title">Prestations à la carte</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th scope="col">Mission</th>
+              <th scope="col">Prix indicatif</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bilan annuel simplifié</td>
+              <td>1&nbsp;450&nbsp;€ HT</td>
+            </tr>
+            <tr>
+              <td>Création société + formalités</td>
+              <td>890&nbsp;€ HT</td>
+            </tr>
+            <tr>
+              <td>Restructuration dette (mission flash)</td>
+              <td>1&nbsp;200&nbsp;€ HT</td>
+            </tr>
+            <tr>
+              <td>Audit interne 3 jours</td>
+              <td>2&nbsp;800&nbsp;€ HT</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div>
-        <h2>Transparence tarifaire</h2>
-        <p class="note">Forfaits mensuels « à partir de » : montants fictifs, sans valeur commerciale.</p>
+        <h2>Pour les PME locales</h2>
+        <p class="note">Restaurants, artisans, cabinets libéraux : segmentation marketing inventée pour le rendu visuel.</p>
+        <h2 class="cols-subhead">Transparence</h2>
+        <p class="note">Premier rendez-vous découverte 45&nbsp;min — <strong>offert en démo</strong>. Aucune signature possible sur ce site.</p>
       </div>
     </section>
+
+    <section id="avis" aria-labelledby="avis-title">
+      <h2 id="avis-title">Ils nous confient leurs chiffres (fictif)</h2>
+      <div class="reviews">
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#1e4d8c;color:#fff;">ÉR</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Élodie R. — Sarl Atelier du Rempart (fictif)</p>
+              <p class="review-card__date">27 fév. 2026</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Formule Confort : bulletins toujours à jour, zéro retard DSN sur l’année démo.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#d6e4ff;color:#001b3c;">GF</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Gilles F.</p>
+              <p class="review-card__date">9 déc. 2025</p>
+            </div>
+            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Pilotage très utile avant levée de fonds imaginaire. Rapports un peu denses au début.&nbsp;»</p>
+        </article>
+      </div>
+    </section>
+
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Rendez-vous</h2>
-      <p class="note">contact@bilan-carre-demo.local · 03 00 00 00 01</p>
+      <p class="note">contact@bilan-carre-demo.local · 03 00 00 00 01 · 8 rue du Parc, 57000 Ville-Fictive</p>
     </section>
   </main>
   <footer>

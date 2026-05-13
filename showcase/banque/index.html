@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="../shared/media.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,50 +23,126 @@
     <nav aria-label="Navigation">
       <a href="#particuliers">Particuliers</a>
       <a href="#pro">Professionnels</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
       <a href="#securite">Sécurité</a>
     </nav>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
+    <section class="hero hero--photo" aria-labelledby="hero-title">
+      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
         <h1 id="hero-title">Financer vos projets avec exigence</h1>
-        <p>Institution bancaire entièrement fictive. Aucun produit réel, aucun agrément : page d’illustration pour portfolio.</p>
+        <p>Offres, taux et avis inventés. Aucun agrément bancaire — maquette portfolio.</p>
         <div class="row">
           <a class="btn btn-primary" href="#particuliers">Découvrir nos offres</a>
           <a class="btn btn-ghost" href="#pro">Espace pro</a>
         </div>
       </div>
     </section>
+
     <section id="particuliers" aria-labelledby="p-title">
-      <h2 id="p-title">Particuliers</h2>
+      <h2 id="p-title">Particuliers — produits démo</h2>
+      <p class="section-lede">Conditions et tarifs sans valeur contractuelle.</p>
       <div class="grid">
         <article class="tile">
-          <h3>Compte courant</h3>
-          <p>Carte et application mobile imaginaires, plafonds indicatifs.</p>
+          <h3>Compte « Horizon »</h3>
+          <p>Carte Visa Classic fictive, 2 virements SEPA gratuits / mois.</p>
+          <p class="tile-price">Gratuit <span>ou 4&nbsp;€/mois version premium démo</span></p>
         </article>
         <article class="tile">
-          <h3>Épargne réglementée</h3>
-          <p>Livret démo, taux et conditions non contractuels.</p>
+          <h3>Livret Patrimoine (imaginaire)</h3>
+          <p>Versements plafonnés 22&nbsp;950&nbsp;€ — taux variable affiché 2,80&nbsp;% (exemple).</p>
         </article>
         <article class="tile">
-          <h3>Crédit à la consommation</h3>
-          <p>Simulation illustrative, sans valeur légale.</p>
+          <h3>Prêt Perso Express</h3>
+          <p>De 1&nbsp;000 à 25&nbsp;000&nbsp;€ sur 12 à 84 mois — TAEG indicatif 5,9&nbsp;% (fictif).</p>
         </article>
       </div>
     </section>
+
+    <section id="tarifs" aria-labelledby="tarifs-title">
+      <h2 id="tarifs-title">Grille tarifaire illustration</h2>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Détail</th>
+            <th scope="col">Tarif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tenue de compte</td>
+            <td>Option « Horizon+ »</td>
+            <td>4&nbsp;€/mois</td>
+          </tr>
+          <tr>
+            <td>Virement instantané</td>
+            <td>Zone euro démo</td>
+            <td>0,50&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Assurance habitation pack</td>
+            <td>Logement T3 fictif Metz</td>
+            <td>18&nbsp;€/mois</td>
+          </tr>
+          <tr>
+            <td>Conseiller dédié</td>
+            <td>4 rendez-vous / an visio</td>
+            <td>Inclus premium</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <section id="pro" aria-labelledby="pro-title">
       <h2 id="pro-title">Professionnels</h2>
       <div class="grid">
         <article class="tile">
-          <h3>Trésorerie</h3>
-          <p>Encadrement des flux et reporting simplifié (texte fictif).</p>
+          <h3>Compte Pro Flux</h3>
+          <p>500 opérations / mois incluses, ROE fictif — <strong>22&nbsp;€ HT/mois</strong>.</p>
         </article>
         <article class="tile">
-          <h3>Caution &amp; garantie</h3>
-          <p>Dispositifs présentés à titre d’exemple graphique.</p>
+          <h3>Caution marché public</h3>
+          <p>Commission indicative <strong>1,2&nbsp;%</strong> du montant cautionné (démo).</p>
+        </article>
+        <article class="tile">
+          <h3>Encaissement CB</h3>
+          <p>TPE virtuel — <strong>1,35&nbsp;%</strong> + 0,10&nbsp;€ par transaction (fictif).</p>
         </article>
       </div>
     </section>
+
+    <section id="avis" aria-labelledby="avis-title">
+      <h2 id="avis-title">Témoignages (inventés)</h2>
+      <div class="reviews">
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#1b4f8c;color:#fff;">VR</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Valérie R. — Boulangerie « Le fournil des Roches » (fictif)</p>
+              <p class="review-card__date">14 fév. 2026</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Passage au Pro Flux sans coupure : virements fournisseurs le jour J. Conseiller réactif sur la maquette.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#c6a35a;color:#0a1628;">MK</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Marc K.</p>
+              <p class="review-card__date">6 janv. 2026</p>
+            </div>
+            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Livret Patrimoine clair sur l’appli. J’aurais aimé un chatbot 24h/24 — note pour la démo.&nbsp;»</p>
+        </article>
+      </div>
+    </section>
+
     <section id="securite" class="legal-strip" aria-labelledby="sec-title">
       <p id="sec-title"><strong>Sécurité :</strong> ne saisissez jamais de données réelles sur une maquette. Cette page est hors production.</p>
     </section>

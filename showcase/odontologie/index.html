@@ -10,57 +10,144 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="../shared/media.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="logo">Cabinet <span>Sourire Lorraine</span></div>
     <nav aria-label="Navigation">
-      <a href="#soins">Soins</a>
+      <a href="#soins">Soins &amp; tarifs</a>
       <a href="#equipe">Équipe</a>
+      <a href="#avis">Avis</a>
       <a href="#rdv">Rendez-vous</a>
     </nav>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
+    <section class="hero-split" aria-labelledby="hero-title">
+      <div class="hero-split__copy">
         <h1 id="hero-title">Une dentition sereine, au quotidien</h1>
-        <p>Soins conservateurs, parodontologie et urgences dentaires fictives. Page de démonstration pour maquette portfolio.</p>
+        <p>Soins conservateurs, esthétique et urgences — grille tarifaire et praticiens entièrement fictifs.</p>
         <a class="btn" href="#rdv">Prendre rendez-vous</a>
       </div>
-      <aside class="panel" aria-labelledby="horaires-title">
+      <div class="hero-split__media" role="presentation">
+        <img src="images/hero.png" width="1200" height="900" alt="Salle d’attente lumineuse d’un cabinet dentaire moderne" decoding="async" fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="block block--tight" aria-labelledby="horaires-title">
+      <aside class="panel panel--inline" aria-labelledby="horaires-title">
         <h2 id="horaires-title">Horaires d’accueil</h2>
         <ul class="hours">
           <li><span>Lundi – Jeudi</span><span>8h30 – 18h30</span></li>
           <li><span>Vendredi</span><span>8h30 – 17h00</span></li>
-          <li><span>Urgences</span><span>15h–17h</span></li>
+          <li><span>Urgences dentaires</span><span>15h – 17h</span></li>
         </ul>
       </aside>
     </section>
+
     <section id="soins" class="block" aria-labelledby="soins-title">
-      <h2 id="soins-title">Soins proposés (fictifs)</h2>
-      <div class="cards">
+      <h2 id="soins-title">Soins &amp; tarifs indicatifs (démo)</h2>
+      <p class="section-lede">Montants TTC inventés, non contractuels. Aucune prise en charge réelle.</p>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Acte</th>
+            <th scope="col">Description</th>
+            <th scope="col">À partir de</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bilan bucco-dentaire</td>
+            <td>Examen clinique + petites radios si besoin (fictif)</td>
+            <td>45&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Détartrage complet</td>
+            <td>2 arcades, brossage démo</td>
+            <td>68&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Facette céramique</td>
+            <td>Par dent, simulation numérique incluse</td>
+            <td>520&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Blanchiment ambulatoire</td>
+            <td>2 séances, gouttières perso « démo »</td>
+            <td>390&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Couronne zircone</td>
+            <td>Pilier standard, délai 10 jours ouvrés fictif</td>
+            <td>780&nbsp;€</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cards cards--spaced">
         <article class="mini">
-          <h3>Prévention</h3>
-          <p>Détartrage, bilan bucco-dentaire, conseils d’hygiène personnalisés.</p>
+          <h3>Parodontologie</h3>
+          <p>Surfaçage radiculaire secteur — <strong>85&nbsp;€</strong> / secteur (exemple).</p>
         </article>
         <article class="mini">
-          <h3>Esthétique</h3>
-          <p>Facettes céramiques imaginaires et blanchiment encadré.</p>
+          <h3>Pédodontie</h3>
+          <p>Scellement sillons 6 ans — <strong>28&nbsp;€</strong> / dent (fictif).</p>
         </article>
         <article class="mini">
-          <h3>Prothèses</h3>
-          <p>Couronnes, bridges et appareillages adaptés au cas fictif.</p>
+          <h3>Urgence</h3>
+          <p>Consultation douleur week-end — <strong>55&nbsp;€</strong> (démo).</p>
         </article>
       </div>
     </section>
+
     <section id="equipe" class="block alt" aria-labelledby="equipe-title">
-      <h2 id="equipe-title">Une équipe à taille humaine</h2>
-      <p style="max-width: 60ch; color: #3d5555;">Trois praticiennes et deux assistantes dentaires — identités et diplômes inventés pour cette maquette.</p>
+      <h2 id="equipe-title">Équipe soignante (fictive)</h2>
+      <p class="section-lede">Dr Inès Morlot (chirurgien-dentiste), Dr Hélène Varga (orthodontie démo), 3 assistantes stérilisation — diplômes et RPPS inventés.</p>
     </section>
+
+    <section id="avis" class="block" aria-labelledby="avis-title">
+      <h2 id="avis-title">Avis patients (inventés)</h2>
+      <div class="reviews">
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#006b6b;color:#fff;">TB</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Thomas B.</p>
+              <p class="review-card__date">8 mars 2026</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Détartrage sans douleur, explications claires sur le brossage interdentaire. Accueil top.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#9cf0ef;color:#002020;">AL</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Amina L.</p>
+              <p class="review-card__date">21 janv. 2026</p>
+            </div>
+            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Facettes très naturelles. Seul bémol : délai de 3 semaines pour la couleur finale — ok pour la maquette.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#dbe8e6;color:#094848;">PG</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Patricia G.</p>
+              <p class="review-card__date">2 déc. 2025</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Urgence un dimanche : rappel sous 20&nbsp;min, rendez-vous le lundi matin. Rassurant.&nbsp;»</p>
+        </article>
+      </div>
+    </section>
+
     <section id="rdv" class="block" aria-labelledby="rdv-title">
       <h2 id="rdv-title">Contact</h2>
-      <p style="color: #3d5555;">03 00 00 00 00 · contact@sourire-lorraine-demo.local</p>
+      <p class="section-lede">03 00 00 00 00 · contact@sourire-lorraine-demo.local · Parking gratuit (fictif)</p>
     </section>
   </main>
   <footer>

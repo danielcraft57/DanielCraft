@@ -141,6 +141,47 @@ nav a:hover {
   background: color-mix(in srgb, white 8%, transparent);
 }
 
+.hero.hero--photo {
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.hero.hero--photo .hero__veil {
+  background: linear-gradient(165deg, rgba(10, 22, 40, 0.5) 0%, rgba(10, 22, 40, 0.88) 100%);
+}
+
+.hero.hero--photo h1 {
+  margin: 0 0 12px;
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+}
+
+.hero.hero--photo p {
+  margin: 0 auto 20px;
+  max-width: 48ch;
+  color: color-mix(in srgb, white 88%, #8899aa);
+}
+
+.hero.hero--photo .row {
+  justify-content: center;
+}
+
+.tile-price {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--md-sys-color-primary);
+}
+
+.tile-price span {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
 section {
   padding: clamp(28px, 5vw, 44px) clamp(16px, 4vw, 28px);
   max-width: 1100px;

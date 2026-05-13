@@ -58,30 +58,33 @@ nav a:hover {
   background: color-mix(in srgb, var(--md-sys-color-on-primary) 14%, transparent);
 }
 
-.hero {
-  padding: clamp(40px, 7vw, 64px) clamp(16px, 4vw, 28px);
-  background: var(--md-sys-color-primary-container);
-  color: var(--md-sys-color-on-primary-container);
+.hero.hero--photo .hero__veil {
+  background: linear-gradient(180deg, rgba(31, 111, 84, 0.45) 0%, rgba(14, 42, 32, 0.88) 100%);
 }
 
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero h1 {
+.hero.hero--photo h1 {
   margin: 0 0 12px;
   font-size: var(--md-sys-typescale-display-small-size);
   line-height: var(--md-sys-typescale-display-small-leading);
   font-weight: 500;
-  color: var(--md-sys-color-primary);
+  color: #fff;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
 }
 
-.hero p {
+.hero.hero--photo p {
   margin: 0 auto 20px;
   max-width: 48ch;
-  color: var(--md-sys-color-on-surface-variant);
+  color: color-mix(in srgb, white 92%, transparent);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hero.hero--photo .btn-ghost {
+  color: #fff;
+  border-color: color-mix(in srgb, white 55%, transparent);
+}
+
+.hero.hero--photo .btn-ghost:hover {
+  background: color-mix(in srgb, white 12%, transparent);
 }
 
 .hero-actions {
@@ -185,7 +188,60 @@ footer {
   text-align: center;
 }
 
-footer a {
+.card-price {
+  margin-top: 12px;
+  font-size: 0.92rem;
   color: var(--md-sys-color-primary);
-  font-weight: 600;
 }
+
+.don-grid {
+  background: var(--md-sys-color-surface-container-high);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.don-cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  margin-bottom: 16px;
+}
+
+.don-card {
+  background: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-large);
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  box-shadow: var(--md-elevation-1);
+}
+
+.don-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.don-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.don-amount {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--md-sys-color-secondary);
+  margin: 8px 0 12px;
+}
+
+.don-note {
+  margin: 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+section .section-lede {
+  color: var(--md-sys-color-on-surface-variant);
+}
+

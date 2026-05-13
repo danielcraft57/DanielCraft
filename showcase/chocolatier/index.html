@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="../shared/media.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,41 +18,165 @@
   <header>
     <div class="logo">Maison <span>Cacao &amp; Fleur</span></div>
     <nav aria-label="Navigation principale">
+      <a href="#produits">Produits</a>
       <a href="#gammes">Gammes</a>
-      <a href="#histoire">Notre histoire</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
   <main id="contenu">
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Le goût du bean-to-bar, à Metz</h1>
-      <p>Tablettes, pralinés et ganaches préparés à la main. Ingrédients fictifs, site de démonstration.</p>
-      <a class="btn" href="#gammes">Découvrir la collection</a>
+    <section class="hero hero--photo" aria-labelledby="hero-title">
+      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <h1 id="hero-title">Le goût du bean-to-bar, à Metz</h1>
+        <p>Tablettes, pralinés et ganaches — recettes fictives, photos générées pour démo portfolio uniquement.</p>
+        <a class="btn" href="#produits">Voir la boutique</a>
+      </div>
     </section>
-    <section id="gammes" aria-labelledby="gammes-title">
-      <h2 id="gammes-title">Nos gammes</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Origines</h3>
-          <p>Quatre tablettes au cacao équitable imaginaire, notes fruitées et boisées.</p>
+
+    <section id="produits" aria-labelledby="produits-title">
+      <h2 id="produits-title">Coups de cœur du moment</h2>
+      <p class="section-lede">Prix indicatifs TTC inventés. Aucune vente réelle.</p>
+      <div class="grid grid-products">
+        <article class="product-card">
+          <div class="product-card__media">
+            <img src="images/produit-1.png" width="800" height="600" alt="Assortiment de pralines dans un coffret ouvert" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Coffret « Forêt noire »</h3>
+            <p class="product-card__desc">24 pralinés ganache cerise, écorces d’orange confite (démo).</p>
+            <div class="product-card__price">
+              <span class="price-value">42&nbsp;€</span>
+              <span class="price-unit">les 320&nbsp;g</span>
+            </div>
+          </div>
         </article>
-        <article class="card">
-          <h3>Boutique du mois</h3>
-          <p>Assortiment « Forêt d’hiver » : mendiants, truffes, orangettes.</p>
+        <article class="product-card">
+          <div class="product-card__media">
+            <img src="images/produit-2.png" width="800" height="600" alt="Tablettes de chocolat empilées sur bois" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Tablette Équateur 72&nbsp;%</h3>
+            <p class="product-card__desc">Notes figue et tabac doux, fève pure origine imaginaire.</p>
+            <div class="product-card__price">
+              <span class="price-value">8,50&nbsp;€</span>
+              <span class="price-unit">85&nbsp;g</span>
+            </div>
+          </div>
         </article>
-        <article class="card">
-          <h3>Sur mesure</h3>
-          <p>Coffrets entreprises et mariages, délais indicatifs 10 jours ouvrés.</p>
+        <article class="product-card">
+          <div class="product-card__media">
+            <img src="images/produit-3.png" width="800" height="600" alt="Tablette de chocolat noir cassée" loading="lazy" decoding="async">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Mendiants du vignoble</h3>
+            <p class="product-card__desc">Raisin muscat, amande torréfiée, sel de Guérande fictif.</p>
+            <div class="product-card__price">
+              <span class="price-value">16&nbsp;€</span>
+              <span class="price-unit">sachet 150&nbsp;g</span>
+            </div>
+          </div>
         </article>
       </div>
     </section>
+
+    <section id="gammes" aria-labelledby="gammes-title">
+      <h2 id="gammes-title">Nos gammes &amp; services</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Origines</h3>
+          <p>Quatre tablettes au cacao « équitable démo » : Madagascar, Pérou, Haïti, Papouasie (noms inventés).</p>
+        </article>
+        <article class="card">
+          <h3>Atelier parent-enfant</h3>
+          <p>1h30, 8 places, tablier fourni — <strong>35&nbsp;€</strong> / duo (fictif).</p>
+        </article>
+        <article class="card">
+          <h3>Sur mesure entreprises</h3>
+          <p>Coffrets logo chocolat noir — devis à partir de <strong>180&nbsp;€</strong> HT pour 30 unités (démo).</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="tarifs" class="story" aria-labelledby="tarifs-title">
+      <h2 id="tarifs-title">Formules dégustation (fictives)</h2>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Formule</th>
+            <th scope="col">Contenu</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Découverte</td>
+            <td>4 carrés + café ou thé</td>
+            <td>12&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Signature</td>
+            <td>8 mignardises + accord chocolat / vin sans alcool</td>
+            <td>28&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>Chef invité</td>
+            <td>Démonstration + dégustation 45&nbsp;min</td>
+            <td>55&nbsp;€</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="avis" aria-labelledby="avis-title">
+      <h2 id="avis-title">Ils nous ont laissé un mot (fictif)</h2>
+      <div class="reviews">
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#c9a227;color:#3d2314;">CM</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Camille M.</p>
+              <p class="review-card__date">12 fév. 2026 · Metz</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Le coffret Forêt noire a fait un carton au bureau. Livraison express imaginaire le lendemain.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#5c3d2e;color:#fff8f2;">JL</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Julien L.</p>
+              <p class="review-card__date">3 janv. 2026</p>
+            </div>
+            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Atelier parent-enfant très pédagogique. J’aurais aimé une version 100&nbsp;% sans sucre — note pour la démo.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#8b4513;color:#fff;">SK</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Soraya K.</p>
+              <p class="review-card__date">18 nov. 2025</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Les mendiants du vignoble : équilibre parfait sucre / fruit sec. Je recommande (avis inventé).&nbsp;»</p>
+        </article>
+      </div>
+    </section>
+
     <section id="histoire" class="story" aria-labelledby="histoire-title">
       <h2 id="histoire-title">Une maison familiale (fictive)</h2>
-      <p style="max-width: 62ch; font-family: system-ui, sans-serif; color: #4a3b32;">Depuis 1998, la Maison Cacao &amp; Fleur imagine des recettes inspirées du Grand Est. Ce texte sert uniquement à illustrer une mise en page pour portfolio.</p>
+      <p class="section-lede">Depuis 1998, la Maison Cacao &amp; Fleur imagine des recettes inspirées du Grand Est. Identité et dates sont des exemples pour maquette.</p>
     </section>
+
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Nous rendre visite</h2>
-      <p style="font-family: system-ui, sans-serif; color: #5c4a42;">12 rue des Primevères, 57000 Ville-Fictive · Lun–Sam 10h–19h</p>
+      <p class="section-lede">12 rue des Primevères, 57000 Ville-Fictive · Lun–Sam 10h–19h · 03 00 00 00 42</p>
     </section>
   </main>
   <footer>

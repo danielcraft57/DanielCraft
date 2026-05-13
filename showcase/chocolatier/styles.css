@@ -80,30 +80,38 @@ nav a:hover {
   background: color-mix(in srgb, var(--md-sys-color-on-primary) 12%, transparent);
 }
 
-.hero {
-  padding: clamp(40px, 8vw, 80px) clamp(16px, 4vw, 28px);
-  text-align: center;
-  background: linear-gradient(
-    165deg,
-    color-mix(in srgb, var(--choco-header) 88%, #5c3d2e) 0%,
-    var(--choco-header) 48%
-  );
+.hero.hero--photo {
   color: var(--md-sys-color-on-primary);
 }
 
-.hero h1 {
+.hero.hero--photo .hero__veil {
+  background: linear-gradient(
+    180deg,
+    rgba(61, 35, 20, 0.45) 0%,
+    rgba(39, 22, 14, 0.88) 100%
+  );
+}
+
+.hero.hero--photo h1 {
   margin: 0 0 12px;
   font-family: "Fraunces", Georgia, serif;
   font-size: var(--md-sys-typescale-display-small-size);
   line-height: var(--md-sys-typescale-display-small-leading);
   font-weight: 400;
+  color: #fff8f2;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
 }
 
-.hero p {
+.hero.hero--photo p {
   margin: 0 auto 24px;
-  max-width: 38ch;
+  max-width: 40ch;
   font-size: 1.05rem;
-  opacity: 0.92;
+  color: color-mix(in srgb, #fff8f2 92%, transparent);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.4);
+}
+
+.grid-products {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
 .btn {
@@ -183,9 +191,8 @@ section h2 {
   border-bottom: 1px solid var(--md-sys-color-outline-variant);
 }
 
-.story p {
-  max-width: 62ch;
-  color: var(--md-sys-color-on-surface-variant);
+#tarifs .price-table th {
+  background: color-mix(in srgb, var(--md-sys-color-surface-container-high) 85%, white);
 }
 
 footer {

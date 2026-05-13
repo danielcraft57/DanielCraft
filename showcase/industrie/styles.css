@@ -182,3 +182,59 @@ footer {
 footer a {
   color: var(--md-sys-color-primary);
 }
+
+.hero.hero--photo .hero__veil {
+  background: linear-gradient(180deg, rgba(18, 20, 24, 0.35) 0%, rgba(18, 20, 24, 0.9) 100%);
+}
+
+.hero.hero--photo h1 {
+  margin: 0 0 12px;
+  font-size: var(--md-sys-typescale-display-small-size);
+  line-height: var(--md-sys-typescale-display-small-leading);
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.65);
+}
+
+.hero.hero--photo p {
+  margin: 0 auto 20px;
+  max-width: 50ch;
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 92%, transparent);
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero.hero--photo .stats {
+  margin-top: 28px;
+}
+
+.price-table--dark {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+
+.price-table--dark th {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+.price-table--dark td {
+  border-color: var(--md-sys-color-outline-variant);
+}
+
+.review-card--dark {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  border-color: var(--md-sys-color-outline-variant);
+}
+
+.review-card--dark .review-card__name {
+  color: var(--md-sys-color-on-surface);
+}
+
+.review-card--dark .review-card__text {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+section .section-lede {
+  color: var(--md-sys-color-on-surface-variant);
+}

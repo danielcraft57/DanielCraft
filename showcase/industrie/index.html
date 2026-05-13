@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="../shared/media.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,59 +18,116 @@
     <div class="logo">Atelier <span>Mécano-Precision 54</span></div>
     <nav aria-label="Navigation">
       <a href="#expertise">Expertise</a>
-      <a href="#qualite">Qualité</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Références</a>
       <a href="#contact">Usine</a>
     </nav>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Usinage &amp; assemblage pour l’industrie lourde</h1>
-      <p>Entreprise fictive basée en Lorraine : pièces unitaires, petites et moyennes séries, contrôle dimensionnel. Texte à vocation exclusivement illustrative.</p>
-      <a class="btn" href="#contact">Demander une étude (fictif)</a>
-      <div class="stats" aria-label="Indicateurs de démonstration">
-        <div class="stat">
-          <strong>ISO*</strong>
-          <span>*certification imaginaire</span>
-        </div>
-        <div class="stat">
-          <strong>24 h</strong>
-          <span>délai prototype démo</span>
-        </div>
-        <div class="stat">
-          <strong>±2 µm</strong>
-          <span>tolérance d’exemple</span>
+    <section class="hero hero--photo" aria-labelledby="hero-title">
+      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <h1 id="hero-title">Usinage &amp; assemblage pour l’industrie lourde</h1>
+        <p>Pièces unitaires et petites séries — délais et tarifs d’exemple pour portfolio.</p>
+        <a class="btn" href="#contact">Demander une étude (fictif)</a>
+        <div class="stats" aria-label="Indicateurs de démonstration">
+          <div class="stat">
+            <strong>ISO*</strong>
+            <span>*certification imaginaire</span>
+          </div>
+          <div class="stat">
+            <strong>24 h</strong>
+            <span>prototype express démo</span>
+          </div>
+          <div class="stat">
+            <strong>±2 µm</strong>
+            <span>tolérance cible</span>
+          </div>
         </div>
       </div>
     </section>
+
     <section id="expertise" aria-labelledby="exp-title">
-      <h2 id="exp-title">Expertise</h2>
+      <h2 id="exp-title">Expertise &amp; prestations</h2>
+      <p class="section-lede">Matières : acier 42CrMo4, inox 316L, aluminium 7075 — références inventées.</p>
       <div class="grid">
         <article class="card">
-          <h3>Fraisage &amp; tournage</h3>
-          <p>Centres CN fictifs 3 et 5 axes, matières acier, inox, aluminium.</p>
+          <h3>Fraisage 5 axes</h3>
+          <p>Poche complexe, surfacage finition Ra 0,8 — <strong>à partir de 185&nbsp;€ HT</strong> / heure machine (démo).</p>
         </article>
         <article class="card">
-          <h3>Traitement thermique partenaire</h3>
-          <p>Chaîne de sous-traitance simulée pour la maquette.</p>
+          <h3>Tournage CN</h3>
+          <p>Ø max 420&nbsp;mm fictif — barres et flasques — <strong>95&nbsp;€ HT</strong> / heure.</p>
+        </article>
+        <article class="card">
+          <h3>Contrôle 3D</h3>
+          <p>Rapport PDF + nuage de points — <strong>120&nbsp;€ HT</strong> / pièce simple (exemple).</p>
         </article>
       </div>
     </section>
-    <section id="qualite" aria-labelledby="qual-title">
-      <h2 id="qual-title">Qualité &amp; sécurité</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Contrôle métrologie</h3>
-          <p>Armoire 3D et rapport de conformité — données non réelles.</p>
+
+    <section id="tarifs" aria-labelledby="tarifs-title">
+      <h2 id="tarifs-title">Lots indicatifs (fictifs)</h2>
+      <table class="price-table price-table--dark">
+        <thead>
+          <tr>
+            <th scope="col">Lot</th>
+            <th scope="col">Détail</th>
+            <th scope="col">Budget type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10 flasques usinées</td>
+            <td>Inox, fraisage + polissage</td>
+            <td>2&nbsp;400 – 2&nbsp;900&nbsp;€ HT</td>
+          </tr>
+          <tr>
+            <td>Prototype arbre cannelé</td>
+            <td>Traitement thermique inclus (démo)</td>
+            <td>1&nbsp;100&nbsp;€ HT</td>
+          </tr>
+          <tr>
+            <td>Série 250 pièces</td>
+            <td>Alu, cycle automatisé</td>
+            <td>8&nbsp;€ HT / pièce</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="avis" aria-labelledby="avis-title">
+      <h2 id="avis-title">Ils nous font confiance (fictif)</h2>
+      <div class="reviews">
+        <article class="review-card review-card--dark">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#ff8c42;color:#1a0b00;">LH</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Lucas H. — HydroTech Est (marque inventée)</p>
+              <p class="review-card__date">19 janv. 2026</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Délai prototype 22&nbsp;h respecté sur notre vilebrequin démo. BE intégré très pro.&nbsp;»</p>
         </article>
-        <article class="card">
-          <h3>Prévention des risques</h3>
-          <p>EPi, consignes et plan de prévention : contenu générique fictif.</p>
+        <article class="review-card review-card--dark">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#262a32;color:#eceef2;">NP</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Nadia P.</p>
+              <p class="review-card__date">3 nov. 2025</p>
+            </div>
+            <span class="stars" aria-label="4 sur 5">★★★★☆</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Série 250 pièces nickel. Communication planning pourrait être + fréquente — retour maquette.&nbsp;»</p>
         </article>
       </div>
     </section>
+
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Site de production (fictif)</h2>
-      <p style="color: var(--sub);">Z.I. des Charmes, 54000 Ville-Industrie-Démo</p>
+      <p class="section-lede">Z.I. des Charmes, 54000 Ville-Industrie-Démo · contact@mecano-precision54-demo.local</p>
     </section>
   </main>
   <footer>

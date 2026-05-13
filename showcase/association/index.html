@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../shared/reset.css">
   <link rel="stylesheet" href="../shared/tokens.css">
+  <link rel="stylesheet" href="../shared/media.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,45 +18,100 @@
     <div class="logo">Réseau Main Tendue 57</div>
     <nav aria-label="Navigation">
       <a href="#missions">Missions</a>
-      <a href="#benevoles">Bénévolat</a>
       <a href="#dons">Soutenir</a>
+      <a href="#avis">Témoignages</a>
+      <a href="#benevoles">Bénévolat</a>
     </nav>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
+    <section class="hero hero--photo" aria-labelledby="hero-title">
+      <img class="hero__bg" src="images/hero.png" width="1600" height="900" alt="" decoding="async" fetchpriority="high">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
         <h1 id="hero-title">Solidarité de proximité, sans attendre</h1>
-        <p>Association fictive : maraude alimentaire, accompagnement scolaire et ateliers numériques. Toutes les activités décrites servent uniquement à une maquette portfolio.</p>
+        <p>Maraude, jeunesse, insertion — montants et bénévoles fictifs. Photos générées pour démo.</p>
         <div class="hero-actions">
-          <a class="btn" href="#dons">Faire un don (simulation)</a>
+          <a class="btn" href="#dons">Soutenir le réseau (simulation)</a>
           <a class="btn btn-ghost" href="#benevoles">Devenir bénévole</a>
         </div>
       </div>
     </section>
+
     <section id="missions" aria-labelledby="mis-title">
-      <h2 id="mis-title">Nos axes (inventés)</h2>
+      <h2 id="mis-title">Nos actions &amp; besoins</h2>
+      <p class="section-lede">Chiffres et bénéficiaires inventés pour la mise en page.</p>
       <div class="grid">
         <article class="card">
-          <h3>Maraude</h3>
-          <p>Distribution nocturne illustrative, horaires et lieux non réels.</p>
+          <h3>Maraude nocturne</h3>
+          <p>120 repas chauds / semaine (exemple) — fourgons réfrigérés démo.</p>
+          <p class="card-price">Coût : <strong>4,20&nbsp;€</strong> / repas (fictif)</p>
         </article>
         <article class="card">
-          <h3>Jeunesse</h3>
-          <p>Aide aux devoirs et sorties culturelles — chiffres et témoignages fictifs.</p>
+          <h3>Aide aux devoirs</h3>
+          <p>18 collégiens suivis — 2 séances hebdo — matériel fourni.</p>
+          <p class="card-price">Adhésion famille : <strong>12&nbsp;€/an</strong> (démo)</p>
         </article>
         <article class="card">
-          <h3>Insertion</h3>
-          <p>Ateliers CV et simulation d’entretiens pour la démo visuelle.</p>
+          <h3>Insertion pro</h3>
+          <p>Ateliers CV + simulations d’entretiens — 6 mois par parcours.</p>
+          <p class="card-price">Financement : <strong>partenaires imaginaires</strong></p>
         </article>
       </div>
     </section>
-    <section id="benevoles" aria-labelledby="ben-title">
-      <h2 id="ben-title">Rejoindre le collectif</h2>
-      <p style="color: var(--muted); max-width: 60ch;">Deux réunions mensuelles imaginaires, charte bénévole et formation d’accueil : texte générique.</p>
+
+    <section id="dons" class="don-grid" aria-labelledby="dons-title">
+      <h2 id="dons-title">Montants suggérés (non réels)</h2>
+      <div class="don-cards">
+        <article class="don-card">
+          <h3>Soutien ponctuel</h3>
+          <p class="don-amount">15&nbsp;€</p>
+          <p>Colis hygiène (démo)</p>
+        </article>
+        <article class="don-card">
+          <h3>Maraude</h3>
+          <p class="don-amount">40&nbsp;€</p>
+          <p>10 repas fictifs</p>
+        </article>
+        <article class="don-card">
+          <h3>Mécénat</h3>
+          <p class="don-amount">150&nbsp;€</p>
+          <p>Matériel scolaire trimestre</p>
+        </article>
+      </div>
+      <p class="don-note">Aucun paiement n’est traité sur ce site.</p>
     </section>
-    <section id="dons" class="banner" aria-labelledby="dons-title">
-      <h2 id="dons-title" class="visually-hidden" style="position:absolute;left:-9999px;">Soutenir</h2>
-      <p>Les paiements ne sont pas activés sur cette page. Toute mention de don est purement graphique.</p>
+
+    <section id="avis" aria-labelledby="avis-title">
+      <h2 id="avis-title">Bénévoles &amp; familles (avis inventés)</h2>
+      <div class="reviews">
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#1f6f54;color:#fff;">IN</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Isabelle N. — bénévole maraude</p>
+              <p class="review-card__date">4 mars 2026</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Équipe soudée, briefings clairs avant chaque tournée. Horaires respectés sur la maquette.&nbsp;»</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__head">
+            <div class="avatar" style="background:#e07a5f;color:#fff;">KD</div>
+            <div class="review-card__meta">
+              <p class="review-card__name">Karim D. — parent</p>
+              <p class="review-card__date">22 janv. 2026</p>
+            </div>
+            <span class="stars" aria-label="5 sur 5">★★★★★</span>
+          </div>
+          <p class="review-card__text">«&nbsp;Mon fils a repris confiance en maths grâce aux séances du mercredi — histoire fictive.&nbsp;»</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="benevoles" class="banner" aria-labelledby="ben-title">
+      <h2 id="ben-title" class="visually-hidden">Bénévolat</h2>
+      <p>Deux réunions plénières / trimestre (exemple), charte signée jour 1 — coordonnées inventées : benevoles@main-tendue-57-demo.local</p>
     </section>
   </main>
   <footer>
