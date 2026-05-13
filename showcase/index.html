@@ -3,82 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
   <title>Démos vitrine — hub (fictif)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="shared/reset.css">
-  <style>
-    :root {
-      --bg: #0f1419;
-      --card: #1a222d;
-      --text: #e8eef4;
-      --muted: #9aa8b6;
-      --accent: #3d9cf9;
-    }
-    body {
-      background: radial-gradient(1200px 600px at 20% 0%, #1e2a3a 0%, var(--bg) 55%);
-      color: var(--text);
-      padding: clamp(1.5rem, 4vw, 3rem);
-    }
-    .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.5rem;
-    }
-    .lead {
-      color: var(--muted);
-      margin: 0 0 2rem;
-      max-width: 52ch;
-    }
-    .grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 1.25rem 1.35rem;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .card:hover {
-      border-color: rgba(61, 156, 249, 0.45);
-      transform: translateY(-2px);
-    }
-    .card h2 {
-      margin: 0 0 0.35rem;
-      font-size: 1.1rem;
-    }
-    .card p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      margin-bottom: 0.35rem;
-    }
-    footer {
-      margin-top: 2.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-  </style>
+  <link rel="stylesheet" href="shared/tokens.css">
+  <link rel="stylesheet" href="hub.css">
 </head>
 <body>
   <div class="wrap">
     <p class="badge">Contenu fictif</p>
     <h1>Vitrines démo par secteur</h1>
-    <p class="lead">Pages statiques pour tests visuels et captures multi-formats. Noms, textes et identités sont inventés.</p>
+    <p class="lead">Pages statiques pour tests visuels et captures multi-formats. Design inspiré des systèmes type Material&nbsp;3 (surfaces, élévation, typo Roboto) et des interfaces primées (hiérarchie, micro-interactions légères).</p>
     <div class="grid">
       <a class="card" href="chocolatier/index.html">
         <span class="badge">Artisanat</span>

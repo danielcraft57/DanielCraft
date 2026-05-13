@@ -1,0 +1,133 @@
+/**
+ * Hub des démos — thème sombre (surfaces tonales, cartes avec élévation type M3).
+ */
+
+:root {
+  color-scheme: dark;
+  --md-sys-color-primary: #a8c7fa;
+  --md-sys-color-on-primary: #0f1f3d;
+  --md-sys-color-surface: #0f1419;
+  --md-sys-color-surface-container: #1a222d;
+  --md-sys-color-surface-container-high: #232d3a;
+  --md-sys-color-on-surface: #e8eef4;
+  --md-sys-color-on-surface-variant: #9aa8b6;
+  --md-sys-color-outline-variant: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", system-ui, sans-serif;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+  background-image:
+    radial-gradient(1200px 520px at 18% -8%, rgba(168, 199, 250, 0.12) 0%, transparent 55%),
+    radial-gradient(900px 420px at 92% 12%, rgba(103, 80, 164, 0.1) 0%, transparent 50%);
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-sys-color-primary);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 14%, transparent);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: var(--md-sys-typescale-display-small-size);
+  line-height: var(--md-sys-typescale-display-small-leading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0 0 2rem;
+  max-width: 52ch;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 1.05rem;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.card {
+  display: block;
+  padding: 20px;
+  border-radius: var(--md-sys-shape-corner-large);
+  text-decoration: none;
+  color: inherit;
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  box-shadow: var(--md-elevation-1);
+  transition:
+    box-shadow var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized),
+    border-color var(--md-sys-motion-duration-short3) var(--md-sys-motion-easing-standard),
+    transform var(--md-sys-motion-duration-short3) var(--md-sys-motion-easing-standard),
+    background-color var(--md-sys-motion-duration-short3) var(--md-sys-motion-easing-standard);
+}
+
+.card:hover {
+  background: var(--md-sys-color-surface-container-high);
+  border-color: color-mix(in srgb, var(--md-sys-color-primary) 35%, var(--md-sys-color-outline-variant));
+  box-shadow: var(--md-elevation-2);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  transform: translateY(0);
+  box-shadow: var(--md-elevation-1);
+}
+
+.card .badge {
+  margin-bottom: 0.5rem;
+  background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent);
+}
+
+.card h2 {
+  margin: 0 0 0.35rem;
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.45;
+}
+
+footer {
+  margin-top: 2.5rem;
+  font-size: var(--md-sys-typescale-label-large-size);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
