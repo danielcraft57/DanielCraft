@@ -66,7 +66,7 @@ DanielCraftFr/
 
 ## Version actuelle
 
-**Version 1.2.0** - Projets sans -l57, prev/next et suggestions, README GitHub sur pages projet. Blog : liens sans .html, GA4 partout. Doc et menage.
+**Version 1.3.0** - Vitrines : hub, démos sous `assets/vitrines/demos/`, captures, déploiement `dist/vitrines/`, doc VITRINES et ignore captures. Voir le CHANGELOG pour le détail.
 
 Voir [CHANGELOG.md](./CHANGELOG.md) pour les details complets.
 

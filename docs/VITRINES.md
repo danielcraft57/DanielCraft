@@ -40,4 +40,4 @@ Le dossier **`dist/vitrines/`** doit être publié avec le reste du site (HTML, 
 
 ## Versions / tags
 
-Les tags de version (ex. `v1.3.0`) et l’historique détaillé restent dans **`docs/CHANGELOG.md`** ; aligner une release vitrine avec un tag se fait au choix de publication (pas d’automatisation imposée ici).
+Les tags de version (ex. `v1.4.0`) et l’historique détaillé restent dans **`docs/CHANGELOG.md`** ; aligner une release vitrine avec un tag se fait au choix de publication (pas d’automatisation imposée ici).

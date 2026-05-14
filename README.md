@@ -201,7 +201,7 @@ Pour toute question sur ce projet, utilisez les canaux de contact configurés su
 
 ## Version
 
-Voir [CHANGELOG.md](docs/CHANGELOG.md) pour l'historique. Version 1.0.0 : première release stable avec
+Voir [CHANGELOG.md](docs/CHANGELOG.md) pour l'historique. **Version actuelle : 1.3.0** (vitrines catalogue et démos). La **1.0.0** était la première release stable avec
 - Architecture modulaire complète
 - Système de build fonctionnel
 - SEO et performance optimisés
