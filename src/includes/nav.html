@@ -17,14 +17,14 @@
         <div class="nav-menu" id="navMenu" role="menubar">
             {% if current_page == 'index' %}
             <a href="#home" class="nav-link active" data-section="home" role="menuitem">Accueil</a>
-            <a href="#portfolio" class="nav-link" data-section="portfolio" role="menuitem">Portfolio</a>
+            <a href="#vitrines" class="nav-link" data-section="vitrines" role="menuitem">Vitrines</a>
             <a href="#services" class="nav-link" data-section="services" role="menuitem">Services</a>
             <a href="#about" class="nav-link" data-section="about" role="menuitem">À Propos</a>
             <a href="#tarifs" class="nav-link" data-section="tarifs" role="menuitem">Budget</a>
             <a href="#contact" class="nav-link" data-section="contact" role="menuitem">Contact</a>
             {% else %}
             <a href="/#home" class="nav-link" role="menuitem">Accueil</a>
-            <a href="/#portfolio" class="nav-link" role="menuitem">Portfolio</a>
+            <a href="/#vitrines" class="nav-link" role="menuitem">Vitrines</a>
             <a href="/#services" class="nav-link" role="menuitem">Services</a>
             <a href="/#about" class="nav-link" role="menuitem">À Propos</a>
             <a href="/#tarifs" class="nav-link" role="menuitem">Budget</a>
@@ -37,6 +37,7 @@
                     Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
+                    <li><a href="/vitrines/" class="nav-dropdown-link" role="menuitem">Hub vitrines HTML</a></li>
                     <li><a href="/autres-prestations" class="nav-dropdown-link{% if current_page == 'autres-prestations' %} active{% endif %}" role="menuitem">Autres prestations</a></li>
                     <li><a href="/processus" class="nav-dropdown-link{% if current_page == 'processus' %} active{% endif %}" role="menuitem">Processus</a></li>
                     <li><a href="/metz" class="nav-dropdown-link{% if current_page == 'metz' %} active{% endif %}" role="menuitem">Metz</a></li>

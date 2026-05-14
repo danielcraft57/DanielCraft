@@ -91,7 +91,8 @@ $filesToDeploy = @(
     "$DIST_DIR/assets",
     "$DIST_DIR/api",
     "$DIST_DIR/blog",
-    "$DIST_DIR/projets"
+    "$DIST_DIR/projets",
+    "$DIST_DIR/vitrines"
 )
 
 $missingFiles = @()
@@ -112,7 +113,7 @@ if ($missingFiles.Count -gt 0) {
 
 # 3. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[2/4] Creation du repertoire sur le serveur (si necessaire)..." "Yellow"
-$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/projets"
+$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/projets && mkdir -p $ServerPath/vitrines"
 try {
     ssh "${ServerUser}@${ServerHost}" $createDirCmd
     Write-ColorOutput "Repertoire cree/verifie (dont assets/images/projets et assets/images/hero pour les images)" "Green"
@@ -256,6 +257,13 @@ try {
         scp -r $projetsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
+    # Transfert vitrines (hub, demos, captures, fiches)
+    $vitrinesPath = Join-Path $DIST_DIR "vitrines"
+    if (Test-Path $vitrinesPath) {
+        Write-Host "  Transfert: vitrines/"
+        scp -r $vitrinesPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
     Write-ColorOutput "Transfert scp termine" "Green"
 }
 
@@ -294,6 +302,11 @@ Write-Host $blogCheckResult
 $projetsCheckCmd = 'test -d ' + $ServerPath + '/projets && (n=$(ls -1 ' + $ServerPath + '/projets/*.html 2>/dev/null | wc -l); echo "OK: projets/ deploye ($n pages)") || echo ''ATTENTION: projets/ manquant - relancer build puis deploy'''
 $projetsCheckResult = ssh "${ServerUser}@${ServerHost}" $projetsCheckCmd
 Write-Host $projetsCheckResult
+
+# Verifier dist/vitrines (hub + fiches + demos)
+$vitrinesCheckCmd = 'test -f ' + $ServerPath + '/vitrines/index.html && echo "OK: vitrines/index.html present" || echo "ATTENTION: vitrines/ manquant - relancer build puis deploy"'
+$vitrinesCheckResult = ssh "${ServerUser}@${ServerHost}" $vitrinesCheckCmd
+Write-Host $vitrinesCheckResult
 
 # Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
 $imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'

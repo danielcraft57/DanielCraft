@@ -21,8 +21,9 @@ import sys
 import json
 import shutil
 from pathlib import Path
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Any
 from datetime import datetime
+from urllib.parse import quote
 
 # Configuration
 BASE_DIR = Path(__file__).parent
@@ -32,7 +33,29 @@ TEMPLATES_DIR = SRC_DIR / 'templates'
 PAGES_DIR = SRC_DIR / 'pages'
 DATA_DIR = SRC_DIR / 'data'
 PROJECTS_JSON = DATA_DIR / 'projects.json'
+VITRINES_JSON = DATA_DIR / 'vitrines.json'
 READMES_DIR = DATA_DIR / 'readmes'
+# Sources vitrines (anciennement showcase/) — publiées sous /vitrines/ au build
+VITRINES_DEMOS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'demos'
+VITRINES_SCREENSHOTS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'screenshots'
+
+# Libelles categories vitrines (filtre home + cartes)
+VITRINE_CATEGORY_LABELS = {
+    'tech': 'Tech & SaaS',
+    'services': 'Services',
+    'hcr': 'HCR & restauration',
+    'retail': 'Commerce',
+    'formation': 'Formation',
+    'hotel': 'Hôtellerie',
+    'beaute': 'Beauté & spa',
+    'mobilite': 'Automobile',
+    'artisanat': 'Artisanat',
+    'sante': 'Santé',
+    'finance': 'Finance',
+    'industrie': 'Industrie',
+    'conseil': 'Conseil',
+    'ess': 'ESS',
+}
 # Dossier de sortie par défaut : dist/ (peut être modifié via --output)
 OUTPUT_DIR = BASE_DIR / 'dist'
 # Base URL du site (utilisée pour canoniques/OG/sitemaps).
@@ -54,6 +77,8 @@ SITEMAP_PAGES = [
     ('/projets', 'monthly', '0.6'),
     ('/statistiques', 'monthly', '0.5'),
     ('/analyse', 'monthly', '0.6'),
+    ('/vitrines/', 'monthly', '0.65'),
+    ('/vitrines/parcours.html', 'monthly', '0.6'),
     ('/mentions-legales', 'yearly', '0.3'),
     ('/cgv', 'yearly', '0.3'),
     ('/cgu', 'yearly', '0.3'),
@@ -196,6 +221,29 @@ class TemplateEngine:
         return content
 
 
+# Marqueur d'injection (evite doublons si rebuild)
+_DEMO_PROTECTION_MARKER = 'danielcraft-demo-protection'
+
+
+def _inject_demo_protection(html: str) -> str:
+    """
+    Injecte meta robots + bandeau demo (shared/demo-protection.*) dans chaque HTML
+    publie sous vitrines/<slug>/demo/. Dissuasion legere — pas une barriere technique absolue.
+    Chemins en ../../shared/ (profondeur demo/ depuis dist/vitrines/<slug>/demo/).
+    """
+    if _DEMO_PROTECTION_MARKER in html:
+        return html
+    block = (
+        f'\n  <!-- {_DEMO_PROTECTION_MARKER} -->\n'
+        '  <meta name="robots" content="noindex, noarchive, nosnippet, noimageindex">\n'
+        f'  <meta name="{_DEMO_PROTECTION_MARKER}" content="1">\n'
+        '  <link rel="stylesheet" href="../../shared/demo-protection.css">\n'
+        '  <script src="../../shared/demo-protection.js" defer></script>\n'
+    )
+    new_html, n = re.subn(r'</head>', block + r'</head>', html, count=1, flags=re.IGNORECASE)
+    return new_html if n else html
+
+
 def generate_robots_txt(output_dir: Path) -> None:
     """
     Genere robots.txt dans dist/ avec des URLs basees sur SITE_BASE.
@@ -204,6 +252,17 @@ def generate_robots_txt(output_dir: Path) -> None:
     sitemaps absolus corrects au moment du build/deploiement.
     """
     base = SITE_BASE.rstrip('/')
+    demo_disallows: List[str] = []
+    vdata = load_vitrines()
+    if vdata and vdata.get('items'):
+        demo_disallows.append('# Dossiers /vitrines/<slug>/demo/ (HTML de demonstration — pas d’indexation)')
+        for it in vdata['items']:
+            slug = (it.get('slug') or '').strip()
+            if slug:
+                demo_disallows.append(f'Disallow: /vitrines/{slug}/demo/')
+        demo_disallows.append('')
+    demo_block = '\n'.join(demo_disallows)
+
     content = (
         "User-agent: *\n"
         "Allow: /\n"
@@ -217,6 +276,10 @@ def generate_robots_txt(output_dir: Path) -> None:
         "\n"
         "# Autoriser les assets\n"
         "Allow: /assets/\n"
+        "\n"
+        + demo_block
+        + "# Vitrines (hub, fiches, captures — hors dossiers demo ci-dessus)\n"
+        "Allow: /vitrines/\n"
     )
     (output_dir / 'robots.txt').write_text(content, encoding='utf-8')
 
@@ -305,6 +368,320 @@ def load_projects() -> List[Dict]:
             return []
     with open(PROJECTS_JSON, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+
+def load_vitrines() -> Optional[Dict[str, Any]]:
+    """Charge le catalogue vitrines (YAML/JSON unique : src/data/vitrines.json)."""
+    if not VITRINES_JSON.exists():
+        return None
+    with open(VITRINES_JSON, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def _vitrine_screenshot_basename(slug: str, prefix: str) -> str:
+    """Nom du fichier capture ou '' (priorité WebP : plus léger). Sources : assets/vitrines/screenshots/<slug>/."""
+    root = VITRINES_SCREENSHOTS_SRC / slug
+    if not root.is_dir():
+        return ''
+    for ext in ('.webp', '.jpg', '.jpeg'):
+        found = sorted(root.glob(f'{prefix}_*{ext}'))
+        if found:
+            return found[0].name
+    return ''
+
+
+def _vitrine_screenshot_paths(slug: str, prefix: str) -> tuple[str, str, str]:
+    """
+    Chemins pour une capture : (depuis la racine du site sans slash initial,
+    depuis la fiche vitrine, absolu depuis la racine du site).
+    Exemple : ('vitrines/hub/screenshots/desktop_....webp', 'screenshots/desktop_....webp', '/vitrines/hub/screenshots/...')
+    """
+    name = _vitrine_screenshot_basename(slug, prefix)
+    if not name:
+        return '', '', ''
+    return (
+        f'vitrines/{slug}/screenshots/{name}',
+        f'screenshots/{name}',
+        f'/vitrines/{slug}/screenshots/{name}',
+    )
+
+
+def _rewrite_vitrine_demo_shared_refs(text: str) -> str:
+    """Les démos sont servies sous /vitrines/<slug>/demo/ : ../shared/ -> ../../shared/ (idempotent)."""
+    return re.sub(r'(?:\.\./)+(?=shared/)', '../../', text)
+
+
+def publish_vitrines_to_dist(output_dir: Path) -> None:
+    """Publie assets/vitrines/* vers dist/vitrines/ (hub, shared, secteurs/demo/, captures par slug)."""
+    demos_src = VITRINES_DEMOS_SRC
+    shots_src = VITRINES_SCREENSHOTS_SRC
+    if not demos_src.is_dir():
+        print('[WARN] assets/vitrines/demos absent — vitrines statiques non publiees')
+        return
+    out = output_dir / 'vitrines'
+    out.mkdir(parents=True, exist_ok=True)
+
+    src_shared = demos_src / 'shared'
+    if src_shared.is_dir():
+        dst_s = out / 'shared'
+        if dst_s.exists():
+            shutil.rmtree(dst_s)
+        shutil.copytree(src_shared, dst_s)
+
+    hub_tpl = demos_src / 'index.html'
+    if hub_tpl.is_file():
+        hub_text = hub_tpl.read_text(encoding='utf-8')
+        hub_text = re.sub(r'href="([a-z]+)/index.html"', r'href="\1/demo/index.html"', hub_text)
+        hub_text = hub_text.replace('ÔÇö', '—')
+        (out / 'index.html').write_text(hub_text, encoding='utf-8')
+    for name in ('hub.css', 'hub-texture.png'):
+        p = demos_src / name
+        if p.is_file():
+            shutil.copy2(p, out / name)
+
+    skip_dirs = {'shared', '__pycache__'}
+    for entry in demos_src.iterdir():
+        if not entry.is_dir() or entry.name in skip_dirs:
+            continue
+        slug = entry.name
+        dst_demo = out / slug / 'demo'
+        if dst_demo.exists():
+            shutil.rmtree(dst_demo)
+        for path in entry.rglob('*'):
+            rel = path.relative_to(entry)
+            dest = dst_demo / rel
+            if path.is_dir():
+                dest.mkdir(parents=True, exist_ok=True)
+                continue
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            ext = path.suffix.lower()
+            if ext in {'.html', '.css', '.js', '.svg'}:
+                try:
+                    txt = path.read_text(encoding='utf-8')
+                except UnicodeDecodeError:
+                    shutil.copy2(path, dest)
+                    continue
+                txt = _rewrite_vitrine_demo_shared_refs(txt)
+                if ext == '.html':
+                    txt = _inject_demo_protection(txt)
+                dest.write_text(txt, encoding='utf-8')
+            else:
+                shutil.copy2(path, dest)
+
+    if shots_src.is_dir():
+        for sub in shots_src.iterdir():
+            if not sub.is_dir():
+                continue
+            dst_sh = out / sub.name / 'screenshots'
+            if dst_sh.exists():
+                shutil.rmtree(dst_sh)
+            shutil.copytree(sub, dst_sh)
+    print(f'[OK] vitrines/ publie dans {out}')
+
+
+def build_vitrines_catalog_embed() -> None:
+    """Genere includes/vitrines-catalog-embed.html pour la section #vitrines de l'accueil."""
+    data = load_vitrines()
+    path_out = INCLUDES_DIR / 'vitrines-catalog-embed.html'
+    if not data or not data.get('items'):
+        path_out.write_text(
+            '<section id="vitrines" class="vitrines-showcase"><div class="container">'
+            '<p class="vitrines-empty">Catalogue vitrines indisponible (ajoutez <code>src/data/vitrines.json</code>).</p>'
+            '</div></section>\n',
+            encoding='utf-8',
+        )
+        print('[WARN] vitrines-catalog-embed.html : pas de donnees vitrines')
+        return
+
+    hub = (data.get('vitrines_hub_path') or data.get('showcase_hub_path') or '/vitrines/').strip()
+    if not hub.startswith('/'):
+        hub = '/' + hub
+    if hub in ('/vitrines', '/vitrines/'):
+        hub = '/vitrines/'
+
+    items = data['items']
+    cats: List[str] = []
+    seen: set = set()
+    for it in items:
+        c = (it.get('category') or '').strip()
+        if c and c not in seen:
+            seen.add(c)
+            cats.append(c)
+
+    lines: List[str] = []
+    lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
+    lines.append('<section id="vitrines" class="vitrines-showcase">')
+    lines.append('    <div class="container">')
+    lines.append('        <div class="section-header scroll-reveal">')
+    lines.append('            <span class="section-badge">Vitrines HTML</span>')
+    lines.append('            <h2 class="section-title">Démos par secteur, prêtes à personnaliser</h2>')
+    lines.append('            <p class="section-description">')
+    lines.append(
+        '                Parcours statiques Bulma : captures harmonisées avec la charte DanielCraft. '
+        f'<a href="{html.escape(hub)}">Ouvrir le hub des vitrines</a> ou choisissez une fiche pour la démo, le résumé et l’achat.'
+    )
+    lines.append('            </p>')
+    lines.append('        </div>')
+    lines.append('        <div class="vitrines-toolbar scroll-reveal">')
+    lines.append('            <div class="vitrines-filter" role="group" aria-label="Filtrer par secteur">')
+    lines.append('                <button type="button" class="vitrines-filter-btn active" data-vitrine-filter="all">Tous</button>')
+    for c in sorted(cats):
+        label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
+        lines.append(
+            f'                <button type="button" class="vitrines-filter-btn" '
+            f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
+        )
+    lines.append('            </div>')
+    lines.append('        </div>')
+    lines.append('        <div class="vitrines-grid" id="vitrinesGrid">')
+    for idx, it in enumerate(items):
+        slug = (it.get('slug') or '').strip()
+        if not slug:
+            continue
+        cat = (it.get('category') or 'all').strip() or 'all'
+        title = html.escape(it.get('title') or slug)
+        tagline = html.escape(it.get('tagline') or '')
+        excerpt = html.escape(it.get('excerpt') or '')
+        _c_thumb, _d_thumb, _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')
+        thumb = _c_thumb or '/assets/images/og/home-1200x630.jpg'
+        cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat))
+        delay = min(idx * 40, 400)
+        lines.append(
+            f'        <article class="vitrine-card scroll-reveal" data-vitrine-cat="{html.escape(cat)}" '
+            f'style="--reveal-delay:{delay}ms">'
+        )
+        lines.append(
+            f'            <a class="vitrine-card-media" href="/vitrines/{html.escape(slug)}/" '
+            f'aria-label="Voir la fiche détail — {title}">'
+        )
+        lines.append(
+            '                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" '
+            'data-vitrine-card-hover-scroll>'
+        )
+        lines.append(
+            f'                    <img src="{html.escape(thumb)}" alt="" width="640" height="400" '
+            'loading="lazy" decoding="async" class="vitrine-card-img">'
+        )
+        lines.append('                </div>')
+        lines.append('                <span class="vitrine-card-tint" aria-hidden="true"></span>')
+        lines.append(f'                <span class="vitrine-card-badge">{cat_label}</span>')
+        lines.append('            </a>')
+        lines.append('            <div class="vitrine-card-body">')
+        lines.append(f'                <h3 class="vitrine-card-title">{title}</h3>')
+        lines.append(f'                <p class="vitrine-card-tagline">{tagline}</p>')
+        lines.append(f'                <p class="vitrine-card-excerpt">{excerpt}</p>')
+        lines.append('                <div class="vitrine-card-actions">')
+        lines.append(
+            f'                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/{html.escape(slug)}/">'
+            'Voir la fiche détail</a>'
+        )
+        lines.append(
+            f'                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/{html.escape(slug)}/demo/index.html" '
+            'target="_blank" rel="noopener noreferrer">Démo live</a>'
+        )
+        lines.append('                </div>')
+        lines.append('            </div>')
+        lines.append('        </article>')
+    lines.append('        </div>')
+    lines.append(
+        '        <p class="vitrines-footnote scroll-reveal">'
+        'Pour les dépôts open source, voir aussi <a href="/projets">la page Projets</a>.</p>'
+    )
+    lines.append('    </div>')
+    lines.append('</section>')
+    new_content = '\n'.join(lines) + '\n'
+    if path_out.exists() and path_out.read_text(encoding='utf-8') == new_content:
+        return
+    path_out.write_text(new_content, encoding='utf-8')
+    print(f'[OK] vitrines-catalog-embed.html genere ({len(items)} vitrine(s))')
+
+
+def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
+    """Genere vitrines/<slug>/index.html pour chaque entree du catalogue."""
+    data = load_vitrines()
+    if not data or not data.get('items'):
+        return []
+    content_path = PAGES_DIR / 'vitrine-detail.html'
+    if not content_path.exists():
+        print('[WARN] src/pages/vitrine-detail.html manquant')
+        return []
+    content_tpl = content_path.read_text(encoding='utf-8')
+    template_path = TEMPLATES_DIR / 'base.html'
+    out_root = output_dir / 'vitrines'
+    default_price = int(data.get('default_price_eur') or 42)
+    slugs_out: List[str] = []
+    for it in data['items']:
+        slug = (it.get('slug') or '').strip()
+        if not slug:
+            continue
+        raw_price = it.get('price_eur', default_price)
+        try:
+            price = int(raw_price)
+        except (TypeError, ValueError):
+            price = default_price
+        features = it.get('features') or []
+        features_html = (
+            '<ul class="vitrine-feature-list">'
+            + ''.join(f'<li>{html.escape(str(x))}</li>' for x in features)
+            + '</ul>'
+        )
+        stack = it.get('stack') or []
+        stack_html = ''.join(f'<li>{html.escape(str(x))}</li>' for x in stack)
+        stripe_url = (it.get('stripe_payment_link_url') or '').strip()
+        _, d_desk, a_desk = _vitrine_screenshot_paths(slug, 'desktop')
+        _, d_tab, _a_tab = _vitrine_screenshot_paths(slug, 'tablet')
+        _, d_mob, _a_mob = _vitrine_screenshot_paths(slug, 'mobile')
+        fallback = '/assets/images/og/home-1200x630.jpg'
+        desk = d_desk or fallback
+        tab = d_tab or d_desk or fallback
+        mob = d_mob or d_desk or fallback
+        og_desk = a_desk or fallback
+        title = it.get('title') or slug
+        excerpt = (it.get('excerpt') or it.get('tagline') or '')[:170]
+        mail_subj = quote(f'Installation vitrine — {title}')
+        vars_dict = DEFAULT_VARS.copy()
+        vars_dict.update({
+            'current_page': 'vitrine',
+            'page_title': f'{title} – Vitrine HTML | DanielCraft',
+            'page_description': excerpt,
+            'page_keywords': 'vitrine html, vitrines, bulma, ' + ', '.join(str(s) for s in (it.get('stack') or [])[:6]),
+            'page_url': f'{SITE_BASE.rstrip("/")}/vitrines/{slug}/',
+            'og_image': og_desk,
+            'og_type': 'website',
+            'schema_type': '',
+            'extra_css': 'vitrines-portfolio.css',
+            'page_scripts': ['main.js', 'vitrines-screenshots.js'],
+            'vitrine_title': title,
+            'vitrine_tagline': it.get('tagline') or '',
+            'vitrine_excerpt': it.get('excerpt') or '',
+            'vitrine_slug': slug,
+            'vitrine_demo_url': f'/vitrines/{slug}/demo/index.html',
+            'vitrine_shot_desktop': desk,
+            'vitrine_shot_tablet': tab,
+            'vitrine_shot_mobile': mob,
+            'vitrine_features_html': features_html,
+            'vitrine_stack_html': stack_html,
+            'vitrine_price_eur': str(price),
+            'vitrine_stripe_url': stripe_url,
+            'vitrine_has_stripe': stripe_url,
+            'vitrine_mailto_subject': mail_subj,
+        })
+        _normalize_page_meta(vars_dict, slug)
+        vars_dict['page_url'] = _to_absolute_url(f'/vitrines/{slug}/')
+        vars_dict['og_image'] = _to_absolute_url(og_desk)
+        scripts = vars_dict.get('page_scripts') or []
+        scripts_content = '\n'.join(f'<script src="/assets/js/{s}" defer></script>' for s in scripts)
+        vars_dict['page_scripts_content'] = scripts_content
+        content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
+        content_rendered = template_engine.process_includes(content_rendered, vars_dict)
+        vars_dict['page_content'] = content_rendered
+        html_output = template_engine.render(template_path, vars_dict)
+        dest_dir = out_root / slug
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        (dest_dir / 'index.html').write_text(html_output, encoding='utf-8')
+        slugs_out.append(slug)
+    print(f'[OK] {len(slugs_out)} page(s) vitrine dans {out_root}')
+    return slugs_out
 
 
 def _markdown_to_html_fallback(raw: str) -> str:
@@ -520,6 +897,9 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
 
 def build_page(page_name: str, template_engine: TemplateEngine):
     """Build une page HTML."""
+    if page_name == 'index':
+        build_vitrines_catalog_embed()
+
     # Charge la config de la page
     page_config = load_page_config(page_name)
     
@@ -554,6 +934,10 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     page_content_file = PAGES_DIR / f"{page_name}.html"
     if page_content_file.exists():
         page_content = page_content_file.read_text(encoding='utf-8')
+        # Comme {{page_content}} est injecté après le rendu du gabarit, les
+        # {% include %} du fragment ne seraient pas traités sans ce passage.
+        page_content = template_engine.process_includes(page_content, vars_dict)
+        page_content = template_engine.replace_variables(page_content, vars_dict)
         vars_dict['page_content'] = page_content
     else:
         print(f"[WARN] Contenu de page non trouve : {page_content_file}")
@@ -563,11 +947,17 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     try:
         html_output = template_engine.render(template_path, vars_dict)
         
-        # Écrit le fichier de sortie
-        output_file = OUTPUT_DIR / f"{page_name}.html"
+        # Écrit le fichier de sortie (option : output_subpath dans la config JSON)
+        out_sub = (page_config.get('output_subpath') or '').strip()
+        if out_sub:
+            output_file = OUTPUT_DIR / out_sub.replace('/', os.sep)
+        else:
+            output_file = OUTPUT_DIR / f"{page_name}.html"
+        output_file.parent.mkdir(parents=True, exist_ok=True)
         output_file.write_text(html_output, encoding='utf-8')
         
-        print(f"[OK] {page_name}.html genere")
+        rel_out = output_file.relative_to(OUTPUT_DIR)
+        print(f'[OK] {rel_out.as_posix()} genere')
         return True
     except Exception as e:
         print(f"[ERREUR] Erreur lors du build de {page_name}: {e}")
@@ -625,8 +1015,12 @@ def generate_webp_variants(assets_root: Path) -> None:
         print(f"[INFO] {skipped} fichier(s) ignore(s) pour WebP (image corrompue ou illisible). Reparer ou remplacer le PNG source si besoin.")
 
 
-def generate_sitemap_pages(output_dir: Path, project_slugs: Optional[List[str]] = None) -> None:
-    """Genere sitemap-pages.xml avec les pages statiques et les pages projet."""
+def generate_sitemap_pages(
+    output_dir: Path,
+    project_slugs: Optional[List[str]] = None,
+    vitrine_slugs: Optional[List[str]] = None,
+) -> None:
+    """Genere sitemap-pages.xml avec les pages statiques, projets et vitrines."""
     lastmod = datetime.now().strftime('%Y-%m-%d')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -642,6 +1036,9 @@ def generate_sitemap_pages(output_dir: Path, project_slugs: Optional[List[str]] 
     for slug in (project_slugs or []):
         lines.append(f'  <url><loc>{SITE_BASE}/projets/{slug}</loc><lastmod>{lastmod}</lastmod>'
                      '<changefreq>monthly</changefreq><priority>0.5</priority></url>')
+    for slug in (vitrine_slugs or []):
+        lines.append(f'  <url><loc>{SITE_BASE}/vitrines/{slug}/</loc><lastmod>{lastmod}</lastmod>'
+                     '<changefreq>monthly</changefreq><priority>0.55</priority></url>')
     lines.append('</urlset>')
     (output_dir / 'sitemap-pages.xml').write_text('\n'.join(lines), encoding='utf-8')
 
@@ -746,6 +1143,8 @@ def main():
         else:
             print("[INFO] Generation WebP ignoree (--no-webp)")
 
+    publish_vitrines_to_dist(OUTPUT_DIR)
+
     # Genere robots.txt (base sur SITE_BASE)
     generate_robots_txt(OUTPUT_DIR)
     print("[OK] robots.txt genere")
@@ -811,6 +1210,7 @@ def main():
     # Liste des pages à builder
     pages = [
         'index',
+        'vitrines',
         'autres-prestations',
         'processus',
         'metz',
@@ -855,9 +1255,10 @@ def main():
 
     # Pages projet (projets/<slug>.html)
     project_slugs = build_project_pages(template_engine, OUTPUT_DIR)
+    vitrine_slugs = build_vitrine_pages(template_engine, OUTPUT_DIR)
 
-    # Generation des sitemaps (pages statiques + projets)
-    generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs)
+    # Generation des sitemaps (pages statiques + projets + vitrines)
+    generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs, vitrine_slugs=vitrine_slugs)
     generate_sitemap_index(OUTPUT_DIR)
     print("[OK] sitemap.xml et sitemap-pages.xml generes")
 
@@ -900,7 +1301,10 @@ def main():
                     for p in pages:
                         if build_page(p, template_engine):
                             ok += 1
-                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s)")
+                    ps = build_project_pages(template_engine, OUTPUT_DIR)
+                    vs = build_vitrine_pages(template_engine, OUTPUT_DIR)
+                    generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps, vitrine_slugs=vs)
+                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/sitemap")
 
                 def on_modified(self, event):
                     if event.is_directory:
@@ -927,6 +1331,12 @@ def main():
                             build_page(page, template_engine)
                         else:
                             self._rebuild_all_pages()
+                        return
+
+                    # Donnees partagees (vitrines, etc.) => rebuild global
+                    if ext in {'.html', '.json'} and DATA_DIR in src.parents:
+                        print(f"\n📦 Data modifiee : {src.name}")
+                        self._rebuild_all_pages()
                         return
 
                     # Changement template/include => rebuild global

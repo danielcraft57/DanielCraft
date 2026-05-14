@@ -13,7 +13,7 @@ cd V6
 .\scripts\deploy.ps1 -Domain "example.com" -ServerUser "deploy" -ServerHost "server.local" -ServerPath "/var/www/example.com" -ConfigName "example.com"
 ```
 
-Lance le build Python (pages + blog + sitemaps), transfère tout depuis `dist/` (HTML, assets, **api/**, **blog/**), applique les permissions, copie la config nginx et recharge nginx. À faire au moins une fois, puis après chaque modification de `scripts/nginx.conf`.
+Lance le build Python (pages + blog + sitemaps), transfère tout depuis `dist/` (HTML, assets, **api/**, **blog/**, **vitrines/**, **projets/**), applique les permissions, copie la config nginx et recharge nginx. À faire au moins une fois, puis après chaque modification de `scripts/nginx.conf`.
 
 ### Déploiement contenu uniquement (rapide)
 
@@ -22,7 +22,7 @@ cd V6
 .\scripts\deploy-content.ps1 -ServerUser "deploy" -ServerHost "server.local" -ServerPath "/var/www/example.com"
 ```
 
-Lance le build Python puis transfère le contenu de `dist/` (HTML, assets, **api/**, **blog/**). Ne modifie pas nginx. Idéal pour les mises à jour fréquentes (textes, CSS, JS, articles du blog).
+Lance le build Python puis transfère le contenu de `dist/` (HTML, assets, **api/**, **blog/**, **vitrines/**, **projets/**). Ne modifie pas nginx. Idéal pour les mises à jour fréquentes (textes, CSS, JS, articles du blog, vitrines).
 
 ### Formulaire de contact (PHP)
 

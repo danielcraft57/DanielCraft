@@ -2,6 +2,16 @@
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
+## [Non publié]
+
+### Navigation et vitrines
+- Ancre accueil **`#vitrines`** (remplace `#vitrines-showcase`) pour le bloc catalogue vitrines ; liens nav, hero, pied de page et page vitrines alignés.
+- Documentation **`docs/VITRINES.md`** (build, captures, déploiement, versions) ; index docs et guides build / déploiement mis à jour.
+- **`scripts/deploy-content.ps1`** : vérification et transfert **`dist/vitrines/`** en fallback scp ; création du répertoire distant `vitrines/`.
+- **`.gitignore`** : règles images élargies — **`assets/images/projets/`** (correction de l’ancien chemin `projects/`), WebP vignettes, variantes **`about-section-hero`**, captures **`assets/vitrines/screenshots/`** (`.gitkeep` conservé).
+
+---
+
 ## [1.2.0] - 2026-02-21
 
 ### Projets

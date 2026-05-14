@@ -7,15 +7,17 @@ Le site utilise maintenant un système de templates et blocs réutilisables pour
 ## Structure
 
 ```
-V6/
+DanielCraftFr/
 ├── src/                      # Sources (à éditer)
-│   ├── includes/            # Blocs réutilisables
-│   ├── templates/           # Templates de base
-│   └── pages/               # Contenu des pages
-├── assets/                   # Assets statiques
-├── build.py                  # Script de build
-└── *.html                    # Pages générées (ne pas éditer)
+│   ├── includes/             # Blocs réutilisables (dont vitrines-catalog-embed.html **généré**)
+│   ├── templates/
+│   └── pages/
+├── assets/                   # Assets statiques (vitrines : demos/, screenshots/)
+├── build.py
+└── dist/                     # Sortie du build (ne pas éditer ; déployer ce dossier)
 ```
+
+**Vitrines :** l’ancre sur l’accueil est **`#vitrines`**. Le bloc catalogue est produit par `build.py` depuis `src/data/vitrines.json` — ne pas modifier `src/includes/vitrines-catalog-embed.html` à la main. Détails : **[VITRINES.md](./VITRINES.md)**.
 
 ## Commandes
 

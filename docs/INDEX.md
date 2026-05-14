@@ -11,6 +11,7 @@ Index de toute la documentation du projet.
 
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Architecture du système de blocs réutilisables
 - **[README_BUILD.md](./README_BUILD.md)** - Guide d'utilisation du système de build
+- **[VITRINES.md](./VITRINES.md)** - Catalogue vitrines HTML (ancre `#vitrines`, build, captures, déploiement)
 
 ## Deploiement
 

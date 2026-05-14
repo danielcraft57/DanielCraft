@@ -29,17 +29,27 @@ Thumbs.db
 # Logs
 *.log
 
-# Images lourdes / générées (Open Graph + hero + projets)
-# On ignore les dossiers d'images générées, mais pas les icônes/source légers.
+# --- Images & binaires lourds (régénérables ou dérivés du build) ---
+# Hero, Open Graph, vignettes projet : contenu du dossier ignoré sauf exceptions.
 assets/images/hero/*
-assets/images/projects/*
 assets/images/og/*
+assets/images/projets/*
+!assets/images/projets/placeholder.svg
+# WebP dérivés des vignettes (build / pipelines) — les JPG peuvent rester versionnés si besoin
+assets/images/projets/*.webp
+assets/images/projets/*.WEBP
+
+# Variantes lourdes hero « à propos » (export WebP / essais)
+assets/images/about-section-hero.webp
+assets/images/about-section-hero-trial-*.png
+assets/images/about-section-hero-trial-*.webp
+
+# Captures Playwright vitrines (voir docs/VITRINES.md, scripts/screenshot_vitrines.py)
+assets/vitrines/screenshots/**
+!assets/vitrines/screenshots/.gitkeep
 
 # Vendor PHP (téléchargé via scripts/vendor_phpmailer.ps1)
 api/vendor/
-
-# Garder le placeholder projet versionné
-!assets/images/projects/placeholder.svg
 
 # Favicons : source SVG + pack PNG/ICO/manifest (régénérer avec scripts/generate_favicon_pngs.py)
 
@@ -62,6 +72,3 @@ src/data/readmes/*
 
 dist-test/
 coaching/
-
-# Captures Playwright (showcase) — régénérables
-showcase/screenshots/
