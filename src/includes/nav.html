@@ -37,7 +37,7 @@
                     Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
                 <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
-                    <li><a href="/vitrines/" class="nav-dropdown-link" role="menuitem">Hub vitrines HTML</a></li>
+                    <li><a href="/vitrines/" class="nav-dropdown-link{% if current_page == 'vitrines' %} active{% endif %}" role="menuitem">Catalogue vitrines HTML</a></li>
                     <li><a href="/autres-prestations" class="nav-dropdown-link{% if current_page == 'autres-prestations' %} active{% endif %}" role="menuitem">Autres prestations</a></li>
                     <li><a href="/processus" class="nav-dropdown-link{% if current_page == 'processus' %} active{% endif %}" role="menuitem">Processus</a></li>
                     <li><a href="/metz" class="nav-dropdown-link{% if current_page == 'metz' %} active{% endif %}" role="menuitem">Metz</a></li>

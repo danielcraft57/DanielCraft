@@ -1,7 +1,7 @@
 {
   "currency": "EUR",
   "default_price_eur": 42,
-  "vitrines_hub_path": "/vitrines/",
+  "vitrines_hub_path": "/vitrines/hub-bulma.html",
   "screenshots_base": "/vitrines",
   "stripe_note": "Renseigner stripe_payment_link_url par vitrine (Payment Link Stripe) après création des produits.",
   "items": [

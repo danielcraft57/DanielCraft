@@ -117,7 +117,8 @@ sudo certbot --nginx -d ton-domaine.com -d www.ton-domaine.com
 - Visiter `https://ton-domaine.com`
 - Vérifier que toutes les pages fonctionnent
 - Vérifier que les assets (CSS, JS, images) se chargent correctement
-- Hub vitrines : `https://ton-domaine.com/vitrines/` (index du catalogue démo)
+- Catalogue vitrines DanielCraft : `https://ton-domaine.com/vitrines/` (collection + fiches)
+- Index technique des démos Bulma : `https://ton-domaine.com/vitrines/hub-bulma.html`
 - Fiche vitrine (achat, textes) : `https://ton-domaine.com/vitrines/<slug>/` (ex. `/vitrines/technologie/`)
 - Démo HTML d’un secteur : `https://ton-domaine.com/vitrines/<slug>/demo/index.html`
 - Le build copie **`assets/vitrines/demos/`** et **`assets/vitrines/screenshots/`** vers **`dist/vitrines/`** ; le déploiement doit inclure tout le dossier **`dist/vitrines/`** (voir `scripts/deploy-content.ps1` et **[VITRINES.md](./VITRINES.md)**).

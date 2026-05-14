@@ -8,7 +8,9 @@ Le style utilise toujours la classe **`vitrines-showcase`** ; seul l’identifia
 
 ## Fichiers générés (ne pas éditer à la main)
 
-- **`src/includes/vitrines-catalog-embed.html`** — régénéré par **`build.py`** (`build_vitrines_catalog_embed()`), à partir de **`src/data/vitrines.json`**. Toute modification manuelle est écrasée au prochain build.
+- **`src/includes/vitrines-catalog-embed.html`** — bloc catalogue sur l’accueil (`build_vitrines_catalog_embed()`).
+- **`src/includes/vitrines-page-collection.html`** — même grille pour la page **`/vitrines/`** (généré dans la foulée).
+- Données : **`src/data/vitrines.json`**. Toute modification manuelle de ces includes est écrasée au prochain build.
 
 ## Sources et build
 
@@ -17,7 +19,7 @@ Le style utilise toujours la classe **`vitrines-showcase`** ; seul l’identifia
 | Données catalogue (titres, slugs, prix, textes) | `src/data/vitrines.json` |
 | Maquettes statiques (HTML/CSS démo) | `assets/vitrines/demos/` |
 | Captures Playwright (optionnel en dépôt) | `assets/vitrines/screenshots/<slug>/` |
-| Sortie site | `dist/vitrines/` (hub, `/<slug>/demo/`, captures, fiches `/<slug>/index.html`) |
+| Sortie site | `dist/vitrines/` : catalogue **`index.html`**, index technique démos **`hub-bulma.html`**, `/<slug>/demo/`, captures, fiches `/<slug>/index.html` |
 
 Commandes utiles :
 

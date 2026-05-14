@@ -36,6 +36,11 @@ $budget  = isset($_POST['budget'])  ? trim(strip_tags((string) $_POST['budget'])
 $message = isset($_POST['message']) ? trim(strip_tags((string) $_POST['message'])) : '';
 $preferred_date = isset($_POST['preferred_date']) ? trim(strip_tags((string) $_POST['preferred_date'])) : '';
 $preferred_time = isset($_POST['preferred_time']) ? trim(strip_tags((string) $_POST['preferred_time'])) : '';
+$vitrine_slug = isset($_POST['vitrine_slug']) ? trim(strip_tags((string) $_POST['vitrine_slug'])) : '';
+$vitrine_title = isset($_POST['vitrine_title']) ? trim(strip_tags((string) $_POST['vitrine_title'])) : '';
+$site_url = isset($_POST['site_url']) ? trim(strip_tags((string) $_POST['site_url'])) : '';
+$site_url = preg_replace('/[\r\n]+/', '', $site_url);
+$billing_address = isset($_POST['billing_address']) ? trim(strip_tags((string) $_POST['billing_address'])) : '';
 
 if ($preferred_date !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $preferred_date)) {
     $preferred_date = '';
@@ -88,6 +93,8 @@ function contact_service_label(string $slug): string
         'maint_support_prio_h' => 'Support prioritaire à l\'heure (70€/h)',
         'besoin_a_preciser' => 'Besoin à préciser ensemble',
         'projet_sur_mesure' => 'Projet sur mesure / autre',
+        'vitrine_catalog_order' => 'Pré-commande vitrine catalogue (sans paiement sur le site)',
+        'vitrine_catalog_devis' => 'Devis / questions — fiche vitrine catalogue',
     ];
     if (isset($map[$slug])) {
         return $map[$slug];
@@ -153,6 +160,39 @@ if ($service === '') {
     $errors[] = 'La prestation est obligatoire.';
 } elseif (!preg_match('/^[a-z0-9_]{1,80}$/', $service)) {
     $errors[] = 'Prestation invalide.';
+}
+
+$vitrine_flow_services = ['vitrine_catalog_order', 'vitrine_catalog_devis'];
+if (in_array($service, $vitrine_flow_services, true)) {
+    if ($vitrine_slug === '' || !preg_match('/^[a-z0-9-]{1,80}$/', $vitrine_slug)) {
+        $errors[] = 'Référence vitrine manquante ou invalide.';
+    }
+    if ($vitrine_title === '' || strlen($vitrine_title) > 220) {
+        $errors[] = 'Intitulé vitrine manquant ou trop long.';
+    }
+    if ($site_url !== '') {
+        if (strlen($site_url) > 500) {
+            $errors[] = 'URL du site trop longue.';
+        } else {
+            if (!preg_match('#^https?://#i', $site_url)) {
+                $site_url = 'https://' . ltrim($site_url, '/');
+            }
+            if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
+                $errors[] = 'URL du site invalide.';
+            }
+        }
+    }
+    if ($service === 'vitrine_catalog_order' && strlen($billing_address) < 8) {
+        $errors[] = 'Adresse de facturation trop courte.';
+    }
+    if (strlen($billing_address) > 1500) {
+        $errors[] = 'Adresse de facturation trop longue.';
+    }
+} else {
+    $vitrine_slug = '';
+    $vitrine_title = '';
+    $site_url = '';
+    $billing_address = '';
 }
 
 if (!empty($errors)) {
@@ -281,10 +321,18 @@ if ($fromAddress === '') $fromAddress = $contactTo ?: 'contact@danielcraft.fr';
 $to = $contactTo;
 $serviceLabel = contact_service_label($service);
 $projectTypeLabel = contact_project_type_label($project_type);
-$subjectShort = function_exists('mb_substr')
-    ? mb_substr($serviceLabel, 0, 55, 'UTF-8')
-    : substr($serviceLabel, 0, 55);
-$subject = 'Nouveau contact — ' . $subjectShort;
+if ($service === 'vitrine_catalog_order') {
+    $tail = $vitrine_title !== '' ? $vitrine_title : $vitrine_slug;
+    $subject = 'Pré-commande vitrine — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 70, 'UTF-8') : substr($tail, 0, 70));
+} elseif ($service === 'vitrine_catalog_devis') {
+    $tail = $vitrine_title !== '' ? $vitrine_title : $vitrine_slug;
+    $subject = 'Devis vitrine — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 72, 'UTF-8') : substr($tail, 0, 72));
+} else {
+    $subjectShort = function_exists('mb_substr')
+        ? mb_substr($serviceLabel, 0, 55, 'UTF-8')
+        : substr($serviceLabel, 0, 55);
+    $subject = 'Nouveau contact — ' . $subjectShort;
+}
 
 $body = "Nom : " . $name . "\n";
 $body .= "Email : " . $email . "\n";
@@ -294,6 +342,19 @@ $body .= "Prestation : " . $serviceLabel . " (slug: " . $service . ")\n";
 $body .= "Réf. forfait / budget (si indiqué) : " . ($budget."€" ?: 'Non renseigné') . "\n";
 $body .= "Date proposée (échange) : " . ($preferred_date ?: 'Non renseignée') . "\n";
 $body .= "Créneau horaire : " . ($preferred_time ?: 'Non renseigné') . "\n\n";
+if ($vitrine_slug !== '') {
+    $body .= "--- Vitrine catalogue ---\n";
+    $body .= 'Slug : ' . $vitrine_slug . "\n";
+    $body .= 'Titre : ' . $vitrine_title . "\n";
+    if ($site_url !== '') {
+        $body .= 'URL du site visée : ' . $site_url . "\n";
+    }
+    if ($billing_address !== '') {
+        $body .= "Adresse de facturation :\n" . $billing_address . "\n\n";
+    } else {
+        $body .= "\n";
+    }
+}
 $body .= "Message :\n" . $message . "\n";
 
 // --- HTML mail (inline + compat email clients) ---
@@ -322,6 +383,22 @@ $budgetMarketingLine = $budget !== ''
     ? 'Budget envisagé : ' . $budget . ' € (repère indicatif, ajustable selon vos priorités).'
     : 'Budget : à définir ensemble selon vos objectifs et vos priorités.';
 $safeBudgetMarketingLine = esc($budgetMarketingLine);
+
+$extraVitrineRows = '';
+if ($vitrine_slug !== '') {
+    $safeVSlug = esc($vitrine_slug);
+    $safeVTitle = esc($vitrine_title);
+    $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Vitrine (slug)</div><div style="font-size:14px;color:#0f172a;font-weight:800;">' . $safeVSlug . '</div></td></tr>';
+    $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Vitrine (titre)</div><div style="font-size:14px;color:#0f172a;font-weight:800;">' . $safeVTitle . '</div></td></tr>';
+    if ($site_url !== '') {
+        $safeSiteUrl = esc($site_url);
+        $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">URL du site visée</div><div style="font-size:14px;color:#0f172a;font-weight:800;"><a href="' . $safeSiteUrl . '" style="color:#2f56b3;">' . $safeSiteUrl . '</a></div></td></tr>';
+    }
+    if ($billing_address !== '') {
+        $safeBill = nl2br(esc($billing_address));
+        $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Adresse de facturation</div><div style="font-size:14px;color:#0f172a;line-height:1.45;">' . $safeBill . '</div></td></tr>';
+    }
+}
 
 $htmlBody = '
 <!doctype html>
@@ -404,6 +481,7 @@ $htmlBody = '
                       <div style="font-size:14px;color:#0f172a;font-weight:800;">'.$safePreferredTime.'</div>
                     </td>
                   </tr>
+                  '.$extraVitrineRows.'
                 </table>
               </td>
             </tr>

@@ -186,3 +186,9 @@
 </script>
 {% endif %}
 
+{% if schema_type == 'vitrine' %}
+<script type="application/ld+json">
+{{vitrine_schema_jsonld}}
+</script>
+{% endif %}
+

@@ -78,7 +78,7 @@ SITEMAP_PAGES = [
     ('/statistiques', 'monthly', '0.5'),
     ('/analyse', 'monthly', '0.6'),
     ('/vitrines/', 'monthly', '0.65'),
-    ('/vitrines/parcours.html', 'monthly', '0.6'),
+    ('/vitrines/hub-bulma.html', 'monthly', '0.45'),
     ('/mentions-legales', 'yearly', '0.3'),
     ('/cgv', 'yearly', '0.3'),
     ('/cgu', 'yearly', '0.3'),
@@ -378,6 +378,475 @@ def load_vitrines() -> Optional[Dict[str, Any]]:
         return json.load(f)
 
 
+def _truncate_meta_text(s: str, max_len: int) -> str:
+    s = ' '.join((s or '').split())
+    if len(s) <= max_len:
+        return s
+    return s[: max_len - 1].rstrip(' ,.;:') + '…'
+
+
+def _vitrine_og_mime_from_url(url: str) -> str:
+    u = (url or '').lower()
+    if u.endswith('.webp'):
+        return 'image/webp'
+    if u.endswith('.png'):
+        return 'image/png'
+    return 'image/jpeg'
+
+
+def _vitrine_og_dims_from_url(url: str) -> tuple[str, str]:
+    """Extrait largeur × hauteur depuis un nom du type desktop_1920x2400.webp (sinon 1600×900)."""
+    m = re.search(r'_(\d+)x(\d+)\.(webp|jpe?g|png)', url or '', re.I)
+    if m:
+        return m.group(1), m.group(2)
+    return '1600', '900'
+
+
+def _safe_jsonld_embed(obj: Any) -> str:
+    return json.dumps(obj, ensure_ascii=False).replace('</', '<\\/')
+
+
+# Textes marketing page fiche vitrine : variantes par catégorie (personnalisation secteur).
+# Placeholders : __TITLE__ (nom vitrine échappé), __TAG__ (sous-titre échappé), __DEMO__ (lien HTML démo).
+_VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
+    'retail': {
+        'shots_title': 'Visuels commerce & drive prêts pour Google et les réseaux sociaux',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre montre une '
+            '<strong>capture pleine page</strong> (scrollable) comme vos clients la parcourent sur '
+            '<strong>ordinateur</strong>, <strong>tablette</strong> et <strong>smartphone</strong>. '
+            'Idéal pour rassurer sur le rendu en magasin virtuel et alimenter vos partages Meta ou LinkedIn. '
+            'Ouvrez la capture en grand ou explorez la __DEMO__ pour un parcours réaliste.'
+        ),
+        'marketing_h2': 'Conversion commerce, rayons et prise de contact',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> déjà structurée pour <strong>vendre en ligne</strong> : '
+            'offres, preuves, appels à l’action et parcours contact — vous remplacez les textes d’exemple par '
+            'les vôtres pour <strong>__TITLE__</strong> et vos visuels produits. Parfait pour <strong>tester '
+            'votre discours retail</strong> (drive, horaires, fidélité) avant d’industrialiser avec moi le '
+            'tunnel d’acquisition, le paiement ou le back-office.'
+        ),
+    },
+    'tech': {
+        'shots_title': 'Visuels produit & SaaS prêts pour Google, LinkedIn et pitch deck',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre reproduit une '
+            '<strong>capture pleine page</strong> scrollable sur <strong>ordinateur</strong>, '
+            '<strong>tablette</strong> et <strong>smartphone</strong>. Utile pour un post LinkedIn, une annonce '
+            'Google ou une slide investisseur. Ouvrez la capture en plein écran ou parcourez la __DEMO__ '
+            'comme un décideur technique.'
+        ),
+        'marketing_h2': 'Parcours produit, preuves et conversion côté tech',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pensée comme un <strong>site produit</strong> : '
+            'navigation claire, blocs preuve, FAQ et appels à l’action vers <strong>démo ou contact</strong>. '
+            'Pour <strong>__TITLE__</strong>, vous substituez textes et captures puis présentez le rendu à vos '
+            'prospects avant d’investir dans l’<strong>API</strong>, l’<strong>auth</strong> ou la '
+            '<strong>tarification</strong> sur mesure.'
+        ),
+    },
+    'services': {
+        'shots_title': 'Captures prêtes pour vendre vos prestations (Meta, LinkedIn, Google)',
+        'shots_lead': (
+            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les captures déroulent le parcours comme '
+            'chez un <strong>client B2B</strong> — offres, galerie, FAQ et prise de contact. Idéal pour rassurer '
+            'sur le ton pro et alimenter vos campagnes. Ouvrez une capture en grand ou testez la __DEMO__ '
+            'bout en bout.'
+        ),
+        'marketing_h2': 'Crédibilité terrain, devis et prise de contact B2B',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> qui met en scène vos <strong>prestations</strong>, '
+            'vos <strong>références</strong> et un <strong>parcours devis</strong> lisible. Pour '
+            '<strong>__TITLE__</strong>, vous adaptez les formulations à votre métier (facility, conciergerie, '
+            'multi-sites…) puis vous validez le discours commercial avant de brancher vos outils métiers ou '
+            'votre CRM.'
+        ),
+    },
+    'hcr': {
+        'shots_title': 'Visuels restauration prêts pour réseaux sociaux et réservation',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les cadres montrent le rendu '
+            '<strong>pleine page</strong> sur <strong>ordinateur</strong>, <strong>tablette</strong> et '
+            '<strong>mobile</strong> : carte, ambiance, réservation. Parfait pour donner envie sur Instagram '
+            'ou Meta et rassurer sur le site. Ouvrez la capture ou la __DEMO__ comme un convive.'
+        ),
+        'marketing_h2': 'Carte, ambiance et conversion réservation',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> orientée <strong>HCR</strong> : photos, menus, horaires '
+            'et <strong>appel à la réservation</strong>. Pour <strong>__TITLE__</strong>, vous remplacez textes '
+            'et visuels puis testez votre promesse (brasserie, traiteur, bar…) avant de connecter votre '
+            'moteur de réservation ou votre téléphonie.'
+        ),
+    },
+    'formation': {
+        'shots_title': 'Captures formation prêtes pour Google Ads et réseaux pros',
+        'shots_lead': (
+            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : chaque cadre présente une '
+            '<strong>capture scrollable</strong> desktop / tablette / mobile pour montrer parcours, modules '
+            'et confiance pédagogique. Ouvrez la capture en grand ou la __DEMO__ pour simuler l’inscription.'
+        ),
+        'marketing_h2': 'Parcours apprenant, modules et inscription',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pensée <strong>formation</strong> : parcours clair, '
+            'niveaux, preuves et <strong>prise de contact</strong>. Pour <strong>__TITLE__</strong>, vous '
+            'personnalisez les intitulés et visuels campus avant de brancher votre LMS, votre paiement ou votre '
+            'outil de gestion des sessions.'
+        ),
+    },
+    'hotel': {
+        'shots_title': 'Visuels hôtellerie prêts pour réservation et réseaux sociaux',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les captures pleine page montrent '
+            'chambres, offres et <strong>parcours réservation</strong> sur tous les écrans. Idéal pour '
+            'campagnes Google Hôtels ou posts Instagram. Ouvrez la capture ou la __DEMO__ comme un voyageur.'
+        ),
+        'marketing_h2': 'Chambres, expérience et conversion réservation',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> type <strong>grand hôtel</strong> : gammes de chambres, '
+            'spa, séminaires et CTA réservation. Pour <strong>__TITLE__</strong>, vous adaptez textes et '
+            'visuels puis validez le discours avant de connecter votre moteur de réservation ou votre PMS.'
+        ),
+    },
+    'beaute': {
+        'shots_title': 'Captures institut & spa prêtes pour Meta, Google et prise de RDV',
+        'shots_lead': (
+            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres scrollables montrent '
+            'soins, ambiance et <strong>demande de rendez-vous</strong> sur desktop, tablette et mobile. '
+            'Ouvrez la capture ou la __DEMO__ pour un parcours client réaliste.'
+        ),
+        'marketing_h2': 'Soins, confiance et conversion rendez-vous',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pour <strong>beauté & bien-être</strong> : fiches soins, '
+            'engagements et formulaire RDV. Pour <strong>__TITLE__</strong>, vous remplacez textes et photos '
+            'puis testez votre promesse avant de brancher votre agenda ou votre logiciel métier.'
+        ),
+    },
+    'mobilite': {
+        'shots_title': 'Visuels garage & mobilité prêts pour Google Business et réseaux',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre montre une '
+            '<strong>capture pleine page</strong> : services, atelier et <strong>prise de RDV</strong>. '
+            'Ouvrez la capture en grand ou la __DEMO__ comme un automobiliste.'
+        ),
+        'marketing_h2': 'Prestations atelier et prise de rendez-vous',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> orientée <strong>atelier</strong> : expertises, visuels '
+            'véhicules et <strong>formulaire RDV</strong>. Pour <strong>__TITLE__</strong>, vous adaptez '
+            'offres (pneus, carrosserie, révision…) puis validez le message avant de connecter votre planning '
+            'ou votre téléphonie.'
+        ),
+    },
+    'artisanat': {
+        'shots_title': 'Captures boutique artisanale prêtes pour réseaux sociaux et SEO local',
+        'shots_lead': (
+            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres pleine page valorisent '
+            'produits, origines et <strong>parcours commande</strong> sur tous les écrans. Ouvrez la capture '
+            'ou la __DEMO__ pour simuler l’achat.'
+        ),
+        'marketing_h2': 'Histoire de maison, coffrets et conversion',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pour <strong>commerce artisanal</strong> : galerie, '
+            'storytelling et FAQ coffrets. Pour <strong>__TITLE__</strong>, vous remplacez textes et visuels '
+            'produits avant de brancher votre caisse en ligne ou votre logistique.'
+        ),
+    },
+    'sante': {
+        'shots_title': 'Visuels cabinet & santé prêts pour rassurer (web et réseaux)',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les captures scrollables montrent '
+            'un parcours <strong>clair et rassurant</strong> sur ordinateur, tablette et mobile (tarifs, '
+            'parcours patient, contact). Ouvrez la capture ou la __DEMO__ comme un patient.'
+        ),
+        'marketing_h2': 'Lisibilité, confiance et prise de contact soignée',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> adaptée <strong>santé</strong> : repères tarifaires, '
+            'prévention et <strong>demande de rappel</strong>. Pour <strong>__TITLE__</strong>, vous '
+            'personnalisez les contenus médicaux avec votre équipe puis branchez votre secrétariat ou votre '
+            'outil de prise de rendez-vous conforme au cadre légal.'
+        ),
+    },
+    'finance': {
+        'shots_title': 'Captures institutionnelles prêtes pour confiance et campagnes',
+        'shots_lead': (
+            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres pleine page montrent un '
+            'parcours <strong>sobre et structuré</strong> sur tous les écrans. Ouvrez la capture ou la '
+            '__DEMO__ pour valider le ton institutionnel.'
+        ),
+        'marketing_h2': 'Offres, transparence et prise de contact mesurée',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pour <strong>finance & banque</strong> : offres comparables, '
+            'repères agences et CTA contact. Pour <strong>__TITLE__</strong>, vous adaptez formulations et '
+            'mentions réglementaires avec votre conformité avant toute mise en production.'
+        ),
+    },
+    'industrie': {
+        'shots_title': 'Visuels industriels prêts pour B2B, Google et salons',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre montre une '
+            '<strong>capture pleine page</strong> : capacités, qualité et <strong>demande de devis</strong>. '
+            'Ouvrez la capture ou la __DEMO__ comme un donneur d’ordre.'
+        ),
+        'marketing_h2': 'Savoir-faire machine et conversion devis',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> orientée <strong>industrie</strong> : process, équipements '
+            'et FAQ techniques. Pour <strong>__TITLE__</strong>, vous remplacez textes et preuves puis '
+            'validez le discours commercial avant de connecter votre ERP ou votre pipeline commercial.'
+        ),
+    },
+    'conseil': {
+        'shots_title': 'Captures cabinet conseil prêtes pour LinkedIn et prospection',
+        'shots_lead': (
+            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les captures scrollables présentent '
+            'méthode, offres et <strong>prise de contact</strong> sur desktop, tablette et mobile. Ouvrez la '
+            'capture ou la __DEMO__ pour un parcours dirigeant.'
+        ),
+        'marketing_h2': 'Expertise, packs et prise de rendez-vous',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pour <strong>cabinets & conseil</strong> : méthode, '
+            'forfaits et CTA bilan flash ou RDV. Pour <strong>__TITLE__</strong>, vous adaptez les messages à '
+            'votre cible (TPE, associations, filiales…) avant de brancher votre agenda ou votre CRM.'
+        ),
+    },
+    'ess': {
+        'shots_title': 'Visuels association prêts pour mobilisation et campagnes',
+        'shots_lead': (
+            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les cadres montrent mission, '
+            'actions et <strong>engagement</strong> (dons, bénévolat) sur tous les écrans. Ouvrez la capture '
+            'ou la __DEMO__ comme un sympathisant.'
+        ),
+        'marketing_h2': 'Mobilisation, dons et bénévolat',
+        'included': (
+            'Une <strong>maquette HTML/CSS</strong> pour <strong>ESS & associations</strong> : campagnes, '
+            'preuves d’impact et formulaires engagement. Pour <strong>__TITLE__</strong>, vous remplacez textes '
+            'et visuels terrain avant de connecter votre outil de dons ou votre mailing.'
+        ),
+    },
+}
+
+
+def _vitrine_body_copy(it: Dict[str, Any], price: int, demo_rel_url: str) -> Dict[str, str]:
+    """
+    Paragraphes visibles fiche vitrine : variantes par catégorie + overrides optionnels dans vitrines.json.
+    Overrides (HTML de confiance, catalogue statique) : copy_shots_html, copy_included_html, copy_delivery_html.
+    Titres optionnels échappés : copy_shots_section_title, copy_marketing_h2.
+    """
+    cat = (it.get('category') or 'retail').strip() or 'retail'
+    if cat not in VITRINE_CATEGORY_LABELS:
+        cat = 'retail'
+    title_plain = (it.get('title') or '').strip()
+    tag_plain = (it.get('tagline') or '').strip()
+    title_e = html.escape(title_plain) or 'cette vitrine'
+    tag_e = html.escape(tag_plain) or 'votre positionnement'
+    demo_a = (
+        f'<a href="{html.escape(demo_rel_url, quote=True)}" class="vitrine-prose-link vitrine-prose-link--demo" '
+        'target="_blank" rel="noopener noreferrer">démo live</a>'
+    )
+    contact_a = '<a href="/#contact" class="vitrine-prose-link">formulaire sur l’accueil</a>'
+    sector = _VITRINE_SECTOR_COPY.get(cat, _VITRINE_SECTOR_COPY['retail'])
+
+    shots_title = (it.get('copy_shots_section_title') or '').strip() or sector['shots_title']
+    shots_title = html.escape(shots_title)
+
+    if (it.get('copy_shots_html') or '').strip():
+        shots_html = str(it['copy_shots_html']).strip()
+    else:
+        lead = (
+            sector['shots_lead']
+            .replace('__TITLE__', title_e)
+            .replace('__TAG__', tag_e)
+            .replace('__DEMO__', demo_a)
+        )
+        shots_html = f'<p class="section-description vitrine-prose">{lead}</p>'
+
+    marketing_h2 = (it.get('copy_marketing_h2') or '').strip() or sector['marketing_h2']
+    marketing_h2 = html.escape(marketing_h2)
+
+    if (it.get('copy_included_html') or '').strip():
+        included_html = str(it['copy_included_html']).strip()
+    else:
+        inc = sector['included'].replace('__TITLE__', title_e)
+        included_html = f'<p class="vitrine-included-lead vitrine-prose">{inc}</p>'
+
+    if (it.get('copy_delivery_html') or '').strip():
+        delivery_html = str(it['copy_delivery_html']).strip()
+    else:
+        delivery_html = (
+            '<div class="vitrine-detail-note box-soft vitrine-prose">'
+            '<p><strong>Livraison & visibilité</strong> : archive <strong>HTML/CSS/JS</strong> prête à '
+            'héberger — <strong>aucune base de données</strong> requise. Les formulaires sont des '
+            '<strong>maquettes</strong> (branchement e-mail, CRM ou paiement sur devis). Les captures de cette '
+            f'fiche illustrent le rendu pour <strong>{title_e}</strong> ; elles peuvent être régénérées après '
+            'vos contenus définitifs. Pour installation, domaine ou hébergement, utilisez le bloc à droite ou '
+            f'{contact_a}.</p>'
+            '</div>'
+        )
+
+    seo_line = (
+        f'Démo live, pack visuels multi-écrans et sources prêtes au déploiement · à partir de {price} € HT'
+    )
+
+    return {
+        'vitrine_seo_line': seo_line,
+        'vitrine_shots_section_title': shots_title,
+        'vitrine_copy_shots_html': shots_html,
+        'vitrine_copy_marketing_h2': marketing_h2,
+        'vitrine_copy_included_html': included_html,
+        'vitrine_copy_delivery_html': delivery_html,
+    }
+
+
+def _build_vitrine_seo_bundle(
+    it: Dict[str, Any],
+    slug: str,
+    price: int,
+    page_url_abs: str,
+    og_image_abs: str,
+    shot_desk_abs: str,
+    shot_tab_abs: str,
+    shot_mob_abs: str,
+    stack: List[str],
+) -> Dict[str, Any]:
+    """Titres, meta, alts images et JSON-LD (Product + WebPage + fil d'Ariane) orientés SEO / partage social."""
+    cat = (it.get('category') or 'all').strip() or 'all'
+    cat_label = VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title())
+    title = (it.get('title') or slug).strip()
+    tagline = (it.get('tagline') or '').strip()
+    excerpt = (it.get('excerpt') or tagline or '').strip()
+    stack_bits = ', '.join(str(s) for s in stack[:8]) if stack else 'HTML5, CSS3, JavaScript'
+
+    title_seo = f'{title} — maquette web {cat_label} | démo & captures multi-écrans'
+    suffix = ' | DanielCraft'
+    if len(title_seo) + len(suffix) > 68:
+        title_seo = f'{title[:34]}… — vitrine {cat_label} | démo'
+    page_title = _truncate_meta_text(title_seo + suffix, 118)
+
+    desc = (
+        f'{excerpt} '
+        f'Visuels plein écran desktop, tablette et mobile + démo interactive. '
+        f'Maquette HTML/CSS ({stack_bits}). À partir de {price} € HT — DanielCraft.'
+    )
+    page_description = _truncate_meta_text(desc, 158)
+
+    kw_parts = [
+        'vitrine site web professionnel',
+        'maquette HTML responsive',
+        'landing page secteur',
+        cat_label.lower(),
+        title.lower(),
+        slug.replace('-', ' '),
+        'démo site web',
+        'capture site desktop mobile',
+        'achat maquette site',
+        'DanielCraft Metz',
+    ] + [str(s).lower() for s in stack[:6]]
+    seen: set[str] = set()
+    kw_unique = []
+    for k in kw_parts:
+        k = k.strip()
+        if k and k not in seen:
+            seen.add(k)
+            kw_unique.append(k)
+    page_keywords = _truncate_meta_text(', '.join(kw_unique), 280)
+
+    vitrine_og_image_alt = _truncate_meta_text(
+        f'{title} — vitrine {cat_label} : capture pleine page desktop (partage LinkedIn, Facebook, Google).',
+        190,
+    )
+    ow, oh = _vitrine_og_dims_from_url(og_image_abs)
+    vitrine_img_alt_desktop = _truncate_meta_text(
+        f'Maquette « {title} » — capture desktop scrollable, secteur {cat_label}, blocs conversion.',
+        130,
+    )
+    vitrine_img_alt_tablet = _truncate_meta_text(
+        f'« {title} » — rendu tablette, navigation et offres mises en avant.',
+        130,
+    )
+    vitrine_img_alt_mobile = _truncate_meta_text(
+        f'« {title} » — version mobile, lisibilité et prise de contact rapide.',
+        130,
+    )
+
+    hero_badge = f'Vitrine web professionnelle · {cat_label}'
+
+    y = datetime.now().year
+    valid_until = f'{y + 1}-12-31'
+
+    graph: List[Dict[str, Any]] = [
+        {
+            '@type': 'WebPage',
+            '@id': page_url_abs + '#webpage',
+            'url': page_url_abs,
+            'name': page_title,
+            'description': page_description,
+            'inLanguage': 'fr-FR',
+            'isPartOf': {
+                '@type': 'WebSite',
+                'name': 'DanielCraft',
+                'url': SITE_BASE.rstrip('/') + '/',
+            },
+            'about': {'@type': 'Thing', 'name': f'Maquette vitrine web — secteur {cat_label}'},
+            'primaryImageOfPage': {
+                '@type': 'ImageObject',
+                'url': og_image_abs,
+                'caption': vitrine_og_image_alt,
+            },
+        },
+        {
+            '@type': 'Product',
+            'name': title,
+            'description': page_description,
+            'sku': f'vitrine-html-{slug}',
+            'category': cat_label,
+            'image': [og_image_abs, shot_tab_abs, shot_mob_abs],
+            'brand': {'@type': 'Brand', 'name': 'DanielCraft'},
+            'offers': {
+                '@type': 'Offer',
+                'url': page_url_abs,
+                'priceCurrency': 'EUR',
+                'price': str(price),
+                'priceValidUntil': valid_until,
+                'availability': 'https://schema.org/InStock',
+                'seller': {'@type': 'Organization', 'name': 'DanielCraft'},
+            },
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'DanielCraft — accueil',
+                    'item': SITE_BASE.rstrip('/') + '/',
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': 'Catalogue vitrines web',
+                    'item': SITE_BASE.rstrip('/') + '/vitrines/',
+                },
+                {'@type': 'ListItem', 'position': 3, 'name': title, 'item': page_url_abs},
+            ],
+        },
+    ]
+
+    return {
+        'page_title': page_title,
+        'page_description': page_description,
+        'page_keywords': page_keywords,
+        'schema_type': 'vitrine',
+        'vitrine_hero_badge': hero_badge,
+        'vitrine_category_label': cat_label,
+        'vitrine_og_image_alt': vitrine_og_image_alt,
+        'vitrine_og_image_width': ow,
+        'vitrine_og_image_height': oh,
+        'vitrine_og_image_type': _vitrine_og_mime_from_url(og_image_abs),
+        'vitrine_img_alt_desktop': vitrine_img_alt_desktop,
+        'vitrine_img_alt_tablet': vitrine_img_alt_tablet,
+        'vitrine_img_alt_mobile': vitrine_img_alt_mobile,
+        'vitrine_schema_jsonld': _safe_jsonld_embed({'@context': 'https://schema.org', '@graph': graph}),
+    }
+
+
 def _vitrine_screenshot_basename(slug: str, prefix: str) -> str:
     """Nom du fichier capture ou '' (priorité WebP : plus léger). Sources : assets/vitrines/screenshots/<slug>/."""
     root = VITRINES_SCREENSHOTS_SRC / slug
@@ -433,7 +902,8 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
         hub_text = hub_tpl.read_text(encoding='utf-8')
         hub_text = re.sub(r'href="([a-z]+)/index.html"', r'href="\1/demo/index.html"', hub_text)
         hub_text = hub_text.replace('ÔÇö', '—')
-        (out / 'index.html').write_text(hub_text, encoding='utf-8')
+        # Index racine réservé à la page catalogue DanielCraft (générée après copie).
+        (out / 'hub-bulma.html').write_text(hub_text, encoding='utf-8')
     for name in ('hub.css', 'hub-texture.png'):
         p = demos_src / name
         if p.is_file():
@@ -479,53 +949,24 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
     print(f'[OK] vitrines/ publie dans {out}')
 
 
-def build_vitrines_catalog_embed() -> None:
-    """Genere includes/vitrines-catalog-embed.html pour la section #vitrines de l'accueil."""
-    data = load_vitrines()
-    path_out = INCLUDES_DIR / 'vitrines-catalog-embed.html'
-    if not data or not data.get('items'):
-        path_out.write_text(
-            '<section id="vitrines" class="vitrines-showcase"><div class="container">'
-            '<p class="vitrines-empty">Catalogue vitrines indisponible (ajoutez <code>src/data/vitrines.json</code>).</p>'
-            '</div></section>\n',
-            encoding='utf-8',
-        )
-        print('[WARN] vitrines-catalog-embed.html : pas de donnees vitrines')
-        return
-
-    hub = (data.get('vitrines_hub_path') or data.get('showcase_hub_path') or '/vitrines/').strip()
-    if not hub.startswith('/'):
-        hub = '/' + hub
-    if hub in ('/vitrines', '/vitrines/'):
-        hub = '/vitrines/'
-
-    items = data['items']
-    cats: List[str] = []
+def _vitrines_distinct_category_keys(items: List[Dict[str, Any]]) -> List[str]:
     seen: set = set()
+    cats: List[str] = []
     for it in items:
         c = (it.get('category') or '').strip()
         if c and c not in seen:
             seen.add(c)
             cats.append(c)
+    return sorted(cats)
 
+
+def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) -> List[str]:
+    """Filtres + grille cartes + note de pied (même indentation que dans .container)."""
     lines: List[str] = []
-    lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
-    lines.append('<section id="vitrines" class="vitrines-showcase">')
-    lines.append('    <div class="container">')
-    lines.append('        <div class="section-header scroll-reveal">')
-    lines.append('            <span class="section-badge">Vitrines HTML</span>')
-    lines.append('            <h2 class="section-title">Démos par secteur, prêtes à personnaliser</h2>')
-    lines.append('            <p class="section-description">')
-    lines.append(
-        '                Parcours statiques Bulma : captures harmonisées avec la charte DanielCraft. '
-        f'<a href="{html.escape(hub)}">Ouvrir le hub des vitrines</a> ou choisissez une fiche pour la démo, le résumé et l’achat.'
-    )
-    lines.append('            </p>')
-    lines.append('        </div>')
     lines.append('        <div class="vitrines-toolbar scroll-reveal">')
     lines.append('            <div class="vitrines-filter" role="group" aria-label="Filtrer par secteur">')
     lines.append('                <button type="button" class="vitrines-filter-btn active" data-vitrine-filter="all">Tous</button>')
-    for c in sorted(cats):
+    for c in cats:
         label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
         lines.append(
             f'                <button type="button" class="vitrines-filter-btn" '
@@ -534,7 +975,8 @@ def build_vitrines_catalog_embed() -> None:
     lines.append('            </div>')
     lines.append('        </div>')
     lines.append('        <div class="vitrines-grid" id="vitrinesGrid">')
-    for idx, it in enumerate(items):
+    idx = 0
+    for it in items:
         slug = (it.get('slug') or '').strip()
         if not slug:
             continue
@@ -542,10 +984,11 @@ def build_vitrines_catalog_embed() -> None:
         title = html.escape(it.get('title') or slug)
         tagline = html.escape(it.get('tagline') or '')
         excerpt = html.escape(it.get('excerpt') or '')
-        _c_thumb, _d_thumb, _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')
-        thumb = _c_thumb or '/assets/images/og/home-1200x630.jpg'
+        _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
+        thumb = _a_thumb or '/assets/images/og/home-1200x630.jpg'
         cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat))
         delay = min(idx * 40, 400)
+        idx += 1
         lines.append(
             f'        <article class="vitrine-card scroll-reveal" data-vitrine-cat="{html.escape(cat)}" '
             f'style="--reveal-delay:{delay}ms">'
@@ -587,13 +1030,102 @@ def build_vitrines_catalog_embed() -> None:
         '        <p class="vitrines-footnote scroll-reveal">'
         'Pour les dépôts open source, voir aussi <a href="/projets">la page Projets</a>.</p>'
     )
+    return lines
+
+
+def build_vitrines_page_collection_embed() -> None:
+    """Fragment catalogue (filtre + grille) pour la page /vitrines/ — theme DanielCraft."""
+    data = load_vitrines()
+    path_out = INCLUDES_DIR / 'vitrines-page-collection.html'
+    if not data or not data.get('items'):
+        path_out.write_text(
+            '<!-- Genere par build.py -->\n'
+            '<section class="vitrines-page-collection" data-vitrines-root aria-label="Catalogue vitrines">\n'
+            '    <div class="container">\n'
+            '        <p class="vitrines-empty">Catalogue vitrines indisponible '
+            '(ajoutez <code>src/data/vitrines.json</code>).</p>\n'
+            '    </div>\n'
+            '</section>\n',
+            encoding='utf-8',
+        )
+        return
+    items = data['items']
+    cats = _vitrines_distinct_category_keys(items)
+    inner = _vitrines_catalog_inner_lines(items, cats)
+    lines: List[str] = []
+    lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
+    lines.append(
+        '<section class="vitrines-page-collection vitrines-showcase vitrines-showcase--page" '
+        'data-vitrines-root aria-labelledby="vitrines-catalogue-heading">'
+    )
+    lines.append('    <div class="container">')
+    lines.append('        <div class="section-header scroll-reveal">')
+    lines.append('            <span class="section-badge">Collection</span>')
+    lines.append('            <h2 id="vitrines-catalogue-heading" class="section-title">Toutes les maquettes du catalogue</h2>')
+    lines.append('            <p class="section-description">')
+    lines.append(
+        '                Filtrez par secteur, ouvrez une fiche DanielCraft (textes marketing, prix, captures) '
+        'ou lancez directement la démo HTML pleine page.'
+    )
+    lines.append('            </p>')
+    lines.append('        </div>')
+    lines.extend(inner)
     lines.append('    </div>')
     lines.append('</section>')
     new_content = '\n'.join(lines) + '\n'
     if path_out.exists() and path_out.read_text(encoding='utf-8') == new_content:
         return
     path_out.write_text(new_content, encoding='utf-8')
-    print(f'[OK] vitrines-catalog-embed.html genere ({len(items)} vitrine(s))')
+    print(f'[OK] vitrines-page-collection.html genere ({len(items)} vitrine(s))')
+
+
+def build_vitrines_catalog_embed() -> None:
+    """Genere includes/vitrines-catalog-embed.html (accueil) + vitrines-page-collection.html (page /vitrines/)."""
+    data = load_vitrines()
+    path_out = INCLUDES_DIR / 'vitrines-catalog-embed.html'
+    if not data or not data.get('items'):
+        path_out.write_text(
+            '<section id="vitrines" class="vitrines-showcase" data-vitrines-root><div class="container">'
+            '<p class="vitrines-empty">Catalogue vitrines indisponible (ajoutez <code>src/data/vitrines.json</code>).</p>'
+            '</div></section>\n',
+            encoding='utf-8',
+        )
+        build_vitrines_page_collection_embed()
+        print('[WARN] vitrines-catalog-embed.html : pas de donnees vitrines')
+        return
+
+    hub = (data.get('vitrines_hub_path') or data.get('showcase_hub_path') or '/vitrines/hub-bulma.html').strip()
+    if not hub.startswith('/'):
+        hub = '/' + hub
+
+    items = data['items']
+    cats = _vitrines_distinct_category_keys(items)
+    inner = _vitrines_catalog_inner_lines(items, cats)
+
+    lines: List[str] = []
+    lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
+    lines.append('<section id="vitrines" class="vitrines-showcase" data-vitrines-root>')
+    lines.append('    <div class="container">')
+    lines.append('        <div class="section-header scroll-reveal">')
+    lines.append('            <span class="section-badge">Vitrines HTML</span>')
+    lines.append('            <h2 class="section-title">Démos par secteur, prêtes à personnaliser</h2>')
+    lines.append('            <p class="section-description">')
+    lines.append(
+        '                Quatorze maquettes statiques (Bulma) pensées comme des sites « presque prêts » : '
+        'navigation, médias, formulaires. Comparez les secteurs ici, puis ouvrez la '
+        f'<a href="/vitrines/">page catalogue DanielCraft</a> pour les fiches détaillées — ou l’'
+        f'<a href="{html.escape(hub)}">index technique des fichiers démo</a> si vous préférez la vue mosaïque.'
+    )
+    lines.append('            </p>')
+    lines.append('        </div>')
+    lines.extend(inner)
+    lines.append('    </div>')
+    lines.append('</section>')
+    new_content = '\n'.join(lines) + '\n'
+    if not (path_out.exists() and path_out.read_text(encoding='utf-8') == new_content):
+        path_out.write_text(new_content, encoding='utf-8')
+        print(f'[OK] vitrines-catalog-embed.html genere ({len(items)} vitrine(s))')
+    build_vitrines_page_collection_embed()
 
 
 def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
@@ -636,21 +1168,24 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         tab = d_tab or d_desk or fallback
         mob = d_mob or d_desk or fallback
         og_desk = a_desk or fallback
-        title = it.get('title') or slug
-        excerpt = (it.get('excerpt') or it.get('tagline') or '')[:170]
+        title = (it.get('title') or slug).strip()
         mail_subj = quote(f'Installation vitrine — {title}')
+        page_url_abs = _to_absolute_url(f'/vitrines/{slug}/')
+        shot_desk_abs = _to_absolute_url(a_desk or fallback)
+        shot_tab_abs = _to_absolute_url(_a_tab or a_desk or fallback)
+        shot_mob_abs = _to_absolute_url(_a_mob or a_desk or fallback)
+        og_image_abs = _to_absolute_url(og_desk)
+        seo_bundle = _build_vitrine_seo_bundle(
+            it, slug, price, page_url_abs, og_image_abs, shot_desk_abs, shot_tab_abs, shot_mob_abs, stack
+        )
         vars_dict = DEFAULT_VARS.copy()
         vars_dict.update({
             'current_page': 'vitrine',
-            'page_title': f'{title} – Vitrine HTML | DanielCraft',
-            'page_description': excerpt,
-            'page_keywords': 'vitrine html, vitrines, bulma, ' + ', '.join(str(s) for s in (it.get('stack') or [])[:6]),
             'page_url': f'{SITE_BASE.rstrip("/")}/vitrines/{slug}/',
             'og_image': og_desk,
             'og_type': 'website',
-            'schema_type': '',
             'extra_css': 'vitrines-portfolio.css',
-            'page_scripts': ['main.js', 'vitrines-screenshots.js'],
+            'page_scripts': ['main.js', 'vitrines-screenshots.js', 'vitrine-detail-modals.js', 'vitrine-detail-effects.js'],
             'vitrine_title': title,
             'vitrine_tagline': it.get('tagline') or '',
             'vitrine_excerpt': it.get('excerpt') or '',
@@ -666,6 +1201,9 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
             'vitrine_has_stripe': stripe_url,
             'vitrine_mailto_subject': mail_subj,
         })
+        vars_dict.update(seo_bundle)
+        demo_rel = f'/vitrines/{slug}/demo/index.html'
+        vars_dict.update(_vitrine_body_copy(it, price, demo_rel))
         _normalize_page_meta(vars_dict, slug)
         vars_dict['page_url'] = _to_absolute_url(f'/vitrines/{slug}/')
         vars_dict['og_image'] = _to_absolute_url(og_desk)
@@ -897,7 +1435,7 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
 
 def build_page(page_name: str, template_engine: TemplateEngine):
     """Build une page HTML."""
-    if page_name == 'index':
+    if page_name in ('index', 'vitrines'):
         build_vitrines_catalog_embed()
 
     # Charge la config de la page

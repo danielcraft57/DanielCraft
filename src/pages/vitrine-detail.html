@@ -1,61 +1,68 @@
+<article class="vitrine-detail-root">
 <section class="vitrine-detail-hero">
-    <div class="container">
-        <nav class="vitrine-breadcrumb" aria-label="Fil d'Ariane">
+    <div class="container vitrine-detail-hero-inner">
+        <nav class="vitrine-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
             <a href="/">Accueil</a>
             <span aria-hidden="true">/</span>
-            <a href="/vitrines/">Vitrines</a>
+            <a href="/vitrines/">Vitrines web</a>
             <span aria-hidden="true">/</span>
             <span>{{vitrine_title}}</span>
         </nav>
-        <span class="section-badge">Vitrine HTML statique</span>
-        <h1 class="section-title vitrine-detail-title">{{vitrine_title}}</h1>
-        <p class="section-description vitrine-detail-lead">{{vitrine_tagline}}</p>
-        <p class="vitrine-detail-excerpt">{{vitrine_excerpt}}</p>
-        <div class="vitrine-detail-actions">
-            <a class="btn btn-primary btn-large" href="{{vitrine_demo_url}}" target="_blank" rel="noopener noreferrer">
+        <span class="section-badge scroll-reveal" style="--reveal-delay: 45ms">{{vitrine_hero_badge}}</span>
+        <h1 class="section-title vitrine-detail-title scroll-reveal" style="--reveal-delay: 90ms">{{vitrine_title}}</h1>
+        <p class="section-description vitrine-detail-lead scroll-reveal" style="--reveal-delay: 130ms">{{vitrine_tagline}}</p>
+        <p class="vitrine-detail-excerpt vitrine-prose scroll-reveal" style="--reveal-delay: 170ms">{{vitrine_excerpt}}</p>
+        <p class="vitrine-detail-seo-line scroll-reveal" style="--reveal-delay: 200ms" role="note">{{vitrine_seo_line}}</p>
+        <div class="vitrine-detail-actions vitrine-detail-actions--hero scroll-reveal" style="--reveal-delay: 240ms">
+            <a class="btn btn-outline btn-large" href="{{vitrine_demo_url}}" target="_blank" rel="noopener noreferrer">
                 <span>Ouvrir la démo live</span>
                 <i class="fas fa-external-link-alt" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-secondary btn-large" href="/#contact">
-                <span>Installation &amp; domaine</span>
-                <i class="fas fa-server" aria-hidden="true"></i>
-            </a>
+            <button type="button" class="btn btn-primary btn-large" data-vitrine-open="order" id="vitrineHeroBtnOrder">
+                <span>Commander</span>
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn btn-secondary btn-large" data-vitrine-open="quote" id="vitrineHeroBtnQuote">
+                <span>Demander un devis</span>
+                <i class="fas fa-comments" aria-hidden="true"></i>
+            </button>
+            <a class="vitrine-detail-actions__subtle" href="/#contact">Installation, domaine &amp; hébergement →</a>
         </div>
     </div>
 </section>
 
 <section class="vitrine-detail-shots" aria-labelledby="vitrine-shots-title">
     <div class="container">
-        <div class="section-header">
-            <h2 id="vitrine-shots-title" class="section-title">Aperçu sur tous les écrans</h2>
-            <p class="section-description">Le rendu complet de la page, en format léger&nbsp;: faites défiler chaque cadre pour tout voir, ou ouvrez la capture dans un nouvel onglet. Le défilement repart automatiquement du haut pour une lecture confortable.</p>
+        <div class="section-header scroll-reveal" style="--reveal-delay: 0ms">
+            <h2 id="vitrine-shots-title" class="section-title">{{vitrine_shots_section_title}}</h2>
+            {{vitrine_copy_shots_html}}
         </div>
         <div class="vitrine-device-grid">
-            <figure class="vitrine-device-frame vitrine-device-frame--desktop scroll-reveal">
+            <figure class="vitrine-device-frame vitrine-device-frame--desktop scroll-reveal" style="--reveal-delay: 0ms">
                 <figcaption class="vitrine-device-label"><i class="fas fa-desktop" aria-hidden="true"></i> Desktop</figcaption>
                 <div class="vitrine-device-frame-tools">
                     <a class="vitrine-shot-open" href="{{vitrine_shot_desktop}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
                 </div>
                 <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
-                    <img src="{{vitrine_shot_desktop}}" alt="Capture desktop — {{vitrine_title}}" width="1600" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
+                    <img src="{{vitrine_shot_desktop}}" alt="{{vitrine_img_alt_desktop}}" width="1600" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
                 </div>
             </figure>
-            <figure class="vitrine-device-frame vitrine-device-frame--tablet scroll-reveal">
+            <figure class="vitrine-device-frame vitrine-device-frame--tablet scroll-reveal" style="--reveal-delay: 80ms">
                 <figcaption class="vitrine-device-label"><i class="fas fa-tablet-alt" aria-hidden="true"></i> Tablette</figcaption>
                 <div class="vitrine-device-frame-tools">
                     <a class="vitrine-shot-open" href="{{vitrine_shot_tablet}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
                 </div>
                 <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
-                    <img src="{{vitrine_shot_tablet}}" alt="Capture tablette — {{vitrine_title}}" width="1200" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
+                    <img src="{{vitrine_shot_tablet}}" alt="{{vitrine_img_alt_tablet}}" width="1200" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
                 </div>
             </figure>
-            <figure class="vitrine-device-frame vitrine-device-frame--mobile scroll-reveal">
+            <figure class="vitrine-device-frame vitrine-device-frame--mobile scroll-reveal" style="--reveal-delay: 160ms">
                 <figcaption class="vitrine-device-label"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</figcaption>
                 <div class="vitrine-device-frame-tools">
                     <a class="vitrine-shot-open" href="{{vitrine_shot_mobile}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
                 </div>
                 <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
-                    <img src="{{vitrine_shot_mobile}}" alt="Capture mobile — {{vitrine_title}}" width="800" height="1200" loading="lazy" decoding="async" data-vitrine-fallback>
+                    <img src="{{vitrine_shot_mobile}}" alt="{{vitrine_img_alt_mobile}}" width="800" height="1200" loading="lazy" decoding="async" data-vitrine-fallback>
                 </div>
             </figure>
         </div>
@@ -65,37 +72,46 @@
 <section class="vitrine-detail-body">
     <div class="container vitrine-detail-layout">
         <div class="vitrine-detail-main">
-            <h2 class="section-title">Contenu inclus</h2>
-            <p class="vitrine-included-lead">Vous repartez avec une vitrine déjà structurée pour rassurer, présenter vos offres et pousser au contact&nbsp;: textes d’exemple à remplacer par les vôtres, visuels d’ambiance à échanger contre vos photos, et une navigation fluide du premier clic jusqu’au formulaire. Idéal pour lancer vite une présence propre, puis affiner avec moi le branding ou les branchements (paiement, CRM, e-mail).</p>
+            <h2 class="section-title scroll-reveal" style="--reveal-delay: 0ms">{{vitrine_copy_marketing_h2}}</h2>
+            <div class="scroll-reveal" style="--reveal-delay: 70ms">
+            {{vitrine_copy_included_html}}
+            </div>
+            <div class="scroll-reveal" style="--reveal-delay: 120ms">
             {{vitrine_features_html}}
-            <h3 class="vitrine-stack-title">Technologies mises en avant</h3>
-            <ul class="vitrine-stack-list">
+            </div>
+            <h3 class="vitrine-stack-title scroll-reveal" style="--reveal-delay: 0ms">Technologies &amp; confort de lecture (SEO technique)</h3>
+            <ul class="vitrine-stack-list scroll-reveal" style="--reveal-delay: 60ms">
                 {{vitrine_stack_html}}
             </ul>
-            <div class="vitrine-detail-note box-soft">
-                <p><strong>Livraison</strong> : archive HTML/CSS/JS prête à déposer sur votre hébergement. Aucune base de données requise. Les formulaires sont des maquettes&nbsp;: branchement PHP, Node ou services tiers sur devis.</p>
+            <div class="scroll-reveal" style="--reveal-delay: 100ms">
+            {{vitrine_copy_delivery_html}}
             </div>
         </div>
-        <aside class="vitrine-purchase-card" aria-labelledby="vitrine-buy-title">
+        <aside class="vitrine-purchase-card scroll-reveal-scale" style="--reveal-delay: 80ms" aria-labelledby="vitrine-buy-title" data-vitrine-slug="{{vitrine_slug}}" data-vitrine-price="{{vitrine_price_eur}}">
             <div class="vitrine-purchase-inner">
-                <h2 id="vitrine-buy-title" class="vitrine-purchase-title">Acheter cette vitrine</h2>
+                <h2 id="vitrine-buy-title" class="vitrine-purchase-title">Cette vitrine</h2>
                 <p class="vitrine-purchase-price"><span class="vitrine-price-value">{{vitrine_price_eur}}</span><span class="vitrine-price-currency">€</span> <span class="vitrine-price-vat">HT</span></p>
-                <p class="vitrine-purchase-hint">Prix catalogue configurable (défaut&nbsp;: 42&nbsp;€ HT). Paiement sécurisé par Stripe lorsque le lien est configuré.</p>
-                {% if vitrine_has_stripe %}
-                <a class="btn btn-primary btn-large vitrine-stripe-btn" href="{{vitrine_stripe_url}}" target="_blank" rel="noopener noreferrer">
-                    <span>Payer avec Stripe</span>
-                    <i class="fab fa-cc-stripe" aria-hidden="true"></i>
-                </a>
-                {% else %}
-                <p class="vitrine-stripe-placeholder">Lien Stripe à configurer (<code>stripe_payment_link_url</code> dans <code>src/data/vitrines.json</code>).</p>
-                <a class="btn btn-secondary btn-large" href="/#contact">
-                    <span>Demander la facturation</span>
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                </a>
-                {% endif %}
+                <p class="vitrine-purchase-hint">Paiement en ligne uniquement lorsque le lien Stripe est activé. Sinon, envoyez votre demande&nbsp;: je vous réponds avec la facture ou le lien sécurisé.</p>
+                <div class="vitrine-purchase-cta-stack">
+                    <button type="button" class="btn btn-primary btn-large vitrine-purchase-cta-main" data-vitrine-open="order" id="vitrineCardBtnOrder">
+                        <span>Commander</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-large" data-vitrine-open="quote" id="vitrineCardBtnQuote">
+                        <span>Demander un devis</span>
+                        <i class="fas fa-file-signature" aria-hidden="true"></i>
+                    </button>
+                    {% if vitrine_has_stripe %}
+                    <a class="vitrine-stripe-subtle" href="{{vitrine_stripe_url}}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-cc-stripe" aria-hidden="true"></i> Payer tout de suite avec Stripe (lien sécurisé)
+                    </a>
+                    {% else %}
+                    <p class="vitrine-stripe-placeholder">Paiement Stripe&nbsp;: lien à configurer dans <code>vitrines.json</code> — en attendant, utilisez «&nbsp;Commander&nbsp;».</p>
+                    {% endif %}
+                </div>
                 <hr class="vitrine-purchase-sep">
                 <h3 class="vitrine-purchase-sub">Mise en ligne clé en main</h3>
-                <p>Hébergement, nom de domaine, TLS, redirections et adaptation des formulaires&nbsp;: <a href="/#contact">contactez-moi</a> pour un devis installation.</p>
+                <p class="vitrine-prose">Hébergement, nom de domaine, TLS, redirections et branchement des formulaires&nbsp;: <a href="/#contact" class="vitrine-prose-link">contact accueil</a> ou devis depuis ce bloc.</p>
                 <a class="btn btn-outline btn-large" href="mailto:contact@danielcraft.fr?subject={{vitrine_mailto_subject}}">
                     <span>Email direct</span>
                     <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -104,3 +120,205 @@
         </aside>
     </div>
 </section>
+
+</article>
+
+<!-- Modales CTA : pré-commande (sans paiement immédiat) & devis type contact -->
+<dialog class="vitrine-cta-dialog" id="vitrineDialogOrder" aria-labelledby="vitrineDialogOrderTitle">
+    <div class="vitrine-cta-dialog__shell">
+        <button type="button" class="vitrine-cta-dialog__close" data-vitrine-close="order" aria-label="Fermer la fenêtre">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <header class="vitrine-cta-dialog__head">
+            <span class="section-badge vitrine-cta-dialog__badge">Pré-commande</span>
+            <h2 id="vitrineDialogOrderTitle" class="vitrine-cta-dialog__title">Commander cette vitrine</h2>
+            <p class="vitrine-cta-dialog__subtitle">Étapes guidées — aucun paiement sur cette page. Vous recevez une confirmation et la suite (facture ou lien Stripe) par email.</p>
+        </header>
+        <div class="vitrine-cta-dialog__body">
+            <p class="vitrine-modal-feedback" id="vitrineOrderFeedback" role="status" aria-live="polite" hidden></p>
+            <ol class="contact-progress-min vitrine-cta-progress" id="vitrineOrderProgress" aria-label="Progression">
+                <li class="contact-progress-min__item" data-vitrine-order-bar="1"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 4</span></li>
+                <li class="contact-progress-min__item" data-vitrine-order-bar="2"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 4</span></li>
+                <li class="contact-progress-min__item" data-vitrine-order-bar="3"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 4</span></li>
+                <li class="contact-progress-min__item" data-vitrine-order-bar="4"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 4 sur 4</span></li>
+            </ol>
+            <form id="vitrineOrderForm" class="vitrine-cta-form" novalidate>
+                <input type="hidden" name="service" value="vitrine_catalog_order">
+                <input type="hidden" name="project_type" id="vd_order_project_type" value="">
+                <input type="hidden" name="vitrine_slug" value="{{vitrine_slug}}">
+                <input type="hidden" name="vitrine_title" id="vd_order_vitrine_title" value="">
+                <input type="hidden" name="preferred_date" value="">
+                <input type="hidden" name="preferred_time" value="">
+                <input type="hidden" name="budget" value="{{vitrine_price_eur}}">
+                <input type="hidden" name="message" id="vd_order_message" value="">
+                <input type="hidden" name="name" id="vd_order_name_post" value="">
+
+                <div class="vitrine-cta-steps">
+                    <div class="contact-step vitrine-cta-step is-active" data-vitrine-order-step="1" role="group" aria-labelledby="vd-order-s1-title">
+                        <h3 id="vd-order-s1-title" class="contact-step__title">Votre produit</h3>
+                        <div class="vitrine-cta-product">
+                            <div class="vitrine-cta-product__media">
+                                <img src="{{vitrine_shot_desktop}}" alt="" width="320" height="180" loading="lazy" decoding="async">
+                            </div>
+                            <div class="vitrine-cta-product__body">
+                                <p class="vitrine-cta-product__title">{{vitrine_title}}</p>
+                                <p class="vitrine-cta-product__price"><span class="vitrine-price-value">{{vitrine_price_eur}}</span> € HT</p>
+                                <p class="vitrine-cta-product__tag">{{vitrine_tagline}}</p>
+                            </div>
+                        </div>
+                        <p class="contact-step__intro vitrine-cta-intro">Vous validez l’achat de la maquette HTML/CSS listée sur cette fiche. Le paiement en ligne n’est pas déclenché ici&nbsp;: après envoi, je vérifie votre dossier et je vous transmets la facture ou un lien de paiement sécurisé adapté.</p>
+                        <div class="contact-step-actions">
+                            <button type="button" class="btn btn-primary btn-large" data-vitrine-order-next="1">Continuer</button>
+                        </div>
+                    </div>
+                    <div class="contact-step vitrine-cta-step" data-vitrine-order-step="2" role="group" aria-labelledby="vd-order-s2-title" aria-hidden="true">
+                        <h3 id="vd-order-s2-title" class="contact-step__title">Type de projet</h3>
+                        <p class="contact-step__intro">Comme sur l’accueil&nbsp;: indiquez la nature de votre besoin autour du <strong>développement web</strong> et de cette vitrine.</p>
+                        <p class="contact-substep-hint contact-substep-hint--tight">Un clic pour sélectionner — vous pourrez préciser à l’étape suivante.</p>
+                        <div id="vitrineOrderProjectMount" class="contact-type-mount" role="group" aria-label="Type de projet"></div>
+                        <div class="contact-step-actions contact-step-actions--split">
+                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-order-back="2"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</button>
+                            <button type="button" class="btn btn-primary btn-large" data-vitrine-order-next="2">Continuer <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="contact-step vitrine-cta-step" data-vitrine-order-step="3" role="group" aria-labelledby="vd-order-s3-title" aria-hidden="true">
+                        <h3 id="vd-order-s3-title" class="contact-step__title">Coordonnées &amp; facturation</h3>
+                        <p class="contact-step__intro">Pour préparer la facture et le déploiement éventuel sur <strong>l’URL de votre futur site</strong>.</p>
+                        <div class="form-group">
+                            <label for="vd_order_first">Prénom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="vd_order_first" autocomplete="given-name" required maxlength="80" placeholder="Camille">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_order_last">Nom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="vd_order_last" autocomplete="family-name" required maxlength="80" placeholder="Martin">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_order_email">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="vd_order_email" name="email" autocomplete="email" required maxlength="200" placeholder="vous@entreprise.fr">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_order_phone">Téléphone <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="vd_order_phone" name="phone" autocomplete="tel" required maxlength="30" placeholder="06 12 34 56 78">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_order_site_url">URL du site visée <span class="label-optional">(optionnel)</span></label>
+                            <input type="url" id="vd_order_site_url" name="site_url" inputmode="url" maxlength="500" placeholder="https://www.votre-domaine.fr">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_order_billing">Adresse de facturation <span aria-hidden="true">*</span></label>
+                            <textarea id="vd_order_billing" name="billing_address" rows="4" required maxlength="1500" placeholder="Raison sociale, rue, code postal, ville, pays…"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_order_notes">Précisions <span class="label-optional">(optionnel)</span></label>
+                            <textarea id="vd_order_notes" rows="3" maxlength="2000" placeholder="Société, TVA intracom, contraintes de mise en ligne…"></textarea>
+                        </div>
+                        <div class="contact-step-actions contact-step-actions--split">
+                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-order-back="3"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</button>
+                            <button type="button" class="btn btn-primary btn-large" data-vitrine-order-next="3">Vérifier avant envoi <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="contact-step vitrine-cta-step" data-vitrine-order-step="4" role="group" aria-labelledby="vd-order-s4-title" aria-hidden="true">
+                        <h3 id="vd-order-s4-title" class="contact-step__title">Récapitulatif</h3>
+                        <p class="contact-step__intro">Vérifiez les informations puis envoyez votre demande.</p>
+                        <div class="vitrine-cta-recap" id="vitrineOrderRecap" aria-live="polite"></div>
+                        <div class="form-group vitrine-cta-confirm">
+                            <label class="vitrine-cta-checkbox">
+                                <input type="checkbox" id="vd_order_confirm" required>
+                                <span>Je confirme l’exactitude des informations et je comprends qu’aucun paiement n’est effectué sur cette page.</span>
+                            </label>
+                        </div>
+                        <div class="contact-step-actions contact-step-actions--split">
+                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-order-back="4"><i class="fas fa-arrow-left" aria-hidden="true"></i> Modifier</button>
+                            <button type="submit" class="btn btn-primary btn-large vitrine-cta-submit" id="vitrineOrderSubmit">
+                                <span class="btn-text">Envoyer la demande</span>
+                                <span class="btn-loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi…</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+<dialog class="vitrine-cta-dialog" id="vitrineDialogQuote" aria-labelledby="vitrineDialogQuoteTitle">
+    <div class="vitrine-cta-dialog__shell">
+        <button type="button" class="vitrine-cta-dialog__close" data-vitrine-close="quote" aria-label="Fermer la fenêtre">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <header class="vitrine-cta-dialog__head">
+            <span class="section-badge vitrine-cta-dialog__badge">Devis &amp; questions</span>
+            <h2 id="vitrineDialogQuoteTitle" class="vitrine-cta-dialog__title">Parlons de votre projet</h2>
+            <p class="vitrine-cta-dialog__subtitle">Parcours rapide inspiré du formulaire d’accueil&nbsp;: type de projet, besoin, coordonnées. Contexte&nbsp;: la vitrine <strong>{{vitrine_title}}</strong>.</p>
+        </header>
+        <div class="vitrine-cta-dialog__body">
+            <p class="vitrine-modal-feedback" id="vitrineQuoteFeedback" role="status" aria-live="polite" hidden></p>
+            <ol class="contact-progress-min vitrine-cta-progress" id="vitrineQuoteProgress" aria-label="Progression">
+                <li class="contact-progress-min__item" data-vitrine-quote-bar="1"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 3</span></li>
+                <li class="contact-progress-min__item" data-vitrine-quote-bar="2"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 3</span></li>
+                <li class="contact-progress-min__item" data-vitrine-quote-bar="3"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 3</span></li>
+            </ol>
+            <form id="vitrineQuoteForm" class="vitrine-cta-form" novalidate>
+                <input type="hidden" name="service" value="vitrine_catalog_devis">
+                <input type="hidden" name="project_type" id="vd_quote_project_type" value="">
+                <input type="hidden" name="vitrine_slug" value="{{vitrine_slug}}">
+                <input type="hidden" name="vitrine_title" id="vd_quote_vitrine_title" value="">
+                <input type="hidden" name="preferred_date" value="">
+                <input type="hidden" name="preferred_time" value="">
+                <input type="hidden" name="budget" value="">
+                <input type="hidden" name="message" id="vd_quote_message" value="">
+                <input type="hidden" name="name" id="vd_quote_name_post" value="">
+                <div class="vitrine-cta-steps">
+                    <div class="contact-step vitrine-cta-step is-active" data-vitrine-quote-step="1" role="group" aria-labelledby="vd-quote-s1-title">
+                        <h3 id="vd-quote-s1-title" class="contact-step__title">Type de projet</h3>
+                        <p class="contact-step__intro">Même logique que sur l’accueil — ciblez votre besoin (souvent <strong>développement web</strong> pour une vitrine catalogue).</p>
+                        <div id="vitrineQuoteProjectMount" class="contact-type-mount" role="group" aria-label="Type de projet"></div>
+                        <div class="contact-step-actions">
+                            <button type="button" class="btn btn-primary btn-large" data-vitrine-quote-next="1">Continuer <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="contact-step vitrine-cta-step" data-vitrine-quote-step="2" role="group" aria-labelledby="vd-quote-s2-title" aria-hidden="true">
+                        <h3 id="vd-quote-s2-title" class="contact-step__title">Votre besoin</h3>
+                        <p class="contact-step__intro">Devis installation, personnalisation, contenus, ou autre autour de <strong>{{vitrine_title}}</strong>.</p>
+                        <div class="form-group">
+                            <label for="vd_quote_detail">Décrivez votre besoin <span aria-hidden="true">*</span></label>
+                            <textarea id="vd_quote_detail" rows="5" required maxlength="4000" minlength="15" placeholder="Ex. : mise en ligne sur mon hébergeur, textes à réécrire, formulaire relié à mon email…"></textarea>
+                        </div>
+                        <p class="vitrine-cta-hint-soft vitrine-prose">Besoin d’un créneau téléphonique précis&nbsp;? Après envoi, utilisez aussi le <a href="/#contact" class="vitrine-prose-link">formulaire complet sur l’accueil</a>.</p>
+                        <div class="contact-step-actions contact-step-actions--split">
+                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-quote-back="2"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</button>
+                            <button type="button" class="btn btn-primary btn-large" data-vitrine-quote-next="2">Coordonnées <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="contact-step vitrine-cta-step" data-vitrine-quote-step="3" role="group" aria-labelledby="vd-quote-s3-title" aria-hidden="true">
+                        <h3 id="vd-quote-s3-title" class="contact-step__title">Vos coordonnées</h3>
+                        <p class="contact-step__intro">Pour vous recontacter rapidement.</p>
+                        <div class="form-group">
+                            <label for="vd_quote_first">Prénom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="vd_quote_first" autocomplete="given-name" required maxlength="80">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_quote_last">Nom <span aria-hidden="true">*</span></label>
+                            <input type="text" id="vd_quote_last" autocomplete="family-name" required maxlength="80">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_quote_email">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="vd_quote_email" name="email" autocomplete="email" required maxlength="200">
+                        </div>
+                        <div class="form-group">
+                            <label for="vd_quote_phone">Téléphone <span aria-hidden="true">*</span></label>
+                            <input type="tel" id="vd_quote_phone" name="phone" autocomplete="tel" required maxlength="30">
+                        </div>
+                        <div class="contact-step-actions contact-step-actions--split">
+                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-quote-back="3"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</button>
+                            <button type="submit" class="btn btn-primary btn-large vitrine-cta-submit" id="vitrineQuoteSubmit">
+                                <span class="btn-text">Envoyer la demande</span>
+                                <span class="btn-loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi…</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</dialog>
