@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SHOWCASE = ROOT / "showcase"
+SHOWCASE = ROOT / "assets" / "vitrines" / "demos"
 
 
 def strip_fictif_markers(html: str) -> str:
@@ -685,7 +685,7 @@ def polish_hub() -> None:
             "<h1 id=\"hub-title\">Vitrines sectorielles</h1>",
         ),
         (
-            "<p class=\"lead\">Catalogue statique de <strong>quatorze</strong> maquettes sectorielles : chaque vitrine applique une <strong>arborescence différente</strong> (libellés de menu et regroupement de contenu) pour coller aux usages WordPress, Joomla ou Bootstrap, tout en restant sur une seule URL pour les captures Playwright (<code>showcase/screenshot_showcases.py</code>). Aucune statistique de marché n’est affichée&nbsp;: uniquement du contenu fictif pour la mise en page.</p>",
+            "<p class=\"lead\">Catalogue statique de <strong>quatorze</strong> maquettes sectorielles : chaque vitrine applique une <strong>arborescence différente</strong> (libellés de menu et regroupement de contenu) pour coller aux usages WordPress, Joomla ou Bootstrap, tout en restant sur une seule URL pour les captures Playwright (<code>scripts/screenshot_vitrines.py</code>). Aucune statistique de marché n’est affichée&nbsp;: uniquement du contenu fictif pour la mise en page.</p>",
             "<p class=\"lead\">Ce catalogue présente <strong>quatorze</strong> vitrines sectorielles statiques&nbsp;: chacune applique une <strong>arborescence différente</strong> (menus, regroupements de contenu) proche des usages WordPress, Joomla ou Bootstrap. Les textes et coordonnées sont rédigés comme sur un site «&nbsp;réel&nbsp;» pour tester lisibilité, contrastes et formulaires.</p>",
         ),
         (

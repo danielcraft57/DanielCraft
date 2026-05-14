@@ -1,0 +1,206 @@
+{
+  "currency": "EUR",
+  "default_price_eur": 42,
+  "vitrines_hub_path": "/vitrines/",
+  "screenshots_base": "/vitrines",
+  "stripe_note": "Renseigner stripe_payment_link_url par vitrine (Payment Link Stripe) après création des produits.",
+  "items": [
+    {
+      "slug": "technologie",
+      "category": "tech",
+      "title": "Synapse Lorraine",
+      "tagline": "SaaS, API & cloud",
+      "excerpt": "Parcours produit sombre, cartes solutions, formulaire et galerie — idéal pour éditeur logiciel ou ESN.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Navigation complète façon site produit : offres, preuves, FAQ, prise de contact",
+        "Bloc d’accroche fort et boutons d’action pour pousser vers une démo ou un audit",
+        "Galerie visuelle prête à accueillir vos captures d’écran et témoignages clients",
+        "Formulaire de contact déjà mis en page (branchement e-mail ou outil sur devis)"
+      ],
+      "stack": ["Bulma", "AOS", "Swiper", "GLightbox", "HTML statique"]
+    },
+    {
+      "slug": "services",
+      "category": "services",
+      "title": "Proprio Facility",
+      "tagline": "Facility & conciergerie",
+      "excerpt": "Ton clair, cartes offres, devis et visuels GLightbox — parfait pour services aux entreprises.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Indicateur de lecture pour guider le visiteur sur les pages longues",
+        "Grille d’offres illustrée pour valoriser vos prestations au premier coup d’œil",
+        "FAQ et formulaire de demande de devis déjà structurés"
+      ],
+      "stack": ["Bulma", "GLightbox", "Barre progression"]
+    },
+    {
+      "slug": "restauration",
+      "category": "hcr",
+      "title": "Brasserie Saint-Jacques",
+      "tagline": "Restaurant & réservations",
+      "excerpt": "Carte, réservation, carrousel Swiper — mise en page HCR bordeaux/or.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Carte et menus mis en valeur pour donner envie avant la première réservation",
+        "Carrousel photo pour votre cuisine, votre salle ou vos événements",
+        "Bloc réservation / contact pour transformer les visites en tables réservées"
+      ],
+      "stack": ["Bulma", "Swiper", "AOS"]
+    },
+    {
+      "slug": "commerce",
+      "category": "retail",
+      "title": "Halles Thionville",
+      "tagline": "Commerce & drive",
+      "excerpt": "Drive, rayons, fidélité — vert retail avec tableaux et CTA.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en avant du click & collect et des horaires pratiques",
+        "Rayons et services présentés comme en magasin, version web",
+        "Espace fidélité / avantages pour fidéliser sans jargon technique"
+      ],
+      "stack": ["Bulma", "GLightbox"]
+    },
+    {
+      "slug": "education",
+      "category": "formation",
+      "title": "Institut Mercure",
+      "tagline": "Formation pro",
+      "excerpt": "Catalogue modules, calendrier, Swiper pédagogie — ton clair or/bleu.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Vue d’ensemble des parcours et niveaux pour rassurer les futurs apprenants",
+        "Parcours d’inscription ou de pré-inscription clair et rassurant",
+        "Visuels pédagogiques prêts à être remplacés par vos campus et salles"
+      ],
+      "stack": ["Bulma", "Swiper", "GLightbox"]
+    },
+    {
+      "slug": "etablissement",
+      "category": "hotel",
+      "title": "Hôtel Stanislas Collection",
+      "tagline": "Hôtellerie",
+      "excerpt": "Chambres, spa, réservation — fond sombre chaleureux.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Présentation des gammes de chambres et de suites comme sur un site grand hôtel",
+        "Mise en avant spa, séminaires et événements pour diversifier les réservations",
+        "Bouton réservation / contact visible tout au long du parcours"
+      ],
+      "stack": ["Bulma", "GLightbox"]
+    },
+    {
+      "slug": "beaute",
+      "category": "beaute",
+      "title": "Spa Thalie",
+      "tagline": "Institut & spa",
+      "excerpt": "Soins, RDV, RSE — dégradé rose/bordeaux.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Fiches soins et formules pour aider à choisir avant de prendre rendez-vous",
+        "Formulaire de demande de RDV intégré au design",
+        "Bloc « nos engagements » pour raconter votre démarche qualité ou RSE"
+      ],
+      "stack": ["Bulma", "GLightbox", "AOS"]
+    },
+    {
+      "slug": "automobile",
+      "category": "mobilite",
+      "title": "Garage Central Plappeville",
+      "tagline": "Mécanique & carrosserie",
+      "excerpt": "Atelier sombre, Swiper atelier, formulaire RDV.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en avant expertise, pneus et services pour couvrir l’essentiel de l’atelier",
+        "Bandeau visuel pour montrer l’équipe et l’outil au travail",
+        "Prise de rendez-vous en ligne déjà cadrée"
+      ],
+      "stack": ["Bulma", "Swiper", "AOS"]
+    },
+    {
+      "slug": "chocolatier",
+      "category": "artisanat",
+      "title": "Chocolaterie Vialson",
+      "tagline": "Artisan chocolatier",
+      "excerpt": "Boutique, origines, coffrets — tons tablette et galerie.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en scène des goûts, origines et histoire de maison",
+        "Galerie boutique pour donner envie avant le passage en caisse",
+        "FAQ coffrets cadeaux et commandes groupées"
+      ],
+      "stack": ["Bulma", "GLightbox"]
+    },
+    {
+      "slug": "odontologie",
+      "category": "sante",
+      "title": "Centre dentaire Mosaïque",
+      "tagline": "Cabinet dentaire",
+      "excerpt": "Parcours patient, tarifs, rappel — clair et médical soft.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Grille tarifaire lisible pour lever le frein du « combien ça coûte ? »",
+        "Contenus prévention et parcours patient rassurants",
+        "Demande de rappel téléphonique prête à brancher sur votre secrétariat"
+      ],
+      "stack": ["Bulma", "AOS"]
+    },
+    {
+      "slug": "banque",
+      "category": "finance",
+      "title": "Verlaine Banque Régionale",
+      "tagline": "Institution & offres",
+      "excerpt": "Offres, transparence, simulation — ton institutionnel.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Repères agences et contact humain pour ancrer le local",
+        "Tableaux d’offres clairs pour comparer sans surcharge",
+        "Bloc simulation / projet pour engager la conversation commerciale"
+      ],
+      "stack": ["Bulma", "AOS"]
+    },
+    {
+      "slug": "industrie",
+      "category": "industrie",
+      "title": "Précisite Usinage",
+      "tagline": "Usinage & qualité",
+      "excerpt": "Capacités, devis, fond sombre industriel.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Présentation des savoir-faire machines et contrôles qualité",
+        "Demande de devis rapide pour transformer la visite en opportunité",
+        "FAQ réponses aux questions fréquentes des donneurs d’ordre"
+      ],
+      "stack": ["Bulma", "AOS"]
+    },
+    {
+      "slug": "comptable",
+      "category": "conseil",
+      "title": "Verlaine & Associés",
+      "tagline": "Expertise comptable",
+      "excerpt": "Cabinet, process, bilan flash — bleu institutionnel.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en avant de votre méthode et de votre accompagnement",
+        "Forfaits et packs présentés pour faciliter le choix du dirigeant",
+        "Offre bilan flash ou premier rendez-vous pour capter les leads"
+      ],
+      "stack": ["Bulma", "AOS"]
+    },
+    {
+      "slug": "association",
+      "category": "ess",
+      "title": "Solidarités Metz Métropole",
+      "tagline": "Association",
+      "excerpt": "Mission, dons, bénévolat — vert solidaire.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Parcours dons et objectifs de campagne pour mobiliser",
+        "Bandeau d’actions et projets porteurs de sens",
+        "Formulaire bénévoles pour transformer l’intérêt en engagement concret"
+      ],
+      "stack": ["Bulma", "Swiper", "AOS"]
+    }
+  ]
+}

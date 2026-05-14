@@ -7,7 +7,7 @@ Correction API Playwright : le viewport se définit sur le **BrowserContext**
 (`browser.new_context(viewport=...)`), pas sur `new_page()`.
 
 Prérequis :
-  pip install -r showcase/requirements-screenshots.txt
+  pip install -r scripts/requirements-vitrines-screenshots.txt
   playwright install chromium
 """
 
@@ -79,19 +79,29 @@ def _env_str(key: str, default: str) -> str:
     return str(raw).strip()
 
 
+def _env_float(key: str, default: float) -> float:
+    raw = os.environ.get(key)
+    if raw is None or str(raw).strip() == "":
+        return default
+    try:
+        return float(raw)
+    except ValueError:
+        return default
+
+
 def _load_config() -> dict:
     """Valeurs par défaut = copie de la config Celery / site que vous avez fournie."""
     return {
         "wait_ms": _env_int("WEBSITE_SCREENSHOT_WAIT_MS", 700),
         "goto_wait_until": _env_str("WEBSITE_SCREENSHOT_GOTO_WAIT_UNTIL", "domcontentloaded"),
         "goto_timeout_ms": _env_int("WEBSITE_SCREENSHOT_GOTO_TIMEOUT_MS", 28000),
-        "webp_quality": _env_int("WEBSITE_SCREENSHOT_WEBP_QUALITY", 78),
-        "jpeg_quality": _env_int("WEBSITE_SCREENSHOT_JPEG_QUALITY", 82),
+        "webp_quality": _env_int("WEBSITE_SCREENSHOT_WEBP_QUALITY", 72),
+        "jpeg_quality": _env_int("WEBSITE_SCREENSHOT_JPEG_QUALITY", 80),
         "device_scale_factor": _env_int("WEBSITE_SCREENSHOT_DEVICE_SCALE_FACTOR", 1),
         "block_trackers": _env_bool("WEBSITE_SCREENSHOT_BLOCK_TRACKERS", True),
         "reduced_motion": _env_bool("WEBSITE_SCREENSHOT_REDUCED_MOTION", True),
         "disable_animations": _env_bool("WEBSITE_SCREENSHOT_DISABLE_ANIMATIONS", True),
-        "capture_format": _env_str("WEBSITE_SCREENSHOT_CAPTURE_FORMAT", "jpeg").lower(),
+        "capture_format": _env_str("WEBSITE_SCREENSHOT_CAPTURE_FORMAT", "webp").lower(),
         "viewports": (
             (
                 "desktop",
@@ -112,6 +122,20 @@ def _load_config() -> dict:
                 _env_int("WEBSITE_SCREENSHOT_MAX_WIDTH_MOBILE", 800),
             ),
         ),
+        "brand_enabled": _env_bool("WEBSITE_SCREENSHOT_BRAND_ENABLED", True),
+        "brand_pad": _env_int("WEBSITE_SCREENSHOT_BRAND_PAD", 28),
+        "brand_bg_rgb": (
+            _env_int("WEBSITE_SCREENSHOT_BRAND_BG_R", 238),
+            _env_int("WEBSITE_SCREENSHOT_BRAND_BG_G", 243),
+            _env_int("WEBSITE_SCREENSHOT_BRAND_BG_B", 248),
+        ),
+        "brand_blue_mix": _env_float("WEBSITE_SCREENSHOT_BRAND_BLUE_MIX", 0.09),
+        "brand_border_width": _env_int("WEBSITE_SCREENSHOT_BRAND_BORDER_WIDTH", 2),
+        "brand_border_rgb": (
+            _env_int("WEBSITE_SCREENSHOT_BRAND_BORDER_R", 47),
+            _env_int("WEBSITE_SCREENSHOT_BRAND_BORDER_G", 120),
+            _env_int("WEBSITE_SCREENSHOT_BRAND_BORDER_B", 166),
+        ),
     }
 
 
@@ -120,6 +144,31 @@ def _pick_port(preferred: int) -> int:
         return preferred
     with socketserver.TCPServer(("127.0.0.1", 0), http.server.SimpleHTTPRequestHandler) as s:
         return s.server_address[1]
+
+
+def _pre_capture_scroll(page, step_px: int = 280, pause_ms: int = 60) -> None:
+    """Parcourt la page du haut vers le bas puis revient en haut (lazy-load, état final = haut)."""
+    try:
+        page.evaluate(
+            """([step, pause]) => {
+              const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+              const doc = document.scrollingElement || document.documentElement;
+              const h = doc.scrollHeight;
+              return (async () => {
+                for (let y = 0; y < h; y += step) {
+                  doc.scrollTop = y;
+                  await delay(pause);
+                }
+                doc.scrollTop = Math.max(0, h - window.innerHeight);
+                await delay(100);
+                doc.scrollTop = 0;
+                await delay(80);
+              })();
+            }""",
+            [step_px, pause_ms],
+        )
+    except Exception:
+        pass
 
 
 def _make_tracker_route() -> Callable:
@@ -152,6 +201,40 @@ def _disable_animations_init() -> str:
 """
 
 
+def _apply_showcase_brand(im, cfg: dict):
+    """Marge type carte portfolio + léger voile bleu DanielCraft + bord."""
+    if not cfg.get("brand_enabled"):
+        return im
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return im
+
+    pad = max(0, int(cfg.get("brand_pad") or 0))
+    bg = cfg.get("brand_bg_rgb") or (238, 243, 248)
+    mix = float(cfg.get("brand_blue_mix") or 0.0)
+    border_w = max(0, int(cfg.get("brand_border_width") or 0))
+    border_rgb = cfg.get("brand_border_rgb") or (47, 120, 166)
+
+    if pad > 0:
+        canvas = Image.new("RGB", (im.width + pad * 2, im.height + pad * 2), bg)
+        canvas.paste(im, (pad, pad))
+        im = canvas
+
+    if mix > 0:
+        im_rgba = im.convert("RGBA")
+        alpha = int(max(0.0, min(mix, 0.45)) * 255)
+        tint = Image.new("RGBA", im_rgba.size, (47, 120, 166, alpha))
+        im = Image.alpha_composite(im_rgba, tint).convert("RGB")
+
+    if border_w > 0:
+        draw = ImageDraw.Draw(im)
+        w, h = im.size
+        for i in range(border_w):
+            draw.rectangle([i, i, w - 1 - i, h - 1 - i], outline=border_rgb)
+    return im
+
+
 def _save_output(
     png_bytes: bytes,
     dest: Path,
@@ -160,6 +243,7 @@ def _save_output(
     max_width: int,
     jpeg_quality: int,
     webp_quality: int,
+    brand_cfg: dict | None = None,
 ) -> None:
     try:
         from PIL import Image
@@ -175,6 +259,9 @@ def _save_output(
         new_h = max(1, int(im.height * ratio))
         im = im.resize((max_width, new_h), Image.Resampling.LANCZOS)
 
+    if brand_cfg is not None:
+        im = _apply_showcase_brand(im, brand_cfg)
+
     dest.parent.mkdir(parents=True, exist_ok=True)
     if capture_format == "webp":
         im.save(dest, "WEBP", quality=webp_quality, method=6)
@@ -183,20 +270,20 @@ def _save_output(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Screenshots showcases (Playwright + env WEBSITE_SCREENSHOT_*).")
+    parser = argparse.ArgumentParser(description="Screenshots vitrines (Playwright + env WEBSITE_SCREENSHOT_*).")
     parser.add_argument("--host", default="127.0.0.1", help="Hôte du serveur statique")
     parser.add_argument("--port", type=int, default=0, help="Port (0 = automatique)")
     parser.add_argument(
-        "--showcase-dir",
+        "--demos-dir",
         type=Path,
         default=None,
-        help="Dossier showcase/ à servir (défaut : parent de ce script).",
+        help="Dossier assets/vitrines/demos (défaut : à la racine du repo).",
     )
     parser.add_argument(
         "--out",
         type=Path,
         default=None,
-        help="Dossier de sortie (défaut : showcase/screenshots).",
+        help="Dossier de sortie (défaut : assets/vitrines/screenshots).",
     )
     parser.add_argument("--headed", action="store_true", help="Afficher le navigateur (debug).")
     args = parser.parse_args()
@@ -208,17 +295,20 @@ def main() -> None:
     except ImportError:
         print(
             "Playwright manquant. Installez :\n"
-            "  pip install -r showcase/requirements-screenshots.txt\n"
+            "  pip install -r scripts/requirements-vitrines-screenshots.txt\n"
             "  playwright install chromium"
         )
         raise SystemExit(1) from None
 
-    showcase_root = (args.showcase_dir or Path(__file__).resolve().parent).resolve()
-    out_root = (args.out or (showcase_root / "screenshots")).resolve()
+    _repo = Path(__file__).resolve().parent.parent
+    _default_demos = _repo / "assets" / "vitrines" / "demos"
+    _default_out = _repo / "assets" / "vitrines" / "screenshots"
+    demos_root = (args.demos_dir or _default_demos).resolve()
+    out_root = (args.out or _default_out).resolve()
     out_root.mkdir(parents=True, exist_ok=True)
 
     port = _pick_port(args.port)
-    root = str(showcase_root)
+    root = str(demos_root)
 
     socketserver.TCPServer.allow_reuse_address = True
 
@@ -263,6 +353,7 @@ def main() -> None:
                         timeout=cfg["goto_timeout_ms"],
                     )
                     page.wait_for_timeout(cfg["wait_ms"])
+                    _pre_capture_scroll(page)
 
                     png_bytes = page.screenshot(full_page=True, type="png")
 
@@ -277,6 +368,7 @@ def main() -> None:
                         max_width=max_w,
                         jpeg_quality=cfg["jpeg_quality"],
                         webp_quality=cfg["webp_quality"],
+                        brand_cfg=cfg,
                     )
 
                     page.close()

@@ -48,6 +48,9 @@ assets/images/about-section-hero-trial-*.webp
 assets/vitrines/screenshots/**
 !assets/vitrines/screenshots/.gitkeep
 
+# Maquettes démo : versionner assets/vitrines/demos/ (HTML, CSS, images PNG des vitrines).
+# Ne pas y committer de captures régénérables : les placer sous assets/vitrines/screenshots/ (ignoré ci-dessus).
+
 # Vendor PHP (téléchargé via scripts/vendor_phpmailer.ps1)
 api/vendor/
 

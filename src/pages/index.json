@@ -5,7 +5,8 @@
   "page_url": "https://danielcraft.fr/",
   "og_image": "https://danielcraft.fr/assets/images/og/home-1200x630.jpg",
   "current_page": "index",
-  "page_scripts": ["main.js", "personalization.js", "portfolio.js", "contact-wizard.js"],
+  "page_scripts": ["main.js", "personalization.js", "portfolio.js", "vitrines-section.js", "contact-wizard.js"],
+  "extra_css": "vitrines-portfolio.css",
   "schema_type": "home"
 }
 

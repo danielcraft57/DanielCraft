@@ -5,7 +5,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
-$script = Join-Path $root "showcase\screenshot_showcases.py"
+$script = Join-Path $root "scripts\screenshot_vitrines.py"
 
 if (-not (Test-Path $script)) {
   throw "Introuvable: $script"

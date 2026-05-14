@@ -1,0 +1,106 @@
+<section class="vitrine-detail-hero">
+    <div class="container">
+        <nav class="vitrine-breadcrumb" aria-label="Fil d'Ariane">
+            <a href="/">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <a href="/vitrines/">Vitrines</a>
+            <span aria-hidden="true">/</span>
+            <span>{{vitrine_title}}</span>
+        </nav>
+        <span class="section-badge">Vitrine HTML statique</span>
+        <h1 class="section-title vitrine-detail-title">{{vitrine_title}}</h1>
+        <p class="section-description vitrine-detail-lead">{{vitrine_tagline}}</p>
+        <p class="vitrine-detail-excerpt">{{vitrine_excerpt}}</p>
+        <div class="vitrine-detail-actions">
+            <a class="btn btn-primary btn-large" href="{{vitrine_demo_url}}" target="_blank" rel="noopener noreferrer">
+                <span>Ouvrir la démo live</span>
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-secondary btn-large" href="/#contact">
+                <span>Installation &amp; domaine</span>
+                <i class="fas fa-server" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="vitrine-detail-shots" aria-labelledby="vitrine-shots-title">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="vitrine-shots-title" class="section-title">Aperçu sur tous les écrans</h2>
+            <p class="section-description">Le rendu complet de la page, en format léger&nbsp;: faites défiler chaque cadre pour tout voir, ou ouvrez la capture dans un nouvel onglet. Le défilement repart automatiquement du haut pour une lecture confortable.</p>
+        </div>
+        <div class="vitrine-device-grid">
+            <figure class="vitrine-device-frame vitrine-device-frame--desktop scroll-reveal">
+                <figcaption class="vitrine-device-label"><i class="fas fa-desktop" aria-hidden="true"></i> Desktop</figcaption>
+                <div class="vitrine-device-frame-tools">
+                    <a class="vitrine-shot-open" href="{{vitrine_shot_desktop}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
+                </div>
+                <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
+                    <img src="{{vitrine_shot_desktop}}" alt="Capture desktop — {{vitrine_title}}" width="1600" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
+                </div>
+            </figure>
+            <figure class="vitrine-device-frame vitrine-device-frame--tablet scroll-reveal">
+                <figcaption class="vitrine-device-label"><i class="fas fa-tablet-alt" aria-hidden="true"></i> Tablette</figcaption>
+                <div class="vitrine-device-frame-tools">
+                    <a class="vitrine-shot-open" href="{{vitrine_shot_tablet}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
+                </div>
+                <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
+                    <img src="{{vitrine_shot_tablet}}" alt="Capture tablette — {{vitrine_title}}" width="1200" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
+                </div>
+            </figure>
+            <figure class="vitrine-device-frame vitrine-device-frame--mobile scroll-reveal">
+                <figcaption class="vitrine-device-label"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</figcaption>
+                <div class="vitrine-device-frame-tools">
+                    <a class="vitrine-shot-open" href="{{vitrine_shot_mobile}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
+                </div>
+                <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
+                    <img src="{{vitrine_shot_mobile}}" alt="Capture mobile — {{vitrine_title}}" width="800" height="1200" loading="lazy" decoding="async" data-vitrine-fallback>
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="vitrine-detail-body">
+    <div class="container vitrine-detail-layout">
+        <div class="vitrine-detail-main">
+            <h2 class="section-title">Contenu inclus</h2>
+            <p class="vitrine-included-lead">Vous repartez avec une vitrine déjà structurée pour rassurer, présenter vos offres et pousser au contact&nbsp;: textes d’exemple à remplacer par les vôtres, visuels d’ambiance à échanger contre vos photos, et une navigation fluide du premier clic jusqu’au formulaire. Idéal pour lancer vite une présence propre, puis affiner avec moi le branding ou les branchements (paiement, CRM, e-mail).</p>
+            {{vitrine_features_html}}
+            <h3 class="vitrine-stack-title">Technologies mises en avant</h3>
+            <ul class="vitrine-stack-list">
+                {{vitrine_stack_html}}
+            </ul>
+            <div class="vitrine-detail-note box-soft">
+                <p><strong>Livraison</strong> : archive HTML/CSS/JS prête à déposer sur votre hébergement. Aucune base de données requise. Les formulaires sont des maquettes&nbsp;: branchement PHP, Node ou services tiers sur devis.</p>
+            </div>
+        </div>
+        <aside class="vitrine-purchase-card" aria-labelledby="vitrine-buy-title">
+            <div class="vitrine-purchase-inner">
+                <h2 id="vitrine-buy-title" class="vitrine-purchase-title">Acheter cette vitrine</h2>
+                <p class="vitrine-purchase-price"><span class="vitrine-price-value">{{vitrine_price_eur}}</span><span class="vitrine-price-currency">€</span> <span class="vitrine-price-vat">HT</span></p>
+                <p class="vitrine-purchase-hint">Prix catalogue configurable (défaut&nbsp;: 42&nbsp;€ HT). Paiement sécurisé par Stripe lorsque le lien est configuré.</p>
+                {% if vitrine_has_stripe %}
+                <a class="btn btn-primary btn-large vitrine-stripe-btn" href="{{vitrine_stripe_url}}" target="_blank" rel="noopener noreferrer">
+                    <span>Payer avec Stripe</span>
+                    <i class="fab fa-cc-stripe" aria-hidden="true"></i>
+                </a>
+                {% else %}
+                <p class="vitrine-stripe-placeholder">Lien Stripe à configurer (<code>stripe_payment_link_url</code> dans <code>src/data/vitrines.json</code>).</p>
+                <a class="btn btn-secondary btn-large" href="/#contact">
+                    <span>Demander la facturation</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                <hr class="vitrine-purchase-sep">
+                <h3 class="vitrine-purchase-sub">Mise en ligne clé en main</h3>
+                <p>Hébergement, nom de domaine, TLS, redirections et adaptation des formulaires&nbsp;: <a href="/#contact">contactez-moi</a> pour un devis installation.</p>
+                <a class="btn btn-outline btn-large" href="mailto:contact@danielcraft.fr?subject={{vitrine_mailto_subject}}">
+                    <span>Email direct</span>
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </a>
+            </div>
+        </aside>
+    </div>
+</section>

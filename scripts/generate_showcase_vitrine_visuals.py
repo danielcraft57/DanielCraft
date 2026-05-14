@@ -158,8 +158,8 @@ def gen_assoc_volontaires(path: Path, w: int = 800, h: int = 450, seed: int = 7)
 
 
 def main() -> None:
-    edu = ROOT / "showcase" / "education" / "images"
-    assoc = ROOT / "showcase" / "association" / "images"
+    edu = ROOT / "assets" / "vitrines" / "demos" / "education" / "images"
+    assoc = ROOT / "assets" / "vitrines" / "demos" / "association" / "images"
     gen_edu_mosaic(edu / "edu-gen-mosaic.png")
     gen_edu_modules(edu / "edu-gen-modules.png")
     gen_edu_parcours(edu / "edu-gen-parcours.png")

@@ -1,0 +1,11 @@
+{
+  "page_title": "Vitrines sectorielles — démos HTML | DanielCraft",
+  "page_description": "Catalogue de vitrines statiques Bulma par secteur : hub interactif, fiches résumé, captures et achat.",
+  "page_keywords": "vitrine html, bulma, démo secteur, catalogue site statique",
+  "output_subpath": "vitrines/parcours.html",
+  "page_url": "/vitrines/parcours.html",
+  "current_page": "vitrines",
+  "page_scripts": ["main.js"],
+  "extra_css": "vitrines-portfolio.css",
+  "schema_type": ""
+}

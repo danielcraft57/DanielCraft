@@ -8,7 +8,7 @@ pat = re.compile(r"\(démo\)(?=\")")
 
 
 def main() -> None:
-    for path in (ROOT / "showcase").rglob("*.html"):
+    for path in (ROOT / "assets" / "vitrines" / "demos").rglob("*.html"):
         text = path.read_text(encoding="utf-8")
         new = pat.sub("", text)
         if new != text:
