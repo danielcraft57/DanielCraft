@@ -3,130 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="Primeurs, drive et commerce de proximité en Moselle.">
-  <title>Quartier Halles Thionville — Commerce</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../shared/vitrine-lib-compat.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <meta name="description" content="Épicerie fine &amp; drive à Thionville. Primeurs, traiteur et retrait express — votre marché de quartier en Moselle.">
+  <title>Halles Thionville — Commerce &amp; drive | démo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-media.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <nav class="navbar is-success is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
-    <div class="container is-fluid">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-white" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span><span>Halles Thionville</span></span></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item has-text-white" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
-          <a class="navbar-item has-text-white" href="#rayons"><span class="icon-text"><span class="icon"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></span><span>Rayons</span></span></a>
-          <a class="navbar-item has-text-white" href="#local"><span class="icon-text"><span class="icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span><span>Local</span></span></a>
-          <a class="navbar-item has-text-white" href="#promos"><span class="icon-text"><span class="icon"><i class="fa-solid fa-percent" aria-hidden="true"></i></span><span>Promos</span></span></a>
-          <a class="navbar-item has-text-white" href="#fidelite"><span class="icon-text"><span class="icon"><i class="fa-solid fa-id-card" aria-hidden="true"></i></span><span>Fidélité</span></span></a>
-          <a class="navbar-item has-text-white" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
-        </div>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm" aria-label="Navigation principale">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand vt-brand fs-5" href="#accueil">Halles Thionville</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#offres">Offres</a></li>
+          <li class="nav-item"><a class="nav-link" href="#engagements">Engagements</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
   </nav>
   <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium com-hero">
-      <div class="hero-body">
-        <div class="container">
-          <p class="title is-1 has-text-white"><i class="fa-solid fa-leaf mr-3 has-text-com-mint" aria-hidden="true"></i>Épicerie fine · drive</p>
-          <p class="subtitle is-4 has-text-white-ter" style="max-width: 46rem;">
-            Les Halles Thionville regroupent primeurs, drive express et comptoir traiteur. Les producteurs partenaires sont sélectionnés sur la semaine et affichés en rayon.
-          </p>
-          <p class="subtitle is-5 has-text-white-ter mt-4" style="max-width: 46rem;">
-            Rotation des étals chaque matin, politique anti-gaspillage avec dons aux associations locales et engagements RSE affichés en magasin.
-          </p>
-          <div class="buttons mt-5">
-            <a class="button is-warning is-medium" href="#rayons"><span class="icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span><span>Voir les rayons</span></a>
-            <a class="button is-white is-outlined is-medium" href="#fidelite"><span class="icon"><i class="fa-solid fa-gift" aria-hidden="true"></i></span><span>Programme fidélité</span></a>
+    <section id="accueil" class="vt-hero text-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 vitrine-img-reveal">
+            <p class="vt-eyebrow text-uppercase small mb-2">Grand Est · Lorraine</p>
+            <h1 class="mb-3">Épicerie fine &amp; drive à Thionville</h1>
+            <p class="lead mb-4 opacity-90">Primeurs, traiteur et retrait express — votre marché de quartier en Moselle.</p>
+            <a class="btn btn-lg vt-btn me-2" href="#offres">Voir nos offres</a>
+            <a class="btn btn-lg btn-outline-light" href="#contact">Nous contacter</a>
           </div>
+          <div class="col-lg-6"><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
+              <a href="images/commerce-artisan.png" class="glightbox" data-gallery="commerce-vis">
+                <img src="images/commerce-artisan.png" width="1200" height="520" alt="Halles Thionville" fetchpriority="high" decoding="async" class="w-100">
+              </a>
+            </figure></div>
         </div>
       </div>
     </section>
-    <section class="section vitrine-cta-banner has-background-success has-text-white" aria-label="CTA">
-      <div class="container is-widescreen columns is-vcentered">
-        <div class="column is-8"><p class="title is-4 has-text-white"><i class="fa-solid fa-truck-fast mr-3" aria-hidden="true"></i>Retrait drive sous 2&nbsp;h</p></div>
-        <div class="column is-4 has-text-right-tablet"><a class="button is-warning is-medium" href="#promos"><i class="fa-solid fa-tags mr-2" aria-hidden="true"></i>Promotions</a></div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-com-cream" id="rayons" aria-labelledby="t-ray">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-ray"><i class="fa-solid fa-layer-group has-text-success mr-2" aria-hidden="true"></i>Rayons</h2>
-        <p class="content is-size-5 has-text-centered mb-5" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Trois univers pour parcourir le magasin&nbsp;: frais, bio et cave. Descriptifs de saison et arrivages du jour.
-        </p>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4"><div class="box is-vitrine is-com-tint hvr-float"><p class="title is-5"><i class="fa-solid fa-cheese has-text-success mr-2" aria-hidden="true"></i>Frais</p><p>Fromagerie et crémerie fictives.</p></div></div>
-          <div class="column is-4"><div class="box is-vitrine is-com-tint hvr-float"><p class="title is-5"><i class="fa-solid fa-carrot has-text-success mr-2" aria-hidden="true"></i>Bio</p><p>Étiquettes et certifications graphiques seulement.</p></div></div>
-          <div class="column is-4"><div class="box is-vitrine is-com-tint hvr-float"><p class="title is-5"><i class="fa-solid fa-wine-bottle has-text-success mr-2" aria-hidden="true"></i>Cave</p><p>Sélection en magasin&nbsp;; commande drive sur l'app partenaire.</p></div></div>
-        </div>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/commerce-rayon.png" class="glightbox" data-gallery="commerce-visuels" data-glightbox="title: Rayon "><img src="images/commerce-rayon.png" width="800" height="450" alt="Rayon fruits et légumes (image générée)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/commerce-drive.png" class="glightbox" data-gallery="commerce-visuels" data-glightbox="title: Drive "><img src="images/commerce-drive.png" width="800" height="450" alt="Zone caisse et drive (image générée)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/commerce-artisan.png" class="glightbox" data-gallery="commerce-visuels" data-glightbox="title: Artisan "><img src="images/commerce-artisan.png" width="800" height="450" alt="Comptoir artisan (image générée)" loading="lazy" decoding="async"></a></figure></div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="local" aria-labelledby="t-loc">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-loc"><i class="fa-solid fa-map-location-dot has-text-success mr-2" aria-hidden="true"></i>Engagement local</h2>
-        <article class="message is-success is-light mt-4">
-          <div class="message-body content is-size-5">
-            <p>Partenariats avec producteurs lorraines, tournées de livraison matinales et actions solidaires avec les associations du quartier.</p>
-            <p>Second paragraphe&nbsp;: la traçabilité affichée est un simple libellé graphique. Aucun lot réel n'est tracé sur cette page statique.</p>
+    <section class="vt-stats py-4" aria-label="Chiffres clés"><div class="container"><div class="row text-center g-3"><div class="col-md-4"><strong class="vt-stat">1962</strong><span>depuis</span></div><div class="col-md-4"><strong class="vt-stat">4,8</strong><span>sur 5</span></div><div class="col-md-4"><strong class="vt-stat">45 min</strong><span>drive</span></div></div></div></section>
+    <section id="offres" class="py-5"><div class="container">
+      <h2 class="vt-brand display-6 text-center mb-2">Ce que nous proposons</h2>
+      <p class="text-center text-muted mb-5 col-lg-8 mx-auto">Services clairs, visuels lisibles, appel à l'action visible.</p>
+      <div class="row g-4">
+          <div class="col-md-4 vitrine-img-reveal">
+            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
+              <figure class="vitrine-figure vitrine-card-visual mb-0">
+                <a href="images/commerce-rayon.png" class="glightbox" data-gallery="commerce-vis" data-glightbox="title: Primeurs">
+                  <img src="images/commerce-rayon.png" alt="Primeurs" loading="lazy" decoding="async">
+                </a>
+              </figure>
+              <div class="card-body"><h3 class="h5 vt-brand">Primeurs</h3><p class="text-muted mb-0">Circuit court mosellan.</p></div>
+            </article>
           </div>
-        </article>
-        <p class="mt-4"><i class="fa-solid fa-rotate mr-2 has-text-success" aria-hidden="true"></i><strong>Rotation des étals</strong></p>
-        <progress class="progress is-success" value="71" max="100">71&nbsp;%</progress>
-      </div>
-    </section>
-    <section class="section is-vitrine is-com-cream" id="promos" aria-labelledby="t-pr">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-pr"><i class="fa-solid fa-bullhorn has-text-success mr-2" aria-hidden="true"></i>Catalogue promos</h2>
-        <div class="tags are-medium is-centered mt-4"><span class="tag is-success"><i class="fa-solid fa-percent mr-1" aria-hidden="true"></i>Promos semaine</span><span class="tag is-light"><i class="fa-solid fa-car mr-1" aria-hidden="true"></i>Drive</span><span class="tag is-warning"><i class="fa-solid fa-briefcase mr-1" aria-hidden="true"></i>Carte pro</span></div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="fidelite" aria-labelledby="t-fid">
-      <div class="container is-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-7-desktop">
-            <h2 class="title is-2 has-text-centered" id="t-fid"><i class="fa-solid fa-star has-text-success mr-2" aria-hidden="true"></i>Carte fidélité Halles</h2>
-            <div class="box is-vitrine vitrine-form-panel">
-              <form action="#" method="get" class="content">
-                <div class="field"><label class="label" for="f-mail"><i class="fa-solid fa-at mr-1" aria-hidden="true"></i>Courriel</label><div class="control"><input class="input" type="email" id="f-mail" name="mail" autocomplete="email"></div></div>
-                <div class="field"><label class="label" for="f-tel"><i class="fa-solid fa-phone mr-1" aria-hidden="true"></i>Téléphone</label><div class="control"><input class="input" type="tel" id="f-tel" name="tel"></div></div>
-                <button type="button" class="button is-success is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span><span>S'inscrire</span></button>
-              </form>
-            </div>
+          <div class="col-md-4 vitrine-img-reveal">
+            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
+              <figure class="vitrine-figure vitrine-card-visual mb-0">
+                <a href="images/commerce-drive.png" class="glightbox" data-gallery="commerce-vis" data-glightbox="title: Traiteur">
+                  <img src="images/commerce-drive.png" alt="Traiteur" loading="lazy" decoding="async">
+                </a>
+              </figure>
+              <div class="card-body"><h3 class="h5 vt-brand">Traiteur</h3><p class="text-muted mb-0">Plats et plateaux.</p></div>
+            </article>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-com-cream" id="contact" aria-labelledby="t-contact">
-      <div class="container is-widescreen">
-        <h2 class="title is-2" id="t-contact"><i class="fa-solid fa-address-book has-text-success mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5"><a href="mailto:contact@halles-thionville.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>contact@halles-thionville.fr</a></p>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
-      </div>
-    </section>
+          <div class="col-md-4 vitrine-img-reveal">
+            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
+              <figure class="vitrine-figure vitrine-card-visual mb-0">
+                <a href="images/commerce-artisan.png" class="glightbox" data-gallery="commerce-vis" data-glightbox="title: Drive">
+                  <img src="images/commerce-artisan.png" alt="Drive" loading="lazy" decoding="async">
+                </a>
+              </figure>
+              <div class="card-body"><h3 class="h5 vt-brand">Drive</h3><p class="text-muted mb-0">Retrait 45 min.</p></div>
+            </article>
+          </div></div>
+    </div></section>
+    <section id="engagements" class="py-5 vt-muted"><div class="container col-lg-8 text-center">
+      <h2 class="vt-brand h3 mb-3">Pourquoi nous faire confiance</h2>
+      <p class="text-muted mb-0">Réactivité, transparence et ancrage local — une vitrine qui transforme les visites en demandes.</p>
+    </div></section>
+    <section id="contact" class="py-5"><div class="container col-lg-7">
+      <h2 class="vt-brand text-center mb-4">Contact</h2>
+      <form class="row g-3" action="#" method="get" aria-label="Formulaire de contact">
+        <div class="col-md-6"><label class="form-label" for="nom">Nom</label><input class="form-control" id="nom" name="nom" type="text" autocomplete="name"></div>
+        <div class="col-md-6"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="col-12"><label class="form-label" for="msg">Message</label><textarea class="form-control" id="msg" name="message" rows="4"></textarea></div>
+        <div class="col-12 text-center"><button class="btn vt-btn btn-lg" type="submit">Envoyer ma demande</button>
+        <p class="small text-muted mt-2 mb-0">Démonstration — aucune donnée transmise.</p></div>
+      </form>
+      <p class="text-center mt-4"><a href="../index.html">← Retour au hub des vitrines</a></p>
+    </div></section>
   </main>
-  <footer class="footer has-background-dark is-vitrine-footer">
-    <div class="container is-widescreen">
-      <div class="columns has-text-grey-light">
-        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-store mr-2" aria-hidden="true"></i>Halles Thionville</p><p class="is-size-6">Thionville.</p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#rayons"><i class="fa-solid fa-basket-shopping mr-1" aria-hidden="true"></i>Rayons</a></p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
-      </div>
-    </div>
-  </footer>
+  <footer class="vt-footer py-4 text-center"><p class="mb-0 small">Maquette — démonstration DanielCraft</p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
   <script src="../shared/vitrine-images.js"></script>
 </body>

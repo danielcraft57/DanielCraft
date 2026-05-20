@@ -3,194 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="Organisme de formation — catalogue &amp; inscriptions.">
-  <title>Institut Mercure — Éducation &amp; formation</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../shared/vitrine-lib-compat.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <meta name="description" content="Formations qui ouvrent des carrières. Institut professionnel à Nancy — alternance, certifications et VAE.">
+  <title>Institut Mercure — Formation pro | démo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="../shared/vitrine-media.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
-    <div class="container is-fluid">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil" style="color: #1e3a5f;"><span class="icon-text"><span class="icon has-text-edu-gold"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><span>Institut Mercure</span></span></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
-          <a class="navbar-item" href="#formations"><span class="icon-text"><span class="icon"><i class="fa-solid fa-book" aria-hidden="true"></i></span><span>Formations</span></span></a>
-          <a class="navbar-item" href="#pedagogie"><span class="icon-text"><span class="icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><span>Pédagogie</span></span></a>
-          <a class="navbar-item" href="#inscription"><span class="icon-text"><span class="icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span><span>Inscription</span></span></a>
-          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium edu-hero">
-      <div class="hero-body">
-        <div class="container">
-          <p class="title is-1 has-text-white animate__animated animate__fadeInDown" style="--animate-duration: 0.85s;"><i class="fa-solid fa-book-open mr-3 has-text-edu-gold" aria-hidden="true"></i>Formations professionnelles</p>
-          <p class="subtitle is-4 has-text-white-ter" style="max-width: 46rem;">
-            L’Institut Mercure propose des parcours certifiants et inter-entreprises en Grand Est. Les modules, formateurs et certifications listés sont mis à jour chaque trimestre&nbsp;: contactez-nous pour le catalogue détaillé et les sessions ouvertes.
-          </p>
-          <p class="subtitle is-5 has-text-white-ter mt-4" style="max-width: 46rem;">
-            Parcours apprenant avec socle commun, ateliers pratiques et évaluation finale. Éligibilité CPF selon dossier&nbsp;: nos conseillers vous orientent.
-          </p>
-          <div class="buttons mt-5">
-            <a class="button is-warning is-medium has-text-weight-semibold animate__animated animate__fadeInUp" style="--animate-duration: 0.75s;" href="#formations"><span class="icon"><i class="fa-solid fa-list-ul" aria-hidden="true"></i></span><span>Catalogue</span></a>
-            <a class="button is-white is-outlined is-medium animate__animated animate__fadeInUp animate__delay-1s" style="--animate-duration: 0.75s;" href="#inscription"><span class="icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span><span>Pré-inscription</span></a>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3" aria-label="Navigation principale">
+      <a href="#accueil" class="text-xl font-semibold vt-brand">Institut Mercure</a>
+      <ul class="flex gap-4 text-sm font-medium">
+        <li><a href="#offres" class="hover:underline">Offres</a></li>
+        <li><a href="#engagements" class="hover:underline">Engagements</a></li>
+        <li><a href="#contact" class="font-semibold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="contenu">
+    <section id="accueil" class="vt-hero text-white">
+      <div class="max-w-6xl mx-auto px-4 py-8 lg:py-10 grid lg:grid-cols-2 gap-8 items-center">
+        <div class="vitrine-img-reveal">
+          <p class="vt-eyebrow text-xs uppercase tracking-widest mb-2 opacity-90">Grand Est · Lorraine</p>
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">Formations qui ouvrent des carrières</h1>
+          <p class="text-lg opacity-90 mb-6">Institut professionnel à Nancy — alternance, certifications et VAE.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#offres" class="vt-btn inline-block px-6 py-3 rounded-lg font-semibold">Voir nos offres</a>
+            <a href="#contact" class="inline-block px-6 py-3 rounded-lg border border-white/80">Nous contacter</a>
           </div>
         </div>
+        <div><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
+              <a href="images/edu-groupe.png" class="glightbox" data-gallery="education-vis">
+                <img src="images/edu-groupe.png" width="1200" height="520" alt="Institut Mercure" fetchpriority="high" decoding="async" class="w-full rounded-xl">
+              </a>
+            </figure></div>
       </div>
     </section>
-    <section class="section vitrine-cta-banner has-background-link has-text-white" aria-label="CTA">
-      <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white"><i class="fa-solid fa-chalkboard-user mr-3" aria-hidden="true"></i>Session «&nbsp;Data literacy&nbsp;» — calendrier</p>
-        <a class="button is-warning is-medium mt-3" href="#inscription"><i class="fa-solid fa-ticket mr-2" aria-hidden="true"></i>Pré-inscription</a>
-      </div>
-    </section>
-    <section class="section is-vitrine is-edu-paper" id="formations" aria-labelledby="t-for">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-for"><i class="fa-solid fa-layer-group has-text-link mr-2" aria-hidden="true"></i>Formations phares</h2>
-        <p class="content is-size-5 has-text-centered mb-5" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Le tableau résume des intitulés volontairement génériques pour tester les en-têtes et les durées affichées. Les modalités (présentiel, distanciel, hybride) sont des libellés de mise en page.
-        </p>
-        <div class="table-container is-vitrine mt-5">
-          <table class="table is-fullwidth is-striped is-size-5">
-            <thead><tr><th><i class="fa-solid fa-book mr-2" aria-hidden="true"></i>Intitulé</th><th><i class="fa-solid fa-clock mr-2" aria-hidden="true"></i>Durée</th><th><i class="fa-solid fa-laptop mr-2" aria-hidden="true"></i>Modalité</th></tr></thead>
-            <tbody>
-              <tr><td>Excel avancé</td><td>3 jours</td><td>Présentiel Metz</td></tr>
-              <tr><td>Management agile</td><td>2 jours</td><td>Distanciel</td></tr>
-              <tr><td>Green IT</td><td>1 jour</td><td>Hybride</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <h3 class="title is-4 has-text-centered mt-6" id="t-visuels-gen">Visuels génératifs (script Python)</h3>
-        <p class="is-size-6 has-text-centered has-text-grey mb-4" style="max-width: 40rem; margin-left: auto; margin-right: auto;">
-          Mosaïques et formes produites par <code>scripts/generate_showcase_vitrine_visuals.py</code> (Pillow) — pure fiction graphique.
-        </p>
-        <div class="swiper vitrine-image-swiper vitrine-swiper-edu" role="region" aria-roledescription="carousel" aria-labelledby="t-visuels-gen">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <figure class="vitrine-figure mb-0 vitrine-figure--motion">
-                <a href="images/edu-gen-mosaic.png" class="glightbox" data-gallery="edu-visuels" data-glightbox="title: Mosaïque campus (généré)">
-                  <img src="images/edu-gen-mosaic.png" width="800" height="450" alt="Mosaïque abstraite bleu et or (généré)" loading="lazy" decoding="async">
-                </a>
-              </figure>
-            </div>
-            <div class="swiper-slide">
-              <figure class="vitrine-figure mb-0 vitrine-figure--motion">
-                <a href="images/edu-gen-modules.png" class="glightbox" data-gallery="edu-visuels" data-glightbox="title: Modules (généré)">
-                  <img src="images/edu-gen-modules.png" width="800" height="450" alt="Barres modules pédagogiques abstraites (généré)" loading="lazy" decoding="async">
-                </a>
-              </figure>
-            </div>
-            <div class="swiper-slide">
-              <figure class="vitrine-figure mb-0 vitrine-figure--motion">
-                <a href="images/edu-gen-parcours.png" class="glightbox" data-gallery="edu-visuels" data-glightbox="title: Parcours (généré)">
-                  <img src="images/edu-gen-parcours.png" width="800" height="450" alt="Courbe parcours apprenant abstraite (généré)" loading="lazy" decoding="async">
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev" aria-label="Visuel précédent"></div>
-          <div class="swiper-button-next" aria-label="Visuel suivant"></div>
-        </div>
-        <div class="box is-shadowless mt-5" style="background: linear-gradient(180deg,#f7f9fc,#eef3fa); border: 1px solid #dbe4f0;">
-          <p class="has-text-centered is-size-7 has-text-grey mb-3">Dessin vectoriel animé (SVG)</p>
-          <div class="vitrine-svg-inline-wrap" aria-hidden="false">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Schéma outils pédagogiques">
-              <defs>
-                <linearGradient id="eduSketchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#1e3a5f"/>
-                  <stop offset="100%" style="stop-color:#3273dc"/>
-                </linearGradient>
-              </defs>
-              <rect width="320" height="200" fill="#f0f4fa"/>
-              <g class="vitrine-sketch-stroke" fill="none" stroke="url(#eduSketchGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M40 140 L120 60 L200 100 L280 40"/>
-                <circle cx="120" cy="60" r="12"/>
-                <rect x="210" y="115" width="70" height="50" rx="6"/>
-                <path d="M50 170 L50 130 M30 150 L70 150"/>
-              </g>
-            </svg>
-          </div>
-        </div>
-        <p class="title is-5 has-text-centered mt-6">Visuels d'ambiance (référence)</p>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4 vitrine-img-reveal"><figure class="vitrine-figure vitrine-figure--motion"><a href="images/edu-salle.png" class="glightbox" data-gallery="edu-visuels" data-glightbox="title: Salle"><img src="images/edu-salle.png" width="800" height="450" alt="Salle de formation (photo pédagogie)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4 vitrine-img-reveal"><figure class="vitrine-figure vitrine-figure--motion"><a href="images/edu-formateur.png" class="glightbox" data-gallery="edu-visuels" data-glightbox="title: Formateur"><img src="images/edu-formateur.png" width="800" height="450" alt="Formateur au tableau (photo pédagogie)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4 vitrine-img-reveal"><figure class="vitrine-figure vitrine-figure--motion"><a href="images/edu-groupe.png" class="glightbox" data-gallery="edu-visuels" data-glightbox="title: Groupe"><img src="images/edu-groupe.png" width="800" height="450" alt="Travail en groupe (photo pédagogie)" loading="lazy" decoding="async"></a></figure></div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="pedagogie" aria-labelledby="t-pe">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-pe"><i class="fa-solid fa-brain has-text-link mr-2" aria-hidden="true"></i>Ingénierie pédagogique</h2>
-        <div class="content is-size-5 box edu-border-accent" style="max-width: 52rem; margin: 0 auto;">
-          <p>Positionnement sécurité SOC, évaluations formatives, plateforme LMS et badges numériques associés aux modules validés.</p>
-          <p>Ressources pédagogiques&nbsp;: vidéos, fiches et quiz accessibles pendant et après la formation.</p>
-        </div>
-        <div class="tile is-ancestor mt-5" style="max-width: 52rem; margin: 0 auto;">
-          <div class="tile is-parent is-6">
-            <article class="tile is-child box is-vitrine-child notification is-link is-light">
-              <p class="title is-5"><i class="fa-solid fa-users mr-2" aria-hidden="true"></i>Tuteurs</p>
-              <p class="is-size-6">Équipe permanente et intervenants externes, CV et domaines de spécialité détaillés en amont.</p>
-            </article>
-          </div>
-          <div class="tile is-parent is-6">
-            <article class="tile is-child box is-vitrine-child">
-              <p class="title is-5"><i class="fa-solid fa-chart-line mr-2 has-text-link" aria-hidden="true"></i>Suivi</p>
-              <p class="is-size-6">Barème de satisfaction consolidé après chaque session.</p>
-              <progress class="progress is-link mt-3" value="79" max="100">79&nbsp;%</progress>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-edu-paper" id="inscription" aria-labelledby="t-ins">
-      <div class="container is-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-7-desktop">
-            <h2 class="title is-2 has-text-centered" id="t-ins"><i class="fa-solid fa-file-signature has-text-link mr-2" aria-hidden="true"></i>Pré-inscription</h2>
-            <div class="box is-vitrine vitrine-form-panel">
-              <form action="#" method="get" class="content">
-                <div class="field"><label class="label" for="i-nom"><i class="fa-solid fa-user mr-1" aria-hidden="true"></i>Nom</label><div class="control"><input class="input" type="text" id="i-nom" name="nom" autocomplete="name"></div></div>
-                <div class="field"><label class="label" for="i-mod"><i class="fa-solid fa-bookmark mr-1" aria-hidden="true"></i>Formation</label><div class="control"><div class="select is-fullwidth"><select id="i-mod" name="mod"><option>Excel</option><option>Management</option><option>Green IT</option></select></div></div></div>
-                <button type="button" class="button is-link is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="contact" aria-labelledby="t-contact">
-      <div class="container is-widescreen">
-        <h2 class="title is-2" id="t-contact"><i class="fa-solid fa-envelope has-text-link mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5"><a href="mailto:formations@media-mercure.fr">formations@media-mercure.fr</a></p>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
-      </div>
-    </section>
+    <section class="vt-stats py-8" aria-label="Chiffres clés"><div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center"><div><strong class="vt-stat block text-3xl">1200</strong><span class="opacity-90">apprenants</span></div><div><strong class="vt-stat block text-3xl">35</strong><span class="opacity-90">parcours</span></div><div><strong class="vt-stat block text-3xl">92%</strong><span class="opacity-90">insertion</span></div></div></section>
+    <section id="offres" class="py-16 bg-slate-50"><div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center vt-brand mb-2">Ce que nous proposons</h2>
+      <p class="text-center text-slate-600 mb-10 max-w-2xl mx-auto">Hiérarchie lisible : comprendre, se projeter, vous contacter.</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl shadow-md overflow-hidden vitrine-img-reveal">
+          <figure class="vitrine-figure vitrine-card-visual mb-0">
+            <a href="images/edu-salle.png" class="glightbox block" data-gallery="education-vis" data-glightbox="title: Digital">
+              <img src="images/edu-salle.png" alt="Digital" class="w-full h-52 object-cover" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="p-5"><h3 class="text-lg font-semibold vt-brand">Digital</h3><p class="text-slate-600 text-sm mt-1">Certifiant.</p></div>
+        </article>
+        <article class="bg-white rounded-xl shadow-md overflow-hidden vitrine-img-reveal">
+          <figure class="vitrine-figure vitrine-card-visual mb-0">
+            <a href="images/edu-formateur.png" class="glightbox block" data-gallery="education-vis" data-glightbox="title: Management">
+              <img src="images/edu-formateur.png" alt="Management" class="w-full h-52 object-cover" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="p-5"><h3 class="text-lg font-semibold vt-brand">Management</h3><p class="text-slate-600 text-sm mt-1">Leadership.</p></div>
+        </article>
+        <article class="bg-white rounded-xl shadow-md overflow-hidden vitrine-img-reveal">
+          <figure class="vitrine-figure vitrine-card-visual mb-0">
+            <a href="images/edu-gen-modules.png" class="glightbox block" data-gallery="education-vis" data-glightbox="title: Technique">
+              <img src="images/edu-gen-modules.png" alt="Technique" class="w-full h-52 object-cover" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="p-5"><h3 class="text-lg font-semibold vt-brand">Technique</h3><p class="text-slate-600 text-sm mt-1">SST &amp; métiers.</p></div>
+        </article></div>
+    </div></section>
+    <section id="engagements" class="py-12"><div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold vt-brand mb-3">Pourquoi nous faire confiance</h2>
+      <p class="text-slate-600">Réactivité, transparence et ancrage local.</p>
+    </div></section>
+    <section id="contact" class="py-16 bg-white"><div class="max-w-xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center vt-brand mb-6">Contact</h2>
+      <form class="grid gap-4" action="#" method="get">
+        <label class="block text-sm">Nom <input class="w-full border rounded px-3 py-2 mt-1" name="nom" type="text"></label>
+        <label class="block text-sm">E-mail <input class="w-full border rounded px-3 py-2 mt-1" name="email" type="email"></label>
+        <label class="block text-sm">Message <textarea class="w-full border rounded px-3 py-2 mt-1" name="message" rows="4"></textarea></label>
+        <button class="vt-btn w-full py-3 rounded-lg font-semibold" type="submit">Envoyer ma demande</button>
+      </form>
+      <p class="text-center mt-6 text-sm"><a href="../index.html" class="underline">← Hub vitrines</a></p>
+    </div></section>
   </main>
-  <footer class="footer has-background-dark is-vitrine-footer">
-    <div class="container is-widescreen">
-      <div class="columns has-text-grey-light">
-        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-graduation-cap mr-2 has-text-edu-gold" aria-hidden="true"></i>Institut Mercure</p><p class="is-size-6">Metz.</p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#formations"><i class="fa-solid fa-book mr-1" aria-hidden="true"></i>Formations</a></p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <footer class="vt-footer py-6 text-center text-sm">Maquette — DanielCraft</footer>
+
   <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
   <script src="../shared/vitrine-images.js"></script>
 </body>

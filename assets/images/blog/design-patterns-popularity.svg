@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200">
+  <rect fill="#f8f9fa" width="520" height="200" rx="8"/>
+  <text x="260" y="24" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">Popularité (cette série)</text>
+  <text x="20" y="40" font-size="10" fill="#374151">1. Singleton</text>
+  <text x="20" y="53" font-size="10" fill="#374151">2. Factory Method</text>
+  <text x="20" y="66" font-size="10" fill="#374151">3. Observer</text>
+  <text x="20" y="79" font-size="10" fill="#374151">4. Strategy</text>
+  <text x="20" y="92" font-size="10" fill="#374151">5. Decorator</text>
+  <text x="20" y="105" font-size="10" fill="#374151">6. Adapter</text>
+  <text x="20" y="118" font-size="10" fill="#374151">7. Facade</text>
+  <text x="20" y="131" font-size="10" fill="#374151">8. Command</text>
+  <text x="20" y="144" font-size="10" fill="#374151">9. Template Method</text>
+  <text x="20" y="157" font-size="10" fill="#374151">10. Builder</text>
+  <text x="20" y="170" font-size="10" fill="#374151">11. Iterator</text>
+  <text x="20" y="183" font-size="10" fill="#374151">12. State</text>
+  <text x="270" y="40" font-size="10" fill="#374151">13. Proxy</text>
+  <text x="270" y="53" font-size="10" fill="#374151">14. Abstract Factory</text>
+  <text x="270" y="66" font-size="10" fill="#374151">15. Composite</text>
+  <text x="270" y="79" font-size="10" fill="#374151">16. Bridge</text>
+  <text x="270" y="92" font-size="10" fill="#374151">17. Prototype</text>
+  <text x="270" y="105" font-size="10" fill="#374151">18. Flyweight</text>
+  <text x="270" y="118" font-size="10" fill="#374151">19. Chain of Responsibility</text>
+  <text x="270" y="131" font-size="10" fill="#374151">20. Mediator</text>
+  <text x="270" y="144" font-size="10" fill="#374151">21. Memento</text>
+  <text x="270" y="157" font-size="10" fill="#374151">22. Visitor</text>
+  <text x="270" y="170" font-size="10" fill="#374151">23. Interpreter</text>
+</svg>

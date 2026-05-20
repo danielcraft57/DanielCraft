@@ -83,6 +83,12 @@ figure.image a.glightbox:focus-visible {
   animation: vitrine-ken-burns 22s ease-in-out infinite alternate;
 }
 
+/* Hero vitrine classique : hauteur contenu, pas demi-écran (priorité sur la règle Ken ci-dessus) */
+.vt-hero .vitrine-figure--ken img,
+.vitrine-hero-visual.vitrine-figure--ken img {
+  max-height: 220px;
+}
+
 @keyframes vitrine-ken-burns {
   0% {
     transform: scale(1) translate(0, 0);

@@ -1,0 +1,9 @@
+{
+  "currency": "EUR",
+  "paid_audit": {
+    "slug": "audit-complet-ia",
+    "title": "Audit premium site web",
+    "price_eur": 19,
+    "stripe_payment_link_url": ""
+  }
+}

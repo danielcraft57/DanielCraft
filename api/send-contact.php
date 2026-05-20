@@ -11,6 +11,8 @@ header('X-Content-Type-Options: nosniff');
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 if (preg_match('#^https?://(www\.)?danielcraft\.fr$#', $origin)) {
     header('Access-Control-Allow-Origin: ' . $origin);
+} elseif ($origin !== '' && preg_match('#^https?://(127\.0\.0\.1|localhost)(:\d+)?$#i', $origin)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
 }
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -62,6 +64,8 @@ function contact_service_label(string $slug): string
         'pack_vitrine' => 'Site vitrine (490€)',
         'pack_identite' => 'Identité & visibilité multi-supports (990€)',
         'pack_seo_complet' => 'SEO Google + ChatGPT — pack (699€)',
+        'audit_gratuit_site' => 'Audit gratuit site web (offre découverte)',
+        'audit_paid_complet_ia' => 'Audit complet IA (payant)',
         'seo_basique_290' => 'SEO basique — audit + corrections (290€)',
         'seo_chatgpt_490' => 'SEO ChatGPT / découvrabilité IA (490€)',
         'ia_faq_site' => 'Assistant IA FAQ site web (990€)',
@@ -93,8 +97,8 @@ function contact_service_label(string $slug): string
         'maint_support_prio_h' => 'Support prioritaire à l\'heure (70€/h)',
         'besoin_a_preciser' => 'Besoin à préciser ensemble',
         'projet_sur_mesure' => 'Projet sur mesure / autre',
-        'vitrine_catalog_order' => 'Pré-commande vitrine catalogue (sans paiement sur le site)',
-        'vitrine_catalog_devis' => 'Devis / questions — fiche vitrine catalogue',
+        'vitrine_catalog_order' => 'Pré-commande depuis le catalogue (sans paiement sur le site)',
+        'vitrine_catalog_devis' => 'Devis / questions — fiche catalogue',
     ];
     if (isset($map[$slug])) {
         return $map[$slug];
@@ -124,7 +128,10 @@ function contact_project_type_label(string $slug): string
 // Validation
 $errors = [];
 
-if ($name === '') {
+$audit_flow_services = ['audit_gratuit_site', 'audit_paid_complet_ia'];
+$is_audit_flow = in_array($service, $audit_flow_services, true);
+
+if ($name === '' && !$is_audit_flow) {
     $errors[] = 'Le nom est obligatoire.';
 }
 
@@ -147,8 +154,17 @@ if (preg_match('/https?:\/\/|www\./i', $name) || preg_match('/https?:\/\/|www\./
     $errors[] = 'Entrée invalide.';
 }
 
-if ($message === '') {
+if ($message === '' && !$is_audit_flow) {
     $errors[] = 'Le message est obligatoire.';
+}
+
+if ($is_audit_flow) {
+    if ($name === '') {
+        $name = 'Demandeur audit';
+    }
+    if ($message === '') {
+        $message = 'Demande audit site web (voir URL ci-dessous).';
+    }
 }
 
 $allowed_project_types = ['web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other'];
@@ -163,20 +179,36 @@ if ($service === '') {
 }
 
 $vitrine_flow_services = ['vitrine_catalog_order', 'vitrine_catalog_devis'];
+
+/**
+ * Normalise et valide une URL de site (https optionnel).
+ *
+ * @param string $url URL brute
+ * @return string URL normalisée
+ */
+function contact_normalize_site_url(string $url): string
+{
+    if ($url === '') {
+        return '';
+    }
+    if (!preg_match('#^https?://#i', $url)) {
+        $url = 'https://' . ltrim($url, '/');
+    }
+    return $url;
+}
+
 if (in_array($service, $vitrine_flow_services, true)) {
     if ($vitrine_slug === '' || !preg_match('/^[a-z0-9-]{1,80}$/', $vitrine_slug)) {
-        $errors[] = 'Référence vitrine manquante ou invalide.';
+        $errors[] = 'Référence du modèle manquante ou invalide.';
     }
     if ($vitrine_title === '' || strlen($vitrine_title) > 220) {
-        $errors[] = 'Intitulé vitrine manquant ou trop long.';
+        $errors[] = 'Titre du modèle manquant ou trop long.';
     }
     if ($site_url !== '') {
         if (strlen($site_url) > 500) {
             $errors[] = 'URL du site trop longue.';
         } else {
-            if (!preg_match('#^https?://#i', $site_url)) {
-                $site_url = 'https://' . ltrim($site_url, '/');
-            }
+            $site_url = contact_normalize_site_url($site_url);
             if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
                 $errors[] = 'URL du site invalide.';
             }
@@ -187,6 +219,20 @@ if (in_array($service, $vitrine_flow_services, true)) {
     }
     if (strlen($billing_address) > 1500) {
         $errors[] = 'Adresse de facturation trop longue.';
+    }
+} elseif (in_array($service, $audit_flow_services, true)) {
+    $vitrine_slug = '';
+    $vitrine_title = '';
+    $billing_address = '';
+    if ($site_url === '') {
+        $errors[] = 'L\'URL de votre site est obligatoire pour l\'audit gratuit.';
+    } elseif (strlen($site_url) > 500) {
+        $errors[] = 'URL du site trop longue.';
+    } else {
+        $site_url = contact_normalize_site_url($site_url);
+        if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
+            $errors[] = 'URL du site invalide.';
+        }
     }
 } else {
     $vitrine_slug = '';
@@ -323,10 +369,10 @@ $serviceLabel = contact_service_label($service);
 $projectTypeLabel = contact_project_type_label($project_type);
 if ($service === 'vitrine_catalog_order') {
     $tail = $vitrine_title !== '' ? $vitrine_title : $vitrine_slug;
-    $subject = 'Pré-commande vitrine — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 70, 'UTF-8') : substr($tail, 0, 70));
+    $subject = 'Pré-commande catalogue — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 70, 'UTF-8') : substr($tail, 0, 70));
 } elseif ($service === 'vitrine_catalog_devis') {
     $tail = $vitrine_title !== '' ? $vitrine_title : $vitrine_slug;
-    $subject = 'Devis vitrine — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 72, 'UTF-8') : substr($tail, 0, 72));
+    $subject = 'Devis catalogue — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 72, 'UTF-8') : substr($tail, 0, 72));
 } else {
     $subjectShort = function_exists('mb_substr')
         ? mb_substr($serviceLabel, 0, 55, 'UTF-8')
@@ -343,7 +389,7 @@ $body .= "Réf. forfait / budget (si indiqué) : " . ($budget."€" ?: 'Non rens
 $body .= "Date proposée (échange) : " . ($preferred_date ?: 'Non renseignée') . "\n";
 $body .= "Créneau horaire : " . ($preferred_time ?: 'Non renseigné') . "\n\n";
 if ($vitrine_slug !== '') {
-    $body .= "--- Vitrine catalogue ---\n";
+    $body .= "--- Fiche catalogue ---\n";
     $body .= 'Slug : ' . $vitrine_slug . "\n";
     $body .= 'Titre : ' . $vitrine_title . "\n";
     if ($site_url !== '') {
@@ -354,6 +400,9 @@ if ($vitrine_slug !== '') {
     } else {
         $body .= "\n";
     }
+} elseif (in_array($service, $audit_flow_services, true) && $site_url !== '') {
+    $body .= "--- Site à auditer ---\n";
+    $body .= 'URL : ' . $site_url . "\n\n";
 }
 $body .= "Message :\n" . $message . "\n";
 
@@ -388,8 +437,8 @@ $extraVitrineRows = '';
 if ($vitrine_slug !== '') {
     $safeVSlug = esc($vitrine_slug);
     $safeVTitle = esc($vitrine_title);
-    $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Vitrine (slug)</div><div style="font-size:14px;color:#0f172a;font-weight:800;">' . $safeVSlug . '</div></td></tr>';
-    $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Vitrine (titre)</div><div style="font-size:14px;color:#0f172a;font-weight:800;">' . $safeVTitle . '</div></td></tr>';
+    $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Référence (slug)</div><div style="font-size:14px;color:#0f172a;font-weight:800;">' . $safeVSlug . '</div></td></tr>';
+    $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">Modèle (titre)</div><div style="font-size:14px;color:#0f172a;font-weight:800;">' . $safeVTitle . '</div></td></tr>';
     if ($site_url !== '') {
         $safeSiteUrl = esc($site_url);
         $extraVitrineRows .= '<tr><td style="padding:10px 0;border-bottom:1px solid #eef1f7;"><div style="font-size:12px;color:#6b7280;font-weight:700;">URL du site visée</div><div style="font-size:14px;color:#0f172a;font-weight:800;"><a href="' . $safeSiteUrl . '" style="color:#2f56b3;">' . $safeSiteUrl . '</a></div></td></tr>';
@@ -875,6 +924,15 @@ $smtpPass = getenv('MAIL_PASSWORD') ?: '';
 
 $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $mimeHeaders = implode("\r\n", $headers) . "\r\n" . 'To: ' . esc($to) . "\r\n" . 'Subject: ' . $subjectEncoded;
+
+// Dev / CI : accepter la demande sans envoyer d’email (SMTP ou mail() souvent absents en local).
+$dryRunRaw = getenv('CONTACT_MAIL_DRY_RUN');
+$dryRun = $dryRunRaw !== false && in_array(strtolower(trim((string) $dryRunRaw)), ['1', 'true', 'yes', 'on'], true);
+if ($dryRun) {
+    error_log('[send-contact] CONTACT_MAIL_DRY_RUN=1 : email non envoyé (service=' . $service . ').');
+    echo json_encode(['success' => true, 'dry_run' => true]);
+    exit;
+}
 
 $sent = false;
 // Envoi SMTP via PHPMailer (vendor sans composer)

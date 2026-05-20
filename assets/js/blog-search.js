@@ -8,6 +8,7 @@
   const grid = document.getElementById('blogArticlesGrid');
   const info = document.getElementById('blogSearchResultsInfo');
   const recommendationsSection = document.querySelector('.blog-recommendations-index');
+  const seriesSection = document.querySelector('.blog-series-featured');
   const allSection = document.querySelector('.blog-all-articles');
 
   if (!dataEl || !input || !grid) return;
@@ -102,10 +103,8 @@
         card.classList.remove('blog-card-highlight');
       });
       if (info) info.textContent = '';
-       // Ré-afficher la section "À découvrir" quand il n'y a pas de recherche
-      if (recommendationsSection) {
-        recommendationsSection.style.display = '';
-      }
+      if (recommendationsSection) recommendationsSection.style.display = '';
+      if (seriesSection) seriesSection.style.display = '';
       // Marge normale de la section "Tous les articles"
       if (allSection) {
         allSection.classList.remove('blog-all-articles--search-active');
@@ -151,10 +150,8 @@
       }
     }
 
-    // Masquer la section "À découvrir" quand une recherche est active
-    if (recommendationsSection) {
-      recommendationsSection.style.display = 'none';
-    }
+    if (recommendationsSection) recommendationsSection.style.display = 'none';
+    if (seriesSection) seriesSection.style.display = 'none';
 
     // Compacter la section "Tous les articles" quand une recherche est active
     if (allSection) {

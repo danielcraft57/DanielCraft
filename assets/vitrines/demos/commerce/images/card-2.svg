@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img"><title>Comptoir traiteur</title>
+<rect width="800" height="500" fill="#fff3e0"/>
+<g transform="translate(100 80)"><rect width="600" height="280" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+<rect x="40" y="40" width="120" height="80" fill="#bf360c" opacity=".7"/><rect x="200" y="50" width="140" height="70" fill="#ff6f00" opacity=".6"/>
+<ellipse cx="450" cy="100" rx="80" ry="50" fill="#fff8e1" stroke="#e65100" stroke-width="2"/></g>
+</svg>

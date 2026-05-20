@@ -3,177 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="Facility management, nettoyage et conciergerie pour entreprises en Grand Est.">
-  <title>Proprio Facility Grand Est — Services</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="../shared/vitrine-creative.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <meta name="description" content="Vos locaux, notre métier. Facility management et conciergerie pour immeubles tertiaires en Lorraine.">
+  <title>Proprio Facility — Facility &amp; conciergerie | démo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-media.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <div class="vitrine-read-progress" aria-hidden="true"></div>
-  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
-    <div class="container is-fluid">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-srv-teal" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i></span><span>Proprio Facility</span></span></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
-          <a class="navbar-item" href="#offres"><span class="icon-text"><span class="icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span><span>Offres</span></span></a>
-          <a class="navbar-item" href="#terrain"><span class="icon-text"><span class="icon"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i></span><span>Sur le terrain</span></span></a>
-          <a class="navbar-item" href="#qualite"><span class="icon-text"><span class="icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span><span>Qualité</span></span></a>
-          <a class="navbar-item" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
-          <a class="navbar-item" href="#devis"><span class="icon-text"><span class="icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span><span>Devis</span></span></a>
-          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium srv-hero vitrine-hero-glowspot">
-      <div class="hero-body">
-        <div class="container">
-          <p class="title is-1 has-text-white"><span class="icon-text"><span class="icon"><i class="fa-solid fa-building-user" aria-hidden="true"></i></span><span class="vitrine-shimmer-text is-srv-shimmer">Services multi-sites &amp; proximité</span></span></p>
-          <p class="subtitle is-4 has-text-white-ter" style="max-width: 46rem;">
-            Proprio Facility assure l’entretien de bureaux, la maintenance légère et la conciergerie d’entreprise sur Metz, Thionville et leurs bassins d’emploi. Équipes salariées, références disponibles sur demande et périmètres d’intervention contractualisés.
-          </p>
-          <p class="subtitle is-5 has-text-white-ter mt-4" style="max-width: 46rem;">
-            Brief téléphonique ou visio, passage de consignes standardisé et reporting photo à chaque intervention. Les procédures sont adaptées à vos sites (accès, horaires, zones sensibles).
-          </p>
-          <div class="buttons mt-5 vitrine-magnetic-wrap">
-            <a class="button is-warning is-medium has-text-weight-semibold" href="#offres"><span class="icon"><i class="fa-solid fa-list" aria-hidden="true"></i></span><span>Découvrir les offres</span></a>
-            <a class="button is-white is-outlined is-medium" href="#devis"><span class="icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></span><span>Devis en ligne</span></a>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3" aria-label="Navigation principale">
+      <a href="#accueil" class="text-xl font-semibold vt-brand">Proprio Facility</a>
+      <ul class="flex gap-4 text-sm font-medium">
+        <li><a href="#offres" class="hover:underline">Offres</a></li>
+        <li><a href="#engagements" class="hover:underline">Engagements</a></li>
+        <li><a href="#contact" class="font-semibold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="contenu">
+    <section id="accueil" class="vt-hero text-white">
+      <div class="max-w-6xl mx-auto px-4 py-8 lg:py-10 grid lg:grid-cols-2 gap-8 items-center">
+        <div class="vitrine-img-reveal">
+          <p class="vt-eyebrow text-xs uppercase tracking-widest mb-2 opacity-90">Grand Est · Lorraine</p>
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">Vos locaux, notre métier</h1>
+          <p class="text-lg opacity-90 mb-6">Facility management et conciergerie pour immeubles tertiaires en Lorraine.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#offres" class="vt-btn inline-block px-6 py-3 rounded-lg font-semibold">Voir nos offres</a>
+            <a href="#contact" class="inline-block px-6 py-3 rounded-lg border border-white/80">Nous contacter</a>
           </div>
         </div>
+        <div><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
+              <a href="images/services-facility.png" class="glightbox" data-gallery="services-vis">
+                <img src="images/services-facility.png" width="1200" height="520" alt="Proprio Facility" fetchpriority="high" decoding="async" class="w-full rounded-xl">
+              </a>
+            </figure></div>
       </div>
     </section>
-    <section class="section vitrine-cta-banner has-background-info has-text-white" aria-label="CTA">
-      <div class="container is-widescreen columns is-vcentered">
-        <div class="column is-8">
-          <p class="title is-4 has-text-white"><i class="fa-solid fa-bolt mr-3" aria-hidden="true"></i>Intervention coordonnée multi-sites</p>
-          <p class="subtitle is-6 has-text-white-ter mb-0">Astreinte technique et relais d’information entre vos sites.</p>
-        </div>
-        <div class="column is-4 has-text-right-tablet">
-          <a class="button is-warning is-medium" href="#devis"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Formulaire</span></a>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="offres" aria-labelledby="t-off">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-off"><span class="icon-text"><span class="icon has-text-info"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span><span>Offres packagées</span></span></h2>
-        <p class="content is-size-5 has-text-centered mb-5" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Les trois cartes ci-dessous décrivent des formules fréquentes du secteur. Les tarifs et volumes affichés sont indicatifs&nbsp;; votre devis précise périmètre, fréquence et SLAs.
-        </p>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4">
-            <div class="box is-vitrine srv-accent-border">
-              <p class="title is-4"><i class="fa-solid fa-spray-can-sparkles has-text-info mr-2" aria-hidden="true"></i>Pro Clean</p>
-              <p class="is-size-5">Bureaux TPE — passage hebdomadaire, check-list qualité et produits labellisés.</p>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="box is-vitrine srv-accent-border">
-              <p class="title is-4"><i class="fa-solid fa-screwdriver-wrench has-text-info mr-2" aria-hidden="true"></i>Facility+</p>
-              <p class="is-size-5">Multi-sites, planning partagé et astreinte week-end selon grille tarifaire.</p>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="box is-vitrine srv-accent-border">
-              <p class="title is-4"><i class="fa-solid fa-bell-concierge has-text-info mr-2" aria-hidden="true"></i>Conciergerie</p>
-              <p class="is-size-5">Colis, accueil visiteurs et gestion de salles avec procédure d’escalade.</p>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/services-nettoyage.png" class="glightbox" data-gallery="services-visuels" data-glightbox="title: Nettoyage "><img src="images/services-nettoyage.png" width="800" height="450" alt="Entretien locaux professionnels (image générée)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/services-facility.png" class="glightbox" data-gallery="services-visuels" data-glightbox="title: Facility "><img src="images/services-facility.png" width="800" height="450" alt="Gestionnaire d'immeuble (image générée)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/services-accueil.png" class="glightbox" data-gallery="services-visuels" data-glightbox="title: Accueil "><img src="images/services-accueil.png" width="800" height="450" alt="Accueil et conciergerie (image générée)" loading="lazy" decoding="async"></a></figure></div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-srv-muted" id="terrain" aria-labelledby="t-ter">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-ter"><span class="icon-text"><span class="icon has-text-info"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span><span>Sur le terrain</span></span></h2>
-        <article class="message is-info is-light mt-4">
-          <div class="message-body content is-size-5">
-            <p>Les équipes terrain Proprio Facility appliquent une charte d’hygiène et des check-lists photo validées avec vous. Chaque site dispose d’un référent et d’un livret d’accès.</p>
-            <p>La coordination inter-sites s’appuie sur un standard téléphonique unique, un outil de ticketing et des indicateurs de satisfaction suivis en comité de pilotage.</p>
-          </div>
+    <section class="vt-stats py-8" aria-label="Chiffres clés"><div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 text-center"><div><strong class="vt-stat block text-3xl">ISO</strong><span class="opacity-90">9001</span></div><div><strong class="vt-stat block text-3xl">24/7</strong><span class="opacity-90">astreinte</span></div><div><strong class="vt-stat block text-3xl">200+</strong><span class="opacity-90">sites</span></div></div></section>
+    <section id="offres" class="py-16 bg-slate-50"><div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center vt-brand mb-2">Ce que nous proposons</h2>
+      <p class="text-center text-slate-600 mb-10 max-w-2xl mx-auto">Hiérarchie lisible : comprendre, se projeter, vous contacter.</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl shadow-md overflow-hidden vitrine-img-reveal">
+          <figure class="vitrine-figure vitrine-card-visual mb-0">
+            <a href="images/services-accueil.png" class="glightbox block" data-gallery="services-vis" data-glightbox="title: Maintenance">
+              <img src="images/services-accueil.png" alt="Maintenance" class="w-full h-52 object-cover" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="p-5"><h3 class="text-lg font-semibold vt-brand">Maintenance</h3><p class="text-slate-600 text-sm mt-1">Préventif.</p></div>
         </article>
-        <p class="mt-4"><span class="icon-text"><span class="icon has-text-info"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i></span><span><strong>Objectif qualité perçue</strong></span></span></p>
-        <progress class="progress is-info" value="68" max="100">68&nbsp;%</progress>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="qualite" aria-labelledby="t-qu">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-qu"><span class="icon-text"><span class="icon has-text-info"><i class="fa-solid fa-certificate" aria-hidden="true"></i></span><span>Qualité &amp; certifications</span></span></h2>
-        <div class="columns mt-5">
-          <div class="column is-6">
-            <article class="media box is-vitrine">
-              <figure class="media-left"><span class="icon is-large has-text-info"><i class="fa-solid fa-stamp fa-2x" aria-hidden="true"></i></span></figure>
-              <div class="media-content content is-size-5"><p><strong>Labels &amp; partenaires</strong> — nous travaillons avec des fournisseurs certifiés (Ecolabel, ISO&nbsp;14001) selon vos exigences marché.</p></div>
-            </article>
-          </div>
-          <div class="column is-6">
-            <article class="media box is-vitrine">
-              <figure class="media-left"><span class="icon is-large has-text-info"><i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i></span></figure>
-              <div class="media-content content is-size-5"><p><strong>Formation équipes</strong> — modules SST, gestes et postures et sensibilisation cybersécurité sur site.</p></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-srv-muted" id="faq" aria-labelledby="t-faq">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-faq"><i class="fa-solid fa-circle-question has-text-info mr-2" aria-hidden="true"></i>FAQ</h2>
-        <article class="message is-info is-light mt-4"><div class="message-body"><i class="fa-solid fa-map mr-2" aria-hidden="true"></i>Zones couvertes&nbsp;: Metz, Woippy, Maizières-lès-Metz, Thionville et ZA voisines sur devis.</div></article>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="devis" aria-labelledby="t-devis">
-      <div class="container is-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-8-tablet is-6-desktop">
-            <h2 class="title is-2 has-text-centered" id="t-devis"><i class="fa-solid fa-file-invoice has-text-info mr-2" aria-hidden="true"></i>Devis</h2>
-            <div class="box is-vitrine vitrine-form-panel">
-              <form action="#" method="get" class="content">
-                <div class="field"><label class="label" for="dv-site"><i class="fa-solid fa-location-dot mr-1" aria-hidden="true"></i>Nombre de sites</label><div class="control"><input class="input" type="number" id="dv-site" name="sites" min="1" value="3"></div></div>
-                <div class="field"><label class="label" for="dv-type"><i class="fa-solid fa-tags mr-1" aria-hidden="true"></i>Type</label><div class="control"><div class="select is-fullwidth"><select id="dv-type" name="type"><option>Nettoyage</option><option>Maintenance</option><option>Conciergerie</option></select></div></div></div>
-                <button type="button" class="button is-info is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section vitrine-cta-banner has-background-grey-darker has-text-white" aria-label="CTA 2">
-      <div class="container is-widescreen has-text-centered">
-        <a class="button is-warning is-medium" href="#contact"><i class="fa-solid fa-headset mr-2" aria-hidden="true"></i>Parler à un chargé d'affaires</a>
-        <a class="button is-white is-outlined is-medium ml-3" href="../index.html"><i class="fa-solid fa-border-all mr-2" aria-hidden="true"></i>Index vitrines</a>
-      </div>
-    </section>
-    <section class="section is-vitrine is-srv-muted" id="contact" aria-labelledby="t-contact">
-      <div class="container is-widescreen">
-        <h2 class="title is-2" id="t-contact"><i class="fa-solid fa-address-card has-text-info mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5 mt-3"><a href="mailto:accueil@proprio-facility.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>accueil@proprio-facility.fr</a></p>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
-      </div>
-    </section>
+        <article class="bg-white rounded-xl shadow-md overflow-hidden vitrine-img-reveal">
+          <figure class="vitrine-figure vitrine-card-visual mb-0">
+            <a href="images/services-nettoyage.png" class="glightbox block" data-gallery="services-vis" data-glightbox="title: Accueil">
+              <img src="images/services-nettoyage.png" alt="Accueil" class="w-full h-52 object-cover" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="p-5"><h3 class="text-lg font-semibold vt-brand">Accueil</h3><p class="text-slate-600 text-sm mt-1">Standard.</p></div>
+        </article>
+        <article class="bg-white rounded-xl shadow-md overflow-hidden vitrine-img-reveal">
+          <figure class="vitrine-figure vitrine-card-visual mb-0">
+            <a href="images/services-facility.png" class="glightbox block" data-gallery="services-vis" data-glightbox="title: Conciergerie">
+              <img src="images/services-facility.png" alt="Conciergerie" class="w-full h-52 object-cover" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="p-5"><h3 class="text-lg font-semibold vt-brand">Conciergerie</h3><p class="text-slate-600 text-sm mt-1">Sur mesure.</p></div>
+        </article></div>
+    </div></section>
+    <section id="engagements" class="py-12"><div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold vt-brand mb-3">Pourquoi nous faire confiance</h2>
+      <p class="text-slate-600">Réactivité, transparence et ancrage local.</p>
+    </div></section>
+    <section id="contact" class="py-16 bg-white"><div class="max-w-xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center vt-brand mb-6">Contact</h2>
+      <form class="grid gap-4" action="#" method="get">
+        <label class="block text-sm">Nom <input class="w-full border rounded px-3 py-2 mt-1" name="nom" type="text"></label>
+        <label class="block text-sm">E-mail <input class="w-full border rounded px-3 py-2 mt-1" name="email" type="email"></label>
+        <label class="block text-sm">Message <textarea class="w-full border rounded px-3 py-2 mt-1" name="message" rows="4"></textarea></label>
+        <button class="vt-btn w-full py-3 rounded-lg font-semibold" type="submit">Envoyer ma demande</button>
+      </form>
+      <p class="text-center mt-6 text-sm"><a href="../index.html" class="underline">← Hub vitrines</a></p>
+    </div></section>
   </main>
-  <footer class="footer has-background-dark is-vitrine-footer">
-    <div class="container is-widescreen">
-      <div class="columns has-text-grey-light">
-        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-hand-sparkles mr-2" aria-hidden="true"></i>Proprio Facility</p><p class="is-size-6">Siège&nbsp;: Metz.</p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#devis"><i class="fa-solid fa-file-signature mr-1" aria-hidden="true"></i>Devis</a></p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome · <a class="has-text-grey-lighter" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Bulma</a></p></div>
-      </div>
-    </div>
-  </footer>
-  <script src="../shared/vitrine-creative.js"></script>
+  <footer class="vt-footer py-6 text-center text-sm">Maquette — DanielCraft</footer>
+
   <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
   <script src="../shared/vitrine-images.js"></script>
 </body>

@@ -65,6 +65,8 @@ FILES_TO_DEPLOY=(
     "${DIST_DIR}/robots.txt"
     "${DIST_DIR}/sitemap.xml"
     "${DIST_DIR}/sitemap-pages.xml"
+    "${DIST_DIR}/sitemap-vitrines.xml"
+    "${DIST_DIR}/blog/sitemap-blog.xml"
     "${DIST_DIR}/assets"
     "${DIST_DIR}/api"
     "${DIST_DIR}/blog"
@@ -131,7 +133,7 @@ else
         "cgu.html"
         "politique-confidentialite.html"
     )
-    OTHER_FILES=("robots.txt" "sitemap.xml" "sitemap-pages.xml")
+    OTHER_FILES=("robots.txt" "sitemap.xml" "sitemap-pages.xml" "sitemap-vitrines.xml")
     
     for file in "${HTML_FILES[@]}"; do
         if [ -f "${DIST_DIR}/${file}" ]; then
@@ -163,6 +165,11 @@ else
     if [ -d "${DIST_DIR}/blog" ]; then
         echo "  Transfert: blog/"
         scp -r "${DIST_DIR}/blog" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
+    fi
+
+    if [ -f "${DIST_DIR}/blog/sitemap-blog.xml" ]; then
+        echo "  Transfert: blog/sitemap-blog.xml"
+        scp "${DIST_DIR}/blog/sitemap-blog.xml" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/blog/"
     fi
 
     # Transfert des pages projet (projets/<slug>.html)
@@ -197,6 +204,8 @@ ssh "${SERVER_USER}@${SERVER_HOST}" "test -f $SERVER_PATH/api/send-contact.php &
 
 # Vérifier que le blog est déployé
 ssh "${SERVER_USER}@${SERVER_HOST}" "test -f $SERVER_PATH/blog/index.html && echo 'OK: blog/index.html present' || echo 'ATTENTION: blog/index.html manquant'"
+
+ssh "${SERVER_USER}@${SERVER_HOST}" "test -f $SERVER_PATH/blog/sitemap-blog.xml && echo 'OK: blog/sitemap-blog.xml present' || echo 'ATTENTION: blog/sitemap-blog.xml manquant (SEO)'"
 
 # Vérifier que les pages projet sont déployées
 ssh "${SERVER_USER}@${SERVER_HOST}" "test -d $SERVER_PATH/projets && echo 'OK: projets/ present' || echo 'ATTENTION: projets/ manquant'"

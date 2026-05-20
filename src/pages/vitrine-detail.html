@@ -1,10 +1,11 @@
-<article class="vitrine-detail-root">
+<article class="vitrine-detail-root" data-stripe-pk="{{stripe_publishable_key}}">
+<p class="vitrine-stripe-return" id="vitrineStripeReturn" role="status" hidden></p>
 <section class="vitrine-detail-hero">
     <div class="container vitrine-detail-hero-inner">
         <nav class="vitrine-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
             <a href="/">Accueil</a>
             <span aria-hidden="true">/</span>
-            <a href="/vitrines/">Vitrines web</a>
+            <a href="/vitrines/">Modèles &amp; démos</a>
             <span aria-hidden="true">/</span>
             <span>{{vitrine_title}}</span>
         </nav>
@@ -87,9 +88,9 @@
             {{vitrine_copy_delivery_html}}
             </div>
         </div>
-        <aside class="vitrine-purchase-card scroll-reveal-scale" style="--reveal-delay: 80ms" aria-labelledby="vitrine-buy-title" data-vitrine-slug="{{vitrine_slug}}" data-vitrine-price="{{vitrine_price_eur}}">
+        <aside class="vitrine-purchase-card scroll-reveal-scale" style="--reveal-delay: 80ms" aria-labelledby="vitrine-buy-title" data-vitrine-slug="{{vitrine_slug}}" data-vitrine-price="{{vitrine_price_eur}}" data-stripe-static-url="{{vitrine_stripe_url}}">
             <div class="vitrine-purchase-inner">
-                <h2 id="vitrine-buy-title" class="vitrine-purchase-title">Cette vitrine</h2>
+                <h2 id="vitrine-buy-title" class="vitrine-purchase-title">Ce modèle</h2>
                 <p class="vitrine-purchase-price"><span class="vitrine-price-value">{{vitrine_price_eur}}</span><span class="vitrine-price-currency">€</span> <span class="vitrine-price-vat">HT</span></p>
                 <p class="vitrine-purchase-hint">Paiement en ligne uniquement lorsque le lien Stripe est activé. Sinon, envoyez votre demande&nbsp;: je vous réponds avec la facture ou le lien sécurisé.</p>
                 <div class="vitrine-purchase-cta-stack">
@@ -105,8 +106,14 @@
                     <a class="vitrine-stripe-subtle" href="{{vitrine_stripe_url}}" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-cc-stripe" aria-hidden="true"></i> Payer tout de suite avec Stripe (lien sécurisé)
                     </a>
+                    {% elif vitrine_has_stripe_checkout %}
+                    <button type="button" class="vitrine-stripe-subtle vitrine-stripe-subtle--btn" data-vitrine-stripe-checkout id="vitrineStripeCheckoutBtn">
+                        <span class="vitrine-stripe-btn__label"><i class="fab fa-cc-stripe" aria-hidden="true"></i> Payer avec Stripe</span>
+                        <span class="vitrine-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
+                    </button>
+                    <p class="vitrine-stripe-feedback" hidden role="status" aria-live="polite"></p>
                     {% else %}
-                    <p class="vitrine-stripe-placeholder">Paiement Stripe&nbsp;: lien à configurer dans <code>vitrines.json</code> — en attendant, utilisez «&nbsp;Commander&nbsp;».</p>
+                    <p class="vitrine-stripe-placeholder">Paiement en ligne&nbsp;: configurez Stripe dans le <code>.env</code> du serveur, ou utilisez «&nbsp;Commander&nbsp;».</p>
                     {% endif %}
                 </div>
                 <hr class="vitrine-purchase-sep">
@@ -131,7 +138,7 @@
         </button>
         <header class="vitrine-cta-dialog__head">
             <span class="section-badge vitrine-cta-dialog__badge">Pré-commande</span>
-            <h2 id="vitrineDialogOrderTitle" class="vitrine-cta-dialog__title">Commander cette vitrine</h2>
+            <h2 id="vitrineDialogOrderTitle" class="vitrine-cta-dialog__title">Commander ce modèle</h2>
             <p class="vitrine-cta-dialog__subtitle">Étapes guidées — aucun paiement sur cette page. Vous recevez une confirmation et la suite (facture ou lien Stripe) par email.</p>
         </header>
         <div class="vitrine-cta-dialog__body">
@@ -166,14 +173,14 @@
                                 <p class="vitrine-cta-product__tag">{{vitrine_tagline}}</p>
                             </div>
                         </div>
-                        <p class="contact-step__intro vitrine-cta-intro">Vous validez l’achat de la maquette HTML/CSS listée sur cette fiche. Le paiement en ligne n’est pas déclenché ici&nbsp;: après envoi, je vérifie votre dossier et je vous transmets la facture ou un lien de paiement sécurisé adapté.</p>
+                        <p class="contact-step__intro vitrine-cta-intro">Vous validez l’achat de la maquette listée sur cette fiche (fichiers prêts à héberger). Le paiement en ligne n’est pas déclenché ici&nbsp;: après envoi, je vérifie votre dossier et je vous transmets la facture ou un lien de paiement sécurisé adapté.</p>
                         <div class="contact-step-actions">
                             <button type="button" class="btn btn-primary btn-large" data-vitrine-order-next="1">Continuer</button>
                         </div>
                     </div>
                     <div class="contact-step vitrine-cta-step" data-vitrine-order-step="2" role="group" aria-labelledby="vd-order-s2-title" aria-hidden="true">
                         <h3 id="vd-order-s2-title" class="contact-step__title">Type de projet</h3>
-                        <p class="contact-step__intro">Comme sur l’accueil&nbsp;: indiquez la nature de votre besoin autour du <strong>développement web</strong> et de cette vitrine.</p>
+                        <p class="contact-step__intro">Comme sur l’accueil&nbsp;: indiquez la nature de votre besoin autour du <strong>développement web</strong> et de ce modèle.</p>
                         <p class="contact-substep-hint contact-substep-hint--tight">Un clic pour sélectionner — vous pourrez préciser à l’étape suivante.</p>
                         <div id="vitrineOrderProjectMount" class="contact-type-mount" role="group" aria-label="Type de projet"></div>
                         <div class="contact-step-actions contact-step-actions--split">
@@ -249,7 +256,7 @@
         <header class="vitrine-cta-dialog__head">
             <span class="section-badge vitrine-cta-dialog__badge">Devis &amp; questions</span>
             <h2 id="vitrineDialogQuoteTitle" class="vitrine-cta-dialog__title">Parlons de votre projet</h2>
-            <p class="vitrine-cta-dialog__subtitle">Parcours rapide inspiré du formulaire d’accueil&nbsp;: type de projet, besoin, coordonnées. Contexte&nbsp;: la vitrine <strong>{{vitrine_title}}</strong>.</p>
+            <p class="vitrine-cta-dialog__subtitle">Parcours rapide inspiré du formulaire d’accueil&nbsp;: type de projet, besoin, coordonnées. Contexte&nbsp;: le modèle <strong>{{vitrine_title}}</strong>.</p>
         </header>
         <div class="vitrine-cta-dialog__body">
             <p class="vitrine-modal-feedback" id="vitrineQuoteFeedback" role="status" aria-live="polite" hidden></p>
@@ -271,7 +278,7 @@
                 <div class="vitrine-cta-steps">
                     <div class="contact-step vitrine-cta-step is-active" data-vitrine-quote-step="1" role="group" aria-labelledby="vd-quote-s1-title">
                         <h3 id="vd-quote-s1-title" class="contact-step__title">Type de projet</h3>
-                        <p class="contact-step__intro">Même logique que sur l’accueil — ciblez votre besoin (souvent <strong>développement web</strong> pour une vitrine catalogue).</p>
+                        <p class="contact-step__intro">Même logique que sur l’accueil — ciblez votre besoin (souvent <strong>développement web</strong> pour un site vitrine type catalogue).</p>
                         <div id="vitrineQuoteProjectMount" class="contact-type-mount" role="group" aria-label="Type de projet"></div>
                         <div class="contact-step-actions">
                             <button type="button" class="btn btn-primary btn-large" data-vitrine-quote-next="1">Continuer <i class="fas fa-arrow-right" aria-hidden="true"></i></button>

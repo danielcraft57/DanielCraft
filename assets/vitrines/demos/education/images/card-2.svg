@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Offre B</title>
+  <rect width="800" height="520" fill="#0f2744"/>
+  <rect x="60" y="80" width="680" height="320" rx="12" fill="#fff" opacity=".12" stroke="#e8c547" stroke-width="2"/>
+  <text x="400" y="280" text-anchor="middle" fill="#e8c547" font-size="22">Offre B</text>
+</svg>

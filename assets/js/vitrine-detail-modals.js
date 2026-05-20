@@ -104,6 +104,36 @@
       const on = n === step;
       el.classList.toggle('is-active', on);
       el.setAttribute('aria-hidden', on ? 'false' : 'true');
+      if ('inert' in el) {
+        el.inert = !on;
+      }
+    });
+  }
+
+  /** Parse JSON même si le serveur renvoie du HTML (404, erreur PHP) pour éviter un catch silencieux. */
+  function parseFetchJson(res) {
+    return res.text().then(function (text) {
+      var ct = (res.headers.get('content-type') || '').toLowerCase();
+      var trimmed = (text || '').trim();
+      if (ct.indexOf('application/json') !== -1 || (trimmed && trimmed.charAt(0) === '{')) {
+        try {
+          return { res: res, data: JSON.parse(text) };
+        } catch (e) {
+          return {
+            res: res,
+            data: { success: false, error: trimmed.slice(0, 280) || 'Réponse serveur illisible.' }
+          };
+        }
+      }
+      return {
+        res: res,
+        data: {
+          success: false,
+          error: trimmed
+            ? trimmed.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 280)
+            : 'HTTP ' + res.status
+        }
+      };
     });
   }
 
@@ -190,7 +220,7 @@
     });
     recap.innerHTML =
       '<dl class="vitrine-cta-recap__list">' +
-      '<div><dt>Vitrine</dt><dd>' +
+      '<div><dt>Modèle</dt><dd>' +
       escapeHtml(readVitrineTitle()) +
       '</dd></div>' +
       '<div><dt>Type de projet</dt><dd>' +
@@ -231,8 +261,8 @@
     const title = readVitrineTitle();
     const price = readVitrinePrice();
     return (
-      '--- Pré-commande vitrine (aucun paiement sur le site) ---\n' +
-      'Vitrine : ' +
+      '--- Pré-commande catalogue (aucun paiement sur le site) ---\n' +
+      'Modèle : ' +
       title +
       ' (slug: ' +
       slug +
@@ -302,11 +332,7 @@
 
     const fd = new FormData(orderForm);
     fetch('/api/send-contact.php', { method: 'POST', body: fd })
-      .then(function (res) {
-        return res.json().then(function (data) {
-          return { res: res, data: data };
-        });
-      })
+      .then(parseFetchJson)
       .then(function (_ref) {
         const res = _ref.res;
         const data = _ref.data;
@@ -318,7 +344,9 @@
         } else if (res.ok && data.success) {
           showFeedback(
             orderFeedback,
-            'Demande envoyée. Vous recevrez une confirmation par email sous peu.',
+            data.dry_run
+              ? 'Demande acceptée (mode test sans email sur ce serveur).'
+              : 'Demande envoyée. Vous recevrez une confirmation par email sous peu.',
             false
           );
           orderForm.reset();
@@ -409,8 +437,8 @@
       return x.slug === quoteProjectType.value;
     });
     return (
-      '--- Demande devis / questions — fiche vitrine ---\n' +
-      'Vitrine : ' +
+      '--- Devis / questions — fiche catalogue ---\n' +
+      'Modèle : ' +
       title +
       ' (slug: ' +
       slug +
@@ -454,11 +482,7 @@
     setSubmitLoading(submitBtn, true);
     const fd = new FormData(quoteForm);
     fetch('/api/send-contact.php', { method: 'POST', body: fd })
-      .then(function (res) {
-        return res.json().then(function (data) {
-          return { res: res, data: data };
-        });
-      })
+      .then(parseFetchJson)
       .then(function (_ref2) {
         const res = _ref2.res;
         const data = _ref2.data;
@@ -468,7 +492,13 @@
         ) {
           showFeedback(quoteFeedback, MSG_STATIC, true);
         } else if (res.ok && data.success) {
-          showFeedback(quoteFeedback, 'Message envoyé. Je vous réponds dès que possible.', false);
+          showFeedback(
+            quoteFeedback,
+            data.dry_run
+              ? 'Message accepté (mode test sans email sur ce serveur).'
+              : 'Message envoyé. Je vous réponds dès que possible.',
+            false
+          );
           quoteForm.reset();
           setQuoteStep(1);
           quoteProjectType.value = '';

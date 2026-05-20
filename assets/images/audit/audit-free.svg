@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Audit gratuit par email">
+  <rect width="400" height="280" rx="16" fill="#f4fafd"/>
+  <rect x="40" y="40" width="320" height="200" rx="12" fill="#fff" stroke="#c5e4f3" stroke-width="2"/>
+  <circle cx="90" cy="90" r="24" fill="#4da9d6" opacity="0.2"/>
+  <path d="M78 90 L86 98 L102 82" fill="none" stroke="#0f3550" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="130" y="78" width="180" height="12" rx="6" fill="#d0e8f4"/>
+  <rect x="130" y="100" width="140" height="8" rx="4" fill="#e8f4fa"/>
+  <rect x="60" y="140" width="280" height="70" rx="8" fill="#e8f6fc" stroke="#4da9d6" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <path d="M200 155 L220 175 L260 145" fill="none" stroke="#4da9d6" stroke-width="3" stroke-linecap="round"/>
+  <text x="200" y="210" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#0f3550">Rapport par email</text>
+</svg>

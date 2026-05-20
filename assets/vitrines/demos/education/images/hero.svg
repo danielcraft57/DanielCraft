@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img"><title>Centre de formation</title>
+<rect width="1200" height="520" fill="#e3f2fd"/>
+<g transform="translate(180 50)"><rect x="0" y="100" width="600" height="300" fill="#fff" stroke="#0d47a1" stroke-width="3"/>
+<polygon points="300,20 620,100 0,100" fill="#1565c0"/>
+<rect x="80" y="180" width="120" height="80" fill="#42a5f5" opacity=".5"/>
+<rect x="240" y="180" width="120" height="80" fill="#42a5f5" opacity=".5"/>
+<rect x="400" y="180" width="120" height="80" fill="#42a5f5" opacity=".5"/></g></svg>

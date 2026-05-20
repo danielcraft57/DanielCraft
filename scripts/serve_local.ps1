@@ -68,7 +68,8 @@ Write-Host "  Ctrl+C pour arrêter le serveur."
 Write-Host ""
 
 if ($pyOk) {
-  python -m http.server $Port --directory dist
+  # URLs blog /blog/articles/slug sans .html (comme en prod avec réécriture)
+  python (Join-Path $root "scripts\blog_dev_server.py") $Port --directory dist
 }
 else {
   Write-Warning "Python < 3.7 : serveur lancé depuis le dossier dist/ (sans --directory)."

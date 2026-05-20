@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Yoga Flow</title>
+  <rect width="800" height="520" fill="#0d0d0d"/>
+  <rect x="40" y="40" width="720" height="400" rx="14" fill="#151515" stroke="#a78bfa" stroke-width="2"/>
+  <ellipse cx="400" cy="240" rx="180" ry="100" fill="#a78bfa" opacity=".12"/>
+  <g transform="translate(400 200)">
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#a78bfa" stroke-width="3" opacity=".6"/>
+    <path d="M-30 -20 L30 20 M30 -20 L-30 20" stroke="#a78bfa" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="420" text-anchor="middle" fill="#a78bfa" font-size="20" font-family="system-ui,sans-serif" font-weight="700">Yoga Flow</text>
+</svg>

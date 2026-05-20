@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 100">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#059669"/></marker></defs>
+
+  <rect fill="#f8f9fa" stroke="#059669" stroke-width="2" x="20" y="25" width="110" height="55" rx="8"/>
+  <text x="75" y="53" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Client</text>
+  <text x="75" y="71" text-anchor="middle" font-size="10" fill="#6b7280">utilise</text>
+<line x1="130" y1="52" x2="170" y2="52" stroke="#059669" stroke-width="2" marker-end="url(#arr)"/>
+  <rect fill="#fef2f2" stroke="#059669" stroke-width="2" x="170" y="25" width="120" height="55" rx="8"/>
+  <text x="230" y="53" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Builder</text>
+  <text x="230" y="71" text-anchor="middle" font-size="10" fill="#6b7280">rôle central</text>
+
+</svg>

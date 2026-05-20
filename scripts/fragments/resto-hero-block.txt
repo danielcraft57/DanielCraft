@@ -1,0 +1,5 @@
+    <section id="accueil" class="hero is-medium resto-hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-vcentered is-variable is-8">
+            <motion> NO

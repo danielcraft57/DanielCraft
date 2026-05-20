@@ -88,6 +88,8 @@ $filesToDeploy = @(
     "$DIST_DIR/robots.txt",
     "$DIST_DIR/sitemap.xml",
     "$DIST_DIR/sitemap-pages.xml",
+    "$DIST_DIR/sitemap-vitrines.xml",
+    "$DIST_DIR/blog/sitemap-blog.xml",
     "$DIST_DIR/assets",
     "$DIST_DIR/api",
     "$DIST_DIR/blog",
@@ -113,7 +115,7 @@ if ($missingFiles.Count -gt 0) {
 
 # 3. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[2/4] Creation du repertoire sur le serveur (si necessaire)..." "Yellow"
-$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/projets && mkdir -p $ServerPath/vitrines"
+$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/blog && mkdir -p $ServerPath/projets && mkdir -p $ServerPath/vitrines"
 try {
     ssh "${ServerUser}@${ServerHost}" $createDirCmd
     Write-ColorOutput "Repertoire cree/verifie (dont assets/images/projets et assets/images/hero pour les images)" "Green"
@@ -205,7 +207,7 @@ try {
         "cgu.html",
         "politique-confidentialite.html"
     )
-    $otherFiles = @("robots.txt", "sitemap.xml")
+    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml")
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file
@@ -248,6 +250,18 @@ try {
     if (Test-Path $blogPath) {
         Write-Host "  Transfert: blog/"
         scp -r $blogPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
+    # Sitemap blog (référencé par sitemap.xml ; explicite pour le fallback SCP)
+    $blogSitemapPath = Join-Path $DIST_DIR "blog/sitemap-blog.xml"
+    if (Test-Path $blogSitemapPath) {
+        $remoteBlogSitemap = "$ServerPath/blog/sitemap-blog.xml"
+        if (Should-TransferFile -LocalPath $blogSitemapPath -RemotePath $remoteBlogSitemap) {
+            Write-Host "  Transfert (modifie): blog/sitemap-blog.xml"
+            scp $blogSitemapPath "${ServerUser}@${ServerHost}:${ServerPath}/blog/"
+        } else {
+            Write-Host "  Skip (inchangé): blog/sitemap-blog.xml"
+        }
     }
 
     # Transfert des pages projet (projets/<slug>.html)
@@ -297,6 +311,10 @@ Write-Host $apiCheckResult
 $blogCheckCmd = "test -f $ServerPath/blog/index.html && echo 'OK: blog/index.html present' || echo 'ATTENTION: blog manquant - relancer build.py puis deploy'"
 $blogCheckResult = ssh "${ServerUser}@${ServerHost}" $blogCheckCmd
 Write-Host $blogCheckResult
+
+$blogSitemapCheckCmd = "test -f $ServerPath/blog/sitemap-blog.xml && echo 'OK: blog/sitemap-blog.xml present' || echo 'ATTENTION: blog/sitemap-blog.xml manquant (SEO / index sitemap)'"
+$blogSitemapCheckResult = ssh "${ServerUser}@${ServerHost}" $blogSitemapCheckCmd
+Write-Host $blogSitemapCheckResult
 
 # Verifier que les pages projet sont deployees
 $projetsCheckCmd = 'test -d ' + $ServerPath + '/projets && (n=$(ls -1 ' + $ServerPath + '/projets/*.html 2>/dev/null | wc -l); echo "OK: projets/ deploye ($n pages)") || echo ''ATTENTION: projets/ manquant - relancer build puis deploy'''

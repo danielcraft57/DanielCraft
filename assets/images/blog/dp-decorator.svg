@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/></marker></defs>
+
+  <rect fill="#eff6ff" stroke="#2563eb" stroke-width="2" x="20" y="35" width="80" height="50" rx="8"/>
+  <text x="60" y="63" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Core</text>
+  <text x="60" y="81" text-anchor="middle" font-size="10" fill="#6b7280">Component</text>
+
+  <rect fill="#eff6ff" stroke="#2563eb" stroke-width="2" x="110" y="25" width="90" height="50" rx="8"/>
+  <text x="155" y="53" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Deco A</text>
+  <text x="155" y="71" text-anchor="middle" font-size="10" fill="#6b7280">wrap</text>
+
+  <rect fill="#eff6ff" stroke="#2563eb" stroke-width="2" x="210" y="15" width="90" height="50" rx="8"/>
+  <text x="255" y="43" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Deco B</text>
+  <text x="255" y="61" text-anchor="middle" font-size="10" fill="#6b7280">wrap</text>
+<line x1="100" y1="60" x2="110" y2="50" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/><line x1="200" y1="50" x2="210" y2="40" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

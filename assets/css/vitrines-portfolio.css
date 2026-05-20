@@ -581,6 +581,54 @@
   transform: translateY(-1px);
 }
 
+.vitrine-stripe-subtle--btn {
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.vitrine-stripe-subtle--btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.vitrine-stripe-feedback {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4a5c6a;
+}
+
+.vitrine-stripe-feedback--error {
+  color: #b91c1c;
+}
+
+.vitrine-stripe-feedback--ok {
+  color: #166534;
+}
+
+.vitrine-stripe-return {
+  margin: 0 auto 1rem;
+  max-width: 720px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.vitrine-stripe-return--ok {
+  background: rgba(22, 101, 52, 0.1);
+  color: #166534;
+  border: 1px solid rgba(22, 101, 52, 0.25);
+}
+
+.vitrine-stripe-return--cancel {
+  background: rgba(180, 83, 9, 0.08);
+  color: #92400e;
+  border: 1px solid rgba(180, 83, 9, 0.22);
+}
+
 .label-optional {
   font-weight: 500;
   color: #6b7c8a;
@@ -673,24 +721,61 @@
   margin: 0 0 1rem;
 }
 
-.vitrine-cta-form .contact-step {
-  animation: vitrineCtaFade 0.28s ease;
+/* Étapes : seule l’étape active participe à la hauteur (les autres en absolute = pas de « fantômes » en scroll). */
+.vitrine-cta-form .vitrine-cta-steps {
+  display: block;
+  position: relative;
 }
 
-@keyframes vitrineCtaFade {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
+.vitrine-cta-form .vitrine-cta-steps > .contact-step {
+  grid-area: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.vitrine-cta-form .vitrine-cta-steps > .contact-step.is-active {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+}
+
+@media (max-width: 639px) {
+  .vitrine-cta-dialog {
+    width: min(100vw - 12px, 560px);
+    max-height: min(94vh, 760px);
+    border-radius: 14px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .vitrine-cta-dialog__head {
+    padding: 1.1rem 3rem 0.85rem 1rem;
+  }
+
+  .vitrine-cta-dialog__title {
+    font-size: 1.18rem;
+  }
+
+  .vitrine-cta-dialog__body {
+    padding: 0.65rem 1rem 1rem;
+  }
+
+  .vitrine-cta-form .contact-type-chips {
+    flex-direction: column;
+  }
+
+  .vitrine-cta-form .contact-type-chip {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .vitrine-cta-form .contact-step {
-    animation: none;
+@media (min-width: 640px) and (max-width: 1023px) {
+  .vitrine-cta-dialog {
+    width: min(92vw, 540px);
   }
 }
 
