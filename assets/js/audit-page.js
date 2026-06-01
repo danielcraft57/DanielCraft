@@ -120,7 +120,11 @@
             freeForm.reset();
             return;
           }
-          setFeedback(freeFeedback, (ref.data && ref.data.error) || 'Envoi impossible. Réessayez ou contactez-nous.', true);
+          var errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Réessayez ou contactez-nous.';
+          if (ref.res.status === 429) {
+            errMsg = (ref.data && ref.data.error) || 'Vous avez déjà demandé un audit récemment. Réessayez plus tard.';
+          }
+          setFeedback(freeFeedback, errMsg, true);
         })
         .catch(function () {
           setFeedback(freeFeedback, 'Serveur injoignable. Vérifiez que PHP tourne sur dist/.', true);
@@ -212,22 +216,55 @@
       return;
     }
 
-    var fd = new FormData();
-    fd.set('service', 'audit_paid_complet_ia');
-    fd.set('project_type', 'web');
-    fd.set('site_url', data.site_url || '');
-    fd.set('email', data.email || '');
-    fd.set('name', data.name || 'Client audit IA');
-    fd.set(
-      'message',
-      'Audit complet IA commandé (paiement Stripe validé). Site : ' + (data.site_url || '') + '.'
-    );
+    var sessionId = '';
+    try {
+      sessionId = (params.get('session_id') || '').trim();
+    } catch (e) { /* ignore */ }
 
-    fetch('/api/send-contact.php', { method: 'POST', body: fd }).finally(function () {
-      try {
-        sessionStorage.removeItem(STORAGE_KEY);
-      } catch (e) { /* ignore */ }
-    });
+    fetch('/api/request-paid-audit.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        website: data.site_url || '',
+        email: data.email || '',
+        stripe_session_id: sessionId
+      })
+    })
+      .then(function (res) {
+        return res.json().then(function (body) {
+          return { res: res, body: body };
+        });
+      })
+      .then(function (ref) {
+        var banner = document.getElementById('auditStripeReturn');
+        if (!banner) return;
+        banner.hidden = false;
+        if (ref.res.ok && ref.body && ref.body.success) {
+          banner.textContent =
+            (ref.body.message ||
+              'Merci ! Facture envoyée par email, puis lancement de l’audit complet.') +
+            '';
+          banner.className = 'audit-stripe-return audit-stripe-return--ok';
+        } else {
+          banner.textContent =
+            (ref.body && ref.body.error) ||
+            'Le paiement est enregistré mais la finalisation a échoué. Écrivez-nous à contact@danielcraft.fr avec votre email.';
+          banner.className = 'audit-stripe-return audit-stripe-return--error';
+        }
+      })
+      .catch(function () {
+        var banner = document.getElementById('auditStripeReturn');
+        if (!banner) return;
+        banner.hidden = false;
+        banner.textContent =
+          'Connexion interrompue après le paiement. Rechargez cette page ou contactez-nous : contact@danielcraft.fr';
+        banner.className = 'audit-stripe-return audit-stripe-return--error';
+      })
+      .finally(function () {
+        try {
+          sessionStorage.removeItem(STORAGE_KEY);
+        } catch (e) { /* ignore */ }
+      });
   }
 
   var params = new URLSearchParams(window.location.search);
@@ -237,9 +274,8 @@
   if (stripeParam === 'success') {
     if (returnBanner) {
       returnBanner.hidden = false;
-      returnBanner.textContent =
-        'Merci pour votre commande ! Votre audit premium est en préparation — vous recevrez le rapport par email très prochainement.';
-      returnBanner.classList.add('audit-stripe-return--ok');
+      returnBanner.textContent = 'Paiement reçu — finalisation de votre commande en cours…';
+      returnBanner.className = 'audit-stripe-return audit-stripe-return--pending';
     }
     confirmPaidOrderAfterStripe();
   } else if (stripeParam === 'cancel') {

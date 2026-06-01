@@ -33,6 +33,20 @@ function stripe_load_audits_catalog(): ?array
     return null;
 }
 
+/** Montant Checkout en centimes (min. Stripe EUR : 50 = 0,50 €). */
+function stripe_audit_unit_amount_cents(array $item): int
+{
+    if (isset($item['price_cents']) && is_numeric($item['price_cents'])) {
+        return (int) $item['price_cents'];
+    }
+    $priceEur = $item['price_eur'] ?? 0.94;
+    if (!is_numeric($priceEur)) {
+        return 94;
+    }
+
+    return (int) round((float) $priceEur * 100);
+}
+
 /**
  * @return array<string, mixed>|null
  */
@@ -50,6 +64,46 @@ function stripe_find_audit_item(string $slug): ?array
         return $paid;
     }
     return null;
+}
+
+/**
+ * Paramètres Stripe Checkout enrichis (texte, image, carte + PayPal).
+ *
+ * @return array<string, string|int>
+ */
+function stripe_audit_checkout_session_params(array $item, string $slug, string $siteUrl, string $customerName): array
+{
+    $base = api_site_base();
+    $productName = trim((string) ($item['checkout_product_name'] ?? $item['title'] ?? 'Audit premium site web'));
+    $description = trim((string) ($item['checkout_description'] ?? ''));
+    if ($description === '') {
+        $description = 'Facture par email juste après le paiement, puis audit complet de votre site.';
+    }
+    if ($siteUrl !== '') {
+        $description .= ' Site : ' . mb_substr($siteUrl, 0, 200);
+    }
+
+    $imageUrl = trim((string) ($item['checkout_image_url'] ?? ''));
+    if ($imageUrl === '' || !filter_var($imageUrl, FILTER_VALIDATE_URL)) {
+        $imageUrl = $base . '/assets/icons/favicons/android-icon-192x192.png';
+    }
+
+    $params = [
+        'locale' => 'fr',
+        'payment_method_types[0]' => 'card',
+        'payment_method_types[1]' => 'paypal',
+        'line_items[0][price_data][product_data][name]' => mb_substr($productName, 0, 120),
+        'line_items[0][price_data][product_data][description]' => mb_substr($description, 0, 500),
+        'line_items[0][price_data][product_data][images][0]' => $imageUrl,
+        'custom_text[submit][message]' => 'Vous recevrez d’abord votre facture par email, puis l’audit complet sera lancé.',
+        'custom_text[after_submit][message]' => 'Merci ! Consultez vos emails : facture, puis rapport d’audit sous 48 h.',
+    ];
+
+    if ($customerName !== '') {
+        $params['metadata[customer_name]'] = mb_substr($customerName, 0, 120);
+    }
+
+    return $params;
 }
 
 /**
@@ -71,12 +125,11 @@ function stripe_create_audit_checkout_session(
         return ['ok' => true, 'url' => $staticLink, 'session_id' => '', 'error' => ''];
     }
 
-    $priceEur = (int) ($item['price_eur'] ?? 19);
-    if ($priceEur < 1 || $priceEur > 99999) {
-        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Prix audit invalide.'];
+    $unitAmount = stripe_audit_unit_amount_cents($item);
+    if ($unitAmount < 50 || $unitAmount > 9_999_900) {
+        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Prix audit invalide (minimum Stripe : 0,50 €).'];
     }
 
-    $title = trim((string) ($item['title'] ?? 'Audit complet IA'));
     $base = api_site_base();
     $successUrl = $base . '/audit?stripe=success&session_id={CHECKOUT_SESSION_ID}';
     $cancelUrl = $base . '/audit?stripe=cancel';
@@ -84,25 +137,26 @@ function stripe_create_audit_checkout_session(
     $siteUrl = preg_replace('/[\r\n]+/', '', trim($siteUrl));
     $customerName = preg_replace('/[\r\n]+/', '', trim($customerName));
 
-    $params = [
+    $params = array_merge([
         'mode' => 'payment',
         'success_url' => $successUrl,
         'cancel_url' => $cancelUrl,
         'line_items[0][quantity]' => 1,
         'line_items[0][price_data][currency]' => 'eur',
-        'line_items[0][price_data][unit_amount]' => $priceEur * 100,
-        'line_items[0][price_data][product_data][name]' => $title . ' — DanielCraft',
+        'line_items[0][price_data][unit_amount]' => $unitAmount,
         'metadata[audit_slug]' => $slug,
         'metadata[product_type]' => 'audit_ia',
         'payment_intent_data[metadata][audit_slug]' => $slug,
-    ];
+        'payment_intent_data[description]' => mb_substr(
+            trim((string) ($item['checkout_product_name'] ?? $item['title'] ?? 'Audit premium')),
+            0,
+            200
+        ),
+    ], stripe_audit_checkout_session_params($item, $slug, $siteUrl, $customerName));
 
     if ($siteUrl !== '') {
         $params['metadata[site_url]'] = mb_substr($siteUrl, 0, 450);
         $params['payment_intent_data[metadata][site_url]'] = mb_substr($siteUrl, 0, 450);
-    }
-    if ($customerName !== '') {
-        $params['metadata[customer_name]'] = mb_substr($customerName, 0, 120);
     }
 
     if ($customerEmail !== '' && filter_var($customerEmail, FILTER_VALIDATE_EMAIL)) {

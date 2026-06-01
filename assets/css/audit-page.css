@@ -241,10 +241,25 @@
   color: var(--audit-dark);
 }
 
+.audit-offer-card__vat {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gray-600);
+  margin-left: 0.15rem;
+}
+
 .audit-offer-card__once {
   font-size: 0.9rem;
   color: var(--gray-600);
   font-weight: 500;
+}
+
+.audit-offer-card--premium .audit-offer-card__launch {
+  margin: -0.35rem 0 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--audit-accent, #c2410c);
+  font-weight: 600;
 }
 
 .audit-offer-card__pitch {
@@ -320,6 +335,18 @@
   background: rgba(34, 197, 94, 0.12);
   color: #166534;
   border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.audit-stripe-return--pending {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1e40af;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.audit-stripe-return--error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
 .audit-stripe-return--cancel {

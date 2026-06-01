@@ -32,11 +32,70 @@ SITE_BASE = os.environ.get('SITE_BASE', 'https://example.com')
 OG_IMAGE_BLOG = f'{SITE_BASE}/assets/images/og/blog-1200x630.jpg'
 OG_IMAGE_HOME = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
 BLOG_DIR = Path(__file__).parent
+PROJECT_ROOT = BLOG_DIR.parent
+SRC_DIR = PROJECT_ROOT / 'src'
 CONTENT_DIR = BLOG_DIR / 'content'
 ARTICLES_SRC = CONTENT_DIR / 'articles'
 TUTORIALS_SRC = CONTENT_DIR / 'tutorials'
 COLLECTIONS_SRC = CONTENT_DIR / 'collections'
 TEMPLATES_DIR = BLOG_DIR / 'templates'
+_SITE_LAYOUT_CACHE: Optional[dict] = None
+
+
+def _render_site_include(include_path: str, vars_dict: dict) -> str:
+    """
+    Rend un fragment HTML partagé depuis src/includes/ (même moteur que build.py).
+
+    @param include_path Chemin relatif sous src/ (ex. includes/nav.html)
+    @param vars_dict Variables du template (current_page, blog_enabled, etc.)
+    @returns HTML rendu
+    """
+    sys.path.insert(0, str(PROJECT_ROOT))
+    try:
+        from build import TemplateEngine
+    except ImportError as exc:
+        print(f'[WARN] TemplateEngine indisponible : {exc}')
+        return ''
+
+    engine = TemplateEngine(SRC_DIR)
+    raw = engine.load_include(include_path)
+    raw = engine.process_includes(raw, vars_dict)
+    return engine.replace_variables(raw, vars_dict)
+
+
+def _get_site_layout_html() -> dict:
+    """
+    Nav, footer et modales identiques au site principal (mis en cache par build).
+
+    @returns Dict avec les clés nav, footer, modals
+    """
+    global _SITE_LAYOUT_CACHE
+    if _SITE_LAYOUT_CACHE is not None:
+        return _SITE_LAYOUT_CACHE
+
+    vars_dict = {
+        'current_page': 'blog',
+        'blog_enabled': True,
+        'page_scripts_content': '<script src="/assets/js/main.js" defer></script>',
+    }
+    _SITE_LAYOUT_CACHE = {
+        'nav': _render_site_include('includes/nav.html', vars_dict),
+        'footer': _render_site_include('includes/footer.html', vars_dict),
+        'modals': (
+            _render_site_include('includes/modal-devis.html', vars_dict)
+            + _render_site_include('includes/modal-projet.html', vars_dict)
+        ),
+    }
+    return _SITE_LAYOUT_CACHE
+
+
+def _inject_site_layout(html: str) -> str:
+    """Injecte nav, footer et modales partagés dans un template blog."""
+    layout = _get_site_layout_html()
+    html = html.replace('{{NAV_HTML}}', layout.get('nav', ''))
+    html = html.replace('{{FOOTER_HTML}}', layout.get('footer', ''))
+    html = html.replace('{{MODALS_HTML}}', layout.get('modals', ''))
+    return html
 
 
 def slugify(text: str) -> str:
@@ -274,13 +333,23 @@ def _article_card_html(
 
 
 def _get_article_og_image(article: dict) -> str:
-    """Retourne l'URL de l'image OG pour un article."""
+    """Retourne l'URL absolue de l'image OG pour les metas et le schema.org."""
     og_img = article.get('og_image')
     if og_img and og_img.startswith('http'):
         return og_img
     if og_img:
         return f"{SITE_BASE}/assets/images/og/{og_img}"
     return OG_IMAGE_BLOG
+
+
+def _get_article_hero_image(article: dict, assets_prefix: str) -> str:
+    """Retourne le chemin relatif de l'image hero affichee dans la page article."""
+    og_img = article.get('og_image')
+    if og_img and str(og_img).startswith('http'):
+        return str(og_img)
+    if og_img:
+        return f"{assets_prefix}/images/og/{og_img}"
+    return f"{assets_prefix}/images/og/blog-1200x630.jpg"
 
 
 def _schema_article(article: dict) -> str:
@@ -566,6 +635,7 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     excerpt = _escape_html(article.get('excerpt', ''))
     title = _escape_html(article['title'])
     og_img_url = _get_article_og_image(article)
+    hero_img_url = _get_article_hero_image(article, assets_prefix_article)
 
     prev_next = _prev_next_html(articles, article['slug'])
     recommendations = _recommendations_html(articles, article)
@@ -595,11 +665,14 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     html = html.replace('{{SHARE_TWITTER_URL}}', share_twitter_url)
     html = html.replace('{{SHARE_LINKEDIN_URL}}', share_linkedin_url)
     html = html.replace('{{OG_IMAGE}}', og_img_url)
+    html = html.replace('{{HERO_IMAGE}}', hero_img_url)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_article(article))
     html = html.replace('{{PREV_NEXT}}', prev_next)
     html = html.replace('{{RECOMMENDATIONS}}', recommendations)
     html = html.replace('{{SERIES_HTML}}', series_html)
+
+    html = _inject_site_layout(html)
 
     out_file = output_dir / 'articles' / f"{article['slug']}.html"
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -680,6 +753,8 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{PAGE_URL}}', page_url)
     html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_blog_index(articles))
+
+    html = _inject_site_layout(html)
 
     out_file = output_dir / 'index.html'
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -775,6 +850,8 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_collection(collection, items))
 
+    html = _inject_site_layout(html)
+
     out_file = output_dir / 'series' / f'{slug}.html'
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(html, encoding='utf-8')
@@ -868,6 +945,8 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
         html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
         html = html.replace('{{SCHEMA_JSON_LD}}', '')  # optionnel: on pourrait generer un schema type
 
+        html = _inject_site_layout(html)
+
         out_file = output_dir / 'types' / f'{slug}.html'
         out_file.parent.mkdir(parents=True, exist_ok=True)
         out_file.write_text(html, encoding='utf-8')
@@ -936,6 +1015,9 @@ def save_list_json(articles: list[dict], output_dir: Path) -> None:
 
 def main():
     """Point d'entree."""
+    global _SITE_LAYOUT_CACHE
+    _SITE_LAYOUT_CACHE = None
+
     # Parse --output
     output_arg = 'dist/blog'
     i = 1

@@ -1013,6 +1013,19 @@ def publish_catalog_json_for_api(output_dir: Path) -> None:
     print('[OK] Catalogue vitrines copie vers data/ et api/data/')
 
 
+def format_audit_price_eur_display(value) -> str:
+    """Affichage FR du prix audit TTC (ex. 0,94)."""
+    try:
+        n = float(value) if value is not None else 0.94
+    except (TypeError, ValueError):
+        n = 0.94
+    if n <= 0:
+        n = 0.94
+    if abs(n - round(n)) < 0.001:
+        return str(int(round(n)))
+    return f'{n:.2f}'.replace('.', ',')
+
+
 def load_audits_config() -> Dict:
     """Charge src/data/audits.json (offres audit payant)."""
     if not AUDITS_JSON.is_file():
@@ -1624,7 +1637,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         paid = audit_cfg.get('paid_audit') if isinstance(audit_cfg.get('paid_audit'), dict) else {}
         vars_dict['stripe_publishable_key'] = _stripe_publishable_key()
         vars_dict['audit_paid_slug'] = str(paid.get('slug') or 'audit-complet-ia')
-        vars_dict['audit_paid_price_eur'] = int(paid.get('price_eur') or 19)
+        vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 0.94))
 
     # Normalise canonical/OG a partir de SITE_BASE
     _normalize_page_meta(vars_dict, page_name)
