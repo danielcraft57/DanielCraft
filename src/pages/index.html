@@ -38,8 +38,8 @@
                             <span>Parler de votre projet</span>
                             <i class="fas fa-calendar-check"></i>
                         </a>
-                        <a href="#portfolio" class="btn btn-secondary btn-large">
-                            <span>Voir le portfolio</span>
+                        <a href="#vitrines" class="btn btn-secondary btn-large">
+                            <span>Découvrir les modèles</span>
                             <i class="fas fa-rocket"></i>
                         </a>
                     </div>
@@ -91,8 +91,10 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    {% include "includes/vitrines-catalog-embed.html" %}
+
+    <!-- Portfolio Section (grille legacy masquée — fiches code sur /projets) -->
+    <section id="portfolio" class="portfolio portfolio--legacy-hidden" aria-label="Portfolio projets code (masqué)">
         <div class="container">
             <div class="section-header scroll-reveal">
                 <span class="section-badge">Portfolio</span>
@@ -136,7 +138,7 @@
                     </div>
                     <h3 class="service-title">Site Vitrine</h3>
                     <p class="service-description">
-                        Votre vitrine en ligne : site professionnel, responsive, qui porte l'identité de votre commerce ou de votre artisanat. 
+                        Votre site vitrine en ligne : site professionnel, responsive, qui porte l'identité de votre commerce ou de votre artisanat. 
                         Idéal pour être trouvé et rassurer vos clients.
                     </p>
                     <ul class="service-features">

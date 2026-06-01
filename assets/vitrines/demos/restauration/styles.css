@@ -1,0 +1,23 @@
+:root {
+  --resto-gold: #e8c547;
+  --resto-wine: #722f37;
+  --resto-cream: #fff8f0;
+}
+
+.resto-hero {
+  background:
+    linear-gradient(125deg, rgba(92, 31, 31, 0.95) 0%, rgba(61, 20, 20, 0.92) 55%, rgba(38, 16, 16, 0.98) 100%),
+    radial-gradient(500px 280px at 75% 15%, rgba(232, 197, 71, 0.12), transparent 55%);
+}
+
+.resto-hero .title {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.has-text-resto-gold {
+  color: var(--resto-gold) !important;
+}
+
+.section.is-resto-cream {
+  background-color: var(--resto-cream) !important;
+}

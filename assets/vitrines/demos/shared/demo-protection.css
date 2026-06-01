@@ -1,0 +1,60 @@
+/**
+ * Bandeau + filigrane leger pour les pages de demonstration vitrine (build).
+ * Ne remplace pas une licence / CGV : dissuasion visuelle et signalement.
+ */
+html.dc-demo-page {
+  padding-bottom: 3.25rem;
+}
+
+#dc-demo-strip {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2147483000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  padding: 0.55rem 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: #e8f4fc;
+  background: linear-gradient(90deg, #0f3550, #184c70 45%, #2f78a6);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -6px 24px rgba(15, 53, 80, 0.35);
+}
+
+#dc-demo-strip a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#dc-demo-strip a:hover {
+  text-decoration: none;
+}
+
+#dc-demo-strip .dc-demo-strip-muted {
+  opacity: 0.88;
+  max-width: 42rem;
+  text-align: center;
+}
+
+html.dc-demo-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147482000;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -18deg,
+    transparent,
+    transparent 120px,
+    rgba(47, 120, 166, 0.03) 120px,
+    rgba(47, 120, 166, 0.03) 121px
+  );
+}

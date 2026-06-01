@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
+  <title id="t">Cabinet dentaire — salle de soins</title>
+  <defs>
+    <linearGradient id="clin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8f4fc"/><stop offset="100%" stop-color="#d0e8f5"/></linearGradient>
+  </defs>
+  <rect width="1200" height="520" fill="url(#clin)"/>
+  <g transform="translate(200 70)">
+    <rect x="0" y="100" width="800" height="260" rx="12" fill="#fff" stroke="#0d7ea8" stroke-width="2"/>
+    <rect x="80" y="180" width="200" height="120" rx="8" fill="#b8e0f0" stroke="#0d7ea8" stroke-width="2"/>
+    <circle cx="500" cy="220" r="60" fill="#0d7ea8" opacity=".15"/>
+    <path d="M300 160 L380 160 L360 280 L320 280 Z" fill="#0d7ea8" opacity=".25"/>
+    <ellipse cx="650" cy="200" rx="80" ry="40" fill="#fff" stroke="#0d7ea8" stroke-width="2"/>
+    <path d="M40 380 Q400 340 760 380" fill="none" stroke="#0d7ea8" stroke-width="3" class="vitrine-sketch-stroke" opacity=".5"/>
+  </g>
+  <text x="600" y="480" text-anchor="middle" font-size="13" fill="#0d7ea8" opacity=".5">MOSAÏQUE · SOINS &amp; PRÉVENTION</text>
+</svg>

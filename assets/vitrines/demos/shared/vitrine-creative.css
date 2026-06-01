@@ -1,0 +1,292 @@
+/**
+ * Effets créatifs légers (scroll, halo, textures) — complète AOS / Hover / etc.
+ * Respecter prefers-reduced-motion (voir vitrine-creative.js + media ici).
+ */
+
+:root {
+  --vitrine-read: 0;
+  --vg-x: 50%;
+  --vg-y: 42%;
+}
+
+/* ——— Lecture de page (gradient) ——— */
+.vitrine-read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10001;
+  pointer-events: none;
+  background: linear-gradient(90deg, #ff3860, #ffdd57, #23d160, #3273dc);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--vitrine-read, 0));
+  transition: transform 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-read-progress {
+    transition: none;
+  }
+}
+
+/* ——— Halo « projecteur » suivi souris (hero) ——— */
+.vitrine-hero-glowspot {
+  position: relative;
+  overflow: hidden;
+}
+
+.vitrine-hero-glowspot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 48% at var(--vg-x, 50%) var(--vg-y, 42%),
+    rgba(255, 209, 102, 0.28) 0%,
+    transparent 70%
+  );
+  opacity: 0.9;
+}
+
+.vitrine-hero-glowspot > .hero-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* ——— Lignes d’atelier (scan léger, industrie) ——— */
+.vitrine-hero-scans::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 4px,
+    rgba(0, 0, 0, 0.11) 4px,
+    rgba(0, 0, 0, 0.11) 5px
+  );
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-hero-scans::after {
+    opacity: 0;
+  }
+}
+
+/* ——— Titre reflet métal (services, fond sombre) ——— */
+.vitrine-shimmer-text.is-srv-shimmer {
+  display: inline-block;
+  background-image: linear-gradient(
+    105deg,
+    #f5fffe 0%,
+    #9ef0e0 35%,
+    #ffffff 48%,
+    #7dd3fc 58%,
+    #f5fffe 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(255, 255, 255, 0.2);
+  animation: vitrine-srv-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes vitrine-srv-shimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-shimmer-text.is-srv-shimmer {
+    animation: none;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: #fff;
+  }
+}
+
+/* ——— Cartes qui « décollent » (perspective) ——— */
+.vitrine-tilt-card {
+  transition:
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.vitrine-tilt-card:hover {
+  transform: translateY(-8px) perspective(900px) rotateX(3deg);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-tilt-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ——— CTA association : aurora conique lente ——— */
+.vitrine-cta-aurora {
+  position: relative;
+  overflow: hidden;
+}
+
+.vitrine-cta-aurora::before {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  left: -30%;
+  top: -30%;
+  z-index: 0;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 221, 87, 0.18),
+    rgba(72, 199, 142, 0.2),
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 221, 87, 0.15),
+    rgba(72, 199, 142, 0.18),
+    rgba(255, 255, 255, 0.12)
+  );
+  animation: vitrine-aurora-rotate 18s linear infinite;
+  opacity: 0.55;
+}
+
+@keyframes vitrine-aurora-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.vitrine-cta-aurora > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-cta-aurora::before {
+    animation: none;
+    opacity: 0.25;
+  }
+}
+
+/* ——— Tableau compta : apparition type « grand livre » ——— */
+@keyframes vitrine-row-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vitrine-ledger-stagger tbody tr {
+  opacity: 0;
+  animation: vitrine-row-in 0.5s ease forwards;
+}
+
+.vitrine-ledger-stagger tbody tr:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(3) {
+  animation-delay: 0.19s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(4) {
+  animation-delay: 0.26s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(5) {
+  animation-delay: 0.33s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(6) {
+  animation-delay: 0.4s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(7) {
+  animation-delay: 0.47s;
+}
+.vitrine-ledger-stagger tbody tr:nth-child(8) {
+  animation-delay: 0.54s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-ledger-stagger tbody tr {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* ——— Hôtel : constellation CSS (sans image) ——— */
+.vitrine-hero-stars {
+  position: relative;
+  overflow: hidden;
+}
+
+.vitrine-hero-stars::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 18%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 22% 42%, rgba(255, 221, 120, 0.9), transparent),
+    radial-gradient(1.2px 1.2px at 38% 12%, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 55% 55%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1.5px 1.5px at 72% 28%, rgba(255, 209, 102, 0.95), transparent),
+    radial-gradient(1px 1px at 88% 70%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 15% 78%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1.2px 1.2px at 92% 38%, rgba(255, 255, 255, 0.8), transparent);
+  animation: vitrine-stars-twinkle 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes vitrine-stars-twinkle {
+  0% {
+    opacity: 0.45;
+    filter: brightness(0.95);
+  }
+  100% {
+    opacity: 0.95;
+    filter: brightness(1.15);
+  }
+}
+
+.vitrine-hero-stars > .hero-body {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-hero-stars::before {
+    animation: none;
+    opacity: 0.55;
+  }
+}
+
+/* ——— Boutons magnétiques (léger) ——— */
+.vitrine-magnetic-wrap .button {
+  transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-magnetic-wrap .button {
+    transition: none;
+  }
+}

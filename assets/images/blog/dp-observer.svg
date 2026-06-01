@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#d97706"/></marker></defs>
+
+  <rect fill="#fff7ed" stroke="#d97706" stroke-width="2" x="150" y="10" width="100" height="50" rx="8"/>
+  <text x="200" y="38" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Subject</text>
+  <text x="200" y="56" text-anchor="middle" font-size="10" fill="#6b7280">notify()</text>
+
+  <rect fill="#f8f9fa" stroke="#d97706" stroke-width="2" x="20" y="70" width="90" height="40" rx="8"/>
+  <text x="65" y="98" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Obs A</text>
+  <text x="65" y="116" text-anchor="middle" font-size="10" fill="#6b7280">update</text>
+
+  <rect fill="#f8f9fa" stroke="#d97706" stroke-width="2" x="130" y="70" width="90" height="40" rx="8"/>
+  <text x="175" y="98" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Obs B</text>
+  <text x="175" y="116" text-anchor="middle" font-size="10" fill="#6b7280">update</text>
+
+  <rect fill="#f8f9fa" stroke="#d97706" stroke-width="2" x="240" y="70" width="90" height="40" rx="8"/>
+  <text x="285" y="98" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">Obs C</text>
+  <text x="285" y="116" text-anchor="middle" font-size="10" fill="#6b7280">update</text>
+<line x1="200" y1="60" x2="65" y2="70" stroke="#d97706" stroke-width="2" marker-end="url(#arr)"/><line x1="200" y1="60" x2="175" y2="70" stroke="#d97706" stroke-width="2" marker-end="url(#arr)"/><line x1="200" y1="60" x2="285" y2="70" stroke="#d97706" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

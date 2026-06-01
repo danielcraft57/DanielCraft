@@ -1,0 +1,77 @@
+/**
+ * Figures & animations visuelles — compatible tous frameworks vitrines.
+ * Complète vitrine-images.css (reveal, Ken Burns, motion, sketch).
+ */
+
+.vitrine-figure {
+  margin: 0 0 1rem;
+  position: relative;
+}
+
+.vitrine-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.vitrine-figure--rounded img {
+  border-radius: 12px;
+}
+
+.vitrine-hero-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.vitrine-hero-visual img {
+  width: 100%;
+  max-height: min(52vh, 520px);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Parallax léger au scroll (hero) */
+.vitrine-hero-visual--parallax img {
+  transform: scale(1.05);
+  transition: transform 0.1s linear;
+}
+
+.vitrine-card-visual {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #e8e4dc;
+}
+
+.vitrine-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Masonry / tuiles photo */
+.photo-tile .vitrine-figure,
+.photo-tile figure {
+  margin: 0;
+  height: 100%;
+}
+
+.photo-tile .vitrine-figure img,
+.photo-tile figure img {
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Bootstrap cards */
+.immo-card .vitrine-card-visual {
+  border-radius: 0;
+}
+
+/* DaisyUI / Tailwind */
+.fit-visual-card img {
+  border-radius: var(--rounded-box, 0.5rem);
+}

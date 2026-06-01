@@ -1,0 +1,173 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+/**
+ * Base vitrines DanielCraft — Bulma (CDN) + cadres lisibles, type « vitrine ».
+ * Réf. frameworks alternatifs : https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/
+ */
+/* Icônes + libellés (nav, boutons) */
+.navbar .icon-text,
+.button .icon-text {
+  gap: 0.4rem;
+}
+
+.vitrine-fa-accent {
+  color: rgba(72, 95, 199, 0.95);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 10000;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+  white-space: normal;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  background: #363636;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Sections aérées, cadres bien visibles */
+.section.is-vitrine {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .section.is-vitrine {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+.box.is-vitrine {
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 2rem 1.75rem;
+  min-height: 11rem;
+}
+
+.section.is-vitrine .title:not(.is-spaced) + .subtitle {
+  margin-top: -0.75rem;
+}
+
+/* Ancres : éviter le recouvrement par la navbar Bulma */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+.vitrine-figure {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Visuels : cadre lisible sans monopoliser l’écran (lightbox conserve le détail) */
+.vitrine-figure a.glightbox {
+  display: block;
+}
+
+.vitrine-figure img {
+  display: block;
+  width: 100%;
+  max-height: min(48vh, 500px);
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1);
+}
+
+.vitrine-figure:hover img {
+  transform: scale(1.03);
+}
+
+.hero .vitrine-figure img,
+.vitrine-hero-animate .vitrine-figure img {
+  max-height: min(40vh, 400px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-figure img {
+    transition: none;
+  }
+
+  .vitrine-figure:hover img {
+    transform: none;
+  }
+}
+
+.table-container.is-vitrine {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #dbdbdb;
+}
+
+/* Bandeau CTA pleine largeur */
+.vitrine-cta-banner {
+  padding: 2.5rem 1.5rem;
+  border-radius: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .vitrine-cta-banner {
+    padding: 3rem 2rem;
+  }
+}
+
+.vitrine-cta-banner .buttons .button {
+  min-width: 12rem;
+}
+
+/* Formulaires démo (pas de backend) */
+.vitrine-form-panel .field {
+  margin-bottom: 1.25rem;
+}
+
+.vitrine-form-panel .label {
+  font-weight: 600;
+}
+
+/* Bloc décoratif type « dessin » vectoriel léger */
+.vitrine-svg-deco {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.85;
+}
+
+/* Tuiles Bulma : un peu plus d’air */
+.tile.is-vitrine-child .box {
+  height: 100%;
+  min-height: 10rem;
+}
+
+/* Pied de page multi-colonnes sur grand écran */
+.footer.is-vitrine-footer .columns {
+  text-align: left;
+}

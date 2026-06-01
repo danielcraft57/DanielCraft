@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
+  <title id="t">Rivière &amp; Partenaires — cabinet Metz</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#1e293b"/></linearGradient>
+  </defs>
+  <rect width="1200" height="520" fill="url(#bg)"/>
+  <g fill="#1e293b" stroke="#334155" stroke-width="2">
+    <rect x="160" y="100" width="36" height="360"/><rect x="1004" y="100" width="36" height="360"/>
+    <rect x="196" y="100" width="808" height="24" fill="#0f172a" stroke="none"/>
+  </g>
+  <g transform="translate(600 180)">
+    <line x1="0" y1="0" x2="0" y2="220" stroke="#c9a227" stroke-width="7"/>
+    <line x1="-200" y1="50" x2="200" y2="50" stroke="#c9a227" stroke-width="5"/>
+    <path d="M-200 50 L-250 150 L-150 150 Z" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <path d="M200 50 L150 150 L250 150 Z" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <circle cx="0" cy="0" r="26" fill="#c9a227"/>
+  </g>
+  <rect x="280" y="320" width="640" height="80" rx="4" fill="#1e293b" stroke="#c9a227" stroke-width="1" opacity=".6"/>
+  <g class="vitrine-sketch-stroke" fill="none" stroke="#c9a227" stroke-width="2" opacity=".45">
+    <path d="M80 80 Q280 40 480 90"/><path d="M720 85 Q920 45 1120 95"/>
+  </g>
+  <text x="600" y="480" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#c9a227" opacity=".5">RIVIÈRE &amp; PARTENAIRES · BARREAU DE METZ</text>
+</svg>

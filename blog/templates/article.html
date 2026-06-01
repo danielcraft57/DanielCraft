@@ -50,63 +50,18 @@
 {{SCHEMA_JSON_LD}}
 </head>
 <body>
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="{{ROOT}}/" class="logo-link" aria-label="Retour à l'accueil">
-                    <div class="logo-icon" aria-hidden="true">
-                        <span class="logo-text">DC</span>
-                    </div>
-                    <span class="logo-name">DanielCraft</span>
-                </a>
-            </div>
-            
-            <div class="nav-menu" id="navMenu" role="menubar">
-                <a href="{{ROOT}}/#home" class="nav-link" role="menuitem">Accueil</a>
-                <a href="{{ROOT}}/#services" class="nav-link" role="menuitem">Services</a>
-                <a href="{{ROOT}}/#portfolio" class="nav-link" role="menuitem">Portfolio</a>
-                <a href="{{ROOT}}/#about" class="nav-link" role="menuitem">À Propos</a>
-                <a href="{{ROOT}}/#contact" class="nav-link" role="menuitem">Contact</a>
-                
-                <!-- Menu déroulant "Plus" pour regrouper les pages secondaires -->
-                <div class="nav-dropdown">
-                    <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="moreMenu">
-                        Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
-                        <li><a href="{{ROOT}}/autres-prestations" class="nav-dropdown-link" role="menuitem">Autres prestations</a></li>
-                        <li><a href="{{ROOT}}/processus" class="nav-dropdown-link" role="menuitem">Processus</a></li>
-                        <li><a href="{{ROOT}}/metz" class="nav-dropdown-link" role="menuitem">Metz</a></li>
-                        <li><a href="{{ROOT}}/projets" class="nav-dropdown-link" role="menuitem">Projets</a></li>
-                        <li><a href="{{ROOT}}/statistiques" class="nav-dropdown-link" role="menuitem">Statistiques</a></li>
-                        <li><a href="{{ROOT}}/blog/" class="nav-dropdown-link active" role="menuitem">Blog</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="nav-actions">
-                <a href="{{ROOT}}/#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Parler de votre projet — accéder au formulaire de contact">
-                    <span>Parler de votre projet</span>
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-                <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
-                    <span class="hamburger-line" aria-hidden="true"></span>
-                    <span class="hamburger-line" aria-hidden="true"></span>
-                    <span class="hamburger-line" aria-hidden="true"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
+{{NAV_HTML}}
 
     <main id="main-content" class="blog-article-section">
         <article class="blog-article" itemscope itemtype="https://schema.org/Article">
             <header class="blog-article-header">
                 <nav aria-label="Fil d'Ariane">
-                    <a href="{{ROOT}}/blog/" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
+                    <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
                 </nav>
                 <h1 itemprop="headline">{{TITLE}}</h1>
                 <figure class="blog-article-hero" aria-hidden="true">
-                    <img src="{{OG_IMAGE}}" alt="{{TITLE}}" class="blog-article-hero-image" loading="eager">
+                    <img src="{{HERO_IMAGE}}" alt="{{TITLE}}" class="blog-article-hero-image" loading="eager">
                 </figure>
             </header>
             <div class="blog-article-layout">
@@ -157,17 +112,7 @@
       })();
     </script>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2025 Loïc DANIEL - Développeur Full-Stack TypeScript</p>
-                <div class="footer-legal-links">
-                    <a href="{{ROOT}}/mentions-legales">Mentions légales</a>
-                    <span class="separator">•</span>
-                    <a href="{{ROOT}}/politique-confidentialite">Confidentialité</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+{{MODALS_HTML}}
+{{FOOTER_HTML}}
 </body>
 </html>

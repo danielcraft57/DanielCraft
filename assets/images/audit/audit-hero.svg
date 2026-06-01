@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8f6fc"/>
+      <stop offset="100%" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="rise" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4da9d6"/>
+      <stop offset="100%" stop-color="#0f3550"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#sky)"/>
+  <path d="M80 320 L200 260 L320 280 L440 200 L560 220 L680 140 L720 160" fill="none" stroke="url(#rise)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="680" cy="140" r="10" fill="#4da9d6"/>
+  <rect x="120" y="120" width="200" height="140" rx="14" fill="#fff" stroke="#c5e4f3" stroke-width="2"/>
+  <rect x="145" y="145" width="90" height="10" rx="5" fill="#4da9d6" opacity="0.5"/>
+  <rect x="145" y="165" width="150" height="8" rx="4" fill="#e8f4fa"/>
+  <rect x="145" y="180" width="130" height="8" rx="4" fill="#e8f4fa"/>
+  <circle cx="280" cy="220" r="22" fill="#e8f6fc" stroke="#4da9d6" stroke-width="2"/>
+  <path d="M272 220 L278 226 L290 212" fill="none" stroke="#0f3550" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f3550">Plus de visibilité · Plus de contacts</text>
+</svg>

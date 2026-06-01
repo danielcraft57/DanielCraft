@@ -1,0 +1,29 @@
+:root {
+  --tech-accent: #64b5f6;
+  --tech-accent-2: #7c4dff;
+  --tech-surface: #121a24;
+  --tech-card-border: rgba(100, 181, 246, 0.22);
+}
+
+.tech-hero {
+  background:
+    linear-gradient(118deg, rgba(15, 52, 96, 0.92) 0%, rgba(22, 33, 62, 0.88) 48%, rgba(26, 26, 46, 0.95) 100%),
+    radial-gradient(800px 400px at 80% 20%, rgba(124, 77, 255, 0.18), transparent 55%);
+}
+
+.tech-hero .title {
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.box.is-tech-accent {
+  border: 1px solid var(--tech-card-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.has-text-tech-accent {
+  color: var(--tech-accent) !important;
+}
+
+.footer-tech a:hover {
+  color: var(--tech-accent) !important;
+}

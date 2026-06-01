@@ -1,0 +1,32 @@
+{
+  "id": "design-patterns-serie",
+  "title": "Série Design Patterns — du plus populaire au moins (GoF pour juniors)",
+  "description": "Les 23 design patterns du Gang of Four expliqués clairement pour développeurs juniors : ordre par popularité, schémas, exemples TypeScript et Python, exercices et pièges à éviter.",
+  "slug": "design-patterns-serie",
+  "articles": [
+    "design-patterns-introduction-gang-of-four",
+    "design-patterns-singleton",
+    "design-patterns-factory-method",
+    "design-patterns-observer",
+    "design-patterns-strategy",
+    "design-patterns-decorator",
+    "design-patterns-adapter",
+    "design-patterns-facade",
+    "design-patterns-command",
+    "design-patterns-template-method",
+    "design-patterns-builder",
+    "design-patterns-iterator",
+    "design-patterns-state",
+    "design-patterns-proxy",
+    "design-patterns-abstract-factory",
+    "design-patterns-composite",
+    "design-patterns-bridge",
+    "design-patterns-prototype",
+    "design-patterns-flyweight",
+    "design-patterns-chain-of-responsibility",
+    "design-patterns-mediator",
+    "design-patterns-memento",
+    "design-patterns-visitor",
+    "design-patterns-interpreter"
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img"><title>Mode</title>
+  <rect width="640" height="480" fill="#2a2622"/>
+  <rect x="30" y="40" width="580" height="360" fill="#1a1816" stroke="#c9a227" stroke-width="1"/>
+  <rect x="70" y="80" width="500" height="280" fill="#3d3830" opacity=".85"/>
+  <path d="M100 360 Q320 300 540 360" fill="none" stroke="#c9a227" stroke-width="2" class="vitrine-sketch-stroke"/>
+  <text x="320" y="440" text-anchor="middle" fill="#c9a227" font-size="14" font-family="Georgia,serif">Mode</text>
+</svg>

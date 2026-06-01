@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
+  <title id="t">Usine — ligne d'usinage</title>
+  <defs>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#2d2d2d"/></linearGradient>
+  </defs>
+  <rect width="1200" height="520" fill="url(#dark)"/>
+  <g transform="translate(150 80)">
+    <rect x="0" y="140" width="900" height="180" fill="#333" stroke="#ffb300" stroke-width="2"/>
+    <rect x="80" y="80" width="160" height="100" fill="#444" stroke="#ffb300" stroke-width="2"/>
+    <circle cx="400" cy="230" r="50" fill="none" stroke="#ffb300" stroke-width="4"/>
+    <rect x="520" y="160" width="280" height="100" fill="#3a3a3a" stroke="#ff8f00" stroke-width="2"/>
+    <path d="M0 360 H900" stroke="#ffb300" stroke-width="4" class="vitrine-sketch-stroke"/>
+    <g fill="#ffb300" opacity=".7"><rect x="200" y="200" width="40" height="60"/><rect x="600" y="190" width="30" height="70"/></g>
+  </g>
+  <g fill="none" stroke="#ff8f00" stroke-width="2" opacity=".4" class="vitrine-sketch-stroke"><path d="M100 100 L300 60 L500 120"/></g>
+</svg>

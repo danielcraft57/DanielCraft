@@ -1,0 +1,22 @@
+.industrie-body {
+  background-color: #121212;
+  color: #e8e8e8;
+}
+
+.industrie-hero {
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.92) 0%, #1a1a1a 100%),
+    url("images/hero.png") center / cover no-repeat !important;
+}
+
+.navbar.is-dark .navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.industrie-body .table thead th {
+  color: #dbdbdb;
+  border-color: #4a4a4a;
+}
+
+.industrie-body .table td {
+  border-color: #4a4a4a;
+}

@@ -32,11 +32,70 @@ SITE_BASE = os.environ.get('SITE_BASE', 'https://example.com')
 OG_IMAGE_BLOG = f'{SITE_BASE}/assets/images/og/blog-1200x630.jpg'
 OG_IMAGE_HOME = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
 BLOG_DIR = Path(__file__).parent
+PROJECT_ROOT = BLOG_DIR.parent
+SRC_DIR = PROJECT_ROOT / 'src'
 CONTENT_DIR = BLOG_DIR / 'content'
 ARTICLES_SRC = CONTENT_DIR / 'articles'
 TUTORIALS_SRC = CONTENT_DIR / 'tutorials'
 COLLECTIONS_SRC = CONTENT_DIR / 'collections'
 TEMPLATES_DIR = BLOG_DIR / 'templates'
+_SITE_LAYOUT_CACHE: Optional[dict] = None
+
+
+def _render_site_include(include_path: str, vars_dict: dict) -> str:
+    """
+    Rend un fragment HTML partagé depuis src/includes/ (même moteur que build.py).
+
+    @param include_path Chemin relatif sous src/ (ex. includes/nav.html)
+    @param vars_dict Variables du template (current_page, blog_enabled, etc.)
+    @returns HTML rendu
+    """
+    sys.path.insert(0, str(PROJECT_ROOT))
+    try:
+        from build import TemplateEngine
+    except ImportError as exc:
+        print(f'[WARN] TemplateEngine indisponible : {exc}')
+        return ''
+
+    engine = TemplateEngine(SRC_DIR)
+    raw = engine.load_include(include_path)
+    raw = engine.process_includes(raw, vars_dict)
+    return engine.replace_variables(raw, vars_dict)
+
+
+def _get_site_layout_html() -> dict:
+    """
+    Nav, footer et modales identiques au site principal (mis en cache par build).
+
+    @returns Dict avec les clés nav, footer, modals
+    """
+    global _SITE_LAYOUT_CACHE
+    if _SITE_LAYOUT_CACHE is not None:
+        return _SITE_LAYOUT_CACHE
+
+    vars_dict = {
+        'current_page': 'blog',
+        'blog_enabled': True,
+        'page_scripts_content': '<script src="/assets/js/main.js" defer></script>',
+    }
+    _SITE_LAYOUT_CACHE = {
+        'nav': _render_site_include('includes/nav.html', vars_dict),
+        'footer': _render_site_include('includes/footer.html', vars_dict),
+        'modals': (
+            _render_site_include('includes/modal-devis.html', vars_dict)
+            + _render_site_include('includes/modal-projet.html', vars_dict)
+        ),
+    }
+    return _SITE_LAYOUT_CACHE
+
+
+def _inject_site_layout(html: str) -> str:
+    """Injecte nav, footer et modales partagés dans un template blog."""
+    layout = _get_site_layout_html()
+    html = html.replace('{{NAV_HTML}}', layout.get('nav', ''))
+    html = html.replace('{{FOOTER_HTML}}', layout.get('footer', ''))
+    html = html.replace('{{MODALS_HTML}}', layout.get('modals', ''))
+    return html
 
 
 def slugify(text: str) -> str:
@@ -158,14 +217,139 @@ def _escape_html(s: str) -> str:
     return (s or '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
 
 
+def _article_href(slug: str, prefix: str = '') -> str:
+    """Lien fichier article (.html) pour hebergement statique et preview locale."""
+    return f"{prefix}{slug}.html"
+
+
+def _series_href(slug: str, prefix: str = '') -> str:
+    return f"{prefix}{slug}.html"
+
+
+def _article_thumb_src(article: dict, assets_prefix: str = '../') -> str:
+    """Image de couverture d'un article (depuis blog/index.html)."""
+    og = article.get('og_image')
+    if og and str(og).startswith('http'):
+        return str(og)
+    if og:
+        return f"{assets_prefix}assets/images/og/{og}"
+    return f"{assets_prefix}assets/images/og/blog-1200x630.jpg"
+
+
+def _collection_cover_src(collection: dict, articles: list[dict]) -> str:
+    """Chemin relatif depuis blog/index.html vers l'image de couverture d'une serie."""
+    cid = collection.get('id') or collection.get('slug') or ''
+    cover = collection.get('cover_image')
+    if cover:
+        if str(cover).startswith('http'):
+            return str(cover)
+        if str(cover).startswith('blog/'):
+            return f"../assets/images/{cover}"
+        return f"../assets/images/og/{cover}"
+    for slug in collection.get('articles', []):
+        for article in articles:
+            if article.get('slug') == slug and article.get('og_image'):
+                return f"../assets/images/og/{article['og_image']}"
+    return '../assets/images/og/blog-1200x630.jpg'
+
+
+def _series_featured_html(collections: list[dict], articles: list[dict]) -> str:
+    """Bloc series mises en avant sur l'index du blog (cartes avec image)."""
+    if not collections:
+        return ''
+
+    def sort_key(coll: dict) -> tuple:
+        cid = coll.get('id') or coll.get('slug') or ''
+        if 'design-patterns' in cid:
+            return (0, coll.get('title', ''))
+        return (1, coll.get('title', ''))
+
+    lines = [
+        '<section class="blog-series-featured blog-reveal" aria-label="Séries du blog">',
+        '<h2 class="blog-section-title">Séries à suivre</h2>',
+        '<p class="blog-series-intro">Parcours thématiques : images, schémas et articles à lire dans l’ordre.</p>',
+        '<div class="blog-series-grid">',
+    ]
+    for i, coll in enumerate(sorted(collections, key=sort_key)):
+        slug = coll.get('slug') or coll.get('id') or ''
+        if not slug:
+            continue
+        title = _escape_html(coll.get('title', slug))
+        desc_raw = coll.get('description') or ''
+        desc = _escape_html(desc_raw[:180] + ('…' if len(desc_raw) > 180 else ''))
+        n = len(coll.get('articles') or [])
+        img = _escape_html(_collection_cover_src(coll, articles))
+        article_word = 'articles' if n != 1 else 'article'
+        lines.append(
+            f'<a href="{_series_href(slug, "series/")}" class="series-card blog-card-animated blog-reveal-item blog-reveal-delay-{(i % 6) + 1}">'
+            f'<div class="series-card-media">'
+            f'<img src="{img}" alt="" width="600" height="315" loading="lazy" decoding="async" />'
+            f'</div>'
+            f'<div class="series-card-body">'
+            f'<span class="series-card-badge">Série · {n} {article_word}</span>'
+            f'<h3>{title}</h3>'
+            f'<p>{desc}</p>'
+            f'</div>'
+            f'</a>'
+        )
+    lines.append('</div></section>')
+    return '\n'.join(lines)
+
+
+def _article_card_html(
+    article: dict,
+    *,
+    href_prefix: str = 'articles/',
+    heading_tag: str = 'h2',
+    extra_classes: str = '',
+) -> str:
+    """Carte article avec vignette pour les grilles du blog."""
+    date_str = str(article.get('date', ''))[:10]
+    try:
+        dt = datetime.fromisoformat(str(article.get('date', '')))
+        date_fr = dt.strftime('%d %B %Y')
+    except ValueError:
+        date_fr = date_str
+    excerpt_raw = article.get('excerpt') or ''
+    excerpt = _escape_html(excerpt_raw[:160] + ('…' if len(excerpt_raw) > 160 else ''))
+    type_label = _escape_html(_type_label(article))
+    title = _escape_html(article['title'])
+    img = _escape_html(_article_thumb_src(article))
+    alt = _escape_html((article.get('title') or '')[:120])
+    classes = f'article-card blog-card-animated {extra_classes}'.strip()
+    return (
+        f'<a href="{_article_href(article["slug"], href_prefix)}" class="{classes}">'
+        f'<div class="article-card-media">'
+        f'<img src="{img}" alt="{alt}" width="600" height="315" loading="lazy" decoding="async" />'
+        f'</div>'
+        f'<div class="article-card-body">'
+        f'<span class="article-type">{type_label}</span>'
+        f'<{heading_tag}>{title}</{heading_tag}>'
+        f'<div class="article-meta">{date_fr}</div>'
+        f'<div class="article-excerpt">{excerpt}</div>'
+        f'</div>'
+        f'</a>'
+    )
+
+
 def _get_article_og_image(article: dict) -> str:
-    """Retourne l'URL de l'image OG pour un article."""
+    """Retourne l'URL absolue de l'image OG pour les metas et le schema.org."""
     og_img = article.get('og_image')
     if og_img and og_img.startswith('http'):
         return og_img
     if og_img:
         return f"{SITE_BASE}/assets/images/og/{og_img}"
     return OG_IMAGE_BLOG
+
+
+def _get_article_hero_image(article: dict, assets_prefix: str) -> str:
+    """Retourne le chemin relatif de l'image hero affichee dans la page article."""
+    og_img = article.get('og_image')
+    if og_img and str(og_img).startswith('http'):
+        return str(og_img)
+    if og_img:
+        return f"{assets_prefix}/images/og/{og_img}"
+    return f"{assets_prefix}/images/og/blog-1200x630.jpg"
 
 
 def _schema_article(article: dict) -> str:
@@ -363,24 +547,20 @@ def _recommendations_index_html(articles: list[dict], collections: list[dict]) -
             seen.add(a['slug'])
     if not picked:
         return ''
-    lines = ['<section class="blog-recommendations-index" aria-label="A découvrir">',
-             '<h2 class="blog-section-title">À découvrir</h2>',
-             '<div class="recommendations-index-grid">']
-    for a in picked[:4]:
-        date_str = str(a.get('date', ''))[:10]
-        try:
-            dt = datetime.fromisoformat(str(a.get('date', '')))
-            date_fr = dt.strftime('%d %B %Y')
-        except Exception:
-            date_fr = date_str
-        excerpt = (a.get('excerpt') or '')[:140] + ('...' if len(a.get('excerpt') or '') > 140 else '')
-        type_label = _type_label(a)
-        lines.append(f'''<a href="articles/{a["slug"]}" class="article-card recommendation-featured">
-            <span class="article-type">{type_label}</span>
-            <h2>{a["title"]}</h2>
-            <div class="article-meta">{date_fr}</div>
-            <div class="article-excerpt">{excerpt}</div>
-        </a>''')
+    lines = [
+        '<section class="blog-recommendations-index blog-reveal" aria-label="A découvrir">',
+        '<h2 class="blog-section-title">À découvrir</h2>',
+        '<div class="recommendations-index-grid">',
+    ]
+    for i, a in enumerate(picked[:4]):
+        lines.append(
+            _article_card_html(
+                a,
+                href_prefix='articles/',
+                heading_tag='h2',
+                extra_classes=f'recommendation-featured blog-reveal-item blog-reveal-delay-{i + 1}',
+            )
+        )
     lines.append('</div></section>')
     return '\n'.join(lines)
 
@@ -394,11 +574,11 @@ def _prev_next_html(articles: list[dict], current_slug: str) -> str:
     next_a = articles[idx + 1] if idx < len(articles) - 1 else None
     parts = ['<div class="prev-next-links">']
     if prev_a:
-        parts.append(f'<a href="{prev_a["slug"]}" class="prev-next-link prev-link"><i class="fas fa-arrow-left"></i> {prev_a["title"]}</a>')
+        parts.append(f'<a href="{_article_href(prev_a["slug"])}" class="prev-next-link prev-link"><i class="fas fa-arrow-left"></i> {prev_a["title"]}</a>')
     else:
         parts.append('<span class="prev-next-link prev-link empty"></span>')
     if next_a:
-        parts.append(f'<a href="{next_a["slug"]}" class="prev-next-link next-link">{next_a["title"]} <i class="fas fa-arrow-right"></i></a>')
+        parts.append(f'<a href="{_article_href(next_a["slug"])}" class="prev-next-link next-link">{next_a["title"]} <i class="fas fa-arrow-right"></i></a>')
     else:
         parts.append('<span class="prev-next-link next-link empty"></span>')
     parts.append('</div>')
@@ -425,7 +605,7 @@ def _recommendations_html(articles: list[dict], current_article: dict, max_n: in
             date_fr = date_str
         excerpt = (a.get('excerpt') or '')[:120] + ('...' if len(a.get('excerpt') or '') > 120 else '')
         type_label = _type_label(a)
-        lines.append(f'''<a href="{a["slug"]}" class="article-card recommendation-card">
+        lines.append(f'''<a href="{_article_href(a["slug"])}" class="article-card recommendation-card">
             <span class="article-type">{type_label}</span>
             <h3>{a["title"]}</h3>
             <div class="article-meta">{date_fr}</div>
@@ -455,6 +635,7 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     excerpt = _escape_html(article.get('excerpt', ''))
     title = _escape_html(article['title'])
     og_img_url = _get_article_og_image(article)
+    hero_img_url = _get_article_hero_image(article, assets_prefix_article)
 
     prev_next = _prev_next_html(articles, article['slug'])
     recommendations = _recommendations_html(articles, article)
@@ -484,11 +665,14 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     html = html.replace('{{SHARE_TWITTER_URL}}', share_twitter_url)
     html = html.replace('{{SHARE_LINKEDIN_URL}}', share_linkedin_url)
     html = html.replace('{{OG_IMAGE}}', og_img_url)
+    html = html.replace('{{HERO_IMAGE}}', hero_img_url)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_article(article))
     html = html.replace('{{PREV_NEXT}}', prev_next)
     html = html.replace('{{RECOMMENDATIONS}}', recommendations)
     html = html.replace('{{SERIES_HTML}}', series_html)
+
+    html = _inject_site_layout(html)
 
     out_file = output_dir / 'articles' / f"{article['slug']}.html"
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -541,29 +725,24 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
 
     # Pre-render des cartes HTML pour le SEO (pas de chargement async)
     cards_html = []
-    for a in articles:
-        date_str = a.get('date', '')[:10]
-        try:
-            dt = datetime.fromisoformat(a.get('date', ''))
-            date_fr = dt.strftime('%d %B %Y')
-        except Exception:
-            date_fr = date_str
-        excerpt = (a.get('excerpt') or '')[:160]
-        type_label = _type_label(a)
-        cards_html.append(f'''
-        <a href="articles/{a['slug']}" class="article-card">
-            <span class="article-type">{type_label}</span>
-            <h2>{a['title']}</h2>
-            <div class="article-meta">{date_fr}</div>
-            <div class="article-excerpt">{excerpt}</div>
-        </a>''')
+    for i, a in enumerate(articles):
+        cards_html.append(
+            _article_card_html(
+                a,
+                href_prefix='articles/',
+                heading_tag='h2',
+                extra_classes=f'blog-reveal-item blog-reveal-delay-{(i % 8) + 1}',
+            )
+        )
 
     meta_desc = 'Blog DanielCraft : articles sur le développement web, TypeScript, GEO, SEO et bonnes pratiques.'
     page_url = f'{SITE_BASE}/blog'
 
     # Bloc "A découvrir" : 4 articles (un par serie ou derniers)
+    series_html = _series_featured_html(collections, articles)
     rec_index_html = _recommendations_index_html(articles, collections)
-    html = template.replace('{{RECOMMENDATIONS_INDEX}}', rec_index_html)
+    html = template.replace('{{SERIES_FEATURED}}', series_html)
+    html = html.replace('{{RECOMMENDATIONS_INDEX}}', rec_index_html)
     html = html.replace('{{ARTICLES_GRID}}', '\n'.join(cards_html))
     html = html.replace('{{ARTICLES_JSON}}', articles_json)
     html = html.replace('{{COLLECTIONS_JSON}}', collections_json)
@@ -574,6 +753,8 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{PAGE_URL}}', page_url)
     html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_blog_index(articles))
+
+    html = _inject_site_layout(html)
 
     out_file = output_dir / 'index.html'
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -645,7 +826,7 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
         type_label = _type_label(a)
         excerpt = a.get("excerpt", "")
         cards.append(
-            f'<a href="../articles/{a["slug"]}" class="article-card">'
+            f'<a href="../{_article_href(a["slug"], "articles/")}" class="article-card">'
             f'<span class="article-type">{type_label}</span>'
             f'<h2>{a["title"]}</h2>'
             f'<div class="article-meta">{date_fr}</div>'
@@ -668,6 +849,8 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_collection(collection, items))
+
+    html = _inject_site_layout(html)
 
     out_file = output_dir / 'series' / f'{slug}.html'
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -743,7 +926,7 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
             type_label = _type_label(a)
             excerpt = a.get('excerpt', '')
             cards.append(
-                f'<a href="../articles/{a["slug"]}" class="article-card">'
+                f'<a href="../{_article_href(a["slug"], "articles/")}" class="article-card">'
                 f'<span class="article-type">{type_label}</span>'
                 f'<h2>{a["title"]}</h2>'
                 f'<div class="article-meta">{date_fr}</div>'
@@ -761,6 +944,8 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
         html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
         html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
         html = html.replace('{{SCHEMA_JSON_LD}}', '')  # optionnel: on pourrait generer un schema type
+
+        html = _inject_site_layout(html)
 
         out_file = output_dir / 'types' / f'{slug}.html'
         out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -830,6 +1015,9 @@ def save_list_json(articles: list[dict], output_dir: Path) -> None:
 
 def main():
     """Point d'entree."""
+    global _SITE_LAYOUT_CACHE
+    _SITE_LAYOUT_CACHE = None
+
     # Parse --output
     output_arg = 'dist/blog'
     i = 1

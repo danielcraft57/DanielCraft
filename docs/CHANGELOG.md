@@ -2,6 +2,26 @@
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
+## [Non publié]
+
+---
+
+## [1.3.0] - 2026-05-13
+
+### Vitrines (catalogue et démos)
+- Ancre accueil **`#vitrines`** (remplace `#vitrines-showcase`) ; liens nav, hero, pied de page et pages vitrines alignés.
+- Hub vitrines, fiches détail, données **`src/data/vitrines.json`**, pages **`vitrines.json`** / **`vitrine-detail.html`**, embed catalogue régénéré par le build.
+- Maquettes statiques sous **`assets/vitrines/demos/`** (migration depuis **`showcase/`**) : HTML, CSS, images, **`demo-protection`**.
+- Assets site : **`assets/css/vitrines-portfolio.css`**, **`assets/js/vitrines-screenshots.js`** (et scripts associés).
+- Scripts **`scripts/screenshot_vitrines.py`**, **`scripts/serve_vitrines_demos.py`**, **`scripts/requirements-vitrines-screenshots.txt`** ; chemins mis à jour dans les outils (génération visuels, polish, captures PS, serve local / showcase, strip glightbox).
+- Documentation **`docs/VITRINES.md`** ; **`.env.example`** pour les variables de capture.
+
+### Déploiement et dépôt
+- **`scripts/deploy-content.ps1`** : vérification et transfert **`dist/vitrines/`** en fallback scp ; création du répertoire distant `vitrines/`.
+- **`.gitignore`** : **`assets/images/projets/`** (correction de l’ancien chemin `projects/`), WebP vignettes projets, variantes **`about-section-hero`**, captures **`assets/vitrines/screenshots/`** (`.gitkeep` conservé) ; commentaire explicite sur le versionnement des démos vs captures.
+
+---
+
 ## [1.2.0] - 2026-02-21
 
 ### Projets
@@ -201,4 +221,5 @@ Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 [1.0.0]: https://github.com/likedevGit/DanielCraft/releases/tag/v1.0.0
+[1.3.0]: https://github.com/likedevGit/DanielCraft/releases/tag/v1.3.0
 

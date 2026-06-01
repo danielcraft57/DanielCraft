@@ -1,0 +1,118 @@
+---
+title: "Introduction aux Design Patterns : guide Gang of Four pour juniors"
+date: 2026-04-01
+excerpt: "Comprendre les design patterns, les 3 familles GoF, l'ordre par popularité et comment lire la série avant chaque pattern en détail."
+type: article
+tags: [Design Patterns, GoF, junior, SOLID, architecture]
+og_image: design-patterns-introduction-gang-of-four-1200x630.jpg
+series: design-patterns-serie
+series_order: 1
+---
+
+# Introduction aux Design Patterns : guide Gang of Four pour juniors
+
+Tu as déjà copié-collé du code sans comprendre sa structure ? Ou une classe de 800 lignes que personne n'ose toucher ? Les **design patterns** t'aident à **nommer** des solutions qui marchent, à **communiquer** avec ton équipe, et à **éviter** de réinventer la roue.
+
+Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à beaucoup de catalogues, nous les classons ici du **plus populaire au moins rencontré** en entreprise — pour que tu apprennes d'abord ce que tu verras le plus souvent en code review et en entretien.
+
+<figure>
+  <img src="../../assets/images/blog/design-patterns-intro-illustration.webp" alt="Illustration des trois familles de design patterns" class="schema-inline" width="720" />
+  <figcaption>Vue d'ensemble : création, structure et comportement — les trois familles du catalogue GoF.</figcaption>
+</figure>
+
+---
+
+## Qu'est-ce qu'un design pattern ?
+
+Un design pattern est une **solution réutilisable** à un problème récurrent de conception. Ce n'est pas une librairie : c'est une **organisation** de classes, modules et objets pour garder le code lisible, testable et évolutif.
+
+### Ce qu'un pattern n'est pas
+
+- Une règle absolue (« toujours Singleton » → faux).
+- Du code à copier-coller sans réfléchir.
+- Une excuse pour sur-architecturer un petit script.
+
+### Ce qu'un pattern est
+
+- Un **vocabulaire partagé** : « Observer ici » = tout le monde visualise la même chose.
+- Une **réponse éprouvée** à un problème précis.
+- Un **outil de réflexion** avant le dixième `if/else`.
+
+<figure>
+  <img src="../../assets/images/blog/design-patterns-families.svg" alt="Les trois familles GoF" class="schema-inline" width="520" />
+  <figcaption>5 créationnels, 7 structurels, 11 comportementaux — 23 patterns au total.</figcaption>
+</figure>
+
+<figure>
+  <img src="../../assets/images/blog/design-patterns-popularity.svg" alt="Ordre de popularité de la série" class="schema-inline" width="520" />
+  <figcaption>Cette série suit l'ordre de popularité (du plus au moins utilisé), pas l'ordre du livre GoF.</figcaption>
+</figure>
+
+---
+
+## Les trois familles (rappel)
+
+| Famille | Question | Exemples populaires |
+|---------|----------|---------------------|
+| **Créationnels** | Comment instancier ? | Singleton, Factory, Builder |
+| **Structurels** | Comment composer ? | Adapter, Decorator, Facade |
+| **Comportementaux** | Comment répartir les comportements ? | Observer, Strategy, Command |
+
+---
+
+## Ordre de la série (popularité décroissante)
+
+1. Singleton · 2. Factory Method · 3. Observer · 4. Strategy · 5. Decorator · 6. Adapter · 7. Facade · 8. Command · 9. Template Method · 10. Builder · 11. Iterator · 12. State · 13. Proxy · 14. Abstract Factory · 15. Composite · 16. Bridge · 17. Prototype · 18. Flyweight · 19. Chain of Responsibility · 20. Mediator · 21. Memento · 22. Visitor · 23. Interpreter
+
+Tu peux lire linéairement ou sauter vers le pattern qui correspond à ta douleur du moment.
+
+---
+
+## SOLID en version junior
+
+1. **S**ingle Responsibility — une raison de changer par classe.
+2. **O**pen/Closed — étendre sans tout casser.
+3. **L**iskov — les sous-types restent substituables.
+4. **I**nterface Segregation — petites interfaces.
+5. **D**ependency Inversion — dépendre d'abstractions.
+
+---
+
+## Comment lire chaque article
+
+1. **En une phrase** + **Le problème** — si ça ne parle pas, passe.
+2. **Schéma** + **TypeScript** — cœur de la série.
+3. **Python** si tu es plutôt backend.
+4. **Quand ne pas l'utiliser** — souvent le plus utile.
+5. **Exercice** 25–35 min sur un mini-projet.
+
+---
+
+## Erreurs classiques des juniors
+
+| Erreur | Conséquence | Attitude saine |
+|--------|-------------|----------------|
+| Pattern « pour faire joli » | Code verbeux | Commence simple ; refactorise quand ça fait mal |
+| God Object | Tout dans une classe | Une responsabilité à la fois |
+| Confondre Factory / Abstract Factory / Builder | Mauvais choix | Lis les 3 articles créationnels |
+| Pas de tests | Pattern rigide | Test avant structure |
+
+---
+
+## Exercice : cartographier ton projet
+
+Sur un repo perso, note : création compliquée → créationnel ; API tierce → structurel ; gros `switch` comportement → comportemental. Pas besoin de tout refactoriser : entraîne ton **œil**.
+
+---
+
+## Résumé
+
+- 23 patterns GoF, expliqués pour juniors, avec schémas et exemples TS/Python.
+- Ordre **popularité** (pas livre) pour un apprentissage pragmatique.
+- Article suivant : **Singleton**.
+
+---
+
+## Navigation
+
+- Suivant : [Singleton](/blog/articles/design-patterns-singleton.html)

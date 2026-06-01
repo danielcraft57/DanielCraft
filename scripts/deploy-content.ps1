@@ -155,6 +155,9 @@ $filesToDeploy = @(
     "$DIST_DIR/portfolio.html",
     "$DIST_DIR/projets.html",
     "$DIST_DIR/statistiques.html",
+    "$DIST_DIR/analyse.html",
+    "$DIST_DIR/audit.html",
+    "$DIST_DIR/desabonnement.html",
     "$DIST_DIR/mentions-legales.html",
     "$DIST_DIR/cgv.html",
     "$DIST_DIR/cgu.html",
@@ -162,10 +165,13 @@ $filesToDeploy = @(
     "$DIST_DIR/robots.txt",
     "$DIST_DIR/sitemap.xml",
     "$DIST_DIR/sitemap-pages.xml",
+    "$DIST_DIR/sitemap-vitrines.xml",
+    "$DIST_DIR/blog/sitemap-blog.xml",
     "$DIST_DIR/assets",
     "$DIST_DIR/api",
     "$DIST_DIR/blog",
-    "$DIST_DIR/projets"
+    "$DIST_DIR/projets",
+    "$DIST_DIR/vitrines"
 )
 
 $missingFiles = @()
@@ -186,7 +192,7 @@ if ($missingFiles.Count -gt 0) {
 
 # 3. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[2/4] Creation du repertoire sur le serveur (si necessaire)..." "Yellow"
-$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/projets"
+$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/blog && mkdir -p $ServerPath/projets && mkdir -p $ServerPath/vitrines"
 try {
     ssh "${ServerUser}@${ServerHost}" $createDirCmd
     Write-ColorOutput "Repertoire cree/verifie (dont assets/images/projets et assets/images/hero pour les images)" "Green"
@@ -273,12 +279,15 @@ try {
         "portfolio.html",
         "projets.html",
         "statistiques.html",
+        "analyse.html",
+        "audit.html",
+        "desabonnement.html",
         "mentions-legales.html",
         "cgv.html",
         "cgu.html",
         "politique-confidentialite.html"
     )
-    $otherFiles = @("robots.txt", "sitemap.xml")
+    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml")
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file
@@ -323,11 +332,30 @@ try {
         scp -r $blogPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
+    # Sitemap blog (référencé par sitemap.xml ; explicite pour le fallback SCP)
+    $blogSitemapPath = Join-Path $DIST_DIR "blog/sitemap-blog.xml"
+    if (Test-Path $blogSitemapPath) {
+        $remoteBlogSitemap = "$ServerPath/blog/sitemap-blog.xml"
+        if (Should-TransferFile -LocalPath $blogSitemapPath -RemotePath $remoteBlogSitemap) {
+            Write-Host "  Transfert (modifie): blog/sitemap-blog.xml"
+            scp $blogSitemapPath "${ServerUser}@${ServerHost}:${ServerPath}/blog/"
+        } else {
+            Write-Host "  Skip (inchangé): blog/sitemap-blog.xml"
+        }
+    }
+
     # Transfert des pages projet (projets/<slug>.html)
     $projetsPath = Join-Path $DIST_DIR "projets"
     if (Test-Path $projetsPath) {
         Write-Host "  Transfert: projets/"
         scp -r $projetsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
+    # Transfert vitrines (hub, demos, captures, fiches)
+    $vitrinesPath = Join-Path $DIST_DIR "vitrines"
+    if (Test-Path $vitrinesPath) {
+        Write-Host "  Transfert: vitrines/"
+        scp -r $vitrinesPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
     Write-ColorOutput "Transfert scp termine" "Green"
@@ -364,10 +392,19 @@ $blogCheckCmd = "test -f $ServerPath/blog/index.html && echo 'OK: blog/index.htm
 $blogCheckResult = ssh "${ServerUser}@${ServerHost}" $blogCheckCmd
 Write-Host $blogCheckResult
 
+$blogSitemapCheckCmd = "test -f $ServerPath/blog/sitemap-blog.xml && echo 'OK: blog/sitemap-blog.xml present' || echo 'ATTENTION: blog/sitemap-blog.xml manquant (SEO / index sitemap)'"
+$blogSitemapCheckResult = ssh "${ServerUser}@${ServerHost}" $blogSitemapCheckCmd
+Write-Host $blogSitemapCheckResult
+
 # Verifier que les pages projet sont deployees
 $projetsCheckCmd = 'test -d ' + $ServerPath + '/projets && (n=$(ls -1 ' + $ServerPath + '/projets/*.html 2>/dev/null | wc -l); echo "OK: projets/ deploye ($n pages)") || echo ''ATTENTION: projets/ manquant - relancer build puis deploy'''
 $projetsCheckResult = ssh "${ServerUser}@${ServerHost}" $projetsCheckCmd
 Write-Host $projetsCheckResult
+
+# Verifier dist/vitrines (hub + fiches + demos)
+$vitrinesCheckCmd = 'test -f ' + $ServerPath + '/vitrines/index.html && echo "OK: vitrines/index.html present" || echo "ATTENTION: vitrines/ manquant - relancer build puis deploy"'
+$vitrinesCheckResult = ssh "${ServerUser}@${ServerHost}" $vitrinesCheckCmd
+Write-Host $vitrinesCheckResult
 
 # Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
 $imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'

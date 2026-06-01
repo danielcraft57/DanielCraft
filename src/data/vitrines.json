@@ -1,0 +1,351 @@
+{
+  "currency": "EUR",
+  "default_price_eur": 42,
+  "vitrines_hub_path": "/vitrines/hub-bulma.html",
+  "screenshots_base": "/vitrines",
+  "stripe_note": "Renseigner stripe_payment_link_url par vitrine (Payment Link Stripe) après création des produits.",
+  "items": [
+    {
+      "slug": "technologie",
+      "category": "tech",
+      "title": "Synapse Lorraine",
+      "tagline": "SaaS, API & cloud",
+      "excerpt": "Site SaaS ou ESN crédible : hero, preuves, FAQ et formulaire démo — maquette tech pour Metz et le Grand Est.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Navigation complète façon site produit : offres, preuves, FAQ, prise de contact",
+        "Bloc d'accroche fort et boutons d'action pour pousser vers une démo ou un audit",
+        "Galerie visuelle prête à accueillir vos captures d'écran et témoignages clients",
+        "Formulaire de contact déjà mis en page (branchement e-mail ou outil sur devis)"
+      ],
+      "stack": [
+        "Bulma",
+        "AOS",
+        "Swiper",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "restauration",
+      "category": "hcr",
+      "title": "Brasserie Saint-Jacques",
+      "tagline": "Restaurant & réservations",
+      "excerpt": "Site restaurant qui donne faim : carte, photos et réservation — modèle HCR pour Metz, Nancy et Thionville.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Carte et menus mis en valeur pour donner envie avant la première réservation",
+        "Carrousel photo pour votre cuisine, votre salle ou vos événements",
+        "Bloc réservation / contact pour transformer les visites en tables réservées"
+      ],
+      "stack": [
+        "Bulma",
+        "Swiper",
+        "AOS"
+      ]
+    },
+    {
+      "slug": "beaute",
+      "category": "beaute",
+      "title": "Spa Thalie",
+      "tagline": "Institut & spa",
+      "excerpt": "Institut beauté et spa : soins, rendez-vous et engagements — page claire pour fidéliser votre clientèle locale.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Fiches soins et formules pour aider à choisir avant de prendre rendez-vous",
+        "Formulaire de demande de RDV intégré au design",
+        "Bloc « nos engagements » pour raconter votre démarche qualité ou RSE"
+      ],
+      "stack": [
+        "Bulma",
+        "GLightbox",
+        "AOS"
+      ]
+    },
+    {
+      "slug": "odontologie",
+      "category": "sante",
+      "title": "Centre dentaire Mosaïque",
+      "tagline": "Cabinet dentaire",
+      "excerpt": "Cabinet dentaire rassurant : tarifs, prévention et rappel téléphonique — site patient pour Moselle et Metz.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Grille tarifaire lisible pour lever le frein du « combien ça coûte ? »",
+        "Contenus prévention et parcours patient rassurants",
+        "Demande de rappel téléphonique prête à brancher sur votre secrétariat"
+      ],
+      "stack": [
+        "Bulma",
+        "AOS"
+      ]
+    },
+    {
+      "slug": "industrie",
+      "category": "industrie",
+      "title": "Précisite Usinage",
+      "tagline": "Usinage & qualité",
+      "excerpt": "Site usinage et industrie : machines, devis express et FAQ qualité — convertissez les appels d'offres.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Présentation des savoir-faire machines et contrôles qualité",
+        "Demande de devis rapide pour transformer la visite en opportunité",
+        "FAQ réponses aux questions fréquentes des donneurs d'ordre"
+      ],
+      "stack": [
+        "Bulma",
+        "AOS"
+      ]
+    },
+    {
+      "slug": "association",
+      "category": "ess",
+      "title": "Solidarités Metz Métropole",
+      "tagline": "Association",
+      "excerpt": "Association et ESS : dons, bénévolat et projets — vitrine mobilisatrice pour le Grand Est.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Parcours dons et objectifs de campagne pour mobiliser",
+        "Bandeau d'actions et projets porteurs de sens",
+        "Formulaire bénévoles pour transformer l'intérêt en engagement concret"
+      ],
+      "stack": [
+        "Bulma",
+        "Swiper",
+        "AOS"
+      ]
+    },
+    {
+      "slug": "commerce",
+      "category": "retail",
+      "title": "Halles Thionville",
+      "tagline": "Commerce & drive",
+      "excerpt": "Commerce de proximité et drive : rayons, click & collect et fidélité — maquette retail prête à l'emploi.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en avant du click & collect et des horaires pratiques",
+        "Rayons et services présentés comme en magasin, version web",
+        "Espace fidélité / avantages pour fidéliser sans jargon technique"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "comptable",
+      "category": "conseil",
+      "title": "Verlaine & Associés",
+      "tagline": "Expertise comptable",
+      "excerpt": "Cabinet comptable : forfaits, bilan flash et contact dirigeant — crédibilité pro en un clic.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en avant de votre méthode et de votre accompagnement",
+        "Forfaits et packs présentés pour faciliter le choix du dirigeant",
+        "Offre bilan flash ou premier rendez-vous pour capter les leads"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "AOS",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "education",
+      "category": "formation",
+      "title": "Institut Mercure",
+      "tagline": "Formation pro",
+      "excerpt": "Centre de formation : parcours, inscriptions et alternance — rassurez apprenants et entreprises.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Vue d’ensemble des parcours et niveaux pour rassurer les futurs apprenants",
+        "Parcours d’inscription ou de pré-inscription clair et rassurant",
+        "Visuels pédagogiques prêts à être remplacés par vos campus et salles"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "services",
+      "category": "services",
+      "title": "Proprio Facility",
+      "tagline": "Facility & conciergerie",
+      "excerpt": "Facility et conciergerie : offres illustrées, devis et FAQ — pour immeubles tertiaires en Lorraine.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Indicateur de lecture pour guider le visiteur sur les pages longues",
+        "Grille d’offres illustrée pour valoriser vos prestations au premier coup d’œil",
+        "FAQ et formulaire de demande de devis déjà structurés"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "banque",
+      "category": "finance",
+      "title": "Verlaine Banque Régionale",
+      "tagline": "Institution & offres",
+      "excerpt": "Banque régionale : comptes, crédits et agences de proximité — modèle qui inspire confiance.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Repères agences et contact humain pour ancrer le local",
+        "Tableaux d’offres clairs pour comparer sans surcharge",
+        "Bloc simulation / projet pour engager la conversation commerciale"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "AOS",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "etablissement",
+      "category": "hotel",
+      "title": "Hôtel Stanislas Collection",
+      "tagline": "Hôtellerie",
+      "excerpt": "Hôtel 4 étoiles : chambres, spa et séminaires — réservation visible, design hôtellerie premium.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Présentation des gammes de chambres et de suites comme sur un site grand hôtel",
+        "Mise en avant spa, séminaires et événements pour diversifier les réservations",
+        "Bouton réservation / contact visible tout au long du parcours"
+      ],
+      "stack": [
+        "Pico CSS v2",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "automobile",
+      "category": "mobilite",
+      "title": "Garage Central Plappeville",
+      "tagline": "Mécanique & carrosserie",
+      "excerpt": "Garage auto : entretien, pneus, carrosserie et RDV — site atelier qui rassure avant le devis.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en avant expertise, pneus et services pour couvrir l’essentiel de l’atelier",
+        "Bandeau visuel pour montrer l’équipe et l’outil au travail",
+        "Prise de rendez-vous en ligne déjà cadrée"
+      ],
+      "stack": [
+        "DaisyUI 4",
+        "Tailwind CSS",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "chocolatier",
+      "category": "artisanat",
+      "title": "Chocolaterie Vialson",
+      "tagline": "Artisan chocolatier",
+      "excerpt": "Chocolatier artisan : boutique, coffrets et atelier — galerie gourmande pour booster les ventes.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Mise en scène des goûts, origines et histoire de maison",
+        "Galerie boutique pour donner envie avant le passage en caisse",
+        "FAQ coffrets cadeaux et commandes groupées"
+      ],
+      "stack": [
+        "Open Props",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "immobilier",
+      "category": "immobilier",
+      "title": "Patrimoine Lorraine",
+      "tagline": "Agence immobilière",
+      "excerpt": "Agence immobilière : biens, estimation gratuite et gestion — captez vendeurs et acquéreurs locaux.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Sélection de biens en cartes responsive pour valoriser mandats vente et location",
+        "Bloc services (transaction, gestion, investissement) et KPI agence",
+        "Formulaire d'estimation gratuit prêt à brancher sur votre CRM"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique",
+        "CSS custom"
+      ]
+    },
+    {
+      "slug": "juridique",
+      "category": "juridique",
+      "title": "Rivière & Partenaires",
+      "tagline": "Cabinet d'avocats",
+      "excerpt": "Avocats affaires et social : expertises, forfaits et contact — cabinet crédible pour PME à Metz.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Parcours expertises avec cartes à bordure dorée et listes lisibles",
+        "Timeline méthode et forfait découverte pour capter les leads dirigeants",
+        "FAQ accordéon et formulaire contact sobre"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "architecture",
+      "category": "architecture",
+      "title": "Atelier Nord-Est",
+      "tagline": "Architecture & urbanisme",
+      "excerpt": "Agence d'architecture : projets, méthode et brief — portfolio pro pour gagner vos consultations.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Grille projets pleine largeur avec hover inversé noir/blanc",
+        "Bandeau process en trois étapes (écoute, conception, suivi)",
+        "Formulaire brief projet intégré au style minimal Pico"
+      ],
+      "stack": [
+        "Pico CSS v2",
+        "HTML statique",
+        "CSS custom"
+      ]
+    },
+    {
+      "slug": "fitness",
+      "category": "sport",
+      "title": "Pulse Fitness Metz",
+      "tagline": "Salle de sport",
+      "excerpt": "Salle de sport : cours, tarifs et essai gratuit — site énergique qui remplit les créneaux.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Hero énergique et cartes cours collectifs (HIIT, cross, yoga, cycling)",
+        "Grille tarifs avec mise en avant formule populaire",
+        "Formulaire séance découverte et avatars coachs"
+      ],
+      "stack": [
+        "DaisyUI 4",
+        "Tailwind CSS",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "photographie",
+      "category": "creatif",
+      "title": "Studio Lumière Grise",
+      "tagline": "Photographe",
+      "excerpt": "Photographe mariage et corporate : portfolio, prestations et devis — studio qui inspire confiance.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Accueil split-screen et galerie masonry CSS sans JS lourd",
+        "Liste prestations numérotée style éditorial",
+        "Bloc contact minimal sur fond sombre"
+      ],
+      "stack": [
+        "Open Props",
+        "CSS Grid",
+        "HTML statique"
+      ]
+    }
+  ]
+}

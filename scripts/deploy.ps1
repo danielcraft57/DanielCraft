@@ -117,7 +117,7 @@ if (-not $rsyncOk) {
         Write-Host "  Transfert: $($f.Name)"
         scp $f.FullName "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
-    foreach ($file in @("robots.txt", "sitemap.xml", "sitemap-pages.xml")) {
+    foreach ($file in @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml")) {
         $filePath = Join-Path $DIST_DIR $file
         if (Test-Path $filePath) {
             Write-Host "  Transfert: $file"
@@ -136,6 +136,11 @@ if (-not $rsyncOk) {
         Write-Host "  Transfert: blog/"
         scp -r "$DIST_DIR/blog" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
+    $blogSitemapPath = Join-Path $DIST_DIR "blog/sitemap-blog.xml"
+    if (Test-Path $blogSitemapPath) {
+        Write-Host "  Transfert: blog/sitemap-blog.xml"
+        scp $blogSitemapPath "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/blog/"
+    }
     if (Test-Path "$DIST_DIR/projets") {
         Write-Host "  Transfert: projets/"
         scp -r "$DIST_DIR/projets" "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
@@ -149,6 +154,10 @@ if (-not $rsyncOk) {
 $blogCheckCmd = "if test -f $SERVER_PATH/blog/index.html; then echo 'OK: blog deploye'; else echo 'ATTENTION: blog/index.html manquant'; fi"
 $blogCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $blogCheckCmd
 Write-Host $blogCheck
+
+$blogSitemapCheckCmd = "if test -f $SERVER_PATH/blog/sitemap-blog.xml; then echo 'OK: blog/sitemap-blog.xml present'; else echo 'ATTENTION: blog/sitemap-blog.xml manquant'; fi"
+$blogSitemapCheck = ssh "${SERVER_USER}@${SERVER_HOST}" $blogSitemapCheckCmd
+Write-Host $blogSitemapCheck
 
 # 3.3 Verifier que les pages projet sont deployees
 $projetsCheckCmd = 'if test -d ' + $SERVER_PATH + '/projets; then echo "OK: projets deploye"; else echo "ATTENTION: projets/ manquant"; fi'

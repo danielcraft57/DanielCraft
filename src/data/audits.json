@@ -1,0 +1,12 @@
+{
+  "currency": "EUR",
+  "paid_audit": {
+    "slug": "audit-complet-ia",
+    "title": "Audit premium site web",
+    "price_eur": 0.94,
+    "tax_rate": 20,
+    "checkout_product_name": "Audit premium — analyse complète de votre site",
+    "checkout_description": "Rapport détaillé par email. Après paiement : facture immédiate, puis lancement de l’audit (sous 48 h).",
+    "stripe_payment_link_url": ""
+  }
+}
