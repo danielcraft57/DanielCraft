@@ -312,3 +312,186 @@ function facturio_issue_audit_invoice(
         'warning' => '',
     ];
 }
+
+/**
+ * POST /public/devis — création d’un devis (non payé).
+ *
+ * @param list<array{description: string, quantity: int|float, unitPrice: float, taxRate?: float}> $lines
+ * @return array{ok: bool, quote_id: string, error: string}
+ */
+function facturio_create_quote_devis(
+    string $customerEmail,
+    string $customerName,
+    array $lines,
+    string $internalNote = ''
+): array {
+    $empty = ['ok' => false, 'quote_id' => '', 'error' => ''];
+    $email = trim($customerEmail);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $empty['error'] = 'Email client invalide.';
+        return $empty;
+    }
+
+    $name = trim(preg_replace('/[\r\n]+/', ' ', $customerName));
+    if ($name === '') {
+        $name = strstr($email, '@', true) ?: 'Client';
+    }
+
+    $apiLines = [];
+    foreach ($lines as $line) {
+        if (!is_array($line)) {
+            continue;
+        }
+        $desc = mb_substr(trim((string) ($line['description'] ?? '')), 0, 500);
+        if ($desc === '') {
+            continue;
+        }
+        $qty = $line['quantity'] ?? 1;
+        $qty = is_numeric($qty) ? (float) $qty : 1.0;
+        $unit = (float) ($line['unitPrice'] ?? 0);
+        $tax = isset($line['taxRate']) ? (float) $line['taxRate'] : 0.2;
+        if ($tax > 1) {
+            $tax = facturio_tax_rate_decimal($tax);
+        }
+        $apiLines[] = [
+            'description' => $desc,
+            'quantity' => $qty,
+            'unitPrice' => round($unit, 4),
+            'taxRate' => $tax,
+        ];
+    }
+    if ($apiLines === []) {
+        $empty['error'] = 'Aucune ligne de devis.';
+        return $empty;
+    }
+
+    $body = [
+        'clientEmail' => $email,
+        'clientName' => mb_substr($name, 0, 200),
+        'lines' => $apiLines,
+    ];
+    if ($internalNote !== '') {
+        $body['notes'] = mb_substr($internalNote, 0, 2000);
+    }
+
+    $res = facturio_http('POST', '/devis', $body);
+    if (!$res['ok'] || !is_array($res['data'])) {
+        $empty['error'] = $res['error'] !== '' ? $res['error'] : 'Création devis impossible.';
+        return $empty;
+    }
+
+    $id = facturio_extract_id($res['data'], 'id', 'devisId', 'quote_id', 'quoteId');
+    if ($id === '') {
+        $empty['error'] = 'Réponse Facturio sans id devis.';
+        return $empty;
+    }
+
+    return ['ok' => true, 'quote_id' => $id, 'error' => ''];
+}
+
+/**
+ * POST /public/devis/:id/send
+ *
+ * @return array{ok: bool, error: string, email_sent: bool}
+ */
+function facturio_send_devis_email(string $devisId, string $customerEmail): array
+{
+    $fail = ['ok' => false, 'error' => '', 'email_sent' => false];
+    $devisId = trim($devisId);
+    if ($devisId === '') {
+        $fail['error'] = 'id devis invalide.';
+        return $fail;
+    }
+    $email = trim($customerEmail);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $fail['error'] = 'Email invalide.';
+        return $fail;
+    }
+
+    $res = facturio_http('POST', '/devis/' . $devisId . '/send', [
+        'email' => $email,
+        'updateClientEmail' => true,
+    ]);
+    if (!$res['ok']) {
+        $fail['error'] = $res['error'];
+        return $fail;
+    }
+
+    $sent = false;
+    if (is_array($res['data'])) {
+        if (!empty($res['data']['emailSent'])) {
+            $sent = true;
+        } elseif (isset($res['data']['sentTo']) && is_string($res['data']['sentTo']) && $res['data']['sentTo'] !== '') {
+            $sent = true;
+        }
+    }
+    if (!$sent && $res['ok']) {
+        $sent = true;
+    }
+
+    return ['ok' => true, 'error' => '', 'email_sent' => $sent];
+}
+
+/**
+ * Crée un devis Facturio puis l’envoie par e-mail au client.
+ *
+ * @param list<array{description: string, quantity: int|float, unitPrice: float, taxRate?: float}> $lines
+ * @return array{ok: bool, quote_id: string, email_sent: bool, error: string, warning: string}
+ */
+function facturio_issue_quote_devis(
+    string $customerEmail,
+    string $customerName,
+    array $lines,
+    string $internalNote = '',
+    float $taxRatePercent = 20.0
+): array {
+    $empty = ['ok' => false, 'quote_id' => '', 'email_sent' => false, 'error' => '', 'warning' => ''];
+    if (!facturio_configured()) {
+        $empty['error'] = 'Facturio non configuré.';
+        return $empty;
+    }
+
+    $taxDecimal = facturio_tax_rate_decimal($taxRatePercent);
+    $normalized = [];
+    foreach ($lines as $line) {
+        if (!is_array($line)) {
+            continue;
+        }
+        $unit = (float) ($line['unitPrice'] ?? 0);
+        if ($unit <= 0 && isset($line['priceTtc'])) {
+            $unit = facturio_unit_price_ht((float) $line['priceTtc'], $taxRatePercent);
+        }
+        $normalized[] = [
+            'description' => (string) ($line['description'] ?? ''),
+            'quantity' => $line['quantity'] ?? 1,
+            'unitPrice' => $unit,
+            'taxRate' => $taxDecimal,
+        ];
+    }
+
+    $quote = facturio_create_quote_devis($customerEmail, $customerName, $normalized, $internalNote);
+    if (!$quote['ok']) {
+        $empty['error'] = $quote['error'];
+        return $empty;
+    }
+
+    $send = facturio_send_devis_email($quote['quote_id'], $customerEmail);
+    if (!$send['ok']) {
+        error_log('[facturio] send devis ' . $quote['quote_id'] . ': ' . $send['error']);
+        return [
+            'ok' => true,
+            'quote_id' => $quote['quote_id'],
+            'email_sent' => false,
+            'error' => '',
+            'warning' => $send['error'],
+        ];
+    }
+
+    return [
+        'ok' => true,
+        'quote_id' => $quote['quote_id'],
+        'email_sent' => !empty($send['email_sent']),
+        'error' => '',
+        'warning' => '',
+    ];
+}

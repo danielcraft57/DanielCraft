@@ -1,7 +1,9 @@
 {
-  "page_title": "Autres prestations - Identité web, SEO & SEO ChatGPT - DanielCraft",
-  "page_description": "Expert transformation d'identité web (multi-supports), SEO classique et SEO pour ChatGPT. Prestations : identité, visibilité, IA, technique, maintenance. Devis sur mesure.",
-  "page_keywords": "transformation identité web, SEO ChatGPT, découvrabilité IA, SEO, identité multi-supports, freelance Metz, visibilité Google, recommandation ChatGPT",
-  "page_url": "https://danielcraft.fr/autres-prestations",
-  "og_image": "https://danielcraft.fr/assets/images/og/prestations-1200x630.jpg"
+  "schema_type": "prestations_catalog",
+  "page_title": "Prestations web, visibilité & assistants — catalogue DanielCraft",
+  "page_description": "Catalogue de prestations en langage clair : site vitrine, identité visuelle, référencement Google, assistants IA, maintenance. Devis par e-mail, Metz & Lorraine.",
+  "page_keywords": "prestations web, création site vitrine, SEO Metz, assistant IA site, maintenance site, devis site internet, DanielCraft",
+  "og_image": "/assets/images/prestations/visibilite.svg",
+  "extra_css": "prestations.css",
+  "page_scripts": ["main.js", "prestations-catalog.js"]
 }

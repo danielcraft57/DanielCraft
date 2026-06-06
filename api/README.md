@@ -36,3 +36,13 @@ python scripts/stripe_sync_vitrines.py   # crée des Payment Links et met à jou
 ```
 
 Le catalogue est copié vers `api/data/vitrines.json` à chaque `python build.py`.
+
+## Devis prestations (Facturio)
+
+- `POST /api/request-prestation-devis.php` — corps `name`, `email`, `phone`, `company`, `message`, `prestation_slug`, `service_slug`, `total_eur`, `addon_id[]` (optionnel)
+- Réponse : `{ "success": true, "message": "...", "quote_id": "..." }`
+- Nécessite `FACTURIO_API_TOKEN` (voir `.env.example`) et l’endpoint public Facturio (`/devis`).
+
+Le catalogue prestations est copié vers `api/data/prestations.json` à chaque `python build.py`.
+
+**Dev local :** `.\scripts\serve_dev.ps1` (build + PHP + `dist/router.php` + watch). Voir `README.md`.

@@ -40,7 +40,20 @@
 <meta name="twitter:data1" content="{{vitrine_price_eur}} €">
 <meta name="twitter:label2" content="Livrable">
 <meta name="twitter:data2" content="Sources + démo + captures">
-{% else %}
+{% endif %}
+{% if schema_type == 'prestation' %}
+<meta property="og:image:alt" content="{{prestation_og_image_alt}}">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="420">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="product:price:amount" content="{{prestation_price_eur}}">
+<meta property="product:price:currency" content="EUR">
+<meta name="twitter:label1" content="Prix indicatif HT">
+<meta name="twitter:data1" content="{{prestation_price_eur}} €">
+<meta name="twitter:label2" content="Devis">
+<meta name="twitter:data2" content="Par e-mail, sans panier">
+{% endif %}
+{% if og_meta_profile == 'default' %}
 <meta property="og:image:alt" content="{{page_title}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -57,7 +70,11 @@
 <meta name="twitter:image" content="{{og_image}}">
 {% if schema_type == 'vitrine' %}
 <meta name="twitter:image:alt" content="{{vitrine_og_image_alt}}">
-{% else %}
+{% endif %}
+{% if schema_type == 'prestation' %}
+<meta name="twitter:image:alt" content="{{prestation_og_image_alt}}">
+{% endif %}
+{% if og_meta_profile == 'default' %}
 <meta name="twitter:image:alt" content="{{page_title}}">
 {% endif %}
 

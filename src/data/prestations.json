@@ -1,0 +1,591 @@
+{
+  "categories": [
+    {
+      "id": "identite",
+      "title": "Image & visibilité",
+      "nav_label": "Image & visibilité",
+      "icon": "fa-fingerprint",
+      "description": "Une présence claire et cohérente, sur Google comme auprès des assistants intelligents."
+    },
+    {
+      "id": "ia",
+      "title": "Assistants & automatisation",
+      "nav_label": "Assistants intelligents",
+      "icon": "fa-robot",
+      "description": "Des réponses utiles à vos clients, sans jargon technique."
+    },
+    {
+      "id": "technique",
+      "title": "Connexions & organisation",
+      "nav_label": "Connexions & outils",
+      "icon": "fa-plug",
+      "description": "Faire communiquer vos outils entre eux et gagner du temps au quotidien."
+    },
+    {
+      "id": "site-contenu",
+      "title": "Votre site & vos textes",
+      "nav_label": "Site & contenu",
+      "icon": "fa-paint-brush",
+      "description": "Pages, formulaires et petites retouches visuelles."
+    },
+    {
+      "id": "maintenance",
+      "title": "Sérénité & suivi",
+      "nav_label": "Entretien & support",
+      "icon": "fa-shield-alt",
+      "description": "Hébergement, sauvegardes et dépannage quand vous en avez besoin."
+    }
+  ],
+  "items": [
+    {
+      "slug": "site-vitrine",
+      "service_slug": "pack_vitrine",
+      "category": "identite",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-globe",
+      "title": "Site vitrine professionnel",
+      "tagline": "Votre vitrine en ligne, claire et rassurante",
+      "short_description": "Un site simple à parcourir sur téléphone et ordinateur, qui présente votre activité et incite à vous contacter.",
+      "description": "Je crée un site vitrine sur mesure : pages essentielles, textes lisibles, formulaire de contact et mise en ligne. Vous gardez la main sur vos contenus.",
+      "price_eur": 490,
+      "price_label": "Forfait",
+      "price_note": "Prix indicatif HT — devis personnalisé selon le nombre de pages",
+      "image": "/assets/images/prestations/site-vitrine.svg",
+      "benefits": [
+        "Une première impression professionnelle",
+        "Visible sur mobile sans effort de votre part",
+        "Un parcours simple vers la prise de contact"
+      ],
+      "includes": [
+        "Jusqu'à 5 pages (accueil, services, à propos, contact…)",
+        "Design adapté à votre métier",
+        "Formulaire de contact opérationnel",
+        "Mise en ligne et réglages de base"
+      ],
+      "faq": [
+        {
+          "q": "Combien de temps pour avoir mon site ?",
+          "a": "En général 5 à 8 jours ouvrés après validation du contenu et du style."
+        },
+        {
+          "q": "Puis-je modifier les textes moi-même ?",
+          "a": "Oui, je vous explique comment faire les mises à jour simples, ou je peux m'en charger via un forfait dédié."
+        }
+      ],
+      "addons": [
+        {
+          "id": "page_extra",
+          "title": "Page supplémentaire",
+          "price_eur": 65,
+          "description": "Une page en plus (ex. témoignages, galerie, tarifs détaillés)."
+        },
+        {
+          "id": "form_advanced",
+          "title": "Formulaire enrichi",
+          "price_eur": 99,
+          "description": "Champs sur mesure, pièces jointes ou envoi vers votre boîte mail / outil."
+        }
+      ],
+      "seo_title": "Création site vitrine professionnel — Metz & Lorraine",
+      "seo_description": "Site vitrine clair et mobile pour artisans et commerces. Présentez votre activité, rassurez vos visiteurs et recevez des demandes de contact."
+    },
+    {
+      "slug": "identite-harmonieuse",
+      "service_slug": "pack_identite",
+      "category": "identite",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-fingerprint",
+      "title": "Image de marque harmonisée",
+      "tagline": "La même identité partout où l'on vous voit",
+      "short_description": "Site, réseaux sociaux et documents alignés : couleurs, messages et visuels cohérents.",
+      "description": "Je reprends votre identité visuelle et vos textes clés pour les décliner sur votre site, vos profils en ligne et vos supports imprimables ou PDF.",
+      "price_eur": 990,
+      "price_label": "Forfait",
+      "price_note": "Selon le nombre de supports à harmoniser",
+      "image": "/assets/images/prestations/identite.svg",
+      "benefits": [
+        "Une image professionnelle et reconnaissable",
+        "Moins de confusion pour vos clients",
+        "Des supports prêts à partager"
+      ],
+      "includes": [
+        "Charte visuelle simplifiée (couleurs, typos, logos)",
+        "Adaptation site web",
+        "Bannières et visuels pour réseaux sociaux",
+        "Modèles de documents (devis, signature mail…)"
+      ],
+      "faq": [
+        {
+          "q": "Faut-il déjà avoir un logo ?",
+          "a": "C'est un plus, mais je peux partir de vos supports actuels et proposer une évolution progressive."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Identité visuelle web & réseaux — harmonisation de marque",
+      "seo_description": "Unifiez site, réseaux et documents : image pro cohérente pour votre commerce ou votre activité libérale en Lorraine."
+    },
+    {
+      "slug": "visibilite-complete",
+      "service_slug": "pack_seo_complet",
+      "category": "identite",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-search",
+      "title": "Être trouvé sur Google et par l'IA",
+      "tagline": "Pack visibilité : recherche classique + assistants intelligents",
+      "short_description": "Optimisation pour Google et pour que ChatGPT et les assistants puissent parler de vous correctement.",
+      "description": "Audit de votre site, corrections concrètes, contenus structurés et FAQ adaptées pour améliorer votre présence sur Google et dans les réponses des assistants IA.",
+      "price_eur": 699,
+      "price_label": "Forfait",
+      "price_note": "Site existant recommandé",
+      "image": "/assets/images/prestations/visibilite.svg",
+      "benefits": [
+        "Plus de visiteurs qualifiés depuis Google",
+        "Une fiche claire quand on vous cherche en ligne",
+        "Des contenus compréhensibles par les assistants IA"
+      ],
+      "includes": [
+        "Audit SEO classique + plan d'action",
+        "Optimisation « découverte IA » (structure, FAQ)",
+        "Corrections techniques prioritaires",
+        "Rapport simple à comprendre"
+      ],
+      "faq": [],
+      "addons": [],
+      "seo_title": "SEO Google + visibilité ChatGPT — pack complet",
+      "seo_description": "Pack visibilité : référencement Google et présence auprès des assistants IA. Idéal pour commerces et indépendants en Lorraine."
+    },
+    {
+      "slug": "referencement-google",
+      "service_slug": "seo_basique_290",
+      "category": "identite",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-search",
+      "title": "Remise en forme Google",
+      "tagline": "Audit et corrections pour mieux apparaître dans les recherches",
+      "short_description": "Je vérifie votre site, je corrige les points qui freinent Google et je vous explique quoi faire ensuite.",
+      "description": "Un passage en revue de votre site : titres, descriptions, vitesse de chargement, structure des pages. Vous recevez une liste claire des actions réalisées et des priorités restantes.",
+      "price_eur": 290,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/google.svg",
+      "benefits": ["Diagnostic sans jargon", "Corrections incluses dans le forfait", "Feuille de route compréhensible"],
+      "includes": ["Audit SEO", "Corrections prioritaires sur le site", "Rapport synthétique"],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Audit SEO et corrections — visibilité Google",
+      "seo_description": "Audit SEO simple et corrections pour votre site vitrine. Mieux positionné sur Google, sans promesses irréalistes."
+    },
+    {
+      "slug": "visible-assistants-ia",
+      "service_slug": "seo_chatgpt_490",
+      "category": "identite",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-robot",
+      "title": "Recommandé par les assistants IA",
+      "tagline": "Quand on vous demande à ChatGPT, qu'on parle bien de vous",
+      "short_description": "Structure et contenus pensés pour que les assistants intelligents comprennent et citent votre activité.",
+      "description": "Je mets en forme vos pages, vos questions-réponses et vos informations clés pour qu'un assistant puisse décrire votre offre de façon fidèle.",
+      "price_eur": 490,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/ia-visibilite.svg",
+      "benefits": ["Contenus clairs pour les IA", "FAQ utiles pour vos visiteurs", "Meilleure cohérence de votre message"],
+      "includes": ["Analyse de votre site actuel", "Données structurées et FAQ", "Recommandations éditoriales"],
+      "faq": [],
+      "addons": [],
+      "seo_title": "SEO pour ChatGPT et assistants IA — découvrabilité",
+      "seo_description": "Optimisez votre site pour être bien compris et cité par ChatGPT et les assistants. Pour entreprises locales et artisans."
+    },
+    {
+      "slug": "repondeur-intelligent",
+      "service_slug": "ia_faq_site",
+      "category": "ia",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-comments",
+      "title": "Répondeur intelligent sur votre site",
+      "tagline": "Répond aux questions fréquentes, jour et nuit",
+      "short_description": "Un assistant sur votre site qui guide vos visiteurs avec vos vraies informations (horaires, tarifs, prestations…).",
+      "description": "J'installe et configure un assistant conversationnel alimenté par vos textes : moins d'appels répétitifs, plus de contacts qualifiés.",
+      "price_eur": 990,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/assistant-site.svg",
+      "benefits": ["Disponible 24h/24", "Réponses alignées sur votre discours", "Moins de charge au téléphone"],
+      "includes": ["Installation sur votre site", "Entraînement sur vos contenus", "Personnalisation visuelle", "Mise en service"],
+      "faq": [
+        {
+          "q": "Est-ce que l'assistant invente des réponses ?",
+          "a": "Il s'appuie sur les informations que vous validez ; je configure des garde-fous et une escalade vers vous si besoin."
+        }
+      ],
+      "addons": [
+        {
+          "id": "maint_ia",
+          "title": "Entretien mensuel de l'assistant",
+          "price_eur": 75,
+          "description": "Mise à jour des réponses et ajout de nouvelles questions."
+        }
+      ],
+      "seo_title": "Assistant IA FAQ pour site web — chatbot métier",
+      "seo_description": "Assistant intelligent sur votre site : réponses aux questions fréquentes, prise de contact facilitée. Installation et configuration incluses."
+    },
+    {
+      "slug": "aide-emails-clients",
+      "service_slug": "ia_support_client",
+      "category": "ia",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-envelope",
+      "title": "Aide pour vos e-mails clients",
+      "tagline": "Des brouillons de réponses dans votre ton",
+      "short_description": "Un assistant qui propose des réponses professionnelles à partir de vos échanges passés.",
+      "description": "Je mets en place un outil qui vous aide à répondre plus vite aux demandes clients tout en gardant votre style et vos règles métier.",
+      "price_eur": 1200,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/emails.svg",
+      "benefits": ["Gain de temps sur les e-mails récurrents", "Ton homogène", "Vous validez avant envoi"],
+      "includes": ["Configuration de l'assistant", "Connexion à votre messagerie (selon compatibilité)", "Formation courte à l'usage"],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Assistant IA support client et e-mail",
+      "seo_description": "Automatisez vos réponses e-mail clients avec un assistant formé à votre activité. Installation et accompagnement."
+    },
+    {
+      "slug": "entretien-mensuel",
+      "service_slug": "maint_site_mensuel",
+      "category": "maintenance",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-cogs",
+      "title": "Site entretenu chaque mois",
+      "tagline": "Mises à jour, sauvegardes et petites corrections",
+      "short_description": "Je veille sur votre site : sécurité, sauvegardes et corrections mineures incluses.",
+      "description": "Un abonnement mensuel pour dormir tranquille : votre site reste à jour et joignable, je traite les petits soucis avant qu'ils deviennent gros.",
+      "price_eur": 39,
+      "price_label": "Mensuel",
+      "price_note": "Par site — hors gros développements",
+      "image": "/assets/images/prestations/maintenance.svg",
+      "benefits": ["Sérénité", "Interventions préventives", "Une personne de confiance"],
+      "includes": ["Mises à jour de sécurité", "Sauvegardes régulières", "Surveillance de base", "Petites corrections (quota mensuel)"],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Maintenance site web mensuelle — Metz & remote",
+      "seo_description": "Abonnement maintenance : mises à jour, sauvegardes et corrections mineures pour votre site vitrine ou professionnel."
+    },
+    {
+      "slug": "ia-contenus",
+      "service_slug": "ia_contenu_web",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-file-alt",
+      "title": "Textes pour votre site",
+      "short_description": "Articles et descriptions rédigés pour vous, adaptés à votre secteur.",
+      "price_eur": 650,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/contenus.svg"
+    },
+    {
+      "slug": "ia-redaction",
+      "service_slug": "ia_redaction_pro",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-pen-fancy",
+      "title": "Aide à la rédaction commerciale",
+      "short_description": "Propositions, e-mails et messages LinkedIn préparés à partir de votre offre.",
+      "price_eur": 490,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/redaction.svg"
+    },
+    {
+      "slug": "ia-analyse",
+      "service_slug": "ia_analyse_donnees",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-chart-bar",
+      "title": "Comprendre vos chiffres",
+      "short_description": "Tableaux de bord et explications simples à partir de vos données.",
+      "price_eur": 1450,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/analyse.svg"
+    },
+    {
+      "slug": "ia-boutique",
+      "service_slug": "ia_chatbot_ecom",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-shopping-cart",
+      "title": "Conseiller sur votre boutique",
+      "short_description": "Un assistant qui guide vos acheteurs : produits, tailles, disponibilité.",
+      "price_eur": 1600,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/boutique.svg"
+    },
+    {
+      "slug": "ia-automatisation",
+      "service_slug": "ia_automatisation",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-tasks",
+      "title": "Tâches répétitives automatisées",
+      "short_description": "Classement d'e-mails, extraction d'infos, rapports réguliers sans copier-coller.",
+      "price_eur": 1200,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/automatisation.svg"
+    },
+    {
+      "slug": "ia-maint-mensuelle",
+      "service_slug": "ia_abo_mensuel",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-wrench",
+      "title": "Entretien mensuel assistant",
+      "short_description": "Mise à jour des réponses et nouvelles connaissances chaque mois.",
+      "price_eur": 75,
+      "price_label": "Mensuel",
+      "image": "/assets/images/prestations/assistant-site.svg"
+    },
+    {
+      "slug": "ia-evolution",
+      "service_slug": "ia_evolution",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-plus-circle",
+      "title": "Nouvelle fonction pour votre assistant",
+      "short_description": "Ajout d'une capacité (nouvelle source, nouvel outil connecté).",
+      "price_eur": 330,
+      "price_label": "À partir de",
+      "image": "/assets/images/prestations/assistant-site.svg"
+    },
+    {
+      "slug": "ia-audit",
+      "service_slug": "ia_audit",
+      "category": "ia",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-search",
+      "title": "Bilan de votre usage de l'IA",
+      "short_description": "Où l'IA peut vraiment vous aider dans votre activité, concrètement.",
+      "price_eur": 400,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/analyse.svg"
+    },
+    {
+      "slug": "conseil-projet",
+      "service_slug": "tech_conseil_archi",
+      "category": "technique",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-sitemap",
+      "title": "Conseil avant un gros projet",
+      "short_description": "Faisabilité, budget et étapes : un plan clair avant de vous lancer.",
+      "price_eur": 380,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/conseil.svg"
+    },
+    {
+      "slug": "connexion-crm",
+      "service_slug": "tech_integration_crm",
+      "category": "technique",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-link",
+      "title": "Relier votre site à votre logiciel",
+      "short_description": "Contacts, devis ou commandes qui arrivent directement dans votre outil habituel.",
+      "price_eur": 290,
+      "price_label": "À partir de",
+      "image": "/assets/images/prestations/connexion.svg"
+    },
+    {
+      "slug": "transfert-donnees",
+      "service_slug": "tech_migration_donnees",
+      "category": "technique",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-database",
+      "title": "Transférer vos anciennes données",
+      "short_description": "Passage d'un tableur ou d'un ancien site vers votre nouvel outil, sans perte.",
+      "price_eur": 330,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/transfert.svg"
+    },
+    {
+      "slug": "liaison-outils",
+      "service_slug": "tech_api_webhook",
+      "category": "technique",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-code-branch",
+      "title": "Faire dialoguer deux outils",
+      "short_description": "Synchronisation automatique entre vos applications (commandes, stocks, contacts…).",
+      "price_eur": 150,
+      "price_label": "À partir de",
+      "image": "/assets/images/prestations/connexion.svg"
+    },
+    {
+      "slug": "rapport-vitesse",
+      "service_slug": "tech_perf_rapport",
+      "category": "technique",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-tachometer-alt",
+      "title": "Votre site est-il rapide ?",
+      "short_description": "Mesure et rapport simple : ce qui ralentit et comment l'améliorer.",
+      "price_eur": 120,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/vitesse.svg"
+    },
+    {
+      "slug": "page-supplementaire",
+      "service_slug": "site_page_supp",
+      "category": "site-contenu",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-file",
+      "title": "Une page en plus",
+      "short_description": "Nouvelle page sur votre site vitrine, prête à publier.",
+      "price_eur": 65,
+      "price_label": "Par page",
+      "image": "/assets/images/prestations/page.svg"
+    },
+    {
+      "slug": "formulaire-sur-mesure",
+      "service_slug": "site_form_avance",
+      "category": "site-contenu",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-wpforms",
+      "title": "Formulaire sur mesure",
+      "short_description": "Demande de devis, réservation ou questionnaire adapté à votre activité.",
+      "price_eur": 99,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/formulaire.svg"
+    },
+    {
+      "slug": "nouveau-look",
+      "service_slug": "site_refonte_visuelle",
+      "category": "site-contenu",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-palette",
+      "title": "Nouveau look pour votre site",
+      "short_description": "Couleurs, polices et mise en page rafraîchies sans tout reconstruire.",
+      "price_eur": 330,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/look.svg"
+    },
+    {
+      "slug": "maj-contenus",
+      "service_slug": "site_maj_contenu_5h",
+      "category": "site-contenu",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-edit",
+      "title": "Pack mise à jour de contenus",
+      "short_description": "5 heures pour changer textes, images et pages sur votre site.",
+      "price_eur": 170,
+      "price_label": "Pack",
+      "image": "/assets/images/prestations/contenus.svg"
+    },
+    {
+      "slug": "hebergement-domaine",
+      "service_slug": "maint_hebergement",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-server",
+      "title": "Hébergement & nom de domaine",
+      "short_description": "Votre site en ligne toute l'année avec votre adresse www.",
+      "price_eur": 79,
+      "price_label": "Annuel",
+      "image": "/assets/images/prestations/hebergement.svg"
+    },
+    {
+      "slug": "sauvegardes-securite",
+      "service_slug": "maint_backup",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-save",
+      "title": "Sauvegardes & sécurité",
+      "short_description": "Copies régulières et réglages pour protéger votre site.",
+      "price_eur": 99,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/securite.svg"
+    },
+    {
+      "slug": "https-site",
+      "service_slug": "maint_ssl",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-lock",
+      "title": "Cadenas HTTPS sur votre site",
+      "short_description": "Installation du certificat pour l'adresse sécurisée (https).",
+      "price_eur": 45,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/securite.svg"
+    },
+    {
+      "slug": "support-mensuel",
+      "service_slug": "maint_support_abo",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-headset",
+      "title": "Support par e-mail",
+      "short_description": "Une ligne directe pour vos questions techniques chaque mois.",
+      "price_eur": 25,
+      "price_label": "Mensuel",
+      "image": "/assets/images/prestations/support.svg"
+    },
+    {
+      "slug": "depannage-2h",
+      "service_slug": "maint_depannage_2h",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-tools",
+      "title": "Dépannage express (2 h)",
+      "short_description": "Bug, page cassée ou petite évolution : intervention ciblée.",
+      "price_eur": 120,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/depannage.svg"
+    },
+    {
+      "slug": "accompagnement-heure",
+      "service_slug": "maint_accompagnement_h",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-user-cog",
+      "title": "Accompagnement à l'heure",
+      "short_description": "Conseil, aide pas à pas ou relecture de ce que vous faites.",
+      "price_eur": 60,
+      "price_label": "À l'heure",
+      "image": "/assets/images/prestations/support.svg"
+    },
+    {
+      "slug": "support-prioritaire",
+      "service_slug": "maint_support_prio_h",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": false,
+      "icon": "fa-bolt",
+      "title": "Support prioritaire",
+      "short_description": "Réponse rapide quand vous êtes bloqué.",
+      "price_eur": 70,
+      "price_label": "À l'heure",
+      "image": "/assets/images/prestations/support.svg"
+    }
+  ]
+}
