@@ -1,0 +1,2 @@
+# Dépendances pour tests locaux et CI (build + blog)
+-r blog/requirements.txt
