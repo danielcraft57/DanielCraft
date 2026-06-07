@@ -55,6 +55,8 @@ assets/vitrines/screenshots/**
 api/vendor/
 /vendor/
 .phpunit.cache/
+composer.phar
+composer-setup.php
 
 # Favicons : source SVG + pack PNG/ICO/manifest (régénérer avec scripts/generate_favicon_pngs.py)
 
