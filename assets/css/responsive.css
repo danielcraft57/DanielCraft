@@ -28,8 +28,51 @@ html {
   }
 }
 
-/* Navigation compacte + grilles une colonne */
-@media (max-width: 900px) {
+/* Barre desktop moyenne : 4 liens → 3 (Accueil dans Plus) */
+@media (min-width: 960px) and (max-width: 1099px) {
+  .nav-link--bar-xl {
+    display: none;
+  }
+
+  .nav-dropdown-item--accueil-fallback {
+    display: list-item;
+  }
+
+  .nav-menu {
+    gap: 1.1rem;
+  }
+
+  .nav-cta-devis {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-cta-devis i {
+    display: none;
+  }
+}
+
+/* Barre desktop large : tous les liens principaux visibles */
+@media (min-width: 1100px) {
+  .nav-menu {
+    gap: 1.75rem;
+  }
+
+  .nav-link--bar-xl {
+    display: inline-flex;
+  }
+
+  .nav-dropdown-item--accueil-fallback {
+    display: none;
+  }
+}
+
+/* Menu burger — mobile & tablette portrait */
+@media (max-width: 959px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
   .nav-container {
     padding: var(--space-3) var(--space-4);
   }
@@ -42,8 +85,8 @@ html {
     background: #f8fbff;
     flex-direction: column;
     align-items: stretch;
-    gap: var(--space-2);
-    padding: var(--space-4);
+    gap: 0.15rem;
+    padding: var(--space-3) var(--space-4) var(--space-4);
     box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
     border-top: 1px solid rgba(126, 161, 216, 0.45);
     transform: translateX(-100%);
@@ -55,6 +98,14 @@ html {
 
   .nav-menu.active {
     transform: translateX(0);
+  }
+
+  .nav-link--bar-xl {
+    display: flex;
+  }
+
+  .nav-dropdown-item--accueil-fallback {
+    display: none;
   }
 
   .nav-menu .nav-link {
@@ -76,12 +127,15 @@ html {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: var(--space-2);
+    margin-top: 0.65rem;
     min-height: 48px;
   }
 
   .nav-dropdown {
     width: 100%;
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid rgba(126, 161, 216, 0.22);
   }
 
   .nav-dropdown-toggle {
@@ -89,21 +143,26 @@ html {
     justify-content: space-between;
     padding: 0.65rem 0.5rem;
     min-height: 44px;
+    font-weight: 600;
+    color: var(--primary-dark, #0f3550);
   }
 
   .nav-dropdown-menu {
     position: static;
     transform: none;
     box-shadow: none;
-    background: transparent;
-    padding: var(--space-1) 0 var(--space-2);
+    background: rgba(255, 255, 255, 0.65);
+    padding: 0.25rem 0 0.5rem;
     margin: 0;
+    border: none;
+    border-radius: 10px;
+    display: none;
     opacity: 1;
     visibility: visible;
-    border: none;
   }
 
   .nav-dropdown-menu.active {
+    display: block;
     transform: none;
   }
 

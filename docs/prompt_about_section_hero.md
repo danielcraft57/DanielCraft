@@ -108,7 +108,7 @@ Fichiers dans `assets/images/` (recadrage carré 1200×1200 pour le hero actif) 
 | `about-section-hero-trial-c.png` | **C** — Perf / auto / IA | Nœuds reliés + pipeline discret |
 | `about-section-hero-trial-f.png` | **F** — Full-stack couches | Trois plans reliés (UI / logique / data), style glass léger |
 
-Par défaut le site utilise **`about-section-hero.png` / `.webp`** dérivés du **trial F** (full-stack couches). Pour en changer : recopier un autre trial puis même export WebP, puis build / déploiement.
+Par défaut le site utilise **`about-section-hero.png` / `.webp`** générés par **`scripts/rasterize_about_hero.py`** à partir de **`about-section-hero.svg`** (silhouette professionnel + écran simplifié, charte bleu DanielCraft). Les fichiers `about-section-hero-trial-*.png` restent des essais IA optionnels (gitignorés).
 
 ---
 

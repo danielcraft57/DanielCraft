@@ -1,47 +1,44 @@
 /* ===== ANIMATIONS ===== */
 
-.scroll-reveal {
+/* Contenu visible par défaut ; masqué seulement si JS actif (évite écran vide mobile) */
+.scroll-reveal,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-scale {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .scroll-reveal:not(.revealed) {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.scroll-reveal-left {
+html.js .scroll-reveal-left:not(.revealed) {
   opacity: 0;
   transform: translateX(-30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.scroll-reveal-left.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scroll-reveal-right {
+html.js .scroll-reveal-right:not(.revealed) {
   opacity: 0;
   transform: translateX(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.scroll-reveal-right.revealed {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.scroll-reveal-scale {
+html.js .scroll-reveal-scale:not(.revealed) {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.scroll-reveal.revealed,
+.scroll-reveal-left.revealed,
+.scroll-reveal-right.revealed,
 .scroll-reveal-scale.revealed {
   opacity: 1;
-  transform: scale(1);
+  transform: none;
 }
 
 @keyframes fadeIn {
@@ -94,6 +91,10 @@
 
 /* Respect des préférences utilisateur : réduire les animations */
 @media (prefers-reduced-motion: reduce) {
+  html.js .scroll-reveal,
+  html.js .scroll-reveal-left,
+  html.js .scroll-reveal-right,
+  html.js .scroll-reveal-scale,
   .scroll-reveal,
   .scroll-reveal-left,
   .scroll-reveal-right,
@@ -101,13 +102,6 @@
     opacity: 1;
     transform: none;
     transition: none;
-  }
-
-  .scroll-reveal.revealed,
-  .scroll-reveal-left.revealed,
-  .scroll-reveal-right.revealed,
-  .scroll-reveal-scale.revealed {
-    transform: none;
   }
 
   .badge-pulse {
@@ -123,4 +117,3 @@
     animation: none;
   }
 }
-

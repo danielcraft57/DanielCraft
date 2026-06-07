@@ -1,9 +1,10 @@
 {
-  "page_title": "Audit de site web gratuit | DanielCraft",
-  "page_description": "Faites auditer votre site : découvrez ce qui freine vos visites et vos contacts. Audit gratuit par email ou analyse premium complète à 199 € TTC.",
-  "page_keywords": "audit site web, audit gratuit, visibilité web, crédibilité site, conversion site internet",
+  "page_title": "Audit site web gratuit — DanielCraft Metz",
+  "page_description": "Votre site freine vos contacts ? Audit gratuit par e-mail ou rapport premium à 199 € TTC : visibilité, crédibilité et parcours visiteur. Metz & Lorraine.",
+  "page_keywords": "audit site web, audit gratuit, visibilité Google, crédibilité site, conversion site internet, DanielCraft Metz",
   "page_url": "/audit",
-  "og_image": "/assets/images/audit/audit-hero.svg",
+  "og_image": "/assets/images/og/audit-1200x630.jpg",
+  "schema_type": "audit",
   "extra_css": "audit-page.css",
   "page_scripts": ["main.js", "audit-page.js"]
 }
