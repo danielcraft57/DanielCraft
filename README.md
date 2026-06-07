@@ -108,17 +108,24 @@ Génère les pages dans `dist/`, le blog dans `dist/blog/`, et les sitemaps (sit
 
 4. **Tester localement**
 
-Les pages utilisent des chemins **absolus** (`/assets/...`, `/favicon.ico`). Il faut donc servir le dossier **`dist/` comme racine** du serveur HTTP — pas la racine du dépôt avec une URL du type `/dist/index.html` (sinon 404 sur JS/CSS).
+**Recommandé (PHP + URLs propres + API + rebuild auto) :**
+```powershell
+.\scripts\serve_dev.ps1
+# ou simplement (délègue à serve_dev.ps1) :
+.\scripts\serve_local.ps1
+```
+Ouvre `http://localhost:8000/` — blog sans `.html`, fiches `/prestations/…`, formulaires et devis Facturio via `/api/`.
 
-```bash
-python3 build.py --no-webp
-python3 -m http.server 8000 --directory dist
-# Puis ouvrir : http://localhost:8000/
+**Aperçu statique sans PHP** (CSS/JS seulement, pas de contact/devis) :
+```powershell
+.\scripts\serve_local.ps1 -StaticOnly
 ```
 
-Windows (PowerShell) : `.\scripts\serve_local.ps1` (build + serveur).
-
-**À éviter** : `python -m http.server 8000` à la racine du repo puis `http://localhost:8000/dist/index.html` → `/assets/js/...` pointe hors de `dist/` et provoque des 404.
+**Manuel :**
+```bash
+python3 build.py --no-webp
+php -S 127.0.0.1:8000 -t dist dist/router.php
+```
 
 ### Déploiement
 

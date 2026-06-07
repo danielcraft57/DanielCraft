@@ -1,32 +1,49 @@
 <#
 .SYNOPSIS
-  Build le site dans dist/ et sert ce dossier en HTTP (prévisualisation locale).
+  Prévisualisation locale du site (dist/).
 
 .DESCRIPTION
-  La racine du site servie est dist/. Ouvrez http://localhost:<Port>/ (sans /dist/).
-  Ne pas ouvrir src/pages/*.html dans le navigateur : les {% include %} ne sont pas résolus hors build.
+  Par défaut, délègue à serve_dev.ps1 (PHP + URLs propres + API + watch).
+  Avec -StaticOnly : serveur Python uniquement (sans PHP / sans formulaires).
 
 .PARAMETER Port
   Port d'écoute (défaut 8000).
 
 .PARAMETER SkipBuild
-  Ne pas exécuter build.py (réutilise le contenu actuel de dist/).
+  Ne pas exécuter build.py au démarrage.
+
+.PARAMETER StaticOnly
+  Aperçu statique Python (blog sans .html) — pas d'API PHP.
+
+.PARAMETER NoWatch
+  Pas de rebuild automatique (transmis à serve_dev.ps1).
 #>
 [CmdletBinding()]
 param(
   [ValidateRange(1, 65535)]
   [int]$Port = 8000,
-  [switch]$SkipBuild
+  [switch]$SkipBuild,
+  [switch]$StaticOnly,
+  [switch]$NoWatch
 )
 
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 
+if (-not $StaticOnly) {
+  $devScript = Join-Path $PSScriptRoot "serve_dev.ps1"
+  $devArgs = @("-Port", $Port)
+  if ($SkipBuild) { $devArgs += "-SkipBuild" }
+  if ($NoWatch) { $devArgs += "-NoWatch" }
+  & $devScript @devArgs
+  exit $LASTEXITCODE
+}
+
+# --- Mode statique Python (legacy) ---
 $dist = Join-Path $root "dist"
 $indexHtml = Join-Path $dist "index.html"
 
-# Charger .env (si présent) pour SITE_BASE, etc.
 $envFile = Join-Path $root ".env"
 if (Test-Path $envFile) {
   . (Join-Path $root "scripts\load_env.ps1")
@@ -38,46 +55,16 @@ if (-not $SkipBuild) {
   python build.py --no-webp
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
-else {
-  Write-Host "[SkipBuild] build.py ignore — utilisation de dist/ tel quel." -ForegroundColor Yellow
-}
 
 if (-not (Test-Path $indexHtml)) {
-  Write-Error "Fichier manquant : $indexHtml — lancez sans -SkipBuild pour générer dist/."
+  Write-Error "Fichier manquant : $indexHtml — lancez sans -SkipBuild."
   exit 1
 }
 
-$indexRaw = Get-Content -LiteralPath $indexHtml -Raw -Encoding UTF8
-if ($indexRaw -match '\{%\s*include') {
-  Write-Warning "dist/index.html contient encore des directives {% include %}. Relancez un build complet ou vérifiez build.py."
-}
-
-# http.server --directory nécessite Python 3.7+
-$pyOk = $true
-python -c "import sys; raise SystemExit(0 if sys.version_info >= (3, 7) else 1)" 2>$null
-if ($LASTEXITCODE -ne 0) {
-  $pyOk = $false
-}
-
-$baseUrl = "http://localhost:$Port/"
 Write-Host ""
-Write-Host "Prévisualisation locale" -ForegroundColor Green
-Write-Host "  URL       : $baseUrl"
-Write-Host "  Racine HTTP : $dist (chemins /assets/..., /vitrines/...)"
-Write-Host "  Ctrl+C pour arrêter le serveur."
+Write-Host "Prévisualisation statique (Python — sans API PHP)" -ForegroundColor Yellow
+Write-Host "  URL : http://localhost:$Port/"
+Write-Host "  Pour contact/devis : .\scripts\serve_dev.ps1"
 Write-Host ""
 
-if ($pyOk) {
-  # URLs blog /blog/articles/slug sans .html (comme en prod avec réécriture)
-  python (Join-Path $root "scripts\blog_dev_server.py") $Port --directory dist
-}
-else {
-  Write-Warning "Python < 3.7 : serveur lancé depuis le dossier dist/ (sans --directory)."
-  Push-Location $dist
-  try {
-    python -m http.server $Port
-  }
-  finally {
-    Pop-Location
-  }
-}
+python (Join-Path $root "scripts\blog_dev_server.py") $Port --directory dist

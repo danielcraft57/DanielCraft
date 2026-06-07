@@ -34,6 +34,7 @@ PAGES_DIR = SRC_DIR / 'pages'
 DATA_DIR = SRC_DIR / 'data'
 PROJECTS_JSON = DATA_DIR / 'projects.json'
 VITRINES_JSON = DATA_DIR / 'vitrines.json'
+PRESTATIONS_JSON = DATA_DIR / 'prestations.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
 READMES_DIR = DATA_DIR / 'readmes'
 # Sources vitrines (anciennement showcase/) — publiées sous /vitrines/ au build
@@ -98,7 +99,6 @@ STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 # Pages statiques pour le sitemap (path, changefreq, priority)
 SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
-    ('/autres-prestations', 'monthly', '0.8'),
     ('/processus', 'monthly', '0.8'),
     ('/metz', 'monthly', '0.8'),
     ('/portfolio', 'monthly', '0.7'),
@@ -125,7 +125,8 @@ DEFAULT_VARS = {
     'current_page': '',
     'page_scripts': [],
     'extra_css': None,
-    'blog_enabled': True
+    'blog_enabled': True,
+    'og_meta_profile': 'default',
 }
 
 
@@ -271,6 +272,40 @@ def _inject_demo_protection(html: str) -> str:
     return new_html if n else html
 
 
+def sync_assets_to_dist(assets_src: Path, assets_dst: Path) -> None:
+    """
+    Copie assets/ vers dist/assets/ sans supprimer tout le dossier.
+    Evite les 404 sur /assets/js/*.js pendant un rebuild (serveur PHP encore actif).
+    """
+    if not assets_src.is_dir():
+        return
+    assets_dst.mkdir(parents=True, exist_ok=True)
+    copied = 0
+    for path in assets_src.rglob('*'):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(assets_src)
+        dest = assets_dst / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            src_stat = path.stat()
+            if dest.exists():
+                dst_stat = dest.stat()
+                if (
+                    int(dst_stat.st_mtime) >= int(src_stat.st_mtime)
+                    and dst_stat.st_size == src_stat.st_size
+                ):
+                    continue
+            shutil.copy2(path, dest)
+            copied += 1
+        except (PermissionError, OSError):
+            pass
+    if copied:
+        print(f"[OK] Assets synchronises vers {assets_dst} ({copied} fichier(s) mis a jour)")
+    else:
+        print(f"[OK] Assets deja a jour dans {assets_dst}")
+
+
 def generate_robots_txt(output_dir: Path) -> None:
     """
     Genere robots.txt dans dist/ avec des URLs basees sur SITE_BASE.
@@ -298,6 +333,7 @@ def generate_robots_txt(output_dir: Path) -> None:
         f"Sitemap: {base}/sitemap.xml\n"
         f"Sitemap: {base}/sitemap-pages.xml\n"
         f"Sitemap: {base}/sitemap-vitrines.xml\n"
+        f"Sitemap: {base}/sitemap-prestations.xml\n"
         f"Sitemap: {base}/blog/sitemap-blog.xml\n"
         "\n"
         "# Autoriser le blog\n"
@@ -957,6 +993,7 @@ def _build_vitrine_seo_bundle(
         'page_description': page_description,
         'page_keywords': page_keywords,
         'schema_type': 'vitrine',
+        'og_meta_profile': 'vitrine',
         'vitrine_hero_badge': hero_badge,
         'vitrine_category_label': cat_label,
         'vitrine_og_image_alt': vitrine_og_image_alt,
@@ -1014,13 +1051,13 @@ def publish_catalog_json_for_api(output_dir: Path) -> None:
 
 
 def format_audit_price_eur_display(value) -> str:
-    """Affichage FR du prix audit TTC (ex. 0,94)."""
+    """Affichage FR du prix audit TTC (ex. 199)."""
     try:
-        n = float(value) if value is not None else 0.94
+        n = float(value) if value is not None else 199
     except (TypeError, ValueError):
-        n = 0.94
+        n = 199
     if n <= 0:
-        n = 0.94
+        n = 199
     if abs(n - round(n)) < 0.001:
         return str(int(round(n)))
     return f'{n:.2f}'.replace('.', ',')
@@ -1198,6 +1235,69 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         'Pour les dépôts open source, voir aussi <a href="/projets">la page Projets</a>.</p>'
     )
     return lines
+
+
+def build_home_vitrines_teaser_embed() -> None:
+    """Fragment léger accueil : 3 exemples vitrine (+ 1 tablette paysage uniquement)."""
+    data = load_vitrines()
+    path_out = INCLUDES_DIR / 'home-vitrines-teaser.html'
+    if not data or not data.get('items'):
+        path_out.write_text('', encoding='utf-8')
+        print('[WARN] home-vitrines-teaser.html : pas de donnees vitrines')
+        return
+
+    by_slug = {
+        (it.get('slug') or '').strip(): it
+        for it in data.get('items', [])
+        if (it.get('slug') or '').strip()
+    }
+
+    def _teaser_card(slug: str, extra_class: str = '') -> str:
+        it = by_slug.get(slug)
+        if not it:
+            return ''
+        title = html.escape((it.get('title') or slug).strip())
+        tagline = html.escape((it.get('tagline') or '').strip())
+        cat = (it.get('category') or '').strip()
+        cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()))
+        thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
+        demo_url = f'/vitrines/{html.escape(slug)}/demo/index.html'
+        fiche_url = f'/vitrines/{html.escape(slug)}/'
+        cls = f'home-vitrine-teaser scroll-reveal{extra_class}'
+        return (
+            f'<article class="{cls}">'
+            f'<a class="home-vitrine-teaser-media" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
+            f'<img src="{html.escape(thumb)}" alt="" width="640" height="400" loading="lazy" decoding="async">'
+            f'<span class="home-vitrine-teaser-cat">{cat_label}</span>'
+            f'</a>'
+            f'<div class="home-vitrine-teaser-body">'
+            f'<h3 class="home-vitrine-teaser-title">{title}</h3>'
+            f'<p class="home-vitrine-teaser-tagline">{tagline}</p>'
+            f'<div class="home-vitrine-teaser-actions">'
+            f'<a class="btn btn-primary btn-sm" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
+            f'<span>Aperçu live</span><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>'
+            f'<a class="btn btn-outline btn-sm" href="{fiche_url}"><span>En savoir plus</span></a>'
+            f'</div></div></article>'
+        )
+
+    cards: List[str] = []
+    for slug in HOME_VITRINE_TEASER_SLUGS:
+        card = _teaser_card(slug)
+        if card:
+            cards.append(card)
+    tablet_card = _teaser_card(HOME_VITRINE_TEASER_TABLET_SLUG, ' home-vitrine-teaser--mid-grid-only')
+    if tablet_card:
+        cards.append(tablet_card)
+
+    content = (
+        '<!-- Genere par build.py : 3 exemples vitrine pour l\'accueil -->\n'
+        f'<div class="home-vitrines-teaser-grid">{"".join(cards)}</div>\n'
+        '<p class="home-vitrines-teaser-more">'
+        '<a href="/vitrines/">Voir tous les modèles par métier</a>'
+        '</p>\n'
+    )
+    path_out.write_text(content, encoding='utf-8')
+    print(f'[OK] home-vitrines-teaser.html genere ({len(cards)} exemple(s))')
 
 
 def build_vitrines_page_collection_embed() -> None:
@@ -1406,6 +1506,425 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         slugs_out.append(slug)
     print(f'[OK] {len(slugs_out)} page(s) vitrine dans {out_root}')
     return slugs_out
+
+
+def load_prestations() -> Dict[str, Any]:
+    """Charge src/data/prestations.json (catalogue prestations)."""
+    if not PRESTATIONS_JSON.is_file():
+        return {'categories': [], 'items': []}
+    try:
+        data = json.loads(PRESTATIONS_JSON.read_text(encoding='utf-8'))
+        if not isinstance(data, dict):
+            return {'categories': [], 'items': []}
+        data.setdefault('categories', [])
+        data.setdefault('items', [])
+        return data
+    except (json.JSONDecodeError, OSError):
+        return {'categories': [], 'items': []}
+
+
+def publish_prestations_json_for_api(output_dir: Path) -> None:
+    """Copie prestations.json vers dist/data/ et api/data/ (devis PHP)."""
+    if not PRESTATIONS_JSON.is_file():
+        return
+    for dest_root in (output_dir / 'data', BASE_DIR / 'api' / 'data'):
+        dest_root.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(PRESTATIONS_JSON, dest_root / 'prestations.json')
+    print('[OK] Catalogue prestations copie vers data/ et api/data/')
+
+
+def _prestation_items_by_category(data: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
+    cats = {c['id']: c for c in data.get('categories', []) if c.get('id')}
+    grouped: Dict[str, List[Dict[str, Any]]] = {cid: [] for cid in cats}
+    for it in data.get('items', []):
+        cid = (it.get('category') or '').strip()
+        if cid in grouped:
+            grouped[cid].append(it)
+    return grouped
+
+
+def _prestation_price_display(item: Dict[str, Any]) -> str:
+    try:
+        price = int(item.get('price_eur', 0))
+    except (TypeError, ValueError):
+        price = 0
+    label = (item.get('price_label') or 'Forfait').strip()
+    if price <= 0:
+        return label
+    return f'{label} · {price} €'
+
+
+PRESTATION_FEATURED_ORDER = (
+    'site-vitrine',
+    'visibilite-complete',
+    'repondeur-intelligent',
+)
+
+HOME_VITRINE_TEASER_SLUGS = (
+    'restauration',
+    'architecture',
+    'beaute',
+)
+
+# 4e exemple vitrine : visible uniquement tablette / mobile paysage (grille 2×2)
+HOME_VITRINE_TEASER_TABLET_SLUG = 'commerce'
+
+
+def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = False) -> str:
+    """Visuel carte : icône + dégradé (évite les SVG génériques peu parlants)."""
+    icon = html.escape((item.get('icon') or 'fa-star').strip())
+    cat = html.escape((item.get('category') or 'identite').strip())
+    hero_class = ' prestation-card-visual--hero' if featured_hero else ''
+    return (
+        f'<div class="prestation-card-visual prestation-card-visual--icon{hero_class}"'
+        f' data-prestation-cat="{cat}" aria-hidden="true">'
+        f'<i class="fas {icon}"></i></div>'
+    )
+
+
+def _prestation_card_html(
+    item: Dict[str, Any],
+    *,
+    show_featured_badge: bool = False,
+    featured_hero: bool = False,
+) -> str:
+    slug = (item.get('slug') or '').strip()
+    title_raw = (item.get('title') or slug).strip()
+    title = html.escape(title_raw)
+    desc = html.escape((item.get('short_description') or item.get('description') or '').strip())
+    icon = html.escape((item.get('icon') or 'fa-star').strip())
+    price_html = html.escape(_prestation_price_display(item))
+    tagline = html.escape((item.get('tagline') or '').strip())
+    service_slug = html.escape((item.get('service_slug') or slug).strip())
+    try:
+        price_eur = int(item.get('price_eur', 0))
+    except (TypeError, ValueError):
+        price_eur = 0
+    price_label = html.escape((item.get('price_label') or 'Forfait').strip())
+    if item.get('has_page'):
+        cta_href = f'/prestations/{slug}/'
+        cta_label = 'Découvrir'
+        actions = (
+            f'<div class="prestation-card-actions">'
+            f'<a href="{cta_href}" class="service-cta"><span>{html.escape(cta_label)}</span>'
+            f'<i class="fas fa-arrow-right" aria-hidden="true"></i></a>'
+            f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
+            f' data-prestation-slug="{html.escape(slug, quote=True)}"'
+            f' data-service-slug="{service_slug}"'
+            f' data-prestation-title="{title}"'
+            f' data-prestation-price="{price_eur}"'
+            f' data-prestation-price-label="{price_label}">'
+            f'<span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
+            f'</div>'
+        )
+    else:
+        actions = (
+            f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
+            f' data-prestation-slug="{html.escape(slug, quote=True)}"'
+            f' data-service-slug="{service_slug}"'
+            f' data-prestation-title="{title}"'
+            f' data-prestation-price="{price_eur}"'
+            f' data-prestation-price-label="{price_label}">'
+            f'<span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
+        )
+    badge = ''
+    if show_featured_badge and item.get('featured'):
+        badge = '<span class="prestation-card-badge">Coup de cœur</span>'
+    card_class = 'service-card prestation-card'
+    if item.get('featured') or featured_hero:
+        card_class += ' prestation-card--featured'
+    tagline_html = (
+        f'<p class="prestation-card-tagline">{tagline}</p>' if tagline and featured_hero else ''
+    )
+    return (
+        f'<article class="{card_class}" data-prestation-slug="{html.escape(slug, quote=True)}">'
+        f'{badge}'
+        f'{_prestation_card_visual_html(item, featured_hero=featured_hero)}'
+        f'<h3 class="service-title">{title}</h3>'
+        f'{tagline_html}'
+        f'<p class="service-description">{desc}</p>'
+        f'<div class="service-price"><span class="price-label">Indicatif</span><span class="price-amount">{price_html}</span></div>'
+        f'{actions}'
+        '</article>'
+    )
+
+
+def build_prestations_catalog_embed() -> None:
+    """Génère includes/prestations-catalog-embed.html depuis prestations.json."""
+    data = load_prestations()
+    cats = {c['id']: c for c in data.get('categories', []) if c.get('id')}
+    grouped = _prestation_items_by_category(data)
+    featured_raw = [
+        it for it in data.get('items', [])
+        if it.get('featured') and it.get('has_page')
+    ]
+    order_index = {slug: i for i, slug in enumerate(PRESTATION_FEATURED_ORDER)}
+    featured_pages = sorted(
+        featured_raw,
+        key=lambda it: order_index.get((it.get('slug') or '').strip(), 999),
+    )[:3]
+    parts: List[str] = []
+    if featured_pages:
+        cards = ''.join(
+            _prestation_card_html(it, show_featured_badge=True, featured_hero=True)
+            for it in featured_pages
+        )
+        parts.append(
+            '<section class="prestations-featured" aria-labelledby="prestations-featured-title">'
+            '<h2 id="prestations-featured-title" class="prestations-section-title">'
+            '<i class="fas fa-star" aria-hidden="true"></i> Nos 3 offres les plus utiles</h2>'
+            '<p class="prestations-featured-lead">Pour démarrer ou progresser sans jargon : un site clair, '
+            "être trouvé sur Google <em>et</em> par l'IA, ou un assistant qui répond à vos clients.</p>"
+            f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
+            '</section>'
+        )
+    nav_links = []
+    for cid, cat in cats.items():
+        anchor = html.escape(cid)
+        label = html.escape((cat.get('nav_label') or cat.get('title') or cid).strip())
+        nav_links.append(f'<a href="#{anchor}">{label}</a>')
+    if nav_links:
+        parts.insert(
+            0,
+            '<nav class="prestations-nav" aria-label="Navigation dans les prestations">'
+            + ''.join(nav_links)
+            + '</nav>',
+        )
+    for cid, cat in cats.items():
+        items = grouped.get(cid) or []
+        if not items:
+            continue
+        title = html.escape((cat.get('title') or cid).strip())
+        icon = html.escape((cat.get('icon') or 'fa-folder').strip())
+        desc = (cat.get('description') or '').strip()
+        desc_html = f'<p class="prestations-category-lead">{html.escape(desc)}</p>' if desc else ''
+        cards = ''.join(_prestation_card_html(it) for it in items)
+        parts.append(
+            f'<h2 id="{html.escape(cid)}" class="prestations-section-title">'
+            f'<i class="fas {icon}" aria-hidden="true"></i> {title}</h2>'
+            f'{desc_html}'
+            f'<div class="services-grid prestations-grid">{cards}</div>'
+        )
+    out_path = INCLUDES_DIR / 'prestations-catalog-embed.html'
+    out_path.write_text('\n'.join(parts), encoding='utf-8')
+    print(f'[OK] prestations-catalog-embed.html genere ({len(data.get("items", []))} prestation(s))')
+
+
+def _build_prestation_seo_bundle(
+    item: Dict[str, Any],
+    slug: str,
+    page_url_abs: str,
+    og_image_abs: str,
+) -> Dict[str, Any]:
+    title = (item.get('title') or slug).strip()
+    tagline = (item.get('tagline') or '').strip()
+    short = (item.get('short_description') or item.get('description') or '').strip()
+    try:
+        price = int(item.get('price_eur', 0))
+    except (TypeError, ValueError):
+        price = 0
+
+    custom_title = (item.get('seo_title') or '').strip()
+    title_seo = custom_title or f'{title} — prestation DanielCraft'
+    page_title = _truncate_meta_text(title_seo + ' | DanielCraft', 118)
+
+    custom_desc = (item.get('seo_description') or '').strip()
+    desc = custom_desc or f'{short} Devis par e-mail, sans engagement. DanielCraft, Metz & Lorraine.'
+    page_description = _truncate_meta_text(desc, 158)
+
+    kw = [
+        title.lower(),
+        slug.replace('-', ' '),
+        'prestation web',
+        'devis site internet',
+        'DanielCraft Metz',
+        tagline.lower() if tagline else '',
+    ]
+    page_keywords = _truncate_meta_text(', '.join(dict.fromkeys(k for k in kw if k)), 280)
+
+    og_alt = _truncate_meta_text(f'{title} — {tagline or short}', 190)
+
+    y = datetime.now().year
+    graph: List[Dict[str, Any]] = [
+        {
+            '@type': 'WebPage',
+            '@id': page_url_abs + '#webpage',
+            'url': page_url_abs,
+            'name': page_title,
+            'description': page_description,
+            'inLanguage': 'fr-FR',
+            'isPartOf': {
+                '@type': 'WebSite',
+                'name': 'DanielCraft',
+                'url': SITE_BASE.rstrip('/') + '/',
+            },
+            'primaryImageOfPage': {'@type': 'ImageObject', 'url': og_image_abs, 'caption': og_alt},
+        },
+        {
+            '@type': 'Service',
+            '@id': page_url_abs + '#service',
+            'name': title,
+            'description': short or tagline,
+            'url': page_url_abs,
+            'image': og_image_abs,
+            'provider': {'@type': 'Person', 'name': 'Loïc DANIEL', 'url': SITE_BASE.rstrip('/') + '/'},
+            'areaServed': {'@type': 'City', 'name': 'Metz'},
+            'offers': {
+                '@type': 'Offer',
+                'price': str(price) if price > 0 else '0',
+                'priceCurrency': 'EUR',
+                'availability': 'https://schema.org/InStock',
+                'url': page_url_abs + '#devis',
+            },
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': SITE_BASE.rstrip('/') + '/'},
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': 'Prestations',
+                    'item': SITE_BASE.rstrip('/') + '/autres-prestations',
+                },
+                {'@type': 'ListItem', 'position': 3, 'name': title, 'item': page_url_abs},
+            ],
+        },
+    ]
+
+    benefits = item.get('benefits') or []
+    includes = item.get('includes') or []
+    faq = item.get('faq') or []
+    benefits_html = (
+        '<ul class="prestation-benefits">'
+        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in benefits)
+        + '</ul>'
+    ) if benefits else ''
+    includes_html = (
+        '<ul class="prestation-includes">'
+        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in includes)
+        + '</ul>'
+    ) if includes else ''
+    faq_html = ''
+    if faq:
+        faq_bits = []
+        for entry in faq:
+            if not isinstance(entry, dict):
+                continue
+            q = html.escape(str(entry.get('q') or '').strip())
+            a = html.escape(str(entry.get('a') or '').strip())
+            if q and a:
+                faq_bits.append(
+                    f'<details class="prestation-faq-item"><summary>{q}</summary><p>{a}</p></details>'
+                )
+        if faq_bits:
+            faq_html = '<div class="prestation-faq">' + ''.join(faq_bits) + '</div>'
+
+    examples = item.get('examples') or []
+    examples_html = (
+        '<ul class="prestation-examples">'
+        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in examples if str(x).strip())
+        + '</ul>'
+    ) if examples else ''
+
+    promo_raw = (item.get('promo') or '').strip()
+    promo_html = (
+        f'<aside class="prestation-promo" role="note">'
+        f'<i class="fas fa-lightbulb" aria-hidden="true"></i>'
+        f'<p>{html.escape(promo_raw)}</p></aside>'
+    ) if promo_raw else ''
+
+    addons = item.get('addons') or []
+    addons_json = json.dumps(addons, ensure_ascii=False)
+
+    return {
+        'page_title': page_title,
+        'page_description': page_description,
+        'page_keywords': page_keywords,
+        'prestation_og_image_alt': og_alt,
+        'prestation_schema_jsonld': json.dumps(
+            {'@context': 'https://schema.org', '@graph': graph},
+            ensure_ascii=False,
+        ),
+        'prestation_benefits_html': benefits_html,
+        'prestation_includes_html': includes_html,
+        'prestation_examples_html': examples_html,
+        'prestation_promo_html': promo_html,
+        'prestation_faq_html': faq_html,
+        'prestation_addons_json': addons_json,
+        'prestation_price_eur': str(price),
+        'prestation_price_label': html.escape((item.get('price_label') or 'Forfait').strip()),
+        'prestation_price_note': html.escape((item.get('price_note') or '').strip()),
+    }
+
+
+def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
+    """Génère prestations/<slug>/index.html pour les fiches détaillées."""
+    data = load_prestations()
+    content_path = PAGES_DIR / 'prestation-detail.html'
+    if not content_path.exists():
+        print('[WARN] src/pages/prestation-detail.html manquant')
+        return []
+    content_tpl = content_path.read_text(encoding='utf-8')
+    template_path = TEMPLATES_DIR / 'base.html'
+    out_root = output_dir / 'prestations'
+    slugs_out: List[str] = []
+    for it in data.get('items', []):
+        if not it.get('has_page'):
+            continue
+        slug = (it.get('slug') or '').strip()
+        if not slug:
+            continue
+        title = (it.get('title') or slug).strip()
+        img_rel = (it.get('image') or '/assets/images/prestations/google.svg').strip()
+        og_image_abs = _to_absolute_url(img_rel)
+        page_url_abs = _to_absolute_url(f'/prestations/{slug}/')
+        seo_bundle = _build_prestation_seo_bundle(it, slug, page_url_abs, og_image_abs)
+        vars_dict = DEFAULT_VARS.copy()
+        vars_dict.update({
+            'schema_type': 'prestation',
+            'og_meta_profile': 'prestation',
+            'current_page': 'prestation',
+            'page_url': page_url_abs,
+            'og_image': og_image_abs,
+            'og_type': 'website',
+            'extra_css': 'prestations.css',
+            'page_scripts': ['main.js', 'prestation-devis-modal.js', 'prestation-devis.js'],
+            'prestation_slug': slug,
+            'prestation_service_slug': (it.get('service_slug') or slug).strip(),
+            'prestation_title': title,
+            'prestation_tagline': (it.get('tagline') or '').strip(),
+            'prestation_description': (it.get('description') or it.get('short_description') or '').strip(),
+            'prestation_image': img_rel,
+            'prestation_icon': (it.get('icon') or 'fa-star').strip(),
+            'prestation_category': (it.get('category') or 'identite').strip(),
+        })
+        vars_dict.update(seo_bundle)
+        _normalize_page_meta(vars_dict, slug)
+        vars_dict['page_url'] = page_url_abs
+        vars_dict['og_image'] = og_image_abs
+        scripts = vars_dict.get('page_scripts') or []
+        vars_dict['page_scripts_content'] = '\n'.join(
+            f'<script src="/assets/js/{s}" defer></script>' for s in scripts
+        )
+        content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
+        content_rendered = template_engine.process_includes(content_rendered, vars_dict)
+        vars_dict['page_content'] = content_rendered
+        html_output = template_engine.render(template_path, vars_dict)
+        dest_dir = out_root / slug
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        (dest_dir / 'index.html').write_text(html_output, encoding='utf-8')
+        slugs_out.append(slug)
+    print(f'[OK] {len(slugs_out)} page(s) prestation dans {out_root}')
+    return slugs_out
+
+
+def prestation_slugs_for_sitemap() -> List[str]:
+    return [
+        (it.get('slug') or '').strip()
+        for it in load_prestations().get('items', [])
+        if it.get('has_page') and (it.get('slug') or '').strip()
+    ]
 
 
 def _markdown_to_html_fallback(raw: str) -> str:
@@ -1623,6 +2142,10 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     """Build une page HTML."""
     if page_name in ('index', 'vitrines'):
         build_vitrines_catalog_embed()
+    if page_name == 'index':
+        build_home_vitrines_teaser_embed()
+    if page_name == 'autres-prestations':
+        build_prestations_catalog_embed()
 
     # Charge la config de la page
     page_config = load_page_config(page_name)
@@ -1637,7 +2160,16 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         paid = audit_cfg.get('paid_audit') if isinstance(audit_cfg.get('paid_audit'), dict) else {}
         vars_dict['stripe_publishable_key'] = _stripe_publishable_key()
         vars_dict['audit_paid_slug'] = str(paid.get('slug') or 'audit-complet-ia')
-        vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 0.94))
+        vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 199))
+
+    # Profil meta OG (le moteur de template ne gère pas != )
+    schema_type = str(vars_dict.get('schema_type') or '')
+    if schema_type == 'vitrine':
+        vars_dict['og_meta_profile'] = 'vitrine'
+    elif schema_type == 'prestation':
+        vars_dict['og_meta_profile'] = 'prestation'
+    else:
+        vars_dict['og_meta_profile'] = 'default'
 
     # Normalise canonical/OG a partir de SITE_BASE
     _normalize_page_meta(vars_dict, page_name)
@@ -1788,8 +2320,28 @@ def generate_sitemap_pages(
     (output_dir / 'sitemap-pages.xml').write_text('\n'.join(lines), encoding='utf-8')
 
 
+def generate_sitemap_prestations(output_dir: Path) -> None:
+    """Genere sitemap-prestations.xml : fiches prestations détaillées."""
+    lastmod = datetime.now().strftime('%Y-%m-%d')
+    base = SITE_BASE.rstrip('/')
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
+        '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
+        'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
+        _sitemap_url_line(base, '/autres-prestations', lastmod, 'weekly', '0.85'),
+    ]
+    for slug in prestation_slugs_for_sitemap():
+        lines.append(
+            _sitemap_url_line(base, f'/prestations/{slug}/', lastmod, 'monthly', '0.75')
+        )
+    lines.append('</urlset>')
+    (output_dir / 'sitemap-prestations.xml').write_text('\n'.join(lines), encoding='utf-8')
+
+
 def generate_sitemap_index(output_dir: Path) -> None:
-    """Genere sitemap.xml (index) : pages, vitrines, blog."""
+    """Genere sitemap.xml (index) : pages, vitrines, prestations, blog."""
     lastmod = datetime.now().strftime('%Y-%m-%d')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -1799,6 +2351,7 @@ def generate_sitemap_index(output_dir: Path) -> None:
         'http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-pages.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-vitrines.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
+        f'  <sitemap><loc>{SITE_BASE}/sitemap-prestations.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/blog/sitemap-blog.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         '</sitemapindex>',
     ]
@@ -1854,37 +2407,9 @@ def main():
     assets_src = BASE_DIR / 'assets'
     assets_dst = OUTPUT_DIR / 'assets'
     if assets_src.exists():
-        do_full_copytree = True
         if assets_dst.exists():
-            try:
-                shutil.rmtree(assets_dst)
-            except (PermissionError, OSError):
-                import stat
-                def handle_remove_readonly(func, path, exc):
-                    os.chmod(path, stat.S_IWRITE)
-                    func(path)
-                try:
-                    shutil.rmtree(assets_dst, onerror=handle_remove_readonly)
-                except (PermissionError, OSError):
-                    # Fichier verrouillé : copie par ecrasement sans supprimer
-                    for path in assets_src.rglob('*'):
-                        if path.is_file():
-                            rel = path.relative_to(assets_src)
-                            dest = assets_dst / rel
-                            dest.parent.mkdir(parents=True, exist_ok=True)
-                            try:
-                                shutil.copy2(path, dest)
-                            except (PermissionError, OSError):
-                                pass
-                    placeholder_dst = assets_dst / 'images' / 'projets' / 'placeholder.svg'
-                    if not placeholder_dst.exists():
-                        placeholder_src = assets_src / 'images' / 'projets' / 'placeholder.svg'
-                        if placeholder_src.exists():
-                            placeholder_dst.parent.mkdir(parents=True, exist_ok=True)
-                            shutil.copy2(placeholder_src, placeholder_dst)
-                    print(f"[OK] Assets mis a jour (fichiers verrouilles, copie par ecrasement)")
-                    do_full_copytree = False
-        if do_full_copytree:
+            sync_assets_to_dist(assets_src, assets_dst)
+        else:
             shutil.copytree(assets_src, assets_dst)
             print(f"[OK] Assets copies dans {assets_dst}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)
@@ -1896,6 +2421,7 @@ def main():
     publish_vitrines_to_dist(OUTPUT_DIR)
     publish_catalog_json_for_api(OUTPUT_DIR)
     publish_audits_json_for_api(OUTPUT_DIR)
+    publish_prestations_json_for_api(OUTPUT_DIR)
 
     # Genere robots.txt (base sur SITE_BASE)
     generate_robots_txt(OUTPUT_DIR)
@@ -2014,12 +2540,14 @@ def main():
     # Pages projet (projets/<slug>.html)
     project_slugs = build_project_pages(template_engine, OUTPUT_DIR)
     build_vitrine_pages(template_engine, OUTPUT_DIR)
+    build_prestation_pages(template_engine, OUTPUT_DIR)
 
-    # Generation des sitemaps (pages + projets | vitrines dediees | index)
+    # Generation des sitemaps (pages + projets | vitrines | prestations | index)
     generate_sitemap_vitrines(OUTPUT_DIR)
+    generate_sitemap_prestations(OUTPUT_DIR)
     generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs)
     generate_sitemap_index(OUTPUT_DIR)
-    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml generes")
+    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml, sitemap-prestations.xml generes")
 
     print(f"\n[OK] Build termine ! {success_count}/{len(pages)} page(s) generee(s) dans {OUTPUT_DIR}.")
     
@@ -2062,10 +2590,12 @@ def main():
                             ok += 1
                     ps = build_project_pages(template_engine, OUTPUT_DIR)
                     build_vitrine_pages(template_engine, OUTPUT_DIR)
+                    build_prestation_pages(template_engine, OUTPUT_DIR)
                     generate_sitemap_vitrines(OUTPUT_DIR)
+                    generate_sitemap_prestations(OUTPUT_DIR)
                     generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps)
                     generate_sitemap_index(OUTPUT_DIR)
-                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/sitemap")
+                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/sitemap")
 
                 def on_modified(self, event):
                     if event.is_directory:

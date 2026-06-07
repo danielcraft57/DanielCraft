@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main, 'feature/**']
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: blog/requirements.txt
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+          tools: composer:v2
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Install build dependencies
+        run: pip install -r blog/requirements.txt
+
+      - name: PHP syntax check
+        run: |
+          find api -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: PHP unit tests
+        run: composer test:php
+
+      - name: Python unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Build site (--no-webp)
+        env:
+          SITE_BASE: https://danielcraft.fr
+        run: python build.py --no-webp
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          test -f dist/audit.html
+          test -f dist/autres-prestations.html
+          test -f dist/router.php
+          test -f dist/api/send-contact.php
+          test -f dist/data/audits.json
+          grep -q '"price_eur": 199' dist/data/audits.json
+          grep -q 'audit-complet-ia' dist/data/audits.json
+          grep -q 'Par où commencer' dist/index.html
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: danielcraft-dist-${{ github.sha }}
+          path: dist/
+          retention-days: 30
+          if-no-files-found: error

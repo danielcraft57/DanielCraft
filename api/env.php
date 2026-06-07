@@ -75,3 +75,19 @@ function api_site_base(): string
     $base = getenv('SITE_BASE') ?: 'https://danielcraft.fr';
     return rtrim((string) $base, '/');
 }
+
+/**
+ * Journalisation légère (stderr PHP + fichier optionnel API_LOG_FILE).
+ */
+function api_log(string $channel, string $message, array $context = []): void
+{
+    $line = '[' . $channel . '] ' . $message;
+    if ($context !== []) {
+        $line .= ' ' . json_encode($context, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    }
+    error_log($line);
+    $logFile = getenv('API_LOG_FILE');
+    if (is_string($logFile) && $logFile !== '') {
+        @file_put_contents($logFile, gmdate('c') . ' ' . $line . "\n", FILE_APPEND | LOCK_EX);
+    }
+}

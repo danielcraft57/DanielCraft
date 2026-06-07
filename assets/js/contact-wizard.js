@@ -1,5 +1,5 @@
 /**
- * Formulaire contact en 4 étapes : prestation (liste cliquable), créneau, coordonnées, message.
+ * Formulaire contact en 5 étapes grand public : besoin, offre, créneau, coordonnées, récap.
  */
 (function () {
   'use strict';
@@ -129,55 +129,124 @@
    * Offres alignées sur /autres-prestations + forfaits page d’accueil.
    * slug → champ POST `service` ; budget optionnel (réf. forfait affichée côté mail).
    */
-  /** Types de projet (portfolio + ancien formulaire). */
-  const CONTACT_PROJECT_TYPES = [
-    { slug: 'web', label: 'Développement Web', icon: 'fa-laptop-code' },
-    { slug: 'backend', label: 'Backend & APIs', icon: 'fa-server' },
-    { slug: 'mobile', label: 'Application mobile', icon: 'fa-mobile-alt' },
-    { slug: 'desktop', label: 'Application desktop', icon: 'fa-desktop' },
-    { slug: 'tools', label: 'Outils & automatisation', icon: 'fa-tools' },
-    { slug: 'specialized', label: 'Spécialisé (data, finance, IoT…)', icon: 'fa-microchip' },
-    { slug: 'learning', label: 'Veille / apprentissage / proto', icon: 'fa-graduation-cap' },
-    { slug: 'other', label: 'Autre / à préciser', icon: 'fa-ellipsis-h' }
+  /** Besoins exprimés en langage courant (étape 1). */
+  const CONTACT_NEED_CATEGORIES = [
+    {
+      slug: 'site',
+      label: 'Un site internet',
+      sub: 'Création, refonte, pages en plus…',
+      icon: 'fa-globe'
+    },
+    {
+      slug: 'visibilite',
+      label: 'Être visible sur Google',
+      sub: 'Référencement, visibilité sur l’IA…',
+      icon: 'fa-search'
+    },
+    {
+      slug: 'assistant',
+      label: 'Un assistant sur mon site',
+      sub: 'Réponses auto, chatbot, e-mails…',
+      icon: 'fa-comments'
+    },
+    {
+      slug: 'entretien',
+      label: 'Entretien & dépannage',
+      sub: 'Maintenance, hébergement, sécurité…',
+      icon: 'fa-wrench'
+    },
+    {
+      slug: 'autre',
+      label: 'Je ne sais pas encore',
+      sub: 'On en parle au téléphone',
+      icon: 'fa-question-circle'
+    }
   ];
+
+  /** Offres proposées par besoin (slugs alignés sur le catalogue). */
+  const NEED_SERVICE_SLUGS = {
+    site: [
+      'pack_vitrine',
+      'pack_identite',
+      'site_page_supp',
+      'site_form_avance',
+      'site_refonte_visuelle',
+      'site_maj_contenu_5h',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    visibilite: [
+      'pack_seo_complet',
+      'seo_basique_290',
+      'seo_chatgpt_490',
+      'ia_contenu_web',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    assistant: [
+      'ia_faq_site',
+      'ia_support_client',
+      'ia_chatbot_ecom',
+      'ia_redaction_pro',
+      'ia_abo_mensuel',
+      'ia_evolution',
+      'ia_audit',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    entretien: [
+      'maint_site_mensuel',
+      'maint_hebergement',
+      'maint_backup',
+      'maint_ssl',
+      'maint_support_abo',
+      'maint_depannage_2h',
+      'maint_accompagnement_h',
+      'maint_support_prio_h',
+      'tech_perf_rapport',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    autre: ['besoin_a_preciser', 'projet_sur_mesure', 'tech_conseil_archi', 'maint_accompagnement_h']
+  };
 
   /**
    * Offres avec tags = types de projet (étape 1) pour regroupement à l’étape 2.
    * Un même slug peut apparaître dans plusieurs groupes si pertinent.
    */
   const CONTACT_SERVICE_ITEMS = [
-    { slug: 'pack_vitrine', title: 'Site vitrine', hint: '490€ · responsive, code source inclus', icon: 'fa-globe', budget: '490', tags: ['web'] },
-    { slug: 'pack_identite', title: 'Identité & visibilité (multi-supports)', hint: '990€ · site + réseaux + documents', icon: 'fa-fingerprint', budget: '990', tags: ['web'] },
-    { slug: 'pack_seo_complet', title: 'SEO Google + ChatGPT (pack)', hint: '699€ · visibilité search + IA', icon: 'fa-search', budget: '699', tags: ['web'] },
-    { slug: 'seo_basique_290', title: 'SEO basique (audit + corrections)', hint: '290€', icon: 'fa-search', tags: ['web', 'learning'] },
-    { slug: 'seo_chatgpt_490', title: 'SEO pour ChatGPT / découvrabilité IA', hint: '490€', icon: 'fa-robot', tags: ['web', 'specialized'] },
-    { slug: 'ia_faq_site', title: 'Assistant IA FAQ pour site web', hint: '990€', icon: 'fa-comments', tags: ['specialized', 'web'] },
-    { slug: 'ia_support_client', title: 'Assistant IA support client / email', hint: '1200€', icon: 'fa-envelope', tags: ['specialized'] },
-    { slug: 'ia_contenu_web', title: 'Générateur de contenus web par IA', hint: '650€', icon: 'fa-file-alt', tags: ['specialized', 'web'] },
-    { slug: 'ia_redaction_pro', title: 'Assistant IA rédaction commerciale', hint: '490€', icon: 'fa-pen-fancy', tags: ['specialized'] },
-    { slug: 'ia_analyse_donnees', title: 'Analyse de données avec IA', hint: '1450€', icon: 'fa-chart-bar', tags: ['specialized', 'desktop'] },
-    { slug: 'ia_chatbot_ecom', title: 'Chatbot IA e-commerce', hint: '1600€', icon: 'fa-shopping-cart', tags: ['specialized', 'mobile', 'web'] },
-    { slug: 'ia_automatisation', title: 'Automatisation de tâches avec IA', hint: '1200€', icon: 'fa-tasks', tags: ['specialized', 'tools'] },
-    { slug: 'ia_abo_mensuel', title: 'Maintenance mensuelle assistant IA', hint: '75€ / mois', icon: 'fa-wrench', tags: ['specialized'] },
-    { slug: 'ia_evolution', title: 'Évolution fonctionnalités IA', hint: 'À partir de 330€', icon: 'fa-plus-circle', tags: ['specialized'] },
-    { slug: 'ia_audit', title: 'Audit utilisation IA', hint: '400€', icon: 'fa-search', tags: ['specialized', 'learning'] },
-    { slug: 'tech_conseil_archi', title: 'Conseil technique / architecture', hint: '380€', icon: 'fa-sitemap', tags: ['backend', 'mobile', 'desktop', 'tools'] },
-    { slug: 'tech_integration_crm', title: 'Intégration CRM ou outil métier', hint: 'À partir de 290€', icon: 'fa-link', tags: ['tools', 'backend'] },
-    { slug: 'tech_migration_donnees', title: 'Script de migration de données', hint: '330€', icon: 'fa-database', tags: ['backend', 'desktop'] },
-    { slug: 'tech_api_webhook', title: 'Intégration API / webhook', hint: 'À partir de 150€', icon: 'fa-code-branch', tags: ['backend', 'mobile', 'web', 'tools'] },
-    { slug: 'tech_perf_rapport', title: 'Rapport de performances (one-shot)', hint: '120€', icon: 'fa-tachometer-alt', tags: ['web'] },
-    { slug: 'site_page_supp', title: 'Page supplémentaire (site vitrine)', hint: '65€ / page', icon: 'fa-file', tags: ['web'] },
-    { slug: 'site_form_avance', title: 'Formulaire avancé / intégration', hint: '99€', icon: 'fa-wpforms', tags: ['web'] },
-    { slug: 'site_refonte_visuelle', title: 'Refonte visuelle légère', hint: '330€', icon: 'fa-palette', tags: ['web'] },
-    { slug: 'site_maj_contenu_5h', title: 'Mise à jour de contenu (pack 5h)', hint: '170€', icon: 'fa-edit', tags: ['web'] },
-    { slug: 'maint_site_mensuel', title: 'Maintenance site (mensuelle)', hint: '39€ / mois', icon: 'fa-cogs', tags: ['web'] },
-    { slug: 'maint_hebergement', title: 'Hébergement + nom de domaine (annuel)', hint: '79€ / an', icon: 'fa-server', tags: ['web'] },
-    { slug: 'maint_backup', title: 'Backup & sécurisation', hint: '99€', icon: 'fa-save', tags: ['web', 'backend'] },
-    { slug: 'maint_ssl', title: 'Certificat SSL + configuration', hint: '45€', icon: 'fa-lock', tags: ['web'] },
-    { slug: 'maint_support_abo', title: 'Support / abonnement', hint: '25€ / mois', icon: 'fa-headset', tags: ['web'] },
-    { slug: 'maint_depannage_2h', title: 'Dépannage / intervention (forfait 2h)', hint: '120€', icon: 'fa-tools', tags: ['web', 'desktop'] },
-    { slug: 'maint_accompagnement_h', title: 'Accompagnement technique (à l’heure)', hint: '60€ / h', icon: 'fa-user-cog', tags: ['web', 'desktop', 'tools'] },
-    { slug: 'maint_support_prio_h', title: 'Support prioritaire (à l’heure)', hint: '70€ / h', icon: 'fa-bolt', tags: ['web'] },
+    { slug: 'pack_vitrine', title: 'Site vitrine professionnel', hint: '490€ · clair sur mobile et ordinateur', icon: 'fa-globe', budget: '490', tags: ['web'] },
+    { slug: 'pack_identite', title: 'Image de marque harmonisée', hint: '990€ · site, réseaux et documents', icon: 'fa-fingerprint', budget: '990', tags: ['web'] },
+    { slug: 'pack_seo_complet', title: 'Visible sur Google et par l’IA', hint: '699€ · pack visibilité complet', icon: 'fa-search', budget: '699', tags: ['web'] },
+    { slug: 'seo_basique_290', title: 'Remise en forme Google', hint: '290€ · audit + corrections', icon: 'fa-search', tags: ['web', 'learning'] },
+    { slug: 'seo_chatgpt_490', title: 'Recommandé par les assistants IA', hint: '490€', icon: 'fa-robot', tags: ['web', 'specialized'] },
+    { slug: 'ia_faq_site', title: 'Répondeur intelligent sur le site', hint: '990€', icon: 'fa-comments', tags: ['specialized', 'web'] },
+    { slug: 'ia_support_client', title: 'Aide pour vos e-mails clients', hint: '1200€', icon: 'fa-envelope', tags: ['specialized'] },
+    { slug: 'ia_contenu_web', title: 'Textes pour votre site', hint: '650€', icon: 'fa-file-alt', tags: ['specialized', 'web'] },
+    { slug: 'ia_redaction_pro', title: 'Aide à la rédaction commerciale', hint: '490€', icon: 'fa-pen-fancy', tags: ['specialized'] },
+    { slug: 'ia_analyse_donnees', title: 'Comprendre vos chiffres', hint: '1450€', icon: 'fa-chart-bar', tags: ['specialized', 'desktop'] },
+    { slug: 'ia_chatbot_ecom', title: 'Conseiller sur votre boutique', hint: '1600€', icon: 'fa-shopping-cart', tags: ['specialized', 'mobile', 'web'] },
+    { slug: 'ia_automatisation', title: 'Tâches répétitives automatisées', hint: '1200€', icon: 'fa-tasks', tags: ['specialized', 'tools'] },
+    { slug: 'ia_abo_mensuel', title: 'Entretien mensuel de l’assistant', hint: '75€ / mois', icon: 'fa-wrench', tags: ['specialized'] },
+    { slug: 'ia_evolution', title: 'Nouvelle fonction pour l’assistant', hint: 'À partir de 330€', icon: 'fa-plus-circle', tags: ['specialized'] },
+    { slug: 'ia_audit', title: 'Bilan de votre usage de l’IA', hint: '400€', icon: 'fa-search', tags: ['specialized', 'learning'] },
+    { slug: 'tech_conseil_archi', title: 'Conseil avant un gros projet', hint: '380€', icon: 'fa-sitemap', tags: ['backend', 'mobile', 'desktop', 'tools'] },
+    { slug: 'tech_integration_crm', title: 'Relier le site à votre logiciel', hint: 'À partir de 290€', icon: 'fa-link', tags: ['tools', 'backend'] },
+    { slug: 'tech_migration_donnees', title: 'Transférer vos anciennes données', hint: '330€', icon: 'fa-database', tags: ['backend', 'desktop'] },
+    { slug: 'tech_api_webhook', title: 'Faire dialoguer deux outils', hint: 'À partir de 150€', icon: 'fa-code-branch', tags: ['backend', 'mobile', 'web', 'tools'] },
+    { slug: 'tech_perf_rapport', title: 'Votre site est-il rapide ?', hint: '120€', icon: 'fa-tachometer-alt', tags: ['web'] },
+    { slug: 'site_page_supp', title: 'Une page en plus', hint: '65€ / page', icon: 'fa-file', tags: ['web'] },
+    { slug: 'site_form_avance', title: 'Formulaire sur mesure', hint: '99€', icon: 'fa-wpforms', tags: ['web'] },
+    { slug: 'site_refonte_visuelle', title: 'Nouveau look pour le site', hint: '330€', icon: 'fa-palette', tags: ['web'] },
+    { slug: 'site_maj_contenu_5h', title: 'Pack mise à jour de contenus', hint: '170€', icon: 'fa-edit', tags: ['web'] },
+    { slug: 'maint_site_mensuel', title: 'Site entretenu chaque mois', hint: '39€ / mois', icon: 'fa-cogs', tags: ['web'] },
+    { slug: 'maint_hebergement', title: 'Hébergement & nom de domaine', hint: '79€ / an', icon: 'fa-server', tags: ['web'] },
+    { slug: 'maint_backup', title: 'Sauvegardes & sécurité', hint: '99€', icon: 'fa-save', tags: ['web', 'backend'] },
+    { slug: 'maint_ssl', title: 'Cadenas HTTPS sur le site', hint: '45€', icon: 'fa-lock', tags: ['web'] },
+    { slug: 'maint_support_abo', title: 'Support par e-mail', hint: '25€ / mois', icon: 'fa-headset', tags: ['web'] },
+    { slug: 'maint_depannage_2h', title: 'Dépannage express (2 h)', hint: '120€', icon: 'fa-tools', tags: ['web', 'desktop'] },
+    { slug: 'maint_accompagnement_h', title: 'Accompagnement à l’heure', hint: '60€ / h', icon: 'fa-user-cog', tags: ['web', 'desktop', 'tools'] },
+    { slug: 'maint_support_prio_h', title: 'Support prioritaire', hint: '70€ / h', icon: 'fa-bolt', tags: ['web'] },
     {
       slug: 'besoin_a_preciser',
       title: 'Je ne sais pas encore',
@@ -554,7 +623,7 @@
 
     function buildAutoMessage() {
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
-      const typeLabel = (CONTACT_PROJECT_TYPES.find((x) => x.slug === typeSlug) || {})
+      const typeLabel = (CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug) || {})
         .label || typeSlug || '—';
 
       const serviceTitle = state.selectedServiceTitle || '—';
@@ -568,20 +637,25 @@
             : `À ${state.selectedTime.replace(':', 'h')}`;
       }
 
-      return [
-        'Pré-sélection faite via le formulaire :',
-        `- Type de projet : ${typeLabel}`,
-        `- Prestation : ${serviceTitle}`,
+      const lines = [
+        'Demande via le formulaire du site :',
+        `- Besoin : ${typeLabel}`,
+        `- Offre : ${serviceTitle}`,
         `- Date proposée : ${dateLine}`,
         `- Heure : ${timeLine}`
-      ].join('\n');
+      ];
+      const userNote = messageEl ? (messageEl.value || '').trim() : '';
+      if (userNote) {
+        lines.push('', 'Message du client :', userNote);
+      }
+      return lines.join('\n');
     }
 
     function updateValidationRecap() {
       if (!recapTypeEl || !recapServiceEl || !recapDateEl || !recapTimeEl) return;
 
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
-      const typeObj = CONTACT_PROJECT_TYPES.find((x) => x.slug === typeSlug);
+      const typeObj = CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug);
       recapTypeEl.textContent = typeObj?.label || '—';
       recapServiceEl.textContent = state.selectedServiceTitle || '—';
       if (recapNameEl) recapNameEl.textContent = (nameEl?.value || '').trim() || '—';
@@ -864,7 +938,7 @@
       projectTypeMount.innerHTML = '';
       const row = document.createElement('div');
       row.className = 'contact-type-chips';
-      CONTACT_PROJECT_TYPES.forEach((pt) => {
+      CONTACT_NEED_CATEGORIES.forEach((pt) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'contact-type-chip';
@@ -872,13 +946,18 @@
         btn.setAttribute('aria-pressed', 'false');
         btn.setAttribute(
           'aria-label',
-          `Type de projet : ${pt.label}. Sélectionner et passer à la prestation.`
+          `Besoin : ${pt.label}. Sélectionner et passer au choix de l’offre.`
         );
+        const subHtml = pt.sub
+          ? '<span class="contact-type-chip__sub">' + escapeHtml(pt.sub) + '</span>'
+          : '';
         btn.innerHTML =
           '<span class="contact-type-chip__icon" aria-hidden="true"><i class="fas ' +
           pt.icon +
-          '"></i></span><span class="contact-type-chip__label">' +
-          pt.label +
+          '"></i></span><span class="contact-type-chip__body"><span class="contact-type-chip__label">' +
+          escapeHtml(pt.label) +
+          '</span>' +
+          subHtml +
           '</span>';
         btn.addEventListener('click', () => {
           hideFeedback();
@@ -886,7 +965,7 @@
           clearProjectTypeSelectionVisual();
           btn.classList.add('is-selected');
           btn.setAttribute('aria-pressed', 'true');
-          announce(`Type de projet : ${pt.label}.`);
+          announce(`Besoin : ${pt.label}.`);
           // Reset des choix précédents pour éviter de garder une prestation incompatible.
           if (serviceField) serviceField.value = '';
           if (budgetField) budgetField.value = '';
@@ -905,7 +984,7 @@
         hideFeedback();
         const pt = (projectTypeField && projectTypeField.value) || '';
         if (!pt) {
-          showFeedback('Choisissez d’abord un type de projet.', true);
+          showFeedback('Choisissez d’abord votre besoin principal.', true);
           setStep(1);
           return;
         }
@@ -917,7 +996,7 @@
         clearServiceSelectionVisual();
         btn.classList.add('is-selected');
         updatePickedServiceBanner();
-        announce(`Prestation : ${item.title}. Choix du créneau.`);
+        announce(`Offre : ${item.title}. Choix du créneau.`);
         setStep(3);
       });
     }
@@ -926,9 +1005,12 @@
       if (!serviceMount) return;
       serviceMount.innerHTML = '';
       const selectedPt = (projectTypeField && projectTypeField.value) || '';
-      const pt = CONTACT_PROJECT_TYPES.find((x) => x.slug === selectedPt) || null;
+      const pt = CONTACT_NEED_CATEGORIES.find((x) => x.slug === selectedPt) || null;
+      const allowedSlugs = NEED_SERVICE_SLUGS[selectedPt] || [];
       const items = selectedPt
-        ? CONTACT_SERVICE_ITEMS.filter((it) => it.tags.includes(selectedPt))
+        ? allowedSlugs
+            .map((slug) => CONTACT_SERVICE_ITEMS.find((it) => it.slug === slug))
+            .filter(Boolean)
         : [];
       const rankedItems =
         state.personalizationContext && window.Personalization && typeof window.Personalization.rankServices === 'function'
@@ -938,7 +1020,7 @@
       if (!selectedPt || !pt || !rankedItems.length) {
         const msg = document.createElement('p');
         msg.className = 'contact-step__intro';
-        msg.textContent = 'Aucune offre trouvée pour ce type de projet.';
+        msg.textContent = 'Aucune offre trouvée pour ce besoin. Revenez en arrière ou choisissez « Je ne sais pas encore ».';
         serviceMount.appendChild(msg);
         return;
       }
@@ -986,7 +1068,7 @@
           '</span>' +
           recoTag +
           descHtml +
-          '<span class="contact-service-card__go" aria-hidden="true"><i class="fas fa-arrow-right"></i> Créneau</span>';
+          '<span class="contact-service-card__go" aria-hidden="true"><i class="fas fa-arrow-right"></i> Continuer</span>';
 
         attachServiceCardClick(btn, item);
         grid.appendChild(btn);
@@ -1214,7 +1296,7 @@
     function validateStepProjectType() {
       const pt = (projectTypeField && projectTypeField.value) || '';
       if (!pt) {
-        showFeedback('Choisissez un type de projet.', true);
+        showFeedback('Choisissez votre besoin principal.', true);
         return false;
       }
       hideFeedback();
@@ -1224,7 +1306,7 @@
     function validateStepPrestation() {
       const v = (serviceField && serviceField.value) || '';
       if (!v) {
-        showFeedback('Choisissez une prestation dans la liste.', true);
+        showFeedback('Choisissez une offre dans la liste.', true);
         return false;
       }
       hideFeedback();
@@ -1336,10 +1418,9 @@
       if (state.sending) return;
       state.sending = true;
 
-      // Backend exige un message non vide : on le génère à partir des choix.
+      // Backend exige un message non vide : récap + note éventuelle du client.
       if (messageEl) {
-        const current = (messageEl.value || '').trim();
-        if (!current) messageEl.value = buildAutoMessage();
+        messageEl.value = buildAutoMessage();
       }
 
       hideFeedback();
