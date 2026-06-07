@@ -4,6 +4,8 @@
  * Recoit POST, valide les champs, envoie un email et repond en JSON.
  */
 
+require_once __DIR__ . '/env.php';
+
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
@@ -109,10 +111,16 @@ function contact_service_label(string $slug): string
     return 'Prestation (réf. invalide)';
 }
 
-/** Libellés type de projet (formulaire contact). */
+/** Libellés besoin principal (formulaire contact grand public). */
 function contact_project_type_label(string $slug): string
 {
     static $map = [
+        'site' => 'Un site internet',
+        'visibilite' => 'Être visible sur Google',
+        'assistant' => 'Un assistant sur mon site',
+        'entretien' => 'Entretien & dépannage',
+        'autre' => 'Je ne sais pas encore',
+        // Anciens slugs (formulaires / liens en cache)
         'web' => 'Développement Web',
         'backend' => 'Backend & APIs',
         'mobile' => 'Application mobile',
@@ -167,9 +175,12 @@ if ($is_audit_flow) {
     }
 }
 
-$allowed_project_types = ['web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other'];
-if ($project_type === '' || !in_array($project_type, $allowed_project_types, true)) {
-    $errors[] = 'Le type de projet est obligatoire.';
+$allowed_need_categories = [
+    'site', 'visibilite', 'assistant', 'entretien', 'autre',
+    'web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other',
+];
+if ($project_type === '' || !in_array($project_type, $allowed_need_categories, true)) {
+    $errors[] = 'Le besoin principal est obligatoire.';
 }
 
 if ($service === '') {
@@ -242,58 +253,21 @@ if (in_array($service, $vitrine_flow_services, true)) {
 }
 
 if (!empty($errors)) {
+    api_log('send-contact', 'validation 400', [
+        'errors' => $errors,
+        'project_type' => $project_type,
+        'service' => $service,
+    ]);
     http_response_code(400);
-    echo json_encode(['success' => false, 'error' => implode(' ', $errors)]);
+    echo json_encode([
+        'success' => false,
+        'error' => implode(' ', $errors),
+        'errors' => $errors,
+    ]);
     exit;
 }
 
-/**
- * Charge un .env local pour les contextes PHP-FPM où les variables shell
- * (MAIL_*) ne sont pas injectées automatiquement.
- */
-function load_dotenv_if_present(array $paths): void
-{
-    foreach ($paths as $envPath) {
-        if (!is_string($envPath) || $envPath === '' || !is_file($envPath) || !is_readable($envPath)) {
-            continue;
-        }
-        $lines = @file($envPath, FILE_IGNORE_NEW_LINES);
-        if (!is_array($lines)) {
-            continue;
-        }
-        foreach ($lines as $rawLine) {
-            $line = trim((string)$rawLine);
-            if ($line === '' || str_starts_with($line, '#')) {
-                continue;
-            }
-            if (!preg_match('/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/', $line, $m)) {
-                continue;
-            }
-            $key = $m[1];
-            $val = trim($m[2]);
-            if (($val !== '') && (
-                (str_starts_with($val, '"') && str_ends_with($val, '"')) ||
-                (str_starts_with($val, "'") && str_ends_with($val, "'"))
-            )) {
-                $val = substr($val, 1, -1);
-            }
-            if (getenv($key) !== false && getenv($key) !== '') {
-                continue;
-            }
-            putenv($key . '=' . $val);
-            $_ENV[$key] = $val;
-            $_SERVER[$key] = $val;
-        }
-        // Un seul .env valide suffit.
-        break;
-    }
-}
-
-load_dotenv_if_present([
-    __DIR__ . '/../.env',     // prod typique: /var/www/site/.env
-    __DIR__ . '/../../.env',  // dev repo root
-    getcwd() . '/.env'
-]);
+api_bootstrap_env();
 
 // --- Configuration SMTP DEV via variables d'environnement (optionnel) ---
 // Supporte deux formats :
@@ -383,7 +357,7 @@ if ($service === 'vitrine_catalog_order') {
 $body = "Nom : " . $name . "\n";
 $body .= "Email : " . $email . "\n";
 $body .= "Téléphone : " . ($phone ?: 'Non renseigné') . "\n";
-$body .= "Type de projet : " . $projectTypeLabel . " (" . $project_type . ")\n";
+$body .= "Besoin : " . $projectTypeLabel . " (" . $project_type . ")\n";
 $body .= "Prestation : " . $serviceLabel . " (slug: " . $service . ")\n";
 $body .= "Réf. forfait / budget (si indiqué) : " . ($budget."€" ?: 'Non renseigné') . "\n";
 $body .= "Date proposée (échange) : " . ($preferred_date ?: 'Non renseignée') . "\n";
@@ -502,7 +476,7 @@ $htmlBody = '
                   </tr>
                   <tr>
                     <td style="padding:10px 0;border-bottom:1px solid #eef1f7;">
-                      <div style="font-size:12px;color:#6b7280;font-weight:700;">Type de projet</div>
+                      <div style="font-size:12px;color:#6b7280;font-weight:700;">Besoin</div>
                       <div style="font-size:14px;color:#0f172a;font-weight:800;">'.$safeProjectTypeLabel.' <span style="font-weight:700;color:#6b7280;">('.$safeProjectTypeSlug.')</span></div>
                     </td>
                   </tr>
@@ -604,7 +578,7 @@ $htmlBodyUser = '
                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
                   <tr>
                     <td style="padding:8px 0;border-bottom:1px solid #eef1f7;">
-                      <div style="font-size:12px;color:#6b7280;font-weight:700;">Type de projet</div>
+                      <div style="font-size:12px;color:#6b7280;font-weight:700;">Besoin</div>
                       <div style="font-size:14px;color:#0f172a;font-weight:800;">'.$safeProjectTypeLabel.'</div>
                     </td>
                   </tr>
@@ -666,7 +640,7 @@ $htmlBodyUser = '
 $bodyUser = "Bonjour " . $name . ",\n\n";
 $bodyUser .= "Merci pour votre demande, elle a bien été reçue.\n\n";
 $bodyUser .= "Récapitulatif :\n";
-$bodyUser .= "- Type de projet : " . $projectTypeLabel . "\n";
+$bodyUser .= "- Besoin : " . $projectTypeLabel . "\n";
 $bodyUser .= "- Prestation : " . $serviceLabelUser . "\n";
 $bodyUser .= "- " . $budgetMarketingLine . "\n";
 $bodyUser .= "- Date proposée : " . ($preferred_date ?: 'Non renseignée') . "\n";

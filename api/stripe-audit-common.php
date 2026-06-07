@@ -39,9 +39,9 @@ function stripe_audit_unit_amount_cents(array $item): int
     if (isset($item['price_cents']) && is_numeric($item['price_cents'])) {
         return (int) $item['price_cents'];
     }
-    $priceEur = $item['price_eur'] ?? 0.94;
+    $priceEur = $item['price_eur'] ?? 199;
     if (!is_numeric($priceEur)) {
-        return 94;
+        return 19900;
     }
 
     return (int) round((float) $priceEur * 100);

@@ -1051,13 +1051,13 @@ def publish_catalog_json_for_api(output_dir: Path) -> None:
 
 
 def format_audit_price_eur_display(value) -> str:
-    """Affichage FR du prix audit TTC (ex. 0,94)."""
+    """Affichage FR du prix audit TTC (ex. 199)."""
     try:
-        n = float(value) if value is not None else 0.94
+        n = float(value) if value is not None else 199
     except (TypeError, ValueError):
-        n = 0.94
+        n = 199
     if n <= 0:
-        n = 0.94
+        n = 199
     if abs(n - round(n)) < 0.001:
         return str(int(round(n)))
     return f'{n:.2f}'.replace('.', ',')
@@ -1238,7 +1238,7 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
 
 
 def build_home_vitrines_teaser_embed() -> None:
-    """Fragment léger accueil : 3 exemples vitrine (sans filtres ni grille complète)."""
+    """Fragment léger accueil : 3 exemples vitrine (+ 1 tablette paysage uniquement)."""
     data = load_vitrines()
     path_out = INCLUDES_DIR / 'home-vitrines-teaser.html'
     if not data or not data.get('items'):
@@ -1251,11 +1251,11 @@ def build_home_vitrines_teaser_embed() -> None:
         for it in data.get('items', [])
         if (it.get('slug') or '').strip()
     }
-    cards: List[str] = []
-    for slug in HOME_VITRINE_TEASER_SLUGS:
+
+    def _teaser_card(slug: str, extra_class: str = '') -> str:
         it = by_slug.get(slug)
         if not it:
-            continue
+            return ''
         title = html.escape((it.get('title') or slug).strip())
         tagline = html.escape((it.get('tagline') or '').strip())
         cat = (it.get('category') or '').strip()
@@ -1263,8 +1263,9 @@ def build_home_vitrines_teaser_embed() -> None:
         thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
         demo_url = f'/vitrines/{html.escape(slug)}/demo/index.html'
         fiche_url = f'/vitrines/{html.escape(slug)}/'
-        cards.append(
-            f'<article class="home-vitrine-teaser scroll-reveal">'
+        cls = f'home-vitrine-teaser scroll-reveal{extra_class}'
+        return (
+            f'<article class="{cls}">'
             f'<a class="home-vitrine-teaser-media" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
             f'<img src="{html.escape(thumb)}" alt="" width="640" height="400" loading="lazy" decoding="async">'
             f'<span class="home-vitrine-teaser-cat">{cat_label}</span>'
@@ -1278,6 +1279,15 @@ def build_home_vitrines_teaser_embed() -> None:
             f'<a class="btn btn-outline btn-sm" href="{fiche_url}"><span>En savoir plus</span></a>'
             f'</div></div></article>'
         )
+
+    cards: List[str] = []
+    for slug in HOME_VITRINE_TEASER_SLUGS:
+        card = _teaser_card(slug)
+        if card:
+            cards.append(card)
+    tablet_card = _teaser_card(HOME_VITRINE_TEASER_TABLET_SLUG, ' home-vitrine-teaser--mid-grid-only')
+    if tablet_card:
+        cards.append(tablet_card)
 
     content = (
         '<!-- Genere par build.py : 3 exemples vitrine pour l\'accueil -->\n'
@@ -1555,6 +1565,9 @@ HOME_VITRINE_TEASER_SLUGS = (
     'architecture',
     'beaute',
 )
+
+# 4e exemple vitrine : visible uniquement tablette / mobile paysage (grille 2×2)
+HOME_VITRINE_TEASER_TABLET_SLUG = 'commerce'
 
 
 def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = False) -> str:
@@ -2147,7 +2160,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         paid = audit_cfg.get('paid_audit') if isinstance(audit_cfg.get('paid_audit'), dict) else {}
         vars_dict['stripe_publishable_key'] = _stripe_publishable_key()
         vars_dict['audit_paid_slug'] = str(paid.get('slug') or 'audit-complet-ia')
-        vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 0.94))
+        vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 199))
 
     # Profil meta OG (le moteur de template ne gère pas != )
     schema_type = str(vars_dict.get('schema_type') or '')

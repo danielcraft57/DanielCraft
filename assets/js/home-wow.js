@@ -29,6 +29,7 @@
 
   function initHeroParallax() {
     if (reduceMotion) return;
+    if (window.matchMedia('(max-width: 767px)').matches) return;
     const visual = document.querySelector('[data-home-parallax]');
     if (!visual) return;
     window.addEventListener(
