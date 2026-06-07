@@ -192,3 +192,27 @@
 </script>
 {% endif %}
 
+{% if schema_type == 'prestation' %}
+<script type="application/ld+json">
+{{prestation_schema_jsonld}}
+</script>
+{% endif %}
+
+{% if schema_type == 'prestations_catalog' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Catalogue des prestations DanielCraft",
+  "description": "{{page_description}}",
+  "url": "{{page_url}}",
+  "inLanguage": "fr-FR",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "DanielCraft",
+    "url": "{{site_base}}"
+  }
+}
+</script>
+{% endif %}
+

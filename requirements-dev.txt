@@ -1,0 +1,4 @@
+# Dépendances pour tests locaux et CI (build + blog)
+-r blog/requirements.txt
+
+# PHP (PHPUnit) : composer install à la racine du repo

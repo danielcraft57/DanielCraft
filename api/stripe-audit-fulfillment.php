@@ -135,7 +135,7 @@ function stripe_fulfill_audit_invoice(string $sessionId, array $ctx, array $item
     }
 
     $title = trim((string) ($item['title'] ?? 'Audit premium site web'));
-    $priceTtc = (float) ($item['price_eur'] ?? 0.94);
+    $priceTtc = (float) ($item['price_eur'] ?? 199);
     $taxRate = (float) ($item['tax_rate'] ?? 20);
 
     $inv = facturio_issue_audit_invoice(
@@ -240,7 +240,7 @@ function stripe_fulfill_audit_checkout_session(string $sessionId): array
     if (!is_array($item)) {
         $item = [
             'title' => 'Audit premium site web',
-            'price_eur' => 0.94,
+            'price_eur' => 199,
             'tax_rate' => 20,
         ];
     }

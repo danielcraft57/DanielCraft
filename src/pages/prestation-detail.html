@@ -1,0 +1,117 @@
+<article class="prestation-detail-root" data-prestation-slug="{{prestation_slug}}" data-service-slug="{{prestation_service_slug}}" data-prestation-title="{{prestation_title}}" data-prestation-price="{{prestation_price_eur}}" data-prestation-price-label="{{prestation_price_label}}">
+<section class="prestation-detail-hero">
+    <div class="container prestation-detail-hero-inner">
+        <nav class="prestation-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
+            <a href="/">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <a href="/autres-prestations">Prestations</a>
+            <span aria-hidden="true">/</span>
+            <span>{{prestation_title}}</span>
+        </nav>
+        <div class="prestation-detail-hero-grid">
+            <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 60ms">
+                <span class="section-badge"><i class="fas {{prestation_icon}}" aria-hidden="true"></i> Prestation</span>
+                <h1 class="section-title">{{prestation_title}}</h1>
+                <p class="section-description prestation-detail-lead">{{prestation_tagline}}</p>
+                <p class="prestation-detail-desc">{{prestation_description}}</p>
+                <div class="prestation-detail-hero-actions">
+                    <button type="button" class="btn btn-primary btn-large" data-prestation-devis-open
+                        data-prestation-slug="{{prestation_slug}}"
+                        data-service-slug="{{prestation_service_slug}}"
+                        data-prestation-title="{{prestation_title}}"
+                        data-prestation-price="{{prestation_price_eur}}"
+                        data-prestation-price-label="{{prestation_price_label}}">
+                        <span>Recevoir un devis par e-mail</span>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <figure class="prestation-detail-visual prestation-detail-visual--icon scroll-reveal" style="--reveal-delay: 120ms" aria-hidden="true">
+                <div class="prestation-detail-visual-inner" data-prestation-cat="{{prestation_category}}">
+                    <i class="fas {{prestation_icon}}"></i>
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="prestation-detail-body">
+    <div class="container prestation-detail-layout">
+        <div class="prestation-detail-main">
+            {% if prestation_promo_html %}
+            <div class="scroll-reveal" style="--reveal-delay: 0ms">
+                {{prestation_promo_html}}
+            </div>
+            {% endif %}
+            {% if prestation_benefits_html %}
+            <div class="scroll-reveal" style="--reveal-delay: 40ms">
+                <h2 class="section-title">Ce que vous gagnez</h2>
+                {{prestation_benefits_html}}
+            </div>
+            {% endif %}
+            {% if prestation_includes_html %}
+            <div class="scroll-reveal" style="--reveal-delay: 80ms">
+                <h2 class="section-title">Ce qui est inclus</h2>
+                {{prestation_includes_html}}
+            </div>
+            {% endif %}
+            {% if prestation_examples_html %}
+            <div class="scroll-reveal" style="--reveal-delay: 120ms">
+                <h2 class="section-title">Exemples concrets</h2>
+                <p class="prestation-examples-lead">Des situations réelles, sans jargon technique :</p>
+                {{prestation_examples_html}}
+            </div>
+            {% endif %}
+            {% if prestation_faq_html %}
+            <div class="scroll-reveal" style="--reveal-delay: 160ms">
+                <h2 class="section-title">Questions fréquentes</h2>
+                {{prestation_faq_html}}
+            </div>
+            {% endif %}
+        </div>
+
+        <aside class="prestation-devis-panel scroll-reveal" style="--reveal-delay: 100ms" id="devis" aria-labelledby="prestation-devis-title">
+            <div class="prestation-devis-card box-soft">
+                <h2 id="prestation-devis-title" class="prestation-devis-title">Votre devis en un clic</h2>
+                <p class="prestation-devis-intro">Comme sur une boutique en ligne, sans panier : vous indiquez votre e-mail, je crée le devis avec Facturio et vous l'envoie.</p>
+
+                <div class="prestation-devis-summary" aria-live="polite">
+                    <div class="prestation-devis-line prestation-devis-line--main">
+                        <span class="prestation-devis-line-label">{{prestation_title}}</span>
+                        <span class="prestation-devis-line-price" data-prestation-base-price="{{prestation_price_eur}}">{{prestation_price_eur}} €</span>
+                    </div>
+                    <p class="prestation-devis-note">{{prestation_price_label}}{% if prestation_price_note %} — {{prestation_price_note}}{% endif %}</p>
+                    <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
+                    <div class="prestation-devis-total-row">
+                        <span>Total indicatif</span>
+                        <strong class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
+                    </div>
+                    <p class="prestation-devis-legal">Montant indicatif HT. Devis définitif après échange, envoyé par e-mail.</p>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisOpenModal"
+                    data-prestation-devis-open
+                    data-prestation-slug="{{prestation_slug}}"
+                    data-service-slug="{{prestation_service_slug}}"
+                    data-prestation-title="{{prestation_title}}"
+                    data-prestation-price="{{prestation_price_eur}}"
+                    data-prestation-price-label="{{prestation_price_label}}">
+                    <span>Recevoir mon devis par e-mail</span>
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                </button>
+                <input type="hidden" id="prestationDevisTotalHidden" data-prestation-total-input value="{{prestation_price_eur}}">
+            </div>
+        </aside>
+    </div>
+</section>
+
+<section class="prestation-detail-cta section">
+    <div class="container text-center">
+        <p class="section-description">Une autre prestation vous intéresse ?</p>
+        <a href="/autres-prestations" class="btn btn-outline btn-large">
+            <span>Voir tout le catalogue</span>
+            <i class="fas fa-th-large" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+</article>
