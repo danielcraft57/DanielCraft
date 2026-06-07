@@ -2409,6 +2409,37 @@ section {
   border-color: transparent;
 }
 
+.contact-type-chip__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  text-align: left;
+}
+
+.contact-type-chip__sub {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--gray-500);
+  line-height: 1.3;
+}
+
+.contact-step__intro--muted {
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.contact-step__intro--muted a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.label-optional {
+  font-weight: 500;
+  color: var(--gray-500);
+  font-size: 0.88em;
+}
+
 /* Choix prestation */
 .contact-service-mount {
   max-height: min(62vh, 520px);

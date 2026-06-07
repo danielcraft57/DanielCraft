@@ -1,65 +1,122 @@
 <!-- Navigation réutilisable -->
+
 <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+
     <div class="nav-container">
+
         <div class="nav-logo">
+
             {% if current_page == 'index' %}
+
             <a href="#home" class="logo-link" aria-label="Retour à l'accueil">
+
             {% else %}
+
             <a href="/" class="logo-link" aria-label="Retour à l'accueil">
+
             {% endif %}
+
                 <div class="logo-icon" aria-hidden="true">
+
                     <span class="logo-text">DC</span>
+
                 </div>
+
                 <span class="logo-name">DanielCraft</span>
+
             </a>
+
         </div>
+
         
+
         <div class="nav-menu" id="navMenu" role="menubar">
+
             {% if current_page == 'index' %}
+
             <a href="#home" class="nav-link active" data-section="home" role="menuitem">Accueil</a>
-            <a href="#vitrines" class="nav-link" data-section="vitrines" role="menuitem">Vitrines</a>
-            <a href="#offres" class="nav-link" data-section="offres" role="menuitem">Services</a>
-            <a href="#about" class="nav-link" data-section="about" role="menuitem">À Propos</a>
-            <a href="#tarifs" class="nav-link" data-section="tarifs" role="menuitem">Budget</a>
+
+            <a href="#offres" class="nav-link" data-section="offres" role="menuitem">Nos offres</a>
+
             <a href="#contact" class="nav-link" data-section="contact" role="menuitem">Contact</a>
+
             {% else %}
+
             <a href="/#home" class="nav-link" role="menuitem">Accueil</a>
-            <a href="/#vitrines" class="nav-link" role="menuitem">Vitrines</a>
-            <a href="/#offres" class="nav-link" role="menuitem">Services</a>
-            <a href="/#about" class="nav-link" role="menuitem">À Propos</a>
-            <a href="/#tarifs" class="nav-link" role="menuitem">Budget</a>
+
+            <a href="/#offres" class="nav-link" role="menuitem">Nos offres</a>
+
             <a href="/#contact" class="nav-link" role="menuitem">Contact</a>
+
             {% endif %}
+
             
+
             <!-- Menu déroulant "Plus" pour regrouper les pages secondaires -->
+
             <div class="nav-dropdown">
+
                 <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" id="moreMenu">
+
                     Plus <i class="fas fa-chevron-down" aria-hidden="true"></i>
+
                 </button>
+
                 <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
+
+                    <li><a href="{% if current_page == 'index' %}#vitrines{% else %}/#vitrines{% endif %}" class="nav-dropdown-link" role="menuitem">Exemples de sites</a></li>
+
                     <li><a href="/autres-prestations" class="nav-dropdown-link{% if current_page == 'autres-prestations' %} active{% endif %}" role="menuitem">Catalogue prestations</a></li>
+
                     <li><a href="/audit" class="nav-dropdown-link{% if current_page == 'audit' %} active{% endif %}" role="menuitem">Audit de votre site</a></li>
+
                     {% if blog_enabled %}
+
                     <li><a href="/blog/" class="nav-dropdown-link{% if current_page == 'blog' %} active{% endif %}" role="menuitem">Blog</a></li>
+
                     {% endif %}
+
+                    <li><a href="{% if current_page == 'index' %}#about{% else %}/#about{% endif %}" class="nav-dropdown-link" role="menuitem">À propos</a></li>
+
                 </ul>
+
             </div>
+
         </div>
+
         
+
         <div class="nav-actions">
+
             {% if current_page == 'index' %}
-            <a href="#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Parler de votre projet — accéder au formulaire de contact">
+
+            <a href="#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Demander un devis — accéder au formulaire de contact">
+
             {% else %}
-            <a href="/#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Parler de votre projet — accéder au formulaire de contact">
+
+            <a href="/#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Demander un devis — accéder au formulaire de contact">
+
             {% endif %}
-                <span>Parler de votre projet</span>
+
+                <span>Demander un devis</span>
+
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
+
             </a>
+
             <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+
                 <span class="hamburger-line" aria-hidden="true"></span>
+
                 <span class="hamburger-line" aria-hidden="true"></span>
+
                 <span class="hamburger-line" aria-hidden="true"></span>
+
             </button>
+
         </div>
+
     </div>
+
 </nav>
+

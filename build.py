@@ -272,6 +272,40 @@ def _inject_demo_protection(html: str) -> str:
     return new_html if n else html
 
 
+def sync_assets_to_dist(assets_src: Path, assets_dst: Path) -> None:
+    """
+    Copie assets/ vers dist/assets/ sans supprimer tout le dossier.
+    Evite les 404 sur /assets/js/*.js pendant un rebuild (serveur PHP encore actif).
+    """
+    if not assets_src.is_dir():
+        return
+    assets_dst.mkdir(parents=True, exist_ok=True)
+    copied = 0
+    for path in assets_src.rglob('*'):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(assets_src)
+        dest = assets_dst / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            src_stat = path.stat()
+            if dest.exists():
+                dst_stat = dest.stat()
+                if (
+                    int(dst_stat.st_mtime) >= int(src_stat.st_mtime)
+                    and dst_stat.st_size == src_stat.st_size
+                ):
+                    continue
+            shutil.copy2(path, dest)
+            copied += 1
+        except (PermissionError, OSError):
+            pass
+    if copied:
+        print(f"[OK] Assets synchronises vers {assets_dst} ({copied} fichier(s) mis a jour)")
+    else:
+        print(f"[OK] Assets deja a jour dans {assets_dst}")
+
+
 def generate_robots_txt(output_dir: Path) -> None:
     """
     Genere robots.txt dans dist/ avec des URLs basees sur SITE_BASE.
@@ -1203,6 +1237,59 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
     return lines
 
 
+def build_home_vitrines_teaser_embed() -> None:
+    """Fragment léger accueil : 3 exemples vitrine (sans filtres ni grille complète)."""
+    data = load_vitrines()
+    path_out = INCLUDES_DIR / 'home-vitrines-teaser.html'
+    if not data or not data.get('items'):
+        path_out.write_text('', encoding='utf-8')
+        print('[WARN] home-vitrines-teaser.html : pas de donnees vitrines')
+        return
+
+    by_slug = {
+        (it.get('slug') or '').strip(): it
+        for it in data.get('items', [])
+        if (it.get('slug') or '').strip()
+    }
+    cards: List[str] = []
+    for slug in HOME_VITRINE_TEASER_SLUGS:
+        it = by_slug.get(slug)
+        if not it:
+            continue
+        title = html.escape((it.get('title') or slug).strip())
+        tagline = html.escape((it.get('tagline') or '').strip())
+        cat = (it.get('category') or '').strip()
+        cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()))
+        thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
+        demo_url = f'/vitrines/{html.escape(slug)}/demo/index.html'
+        fiche_url = f'/vitrines/{html.escape(slug)}/'
+        cards.append(
+            f'<article class="home-vitrine-teaser scroll-reveal">'
+            f'<a class="home-vitrine-teaser-media" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
+            f'<img src="{html.escape(thumb)}" alt="" width="640" height="400" loading="lazy" decoding="async">'
+            f'<span class="home-vitrine-teaser-cat">{cat_label}</span>'
+            f'</a>'
+            f'<div class="home-vitrine-teaser-body">'
+            f'<h3 class="home-vitrine-teaser-title">{title}</h3>'
+            f'<p class="home-vitrine-teaser-tagline">{tagline}</p>'
+            f'<div class="home-vitrine-teaser-actions">'
+            f'<a class="btn btn-primary btn-sm" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
+            f'<span>Aperçu live</span><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>'
+            f'<a class="btn btn-outline btn-sm" href="{fiche_url}"><span>En savoir plus</span></a>'
+            f'</div></div></article>'
+        )
+
+    content = (
+        '<!-- Genere par build.py : 3 exemples vitrine pour l\'accueil -->\n'
+        f'<div class="home-vitrines-teaser-grid">{"".join(cards)}</div>\n'
+        '<p class="home-vitrines-teaser-more">'
+        '<a href="/vitrines/">Voir tous les modèles par métier</a>'
+        '</p>\n'
+    )
+    path_out.write_text(content, encoding='utf-8')
+    print(f'[OK] home-vitrines-teaser.html genere ({len(cards)} exemple(s))')
+
+
 def build_vitrines_page_collection_embed() -> None:
     """Fragment catalogue (filtre + grille) pour la page /vitrines/ — theme DanielCraft."""
     data = load_vitrines()
@@ -1461,6 +1548,12 @@ PRESTATION_FEATURED_ORDER = (
     'site-vitrine',
     'visibilite-complete',
     'repondeur-intelligent',
+)
+
+HOME_VITRINE_TEASER_SLUGS = (
+    'restauration',
+    'architecture',
+    'beaute',
 )
 
 
@@ -2036,6 +2129,8 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     """Build une page HTML."""
     if page_name in ('index', 'vitrines'):
         build_vitrines_catalog_embed()
+    if page_name == 'index':
+        build_home_vitrines_teaser_embed()
     if page_name == 'autres-prestations':
         build_prestations_catalog_embed()
 
@@ -2299,37 +2394,9 @@ def main():
     assets_src = BASE_DIR / 'assets'
     assets_dst = OUTPUT_DIR / 'assets'
     if assets_src.exists():
-        do_full_copytree = True
         if assets_dst.exists():
-            try:
-                shutil.rmtree(assets_dst)
-            except (PermissionError, OSError):
-                import stat
-                def handle_remove_readonly(func, path, exc):
-                    os.chmod(path, stat.S_IWRITE)
-                    func(path)
-                try:
-                    shutil.rmtree(assets_dst, onerror=handle_remove_readonly)
-                except (PermissionError, OSError):
-                    # Fichier verrouillé : copie par ecrasement sans supprimer
-                    for path in assets_src.rglob('*'):
-                        if path.is_file():
-                            rel = path.relative_to(assets_src)
-                            dest = assets_dst / rel
-                            dest.parent.mkdir(parents=True, exist_ok=True)
-                            try:
-                                shutil.copy2(path, dest)
-                            except (PermissionError, OSError):
-                                pass
-                    placeholder_dst = assets_dst / 'images' / 'projets' / 'placeholder.svg'
-                    if not placeholder_dst.exists():
-                        placeholder_src = assets_src / 'images' / 'projets' / 'placeholder.svg'
-                        if placeholder_src.exists():
-                            placeholder_dst.parent.mkdir(parents=True, exist_ok=True)
-                            shutil.copy2(placeholder_src, placeholder_dst)
-                    print(f"[OK] Assets mis a jour (fichiers verrouilles, copie par ecrasement)")
-                    do_full_copytree = False
-        if do_full_copytree:
+            sync_assets_to_dist(assets_src, assets_dst)
+        else:
             shutil.copytree(assets_src, assets_dst)
             print(f"[OK] Assets copies dans {assets_dst}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)

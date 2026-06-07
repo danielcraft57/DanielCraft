@@ -1,5 +1,5 @@
 /**
- * Formulaire contact en 4 étapes : prestation (liste cliquable), créneau, coordonnées, message.
+ * Formulaire contact en 5 étapes grand public : besoin, offre, créneau, coordonnées, récap.
  */
 (function () {
   'use strict';
@@ -129,17 +129,86 @@
    * Offres alignées sur /autres-prestations + forfaits page d’accueil.
    * slug → champ POST `service` ; budget optionnel (réf. forfait affichée côté mail).
    */
-  /** Types de projet (portfolio + ancien formulaire). */
-  const CONTACT_PROJECT_TYPES = [
-    { slug: 'web', label: 'Développement Web', icon: 'fa-laptop-code' },
-    { slug: 'backend', label: 'Backend & APIs', icon: 'fa-server' },
-    { slug: 'mobile', label: 'Application mobile', icon: 'fa-mobile-alt' },
-    { slug: 'desktop', label: 'Application desktop', icon: 'fa-desktop' },
-    { slug: 'tools', label: 'Outils & automatisation', icon: 'fa-tools' },
-    { slug: 'specialized', label: 'Spécialisé (data, finance, IoT…)', icon: 'fa-microchip' },
-    { slug: 'learning', label: 'Veille / apprentissage / proto', icon: 'fa-graduation-cap' },
-    { slug: 'other', label: 'Autre / à préciser', icon: 'fa-ellipsis-h' }
+  /** Besoins exprimés en langage courant (étape 1). */
+  const CONTACT_NEED_CATEGORIES = [
+    {
+      slug: 'site',
+      label: 'Un site internet',
+      sub: 'Création, refonte, pages en plus…',
+      icon: 'fa-globe'
+    },
+    {
+      slug: 'visibilite',
+      label: 'Être visible sur Google',
+      sub: 'Référencement, visibilité sur l’IA…',
+      icon: 'fa-search'
+    },
+    {
+      slug: 'assistant',
+      label: 'Un assistant sur mon site',
+      sub: 'Réponses auto, chatbot, e-mails…',
+      icon: 'fa-comments'
+    },
+    {
+      slug: 'entretien',
+      label: 'Entretien & dépannage',
+      sub: 'Maintenance, hébergement, sécurité…',
+      icon: 'fa-wrench'
+    },
+    {
+      slug: 'autre',
+      label: 'Je ne sais pas encore',
+      sub: 'On en parle au téléphone',
+      icon: 'fa-question-circle'
+    }
   ];
+
+  /** Offres proposées par besoin (slugs alignés sur le catalogue). */
+  const NEED_SERVICE_SLUGS = {
+    site: [
+      'pack_vitrine',
+      'pack_identite',
+      'site_page_supp',
+      'site_form_avance',
+      'site_refonte_visuelle',
+      'site_maj_contenu_5h',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    visibilite: [
+      'pack_seo_complet',
+      'seo_basique_290',
+      'seo_chatgpt_490',
+      'ia_contenu_web',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    assistant: [
+      'ia_faq_site',
+      'ia_support_client',
+      'ia_chatbot_ecom',
+      'ia_redaction_pro',
+      'ia_abo_mensuel',
+      'ia_evolution',
+      'ia_audit',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    entretien: [
+      'maint_site_mensuel',
+      'maint_hebergement',
+      'maint_backup',
+      'maint_ssl',
+      'maint_support_abo',
+      'maint_depannage_2h',
+      'maint_accompagnement_h',
+      'maint_support_prio_h',
+      'tech_perf_rapport',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
+    autre: ['besoin_a_preciser', 'projet_sur_mesure', 'tech_conseil_archi', 'maint_accompagnement_h']
+  };
 
   /**
    * Offres avec tags = types de projet (étape 1) pour regroupement à l’étape 2.
@@ -554,7 +623,7 @@
 
     function buildAutoMessage() {
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
-      const typeLabel = (CONTACT_PROJECT_TYPES.find((x) => x.slug === typeSlug) || {})
+      const typeLabel = (CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug) || {})
         .label || typeSlug || '—';
 
       const serviceTitle = state.selectedServiceTitle || '—';
@@ -568,20 +637,25 @@
             : `À ${state.selectedTime.replace(':', 'h')}`;
       }
 
-      return [
-        'Pré-sélection faite via le formulaire :',
-        `- Type de projet : ${typeLabel}`,
-        `- Prestation : ${serviceTitle}`,
+      const lines = [
+        'Demande via le formulaire du site :',
+        `- Besoin : ${typeLabel}`,
+        `- Offre : ${serviceTitle}`,
         `- Date proposée : ${dateLine}`,
         `- Heure : ${timeLine}`
-      ].join('\n');
+      ];
+      const userNote = messageEl ? (messageEl.value || '').trim() : '';
+      if (userNote) {
+        lines.push('', 'Message du client :', userNote);
+      }
+      return lines.join('\n');
     }
 
     function updateValidationRecap() {
       if (!recapTypeEl || !recapServiceEl || !recapDateEl || !recapTimeEl) return;
 
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
-      const typeObj = CONTACT_PROJECT_TYPES.find((x) => x.slug === typeSlug);
+      const typeObj = CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug);
       recapTypeEl.textContent = typeObj?.label || '—';
       recapServiceEl.textContent = state.selectedServiceTitle || '—';
       if (recapNameEl) recapNameEl.textContent = (nameEl?.value || '').trim() || '—';
@@ -864,7 +938,7 @@
       projectTypeMount.innerHTML = '';
       const row = document.createElement('div');
       row.className = 'contact-type-chips';
-      CONTACT_PROJECT_TYPES.forEach((pt) => {
+      CONTACT_NEED_CATEGORIES.forEach((pt) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'contact-type-chip';
@@ -872,13 +946,18 @@
         btn.setAttribute('aria-pressed', 'false');
         btn.setAttribute(
           'aria-label',
-          `Type de projet : ${pt.label}. Sélectionner et passer à la prestation.`
+          `Besoin : ${pt.label}. Sélectionner et passer au choix de l’offre.`
         );
+        const subHtml = pt.sub
+          ? '<span class="contact-type-chip__sub">' + escapeHtml(pt.sub) + '</span>'
+          : '';
         btn.innerHTML =
           '<span class="contact-type-chip__icon" aria-hidden="true"><i class="fas ' +
           pt.icon +
-          '"></i></span><span class="contact-type-chip__label">' +
-          pt.label +
+          '"></i></span><span class="contact-type-chip__body"><span class="contact-type-chip__label">' +
+          escapeHtml(pt.label) +
+          '</span>' +
+          subHtml +
           '</span>';
         btn.addEventListener('click', () => {
           hideFeedback();
@@ -886,7 +965,7 @@
           clearProjectTypeSelectionVisual();
           btn.classList.add('is-selected');
           btn.setAttribute('aria-pressed', 'true');
-          announce(`Type de projet : ${pt.label}.`);
+          announce(`Besoin : ${pt.label}.`);
           // Reset des choix précédents pour éviter de garder une prestation incompatible.
           if (serviceField) serviceField.value = '';
           if (budgetField) budgetField.value = '';
@@ -905,7 +984,7 @@
         hideFeedback();
         const pt = (projectTypeField && projectTypeField.value) || '';
         if (!pt) {
-          showFeedback('Choisissez d’abord un type de projet.', true);
+          showFeedback('Choisissez d’abord votre besoin principal.', true);
           setStep(1);
           return;
         }
@@ -917,7 +996,7 @@
         clearServiceSelectionVisual();
         btn.classList.add('is-selected');
         updatePickedServiceBanner();
-        announce(`Prestation : ${item.title}. Choix du créneau.`);
+        announce(`Offre : ${item.title}. Choix du créneau.`);
         setStep(3);
       });
     }
@@ -926,9 +1005,12 @@
       if (!serviceMount) return;
       serviceMount.innerHTML = '';
       const selectedPt = (projectTypeField && projectTypeField.value) || '';
-      const pt = CONTACT_PROJECT_TYPES.find((x) => x.slug === selectedPt) || null;
+      const pt = CONTACT_NEED_CATEGORIES.find((x) => x.slug === selectedPt) || null;
+      const allowedSlugs = NEED_SERVICE_SLUGS[selectedPt] || [];
       const items = selectedPt
-        ? CONTACT_SERVICE_ITEMS.filter((it) => it.tags.includes(selectedPt))
+        ? allowedSlugs
+            .map((slug) => CONTACT_SERVICE_ITEMS.find((it) => it.slug === slug))
+            .filter(Boolean)
         : [];
       const rankedItems =
         state.personalizationContext && window.Personalization && typeof window.Personalization.rankServices === 'function'
@@ -938,7 +1020,7 @@
       if (!selectedPt || !pt || !rankedItems.length) {
         const msg = document.createElement('p');
         msg.className = 'contact-step__intro';
-        msg.textContent = 'Aucune offre trouvée pour ce type de projet.';
+        msg.textContent = 'Aucune offre trouvée pour ce besoin. Revenez en arrière ou choisissez « Je ne sais pas encore ».';
         serviceMount.appendChild(msg);
         return;
       }
@@ -986,7 +1068,7 @@
           '</span>' +
           recoTag +
           descHtml +
-          '<span class="contact-service-card__go" aria-hidden="true"><i class="fas fa-arrow-right"></i> Créneau</span>';
+          '<span class="contact-service-card__go" aria-hidden="true"><i class="fas fa-arrow-right"></i> Continuer</span>';
 
         attachServiceCardClick(btn, item);
         grid.appendChild(btn);
@@ -1214,7 +1296,7 @@
     function validateStepProjectType() {
       const pt = (projectTypeField && projectTypeField.value) || '';
       if (!pt) {
-        showFeedback('Choisissez un type de projet.', true);
+        showFeedback('Choisissez votre besoin principal.', true);
         return false;
       }
       hideFeedback();
@@ -1224,7 +1306,7 @@
     function validateStepPrestation() {
       const v = (serviceField && serviceField.value) || '';
       if (!v) {
-        showFeedback('Choisissez une prestation dans la liste.', true);
+        showFeedback('Choisissez une offre dans la liste.', true);
         return false;
       }
       hideFeedback();
@@ -1336,10 +1418,9 @@
       if (state.sending) return;
       state.sending = true;
 
-      // Backend exige un message non vide : on le génère à partir des choix.
+      // Backend exige un message non vide : récap + note éventuelle du client.
       if (messageEl) {
-        const current = (messageEl.value || '').trim();
-        if (!current) messageEl.value = buildAutoMessage();
+        messageEl.value = buildAutoMessage();
       }
 
       hideFeedback();
