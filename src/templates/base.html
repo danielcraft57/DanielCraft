@@ -6,7 +6,7 @@
     {% include "includes/schema.html" %}
     {% endif %}
 </head>
-<body>
+<body{% if current_page == 'index' %} class="page-home"{% endif %}>
     <a href="#main-content" class="skip-link">Aller au contenu</a>
     {% include "includes/nav.html" %}
     

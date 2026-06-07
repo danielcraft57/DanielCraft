@@ -1,51 +1,45 @@
-    <!-- Hero Section - Inspiré des best practices (Momentum Templates) -->
-    <section id="home" class="hero">
+    <!-- Hero — grand public -->
+    <section id="home" class="hero home-hero--wow">
         <div class="hero-background">
             <div class="hero-gradient"></div>
-            <div class="hero-sky" aria-hidden="true">
-                <span class="hero-sun-glow"></span>
-                <span class="hero-light-ray hero-light-ray-1"></span>
-                <span class="hero-light-ray hero-light-ray-2"></span>
-                <span class="hero-cloud hero-cloud-1"></span>
-                <span class="hero-cloud hero-cloud-2"></span>
-                <span class="hero-cloud hero-cloud-3"></span>
-                <span class="hero-cloud hero-cloud-4"></span>
-                <span class="hero-cloud hero-cloud-5"></span>
-                <span class="hero-cloud hero-cloud-6"></span>
+            <div class="home-hero-orbs" aria-hidden="true">
+                <span class="home-hero-orb home-hero-orb--1"></span>
+                <span class="home-hero-orb home-hero-orb--2"></span>
+                <span class="home-hero-orb home-hero-orb--3"></span>
             </div>
         </div>
-        
+
         <div class="hero-content">
             <div class="hero-layout">
                 <div class="hero-main">
                     <h1 class="hero-title">
-                        <span class="title-line">Un site clair, rapide,</span>
-                        <span class="title-line highlight">qui transforme vos visites en contacts</span>
+                        <span class="title-line">Pas de site, ou invisible sur Google ?</span>
+                        <span class="title-line highlight">Je m'en occupe — sans jargon technique</span>
                     </h1>
-                    
+
                     <p class="hero-description hero-lead">
-                        Stratégie, design, développement et SEO dans un même flux :
-                        <strong>un seul interlocuteur</strong>, de l'idée au lancement.
+                        Artisan, commerce ou activité libérale en Lorraine : un site clair, visible sur Google
+                        <strong>et compris par l'IA</strong>, avec un seul interlocuteur de A à Z.
                     </p>
-                    
+
                     <div class="hero-reassurance">
-                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Estimation sous 24 h</span>
-                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Sans engagement</span>
+                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Devis par e-mail en un clic</span>
+                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Réponse sous 24 h</span>
                     </div>
-                    
+
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary btn-large">
-                            <span>Parler de votre projet</span>
-                            <i class="fas fa-calendar-check"></i>
+                        <a href="#offres" class="btn btn-primary btn-large">
+                            <span>Voir les 3 offres</span>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                         </a>
-                        <a href="#vitrines" class="btn btn-secondary btn-large">
-                            <span>Découvrir les modèles</span>
-                            <i class="fas fa-rocket"></i>
+                        <a href="/audit" class="btn btn-secondary btn-large">
+                            <span>Audit de votre site</span>
+                            <i class="fas fa-search" aria-hidden="true"></i>
                         </a>
                     </div>
-                    
-                    <p class="hero-cta-hint">Réponse sous 24h</p>
-                    
+
+                    <p class="hero-cta-hint">Metz &amp; France — sans engagement</p>
+
                     <div class="hero-stats">
                         <div class="stat-item">
                             <div class="stat-number" data-target="50">0</div>
@@ -62,25 +56,23 @@
                     </div>
                 </div>
 
-                <aside class="hero-visual" aria-label="Aperçu visuel de projets clients">
-                    <div class="hero-visual-head">
-                        <p class="hero-visual-kicker">Exemples concrets</p>
-                        <h3 class="hero-visual-title">Ce que vos clients voient en premier</h3>
-                    </div>
-                    <div class="hero-mockup">
-                        <div class="hero-mockup-slide hero-mockup-slide-1" aria-hidden="true"></div>
-                        <div class="hero-mockup-slide hero-mockup-slide-2" aria-hidden="true"></div>
-                        <div class="hero-mockup-slide hero-mockup-slide-3" aria-hidden="true"></div>
-                        <div class="hero-mockup-overlay">
-                            <span class="hero-mockup-tag">UX / UI pensée business</span>
-                            <p>Interfaces lisibles sur laptop et mobile, prêtes à convertir.</p>
+                <aside class="hero-visual" aria-label="Artisan devant son site professionnel" data-home-parallax>
+                    <div class="home-hero-visual-card">
+                        <picture>
+                            <source srcset="/assets/images/home/home-hero.webp" type="image/webp">
+                            <img src="/assets/images/home/home-hero.png" width="800" height="600" alt="Professionnel satisfait devant son site internet clair et moderne" loading="eager" decoding="async">
+                        </picture>
+                        <span class="home-hero-visual-glow" aria-hidden="true"></span>
+                        <div class="home-hero-badges">
+                            <span class="home-hero-badge"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</span>
+                            <span class="home-hero-badge"><i class="fas fa-search" aria-hidden="true"></i> Google</span>
+                            <span class="home-hero-badge"><i class="fas fa-robot" aria-hidden="true"></i> Assistants IA</span>
                         </div>
                     </div>
-
                 </aside>
             </div>
         </div>
-        
+
         <div class="hero-scroll">
             <div class="scroll-indicator">
                 <span>Découvrir</span>
@@ -91,7 +83,102 @@
         </div>
     </section>
 
-    {% include "includes/vitrines-catalog-embed.html" %}
+    <section class="home-trend" aria-label="Tendance 2026">
+        <div class="container home-trend-inner">
+            <span class="home-trend-label"><i class="fas fa-bolt" aria-hidden="true"></i> Tendance 2026</span>
+            <p class="home-trend-text">
+                Vos clients ne vous cherchent plus seulement sur <strong>Google</strong> —
+                ils demandent aussi à <strong>ChatGPT</strong> qui contacter. Soyez prêt sur les deux.
+            </p>
+        </div>
+    </section>
+
+    <section id="offres" class="home-offers" aria-labelledby="home-offers-title">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-badge">Nos 3 coups de cœur</span>
+                <h2 id="home-offers-title" class="section-title">Par où commencer ?</h2>
+                <p class="section-description">
+                    Trois prestations concrètes, expliquées simplement. Chacune a sa page détaillée et un devis par e-mail.
+                </p>
+            </div>
+
+            <div id="homeOffers" class="home-offers-grid home-stagger">
+                <article class="home-offer-card" data-home-tilt>
+                    <div class="home-offer-visual">
+                        <picture>
+                            <source srcset="/assets/images/home/home-offer-vitrine.webp" type="image/webp">
+                            <img src="/assets/images/home/home-offer-vitrine.png" width="640" height="400" alt="Site vitrine professionnel sur ordinateur et téléphone" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="home-offer-body">
+                        <p class="home-offer-tagline">Votre vitrine en ligne, claire et rassurante</p>
+                        <h3 class="home-offer-title">Site vitrine professionnel</h3>
+                        <p class="home-offer-desc">Présentez votre activité, rassurez sur mobile, recevez des demandes de contact — sans page Facebook seule.</p>
+                        <p class="home-offer-price">490 € <span>forfait indicatif HT</span></p>
+                        <div class="home-offer-actions">
+                            <a href="/prestations/site-vitrine/" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine" data-service-slug="pack_vitrine" data-prestation-title="Site vitrine professionnel" data-prestation-price="490" data-prestation-price-label="Forfait"><span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="home-offer-card home-offer-card--star" data-home-tilt>
+                    <span class="home-offer-badge">Le plus demandé</span>
+                    <div class="home-offer-visual">
+                        <picture>
+                            <source srcset="/assets/images/home/home-offer-visibilite.webp" type="image/webp">
+                            <img src="/assets/images/home/home-offer-visibilite.png" width="640" height="400" alt="Visibilité sur Google et assistants intelligents" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="home-offer-body">
+                        <p class="home-offer-tagline">Google + assistants intelligents</p>
+                        <h3 class="home-offer-title">Être trouvé sur Google et par l'IA</h3>
+                        <p class="home-offer-desc">Quand on vous cherche en ligne — ou qu'on demande à ChatGPT — on tombe sur la bonne info, au bon moment.</p>
+                        <p class="home-offer-price">699 € <span>forfait indicatif HT</span></p>
+                        <div class="home-offer-actions">
+                            <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="699" data-prestation-price-label="Forfait"><span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="home-offer-card" data-home-tilt>
+                    <div class="home-offer-visual">
+                        <picture>
+                            <source srcset="/assets/images/home/home-offer-assistant.webp" type="image/webp">
+                            <img src="/assets/images/home/home-offer-assistant.png" width="640" height="400" alt="Assistant intelligent qui répond sur un site web" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="home-offer-body">
+                        <p class="home-offer-tagline">Répond aux questions, jour et nuit</p>
+                        <h3 class="home-offer-title">Répondeur intelligent sur votre site</h3>
+                        <p class="home-offer-desc">Horaires, tarifs, prestations : l'assistant guide vos visiteurs avec vos vraies infos, 24 h/24.</p>
+                        <p class="home-offer-price">990 € <span>forfait indicatif HT</span></p>
+                        <div class="home-offer-actions">
+                            <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="990" data-prestation-price-label="Forfait"><span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="home-audit-banner scroll-reveal">
+                <div>
+                    <h3>Vous avez déjà un site ?</h3>
+                    <p>Commencez par un audit rapide : ce qui bloque Google, la vitesse, la clarté de votre message — avec un plan d'action en français clair.</p>
+                </div>
+                <a href="/audit" class="btn btn-primary btn-large">
+                    <span>Audit de votre site</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </aside>
+
+            <p class="services-more" style="margin-top: 2rem; text-align: center;">
+                <a href="/autres-prestations">Voir les 32 prestations du catalogue</a>
+            </p>
+        </div>
+    </section>
 
     <!-- Portfolio Section (grille legacy masquée — fiches code sur /projets) -->
     <section id="portfolio" class="portfolio portfolio--legacy-hidden" aria-label="Portfolio projets code (masqué)">
@@ -119,96 +206,17 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-badge">Services</span>
-                <h2 class="section-title">Solutions sur mesure pour votre réussite</h2>
-                <p class="section-description">
-                    Expert en <strong>transformation d'identité web</strong> (site, réseaux, documents) et en <strong>visibilité</strong> :
-                    SEO classique (Google) et <strong>SEO pour ChatGPT</strong> (être cité par les assistants IA). Plus développement sur mesure et audit.
-                </p>
-            </div>
-
-            <div class="services-grid scroll-reveal">
-                <div class="service-card" data-service="vitrine">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="service-title">Site Vitrine</h3>
-                    <p class="service-description">
-                        Votre site vitrine en ligne : site professionnel, responsive, qui porte l'identité de votre commerce ou de votre artisanat. 
-                        Idéal pour être trouvé et rassurer vos clients.
-                    </p>
-                    <ul class="service-features">
-                        <li>Design responsive (mobile, tablette, PC)</li>
-                        <li>Page d'accueil & contact</li>
-                        <li>Guide d'utilisation simple</li>
-                        <li>Code source inclus (repo GitHub)</li>
-                        <li>14 jours de support</li>
-                    </ul>
-                    <a href="#tarifs" class="service-cta">
-                        <span>Voir le budget</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card featured" data-service="identite">
-                    <div class="service-badge">Populaire</div>
-                    <div class="service-icon">
-                        <i class="fas fa-fingerprint"></i>
-                    </div>
-                    <h3 class="service-title">Identité & visibilité (multi-supports)</h3>
-                    <p class="service-description">
-                        Une image pro partout : site, réseaux sociaux, documents. Refonte cohérente de votre identité pour que vos clients vous reconnaissent et vous fassent confiance.
-                    </p>
-                    <ul class="service-features">
-                        <li>Identité unifiée (site + réseaux + documents)</li>
-                        <li>Charte et gabarits réutilisables</li>
-                        <li>Image professionnelle et cohérente</li>
-                        <li>14 jours de support</li>
-                    </ul>
-                    <a href="#tarifs" class="service-cta">
-                        <span>Voir le budget</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-card" data-service="seo">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="service-title">SEO & visibilité (Google + ChatGPT)</h3>
-                    <p class="service-description">
-                        Trouvez des clients : visible sur Google et recommandé par ChatGPT et les assistants IA. Audit SEO, corrections, et optimisation pour être cité quand on vous cherche.
-                    </p>
-                    <ul class="service-features">
-                        <li>SEO Google (audit + corrections)</li>
-                        <li>SEO pour ChatGPT / découvrabilité IA</li>
-                        <li>Contenus et données structurées</li>
-                        <li>14 jours de support</li>
-                    </ul>
-                    <a href="#tarifs" class="service-cta">
-                        <span>Voir le budget</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <p class="services-more">
-                <a href="/autres-prestations">Voir toutes les prestations</a> (identité multi-supports, SEO + SEO ChatGPT, IA, maintenance, etc.)
-            </p>
-        </div>
-    </section>
+    <!-- Ancre navigation Services -->
+    <section id="services" class="services services--anchor-only" aria-hidden="true"></section>
 
     <!-- Pourquoi Choisir Section -->
     <section id="why-choose" class="why-choose">
         <div class="container">
             <div class="section-header scroll-reveal">
                 <span class="section-badge">Pourquoi Choisir</span>
-                <h2 class="section-title">Des avantages concrets pour votre projet</h2>
+                <h2 class="section-title">Pourquoi ça vous simplifie la vie</h2>
                 <p class="section-description">
-                    Une approche transparente, rapide et orientée résultats pour transformer vos idées en succès.
+                    Pas besoin de comprendre le technique : je traduis votre besoin en site, visibilité ou assistant — avec des mots clairs et un budget annoncé dès le départ.
                 </p>
             </div>
             
@@ -239,10 +247,9 @@
                     <div class="why-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="why-title">Code source inclus</h3>
+                    <h3 class="why-title">Un seul interlocuteur</h3>
                     <p class="why-description">
-                        Vous êtes propriétaire de votre site. Code source complet, 
-                        documentation, et liberté totale pour l'avenir.
+                        Pas d'agence avec cinq contacts différents : vous parlez à la même personne du devis jusqu'à la mise en ligne.
                     </p>
                 </div>
                 
@@ -281,13 +288,13 @@
             </div>
             
             <div class="why-cta">
-                <a href="/processus" class="btn btn-secondary">
-                    <span>Découvrir mon processus</span>
-                    <i class="fas fa-arrow-right"></i>
+                <a href="/audit" class="btn btn-secondary">
+                    <span>Tester avec un audit</span>
+                    <i class="fas fa-search" aria-hidden="true"></i>
                 </a>
                 <a href="#contact" class="btn btn-primary">
                     <span>Discutons de votre projet</span>
-                    <i class="fas fa-rocket"></i>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -371,22 +378,21 @@
             <div class="about-content scroll-reveal">
                 <div class="about-text">
                     <span class="section-badge">À Propos</span>
-                    <h2 class="section-title">Passionné par l'excellence technique</h2>
+                    <h2 class="section-title">Loïc Daniel — votre partenaire web à Metz</h2>
                     <p class="about-description">
-                        Développeur Full-Stack JavaScript/TypeScript, Python et PHP avec une expertise en React et Node.js,
-                        passionné par le développement d'applications web performantes, d'outils d'automatisation et de solutions
-                        basées sur l'IA. Plus de 7 ans d'expérience dans le développement d'applications modernes avec une
-                        approche orientée qualité et tests.
+                        Depuis plus de 7 ans, j'accompagne artisans, commerces et indépendants : site vitrine, visibilité Google,
+                        assistants intelligents, entretien. Je parle français clair, pas « dev » : vous savez ce que vous achetez
+                        et pourquoi.
                     </p>
 
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-code"></i>
+                                <i class="fas fa-comments"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Code de qualité</h4>
-                                <p>Respect des bonnes pratiques (SOLID), tests automatisés (Jest, TDD) et architecture modulaire</p>
+                                <h4>On part de votre quotidien</h4>
+                                <p>Vous m'expliquez votre activité avec vos mots — je traduis en pages, textes et outils utiles.</p>
                             </div>
                         </div>
 
@@ -396,17 +402,17 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Livraison rapide</h4>
-                                <p>Méthodologie agile (Scrum), cycles courts et déploiements continus (CI/CD)</p>
+                                <p>Site vitrine en 5 à 8 jours ouvrés en général, après validation de vos contenus.</p>
                             </div>
                         </div>
 
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-file-invoice"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Collaboration</h4>
-                                <p>Communication claire, travail en équipe et adaptation aux besoins métier</p>
+                                <h4>Devis par e-mail</h4>
+                                <p>Comme sur une boutique en ligne : vous choisissez une prestation, le devis part tout de suite.</p>
                             </div>
                         </div>
 
@@ -450,30 +456,21 @@
 
             <div class="about-skills scroll-reveal">
                 <div class="about-skills-inner">
-                    <h3><i class="fas fa-shield-alt" aria-hidden="true"></i> Compétences Techniques</h3>
-                    <p class="about-skills-intro">Technologies choisies selon vos objectifs business, avec un focus clarté, performance et conversion.</p>
+                    <h3><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Ce que je fais pour vous</h3>
+                    <p class="about-skills-intro">Des prestations regroupées par besoin réel — pas par jargon technique.</p>
                     <div class="about-skills-quick">
                         <div class="skill-tags">
-                            <span class="skill-tag"><i class="fab fa-react" aria-hidden="true"></i> React</span>
-                            <span class="skill-tag"><i class="fas fa-bolt" aria-hidden="true"></i> Next.js</span>
-                            <span class="skill-tag"><i class="fas fa-code" aria-hidden="true"></i> TypeScript</span>
-                            <span class="skill-tag"><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</span>
-                            <span class="skill-tag"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
-                            <span class="skill-tag"><i class="fas fa-cogs" aria-hidden="true"></i> API & Automatisation</span>
+                            <span class="skill-tag"><i class="fas fa-globe" aria-hidden="true"></i> Site vitrine</span>
+                            <span class="skill-tag"><i class="fas fa-search" aria-hidden="true"></i> Google &amp; IA</span>
+                            <span class="skill-tag"><i class="fas fa-robot" aria-hidden="true"></i> Assistants intelligents</span>
+                            <span class="skill-tag"><i class="fas fa-shield-alt" aria-hidden="true"></i> Entretien &amp; sécurité</span>
                         </div>
                         <div class="skill-tags">
-                            <span class="skill-tag"><i class="fas fa-search" aria-hidden="true"></i> SEO / GEO</span>
-                            <span class="skill-tag"><i class="fas fa-tachometer-alt" aria-hidden="true"></i> Performance web</span>
-                            <span class="skill-tag"><i class="fas fa-smile" aria-hidden="true"></i> UX orientée conversion</span>
-                            <span class="skill-tag"><i class="fas fa-project-diagram" aria-hidden="true"></i> CI/CD</span>
-                            <span class="skill-tag"><i class="fab fa-docker" aria-hidden="true"></i> Docker</span>
-                            <span class="skill-tag"><i class="fas fa-brain" aria-hidden="true"></i> Data / IA appliquée</span>
+                            <span class="skill-tag"><i class="fas fa-plug" aria-hidden="true"></i> Connexion à vos outils</span>
+                            <span class="skill-tag"><i class="fas fa-paint-brush" aria-hidden="true"></i> Textes &amp; pages</span>
+                            <span class="skill-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Metz &amp; Lorraine</span>
+                            <span class="skill-tag"><i class="fas fa-laptop-house" aria-hidden="true"></i> À distance partout en France</span>
                         </div>
-                    </div>
-                    <div class="skill-tags-negative" aria-label="Ce que je ne fais pas">
-                        <span class="skill-tag-negative"><i class="fas fa-circle-minus" aria-hidden="true"></i> Pas de site template WordPress</span>
-                        <span class="skill-tag-negative"><i class="fas fa-circle-minus" aria-hidden="true"></i> Pas de WooCommerce standard</span>
-                        <span class="skill-tag-negative"><i class="fas fa-circle-minus" aria-hidden="true"></i> Pas de Shopify prêt-à-porter</span>
                     </div>
                 </div>
             </div>
@@ -500,35 +497,35 @@
                         <span class="price-label">Forfait</span>
                     </div>
                     <p class="tarif-desc">Site professionnel responsive, prêt à convertir</p>
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Demander ce forfait</span>
+                    <a href="/prestations/site-vitrine/" class="btn btn-primary">
+                        <span>Voir la prestation</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 
                 <div class="tarif-card featured">
                     <span class="tarif-badge">Populaire</span>
-                    <h3 class="tarif-title">Identité & visibilité</h3>
+                    <h3 class="tarif-title">Google + IA</h3>
                     <div class="tarif-price">
-                        <span class="price-amount">990€</span>
+                        <span class="price-amount">699€</span>
                         <span class="price-label">Forfait</span>
                     </div>
-                    <p class="tarif-desc">Image pro unifiée : site + réseaux + documents</p>
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Demander ce forfait</span>
+                    <p class="tarif-desc">Trouvable sur Google et bien compris par ChatGPT</p>
+                    <a href="/prestations/visibilite-complete/" class="btn btn-primary">
+                        <span>Voir la prestation</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 
                 <div class="tarif-card">
-                    <h3 class="tarif-title">SEO (Google + ChatGPT)</h3>
+                    <h3 class="tarif-title">Répondeur intelligent</h3>
                     <div class="tarif-price">
-                        <span class="price-amount">699€</span>
-                        <span class="price-label">Pack</span>
+                        <span class="price-amount">990€</span>
+                        <span class="price-label">Forfait</span>
                     </div>
-                    <p class="tarif-desc">Visible sur Google et recommandé par les IA</p>
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Demander ce forfait</span>
+                    <p class="tarif-desc">Assistant sur votre site, 24 h/24</p>
+                    <a href="/prestations/repondeur-intelligent/" class="btn btn-primary">
+                        <span>Voir la prestation</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -538,6 +535,17 @@
                 <a href="/autres-prestations">Voir toutes les prestations</a> et obtenir une estimation sur mesure
             </p>
         </div>
+    </section>
+
+    <section id="vitrines" class="home-vitrines-wrap" aria-labelledby="home-vitrines-title">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-badge">Inspiration</span>
+                <h2 id="home-vitrines-title" class="section-title">Exemples de sites par métier</h2>
+                <p class="section-description">Des démos pour visualiser le rendu — votre site sera adapté à <em>votre</em> activité.</p>
+            </div>
+        </div>
+        {% include "includes/vitrines-catalog-embed.html" %}
     </section>
 
     <!-- FAQ Section -->
@@ -588,9 +596,9 @@
                     </button>
                     <div class="faq-answer-wrap" id="faq-3" role="region" aria-labelledby="faq-q3" hidden>
                     <p class="faq-answer">
-                        Des plateformes métier (gestion de factures, CRM, outils internes), des sites vitrines orientés conversion,
-                        des systèmes de scraping et d'automatisation, et des projets plus pointus autour de la data et de l'IA.
-                        En résumé : des sites et applis qui doivent être fiables, lisibles et utiles au quotidien, pas juste "jolis".
+                        Sites vitrines pour artisans et commerces, visibilité Google et assistants IA, entretien mensuel,
+                        formulaires et connexions à vos outils (facturation, CRM). Si votre besoin est plus spécifique,
+                        on en parle au premier échange — sans vous vendre plus que nécessaire.
                     </p>
                     </div>
                 </div>

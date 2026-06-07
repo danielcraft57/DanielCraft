@@ -1,0 +1,426 @@
+/* Accueil — effets wow (grand public) */
+@import url('prestations.css');
+
+.services--anchor-only {
+  display: none;
+}
+
+.home-offer-actions .btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+.home-hero--wow {
+  overflow: hidden;
+}
+
+.home-hero--wow .hero-background {
+  background-image: none;
+}
+
+.home-hero-orbs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.home-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.55;
+  animation: homeOrbFloat 18s ease-in-out infinite;
+}
+
+.home-hero-orb--1 {
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(77, 169, 214, 0.45), transparent 70%);
+}
+
+.home-hero-orb--2 {
+  width: 360px;
+  height: 360px;
+  bottom: 10%;
+  right: -80px;
+  background: radial-gradient(circle, rgba(15, 53, 80, 0.25), transparent 70%);
+  animation-delay: -6s;
+}
+
+.home-hero-orb--3 {
+  width: 200px;
+  height: 200px;
+  top: 40%;
+  left: 45%;
+  background: radial-gradient(circle, rgba(123, 205, 227, 0.35), transparent 70%);
+  animation-delay: -12s;
+}
+
+@keyframes homeOrbFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -18px) scale(1.08);
+  }
+}
+
+.home-hero--wow .title-line.highlight {
+  background: linear-gradient(120deg, #0f3550 0%, #4da9d6 45%, #0f3550 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: homeShimmer 6s linear infinite;
+}
+
+@keyframes homeShimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.home-hero-visual-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 28px 60px rgba(15, 53, 80, 0.18),
+    0 0 0 1px rgba(77, 169, 214, 0.15);
+  transform-style: preserve-3d;
+  animation: homeHeroFloat 7s ease-in-out infinite;
+}
+
+@keyframes homeHeroFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(2deg);
+  }
+}
+
+.home-hero-visual-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-hero-visual-glow {
+  position: absolute;
+  inset: auto 10% -20% 10%;
+  height: 40%;
+  background: radial-gradient(ellipse, rgba(77, 169, 214, 0.35), transparent 70%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.home-hero-badges {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.home-hero-badge {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary-dark, #0f3550);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(15, 53, 80, 0.12);
+  animation: homeBadgePop 0.6s ease backwards;
+}
+
+.home-hero-badge:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.home-hero-badge:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes homeBadgePop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.9);
+  }
+}
+
+/* Bandeau tendance */
+.home-trend {
+  padding: 1.25rem 0;
+  background: linear-gradient(90deg, #0f3550 0%, #1a4a6e 50%, #0f3550 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.home-trend-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-trend-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(77, 169, 214, 0.25);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.home-trend-text {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.5;
+  max-width: 52rem;
+}
+
+.home-trend-text strong {
+  color: #7bcde3;
+}
+
+/* 3 offres phares */
+.home-offers {
+  padding: var(--space-16, 4rem) 0;
+  background: linear-gradient(180deg, #fff 0%, #f5fbfe 100%);
+}
+
+.home-offers-grid {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .home-offers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-offer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(77, 169, 214, 0.2);
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.home-offer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, transparent, rgba(77, 169, 214, 0.5), transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.home-offer-card:hover::before,
+.home-offer-card.is-tilt-active::before {
+  opacity: 1;
+}
+
+.home-offer-card:hover {
+  box-shadow: 0 24px 48px rgba(15, 53, 80, 0.14);
+}
+
+.home-offer-card--star {
+  border-color: rgba(77, 169, 214, 0.45);
+  box-shadow: 0 12px 36px rgba(15, 53, 80, 0.1);
+}
+
+.home-offer-visual {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.home-offer-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-offer-card:hover .home-offer-visual img {
+  transform: scale(1.06);
+}
+
+.home-offer-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--primary-color, #4da9d6);
+  color: #fff;
+  z-index: 2;
+}
+
+.home-offer-body {
+  padding: 1.35rem 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-offer-tagline {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary-color, #4da9d6);
+}
+
+.home-offer-title {
+  margin: 0 0 0.65rem;
+  font-size: 1.2rem;
+  color: var(--primary-dark, #0f3550);
+}
+
+.home-offer-desc {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted, #5a6b7a);
+  flex: 1;
+}
+
+.home-offer-price {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark, #0f3550);
+}
+
+.home-offer-price span {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted, #5a6b7a);
+}
+
+.home-offer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.home-audit-banner {
+  margin-top: 2.5rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 20px;
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  background: linear-gradient(135deg, #0f3550 0%, #1a5278 100%);
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(15, 53, 80, 0.2);
+}
+
+@media (min-width: 768px) {
+  .home-audit-banner {
+    grid-template-columns: 1fr auto;
+    padding: 2rem 2.25rem;
+  }
+}
+
+.home-audit-banner h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+}
+
+.home-audit-banner p {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.55;
+  max-width: 36rem;
+}
+
+.home-vitrines-wrap {
+  padding: var(--space-12, 3rem) 0;
+  background: #fafcfd;
+}
+
+.home-vitrines-wrap .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.home-stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-stagger.is-visible > *:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.home-stagger.is-visible > *:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.home-stagger.is-visible > *:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-orb,
+  .home-hero-visual-card,
+  .home-hero--wow .title-line.highlight,
+  .home-hero-badge {
+    animation: none;
+  }
+
+  .home-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}
