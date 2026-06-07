@@ -51,7 +51,28 @@
 }
 
 .prestations-featured {
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1.75rem 1.25rem 0.5rem;
+  border-radius: 20px;
+  background: linear-gradient(160deg, #f0f9fd 0%, #fff 55%);
+  border: 1px solid rgba(77, 169, 214, 0.2);
+}
+
+.prestations-featured-lead {
+  max-width: 40rem;
+  margin: -0.25rem 0 1.5rem;
+  color: var(--text-muted, #5a6b7a);
+  line-height: 1.6;
+}
+
+.prestations-grid--featured {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .prestations-grid--featured {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .prestation-card {
@@ -88,10 +109,62 @@
   background: var(--metal-blue-50, #e8f6fc);
 }
 
-.prestation-card-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.prestation-card-visual--icon {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #e8f6fc 0%, #d4eef9 100%);
+}
+
+.prestation-card-visual--icon[data-prestation-cat="identite"] {
+  background: linear-gradient(145deg, #e8f6fc 0%, #b8e4f5 100%);
+}
+
+.prestation-card-visual--icon[data-prestation-cat="ia"] {
+  background: linear-gradient(145deg, #eef6ff 0%, #c5ddf7 100%);
+}
+
+.prestation-card-visual--icon[data-prestation-cat="technique"] {
+  background: linear-gradient(145deg, #f0f4f8 0%, #c8d8e8 100%);
+}
+
+.prestation-card-visual--icon[data-prestation-cat="site-contenu"] {
+  background: linear-gradient(145deg, #fdf6ee 0%, #f5dcc4 100%);
+}
+
+.prestation-card-visual--icon[data-prestation-cat="maintenance"] {
+  background: linear-gradient(145deg, #edf7f0 0%, #c5e6d0 100%);
+}
+
+.prestation-card-visual--icon i {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  color: var(--primary-dark, #0f3550);
+  opacity: 0.88;
+}
+
+.prestation-card-visual--hero {
+  aspect-ratio: 16 / 9;
+}
+
+.prestation-card-visual--hero i {
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  opacity: 0.95;
+}
+
+.prestation-card--featured .service-title {
+  font-size: 1.15rem;
+}
+
+.prestation-card-tagline {
+  margin: -0.35rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-color, #4da9d6);
+  line-height: 1.4;
+}
+
+/* Masquer l'ancienne double icône sous le visuel */
+.prestation-card .service-icon {
+  display: none;
 }
 
 /* Fiche détail */
@@ -143,6 +216,44 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.prestation-detail-visual--icon {
+  min-height: 220px;
+}
+
+.prestation-detail-visual-inner {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: 2rem;
+  background: linear-gradient(145deg, #e8f6fc 0%, #d4eef9 100%);
+}
+
+.prestation-detail-visual-inner[data-prestation-cat="identite"] {
+  background: linear-gradient(145deg, #e8f6fc 0%, #b8e4f5 100%);
+}
+
+.prestation-detail-visual-inner[data-prestation-cat="ia"] {
+  background: linear-gradient(145deg, #eef6ff 0%, #c5ddf7 100%);
+}
+
+.prestation-detail-visual-inner[data-prestation-cat="technique"] {
+  background: linear-gradient(145deg, #f0f4f8 0%, #c8d8e8 100%);
+}
+
+.prestation-detail-visual-inner[data-prestation-cat="site-contenu"] {
+  background: linear-gradient(145deg, #fdf6ee 0%, #f5dcc4 100%);
+}
+
+.prestation-detail-visual-inner[data-prestation-cat="maintenance"] {
+  background: linear-gradient(145deg, #edf7f0 0%, #c5e6d0 100%);
+}
+
+.prestation-detail-visual-inner i {
+  font-size: clamp(4rem, 12vw, 6rem);
+  color: var(--primary-dark, #0f3550);
+  opacity: 0.9;
 }
 
 .prestation-detail-layout {
@@ -303,4 +414,210 @@
 .prestations-cta-text {
   margin-bottom: 1rem;
   font-size: 1.1rem;
+}
+
+/* Cartes catalogue : double action */
+.prestation-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.service-cta--devis {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  background: var(--metal-blue-50, #e8f6fc);
+  color: var(--primary-dark, #0f3550);
+}
+
+.service-cta--devis:hover {
+  background: var(--primary-color, #4da9d6);
+  color: #fff;
+}
+
+/* Exemples & accroche promo */
+.prestation-examples-lead {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--text-muted, #5a6b7a);
+}
+
+.prestation-examples {
+  margin: 0 0 2rem;
+  padding-left: 1.25rem;
+  line-height: 1.65;
+}
+
+.prestation-examples li {
+  margin-bottom: 0.75rem;
+}
+
+.prestation-promo {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1rem 1.15rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e8f6fc 0%, #f5fbfe 100%);
+  border: 1px solid rgba(77, 169, 214, 0.35);
+}
+
+.prestation-promo i {
+  color: var(--primary-color, #4da9d6);
+  font-size: 1.25rem;
+  margin-top: 0.15rem;
+}
+
+.prestation-promo p {
+  margin: 0;
+  font-weight: 500;
+  color: var(--primary-dark, #0f3550);
+  line-height: 1.55;
+}
+
+.prestation-detail-hero-actions {
+  margin-top: 1.25rem;
+}
+
+/* Modale devis Facturio */
+.prestation-devis-dialog {
+  border: none;
+  padding: 0;
+  max-width: min(480px, calc(100vw - 2rem));
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(15, 53, 80, 0.22);
+  background: transparent;
+}
+
+.prestation-devis-dialog::backdrop {
+  background: rgba(15, 53, 80, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.prestation-devis-dialog__shell {
+  position: relative;
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.prestation-devis-dialog__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--metal-blue-50, #e8f6fc);
+  color: var(--primary-dark, #0f3550);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.prestation-devis-dialog__close:hover {
+  background: var(--primary-color, #4da9d6);
+  color: #fff;
+}
+
+.prestation-devis-dialog__step {
+  display: none;
+}
+
+.prestation-devis-dialog__step.is-active {
+  display: block;
+}
+
+.prestation-devis-dialog__title {
+  font-size: 1.35rem;
+  margin: 0.5rem 0 0.35rem;
+  padding-right: 2rem;
+}
+
+.prestation-devis-dialog__subtitle,
+.prestation-devis-dialog__hint {
+  font-size: 0.92rem;
+  color: var(--text-muted, #5a6b7a);
+  line-height: 1.55;
+}
+
+.prestation-devis-dialog__price {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  color: var(--primary-dark, #0f3550);
+}
+
+.prestation-devis-dialog__form .form-label {
+  display: block;
+  margin: 0.85rem 0 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.prestation-devis-dialog__loading {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.prestation-devis-dialog__spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  border: 4px solid var(--metal-blue-100, #c5e4f3);
+  border-top-color: var(--primary-color, #4da9d6);
+  border-radius: 50%;
+  animation: prestation-devis-spin 0.85s linear infinite;
+}
+
+@keyframes prestation-devis-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.prestation-devis-dialog__loading-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.prestation-devis-dialog__result {
+  text-align: center;
+  padding: 1.5rem 0.5rem 0.5rem;
+}
+
+.prestation-devis-dialog__result-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prestation-devis-dialog__result--success .prestation-devis-dialog__result-icon {
+  color: #2e9e5b;
+}
+
+.prestation-devis-dialog__result--error .prestation-devis-dialog__result-icon {
+  color: #c0392b;
+}
+
+.prestation-devis-dialog__result-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.prestation-devis-dialog__result-text {
+  margin: 0 0 1.25rem;
+  color: var(--text-muted, #5a6b7a);
+  line-height: 1.55;
+}
+
+.prestation-devis-dialog__result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
 }

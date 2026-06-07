@@ -1,9 +1,9 @@
 {
   "schema_type": "prestations_catalog",
-  "page_title": "Prestations web, visibilité & assistants — catalogue DanielCraft",
-  "page_description": "Catalogue de prestations en langage clair : site vitrine, identité visuelle, référencement Google, assistants IA, maintenance. Devis par e-mail, Metz & Lorraine.",
+  "page_title": "Prestations web pour débutants — catalogue clair DanielCraft",
+  "page_description": "Toutes nos prestations expliquées simplement : site vitrine, visibilité Google, assistants intelligents, entretien. Prix indicatifs, pages détaillées et devis par e-mail. Metz & Lorraine.",
   "page_keywords": "prestations web, création site vitrine, SEO Metz, assistant IA site, maintenance site, devis site internet, DanielCraft",
   "og_image": "/assets/images/prestations/visibilite.svg",
   "extra_css": "prestations.css",
-  "page_scripts": ["main.js", "prestations-catalog.js"]
+  "page_scripts": ["main.js", "prestation-devis-modal.js", "prestations-catalog.js"]
 }

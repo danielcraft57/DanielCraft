@@ -1,5 +1,5 @@
 /**
- * Panneau devis fiche prestation : options type e-commerce, total indicatif, envoi Facturio.
+ * Fiche prestation : options type e-commerce, total indicatif, ouverture modale devis.
  */
 (function () {
   'use strict';
@@ -7,16 +7,12 @@
   const root = document.querySelector('.prestation-detail-root');
   if (!root) return;
 
-  const form = document.getElementById('prestationDevisForm');
-  const feedback = document.getElementById('prestationDevisFeedback');
-  const submitBtn = document.getElementById('prestationDevisSubmit');
   const totalEl = document.querySelector('[data-prestation-total]');
   const totalInput = document.querySelector('[data-prestation-total-input]');
   const basePriceEl = document.querySelector('[data-prestation-base-price]');
   const addonsMount = document.querySelector('[data-prestation-addons]');
 
   const basePrice = parseInt(basePriceEl?.getAttribute('data-prestation-base-price') || '0', 10) || 0;
-  let addons = [];
 
   function parseAddons() {
     if (!addonsMount) return [];
@@ -30,23 +26,42 @@
   }
 
   function formatEur(n) {
-    return `${n} €`;
+    return n + ' €';
   }
 
   function recalcTotal() {
     let total = basePrice;
-    const checked = form?.querySelectorAll('input[name="addon_id[]"]:checked') || [];
-    checked.forEach((input) => {
+    const checked = root.querySelectorAll('input[name="addon_id[]"]:checked') || [];
+    checked.forEach(function (input) {
       const price = parseInt(input.getAttribute('data-addon-price') || '0', 10);
       if (!Number.isNaN(price)) total += price;
     });
     if (totalEl) totalEl.textContent = formatEur(total);
     if (totalInput) totalInput.value = String(total);
+    syncModalTriggers(total);
     return total;
   }
 
+  function syncModalTriggers(total) {
+    root.querySelectorAll('[data-prestation-devis-open]').forEach(function (btn) {
+      btn.setAttribute('data-prestation-price', String(total));
+    });
+    const hiddenTotal = document.getElementById('prestationDevisDialogTotal');
+    if (hiddenTotal && document.getElementById('prestationDevisDialog')?.open) {
+      hiddenTotal.value = String(total);
+    }
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   function renderAddons() {
-    addons = parseAddons();
+    const addons = parseAddons();
     if (!addonsMount || !addons.length) return;
     addonsMount.hidden = false;
     addonsMount.innerHTML = '';
@@ -55,7 +70,7 @@
     title.textContent = 'Options (facultatif)';
     addonsMount.appendChild(title);
 
-    addons.forEach((addon) => {
+    addons.forEach(function (addon) {
       if (!addon || !addon.id) return;
       const label = document.createElement('label');
       label.className = 'prestation-devis-addon';
@@ -67,78 +82,41 @@
       input.addEventListener('change', recalcTotal);
       const text = document.createElement('span');
       const price = parseInt(addon.price_eur, 10) || 0;
-      text.innerHTML = `<strong>${escapeHtml(addon.title || '')}</strong> (+${price} €)${
-        addon.description ? ` — ${escapeHtml(addon.description)}` : ''
-      }`;
+      text.innerHTML =
+        '<strong>' +
+        escapeHtml(addon.title || '') +
+        '</strong> (+' +
+        price +
+        ' €)' +
+        (addon.description ? ' — ' + escapeHtml(addon.description) : '');
       label.appendChild(input);
       label.appendChild(text);
       addonsMount.appendChild(label);
     });
   }
 
-  function escapeHtml(s) {
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
-  function showFeedback(message, isError) {
-    if (!feedback) return;
-    feedback.hidden = false;
-    feedback.textContent = message;
-    feedback.classList.toggle('is-error', !!isError);
-    feedback.classList.toggle('is-success', !isError);
-  }
-
-  function setLoading(loading) {
-    if (!submitBtn) return;
-    submitBtn.disabled = loading;
-    submitBtn.setAttribute('aria-busy', loading ? 'true' : 'false');
-  }
-
-  async function onSubmit(ev) {
+  document.addEventListener('click', function (ev) {
+    const trigger = ev.target.closest('.prestation-detail-root [data-prestation-devis-open]');
+    if (!trigger) return;
+    const total = recalcTotal();
+    const modal = window.prestationDevisModal;
+    if (!modal || typeof modal.open !== 'function') return;
     ev.preventDefault();
-    if (!form) return;
-    if (!form.reportValidity()) return;
-
-    setLoading(true);
-    if (feedback) feedback.hidden = true;
-
-    const fd = new FormData(form);
-    fd.set('total_eur', String(recalcTotal()));
-
-    try {
-      const res = await fetch('/api/request-prestation-devis.php', {
-        method: 'POST',
-        body: fd,
-        credentials: 'same-origin',
-        headers: { Accept: 'application/json' },
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.success) {
-        showFeedback(
-          data.message ||
-            'Merci ! Votre demande est enregistrée : consultez votre boîte mail pour le devis.',
-          false,
-        );
-        form.reset();
-        recalcTotal();
-      } else {
-        showFeedback(data.error || 'Envoi impossible. Réessayez ou contactez-nous.', true);
-      }
-    } catch {
-      showFeedback(
-        'Connexion au serveur impossible. Utilisez le formulaire de contact sur l’accueil si besoin.',
-        true,
-      );
-    } finally {
-      setLoading(false);
-    }
-  }
+    ev.stopImmediatePropagation();
+    const addonIds = [];
+    root.querySelectorAll('input[name="addon_id[]"]:checked').forEach(function (input) {
+      addonIds.push(input.value);
+    });
+    modal.open({
+      slug: trigger.getAttribute('data-prestation-slug'),
+      serviceSlug: trigger.getAttribute('data-service-slug'),
+      title: trigger.getAttribute('data-prestation-title'),
+      price: String(total),
+      priceLabel: trigger.getAttribute('data-prestation-price-label'),
+      addonIds: addonIds,
+    });
+  });
 
   renderAddons();
   recalcTotal();
-  form?.addEventListener('submit', onSubmit);
 })();

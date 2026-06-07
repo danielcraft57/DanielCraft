@@ -299,6 +299,7 @@ def generate_robots_txt(output_dir: Path) -> None:
         f"Sitemap: {base}/sitemap.xml\n"
         f"Sitemap: {base}/sitemap-pages.xml\n"
         f"Sitemap: {base}/sitemap-vitrines.xml\n"
+        f"Sitemap: {base}/sitemap-prestations.xml\n"
         f"Sitemap: {base}/blog/sitemap-blog.xml\n"
         "\n"
         "# Autoriser le blog\n"
@@ -1456,34 +1457,88 @@ def _prestation_price_display(item: Dict[str, Any]) -> str:
     return f'{label} · {price} €'
 
 
-def _prestation_card_html(item: Dict[str, Any], *, show_featured_badge: bool = False) -> str:
+PRESTATION_FEATURED_ORDER = (
+    'site-vitrine',
+    'visibilite-complete',
+    'repondeur-intelligent',
+)
+
+
+def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = False) -> str:
+    """Visuel carte : icône + dégradé (évite les SVG génériques peu parlants)."""
+    icon = html.escape((item.get('icon') or 'fa-star').strip())
+    cat = html.escape((item.get('category') or 'identite').strip())
+    hero_class = ' prestation-card-visual--hero' if featured_hero else ''
+    return (
+        f'<div class="prestation-card-visual prestation-card-visual--icon{hero_class}"'
+        f' data-prestation-cat="{cat}" aria-hidden="true">'
+        f'<i class="fas {icon}"></i></div>'
+    )
+
+
+def _prestation_card_html(
+    item: Dict[str, Any],
+    *,
+    show_featured_badge: bool = False,
+    featured_hero: bool = False,
+) -> str:
     slug = (item.get('slug') or '').strip()
-    title = html.escape((item.get('title') or slug).strip())
+    title_raw = (item.get('title') or slug).strip()
+    title = html.escape(title_raw)
     desc = html.escape((item.get('short_description') or item.get('description') or '').strip())
     icon = html.escape((item.get('icon') or 'fa-star').strip())
     price_html = html.escape(_prestation_price_display(item))
-    img = html.escape((item.get('image') or '/assets/images/prestations/google.svg').strip())
+    tagline = html.escape((item.get('tagline') or '').strip())
+    service_slug = html.escape((item.get('service_slug') or slug).strip())
+    try:
+        price_eur = int(item.get('price_eur', 0))
+    except (TypeError, ValueError):
+        price_eur = 0
+    price_label = html.escape((item.get('price_label') or 'Forfait').strip())
     if item.get('has_page'):
         cta_href = f'/prestations/{slug}/'
-        cta_label = 'Voir la prestation'
+        cta_label = 'Découvrir'
+        actions = (
+            f'<div class="prestation-card-actions">'
+            f'<a href="{cta_href}" class="service-cta"><span>{html.escape(cta_label)}</span>'
+            f'<i class="fas fa-arrow-right" aria-hidden="true"></i></a>'
+            f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
+            f' data-prestation-slug="{html.escape(slug, quote=True)}"'
+            f' data-service-slug="{service_slug}"'
+            f' data-prestation-title="{title}"'
+            f' data-prestation-price="{price_eur}"'
+            f' data-prestation-price-label="{price_label}">'
+            f'<span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
+            f'</div>'
+        )
     else:
-        cta_href = f'/#contact?service={html.escape((item.get("service_slug") or slug), quote=True)}'
-        cta_label = 'Demander un devis'
+        actions = (
+            f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
+            f' data-prestation-slug="{html.escape(slug, quote=True)}"'
+            f' data-service-slug="{service_slug}"'
+            f' data-prestation-title="{title}"'
+            f' data-prestation-price="{price_eur}"'
+            f' data-prestation-price-label="{price_label}">'
+            f'<span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
+        )
     badge = ''
     if show_featured_badge and item.get('featured'):
-        badge = '<span class="prestation-card-badge">À la une</span>'
+        badge = '<span class="prestation-card-badge">Coup de cœur</span>'
     card_class = 'service-card prestation-card'
-    if item.get('featured'):
+    if item.get('featured') or featured_hero:
         card_class += ' prestation-card--featured'
+    tagline_html = (
+        f'<p class="prestation-card-tagline">{tagline}</p>' if tagline and featured_hero else ''
+    )
     return (
-        f'<article class="{card_class}">'
+        f'<article class="{card_class}" data-prestation-slug="{html.escape(slug, quote=True)}">'
         f'{badge}'
-        f'<div class="prestation-card-visual"><img src="{img}" alt="" width="400" height="210" loading="lazy" decoding="async"></div>'
-        f'<div class="service-icon"><i class="fas {icon}" aria-hidden="true"></i></div>'
+        f'{_prestation_card_visual_html(item, featured_hero=featured_hero)}'
         f'<h3 class="service-title">{title}</h3>'
+        f'{tagline_html}'
         f'<p class="service-description">{desc}</p>'
         f'<div class="service-price"><span class="price-label">Indicatif</span><span class="price-amount">{price_html}</span></div>'
-        f'<a href="{cta_href}" class="service-cta"><span>{html.escape(cta_label)}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>'
+        f'{actions}'
         '</article>'
     )
 
@@ -1493,17 +1548,27 @@ def build_prestations_catalog_embed() -> None:
     data = load_prestations()
     cats = {c['id']: c for c in data.get('categories', []) if c.get('id')}
     grouped = _prestation_items_by_category(data)
-    featured_pages = [
+    featured_raw = [
         it for it in data.get('items', [])
         if it.get('featured') and it.get('has_page')
     ]
+    order_index = {slug: i for i, slug in enumerate(PRESTATION_FEATURED_ORDER)}
+    featured_pages = sorted(
+        featured_raw,
+        key=lambda it: order_index.get((it.get('slug') or '').strip(), 999),
+    )[:3]
     parts: List[str] = []
     if featured_pages:
-        cards = ''.join(_prestation_card_html(it, show_featured_badge=True) for it in featured_pages)
+        cards = ''.join(
+            _prestation_card_html(it, show_featured_badge=True, featured_hero=True)
+            for it in featured_pages
+        )
         parts.append(
             '<section class="prestations-featured" aria-labelledby="prestations-featured-title">'
             '<h2 id="prestations-featured-title" class="prestations-section-title">'
-            '<i class="fas fa-star" aria-hidden="true"></i> Prestations mises en avant</h2>'
+            '<i class="fas fa-star" aria-hidden="true"></i> Nos 3 offres les plus utiles</h2>'
+            '<p class="prestations-featured-lead">Pour démarrer ou progresser sans jargon : un site clair, '
+            "être trouvé sur Google <em>et</em> par l'IA, ou un assistant qui répond à vos clients.</p>"
             f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
             '</section>'
         )
@@ -1527,17 +1592,7 @@ def build_prestations_catalog_embed() -> None:
         icon = html.escape((cat.get('icon') or 'fa-folder').strip())
         desc = (cat.get('description') or '').strip()
         desc_html = f'<p class="prestations-category-lead">{html.escape(desc)}</p>' if desc else ''
-        cards = ''.join(_prestation_card_html(it) for it in items if not (it.get('featured') and it.get('has_page')))
-        # Inclure aussi les featured dans leur catégorie si pas déjà listés en haut uniquement
-        if not featured_pages:
-            cards = ''.join(_prestation_card_html(it) for it in items)
-        else:
-            extra = ''.join(
-                _prestation_card_html(it) for it in items
-                if it.get('has_page') and not it.get('featured')
-            )
-            non_page = ''.join(_prestation_card_html(it) for it in items if not it.get('has_page'))
-            cards = extra + non_page
+        cards = ''.join(_prestation_card_html(it) for it in items)
         parts.append(
             f'<h2 id="{html.escape(cid)}" class="prestations-section-title">'
             f'<i class="fas {icon}" aria-hidden="true"></i> {title}</h2>'
@@ -1659,6 +1714,20 @@ def _build_prestation_seo_bundle(
         if faq_bits:
             faq_html = '<div class="prestation-faq">' + ''.join(faq_bits) + '</div>'
 
+    examples = item.get('examples') or []
+    examples_html = (
+        '<ul class="prestation-examples">'
+        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in examples if str(x).strip())
+        + '</ul>'
+    ) if examples else ''
+
+    promo_raw = (item.get('promo') or '').strip()
+    promo_html = (
+        f'<aside class="prestation-promo" role="note">'
+        f'<i class="fas fa-lightbulb" aria-hidden="true"></i>'
+        f'<p>{html.escape(promo_raw)}</p></aside>'
+    ) if promo_raw else ''
+
     addons = item.get('addons') or []
     addons_json = json.dumps(addons, ensure_ascii=False)
 
@@ -1673,6 +1742,8 @@ def _build_prestation_seo_bundle(
         ),
         'prestation_benefits_html': benefits_html,
         'prestation_includes_html': includes_html,
+        'prestation_examples_html': examples_html,
+        'prestation_promo_html': promo_html,
         'prestation_faq_html': faq_html,
         'prestation_addons_json': addons_json,
         'prestation_price_eur': str(price),
@@ -1712,7 +1783,7 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
             'og_image': og_image_abs,
             'og_type': 'website',
             'extra_css': 'prestations.css',
-            'page_scripts': ['main.js', 'prestation-devis.js'],
+            'page_scripts': ['main.js', 'prestation-devis-modal.js', 'prestation-devis.js'],
             'prestation_slug': slug,
             'prestation_service_slug': (it.get('service_slug') or slug).strip(),
             'prestation_title': title,
@@ -1720,6 +1791,7 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
             'prestation_description': (it.get('description') or it.get('short_description') or '').strip(),
             'prestation_image': img_rel,
             'prestation_icon': (it.get('icon') or 'fa-star').strip(),
+            'prestation_category': (it.get('category') or 'identite').strip(),
         })
         vars_dict.update(seo_bundle)
         _normalize_page_meta(vars_dict, slug)
