@@ -99,24 +99,40 @@ STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 # Pages statiques pour le sitemap (path, changefreq, priority)
 SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
-    ('/processus', 'monthly', '0.8'),
-    ('/metz', 'monthly', '0.8'),
-    ('/portfolio', 'monthly', '0.7'),
-    ('/projets', 'monthly', '0.6'),
-    ('/statistiques', 'monthly', '0.5'),
-    ('/analyse', 'monthly', '0.6'),
-    ('/audit', 'monthly', '0.9'),
-    ('/mentions-legales', 'yearly', '0.3'),
-    ('/cgv', 'yearly', '0.3'),
-    ('/cgu', 'yearly', '0.3'),
-    ('/politique-confidentialite', 'yearly', '0.3'),
+    ('/audit', 'weekly', '0.95'),
+    ('/autres-prestations', 'weekly', '0.90'),
+    ('/processus', 'monthly', '0.75'),
+    ('/metz', 'monthly', '0.80'),
+    ('/portfolio', 'monthly', '0.55'),
+    ('/projets', 'monthly', '0.50'),
+    ('/statistiques', 'monthly', '0.40'),
+    ('/analyse', 'monthly', '0.45'),
+    ('/mentions-legales', 'yearly', '0.25'),
+    ('/cgv', 'yearly', '0.25'),
+    ('/cgu', 'yearly', '0.25'),
+    ('/politique-confidentialite', 'yearly', '0.25'),
+    ('/desabonnement', 'yearly', '0.20'),
 ]
+
+# Coordonnées & SEO structuré (schema.org)
+SEO_ORG_EMAIL = 'contact@danielcraft.fr'
+SEO_LOCALITY = 'Metz'
+SEO_POSTAL_CODE = '57000'
+SEO_REGION = 'Grand Est'
+SEO_GEO_LAT = 49.1193
+SEO_GEO_LNG = 6.1757
+
+# Correspondance page statique → fichier OG (scripts/generate_site_og_images.py)
+OG_PAGE_FILE_SLUGS = {
+    'index': 'home',
+    'autres-prestations': 'prestations',
+}
 
 # Variables par défaut
 DEFAULT_VARS = {
-    'page_title': 'Loïc DANIEL - Développeur Full-Stack TypeScript Freelance',
-    'page_description': 'Développeur Full-Stack TypeScript freelance avec plus de 7 ans d\'expérience.',
-    'page_keywords': 'développeur freelance, full-stack, TypeScript, React, Node.js',
+    'page_title': 'DanielCraft — Sites vitrines & visibilité web | Metz',
+    'page_description': 'Sites clairs, visibilité Google et assistants intelligents pour artisans et commerces. Devis par e-mail, Metz & Lorraine.',
+    'page_keywords': 'site vitrine Metz, visibilité Google, création site internet, assistant IA site web, DanielCraft Lorraine',
     'site_base': SITE_BASE,
     'page_url': f'{SITE_BASE}/',
     # Image OG par défaut (home) - architecture dediee dans assets/images/og/
@@ -127,7 +143,42 @@ DEFAULT_VARS = {
     'extra_css': None,
     'blog_enabled': True,
     'og_meta_profile': 'default',
+    'assets_version': '',
+    'assets_query': '',
 }
+
+
+def compute_assets_version(assets_root: Path) -> str:
+    """Version cache-bust pour CSS/JS locaux (mtime max → YYYYMMDDHHMM)."""
+    mtimes: List[float] = []
+    for sub in ('css', 'js'):
+        folder = assets_root / sub
+        if not folder.is_dir():
+            continue
+        for path in folder.rglob('*'):
+            if path.is_file() and path.suffix.lower() in ('.css', '.js'):
+                try:
+                    mtimes.append(path.stat().st_mtime)
+                except OSError:
+                    pass
+    if not mtimes:
+        return datetime.now().strftime('%Y%m%d%H%M')
+    return datetime.fromtimestamp(max(mtimes)).strftime('%Y%m%d%H%M')
+
+
+def apply_assets_version_to_defaults(assets_root: Path) -> str:
+    """Injecte assets_version / assets_query dans DEFAULT_VARS."""
+    version = compute_assets_version(assets_root)
+    DEFAULT_VARS['assets_version'] = version
+    DEFAULT_VARS['assets_query'] = f'?v={version}'
+    return version
+
+
+def build_page_scripts_content(scripts: Optional[List[str]], assets_q: str = '') -> str:
+    """Balises script defer avec cache-bust."""
+    q = assets_q or DEFAULT_VARS.get('assets_query') or ''
+    names = scripts if scripts else ['main.js']
+    return '\n'.join(f'<script src="/assets/js/{name}{q}" defer></script>' for name in names)
 
 
 class TemplateEngine:
@@ -393,6 +444,19 @@ def _to_absolute_url(url_or_path: str) -> str:
     return base + '/' + s
 
 
+def _apply_seo_meta_limits(vars_dict: Dict) -> None:
+    """Tronque titre, description et mots-clés pour les SERP et les réseaux sociaux."""
+    title = str(vars_dict.get('page_title') or '').strip()
+    if title:
+        vars_dict['page_title'] = _truncate_meta_text(title, 60)
+    desc = str(vars_dict.get('page_description') or '').strip()
+    if desc:
+        vars_dict['page_description'] = _truncate_meta_text(desc, 160)
+    kw = str(vars_dict.get('page_keywords') or '').strip()
+    if kw:
+        vars_dict['page_keywords'] = _truncate_meta_text(kw, 280)
+
+
 def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
     """
     Normalise `page_url` et `og_image` pour eviter les domaines en dur.
@@ -411,6 +475,129 @@ def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
     og_image = vars_dict.get('og_image')
     if og_image:
         vars_dict['og_image'] = _to_absolute_url(str(og_image))
+
+    _apply_seo_meta_limits(vars_dict)
+
+    og_slug = _static_page_og_slug(page_name)
+    resolved = _resolve_generated_og(
+        og_slug,
+        str(vars_dict.get('og_image') or DEFAULT_VARS['og_image']),
+    )
+    vars_dict['og_image'] = _to_absolute_url(resolved)
+
+
+def _build_audit_schema_jsonld(
+    page_url_abs: str,
+    page_title: str,
+    page_description: str,
+    paid_price_eur: int,
+) -> str:
+    base = SITE_BASE.rstrip('/')
+    graph: List[Dict[str, Any]] = [
+        {
+            '@type': 'WebPage',
+            '@id': page_url_abs + '#webpage',
+            'url': page_url_abs,
+            'name': page_title,
+            'description': page_description,
+            'inLanguage': 'fr-FR',
+            'isPartOf': {'@type': 'WebSite', 'name': 'DanielCraft', 'url': base + '/'},
+        },
+        {
+            '@type': 'Service',
+            '@id': page_url_abs + '#service',
+            'name': 'Audit de site web',
+            'description': page_description,
+            'url': page_url_abs,
+            'provider': {
+                '@type': 'Person',
+                'name': 'Loïc DANIEL',
+                'url': base + '/',
+                'email': SEO_ORG_EMAIL,
+            },
+            'areaServed': [
+                {'@type': 'City', 'name': SEO_LOCALITY},
+                {'@type': 'AdministrativeArea', 'name': SEO_REGION},
+            ],
+            'offers': [
+                {
+                    '@type': 'Offer',
+                    'name': 'Audit gratuit par e-mail',
+                    'price': '0',
+                    'priceCurrency': 'EUR',
+                    'availability': 'https://schema.org/InStock',
+                    'url': page_url_abs + '#audit-gratuit',
+                },
+                {
+                    '@type': 'Offer',
+                    'name': 'Audit premium — analyse complète',
+                    'price': str(paid_price_eur),
+                    'priceCurrency': 'EUR',
+                    'availability': 'https://schema.org/InStock',
+                    'url': page_url_abs + '#audit-premium',
+                },
+            ],
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': base + '/'},
+                {'@type': 'ListItem', 'position': 2, 'name': 'Audit site web', 'item': page_url_abs},
+            ],
+        },
+    ]
+    return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False)
+
+
+def _build_prestations_catalog_schema_jsonld(
+    page_url_abs: str,
+    page_title: str,
+    page_description: str,
+) -> str:
+    base = SITE_BASE.rstrip('/')
+    items = load_prestations().get('items') or []
+    list_elements: List[Dict[str, Any]] = []
+    pos = 1
+    for it in items:
+        if not it.get('has_page'):
+            continue
+        slug = (it.get('slug') or '').strip()
+        if not slug:
+            continue
+        title = (it.get('title') or slug).strip()
+        list_elements.append({
+            '@type': 'ListItem',
+            'position': pos,
+            'name': title,
+            'url': base + f'/prestations/{slug}/',
+        })
+        pos += 1
+    graph: List[Dict[str, Any]] = [
+        {
+            '@type': 'CollectionPage',
+            '@id': page_url_abs + '#webpage',
+            'name': page_title,
+            'description': page_description,
+            'url': page_url_abs,
+            'inLanguage': 'fr-FR',
+            'isPartOf': {'@type': 'WebSite', 'name': 'DanielCraft', 'url': base + '/'},
+        },
+        {
+            '@type': 'ItemList',
+            '@id': page_url_abs + '#itemlist',
+            'name': 'Catalogue des prestations DanielCraft',
+            'numberOfItems': len(list_elements),
+            'itemListElement': list_elements,
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': base + '/'},
+                {'@type': 'ListItem', 'position': 2, 'name': 'Prestations', 'item': page_url_abs},
+            ],
+        },
+    ]
+    return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False)
 
 
 def load_projects() -> List[Dict]:
@@ -471,6 +658,35 @@ def _truncate_meta_text(s: str, max_len: int) -> str:
     if len(s) <= max_len:
         return s
     return s[: max_len - 1].rstrip(' ,.;:') + '…'
+
+
+def _assets_file_from_rel(rel_url: str) -> Path:
+    """Convertit /assets/... en chemin local sous assets/."""
+    rel = (rel_url or '').strip()
+    if rel.startswith('/assets/'):
+        rel = rel[len('/assets/'):]
+    elif rel.startswith('assets/'):
+        rel = rel[len('assets/'):]
+    return BASE_DIR / 'assets' / rel.replace('/', os.sep)
+
+
+def _generated_og_rel(page_or_slug: str, *, subdir: str = '') -> str:
+    """Chemin relatif web vers une image OG 1200x630 generee."""
+    if subdir:
+        return f'/assets/images/og/{subdir}/{page_or_slug}-1200x630.jpg'
+    return f'/assets/images/og/{page_or_slug}-1200x630.jpg'
+
+
+def _resolve_generated_og(page_or_slug: str, fallback: str, *, subdir: str = '') -> str:
+    """Utilise l'image OG generee si le fichier existe, sinon le fallback."""
+    rel = _generated_og_rel(page_or_slug, subdir=subdir)
+    if _assets_file_from_rel(rel).is_file():
+        return rel
+    return fallback
+
+
+def _static_page_og_slug(page_name: str) -> str:
+    return OG_PAGE_FILE_SLUGS.get(page_name, page_name)
 
 
 def _vitrine_og_mime_from_url(url: str) -> str:
@@ -1451,7 +1667,7 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         desk = d_desk or fallback
         tab = d_tab or d_desk or fallback
         mob = d_mob or d_desk or fallback
-        og_desk = a_desk or fallback
+        og_desk = _resolve_generated_og(slug, a_desk or fallback, subdir='vitrines')
         title = (it.get('title') or slug).strip()
         mail_subj = quote(f'Installation vitrine — {title}')
         page_url_abs = _to_absolute_url(f'/vitrines/{slug}/')
@@ -1494,8 +1710,7 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         vars_dict['page_url'] = _to_absolute_url(f'/vitrines/{slug}/')
         vars_dict['og_image'] = _to_absolute_url(og_desk)
         scripts = vars_dict.get('page_scripts') or []
-        scripts_content = '\n'.join(f'<script src="/assets/js/{s}" defer></script>' for s in scripts)
-        vars_dict['page_scripts_content'] = scripts_content
+        vars_dict['page_scripts_content'] = build_page_scripts_content(scripts)
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
         content_rendered = template_engine.process_includes(content_rendered, vars_dict)
         vars_dict['page_content'] = content_rendered
@@ -1745,6 +1960,7 @@ def _build_prestation_seo_bundle(
     og_alt = _truncate_meta_text(f'{title} — {tagline or short}', 190)
 
     y = datetime.now().year
+    base = SITE_BASE.rstrip('/')
     graph: List[Dict[str, Any]] = [
         {
             '@type': 'WebPage',
@@ -1756,7 +1972,7 @@ def _build_prestation_seo_bundle(
             'isPartOf': {
                 '@type': 'WebSite',
                 'name': 'DanielCraft',
-                'url': SITE_BASE.rstrip('/') + '/',
+                'url': base + '/',
             },
             'primaryImageOfPage': {'@type': 'ImageObject', 'url': og_image_abs, 'caption': og_alt},
         },
@@ -1767,8 +1983,16 @@ def _build_prestation_seo_bundle(
             'description': short or tagline,
             'url': page_url_abs,
             'image': og_image_abs,
-            'provider': {'@type': 'Person', 'name': 'Loïc DANIEL', 'url': SITE_BASE.rstrip('/') + '/'},
-            'areaServed': {'@type': 'City', 'name': 'Metz'},
+            'provider': {
+                '@type': 'Person',
+                'name': 'Loïc DANIEL',
+                'url': base + '/',
+                'email': SEO_ORG_EMAIL,
+            },
+            'areaServed': [
+                {'@type': 'City', 'name': SEO_LOCALITY},
+                {'@type': 'AdministrativeArea', 'name': SEO_REGION},
+            ],
             'offers': {
                 '@type': 'Offer',
                 'price': str(price) if price > 0 else '0',
@@ -1780,12 +2004,12 @@ def _build_prestation_seo_bundle(
         {
             '@type': 'BreadcrumbList',
             'itemListElement': [
-                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': SITE_BASE.rstrip('/') + '/'},
+                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': base + '/'},
                 {
                     '@type': 'ListItem',
                     'position': 2,
                     'name': 'Prestations',
-                    'item': SITE_BASE.rstrip('/') + '/autres-prestations',
+                    'item': base + '/autres-prestations',
                 },
                 {'@type': 'ListItem', 'position': 3, 'name': title, 'item': page_url_abs},
             ],
@@ -1795,6 +2019,26 @@ def _build_prestation_seo_bundle(
     benefits = item.get('benefits') or []
     includes = item.get('includes') or []
     faq = item.get('faq') or []
+    if faq:
+        faq_entities: List[Dict[str, Any]] = []
+        for entry in faq:
+            if not isinstance(entry, dict):
+                continue
+            q = str(entry.get('q') or '').strip()
+            a = str(entry.get('a') or '').strip()
+            if q and a:
+                faq_entities.append({
+                    '@type': 'Question',
+                    'name': q,
+                    'acceptedAnswer': {'@type': 'Answer', 'text': a},
+                })
+        if faq_entities:
+            graph.append({
+                '@type': 'FAQPage',
+                '@id': page_url_abs + '#faq',
+                'mainEntity': faq_entities,
+            })
+
     benefits_html = (
         '<ul class="prestation-benefits">'
         + ''.join(f'<li>{html.escape(str(x))}</li>' for x in benefits)
@@ -1877,7 +2121,8 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
             continue
         title = (it.get('title') or slug).strip()
         img_rel = (it.get('image') or '/assets/images/prestations/google.svg').strip()
-        og_image_abs = _to_absolute_url(img_rel)
+        og_rel = _resolve_generated_og(slug, img_rel, subdir='prestations')
+        og_image_abs = _to_absolute_url(og_rel)
         page_url_abs = _to_absolute_url(f'/prestations/{slug}/')
         seo_bundle = _build_prestation_seo_bundle(it, slug, page_url_abs, og_image_abs)
         vars_dict = DEFAULT_VARS.copy()
@@ -1904,9 +2149,7 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
         vars_dict['page_url'] = page_url_abs
         vars_dict['og_image'] = og_image_abs
         scripts = vars_dict.get('page_scripts') or []
-        vars_dict['page_scripts_content'] = '\n'.join(
-            f'<script src="/assets/js/{s}" defer></script>' for s in scripts
-        )
+        vars_dict['page_scripts_content'] = build_page_scripts_content(scripts)
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
         content_rendered = template_engine.process_includes(content_rendered, vars_dict)
         vars_dict['page_content'] = content_rendered
@@ -2094,7 +2337,9 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         tech_html = ''.join(f'<span class="tech-tag">{t}</span>' for t in techs)
         img_url = p.get('imageUrl') or ''
         if img_url and not img_url.startswith('http'):
-            img_url = SITE_BASE + '/' + img_url
+            img_url = SITE_BASE + '/' + img_url.lstrip('/')
+        og_fallback = img_url or DEFAULT_VARS['og_image']
+        og_rel = _resolve_generated_og(slug, og_fallback, subdir='projets')
         readme_html = _readme_to_html(slug)
         prev_next_html = _project_prev_next_html(projects, slug)
         recommendations_html = _project_recommendations_html(projects, p)
@@ -2105,7 +2350,7 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
             'page_description': (p.get('description') or '')[:160],
             'page_keywords': ', '.join(techs[:5]) if techs else 'projet, open source',
             'page_url': f"{SITE_BASE}/projets/{slug}",
-            'og_image': img_url or DEFAULT_VARS['og_image'],
+            'og_image': _to_absolute_url(og_rel),
             'og_type': 'website',
             'schema_type': 'project',
             'page_content': '',  # sera remplace par le rendu du fragment
@@ -2130,7 +2375,7 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
         content_rendered = template_engine.process_includes(content_rendered, vars_dict)
         vars_dict['page_content'] = content_rendered
-        vars_dict['page_scripts_content'] = '<script src="/assets/js/main.js" defer></script>'
+        vars_dict['page_scripts_content'] = build_page_scripts_content(None)
         html_output = template_engine.render(template_path, vars_dict)
         (out_projets / f'{slug}.html').write_text(html_output, encoding='utf-8')
         slugs.append(slug)
@@ -2161,6 +2406,12 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         vars_dict['stripe_publishable_key'] = _stripe_publishable_key()
         vars_dict['audit_paid_slug'] = str(paid.get('slug') or 'audit-complet-ia')
         vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 199))
+        if not vars_dict.get('schema_type'):
+            vars_dict['schema_type'] = 'audit'
+        try:
+            paid_price = int(paid.get('price_eur', 199))
+        except (TypeError, ValueError):
+            paid_price = 199
 
     # Profil meta OG (le moteur de template ne gère pas != )
     schema_type = str(vars_dict.get('schema_type') or '')
@@ -2173,17 +2424,26 @@ def build_page(page_name: str, template_engine: TemplateEngine):
 
     # Normalise canonical/OG a partir de SITE_BASE
     _normalize_page_meta(vars_dict, page_name)
+
+    if page_name == 'audit':
+        vars_dict['audit_schema_jsonld'] = _build_audit_schema_jsonld(
+            str(vars_dict.get('page_url') or ''),
+            str(vars_dict.get('page_title') or ''),
+            str(vars_dict.get('page_description') or ''),
+            paid_price,
+        )
+    if page_name == 'autres-prestations':
+        vars_dict['prestations_catalog_schema_jsonld'] = _build_prestations_catalog_schema_jsonld(
+            str(vars_dict.get('page_url') or ''),
+            str(vars_dict.get('page_title') or ''),
+            str(vars_dict.get('page_description') or ''),
+        )
     
     # Génère le contenu des scripts
-    scripts = vars_dict.get('page_scripts', [])
-    if scripts:
-        scripts_content = '\n'.join([
-            f'<script src="/assets/js/{script}" defer></script>'
-            for script in scripts
-        ])
-    else:
-        scripts_content = '<script src="/assets/js/main.js" defer></script>'
-    vars_dict['page_scripts_content'] = scripts_content
+    vars_dict['page_scripts_content'] = build_page_scripts_content(
+        vars_dict.get('page_scripts') or None,
+        str(vars_dict.get('assets_query') or ''),
+    )
     
     # Détermine le template à utiliser
     template_name = page_config.get('template', 'base.html')
@@ -2289,9 +2549,9 @@ def generate_sitemap_vitrines(output_dir: Path) -> None:
         'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
     ]
     base = SITE_BASE.rstrip('/')
-    lines.append(_sitemap_url_line(base, '/vitrines/', lastmod, 'weekly', '0.70'))
+    lines.append(_sitemap_url_line(base, '/vitrines/', lastmod, 'weekly', '0.80'))
     for slug in vitrine_slugs_for_sitemap():
-        lines.append(_sitemap_url_line(base, f'/vitrines/{slug}/', lastmod, 'monthly', '0.55'))
+        lines.append(_sitemap_url_line(base, f'/vitrines/{slug}/', lastmod, 'monthly', '0.60'))
     lines.append('</urlset>')
     (output_dir / 'sitemap-vitrines.xml').write_text('\n'.join(lines), encoding='utf-8')
 
@@ -2330,7 +2590,6 @@ def generate_sitemap_prestations(output_dir: Path) -> None:
         '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
         '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
         'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
-        _sitemap_url_line(base, '/autres-prestations', lastmod, 'weekly', '0.85'),
     ]
     for slug in prestation_slugs_for_sitemap():
         lines.append(
@@ -2412,6 +2671,8 @@ def main():
         else:
             shutil.copytree(assets_src, assets_dst)
             print(f"[OK] Assets copies dans {assets_dst}")
+        assets_ver = apply_assets_version_to_defaults(assets_src)
+        print(f"[OK] Assets version (cache-bust) : {assets_ver}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)
         if not skip_webp:
             generate_webp_variants(assets_dst)

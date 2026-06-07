@@ -212,8 +212,17 @@ body {
 
 .nav-menu {
   display: flex;
-  gap: var(--space-8);
+  gap: clamp(1rem, 2.2vw, 2rem);
   align-items: center;
+}
+
+/* Liens barre : visibilité par breakpoint (voir responsive.css) */
+.nav-link--bar-xl {
+  display: inline-flex;
+}
+
+.nav-dropdown-item--accueil-fallback {
+  display: none;
 }
 
 .nav-link {

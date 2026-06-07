@@ -237,7 +237,7 @@ class DanielCraftApp {
     
     if (toggle && menu) {
       // Fermer le menu au clic sur un lien
-      const menuLinks = menu.querySelectorAll('.nav-link');
+      const menuLinks = menu.querySelectorAll('.nav-link:not(.nav-dropdown-toggle), .nav-dropdown-link, .nav-cta-mobile');
       menuLinks.forEach(link => {
         link.addEventListener('click', () => {
           this.closeMobileMenu();
@@ -349,6 +349,20 @@ class DanielCraftApp {
       rootMargin: '0px 0px -50px 0px'
     };
 
+    const selectors = ['.scroll-reveal', '.scroll-reveal-left', '.scroll-reveal-right', '.scroll-reveal-scale'];
+    const elements = [];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => elements.push(el));
+    });
+    if (!elements.length) return;
+
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isMobile || reduceMotion) {
+      elements.forEach(el => el.classList.add('revealed'));
+      return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -357,10 +371,7 @@ class DanielCraftApp {
       });
     }, observerOptions);
 
-    const selectors = ['.scroll-reveal', '.scroll-reveal-left', '.scroll-reveal-right', '.scroll-reveal-scale'];
-    selectors.forEach(sel => {
-      document.querySelectorAll(sel).forEach(el => observer.observe(el));
-    });
+    elements.forEach(el => observer.observe(el));
   }
 
   /**

@@ -1,169 +1,148 @@
-<!-- Schema.org JSON-LD pour la page d'accueil (optimise RDF/SEO) -->
+<!-- Schema.org JSON-LD (données structurées SEO) -->
 {% if schema_type == 'home' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "DanielCraft",
-  "url": "{{site_base}}",
-  "inLanguage": "fr-FR",
-  "publisher": { "@type": "Organization", "name": "DanielCraft", "url": "{{site_base}}" },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": { "@type": "EntryPoint", "urlTemplate": "{{site_base}}/blog?q={search_term_string}" },
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Loïc DANIEL",
-  "jobTitle": "Développeur Full-Stack TypeScript, Python & PHP | IA & Data",
-  "url": "{{site_base}}",
-  "inLanguage": "fr-FR",
-  "sameAs": [
-    "https://linkedin.com/in/loicdaniel",
-    "https://github.com/danielcraft57"
-  ],
-  "email": "contact@example.com",
-  "telephone": "+33000000000",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ville",
-    "postalCode": "00000",
-    "addressCountry": "FR"
-  },
-  "knowsAbout": [
-    "TypeScript",
-    "Python",
-    "PHP",
-    "React",
-    "Node.js",
-    "Next.js",
-    "Développement Web",
-    "Développement Mobile",
-    "Full-Stack Development",
-    "Analyse de données",
-    "Big Data",
-    "Machine Learning",
-    "Deep Learning",
-    "Trading crypto",
-    "Finance",
-    "NFT"
-  ],
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Formation en développement web"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "DanielCraft",
-  "image": "{{site_base}}/assets/images/og/home-1200x630.jpg",
-  "@id": "{{site_base}}",
-  "url": "{{site_base}}",
-  "inLanguage": "fr-FR",
-  "telephone": "+33000000000",
-  "email": "contact@example.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "",
-    "addressLocality": "Ville",
-    "postalCode": "00000",
-    "addressCountry": "FR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 0,
-    "longitude": 0
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "priceRange": "€€",
-  "areaServed": {
-    "@type": "City",
-    "name": "Ville"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "DanielCraft - Développement Web, IA & Data",
-  "description": "Services de développement web, mobile et logiciels en TypeScript, Python & PHP. Sites vitrines performants, automatisation, APIs, analyse de données, IA, machine learning, deep learning, optimisation et audit de performances.",
-  "inLanguage": "fr-FR",
-  "provider": {
-    "@type": "Person",
-    "name": "Loïc DANIEL"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Metz"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services pour commerce et artisanat",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Site Vitrine",
-          "description": "Site vitrine professionnel, responsive, identité de votre commerce ou artisanat. Livraison rapide en 5-8 jours.",
-          "provider": {
-            "@type": "Person",
-            "name": "Loïc DANIEL"
-          }
-        },
-        "price": "490",
-        "priceCurrency": "EUR"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{site_base}}#website",
+      "name": "DanielCraft",
+      "url": "{{site_base}}",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "{{site_base}}#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{site_base}}#webpage",
+      "url": "{{site_base}}",
+      "name": "{{page_title}}",
+      "description": "{{page_description}}",
+      "inLanguage": "fr-FR",
+      "isPartOf": { "@id": "{{site_base}}#website" },
+      "about": { "@id": "{{site_base}}#business" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{site_base}}#organization",
+      "name": "DanielCraft",
+      "url": "{{site_base}}",
+      "email": "contact@danielcraft.fr",
+      "logo": "{{site_base}}/assets/images/og/home-1200x630.jpg",
+      "founder": { "@id": "{{site_base}}#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{site_base}}#person",
+      "name": "Loïc DANIEL",
+      "jobTitle": "Créateur de sites vitrines & visibilité web",
+      "url": "{{site_base}}",
+      "email": "contact@danielcraft.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Metz",
+        "postalCode": "57000",
+        "addressRegion": "Grand Est",
+        "addressCountry": "FR"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Identité & visibilité (multi-supports)",
-          "description": "Refonte cohérente de votre identité sur site, réseaux sociaux et documents. Image pro partout.",
-          "provider": {
-            "@type": "Person",
-            "name": "Loïc DANIEL"
-          }
-        },
-        "price": "990",
-        "priceCurrency": "EUR"
+      "sameAs": [
+        "https://linkedin.com/in/loicdaniel",
+        "https://github.com/danielcraft57"
+      ],
+      "knowsAbout": [
+        "Création de site vitrine",
+        "Référencement Google",
+        "Visibilité web",
+        "Assistants intelligents pour sites web",
+        "Maintenance de site internet"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{site_base}}#business",
+      "name": "DanielCraft",
+      "image": "{{site_base}}/assets/images/og/home-1200x630.jpg",
+      "url": "{{site_base}}",
+      "email": "contact@danielcraft.fr",
+      "description": "Sites vitrines clairs, visibilité Google et assistants intelligents pour artisans, commerces et indépendants. Devis par e-mail, Metz & Lorraine.",
+      "inLanguage": "fr-FR",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Metz",
+        "postalCode": "57000",
+        "addressRegion": "Grand Est",
+        "addressCountry": "FR"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "SEO & visibilité (Google + ChatGPT)",
-          "description": "Trouvez des clients : visible sur Google et recommandé par ChatGPT. Pack SEO complet.",
-          "provider": {
-            "@type": "Person",
-            "name": "Loïc DANIEL"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.1193,
+        "longitude": 6.1757
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Metz" },
+        { "@type": "AdministrativeArea", "name": "Grand Est" },
+        { "@type": "Country", "name": "France" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "provider": { "@id": "{{site_base}}#person" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Prestations web pour artisans et commerces",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Site vitrine professionnel",
+              "description": "Site clair sur mobile et ordinateur, pages essentielles et formulaire de contact.",
+              "url": "{{site_base}}/prestations/site-vitrine/"
+            },
+            "price": "490",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Image de marque harmonisée",
+              "description": "Identité cohérente sur site, réseaux sociaux et documents professionnels.",
+              "url": "{{site_base}}/prestations/identite-harmonieuse/"
+            },
+            "price": "990",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Être trouvé sur Google et par l'IA",
+              "description": "Pack visibilité : référencement Google et présence auprès des assistants intelligents.",
+              "url": "{{site_base}}/prestations/visibilite-complete/"
+            },
+            "price": "699",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Audit premium site web",
+              "description": "Analyse complète de votre site : visibilité, crédibilité et parcours visiteur.",
+              "url": "{{site_base}}/audit"
+            },
+            "price": "199",
+            "priceCurrency": "EUR"
           }
-        },
-        "price": "699",
-        "priceCurrency": "EUR"
+        ]
       }
-    ]
-  }
+    }
+  ]
 }
 </script>
 {% endif %}
@@ -200,19 +179,43 @@
 
 {% if schema_type == 'prestations_catalog' %}
 <script type="application/ld+json">
+{{prestations_catalog_schema_jsonld}}
+</script>
+{% endif %}
+
+{% if schema_type == 'vitrines_catalog' %}
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Catalogue des prestations DanielCraft",
-  "description": "{{page_description}}",
-  "url": "{{page_url}}",
-  "inLanguage": "fr-FR",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "DanielCraft",
-    "url": "{{site_base}}"
-  }
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "{{page_url}}#webpage",
+      "name": "{{page_title}}",
+      "description": "{{page_description}}",
+      "url": "{{page_url}}",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "DanielCraft",
+        "url": "{{site_base}}"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "{{site_base}}" },
+        { "@type": "ListItem", "position": 2, "name": "Modèles de sites", "item": "{{page_url}}" }
+      ]
+    }
+  ]
 }
+</script>
+{% endif %}
+
+{% if schema_type == 'audit' %}
+<script type="application/ld+json">
+{{audit_schema_jsonld}}
 </script>
 {% endif %}
 

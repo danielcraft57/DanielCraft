@@ -1,9 +1,9 @@
 {
-  "page_title": "Analyse de site web | DanielCraft",
-  "page_description": "Affichez les résultats d’analyse d’un site web (performance, SEO, sécurité) et partagez un lien vers le rapport.",
+  "page_title": "Résultats analyse site web — DanielCraft",
+  "page_description": "Consultez le rapport d’analyse d’un site : performance, SEO et sécurité. Lien partageable pour votre artisan, commerce ou indépendant.",
   "page_keywords": "analyse site web, audit, performance, SEO, sécurité, rapport",
   "page_url": "/analyse",
-  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "og_image": "/assets/images/og/analyse-1200x630.jpg",
   "extra_css": "analyse-report.css",
   "page_scripts": ["main.js", "analyse-report.js"]
 }

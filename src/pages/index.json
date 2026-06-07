@@ -1,9 +1,9 @@
 {
-  "page_title": "Site vitrine & visibilité Google — DanielCraft Metz",
-  "page_description": "Artisan, commerce ou indépendant : site clair, visible sur Google et par l'IA, assistants intelligents. Sans jargon. Devis par e-mail, Metz & Lorraine.",
+  "page_title": "Site vitrine & visibilité Google — DanielCraft",
+  "page_description": "Artisan, commerce ou indépendant : site clair, visible sur Google et par l'IA. Sans jargon. Devis par e-mail, Metz & Lorraine.",
   "page_keywords": "création site vitrine Metz, visibilité Google, assistant IA site web, site internet artisan, devis site, DanielCraft Lorraine",
-  "page_url": "https://danielcraft.fr/",
-  "og_image": "https://danielcraft.fr/assets/images/home/home-hero.png",
+  "page_url": "/",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
   "current_page": "index",
   "page_scripts": ["main.js", "home-wow.js", "prestation-devis-modal.js", "personalization.js", "contact-wizard.js"],
   "extra_css": "home-wow.css",

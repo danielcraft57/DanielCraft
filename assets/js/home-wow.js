@@ -46,6 +46,14 @@
   function initStagger() {
     const blocks = document.querySelectorAll('.home-stagger');
     if (!blocks.length) return;
+
+    if (window.matchMedia('(max-width: 767px)').matches || reduceMotion) {
+      blocks.forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
     const io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {

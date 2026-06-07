@@ -1,11 +1,12 @@
 {
-  "page_title": "19 modèles de sites web par métier — démos et achat | DanielCraft",
-  "page_description": "Découvrez 19 maquettes de sites vitrine prêtes à personnaliser : restaurant, immobilier, avocat, commerce, tech… Démo live, captures mobile et livraison rapide en Lorraine.",
-  "page_keywords": "maquette site web, modèle site professionnel, créer site vitrine, démo site web, achat maquette HTML, DanielCraft Metz Lorraine",
+  "page_title": "Modèles de sites par métier — démos DanielCraft",
+  "page_description": "19 maquettes de sites vitrine par métier : restaurant, immobilier, avocat, commerce… Démo live, captures mobile et personnalisation rapide en Lorraine.",
+  "page_keywords": "maquette site web, modèle site professionnel, démo site vitrine, créer site internet, DanielCraft Metz Lorraine",
   "output_subpath": "vitrines/index.html",
   "page_url": "/vitrines/",
+  "og_image": "/assets/images/og/vitrines-1200x630.jpg",
   "current_page": "vitrines",
   "page_scripts": ["main.js", "vitrines-section.js"],
   "extra_css": "vitrines-portfolio.css",
-  "schema_type": ""
+  "schema_type": "vitrines_catalog"
 }

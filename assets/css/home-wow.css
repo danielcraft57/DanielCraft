@@ -1,5 +1,4 @@
 /* Accueil — effets wow (grand public) */
-@import url('prestations.css');
 
 .services--anchor-only {
   display: none;
@@ -555,6 +554,11 @@ a.home-hero-badge:focus-visible {
 }
 
 .home-stagger > * {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .home-stagger:not(.is-visible) > * {
   opacity: 0;
   transform: translateY(28px);
   transition:
@@ -585,6 +589,7 @@ a.home-hero-badge:focus-visible {
     animation: none;
   }
 
+  html.js .home-stagger:not(.is-visible) > *,
   .home-stagger > * {
     opacity: 1;
     transform: none;
@@ -645,6 +650,12 @@ a.home-hero-badge:focus-visible {
 }
 
 @media (max-width: 767px) {
+  html.js .home-stagger:not(.is-visible) > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .home-hero--wow.hero {
     min-height: auto;
     padding: calc(4.5rem + env(safe-area-inset-top, 0px)) 1rem 1.35rem;
