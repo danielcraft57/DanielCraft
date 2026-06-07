@@ -30,6 +30,10 @@ jobs:
         with:
           php-version: '8.3'
           coverage: none
+          tools: composer:v2
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
 
       - name: Install build dependencies
         run: pip install -r blog/requirements.txt
@@ -38,8 +42,11 @@ jobs:
         run: |
           find api -name '*.php' -print0 | xargs -0 -n1 php -l
 
-      - name: Unit tests
-        run: python -m unittest discover -s tests -v
+      - name: PHP unit tests
+        run: composer test:php
+
+      - name: Python unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Build site (--no-webp)
         env:

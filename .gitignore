@@ -53,6 +53,8 @@ assets/vitrines/screenshots/**
 
 # Vendor PHP (téléchargé via scripts/vendor_phpmailer.ps1)
 api/vendor/
+/vendor/
+.phpunit.cache/
 
 # Favicons : source SVG + pack PNG/ICO/manifest (régénérer avec scripts/generate_favicon_pngs.py)
 

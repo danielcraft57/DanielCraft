@@ -4,7 +4,7 @@
  * Recoit POST, valide les champs, envoie un email et repond en JSON.
  */
 
-require_once __DIR__ . '/env.php';
+require_once __DIR__ . '/contact-common.php';
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
@@ -30,233 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Recuperation et nettoyage des donnees
-$name    = isset($_POST['name'])    ? trim(strip_tags((string) $_POST['name']))    : '';
-$email   = isset($_POST['email'])   ? trim((string) $_POST['email'])                : '';
-$phone   = isset($_POST['phone'])   ? trim(strip_tags((string) $_POST['phone']))   : '';
-$service = isset($_POST['service']) ? trim(strip_tags((string) $_POST['service'])) : '';
-$project_type = isset($_POST['project_type']) ? trim(strip_tags((string) $_POST['project_type'])) : '';
-$budget  = isset($_POST['budget'])  ? trim(strip_tags((string) $_POST['budget']))  : '';
-$message = isset($_POST['message']) ? trim(strip_tags((string) $_POST['message'])) : '';
-$preferred_date = isset($_POST['preferred_date']) ? trim(strip_tags((string) $_POST['preferred_date'])) : '';
-$preferred_time = isset($_POST['preferred_time']) ? trim(strip_tags((string) $_POST['preferred_time'])) : '';
-$vitrine_slug = isset($_POST['vitrine_slug']) ? trim(strip_tags((string) $_POST['vitrine_slug'])) : '';
-$vitrine_title = isset($_POST['vitrine_title']) ? trim(strip_tags((string) $_POST['vitrine_title'])) : '';
-$site_url = isset($_POST['site_url']) ? trim(strip_tags((string) $_POST['site_url'])) : '';
-$site_url = preg_replace('/[\r\n]+/', '', $site_url);
-$billing_address = isset($_POST['billing_address']) ? trim(strip_tags((string) $_POST['billing_address'])) : '';
-
-if ($preferred_date !== '' && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $preferred_date)) {
-    $preferred_date = '';
-}
-if (strlen($preferred_time) > 48) {
-    $preferred_time = substr($preferred_time, 0, 48);
-}
-
-if ($budget !== '' && strlen($budget) > 32) {
-    $budget = substr($budget, 0, 32);
-}
-
-/**
- * Libellés des prestations (slugs formulaire contact wizard).
- */
-function contact_service_label(string $slug): string
-{
-    static $map = [
-        'pack_vitrine' => 'Site vitrine (490€)',
-        'pack_identite' => 'Identité & visibilité multi-supports (990€)',
-        'pack_seo_complet' => 'SEO Google + ChatGPT — pack (699€)',
-        'audit_gratuit_site' => 'Audit gratuit site web (offre découverte)',
-        'audit_paid_complet_ia' => 'Audit complet IA (payant)',
-        'seo_basique_290' => 'SEO basique — audit + corrections (290€)',
-        'seo_chatgpt_490' => 'SEO ChatGPT / découvrabilité IA (490€)',
-        'ia_faq_site' => 'Assistant IA FAQ site web (990€)',
-        'ia_support_client' => 'Assistant IA support client / email (1200€)',
-        'ia_contenu_web' => 'Générateur de contenus web par IA (650€)',
-        'ia_redaction_pro' => 'Assistant IA rédaction commerciale (490€)',
-        'ia_analyse_donnees' => 'Analyse de données avec IA (1450€)',
-        'ia_chatbot_ecom' => 'Chatbot IA e-commerce (1600€)',
-        'ia_automatisation' => 'Automatisation de tâches avec IA (1200€)',
-        'ia_abo_mensuel' => 'Maintenance mensuelle assistant IA (75€/mois)',
-        'ia_evolution' => 'Évolution fonctionnalités IA (dès 330€)',
-        'ia_audit' => 'Audit utilisation IA (400€)',
-        'tech_conseil_archi' => 'Conseil technique / architecture (380€)',
-        'tech_integration_crm' => 'Intégration CRM ou outil métier (dès 290€)',
-        'tech_migration_donnees' => 'Migration de données (330€)',
-        'tech_api_webhook' => 'Intégration API / webhook (dès 150€)',
-        'tech_perf_rapport' => 'Rapport de performances (120€)',
-        'site_page_supp' => 'Page supplémentaire site vitrine (65€/page)',
-        'site_form_avance' => 'Formulaire avancé / intégration (99€)',
-        'site_refonte_visuelle' => 'Refonte visuelle légère (330€)',
-        'site_maj_contenu_5h' => 'Mise à jour contenu — pack 5h (170€)',
-        'maint_site_mensuel' => 'Maintenance site mensuelle (39€/mois)',
-        'maint_hebergement' => 'Hébergement + domaine (79€/an)',
-        'maint_backup' => 'Backup & sécurisation (99€)',
-        'maint_ssl' => 'SSL + configuration (45€)',
-        'maint_support_abo' => 'Support / abonnement (25€/mois)',
-        'maint_depannage_2h' => 'Dépannage forfait 2h (120€)',
-        'maint_accompagnement_h' => 'Accompagnement technique à l\'heure (60€/h)',
-        'maint_support_prio_h' => 'Support prioritaire à l\'heure (70€/h)',
-        'besoin_a_preciser' => 'Besoin à préciser ensemble',
-        'projet_sur_mesure' => 'Projet sur mesure / autre',
-        'vitrine_catalog_order' => 'Pré-commande depuis le catalogue (sans paiement sur le site)',
-        'vitrine_catalog_devis' => 'Devis / questions — fiche catalogue',
-    ];
-    if (isset($map[$slug])) {
-        return $map[$slug];
-    }
-    if (preg_match('/^[a-z0-9_]{1,80}$/', $slug)) {
-        return ucwords(str_replace('_', ' ', $slug));
-    }
-    return 'Prestation (réf. invalide)';
-}
-
-/** Libellés besoin principal (formulaire contact grand public). */
-function contact_project_type_label(string $slug): string
-{
-    static $map = [
-        'site' => 'Un site internet',
-        'visibilite' => 'Être visible sur Google',
-        'assistant' => 'Un assistant sur mon site',
-        'entretien' => 'Entretien & dépannage',
-        'autre' => 'Je ne sais pas encore',
-        // Anciens slugs (formulaires / liens en cache)
-        'web' => 'Développement Web',
-        'backend' => 'Backend & APIs',
-        'mobile' => 'Application mobile',
-        'desktop' => 'Application desktop',
-        'tools' => 'Outils & automatisation',
-        'specialized' => 'Spécialisé (data, finance, IoT…)',
-        'learning' => 'Veille / apprentissage / proto',
-        'other' => 'Autre / à préciser',
-    ];
-    return $map[$slug] ?? $slug;
-}
-
-// Validation
-$errors = [];
-
-$audit_flow_services = ['audit_gratuit_site', 'audit_paid_complet_ia'];
-$is_audit_flow = in_array($service, $audit_flow_services, true);
-
-if ($name === '' && !$is_audit_flow) {
-    $errors[] = 'Le nom est obligatoire.';
-}
-
-if ($email === '') {
-    $errors[] = 'L\'email est obligatoire.';
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'L\'email n\'est pas valide.';
-}
-
-// Anti-header injection (anti-spam basique)
-foreach ([$name, $email, $phone] as $fieldVal) {
-    if (preg_match("/[\r\n]/", (string)$fieldVal)) {
-        $errors[] = 'Données invalides.';
-        break;
-    }
-}
-
-// Anti-spam basique: éviter URLs dans le nom/champs courts.
-if (preg_match('/https?:\/\/|www\./i', $name) || preg_match('/https?:\/\/|www\./i', $phone)) {
-    $errors[] = 'Entrée invalide.';
-}
-
-if ($message === '' && !$is_audit_flow) {
-    $errors[] = 'Le message est obligatoire.';
-}
-
-if ($is_audit_flow) {
-    if ($name === '') {
-        $name = 'Demandeur audit';
-    }
-    if ($message === '') {
-        $message = 'Demande audit site web (voir URL ci-dessous).';
-    }
-}
-
-$allowed_need_categories = [
-    'site', 'visibilite', 'assistant', 'entretien', 'autre',
-    'web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other',
-];
-if ($project_type === '' || !in_array($project_type, $allowed_need_categories, true)) {
-    $errors[] = 'Le besoin principal est obligatoire.';
-}
-
-if ($service === '') {
-    $errors[] = 'La prestation est obligatoire.';
-} elseif (!preg_match('/^[a-z0-9_]{1,80}$/', $service)) {
-    $errors[] = 'Prestation invalide.';
-}
-
-$vitrine_flow_services = ['vitrine_catalog_order', 'vitrine_catalog_devis'];
-
-/**
- * Normalise et valide une URL de site (https optionnel).
- *
- * @param string $url URL brute
- * @return string URL normalisée
- */
-function contact_normalize_site_url(string $url): string
-{
-    if ($url === '') {
-        return '';
-    }
-    if (!preg_match('#^https?://#i', $url)) {
-        $url = 'https://' . ltrim($url, '/');
-    }
-    return $url;
-}
-
-if (in_array($service, $vitrine_flow_services, true)) {
-    if ($vitrine_slug === '' || !preg_match('/^[a-z0-9-]{1,80}$/', $vitrine_slug)) {
-        $errors[] = 'Référence du modèle manquante ou invalide.';
-    }
-    if ($vitrine_title === '' || strlen($vitrine_title) > 220) {
-        $errors[] = 'Titre du modèle manquant ou trop long.';
-    }
-    if ($site_url !== '') {
-        if (strlen($site_url) > 500) {
-            $errors[] = 'URL du site trop longue.';
-        } else {
-            $site_url = contact_normalize_site_url($site_url);
-            if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
-                $errors[] = 'URL du site invalide.';
-            }
-        }
-    }
-    if ($service === 'vitrine_catalog_order' && strlen($billing_address) < 8) {
-        $errors[] = 'Adresse de facturation trop courte.';
-    }
-    if (strlen($billing_address) > 1500) {
-        $errors[] = 'Adresse de facturation trop longue.';
-    }
-} elseif (in_array($service, $audit_flow_services, true)) {
-    $vitrine_slug = '';
-    $vitrine_title = '';
-    $billing_address = '';
-    if ($site_url === '') {
-        $errors[] = 'L\'URL de votre site est obligatoire pour l\'audit gratuit.';
-    } elseif (strlen($site_url) > 500) {
-        $errors[] = 'URL du site trop longue.';
-    } else {
-        $site_url = contact_normalize_site_url($site_url);
-        if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
-            $errors[] = 'URL du site invalide.';
-        }
-    }
-} else {
-    $vitrine_slug = '';
-    $vitrine_title = '';
-    $site_url = '';
-    $billing_address = '';
-}
-
-if (!empty($errors)) {
+$validated = contact_validate_payload($_POST);
+$errors = $validated['errors'];
+if ($errors !== []) {
     api_log('send-contact', 'validation 400', [
         'errors' => $errors,
-        'project_type' => $project_type,
-        'service' => $service,
+        'project_type' => $validated['data']['project_type'] ?? '',
+        'service' => $validated['data']['service'] ?? '',
     ]);
     http_response_code(400);
     echo json_encode([
@@ -266,6 +46,21 @@ if (!empty($errors)) {
     ]);
     exit;
 }
+
+$data = $validated['data'];
+$name = $data['name'];
+$email = $data['email'];
+$phone = $data['phone'];
+$service = $data['service'];
+$project_type = $data['project_type'];
+$budget = $data['budget'];
+$message = $data['message'];
+$preferred_date = $data['preferred_date'];
+$preferred_time = $data['preferred_time'];
+$vitrine_slug = $data['vitrine_slug'];
+$vitrine_title = $data['vitrine_title'];
+$site_url = $data['site_url'];
+$billing_address = $data['billing_address'];
 
 api_bootstrap_env();
 
