@@ -287,7 +287,7 @@ try {
         "cgu.html",
         "politique-confidentialite.html"
     )
-    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml")
+    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml")
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file
@@ -358,6 +358,13 @@ try {
         scp -r $vitrinesPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
+    # Transfert fiches prestations (/prestations/<slug>/)
+    $prestationsPath = Join-Path $DIST_DIR "prestations"
+    if (Test-Path $prestationsPath) {
+        Write-Host "  Transfert: prestations/"
+        scp -r $prestationsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
     Write-ColorOutput "Transfert scp termine" "Green"
 }
 
@@ -405,6 +412,10 @@ Write-Host $projetsCheckResult
 $vitrinesCheckCmd = 'test -f ' + $ServerPath + '/vitrines/index.html && echo "OK: vitrines/index.html present" || echo "ATTENTION: vitrines/ manquant - relancer build puis deploy"'
 $vitrinesCheckResult = ssh "${ServerUser}@${ServerHost}" $vitrinesCheckCmd
 Write-Host $vitrinesCheckResult
+
+$prestationsCheckCmd = 'test -f ' + $ServerPath + '/prestations/site-vitrine/index.html && echo "OK: prestations/ deploye" || echo "ATTENTION: prestations/ manquant - relancer build puis deploy"'
+$prestationsCheckResult = ssh "${ServerUser}@${ServerHost}" $prestationsCheckCmd
+Write-Host $prestationsCheckResult
 
 # Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
 $imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'
