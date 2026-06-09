@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require_once __DIR__ . '/prestations-common.php';
 require_once __DIR__ . '/facturio-common.php';
+require_once __DIR__ . '/devis-notification.php';
 
 function devis_clean(string $s, int $max = 500): string
 {
@@ -84,11 +85,8 @@ if ($totalEur <= 0) {
 }
 
 $lines = [];
-$lines[] = [
-    'description' => $title,
-    'quantity' => 1,
-    'unitPrice' => facturio_unit_price_ht((float) $basePrice, 20.0),
-];
+$mainProductId = facturio_product_id_from_catalog($item);
+$lines[] = facturio_line_from_price_ht($title, (float) $basePrice, 20.0, $mainProductId);
 
 $addonsCatalog = is_array($item['addons'] ?? null) ? $item['addons'] : [];
 $addonsById = [];
@@ -108,11 +106,13 @@ foreach ($addonIds as $aid) {
     if ($addonPrice <= 0) {
         continue;
     }
-    $lines[] = [
-        'description' => $title . ' — ' . $addonTitle,
-        'quantity' => 1,
-        'unitPrice' => facturio_unit_price_ht((float) $addonPrice, 20.0),
-    ];
+    $addonProductId = facturio_product_id_from_catalog($addon);
+    $lines[] = facturio_line_from_price_ht(
+        $title . ' — ' . $addonTitle,
+        (float) $addonPrice,
+        20.0,
+        $addonProductId
+    );
 }
 
 $clientName = $company !== '' ? $company . ' — ' . $name : $name;
@@ -136,12 +136,41 @@ $quoteResult = facturio_issue_quote_devis(
 );
 
 if (!$quoteResult['ok']) {
-    error_log('[prestation-devis] Facturio: ' . ($quoteResult['error'] ?? 'erreur'));
+    $facturioErr = (string) ($quoteResult['error'] ?? 'erreur');
+    error_log('[prestation-devis] Facturio: ' . $facturioErr);
+
     if (facturio_configured()) {
+        $fallback = devis_notify_fallback(
+            $email,
+            $clientName,
+            $title,
+            $totalEur,
+            $lines,
+            $internalNote
+        );
+        if ($fallback['ok']) {
+            $msg = $fallback['client_sent']
+                ? 'Merci ! Votre demande est enregistrée. Vous recevrez votre devis PDF sous 48 h à ' . $email . '.'
+                : 'Merci ! Votre demande est enregistrée. Le devis vous sera envoyé sous 48 h à ' . $email . '.';
+            echo json_encode([
+                'success' => true,
+                'fallback' => true,
+                'message' => $msg,
+                'quote_id' => '',
+            ], JSON_UNESCAPED_UNICODE);
+            exit;
+        }
+
+        $userError = 'Le devis automatique est momentanément indisponible. Écrivez à contact@danielcraft.fr ou utilisez le formulaire de contact.';
+        if (str_contains($facturioErr, 'devis.write') || str_contains($facturioErr, 'devis.send')) {
+            error_log('[prestation-devis] Jeton Facturio : ajouter devis.read, devis.write, devis.send');
+        }
+
         http_response_code(502);
         echo json_encode([
             'success' => false,
-            'error' => 'Le devis n’a pas pu être envoyé pour le moment. Écrivez à contact@danielcraft.fr.',
+            'error' => $userError,
+            'error_code' => 'facturio_unavailable',
         ], JSON_UNESCAPED_UNICODE);
         exit;
     }

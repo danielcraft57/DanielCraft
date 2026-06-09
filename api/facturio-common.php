@@ -70,6 +70,23 @@ function facturio_extract_id(?array $data, string ...$keys): string
     return '';
 }
 
+function facturio_parse_api_error(int $status, ?array $data): string
+{
+    $msg = 'Erreur Facturio HTTP ' . $status;
+    if (is_array($data)) {
+        if (isset($data['message']) && is_string($data['message'])) {
+            $msg = $data['message'];
+        } elseif (isset($data['error']) && is_string($data['error'])) {
+            $msg = $data['error'];
+        }
+    }
+    if ($status === 403 && str_contains($msg, 'Permission API manquante')) {
+        $msg .= ' — recréez le jeton Facturio avec les scopes requis (devis : devis.read, devis.write, devis.send ; audit : factures.read, factures.write, factures.send).';
+    }
+
+    return $msg;
+}
+
 /**
  * @param array<string, mixed>|null $jsonBody
  * @return array{ok: bool, status: int, data: array<string, mixed>|null, error: string}
@@ -91,29 +108,61 @@ function facturio_http(string $method, string $path, ?array $jsonBody = null): a
         $headers[] = 'Content-Type: application/json; charset=utf-8';
     }
 
-    if (!function_exists('curl_init')) {
-        return ['ok' => false, 'status' => 502, 'data' => null, 'error' => 'cURL requis pour Facturio.'];
-    }
+    $method = strtoupper($method);
+    $payload = $jsonBody !== null ? json_encode($jsonBody, JSON_UNESCAPED_UNICODE) : null;
 
-    $ch = curl_init($url);
-    $opts = [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_CONNECTTIMEOUT => 8,
-        CURLOPT_TIMEOUT => 25,
-        CURLOPT_HTTPHEADER => $headers,
-        CURLOPT_CUSTOMREQUEST => strtoupper($method),
-    ];
-    if ($jsonBody !== null) {
-        $opts[CURLOPT_POSTFIELDS] = json_encode($jsonBody, JSON_UNESCAPED_UNICODE);
-    }
-    curl_setopt_array($ch, $opts);
-    $body = curl_exec($ch);
-    $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $err = curl_error($ch);
-    curl_close($ch);
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        $opts = [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 8,
+            CURLOPT_TIMEOUT => 25,
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_CUSTOMREQUEST => $method,
+        ];
+        if ($payload !== null) {
+            $opts[CURLOPT_POSTFIELDS] = $payload;
+        }
+        curl_setopt_array($ch, $opts);
+        $body = curl_exec($ch);
+        $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $err = curl_error($ch);
+        curl_close($ch);
 
-    if ($body === false) {
-        return ['ok' => false, 'status' => 502, 'data' => null, 'error' => 'Facturio : ' . ($err ?: 'réseau')];
+        if ($body === false) {
+            return ['ok' => false, 'status' => 502, 'data' => null, 'error' => 'Facturio : ' . ($err ?: 'réseau')];
+        }
+    } else {
+        $headerLines = implode("\r\n", $headers);
+        if ($payload !== null) {
+            $headerLines .= "\r\nContent-Length: " . strlen($payload);
+        }
+        $context = stream_context_create([
+            'http' => [
+                'method' => $method,
+                'header' => $headerLines . "\r\n",
+                'content' => $payload,
+                'ignore_errors' => true,
+                'timeout' => 25,
+            ],
+            'ssl' => [
+                'verify_peer' => true,
+                'verify_peer_name' => true,
+            ],
+        ]);
+        $body = @file_get_contents($url, false, $context);
+        if ($body === false) {
+            return ['ok' => false, 'status' => 502, 'data' => null, 'error' => 'Facturio : échec HTTP (file_get_contents).'];
+        }
+        $status = 200;
+        if (isset($http_response_header) && is_array($http_response_header)) {
+            foreach ($http_response_header as $line) {
+                if (preg_match('#^HTTP/\S+\s+(\d{3})#', (string) $line, $m)) {
+                    $status = (int) $m[1];
+                    break;
+                }
+            }
+        }
     }
 
     $decoded = json_decode((string) $body, true);
@@ -123,16 +172,7 @@ function facturio_http(string $method, string $path, ?array $jsonBody = null): a
         return ['ok' => true, 'status' => $status, 'data' => $data, 'error' => ''];
     }
 
-    $msg = 'Erreur Facturio HTTP ' . $status;
-    if (is_array($data)) {
-        if (isset($data['message']) && is_string($data['message'])) {
-            $msg = $data['message'];
-        } elseif (isset($data['error']) && is_string($data['error'])) {
-            $msg = $data['error'];
-        }
-    }
-
-    return ['ok' => false, 'status' => $status, 'data' => $data, 'error' => $msg];
+    return ['ok' => false, 'status' => $status, 'data' => $data, 'error' => facturio_parse_api_error($status, $data)];
 }
 
 /** Taux TVA décimal pour l’API (20 → 0.2). */
@@ -147,7 +187,43 @@ function facturio_tax_rate_decimal(float $taxRate): float
     return round($taxRate, 4);
 }
 
-/** Prix HT à partir du TTC (ex. 0,94 € TTC, 20 % → 0,7833). */
+/**
+ * Id produit Facturio depuis une entrée catalogue (prestations.json).
+ */
+function facturio_product_id_from_catalog(array $entry): ?int
+{
+    if (!isset($entry['facturio_product_id'])) {
+        return null;
+    }
+    $id = (int) $entry['facturio_product_id'];
+    return $id > 0 ? $id : null;
+}
+
+/**
+ * Ligne de devis/facture à partir d’un prix catalogue HT (prestations DanielCraft).
+ *
+ * @return array{description: string, quantity: float, unitPrice: float, taxRate: float, productId?: int}
+ */
+function facturio_line_from_price_ht(
+    string $description,
+    float $priceEurHt,
+    float $taxRatePercent = 20.0,
+    ?int $productId = null
+): array {
+    $line = [
+        'description' => mb_substr(trim($description), 0, 500),
+        'quantity' => 1,
+        'unitPrice' => round(max(0.0, $priceEurHt), 2),
+        'taxRate' => facturio_tax_rate_decimal($taxRatePercent),
+    ];
+    if ($productId !== null && $productId > 0) {
+        $line['productId'] = $productId;
+    }
+
+    return $line;
+}
+
+/** Prix HT à partir du TTC (ex. 199 € TTC audit, 20 % → 165,83). */
 function facturio_unit_price_ht(float $priceTtc, float $taxRatePercent): float
 {
     $rate = $taxRatePercent > 1 ? $taxRatePercent : $taxRatePercent * 100;
@@ -156,6 +232,100 @@ function facturio_unit_price_ht(float $priceTtc, float $taxRatePercent): float
     }
     $divisor = 1.0 + ($rate / 100.0);
     return round($priceTtc / $divisor, 4);
+}
+
+/**
+ * Recherche un client Facturio par e-mail (GET /clients?search=).
+ */
+function facturio_find_client_id_by_email(string $email): string
+{
+    $email = strtolower(trim($email));
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return '';
+    }
+
+    $res = facturio_http('GET', '/clients?search=' . rawurlencode($email) . '&pageSize=20');
+    if (!$res['ok'] || !is_array($res['data'])) {
+        return '';
+    }
+
+    $items = $res['data']['items'] ?? $res['data']['data'] ?? [];
+    if (!is_array($items)) {
+        return '';
+    }
+
+    foreach ($items as $item) {
+        if (!is_array($item)) {
+            continue;
+        }
+        $itemEmail = strtolower(trim((string) ($item['email'] ?? '')));
+        if ($itemEmail === $email) {
+            return facturio_extract_id($item, 'id', 'clientId');
+        }
+    }
+
+    return '';
+}
+
+/**
+ * POST /public/clients — crée une fiche client.
+ *
+ * @return array{ok: bool, client_id: string, error: string}
+ */
+function facturio_create_client(string $customerEmail, string $customerName): array
+{
+    $empty = ['ok' => false, 'client_id' => '', 'error' => ''];
+    $email = trim($customerEmail);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $empty['error'] = 'Email client invalide.';
+        return $empty;
+    }
+
+    $name = trim(preg_replace('/[\r\n]+/', ' ', $customerName));
+    if ($name === '') {
+        $name = strstr($email, '@', true) ?: 'Client';
+    }
+
+    $res = facturio_http('POST', '/clients', [
+        'name' => mb_substr($name, 0, 200),
+        'email' => $email,
+        'isCompany' => false,
+        'countryCode' => 'FR',
+    ]);
+    if (!$res['ok'] || !is_array($res['data'])) {
+        $empty['error'] = $res['error'] !== '' ? $res['error'] : 'Création client impossible.';
+        return $empty;
+    }
+
+    $id = facturio_extract_id($res['data'], 'id', 'clientId');
+    if ($id === '') {
+        $empty['error'] = 'Réponse Facturio sans id client.';
+        return $empty;
+    }
+
+    return ['ok' => true, 'client_id' => $id, 'error' => ''];
+}
+
+/**
+ * Résout clientId (recherche puis création si besoin). Requis pour POST /devis.
+ *
+ * @return array{ok: bool, client_id: string, error: string}
+ */
+function facturio_ensure_client_id(string $customerEmail, string $customerName): array
+{
+    $empty = ['ok' => false, 'client_id' => '', 'error' => ''];
+    $existing = facturio_find_client_id_by_email($customerEmail);
+    if ($existing !== '') {
+        return ['ok' => true, 'client_id' => $existing, 'error' => ''];
+    }
+
+    $created = facturio_create_client($customerEmail, $customerName);
+    if (!$created['ok']) {
+        $empty['error'] = $created['error'];
+        return $empty;
+    }
+
+    return ['ok' => true, 'client_id' => $created['client_id'], 'error' => ''];
 }
 
 /**
@@ -353,22 +523,33 @@ function facturio_create_quote_devis(
         if ($tax > 1) {
             $tax = facturio_tax_rate_decimal($tax);
         }
-        $apiLines[] = [
+        $apiLine = [
             'description' => $desc,
             'quantity' => $qty,
             'unitPrice' => round($unit, 4),
             'taxRate' => $tax,
         ];
+        if (isset($line['productId']) && is_numeric($line['productId']) && (int) $line['productId'] > 0) {
+            $apiLine['productId'] = (int) $line['productId'];
+        }
+        $apiLines[] = $apiLine;
     }
     if ($apiLines === []) {
         $empty['error'] = 'Aucune ligne de devis.';
         return $empty;
     }
 
+    $client = facturio_ensure_client_id($email, $name);
+    if (!$client['ok']) {
+        $empty['error'] = $client['error'];
+        return $empty;
+    }
+
+    // L’API /devis exige clientId (clientEmail seul renvoie « Client requis »).
     $body = [
-        'clientEmail' => $email,
-        'clientName' => mb_substr($name, 0, 200),
+        'clientId' => $client['client_id'],
         'lines' => $apiLines,
+        'expiryDate' => gmdate('Y-m-d', strtotime('+30 days')),
     ];
     if ($internalNote !== '') {
         $body['notes'] = mb_substr($internalNote, 0, 2000);
@@ -461,12 +642,16 @@ function facturio_issue_quote_devis(
         if ($unit <= 0 && isset($line['priceTtc'])) {
             $unit = facturio_unit_price_ht((float) $line['priceTtc'], $taxRatePercent);
         }
-        $normalized[] = [
+        $normalizedLine = [
             'description' => (string) ($line['description'] ?? ''),
             'quantity' => $line['quantity'] ?? 1,
             'unitPrice' => $unit,
             'taxRate' => $taxDecimal,
         ];
+        if (isset($line['productId']) && is_numeric($line['productId']) && (int) $line['productId'] > 0) {
+            $normalizedLine['productId'] = (int) $line['productId'];
+        }
+        $normalized[] = $normalizedLine;
     }
 
     $quote = facturio_create_quote_devis($customerEmail, $customerName, $normalized, $internalNote);

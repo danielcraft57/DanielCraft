@@ -78,13 +78,17 @@
           "id": "page_extra",
           "title": "Page supplémentaire",
           "price_eur": 65,
-          "description": "Une page en plus (ex. témoignages, galerie, tarifs détaillés)."
+          "description": "Une page en plus (ex. témoignages, galerie, tarifs détaillés).",
+          "facturio_sku": "PAGE-SUPP",
+          "facturio_product_id": 952
         },
         {
           "id": "form_advanced",
           "title": "Formulaire enrichi",
           "price_eur": 99,
-          "description": "Champs sur mesure, pièces jointes ou envoi vers votre boîte mail / outil."
+          "description": "Champs sur mesure, pièces jointes ou envoi vers votre boîte mail / outil.",
+          "facturio_sku": "FORM-AVANCE",
+          "facturio_product_id": 953
         }
       ],
       "seo_title": "Création site vitrine professionnel — Metz & Lorraine",
@@ -93,7 +97,9 @@
         "Un plombier à Metz veut une page « Nos services », « Tarifs indicatifs » et un formulaire : les clients appellent moins pour demander l'adresse du site.",
         "Une boutique de pâtisserie affiche ses horaires, sa carte et un bouton « Commander par téléphone » visible dès l'accueil sur mobile."
       ],
-      "promo": "Premier pas en ligne sans engagement lourd : un site clair vaut souvent plus qu'une page Facebook seule."
+      "promo": "Premier pas en ligne sans engagement lourd : un site clair vaut souvent plus qu'une page Facebook seule.",
+      "facturio_sku": "SITE-VITRINE",
+      "facturio_product_id": 951
     },
     {
       "slug": "identite-harmonieuse",
@@ -134,7 +140,9 @@
         "Même logo, mêmes couleurs sur le site, la page Facebook et les devis PDF envoyés aux clients.",
         "Un artisan dont les photos Instagram et le site web ne se ressemblaient pas : une charte simple pour tout aligner."
       ],
-      "promo": "Une image cohérente rassure avant même le premier rendez-vous."
+      "promo": "Une image cohérente rassure avant même le premier rendez-vous.",
+      "facturio_sku": "IDENTITE-MULTI",
+      "facturio_product_id": 954
     },
     {
       "slug": "visibilite-complete",
@@ -170,7 +178,9 @@
         "Un restaurant local apparaît sur Google Maps et ses horaires sont corrects quand on demande à un assistant « restaurants ouverts ce soir ».",
         "Un coach affiche une FAQ claire : Google et les assistants IA reprennent les mêmes réponses sur ses tarifs et sa zone."
       ],
-      "promo": "Être trouvable aujourd'hui, c'est Google + les assistants que vos clients utilisent déjà."
+      "promo": "Être trouvable aujourd'hui, c'est Google + les assistants que vos clients utilisent déjà.",
+      "facturio_sku": "PACK-SEO-GOOGLE-CHATGPT",
+      "facturio_product_id": 955
     },
     {
       "slug": "referencement-google",
@@ -204,7 +214,9 @@
         "Correction des titres de pages (« Plombier Metz » au lieu de « Accueil ») : plus de clics depuis Google.",
         "Accélération du chargement sur mobile : moins de visiteurs qui repartent avant d'avoir lu votre numéro."
       ],
-      "promo": "Petit budget, impact mesurable : idéal si vous avez déjà un site mais peu de visites."
+      "promo": "Petit budget, impact mesurable : idéal si vous avez déjà un site mais peu de visites.",
+      "facturio_sku": "SEO-BASIQUE",
+      "facturio_product_id": 956
     },
     {
       "slug": "visible-assistants-ia",
@@ -238,7 +250,9 @@
         "Quand on demande « qui fait des sites vitrine à Metz », l'assistant cite votre activité avec la bonne description.",
         "FAQ structurée sur vos délais et tarifs : reprise fidèle dans les réponses automatiques."
       ],
-      "promo": "Vos futurs clients posent déjà leurs questions à ChatGPT — autant y être bien présenté."
+      "promo": "Vos futurs clients posent déjà leurs questions à ChatGPT — autant y être bien présenté.",
+      "facturio_sku": "SEO-CHATGPT",
+      "facturio_product_id": 957
     },
     {
       "slug": "repondeur-intelligent",
@@ -276,7 +290,9 @@
           "id": "maint_ia",
           "title": "Entretien mensuel de l'assistant",
           "price_eur": 75,
-          "description": "Mise à jour des réponses et ajout de nouvelles questions."
+          "description": "Mise à jour des réponses et ajout de nouvelles questions.",
+          "facturio_sku": "IA-MAINTENANCE-MENSUEL",
+          "facturio_product_id": 959
         }
       ],
       "seo_title": "Assistant IA FAQ pour site web — chatbot métier",
@@ -285,7 +301,9 @@
         "Un salon de coiffure : l'assistant répond aux horaires, tarifs coupe et adresse pendant que vous êtes en prestation.",
         "Un cabinet comptable : questions sur les documents à apporter, réponses immédiates sur le site."
       ],
-      "promo": "Comme un accueil téléphonique, mais sur votre site, 24 h/24."
+      "promo": "Comme un accueil téléphonique, mais sur votre site, 24 h/24.",
+      "facturio_sku": "IA-FAQ-SITE",
+      "facturio_product_id": 958
     },
     {
       "slug": "aide-emails-clients",
@@ -319,7 +337,9 @@
         "Demande de devis reçue le soir : brouillon de réponse prêt le lendemain matin, vous n'avez qu'à relire et envoyer.",
         "Question récurrente sur les délais : l'outil propose une réponse dans votre ton habituel."
       ],
-      "promo": "Vous gardez le contrôle : l'outil propose, vous validez avant envoi."
+      "promo": "Vous gardez le contrôle : l'outil propose, vous validez avant envoi.",
+      "facturio_sku": "IA-SUPPORT-EMAIL",
+      "facturio_product_id": 960
     },
     {
       "slug": "entretien-mensuel",
@@ -355,7 +375,9 @@
         "Mise à jour de sécurité appliquée sans que vous ayez à y penser.",
         "Petite typo sur la page Contact corrigée dans le quota mensuel inclus."
       ],
-      "promo": "Moins cher qu'une panne ou un piratage à réparer en urgence."
+      "promo": "Moins cher qu'une panne ou un piratage à réparer en urgence.",
+      "facturio_sku": "MAINT-MENSUEL",
+      "facturio_product_id": 961
     },
     {
       "slug": "ia-contenus",
@@ -398,7 +420,9 @@
         }
       ],
       "seo_title": "Rédaction de textes pour site web — articles & pages",
-      "seo_description": "Textes clairs pour votre site vitrine ou blog. Rédaction adaptée à votre métier, sans jargon. Devis par e-mail, Metz & Lorraine."
+      "seo_description": "Textes clairs pour votre site vitrine ou blog. Rédaction adaptée à votre métier, sans jargon. Devis par e-mail, Metz & Lorraine.",
+      "facturio_sku": "IA-CONTENUS-WEB",
+      "facturio_product_id": 962
     },
     {
       "slug": "ia-redaction",
@@ -437,7 +461,9 @@
         }
       ],
       "seo_title": "Assistant rédaction commerciale — e-mails & LinkedIn",
-      "seo_description": "Gagnez du temps sur vos e-mails commerciaux et messages pro. Assistant configuré à votre image. Installation et accompagnement."
+      "seo_description": "Gagnez du temps sur vos e-mails commerciaux et messages pro. Assistant configuré à votre image. Installation et accompagnement.",
+      "facturio_sku": "IA-REDACTION-COMMERCIALE",
+      "facturio_product_id": 963
     },
     {
       "slug": "ia-analyse",
@@ -476,7 +502,9 @@
         }
       ],
       "seo_title": "Tableaux de bord & analyse de données — PME & indépendants",
-      "seo_description": "Comprenez vos chiffres avec des tableaux clairs et des explications accessibles. Pour commerces et indépendants en Lorraine."
+      "seo_description": "Comprenez vos chiffres avec des tableaux clairs et des explications accessibles. Pour commerces et indépendants en Lorraine.",
+      "facturio_sku": "IA-ANALYSE-DONNEES",
+      "facturio_product_id": 964
     },
     {
       "slug": "ia-boutique",
@@ -515,7 +543,9 @@
         }
       ],
       "seo_title": "Assistant conversationnel e-commerce — conseil produits",
-      "seo_description": "Assistant sur votre boutique en ligne : questions produits, recommandations, aide à la commande. Installation clé en main."
+      "seo_description": "Assistant sur votre boutique en ligne : questions produits, recommandations, aide à la commande. Installation clé en main.",
+      "facturio_sku": "IA-CHATBOT-ECOMMERCE",
+      "facturio_product_id": 965
     },
     {
       "slug": "ia-automatisation",
@@ -554,7 +584,9 @@
         }
       ],
       "seo_title": "Automatisation de tâches — gain de temps PME",
-      "seo_description": "Automatisez e-mails, formulaires et rapports répétitifs. Moins de copier-coller, plus de temps pour vos clients."
+      "seo_description": "Automatisez e-mails, formulaires et rapports répétitifs. Moins de copier-coller, plus de temps pour vos clients.",
+      "facturio_sku": "IA-AUTOMATISATION-TACHES",
+      "facturio_product_id": 966
     },
     {
       "slug": "ia-maint-mensuelle",
@@ -593,7 +625,9 @@
         }
       ],
       "seo_title": "Maintenance mensuelle assistant IA — mises à jour",
-      "seo_description": "Abonnement entretien assistant : nouvelles réponses, tarifs à jour, optimisations. Pour sites et outils déjà en place."
+      "seo_description": "Abonnement entretien assistant : nouvelles réponses, tarifs à jour, optimisations. Pour sites et outils déjà en place.",
+      "facturio_sku": "IA-MAINTENANCE-MENSUEL",
+      "facturio_product_id": 959
     },
     {
       "slug": "ia-evolution",
@@ -632,7 +666,9 @@
         }
       ],
       "seo_title": "Évolution assistant IA — nouvelle fonctionnalité",
-      "seo_description": "Ajoutez une capacité à votre assistant existant : nouvel outil, source de données, prise de RDV. Devis sur mesure."
+      "seo_description": "Ajoutez une capacité à votre assistant existant : nouvel outil, source de données, prise de RDV. Devis sur mesure.",
+      "facturio_sku": "IA-EVOLUTION-FEATURE",
+      "facturio_product_id": 967
     },
     {
       "slug": "ia-audit",
@@ -671,7 +707,9 @@
         }
       ],
       "seo_title": "Audit usage IA pour entreprises — bilan & recommandations",
-      "seo_description": "Audit IA en langage clair : où gagner du temps, quoi éviter. Rapport et plan d'action pour PME et indépendants."
+      "seo_description": "Audit IA en langage clair : où gagner du temps, quoi éviter. Rapport et plan d'action pour PME et indépendants.",
+      "facturio_sku": "IA-AUDIT-USAGE",
+      "facturio_product_id": 968
     },
     {
       "slug": "conseil-projet",
@@ -710,7 +748,9 @@
         }
       ],
       "seo_title": "Conseil projet web & digital — faisabilité & budget",
-      "seo_description": "Étude de faisabilité et estimation pour votre projet web ou digital. Rapport clair, sans engagement sur la suite."
+      "seo_description": "Étude de faisabilité et estimation pour votre projet web ou digital. Rapport clair, sans engagement sur la suite.",
+      "facturio_sku": "CONSEIL-ARCHI",
+      "facturio_product_id": 969
     },
     {
       "slug": "connexion-crm",
@@ -749,7 +789,9 @@
         }
       ],
       "seo_title": "Connexion site web & CRM — synchronisation contacts",
-      "seo_description": "Reliez votre site à votre CRM ou logiciel métier. Formulaires, contacts et devis sans ressaisie manuelle."
+      "seo_description": "Reliez votre site à votre CRM ou logiciel métier. Formulaires, contacts et devis sans ressaisie manuelle.",
+      "facturio_sku": "INTEG-CRM",
+      "facturio_product_id": 970
     },
     {
       "slug": "transfert-donnees",
@@ -788,7 +830,9 @@
         }
       ],
       "seo_title": "Migration de données — transfert site & logiciels",
-      "seo_description": "Transfert sécurisé de vos données (clients, produits, contenus) vers un nouvel outil ou site. Sans perte."
+      "seo_description": "Transfert sécurisé de vos données (clients, produits, contenus) vers un nouvel outil ou site. Sans perte.",
+      "facturio_sku": "MIGRATION-DONNEES",
+      "facturio_product_id": 971
     },
     {
       "slug": "liaison-outils",
@@ -827,7 +871,9 @@
         }
       ],
       "seo_title": "Intégration API & webhooks — synchronisation outils",
-      "seo_description": "Faites dialoguer vos logiciels : commandes, stocks, contacts. Synchronisation automatique pour PME."
+      "seo_description": "Faites dialoguer vos logiciels : commandes, stocks, contacts. Synchronisation automatique pour PME.",
+      "facturio_sku": "INTEG-API",
+      "facturio_product_id": 972
     },
     {
       "slug": "rapport-vitesse",
@@ -866,7 +912,9 @@
         }
       ],
       "seo_title": "Audit vitesse site web — rapport performances",
-      "seo_description": "Votre site est-il rapide ? Mesure et rapport clair avec recommandations. Pour commerces et sites vitrine."
+      "seo_description": "Votre site est-il rapide ? Mesure et rapport clair avec recommandations. Pour commerces et sites vitrine.",
+      "facturio_sku": "RAPPORT-PERF",
+      "facturio_product_id": 973
     },
     {
       "slug": "page-supplementaire",
@@ -905,7 +953,9 @@
         }
       ],
       "seo_title": "Ajout page site vitrine — création sur mesure",
-      "seo_description": "Nouvelle page pour votre site vitrine : témoignages, tarifs, FAQ. 65 €/page, mise en ligne incluse."
+      "seo_description": "Nouvelle page pour votre site vitrine : témoignages, tarifs, FAQ. 65 €/page, mise en ligne incluse.",
+      "facturio_sku": "PAGE-SUPP",
+      "facturio_product_id": 952
     },
     {
       "slug": "formulaire-sur-mesure",
@@ -944,7 +994,9 @@
         }
       ],
       "seo_title": "Formulaire web sur mesure — devis & contact",
-      "seo_description": "Formulaire adapté à votre activité : devis, réservation, questionnaire. Validation et envoi par e-mail."
+      "seo_description": "Formulaire adapté à votre activité : devis, réservation, questionnaire. Validation et envoi par e-mail.",
+      "facturio_sku": "FORM-AVANCE",
+      "facturio_product_id": 953
     },
     {
       "slug": "nouveau-look",
@@ -983,7 +1035,9 @@
         }
       ],
       "seo_title": "Refonte visuelle site web — design & couleurs",
-      "seo_description": "Rafraîchissez l'apparence de votre site : couleurs, polices, mise en page. Sans reconstruire tout le site."
+      "seo_description": "Rafraîchissez l'apparence de votre site : couleurs, polices, mise en page. Sans reconstruire tout le site.",
+      "facturio_sku": "REFONTE-LEGERE",
+      "facturio_product_id": 974
     },
     {
       "slug": "maj-contenus",
@@ -1022,7 +1076,9 @@
         }
       ],
       "seo_title": "Mise à jour contenu site web — pack 5 heures",
-      "seo_description": "Pack 5 h pour actualiser textes, images et pages de votre site. Simple et sans jargon technique."
+      "seo_description": "Pack 5 h pour actualiser textes, images et pages de votre site. Simple et sans jargon technique.",
+      "facturio_sku": "MAJ-CONTENU-5H",
+      "facturio_product_id": 975
     },
     {
       "slug": "hebergement-domaine",
@@ -1061,7 +1117,9 @@
         }
       ],
       "seo_title": "Hébergement web & nom de domaine — forfait annuel",
-      "seo_description": "Hébergement et nom de domaine pour votre site pro. 79 €/an, HTTPS inclus. Metz & France."
+      "seo_description": "Hébergement et nom de domaine pour votre site pro. 79 €/an, HTTPS inclus. Metz & France.",
+      "facturio_sku": "HEBERG-DOMAIN",
+      "facturio_product_id": 976
     },
     {
       "slug": "sauvegardes-securite",
@@ -1100,7 +1158,9 @@
         }
       ],
       "seo_title": "Sauvegarde & sécurité site web",
-      "seo_description": "Sauvegardes automatiques et sécurisation de votre site. Protection et restauration en cas d'incident."
+      "seo_description": "Sauvegardes automatiques et sécurisation de votre site. Protection et restauration en cas d'incident.",
+      "facturio_sku": "BACKUP-SECU",
+      "facturio_product_id": 977
     },
     {
       "slug": "https-site",
@@ -1139,7 +1199,9 @@
         }
       ],
       "seo_title": "Certificat SSL HTTPS — installation site web",
-      "seo_description": "Installation du cadenas HTTPS sur votre site. 45 € forfait, configuration complète."
+      "seo_description": "Installation du cadenas HTTPS sur votre site. 45 € forfait, configuration complète.",
+      "facturio_sku": "SSL-CONFIG",
+      "facturio_product_id": 946
     },
     {
       "slug": "support-mensuel",
@@ -1178,7 +1240,9 @@
         }
       ],
       "seo_title": "Support technique site web — abonnement mensuel",
-      "seo_description": "Assistance par e-mail pour votre site : questions, petites corrections. 25 €/mois, sans engagement long."
+      "seo_description": "Assistance par e-mail pour votre site : questions, petites corrections. 25 €/mois, sans engagement long.",
+      "facturio_sku": "SUPPORT-ABO",
+      "facturio_product_id": 947
     },
     {
       "slug": "depannage-2h",
@@ -1217,7 +1281,9 @@
         }
       ],
       "seo_title": "Dépannage site web — intervention 2 heures",
-      "seo_description": "Dépannage express site internet : bug, page cassée, correctif. Forfait 2 h, 120 €."
+      "seo_description": "Dépannage express site internet : bug, page cassée, correctif. Forfait 2 h, 120 €.",
+      "facturio_sku": "DEPANNAGE-2H",
+      "facturio_product_id": 948
     },
     {
       "slug": "accompagnement-heure",
@@ -1256,7 +1322,9 @@
         }
       ],
       "seo_title": "Accompagnement technique — conseil à l'heure",
-      "seo_description": "Aide et conseil pour votre site, à l'heure. Débutants bienvenus, explications claires. 60 €/h."
+      "seo_description": "Aide et conseil pour votre site, à l'heure. Débutants bienvenus, explications claires. 60 €/h.",
+      "facturio_sku": "ACCOMP-H",
+      "facturio_product_id": 949
     },
     {
       "slug": "support-prioritaire",
@@ -1295,7 +1363,9 @@
         }
       ],
       "seo_title": "Support prioritaire site web — intervention urgente",
-      "seo_description": "Support technique prioritaire pour urgences web. Réponse rapide, 70 €/h. Metz & remote."
+      "seo_description": "Support technique prioritaire pour urgences web. Réponse rapide, 70 €/h. Metz & remote.",
+      "facturio_sku": "SUPPORT-H",
+      "facturio_product_id": 950
     }
   ]
 }

@@ -335,12 +335,28 @@
   margin: 0.35rem 0 1rem;
 }
 
+.prestation-devis-addons-title {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted, #5a6b7a);
+}
+
 .prestation-devis-addon {
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
   margin: 0.5rem 0;
   font-size: 0.9rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.prestation-devis-addon:has(input:checked) {
+  background: rgba(77, 169, 214, 0.1);
 }
 
 .prestation-devis-addon input {
@@ -482,35 +498,81 @@
   margin-top: 1.25rem;
 }
 
-/* Modale devis Facturio */
+/* Modale devis */
+body.prestation-devis-dialog-open {
+  overflow: hidden;
+}
+
 .prestation-devis-dialog {
   border: none;
   padding: 0;
-  max-width: min(480px, calc(100vw - 2rem));
+  max-width: min(520px, calc(100vw - 1.5rem));
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 24px 64px rgba(15, 53, 80, 0.22);
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  border-radius: 18px;
+  box-shadow: 0 28px 72px rgba(15, 53, 80, 0.24);
   background: transparent;
+  overflow: hidden;
 }
 
 .prestation-devis-dialog::backdrop {
-  background: rgba(15, 53, 80, 0.45);
-  backdrop-filter: blur(3px);
+  background: rgba(15, 53, 80, 0.48);
+  backdrop-filter: blur(4px);
 }
 
 .prestation-devis-dialog__shell {
   position: relative;
-  padding: 1.75rem 1.5rem 1.5rem;
-  background: #fff;
-  border-radius: 16px;
+  padding: 1.5rem 1.35rem 1.35rem;
+  background: linear-gradient(180deg, #f8fcff 0%, #fff 120px);
+  border-radius: 18px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.prestation-devis-dialog__progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 1rem;
+  padding: 0 1.5rem;
+}
+
+.prestation-devis-dialog__progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--metal-blue-100, #c5e4f3);
+  flex-shrink: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.prestation-devis-dialog__progress-dot.is-active {
+  background: var(--primary-color, #4da9d6);
+  transform: scale(1.15);
+}
+
+.prestation-devis-dialog__progress-dot.is-done {
+  background: #2e9e5b;
+}
+
+.prestation-devis-dialog__progress-line {
+  flex: 1;
+  max-width: 3.5rem;
+  height: 2px;
+  background: var(--metal-blue-100, #c5e4f3);
 }
 
 .prestation-devis-dialog__close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 2.25rem;
-  height: 2.25rem;
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 2;
+  margin: -0.25rem -0.25rem 0.5rem 0.5rem;
+  width: 2.35rem;
+  height: 2.35rem;
   border: none;
   border-radius: 999px;
   background: var(--metal-blue-50, #e8f6fc);
@@ -527,46 +589,239 @@
 
 .prestation-devis-dialog__step {
   display: none;
+  animation: prestation-devis-fade-in 0.28s ease;
 }
 
 .prestation-devis-dialog__step.is-active {
   display: block;
 }
 
+@keyframes prestation-devis-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .prestation-devis-dialog__title {
-  font-size: 1.35rem;
-  margin: 0.5rem 0 0.35rem;
-  padding-right: 2rem;
+  font-size: clamp(1.15rem, 4vw, 1.35rem);
+  margin: 0.45rem 0 0.35rem;
+  padding-right: 2.5rem;
+  color: var(--primary-dark, #0f3550);
+  line-height: 1.3;
 }
 
 .prestation-devis-dialog__subtitle,
 .prestation-devis-dialog__hint {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-muted, #5a6b7a);
   line-height: 1.55;
+  margin: 0;
 }
 
-.prestation-devis-dialog__price {
-  margin: 0.5rem 0 0;
+.prestation-devis-dialog__hint {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.prestation-devis-dialog__recap {
+  margin: 1rem 0 1.15rem;
+  padding: 1rem 1.05rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(77, 169, 214, 0.28);
+  box-shadow: 0 8px 24px rgba(15, 53, 80, 0.06);
+}
+
+.prestation-devis-dialog__recap-head {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  margin-bottom: 0.55rem;
+}
+
+.prestation-devis-dialog__recap-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--metal-blue-50, #e8f6fc);
+  color: var(--primary-color, #4da9d6);
+  flex-shrink: 0;
+}
+
+.prestation-devis-dialog__recap-label {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary-dark, #0f3550);
+  font-weight: 700;
+}
+
+.prestation-devis-dialog__recap-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(77, 169, 214, 0.18);
+}
+
+.prestation-devis-dialog__recap-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed rgba(77, 169, 214, 0.15);
+}
+
+.prestation-devis-dialog__recap-line span:last-child {
+  white-space: nowrap;
   font-weight: 600;
   color: var(--primary-dark, #0f3550);
 }
 
-.prestation-devis-dialog__form .form-label {
+.prestation-devis-dialog__recap-total {
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+}
+
+.prestation-devis-dialog__recap-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+}
+
+.prestation-devis-dialog__recap-row strong {
+  font-size: 1.05rem;
+  color: var(--primary-dark, #0f3550);
+}
+
+.prestation-devis-dialog__recap-row--ttc {
+  color: var(--text-muted, #5a6b7a);
+  font-size: 0.85rem;
+}
+
+.prestation-devis-dialog__recap-row--ttc strong {
+  font-size: 0.95rem;
+}
+
+.prestation-devis-dialog__field {
+  margin-bottom: 0.65rem;
+}
+
+.prestation-devis-dialog__field .form-label {
   display: block;
-  margin: 0.85rem 0 0.35rem;
+  margin: 0 0 0.35rem;
   font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.prestation-devis-dialog__required {
+  color: var(--primary-color, #4da9d6);
+}
+
+.prestation-devis-dialog__field-hint {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #5a6b7a);
+}
+
+.prestation-devis-dialog__textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.prestation-devis-dialog__optional {
+  margin: 0.5rem 0 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(77, 169, 214, 0.22);
+  background: rgba(248, 252, 255, 0.8);
+}
+
+.prestation-devis-dialog__optional summary {
+  cursor: pointer;
+  padding: 0.7rem 0.85rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-dark, #0f3550);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.prestation-devis-dialog__optional summary::-webkit-details-marker {
+  display: none;
+}
+
+.prestation-devis-dialog__optional-chevron {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(77, 169, 214, 0.15);
+  color: var(--primary-color, #4da9d6);
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.prestation-devis-dialog__optional[open] .prestation-devis-dialog__optional-chevron {
+  transform: rotate(180deg);
+}
+
+.prestation-devis-dialog__optional-tag {
   font-weight: 500;
+  font-size: 0.78rem;
+  color: var(--text-muted, #5a6b7a);
+}
+
+.prestation-devis-dialog__optional-body {
+  padding: 0 0.85rem 0.85rem;
+}
+
+.prestation-devis-dialog__trust {
+  list-style: none;
+  margin: 0.85rem 0 1rem;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  border-radius: 10px;
+  background: var(--metal-blue-50, #e8f6fc);
+  font-size: 0.78rem;
+  color: var(--primary-dark, #0f3550);
+}
+
+.prestation-devis-dialog__trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.prestation-devis-dialog__trust i {
+  color: var(--primary-color, #4da9d6);
+  font-size: 0.85rem;
 }
 
 .prestation-devis-dialog__loading {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.25rem 0.75rem 1.5rem;
 }
 
 .prestation-devis-dialog__spinner {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   margin: 0 auto 1rem;
   border: 4px solid var(--metal-blue-100, #c5e4f3);
   border-top-color: var(--primary-color, #4da9d6);
@@ -586,14 +841,69 @@
   margin: 0 0 0.35rem;
 }
 
+.prestation-devis-dialog__loading-text {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-muted, #5a6b7a);
+  min-height: 2.6em;
+}
+
+.prestation-devis-dialog__loading-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  max-width: 16rem;
+  margin-inline: auto;
+}
+
+.prestation-devis-dialog__loading-steps li {
+  position: relative;
+  padding: 0.4rem 0 0.4rem 1.75rem;
+  font-size: 0.88rem;
+  color: var(--text-muted, #5a6b7a);
+}
+
+.prestation-devis-dialog__loading-steps li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 2px solid var(--metal-blue-100, #c5e4f3);
+  background: #fff;
+}
+
+.prestation-devis-dialog__loading-steps li.is-active {
+  color: var(--primary-dark, #0f3550);
+  font-weight: 600;
+}
+
+.prestation-devis-dialog__loading-steps li.is-active::before {
+  border-color: var(--primary-color, #4da9d6);
+  background: var(--primary-color, #4da9d6);
+  box-shadow: 0 0 0 3px rgba(77, 169, 214, 0.2);
+}
+
+.prestation-devis-dialog__loading-steps li.is-done {
+  color: #1a5c36;
+}
+
+.prestation-devis-dialog__loading-steps li.is-done::before {
+  border-color: #2e9e5b;
+  background: #2e9e5b;
+}
+
 .prestation-devis-dialog__result {
   text-align: center;
-  padding: 1.5rem 0.5rem 0.5rem;
+  padding: 1.25rem 0.35rem 0.35rem;
 }
 
 .prestation-devis-dialog__result-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 2.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .prestation-devis-dialog__result--success .prestation-devis-dialog__result-icon {
@@ -606,18 +916,105 @@
 
 .prestation-devis-dialog__result-title {
   margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .prestation-devis-dialog__result-text {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.75rem;
   color: var(--text-muted, #5a6b7a);
   line-height: 1.55;
 }
 
+.prestation-devis-dialog__result-hint {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  background: #fff8e6;
+  color: #7a5b12;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.prestation-devis-dialog__result-hint[hidden] {
+  display: none;
+}
+
+.prestation-devis-dialog__result-email {
+  margin: 0 0 1rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  background: var(--metal-blue-50, #e8f6fc);
+  font-size: 0.92rem;
+}
+
+.prestation-devis-dialog__next-steps {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  text-align: left;
+  font-size: 0.88rem;
+  color: var(--text-muted, #5a6b7a);
+}
+
+.prestation-devis-dialog__next-steps li {
+  padding: 0.35rem 0 0.35rem 1.35rem;
+  position: relative;
+}
+
+.prestation-devis-dialog__next-steps li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2e9e5b;
+  font-weight: 700;
+}
+
 .prestation-devis-dialog__result-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+.prestation-devis-dialog__result-actions .btn {
   justify-content: center;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #5a6b7a);
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  color: var(--primary-dark, #0f3550);
+  background: rgba(77, 169, 214, 0.08);
+}
+
+@media (max-width: 540px) {
+  .prestation-devis-dialog {
+    max-width: 100%;
+    width: 100%;
+    max-height: 92vh;
+    margin: auto 0 0;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .prestation-devis-dialog__shell {
+    border-radius: 18px 18px 0 0;
+    max-height: 92vh;
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prestation-devis-dialog__step {
+    animation: none;
+  }
+
+  .prestation-devis-dialog__spinner {
+    animation: none;
+    border-top-color: var(--metal-blue-100, #c5e4f3);
+  }
 }

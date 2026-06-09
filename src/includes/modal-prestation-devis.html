@@ -1,50 +1,115 @@
 <dialog id="prestationDevisDialog" class="prestation-devis-dialog" aria-labelledby="prestationDevisDialogTitle">
     <div class="prestation-devis-dialog__shell">
-        <button type="button" class="prestation-devis-dialog__close" id="prestationDevisDialogClose" aria-label="Fermer">
+        <button type="button" class="prestation-devis-dialog__close" id="prestationDevisDialogClose" aria-label="Fermer la fenêtre de devis">
             <i class="fas fa-times" aria-hidden="true"></i>
         </button>
 
+        <div class="prestation-devis-dialog__progress" aria-hidden="true">
+            <span class="prestation-devis-dialog__progress-dot is-active" data-devis-progress="form"></span>
+            <span class="prestation-devis-dialog__progress-line"></span>
+            <span class="prestation-devis-dialog__progress-dot" data-devis-progress="loading"></span>
+            <span class="prestation-devis-dialog__progress-line"></span>
+            <span class="prestation-devis-dialog__progress-dot" data-devis-progress="done"></span>
+        </div>
+
         <div class="prestation-devis-dialog__step is-active" data-devis-step="form" aria-hidden="false">
             <header class="prestation-devis-dialog__head">
-                <span class="section-badge"><i class="fas fa-file-invoice" aria-hidden="true"></i> Devis</span>
-                <h2 id="prestationDevisDialogTitle" class="prestation-devis-dialog__title">Recevoir un devis par e-mail</h2>
-                <p class="prestation-devis-dialog__subtitle" id="prestationDevisDialogSubtitle"></p>
-                <p class="prestation-devis-dialog__price" id="prestationDevisDialogPrice" hidden></p>
+                <span class="section-badge"><i class="fas fa-file-invoice" aria-hidden="true"></i> Devis par e-mail</span>
+                <h2 id="prestationDevisDialogTitle" class="prestation-devis-dialog__title">Recevoir votre devis</h2>
+                <p class="prestation-devis-dialog__subtitle" id="prestationDevisDialogSubtitle">Indiquez votre e-mail : le PDF part tout de suite, sans engagement.</p>
             </header>
+
+            <div class="prestation-devis-dialog__recap" id="prestationDevisDialogRecap" aria-live="polite">
+                <div class="prestation-devis-dialog__recap-head">
+                    <span class="prestation-devis-dialog__recap-icon" aria-hidden="true"><i class="fas fa-receipt"></i></span>
+                    <p class="prestation-devis-dialog__recap-label">Récapitulatif</p>
+                </div>
+                <ul class="prestation-devis-dialog__recap-lines" id="prestationDevisDialogRecapLines"></ul>
+                <div class="prestation-devis-dialog__recap-total">
+                    <div class="prestation-devis-dialog__recap-row">
+                        <span>Total indicatif HT</span>
+                        <strong id="prestationDevisDialogTotalHt">—</strong>
+                    </div>
+                    <div class="prestation-devis-dialog__recap-row prestation-devis-dialog__recap-row--ttc">
+                        <span>TTC (TVA 20 %)</span>
+                        <strong id="prestationDevisDialogTotalTtc">—</strong>
+                    </div>
+                </div>
+            </div>
+
             <form class="prestation-devis-dialog__form" id="prestationDevisDialogForm" novalidate>
                 <input type="hidden" name="prestation_slug" id="prestationDevisDialogSlug" value="">
                 <input type="hidden" name="service_slug" id="prestationDevisDialogServiceSlug" value="">
                 <input type="hidden" name="total_eur" id="prestationDevisDialogTotal" value="">
 
-                <label class="form-label" for="prestationDevisDialogEmail">Votre e-mail</label>
-                <input class="form-input" type="email" id="prestationDevisDialogEmail" name="email" required autocomplete="email" maxlength="180" placeholder="vous@exemple.fr">
+                <div class="prestation-devis-dialog__field">
+                    <label class="form-label" for="prestationDevisDialogEmail">E-mail <span class="prestation-devis-dialog__required">*</span></label>
+                    <input class="form-input" type="email" id="prestationDevisDialogEmail" name="email" required autocomplete="email" maxlength="180" placeholder="vous@exemple.fr" inputmode="email">
+                    <p class="prestation-devis-dialog__field-hint">C’est à cette adresse que vous recevrez le PDF.</p>
+                </div>
 
-                <label class="form-label" for="prestationDevisDialogName">Prénom et nom</label>
-                <input class="form-input" type="text" id="prestationDevisDialogName" name="name" required autocomplete="name" minlength="2" maxlength="120" placeholder="Marie Dupont">
+                <div class="prestation-devis-dialog__field">
+                    <label class="form-label" for="prestationDevisDialogName">Prénom et nom <span class="prestation-devis-dialog__required">*</span></label>
+                    <input class="form-input" type="text" id="prestationDevisDialogName" name="name" required autocomplete="name" minlength="2" maxlength="120" placeholder="Marie Dupont">
+                </div>
 
-                <p class="prestation-devis-dialog__hint">Montant indicatif HT. Devis définitif envoyé par e-mail via Facturio, sans engagement.</p>
+                <details class="prestation-devis-dialog__optional" id="prestationDevisDialogOptional">
+                    <summary><span class="prestation-devis-dialog__optional-chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span> Préciser votre besoin <span class="prestation-devis-dialog__optional-tag">facultatif</span></summary>
+                    <div class="prestation-devis-dialog__optional-body">
+                        <div class="prestation-devis-dialog__field">
+                            <label class="form-label" for="prestationDevisDialogPhone">Téléphone</label>
+                            <input class="form-input" type="tel" id="prestationDevisDialogPhone" name="phone" autocomplete="tel" maxlength="40" placeholder="06 12 34 56 78" inputmode="tel">
+                        </div>
+                        <div class="prestation-devis-dialog__field">
+                            <label class="form-label" for="prestationDevisDialogCompany">Entreprise</label>
+                            <input class="form-input" type="text" id="prestationDevisDialogCompany" name="company" autocomplete="organization" maxlength="120" placeholder="Nom de votre activité">
+                        </div>
+                        <div class="prestation-devis-dialog__field">
+                            <label class="form-label" for="prestationDevisDialogMessage">Message</label>
+                            <textarea class="form-input prestation-devis-dialog__textarea" id="prestationDevisDialogMessage" name="message" rows="3" maxlength="4000" placeholder="Délai souhaité, contexte, questions…"></textarea>
+                        </div>
+                    </div>
+                </details>
+
+                <ul class="prestation-devis-dialog__trust" aria-label="Garanties">
+                    <li><i class="fas fa-lock" aria-hidden="true"></i> Sans engagement</li>
+                    <li><i class="fas fa-reply" aria-hidden="true"></i> Réponse sous 48 h</li>
+                    <li><i class="fas fa-file-pdf" aria-hidden="true"></i> Devis PDF par e-mail</li>
+                </ul>
 
                 <button type="submit" class="btn btn-primary btn-large btn-block" id="prestationDevisDialogSubmit">
-                    <span>Envoyer le devis à mon e-mail</span>
+                    <span>Recevoir mon devis par e-mail</span>
                     <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 </button>
+                <p class="prestation-devis-dialog__hint">Montant indicatif HT. Devis définitif après un court échange si besoin.</p>
             </form>
         </div>
 
         <div class="prestation-devis-dialog__step" data-devis-step="loading" aria-hidden="true" inert>
-            <div class="prestation-devis-dialog__loading" role="status" aria-live="polite">
+            <div class="prestation-devis-dialog__loading" role="status" aria-live="polite" aria-busy="true">
                 <div class="prestation-devis-dialog__spinner" aria-hidden="true"></div>
-                <p class="prestation-devis-dialog__loading-title">Envoi en cours…</p>
-                <p class="prestation-devis-dialog__loading-text">Création de votre devis et envoi par e-mail. Quelques secondes.</p>
+                <p class="prestation-devis-dialog__loading-title">Préparation de votre devis…</p>
+                <p class="prestation-devis-dialog__loading-text" id="prestationDevisDialogLoadingText">Vérification de votre demande.</p>
+                <ol class="prestation-devis-dialog__loading-steps" id="prestationDevisDialogLoadingSteps">
+                    <li class="is-active" data-loading-step="1">Demande reçue</li>
+                    <li data-loading-step="2">Création du devis</li>
+                    <li data-loading-step="3">Envoi par e-mail</li>
+                </ol>
             </div>
         </div>
 
         <div class="prestation-devis-dialog__step" data-devis-step="success" aria-hidden="true" inert>
             <div class="prestation-devis-dialog__result prestation-devis-dialog__result--success">
                 <div class="prestation-devis-dialog__result-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
-                <h3 class="prestation-devis-dialog__result-title">Devis envoyé !</h3>
-                <p class="prestation-devis-dialog__result-text" id="prestationDevisDialogSuccessText">Consultez votre boîte mail (et les spams si besoin).</p>
-                <button type="button" class="btn btn-outline btn-large" id="prestationDevisDialogSuccessClose">Fermer</button>
+                <h3 class="prestation-devis-dialog__result-title">C’est envoyé !</h3>
+                <p class="prestation-devis-dialog__result-text" id="prestationDevisDialogSuccessText">Consultez votre boîte mail.</p>
+                <p class="prestation-devis-dialog__result-email" id="prestationDevisDialogSuccessEmail" hidden></p>
+                <ul class="prestation-devis-dialog__next-steps">
+                    <li>Ouvrez le PDF joint ou le lien dans l’e-mail</li>
+                    <li>Pensez aux spams / courriers indésirables</li>
+                    <li>Une question ? Répondez directement à l’e-mail reçu</li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisDialogSuccessClose">Parfait, merci</button>
             </div>
         </div>
 
@@ -52,10 +117,13 @@
             <div class="prestation-devis-dialog__result prestation-devis-dialog__result--error">
                 <div class="prestation-devis-dialog__result-icon" aria-hidden="true"><i class="fas fa-exclamation-circle"></i></div>
                 <h3 class="prestation-devis-dialog__result-title">Envoi impossible</h3>
-                <p class="prestation-devis-dialog__result-text" id="prestationDevisDialogErrorText">Réessayez dans un instant ou écrivez à contact@danielcraft.fr.</p>
+                <p class="prestation-devis-dialog__result-text" id="prestationDevisDialogErrorText">Réessayez dans un instant ou contactez-nous.</p>
+                <p class="prestation-devis-dialog__result-hint" id="prestationDevisDialogErrorHint">Si le problème persiste, utilisez le formulaire de contact — nous vous répondons sous 48 h.</p>
                 <div class="prestation-devis-dialog__result-actions">
                     <button type="button" class="btn btn-primary btn-large" id="prestationDevisDialogRetry">Réessayer</button>
-                    <button type="button" class="btn btn-outline" id="prestationDevisDialogErrorClose">Fermer</button>
+                    <a href="/#contact" class="btn btn-outline" id="prestationDevisDialogContactLink">Formulaire de contact</a>
+                    <a href="mailto:contact@danielcraft.fr" class="btn btn-ghost">contact@danielcraft.fr</a>
+                    <button type="button" class="btn btn-ghost" id="prestationDevisDialogErrorClose">Fermer</button>
                 </div>
             </div>
         </div>

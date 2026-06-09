@@ -107,13 +107,26 @@
     root.querySelectorAll('input[name="addon_id[]"]:checked').forEach(function (input) {
       addonIds.push(input.value);
     });
+    const addonLines = [];
+    root.querySelectorAll('input[name="addon_id[]"]:checked').forEach(function (input) {
+      const label = input.closest('.prestation-devis-addon');
+      const strong = label?.querySelector('strong');
+      addonLines.push({
+        id: input.value,
+        title: strong ? strong.textContent.trim() : input.value,
+        price: parseInt(input.getAttribute('data-addon-price') || '0', 10) || 0,
+      });
+    });
+
     modal.open({
       slug: trigger.getAttribute('data-prestation-slug'),
       serviceSlug: trigger.getAttribute('data-service-slug'),
       title: trigger.getAttribute('data-prestation-title'),
       price: String(total),
+      basePrice: String(basePrice),
       priceLabel: trigger.getAttribute('data-prestation-price-label'),
       addonIds: addonIds,
+      addonLines: addonLines,
     });
   });
 
