@@ -24,4 +24,33 @@ final class FacturioCommonTest extends TestCase
         $ht = facturio_unit_price_ht(199.0, 20.0);
         self::assertEqualsWithDelta(165.8333, $ht, 0.001);
     }
+
+    public function test_line_from_catalog_price_ht(): void
+    {
+        $line = facturio_line_from_price_ht('Site vitrine', 490.0, 20.0);
+        self::assertSame('Site vitrine', $line['description']);
+        self::assertSame(490.0, $line['unitPrice']);
+        self::assertSame(0.2, $line['taxRate']);
+        self::assertArrayNotHasKey('productId', $line);
+    }
+
+    public function test_line_with_facturio_product_id(): void
+    {
+        $line = facturio_line_from_price_ht('Site vitrine', 490.0, 20.0, 1);
+        self::assertSame(1, $line['productId']);
+    }
+
+    public function test_product_id_from_catalog(): void
+    {
+        self::assertNull(facturio_product_id_from_catalog([]));
+        self::assertSame(1, facturio_product_id_from_catalog(['facturio_product_id' => 1]));
+        self::assertNull(facturio_product_id_from_catalog(['facturio_product_id' => 0]));
+    }
+
+    public function test_parse_api_error_adds_scope_hint_on_403(): void
+    {
+        $msg = facturio_parse_api_error(403, ['message' => 'Permission API manquante : devis.write']);
+        self::assertStringContainsString('devis.write', $msg);
+        self::assertStringContainsString('scopes', $msg);
+    }
 }
