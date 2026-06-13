@@ -51,6 +51,44 @@ final class FacturioCommonTest extends TestCase
     {
         $msg = facturio_parse_api_error(403, ['message' => 'Permission API manquante : devis.write']);
         self::assertStringContainsString('devis.write', $msg);
+        self::assertStringContainsString('clients.read', $msg);
         self::assertStringContainsString('scopes', $msg);
+    }
+
+    public function test_client_fields_person_without_company(): void
+    {
+        $fields = facturio_client_fields_from_contact('Marie Dupont');
+        self::assertSame('Marie Dupont', $fields['name']);
+        self::assertFalse($fields['isCompany']);
+    }
+
+    public function test_client_fields_company(): void
+    {
+        $fields = facturio_client_fields_from_contact('Marie Dupont', 'Société Dupont');
+        self::assertSame('Société Dupont', $fields['name']);
+        self::assertTrue($fields['isCompany']);
+    }
+
+    public function test_client_display_name(): void
+    {
+        self::assertSame('Marie Dupont', facturio_client_display_name('Marie Dupont'));
+        self::assertSame(
+            'Société Dupont — Marie Dupont',
+            facturio_client_display_name('Marie Dupont', 'Société Dupont')
+        );
+    }
+
+    public function test_is_missing_product_error(): void
+    {
+        self::assertTrue(facturio_is_missing_product_error("Produit avec l'ID 957 introuvable"));
+        self::assertFalse(facturio_is_missing_product_error('Permission API manquante'));
+    }
+
+    public function test_lines_without_product_ids(): void
+    {
+        $lines = facturio_lines_without_product_ids([
+            ['description' => 'Test', 'productId' => 957, 'unitPrice' => 10],
+        ]);
+        self::assertArrayNotHasKey('productId', $lines[0]);
     }
 }

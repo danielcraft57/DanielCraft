@@ -45,6 +45,33 @@ class PrestationPriceTests(unittest.TestCase):
         self.assertEqual(label, 'Sur devis')
 
 
+class TemplateConditionTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.engine = build.TemplateEngine(build.SRC_DIR)
+
+    def test_nested_if_in_include_like_nav(self) -> None:
+        tpl = (
+            '{% if current_page == "index" %}'
+            '<a href="#home" class="{% if current_page == "audit" %} active{% endif %}">Accueil</a>'
+            '{% else %}'
+            '<a href="/#home">Accueil</a>'
+            '{% endif %}'
+        )
+        out_index = self.engine.process_conditions(tpl, {'current_page': 'index'})
+        self.assertIn('href="#home"', out_index)
+        self.assertNotIn('{%', out_index)
+
+        out_other = self.engine.process_conditions(tpl, {'current_page': 'autres-prestations'})
+        self.assertIn('href="/#home"', out_other)
+        self.assertNotIn('{% else %}', out_other)
+        self.assertNotIn('{% endif %}', out_other)
+
+    def test_truthy_flag(self) -> None:
+        tpl = '{% if blog_enabled %}<a href="/blog/">Blog</a>{% endif %}'
+        self.assertIn('/blog/', self.engine.process_conditions(tpl, {'blog_enabled': True}))
+        self.assertEqual('', self.engine.process_conditions(tpl, {'blog_enabled': False}))
+
+
 class TruncateMetaTests(unittest.TestCase):
     def test_truncates_long_text(self) -> None:
         long_text = 'a' * 200
