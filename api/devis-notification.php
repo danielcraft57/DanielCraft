@@ -71,11 +71,29 @@ function devis_send_simple_mail(string $to, string $subject, string $textBody, s
                 $mail->isSMTP();
                 $mail->Host = $smtpHost;
                 $mail->Port = (int) (getenv('MAIL_PORT') ?: 587);
+                $mail->Timeout = 20;
+                $mail->SMTPAutoTLS = true;
                 $useTls = strtolower(trim((string) (getenv('MAIL_USE_TLS') ?: '')));
-                $mail->SMTPAuth = true;
-                $mail->Username = getenv('MAIL_USERNAME') ?: '';
-                $mail->Password = getenv('MAIL_PASSWORD') ?: '';
-                $mail->SMTPSecure = in_array($useTls, ['1', 'true', 'yes', 'on'], true) ? 'tls' : '';
+                $smtpUser = getenv('MAIL_USERNAME') ?: '';
+                $smtpPass = getenv('MAIL_PASSWORD') ?: '';
+                $mail->SMTPAuth = ($smtpUser !== '' && $smtpPass !== '');
+                if ($mail->SMTPAuth) {
+                    $mail->Username = $smtpUser;
+                    $mail->Password = $smtpPass;
+                }
+                if (in_array($useTls, ['1', 'true', 'yes', 'on'], true)) {
+                    $mail->SMTPSecure = 'tls';
+                    $allowSelfSigned = strtolower(trim((string) (getenv('MAIL_TLS_ALLOW_SELF_SIGNED') ?: '')));
+                    if (in_array($allowSelfSigned, ['1', 'true', 'yes', 'on'], true)) {
+                        $mail->SMTPOptions = [
+                            'ssl' => [
+                                'verify_peer' => false,
+                                'verify_peer_name' => false,
+                                'allow_self_signed' => true,
+                            ],
+                        ];
+                    }
+                }
             }
 
             return $mail->send();

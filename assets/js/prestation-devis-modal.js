@@ -199,7 +199,12 @@
     if (savedForm && savedForm.slug === slug) {
       restoreFormState();
     } else {
-      if (form) form.reset();
+      if (form) {
+        form.reset();
+        form.querySelectorAll('.form-input.is-invalid').forEach(function (input) {
+          input.classList.remove('is-invalid');
+        });
+      }
       if (optionalDetails) optionalDetails.open = false;
     }
 
@@ -238,9 +243,26 @@
     submitBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
   }
 
+  function markInvalidFields() {
+    if (!form) return false;
+    let valid = true;
+    form.querySelectorAll('.form-input').forEach(function (input) {
+      const ok = input.checkValidity();
+      input.classList.toggle('is-invalid', !ok);
+      if (!ok) valid = false;
+    });
+    return valid;
+  }
+
+  function clearFieldInvalid(ev) {
+    const input = ev.target;
+    if (!input || !input.classList || !input.classList.contains('form-input')) return;
+    if (input.checkValidity()) input.classList.remove('is-invalid');
+  }
+
   async function onSubmit(ev) {
     ev.preventDefault();
-    if (!form || !form.reportValidity()) return;
+    if (!form || !markInvalidFields() || !form.reportValidity()) return;
 
     saveFormState();
 
@@ -345,6 +367,8 @@
   });
 
   form?.addEventListener('submit', onSubmit);
+  form?.addEventListener('input', clearFieldInvalid);
+  form?.addEventListener('blur', clearFieldInvalid, true);
 
   window.prestationDevisModal = { open: openModal, close: closeModal };
 })();

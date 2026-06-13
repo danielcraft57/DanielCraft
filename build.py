@@ -241,46 +241,94 @@ class TemplateEngine:
 
         return content
 
+    def _eval_template_condition(self, condition: str, vars_dict: Dict) -> bool:
+        """Évalue une condition {% if ... %} simple (égalité ou variable truthy)."""
+        condition = condition.strip()
+        eq_match = re.match(r'^(\w+)\s*==\s*["\']([^"\']+)["\']$', condition)
+        if eq_match:
+            var_name, expected_value = eq_match.group(1), eq_match.group(2)
+            return str(vars_dict.get(var_name, '')) == expected_value
+
+        var_match = re.match(r'^(\w+)$', condition)
+        if var_match:
+            actual_value = vars_dict.get(var_match.group(1), '')
+            if actual_value in (False, 'False', 'false', '', None, 0, '0'):
+                return False
+            if isinstance(actual_value, list):
+                return len(actual_value) > 0
+            return True
+
+        return False
+
+    def _render_if_block(self, condition: str, body: str, vars_dict: Dict) -> str:
+        """Rend un bloc {% if %}...{% else %}?...{% endif %} sans if imbriqué."""
+        parts = re.split(r'\{%\s*else\s*%\}', body, maxsplit=1)
+        if_content = parts[0]
+        else_content = parts[1] if len(parts) > 1 else ''
+        return if_content if self._eval_template_condition(condition, vars_dict) else else_content
+
+    def _find_if_blocks(self, content: str) -> List[Dict[str, Any]]:
+        """Repère les blocs {% if %}…{% endif %} avec pile (endif appariés correctement)."""
+        tag_re = re.compile(r'\{%\s*(if\s+(.+?)|else|endif)\s*%\}', re.DOTALL)
+        stack: List[Dict[str, Any]] = []
+        blocks: List[Dict[str, Any]] = []
+
+        for m in tag_re.finditer(content):
+            tag = (m.group(1) or '').strip()
+            if tag.startswith('if'):
+                stack.append({
+                    'start': m.start(),
+                    'condition': m.group(2).strip(),
+                    'if_content_start': m.end(),
+                    'else_pos': None,
+                    'else_content_start': None,
+                })
+            elif tag == 'else':
+                if stack:
+                    stack[-1]['else_pos'] = m.start()
+                    stack[-1]['else_content_start'] = m.end()
+            elif tag == 'endif':
+                if not stack:
+                    continue
+                item = stack.pop()
+                end_pos = m.end()
+                if item['else_pos'] is not None:
+                    if_content = content[item['if_content_start']:item['else_pos']]
+                    else_content = content[item['else_content_start']:m.start()]
+                else:
+                    if_content = content[item['if_content_start']:m.start()]
+                    else_content = ''
+                blocks.append({
+                    'start': item['start'],
+                    'end': end_pos,
+                    'condition': item['condition'],
+                    'if_content': if_content,
+                    'else_content': else_content,
+                })
+
+        return blocks
+
     def process_conditions(self, content: str, vars_dict: Dict) -> str:
-        """Traite les conditions {% if %} {% else %} {% endif %}."""
-        # Pattern pour {% if var == "value" %} ... {% else %} ... {% endif %}
-        pattern1 = r'\{%\s*if\s+(\w+)\s*==\s*["\']([^"\']+)["\']\s*%\}(.*?)(?:\{%\s*else\s*%\}(.*?))?\{%\s*endif\s*%\}'
+        """Traite les conditions {% if %} {% else %} {% endif %} (imbriquées, de l'intérieur vers l'extérieur)."""
+        inner_if_pattern = re.compile(r'\{%\s*if\s+')
+        max_iterations = 100
 
-        # Pattern pour {% if var %} ... {% else %} ... {% endif %}
-        pattern2 = r'\{%\s*if\s+(\w+)\s*%\}(.*?)(?:\{%\s*else\s*%\}(.*?))?\{%\s*endif\s*%\}'
-
-        def replace_condition1(match):
-            var_name = match.group(1)
-            expected_value = match.group(2)
-            if_content = match.group(3) or ''
-            else_content = match.group(4) or ''
-            actual_value = vars_dict.get(var_name, '')
-
-            if str(actual_value) == expected_value:
-                return if_content
-            return else_content
-
-        def replace_condition2(match):
-            var_name = match.group(1)
-            if_content = match.group(2) or ''
-            else_content = match.group(3) or ''
-            actual_value = vars_dict.get(var_name, '')
-
-            # Vérifie si la variable existe et est "truthy"
-            if actual_value and actual_value != 'False' and actual_value != 'false':
-                if isinstance(actual_value, list) and len(actual_value) > 0:
-                    return if_content
-                elif not isinstance(actual_value, list):
-                    return if_content
-            return else_content
-
-        max_iterations = 10
         for _ in range(max_iterations):
-            new_content = re.sub(pattern1, replace_condition1, content, flags=re.DOTALL)
-            new_content = re.sub(pattern2, replace_condition2, new_content, flags=re.DOTALL)
-            if new_content == content:
+            blocks = self._find_if_blocks(content)
+            target = None
+            for block in blocks:
+                combined = block['if_content'] + block['else_content']
+                if not inner_if_pattern.search(combined):
+                    target = block
+                    break
+            if target is None:
                 break
-            content = new_content
+
+            body = target['if_content']
+            if target['else_content']:
+                body = target['if_content'] + '{% else %}' + target['else_content']
+            rendered = self._render_if_block(target['condition'], body, vars_dict)
+            content = content[:target['start']] + rendered + content[target['end']:]
 
         return content
 

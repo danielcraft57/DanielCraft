@@ -81,7 +81,7 @@ function facturio_parse_api_error(int $status, ?array $data): string
         }
     }
     if ($status === 403 && str_contains($msg, 'Permission API manquante')) {
-        $msg .= ' — recréez le jeton Facturio avec les scopes requis (devis : devis.read, devis.write, devis.send ; audit : factures.read, factures.write, factures.send).';
+        $msg .= ' — recréez le jeton Facturio avec les scopes requis (clients : clients.read, clients.write ; devis : devis.read, devis.write, devis.send ; audit : factures.read, factures.write, factures.send).';
     }
 
     return $msg;
@@ -235,97 +235,269 @@ function facturio_unit_price_ht(float $priceTtc, float $taxRatePercent): float
 }
 
 /**
- * Recherche un client Facturio par e-mail (GET /clients?search=).
+ * Champs client Facturio à partir du contact formulaire (personne + entreprise optionnelle).
+ *
+ * @return array{name: string, isCompany: bool}
  */
-function facturio_find_client_id_by_email(string $email): string
+function facturio_client_fields_from_contact(string $personName, string $companyName = ''): array
+{
+    $companyName = trim(preg_replace('/[\r\n]+/', ' ', $companyName));
+    $personName = trim(preg_replace('/[\r\n]+/', ' ', $personName));
+
+    if ($companyName !== '') {
+        return [
+            'name' => mb_substr($companyName, 0, 200),
+            'isCompany' => true,
+        ];
+    }
+
+    $name = $personName !== '' ? $personName : 'Client';
+
+    return [
+        'name' => mb_substr($name, 0, 200),
+        'isCompany' => false,
+    ];
+}
+
+/**
+ * Libellé affiché (e-mails de secours, logs).
+ */
+function facturio_client_display_name(string $personName, string $companyName = ''): string
+{
+    $companyName = trim(preg_replace('/[\r\n]+/', ' ', $companyName));
+    $personName = trim(preg_replace('/[\r\n]+/', ' ', $personName));
+    if ($companyName !== '' && $personName !== '') {
+        return $companyName . ' — ' . $personName;
+    }
+    if ($companyName !== '') {
+        return $companyName;
+    }
+    if ($personName !== '') {
+        return $personName;
+    }
+
+    return 'Client';
+}
+
+/**
+ * @param array<string, mixed> $data
+ * @return list<array<string, mixed>>
+ */
+function facturio_client_list_items(?array $data): array
+{
+    if ($data === null) {
+        return [];
+    }
+    $items = $data['items'] ?? $data['data'] ?? $data;
+    if (!is_array($items)) {
+        return [];
+    }
+    if ($items !== [] && !isset($items[0]) && isset($items['id'])) {
+        return [$items];
+    }
+
+    $out = [];
+    foreach ($items as $item) {
+        if (is_array($item)) {
+            $out[] = $item;
+        }
+    }
+
+    return $out;
+}
+
+/**
+ * Recherche un client Facturio par e-mail (GET /public/clients?search=).
+ *
+ * @return array<string, mixed>|null
+ */
+function facturio_find_client_by_email(string $email): ?array
 {
     $email = strtolower(trim($email));
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return '';
+        return null;
     }
 
-    $res = facturio_http('GET', '/clients?search=' . rawurlencode($email) . '&pageSize=20');
-    if (!$res['ok'] || !is_array($res['data'])) {
-        return '';
+    $query = http_build_query([
+        'page' => 1,
+        'pageSize' => 20,
+        'search' => $email,
+    ]);
+    $res = facturio_http('GET', '/clients?' . $query);
+    if (!$res['ok']) {
+        return null;
     }
 
-    $items = $res['data']['items'] ?? $res['data']['data'] ?? [];
-    if (!is_array($items)) {
-        return '';
-    }
-
-    foreach ($items as $item) {
-        if (!is_array($item)) {
-            continue;
-        }
+    foreach (facturio_client_list_items($res['data']) as $item) {
         $itemEmail = strtolower(trim((string) ($item['email'] ?? '')));
         if ($itemEmail === $email) {
-            return facturio_extract_id($item, 'id', 'clientId');
+            return $item;
         }
     }
 
-    return '';
+    return null;
+}
+
+/**
+ * Recherche un client Facturio par e-mail — retourne uniquement l’id.
+ */
+function facturio_find_client_id_by_email(string $email): string
+{
+    $client = facturio_find_client_by_email($email);
+    if ($client === null) {
+        return '';
+    }
+
+    return facturio_extract_id($client, 'id', 'clientId');
 }
 
 /**
  * POST /public/clients — crée une fiche client.
  *
- * @return array{ok: bool, client_id: string, error: string}
+ * @return array{ok: bool, client_id: string, error: string, status: int}
  */
-function facturio_create_client(string $customerEmail, string $customerName): array
+function facturio_create_client(string $customerEmail, string $personName, string $companyName = ''): array
 {
-    $empty = ['ok' => false, 'client_id' => '', 'error' => ''];
+    $empty = ['ok' => false, 'client_id' => '', 'error' => '', 'status' => 0];
     $email = trim($customerEmail);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $empty['error'] = 'Email client invalide.';
         return $empty;
     }
 
-    $name = trim(preg_replace('/[\r\n]+/', ' ', $customerName));
-    if ($name === '') {
-        $name = strstr($email, '@', true) ?: 'Client';
+    $fields = facturio_client_fields_from_contact($personName, $companyName);
+    if ($fields['name'] === 'Client' && str_contains($email, '@')) {
+        $fields['name'] = strstr($email, '@', true) ?: 'Client';
     }
 
     $res = facturio_http('POST', '/clients', [
-        'name' => mb_substr($name, 0, 200),
+        'name' => $fields['name'],
         'email' => $email,
-        'isCompany' => false,
+        'isCompany' => $fields['isCompany'],
         'countryCode' => 'FR',
     ]);
     if (!$res['ok'] || !is_array($res['data'])) {
         $empty['error'] = $res['error'] !== '' ? $res['error'] : 'Création client impossible.';
+        $empty['status'] = (int) ($res['status'] ?? 0);
         return $empty;
     }
 
     $id = facturio_extract_id($res['data'], 'id', 'clientId');
     if ($id === '') {
         $empty['error'] = 'Réponse Facturio sans id client.';
+        $empty['status'] = (int) ($res['status'] ?? 0);
         return $empty;
     }
 
-    return ['ok' => true, 'client_id' => $id, 'error' => ''];
+    return ['ok' => true, 'client_id' => $id, 'error' => '', 'status' => (int) ($res['status'] ?? 201)];
 }
 
 /**
- * Résout clientId (recherche puis création si besoin). Requis pour POST /devis.
+ * PATCH /public/clients/:id — met à jour une fiche client existante.
  *
- * @return array{ok: bool, client_id: string, error: string}
+ * @param array<string, mixed> $fields
+ * @return array{ok: bool, error: string}
  */
-function facturio_ensure_client_id(string $customerEmail, string $customerName): array
+function facturio_update_client(string $clientId, array $fields): array
 {
-    $empty = ['ok' => false, 'client_id' => '', 'error' => ''];
-    $existing = facturio_find_client_id_by_email($customerEmail);
-    if ($existing !== '') {
-        return ['ok' => true, 'client_id' => $existing, 'error' => ''];
+    $fail = ['ok' => false, 'error' => ''];
+    $clientId = trim($clientId);
+    if ($clientId === '') {
+        $fail['error'] = 'id client invalide.';
+        return $fail;
+    }
+    if ($fields === []) {
+        return ['ok' => true, 'error' => ''];
     }
 
-    $created = facturio_create_client($customerEmail, $customerName);
-    if (!$created['ok']) {
-        $empty['error'] = $created['error'];
+    $res = facturio_http('PATCH', '/clients/' . rawurlencode($clientId), $fields);
+    if (!$res['ok']) {
+        $fail['error'] = $res['error'] !== '' ? $res['error'] : 'Mise à jour client impossible.';
+        return $fail;
+    }
+
+    return ['ok' => true, 'error' => ''];
+}
+
+/**
+ * Met à jour le nom / type société si le contact a changé depuis la dernière fiche.
+ *
+ * @param array<string, mixed> $existing
+ */
+function facturio_sync_client_record(array $existing, string $personName, string $companyName = ''): void
+{
+    $clientId = facturio_extract_id($existing, 'id', 'clientId');
+    if ($clientId === '') {
+        return;
+    }
+
+    $desired = facturio_client_fields_from_contact($personName, $companyName);
+    $currentName = trim((string) ($existing['name'] ?? ''));
+    $currentIsCompany = !empty($existing['isCompany']);
+
+    $patch = [];
+    if ($desired['name'] !== '' && $desired['name'] !== $currentName) {
+        $patch['name'] = $desired['name'];
+    }
+    if ($desired['isCompany'] !== $currentIsCompany) {
+        $patch['isCompany'] = $desired['isCompany'];
+    }
+    if ($patch === []) {
+        return;
+    }
+
+    $updated = facturio_update_client($clientId, $patch);
+    if (!$updated['ok']) {
+        error_log('[facturio] sync client ' . $clientId . ': ' . $updated['error']);
+    }
+}
+
+/**
+ * Résout clientId : recherche par e-mail, mise à jour si besoin, sinon création.
+ * Requis pour POST /devis (clientId obligatoire).
+ *
+ * @return array{ok: bool, client_id: string, error: string, created: bool}
+ */
+function facturio_ensure_client_id(string $customerEmail, string $personName, string $companyName = ''): array
+{
+    $empty = ['ok' => false, 'client_id' => '', 'error' => '', 'created' => false];
+    $email = trim($customerEmail);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $empty['error'] = 'Email client invalide.';
         return $empty;
     }
 
-    return ['ok' => true, 'client_id' => $created['client_id'], 'error' => ''];
+    $existing = facturio_find_client_by_email($email);
+    if ($existing !== null) {
+        facturio_sync_client_record($existing, $personName, $companyName);
+        $id = facturio_extract_id($existing, 'id', 'clientId');
+        if ($id !== '') {
+            return ['ok' => true, 'client_id' => $id, 'error' => '', 'created' => false];
+        }
+    }
+
+    $created = facturio_create_client($email, $personName, $companyName);
+    if ($created['ok']) {
+        return [
+            'ok' => true,
+            'client_id' => $created['client_id'],
+            'error' => '',
+            'created' => true,
+        ];
+    }
+
+    // Course : le client peut exister entre la recherche et la création.
+    $retryId = facturio_find_client_id_by_email($email);
+    if ($retryId !== '') {
+        $retryClient = facturio_find_client_by_email($email);
+        if ($retryClient !== null) {
+            facturio_sync_client_record($retryClient, $personName, $companyName);
+        }
+        return ['ok' => true, 'client_id' => $retryId, 'error' => '', 'created' => false];
+    }
+
+    $empty['error'] = $created['error'] !== '' ? $created['error'] : 'Client Facturio introuvable.';
+    return $empty;
 }
 
 /**
@@ -483,28 +655,48 @@ function facturio_issue_audit_invoice(
     ];
 }
 
+function facturio_lines_without_product_ids(array $lines): array
+{
+    $out = [];
+    foreach ($lines as $line) {
+        if (!is_array($line)) {
+            continue;
+        }
+        unset($line['productId']);
+        $out[] = $line;
+    }
+
+    return $out;
+}
+
+function facturio_is_missing_product_error(string $error): bool
+{
+    $error = mb_strtolower(trim($error));
+    if ($error === '') {
+        return false;
+    }
+
+    return str_contains($error, 'produit')
+        && (str_contains($error, 'introuvable') || str_contains($error, 'not found') || str_contains($error, 'inexistant'));
+}
+
 /**
- * POST /public/devis — création d’un devis (non payé).
  *
  * @param list<array{description: string, quantity: int|float, unitPrice: float, taxRate?: float}> $lines
  * @return array{ok: bool, quote_id: string, error: string}
  */
 function facturio_create_quote_devis(
     string $customerEmail,
-    string $customerName,
+    string $personName,
     array $lines,
-    string $internalNote = ''
+    string $internalNote = '',
+    string $companyName = ''
 ): array {
     $empty = ['ok' => false, 'quote_id' => '', 'error' => ''];
     $email = trim($customerEmail);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $empty['error'] = 'Email client invalide.';
         return $empty;
-    }
-
-    $name = trim(preg_replace('/[\r\n]+/', ' ', $customerName));
-    if ($name === '') {
-        $name = strstr($email, '@', true) ?: 'Client';
     }
 
     $apiLines = [];
@@ -539,10 +731,17 @@ function facturio_create_quote_devis(
         return $empty;
     }
 
-    $client = facturio_ensure_client_id($email, $name);
+    $client = facturio_ensure_client_id($email, $personName, $companyName);
     if (!$client['ok']) {
         $empty['error'] = $client['error'];
+        if (str_contains($client['error'], 'clients.read') || str_contains($client['error'], 'clients.write')) {
+            error_log('[facturio] Jeton API : ajouter clients.read et clients.write');
+        }
         return $empty;
+    }
+
+    if (!empty($client['created'])) {
+        error_log('[facturio] client créé id=' . $client['client_id'] . ' email=' . $email);
     }
 
     // L’API /devis exige clientId (clientEmail seul renvoie « Client requis »).
@@ -556,6 +755,11 @@ function facturio_create_quote_devis(
     }
 
     $res = facturio_http('POST', '/devis', $body);
+    if ((!$res['ok'] || !is_array($res['data'])) && facturio_is_missing_product_error((string) ($res['error'] ?? ''))) {
+        $body['lines'] = facturio_lines_without_product_ids($apiLines);
+        error_log('[facturio] devis : productId invalide, nouvel essai sans lien produit');
+        $res = facturio_http('POST', '/devis', $body);
+    }
     if (!$res['ok'] || !is_array($res['data'])) {
         $empty['error'] = $res['error'] !== '' ? $res['error'] : 'Création devis impossible.';
         return $empty;
@@ -621,10 +825,11 @@ function facturio_send_devis_email(string $devisId, string $customerEmail): arra
  */
 function facturio_issue_quote_devis(
     string $customerEmail,
-    string $customerName,
+    string $personName,
     array $lines,
     string $internalNote = '',
-    float $taxRatePercent = 20.0
+    float $taxRatePercent = 20.0,
+    string $companyName = ''
 ): array {
     $empty = ['ok' => false, 'quote_id' => '', 'email_sent' => false, 'error' => '', 'warning' => ''];
     if (!facturio_configured()) {
@@ -654,7 +859,7 @@ function facturio_issue_quote_devis(
         $normalized[] = $normalizedLine;
     }
 
-    $quote = facturio_create_quote_devis($customerEmail, $customerName, $normalized, $internalNote);
+    $quote = facturio_create_quote_devis($customerEmail, $personName, $normalized, $internalNote, $companyName);
     if (!$quote['ok']) {
         $empty['error'] = $quote['error'];
         return $empty;

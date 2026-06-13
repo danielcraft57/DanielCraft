@@ -42,15 +42,23 @@
                 <input type="hidden" name="service_slug" id="prestationDevisDialogServiceSlug" value="">
                 <input type="hidden" name="total_eur" id="prestationDevisDialogTotal" value="">
 
+                <p class="prestation-devis-dialog__form-lead" id="prestationDevisDialogFormLead">Où envoyer votre devis ?</p>
+
                 <div class="prestation-devis-dialog__field">
-                    <label class="form-label" for="prestationDevisDialogEmail">E-mail <span class="prestation-devis-dialog__required">*</span></label>
-                    <input class="form-input" type="email" id="prestationDevisDialogEmail" name="email" required autocomplete="email" maxlength="180" placeholder="vous@exemple.fr" inputmode="email">
-                    <p class="prestation-devis-dialog__field-hint">C’est à cette adresse que vous recevrez le PDF.</p>
+                    <label class="form-label" for="prestationDevisDialogEmail">E-mail <span class="prestation-devis-dialog__required" aria-hidden="true">*</span></label>
+                    <div class="prestation-devis-dialog__input-wrap">
+                        <span class="prestation-devis-dialog__input-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                        <input class="form-input" type="email" id="prestationDevisDialogEmail" name="email" required autocomplete="email" maxlength="180" placeholder="vous@exemple.fr" inputmode="email" spellcheck="false">
+                    </div>
+                    <p class="prestation-devis-dialog__field-hint">Le PDF arrive à cette adresse en quelques secondes.</p>
                 </div>
 
                 <div class="prestation-devis-dialog__field">
-                    <label class="form-label" for="prestationDevisDialogName">Prénom et nom <span class="prestation-devis-dialog__required">*</span></label>
-                    <input class="form-input" type="text" id="prestationDevisDialogName" name="name" required autocomplete="name" minlength="2" maxlength="120" placeholder="Marie Dupont">
+                    <label class="form-label" for="prestationDevisDialogName">Prénom et nom <span class="prestation-devis-dialog__required" aria-hidden="true">*</span></label>
+                    <div class="prestation-devis-dialog__input-wrap">
+                        <span class="prestation-devis-dialog__input-icon" aria-hidden="true"><i class="fas fa-user"></i></span>
+                        <input class="form-input" type="text" id="prestationDevisDialogName" name="name" required autocomplete="name" minlength="2" maxlength="120" placeholder="Marie Dupont">
+                    </div>
                 </div>
 
                 <details class="prestation-devis-dialog__optional" id="prestationDevisDialogOptional">
@@ -58,13 +66,19 @@
                     <div class="prestation-devis-dialog__optional-body">
                         <div class="prestation-devis-dialog__field">
                             <label class="form-label" for="prestationDevisDialogPhone">Téléphone</label>
-                            <input class="form-input" type="tel" id="prestationDevisDialogPhone" name="phone" autocomplete="tel" maxlength="40" placeholder="06 12 34 56 78" inputmode="tel">
+                            <div class="prestation-devis-dialog__input-wrap">
+                                <span class="prestation-devis-dialog__input-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                                <input class="form-input" type="tel" id="prestationDevisDialogPhone" name="phone" autocomplete="tel" maxlength="40" placeholder="06 12 34 56 78" inputmode="tel">
+                            </div>
                         </div>
                         <div class="prestation-devis-dialog__field">
                             <label class="form-label" for="prestationDevisDialogCompany">Entreprise</label>
-                            <input class="form-input" type="text" id="prestationDevisDialogCompany" name="company" autocomplete="organization" maxlength="120" placeholder="Nom de votre activité">
+                            <div class="prestation-devis-dialog__input-wrap">
+                                <span class="prestation-devis-dialog__input-icon" aria-hidden="true"><i class="fas fa-building"></i></span>
+                                <input class="form-input" type="text" id="prestationDevisDialogCompany" name="company" autocomplete="organization" maxlength="120" placeholder="Nom de votre activité">
+                            </div>
                         </div>
-                        <div class="prestation-devis-dialog__field">
+                        <div class="prestation-devis-dialog__field prestation-devis-dialog__field--textarea">
                             <label class="form-label" for="prestationDevisDialogMessage">Message</label>
                             <textarea class="form-input prestation-devis-dialog__textarea" id="prestationDevisDialogMessage" name="message" rows="3" maxlength="4000" placeholder="Délai souhaité, contexte, questions…"></textarea>
                         </div>

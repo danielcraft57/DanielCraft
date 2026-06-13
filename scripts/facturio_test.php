@@ -24,7 +24,31 @@ if (is_array($ping['data'])) {
     echo 'summary: ' . json_encode($ping['data'], JSON_UNESCAPED_UNICODE) . PHP_EOL;
 }
 
-if (!in_array('--dry-devis', $argv ?? [], true)) {
+$argv = $argv ?? [];
+$testClient = in_array('--test-client', $argv, true);
+$dryDevis = in_array('--dry-devis', $argv, true);
+
+if ($testClient) {
+    $probeEmail = 'test-client-' . gmdate('YmdHis') . '@example.invalid';
+    echo 'ensure client: ' . $probeEmail . PHP_EOL;
+    $ensured = facturio_ensure_client_id($probeEmail, 'Marie Dupont', 'Société Test');
+    echo 'ensure: ok=' . ($ensured['ok'] ? 'yes' : 'no')
+        . ' id=' . ($ensured['client_id'] ?: '-')
+        . ' created=' . (!empty($ensured['created']) ? 'yes' : 'no')
+        . ' error=' . ($ensured['error'] ?: '-') . PHP_EOL;
+
+    if ($ensured['ok']) {
+        $again = facturio_ensure_client_id($probeEmail, 'Marie Dupont', 'Société Test');
+        echo 'ensure (2e fois): ok=' . ($again['ok'] ? 'yes' : 'no')
+            . ' id=' . ($again['client_id'] ?: '-')
+            . ' created=' . (!empty($again['created']) ? 'yes' : 'no')
+            . ' error=' . ($again['error'] ?: '-') . PHP_EOL;
+        exit($again['ok'] && empty($again['created']) ? 0 : 1);
+    }
+    exit(1);
+}
+
+if (!$dryDevis) {
     exit($ping['ok'] ? 0 : 1);
 }
 

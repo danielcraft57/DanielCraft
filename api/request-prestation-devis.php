@@ -115,8 +115,11 @@ foreach ($addonIds as $aid) {
     );
 }
 
-$clientName = $company !== '' ? $company . ' — ' . $name : $name;
+$clientDisplayName = facturio_client_display_name($name, $company);
 $noteParts = [];
+if ($company !== '') {
+    $noteParts[] = 'Contact : ' . $name;
+}
 if ($phone !== '') {
     $noteParts[] = 'Tél. : ' . $phone;
 }
@@ -129,10 +132,11 @@ $internalNote = implode("\n", $noteParts);
 facturio_bootstrap();
 $quoteResult = facturio_issue_quote_devis(
     $email,
-    $clientName,
+    $name,
     $lines,
     $internalNote,
-    20.0
+    20.0,
+    $company
 );
 
 if (!$quoteResult['ok']) {
@@ -142,7 +146,7 @@ if (!$quoteResult['ok']) {
     if (facturio_configured()) {
         $fallback = devis_notify_fallback(
             $email,
-            $clientName,
+            $clientDisplayName,
             $title,
             $totalEur,
             $lines,
@@ -162,8 +166,13 @@ if (!$quoteResult['ok']) {
         }
 
         $userError = 'Le devis automatique est momentanément indisponible. Écrivez à contact@danielcraft.fr ou utilisez le formulaire de contact.';
-        if (str_contains($facturioErr, 'devis.write') || str_contains($facturioErr, 'devis.send')) {
-            error_log('[prestation-devis] Jeton Facturio : ajouter devis.read, devis.write, devis.send');
+        if (
+            str_contains($facturioErr, 'clients.read')
+            || str_contains($facturioErr, 'clients.write')
+            || str_contains($facturioErr, 'devis.write')
+            || str_contains($facturioErr, 'devis.send')
+        ) {
+            error_log('[prestation-devis] Jeton Facturio : clients.read, clients.write, devis.read, devis.write, devis.send');
         }
 
         http_response_code(502);

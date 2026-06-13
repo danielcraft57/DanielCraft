@@ -714,30 +714,115 @@ body.prestation-devis-dialog-open {
   font-size: 0.95rem;
 }
 
+.prestation-devis-dialog__form-lead {
+  margin: 0 0 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-dark, #0f3550);
+}
+
 .prestation-devis-dialog__field {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.9rem;
 }
 
 .prestation-devis-dialog__field .form-label {
   display: block;
-  margin: 0 0 0.35rem;
-  font-size: 0.88rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  color: var(--primary-dark, #0f3550);
 }
 
 .prestation-devis-dialog__required {
   color: var(--primary-color, #4da9d6);
+  font-weight: 700;
+}
+
+.prestation-devis-dialog__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.prestation-devis-dialog__input-icon {
+  position: absolute;
+  left: 0.95rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--primary-color, #4da9d6);
+  font-size: 0.88rem;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.prestation-devis-dialog__form .form-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.65rem;
+  border: 1.5px solid rgba(77, 169, 214, 0.28);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--primary-dark, #0f3550);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 53, 80, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.prestation-devis-dialog__field--textarea .form-input,
+.prestation-devis-dialog__textarea {
+  padding: 0.75rem 1rem;
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.prestation-devis-dialog__form .form-input::placeholder {
+  color: #8fa3b3;
+}
+
+.prestation-devis-dialog__form .form-input:hover {
+  border-color: rgba(77, 169, 214, 0.5);
+  background: #fcfeff;
+}
+
+.prestation-devis-dialog__form .form-input:focus {
+  outline: none;
+  border-color: var(--primary-color, #4da9d6);
+  background: #fff;
+  box-shadow:
+    0 0 0 4px rgba(77, 169, 214, 0.18),
+    0 2px 8px rgba(15, 53, 80, 0.06);
+}
+
+.prestation-devis-dialog__input-wrap:focus-within .prestation-devis-dialog__input-icon {
+  color: var(--primary-dark, #0f3550);
+}
+
+.prestation-devis-dialog__form .form-input:user-invalid:not(:focus):not(:placeholder-shown),
+.prestation-devis-dialog__form .form-input.is-invalid {
+  border-color: #e05252;
+  background: #fffafa;
+  box-shadow: 0 0 0 3px rgba(224, 82, 82, 0.12);
+}
+
+.prestation-devis-dialog__input-wrap:has(.form-input.is-invalid) .prestation-devis-dialog__input-icon,
+.prestation-devis-dialog__input-wrap:has(.form-input:user-invalid:not(:focus):not(:placeholder-shown)) .prestation-devis-dialog__input-icon {
+  color: #c73e3e;
 }
 
 .prestation-devis-dialog__field-hint {
-  margin: 0.3rem 0 0;
+  margin: 0.35rem 0 0;
   font-size: 0.8rem;
   color: var(--text-muted, #5a6b7a);
-}
-
-.prestation-devis-dialog__textarea {
-  min-height: 5rem;
-  resize: vertical;
+  line-height: 1.4;
 }
 
 .prestation-devis-dialog__optional {
