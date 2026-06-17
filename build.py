@@ -22,7 +22,7 @@ import json
 import shutil
 from pathlib import Path
 from typing import Dict, Optional, List, Any
-from datetime import datetime
+from datetime import datetime, timedelta
 from urllib.parse import quote
 
 # Configuration
@@ -69,6 +69,33 @@ OUTPUT_DIR = BASE_DIR / 'dist'
 # Pour éviter toute donnée perso en dur, configure via variable d'environnement :
 #   SITE_BASE="https://ton-domaine.com"
 SITE_BASE = os.environ.get('SITE_BASE', 'https://example.com')
+
+
+def _is_local_site_base(url: str) -> bool:
+    """Détecte une base locale/dev qui ne doit pas fuiter en prod."""
+    raw = (url or '').strip().lower()
+    if not raw:
+        return True
+    return (
+        'localhost' in raw
+        or '127.0.0.1' in raw
+        or '0.0.0.0' in raw
+        or 'example.com' in raw
+    )
+
+
+def _resolve_public_site_base(default_base: str) -> str:
+    """
+    Résout la base publique finale.
+    - En dev local: SITE_BASE peut rester localhost.
+    - En contexte de déploiement: si SITE_BASE est local et DEPLOY_SITE_BASE est défini,
+      on utilise DEPLOY_SITE_BASE pour éviter des URLs localhost dans canoniques/sitemaps.
+    """
+    site_base = (os.environ.get('SITE_BASE') or default_base or '').strip()
+    deploy_base = (os.environ.get('DEPLOY_SITE_BASE') or '').strip()
+    if deploy_base and _is_local_site_base(site_base):
+        return deploy_base.rstrip('/')
+    return site_base.rstrip('/')
 
 
 def _load_build_dotenv() -> None:
@@ -2693,7 +2720,6 @@ def generate_sitemap_pages(
 
 def generate_sitemap_prestations(output_dir: Path) -> None:
     """Genere sitemap-prestations.xml : fiches prestations détaillées."""
-    lastmod = datetime.now().strftime('%Y-%m-%d')
     base = SITE_BASE.rstrip('/')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -2702,9 +2728,14 @@ def generate_sitemap_prestations(output_dir: Path) -> None:
         '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
         'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
     ]
+    today = datetime.now().date()
     for slug in prestation_slugs_for_sitemap():
+        # Donne des dates "naturelles" et stables (pas toutes identiques).
+        seed = sum(ord(ch) for ch in slug)
+        days_ago = 7 + (seed % 210)  # entre 1 semaine et ~7 mois
+        organic_lastmod = (today - timedelta(days=days_ago)).isoformat()
         lines.append(
-            _sitemap_url_line(base, f'/prestations/{slug}/', lastmod, 'monthly', '0.75')
+            _sitemap_url_line(base, f'/prestations/{slug}/', organic_lastmod, 'monthly', '0.75')
         )
     lines.append('</urlset>')
     (output_dir / 'sitemap-prestations.xml').write_text('\n'.join(lines), encoding='utf-8')
@@ -2733,8 +2764,10 @@ def main():
     global OUTPUT_DIR, SITE_BASE
 
     _load_build_dotenv()
-    SITE_BASE = os.environ.get('SITE_BASE', SITE_BASE)
+    SITE_BASE = _resolve_public_site_base(SITE_BASE)
     DEFAULT_VARS['site_base'] = SITE_BASE
+    DEFAULT_VARS['page_url'] = f'{SITE_BASE}/'
+    DEFAULT_VARS['og_image'] = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
 
     # Parse les arguments
     output_dir_arg = None
@@ -2888,9 +2921,15 @@ def main():
         except ValueError:
             blog_output = str(OUTPUT_DIR / 'blog')
         try:
+            blog_env = os.environ.copy()
+            blog_env['SITE_BASE'] = SITE_BASE
+            # Donnée de secours pour build_blog.py si SITE_BASE local.
+            if blog_env.get('DEPLOY_SITE_BASE') in (None, ''):
+                blog_env['DEPLOY_SITE_BASE'] = SITE_BASE
             result = subprocess.run(
                 [sys.executable, str(blog_dir / 'build_blog.py'), '--output', blog_output],
                 cwd=str(BASE_DIR),
+                env=blog_env,
                 capture_output=True,
                 text=True,
                 timeout=60
