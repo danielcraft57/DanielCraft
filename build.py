@@ -100,7 +100,7 @@ STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
     ('/audit', 'weekly', '0.95'),
-    ('/autres-prestations', 'weekly', '0.90'),
+    ('/prestations/', 'weekly', '0.90'),
     ('/processus', 'monthly', '0.75'),
     ('/metz', 'monthly', '0.80'),
     ('/portfolio', 'monthly', '0.55'),
@@ -125,7 +125,7 @@ SEO_GEO_LNG = 6.1757
 # Correspondance page statique → fichier OG (scripts/generate_site_og_images.py)
 OG_PAGE_FILE_SLUGS = {
     'index': 'home',
-    'autres-prestations': 'prestations',
+    'prestations': 'prestations',
 }
 
 # Variables par défaut
@@ -403,6 +403,51 @@ def sync_assets_to_dist(assets_src: Path, assets_dst: Path) -> None:
         print(f"[OK] Assets synchronises vers {assets_dst} ({copied} fichier(s) mis a jour)")
     else:
         print(f"[OK] Assets deja a jour dans {assets_dst}")
+
+
+def sync_api_to_dist(api_src: Path, api_dst: Path) -> None:
+    """
+    Copie api/ vers dist/api/ sans rmtree (fichiers PHP parfois verrouillés par php -S).
+    """
+    if not api_src.is_dir():
+        return
+    api_dst.mkdir(parents=True, exist_ok=True)
+    copied = 0
+    locked = 0
+    src_files = {p.relative_to(api_src) for p in api_src.rglob('*') if p.is_file()}
+    for rel in sorted(src_files):
+        src_path = api_src / rel
+        dest = api_dst / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            src_stat = src_path.stat()
+            if dest.exists():
+                dst_stat = dest.stat()
+                if (
+                    int(dst_stat.st_mtime) >= int(src_stat.st_mtime)
+                    and dst_stat.st_size == src_stat.st_size
+                ):
+                    continue
+            shutil.copy2(src_path, dest)
+            copied += 1
+        except (PermissionError, OSError):
+            locked += 1
+    for dest_path in api_dst.rglob('*'):
+        if not dest_path.is_file():
+            continue
+        rel = dest_path.relative_to(api_dst)
+        if rel in src_files:
+            continue
+        try:
+            dest_path.unlink()
+        except (PermissionError, OSError):
+            locked += 1
+    if copied:
+        print(f"[OK] api/ synchronise vers {api_dst} ({copied} fichier(s) mis a jour)")
+    elif locked:
+        print(f"[WARN] api/ deja a jour dans {api_dst} ({locked} fichier(s) verrouille(s), ignore)")
+    else:
+        print(f"[OK] api/ deja a jour dans {api_dst}")
 
 
 def generate_robots_txt(output_dir: Path) -> None:
@@ -1833,6 +1878,29 @@ HOME_VITRINE_TEASER_SLUGS = (
 HOME_VITRINE_TEASER_TABLET_SLUG = 'commerce'
 
 
+def _prestation_duration_label(item: Dict[str, Any]) -> str:
+    """Libellé durée sous le prix (heures estimées, alignées Facturio)."""
+    try:
+        hours = float(item.get('estimated_hours', 0) or 0)
+    except (TypeError, ValueError):
+        hours = 0.0
+    if hours <= 0:
+        return ''
+    period = (item.get('estimated_hours_period') or '').strip().lower()
+    if hours < 1:
+        mins = max(1, int(round(hours * 60)))
+        core = f'≈ {mins} min'
+    elif abs(hours - round(hours)) < 0.05:
+        core = f'≈ {int(round(hours))} h'
+    else:
+        core = f'≈ {hours:.1f} h'.replace('.0 h', ' h')
+    if period == 'month':
+        return f'{core} / mois'
+    if period == 'year':
+        return f'{core} / an'
+    return f'{core} d\'intervention'
+
+
 def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = False) -> str:
     """Visuel carte : icône + dégradé (évite les SVG génériques peu parlants)."""
     icon = html.escape((item.get('icon') or 'fa-star').strip())
@@ -1856,7 +1924,6 @@ def _prestation_card_html(
     title = html.escape(title_raw)
     desc = html.escape((item.get('short_description') or item.get('description') or '').strip())
     icon = html.escape((item.get('icon') or 'fa-star').strip())
-    price_html = html.escape(_prestation_price_display(item))
     tagline = html.escape((item.get('tagline') or '').strip())
     service_slug = html.escape((item.get('service_slug') or slug).strip())
     try:
@@ -1899,6 +1966,14 @@ def _prestation_card_html(
     tagline_html = (
         f'<p class="prestation-card-tagline">{tagline}</p>' if tagline and featured_hero else ''
     )
+    duration = _prestation_duration_label(item)
+    duration_html = (
+        f'<span class="price-duration">{html.escape(duration)}</span>' if duration else ''
+    )
+    tier = (item.get('price_tier') or '').strip()
+    tier_html = (
+        '<span class="price-tier">Petit budget</span>' if tier == 'entry' else ''
+    )
     return (
         f'<article class="{card_class}" data-prestation-slug="{html.escape(slug, quote=True)}">'
         f'{badge}'
@@ -1906,7 +1981,10 @@ def _prestation_card_html(
         f'<h3 class="service-title">{title}</h3>'
         f'{tagline_html}'
         f'<p class="service-description">{desc}</p>'
-        f'<div class="service-price"><span class="price-label">Indicatif</span><span class="price-amount">{price_html}</span></div>'
+        f'<div class="service-price">{tier_html}'
+        f'<span class="price-label">{price_label}</span>'
+        f'<span class="price-amount">{price_eur} € <span class="price-ht">HT</span></span>'
+        f'{duration_html}</div>'
         f'{actions}'
         '</article>'
     )
@@ -1936,22 +2014,9 @@ def build_prestations_catalog_embed() -> None:
             '<section class="prestations-featured" aria-labelledby="prestations-featured-title">'
             '<h2 id="prestations-featured-title" class="prestations-section-title">'
             '<i class="fas fa-star" aria-hidden="true"></i> Nos 3 offres les plus utiles</h2>'
-            '<p class="prestations-featured-lead">Pour démarrer ou progresser sans jargon : un site clair, '
-            "être trouvé sur Google <em>et</em> par l'IA, ou un assistant qui répond à vos clients.</p>"
+            '<p class="prestations-featured-lead">Site clair, visibilité Google <em>et</em> IA, ou assistant sur votre site.</p>'
             f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
             '</section>'
-        )
-    nav_links = []
-    for cid, cat in cats.items():
-        anchor = html.escape(cid)
-        label = html.escape((cat.get('nav_label') or cat.get('title') or cid).strip())
-        nav_links.append(f'<a href="#{anchor}">{label}</a>')
-    if nav_links:
-        parts.insert(
-            0,
-            '<nav class="prestations-nav" aria-label="Navigation dans les prestations">'
-            + ''.join(nav_links)
-            + '</nav>',
         )
     for cid, cat in cats.items():
         items = grouped.get(cid) or []
@@ -1959,13 +2024,10 @@ def build_prestations_catalog_embed() -> None:
             continue
         title = html.escape((cat.get('title') or cid).strip())
         icon = html.escape((cat.get('icon') or 'fa-folder').strip())
-        desc = (cat.get('description') or '').strip()
-        desc_html = f'<p class="prestations-category-lead">{html.escape(desc)}</p>' if desc else ''
         cards = ''.join(_prestation_card_html(it) for it in items)
         parts.append(
             f'<h2 id="{html.escape(cid)}" class="prestations-section-title">'
             f'<i class="fas {icon}" aria-hidden="true"></i> {title}</h2>'
-            f'{desc_html}'
             f'<div class="services-grid prestations-grid">{cards}</div>'
         )
     out_path = INCLUDES_DIR / 'prestations-catalog-embed.html'
@@ -2057,7 +2119,7 @@ def _build_prestation_seo_bundle(
                     '@type': 'ListItem',
                     'position': 2,
                     'name': 'Prestations',
-                    'item': base + '/autres-prestations',
+                    'item': base + '/prestations/',
                 },
                 {'@type': 'ListItem', 'position': 3, 'name': title, 'item': page_url_abs},
             ],
@@ -2147,6 +2209,7 @@ def _build_prestation_seo_bundle(
         'prestation_price_eur': str(price),
         'prestation_price_label': html.escape((item.get('price_label') or 'Forfait').strip()),
         'prestation_price_note': html.escape((item.get('price_note') or '').strip()),
+        'prestation_duration': html.escape(_prestation_duration_label(item)),
     }
 
 
@@ -2437,7 +2500,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         build_vitrines_catalog_embed()
     if page_name == 'index':
         build_home_vitrines_teaser_embed()
-    if page_name == 'autres-prestations':
+    if page_name == 'prestations':
         build_prestations_catalog_embed()
 
     # Charge la config de la page
@@ -2480,7 +2543,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
             str(vars_dict.get('page_description') or ''),
             paid_price,
         )
-    if page_name == 'autres-prestations':
+    if page_name == 'prestations':
         vars_dict['prestations_catalog_schema_jsonld'] = _build_prestations_catalog_schema_jsonld(
             str(vars_dict.get('page_url') or ''),
             str(vars_dict.get('page_title') or ''),
@@ -2761,14 +2824,7 @@ def main():
     api_src = BASE_DIR / 'api'
     api_dst = OUTPUT_DIR / 'api'
     if api_src.exists():
-        # Copie récursive (fichiers + sous-dossiers), utile pour vendor/ (PHPMailer)
-        if api_dst.exists():
-            try:
-                shutil.rmtree(api_dst)
-            except Exception:
-                pass
-        shutil.copytree(api_src, api_dst, dirs_exist_ok=True)
-        print(f"[OK] api/ copie dans {api_dst}")
+        sync_api_to_dist(api_src, api_dst)
 
     router_src = BASE_DIR / 'scripts' / 'router.php'
     if router_src.is_file():
@@ -2803,7 +2859,7 @@ def main():
     pages = [
         'index',
         'vitrines',
-        'autres-prestations',
+        'prestations',
         'processus',
         'metz',
         'portfolio',

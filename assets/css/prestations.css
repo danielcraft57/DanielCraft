@@ -1,5 +1,5 @@
 /* Catalogue & fiches prestations */
-.page-autres-prestations .prestations-intro-secondary {
+.page-prestations-catalog .prestations-intro-secondary {
   margin-top: 0;
   opacity: 0.92;
 }
@@ -35,8 +35,8 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
-  margin: 2.5rem 0 0.75rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  margin: 2rem 0 0.75rem;
   color: var(--primary-dark, #0f3550);
 }
 
@@ -51,18 +51,48 @@
 }
 
 .prestations-featured {
-  margin-bottom: 2.5rem;
-  padding: 1.75rem 1.25rem 0.5rem;
+  margin-bottom: 1.75rem;
+  padding: 1.25rem 1rem 0.25rem;
   border-radius: 20px;
   background: linear-gradient(160deg, #f0f9fd 0%, #fff 55%);
   border: 1px solid rgba(77, 169, 214, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-prestations-catalog .prestations-featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    rgba(77, 169, 214, 0.15),
+    rgba(77, 169, 214, 0.65),
+    rgba(47, 158, 106, 0.45),
+    rgba(77, 169, 214, 0.15)
+  );
+  background-size: 240% 100%;
+  animation: prestations-featured-border 7s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes prestations-featured-border {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 240% 50%; }
 }
 
 .prestations-featured-lead {
   max-width: 40rem;
-  margin: -0.25rem 0 1.5rem;
+  margin: -0.15rem 0 1rem;
   color: var(--text-muted, #5a6b7a);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.92rem;
 }
 
 .prestations-grid--featured {
@@ -80,6 +110,34 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.22s ease;
+}
+
+.page-prestations-catalog .prestation-card {
+  opacity: 1;
+  transform: none;
+}
+
+.page-prestations-catalog .prestations-featured::before {
+  display: none;
+}
+
+.page-prestations-catalog .prestation-card.is-tilt-active {
+  transition: transform 0.08s ease-out, box-shadow 0.22s ease;
+  box-shadow:
+    0 22px 48px rgba(15, 53, 80, 0.14),
+    0 0 0 1px rgba(77, 169, 214, 0.2);
+  z-index: 2;
+}
+
+.page-prestations-catalog .prestation-card.is-search-match {
+  box-shadow:
+    0 14px 36px rgba(77, 169, 214, 0.16),
+    0 0 0 2px rgba(77, 169, 214, 0.22);
 }
 
 .prestation-card--featured {
@@ -109,10 +167,46 @@
   background: var(--metal-blue-50, #e8f6fc);
 }
 
+.prestation-card-visual--icon[data-prestation-cat="maintenance"] {
+  background: linear-gradient(145deg, #edf7f0 0%, #c5e6d0 100%);
+}
+
+.prestation-card-visual--icon[data-prestation-cat="eco"] {
+  background: linear-gradient(145deg, #ecf9f1 0%, #b8e6c8 55%, #d4f0e4 100%);
+}
+
 .prestation-card-visual--icon {
   display: grid;
   place-items: center;
   background: linear-gradient(145deg, #e8f6fc 0%, #d4eef9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-prestations-catalog .prestation-card-visual--icon::after {
+  content: '';
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 58%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+}
+
+.page-prestations-catalog .prestation-card:hover .prestation-card-visual--icon::after,
+.page-prestations-catalog .prestation-card.is-tilt-active .prestation-card-visual--icon::after {
+  transform: translateX(120%);
+}
+
+.page-prestations-catalog .prestation-card:hover .prestation-card-visual--icon i,
+.page-prestations-catalog .prestation-card.is-tilt-active .prestation-card-visual--icon i {
+  transform: scale(1.08) translateY(-3px);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .prestation-card-visual--icon[data-prestation-cat="identite"] {
@@ -139,6 +233,7 @@
   font-size: clamp(2.5rem, 8vw, 3.5rem);
   color: var(--primary-dark, #0f3550);
   opacity: 0.88;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .prestation-card-visual--hero {

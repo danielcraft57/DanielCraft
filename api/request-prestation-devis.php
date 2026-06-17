@@ -86,7 +86,12 @@ if ($totalEur <= 0) {
 
 $lines = [];
 $mainProductId = facturio_product_id_from_catalog($item);
-$lines[] = facturio_line_from_price_ht($title, (float) $basePrice, 20.0, $mainProductId);
+$lines[] = facturio_line_from_price_ht(
+    facturio_prestation_line_label($item),
+    (float) $basePrice,
+    20.0,
+    $mainProductId
+);
 
 $addonsCatalog = is_array($item['addons'] ?? null) ? $item['addons'] : [];
 $addonsById = [];
@@ -108,7 +113,7 @@ foreach ($addonIds as $aid) {
     }
     $addonProductId = facturio_product_id_from_catalog($addon);
     $lines[] = facturio_line_from_price_ht(
-        $title . ' — ' . $addonTitle,
+        facturio_prestation_line_label($item, $addonTitle),
         (float) $addonPrice,
         20.0,
         $addonProductId

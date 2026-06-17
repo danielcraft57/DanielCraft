@@ -14,6 +14,12 @@ declare(strict_types=1);
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/');
 $root = __DIR__;
 
+// Redirection SEO : ancienne URL catalogue
+if (in_array($uri, ['/autres-prestations', '/autres-prestations/', '/autres-prestations.html'], true)) {
+    header('Location: /prestations/', true, 301);
+    exit;
+}
+
 /** Types MIME courants pour les assets statiques */
 function dc_static_mime(string $ext): string
 {

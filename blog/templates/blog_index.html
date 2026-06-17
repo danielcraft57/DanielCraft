@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="{{ASSETS}}/css/main.css">
     <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css">
     <link rel="stylesheet" href="{{ASSETS}}/css/blog.css">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog-search-hero.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -51,31 +52,76 @@
 {{NAV_HTML}}
 
     <main id="main-content" class="blog-page-section" itemscope itemtype="https://schema.org/Blog">
-        <div class="container blog-page">
-            <header class="blog-header">
-                <h1 class="section-title" itemprop="name">Articles et tutoriels</h1>
-                <p class="section-description" itemprop="description">{{META_DESCRIPTION}}</p>
-            </header>
+        <section class="blog-search-hero blog-search-hero--wow" aria-label="Recherche dans le blog">
+            <div class="blog-search-bg" aria-hidden="true">
+                <svg class="blog-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bsh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ede9fe"/>
+                            <stop offset="42%" stop-color="#f5f3ff"/>
+                            <stop offset="100%" stop-color="#fff7ed"/>
+                        </linearGradient>
+                        <radialGradient id="bsh-orb-a" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#818cf8" stop-opacity="0.5"/>
+                            <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+                        </radialGradient>
+                        <radialGradient id="bsh-orb-b" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <rect width="1440" height="420" fill="url(#bsh-grad)"/>
+                    <circle class="blog-search-node blog-search-node--1" cx="180" cy="110" r="130" fill="url(#bsh-orb-a)"/>
+                    <circle class="blog-search-node blog-search-node--2" cx="1240" cy="90" r="150" fill="url(#bsh-orb-b)"/>
+                    <circle class="blog-search-node blog-search-node--3" cx="760" cy="300" r="110" fill="url(#bsh-orb-a)" opacity="0.65"/>
+                    <g stroke="#6366f1" stroke-width="1.5" fill="none" opacity="0.22">
+                        <line class="blog-search-line" x1="320" y1="80" x2="520" y2="160"/>
+                        <line class="blog-search-line blog-search-line--2" x1="920" y1="120" x2="1120" y2="200"/>
+                        <line class="blog-search-line" x1="600" y1="240" x2="840" y2="300"/>
+                    </g>
+                    <text class="blog-search-bracket" x="1080" y="320" font-family="JetBrains Mono, monospace" font-size="48" fill="#6366f1" opacity="0.35">&lt;/&gt;</text>
+                    <text class="blog-search-bracket blog-search-bracket--2" x="260" y="280" font-family="JetBrains Mono, monospace" font-size="36" fill="#d97706" opacity="0.3">{ }</text>
+                    <path class="blog-search-wave" d="M0 350 C280 300 480 380 720 340 S1160 290 1440 330 L1440 420 L0 420 Z" fill="#c7d2fe" opacity="0.28"/>
+                </svg>
+            </div>
 
-            <section class="blog-search-hero" aria-label="Recherche dans le blog">
+            <div class="container blog-search-inner">
+                <h1 class="blog-search-title" itemprop="name">Articles et tutoriels</h1>
+                <p class="blog-search-lead" itemprop="description">{{META_DESCRIPTION}}</p>
+
                 <form class="blog-search-form" role="search" aria-label="Recherche d'articles">
-                    <div class="blog-search-input-wrapper">
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                    <label class="visually-hidden" for="blogSearchInput">Rechercher un article</label>
+                    <div class="blog-search-input-wrapper" id="blogSearchWrapper">
+                        <i class="fas fa-search blog-search-icon" aria-hidden="true"></i>
                         <input
                             type="search"
                             id="blogSearchInput"
                             class="blog-search-input"
                             name="q"
                             autocomplete="off"
-                            placeholder="Recherche rapide dans tout le blog (ex. DevOps, SEO local, UX, Docker…)"
+                            enterkeyhint="search"
+                            placeholder="Rechercher un sujet (DevOps, SEO, UX, Docker…)"
                         />
-                        <button type="button" id="blogSearchClear" class="blog-search-clear" aria-label="Effacer la recherche">
+                        <button type="button" id="blogSearchClear" class="blog-search-clear" aria-label="Effacer la recherche" hidden>
                             <i class="fas fa-times" aria-hidden="true"></i>
                         </button>
+                        <span class="blog-search-kbd" aria-hidden="true">/</span>
                     </div>
                 </form>
-            </section>
 
+                <div class="blog-search-chips" role="group" aria-label="Suggestions de recherche">
+                    <button type="button" class="blog-search-chip" data-blog-search-query="devops"><i class="fas fa-gears" aria-hidden="true"></i> DevOps</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="seo"><i class="fas fa-chart-line" aria-hidden="true"></i> SEO</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="ux"><i class="fas fa-palette" aria-hidden="true"></i> UX</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="docker"><i class="fab fa-docker" aria-hidden="true"></i> Docker</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="cybersécurité"><i class="fas fa-shield-halved" aria-hidden="true"></i> Cybersécurité</button>
+                </div>
+
+                <p class="blog-search-results-info" id="blogSearchResultsInfo" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <div class="container blog-page">
             {{RECOMMENDATIONS_INDEX}}
 
             {{SERIES_FEATURED}}
@@ -83,7 +129,6 @@
             <section class="blog-all-articles" aria-label="Tous les articles">
                 <div class="blog-all-header">
                     <h2 class="blog-section-title">Tous les articles</h2>
-                    <p class="blog-search-results-info" id="blogSearchResultsInfo" aria-live="polite"></p>
                 </div>
                 <div class="articles-grid" itemprop="blogPost" id="blogArticlesGrid">
                     {{ARTICLES_GRID}}
@@ -97,6 +142,7 @@
 {{ARTICLES_JSON}}
     </script>
     <script src="{{ASSETS}}/js/blog-search.js" defer></script>
+    <script src="{{ASSETS}}/js/blog-wow.js" defer></script>
     <script src="{{ASSETS}}/js/blog-index.js" defer></script>
 
 {{MODALS_HTML}}

@@ -58,12 +58,20 @@ SERVICE_SLUG_TO_SKU: dict[str, str] = {
     "maint_depannage_2h": "DEPANNAGE-2H",
     "maint_accompagnement_h": "ACCOMP-H",
     "maint_support_prio_h": "SUPPORT-H",
+    "pack_vitrine_eco": "SITE-VITRINE-ECO",
+    "eco_audit_site": "ECO-AUDIT-SITE",
+    "eco_medias_optimize": "ECO-MEDIAS-OPTIMIZE",
+    "eco_perf_fix": "ECO-PERF-FIX",
+    "eco_page_rse": "ECO-PAGE-RSE",
+    "eco_monitor_mensuel": "ECO-MONITOR-MENSUEL",
+    "eco_formation_2h": "ECO-FORMATION-2H",
 }
 
 ADDON_ID_TO_SKU: dict[str, str] = {
     "page_extra": "PAGE-SUPP",
     "form_advanced": "FORM-AVANCE",
     "maint_ia": "IA-MAINTENANCE-MENSUEL",
+    "images_extra": "ECO-IMAGES-EXTRA",
 }
 
 

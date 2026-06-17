@@ -4,7 +4,7 @@
         <nav class="prestation-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
             <a href="/">Accueil</a>
             <span aria-hidden="true">/</span>
-            <a href="/autres-prestations">Prestations</a>
+            <a href="/prestations/">Prestations</a>
             <span aria-hidden="true">/</span>
             <span>{{prestation_title}}</span>
         </nav>
@@ -80,13 +80,13 @@
                         <span class="prestation-devis-line-label">{{prestation_title}}</span>
                         <span class="prestation-devis-line-price" data-prestation-base-price="{{prestation_price_eur}}">{{prestation_price_eur}} €</span>
                     </div>
-                    <p class="prestation-devis-note">{{prestation_price_label}}{% if prestation_price_note %} — {{prestation_price_note}}{% endif %}</p>
+                    <p class="prestation-devis-note">{{prestation_price_label}}{% if prestation_price_note %} — {{prestation_price_note}}{% endif %}{% if prestation_duration %} · {{prestation_duration}}{% endif %}</p>
                     <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
                     <div class="prestation-devis-total-row">
-                        <span>Total indicatif</span>
+                        <span>Total HT</span>
                         <strong class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
                     </div>
-                    <p class="prestation-devis-legal">Montant indicatif HT. Devis définitif après échange, envoyé par e-mail.</p>
+                    <p class="prestation-devis-legal">Tarif de base HT. Devis PDF envoyé par e-mail, ajustable selon vos options.</p>
                 </div>
 
                 <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisOpenModal"
@@ -108,7 +108,7 @@
 <section class="prestation-detail-cta section">
     <div class="container text-center">
         <p class="section-description">Une autre prestation vous intéresse ?</p>
-        <a href="/autres-prestations" class="btn btn-outline btn-large">
+        <a href="/prestations/" class="btn btn-outline btn-large">
             <span>Voir tout le catalogue</span>
             <i class="fas fa-th-large" aria-hidden="true"></i>
         </a>

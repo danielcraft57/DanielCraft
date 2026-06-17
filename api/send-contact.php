@@ -198,7 +198,7 @@ if ($serviceLabelUser === '') {
 }
 $safeServiceLabelUser = esc($serviceLabelUser);
 $budgetMarketingLine = $budget !== ''
-    ? 'Budget envisagé : ' . $budget . ' € (repère indicatif, ajustable selon vos priorités).'
+    ? 'Budget envisagé : ' . $budget . ' € HT.'
     : 'Budget : à définir ensemble selon vos objectifs et vos priorités.';
 $safeBudgetMarketingLine = esc($budgetMarketingLine);
 

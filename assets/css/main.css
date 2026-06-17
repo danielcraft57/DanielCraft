@@ -1276,13 +1276,7 @@ section {
   border: 1px solid var(--gray-200);
 }
 
-.service-price .price-label,
-.service-price .price-amount {
-  display: none;
-}
-
-.service-price::before {
-  content: "Budget indicatif";
+.service-price .price-label {
   display: block;
   font-size: 0.875rem;
   color: var(--gray-600);
@@ -1290,12 +1284,39 @@ section {
   margin-bottom: var(--space-1);
 }
 
-.service-price::after {
-  content: "Repere flexible, ajuste selon objectifs et priorites.";
+.service-price .price-amount {
   display: block;
-  font-size: 0.98rem;
-  font-weight: 700;
+  font-size: 1.35rem;
+  font-weight: 800;
   color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.service-price .price-ht {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.service-price .price-duration {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+
+.service-price .price-tier {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary-dark);
+  background: rgba(16, 185, 129, 0.12);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+  margin-bottom: var(--space-2);
 }
 
 .price-label {
@@ -1404,13 +1425,7 @@ section {
   margin-bottom: var(--space-4);
 }
 
-.tarif-price .price-label,
-.tarif-price .price-amount {
-  display: none;
-}
-
-.tarif-price::before {
-  content: "Budget indicatif";
+.tarif-price .price-label {
   display: block;
   font-size: 0.875rem;
   color: var(--gray-600);
@@ -1418,19 +1433,18 @@ section {
   margin-bottom: var(--space-1);
 }
 
-.tarif-price::after {
-  content: "Enveloppe a ajuster selon vos priorites.";
-  display: block;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-}
-
 .tarif-price .price-amount {
   display: block;
   font-size: 2.25rem;
   font-weight: 800;
   color: var(--primary-color);
+  line-height: 1.1;
+}
+
+.tarif-price .price-ht {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gray-600);
 }
 
 .tarif-price .price-label {
@@ -4877,8 +4891,8 @@ body > section:first-of-type:not(.hero) {
 }
 
 /* Page Autres prestations */
-.page-autres-prestations {
-  padding-top: var(--space-16);
+.page-prestations-catalog {
+  padding-top: var(--space-6);
   padding-bottom: var(--space-16);
 }
 

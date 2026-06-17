@@ -149,7 +149,7 @@ if (-not (Test-Path $placeholderPath)) {
 Write-ColorOutput "[1/4] Verification des fichiers dans $DIST_DIR/..." "Yellow"
 $filesToDeploy = @(
     "$DIST_DIR/index.html",
-    "$DIST_DIR/autres-prestations.html",
+    "$DIST_DIR/prestations/index.html",
     "$DIST_DIR/processus.html",
     "$DIST_DIR/metz.html",
     "$DIST_DIR/portfolio.html",
@@ -273,7 +273,6 @@ try {
     # Transfert fichier par fichier avec scp depuis dist/
     $htmlFiles = @(
         "index.html",
-        "autres-prestations.html",
         "processus.html",
         "metz.html",
         "portfolio.html",

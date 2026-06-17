@@ -143,7 +143,7 @@ function devis_notify_fallback(
         'Client : ' . $customerName,
         'E-mail : ' . $customerEmail,
         'Prestation : ' . $prestationTitle,
-        'Total indicatif : ' . $totalHt . ' € HT (' . $ttc . ' € TTC)',
+        'Total HT : ' . $totalHt . ' € HT (' . $ttc . ' € TTC)',
         '',
         'Lignes :',
         ...$lineText,
@@ -155,7 +155,7 @@ function devis_notify_fallback(
         . '<ul><li><strong>Client :</strong> ' . htmlspecialchars($customerName, ENT_QUOTES, 'UTF-8') . '</li>'
         . '<li><strong>E-mail :</strong> ' . htmlspecialchars($customerEmail, ENT_QUOTES, 'UTF-8') . '</li>'
         . '<li><strong>Prestation :</strong> ' . htmlspecialchars($prestationTitle, ENT_QUOTES, 'UTF-8') . '</li>'
-        . '<li><strong>Total indicatif :</strong> ' . $totalHt . ' € HT (' . $ttc . ' € TTC)</li></ul>'
+        . '<li><strong>Total HT :</strong> ' . $totalHt . ' € HT (' . $ttc . ' € TTC)</li></ul>'
         . '<pre style="font-family:sans-serif;white-space:pre-wrap">' . htmlspecialchars(implode("\n", $lineText), ENT_QUOTES, 'UTF-8') . '</pre>';
 
     if ($internalNote !== '') {
@@ -168,7 +168,7 @@ function devis_notify_fallback(
         'Bonjour ' . $customerName . ',',
         '',
         'Merci pour votre demande concernant : ' . $prestationTitle . '.',
-        'Montant indicatif : ' . $totalHt . ' € HT (' . $ttc . ' € TTC).',
+        'Montant HT : ' . $totalHt . ' € HT (' . $ttc . ' € TTC).',
         '',
         'Votre devis PDF vous sera envoyé sous 48 h ouvrées à cette adresse.',
         'Une question ? Répondez à cet e-mail ou écrivez à contact@danielcraft.fr.',
@@ -179,7 +179,7 @@ function devis_notify_fallback(
     $clientHtml = '<p>Bonjour ' . htmlspecialchars($customerName, ENT_QUOTES, 'UTF-8') . ',</p>'
         . '<p>Merci pour votre demande concernant <strong>'
         . htmlspecialchars($prestationTitle, ENT_QUOTES, 'UTF-8')
-        . '</strong>.</p><p>Montant indicatif : <strong>'
+        . '</strong>.</p><p>Montant HT : <strong>'
         . $totalHt . ' € HT</strong> (' . $ttc . ' € TTC).</p>'
         . '<p>Votre devis PDF vous sera envoyé <strong>sous 48 h ouvrées</strong> à cette adresse.</p>'
         . '<p>— Loïc, DanielCraft</p>';

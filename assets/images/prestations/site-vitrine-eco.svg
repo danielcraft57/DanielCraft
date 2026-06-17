@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8f8ef"/><stop offset="100%" stop-color="#fff"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4da9d6"/><stop offset="100%" stop-color="#2f9e6a"/></linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#bg)"/>
+  <rect x="250" y="95" width="300" height="190" rx="14" fill="#fff" stroke="#0f3550" stroke-width="3"/>
+  <rect x="270" y="115" width="260" height="120" rx="8" fill="url(#screen)" opacity="0.85"/>
+  <path d="M400 155c-12 22-4 45 0 55 4-10 12-33 0-55z" fill="#fff" opacity="0.9"/>
+  <rect x="330" y="250" width="140" height="10" rx="5" fill="#d8f0e4"/>
+  <text x="400" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f3550">Vitrine éco-conçue</text>
+</svg>

@@ -38,6 +38,8 @@
 
             <a href="/audit" class="nav-link{% if current_page == 'audit' %} active{% endif %}" role="menuitem">Audit</a>
 
+            <a href="/prestations/" class="nav-link{% if current_page == 'prestations' %} active{% endif %}" role="menuitem">Prestations</a>
+
             <a href="#contact" class="nav-link" data-section="contact" role="menuitem">Contact</a>
 
             {% else %}
@@ -47,6 +49,8 @@
             <a href="/#offres" class="nav-link" role="menuitem">Nos offres</a>
 
             <a href="/audit" class="nav-link{% if current_page == 'audit' %} active{% endif %}" role="menuitem">Audit</a>
+
+            <a href="/prestations/" class="nav-link{% if current_page == 'prestations' %} active{% endif %}" role="menuitem">Prestations</a>
 
             <a href="/#contact" class="nav-link" role="menuitem">Contact</a>
 
@@ -77,8 +81,6 @@
                     </li>
 
                     <li><a href="{% if current_page == 'index' %}#vitrines{% else %}/#vitrines{% endif %}" class="nav-dropdown-link" role="menuitem">Exemples de sites</a></li>
-
-                    <li><a href="/autres-prestations" class="nav-dropdown-link{% if current_page == 'autres-prestations' %} active{% endif %}" role="menuitem">Catalogue prestations</a></li>
 
                     {% if blog_enabled %}
 

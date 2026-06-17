@@ -139,7 +139,7 @@ $baseUrl = "http://${ServerHost}:$Port/"
 Write-Host ""
 Write-Host "Dev local (PHP + URLs propres + API)" -ForegroundColor Green
 Write-Host "  URL         : $baseUrl"
-Write-Host "  Prestations : ${baseUrl}autres-prestations"
+Write-Host "  Prestations : ${baseUrl}prestations/"
 Write-Host "  API         : ${baseUrl}api/ (contact, devis Facturio…)"
 Write-Host "  Watch build : $(if ($NoWatch) { 'non' } else { 'oui' })"
 Write-Host "  Ctrl+C pour arrêter."

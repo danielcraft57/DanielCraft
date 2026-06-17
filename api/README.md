@@ -51,7 +51,8 @@ Le catalogue est copié vers `api/data/vitrines.json` à chaque `python build.py
 - Les prix catalogue sont **HT** ; la TVA 20 % est ajoutée dans Facturio via `taxRate: 0.2`.
 
 Sync catalogue → produits Facturio (écrit `facturio_sku` + `facturio_product_id` dans `src/data/prestations.json`).
-Payload complet : `description`, `livrables[]`, `techStack` (`languages`, `ai`), métadonnées visuelles.
+Payload : **description courte** (accroche + prix, ~220 car. max), **2–3 livrables** max avec **heures réalistes**, `techStack` (`languages`, `ai`), métadonnées visuelles.
+Les lignes de devis PHP utilisent `short_description` (200 car. max), pas le long texte marketing.
 
 ```bash
 python scripts/facturio_sync_prestations.py --dry-run --slug site-vitrine

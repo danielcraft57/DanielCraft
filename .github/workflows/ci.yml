@@ -57,7 +57,7 @@ jobs:
         run: |
           test -f dist/index.html
           test -f dist/audit.html
-          test -f dist/autres-prestations.html
+          test -f dist/prestations/index.html
           test -f dist/router.php
           test -f dist/api/send-contact.php
           test -f dist/data/audits.json

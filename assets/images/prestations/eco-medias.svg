@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e8f6fc"/><stop offset="100%" stop-color="#e8f8ef"/></linearGradient>
+    <linearGradient id="acc" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#2f9e6a"/><stop offset="100%" stop-color="#4da9d6"/></linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#bg)"/>
+  <rect x="220" y="120" width="200" height="140" rx="12" fill="#fff" stroke="#4da9d6" stroke-width="3"/>
+  <circle cx="290" cy="175" r="22" fill="#dff8f8"/>
+  <path d="M250 230l40-35 35 28 55-48" fill="none" stroke="url(#acc)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M480 160h120v100H480z" fill="#fff" stroke="#2f9e6a" stroke-width="3" rx="8"/>
+  <path d="M510 200l30 20 50-45" fill="none" stroke="#2f9e6a" stroke-width="5" stroke-linecap="round"/>
+  <text x="400" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f3550">Médias allégés</text>
+</svg>
