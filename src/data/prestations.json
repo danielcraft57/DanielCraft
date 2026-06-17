@@ -34,6 +34,13 @@
       "nav_label": "Entretien & support",
       "icon": "fa-shield-alt",
       "description": "Hébergement, sauvegardes et dépannage quand vous en avez besoin."
+    },
+    {
+      "id": "eco",
+      "title": "Web sobre & performant",
+      "nav_label": "Éco-conception",
+      "icon": "fa-leaf",
+      "description": "Sites plus légers, plus rapides et plus économes — bon pour la planète, pour Google et pour votre budget."
     }
   ],
   "items": [
@@ -50,7 +57,7 @@
       "description": "Je crée un site vitrine sur mesure : pages essentielles, textes lisibles, formulaire de contact et mise en ligne. Vous gardez la main sur vos contenus.",
       "price_eur": 490,
       "price_label": "Forfait",
-      "price_note": "Prix indicatif HT — devis personnalisé selon le nombre de pages",
+      "price_note": "Forfait TPE — jusqu'à 5 pages",
       "image": "/assets/images/prestations/site-vitrine.svg",
       "benefits": [
         "Une première impression professionnelle",
@@ -77,7 +84,7 @@
         {
           "id": "page_extra",
           "title": "Page supplémentaire",
-          "price_eur": 65,
+          "price_eur": 69,
           "description": "Une page en plus (ex. témoignages, galerie, tarifs détaillés).",
           "facturio_sku": "PAGE-SUPP",
           "facturio_product_id": 952
@@ -85,7 +92,7 @@
         {
           "id": "form_advanced",
           "title": "Formulaire enrichi",
-          "price_eur": 99,
+          "price_eur": 119,
           "description": "Champs sur mesure, pièces jointes ou envoi vers votre boîte mail / outil.",
           "facturio_sku": "FORM-AVANCE",
           "facturio_product_id": 953
@@ -99,7 +106,9 @@
       ],
       "promo": "Premier pas en ligne sans engagement lourd : un site clair vaut souvent plus qu'une page Facebook seule.",
       "facturio_sku": "SITE-VITRINE",
-      "facturio_product_id": 951
+      "facturio_product_id": 951,
+      "estimated_hours": 9,
+      "price_tier": "entry"
     },
     {
       "slug": "identite-harmonieuse",
@@ -142,7 +151,8 @@
       ],
       "promo": "Une image cohérente rassure avant même le premier rendez-vous.",
       "facturio_sku": "IDENTITE-MULTI",
-      "facturio_product_id": 954
+      "facturio_product_id": 954,
+      "estimated_hours": 16
     },
     {
       "slug": "visibilite-complete",
@@ -155,7 +165,7 @@
       "tagline": "Pack visibilité : recherche classique + assistants intelligents",
       "short_description": "Optimisation pour Google et pour que ChatGPT et les assistants puissent parler de vous correctement.",
       "description": "Audit de votre site, corrections concrètes, contenus structurés et FAQ adaptées pour améliorer votre présence sur Google et dans les réponses des assistants IA.",
-      "price_eur": 699,
+      "price_eur": 749,
       "price_label": "Forfait",
       "price_note": "Site existant recommandé",
       "image": "/assets/images/prestations/visibilite.svg",
@@ -180,7 +190,8 @@
       ],
       "promo": "Être trouvable aujourd'hui, c'est Google + les assistants que vos clients utilisent déjà.",
       "facturio_sku": "PACK-SEO-GOOGLE-CHATGPT",
-      "facturio_product_id": 955
+      "facturio_product_id": 955,
+      "estimated_hours": 12
     },
     {
       "slug": "referencement-google",
@@ -193,7 +204,7 @@
       "tagline": "Audit et corrections pour mieux apparaître dans les recherches",
       "short_description": "Je vérifie votre site, je corrige les points qui freinent Google et je vous explique quoi faire ensuite.",
       "description": "Un passage en revue de votre site : titres, descriptions, vitesse de chargement, structure des pages. Vous recevez une liste claire des actions réalisées et des priorités restantes.",
-      "price_eur": 290,
+      "price_eur": 329,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/google.svg",
       "benefits": [
@@ -216,7 +227,9 @@
       ],
       "promo": "Petit budget, impact mesurable : idéal si vous avez déjà un site mais peu de visites.",
       "facturio_sku": "SEO-BASIQUE",
-      "facturio_product_id": 956
+      "facturio_product_id": 956,
+      "estimated_hours": 5,
+      "price_note": "Audit léger + corrections prioritaires"
     },
     {
       "slug": "visible-assistants-ia",
@@ -252,7 +265,8 @@
       ],
       "promo": "Vos futurs clients posent déjà leurs questions à ChatGPT — autant y être bien présenté.",
       "facturio_sku": "SEO-CHATGPT",
-      "facturio_product_id": 957
+      "facturio_product_id": 957,
+      "estimated_hours": 8
     },
     {
       "slug": "repondeur-intelligent",
@@ -265,7 +279,7 @@
       "tagline": "Répond aux questions fréquentes, jour et nuit",
       "short_description": "Un assistant sur votre site qui guide vos visiteurs avec vos vraies informations (horaires, tarifs, prestations…).",
       "description": "J'installe et configure un assistant conversationnel alimenté par vos textes : moins d'appels répétitifs, plus de contacts qualifiés.",
-      "price_eur": 990,
+      "price_eur": 1190,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/assistant-site.svg",
       "benefits": [
@@ -289,7 +303,7 @@
         {
           "id": "maint_ia",
           "title": "Entretien mensuel de l'assistant",
-          "price_eur": 75,
+          "price_eur": 69,
           "description": "Mise à jour des réponses et ajout de nouvelles questions.",
           "facturio_sku": "IA-MAINTENANCE-MENSUEL",
           "facturio_product_id": 959
@@ -303,7 +317,9 @@
       ],
       "promo": "Comme un accueil téléphonique, mais sur votre site, 24 h/24.",
       "facturio_sku": "IA-FAQ-SITE",
-      "facturio_product_id": 958
+      "facturio_product_id": 958,
+      "estimated_hours": 18,
+      "price_note": "Assistant FAQ sur votre site"
     },
     {
       "slug": "aide-emails-clients",
@@ -316,7 +332,7 @@
       "tagline": "Des brouillons de réponses dans votre ton",
       "short_description": "Un assistant qui propose des réponses professionnelles à partir de vos échanges passés.",
       "description": "Je mets en place un outil qui vous aide à répondre plus vite aux demandes clients tout en gardant votre style et vos règles métier.",
-      "price_eur": 1200,
+      "price_eur": 1290,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/emails.svg",
       "benefits": [
@@ -339,7 +355,8 @@
       ],
       "promo": "Vous gardez le contrôle : l'outil propose, vous validez avant envoi.",
       "facturio_sku": "IA-SUPPORT-EMAIL",
-      "facturio_product_id": 960
+      "facturio_product_id": 960,
+      "estimated_hours": 20
     },
     {
       "slug": "entretien-mensuel",
@@ -352,7 +369,7 @@
       "tagline": "Mises à jour, sauvegardes et petites corrections",
       "short_description": "Je veille sur votre site : sécurité, sauvegardes et corrections mineures incluses.",
       "description": "Un abonnement mensuel pour dormir tranquille : votre site reste à jour et joignable, je traite les petits soucis avant qu'ils deviennent gros.",
-      "price_eur": 39,
+      "price_eur": 45,
       "price_label": "Mensuel",
       "price_note": "Par site — hors gros développements",
       "image": "/assets/images/prestations/maintenance.svg",
@@ -377,7 +394,10 @@
       ],
       "promo": "Moins cher qu'une panne ou un piratage à réparer en urgence.",
       "facturio_sku": "MAINT-MENSUEL",
-      "facturio_product_id": 961
+      "facturio_product_id": 961,
+      "estimated_hours": 1,
+      "estimated_hours_period": "month",
+      "price_tier": "entry"
     },
     {
       "slug": "ia-contenus",
@@ -388,7 +408,7 @@
       "icon": "fa-file-alt",
       "title": "Textes pour votre site",
       "short_description": "Articles et descriptions rédigés pour vous, adaptés à votre secteur.",
-      "price_eur": 650,
+      "price_eur": 590,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/contenus.svg",
       "tagline": "Des textes prêts à publier, dans votre ton",
@@ -422,7 +442,8 @@
       "seo_title": "Rédaction de textes pour site web — articles & pages",
       "seo_description": "Textes clairs pour votre site vitrine ou blog. Rédaction adaptée à votre métier, sans jargon. Devis par e-mail, Metz & Lorraine.",
       "facturio_sku": "IA-CONTENUS-WEB",
-      "facturio_product_id": 962
+      "facturio_product_id": 962,
+      "estimated_hours": 10
     },
     {
       "slug": "ia-redaction",
@@ -463,7 +484,8 @@
       "seo_title": "Assistant rédaction commerciale — e-mails & LinkedIn",
       "seo_description": "Gagnez du temps sur vos e-mails commerciaux et messages pro. Assistant configuré à votre image. Installation et accompagnement.",
       "facturio_sku": "IA-REDACTION-COMMERCIALE",
-      "facturio_product_id": 963
+      "facturio_product_id": 963,
+      "estimated_hours": 7
     },
     {
       "slug": "ia-analyse",
@@ -474,7 +496,7 @@
       "icon": "fa-chart-bar",
       "title": "Comprendre vos chiffres",
       "short_description": "Tableaux de bord et explications simples à partir de vos données.",
-      "price_eur": 1450,
+      "price_eur": 1490,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/analyse.svg",
       "tagline": "Vos chiffres expliqués simplement",
@@ -504,7 +526,8 @@
       "seo_title": "Tableaux de bord & analyse de données — PME & indépendants",
       "seo_description": "Comprenez vos chiffres avec des tableaux clairs et des explications accessibles. Pour commerces et indépendants en Lorraine.",
       "facturio_sku": "IA-ANALYSE-DONNEES",
-      "facturio_product_id": 964
+      "facturio_product_id": 964,
+      "estimated_hours": 22
     },
     {
       "slug": "ia-boutique",
@@ -515,7 +538,7 @@
       "icon": "fa-shopping-cart",
       "title": "Conseiller sur votre boutique",
       "short_description": "Un assistant qui guide vos acheteurs : produits, tailles, disponibilité.",
-      "price_eur": 1600,
+      "price_eur": 1690,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/boutique.svg",
       "tagline": "Un vendeur disponible sur votre boutique en ligne",
@@ -545,7 +568,8 @@
       "seo_title": "Assistant conversationnel e-commerce — conseil produits",
       "seo_description": "Assistant sur votre boutique en ligne : questions produits, recommandations, aide à la commande. Installation clé en main.",
       "facturio_sku": "IA-CHATBOT-ECOMMERCE",
-      "facturio_product_id": 965
+      "facturio_product_id": 965,
+      "estimated_hours": 24
     },
     {
       "slug": "ia-automatisation",
@@ -556,7 +580,7 @@
       "icon": "fa-tasks",
       "title": "Tâches répétitives automatisées",
       "short_description": "Classement d'e-mails, extraction d'infos, rapports réguliers sans copier-coller.",
-      "price_eur": 1200,
+      "price_eur": 1290,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/automatisation.svg",
       "tagline": "Fini le copier-coller entre vos outils",
@@ -586,7 +610,8 @@
       "seo_title": "Automatisation de tâches — gain de temps PME",
       "seo_description": "Automatisez e-mails, formulaires et rapports répétitifs. Moins de copier-coller, plus de temps pour vos clients.",
       "facturio_sku": "IA-AUTOMATISATION-TACHES",
-      "facturio_product_id": 966
+      "facturio_product_id": 966,
+      "estimated_hours": 20
     },
     {
       "slug": "ia-maint-mensuelle",
@@ -597,7 +622,7 @@
       "icon": "fa-wrench",
       "title": "Entretien mensuel assistant",
       "short_description": "Mise à jour des réponses et nouvelles connaissances chaque mois.",
-      "price_eur": 75,
+      "price_eur": 69,
       "price_label": "Mensuel",
       "image": "/assets/images/prestations/assistant-site.svg",
       "tagline": "Votre assistant reste à jour chaque mois",
@@ -627,7 +652,9 @@
       "seo_title": "Maintenance mensuelle assistant IA — mises à jour",
       "seo_description": "Abonnement entretien assistant : nouvelles réponses, tarifs à jour, optimisations. Pour sites et outils déjà en place.",
       "facturio_sku": "IA-MAINTENANCE-MENSUEL",
-      "facturio_product_id": 959
+      "facturio_product_id": 959,
+      "estimated_hours": 1,
+      "estimated_hours_period": "month"
     },
     {
       "slug": "ia-evolution",
@@ -638,7 +665,7 @@
       "icon": "fa-plus-circle",
       "title": "Nouvelle fonction pour votre assistant",
       "short_description": "Ajout d'une capacité (nouvelle source, nouvel outil connecté).",
-      "price_eur": 330,
+      "price_eur": 350,
       "price_label": "À partir de",
       "image": "/assets/images/prestations/assistant-site.svg",
       "tagline": "Une nouvelle capacité pour votre assistant existant",
@@ -668,7 +695,8 @@
       "seo_title": "Évolution assistant IA — nouvelle fonctionnalité",
       "seo_description": "Ajoutez une capacité à votre assistant existant : nouvel outil, source de données, prise de RDV. Devis sur mesure.",
       "facturio_sku": "IA-EVOLUTION-FEATURE",
-      "facturio_product_id": 967
+      "facturio_product_id": 967,
+      "estimated_hours": 5
     },
     {
       "slug": "ia-audit",
@@ -679,7 +707,7 @@
       "icon": "fa-search",
       "title": "Bilan de votre usage de l'IA",
       "short_description": "Où l'IA peut vraiment vous aider dans votre activité, concrètement.",
-      "price_eur": 400,
+      "price_eur": 390,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/analyse.svg",
       "tagline": "Où l'IA peut vraiment vous aider ?",
@@ -709,7 +737,8 @@
       "seo_title": "Audit usage IA pour entreprises — bilan & recommandations",
       "seo_description": "Audit IA en langage clair : où gagner du temps, quoi éviter. Rapport et plan d'action pour PME et indépendants.",
       "facturio_sku": "IA-AUDIT-USAGE",
-      "facturio_product_id": 968
+      "facturio_product_id": 968,
+      "estimated_hours": 6
     },
     {
       "slug": "conseil-projet",
@@ -720,7 +749,7 @@
       "icon": "fa-sitemap",
       "title": "Conseil avant un gros projet",
       "short_description": "Faisabilité, budget et étapes : un plan clair avant de vous lancer.",
-      "price_eur": 380,
+      "price_eur": 390,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/conseil.svg",
       "tagline": "Un plan clair avant de vous lancer",
@@ -750,7 +779,8 @@
       "seo_title": "Conseil projet web & digital — faisabilité & budget",
       "seo_description": "Étude de faisabilité et estimation pour votre projet web ou digital. Rapport clair, sans engagement sur la suite.",
       "facturio_sku": "CONSEIL-ARCHI",
-      "facturio_product_id": 969
+      "facturio_product_id": 969,
+      "estimated_hours": 6
     },
     {
       "slug": "connexion-crm",
@@ -761,7 +791,7 @@
       "icon": "fa-link",
       "title": "Relier votre site à votre logiciel",
       "short_description": "Contacts, devis ou commandes qui arrivent directement dans votre outil habituel.",
-      "price_eur": 290,
+      "price_eur": 349,
       "price_label": "À partir de",
       "image": "/assets/images/prestations/connexion.svg",
       "tagline": "Du site directement dans votre logiciel habituel",
@@ -791,7 +821,9 @@
       "seo_title": "Connexion site web & CRM — synchronisation contacts",
       "seo_description": "Reliez votre site à votre CRM ou logiciel métier. Formulaires, contacts et devis sans ressaisie manuelle.",
       "facturio_sku": "INTEG-CRM",
-      "facturio_product_id": 970
+      "facturio_product_id": 970,
+      "estimated_hours": 5,
+      "price_note": "Connecteur simple — devis si ERP complexe"
     },
     {
       "slug": "transfert-donnees",
@@ -802,7 +834,7 @@
       "icon": "fa-database",
       "title": "Transférer vos anciennes données",
       "short_description": "Passage d'un tableur ou d'un ancien site vers votre nouvel outil, sans perte.",
-      "price_eur": 330,
+      "price_eur": 390,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/transfert.svg",
       "tagline": "Vos anciennes données dans le nouvel outil",
@@ -832,7 +864,8 @@
       "seo_title": "Migration de données — transfert site & logiciels",
       "seo_description": "Transfert sécurisé de vos données (clients, produits, contenus) vers un nouvel outil ou site. Sans perte.",
       "facturio_sku": "MIGRATION-DONNEES",
-      "facturio_product_id": 971
+      "facturio_product_id": 971,
+      "estimated_hours": 6
     },
     {
       "slug": "liaison-outils",
@@ -843,7 +876,7 @@
       "icon": "fa-code-branch",
       "title": "Faire dialoguer deux outils",
       "short_description": "Synchronisation automatique entre vos applications (commandes, stocks, contacts…).",
-      "price_eur": 150,
+      "price_eur": 199,
       "price_label": "À partir de",
       "image": "/assets/images/prestations/connexion.svg",
       "tagline": "Vos applications qui se parlent enfin",
@@ -873,7 +906,9 @@
       "seo_title": "Intégration API & webhooks — synchronisation outils",
       "seo_description": "Faites dialoguer vos logiciels : commandes, stocks, contacts. Synchronisation automatique pour PME.",
       "facturio_sku": "INTEG-API",
-      "facturio_product_id": 972
+      "facturio_product_id": 972,
+      "estimated_hours": 3,
+      "price_note": "Première liaison — chaque flux supplémentaire en sus"
     },
     {
       "slug": "rapport-vitesse",
@@ -884,7 +919,7 @@
       "icon": "fa-tachometer-alt",
       "title": "Votre site est-il rapide ?",
       "short_description": "Mesure et rapport simple : ce qui ralentit et comment l'améliorer.",
-      "price_eur": 120,
+      "price_eur": 129,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/vitesse.svg",
       "tagline": "Votre site charge-t-il assez vite ?",
@@ -914,7 +949,9 @@
       "seo_title": "Audit vitesse site web — rapport performances",
       "seo_description": "Votre site est-il rapide ? Mesure et rapport clair avec recommandations. Pour commerces et sites vitrine.",
       "facturio_sku": "RAPPORT-PERF",
-      "facturio_product_id": 973
+      "facturio_product_id": 973,
+      "estimated_hours": 2,
+      "price_tier": "entry"
     },
     {
       "slug": "page-supplementaire",
@@ -925,7 +962,7 @@
       "icon": "fa-file",
       "title": "Une page en plus",
       "short_description": "Nouvelle page sur votre site vitrine, prête à publier.",
-      "price_eur": 65,
+      "price_eur": 69,
       "price_label": "Par page",
       "image": "/assets/images/prestations/page.svg",
       "tagline": "Une page de plus sur votre site, clé en main",
@@ -955,7 +992,9 @@
       "seo_title": "Ajout page site vitrine — création sur mesure",
       "seo_description": "Nouvelle page pour votre site vitrine : témoignages, tarifs, FAQ. 65 €/page, mise en ligne incluse.",
       "facturio_sku": "PAGE-SUPP",
-      "facturio_product_id": 952
+      "facturio_product_id": 952,
+      "estimated_hours": 1,
+      "price_tier": "entry"
     },
     {
       "slug": "formulaire-sur-mesure",
@@ -966,7 +1005,7 @@
       "icon": "fa-wpforms",
       "title": "Formulaire sur mesure",
       "short_description": "Demande de devis, réservation ou questionnaire adapté à votre activité.",
-      "price_eur": 99,
+      "price_eur": 119,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/formulaire.svg",
       "tagline": "Le bon formulaire pour votre activité",
@@ -996,7 +1035,8 @@
       "seo_title": "Formulaire web sur mesure — devis & contact",
       "seo_description": "Formulaire adapté à votre activité : devis, réservation, questionnaire. Validation et envoi par e-mail.",
       "facturio_sku": "FORM-AVANCE",
-      "facturio_product_id": 953
+      "facturio_product_id": 953,
+      "estimated_hours": 2
     },
     {
       "slug": "nouveau-look",
@@ -1007,7 +1047,7 @@
       "icon": "fa-palette",
       "title": "Nouveau look pour votre site",
       "short_description": "Couleurs, polices et mise en page rafraîchies sans tout reconstruire.",
-      "price_eur": 330,
+      "price_eur": 390,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/look.svg",
       "tagline": "Un site rafraîchi sans tout reconstruire",
@@ -1037,7 +1077,8 @@
       "seo_title": "Refonte visuelle site web — design & couleurs",
       "seo_description": "Rafraîchissez l'apparence de votre site : couleurs, polices, mise en page. Sans reconstruire tout le site.",
       "facturio_sku": "REFONTE-LEGERE",
-      "facturio_product_id": 974
+      "facturio_product_id": 974,
+      "estimated_hours": 6
     },
     {
       "slug": "maj-contenus",
@@ -1048,7 +1089,7 @@
       "icon": "fa-edit",
       "title": "Pack mise à jour de contenus",
       "short_description": "5 heures pour changer textes, images et pages sur votre site.",
-      "price_eur": 170,
+      "price_eur": 275,
       "price_label": "Pack",
       "image": "/assets/images/prestations/contenus.svg",
       "tagline": "5 heures pour mettre votre site à jour",
@@ -1078,7 +1119,8 @@
       "seo_title": "Mise à jour contenu site web — pack 5 heures",
       "seo_description": "Pack 5 h pour actualiser textes, images et pages de votre site. Simple et sans jargon technique.",
       "facturio_sku": "MAJ-CONTENU-5H",
-      "facturio_product_id": 975
+      "facturio_product_id": 975,
+      "estimated_hours": 5
     },
     {
       "slug": "hebergement-domaine",
@@ -1089,7 +1131,7 @@
       "icon": "fa-server",
       "title": "Hébergement & nom de domaine",
       "short_description": "Votre site en ligne toute l'année avec votre adresse www.",
-      "price_eur": 79,
+      "price_eur": 89,
       "price_label": "Annuel",
       "image": "/assets/images/prestations/hebergement.svg",
       "tagline": "Votre adresse www en ligne toute l'année",
@@ -1119,7 +1161,8 @@
       "seo_title": "Hébergement web & nom de domaine — forfait annuel",
       "seo_description": "Hébergement et nom de domaine pour votre site pro. 79 €/an, HTTPS inclus. Metz & France.",
       "facturio_sku": "HEBERG-DOMAIN",
-      "facturio_product_id": 976
+      "facturio_product_id": 976,
+      "estimated_hours": 1
     },
     {
       "slug": "sauvegardes-securite",
@@ -1130,7 +1173,7 @@
       "icon": "fa-save",
       "title": "Sauvegardes & sécurité",
       "short_description": "Copies régulières et réglages pour protéger votre site.",
-      "price_eur": 99,
+      "price_eur": 119,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/securite.svg",
       "tagline": "Votre site protégé et sauvegardé",
@@ -1160,7 +1203,8 @@
       "seo_title": "Sauvegarde & sécurité site web",
       "seo_description": "Sauvegardes automatiques et sécurisation de votre site. Protection et restauration en cas d'incident.",
       "facturio_sku": "BACKUP-SECU",
-      "facturio_product_id": 977
+      "facturio_product_id": 977,
+      "estimated_hours": 2
     },
     {
       "slug": "https-site",
@@ -1171,7 +1215,7 @@
       "icon": "fa-lock",
       "title": "Cadenas HTTPS sur votre site",
       "short_description": "Installation du certificat pour l'adresse sécurisée (https).",
-      "price_eur": 45,
+      "price_eur": 49,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/securite.svg",
       "tagline": "Le cadenas vert sur votre adresse web",
@@ -1201,7 +1245,9 @@
       "seo_title": "Certificat SSL HTTPS — installation site web",
       "seo_description": "Installation du cadenas HTTPS sur votre site. 45 € forfait, configuration complète.",
       "facturio_sku": "SSL-CONFIG",
-      "facturio_product_id": 946
+      "facturio_product_id": 946,
+      "estimated_hours": 1,
+      "price_tier": "entry"
     },
     {
       "slug": "support-mensuel",
@@ -1212,7 +1258,7 @@
       "icon": "fa-headset",
       "title": "Support par e-mail",
       "short_description": "Une ligne directe pour vos questions techniques chaque mois.",
-      "price_eur": 25,
+      "price_eur": 29,
       "price_label": "Mensuel",
       "image": "/assets/images/prestations/support.svg",
       "tagline": "Une aide par e-mail chaque mois",
@@ -1242,7 +1288,10 @@
       "seo_title": "Support technique site web — abonnement mensuel",
       "seo_description": "Assistance par e-mail pour votre site : questions, petites corrections. 25 €/mois, sans engagement long.",
       "facturio_sku": "SUPPORT-ABO",
-      "facturio_product_id": 947
+      "facturio_product_id": 947,
+      "estimated_hours": 0.5,
+      "estimated_hours_period": "month",
+      "price_tier": "entry"
     },
     {
       "slug": "depannage-2h",
@@ -1253,7 +1302,7 @@
       "icon": "fa-tools",
       "title": "Dépannage express (2 h)",
       "short_description": "Bug, page cassée ou petite évolution : intervention ciblée.",
-      "price_eur": 120,
+      "price_eur": 129,
       "price_label": "Forfait",
       "image": "/assets/images/prestations/depannage.svg",
       "tagline": "2 heures pour débloquer la situation",
@@ -1283,7 +1332,8 @@
       "seo_title": "Dépannage site web — intervention 2 heures",
       "seo_description": "Dépannage express site internet : bug, page cassée, correctif. Forfait 2 h, 120 €.",
       "facturio_sku": "DEPANNAGE-2H",
-      "facturio_product_id": 948
+      "facturio_product_id": 948,
+      "estimated_hours": 2
     },
     {
       "slug": "accompagnement-heure",
@@ -1294,7 +1344,7 @@
       "icon": "fa-user-cog",
       "title": "Accompagnement à l'heure",
       "short_description": "Conseil, aide pas à pas ou relecture de ce que vous faites.",
-      "price_eur": 60,
+      "price_eur": 59,
       "price_label": "À l'heure",
       "image": "/assets/images/prestations/support.svg",
       "tagline": "Conseil et aide pas à pas, à l'heure",
@@ -1324,7 +1374,8 @@
       "seo_title": "Accompagnement technique — conseil à l'heure",
       "seo_description": "Aide et conseil pour votre site, à l'heure. Débutants bienvenus, explications claires. 60 €/h.",
       "facturio_sku": "ACCOMP-H",
-      "facturio_product_id": 949
+      "facturio_product_id": 949,
+      "estimated_hours": 1
     },
     {
       "slug": "support-prioritaire",
@@ -1335,7 +1386,7 @@
       "icon": "fa-bolt",
       "title": "Support prioritaire",
       "short_description": "Réponse rapide quand vous êtes bloqué.",
-      "price_eur": 70,
+      "price_eur": 69,
       "price_label": "À l'heure",
       "image": "/assets/images/prestations/support.svg",
       "tagline": "Réponse rapide quand vous êtes bloqué",
@@ -1365,7 +1416,310 @@
       "seo_title": "Support prioritaire site web — intervention urgente",
       "seo_description": "Support technique prioritaire pour urgences web. Réponse rapide, 70 €/h. Metz & remote.",
       "facturio_sku": "SUPPORT-H",
-      "facturio_product_id": 950
+      "facturio_product_id": 950,
+      "estimated_hours": 1
+    },
+    {
+      "slug": "audit-eco-numerique",
+      "service_slug": "eco_audit_site",
+      "category": "eco",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-leaf",
+      "title": "Votre site pollue-t-il en silence ?",
+      "tagline": "Bilan clair : poids, vitesse, médias et gaspillages",
+      "short_description": "Mesure du poids de vos pages, scripts et médias. Rapport simple avec chiffres pour votre patron et actions prioritaires.",
+      "description": "J'analyse la sobriété numérique de votre site : poids des pages, images et vidéos, scripts tiers, autoplay. Vous recevez un rapport en français avec 3 chiffres clés (Mo transférés, temps de chargement mobile, potentiel d'allègement) et une feuille de route concrète.",
+      "price_eur": 149,
+      "price_label": "Forfait",
+      "price_note": "Bilan express (pas un audit RGESN complet)",
+      "image": "/assets/images/prestations/eco-audit.svg",
+      "benefits": [
+        "Argument clair pour votre direction (coût & image)",
+        "Repérage des médias et scripts superflus",
+        "Plan d'action sans jargon technique"
+      ],
+      "includes": [
+        "Test mobile + ordinateur",
+        "Inventaire médias lourds et vidéos en autoplay",
+        "Rapport PDF ou page web",
+        "Échange de 20 min pour expliquer"
+      ],
+      "faq": [
+        {
+          "q": "En quoi est-ce différent du rapport vitesse à 120 € ?",
+          "a": "Le rapport vitesse se concentre sur la performance. L'audit éco-numérique ajoute l'angle coût d'hébergement, sobriété des médias et argument RSE pour vos clients."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Audit éco-conception web — sobriété numérique",
+      "seo_description": "Audit éco-numérique de votre site : poids, scripts, médias. Rapport clair pour dirigeants et artisans en Lorraine.",
+      "examples": [
+        "Un commerce local découvre que ses photos produits pèsent 8 Mo : allègement possible sans changer l'apparence.",
+        "Vidéo d'accueil en lecture automatique identifiée : simple correction pour accélérer le site et rassurer les visiteurs."
+      ],
+      "promo": "149 € pour voir clair avant d'investir dans une refonte — souvent rentabilisé en hébergement et en contacts.",
+      "facturio_sku": "ECO-AUDIT-SITE",
+      "estimated_hours": 2.5,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "alleger-medias",
+      "service_slug": "eco_medias_optimize",
+      "category": "eco",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-image",
+      "title": "Images et vidéos allégées",
+      "tagline": "Même rendu visuel, pages beaucoup plus légères",
+      "short_description": "Conversion des images, compression et vidéos au clic — sans autoplay qui consomme inutilement.",
+      "description": "Je convertis vos images en formats modernes, les redimensionne et compresse. Les vidéos passent en lecture au clic plut qu'en autoplay. Idéal après l'audit éco ou si votre site rame sur mobile.",
+      "price_eur": 199,
+      "price_label": "Forfait",
+      "price_note": "Jusqu'à ~30 images ou équivalent",
+      "image": "/assets/images/prestations/eco-medias.svg",
+      "benefits": [
+        "Chargement nettement plus rapide",
+        "Moins de données pour vos visiteurs",
+        "Meilleure expérience sur 4G"
+      ],
+      "includes": [
+        "Jusqu'à ~30 images traitées",
+        "1 à 2 vidéos en lecture au clic",
+        "Tests avant / après",
+        "Mise en ligne"
+      ],
+      "faq": [
+        {
+          "q": "La qualité visuelle baisse-t-elle ?",
+          "a": "Non visiblement : j'optimise pour garder un rendu pro tout en réduisant le poids."
+        }
+      ],
+      "addons": [
+        {
+          "id": "images_extra",
+          "title": "Lot de 15 images supplémentaires",
+          "price_eur": 49,
+          "description": "Pour les galeries ou catalogues plus fournis.",
+          "facturio_sku": "ECO-IMAGES-EXTRA"
+        }
+      ],
+      "seo_title": "Optimisation images & vidéos web — allègement",
+      "seo_description": "Allégez les images et vidéos de votre site : formats modernes, compression, lecture au clic. Metz & France.",
+      "examples": [
+        "Galerie d'un artisan : 25 photos passées de 12 Mo à 800 Ko au total.",
+        "Bandeau vidéo remplacé par un poster léger + lecture au clic."
+      ],
+      "promo": "Le geste le plus visible après un audit éco — souvent des secondes gagnées dès la première page.",
+      "facturio_sku": "ECO-MEDIAS-OPTIMIZE",
+      "estimated_hours": 3.5
+    },
+    {
+      "slug": "site-allege",
+      "service_slug": "eco_perf_fix",
+      "category": "eco",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-feather-alt",
+      "title": "Rendre mon site plus rapide et plus sobre",
+      "tagline": "On enlève ce qui ralentit sans casser votre site",
+      "short_description": "Suppression du superflu, scripts inutiles et médias optimisés — suite concrète de l'audit éco.",
+      "description": "Suite logique de l'audit éco-numérique : je corrige les points qui alourdissent votre site (scripts tiers, polices, cache, vidéos, images). Mesure avant/après avec gain en secondes et en Mo transférés.",
+      "price_eur": 349,
+      "price_label": "À partir de",
+      "price_note": "Selon complexité — devis après audit",
+      "image": "/assets/images/prestations/eco-perf.svg",
+      "benefits": [
+        "Site plus fluide sur mobile",
+        "Moins de ressources serveur",
+        "Meilleur signal pour Google"
+      ],
+      "includes": [
+        "Corrections prioritaires du rapport",
+        "Optimisation chargement et cache",
+        "Mesure avant / après",
+        "Compte-rendu des gains"
+      ],
+      "faq": [
+        {
+          "q": "Faut-il avoir fait l'audit avant ?",
+          "a": "C'est recommandé mais pas obligatoire : je peux aussi partir d'un diagnostic rapide inclus dans le forfait."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Allègement site web — performance & sobriété",
+      "seo_description": "Corrections techniques pour un site plus rapide et plus sobre. Scripts, médias, cache. Devis selon complexité.",
+      "examples": [
+        "Suppression de 4 plugins inutiles : gain de 2,5 s au chargement.",
+        "Polices et icônes rationalisées : page d'accueil divisée par deux en poids."
+      ],
+      "promo": "À partir de 290 € — souvent couplé à la remise en forme Google.",
+      "facturio_sku": "ECO-PERF-FIX",
+      "estimated_hours": 6
+    },
+    {
+      "slug": "site-vitrine-eco",
+      "service_slug": "pack_vitrine_eco",
+      "category": "eco",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-seedling",
+      "title": "Site vitrine sobre et rapide",
+      "tagline": "Professionnel, léger, prêt pour Google et pour vos clients sensibles à l'environnement",
+      "short_description": "Un site vitrine éco-conçu dès la création : images optimisées, pas de vidéo en autoplay, code épuré.",
+      "description": "Même exigence qu'un site vitrine classique, avec une charte éco-conçue : médias sobres dès la création, code minimal, objectif de performance mobile, page d'engagement numérique incluse. Vous montrez une image pro sans gaspillage invisible.",
+      "price_eur": 490,
+      "price_label": "Forfait",
+      "price_note": "Forfait TPE — site sobre dès la création",
+      "image": "/assets/images/prestations/site-vitrine-eco.svg",
+      "benefits": [
+        "Différenciation RSE auprès de vos clients",
+        "Chargement rapide dès le lancement",
+        "Argument pour votre direction (coûts maîtrisés)"
+      ],
+      "includes": [
+        "Jusqu'à 5 pages (comme le pack vitrine)",
+        "Images optimisées à la livraison",
+        "Pas de vidéo en autoplay",
+        "Page « engagement numérique » incluse"
+      ],
+      "faq": [
+        {
+          "q": "C'est plus cher qu'un site vitrine classique ?",
+          "a": "Non : l'éco-conception est notre standard de livraison. Cette fiche met en avant la démarche pour ceux qui la recherchent explicitement."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Site vitrine éco-conçu — rapide & responsable",
+      "seo_description": "Création de site vitrine éco-conçu : léger, rapide, sans médias superflus. Metz & Lorraine.",
+      "examples": [
+        "Une association affiche sa page engagement numérique : les donateurs apprécient la cohérence.",
+        "Un commerce local se démarque : « notre site aussi est sobre »."
+      ],
+      "promo": "Vous ne payez pas plus cher — vous polluez moins, et Google le remarque.",
+      "facturio_sku": "SITE-VITRINE-ECO",
+      "estimated_hours": 9,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "page-engagement-numerique",
+      "service_slug": "eco_page_rse",
+      "category": "eco",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-hand-holding-heart",
+      "title": "Page engagement numérique responsable",
+      "tagline": "Montrez que votre site aussi est sérieux sur l'environnement",
+      "short_description": "Une page claire sur votre démarche web sobre — argument pour les clients qui fuient les marques qui polluent en silence.",
+      "description": "Je rédige et intègre une page sur votre engagement numérique : site léger, médias sobres, hébergement, bonnes pratiques. Un argument commercial fort pour les clients sensibles à l'image RSE.",
+      "price_eur": 89,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/eco-rse.svg",
+      "benefits": [
+        "Image de marque cohérente",
+        "Argument de vente différenciant",
+        "Contenu prêt à partager"
+      ],
+      "includes": [
+        "Rédaction avec vous",
+        "Mise en page alignée au site",
+        "Intégration au menu",
+        "1 aller-retour de corrections"
+      ],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Page RSE numérique — engagement web responsable",
+      "seo_description": "Page engagement numérique pour votre site : sobriété, médias, hébergement. Argument commercial RSE.",
+      "examples": [
+        "Un cabinet affiche ses choix techniques : les clients B2B sensibles à l'écologie sont rassurés.",
+        "Boutique locale : « nous ne lançons pas de vidéos dans le vide »."
+      ],
+      "promo": "85 € pour un argument que vos concurrents n'ont souvent pas.",
+      "facturio_sku": "ECO-PAGE-RSE",
+      "estimated_hours": 1.5,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "suivi-eco-mensuel",
+      "service_slug": "eco_monitor_mensuel",
+      "category": "eco",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-chart-line",
+      "title": "Veille performance & sobriété",
+      "tagline": "Chaque mois, on vérifie que votre site reste léger",
+      "short_description": "Contrôle mensuel du poids et de la vitesse — alerte si de nouveaux contenus alourdissent le site.",
+      "description": "Nouvelles images, plugins ou contenus peuvent regonfler votre site. Chaque mois, je contrôle poids et vitesse, vous alerte en cas de dégradation et corrige les petits écarts dans un quota annuel.",
+      "price_eur": 35,
+      "price_label": "Mensuel",
+      "price_note": "30 min de corrections mineures / an incluses",
+      "image": "/assets/images/prestations/eco-monitor.svg",
+      "benefits": [
+        "Site qui reste performant dans le temps",
+        "Alerte avant que ça dérape",
+        "Budget prévisible"
+      ],
+      "includes": [
+        "Rapport mensuel court",
+        "Contrôle poids et vitesse",
+        "30 min corrections mineures / an",
+        "Conseils si vous publiez vous-même"
+      ],
+      "faq": [
+        {
+          "q": "Peut-on le combiner avec la maintenance mensuelle ?",
+          "a": "Oui : pack « Sérénité + Sobriété » possible (maintenance + veille éco)."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Suivi sobriété site web — abonnement mensuel",
+      "seo_description": "Veille mensuelle performance et sobriété de votre site. Rapport, alertes, petites corrections.",
+      "examples": [
+        "Nouvelle galerie photos ajoutée par le client : alerte et compression au mois suivant.",
+        "Plugin marketing installé : détecté avant que le site ne rame en permanence."
+      ],
+      "promo": "29 €/mois — un site allégé une fois ne le reste pas tout seul.",
+      "facturio_sku": "ECO-MONITOR-MENSUEL",
+      "estimated_hours": 0.5,
+      "estimated_hours_period": "month",
+      "price_tier": "entry"
+    },
+    {
+      "slug": "atelier-eco-web",
+      "service_slug": "eco_formation_2h",
+      "category": "eco",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-chalkboard-teacher",
+      "title": "Atelier : publier sans alourdir le site",
+      "tagline": "Vos équipes ajoutent du contenu sans casser la performance",
+      "short_description": "Bonnes pratiques images, vidéos et PDF avant publication — pour ceux qui mettent à jour le site eux-mêmes.",
+      "description": "Visio de 2 heures pour votre équipe : comment préparer images et vidéos, éviter l'autoplay, choisir les bons formats. Checklist imprimable pour ne plus regonfler le site à chaque mise à jour.",
+      "price_eur": 129,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/eco-atelier.svg",
+      "benefits": [
+        "Moins de régressions après vos MAJ",
+        "Autonomie sans sacrifier la sobriété",
+        "Checklist réutilisable"
+      ],
+      "includes": [
+        "Visio 2 h (jusqu'à 4 personnes)",
+        "Checklist PDF",
+        "Exemples sur votre site",
+        "Enregistrement sur demande"
+      ],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Atelier éco-conception web — formation 2 h",
+      "seo_description": "Formation courte : publier sur le web sans alourdir le site. Images, vidéos, bonnes pratiques.",
+      "examples": [
+        "Secrétaire d'un cabinet : sait compresser une photo avant de la mettre en ligne.",
+        "Responsable com d'une asso : ne recharge plus de vidéos 50 Mo sur l'accueil."
+      ],
+      "promo": "120 € — souvent moins cher que 6 mois de corrections évitables.",
+      "facturio_sku": "ECO-FORMATION-2H",
+      "estimated_hours": 2
     }
   ]
 }

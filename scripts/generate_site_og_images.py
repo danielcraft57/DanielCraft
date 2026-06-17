@@ -73,7 +73,7 @@ STATIC_PAGES: list[dict] = [
         "badge": "Catalogue",
         "title": "Prestations web",
         "subtitle": "Site vitrine, Google, assistants intelligents, entretien",
-        "chips": ["Prix indicatifs", "Pages détaillées", "Devis simple"],
+        "chips": ["Tarifs HT", "Pages détaillées", "Devis simple"],
     },
     {
         "slug": "vitrines",

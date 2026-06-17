@@ -200,6 +200,25 @@ function facturio_product_id_from_catalog(array $entry): ?int
 }
 
 /**
+ * Libellé court pour une ligne de devis Facturio (pas le long texte catalogue).
+ */
+function facturio_prestation_line_label(array $item, string $addonTitle = ''): string
+{
+    $title = trim(preg_replace('/[\r\n]+/', ' ', (string) ($item['title'] ?? 'Prestation')));
+    if ($addonTitle !== '') {
+        $line = $title . ' — ' . trim(preg_replace('/[\r\n]+/', ' ', $addonTitle));
+
+        return mb_substr($line, 0, 160);
+    }
+    $short = trim(preg_replace('/[\r\n]+/', ' ', (string) ($item['short_description'] ?? '')));
+    if ($short !== '') {
+        return mb_substr($short, 0, 160);
+    }
+
+    return mb_substr($title, 0, 120);
+}
+
+/**
  * Ligne de devis/facture à partir d’un prix catalogue HT (prestations DanielCraft).
  *
  * @return array{description: string, quantity: float, unitPrice: float, taxRate: float, productId?: int}
@@ -211,7 +230,7 @@ function facturio_line_from_price_ht(
     ?int $productId = null
 ): array {
     $line = [
-        'description' => mb_substr(trim($description), 0, 500),
+        'description' => mb_substr(trim($description), 0, 200),
         'quantity' => 1,
         'unitPrice' => round(max(0.0, $priceEurHt), 2),
         'taxRate' => facturio_tax_rate_decimal($taxRatePercent),
@@ -704,7 +723,7 @@ function facturio_create_quote_devis(
         if (!is_array($line)) {
             continue;
         }
-        $desc = mb_substr(trim((string) ($line['description'] ?? '')), 0, 500);
+        $desc = mb_substr(trim((string) ($line['description'] ?? '')), 0, 200);
         if ($desc === '') {
             continue;
         }

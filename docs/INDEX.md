@@ -27,6 +27,7 @@ Index de toute la documentation du projet.
 - **[SEO_README.md](./SEO_README.md)** - Optimisation SEO et référencement
 - **[GOOGLE_SETUP.md](./GOOGLE_SETUP.md)** - Configuration Google Analytics et Search Console
 - **[PERFORMANCE.md](./PERFORMANCE.md)** - Optimisations de performance
+- **[ECO_CONCEPTION_PRESTATIONS.md](./ECO_CONCEPTION_PRESTATIONS.md)** - Positionnement éco-conception et nouvelles prestations proposées
 
 ## Configuration serveur
 

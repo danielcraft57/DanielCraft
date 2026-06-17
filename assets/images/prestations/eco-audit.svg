@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8f8ef"/><stop offset="100%" stop-color="#fff"/></linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#2f9e6a"/><stop offset="100%" stop-color="#0f3550"/></linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#sky)"/>
+  <circle cx="400" cy="175" r="78" fill="#fff" stroke="#2f9e6a" stroke-width="3"/>
+  <path d="M400 115c-22 38-8 78 0 95 8-17 22-57 0-95z" fill="url(#leaf)"/>
+  <path d="M365 185h70" stroke="#2f9e6a" stroke-width="4" stroke-linecap="round"/>
+  <rect x="180" y="285" width="440" height="10" rx="5" fill="#d8f0e4"/>
+  <rect x="260" y="310" width="280" height="8" rx="4" fill="#d8f0e4"/>
+  <text x="400" y="365" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f3550">Audit éco-numérique</text>
+</svg>

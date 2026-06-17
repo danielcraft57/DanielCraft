@@ -32,6 +32,23 @@ final class FacturioCommonTest extends TestCase
         self::assertSame(490.0, $line['unitPrice']);
         self::assertSame(0.2, $line['taxRate']);
         self::assertArrayNotHasKey('productId', $line);
+        self::assertLessThanOrEqual(200, mb_strlen($line['description']));
+    }
+
+    public function test_prestation_line_label_prefers_short_description(): void
+    {
+        $item = [
+            'title' => 'Votre site pollue-t-il en silence ?',
+            'short_description' => 'Mesure du poids de vos pages, scripts et médias.',
+        ];
+        self::assertSame(
+            'Mesure du poids de vos pages, scripts et médias.',
+            facturio_prestation_line_label($item)
+        );
+        self::assertStringContainsString(
+            'Option',
+            facturio_prestation_line_label($item, 'Option images')
+        );
     }
 
     public function test_line_with_facturio_product_id(): void

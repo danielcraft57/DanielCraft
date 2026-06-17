@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dff8f8"/><stop offset="100%" stop-color="#fff"/></linearGradient>
+    <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4da9d6"/><stop offset="100%" stop-color="#2f9e6a"/></linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#sky)"/>
+  <path d="M420 95l-55 95h45l-25 85 80-110h-48l48-70z" fill="url(#bolt)" opacity="0.95"/>
+  <rect x="160" y="290" width="480" height="14" rx="7" fill="#e8f4fa"/>
+  <rect x="160" y="290" width="320" height="14" rx="7" fill="url(#bolt)"/>
+  <text x="400" y="350" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f3550">Site allégé</text>
+</svg>

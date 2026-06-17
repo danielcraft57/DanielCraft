@@ -2,11 +2,15 @@
 // Utilise les donnees JSON embarquees dans #blog-articles-data
 
 (function () {
+  'use strict';
+
   const dataEl = document.getElementById('blog-articles-data');
   const input = document.getElementById('blogSearchInput');
   const clearBtn = document.getElementById('blogSearchClear');
+  const wrapper = document.getElementById('blogSearchWrapper');
   const grid = document.getElementById('blogArticlesGrid');
   const info = document.getElementById('blogSearchResultsInfo');
+  const chips = document.querySelectorAll('[data-blog-search-query]');
   const recommendationsSection = document.querySelector('.blog-recommendations-index');
   const seriesSection = document.querySelector('.blog-series-featured');
   const allSection = document.querySelector('.blog-all-articles');
@@ -23,9 +27,8 @@
 
   if (!Array.isArray(articles) || !articles.length) return;
 
-  // Map slug -> card DOM
   const cardsBySlug = {};
-  grid.querySelectorAll('.article-card').forEach(card => {
+  grid.querySelectorAll('.article-card').forEach((card) => {
     const href = card.getAttribute('href') || card.querySelector('a')?.getAttribute('href');
     const slugMatch = href && href.match(/([^/]+)\.html$|articles\/([^/]+)$/);
     let slug = null;
@@ -39,14 +42,32 @@
     }
   });
 
-  // Pre-normalisation pour recherche
-  const normalizedArticles = articles.map(a => {
+  const normalizedArticles = articles.map((a) => {
     const title = (a.title || '').toLowerCase();
     const excerpt = (a.excerpt || '').toLowerCase();
     const type = (a.type || '').toLowerCase();
     const tags = Array.isArray(a.tags) ? a.tags.join(' ').toLowerCase() : '';
     return { ...a, _norm: { title, excerpt, type, tags } };
   });
+
+  function normalizeQuery(q) {
+    return (q || '').toLowerCase().trim().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+  }
+
+  function syncChipActive() {
+    const normalized = normalizeQuery(input.value);
+    chips.forEach((btn) => {
+      const query = normalizeQuery(btn.getAttribute('data-blog-search-query') || '');
+      btn.classList.toggle('is-active', query !== '' && query === normalized);
+    });
+  }
+
+  function popResultsInfo() {
+    if (!info || !info.textContent) return;
+    info.classList.remove('is-results-pop');
+    void info.offsetWidth;
+    info.classList.add('is-results-pop');
+  }
 
   function reorderCardsBySlugs(slugs) {
     if (!Array.isArray(slugs) || !slugs.length) return;
@@ -94,31 +115,39 @@
   }
 
   function applySearch(query) {
-    const q = (query || '').trim().toLowerCase();
+    const q = (query || '').trim();
+    const normalized = normalizeQuery(q);
+    const tokens = normalized.split(/\s+/).filter(Boolean);
 
-    if (!q || q.length < 2) {
-      // Reset : tout afficher
-      Object.values(cardsBySlug).forEach(card => {
+    if (clearBtn) {
+      clearBtn.hidden = q.length === 0;
+    }
+    if (wrapper) {
+      wrapper.classList.toggle('is-typing', q.length > 0);
+    }
+
+    if (!normalized || normalized.length < 2) {
+      Object.values(cardsBySlug).forEach((card) => {
         card.style.display = '';
         card.classList.remove('blog-card-highlight');
       });
       if (info) info.textContent = '';
       if (recommendationsSection) recommendationsSection.style.display = '';
       if (seriesSection) seriesSection.style.display = '';
-      // Marge normale de la section "Tous les articles"
       if (allSection) {
         allSection.classList.remove('blog-all-articles--search-active');
       }
+      syncChipActive();
       return;
     }
 
-    const tokens = q.split(/\s+/).filter(Boolean);
-    const scored = normalizedArticles.map(a => ({
-      article: a,
-      score: computeScore(a, tokens),
-    })).filter(x => x.score > 0);
+    const scored = normalizedArticles
+      .map((a) => ({
+        article: a,
+        score: computeScore(a, tokens),
+      }))
+      .filter((x) => x.score > 0);
 
-    // Trier par score puis par date desc
     scored.sort((a, b) => {
       if (b.score !== a.score) return b.score - a.score;
       const da = (a.article.date || '').toString();
@@ -126,12 +155,11 @@
       return db.localeCompare(da);
     });
 
-    const keepSlugs = new Set(scored.map(x => x.article.slug));
+    const keepSlugs = new Set(scored.map((x) => x.article.slug));
 
     Object.entries(cardsBySlug).forEach(([slug, card]) => {
       if (keepSlugs.has(slug)) {
         card.style.display = '';
-        // petite animation d'apparition
         card.classList.add('blog-card-highlight');
       } else {
         card.style.display = 'none';
@@ -142,21 +170,22 @@
     if (info) {
       const count = scored.length;
       if (count === 0) {
-        info.textContent = `Aucun résultat pour « ${query} ». Essaie un autre mot-clé.`;
+        info.textContent = `Aucun résultat pour « ${q} ». Essaie un autre mot-clé.`;
       } else if (count === 1) {
-        info.textContent = `1 résultat pour « ${query} ».`;
+        info.textContent = `1 résultat pour « ${q} ».`;
       } else {
-        info.textContent = `${count} résultats pour « ${query} ».`;
+        info.textContent = `${count} résultats pour « ${q} ».`;
       }
+      popResultsInfo();
     }
 
     if (recommendationsSection) recommendationsSection.style.display = 'none';
     if (seriesSection) seriesSection.style.display = 'none';
-
-    // Compacter la section "Tous les articles" quand une recherche est active
     if (allSection) {
       allSection.classList.add('blog-all-articles--search-active');
     }
+
+    syncChipActive();
   }
 
   let debounceId = null;
@@ -174,11 +203,35 @@
     });
   }
 
-  // Focus automatique léger si hash #blog-search
+  chips.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const query = (btn.getAttribute('data-blog-search-query') || '').trim();
+      const isActive = btn.classList.contains('is-active');
+      input.value = isActive ? '' : query;
+      applySearch(input.value);
+      input.focus();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (
+      e.key === '/' &&
+      document.activeElement !== input &&
+      !/input|textarea|select/i.test((document.activeElement || {}).tagName || '')
+    ) {
+      e.preventDefault();
+      input.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === input) {
+      input.value = '';
+      applySearch('');
+      input.blur();
+    }
+  });
+
   if (window.location.hash === '#blog-search') {
     setTimeout(() => input.focus(), 300);
   }
 
   applyPersonalizationRanking();
 })();
-

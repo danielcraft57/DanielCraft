@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5f0ff"/><stop offset="100%" stop-color="#e8f8ef"/></linearGradient>
+    <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2f9e6a"/><stop offset="100%" stop-color="#4da9d6"/></linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="24" fill="url(#bg)"/>
+  <path d="M400 250c-55-38-95-72-95-115 0-38 28-62 62-62 24 0 40 14 52 32 12-18 28-32 52-32 34 0 62 24 62 62 0 43-40 77-95 115z" fill="url(#heart)"/>
+  <rect x="220" y="285" width="360" height="10" rx="5" fill="#d8f0e4"/>
+  <rect x="280" y="308" width="240" height="8" rx="4" fill="#d8f0e4"/>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f3550">Engagement numérique</text>
+</svg>

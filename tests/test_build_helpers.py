@@ -61,7 +61,7 @@ class TemplateConditionTests(unittest.TestCase):
         self.assertIn('href="#home"', out_index)
         self.assertNotIn('{%', out_index)
 
-        out_other = self.engine.process_conditions(tpl, {'current_page': 'autres-prestations'})
+        out_other = self.engine.process_conditions(tpl, {'current_page': 'prestations'})
         self.assertIn('href="/#home"', out_other)
         self.assertNotIn('{% else %}', out_other)
         self.assertNotIn('{% endif %}', out_other)

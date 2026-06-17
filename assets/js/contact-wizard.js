@@ -126,7 +126,7 @@
   const TIME_SLOTS = buildTimeSlots();
 
   /**
-   * Offres alignées sur /autres-prestations + forfaits page d’accueil.
+   * Offres alignées sur /prestations/ + forfaits page d’accueil.
    * slug → champ POST `service` ; budget optionnel (réf. forfait affichée côté mail).
    */
   /** Besoins exprimés en langage courant (étape 1). */
@@ -167,11 +167,14 @@
   const NEED_SERVICE_SLUGS = {
     site: [
       'pack_vitrine',
+      'pack_vitrine_eco',
       'pack_identite',
       'site_page_supp',
       'site_form_avance',
       'site_refonte_visuelle',
       'site_maj_contenu_5h',
+      'eco_medias_optimize',
+      'eco_page_rse',
       'besoin_a_preciser',
       'projet_sur_mesure'
     ],
@@ -180,6 +183,8 @@
       'seo_basique_290',
       'seo_chatgpt_490',
       'ia_contenu_web',
+      'eco_audit_site',
+      'eco_perf_fix',
       'besoin_a_preciser',
       'projet_sur_mesure'
     ],
@@ -204,10 +209,13 @@
       'maint_accompagnement_h',
       'maint_support_prio_h',
       'tech_perf_rapport',
+      'eco_audit_site',
+      'eco_monitor_mensuel',
+      'eco_perf_fix',
       'besoin_a_preciser',
       'projet_sur_mesure'
     ],
-    autre: ['besoin_a_preciser', 'projet_sur_mesure', 'tech_conseil_archi', 'maint_accompagnement_h']
+    autre: ['besoin_a_preciser', 'projet_sur_mesure', 'tech_conseil_archi', 'maint_accompagnement_h', 'eco_formation_2h']
   };
 
   /**
@@ -235,6 +243,13 @@
     { slug: 'tech_migration_donnees', title: 'Transférer vos anciennes données', hint: '330€', icon: 'fa-database', tags: ['backend', 'desktop'] },
     { slug: 'tech_api_webhook', title: 'Faire dialoguer deux outils', hint: 'À partir de 150€', icon: 'fa-code-branch', tags: ['backend', 'mobile', 'web', 'tools'] },
     { slug: 'tech_perf_rapport', title: 'Votre site est-il rapide ?', hint: '120€', icon: 'fa-tachometer-alt', tags: ['web'] },
+    { slug: 'eco_audit_site', title: 'Audit éco-numérique du site', hint: '149€ · sobriété & coûts', icon: 'fa-leaf', tags: ['web'] },
+    { slug: 'eco_medias_optimize', title: 'Images et vidéos allégées', hint: '190€', icon: 'fa-image', tags: ['web'] },
+    { slug: 'eco_perf_fix', title: 'Site plus rapide et sobre', hint: 'À partir de 290€', icon: 'fa-feather-alt', tags: ['web'] },
+    { slug: 'pack_vitrine_eco', title: 'Site vitrine éco-conçu', hint: '490€ · léger & responsable', icon: 'fa-seedling', budget: '490', tags: ['web'] },
+    { slug: 'eco_page_rse', title: 'Page engagement numérique', hint: '85€', icon: 'fa-hand-holding-heart', tags: ['web'] },
+    { slug: 'eco_monitor_mensuel', title: 'Veille sobriété mensuelle', hint: '29€ / mois', icon: 'fa-chart-line', tags: ['web'] },
+    { slug: 'eco_formation_2h', title: 'Atelier publier sans alourdir', hint: '120€ · 2 h', icon: 'fa-chalkboard-teacher', tags: ['web', 'learning'] },
     { slug: 'site_page_supp', title: 'Une page en plus', hint: '65€ / page', icon: 'fa-file', tags: ['web'] },
     { slug: 'site_form_avance', title: 'Formulaire sur mesure', hint: '99€', icon: 'fa-wpforms', tags: ['web'] },
     { slug: 'site_refonte_visuelle', title: 'Nouveau look pour le site', hint: '330€', icon: 'fa-palette', tags: ['web'] },
