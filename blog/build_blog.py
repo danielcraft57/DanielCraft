@@ -28,7 +28,27 @@ except ImportError as e:
     sys.exit(1)
 
 # Configuration
-SITE_BASE = os.environ.get('SITE_BASE', 'https://example.com')
+def _is_local_site_base(url: str) -> bool:
+    raw = (url or '').strip().lower()
+    if not raw:
+        return True
+    return (
+        'localhost' in raw
+        or '127.0.0.1' in raw
+        or '0.0.0.0' in raw
+        or 'example.com' in raw
+    )
+
+
+def _resolve_public_site_base(default_base: str) -> str:
+    site_base = (os.environ.get('SITE_BASE') or default_base or '').strip()
+    deploy_base = (os.environ.get('DEPLOY_SITE_BASE') or '').strip()
+    if deploy_base and _is_local_site_base(site_base):
+        return deploy_base.rstrip('/')
+    return site_base.rstrip('/')
+
+
+SITE_BASE = _resolve_public_site_base(os.environ.get('SITE_BASE', 'https://example.com'))
 OG_IMAGE_BLOG = f'{SITE_BASE}/assets/images/og/blog-1200x630.jpg'
 OG_IMAGE_HOME = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
 BLOG_DIR = Path(__file__).parent
