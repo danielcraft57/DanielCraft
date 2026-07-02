@@ -387,30 +387,63 @@ class DanielCraftApp {
     if (firstBtn && firstPanel) {
       firstBtn.setAttribute('aria-expanded', 'true');
       firstPanel.hidden = false;
+      firstPanel.setAttribute('aria-hidden', 'false');
       firstBtn.closest('.faq-item').classList.add('is-open');
     }
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const panel = document.getElementById(btn.getAttribute('aria-controls'));
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-        items.forEach(it => {
-          const b = it.querySelector('[data-faq-toggle]');
-          const p = b && document.getElementById(b.getAttribute('aria-controls'));
-          if (b) b.setAttribute('aria-expanded', 'false');
-          if (p) p.hidden = true;
-          it.classList.remove('is-open');
-        });
-
-        if (!isOpen) {
-          btn.setAttribute('aria-expanded', 'true');
-          if (panel) panel.hidden = false;
-          item.classList.add('is-open');
+        this._toggleFaqItem(btn, items);
+      });
+      btn.addEventListener('keydown', (e) => {
+        const idx = Array.from(buttons).indexOf(btn);
+        if (e.key === 'ArrowDown' && idx < buttons.length - 1) {
+          e.preventDefault();
+          buttons[idx + 1].focus();
+        } else if (e.key === 'ArrowUp' && idx > 0) {
+          e.preventDefault();
+          buttons[idx - 1].focus();
+        } else if (e.key === 'Escape') {
+          items.forEach(it => {
+            const b = it.querySelector('[data-faq-toggle]');
+            const p = b && document.getElementById(b.getAttribute('aria-controls'));
+            if (b) b.setAttribute('aria-expanded', 'false');
+            if (p) {
+              p.hidden = true;
+              p.setAttribute('aria-hidden', 'true');
+            }
+            it.classList.remove('is-open');
+          });
+          btn.focus();
         }
       });
     });
+  }
+
+  _toggleFaqItem(btn, items) {
+    const item = btn.closest('.faq-item');
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    items.forEach(it => {
+      const b = it.querySelector('[data-faq-toggle]');
+      const p = b && document.getElementById(b.getAttribute('aria-controls'));
+      if (b) b.setAttribute('aria-expanded', 'false');
+      if (p) {
+        p.hidden = true;
+        p.setAttribute('aria-hidden', 'true');
+      }
+      it.classList.remove('is-open');
+    });
+
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      if (panel) {
+        panel.hidden = false;
+        panel.setAttribute('aria-hidden', 'false');
+      }
+      item.classList.add('is-open');
+    }
   }
 
   // Utility functions

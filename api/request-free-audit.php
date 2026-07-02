@@ -147,7 +147,7 @@ $honeypot = trim(strip_tags($honeypot));
 if ($honeypot !== '') {
     echo json_encode([
         'success' => true,
-        'message' => 'Merci ! Votre audit arrive dans votre boîte mail sous 48 h.',
+        'message' => 'Merci ! Votre audit arrive dans votre boîte mail sous 24 h ouvrées.',
     ], JSON_UNESCAPED_UNICODE);
     exit;
 }
@@ -213,12 +213,13 @@ if (!$dryRun) {
 
     $userSubject = 'Votre audit gratuit est en cours — DanielCraft';
     $userText = "Bonjour,\n\nNous avons bien reçu votre demande d'audit pour :\n{$website}\n\n"
-        . "L'analyse est en cours. Vous recevrez le rapport détaillé à cette adresse sous 48 h ouvrées.\n\n"
+        . "Rapport en route — vous recevrez 3 priorités concrètes pour votre site sous 48 h ouvrées.\n\n"
         . $siteBase . '/analyse?website=' . rawurlencode($website) . "&full=1\n\n"
         . "DanielCraft\n";
     $userHtml = '<p>Bonjour,</p><p>Nous avons bien reçu votre demande d’audit pour :</p>'
         . '<p><a href="' . $safeSite . '"><strong>' . $safeSite . '</strong></a></p>'
-        . '<p>L’analyse est en cours. Vous recevrez le rapport à <strong>' . $safeEmail . '</strong> sous <strong>48 h ouvrées</strong>.</p>'
+        . '<p><strong>Rapport en route</strong> — vous recevrez <strong>3 priorités</strong> pour votre site à <strong>'
+        . $safeEmail . '</strong> sous <strong>48 h ouvrées</strong>.</p>'
         . '<p><a href="' . audit_esc($siteBase) . '/analyse?website=' . rawurlencode($website) . '&amp;full=1">Voir un aperçu en ligne</a></p>'
         . '<p>À bientôt,<br>DanielCraft</p>';
     audit_send_simple_mail($email, $userSubject, $userText, $userHtml);
@@ -229,7 +230,7 @@ $response = [
     'queued' => (bool) $plResult['queued'],
     'message' => $plResult['skipped_analysis']
         ? 'Merci ! Votre rapport PDF est en cours d’envoi par email.'
-        : 'Merci ! Votre audit est lancé. Le rapport PDF vous sera envoyé par email sous 48 h.',
+        : 'Rapport en route — 3 priorités pour votre site sous 48 h ouvrées.',
 ];
 if ($plResult['task_id'] !== '') {
     $response['task_id'] = $plResult['task_id'];

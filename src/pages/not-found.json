@@ -1,0 +1,9 @@
+{
+  "page_title": "Page introuvable — DanielCraft",
+  "page_description": "Cette page n'existe pas. Lancez un audit gratuit ou recevez votre devis site vitrine en 2 minutes.",
+  "page_url": "/404",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "output_subpath": "404.html",
+  "schema_type": "error",
+  "page_scripts": ["main.js", "prestation-devis-modal.js"]
+}

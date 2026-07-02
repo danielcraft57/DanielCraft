@@ -1,6 +1,6 @@
 /**
  * Sections catalogue vitrines (accueil #vitrines + page /vitrines/) :
- * filtres secteur + défilement auto des captures au survol (ascenseurs masqués en CSS).
+ * filtres secteur + défilement auto des captures au survol.
  */
 (function () {
   document.querySelectorAll('[data-vitrines-root]').forEach((root) => {
@@ -8,9 +8,13 @@
   });
 
   function initVitrinesCatalogRoot(root) {
-    const filterWrap = root.querySelector('.vitrines-filter');
     const grid = root.querySelector('#vitrinesGrid');
-    if (!filterWrap || !grid) return;
+    if (!grid) return;
+
+    const featuredWrap = root.querySelector('.vitrines-filter--featured');
+    const extendedWrap = root.querySelector('.vitrines-filter--extended');
+    const select = root.querySelector('#vitrineFilterSelect');
+    const moreBtn = root.querySelector('#vitrineFilterMore');
 
     function applyFilter(cat) {
       grid.querySelectorAll('.vitrine-card[data-vitrine-cat]').forEach((card) => {
@@ -18,17 +22,40 @@
         const show = cat === 'all' || c === cat;
         card.hidden = !show;
       });
+      if (select && select.value !== cat) select.value = cat;
+      root.querySelectorAll('.vitrines-filter-btn').forEach((b) => {
+        b.classList.toggle('active', (b.getAttribute('data-vitrine-filter') || 'all') === cat);
+      });
     }
 
-    filterWrap.addEventListener('click', (e) => {
-      const btn = e.target.closest('.vitrines-filter-btn');
-      if (!btn) return;
+    function onFilterClick(btn) {
       const cat = btn.getAttribute('data-vitrine-filter') || 'all';
-      filterWrap.querySelectorAll('.vitrines-filter-btn').forEach((b) => {
-        b.classList.toggle('active', b === btn);
-      });
       applyFilter(cat);
+    }
+
+    root.querySelectorAll('.vitrines-filter-btn').forEach((btn) => {
+      btn.addEventListener('click', () => onFilterClick(btn));
     });
+
+    if (select) {
+      select.addEventListener('change', () => applyFilter(select.value || 'all'));
+    }
+
+    if (moreBtn && extendedWrap) {
+      moreBtn.addEventListener('click', () => {
+        const open = extendedWrap.hidden;
+        extendedWrap.hidden = !open;
+        moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        moreBtn.textContent = open ? 'Masquer les secteurs' : 'Voir plus de secteurs';
+      });
+    }
+
+    if (featuredWrap) {
+      featuredWrap.addEventListener('click', (e) => {
+        const btn = e.target.closest('.vitrines-filter-btn');
+        if (btn) onFilterClick(btn);
+      });
+    }
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

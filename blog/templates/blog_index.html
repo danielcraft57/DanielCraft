@@ -10,14 +10,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{PAGE_URL}}">
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN3CKFP14"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4VN3CKFP14');
-    </script>
+    {{ANALYTICS_HTML}}
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{PAGE_URL}}">
@@ -25,9 +18,9 @@
     <meta property="og:description" content="{{META_DESCRIPTION}}">
     <meta property="og:image" content="{{OG_IMAGE}}">
     <meta property="og:image:secure_url" content="{{OG_IMAGE}}">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="{{OG_IMAGE_TYPE}}">
+    <meta property="og:image:width" content="{{OG_IMAGE_WIDTH}}">
+    <meta property="og:image:height" content="{{OG_IMAGE_HEIGHT}}">
     <meta property="og:site_name" content="DanielCraft">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
@@ -52,6 +45,11 @@
 {{NAV_HTML}}
 
     <main id="main-content" class="blog-page-section" itemscope itemtype="https://schema.org/Blog">
+        <aside class="blog-client-banner" aria-label="Guides artisans et commerces">
+            <div class="container blog-client-banner__inner">
+                <p><strong>Artisan ou commerce en Lorraine&nbsp;?</strong> Nos guides SEO local, visibilité Google et site vitrine sont faits pour vous — <a href="/">voir l'offre DanielCraft</a>. Contenu technique&nbsp;: <a href="/pro">espace pro</a>.</p>
+            </div>
+        </aside>
         <section class="blog-search-hero blog-search-hero--wow" aria-label="Recherche dans le blog">
             <div class="blog-search-bg" aria-hidden="true">
                 <svg class="blog-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +98,7 @@
                             name="q"
                             autocomplete="off"
                             enterkeyhint="search"
-                            placeholder="Rechercher un sujet (DevOps, SEO, UX, Docker…)"
+                            placeholder="Rechercher un sujet (SEO local, Google, visibilité, site vitrine…)"
                         />
                         <button type="button" id="blogSearchClear" class="blog-search-clear" aria-label="Effacer la recherche" hidden>
                             <i class="fas fa-times" aria-hidden="true"></i>
@@ -110,11 +108,15 @@
                 </form>
 
                 <div class="blog-search-chips" role="group" aria-label="Suggestions de recherche">
-                    <button type="button" class="blog-search-chip" data-blog-search-query="devops"><i class="fas fa-gears" aria-hidden="true"></i> DevOps</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="seo"><i class="fas fa-chart-line" aria-hidden="true"></i> SEO</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="ux"><i class="fas fa-palette" aria-hidden="true"></i> UX</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="docker"><i class="fab fa-docker" aria-hidden="true"></i> Docker</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="cybersécurité"><i class="fas fa-shield-halved" aria-hidden="true"></i> Cybersécurité</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="seo local"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> SEO local</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="google"><i class="fas fa-search" aria-hidden="true"></i> Google</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="visibilité"><i class="fas fa-chart-line" aria-hidden="true"></i> Visibilité</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="site vitrine"><i class="fas fa-globe" aria-hidden="true"></i> Site vitrine</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="artisan"><i class="fas fa-store" aria-hidden="true"></i> Artisans</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="metz"><i class="fas fa-map-pin" aria-hidden="true"></i> Metz</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="geo"><i class="fas fa-robot" aria-hidden="true"></i> GEO / IA</button>
+                    <button type="button" class="blog-search-chip blog-search-chip--pro" data-blog-search-query="docker"><i class="fas fa-code" aria-hidden="true"></i> Pro / technique</button>
+                    <a href="/pro" class="blog-search-chip blog-search-chip--link"><i class="fas fa-laptop-code" aria-hidden="true"></i> Espace pro</a>
                 </div>
 
                 <p class="blog-search-results-info" id="blogSearchResultsInfo" aria-live="polite"></p>

@@ -33,6 +33,10 @@
   let currentCtx = null;
   let loadingTimer = null;
   let savedForm = null;
+  let lastFocusBeforeOpen = null;
+
+  const FOCUSABLE =
+    'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
   const TVA = 0.2;
 
@@ -220,6 +224,7 @@
     });
 
     showStep('form');
+    lastFocusBeforeOpen = document.activeElement;
     dialog.showModal();
     document.body.classList.add('prestation-devis-dialog-open');
     window.setTimeout(function () {
@@ -229,12 +234,35 @@
     }, 80);
   }
 
+  function trapFocus(ev) {
+    if (!dialog.open || ev.key !== 'Tab') return;
+    const nodes = dialog.querySelectorAll(FOCUSABLE);
+    if (!nodes.length) return;
+    const list = Array.from(nodes).filter(function (el) {
+      return el.offsetParent !== null || el === document.activeElement;
+    });
+    if (!list.length) return;
+    const first = list[0];
+    const last = list[list.length - 1];
+    if (ev.shiftKey && document.activeElement === first) {
+      ev.preventDefault();
+      last.focus();
+    } else if (!ev.shiftKey && document.activeElement === last) {
+      ev.preventDefault();
+      first.focus();
+    }
+  }
+
   function closeModal() {
     clearLoadingAnimation();
     if (dialog.open) dialog.close();
     document.body.classList.remove('prestation-devis-dialog-open');
     showStep('form');
     currentCtx = null;
+    if (lastFocusBeforeOpen && typeof lastFocusBeforeOpen.focus === 'function') {
+      lastFocusBeforeOpen.focus();
+    }
+    lastFocusBeforeOpen = null;
   }
 
   function setSubmitting(busy) {
@@ -290,8 +318,8 @@
           successText.textContent =
             data.message ||
             (data.fallback
-              ? 'Merci ! Votre demande est enregistrée. Vous recevrez votre devis sous 48 h.'
-              : 'Merci ! Votre devis a été envoyé. Consultez votre boîte mail (et les spams si besoin).');
+              ? 'C’est envoyé — consultez votre boîte mail. Vous recevrez votre devis sous 24 h ouvrées.'
+              : 'C’est envoyé — consultez votre boîte mail (vérifiez les spams si besoin).');
         }
         if (successEmail) {
           if (mail) {
@@ -356,6 +384,8 @@
     ev.preventDefault();
     closeModal();
   });
+
+  dialog.addEventListener('keydown', trapFocus);
 
   dialog.addEventListener('click', function (ev) {
     if (ev.target === dialog) closeModal();

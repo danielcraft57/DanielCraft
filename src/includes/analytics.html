@@ -1,0 +1,13 @@
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN3CKFP14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4VN3CKFP14');
+</script>
+
+{% if webful_enabled %}
+<!-- Webful Analytics (RGPD, sans cookies, hébergement France) -->
+<script async src="{{webful_base_url}}/tracking/webful-track.js" data-cfasync="false" data-api-key="{{webful_api_key}}" data-site-id="{{webful_site_id}}" data-base-url="{{webful_base_url}}" data-endpoint="/api/track.php"></script>
+{% endif %}

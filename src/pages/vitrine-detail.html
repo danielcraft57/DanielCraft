@@ -20,14 +20,48 @@
                 <i class="fas fa-external-link-alt" aria-hidden="true"></i>
             </a>
             <button type="button" class="btn btn-primary btn-large" data-vitrine-open="order" id="vitrineHeroBtnOrder">
-                <span>Commander</span>
+                <span>Acheter le modèle — {{vitrine_price_eur}} € HT</span>
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             </button>
-            <button type="button" class="btn btn-secondary btn-large" data-vitrine-open="quote" id="vitrineHeroBtnQuote">
-                <span>Demander un devis</span>
-                <i class="fas fa-comments" aria-hidden="true"></i>
+            <a class="btn btn-secondary btn-large" href="/prestations/site-vitrine/">
+                <span>Site sur mesure — 490 € HT</span>
+                <i class="fas fa-magic" aria-hidden="true"></i>
+            </a>
+            <a class="vitrine-detail-actions__subtle" href="/contact">Installation, domaine &amp; hébergement →</a>
+        </div>
+    </div>
+</section>
+
+<section class="vitrine-pricing-compare" aria-labelledby="vitrine-compare-title">
+    <div class="container">
+        <h2 id="vitrine-compare-title" class="section-title">Modèle ou sur mesure&nbsp;?</h2>
+        <p class="section-description">Deux façons d'avancer — le modèle est immédiat, le sur mesure inclut l'installation.</p>
+        <div class="vitrine-compare-table-wrap scroll-reveal">
+            <table class="vitrine-compare-table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Modèle (42&nbsp;€ HT)</th>
+                        <th scope="col">Sur mesure (490&nbsp;€ HT)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Contenu</th><td>Textes d'exemple</td><td>Vos textes, votre logo</td></tr>
+                    <tr><th scope="row">Mise en ligne</th><td>Fichiers à héberger</td><td>Installation incluse</td></tr>
+                    <tr><th scope="row">Personnalisation</th><td>Basique</td><td>Adapté à votre métier</td></tr>
+                    <tr><th scope="row">Délai</th><td>Immédiat (fichiers)</td><td>5–8 jours ouvrés</td></tr>
+                    <tr><th scope="row">Support</th><td>—</td><td>14 jours inclus</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="vitrine-compare-actions">
+            <button type="button" class="btn btn-primary btn-large" data-vitrine-open="order">
+                <span>Acheter le modèle — {{vitrine_price_eur}} € HT</span>
             </button>
-            <a class="vitrine-detail-actions__subtle" href="/#contact">Installation, domaine &amp; hébergement →</a>
+            <a class="btn btn-secondary btn-large" href="/prestations/site-vitrine/">
+                <span>Site sur mesure — 490 € HT</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </section>
@@ -92,16 +126,16 @@
             <div class="vitrine-purchase-inner">
                 <h2 id="vitrine-buy-title" class="vitrine-purchase-title">Ce modèle</h2>
                 <p class="vitrine-purchase-price"><span class="vitrine-price-value">{{vitrine_price_eur}}</span><span class="vitrine-price-currency">€</span> <span class="vitrine-price-vat">HT</span></p>
-                <p class="vitrine-purchase-hint">Paiement en ligne uniquement lorsque le lien Stripe est activé. Sinon, envoyez votre demande&nbsp;: je vous réponds avec la facture ou le lien sécurisé.</p>
+                <p class="vitrine-purchase-hint">Confirmation par e-mail — je vous réponds avec la facture ou le lien de paiement sécurisé.</p>
                 <div class="vitrine-purchase-cta-stack">
                     <button type="button" class="btn btn-primary btn-large vitrine-purchase-cta-main" data-vitrine-open="order" id="vitrineCardBtnOrder">
-                        <span>Commander</span>
+                        <span>Acheter le modèle — {{vitrine_price_eur}} € HT</span>
                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="btn btn-secondary btn-large" data-vitrine-open="quote" id="vitrineCardBtnQuote">
-                        <span>Demander un devis</span>
-                        <i class="fas fa-file-signature" aria-hidden="true"></i>
-                    </button>
+                    <a class="btn btn-secondary btn-large" href="/prestations/site-vitrine/">
+                        <span>Site sur mesure — 490 € HT</span>
+                        <i class="fas fa-magic" aria-hidden="true"></i>
+                    </a>
                     {% if vitrine_has_stripe %}
                     <a class="vitrine-stripe-subtle" href="{{vitrine_stripe_url}}" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-cc-stripe" aria-hidden="true"></i> Payer tout de suite avec Stripe (lien sécurisé)
@@ -112,13 +146,11 @@
                         <span class="vitrine-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
                     </button>
                     <p class="vitrine-stripe-feedback" hidden role="status" aria-live="polite"></p>
-                    {% else %}
-                    <p class="vitrine-stripe-placeholder">Paiement en ligne&nbsp;: configurez Stripe dans le <code>.env</code> du serveur, ou utilisez «&nbsp;Commander&nbsp;».</p>
                     {% endif %}
                 </div>
                 <hr class="vitrine-purchase-sep">
                 <h3 class="vitrine-purchase-sub">Mise en ligne clé en main</h3>
-                <p class="vitrine-prose">Hébergement, nom de domaine, TLS, redirections et branchement des formulaires&nbsp;: <a href="/#contact" class="vitrine-prose-link">contact accueil</a> ou devis depuis ce bloc.</p>
+                <p class="vitrine-prose">Hébergement, nom de domaine, TLS et formulaires&nbsp;: <a href="/contact" class="vitrine-prose-link">demandez un devis installation</a>.</p>
                 <a class="btn btn-outline btn-large" href="mailto:contact@danielcraft.fr?subject={{vitrine_mailto_subject}}">
                     <span>Email direct</span>
                     <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -138,7 +170,7 @@
         </button>
         <header class="vitrine-cta-dialog__head">
             <span class="section-badge vitrine-cta-dialog__badge">Pré-commande</span>
-            <h2 id="vitrineDialogOrderTitle" class="vitrine-cta-dialog__title">Commander ce modèle</h2>
+            <h2 id="vitrineDialogOrderTitle" class="vitrine-cta-dialog__title">Réserver ce modèle</h2>
             <p class="vitrine-cta-dialog__subtitle">Étapes guidées — aucun paiement sur cette page. Vous recevez une confirmation et la suite (facture ou lien Stripe) par email.</p>
         </header>
         <div class="vitrine-cta-dialog__body">
@@ -237,88 +269,6 @@
                         <div class="contact-step-actions contact-step-actions--split">
                             <button type="button" class="btn btn-secondary btn-large" data-vitrine-order-back="4"><i class="fas fa-arrow-left" aria-hidden="true"></i> Modifier</button>
                             <button type="submit" class="btn btn-primary btn-large vitrine-cta-submit" id="vitrineOrderSubmit">
-                                <span class="btn-text">Envoyer la demande</span>
-                                <span class="btn-loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi…</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</dialog>
-
-<dialog class="vitrine-cta-dialog" id="vitrineDialogQuote" aria-labelledby="vitrineDialogQuoteTitle">
-    <div class="vitrine-cta-dialog__shell">
-        <button type="button" class="vitrine-cta-dialog__close" data-vitrine-close="quote" aria-label="Fermer la fenêtre">
-            <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
-        <header class="vitrine-cta-dialog__head">
-            <span class="section-badge vitrine-cta-dialog__badge">Devis &amp; questions</span>
-            <h2 id="vitrineDialogQuoteTitle" class="vitrine-cta-dialog__title">Parlons de votre projet</h2>
-            <p class="vitrine-cta-dialog__subtitle">Parcours rapide inspiré du formulaire d’accueil&nbsp;: type de projet, besoin, coordonnées. Contexte&nbsp;: le modèle <strong>{{vitrine_title}}</strong>.</p>
-        </header>
-        <div class="vitrine-cta-dialog__body">
-            <p class="vitrine-modal-feedback" id="vitrineQuoteFeedback" role="status" aria-live="polite" hidden></p>
-            <ol class="contact-progress-min vitrine-cta-progress" id="vitrineQuoteProgress" aria-label="Progression">
-                <li class="contact-progress-min__item" data-vitrine-quote-bar="1"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 3</span></li>
-                <li class="contact-progress-min__item" data-vitrine-quote-bar="2"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 3</span></li>
-                <li class="contact-progress-min__item" data-vitrine-quote-bar="3"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 3</span></li>
-            </ol>
-            <form id="vitrineQuoteForm" class="vitrine-cta-form" novalidate>
-                <input type="hidden" name="service" value="vitrine_catalog_devis">
-                <input type="hidden" name="project_type" id="vd_quote_project_type" value="">
-                <input type="hidden" name="vitrine_slug" value="{{vitrine_slug}}">
-                <input type="hidden" name="vitrine_title" id="vd_quote_vitrine_title" value="">
-                <input type="hidden" name="preferred_date" value="">
-                <input type="hidden" name="preferred_time" value="">
-                <input type="hidden" name="budget" value="">
-                <input type="hidden" name="message" id="vd_quote_message" value="">
-                <input type="hidden" name="name" id="vd_quote_name_post" value="">
-                <div class="vitrine-cta-steps">
-                    <div class="contact-step vitrine-cta-step is-active" data-vitrine-quote-step="1" role="group" aria-labelledby="vd-quote-s1-title">
-                        <h3 id="vd-quote-s1-title" class="contact-step__title">Type de projet</h3>
-                        <p class="contact-step__intro">Même logique que sur l’accueil — ciblez votre besoin (souvent <strong>développement web</strong> pour un site vitrine type catalogue).</p>
-                        <div id="vitrineQuoteProjectMount" class="contact-type-mount" role="group" aria-label="Type de projet"></div>
-                        <div class="contact-step-actions">
-                            <button type="button" class="btn btn-primary btn-large" data-vitrine-quote-next="1">Continuer <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="contact-step vitrine-cta-step" data-vitrine-quote-step="2" role="group" aria-labelledby="vd-quote-s2-title" aria-hidden="true">
-                        <h3 id="vd-quote-s2-title" class="contact-step__title">Votre besoin</h3>
-                        <p class="contact-step__intro">Devis installation, personnalisation, contenus, ou autre autour de <strong>{{vitrine_title}}</strong>.</p>
-                        <div class="form-group">
-                            <label for="vd_quote_detail">Décrivez votre besoin <span aria-hidden="true">*</span></label>
-                            <textarea id="vd_quote_detail" rows="5" required maxlength="4000" minlength="15" placeholder="Ex. : mise en ligne sur mon hébergeur, textes à réécrire, formulaire relié à mon email…"></textarea>
-                        </div>
-                        <p class="vitrine-cta-hint-soft vitrine-prose">Besoin d’un créneau téléphonique précis&nbsp;? Après envoi, utilisez aussi le <a href="/#contact" class="vitrine-prose-link">formulaire complet sur l’accueil</a>.</p>
-                        <div class="contact-step-actions contact-step-actions--split">
-                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-quote-back="2"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</button>
-                            <button type="button" class="btn btn-primary btn-large" data-vitrine-quote-next="2">Coordonnées <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                    <div class="contact-step vitrine-cta-step" data-vitrine-quote-step="3" role="group" aria-labelledby="vd-quote-s3-title" aria-hidden="true">
-                        <h3 id="vd-quote-s3-title" class="contact-step__title">Vos coordonnées</h3>
-                        <p class="contact-step__intro">Pour vous recontacter rapidement.</p>
-                        <div class="form-group">
-                            <label for="vd_quote_first">Prénom <span aria-hidden="true">*</span></label>
-                            <input type="text" id="vd_quote_first" autocomplete="given-name" required maxlength="80">
-                        </div>
-                        <div class="form-group">
-                            <label for="vd_quote_last">Nom <span aria-hidden="true">*</span></label>
-                            <input type="text" id="vd_quote_last" autocomplete="family-name" required maxlength="80">
-                        </div>
-                        <div class="form-group">
-                            <label for="vd_quote_email">Email <span aria-hidden="true">*</span></label>
-                            <input type="email" id="vd_quote_email" name="email" autocomplete="email" required maxlength="200">
-                        </div>
-                        <div class="form-group">
-                            <label for="vd_quote_phone">Téléphone <span aria-hidden="true">*</span></label>
-                            <input type="tel" id="vd_quote_phone" name="phone" autocomplete="tel" required maxlength="30">
-                        </div>
-                        <div class="contact-step-actions contact-step-actions--split">
-                            <button type="button" class="btn btn-secondary btn-large" data-vitrine-quote-back="3"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</button>
-                            <button type="submit" class="btn btn-primary btn-large vitrine-cta-submit" id="vitrineQuoteSubmit">
                                 <span class="btn-text">Envoyer la demande</span>
                                 <span class="btn-loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi…</span>
                             </button>

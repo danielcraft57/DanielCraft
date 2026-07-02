@@ -34,25 +34,35 @@
 
             <a href="#home" class="nav-link nav-link--bar-xl active" data-section="home" role="menuitem">Accueil</a>
 
-            <a href="#offres" class="nav-link" data-section="offres" role="menuitem">Nos offres</a>
+            <a href="/nos-offres" class="nav-link" role="menuitem">Nos offres</a>
+
+            <a href="/vitrines/" class="nav-link{% if current_page == 'vitrines' %} active{% endif %}" role="menuitem">Exemples</a>
 
             <a href="/audit" class="nav-link{% if current_page == 'audit' %} active{% endif %}" role="menuitem">Audit</a>
 
             <a href="/prestations/" class="nav-link{% if current_page == 'prestations' %} active{% endif %}" role="menuitem">Prestations</a>
 
-            <a href="#contact" class="nav-link" data-section="contact" role="menuitem">Contact</a>
+            <a href="/contact" class="nav-link" role="menuitem">Contact</a>
 
             {% else %}
 
             <a href="/#home" class="nav-link nav-link--bar-xl" role="menuitem">Accueil</a>
 
-            <a href="/#offres" class="nav-link" role="menuitem">Nos offres</a>
+            <a href="/nos-offres" class="nav-link{% if current_page == 'nos-offres' %} active{% endif %}" role="menuitem">Nos offres</a>
+
+            <a href="/vitrines/" class="nav-link{% if current_page == 'vitrines' %} active{% endif %}" role="menuitem">Exemples</a>
 
             <a href="/audit" class="nav-link{% if current_page == 'audit' %} active{% endif %}" role="menuitem">Audit</a>
 
             <a href="/prestations/" class="nav-link{% if current_page == 'prestations' %} active{% endif %}" role="menuitem">Prestations</a>
 
-            <a href="/#contact" class="nav-link" role="menuitem">Contact</a>
+            <a href="/contact" class="nav-link{% if current_page == 'contact' %} active{% endif %}" role="menuitem">Contact</a>
+
+            {% endif %}
+
+            {% if blog_enabled %}
+
+            <a href="/blog/" class="nav-link nav-link--blog{% if current_page == 'blog' %} active{% endif %}" role="menuitem">Blog</a>
 
             {% endif %}
 
@@ -66,29 +76,9 @@
 
                 <ul class="nav-dropdown-menu" role="menu" aria-labelledby="moreMenu">
 
-                    <li class="nav-dropdown-item nav-dropdown-item--accueil-fallback">
-
-                        {% if current_page == 'index' %}
-
-                        <a href="#home" class="nav-dropdown-link" role="menuitem">Accueil</a>
-
-                        {% else %}
-
-                        <a href="/#home" class="nav-dropdown-link" role="menuitem">Accueil</a>
-
-                        {% endif %}
-
-                    </li>
-
-                    <li><a href="{% if current_page == 'index' %}#vitrines{% else %}/#vitrines{% endif %}" class="nav-dropdown-link" role="menuitem">Exemples de sites</a></li>
-
-                    {% if blog_enabled %}
-
-                    <li><a href="/blog/" class="nav-dropdown-link{% if current_page == 'blog' %} active{% endif %}" role="menuitem">Blog</a></li>
-
-                    {% endif %}
-
                     <li><a href="{% if current_page == 'index' %}#about{% else %}/#about{% endif %}" class="nav-dropdown-link" role="menuitem">À propos</a></li>
+                    <li><a href="/pro" class="nav-dropdown-link{% if current_page == 'pro' %} active{% endif %}" role="menuitem">Espace pro</a></li>
+                    <li><a href="/mentions-legales" class="nav-dropdown-link" role="menuitem">Mentions légales</a></li>
 
                 </ul>
 
@@ -96,11 +86,11 @@
 
             {% if current_page == 'index' %}
 
-            <a href="#contact" class="btn btn-primary nav-cta-mobile" role="menuitem">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary nav-cta-mobile" role="menuitem">Recevoir mon devis</a>
 
             {% else %}
 
-            <a href="/#contact" class="btn btn-primary nav-cta-mobile" role="menuitem">Demander un devis</a>
+            <a href="/contact" class="btn btn-primary nav-cta-mobile" role="menuitem">Recevoir mon devis</a>
 
             {% endif %}
 
@@ -110,15 +100,15 @@
 
             {% if current_page == 'index' %}
 
-            <a href="#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Demander un devis — accéder au formulaire de contact">
+            <a href="#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Recevoir mon devis site vitrine — PDF en 2 min">
 
             {% else %}
 
-            <a href="/#contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Demander un devis — accéder au formulaire de contact">
+            <a href="/contact" class="btn btn-primary nav-cta nav-cta-devis" aria-label="Recevoir mon devis site vitrine — PDF en 2 min">
 
             {% endif %}
 
-                <span>Demander un devis</span>
+                <span>Recevoir mon devis</span>
 
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
 

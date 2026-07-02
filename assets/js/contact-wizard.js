@@ -215,8 +215,36 @@
       'besoin_a_preciser',
       'projet_sur_mesure'
     ],
-    autre: ['besoin_a_preciser', 'projet_sur_mesure', 'tech_conseil_archi', 'maint_accompagnement_h', 'eco_formation_2h']
+    autre: ['besoin_a_preciser']
   };
+
+  /** 3 choix max quand « Je ne sais pas encore » (étape 2). */
+  const UNSURE_STEP2_OPTIONS = [
+    {
+      slug: 'call_discovery',
+      title: 'Appel découverte (30 min)',
+      hint: 'On clarifie votre besoin au téléphone',
+      icon: 'fa-phone',
+      serviceSlug: 'besoin_a_preciser',
+      action: 'calendar',
+    },
+    {
+      slug: 'audit_gratuit',
+      title: 'Audit gratuit de mon site',
+      hint: 'Diagnostic Google, vitesse, message',
+      icon: 'fa-search',
+      action: 'link',
+      href: '/audit',
+    },
+    {
+      slug: 'voir_offres',
+      title: 'Voir les 3 offres principales',
+      hint: 'Site vitrine, visibilité, assistant IA',
+      icon: 'fa-star',
+      action: 'link',
+      href: '/nos-offres',
+    },
+  ];
 
   /**
    * Offres avec tags = types de projet (étape 1) pour regroupement à l’étape 2.
@@ -279,6 +307,17 @@
   ];
 
   const WIZARD_STEP_COUNT = 5;
+  const STEP_DURATIONS = {
+    1: '30 s',
+    2: '1 min',
+    3: '1 min',
+    4: '1 min',
+    5: 'quelques secondes',
+  };
+
+  function isEmailFormatValid(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
+  }
 
   const MSG_STATIC_SERVER =
     'Le serveur actuel ne traite pas correctement le POST PHP. Lancez le site avec PHP (ex: php -S 127.0.0.1:8000 -t dist).';
@@ -873,6 +912,24 @@
 
       updateProgress();
 
+      const progressLabel = document.getElementById('contactProgressLabel');
+      if (progressLabel) {
+        const dur = STEP_DURATIONS[n] || '';
+        progressLabel.textContent = dur
+          ? `Étape ${n} sur ${WIZARD_STEP_COUNT} — environ ${dur}`
+          : `Étape ${n} sur ${WIZARD_STEP_COUNT}`;
+      }
+
+      const sticky = document.getElementById('contactWizardSticky');
+      if (sticky) {
+        sticky.hidden = n === 5;
+      }
+
+      const wizardAnchor = form.closest('.contact-form-container') || form;
+      if (wizardAnchor && typeof wizardAnchor.scrollIntoView === 'function') {
+        wizardAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
       if (n === 5) {
         updateValidationRecap();
         if (autoSkipNoteEl) {
@@ -1021,6 +1078,42 @@
       serviceMount.innerHTML = '';
       const selectedPt = (projectTypeField && projectTypeField.value) || '';
       const pt = CONTACT_NEED_CATEGORIES.find((x) => x.slug === selectedPt) || null;
+
+      if (selectedPt === 'autre') {
+        const row = document.createElement('div');
+        row.className = 'contact-service-grid contact-service-grid--compact';
+        UNSURE_STEP2_OPTIONS.forEach((opt) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'contact-service-card';
+          btn.innerHTML =
+            '<span class="contact-service-card__icon" aria-hidden="true"><i class="fas ' +
+            opt.icon +
+            '"></i></span><span class="contact-service-card__body"><strong class="contact-service-card__title">' +
+            escapeHtml(opt.title) +
+            '</strong><span class="contact-service-card__hint">' +
+            escapeHtml(opt.hint) +
+            '</span></span>';
+          btn.addEventListener('click', () => {
+            hideFeedback();
+            if (opt.action === 'link' && opt.href) {
+              window.location.href = opt.href;
+              return;
+            }
+            if (serviceField) serviceField.value = opt.serviceSlug || 'besoin_a_preciser';
+            if (budgetField) budgetField.value = '';
+            state.selectedServiceTitle = opt.title;
+            state.selectedServicePrice = '';
+            updatePickedServiceBanner();
+            announce(`Choix : ${opt.title}.`);
+            setStep(3);
+          });
+          row.appendChild(btn);
+        });
+        serviceMount.appendChild(row);
+        return;
+      }
+
       const allowedSlugs = NEED_SERVICE_SLUGS[selectedPt] || [];
       const items = selectedPt
         ? allowedSlugs
@@ -1525,7 +1618,13 @@
       updatePhoneHint();
     });
     nameEl?.addEventListener('input', () => clearFieldError(nameEl));
-    emailEl?.addEventListener('input', () => clearFieldError(emailEl));
+    emailEl?.addEventListener('input', () => {
+      const v = (emailEl.value || '').trim();
+      clearFieldError(emailEl);
+      if (v && !isEmailFormatValid(v)) {
+        setFieldError(emailEl, 'Format d’email invalide.');
+      }
+    });
     phoneEl?.addEventListener('input', () => clearFieldError(phoneEl));
     updatePhoneHint();
 
@@ -1569,6 +1668,18 @@
     });
 
     renderProjectTypes();
+
+    const stickyContinue = document.getElementById('wizardStickyContinue');
+    if (stickyContinue) {
+      stickyContinue.addEventListener('click', () => {
+        if (state.step === 3) {
+          document.getElementById('wizardNextFromCalendar')?.click();
+        } else if (state.step === 4) {
+          document.getElementById('wizardNextFromCoords')?.click();
+        }
+      });
+    }
+
     ensurePersonalizationContext().then(() => {
       if (state.step === 2) renderServiceGrid();
     });

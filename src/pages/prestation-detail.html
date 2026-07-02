@@ -12,6 +12,7 @@
             <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 60ms">
                 <span class="section-badge"><i class="fas {{prestation_icon}}" aria-hidden="true"></i> Prestation</span>
                 <h1 class="section-title">{{prestation_title}}</h1>
+                <p class="prestation-detail-hero-price">{{prestation_price_eur}} € <span>{{prestation_price_label}} HT</span></p>
                 <p class="section-description prestation-detail-lead">{{prestation_tagline}}</p>
                 <p class="prestation-detail-desc">{{prestation_description}}</p>
                 <div class="prestation-detail-hero-actions">
@@ -21,9 +22,15 @@
                         data-prestation-title="{{prestation_title}}"
                         data-prestation-price="{{prestation_price_eur}}"
                         data-prestation-price-label="{{prestation_price_label}}">
-                        <span>Recevoir un devis par e-mail</span>
+                        <span>Recevoir mon devis PDF par e-mail</span>
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                     </button>
+                    {% if prestation_slug == 'site-vitrine' %}
+                    <a href="/vitrines/" class="btn btn-outline btn-large">
+                        <span>Ou partir d'un modèle à 42 € HT</span>
+                        <i class="fas fa-layer-group" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
                 </div>
             </div>
             <figure class="prestation-detail-visual prestation-detail-visual--icon scroll-reveal" style="--reveal-delay: 120ms" aria-hidden="true">

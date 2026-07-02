@@ -24,16 +24,16 @@
 
                     <div class="hero-reassurance">
                         <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Devis par e-mail en un clic</span>
-                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Réponse sous 24 h</span>
+                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Réponse sous 24 h ouvrées</span>
                     </div>
 
                     <div class="hero-actions">
-                        <a href="#offres" class="btn btn-primary btn-large">
-                            <span>Voir les 3 offres</span>
-                            <i class="fas fa-star" aria-hidden="true"></i>
-                        </a>
+                        <button type="button" class="btn btn-primary btn-large" data-prestation-devis-open data-prestation-slug="site-vitrine" data-service-slug="pack_vitrine" data-prestation-title="Site vitrine professionnel" data-prestation-price="490" data-prestation-price-label="Forfait">
+                            <span>Recevoir mon devis site vitrine — PDF en 2 min</span>
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                        </button>
                         <a href="/audit" class="btn btn-secondary btn-large">
-                            <span>Audit de votre site</span>
+                            <span>Comprendre pourquoi mon site ne convertit pas — gratuit</span>
                             <i class="fas fa-search" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -64,9 +64,9 @@
                         </picture>
                         <span class="home-hero-visual-glow" aria-hidden="true"></span>
                         <div class="home-hero-badges">
-                            <a href="#offres" class="home-hero-badge home-hero-badge--mobile"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</a>
-                            <a href="#offres" class="home-hero-badge home-hero-badge--google"><i class="fas fa-search" aria-hidden="true"></i> Google</a>
-                            <a href="#offres" class="home-hero-badge home-hero-badge--ia"><i class="fas fa-robot" aria-hidden="true"></i> Assistants IA</a>
+                            <a href="/prestations/site-vitrine/" class="home-hero-badge home-hero-badge--mobile"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Site qui rassure sur mobile</a>
+                            <a href="/prestations/visibilite-complete/" class="home-hero-badge home-hero-badge--google"><i class="fas fa-search" aria-hidden="true"></i> Être trouvé sur Google</a>
+                            <a href="/prestations/repondeur-intelligent/" class="home-hero-badge home-hero-badge--ia"><i class="fas fa-robot" aria-hidden="true"></i> Assistant sur mon site</a>
                         </div>
                     </div>
                 </aside>
@@ -117,8 +117,8 @@
                         <p class="home-offer-desc">Présentez votre activité, rassurez sur mobile, recevez des demandes de contact — sans page Facebook seule.</p>
                         <p class="home-offer-price">490 € <span>forfait HT</span></p>
                         <div class="home-offer-actions">
-                            <a href="/prestations/site-vitrine/" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine" data-service-slug="pack_vitrine" data-prestation-title="Site vitrine professionnel" data-prestation-price="490" data-prestation-price-label="Forfait"><span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                            <a href="/prestations/site-vitrine/" class="btn btn-primary btn-block"><span>Voir le détail — 490 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine" data-service-slug="pack_vitrine" data-prestation-title="Site vitrine professionnel" data-prestation-price="490" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </article>
@@ -137,8 +137,8 @@
                         <p class="home-offer-desc">Quand on vous cherche en ligne — ou qu'on demande à ChatGPT — on tombe sur la bonne info, au bon moment.</p>
                         <p class="home-offer-price">749 € <span>forfait HT</span></p>
                         <div class="home-offer-actions">
-                            <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="749" data-prestation-price-label="Forfait"><span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                            <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Voir le détail — 749 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="749" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </article>
@@ -156,43 +156,29 @@
                         <p class="home-offer-desc">Horaires, tarifs, prestations : l'assistant guide vos visiteurs avec vos vraies infos, 24 h/24.</p>
                         <p class="home-offer-price">1 190 € <span>forfait HT</span></p>
                         <div class="home-offer-actions">
-                            <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="1190" data-prestation-price-label="Forfait"><span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                            <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Voir le détail — 1 190 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="1190" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </article>
 
-                <article class="home-offer-card home-offer-card--mid-grid-only" data-home-tilt>
-                    <div class="home-offer-visual">
-                        <picture>
-                            <img src="/assets/images/home/home-offer-audit.png" width="640" height="400" alt="Audit de site web : Google, vitesse et clarté du message" loading="lazy" decoding="async">
-                        </picture>
-                    </div>
-                    <div class="home-offer-body">
-                        <p class="home-offer-tagline">Déjà un site ?</p>
-                        <h3 class="home-offer-title">Audit de votre site</h3>
-                        <p class="home-offer-desc">Google, vitesse, message : un diagnostic en français clair avec des priorités concrètes.</p>
-                        <p class="home-offer-price">Gratuit <span>ou audit complet 199 € TTC</span></p>
-                        <div class="home-offer-actions">
-                            <a href="/audit" class="btn btn-primary btn-block"><span>Découvrir</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </article>
             </div>
 
             <aside class="home-audit-banner scroll-reveal">
                 <div>
                     <h3>Vous avez déjà un site ?</h3>
-                    <p>Commencez par un audit rapide : ce qui bloque Google, la vitesse, la clarté de votre message — avec un plan d'action en français clair.</p>
+                    <p>Diagnostic Google, vitesse et clarté de votre message — avec un plan d'action en français clair.</p>
                 </div>
                 <a href="/audit" class="btn btn-primary btn-large">
-                    <span>Audit de votre site</span>
+                    <span>Tester mon site gratuitement</span>
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </aside>
 
             <p class="services-more" style="margin-top: 2rem; text-align: center;">
-                <a href="/prestations/">Voir les 32 prestations du catalogue</a>
+                <a href="/nos-offres">Voir toutes nos offres</a>
+                ·
+                <a href="/prestations/">Catalogue des 32 prestations</a>
             </p>
         </div>
     </section>
@@ -213,10 +199,9 @@
                     <div class="why-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h3 class="why-title">Livraison rapide</h3>
+                    <h3 class="why-title">Délais annoncés dès le devis</h3>
                     <p class="why-description">
-                        Site en ligne en 5-8 jours. Pas de délais cachés, pas de surprises. 
-                        Vous savez exactement quand votre projet sera prêt.
+                        Site en ligne en 5-8 jours ouvrés pour un vitrine standard. Pas de délais cachés — vous savez quand partir.
                     </p>
                 </div>
                 
@@ -255,12 +240,8 @@
             </div>
             
             <div class="why-cta">
-                <a href="/audit" class="btn btn-secondary">
-                    <span>Tester avec un audit</span>
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </a>
-                <a href="#contact" class="btn btn-primary">
-                    <span>Discutons de votre projet</span>
+                <a href="/contact" class="btn btn-primary">
+                    <span>Parler de mon projet</span>
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -288,16 +269,6 @@
                             <div class="feature-content">
                                 <h4>On part de votre quotidien</h4>
                                 <p>Vous m'expliquez votre activité avec vos mots — je traduis en pages, textes et outils utiles.</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Livraison rapide</h4>
-                                <p>Site vitrine en 5 à 8 jours ouvrés en général, après validation de vos contenus.</p>
                             </div>
                         </div>
 
@@ -341,9 +312,9 @@
         <div class="container">
             <div class="section-header scroll-reveal">
                 <span class="section-badge">Inspiration</span>
-                <h2 id="home-vitrines-title" class="section-title">3 exemples pour se projeter</h2>
+                <h2 id="home-vitrines-title" class="section-title">Exemples pour se projeter</h2>
                 <p class="section-description">
-                    Restaurant, architecture ou institut beauté : ouvrez un aperçu live. Votre site sera unique, adapté à votre métier.
+                    Trois démos en vedette sur ordinateur — ouvrez un aperçu live. Votre site sera unique, adapté à votre métier.
                 </p>
             </div>
             {% include "includes/home-vitrines-teaser.html" %}
@@ -367,7 +338,7 @@
                         <span>Je ne sais pas exactement ce qu'il me faut, on commence par où ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-1" role="region" aria-labelledby="faq-q1" hidden>
+                    <div class="faq-answer-wrap" id="faq-1" aria-labelledby="faq-q1" hidden>
                     <p class="faq-answer">
                         On part toujours de là. Lors du premier échange, vous m'expliquez votre activité avec vos mots, votre contexte
                         et ce que vous aimeriez obtenir (plus d'appels, de demandes de devis, mieux expliquer votre offre...).
@@ -396,7 +367,7 @@
                         <span>Quels types de projets vous réalisez concrètement ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-3" role="region" aria-labelledby="faq-q3" hidden>
+                    <div class="faq-answer-wrap" id="faq-3" aria-labelledby="faq-q3" hidden>
                     <p class="faq-answer">
                         Sites vitrines pour artisans et commerces, visibilité Google et assistants IA, entretien mensuel,
                         formulaires et connexions à vos outils (facturation, CRM). Si votre besoin est plus spécifique,
@@ -410,7 +381,7 @@
                         <span>Comment se passe concrètement le premier contact ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-4" role="region" aria-labelledby="faq-q4" hidden>
+                    <div class="faq-answer-wrap" id="faq-4" aria-labelledby="faq-q4" hidden>
                     <p class="faq-answer">
                         On fixe un créneau (visio ou téléphone) de 30 à 45 minutes. Vous me donnez le contexte, vos priorités et vos contraintes
                         (délais, budget, existant technique). Je vous explique ce qui est réaliste, je propose un découpage en étapes et,
@@ -430,277 +401,5 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-badge">Contact</span>
-                <h2 class="section-title">Parlons de votre besoin</h2>
-                <p class="section-description">
-                    Quelques clics pour me dire ce qui vous intéresse. Je vous rappelle sous 24 h
-                    avec une estimation claire — sans engagement, sans jargon technique.
-                </p>
-            </div>
-            
-            <div class="contact-content contact-content--form-first scroll-reveal">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:contact@danielcraft.fr">contact@danielcraft.fr</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Téléphone</h4>
-                            <a href="tel:+33387780916">03 87 78 09 16</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Localisation</h4>
-                            <p>57000 Metz, France</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-social">
-                        <a href="https://linkedin.com/in/danielcraft" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/danielcraft57" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <div id="formFeedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
-                    <span class="contact-wizard-live sr-only" aria-live="polite" aria-atomic="true"></span>
-                    <div class="contact-error-overlay" id="contactErrorOverlay" aria-hidden="true">
-                        <div class="contact-error-overlay__backdrop" id="contactErrorOverlayBackdrop"></div>
-                        <div class="contact-error-overlay__dialog" role="dialog" aria-modal="true" aria-labelledby="contactErrorOverlayTitle">
-                            <button type="button" class="contact-error-overlay__close" id="contactErrorOverlayClose" aria-label="Fermer">
-                                <i class="fas fa-times" aria-hidden="true"></i>
-                            </button>
-                            <h4 class="contact-error-overlay__title" id="contactErrorOverlayTitle">Envoi impossible</h4>
-                            <p class="contact-error-overlay__message" id="contactErrorOverlayMessage"></p>
-                            <ul class="contact-error-overlay__tips" id="contactErrorOverlayTips">
-                                <li>Vérifiez votre adresse email.</li>
-                                <li>Essayez de nouveau dans quelques instants.</li>
-                                <li>Si le problème persiste, écrivez à contact@danielcraft.fr.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <form class="contact-form contact-wizard-form" id="contactForm" data-contact-wizard="true" novalidate>
-                        <input type="hidden" name="preferred_date" id="preferred_date" value="">
-                        <input type="hidden" name="preferred_time" id="preferred_time" value="">
-
-                        <input type="hidden" name="service" id="service" value="">
-                        <input type="hidden" name="budget" id="budget" value="">
-                        <input type="hidden" name="project_type" id="project_type" value="">
-
-                        <ol class="contact-progress-min" role="list" aria-label="Progression du formulaire en cinq étapes">
-                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 5</span></li>
-                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 5</span></li>
-                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 5</span></li>
-                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 4 sur 5</span></li>
-                            <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 5 sur 5</span></li>
-                        </ol>
-
-                        <div class="contact-form-steps">
-                            <!-- Étape 1 : besoin principal -->
-                            <div class="contact-step is-active" data-step="1" role="group" aria-labelledby="contact-step1-title">
-                                <h3 id="contact-step1-title" class="contact-step__title">De quoi avez-vous besoin ?</h3>
-                                <p class="contact-step__intro">Choisissez la situation qui vous ressemble le plus — on précise le détail à l’étape suivante.</p>
-                                <div id="contactProjectTypeMount" class="contact-type-mount" role="group" aria-label="Votre besoin principal"></div>
-                            </div>
-
-                            <!-- Étape 2 : offre -->
-                            <div class="contact-step" data-step="2" role="group" aria-labelledby="contact-step2a-title" aria-hidden="true">
-                                <h3 id="contact-step2a-title" class="contact-step__title">Quelle offre vous intéresse ?</h3>
-                                <p class="contact-step__intro">Cliquez sur une carte pour continuer. Les prix indiqués sont des <strong>forfaits de départ</strong>.</p>
-                                <div id="contactServiceMount" class="contact-service-mount"></div>
-                                <p class="contact-step__intro contact-step__intro--muted">
-                                    <a href="/prestations/">Voir tout le catalogue des prestations</a>
-                                </p>
-                                <div class="contact-step-actions contact-step-actions--split">
-                                    <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromService">
-                                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                                        Votre besoin
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Étape 3 : calendrier + heure -->
-                            <div class="contact-step" data-step="3" role="group" aria-labelledby="contact-step2-title" aria-hidden="true">
-                                <h3 id="contact-step2-title" class="contact-step__title">Quand préférez-vous qu’on en parle ?</h3>
-                                <p class="contact-picked-service" id="contactPickedServiceWrap" hidden>
-                                    <span class="contact-picked-service__label">Offre choisie :</span>
-                                    <strong id="contactPickedServiceTitle"></strong>
-                                    <span class="contact-picked-service__price" id="contactPickedServicePrice" hidden></span>
-                                    <button type="button" class="contact-picked-service__change" id="contactChangeService">Modifier</button>
-                                </p>
-                                <p class="contact-step__intro">Choisissez un <strong>jour en semaine</strong>, puis un horaire qui vous convient (matin ou après-midi).</p>
-
-                                <div class="contact-calendar-wrap">
-                                    <div class="calendar-toolbar">
-                                        <button type="button" class="calendar-nav-btn" id="calendarPrev" aria-label="Mois précédent">
-                                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                                        </button>
-                                        <h4 class="calendar-month-label" id="calendarMonthLabel"></h4>
-                                        <button type="button" class="calendar-nav-btn" id="calendarNext" aria-label="Mois suivant">
-                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                    <div class="calendar-weekdays" id="calendarWeekdays" aria-hidden="true">
-                                        <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
-                                    </div>
-                                    <div class="calendar-grid" id="calendarGrid" role="grid" aria-labelledby="calendarMonthLabel"></div>
-                                </div>
-
-                                <div
-                                    class="contact-time-overlay"
-                                    id="contactTimeOverlay"
-                                    aria-hidden="true"
-                                >
-                                    <div class="contact-time-overlay__backdrop" id="contactTimeOverlayBackdrop" tabindex="-1"></div>
-                                    <div
-                                        class="contact-time-overlay__dialog"
-                                        role="dialog"
-                                        aria-modal="true"
-                                        aria-labelledby="contactTimeOverlayTitle"
-                                    >
-                                        <button type="button" class="contact-time-overlay__close" id="contactTimeOverlayClose" aria-label="Fermer">
-                                            <i class="fas fa-times" aria-hidden="true"></i>
-                                        </button>
-                                        <h4 id="contactTimeOverlayTitle" class="contact-time-overlay__title">Choisissez un horaire</h4>
-                                        <p class="contact-time-overlay__date" id="contactTimeOverlayDateLine"></p>
-                                        <p class="contact-time-label contact-time-overlay__slots-label" id="contactTimeLabel">Horaires proposés (matin ou après-midi)</p>
-                                        <div class="contact-time-slots" id="contactTimeSlots" role="group" aria-labelledby="contactTimeLabel"></div>
-                                    </div>
-                                </div>
-
-                                <p class="contact-date-summary" aria-live="polite">
-                                    <span class="contact-date-summary__label">Votre choix :</span>
-                                    <strong id="contactSummaryDate">—</strong>
-                                </p>
-
-                                <div class="contact-step-actions contact-step-actions--split">
-                                    <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromCalendar">
-                                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                                        Offre
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-large" id="wizardNextFromCalendar">
-                                        Continuer
-                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Étape 4 : coordonnées -->
-                            <div class="contact-step" data-step="4" role="group" aria-labelledby="contact-step3-title" aria-hidden="true">
-                                <h3 id="contact-step3-title" class="contact-step__title">Comment vous joindre ?</h3>
-                                <p class="contact-step__intro">Je vous rappelle ou réponds par e-mail au créneau choisi.</p>
-
-                        <div class="form-group">
-                            <label for="name">Votre nom *</label>
-                                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ex. Marie Dupont">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Votre e-mail *</label>
-                                    <input type="email" id="email" name="email" required autocomplete="email" placeholder="vous@entreprise.fr">
-                        </div>
-                        <div class="form-group">
-                                    <label for="phone">Votre téléphone *</label>
-                                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="06 12 34 56 78" required>
-                        </div>
-                        <div class="form-group">
-                                    <label for="message">En deux mots, votre situation <span class="label-optional">(facultatif)</span></label>
-                                    <textarea id="message" name="message" rows="3" placeholder="Ex. Je n’ai pas encore de site, je suis artisan à Metz…"></textarea>
-                        </div>
-                        
-                                <div class="contact-step-actions contact-step-actions--split">
-                                    <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromCoords">
-                                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                                        Créneau
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-large" id="wizardNextFromCoords">
-                                        Continuer
-                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                        </div>
-                        
-                            <!-- Étape 5 : validation -->
-                            <div class="contact-step" data-step="5" role="group" aria-labelledby="contact-step4-title" aria-hidden="true">
-                                <h3 id="contact-step4-title" class="contact-step__title">Récapitulatif</h3>
-                                <p class="contact-step__intro">Vérifiez vos informations avant l’envoi.</p>
-                                <p class="contact-step__intro" id="contactAutoSkipNote" hidden>
-                                    Coordonnées détectées automatiquement, étape contact sautée.
-                                </p>
-
-                                <div class="contact-validation-recap" role="group" aria-label="Récapitulatif">
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Nom</span>
-                                        <span class="contact-validation-value" id="contactRecapName">—</span>
-                                    </div>
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Email</span>
-                                        <span class="contact-validation-value" id="contactRecapEmail">—</span>
-                                    </div>
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Téléphone</span>
-                                        <span class="contact-validation-value" id="contactRecapPhone">—</span>
-                                    </div>
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Votre besoin</span>
-                                        <span class="contact-validation-value" id="contactRecapType">—</span>
-                                    </div>
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Offre choisie</span>
-                                        <span class="contact-validation-value" id="contactRecapService">—</span>
-                                    </div>
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Date</span>
-                                        <span class="contact-validation-value" id="contactRecapDate">—</span>
-                                    </div>
-                                    <div class="contact-validation-row">
-                                        <span class="contact-validation-label">Heure</span>
-                                        <span class="contact-validation-value" id="contactRecapTime">—</span>
-                                    </div>
-                        </div>
-                        
-                                <div class="contact-validation-pending" id="contactValidationPending" hidden aria-live="polite">
-                                    <i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i>
-                                    <span>Validation d’email et envoi en cours…</span>
-                                </div>
-
-                                <div class="contact-validation-success" id="contactValidationSuccess" hidden aria-live="polite">
-                                    <div class="contact-validation-success__icon" aria-hidden="true">
-                                        <i class="fas fa-check-circle"></i>
-                                    </div>
-                                    <div class="contact-validation-success__text">
-                                        <p class="contact-validation-success__title">Demande envoyée</p>
-                                        <p class="contact-validation-success__body">
-                                            Merci pour votre message. Un récapitulatif vient de vous être envoyé par email&nbsp;; je reviens vers vous rapidement.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include "includes/contact-section.html" %}
 

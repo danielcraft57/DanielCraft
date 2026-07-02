@@ -7,7 +7,7 @@
     "price_cents": 19900,
     "tax_rate": 20,
     "checkout_product_name": "Audit premium — analyse complète de votre site",
-    "checkout_description": "Rapport détaillé par email. Après paiement : facture immédiate, puis lancement de l’audit (sous 48 h).",
+    "checkout_description": "Rapport détaillé par email. Après paiement : facture immédiate, puis lancement de l’audit (sous 24 h ouvrées).",
     "stripe_payment_link_url": ""
   }
 }

@@ -1,0 +1,9 @@
+{
+  "page_title": "Contact — DanielCraft Metz",
+  "page_description": "Formulaire guidé, téléphone et e-mail : expliquez votre besoin (site, visibilité, assistant IA). Réponse sous 24 h ouvrées, Metz & Lorraine.",
+  "page_keywords": "contact DanielCraft, devis site vitrine Metz, création site internet Lorraine, rendez-vous web",
+  "page_url": "/contact",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "schema_type": "contact",
+  "page_scripts": ["main.js", "prestation-devis-modal.js", "personalization.js", "contact-wizard.js"]
+}
