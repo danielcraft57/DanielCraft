@@ -170,8 +170,10 @@ function devis_notify_fallback(
         'Merci pour votre demande concernant : ' . $prestationTitle . '.',
         'Montant HT : ' . $totalHt . ' € HT (' . $ttc . ' € TTC).',
         '',
-        'Votre devis PDF vous sera envoyé sous 48 h ouvrées à cette adresse.',
-        'Une question ? Répondez à cet e-mail ou écrivez à contact@danielcraft.fr.',
+        'Voici ce qui se passe dans les 24 h ouvrées :',
+        '1. Je relis votre demande et les options choisies',
+        '2. Vous recevez votre devis PDF à cette adresse',
+        '3. Une question ? Répondez à cet e-mail',
         '',
         '— Loïc, DanielCraft',
     ]);
@@ -181,7 +183,10 @@ function devis_notify_fallback(
         . htmlspecialchars($prestationTitle, ENT_QUOTES, 'UTF-8')
         . '</strong>.</p><p>Montant HT : <strong>'
         . $totalHt . ' € HT</strong> (' . $ttc . ' € TTC).</p>'
-        . '<p>Votre devis PDF vous sera envoyé <strong>sous 48 h ouvrées</strong> à cette adresse.</p>'
+        . '<p><strong>Voici ce qui se passe dans les 24 h ouvrées :</strong></p>'
+        . '<ol><li>Je relis votre demande et les options choisies</li>'
+        . '<li>Vous recevez votre devis PDF à cette adresse</li>'
+        . '<li>Une question ? Répondez à cet e-mail</li></ol>'
         . '<p>— Loïc, DanielCraft</p>';
 
     $adminSent = devis_send_simple_mail($adminTo, $adminSubject, $adminText, $adminHtml, $customerEmail);

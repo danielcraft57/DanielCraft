@@ -159,8 +159,8 @@ if (!$quoteResult['ok']) {
         );
         if ($fallback['ok']) {
             $msg = $fallback['client_sent']
-                ? 'Merci ! Votre demande est enregistrée. Vous recevrez votre devis PDF sous 48 h à ' . $email . '.'
-                : 'Merci ! Votre demande est enregistrée. Le devis vous sera envoyé sous 48 h à ' . $email . '.';
+                ? 'Merci ! Votre demande est enregistrée. Vous recevrez votre devis PDF sous 24 h ouvrées à ' . $email . '.'
+                : 'Merci ! Votre demande est enregistrée. Le devis vous sera envoyé sous 24 h ouvrées à ' . $email . '.';
             echo json_encode([
                 'success' => true,
                 'fallback' => true,

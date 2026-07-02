@@ -41,6 +41,8 @@ READMES_DIR = DATA_DIR / 'readmes'
 VITRINES_DEMOS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'demos'
 VITRINES_SCREENSHOTS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'screenshots'
 
+# Filtres vitrines phares (mobile + raccourcis desktop)
+VITRINE_FEATURED_FILTER_KEYS = ['hcr', 'retail', 'beaute', 'sante', 'artisanat']
 # Libelles categories vitrines (filtre home + cartes)
 VITRINE_CATEGORY_LABELS = {
     'tech': 'Tech & SaaS',
@@ -119,6 +121,25 @@ def _stripe_publishable_key() -> str:
     return (os.environ.get('STRIPE_PUBLISHABLE_KEY') or '').strip()
 
 
+def _webful_analytics_config() -> Dict[str, Any]:
+    """Config Webful Analytics (script head, sans cookies, RGPD)."""
+    _load_build_dotenv()
+    site_id = (os.environ.get('WEBFUL_SITE_ID') or '').strip()
+    api_key = (os.environ.get('WEBFUL_API_KEY') or '').strip()
+    base_url = (os.environ.get('WEBFUL_BASE_URL') or 'https://webful.fr').strip().rstrip('/')
+    enabled = bool(site_id and api_key)
+    return {
+        'webful_enabled': enabled,
+        'webful_site_id': site_id,
+        'webful_api_key': api_key,
+        'webful_base_url': base_url,
+    }
+
+
+def _apply_analytics_vars(vars_dict: Dict) -> None:
+    vars_dict.update(_webful_analytics_config())
+
+
 # Libelles categories et statuts (pages projet)
 CATEGORY_LABELS = {'web': 'Web', 'tools': 'Outils', 'mobile': 'Mobile', 'iot': 'IoT', 'specialized': 'Specialise', 'learning': 'Apprentissage', 'desktop': 'Desktop'}
 STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
@@ -126,8 +147,12 @@ STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 # Pages statiques pour le sitemap (path, changefreq, priority)
 SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
+    ('/nos-offres', 'weekly', '0.95'),
+    ('/contact', 'weekly', '0.95'),
+    ('/pro', 'monthly', '0.55'),
     ('/audit', 'weekly', '0.95'),
     ('/prestations/', 'weekly', '0.90'),
+    ('/vitrines/', 'weekly', '0.85'),
     ('/processus', 'monthly', '0.75'),
     ('/metz', 'monthly', '0.80'),
     ('/portfolio', 'monthly', '0.55'),
@@ -170,6 +195,9 @@ DEFAULT_VARS = {
     'extra_css': None,
     'blog_enabled': True,
     'og_meta_profile': 'default',
+    'og_image_width': '1200',
+    'og_image_height': '630',
+    'og_image_type': 'image/jpeg',
     'assets_version': '',
     'assets_query': '',
 }
@@ -603,7 +631,13 @@ def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
         og_slug,
         str(vars_dict.get('og_image') or DEFAULT_VARS['og_image']),
     )
-    vars_dict['og_image'] = _to_absolute_url(resolved)
+    og_abs = _to_absolute_url(resolved)
+    vars_dict['og_image'] = _og_image_url_with_cache_bust(og_abs)
+    _apply_og_image_file_meta(vars_dict)
+    title = str(vars_dict.get('page_title') or 'DanielCraft').strip()
+    vars_dict['og_image_alt'] = _truncate_meta_text(
+        f"Visuel de partage DanielCraft — {title}", 200
+    )
 
 
 def _build_audit_schema_jsonld(
@@ -788,6 +822,68 @@ def _assets_file_from_rel(rel_url: str) -> Path:
     elif rel.startswith('assets/'):
         rel = rel[len('assets/'):]
     return BASE_DIR / 'assets' / rel.replace('/', os.sep)
+
+
+def _og_image_file_meta(url: str) -> tuple[str, str, str]:
+    """Largeur, hauteur et MIME réels du fichier OG local (pour Meta / Messenger)."""
+    raw = (url or '').split('?')[0].split('#')[0]
+    idx = raw.find('/assets/')
+    if idx < 0:
+        return '1200', '630', 'image/jpeg'
+    local = _assets_file_from_rel(raw[idx:])
+    if not local.is_file():
+        return '1200', '630', 'image/jpeg'
+    try:
+        from PIL import Image
+
+        with Image.open(local) as im:
+            w, h = im.size
+            fmt = (im.format or 'JPEG').upper()
+            mime = {
+                'JPEG': 'image/jpeg',
+                'PNG': 'image/png',
+                'WEBP': 'image/webp',
+                'GIF': 'image/gif',
+            }.get(fmt, 'image/jpeg')
+            return str(w), str(h), mime
+    except OSError:
+        return '1200', '630', 'image/jpeg'
+
+
+def _apply_og_image_file_meta(vars_dict: Dict) -> None:
+    """Injecte og:image:width/height/type depuis le fichier réel."""
+    og_url = str(vars_dict.get('og_image') or '')
+    w, h, mime = _og_image_file_meta(og_url)
+    vars_dict['og_image_width'] = w
+    vars_dict['og_image_height'] = h
+    vars_dict['og_image_type'] = mime
+    # Alias vitrine (head.html historique)
+    vars_dict['vitrine_og_image_width'] = w
+    vars_dict['vitrine_og_image_height'] = h
+    vars_dict['vitrine_og_image_type'] = mime
+
+
+def _og_image_url_with_cache_bust(url: str) -> str:
+    """
+    Ajoute ?v=mtime sur les images OG locales pour invalider le cache Facebook/LinkedIn/X.
+    Recommande apres regeneration des visuels (referencement social).
+    """
+    raw = (url or '').strip()
+    if not raw:
+        return raw
+    path_only = raw.split('?')[0].split('#')[0]
+    idx = path_only.find('/assets/')
+    if idx < 0:
+        return raw
+    rel = path_only[idx:]
+    local = _assets_file_from_rel(rel)
+    if not local.is_file():
+        return raw
+    try:
+        mtime = datetime.fromtimestamp(local.stat().st_mtime).strftime('%Y%m%d%H%M')
+    except OSError:
+        return raw
+    return f"{path_only}?v={mtime}"
 
 
 def _generated_og_rel(page_or_slug: str, *, subdir: str = '') -> str:
@@ -1208,11 +1304,18 @@ def _build_vitrine_seo_bundle(
     stack_bits = ', '.join(str(s) for s in stack[:8]) if stack else 'HTML5, CSS3, JavaScript'
 
     custom_title = (it.get('seo_title') or '').strip()
-    title_seo = custom_title or f'Modèle site web {title} — {cat_label} | démo gratuite'
     suffix = ' | DanielCraft'
-    if len(title_seo) + len(suffix) > 68 and not custom_title:
-        title_seo = f'{title[:32]}… — site {cat_label} | démo'
-    page_title = _truncate_meta_text(title_seo + suffix, 118)
+    if custom_title:
+        page_title = _truncate_meta_text(custom_title + suffix, 70)
+    else:
+        # Titre complet (nom du modèle lisible dans l’onglet) — pas de troncature au milieu du nom.
+        compact = f'{title} — {cat_label}{suffix}'
+        if len(compact) <= 70:
+            page_title = compact
+        else:
+            page_title = f'{title}{suffix}'
+            if len(page_title) > 70:
+                page_title = _truncate_meta_text(page_title, 70)
 
     custom_desc = (it.get('seo_description') or '').strip()
     desc = custom_desc or (
@@ -1247,7 +1350,7 @@ def _build_vitrine_seo_bundle(
         f'{title} — secteur {cat_label} : capture pleine page desktop (partage LinkedIn, Facebook, Google).',
         190,
     )
-    ow, oh = _vitrine_og_dims_from_url(og_image_abs)
+    ow, oh, _om = _og_image_file_meta(og_image_abs)
     vitrine_img_alt_desktop = _truncate_meta_text(
         f'Maquette « {title} » — capture desktop scrollable, secteur {cat_label}, blocs conversion.',
         130,
@@ -1504,15 +1607,39 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
     """Filtres + grille cartes + note de pied (même indentation que dans .container)."""
     lines: List[str] = []
     lines.append('        <div class="vitrines-toolbar scroll-reveal">')
-    lines.append('            <div class="vitrines-filter" role="group" aria-label="Filtrer par secteur">')
-    lines.append('                <button type="button" class="vitrines-filter-btn active" data-vitrine-filter="all">Tous</button>')
+    lines.append('            <label class="vitrines-filter-select-wrap" for="vitrineFilterSelect">')
+    lines.append('                <span class="vitrines-filter-select-label">Choisir mon secteur</span>')
+    lines.append('                <select class="vitrines-filter-select" id="vitrineFilterSelect" aria-label="Filtrer par secteur">')
+    lines.append('                    <option value="all">Tous les secteurs</option>')
     for c in cats:
+        label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
+        lines.append(
+            f'                    <option value="{html.escape(c)}">{html.escape(label)}</option>'
+        )
+    lines.append('                </select>')
+    lines.append('            </label>')
+    lines.append('            <div class="vitrines-filter vitrines-filter--featured" role="group" aria-label="Secteurs phares">')
+    lines.append('                <button type="button" class="vitrines-filter-btn active" data-vitrine-filter="all">Tous</button>')
+    for c in VITRINE_FEATURED_FILTER_KEYS:
+        if c not in cats:
+            continue
         label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
         lines.append(
             f'                <button type="button" class="vitrines-filter-btn" '
             f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
         )
     lines.append('            </div>')
+    lines.append('            <div class="vitrines-filter vitrines-filter--extended" role="group" aria-label="Tous les secteurs" hidden>')
+    for c in cats:
+        if c in VITRINE_FEATURED_FILTER_KEYS:
+            continue
+        label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
+        lines.append(
+            f'                <button type="button" class="vitrines-filter-btn" '
+            f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
+        )
+    lines.append('            </div>')
+    lines.append('            <button type="button" class="vitrines-filter-more" id="vitrineFilterMore" aria-expanded="false">Voir plus de secteurs</button>')
     lines.append('        </div>')
     lines.append('        <div class="vitrines-grid" id="vitrinesGrid">')
     idx = 0
@@ -1521,7 +1648,9 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         if not slug:
             continue
         cat = (it.get('category') or 'all').strip() or 'all'
-        title = html.escape(it.get('title') or slug)
+        title_raw = (it.get('title') or slug).strip()
+        title = html.escape(title_raw)
+        card_cta = html.escape(f'Voir {title_raw}')
         tagline = html.escape(it.get('tagline') or '')
         excerpt = html.escape(it.get('excerpt') or '')
         _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
@@ -1535,7 +1664,7 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         )
         lines.append(
             f'            <a class="vitrine-card-media" href="/vitrines/{html.escape(slug)}/" '
-            f'aria-label="Voir la fiche détail — {title}">'
+            f'aria-label="{card_cta}">'
         )
         lines.append(
             '                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" '
@@ -1556,7 +1685,7 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         lines.append('                <div class="vitrine-card-actions">')
         lines.append(
             f'                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/{html.escape(slug)}/">'
-            'Voir la fiche détail</a>'
+            f'{card_cta}</a>'
         )
         lines.append(
             f'                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/{html.escape(slug)}/demo/index.html" '
@@ -1568,7 +1697,7 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
     lines.append('        </div>')
     lines.append(
         '        <p class="vitrines-footnote scroll-reveal">'
-        'Pour les dépôts open source, voir aussi <a href="/projets">la page Projets</a>.</p>'
+        'Modèle catalogue à partir de 42&nbsp;€ HT — ou <a href="/prestations/site-vitrine/">site sur mesure à 490&nbsp;€ HT</a>.</p>'
     )
     return lines
 
@@ -1723,8 +1852,7 @@ def build_vitrines_catalog_embed() -> None:
         '                Chaque thème est un parcours complet (navigation, contenus, médias, prise de contact) '
         '— pas une simple maquette figée. Les aperçus sont pensés pour les pages longues : vignette fenêtrée '
         'avec défilement léger au survol. Comparez les univers ici, puis ouvrez la '
-        f'<a href="/vitrines/">page catalogue</a> pour les fiches détaillées — ou l’'
-        f'<a href="{html.escape(hub)}">vue technique mosaïque</a> pour parcourir les fichiers démo.'
+        f'<a href="/vitrines/">page catalogue</a> pour les fiches détaillées.'
     )
     lines.append('            </p>')
     lines.append('        </div>')
@@ -1828,7 +1956,8 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         vars_dict.update(_vitrine_body_copy(it, price, demo_rel))
         _normalize_page_meta(vars_dict, slug)
         vars_dict['page_url'] = _to_absolute_url(f'/vitrines/{slug}/')
-        vars_dict['og_image'] = _to_absolute_url(og_desk)
+        vars_dict['og_image'] = _og_image_url_with_cache_bust(_to_absolute_url(og_desk))
+        _apply_og_image_file_meta(vars_dict)
         scripts = vars_dict.get('page_scripts') or []
         vars_dict['page_scripts_content'] = build_page_scripts_content(scripts)
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
@@ -1960,7 +2089,12 @@ def _prestation_card_html(
     price_label = html.escape((item.get('price_label') or 'Forfait').strip())
     if item.get('has_page'):
         cta_href = f'/prestations/{slug}/'
-        cta_label = 'Découvrir'
+        short_title = title_raw.split('—')[0].strip() if '—' in title_raw else title_raw
+        if len(short_title) > 36:
+            short_title = short_title[:33].rstrip() + '…'
+        cta_label = f'{short_title} — {price_eur} € HT'
+        devis_short = short_title.lower()
+        devis_label = f'Devis {devis_short} par e-mail'
         actions = (
             f'<div class="prestation-card-actions">'
             f'<a href="{cta_href}" class="service-cta"><span>{html.escape(cta_label)}</span>'
@@ -1971,7 +2105,7 @@ def _prestation_card_html(
             f' data-prestation-title="{title}"'
             f' data-prestation-price="{price_eur}"'
             f' data-prestation-price-label="{price_label}">'
-            f'<span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
+            f'<span>{html.escape(devis_label)}</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
             f'</div>'
         )
     else:
@@ -2285,7 +2419,8 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
         vars_dict.update(seo_bundle)
         _normalize_page_meta(vars_dict, slug)
         vars_dict['page_url'] = page_url_abs
-        vars_dict['og_image'] = og_image_abs
+        vars_dict['og_image'] = _og_image_url_with_cache_bust(og_image_abs)
+        _apply_og_image_file_meta(vars_dict)
         scripts = vars_dict.get('page_scripts') or []
         vars_dict['page_scripts_content'] = build_page_scripts_content(scripts)
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
@@ -2488,7 +2623,7 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
             'page_description': (p.get('description') or '')[:160],
             'page_keywords': ', '.join(techs[:5]) if techs else 'projet, open source',
             'page_url': f"{SITE_BASE}/projets/{slug}",
-            'og_image': _to_absolute_url(og_rel),
+            'og_image': _og_image_url_with_cache_bust(_to_absolute_url(og_rel)),
             'og_type': 'website',
             'schema_type': 'project',
             'page_content': '',  # sera remplace par le rendu du fragment
@@ -2768,6 +2903,7 @@ def main():
     DEFAULT_VARS['site_base'] = SITE_BASE
     DEFAULT_VARS['page_url'] = f'{SITE_BASE}/'
     DEFAULT_VARS['og_image'] = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
+    DEFAULT_VARS.update(_webful_analytics_config())
 
     # Parse les arguments
     output_dir_arg = None
@@ -2809,6 +2945,11 @@ def main():
     # Copie les assets dans le dossier de sortie
     assets_src = BASE_DIR / 'assets'
     assets_dst = OUTPUT_DIR / 'assets'
+    # Normalise les JPEG OG (1200×630 réels) avant sync — requis Meta / Messenger
+    _normalize_script = BASE_DIR / 'scripts' / 'normalize_og_images.py'
+    if _normalize_script.is_file() and assets_src.is_dir():
+        import subprocess
+        subprocess.run([sys.executable, str(_normalize_script)], cwd=str(BASE_DIR), check=False)
     if assets_src.exists():
         if assets_dst.exists():
             sync_assets_to_dist(assets_src, assets_dst)
@@ -2891,6 +3032,8 @@ def main():
     # Liste des pages à builder
     pages = [
         'index',
+        'nos-offres',
+        'contact',
         'vitrines',
         'prestations',
         'processus',
@@ -2904,7 +3047,9 @@ def main():
         'mentions-legales',
         'cgv',
         'cgu',
-        'politique-confidentialite'
+        'politique-confidentialite',
+        'not-found',
+        'pro',
     ]
     
     success_count = 0

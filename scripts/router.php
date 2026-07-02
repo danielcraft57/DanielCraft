@@ -20,6 +20,16 @@ if (in_array($uri, ['/autres-prestations', '/autres-prestations/', '/autres-pres
     exit;
 }
 
+// Redirections SEO — URLs historiques / ancres courtes
+if (in_array($uri, ['/nos-offres.html'], true)) {
+    header('Location: /nos-offres', true, 301);
+    exit;
+}
+if (in_array($uri, ['/contact.html'], true)) {
+    header('Location: /contact', true, 301);
+    exit;
+}
+
 /** Types MIME courants pour les assets statiques */
 function dc_static_mime(string $ext): string
 {
@@ -105,6 +115,14 @@ $resolved = dc_resolve_static($root, $uri);
 if ($resolved !== null) {
     header('Content-Type: text/html; charset=UTF-8');
     readfile($resolved);
+    return true;
+}
+
+$notFound = $root . DIRECTORY_SEPARATOR . '404.html';
+if (is_file($notFound)) {
+    http_response_code(404);
+    header('Content-Type: text/html; charset=UTF-8');
+    readfile($notFound);
     return true;
 }
 

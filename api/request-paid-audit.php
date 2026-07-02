@@ -81,7 +81,7 @@ if (!$fulfill['ok']) {
 
 $message = 'Merci ! Votre commande est finalisée : facture enregistrée et audit complet lancé.';
 if ($fulfill['invoice_ok'] && $fulfill['audit_ok']) {
-    $message = 'Merci ! Facture émise dans Facturio, audit complet en cours — emails sous 48 h.';
+    $message = 'Merci ! Facture émise dans Facturio, audit complet en cours — emails sous 24 h ouvrées.';
 } elseif ($fulfill['invoice_ok'] && !$fulfill['audit_ok']) {
     $message = 'Facture enregistrée. L’audit n’a pas démarré : contact@danielcraft.fr avec votre email.';
 } elseif (!$fulfill['invoice_ok'] && $fulfill['audit_ok']) {

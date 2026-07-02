@@ -1,0 +1,8 @@
+{
+  "page_title": "Espace pro & technique — DanielCraft",
+  "page_description": "Blog développement, Design Patterns, Docker, CI/CD et projets open source. Pour développeurs, ESN et SaaS — distinct de l'offre artisans.",
+  "page_url": "/pro",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "schema_type": "pro",
+  "page_scripts": ["main.js"]
+}

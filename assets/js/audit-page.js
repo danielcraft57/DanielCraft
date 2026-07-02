@@ -1,5 +1,5 @@
 /**
- * Page /audit — formulaire gratuit + paiement Stripe audit complet IA.
+ * Page /audit — formulaire unifié (gratuit + premium) + paiement Stripe.
  */
 (function () {
   'use strict';
@@ -8,10 +8,26 @@
   if (!root) return;
 
   const stripePk = (root.getAttribute('data-stripe-pk') || '').trim();
-  const paidCard = document.querySelector('.audit-form-card--paid');
-  const auditSlug = paidCard ? (paidCard.getAttribute('data-audit-slug') || 'audit-complet-ia').trim() : 'audit-complet-ia';
+  const premiumCard = document.querySelector('.audit-offer-card--premium');
+  const auditSlug = premiumCard
+    ? (premiumCard.getAttribute('data-audit-slug') || 'audit-complet-ia').trim()
+    : 'audit-complet-ia';
 
   const STORAGE_KEY = 'danielcraft_audit_paid_pending';
+  let auditMode = 'free';
+
+  const unifiedForm = document.getElementById('auditUnifiedForm');
+  const unifiedUrl = document.getElementById('auditUnifiedUrl');
+  const unifiedEmail = document.getElementById('auditUnifiedEmail');
+  const unifiedName = document.getElementById('auditUnifiedName');
+  const unifiedFeedback = document.getElementById('auditUnifiedFeedback');
+  const successPanel = document.getElementById('auditSuccessPanel');
+  const successLead = document.getElementById('auditSuccessLead');
+  const freeSubmit = document.getElementById('auditUnifiedSubmitFree');
+  const premiumSubmit = document.getElementById('auditUnifiedSubmitPremium');
+  const payNote = document.getElementById('auditUnifiedPayNote');
+  const testBtn = document.getElementById('auditUnifiedTestBtn');
+  const modeTabs = document.querySelectorAll('[data-audit-mode]');
 
   function normalizeUrl(raw) {
     var s = (raw || '').trim();
@@ -67,118 +83,141 @@
     });
   }
 
-  /* ——— Test URL (loupe) ——— */
-  var freeTestBtn = document.getElementById('auditFreeTestBtn');
-  var freeUrl = document.getElementById('auditFreeUrl');
-  if (freeTestBtn && freeUrl) {
-    freeTestBtn.addEventListener('click', function () { openAnalysePreview(freeUrl); });
-  }
-  var paidTestBtn = document.getElementById('auditPaidTestBtn');
-  var paidUrl = document.getElementById('auditPaidUrl');
-  if (paidTestBtn && paidUrl) {
-    paidTestBtn.addEventListener('click', function () { openAnalysePreview(paidUrl); });
-  }
-
-  /* ——— Audit gratuit ——— */
-  var freeForm = document.getElementById('auditFreeForm');
-  var freeSubmit = document.getElementById('auditFreeSubmit');
-  var freeFeedback = document.getElementById('auditFreeFeedback');
-
-  if (freeForm) {
-    freeForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var url = normalizeUrl(document.getElementById('auditFreeUrl').value);
-      var email = (document.getElementById('auditFreeEmail').value || '').trim();
-      var name = (document.getElementById('auditFreeName').value || '').trim();
-
-      if (!url) {
-        setFeedback(freeFeedback, 'URL du site invalide.', true);
-        return;
+  function showAuditSuccess(message, email) {
+    if (unifiedForm) unifiedForm.hidden = true;
+    if (successPanel) {
+      successPanel.hidden = false;
+      if (successLead) {
+        successLead.textContent =
+          message ||
+          (email
+            ? '3 priorités pour votre site — envoyées à ' + email + ' sous 48 h ouvrées.'
+            : '3 priorités pour votre site — livraison sous 48 h ouvrées.');
       }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        setFeedback(freeFeedback, 'Email invalide.', true);
-        return;
-      }
+    }
+    setFeedback(unifiedFeedback, '', false);
+  }
 
-      setSubmitLoading(freeSubmit, true);
-      setFeedback(freeFeedback, '', false);
+  function hideAuditSuccess() {
+    if (unifiedForm) unifiedForm.hidden = false;
+    if (successPanel) successPanel.hidden = true;
+  }
 
-      fetch('/api/request-free-audit.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ website: url, email: email })
-      })
-        .then(parseJsonResponse)
-        .then(function (ref) {
-          if (ref.res.ok && ref.data && ref.data.success) {
-            setFeedback(
-              freeFeedback,
-              (ref.data && ref.data.message) ||
-                'Merci ! Votre audit arrive dans votre boîte mail sous 48 h.',
-              false
-            );
-            freeForm.reset();
-            return;
-          }
-          var errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Réessayez ou contactez-nous.';
-          if (ref.res.status === 429) {
-            errMsg = (ref.data && ref.data.error) || 'Vous avez déjà demandé un audit récemment. Réessayez plus tard.';
-          }
-          setFeedback(freeFeedback, errMsg, true);
-        })
-        .catch(function () {
-          setFeedback(freeFeedback, 'Serveur injoignable. Vérifiez que PHP tourne sur dist/.', true);
-        })
-        .finally(function () {
-          setSubmitLoading(freeSubmit, false);
-        });
+  function setAuditMode(mode) {
+    hideAuditSuccess();
+    auditMode = mode === 'premium' ? 'premium' : 'free';
+    modeTabs.forEach(function (tab) {
+      var on = tab.getAttribute('data-audit-mode') === auditMode;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    if (freeSubmit) freeSubmit.hidden = auditMode !== 'free';
+    if (premiumSubmit) premiumSubmit.hidden = auditMode !== 'premium';
+    if (payNote) payNote.hidden = auditMode !== 'premium';
+    setFeedback(unifiedFeedback, '', false);
+  }
+
+  modeTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      setAuditMode(tab.getAttribute('data-audit-mode'));
+    });
+  });
+
+  if (testBtn && unifiedUrl) {
+    testBtn.addEventListener('click', function () {
+      openAnalysePreview(unifiedUrl);
     });
   }
 
-  /* ——— Stripe audit payant ——— */
-  var paidStripeBtn = document.getElementById('auditPaidStripeBtn');
-  var paidStripeFb = document.getElementById('auditPaidStripeFeedback');
+  function readFormValues() {
+    return {
+      url: normalizeUrl(unifiedUrl && unifiedUrl.value),
+      email: (unifiedEmail && unifiedEmail.value || '').trim(),
+      name: (unifiedName && unifiedName.value || '').trim(),
+    };
+  }
 
-  function stripeFeedback(text, isError) {
-    if (!paidStripeFb) return;
-    paidStripeFb.hidden = false;
-    paidStripeFb.textContent = text;
-    paidStripeFb.className = 'form-feedback audit-stripe-feedback' + (isError ? ' audit-stripe-feedback--error' : ' audit-stripe-feedback--ok');
+  function submitFreeAudit() {
+    var vals = readFormValues();
+    if (!vals.url) {
+      setFeedback(unifiedFeedback, 'URL du site invalide.', true);
+      return;
+    }
+    if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
+      setFeedback(unifiedFeedback, 'Email invalide.', true);
+      return;
+    }
+
+    setSubmitLoading(freeSubmit, true);
+    setFeedback(unifiedFeedback, '', false);
+
+    fetch('/api/request-free-audit.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ website: vals.url, email: vals.email }),
+    })
+      .then(parseJsonResponse)
+      .then(function (ref) {
+        if (ref.res.ok && ref.data && ref.data.success) {
+          showAuditSuccess(
+            (ref.data && ref.data.message) || null,
+            vals.email
+          );
+          if (unifiedForm) unifiedForm.reset();
+          return;
+        }
+        var errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Réessayez ou contactez-nous.';
+        if (ref.res.status === 429) {
+          errMsg =
+            (ref.data && ref.data.error) ||
+            'Vous avez déjà demandé un audit récemment. Réessayez plus tard.';
+        }
+        setFeedback(unifiedFeedback, errMsg, true);
+      })
+      .catch(function () {
+        setFeedback(unifiedFeedback, 'Serveur injoignable. Vérifiez que PHP tourne sur dist/.', true);
+      })
+      .finally(function () {
+        setSubmitLoading(freeSubmit, false);
+      });
   }
 
   function startPaidCheckout() {
-    var url = normalizeUrl(document.getElementById('auditPaidUrl').value);
-    var email = (document.getElementById('auditPaidEmail').value || '').trim();
-    var name = (document.getElementById('auditPaidName').value || '').trim();
-
-    if (!url) {
-      stripeFeedback('URL du site invalide.', true);
+    var vals = readFormValues();
+    if (!vals.url) {
+      setFeedback(unifiedFeedback, 'URL du site invalide.', true);
       return;
     }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      stripeFeedback('Email invalide.', true);
+    if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
+      setFeedback(unifiedFeedback, 'Email invalide.', true);
       return;
     }
 
     try {
       sessionStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ site_url: url, email: email, name: name || 'Client audit IA' })
+        JSON.stringify({
+          site_url: vals.url,
+          email: vals.email,
+          name: vals.name || 'Client audit IA',
+        })
       );
-    } catch (err) { /* ignore */ }
+    } catch (err) {
+      /* ignore */
+    }
 
-    setSubmitLoading(paidStripeBtn, true);
-    paidStripeFb.hidden = true;
+    setSubmitLoading(premiumSubmit, true);
+    setFeedback(unifiedFeedback, '', false);
 
     fetch('/api/stripe-create-audit-checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         audit_slug: auditSlug,
-        email: email,
-        site_url: url,
-        name: name
-      })
+        email: vals.email,
+        site_url: vals.url,
+        name: vals.name,
+      }),
     })
       .then(parseJsonResponse)
       .then(function (ref) {
@@ -186,19 +225,37 @@
           window.location.href = ref.data.url;
           return;
         }
-        stripeFeedback((ref.data && ref.data.error) || 'Impossible d’ouvrir le paiement Stripe.', true);
+        setFeedback(
+          unifiedFeedback,
+          (ref.data && ref.data.error) || 'Impossible d’ouvrir le paiement Stripe.',
+          true
+        );
       })
       .catch(function () {
-        stripeFeedback('Serveur injoignable.', true);
+        setFeedback(unifiedFeedback, 'Serveur injoignable.', true);
       })
       .finally(function () {
-        setSubmitLoading(paidStripeBtn, false);
+        setSubmitLoading(premiumSubmit, false);
       });
   }
 
-  if (paidStripeBtn) {
-    paidStripeBtn.addEventListener('click', startPaidCheckout);
+  if (unifiedForm) {
+    unifiedForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (auditMode === 'premium') startPaidCheckout();
+      else submitFreeAudit();
+    });
   }
+
+  if (premiumSubmit) {
+    premiumSubmit.addEventListener('click', function (e) {
+      e.preventDefault();
+      setAuditMode('premium');
+      startPaidCheckout();
+    });
+  }
+
+  setAuditMode('free');
 
   function confirmPaidOrderAfterStripe() {
     var raw;
@@ -219,7 +276,9 @@
     var sessionId = '';
     try {
       sessionId = (params.get('session_id') || '').trim();
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+      /* ignore */
+    }
 
     fetch('/api/request-paid-audit.php', {
       method: 'POST',
@@ -227,8 +286,8 @@
       body: JSON.stringify({
         website: data.site_url || '',
         email: data.email || '',
-        stripe_session_id: sessionId
-      })
+        stripe_session_id: sessionId,
+      }),
     })
       .then(function (res) {
         return res.json().then(function (body) {
@@ -241,9 +300,8 @@
         banner.hidden = false;
         if (ref.res.ok && ref.body && ref.body.success) {
           banner.textContent =
-            (ref.body.message ||
-              'Merci ! Facture envoyée par email, puis lancement de l’audit complet.') +
-            '';
+            ref.body.message ||
+            'Merci ! Facture envoyée par email, puis lancement de l’audit complet.';
           banner.className = 'audit-stripe-return audit-stripe-return--ok';
         } else {
           banner.textContent =
@@ -263,7 +321,9 @@
       .finally(function () {
         try {
           sessionStorage.removeItem(STORAGE_KEY);
-        } catch (e) { /* ignore */ }
+        } catch (e) {
+          /* ignore */
+        }
       });
   }
 

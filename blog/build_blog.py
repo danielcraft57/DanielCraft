@@ -93,14 +93,25 @@ def _get_site_layout_html() -> dict:
     if _SITE_LAYOUT_CACHE is not None:
         return _SITE_LAYOUT_CACHE
 
+    sys.path.insert(0, str(PROJECT_ROOT))
+    try:
+        from build import _apply_analytics_vars
+    except ImportError as exc:
+        print(f'[WARN] Config analytics indisponible : {exc}')
+
+        def _apply_analytics_vars(_vars_dict: dict) -> None:
+            return None
+
     vars_dict = {
         'current_page': 'blog',
         'blog_enabled': True,
         'page_scripts_content': '<script src="/assets/js/main.js" defer></script>',
     }
+    _apply_analytics_vars(vars_dict)
     _SITE_LAYOUT_CACHE = {
         'nav': _render_site_include('includes/nav.html', vars_dict),
         'footer': _render_site_include('includes/footer.html', vars_dict),
+        'analytics': _render_site_include('includes/analytics.html', vars_dict),
         'modals': (
             _render_site_include('includes/modal-devis.html', vars_dict)
             + _render_site_include('includes/modal-projet.html', vars_dict)
@@ -114,6 +125,7 @@ def _inject_site_layout(html: str) -> str:
     layout = _get_site_layout_html()
     html = html.replace('{{NAV_HTML}}', layout.get('nav', ''))
     html = html.replace('{{FOOTER_HTML}}', layout.get('footer', ''))
+    html = html.replace('{{ANALYTICS_HTML}}', layout.get('analytics', ''))
     html = html.replace('{{MODALS_HTML}}', layout.get('modals', ''))
     return html
 
@@ -352,14 +364,75 @@ def _article_card_html(
     )
 
 
+def _og_image_file_meta(url: str) -> tuple[str, str, str]:
+    """Largeur, hauteur et MIME réels du fichier OG local."""
+    raw = (url or '').split('?')[0].split('#')[0]
+    idx = raw.find('/assets/images/og/')
+    if idx < 0:
+        return '1200', '630', 'image/jpeg'
+    rel = raw[idx + len('/assets/'):]
+    local = PROJECT_ROOT / 'assets' / rel.replace('/', os.sep)
+    if not local.is_file():
+        return '1200', '630', 'image/jpeg'
+    try:
+        from PIL import Image
+
+        with Image.open(local) as im:
+            w, h = im.size
+            fmt = (im.format or 'JPEG').upper()
+            mime = {
+                'JPEG': 'image/jpeg',
+                'PNG': 'image/png',
+                'WEBP': 'image/webp',
+                'GIF': 'image/gif',
+            }.get(fmt, 'image/jpeg')
+            return str(w), str(h), mime
+    except OSError:
+        return '1200', '630', 'image/jpeg'
+
+
+def _inject_og_image_meta(html: str, og_url: str) -> str:
+    """Remplace {{OG_IMAGE*}} avec URL cache-bust et dimensions réelles du fichier."""
+    busted = _og_image_cache_bust(og_url)
+    w, h, mime = _og_image_file_meta(busted)
+    return (
+        html.replace('{{OG_IMAGE}}', busted)
+        .replace('{{OG_IMAGE_WIDTH}}', w)
+        .replace('{{OG_IMAGE_HEIGHT}}', h)
+        .replace('{{OG_IMAGE_TYPE}}', mime)
+    )
+
+
+def _og_image_cache_bust(url: str) -> str:
+    """?v=mtime sur les JPEG OG locaux (cache Facebook / LinkedIn / X)."""
+    raw = (url or '').strip()
+    if not raw or '/assets/images/og/' not in raw:
+        return raw
+    path_only = raw.split('?')[0].split('#')[0]
+    idx = path_only.find('/assets/images/og/')
+    if idx < 0:
+        return raw
+    rel = path_only[idx + len('/assets/'):]
+    local = PROJECT_ROOT / 'assets' / rel.replace('/', os.sep)
+    if not local.is_file():
+        return raw
+    try:
+        mtime = datetime.fromtimestamp(local.stat().st_mtime).strftime('%Y%m%d%H%M')
+    except OSError:
+        return raw
+    return f"{path_only}?v={mtime}"
+
+
 def _get_article_og_image(article: dict) -> str:
     """Retourne l'URL absolue de l'image OG pour les metas et le schema.org."""
     og_img = article.get('og_image')
     if og_img and og_img.startswith('http'):
-        return og_img
-    if og_img:
-        return f"{SITE_BASE}/assets/images/og/{og_img}"
-    return OG_IMAGE_BLOG
+        url = og_img
+    elif og_img:
+        url = f"{SITE_BASE}/assets/images/og/{og_img}"
+    else:
+        url = OG_IMAGE_BLOG
+    return _og_image_cache_bust(url)
 
 
 def _get_article_hero_image(article: dict, assets_prefix: str) -> str:
@@ -546,20 +619,43 @@ def load_template(name: str) -> str:
     return ''
 
 
+_BLOG_CLIENT_PRIORITY = (
+    'seo-local', 'geo', 'seo', 'local', 'artisan', 'metz', 'google', 'vitrine', 'visibilité',
+)
+
+
+def _article_client_priority_score(article: dict) -> int:
+    """Score pour mettre en avant les articles utiles aux artisans / SEO local."""
+    parts = [
+        article.get('title', ''),
+        article.get('excerpt', ''),
+        ' '.join(article.get('tags') or []),
+        article.get('series') or '',
+        article.get('slug', ''),
+    ]
+    text = ' '.join(str(p) for p in parts).lower()
+    return sum(2 for kw in _BLOG_CLIENT_PRIORITY if kw in text)
+
+
 def _recommendations_index_html(articles: list[dict], collections: list[dict]) -> str:
     """Genere le bloc "A découvrir" pour la page index du blog (4 articles mis en avant)."""
     if not articles:
         return ''
     seen = set()
     picked = []
-    for coll in collections[:4]:
-        coll_id = coll.get('id', '')
+    for coll in collections:
+        coll_id = coll.get('id', '') or coll.get('slug', '')
+        if 'seo' not in str(coll_id).lower() and 'geo' not in str(coll_id).lower():
+            continue
         for a in articles:
             if a.get('series') == coll_id and a['slug'] not in seen:
                 picked.append(a)
                 seen.add(a['slug'])
                 break
-    for a in articles:
+        if len(picked) >= 4:
+            break
+    ranked = sorted(articles, key=_article_client_priority_score, reverse=True)
+    for a in ranked:
         if len(picked) >= 4:
             break
         if a['slug'] not in seen:
@@ -655,6 +751,7 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     excerpt = _escape_html(article.get('excerpt', ''))
     title = _escape_html(article['title'])
     og_img_url = _get_article_og_image(article)
+    og_w, og_h, og_mime = _og_image_file_meta(og_img_url)
     hero_img_url = _get_article_hero_image(article, assets_prefix_article)
 
     prev_next = _prev_next_html(articles, article['slug'])
@@ -685,6 +782,9 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     html = html.replace('{{SHARE_TWITTER_URL}}', share_twitter_url)
     html = html.replace('{{SHARE_LINKEDIN_URL}}', share_linkedin_url)
     html = html.replace('{{OG_IMAGE}}', og_img_url)
+    html = html.replace('{{OG_IMAGE_WIDTH}}', og_w)
+    html = html.replace('{{OG_IMAGE_HEIGHT}}', og_h)
+    html = html.replace('{{OG_IMAGE_TYPE}}', og_mime)
     html = html.replace('{{HERO_IMAGE}}', hero_img_url)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_article(article))
@@ -755,7 +855,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
             )
         )
 
-    meta_desc = 'Blog DanielCraft : articles sur le développement web, TypeScript, GEO, SEO et bonnes pratiques.'
+    meta_desc = 'Guides SEO local, visibilité Google et site vitrine pour artisans — plus articles techniques (Docker, Design Patterns) sur l’espace pro.'
     page_url = f'{SITE_BASE}/blog'
 
     # Bloc "A découvrir" : 4 articles (un par serie ou derniers)
@@ -771,7 +871,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{META_DESCRIPTION}}', _escape_html(meta_desc))
     html = html.replace('{{META_KEYWORDS}}', 'développement web, TypeScript, GEO, SEO, tutoriels, bonnes pratiques')
     html = html.replace('{{PAGE_URL}}', page_url)
-    html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
+    html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_blog_index(articles))
 
     html = _inject_site_layout(html)
@@ -866,7 +966,7 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     html = html.replace('{{ASSETS}}', assets_prefix_series)
     html = html.replace('{{ROOT}}', '../..')
     html = html.replace('{{PAGE_URL}}', page_url)
-    html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
+    html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
     html = html.replace('{{SCHEMA_JSON_LD}}', _schema_collection(collection, items))
 
@@ -961,7 +1061,7 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
         html = html.replace('{{ASSETS}}', assets_prefix_types)
         html = html.replace('{{ROOT}}', '../..')
         html = html.replace('{{PAGE_URL}}', page_url)
-        html = html.replace('{{OG_IMAGE}}', OG_IMAGE_BLOG)
+        html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
         html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
         html = html.replace('{{SCHEMA_JSON_LD}}', '')  # optionnel: on pourrait generer un schema type
 

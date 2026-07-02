@@ -107,6 +107,13 @@
         }
       });
       visibleCount = matched.length;
+      if (visibleCount === 0) {
+        const popularSlugs = ['site-vitrine', 'visibilite-complete', 'repondeur-intelligent'];
+        popularSlugs.forEach((slug) => {
+          const entry = uniqueBySlug.get(slug);
+          if (entry) matched.push(entry);
+        });
+      }
       renderResults(matched);
       resultsWrap.hidden = false;
       catalogBrowse.hidden = true;
@@ -130,7 +137,13 @@
       if (!filtering) {
         info.textContent = '';
       } else if (visibleCount === 0) {
-        info.textContent = 'Aucun résultat — modifiez votre recherche ou utilisez les suggestions ci-dessus.';
+        info.textContent = 'Aucun résultat — voici nos prestations les plus demandées. ';
+        const link = document.createElement('a');
+        link.href = '/contact';
+        link.textContent = 'Parler de mon projet →';
+        info.textContent = '';
+        info.appendChild(document.createTextNode('Aucun résultat — voici nos prestations les plus demandées. '));
+        info.appendChild(link);
       } else if (visibleCount === 1) {
         info.textContent = '1 prestation trouvée';
       } else {

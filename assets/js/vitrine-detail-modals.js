@@ -1,5 +1,5 @@
 /**
- * Modales fiche vitrine : pré-commande (sans paiement) & devis rapide (type contact).
+ * Modale fiche vitrine : pré-commande modèle (sans paiement immédiat).
  */
 (function () {
   'use strict';
@@ -16,12 +16,10 @@
   ];
 
   const orderDialog = document.getElementById('vitrineDialogOrder');
-  const quoteDialog = document.getElementById('vitrineDialogQuote');
   const orderForm = document.getElementById('vitrineOrderForm');
-  const quoteForm = document.getElementById('vitrineQuoteForm');
   const card = document.querySelector('.vitrine-purchase-card');
 
-  if (!orderDialog || !quoteDialog || !orderForm || !quoteForm) return;
+  if (!orderDialog || !orderForm) return;
 
   const MSG_STATIC =
     'Le serveur actuel ne traite pas correctement le POST PHP. Lancez le site avec PHP (ex: php -S 127.0.0.1:8000 -t dist).';
@@ -369,156 +367,6 @@
       });
   });
 
-  /* ----- Devis ----- */
-  const quoteFeedback = document.getElementById('vitrineQuoteFeedback');
-  const quoteProgressLis = quoteDialog.querySelectorAll('[data-vitrine-quote-bar]');
-  const quoteSteps = quoteDialog.querySelectorAll('[data-vitrine-quote-step]');
-  const quoteMount = document.getElementById('vitrineQuoteProjectMount');
-  const quoteProjectType = document.getElementById('vd_quote_project_type');
-  const quoteVitrineTitle = document.getElementById('vd_quote_vitrine_title');
-  const quoteMessage = document.getElementById('vd_quote_message');
-  const quoteNamePost = document.getElementById('vd_quote_name_post');
-  let quoteStep = 1;
-
-  function setQuoteStep(n) {
-    quoteStep = n;
-    setStepVisibility(quoteSteps, n, 'data-vitrine-quote-step');
-    setProgressItems(quoteProgressLis, n);
-    hideFeedback(quoteFeedback);
-  }
-
-  function syncQuoteName() {
-    const f = document.getElementById('vd_quote_first');
-    const l = document.getElementById('vd_quote_last');
-    quoteNamePost.value = (((f && f.value) || '').trim() + ' ' + ((l && l.value) || '').trim()).trim();
-  }
-
-  function validateQuoteStep1() {
-    if (!quoteProjectType.value) {
-      showFeedback(quoteFeedback, 'Choisissez un type de projet.', true);
-      return false;
-    }
-    return true;
-  }
-
-  function validateQuoteStep2() {
-    const d = (document.getElementById('vd_quote_detail').value || '').trim();
-    if (d.length < 15) {
-      showFeedback(quoteFeedback, 'Décrivez votre besoin en au moins quelques mots (15 caractères min.).', true);
-      return false;
-    }
-    return true;
-  }
-
-  function validateQuoteStep3() {
-    syncQuoteName();
-    const email = (document.getElementById('vd_quote_email').value || '').trim();
-    const phone = (document.getElementById('vd_quote_phone').value || '').trim();
-    if (!quoteNamePost.value) {
-      showFeedback(quoteFeedback, 'Indiquez prénom et nom.', true);
-      return false;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showFeedback(quoteFeedback, 'Email invalide.', true);
-      return false;
-    }
-    if (phone.replace(/\D/g, '').length < 8) {
-      showFeedback(quoteFeedback, 'Téléphone trop court ou invalide.', true);
-      return false;
-    }
-    return true;
-  }
-
-  function buildQuoteMessage() {
-    const detail = (document.getElementById('vd_quote_detail').value || '').trim();
-    const slug = readVitrineSlug();
-    const title = readVitrineTitle();
-    const pt = PROJECT_TYPES.find(function (x) {
-      return x.slug === quoteProjectType.value;
-    });
-    return (
-      '--- Devis / questions — fiche catalogue ---\n' +
-      'Modèle : ' +
-      title +
-      ' (slug: ' +
-      slug +
-      ')\n' +
-      'Type de projet : ' +
-      ((pt && pt.label) || quoteProjectType.value) +
-      '\n\n' +
-      'Besoin exprimé :\n' +
-      detail
-    );
-  }
-
-  quoteDialog.querySelectorAll('[data-vitrine-quote-next]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      const from = parseInt(btn.getAttribute('data-vitrine-quote-next'), 10);
-      if (from === 1) {
-        if (!validateQuoteStep1()) return;
-        setQuoteStep(2);
-      } else if (from === 2) {
-        if (!validateQuoteStep2()) return;
-        setQuoteStep(3);
-      }
-    });
-  });
-
-  quoteDialog.querySelectorAll('[data-vitrine-quote-back]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      const from = parseInt(btn.getAttribute('data-vitrine-quote-back'), 10);
-      if (from === 2) setQuoteStep(1);
-      else if (from === 3) setQuoteStep(2);
-    });
-  });
-
-  quoteForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validateQuoteStep3()) return;
-    quoteVitrineTitle.value = readVitrineTitle();
-    quoteMessage.value = buildQuoteMessage();
-    hideFeedback(quoteFeedback);
-    const submitBtn = document.getElementById('vitrineQuoteSubmit');
-    setSubmitLoading(submitBtn, true);
-    const fd = new FormData(quoteForm);
-    fetch('/api/send-contact.php', { method: 'POST', body: fd })
-      .then(parseFetchJson)
-      .then(function (_ref2) {
-        const res = _ref2.res;
-        const data = _ref2.data;
-        if (
-          (res.status === 501 || res.status === 405) &&
-          /^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/i.test(window.location.origin)
-        ) {
-          showFeedback(quoteFeedback, MSG_STATIC, true);
-        } else if (res.ok && data.success) {
-          showFeedback(
-            quoteFeedback,
-            data.dry_run
-              ? 'Message accepté (mode test sans email sur ce serveur).'
-              : 'Message envoyé. Je vous réponds dès que possible.',
-            false
-          );
-          quoteForm.reset();
-          setQuoteStep(1);
-          quoteProjectType.value = '';
-          renderProjectTypes(quoteMount, quoteProjectType, '');
-          setTimeout(function () {
-            quoteDialog.close();
-            hideFeedback(quoteFeedback);
-          }, 2600);
-        } else {
-          showFeedback(quoteFeedback, (data && data.error) || 'Envoi impossible.', true);
-        }
-      })
-      .catch(function () {
-        showFeedback(quoteFeedback, 'Erreur réseau ou serveur injoignable.', true);
-      })
-      .finally(function () {
-        setSubmitLoading(submitBtn, false);
-      });
-  });
-
   /* ----- Ouverture / fermeture ----- */
   function openOrder() {
     const cur = orderProjectType.value || 'web';
@@ -529,21 +377,8 @@
     orderDialog.showModal();
   }
 
-  function openQuote() {
-    const cur = quoteProjectType.value || 'web';
-    renderProjectTypes(quoteMount, quoteProjectType, cur);
-    quoteVitrineTitle.value = readVitrineTitle();
-    hideFeedback(quoteFeedback);
-    setQuoteStep(1);
-    quoteDialog.showModal();
-  }
-
-  document.querySelectorAll('[data-vitrine-open]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      const which = btn.getAttribute('data-vitrine-open');
-      if (which === 'order') openOrder();
-      else if (which === 'quote') openQuote();
-    });
+  document.querySelectorAll('[data-vitrine-open="order"]').forEach(function (btn) {
+    btn.addEventListener('click', openOrder);
   });
 
   orderDialog.querySelectorAll('[data-vitrine-close]').forEach(function (btn) {
@@ -551,23 +386,12 @@
       orderDialog.close();
     });
   });
-  quoteDialog.querySelectorAll('[data-vitrine-close]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      quoteDialog.close();
-    });
-  });
 
   orderDialog.addEventListener('click', function (ev) {
     if (ev.target === orderDialog) orderDialog.close();
   });
-  quoteDialog.addEventListener('click', function (ev) {
-    if (ev.target === quoteDialog) quoteDialog.close();
-  });
 
   renderProjectTypes(orderMount, orderProjectType, 'web');
   orderProjectType.value = 'web';
-  renderProjectTypes(quoteMount, quoteProjectType, 'web');
-  quoteProjectType.value = 'web';
   setProgressItems(orderProgressLis, 1);
-  setProgressItems(quoteProgressLis, 1);
 })();

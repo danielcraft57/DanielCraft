@@ -421,6 +421,107 @@ html {
   }
 }
 
+/* UX backlog — pages contact, offres, vitrines, audit */
+.page-contact-hero { padding: 2.5rem 0 1rem; }
+.page-contact-hero + .contact .section-header { display: none; }
+.page-contact-lead { max-width: 42rem; }
+
+.page-nos-offres { padding-top: 2rem; }
+.nos-offres-grid { display: grid; gap: 1.5rem; }
+.nos-offres-contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.nos-offres-contrast-col { padding: 1rem; border-radius: 12px; font-size: 0.92rem; }
+.nos-offres-contrast-col--before { background: #fff5f5; border: 1px solid #fecaca; }
+.nos-offres-contrast-col--after { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.nos-offres-contrast-col h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 0.5rem; }
+.nos-offres-contrast-col ul { margin: 0; padding-left: 1.1rem; }
+.nos-offres-models-hint { font-size: 0.9rem; margin-top: 0.75rem; text-align: center; }
+
+.vitrine-compare-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+.vitrine-compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.vitrine-compare-table th, .vitrine-compare-table td { padding: 0.75rem 1rem; border: 1px solid var(--border-color, #e2e8f0); text-align: left; }
+.vitrine-compare-table thead th { background: var(--surface-muted, #f8fafc); }
+.vitrine-compare-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+
+.prestation-detail-hero-price { font-size: 1.75rem; font-weight: 700; color: var(--primary-color, #2f78a6); margin: 0.5rem 0 1rem; }
+.prestation-detail-hero-price span { font-size: 1rem; font-weight: 500; color: var(--text-muted, #64748b); }
+
+.audit-mode-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.audit-mode-tab { border: 1px solid var(--border-color, #cbd5e1); background: #fff; padding: 0.65rem 1rem; border-radius: 999px; cursor: pointer; font-weight: 600; }
+.audit-mode-tab.is-active { background: var(--primary-color, #2f78a6); color: #fff; border-color: transparent; }
+.audit-unified-form { margin: 2rem 0 3rem; }
+
+.vitrines-filter-select-wrap { display: none; margin-bottom: 0.75rem; }
+.vitrines-filter-select { width: 100%; max-width: 320px; padding: 0.6rem 0.75rem; border-radius: 8px; border: 1px solid var(--border-color, #cbd5e1); }
+.vitrines-filter--extended { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+.vitrines-filter-more { margin-top: 0.5rem; background: none; border: none; color: var(--primary-color, #2f78a6); text-decoration: underline; cursor: pointer; font-size: 0.92rem; }
+
+.contact-progress-label { text-align: center; font-weight: 600; margin: 0.35rem 0 1rem; color: var(--primary-color, #2f78a6); }
+.contact-wizard-sticky { position: sticky; bottom: 0; padding: 0.75rem; background: linear-gradient(transparent, #fff 30%); z-index: 5; }
+.contact-type-chip.is-selected, .contact-service-card.is-selected { outline: 3px solid var(--primary-color, #2f78a6); outline-offset: 2px; }
+
+.page-404 { padding: 4rem 0; text-align: center; min-height: 50vh; }
+.page-404-code { font-size: 4rem; font-weight: 800; color: var(--primary-color, #2f78a6); margin: 0; }
+.page-404-actions { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; margin: 2rem 0; }
+.page-404-links { font-size: 0.95rem; }
+.page-404-links .separator { margin: 0 0.35rem; color: var(--text-muted, #94a3b8); }
+
+.page-pro { padding: 2.5rem 0 4rem; }
+.page-pro-grid { display: grid; gap: 1.25rem; margin: 2rem 0; }
+.page-pro-card { padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color, #e2e8f0); background: #fff; }
+.page-pro-card h2 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+.page-pro-card .btn { margin: 0.35rem 0.35rem 0 0; }
+.page-pro-back { margin-top: 2rem; padding: 1.25rem; border-radius: 12px; background: var(--surface-muted, #f8fafc); }
+
+.blog-client-banner { background: linear-gradient(90deg, #ecfdf5, #eff6ff); border-bottom: 1px solid #bbf7d0; }
+.blog-client-banner__inner { padding: 0.75rem 0; font-size: 0.95rem; text-align: center; }
+.blog-search-chip--link { text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; }
+
+.nos-offres-fb-compare { margin: 1.5rem 0 2rem; padding: 1.25rem; border-radius: 12px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.nos-offres-fb-compare__title { font-size: 1.1rem; margin: 0 0 1rem; }
+.nos-offres-fb-compare__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.nos-offres-fb-compare__col { padding: 1rem; border-radius: 10px; font-size: 0.92rem; }
+.nos-offres-fb-compare__col--fb { background: #fff5f5; border: 1px solid #fecaca; }
+.nos-offres-fb-compare__col--site { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.home-offer-badge--anchor { background: #1e293b; }
+
+.audit-success-panel { text-align: center; padding: 2rem 1rem; border-radius: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; margin-top: 1rem; }
+.audit-success-panel[hidden] { display: none !important; }
+.audit-success-panel__icon { font-size: 2.5rem; color: #16a34a; margin-bottom: 0.5rem; }
+.audit-success-panel__steps { text-align: left; max-width: 28rem; margin: 1rem auto; }
+
+.contact-step__duration { display: block; font-size: 0.88rem; color: var(--text-muted, #64748b); margin-top: 0.35rem; }
+.contact-error-overlay__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.contact-validation-success__steps { margin: 0.75rem 0 0; padding-left: 1.25rem; text-align: left; }
+
+@media (max-width: 768px) {
+  .vitrines-filter-select-wrap { display: block; }
+  .vitrines-filter--featured .vitrines-filter-btn:not(.active) { display: none; }
+  .vitrines-filter--featured .vitrines-filter-btn.active,
+  .vitrines-filter--featured .vitrines-filter-btn[data-vitrine-filter="all"] { display: inline-flex; }
+  .nos-offres-contrast { grid-template-columns: 1fr; }
+  .nos-offres-fb-compare__grid { grid-template-columns: 1fr; }
+  .page-pro-grid { grid-template-columns: 1fr; }
+  .contact-wizard-sticky { display: block; }
+  .contact-wizard-sticky[hidden] { display: none !important; }
+
+  /* CTV longs : retour à la ligne sur petits écrans */
+  .home-hero--wow .hero-actions .btn,
+  .audit-submit,
+  .btn.nav-cta-mobile,
+  .not-found-actions .btn {
+    white-space: normal;
+    line-height: 1.35;
+    font-size: clamp(0.82rem, 3.2vw, 0.95rem);
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .contact-wizard-sticky { display: none; }
+  .nos-offres-grid { grid-template-columns: repeat(3, 1fr); }
+  .page-pro-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* Print */
 @media print {
   .navbar,

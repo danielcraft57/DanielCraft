@@ -1,7 +1,7 @@
 <?php
 /**
  * Client API Facturio (routes publiques).
- * Base : https://facturio.danielcraft.fr/api/public
+ * Base : https://prestafacture.com/api/public
  * Auth : Authorization: Bearer fact_… (Paramètres → API — Jetons)
  */
 
@@ -24,7 +24,7 @@ function facturio_api_base(): string
 {
     $base = trim((string) (getenv('FACTURIO_API_BASE') ?: getenv('FACTURIO_BASE_URL') ?: ''));
     if ($base === '') {
-        return 'https://facturio.danielcraft.fr/api/public';
+        return 'https://prestafacture.com/api/public';
     }
     $base = rtrim($base, '/');
     if (str_ends_with($base, '/api/v1')) {
