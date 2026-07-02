@@ -38,6 +38,12 @@ Index de toute la documentation du projet.
 - **[../blog/README.md](../blog/README.md)** - Blog : structure, build, series
 - **[../blog/GUIDE_DEMARRAGE.md](../blog/GUIDE_DEMARRAGE.md)** - Guide de demarrage blog
 
+## UX et parcours utilisateur
+
+- **[ux-user-flow.md](./ux-user-flow.md)** - Parcours devis → appel → livraison
+- **[ux-screenshots/README.md](./ux-screenshots/README.md)** - Matrice QA visuelle (captures locales)
+- **[charte-visuelle-bd.md](./charte-visuelle-bd.md)** - Charte BD cartoon (OG, réseaux)
+
 ## Images et visuels
 
 - **[prompt_og_image.md](./prompt_og_image.md)** - Images Open Graph (pages principales)

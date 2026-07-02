@@ -48,6 +48,10 @@ assets/images/about-section-hero-trial-*.webp
 assets/vitrines/screenshots/**
 !assets/vitrines/screenshots/.gitkeep
 
+# QA UX : captures locales et rapport Lighthouse (voir docs/ux-screenshots/README.md)
+docs/ux-screenshots/**/*.png
+docs/lighthouse-mobile-home.json
+
 # Maquettes démo : versionner assets/vitrines/demos/ (HTML, CSS, images PNG des vitrines).
 # Ne pas y committer de captures régénérables : les placer sous assets/vitrines/screenshots/ (ignoré ci-dessus).
 
