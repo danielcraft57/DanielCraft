@@ -239,13 +239,7 @@ def main() -> None:
     gen_assoc_mains(assoc / "assoc-gen-mains.png")
     gen_assoc_quartier(assoc / "assoc-gen-quartier.png")
     gen_assoc_volontaires(assoc / "assoc-gen-volontaires.png")
-    demos = ROOT / "assets" / "vitrines" / "demos"
-    gen_photo_png(demos / "photographie" / "images" / "hero.png")
-    gen_fitness_png(demos / "fitness" / "images" / "hero.png")
-    gen_arch_png(demos / "architecture" / "images" / "hero.png")
-    gen_jur_png(demos / "juridique" / "images" / "hero.png")
-    gen_immo_png(demos / "immobilier" / "images" / "hero.png")
-    print("OK:", edu, assoc, "premium PNG heroes")
+    print("OK:", edu, assoc, "PNG pédagogiques")
 
 
 if __name__ == "__main__":

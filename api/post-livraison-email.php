@@ -1,7 +1,7 @@
 <?php
 /**
  * Modèle d’e-mail post-livraison (fidélisation Ch.8 — valeur prouvée).
- * Appel manuel ou via automatisation future (cron / Facturio webhook).
+ * Appel manuel ou via automatisation future (cron / Prestafacture webhook).
  */
 declare(strict_types=1);
 

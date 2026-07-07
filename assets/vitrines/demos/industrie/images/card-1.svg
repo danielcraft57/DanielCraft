@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Ligne production</title>
-  <rect width="800" height="520" fill="#1a1a1a"/>
-  <rect x="60" y="100" width="680" height="300" rx="8" fill="#2d2d2d" stroke="#ffb300" stroke-width="2"/>
-  <rect x="200" y="180" width="400" height="80" fill="#ffb300" opacity=".2"/>
-  <circle cx="400" cy="250" r="40" fill="none" stroke="#ff8f00" stroke-width="3"/>
-</svg>

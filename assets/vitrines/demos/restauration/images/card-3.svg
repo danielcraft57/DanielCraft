@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Cave à vins</title>
-  <rect width="800" height="520" fill="#fff8f0"/>
-  <rect x="60" y="80" width="680" height="320" rx="10" fill="#722f37" opacity=".15" stroke="#722f37" stroke-width="2"/>
-  <ellipse cx="400" cy="260" rx="120" ry="80" fill="#e8c547" opacity=".4"/>
-  <path d="M200 200 Q400 120 600 200" fill="none" stroke="#722f37" stroke-width="3" class="vitrine-sketch-stroke"/>
-</svg>

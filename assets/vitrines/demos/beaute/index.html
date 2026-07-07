@@ -3,131 +3,221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="Institut, spa et soins sur rendez-vous à Metz.">
-  <title>Spa Thalie — Beauté &amp; bien-être</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../shared/vitrine-animations.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <meta name="description" content="Spa urbain à Nancy : soins visage, massages et rituels bien-être.">
+  <title>Spa Thalie — Institut &amp; spa à Nancy</title>
+  <!-- layout: spa-bs · Bootstrap 5 · vitrine site complet -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Spa Thalie",
+  "telephone": "+33383567890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8 rue des Mésanges",
+    "addressLocality": "Nancy",
+    "postalCode": "54000",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00"}
+  ]
+}
+</script>
 </head>
-<body>
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <nav class="navbar is-white is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
-    <div class="container is-fluid">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5" href="#accueil" style="color: #6b3d4d;"><span class="icon-text"><span class="icon has-text-danger"><i class="fa-solid fa-spa" aria-hidden="true"></i></span><span>Spa Thalie</span></span></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
-          <a class="navbar-item" href="#soins"><span class="icon-text"><span class="icon"><i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i></span><span>Soins</span></span></a>
-          <a class="navbar-item" href="#institut"><span class="icon-text"><span class="icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span><span>Institut</span></span></a>
-          <a class="navbar-item" href="#bienetre"><span class="icon-text"><span class="icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span><span>Bien-être</span></span></a>
-          <a class="navbar-item" href="#rdv"><span class="icon-text"><span class="icon"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span><span>Rendez-vous</span></span></a>
-          <a class="navbar-item" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
-        </div>
+<body class="vt-body vt-body-spa">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Ouvert aujourd&#x27;hui · Mar–sam 9h–20h</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=8+rue+des+Mésanges+54000+Nancy">8 rue des Mésanges, 54000 Nancy</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0383567890">03 83 56 78 90</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Spa Thalie</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="soins.html">Nos soins</a></li><li class="nav-item"><a class="nav-link" href="ambiance.html">L&#x27;institut</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Prendre RDV</a>
       </div>
     </div>
   </nav>
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium beaute-hero vitrine-hero-animate is-vitrine-prejs">
-      <div class="hero-body">
-        <div class="container">
-          <p class="title is-1 has-text-white"><i class="fa-solid fa-wand-magic-sparkles mr-3 has-text-beaute-rose" aria-hidden="true"></i>Soins visage · corps · spa</p>
-          <p class="subtitle is-4 has-text-white-ter" style="max-width: 46rem;">
-            Spa Thalie est un institut de beauté et spa urbain à Metz&nbsp;: équipes diplômées, cabines doubles et produits sélectionnés avec nos marques partenaires. Les soins proposés ici sont des prestations bien-être (non médicales).
-          </p>
-          <p class="subtitle is-5 has-text-white-ter mt-4" style="max-width: 46rem;">
-            Rituels sensoriels, musiques d’ambiance feutrées et cabines chauffées pour prolonger la détente après le soin. Pensez à réserver le week-end.
-          </p>
-          <div class="buttons mt-5">
-            <a class="button is-warning is-medium" href="#soins"><span class="icon"><i class="fa-solid fa-list" aria-hidden="true"></i></span><span>Carte des soins</span></a>
-            <a class="button is-white is-outlined is-medium" href="#rdv"><span class="icon"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i></span><span>Prendre RDV</span></a>
-          </div>
+</header><main><section class="vt-hero text-center">
+  <div class="container py-5 py-lg-6">
+    <p class="vt-eyebrow text-uppercase">Institut &amp; spa urbain</p>
+    <h1 class="display-5 vt-display">Votre parenthèse bien-être au cœur de Nancy</h1>
+    <p class="lead vt-lead mx-auto">Maison de maître rue Stanislas : expertise esthétique et rituels sensoriels.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      <a class="btn btn-vt-primary btn-lg rounded-pill px-4" href="contact.html">Réserver mon soin</a>
+      <a class="btn btn-vt-outline btn-lg rounded-pill px-4" href="soins.html">Voir nos soins</a>
+    </div>
+  </div>
+  <figure class="vt-hero-media mb-0">
+    <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100" alt="Spa lumineux avec fauteuils à Nancy" decoding="async" fetchpriority="high"></picture>
+  </figure>
+</section><section class="vt-stats-band" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="row text-center g-0"><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">2018</strong>
+          <span class="vt-stat-lbl">Fondé</span>
         </div>
-      </div>
-    </section>
-    <section class="section vitrine-cta-banner vitrine-cta-shimmer" style="background: linear-gradient(90deg,#5c3d4d,#8b5a6b); color: #fff;" aria-label="CTA">
-      <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white"><i class="fa-solid fa-gift mr-3" aria-hidden="true"></i>Rituel «&nbsp;éclat &amp; lumière&nbsp;»</p>
-        <a class="button is-white is-medium mt-3" href="#rdv"><i class="fa-solid fa-clock mr-2" aria-hidden="true"></i>Réserver</a>
-      </div>
-    </section>
-    <section class="section is-vitrine is-beaute-cream" id="soins" aria-labelledby="t-so" data-aos="fade-up">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-so"><i class="fa-solid fa-droplet has-text-danger mr-2" aria-hidden="true"></i>Soins</h2>
-        <p class="content is-size-5 has-text-centered mb-5" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Deux cartes principales pour alterner texte et tarifs, puis une rangée de trois visuels (spa, soin visage, produits) pour illustrer l’ambiance de l’institut.
-        </p>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-6"><div class="box is-vitrine is-beaute-glow"><p class="title is-4"><i class="fa-solid fa-sun has-text-warning mr-2" aria-hidden="true"></i>Soin «&nbsp;Lumière&nbsp;»</p><p class="is-size-5">Modelage et masque hydratant — 50&nbsp;min, tarif à partir de 68&nbsp;€.</p></div></div>
-          <div class="column is-6"><div class="box is-vitrine is-beaute-glow"><p class="title is-4"><i class="fa-solid fa-hands has-text-danger mr-2" aria-hidden="true"></i>Massage relaxant</p><p class="is-size-5">Parcours huiles chaudes et pressions douces, bien-être uniquement.</p></div></div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">6</strong>
+          <span class="vt-stat-lbl">Cabines</span>
         </div>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/beaute-spa.png" class="glightbox" data-gallery="beaute-visuels" data-glightbox="title: Cabine spa "><img src="images/beaute-spa.png" width="800" height="450" alt="Cabine spa (image générée)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/beaute-soin.png" class="glightbox" data-gallery="beaute-visuels" data-glightbox="title: Soin visage "><img src="images/beaute-soin.png" width="800" height="450" alt="Soin visage (image générée)" loading="lazy" decoding="async"></a></figure></div>
-          <div class="column is-4"><figure class="vitrine-figure"><a href="images/beaute-produits.png" class="glightbox" data-gallery="beaute-visuels" data-glightbox="title: Produits "><img src="images/beaute-produits.png" width="800" height="450" alt="Produits cosmétiques (image générée)" loading="lazy" decoding="async"></a></figure></div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">100 %</strong>
+          <span class="vt-stat-lbl">Clean beauty</span>
         </div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="institut" aria-labelledby="t-in" data-aos="fade-up" data-aos-delay="60">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-in"><i class="fa-solid fa-building-columns has-text-danger mr-2" aria-hidden="true"></i>L'institut</h2>
-        <div class="content is-size-5 box" style="max-width: 50rem; margin: 0 auto;">
-          <p>Quatre cabines dont deux doubles, charte hygiène stricte, marques partenaires affichées en boutique et formations continues des praticiennes.</p>
-          <p>Créneaux étendus en semaine, politique d’annulation 24&nbsp;h et rappels SMS optionnels la veille du rendez-vous.</p>
-        </div>
-        <p class="mt-5 has-text-centered"><i class="fa-solid fa-heart-pulse has-text-danger mr-2" aria-hidden="true"></i><strong>Fidélisation client</strong></p>
-        <progress class="progress is-dark mt-2" value="73" max="100" style="max-width: 40rem; margin: 0 auto; display: block;">73&nbsp;%</progress>
-      </div>
-    </section>
-    <section class="section is-vitrine is-beaute-cream" id="bienetre" aria-labelledby="t-be" data-aos="fade-up">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-be"><i class="fa-solid fa-leaf has-text-success mr-2" aria-hidden="true"></i>Bien-être responsable</h2>
-        <article class="message is-success is-light"><div class="message-body"><i class="fa-solid fa-recycle mr-2" aria-hidden="true"></i>Emballages recyclables, circuits courts lorrain et partenaires engagés RSE.</div></article>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="rdv" aria-labelledby="t-rd" data-aos="fade-up">
-      <div class="container is-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-7-desktop">
-            <h2 class="title is-2 has-text-centered" id="t-rd"><i class="fa-regular fa-calendar-check has-text-danger mr-2" aria-hidden="true"></i>Rendez-vous</h2>
-            <div class="box is-vitrine vitrine-form-panel">
-              <form action="#" method="get" class="content">
-                <div class="field"><label class="label" for="b-nom"><i class="fa-solid fa-user mr-1" aria-hidden="true"></i>Prénom</label><div class="control"><input class="input" type="text" id="b-nom" name="prenom" autocomplete="given-name"></div></div>
-                <div class="field"><label class="label" for="b-soin"><i class="fa-solid fa-spa mr-1" aria-hidden="true"></i>Soin</label><div class="control"><div class="select is-fullwidth"><select id="b-soin" name="soin"><option>Visage</option><option>Massage</option><option>Manucure</option></select></div></div></div>
-                <button type="button" class="button is-dark is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-beaute-cream" id="contact" aria-labelledby="t-contact" data-aos="fade-up">
-      <div class="container is-widescreen">
-        <h2 class="title is-2" id="t-contact"><i class="fa-solid fa-phone has-text-danger mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5"><a href="mailto:bonjour@spa-thalie.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>bonjour@spa-thalie.fr</a></p>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
-      </div>
-    </section>
-  </main>
-  <footer class="footer has-background-dark is-vitrine-footer">
-    <div class="container is-widescreen">
-      <div class="columns has-text-grey-light">
-        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-spa mr-2" aria-hidden="true"></i>Spa Thalie</p><p class="is-size-6">Metz centre.</p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#soins"><i class="fa-solid fa-hand-sparkles mr-1" aria-hidden="true"></i>Soins</a></p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
       </div>
     </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="../shared/vitrine-animations.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
-  <script src="../shared/vitrine-images.js"></script>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">L&#x27;art du soin, version Lorraine</h2>
+        <p class="mb-3">Fondé par deux esthéticiennes formées à Paris, Thalie mise sur des protocoles sur-mesure et produits clean.</p><p class="mb-3">Chaque visite commence par un diagnostic de peau et finit par un thé bio.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-chapters"><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Cabine signature</h3>
+        <p class="text-secondary mb-0">Lumière tamisée et huiles chaudes pour couper le bruit de la ville.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" class="w-100" alt="Cabine de massage" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Protocoles visage</h3>
+        <p class="text-secondary mb-0">LED, Kobido et acide hyaluronique maîtrisés par nos esthéticiennes diplômées.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-2.webp" type="image/webp"><img src="images/scene-2.png" class="w-100" alt="Soin du visage en institut" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Espace détente</h3>
+        <p class="text-secondary mb-0">Hammam doux et transats chauffants — prolongez le soin après la cabine.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-3.webp" type="image/webp"><img src="images/scene-3.png" class="w-100" alt="Espace détente au spa" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article></section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Nos univers</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Soin visage" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Soins visage</h3>
+            <p class="card-text text-secondary small mb-0">Anti-âge, éclat, imperfections — protocoles sur-mesure.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Massage pierres chaudes" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Massages</h3>
+            <p class="card-text text-secondary small mb-0">Suédois, deep tissue, pierres chaudes.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Rituel corps spa" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Rituels corps</h3>
+            <p class="card-text text-secondary small mb-0">Gommage mirabelle et modelage aux huiles chaudes.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-cross py-5 text-center">
+  <div class="container">
+    <h2 class="h4 vt-section-title mb-4">Découvrir aussi</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><a class="btn btn-vt-pill rounded-pill" href="contact.html">Offre découverte 59 €</a><a class="btn btn-vt-pill rounded-pill" href="soins.html">Rituel Stanislas</a><a class="btn btn-vt-pill rounded-pill" href="ambiance.html">Visite de l&#x27;institut</a><a class="btn btn-vt-pill rounded-pill" href="contact.html">Carte cadeau</a></div>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">Esthéticiennes diplômées, produits français sans parabènes.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">Clean beauty</span><span class="badge rounded-pill vt-badge">Diagnostic peau</span><span class="badge rounded-pill vt-badge">ESAT Laxou</span><span class="badge rounded-pill vt-badge">Eau filtrée</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Offre découverte visage à 59 € — places limitées.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Réserver mon soin</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Spa Thalie</strong>
+        <p class="small opacity-75 mb-2">8 rue des Mésanges, 54000 Nancy</p>
+        <a class="small" href="https://maps.google.com/?q=8+rue+des+Mésanges+54000+Nancy">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="soins.html">Nos soins</a><a class="nav-link px-0" href="ambiance.html">L&#x27;institut</a><a class="nav-link px-0" href="contact.html">Carte cadeau</a><a class="nav-link px-0" href="contact.html">Prendre RDV</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0383567890">03 83 56 78 90</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:bonjour@spa-thalie.fr">bonjour@spa-thalie.fr</a></p>
+        <p class="mb-0">Mar–sam 9h–20h · Dim. 10h–18h sur RDV</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0383567890">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Prendre RDV</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

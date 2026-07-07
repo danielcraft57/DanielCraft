@@ -1,0 +1,119 @@
+{
+  "slug": "association",
+  "brand": "Solidarités Metz Métropole",
+  "category": "ess",
+  "locale": "Metz, Moselle, Grand Est, France",
+  "style_suffix": "Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Bénévoles Solidarités Metz Métropole",
+      "subject": "Diverse volunteers at community food bank Metz France, warm smiles distributing food parcels, solidarity association hero banner, natural light",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Agir ensemble pour un territoire plus juste" },
+        { "page": "actions.html", "section": "hero", "text": "Nos actions sur le territoire" },
+        { "page": "benevolat.html", "section": "hero", "text": "Rejoignez nos 120 bénévoles" },
+        { "page": "contact.html", "section": "hero", "text": "Faire un don ou devenir bénévole" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "team",
+      "alt": "Épicerie solidaire Metz",
+      "subject": "Solidarity grocery store volunteers organizing food shelves Metz community center, warm authentic photography",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Aide alimentaire — épicerie solidaire" },
+        { "page": "actions.html", "section": "chapter", "text": "Paniers hebdomadaires à prix modiques" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "team",
+      "alt": "Atelier insertion emploi",
+      "subject": "Job insertion workshop Metz association, coach helping person with CV on laptop, supportive community atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Insertion emploi — ateliers CV" },
+        { "page": "actions.html", "section": "chapter", "text": "Mise en relation employeurs locaux" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "team",
+      "alt": "Permanence sociale Metz",
+      "subject": "Social worker listening to family in bright Metz association office, empathy and support, community photography",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Accompagnement social — permanences" },
+        { "page": "benevolat.html", "section": "chapter", "text": "Formation des bénévoles d'accueil" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Fête de quartier solidaire",
+      "subject": "Community neighborhood festival Metz with families and volunteers, outdoor solidarity event, joyful authentic moment",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Fête de quartier — 800 participants" },
+        { "page": "actions.html", "section": "gallery", "text": "Événements de lien social" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Cuisine solidaire",
+      "subject": "Community kitchen volunteers preparing meals together Metz solidarity association, warm kitchen atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Cuisine solidaire — 200 repas/semaine" },
+        { "page": "actions.html", "section": "gallery", "text": "Ateliers cuisine partagée" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Maraude solidaire",
+      "subject": "Street outreach volunteers with care packages Metz winter evening, solidarity association card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Maraude — rue et hébergement" },
+        { "page": "benevolat.html", "section": "card", "text": "Mission maraude (2h/mois)" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Collecte alimentaire",
+      "subject": "Food drive collection boxes in supermarket Metz with volunteers, community solidarity card photo",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Collectes alimentaires" },
+        { "page": "benevolat.html", "section": "card", "text": "Bénévolat ponctuel — samedis" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Accompagnement numérique",
+      "subject": "Digital literacy workshop elderly person helped by young volunteer Metz association, intergenerational solidarity",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Aide numérique — accès aux droits" },
+        { "page": "benevolat.html", "section": "card", "text": "Mentor numérique (formation 1j)" }
+      ]
+    }
+  ]
+}

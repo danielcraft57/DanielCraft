@@ -1,0 +1,121 @@
+{
+  "slug": "beaute",
+  "brand": "Spa Thalie",
+  "category": "beaute",
+  "locale": "Nancy, Grand Est, France",
+  "style_suffix": "Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Spa lumineux avec fauteuils à Nancy",
+      "subject": "Bright elegant Spa Thalie reception in a Nancy maison de maître near place Stanislas: soft rose and cream interior, treatment chairs, natural light, luxurious calm urban wellness atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Parenthèse bien-être au cœur de Nancy — maison de maître rue Stanislas" },
+        { "page": "soins.html", "section": "hero", "text": "Produits de soin en cabine — protocoles pensés pour votre peau" },
+        { "page": "ambiance.html", "section": "hero", "text": "Écrin de calme rue Stanislas — hall d'accueil spa nancéien" },
+        { "page": "contact.html", "section": "hero", "text": "Réception du spa — 8 rue des Mésanges Nancy" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "spa",
+      "alt": "Cabine de massage",
+      "subject": "Dimly lit signature spa treatment cabin with warm oil bottles, soft towels, massage table, gentle ambient lighting, peaceful Nancy urban spa atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Cabine signature — lumière tamisée et huiles chaudes" },
+        { "page": "ambiance.html", "section": "chapter", "text": "Accueil — thé dès l'arrivée et écoute attentive" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "spa",
+      "alt": "Soin du visage en institut",
+      "subject": "Professional facial treatment in beauty institute: esthetician applying serum, LED skin care device, clean French beauty products, client relaxed on treatment bed",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Protocoles visage — LED, Kobido et acide hyaluronique" },
+        { "page": "ambiance.html", "section": "chapter", "text": "Cabines doubles — massages synchronisés à deux" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "spa",
+      "alt": "Espace détente au spa",
+      "subject": "Spa relaxation lounge with heated loungers, soft hammam steam in background, herbal tea station, serene wellness retreat after treatment",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Espace détente — hammam doux et transats chauffants" },
+        { "page": "ambiance.html", "section": "chapter", "text": "Salon de repos — tisanes bio après chaque soin" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Vapeur et gommage au sel de Lorraine",
+      "subject": "Spa ritual with steam and Lorraine salt body scrub, mirror water basin, soft towels, wellness ceremony atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Rituel miroir d'eau — vapeur et gommage au sel de Lorraine" },
+        { "page": "soins.html", "section": "gallery", "text": "Massage deep tissue — épaules des cadres nancéiens" },
+        { "page": "ambiance.html", "section": "gallery", "text": "Façade Stanislas — à deux pas de la place" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Cours privés avant un événement",
+      "subject": "Private makeup workshop at beauty spa, professional brushes and mirrors, soft pink lighting, elegant preparation before event",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Atelier maquillage — cours privés avant un événement" },
+        { "page": "soins.html", "section": "gallery", "text": "Soin des mains — manucure spa" },
+        { "page": "ambiance.html", "section": "gallery", "text": "Détail pierre — cachet de la vieille ville" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Soin visage",
+      "subject": "Close-up luxury facial skincare treatment, glowing skin, clean French beauty serum bottles, soft focus spa ambiance",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Soins visage — anti-âge, éclat, imperfections" },
+        { "page": "soins.html", "section": "card", "text": "Éclat express — 45 min coup de frais" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Massage pierres chaudes",
+      "subject": "Hot stone massage on back with smooth volcanic stones, warm oils, professional spa therapist hands, relaxing treatment",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Massages — suédois, deep tissue, pierres chaudes" },
+        { "page": "soins.html", "section": "card", "text": "Rituel Stanislas — 90 min gommage et massage" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Rituel corps spa",
+      "subject": "Full body spa ritual with mirabelle plum scrub products, body wrap towels, elegant treatment tray, Lorraine-inspired wellness",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Rituels corps — gommage mirabelle et modelage" },
+        { "page": "soins.html", "section": "card", "text": "Cure anti-âge — 4 séances radiofréquence" }
+      ]
+    }
+  ]
+}

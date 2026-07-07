@@ -640,120 +640,6 @@ def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
     )
 
 
-def _build_audit_schema_jsonld(
-    page_url_abs: str,
-    page_title: str,
-    page_description: str,
-    paid_price_eur: int,
-) -> str:
-    base = SITE_BASE.rstrip('/')
-    graph: List[Dict[str, Any]] = [
-        {
-            '@type': 'WebPage',
-            '@id': page_url_abs + '#webpage',
-            'url': page_url_abs,
-            'name': page_title,
-            'description': page_description,
-            'inLanguage': 'fr-FR',
-            'isPartOf': {'@type': 'WebSite', 'name': 'DanielCraft', 'url': base + '/'},
-        },
-        {
-            '@type': 'Service',
-            '@id': page_url_abs + '#service',
-            'name': 'Audit de site web',
-            'description': page_description,
-            'url': page_url_abs,
-            'provider': {
-                '@type': 'Person',
-                'name': 'Loïc DANIEL',
-                'url': base + '/',
-                'email': SEO_ORG_EMAIL,
-            },
-            'areaServed': [
-                {'@type': 'City', 'name': SEO_LOCALITY},
-                {'@type': 'AdministrativeArea', 'name': SEO_REGION},
-            ],
-            'offers': [
-                {
-                    '@type': 'Offer',
-                    'name': 'Audit gratuit par e-mail',
-                    'price': '0',
-                    'priceCurrency': 'EUR',
-                    'availability': 'https://schema.org/InStock',
-                    'url': page_url_abs + '#audit-gratuit',
-                },
-                {
-                    '@type': 'Offer',
-                    'name': 'Audit premium — analyse complète',
-                    'price': str(paid_price_eur),
-                    'priceCurrency': 'EUR',
-                    'availability': 'https://schema.org/InStock',
-                    'url': page_url_abs + '#audit-premium',
-                },
-            ],
-        },
-        {
-            '@type': 'BreadcrumbList',
-            'itemListElement': [
-                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': base + '/'},
-                {'@type': 'ListItem', 'position': 2, 'name': 'Audit site web', 'item': page_url_abs},
-            ],
-        },
-    ]
-    return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False)
-
-
-def _build_prestations_catalog_schema_jsonld(
-    page_url_abs: str,
-    page_title: str,
-    page_description: str,
-) -> str:
-    base = SITE_BASE.rstrip('/')
-    items = load_prestations().get('items') or []
-    list_elements: List[Dict[str, Any]] = []
-    pos = 1
-    for it in items:
-        if not it.get('has_page'):
-            continue
-        slug = (it.get('slug') or '').strip()
-        if not slug:
-            continue
-        title = (it.get('title') or slug).strip()
-        list_elements.append({
-            '@type': 'ListItem',
-            'position': pos,
-            'name': title,
-            'url': base + f'/prestations/{slug}/',
-        })
-        pos += 1
-    graph: List[Dict[str, Any]] = [
-        {
-            '@type': 'CollectionPage',
-            '@id': page_url_abs + '#webpage',
-            'name': page_title,
-            'description': page_description,
-            'url': page_url_abs,
-            'inLanguage': 'fr-FR',
-            'isPartOf': {'@type': 'WebSite', 'name': 'DanielCraft', 'url': base + '/'},
-        },
-        {
-            '@type': 'ItemList',
-            '@id': page_url_abs + '#itemlist',
-            'name': 'Catalogue des prestations DanielCraft',
-            'numberOfItems': len(list_elements),
-            'itemListElement': list_elements,
-        },
-        {
-            '@type': 'BreadcrumbList',
-            'itemListElement': [
-                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': base + '/'},
-                {'@type': 'ListItem', 'position': 2, 'name': 'Prestations', 'item': page_url_abs},
-            ],
-        },
-    ]
-    return json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False)
-
-
 def load_projects() -> List[Dict]:
     """Charge la liste des projets depuis src/data/projects.json. Lance le script de gen si absent."""
     if not PROJECTS_JSON.exists():
@@ -920,10 +806,6 @@ def _vitrine_og_dims_from_url(url: str) -> tuple[str, str]:
     if m:
         return m.group(1), m.group(2)
     return '1600', '900'
-
-
-def _safe_jsonld_embed(obj: Any) -> str:
-    return json.dumps(obj, ensure_ascii=False).replace('</', '<\\/')
 
 
 # Textes marketing page fiche vitrine : variantes par catégorie (personnalisation secteur).
@@ -1366,67 +1248,6 @@ def _build_vitrine_seo_bundle(
 
     hero_badge = f'Modèle de site pro · {cat_label}'
 
-    y = datetime.now().year
-    valid_until = f'{y + 1}-12-31'
-
-    graph: List[Dict[str, Any]] = [
-        {
-            '@type': 'WebPage',
-            '@id': page_url_abs + '#webpage',
-            'url': page_url_abs,
-            'name': page_title,
-            'description': page_description,
-            'inLanguage': 'fr-FR',
-            'isPartOf': {
-                '@type': 'WebSite',
-                'name': 'DanielCraft',
-                'url': SITE_BASE.rstrip('/') + '/',
-            },
-            'about': {'@type': 'Thing', 'name': f'Maquette web — secteur {cat_label}'},
-            'primaryImageOfPage': {
-                '@type': 'ImageObject',
-                'url': og_image_abs,
-                'caption': vitrine_og_image_alt,
-            },
-        },
-        {
-            '@type': 'Product',
-            'name': title,
-            'description': page_description,
-            'sku': f'dc-modele-{slug}',
-            'category': cat_label,
-            'image': [og_image_abs, shot_tab_abs, shot_mob_abs],
-            'brand': {'@type': 'Brand', 'name': 'DanielCraft'},
-            'offers': {
-                '@type': 'Offer',
-                'url': page_url_abs,
-                'priceCurrency': 'EUR',
-                'price': str(price),
-                'priceValidUntil': valid_until,
-                'availability': 'https://schema.org/InStock',
-                'seller': {'@type': 'Organization', 'name': 'DanielCraft'},
-            },
-        },
-        {
-            '@type': 'BreadcrumbList',
-            'itemListElement': [
-                {
-                    '@type': 'ListItem',
-                    'position': 1,
-                    'name': 'DanielCraft — accueil',
-                    'item': SITE_BASE.rstrip('/') + '/',
-                },
-                {
-                    '@type': 'ListItem',
-                    'position': 2,
-                    'name': 'Catalogue modèles & démos',
-                    'item': SITE_BASE.rstrip('/') + '/vitrines/',
-                },
-                {'@type': 'ListItem', 'position': 3, 'name': title, 'item': page_url_abs},
-            ],
-        },
-    ]
-
     return {
         'page_title': page_title,
         'page_description': page_description,
@@ -1442,7 +1263,6 @@ def _build_vitrine_seo_bundle(
         'vitrine_img_alt_desktop': vitrine_img_alt_desktop,
         'vitrine_img_alt_tablet': vitrine_img_alt_tablet,
         'vitrine_img_alt_mobile': vitrine_img_alt_mobile,
-        'vitrine_schema_jsonld': _safe_jsonld_embed({'@context': 'https://schema.org', '@graph': graph}),
     }
 
 
@@ -2230,86 +2050,9 @@ def _build_prestation_seo_bundle(
 
     og_alt = _truncate_meta_text(f'{title} — {tagline or short}', 190)
 
-    y = datetime.now().year
-    base = SITE_BASE.rstrip('/')
-    graph: List[Dict[str, Any]] = [
-        {
-            '@type': 'WebPage',
-            '@id': page_url_abs + '#webpage',
-            'url': page_url_abs,
-            'name': page_title,
-            'description': page_description,
-            'inLanguage': 'fr-FR',
-            'isPartOf': {
-                '@type': 'WebSite',
-                'name': 'DanielCraft',
-                'url': base + '/',
-            },
-            'primaryImageOfPage': {'@type': 'ImageObject', 'url': og_image_abs, 'caption': og_alt},
-        },
-        {
-            '@type': 'Service',
-            '@id': page_url_abs + '#service',
-            'name': title,
-            'description': short or tagline,
-            'url': page_url_abs,
-            'image': og_image_abs,
-            'provider': {
-                '@type': 'Person',
-                'name': 'Loïc DANIEL',
-                'url': base + '/',
-                'email': SEO_ORG_EMAIL,
-            },
-            'areaServed': [
-                {'@type': 'City', 'name': SEO_LOCALITY},
-                {'@type': 'AdministrativeArea', 'name': SEO_REGION},
-            ],
-            'offers': {
-                '@type': 'Offer',
-                'price': str(price) if price > 0 else '0',
-                'priceCurrency': 'EUR',
-                'availability': 'https://schema.org/InStock',
-                'url': page_url_abs + '#devis',
-            },
-        },
-        {
-            '@type': 'BreadcrumbList',
-            'itemListElement': [
-                {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': base + '/'},
-                {
-                    '@type': 'ListItem',
-                    'position': 2,
-                    'name': 'Prestations',
-                    'item': base + '/prestations/',
-                },
-                {'@type': 'ListItem', 'position': 3, 'name': title, 'item': page_url_abs},
-            ],
-        },
-    ]
-
     benefits = item.get('benefits') or []
     includes = item.get('includes') or []
     faq = item.get('faq') or []
-    if faq:
-        faq_entities: List[Dict[str, Any]] = []
-        for entry in faq:
-            if not isinstance(entry, dict):
-                continue
-            q = str(entry.get('q') or '').strip()
-            a = str(entry.get('a') or '').strip()
-            if q and a:
-                faq_entities.append({
-                    '@type': 'Question',
-                    'name': q,
-                    'acceptedAnswer': {'@type': 'Answer', 'text': a},
-                })
-        if faq_entities:
-            graph.append({
-                '@type': 'FAQPage',
-                '@id': page_url_abs + '#faq',
-                'mainEntity': faq_entities,
-            })
-
     benefits_html = (
         '<ul class="prestation-benefits">'
         + ''.join(f'<li>{html.escape(str(x))}</li>' for x in benefits)
@@ -2357,10 +2100,6 @@ def _build_prestation_seo_bundle(
         'page_description': page_description,
         'page_keywords': page_keywords,
         'prestation_og_image_alt': og_alt,
-        'prestation_schema_jsonld': json.dumps(
-            {'@context': 'https://schema.org', '@graph': graph},
-            ensure_ascii=False,
-        ),
         'prestation_benefits_html': benefits_html,
         'prestation_includes_html': includes_html,
         'prestation_examples_html': examples_html,
@@ -2681,10 +2420,6 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 199))
         if not vars_dict.get('schema_type'):
             vars_dict['schema_type'] = 'audit'
-        try:
-            paid_price = int(paid.get('price_eur', 199))
-        except (TypeError, ValueError):
-            paid_price = 199
 
     # Profil meta OG (le moteur de template ne gère pas != )
     schema_type = str(vars_dict.get('schema_type') or '')
@@ -2698,20 +2433,6 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     # Normalise canonical/OG a partir de SITE_BASE
     _normalize_page_meta(vars_dict, page_name)
 
-    if page_name == 'audit':
-        vars_dict['audit_schema_jsonld'] = _build_audit_schema_jsonld(
-            str(vars_dict.get('page_url') or ''),
-            str(vars_dict.get('page_title') or ''),
-            str(vars_dict.get('page_description') or ''),
-            paid_price,
-        )
-    if page_name == 'prestations':
-        vars_dict['prestations_catalog_schema_jsonld'] = _build_prestations_catalog_schema_jsonld(
-            str(vars_dict.get('page_url') or ''),
-            str(vars_dict.get('page_title') or ''),
-            str(vars_dict.get('page_description') or ''),
-        )
-    
     # Génère le contenu des scripts
     vars_dict['page_scripts_content'] = build_page_scripts_content(
         vars_dict.get('page_scripts') or None,

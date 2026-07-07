@@ -349,15 +349,22 @@ def _article_card_html(
     img = _escape_html(_article_thumb_src(article))
     alt = _escape_html((article.get('title') or '')[:120])
     classes = f'article-card blog-card-animated {extra_classes}'.strip()
+    article_url = f'{SITE_BASE}/blog/articles/{article["slug"]}'
+    href = _article_href(article['slug'], href_prefix)
     return (
-        f'<a href="{_article_href(article["slug"], href_prefix)}" class="{classes}">'
+        f'<a href="{href}" class="{classes}" itemscope itemtype="https://schema.org/BlogPosting" '
+        f'itemprop="blogPost" itemid="{article_url}">'
+        f'<meta itemprop="url" content="{article_url}">'
+        f'<meta itemprop="headline" content="{title}">'
+        f'<meta itemprop="description" content="{excerpt}">'
+        f'<meta itemprop="datePublished" content="{date_str}">'
         f'<div class="article-card-media">'
-        f'<img src="{img}" alt="{alt}" width="600" height="315" loading="lazy" decoding="async" />'
+        f'<img src="{img}" alt="{alt}" width="600" height="315" loading="lazy" decoding="async" itemprop="image" />'
         f'</div>'
         f'<div class="article-card-body">'
         f'<span class="article-type">{type_label}</span>'
         f'<{heading_tag}>{title}</{heading_tag}>'
-        f'<div class="article-meta">{date_fr}</div>'
+        f'<div class="article-meta"><time datetime="{date_str}">{date_fr}</time></div>'
         f'<div class="article-excerpt">{excerpt}</div>'
         f'</div>'
         f'</a>'
@@ -445,99 +452,6 @@ def _get_article_hero_image(article: dict, assets_prefix: str) -> str:
     return f"{assets_prefix}/images/og/blog-1200x630.jpg"
 
 
-def _schema_article(article: dict) -> str:
-    """Genere le JSON-LD schema.org pour un article (optimise RDF/SEO).
-
-    Le champ `type` du front matter ajuste:
-    - le libelle articleSection/genre
-    - parfois le @type schema.org (HowTo / TechArticle / Report)
-    """
-    url = f"{SITE_BASE}/blog/articles/{article['slug']}"
-    raw_type = (article.get('type') or 'article').strip().lower()
-    label = _type_label(article)
-
-    schema_type = 'BlogPosting'
-    if raw_type in {'tutorial', 'tutoriel', 'checklist', 'template'}:
-        schema_type = 'HowTo'
-    elif raw_type in {'guide', 'framework', 'methode', 'method'}:
-        schema_type = 'TechArticle'
-    elif raw_type in {'case-study', 'case_study', 'etude_cas', 'etude-de-cas', 'etude de cas', 'rex', 'retour-experience', 'retour_experience'}:
-        schema_type = 'Report'
-
-    schema = {
-        '@context': 'https://schema.org',
-        '@type': schema_type,
-        'headline': article['title'],
-        'description': article.get('excerpt', ''),
-        'url': url,
-        'image': _get_article_og_image(article),
-        'datePublished': article.get('date', '')[:10],
-        'dateModified': article.get('date', '')[:10],
-        'inLanguage': 'fr-FR',
-        'articleSection': label,
-        'genre': label,
-        'author': {
-            '@type': 'Person',
-            'name': 'Loïc DANIEL',
-            'url': SITE_BASE,
-            'sameAs': ['https://linkedin.com/in/loicdaniel', 'https://github.com/danielcraft57']
-        },
-        'publisher': {
-            '@type': 'Organization',
-            'name': 'DanielCraft',
-            'url': SITE_BASE,
-            'logo': {'@type': 'ImageObject', 'url': f'{SITE_BASE}/assets/icons/favicon.svg'}
-        },
-        'mainEntityOfPage': {'@type': 'WebPage', '@id': url}
-    }
-    if article.get('tags'):
-        schema['keywords'] = ', '.join(article['tags'])
-    breadcrumb = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': SITE_BASE + '/'},
-            {'@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': SITE_BASE + '/blog'},
-            {'@type': 'ListItem', 'position': 3, 'name': article['title'], 'item': url}
-        ]
-    }
-    scripts = f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>\n<script type="application/ld+json">\n{json.dumps(breadcrumb, ensure_ascii=False, indent=2)}\n</script>'
-    return scripts
-
-
-def _schema_blog_index(articles: list[dict]) -> str:
-    """Genere le JSON-LD schema.org Blog pour la page index (optimise RDF/SEO)."""
-    schema = {
-        '@context': 'https://schema.org',
-        '@type': 'Blog',
-        'name': 'Blog DanielCraft',
-        'description': 'Articles et tutoriels sur le développement web, TypeScript, GEO, SEO et bonnes pratiques.',
-        'url': f'{SITE_BASE}/blog',
-        'inLanguage': 'fr-FR',
-        'publisher': {
-            '@type': 'Organization',
-            'name': 'DanielCraft',
-            'url': SITE_BASE,
-            'logo': {'@type': 'ImageObject', 'url': f'{SITE_BASE}/assets/icons/favicon.svg'}
-        },
-    }
-    if articles:
-        schema['numberOfPosts'] = len(articles)
-        schema['blogPost'] = [
-            {'@type': 'BlogPosting', 'url': f'{SITE_BASE}/blog/articles/{a["slug"]}', 'headline': a['title']}
-            for a in articles[:50]
-        ]
-    breadcrumb = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': SITE_BASE + '/'},
-            {'@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': SITE_BASE + '/blog'}
-        ]
-    }
-    return f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>\n<script type="application/ld+json">\n{json.dumps(breadcrumb, ensure_ascii=False, indent=2)}\n</script>'
-
-
 def _type_label(article: dict) -> str:
     """
     Retourne un libelle humain a partir du champ type du front matter.
@@ -577,38 +491,6 @@ def _type_label(article: dict) -> str:
     if t in {"rex", "retour-experience", "retour_experience"}:
         return "Retour d’expérience"
     return "Article"
-
-
-def _schema_collection(collection: dict, items: list) -> str:
-    """Genere le JSON-LD schema.org CollectionPage pour une serie (optimise RDF/SEO)."""
-    url = f"{SITE_BASE}/blog/series/{collection.get('slug', collection.get('id', ''))}"
-    schema = {
-        '@context': 'https://schema.org',
-        '@type': 'CollectionPage',
-        'name': collection.get('title', ''),
-        'description': collection.get('description', ''),
-        'url': url,
-        'inLanguage': 'fr-FR',
-    }
-    if items:
-        schema['mainEntity'] = {
-            '@type': 'ItemList',
-            'numberOfItems': len(items),
-            'itemListElement': [
-                {'@type': 'ListItem', 'position': i + 1, 'url': f'{SITE_BASE}/blog/articles/{a["slug"]}', 'name': a['title']}
-                for i, a in enumerate(items[:100])
-            ]
-        }
-    breadcrumb = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'Accueil', 'item': SITE_BASE + '/'},
-            {'@type': 'ListItem', 'position': 2, 'name': 'Blog', 'item': SITE_BASE + '/blog'},
-            {'@type': 'ListItem', 'position': 3, 'name': collection.get('title', ''), 'item': url}
-        ]
-    }
-    return f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>\n<script type="application/ld+json">\n{json.dumps(breadcrumb, ensure_ascii=False, indent=2)}\n</script>'
 
 
 def load_template(name: str) -> str:
@@ -787,7 +669,8 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     html = html.replace('{{OG_IMAGE_TYPE}}', og_mime)
     html = html.replace('{{HERO_IMAGE}}', hero_img_url)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
-    html = html.replace('{{SCHEMA_JSON_LD}}', _schema_article(article))
+    html = html.replace('{{ARTICLE_SECTION}}', _escape_html(_type_label(article)))
+    html = html.replace('{{SITE_BASE}}', SITE_BASE)
     html = html.replace('{{PREV_NEXT}}', prev_next)
     html = html.replace('{{RECOMMENDATIONS}}', recommendations)
     html = html.replace('{{SERIES_HTML}}', series_html)
@@ -872,8 +755,6 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{META_KEYWORDS}}', 'développement web, TypeScript, GEO, SEO, tutoriels, bonnes pratiques')
     html = html.replace('{{PAGE_URL}}', page_url)
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
-    html = html.replace('{{SCHEMA_JSON_LD}}', _schema_blog_index(articles))
-
     html = _inject_site_layout(html)
 
     out_file = output_dir / 'index.html'
@@ -946,12 +827,7 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
         type_label = _type_label(a)
         excerpt = a.get("excerpt", "")
         cards.append(
-            f'<a href="../{_article_href(a["slug"], "articles/")}" class="article-card">'
-            f'<span class="article-type">{type_label}</span>'
-            f'<h2>{a["title"]}</h2>'
-            f'<div class="article-meta">{date_fr}</div>'
-            f'<div class="article-excerpt">{excerpt}</div>'
-            f'</a>'
+            _article_card_html(a, href_prefix='../articles/', heading_tag='h2')
         )
 
     slug = collection.get('slug', collection.get('id', 'serie'))
@@ -968,7 +844,6 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     html = html.replace('{{PAGE_URL}}', page_url)
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
-    html = html.replace('{{SCHEMA_JSON_LD}}', _schema_collection(collection, items))
 
     html = _inject_site_layout(html)
 
@@ -1063,8 +938,6 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
         html = html.replace('{{PAGE_URL}}', page_url)
         html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
         html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
-        html = html.replace('{{SCHEMA_JSON_LD}}', '')  # optionnel: on pourrait generer un schema type
-
         html = _inject_site_layout(html)
 
         out_file = output_dir / 'types' / f'{slug}.html'

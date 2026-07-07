@@ -1,0 +1,24 @@
+/* Pages scénario vitrines — histoires & parcours multi-pages */
+.ai-mp-hero{padding:clamp(2rem,5vw,4rem) 1.5rem;text-align:center}
+.ai-mp-hero h1{margin:0 0 1rem;line-height:1.15;max-width:18ch;margin-inline:auto}
+.ai-mp-hero .ai-lead{margin:0 auto 1.5rem;max-width:55ch}
+.ai-mp-hero-img{margin:2rem auto 0;max-width:72rem;border-radius:12px;overflow:hidden}
+.ai-mp-hero-img img{width:100%;display:block;object-fit:cover;max-height:480px}
+.ai-mp-story{padding:3rem 1.5rem;background:rgba(255,255,255,.6)}
+.ai-mp-story-inner{max-width:42rem;margin:0 auto}
+.ai-mp-story h2{margin-top:0}
+.ai-mp-chapters{max-width:72rem;margin:0 auto;padding:2rem 1.5rem 3rem}
+.ai-mp-chapter{display:grid;gap:2rem;margin-bottom:3rem;align-items:center}
+@media(min-width:768px){.ai-mp-chapter{grid-template-columns:1fr 1fr}.ai-mp-chapter--flip{direction:rtl}.ai-mp-chapter--flip>*{direction:ltr}}
+.ai-mp-chapter img{width:100%;border-radius:12px;object-fit:cover;min-height:220px}
+.ai-mp-chapter h3{margin:0 0 .75rem}
+.ai-mp-gallery{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:72rem;margin:0 auto;padding:0 1.5rem 3rem}
+.ai-mp-gallery figure{margin:0;overflow:hidden;border-radius:12px}
+.ai-mp-gallery img{width:100%;height:200px;object-fit:cover;display:block}
+.ai-mp-gallery figcaption{padding:.75rem;font-size:.9rem;opacity:.85}
+.ai-mp-nav-active{font-weight:700;text-decoration:underline}
+.ai-mp-cta-band{text-align:center;padding:2.5rem 1.5rem;background:var(--ai-mp-accent,#1e293b);color:#fff}
+.ai-mp-cta-band .ai-cta,.ai-mp-cta-band .vt-btn{background:#fff;color:var(--ai-mp-accent,#1e293b)!important;margin-top:1rem}
+.ai-mp-timeline{max-width:40rem;margin:0 auto;padding:2rem 1.5rem;list-style:none}
+.ai-mp-timeline li{border-left:3px solid var(--ai-mp-accent,#6366f1);padding:0 0 1.5rem 1.25rem;margin-left:.5rem}
+.ai-mp-timeline strong{display:block;margin-bottom:.25rem}

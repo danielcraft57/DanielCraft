@@ -1,6 +1,6 @@
 <?php
 /**
- * Webhook Stripe — checkout.session.completed (audit premium → Facturio + ProspectLab).
+ * Webhook Stripe — checkout.session.completed (audit premium → Prestafacture + ProspectLab).
  */
 
 declare(strict_types=1);

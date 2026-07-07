@@ -1,0 +1,18 @@
+{
+  "slug": "saas-dashboard",
+  "brand": "MetricPulse",
+  "category": "saas",
+  "locale": "SaaS activation dashboard",
+  "style_suffix": "Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+  "images": [
+    { "filename": "hero.png", "width": 1200, "height": 520, "scene": "saas_ui", "alt": "Dashboard MetricPulse", "subject": "SaaS activation dashboard hero on ultrawide monitor: funnel chart KPI tiles time-to-value metrics emerald green accent, product screenshot banner" },
+    { "filename": "scene-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Interface principale", "subject": "Dense analytics dashboard with activation funnel cohort chart and metric cards grid, emerald SaaS UI, no readable text" },
+    { "filename": "scene-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Workflow activation", "subject": "User activation workflow builder UI with drag nodes and trigger conditions, SaaS product, no readable text" },
+    { "filename": "scene-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Intégrations produit", "subject": "Product analytics integrations hub UI Segment Mixpanel style connectors, no readable text" },
+    { "filename": "gallery-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Widget KPI", "subject": "KPI widget close-up with sparkline and percentage change indicator, dashboard component detail, no readable text" },
+    { "filename": "gallery-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Mobile metrics", "subject": "Mobile metrics summary app on phone with mini charts and alerts, emerald theme, no readable text" },
+    { "filename": "card-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Analytics activation", "subject": "Activation analytics panel with retention curve and feature adoption heatmap, SaaS card, no readable text" },
+    { "filename": "card-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Collaboration metrics", "subject": "Shared dashboard comments and annotations UI for product teams, collaboration feature, no readable text" },
+    { "filename": "card-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Sécurité SSO", "subject": "Enterprise SSO and role-based access control settings UI, security dashboard, no readable text" }
+  ]
+}

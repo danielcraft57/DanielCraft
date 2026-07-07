@@ -4,6 +4,7 @@
   "page_keywords": "désabonnement, opt-out, prospection, publicité, confidentialité",
   "page_url": "/desabonnement",
   "og_image": "/assets/images/og/desabonnement-1200x630.jpg",
+  "schema_type": "webpage",
   "extra_css": "desabonnement.css",
   "page_scripts": ["main.js", "desabonnement.js"]
 }

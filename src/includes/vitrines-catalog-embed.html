@@ -14,12 +14,10 @@
                 <select class="vitrines-filter-select" id="vitrineFilterSelect" aria-label="Filtrer par secteur">
                     <option value="all">Tous les secteurs</option>
                     <option value="architecture">Architecture</option>
-                    <option value="artisanat">Artisanat</option>
                     <option value="beaute">Beauté &amp; spa</option>
                     <option value="conseil">Conseil</option>
                     <option value="creatif">Créatif &amp; médias</option>
                     <option value="ess">ESS</option>
-                    <option value="finance">Finance</option>
                     <option value="formation">Formation</option>
                     <option value="hcr">HCR &amp; restauration</option>
                     <option value="hotel">Hôtellerie</option>
@@ -28,6 +26,7 @@
                     <option value="juridique">Juridique</option>
                     <option value="mobilite">Automobile</option>
                     <option value="retail">Commerce</option>
+                    <option value="saas">Saas</option>
                     <option value="sante">Santé</option>
                     <option value="services">Services</option>
                     <option value="sport">Sport &amp; fitness</option>
@@ -40,20 +39,19 @@
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="retail">Commerce</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="beaute">Beauté &amp; spa</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="sante">Santé</button>
-                <button type="button" class="vitrines-filter-btn" data-vitrine-filter="artisanat">Artisanat</button>
             </div>
             <div class="vitrines-filter vitrines-filter--extended" role="group" aria-label="Tous les secteurs" hidden>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="architecture">Architecture</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="conseil">Conseil</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="creatif">Créatif &amp; médias</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="ess">ESS</button>
-                <button type="button" class="vitrines-filter-btn" data-vitrine-filter="finance">Finance</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="formation">Formation</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="hotel">Hôtellerie</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="immobilier">Immobilier</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="industrie">Industrie</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="juridique">Juridique</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="mobilite">Automobile</button>
+                <button type="button" class="vitrines-filter-btn" data-vitrine-filter="saas">Saas</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="services">Services</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="sport">Sport &amp; fitness</button>
                 <button type="button" class="vitrines-filter-btn" data-vitrine-filter="tech">Tech &amp; SaaS</button>
@@ -61,25 +59,7 @@
             <button type="button" class="vitrines-filter-more" id="vitrineFilterMore" aria-expanded="false">Voir plus de secteurs</button>
         </div>
         <div class="vitrines-grid" id="vitrinesGrid">
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="tech" style="--reveal-delay:0ms">
-            <a class="vitrine-card-media" href="/vitrines/technologie/" aria-label="Voir Synapse Lorraine">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/technologie/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Tech &amp; SaaS</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Synapse Lorraine</h3>
-                <p class="vitrine-card-tagline">SaaS, API &amp; cloud</p>
-                <p class="vitrine-card-excerpt">Site SaaS ou ESN crédible : hero, preuves, FAQ et formulaire démo — maquette tech pour Metz et le Grand Est.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/technologie/">Voir Synapse Lorraine</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/technologie/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="hcr" style="--reveal-delay:40ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="hcr" style="--reveal-delay:0ms">
             <a class="vitrine-card-media" href="/vitrines/restauration/" aria-label="Voir Brasserie Saint-Jacques">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/restauration/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -97,7 +77,7 @@
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="beaute" style="--reveal-delay:80ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="beaute" style="--reveal-delay:40ms">
             <a class="vitrine-card-media" href="/vitrines/beaute/" aria-label="Voir Spa Thalie">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/beaute/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -115,7 +95,7 @@
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="sante" style="--reveal-delay:120ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="sante" style="--reveal-delay:80ms">
             <a class="vitrine-card-media" href="/vitrines/odontologie/" aria-label="Voir Centre dentaire Mosaïque">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/odontologie/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -133,151 +113,7 @@
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="industrie" style="--reveal-delay:160ms">
-            <a class="vitrine-card-media" href="/vitrines/industrie/" aria-label="Voir Précisite Usinage">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/industrie/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Industrie</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Précisite Usinage</h3>
-                <p class="vitrine-card-tagline">Usinage &amp; qualité</p>
-                <p class="vitrine-card-excerpt">Site usinage et industrie : machines, devis express et FAQ qualité — convertissez les appels d&#x27;offres.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/industrie/">Voir Précisite Usinage</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/industrie/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="ess" style="--reveal-delay:200ms">
-            <a class="vitrine-card-media" href="/vitrines/association/" aria-label="Voir Solidarités Metz Métropole">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/association/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">ESS</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Solidarités Metz Métropole</h3>
-                <p class="vitrine-card-tagline">Association</p>
-                <p class="vitrine-card-excerpt">Association et ESS : dons, bénévolat et projets — vitrine mobilisatrice pour le Grand Est.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/association/">Voir Solidarités Metz Métropole</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/association/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="retail" style="--reveal-delay:240ms">
-            <a class="vitrine-card-media" href="/vitrines/commerce/" aria-label="Voir Halles Thionville">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/commerce/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Commerce</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Halles Thionville</h3>
-                <p class="vitrine-card-tagline">Commerce &amp; drive</p>
-                <p class="vitrine-card-excerpt">Commerce de proximité et drive : rayons, click &amp; collect et fidélité — maquette retail prête à l&#x27;emploi.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/commerce/">Voir Halles Thionville</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/commerce/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="conseil" style="--reveal-delay:280ms">
-            <a class="vitrine-card-media" href="/vitrines/comptable/" aria-label="Voir Verlaine &amp; Associés">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/comptable/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Conseil</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Verlaine &amp; Associés</h3>
-                <p class="vitrine-card-tagline">Expertise comptable</p>
-                <p class="vitrine-card-excerpt">Cabinet comptable : forfaits, bilan flash et contact dirigeant — crédibilité pro en un clic.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/comptable/">Voir Verlaine &amp; Associés</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/comptable/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="formation" style="--reveal-delay:320ms">
-            <a class="vitrine-card-media" href="/vitrines/education/" aria-label="Voir Institut Mercure">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/education/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Formation</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Institut Mercure</h3>
-                <p class="vitrine-card-tagline">Formation pro</p>
-                <p class="vitrine-card-excerpt">Centre de formation : parcours, inscriptions et alternance — rassurez apprenants et entreprises.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/education/">Voir Institut Mercure</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/education/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="services" style="--reveal-delay:360ms">
-            <a class="vitrine-card-media" href="/vitrines/services/" aria-label="Voir Proprio Facility">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/services/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Services</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Proprio Facility</h3>
-                <p class="vitrine-card-tagline">Facility &amp; conciergerie</p>
-                <p class="vitrine-card-excerpt">Facility et conciergerie : offres illustrées, devis et FAQ — pour immeubles tertiaires en Lorraine.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/services/">Voir Proprio Facility</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/services/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="finance" style="--reveal-delay:400ms">
-            <a class="vitrine-card-media" href="/vitrines/banque/" aria-label="Voir Verlaine Banque Régionale">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/banque/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Finance</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Verlaine Banque Régionale</h3>
-                <p class="vitrine-card-tagline">Institution &amp; offres</p>
-                <p class="vitrine-card-excerpt">Banque régionale : comptes, crédits et agences de proximité — modèle qui inspire confiance.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/banque/">Voir Verlaine Banque Régionale</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/banque/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="hotel" style="--reveal-delay:400ms">
-            <a class="vitrine-card-media" href="/vitrines/etablissement/" aria-label="Voir Hôtel Stanislas Collection">
-                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/etablissement/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
-                </div>
-                <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Hôtellerie</span>
-            </a>
-            <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Hôtel Stanislas Collection</h3>
-                <p class="vitrine-card-tagline">Hôtellerie</p>
-                <p class="vitrine-card-excerpt">Hôtel 4 étoiles : chambres, spa et séminaires — réservation visible, design hôtellerie premium.</p>
-                <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/etablissement/">Voir Hôtel Stanislas Collection</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/etablissement/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
-                </div>
-            </div>
-        </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="mobilite" style="--reveal-delay:400ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="mobilite" style="--reveal-delay:120ms">
             <a class="vitrine-card-media" href="/vitrines/automobile/" aria-label="Voir Garage Central Plappeville">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/automobile/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -295,25 +131,61 @@
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="artisanat" style="--reveal-delay:400ms">
-            <a class="vitrine-card-media" href="/vitrines/chocolatier/" aria-label="Voir Chocolaterie Vialson">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="retail" style="--reveal-delay:160ms">
+            <a class="vitrine-card-media" href="/vitrines/commerce/" aria-label="Voir Halles Thionville">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
-                    <img src="/vitrines/chocolatier/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                    <img src="/vitrines/commerce/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
                 </div>
                 <span class="vitrine-card-tint" aria-hidden="true"></span>
-                <span class="vitrine-card-badge">Artisanat</span>
+                <span class="vitrine-card-badge">Commerce</span>
             </a>
             <div class="vitrine-card-body">
-                <h3 class="vitrine-card-title">Chocolaterie Vialson</h3>
-                <p class="vitrine-card-tagline">Artisan chocolatier</p>
-                <p class="vitrine-card-excerpt">Chocolatier artisan : boutique, coffrets et atelier — galerie gourmande pour booster les ventes.</p>
+                <h3 class="vitrine-card-title">Halles Thionville</h3>
+                <p class="vitrine-card-tagline">Commerce &amp; drive</p>
+                <p class="vitrine-card-excerpt">Commerce de proximité et drive : rayons, click &amp; collect et fidélité — maquette retail prête à l&#x27;emploi.</p>
                 <div class="vitrine-card-actions">
-                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/chocolatier/">Voir Chocolaterie Vialson</a>
-                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/chocolatier/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/commerce/">Voir Halles Thionville</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/commerce/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="immobilier" style="--reveal-delay:400ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="conseil" style="--reveal-delay:200ms">
+            <a class="vitrine-card-media" href="/vitrines/comptable/" aria-label="Voir Verlaine &amp; Associés">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/comptable/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">Conseil</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Verlaine &amp; Associés</h3>
+                <p class="vitrine-card-tagline">Expertise comptable</p>
+                <p class="vitrine-card-excerpt">Cabinet comptable : forfaits, bilan flash et contact dirigeant — crédibilité pro en un clic.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/comptable/">Voir Verlaine &amp; Associés</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/comptable/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="industrie" style="--reveal-delay:240ms">
+            <a class="vitrine-card-media" href="/vitrines/industrie/" aria-label="Voir Précisite Usinage">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/industrie/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">Industrie</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Précisite Usinage</h3>
+                <p class="vitrine-card-tagline">Usinage &amp; qualité</p>
+                <p class="vitrine-card-excerpt">Site usinage et industrie : machines, devis express et FAQ qualité — convertissez les appels d&#x27;offres.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/industrie/">Voir Précisite Usinage</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/industrie/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="immobilier" style="--reveal-delay:280ms">
             <a class="vitrine-card-media" href="/vitrines/immobilier/" aria-label="Voir Patrimoine Lorraine">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/immobilier/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -331,7 +203,7 @@
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="juridique" style="--reveal-delay:400ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="juridique" style="--reveal-delay:320ms">
             <a class="vitrine-card-media" href="/vitrines/juridique/" aria-label="Voir Rivière &amp; Partenaires">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/juridique/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -349,7 +221,7 @@
                 </div>
             </div>
         </article>
-        <article class="vitrine-card scroll-reveal" data-vitrine-cat="architecture" style="--reveal-delay:400ms">
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="architecture" style="--reveal-delay:360ms">
             <a class="vitrine-card-media" href="/vitrines/architecture/" aria-label="Voir Atelier Nord-Est">
                 <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
                     <img src="/vitrines/architecture/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
@@ -400,6 +272,186 @@
                 <div class="vitrine-card-actions">
                     <a class="btn btn-primary vitrine-card-btn" href="/vitrines/photographie/">Voir Studio Lumière Grise</a>
                     <a class="btn btn-outline vitrine-card-btn" href="/vitrines/photographie/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="ess" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/association/" aria-label="Voir Solidarités Metz Métropole">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/association/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">ESS</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Solidarités Metz Métropole</h3>
+                <p class="vitrine-card-tagline">Association</p>
+                <p class="vitrine-card-excerpt">Association et ESS : dons, bénévolat et projets — vitrine mobilisatrice pour le Grand Est.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/association/">Voir Solidarités Metz Métropole</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/association/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="formation" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/education/" aria-label="Voir Institut Mercure">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/education/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">Formation</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Institut Mercure</h3>
+                <p class="vitrine-card-tagline">Formation pro</p>
+                <p class="vitrine-card-excerpt">Centre de formation : parcours, inscriptions et alternance — rassurez apprenants et entreprises.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/education/">Voir Institut Mercure</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/education/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="services" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/services/" aria-label="Voir Proprio Facility">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/services/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">Services</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Proprio Facility</h3>
+                <p class="vitrine-card-tagline">Facility &amp; conciergerie</p>
+                <p class="vitrine-card-excerpt">Facility et conciergerie : offres illustrées, devis et FAQ — pour immeubles tertiaires en Lorraine.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/services/">Voir Proprio Facility</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/services/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="hotel" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/etablissement/" aria-label="Voir Hôtel Stanislas Collection">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/etablissement/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">Hôtellerie</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Hôtel Stanislas Collection</h3>
+                <p class="vitrine-card-tagline">Hôtellerie</p>
+                <p class="vitrine-card-excerpt">Hôtel 4 étoiles : chambres, spa et séminaires — réservation visible, design hôtellerie premium.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/etablissement/">Voir Hôtel Stanislas Collection</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/etablissement/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="tech" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/technologie/" aria-label="Voir Synapse Lorraine">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/technologie/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">Tech &amp; SaaS</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">Synapse Lorraine</h3>
+                <p class="vitrine-card-tagline">Site produit B2B</p>
+                <p class="vitrine-card-excerpt">Site éditeur logiciel : hero, preuves sociales, FAQ et formulaire démo — base crédible pour SaaS, API ou ESN en Grand Est.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/technologie/">Voir Synapse Lorraine</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/technologie/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="saas" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/saas-landing/" aria-label="Voir FlowMetrics">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/saas-landing/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">saas</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">FlowMetrics</h3>
+                <p class="vitrine-card-tagline">Landing SaaS &amp; conversion</p>
+                <p class="vitrine-card-excerpt">Landing produit : hero orienté bénéfice, features avant/après, pricing avec effet de contraste et tableau comparatif stratégique.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/saas-landing/">Voir FlowMetrics</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/saas-landing/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="saas" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/saas-onboarding/" aria-label="Voir TalentLoop">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/saas-onboarding/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">saas</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">TalentLoop</h3>
+                <p class="vitrine-card-tagline">Onboarding produit</p>
+                <p class="vitrine-card-excerpt">Parcours onboarding RH en 4 étapes : barre de progression, copy orienté valeur et chemin balisé vers le aha moment.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/saas-onboarding/">Voir TalentLoop</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/saas-onboarding/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="saas" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/saas-dashboard/" aria-label="Voir MetricPulse">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/saas-dashboard/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">saas</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">MetricPulse</h3>
+                <p class="vitrine-card-tagline">Dashboard &amp; analytics</p>
+                <p class="vitrine-card-excerpt">Dashboard produit : sidebar regroupée par intention, KPIs activation et funnel onboarding lisible en un coup d&#x27;œil.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/saas-dashboard/">Voir MetricPulse</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/saas-dashboard/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="saas" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/saas-empty/" aria-label="Voir QueryBase">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/saas-empty/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">saas</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">QueryBase</h3>
+                <p class="vitrine-card-tagline">Empty states &amp; recherche</p>
+                <p class="vitrine-card-excerpt">Recherche sans résultat : best-sellers alternatifs, vote roadmap et correcteur d&#x27;intention — zéro impasse pour l&#x27;utilisateur.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/saas-empty/">Voir QueryBase</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/saas-empty/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
+                </div>
+            </div>
+        </article>
+        <article class="vitrine-card scroll-reveal" data-vitrine-cat="saas" style="--reveal-delay:400ms">
+            <a class="vitrine-card-media" href="/vitrines/saas-notifications/" aria-label="Voir PingFlow">
+                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" data-vitrine-card-hover-scroll>
+                    <img src="/vitrines/saas-notifications/screenshots/desktop_1920x2400.webp" alt="" width="640" height="400" loading="lazy" decoding="async" class="vitrine-card-img">
+                </div>
+                <span class="vitrine-card-tint" aria-hidden="true"></span>
+                <span class="vitrine-card-badge">saas</span>
+            </a>
+            <div class="vitrine-card-body">
+                <h3 class="vitrine-card-title">PingFlow</h3>
+                <p class="vitrine-card-tagline">Notifications in-app</p>
+                <p class="vitrine-card-excerpt">Centre de notifications : hiérarchie claire, actions requises mises en avant et préférences granulaires anti-spam.</p>
+                <div class="vitrine-card-actions">
+                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/saas-notifications/">Voir PingFlow</a>
+                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/saas-notifications/demo/index.html" target="_blank" rel="noopener noreferrer">Démo live</a>
                 </div>
             </div>
         </article>

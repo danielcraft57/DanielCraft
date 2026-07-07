@@ -1,0 +1,122 @@
+{
+  "slug": "commerce",
+  "brand": "Halles Thionville",
+  "category": "retail",
+  "locale": "Thionville, Moselle, Grand Est, France",
+  "style_suffix": "Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Allée de supermarché lumineuse",
+      "subject": "Bright modern Halles Thionville supermarket aisle with fresh produce and warm lighting, welcoming local grocery store interior, shoppers browsing, clean contemporary retail design",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Le marché du quotidien version moderne — 3200 m² de rayons" },
+        { "page": "rayons.html", "section": "hero", "text": "Rayon épicerie fine — des rayons qui respirent la fraîcheur" },
+        { "page": "drive.html", "section": "hero", "text": "Point drive couvert — courses sans sortir de voiture" },
+        { "page": "contact.html", "section": "hero", "text": "Accueil client supermarché — Rue du Mail Thionville" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "retail",
+      "alt": "Boucherie artisanale",
+      "subject": "Artisan butcher counter in French supermarket with label rouge meats, fresh cuts displayed, professional boucherie department Halles Thionville",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Boucherie — viandes label rouge et préparations maison" },
+        { "page": "rayons.html", "section": "chapter", "text": "Poissonnerie — arrivages mer du Nord 3 fois par semaine" },
+        { "page": "drive.html", "section": "chapter", "text": "Préparation — préparateurs formés à la fraîcheur" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "retail",
+      "alt": "Pain frais en rayon",
+      "subject": "Fresh bakery section in supermarket with artisan bread on wooden shelves, oven visible in background, morning bakery department warm lighting",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Boulangerie — four sur place dès 7 h" },
+        { "page": "rayons.html", "section": "chapter", "text": "Cave — vins mosellans et conseils sommelier" },
+        { "page": "drive.html", "section": "chapter", "text": "Créneaux — dès 8 h jusqu'à 20 h" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "retail",
+      "alt": "Rayon fruits et légumes",
+      "subject": "Colorful fruits and vegetables display in supermarket produce section, local Moselle produce, fresh daily arrivals, vibrant healthy retail",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Fruits & légumes — arrivages Serémange et Corny" },
+        { "page": "rayons.html", "section": "chapter", "text": "Surgelés — gamme premium et surgelés maison" },
+        { "page": "drive.html", "section": "chapter", "text": "Paiement — en ligne ou à la borne sur place" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "AOP lorraines et affinés",
+      "subject": "Cheese counter display with French AOP cheeses including Lorraine specialties, artisan fromagerie vitrine in supermarket",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Vitrine fromages — AOP lorraines et affinés" },
+        { "page": "drive.html", "section": "gallery", "text": "Emplacements — abris couverts été comme hiver" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Samedi producteurs locaux",
+      "subject": "Local producers tasting event in supermarket parking area, Moselle farmers market stand, community retail event Saturday",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Événement dégustation — samedi producteurs locaux" },
+        { "page": "drive.html", "section": "gallery", "text": "Application — suivi commande en temps réel" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Retrait drive",
+      "subject": "Click and collect drive pickup at covered supermarket car park, employee loading groceries into car trunk, fast grocery pickup service",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Click & collect — commande en ligne, retrait en 2 h" },
+        { "page": "rayons.html", "section": "card", "text": "Frais — crèmerie, traiteur et sushi du jour" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Carte de fidélité",
+      "subject": "Customer loyalty card and smartphone app at supermarket checkout, rewards program Halles retail loyalty, friendly cashier",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Carte fidélité — 1 € dépensé = 1 point" },
+        { "page": "rayons.html", "section": "card", "text": "Épicerie — marques régionales et sans gluten" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Livraison à domicile",
+      "subject": "Grocery home delivery van with fresh produce boxes, evening delivery service Thionville local supermarket",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Livraison — sur Thionville et Yutz en soirée" },
+        { "page": "rayons.html", "section": "card", "text": "Bio & vrac — cosmétiques et céréales en vrac" }
+      ]
+    }
+  ]
+}

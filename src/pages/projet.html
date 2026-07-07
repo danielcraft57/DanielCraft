@@ -1,7 +1,15 @@
 <section class="section page-projet-detail" aria-label="Détail du projet">
     <div class="container">
 
-        <article class="projet-article">
+        <article class="projet-article" itemscope itemtype="https://schema.org/SoftwareSourceCode">
+            <meta itemprop="name" content="{{project_title}}">
+            <meta itemprop="description" content="{{project_description}}">
+            {% if project_github_url %}
+            <link itemprop="codeRepository" href="{{project_github_url}}">
+            {% endif %}
+            {% if project_language %}
+            <meta itemprop="programmingLanguage" content="{{project_language}}">
+            {% endif %}
             <header class="projet-header">
                 <span class="section-badge">{{project_category_label}}</span>
                 <h1 class="section-title">{{project_title}}</h1>

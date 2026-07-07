@@ -1,0 +1,103 @@
+/**
+ * Typo & CTA calibrés conversion (2026) :
+ * - corps 17–18px, interligne 1.6, mesure 45–75 car.
+ * - CTA zone tactile ≥ 44px, contraste fort.
+ * - Hiérarchie : H1 display, H2 +25 % desktop.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --vt-font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --vt-body: 1.0625rem;
+  --vt-body-lg: 1.125rem;
+  --vt-lead: 1.25rem;
+  --vt-lh-body: 1.6;
+  --vt-lh-heading: 1.2;
+  --vt-measure: min(65ch, 100%);
+  --vt-section-y: clamp(3rem, 8vw, 5rem);
+  --vt-cta-min-h: 44px;
+  --vt-cta-pad-x: 1.5rem;
+  --vt-cta-pad-y: 0.75rem;
+  --vt-cta-font: 1rem;
+}
+
+body {
+  font-family: var(--vt-font);
+  font-size: var(--vt-body);
+  line-height: var(--vt-lh-body);
+}
+
+.vt-hero h1,
+h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: var(--vt-lh-heading);
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+
+.vt-hero .lead,
+.vt-lead,
+.lead {
+  font-size: var(--vt-lead);
+  line-height: var(--vt-lh-body);
+  max-width: var(--vt-measure);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 1.95rem);
+  line-height: var(--vt-lh-heading);
+}
+
+p {
+  max-width: var(--vt-measure);
+}
+
+section {
+  padding-block: var(--vt-section-y);
+}
+
+.vt-btn,
+.btn.vt-btn,
+button.vt-btn,
+a.vt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--vt-cta-min-h);
+  padding: var(--vt-cta-pad-y) var(--vt-cta-pad-x);
+  font-size: var(--vt-cta-font);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vt-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.vt-btn:hover {
+  transform: translateY(-1px);
+}
+
+.vt-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vt-muted-center,
+.text-muted {
+  font-size: var(--vt-body);
+  line-height: var(--vt-lh-body);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --vt-body: 1rem;
+    --vt-lead: 1.125rem;
+  }
+}

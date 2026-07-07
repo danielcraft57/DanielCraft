@@ -1,35 +1,155 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@700&display=swap");
-html { scroll-behavior: smooth; }
-body { font-family: "Source Sans 3", system-ui, sans-serif; margin: 0; color: #1a1a1a; }
-.skip-link { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0); }
-.skip-link:focus { position:fixed;left:1rem;top:1rem;z-index:10000;padding:.5rem 1rem;background:#fff;clip:auto;width:auto;height:auto; }
-.vt-brand { font-family: "Libre Baskerville", Georgia, serif; color: #37474f; }
-.vt-hero { background: linear-gradient(135deg,#263238,#546e7a); color: #fff; padding: 2rem 0 2.25rem; display: block; }
-.vt-hero .vt-hero-grid { padding-top: 0.5rem; padding-bottom: 0.75rem; }
-.vt-hero .vitrine-figure--ken img { max-height: 220px; }
-.vitrine-hero-visual img { max-height: 220px; width: 100%; object-fit: cover; }
-.vt-hero h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 .5rem; }
-.vt-eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; opacity: .85; }
-.vt-btn { background: #fff; color: #37474f; font-weight: 600; border: none; text-decoration: none; display: inline-block; padding: .65rem 1.25rem; border-radius: .35rem; cursor: pointer; }
-.vt-stats { background: #37474f; color: #fff; }
-.vt-stat { font-size: 2rem; display: block; font-family: "Libre Baskerville", serif; }
-.vt-muted, .vt-band { background: #f5f5f0; }
-.vt-card img { width: 100%; object-fit: cover; border-radius: .35rem; }
-.vitrine-hero-visual img { border-radius: .35rem; }
-.vt-card img { height: 220px; }
-.vt-footer { background: #1c1c1c; color: rgba(255,255,255,.85); padding: 1.25rem; }
-.vt-top { background: #fff; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; z-index: 40; }
-.vt-nav { max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-.vt-nav a { text-decoration: none; color: inherit; margin-right: .75rem; }
-.vt-hero-grid, .vt-stats-grid, .vt-cards { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.25rem; }
-@media (min-width: 900px) {
-  .vt-hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-  .vt-stats-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
-  .vt-cards { grid-template-columns: repeat(3, 1fr); }
+/* Studio Lumière Grise — éditorial gris, Cormorant + Source Sans */
+:root {
+  --vt-ink: #374151;
+  --vt-gray: #6b7280;
+  --vt-line: #e5e7eb;
+  --vt-bg: #ffffff;
+  --vt-soft: #f3f4f6;
+  --vt-text: #374151;
+  --vt-muted: #6b7280;
+  --vt-accent: #374151;
+  --bs-body-bg: var(--vt-bg);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-ink);
+  --bs-link-color: var(--vt-ink);
+  --bs-link-hover-color: var(--vt-gray);
 }
-.vt-wrap { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
-.vt-center { text-align: center; }
-.vt-muted-center { text-align: center; color: #666; margin-bottom: 1.5rem; }
-.vt-form label { display: block; margin-bottom: .75rem; }
-.vt-form input, .vt-form textarea { width: 100%; }
-.vt-lead { font-size: 1.15rem; opacity: .92; }
+
+body.vt-body-photo {
+  background: var(--vt-bg);
+  color: var(--vt-text);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-photo { padding-bottom: 0; }
+}
+
+.vt-display,
+.vt-section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--vt-ink);
+}
+
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--vt-ink) !important;
+}
+
+.vt-eyebrow {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--vt-gray);
+  text-transform: uppercase;
+}
+
+.vt-topbar { background: var(--vt-soft); color: var(--vt-gray); }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+
+.vt-navbar {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--vt-line);
+}
+.vt-navbar .nav-link {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 0.88rem;
+  color: var(--vt-muted);
+  letter-spacing: 0.04em;
+}
+.vt-navbar .nav-link.active { color: var(--vt-ink); font-weight: 600; }
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-ink);
+  --bs-btn-border-color: var(--vt-ink);
+  --bs-btn-hover-bg: #1f2937;
+  --bs-btn-hover-border-color: #1f2937;
+  --bs-btn-color: #fff;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  border-radius: 0;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-ink);
+  --bs-btn-border-color: var(--vt-ink);
+  --bs-btn-hover-bg: var(--vt-ink);
+  --bs-btn-hover-color: #fff;
+  border-radius: 0;
+}
+
+/* Hero split reverse — typo éditoriale */
+.vt-body-photo .vt-hero-split-reverse .vt-display {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  font-style: italic;
+}
+
+/* Images légèrement désaturées */
+.vt-body-photo .vt-hero-frame img,
+.vt-body-photo .vt-masonry-img,
+.vt-body-photo .vt-project-img,
+.vt-body-photo .vt-chapter img,
+.vt-body-photo .card-img-top {
+  filter: grayscale(35%) contrast(1.05);
+  transition: filter 0.4s ease;
+}
+.vt-body-photo .vt-masonry-card:hover .vt-masonry-img,
+.vt-body-photo .vt-project-card:hover .vt-project-img {
+  filter: grayscale(0%) contrast(1.05);
+}
+
+/* Galerie masonry décalée */
+.vt-masonry-img { aspect-ratio: 4/5; object-fit: cover; display: block; }
+@media (min-width: 768px) {
+  .vt-masonry-offset { margin-top: 3rem; }
+}
+.vt-masonry-title { font-family: "Cormorant Garamond", serif; font-weight: 600; }
+
+/* Trust strip publications */
+.vt-body-photo .vt-trust-strip {
+  background: var(--vt-soft);
+  border-top: 1px solid var(--vt-line);
+  border-bottom: 1px solid var(--vt-line);
+}
+.vt-body-photo .vt-trust-strip strong { color: var(--vt-ink); }
+
+/* Projets portfolio */
+.vt-body-photo .vt-project-card { border: 1px solid var(--vt-line) !important; background: #fff; }
+.vt-body-photo .vt-project-meta { color: var(--vt-gray); }
+
+/* Bento */
+.vt-body-photo .vt-bento-card { border: 1px solid var(--vt-line); background: #fff; }
+
+/* Menu tarifs */
+.vt-body-photo .vt-menu { background: var(--vt-soft) !important; }
+.vt-body-photo .vt-menu-price { font-family: "Cormorant Garamond", serif; font-size: 1.25rem; }
+
+/* Hero proof */
+.vt-body-photo .vt-quote-card { background: var(--vt-soft); border-left: 3px solid var(--vt-ink); }
+.vt-body-photo .vt-proof-stat-val { font-family: "Cormorant Garamond", serif; color: var(--vt-ink); }
+
+/* Formulaire */
+.vt-body-photo .vt-aside-panel { background: var(--vt-soft); border: 1px solid var(--vt-line); }
+
+/* Footer */
+.vt-body-photo .vt-footer { background: var(--vt-soft); border-top: 1px solid var(--vt-line); }
+
+/* CTA */
+.vt-body-photo .vt-cta-band { background: var(--vt-ink); color: #fff; }
+.vt-body-photo .vt-cta-band .btn { background: #fff; color: var(--vt-ink); border: none; }
+
+.vt-body-photo .vt-mobile-cta { background: #fff; border-top: 1px solid var(--vt-line); }
+
+.vt-body-photo .accordion-item { border-color: var(--vt-line); }
+.vt-body-photo .accordion-button:not(.collapsed) { background: var(--vt-soft); color: var(--vt-ink); }
+
+.vt-body-photo .vt-funnel-num { color: var(--vt-gray); font-family: "Cormorant Garamond", serif; }
+.vt-body-photo .vt-trust-badge { border-color: var(--vt-line); color: var(--vt-muted); }

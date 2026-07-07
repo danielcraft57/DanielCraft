@@ -3,5 +3,6 @@
   "page_description": "Conditions générales d'utilisation du site danielcraft.fr.",
   "page_keywords": "CGU, conditions générales d'utilisation, danielcraft.fr",
   "page_url": "/cgu",
-  "og_image": "/assets/images/og/cgu-1200x630.jpg"
+  "og_image": "/assets/images/og/cgu-1200x630.jpg",
+  "schema_type": "legal"
 }

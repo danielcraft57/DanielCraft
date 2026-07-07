@@ -4,6 +4,7 @@
   "page_keywords": "analyse site web, audit, performance, SEO, sécurité, rapport",
   "page_url": "/analyse",
   "og_image": "/assets/images/og/analyse-1200x630.jpg",
+  "schema_type": "webpage",
   "extra_css": "analyse-report.css",
   "page_scripts": ["main.js", "analyse-report.js"]
 }

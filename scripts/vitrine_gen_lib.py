@@ -2,7 +2,8 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1] / "assets" / "vitrines" / "demos"
-SHARED_CSS = """  <link rel="stylesheet" href="../shared/vitrine-images.css">
+SHARED_CSS = """  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
   <link rel="stylesheet" href="../shared/vitrine-media.css">
   <link rel="stylesheet" href="../shared/vitrine-layout-motion.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">"""

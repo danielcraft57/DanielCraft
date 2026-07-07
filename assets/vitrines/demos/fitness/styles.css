@@ -1,35 +1,161 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@700&display=swap");
-html { scroll-behavior: smooth; }
-body { font-family: "Source Sans 3", system-ui, sans-serif; margin: 0; color: #1a1a1a; }
-.skip-link { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0); }
-.skip-link:focus { position:fixed;left:1rem;top:1rem;z-index:10000;padding:.5rem 1rem;background:#fff;clip:auto;width:auto;height:auto; }
-.vt-brand { font-family: "Libre Baskerville", Georgia, serif; color: #65a30d; }
-.vt-hero { background: linear-gradient(135deg,#14532d,#166534); color: #fff; padding: 2rem 0 2.25rem; display: block; }
-.vt-hero .vt-hero-grid { padding-top: 0.5rem; padding-bottom: 0.75rem; }
-.vt-hero .vitrine-figure--ken img { max-height: 220px; }
-.vitrine-hero-visual img { max-height: 220px; width: 100%; object-fit: cover; }
-.vt-hero h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 .5rem; }
-.vt-eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; opacity: .85; }
-.vt-btn { background: #fff; color: #65a30d; font-weight: 600; border: none; text-decoration: none; display: inline-block; padding: .65rem 1.25rem; border-radius: .35rem; cursor: pointer; }
-.vt-stats { background: #65a30d; color: #fff; }
-.vt-stat { font-size: 2rem; display: block; font-family: "Libre Baskerville", serif; }
-.vt-muted, .vt-band { background: #f5f5f0; }
-.vt-card img { width: 100%; object-fit: cover; border-radius: .35rem; }
-.vitrine-hero-visual img { border-radius: .35rem; }
-.vt-card img { height: 220px; }
-.vt-footer { background: #1c1c1c; color: rgba(255,255,255,.85); padding: 1.25rem; }
-.vt-top { background: #fff; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; z-index: 40; }
-.vt-nav { max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-.vt-nav a { text-decoration: none; color: inherit; margin-right: .75rem; }
-.vt-hero-grid, .vt-stats-grid, .vt-cards { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.25rem; }
-@media (min-width: 900px) {
-  .vt-hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-  .vt-stats-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
-  .vt-cards { grid-template-columns: repeat(3, 1fr); }
+/* Pulse Fitness Metz — dark energetic, lime accent, Barlow Condensed */
+:root {
+  --vt-lime: #84cc16;
+  --vt-lime-d: #65a30d;
+  --vt-black: #0a0a0a;
+  --vt-dark: #141414;
+  --vt-card: #171717;
+  --vt-line: #2a2a2a;
+  --vt-muted: #a3a3a3;
+  --vt-text: #f5f5f5;
+  --vt-accent: var(--vt-lime);
+  --bs-body-bg: var(--vt-black);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-lime);
+  --bs-link-color: var(--vt-lime);
+  --bs-link-hover-color: var(--vt-lime-d);
 }
-.vt-wrap { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
-.vt-center { text-align: center; }
-.vt-muted-center { text-align: center; color: #666; margin-bottom: 1.5rem; }
-.vt-form label { display: block; margin-bottom: .75rem; }
-.vt-form input, .vt-form textarea { width: 100%; }
-.vt-lead { font-size: 1.15rem; opacity: .92; }
+
+body.vt-body-fitness {
+  background: var(--vt-black);
+  color: var(--vt-text);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-fitness { padding-bottom: 0; }
+}
+
+.vt-display,
+.vt-section-title {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--vt-lime);
+}
+
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vt-text) !important;
+}
+
+.vt-eyebrow {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--vt-lime);
+  text-transform: uppercase;
+}
+
+.vt-topbar { background: var(--vt-lime); color: var(--vt-black); }
+.vt-topbar-status { font-weight: 700; }
+.vt-topbar-link { color: inherit; text-decoration: none; font-weight: 600; }
+
+.vt-navbar {
+  background: rgba(10, 10, 10, 0.97);
+  border-bottom: 2px solid var(--vt-lime);
+}
+.vt-navbar .nav-link {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--vt-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.vt-navbar .nav-link.active { color: var(--vt-lime); }
+.vt-navbar .navbar-toggler { border-color: var(--vt-line); }
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-lime);
+  --bs-btn-border-color: var(--vt-lime);
+  --bs-btn-hover-bg: var(--vt-lime-d);
+  --bs-btn-hover-border-color: var(--vt-lime-d);
+  --bs-btn-color: var(--vt-black);
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 0;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-text);
+  --bs-btn-border-color: var(--vt-line);
+  --bs-btn-hover-bg: var(--vt-lime);
+  --bs-btn-hover-border-color: var(--vt-lime);
+  --bs-btn-hover-color: var(--vt-black);
+  border-radius: 0;
+}
+
+.vt-body-fitness .vt-hero-overlay { min-height: 480px; background: var(--vt-black); }
+.vt-body-fitness .vt-hero-overlay .vt-display {
+  font-size: clamp(2.5rem, 7vw, 4.2rem);
+  font-style: italic;
+  color: #fff;
+  line-height: 0.95;
+}
+.vt-body-fitness .vt-hero-overlay .lead { color: var(--vt-muted); }
+
+.vt-body-fitness .vt-stats-band { background: var(--vt-lime); color: var(--vt-black); }
+.vt-body-fitness .vt-stat-val { color: var(--vt-black); }
+.vt-body-fitness .vt-stat-lbl { color: rgba(0, 0, 0, 0.7); }
+
+.vt-body-fitness .vt-service-tile { background: var(--vt-card); border: 1px solid var(--vt-line); }
+.vt-body-fitness .vt-service-tile--hot { border-color: var(--vt-lime); }
+
+.vt-schedule-table {
+  --bs-table-bg: var(--vt-card);
+  --bs-table-color: var(--vt-text);
+  --bs-table-border-color: var(--vt-line);
+}
+.vt-schedule-table thead th {
+  background: var(--vt-lime);
+  color: var(--vt-black);
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.vt-schedule-table td:first-child { font-weight: 700; color: var(--vt-lime); }
+.vt-schedule-quote { color: var(--vt-muted); font-style: italic; }
+
+.vt-promo-lime .vt-promo-body { background: var(--vt-lime); color: var(--vt-black); }
+.vt-promo-dark .vt-promo-body { background: var(--vt-card); border: 1px solid var(--vt-line); }
+
+.vt-body-fitness .card { background: var(--vt-card); border: 1px solid var(--vt-line) !important; color: var(--vt-text); }
+.vt-body-fitness .text-secondary { color: var(--vt-muted) !important; }
+.vt-body-fitness .vt-chapter { border-color: var(--vt-line); }
+
+.vt-body-fitness .vt-menu { background: var(--vt-dark) !important; }
+.vt-body-fitness .vt-menu-price { color: var(--vt-lime); font-weight: 800; }
+.vt-body-fitness .vt-tag { background: var(--vt-lime); color: var(--vt-black); }
+
+.vt-body-fitness .vt-quote-card { background: var(--vt-card); border-left: 4px solid var(--vt-lime); }
+.vt-body-fitness .vt-proof-stat-val { color: var(--vt-lime); }
+
+.vt-body-fitness .vt-aside-panel { background: var(--vt-card); border: 1px solid var(--vt-line); }
+.vt-body-fitness .form-control,
+.vt-body-fitness .form-select { background: var(--vt-dark); border-color: var(--vt-line); color: var(--vt-text); }
+
+.vt-body-fitness .vt-footer { background: var(--vt-dark); border-top: 2px solid var(--vt-lime); color: var(--vt-muted); }
+.vt-body-fitness .vt-footer a { color: var(--vt-lime); }
+
+.vt-body-fitness .vt-cta-band { background: var(--vt-lime); color: var(--vt-black); }
+.vt-body-fitness .vt-cta-band .btn { background: var(--vt-black); color: #fff; border: none; }
+
+.vt-body-fitness .vt-mobile-cta { background: var(--vt-black); border-top: 2px solid var(--vt-lime); }
+
+.vt-body-fitness .accordion-item { background: var(--vt-card); border-color: var(--vt-line); color: var(--vt-text); }
+.vt-body-fitness .accordion-button { background: var(--vt-card); color: var(--vt-text); }
+.vt-body-fitness .accordion-button:not(.collapsed) { background: var(--vt-dark); color: var(--vt-lime); }
+
+.vt-body-fitness .vt-funnel-step { border-color: var(--vt-line); }
+.vt-body-fitness .vt-funnel-num { color: var(--vt-lime); }
+.vt-body-fitness .vt-trust-badge { border: 1px solid var(--vt-line); color: var(--vt-muted); }
+.vt-body-fitness .vt-tech-table th { color: var(--vt-lime); }
+.vt-body-fitness .vt-tech-table td { color: var(--vt-muted); }

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Droit social</title>
-  <defs><linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#334155"/></linearGradient></defs>
-  <rect width="800" height="520" fill="url(#b)"/>
-  <rect x="50" y="50" width="700" height="380" fill="#1e293b" stroke="#c9a227" stroke-width="2" rx="4"/>
-  <text x="400" y="260" text-anchor="middle" font-size="72" fill="#c9a227" opacity=".25" font-family="Georgia,serif">RH</text>
-  <rect x="100" y="380" width="200" height="4" fill="#c9a227" opacity=".7"/>
-  <text x="400" y="430" text-anchor="middle" fill="#e2e8f0" font-size="16" font-family="system-ui,sans-serif">Droit social</text>
-</svg>

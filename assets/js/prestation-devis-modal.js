@@ -1,5 +1,5 @@
 /**
- * Modale devis prestation : récap, coordonnées, envoi Facturio.
+ * Modale devis prestation : récap, coordonnées, envoi Prestafacture.
  */
 (function () {
   'use strict';
@@ -339,7 +339,7 @@
         }
         const hint = document.getElementById('prestationDevisDialogErrorHint');
         if (hint) {
-          hint.hidden = data.error_code !== 'facturio_unavailable';
+          hint.hidden = data.error_code !== 'prestafacture_unavailable';
         }
         showStep('error');
       }

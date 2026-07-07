@@ -3,105 +3,232 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Comptabilité claire pour les dirigeants. Cabinet indépendant à Metz et Thionville — tenue, paie et conseil.">
-  <title>Verlaine &amp; Associés — Expertise comptable | démo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../shared/vitrine-images.css">
-  <link rel="stylesheet" href="../shared/vitrine-media.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <meta name="description" content="Cabinet d&#x27;expertise comptable à Metz, partenaire des PME lorraines depuis 1986.">
+  <title>Verlaine &amp; Associés — Expert-comptable Metz</title>
+  <!-- layout: cabinet-proof · Bootstrap 5 · vitrine site complet -->
 
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm" aria-label="Navigation principale">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand vt-brand fs-5" href="#accueil">Verlaine &amp; Associés</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#offres">Offres</a></li>
-          <li class="nav-item"><a class="nav-link" href="#engagements">Engagements</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Contact</a></li>
-        </ul>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Verlaine & Associés",
+  "telephone": "+33387759012",
+  "knowsAbout": ["Tenue comptable", "Paie et DSN", "Conseil dirigeant", "Fiscalité PME", "Bilan flash"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 rue Serpenoise",
+    "addressLocality": "Metz",
+    "postalCode": "57000",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"}
+  ]
+}
+</script>
+</head>
+<body class="vt-body vt-body-cabinet">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Cabinet ouvert · Lun–ven 9h–18h</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=14+rue+Serpenoise+57000+Metz">14 rue Serpenoise, 57000 Metz</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0387759012">03 87 75 90 12</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Verlaine &amp; Associés</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="expertises.html">Expertises</a></li><li class="nav-item"><a class="nav-link" href="methode.html">Notre méthode</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Prendre RDV</a>
       </div>
     </div>
   </nav>
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="vt-hero text-white">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6 vitrine-img-reveal">
-            <p class="vt-eyebrow text-uppercase small mb-2">Grand Est · Lorraine</p>
-            <h1 class="mb-3">Comptabilité claire pour les dirigeants</h1>
-            <p class="lead mb-4 opacity-90">Cabinet indépendant à Metz et Thionville — tenue, paie et conseil.</p>
-            <a class="btn btn-lg vt-btn me-2" href="#offres">Voir nos offres</a>
-            <a class="btn btn-lg btn-outline-light" href="#contact">Nous contacter</a>
+</header><main><section class="vt-hero-proof py-5 py-lg-6">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase mb-2">Metz &amp; Thionville · Expert-comptable</p>
+    <div class="row g-4 g-lg-5 align-items-stretch">
+      <div class="col-lg-6">
+        <blockquote class="vt-quote-card h-100">
+          <p class="vt-quote-text">« Un cabinet réactif qui parle vrai — nos décisions sont éclairées, nos échéances toujours tenues. »</p>
+          <footer class="vt-quote-footer">
+            <strong>Philippe R.</strong>
+            <span>Gérant PME · Thionville</span>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="col-lg-6 d-flex flex-column">
+        <div class="vt-proof-stats mb-4"><div class="vt-proof-stat">
+        <strong class="vt-proof-stat-val">25 ans</strong>
+        <span class="vt-proof-stat-lbl">d&#x27;expérience</span>
+      </div><div class="vt-proof-stat">
+        <strong class="vt-proof-stat-val">800+</strong>
+        <span class="vt-proof-stat-lbl">clients</span>
+      </div><div class="vt-proof-stat">
+        <strong class="vt-proof-stat-val">48 h</strong>
+        <span class="vt-proof-stat-lbl">bilan flash</span>
+      </div></div>
+        <div class="mt-auto">
+          <h1 class="vt-display h2 mb-2">Vos chiffres, expliqués sans jargon</h1>
+          <p class="mb-4">Tenue comptable, paie et conseil dirigeant pour PME de Metz et Thionville.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-vt-primary btn-lg rounded-0 px-4" href="contact.html">Consultation gratuite</a>
+            <a class="btn btn-vt-outline rounded-0 px-4" href="expertises.html">Nos expertises</a>
           </div>
-          <div class="col-lg-6"><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
-              <a href="images/hero.png" class="glightbox" data-gallery="comptable-vis">
-                <img src="images/hero.png" width="1200" height="520" alt="Verlaine &amp; Associés" fetchpriority="high" decoding="async" class="w-100">
-              </a>
-            </figure></div>
         </div>
       </div>
-    </section>
-    <section class="vt-stats py-4" aria-label="Chiffres clés"><div class="container"><div class="row text-center g-3"><div class="col-md-4"><strong class="vt-stat">25 ans</strong><span>expérience</span></div><div class="col-md-4"><strong class="vt-stat">800+</strong><span>clients</span></div><div class="col-md-4"><strong class="vt-stat">48 h</strong><span>devis</span></div></div></div></section>
-    <section id="offres" class="py-5"><div class="container">
-      <h2 class="vt-brand display-6 text-center mb-2">Ce que nous proposons</h2>
-      <p class="text-center text-muted mb-5 col-lg-8 mx-auto">Services clairs, visuels lisibles, appel à l'action visible.</p>
-      <div class="row g-4">
-          <div class="col-md-4 vitrine-img-reveal">
-            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
-              <figure class="vitrine-figure vitrine-card-visual mb-0">
-                <a href="images/compta-bureau-plat.png" class="glightbox" data-gallery="comptable-vis" data-glightbox="title: Tenue">
-                  <img src="images/compta-bureau-plat.png" alt="Tenue" loading="lazy" decoding="async">
-                </a>
-              </figure>
-              <div class="card-body"><h3 class="h5 vt-brand">Tenue</h3><p class="text-muted mb-0">Liasse et TVA.</p></div>
-            </article>
+    </div>
+  </div>
+</section><section class="vt-credentials py-4" aria-label="Agréments et certifications">
+  <div class="container">
+    <div class="row g-3 text-center"><div class="col-6 col-md-3">
+        <div class="vt-cred-cell">
+          <strong>OEC</strong>
+          <span>Ordre des experts-comptables</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-cred-cell">
+          <strong>DEC</strong>
+          <span>Diplôme d&#x27;expertise comptable</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-cred-cell">
+          <strong>ISO</strong>
+          <span>Processus qualité</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-cred-cell">
+          <strong>PME</strong>
+          <span>Spécialiste dirigeants</span>
+        </div>
+      </div></div>
+  </div>
+</section><section class="vt-comparison py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">Ce que change un bon accompagnement</h2>
+    <div class="table-responsive">
+      <table class="table vt-cmp-table align-middle">
+        <thead>
+          <tr>
+            <th scope="col">Situation</th>
+            <th scope="col">Avant</th>
+            <th scope="col">Avec Verlaine &amp; Associés</th>
+          </tr>
+        </thead>
+        <tbody><tr>
+        <th scope="row">Clarté financière</th>
+        <td class="vt-cmp-before">Excel dispersés, retards de saisie</td>
+        <td class="vt-cmp-after">Tableau de bord mensuel partagé</td>
+      </tr><tr>
+        <th scope="row">Échéances fiscales</th>
+        <td class="vt-cmp-before">Stress de dernière minute</td>
+        <td class="vt-cmp-after">Calendrier anticipé et validé</td>
+      </tr><tr>
+        <th scope="row">Paie</th>
+        <td class="vt-cmp-before">DSN en retard, questions sans réponse</td>
+        <td class="vt-cmp-after">Bulletins à jour, interlocuteur dédié</td>
+      </tr><tr>
+        <th scope="row">Décisions</th>
+        <td class="vt-cmp-before">Intuition seule</td>
+        <td class="vt-cmp-after">Chiffres commentés en langage clair</td>
+      </tr></tbody>
+      </table>
+    </div>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">Pourquoi Verlaine &amp; Associés ?</h2>
+        <p class="mb-3">Implanté à Metz, nous connaissons les réalités du terrain mosellan et les attentes d&#x27;une clientèle exigeante.</p><p class="mb-3">Notre équipe locale combine expertise métier et relation de confiance sur le long terme.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Ce que nous proposons</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Tenue comptable" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Tenue comptable</h3>
+            <p class="card-text text-secondary small mb-0">Liasse fiscale, TVA et tableaux de bord mensuels.</p>
           </div>
-          <div class="col-md-4 vitrine-img-reveal">
-            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
-              <figure class="vitrine-figure vitrine-card-visual mb-0">
-                <a href="images/conseil-client.png" class="glightbox" data-gallery="comptable-vis" data-glightbox="title: Paie">
-                  <img src="images/conseil-client.png" alt="Paie" loading="lazy" decoding="async">
-                </a>
-              </figure>
-              <div class="card-body"><h3 class="h5 vt-brand">Paie</h3><p class="text-muted mb-0">Bulletins &amp; DSN.</p></div>
-            </article>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Paie et DSN" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Paie &amp; social</h3>
+            <p class="card-text text-secondary small mb-0">Bulletins, DSN et veille conventionnelle.</p>
           </div>
-          <div class="col-md-4 vitrine-img-reveal">
-            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
-              <figure class="vitrine-figure vitrine-card-visual mb-0">
-                <a href="images/reunion.png" class="glightbox" data-gallery="comptable-vis" data-glightbox="title: Conseil">
-                  <img src="images/reunion.png" alt="Conseil" loading="lazy" decoding="async">
-                </a>
-              </figure>
-              <div class="card-body"><h3 class="h5 vt-brand">Conseil</h3><p class="text-muted mb-0">Pilotage dirigeant.</p></div>
-            </article>
-          </div></div>
-    </div></section>
-    <section id="engagements" class="py-5 vt-muted"><div class="container col-lg-8 text-center">
-      <h2 class="vt-brand h3 mb-3">Pourquoi nous faire confiance</h2>
-      <p class="text-muted mb-0">Réactivité, transparence et ancrage local — une vitrine qui transforme les visites en demandes.</p>
-    </div></section>
-    <section id="contact" class="py-5"><div class="container col-lg-7">
-      <h2 class="vt-brand text-center mb-4">Contact</h2>
-      <form class="row g-3" action="#" method="get" aria-label="Formulaire de contact">
-        <div class="col-md-6"><label class="form-label" for="nom">Nom</label><input class="form-control" id="nom" name="nom" type="text" autocomplete="name"></div>
-        <div class="col-md-6"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" autocomplete="email"></div>
-        <div class="col-12"><label class="form-label" for="msg">Message</label><textarea class="form-control" id="msg" name="message" rows="4"></textarea></div>
-        <div class="col-12 text-center"><button class="btn vt-btn btn-lg" type="submit">Envoyer ma demande</button>
-        <p class="small text-muted mt-2 mb-0">Démonstration — aucune donnée transmise.</p></div>
-      </form>
-      <p class="text-center mt-4"><a href="../index.html">← Retour au hub des vitrines</a></p>
-    </div></section>
-  </main>
-  <footer class="vt-footer py-4 text-center"><p class="mb-0 small">Maquette — démonstration DanielCraft</p></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
-  <script src="../shared/vitrine-images.js"></script>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Conseil dirigeant" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Conseil dirigeant</h3>
+            <p class="card-text text-secondary small mb-0">Pilotage, restructuration et transmission.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">Plus de 500 clients accompagnés en Grand Est — réactivité et transparence au quotidien.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">Bilan flash 48 h</span><span class="badge rounded-pill vt-badge">Metz &amp; Thionville</span><span class="badge rounded-pill vt-badge">PME &amp; TPE</span><span class="badge rounded-pill vt-badge">Conseil dirigeant</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Parlons de votre projet à Metz.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Prendre RDV</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Verlaine &amp; Associés</strong>
+        <p class="small opacity-75 mb-2">14 rue Serpenoise, 57000 Metz</p>
+        <a class="small" href="https://maps.google.com/?q=14+rue+Serpenoise+57000+Metz">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="expertises.html">Expertises</a><a class="nav-link px-0" href="methode.html">Notre méthode</a><a class="nav-link px-0" href="contact.html">Consultation</a><a class="nav-link px-0" href="contact.html">Bilan flash</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0387759012">03 87 75 90 12</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@verlaine-associes.fr">contact@verlaine-associes.fr</a></p>
+        <p class="mb-0">Lun–ven 9h–18h · Metz &amp; Thionville</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0387759012">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Prendre RDV</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

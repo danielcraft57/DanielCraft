@@ -3,5 +3,6 @@
   "page_description": "Mentions légales du site danielcraft.fr - Éditeur, hébergeur, SIRET, contact.",
   "page_keywords": "mentions légales, danielcraft, Loïc DANIEL, SIRET",
   "page_url": "/mentions-legales",
-  "og_image": "/assets/images/og/mentions-legales-1200x630.jpg"
+  "og_image": "/assets/images/og/mentions-legales-1200x630.jpg",
+  "schema_type": "legal"
 }

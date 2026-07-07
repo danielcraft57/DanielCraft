@@ -1,29 +1,31 @@
-{% include "includes/prestations-search-hero.html" %}
-
-<section class="section page-prestations-catalog" aria-label="Catalogue des prestations">
-    <div class="container">
-        <div id="prestationsSearchResultsWrap" class="prestations-search-results-wrap" hidden>
-            <div id="prestationsSearchResults" class="services-grid prestations-grid prestations-grid--results" role="list"></div>
-        </div>
-
-        <div id="prestationsCatalogBrowse" class="prestations-catalog-browse">
-            {% include "includes/prestations-catalog-embed.html" %}
-        </div>
-
-        <div class="prestations-cta">
-            <p class="prestations-cta-text">Un besoin précis ou plusieurs prestations à combiner ?</p>
-            <a href="/#contact" class="btn btn-primary btn-large">
-                <span>Parler de votre projet</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-            </a>
-        </div>
-
-        <nav class="legal-page-links" aria-label="Navigation">
-            <a href="/">Retour à l'accueil</a>
-            <span class="separator">·</span>
-            <a href="/#offres">Nos offres</a>
-            <span class="separator">·</span>
-            <a href="/#contact">Contact</a>
-        </nav>
-    </div>
-</section>
+<div class="page-prestations" itemscope itemtype="https://schema.org/CollectionPage">
+    <link itemprop="url" href="{{page_url}}">
+{% include "includes/prestations-search-hero.html" %}
+
+<section class="section page-prestations-catalog" aria-label="Catalogue des prestations">    <div class="container">
+        <div id="prestationsSearchResultsWrap" class="prestations-search-results-wrap" hidden>
+            <div id="prestationsSearchResults" class="services-grid prestations-grid prestations-grid--results" role="list"></div>
+        </div>
+
+        <div id="prestationsCatalogBrowse" class="prestations-catalog-browse">
+            {% include "includes/prestations-catalog-embed.html" %}
+        </div>
+
+        <div class="prestations-cta">
+            <p class="prestations-cta-text">Un besoin précis ou plusieurs prestations à combiner ?</p>
+            <a href="/#contact" class="btn btn-primary btn-large">
+                <span>Parler de votre projet</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <nav class="legal-page-links" aria-label="Navigation">
+            <a href="/">Retour à l'accueil</a>
+            <span class="separator">·</span>
+            <a href="/#offres">Nos offres</a>
+            <span class="separator">·</span>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </div>
+</section>
+</div>

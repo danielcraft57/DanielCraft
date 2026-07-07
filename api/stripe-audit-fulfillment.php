@@ -1,12 +1,12 @@
 <?php
 /**
- * Après paiement Stripe (audit premium) : facture Facturio + lancement audit ProspectLab.
+ * Après paiement Stripe (audit premium) : facture Prestafacture + lancement audit ProspectLab.
  */
 
 declare(strict_types=1);
 
 require_once __DIR__ . '/stripe-audit-common.php';
-require_once __DIR__ . '/facturio-common.php';
+require_once __DIR__ . '/prestafacture-common.php';
 require_once __DIR__ . '/prospectlab-common.php';
 
 /**
@@ -117,7 +117,7 @@ function stripe_audit_session_context(array $session): array
 }
 
 /**
- * Étape 1 — facture Facturio (email) uniquement.
+ * Étape 1 — facture Prestafacture (email) uniquement.
  *
  * @return array{ok: bool, error: string, invoice_id: string, email_sent: bool}
  */
@@ -129,8 +129,8 @@ function stripe_fulfill_audit_invoice(string $sessionId, array $ctx, array $item
         return ['ok' => true, 'error' => '', 'invoice_id' => '', 'email_sent' => true];
     }
 
-    if (!facturio_configured()) {
-        $empty['error'] = 'Facturio non configuré.';
+    if (!prestafacture_configured()) {
+        $empty['error'] = 'Prestafacture non configuré.';
         return $empty;
     }
 
@@ -138,7 +138,7 @@ function stripe_fulfill_audit_invoice(string $sessionId, array $ctx, array $item
     $priceTtc = (float) ($item['price_eur'] ?? 199);
     $taxRate = (float) ($item['tax_rate'] ?? 20);
 
-    $inv = facturio_issue_audit_invoice(
+    $inv = prestafacture_issue_audit_invoice(
         $ctx['email'],
         $ctx['name'],
         $title,
@@ -147,13 +147,13 @@ function stripe_fulfill_audit_invoice(string $sessionId, array $ctx, array $item
         $ctx['site_url']
     );
     if (!$inv['ok'] || ($inv['invoice_id'] ?? '') === '') {
-        error_log('[stripe-audit-fulfill] Facturio session ' . $sessionId . ': ' . ($inv['error'] ?? ''));
+        error_log('[stripe-audit-fulfill] Prestafacture session ' . $sessionId . ': ' . ($inv['error'] ?? ''));
         $empty['error'] = $inv['error'] !== '' ? $inv['error'] : 'Création facture impossible.';
         return $empty;
     }
 
     if (empty($inv['email_sent'])) {
-        error_log('[stripe-audit-fulfill] Facture ' . $inv['invoice_id'] . ' créée, envoi email Facturio en échec : ' . ($inv['warning'] ?? ''));
+        error_log('[stripe-audit-fulfill] Facture ' . $inv['invoice_id'] . ' créée, envoi email Prestafacture en échec : ' . ($inv['warning'] ?? ''));
     }
 
     stripe_audit_fulfillment_mark($sessionId, ['invoice' => true]);
@@ -246,9 +246,9 @@ function stripe_fulfill_audit_checkout_session(string $sessionId): array
     }
 
     $invoiceOk = $state['invoice'];
-    $facturioRequired = facturio_configured();
+    $prestafactureRequired = prestafacture_configured();
 
-    if (!$invoiceOk && $facturioRequired) {
+    if (!$invoiceOk && $prestafactureRequired) {
         $inv = stripe_fulfill_audit_invoice($sessionId, $ctx, $item);
         $invoiceOk = $inv['ok'];
         if (!$invoiceOk) {
@@ -257,23 +257,23 @@ function stripe_fulfill_audit_checkout_session(string $sessionId): array
                 : 'La facture n’a pas pu être envoyée. L’audit n’a pas été lancé.';
             return $fail;
         }
-    } elseif (!$invoiceOk && !$facturioRequired) {
-        error_log('[stripe-audit-fulfill] Facturio absent — audit seul (dev) session ' . $sessionId);
+    } elseif (!$invoiceOk && !$prestafactureRequired) {
+        error_log('[stripe-audit-fulfill] Prestafacture absent — audit seul (dev) session ' . $sessionId);
         $invoiceOk = false;
     } else {
         $invoiceOk = true;
     }
 
-    // Audit uniquement après facture OK (ou si Facturio non configuré en local)
+    // Audit uniquement après facture OK (ou si Prestafacture non configuré en local)
     $auditOk = $state['audit'];
-    if (!$auditOk && ($invoiceOk || !$facturioRequired)) {
+    if (!$auditOk && ($invoiceOk || !$prestafactureRequired)) {
         $run = stripe_fulfill_audit_run($sessionId, $ctx);
         $auditOk = $run['ok'];
         if (!$auditOk) {
             $fail['error'] = $run['error'] !== ''
                 ? 'Facture envoyée, mais l’audit n’a pas démarré : ' . $run['error']
                 : 'Facture envoyée, mais l’audit n’a pas démarré. Contactez le support.';
-            $fail['invoice_ok'] = $invoiceOk || $facturioRequired;
+            $fail['invoice_ok'] = $invoiceOk || $prestafactureRequired;
             return $fail;
         }
     }
@@ -281,7 +281,7 @@ function stripe_fulfill_audit_checkout_session(string $sessionId): array
     return [
         'ok' => true,
         'error' => '',
-        'invoice_ok' => $invoiceOk || $facturioRequired,
+        'invoice_ok' => $invoiceOk || $prestafactureRequired,
         'audit_ok' => $auditOk,
     ];
 }

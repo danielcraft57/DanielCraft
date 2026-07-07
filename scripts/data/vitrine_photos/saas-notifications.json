@@ -1,0 +1,18 @@
+{
+  "slug": "saas-notifications",
+  "brand": "PingFlow",
+  "category": "saas",
+  "locale": "SaaS in-app notifications",
+  "style_suffix": "Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+  "images": [
+    { "filename": "hero.png", "width": 1200, "height": 520, "scene": "saas_ui", "alt": "Centre notifications PingFlow", "subject": "SaaS in-app notification center hero: slide-out panel with categorized alerts action required mentions system updates rose accent widescreen UI" },
+    { "filename": "scene-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Panneau notifications", "subject": "Notification inbox panel UI with unread badges priority labels and mark all read, rose SaaS interface, no readable text" },
+    { "filename": "scene-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Workflow alertes", "subject": "Alert routing workflow UI configuring notification rules triggers and channels, no readable text" },
+    { "filename": "scene-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Intégrations push", "subject": "Push notification integrations settings Slack email webhook toggles UI, no readable text" },
+    { "filename": "gallery-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Toast notification", "subject": "Toast notification popup UI overlay on dashboard success warning info variants, component detail, no readable text" },
+    { "filename": "gallery-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Mobile push", "subject": "Mobile push notification preview on phone lock screen and in-app banner, rose theme, no readable text" },
+    { "filename": "card-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Analytics notifications", "subject": "Notification analytics dashboard open rates response times chart, SaaS metrics card, no readable text" },
+    { "filename": "card-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Préférences utilisateur", "subject": "User notification preferences UI with granular channel toggles and quiet hours schedule, no readable text" },
+    { "filename": "card-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Sécurité alertes", "subject": "Security alert notification UI with severity levels and incident timeline, enterprise SaaS, no readable text" }
+  ]
+}

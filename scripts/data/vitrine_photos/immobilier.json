@@ -1,0 +1,122 @@
+{
+  "slug": "immobilier",
+  "brand": "Patrimoine Lorraine",
+  "category": "immobilier",
+  "locale": "Nancy, Metz, Moselle, Grand Est, France",
+  "style_suffix": "Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Maison de maître Nancy — Patrimoine Lorraine",
+      "subject": "Stunning French maison de maître with stone facade and manicured garden in Nancy Lorraine, golden hour light, prestigious real estate hero shot, Place Stanislas area atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Biens d'exception à Nancy — achat et vente" },
+        { "page": "biens.html", "section": "hero", "text": "Sélection de biens en Moselle" },
+        { "page": "estimation.html", "section": "hero", "text": "Estimation gratuite sous 72 h" },
+        { "page": "contact.html", "section": "hero", "text": "Agence place Stanislas Nancy" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "property",
+      "alt": "Visite guidée appartement Nancy",
+      "subject": "Real estate agent showing elegant haussmannian apartment to couple in Nancy, parquet floors, high ceilings, natural light through tall windows",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Visites qualifiées — accompagnement sur mesure" },
+        { "page": "biens.html", "section": "chapter", "text": "Notre méthode de visite" },
+        { "page": "estimation.html", "section": "chapter", "text": "Étape 1 — visite et diagnostic du bien" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "property",
+      "alt": "Équipe agence Nancy",
+      "subject": "Professional real estate team meeting in modern Nancy agency office, property listings on screen, collaborative atmosphere, sage green accents",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Équipe locale — 28 ans à Nancy" },
+        { "page": "biens.html", "section": "chapter", "text": "Portefeuille 186 biens actifs" },
+        { "page": "estimation.html", "section": "chapter", "text": "Étape 2 — analyse marché et prix" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "property",
+      "alt": "Remise des clés — vente conclue",
+      "subject": "Happy family receiving house keys from real estate agent in front of beautiful Lorraine home, sold sign moment, warm authentic celebration",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "340+ ventes par an — satisfaction clients" },
+        { "page": "biens.html", "section": "chapter", "text": "Suivi jusqu'à l'acte authentique" },
+        { "page": "estimation.html", "section": "chapter", "text": "Étape 3 — mandat et commercialisation" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Salon haussmannien Nancy",
+      "subject": "Luxurious living room in renovated Nancy apartment, mouldings, fireplace, designer furniture, real estate interior photography",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Intérieurs d'exception — centre-ville Nancy" },
+        { "page": "estimation.html", "section": "gallery", "text": "Home staging partenaire" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Agence place Stanislas",
+      "subject": "Elegant real estate agency storefront near Place Stanislas Nancy, welcoming facade, professional signage area without readable text",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Agence 8 place Stanislas" },
+        { "page": "contact.html", "section": "gallery", "text": "Permanences du lundi au samedi" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Maison de maître Metz",
+      "subject": "Beautiful maison de maître exterior in Metz Sablon district, garden and stone facade, real estate listing card photo",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Maison Metz — 280 m², jardin" },
+        { "page": "biens.html", "section": "card", "text": "Vente — Metz Sablon 685 000 €" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Appartement haussmannien Nancy",
+      "subject": "Haussmannian apartment building facade in Nancy with ornate balconies, tree-lined street, golden hour real estate photography",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Appartement Nancy — 4 pièces, vue parc" },
+        { "page": "biens.html", "section": "card", "text": "Vente — Nancy centre 395 000 €" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Terrain constructible Thionville",
+      "subject": "Peaceful building plot in Thionville suburb, green surroundings, viabilized land for new construction, real estate card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Terrain Thionville — lotissement calme" },
+        { "page": "biens.html", "section": "card", "text": "Vente — Thionville 145 000 €" }
+      ]
+    }
+  ]
+}

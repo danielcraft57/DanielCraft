@@ -1,35 +1,167 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@700&display=swap");
-html { scroll-behavior: smooth; }
-body { font-family: "Source Sans 3", system-ui, sans-serif; margin: 0; color: #1a1a1a; }
-.skip-link { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0); }
-.skip-link:focus { position:fixed;left:1rem;top:1rem;z-index:10000;padding:.5rem 1rem;background:#fff;clip:auto;width:auto;height:auto; }
-.vt-brand { font-family: "Libre Baskerville", Georgia, serif; color: #1a3c34; }
-.vt-hero { background: linear-gradient(135deg,rgba(26,60,52,.95),rgba(45,90,78,.9)); color: #fff; padding: 2rem 0 2.25rem; display: block; }
-.vt-hero .vt-hero-grid { padding-top: 0.5rem; padding-bottom: 0.75rem; }
-.vt-hero .vitrine-figure--ken img { max-height: 220px; }
-.vitrine-hero-visual img { max-height: 220px; width: 100%; object-fit: cover; }
-.vt-hero h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 .5rem; }
-.vt-eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; opacity: .85; }
-.vt-btn { background: #fff; color: #1a3c34; font-weight: 600; border: none; text-decoration: none; display: inline-block; padding: .65rem 1.25rem; border-radius: .35rem; cursor: pointer; }
-.vt-stats { background: #1a3c34; color: #fff; }
-.vt-stat { font-size: 2rem; display: block; font-family: "Libre Baskerville", serif; }
-.vt-muted, .vt-band { background: #f5f5f0; }
-.vt-card img { width: 100%; object-fit: cover; border-radius: .35rem; }
-.vitrine-hero-visual img { border-radius: .35rem; }
-.vt-card img { height: 220px; }
-.vt-footer { background: #1c1c1c; color: rgba(255,255,255,.85); padding: 1.25rem; }
-.vt-top { background: #fff; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; z-index: 40; }
-.vt-nav { max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-.vt-nav a { text-decoration: none; color: inherit; margin-right: .75rem; }
-.vt-hero-grid, .vt-stats-grid, .vt-cards { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.25rem; }
-@media (min-width: 900px) {
-  .vt-hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-  .vt-stats-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
-  .vt-cards { grid-template-columns: repeat(3, 1fr); }
+/* Patrimoine Lorraine — immobilier sage/cream, Playfair + Jakarta */
+:root {
+  --vt-sage: #6b8f71;
+  --vt-sage-dark: #4a6b50;
+  --vt-sage-light: #e8f0e9;
+  --vt-cream: #f7f5f0;
+  --vt-gold: #c4a35a;
+  --vt-text: #2d3a2f;
+  --vt-muted: #5a6b5c;
+  --vt-accent: var(--vt-sage);
+  --bs-body-bg: var(--vt-cream);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-sage);
+  --bs-link-color: var(--vt-sage-dark);
+  --bs-link-hover-color: var(--vt-sage);
 }
-.vt-wrap { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
-.vt-center { text-align: center; }
-.vt-muted-center { text-align: center; color: #666; margin-bottom: 1.5rem; }
-.vt-form label { display: block; margin-bottom: .75rem; }
-.vt-form input, .vt-form textarea { width: 100%; }
-.vt-lead { font-size: 1.15rem; opacity: .92; }
+
+body.vt-body-property {
+  background: var(--vt-cream);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-property { padding-bottom: 0; }
+}
+
+.vt-display,
+.vt-section-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  color: var(--vt-sage-dark);
+}
+
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--vt-sage-dark);
+}
+
+.vt-eyebrow {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--vt-sage);
+  text-transform: uppercase;
+}
+
+.vt-topbar { background: var(--vt-sage-dark); color: rgba(255, 255, 255, 0.92); }
+.vt-topbar-status { color: #d4e8d6; font-weight: 600; }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+
+.vt-navbar {
+  background: #fff;
+  box-shadow: 0 1px 0 var(--vt-sage-light);
+}
+.vt-navbar .nav-link {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--vt-muted);
+}
+.vt-navbar .nav-link.active { color: var(--vt-sage-dark); font-weight: 700; }
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-sage);
+  --bs-btn-border-color: var(--vt-sage);
+  --bs-btn-hover-bg: var(--vt-sage-dark);
+  --bs-btn-hover-border-color: var(--vt-sage-dark);
+  --bs-btn-color: #fff;
+  font-weight: 600;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-sage-dark);
+  --bs-btn-border-color: var(--vt-sage);
+  --bs-btn-hover-bg: var(--vt-sage-light);
+  --bs-btn-hover-color: var(--vt-sage-dark);
+}
+
+/* Hero recherche */
+.vt-hero-property { background: var(--vt-sage-light); }
+.vt-hero-property-copy { background: var(--vt-sage-light); }
+.vt-hero-property-media { min-height: 280px; }
+@media (min-width: 992px) {
+  .vt-hero-property-media { min-height: 480px; }
+}
+.vt-search-bar .form-control,
+.vt-search-bar .form-select {
+  border-color: #b8cdb9;
+  border-radius: 0.5rem;
+}
+
+/* Stats */
+.vt-stats-band {
+  background: var(--vt-sage-dark);
+  color: #fff;
+}
+.vt-stat-value {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.vt-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Annonces */
+.vt-listing-card { border-radius: 0.75rem; overflow: hidden; transition: transform 0.2s; }
+.vt-listing-card:hover { transform: translateY(-4px); }
+.vt-listing-img { height: 200px; object-fit: cover; }
+.vt-listing-price {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--vt-sage-dark);
+}
+.vt-listing-title { color: var(--vt-sage-dark); }
+.vt-listing-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--vt-gold);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.25rem;
+}
+
+/* Quartiers */
+.vt-hood-cell {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 2px 12px rgba(74, 107, 80, 0.08);
+}
+.vt-hood-cell strong {
+  display: block;
+  color: var(--vt-sage-dark);
+  font-size: 0.95rem;
+}
+.vt-hood-cell span { color: var(--vt-muted); }
+
+/* Témoignage */
+.vt-quote-panel {
+  background: #fff;
+  border-left: 4px solid var(--vt-sage);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  font-style: italic;
+  color: var(--vt-muted);
+}
+
+.vt-aside-panel { background: var(--vt-sage-light); }
+.vt-mobile-cta {
+  background: var(--vt-sage-dark);
+  border-top: 2px solid var(--vt-gold);
+}
+.vt-footer {
+  background: var(--vt-sage-dark);
+  color: rgba(255, 255, 255, 0.88);
+}
+.vt-footer a { color: #d4e8d6; }

@@ -114,7 +114,7 @@ Génère les pages dans `dist/`, le blog dans `dist/blog/`, et les sitemaps (sit
 # ou simplement (délègue à serve_dev.ps1) :
 .\scripts\serve_local.ps1
 ```
-Ouvre `http://localhost:8000/` — blog sans `.html`, fiches `/prestations/…`, formulaires et devis Facturio via `/api/`.
+Ouvre `http://localhost:8000/` — blog sans `.html`, fiches `/prestations/…`, formulaires et devis Prestafacture via `/api/`.
 
 **Aperçu statique sans PHP** (CSS/JS seulement, pas de contact/devis) :
 ```powershell

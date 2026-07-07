@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Prévention</title>
-  <rect width="800" height="520" fill="#e8f4fc"/>
-  <rect x="80" y="90" width="640" height="300" rx="10" fill="#fff" stroke="#0d7ea8" stroke-width="2"/>
-  <circle cx="400" cy="240" r="55" fill="#0d7ea8" opacity=".12"/>
-  <path d="M120 420 Q400 360 680 420" fill="none" stroke="#0d7ea8" stroke-width="2" class="vitrine-sketch-stroke"/>
-</svg>

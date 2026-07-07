@@ -159,9 +159,38 @@ sudo certbot --nginx -d ton-domaine.com -d www.ton-domaine.com
 - Démo HTML d’un secteur : `https://ton-domaine.com/vitrines/<slug>/demo/index.html`
 - Le build copie **`assets/vitrines/demos/`** et **`assets/vitrines/screenshots/`** vers **`dist/vitrines/`** ; le déploiement doit inclure tout le dossier **`dist/vitrines/`** (voir `scripts/deploy-content.ps1` et **[VITRINES.md](./VITRINES.md)**).
 
+## Déploiement automatique sur le serveur (cron)
+
+Le webroot (`/var/www/danielcraft.fr`) n’est **pas** un dépôt git. Le dépôt vit à part :
+
+| Chemin | Rôle |
+|--------|------|
+| `/home/pi/danielcraft-src` | Clone git (pull, tests, build) |
+| `/var/www/danielcraft.fr` | Site servi par nginx (rsync depuis `dist/`) |
+
+Le script `scripts/prod-auto-deploy.sh` enchaîne : `git pull` → tests PHP/Python → `build.py` → `rsync` (`.env` prod préservé).
+
+**Cron installé sur `pi@node12.lan`** — toutes les 15 minutes, déploie seulement si `master` a avancé sur GitHub :
+
+```bash
+*/15 * * * * REPO_DIR=/home/pi/danielcraft-src WEB_ROOT=/var/www/danielcraft.fr SITE_BASE=https://danielcraft.fr /home/pi/danielcraft-src/scripts/prod-auto-deploy.sh >> /home/pi/logs/danielcraft-deploy.log 2>&1
+```
+
+Commandes utiles :
+
+```bash
+# Forcer un déploiement immédiat (après push sur master)
+ssh pi@node12.lan 'FORCE_DEPLOY=1 /home/pi/danielcraft-src/scripts/prod-auto-deploy.sh'
+
+# Suivre les logs
+ssh pi@node12.lan 'tail -f /home/pi/logs/danielcraft-deploy.log'
+```
+
+**Workflow** : merge sur `master` → GitHub Actions CI (optionnel) → cron Pi détecte le nouveau commit → tests + build + rsync.
+
 ## Mise à Jour
 
-Pour mettre à jour le site après des modifications :
+Pour mettre à jour le site manuellement depuis ta machine (sans attendre le cron) :
 
 ```bash
 # Depuis ta machine locale, dans le dossier V6

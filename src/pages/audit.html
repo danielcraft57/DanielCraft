@@ -1,4 +1,12 @@
-<section class="section page-audit" aria-label="Audit de site web" data-stripe-pk="{{stripe_publishable_key}}">
+<section class="section page-audit" aria-label="Audit de site web" data-stripe-pk="{{stripe_publishable_key}}" itemscope itemtype="https://schema.org/Service">
+  <meta itemprop="name" content="Audit de site web">
+  <meta itemprop="description" content="{{page_description}}">
+  <link itemprop="url" href="{{page_url}}">
+  <div itemprop="provider" itemscope itemtype="https://schema.org/Person" hidden>
+    <meta itemprop="name" content="Loïc DANIEL">
+    <link itemprop="url" href="{{site_base}}/">
+    <meta itemprop="email" content="contact@danielcraft.fr">
+  </div>
   <div class="container">
     <header class="audit-hero">
       <div class="audit-hero__text">
@@ -90,7 +98,12 @@
     <section class="audit-offers audit-offers--info-only" aria-labelledby="audit-offers-title">
       <h2 id="audit-offers-title" class="audit-section-title">Choisissez votre niveau d'analyse</h2>
       <div class="audit-offers__grid">
-        <article id="offre-gratuite" class="audit-offer-card audit-offer-card--free">
+        <article id="audit-gratuit" class="audit-offer-card audit-offer-card--free" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <meta itemprop="name" content="Audit gratuit par e-mail">
+          <meta itemprop="price" content="0">
+          <meta itemprop="priceCurrency" content="EUR">
+          <link itemprop="url" href="{{page_url}}#audit-gratuit">
+          <link itemprop="availability" href="https://schema.org/InStock">
           <div class="audit-offer-card__visual">
             <img src="/assets/images/audit/audit-offer-free.svg" width="400" height="240" alt="" loading="lazy" decoding="async"/>
           </div>
@@ -104,7 +117,12 @@
             <li><i class="fas fa-check" aria-hidden="true"></i> Sans carte bancaire</li>
           </ul>
         </article>
-        <article id="offre-premium" class="audit-offer-card audit-offer-card--premium" data-audit-slug="{{audit_paid_slug}}" data-audit-price="{{audit_paid_price_eur}}">
+        <article id="audit-premium" class="audit-offer-card audit-offer-card--premium" data-audit-slug="{{audit_paid_slug}}" data-audit-price="{{audit_paid_price_eur}}" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <meta itemprop="name" content="Audit premium — analyse complète">
+          <meta itemprop="price" content="{{audit_paid_price_eur}}">
+          <meta itemprop="priceCurrency" content="EUR">
+          <link itemprop="url" href="{{page_url}}#audit-premium">
+          <link itemprop="availability" href="https://schema.org/InStock">
           <div class="audit-offer-card__ribbon">Tarif lancement</div>
           <div class="audit-offer-card__visual">
             <img src="/assets/images/audit/audit-offer-premium.svg" width="400" height="240" alt="" loading="lazy" decoding="async"/>

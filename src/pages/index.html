@@ -1,5 +1,29 @@
     <!-- Hero — grand public -->
-    <section id="home" class="hero home-hero--wow">
+    <div itemscope itemtype="https://schema.org/WebPage" itemid="{{page_url}}">
+    <meta itemprop="url" content="{{page_url}}">
+    <meta itemprop="name" content="{{page_title}}">
+    <meta itemprop="description" content="{{page_description}}">
+    <section id="home" class="hero home-hero--wow" itemprop="mainEntity" itemscope itemtype="https://schema.org/ProfessionalService">
+        <meta itemprop="name" content="DanielCraft">
+        <link itemprop="url" href="{{site_base}}/">
+        <meta itemprop="email" content="contact@danielcraft.fr">
+        <meta itemprop="priceRange" content="€€">
+        <link itemprop="image" href="{{og_image}}">
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+            <meta itemprop="addressLocality" content="Metz">
+            <meta itemprop="postalCode" content="57000">
+            <meta itemprop="addressRegion" content="Grand Est">
+            <meta itemprop="addressCountry" content="FR">
+        </div>
+        <div itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates" hidden>
+            <meta itemprop="latitude" content="49.1193">
+            <meta itemprop="longitude" content="6.1757">
+        </div>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Person" hidden>
+            <meta itemprop="name" content="Loïc DANIEL">
+            <link itemprop="url" href="{{site_base}}/">
+            <meta itemprop="email" content="contact@danielcraft.fr">
+        </div>
         <div class="hero-background">
             <div class="hero-gradient"></div>
             <div class="home-hero-orbs" aria-hidden="true">
@@ -17,7 +41,7 @@
                         <span class="title-line highlight">Je m'en occupe — sans jargon technique</span>
                     </h1>
 
-                    <p class="hero-description hero-lead">
+                    <p class="hero-description hero-lead" itemprop="description">
                         Artisan, commerce ou activité libérale en Lorraine : un site clair, visible sur Google
                         <strong>et compris par l'IA</strong>, avec un seul interlocuteur de A à Z.
                     </p>
@@ -28,7 +52,7 @@
                     </div>
 
                     <div class="hero-actions">
-                        <button type="button" class="btn btn-primary btn-large" data-prestation-devis-open data-prestation-slug="site-vitrine" data-service-slug="pack_vitrine" data-prestation-title="Site vitrine professionnel" data-prestation-price="490" data-prestation-price-label="Forfait">
+                        <button type="button" class="btn btn-primary btn-large" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait">
                             <span>Recevoir mon devis site vitrine — PDF en 2 min</span>
                             <i class="fas fa-file-pdf" aria-hidden="true"></i>
                         </button>
@@ -104,7 +128,9 @@
             </div>
 
             <div id="homeOffers" class="home-offers-grid home-stagger">
-                <article class="home-offer-card" data-home-tilt>
+                <article class="home-offer-card" data-home-tilt itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="provider" content="DanielCraft">
+                    <link itemprop="url" href="{{site_base}}/prestations/site-vitrine-essentiel/">
                     <div class="home-offer-visual">
                         <picture>
                             <source srcset="/assets/images/home/home-offer-vitrine.webp" type="image/webp">
@@ -113,17 +139,25 @@
                     </div>
                     <div class="home-offer-body">
                         <p class="home-offer-tagline">Votre vitrine en ligne, claire et rassurante</p>
-                        <h3 class="home-offer-title">Site vitrine professionnel</h3>
-                        <p class="home-offer-desc">Présentez votre activité, rassurez sur mobile, recevez des demandes de contact — sans page Facebook seule.</p>
-                        <p class="home-offer-price">490 € <span>forfait HT</span></p>
+                        <h3 class="home-offer-title" itemprop="name">Site vitrine professionnel</h3>
+                        <p class="home-offer-desc" itemprop="description">Présentez votre activité, rassurez sur mobile, recevez des demandes de contact — sans page Facebook seule.</p>
+                        <p class="home-offer-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="price" content="390">
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                            à partir de 390 € <span>forfait HT</span>
+                        </p>
                         <div class="home-offer-actions">
-                            <a href="/prestations/site-vitrine/" class="btn btn-primary btn-block"><span>Voir le détail — 490 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine" data-service-slug="pack_vitrine" data-prestation-title="Site vitrine professionnel" data-prestation-price="490" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                            <a href="/prestations/site-vitrine-essentiel/" class="btn btn-primary btn-block"><span>Essentiel — 390 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="/prestations/site-vitrine/" class="btn btn-outline btn-block"><span>Pro 5 pages — 590 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </article>
 
-                <article class="home-offer-card home-offer-card--star" data-home-tilt>
+                <article class="home-offer-card home-offer-card--star" data-home-tilt itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="provider" content="DanielCraft">
+                    <link itemprop="url" href="{{site_base}}/prestations/visibilite-complete/">
                     <span class="home-offer-badge">Le plus demandé</span>
                     <div class="home-offer-visual">
                         <picture>
@@ -133,17 +167,24 @@
                     </div>
                     <div class="home-offer-body">
                         <p class="home-offer-tagline">Google + assistants intelligents</p>
-                        <h3 class="home-offer-title">Être trouvé sur Google et par l'IA</h3>
-                        <p class="home-offer-desc">Quand on vous cherche en ligne — ou qu'on demande à ChatGPT — on tombe sur la bonne info, au bon moment.</p>
-                        <p class="home-offer-price">749 € <span>forfait HT</span></p>
+                        <h3 class="home-offer-title" itemprop="name">Être trouvé sur Google et par l'IA</h3>
+                        <p class="home-offer-desc" itemprop="description">Quand on vous cherche en ligne — ou qu'on demande à ChatGPT — on tombe sur la bonne info, au bon moment.</p>
+                        <p class="home-offer-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="price" content="690">
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                            690 € <span>forfait HT</span>
+                        </p>
                         <div class="home-offer-actions">
-                            <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Voir le détail — 749 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="749" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                            <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Voir le détail — 690 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="690" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </article>
 
-                <article class="home-offer-card" data-home-tilt>
+                <article class="home-offer-card" data-home-tilt itemscope itemtype="https://schema.org/Service">
+                    <meta itemprop="provider" content="DanielCraft">
+                    <link itemprop="url" href="{{site_base}}/prestations/repondeur-intelligent/">
                     <div class="home-offer-visual">
                         <picture>
                             <source srcset="/assets/images/home/home-offer-assistant.webp" type="image/webp">
@@ -152,12 +193,17 @@
                     </div>
                     <div class="home-offer-body">
                         <p class="home-offer-tagline">Répond aux questions, jour et nuit</p>
-                        <h3 class="home-offer-title">Répondeur intelligent sur votre site</h3>
-                        <p class="home-offer-desc">Horaires, tarifs, prestations : l'assistant guide vos visiteurs avec vos vraies infos, 24 h/24.</p>
-                        <p class="home-offer-price">1 190 € <span>forfait HT</span></p>
+                        <h3 class="home-offer-title" itemprop="name">Répondeur intelligent sur votre site</h3>
+                        <p class="home-offer-desc" itemprop="description">Horaires, tarifs, prestations : l'assistant guide vos visiteurs avec vos vraies infos, 24 h/24.</p>
+                        <p class="home-offer-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="price" content="990">
+                            <link itemprop="availability" href="https://schema.org/InStock">
+                            990 € <span>forfait HT</span>
+                        </p>
                         <div class="home-offer-actions">
-                            <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Voir le détail — 1 190 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="1190" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                            <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Voir le détail — 990 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="990" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </article>
@@ -308,7 +354,9 @@
         </div>
     </section>
 
-    <section id="vitrines" class="home-vitrines-wrap" aria-labelledby="home-vitrines-title">
+    <section id="vitrines" class="home-vitrines-wrap" aria-labelledby="home-vitrines-title" itemscope itemtype="https://schema.org/CollectionPage">
+        <meta itemprop="url" content="{{site_base}}/vitrines/">
+        <meta itemprop="name" content="Modèles de sites DanielCraft">
         <div class="container">
             <div class="section-header scroll-reveal">
                 <span class="section-badge">Inspiration</span>
@@ -332,14 +380,14 @@
                 </p>
             </div>
             
-            <div class="faq-accordion" role="region" aria-label="Questions fréquentes">
-                <div class="faq-item">
+            <div class="faq-accordion" role="region" aria-label="Questions fréquentes" itemscope itemtype="https://schema.org/FAQPage">
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-1" id="faq-q1" data-faq-toggle>
-                        <span>Je ne sais pas exactement ce qu'il me faut, on commence par où ?</span>
+                        <span itemprop="name">Je ne sais pas exactement ce qu'il me faut, on commence par où ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-1" aria-labelledby="faq-q1" hidden>
-                    <p class="faq-answer">
+                    <div class="faq-answer-wrap" id="faq-1" aria-labelledby="faq-q1" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="faq-answer" itemprop="text">
                         On part toujours de là. Lors du premier échange, vous m'expliquez votre activité avec vos mots, votre contexte
                         et ce que vous aimeriez obtenir (plus d'appels, de demandes de devis, mieux expliquer votre offre...).
                         Je reformule en plan simple : pages clés, fonctionnalités utiles, priorités et budget réaliste.
@@ -348,13 +396,13 @@
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-2" id="faq-q2" data-faq-toggle>
-                        <span>Vous faites aussi des sites "simples" (vitrine, landing page) ?</span>
+                        <span itemprop="name">Vous faites aussi des sites "simples" (vitrine, landing page) ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q2" hidden>
-                    <p class="faq-answer">
+                    <div class="faq-answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q2" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="faq-answer" itemprop="text">
                         Oui, et je les conçois comme de vrais outils de vente : message clair, structure simple, appels à l'action visibles,
                         formulaires pensés pour être réellement utilisés. Et si votre besoin va plus loin (espace client, automatisation,
                         tableaux de bord...), on peut faire évoluer le projet par étapes sans tout refaire.
@@ -362,13 +410,13 @@
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-3" id="faq-q3" data-faq-toggle>
-                        <span>Quels types de projets vous réalisez concrètement ?</span>
+                        <span itemprop="name">Quels types de projets vous réalisez concrètement ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-3" aria-labelledby="faq-q3" hidden>
-                    <p class="faq-answer">
+                    <div class="faq-answer-wrap" id="faq-3" aria-labelledby="faq-q3" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="faq-answer" itemprop="text">
                         Sites vitrines pour artisans et commerces, visibilité Google et assistants IA, entretien mensuel,
                         formulaires et connexions à vos outils (facturation, CRM). Si votre besoin est plus spécifique,
                         on en parle au premier échange — sans vous vendre plus que nécessaire.
@@ -376,13 +424,13 @@
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-4" id="faq-q4" data-faq-toggle>
-                        <span>Comment se passe concrètement le premier contact ?</span>
+                        <span itemprop="name">Comment se passe concrètement le premier contact ?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer-wrap" id="faq-4" aria-labelledby="faq-q4" hidden>
-                    <p class="faq-answer">
+                    <div class="faq-answer-wrap" id="faq-4" aria-labelledby="faq-q4" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="faq-answer" itemprop="text">
                         On fixe un créneau (visio ou téléphone) de 30 à 45 minutes. Vous me donnez le contexte, vos priorités et vos contraintes
                         (délais, budget, existant technique). Je vous explique ce qui est réaliste, je propose un découpage en étapes et,
                         si ça vous convient, je vous envoie un devis clair avec les livrables et les prochaines actions.
@@ -403,3 +451,4 @@
     <!-- Contact Section -->
     {% include "includes/contact-section.html" %}
 
+    </div>

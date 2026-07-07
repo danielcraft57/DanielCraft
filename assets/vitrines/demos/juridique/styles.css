@@ -1,35 +1,167 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@700&display=swap");
-html { scroll-behavior: smooth; }
-body { font-family: "Source Sans 3", system-ui, sans-serif; margin: 0; color: #1a1a1a; }
-.skip-link { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0); }
-.skip-link:focus { position:fixed;left:1rem;top:1rem;z-index:10000;padding:.5rem 1rem;background:#fff;clip:auto;width:auto;height:auto; }
-.vt-brand { font-family: "Libre Baskerville", Georgia, serif; color: #0f172a; }
-.vt-hero { background: linear-gradient(135deg,#0f172a,#334155); color: #fff; padding: 2rem 0 2.25rem; display: block; }
-.vt-hero .vt-hero-grid { padding-top: 0.5rem; padding-bottom: 0.75rem; }
-.vt-hero .vitrine-figure--ken img { max-height: 220px; }
-.vitrine-hero-visual img { max-height: 220px; width: 100%; object-fit: cover; }
-.vt-hero h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 .5rem; }
-.vt-eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; opacity: .85; }
-.vt-btn { background: #fff; color: #0f172a; font-weight: 600; border: none; text-decoration: none; display: inline-block; padding: .65rem 1.25rem; border-radius: .35rem; cursor: pointer; }
-.vt-stats { background: #0f172a; color: #fff; }
-.vt-stat { font-size: 2rem; display: block; font-family: "Libre Baskerville", serif; }
-.vt-muted, .vt-band { background: #f5f5f0; }
-.vt-card img { width: 100%; object-fit: cover; border-radius: .35rem; }
-.vitrine-hero-visual img { border-radius: .35rem; }
-.vt-card img { height: 220px; }
-.vt-footer { background: #1c1c1c; color: rgba(255,255,255,.85); padding: 1.25rem; }
-.vt-top { background: #fff; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; z-index: 40; }
-.vt-nav { max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-.vt-nav a { text-decoration: none; color: inherit; margin-right: .75rem; }
-.vt-hero-grid, .vt-stats-grid, .vt-cards { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.25rem; }
-@media (min-width: 900px) {
-  .vt-hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-  .vt-stats-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
-  .vt-cards { grid-template-columns: repeat(3, 1fr); }
+/* Rivière & Partenaires — cabinet avocats, navy/gold, Cormorant + Source Sans */
+:root {
+  --vt-navy: #0f172a;
+  --vt-navy-mid: #1e293b;
+  --vt-gold: #c9a227;
+  --vt-gold-light: #e8d5a3;
+  --vt-cream: #faf8f4;
+  --vt-text: #1a1a1a;
+  --vt-muted: #5c5346;
+  --vt-accent: var(--vt-gold);
+  --bs-body-bg: var(--vt-cream);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-gold);
+  --bs-link-color: var(--vt-navy);
+  --bs-link-hover-color: var(--vt-gold);
 }
-.vt-wrap { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
-.vt-center { text-align: center; }
-.vt-muted-center { text-align: center; color: #666; margin-bottom: 1.5rem; }
-.vt-form label { display: block; margin-bottom: .75rem; }
-.vt-form input, .vt-form textarea { width: 100%; }
-.vt-lead { font-size: 1.15rem; opacity: .92; }
+
+body.vt-body-legal {
+  background: var(--vt-cream);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-legal { padding-bottom: 0; }
+}
+
+.vt-display,
+.vt-section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  color: var(--vt-navy);
+}
+
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  color: var(--vt-navy);
+}
+
+.vt-eyebrow {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--vt-gold);
+  text-transform: uppercase;
+}
+
+.vt-topbar { background: var(--vt-navy); color: rgba(255, 255, 255, 0.92); }
+.vt-topbar-status { color: var(--vt-gold-light); font-weight: 600; }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+
+.vt-navbar {
+  background: #fff;
+  border-bottom: 1px solid #e8e0d0;
+}
+.vt-navbar .nav-link {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--vt-muted);
+  font-size: 0.92rem;
+}
+.vt-navbar .nav-link.active { color: var(--vt-navy); font-weight: 700; }
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-gold);
+  --bs-btn-border-color: var(--vt-gold);
+  --bs-btn-hover-bg: #b8921f;
+  --bs-btn-hover-border-color: #b8921f;
+  --bs-btn-color: var(--vt-navy);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.btn-vt-outline {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.75);
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.12);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: #fff;
+}
+
+/* Hero overlay legal — shade plus sombre, accent or */
+.vt-body-legal .vt-hero-overlay { min-height: 520px; }
+.vt-body-legal .vt-hero-overlay-shade {
+  background: linear-gradient(105deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.35) 100%);
+}
+.vt-body-legal .vt-hero-overlay-copy { color: #fff; }
+.vt-body-legal .vt-hero-overlay-copy .vt-display { color: #fff; }
+.vt-body-legal .vt-hero-overlay-copy .lead { color: rgba(255, 255, 255, 0.88); }
+
+/* Tuiles expertises */
+.vt-body-legal .vt-svc-tile {
+  background: #fff;
+  border: 1px solid #e8e0d0;
+  border-top: 3px solid var(--vt-gold);
+  padding: 1.25rem 1.5rem;
+}
+.vt-body-legal .vt-svc-tile-hot {
+  background: var(--vt-navy);
+  color: #fff;
+  border-color: var(--vt-navy);
+  border-top-color: var(--vt-gold);
+}
+.vt-body-legal .vt-svc-tile-hot .small { color: rgba(255, 255, 255, 0.85); }
+
+/* Bandeau agréments */
+.vt-body-legal .vt-cred-strip {
+  background: var(--vt-navy);
+  color: #fff;
+}
+.vt-body-legal .vt-cred-item strong { color: var(--vt-gold); }
+
+/* Stats bande or */
+.vt-body-legal .vt-stats {
+  background: var(--vt-gold);
+  color: var(--vt-navy);
+}
+.vt-body-legal .vt-stat-value { font-family: "Cormorant Garamond", serif; font-weight: 700; }
+
+/* Témoignage */
+.vt-quote-panel {
+  background: var(--vt-navy);
+  color: #fff;
+  border-left: 4px solid var(--vt-gold);
+  padding: 1.5rem 2rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.vt-aside-legal { border-top: 3px solid var(--vt-gold); }
+
+.vt-mobile-cta {
+  background: var(--vt-navy);
+  border-top: 2px solid var(--vt-gold);
+}
+.vt-mobile-cta .btn-vt-primary { color: var(--vt-navy); }
+
+.vt-footer {
+  background: var(--vt-navy);
+  color: rgba(255, 255, 255, 0.85);
+}
+.vt-footer a { color: var(--vt-gold-light); }
+.vt-footer .vt-brand { color: #fff; }
+
+.vt-cta-band {
+  background: var(--vt-navy-mid);
+  color: #fff;
+}
+.vt-cta-band .btn-vt-primary { color: var(--vt-navy); }
+
+.vt-chapter figure { border: 1px solid #e8e0d0; }
+
+.vt-card-bs .card { border: 1px solid #e8e0d0; }
+.vt-card-bs .card-img-top { filter: sepia(8%); }
+
+.vt-funnel-step { border-left-color: var(--vt-gold); }
+
+.vt-menu-price { color: var(--vt-gold); font-weight: 700; }
+
+.vt-trust-badges .badge {
+  background: var(--vt-navy);
+  color: var(--vt-gold-light);
+  font-weight: 500;
+}

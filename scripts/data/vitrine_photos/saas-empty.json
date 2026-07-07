@@ -1,0 +1,18 @@
+{
+  "slug": "saas-empty",
+  "brand": "QueryBase",
+  "category": "saas",
+  "locale": "SaaS empty states",
+  "style_suffix": "Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+  "images": [
+    { "filename": "hero.png", "width": 1200, "height": 520, "scene": "saas_ui", "alt": "États vides QueryBase", "subject": "SaaS empty state hero screen with friendly illustration placeholder search bar and primary CTA button, amber accent widescreen product UI" },
+    { "filename": "scene-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Dashboard vide", "subject": "Empty dashboard state UI with centered illustration icon and get started button, minimal SaaS design amber accent, no readable text" },
+    { "filename": "scene-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Recherche sans résultat", "subject": "Search no results empty state UI with suggestions list and filter chips, helpful UX pattern, no readable text" },
+    { "filename": "scene-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Première intégration", "subject": "First integration empty state prompting user to connect data source with connector cards, no readable text" },
+    { "filename": "gallery-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Composant vide", "subject": "Empty table state UI with column headers and add row CTA, database SaaS component, no readable text" },
+    { "filename": "gallery-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Mobile état vide", "subject": "Mobile empty inbox state on smartphone with illustration and action button, amber theme, no readable text" },
+    { "filename": "card-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Avant QueryBase", "subject": "Chaotic scattered data icons before state comparison UI split panel messy vs organized, no readable text" },
+    { "filename": "card-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Migration guidée", "subject": "Guided data import wizard empty-to-filled transition progress UI, migration assistant, no readable text" },
+    { "filename": "card-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Après QueryBase", "subject": "Organized unified data dashboard after state clean tables and search working, success empty state resolved, no readable text" }
+  ]
+}

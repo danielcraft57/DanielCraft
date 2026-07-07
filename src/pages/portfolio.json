@@ -4,5 +4,6 @@
   "page_keywords": "portfolio, réalisations, projets, développement web, applications",
   "page_url": "https://danielcraft.fr/portfolio",
   "og_image": "/assets/images/og/portfolio-1200x630.jpg",
+  "schema_type": "portfolio",
   "page_scripts": ["main.js", "personalization.js", "portfolio.js"]
 }

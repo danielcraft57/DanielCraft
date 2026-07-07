@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img"><title>Cabinet comptable</title>
-<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b3c7e6"/><stop offset="100%" stop-color="#e8eef7"/></linearGradient></defs>
-<rect width="1200" height="520" fill="url(#sky)"/>
-<g transform="translate(200 60)"><rect x="0" y="80" width="520" height="280" fill="#f5f5f5" stroke="#1565c0" stroke-width="3"/>
-<rect x="40" y="120" width="180" height="120" fill="#fff" stroke="#1565c0" stroke-width="2"/>
-<line x1="60" y1="150" x2="200" y2="150" stroke="#1565c0" stroke-width="2"/>
-<circle cx="380" cy="200" r="70" fill="none" stroke="#ff8f00" stroke-width="6"/>
-<path d="M380 130 L380 200 L430 230" fill="none" stroke="#ff8f00" stroke-width="4"/></g></svg>

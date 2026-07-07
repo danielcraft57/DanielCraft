@@ -1,23 +1,211 @@
+/* Brasserie Saint-Jacques — thème Bootstrap 5 */
 :root {
-  --resto-gold: #e8c547;
-  --resto-wine: #722f37;
-  --resto-cream: #fff8f0;
+  --vt-cream: #faf6f0;
+  --vt-brown: #3d2914;
+  --vt-gold: #b8860b;
+  --vt-rust: #8b4513;
+  --vt-warm: #d4a574;
+  --bs-body-bg: var(--vt-cream);
+  --bs-body-color: var(--vt-brown);
+  --bs-primary: var(--vt-rust);
+  --bs-dark: var(--vt-brown);
+  --bs-link-color: var(--vt-rust);
+  --bs-link-hover-color: #6b3410;
+  --bs-border-radius-lg: 1rem;
+  --bs-font-sans-serif: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
-.resto-hero {
-  background:
-    linear-gradient(125deg, rgba(92, 31, 31, 0.95) 0%, rgba(61, 20, 20, 0.92) 55%, rgba(38, 16, 16, 0.98) 100%),
-    radial-gradient(500px 280px at 75% 15%, rgba(232, 197, 71, 0.12), transparent 55%);
+body.vt-body {
+  background: var(--vt-cream);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body { padding-bottom: 0; }
 }
 
-.resto-hero .title {
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+.vt-display,
+.vt-section-title,
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Playfair Display", Georgia, serif;
+  color: var(--vt-rust);
 }
 
-.has-text-resto-gold {
-  color: var(--resto-gold) !important;
+.vt-eyebrow {
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--vt-gold);
+  margin-bottom: 0.75rem;
 }
 
-.section.is-resto-cream {
-  background-color: var(--resto-cream) !important;
+.vt-lead { max-width: 42rem; color: #6b5344; }
+
+/* Top bar */
+.vt-topbar {
+  background: var(--vt-brown);
+  color: rgba(255, 255, 255, 0.92);
 }
+.vt-topbar-status { color: #fde68a; font-weight: 600; }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-topbar-link:hover { color: #fff; text-decoration: underline; }
+
+/* Navbar */
+.vt-header { z-index: 1030; }
+.vt-navbar {
+  background: #fff;
+  border-bottom: 2px solid var(--vt-warm);
+  box-shadow: 0 2px 16px rgba(61, 41, 20, 0.06);
+  padding-block: 0.75rem;
+}
+.vt-navbar .nav-link {
+  color: var(--vt-brown);
+  font-weight: 500;
+  padding-inline: 1rem !important;
+}
+.vt-navbar .nav-link.active {
+  color: var(--vt-rust);
+  font-weight: 700;
+}
+.navbar-toggler { border-color: var(--vt-warm); }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%233d2914' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Buttons */
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-rust);
+  --bs-btn-border-color: var(--vt-rust);
+  --bs-btn-hover-bg: #6b3410;
+  --bs-btn-hover-border-color: #6b3410;
+  --bs-btn-color: #fff;
+  --bs-btn-active-bg: #5a2d0e;
+  --bs-btn-active-border-color: #5a2d0e;
+  font-weight: 600;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-rust);
+  --bs-btn-border-color: var(--vt-rust);
+  --bs-btn-hover-bg: var(--vt-rust);
+  --bs-btn-hover-border-color: var(--vt-rust);
+  --bs-btn-hover-color: #fff;
+  font-weight: 600;
+}
+.btn-vt-pill {
+  --bs-btn-color: var(--vt-rust);
+  --bs-btn-border-color: var(--vt-warm);
+  --bs-btn-bg: #fff;
+  --bs-btn-hover-bg: var(--vt-cream);
+  border-width: 1px;
+  font-weight: 600;
+  padding-inline: 1.25rem;
+}
+
+/* Hero */
+.vt-hero { background: linear-gradient(180deg, #fff 0%, var(--vt-cream) 100%); }
+.vt-hero-media img { max-height: 520px; object-fit: cover; }
+.py-lg-6 { padding-block: 4rem; }
+@media (min-width: 992px) { .py-lg-6 { padding-block: 5rem; } }
+
+/* Stats band */
+.vt-stats-band {
+  background: var(--vt-rust);
+  color: #fff;
+  padding-block: 1.75rem;
+}
+.vt-stat-val {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1;
+}
+.vt-stat-lbl { font-size: 0.85rem; opacity: 0.88; }
+
+/* Story & chapters */
+.vt-story { background: rgba(255, 255, 255, 0.55); }
+.vt-chapter:nth-child(even) { background: #fff; }
+.vt-media img { aspect-ratio: 4/3; object-fit: cover; }
+
+/* Cards */
+.vt-card-img { height: 220px; object-fit: cover; transition: transform 0.4s ease; }
+.vt-card:hover .vt-card-img { transform: scale(1.03); }
+.vt-card-title { color: var(--vt-rust); }
+
+/* Gallery full bleed */
+.vt-gallery-full img { max-height: 480px; object-fit: cover; }
+.vt-gallery-figure + .vt-gallery-figure { border-top: 1px solid rgba(212, 165, 116, 0.35); }
+
+/* Cross links & trust */
+.vt-cross { background: #fff; }
+.vt-badge {
+  background: var(--vt-cream);
+  color: var(--vt-rust);
+  border: 1px solid var(--vt-warm);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+.vt-trust-lead {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--vt-brown);
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+/* CTA band */
+.vt-cta-band { background: var(--vt-brown); }
+
+/* Menu */
+.vt-menu-cat { color: var(--vt-gold); }
+.vt-menu-price { color: var(--vt-rust); font-weight: 700; white-space: nowrap; }
+.vt-tag {
+  background: var(--vt-cream);
+  color: var(--vt-rust);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Timeline */
+.vt-timeline { max-width: 36rem; border-left: 3px solid var(--vt-rust); padding-left: 1.25rem; }
+.vt-timeline-date { color: var(--vt-gold); }
+
+/* Chef */
+.vt-chef { background: linear-gradient(180deg, #fff, var(--vt-cream)); }
+
+/* Footer */
+.vt-footer { background: var(--vt-brown); }
+.vt-footer .nav-link { color: rgba(255, 255, 255, 0.85); }
+.vt-footer .nav-link:hover { color: #fff; }
+.vt-footer hr { border-color: rgba(255, 255, 255, 0.2); }
+
+/* Mobile bar */
+.vt-mobile-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 1040;
+  background: #fff;
+  border-top: 2px solid var(--vt-warm);
+  box-shadow: 0 -4px 24px rgba(61, 41, 20, 0.12);
+}
+.vt-mobile-bar-btn {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--vt-brown);
+}
+.vt-mobile-bar-primary { background: var(--vt-rust); color: #fff; }
+
+/* Forms */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--vt-warm);
+  box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.15);
+}
+
+.vt-hours th { font-weight: 600; padding-right: 1rem; white-space: nowrap; }

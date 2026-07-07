@@ -1,4 +1,18 @@
-<article class="vitrine-detail-root" data-stripe-pk="{{stripe_publishable_key}}">
+<article class="vitrine-detail-root" data-stripe-pk="{{stripe_publishable_key}}" itemscope itemtype="https://schema.org/Product">
+<meta itemprop="name" content="{{vitrine_title}}">
+<meta itemprop="description" content="{{vitrine_tagline}}">
+<link itemprop="url" href="{{page_url}}">
+<meta itemprop="sku" content="dc-modele-{{vitrine_slug}}">
+<div itemprop="brand" itemscope itemtype="https://schema.org/Brand" hidden>
+    <meta itemprop="name" content="DanielCraft">
+</div>
+<link itemprop="image" href="{{og_image}}">
+<div itemprop="offers" itemscope itemtype="https://schema.org/Offer" hidden>
+    <meta itemprop="price" content="{{vitrine_price_eur}}">
+    <meta itemprop="priceCurrency" content="EUR">
+    <link itemprop="availability" href="https://schema.org/InStock">
+    <link itemprop="url" href="{{page_url}}">
+</div>
 <p class="vitrine-stripe-return" id="vitrineStripeReturn" role="status" hidden></p>
 <section class="vitrine-detail-hero">
     <div class="container vitrine-detail-hero-inner">
@@ -24,7 +38,7 @@
                 <i class="fas fa-shopping-cart" aria-hidden="true"></i>
             </button>
             <a class="btn btn-secondary btn-large" href="/prestations/site-vitrine/">
-                <span>Site sur mesure — 490 € HT</span>
+                <span>Site sur mesure — à partir de 390 € HT</span>
                 <i class="fas fa-magic" aria-hidden="true"></i>
             </a>
             <a class="vitrine-detail-actions__subtle" href="/contact">Installation, domaine &amp; hébergement →</a>
@@ -42,7 +56,7 @@
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">Modèle (42&nbsp;€ HT)</th>
-                        <th scope="col">Sur mesure (490&nbsp;€ HT)</th>
+                        <th scope="col">Sur mesure (dès 390&nbsp;€ HT)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,7 +73,7 @@
                 <span>Acheter le modèle — {{vitrine_price_eur}} € HT</span>
             </button>
             <a class="btn btn-secondary btn-large" href="/prestations/site-vitrine/">
-                <span>Site sur mesure — 490 € HT</span>
+                <span>Site sur mesure — à partir de 390 € HT</span>
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
         </div>
@@ -133,7 +147,7 @@
                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </button>
                     <a class="btn btn-secondary btn-large" href="/prestations/site-vitrine/">
-                        <span>Site sur mesure — 490 € HT</span>
+                        <span>Site sur mesure — à partir de 390 € HT</span>
                         <i class="fas fa-magic" aria-hidden="true"></i>
                     </a>
                     {% if vitrine_has_stripe %}

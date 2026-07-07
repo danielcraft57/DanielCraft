@@ -340,13 +340,15 @@
         ) {
           showFeedback(orderFeedback, MSG_STATIC, true);
         } else if (res.ok && data.success) {
-          showFeedback(
-            orderFeedback,
-            data.dry_run
+          var okMsg = data.devis_issued
+            ? data.message ||
+              (data.fallback
+                ? 'Demande enregistrée — devis PDF sous 24 h ouvrées.'
+                : 'Devis envoyé par e-mail. Vérifiez votre boîte mail.')
+            : data.dry_run
               ? 'Demande acceptée (mode test sans email sur ce serveur).'
-              : 'Demande envoyée. Vous recevrez une confirmation par email sous peu.',
-            false
-          );
+              : 'Demande envoyée. Vous recevrez une confirmation par email sous peu.';
+          showFeedback(orderFeedback, okMsg, false);
           orderForm.reset();
           setOrderStep(1);
           orderProjectType.value = '';
