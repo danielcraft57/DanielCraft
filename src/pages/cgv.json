@@ -3,5 +3,6 @@
   "page_description": "Conditions générales de vente des prestations de développement Loïc DANIEL / DanielCraft.",
   "page_keywords": "CGV, conditions générales de vente, DanielCraft, prestations développement",
   "page_url": "/cgv",
-  "og_image": "/assets/images/og/cgv-1200x630.jpg"
+  "og_image": "/assets/images/og/cgv-1200x630.jpg",
+  "schema_type": "legal"
 }

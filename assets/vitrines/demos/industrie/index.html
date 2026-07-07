@@ -3,318 +3,272 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="Usinage de précision, prototypage et petites séries.">
-  <title>Précisite Usinage — Industrie</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="../shared/vitrine-creative.css">
-</head>
-<body class="industrie-body">
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <div class="vitrine-read-progress" aria-hidden="true"></div>
+  <meta name="description" content="Usinage de précision à Yutz pour l&#x27;automobile et l&#x27;aéronautique en Lorraine.">
+  <title>Précisite Usinage — Usinage de précision Yutz</title>
+  <!-- layout: industrial-spec · Bootstrap 5 · vitrine site complet -->
 
-  <nav class="navbar is-dark is-spaced" role="navigation" aria-label="Navigation principale">
-    <div class="container is-fluid">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-warning" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-industry" aria-hidden="true"></i></span><span>Mécano-Precision 54</span></span></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item has-text-light" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
-          <a class="navbar-item has-text-light" href="#usine"><span class="icon-text"><span class="icon"><i class="fa-solid fa-warehouse" aria-hidden="true"></i></span><span>Usine</span></span></a>
-          <a class="navbar-item has-text-light" href="#chaine"><span class="icon-text"><span class="icon"><i class="fa-solid fa-link" aria-hidden="true"></i></span><span>Chaîne</span></span></a>
-          <a class="navbar-item has-text-light" href="#prestations"><span class="icon-text"><span class="icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span><span>Prestations</span></span></a>
-          <a class="navbar-item has-text-light" href="#qualite"><span class="icon-text"><span class="icon"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i></span><span>Qualité</span></span></a>
-          <a class="navbar-item has-text-light" href="#faq"><span class="icon-text"><span class="icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span><span>FAQ</span></span></a>
-          <a class="navbar-item has-text-light" href="#devis"><span class="icon-text"><span class="icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span><span>Devis</span></span></a>
-          <a class="navbar-item has-text-light" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
-        </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Précisite Usinage",
+  "description": "Usinage de précision 5 axes, automobile et aéronautique",
+  "telephone": "+33387224466",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zone industrielle des Hauts Champs",
+    "addressLocality": "Yutz",
+    "postalCode": "57970",
+    "addressCountry": "FR"
+  }
+}
+</script>
+</head>
+<body class="vt-body vt-body-industrial">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Production · Lun–ven 7h–18h</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=ZI+des+Hauts+Champs+57970+Yutz">ZI des Hauts Champs, 57970 Yutz</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0387224466">03 87 22 44 66</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Précisite Usinage</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="savoir-faire.html">Savoir-faire</a></li><li class="nav-item"><a class="nav-link" href="qualite.html">Qualité</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Demander un devis</a>
       </div>
     </div>
   </nav>
-
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-dark is-medium industrie-hero vitrine-hero-glowspot vitrine-hero-scans">
-      <div class="hero-body">
-        <div class="container">
-          <p class="title is-1 has-text-warning">Usinage &amp; assemblage</p>
-          <p class="subtitle is-4 has-text-grey-lighter" style="max-width: 44rem;">
-            Pièces unitaires et petites séries — délais et tarifs d'exemple pour captures portfolio.
-          </p>
-          <div class="buttons mt-5">
-            <a class="button is-warning is-medium" href="#prestations">Voir les prestations</a>
-            <a class="button is-light is-outlined is-medium" href="#contact">Demander une étude</a>
-          </div>
-          <div class="columns is-multiline mt-6">
-            <div class="column is-4">
-              <div class="box has-background-grey-darker has-text-light vitrine-tilt-card" style="padding: 1.75rem;">
-                <p class="title is-4 has-text-warning">ISO*</p>
-                <p class="is-size-6">*certifications selon procédé</p>
-              </div>
-            </div>
-            <div class="column is-4">
-              <div class="box has-background-grey-darker has-text-light vitrine-tilt-card" style="padding: 1.75rem;">
-                <p class="title is-4 has-text-warning">24 h</p>
-                <p class="is-size-6">prototype express 48&nbsp;h</p>
-              </div>
-            </div>
-            <div class="column is-4">
-              <div class="box has-background-grey-darker has-text-light vitrine-tilt-card" style="padding: 1.75rem;">
-                <p class="title is-4 has-text-warning">±2 µm</p>
-                <p class="is-size-6">tolérance cible fictive</p>
-              </div>
-            </div>
-          </div>
+</header><main><section class="vt-hero-tech">
+  <div class="container py-5">
+    <p class="vt-eyebrow text-uppercase mb-2">Usinage de précision · Yutz</p>
+    <div class="row g-4 align-items-end">
+      <div class="col-lg-7">
+        <h1 class="vt-display display-5 mb-3">Tolérances micron pour l&#x27;auto et l&#x27;aéro</h1>
+        <p class="lead mb-4">Usinage 5 axes, métrologie 3D et réponse RFQ sous 48 h — Yutz, Lorraine.</p>
+        <div class="vt-spec-pills d-flex flex-wrap gap-2 mb-4"><span class="vt-spec-pill"><strong>±5 µm</strong> Tolérance</span><span class="vt-spec-pill"><strong>5 axes</strong> CNC</span><span class="vt-spec-pill"><strong>12 000 m²</strong> Atelier</span><span class="vt-spec-pill"><strong>48 h</strong> Devis RFQ</span></div>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-vt-primary rounded-0 px-4" href="contact.html">Demander un devis</a>
+          <a class="btn btn-vt-outline btn-sm rounded-0 px-3" href="savoir-faire.html">Capacités</a>
         </div>
       </div>
-    </section>
-
-    <section class="section vitrine-cta-banner has-background-warning py-5" aria-label="Appel à l'action">
-      <div class="container is-widescreen">
-        <div class="columns is-vcentered">
-          <div class="column is-8">
-            <p class="title is-4 has-text-dark">Étude de faisabilité 24&nbsp;h</p>
-            <p class="subtitle is-6 has-text-dark mb-0" style="opacity: 0.88;">Envoyez un plan — aucun fichier n'est traité sur cette vitrine.</p>
-          </div>
-          <div class="column is-4 has-text-right-tablet">
-            <a class="button is-dark is-medium" href="#devis">Formulaire devis</a>
-            <a class="button is-white is-medium has-text-dark ml-2" href="#prestations">Voir tarifs</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-ter" id="usine" aria-labelledby="t-usine">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-usine">Moyens &amp; matières</h2>
-        <div class="columns is-vcentered mt-5">
-          <div class="column is-6">
-            <figure class="vitrine-figure">
-              <img src="images/ligne-production.png" width="1200" height="900" alt="Ligne d'usinage (image générée)" loading="lazy" decoding="async">
-            </figure>
-          </div>
-          <div class="column is-6">
-            <div class="box has-background-grey-darker has-text-light content is-size-5" style="padding: 2rem;">
-              <p>Acer 42CrMo4, inox 316L, alu 7075 — références courantes. 4&nbsp;500&nbsp;m², deux lignes CN, cellule climatisée.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-bis" id="chaine" aria-labelledby="t-chaine">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-chaine">Chaîne de valeur &amp; atelier</h2>
-        <p class="subtitle is-5 has-text-centered has-text-grey mb-6" style="max-width: 46rem; margin-left: auto; margin-right: auto;">
-          Flux matière, ordres de fabrication, indicateurs OEE et revues outils suivis chaque semaine. Photographies atelier&nbsp;: soudure TIG et lecture de plan sur établi.
-        </p>
-        <div class="columns is-multiline">
-          <div class="column is-6">
-            <figure class="vitrine-figure">
-              <img src="images/industrie-soudure.png" width="1200" height="675" alt="Poste de soudure en atelier (image générée)" loading="lazy" decoding="async">
-            </figure>
-          </div>
-          <div class="column is-6">
-            <figure class="vitrine-figure">
-              <img src="images/industrie-plan-usine.png" width="1200" height="675" alt="Plan technique sur établi (image générée)" loading="lazy" decoding="async">
-            </figure>
-          </div>
-        </div>
-        <div class="tile is-ancestor mt-5">
-          <div class="tile is-parent is-4">
-            <article class="tile is-child box has-background-grey-darker has-text-light">
-              <p class="title is-5 has-text-warning">Moyens</p>
-              <p class="is-size-6">Parc machines documenté sur devis — capacités selon planning charge.</p>
-              <p class="mt-3"><strong>Charge atelier</strong></p>
-              <progress class="progress is-warning" value="58" max="100">58&nbsp;%</progress>
-            </article>
-          </div>
-          <div class="tile is-parent is-4">
-            <article class="tile is-child box has-background-grey-darker has-text-light">
-              <p class="title is-5 has-text-warning">Séries</p>
-              <p class="is-size-6">Lancement série, kitting, contrôle intermédiaire.</p>
-              <p class="mt-3"><span class="tag is-warning">CN</span> <span class="tag is-dark">3D</span> <span class="tag is-light">MQ</span></p>
-            </article>
-          </div>
-          <div class="tile is-parent is-4">
-            <article class="tile is-child box has-background-grey-darker has-text-light">
-              <p class="title is-5 has-text-warning">Délais</p>
-              <p class="is-size-6">Gantt symbolique — planning non contractuel.</p>
-              <p class="mt-3"><strong>Respect des délais</strong></p>
-              <progress class="progress is-success" value="81" max="100">81&nbsp;%</progress>
-            </article>
-          </div>
-        </div>
-        <article class="message is-dark mt-5">
-          <div class="message-body has-text-grey-lighter is-size-6">Certifications et tolérances contractuelles précisées sur bon de commande.</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-ter" id="prestations" aria-labelledby="t-presta">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-presta">Prestations &amp; budgets</h2>
-        <div class="columns is-multiline mt-5">
-          <div class="column is-4-desktop is-6-tablet">
-            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem; min-height: 12rem;">
-              <p class="title is-4 has-text-warning">Fraisage 5 axes</p>
-              <p class="is-size-5">À partir de <strong>185&nbsp;€ HT</strong> / h machine.</p>
-            </div>
-          </div>
-          <div class="column is-4-desktop is-6-tablet">
-            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem; min-height: 12rem;">
-              <p class="title is-4 has-text-warning">Tournage CN</p>
-              <p class="is-size-5"><strong>95&nbsp;€ HT</strong> / h — Ø max 420&nbsp;mm.</p>
-            </div>
-          </div>
-          <div class="column is-4-desktop is-6-tablet">
-            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem; min-height: 12rem;">
-              <p class="title is-4 has-text-warning">Contrôle 3D</p>
-              <p class="is-size-5"><strong>120&nbsp;€ HT</strong> / pièce simple (exemple).</p>
-            </div>
-          </div>
-        </div>
-        <div class="table-container mt-5" style="border-radius: 10px; overflow: hidden; border: 1px solid #4a4a4a;">
-          <table class="table is-fullwidth is-striped has-background-grey-darker has-text-light is-size-5">
-            <thead class="has-background-grey-dark">
-              <tr><th>Lot</th><th>Détail</th><th>Budget type</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>10 flasques</td><td>Inox, fraisage + poli</td><td>2&nbsp;400 – 2&nbsp;900&nbsp;€ HT</td></tr>
-              <tr><td>Prototype arbre</td><td>TTH inclus</td><td>1&nbsp;100&nbsp;€ HT</td></tr>
-              <tr><td>Série 250</td><td>Alu automatisé</td><td>8&nbsp;€ HT / pièce</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="has-text-centered mt-5">
-          <a class="button is-warning is-medium" href="#devis">Demander un chiffrage</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-ter" id="qualite" aria-labelledby="t-qual">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-qual">Qualité &amp; références</h2>
-        <div class="columns mt-5">
-          <div class="column is-6">
-            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem;">
-              <p class="title is-5 has-text-warning">Lucas H.</p>
-              <p class="is-size-5">«&nbsp;Prototype 22&nbsp;h respecté — bureau d’études intégré très pro.&nbsp;»</p>
-            </div>
-          </div>
-          <div class="column is-6">
-            <div class="box has-background-grey-darker has-text-light" style="padding: 2rem;">
-              <p class="title is-5 has-text-warning">Nadia P.</p>
-              <p class="is-size-5">«&nbsp;Série 250 nickel — très bon suivi qualité.&nbsp;»</p>
-            </div>
-          </div>
-        </div>
-        <figure class="vitrine-figure mt-6">
-          <img src="images/controle.png" width="1600" height="686" alt="Contrôle pièce (image générée)" loading="lazy" decoding="async">
+      <div class="col-lg-5">
+        <figure class="vt-hero-tech-frame mb-0 rounded-0 overflow-hidden">
+          <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100" alt="Vue d&#x27;ensemble Précisite Usinage à Yutz" decoding="async" fetchpriority="high"></picture>
         </figure>
       </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-bis" id="faq" aria-labelledby="t-faq">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered has-text-light" id="t-faq">FAQ technique</h2>
-        <div class="columns mt-5">
-          <div class="column is-6">
-            <article class="media box has-background-grey-darker has-text-light">
-              <figure class="media-left">
-                <span class="icon is-large has-text-warning" aria-hidden="true">
-                  <svg class="vitrine-svg-deco" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
-                    <rect x="6" y="8" width="30" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 18h18M12 24h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </span>
-              </figure>
-              <div class="media-content content is-size-5">
-                <p><strong>Fichiers STEP&nbsp;?</strong> Dépôt sécurisé — traitement CAO sous NDA.</p>
-              </div>
-            </article>
-          </div>
-          <div class="column is-6">
-            <article class="media box has-background-grey-darker has-text-light">
-              <figure class="media-left">
-                <span class="icon is-large has-text-warning" aria-hidden="true">
-                  <svg class="vitrine-svg-deco" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
-                    <circle cx="21" cy="21" r="14" stroke="currentColor" stroke-width="2"/>
-                    <path d="M21 14v10M14 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </span>
-              </figure>
-              <div class="media-content content is-size-5">
-                <p><strong>NDA&nbsp;?</strong> Accord de confidentialité fourni avant tout échange technique.</p>
-              </div>
-            </article>
-          </div>
+    </div>
+  </div>
+</section><section class="vt-spec-grid py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-uppercase mb-4">Capacités machine</h2>
+    <div class="row g-3"><div class="col-sm-6 col-lg-3">
+        <article class="vt-spec-card h-100">
+          <span class="vt-spec-card-label">Fraisage</span>
+          <strong class="vt-spec-card-val">5 axes</strong>
+          <p class="small mb-0">12 centres — pièces 800 mm</p>
+        </article>
+      </div><div class="col-sm-6 col-lg-3">
+        <article class="vt-spec-card h-100">
+          <span class="vt-spec-card-label">Tournage</span>
+          <strong class="vt-spec-card-val">Ø 65</strong>
+          <p class="small mb-0">Barres et chutés — CBN</p>
+        </article>
+      </div><div class="col-sm-6 col-lg-3">
+        <article class="vt-spec-card h-100">
+          <span class="vt-spec-card-label">Contrôle</span>
+          <strong class="vt-spec-card-val">3D</strong>
+          <p class="small mb-0">MMT + scan laser</p>
+        </article>
+      </div><div class="col-sm-6 col-lg-3">
+        <article class="vt-spec-card h-100">
+          <span class="vt-spec-card-label">Série</span>
+          <strong class="vt-spec-card-val">50k</strong>
+          <p class="small mb-0">pièces / an max.</p>
+        </article>
+      </div></div>
+  </div>
+</section><section class="vt-cert-strip py-4" aria-label="Certifications">
+  <div class="container">
+    <div class="row g-3 text-center"><div class="col-6 col-md-3">
+        <div class="vt-cert-badge">
+          <span class="vt-cert-code">ISO</span>
+          <strong>9001:2015</strong>
+          <small>Management qualité</small>
         </div>
-      </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-ter" id="devis" aria-labelledby="t-devis">
-      <div class="container is-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-10-tablet is-7-desktop">
-            <h2 class="title is-2 has-text-centered has-text-light" id="t-devis">Devis express</h2>
-            <p class="subtitle is-6 has-text-centered has-text-grey mb-5">Formulaire sans envoi — composants Bulma sur fond sombre.</p>
-            <div class="box has-background-grey-darker has-text-light vitrine-form-panel">
-              <form action="#" method="get" class="content">
-                <div class="field"><label class="label has-text-grey-lighter" for="dv-societe">Société</label><div class="control"><input class="input" type="text" id="dv-societe" name="societe"></div></div>
-                <div class="field"><label class="label has-text-grey-lighter" for="dv-mat">Matière</label><div class="control"><div class="select is-fullwidth"><select id="dv-mat" name="mat"><option>Inox</option><option>Alu</option><option>Acier</option></select></div></div></div>
-                <div class="field"><label class="label has-text-grey-lighter" for="dv-qte">Quantité</label><div class="control"><input class="input" type="number" id="dv-qte" name="qte" min="1" value="10"></div></div>
-                <div class="field"><label class="label has-text-grey-lighter" for="dv-notes">Notes BE</label><div class="control"><textarea class="textarea" id="dv-notes" name="notes" rows="3" placeholder="Cotes, finitions…"></textarea></div></div>
-                <button type="button" class="button is-warning is-medium is-fullwidth">Envoyer</button>
-              </form>
-            </div>
-          </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-cert-badge">
+          <span class="vt-cert-code">IATF</span>
+          <strong>16949</strong>
+          <small>Automobile</small>
         </div>
-      </div>
-    </section>
-
-    <section class="section vitrine-cta-banner has-background-grey-darker py-5" aria-label="Second appel à l'action">
-      <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white">Lancer un prototype</p>
-        <div class="buttons is-centered mt-4">
-          <a class="button is-warning is-medium" href="#contact">Coordonnées</a>
-          <a class="button is-white is-outlined is-medium" href="../index.html">Index des vitrines</a>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-cert-badge">
+          <span class="vt-cert-code">EN</span>
+          <strong>9100</strong>
+          <small>Aéronautique</small>
         </div>
-      </div>
-    </section>
-
-    <section class="section is-vitrine has-background-black-bis" id="contact" aria-labelledby="t-contact">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-light" id="t-contact">Contact</h2>
-        <div class="notification is-dark is-size-5 mt-4" style="padding: 2rem; max-width: 42rem;">
-          <p>Z.I. des Charmes, 54850 Haucourt-Moulaine</p>
-          <p class="mt-4"><a class="has-text-warning" href="mailto:devis@precisite.fr">devis@precisite.fr</a></p>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-cert-badge">
+          <span class="vt-cert-code">COFRAC</span>
+          <strong>Métrologie</strong>
+          <small>Labo interne</small>
         </div>
-        <p class="mt-5"><a class="button is-warning is-medium" href="../index.html">← Retour à l’index des vitrines</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer has-background-black-ter is-vitrine-footer">
-    <div class="container is-widescreen">
-      <div class="columns is-multiline has-text-grey">
-        <div class="column is-4">
-          <p class="title is-6 has-text-warning">Mécano-Precision 54</p>
-          <p class="is-size-6 has-text-grey-light">Précisite Usinage — Lorraine.</p>
+      </div></div>
+  </div>
+</section><section class="vt-process-flow py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-uppercase mb-4">Parcours RFQ → livraison</h2>
+    <div class="vt-flow-track d-flex flex-wrap align-items-start gap-3"><div class="vt-flow-step">
+        <span class="vt-flow-num">01</span>
+        <div>
+          <strong>RFQ</strong>
+          <p class="mb-0 small">Réception plans STEP/IGES et cahier des charges.</p>
         </div>
-        <div class="column is-4">
-          <p class="title is-6 has-text-warning">Liens</p>
-          <p class="is-size-6"><a class="has-text-grey-lighter" href="#chaine">Chaîne</a> · <a class="has-text-grey-lighter" href="#devis">Devis</a></p>
+        <span class="vt-flow-arrow" aria-hidden="true">→</span>
+      </div><div class="vt-flow-step">
+        <span class="vt-flow-num">02</span>
+        <div>
+          <strong>Façabilité</strong>
+          <p class="mb-0 small">Étude procédé et devis sous 48 h.</p>
         </div>
-        <div class="column is-4">
-          <p class="title is-6 has-text-warning">Crédits</p>
-          <p class="is-size-6">Maquette <strong>Bulma</strong> · <a class="has-text-warning" href="https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/">Alternatives Bootstrap (Codeur.com)</a></p>
+        <span class="vt-flow-arrow" aria-hidden="true">→</span>
+      </div><div class="vt-flow-step">
+        <span class="vt-flow-num">03</span>
+        <div>
+          <strong>Proto</strong>
+          <p class="mb-0 small">Premier article contrôlé et validé.</p>
         </div>
+        <span class="vt-flow-arrow" aria-hidden="true">→</span>
+      </div><div class="vt-flow-step">
+        <span class="vt-flow-num">04</span>
+        <div>
+          <strong>Série</strong>
+          <p class="mb-0 small">Production traçable et livraison JIT.</p>
+        </div>
+        
+      </div></div>
+  </div>
+</section><section class="vt-sector-strip py-4">
+  <div class="container">
+    <div class="row g-3 text-center"><div class="col-6 col-md-3">
+        <div class="vt-sector-cell">
+          <strong>Automobile</strong>
+          <span>IATF 16949 — équipementiers</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-sector-cell">
+          <strong>Aéronautique</strong>
+          <span>EN 9100 — pièces structurales</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-sector-cell">
+          <strong>Médical</strong>
+          <span>Inox &amp; titane implantables</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-sector-cell">
+          <strong>Énergie</strong>
+          <span>Séries moyennes longues</span>
+        </div>
+      </div></div>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">Pourquoi Précisite Usinage ?</h2>
+        <p class="mb-3">Implanté à Yutz depuis 2010, nous accompagnons les donneurs d&#x27;ordre automobile et aéronautique en Lorraine.</p><p class="mb-3">Parc machines récent, métrologie intégrée et culture du premier article conforme.</p>
       </div>
     </div>
-  </footer>
-  <script src="../shared/vitrine-creative.js"></script>
+  </div>
+</section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Nos procédés</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Usinage 5 axes" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Usinage 5 axes</h3>
+            <p class="card-text text-secondary small mb-0">Pièces complexes aéro et automobile en une prise.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Tournage CNC" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Tournage CNC</h3>
+            <p class="card-text text-secondary small mb-0">Barres Ø 65 mm — séries moyennes et grandes.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Contrôle qualité" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Métrologie 3D</h3>
+            <p class="card-text text-secondary small mb-0">MMT et scan laser — rapport de mesure livré.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">85 collaborateurs — 12 centres 5 axes — traçabilité matière et process.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">ISO 9001</span><span class="badge rounded-pill vt-badge">IATF 16949</span><span class="badge rounded-pill vt-badge">Métrologie 3D</span><span class="badge rounded-pill vt-badge">Devis 48 h</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Parlons de votre RFQ — réponse technique sous 48 h.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Demander un devis</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Précisite Usinage</strong>
+        <p class="small opacity-75 mb-2">ZI des Hauts Champs, 57970 Yutz</p>
+        <a class="small" href="https://maps.google.com/?q=ZI+des+Hauts+Champs+57970+Yutz">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="savoir-faire.html">Savoir-faire</a><a class="nav-link px-0" href="qualite.html">Qualité</a><a class="nav-link px-0" href="contact.html">Demander un devis</a><a class="nav-link px-0" href="qualite.html">Certifications</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0387224466">03 87 22 44 66</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:devis@precisite-usinage.fr">devis@precisite-usinage.fr</a></p>
+        <p class="mb-0">Lun–ven 7h–18h · Yutz</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0387224466">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Devis RFQ</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

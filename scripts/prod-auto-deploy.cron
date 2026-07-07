@@ -1,0 +1,4 @@
+# DanielCraft — vérifie GitHub toutes les 15 min et déploie si master a avancé.
+# Installer : crontab -e  puis coller la ligne ci-dessous (adapter REPO_DIR si besoin).
+#
+# */15 * * * * REPO_DIR=/home/pi/danielcraft-src WEB_ROOT=/var/www/danielcraft.fr SITE_BASE=https://danielcraft.fr /home/pi/danielcraft-src/scripts/prod-auto-deploy.sh >> /home/pi/logs/danielcraft-deploy.log 2>&1

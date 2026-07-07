@@ -1,35 +1,180 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@700&display=swap");
-html { scroll-behavior: smooth; }
-body { font-family: "Source Sans 3", system-ui, sans-serif; margin: 0; color: #1a1a1a; }
-.skip-link { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0); }
-.skip-link:focus { position:fixed;left:1rem;top:1rem;z-index:10000;padding:.5rem 1rem;background:#fff;clip:auto;width:auto;height:auto; }
-.vt-brand { font-family: "Libre Baskerville", Georgia, serif; color: #1d4ed8; }
-.vt-hero { background: linear-gradient(135deg,#1e3a5f,#2563eb); color: #fff; padding: 2rem 0 2.25rem; display: block; }
-.vt-hero .vt-hero-grid { padding-top: 0.5rem; padding-bottom: 0.75rem; }
-.vt-hero .vitrine-figure--ken img { max-height: 220px; }
-.vitrine-hero-visual img { max-height: 220px; width: 100%; object-fit: cover; }
-.vt-hero h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 .5rem; }
-.vt-eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; opacity: .85; }
-.vt-btn { background: #fff; color: #1d4ed8; font-weight: 600; border: none; text-decoration: none; display: inline-block; padding: .65rem 1.25rem; border-radius: .35rem; cursor: pointer; }
-.vt-stats { background: #1d4ed8; color: #fff; }
-.vt-stat { font-size: 2rem; display: block; font-family: "Libre Baskerville", serif; }
-.vt-muted, .vt-band { background: #f5f5f0; }
-.vt-card img { width: 100%; object-fit: cover; border-radius: .35rem; }
-.vitrine-hero-visual img { border-radius: .35rem; }
-.vt-card img { height: 220px; }
-.vt-footer { background: #1c1c1c; color: rgba(255,255,255,.85); padding: 1.25rem; }
-.vt-top { background: #fff; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; z-index: 40; }
-.vt-nav { max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-.vt-nav a { text-decoration: none; color: inherit; margin-right: .75rem; }
-.vt-hero-grid, .vt-stats-grid, .vt-cards { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.25rem; }
-@media (min-width: 900px) {
-  .vt-hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-  .vt-stats-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
-  .vt-cards { grid-template-columns: repeat(3, 1fr); }
+/* Institut Mercure — académique indigo/ambre, Libre Baskerville + Source Sans 3 */
+:root {
+  --vt-navy: #1e3a5f;
+  --vt-indigo: #1d4ed8;
+  --vt-amber: #f59e0b;
+  --vt-amber-l: #fef3c7;
+  --vt-bg: #f8fafc;
+  --vt-text: #0f172a;
+  --vt-muted: #475569;
+  --vt-accent: var(--vt-indigo);
+  --bs-body-bg: var(--vt-bg);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-indigo);
+  --bs-link-color: var(--vt-indigo);
+  --bs-link-hover-color: var(--vt-navy);
 }
-.vt-wrap { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
-.vt-center { text-align: center; }
-.vt-muted-center { text-align: center; color: #666; margin-bottom: 1.5rem; }
-.vt-form label { display: block; margin-bottom: .75rem; }
-.vt-form input, .vt-form textarea { width: 100%; }
-.vt-lead { font-size: 1.15rem; opacity: .92; }
+
+body.vt-body-education {
+  background: var(--vt-bg);
+  color: var(--vt-text);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-education { padding-bottom: 0; }
+}
+
+.vt-display,
+.vt-section-title {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+  color: var(--vt-navy);
+}
+
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--vt-navy) !important;
+  max-width: 14rem;
+}
+
+.vt-eyebrow {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--vt-amber);
+  text-transform: uppercase;
+}
+
+.vt-topbar { background: var(--vt-navy); color: #e2e8f0; }
+.vt-topbar-link { color: inherit; text-decoration: none; font-weight: 600; }
+
+.vt-navbar {
+  background: #fff;
+  border-bottom: 3px solid var(--vt-indigo);
+}
+.vt-navbar .nav-link {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--vt-muted);
+}
+.vt-navbar .nav-link.active { color: var(--vt-indigo); font-weight: 700; }
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-indigo);
+  --bs-btn-border-color: var(--vt-indigo);
+  --bs-btn-hover-bg: var(--vt-navy);
+  --bs-btn-hover-border-color: var(--vt-navy);
+  --bs-btn-color: #fff;
+  font-weight: 700;
+  border-radius: 0;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-indigo);
+  --bs-btn-border-color: var(--vt-indigo);
+  --bs-btn-hover-bg: var(--vt-indigo);
+  --bs-btn-hover-border-color: var(--vt-indigo);
+  --bs-btn-hover-color: #fff;
+  font-weight: 600;
+  border-radius: 0;
+}
+
+.vt-hero-tech { background: #fff; border-bottom: 4px solid var(--vt-amber); }
+.vt-spec-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 0.85rem;
+  background: var(--vt-amber-l);
+  border-left: 3px solid var(--vt-amber);
+  font-size: 0.78rem;
+  color: var(--vt-muted);
+}
+.vt-spec-pill strong {
+  font-size: 1.1rem;
+  color: var(--vt-navy);
+  line-height: 1.2;
+}
+.vt-hero-tech-frame img { aspect-ratio: 16/10; object-fit: cover; }
+
+.vt-cred-strip {
+  background: var(--vt-navy);
+  color: #e2e8f0;
+}
+.vt-cred-cell strong { color: var(--vt-amber); }
+
+.vt-service-tile {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid var(--vt-indigo);
+}
+.vt-service-tile i { color: var(--vt-indigo); }
+
+.vt-process-flow .vt-process-step::after { background: var(--vt-amber); }
+.vt-process-step strong { color: var(--vt-indigo); }
+
+.vt-stat-narrative .vt-stat-big { color: var(--vt-indigo); }
+
+.vt-sector-strip { background: var(--vt-amber-l); }
+.vt-sector-cell strong { color: var(--vt-navy); }
+
+.vt-menu-section .vt-menu-item { border-left: 3px solid transparent; }
+.vt-menu-section .vt-menu-item:hover { border-left-color: var(--vt-amber); }
+
+.vt-specs-table th { background: var(--vt-navy); color: #fff; }
+
+.vt-gallery-masonry .vt-masonry-card { border-bottom: 3px solid var(--vt-indigo); }
+
+.vt-aside-panel { background: var(--vt-amber-l); border-left: 4px solid var(--vt-amber) !important; }
+
+.vt-cta-band {
+  background: linear-gradient(135deg, var(--vt-navy), var(--vt-indigo));
+  color: #fff;
+}
+.vt-cta-band .btn-vt-primary {
+  --bs-btn-bg: var(--vt-amber);
+  --bs-btn-border-color: var(--vt-amber);
+  --bs-btn-hover-bg: #d97706;
+  --bs-btn-hover-border-color: #d97706;
+  --bs-btn-color: var(--vt-navy);
+}
+
+.vt-mobile-cta {
+  background: var(--vt-navy);
+  border-top: 2px solid var(--vt-amber);
+}
+.vt-mobile-cta .btn { background: var(--vt-amber); color: var(--vt-navy); border: none; font-weight: 700; }
+
+.vt-site-footer {
+  background: var(--vt-navy);
+  color: #cbd5e1;
+}
+.vt-site-footer a { color: #e2e8f0; }
+.vt-site-footer .vt-footer-brand { color: #fff; font-family: "Libre Baskerville", Georgia, serif; }
+
+.vt-stats-band { background: var(--vt-indigo); color: #fff; }
+.vt-stats-band .vt-stat-value { color: var(--vt-amber); }
+
+.vt-trust-band { border-top: 3px solid var(--vt-amber); }
+
+.vt-card-bs .card { border: none; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08); }
+.vt-card-bs .card-img-top { aspect-ratio: 16/10; object-fit: cover; }
+
+.vt-compact-features .vt-compact-card { border-left: 3px solid var(--vt-indigo); }
+
+.vt-timeline::before { background: var(--vt-amber); }
+.vt-timeline-item strong { color: var(--vt-indigo); }
+
+.vt-faq .accordion-button:not(.collapsed) {
+  background: var(--vt-amber-l);
+  color: var(--vt-navy);
+}
+.vt-faq .accordion-button:focus { box-shadow: 0 0 0 0.2rem rgba(29, 78, 216, 0.2); }
+
+.vt-hero-compact { background: linear-gradient(180deg, #fff 0%, var(--vt-bg) 100%); }

@@ -251,45 +251,46 @@
    * Un même slug peut apparaître dans plusieurs groupes si pertinent.
    */
   const CONTACT_SERVICE_ITEMS = [
-    { slug: 'pack_vitrine', title: 'Site vitrine professionnel', hint: '490€ · clair sur mobile et ordinateur', icon: 'fa-globe', budget: '490', tags: ['web'] },
-    { slug: 'pack_identite', title: 'Image de marque harmonisée', hint: '990€ · site, réseaux et documents', icon: 'fa-fingerprint', budget: '990', tags: ['web'] },
-    { slug: 'pack_seo_complet', title: 'Visible sur Google et par l’IA', hint: '699€ · pack visibilité complet', icon: 'fa-search', budget: '699', tags: ['web'] },
+    { slug: 'pack_vitrine_essentiel', title: 'Site vitrine essentiel', hint: '390€ · 3 pages, livré vite', icon: 'fa-globe', budget: '390', tags: ['web'] },
+    { slug: 'pack_vitrine', title: 'Site vitrine professionnel', hint: '590€ · 5 pages, clé en main', icon: 'fa-globe', budget: '590', tags: ['web'] },
+    { slug: 'pack_identite', title: 'Image de marque harmonisée', hint: '890€ · site, réseaux et documents', icon: 'fa-fingerprint', budget: '890', tags: ['web'] },
+    { slug: 'pack_seo_complet', title: 'Visible sur Google et par l’IA', hint: '690€ · pack visibilité complet', icon: 'fa-search', budget: '690', tags: ['web'] },
     { slug: 'seo_basique_290', title: 'Remise en forme Google', hint: '290€ · audit + corrections', icon: 'fa-search', tags: ['web', 'learning'] },
-    { slug: 'seo_chatgpt_490', title: 'Recommandé par les assistants IA', hint: '490€', icon: 'fa-robot', tags: ['web', 'specialized'] },
+    { slug: 'seo_chatgpt_490', title: 'Recommandé par les assistants IA', hint: '449€', icon: 'fa-robot', tags: ['web', 'specialized'] },
     { slug: 'ia_faq_site', title: 'Répondeur intelligent sur le site', hint: '990€', icon: 'fa-comments', tags: ['specialized', 'web'] },
-    { slug: 'ia_support_client', title: 'Aide pour vos e-mails clients', hint: '1200€', icon: 'fa-envelope', tags: ['specialized'] },
-    { slug: 'ia_contenu_web', title: 'Textes pour votre site', hint: '650€', icon: 'fa-file-alt', tags: ['specialized', 'web'] },
-    { slug: 'ia_redaction_pro', title: 'Aide à la rédaction commerciale', hint: '490€', icon: 'fa-pen-fancy', tags: ['specialized'] },
-    { slug: 'ia_analyse_donnees', title: 'Comprendre vos chiffres', hint: '1450€', icon: 'fa-chart-bar', tags: ['specialized', 'desktop'] },
-    { slug: 'ia_chatbot_ecom', title: 'Conseiller sur votre boutique', hint: '1600€', icon: 'fa-shopping-cart', tags: ['specialized', 'mobile', 'web'] },
-    { slug: 'ia_automatisation', title: 'Tâches répétitives automatisées', hint: '1200€', icon: 'fa-tasks', tags: ['specialized', 'tools'] },
-    { slug: 'ia_abo_mensuel', title: 'Entretien mensuel de l’assistant', hint: '75€ / mois', icon: 'fa-wrench', tags: ['specialized'] },
+    { slug: 'ia_support_client', title: 'Aide pour vos e-mails clients', hint: '1090€', icon: 'fa-envelope', tags: ['specialized'] },
+    { slug: 'ia_contenu_web', title: 'Textes pour votre site', hint: '490€', icon: 'fa-file-alt', tags: ['specialized', 'web'] },
+    { slug: 'ia_redaction_pro', title: 'Aide à la rédaction commerciale', hint: '449€', icon: 'fa-pen-fancy', tags: ['specialized'] },
+    { slug: 'ia_analyse_donnees', title: 'Comprendre vos chiffres', hint: '1290€', icon: 'fa-chart-bar', tags: ['specialized', 'desktop'] },
+    { slug: 'ia_chatbot_ecom', title: 'Conseiller sur votre boutique', hint: '1490€', icon: 'fa-shopping-cart', tags: ['specialized', 'mobile', 'web'] },
+    { slug: 'ia_automatisation', title: 'Tâches répétitives automatisées', hint: '1090€', icon: 'fa-tasks', tags: ['specialized', 'tools'] },
+    { slug: 'ia_abo_mensuel', title: 'Entretien mensuel de l’assistant', hint: '69€ / mois', icon: 'fa-wrench', tags: ['specialized'] },
     { slug: 'ia_evolution', title: 'Nouvelle fonction pour l’assistant', hint: 'À partir de 330€', icon: 'fa-plus-circle', tags: ['specialized'] },
-    { slug: 'ia_audit', title: 'Bilan de votre usage de l’IA', hint: '400€', icon: 'fa-search', tags: ['specialized', 'learning'] },
-    { slug: 'tech_conseil_archi', title: 'Conseil avant un gros projet', hint: '380€', icon: 'fa-sitemap', tags: ['backend', 'mobile', 'desktop', 'tools'] },
-    { slug: 'tech_integration_crm', title: 'Relier le site à votre logiciel', hint: 'À partir de 290€', icon: 'fa-link', tags: ['tools', 'backend'] },
-    { slug: 'tech_migration_donnees', title: 'Transférer vos anciennes données', hint: '330€', icon: 'fa-database', tags: ['backend', 'desktop'] },
-    { slug: 'tech_api_webhook', title: 'Faire dialoguer deux outils', hint: 'À partir de 150€', icon: 'fa-code-branch', tags: ['backend', 'mobile', 'web', 'tools'] },
-    { slug: 'tech_perf_rapport', title: 'Votre site est-il rapide ?', hint: '120€', icon: 'fa-tachometer-alt', tags: ['web'] },
+    { slug: 'ia_audit', title: 'Bilan de votre usage de l’IA', hint: '349€', icon: 'fa-search', tags: ['specialized', 'learning'] },
+    { slug: 'tech_conseil_archi', title: 'Conseil avant un gros projet', hint: '349€', icon: 'fa-sitemap', tags: ['backend', 'mobile', 'desktop', 'tools'] },
+    { slug: 'tech_integration_crm', title: 'Relier le site à votre logiciel', hint: 'À partir de 299€', icon: 'fa-link', tags: ['tools', 'backend'] },
+    { slug: 'tech_migration_donnees', title: 'Transférer vos anciennes données', hint: '349€', icon: 'fa-database', tags: ['backend', 'desktop'] },
+    { slug: 'tech_api_webhook', title: 'Faire dialoguer deux outils', hint: 'À partir de 179€', icon: 'fa-code-branch', tags: ['backend', 'mobile', 'web', 'tools'] },
+    { slug: 'tech_perf_rapport', title: 'Votre site est-il rapide ?', hint: '129€', icon: 'fa-tachometer-alt', tags: ['web'] },
     { slug: 'eco_audit_site', title: 'Audit éco-numérique du site', hint: '149€ · sobriété & coûts', icon: 'fa-leaf', tags: ['web'] },
-    { slug: 'eco_medias_optimize', title: 'Images et vidéos allégées', hint: '190€', icon: 'fa-image', tags: ['web'] },
-    { slug: 'eco_perf_fix', title: 'Site plus rapide et sobre', hint: 'À partir de 290€', icon: 'fa-feather-alt', tags: ['web'] },
-    { slug: 'pack_vitrine_eco', title: 'Site vitrine éco-conçu', hint: '490€ · léger & responsable', icon: 'fa-seedling', budget: '490', tags: ['web'] },
-    { slug: 'eco_page_rse', title: 'Page engagement numérique', hint: '85€', icon: 'fa-hand-holding-heart', tags: ['web'] },
-    { slug: 'eco_monitor_mensuel', title: 'Veille sobriété mensuelle', hint: '29€ / mois', icon: 'fa-chart-line', tags: ['web'] },
-    { slug: 'eco_formation_2h', title: 'Atelier publier sans alourdir', hint: '120€ · 2 h', icon: 'fa-chalkboard-teacher', tags: ['web', 'learning'] },
-    { slug: 'site_page_supp', title: 'Une page en plus', hint: '65€ / page', icon: 'fa-file', tags: ['web'] },
+    { slug: 'eco_medias_optimize', title: 'Images et vidéos allégées', hint: '199€', icon: 'fa-image', tags: ['web'] },
+    { slug: 'eco_perf_fix', title: 'Site plus rapide et sobre', hint: 'À partir de 329€', icon: 'fa-feather-alt', tags: ['web'] },
+    { slug: 'pack_vitrine_eco', title: 'Site vitrine éco-conçu', hint: '590€ · léger & responsable', icon: 'fa-seedling', budget: '590', tags: ['web'] },
+    { slug: 'eco_page_rse', title: 'Page engagement numérique', hint: '89€', icon: 'fa-hand-holding-heart', tags: ['web'] },
+    { slug: 'eco_monitor_mensuel', title: 'Veille sobriété mensuelle', hint: '35€ / mois', icon: 'fa-chart-line', tags: ['web'] },
+    { slug: 'eco_formation_2h', title: 'Atelier publier sans alourdir', hint: '129€ · 2 h', icon: 'fa-chalkboard-teacher', tags: ['web', 'learning'] },
+    { slug: 'site_page_supp', title: 'Une page en plus', hint: '59€ / page', icon: 'fa-file', tags: ['web'] },
     { slug: 'site_form_avance', title: 'Formulaire sur mesure', hint: '99€', icon: 'fa-wpforms', tags: ['web'] },
-    { slug: 'site_refonte_visuelle', title: 'Nouveau look pour le site', hint: '330€', icon: 'fa-palette', tags: ['web'] },
-    { slug: 'site_maj_contenu_5h', title: 'Pack mise à jour de contenus', hint: '170€', icon: 'fa-edit', tags: ['web'] },
-    { slug: 'maint_site_mensuel', title: 'Site entretenu chaque mois', hint: '39€ / mois', icon: 'fa-cogs', tags: ['web'] },
-    { slug: 'maint_hebergement', title: 'Hébergement & nom de domaine', hint: '79€ / an', icon: 'fa-server', tags: ['web'] },
-    { slug: 'maint_backup', title: 'Sauvegardes & sécurité', hint: '99€', icon: 'fa-save', tags: ['web', 'backend'] },
-    { slug: 'maint_ssl', title: 'Cadenas HTTPS sur le site', hint: '45€', icon: 'fa-lock', tags: ['web'] },
-    { slug: 'maint_support_abo', title: 'Support par e-mail', hint: '25€ / mois', icon: 'fa-headset', tags: ['web'] },
-    { slug: 'maint_depannage_2h', title: 'Dépannage express (2 h)', hint: '120€', icon: 'fa-tools', tags: ['web', 'desktop'] },
-    { slug: 'maint_accompagnement_h', title: 'Accompagnement à l’heure', hint: '60€ / h', icon: 'fa-user-cog', tags: ['web', 'desktop', 'tools'] },
-    { slug: 'maint_support_prio_h', title: 'Support prioritaire', hint: '70€ / h', icon: 'fa-bolt', tags: ['web'] },
+    { slug: 'site_refonte_visuelle', title: 'Nouveau look pour le site', hint: '349€', icon: 'fa-palette', tags: ['web'] },
+    { slug: 'site_maj_contenu_5h', title: 'Pack mise à jour de contenus', hint: '249€', icon: 'fa-edit', tags: ['web'] },
+    { slug: 'maint_site_mensuel', title: 'Site entretenu chaque mois', hint: '49€ / mois', icon: 'fa-cogs', tags: ['web'] },
+    { slug: 'maint_hebergement', title: 'Hébergement & nom de domaine', hint: '89€ / an', icon: 'fa-server', tags: ['web'] },
+    { slug: 'maint_backup', title: 'Sauvegardes & sécurité', hint: '119€', icon: 'fa-save', tags: ['web', 'backend'] },
+    { slug: 'maint_ssl', title: 'Cadenas HTTPS sur le site', hint: '49€', icon: 'fa-lock', tags: ['web'] },
+    { slug: 'maint_support_abo', title: 'Support par e-mail', hint: '29€ / mois', icon: 'fa-headset', tags: ['web'] },
+    { slug: 'maint_depannage_2h', title: 'Dépannage express (2 h)', hint: '139€', icon: 'fa-tools', tags: ['web', 'desktop'] },
+    { slug: 'maint_accompagnement_h', title: 'Accompagnement à l’heure', hint: '65€ / h', icon: 'fa-user-cog', tags: ['web', 'desktop', 'tools'] },
+    { slug: 'maint_support_prio_h', title: 'Support prioritaire', hint: '75€ / h', icon: 'fa-bolt', tags: ['web'] },
     {
       slug: 'besoin_a_preciser',
       title: 'Je ne sais pas encore',
@@ -734,6 +735,54 @@
       if (successBlock) successBlock.hidden = status !== 'success';
       // Pendant l'envoi, on masque le récap pour éviter l'affichage simultané.
       if (validationRecapBlock) validationRecapBlock.hidden = status === 'pending';
+    }
+
+    function updateSuccessCopy(data) {
+      if (!successBlock) return;
+      const titleEl = successBlock.querySelector('.contact-validation-success__title');
+      const bodyEl = successBlock.querySelector('.contact-validation-success__body');
+      const stepsEl = successBlock.querySelector('.contact-validation-success__steps');
+      if (!titleEl || !bodyEl) return;
+
+      if (data && data.devis_issued) {
+        titleEl.textContent = data.fallback
+          ? 'Demande enregistrée — devis en cours'
+          : 'Devis envoyé — consultez votre boîte mail';
+        bodyEl.innerHTML =
+          (data.message
+            ? escapeHtml(data.message)
+            : 'Votre devis PDF arrive sous <strong>24 h ouvrées</strong>.') +
+          ' Je vous confirme aussi le créneau choisi par e-mail.';
+        if (stepsEl) {
+          stepsEl.innerHTML = '';
+          [
+            'Vous recevez le devis PDF à votre adresse',
+            'Un récapitulatif avec votre créneau vous est envoyé',
+            'On affine ensemble au call ou par e-mail'
+          ].forEach(function (line) {
+            const li = document.createElement('li');
+            li.textContent = line;
+            stepsEl.appendChild(li);
+          });
+        }
+        return;
+      }
+
+      titleEl.textContent = 'C’est envoyé — consultez votre boîte mail';
+      bodyEl.innerHTML =
+        'Merci pour votre message. Je reviens vers vous sous <strong>24 h ouvrées</strong>.';
+      if (stepsEl) {
+        stepsEl.innerHTML = '';
+        [
+          'Vous recevez un récapitulatif par e-mail',
+          'Je prépare une réponse adaptée à votre besoin',
+          'On échange au créneau choisi ou par e-mail'
+        ].forEach(function (line) {
+          const li = document.createElement('li');
+          li.textContent = line;
+          stepsEl.appendChild(li);
+        });
+      }
     }
 
     function showFeedback(message, isError) {
@@ -1560,6 +1609,7 @@
           closeTimeOverlay();
           hideFeedback();
           setValidationStatus('success');
+          updateSuccessCopy(data);
           setStep(5);
         } else {
           setValidationStatus('idle');

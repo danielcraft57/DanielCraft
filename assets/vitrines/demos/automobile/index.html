@@ -3,89 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Votre garage de confiance. Entretien, pneus et carrosserie — Plappeville et environs.">
-  <title>Garage Central Plappeville — Mécanique &amp; carrosserie | démo</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <meta name="description" content="Garage auto à Plappeville : entretien, pneus, carrosserie et contrôle technique.">
+  <title>Garage Central Plappeville — Mécanique &amp; carrosserie</title>
+  <!-- layout: garage-overlay · Bootstrap 5 · vitrine site complet -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
-  <link rel="stylesheet" href="../shared/vitrine-media.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Garage Central Plappeville",
+  "telephone": "+33387654321",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zone artisanale des Gravières",
+    "addressLocality": "Plappeville",
+    "postalCode": "57050",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+  ]
+}
+</script>
 </head>
-<body>
-
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
-  <header class="vt-top">
-    <nav class="vt-nav" aria-label="Navigation principale">
-      <a class="vt-brand" href="#accueil">Garage Central Plappeville</a>
-      <a href="#offres">Offres</a><a href="#engagements">Engagements</a><a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <main id="contenu">
-    <section id="accueil" class="vt-hero">
-      <div class="vt-hero-grid">
-        <div>
-          <p class="vt-eyebrow">Grand Est · Lorraine</p>
-          <h1>Votre garage de confiance</h1>
-          <p class="vt-lead">Entretien, pneus et carrosserie — Plappeville et environs.</p>
-          <p><a class="vt-btn" href="#offres">Voir nos offres</a> <a href="#contact">Contact</a></p>
-        </div>
-        <div><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
-              <a href="images/auto-pont.png" class="glightbox" data-gallery="automobile-vis">
-                <img src="images/auto-pont.png" width="1200" height="520" alt="Garage Central Plappeville" fetchpriority="high" decoding="async" class="">
-              </a>
-            </figure></div>
+<body class="vt-body vt-body-garage">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Ouvert aujourd&#x27;hui · Lun–sam</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=Zone+artisanale+des+Gravières+57050+Plappeville">Zone artisanale des Gravières, 57050 Plappeville</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0387654321">03 87 65 43 21</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Garage Central Plappeville</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="atelier.html">L&#x27;atelier</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Prendre RDV</a>
       </div>
-    </section>
-    <section class="vt-stats" aria-label="Chiffres clés"><div class="vt-stats-grid"><div><strong class="vt-stat">35 ans</strong><span>atelier</span></div><div><strong class="vt-stat">2 h</strong><span>devis</span></div><div><strong class="vt-stat">Toutes</strong><span>marques</span></div></div></section>
-    <section id="offres"><div class="vt-wrap">
-      <h2>Ce que nous proposons</h2>
-      <p class="vt-muted-center">Services clairs et visuels pour convertir.</p>
-      <div class="vt-cards">
-        <article class="vt-card vitrine-img-reveal">
-          <figure class="vitrine-figure vitrine-card-visual mb-0">
-            <a href="images/auto-mecanique.png" class="glightbox" data-gallery="automobile-vis" data-glightbox="title: Entretien">
-              <img src="images/auto-mecanique.png" alt="Entretien" loading="lazy" decoding="async">
-            </a>
-          </figure>
-          <h3 class="vt-brand">Entretien</h3><p>Révisions.</p>
+    </div>
+  </nav>
+</header><main><section class="vt-hero-overlay position-relative">
+  <div class="vt-hero-overlay-bg"><picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100 h-100 vt-cover" alt="Atelier mécanique avec véhicule sur pont" decoding="async" fetchpriority="high"></picture></div>
+  <div class="vt-hero-overlay-shade"></div>
+  <div class="container position-relative vt-hero-overlay-copy py-5 py-lg-6">
+    <div class="col-lg-7 col-xl-6">
+      <p class="vt-eyebrow text-uppercase mb-2">Garage Central · Plappeville</p>
+      <h1 class="vt-display display-4 mb-3">L&#x27;atelier de confiance des Messins depuis 1972</h1>
+      <p class="lead mb-4">Mécanique générale, carrosserie et pneus — devis clair avant chaque intervention.</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-vt-primary btn-lg rounded-0 px-4" href="contact.html">Réserver un créneau</a>
+        <a class="btn btn-vt-outline btn-lg rounded-0 px-4" href="services.html">Nos services</a>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-stats-band" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="row text-center g-0"><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">1972</strong>
+          <span class="vt-stat-lbl">Fondé</span>
+        </div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">900 m²</strong>
+          <span class="vt-stat-lbl">Atelier</span>
+        </div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">6</strong>
+          <span class="vt-stat-lbl">Mécaniciens</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-svc-tiles py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-uppercase mb-4">Interventions phares</h2>
+    <div class="row g-3"><div class="col-md-4">
+        <article class="vt-svc-tile h-100">
+          <h3 class="h5 text-uppercase">Entretien</h3>
+          <ul class="small mb-0 ps-3"><li>Vidange &amp; filtres</li><li>Révision constructeur</li><li>Contrôle pollution</li></ul>
         </article>
-        <article class="vt-card vitrine-img-reveal">
-          <figure class="vitrine-figure vitrine-card-visual mb-0">
-            <a href="images/auto-pneus.png" class="glightbox" data-gallery="automobile-vis" data-glightbox="title: Pneus">
-              <img src="images/auto-pneus.png" alt="Pneus" loading="lazy" decoding="async">
-            </a>
-          </figure>
-          <h3 class="vt-brand">Pneus</h3><p>Montage.</p>
+      </div><div class="col-md-4">
+        <article class="vt-svc-tile h-100 vt-svc-tile-hot">
+          <h3 class="h5 text-uppercase">Pneumatiques</h3>
+          <ul class="small mb-0 ps-3"><li>Montage &amp; équilibrage</li><li>Géométrie</li><li>Été / hiver toutes marques</li></ul>
         </article>
-        <article class="vt-card vitrine-img-reveal">
-          <figure class="vitrine-figure vitrine-card-visual mb-0">
-            <a href="images/auto-pneus.png" class="glightbox" data-gallery="automobile-vis" data-glightbox="title: Carrosserie">
-              <img src="images/auto-pneus.png" alt="Carrosserie" loading="lazy" decoding="async">
-            </a>
+      </div><div class="col-md-4">
+        <article class="vt-svc-tile h-100">
+          <h3 class="h5 text-uppercase">Carrosserie</h3>
+          <ul class="small mb-0 ps-3"><li>Devis assurance 24 h</li><li>Cabine peinture</li><li>Débosselage sans peinture</li></ul>
+        </article>
+      </div></div>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">Un garage de quartier</h2>
+        <p class="mb-3">Fondé par Jean-Pierre Daniel, repris par ses fils en 2005, le Garage Central accompagne trois générations de clients entre Metz et Woippy.</p><p class="mb-3">Toutes marques, véhicules thermiques et hybrides.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Nos services</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Révision automobile" decoding="async" loading="lazy"></picture>
           </figure>
-          <h3 class="vt-brand">Carrosserie</h3><p>Peinture.</p>
-        </article></div>
-    </div></section>
-    <section id="engagements" class="vt-band"><div class="vt-wrap vt-center">
-      <h2>Pourquoi nous faire confiance</h2>
-      <p>Réactivité, transparence et ancrage local.</p>
-    </div></section>
-    <section id="contact"><div class="vt-wrap vt-form">
-      <h2>Contact</h2>
-      <form action="#" method="get">
-        <label>Nom <input name="nom" type="text"></label>
-        <label>E-mail <input name="email" type="email"></label>
-        <label>Message <textarea name="message" rows="4"></textarea></label>
-        <button class="vt-btn" type="submit">Envoyer ma demande</button>
-      </form>
-      <p><a href="../index.html">← Hub vitrines</a></p>
-    </div></section>
-  </main>
-  <footer class="vt-footer"><p>Maquette — DanielCraft</p></footer>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Entretien</h3>
+            <p class="card-text text-secondary small mb-0">Révisions constructeur respectées.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Montage de pneus" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Pneumatiques</h3>
+            <p class="card-text text-secondary small mb-0">Été, hiver, toutes marques.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Réparation carrosserie" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Carrosserie</h3>
+            <p class="card-text text-secondary small mb-0">Devis assurance en 24 h.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="py-5">
+  <div class="container">
+    <ol class="vt-timeline list-unstyled mx-auto mb-0"><li class="vt-timeline-item pb-4">
+        <strong class="d-block vt-timeline-date">1972</strong>
+        <span>Ouverture par Jean-Pierre Daniel à Plappeville.</span>
+      </li><li class="vt-timeline-item pb-4">
+        <strong class="d-block vt-timeline-date">2005</strong>
+        <span>Reprise par la deuxième génération — extension carrosserie.</span>
+      </li><li class="vt-timeline-item pb-4">
+        <strong class="d-block vt-timeline-date">2018</strong>
+        <span>Formation hybride Bosch et espace diagnostic.</span>
+      </li><li class="vt-timeline-item pb-4">
+        <strong class="d-block vt-timeline-date">2024</strong>
+        <span>900 m², six mécaniciens et deux carrossiers.</span>
+      </li></ol>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">Pièces d&#x27;origine ou équivalent premium — garantie 2 ans sur réparations majeures.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">Devis clair</span><span class="badge rounded-pill vt-badge">Véhicule de courtoisie</span><span class="badge rounded-pill vt-badge">Multimarque</span><span class="badge rounded-pill vt-badge">Hybride</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Contrôle anti-pollution : créneaux sans attente.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Réserver un créneau</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Garage Central Plappeville</strong>
+        <p class="small opacity-75 mb-2">Zone artisanale des Gravières, 57050 Plappeville</p>
+        <a class="small" href="https://maps.google.com/?q=Zone+artisanale+des+Gravières+57050+Plappeville">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="services.html">Services</a><a class="nav-link px-0" href="atelier.html">L&#x27;atelier</a><a class="nav-link px-0" href="contact.html">Prendre RDV</a><a class="nav-link px-0" href="contact.html">Devis assurance</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0387654321">03 87 65 43 21</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@brasserie-saint-jacques.fr">contact@brasserie-saint-jacques.fr</a></p>
+        <p class="mb-0">Lun–ven 8h–18h · Sam 8h–12h</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0387654321">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Prendre RDV</a>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
-  <script src="../shared/vitrine-images.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -6,27 +6,6 @@
   "stripe_note": "Renseigner stripe_payment_link_url par vitrine (Payment Link Stripe) après création des produits.",
   "items": [
     {
-      "slug": "technologie",
-      "category": "tech",
-      "title": "Synapse Lorraine",
-      "tagline": "SaaS, API & cloud",
-      "excerpt": "Site SaaS ou ESN crédible : hero, preuves, FAQ et formulaire démo — maquette tech pour Metz et le Grand Est.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Navigation complète façon site produit : offres, preuves, FAQ, prise de contact",
-        "Bloc d'accroche fort et boutons d'action pour pousser vers une démo ou un audit",
-        "Galerie visuelle prête à accueillir vos captures d'écran et témoignages clients",
-        "Formulaire de contact déjà mis en page (branchement e-mail ou outil sur devis)"
-      ],
-      "stack": [
-        "Bulma",
-        "AOS",
-        "Swiper",
-        "GLightbox",
-        "HTML statique"
-      ]
-    },
-    {
       "slug": "restauration",
       "category": "hcr",
       "title": "Brasserie Saint-Jacques",
@@ -80,38 +59,21 @@
       ]
     },
     {
-      "slug": "industrie",
-      "category": "industrie",
-      "title": "Précisite Usinage",
-      "tagline": "Usinage & qualité",
-      "excerpt": "Site usinage et industrie : machines, devis express et FAQ qualité — convertissez les appels d'offres.",
+      "slug": "automobile",
+      "category": "mobilite",
+      "title": "Garage Central Plappeville",
+      "tagline": "Mécanique & carrosserie",
+      "excerpt": "Garage auto : entretien, pneus, carrosserie et RDV — site atelier qui rassure avant le devis.",
       "stripe_payment_link_url": "",
       "features": [
-        "Présentation des savoir-faire machines et contrôles qualité",
-        "Demande de devis rapide pour transformer la visite en opportunité",
-        "FAQ réponses aux questions fréquentes des donneurs d'ordre"
+        "Mise en avant expertise, pneus et services pour couvrir l'essentiel de l'atelier",
+        "Bandeau visuel pour montrer l'équipe et l'outil au travail",
+        "Prise de rendez-vous en ligne déjà cadrée"
       ],
       "stack": [
-        "Bulma",
-        "AOS"
-      ]
-    },
-    {
-      "slug": "association",
-      "category": "ess",
-      "title": "Solidarités Metz Métropole",
-      "tagline": "Association",
-      "excerpt": "Association et ESS : dons, bénévolat et projets — vitrine mobilisatrice pour le Grand Est.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Parcours dons et objectifs de campagne pour mobiliser",
-        "Bandeau d'actions et projets porteurs de sens",
-        "Formulaire bénévoles pour transformer l'intérêt en engagement concret"
-      ],
-      "stack": [
-        "Bulma",
-        "Swiper",
-        "AOS"
+        "DaisyUI 4",
+        "Tailwind CSS",
+        "HTML statique"
       ]
     },
     {
@@ -151,111 +113,20 @@
       ]
     },
     {
-      "slug": "education",
-      "category": "formation",
-      "title": "Institut Mercure",
-      "tagline": "Formation pro",
-      "excerpt": "Centre de formation : parcours, inscriptions et alternance — rassurez apprenants et entreprises.",
+      "slug": "industrie",
+      "category": "industrie",
+      "title": "Précisite Usinage",
+      "tagline": "Usinage & qualité",
+      "excerpt": "Site usinage et industrie : machines, devis express et FAQ qualité — convertissez les appels d'offres.",
       "stripe_payment_link_url": "",
       "features": [
-        "Vue d’ensemble des parcours et niveaux pour rassurer les futurs apprenants",
-        "Parcours d’inscription ou de pré-inscription clair et rassurant",
-        "Visuels pédagogiques prêts à être remplacés par vos campus et salles"
+        "Présentation des savoir-faire machines et contrôles qualité",
+        "Demande de devis rapide pour transformer la visite en opportunité",
+        "FAQ réponses aux questions fréquentes des donneurs d'ordre"
       ],
       "stack": [
-        "Tailwind CSS",
-        "GLightbox",
-        "HTML statique"
-      ]
-    },
-    {
-      "slug": "services",
-      "category": "services",
-      "title": "Proprio Facility",
-      "tagline": "Facility & conciergerie",
-      "excerpt": "Facility et conciergerie : offres illustrées, devis et FAQ — pour immeubles tertiaires en Lorraine.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Indicateur de lecture pour guider le visiteur sur les pages longues",
-        "Grille d’offres illustrée pour valoriser vos prestations au premier coup d’œil",
-        "FAQ et formulaire de demande de devis déjà structurés"
-      ],
-      "stack": [
-        "Tailwind CSS",
-        "GLightbox",
-        "HTML statique"
-      ]
-    },
-    {
-      "slug": "banque",
-      "category": "finance",
-      "title": "Verlaine Banque Régionale",
-      "tagline": "Institution & offres",
-      "excerpt": "Banque régionale : comptes, crédits et agences de proximité — modèle qui inspire confiance.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Repères agences et contact humain pour ancrer le local",
-        "Tableaux d’offres clairs pour comparer sans surcharge",
-        "Bloc simulation / projet pour engager la conversation commerciale"
-      ],
-      "stack": [
-        "Tailwind CSS",
-        "AOS",
-        "HTML statique"
-      ]
-    },
-    {
-      "slug": "etablissement",
-      "category": "hotel",
-      "title": "Hôtel Stanislas Collection",
-      "tagline": "Hôtellerie",
-      "excerpt": "Hôtel 4 étoiles : chambres, spa et séminaires — réservation visible, design hôtellerie premium.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Présentation des gammes de chambres et de suites comme sur un site grand hôtel",
-        "Mise en avant spa, séminaires et événements pour diversifier les réservations",
-        "Bouton réservation / contact visible tout au long du parcours"
-      ],
-      "stack": [
-        "Pico CSS v2",
-        "GLightbox",
-        "HTML statique"
-      ]
-    },
-    {
-      "slug": "automobile",
-      "category": "mobilite",
-      "title": "Garage Central Plappeville",
-      "tagline": "Mécanique & carrosserie",
-      "excerpt": "Garage auto : entretien, pneus, carrosserie et RDV — site atelier qui rassure avant le devis.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Mise en avant expertise, pneus et services pour couvrir l’essentiel de l’atelier",
-        "Bandeau visuel pour montrer l’équipe et l’outil au travail",
-        "Prise de rendez-vous en ligne déjà cadrée"
-      ],
-      "stack": [
-        "DaisyUI 4",
-        "Tailwind CSS",
-        "HTML statique"
-      ]
-    },
-    {
-      "slug": "chocolatier",
-      "category": "artisanat",
-      "title": "Chocolaterie Vialson",
-      "tagline": "Artisan chocolatier",
-      "excerpt": "Chocolatier artisan : boutique, coffrets et atelier — galerie gourmande pour booster les ventes.",
-      "stripe_payment_link_url": "",
-      "features": [
-        "Mise en scène des goûts, origines et histoire de maison",
-        "Galerie boutique pour donner envie avant le passage en caisse",
-        "FAQ coffrets cadeaux et commandes groupées"
-      ],
-      "stack": [
-        "Open Props",
-        "GLightbox",
-        "HTML statique"
+        "Bulma",
+        "AOS"
       ]
     },
     {
@@ -345,6 +216,194 @@
         "Open Props",
         "CSS Grid",
         "HTML statique"
+      ]
+    },
+    {
+      "slug": "association",
+      "category": "ess",
+      "title": "Solidarités Metz Métropole",
+      "tagline": "Association",
+      "excerpt": "Association et ESS : dons, bénévolat et projets — vitrine mobilisatrice pour le Grand Est.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Parcours dons et objectifs de campagne pour mobiliser",
+        "Bandeau d'actions et projets porteurs de sens",
+        "Formulaire bénévoles pour transformer l'intérêt en engagement concret"
+      ],
+      "stack": [
+        "Bulma",
+        "Swiper",
+        "AOS"
+      ]
+    },
+    {
+      "slug": "education",
+      "category": "formation",
+      "title": "Institut Mercure",
+      "tagline": "Formation pro",
+      "excerpt": "Centre de formation : parcours, inscriptions et alternance — rassurez apprenants et entreprises.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Vue d'ensemble des parcours et niveaux pour rassurer les futurs apprenants",
+        "Parcours d'inscription ou de pré-inscription clair et rassurant",
+        "Visuels pédagogiques prêts à être remplacés par vos campus et salles"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "services",
+      "category": "services",
+      "title": "Proprio Facility",
+      "tagline": "Facility & conciergerie",
+      "excerpt": "Facility et conciergerie : offres illustrées, devis et FAQ — pour immeubles tertiaires en Lorraine.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Indicateur de lecture pour guider le visiteur sur les pages longues",
+        "Grille d'offres illustrée pour valoriser vos prestations au premier coup d'œil",
+        "FAQ et formulaire de demande de devis déjà structurés"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "etablissement",
+      "category": "hotel",
+      "title": "Hôtel Stanislas Collection",
+      "tagline": "Hôtellerie",
+      "excerpt": "Hôtel 4 étoiles : chambres, spa et séminaires — réservation visible, design hôtellerie premium.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Présentation des gammes de chambres et de suites comme sur un site grand hôtel",
+        "Mise en avant spa, séminaires et événements pour diversifier les réservations",
+        "Bouton réservation / contact visible tout au long du parcours"
+      ],
+      "stack": [
+        "Pico CSS v2",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "technologie",
+      "category": "tech",
+      "title": "Synapse Lorraine",
+      "tagline": "Site produit B2B",
+      "excerpt": "Site éditeur logiciel : hero, preuves sociales, FAQ et formulaire démo — base crédible pour SaaS, API ou ESN en Grand Est.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Navigation complète façon site produit : offres, preuves, FAQ, prise de contact",
+        "Bloc d'accroche fort et boutons d'action pour pousser vers une démo ou un audit",
+        "Galerie visuelle prête à accueillir vos captures d'écran et témoignages clients",
+        "Formulaire de contact déjà mis en page (branchement e-mail ou outil sur devis)"
+      ],
+      "stack": [
+        "Bulma",
+        "AOS",
+        "Swiper",
+        "GLightbox",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "saas-landing",
+      "category": "saas",
+      "title": "FlowMetrics",
+      "tagline": "Landing SaaS & conversion",
+      "excerpt": "Landing produit : hero orienté bénéfice, features avant/après, pricing avec effet de contraste et tableau comparatif stratégique.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Section pricing avec plan recommandé et ancre haute pour guider le choix",
+        "Features en contraste avant/après — le produit devient désirable sans changer le code",
+        "Tableau comparatif où vous contrôlez les critères qui comptent",
+        "Hero et CTA calibrés pour la conversion fondateur / early-stage"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "HTML statique",
+        "CSS custom"
+      ]
+    },
+    {
+      "slug": "saas-onboarding",
+      "category": "saas",
+      "title": "TalentLoop",
+      "tagline": "Onboarding produit",
+      "excerpt": "Parcours onboarding RH en 4 étapes : barre de progression, copy orienté valeur et chemin balisé vers le aha moment.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Écran unique = une intention claire (réduction de l'effort cognitif)",
+        "Copy qui explique pourquoi chaque étape rapproche de la valeur",
+        "Barre de progression et fil d'Ariane pour limiter l'abandon",
+        "Preview du résultat final pour ancrer le aha moment"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "HTML statique",
+        "CSS custom"
+      ]
+    },
+    {
+      "slug": "saas-dashboard",
+      "category": "saas",
+      "title": "MetricPulse",
+      "tagline": "Dashboard & analytics",
+      "excerpt": "Dashboard produit : sidebar regroupée par intention, KPIs activation et funnel onboarding lisible en un coup d'œil.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Navigation latérale structurée par intention, pas par feature brute",
+        "KPIs activation, time-to-value et churn en cartes comparables",
+        "Funnel onboarding visualisé pour repérer les fuites du parcours",
+        "Tableau d'événements récents pour le suivi opérationnel"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "HTML statique",
+        "CSS custom"
+      ]
+    },
+    {
+      "slug": "saas-empty",
+      "category": "saas",
+      "title": "QueryBase",
+      "tagline": "Empty states & recherche",
+      "excerpt": "Recherche sans résultat : best-sellers alternatifs, vote roadmap et correcteur d'intention — zéro impasse pour l'utilisateur.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Suggestions de features populaires quand le résultat exact manque",
+        "Bouton « votez pour cette feature » — échec transformé en signal produit",
+        "Correcteur d'intention (synonymes, fautes de frappe)",
+        "États vides orientés action, jamais un mur blanc"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "HTML statique",
+        "CSS custom"
+      ]
+    },
+    {
+      "slug": "saas-notifications",
+      "category": "saas",
+      "title": "PingFlow",
+      "tagline": "Notifications in-app",
+      "excerpt": "Centre de notifications : hiérarchie claire, actions requises mises en avant et préférences granulaires anti-spam.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Filtres par type (produit, équipe, action requise)",
+        "Notifications actionnables avec CTA primaire et secondaire",
+        "Niveaux d'urgence visuels sans surcharger l'interface",
+        "Bloc préférences pour respecter le consentement utilisateur"
+      ],
+      "stack": [
+        "Tailwind CSS",
+        "HTML statique",
+        "CSS custom"
       ]
     }
   ]

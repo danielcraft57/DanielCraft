@@ -1,0 +1,119 @@
+{
+  "slug": "fitness",
+  "brand": "Pulse Fitness Metz",
+  "category": "sport",
+  "locale": "Metz, Moselle, Grand Est, France",
+  "style_suffix": "Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Salle Pulse Fitness Metz",
+      "subject": "Large modern fitness gym interior Metz: treadmills and free weights area, dramatic lighting, lime accent walls, wide hero banner, energetic atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Dépassez vos limites — 1 200 m² à Metz Sablon" },
+        { "page": "cours.html", "section": "hero", "text": "Cours collectifs HIIT, cycling et yoga" },
+        { "page": "tarifs.html", "section": "hero", "text": "Formules flexibles — essai gratuit" },
+        { "page": "contact.html", "section": "hero", "text": "Réservez votre séance découverte" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "fitness",
+      "alt": "Cours HIIT Pulse Fitness",
+      "subject": "HIIT group fitness class in modern gym Metz, coach motivating participants, high energy cross training, dramatic gym lighting",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "HIIT & Cross — 45 min tous niveaux" },
+        { "page": "cours.html", "section": "chapter", "text": "Fractionné haute intensité encadré" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "fitness",
+      "alt": "Studio cycling Pulse Fitness",
+      "subject": "Indoor cycling studio with rows of bikes, immersive lighting, energetic spin class atmosphere Metz fitness center",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Cycling studio — playlists live" },
+        { "page": "cours.html", "section": "chapter", "text": "30 ou 50 min — cardio intense" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "fitness",
+      "alt": "Cours yoga Pulse Fitness",
+      "subject": "Yoga flow class in bright studio corner, wooden floor, calm recovery atmosphere in modern Metz gym",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Yoga Flow — mobilité et récupération" },
+        { "page": "cours.html", "section": "chapter", "text": "Matin et soir — tous niveaux" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Zone musculation libre",
+      "subject": "Free weights and squat racks area in premium gym Metz, rubber flooring, professional equipment, no people",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Musculation libre — racks et haltères" },
+        { "page": "tarifs.html", "section": "gallery", "text": "Accès illimité 6h–23h" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Espace détente membres",
+      "subject": "Gym lounge recovery area with benches and water station, modern fitness club Metz, welcoming member space",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Espace détente et vestiaires premium" },
+        { "page": "tarifs.html", "section": "gallery", "text": "Services inclus dans l'abonnement" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Cours HIIT",
+      "subject": "HIIT training station with kettlebells and battle ropes, fitness card image, Metz gym detail shot",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "HIIT & Cross-training" },
+        { "page": "cours.html", "section": "card", "text": "45 min — coach certifié" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Studio cycling",
+      "subject": "Close-up of indoor cycling bike in dark studio with colored lighting, fitness card photography",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Cycling immersif" },
+        { "page": "cours.html", "section": "card", "text": "Studio dédié — 20 places" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Yoga Flow",
+      "subject": "Yoga mats aligned in serene studio corner, soft natural light, fitness wellness card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Yoga Flow" },
+        { "page": "cours.html", "section": "card", "text": "Mobilité — matin & soir" }
+      ]
+    }
+  ]
+}

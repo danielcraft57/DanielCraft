@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Soin visage</title>
-  <rect width="800" height="520" fill="#fdf5f8"/>
-  <rect x="100" y="100" width="600" height="300" rx="12" fill="#e8d0dc" stroke="#8b5a6b" stroke-width="2"/>
-  <circle cx="400" cy="250" r="70" fill="#8b5a6b" opacity=".2"/>
-  <path d="M150 400 Q400 320 650 400" fill="none" stroke="#5c3d4d" stroke-width="2" class="vitrine-sketch-stroke"/>
-</svg>

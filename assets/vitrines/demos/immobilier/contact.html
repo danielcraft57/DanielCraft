@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactez Patrimoine Lorraine à Nancy.">
+  <title>Contact — Patrimoine Lorraine</title>
+  <!-- layout: property-search · Bootstrap 5 · vitrine site complet -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Patrimoine Lorraine",
+  "description": "Agence immobilière Nancy — vente, location et estimation",
+  "telephone": "+33383352890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8 place Stanislas",
+    "addressLocality": "Nancy",
+    "postalCode": "54000",
+    "addressCountry": "FR"
+  }
+}
+</script>
+</head>
+<body class="vt-body vt-body-property">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Agence ouverte · Lun–sam</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">8 place Stanislas, 54000 Nancy</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0383352890">03 83 35 28 90</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Patrimoine Lorraine</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li><li class="nav-item"><a class="nav-link" href="biens.html">Nos biens</a></li><li class="nav-item"><a class="nav-link" href="estimation.html">Estimation</a></li><li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="estimation.html">Estimer mon bien</a>
+      </div>
+    </div>
+  </nav>
+</header><main>
+<section class="vt-hero-compact py-5 text-center">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Contact</p>
+    <h1 class="vt-display display-6">Parlons de votre projet</h1>
+    <p class="lead text-secondary">8 place Stanislas, Nancy — réponse sous 24 h.</p>
+  </div>
+</section><section class="vt-reserve py-5" aria-labelledby="estim-title">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h2 id="estim-title" class="vt-section-title">Estimation gratuite</h2>
+        <p class="text-secondary mb-4">Réponse sous 72 h — visite optionnelle à Nancy et environs.</p>
+        <form class="row g-3" action="#" method="post">
+          <div class="col-md-6"><label class="form-label">Type de bien<select class="form-select" name="type" required><option value="">Choisir…</option><option>Maison</option><option>Appartement</option><option>Terrain</option><option>Immeuble</option><option>Local commercial</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Surface (m²)<input type="number" class="form-control" name="surface" min="10" placeholder="ex. 95"></label></div>
+          <div class="col-12"><label class="form-label">Adresse du bien<input type="text" class="form-control" name="address" placeholder="Rue, code postal, ville" required></label></div>
+          <div class="col-md-6"><label class="form-label">Projet<select class="form-select" name="project"><option>Vendre</option><option>Louer</option><option>Estimer seulement</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Délai souhaité<input type="text" class="form-control" name="deadline" placeholder="ex. sous 3 mois"></label></div>
+          <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
+          <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel" required></label></div>
+          <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
+          <div class="col-12"><label class="form-label">Précisions<textarea class="form-control" name="message" rows="3" placeholder="État, travaux, stationnement…"></textarea></label></div>
+          <div class="col-12"><button type="submit" class="btn btn-vt-primary rounded-pill px-5">Recevoir mon estimation</button></div>
+          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+        </form>
+      </div>
+      <aside class="col-lg-5">
+        <div class="card border-0 shadow-sm p-4 h-100 vt-aside-panel">
+          <h2 class="h4 vt-section-title">Agence Nancy</h2>
+          <address class="text-secondary mb-3">
+            <strong class="text-body">Patrimoine Lorraine</strong><br>
+            8 place Stanislas, 54000 Nancy
+          </address>
+          <p><a href="tel:0383352890">03 83 35 28 90</a><br>
+          <a href="mailto:contact@patrimoine-lorraine.fr">contact@patrimoine-lorraine.fr</a></p>
+          <table class="table table-sm vt-hours">
+            <caption class="caption-top fw-semibold">Permanences</caption>
+            <tbody>
+              <tr><th>Lun – Ven</th><td>9h – 19h</td></tr>
+              <tr><th>Samedi</th><td>10h – 13h</td></tr>
+            </tbody>
+          </table>
+          <ul class="small text-secondary ps-3 mb-0">
+            <li>Estimation gratuite sous 72 h</li>
+            <li>340+ ventes par an</li>
+            <li>Nancy, Metz, Thionville</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Démonstration — aucune donnée transmise.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Envoyer ma demande</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Patrimoine Lorraine</strong>
+        <p class="small opacity-75 mb-2">8 place Stanislas, 54000 Nancy</p>
+        <a class="small" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="biens.html">Nos biens</a><a class="nav-link px-0" href="estimation.html">Estimation</a><a class="nav-link px-0" href="contact.html">Estimer mon bien</a><a class="nav-link px-0" href="biens.html">Gestion locative</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0383352890">03 83 35 28 90</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@patrimoine-lorraine.fr">contact@patrimoine-lorraine.fr</a></p>
+        <p class="mb-0">Lun–ven 9h–19h · Sam 10h–13h</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0383352890">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="estimation.html">Estimer mon bien</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

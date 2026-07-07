@@ -1,0 +1,18 @@
+{
+  "slug": "saas-onboarding",
+  "brand": "TalentLoop",
+  "category": "saas",
+  "locale": "SaaS HR onboarding",
+  "style_suffix": "Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+  "images": [
+    { "filename": "hero.png", "width": 1200, "height": 520, "scene": "saas_ui", "alt": "Landing TalentLoop", "subject": "HR onboarding SaaS hero: welcome screen with 4-step progress bar checklist and friendly illustration area, purple accent widescreen" },
+    { "filename": "scene-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Dashboard RH", "subject": "HR onboarding dashboard UI with employee progress cards and completion percentages, purple SaaS interface, no readable text" },
+    { "filename": "scene-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Parcours 3 clics", "subject": "Three-step onboarding wizard UI with large progress indicator and form fields, streamlined UX, no readable text" },
+    { "filename": "scene-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Intégrations SIRH", "subject": "HR integrations panel connecting payroll and ATS systems, API connectors UI, no readable text" },
+    { "filename": "gallery-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Composant UI", "subject": "Onboarding task checklist UI component with checkmarks and due dates, HR SaaS detail, no readable text" },
+    { "filename": "gallery-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "App mobile RH", "subject": "Mobile HR onboarding app on phone showing welcome tasks for new hire, purple theme, no readable text" },
+    { "filename": "card-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Analytics onboarding", "subject": "Onboarding analytics dashboard with time-to-productivity metrics and funnel charts, HR SaaS, no readable text" },
+    { "filename": "card-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Migration assistée", "subject": "Data migration wizard UI with import progress and mapping table, HR platform transition, no readable text" },
+    { "filename": "card-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Sécurité données RH", "subject": "GDPR data protection settings UI for HR platform with consent and retention controls, no readable text" }
+  ]
+}

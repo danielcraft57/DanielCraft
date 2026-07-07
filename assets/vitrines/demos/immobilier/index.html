@@ -3,105 +3,322 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vendre ou louer en toute confiance. Agence immobilière locale — estimation, visites et suivi jusqu&#x27;à la signature.">
-  <title>Patrimoine Lorraine — Agence immobilière | démo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../shared/vitrine-images.css">
-  <link rel="stylesheet" href="../shared/vitrine-media.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <meta name="description" content="Agence immobilière à Nancy : vente, location et gestion sur le Grand Est.">
+  <title>Patrimoine Lorraine — Immobilier Nancy</title>
+  <!-- layout: property-search · Bootstrap 5 · vitrine site complet -->
 
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm" aria-label="Navigation principale">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand vt-brand fs-5" href="#accueil">Patrimoine Lorraine</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#offres">Offres</a></li>
-          <li class="nav-item"><a class="nav-link" href="#engagements">Engagements</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Contact</a></li>
-        </ul>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Patrimoine Lorraine",
+  "description": "Agence immobilière Nancy — vente, location et estimation",
+  "telephone": "+33383352890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8 place Stanislas",
+    "addressLocality": "Nancy",
+    "postalCode": "54000",
+    "addressCountry": "FR"
+  }
+}
+</script>
+</head>
+<body class="vt-body vt-body-property">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Agence ouverte · Lun–sam</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">8 place Stanislas, 54000 Nancy</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0383352890">03 83 35 28 90</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Patrimoine Lorraine</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="biens.html">Nos biens</a></li><li class="nav-item"><a class="nav-link" href="estimation.html">Estimation</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="estimation.html">Estimer mon bien</a>
       </div>
     </div>
   </nav>
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="vt-hero text-white">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6 vitrine-img-reveal">
-            <p class="vt-eyebrow text-uppercase small mb-2">Grand Est · Lorraine</p>
-            <h1 class="mb-3">Vendre ou louer en toute confiance</h1>
-            <p class="lead mb-4 opacity-90">Agence immobilière locale — estimation, visites et suivi jusqu&#x27;à la signature.</p>
-            <a class="btn btn-lg vt-btn me-2" href="#offres">Voir nos offres</a>
-            <a class="btn btn-lg btn-outline-light" href="#contact">Nous contacter</a>
-          </div>
-          <div class="col-lg-6"><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
-              <a href="images/hero.png" class="glightbox" data-gallery="immobilier-vis">
-                <img src="images/hero.png" width="1200" height="520" alt="Patrimoine Lorraine" fetchpriority="high" decoding="async" class="w-100">
-              </a>
-            </figure></div>
+</header><main><section class="vt-hero-property">
+  <div class="container-fluid px-0">
+    <div class="row g-0 align-items-stretch">
+      <div class="col-lg-5 d-flex align-items-center vt-hero-property-copy">
+        <div class="p-4 p-lg-5">
+          <p class="vt-eyebrow text-uppercase mb-2">Nancy · Grand Est</p>
+          <h1 class="vt-display display-5 mb-3">Votre patrimoine mérite une attention d&#x27;exception</h1>
+          <p class="lead mb-4">Achat, vente et gestion locative à Nancy, Metz et en Moselle.</p>
+          <form class="vt-search-bar row g-2" action="biens.html" method="get" role="search">
+            <div class="col-sm-4">
+              <label class="visually-hidden" for="vt-search-type">Type de projet</label>
+              <select class="form-select" id="vt-search-type" name="type">
+                <option>Acheter</option><option>Louer</option><option>Vendre</option>
+              </select>
+            </div>
+            <div class="col-sm-5">
+              <label class="visually-hidden" for="vt-search-loc">Ville</label>
+              <input class="form-control" id="vt-search-loc" name="ville" type="search" placeholder="Nancy, Metz, Thionville…">
+            </div>
+            <div class="col-sm-3">
+              <button class="btn btn-vt-primary w-100" type="submit">Rechercher</button>
+            </div>
+          </form>
         </div>
       </div>
-    </section>
-    <section class="vt-stats py-4" aria-label="Chiffres clés"><div class="container"><div class="row text-center g-3"><div class="col-md-4"><strong class="vt-stat">340+</strong><span>ventes/an</span></div><div class="col-md-4"><strong class="vt-stat">28 ans</strong><span>agence</span></div><div class="col-md-4"><strong class="vt-stat">4,8</strong><span>clients</span></div></div></div></section>
-    <section id="offres" class="py-5"><div class="container">
-      <h2 class="vt-brand display-6 text-center mb-2">Ce que nous proposons</h2>
-      <p class="text-center text-muted mb-5 col-lg-8 mx-auto">Services clairs, visuels lisibles, appel à l'action visible.</p>
-      <div class="row g-4">
-          <div class="col-md-4 vitrine-img-reveal">
-            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
-              <figure class="vitrine-figure vitrine-card-visual mb-0">
-                <a href="images/bien-sablon.svg" class="glightbox" data-gallery="immobilier-vis" data-glightbox="title: Vente">
-                  <img src="images/bien-sablon.svg" alt="Vente" loading="lazy" decoding="async">
-                </a>
-              </figure>
-              <div class="card-body"><h3 class="h5 vt-brand">Vente</h3><p class="text-muted mb-0">Mandats et visites.</p></div>
-            </article>
+      <div class="col-lg-7 vt-hero-property-media">
+        <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100 h-100 vt-cover" alt="Maison de maître Nancy — Patrimoine Lorraine" decoding="async" fetchpriority="high"></picture>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-stats-band" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="row text-center g-0"><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">340+</strong>
+          <span class="vt-stat-lbl">ventes / an</span>
+        </div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">28 ans</strong>
+          <span class="vt-stat-lbl">à Nancy</span>
+        </div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">4,8/5</strong>
+          <span class="vt-stat-lbl">avis clients</span>
+        </div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">72 h</strong>
+          <span class="vt-stat-lbl">estimation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-listings py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">Sélection du moment</h2>
+    <div class="row g-4"><div class="col-md-6 col-lg-4">
+        <article class="card vt-listing-card h-100 border-0 shadow-sm">
+          <div class="vt-listing-img-wrap position-relative">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-listing-img" alt="Maison Metz Sablon" decoding="async" loading="lazy"></picture>
+            <span class="vt-listing-badge">Coup de cœur</span>
           </div>
-          <div class="col-md-4 vitrine-img-reveal">
-            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
-              <figure class="vitrine-figure vitrine-card-visual mb-0">
-                <a href="images/bien-thionville.svg" class="glightbox" data-gallery="immobilier-vis" data-glightbox="title: Gestion">
-                  <img src="images/bien-thionville.svg" alt="Gestion" loading="lazy" decoding="async">
-                </a>
-              </figure>
-              <div class="card-body"><h3 class="h5 vt-brand">Gestion</h3><p class="text-muted mb-0">Location.</p></div>
-            </article>
+          <div class="card-body">
+            <p class="vt-listing-price mb-1">685 000 €</p>
+            <h3 class="h6 vt-listing-title mb-2">Maison de maître — Metz Sablon</h3>
+            <p class="small text-secondary mb-2">280 m² · 6 pièces · jardin 800 m²</p>
+            <p class="small mb-0">Rénovée 2024, garage double, quartier prisé.</p>
           </div>
-          <div class="col-md-4 vitrine-img-reveal">
-            <article class="card vt-card h-100 border-0 shadow-sm overflow-hidden">
-              <figure class="vitrine-figure vitrine-card-visual mb-0">
-                <a href="images/bien-yutz.svg" class="glightbox" data-gallery="immobilier-vis" data-glightbox="title: Investissement">
-                  <img src="images/bien-yutz.svg" alt="Investissement" loading="lazy" decoding="async">
-                </a>
-              </figure>
-              <div class="card-body"><h3 class="h5 vt-brand">Investissement</h3><p class="text-muted mb-0">Études rendement.</p></div>
-            </article>
-          </div></div>
-    </div></section>
-    <section id="engagements" class="py-5 vt-muted"><div class="container col-lg-8 text-center">
-      <h2 class="vt-brand h3 mb-3">Pourquoi nous faire confiance</h2>
-      <p class="text-muted mb-0">Réactivité, transparence et ancrage local — une vitrine qui transforme les visites en demandes.</p>
-    </div></section>
-    <section id="contact" class="py-5"><div class="container col-lg-7">
-      <h2 class="vt-brand text-center mb-4">Contact</h2>
-      <form class="row g-3" action="#" method="get" aria-label="Formulaire de contact">
-        <div class="col-md-6"><label class="form-label" for="nom">Nom</label><input class="form-control" id="nom" name="nom" type="text" autocomplete="name"></div>
-        <div class="col-md-6"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" autocomplete="email"></div>
-        <div class="col-12"><label class="form-label" for="msg">Message</label><textarea class="form-control" id="msg" name="message" rows="4"></textarea></div>
-        <div class="col-12 text-center"><button class="btn vt-btn btn-lg" type="submit">Envoyer ma demande</button>
-        <p class="small text-muted mt-2 mb-0">Démonstration — aucune donnée transmise.</p></div>
-      </form>
-      <p class="text-center mt-4"><a href="../index.html">← Retour au hub des vitrines</a></p>
-    </div></section>
-  </main>
-  <footer class="vt-footer py-4 text-center"><p class="mb-0 small">Maquette — démonstration DanielCraft</p></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
-  <script src="../shared/vitrine-images.js"></script>
+        </article>
+      </div><div class="col-md-6 col-lg-4">
+        <article class="card vt-listing-card h-100 border-0 shadow-sm">
+          <div class="vt-listing-img-wrap position-relative">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-listing-img" alt="Appartement Nancy centre" decoding="async" loading="lazy"></picture>
+            
+          </div>
+          <div class="card-body">
+            <p class="vt-listing-price mb-1">395 000 €</p>
+            <h3 class="h6 vt-listing-title mb-2">Appartement haussmannien — Nancy</h3>
+            <p class="small text-secondary mb-2">95 m² · 4 pièces · 2e étage</p>
+            <p class="small mb-0">Parquet, moulures, vue parc de la Pépinière.</p>
+          </div>
+        </article>
+      </div><div class="col-md-6 col-lg-4">
+        <article class="card vt-listing-card h-100 border-0 shadow-sm">
+          <div class="vt-listing-img-wrap position-relative">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-listing-img" alt="Terrain Thionville" decoding="async" loading="lazy"></picture>
+            
+          </div>
+          <div class="card-body">
+            <p class="vt-listing-price mb-1">145 000 €</p>
+            <h3 class="h6 vt-listing-title mb-2">Terrain constructible — Thionville</h3>
+            <p class="small text-secondary mb-2">620 m² · viabilisé</p>
+            <p class="small mb-0">Lotissement calme, proche axes autoroutiers.</p>
+          </div>
+        </article>
+      </div></div>
+    <div class="text-center mt-4">
+      <a class="btn btn-vt-outline rounded-pill px-4" href="biens.html">Voir tous les biens</a>
+    </div>
+  </div>
+</section><section class="vt-hood-strip py-5 bg-light">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">Nos secteurs</h2>
+    <div class="row g-3"><div class="col-6 col-md-4 col-lg-2">
+        <div class="vt-hood-cell text-center">
+          <strong>Nancy centre</strong>
+          <span class="d-block small">42 biens</span>
+        </div>
+      </div><div class="col-6 col-md-4 col-lg-2">
+        <div class="vt-hood-cell text-center">
+          <strong>Laxou / Jarville</strong>
+          <span class="d-block small">28 biens</span>
+        </div>
+      </div><div class="col-6 col-md-4 col-lg-2">
+        <div class="vt-hood-cell text-center">
+          <strong>Metz Sablon</strong>
+          <span class="d-block small">35 biens</span>
+        </div>
+      </div><div class="col-6 col-md-4 col-lg-2">
+        <div class="vt-hood-cell text-center">
+          <strong>Thionville</strong>
+          <span class="d-block small">22 biens</span>
+        </div>
+      </div><div class="col-6 col-md-4 col-lg-2">
+        <div class="vt-hood-cell text-center">
+          <strong>Pont-à-Mousson</strong>
+          <span class="d-block small">14 biens</span>
+        </div>
+      </div><div class="col-6 col-md-4 col-lg-2">
+        <div class="vt-hood-cell text-center">
+          <strong>Épinal</strong>
+          <span class="d-block small">11 biens</span>
+        </div>
+      </div></div>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">Pourquoi Patrimoine Lorraine ?</h2>
+        <p class="mb-3">Implanté à Nancy depuis 1998, nous connaissons les réalités du marché mosellan.</p><p class="mb-3">Estimation gratuite, visites qualifiées et suivi jusqu&#x27;à l&#x27;acte authentique.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-chapters"><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Visites qualifiées</h3>
+        <p class="text-secondary mb-0">Chaque visite est préparée — dossier complet, quartier, fiscalité locale.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" class="w-100" alt="Visite appartement Nancy" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Équipe locale</h3>
+        <p class="text-secondary mb-0">28 ans à Nancy — nous connaissons chaque micro-marché mosellan.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-2.webp" type="image/webp"><img src="images/scene-2.png" class="w-100" alt="Équipe agence" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Jusqu&#x27;à l&#x27;acte</h3>
+        <p class="text-secondary mb-0">340+ ventes par an — suivi notarial et accompagnement primo-accédants.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-3.webp" type="image/webp"><img src="images/scene-3.png" class="w-100" alt="Remise des clés" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article></section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Nos services</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Vente immobilière" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Vente</h3>
+            <p class="card-text text-secondary small mb-0">Mandats exclusifs, home staging et diffusion ciblée.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Achat immobilier" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Achat</h3>
+            <p class="card-text text-secondary small mb-0">Sélection de biens, financement et négociation.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Gestion locative" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Gestion locative</h3>
+            <p class="card-text text-secondary small mb-0">Baux, quittances et états des lieux — clé en main.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="py-5">
+  <div class="container">
+    <blockquote class="vt-quote-panel mb-0">
+      « Vendu en 3 semaines, 4 % au-dessus de l'estimation initiale. » — Famille R., Metz
+    </blockquote>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">Estimation gratuite sous 72 h — home staging partenaire — gestion locative clé en main.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">FNAIM</span><span class="badge rounded-pill vt-badge">Carte pro</span><span class="badge rounded-pill vt-badge">Assurance RC</span><span class="badge rounded-pill vt-badge">Garantie financière</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Un projet immobilier à Nancy ou en Moselle ?</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="estimation.html">Estimer mon bien</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Patrimoine Lorraine</strong>
+        <p class="small opacity-75 mb-2">8 place Stanislas, 54000 Nancy</p>
+        <a class="small" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="biens.html">Nos biens</a><a class="nav-link px-0" href="estimation.html">Estimation</a><a class="nav-link px-0" href="contact.html">Estimer mon bien</a><a class="nav-link px-0" href="biens.html">Gestion locative</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0383352890">03 83 35 28 90</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@patrimoine-lorraine.fr">contact@patrimoine-lorraine.fr</a></p>
+        <p class="mb-0">Lun–ven 9h–19h · Sam 10h–13h</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0383352890">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="estimation.html">Estimer mon bien</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

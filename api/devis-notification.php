@@ -1,6 +1,6 @@
 <?php
 /**
- * Notification e-mail de secours quand Facturio est indisponible.
+ * Notification e-mail de secours quand Prestafacture est indisponible.
  */
 declare(strict_types=1);
 
@@ -138,7 +138,7 @@ function devis_notify_fallback(
     $ttc = round($totalHt * 1.2);
     $adminSubject = '[DanielCraft] Demande de devis — ' . $prestationTitle;
     $adminText = implode("\n", [
-        'Nouvelle demande de devis (Facturio indisponible — à traiter manuellement).',
+        'Nouvelle demande de devis (Prestafacture indisponible — à traiter manuellement).',
         '',
         'Client : ' . $customerName,
         'E-mail : ' . $customerEmail,
@@ -151,7 +151,7 @@ function devis_notify_fallback(
         $internalNote !== '' ? 'Notes :' . "\n" . $internalNote : '',
     ]);
 
-    $adminHtml = '<p><strong>Demande de devis</strong> (Facturio indisponible — à traiter manuellement).</p>'
+    $adminHtml = '<p><strong>Demande de devis</strong> (Prestafacture indisponible — à traiter manuellement).</p>'
         . '<ul><li><strong>Client :</strong> ' . htmlspecialchars($customerName, ENT_QUOTES, 'UTF-8') . '</li>'
         . '<li><strong>E-mail :</strong> ' . htmlspecialchars($customerEmail, ENT_QUOTES, 'UTF-8') . '</li>'
         . '<li><strong>Prestation :</strong> ' . htmlspecialchars($prestationTitle, ENT_QUOTES, 'UTF-8') . '</li>'

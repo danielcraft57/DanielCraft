@@ -1,0 +1,18 @@
+{
+  "slug": "saas-landing",
+  "brand": "FlowMetrics",
+  "category": "saas",
+  "locale": "SaaS product analytics",
+  "style_suffix": "Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+  "images": [
+    { "filename": "hero.png", "width": 1200, "height": 520, "scene": "saas_ui", "alt": "Landing FlowMetrics", "subject": "SaaS analytics product hero: laptop showing marketing landing page with dashboard preview, charts and funnel metrics, indigo gradient, widescreen banner" },
+    { "filename": "scene-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Dashboard principal", "subject": "Main analytics dashboard UI with line charts bar graphs and KPI cards, clean white interface indigo accents, no readable text" },
+    { "filename": "scene-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Workflow funnel", "subject": "User onboarding funnel workflow UI with three step progress visualization, SaaS product design, no readable text" },
+    { "filename": "scene-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Intégrations API", "subject": "Integrations settings panel UI with API webhooks and connector icons grid, modern SaaS interface, no readable text" },
+    { "filename": "gallery-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Détail UI", "subject": "Close-up product UI component: metric card with sparkline chart and trend indicator, SaaS dashboard detail, no readable text" },
+    { "filename": "gallery-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Vue mobile", "subject": "Mobile analytics app on smartphone showing simplified dashboard charts, clean responsive SaaS design, no readable text" },
+    { "filename": "card-1.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Analytics temps réel", "subject": "Real-time analytics charts dashboard section with live data visualization, SaaS product card, no readable text" },
+    { "filename": "card-2.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Collaboration équipe", "subject": "Team collaboration feature UI with comments and shared reports panel, SaaS workspace, no readable text" },
+    { "filename": "card-3.png", "width": 800, "height": 520, "scene": "saas_ui", "alt": "Sécurité RGPD", "subject": "Security compliance settings UI with encryption shield icons SSO toggles, enterprise SaaS, no readable text" }
+  ]
+}

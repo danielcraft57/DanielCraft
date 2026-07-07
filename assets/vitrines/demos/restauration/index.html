@@ -3,163 +3,224 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="Restaurant, terrasse et réservations à Metz.">
-  <title>Brasserie Saint-Jacques — Restauration</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/vitrine-bulma.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../shared/vitrine-lib-compat.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <meta name="description" content="Brasserie historique à Metz : cuisine lorraine, terrasse place Saint-Jacques et réservation en ligne.">
+  <title>Brasserie Saint-Jacques — Accueil</title>
+  <!-- layout: brasserie-bs · Bootstrap 5 · vitrine site complet -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Brasserie Saint-Jacques",
+  "servesCuisine": "Lorraine, French",
+  "priceRange": "€€",
+  "telephone": "+33387751234",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12 place Saint-Jacques",
+    "addressLocality": "Metz",
+    "postalCode": "57000",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "22:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "23:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "15:00"}
+  ]
+}
+</script>
 </head>
-<body>
-  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
-  <nav class="navbar is-danger is-spaced has-shadow" role="navigation" aria-label="Navigation principale">
-    <div class="container is-fluid">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-weight-bold is-size-5 has-text-white" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span><span>Ligne &amp; Comptoir</span></span></a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item has-text-white" href="#accueil"><span class="icon-text"><span class="icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span>Accueil</span></span></a>
-          <a class="navbar-item has-text-white" href="#carte"><span class="icon-text"><span class="icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span><span>Carte</span></span></a>
-          <a class="navbar-item has-text-white" href="#savoir"><span class="icon-text"><span class="icon"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i></span><span>Cuisine</span></span></a>
-          <a class="navbar-item has-text-white" href="#evenements"><span class="icon-text"><span class="icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></span><span>Événements</span></span></a>
-          <a class="navbar-item has-text-white" href="#reservation"><span class="icon-text"><span class="icon"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span><span>Réserver</span></span></a>
-          <a class="navbar-item has-text-white" href="#contact"><span class="icon-text"><span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span>Contact</span></span></a>
-        </div>
+<body class="vt-body">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Ouvert aujourd&#x27;hui · Mar–sam</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=12+place+Saint-Jacques+57000+Metz">12 place Saint-Jacques, 57000 Metz</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0387751234">03 87 75 12 34</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Brasserie Saint-Jacques</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="carte.html">La carte</a></li><li class="nav-item"><a class="nav-link" href="histoire.html">Notre histoire</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Réserver</a>
       </div>
     </div>
   </nav>
-  <main id="contenu" tabindex="-1">
-    <section id="accueil" class="hero is-medium resto-hero">
-      <div class="hero-body">
-        <div class="container">
-          <p class="title is-1 has-text-white"><i class="fa-solid fa-wheat-awn mr-3 has-text-resto-gold" aria-hidden="true"></i>Cuisine de saison · terrasse</p>
-          <p class="subtitle is-4 has-text-white-ter" style="max-width: 46rem;">
-            La Brasserie Saint-Jacques propose une cuisine de marché au cœur de Metz. Carte renouvelée chaque semaine, réservations conseillées le week-end.
-          </p>
-          <p class="subtitle is-5 has-text-white-ter mt-4" style="max-width: 46rem;">
-            Ambiance bistronomique, produits du marché lorrain, accords mets-vins au verre et terrasse ombragée place Saint-Jacques.
-          </p>
-          <div class="buttons mt-5">
-            <a class="button is-warning is-medium hvr-shrink" href="#carte"><span class="icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span><span>La carte</span></a>
-            <a class="button is-white is-outlined is-medium hvr-shrink" href="#reservation"><span class="icon"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span><span>Réserver une table</span></a>
-          </div>
+</header><main><section class="vt-hero text-center">
+  <div class="container py-5 py-lg-6">
+    <p class="vt-eyebrow text-uppercase">Bienvenue à la brasserie</p>
+    <h1 class="display-5 vt-display">La table qui réchauffe Metz depuis 1924</h1>
+    <p class="lead vt-lead mx-auto">Terrasse sur la place, mijotés au feu de bois et carte des vins mosellans.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      <a class="btn btn-vt-primary btn-lg rounded-pill px-4" href="contact.html">Réserver une table</a>
+      <a class="btn btn-vt-outline btn-lg rounded-pill px-4" href="carte.html">Voir la carte</a>
+    </div>
+  </div>
+  <figure class="vt-hero-media mb-0">
+    <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100" alt="Salle de brasserie chaleureuse avec verrière à Metz" decoding="async" fetchpriority="high"></picture>
+  </figure>
+</section><section class="vt-stats-band" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="row text-center g-0"><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">1924</strong>
+          <span class="vt-stat-lbl">Depuis</span>
         </div>
-      </div>
-    </section>
-    <section class="section vitrine-cta-banner has-background-danger has-text-white" aria-label="CTA">
-      <div class="container is-widescreen has-text-centered">
-        <p class="title is-4 has-text-white"><i class="fa-solid fa-tag mr-3" aria-hidden="true"></i>Menu déjeuner «&nbsp;comptoir&nbsp;»</p>
-        <a class="button is-warning is-medium mt-3 hvr-grow" href="#reservation"><i class="fa-solid fa-chair mr-2" aria-hidden="true"></i>Pré-réservation</a>
-      </div>
-    </section>
-    <section class="section is-vitrine is-resto-cream" id="carte" aria-labelledby="t-car">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-car"><i class="fa-solid fa-book-open has-text-danger mr-2" aria-hidden="true"></i>Carte (extraits)</h2>
-        <p class="content is-size-5 has-text-centered mb-5" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
-          Exemple de carte midi&nbsp;; les montants sont indicatifs et peuvent varier selon arrivages.
-        </p>
-        <div class="table-container is-vitrine mt-5">
-          <table class="table is-fullwidth is-striped is-size-5">
-            <thead><tr><th><i class="fa-solid fa-bowl-food mr-2" aria-hidden="true"></i>Plat</th><th>Description</th><th><i class="fa-solid fa-coins mr-2" aria-hidden="true"></i>Prix</th></tr></thead>
-            <tbody>
-              <tr><td>Velouté</td><td>Courge, huile de noisette toastée</td><td>9&nbsp;€</td></tr>
-              <tr><td>Poisson</td><td>Filet, citron confit maison</td><td>26&nbsp;€</td></tr>
-              <tr><td>Tarte</td><td>Pralin, sorbet framboise maison</td><td>11&nbsp;€</td></tr>
-            </tbody>
-          </table>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">45</strong>
+          <span class="vt-stat-lbl">Vins mosellans</span>
         </div>
-        <p class="is-size-7 has-text-centered has-text-grey-dark mb-3">Carrousel des visuels générés — cliquez une image pour l'ouvrir en plein écran (zoom).</p>
-        <div class="swiper vitrine-image-swiper vitrine-swiper-resto" role="region" aria-roledescription="carousel" aria-label="Galerie visuels restaurant">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <figure class="vitrine-figure mb-0">
-                <a href="images/resto-assiette.png" class="glightbox" data-gallery="resto-galerie" data-glightbox="title: Assiette gastronomique ">
-                  <img src="images/resto-assiette.png" width="800" height="600" alt="Assiette gastronomique (image générée)" loading="lazy" decoding="async">
-                </a>
-              </figure>
-            </div>
-            <div class="swiper-slide">
-              <figure class="vitrine-figure mb-0">
-                <a href="images/resto-salle.png" class="glightbox" data-gallery="resto-galerie" data-glightbox="title: Salle du restaurant ">
-                  <img src="images/resto-salle.png" width="800" height="600" alt="Salle du restaurant (image générée)" loading="lazy" decoding="async">
-                </a>
-              </figure>
-            </div>
-            <div class="swiper-slide">
-              <figure class="vitrine-figure mb-0">
-                <a href="images/resto-chef.png" class="glightbox" data-gallery="resto-galerie" data-glightbox="title: Chef au dressage ">
-                  <img src="images/resto-chef.png" width="800" height="600" alt="Chef au dressage (image générée)" loading="lazy" decoding="async">
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev" aria-label="Visuel précédent"></div>
-          <div class="swiper-button-next" aria-label="Visuel suivant"></div>
+      </div><div class="col-4 col-md-4">
+        <div class="vt-stat">
+          <strong class="vt-stat-val">80 km</strong>
+          <span class="vt-stat-lbl">Circuit court</span>
         </div>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="savoir" aria-labelledby="t-sav">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-sav"><i class="fa-solid fa-fire-burner has-text-danger mr-2" aria-hidden="true"></i>Le savoir-faire</h2>
-        <article class="message is-danger is-light mt-4">
-          <div class="message-body content is-size-5">
-            <p>Brigade en cuisine ouverte, produits bruts travaillés le jour même et comptoir fromager avec sélection affineur. Les alliances de saveurs suivent les saisons.</p>
-            <p>Deuxième paragraphe&nbsp;: traiteur et privatisation sont mentionnés pour remplir la section sans engagement logistique. Les photos générées illustrent assiette, salle et passe pour varier les textures visuelles.</p>
-          </div>
-        </article>
-        <p class="mt-4"><span class="icon-text"><span class="icon has-text-danger"><i class="fa-solid fa-heart" aria-hidden="true"></i></span><span><strong>Expérience conviviale</strong></span></span></p>
-        <progress class="progress is-danger" value="74" max="100">74&nbsp;%</progress>
-      </div>
-    </section>
-    <section class="section is-vitrine is-resto-cream" id="evenements" aria-labelledby="t-ev">
-      <div class="container is-widescreen">
-        <h2 class="title is-2 has-text-centered" id="t-ev"><i class="fa-solid fa-music has-text-danger mr-2" aria-hidden="true"></i>Soirées thématiques</h2>
-        <article class="message is-danger is-light"><div class="message-body"><i class="fa-solid fa-wine-glass mr-2" aria-hidden="true"></i>Dégustation accord mets-vins — date et places entièrement fictives.</div></article>
-      </div>
-    </section>
-    <section class="section is-vitrine" id="reservation" aria-labelledby="t-res">
-      <div class="container is-widescreen">
-        <div class="columns is-centered">
-          <div class="column is-7-desktop is-8-tablet">
-            <h2 class="title is-2 has-text-centered" id="t-res"><i class="fa-regular fa-calendar-check has-text-danger mr-2" aria-hidden="true"></i>Réservation</h2>
-            <div class="box is-vitrine vitrine-form-panel">
-              <form action="#" method="get" class="content">
-                <div class="field"><label class="label" for="r-date"><i class="fa-solid fa-calendar-day mr-1" aria-hidden="true"></i>Date</label><div class="control"><input class="input" type="date" id="r-date" name="date"></div></div>
-                <div class="field"><label class="label" for="r-couv"><i class="fa-solid fa-users mr-1" aria-hidden="true"></i>Convives</label><div class="control"><input class="input" type="number" id="r-couv" name="n" min="1" max="12" value="2"></div></div>
-                <div class="field"><label class="checkbox"><input type="checkbox" name="ext"> <i class="fa-solid fa-tree mr-1" aria-hidden="true"></i>Terrasse (selon disponibilité)</label></div>
-                <button type="button" class="button is-danger is-medium is-fullwidth"><span class="icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span><span>Envoyer</span></button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section is-vitrine is-resto-cream" id="contact" aria-labelledby="t-contact">
-      <div class="container is-widescreen">
-        <h2 class="title is-2" id="t-contact"><i class="fa-solid fa-phone has-text-danger mr-2" aria-hidden="true"></i>Contact</h2>
-        <p class="is-size-5">03 87 74 22 31 · <a href="mailto:resa@brasserie-saint-jacques.fr"><i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>resa@brasserie-saint-jacques.fr</a></p>
-        <p class="mt-5"><a class="button is-dark is-medium" href="../index.html"><span class="icon"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span><span>Index des vitrines</span></a></p>
-      </div>
-    </section>
-  </main>
-  <footer class="footer has-background-dark is-vitrine-footer">
-    <div class="container is-widescreen">
-      <div class="columns has-text-grey-light">
-        <div class="column is-4"><p class="title is-6 has-text-white"><i class="fa-solid fa-utensils mr-2" aria-hidden="true"></i>Brasserie Saint-Jacques</p><p class="is-size-6">Metz.</p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Liens</p><p class="is-size-6"><a class="has-text-grey-lighter" href="#carte"><i class="fa-solid fa-book-open mr-1" aria-hidden="true"></i>Carte</a></p></div>
-        <div class="column is-4"><p class="title is-6 has-text-white">Icônes</p><p class="is-size-6"><i class="fa-solid fa-icons mr-1" aria-hidden="true"></i>Font Awesome</p></div>
       </div>
     </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.14/swiper-bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
-  <script src="../shared/vitrine-images.js"></script>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">Une adresse qui traverse les générations</h2>
+        <p class="mb-3">Installée dans l&#x27;ancienne maison du maître d&#x27;hôtel de la gare impériale, la brasserie a survécu aux guerres en gardant son zinc d&#x27;origine.</p><p class="mb-3">Le chef Élodie Marchal revisite le patrimoine culinaire mosellan : quiche au cow-gomme et mirabelle en dessert.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-chapters"><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Le feu de la cuisine</h3>
+        <p class="text-secondary mb-0">Four à bois et casseroles en cuivre derrière le passe — la brigade d&#x27;Élodie Marchal mijote ici chaque service.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" class="w-100" alt="Cuisine ouverte avec flammes à Metz" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Le bar</h3>
+        <p class="text-secondary mb-0">Zinc d&#x27;origine, presse mosellane et quarante-cinq références en cave — le comptoir où les Messins prennent leur café.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-2.webp" type="image/webp"><img src="images/scene-2.png" class="w-100" alt="Comptoir en zinc de brasserie" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">La terrasse avec vue</h3>
+        <p class="text-secondary mb-0">Face à la cathédrale, apéritif et tapas lorrains au soleil — la terrasse se remplit dès les beaux jours.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-3.webp" type="image/webp"><img src="images/scene-3.png" class="w-100" alt="Terrasse face à la cathédrale de Metz" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article></section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Nos signatures</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Assiette gastronomique lorraine" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Menu du marché</h3>
+            <p class="card-text text-secondary small mb-0">Carte renouvelée chaque semaine selon le marché Saint-Jacques.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Brunch dominical" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Brunch dominical</h3>
+            <p class="card-text text-secondary small mb-0">Brioche perdue à la mirabelle — réservation conseillée.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Salon privatisé" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Privatisation</h3>
+            <p class="card-text text-secondary small mb-0">Salon du premier pour 40 couverts.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-cross py-5 text-center">
+  <div class="container">
+    <h2 class="h4 vt-section-title mb-4">Découvrir aussi</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><a class="btn btn-vt-pill rounded-pill" href="contact.html">Brunch dominical</a><a class="btn btn-vt-pill rounded-pill" href="carte.html">Cave à vins</a><a class="btn btn-vt-pill rounded-pill" href="contact.html">Privatisation</a><a class="btn btn-vt-pill rounded-pill" href="index.html">Jazz du vendredi</a></div>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">Produits locaux, accueil sans chichi, cuisine sincère.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">Circuit court</span><span class="badge rounded-pill vt-badge">Vins mosellans</span><span class="badge rounded-pill vt-badge">Terrasse cathédrale</span><span class="badge rounded-pill vt-badge">Jazz le vendredi</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Réservez votre table — la terrasse se remplit vite.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Réserver</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Brasserie Saint-Jacques</strong>
+        <p class="small opacity-75 mb-2">12 place Saint-Jacques, 57000 Metz</p>
+        <a class="small" href="https://maps.google.com/?q=12+place+Saint-Jacques+57000+Metz">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="carte.html">La carte</a><a class="nav-link px-0" href="histoire.html">Notre histoire</a><a class="nav-link px-0" href="contact.html">Privatisation</a><a class="nav-link px-0" href="contact.html">Recrutement</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0387751234">03 87 75 12 34</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@brasserie-saint-jacques.fr">contact@brasserie-saint-jacques.fr</a></p>
+        <p class="mb-0">Mar–sam midi &amp; soir · Dim. brunch</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0387751234">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Réserver</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

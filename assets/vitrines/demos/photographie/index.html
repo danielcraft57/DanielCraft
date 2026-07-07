@@ -3,89 +3,243 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Capturer l&#x27;essentiel. Studio photo — mariages, corporate et portraits en Grand Est.">
-  <title>Studio Lumière Grise — Photographe | démo</title>
-  <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/open-props/open-props.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <meta name="description" content="Photographe mariage et corporate à Nancy : reportages et portraits.">
+  <title>Studio Lumière Grise — Photographe Nancy</title>
+  <!-- layout: photo-masonry · Bootstrap 5 · vitrine site complet -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
-  <link rel="stylesheet" href="../shared/vitrine-media.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Studio Lumière Grise",
+  "description": "Photographe mariage et corporate à Nancy — reportages et portraits",
+  "telephone": "+33383321840",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8 place Stanislas",
+    "addressLocality": "Nancy",
+    "postalCode": "54000",
+    "addressCountry": "FR"
+  }
+}
+</script>
 </head>
-<body>
-
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
-  <header class="vt-top">
-    <nav class="vt-nav" aria-label="Navigation principale">
-      <a class="vt-brand" href="#accueil">Studio Lumière Grise</a>
-      <a href="#offres">Offres</a><a href="#engagements">Engagements</a><a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <main id="contenu">
-    <section id="accueil" class="vt-hero">
-      <div class="vt-hero-grid">
-        <div>
-          <p class="vt-eyebrow">Grand Est · Lorraine</p>
-          <h1>Capturer l&#x27;essentiel</h1>
-          <p class="vt-lead">Studio photo — mariages, corporate et portraits en Grand Est.</p>
-          <p><a class="vt-btn" href="#offres">Voir nos offres</a> <a href="#contact">Contact</a></p>
-        </div>
-        <div><figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken mb-0">
-              <a href="images/hero.png" class="glightbox" data-gallery="photographie-vis">
-                <img src="images/hero.png" width="1200" height="520" alt="Studio Lumière Grise" fetchpriority="high" decoding="async" class="">
-              </a>
-            </figure></div>
+<body class="vt-body vt-body-photo">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Studio ouvert sur RDV · Mar–sam</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">8 place Stanislas, 54000 Nancy</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0383321840">03 83 32 18 40</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Studio Lumière Grise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li><li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li><li class="nav-item"><a class="nav-link" href="prestations.html">Prestations</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Demander un devis</a>
       </div>
-    </section>
-    <section class="vt-stats" aria-label="Chiffres clés"><div class="vt-stats-grid"><div><strong class="vt-stat">240+</strong><span>mariages</span></div><div><strong class="vt-stat">15 ans</strong><span>studio</span></div><div><strong class="vt-stat">GE</strong><span>tournée</span></div></div></section>
-    <section id="offres"><div class="vt-wrap">
-      <h2>Ce que nous proposons</h2>
-      <p class="vt-muted-center">Services clairs et visuels pour convertir.</p>
-      <div class="vt-cards">
-        <article class="vt-card vitrine-img-reveal">
-          <figure class="vitrine-figure vitrine-card-visual mb-0">
-            <a href="images/portfolio-mariage.svg" class="glightbox" data-gallery="photographie-vis" data-glightbox="title: Mariage">
-              <img src="images/portfolio-mariage.svg" alt="Mariage" loading="lazy" decoding="async">
-            </a>
-          </figure>
-          <h3 class="vt-brand">Mariage</h3><p>Reportage.</p>
+    </div>
+  </nav>
+</header><main><section class="vt-hero-split vt-hero-split-reverse">
+  <div class="container-fluid px-0">
+    <div class="row g-0 align-items-stretch min-vh-50">
+      <div class="col-lg-7 order-lg-1 vt-hero-split-media">
+        <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100 h-100 vt-cover" alt="Portrait éditorial Studio Lumière Grise" decoding="async" fetchpriority="high"></picture>
+      </div>
+      <div class="col-lg-5 order-lg-2 d-flex align-items-center vt-hero-split-copy">
+        <div class="p-4 p-lg-5">
+          <p class="vt-eyebrow text-uppercase mb-2">Photographie · Nancy</p>
+          <h1 class="vt-display display-5 mb-3">Capturer l&#x27;essentiel</h1>
+          <p class="lead mb-4">Photographie éditoriale à Nancy — portrait, mariage et corporate dans la pénombre et la clarté.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-vt-primary btn-lg rounded-0 px-4" href="portfolio.html">Voir le portfolio</a>
+            <a class="btn btn-vt-outline rounded-0 px-4" href="contact.html">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-trust-strip py-4" aria-label="Preuves de confiance">
+  <div class="container">
+    <div class="row g-3 text-center"><div class="col-6 col-md-3">
+        <div class="vt-trust-cell">
+          <strong>240+</strong>
+          <span>mariages</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-trust-cell">
+          <strong>15 ans</strong>
+          <span>d&#x27;expérience</span>
+        </div>
+      </div><div class="col-6 col-md-3">
+        <div class="vt-trust-cell">
+          <strong>Publications</strong>
+          <span>Les Inrocks, GEO</span>
+        </div>
+      </div></div>
+  </div>
+</section><section class="vt-masonry py-5" aria-labelledby="masonry-title">
+  <div class="container">
+    <h2 id="masonry-title" class="vt-section-title mb-4">Sélection</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="vt-masonry-card h-100">
+          <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="vt-masonry-img w-100" alt="Portrait corporate" decoding="async" loading="lazy"></picture>
+          <h3 class="h6 vt-masonry-title mt-3 mb-1">Portrait corporate</h3>
+          <p class="small text-secondary mb-0">Dirigeants et équipes — lumière naturelle, retouches discrètes.</p>
         </article>
-        <article class="vt-card vitrine-img-reveal">
-          <figure class="vitrine-figure vitrine-card-visual mb-0">
-            <a href="images/portfolio-corporate.svg" class="glightbox" data-gallery="photographie-vis" data-glightbox="title: Corporate">
-              <img src="images/portfolio-corporate.svg" alt="Corporate" loading="lazy" decoding="async">
-            </a>
-          </figure>
-          <h3 class="vt-brand">Corporate</h3><p>Équipes.</p>
+      </div><div class="col-md-4 vt-masonry-offset">
+        <article class="vt-masonry-card h-100">
+          <picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" class="vt-masonry-img w-100" alt="Mariage documentaire" decoding="async" loading="lazy"></picture>
+          <h3 class="h6 vt-masonry-title mt-3 mb-1">Mariage documentaire</h3>
+          <p class="small text-secondary mb-0">Reportage intimiste, noir et blanc et couleur.</p>
         </article>
-        <article class="vt-card vitrine-img-reveal">
-          <figure class="vitrine-figure vitrine-card-visual mb-0">
-            <a href="images/portfolio-portrait.svg" class="glightbox" data-gallery="photographie-vis" data-glightbox="title: Portrait">
-              <img src="images/portfolio-portrait.svg" alt="Portrait" loading="lazy" decoding="async">
-            </a>
+      </div><div class="col-md-4">
+        <article class="vt-masonry-card h-100">
+          <picture><source srcset="images/gallery-2.webp" type="image/webp"><img src="images/gallery-2.png" class="vt-masonry-img w-100" alt="Photo architecture" decoding="async" loading="lazy"></picture>
+          <h3 class="h6 vt-masonry-title mt-3 mb-1">Architecture &amp; design</h3>
+          <p class="small text-secondary mb-0">Mise en valeur de volumes et matériaux.</p>
+        </article>
+      </div></div>
+    <div class="text-center mt-5">
+      <a class="btn btn-vt-outline px-4" href="portfolio.html">Tout le portfolio</a>
+    </div>
+  </div>
+</section><section class="vt-story py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="vt-section-title">Pourquoi Lumière Grise ?</h2>
+        <p class="mb-3">Implanté à Nancy depuis 2010, le studio accompagne couples, marques et créateurs en Grand Est.</p><p class="mb-3">Une approche documentaire et éditoriale — sans effet superflu, avec exigence sur la lumière.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-chapters"><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Écoute &amp; brief</h3>
+        <p class="text-secondary mb-0">Échange sur votre univers, vos références et vos contraintes.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-3.webp" type="image/webp"><img src="images/scene-3.png" class="w-100" alt="Brief créatif" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Shooting</h3>
+        <p class="text-secondary mb-0">Lumière naturelle ou studio — direction bienveillante.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" class="w-100" alt="Séance photo" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article><article class="vt-chapter py-5">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5 ">
+      <div class="col-lg-6">
+        <h3 class="vt-section-title h2">Livraison</h3>
+        <p class="text-secondary mb-0">Galerie web privée, retouches et tirages sur demande.</p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-media rounded-4 overflow-hidden mb-0 shadow-sm">
+          <picture><source srcset="images/scene-2.webp" type="image/webp"><img src="images/scene-2.png" class="w-100" alt="Livraison photos" decoding="async" loading="lazy"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article></section><section class="vt-signatures py-5">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">Univers</h2>
+    <div class="row g-4"><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Portrait" decoding="async" loading="lazy"></picture>
           </figure>
-          <h3 class="vt-brand">Portrait</h3><p>Studio.</p>
-        </article></div>
-    </div></section>
-    <section id="engagements" class="vt-band"><div class="vt-wrap vt-center">
-      <h2>Pourquoi nous faire confiance</h2>
-      <p>Réactivité, transparence et ancrage local.</p>
-    </div></section>
-    <section id="contact"><div class="vt-wrap vt-form">
-      <h2>Contact</h2>
-      <form action="#" method="get">
-        <label>Nom <input name="nom" type="text"></label>
-        <label>E-mail <input name="email" type="email"></label>
-        <label>Message <textarea name="message" rows="4"></textarea></label>
-        <button class="vt-btn" type="submit">Envoyer ma demande</button>
-      </form>
-      <p><a href="../index.html">← Hub vitrines</a></p>
-    </div></section>
-  </main>
-  <footer class="vt-footer"><p>Maquette — DanielCraft</p></footer>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Portrait</h3>
+            <p class="card-text text-secondary small mb-0">Studio ou sur site — à partir de 350 €.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" class="card-img-top vt-card-img" alt="Mariage" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Mariage</h3>
+            <p class="card-text text-secondary small mb-0">Journée complète + album — sur devis.</p>
+          </div>
+        </article>
+      </div><div class="col-md-4">
+        <article class="card vt-card h-100 border-0 shadow-sm">
+          <figure class="mb-0 overflow-hidden">
+            <picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" class="card-img-top vt-card-img" alt="Éditorial" decoding="async" loading="lazy"></picture>
+          </figure>
+          <div class="card-body p-4">
+            <h3 class="card-title h5 vt-card-title">Éditorial</h3>
+            <p class="card-text text-secondary small mb-0">Lookbook et direction artistique.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section><section class="vt-trust py-5 bg-white text-center">
+  <div class="container">
+    <p class="vt-trust-lead fst-italic mb-4">« Des images qui racontent notre marque sans effet superflu. » — Agence K., Nancy</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2"><span class="badge rounded-pill vt-badge">Mariage</span><span class="badge rounded-pill vt-badge">Corporate</span><span class="badge rounded-pill vt-badge">Portrait</span><span class="badge rounded-pill vt-badge">Éditorial</span></div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Parlons de votre projet.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Demander un devis</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Studio Lumière Grise</strong>
+        <p class="small opacity-75 mb-2">8 place Stanislas, 54000 Nancy</p>
+        <a class="small" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="portfolio.html">Portfolio</a><a class="nav-link px-0" href="prestations.html">Prestations</a><a class="nav-link px-0" href="contact.html">Devis</a><a class="nav-link px-0" href="portfolio.html">Mariage</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0383321840">03 83 32 18 40</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:bonjour@lumiere-grise.fr">bonjour@lumiere-grise.fr</a></p>
+        <p class="mb-0">Sur rendez-vous · Nancy</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0383321840">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Demander un devis</a>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js" crossorigin="anonymous"></script>
-  <script src="../shared/vitrine-images.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

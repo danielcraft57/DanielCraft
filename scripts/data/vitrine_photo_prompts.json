@@ -1,0 +1,3325 @@
+[
+  {
+    "slug": "restauration",
+    "filename": "hero.png",
+    "label": "Salle de brasserie chaleureuse avec verrière à Metz. La table qui réchauffe Metz depuis 1924. Terrasse sur la place, mijotés au feu de bois et carte des vins mosellans.. Plats colorés en cuisine lorraine. Une carte qui suit les saisons mosellanes. Du marché à votre assiette.. Façade historique en pierre jaune. Cent ans de convivialité messine. De l'auberge des voyageurs à la brasserie contemporaine.. Entrée de brasserie à Metz. Réserver ou nous écrire. 12 place Saint-Jacques, 57000 Metz.",
+    "alt": "Salle de brasserie chaleureuse avec verrière à Metz",
+    "scene": "hero",
+    "category": "hcr",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Historic Brasserie Saint-Jacques dining room at place Saint-Jacques Metz: restored Art Deco glass verrière, yellow Jaumont stone walls, set tables with white linen, brass lamps, guests dining, warm amber evening light. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "La table qui réchauffe Metz depuis 1924 — terrasse, mijotés au feu de bois, vins mosellans",
+      "Plats colorés en cuisine lorraine — carte saisonnière du marché",
+      "Façade historique en pierre jaune — cent ans de convivialité messine",
+      "Entrée de brasserie à Metz, 12 place Saint-Jacques"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "scene-1.png",
+    "label": "Cuisine ouverte avec flammes à Metz. Le feu de la cuisine. Four à bois et casseroles en cuivre derrière le passe.. Verrière de brasserie historique. La verrière. Chef-d'œuvre Art déco restauré pièce par pièce.",
+    "alt": "Cuisine ouverte avec flammes à Metz",
+    "scene": "food",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Open brasserie kitchen in Metz with wood-fired oven flames, copper casseroles on the pass, chef Élodie Marchal team plating Lorraine bouchée à la reine, restored Art Deco glass ceiling above. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Le feu de la cuisine — four à bois et casseroles en cuivre derrière le passe",
+      "La verrière — chef-d'œuvre Art déco restauré pièce par pièce"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "scene-2.png",
+    "label": "Cave à vin mosellane. La cave mosellane. Quarante-cinq références de vignerons de la vallée de la Moselle.. Comptoir en zinc de brasserie. Le zinc. Comptoir d'origine où les habitués prennent leur café.",
+    "alt": "Cave à vin mosellane",
+    "scene": "food",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Vintage zinc bar counter in classic French brasserie Metz, regulars at morning coffee, Moselle Riesling bottles in stone cellar racks, forty-five regional wine references, warm dim cellar lighting. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "La cave mosellane — quarante-cinq références de vignerons de la vallée de la Moselle",
+      "Le zinc — comptoir d'origine où les habitués prennent leur café"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "scene-3.png",
+    "label": "Terrasse face à la cathédrale de Metz. La terrasse des Messins. Face à la cathédrale, apéritif et tapas lorrains au soleil.. Archives historiques du restaurant. Les archives. Photos de famille et menus jaunis dans le couloir.",
+    "alt": "Terrasse face à la cathédrale de Metz",
+    "scene": "food",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Sunny terrace on place Saint-Jacques Metz with Gothic cathedral spires in background, apéritif glasses and Lorraine tapas on bistro tables, golden afternoon light, Messins enjoying outdoor dining. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "La terrasse des Messins — face à la cathédrale, apéritif et tapas lorrains au soleil",
+      "Les archives — photos de famille et menus jaunis dans le couloir"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "gallery-1.png",
+    "label": "Déjeuner animé place Saint-Jacques. Service du midi sous la verrière. Dégustation au verre. Carte des vins mosellans",
+    "alt": "Déjeuner animé place Saint-Jacques",
+    "scene": "gallery",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Lively midday brasserie lunch service under historic glass verrière, waiters carrying plates, natural light streaming in, Moselle wine tasting by the glass at white-clothed tables. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Service du midi sous la verrière — déjeuner animé place Saint-Jacques",
+      "Carte des vins mosellans — dégustation au verre"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "gallery-2.png",
+    "label": "Vendredis live dans la salle. Soirée jazz au comptoir. Pression et bouteilles locales. Bières artisanales",
+    "alt": "Vendredis live dans la salle",
+    "scene": "gallery",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Friday evening jazz musician playing at zinc bar counter, craft beer taps and artisan Lorraine bottles, intimate warm brasserie atmosphere, guests at high stools listening. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Soirée jazz au comptoir — vendredis live dans la salle",
+      "Bières artisanales — pression et bouteilles locales"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "card-1.png",
+    "label": "Assiette gastronomique lorraine. Menu du marché. Carte renouvelée chaque semaine selon le marché Saint-Jacques.. Entrées lorraines. Entrées. Terrine de canard, salade Munster, soupe à l'oignon.",
+    "alt": "Assiette gastronomique lorraine",
+    "scene": "card",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Beautifully plated Lorraine appetizers on white porcelain: duck terrine with cornichons, Munster cheese salad, classic French onion soup gratinée, market-fresh presentation. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Menu du marché — carte renouvelée chaque semaine selon le marché Saint-Jacques",
+      "Entrées — terrine de canard, salade Munster, soupe à l'oignon"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "card-2.png",
+    "label": "Brunch dominical. Brioche perdue à la mirabelle — réservation conseillée.. Plat mijoté en cocotte. Plats. Bouchée à la reine, jarret confit, sandre du canal.",
+    "alt": "Plat mijoté en cocotte",
+    "scene": "card",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Hearty Lorraine brasserie mains: golden bouchée à la reine vol-au-vent with creamy sauce, slow-braised confit lamb shank in copper cocotte, sandre fish fillet, Sunday brunch brioche perdue with mirabelle plums. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Brunch dominical — brioche perdue à la mirabelle",
+      "Plats — bouchée à la reine, jarret confit, sandre du canal"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "restauration",
+    "filename": "card-3.png",
+    "label": "Salon privatisé. Privatisation. Salon du premier pour 40 couverts.. Dessert à la mirabelle. Desserts. Tarte aux quetsches et clafoutis mirabelle.",
+    "alt": "Salon privatisé",
+    "scene": "card",
+    "category": "hcr",
+    "width": 800,
+    "height": 520,
+    "prompt": "Mirabelle plum clafoutis and quetsche tart on dessert plates, elegant wood-paneled private dining salon upstairs set for forty guests with chandeliers and long table. French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Privatisation — salon du premier pour 40 couverts",
+      "Desserts — tarte aux quetsches et clafoutis mirabelle"
+    ],
+    "dest": "assets/vitrines/demos/restauration/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/restauration.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "hero.png",
+    "label": "Spa lumineux avec fauteuils à Nancy. Votre parenthèse bien-être au cœur de Nancy. Maison de maître rue Stanislas : expertise esthétique et rituels sensoriels.. Produits de soin en cabine. Des protocoles pensés pour votre peau. Express le midi, rituels complets le week-end.. Hall d'accueil spa nancéien. Un écrin de calme rue Stanislas. Pierre de taille et technologies dernière génération.. Réception du spa. Réserver votre moment Thalie. 8 rue des Mésanges, 54000 Nancy.",
+    "alt": "Spa lumineux avec fauteuils à Nancy",
+    "scene": "hero",
+    "category": "beaute",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Bright elegant Spa Thalie reception in a Nancy maison de maître near place Stanislas: soft rose and cream interior, treatment chairs, natural light, luxurious calm urban wellness atmosphere. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Parenthèse bien-être au cœur de Nancy — maison de maître rue Stanislas",
+      "Produits de soin en cabine — protocoles pensés pour votre peau",
+      "Écrin de calme rue Stanislas — hall d'accueil spa nancéien",
+      "Réception du spa — 8 rue des Mésanges Nancy"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "scene-1.png",
+    "label": "Cabine de massage. Cabine signature. Lumière tamisée et huiles chaudes pour couper le bruit de la ville.. Accueil spa. Accueil. Thé dès l'arrivée et écoute attentive.",
+    "alt": "Cabine de massage",
+    "scene": "spa",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Dimly lit signature spa treatment cabin with warm oil bottles, soft towels, massage table, gentle ambient lighting, peaceful Nancy urban spa atmosphere. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Cabine signature — lumière tamisée et huiles chaudes",
+      "Accueil — thé dès l'arrivée et écoute attentive"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "scene-2.png",
+    "label": "Soin du visage en institut. Protocoles visage. LED, Kobido et acide hyaluronique maîtrisés.. Cabine duo. Cabines doubles. Massages synchronisés à deux.",
+    "alt": "Soin du visage en institut",
+    "scene": "spa",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Professional facial treatment in beauty institute: esthetician applying serum, LED skin care device, clean French beauty products, client relaxed on treatment bed. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Protocoles visage — LED, Kobido et acide hyaluronique",
+      "Cabines doubles — massages synchronisés à deux"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "scene-3.png",
+    "label": "Espace détente au spa. Espace détente. Hammam doux et transats chauffants.. Salon de repos. Tisanes bio après chaque soin.",
+    "alt": "Espace détente au spa",
+    "scene": "spa",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Spa relaxation lounge with heated loungers, soft hammam steam in background, herbal tea station, serene wellness retreat after treatment. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Espace détente — hammam doux et transats chauffants",
+      "Salon de repos — tisanes bio après chaque soin"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "gallery-1.png",
+    "label": "Vapeur et gommage au sel de Lorraine. Rituel miroir d'eau. Épaules des cadres nancéiens. Massage deep tissue. À deux pas de la place. Façade Stanislas",
+    "alt": "Vapeur et gommage au sel de Lorraine",
+    "scene": "gallery",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Spa ritual with steam and Lorraine salt body scrub, mirror water basin, soft towels, wellness ceremony atmosphere. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Rituel miroir d'eau — vapeur et gommage au sel de Lorraine",
+      "Massage deep tissue — épaules des cadres nancéiens",
+      "Façade Stanislas — à deux pas de la place"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "gallery-2.png",
+    "label": "Cours privés avant un événement. Atelier maquillage. Manucure spa. Soin des mains. Cachet de la vieille ville. Détail pierre",
+    "alt": "Cours privés avant un événement",
+    "scene": "gallery",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Private makeup workshop at beauty spa, professional brushes and mirrors, soft pink lighting, elegant preparation before event. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Atelier maquillage — cours privés avant un événement",
+      "Soin des mains — manucure spa",
+      "Détail pierre — cachet de la vieille ville"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "card-1.png",
+    "label": "Soin visage. Soins visage. Anti-âge, éclat, imperfections.. Soin express. Éclat express. 45 min pour un coup de frais.",
+    "alt": "Soin visage",
+    "scene": "card",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Close-up luxury facial skincare treatment, glowing skin, clean French beauty serum bottles, soft focus spa ambiance. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Soins visage — anti-âge, éclat, imperfections",
+      "Éclat express — 45 min coup de frais"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "card-2.png",
+    "label": "Massage pierres chaudes. Massages. Suédois, deep tissue, pierres chaudes.. Rituel spa complet. Rituel Stanislas. 90 min gommage et massage.",
+    "alt": "Massage pierres chaudes",
+    "scene": "card",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Hot stone massage on back with smooth volcanic stones, warm oils, professional spa therapist hands, relaxing treatment. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Massages — suédois, deep tissue, pierres chaudes",
+      "Rituel Stanislas — 90 min gommage et massage"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "beaute",
+    "filename": "card-3.png",
+    "label": "Rituel corps spa. Rituels corps. Gommage mirabelle et modelage.. Soin anti-âge. Cure anti-âge. 4 séances radiofréquence.",
+    "alt": "Rituel corps spa",
+    "scene": "card",
+    "category": "beaute",
+    "width": 800,
+    "height": 520,
+    "prompt": "Full body spa ritual with mirabelle plum scrub products, body wrap towels, elegant treatment tray, Lorraine-inspired wellness. Luxury urban spa and beauty institute Nancy France, soft rose and nude tones, serene atmosphere, clean beauty products, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Rituels corps — gommage mirabelle et modelage",
+      "Cure anti-âge — 4 séances radiofréquence"
+    ],
+    "dest": "assets/vitrines/demos/beaute/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/beaute.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "hero.png",
+    "label": "Salle d'attente lumineuse de cabinet dentaire. Votre sourire, notre priorité à Thionville. Quatre praticiens, plateau technique numérique et parcours patient sans stress.. Instruments dentaires stériles. Des soins adaptés à chaque âge. Tarifs affichés et tiers payant accepté.. Équipe dentaire en blouse. Quatre praticiens, une même exigence. Formation continue et congrès européens.. Accueil cabinet dentaire. Prendre rendez-vous. 42 avenue de la République, 57100 Thionville.",
+    "alt": "Salle d'attente lumineuse de cabinet dentaire",
+    "scene": "hero",
+    "category": "sante",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Bright welcoming dental clinic waiting room at Centre Mosaïque Thionville: white walls, teal accents, comfortable chairs, natural daylight, modern reception desk, reassuring family dental practice atmosphere. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Votre sourire, notre priorité à Thionville — quatre praticiens, plateau numérique",
+      "Instruments dentaires stériles — soins adaptés à chaque âge",
+      "Équipe dentaire en blouse — quatre praticiens, une même exigence",
+      "Accueil cabinet — 42 avenue de la République Thionville"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "scene-1.png",
+    "label": "Équipement dentaire numérique. Imagerie 3D. Panoramique et scanner intra-oral pour un diagnostic précis.. Pose d'implant. Parcours implant. De la pose à la couronne en 3 rendez-vous.. Chirurgien-dentiste. Dr Leroy. 15 ans d'expérience en implantologie.",
+    "alt": "Équipement dentaire numérique",
+    "scene": "medical",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Digital dental imaging equipment in modern clinic: panoramic X-ray machine and intraoral scanner, clean medical room, teal and white interior, Thionville dental center. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Imagerie 3D — panoramique et scanner intra-oral",
+      "Parcours implant — de la pose à la couronne en 3 RDV",
+      "Dr Leroy — 15 ans d'expérience en implantologie"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "scene-2.png",
+    "label": "Salle de soins dentaire moderne. Salles de soins. Fauteuils ergonomiques et musique au casque.. Dentiste avec enfant. Soins enfants. Pédodontie bienveillante dès 3 ans.. Orthodontiste. Dr Ben Saïd. Spécialiste orthodontie et aligneurs.",
+    "alt": "Salle de soins dentaire moderne",
+    "scene": "medical",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Modern dental treatment room with ergonomic chair, overhead lamp, sterile instruments tray, headphones for patient comfort, bright clean Thionville dental clinic. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Salles de soins — fauteuils ergonomiques et musique au casque",
+      "Soins enfants — pédodontie bienveillante dès 3 ans",
+      "Dr Ben Saïd — orthodontie et aligneurs"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "scene-3.png",
+    "label": "Espace enfants au cabinet. Espace enfants. Coin ludique et protocole douceur pour les plus jeunes.. Urgence dentaire. Urgences. Douleur aiguë : appelez avant 11 h.. Assistantes dentaires. Assistantes. Coordination des RDV et suivi post-opératoire.",
+    "alt": "Espace enfants au cabinet",
+    "scene": "medical",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Friendly children's corner in dental clinic with colorful toys, soft seating, gentle welcoming decor for pediatric patients, Thionville family dental practice. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Espace enfants — coin ludique et protocole douceur",
+      "Urgences — douleur aiguë, appelez avant 11 h",
+      "Assistantes — coordination RDV et suivi post-opératoire"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "gallery-1.png",
+    "label": "Résultat naturel en une séance. Blanchiment. Congrès à Strasbourg. Formation",
+    "alt": "Résultat naturel en une séance",
+    "scene": "gallery",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Natural professional teeth whitening result close-up, healthy white smile, soft clinical lighting, aesthetic dentistry outcome. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Blanchiment — résultat naturel en une séance",
+      "Formation — congrès à Strasbourg"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "gallery-2.png",
+    "label": "Créneaux réservés chaque jour. Urgences. Petit-déjeuner d'équipe mensuel. Vie de cabinet",
+    "alt": "Créneaux réservés chaque jour",
+    "scene": "gallery",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Dental team morning briefing at clinic, friendly professional atmosphere, coffee and planning, authentic workplace moment Thionville. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Urgences — créneaux réservés chaque jour",
+      "Vie de cabinet — petit-déjeuner d'équipe mensuel"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "card-1.png",
+    "label": "Contrôle dentaire. Prévention. Détartrage, scellements et bilans annuels.. Détartrage. 45 € — remboursé Sécu.",
+    "alt": "Contrôle dentaire",
+    "scene": "card",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Dental check-up and prevention: dentist examining patient with mirror and probe, clean clinical close-up, preventive care. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Prévention — détartrage, scellements et bilans annuels",
+      "Détartrage — 45 € remboursé Sécu"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "card-2.png",
+    "label": "Sourire blanchi. Esthétique. Facettes et blanchiment professionnel.. Couronne dentaire. Couronne céramique. Devis personnalisé sous 48 h.",
+    "alt": "Sourire blanchi",
+    "scene": "card",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Aesthetic dentistry: natural white smile after professional whitening or ceramic veneers, soft focus dental esthetics. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Esthétique — facettes et blanchiment professionnel",
+      "Couronne céramique — devis sous 48 h"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "odontologie",
+    "filename": "card-3.png",
+    "label": "Implant dentaire. Implants. Pose guidée par ordinateur.. Gouttières transparentes. Aligneurs. Orthodontie invisible adulte.",
+    "alt": "Implant dentaire",
+    "scene": "card",
+    "category": "sante",
+    "width": 800,
+    "height": 520,
+    "prompt": "Dental implant and clear aligners on clinical tray: computer-guided implantology and invisible orthodontics, modern Thionville dental care. Modern dental clinic Thionville France, bright clean medical interior, teal and white accents, reassuring family-friendly atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Implants — pose guidée par ordinateur",
+      "Aligneurs — orthodontie invisible adulte"
+    ],
+    "dest": "assets/vitrines/demos/odontologie/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/odontologie.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "hero.png",
+    "label": "Atelier mécanique avec véhicule sur pont. L'atelier de confiance des Messins depuis 1972. Mécanique générale, carrosserie et pneus — devis clair avant chaque intervention.. Mécanicien au travail. Tout pour rouler serein. De la vidange à la distribution, expertise multimarque.. Vue d'ensemble de l'atelier. 900 m² dédiés à votre véhicule. Ponts, cabine peinture et espace diagnostic.. Façade du garage. Nous contacter. Zone artisanale des Gravières, 57050 Plappeville.",
+    "alt": "Atelier mécanique avec véhicule sur pont",
+    "scene": "hero",
+    "category": "mobilite",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Garage Central Plappeville auto repair workshop: car on hydraulic lift, mechanic working underneath, dark industrial interior with red accent lighting, professional automotive service bay near Metz. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "L'atelier de confiance des Messins depuis 1972 — mécanique, carrosserie, pneus",
+      "Mécanicien au travail — tout pour rouler serein",
+      "900 m² dédiés — ponts, cabine peinture, espace diagnostic",
+      "Façade du garage — Zone artisanale des Gravières Plappeville"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "scene-1.png",
+    "label": "Pont élévateur en atelier. Le pont élévateur. Diagnostic rapide et transparence sur les pièces à changer.. Freins automobile. Freinage. Disques, plaquettes et liquide de frein.. Accueil garage. Accueil. Café et wifi en salle d'attente.",
+    "alt": "Pont élévateur en atelier",
+    "scene": "garage",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Hydraulic car lift in professional garage with mechanic inspecting vehicle underside, diagnostic tools, red and dark workshop atmosphere Plappeville. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Le pont élévateur — diagnostic rapide et transparence",
+      "Freinage — disques, plaquettes et liquide de frein",
+      "Accueil — café et wifi en salle d'attente"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "scene-2.png",
+    "label": "Atelier carrosserie. La carrosserie. Peinture cabine et débosselage sans peinture.. Échappement. Ligne complète et catalyseur.. Outillage professionnel. Outillage. Clés dynamométriques et documentation constructeur.",
+    "alt": "Atelier carrosserie",
+    "scene": "garage",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Auto body shop paint booth and panel repair area, car being prepared for painting, professional carrosserie workshop red accents. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "La carrosserie — peinture cabine et débosselage sans peinture",
+      "Échappement — ligne complète et catalyseur",
+      "Outillage — clés dynamométriques et documentation constructeur"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "scene-3.png",
+    "label": "Stock de pneus en garage. Le parc pneus. Montage, équilibrage et géométrie — toutes dimensions.. Véhicule hybride en atelier. Hybride. Formation Bosch pour les véhicules rechargeables.. Lavage véhicule. Propreté. Véhicule rendu lavé intérieur/extérieur.",
+    "alt": "Stock de pneus en garage",
+    "scene": "garage",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Tire storage wall in automotive garage with mechanic mounting tire on wheel balancer, summer and winter tires, professional pneumatique service. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Le parc pneus — montage, équilibrage et géométrie",
+      "Hybride — formation Bosch véhicules rechargeables",
+      "Propreté — véhicule rendu lavé intérieur/extérieur"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "gallery-1.png",
+    "label": "Vidange et filtres en 1 h. Révision complète. Photo de groupe devant l'atelier. Équipe 2024",
+    "alt": "Vidange et filtres en 1 h",
+    "scene": "gallery",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Complete car service oil change and filter replacement in garage bay, mechanic pouring fresh oil, quick maintenance service. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Révision complète — vidange et filtres en 1 h",
+      "Équipe 2024 — photo de groupe devant l'atelier"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "gallery-2.png",
+    "label": "Sur demande pour les grosses réparations. Véhicule de courtoisie. Enseigne d'origine conservée. Héritage",
+    "alt": "Sur demande pour les grosses réparations",
+    "scene": "gallery",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Courtesy replacement car parked outside family garage workshop, customer vehicle loan service, friendly local garage Plappeville. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Véhicule de courtoisie — sur demande grosses réparations",
+      "Héritage — enseigne d'origine conservée"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "card-1.png",
+    "label": "Révision automobile. Entretien. Révisions constructeur respectées.. Courroie de distribution. Distribution. Kit courroie et pompe à eau.",
+    "alt": "Révision automobile",
+    "scene": "card",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Car maintenance service checklist and engine bay inspection, professional mechanic with tablet, manufacturer service schedule respected. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Entretien — révisions constructeur respectées",
+      "Distribution — kit courroie et pompe à eau"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "card-2.png",
+    "label": "Montage de pneus. Pneumatiques. Été, hiver, toutes marques.. Recharge clim auto. Climatisation. Recharge et désinfection.",
+    "alt": "Montage de pneus",
+    "scene": "card",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Tire mounting machine in action, new tires being fitted on alloy wheels, professional pneumatique garage service. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Pneumatiques — été, hiver, toutes marques",
+      "Climatisation — recharge et désinfection"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "automobile",
+    "filename": "card-3.png",
+    "label": "Réparation carrosserie. Carrosserie. Devis assurance en 24 h.. Diagnostic électronique. Diagnostic. Valise multimarque et rapport détaillé.",
+    "alt": "Réparation carrosserie",
+    "scene": "card",
+    "category": "mobilite",
+    "width": 800,
+    "height": 520,
+    "prompt": "Car body repair dent removal and panel straightening, carrossier working on damaged door, insurance repair workshop. Professional automotive garage Plappeville Metz France, dark industrial workshop with red accents, mechanic at work, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Carrosserie — devis assurance en 24 h",
+      "Diagnostic — valise multimarque et rapport détaillé"
+    ],
+    "dest": "assets/vitrines/demos/automobile/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/automobile.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "hero.png",
+    "label": "Allée de supermarché lumineuse. Le marché du quotidien, version moderne. 3200 m² de rayons, boucherie artisanale et drive en 2 h chrono.. Rayon épicerie fine. Des rayons qui respirent la fraîcheur. Produits locaux mis en avant chaque semaine.. Point drive couvert. Faites vos courses sans sortir de voiture. 15 emplacements couverts, prêt en 2 h.. Accueil client supermarché. Une question ? On vous répond. Rue du Mail, 57100 Thionville.",
+    "alt": "Allée de supermarché lumineuse",
+    "scene": "hero",
+    "category": "retail",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Bright modern Halles Thionville supermarket aisle with fresh produce and warm lighting, welcoming local grocery store interior, shoppers browsing, clean contemporary retail design. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Le marché du quotidien version moderne — 3200 m² de rayons",
+      "Rayon épicerie fine — des rayons qui respirent la fraîcheur",
+      "Point drive couvert — courses sans sortir de voiture",
+      "Accueil client supermarché — Rue du Mail Thionville"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "scene-1.png",
+    "label": "Boucherie artisanale. Boucherie. Viandes label rouge et préparations maison.. Poissonnerie. Arrivages mer du Nord 3 fois par semaine.. Préparation de commande. Préparation. Préparateurs formés à la fraîcheur.",
+    "alt": "Boucherie artisanale",
+    "scene": "retail",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Artisan butcher counter in French supermarket with label rouge meats, fresh cuts displayed, professional boucherie department Halles Thionville. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Boucherie — viandes label rouge et préparations maison",
+      "Poissonnerie — arrivages mer du Nord 3 fois par semaine",
+      "Préparation — préparateurs formés à la fraîcheur"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "scene-2.png",
+    "label": "Pain frais en rayon. Boulangerie. Four sur place dès 7 h.. Cave à vins. Cave. Vins mosellans et conseils sommelier.. Créneaux horaires drive. Créneaux. Dès 8 h le matin, jusqu'à 20 h.",
+    "alt": "Pain frais en rayon",
+    "scene": "retail",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Fresh bakery section in supermarket with artisan bread on wooden shelves, oven visible in background, morning bakery department warm lighting. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Boulangerie — four sur place dès 7 h",
+      "Cave — vins mosellans et conseils sommelier",
+      "Créneaux — dès 8 h jusqu'à 20 h"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "scene-3.png",
+    "label": "Rayon fruits et légumes. Fruits & légumes. Arrivages quotidiens de Serémange et Corny.. Surgelés. Gamme premium et surgelés maison.. Borne de paiement drive. Paiement. En ligne ou à la borne sur place.",
+    "alt": "Rayon fruits et légumes",
+    "scene": "retail",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Colorful fruits and vegetables display in supermarket produce section, local Moselle produce, fresh daily arrivals, vibrant healthy retail. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Fruits & légumes — arrivages Serémange et Corny",
+      "Surgelés — gamme premium et surgelés maison",
+      "Paiement — en ligne ou à la borne sur place"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "gallery-1.png",
+    "label": "AOP lorraines et affinés. Vitrine fromages. Abris couverts été comme hiver. Emplacements",
+    "alt": "AOP lorraines et affinés",
+    "scene": "gallery",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Cheese counter display with French AOP cheeses including Lorraine specialties, artisan fromagerie vitrine in supermarket. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Vitrine fromages — AOP lorraines et affinés",
+      "Emplacements — abris couverts été comme hiver"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "gallery-2.png",
+    "label": "Samedi producteurs locaux. Événement dégustation. Suivi commande en temps réel. Application",
+    "alt": "Samedi producteurs locaux",
+    "scene": "gallery",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Local producers tasting event in supermarket parking area, Moselle farmers market stand, community retail event Saturday. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Événement dégustation — samedi producteurs locaux",
+      "Application — suivi commande en temps réel"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "card-1.png",
+    "label": "Retrait drive. Click & collect. Commande en ligne, retrait en 2 h.. Rayon frais. Frais. Crèmerie, traiteur et sushi du jour.",
+    "alt": "Retrait drive",
+    "scene": "card",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Click and collect drive pickup at covered supermarket car park, employee loading groceries into car trunk, fast grocery pickup service. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Click & collect — commande en ligne, retrait en 2 h",
+      "Frais — crèmerie, traiteur et sushi du jour"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "card-2.png",
+    "label": "Carte de fidélité. Carte fidélité. 1 € dépensé = 1 point, avantages exclusifs.. Étagères épicerie. Épicerie. Marques régionales et sans gluten.",
+    "alt": "Carte de fidélité",
+    "scene": "card",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Customer loyalty card and smartphone app at supermarket checkout, rewards program Halles retail loyalty, friendly cashier. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Carte fidélité — 1 € dépensé = 1 point",
+      "Épicerie — marques régionales et sans gluten"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "commerce",
+    "filename": "card-3.png",
+    "label": "Livraison à domicile. Livraison. Sur Thionville et Yutz en soirée.. Rayon vrac bio. Bio & vrac. Cosmétiques et céréales en vrac.",
+    "alt": "Livraison à domicile",
+    "scene": "card",
+    "category": "retail",
+    "width": 800,
+    "height": 520,
+    "prompt": "Grocery home delivery van with fresh produce boxes, evening delivery service Thionville local supermarket. Modern French supermarket and local grocery store Thionville, bright fresh produce aisles, warm natural light, welcoming retail atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Livraison — sur Thionville et Yutz en soirée",
+      "Bio & vrac — cosmétiques et céréales en vrac"
+    ],
+    "dest": "assets/vitrines/demos/commerce/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/commerce.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Verlaine & Associés à Metz. Verlaine & Associés : bilan et conseil à Metz. Accompagnement de dirigeants en Lorraine avec exigence et proximité.. Page Expertises Verlaine & Associés. Expertises. Découvrez notre offre expertises pour dirigeants.. Page Notre méthode Verlaine & Associés. Notre méthode. Comprendre notre démarche notre méthode.. Contact Verlaine & Associés. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Vue d'ensemble Verlaine & Associés à Metz",
+    "scene": "hero",
+    "category": "conseil",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Prestigious Verlaine & Associés accounting firm reception in Metz: navy and gold interior, wood paneling, professional waiting area, expert-comptable cabinet atmosphere. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Bilan et conseil à Metz — accompagnement dirigeants Lorraine",
+      "Expertises comptables pour dirigeants PME",
+      "Notre méthode — transparence et proximité",
+      "Contact cabinet — 14 rue Serpenoise Metz"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "scene-1.png",
+    "label": "Expertises chez Verlaine & Associés. Notre approche. Méthode éprouvée et transparence à chaque étape pour dirigeants.. Coulisses Verlaine & Associés. Coulisses Expertises. L'équipe Verlaine & Associés en action sur le terrain.. Écoute client Verlaine & Associés. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Expertises chez Verlaine & Associés",
+    "scene": "office",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Accountant reviewing financial statements with client in modern Metz office, laptop and paper reports, professional consultation meeting. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Notre approche — méthode éprouvée et transparence",
+      "Coulisses — équipe en action sur le terrain",
+      "Étape 1 — écoute et diagnostic gratuit"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Équipe au travail à Metz",
+    "scene": "office",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Accounting team collaborating at large desk with monitors showing dashboards, payroll and bookkeeping workflow, authentic Metz cabinet workspace. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Le quotidien — scènes authentiques dans nos locaux",
+      "Résultats — témoignages et cas concrets Metz",
+      "Étape 2 — action et points d'étape réguliers"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "scene-3.png",
+    "label": "Engagement Verlaine & Associés. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Verlaine & Associés. Méthode. Processus structuré en trois temps.. Suivi Verlaine & Associés. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Engagement Verlaine & Associés",
+    "scene": "office",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Senior expert-comptable shaking hands with SME director in elegant Metz office, trust and long-term partnership, professional handshake. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Nos engagements — qualité et ancrage Grand Est",
+      "Méthode — processus structuré en trois temps",
+      "Étape 3 — suivi et ajustements"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "gallery-1.png",
+    "label": "Scène Verlaine & Associés. Moment de vie — Metz. Image Expertises. Focus Expertises. Photo d'équipe. Équipe Verlaine & Associés",
+    "alt": "Scène Verlaine & Associés",
+    "scene": "gallery",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Team meeting in accounting firm conference room Metz, presentation on screen with KPI charts, collaborative professional atmosphere. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Moment de vie — réunion d'équipe Metz",
+      "Équipe Verlaine & Associés"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "gallery-2.png",
+    "label": "Clientèle dirigeants. Rencontre avec nos clients. Détail Verlaine & Associés. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Clientèle dirigeants",
+    "scene": "gallery",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Business owner and accountant reviewing dashboard together at cafe table, friendly advisory meeting Thionville Metz area. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Rencontre avec nos clients dirigeants",
+      "Locaux Metz — bureaux rue Serpenoise"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "card-1.png",
+    "label": "Offre Verlaine & Associés. Offre essentielle. Pack d'entrée adapté aux besoins courants de dirigeants.. Détail Expertises. Expertises — niveau 1. Formule accessible et complète.",
+    "alt": "Offre Verlaine & Associés",
+    "scene": "card",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Accounting ledger and tax documents organized on desk with calculator, tenue comptable service visual, clean professional setup. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Tenue comptable — liasse, TVA, tableaux de bord",
+      "Tenue & fiscalité — formule accessible PME"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "card-2.png",
+    "label": "Service premium Verlaine & Associés. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Expertises — niveau 2. Approfondissement et options avancées.",
+    "alt": "Service premium Verlaine & Associés",
+    "scene": "card",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "Payroll software and payslip documents on screen, paie et DSN expert-comptable service, HR accounting professional. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Paie & social — bulletins, DSN, veille conventionnelle",
+      "Paie — accompagnement renforcé"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "comptable",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Expertises — niveau 3. Solution intégrale clé en main.",
+    "alt": "Projet sur mesure",
+    "scene": "card",
+    "category": "conseil",
+    "width": 800,
+    "height": 520,
+    "prompt": "CEO and accountant analyzing growth charts and business plan on tablet, conseil dirigeant strategic advisory Metz. Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Conseil dirigeant — pilotage et transmission",
+      "Conseil — solution intégrale clé en main"
+    ],
+    "dest": "assets/vitrines/demos/comptable/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/comptable.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Précisite Usinage à Yutz. Précisite Usinage : tolerances micron à Yutz. Accompagnement de donneurs d'ordre en Lorraine avec exigence et proximité.. Page Savoir-faire Précisite Usinage. Savoir-faire. Découvrez notre offre savoir-faire pour donneurs d'ordre.. Page Qualité Précisite Usinage. Qualité. Comprendre notre démarche qualité.. Contact Précisite Usinage. Parlons de votre projet. Yutz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Vue d'ensemble Précisite Usinage à Yutz",
+    "scene": "hero",
+    "category": "industrie",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Precision machining factory Précisite Usinage in Yutz: 5-axis CNC machines in modern industrial hall, metal chips, dramatic workshop lighting, aerospace and automotive manufacturing. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Tolérances micron à Yutz — usinage automobile et aéronautique",
+      "Parc machines et capacités d'usinage",
+      "Atelier certifié ISO et métrologie",
+      "Site de production Yutz — zone industrielle"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "scene-1.png",
+    "label": "Savoir-faire chez Précisite Usinage. Notre approche. Méthode éprouvée et transparence à chaque étape pour donneurs d'ordre.. Coulisses Précisite Usinage. Coulisses Savoir-faire. L'équipe Précisite Usinage en action sur le terrain.. Écoute client Précisite Usinage. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Centre 5 axes en action",
+    "scene": "industrial",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "5-axis CNC machining center cutting aluminium aerospace component, coolant spray, precision industrial close-up, operator in background. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Usinage 5 axes — pièces complexes en une prise",
+      "Fraisage haute vitesse — aluminium et acier",
+      "Contrôle en cours de production"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Yutz. Le quotidien. Scènes de travail authentiques dans nos locaux de Yutz.. Résultats clients. Résultats. Témoignages et cas concrets à Yutz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Métrologie 3D",
+    "scene": "industrial",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "Quality engineer using CMM 3D coordinate measuring machine inspecting machined metal part, metrology lab precision industrial. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Métrologie 3D — contrôle 100 % des lots critiques",
+      "Laboratoire métrologie COFRAC",
+      "Traçabilité matière et process"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "scene-3.png",
+    "label": "Engagement Précisite Usinage. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Précisite Usinage. Méthode. Processus structuré en trois temps.. Suivi Précisite Usinage. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Équipe production",
+    "scene": "industrial",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "Machining team reviewing technical drawings at CNC workshop, industrial engineers with safety gear, Yutz factory floor. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Équipe 85 collaborateurs — 3x8 sur demande",
+      "Prototypage rapide — premier article validé",
+      "Audits clients et amélioration continue"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "gallery-1.png",
+    "label": "Scène Précisite Usinage. Moment de vie — Yutz. Image Savoir-faire. Focus Savoir-faire. Photo d'équipe. Équipe Précisite Usinage",
+    "alt": "Pièce usinée aéronautique",
+    "scene": "gallery",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "Finished precision machined titanium aerospace bracket component, flawless surface finish, industrial product photography. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Pièce aéro — titane usiné 5 axes",
+      "Premier article qualifié"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "gallery-2.png",
+    "label": "Clientèle donneurs d'ordre. Rencontre avec nos clients. Détail Précisite Usinage. Détail métier. Bureaux à Yutz. Locaux Yutz",
+    "alt": "Parc machines vue aérienne",
+    "scene": "gallery",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "Wide view of CNC machine park in industrial factory hall, multiple 5-axis centers, organized precision manufacturing floor. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "12 000 m² — 12 centres 5 axes",
+      "Extension 2016 — nouveaux locaux Yutz"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "card-1.png",
+    "label": "Offre Précisite Usinage. Offre essentielle. Pack d'entrée adapté aux besoins courants de donneurs d'ordre.. Détail Savoir-faire. Savoir-faire — niveau 1. Formule accessible et complète.",
+    "alt": "Usinage 5 axes",
+    "scene": "card",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "Close-up 5-axis CNC spindle machining complex metal part, industrial precision card image. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Usinage 5 axes — pièces aéro et auto",
+      "Fraisage — jusqu'à 800 mm"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "card-2.png",
+    "label": "Service premium Précisite Usinage. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Savoir-faire — niveau 2. Approfondissement et options avancées.",
+    "alt": "Tournage CNC",
+    "scene": "card",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "CNC lathe turning steel shaft with precision tooling, sparks and coolant, turning department. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Tournage — barres Ø 65 mm",
+      "Tournage-fraisage combiné"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "industrie",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Savoir-faire — niveau 3. Solution intégrale clé en main.",
+    "alt": "Contrôle qualité",
+    "scene": "card",
+    "category": "industrie",
+    "width": 800,
+    "height": 520,
+    "prompt": "Digital caliper and 3D scan report on machined component, quality control documentation industrial. Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Métrologie — rapport de mesure livré",
+      "Contrôle 3D — MMT et scan laser"
+    ],
+    "dest": "assets/vitrines/demos/industrie/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/industrie.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Patrimoine Lorraine à Nancy. Patrimoine Lorraine : biens d'exception à Nancy. Accompagnement de acquéreurs en Lorraine avec exigence et proximité.. Page Nos biens Patrimoine Lorraine. Nos biens. Découvrez notre offre nos biens pour acquéreurs.. Page Estimation Patrimoine Lorraine. Estimation. Comprendre notre démarche estimation.. Contact Patrimoine Lorraine. Parlons de votre projet. Nancy, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Maison de maître Nancy — Patrimoine Lorraine",
+    "scene": "hero",
+    "category": "immobilier",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Stunning French maison de maître with stone facade and manicured garden in Nancy Lorraine, golden hour light, prestigious real estate hero shot, Place Stanislas area atmosphere. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Biens d'exception à Nancy — achat et vente",
+      "Sélection de biens en Moselle",
+      "Estimation gratuite sous 72 h",
+      "Agence place Stanislas Nancy"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "scene-1.png",
+    "label": "Nos biens chez Patrimoine Lorraine. Notre approche. Méthode éprouvée et transparence à chaque étape pour acquéreurs.. Coulisses Patrimoine Lorraine. Coulisses Nos biens. L'équipe Patrimoine Lorraine en action sur le terrain.. Écoute client Patrimoine Lorraine. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Visite guidée appartement Nancy",
+    "scene": "property",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Real estate agent showing elegant haussmannian apartment to couple in Nancy, parquet floors, high ceilings, natural light through tall windows. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Visites qualifiées — accompagnement sur mesure",
+      "Notre méthode de visite",
+      "Étape 1 — visite et diagnostic du bien"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Nancy. Le quotidien. Scènes de travail authentiques dans nos locaux de Nancy.. Résultats clients. Résultats. Témoignages et cas concrets à Nancy.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Équipe agence Nancy",
+    "scene": "property",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Professional real estate team meeting in modern Nancy agency office, property listings on screen, collaborative atmosphere, sage green accents. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Équipe locale — 28 ans à Nancy",
+      "Portefeuille 186 biens actifs",
+      "Étape 2 — analyse marché et prix"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "scene-3.png",
+    "label": "Engagement Patrimoine Lorraine. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Patrimoine Lorraine. Méthode. Processus structuré en trois temps.. Suivi Patrimoine Lorraine. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Remise des clés — vente conclue",
+    "scene": "property",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Happy family receiving house keys from real estate agent in front of beautiful Lorraine home, sold sign moment, warm authentic celebration. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "340+ ventes par an — satisfaction clients",
+      "Suivi jusqu'à l'acte authentique",
+      "Étape 3 — mandat et commercialisation"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "gallery-1.png",
+    "label": "Scène Patrimoine Lorraine. Moment de vie — Nancy. Image Nos biens. Focus Nos biens. Photo d'équipe. Équipe Patrimoine Lorraine",
+    "alt": "Salon haussmannien Nancy",
+    "scene": "gallery",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Luxurious living room in renovated Nancy apartment, mouldings, fireplace, designer furniture, real estate interior photography. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Intérieurs d'exception — centre-ville Nancy",
+      "Home staging partenaire"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "gallery-2.png",
+    "label": "Clientèle acquéreurs. Rencontre avec nos clients. Détail Patrimoine Lorraine. Détail métier. Bureaux à Nancy. Locaux Nancy",
+    "alt": "Agence place Stanislas",
+    "scene": "gallery",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Elegant real estate agency storefront near Place Stanislas Nancy, welcoming facade, professional signage area without readable text. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Agence 8 place Stanislas",
+      "Permanences du lundi au samedi"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "card-1.png",
+    "label": "Offre Patrimoine Lorraine. Offre essentielle. Pack d'entrée adapté aux besoins courants de acquéreurs.. Détail Nos biens. Nos biens — niveau 1. Formule accessible et complète.",
+    "alt": "Maison de maître Metz",
+    "scene": "card",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Beautiful maison de maître exterior in Metz Sablon district, garden and stone facade, real estate listing card photo. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Maison Metz — 280 m², jardin",
+      "Vente — Metz Sablon 685 000 €"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "card-2.png",
+    "label": "Service premium Patrimoine Lorraine. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Nos biens — niveau 2. Approfondissement et options avancées.",
+    "alt": "Appartement haussmannien Nancy",
+    "scene": "card",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Haussmannian apartment building facade in Nancy with ornate balconies, tree-lined street, golden hour real estate photography. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Appartement Nancy — 4 pièces, vue parc",
+      "Vente — Nancy centre 395 000 €"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "immobilier",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Nos biens — niveau 3. Solution intégrale clé en main.",
+    "alt": "Terrain constructible Thionville",
+    "scene": "card",
+    "category": "immobilier",
+    "width": 800,
+    "height": 520,
+    "prompt": "Peaceful building plot in Thionville suburb, green surroundings, viabilized land for new construction, real estate card image. Elegant French real estate Nancy Lorraine, sage green and cream palette, golden hour light, prestigious homes and apartments, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Terrain Thionville — lotissement calme",
+      "Vente — Thionville 145 000 €"
+    ],
+    "dest": "assets/vitrines/demos/immobilier/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/immobilier.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Rivière & Partenaires à Metz. Rivière & Partenaires : conseil stratégique à Metz. Accompagnement de dirigeants en Lorraine avec exigence et proximité.. Page Expertises Rivière & Partenaires. Expertises. Découvrez notre offre expertises pour dirigeants.. Page Accompagnement Rivière & Partenaires. Accompagnement. Comprendre notre démarche accompagnement.. Contact Rivière & Partenaires. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Cabinet Rivière & Partenaires à Metz",
+    "scene": "hero",
+    "category": "juridique",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Prestigious law firm office Riviere Partenaires Metz France: dark wood library, leather chairs, golden light through tall windows, bar association atmosphere, wide hero banner. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Conseil stratégique à Metz — droit des affaires PME",
+      "Expertises sociétés, social et contentieux",
+      "Accompagnement dirigeants Lorraine",
+      "Cabinet avenue Foch Metz"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "scene-1.png",
+    "label": "Expertises chez Rivière & Partenaires. Notre approche. Méthode éprouvée et transparence à chaque étape pour dirigeants.. Coulisses Rivière & Partenaires. Coulisses Expertises. L'équipe Rivière & Partenaires en action sur le terrain.. Écoute client Rivière & Partenaires. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Consultation avocat Metz",
+    "scene": "legal",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Lawyer consulting business client in elegant Metz law firm meeting room, documents on table, professional confidential discussion. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Écoute et diagnostic — premier rendez-vous structuré",
+      "Analyse juridique et stratégie contentieuse",
+      "Étape 1 — écoute et définition des objectifs"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Équipe avocats Metz",
+    "scene": "legal",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Legal team of six attorneys collaborating in modern Metz law firm conference room, case files and laptops, professional atmosphere. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "6 associés — Barreau de Metz",
+      "Collégialité et spécialisation par domaine",
+      "Étape 2 — mise en œuvre et points d'étape"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "scene-3.png",
+    "label": "Engagement Rivière & Partenaires. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Rivière & Partenaires. Méthode. Processus structuré en trois temps.. Suivi Rivière & Partenaires. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Signature acte juridique",
+    "scene": "legal",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Business handshake after successful legal contract signing in Metz law office, satisfied clients and attorney, warm professional moment. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "850+ dossiers par an — suivi jusqu'à l'acte",
+      "Transmission d'entreprise conclue",
+      "Étape 3 — bilan et pérennisation"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "gallery-1.png",
+    "label": "Scène Rivière & Partenaires. Moment de vie — Metz. Image Expertises. Focus Expertises. Photo d'équipe. Équipe Rivière & Partenaires",
+    "alt": "Salle d'audience Metz",
+    "scene": "gallery",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Empty elegant French courtroom or tribunal waiting area in Metz, marble and wood, solemn legal architecture photography. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Contentieux — représentation devant les juridictions",
+      "Procédures commerciales et prud'hommes"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "gallery-2.png",
+    "label": "Clientèle dirigeants. Rencontre avec nos clients. Détail Rivière & Partenaires. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Locaux avenue Foch Metz",
+    "scene": "gallery",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Elegant law firm reception desk Metz avenue Foch, dark wood paneling, professional welcome area without readable signage. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "12 avenue Foch — permanences du lundi au vendredi",
+      "Accueil clients et rendez-vous"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "card-1.png",
+    "label": "Offre Rivière & Partenaires. Offre essentielle. Pack d'entrée adapté aux besoins courants de dirigeants.. Détail Expertises. Expertises — niveau 1. Formule accessible et complète.",
+    "alt": "Droit des sociétés",
+    "scene": "card",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Corporate law documents pacte associes and company statutes on desk with fountain pen, legal card image Metz law firm. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Sociétés — pactes, AG, gouvernance",
+      "Création et restructuration de sociétés"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "card-2.png",
+    "label": "Service premium Rivière & Partenaires. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Expertises — niveau 2. Approfondissement et options avancées.",
+    "alt": "Droit social",
+    "scene": "card",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Employment law labor contract negotiation scene, HR documents and legal counsel, professional office Metz. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Social — contrats, licenciement, CSE",
+      "Conformité RH et négociation collective"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "juridique",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Expertises — niveau 3. Solution intégrale clé en main.",
+    "alt": "Contentieux commercial",
+    "scene": "card",
+    "category": "juridique",
+    "width": 800,
+    "height": 520,
+    "prompt": "Commercial litigation legal strategy meeting, case files and evidence binders on conference table, law firm Metz. Prestigious French law firm Metz Lorraine, dark wood and leather office, gold accents, professional legal atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Contentieux — recouvrement et médiation",
+      "Défense des intérêts PME en litige"
+    ],
+    "dest": "assets/vitrines/demos/juridique/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/juridique.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Atelier Nord-Est à Metz. Atelier Nord-Est : conception durable à Metz. Accompagnement de maîtres d'ouvrage en Lorraine avec exigence et proximité.. Page Projets Atelier Nord-Est. Projets. Découvrez notre offre projets pour maîtres d'ouvrage.. Page Méthode Atelier Nord-Est. Méthode. Comprendre notre démarche méthode.. Contact Atelier Nord-Est. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Atelier Nord-Est — agence Metz",
+    "scene": "hero",
+    "category": "architecture",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Contemporary architecture studio Atelier Nord Est Metz: bright atelier with architectural models, large windows, timber and concrete, sustainable design atmosphere, wide hero. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Conception durable à Metz — réhabilitation et logements",
+      "Portfolio projets Lorraine",
+      "Méthode conception RE2020",
+      "Atelier 14 rue du XXe Corps Metz"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "scene-1.png",
+    "label": "Projets chez Atelier Nord-Est. Notre approche. Méthode éprouvée et transparence à chaque étape pour maîtres d'ouvrage.. Coulisses Atelier Nord-Est. Coulisses Projets. L'équipe Atelier Nord-Est en action sur le terrain.. Écoute client Atelier Nord-Est. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Maquette et esquisse projet",
+    "scene": "architecture",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "Architects working on physical model and sketches in bright studio, sustainable housing project, Metz architecture office. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Esquisse à permis — accompagnement complet",
+      "Phase conception et maquette",
+      "Étape 1 — programme et esquisse"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Équipe atelier Metz",
+    "scene": "architecture",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "Architecture team reviewing plans on large table, collaborative studio in Metz, natural daylight, professional creative atmosphere. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "12 collaborateurs — pluridisciplinaire",
+      "Suivi de chantier et OPC",
+      "Étape 2 — APS et permis de construire"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "scene-3.png",
+    "label": "Engagement Atelier Nord-Est. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Atelier Nord-Est. Méthode. Processus structuré en trois temps.. Suivi Atelier Nord-Est. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Chantier réhabilitation Metz",
+    "scene": "architecture",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "Heritage building rehabilitation construction site in Metz, architect on site with helmet reviewing facade restoration. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Réhabilitation patrimoine — Jaumont et brique",
+      "Livraison et réception de travaux",
+      "Étape 3 — chantier et réception"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "gallery-1.png",
+    "label": "Scène Atelier Nord-Est. Moment de vie — Metz. Image Projets. Focus Projets. Photo d'équipe. Équipe Atelier Nord-Est",
+    "alt": "Logement contemporain Metz",
+    "scene": "gallery",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "Completed contemporary sustainable housing interior Metz, timber structure, large windows, architecture photography. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Logement RE2020 — quartier Sablon",
+      "Intérieur livré 2024"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "gallery-2.png",
+    "label": "Clientèle maîtres d'ouvrage. Rencontre avec nos clients. Détail Atelier Nord-Est. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Équipement public Thionville",
+    "scene": "gallery",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "Modern public building facade Thionville, wood and glass sustainable architecture, civic equipment completed project. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Médiathèque Thionville — ERP bois",
+      "Équipement public livré"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "card-1.png",
+    "label": "Offre Atelier Nord-Est. Offre essentielle. Pack d'entrée adapté aux besoins courants de maîtres d'ouvrage.. Détail Projets. Projets — niveau 1. Formule accessible et complète.",
+    "alt": "Réhabilitation maison Jaumont",
+    "scene": "card",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "Renovated yellow Jaumont stone house Metz facade, heritage rehabilitation architecture card photo. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Réhabilitation — Metz centre historique",
+      "Maison Jaumont 2023"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "card-2.png",
+    "label": "Service premium Atelier Nord-Est. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Projets — niveau 2. Approfondissement et options avancées.",
+    "alt": "Logements neufs Laxou",
+    "scene": "card",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "New sustainable apartment building Laxou suburb, timber cladding balconies, contemporary housing architecture. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "12 logements — Laxou RE2020",
+      "Collectif neuf 2024"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "architecture",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Projets — niveau 3. Solution intégrale clé en main.",
+    "alt": "Extension école Metz",
+    "scene": "card",
+    "category": "architecture",
+    "width": 800,
+    "height": 520,
+    "prompt": "School extension building Metz, modern wood and glass wing attached to historic school, public architecture card. Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Extension ERP — école Metz",
+      "Équipement scolaire 2022"
+    ],
+    "dest": "assets/vitrines/demos/architecture/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/architecture.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Pulse Fitness Metz à Metz. Pulse Fitness Metz : cours collectifs à Metz. Accompagnement de sportifs en Lorraine avec exigence et proximité.. Page Cours Pulse Fitness Metz. Cours. Découvrez notre offre cours pour sportifs.. Page Tarifs Pulse Fitness Metz. Tarifs. Comprendre notre démarche tarifs.. Contact Pulse Fitness Metz. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Salle Pulse Fitness Metz",
+    "scene": "hero",
+    "category": "sport",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Large modern fitness gym interior Metz: treadmills and free weights area, dramatic lighting, lime accent walls, wide hero banner, energetic atmosphere. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Dépassez vos limites — 1 200 m² à Metz Sablon",
+      "Cours collectifs HIIT, cycling et yoga",
+      "Formules flexibles — essai gratuit",
+      "Réservez votre séance découverte"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "scene-1.png",
+    "label": "Cours chez Pulse Fitness Metz. Notre approche. Méthode éprouvée et transparence à chaque étape pour sportifs.. Coulisses Pulse Fitness Metz. Coulisses Cours. L'équipe Pulse Fitness Metz en action sur le terrain.. Écoute client Pulse Fitness Metz. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Cours HIIT Pulse Fitness",
+    "scene": "fitness",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "HIIT group fitness class in modern gym Metz, coach motivating participants, high energy cross training, dramatic gym lighting. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "HIIT & Cross — 45 min tous niveaux",
+      "Fractionné haute intensité encadré"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Studio cycling Pulse Fitness",
+    "scene": "fitness",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "Indoor cycling studio with rows of bikes, immersive lighting, energetic spin class atmosphere Metz fitness center. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Cycling studio — playlists live",
+      "30 ou 50 min — cardio intense"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "scene-3.png",
+    "label": "Engagement Pulse Fitness Metz. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Pulse Fitness Metz. Méthode. Processus structuré en trois temps.. Suivi Pulse Fitness Metz. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Cours yoga Pulse Fitness",
+    "scene": "fitness",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "Yoga flow class in bright studio corner, wooden floor, calm recovery atmosphere in modern Metz gym. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Yoga Flow — mobilité et récupération",
+      "Matin et soir — tous niveaux"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "gallery-1.png",
+    "label": "Scène Pulse Fitness Metz. Moment de vie — Metz. Image Cours. Focus Cours. Photo d'équipe. Équipe Pulse Fitness Metz",
+    "alt": "Zone musculation libre",
+    "scene": "gallery",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "Free weights and squat racks area in premium gym Metz, rubber flooring, professional equipment, no people. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Musculation libre — racks et haltères",
+      "Accès illimité 6h–23h"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "gallery-2.png",
+    "label": "Clientèle sportifs. Rencontre avec nos clients. Détail Pulse Fitness Metz. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Espace détente membres",
+    "scene": "gallery",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "Gym lounge recovery area with benches and water station, modern fitness club Metz, welcoming member space. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Espace détente et vestiaires premium",
+      "Services inclus dans l'abonnement"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "card-1.png",
+    "label": "Offre Pulse Fitness Metz. Offre essentielle. Pack d'entrée adapté aux besoins courants de sportifs.. Détail Cours. Cours — niveau 1. Formule accessible et complète.",
+    "alt": "Cours HIIT",
+    "scene": "card",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "HIIT training station with kettlebells and battle ropes, fitness card image, Metz gym detail shot. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "HIIT & Cross-training",
+      "45 min — coach certifié"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "card-2.png",
+    "label": "Service premium Pulse Fitness Metz. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Cours — niveau 2. Approfondissement et options avancées.",
+    "alt": "Studio cycling",
+    "scene": "card",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "Close-up of indoor cycling bike in dark studio with colored lighting, fitness card photography. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Cycling immersif",
+      "Studio dédié — 20 places"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "fitness",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Cours — niveau 3. Solution intégrale clé en main.",
+    "alt": "Yoga Flow",
+    "scene": "card",
+    "category": "sport",
+    "width": 800,
+    "height": 520,
+    "prompt": "Yoga mats aligned in serene studio corner, soft natural light, fitness wellness card image. Modern fitness gym Metz France, energetic atmosphere, lime green accents on dark background, professional sports photography, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Yoga Flow",
+      "Mobilité — matin & soir"
+    ],
+    "dest": "assets/vitrines/demos/fitness/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/fitness.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Studio Lumière Grise à Nancy. Studio Lumière Grise : reportages authentiques à Nancy. Accompagnement de couples en Lorraine avec exigence et proximité.. Page Portfolio Studio Lumière Grise. Portfolio. Découvrez notre offre portfolio pour couples.. Page Prestations Studio Lumière Grise. Prestations. Comprendre notre démarche prestations.. Contact Studio Lumière Grise. Parlons de votre projet. Nancy, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Portrait éditorial Studio Lumière Grise",
+    "scene": "hero",
+    "category": "creatif",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Editorial portrait photography in natural window light Nancy studio: elegant woman in soft grey tones, shallow depth of field, fine art photography hero banner. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Capturer l'essentiel — photographie éditoriale Nancy",
+      "Portfolio mariage et corporate",
+      "Prestations portrait et reportage",
+      "Demande de devis personnalisé"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "scene-1.png",
+    "label": "Portfolio chez Studio Lumière Grise. Notre approche. Méthode éprouvée et transparence à chaque étape pour couples.. Coulisses Studio Lumière Grise. Coulisses Portfolio. L'équipe Studio Lumière Grise en action sur le terrain.. Écoute client Studio Lumière Grise. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Reportage mariage Nancy",
+    "scene": "photo",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Documentary wedding photography candid moment in Nancy garden, bride and groom natural laughter, golden hour, fine art style. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Mariage documentaire — reportage intimiste",
+      "Mariage Château des Lumières 2024"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Nancy. Le quotidien. Scènes de travail authentiques dans nos locaux de Nancy.. Résultats clients. Résultats. Témoignages et cas concrets à Nancy.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Portrait corporate Nancy",
+    "scene": "photo",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Corporate portrait of business executive in modern Nancy office, natural window light, professional editorial photography. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Portrait corporate — dirigeants et équipes",
+      "Série portraits PME Grand Est"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "scene-3.png",
+    "label": "Engagement Studio Lumière Grise. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Studio Lumière Grise. Méthode. Processus structuré en trois temps.. Suivi Studio Lumière Grise. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Photographe en séance",
+    "scene": "photo",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Photographer directing client in bright Nancy studio with softboxes and camera on tripod, behind the scenes editorial shoot. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Direction artistique en studio",
+      "Étape 2 — shooting et lumière"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "gallery-1.png",
+    "label": "Scène Studio Lumière Grise. Moment de vie — Nancy. Image Portfolio. Focus Portfolio. Photo d'équipe. Équipe Studio Lumière Grise",
+    "alt": "Couple mariage Nancy",
+    "scene": "gallery",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Romantic wedding couple portrait in Nancy old town square, soft grey and warm tones, editorial photography. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Mariage — Place Stanislas",
+      "Sélection mariages 2024"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "gallery-2.png",
+    "label": "Clientèle couples. Rencontre avec nos clients. Détail Studio Lumière Grise. Détail métier. Bureaux à Nancy. Locaux Nancy",
+    "alt": "Architecture intérieure photographiée",
+    "scene": "gallery",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Interior architecture photography dramatic natural light, concrete and wood volumes, fine art architectural photo. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Architecture & design",
+      "Volumes et matériaux"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "card-1.png",
+    "label": "Offre Studio Lumière Grise. Offre essentielle. Pack d'entrée adapté aux besoins courants de couples.. Détail Portfolio. Portfolio — niveau 1. Formule accessible et complète.",
+    "alt": "Portrait studio",
+    "scene": "card",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Close-up editorial portrait studio Nancy, soft grey background, natural beauty photography card image. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Portrait — studio ou sur site",
+      "À partir de 350 €"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "card-2.png",
+    "label": "Service premium Studio Lumière Grise. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Portfolio — niveau 2. Approfondissement et options avancées.",
+    "alt": "Mariage documentaire",
+    "scene": "card",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Wedding detail photography rings and flowers on vintage table, documentary style, muted tones card image. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Mariage — journée complète",
+      "Reportage + album"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "photographie",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Portfolio — niveau 3. Solution intégrale clé en main.",
+    "alt": "Éditorial mode",
+    "scene": "card",
+    "category": "creatif",
+    "width": 800,
+    "height": 520,
+    "prompt": "Fashion editorial photography model in minimalist grey studio, dramatic side lighting, magazine style card. Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Éditorial & lookbook",
+      "Direction artistique incluse"
+    ],
+    "dest": "assets/vitrines/demos/photographie/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/photographie.json"
+  },
+  {
+    "slug": "association",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Solidarités Metz Métropole à Metz. Solidarités Metz Métropole : solidarité locale à Metz. Accompagnement de bénévoles en Lorraine avec exigence et proximité.. Page Nos actions Solidarités Metz Métropole. Nos actions. Découvrez notre offre nos actions pour bénévoles.. Page Bénévolat Solidarités Metz Métropole. Bénévolat. Comprendre notre démarche bénévolat.. Contact Solidarités Metz Métropole. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Bénévoles Solidarités Metz Métropole",
+    "scene": "hero",
+    "category": "ess",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Diverse volunteers at community food bank Metz France, warm smiles distributing food parcels, solidarity association hero banner, natural light. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Agir ensemble pour un territoire plus juste",
+      "Nos actions sur le territoire",
+      "Rejoignez nos 120 bénévoles",
+      "Faire un don ou devenir bénévole"
+    ],
+    "dest": "assets/vitrines/demos/association/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "scene-1.png",
+    "label": "Nos actions chez Solidarités Metz Métropole. Notre approche. Méthode éprouvée et transparence à chaque étape pour bénévoles.. Coulisses Solidarités Metz Métropole. Coulisses Nos actions. L'équipe Solidarités Metz Métropole en action sur le terrain.. Écoute client Solidarités Metz Métropole. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Épicerie solidaire Metz",
+    "scene": "team",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Solidarity grocery store volunteers organizing food shelves Metz community center, warm authentic photography. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Aide alimentaire — épicerie solidaire",
+      "Paniers hebdomadaires à prix modiques"
+    ],
+    "dest": "assets/vitrines/demos/association/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Atelier insertion emploi",
+    "scene": "team",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Job insertion workshop Metz association, coach helping person with CV on laptop, supportive community atmosphere. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Insertion emploi — ateliers CV",
+      "Mise en relation employeurs locaux"
+    ],
+    "dest": "assets/vitrines/demos/association/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "scene-3.png",
+    "label": "Engagement Solidarités Metz Métropole. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Solidarités Metz Métropole. Méthode. Processus structuré en trois temps.. Suivi Solidarités Metz Métropole. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Permanence sociale Metz",
+    "scene": "team",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Social worker listening to family in bright Metz association office, empathy and support, community photography. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Accompagnement social — permanences",
+      "Formation des bénévoles d'accueil"
+    ],
+    "dest": "assets/vitrines/demos/association/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "gallery-1.png",
+    "label": "Scène Solidarités Metz Métropole. Moment de vie — Metz. Image Nos actions. Focus Nos actions. Photo d'équipe. Équipe Solidarités Metz Métropole",
+    "alt": "Fête de quartier solidaire",
+    "scene": "gallery",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Community neighborhood festival Metz with families and volunteers, outdoor solidarity event, joyful authentic moment. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Fête de quartier — 800 participants",
+      "Événements de lien social"
+    ],
+    "dest": "assets/vitrines/demos/association/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "gallery-2.png",
+    "label": "Clientèle bénévoles. Rencontre avec nos clients. Détail Solidarités Metz Métropole. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Cuisine solidaire",
+    "scene": "gallery",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Community kitchen volunteers preparing meals together Metz solidarity association, warm kitchen atmosphere. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Cuisine solidaire — 200 repas/semaine",
+      "Ateliers cuisine partagée"
+    ],
+    "dest": "assets/vitrines/demos/association/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "card-1.png",
+    "label": "Offre Solidarités Metz Métropole. Offre essentielle. Pack d'entrée adapté aux besoins courants de bénévoles.. Détail Nos actions. Nos actions — niveau 1. Formule accessible et complète.",
+    "alt": "Maraude solidaire",
+    "scene": "card",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Street outreach volunteers with care packages Metz winter evening, solidarity association card image. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Maraude — rue et hébergement",
+      "Mission maraude (2h/mois)"
+    ],
+    "dest": "assets/vitrines/demos/association/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "card-2.png",
+    "label": "Service premium Solidarités Metz Métropole. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Nos actions — niveau 2. Approfondissement et options avancées.",
+    "alt": "Collecte alimentaire",
+    "scene": "card",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Food drive collection boxes in supermarket Metz with volunteers, community solidarity card photo. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Collectes alimentaires",
+      "Bénévolat ponctuel — samedis"
+    ],
+    "dest": "assets/vitrines/demos/association/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "association",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Nos actions — niveau 3. Solution intégrale clé en main.",
+    "alt": "Accompagnement numérique",
+    "scene": "card",
+    "category": "ess",
+    "width": 800,
+    "height": 520,
+    "prompt": "Digital literacy workshop elderly person helped by young volunteer Metz association, intergenerational solidarity. Community association Metz France, volunteers helping families, warm authentic moment, green solidarity atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Aide numérique — accès aux droits",
+      "Mentor numérique (formation 1j)"
+    ],
+    "dest": "assets/vitrines/demos/association/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/association.json"
+  },
+  {
+    "slug": "education",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Institut Mercure à Thionville. Institut Mercure : compétences métiers à Thionville. Accompagnement de apprenants en Lorraine avec exigence et proximité.. Page Parcours Institut Mercure. Parcours. Découvrez notre offre parcours pour apprenants.. Page Campus Institut Mercure. Campus. Comprendre notre démarche campus.. Contact Institut Mercure. Parlons de votre projet. Thionville, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Campus Institut Mercure Thionville",
+    "scene": "hero",
+    "category": "formation",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Modern vocational training campus exterior Thionville France, students entering glass building, professional education hero banner, bright academic atmosphere. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Compétences métiers à Thionville",
+      "35 parcours certifiants",
+      "Campus pensé pour réussir",
+      "Inscription et orientation"
+    ],
+    "dest": "assets/vitrines/demos/education/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "scene-1.png",
+    "label": "Parcours chez Institut Mercure. Notre approche. Méthode éprouvée et transparence à chaque étape pour apprenants.. Coulisses Institut Mercure. Coulisses Parcours. L'équipe Institut Mercure en action sur le terrain.. Écoute client Institut Mercure. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Salle de cours Institut Mercure",
+    "scene": "interior",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Adult students in modern computer classroom vocational training center France, teacher explaining on screen, collaborative learning. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Pédagogie active — ateliers et projets",
+      "Salles connectées et labs code"
+    ],
+    "dest": "assets/vitrines/demos/education/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Thionville. Le quotidien. Scènes de travail authentiques dans nos locaux de Thionville.. Résultats clients. Résultats. Témoignages et cas concrets à Thionville.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Atelier pratique formation",
+    "scene": "interior",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Hands-on workshop adult vocational training Thionville, students practicing professional skills with instructor, authentic education photography. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Insertion professionnelle — 92 %",
+      "Job dating et ateliers recruteurs"
+    ],
+    "dest": "assets/vitrines/demos/education/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "scene-3.png",
+    "label": "Engagement Institut Mercure. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Institut Mercure. Méthode. Processus structuré en trois temps.. Suivi Institut Mercure. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Coaching apprenant",
+    "scene": "interior",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Career counselor helping adult learner with documents in bright training center office France, supportive one-on-one coaching. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Accompagnement individuel",
+      "Coworking et permanences pédagogiques"
+    ],
+    "dest": "assets/vitrines/demos/education/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "gallery-1.png",
+    "label": "Scène Institut Mercure. Moment de vie — Thionville. Image Parcours. Focus Parcours. Photo d'équipe. Équipe Institut Mercure",
+    "alt": "Cours en action",
+    "scene": "gallery",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Group of diverse adult students collaborating on project in modern training center classroom, candid education moment. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "1 200 apprenants par an",
+      "Ateliers pratiques et projets tutorés"
+    ],
+    "dest": "assets/vitrines/demos/education/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "gallery-2.png",
+    "label": "Clientèle apprenants. Rencontre avec nos clients. Détail Institut Mercure. Détail métier. Bureaux à Thionville. Locaux Thionville",
+    "alt": "Locaux campus Thionville",
+    "scene": "gallery",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Bright renovated hallway and common area vocational school Thionville, modern academic interior design. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "35 parcours certifiants",
+      "Espaces lumineux rénovés 2022"
+    ],
+    "dest": "assets/vitrines/demos/education/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "card-1.png",
+    "label": "Offre Institut Mercure. Offre essentielle. Pack d'entrée adapté aux besoins courants de apprenants.. Détail Parcours. Parcours — niveau 1. Formule accessible et complète.",
+    "alt": "Formation digital web",
+    "scene": "card",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Young adult learning web development on laptop in coding bootcamp classroom, digital skills training card image. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Digital & web — alternance 12 mois",
+      "Développeur web RNCP"
+    ],
+    "dest": "assets/vitrines/demos/education/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "card-2.png",
+    "label": "Service premium Institut Mercure. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Parcours — niveau 2. Approfondissement et options avancées.",
+    "alt": "Formation management",
+    "scene": "card",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Business management training session adults around table with charts, professional leadership education card photo. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Management — BTS et titres pro",
+      "BTS Management 2 ans"
+    ],
+    "dest": "assets/vitrines/demos/education/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "education",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Parcours — niveau 3. Solution intégrale clé en main.",
+    "alt": "Formation technique comptabilité",
+    "scene": "card",
+    "category": "formation",
+    "width": 800,
+    "height": 520,
+    "prompt": "Accounting vocational training student with calculator and ledger in classroom France, technical skills education. Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Métiers techniques — CPF/OPCO",
+      "Comptabilité titre pro"
+    ],
+    "dest": "assets/vitrines/demos/education/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/education.json"
+  },
+  {
+    "slug": "services",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Proprio Facility à Metz. Proprio Facility : services sur mesure à Metz. Accompagnement de gestionnaires en Lorraine avec exigence et proximité.. Page Offres Proprio Facility. Offres. Découvrez notre offre offres pour gestionnaires.. Page Secteurs Proprio Facility. Secteurs. Comprendre notre démarche secteurs.. Contact Proprio Facility. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Hall d'accueil Proprio Facility Metz",
+    "scene": "hero",
+    "category": "services",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Modern corporate office building lobby Metz France, reception desk facility management, bright professional interior hero banner, teal accents. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Facility management pour immeubles tertiaires",
+      "Offres calibrées pour chaque site",
+      "FM adapté à votre secteur",
+      "Devis facility management"
+    ],
+    "dest": "assets/vitrines/demos/services/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "scene-1.png",
+    "label": "Offres chez Proprio Facility. Notre approche. Méthode éprouvée et transparence à chaque étape pour gestionnaires.. Coulisses Proprio Facility. Coulisses Offres. L'équipe Proprio Facility en action sur le terrain.. Écoute client Proprio Facility. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Audit FM sur site",
+    "scene": "interior",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Facility manager inspecting HVAC equipment in modern office building technical room, professional FM audit photography. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Audit & cahier des charges",
+      "Visite site et cartographie",
+      "Immeubles de bureaux Metz"
+    ],
+    "dest": "assets/vitrines/demos/services/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Équipe FM en intervention",
+    "scene": "interior",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "FM maintenance technician fixing building systems on call, professional facility management team at work Metz. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Astreinte 24/7 — intervention < 2 h",
+      "Exploitation quotidienne GMAO",
+      "Établissements de santé"
+    ],
+    "dest": "assets/vitrines/demos/services/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "scene-3.png",
+    "label": "Engagement Proprio Facility. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Proprio Facility. Méthode. Processus structuré en trois temps.. Suivi Proprio Facility. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Reporting FM qualité",
+    "scene": "interior",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Facility management team reviewing KPI dashboard on screen in modern Metz office, ISO quality process. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "ISO 9001 — audits trimestriels",
+      "Reporting KPI mensuel",
+      "Suivi et amélioration continue"
+    ],
+    "dest": "assets/vitrines/demos/services/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "gallery-1.png",
+    "label": "Scène Proprio Facility. Moment de vie — Metz. Image Offres. Focus Offres. Photo d'équipe. Équipe Proprio Facility",
+    "alt": "Portefeuille multi-sites FM",
+    "scene": "gallery",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Aerial view modern office campus Metz France facility management portfolio, corporate buildings cluster. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "200+ immeubles gérés Grand Est",
+      "Centres commerciaux retail"
+    ],
+    "dest": "assets/vitrines/demos/services/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "gallery-2.png",
+    "label": "Clientèle gestionnaires. Rencontre avec nos clients. Détail Proprio Facility. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Tour bureaux Metz",
+    "scene": "gallery",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Glass office tower Metz city center exterior, corporate facility management reference building. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Références tertiaires Metz",
+      "Tour Saint-Jacques 12 000 m²"
+    ],
+    "dest": "assets/vitrines/demos/services/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "card-1.png",
+    "label": "Offre Proprio Facility. Offre essentielle. Pack d'entrée adapté aux besoins courants de gestionnaires.. Détail Offres. Offres — niveau 1. Formule accessible et complète.",
+    "alt": "Maintenance technique immeuble",
+    "scene": "card",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Building maintenance engineer checking HVAC panel in commercial building, facility management card image. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Maintenance CVC — GMAO 24/7",
+      "Offre Essentiel maintenance"
+    ],
+    "dest": "assets/vitrines/demos/services/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "card-2.png",
+    "label": "Service premium Proprio Facility. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Offres — niveau 2. Approfondissement et options avancées.",
+    "alt": "Accueil tertiaire professionnel",
+    "scene": "card",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Professional corporate receptionist at modern office front desk Metz, visitor management facility services. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Accueil & standard téléphonique",
+      "Parc retail Thionville"
+    ],
+    "dest": "assets/vitrines/demos/services/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "services",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Offres — niveau 3. Solution intégrale clé en main.",
+    "alt": "Conciergerie immeuble",
+    "scene": "card",
+    "category": "services",
+    "width": 800,
+    "height": 520,
+    "prompt": "Corporate concierge helping office tenant with services in bright lobby, premium facility management card photo. Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Conciergerie services occupants",
+      "Clinique privée 8 500 m²"
+    ],
+    "dest": "assets/vitrines/demos/services/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/services.json"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Hôtel Stanislas Collection à Nancy. Hôtel Stanislas Collection : hospitalité premium à Nancy. Accompagnement de voyageurs en Lorraine avec exigence et proximité.. Page Chambres Hôtel Stanislas Collection. Chambres. Découvrez notre offre chambres pour voyageurs.. Page Séminaires Hôtel Stanislas Collection. Séminaires. Comprendre notre démarche séminaires.. Contact Hôtel Stanislas Collection. Parlons de votre projet. Nancy, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Vue d'ensemble Hôtel Stanislas Collection à Nancy",
+    "scene": "hero",
+    "category": "hotel",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Vue d'ensemble Hôtel Stanislas Collection à Nancy. Hôtel Stanislas Collection : hospitalité premium à Nancy. Accompagnement de voyageurs en Lorraine avec exigence et proximité.. Page Chambres Hôtel Stanislas Collection. Chambres. Découvrez notre offre chambres pour voyageurs.. Page Séminaires Hôtel Stanislas Collection. Séminaires. Comprendre notre démarche séminaires.. Contact Hôtel Stanislas Collection. Parlons de votre projet. Nancy, Grand Est — réponse sous 24 h ouvrées.. Professional commercial photography, widescreen 21:9 hero banner, warm natural lighting, photorealistic, shallow depth of field, no text, no watermark, no logos",
+    "contexts": [
+      "Vue d'ensemble Hôtel Stanislas Collection à Nancy",
+      "Hôtel Stanislas Collection : hospitalité premium à Nancy",
+      "Accompagnement de voyageurs en Lorraine avec exigence et proximité.",
+      "Page Chambres Hôtel Stanislas Collection",
+      "Chambres",
+      "Découvrez notre offre chambres pour voyageurs.",
+      "Page Séminaires Hôtel Stanislas Collection",
+      "Séminaires",
+      "Comprendre notre démarche séminaires.",
+      "Contact Hôtel Stanislas Collection",
+      "Parlons de votre projet",
+      "Nancy, Grand Est — réponse sous 24 h ouvrées."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/hero.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "scene-1.png",
+    "label": "Chambres chez Hôtel Stanislas Collection. Notre approche. Méthode éprouvée et transparence à chaque étape pour voyageurs.. Coulisses Hôtel Stanislas Collection. Coulisses Chambres. L'équipe Hôtel Stanislas Collection en action sur le terrain.. Écoute client Hôtel Stanislas Collection. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Chambres chez Hôtel Stanislas Collection",
+    "scene": "interior",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Chambres chez Hôtel Stanislas Collection. Notre approche. Méthode éprouvée et transparence à chaque étape pour voyageurs.. Coulisses Hôtel Stanislas Collection. Coulisses Chambres. L'équipe Hôtel Stanislas Collection en action sur le terrain.. Écoute client Hôtel Stanislas Collection. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.. Interior design photography, elegant space, natural light, photorealistic, no text, no watermark",
+    "contexts": [
+      "Chambres chez Hôtel Stanislas Collection",
+      "Notre approche",
+      "Méthode éprouvée et transparence à chaque étape pour voyageurs.",
+      "Coulisses Hôtel Stanislas Collection",
+      "Coulisses Chambres",
+      "L'équipe Hôtel Stanislas Collection en action sur le terrain.",
+      "Écoute client Hôtel Stanislas Collection",
+      "Étape 1 — Écoute",
+      "Diagnostic gratuit et définition des objectifs."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/scene-1.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Nancy. Le quotidien. Scènes de travail authentiques dans nos locaux de Nancy.. Résultats clients. Résultats. Témoignages et cas concrets à Nancy.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Équipe au travail à Nancy",
+    "scene": "interior",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Équipe au travail à Nancy. Le quotidien. Scènes de travail authentiques dans nos locaux de Nancy.. Résultats clients. Résultats. Témoignages et cas concrets à Nancy.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.. Interior design photography, elegant space, natural light, photorealistic, no text, no watermark",
+    "contexts": [
+      "Équipe au travail à Nancy",
+      "Le quotidien",
+      "Scènes de travail authentiques dans nos locaux de Nancy.",
+      "Résultats clients",
+      "Résultats",
+      "Témoignages et cas concrets à Nancy.",
+      "Action terrain",
+      "Étape 2 — Action",
+      "Mise en œuvre avec points d'étape réguliers."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/scene-2.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "scene-3.png",
+    "label": "Engagement Hôtel Stanislas Collection. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Hôtel Stanislas Collection. Méthode. Processus structuré en trois temps.. Suivi Hôtel Stanislas Collection. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Engagement Hôtel Stanislas Collection",
+    "scene": "interior",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Engagement Hôtel Stanislas Collection. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Hôtel Stanislas Collection. Méthode. Processus structuré en trois temps.. Suivi Hôtel Stanislas Collection. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.. Interior design photography, elegant space, natural light, photorealistic, no text, no watermark",
+    "contexts": [
+      "Engagement Hôtel Stanislas Collection",
+      "Nos engagements",
+      "Qualité, réactivité et ancrage Grand Est depuis des années.",
+      "Méthode Hôtel Stanislas Collection",
+      "Méthode",
+      "Processus structuré en trois temps.",
+      "Suivi Hôtel Stanislas Collection",
+      "Étape 3 — Suivi",
+      "Bilan et ajustements pour pérenniser les résultats."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/scene-3.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "gallery-1.png",
+    "label": "Scène Hôtel Stanislas Collection. Moment de vie — Nancy. Image Chambres. Focus Chambres. Photo d'équipe. Équipe Hôtel Stanislas Collection",
+    "alt": "Scène Hôtel Stanislas Collection",
+    "scene": "gallery",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Scène Hôtel Stanislas Collection. Moment de vie — Nancy. Image Chambres. Focus Chambres. Photo d'équipe. Équipe Hôtel Stanislas Collection. Lifestyle photography, candid authentic moment, natural light, photorealistic, no text, no watermark",
+    "contexts": [
+      "Scène Hôtel Stanislas Collection",
+      "Moment de vie — Nancy",
+      "Image Chambres",
+      "Focus Chambres",
+      "Photo d'équipe",
+      "Équipe Hôtel Stanislas Collection"
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/gallery-1.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "gallery-2.png",
+    "label": "Clientèle voyageurs. Rencontre avec nos clients. Détail Hôtel Stanislas Collection. Détail métier. Bureaux à Nancy. Locaux Nancy",
+    "alt": "Clientèle voyageurs",
+    "scene": "gallery",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Clientèle voyageurs. Rencontre avec nos clients. Détail Hôtel Stanislas Collection. Détail métier. Bureaux à Nancy. Locaux Nancy. Lifestyle photography, candid authentic moment, natural light, photorealistic, no text, no watermark",
+    "contexts": [
+      "Clientèle voyageurs",
+      "Rencontre avec nos clients",
+      "Détail Hôtel Stanislas Collection",
+      "Détail métier",
+      "Bureaux à Nancy",
+      "Locaux Nancy"
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/gallery-2.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "card-1.png",
+    "label": "Offre Hôtel Stanislas Collection. Offre essentielle. Pack d'entrée adapté aux besoins courants de voyageurs.. Détail Chambres. Chambres — niveau 1. Formule accessible et complète.",
+    "alt": "Offre Hôtel Stanislas Collection",
+    "scene": "card",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Offre Hôtel Stanislas Collection. Offre essentielle. Pack d'entrée adapté aux besoins courants de voyageurs.. Détail Chambres. Chambres — niveau 1. Formule accessible et complète.. Detail shot photography, focused subject, clean composition, photorealistic, no text, no watermark",
+    "contexts": [
+      "Offre Hôtel Stanislas Collection",
+      "Offre essentielle",
+      "Pack d'entrée adapté aux besoins courants de voyageurs.",
+      "Détail Chambres",
+      "Chambres — niveau 1",
+      "Formule accessible et complète."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/card-1.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "card-2.png",
+    "label": "Service premium Hôtel Stanislas Collection. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Chambres — niveau 2. Approfondissement et options avancées.",
+    "alt": "Service premium Hôtel Stanislas Collection",
+    "scene": "card",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Service premium Hôtel Stanislas Collection. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Chambres — niveau 2. Approfondissement et options avancées.. Detail shot photography, focused subject, clean composition, photorealistic, no text, no watermark",
+    "contexts": [
+      "Service premium Hôtel Stanislas Collection",
+      "Offre premium",
+      "Accompagnement renforcé et suivi personnalisé.",
+      "Option avancée",
+      "Chambres — niveau 2",
+      "Approfondissement et options avancées."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/card-2.png"
+  },
+  {
+    "slug": "etablissement",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Chambres — niveau 3. Solution intégrale clé en main.",
+    "alt": "Projet sur mesure",
+    "scene": "card",
+    "category": "hotel",
+    "width": 800,
+    "height": 520,
+    "prompt": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Chambres — niveau 3. Solution intégrale clé en main.. Detail shot photography, focused subject, clean composition, photorealistic, no text, no watermark",
+    "contexts": [
+      "Projet sur mesure",
+      "Sur mesure",
+      "Projet spécifique ? Nous construisons la réponse ensemble.",
+      "Solution intégrale",
+      "Chambres — niveau 3",
+      "Solution intégrale clé en main."
+    ],
+    "dest": "assets/vitrines/demos/etablissement/images/card-3.png"
+  },
+  {
+    "slug": "technologie",
+    "filename": "hero.png",
+    "label": "Vue d'ensemble Synapse Lorraine à Metz. Synapse Lorraine : plateforme data à Metz. Accompagnement de DSI en Lorraine avec exigence et proximité.. Page Produit Synapse Lorraine. Produit. Découvrez notre offre produit pour DSI.. Page Clients Synapse Lorraine. Clients. Comprendre notre démarche clients.. Contact Synapse Lorraine. Parlons de votre projet. Metz, Grand Est — réponse sous 24 h ouvrées.",
+    "alt": "Bureaux Synapse Lorraine Metz",
+    "scene": "hero",
+    "category": "tech",
+    "width": 1200,
+    "height": 520,
+    "prompt": "Modern tech startup office Metz France with large data visualization screens, diverse software team collaborating, blue ambient lighting, B2B data platform company hero banner. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Plateforme data à Metz"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "scene-1.png",
+    "label": "Produit chez Synapse Lorraine. Notre approche. Méthode éprouvée et transparence à chaque étape pour DSI.. Coulisses Synapse Lorraine. Coulisses Produit. L'équipe Synapse Lorraine en action sur le terrain.. Écoute client Synapse Lorraine. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
+    "alt": "Équipe produit data",
+    "scene": "office",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Product managers reviewing analytics dashboard on wall screen in modern Metz tech office, data pipeline visualization, professional software team. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Notre approche produit"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "scene-2.png",
+    "label": "Équipe au travail à Metz. Le quotidien. Scènes de travail authentiques dans nos locaux de Metz.. Résultats clients. Résultats. Témoignages et cas concrets à Metz.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
+    "alt": "Développeurs au travail",
+    "scene": "office",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Software developers pair programming at standing desks in bright Metz tech company, agile workspace, authentic candid moment. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Le quotidien de l'équipe"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "scene-3.png",
+    "label": "Engagement Synapse Lorraine. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Synapse Lorraine. Méthode. Processus structuré en trois temps.. Suivi Synapse Lorraine. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
+    "alt": "Réunion client DSI",
+    "scene": "office",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "B2B client meeting in glass conference room Metz, consultant presenting data platform on large display to IT directors, professional trust. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Nos engagements clients"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "gallery-1.png",
+    "label": "Scène Synapse Lorraine. Moment de vie — Metz. Image Produit. Focus Produit. Photo d'équipe. Équipe Synapse Lorraine",
+    "alt": "Équipe Synapse Lorraine",
+    "scene": "gallery",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Diverse tech team standup meeting in modern open plan office Metz, startup energy, natural light. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Photo d'équipe"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "gallery-2.png",
+    "label": "Clientèle DSI. Rencontre avec nos clients. Détail Synapse Lorraine. Détail métier. Bureaux à Metz. Locaux Metz",
+    "alt": "Locaux Metz",
+    "scene": "gallery",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Contemporary software company office interior Metz with ergonomic workstations and plants, clean tech workspace photography. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Locaux Metz"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "card-1.png",
+    "label": "Offre Synapse Lorraine. Offre essentielle. Pack d'entrée adapté aux besoins courants de DSI.. Détail Produit. Produit — niveau 1. Formule accessible et complète.",
+    "alt": "Dashboard data temps réel",
+    "scene": "saas_ui",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Abstract analytics dashboard on monitor showing charts graphs and KPIs, blue dark UI theme, no readable text, software product card image. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Offre essentielle data"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "card-2.png",
+    "label": "Service premium Synapse Lorraine. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Produit — niveau 2. Approfondissement et options avancées.",
+    "alt": "Intégrations cloud",
+    "scene": "saas_ui",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Cloud integration hub software interface on screen, connected nodes and API workflow visualization, premium B2B SaaS card, no readable text. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Offre premium"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "technologie",
+    "filename": "card-3.png",
+    "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Produit — niveau 3. Solution intégrale clé en main.",
+    "alt": "Sécurité entreprise",
+    "scene": "saas_ui",
+    "category": "tech",
+    "width": 800,
+    "height": 520,
+    "prompt": "Enterprise security compliance dashboard on monitor, encryption and access control UI mockup, dark professional theme, no readable text. B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+    "contexts": [
+      "Solution sur mesure"
+    ],
+    "dest": "assets/vitrines/demos/technologie/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/technologie.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "hero.png",
+    "label": "Interface FlowMetrics — écran d'accueil produit. FlowMetrics : Landing SaaS analytics pour équipes produit.. Transformez vos données en décisions : hero conversion, pricing contrasté et preuves sociales.. Écran fonctionnalités FlowMetrics. Fonctionnalités. Tout ce dont votre équipe a besoin.. Page tarifs FlowMetrics. Tarifs transparents. Plan recommandé mis en avant, sans frais cachés.. Contact FlowMetrics. Démarrer avec FlowMetrics. Formulaire de contact — réponse sous 24 h.",
+    "alt": "Landing FlowMetrics",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 1200,
+    "height": 520,
+    "prompt": "SaaS analytics product hero: laptop showing marketing landing page with dashboard preview, charts and funnel metrics, indigo gradient, widescreen banner. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "scene-1.png",
+    "label": "UI FlowMetrics — dashboard. Interface principale. Design épuré, hiérarchie visuelle et CTA visibles.. Module 1 FlowMetrics. Étape / Module 1. Configuration initiale guidée.. Comparatif FlowMetrics. Comparatif. Tableau features par plan.",
+    "alt": "Dashboard principal",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Main analytics dashboard UI with line charts bar graphs and KPI cards, clean white interface indigo accents, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "scene-2.png",
+    "label": "Workflow FlowMetrics. Workflow clé. Parcours utilisateur optimisé en trois clics.. Module 2 FlowMetrics. Étape / Module 2. Import et synchronisation des données.. FAQ FlowMetrics. FAQ pricing. Questions fréquentes sur la facturation.",
+    "alt": "Workflow funnel",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "User onboarding funnel workflow UI with three step progress visualization, SaaS product design, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "scene-3.png",
+    "label": "Intégrations FlowMetrics. Intégrations. API REST, webhooks et connecteurs métier.. Module 3 FlowMetrics. Étape / Module 3. Premiers insights et partage d'équipe.. ROI FlowMetrics. ROI. Calculateur de retour sur investissement.",
+    "alt": "Intégrations API",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Integrations settings panel UI with API webhooks and connector icons grid, modern SaaS interface, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "gallery-1.png",
+    "label": "Écran FlowMetrics. Capture produit. Composant FlowMetrics. Détail UI",
+    "alt": "Détail UI",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Close-up product UI component: metric card with sparkline chart and trend indicator, SaaS dashboard detail, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "gallery-2.png",
+    "label": "App mobile FlowMetrics. Vue mobile. Tableau comparatif. Comparatif",
+    "alt": "Vue mobile",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Mobile analytics app on smartphone showing simplified dashboard charts, clean responsive SaaS design, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "card-1.png",
+    "label": "Analytics FlowMetrics. Analytics. Tableaux de bord temps réel et exports.. Avant FlowMetrics. Avant. Données éparpillées, décisions lentes.. Plan Starter FlowMetrics. Starter. Pour les petites équipes — jusqu'à 5 utilisateurs.",
+    "alt": "Analytics temps réel",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Real-time analytics charts dashboard section with live data visualization, SaaS product card, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "card-2.png",
+    "label": "Collab FlowMetrics. Collaboration. Équipes synchronisées et commentaires.. Migration FlowMetrics. Transition. Migration assistée en 48 h.. Plan Pro FlowMetrics. Pro. Le plus populaire — illimité et support prioritaire.",
+    "alt": "Collaboration équipe",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Team collaboration feature UI with comments and shared reports panel, SaaS workspace, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-landing",
+    "filename": "card-3.png",
+    "label": "Sécurité FlowMetrics. Sécurité. RGPD, SSO et chiffrement bout en bout.. Après FlowMetrics. Après. Une source de vérité partagée.. Plan Enterprise FlowMetrics. Enterprise. SSO, SLA et account manager dédié.",
+    "alt": "Sécurité RGPD",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Security compliance settings UI with encryption shield icons SSO toggles, enterprise SaaS, no readable text. Modern SaaS analytics software UI mockup, clean dashboard with charts and metrics, indigo accent, professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-landing/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-landing.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "hero.png",
+    "label": "Interface TalentLoop — écran d'accueil produit. TalentLoop : Onboarding RH en 4 étapes avec barre de progression.. Réduisez l'abandon à l'inscription : copy orienté valeur et aha moment visible.. Écran fonctionnalités TalentLoop. Parcours en 4 étapes. Chaque écran = une intention claire.. Page tarifs TalentLoop. Toutes les fonctionnalités. API, webhooks et rôles avancés.. Contact TalentLoop. Démarrer avec TalentLoop. Formulaire de contact — réponse sous 24 h.",
+    "alt": "Landing TalentLoop",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 1200,
+    "height": 520,
+    "prompt": "HR onboarding SaaS hero: welcome screen with 4-step progress bar checklist and friendly illustration area, purple accent widescreen. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "scene-1.png",
+    "label": "UI TalentLoop — dashboard. Interface principale. Design épuré, hiérarchie visuelle et CTA visibles.. Module 1 TalentLoop. Étape / Module 1. Configuration initiale guidée.. Comparatif TalentLoop. Comparatif. Tableau features par plan.",
+    "alt": "Dashboard RH",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "HR onboarding dashboard UI with employee progress cards and completion percentages, purple SaaS interface, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "scene-2.png",
+    "label": "Workflow TalentLoop. Workflow clé. Parcours utilisateur optimisé en trois clics.. Module 2 TalentLoop. Étape / Module 2. Import et synchronisation des données.. FAQ TalentLoop. FAQ pricing. Questions fréquentes sur la facturation.",
+    "alt": "Parcours 3 clics",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Three-step onboarding wizard UI with large progress indicator and form fields, streamlined UX, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "scene-3.png",
+    "label": "Intégrations TalentLoop. Intégrations. API REST, webhooks et connecteurs métier.. Module 3 TalentLoop. Étape / Module 3. Premiers insights et partage d'équipe.. ROI TalentLoop. ROI. Calculateur de retour sur investissement.",
+    "alt": "Intégrations SIRH",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "HR integrations panel connecting payroll and ATS systems, API connectors UI, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "gallery-1.png",
+    "label": "Écran TalentLoop. Capture produit. Composant TalentLoop. Détail UI",
+    "alt": "Composant UI",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Onboarding task checklist UI component with checkmarks and due dates, HR SaaS detail, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "gallery-2.png",
+    "label": "App mobile TalentLoop. Vue mobile. Tableau comparatif. Comparatif",
+    "alt": "App mobile RH",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Mobile HR onboarding app on phone showing welcome tasks for new hire, purple theme, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "card-1.png",
+    "label": "Analytics TalentLoop. Analytics. Tableaux de bord temps réel et exports.. Avant TalentLoop. Avant. Données éparpillées, décisions lentes.. Plan Starter TalentLoop. Starter. Pour les petites équipes — jusqu'à 5 utilisateurs.",
+    "alt": "Analytics onboarding",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Onboarding analytics dashboard with time-to-productivity metrics and funnel charts, HR SaaS, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "card-2.png",
+    "label": "Collab TalentLoop. Collaboration. Équipes synchronisées et commentaires.. Migration TalentLoop. Transition. Migration assistée en 48 h.. Plan Pro TalentLoop. Pro. Le plus populaire — illimité et support prioritaire.",
+    "alt": "Migration assistée",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Data migration wizard UI with import progress and mapping table, HR platform transition, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-onboarding",
+    "filename": "card-3.png",
+    "label": "Sécurité TalentLoop. Sécurité. RGPD, SSO et chiffrement bout en bout.. Après TalentLoop. Après. Une source de vérité partagée.. Plan Enterprise TalentLoop. Enterprise. SSO, SLA et account manager dédié.",
+    "alt": "Sécurité données RH",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "GDPR data protection settings UI for HR platform with consent and retention controls, no readable text. Modern HR onboarding SaaS UI mockup, progress steps, warm purple accent, friendly professional product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-onboarding/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-onboarding.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "hero.png",
+    "label": "Interface MetricPulse — écran d'accueil produit. MetricPulse : Dashboard activation et funnel onboarding.. KPIs time-to-value, churn et événements récents en un coup d'œil.. Écran fonctionnalités MetricPulse. Fonctionnalités. Tout ce dont votre équipe a besoin.. Page tarifs MetricPulse. Tarifs transparents. Plan recommandé mis en avant, sans frais cachés.. Contact MetricPulse. Démarrer avec MetricPulse. Formulaire de contact — réponse sous 24 h.",
+    "alt": "Dashboard MetricPulse",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 1200,
+    "height": 520,
+    "prompt": "SaaS activation dashboard hero on ultrawide monitor: funnel chart KPI tiles time-to-value metrics emerald green accent, product screenshot banner. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "scene-1.png",
+    "label": "UI MetricPulse — dashboard. Interface principale. Design épuré, hiérarchie visuelle et CTA visibles.. Module 1 MetricPulse. Étape / Module 1. Configuration initiale guidée.. Comparatif MetricPulse. Comparatif. Tableau features par plan.",
+    "alt": "Interface principale",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Dense analytics dashboard with activation funnel cohort chart and metric cards grid, emerald SaaS UI, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "scene-2.png",
+    "label": "Workflow MetricPulse. Workflow clé. Parcours utilisateur optimisé en trois clics.. Module 2 MetricPulse. Étape / Module 2. Import et synchronisation des données.. FAQ MetricPulse. FAQ pricing. Questions fréquentes sur la facturation.",
+    "alt": "Workflow activation",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "User activation workflow builder UI with drag nodes and trigger conditions, SaaS product, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "scene-3.png",
+    "label": "Intégrations MetricPulse. Intégrations. API REST, webhooks et connecteurs métier.. Module 3 MetricPulse. Étape / Module 3. Premiers insights et partage d'équipe.. ROI MetricPulse. ROI. Calculateur de retour sur investissement.",
+    "alt": "Intégrations produit",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Product analytics integrations hub UI Segment Mixpanel style connectors, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "gallery-1.png",
+    "label": "Écran MetricPulse. Capture produit. Composant MetricPulse. Détail UI",
+    "alt": "Widget KPI",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "KPI widget close-up with sparkline and percentage change indicator, dashboard component detail, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "gallery-2.png",
+    "label": "App mobile MetricPulse. Vue mobile. Tableau comparatif. Comparatif",
+    "alt": "Mobile metrics",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Mobile metrics summary app on phone with mini charts and alerts, emerald theme, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "card-1.png",
+    "label": "Analytics MetricPulse. Analytics. Tableaux de bord temps réel et exports.. Avant MetricPulse. Avant. Données éparpillées, décisions lentes.. Plan Starter MetricPulse. Starter. Pour les petites équipes — jusqu'à 5 utilisateurs.",
+    "alt": "Analytics activation",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Activation analytics panel with retention curve and feature adoption heatmap, SaaS card, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "card-2.png",
+    "label": "Collab MetricPulse. Collaboration. Équipes synchronisées et commentaires.. Migration MetricPulse. Transition. Migration assistée en 48 h.. Plan Pro MetricPulse. Pro. Le plus populaire — illimité et support prioritaire.",
+    "alt": "Collaboration metrics",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Shared dashboard comments and annotations UI for product teams, collaboration feature, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-dashboard",
+    "filename": "card-3.png",
+    "label": "Sécurité MetricPulse. Sécurité. RGPD, SSO et chiffrement bout en bout.. Après MetricPulse. Après. Une source de vérité partagée.. Plan Enterprise MetricPulse. Enterprise. SSO, SLA et account manager dédié.",
+    "alt": "Sécurité SSO",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Enterprise SSO and role-based access control settings UI, security dashboard, no readable text. Modern SaaS activation dashboard UI mockup, funnel metrics KPI cards, emerald green accent, data-dense professional design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-dashboard/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-dashboard.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "hero.png",
+    "label": "Interface QueryBase — écran d'accueil produit. QueryBase : États vides et recherche sans résultat orientés action.. Suggestions, vote roadmap et correcteur d'intention — zéro impasse utilisateur.. Écran fonctionnalités QueryBase. Fonctionnalités. Tout ce dont votre équipe a besoin.. Page tarifs QueryBase. Tarifs transparents. Plan recommandé mis en avant, sans frais cachés.. Contact QueryBase. Démarrer avec QueryBase. Formulaire de contact — réponse sous 24 h.",
+    "alt": "États vides QueryBase",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 1200,
+    "height": 520,
+    "prompt": "SaaS empty state hero screen with friendly illustration placeholder search bar and primary CTA button, amber accent widescreen product UI. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "scene-1.png",
+    "label": "UI QueryBase — dashboard. Interface principale. Design épuré, hiérarchie visuelle et CTA visibles.. Module 1 QueryBase. Étape / Module 1. Configuration initiale guidée.. Comparatif QueryBase. Comparatif. Tableau features par plan.",
+    "alt": "Dashboard vide",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Empty dashboard state UI with centered illustration icon and get started button, minimal SaaS design amber accent, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "scene-2.png",
+    "label": "Workflow QueryBase. Workflow clé. Parcours utilisateur optimisé en trois clics.. Module 2 QueryBase. Étape / Module 2. Import et synchronisation des données.. FAQ QueryBase. FAQ pricing. Questions fréquentes sur la facturation.",
+    "alt": "Recherche sans résultat",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Search no results empty state UI with suggestions list and filter chips, helpful UX pattern, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "scene-3.png",
+    "label": "Intégrations QueryBase. Intégrations. API REST, webhooks et connecteurs métier.. Module 3 QueryBase. Étape / Module 3. Premiers insights et partage d'équipe.. ROI QueryBase. ROI. Calculateur de retour sur investissement.",
+    "alt": "Première intégration",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "First integration empty state prompting user to connect data source with connector cards, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "gallery-1.png",
+    "label": "Écran QueryBase. Capture produit. Composant QueryBase. Détail UI",
+    "alt": "Composant vide",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Empty table state UI with column headers and add row CTA, database SaaS component, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "gallery-2.png",
+    "label": "App mobile QueryBase. Vue mobile. Tableau comparatif. Comparatif",
+    "alt": "Mobile état vide",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Mobile empty inbox state on smartphone with illustration and action button, amber theme, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "card-1.png",
+    "label": "Analytics QueryBase. Analytics. Tableaux de bord temps réel et exports.. Avant QueryBase. Avant. Données éparpillées, décisions lentes.. Plan Starter QueryBase. Starter. Pour les petites équipes — jusqu'à 5 utilisateurs.",
+    "alt": "Avant QueryBase",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Chaotic scattered data icons before state comparison UI split panel messy vs organized, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "card-2.png",
+    "label": "Collab QueryBase. Collaboration. Équipes synchronisées et commentaires.. Migration QueryBase. Transition. Migration assistée en 48 h.. Plan Pro QueryBase. Pro. Le plus populaire — illimité et support prioritaire.",
+    "alt": "Migration guidée",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Guided data import wizard empty-to-filled transition progress UI, migration assistant, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-empty",
+    "filename": "card-3.png",
+    "label": "Sécurité QueryBase. Sécurité. RGPD, SSO et chiffrement bout en bout.. Après QueryBase. Après. Une source de vérité partagée.. Plan Enterprise QueryBase. Enterprise. SSO, SLA et account manager dédié.",
+    "alt": "Après QueryBase",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Organized unified data dashboard after state clean tables and search working, success empty state resolved, no readable text. Modern SaaS empty state UI mockup, friendly illustration area, search no results, amber accent, clean minimal product design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-empty/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-empty.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "hero.png",
+    "label": "Interface PingFlow — écran d'accueil produit. PingFlow : Centre de notifications in-app hiérarchisé.. Actions requises, filtres granulaires et préférences anti-spam.. Écran fonctionnalités PingFlow. Fonctionnalités. Tout ce dont votre équipe a besoin.. Page tarifs PingFlow. Tarifs transparents. Plan recommandé mis en avant, sans frais cachés.. Contact PingFlow. Démarrer avec PingFlow. Formulaire de contact — réponse sous 24 h.",
+    "alt": "Centre notifications PingFlow",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 1200,
+    "height": 520,
+    "prompt": "SaaS in-app notification center hero: slide-out panel with categorized alerts action required mentions system updates rose accent widescreen UI. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "scene-1.png",
+    "label": "UI PingFlow — dashboard. Interface principale. Design épuré, hiérarchie visuelle et CTA visibles.. Module 1 PingFlow. Étape / Module 1. Configuration initiale guidée.. Comparatif PingFlow. Comparatif. Tableau features par plan.",
+    "alt": "Panneau notifications",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Notification inbox panel UI with unread badges priority labels and mark all read, rose SaaS interface, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "scene-2.png",
+    "label": "Workflow PingFlow. Workflow clé. Parcours utilisateur optimisé en trois clics.. Module 2 PingFlow. Étape / Module 2. Import et synchronisation des données.. FAQ PingFlow. FAQ pricing. Questions fréquentes sur la facturation.",
+    "alt": "Workflow alertes",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Alert routing workflow UI configuring notification rules triggers and channels, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "scene-3.png",
+    "label": "Intégrations PingFlow. Intégrations. API REST, webhooks et connecteurs métier.. Module 3 PingFlow. Étape / Module 3. Premiers insights et partage d'équipe.. ROI PingFlow. ROI. Calculateur de retour sur investissement.",
+    "alt": "Intégrations push",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Push notification integrations settings Slack email webhook toggles UI, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "gallery-1.png",
+    "label": "Écran PingFlow. Capture produit. Composant PingFlow. Détail UI",
+    "alt": "Toast notification",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Toast notification popup UI overlay on dashboard success warning info variants, component detail, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "gallery-2.png",
+    "label": "App mobile PingFlow. Vue mobile. Tableau comparatif. Comparatif",
+    "alt": "Mobile push",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Mobile push notification preview on phone lock screen and in-app banner, rose theme, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "card-1.png",
+    "label": "Analytics PingFlow. Analytics. Tableaux de bord temps réel et exports.. Avant PingFlow. Avant. Données éparpillées, décisions lentes.. Plan Starter PingFlow. Starter. Pour les petites équipes — jusqu'à 5 utilisateurs.",
+    "alt": "Analytics notifications",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Notification analytics dashboard open rates response times chart, SaaS metrics card, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "card-2.png",
+    "label": "Collab PingFlow. Collaboration. Équipes synchronisées et commentaires.. Migration PingFlow. Transition. Migration assistée en 48 h.. Plan Pro PingFlow. Pro. Le plus populaire — illimité et support prioritaire.",
+    "alt": "Préférences utilisateur",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "User notification preferences UI with granular channel toggles and quiet hours schedule, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  },
+  {
+    "slug": "saas-notifications",
+    "filename": "card-3.png",
+    "label": "Sécurité PingFlow. Sécurité. RGPD, SSO et chiffrement bout en bout.. Après PingFlow. Après. Une source de vérité partagée.. Plan Enterprise PingFlow. Enterprise. SSO, SLA et account manager dédié.",
+    "alt": "Sécurité alertes",
+    "scene": "saas_ui",
+    "category": "saas",
+    "width": 800,
+    "height": 520,
+    "prompt": "Security alert notification UI with severity levels and incident timeline, enterprise SaaS, no readable text. Modern SaaS notification center UI mockup, in-app alerts panel, rose accent, clean hierarchical notification design, no readable text, no watermark, no logos",
+    "contexts": [],
+    "dest": "assets/vitrines/demos/saas-notifications/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/saas-notifications.json"
+  }
+]

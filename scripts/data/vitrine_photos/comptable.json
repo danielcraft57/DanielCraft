@@ -1,0 +1,122 @@
+{
+  "slug": "comptable",
+  "brand": "Verlaine & Associés",
+  "category": "conseil",
+  "locale": "Metz, Thionville, Moselle, Grand Est, France",
+  "style_suffix": "Prestigious French accounting firm office Metz, navy and gold accents, wood and leather professional workspace, natural light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Vue d'ensemble Verlaine & Associés à Metz",
+      "subject": "Prestigious Verlaine & Associés accounting firm reception in Metz: navy and gold interior, wood paneling, professional waiting area, expert-comptable cabinet atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Bilan et conseil à Metz — accompagnement dirigeants Lorraine" },
+        { "page": "expertises.html", "section": "hero", "text": "Expertises comptables pour dirigeants PME" },
+        { "page": "methode.html", "section": "hero", "text": "Notre méthode — transparence et proximité" },
+        { "page": "contact.html", "section": "hero", "text": "Contact cabinet — 14 rue Serpenoise Metz" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "office",
+      "alt": "Expertises chez Verlaine & Associés",
+      "subject": "Accountant reviewing financial statements with client in modern Metz office, laptop and paper reports, professional consultation meeting",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Notre approche — méthode éprouvée et transparence" },
+        { "page": "expertises.html", "section": "chapter", "text": "Coulisses — équipe en action sur le terrain" },
+        { "page": "methode.html", "section": "chapter", "text": "Étape 1 — écoute et diagnostic gratuit" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "office",
+      "alt": "Équipe au travail à Metz",
+      "subject": "Accounting team collaborating at large desk with monitors showing dashboards, payroll and bookkeeping workflow, authentic Metz cabinet workspace",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Le quotidien — scènes authentiques dans nos locaux" },
+        { "page": "expertises.html", "section": "chapter", "text": "Résultats — témoignages et cas concrets Metz" },
+        { "page": "methode.html", "section": "chapter", "text": "Étape 2 — action et points d'étape réguliers" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "office",
+      "alt": "Engagement Verlaine & Associés",
+      "subject": "Senior expert-comptable shaking hands with SME director in elegant Metz office, trust and long-term partnership, professional handshake",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Nos engagements — qualité et ancrage Grand Est" },
+        { "page": "expertises.html", "section": "chapter", "text": "Méthode — processus structuré en trois temps" },
+        { "page": "methode.html", "section": "chapter", "text": "Étape 3 — suivi et ajustements" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Scène Verlaine & Associés",
+      "subject": "Team meeting in accounting firm conference room Metz, presentation on screen with KPI charts, collaborative professional atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Moment de vie — réunion d'équipe Metz" },
+        { "page": "methode.html", "section": "gallery", "text": "Équipe Verlaine & Associés" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Clientèle dirigeants",
+      "subject": "Business owner and accountant reviewing dashboard together at cafe table, friendly advisory meeting Thionville Metz area",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Rencontre avec nos clients dirigeants" },
+        { "page": "methode.html", "section": "gallery", "text": "Locaux Metz — bureaux rue Serpenoise" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Offre Verlaine & Associés",
+      "subject": "Accounting ledger and tax documents organized on desk with calculator, tenue comptable service visual, clean professional setup",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Tenue comptable — liasse, TVA, tableaux de bord" },
+        { "page": "expertises.html", "section": "card", "text": "Tenue & fiscalité — formule accessible PME" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Service premium Verlaine & Associés",
+      "subject": "Payroll software and payslip documents on screen, paie et DSN expert-comptable service, HR accounting professional",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Paie & social — bulletins, DSN, veille conventionnelle" },
+        { "page": "expertises.html", "section": "card", "text": "Paie — accompagnement renforcé" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Projet sur mesure",
+      "subject": "CEO and accountant analyzing growth charts and business plan on tablet, conseil dirigeant strategic advisory Metz",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Conseil dirigeant — pilotage et transmission" },
+        { "page": "expertises.html", "section": "card", "text": "Conseil — solution intégrale clé en main" }
+      ]
+    }
+  ]
+}

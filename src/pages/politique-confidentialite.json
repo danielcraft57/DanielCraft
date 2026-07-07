@@ -3,5 +3,6 @@
   "page_description": "Données personnelles, cookies et vos droits sur le site danielcraft.fr.",
   "page_keywords": "politique confidentialité, RGPD, cookies, données personnelles, DanielCraft",
   "page_url": "/politique-confidentialite",
-  "og_image": "/assets/images/og/politique-confidentialite-1200x630.jpg"
+  "og_image": "/assets/images/og/politique-confidentialite-1200x630.jpg",
+  "schema_type": "legal"
 }

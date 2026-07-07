@@ -4,6 +4,7 @@
   "page_keywords": "statistiques, projets, expérience, technologies, développement",
   "page_url": "/statistiques",
   "og_image": "/assets/images/og/statistiques-1200x630.jpg",
+  "schema_type": "webpage",
   "page_scripts": ["main.js", "stats-page.js"],
   "extra_css": "stats.css"
 }

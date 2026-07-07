@@ -1,24 +1,153 @@
+/* Spa Thalie — thème Bootstrap 5 */
 :root {
-  --beaute-rose: #c08497;
-  --beaute-mauve: #6b3d4d;
-  --beaute-cream: #fff5f8;
+  --vt-cream: #fdf8f5;
+  --vt-nude: #f5ebe0;
+  --vt-rose: #e8c4c4;
+  --vt-blush: #c9a0a0;
+  --vt-text: #4a3728;
+  --vt-accent: var(--vt-blush);
+  --bs-body-bg: var(--vt-cream);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-blush);
+  --bs-link-color: var(--vt-blush);
+  --bs-link-hover-color: #a87878;
 }
 
-.beaute-hero {
-  background:
-    linear-gradient(125deg, rgba(92, 61, 77, 0.95) 0%, rgba(61, 40, 51, 0.93) 48%, rgba(42, 27, 36, 0.98) 100%),
-    radial-gradient(500px 280px at 15% 25%, rgba(192, 132, 151, 0.2), transparent 50%);
+body.vt-body-spa {
+  background: var(--vt-cream);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-spa { padding-bottom: 0; }
 }
 
-.has-text-beaute-rose {
-  color: #ffd6e4 !important;
+.vt-display,
+.vt-section-title,
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  color: var(--vt-text);
+  font-weight: 600;
 }
 
-.section.is-beaute-cream {
-  background-color: var(--beaute-cream) !important;
+.vt-eyebrow {
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--vt-blush);
+  margin-bottom: 0.75rem;
 }
 
-.box.is-beaute-glow {
-  box-shadow: 0 8px 28px rgba(107, 61, 77, 0.12);
-  border: 1px solid rgba(192, 132, 151, 0.35);
+.vt-lead { max-width: 42rem; color: #7a6a5a; }
+
+.vt-topbar { background: var(--vt-text); color: rgba(255, 255, 255, 0.92); }
+.vt-topbar-status { color: var(--vt-rose); font-weight: 600; }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-topbar-link:hover { color: #fff; text-decoration: underline; }
+
+.vt-navbar {
+  background: rgba(253, 248, 245, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--vt-rose);
+  box-shadow: 0 2px 16px rgba(201, 160, 160, 0.08);
 }
+.vt-navbar .nav-link { color: var(--vt-text); font-weight: 500; letter-spacing: 0.02em; }
+.vt-navbar .nav-link.active { color: var(--vt-blush); font-weight: 700; }
+.navbar-brand.vt-brand {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--vt-blush);
+}
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-blush);
+  --bs-btn-border-color: var(--vt-blush);
+  --bs-btn-hover-bg: #a87878;
+  --bs-btn-hover-border-color: #a87878;
+  --bs-btn-color: #fff;
+  font-weight: 600;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-blush);
+  --bs-btn-border-color: var(--vt-blush);
+  --bs-btn-hover-bg: var(--vt-blush);
+  --bs-btn-hover-color: #fff;
+  font-weight: 600;
+}
+.btn-vt-pill {
+  --bs-btn-color: var(--vt-blush);
+  --bs-btn-border-color: var(--vt-rose);
+  --bs-btn-bg: #fff;
+  font-weight: 600;
+}
+
+.vt-hero { background: linear-gradient(180deg, var(--vt-nude), var(--vt-cream)); }
+.vt-hero-media img { max-height: 480px; object-fit: cover; border-radius: 0 0 2rem 2rem; }
+
+.vt-stats-band {
+  background: var(--vt-nude);
+  color: var(--vt-text);
+  padding-block: 1.75rem;
+  border-block: 1px solid var(--vt-rose);
+}
+.vt-stat-val {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  color: var(--vt-blush);
+  font-weight: 600;
+}
+.vt-stat-lbl { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #7a6a5a; }
+
+.vt-story { background: rgba(255, 255, 255, 0.5); }
+.vt-chapter:nth-child(even) { background: #fff; }
+.vt-media img { aspect-ratio: 4/3; object-fit: cover; }
+
+.vt-card { border-radius: 1.25rem !important; text-align: center; }
+.vt-card-img { height: 220px; object-fit: cover; transition: transform 0.4s ease; }
+.vt-card:hover .vt-card-img { transform: scale(1.03); }
+.vt-card-title { font-family: "Cormorant Garamond", Georgia, serif; color: var(--vt-text); }
+
+.vt-cross { background: #fff; }
+.vt-badge {
+  background: var(--vt-cream);
+  color: var(--vt-blush);
+  border: 1px solid var(--vt-rose);
+  font-weight: 600;
+}
+.vt-trust-lead {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--vt-text);
+}
+
+.vt-cta-band { background: var(--vt-blush); }
+
+.vt-menu-cat { color: var(--vt-blush); font-family: "Cormorant Garamond", Georgia, serif; }
+.vt-menu-price { color: var(--vt-blush); font-weight: 700; }
+.vt-tag { background: var(--vt-nude); color: var(--vt-blush); font-size: 0.65rem; text-transform: uppercase; }
+
+.vt-footer { background: var(--vt-text); }
+.vt-footer .nav-link { color: rgba(255, 255, 255, 0.85); }
+.vt-footer .nav-link:hover { color: #fff; }
+
+.vt-mobile-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; display: flex; z-index: 1040;
+  background: #fff; border-top: 1px solid var(--vt-rose);
+  box-shadow: 0 -4px 24px rgba(201, 160, 160, 0.15);
+}
+.vt-mobile-bar-btn {
+  flex: 1; text-align: center; padding: 1rem; font-weight: 700;
+  text-decoration: none; color: var(--vt-text);
+}
+.vt-mobile-bar-primary { background: var(--vt-blush); color: #fff; }
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--vt-rose);
+  box-shadow: 0 0 0 0.2rem rgba(201, 160, 160, 0.2);
+}
+
+.vt-hours th { font-weight: 600; padding-right: 1rem; white-space: nowrap; }

@@ -43,3 +43,17 @@ Le dossier **`dist/vitrines/`** doit être publié avec le reste du site (HTML, 
 ## Versions / tags
 
 Les tags de version (ex. `v1.4.0`) et l’historique détaillé restent dans **`docs/CHANGELOG.md`** ; aligner une release vitrine avec un tag se fait au choix de publication (pas d’automatisation imposée ici).
+
+## Démos « vrai site » (Bootstrap + photos IA)
+
+Méthode détaillée pour enrichir chaque vitrine multi-pages (contenu, prompts photo, build HTML) :
+
+→ **[VITRINES-SITE-METHOD.md](./VITRINES-SITE-METHOD.md)** — pilote : **`restauration`**, 21 slugs restants à traiter un par un.
+
+Commandes rapides :
+
+```bash
+python scripts/gen_vitrine_photo_prompts.py
+python scripts/build_vitrine_site.py restauration
+python scripts/install_vitrine_photo.py <source.png> <slug> <filename>
+```

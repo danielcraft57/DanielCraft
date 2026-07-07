@@ -62,6 +62,29 @@ $vitrine_title = $data['vitrine_title'];
 $site_url = $data['site_url'];
 $billing_address = $data['billing_address'];
 
+require_once __DIR__ . '/devis-common.php';
+
+$devisOutcome = devis_try_issue_for_contact($data);
+if ($devisOutcome['mode'] === 'failed') {
+    http_response_code(502);
+    $payload = ['success' => false, 'error' => $devisOutcome['error'] ?? 'Devis indisponible.'];
+    if (!empty($devisOutcome['error_code'])) {
+        $payload['error_code'] = $devisOutcome['error_code'];
+    }
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+$devisAdminNote = '';
+$devisClientMessage = '';
+$devisQuoteId = '';
+$devisIssued = $devisOutcome['mode'] === 'issued';
+if ($devisIssued) {
+    $devisAdminNote = (string) ($devisOutcome['admin_note'] ?? '');
+    $devisClientMessage = (string) ($devisOutcome['message'] ?? '');
+    $devisQuoteId = (string) ($devisOutcome['quote_id'] ?? '');
+}
+
 api_bootstrap_env();
 
 // --- Configuration SMTP DEV via variables d'environnement (optionnel) ---
@@ -169,11 +192,14 @@ if ($vitrine_slug !== '') {
     } else {
         $body .= "\n";
     }
-} elseif (in_array($service, $audit_flow_services, true) && $site_url !== '') {
+} elseif (in_array($service, ['audit_gratuit_site', 'audit_paid_complet_ia'], true) && $site_url !== '') {
     $body .= "--- Site à auditer ---\n";
     $body .= 'URL : ' . $site_url . "\n\n";
 }
 $body .= "Message :\n" . $message . "\n";
+if ($devisAdminNote !== '') {
+    $body .= "\n--- Devis automatique ---\n" . $devisAdminNote . "\n";
+}
 
 // --- HTML mail (inline + compat email clients) ---
 function esc(string $s): string
@@ -433,14 +459,23 @@ $htmlBodyUser = '
 ';
 
 $bodyUser = "Bonjour " . $name . ",\n\n";
-$bodyUser .= "Merci pour votre demande, elle a bien été reçue.\n\n";
-$bodyUser .= "Récapitulatif :\n";
+if ($devisIssued) {
+    $bodyUser .= ($devisClientMessage !== '' ? $devisClientMessage . "\n\n" : "Votre devis PDF a été envoyé à cette adresse.\n\n");
+    $bodyUser .= "Récapitulatif :\n";
+} else {
+    $bodyUser .= "Merci pour votre demande, elle a bien été reçue.\n\n";
+    $bodyUser .= "Récapitulatif :\n";
+}
 $bodyUser .= "- Besoin : " . $projectTypeLabel . "\n";
 $bodyUser .= "- Prestation : " . $serviceLabelUser . "\n";
 $bodyUser .= "- " . $budgetMarketingLine . "\n";
 $bodyUser .= "- Date proposée : " . ($preferred_date ?: 'Non renseignée') . "\n";
 $bodyUser .= "- Créneau horaire : " . ($preferred_time ?: 'Non renseigné') . "\n\n";
-$bodyUser .= "Je reviens vers vous rapidement pour confirmer le créneau ou vous proposer une meilleure option.\n";
+if ($devisIssued) {
+    $bodyUser .= "Je vous confirme aussi le créneau proposé ou une alternative par e-mail.\n";
+} else {
+    $bodyUser .= "Je reviens vers vous rapidement pour confirmer le créneau ou vous proposer une meilleure option.\n";
+}
 $bodyUser .= "DanielCraft\n";
 
 $boundary = 'bnd_' . bin2hex(random_bytes(8));
@@ -699,7 +734,18 @@ $dryRunRaw = getenv('CONTACT_MAIL_DRY_RUN');
 $dryRun = $dryRunRaw !== false && in_array(strtolower(trim((string) $dryRunRaw)), ['1', 'true', 'yes', 'on'], true);
 if ($dryRun) {
     error_log('[send-contact] CONTACT_MAIL_DRY_RUN=1 : email non envoyé (service=' . $service . ').');
-    echo json_encode(['success' => true, 'dry_run' => true]);
+    $dryPayload = ['success' => true, 'dry_run' => true];
+    if ($devisIssued) {
+        $dryPayload['devis_issued'] = true;
+        $dryPayload['message'] = $devisClientMessage;
+        if ($devisQuoteId !== '') {
+            $dryPayload['quote_id'] = $devisQuoteId;
+        }
+        if (!empty($devisOutcome['fallback'])) {
+            $dryPayload['fallback'] = true;
+        }
+    }
+    echo json_encode($dryPayload);
     exit;
 }
 
@@ -830,4 +876,15 @@ if (!$sent) {
     exit;
 }
 
-echo json_encode(['success' => true]);
+$response = ['success' => true];
+if ($devisIssued) {
+    $response['devis_issued'] = true;
+    $response['message'] = $devisClientMessage;
+    if ($devisQuoteId !== '') {
+        $response['quote_id'] = $devisQuoteId;
+    }
+    if (!empty($devisOutcome['fallback'])) {
+        $response['fallback'] = true;
+    }
+}
+echo json_encode($response);

@@ -1,0 +1,109 @@
+/* Animations vitrines — reveal au scroll, stagger, compteurs, marquee */
+@media (prefers-reduced-motion: reduce) {
+  .vt-reveal,
+  .vt-reveal-stagger > *,
+  .vt-marquee-track,
+  .vt-ken-burns img {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.vt-reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.vt-reveal.vt-reveal--in {
+  opacity: 1;
+  transform: none;
+}
+
+.vt-reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--vt-i, 0) * 80ms);
+}
+.vt-reveal-stagger.vt-reveal--in > * {
+  opacity: 1;
+  transform: none;
+}
+
+.vt-reveal-fade {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.vt-reveal-fade.vt-reveal--in {
+  opacity: 1;
+}
+
+.vt-ken-burns {
+  overflow: hidden;
+}
+.vt-ken-burns img {
+  transition: transform 8s ease-out;
+  transform: scale(1.04);
+}
+.vt-ken-burns.vt-reveal--in img {
+  transform: scale(1);
+}
+
+.vt-stat-val[data-vt-count-end] {
+  font-variant-numeric: tabular-nums;
+}
+
+.vt-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.vt-marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: vt-marquee 28s linear infinite;
+}
+.vt-marquee:hover .vt-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes vt-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.vt-marquee-item {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.vt-scroll-snap-y {
+  scroll-snap-type: y proximity;
+}
+.vt-snap-chapter {
+  scroll-snap-align: start;
+  scroll-margin-top: 5rem;
+}
+
+.vt-navbar.vt-navbar--scrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.vt-btn-vt-primary,
+.btn-vt-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.vt-btn-vt-primary:hover,
+.btn-vt-primary:hover {
+  transform: translateY(-1px);
+}

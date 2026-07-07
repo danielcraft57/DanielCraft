@@ -1,0 +1,119 @@
+{
+  "slug": "restauration",
+  "brand": "Brasserie Saint-Jacques",
+  "category": "hcr",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "French brasserie and Lorraine regional cuisine, Metz atmosphere, warm inviting light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Salle de brasserie chaleureuse avec verrière à Metz",
+      "subject": "Historic Brasserie Saint-Jacques dining room at place Saint-Jacques Metz: restored Art Deco glass verrière, yellow Jaumont stone walls, set tables with white linen, brass lamps, guests dining, warm amber evening light",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "La table qui réchauffe Metz depuis 1924 — terrasse, mijotés au feu de bois, vins mosellans" },
+        { "page": "carte.html", "section": "hero", "text": "Plats colorés en cuisine lorraine — carte saisonnière du marché" },
+        { "page": "histoire.html", "section": "hero", "text": "Façade historique en pierre jaune — cent ans de convivialité messine" },
+        { "page": "contact.html", "section": "hero", "text": "Entrée de brasserie à Metz, 12 place Saint-Jacques" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "food",
+      "alt": "Cuisine ouverte avec flammes à Metz",
+      "subject": "Open brasserie kitchen in Metz with wood-fired oven flames, copper casseroles on the pass, chef Élodie Marchal team plating Lorraine bouchée à la reine, restored Art Deco glass ceiling above",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Le feu de la cuisine — four à bois et casseroles en cuivre derrière le passe" },
+        { "page": "histoire.html", "section": "chapter", "text": "La verrière — chef-d'œuvre Art déco restauré pièce par pièce" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "food",
+      "alt": "Cave à vin mosellane",
+      "subject": "Vintage zinc bar counter in classic French brasserie Metz, regulars at morning coffee, Moselle Riesling bottles in stone cellar racks, forty-five regional wine references, warm dim cellar lighting",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "La cave mosellane — quarante-cinq références de vignerons de la vallée de la Moselle" },
+        { "page": "histoire.html", "section": "chapter", "text": "Le zinc — comptoir d'origine où les habitués prennent leur café" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "food",
+      "alt": "Terrasse face à la cathédrale de Metz",
+      "subject": "Sunny terrace on place Saint-Jacques Metz with Gothic cathedral spires in background, apéritif glasses and Lorraine tapas on bistro tables, golden afternoon light, Messins enjoying outdoor dining",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "La terrasse des Messins — face à la cathédrale, apéritif et tapas lorrains au soleil" },
+        { "page": "histoire.html", "section": "chapter", "text": "Les archives — photos de famille et menus jaunis dans le couloir" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Déjeuner animé place Saint-Jacques",
+      "subject": "Lively midday brasserie lunch service under historic glass verrière, waiters carrying plates, natural light streaming in, Moselle wine tasting by the glass at white-clothed tables",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Service du midi sous la verrière — déjeuner animé place Saint-Jacques" },
+        { "page": "carte.html", "section": "gallery", "text": "Carte des vins mosellans — dégustation au verre" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Vendredis live dans la salle",
+      "subject": "Friday evening jazz musician playing at zinc bar counter, craft beer taps and artisan Lorraine bottles, intimate warm brasserie atmosphere, guests at high stools listening",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Soirée jazz au comptoir — vendredis live dans la salle" },
+        { "page": "carte.html", "section": "gallery", "text": "Bières artisanales — pression et bouteilles locales" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Assiette gastronomique lorraine",
+      "subject": "Beautifully plated Lorraine appetizers on white porcelain: duck terrine with cornichons, Munster cheese salad, classic French onion soup gratinée, market-fresh presentation",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Menu du marché — carte renouvelée chaque semaine selon le marché Saint-Jacques" },
+        { "page": "carte.html", "section": "card", "text": "Entrées — terrine de canard, salade Munster, soupe à l'oignon" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Plat mijoté en cocotte",
+      "subject": "Hearty Lorraine brasserie mains: golden bouchée à la reine vol-au-vent with creamy sauce, slow-braised confit lamb shank in copper cocotte, sandre fish fillet, Sunday brunch brioche perdue with mirabelle plums",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Brunch dominical — brioche perdue à la mirabelle" },
+        { "page": "carte.html", "section": "card", "text": "Plats — bouchée à la reine, jarret confit, sandre du canal" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Salon privatisé",
+      "subject": "Mirabelle plum clafoutis and quetsche tart on dessert plates, elegant wood-paneled private dining salon upstairs set for forty guests with chandeliers and long table",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Privatisation — salon du premier pour 40 couverts" },
+        { "page": "carte.html", "section": "card", "text": "Desserts — tarte aux quetsches et clafoutis mirabelle" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "photographie",
+  "brand": "Studio Lumière Grise",
+  "category": "creatif",
+  "locale": "Nancy, Meurthe-et-Moselle, Grand Est, France",
+  "style_suffix": "Fine art editorial photography Nancy France, natural light, muted tones, cinematic portraits, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Portrait éditorial Studio Lumière Grise",
+      "subject": "Editorial portrait photography in natural window light Nancy studio: elegant woman in soft grey tones, shallow depth of field, fine art photography hero banner",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Capturer l'essentiel — photographie éditoriale Nancy" },
+        { "page": "portfolio.html", "section": "hero", "text": "Portfolio mariage et corporate" },
+        { "page": "prestations.html", "section": "hero", "text": "Prestations portrait et reportage" },
+        { "page": "contact.html", "section": "hero", "text": "Demande de devis personnalisé" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "photo",
+      "alt": "Reportage mariage Nancy",
+      "subject": "Documentary wedding photography candid moment in Nancy garden, bride and groom natural laughter, golden hour, fine art style",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Mariage documentaire — reportage intimiste" },
+        { "page": "portfolio.html", "section": "chapter", "text": "Mariage Château des Lumières 2024" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "photo",
+      "alt": "Portrait corporate Nancy",
+      "subject": "Corporate portrait of business executive in modern Nancy office, natural window light, professional editorial photography",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Portrait corporate — dirigeants et équipes" },
+        { "page": "portfolio.html", "section": "chapter", "text": "Série portraits PME Grand Est" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "photo",
+      "alt": "Photographe en séance",
+      "subject": "Photographer directing client in bright Nancy studio with softboxes and camera on tripod, behind the scenes editorial shoot",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Direction artistique en studio" },
+        { "page": "prestations.html", "section": "chapter", "text": "Étape 2 — shooting et lumière" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Couple mariage Nancy",
+      "subject": "Romantic wedding couple portrait in Nancy old town square, soft grey and warm tones, editorial photography",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Mariage — Place Stanislas" },
+        { "page": "portfolio.html", "section": "gallery", "text": "Sélection mariages 2024" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Architecture intérieure photographiée",
+      "subject": "Interior architecture photography dramatic natural light, concrete and wood volumes, fine art architectural photo",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Architecture & design" },
+        { "page": "portfolio.html", "section": "gallery", "text": "Volumes et matériaux" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Portrait studio",
+      "subject": "Close-up editorial portrait studio Nancy, soft grey background, natural beauty photography card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Portrait — studio ou sur site" },
+        { "page": "prestations.html", "section": "card", "text": "À partir de 350 €" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Mariage documentaire",
+      "subject": "Wedding detail photography rings and flowers on vintage table, documentary style, muted tones card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Mariage — journée complète" },
+        { "page": "prestations.html", "section": "card", "text": "Reportage + album" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Éditorial mode",
+      "subject": "Fashion editorial photography model in minimalist grey studio, dramatic side lighting, magazine style card",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Éditorial & lookbook" },
+        { "page": "prestations.html", "section": "card", "text": "Direction artistique incluse" }
+      ]
+    }
+  ]
+}

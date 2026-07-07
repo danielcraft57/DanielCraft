@@ -37,35 +37,35 @@ python scripts/stripe_sync_vitrines.py   # crée des Payment Links et met à jou
 
 Le catalogue est copié vers `api/data/vitrines.json` à chaque `python build.py`.
 
-## Devis prestations (Facturio)
+## Devis prestations (Prestafacture)
 
 - `POST /api/request-prestation-devis.php` — corps `name`, `email`, `phone`, `company`, `message`, `prestation_slug`, `service_slug`, `total_eur`, `addon_id[]` (optionnel)
 - Réponse : `{ "success": true, "message": "...", "quote_id": "..." }`
-- Flux serveur : `POST https://facturio.danielcraft.fr/api/public/devis` puis `POST …/devis/:id/send`
-- Variables `.env` : `FACTURIO_API_BASE`, `FACTURIO_API_TOKEN` (jeton `fact_…`)
-- **Scopes jeton** (Facturio → Paramètres → API — Jetons) :
+- Flux serveur : `POST https://prestafacture.com/api/public/devis` puis `POST …/devis/:id/send`
+- Variables `.env` : `PRESTAFACTURE_API_BASE`, `PRESTAFACTURE_API_TOKEN` (jeton `fact_…`)
+- **Scopes jeton** (Prestafacture → Paramètres → API — Jetons) :
   - Devis catalogue : `clients.read`, `clients.write`, `devis.read`, `devis.write`, `devis.send`, `produits.read`, `produits.write`
   - Facture audit Stripe : `factures.read`, `factures.write`, `factures.send`
 - **Flux devis** : recherche/création client (`/clients`) puis `POST /devis` avec `clientId` (pas `clientEmail` seul).
-- Les lignes de devis référencent le catalogue Facturio via `productId` (`facturio_product_id` dans `prestations.json`).
-- Les prix catalogue sont **HT** ; la TVA 20 % est ajoutée dans Facturio via `taxRate: 0.2`.
+- Les lignes de devis référencent le catalogue Prestafacture via `productId` (`prestafacture_product_id` dans `prestations.json`).
+- Les prix catalogue sont **HT** ; la TVA 20 % est ajoutée dans Prestafacture via `taxRate: 0.2`.
 
-Sync catalogue → produits Facturio (écrit `facturio_sku` + `facturio_product_id` dans `src/data/prestations.json`).
+Sync catalogue → produits Prestafacture (écrit `prestafacture_sku` + `prestafacture_product_id` dans `src/data/prestations.json`).
 Payload : **description courte** (accroche + prix, ~220 car. max), **2–3 livrables** max avec **heures réalistes**, `techStack` (`languages`, `ai`), métadonnées visuelles.
 Les lignes de devis PHP utilisent `short_description` (200 car. max), pas le long texte marketing.
 
 ```bash
-python scripts/facturio_sync_prestations.py --dry-run --slug site-vitrine
-python scripts/facturio_sync_prestations.py --full          # PATCH complet (produits existants)
-python scripts/facturio_sync_prestations.py --recreate      # DELETE + POST complet (catalogue UI)
+python scripts/prestafacture_sync_prestations.py --dry-run --slug site-vitrine
+python scripts/prestafacture_sync_prestations.py --full          # PATCH complet (produits existants)
+python scripts/prestafacture_sync_prestations.py --recreate      # DELETE + POST complet (catalogue UI)
 python build.py
 ```
 
 Test rapide (depuis la racine du repo, lit `.env`) :
 
 ```bash
-python scripts/facturio_test.py
-python scripts/facturio_test.py --devis
+python scripts/prestafacture_test.py
+python scripts/prestafacture_test.py --devis
 ```
 
 Le catalogue prestations est copié vers `api/data/prestations.json` à chaque `python build.py`.

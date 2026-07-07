@@ -1,4 +1,15 @@
-<article class="prestation-detail-root" data-prestation-slug="{{prestation_slug}}" data-service-slug="{{prestation_service_slug}}" data-prestation-title="{{prestation_title}}" data-prestation-price="{{prestation_price_eur}}" data-prestation-price-label="{{prestation_price_label}}">
+<article class="prestation-detail-root" itemscope itemtype="https://schema.org/Service"
+    data-prestation-slug="{{prestation_slug}}" data-service-slug="{{prestation_service_slug}}"
+    data-prestation-title="{{prestation_title}}" data-prestation-price="{{prestation_price_eur}}"
+    data-prestation-price-label="{{prestation_price_label}}">
+    <meta itemprop="name" content="{{prestation_title}}">
+    <meta itemprop="description" content="{{prestation_tagline}}">
+    <link itemprop="url" href="{{page_url}}">
+    <div itemprop="provider" itemscope itemtype="https://schema.org/Person" hidden>
+        <meta itemprop="name" content="Loïc DANIEL">
+        <meta itemprop="email" content="contact@danielcraft.fr">
+        <link itemprop="url" href="{{site_base}}/">
+    </div>
 <section class="prestation-detail-hero">
     <div class="container prestation-detail-hero-inner">
         <nav class="prestation-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
@@ -12,7 +23,13 @@
             <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 60ms">
                 <span class="section-badge"><i class="fas {{prestation_icon}}" aria-hidden="true"></i> Prestation</span>
                 <h1 class="section-title">{{prestation_title}}</h1>
-                <p class="prestation-detail-hero-price">{{prestation_price_eur}} € <span>{{prestation_price_label}} HT</span></p>
+                <p class="prestation-detail-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <span itemprop="price" content="{{prestation_price_eur}}">{{prestation_price_eur}}</span> €
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="{{page_url}}#devis">
+                    <span>{{prestation_price_label}} HT</span>
+                </p>
                 <p class="section-description prestation-detail-lead">{{prestation_tagline}}</p>
                 <p class="prestation-detail-desc">{{prestation_description}}</p>
                 <div class="prestation-detail-hero-actions">
@@ -25,10 +42,22 @@
                         <span>Recevoir mon devis PDF par e-mail</span>
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                     </button>
-                    {% if prestation_slug == 'site-vitrine' %}
+                    {% if prestation_slug == 'site-vitrine' or prestation_slug == 'site-vitrine-essentiel' %}
                     <a href="/vitrines/" class="btn btn-outline btn-large">
                         <span>Ou partir d'un modèle à 42 € HT</span>
                         <i class="fas fa-layer-group" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+                    {% if prestation_slug == 'site-vitrine-essentiel' %}
+                    <a href="/prestations/site-vitrine/" class="btn btn-outline btn-large">
+                        <span>Besoin de 5 pages ? Voir le forfait Pro — 590 € HT</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+                    {% if prestation_slug == 'site-vitrine' %}
+                    <a href="/prestations/site-vitrine-essentiel/" class="btn btn-outline btn-large">
+                        <span>Budget serré ? Voir l'essentiel — 390 € HT</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     {% endif %}
                 </div>
@@ -70,7 +99,7 @@
             </div>
             {% endif %}
             {% if prestation_faq_html %}
-            <div class="scroll-reveal" style="--reveal-delay: 160ms">
+            <div class="scroll-reveal" style="--reveal-delay: 160ms" itemscope itemtype="https://schema.org/FAQPage">
                 <h2 class="section-title">Questions fréquentes</h2>
                 {{prestation_faq_html}}
             </div>

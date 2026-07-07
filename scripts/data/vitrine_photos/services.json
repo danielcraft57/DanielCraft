@@ -1,0 +1,122 @@
+{
+  "slug": "services",
+  "brand": "Proprio Facility",
+  "category": "services",
+  "locale": "Metz, Moselle, Grand Est, France",
+  "style_suffix": "Facility management corporate building Metz France, modern office lobby, professional FM team, teal corporate atmosphere, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Hall d'accueil Proprio Facility Metz",
+      "subject": "Modern corporate office building lobby Metz France, reception desk facility management, bright professional interior hero banner, teal accents",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Facility management pour immeubles tertiaires" },
+        { "page": "offres.html", "section": "hero", "text": "Offres calibrées pour chaque site" },
+        { "page": "secteurs.html", "section": "hero", "text": "FM adapté à votre secteur" },
+        { "page": "contact.html", "section": "hero", "text": "Devis facility management" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Audit FM sur site",
+      "subject": "Facility manager inspecting HVAC equipment in modern office building technical room, professional FM audit photography",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Audit & cahier des charges" },
+        { "page": "offres.html", "section": "chapter", "text": "Visite site et cartographie" },
+        { "page": "secteurs.html", "section": "feature", "text": "Immeubles de bureaux Metz" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Équipe FM en intervention",
+      "subject": "FM maintenance technician fixing building systems on call, professional facility management team at work Metz",
+      "contexts": [
+        { "page": "index.html", "section": "bento", "text": "Astreinte 24/7 — intervention < 2 h" },
+        { "page": "offres.html", "section": "chapter", "text": "Exploitation quotidienne GMAO" },
+        { "page": "secteurs.html", "section": "feature", "text": "Établissements de santé" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Reporting FM qualité",
+      "subject": "Facility management team reviewing KPI dashboard on screen in modern Metz office, ISO quality process",
+      "contexts": [
+        { "page": "index.html", "section": "bento", "text": "ISO 9001 — audits trimestriels" },
+        { "page": "offres.html", "section": "chapter", "text": "Reporting KPI mensuel" },
+        { "page": "secteurs.html", "section": "chapter", "text": "Suivi et amélioration continue" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Portefeuille multi-sites FM",
+      "subject": "Aerial view modern office campus Metz France facility management portfolio, corporate buildings cluster",
+      "contexts": [
+        { "page": "index.html", "section": "bento", "text": "200+ immeubles gérés Grand Est" },
+        { "page": "secteurs.html", "section": "gallery", "text": "Centres commerciaux retail" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Tour bureaux Metz",
+      "subject": "Glass office tower Metz city center exterior, corporate facility management reference building",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Références tertiaires Metz" },
+        { "page": "secteurs.html", "section": "gallery", "text": "Tour Saint-Jacques 12 000 m²" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Maintenance technique immeuble",
+      "subject": "Building maintenance engineer checking HVAC panel in commercial building, facility management card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Maintenance CVC — GMAO 24/7" },
+        { "page": "offres.html", "section": "card", "text": "Offre Essentiel maintenance" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Accueil tertiaire professionnel",
+      "subject": "Professional corporate receptionist at modern office front desk Metz, visitor management facility services",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Accueil & standard téléphonique" },
+        { "page": "secteurs.html", "section": "gallery", "text": "Parc retail Thionville" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Conciergerie immeuble",
+      "subject": "Corporate concierge helping office tenant with services in bright lobby, premium facility management card photo",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Conciergerie services occupants" },
+        { "page": "secteurs.html", "section": "gallery", "text": "Clinique privée 8 500 m²" }
+      ]
+    }
+  ]
+}

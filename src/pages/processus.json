@@ -3,5 +3,6 @@
   "page_description": "De l'échange au devis, puis à la mise en ligne : méthode claire pour votre site ou votre visibilité. Sans jargon, à votre rythme. Metz & France.",
   "page_keywords": "processus création site, devis site internet, méthode développement web, DanielCraft Metz",
   "page_url": "/processus",
-  "og_image": "/assets/images/og/processus-1200x630.jpg"
+  "og_image": "/assets/images/og/processus-1200x630.jpg",
+  "schema_type": "webpage"
 }

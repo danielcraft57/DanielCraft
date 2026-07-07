@@ -3,48 +3,47 @@
 Captures d'écran des vitrines (Playwright), alignées sur les variables
 WEBSITE_SCREENSHOT_* (voir README / .env.example).
 
-Correction API Playwright : le viewport se définit sur le **BrowserContext**
-(`browser.new_context(viewport=...)`), pas sur `new_page()`.
+Usage :
+  # Serveur intégré (assets/vitrines/demos) :
+  python scripts/screenshot_vitrines.py
 
-Prérequis :
-  pip install -r scripts/requirements-vitrines-screenshots.txt
-  playwright install chromium
+  # Site buildé (serve_dev sur :8000) :
+  python scripts/screenshot_vitrines.py --base-url http://127.0.0.1:8000/vitrines
 """
-
 from __future__ import annotations
 
 import argparse
 import http.server
 import io
+import json
 import os
+import shutil
 import socketserver
+import sys
 import threading
 import time
+import urllib.error
+import urllib.request
 from pathlib import Path
-from typing import Callable
+from typing import Callable, List, Tuple
 
-PAGES = (
-    ("hub", "/index.html"),
-    ("technologie", "/technologie/index.html"),
-    ("restauration", "/restauration/index.html"),
-    ("beaute", "/beaute/index.html"),
-    ("odontologie", "/odontologie/index.html"),
-    ("industrie", "/industrie/index.html"),
-    ("association", "/association/index.html"),
-    ("commerce", "/commerce/index.html"),
-    ("comptable", "/comptable/index.html"),
-    ("education", "/education/index.html"),
-    ("services", "/services/index.html"),
-    ("banque", "/banque/index.html"),
-    ("etablissement", "/etablissement/index.html"),
-    ("automobile", "/automobile/index.html"),
-    ("chocolatier", "/chocolatier/index.html"),
-    ("immobilier", "/immobilier/index.html"),
-    ("juridique", "/juridique/index.html"),
-    ("architecture", "/architecture/index.html"),
-    ("fitness", "/fitness/index.html"),
-    ("photographie", "/photographie/index.html"),
-)
+_REPO = Path(__file__).resolve().parent.parent
+_VITRINES_JSON = _REPO / "src" / "data" / "vitrines.json"
+
+
+def _load_pages_from_catalog() -> Tuple[Tuple[str, str], ...]:
+    """(slug, path) depuis vitrines.json + catalogue hub."""
+    pages: List[Tuple[str, str]] = [("hub", "/index.html")]
+    if _VITRINES_JSON.is_file():
+        data = json.loads(_VITRINES_JSON.read_text(encoding="utf-8"))
+        for it in data.get("items") or []:
+            slug = (it.get("slug") or "").strip()
+            if slug:
+                pages.append((slug, f"/{slug}/demo/index.html"))
+    return tuple(pages)
+
+
+PAGES = _load_pages_from_catalog()
 
 # Sous-chaînes d’URL à bloquer si WEBSITE_SCREENSHOT_BLOCK_TRACKERS (sans bloquer les polices)
 _TRACKER_MARKERS = (
@@ -274,10 +273,34 @@ def _save_output(
         im.save(dest, "JPEG", quality=jpeg_quality, optimize=True)
 
 
+def _demo_path_for_mode(path: str, *, embedded_demos: bool) -> str:
+    if embedded_demos and path.endswith("/demo/index.html"):
+        return path.replace("/demo/index.html", "/index.html")
+    return path
+
+
+def _wait_for_base(base: str, timeout_s: float = 60.0) -> None:
+    url = base.rstrip("/") + "/index.html"
+    deadline = time.time() + timeout_s
+    while time.time() < deadline:
+        try:
+            with urllib.request.urlopen(url, timeout=3) as resp:
+                if resp.status < 500:
+                    return
+        except (urllib.error.URLError, TimeoutError, OSError):
+            time.sleep(0.5)
+    raise RuntimeError(f"Serveur inaccessible : {base} (timeout {timeout_s}s)")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Screenshots vitrines (Playwright + env WEBSITE_SCREENSHOT_*).")
-    parser.add_argument("--host", default="127.0.0.1", help="Hôte du serveur statique")
-    parser.add_argument("--port", type=int, default=0, help="Port (0 = automatique)")
+    parser.add_argument("--host", default="127.0.0.1", help="Hôte du serveur statique intégré")
+    parser.add_argument("--port", type=int, default=0, help="Port serveur intégré (0 = automatique)")
+    parser.add_argument(
+        "--base-url",
+        default="",
+        help="URL de base dist (ex. http://127.0.0.1:8000/vitrines) — pas de serveur intégré",
+    )
     parser.add_argument(
         "--demos-dir",
         type=Path,
@@ -291,6 +314,16 @@ def main() -> None:
         help="Dossier de sortie (défaut : assets/vitrines/screenshots).",
     )
     parser.add_argument("--headed", action="store_true", help="Afficher le navigateur (debug).")
+    parser.add_argument(
+        "--slugs",
+        default="",
+        help="Slugs à capturer (virgules). Défaut : tout le catalogue.",
+    )
+    parser.add_argument(
+        "--install-dist",
+        action="store_true",
+        help="Copier screenshots + démos vers dist/vitrines/ après capture.",
+    )
     args = parser.parse_args()
 
     cfg = _load_config()
@@ -312,29 +345,46 @@ def main() -> None:
     out_root = (args.out or _default_out).resolve()
     out_root.mkdir(parents=True, exist_ok=True)
 
-    port = _pick_port(args.port)
-    root = str(demos_root)
+    pages = _load_pages_from_catalog()
+    if (args.slugs or "").strip():
+        wanted = {s.strip() for s in args.slugs.split(",") if s.strip()}
+        pages = tuple(p for p in pages if p[0] in wanted)
+        if not pages:
+            raise SystemExit(f"Aucun slug trouvé dans le catalogue : {', '.join(sorted(wanted))}")
+    use_external = bool((args.base_url or "").strip())
+    httpd = None
+    thread = None
 
-    socketserver.TCPServer.allow_reuse_address = True
+    if use_external:
+        base = args.base_url.strip().rstrip("/")
+        print(f"Mode dist — base : {base}")
+        _wait_for_base(base)
+        embedded = False
+    else:
+        port = _pick_port(args.port)
+        root = str(demos_root)
+        socketserver.TCPServer.allow_reuse_address = True
 
-    class ShowcaseHandler(http.server.SimpleHTTPRequestHandler):
-        def __init__(self, *handler_args, **handler_kwargs):
-            super().__init__(*handler_args, directory=root, **handler_kwargs)
+        class ShowcaseHandler(http.server.SimpleHTTPRequestHandler):
+            def __init__(self, *handler_args, **handler_kwargs):
+                super().__init__(*handler_args, directory=root, **handler_kwargs)
 
-    httpd = socketserver.TCPServer((args.host, port), ShowcaseHandler)
-    thread = threading.Thread(target=httpd.serve_forever, daemon=True)
-    thread.start()
-    base = f"http://{args.host}:{port}"
-
-    time.sleep(0.2)
+        httpd = socketserver.TCPServer((args.host, port), ShowcaseHandler)
+        thread = threading.Thread(target=httpd.serve_forever, daemon=True)
+        thread.start()
+        base = f"http://{args.host}:{port}"
+        embedded = True
+        time.sleep(0.2)
+        print(f"Mode demos — {base}")
 
     ext = ".webp" if cfg["capture_format"] == "webp" else ".jpg"
 
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=not args.headed)
-            for slug, path in PAGES:
-                url = f"{base}{path}"
+            for slug, path in pages:
+                rel = _demo_path_for_mode(path, embedded_demos=embedded)
+                url = f"{base}{rel}"
                 for label, vw, vh, max_w in cfg["viewports"]:
                     ctx_kwargs: dict = {
                         "viewport": {"width": vw, "height": vh},
@@ -381,10 +431,47 @@ def main() -> None:
                     print(f"OK {slug} {label} -> {out_path}")
             browser.close()
     finally:
-        httpd.shutdown()
-        httpd.server_close()
+        if httpd is not None:
+            httpd.shutdown()
+            httpd.server_close()
 
     print(f"\nTerminé. Sortie : {out_root}")
+    if args.install_dist:
+        _install_to_dist(pages, out_root, demos_root)
+
+
+def _install_to_dist(pages: tuple[tuple[str, str], ...], shots_root: Path, demos_root: Path) -> None:
+    """Copie screenshots + démos BS5 vers dist/vitrines/ puis régénère le catalogue."""
+    repo = Path(__file__).resolve().parents[1]
+    dist_root = repo / "dist" / "vitrines"
+    slugs = sorted({slug for slug, _ in pages if slug != "hub"})
+    for slug in slugs:
+        src_shots = shots_root / slug
+        dst_shots = dist_root / slug / "screenshots"
+        if src_shots.is_dir():
+            if dst_shots.exists():
+                shutil.rmtree(dst_shots)
+            shutil.copytree(src_shots, dst_shots)
+            print(f"[dist] screenshots/{slug}")
+        src_demo = demos_root / slug
+        dst_demo = dist_root / slug / "demo"
+        if src_demo.is_dir():
+            if dst_demo.exists():
+                shutil.rmtree(dst_demo)
+            shutil.copytree(src_demo, dst_demo)
+            print(f"[dist] demo/{slug}")
+    print(f"[OK] dist/vitrines/ synchronisé ({len(slugs)} slugs)")
+    try:
+        sys.path.insert(0, str(repo))
+        from build import OUTPUT_DIR, build_vitrines_catalog_embed, publish_vitrines_to_dist
+
+        OUTPUT_DIR = repo / "dist"
+        publish_vitrines_to_dist(OUTPUT_DIR)
+        build_vitrines_catalog_embed()
+        print("[OK] Catalogue vitrines régénéré (build.py)")
+    except Exception as err:
+        print(f"[WARN] Catalogue non régénéré : {err}")
+        print("       Lancez : python build.py --no-webp")
 
 
 if __name__ == "__main__":

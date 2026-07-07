@@ -414,6 +414,8 @@
 
 /* Scroll anchors */
 #offre-gratuite,
-#offre-premium {
+#audit-gratuit,
+#offre-premium,
+#audit-premium {
   scroll-margin-top: 100px;
 }

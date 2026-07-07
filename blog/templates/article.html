@@ -40,21 +40,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-{{SCHEMA_JSON_LD}}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Aller au contenu</a>
 {{NAV_HTML}}
 
     <main id="main-content" class="blog-article-section">
-        <article class="blog-article" itemscope itemtype="https://schema.org/Article">
+        <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{PAGE_URL}}">
+            <meta itemprop="mainEntityOfPage" content="{{PAGE_URL}}">
+            <meta itemprop="description" content="{{EXCERPT}}">
+            <meta itemprop="inLanguage" content="fr-FR">
+            <link itemprop="image" href="{{OG_IMAGE}}">
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person" hidden>
+                <meta itemprop="name" content="Loïc DANIEL">
+                <link itemprop="url" href="{{SITE_BASE}}/">
+            </div>
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden>
+                <meta itemprop="name" content="DanielCraft">
+                <link itemprop="url" href="{{SITE_BASE}}/">
+                <link itemprop="logo" href="{{SITE_BASE}}/assets/images/og/home-1200x630.jpg">
+            </div>
             <header class="blog-article-header">
                 <nav aria-label="Fil d'Ariane">
                     <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
                 </nav>
+                <meta itemprop="articleSection" content="{{ARTICLE_SECTION}}">
                 <h1 itemprop="headline">{{TITLE}}</h1>
                 <figure class="blog-article-hero" aria-hidden="true">
-                    <img src="{{HERO_IMAGE}}" alt="{{TITLE}}" class="blog-article-hero-image" loading="eager">
+                    <img src="{{HERO_IMAGE}}" alt="{{TITLE}}" class="blog-article-hero-image" loading="eager" itemprop="image">
                 </figure>
             </header>
             <div class="blog-article-layout">

@@ -214,7 +214,7 @@ Alternative : garder les prestations éco dans `technique` + `site-contenu` pour
 1. ~~Ajouter les entrées P1/P2 dans `src/data/prestations.json`.~~ Fait (7 prestations éco).
 2. ~~Créer les SVG `/assets/images/prestations/`.~~ Fait.
 3. ~~Enregistrer les slugs dans `assets/js/contact-wizard.js`.~~ Fait.
-4. **Sync Facturio** : `python scripts/facturio_sync_prestations.py --full` (descriptions courtes + heures réalistes dans `scripts/facturio_product_payload.py`).
+4. **Sync Prestafacture** : `python scripts/prestafacture_sync_prestations.py --full` (descriptions courtes + heures réalistes dans `scripts/prestafacture_product_payload.py`).
 5. Article blog court : « Éco-conception web : ce que ça change pour votre entreprise ».
 6. Mention sur la page d'accueil / section « Pourquoi DanielCraft » : éco-conception comme standard de livraison.
 

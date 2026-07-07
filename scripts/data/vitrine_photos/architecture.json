@@ -1,0 +1,122 @@
+{
+  "slug": "architecture",
+  "brand": "Atelier Nord-Est",
+  "category": "architecture",
+  "locale": "Metz, Moselle, Grand Est, France",
+  "style_suffix": "Contemporary architecture studio Metz France, sustainable rehabilitation, concrete and timber, natural light, minimalist editorial photography, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Atelier Nord-Est — agence Metz",
+      "subject": "Contemporary architecture studio Atelier Nord Est Metz: bright atelier with architectural models, large windows, timber and concrete, sustainable design atmosphere, wide hero",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Conception durable à Metz — réhabilitation et logements" },
+        { "page": "projets.html", "section": "hero", "text": "Portfolio projets Lorraine" },
+        { "page": "methode.html", "section": "hero", "text": "Méthode conception RE2020" },
+        { "page": "contact.html", "section": "hero", "text": "Atelier 14 rue du XXe Corps Metz" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "architecture",
+      "alt": "Maquette et esquisse projet",
+      "subject": "Architects working on physical model and sketches in bright studio, sustainable housing project, Metz architecture office",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Esquisse à permis — accompagnement complet" },
+        { "page": "projets.html", "section": "chapter", "text": "Phase conception et maquette" },
+        { "page": "methode.html", "section": "chapter", "text": "Étape 1 — programme et esquisse" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "architecture",
+      "alt": "Équipe atelier Metz",
+      "subject": "Architecture team reviewing plans on large table, collaborative studio in Metz, natural daylight, professional creative atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "12 collaborateurs — pluridisciplinaire" },
+        { "page": "projets.html", "section": "chapter", "text": "Suivi de chantier et OPC" },
+        { "page": "methode.html", "section": "chapter", "text": "Étape 2 — APS et permis de construire" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "architecture",
+      "alt": "Chantier réhabilitation Metz",
+      "subject": "Heritage building rehabilitation construction site in Metz, architect on site with helmet reviewing facade restoration",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Réhabilitation patrimoine — Jaumont et brique" },
+        { "page": "projets.html", "section": "chapter", "text": "Livraison et réception de travaux" },
+        { "page": "methode.html", "section": "chapter", "text": "Étape 3 — chantier et réception" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Logement contemporain Metz",
+      "subject": "Completed contemporary sustainable housing interior Metz, timber structure, large windows, architecture photography",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Logement RE2020 — quartier Sablon" },
+        { "page": "projets.html", "section": "gallery", "text": "Intérieur livré 2024" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Équipement public Thionville",
+      "subject": "Modern public building facade Thionville, wood and glass sustainable architecture, civic equipment completed project",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Médiathèque Thionville — ERP bois" },
+        { "page": "projets.html", "section": "gallery", "text": "Équipement public livré" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Réhabilitation maison Jaumont",
+      "subject": "Renovated yellow Jaumont stone house Metz facade, heritage rehabilitation architecture card photo",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Réhabilitation — Metz centre historique" },
+        { "page": "projets.html", "section": "card", "text": "Maison Jaumont 2023" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Logements neufs Laxou",
+      "subject": "New sustainable apartment building Laxou suburb, timber cladding balconies, contemporary housing architecture",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "12 logements — Laxou RE2020" },
+        { "page": "projets.html", "section": "card", "text": "Collectif neuf 2024" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Extension école Metz",
+      "subject": "School extension building Metz, modern wood and glass wing attached to historic school, public architecture card",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Extension ERP — école Metz" },
+        { "page": "projets.html", "section": "card", "text": "Équipement scolaire 2022" }
+      ]
+    }
+  ]
+}

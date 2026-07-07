@@ -1,0 +1,122 @@
+{
+  "slug": "industrie",
+  "brand": "Précisite Usinage",
+  "category": "industrie",
+  "locale": "Yutz, Moselle, Grand Est, France",
+  "style_suffix": "Precision CNC machining factory Yutz France, 5-axis milling machines, steel and aluminium parts, industrial workshop dramatic lighting, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Vue d'ensemble Précisite Usinage à Yutz",
+      "subject": "Precision machining factory Précisite Usinage in Yutz: 5-axis CNC machines in modern industrial hall, metal chips, dramatic workshop lighting, aerospace and automotive manufacturing",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Tolérances micron à Yutz — usinage automobile et aéronautique" },
+        { "page": "savoir-faire.html", "section": "hero", "text": "Parc machines et capacités d'usinage" },
+        { "page": "qualite.html", "section": "hero", "text": "Atelier certifié ISO et métrologie" },
+        { "page": "contact.html", "section": "hero", "text": "Site de production Yutz — zone industrielle" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "industrial",
+      "alt": "Centre 5 axes en action",
+      "subject": "5-axis CNC machining center cutting aluminium aerospace component, coolant spray, precision industrial close-up, operator in background",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Usinage 5 axes — pièces complexes en une prise" },
+        { "page": "savoir-faire.html", "section": "chapter", "text": "Fraisage haute vitesse — aluminium et acier" },
+        { "page": "qualite.html", "section": "chapter", "text": "Contrôle en cours de production" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "industrial",
+      "alt": "Métrologie 3D",
+      "subject": "Quality engineer using CMM 3D coordinate measuring machine inspecting machined metal part, metrology lab precision industrial",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Métrologie 3D — contrôle 100 % des lots critiques" },
+        { "page": "savoir-faire.html", "section": "chapter", "text": "Laboratoire métrologie COFRAC" },
+        { "page": "qualite.html", "section": "chapter", "text": "Traçabilité matière et process" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "industrial",
+      "alt": "Équipe production",
+      "subject": "Machining team reviewing technical drawings at CNC workshop, industrial engineers with safety gear, Yutz factory floor",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Équipe 85 collaborateurs — 3x8 sur demande" },
+        { "page": "savoir-faire.html", "section": "chapter", "text": "Prototypage rapide — premier article validé" },
+        { "page": "qualite.html", "section": "chapter", "text": "Audits clients et amélioration continue" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Pièce usinée aéronautique",
+      "subject": "Finished precision machined titanium aerospace bracket component, flawless surface finish, industrial product photography",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "Pièce aéro — titane usiné 5 axes" },
+        { "page": "qualite.html", "section": "gallery", "text": "Premier article qualifié" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Parc machines vue aérienne",
+      "subject": "Wide view of CNC machine park in industrial factory hall, multiple 5-axis centers, organized precision manufacturing floor",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "12 000 m² — 12 centres 5 axes" },
+        { "page": "qualite.html", "section": "gallery", "text": "Extension 2016 — nouveaux locaux Yutz" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Usinage 5 axes",
+      "subject": "Close-up 5-axis CNC spindle machining complex metal part, industrial precision card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Usinage 5 axes — pièces aéro et auto" },
+        { "page": "savoir-faire.html", "section": "card", "text": "Fraisage — jusqu'à 800 mm" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Tournage CNC",
+      "subject": "CNC lathe turning steel shaft with precision tooling, sparks and coolant, turning department",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Tournage — barres Ø 65 mm" },
+        { "page": "savoir-faire.html", "section": "card", "text": "Tournage-fraisage combiné" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Contrôle qualité",
+      "subject": "Digital caliper and 3D scan report on machined component, quality control documentation industrial",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Métrologie — rapport de mesure livré" },
+        { "page": "savoir-faire.html", "section": "card", "text": "Contrôle 3D — MMT et scan laser" }
+      ]
+    }
+  ]
+}

@@ -47,6 +47,7 @@ function dc_static_mime(string $ext): string
         'woff2' => 'font/woff2',
         'ttf' => 'font/ttf',
         'xml' => 'application/xml; charset=UTF-8',
+        'html', 'htm' => 'text/html; charset=UTF-8',
         'txt' => 'text/plain; charset=UTF-8',
         default => 'application/octet-stream',
     };

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img"><title>Mariage</title>
-  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8e8ee"/><stop offset="100%" stop-color="#2a2622"/></linearGradient></defs>
-  <rect width="800" height="520" fill="url(#g)"/>
-  <rect x="50" y="50" width="700" height="380" fill="#1a1816" stroke="#c9a227" stroke-width="2" rx="4"/>
-  <ellipse cx="400" cy="240" rx="160" ry="110" fill="#f8e8ee" opacity=".35"/>
-  <text x="400" y="255" text-anchor="middle" font-size="48" fill="#c9a227" opacity=".4" font-family="Georgia,serif">♥</text>
-  <rect x="80" y="400" width="120" height="6" fill="#c9a227" opacity=".6"/>
-  <text x="400" y="470" text-anchor="middle" fill="#c9a227" font-size="16" font-family="Georgia,serif">Mariage</text>
-</svg>

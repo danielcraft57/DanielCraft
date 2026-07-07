@@ -4,5 +4,6 @@
   "page_keywords": "projets, portfolio, GitHub, réalisations, open source, TypeScript, React",
   "page_url": "/projets",
   "og_image": "/assets/images/og/projets-1200x630.jpg",
+  "schema_type": "projects",
   "page_scripts": ["main.js", "personalization.js", "github-projects.js", "portfolio.js", "projets-page.js"]
 }

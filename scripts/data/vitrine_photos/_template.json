@@ -1,0 +1,21 @@
+{
+  "_comment": "Modèle pour scripts/data/vitrine_photos/<slug>.json — un fichier par vitrine multi-pages.",
+  "slug": "exemple",
+  "brand": "Nom de la marque",
+  "category": "hcr",
+  "locale": "Ville, région, pays",
+  "style_suffix": "Style photo global réutilisé en suffixe du prompt final",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Texte alt principal (accessibilité)",
+      "subject": "Description visuelle détaillée pour la génération IA",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Titre ou paragraphe de la page qui utilise cette image" }
+      ]
+    }
+  ]
+}

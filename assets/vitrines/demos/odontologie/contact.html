@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RDV et urgences dentaires à Thionville.">
+  <title>Contact — Centre dentaire Mosaïque</title>
+  <!-- layout: medical-split · Bootstrap 5 · vitrine site complet -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Centre dentaire Mosaïque",
+  "telephone": "+33382884500",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "42 avenue de la République",
+    "addressLocality": "Thionville",
+    "postalCode": "57100",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+  ]
+}
+</script>
+</head>
+<body class="vt-body vt-body-medical">
+<div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-2 small">
+    <span class="vt-topbar-status">Ouvert aujourd&#x27;hui · Lun–sam</span>
+    <a class="vt-topbar-link" href="https://maps.google.com/?q=42+avenue+de+la+République+57100+Thionville">42 avenue de la République, 57100 Thionville</a>
+    <a class="vt-topbar-link fw-semibold" href="tel:0382884500">03 82 88 45 00</a>
+  </div>
+</div><header class="vt-header sticky-top">
+  <nav class="navbar navbar-expand-lg vt-navbar">
+    <div class="container">
+      <a class="navbar-brand vt-brand" href="index.html">Centre dentaire Mosaïque</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vtNav">
+        <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li><li class="nav-item"><a class="nav-link" href="soins.html">Nos soins</a></li><li class="nav-item"><a class="nav-link" href="equipe.html">L&#x27;équipe</a></li><li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li></ul>
+        <a class="btn btn-vt-primary rounded-pill px-4" href="contact.html">Prendre RDV</a>
+      </div>
+    </div>
+  </nav>
+</header><main>
+<section class="vt-hero-compact py-5 text-center">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Contact</p>
+    <h1 class="vt-display display-6">Prendre rendez-vous</h1>
+    <p class="lead text-secondary">42 avenue de la République, 57100 Thionville — réponse sous 2 h.</p>
+  </div>
+</section><section class="vt-reserve py-5" aria-labelledby="rdv-title">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h2 id="rdv-title" class="vt-section-title">Demander un rendez-vous</h2>
+        <p class="text-secondary mb-4">Premier RDV découverte offert. Devis détaillé avant tout acte.</p>
+        <form class="row g-3" action="#" method="post">
+          <div class="col-md-6"><label class="form-label">Motif<select class="form-select" name="reason" required><option value="">Choisir…</option><option>Contrôle &amp; prévention</option><option>Douleur / urgence</option><option>Esthétique &amp; blanchiment</option><option>Orthodontie</option><option>Implant</option></select></label></div>
+          <div class="col-md-3"><label class="form-label">Date<input type="date" class="form-control" name="date" required></label></div>
+          <div class="col-md-3"><label class="form-label">Créneau<select class="form-select" name="time" required><option value="">Choisir…</option><option>8h30</option><option>10h</option><option>14h</option><option>16h30</option><option>18h</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Prénom &amp; nom<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
+          <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel" required></label></div>
+          <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email"></label></div>
+          <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Première visite, mutuelle, préférence praticien…"></textarea></label></div>
+          <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-pill px-5">Confirmer ma demande</button></div>
+          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+        </form>
+      </div>
+      <aside class="col-lg-5">
+        <div class="card border-0 shadow-sm p-4 h-100">
+          <h2 class="h4 vt-section-title">Accès &amp; urgences</h2>
+          <address class="text-secondary mb-3">
+            <strong class="text-body">Centre dentaire Mosaïque</strong><br>
+            42 avenue de la République, 57100 Thionville
+          </address>
+          <p><a href="tel:0382884500">03 82 88 45 00</a></p>
+          <p class="small fw-semibold text-danger mb-2">Urgence douleur aiguë : appelez avant 11 h.</p>
+          <table class="table table-sm vt-hours">
+            <caption class="caption-top fw-semibold">Horaires</caption>
+            <tbody>
+              <tr><th>Lun – Ven</th><td>8h30 – 19h</td></tr>
+              <tr><th>Samedi</th><td>8h – 12h</td></tr>
+              <tr><th>Dimanche</th><td>Fermé</td></tr>
+            </tbody>
+          </table>
+          <ul class="small text-secondary ps-3 mb-0">
+            <li>Parking République</li>
+            <li>Bus ligne 5 — Hôtel de Ville</li>
+            <li>Tiers payant accepté</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section><section class="vt-cta-band py-5 text-center text-white">
+  <div class="container">
+    <p class="lead mb-4">Urgence : 03 82 88 45 00 avant 11 h.</p>
+    <a class="btn btn-light btn-lg rounded-pill px-4" href="tel:0382884500">Appeler le cabinet</a>
+  </div>
+</section></main><footer class="vt-footer text-white">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <strong class="vt-brand d-block mb-2">Centre dentaire Mosaïque</strong>
+        <p class="small opacity-75 mb-2">42 avenue de la République, 57100 Thionville</p>
+        <a class="small" href="https://maps.google.com/?q=42+avenue+de+la+République+57100+Thionville">Nous trouver →</a>
+      </div>
+      <div class="col-md-4">
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="soins.html">Nos soins</a><a class="nav-link px-0" href="equipe.html">L&#x27;équipe</a><a class="nav-link px-0" href="contact.html">Premier RDV offert</a><a class="nav-link px-0" href="contact.html">Urgences</a>
+        </nav>
+      </div>
+      <div class="col-md-4 small opacity-75">
+        <p class="mb-1"><a class="text-white" href="tel:0382884500">03 82 88 45 00</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@brasserie-saint-jacques.fr">contact@brasserie-saint-jacques.fr</a></p>
+        <p class="mb-0">Lun–ven 8h30–19h · Sam 8h–12h</p>
+      </div>
+    </div>
+    <hr class="border-secondary opacity-25 my-4">
+    <p class="small opacity-50 mb-0"><a class="text-white" href="../index.html">← Catalogue vitrines DanielCraft</a> · Maquette démo</p>
+  </div>
+</footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
+  <a class="vt-mobile-bar-btn" href="tel:0382884500">Appeler</a>
+  <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Prendre RDV</a>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

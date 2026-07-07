@@ -11,6 +11,7 @@ DEMOS = ROOT / "assets" / "vitrines" / "demos"
 JSON_PATH = ROOT / "src" / "data" / "vitrines.json"
 
 SHARED_TAIL = """
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
   <link rel="stylesheet" href="../shared/vitrine-media.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" crossorigin="anonymous">
@@ -21,32 +22,39 @@ SHARED_JS = """
   <script src="../shared/vitrine-images.js"></script>"""
 
 CONTENT: dict[str, tuple[str, list[str], str, str]] = {
-    "commerce": ("commerce-artisan.png", ["commerce-rayon.png", "commerce-drive.png", "commerce-artisan.png"],
-                 "Épicerie fine & drive à Thionville", "Primeurs, traiteur et retrait express — votre marché de quartier en Moselle."),
-    "comptable": ("hero.png", ["compta-bureau-plat.png", "conseil-client.png", "reunion.png"],
-                  "Comptabilité claire pour les dirigeants", "Cabinet indépendant à Metz et Thionville — tenue, paie et conseil."),
-    "immobilier": ("hero.png", ["bien-sablon.svg", "bien-thionville.svg", "bien-yutz.svg"],
-                   "Vendre ou louer en toute confiance", "Agence immobilière locale — estimation, visites et suivi jusqu'à la signature."),
-    "education": ("edu-groupe.png", ["edu-salle.png", "edu-formateur.png", "edu-gen-modules.png"],
-                  "Formations qui ouvrent des carrières", "Institut professionnel à Nancy — alternance, certifications et VAE."),
-    "services": ("services-facility.png", ["services-accueil.png", "services-nettoyage.png", "services-facility.png"],
-                 "Vos locaux, notre métier", "Facility management et conciergerie pour immeubles tertiaires en Lorraine."),
-    "banque": ("hero.png", ["banque-poignee-main.png", "conseil.png", "agences.png"],
-               "Une banque de proximité", "Comptes, crédits et épargne — conseillers dédiés dans le Grand Est."),
-    "juridique": ("hero.png", ["expertise-societes.svg", "expertise-social.svg", "expertise-contentieux.svg"],
-                  "Le droit des affaires, sans jargon", "Cabinet à Metz — sociétés, social et contentieux pour PME et dirigeants."),
-    "etablissement": ("etab-lobby.png", ["etab-chambre.png", "etab-seminaire.png", "etab-lobby.png"],
-                      "L'art de recevoir à Nancy", "Hôtel 4* — chambres, spa, séminaires et room service."),
-    "architecture": ("hero.png", ["projet-metz.svg", "projet-lux.svg", "projet-verdun.svg"],
-                     "Architecture mesurée et contemporaine", "Atelier à Metz — résidentiel, tertiaire et suivi de chantier."),
-    "automobile": ("auto-pont.png", ["auto-mecanique.png", "auto-pneus.png", "auto-pneus.png"],
-                   "Votre garage de confiance", "Entretien, pneus et carrosserie — Plappeville et environs."),
-    "fitness": ("hero.svg", ["cours-hiit.svg", "cours-yoga.svg", "cours-cycling.svg"],
-                "Bougez, progressez, respirez", "Salle à Metz — cours collectifs, coaching et essai gratuit."),
-    "chocolatier": ("hero.png", ["choco-degustation-plateau.png", "cacao-origines.png", "atelier.png"],
-                    "Le chocolat raconté avec passion", "Bean-to-bar à Nancy — ganaches, coffrets et visites d'atelier."),
-    "photographie": ("hero.png", ["portfolio-mariage.svg", "portfolio-corporate.svg", "portfolio-portrait.svg"],
-                     "Capturer l'essentiel", "Studio photo — mariages, corporate et portraits en Grand Est."),
+    "commerce": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                 "Votre marché de quartier, en ligne comme en magasin",
+                 "Halles Thionville — primeurs, traiteur et drive en 45 minutes. Click & collect, horaires clairs, fidélité simple."),
+    "comptable": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                  "Vos chiffres, expliqués sans jargon",
+                  "Verlaine & Associés accompagne les dirigeants de Metz et Thionville : tenue, paie, conseil et bilan flash sous 48 h."),
+    "immobilier": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                   "Estimation gratuite, mandat signé sereinement",
+                   "Patrimoine Lorraine — vente, location et gestion locative en Moselle. Visites qualifiées et suivi jusqu'à l'acte."),
+    "education": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                  "Former aujourd'hui les métiers de demain",
+                  "Institut Mercure à Nancy : alternance, certifications reconnues et parcours VAE pour adultes en reconversion."),
+    "services": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                 "Des locaux impeccables, des équipes sereines",
+                 "Proprio Facility — accueil, propreté et facility management pour sites tertiaires en Lorraine. Devis sous 48 h."),
+    "juridique": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                  "Le droit des affaires, en langage clair",
+                  "Rivière & Partenaires — sociétés, social et contentieux pour PME messines. Premier échange structuré, forfait découverte."),
+    "etablissement": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                      "L'art de recevoir, au cœur de Nancy",
+                      "Hôtel Stanislas Collection — chambres 4*, spa, séminaires et room service. Réservation visible dès la page d'accueil."),
+    "architecture": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                     "Construire avec mesure et lumière",
+                     "Atelier Nord-Est — résidentiel, tertiaire et suivi de chantier à Metz. Portfolio projets et brief en ligne."),
+    "automobile": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                   "Entretien, pneus, carrosserie — sans surprise",
+                   "Garage Central Plappeville — devis transparent, véhicule de courtoisie, toutes marques. Prise de RDV en deux clics."),
+    "fitness": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                "Bougez, progressez, respirez",
+                "Pulse Fitness Metz — 1 200 m², 40 cours par semaine, essai gratuit. HIIT, yoga, cycling : choisissez votre rythme."),
+    "photographie": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
+                     "Capturer l'essentiel, livrer l'émotion",
+                     "Studio Lumière Grise — mariages, corporate et portraits en Grand Est. Devis personnalisé sous 24 h."),
 }
 
 OFFERS: dict[str, list[tuple[str, str]]] = {
@@ -99,10 +107,10 @@ THEMES: dict[str, tuple[str, str]] = {
 
 FW: dict[str, str] = {
     "commerce": "bootstrap", "comptable": "bootstrap", "immobilier": "bootstrap",
-    "education": "tailwind", "services": "tailwind", "banque": "tailwind", "juridique": "tailwind",
+    "education": "tailwind", "services": "tailwind", "juridique": "tailwind",
     "etablissement": "pico", "architecture": "pico",
     "automobile": "daisy", "fitness": "daisy",
-    "chocolatier": "openprops", "photographie": "openprops",
+    "photographie": "openprops",
 }
 
 
@@ -400,41 +408,38 @@ def write_slug(slug: str, brand: str, page_title: str, meta_desc: str) -> None:
 </html>
 """
 
-    css = f"""@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Libre+Baskerville:wght@700&display=swap");
+    css = f"""@import url("../shared/vitrine-prose.css");
 html {{ scroll-behavior: smooth; }}
-body {{ font-family: "Source Sans 3", system-ui, sans-serif; margin: 0; color: #1a1a1a; }}
+body {{ font-family: var(--vt-font, "Plus Jakarta Sans", system-ui, sans-serif); margin: 0; color: #1a1a1a; font-size: var(--vt-body, 1.0625rem); line-height: var(--vt-lh-body, 1.6); }}
 .skip-link {{ position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0); }}
 .skip-link:focus {{ position:fixed;left:1rem;top:1rem;z-index:10000;padding:.5rem 1rem;background:#fff;clip:auto;width:auto;height:auto; }}
-.vt-brand {{ font-family: "Libre Baskerville", Georgia, serif; color: {accent}; }}
-.vt-hero {{ background: {hero_bg}; color: #fff; padding: 2rem 0 2.25rem; display: block; }}
-.vt-hero .vt-hero-grid {{ padding-top: 0.5rem; padding-bottom: 0.75rem; }}
-.vt-hero .vitrine-figure--ken img {{ max-height: 220px; }}
-.vitrine-hero-visual img {{ max-height: 220px; width: 100%; object-fit: cover; }}
-.vt-hero h1 {{ font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 .5rem; }}
-.vt-eyebrow {{ letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; opacity: .85; }}
-.vt-btn {{ background: #fff; color: {accent}; font-weight: 600; border: none; text-decoration: none; display: inline-block; padding: .65rem 1.25rem; border-radius: .35rem; cursor: pointer; }}
-.vt-stats {{ background: {accent}; color: #fff; }}
-.vt-stat {{ font-size: 2rem; display: block; font-family: "Libre Baskerville", serif; }}
-.vt-muted, .vt-band {{ background: #f5f5f0; }}
-.vt-card img {{ width: 100%; object-fit: cover; border-radius: .35rem; }}
-.vitrine-hero-visual img {{ border-radius: .35rem; }}
-.vt-card img {{ height: 220px; }}
-.vt-footer {{ background: #1c1c1c; color: rgba(255,255,255,.85); padding: 1.25rem; }}
-.vt-top {{ background: #fff; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; z-index: 40; }}
-.vt-nav {{ max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }}
-.vt-nav a {{ text-decoration: none; color: inherit; margin-right: .75rem; }}
-.vt-hero-grid, .vt-stats-grid, .vt-cards {{ max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.25rem; }}
+.vt-brand {{ font-weight: 700; color: {accent}; }}
+.vt-hero {{ background: {hero_bg}; color: #fff; padding: clamp(2rem,6vw,4rem) 0; }}
+.vt-hero h1 {{ max-width: 16ch; margin: 0 0 1rem; }}
+.vt-hero .lead, .vt-lead {{ max-width: min(65ch, 100%); opacity: .95; margin-bottom: 1.5rem; }}
+.vt-hero .vitrine-figure--ken img, .vitrine-hero-visual img {{ max-height: 280px; width: 100%; object-fit: cover; border-radius: 0.75rem; }}
+.vt-btn {{ background: #fff; color: {accent}; min-height: 44px; padding: 0.75rem 1.5rem; font-weight: 600; border: none; text-decoration: none; display: inline-flex; align-items: center; border-radius: 0.5rem; }}
+.vt-stats {{ background: {accent}; color: #fff; padding: 2rem 0; }}
+.vt-stat {{ font-size: clamp(1.75rem, 4vw, 2.25rem); display: block; font-weight: 700; }}
+.vt-muted, .vt-band {{ background: #f8fafc; }}
+.vt-card img {{ width: 100%; height: 220px; object-fit: cover; border-radius: 0.5rem; }}
+.vt-footer {{ background: #0f172a; color: rgba(255,255,255,.85); padding: 1.5rem; }}
+.vt-top {{ background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 40; }}
+.vt-nav {{ max-width: 72rem; margin: 0 auto; padding: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }}
+.vt-nav a {{ text-decoration: none; color: inherit; margin-right: .75rem; font-weight: 500; }}
+.vt-hero-grid, .vt-stats-grid, .vt-cards {{ max-width: 72rem; margin: 0 auto; padding: 1.25rem 1rem; display: grid; gap: 1.5rem; }}
 @media (min-width: 900px) {{
-  .vt-hero-grid {{ grid-template-columns: 1fr 1fr; align-items: center; }}
+  .vt-hero-grid {{ grid-template-columns: 1fr 1fr; align-items: center; gap: 2.5rem; }}
   .vt-stats-grid {{ grid-template-columns: repeat(3, 1fr); text-align: center; }}
   .vt-cards {{ grid-template-columns: repeat(3, 1fr); }}
 }}
-.vt-wrap {{ max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }}
+.vt-wrap {{ max-width: 72rem; margin: 0 auto; padding: var(--vt-section-y, 3rem) 1rem; }}
+.vt-wrap h2 {{ margin-bottom: 0.75rem; }}
+.vt-wrap p {{ max-width: min(65ch, 100%); }}
 .vt-center {{ text-align: center; }}
-.vt-muted-center {{ text-align: center; color: #666; margin-bottom: 1.5rem; }}
-.vt-form label {{ display: block; margin-bottom: .75rem; }}
-.vt-form input, .vt-form textarea {{ width: 100%; }}
-.vt-lead {{ font-size: 1.15rem; opacity: .92; }}
+.vt-muted-center {{ text-align: center; color: #64748b; margin-bottom: 2rem; max-width: 65ch; margin-inline: auto; }}
+.vt-form label {{ display: block; margin-bottom: 1rem; font-weight: 500; }}
+.vt-form input, .vt-form textarea {{ width: 100%; padding: 0.65rem; font-size: 1rem; border: 1px solid #cbd5e1; border-radius: 0.375rem; }}
 """
 
     d = DEMOS / slug

@@ -1,0 +1,90 @@
+{
+  "slug": "technologie",
+  "brand": "Synapse Lorraine",
+  "category": "tech",
+  "locale": "Metz, Moselle, Grand Est, France",
+  "style_suffix": "B2B tech company Metz France, modern data software office, blue tech atmosphere, developers and dashboards, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Bureaux Synapse Lorraine Metz",
+      "subject": "Modern tech startup office Metz France with large data visualization screens, diverse software team collaborating, blue ambient lighting, B2B data platform company hero banner",
+      "contexts": [{ "page": "index.html", "section": "hero", "text": "Plateforme data à Metz" }]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "office",
+      "alt": "Équipe produit data",
+      "subject": "Product managers reviewing analytics dashboard on wall screen in modern Metz tech office, data pipeline visualization, professional software team",
+      "contexts": [{ "page": "produit.html", "section": "chapter", "text": "Notre approche produit" }]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "office",
+      "alt": "Développeurs au travail",
+      "subject": "Software developers pair programming at standing desks in bright Metz tech company, agile workspace, authentic candid moment",
+      "contexts": [{ "page": "index.html", "section": "chapter", "text": "Le quotidien de l'équipe" }]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "office",
+      "alt": "Réunion client DSI",
+      "subject": "B2B client meeting in glass conference room Metz, consultant presenting data platform on large display to IT directors, professional trust",
+      "contexts": [{ "page": "clients.html", "section": "chapter", "text": "Nos engagements clients" }]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Équipe Synapse Lorraine",
+      "subject": "Diverse tech team standup meeting in modern open plan office Metz, startup energy, natural light",
+      "contexts": [{ "page": "clients.html", "section": "gallery", "text": "Photo d'équipe" }]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Locaux Metz",
+      "subject": "Contemporary software company office interior Metz with ergonomic workstations and plants, clean tech workspace photography",
+      "contexts": [{ "page": "index.html", "section": "gallery", "text": "Locaux Metz" }]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "saas_ui",
+      "alt": "Dashboard data temps réel",
+      "subject": "Abstract analytics dashboard on monitor showing charts graphs and KPIs, blue dark UI theme, no readable text, software product card image",
+      "contexts": [{ "page": "produit.html", "section": "card", "text": "Offre essentielle data" }]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "saas_ui",
+      "alt": "Intégrations cloud",
+      "subject": "Cloud integration hub software interface on screen, connected nodes and API workflow visualization, premium B2B SaaS card, no readable text",
+      "contexts": [{ "page": "produit.html", "section": "card", "text": "Offre premium" }]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "saas_ui",
+      "alt": "Sécurité entreprise",
+      "subject": "Enterprise security compliance dashboard on monitor, encryption and access control UI mockup, dark professional theme, no readable text",
+      "contexts": [{ "page": "produit.html", "section": "card", "text": "Solution sur mesure" }]
+    }
+  ]
+}

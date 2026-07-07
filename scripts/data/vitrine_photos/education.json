@@ -1,0 +1,119 @@
+{
+  "slug": "education",
+  "brand": "Institut Mercure",
+  "category": "formation",
+  "locale": "Thionville, Moselle, Grand Est, France",
+  "style_suffix": "Professional training center Thionville France, adult learners in modern classroom, academic atmosphere indigo and warm light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Campus Institut Mercure Thionville",
+      "subject": "Modern vocational training campus exterior Thionville France, students entering glass building, professional education hero banner, bright academic atmosphere",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Compétences métiers à Thionville" },
+        { "page": "parcours.html", "section": "hero", "text": "35 parcours certifiants" },
+        { "page": "campus.html", "section": "hero", "text": "Campus pensé pour réussir" },
+        { "page": "contact.html", "section": "hero", "text": "Inscription et orientation" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Salle de cours Institut Mercure",
+      "subject": "Adult students in modern computer classroom vocational training center France, teacher explaining on screen, collaborative learning",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Pédagogie active — ateliers et projets" },
+        { "page": "campus.html", "section": "feature", "text": "Salles connectées et labs code" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Atelier pratique formation",
+      "subject": "Hands-on workshop adult vocational training Thionville, students practicing professional skills with instructor, authentic education photography",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Insertion professionnelle — 92 %" },
+        { "page": "campus.html", "section": "feature", "text": "Job dating et ateliers recruteurs" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Coaching apprenant",
+      "subject": "Career counselor helping adult learner with documents in bright training center office France, supportive one-on-one coaching",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Accompagnement individuel" },
+        { "page": "campus.html", "section": "feature", "text": "Coworking et permanences pédagogiques" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Cours en action",
+      "subject": "Group of diverse adult students collaborating on project in modern training center classroom, candid education moment",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "1 200 apprenants par an" },
+        { "page": "campus.html", "section": "gallery", "text": "Ateliers pratiques et projets tutorés" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Locaux campus Thionville",
+      "subject": "Bright renovated hallway and common area vocational school Thionville, modern academic interior design",
+      "contexts": [
+        { "page": "index.html", "section": "gallery", "text": "35 parcours certifiants" },
+        { "page": "campus.html", "section": "gallery", "text": "Espaces lumineux rénovés 2022" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Formation digital web",
+      "subject": "Young adult learning web development on laptop in coding bootcamp classroom, digital skills training card image",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Digital & web — alternance 12 mois" },
+        { "page": "parcours.html", "section": "card", "text": "Développeur web RNCP" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Formation management",
+      "subject": "Business management training session adults around table with charts, professional leadership education card photo",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Management — BTS et titres pro" },
+        { "page": "parcours.html", "section": "card", "text": "BTS Management 2 ans" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Formation technique comptabilité",
+      "subject": "Accounting vocational training student with calculator and ledger in classroom France, technical skills education",
+      "contexts": [
+        { "page": "index.html", "section": "card", "text": "Métiers techniques — CPF/OPCO" },
+        { "page": "parcours.html", "section": "card", "text": "Comptabilité titre pro" }
+      ]
+    }
+  ]
+}
