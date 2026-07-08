@@ -6,6 +6,23 @@
   <meta name="description" content="Agence immobilière à Nancy : vente, location et gestion sur le Grand Est.">
   <title>Patrimoine Lorraine — Immobilier Nancy</title>
   <!-- layout: property-search · Bootstrap 5 · vitrine site complet -->
+  <link rel="canonical" href="https://danielcraft.fr/vitrines/immobilier/demo/index.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Patrimoine Lorraine">
+  <meta property="og:title" content="Patrimoine Lorraine — Immobilier Nancy">
+  <meta property="og:description" content="Agence immobilière à Nancy : vente, location et gestion sur le Grand Est.">
+  <meta property="og:url" content="https://danielcraft.fr/vitrines/immobilier/demo/index.html">
+  <meta property="og:image" content="https://danielcraft.fr/vitrines/immobilier/demo/images/hero.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="520">
+  <meta property="og:image:alt" content="Patrimoine Lorraine — Immobilier Nancy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Patrimoine Lorraine — Immobilier Nancy">
+  <meta name="twitter:description" content="Agence immobilière à Nancy : vente, location et gestion sur le Grand Est.">
+  <meta name="twitter:image" content="https://danielcraft.fr/vitrines/immobilier/demo/images/hero.webp">
+  <meta name="twitter:image:alt" content="Patrimoine Lorraine — Immobilier Nancy">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +30,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "Patrimoine Lorraine",
-  "description": "Agence immobilière Nancy — vente, location et estimation",
-  "telephone": "+33383352890",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8 place Stanislas",
-    "addressLocality": "Nancy",
-    "postalCode": "54000",
-    "addressCountry": "FR"
-  }
-}
-</script>
 </head>
 <body class="vt-body vt-body-property">
 <div class="vt-topbar py-2" role="complementary" aria-label="Informations pratiques">
@@ -40,10 +42,10 @@
     <a class="vt-topbar-link" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">8 place Stanislas, 54000 Nancy</a>
     <a class="vt-topbar-link fw-semibold" href="tel:0383352890">03 83 35 28 90</a>
   </div>
-</div><header class="vt-header sticky-top">
-  <nav class="navbar navbar-expand-lg vt-navbar">
+</div><header class="vt-header sticky-top" itemscope itemtype="https://schema.org/WebSite">
+  <nav class="navbar navbar-expand-lg vt-navbar" aria-label="Navigation principale">
     <div class="container">
-      <a class="navbar-brand vt-brand" href="index.html">Patrimoine Lorraine</a>
+      <a class="navbar-brand vt-brand" href="index.html" itemprop="url"><span itemprop="name">Patrimoine Lorraine</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,14 +55,16 @@
       </div>
     </div>
   </nav>
-</header><main><section class="vt-hero-property">
+</header><main itemscope itemtype="https://schema.org/WebPage">
+<link itemprop="url" href="https://danielcraft.fr/vitrines/immobilier/demo/index.html">
+<meta itemprop="inLanguage" content="fr-FR"><section class="vt-hero-property">
   <div class="container-fluid px-0">
     <div class="row g-0 align-items-stretch">
       <div class="col-lg-5 d-flex align-items-center vt-hero-property-copy">
         <div class="p-4 p-lg-5">
           <p class="vt-eyebrow text-uppercase mb-2">Nancy · Grand Est</p>
-          <h1 class="vt-display display-5 mb-3">Votre patrimoine mérite une attention d&#x27;exception</h1>
-          <p class="lead mb-4">Achat, vente et gestion locative à Nancy, Metz et en Moselle.</p>
+          <h1 itemprop="name" class="vt-display display-5 mb-3">Votre patrimoine mérite une attention d&#x27;exception</h1>
+          <p class="lead mb-4" itemprop="description">Achat, vente et gestion locative à Nancy, Metz et en Moselle.</p>
           <form class="vt-search-bar row g-2" action="biens.html" method="get" role="search">
             <div class="col-sm-4">
               <label class="visually-hidden" for="vt-search-type">Type de projet</label>
@@ -79,30 +83,30 @@
         </div>
       </div>
       <div class="col-lg-7 vt-hero-property-media">
-        <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" class="w-100 h-100 vt-cover" alt="Maison de maître Nancy — Patrimoine Lorraine" decoding="async" fetchpriority="high"></picture>
+        <picture><source srcset="images/hero.webp" type="image/webp"><img  itemprop="image" src="images/hero.png" class="w-100 h-100 vt-cover" alt="Maison de maître Nancy — Patrimoine Lorraine" decoding="async" fetchpriority="high"></picture>
       </div>
     </div>
   </div>
-</section><section class="vt-stats-band" aria-label="Chiffres clés">
+</section><section class="vt-stats-band vt-reveal" aria-label="Chiffres clés">
   <div class="container">
-    <div class="row text-center g-0"><div class="col-4 col-md-4">
+    <div class="row text-center g-0 vt-reveal-stagger"><div class="col-4 col-md-4">
         <div class="vt-stat">
-          <strong class="vt-stat-val">340+</strong>
+          <strong class="vt-stat-val" data-vt-count-end="340" data-vt-count-suffix="+">340+</strong>
           <span class="vt-stat-lbl">ventes / an</span>
         </div>
       </div><div class="col-4 col-md-4">
         <div class="vt-stat">
-          <strong class="vt-stat-val">28 ans</strong>
+          <strong class="vt-stat-val" data-vt-count-end="28" data-vt-count-suffix="ans">28 ans</strong>
           <span class="vt-stat-lbl">à Nancy</span>
         </div>
       </div><div class="col-4 col-md-4">
         <div class="vt-stat">
-          <strong class="vt-stat-val">4,8/5</strong>
+          <strong class="vt-stat-val" data-vt-count-end="4" data-vt-count-suffix=",8/5">4,8/5</strong>
           <span class="vt-stat-lbl">avis clients</span>
         </div>
       </div><div class="col-4 col-md-4">
         <div class="vt-stat">
-          <strong class="vt-stat-val">72 h</strong>
+          <strong class="vt-stat-val" data-vt-count-end="72" data-vt-count-suffix="h">72 h</strong>
           <span class="vt-stat-lbl">estimation</span>
         </div>
       </div>
@@ -241,10 +245,10 @@
       </div>
     </div>
   </div>
-</article></section><section class="vt-signatures py-5">
+</article></section><section class="vt-signatures py-5 vt-reveal">
   <div class="container">
     <h2 class="vt-section-title text-center mb-5">Nos services</h2>
-    <div class="row g-4"><div class="col-md-4">
+    <div class="row g-4 vt-reveal-stagger"><div class="col-md-4">
         <article class="card vt-card h-100 border-0 shadow-sm">
           <figure class="mb-0 overflow-hidden">
             <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" class="card-img-top vt-card-img" alt="Vente immobilière" decoding="async" loading="lazy"></picture>
@@ -293,21 +297,33 @@
     <p class="lead mb-4">Un projet immobilier à Nancy ou en Moselle ?</p>
     <a class="btn btn-light btn-lg rounded-pill px-4" href="estimation.html">Estimer mon bien</a>
   </div>
-</section></main><footer class="vt-footer text-white">
+</section></main><footer class="vt-footer text-white" itemscope itemtype="https://schema.org/RealEstateAgent">
   <div class="container py-5">
+    <link itemprop="url" href="https://danielcraft.fr/vitrines/immobilier/demo/">
+    <link itemprop="image" href="https://danielcraft.fr/vitrines/immobilier/demo/images/hero.webp">
     <div class="row g-4">
       <div class="col-md-4">
-        <strong class="vt-brand d-block mb-2">Patrimoine Lorraine</strong>
-        <p class="small opacity-75 mb-2">8 place Stanislas, 54000 Nancy</p>
-        <a class="small" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy">Nous trouver →</a>
+        <strong class="vt-brand d-block mb-2" itemprop="name">Patrimoine Lorraine</strong>
+        <p class="small opacity-75 mb-2" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">8 place Stanislas</span>,
+        <span itemprop="postalCode">54000</span>
+        <span itemprop="addressLocality">Nancy</span>
+        </p>
+        <span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+        <meta itemprop="latitude" content="48.6921">
+        <meta itemprop="longitude" content="6.1844">
+        </span>
+        
+        
+        <a class="small" href="https://maps.google.com/?q=8+place+Stanislas+54000+Nancy" itemprop="hasMap">Nous trouver →</a>
       </div>
       <div class="col-md-4">
         <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="biens.html">Nos biens</a><a class="nav-link px-0" href="estimation.html">Estimation</a><a class="nav-link px-0" href="contact.html">Estimer mon bien</a><a class="nav-link px-0" href="biens.html">Gestion locative</a>
         </nav>
       </div>
       <div class="col-md-4 small opacity-75">
-        <p class="mb-1"><a class="text-white" href="tel:0383352890">03 83 35 28 90</a></p>
-        <p class="mb-1"><a class="text-white" href="mailto:contact@patrimoine-lorraine.fr">contact@patrimoine-lorraine.fr</a></p>
+        <p class="mb-1"><a class="text-white" href="tel:0383352890" itemprop="telephone">03 83 35 28 90</a></p>
+        <p class="mb-1"><a class="text-white" href="mailto:contact@patrimoine-lorraine.fr" itemprop="email">contact@patrimoine-lorraine.fr</a></p>
         <p class="mb-0">Lun–ven 9h–19h · Sam 10h–13h</p>
       </div>
     </div>
@@ -320,5 +336,6 @@
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../shared/vitrine-motion.js" defer></script>
 </body>
 </html>

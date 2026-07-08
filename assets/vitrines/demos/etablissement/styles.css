@@ -1,31 +1,148 @@
-:root{--gold:#b8956a;--dark:#2c2419;--cream:#faf6f0}
-body{margin:0;font-family:"Plus Jakarta Sans",Georgia,serif;font-size:17px;color:var(--dark);background:var(--cream)}
-.lux-nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;position:fixed;width:100%;z-index:50;background:linear-gradient(to bottom,rgba(44,36,25,.85),transparent)}
-.lux-logo{color:#fff;text-decoration:none;font-weight:600;letter-spacing:.04em}
-.lux-nav a{color:rgba(255,255,255,.9);text-decoration:none;margin-left:1.5rem;font-size:.9rem}
-.lux-hero{position:relative;height:min(90vh,720px);display:flex;align-items:flex-end}
-.lux-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.lux-hero-overlay{position:relative;z-index:2;padding:3rem 2rem;background:linear-gradient(transparent,rgba(44,36,25,.75));color:#fff;width:100%}
-.lux-eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;color:var(--gold)}
-.lux-hero h1{font-size:clamp(2.2rem,5vw,3.2rem);margin:.5rem 0;font-weight:400;max-width:16ch}
-.lux-btn{display:inline-flex;align-items:center;min-height:44px;padding:.85rem 2rem;background:var(--gold);color:#fff;text-decoration:none;border:none;font:inherit;letter-spacing:.05em;cursor:pointer;margin-top:1rem}
-.lux-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;padding:2rem;background:var(--dark);color:#fff}
-.lux-stats em{font-style:normal;font-size:1.75rem;color:var(--gold);display:block}
-.lux-sec{max-width:72rem;margin:0 auto;padding:4rem 1.5rem}
-.lux-sec h2{font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:2rem;text-align:center}
-.lux-grid{display:grid;gap:1.5rem}
-@media(min-width:768px){.lux-grid{grid-template-columns:repeat(3,1fr)}}
-.card{text-align:center}.card img{width:100%;height:260px;object-fit:cover}
-.card h3{margin:1rem 0 .5rem;font-weight:500}.card p{color:#6b5d4d;font-size:.95rem;padding:0 1rem 1rem}
-.lux-sec--dark{background:var(--dark);color:#fff;max-width:none}
-.lux-split{max-width:72rem;margin:0 auto;display:grid;gap:2rem;padding:0 1.5rem}
-@media(min-width:800px){.lux-split{grid-template-columns:1fr 1fr;align-items:center}}
-.lux-list{list-style:none;padding:0;line-height:2}
-.lux-list li::before{content:"◆ ";color:var(--gold)}
-blockquote{border-left:2px solid var(--gold);padding-left:1.5rem;margin:0;font-style:italic}
-blockquote cite{display:block;margin-top:1rem;font-style:normal;font-size:.85rem;opacity:.7}
-.lux-form{max-width:28rem;margin:0 auto}
-.lux-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.lux-form label{display:grid;gap:.35rem;margin-bottom:1rem}
-.lux-form input{padding:.65rem;border:1px solid #d4c4a8;font:inherit;background:#fff}
-.ai-foot{text-align:center;padding:2rem;color:#6b5d4d}
+/* Hôtel Stanislas Collection — luxe or/crème, Cormorant + Plus Jakarta */
+:root {
+  --vt-gold: #b8956a;
+  --vt-gold-d: #96784f;
+  --vt-dark: #2c2419;
+  --vt-cream: #faf6f0;
+  --vt-text: #2c2419;
+  --vt-muted: #6b5d4d;
+  --vt-accent: var(--vt-gold);
+  --bs-body-bg: var(--vt-cream);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-gold-d);
+  --bs-link-color: var(--vt-gold-d);
+  --bs-link-hover-color: var(--vt-dark);
+}
+
+body.vt-body-hotel {
+  background: var(--vt-cream);
+  color: var(--vt-text);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) {
+  body.vt-body-hotel { padding-bottom: 0; }
+}
+
+.vt-display,
+.vt-section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  color: var(--vt-dark);
+}
+
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--vt-dark) !important;
+  max-width: 14rem;
+}
+
+.vt-eyebrow {
+  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--vt-gold);
+  text-transform: uppercase;
+}
+
+.vt-topbar { background: var(--vt-dark); color: #e8dfd0; }
+.vt-topbar-link { color: inherit; text-decoration: none; font-weight: 600; }
+
+.vt-navbar {
+  background: rgba(250, 246, 240, 0.97);
+  border-bottom: 1px solid rgba(184, 149, 106, 0.35);
+}
+.vt-navbar .nav-link {
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--vt-muted);
+}
+.vt-navbar .nav-link.active { color: var(--vt-gold-d); font-weight: 700; }
+
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-gold);
+  --bs-btn-border-color: var(--vt-gold);
+  --bs-btn-hover-bg: var(--vt-gold-d);
+  --bs-btn-hover-border-color: var(--vt-gold-d);
+  --bs-btn-color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 0;
+}
+.btn-vt-outline {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.85);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-color: var(--vt-dark);
+  border-radius: 0;
+}
+
+.vt-hero-overlay::before {
+  background: linear-gradient(135deg, rgba(44, 36, 25, 0.75), rgba(44, 36, 25, 0.45));
+}
+.vt-hero-overlay .vt-display { color: #fff; font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.vt-hero-overlay .lead { color: rgba(255, 255, 255, 0.92); }
+
+.vt-marquee { background: var(--vt-dark); }
+.vt-marquee-item { color: var(--vt-gold); }
+
+.vt-stats-band { background: var(--vt-dark); color: #fff; }
+.vt-stats-band .vt-stat-val { color: var(--vt-gold); }
+
+.vt-snap-series { background: #fff; }
+.vt-snap-chapter {
+  min-height: min(85vh, 640px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(184, 149, 106, 0.2);
+}
+.vt-snap-chapter--flip .row { flex-direction: row-reverse; }
+
+.vt-card-bs .card,
+.vt-signatures .card {
+  border: none;
+  box-shadow: 0 4px 20px rgba(44, 36, 25, 0.08);
+}
+.vt-card-bs .card-img-top,
+.vt-signatures .card-img-top { aspect-ratio: 16/10; object-fit: cover; }
+
+.vt-hero-editorial { background: linear-gradient(180deg, #fff, var(--vt-cream)); }
+.vt-hero-frame img { aspect-ratio: 4/3; object-fit: cover; }
+
+.vt-gallery-masonry .vt-masonry-card { border-bottom: 3px solid var(--vt-gold); }
+
+.vt-aside-panel { background: #fff; border-left: 4px solid var(--vt-gold) !important; }
+
+.vt-cta-band {
+  background: linear-gradient(135deg, var(--vt-dark), #3d3228);
+  color: #fff;
+}
+.vt-cta-band .btn-vt-primary {
+  --bs-btn-bg: var(--vt-gold);
+  --bs-btn-color: #fff;
+}
+
+.vt-mobile-cta {
+  background: var(--vt-dark);
+  border-top: 2px solid var(--vt-gold);
+}
+.vt-mobile-cta .btn { background: var(--vt-gold); color: #fff; border: none; }
+
+.vt-site-footer {
+  background: var(--vt-dark);
+  color: #d4c4a8;
+}
+.vt-site-footer a { color: #e8dfd0; }
+.vt-site-footer .vt-footer-brand { color: #fff; font-family: "Cormorant Garamond", Georgia, serif; }
+
+.vt-tech-table th { background: var(--vt-cream); color: var(--vt-dark); }
+
+.vt-compact-row .vt-compact-num { color: var(--vt-gold); }
+
+.vt-trust-band { border-top: 3px solid var(--vt-gold); }
+
+.vt-hero-compact { background: linear-gradient(180deg, #fff, var(--vt-cream)); }
+
+.vt-menu-section .vt-menu-item:hover { border-left-color: var(--vt-gold); }

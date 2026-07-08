@@ -1,7 +1,25 @@
 """Blocs HTML réutilisables pour vitrines « vrai site » (Bootstrap 5 + thème sectoriel)."""
 from __future__ import annotations
 
+import re
+
 from vitrine_ai_lib import esc
+from vitrine_seo import breadcrumbs_from_nav, enrich_body_semantic, get_entity, seo_head_meta
+
+
+def _stat_val_html(val: str) -> str:
+    """Valeur de stat avec compteur animé si numérique."""
+    raw = val.strip()
+    m = re.match(r"^([\d\s]+)(.*)$", raw)
+    if m:
+        digits = m.group(1).replace(" ", "")
+        if digits.isdigit():
+            suffix = m.group(2)
+            return (
+                f'<strong class="vt-stat-val" data-vt-count-end="{int(digits)}"'
+                f' data-vt-count-suffix="{esc(suffix)}">{esc(val)}</strong>'
+            )
+    return f'<strong class="vt-stat-val">{esc(val)}</strong>'
 
 
 HEAD_SPA = """
@@ -11,6 +29,7 @@ HEAD_SPA = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -22,12 +41,14 @@ HEAD_RESTAURATION = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
 
 FOOT_SCRIPTS = """
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>"""
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../shared/vitrine-motion.js" defer></script>"""
 
 
 def vt_picture(
@@ -59,6 +80,7 @@ HEAD_MEDICAL = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -70,6 +92,7 @@ HEAD_GARAGE = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -81,6 +104,7 @@ HEAD_RETAIL = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -92,6 +116,7 @@ HEAD_CABINET = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -103,6 +128,7 @@ HEAD_INDUSTRIAL = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -114,6 +140,7 @@ HEAD_PROPERTY = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -125,6 +152,7 @@ HEAD_EDUCATION = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -136,6 +164,43 @@ HEAD_FACILITY = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">"""
+
+HEAD_TECH = """
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">"""
+
+HEAD_SAAS = """
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
+  <link rel="icon" href="images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">"""
+
+HEAD_HOTEL = """
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../shared/vitrine-prose.css">
+  <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -147,6 +212,7 @@ HEAD_ASSOCIATION = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -158,6 +224,7 @@ HEAD_PHOTO = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -169,6 +236,7 @@ HEAD_FITNESS = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -180,6 +248,7 @@ HEAD_ARCHITECTURE = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -191,6 +260,7 @@ HEAD_LEGAL = """
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
+  <link rel="stylesheet" href="../shared/vitrine-motion.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">"""
@@ -206,7 +276,15 @@ def block_info_bar(*, status: str, address: str, phone: str, maps_href: str = "#
 </div>"""
 
 
-def block_site_nav(brand: str, pages: list[dict], current: str, *, cta_label: str, cta_href: str) -> str:
+def block_site_nav(
+    brand: str,
+    pages: list[dict],
+    current: str,
+    *,
+    cta_label: str,
+    cta_href: str,
+    slug: str = "",
+) -> str:
     links = []
     for p in pages:
         f = p["file"]
@@ -214,10 +292,19 @@ def block_site_nav(brand: str, pages: list[dict], current: str, *, cta_label: st
         active = " active" if f == current else ""
         aria = ' aria-current="page"' if f == current else ""
         links.append(f'<li class="nav-item"><a class="nav-link{active}" href="{esc(f)}"{aria}>{esc(label)}</a></li>')
-    return f"""<header class="vt-header sticky-top">
-  <nav class="navbar navbar-expand-lg vt-navbar">
+    if slug:
+        header_scope = ' itemscope itemtype="https://schema.org/WebSite"'
+        brand_html = (
+            f'<a class="navbar-brand vt-brand" href="index.html" itemprop="url">'
+            f'<span itemprop="name">{esc(brand)}</span></a>'
+        )
+    else:
+        header_scope = ""
+        brand_html = f'<a class="navbar-brand vt-brand" href="index.html">{esc(brand)}</a>'
+    return f"""<header class="vt-header sticky-top"{header_scope}>
+  <nav class="navbar navbar-expand-lg vt-navbar" aria-label="Navigation principale">
     <div class="container">
-      <a class="navbar-brand vt-brand" href="index.html">{esc(brand)}</a>
+      {brand_html}
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vtNav" aria-controls="vtNav" aria-expanded="false" aria-label="Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -262,15 +349,15 @@ def block_stats(items: list[tuple[str, str]]) -> str:
     cols = "".join(
         f"""<div class="col-4 col-md-4">
         <div class="vt-stat">
-          <strong class="vt-stat-val">{esc(val)}</strong>
+          {_stat_val_html(val)}
           <span class="vt-stat-lbl">{esc(lbl)}</span>
         </div>
       </div>"""
         for val, lbl in items
     )
-    return f"""<section class="vt-stats-band" aria-label="Chiffres clés">
+    return f"""<section class="vt-stats-band vt-reveal" aria-label="Chiffres clés">
   <div class="container">
-    <div class="row text-center g-0">{cols}
+    <div class="row text-center g-0 vt-reveal-stagger">{cols}
     </div>
   </div>
 </section>"""
@@ -327,10 +414,10 @@ def block_cards_bs(title: str, cards: list[dict]) -> str:
           </div>
         </article>
       </div>"""
-    return f"""<section class="vt-signatures py-5">
+    return f"""<section class="vt-signatures py-5 vt-reveal">
   <div class="container">
     <h2 class="vt-section-title text-center mb-5">{esc(title)}</h2>
-    <div class="row g-4">{items}
+    <div class="row g-4 vt-reveal-stagger">{items}
     </div>
   </div>
 </section>"""
@@ -494,6 +581,8 @@ def block_site_footer(
     maps_href: str = "https://maps.google.com/?q=12+place+Saint-Jacques+57000+Metz",
     nav_links: list[tuple[str, str]] | None = None,
     hours_line: str = "Mar–sam midi & soir · Dim. brunch",
+    entity: dict | None = None,
+    slug: str = "",
 ) -> str:
     if nav_links is None:
         nav_links = [
@@ -503,21 +592,86 @@ def block_site_footer(
             ("Recrutement", "contact.html"),
         ]
     nav_html = "".join(f'<a class="nav-link px-0" href="{esc(href)}">{esc(label)}</a>' for label, href in nav_links)
-    email_line = f'<p class="mb-1"><a class="text-white" href="mailto:{esc(email)}">{esc(email)}</a></p>' if email else ""
-    return f"""<footer class="vt-footer text-white">
+    email_line = f'<p class="mb-1"><a class="text-white" href="mailto:{esc(email)}" itemprop="email">{esc(email)}</a></p>' if email else ""
+    phone_line = ""
+    if phone:
+        phone_line = f'<p class="mb-1"><a class="text-white" href="tel:{esc(phone.replace(" ", ""))}" itemprop="telephone">{esc(phone)}</a></p>'
+
+    scope = ""
+    if entity:
+        scope = f' itemscope itemtype="https://schema.org/{esc(entity.get("type", "Organization"))}"'
+
+    if entity and entity.get("address"):
+        addr = entity["address"]
+        address_html = f"""<p class="small opacity-75 mb-2" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{esc(addr.get("streetAddress", ""))}</span>,
+        <span itemprop="postalCode">{esc(addr.get("postalCode", ""))}</span>
+        <span itemprop="addressLocality">{esc(addr.get("addressLocality", ""))}</span>
+        </p>"""
+    elif entity and entity.get("type") == "SoftwareApplication":
+        desc = str(entity.get("description") or address)
+        address_html = f'<p class="small opacity-75 mb-2" itemprop="description">{esc(desc)}</p>'
+    else:
+        address_html = f'<p class="small opacity-75 mb-2">{esc(address)}</p>'
+
+    maps_link = ""
+    if maps_href and maps_href != "#":
+        maps_link = f'<a class="small" href="{esc(maps_href)}" itemprop="hasMap">Nous trouver →</a>'
+
+    geo_html = ""
+    if entity and entity.get("geo"):
+        g = entity["geo"]
+        geo_html = f"""<span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+        <meta itemprop="latitude" content="{g.get("latitude", "")}">
+        <meta itemprop="longitude" content="{g.get("longitude", "")}">
+        </span>"""
+
+    saas_html = ""
+    if entity and entity.get("type") == "SoftwareApplication":
+        saas_html = f"""<p class="small opacity-75 mb-2">
+        <span itemprop="applicationCategory">{esc(entity.get("applicationCategory", "BusinessApplication"))}</span>
+        · <span itemprop="operatingSystem">{esc(entity.get("operatingSystem", "Web"))}</span>
+        </p>"""
+        if offers := entity.get("offers"):
+            saas_html += f"""<p class="small opacity-75 mb-2" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <span itemprop="description">{esc(str(offers.get("description", "")))}</span>
+        </p>"""
+        if slug:
+            saas_html += f'<link itemprop="url" href="{esc(f"https://danielcraft.fr/vitrines/{slug}/demo/")}">'
+
+    star_html = ""
+    if entity and entity.get("starRating"):
+        star_html = f"""<p class="small opacity-75 mb-2" itemprop="starRating" itemscope itemtype="https://schema.org/Rating">
+        <span itemprop="ratingValue">{esc(str(entity["starRating"]))}</span> ★
+        </p>"""
+
+    if entity and slug:
+        entity_url = f'https://danielcraft.fr/vitrines/{slug}/demo/'
+        entity_link = f'<link itemprop="url" href="{esc(entity_url)}">'
+        entity_img = f'<link itemprop="image" href="{esc(f"{entity_url}images/hero.webp")}">'
+    else:
+        entity_link = ""
+        entity_img = ""
+
+    return f"""<footer class="vt-footer text-white"{scope}>
   <div class="container py-5">
+    {entity_link}
+    {entity_img}
     <div class="row g-4">
       <div class="col-md-4">
-        <strong class="vt-brand d-block mb-2">{esc(brand)}</strong>
-        <p class="small opacity-75 mb-2">{esc(address)}</p>
-        <a class="small" href="{esc(maps_href)}">Nous trouver →</a>
+        <strong class="vt-brand d-block mb-2" itemprop="name">{esc(brand)}</strong>
+        {address_html}
+        {geo_html}
+        {saas_html}
+        {star_html}
+        {maps_link}
       </div>
       <div class="col-md-4">
         <nav class="nav flex-column small" aria-label="Pied de page">{nav_html}
         </nav>
       </div>
       <div class="col-md-4 small opacity-75">
-        <p class="mb-1"><a class="text-white" href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a></p>
+        {phone_line}
         {email_line}
         <p class="mb-0">{esc(hours_line)}</p>
       </div>
@@ -535,53 +689,47 @@ def block_mobile_cta(label: str, href: str, phone: str) -> str:
 </div>"""
 
 
-def restaurant_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Brasserie Saint-Jacques",
-  "servesCuisine": "Lorraine, French",
-  "priceRange": "€€",
-  "telephone": "+33387751234",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "12 place Saint-Jacques",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "12:00", "closes": "22:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "23:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "15:00"}
-  ]
-}
-</script>"""
+def _wrap_vitrine_page(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    head_assets: str,
+    body_class: str,
+    layout: str,
+    entity_slug: str,
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+    entity_overrides: dict | None = None,
+) -> str:
+    entity = get_entity(entity_slug, **(entity_overrides or {}))
+    name = site_name or str(entity.get("name", entity_slug))
+    crumbs = breadcrumbs_from_nav(nav or [], page, name)
+    meta = seo_head_meta(title, description, entity_slug, page, name, og_image)
+    body_html = enrich_body_semantic(body.strip(), title, description, entity_slug, page, nav or [], name)
+    return f"""<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{esc(description)}">
+  <title>{esc(title)}</title>
+  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
+{meta}
+{head_assets}
+</head>
+<body class="{body_class}">
+{body_html}
+{FOOT_SCRIPTS}
+</body>
+</html>
+"""
 
 
-def spa_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BeautySalon",
-  "name": "Spa Thalie",
-  "telephone": "+33383567890",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8 rue des Mésanges",
-    "addressLocality": "Nancy",
-    "postalCode": "54000",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "20:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00"}
-  ]
-}
-</script>"""
+
+
 
 
 def block_appointment_form(
@@ -638,67 +786,60 @@ def block_appointment_form(
 </section>"""
 
 
-def wrap_page(title: str, description: str, body: str, *, layout: str = "brasserie-bs") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_RESTAURATION}
-{restaurant_jsonld()}
-</head>
-<body class="vt-body">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "brasserie-bs",
+    slug: str = "restauration",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title,
+        description,
+        body,
+        head_assets=HEAD_RESTAURATION,
+        body_class="vt-body",
+        layout=layout,
+        entity_slug=slug,
+        page=page,
+        site_name=site_name,
+        nav=nav,
+        og_image=og_image,
+    )
 
 
-def wrap_page_spa(title: str, description: str, body: str, *, layout: str = "spa-bs") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_SPA}
-{spa_jsonld()}
-</head>
-<body class="vt-body vt-body-spa">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_spa(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "spa-bs",
+    slug: str = "beaute",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title,
+        description,
+        body,
+        head_assets=HEAD_SPA,
+        body_class="vt-body vt-body-spa",
+        layout=layout,
+        entity_slug=slug,
+        page=page,
+        site_name=site_name,
+        nav=nav,
+        og_image=og_image,
+    )
 
 
-def dental_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dentist",
-  "name": "Centre dentaire Mosaïque",
-  "telephone": "+33382884500",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "42 avenue de la République",
-    "addressLocality": "Thionville",
-    "postalCode": "57100",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "19:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
-  ]
-}
-</script>"""
 
 
 def block_dental_appointment_form(
@@ -754,47 +895,25 @@ def block_dental_appointment_form(
 </section>"""
 
 
-def wrap_page_medical(title: str, description: str, body: str, *, layout: str = "medical-split") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_MEDICAL}
-{dental_jsonld()}
-</head>
-<body class="vt-body vt-body-medical">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_medical(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "medical-split",
+    slug: str = "odontologie",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_MEDICAL, body_class="vt-body vt-body-medical", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def garage_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AutoRepair",
-  "name": "Garage Central Plappeville",
-  "telephone": "+33387654321",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Zone artisanale des Gravières",
-    "addressLocality": "Plappeville",
-    "postalCode": "57050",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
-  ]
-}
-</script>"""
 
 
 def block_garage_appointment_form(
@@ -851,47 +970,25 @@ def block_garage_appointment_form(
 </section>"""
 
 
-def wrap_page_garage(title: str, description: str, body: str, *, layout: str = "garage-overlay") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_GARAGE}
-{garage_jsonld()}
-</head>
-<body class="vt-body vt-body-garage">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_garage(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "garage-overlay",
+    slug: str = "automobile",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_GARAGE, body_class="vt-body vt-body-garage", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def retail_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "GroceryStore",
-  "name": "Halles Thionville",
-  "telephone": "+33382534000",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rue du Mail",
-    "addressLocality": "Thionville",
-    "postalCode": "57100",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "20:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "12:30"}
-  ]
-}
-</script>"""
 
 
 def block_retail_contact_form(
@@ -945,47 +1042,27 @@ def block_retail_contact_form(
 </section>"""
 
 
-def wrap_page_retail(title: str, description: str, body: str, *, layout: str = "retail-editorial") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_RETAIL}
-{retail_jsonld()}
-</head>
-<body class="vt-body vt-body-retail">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_retail(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "retail-editorial",
+    slug: str = "commerce",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_RETAIL, body_class="vt-body vt-body-retail", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def accounting_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "name": "Verlaine & Associés",
-  "telephone": "+33387759012",
-  "knowsAbout": ["Tenue comptable", "Paie et DSN", "Conseil dirigeant", "Fiscalité PME", "Bilan flash"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "14 rue Serpenoise",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"}
-  ]
-}
-</script>"""
+
+
 
 
 def block_cabinet_contact_form(
@@ -1041,44 +1118,27 @@ def block_cabinet_contact_form(
 </section>"""
 
 
-def wrap_page_cabinet(title: str, description: str, body: str, *, layout: str = "cabinet-proof") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_CABINET}
-{accounting_jsonld()}
-</head>
-<body class="vt-body vt-body-cabinet">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_cabinet(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "cabinet-proof",
+    slug: str = "comptable",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_CABINET, body_class="vt-body vt-body-cabinet", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def industrial_jsonld() -> str:
-    return """
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Précisite Usinage",
-  "description": "Usinage de précision 5 axes, automobile et aéronautique",
-  "telephone": "+33387224466",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Zone industrielle des Hauts Champs",
-    "addressLocality": "Yutz",
-    "postalCode": "57970",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
+
+
 
 
 def block_industrial_rfq_form(
@@ -1137,43 +1197,27 @@ def block_industrial_rfq_form(
 </section>"""
 
 
-def wrap_page_industrial(title: str, description: str, body: str, *, layout: str = "industrial-spec") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_INDUSTRIAL}
-{industrial_jsonld()}
-</head>
-<body class="vt-body vt-body-industrial">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_industrial(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "industrial-spec",
+    slug: str = "industrie",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_INDUSTRIAL, body_class="vt-body vt-body-industrial", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def property_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "Patrimoine Lorraine",
-  "description": "Agence immobilière Nancy — vente, location et estimation",
-  "telephone": "+33383352890",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8 place Stanislas",
-    "addressLocality": "Nancy",
-    "postalCode": "54000",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
+
+
 
 
 def block_property_estimation_form(
@@ -1231,43 +1275,27 @@ def block_property_estimation_form(
 </section>"""
 
 
-def wrap_page_property(title: str, description: str, body: str, *, layout: str = "property-search") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_PROPERTY}
-{property_jsonld()}
-</head>
-<body class="vt-body vt-body-property">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_property(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "property-search",
+    slug: str = "immobilier",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_PROPERTY, body_class="vt-body vt-body-property", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def legal_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Rivière & Partenaires",
-  "description": "Cabinet d'avocats Metz — droit des affaires, social et contentieux",
-  "telephone": "+33387759012",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "12 avenue Foch",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
+
+
 
 
 def block_legal_consultation_form(
@@ -1323,62 +1351,29 @@ def block_legal_consultation_form(
 </section>"""
 
 
-def wrap_page_legal(title: str, description: str, body: str, *, layout: str = "legal-overlay") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_LEGAL}
-{legal_jsonld()}
-</head>
-<body class="vt-body vt-body-legal">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_legal(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "legal-overlay",
+    slug: str = "juridique",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_LEGAL, body_class="vt-body vt-body-legal", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def architecture_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Atelier Nord-Est",
-  "description": "Agence d'architecture Metz — réhabilitation et conception durable",
-  "telephone": "+33387661234",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "14 rue du XXe Corps",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
 
 
-def education_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Institut Mercure",
-  "description": "Centre de formation professionnelle Thionville — alternance et reconversion",
-  "telephone": "+33382884500",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "15 avenue des Deux Fontaines",
-    "addressLocality": "Thionville",
-    "postalCode": "57100",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
+
+
 
 
 def block_education_enrollment_form(
@@ -1388,7 +1383,7 @@ def block_education_enrollment_form(
     phone: str,
     email: str,
 ) -> str:
-    return f"""<section class="vt-reserve py-5" aria-labelledby="enroll-title">
+    return f"""<section class="vt-reserve py-5 vt-reveal" aria-labelledby="enroll-title">
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-7">
@@ -1427,23 +1422,6 @@ def block_education_enrollment_form(
 </section>"""
 
 
-def facility_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Proprio Facility",
-  "description": "Facility management et conciergerie pour immeubles tertiaires en Lorraine",
-  "telephone": "+33387654321",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8 place Saint-Jacques",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
 
 
 def block_facility_quote_form(
@@ -1494,23 +1472,115 @@ def block_facility_quote_form(
 </section>"""
 
 
-def association_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NGO",
-  "name": "Solidarités Metz Métropole",
-  "description": "Association d'utilité publique Metz — aide alimentaire, insertion et bénévolat",
-  "telephone": "+33387345678",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "22 rue du Sablon",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
+
+
+def block_tech_demo_form(
+    *,
+    brand: str = "Synapse Lorraine",
+    address: str,
+    phone: str,
+    email: str,
+) -> str:
+    return f"""<section class="vt-reserve py-5 vt-reveal" aria-labelledby="demo-title">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h2 id="demo-title" class="vt-section-title">Demander une démo</h2>
+        <p class="text-secondary mb-4">Démonstration personnalisée — réponse sous 24 h.</p>
+        <form class="row g-3" action="#" method="post">
+          <div class="col-md-6"><label class="form-label">Société<input type="text" class="form-control" name="company" required></label></div>
+          <div class="col-md-6"><label class="form-label">Fonction<select class="form-select" name="role"><option>DSI</option><option>Data / BI</option><option>Direction</option><option>Ops</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="name" required></label></div>
+          <div class="col-md-6"><label class="form-label">E-mail pro<input type="email" class="form-control" name="email" required></label></div>
+          <div class="col-12"><label class="form-label">Besoin<textarea class="form-control" name="message" rows="3" placeholder="Volumes data, intégrations, délais…"></textarea></label></div>
+          <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Réserver ma démo</button></div>
+          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+        </form>
+      </div>
+      <aside class="col-lg-5">
+        <div class="card border-0 p-4 h-100 vt-aside-panel">
+          <h2 class="h4 vt-section-title">Metz · Grand Est</h2>
+          <address class="text-secondary mb-3"><strong class="text-body">{esc(brand)}</strong><br>{esc(address)}</address>
+          <p><a href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a><br><a href="mailto:{esc(email)}">{esc(email)}</a></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>"""
+
+
+
+
+def block_saas_trial_form(*, brand: str = "FlowMetrics", email: str = "hello@flowmetrics.io") -> str:
+    return f"""<section class="vt-reserve py-5 vt-reveal" aria-labelledby="trial-title">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <h2 id="trial-title" class="vt-section-title text-center">Essai gratuit 14 jours</h2>
+        <p class="text-secondary text-center mb-4">Sans carte bancaire — setup en 5 minutes.</p>
+        <form class="row g-3" action="#" method="post">
+          <div class="col-md-6"><label class="form-label">Prénom<input type="text" class="form-control" name="firstname" required></label></div>
+          <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="lastname" required></label></div>
+          <div class="col-12"><label class="form-label">E-mail pro<input type="email" class="form-control" name="email" required></label></div>
+          <div class="col-12"><label class="form-label">Entreprise<input type="text" class="form-control" name="company" required></label></div>
+          <div class="col-12 text-center"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Démarrer l'essai</button></div>
+          <p class="small text-secondary text-center mb-0">Démo {esc(brand)} — <a href="mailto:{esc(email)}">{esc(email)}</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+
+
+def block_hotel_reservation_form(
+    *,
+    brand: str = "Hôtel Stanislas Collection",
+    address: str,
+    phone: str,
+    email: str,
+) -> str:
+    return f"""<section class="vt-reserve py-5 vt-reveal" aria-labelledby="book-title">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h2 id="book-title" class="vt-section-title">Réserver votre séjour</h2>
+        <p class="text-secondary mb-4">Confirmation sous 2 h — meilleur tarif garanti en direct.</p>
+        <form class="row g-3" action="#" method="post">
+          <div class="col-md-6"><label class="form-label">Arrivée<input type="date" class="form-control" name="checkin" required></label></div>
+          <div class="col-md-6"><label class="form-label">Départ<input type="date" class="form-control" name="checkout" required></label></div>
+          <div class="col-md-4"><label class="form-label">Adultes<input type="number" class="form-control" name="adults" min="1" value="2" required></label></div>
+          <div class="col-md-4"><label class="form-label">Enfants<input type="number" class="form-control" name="children" min="0" value="0"></label></div>
+          <div class="col-md-4"><label class="form-label">Chambre<select class="form-select" name="room"><option>Classique</option><option>Supérieure</option><option>Suite Stanislas</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
+          <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
+          <div class="col-12"><label class="form-label">Demandes particulières<textarea class="form-control" name="message" rows="2" placeholder="Arrivée tardive, lit bébé, allergies…"></textarea></label></div>
+          <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Vérifier les disponibilités</button></div>
+          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+        </form>
+      </div>
+      <aside class="col-lg-5">
+        <div class="card border-0 p-4 h-100 vt-aside-panel">
+          <h2 class="h4 vt-section-title">Réception</h2>
+          <address class="text-secondary mb-3">
+            <strong class="text-body">{esc(brand)}</strong><br>
+            {esc(address)}
+          </address>
+          <p><a href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a><br>
+          <a href="mailto:{esc(email)}">{esc(email)}</a></p>
+          <ul class="small text-secondary ps-3 mb-0">
+            <li>Check-in 15h · Check-out 11h</li>
+            <li>Spa &amp; parking inclus 4★</li>
+            <li>Annulation flexible 48 h</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>"""
+
+
 
 
 def block_association_contact_form(
@@ -1559,23 +1629,6 @@ def block_association_contact_form(
 </section>"""
 
 
-def photo_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Studio Lumière Grise",
-  "description": "Photographe mariage et corporate à Nancy — reportages et portraits",
-  "telephone": "+33383321840",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8 place Stanislas",
-    "addressLocality": "Nancy",
-    "postalCode": "54000",
-    "addressCountry": "FR"
-  }
-}
-</script>"""
 
 
 def block_photo_quote_form(
@@ -1624,29 +1677,6 @@ def block_photo_quote_form(
 </section>"""
 
 
-def fitness_jsonld() -> str:
-    return """<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
-  "name": "Pulse Fitness Metz",
-  "description": "Salle de sport Metz — cours collectifs, musculation et essai gratuit",
-  "telephone": "+33387554000",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "42 avenue de Strasbourg",
-    "addressLocality": "Metz",
-    "postalCode": "57000",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "06:00",
-    "closes": "23:00"
-  }
-}
-</script>"""
 
 
 def block_fitness_trial_form(
@@ -1744,121 +1774,193 @@ def block_architecture_brief_form(
 </section>"""
 
 
-def wrap_page_facility(title: str, description: str, body: str, *, layout: str = "facility-fm") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_FACILITY}
-{facility_jsonld()}
-</head>
-<body class="vt-body vt-body-facility">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_hotel(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "hotel-luxury",
+    slug: str = "etablissement",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_HOTEL, body_class="vt-body vt-body-hotel", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def wrap_page_education(title: str, description: str, body: str, *, layout: str = "campus-academic") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_EDUCATION}
-{education_jsonld()}
-</head>
-<body class="vt-body vt-body-education">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
 
 
-def wrap_page_association(title: str, description: str, body: str, *, layout: str = "ess-impact") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_ASSOCIATION}
-{association_jsonld()}
-</head>
-<body class="vt-body vt-body-association">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_tech(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "tech-data",
+    slug: str = "technologie",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_TECH, body_class="vt-body vt-body-tech", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
 
 
-def wrap_page_photo(title: str, description: str, body: str, *, layout: str = "photo-masonry") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_PHOTO}
-{photo_jsonld()}
-</head>
-<body class="vt-body vt-body-photo">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
 
 
-def wrap_page_fitness(title: str, description: str, body: str, *, layout: str = "fitness-schedule") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_FITNESS}
-{fitness_jsonld()}
-</head>
-<body class="vt-body vt-body-fitness">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+def wrap_page_saas(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "saas-product",
+    slug: str = "saas-landing",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+    brand: str = "FlowMetrics",
+    brand_desc: str = "SaaS analytics pour equipes produit",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_SAAS, body_class="vt-body vt-body-saas", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name or brand, nav=nav, og_image=og_image,
+        entity_overrides={"name": brand, "description": brand_desc},
+    )
 
 
-def wrap_page_architecture(title: str, description: str, body: str, *, layout: str = "architecture-editorial") -> str:
-    return f"""<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
-  <!-- layout: {layout} · Bootstrap 5 · vitrine site complet -->
-{HEAD_ARCHITECTURE}
-{architecture_jsonld()}
-</head>
-<body class="vt-body vt-body-architecture">
-{body.strip()}
-{FOOT_SCRIPTS}
-</body>
-</html>
-"""
+
+
+def wrap_page_facility(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "facility-fm",
+    slug: str = "services",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_FACILITY, body_class="vt-body vt-body-facility", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
+
+
+
+
+def wrap_page_education(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "campus-academic",
+    slug: str = "education",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_EDUCATION, body_class="vt-body vt-body-education", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
+
+
+
+
+def wrap_page_association(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "ess-impact",
+    slug: str = "association",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_ASSOCIATION, body_class="vt-body vt-body-association", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
+
+
+
+
+def wrap_page_photo(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "photo-masonry",
+    slug: str = "photographie",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_PHOTO, body_class="vt-body vt-body-photo", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
+
+
+
+
+def wrap_page_fitness(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "fitness-schedule",
+    slug: str = "fitness",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_FITNESS, body_class="vt-body vt-body-fitness", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
+
+
+
+
+def wrap_page_architecture(
+    title: str,
+    description: str,
+    body: str,
+    *,
+    layout: str = "architecture-editorial",
+    slug: str = "architecture",
+    page: str = "index.html",
+    site_name: str = "",
+    nav: list[dict] | None = None,
+    og_image: str = "images/hero.webp",
+) -> str:
+    return _wrap_vitrine_page(
+        title, description, body,
+        head_assets=HEAD_ARCHITECTURE, body_class="vt-body vt-body-architecture", layout=layout,
+        entity_slug=slug, page=page, site_name=site_name, nav=nav, og_image=og_image,
+    )
+
+

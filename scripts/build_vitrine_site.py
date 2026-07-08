@@ -7,6 +7,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from vitrine_seo import get_entity
+
+
+def _chrome_nav(slug: str, brand: str, nav: list, page: str, *, cta_label: str, cta_href: str) -> str:
+    return block_site_nav(brand, nav, page, cta_label=cta_label, cta_href=cta_href, slug=slug)
+
+
+def _chrome_foot(slug: str, brand: str, **kwargs) -> str:
+    return block_site_footer(brand, entity=get_entity(slug), slug=slug, **kwargs)
+
 from vitrine_site_blocks import (
     block_appointment_form,
     block_cards_bs,
@@ -17,7 +27,10 @@ from vitrine_site_blocks import (
     block_cta_band,
     block_dental_appointment_form,
     block_education_enrollment_form,
+    block_hotel_reservation_form,
     block_facility_quote_form,
+    block_saas_trial_form,
+    block_tech_demo_form,
     block_fitness_trial_form,
     block_association_contact_form,
     block_photo_quote_form,
@@ -43,6 +56,9 @@ from vitrine_site_blocks import (
     wrap_page_cabinet,
     wrap_page_education,
     wrap_page_facility,
+    wrap_page_saas,
+    wrap_page_tech,
+    wrap_page_hotel,
     wrap_page_association,
     wrap_page_photo,
     wrap_page_fitness,
@@ -70,7 +86,17 @@ from vitrine_layouts import (
     block_hero_split_reverse,
     block_hero_property_search,
     block_hero_technical,
+    block_kpi_grid,
     block_listing_grid,
+    block_feature_tabs,
+    block_hero_saas_product,
+    block_hero_tech_glow,
+    block_notification_feed,
+    block_pricing_tiers,
+    block_progress_wizard,
+    block_state_morph,
+    block_marquee_strip,
+    block_motion_progress,
     block_neighborhood_strip,
     block_process_flow,
     block_project_grid,
@@ -78,6 +104,7 @@ from vitrine_layouts import (
     block_schedule_grid,
     block_sector_strip,
     block_service_tiles,
+    block_snap_chapters,
     block_spec_grid,
     block_specs_table,
     block_stat_narrative_rows,
@@ -166,10 +193,10 @@ MENU_SECTIONS = [
 
 def _shell(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Ouvert aujourd'hui · Mar–sam", address=ADDRESS, phone=PHONE, maps_href=MAPS)
-    nav = block_site_nav(BRAND, NAV, page, cta_label="Réserver", cta_href="contact.html")
-    foot = block_site_footer(BRAND, phone=PHONE, address=ADDRESS)
+    nav = _chrome_nav("restauration", BRAND, NAV, page, cta_label="Réserver", cta_href="contact.html")
+    foot = _chrome_foot("restauration", BRAND, phone=PHONE, address=ADDRESS)
     mobile = block_mobile_cta("Réserver", "contact.html", PHONE)
-    return wrap_page(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page(title, desc, bar + nav + main + foot + mobile, slug="restauration", page=page, site_name=BRAND, nav=NAV)
 
 
 def build_index() -> str:
@@ -352,8 +379,8 @@ B_SOINS_SECTIONS = [
 
 def _shell_beaute(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Ouvert aujourd'hui · Mar–sam 9h–20h", address=B_ADDRESS, phone=B_PHONE, maps_href=B_MAPS)
-    nav = block_site_nav(B_Brand, B_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("beaute", B_Brand, B_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
+    foot = _chrome_foot("beaute", 
         B_Brand,
         phone=B_PHONE,
         address=B_ADDRESS,
@@ -363,7 +390,7 @@ def _shell_beaute(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Mar–sam 9h–20h · Dim. 10h–18h sur RDV",
     )
     mobile = block_mobile_cta("Prendre RDV", "contact.html", B_PHONE)
-    return wrap_page_spa(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_spa(title, desc, bar + nav + main + foot + mobile, slug="beaute", page=page, site_name=B_Brand, nav=B_NAV)
 
 
 def build_beaute_index() -> str:
@@ -537,8 +564,8 @@ O_SOINS_SECTIONS = [
 
 def _shell_odontologie(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Ouvert aujourd'hui · Lun–sam", address=O_ADDRESS, phone=O_PHONE, maps_href=O_MAPS)
-    nav = block_site_nav(O_BRAND, O_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("odontologie", O_BRAND, O_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
+    foot = _chrome_foot("odontologie", 
         O_BRAND,
         phone=O_PHONE,
         address=O_ADDRESS,
@@ -547,7 +574,7 @@ def _shell_odontologie(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 8h30–19h · Sam 8h–12h",
     )
     mobile = block_mobile_cta("Prendre RDV", "contact.html", O_PHONE)
-    return wrap_page_medical(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_medical(title, desc, bar + nav + main + foot + mobile, slug="odontologie", page=page, site_name=O_BRAND, nav=O_NAV)
 
 
 def build_odontologie_index() -> str:
@@ -742,8 +769,8 @@ A_SERVICES_MENU = [
 
 def _shell_automobile(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Ouvert aujourd'hui · Lun–sam", address=A_ADDRESS, phone=A_PHONE, maps_href=A_MAPS)
-    nav = block_site_nav(A_BRAND_FULL, A_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("automobile", A_BRAND_FULL, A_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
+    foot = _chrome_foot("automobile", 
         A_BRAND_FULL,
         phone=A_PHONE,
         address=A_ADDRESS,
@@ -752,7 +779,7 @@ def _shell_automobile(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 8h–18h · Sam 8h–12h",
     )
     mobile = block_mobile_cta("Prendre RDV", "contact.html", A_PHONE)
-    return wrap_page_garage(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_garage(title, desc, bar + nav + main + foot + mobile, slug="automobile", page=page, site_name=A_BRAND_FULL, nav=A_NAV)
 
 
 def build_automobile_index() -> str:
@@ -952,8 +979,8 @@ C_RAYONS_MENU = [
 
 def _shell_commerce(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Ouvert aujourd'hui · 7j/7", address=C_ADDRESS, phone=C_PHONE, maps_href=C_MAPS)
-    nav = block_site_nav(C_BRAND, C_NAV, page, cta_label="Voir le drive", cta_href="drive.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("commerce", C_BRAND, C_NAV, page, cta_label="Voir le drive", cta_href="drive.html")
+    foot = _chrome_foot("commerce", 
         C_BRAND,
         phone=C_PHONE,
         address=C_ADDRESS,
@@ -963,7 +990,7 @@ def _shell_commerce(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–sam 8h–20h · Dim 9h–12h30",
     )
     mobile = block_mobile_cta("Drive 2 h", "drive.html", C_PHONE)
-    return wrap_page_retail(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_retail(title, desc, bar + nav + main + foot + mobile, slug="commerce", page=page, site_name=C_BRAND, nav=C_NAV)
 
 
 def build_commerce_index() -> str:
@@ -1174,8 +1201,8 @@ CP_FAQ = [
 
 def _shell_comptable(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Cabinet ouvert · Lun–ven 9h–18h", address=CP_ADDRESS, phone=CP_PHONE, maps_href=CP_MAPS)
-    nav = block_site_nav(CP_BRAND, CP_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("comptable", CP_BRAND, CP_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
+    foot = _chrome_foot("comptable", 
         CP_BRAND,
         phone=CP_PHONE,
         address=CP_ADDRESS,
@@ -1185,7 +1212,7 @@ def _shell_comptable(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 9h–18h · Metz & Thionville",
     )
     mobile = block_mobile_cta("Prendre RDV", "contact.html", CP_PHONE)
-    return wrap_page_cabinet(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_cabinet(title, desc, bar + nav + main + foot + mobile, slug="comptable", page=page, site_name=CP_BRAND, nav=CP_NAV)
 
 
 def build_comptable_index() -> str:
@@ -1361,8 +1388,8 @@ I_SPEC_ROWS = [
 
 def _shell_industrie(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Production · Lun–ven 7h–18h", address=I_ADDRESS, phone=I_PHONE, maps_href=I_MAPS)
-    nav = block_site_nav(I_BRAND, I_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("industrie", I_BRAND, I_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
+    foot = _chrome_foot("industrie", 
         I_BRAND,
         phone=I_PHONE,
         address=I_ADDRESS,
@@ -1372,7 +1399,7 @@ def _shell_industrie(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 7h–18h · Yutz",
     )
     mobile = block_mobile_cta("Devis RFQ", "contact.html", I_PHONE)
-    return wrap_page_industrial(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_industrial(title, desc, bar + nav + main + foot + mobile, slug="industrie", page=page, site_name=I_BRAND, nav=I_NAV)
 
 
 def build_industrie_index() -> str:
@@ -1568,8 +1595,8 @@ IM_CARDS = [
 
 def _shell_immobilier(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Agence ouverte · Lun–sam", address=IM_ADDRESS, phone=IM_PHONE, maps_href=IM_MAPS)
-    nav = block_site_nav(IM_BRAND, IM_NAV, page, cta_label="Estimer mon bien", cta_href="estimation.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("immobilier", IM_BRAND, IM_NAV, page, cta_label="Estimer mon bien", cta_href="estimation.html")
+    foot = _chrome_foot("immobilier", 
         IM_BRAND,
         phone=IM_PHONE,
         address=IM_ADDRESS,
@@ -1579,7 +1606,7 @@ def _shell_immobilier(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 9h–19h · Sam 10h–13h",
     )
     mobile = block_mobile_cta("Estimer mon bien", "estimation.html", IM_PHONE)
-    return wrap_page_property(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_property(title, desc, bar + nav + main + foot + mobile, slug="immobilier", page=page, site_name=IM_BRAND, nav=IM_NAV)
 
 
 def build_immobilier_index() -> str:
@@ -1783,8 +1810,8 @@ JU_FAQ = [
 
 def _shell_juridique(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Cabinet ouvert · Lun–ven 9h–18h", address=JU_ADDRESS, phone=JU_PHONE, maps_href=JU_MAPS)
-    nav = block_site_nav(JU_BRAND, JU_NAV, page, cta_label="Consultation", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("juridique", JU_BRAND, JU_NAV, page, cta_label="Consultation", cta_href="contact.html")
+    foot = _chrome_foot("juridique", 
         JU_BRAND,
         phone=JU_PHONE,
         address=JU_ADDRESS,
@@ -1794,7 +1821,7 @@ def _shell_juridique(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 9h–18h · Barreau de Metz",
     )
     mobile = block_mobile_cta("Consultation", "contact.html", JU_PHONE)
-    return wrap_page_legal(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_legal(title, desc, bar + nav + main + foot + mobile, slug="juridique", page=page, site_name=JU_BRAND, nav=JU_NAV)
 
 
 def build_juridique_index() -> str:
@@ -1999,8 +2026,8 @@ AR_COMPACT = [
 
 def _shell_architecture(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Atelier ouvert · Lun–ven 9h–18h", address=AR_ADDRESS, phone=AR_PHONE, maps_href=AR_MAPS)
-    nav = block_site_nav(AR_BRAND, AR_NAV, page, cta_label="Brief projet", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("architecture", AR_BRAND, AR_NAV, page, cta_label="Brief projet", cta_href="contact.html")
+    foot = _chrome_foot("architecture", 
         AR_BRAND,
         phone=AR_PHONE,
         address=AR_ADDRESS,
@@ -2010,7 +2037,7 @@ def _shell_architecture(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 9h–18h · Metz",
     )
     mobile = block_mobile_cta("Brief projet", "contact.html", AR_PHONE)
-    return wrap_page_architecture(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_architecture(title, desc, bar + nav + main + foot + mobile, slug="architecture", page=page, site_name=AR_BRAND, nav=AR_NAV)
 
 
 def build_architecture_index() -> str:
@@ -2209,8 +2236,8 @@ FIT_FAQ = [
 
 def _shell_fitness(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Ouvert 6h–23h · 7j/7", address=FIT_ADDRESS, phone=FIT_PHONE, maps_href=FIT_MAPS)
-    nav = block_site_nav(FIT_BRAND, FIT_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("fitness", FIT_BRAND, FIT_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
+    foot = _chrome_foot("fitness", 
         FIT_BRAND,
         phone=FIT_PHONE,
         address=FIT_ADDRESS,
@@ -2220,7 +2247,7 @@ def _shell_fitness(page: str, title: str, desc: str, main: str) -> str:
         hours_line="6h–23h · Metz Sablon",
     )
     mobile = block_mobile_cta("Essai gratuit", "contact.html", FIT_PHONE)
-    return wrap_page_fitness(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_fitness(title, desc, bar + nav + main + foot + mobile, slug="fitness", page=page, site_name=FIT_BRAND, nav=FIT_NAV)
 
 
 def build_fitness_index() -> str:
@@ -2444,8 +2471,8 @@ PH_CREDENTIALS = [
 
 def _shell_photo(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Studio ouvert sur RDV · Mar–sam", address=PH_ADDRESS, phone=PH_PHONE, maps_href=PH_MAPS)
-    nav = block_site_nav(PH_BRAND, PH_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("photographie", PH_BRAND, PH_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
+    foot = _chrome_foot("photographie", 
         PH_BRAND,
         phone=PH_PHONE,
         address=PH_ADDRESS,
@@ -2455,7 +2482,7 @@ def _shell_photo(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Sur rendez-vous · Nancy",
     )
     mobile = block_mobile_cta("Demander un devis", "contact.html", PH_PHONE)
-    return wrap_page_photo(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_photo(title, desc, bar + nav + main + foot + mobile, slug="photographie", page=page, site_name=PH_BRAND, nav=PH_NAV)
 
 
 def build_photographie_index() -> str:
@@ -2626,8 +2653,8 @@ ASS_FAQ = [
 
 def _shell_association(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Permanences lun–ven 9h–17h", address=ASS_ADDRESS, phone=ASS_PHONE, maps_href=ASS_MAPS)
-    nav = block_site_nav(ASS_BRAND, ASS_NAV, page, cta_label="Faire un don", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("association", ASS_BRAND, ASS_NAV, page, cta_label="Faire un don", cta_href="contact.html")
+    foot = _chrome_foot("association", 
         ASS_BRAND,
         phone=ASS_PHONE,
         address=ASS_ADDRESS,
@@ -2637,7 +2664,7 @@ def _shell_association(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Metz Métropole · ESS",
     )
     mobile = block_mobile_cta("Faire un don", "contact.html", ASS_PHONE)
-    return wrap_page_association(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_association(title, desc, bar + nav + main + foot + mobile, slug="association", page=page, site_name=ASS_BRAND, nav=ASS_NAV)
 
 
 def build_association_index() -> str:
@@ -2838,8 +2865,8 @@ EDU_FAQ = [
 
 def _shell_education(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Inscriptions ouvertes — rentrée sept. 2026", address=EDU_ADDRESS, phone=EDU_PHONE, maps_href=EDU_MAPS)
-    nav = block_site_nav(EDU_BRAND, EDU_NAV, page, cta_label="S'inscrire", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("education", EDU_BRAND, EDU_NAV, page, cta_label="S'inscrire", cta_href="contact.html")
+    foot = _chrome_foot("education", 
         EDU_BRAND,
         phone=EDU_PHONE,
         address=EDU_ADDRESS,
@@ -2849,7 +2876,7 @@ def _shell_education(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Thionville · Certifié Qualiopi",
     )
     mobile = block_mobile_cta("S'inscrire", "contact.html", EDU_PHONE)
-    return wrap_page_education(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_education(title, desc, bar + nav + main + foot + mobile, slug="education", page=page, site_name=EDU_BRAND, nav=EDU_NAV)
 
 
 def build_education_index() -> str:
@@ -3082,8 +3109,8 @@ SV_PROMOS = [
 
 def _shell_services(page: str, title: str, desc: str, main: str) -> str:
     bar = block_info_bar(status="Astreinte 24/7 · Grand Est", address=SV_ADDRESS, phone=SV_PHONE, maps_href=SV_MAPS)
-    nav = block_site_nav(SV_BRAND, SV_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
-    foot = block_site_footer(
+    nav = _chrome_nav("services", SV_BRAND, SV_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
+    foot = _chrome_foot("services", 
         SV_BRAND,
         phone=SV_PHONE,
         address=SV_ADDRESS,
@@ -3093,7 +3120,7 @@ def _shell_services(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Metz · Facility management",
     )
     mobile = block_mobile_cta("Devis FM", "contact.html", SV_PHONE)
-    return wrap_page_facility(title, desc, bar + nav + main + foot + mobile)
+    return wrap_page_facility(title, desc, bar + nav + main + foot + mobile, slug="services", page=page, site_name=SV_BRAND, nav=SV_NAV)
 
 
 def build_services_index() -> str:
@@ -3247,6 +3274,893 @@ def build_services_contact() -> str:
     )
 
 
+# --- Hôtel Stanislas Collection (etablissement) — hero luxe + snap chapters + marquee ---
+ET_BRAND = "Hôtel Stanislas Collection"
+ET_PHONE = "03 83 54 12 34"
+ET_EMAIL = "reservation@stanislas-collection.fr"
+ET_ADDRESS = "2 place Stanislas, 54000 Nancy"
+ET_MAPS = "https://maps.google.com/?q=2+place+Stanislas+54000+Nancy"
+ET_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "chambres.html", "label": "Chambres"},
+    {"file": "seminaires.html", "label": "Séminaires"},
+    {"file": "contact.html", "label": "Contact"},
+]
+ET_FOOTER_NAV = [
+    ("Chambres", "chambres.html"),
+    ("Séminaires", "seminaires.html"),
+    ("Réserver", "contact.html"),
+    ("Spa", "index.html"),
+]
+ET_CARDS = [
+    {"title": "Chambre Classique", "text": "28 m² — vue cour ou jardin, literie premium.", "img": "card-1.png", "alt": "Chambre classique"},
+    {"title": "Chambre Supérieure", "text": "35 m² — vue place Stanislas, plateau courtoisie.", "img": "card-2.png", "alt": "Chambre supérieure"},
+    {"title": "Suite Stanislas", "text": "55 m² — salon séparé, baignoire et service conciergerie.", "img": "card-3.png", "alt": "Suite Stanislas"},
+]
+ET_SNAP = [
+    {"title": "Lobby & réception", "text": "Marbre, laiton et lumière tamisée — accueil 24 h face à la place Stanislas.", "img": "scene-1.png", "alt": "Lobby Nancy"},
+    {"title": "Spa & bien-être", "text": "Hammam, sauna et soins signature après une journée de découverte.", "img": "scene-2.png", "alt": "Spa hôtel"},
+    {"title": "Gastronomie locale", "text": "Petit-déjeuner lorrain et bar à vins — produits du terroir.", "img": "scene-3.png", "alt": "Restaurant hôtel"},
+]
+ET_ROOMS_MENU = [
+    {
+        "title": "Chambres",
+        "items": [
+            {"name": "Classique", "desc": "28 m² — 1 ou 2 personnes", "price": "dès 129 €", "tags": ["Vue cour"]},
+            {"name": "Supérieure", "desc": "35 m² — vue Stanislas", "price": "dès 169 €", "tags": ["Best-seller"]},
+            {"name": "Suite Stanislas", "desc": "55 m² — salon & baignoire", "price": "dès 289 €", "tags": ["4★"]},
+        ],
+    },
+    {
+        "title": "Forfaits",
+        "items": [
+            {"name": "Escapade 2 nuits", "desc": "Petit-déj + spa 1 h", "price": "à partir de 310 €", "tags": []},
+            {"name": "Romantique", "desc": "Champagne & late check-out", "price": "sur devis", "tags": []},
+            {"name": "Long séjour", "desc": "7 nuits et plus — −15 %", "price": "sur devis", "tags": []},
+        ],
+    },
+]
+ET_SEMINAR_ROWS = [
+    ("Salon Stanislas", "120 m² — 100 pl. — daylight, modularité"),
+    ("Salon Daum", "65 m² — 45 pl. — écran 4K, visio"),
+    ("Cabinet VIP", "25 m² — 12 pl. — board executive"),
+    ("Technique", "Wi-Fi fibre — restauration chef sur place"),
+    ("Services", "Accueil dédié — parking 80 places"),
+]
+
+
+def _shell_etablissement(page: str, title: str, desc: str, main: str) -> str:
+    bar = block_info_bar(status="4 étoiles · Spa & séminaires", address=ET_ADDRESS, phone=ET_PHONE, maps_href=ET_MAPS)
+    nav = _chrome_nav("etablissement", ET_BRAND, ET_NAV, page, cta_label="Réserver", cta_href="contact.html")
+    foot = _chrome_foot("etablissement", 
+        ET_BRAND,
+        phone=ET_PHONE,
+        address=ET_ADDRESS,
+        email=ET_EMAIL,
+        maps_href=ET_MAPS,
+        nav_links=ET_FOOTER_NAV,
+        hours_line="Nancy · Place Stanislas",
+    )
+    mobile = block_mobile_cta("Réserver", "contact.html", ET_PHONE)
+    return wrap_page_hotel(title, desc, bar + nav + main + foot + mobile, slug="etablissement", page=page, site_name=ET_BRAND, nav=ET_NAV)
+
+
+def build_etablissement_index() -> str:
+    main = "<main>"
+    main += block_hero_overlay(
+        "Hospitalité premium face à Stanislas",
+        "Hôtel 4 étoiles à Nancy — chambres raffinées, spa et séminaires au cœur de la ville.",
+        "hero.png",
+        "Façade Hôtel Stanislas Collection Nancy",
+        eyebrow="Nancy · 4 étoiles",
+        primary_href="contact.html",
+        primary_label="Réserver",
+        secondary_href="chambres.html",
+        secondary_label="Nos chambres",
+    )
+    main += block_marquee_strip([
+        "4 étoiles", "Place Stanislas", "Spa", "Séminaires", "Parking", "Petit-déjeuner lorrain",
+    ])
+    main += block_stats([("68", "Chambres"), ("4", "Salons"), ("9.2", "Note clients"), ("1882", "Bâtiment historique")])
+    main += block_cards_bs("Nos chambres & suites", ET_CARDS)
+    main += block_snap_chapters(ET_SNAP)
+    main += block_trust(
+        "« Une adresse d'exception à deux pas de la place Stanislas — service discret et chambres magnifiques. » — Marie-Claire V., 2025",
+        ["4 étoiles", "Spa", "Séminaires", "Centre Nancy"],
+    )
+    main += block_cta_band("Réservez votre séjour à Nancy.", "Réserver", "contact.html")
+    main += "</main>"
+    return _shell_etablissement(
+        "index.html",
+        f"{ET_BRAND} — Hôtel Nancy",
+        "Hôtel 4 étoiles à Nancy : chambres, spa et séminaires place Stanislas.",
+        main,
+    )
+
+
+def build_etablissement_chambres() -> str:
+    main = "<main>"
+    main += block_hero_editorial(
+        "Chambres & suites",
+        "Literie premium, insonorisation et vues sur la place Stanislas ou les jardins.",
+        "hero.png",
+        "Chambre Hôtel Stanislas",
+        eyebrow="Hébergement",
+        primary_href="contact.html",
+        primary_label="Réserver",
+        secondary_href="seminaires.html",
+        secondary_label="Séminaires",
+    )
+    main += block_menu_section(
+        "Tarifs indicatifs",
+        "Meilleur tarif garanti en réservation directe — taxes incluses.",
+        ET_ROOMS_MENU,
+    )
+    main += block_gallery_masonry("Détails & ambiance", [
+        {"title": "Vue Stanislas", "text": "Réveil face au patrimoine UNESCO.", "img": "gallery-1.png", "alt": "Vue Stanislas"},
+        {"title": "Salle de bain", "text": "Marbre et produits d'accueil.", "img": "gallery-2.png", "alt": "Salle de bain"},
+        {"title": "Suite salon", "text": "Espace de travail et détente.", "img": "card-3.png", "alt": "Suite"},
+    ])
+    main += block_cta_band("Une question sur une chambre ?", "Nous contacter", "contact.html")
+    main += "</main>"
+    return _shell_etablissement(
+        "chambres.html",
+        f"Chambres — {ET_BRAND}",
+        "Chambres et suites 4 étoiles à Nancy — Hôtel Stanislas Collection.",
+        main,
+    )
+
+
+def build_etablissement_seminaires() -> str:
+    main = "<main>"
+    main += block_hero_split(
+        "Séminaires & événements",
+        "4 salons modulables jusqu'à 100 personnes — lumière du jour et restauration chef.",
+        "hero.png",
+        "Salle séminaire Nancy",
+        eyebrow="Événements pro",
+        primary_href="contact.html",
+        primary_label="Demander un devis",
+        secondary_href="chambres.html",
+        secondary_label="Hébergement",
+    )
+    main += block_specs_table("Capacités & équipements", ET_SEMINAR_ROWS)
+    main += block_compact_features([
+        {"title": "Salon Stanislas", "text": "120 m² modulables — plénière ou ateliers parallèles.", "img": "scene-1.png", "alt": "Salon"},
+        {"title": "Restauration", "text": "Pauses, déjeuners assis ou cocktail dinatoire.", "img": "scene-3.png", "alt": "Restauration"},
+        {"title": "Hébergement groupe", "text": "Tarifs dédiés à partir de 10 chambres.", "img": "scene-2.png", "alt": "Groupe"},
+    ])
+    main += block_faq_accordion("Questions séminaires", [
+        ("Proposez-vous la visioconférence ?", "Oui — fibre, écrans 4K et assistance technique incluse."),
+        ("Peut-on privatiser le spa ?", "Sur demande pour les groupes hébergés — devis sur mesure."),
+        ("Y a-t-il un parking bus ?", "Oui — accès groupes sur réservation à 80 m."),
+    ])
+    main += block_cta_band("Organisons votre événement à Nancy.", "Demander un devis", "contact.html")
+    main += "</main>"
+    return _shell_etablissement(
+        "seminaires.html",
+        f"Séminaires — {ET_BRAND}",
+        "Salles de séminaire et événements à Nancy — Hôtel Stanislas Collection.",
+        main,
+    )
+
+
+def build_etablissement_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Réservation</p>
+    <h1 class="vt-display display-6">Votre séjour à Nancy</h1>
+    <p class="lead text-secondary">Place Stanislas — confirmation sous 2 h.</p>
+  </div>
+</section>"""
+    main += block_hotel_reservation_form(brand=ET_BRAND, address=ET_ADDRESS, phone=ET_PHONE, email=ET_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_etablissement(
+        "contact.html",
+        f"Contact — {ET_BRAND}",
+        "Réservation hôtel 4 étoiles Nancy — Stanislas Collection.",
+        main,
+    )
+
+
+# --- Synapse Lorraine (technologie) — hero scan + specs + marquee clients ---
+TE_BRAND = "Synapse Lorraine"
+TE_PHONE = "03 87 12 34 56"
+TE_EMAIL = "contact@synapse-lorraine.fr"
+TE_ADDRESS = "14 rue Serpenoise, 57000 Metz"
+TE_MAPS = "https://maps.google.com/?q=14+rue+Serpenoise+57000+Metz"
+TE_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "produit.html", "label": "Produit"},
+    {"file": "clients.html", "label": "Clients"},
+    {"file": "contact.html", "label": "Contact"},
+]
+TE_FOOTER_NAV = [
+    ("Produit", "produit.html"),
+    ("Clients", "clients.html"),
+    ("Démo", "contact.html"),
+    ("RGPD", "produit.html"),
+]
+TE_CARDS = [
+    {"title": "Data Lake", "text": "Ingestion batch & streaming — connecteurs ERP, MES, IoT.", "img": "card-1.png", "alt": "Dashboard data"},
+    {"title": "Intégrations cloud", "text": "API REST, webhooks et connecteurs Azure / AWS.", "img": "card-2.png", "alt": "Intégrations"},
+    {"title": "Sécurité entreprise", "text": "SSO, chiffrement et conformité RGPD native.", "img": "card-3.png", "alt": "Sécurité"},
+]
+TE_TABS = [
+    {"label": "Ingestion", "title": "Centralisez vos flux industriels", "text": "Connecteurs OPC-UA, SQL et fichiers plats — schéma unifié en quelques clics.", "img": "scene-1.png", "alt": "Ingestion"},
+    {"label": "Analytics", "title": "Tableaux de bord temps réel", "text": "KPI production, qualité et maintenance — alertes configurables.", "img": "scene-2.png", "alt": "Analytics"},
+    {"label": "Gouvernance", "title": "Qualité et traçabilité des données", "text": "Catalogue, lineage et droits d'accès par rôle DSI / métier.", "img": "scene-3.png", "alt": "Gouvernance"},
+]
+TE_NARRATIVE = [
+    {"stat": "45", "stat_label": "Clients industriels", "title": "Grand Est", "text": "Automobile, métallurgie et logistique — déploiements on-prem ou cloud.", "img": "gallery-1.png", "alt": "Clients"},
+    {"stat": "99.9", "stat_label": "% SLA", "title": "Disponibilité", "text": "Infrastructure redondée — support N2 en français.", "img": "gallery-2.png", "alt": "SLA"},
+    {"stat": "48 h", "stat_label": "POC", "title": "Time-to-value", "text": "Premier tableau de bord opérationnel en deux jours ouvrés.", "img": "scene-2.png", "alt": "POC"},
+]
+
+
+def _shell_technologie(page: str, title: str, desc: str, main: str) -> str:
+    bar = block_info_bar(status="Support DSI · Lun–ven 8h–19h", address=TE_ADDRESS, phone=TE_PHONE, maps_href=TE_MAPS)
+    nav = _chrome_nav("technologie", TE_BRAND, TE_NAV, page, cta_label="Demander une démo", cta_href="contact.html")
+    foot = _chrome_foot("technologie", TE_BRAND, phone=TE_PHONE, address=TE_ADDRESS, email=TE_EMAIL, maps_href=TE_MAPS, nav_links=TE_FOOTER_NAV, hours_line="Metz · Éditeur B2B")
+    mobile = block_mobile_cta("Démo", "contact.html", TE_PHONE)
+    return wrap_page_tech(title, desc, bar + nav + main + foot + mobile, slug="technologie", page=page, site_name=TE_BRAND, nav=TE_NAV)
+
+
+def build_technologie_index() -> str:
+    main = "<main>"
+    main += block_hero_tech_glow(
+        "La plateforme data des industriels lorrains",
+        "Centralisez, analysez et partagez vos données — POC en 48 h, hébergement France.",
+        "hero.png",
+        "Bureaux Synapse Lorraine Metz",
+        eyebrow="Éditeur B2B · Metz",
+        specs=[("45", "clients"), ("99.9%", "SLA"), ("48 h", "POC"), ("RGPD", "natif")],
+        primary_href="contact.html",
+        primary_label="Demander une démo",
+        secondary_href="produit.html",
+        secondary_label="Voir le produit",
+    )
+    main += block_marquee_strip(["Renault", "ArcelorMittal", "Fives", "Safran", "GE Healthcare", "Michelin"])
+    main += block_stats([("45", "Clients"), ("12", "Connecteurs"), ("99.9%", "SLA"), ("48 h", "POC")])
+    main += block_feature_tabs("Trois piliers produit", TE_TABS)
+    main += block_cards_bs("Modules phares", TE_CARDS)
+    main += block_process_flow("De la démo au déploiement", [
+        ("Découverte", "Atelier 2 h avec vos données d'exemple."),
+        ("POC", "Environnement dédié sous 48 h."),
+        ("Pilote", "1 site industriel — 4 à 8 semaines."),
+        ("Scale", "Multi-sites et gouvernance DSI."),
+    ])
+    main += block_trust("Éditeur lorrain — équipe support à Metz, hébergement souverain possible.", ["RGPD", "API REST", "On-prem", "Support FR"])
+    main += block_cta_band("Prêt pour une démo personnalisée ?", "Réserver", "contact.html")
+    main += "</main>"
+    return _shell_technologie("index.html", f"{TE_BRAND} — Data industrielle Metz", "Plateforme data B2B à Metz pour DSI et industriels du Grand Est.", main)
+
+
+def build_technologie_produit() -> str:
+    main = "<main>"
+    main += block_hero_split("Architecture data unifiée", "Lakehouse, pipelines et catalogues — une stack, un interlocuteur.", "hero.png", "Produit Synapse", eyebrow="Produit", primary_href="contact.html", primary_label="Démo", secondary_href="clients.html", secondary_label="Références")
+    main += block_spec_grid("Capacités plateforme", [
+        {"label": "Ingestion", "value": "50+", "detail": "sources connectées"},
+        {"label": "Latence", "value": "< 5 s", "detail": "streaming IoT"},
+        {"label": "Rétention", "value": "7 ans", "detail": "conformité"},
+        {"label": "API", "value": "REST", "detail": "webhooks sortants"},
+    ])
+    main += block_specs_table("Spécifications techniques", [
+        ("Déploiement", "SaaS France, VPC dédié ou on-prem"),
+        ("Auth", "SSO SAML / OIDC, MFA"),
+        ("Formats", "Parquet, JSON, CSV, OPC-UA"),
+        ("SLA", "99.9 % disponibilité"),
+    ])
+    main += block_chapters([
+        {"title": "Pipelines visuels", "text": "Orchestration no-code avec versioning Git.", "img": "scene-1.png", "alt": "Pipelines"},
+        {"title": "Monitoring qualité", "text": "Règles automatiques et alertes Slack/Teams.", "img": "scene-2.png", "alt": "Qualité"},
+        {"title": "Self-service BI", "text": "Exploration métier sans ticket DSI.", "img": "scene-3.png", "alt": "BI"},
+    ])
+    main += block_cta_band("Voir la plateforme en action.", "Demander une démo", "contact.html")
+    main += "</main>"
+    return _shell_technologie("produit.html", f"Produit — {TE_BRAND}", "Modules et architecture de la plateforme Synapse Lorraine.", main)
+
+
+def build_technologie_clients() -> str:
+    main = "<main>"
+    main += block_hero_editorial("Ils nous font confiance", "Automobile, métallurgie et santé — des déploiements mesurables en Moselle.", "hero.png", "Clients Synapse", eyebrow="Références", primary_href="contact.html", primary_label="Parler à un expert", secondary_href="produit.html", secondary_label="Produit")
+    main += block_stat_narrative_rows(TE_NARRATIVE)
+    main += block_gallery_masonry("Cas d'usage", [
+        {"title": "OEE temps réel", "text": "−18 % arrêts non planifiés — site auto.", "img": "gallery-1.png", "alt": "OEE"},
+        {"title": "Traçabilité lot", "text": "Conformité FDA accélérée.", "img": "gallery-2.png", "alt": "Traçabilité"},
+        {"title": "Maintenance prédictive", "text": "Capteurs + modèles ML intégrés.", "img": "card-1.png", "alt": "Maintenance"},
+    ])
+    main += block_faq_accordion("Questions DSI", [
+        ("Hébergement France ?", "Oui — datacenters certifiés ISO 27001 en France."),
+        ("Intégration ERP ?", "SAP, Oracle, Divalto — connecteurs standards inclus."),
+        ("Durée POC ?", "48 h pour un premier dashboard avec vos échantillons."),
+    ])
+    main += block_cta_band("Échangez avec un architecte data.", "Contact", "contact.html")
+    main += "</main>"
+    return _shell_technologie("clients.html", f"Clients — {TE_BRAND}", "Références industrielles Synapse Lorraine — Grand Est.", main)
+
+
+def build_technologie_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Contact</p>
+    <h1 class="vt-display display-6">Démo personnalisée</h1>
+    <p class="lead text-secondary">Metz — réponse sous 24 h.</p>
+  </div>
+</section>"""
+    main += block_tech_demo_form(brand=TE_BRAND, address=TE_ADDRESS, phone=TE_PHONE, email=TE_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_technologie("contact.html", f"Contact — {TE_BRAND}", "Demande de démo Synapse Lorraine — Metz.", main)
+
+
+# --- FlowMetrics (saas-landing) — orbes + mockup flottant + tabs + pricing ---
+FM_BRAND = "FlowMetrics"
+FM_EMAIL = "hello@flowmetrics.io"
+FM_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "fonctionnalites.html", "label": "Fonctionnalités"},
+    {"file": "tarifs.html", "label": "Tarifs"},
+    {"file": "contact.html", "label": "Contact"},
+]
+FM_FOOTER_NAV = [
+    ("Fonctionnalités", "fonctionnalites.html"),
+    ("Tarifs", "tarifs.html"),
+    ("Essai gratuit", "contact.html"),
+    ("RGPD", "fonctionnalites.html"),
+]
+FM_TABS = [
+    {"label": "Analytics", "title": "Funnels et rétention en un coup d'œil", "text": "Cohortes, activation et time-to-value — sans SQL.", "img": "scene-1.png", "alt": "Analytics"},
+    {"label": "Workflow", "title": "Parcours utilisateur en 3 clics", "text": "Onboarding guidé et checklists intégrées.", "img": "scene-2.png", "alt": "Workflow"},
+    {"label": "Intégrations", "title": "Branchez vos outils en minutes", "text": "Segment, Stripe, HubSpot — API ouverte.", "img": "scene-3.png", "alt": "Intégrations"},
+]
+FM_PRICING = [
+    {"name": "Starter", "price": "49 €/mois", "features": ["3 utilisateurs", "Dashboards essentiels", "Export CSV"], "href": "contact.html", "cta": "Essai gratuit", "hot": False},
+    {"name": "Growth", "price": "149 €/mois", "features": ["15 utilisateurs", "Funnels avancés", "Alertes Slack"], "href": "contact.html", "cta": "Essai gratuit", "hot": True},
+    {"name": "Enterprise", "price": "Sur devis", "features": ["SSO SAML", "VPC dédié", "SLA 99.9 %"], "href": "contact.html", "cta": "Nous contacter", "hot": False},
+]
+
+
+def _shell_saas_landing(page: str, title: str, desc: str, main: str) -> str:
+    nav = _chrome_nav("saas-landing", FM_BRAND, FM_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
+    foot = _chrome_foot("saas-landing", FM_BRAND, phone="", address="SaaS · Hébergé en France", email=FM_EMAIL, maps_href="#", nav_links=FM_FOOTER_NAV, hours_line="Support chat 9h–18h")
+    mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
+    return wrap_page_saas(title, desc, nav + main + foot + mobile, layout="saas-landing", slug="saas-landing", page=page, site_name=FM_BRAND, nav=FM_NAV, brand=FM_BRAND, brand_desc="SaaS analytics pour equipes produit")
+
+
+def build_saas_landing_index() -> str:
+    main = "<main>"
+    main += block_hero_saas_product(
+        "Transformez vos données en décisions",
+        "Analytics produit sans SQL — funnels, rétention et activation pour équipes lean.",
+        "hero.png",
+        "Interface FlowMetrics",
+        eyebrow="SaaS · Analytics produit",
+        primary_href="contact.html",
+        primary_label="Essai gratuit 14 jours",
+        secondary_href="fonctionnalites.html",
+        secondary_label="Fonctionnalités",
+    )
+    main += block_marquee_strip(["Product Hunt", "RGPD", "SOC 2", "API REST", "Slack", "Segment"])
+    main += block_stats([("2 400", "Équipes"), ("14 j", "Essai"), ("< 5 min", "Setup"), ("4.8", "Note G2")])
+    main += block_feature_tabs("Tout pour shipper plus vite", FM_TABS)
+    main += block_pricing_tiers("Tarifs transparents", FM_PRICING)
+    main += block_trust("« En deux semaines, toute l'équipe produit lit les mêmes KPI. » — Lead PM, scale-up Nancy", ["RGPD", "Sans CB", "Export", "SSO"])
+    main += block_cta_band("Démarrez gratuitement — sans carte bancaire.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_landing("index.html", f"{FM_BRAND} — Analytics produit", "Landing SaaS analytics — funnels, rétention et activation.", main)
+
+
+def build_saas_landing_fonctionnalites() -> str:
+    main = "<main>"
+    main += block_hero_split("Fonctionnalités pensées produit", "De l'event tracking aux alertes — une stack analytics complète.", "hero.png", "FlowMetrics UI", eyebrow="Fonctionnalités", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="tarifs.html", secondary_label="Tarifs")
+    main += block_bento_cards([
+        {"title": "Event tracking", "text": "SDK JS, mobile et server-side.", "img": "card-1.png", "alt": "Tracking", "size": "lg"},
+        {"title": "Alertes", "text": "Seuils et anomalies — Slack, email.", "img": "card-2.png", "alt": "Alertes", "size": "sm"},
+        {"title": "Collaboration", "text": "Commentaires et dashboards partagés.", "img": "card-3.png", "alt": "Collab", "size": "sm"},
+    ])
+    main += block_comparison_table("Avant / après FlowMetrics", [
+        ("Sources data", "Excel + 4 outils", "Une plateforme unifiée"),
+        ("Time-to-insight", "Jours", "Minutes"),
+        ("Onboarding équipe", "Formation longue", "Templates prêts"),
+    ])
+    main += block_cta_band("Testez toutes les fonctionnalités.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_landing("fonctionnalites.html", f"Fonctionnalités — {FM_BRAND}", "Fonctionnalités analytics FlowMetrics.", main)
+
+
+def build_saas_landing_tarifs() -> str:
+    main = "<main>"
+    main += block_hero_editorial("Des tarifs qui scalent avec vous", "Starter pour les petites équipes — Enterprise pour le SSO et le VPC.", "hero.png", "Tarifs FlowMetrics", eyebrow="Tarifs", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités")
+    main += block_pricing_tiers("Choisissez votre plan", FM_PRICING)
+    main += block_faq_accordion("FAQ tarifs", [
+        ("Changement de plan ?", "Upgrade immédiat — downgrade en fin de période."),
+        ("Facturation annuelle ?", "−20 % sur les plans Growth et Enterprise."),
+        ("Données exportables ?", "Oui — CSV et API à tout moment."),
+    ])
+    main += block_cta_band("14 jours gratuits — annulez quand vous voulez.", "Démarrer", "contact.html")
+    main += "</main>"
+    return _shell_saas_landing("tarifs.html", f"Tarifs — {FM_BRAND}", "Tarifs FlowMetrics — Starter, Growth, Enterprise.", main)
+
+
+def build_saas_landing_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Essai</p>
+    <h1 class="vt-display display-6">14 jours gratuits</h1>
+    <p class="lead text-secondary">Sans carte bancaire.</p>
+  </div>
+</section>"""
+    main += block_saas_trial_form(brand=FM_BRAND, email=FM_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_saas_landing("contact.html", f"Contact — {FM_BRAND}", "Essai gratuit FlowMetrics.", main)
+
+
+# --- TalentLoop (saas-onboarding) — wizard progression + snap chapters ---
+TL_BRAND = "TalentLoop"
+TL_EMAIL = "hello@talentloop.io"
+TL_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "parcours.html", "label": "Parcours"},
+    {"file": "fonctionnalites.html", "label": "Fonctionnalités"},
+    {"file": "contact.html", "label": "Contact"},
+]
+TL_FOOTER_NAV = [
+    ("Parcours", "parcours.html"),
+    ("Fonctionnalités", "fonctionnalites.html"),
+    ("Essai gratuit", "contact.html"),
+    ("RGPD", "fonctionnalites.html"),
+]
+TL_WIZARD = [
+    {"label": "Profil", "title": "Bienvenue — profil en 30 secondes", "text": "Nom, poste et date d'arrivée — zéro friction.", "img": "scene-1.png", "alt": "Étape profil"},
+    {"label": "Équipe", "title": "Rencontrez votre buddy RH", "text": "Un contact humain assigné dès le jour J.", "img": "scene-2.png", "alt": "Buddy RH"},
+    {"label": "Outils", "title": "Accès et intégrations SIRH", "text": "PayFit, Lucca, Teams — connectés en un clic.", "img": "scene-3.png", "alt": "Intégrations"},
+    {"label": "Aha", "title": "Première mission visible", "text": "Checklist claire — le collaborateur sait quoi faire.", "img": "gallery-1.png", "alt": "Checklist"},
+]
+TL_TABS = [
+    {"label": "Progression", "title": "Barre de progression par collaborateur", "text": "Suivez l'avancement onboarding en temps réel.", "img": "card-1.png", "alt": "Progression"},
+    {"label": "Templates", "title": "Parcours par métier", "text": "Commercial, tech, support — modèles prêts à l'emploi.", "img": "card-2.png", "alt": "Templates"},
+    {"label": "Conformité", "title": "RGPD et consentements", "text": "Traçabilité des accords et durées de rétention.", "img": "card-3.png", "alt": "RGPD"},
+]
+TL_CHAPTERS = [
+    {"title": "Moins d'abandon à l'inscription", "text": "Une étape = une intention. Copy orienté valeur à chaque écran.", "img": "scene-1.png", "alt": "Inscription"},
+    {"title": "Aha moment visible", "text": "Preview du résultat final — le collaborateur voit où il va.", "img": "scene-2.png", "alt": "Aha moment"},
+    {"title": "RH libérées", "text": "Automatisation des tâches répétitives — focus sur l'humain.", "img": "gallery-2.png", "alt": "RH"},
+]
+
+
+def _shell_saas_onboarding(page: str, title: str, desc: str, main: str) -> str:
+    nav = _chrome_nav("saas-onboarding", TL_BRAND, TL_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
+    foot = _chrome_foot("saas-onboarding", TL_BRAND, phone="", address="SaaS RH · Hébergé en France", email=TL_EMAIL, maps_href="#", nav_links=TL_FOOTER_NAV, hours_line="Support chat 9h–18h")
+    mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
+    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-onboarding", slug="saas-onboarding", page=page, site_name=TL_BRAND, nav=TL_NAV, brand=TL_BRAND, brand_desc="Onboarding RH en 4 etapes")
+
+
+def build_saas_onboarding_index() -> str:
+    main = "<main>"
+    main += block_hero_saas_product(
+        "Onboarding RH en 4 étapes",
+        "Réduisez l'abandon à l'inscription — copy orienté valeur et chemin balisé vers le aha moment.",
+        "hero.png", "TalentLoop accueil",
+        eyebrow="SaaS · Onboarding RH",
+        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
+        secondary_href="parcours.html", secondary_label="Voir le parcours",
+    )
+    main += block_marquee_strip(["PayFit", "Lucca", "RGPD", "SSO", "Teams", "Slack"])
+    main += block_progress_wizard("Parcours interactif", TL_WIZARD)
+    main += block_stats([("−42 %", "Abandon"), ("4", "Étapes"), ("< 8 min", "Time-to-value"), ("98 %", "Satisfaction")])
+    main += block_feature_tabs("Tout pour intégrer plus vite", TL_TABS)
+    main += block_snap_chapters(TL_CHAPTERS)
+    main += block_cta_band("Démarrez gratuitement — sans carte bancaire.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_onboarding("index.html", f"{TL_BRAND} — Onboarding RH", "Onboarding RH TalentLoop — parcours en 4 étapes avec barre de progression.", main)
+
+
+def build_saas_onboarding_parcours() -> str:
+    main = "<main>"
+    main += block_hero_editorial("Le parcours en détail", "Chaque écran rapproche le collaborateur de sa première victoire.", "hero.png", "Parcours TalentLoop", eyebrow="Parcours", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités")
+    main += block_funnel_steps("4 étapes, zéro friction", [
+        ("Profil express", "30 secondes — nom, poste, date d'arrivée."),
+        ("Buddy RH", "Un contact humain assigné automatiquement."),
+        ("Outils connectés", "SIRH, messagerie, accès IT — tout en un."),
+        ("Première mission", "Checklist claire — le aha moment."),
+    ])
+    main += block_progress_wizard("Essayez le wizard", TL_WIZARD)
+    main += block_compact_features([
+        {"title": "Copy orienté valeur", "text": "Chaque étape explique le bénéfice immédiat.", "img": "card-1.png", "alt": "Copy"},
+        {"title": "Preview résultat", "text": "Le collaborateur voit à quoi ressemble la fin.", "img": "card-2.png", "alt": "Preview"},
+        {"title": "Analytics RH", "text": "Time-to-productivity mesuré par équipe.", "img": "card-3.png", "alt": "Analytics"},
+    ])
+    main += block_cta_band("Testez le parcours complet.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_onboarding("parcours.html", f"Parcours — {TL_BRAND}", "Parcours onboarding TalentLoop en 4 étapes.", main)
+
+
+def build_saas_onboarding_fonctionnalites() -> str:
+    main = "<main>"
+    main += block_hero_split("Fonctionnalités pensées RH", "Templates, analytics et conformité — tout pour scaler l'onboarding.", "hero.png", "Fonctionnalités TalentLoop", eyebrow="Fonctionnalités", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="parcours.html", secondary_label="Parcours")
+    main += block_bento_cards([
+        {"title": "Templates métier", "text": "Commercial, tech, support — prêts à dupliquer.", "img": "card-1.png", "alt": "Templates", "size": "lg"},
+        {"title": "Migration assistée", "text": "Import Excel ou SIRH existant.", "img": "card-2.png", "alt": "Migration", "size": "sm"},
+        {"title": "Sécurité RGPD", "text": "Consentements et rétention traçables.", "img": "card-3.png", "alt": "RGPD", "size": "sm"},
+    ])
+    main += block_comparison_table("Avant / après TalentLoop", [
+        ("Onboarding", "Emails + PDF", "Parcours guidé interactif"),
+        ("Suivi", "Tableur Excel", "Dashboard temps réel"),
+        ("Time-to-value", "3 semaines", "8 minutes"),
+    ])
+    main += block_faq_accordion("FAQ produit", [
+        ("Intégration PayFit ?", "Connecteur natif — synchro bidirectionnelle."),
+        ("Personnalisation ?", "Logo, couleurs et copy par entreprise."),
+        ("Multi-sites ?", "Oui — parcours par établissement."),
+    ])
+    main += block_cta_band("Découvrez toutes les fonctionnalités.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_onboarding("fonctionnalites.html", f"Fonctionnalités — {TL_BRAND}", "Fonctionnalités onboarding RH TalentLoop.", main)
+
+
+def build_saas_onboarding_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Essai</p>
+    <h1 class="vt-display display-6">14 jours gratuits</h1>
+    <p class="lead text-secondary">Sans carte bancaire.</p>
+  </div>
+</section>"""
+    main += block_saas_trial_form(brand=TL_BRAND, email=TL_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_saas_onboarding("contact.html", f"Contact — {TL_BRAND}", "Essai gratuit TalentLoop.", main)
+
+
+# --- MetricPulse (saas-dashboard) — KPI pulse + tabs ---
+MD_BRAND = "MetricPulse"
+MD_EMAIL = "hello@metricpulse.io"
+MD_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "fonctionnalites.html", "label": "Fonctionnalités"},
+    {"file": "tarifs.html", "label": "Tarifs"},
+    {"file": "contact.html", "label": "Contact"},
+]
+MD_FOOTER_NAV = [
+    ("Fonctionnalités", "fonctionnalites.html"),
+    ("Tarifs", "tarifs.html"),
+    ("Essai gratuit", "contact.html"),
+    ("API", "fonctionnalites.html"),
+]
+MD_KPIS = [
+    {"label": "Activation", "value": "0", "count_end": 78, "count_suffix": " %", "delta": "+12 % vs M-1"},
+    {"label": "Time-to-value", "value": "0", "count_end": 4, "count_suffix": " j", "delta": "−2 j"},
+    {"label": "Rétention J30", "value": "0", "count_end": 64, "count_suffix": " %", "delta": "+8 %"},
+    {"label": "Events / jour", "value": "0", "count_end": 2400, "count_suffix": "", "delta": "Live"},
+]
+MD_TABS = [
+    {"label": "Funnel", "title": "Funnel activation en un coup d'œil", "text": "Repérez les fuites du parcours onboarding.", "img": "scene-1.png", "alt": "Funnel"},
+    {"label": "Workflow", "title": "Builder de parcours drag & drop", "text": "Déclencheurs, conditions et actions sans code.", "img": "scene-2.png", "alt": "Workflow"},
+    {"label": "Intégrations", "title": "Segment, Mixpanel, Amplitude", "text": "Importez vos events en quelques clics.", "img": "scene-3.png", "alt": "Intégrations"},
+]
+MD_PRICING = [
+    {"name": "Startup", "price": "79 €/mois", "features": ["5 utilisateurs", "3 dashboards", "Funnel basique"], "href": "contact.html", "cta": "Essai gratuit", "hot": False},
+    {"name": "Scale", "price": "249 €/mois", "features": ["25 utilisateurs", "Workflows illimités", "Alertes Slack"], "href": "contact.html", "cta": "Essai gratuit", "hot": True},
+    {"name": "Enterprise", "price": "Sur devis", "features": ["SSO SAML", "VPC dédié", "SLA 99.9 %"], "href": "contact.html", "cta": "Nous contacter", "hot": False},
+]
+
+
+def _shell_saas_dashboard(page: str, title: str, desc: str, main: str) -> str:
+    nav = _chrome_nav("saas-dashboard", MD_BRAND, MD_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
+    foot = _chrome_foot("saas-dashboard", MD_BRAND, phone="", address="SaaS analytics · Hébergé en France", email=MD_EMAIL, maps_href="#", nav_links=MD_FOOTER_NAV, hours_line="Support chat 9h–18h")
+    mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
+    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-dashboard", slug="saas-dashboard", page=page, site_name=MD_BRAND, nav=MD_NAV, brand=MD_BRAND, brand_desc="Dashboard activation produit")
+
+
+def build_saas_dashboard_index() -> str:
+    main = "<main>"
+    main += block_hero_saas_product(
+        "Dashboard activation en temps réel",
+        "KPIs time-to-value, funnel onboarding et événements récents — une sidebar par intention.",
+        "hero.png", "MetricPulse dashboard",
+        eyebrow="SaaS · Activation produit",
+        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
+        secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités",
+    )
+    main += block_kpi_grid("Métriques live", MD_KPIS)
+    main += block_marquee_strip(["Segment", "Mixpanel", "Slack", "API REST", "SOC 2", "RGPD"])
+    main += block_feature_tabs("Navigation par intention", MD_TABS)
+    main += block_process_flow("De l'event à l'insight", [
+        ("Collecte", "SDK JS, mobile et server-side."),
+        ("Agrégation", "Funnels et cohortes automatiques."),
+        ("Alerte", "Seuils et anomalies — Slack, email."),
+        ("Action", "Workflows déclenchés sans code."),
+    ])
+    main += block_trust("« En une semaine, on a identifié le goulot d'étranglement onboarding. » — Head of Product, Nancy", ["RGPD", "Sans CB", "Export", "SSO"])
+    main += block_cta_band("Démarrez gratuitement.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_dashboard("index.html", f"{MD_BRAND} — Dashboard activation", "Dashboard produit MetricPulse — KPIs activation et funnel onboarding.", main)
+
+
+def build_saas_dashboard_fonctionnalites() -> str:
+    main = "<main>"
+    main += block_hero_split("Fonctionnalités data produit", "Sidebar regroupée par intention — pas par feature brute.", "hero.png", "Fonctionnalités MetricPulse", eyebrow="Fonctionnalités", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="tarifs.html", secondary_label="Tarifs")
+    main += block_spec_grid("Modules clés", [
+        {"label": "Funnel", "value": "Builder", "detail": "Étapes personnalisables et filtres avancés."},
+        {"label": "Cohortes", "value": "J7–J90", "detail": "Rétention comparable par segment."},
+        {"label": "Alertes", "value": "Auto", "detail": "Seuils, anomalies et digests programmés."},
+        {"label": "Collab", "value": "Live", "detail": "Commentaires et dashboards partagés."},
+    ])
+    main += block_bento_cards([
+        {"title": "Widget KPI", "text": "Sparklines et variation M/M.", "img": "gallery-1.png", "alt": "KPI", "size": "lg"},
+        {"title": "Mobile", "text": "Résumé métriques sur smartphone.", "img": "gallery-2.png", "alt": "Mobile", "size": "sm"},
+        {"title": "SSO", "text": "SAML et contrôle d'accès par rôle.", "img": "card-3.png", "alt": "SSO", "size": "sm"},
+    ])
+    main += block_comparison_table("Avant / après MetricPulse", [
+        ("Sources", "4 outils + Excel", "Une plateforme unifiée"),
+        ("Time-to-insight", "Jours", "Minutes"),
+        ("Alertes", "Manuelles", "Automatisées"),
+    ])
+    main += block_cta_band("Testez toutes les fonctionnalités.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_dashboard("fonctionnalites.html", f"Fonctionnalités — {MD_BRAND}", "Fonctionnalités dashboard MetricPulse.", main)
+
+
+def build_saas_dashboard_tarifs() -> str:
+    main = "<main>"
+    main += block_hero_editorial("Tarifs transparents", "Startup pour les petites équipes — Enterprise pour le SSO.", "hero.png", "Tarifs MetricPulse", eyebrow="Tarifs", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités")
+    main += block_pricing_tiers("Choisissez votre plan", MD_PRICING)
+    main += block_faq_accordion("FAQ tarifs", [
+        ("Changement de plan ?", "Upgrade immédiat — downgrade en fin de période."),
+        ("Volume events ?", "Plans illimités à partir de Scale."),
+        ("Export données ?", "CSV et API à tout moment."),
+    ])
+    main += block_cta_band("14 jours gratuits.", "Démarrer", "contact.html")
+    main += "</main>"
+    return _shell_saas_dashboard("tarifs.html", f"Tarifs — {MD_BRAND}", "Tarifs MetricPulse.", main)
+
+
+def build_saas_dashboard_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Essai</p>
+    <h1 class="vt-display display-6">14 jours gratuits</h1>
+    <p class="lead text-secondary">Sans carte bancaire.</p>
+  </div>
+</section>"""
+    main += block_saas_trial_form(brand=MD_BRAND, email=MD_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_saas_dashboard("contact.html", f"Contact — {MD_BRAND}", "Essai gratuit MetricPulse.", main)
+
+
+# --- QueryBase (saas-empty) — morph avant/après + recherche ---
+QB_BRAND = "QueryBase"
+QB_EMAIL = "hello@querybase.io"
+QB_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "fonctionnalites.html", "label": "Fonctionnalités"},
+    {"file": "tarifs.html", "label": "Tarifs"},
+    {"file": "contact.html", "label": "Contact"},
+]
+QB_FOOTER_NAV = [
+    ("Fonctionnalités", "fonctionnalites.html"),
+    ("Tarifs", "tarifs.html"),
+    ("Essai gratuit", "contact.html"),
+    ("Docs", "fonctionnalites.html"),
+]
+QB_TABS = [
+    {"label": "Recherche", "title": "Zéro impasse — suggestions intelligentes", "text": "Synonymes, fautes de frappe et best-sellers alternatifs.", "img": "scene-2.png", "alt": "Recherche"},
+    {"label": "Empty state", "title": "États vides orientés action", "text": "CTA clair, jamais un mur blanc.", "img": "scene-1.png", "alt": "Empty state"},
+    {"label": "Roadmap", "title": "Vote feature intégré", "text": "L'échec de recherche devient un signal produit.", "img": "scene-3.png", "alt": "Roadmap"},
+]
+QB_PRICING = [
+    {"name": "Solo", "price": "29 €/mois", "features": ["1 projet", "Recherche full-text", "Empty states"], "href": "contact.html", "cta": "Essai gratuit", "hot": False},
+    {"name": "Team", "price": "99 €/mois", "features": ["5 projets", "Synonymes IA", "Analytics recherche"], "href": "contact.html", "cta": "Essai gratuit", "hot": True},
+    {"name": "Business", "price": "Sur devis", "features": ["Projets illimités", "SSO", "SLA"], "href": "contact.html", "cta": "Nous contacter", "hot": False},
+]
+
+
+def _shell_saas_empty(page: str, title: str, desc: str, main: str) -> str:
+    nav = _chrome_nav("saas-empty", QB_BRAND, QB_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
+    foot = _chrome_foot("saas-empty", QB_BRAND, phone="", address="SaaS data · Hébergé en France", email=QB_EMAIL, maps_href="#", nav_links=QB_FOOTER_NAV, hours_line="Support chat 9h–18h")
+    mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
+    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-empty", slug="saas-empty", page=page, site_name=QB_BRAND, nav=QB_NAV, brand=QB_BRAND, brand_desc="Empty states et recherche intelligente")
+
+
+def build_saas_empty_index() -> str:
+    main = "<main>"
+    main += block_hero_saas_product(
+        "Zéro impasse pour vos utilisateurs",
+        "Recherche sans résultat ? Suggestions, correcteur d'intention et vote roadmap — jamais un mur blanc.",
+        "hero.png", "QueryBase recherche",
+        eyebrow="SaaS · Empty states",
+        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
+        secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités",
+    )
+    main += block_state_morph("Avant / après QueryBase", {
+        "title": "Avant — données éparpillées",
+        "text": "Recherche vide, utilisateur perdu, churn silencieux.",
+        "img": "card-1.png", "alt": "Avant",
+    }, {
+        "title": "Après — données unifiées",
+        "text": "Suggestions pertinentes, CTA clair, signal produit capturé.",
+        "img": "card-3.png", "alt": "Après",
+    })
+    main += block_feature_tabs("Patterns UX éprouvés", QB_TABS)
+    main += block_comparison_table("Impact mesurable", [
+        ("Taux rebond recherche", "68 %", "12 %"),
+        ("Tickets support", "Élevé", "−45 %"),
+        ("Signaux produit", "Aucun", "Roadmap alimentée"),
+    ])
+    main += block_cta_band("Transformez l'échec en opportunité.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_empty("index.html", f"{QB_BRAND} — Empty states", "QueryBase — recherche intelligente et empty states orientés action.", main)
+
+
+def build_saas_empty_fonctionnalites() -> str:
+    main = "<main>"
+    main += block_hero_split("Fonctionnalités recherche", "Correcteur, synonymes et analytics — tout pour guider l'utilisateur.", "hero.png", "Fonctionnalités QueryBase", eyebrow="Fonctionnalités", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="tarifs.html", secondary_label="Tarifs")
+    main += block_compact_features([
+        {"title": "Correcteur d'intention", "text": "Fautes de frappe et synonymes automatiques.", "img": "scene-2.png", "alt": "Correcteur"},
+        {"title": "Best-sellers alternatifs", "text": "Quand le résultat exact manque.", "img": "gallery-1.png", "alt": "Alternatifs"},
+        {"title": "Migration guidée", "text": "Import progressif — empty to filled.", "img": "card-2.png", "alt": "Migration"},
+    ])
+    main += block_gallery_masonry("Composants UI", [
+        {"title": "Table vide", "text": "CTA add row visible.", "img": "gallery-1.png", "alt": "Table"},
+        {"title": "Mobile", "text": "Inbox vide actionnable.", "img": "gallery-2.png", "alt": "Mobile"},
+        {"title": "Première intégration", "text": "Connecteurs data source.", "img": "scene-3.png", "alt": "Intégration"},
+    ])
+    main += block_faq_accordion("FAQ", [
+        ("Intégration existante ?", "API REST et webhooks — 5 min de setup."),
+        ("Personnalisation ?", "Copy, illustrations et CTA par projet."),
+        ("Analytics ?", "Taux de rebond recherche et votes feature."),
+    ])
+    main += block_cta_band("Découvrez tous les patterns.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_empty("fonctionnalites.html", f"Fonctionnalités — {QB_BRAND}", "Fonctionnalités QueryBase.", main)
+
+
+def build_saas_empty_tarifs() -> str:
+    main = "<main>"
+    main += block_hero_editorial("Tarifs simples", "Solo pour démarrer — Team pour scaler.", "hero.png", "Tarifs QueryBase", eyebrow="Tarifs", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités")
+    main += block_pricing_tiers("Choisissez votre plan", QB_PRICING)
+    main += block_cta_band("14 jours gratuits.", "Démarrer", "contact.html")
+    main += "</main>"
+    return _shell_saas_empty("tarifs.html", f"Tarifs — {QB_BRAND}", "Tarifs QueryBase.", main)
+
+
+def build_saas_empty_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Essai</p>
+    <h1 class="vt-display display-6">14 jours gratuits</h1>
+    <p class="lead text-secondary">Sans carte bancaire.</p>
+  </div>
+</section>"""
+    main += block_saas_trial_form(brand=QB_BRAND, email=QB_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_saas_empty("contact.html", f"Contact — {QB_BRAND}", "Essai gratuit QueryBase.", main)
+
+
+# --- PingFlow (saas-notifications) — feed cascade + tabs ---
+PF_BRAND = "PingFlow"
+PF_EMAIL = "hello@pingflow.io"
+PF_NAV = [
+    {"file": "index.html", "label": "Accueil"},
+    {"file": "fonctionnalites.html", "label": "Fonctionnalités"},
+    {"file": "tarifs.html", "label": "Tarifs"},
+    {"file": "contact.html", "label": "Contact"},
+]
+PF_FOOTER_NAV = [
+    ("Fonctionnalités", "fonctionnalites.html"),
+    ("Tarifs", "tarifs.html"),
+    ("Essai gratuit", "contact.html"),
+    ("RGPD", "fonctionnalites.html"),
+]
+PF_NOTIFS = [
+    {"type": "Action requise", "title": "Valider la release v2.4", "text": "3 reviewers en attente — deadline demain.", "time": "Il y a 5 min", "urgent": True},
+    {"type": "Équipe", "title": "Marie a commenté le brief", "text": "Nouveau message sur le dashboard Q2.", "time": "Il y a 1 h", "urgent": False},
+    {"type": "Produit", "title": "Nouveau connecteur Slack", "text": "Disponible dans les intégrations.", "time": "Il y a 3 h", "urgent": False},
+    {"type": "Système", "title": "Maintenance planifiée", "text": "Dimanche 3h–5h — aucun impact données.", "time": "Hier", "urgent": False},
+]
+PF_TABS = [
+    {"label": "Inbox", "title": "Centre de notifications unifié", "text": "Filtres par type — action requise, équipe, produit.", "img": "scene-1.png", "alt": "Inbox"},
+    {"label": "Routing", "title": "Règles d'alerte configurables", "text": "Triggers, canaux et priorités sans code.", "img": "scene-2.png", "alt": "Routing"},
+    {"label": "Push", "title": "Slack, email et webhooks", "text": "Multi-canal avec préférences granulaires.", "img": "scene-3.png", "alt": "Push"},
+]
+PF_PRICING = [
+    {"name": "Starter", "price": "39 €/mois", "features": ["3 utilisateurs", "In-app + email", "Filtres basiques"], "href": "contact.html", "cta": "Essai gratuit", "hot": False},
+    {"name": "Pro", "price": "129 €/mois", "features": ["20 utilisateurs", "Slack + webhooks", "Analytics"], "href": "contact.html", "cta": "Essai gratuit", "hot": True},
+    {"name": "Enterprise", "price": "Sur devis", "features": ["SSO", "SLA 99.9 %", "Audit log"], "href": "contact.html", "cta": "Nous contacter", "hot": False},
+]
+
+
+def _shell_saas_notifications(page: str, title: str, desc: str, main: str) -> str:
+    nav = _chrome_nav("saas-notifications", PF_BRAND, PF_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
+    foot = _chrome_foot("saas-notifications", PF_BRAND, phone="", address="SaaS notifications · Hébergé en France", email=PF_EMAIL, maps_href="#", nav_links=PF_FOOTER_NAV, hours_line="Support chat 9h–18h")
+    mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
+    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-notifications", slug="saas-notifications", page=page, site_name=PF_BRAND, nav=PF_NAV, brand=PF_BRAND, brand_desc="Centre notifications in-app")
+
+
+def build_saas_notifications_index() -> str:
+    main = "<main>"
+    main += block_hero_saas_product(
+        "Notifications qui respectent l'attention",
+        "Hiérarchie claire, actions requises en avant et préférences granulaires anti-spam.",
+        "hero.png", "PingFlow notifications",
+        eyebrow="SaaS · Notifications in-app",
+        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
+        secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités",
+    )
+    main += block_notification_feed("Flux en temps réel", PF_NOTIFS)
+    main += block_stats([("−60 %", "Spam perçu"), ("3", "Canaux"), ("< 1 s", "Latence"), ("4.9", "Note G2")])
+    main += block_feature_tabs("Tout pour informer sans noyer", PF_TABS)
+    main += block_marquee_strip(["Slack", "Email", "Webhooks", "RGPD", "SOC 2", "API"])
+    main += block_trust("« Enfin des notifications utiles — plus de bruit inutile. » — CTO, scale-up Metz", ["RGPD", "Sans CB", "Préférences", "SSO"])
+    main += block_cta_band("Démarrez gratuitement.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_notifications("index.html", f"{PF_BRAND} — Notifications in-app", "PingFlow — centre de notifications hiérarchisé et actionnable.", main)
+
+
+def build_saas_notifications_fonctionnalites() -> str:
+    main = "<main>"
+    main += block_hero_split("Fonctionnalités notifications", "Filtres, routing et préférences — le bon message au bon moment.", "hero.png", "Fonctionnalités PingFlow", eyebrow="Fonctionnalités", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="tarifs.html", secondary_label="Tarifs")
+    main += block_bento_cards([
+        {"title": "Toasts", "text": "Success, warning, info — variants cohérents.", "img": "gallery-1.png", "alt": "Toasts", "size": "lg"},
+        {"title": "Mobile push", "text": "Preview lock screen et in-app.", "img": "gallery-2.png", "alt": "Mobile", "size": "sm"},
+        {"title": "Sécurité", "text": "Alertes incident et timeline.", "img": "card-3.png", "alt": "Sécurité", "size": "sm"},
+    ])
+    main += block_spec_grid("Modules", [
+        {"label": "Inbox", "value": "Unifiée", "detail": "Unread, mark all read, filtres."},
+        {"label": "Routing", "value": "Règles", "detail": "Triggers et canaux sans code."},
+        {"label": "Préférences", "value": "Granulaire", "detail": "Quiet hours et opt-out."},
+        {"label": "Analytics", "value": "Live", "detail": "Open rates et temps de réponse."},
+    ])
+    main += block_comparison_table("Avant / après PingFlow", [
+        ("Volume perçu", "Surcharge", "Hiérarchisé"),
+        ("Actions", "Passives", "CTA intégrés"),
+        ("Consentement", "Ignoré", "Préférences respectées"),
+    ])
+    main += block_cta_band("Testez toutes les fonctionnalités.", "Essai gratuit", "contact.html")
+    main += "</main>"
+    return _shell_saas_notifications("fonctionnalites.html", f"Fonctionnalités — {PF_BRAND}", "Fonctionnalités PingFlow.", main)
+
+
+def build_saas_notifications_tarifs() -> str:
+    main = "<main>"
+    main += block_hero_editorial("Tarifs adaptés à votre volume", "Starter pour démarrer — Pro pour le multi-canal.", "hero.png", "Tarifs PingFlow", eyebrow="Tarifs", primary_href="contact.html", primary_label="Essai gratuit", secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités")
+    main += block_pricing_tiers("Choisissez votre plan", PF_PRICING)
+    main += block_faq_accordion("FAQ", [
+        ("Limite notifications ?", "Illimitées sur tous les plans."),
+        ("RGPD ?", "Consentement et rétention configurables."),
+        ("Intégration Slack ?", "Native sur Pro et Enterprise."),
+    ])
+    main += block_cta_band("14 jours gratuits.", "Démarrer", "contact.html")
+    main += "</main>"
+    return _shell_saas_notifications("tarifs.html", f"Tarifs — {PF_BRAND}", "Tarifs PingFlow.", main)
+
+
+def build_saas_notifications_contact() -> str:
+    main = """<main>
+<section class="vt-hero-compact py-5 text-center vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Essai</p>
+    <h1 class="vt-display display-6">14 jours gratuits</h1>
+    <p class="lead text-secondary">Sans carte bancaire.</p>
+  </div>
+</section>"""
+    main += block_saas_trial_form(brand=PF_BRAND, email=PF_EMAIL)
+    main += block_cta_band("Démonstration — aucune donnée transmise.", "Retour accueil", "index.html")
+    main += "</main>"
+    return _shell_saas_notifications("contact.html", f"Contact — {PF_BRAND}", "Essai gratuit PingFlow.", main)
+
+
 BUILDERS = {
     "restauration": [
         ("index.html", build_index),
@@ -3338,11 +4252,61 @@ BUILDERS = {
         ("secteurs.html", build_services_secteurs),
         ("contact.html", build_services_contact),
     ],
+    "etablissement": [
+        ("index.html", build_etablissement_index),
+        ("chambres.html", build_etablissement_chambres),
+        ("seminaires.html", build_etablissement_seminaires),
+        ("contact.html", build_etablissement_contact),
+    ],
+    "technologie": [
+        ("index.html", build_technologie_index),
+        ("produit.html", build_technologie_produit),
+        ("clients.html", build_technologie_clients),
+        ("contact.html", build_technologie_contact),
+    ],
+    "saas-landing": [
+        ("index.html", build_saas_landing_index),
+        ("fonctionnalites.html", build_saas_landing_fonctionnalites),
+        ("tarifs.html", build_saas_landing_tarifs),
+        ("contact.html", build_saas_landing_contact),
+    ],
+    "saas-onboarding": [
+        ("index.html", build_saas_onboarding_index),
+        ("parcours.html", build_saas_onboarding_parcours),
+        ("fonctionnalites.html", build_saas_onboarding_fonctionnalites),
+        ("contact.html", build_saas_onboarding_contact),
+    ],
+    "saas-dashboard": [
+        ("index.html", build_saas_dashboard_index),
+        ("fonctionnalites.html", build_saas_dashboard_fonctionnalites),
+        ("tarifs.html", build_saas_dashboard_tarifs),
+        ("contact.html", build_saas_dashboard_contact),
+    ],
+    "saas-empty": [
+        ("index.html", build_saas_empty_index),
+        ("fonctionnalites.html", build_saas_empty_fonctionnalites),
+        ("tarifs.html", build_saas_empty_tarifs),
+        ("contact.html", build_saas_empty_contact),
+    ],
+    "saas-notifications": [
+        ("index.html", build_saas_notifications_index),
+        ("fonctionnalites.html", build_saas_notifications_fonctionnalites),
+        ("tarifs.html", build_saas_notifications_tarifs),
+        ("contact.html", build_saas_notifications_contact),
+    ],
 }
 
 
 def main() -> None:
     slug = sys.argv[1] if len(sys.argv) > 1 else "restauration"
+    if slug == "--all":
+        for s in BUILDERS:
+            dest = OUT / s
+            dest.mkdir(parents=True, exist_ok=True)
+            for fname, fn in BUILDERS[s]:
+                (dest / fname).write_text(fn(), encoding="utf-8")
+                print(f"[OK] {dest.relative_to(ROOT) / fname}")
+        return
     pages = BUILDERS.get(slug)
     if not pages:
         raise SystemExit(f"Slug inconnu : {slug}. Disponibles : {', '.join(BUILDERS)}")
