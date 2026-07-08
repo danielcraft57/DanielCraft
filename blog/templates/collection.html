@@ -38,11 +38,9 @@
 {{NAV_HTML}}
 
     <main id="main-content" class="blog-page-section" itemscope itemtype="https://schema.org/CollectionPage">
-        <meta itemprop="url" content="{{PAGE_URL}}">
+        <link itemprop="url" href="{{PAGE_URL}}">
         <div class="container blog-page">
-            <nav aria-label="Fil d'Ariane">
-                <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
-            </nav>
+            {{BREADCRUMBS}}
             <header class="blog-header">
                 <h1 itemprop="name">{{TITLE}}</h1>
                 <p class="section-description" itemprop="description">{{DESCRIPTION}}</p>

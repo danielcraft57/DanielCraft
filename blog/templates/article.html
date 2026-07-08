@@ -47,26 +47,14 @@
 
     <main id="main-content" class="blog-article-section">
         <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting" itemid="{{PAGE_URL}}">
-            <meta itemprop="mainEntityOfPage" content="{{PAGE_URL}}">
-            <meta itemprop="description" content="{{EXCERPT}}">
+            <link itemprop="mainEntityOfPage" href="{{PAGE_URL}}">
             <meta itemprop="inLanguage" content="fr-FR">
-            <link itemprop="image" href="{{OG_IMAGE}}">
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person" hidden>
-                <meta itemprop="name" content="Loïc DANIEL">
-                <link itemprop="url" href="{{SITE_BASE}}/">
-            </div>
-            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden>
-                <meta itemprop="name" content="DanielCraft">
-                <link itemprop="url" href="{{SITE_BASE}}/">
-                <link itemprop="logo" href="{{SITE_BASE}}/assets/images/og/home-1200x630.jpg">
-            </div>
             <header class="blog-article-header">
-                <nav aria-label="Fil d'Ariane">
-                    <a href="/blog/" class="back-link"><i class="fas fa-arrow-left"></i> Retour au blog</a>
-                </nav>
-                <meta itemprop="articleSection" content="{{ARTICLE_SECTION}}">
+                {{BREADCRUMBS}}
+                <p class="article-type article-type--header" itemprop="articleSection">{{ARTICLE_SECTION}}</p>
                 <h1 itemprop="headline">{{TITLE}}</h1>
-                <figure class="blog-article-hero" aria-hidden="true">
+                <p class="blog-article-lead" itemprop="description">{{EXCERPT}}</p>
+                <figure class="blog-article-hero">
                     <img src="{{HERO_IMAGE}}" alt="{{TITLE}}" class="blog-article-hero-image" loading="eager" itemprop="image">
                 </figure>
             </header>
@@ -74,6 +62,15 @@
                 <aside class="blog-article-sidebar" aria-label="Infos article">
                     <div class="sidebar-block sidebar-meta">
                         <time datetime="{{DATE_ISO}}" itemprop="datePublished">{{DATE_FR}}</time>
+                    </div>
+                    <div class="sidebar-block sidebar-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <span class="sidebar-label">Auteur</span>
+                        <a href="{{SITE_BASE}}/" itemprop="url"><span itemprop="name">Loïc DANIEL</span></a>
+                    </div>
+                    <div class="sidebar-block sidebar-publisher" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                        <span class="sidebar-label">Éditeur</span>
+                        <a href="{{SITE_BASE}}/" itemprop="url"><span itemprop="name">DanielCraft</span></a>
+                        <link itemprop="logo" href="{{SITE_BASE}}/assets/images/og/home-1200x630.jpg">
                     </div>
                     <div class="sidebar-block sidebar-share">
                         <span class="sidebar-label">Partager</span>
