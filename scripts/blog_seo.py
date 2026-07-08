@@ -43,7 +43,8 @@ def block_breadcrumbs(crumbs: list[tuple[str, str]]) -> str:
 
 
 def crumbs_blog_index(site_base: str) -> list[tuple[str, str]]:
-    return [("Accueil", f"{site_base.rstrip('/')}/"), ("Blog", "")]
+    base = site_base.rstrip("/")
+    return [("Accueil", f"{base}/"), ("Blog", f"{base}/blog/index.html")]
 
 
 def crumbs_article(
@@ -56,7 +57,7 @@ def crumbs_article(
     base = site_base.rstrip("/")
     crumbs: list[tuple[str, str]] = [
         ("Accueil", f"{base}/"),
-        ("Blog", f"{base}/blog/"),
+        ("Blog", f"{base}/blog/index.html"),
     ]
     if series_title and series_url:
         crumbs.append((series_title, series_url))
@@ -68,6 +69,6 @@ def crumbs_collection(site_base: str, title: str) -> list[tuple[str, str]]:
     base = site_base.rstrip("/")
     return [
         ("Accueil", f"{base}/"),
-        ("Blog", f"{base}/blog/"),
+        ("Blog", f"{base}/blog/index.html"),
         (title, ""),
     ]
