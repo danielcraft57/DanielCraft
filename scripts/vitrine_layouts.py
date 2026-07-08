@@ -1,8 +1,6 @@
 """Layouts vitrine alternatifs (split, bento, entonnoir) — inspirés bonnes pratiques landing UX."""
 from __future__ import annotations
 
-import json
-
 from vitrine_ai_lib import esc
 from vitrine_site_blocks import vt_picture
 
@@ -136,8 +134,8 @@ def block_hero_overlay(
     sec_btn = ""
     if secondary_href and secondary_label:
         sec_btn = f'<a class="btn btn-vt-outline btn-lg rounded-0 px-4" href="{esc(secondary_href)}">{esc(secondary_label)}</a>'
-    return f"""<section class="vt-hero-overlay position-relative">
-  <div class="vt-hero-overlay-bg">{vt_picture(img, alt, css_class="w-100 h-100 vt-cover", loading=None, fetchpriority="high")}</div>
+    return f"""<section class="vt-hero-overlay position-relative vt-reveal-fade">
+  <div class="vt-hero-overlay-bg vt-ken-burns">{vt_picture(img, alt, css_class="w-100 h-100 vt-cover", loading=None, fetchpriority="high")}</div>
   <div class="vt-hero-overlay-shade"></div>
   <div class="container position-relative vt-hero-overlay-copy py-5 py-lg-6">
     <div class="col-lg-7 col-xl-6">
@@ -403,29 +401,24 @@ def block_faq_accordion(title: str, items: list[tuple[str, str]]) -> str:
     cards = ""
     for i, (q, a) in enumerate(items):
         hid = f"{acc_id}-{i}"
-        cards += f"""<div class="accordion-item">
+        cards += f"""<div class="accordion-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
       <h3 class="accordion-header" id="h-{hid}">
         <button class="accordion-button{' collapsed' if i else ''}" type="button" data-bs-toggle="collapse" data-bs-target="#c-{hid}" aria-expanded="{'true' if i == 0 else 'false'}" aria-controls="c-{hid}">
-          {esc(q)}
+          <span itemprop="name">{esc(q)}</span>
         </button>
       </h3>
       <div id="c-{hid}" class="accordion-collapse collapse{' show' if i == 0 else ''}" aria-labelledby="h-{hid}" data-bs-parent="#{acc_id}">
-        <div class="accordion-body">{esc(a)}</div>
+        <div class="accordion-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <div itemprop="text">{esc(a)}</div>
+        </div>
       </div>
     </div>"""
-    faq_ld = ",".join(
-        f'{{"@type":"Question","name":{json.dumps(q, ensure_ascii=False)},"acceptedAnswer":{{"@type":"Answer","text":{json.dumps(a, ensure_ascii=False)}}}}}'
-        for q, a in items
-    )
-    return f"""<section class="vt-faq py-5">
+    return f"""<section class="vt-faq py-5" itemscope itemtype="https://schema.org/FAQPage">
   <div class="container">
     <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
     <div class="accordion vt-faq-acc mx-auto" id="{acc_id}">{cards}</div>
   </div>
-</section>
-<script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{faq_ld}]}}
-</script>"""
+</section>"""
 
 
 def block_hero_technical(
@@ -773,5 +766,285 @@ def block_neighborhood_strip(title: str, areas: list[tuple[str, str]]) -> str:
   <div class="container">
     <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
     <div class="row g-3">{items}</div>
+  </div>
+</section>"""
+
+
+def block_marquee_strip(labels: list[str]) -> str:
+    """Bandeau défilant — labels partenaires, distinctions, tags."""
+    dup = labels + labels
+    items = "".join(f'<span class="vt-marquee-item">{esc(lbl)}</span>' for lbl in dup)
+    return f"""<section class="vt-marquee py-3 vt-reveal-fade" aria-hidden="true">
+  <div class="vt-marquee-track">{items}</div>
+</section>"""
+
+
+def block_snap_chapters(chapters: list[dict]) -> str:
+    """Chapitres plein écran avec scroll-snap — hôtellerie / storytelling."""
+    rows = ""
+    for i, ch in enumerate(chapters):
+        flip = " vt-snap-chapter--flip" if i % 2 else ""
+        rows += f"""<article class="vt-snap-chapter{flip}">
+      <div class="container py-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <figure class="vt-ken-burns rounded-0 overflow-hidden mb-0 vt-reveal">
+              {vt_picture(ch["img"], ch.get("alt", ch["title"]), css_class="w-100")}
+            </figure>
+          </div>
+          <div class="col-lg-6 vt-reveal">
+            <h2 class="vt-section-title h3">{esc(ch["title"])}</h2>
+            <p class="text-secondary mb-0">{esc(ch["text"])}</p>
+          </div>
+        </div>
+      </div>
+    </article>"""
+    return f"""<section class="vt-snap-series vt-scroll-snap-y">{rows}</section>"""
+
+
+def block_motion_progress() -> str:
+    """Barre de progression de lecture (fixe en haut)."""
+    return '<div class="vt-read-progress" aria-hidden="true"></div>'
+
+
+def block_hero_saas_product(
+    h1: str,
+    lead: str,
+    img: str,
+    alt: str,
+    *,
+    eyebrow: str,
+    primary_href: str,
+    primary_label: str,
+    secondary_href: str = "",
+    secondary_label: str = "",
+) -> str:
+    """Hero SaaS : orbes animés + mockup flottant."""
+    sec_btn = ""
+    if secondary_href and secondary_label:
+        sec_btn = f'<a class="btn btn-vt-outline btn-lg px-4" href="{esc(secondary_href)}">{esc(secondary_label)}</a>'
+    return f"""<section class="vt-hero-saas vt-orbs-field py-5 py-lg-6">
+  <div class="vt-orb vt-orb-1" aria-hidden="true"></div>
+  <div class="vt-orb vt-orb-2" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 vt-reveal">
+        <p class="vt-eyebrow text-uppercase mb-2">{esc(eyebrow)}</p>
+        <h1 class="vt-display display-4 mb-3">{esc(h1)}</h1>
+        <p class="lead mb-4">{esc(lead)}</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-vt-primary btn-lg px-4" href="{esc(primary_href)}">{esc(primary_label)}</a>
+          {sec_btn}
+        </div>
+      </div>
+      <div class="col-lg-6 vt-reveal vt-reveal-delay-2">
+        <figure class="vt-float-mockup mb-0">
+          {vt_picture(img, alt, css_class="w-100", loading=None, fetchpriority="high")}
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def block_feature_tabs(title: str, tabs: list[dict]) -> str:
+    """Onglets fonctionnalités — panneaux image + texte (animés via vitrine-motion.js)."""
+    nav_btns = ""
+    panels = ""
+    for i, tab in enumerate(tabs):
+        tid = f"vt-tab-{i}"
+        active = " active" if i == 0 else ""
+        nav_btns += f"""<button type="button" class="vt-tab-btn{active}" role="tab" aria-selected="{"true" if i == 0 else "false"}" data-vt-tab-target="{tid}">{esc(tab["label"])}</button>"""
+        panels += f"""<div class="vt-tab-panel{active}" id="{tid}" role="tabpanel">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <figure class="mb-0 rounded-3 overflow-hidden vt-ken-burns">
+              {vt_picture(tab["img"], tab.get("alt", tab["label"]), css_class="w-100")}
+            </figure>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h4 vt-section-title">{esc(tab["title"])}</h3>
+            <p class="text-secondary mb-0">{esc(tab["text"])}</p>
+          </div>
+        </div>
+      </div>"""
+    return f"""<section class="vt-feature-tabs py-5 vt-reveal">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
+    <div class="vt-tabs-nav d-flex flex-wrap justify-content-center gap-2 mb-4" role="tablist" data-vt-tabs>{nav_btns}</div>
+    <div class="vt-tabs-panels">{panels}</div>
+  </div>
+</section>"""
+
+
+def block_pricing_tiers(title: str, tiers: list[dict]) -> str:
+    """Grille tarifs SaaS — carte mise en avant animée au survol."""
+    cards = ""
+    for t in tiers:
+        hot = " vt-pricing-tier--hot" if t.get("hot") else ""
+        cards += f"""<div class="col-md-4">
+        <article class="vt-pricing-tier h-100{hot} vt-tilt-card">
+          <h3 class="h5 mb-1">{esc(t["name"])}</h3>
+          <p class="vt-pricing-price mb-3">{esc(t["price"])}</p>
+          <ul class="small ps-3 mb-4">{"".join(f"<li>{esc(x)}</li>" for x in t.get("features", []))}</ul>
+          <a class="btn btn-vt-primary w-100" href="{esc(t["href"])}">{esc(t["cta"])}</a>
+        </article>
+      </div>"""
+    return f"""<section class="vt-pricing py-5 vt-reveal">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-5">{esc(title)}</h2>
+    <div class="row g-4 vt-reveal-stagger">{cards}</div>
+  </div>
+</section>"""
+
+
+def block_hero_tech_glow(
+    h1: str,
+    lead: str,
+    img: str,
+    alt: str,
+    *,
+    eyebrow: str,
+    specs: list[tuple[str, str]],
+    primary_href: str,
+    primary_label: str,
+    secondary_href: str = "",
+    secondary_label: str = "",
+) -> str:
+    """Hero tech B2B avec scan lines + specs + ken burns."""
+    pills = "".join(
+        f'<span class="vt-spec-pill"><strong>{esc(val)}</strong> {esc(lbl)}</span>'
+        for val, lbl in specs
+    )
+    sec_btn = ""
+    if secondary_href and secondary_label:
+        sec_btn = f'<a class="btn btn-vt-outline btn-sm rounded-0 px-3" href="{esc(secondary_href)}">{esc(secondary_label)}</a>'
+    return f"""<section class="vt-hero-tech vt-hero-scan vt-reveal">
+  <div class="container py-5">
+    <p class="vt-eyebrow text-uppercase mb-2">{esc(eyebrow)}</p>
+    <div class="row g-4 align-items-end">
+      <div class="col-lg-7">
+        <h1 class="vt-display display-5 mb-3">{esc(h1)}</h1>
+        <p class="lead mb-4">{esc(lead)}</p>
+        <div class="vt-spec-pills d-flex flex-wrap gap-2 mb-4">{pills}</div>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-vt-primary rounded-0 px-4" href="{esc(primary_href)}">{esc(primary_label)}</a>
+          {sec_btn}
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <figure class="vt-hero-tech-frame vt-ken-burns mb-0 rounded-0 overflow-hidden">
+          {vt_picture(img, alt, css_class="w-100", loading=None, fetchpriority="high")}
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def block_progress_wizard(title: str, steps: list[dict]) -> str:
+    """Parcours onboarding — barre de progression animée + étapes cliquables."""
+    step_btns = ""
+    panels = ""
+    for i, step in enumerate(steps):
+        active = " active" if i == 0 else ""
+        step_btns += f"""<button type="button" class="vt-wizard-step{active}" data-vt-wizard-step="{i}" aria-current="{"step" if i == 0 else "false"}">
+        <span class="vt-wizard-num">{i + 1}</span>
+        <span class="vt-wizard-label">{esc(step["label"])}</span>
+      </button>"""
+        panels += f"""<div class="vt-wizard-panel{active}" data-vt-wizard-panel="{i}">
+        <h3 class="h5 vt-section-title">{esc(step["title"])}</h3>
+        <p class="text-secondary mb-3">{esc(step["text"])}</p>
+        <figure class="mb-0 rounded-3 overflow-hidden vt-ken-burns">
+          {vt_picture(step["img"], step.get("alt", step["title"]), css_class="w-100")}
+        </figure>
+      </div>"""
+    pct = int(100 / max(len(steps), 1))
+    return f"""<section class="vt-wizard py-5 vt-reveal" data-vt-progress-wizard data-vt-step-count="{len(steps)}">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
+    <div class="vt-wizard-bar mb-4" aria-hidden="true">
+      <div class="vt-wizard-bar-fill" style="--vt-wizard-pct: {pct}%"></div>
+    </div>
+    <div class="vt-wizard-steps d-flex flex-wrap justify-content-center gap-2 mb-4">{step_btns}</div>
+    <div class="vt-wizard-panels">{panels}</div>
+  </div>
+</section>"""
+
+
+def block_kpi_grid(title: str, kpis: list[dict]) -> str:
+    """Cartes KPI dashboard — pulse live + compteurs animés."""
+    cards = ""
+    for k in kpis:
+        count_attr = ""
+        inner_val = esc(k["value"])
+        if k.get("count_end") is not None:
+            count_attr = f' data-vt-count-end="{k["count_end"]}" data-vt-count-suffix="{esc(k.get("count_suffix", ""))}" data-vt-count-prefix="{esc(k.get("count_prefix", ""))}"'
+            inner_val = "0"
+        delta = ""
+        if k.get("delta"):
+            delta = f'<span class="vt-kpi-delta">{esc(k["delta"])}</span>'
+        cards += f"""<div class="col-6 col-lg-3">
+        <article class="vt-kpi-card h-100">
+          <span class="vt-kpi-pulse" aria-hidden="true"></span>
+          <p class="vt-kpi-label small text-uppercase mb-1">{esc(k["label"])}</p>
+          <p class="vt-kpi-value vt-stat-val mb-0"{count_attr}>{inner_val}</p>
+          {delta}
+        </article>
+      </div>"""
+    return f"""<section class="vt-kpi-grid py-5 vt-reveal">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
+    <div class="row g-3 vt-reveal-stagger">{cards}</div>
+  </div>
+</section>"""
+
+
+def block_state_morph(title: str, before: dict, after: dict) -> str:
+    """Avant / après — crossfade au survol pour empty states."""
+    return f"""<section class="vt-state-morph py-5 vt-reveal">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <div class="vt-morph-stage" data-vt-state-morph tabindex="0" role="img" aria-label="Comparaison avant et après">
+          <figure class="vt-morph-layer vt-morph-before mb-0">
+            {vt_picture(before["img"], before.get("alt", before["title"]), css_class="w-100")}
+            <figcaption class="vt-morph-caption">{esc(before["title"])}</figcaption>
+          </figure>
+          <figure class="vt-morph-layer vt-morph-after mb-0">
+            {vt_picture(after["img"], after.get("alt", after["title"]), css_class="w-100")}
+            <figcaption class="vt-morph-caption vt-morph-caption--after">{esc(after["title"])}</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <p class="text-secondary mb-2"><strong>Avant :</strong> {esc(before["text"])}</p>
+        <p class="text-secondary mb-0"><strong>Après :</strong> {esc(after["text"])}</p>
+        <p class="small text-muted mt-3 mb-0">Survolez l'image pour voir la transformation.</p>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+
+def block_notification_feed(title: str, items: list[dict]) -> str:
+    """Flux notifications in-app — entrée en cascade."""
+    rows = ""
+    for it in items:
+        urgent = " vt-notif--urgent" if it.get("urgent") else ""
+        badge = f'<span class="vt-notif-badge">{esc(it["type"])}</span>'
+        rows += f"""<article class="vt-notif-card{urgent}">
+        <div class="d-flex justify-content-between align-items-start gap-2 mb-1">
+          {badge}
+          <time class="vt-notif-time small text-muted">{esc(it["time"])}</time>
+        </div>
+        <h3 class="h6 mb-1">{esc(it["title"])}</h3>
+        <p class="small text-secondary mb-0">{esc(it["text"])}</p>
+      </article>"""
+    return f"""<section class="vt-notif-feed py-5 vt-reveal">
+  <div class="container">
+    <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
+    <div class="vt-notif-stack mx-auto vt-reveal-stagger">{rows}</div>
   </div>
 </section>"""

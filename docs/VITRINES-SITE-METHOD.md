@@ -28,6 +28,28 @@ Sync dist/                    Copie vers dist/vitrines/<slug>/demo/ (serveur loc
 
 ---
 
+## SEO & Schema.org microdata (`scripts/vitrine_seo.py`)
+
+Chaque page générée par `build_vitrine_site.py` inclut automatiquement (via `_wrap_vitrine_page`) :
+
+| Élément | Emplacement |
+|---------|-------------|
+| **Meta** | `<head>` — `title`, `description`, `robots`, `canonical`, OG, Twitter |
+| **WebSite** | `<header>` — marque avec `itemprop="url"` + `itemprop="name"` |
+| **WebPage** | `<main itemscope>` — `itemprop="url"`, `inLanguage` |
+| **Contenu page** | Premier `<h1>` → `name` ; chapô `.lead` → `description` ; 1ère image hero → `image` |
+| **Entité locale / SaaS** | `<footer itemscope>` — type sectoriel (`Restaurant`, `SoftwareApplication`…), adresse, téléphone, geo |
+| **BreadcrumbList** | Fil d'Ariane **visible** sous le header (pages internes uniquement) |
+| **FAQPage** | Section FAQ — `Question` / `Answer` dans l'accordéon (`vitrine_layouts.py`) |
+
+Pas de JSON-LD, pas de microdata dans le `<head>`, pas de blocs `visually-hidden` pour le schema.
+
+Entités par slug dans `ENTITIES`. URLs : `https://danielcraft.fr/vitrines/<slug>/demo/<page>.html`
+
+Rebuild complet : `python scripts/build_vitrine_site.py --all`
+
+---
+
 ## Étape 1 — Scénario et contenu (`vitrine_scenarios.py`)
 
 Chaque vitrine a un bloc `SCENARIOS` avec :
@@ -89,7 +111,7 @@ python scripts/install_vitrine_photo.py <chemin-source.png> <slug> <filename>
 
 | Fichier | Rôle |
 |---------|------|
-| `scripts/vitrine_site_blocks.py` | Blocs : topbar, navbar, hero, stats, menu HTML, formulaire, footer, JSON-LD… |
+| `scripts/vitrine_site_blocks.py` | Blocs : topbar, navbar, hero, stats, menu HTML, formulaire, footer, microdata inline… |
 | `scripts/build_vitrine_site.py` | Builder par slug (dict `BUILDERS`) |
 | `assets/vitrines/demos/<slug>/styles.css` | Thème Bootstrap (variables `--vt-*`, surcharge `--bs-*`) |
 
@@ -185,13 +207,13 @@ Cocher au fur et à mesure :
 | **association** | ✅ | ✅ | ✅ | **Terminé** — hero vert + jauge impact + mobilisation |
 | **education** | ✅ | ✅ | ✅ | **Terminé** — hero technique + Qualiopi + parcours admission |
 | **services** | ✅ | ✅ | ✅ | **Terminé** — hero overlay teal + bento FM + offres promo |
-| etablissement | | | | À faire |
-| technologie | | | | À faire |
-| saas-landing | | | | À faire |
-| saas-onboarding | | | | À faire |
-| saas-dashboard | | | | À faire |
-| saas-empty | | | | À faire |
-| saas-notifications | | | | À faire |
+| **etablissement** | ✅ | ✅ | ✅ | **Terminé** — hero luxe + snap chapters + marquee |
+| **technologie** | ✅ | ✅ | ✅ | **Terminé** — hero scan + tabs animés + marquee clients |
+| **saas-landing** | ✅ | ✅ | ✅ | **Terminé** — orbes + mockup flottant + tabs + pricing tilt |
+| saas-onboarding | ✅ | ✅ | ✅ | **Terminé** — wizard progression + snap chapters |
+| saas-dashboard | ✅ | ✅ | ✅ | **Terminé** — KPI pulse + compteurs live |
+| saas-empty | ✅ | ✅ | ✅ | **Terminé** — morph avant/après + tabs |
+| saas-notifications | ✅ | ✅ | ✅ | **Terminé** — feed notifications cascade |
 
 ---
 

@@ -4,6 +4,7 @@
  * - CTA zone tactile ≥ 44px, contraste fort.
  * - Hiérarchie : H1 display, H2 +25 % desktop.
  */
+@import url("vitrine-motion.css");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 :root {
