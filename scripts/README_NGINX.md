@@ -43,6 +43,7 @@ sudo certbot --nginx -d example.com -d www.example.com
 
 - ✅ Redirection HTTP → HTTPS
 - ✅ URLs propres (sans .html)
+- ✅ Pages d'erreur personnalisées (`404.html`, `500.html`)
 - ✅ Compression Gzip optimisée
 - ✅ Cache pour les assets statiques (1 an)
 - ✅ Cache pour les fichiers HTML (1 heure)
@@ -61,5 +62,6 @@ sudo certbot --nginx -d example.com -d www.example.com
 
 - Les fichiers HTML sont servis sans extension (URLs propres)
 - Les anciennes URLs avec .html sont redirigées en 301
+- Les erreurs HTTP 404/500 servent les pages personnalisées du site (`/404.html`, `/500.html`)
 - Le dossier racine est `/var/www/example.com`
 

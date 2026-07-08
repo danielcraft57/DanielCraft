@@ -2770,6 +2770,7 @@ def main():
         'cgu',
         'politique-confidentialite',
         'not-found',
+        'server-error',
         'pro',
     ]
     
