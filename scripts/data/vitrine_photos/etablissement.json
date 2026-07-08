@@ -1,0 +1,90 @@
+{
+  "slug": "etablissement",
+  "brand": "Hôtel Stanislas Collection",
+  "category": "hotel",
+  "locale": "Nancy, Meurthe-et-Moselle, Grand Est, France",
+  "style_suffix": "Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Façade Hôtel Stanislas Collection Nancy",
+      "subject": "Historic luxury hotel facade on place Stanislas Nancy France at golden hour, elegant 4-star entrance, wrought iron balconies, UNESCO square view hero banner",
+      "contexts": [{ "page": "index.html", "section": "hero", "text": "Hospitalité premium face à Stanislas" }]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Lobby hôtel Nancy",
+      "subject": "Luxury hotel lobby Nancy with marble floor brass reception desk chandeliers warm ambient light",
+      "contexts": [{ "page": "index.html", "section": "snap", "text": "Lobby & réception" }]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Spa hôtel",
+      "subject": "Hotel spa wellness area with sauna hammam candles relaxation loungers luxury Nancy hotel",
+      "contexts": [{ "page": "index.html", "section": "snap", "text": "Spa & bien-être" }]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "interior",
+      "alt": "Restaurant hôtel",
+      "subject": "Elegant hotel restaurant breakfast buffet local Lorraine products fine dining Nancy",
+      "contexts": [{ "page": "index.html", "section": "snap", "text": "Gastronomie locale" }]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Vue place Stanislas",
+      "subject": "Hotel room window view of place Stanislas Nancy UNESCO square at dusk golden light",
+      "contexts": [{ "page": "chambres.html", "section": "gallery", "text": "Vue Stanislas" }]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Salle de bain luxe",
+      "subject": "Luxury hotel bathroom marble bathtub premium toiletries soft towels Nancy 4-star",
+      "contexts": [{ "page": "chambres.html", "section": "gallery", "text": "Salle de bain" }]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Chambre classique",
+      "subject": "Classic luxury hotel room double bed neutral tones garden view Nancy boutique hotel",
+      "contexts": [{ "page": "index.html", "section": "card", "text": "Chambre Classique" }]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Chambre supérieure",
+      "subject": "Superior hotel room with Stanislas square view elegant desk armchair Nancy luxury hotel",
+      "contexts": [{ "page": "index.html", "section": "card", "text": "Chambre Supérieure" }]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Suite Stanislas",
+      "subject": "Hotel suite living room separate lounge sofa bathtub luxury Nancy 4-star collection",
+      "contexts": [{ "page": "index.html", "section": "card", "text": "Suite Stanislas" }]
+    }
+  ]
+}

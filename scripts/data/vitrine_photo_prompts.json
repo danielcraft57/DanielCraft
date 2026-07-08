@@ -2357,196 +2357,145 @@
     "slug": "etablissement",
     "filename": "hero.png",
     "label": "Vue d'ensemble Hôtel Stanislas Collection à Nancy. Hôtel Stanislas Collection : hospitalité premium à Nancy. Accompagnement de voyageurs en Lorraine avec exigence et proximité.. Page Chambres Hôtel Stanislas Collection. Chambres. Découvrez notre offre chambres pour voyageurs.. Page Séminaires Hôtel Stanislas Collection. Séminaires. Comprendre notre démarche séminaires.. Contact Hôtel Stanislas Collection. Parlons de votre projet. Nancy, Grand Est — réponse sous 24 h ouvrées.",
-    "alt": "Vue d'ensemble Hôtel Stanislas Collection à Nancy",
+    "alt": "Façade Hôtel Stanislas Collection Nancy",
     "scene": "hero",
     "category": "hotel",
     "width": 1200,
     "height": 520,
-    "prompt": "Vue d'ensemble Hôtel Stanislas Collection à Nancy. Hôtel Stanislas Collection : hospitalité premium à Nancy. Accompagnement de voyageurs en Lorraine avec exigence et proximité.. Page Chambres Hôtel Stanislas Collection. Chambres. Découvrez notre offre chambres pour voyageurs.. Page Séminaires Hôtel Stanislas Collection. Séminaires. Comprendre notre démarche séminaires.. Contact Hôtel Stanislas Collection. Parlons de votre projet. Nancy, Grand Est — réponse sous 24 h ouvrées.. Professional commercial photography, widescreen 21:9 hero banner, warm natural lighting, photorealistic, shallow depth of field, no text, no watermark, no logos",
+    "prompt": "Historic luxury hotel facade on place Stanislas Nancy France at golden hour, elegant 4-star entrance, wrought iron balconies, UNESCO square view hero banner. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Vue d'ensemble Hôtel Stanislas Collection à Nancy",
-      "Hôtel Stanislas Collection : hospitalité premium à Nancy",
-      "Accompagnement de voyageurs en Lorraine avec exigence et proximité.",
-      "Page Chambres Hôtel Stanislas Collection",
-      "Chambres",
-      "Découvrez notre offre chambres pour voyageurs.",
-      "Page Séminaires Hôtel Stanislas Collection",
-      "Séminaires",
-      "Comprendre notre démarche séminaires.",
-      "Contact Hôtel Stanislas Collection",
-      "Parlons de votre projet",
-      "Nancy, Grand Est — réponse sous 24 h ouvrées."
+      "Hospitalité premium face à Stanislas"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/hero.png"
+    "dest": "assets/vitrines/demos/etablissement/images/hero.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "scene-1.png",
     "label": "Chambres chez Hôtel Stanislas Collection. Notre approche. Méthode éprouvée et transparence à chaque étape pour voyageurs.. Coulisses Hôtel Stanislas Collection. Coulisses Chambres. L'équipe Hôtel Stanislas Collection en action sur le terrain.. Écoute client Hôtel Stanislas Collection. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.",
-    "alt": "Chambres chez Hôtel Stanislas Collection",
+    "alt": "Lobby hôtel Nancy",
     "scene": "interior",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Chambres chez Hôtel Stanislas Collection. Notre approche. Méthode éprouvée et transparence à chaque étape pour voyageurs.. Coulisses Hôtel Stanislas Collection. Coulisses Chambres. L'équipe Hôtel Stanislas Collection en action sur le terrain.. Écoute client Hôtel Stanislas Collection. Étape 1 — Écoute. Diagnostic gratuit et définition des objectifs.. Interior design photography, elegant space, natural light, photorealistic, no text, no watermark",
+    "prompt": "Luxury hotel lobby Nancy with marble floor brass reception desk chandeliers warm ambient light. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Chambres chez Hôtel Stanislas Collection",
-      "Notre approche",
-      "Méthode éprouvée et transparence à chaque étape pour voyageurs.",
-      "Coulisses Hôtel Stanislas Collection",
-      "Coulisses Chambres",
-      "L'équipe Hôtel Stanislas Collection en action sur le terrain.",
-      "Écoute client Hôtel Stanislas Collection",
-      "Étape 1 — Écoute",
-      "Diagnostic gratuit et définition des objectifs."
+      "Lobby & réception"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/scene-1.png"
+    "dest": "assets/vitrines/demos/etablissement/images/scene-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "scene-2.png",
     "label": "Équipe au travail à Nancy. Le quotidien. Scènes de travail authentiques dans nos locaux de Nancy.. Résultats clients. Résultats. Témoignages et cas concrets à Nancy.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.",
-    "alt": "Équipe au travail à Nancy",
+    "alt": "Spa hôtel",
     "scene": "interior",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Équipe au travail à Nancy. Le quotidien. Scènes de travail authentiques dans nos locaux de Nancy.. Résultats clients. Résultats. Témoignages et cas concrets à Nancy.. Action terrain. Étape 2 — Action. Mise en œuvre avec points d'étape réguliers.. Interior design photography, elegant space, natural light, photorealistic, no text, no watermark",
+    "prompt": "Hotel spa wellness area with sauna hammam candles relaxation loungers luxury Nancy hotel. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Équipe au travail à Nancy",
-      "Le quotidien",
-      "Scènes de travail authentiques dans nos locaux de Nancy.",
-      "Résultats clients",
-      "Résultats",
-      "Témoignages et cas concrets à Nancy.",
-      "Action terrain",
-      "Étape 2 — Action",
-      "Mise en œuvre avec points d'étape réguliers."
+      "Spa & bien-être"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/scene-2.png"
+    "dest": "assets/vitrines/demos/etablissement/images/scene-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "scene-3.png",
     "label": "Engagement Hôtel Stanislas Collection. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Hôtel Stanislas Collection. Méthode. Processus structuré en trois temps.. Suivi Hôtel Stanislas Collection. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.",
-    "alt": "Engagement Hôtel Stanislas Collection",
+    "alt": "Restaurant hôtel",
     "scene": "interior",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Engagement Hôtel Stanislas Collection. Nos engagements. Qualité, réactivité et ancrage Grand Est depuis des années.. Méthode Hôtel Stanislas Collection. Méthode. Processus structuré en trois temps.. Suivi Hôtel Stanislas Collection. Étape 3 — Suivi. Bilan et ajustements pour pérenniser les résultats.. Interior design photography, elegant space, natural light, photorealistic, no text, no watermark",
+    "prompt": "Elegant hotel restaurant breakfast buffet local Lorraine products fine dining Nancy. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Engagement Hôtel Stanislas Collection",
-      "Nos engagements",
-      "Qualité, réactivité et ancrage Grand Est depuis des années.",
-      "Méthode Hôtel Stanislas Collection",
-      "Méthode",
-      "Processus structuré en trois temps.",
-      "Suivi Hôtel Stanislas Collection",
-      "Étape 3 — Suivi",
-      "Bilan et ajustements pour pérenniser les résultats."
+      "Gastronomie locale"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/scene-3.png"
+    "dest": "assets/vitrines/demos/etablissement/images/scene-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "gallery-1.png",
     "label": "Scène Hôtel Stanislas Collection. Moment de vie — Nancy. Image Chambres. Focus Chambres. Photo d'équipe. Équipe Hôtel Stanislas Collection",
-    "alt": "Scène Hôtel Stanislas Collection",
+    "alt": "Vue place Stanislas",
     "scene": "gallery",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Scène Hôtel Stanislas Collection. Moment de vie — Nancy. Image Chambres. Focus Chambres. Photo d'équipe. Équipe Hôtel Stanislas Collection. Lifestyle photography, candid authentic moment, natural light, photorealistic, no text, no watermark",
+    "prompt": "Hotel room window view of place Stanislas Nancy UNESCO square at dusk golden light. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Scène Hôtel Stanislas Collection",
-      "Moment de vie — Nancy",
-      "Image Chambres",
-      "Focus Chambres",
-      "Photo d'équipe",
-      "Équipe Hôtel Stanislas Collection"
+      "Vue Stanislas"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/gallery-1.png"
+    "dest": "assets/vitrines/demos/etablissement/images/gallery-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "gallery-2.png",
     "label": "Clientèle voyageurs. Rencontre avec nos clients. Détail Hôtel Stanislas Collection. Détail métier. Bureaux à Nancy. Locaux Nancy",
-    "alt": "Clientèle voyageurs",
+    "alt": "Salle de bain luxe",
     "scene": "gallery",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Clientèle voyageurs. Rencontre avec nos clients. Détail Hôtel Stanislas Collection. Détail métier. Bureaux à Nancy. Locaux Nancy. Lifestyle photography, candid authentic moment, natural light, photorealistic, no text, no watermark",
+    "prompt": "Luxury hotel bathroom marble bathtub premium toiletries soft towels Nancy 4-star. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Clientèle voyageurs",
-      "Rencontre avec nos clients",
-      "Détail Hôtel Stanislas Collection",
-      "Détail métier",
-      "Bureaux à Nancy",
-      "Locaux Nancy"
+      "Salle de bain"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/gallery-2.png"
+    "dest": "assets/vitrines/demos/etablissement/images/gallery-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "card-1.png",
     "label": "Offre Hôtel Stanislas Collection. Offre essentielle. Pack d'entrée adapté aux besoins courants de voyageurs.. Détail Chambres. Chambres — niveau 1. Formule accessible et complète.",
-    "alt": "Offre Hôtel Stanislas Collection",
+    "alt": "Chambre classique",
     "scene": "card",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Offre Hôtel Stanislas Collection. Offre essentielle. Pack d'entrée adapté aux besoins courants de voyageurs.. Détail Chambres. Chambres — niveau 1. Formule accessible et complète.. Detail shot photography, focused subject, clean composition, photorealistic, no text, no watermark",
+    "prompt": "Classic luxury hotel room double bed neutral tones garden view Nancy boutique hotel. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Offre Hôtel Stanislas Collection",
-      "Offre essentielle",
-      "Pack d'entrée adapté aux besoins courants de voyageurs.",
-      "Détail Chambres",
-      "Chambres — niveau 1",
-      "Formule accessible et complète."
+      "Chambre Classique"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/card-1.png"
+    "dest": "assets/vitrines/demos/etablissement/images/card-1.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "card-2.png",
     "label": "Service premium Hôtel Stanislas Collection. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Chambres — niveau 2. Approfondissement et options avancées.",
-    "alt": "Service premium Hôtel Stanislas Collection",
+    "alt": "Chambre supérieure",
     "scene": "card",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Service premium Hôtel Stanislas Collection. Offre premium. Accompagnement renforcé et suivi personnalisé.. Option avancée. Chambres — niveau 2. Approfondissement et options avancées.. Detail shot photography, focused subject, clean composition, photorealistic, no text, no watermark",
+    "prompt": "Superior hotel room with Stanislas square view elegant desk armchair Nancy luxury hotel. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Service premium Hôtel Stanislas Collection",
-      "Offre premium",
-      "Accompagnement renforcé et suivi personnalisé.",
-      "Option avancée",
-      "Chambres — niveau 2",
-      "Approfondissement et options avancées."
+      "Chambre Supérieure"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/card-2.png"
+    "dest": "assets/vitrines/demos/etablissement/images/card-2.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "etablissement",
     "filename": "card-3.png",
     "label": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Chambres — niveau 3. Solution intégrale clé en main.",
-    "alt": "Projet sur mesure",
+    "alt": "Suite Stanislas",
     "scene": "card",
     "category": "hotel",
     "width": 800,
     "height": 520,
-    "prompt": "Projet sur mesure. Sur mesure. Projet spécifique ? Nous construisons la réponse ensemble.. Solution intégrale. Chambres — niveau 3. Solution intégrale clé en main.. Detail shot photography, focused subject, clean composition, photorealistic, no text, no watermark",
+    "prompt": "Hotel suite living room separate lounge sofa bathtub luxury Nancy 4-star collection. Luxury 4-star hotel Nancy France place Stanislas, elegant lobby spa rooms, warm gold cream atmosphere, photorealistic, no text, no watermark, no logos",
     "contexts": [
-      "Projet sur mesure",
-      "Sur mesure",
-      "Projet spécifique ? Nous construisons la réponse ensemble.",
-      "Solution intégrale",
-      "Chambres — niveau 3",
-      "Solution intégrale clé en main."
+      "Suite Stanislas"
     ],
-    "dest": "assets/vitrines/demos/etablissement/images/card-3.png"
+    "dest": "assets/vitrines/demos/etablissement/images/card-3.png",
+    "photo_manifest": "scripts/data/vitrine_photos/etablissement.json"
   },
   {
     "slug": "technologie",
