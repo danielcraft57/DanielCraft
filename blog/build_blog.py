@@ -53,6 +53,10 @@ OG_IMAGE_BLOG = f'{SITE_BASE}/assets/images/og/blog-1200x630.jpg'
 OG_IMAGE_HOME = f'{SITE_BASE}/assets/images/og/home-1200x630.jpg'
 BLOG_DIR = Path(__file__).parent
 PROJECT_ROOT = BLOG_DIR.parent
+SCRIPTS_DIR = PROJECT_ROOT / 'scripts'
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+from blog_seo import block_breadcrumbs, crumbs_article, crumbs_blog_index, crumbs_collection
 SRC_DIR = PROJECT_ROOT / 'src'
 CONTENT_DIR = BLOG_DIR / 'content'
 ARTICLES_SRC = CONTENT_DIR / 'articles'
@@ -354,18 +358,15 @@ def _article_card_html(
     return (
         f'<a href="{href}" class="{classes}" itemscope itemtype="https://schema.org/BlogPosting" '
         f'itemprop="blogPost" itemid="{article_url}">'
-        f'<meta itemprop="url" content="{article_url}">'
-        f'<meta itemprop="headline" content="{title}">'
-        f'<meta itemprop="description" content="{excerpt}">'
-        f'<meta itemprop="datePublished" content="{date_str}">'
+        f'<link itemprop="url" href="{article_url}">'
         f'<div class="article-card-media">'
         f'<img src="{img}" alt="{alt}" width="600" height="315" loading="lazy" decoding="async" itemprop="image" />'
         f'</div>'
         f'<div class="article-card-body">'
         f'<span class="article-type">{type_label}</span>'
-        f'<{heading_tag}>{title}</{heading_tag}>'
-        f'<div class="article-meta"><time datetime="{date_str}">{date_fr}</time></div>'
-        f'<div class="article-excerpt">{excerpt}</div>'
+        f'<{heading_tag} itemprop="headline">{title}</{heading_tag}>'
+        f'<div class="article-meta"><time datetime="{date_str}" itemprop="datePublished">{date_fr}</time></div>'
+        f'<div class="article-excerpt" itemprop="description">{excerpt}</div>'
         f'</div>'
         f'</a>'
     )
@@ -674,6 +675,17 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     html = html.replace('{{PREV_NEXT}}', prev_next)
     html = html.replace('{{RECOMMENDATIONS}}', recommendations)
     html = html.replace('{{SERIES_HTML}}', series_html)
+    html = html.replace(
+        '{{BREADCRUMBS}}',
+        block_breadcrumbs(
+            crumbs_article(
+                SITE_BASE,
+                article['title'],
+                series_title=series_title,
+                series_url=series_url,
+            )
+        ),
+    )
 
     html = _inject_site_layout(html)
 
@@ -754,6 +766,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{META_DESCRIPTION}}', _escape_html(meta_desc))
     html = html.replace('{{META_KEYWORDS}}', 'développement web, TypeScript, GEO, SEO, tutoriels, bonnes pratiques')
     html = html.replace('{{PAGE_URL}}', page_url)
+    html = html.replace('{{BREADCRUMBS}}', block_breadcrumbs(crumbs_blog_index(SITE_BASE)))
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
     html = _inject_site_layout(html)
 
@@ -844,6 +857,10 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     html = html.replace('{{PAGE_URL}}', page_url)
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
+    html = html.replace(
+        '{{BREADCRUMBS}}',
+        block_breadcrumbs(crumbs_collection(SITE_BASE, title)),
+    )
 
     html = _inject_site_layout(html)
 
@@ -912,21 +929,8 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
 
         cards: List[str] = []
         for a in sorted(items, key=lambda x: x.get('date', ''), reverse=True):
-            date_str = a.get('date', '')[:10]
-            try:
-                dt = datetime.fromisoformat(a.get('date', ''))
-                date_fr = dt.strftime('%d %B %Y')
-            except Exception:
-                date_fr = date_str
-            type_label = _type_label(a)
-            excerpt = a.get('excerpt', '')
             cards.append(
-                f'<a href="../{_article_href(a["slug"], "articles/")}" class="article-card">'
-                f'<span class="article-type">{type_label}</span>'
-                f'<h2>{a["title"]}</h2>'
-                f'<div class="article-meta">{date_fr}</div>'
-                f'<div class="article-excerpt">{excerpt}</div>'
-                f'</a>'
+                _article_card_html(a, href_prefix='../articles/', heading_tag='h2')
             )
 
         page_url = f'{SITE_BASE}/blog/types/{slug}'
@@ -938,6 +942,10 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
         html = html.replace('{{PAGE_URL}}', page_url)
         html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
         html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
+        html = html.replace(
+            '{{BREADCRUMBS}}',
+            block_breadcrumbs(crumbs_collection(SITE_BASE, title)),
+        )
         html = _inject_site_layout(html)
 
         out_file = output_dir / 'types' / f'{slug}.html'
