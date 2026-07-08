@@ -262,6 +262,13 @@ def _series_href(slug: str, prefix: str = '') -> str:
     return f"{prefix}{slug}.html"
 
 
+def _abs_blog_url(path: str) -> str:
+    """URL absolue stable pour hébergement statique (avec .html quand pertinent)."""
+    base = SITE_BASE.rstrip('/')
+    p = (path or '').lstrip('/')
+    return f"{base}/{p}"
+
+
 def _article_thumb_src(article: dict, assets_prefix: str = '../') -> str:
     """Image de couverture d'un article (depuis blog/index.html)."""
     og = article.get('og_image')
@@ -353,7 +360,7 @@ def _article_card_html(
     img = _escape_html(_article_thumb_src(article))
     alt = _escape_html((article.get('title') or '')[:120])
     classes = f'article-card blog-card-animated {extra_classes}'.strip()
-    article_url = f'{SITE_BASE}/blog/articles/{article["slug"]}'
+    article_url = _abs_blog_url(f'blog/articles/{article["slug"]}.html')
     href = _article_href(article['slug'], href_prefix)
     return (
         f'<a href="{href}" class="{classes}" itemscope itemtype="https://schema.org/BlogPosting" '
@@ -627,7 +634,7 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
         date_obj = datetime.now()
     date_fr = date_obj.strftime('%d %B %Y')
 
-    page_url = f"{SITE_BASE}/blog/articles/{article['slug']}"
+    page_url = _abs_blog_url(f"blog/articles/{article['slug']}.html")
     share_twitter_url = 'https://twitter.com/intent/tweet?url=' + quote(page_url, safe='') + '&text=' + quote(article['title'], safe='')
     share_linkedin_url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + quote(page_url, safe='')
     keywords = ', '.join(article.get('tags', [])) or 'développement web, TypeScript, blog'
@@ -650,7 +657,7 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
             if coll.get('id') == series_id or coll.get('slug') == series_id:
                 series_title = coll.get('title', series_id)
                 slug = coll.get('slug', coll.get('id', series_id))
-                series_url = f"{SITE_BASE}/blog/series/{slug}"
+                series_url = _abs_blog_url(f"blog/series/{slug}.html")
                 series_html = f'<span class="sidebar-label">Série</span><a href="{series_url}" class="sidebar-series-link">' + _escape_html(series_title) + '</a>'
                 break
 
@@ -751,7 +758,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
         )
 
     meta_desc = 'Guides SEO local, visibilité Google et site vitrine pour artisans — plus articles techniques (Docker, Design Patterns) sur l’espace pro.'
-    page_url = f'{SITE_BASE}/blog'
+    page_url = _abs_blog_url('blog/index.html')
 
     # Bloc "A découvrir" : 4 articles (un par serie ou derniers)
     series_html = _series_featured_html(collections, articles)
@@ -844,7 +851,7 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
         )
 
     slug = collection.get('slug', collection.get('id', 'serie'))
-    page_url = f'{SITE_BASE}/blog/series/{slug}'
+    page_url = _abs_blog_url(f'blog/series/{slug}.html')
     title = collection.get('title', 'Serie')
     desc = collection.get('description', '')
     keywords = ', '.join({tag for a in items for tag in a.get('tags', [])}) or 'blog, série'
@@ -933,7 +940,7 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
                 _article_card_html(a, href_prefix='../articles/', heading_tag='h2')
             )
 
-        page_url = f'{SITE_BASE}/blog/types/{slug}'
+        page_url = _abs_blog_url(f'blog/types/{slug}.html')
         html = template.replace('{{TITLE}}', _escape_html(title))
         html = html.replace('{{DESCRIPTION}}', _escape_html(desc))
         html = html.replace('{{ARTICLES_GRID}}', '\n'.join(cards))
