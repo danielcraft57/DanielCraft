@@ -149,6 +149,11 @@ if (-not (Test-Path $placeholderPath)) {
 Write-ColorOutput "[1/4] Verification des fichiers dans $DIST_DIR/..." "Yellow"
 $filesToDeploy = @(
     "$DIST_DIR/index.html",
+    "$DIST_DIR/nos-offres.html",
+    "$DIST_DIR/contact.html",
+    "$DIST_DIR/pro.html",
+    "$DIST_DIR/404.html",
+    "$DIST_DIR/500.html",
     "$DIST_DIR/prestations/index.html",
     "$DIST_DIR/processus.html",
     "$DIST_DIR/metz.html",
@@ -273,6 +278,11 @@ try {
     # Transfert fichier par fichier avec scp depuis dist/
     $htmlFiles = @(
         "index.html",
+        "nos-offres.html",
+        "contact.html",
+        "pro.html",
+        "404.html",
+        "500.html",
         "processus.html",
         "metz.html",
         "portfolio.html",
@@ -387,6 +397,14 @@ Write-ColorOutput "=== Verification finale ===" "Yellow"
 $checkCmd = "test -f $ServerPath/index.html && echo 'OK: index.html present' || echo 'ERREUR: index.html manquant'"
 $checkResult = ssh "${ServerUser}@${ServerHost}" $checkCmd
 Write-Host $checkResult
+
+$checkPrettyUrlsCmd = "test -f $ServerPath/nos-offres.html -a -f $ServerPath/contact.html -a -f $ServerPath/pro.html && echo 'OK: nos-offres/contact/pro presentes' || echo 'ATTENTION: nos-offres/contact/pro manquantes'"
+$checkPrettyUrlsResult = ssh "${ServerUser}@${ServerHost}" $checkPrettyUrlsCmd
+Write-Host $checkPrettyUrlsResult
+
+$checkErrorsCmd = "test -f $ServerPath/404.html -a -f $ServerPath/500.html && echo 'OK: pages d erreur 404/500 presentes' || echo 'ATTENTION: pages 404/500 incomplètes'"
+$checkErrorsResult = ssh "${ServerUser}@${ServerHost}" $checkErrorsCmd
+Write-Host $checkErrorsResult
 
 # Vérifier que api/send-contact.php est présent (formulaire contact)
 $apiCheckCmd = "test -f $ServerPath/api/send-contact.php && echo 'OK: api/send-contact.php present' || echo 'ATTENTION: api/send-contact.php manquant (formulaire contact)'"

@@ -1,0 +1,10 @@
+{
+  "page_title": "Erreur serveur — DanielCraft",
+  "page_description": "Erreur temporaire du serveur. Revenez dans quelques instants ou contactez DanielCraft.",
+  "page_url": "/500",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "output_subpath": "500.html",
+  "schema_type": "error",
+  "page_scripts": ["main.js", "prestation-devis-modal.js"],
+  "page_robots": "noindex, nofollow"
+}
