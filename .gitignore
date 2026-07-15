@@ -13,6 +13,8 @@ ENV/
 
 # Instructions locales pour agents (non versionné)
 AGENT.md
+AGENTS.md
+agents.md
 
 # IDE
 .vscode/
