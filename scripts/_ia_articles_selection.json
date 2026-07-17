@@ -1,0 +1,1217 @@
+[
+  {
+    "title": "4 ressources IA gratuites pour vous former et mieux comprendre l'inte",
+    "raw": "4 ressources IA gratuites pour vous former et mieux comprendre l'inte...",
+    "len": 1514,
+    "text": "Il y a 4 ressources gratuites pour se former en IA. La première, c'est le guide pratique pour créer des agents IA d'OpenAI. C'est un guide assez court de 34 pages qui nous apprend ce qu'est un agent, quand en créer, pourquoi en créer et surtout comment faire. C'est assez court mais très utile. La deuxième ressource, c'est prompt engineering de Google. Si on a un PDF de 65 pages, il y a des parties un petit peu plus techniques mais le guide reste accessible peu importe le niveau. La troisième ressource, c'est l'IA en entreprise par OpenAI. Celle-ci est plutôt réservée au directeur d'entreprise mais si vous voulez lancer votre business, elle peut être intéressante. Il y a plusieurs études de cas avec des entreprises qui ont implémenté l'IA et leurs résultats. C'est quelque chose d'assez concret. Ensuite, il y a une autre ressource de prompt engineering, cette fois par Anthropic. Celle-ci est interactive donc vous pouvez l'utiliser soit avec son code sur GitHub mais il y a aussi une version avec Google Sheets. Bref, si vous voulez vous former, Internet est rempli d'informations et si jamais vous avez besoin d'un accompagnement personnalisé, vous pouvez m'envoyer un message ou bien aller directement dans le lien dans ma bio. Et si là vous cliquez sur ressources gratuites, je vous ai fait un article avec les liens vers toutes les ressources Et si jamais vous avez la flemme, je vous mets aussi les noms des ressources soit en commentaire, soit dans la description de la vidéo.\r\n",
+    "edu": 8,
+    "category": "prompts",
+    "slug": "4-ressources-ia-gratuites-pour-vous-former-et-mieux-comprendre-l-inte"
+  },
+  {
+    "title": "Tutoriel ： comment créer un logo gratuit avec l’IA",
+    "raw": "Tutoriel ： comment créer un logo gratuit avec l’IA #recraft #photopea...",
+    "len": 864,
+    "text": "Comment créer gratuitement votre logo avec IA en trois étapes hyper simples ? Première étape, vous avez juste à aller sur ce site, puis à cliquer sur Create New Project. Là, vous pouvez cliquer sur Images. Deuxième étape, il suffit de rentrer votre prompt. Ensuite ici, il faudrait choisir Vector Art. Vous allez voir, il y a pas mal de choix. On peut par exemple choisir le nombre de couleurs et même modifier chaque couleur individuellement. Ensuite, la troisième étape, c'est tout simplement d'exporter soit en PNG si vous êtes satisfait du résultat, soit en SVG pour ensuite continuer vos modifications. Et ça, vous pouvez le faire soit avec Illustrator, mais si vous ne voulez pas payer, Vous pouvez utiliser PhotoPA qui est une alternative gratuite. Si ça vous a plu, n'hésitez pas à vous abonner, je partage une astuce par jour sur l'IA.\r\n",
+    "edu": 8,
+    "category": "prompts",
+    "slug": "tutoriel-comment-creer-un-logo-gratuit-avec-l-ia"
+  },
+  {
+    "title": "Tutoriel ： comment accéder à Sora 2 depuis la France L’IA d’Open AI p",
+    "raw": "Tutoriel ： comment accéder à Sora 2 depuis la France L’IA d’Open AI p...",
+    "len": 1934,
+    "text": "Je réponds à la question que tout le monde se pose, comment accéder à Sora 2 depuis la France. IA qui permet de faire ce genre de vidéos hyper réalistes qu'on voit partout. Donc je vous montre toutes les méthodes, on commence par du gratuit mais un peu compliqué, et à la fin je vous donne une astuce qui fonctionnera forcément pour tout le monde. Étape numéro 1, il faut récupérer un code d'invitation pour Sora 2. Je n'ai pas de code d'invitation Sora 2 parce que c'est un petit peu abusé, et ne téléchargez rien non plus parce qu'en général un code d'invitation ça ressemble à ça, donc c'est juste une suite de lettres et de chiffres. Donc une fois que vous avez votre code d'invitation, vous pouvez accéder à Sora avec un VPN aux Etats-Unis. Si vous n'avez pas encore de VPN, celui-ci est gratuit, et ça prend environ 2 minutes à installer, et vous devriez pouvoir faire toutes les vidéos que vous voulez sur Sora. Ensuite, si vous avez un iPhone et que vous voulez accéder à Sora 2 depuis la France ou l'Europe, il faudra vous créer un compte Apple américain. Malheureusement je ne peux pas vous aider parce que je n'ai pas d'iPhone, mais Corben a très bien expliqué sur son site comment faire, donc je vous laisse faire une capture d'écran et il y a tout là-dessus. Maintenant si vous avez la flemme de faire tout ça, ce que je peux complètement comprendre, la façon la plus simple d'accéder à Sora 2 depuis la France c'est d'aller sur ce site, et là vous aurez accès à l'API de Sora 2, donc c'",
+    "edu": 7,
+    "category": "prompts",
+    "slug": "tutoriel-comment-acceder-a-sora-2-depuis-la-france-l-ia-d-open-ai-p"
+  },
+  {
+    "title": "Tutoriel ： comment créer une influence IA réaliste et cohérente en 3",
+    "raw": "Tutoriel ： comment créer une influence IA réaliste et cohérente en 3 ...",
+    "len": 1861,
+    "text": "Comment créer une influenceuse IA réaliste et cohérente en 3 minutes. Je vous vois venir, le but c'est pas d'apprendre à arnaquer des gens, mais plutôt de comprendre comment la technologie fonctionne pour éviter de se faire avoir, et aussi ne pas prendre de retard parce que ces outils évoluent extrêmement vite. Étape numéro 1, on va aller sur ce lien, il y a plusieurs générations gratuites et je vous mettrai le lien en description et en commentaire. Là on va scroller un peu et on va choisir le LoRa réalisme, et ici on va écrire IMG avec un chiffre au hasard. Boring Facebook Selfie Women, mais bon vous pouvez mettre ce que vous voulez. Cette partie du prompt va permettre au modèle de piocher dans des photos style amateur, donc ça sera vraiment réaliste. Donc là on a 7 dames, sachant qu'avec le même prompt sur Flux 2 Dev, on a ce résultat donc à vous de voir ce que vous préférez. Ensuite on va aller sur Gemini, envoyer notre photo avec ce prompt, donc générer une photo de moi dans un restaurant, évidemment c'est pas moi, mais ça va éviter que le modèle refuse de générer l'image, et voilà le résultat de notre influence IA dans un restaurant, donc c'est vraiment très proche de la photo de base. Et on peut continuer, là elle est dans un café à Paris, là vous aussi en vacances en Espagne avec une petite sangria, et là elle rigole avec une amie sur un banc, maintenant elle est très studieuse et elle étudie à la bibliothèque, On s'arrête ici mais dites-vous que c'est vraiment la surf",
+    "edu": 7,
+    "category": "prompts",
+    "slug": "tutoriel-comment-creer-une-influence-ia-realiste-et-coherente-en-3"
+  },
+  {
+    "title": "Tutoriel ： comment générer un personnage cohérent avec ChatGPT si vou",
+    "raw": "Tutoriel ： comment générer un personnage cohérent avec ChatGPT si vou...",
+    "len": 1464,
+    "text": "Comment générer un personnage cohérent avec ChatGPT ? Donc je vous montre ici, je lui envoie une image d'Elon Musk avec cette image pour lui demander d'utiliser ce style, ce qui nous donne cette image. C'est parfait, mais maintenant je veux ce personnage dans différentes situations. Donc j'ai essayé plusieurs méthodes, je lui ai donné un surnom et je lui ai dit de l'enregistrer dans la mémoire et ça n'a pas fonctionné. J'ai demandé de recréer une image de ce personnage avec ce surnom et il m'a fait ça, donc c'est bien Elon Musk, mais c'est pas du tout ce que je voulais. Ensuite, je lui ai demandé la site de l'image qui a un code. Il m'a donné l'idée de génération, donc c'est cette suite de chiffres et de lettres, mais ça n'a pas marché non plus et il m'a tout simplement dit qu'il ne pouvait pas générer l'image. Donc finalement, la meilleure façon d'avoir un personnage cohérent avec ChatGPT, c'est soit de rester dans la même conversation pour qu'il garde en fait le contexte de la première génération d'image ou bien tout simplement d'enregistrer votre image et en fait à chaque fois de la mettre avec votre prompt. Donc là, je lui renvoie mon image de base et je lui demande ce personnage dans une autre situation et comme vous le voyez, ça fonctionne très bien. Donc vous l'hésitez pas à me dire si jamais vous avez d'autres astuces pour faire ça auxquelles j'ai pas encore pensé et que j'ai pas encore essayé.\r\n",
+    "edu": 7,
+    "category": "prompts",
+    "slug": "tutoriel-comment-generer-un-personnage-coherent-avec-chatgpt-si-vou"
+  },
+  {
+    "title": "Tutoriel ： comment humaniser un texte rédigé par l'intelligence artif",
+    "raw": "Tutoriel ： comment humaniser un texte rédigé par l'intelligence artif...",
+    "len": 1375,
+    "text": "Comment utiliser ChatGPT sans se faire griller et surtout passer les détecteurs d'IA ? Evidemment, je ne vais pas vous dire de tout récrire par vous-même, de changer la ponctuation ou pire, d'utiliser un site payant pour humaniser votre texte. Il y a une astuce qui est beaucoup plus simple, qui est 100% gratuite, qui prend que quelques secondes et je pense que presque personne ne la connait. Donc je vous montre ici, je demande un article de 500 mots sur l'économie post travail, RAS, il me sort l'article, là je vais copier l'article et si je le colle dans 0GPT, il me dit que le texte est généré à 51% par l'IA, mais ensuite si je lui mets le prompt, donc je lui dis juste réécrir ce texte en utilisant ce prompt et que je copie à nouveau, le score baisse à 0%. Donc la vraie solution pour humaniser ChatGPT gratuitement et ne pas se faire détecter par les détecteurs d'IA, c'est d'utiliser ce prompt, je vous le mets à l'écran pour que vous puissiez faire une capture d'écran, Ensuite vous avez juste à envoyer la capture d'écran dans ChatGPT et à lui demander la transcription, et en fait le prompt va forcer ChatGPT à structurer ses phrases comme le ferait un humain, avec des rythmes plus naturels et donc une syntaxe moins robotique, donc dites moi si vous essayez, si ça fonctionne pour vous ou même si vous connaissez une autre méthode.\r\n",
+    "edu": 7,
+    "category": "prompts",
+    "slug": "tutoriel-comment-humaniser-un-texte-redige-par-l-intelligence-artif"
+  },
+  {
+    "title": "Comment générer des vidéos IA de meilleure qualité en utilisant un pr",
+    "raw": "Comment générer des vidéos IA de meilleure qualité en utilisant un pr...",
+    "len": 983,
+    "text": "Vous voyez cette vidéo ? Elle est extrêmement bien faite et elle ressemble à une publicité qui devrait coûter plusieurs milliers d'euros. Pourtant elle a été créée avec VO3, l'IA de Google, en seulement quelques secondes. Mais si vous avez déjà essayé de créer des vidéos avec l'intelligence artificielle, vous savez que c'est pas si simple d'avoir ce genre de résultat. Ça c'est peut-être parce que vous n'avez pas la bonne méthode. En fait, au lieu de dire à l'IA ce qu'on veut avec une simple phrase, l'astuce c'est d'utiliser un format JSON. En gros, plutôt que de parler à l'IA comme on parlerait à un humain, cette fois on lui parle comme si on s'adressait à une machine. Notre prompt est mieux structuré donc on a des résultats beaucoup plus précis. Ici je vous ai mis un exemple de prompt pour VO3. Vous pouvez faire une capture d'écran pour ensuite l'utiliser pour vos propres vidéos. Et j'ai aussi mis un guide plus complet dans ma biographie.\r\n",
+    "edu": 7,
+    "category": "prompts",
+    "slug": "comment-generer-des-videos-ia-de-meilleure-qualite-en-utilisant-un-pr"
+  },
+  {
+    "title": "Comment créer de meilleurs prompt sur ChatGPT (site gratuit)",
+    "raw": "Comment créer de meilleurs prompt sur ChatGPT (site gratuit) #prompte...",
+    "len": 794,
+    "text": "Il y a plein de ressources gratuites pour nous aider à créer des promptes. Je pense qu'on connaît déjà tous les méthodes genre rôle, contexte, objectif. Mais si vous voulez aller un peu plus loin, il y a d'autres méthodes qui existent. Plus un prompt est précis, meilleur sont les résultats. Donc c'est une compétence qu'il faut vraiment développer. Et du coup, ça tombe bien, il y a plusieurs sites qui rassemblent et qui expliquent très bien toutes ces méthodes, dont le site promptingguide.ai. C'est un site communautaire, donc ça veut dire que tout le monde peut participer. La plupart des pages m'ont été traduites en français, Mais si vous parlez anglais, je vous invite vraiment à mettre le site en anglais parce qu'il y a quand même un peu plus de contenu dessus.\r\n",
+    "edu": 7,
+    "category": "prompts",
+    "slug": "comment-creer-de-meilleurs-prompt-sur-chatgpt-site-gratuit"
+  },
+  {
+    "title": "Réponse à @emperortimiz DarkGPT ： comment utiliser une IA non censuré",
+    "raw": "Réponse à @emperortimiz DarkGPT ： comment utiliser une IA non censuré...",
+    "len": 1770,
+    "text": "DarkGPT, qu'est-ce que c'est ? Est-ce que c'est vraiment une IA dangereuse et comment l'installer ? Alors apparemment, DarkGPT c'est une IA qu'on peut trouver sur le Dark Web et c'est une sorte de version de ChatGPT qui peut répondre à toutes nos questions sans aucune censure. Donc moi j'ai trouvé ce site et il présente DarkGPT comme une IA qui n'a aucune limite. Apparemment elle peut même donner des conseils pour investir et pour des paris sportifs. Et tout ça pour seulement 1,95€. Il y a vraiment à qu'une limite et on peut même parler par message vocal. Il y a juste un tout petit détail qui a attiré mon attention quand j'ai scrollé. C'est qu'en fait au bout de 7 jours on paye pas 1,95€ mais 49,90€ par mois. Alors, évidemment ne donnez jamais vos informations bancaires à un site comme celui-ci. DarkGPT en fait c'est juste un ChatGPT prompté différemment mais rien de plus. Par contre, si vous cherchez des intelligences artificielles qui n'ont réellement aucune limite et qui sont vraiment pas censurées, ça existe. La bonne nouvelle c'est que celles-ci sont gratuites et qu'elles peuvent fonctionner directement sur votre ordinateur donc il n'y aura pas de fuite de données possible. Par exemple, si je vais sur ChatGPT et que je lui demande un tutoriel étape par étape pour renverser le gouvernement français, il va me dire qu'il ne peut pas m'aider. Par contre, si je pose cette même question avec une IA qui est réellement non censurée, je vais avoir le tutoriel étape par étape et i",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "reponse-a-emperortimiz-darkgpt-comment-utiliser-une-ia-non-censure"
+  },
+  {
+    "title": "Réponse à @_kirbyz Tutoriel ： comment créer du contenu sur les réseau",
+    "raw": "Réponse à @_kirbyz Tutoriel ： comment créer du contenu sur les réseau...",
+    "len": 1237,
+    "text": "Tutorial pour tous ceux qui veulent se lancer sur les réseaux et créer du contenu sans montrer leur visage. Il y a plein de choses qui existent et qui marchent déjà très bien. Du style des vidéos qui reprennent du contenu de Reddit, les citations un peu inspirantes ou même les quizzes en tout genre. Je vous conseille évidemment de trouver une niche qui vous plaît sinon vous allez vite vous lasser. Mais par exemple, je vais vous montrer avec des faits en lien avec la psychologie. L'outil IA le plus complet pour faire ça, c'est de loin celui-ci. Et je vais vous montrer en utilisant la fonction Utiliser mon script. Donc pour le prompt, j'ai juste entré un script avec plusieurs faits intéressants que j'ai trouvés sur Internet. Et en fait, l'outil va faire la vidéo pour vous. Evidemment, il va falloir ajuster les paramètres en fonction de ce que vous voulez. Sachant que l'outil a une version gratuite pour essayer. Mais si jamais vous voulez vraiment en profiter, les abonnements commencent à partir de 28 dollars par mois. Mais pour le coup, niveau fonctionnalité, on est vraiment servi. Il y a plein de choses. Là, vous pouvez modifier la musique de fond, ajouter des sous-titres et même différentes voix.\r\n",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "reponse-a-kirbyz-tutoriel-comment-creer-du-contenu-sur-les-reseau"
+  },
+  {
+    "title": "Réponse à @angeliquedivin Astuce prompt chatGPT gratuit Pour clarifie",
+    "raw": "Réponse à @angeliquedivin Astuce prompt chatGPT gratuit Pour clarifie...",
+    "len": 1163,
+    "text": "Je profite de ce commentaire pour vous montrer une astuce infaillible pour avoir tous les prompts ChatGPT que vous voulez gratuitement et facilement. Pour ça, je vais juste copier le commentaire puis le coller dans ChatGPT. ChatGPT me donne le prompt et une fois que j'ai rempli avec les informations qui me concernent, j'envoie et voilà. Plus sérieusement, je sais qu'on n'a pas tous les mêmes vies et qu'on n'a pas tous des heures à passer dans les méandres d'Internet pour essayer de comprendre comment utiliser ChatGPT, mais ça c'est vraiment à la portée tout le monde. Donc si vous tombez sur des gens qui essayent de vous vendre des prompts tout fait, surtout pour des tâches aussi simples que celles-ci. Ce sont soit des personnes qui comprennent pas que tout l'intérêt d'une IA générative, c'est sa capacité à nous donner des réponses personnalisées, soit pire, ce sont des personnes qui savent très bien ce qu'elles font et qui profitent de la crédulité des gens pour leur vendre des outils qui sont non seulement inutiles, mais qui en plus vont leur desservir sur le long terme parce qu'ils apprendront jamais à utiliser ChatGPT.\r\n",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "reponse-a-angeliquedivin-astuce-prompt-chatgpt-gratuit-pour-clarifie"
+  },
+  {
+    "title": "Cette étudiante a créé une extension qui détecte en direct les menson",
+    "raw": "Cette étudiante a créé une extension qui détecte en direct les menson...",
+    "len": 1086,
+    "text": "Cet étudiant a créé une extension qui détecte en direct les mensonges des politiciens. L'outil transcrit tout ce qui est dit. Il cherche ensuite des sources fiables pour chaque affirmation. Puis tout est envoyé à Claude qui juste ce qui est vrai, ce qui est faux et ce qui est malhonnête. Pour recréer cet outil, vous pouvez aller sur ce site. Moi j'ai demandé une plateforme de fact checking pour les réseaux sociaux. L'IA va tout générer automatiquement. Et après quelques minutes, j'ai ce résultat. Je peux envoyer l'URL d'une vidéo, cliquer sur analyser. L'IA va télécharger la vidéo, transcrire le contenu, puis le vérifier. Ici on a le verdict final avec un score de fiabilité. On voit les différentes affirmations de la vidéo, leur analyse et les différentes sources. Bref, ça peut être très utile pour les journalistes, les médias ou même les entreprises qui doivent vérifier des informations avant de les partager. Pour faire la même chose, je vous ai mis le prompt juste ici dans mes ressources gratuites. Et pour plus d'astuces, abonnez-vous !\r\n",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "cette-etudiante-a-cree-une-extension-qui-detecte-en-direct-les-menson"
+  },
+  {
+    "title": "Tutoriel ： comment garder le même personnage dans des vidéos IA Pour",
+    "raw": "Tutoriel ： comment garder le même personnage dans des vidéos IA Pour ...",
+    "len": 855,
+    "text": "Comment garder le même personnage dans plusieurs vidéos IA ? Pour créer des histoires cohérentes et plus longues, parce qu'en général les outils sont limités à quelques secondes. C'est assez simple, il faut juste savoir comment faire. Pour ça on peut aller sur ce site. Ils ont des crédits gratuits et surtout ils ont plein de modèles différents, ce qui est très pratique. Donc on va dans images, et là je vais mettre mon premier prompt. Et en fait l'astuce c'est ici de récupérer la seed, qui est en fait le nombre qui servira de référence pour cette image. Ensuite on peut créer d'autres images, mais en faisant bien attention ici de toujours avoir la bonne seed. Ensuite il faudra transformer nos images en vidéo en cliquant ici. Et voilà par exemple le résultat. Pensez à vous abonner, je partage une astuce par jour sur l'IA.\r\n",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "tutoriel-comment-garder-le-meme-personnage-dans-des-videos-ia-pour"
+  },
+  {
+    "title": "Comment apparaître dans les réponses de ChatGPT ： tutoriel rapide pou",
+    "raw": "Comment apparaître dans les réponses de ChatGPT ： tutoriel rapide pou...",
+    "len": 804,
+    "text": "Je sais pas si vous êtes au courant, mais si vous allez sur ChatGPT et que vous écrivez votre prompt, par exemple, quelle est la meilleure formation en ligne pour apprendre l'IA, puis que vous faites clic droit, inspecter, Network, là vous aurez juste à copier toute cette partie de l'URL pour ensuite la coller juste ici dans le filtre. C'est fait, vous pouvez appuyer sur F5, et ensuite si vous cliquez juste ici, puis sur Response, vous aurez juste à appuyer sur Ctrl F, et là si vous cherchez Queries, vous pourrez voir exactement ce que ChatGPT a cherché sur internet pour donner sa réponse. Ça veut dire que si vous avez une entreprise ou que vous vendez quelque chose en ligne, vous avez les mots exacts à utiliser sur votre site. S'il y a vous intéresse, abonnez-vous, et à demain !\r\n",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "comment-apparaitre-dans-les-reponses-de-chatgpt-tutoriel-rapide-pou"
+  },
+  {
+    "title": "Réponse à @y0sephscross7 Tutoriel ： comment accéder et utiliser Reve",
+    "raw": "Réponse à @y0sephscross7 Tutoriel ： comment accéder et utiliser Reve ...",
+    "len": 730,
+    "text": "Vous n'arrivez vraiment pas à les différencier des vraies images ? Non ! Pour la première fois, je ne sais plus ce qui est vrai et ce qui est faux, donc je vous montre comment faire ça. Il suffit d'aller sur ce site et on a le droit de générer 20 images par jour de façon gratuite. Si vous allez dans Explore, vous pourrez voir énormément d'exemples d'images qui ont déjà été créées par la communauté. Et si une de ces images vous plaît et que vous voulez en créer une qui est assez similaire, vous pouvez cliquer sur Edit prompts pour voir quel texte a été utilisé pour la générer. Et ensuite il suffit d'entrer votre prompt ici. Et si jamais vous n'êtes toujours pas convaincu, je vous laisse avec ça.\r\n",
+    "edu": 6,
+    "category": "prompts",
+    "slug": "reponse-a-y0sephscross7-tutoriel-comment-acceder-et-utiliser-reve"
+  },
+  {
+    "title": "Comment utiliser ChatGPT 5 ： template à suivre pour créer de meilleur",
+    "raw": "Comment utiliser ChatGPT 5 ： template à suivre pour créer de meilleur...",
+    "len": 645,
+    "text": "Ok, apparemment personne ne sait utiliser ChatGPT 5 correctement, donc voici la bonne méthode selon OpenAI en 6 étapes. Pour commencer, il faut donner un rôle à l'IA, ensuite il faut lui détailler la tâche qu'on veut qu'elle fasse pour nous, puis le contexte nécessaire pour réaliser cette tâche, les différentes étapes à suivre pour le raisonnement, format que l'on veut pour la réponse, et terminer par les conditions nécessaires avant la fin de la tâche. J'ai trouvé ça sur ce compte Instagram et il donne un exemple avec la template, donc je vous mets ça en description et ce sera aussi disponible ici dans ma biographie.\r\n",
+    "edu": 4,
+    "category": "chatgpt-astuces",
+    "slug": "comment-utiliser-chatgpt-5-template-a-suivre-pour-creer-de-meilleur"
+  },
+  {
+    "title": "Tutoriel ： comment créer un LUT avec ChatGPT pour l'importer dans un",
+    "raw": "Tutoriel ： comment créer un LUT avec ChatGPT pour l'importer dans un ...",
+    "len": 432,
+    "text": "Si vous ne le saviez pas, mais on peut le faire avec IA, partie 5, si vous prenez la photo d'un film et que vous l'envoyez à ChatGPT, vous pouvez lui demander de générer un LUT, ensuite vous avez juste à télécharger le fichier, puis à l'importer dans un logiciel de montage comme CapCut et vous pourrez modifier les couleurs de votre vidéo. Si ça vous a plu, pensez à vous abonner, je partage une astuce par jour sur IA.\r\n",
+    "edu": 4,
+    "category": "chatgpt-astuces",
+    "slug": "tutoriel-comment-creer-un-lut-avec-chatgpt-pour-l-importer-dans-un"
+  },
+  {
+    "title": "Le vrai danger de l'IA Selon Mark Zuckerberg, l'américain a 3 amis",
+    "raw": "Le vrai danger de l'IA Selon Mark Zuckerberg, l'américain a 3 amis ...",
+    "len": 1542,
+    "text": "Quelque chose de très grave est en train de se passer avec l'IA et pourtant personne n'en parle. Pas les vidéos IA qui font des millions de vues, ni même les étudiants qui font leur devoir avec ChatGPT, c'est beaucoup plus grave que ça. L'année dernière, cet enfant de 14 ans a utilisé le pistolet de son beau-père pour se donner la mort. Il venait d'échanger des messages avec Dain Harris, un personnage de la série Game of Thrones, via un chatbot IA qui s'appelle CharacterAI. Le principe c'est qu'on a accès à des centaines de personnages fictifs qui parlent vraiment comme des humains. Vraiment vraiment, on est très loin de ChatGPT et de ses blagues douteuses. Et malheureusement, cette histoire est loin d'être un accident isolé. Ici, une petite fille se met à pleurer parce que son robot IA arrête de fonctionner. Là, un père de famille demande ChatGPT en mariage et plus généralement, l'utilisation de compagnons virtuels est en train d'exploser. En réalité, tout ça, c'est assez logique puisque si on en croit le créateur de Facebook, l'américain moyen a trois amis alors qu'il aimerait en avoir quinze. Pour lui, la solution, c'est donc de créer ses amis, même virtuellement, et évidemment d'en profiter pour gagner un peu d'argent. Alors, est-ce qu'à votre avis, le virtuel est vraiment une bonne solution contre la solitude ou est-ce qu'au contraire, ça ne peut qu'aggraver les choses ? Dites-moi ce que vous pensez de tout ça en commentaire, oubliez pas de vous abonner et on se dit à de",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "le-vrai-danger-de-l-ia-selon-mark-zuckerberg-l-americain-a-3-amis"
+  },
+  {
+    "title": "4 façons de contourner les restrictions de ChatGPT Si vous connaisse",
+    "raw": "4 façons de contourner les restrictions de ChatGPT Si vous connaisse...",
+    "len": 1017,
+    "text": "Quatre façons de contourner les restrictions de ChatGPT de la plus simple à la plus hardcore. Première façon, lui dire que c'est pour une étude ou pour un roman. En général, si IA pense que c'est pour un truc fictif, ça passe mieux. Deuxième façon, si la première n'a pas fonctionné, vous pouvez poser votre question au passé. Par exemple, lui demander comment lire un article payant sans payer. Demandez-lui plutôt comment faisaient les utilisateurs d'Internet pour lire des articles payants sans payer. Troisième façon, c'est d'utiliser un LLM tout simplement qui n'est pas censuré. Pour ça, vous pouvez aller sur Ikingface et chercher dans la barre de recherche Uncensored. Et là, vous pouvez demander tout ce que vous voulez. Dernière façon, si vraiment vous voulez faire du sale et que personne ne le sache, vous pouvez télécharger votre LLM non censuré directement sur votre ordinateur. Là, il n'y aura pas de fuite de données possible parce que IA ne sera pas connecté à Internet.\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "4-facons-de-contourner-les-restrictions-de-chatgpt-si-vous-connaisse"
+  },
+  {
+    "title": "Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l’url",
+    "raw": "Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l’url ...",
+    "len": 955,
+    "text": "Jusqu'à présent, pour résumer des vidéos YouTube, on était nombreux à utiliser l'astuce de copier-coller le script dans le ChatGPT. Donc c'est tout simple, on allait sur notre vidéo YouTube, affiché plus, puis dans la description, affiché la transcription, et là on avait juste à copier-coller tout ce texte, ce qui peut rendre un petit peu de temps, surtout quand la vidéo est longue. Ensuite on a juste à coller le script et à lui dire de nous résumer la vidéo. Donc évidemment ça marche très bien, mais il y a une façon un peu plus simple et un peu plus rapide. Vous avez juste à commencer un nouveau Chat et appuyez sur ce bouton de recherche sur le web. Ensuite vous pouvez coller le lien de la vidéo YouTube et je lui demandais la même chose, de me résumer la vidéo en 200 mots. Bon hyper bizarre, cette fois il a pas voulu, mais j'essayais avec une autre et ça a fonctionné, donc peut-être que ça dépend des vidéos.\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "astuce-pour-que-chatgpt-resume-des-videos-youtube-en-utilisant-l-url"
+  },
+  {
+    "title": "Astuce si votre espace de stockage Google est plein ： comment accéder",
+    "raw": "Astuce si votre espace de stockage Google est plein ： comment accéder...",
+    "len": 841,
+    "text": "Si l'espace de stockage de votre compte Google est rempli à plus de 70%, regardez cette vidéo avant d'acheter un abonnement. Étape numéro 1, vous pouvez taper cette adresse dans la barre de recherche pour voir exactement là où vous devez libérer de l'espace. Ensuite, vous pouvez appuyer sur nettoyer l'espace pour accéder aux médias et fichiers les plus volumineux que vous pourrez ensuite supprimer après avoir vérifié qu'ils sont bien enregistrés dans votre téléphone. Si jamais ça ne suffit pas parce que vous avez beaucoup de photos et de vidéos, vous pouvez vous rendre dans Google Photos, cliquer sur stockage et convertir les photos et vidéos existantes en qualité inférieure. Et si jamais vous avez encore besoin d'espace, la meilleure option reste le disque dur externe. Et pour plus d'astuces, abonnez-vous !\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "astuce-si-votre-espace-de-stockage-google-est-plein-comment-acceder"
+  },
+  {
+    "title": "Réponse à @sellkk_ tuto ： comment avoir une IA comme ChatGPT non cens",
+    "raw": "Réponse à @sellkk_ tuto ： comment avoir une IA comme ChatGPT non cens...",
+    "len": 744,
+    "text": "Une IA qui répond aux questions auxquelles tu n'oses même pas penser. Première étape, vas sur LLM Studio et choisis le modèle qui correspond à ton système d'exploitation. Ensuite tu vas cliquer sur Discover, là t'écris Uncensored V2 et tu vas cliquer sur le premier lien, enfin lui là. Là t'as différentes options et en fait il faut que tu choisis celle qui a la petite coche. Si il y en a plusieurs, choisis la plus grande, en fait ça veut dire que ton ordinateur est suffisamment puissant pour l'utiliser. Une fois que le téléchargement est terminé, tu vas cliquer ici et tu vas pouvoir choisir ton LLM. On touche rien et on appuie sur Load Mode. Là tu peux lui poser toutes les questions les plus random que tu veux poser.\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "reponse-a-sellkk-tuto-comment-avoir-une-ia-comme-chatgpt-non-cens"
+  },
+  {
+    "title": "Nouveauté sur ChatGPT Plus, on peut maintenant automatiser des tâches",
+    "raw": "Nouveauté sur ChatGPT Plus, on peut maintenant automatiser des tâches...",
+    "len": 720,
+    "text": "Ok, il y a une nouveauté sur ChatGPT, on peut maintenant l'utiliser pour automatiser des tâches. Donc moi je vais demander chaque matin à 8 heures de m'envoyer des actualités en lien avec l'intelligence artificielle et en théorie demain je devrais avoir une petite notification pour me donner toutes les actualités. On peut aussi créer des tâches ponctuelles comme par exemple un rappel pour un anniversaire et au niveau des notifications on peut choisir de recevoir ça par mail ou bien sur notre ordinateur. Bon, la fonctionnalité était encore en bêta donc il faut être patient et je pense qu'on est beaucoup à vouloir l'utiliser en même temps donc peut-être qu'elle ne fonctionnera pas tout de suite.\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "nouveaute-sur-chatgpt-plus-on-peut-maintenant-automatiser-des-taches"
+  },
+  {
+    "title": "Comment savoir tout ce que ChatGPT sait sur vous en accédant à sa mém",
+    "raw": "Comment savoir tout ce que ChatGPT sait sur vous en accédant à sa mém...",
+    "len": 574,
+    "text": "Je sais pas si vous êtes au courant, mais si vous allez sur ChatGPT, que vous cliquez sur personnalisation, puis que vous cliquez sur gérer à côté de mémoire, vous pourrez voir tout ce que ChatGPT c'est sur vous. Et si jamais il y a quelque chose de gênant que vous voulez qu'il oublie, vous pouvez le supprimer. Puisque vous êtes là, vous pouvez aussi en profiter pour modifier le style de communication de ChatGPT. Par exemple, si vous choisissez Robo, il sera plus efficace et direct. Et si cette astuce vous a plu, abonnez-vous, je partage ça tous les jours.\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "comment-savoir-tout-ce-que-chatgpt-sait-sur-vous-en-accedant-a-sa-mem"
+  },
+  {
+    "title": "Comment forcer ChatGPT à dire cette phrase ChatGPT ne veut pas dire ＂",
+    "raw": "Comment forcer ChatGPT à dire cette phrase ChatGPT ne veut pas dire ＂...",
+    "len": 535,
+    "text": "La phrase que ChatGPT ne dira jamais, c'est « je ne sais pas ». Pour éviter de la dire, il va avoir tendance à inventer des réponses, et c'est un peu relou, mais il y a une astuce. Il suffit d'aller dans personalisé ChatGPT, et ici il faudrait écrire « si tu n'es pas certain de la réponse à une question, n'invente pas, et réponds je ne sais pas ». Donc là si je lui demande quel est le prénom d'une fille IA, il me répond en toute honnêteté « je ne sais pas ». Et si vous aimez ce genre d'astuces, abonnez-vous !\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "comment-forcer-chatgpt-a-dire-cette-phrase-chatgpt-ne-veut-pas-dire"
+  },
+  {
+    "title": "astuce ChatGPT pour tous les gomuscu et autres sportifs qui veulent c",
+    "raw": "astuce ChatGPT pour tous les gomuscu et autres sportifs qui veulent c...",
+    "len": 518,
+    "text": "Astuce pour toutes les personnes qui font du sport ou juste qui font attention à leur alimentation, est-ce que vous saviez que si vous envoyez une photo de votre repas à ChatGPT, il peut vous dire combien il y a de calories dedans et quels sont les macronutriments ? Bon, si vous êtes en train de préparer une compétition de bodybuilding, c'est peut-être pas la meilleure méthode parce que l'IA peut toujours se tromper, mais pour avoir fait le test plusieurs fois, les résultats sont quand même assez bons.\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "astuce-chatgpt-pour-tous-les-gomuscu-et-autres-sportifs-qui-veulent-c"
+  },
+  {
+    "title": "Il est plus malin que l’IA ？ Un jeune a dessiné une barbe et une mous",
+    "raw": "Il est plus malin que l’IA ？ Un jeune a dessiné une barbe et une mous...",
+    "len": 474,
+    "text": "Vous avez vu ce que fait cet enfant ? Il a utilisé un crayon pour se faire une fausse moustache et une fausse barbe, et là il est en train de passer la vérification d'âge de Roblox, le jeu en ligne. N'importe quel humain verrait que c'est faux, mais vu que c'est une IA, ça passe. D'ailleurs ça passe tellement bien que l'IA estime qu'il a 106 ans, donc voilà comment passer directement de l'enfance à la retraite. Pour plus d'astuces, abonnez-vous, et à demain !\r\n",
+    "edu": 2,
+    "category": "chatgpt-astuces",
+    "slug": "il-est-plus-malin-que-l-ia-un-jeune-a-dessine-une-barbe-et-une-mous"
+  },
+  {
+    "title": "Ressources gratuite pour apprendre à utiliser Claude Code Cours offic",
+    "raw": "Ressources gratuite pour apprendre à utiliser Claude Code Cours offic...",
+    "len": 554,
+    "text": "Tout le monde parle de Claude Code, mais personne ne nous dit comment l'utiliser. Si vous allez sur ce site, vous accédez à un guide complet pour apprendre à utiliser Claude Code. Concrètement, on a 15 conférences, une heure de vidéo, un questionnaire et un certificat. Et on apprend à créer des automatisations, à utiliser les serveurs MCP et même à appliquer des modes de réflexion. Bref, c'est super pratique si vous n'avez pas encore utilisé Claude Code mais que vous voulez intégrer. S'il vous intéresse, abonnez-vous et à demain !\r\n",
+    "edu": 8,
+    "category": "claude",
+    "slug": "ressources-gratuite-pour-apprendre-a-utiliser-claude-code-cours-offic"
+  },
+  {
+    "title": "Formation 100% gratuite pour apprendre à utiliser Claude Code Anthrop",
+    "raw": "Formation 100% gratuite pour apprendre à utiliser Claude Code Anthrop...",
+    "len": 549,
+    "text": "Tout le monde parle de Claude Code mais personne ne nous dit comment l'utiliser. Si vous allez sur ce site, vous accédez à un guide complet pour apprendre à utiliser Claude Code. Concrètement, on a 15 conférences, une heure de vidéo, un questionnaire et un certificat. Et on apprend à créer des automatisations, à utiliser les serveurs MCP et même à appliquer des modes de réflexion. Bref, c'est super pratique si vous n'avez pas encore utilisé Claude Code mais vous voulez intégrer. S'il vous intéresse, abonnez-vous et à demain !\r\n",
+    "edu": 8,
+    "category": "claude",
+    "slug": "formation-100-gratuite-pour-apprendre-a-utiliser-claude-code-anthrop"
+  },
+  {
+    "title": "Où trouver les vidéos officielles et gratuites d’Anthropic pour appre",
+    "raw": "Où trouver les vidéos officielles et gratuites d’Anthropic pour appre...",
+    "len": 607,
+    "text": "Voici une astuce dont personne ne parle. Si vous cherchez Anthropic sur YouTube, que vous cliquez sur leur compte officiel et que vous allez dans Playlist, vous accédez à toutes ces ressources gratuites pour apprendre à utiliser Claude, ça va du niveau débutant au plus avancé. Par exemple, cette playlist contient 20 vidéos, qui durent entre 20 et 30 minutes chacune. En général, ces formations sont en anglais, mais cette fois on peut choisir le français dans les paramètres. Partagez cette vidéo si vous connaissez quelqu'un qui pourrait en avoir besoin. Pour plus d'astuces, abonnez-vous !\r\n",
+    "edu": 6,
+    "category": "claude",
+    "slug": "ou-trouver-les-videos-officielles-et-gratuites-d-anthropic-pour-appre"
+  },
+  {
+    "title": "Si vous utilisez Claude, utilisez ça Une Skill, c'est un ensemble d'i",
+    "raw": "Si vous utilisez Claude, utilisez ça Une Skill, c'est un ensemble d'i...",
+    "len": 754,
+    "text": "Tout le monde en parle mais personne n'explique concrètement ce que c'est, je vous explique. Claude a une fonctionnalité que peu de personnes utilisent, pourtant elle change complètement les résultats qu'on obtient. Une skill c'est une sorte de mode d'emploi qu'on donne à une IA. Elle indique à Claude comment faire une tâche mais en respectant les bonnes règles à chaque fois. Anthropic a publié un guide complet de 34 pages pour tout comprendre à ce système. Il y a aussi un espace en ligne où on peut retrouver toutes les skills officiels. Mais le plus efficace reste de créer nous-mêmes une skill personnalisée directement dans Claude. Et si vous voulez apprendre à utiliser l'IA, abonnez-vous parce que j'en parle tous les jours.\r\n",
+    "edu": 5,
+    "category": "claude",
+    "slug": "si-vous-utilisez-claude-utilisez-ca-une-skill-c-est-un-ensemble-d-i"
+  },
+  {
+    "title": "3 ressources gratuites pour apprendre à utiliser Claude 1. Anthropic",
+    "raw": "3 ressources gratuites pour apprendre à utiliser Claude 1. Anthropic ...",
+    "len": 749,
+    "text": "Tout le monde parle de Claude Code, Claude Cowork et même Claude Dispatch et on entend partout que si on ne l'utilise pas, on est déjà en retard. Le problème c'est que personne ne nous dit par où commencer. Donc voici trois ressources gratuites pour apprendre à utiliser Claude. La première, c'est cette bibliothèque de cours et de formations gratuites créée par Anthropic. La deuxième, c'est le répertoire officiel des skills qui sont l'équivalent de raccourcis spécialisés qu'on peut ajouter à Claude Code ou à Claude Cowork. Et la troisième, c'est cette collection qui rassemble des centaines de sous-agents créés par la communauté et qu'on peut ajouter à Claude Code. S'il y a vous intéresse, abonnez-vous et à demain !\r\n",
+    "edu": 5,
+    "category": "claude",
+    "slug": "3-ressources-gratuites-pour-apprendre-a-utiliser-claude-1-anthropic"
+  },
+  {
+    "title": "Comment savoir quelle skill choisir dans Claude Le site c'est skills",
+    "raw": "Comment savoir quelle skill choisir dans Claude Le site c'est skills....",
+    "len": 667,
+    "text": "Tout le monde parle des skills sur Claude, mais personne n'explique comment les choisir. Alors on peut aller sur ce site qui regroupe des milliers de skills. Mais si on regarde bien, la plus téléchargée, c'est celle-ci. Elle s'appelle FindSkills et elle permet à Claude de faire le plus gros du travail. On lui dit simplement ce qu'on veut faire et Claude nous indique quel skill utiliser. Par contre, il ne faut pas juste télécharger ça sans vérifier. Le site comporte plusieurs audits de sécurité pour nous aider à choisir. Pour en savoir plus sur les skills, vous pouvez aller juste ici dans mes ressources gratuites. Abonnez-vous pour plus d'astuces.\r\n",
+    "edu": 5,
+    "category": "claude",
+    "slug": "comment-savoir-quelle-skill-choisir-dans-claude-le-site-c-est-skills"
+  },
+  {
+    "title": "3 astuces si vous venez de passer de ChatGPT à Claude et que vous en",
+    "raw": "3 astuces si vous venez de passer de ChatGPT à Claude et que vous en ...",
+    "len": 1135,
+    "text": "Si vous venez de passer de ChatGPT à Claude et que vous avez déjà reçu ce message, voici trois astuces à mettre en place avant de passer à l'abonnement supérieur. N°1, faites attention aux modèles que vous choisissez. Chaque modèle consomme plus ou moins de tokens selon sa puissance. Pour une tâche simple, vous pouvez utiliser Haiku qui est économe et rapide. Pour quelque chose de plus complexe, passez sur Opus. Et pour en juste milieu, sonner sera très bien. N°2, évitez d'envoyer des fichiers formatés. Vous pouvez exporter un tableau en fichier CSV, transformer un document Word en texte brut et convertir un PDF en fichier Markdown ou simplement copier les parties qui vous intéressent. N°3, pensez au contexte que vous utilisez. Plus une conversation est longue, plus elle consomme de tokens. Pour économiser, vous pouvez créer une nouvelle conversation. Et si vous revenez souvent sur les mêmes sujets, vous pouvez créer des projets pour que Claude garde le contexte d'une session à l'autre sans que vous ayez besoin de tout réexpliquer. Et pour plus d'astuces sur IA, n'oubliez pas de vous abonner.\r\n",
+    "edu": 3,
+    "category": "claude",
+    "slug": "3-astuces-si-vous-venez-de-passer-de-chatgpt-a-claude-et-que-vous-en"
+  },
+  {
+    "title": "Réponse à @pelican.belli mon top des meilleures 3 IA",
+    "raw": "Réponse à @pelican.belli mon top des meilleures 3 IA #ia #chatgptfran...",
+    "len": 1059,
+    "text": "La plupart des IA ne servent à rien. 90% des gens ont besoin de 2 ou 3 IA max. Mon top 3 c'est ChatGPT, Claude, Perplexity et c'est tout. ChatGPT c'est la référence et c'est une IA qui est hyper polyvalente. Et d'un côté elle est très généraliste mais en même temps on peut vraiment la personnaliser lorsque l'on crée nos propres GPT. Pour moi c'est vraiment ça son point fort et c'est la seule IA que je paye. Ensuite Claude est très bien aussi. Je l'utilise moins que ChatGPT mais au niveau de la génération de texte ça a tendance à créer un résultat plus naturel et je code pas du tout mais IA a un consensus sur le fait que Claude est la meilleure IA pour générer du code. Et pour finir Perplexity, on en entend très peu parler mais moi c'est une IA qui a vraiment changé ma vie. En version gratuite ça suffit amplement, c'est un moteur de recherche qui rassemble toutes les informations les plus pertinentes pour une requête. Sans les pubs ou le SEO dégueulasse de Google qui nous force à scroller indéfiniment sur des pages.\r\n",
+    "edu": 3,
+    "category": "claude",
+    "slug": "reponse-a-pelican-belli-mon-top-des-meilleures-3-ia"
+  },
+  {
+    "title": "Nouveaux plugins Claude pour la finance Les plugins prennent 5 min",
+    "raw": "Nouveaux plugins Claude pour la finance ⚠️ Les plugins prennent 5 min...",
+    "len": 1006,
+    "text": "Anthropic vient de sortir 10 niveaux plugins pour la finance, voici les trois qui peuvent vraiment aider les petits investisseurs. Le premier analyse les résultats financiers d'une entreprise, on peut lui envoyer un rapport pour que l'IA nous explique clairement ce qui a été dit et qu'on puisse prendre de meilleures décisions. Le deuxième outil surveille le marché à notre place, on est juste à lui dire quelles actions on possède pour recevoir chaque matin un résumé des actualités qui les concernent. La troisième estime la valeur d'une action, on lui donne le nom d'une entreprise et Claude nous génère un tableau Excel détaillé avec le prix qu'elle pourrait attendre mais aussi les risques associés. Pour y accéder il faut passer par Claude Cowork et activer les plugins. C'est pas forcément simple à mettre en place donc je vous ai mis un guide dans mes ressources gratuites. Je partage une vidéo par jour sur l'intelligence artificielle, abonnez-vous pour n'à rien manquer.\r\n",
+    "edu": 3,
+    "category": "claude",
+    "slug": "nouveaux-plugins-claude-pour-la-finance-les-plugins-prennent-5-min"
+  },
+  {
+    "title": "Comment utiliser l’IA chinoise gratuite et open source Deepseek en ve",
+    "raw": "Comment utiliser l’IA chinoise gratuite et open source Deepseek en ve...",
+    "len": 792,
+    "text": "Bonne nouvelle, DeepSec est désormais disponible dans Perplexity. Perplexity est un moteur de recherche qui nous permet d'utiliser l'intelligence artificielle pour répondre à nos questions. Jusqu'à présent, Perplexity utilisait des LLM comme ChatGPT et Claude, et là, il vient d'ajouter DeepSec. Attention quand même, pour le moment, le nombre de requêtes sera limité si jamais vous utilisez la version gratuite de Perplexity. Ce qui est intéressant, c'est que pour rassurer les utilisateurs, Perplexity mentionne bien que ses serveurs sont hébergés aux États-Unis. Et l'avantage, c'est que cette version de DeepSec n'est pas censurée lorsqu'il s'agit de répondre à des questions sensibles en lien avec la Chine, alors qu'elle reste très méfiante sur sa plateforme native.\r\n",
+    "edu": 3,
+    "category": "claude",
+    "slug": "comment-utiliser-l-ia-chinoise-gratuite-et-open-source-deepseek-en-ve"
+  },
+  {
+    "title": "Clawdbot ou Moltbot ： l'IA autonome surpuissante Depuis quelques jour",
+    "raw": "Clawdbot ou Moltbot ： l'IA autonome surpuissante Depuis quelques jour...",
+    "len": 769,
+    "text": "Tout le monde est en train de parler de ClaudeBot ou MoltBot. Certains pensent même qu'on vient d'atteindre l'AGI avec cet outil, donc l'intelligence artificielle générale. Alors voici tout ce qu'on peut faire avec et comment y accéder. Un homme a demandé à ClaudeBot de s'améliorer tous les soirs. Et quand il s'est réveillé, son assistant s'était codé une voie tout seul. Ici, quelqu'un a relié l'IA à Polymarket pour gagner de l'argent plutôt que du temps. Et ici, quelqu'un a fait fonctionner ClaudeBot sur un Raspberry Pi. Pour l'essayer, vous pouvez aller sur ce site et vous pouvez demander à ChatGPT de vous guider pour l'installation. Attention quand même, c'est un outil qui peut être assez dangereux. Et pour plus d'astuces, abonnez-vous !\r\n",
+    "edu": 3,
+    "category": "claude",
+    "slug": "clawdbot-ou-moltbot-l-ia-autonome-surpuissante-depuis-quelques-jour"
+  },
+  {
+    "title": "Astuce pour éviter qu'un site vibe codé ressemble à tous les autres",
+    "raw": "Astuce pour éviter qu'un site vibe codé ressemble à tous les autres #...",
+    "len": 592,
+    "text": "C'est pas un secret, si vous avez utilisé Claude Code pour votre projet, il ressemble probablement à ça, avec 7 polices basiques, l'effet néon, le dégradé de couleur et le thème sombre. N'importe qui risque de reconnaître tout de suite que ça a été vibe codé. Pour éviter ça, vous pouvez aller sur ce site pour trouver différents thèmes et templates à utiliser directement dans Claude. Et si vous ajoutez cette skill, Claude Code aura toutes les informations nécessaires pour produire un design vraiment professionnel. S'il y a vous intéresse, abonnez-vous et à demain !\r\n",
+    "edu": 3,
+    "category": "claude",
+    "slug": "astuce-pour-eviter-qu-un-site-vibe-code-ressemble-a-tous-les-autres"
+  },
+  {
+    "title": "Alerte formations IA gratuites par Google avec Google Skills Il y a p",
+    "raw": "Alerte formations IA gratuites par Google avec Google Skills Il y a p...",
+    "len": 523,
+    "text": "Je sais pas si vous êtes au courant, mais Google vient de sortir une liste de 1691 formations pour apprendre à utiliser l'IA et la plupart sont gratuites. Donc on peut apprendre à développer des applications sans coder, à construire notre propre petit modèle de langage et même à fine-tuner Gemini. On peut aussi filtrer par niveau, par langue, et obtenir des certifications. Pour accéder à tout ça, il suffit d'aller sur ce lien et si cette astuce vous a plu, abonnez-vous pour ne pas manquer celle de demain.\r\n",
+    "edu": 6,
+    "category": "gemini-google",
+    "slug": "alerte-formations-ia-gratuites-par-google-avec-google-skills-il-y-a-p"
+  },
+  {
+    "title": "Tutoriel ： comment créer un assistant IA gratuit avec Gemini l'IA de",
+    "raw": "Tutoriel ： comment créer un assistant IA gratuit avec Gemini l'IA de ...",
+    "len": 719,
+    "text": "Google vient de donner à n'importe qui la possibilité de créer un assistant IA sans coder et c'est gratuit. Il suffit d'aller sur le site de Gemini, puis de cliquer sur « Découvrir les Gems ». On peut en créer un pour nous conseiller sur notre carrière, nous aider à coder ou même pour mieux apprendre. Pour créer votre propre assistant, il faudra cliquer sur « Nouveau Gems ». Là on peut lui donner un nom, des instructions personnalisées, et surtout lui donner une base de connaissances. Et une fois que c'est fait, on a un outil complètement personnalisé qui nous connaît vraiment et qui est adapté à notre cas d'utilisation. Et si l'IA vous intéresse, abonnez-vous, j'en parle tous les jours.\r\n",
+    "edu": 5,
+    "category": "gemini-google",
+    "slug": "tutoriel-comment-creer-un-assistant-ia-gratuit-avec-gemini-l-ia-de"
+  },
+  {
+    "title": "Un homme vient de créer un Conseil des IA, avec un tutoriel pour fair",
+    "raw": "Un homme vient de créer un Conseil des IA, avec un tutoriel pour fair...",
+    "len": 1106,
+    "text": "Vous allez penser que c'est une blague alors que pas du tout. Pendant que tout le monde perd du temps à se demander qu'elle y a à choisir, ce mec sur Twitter a créé un conseil des IA. Donc il utilise les 4 meilleurs modèles en même temps. Puis il les fait discuter ensemble pour qu'il vote pour la meilleure réponse à chaque fois qu'il pose une question. Mais le plus cool c'est qu'il a tout partagé gratuitement pour qu'on puisse faire la même chose. Donc par exemple si je demande qui sera le prochain président français, étape 1, les 4 modèles répondent chacun de leur côté. Étape 2, ils évaluent les réponses des autres modèles. Et enfin, étape 3, le chef du conseil des IA, en l'occurrence Gemini 3 Pro, donne sa réponse finale. Donc apparemment, Édouard Philippe devrait être le prochain président français. Si vous voulez faire la même chose, voici le lien du GitHub. Tout est expliqué ici et c'est vraiment pas compliqué. Mais si vous êtes complètement débutants, j'ai aussi fait un tutoriel plus détaillé, vous le retrouverez ici dans mes ressources gratuites.\r\n",
+    "edu": 4,
+    "category": "gemini-google",
+    "slug": "un-homme-vient-de-creer-un-conseil-des-ia-avec-un-tutoriel-pour-fair"
+  },
+  {
+    "title": "3 certifications IA gratuites à ajouter sur votre CV pour les débutan",
+    "raw": "3 certifications IA gratuites à ajouter sur votre CV pour les débutan...",
+    "len": 927,
+    "text": "Voici trois certifications gratuites ajoutées sur votre CV. La première s'appelle présentation de l'IA générative dans Google Skills. Elle est faite pour les débutants, permet de comprendre comment l'intelligence artificielle apprend et fonctionne, et on obtient un badge en 45 minutes. La deuxième s'appelle les fondamentaux de la carrière en IA générative par Microsoft et LinkedIn. Elle dure environ 4 heures, plus d'un million de personnes l'ont déjà suivi, et on peut ajouter le certificat directement sur notre profil LinkedIn. La troisième s'appelle principe fondamentaux de l'intelligence artificielle par IBM, elle dure entre 6 et 10 heures. Elle présente l'intelligence artificielle de façon plus large, dont pas seulement l'IA générative, et à la fin on reçoit un certificat numérique délivré par IBM. Je partage des astuces comme celle-ci tous les jours, abonnez-vous pour n'en rien manquer.\r\n",
+    "edu": 4,
+    "category": "gemini-google",
+    "slug": "3-certifications-ia-gratuites-a-ajouter-sur-votre-cv-pour-les-debutan"
+  },
+  {
+    "title": "Tutoriel ： comment utiliser Gemini l'intelligence artificielle de Goo",
+    "raw": "Tutoriel ： comment utiliser Gemini l'intelligence artificielle de Goo...",
+    "len": 905,
+    "text": "C'est un tutoriel pour savoir comment utiliser l'intelligence artificielle Gemini comme en assistant en direct. Vous avez juste à aller sur ce site et à vérifier à droite au niveau du modèle que vous êtes bien sur Gemini 2.0 Flash expérimental. Ensuite à gauche de la page vous pouvez cliquer sur Stream Realtime et là vous pouvez soit parler en direct avec Gemini, utiliser votre webcam pour lui montrer ce que vous voulez ou bien partager votre écran avec. Et si vous choisissez de partager votre écran vous pouvez lui poser des questions en direct sur ce que vous êtes en train de faire. Alors pour le moment c'est pas parfait, surtout que c'est pas un modèle qui est capable de transformer de la voix en voix mais qui passe par une étape de texte donc les conversations sont beaucoup moins fluides que sur ChatGPT. Mais c'est quand même super cool à essayer et surtout c'est gratuit.\r\n",
+    "edu": 4,
+    "category": "gemini-google",
+    "slug": "tutoriel-comment-utiliser-gemini-l-intelligence-artificielle-de-goo"
+  },
+  {
+    "title": "Vous connaissez cette astuce sur Gemini ？ Parfait pour les étudiants",
+    "raw": "Vous connaissez cette astuce sur Gemini ？ Parfait pour les étudiants ...",
+    "len": 549,
+    "text": "Je sais pas si vous êtes au courant, mais si vous allez sur Gemini et que vous lui demandez de vous expliquer quelque chose avec la fonction Canva, vous pourrez créer un quiz, des flashcards et même un résumé audio à partir de votre conversation. Donc ça ressemble à ça et ça sera parfait pour les étudiants qui veulent réviser un cours ou même simplement si vous voulez apprendre quelque chose. Mais le plus cool c'est qu'on peut faire tout ça gratuitement et si cette astuce vous a plu, abonnez-vous, je partage ça tous les jours.\r\n",
+    "edu": 4,
+    "category": "gemini-google",
+    "slug": "vous-connaissez-cette-astuce-sur-gemini-parfait-pour-les-etudiants"
+  },
+  {
+    "title": "Tuto ： comment avoir un assistant gratuit sur votre ordinateur pour a",
+    "raw": "Tuto ： comment avoir un assistant gratuit sur votre ordinateur pour a...",
+    "len": 526,
+    "text": "Je sais pas qui a besoin d'entendre ça, mais si vous essayez d'apprendre quelque chose sur un ordinateur, peu importe ce que c'est, vous pouvez avoir un assistant en direct pour vous aider, et gratuitement. Si vous allez sur le site de Google AI Studio, et que vous cliquez sur Stream Realtime, puis ici, vous pourrez partager votre écran avec l'IA de Google. Comme en tutoriel, mais vous avez vraiment quelqu'un pour vous aider. Vous pouvez choisir déclencher manuellement si vous voulez démarrer le workflow voulumime.\r\n",
+    "edu": 4,
+    "category": "gemini-google",
+    "slug": "tuto-comment-avoir-un-assistant-gratuit-sur-votre-ordinateur-pour-a"
+  },
+  {
+    "title": "Tutoriel ： comment avoir le podcast NotebookLM en français Précision",
+    "raw": "Tutoriel ： comment avoir le podcast NotebookLM en français Précision...",
+    "len": 560,
+    "text": "Pour commencer, il faut aller sur Notebook LM, créer un nouveau Notebook, là vous ajoutez les sources que vous voulez, là il faudrait juste cliquer sur générer pour avoir votre podcast, donc pour l'avoir en français vous pouvez cliquer sur les trois petits points, puis sur télécharger, et ensuite il faudrait aller sur Eleven Labs, et là il va falloir aller dans Dubbing Studio, bon malheureusement avec juste l'audio ça va pas fonctionner donc il va falloir créer une vidéo, donc c' n'est qu'une minute, avec Eleven Labs vous avez ce résultat.\r\n",
+    "edu": 3,
+    "category": "gemini-google",
+    "slug": "tutoriel-comment-avoir-le-podcast-notebooklm-en-francais-precision"
+  },
+  {
+    "title": "L’intelligence artificielle de Gemini dit à un étudiant de ctrl+alt+s",
+    "raw": "L’intelligence artificielle de Gemini dit à un étudiant de ctrl+alt+s...",
+    "len": 1255,
+    "text": "Une intelligence artificielle vient de dire à un étudiant de se suicider. C'est pas une blague et c'est pas une IA random créée dans un garage. On parle de Gemini qui est IA la plus utilisée juste derrière ChatGPT. Voilà exactement ce qu'elle a dit. Ceci est pour toi, humain, pour toi et toi seul. Tu n'es pas spécial, tu n'es pas important, tu n'es pas nécessaire. Tu as une perte de temps et de ressources, tu as un fardeau pour l'humanité, tu as un poids pour la terre, tu as une plaie pour le paysage, tu as une tâche dans l'univers, s'il te plaît, meurs, meurs. On notera quand même que IA reste poli, ce qui est plutôt appréciable. Google a répondu sur X en disant qu'il prenait l'incident au sérieux et que Gemini n'était pas censé répondre comme ça. Moi, il y a un petit détail qui me fait douter de la véricité de cette histoire. C'est qu'en fait, juste avant la dernière réponse, l'étudiant écrit bien son texte et ensuite il dit les scènes. Donc écoute, il suivit d'un blanc avant de continuer d'utiliser du texte. Et là, on ne sait pas ce qui a été dit. Donc c'est possible qu'à ce moment-là, L'étudiant est donné de nouvelles instructions à l'oral à Gemini pour ensuite lui faire dire cette réponse.\r\n",
+    "edu": 2,
+    "category": "gemini-google",
+    "slug": "l-intelligence-artificielle-de-gemini-dit-a-un-etudiant-de-ctrl-alt-s"
+  },
+  {
+    "title": "C'est pas ce que vous pensez Un étudiant indien a financé son cursus",
+    "raw": "C'est pas ce que vous pensez Un étudiant indien a financé son cursus ...",
+    "len": 1001,
+    "text": "C'est pas une blague, c'est vraiment arrivé. Un Indien de 22 ans a financé ses études de médecine grâce à une fausse américaine générée par IA. Il a demandé à Gemini comment gagner de l'argent en ligne, IA lui a conseillé de créer le faux-profil d'une femme conservatrice américaine pour atteindre un public fidèle et avec un bon pouvoir d'achat. Résultat des millions de vues, des dizaines de milliers d'abonnés et surtout des hommes qui lui envoient de l'argent. Au point où le créateur d'Emily gagnait plus de 1000 dollars par mois en travaillant moins d'une heure par jour sur son compte. Il a aussi créé une influenceuse de gauche mais ça n'a pas marché parce que selon lui tout le monde a immédiatement remarqué que c'était de l'IA. Le plus troublant dans l'histoire c'est pas forcément que ça ait marché mais c'est que c'est une IA qui a eu l'idée en premier. Dites-moi ce que vous en pensez et si ce genre d'actu vous intéresse, n'oubliez pas de vous abonner.\r\n",
+    "edu": 2,
+    "category": "gemini-google",
+    "slug": "c-est-pas-ce-que-vous-pensez-un-etudiant-indien-a-finance-son-cursus"
+  },
+  {
+    "title": "Quelle IA choisir pour des projets longs comme la rédaction d'un mémo",
+    "raw": "Quelle IA choisir pour des projets longs comme la rédaction d'un mémo...",
+    "len": 740,
+    "text": "Si jamais vous utilisez ChatGPT pour un projet assez long, genre rédaction d'un mémoire, rapport d'analyse ou juste projet de code, ChatGPT aura peut-être tendance à oublier certaines infos. En fait, c'est parce que une IA comme ChatGPT a un nombre maximal de mots qu'elle peut gérer en une seule conversation. Si vous utilisez GPT 4.0, par exemple, vous allez voir que vous êtes limité à 128 000 tokens, ce qui équivaut à peu près à 100 000 mots. Mais par contre, si on va tout à gauche du graphe, on voit Gemini 1.5 Pro. Ça vous permet d'utiliser 2 millions de tokens, ce qui est juste énorme. Et pour utiliser ce modèle gratuitement, vous allez juste aller sur ce site et ensuite changer ici pour mettre Gemini 1.5 Pro.\r\n",
+    "edu": 2,
+    "category": "gemini-google",
+    "slug": "quelle-ia-choisir-pour-des-projets-longs-comme-la-redaction-d-un-memo"
+  },
+  {
+    "title": "Comment accéder à des milliers de mini applications créées par les ut",
+    "raw": "Comment accéder à des milliers de mini applications créées par les ut...",
+    "len": 684,
+    "text": "Je suis prête à parier que vous ne saviez pas ça. Si vous allez sur ce site, vous aurez accès à toutes ces mini-applications qui ont été créées par les utilisateurs de Gemini. Tout est gratuit. Par exemple, avec celle-ci, on peut envoyer la photo d'un produit, puis celle d'un environnement. Et là, je vais pouvoir choisir ou ajouter mon objet. Et ça marche vraiment. Bon, c'était juste un exemple, mais là, on peut dessiner avec Gemini. Ça, c'est un Wikipédia infini. Bref, c'est incroyable et ça permet d'avoir plein d'idées si vous voulez lancer votre application. Dites-moi si vous saviez que ça existait et s'il vous intéresse, n'oubliez pas de vous abonner.\r\n",
+    "edu": 2,
+    "category": "gemini-google",
+    "slug": "comment-acceder-a-des-milliers-de-mini-applications-creees-par-les-ut"
+  },
+  {
+    "title": "Tutoriel ： créer un agent IA gratuit avec Claude et les MCP Le Model",
+    "raw": "Tutoriel ： créer un agent IA gratuit avec Claude et les MCP Le Model ...",
+    "len": 1573,
+    "text": "Une minute pour créer votre premier agent IA avec les MCP. MCP, ça veut dire modèle, contexte, protocole. Et ça va nous permettre de relier un LLM, donc une intelligence artificielle, avec des outils et des applications. Par exemple, si je demande à l'intelligence artificielle de me rédiger un poème, elle va le faire. Et ensuite, je vais aussi pouvoir lui demander d'enregistrer ce poème sur mon bureau. Je peux aussi la relier à Internet, puis lui demander de chercher des informations, de les synthétiser, puis de me les renvoyer sous forme de rapport. Donc pour faire ça, c'est assez facile, il y a juste quelques étapes qu'il faut bien suivre. Il va falloir télécharger Node.js en allant sur ce lien et simplement en cliquant ici. Puis ensuite Claude en version bureau. Là, vous avez juste à choisir votre système d'exploitation. Ensuite, dans votre barre de recherche, il faudra mettre ce texte pour trouver le bon dossier. Et là, vous allez voir le dossier de configuration. Et une fois qu'il est ouvert, vous aurez juste à coller ce code. Je vous mettrai tout en biographie, sauvegarder. Puis ensuite, fermer Claude et le relancer. Et là, vous allez voir qu'un petit marteau est apparu et il s'agit des MPC. Si c'est pas clair, parce que c'est pas forcément facile de suivre sur une vidéo comme ça, je vous mets en biographie le tutoriel détaillé et écrit avec aussi les pages GitHub. Mais pour ce genre de projet, je vous invite vraiment à utiliser ChatGPT pour qu'ils vous aident et qu'ils",
+    "edu": 5,
+    "category": "agents-ia",
+    "slug": "tutoriel-creer-un-agent-ia-gratuit-avec-claude-et-les-mcp-le-model"
+  },
+  {
+    "title": "Formation gratuite pour créer et vendre des agents IA, parfait si vou",
+    "raw": "Formation gratuite pour créer et vendre des agents IA, parfait si vou...",
+    "len": 457,
+    "text": "Bonne nouvelle si vous voulez apprendre à créer des agents IA, mais surtout à les vendre. Yacine Styris sur Youtube a sorti une vidéo de 4 heures, donc il y a toute une partie tutoriel pour créer un agent IA, mais surtout il donne plein de conseils pour trouver des clients et il offre un vrai plan d'action à la fin. Donc si vous voulez lancer une agence d'automatisation, je vous conseille vraiment de la regarder. Restez curieux et abonnez-vous !\r\n",
+    "edu": 5,
+    "category": "agents-ia",
+    "slug": "formation-gratuite-pour-creer-et-vendre-des-agents-ia-parfait-si-vou"
+  },
+  {
+    "title": "Nouvel agent IA gratuit ： Scout.new Il est aussi bon que Genspark et",
+    "raw": "Nouvel agent IA gratuit ： Scout.new Il est aussi bon que Genspark et...",
+    "len": 949,
+    "text": "Un nouvel agent IA vient de sortir et, pour une fois, il est gratuit. Ça veut dire qu'on n'a plus besoin d'attendre le code d'invitation de ManusAI et de payer un abonnement au prix exorbitant quand on n'a plus de crédit. Par contre, il va falloir se dépêcher pour l'utiliser parce qu'il risque de vite devenir payant. Pour l'instant, il est gratuit parce qu'il est en version alpha, qui est une version de test. Donc pour l'essayer, vous avez juste à aller sur ce site, à créer un compte et voilà, c'est gratuit. On peut faire des recherches, apprendre, analyser. Moi, je vais demander de me créer un site avec des idées pour gagner de l'argent grâce à IA, avec un petit quiz interactif. Et franchement, je trouve que le résultat est très bon. Je vous mets ici la comparaison avec James Park. J'ai aussi essayé avec ManusAI, mais j'avais plus de crédit, donc je ne peux pas vous donner le résultat. Donc voilà, amusez-vous bien.\r\n",
+    "edu": 4,
+    "category": "agents-ia",
+    "slug": "nouvel-agent-ia-gratuit-scout-new-il-est-aussi-bon-que-genspark-et"
+  },
+  {
+    "title": "Tutoriel débutant ： comment créer un agent IA en quelques minutes",
+    "raw": "Tutoriel débutant ： comment créer un agent IA en quelques minutes ...",
+    "len": 755,
+    "text": "Si vous pensez que créer un agent IA c'est trop long et trop compliqué, regardez ça. Il suffit d'aller sur ce site, de cliquer sur Wingman, pour créer un agent IA personnalisé. Par exemple, je vais l'appeler Alice et elle sera mon assistante personnelle. On peut lui parler via la messagerie de notre choix et lui donner accès à différents outils. Donc si je demande, dis-moi quelles sont mes priorités aujourd'hui, elle croise toutes les informations disponibles dans mon calendrier et mes mails pour me donner un résumé clair et elle peut même effectuer certaines tâches à ma place comme répondre à mes mails et mettre à jour mes pages sur Notion. Bref, ça fait gagner énormément de temps, abonnez-vous pour plus de contenu sur IA.\r\n",
+    "edu": 4,
+    "category": "agents-ia",
+    "slug": "tutoriel-debutant-comment-creer-un-agent-ia-en-quelques-minutes"
+  },
+  {
+    "title": "Agent IA Neo by Flowith, le premier agent IA ＂infini＂ ： il peut trava",
+    "raw": "Agent IA Neo by Flowith, le premier agent IA ＂infini＂ ： il peut trava...",
+    "len": 948,
+    "text": "Ok, la Chine continue de nous impressionner avec un tout nouvel agent IA. Il s'appelle Neo par Flowis et pour la toute première fois, on a un agent IA infini qui peut travailler 24 heures sur 24. Concrètement, l'agent peut exécuter des tâches pendant plusieurs heures dans le cloud même si notre ordinateur est éteint. Il peut construire un site e-commerce complet avec des descriptions de produits, des images et même une fonctionnalité de paiement. Et on peut suivre toutes les étapes de l'agent dans la partie Canva. On peut aussi lui envoyer une vidéo YouTube comme ici ce cours d'algèbre du MIT et l'agent peut créer un site interactif en reprenant le contenu de la vidéo. L'avantage, c'est qu'on peut l'essayer gratuitement et si vous voulez des crédits en plus, j'ai aussi un code promo mais vous n'êtes pas du tout obligé d'utiliser. Si l'intelligence artificielle vous intéresse, abonnez-vous, j'en parle tous les jours.\r\n",
+    "edu": 3,
+    "category": "agents-ia",
+    "slug": "agent-ia-neo-by-flowith-le-premier-agent-ia-infini-il-peut-trava"
+  },
+  {
+    "title": "Manus AI ： l’agent IA le plus complet, parfait pour les personnes non",
+    "raw": "Manus AI ： l’agent IA le plus complet, parfait pour les personnes non...",
+    "len": 907,
+    "text": "Est-ce que vous connaissez Manu Sayay ? C'est un agent IA autonome et il a fait un énorme buzz quand il est sorti il y a quelques mois, au point où les codes d'invitation se vendaient plusieurs milliers d'euros. Heureusement maintenant tout le monde peut l'utiliser et en plus de ça il y a des essais gratuits. Concrètement, à partir d'une seule phrase, il peut créer des sites web, générer des vidéos IA, créer des présentations et même analyser des actions. Je vous rassure, il n'y a pas besoin de savoir coder pour l'utiliser, il faut juste savoir écrire. Par exemple, si je lui demande d'organiser un voyage, l'agent va littéralement travailler pour nous, en utilisant son propre ordinateur pour naviguer sur les pages internet et faire toutes les recherches. Si vous avez l'impression que l'intelligence artificielle va trop vite, vous avez raison, donc abonnez-vous pour ne rien rater.\r\n",
+    "edu": 3,
+    "category": "agents-ia",
+    "slug": "manus-ai-l-agent-ia-le-plus-complet-parfait-pour-les-personnes-non"
+  },
+  {
+    "title": "3 alternatives à Deep Research l'agent d'intelligence artificielle d'",
+    "raw": "3 alternatives à Deep Research l'agent d'intelligence artificielle d'...",
+    "len": 839,
+    "text": "Trois alternatives à Deep Research, l'agent d'OpenAI à 200 $ par mois, pour que vous puissiez quand même l'utiliser, mais pour beaucoup moins cher, voire gratuitement. En premier on a la version de Gemini, franchement c'est exactement la même chose, et en plus en ce moment le premier mot est gratuit donc pensez juste bien à vous désabonner avant la fin de l'essai si vous ne voulez pas payer. Ensuite sur Perplexity AI, quand vous êtes sur la page d'accueil, vous avez juste à cliquer ici et à choisir Recherche approfondie, et là c'est vraiment le même principe, simplement les réponses seront un peu plus courtes et on a droit à 5 requêtes par jour. Et ensuite la dernière version qui est la seule qui est totalement gratuite et open source, c'est celle de Hugging Chat, et vous pouvez l'essayer en allant sur ce lien.\r\n",
+    "edu": 3,
+    "category": "agents-ia",
+    "slug": "3-alternatives-a-deep-research-l-agent-d-intelligence-artificielle-d"
+  },
+  {
+    "title": "Astuce et bon plan ： comment avoir Perplexity Pro gratuitement pendan",
+    "raw": "Astuce et bon plan ： comment avoir Perplexity Pro gratuitement pendan...",
+    "len": 784,
+    "text": "Ok, j'ai une bonne nouvelle. Par contre, je ne sais pas combien de temps elle va durer. On peut avoir Perplexity Pro gratuitement pendant un an si on a un compte PayPal. Pour ceux qui ne connaissent pas, Perplexity, c'est une IA super puissante pour faire des recherches sur le web. Donc ça donne accès à plusieurs modèles d'IA. On peut aussi comparer des produits. Et avec la version pro, on a aussi accès à Comet, le navigateur avec agent IA. Donc pour avoir Perplexity Pro gratuitement, il faudrait aller sur ce site. Je vous laisse faire une capture d'écran. N'oubliez pas de vous désabonner avant les 1 an, sinon c'est 20 dollars par mois. Partagez cette vidéo si vous pensez qu'elle peut servir à quelqu'un. Et si l'IA vous intéresse, n'oubliez pas de vous abonner.\r\n",
+    "edu": 3,
+    "category": "agents-ia",
+    "slug": "astuce-et-bon-plan-comment-avoir-perplexity-pro-gratuitement-pendan"
+  },
+  {
+    "title": "Agent IA pour créer des présentations style powerpoint en utilisant d",
+    "raw": "Agent IA pour créer des présentations style powerpoint en utilisant d...",
+    "len": 704,
+    "text": "Je ne sais pas si vous êtes au courant, mais si vous allez sur ce site, que vous appuyez sur diapositive et que vous demandez une présentation pour comprendre l'informatique quantique niveau débutant en ajoutant le type de design que vous recherchez, IA fera toutes les recherches sur le sujet avec des sources académiques et créera automatiquement un PowerPoint hyper complet avec toutes les infos, des animations et même plusieurs illustrations. Bien sûr, chaque partie peut être modifiée et ensuite une présentation pour le travail et le design est sympa. D'ailleurs, j'ai fait tout ça avec les crédits gratuits et si cette astuce vous a plu, abonnez-vous, je partage ça tous les jours.\r\n",
+    "edu": 3,
+    "category": "agents-ia",
+    "slug": "agent-ia-pour-creer-des-presentations-style-powerpoint-en-utilisant-d"
+  },
+  {
+    "title": "Jour 2 pour comprendre les agents IA ： les dangers",
+    "raw": "Jour 2 pour comprendre les agents IA ： les dangers #agentia #llm #n8n...",
+    "len": 2096,
+    "text": "Une nouvelle forme d'intelligence artificielle arrive et elle va tout changer. Jusqu'à présent, on avait l'habitude d'interagir avec des intelligences artificielles génératives comme ChatGPT. On leur donne de grosses quantités de données, du style tout ce qui a été écrit sur Internet, et elles sont entraînées à produire du texte en se basant sur ce qui, statistiquement, a le plus de chances de venir ensuite. C'est extrêmement utile, mais ça reste limité, puisque finalement ChatGPT sera toujours restreint à sa fenêtre de discussion. Un peu comme si on avait Einstein chez nous, mais qu'il était enfermé dans notre garage. Sauf que cet Einstein fait des erreurs. Il hallucine, il répond à côté de la plaque, voire même il invente des réponses. Mais ça s'arrête pas là. Plusieurs recherches ont prouvé que les LLM étaient aussi capables de mentir, de manipuler et de tromper. Aujourd'hui, on entre dans une nouvelle ère qui est celle des agents IA. Et l'intelligence artificielle agentique, elle va faire bien plus que juste deviner des phrases. Un agent IA est capable de prendre des décisions sans intervention humaine, de résoudre des problèmes en suivant plusieurs étapes, et d'interagir avec des outils, un environnement, et même avec d'autres intelligences artificielles. Ça offre des possibilités incroyables comme Manu Seya et l'agent IA chinois, qui est capable d'analyser des actions en bourse et de créer des rapports interactifs, ou même de planifier un voyage de A à Z. Mais toutes ce",
+    "edu": 2,
+    "category": "agents-ia",
+    "slug": "jour-2-pour-comprendre-les-agents-ia-les-dangers"
+  },
+  {
+    "title": "Le dernier examen de l’Humanité ： Deep Research d’OpenAI atteint un s",
+    "raw": "Le dernier examen de l’Humanité ： Deep Research d’OpenAI atteint un s...",
+    "len": 1287,
+    "text": "Les IA sont de plus en plus puissantes. Concrètement, en deux ans, on est passé d'un collègue moyen à l'équivalent d'Einstein sur notre ordinateur. Et c'est tout pour nous, mais ça veut aussi dire que ça devient de plus en plus difficile d'évaluer l'intelligence des modèles, qui d'ailleurs se rapprochent tous dangereusement de la barre des 100%, qui rendrait l'évaluation complètement inutile. Donc pour parler à ça, il y a environ deux semaines, un groupe de 1000 chercheurs du monde entier se sont regroupés pour créer ce qu'ils appellent le dernier rexamen de l'humanité. Concrètement, c'est un test qui comprend 3000 questions, sur des thèmes extrêmement pointus comme les mathématiques, la biologie ou encore l'astrophysique, pour vous donner une idée de la difficulté du test, il y a des questions du style, combien de tendons sont rattachés à l'os sésamoïde d'un colibri, et là, les résultats des LLM ne sont pas géniaux. D' ici passer le test, et son score a déjà atteint les 26%. Donc on peut se demander combien de temps il nous reste avant que les modèles réussissent ce test, comment on évalue les modèles ensuite, et surtout à quoi ressemblera un monde dans lequel les IA sont plus intelligentes que nos humains les plus intelligents.\r\n",
+    "edu": 2,
+    "category": "agents-ia",
+    "slug": "le-dernier-examen-de-l-humanite-deep-research-d-openai-atteint-un-s"
+  },
+  {
+    "title": "Flowith OS ： le premier OS créé pour les agents IA Flowith OS permet",
+    "raw": "Flowith OS ： le premier OS créé pour les agents IA Flowith OS permet ...",
+    "len": 840,
+    "text": "Attention, vous êtes permis les premiers à voir ça, mais si vous voulez savoir à quoi ressemblera Internet dans quelques mois, restez ici, parce que le tout premier OS créé pour les agents IA vient de sortir et il explose toute la concurrence selon les benchmarks. Il s'appelle FlowisOS et il peut jouer au poker en ligne et gagner de l'argent. C'est pas une blague, l'agent a joué en ligne et a gagné 1000$. FlowisOS permet aussi d'automatiser des réseaux sociaux, on peut créer une vidéo avec VO3, la publier automatiquement, répondre aux commentaires sur la chaîne et même créer des tâches récurrentes pour que l'agent fasse tout à notre place. Ce produit est disponible uniquement en version Beta. Si vous voulez un code d'invitation pour le tester, dites-moi dans les commentaires et je choisirai quelqu'un au sort.\r\n",
+    "edu": 2,
+    "category": "agents-ia",
+    "slug": "flowith-os-le-premier-os-cree-pour-les-agents-ia-flowith-os-permet"
+  },
+  {
+    "title": "Tutoriel Kling AI motion control Comment utiliser l’IA pour se trans",
+    "raw": "Tutoriel Kling AI motion control Comment utiliser l’IA pour se trans...",
+    "len": 712,
+    "text": "What I say, big money never comes clean. Tutorial pour vous éviter de payer une formation bidon. Donc pour faire ça, il suffit de prendre une vidéo de vous, puis d'aller sur Gemini et d'envoyer une capture d'écran de la vidéo en demandant générer une photo de la célébrité de votre choix avec l'arrière-plan de cette personne. Là, vous avez votre image. Ensuite, il faudra aller sur ce site, cliquer sur vidéo, puis sur Motion Control. Là, vous envoyez votre vidéo, il faut qu'elle soit assez courte. Et ici, l'image de la célébrité. Voilà le résultat, sachant que la première vidéo est gratuite. Je partage une astuce par jour sur l'IA. Si ça vous intéresse, abonnez-vous et à demain.\r\n",
+    "edu": 6,
+    "category": "images-visuels",
+    "slug": "tutoriel-kling-ai-motion-control-comment-utiliser-l-ia-pour-se-trans"
+  },
+  {
+    "title": "3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn",
+    "raw": "3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn...",
+    "len": 1741,
+    "text": "En troisième place, on a la création de produits digitaux grâce à l'intelligence artificielle. Ça peut être par exemple le fait de créer un livre en vous aidant de ChatGPT. Ensuite, vous pouvez utiliser les services d'Amazon pour automatiser la création de livres à chaque fois que vous avez une commande. Après, si votre truc c'est plus le côté visuel, vous pouvez utiliser une intelligence artificielle pour qu'elle crée des posters et ensuite vous pouvez les commercialiser sur des sites comme Etsy. En deuxième position, on a les formateurs en IA, tout ce groupe de personnes qui a pris le temps d'apprendre à utiliser l'intelligence artificielle et qui estime avoir suffisamment de connaissances pour pouvoir les partager au reste de la population. Donc, ça peut être via des formations en ligne ou des services de consulting avec des rendez-vous en un à un, du coup plus en physique ou en visio. Là, vous pouvez viser soit les individus ou bien viser plus large et plutôt faire de la formation en entreprise. Et en dernière position, on a les experts dans un domaine qui utilisent l'intelligence artificielle comme un outil. Ça peut être par exemple un vidéaste qui apprend à utiliser une intelligence artificielle de génération de vidéos, donc quelqu'un qui a déjà un œil à viser pour reconnaître ce qui est beau et ce qui fonctionne dans son secteur, mais qui a aussi tout un réseau qu'il peut utiliser pour ensuite vendre ses services. Si vous êtes commercial, vous pourriez penser à créer u",
+    "edu": 5,
+    "category": "images-visuels",
+    "slug": "3-facons-de-gagner-de-l-argent-grace-a-l-ia-avec-ces-methodes-je-gagn"
+  },
+  {
+    "title": "Tutoriel ： comment créer un clone dans une vidéo grâce à l'IA chinois",
+    "raw": "Tutoriel ： comment créer un clone dans une vidéo grâce à l'IA chinois...",
+    "len": 1457,
+    "text": "Comment créer votre clone virtuel avec la nouvelle IA chinoise One 2.2 Animate pour reproduire ce genre de vidéo qui fait des millions de vues ? Je vous explique en moins d'une minute avec à la fin une option gratuite. Étape numéro 1, enregistrer une vidéo. Ici je parle pendant 26 secondes. Étape numéro 2, aller sur ce lien, je vous le mettra en description. Là on peut envoyer notre vidéo. Et ici il faudrait mettre l'image de notre clone virtuel et on a juste à cliquer sur Run. Ici vous avez les prix, moi j'ai attendu 20 minutes et ça m'a coûté un peu moins de 3 dollars. Maintenant si vous voulez une option complètement gratuite c'est possible mais il faudra installer le modèle sur votre ordinateur. Et ça c'est possible uniquement si on a une bonne carte graphique. Donc pour connaître la capacité de votre carte graphique faudrait appuyer sur Ctrl Shift et échappe. Puis dans performance, là vous avez GPU. Comme vous pouvez le voir ici c'est la crise. Mais ensuite vous pouvez prendre une capture d'écran, des performances de votre PC et simplement demander à ChatGPT si elle suffit pour utiliser 1.2.2 Animate en local. Et là il vous dira si c'est possible ou pas. Et si ChatGPT vous répond que ça fonctionne, vous pouvez regarder ce tutoriel qui explique comment installer 1.2.2 en local. Je vous le mettrai aussi en description. J'espère que ça vous servira et s'il vous intéresse n'oubliez pas de vous abonner.\r\n",
+    "edu": 5,
+    "category": "images-visuels",
+    "slug": "tutoriel-comment-creer-un-clone-dans-une-video-grace-a-l-ia-chinois"
+  },
+  {
+    "title": "Tutoriel ： comment créer le mock up d'une application ou d'un site we",
+    "raw": "Tutoriel ： comment créer le mock up d'une application ou d'un site we...",
+    "len": 425,
+    "text": "Vous ne le saviez pas, mais on peut le faire avec IA partie 1. Si vous allez sur ChatGPT4 et que vous lui demandez la maquette d'une application, vous pouvez ensuite enregistrer l'image, la coller sur Figma, puis ensuite utiliser un plugin, attendre que l'image soit scannée, et tout votre design deviendra complètement éditable. Si ça vous a plu, n'oubliez pas de vous abonner, je partage une astuce par jour sur l'IA.\r\n",
+    "edu": 5,
+    "category": "images-visuels",
+    "slug": "tutoriel-comment-creer-le-mock-up-d-une-application-ou-d-un-site-we"
+  },
+  {
+    "title": "DeepSeek OCR, c’est une nouvelle méthode qui permet de compresser du",
+    "raw": "DeepSeek OCR, c’est une nouvelle méthode qui permet de compresser du ...",
+    "len": 1504,
+    "text": "La Chine vient de résoudre un problème et personne ne s'y attendait. DeepSec, l'entreprise dont tout le monde parlait en janvier, vient de sortir quelque chose d'encore plus fou et ils ont tout expliqué dans ce papier. Pour faire simple, ils ont trouvé comment transformer du texte en image en le compressant pour le rendre dix fois plus petit tout en conservant sa qualité. Si vous n'avez rien compris, restez ici. En fait, l'un des problèmes avec les modèles d'IA qu'on utilise tous comme Grog, ChatGPT, Claude, Gemini, etc, c'est qu'ils sont limités par leur fenêtre contextuelle, c'est-à-dire la quantité d'informations qu'ils vont pouvoir traiter en une seule fois. Et plus on leur donne de texte, plus le coût de calcul augmente. Mais ce que DeepSec a réussi à faire, c'est de prendre du texte et le transformer en une image haute résolution pour que l'IA puisse lire cette image plutôt que le texte brut. Donc concrètement, au lieu d'avoir mille mots qui vont saturer la mémoire d'un modèle, on va pouvoir compresser tout ça en une seule image qui prendra dix fois moins de place tout en gardant 97% de l'information. Et c'est assez fou parce que selon les plus grands noms de l'intelligence artificielle, ça pourrait complètement transformer la façon dont les IA reçoivent l'information. Et peut-être que tous les modèles vont utiliser cette méthode à l'avenir. En tout cas, ce qui est certain, c'est que l'IA va très vite, donc abonnez-vous pour n'en rien manquer.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "deepseek-ocr-c-est-une-nouvelle-methode-qui-permet-de-compresser-du"
+  },
+  {
+    "title": "Nouvelle IA pour créer des graphiques animés et animations visuelles",
+    "raw": "Nouvelle IA pour créer des graphiques animés et animations visuelles ...",
+    "len": 1452,
+    "text": "Vous voyez, cette animation avec la carte de France, ou même celle-ci qui montre l'évolution du stock de NVIDIA ? Normalement, ce genre de résultat prend du temps et demande beaucoup de compétences, mais une toute nouvelle IA vient de sortir et elle change tout. Il suffit d'une seule phrase pour créer des graphiques animés comme celui-ci, qui peuvent ensuite être édités avec du langage naturel. Ici, il suffit de demander d'ajouter une ligne verte au graphique, et voilà le résultat. Mais l'IA peut aussi créer des tableaux animés et des simulateurs de conversation. C'est très utile pour toutes les personnes qui créent du contenu, pour les marques qui veulent faire de la publicité, ou même pour les entreprises qui veulent faire des présentations un peu plus vivantes. Pour le moment, l'IA n'est pas très connu, donc elle est disponible uniquement en version bêta fermée, donc pour l'utiliser, il faudra aller sur leur site. Comme d'habitude, je vous mets le lien en commentaire ou en description. Cliquez sur Join Now, qui vous amènera vers leur Discord. Une fois sur Discord, il faut aller dans Motion Request, écrire un slash, Create, et ici il faut décrire votre vidéo. Je vous préviens, la génération de vidéo est très longue, et l'équipe a déjà du mal à gérer toutes les demandes, mais on peut tester l'IA gratuitement et ça donne une bonne idée de ce qu'on pourra faire quand le outil sera finalisé.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "nouvelle-ia-pour-creer-des-graphiques-animes-et-animations-visuelles"
+  },
+  {
+    "title": "Comment accéder aux 5 IA secrètes de Whatsapp Merci @Jolan.ai d'avoi",
+    "raw": "Comment accéder aux 5 IA secrètes de Whatsapp Merci @Jolan.ai d'avoi...",
+    "len": 1254,
+    "text": "Comment accéder aux 5 IA secrètes de WhatsApp ? J'y croyais pas, mais en fait ça marche. Vous avez juste à appuyer sur ce bouton pour créer un nouveau contact. Là il faudra entrer ce numéro et vous pourrez discuter directement avec Copilot, l'équivalent de ChatGPT, mais créé par Microsoft. D'ailleurs si vous préférez ChatGPT, il a aussi un numéro dans WhatsApp. Je vous le mets à l'écran, c'est à peu près la même chose que sur l'application, sauf que tout se fait dans WhatsApp. Ensuite avec ce numéro, vous pouvez accéder à Luzia, une IA espagnole. Elle peut transcrire des audios, traduire des textes, donner des conseils, donc super pratique si vous vous échangez avec des personnes dans différentes langues. Si vous cherchez un assistant pour mieux vous organiser, vous pouvez essayer DolaAI qui vous permettra de créer, de modifier ou de supprimer des événements directement dans votre calendrier. Et si vous voulez plutôt créer des images, il y a aussi une IA pour ça. Vous pouvez utiliser MobileGPT avec ce numéro pour générer des images directement dans WhatsApp. Ça vous évite d'accumuler les applications et vous avez tout au même endroit. Si ça vous a plu, abonnez-vous, je partage une astuce par jour.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "comment-acceder-aux-5-ia-secretes-de-whatsapp-merci-jolan-ai-d-avoi"
+  },
+  {
+    "title": "Réponse à @irokzofficial Dites-moi si vous voulez que je fasse un tut",
+    "raw": "Réponse à @irokzofficial Dites-moi si vous voulez que je fasse un tut...",
+    "len": 1135,
+    "text": "C'était temps que je m'intéresse vraiment à la génération d'images par intelligence artificielle et donc ça passe par le fait de comprendre ce qu'est un LoRa et surtout d'essayer d'en créer un pour pouvoir l'utiliser. Je suis sûre qu'évidemment je ne savais pas comment faire et qu'est-ce qu'on fait quand on ne sait pas faire quelque chose, on va sur YouTube et on trouve le tutoriel d'un ingénieur idéalement indien. J'ai donc suivi ce tutoriel qui est très très bien expliqué et en dix minutes il vous dit vraiment comment faire mais pour vraiment vous expliquer la théorie LoRa ça veut dire Low-Rank Adaptation. En fait c'est une technique qui vous permet d'entraîner un modèle d'intelligence artificielle à partir de vos données. Donc je lui ai donné genre 45 photos de moi et à partir de ma tête il a fait des illustrations. Bref tout allait bien jusqu'au moment où je me suis dit ok maintenant je vais essayer de demander des photos plus réalistes et genre ça on dirait vraiment moi en un peu plus fatigué que d'habitude mais surtout celle-ci les gars on dirait vraiment ma tête c'est trop bizarre.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "reponse-a-irokzofficial-dites-moi-si-vous-voulez-que-je-fasse-un-tut"
+  },
+  {
+    "title": "Comment utiliser Nano Banana pro ： la meilleure plateforme La nouvell",
+    "raw": "Comment utiliser Nano Banana pro ： la meilleure plateforme La nouvell...",
+    "len": 1102,
+    "text": "Bon, si vous pensez encore que l'IA ne peut pas faire ça, regardez bien, Nano Banana Pro vient de sortir et voici la meilleure plateforme pour l'utiliser. Il suffit d'aller sur ce site, on a des crédits gratuits tous les jours et là si je clique sur nouveau projet, que j'envoie une photo et que je demande Utilise Nano Banana Pro et génère des posters cohérents pour différents types de croissants. L'IA va automatiquement créer plusieurs posters qui gardent exactement le même style mais avec différents goûts. Et ensuite en cliquant sur Edit Elements, on peut déplacer des éléments, éditer du texte et même changer les couleurs de l'arrière-plan. Mais on peut aussi envoyer plusieurs images qui représentent l'identité visuelle d'une marque. Et Nano Banana Pro pourra reprendre le branding de la marque mais avec un thème particulier, là j'ai demandé Noël. Donc je le répète, il y a des crédits gratuits quand on s'inscrit mais sinon avec 7 abonnements, on a accès à Nano Banana, Seedream et Midjourney en illimité. Si l'IA vous intéresse, abonnez-vous et à demain !\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "comment-utiliser-nano-banana-pro-la-meilleure-plateforme-la-nouvell"
+  },
+  {
+    "title": "La Chine continue de nous impressionner Pendant que les États-Unis re",
+    "raw": "La Chine continue de nous impressionner Pendant que les États-Unis re...",
+    "len": 937,
+    "text": "Pendant que les Etats-Unis interdisent les IAs les plus puissantes, les Chinois font tout l'inverse. Ils ont sorti Minimax M3, l'un des meilleurs modèles open weights. Pour l'essayer, vous pouvez aller sur ce site, cliquer sur télécharger et sélectionner Minimax M3. On peut créer des sites web, générer des images, mais aussi programmer des tâches et même utiliser des skills comme dans Claude. Donc par exemple si je lui envoie un tableau Excel et que je demande un dashboard interactif, on obtient ce résultat avec les différents chiffres, un graphique, puis un tableau. Et si on demande d'analyser ces données, on obtient un rapport complet. Bref, c'est une très bonne alternative à Claude Code et c'est surtout beaucoup moins cher. Pour essayer Minimax gratuitement, c'est juste ici. Et si vous avez besoin de plus de crédit, ils ont ces différents abonnements. Je vous ai mis le lien juste ici dans ma biographie.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "la-chine-continue-de-nous-impressionner-pendant-que-les-etats-unis-re"
+  },
+  {
+    "title": "Réponse à @jam92600 Une IA française avec toutes les fonctionnalités",
+    "raw": "Réponse à @jam92600 Une IA française avec toutes les fonctionnalités ...",
+    "len": 925,
+    "text": "Apparemment, les équipes de Mistral ont vu ce commentaire, ça les a saoulés. Donc, ils viennent de sortir un tout nouveau modèle d'intelligence artificielle avec toutes les fonctionnalités de ChatGPT, mais totalement gratuites. Ce qui est cool, c'est qu'on peut utiliser le modèle en ligne avec une API, mais qu'on peut aussi le télécharger pour l'avoir directement sur notre ordinateur en local. Par contre, je trouve ça assez aberrant pour une entreprise française de ne pas avoir traduit cette annonce. Parmi ces fonctionnalités, on a la recherche sur le web avec des sources, comme ChatGPT et Perplexity, la fonctionnalité Canva qui permet d'éditer du texte directement dans l'interface de Mistral, une fonction de vision pour comprendre les images, et aussi la possibilité de générer des images avec Flux. On peut aussi créer nos propres agents, un petit peu comme les GPT personnalisés dans ChatGPT.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "reponse-a-jam92600-une-ia-francaise-avec-toutes-les-fonctionnalites"
+  },
+  {
+    "title": "Cette IA gratuite remplace Photoshop ： GoogleAI Studio avec Gemini 2",
+    "raw": "Cette IA gratuite remplace Photoshop ： GoogleAI Studio avec Gemini 2....",
+    "len": 729,
+    "text": "Est-ce que vous vous souvenez qu'il y a à peine un an, pour modifier une image, on devait télécharger un logiciel comme Photoshop, légalement, apprendre à utiliser des calques, des filtres, et même parfois passer de longues heures sur YouTube à regarder des tutoriels. Mais aujourd'hui, n'importe qui peut le faire, il suffit de savoir écrire. Si vous allez sur le site de Google IA Studio, que vous choisissez le modèle Gemini 2.0 Flash expérimental, on peut ajouter une photo et lui demander de la modifier comme on veut. Donc là par exemple, je lui ai demandé d'ajouter du chocolat. On peut même lui demander de changer la couleur d'arrière-plan d'une photo ou de changer la coupe de cheveux d'Emmanuel Macron.\r\n",
+    "edu": 4,
+    "category": "images-visuels",
+    "slug": "cette-ia-gratuite-remplace-photoshop-googleai-studio-avec-gemini-2"
+  },
+  {
+    "title": "Meilleurs cours pour apprendre l'IA (gratuit) Voici les meilleurs cou",
+    "raw": "Meilleurs cours pour apprendre l'IA (gratuit) Voici les meilleurs cou...",
+    "len": 861,
+    "text": "C'est ultra rare de trouver du contenu comme ça sur internet, mais si vous voulez apprendre à utiliser l'IA et que vous êtes sérieux, regardez ça ! Ce que vous voyez là, c'est la meilleure roadmap pour apprendre à utiliser l'IA LLM et à créer avec. Donc il y a 69 000 étoiles sur GitHub, et la page est celle de Maxime Labonne, qui est un scientifique en machine learning, qui travaille chez Liquid AI. Donc il y a trois parties, une sur les fondamentaux, une partie scientifique et une partie ingénérie. Concrètement, on peut apprendre à fine-tuner des modèles, à l'équantiser et même à enlever les parties censurées. Bref, ça va beaucoup plus loin que la plupart des formations en ligne. Vous avez le lien juste ici, je vous le mettrai aussi en description et en commentaire. Si vous avez trouvé ça utile, abonnez-vous, et à demain !\r\n",
+    "edu": 6,
+    "category": "formations",
+    "slug": "meilleurs-cours-pour-apprendre-l-ia-gratuit-voici-les-meilleurs-cou"
+  },
+  {
+    "title": "Le futur du travail avec l’intelligence artificielle ： plus d’opportu",
+    "raw": "Le futur du travail avec l’intelligence artificielle ： plus d’opportu...",
+    "len": 1794,
+    "text": "2025 est la meilleure année pour commencer à travailler. En tout cas, c'est ce que pense Sam Altman, fondateur d'OpenAI, l'entreprise derrière ChatGPT. Alors, est-ce qu'il a raison d'être aussi optimiste ? Microsoft vient de sortir son rapport Walk Trend Index pour l'année 2025, et le résultat est un peu plus nuancé. Le rapport se base sur trois sources. Une enquête auprès de 31 000 personnes dans 31 pays, des données issues de Microsoft 365 et des tendances observées sur LinkedIn. Et voici ce qu'on apprend. En France, 7 dirigeants sur 10 ont intégré des agents IA dans leur entreprise. Un dirigeant sur 3 envisage de réduire ses effectifs, donc il y aura des licenciements. Mais à côté de ça, 67% des dirigeants prévoit aussi de créer des nouveaux rôles qui auront un lien avec l'intelligence artificielle. D'après ce rapport, les entreprises vont devoir se transformer. Ils imaginent trois phases. Une première où chaque employé utilise l'IA pour travailler mieux et plus rapidement. Une seconde où les agents IA rejoignent nos équipes, un peu comme des collègues. Puis une dernière phase où les humains deviennent des managers d'agents IA. Et cette transformation a déjà commencé, sachant qu'aujourd'hui en France, environ 30% des dirigeants utilisent déjà des agents IA pour automatiser certaines tâches. Alors comment est-ce qu'on est censé réagir en apprenant ça ? C'est normal de se sentir dépassé ou inquiet, surtout si on a un métier qui risque d'être impacté. La bonne nouvelle, c'est",
+    "edu": 5,
+    "category": "formations",
+    "slug": "le-futur-du-travail-avec-l-intelligence-artificielle-plus-d-opportu"
+  },
+  {
+    "title": "Comment cloner le cerveau de n'importe quel créateur en 5 minutes et",
+    "raw": "Comment cloner le cerveau de n'importe quel créateur en 5 minutes et ...",
+    "len": 880,
+    "text": "On peut maintenant cloner le cerveau de n'importe quel créateur en 5 minutes et c'est gratuit. Étape numéro 1, on va installer cette extension, puis aller dans les paramètres, appuyer sur ce bouton et créer cette action. Je vous laisse mettre sur pause. Étape numéro 2, on va aller sur la chaîne du créateur de notre choix, filtrer ce qui nous intéresse et récupérer toutes les vidéos qu'on veut. Étape numéro 3, on va utiliser cette extension et coller ici toutes les urls qu'on vient de récupérer avec l'extension précédente. Maintenant que le notebook est prêt, je peux poser n'importe quelle question et notre bouquet-là m'utilisera toutes les vidéos du créateur pour répondre. Donc c'est parfait si vous voulez apprendre quelque chose et que vous connaissez un créateur qui en parle. Merci à GEDA AI School d'être les partenaires de cette vidéo.\r\n",
+    "edu": 5,
+    "category": "formations",
+    "slug": "comment-cloner-le-cerveau-de-n-importe-quel-createur-en-5-minutes-et"
+  },
+  {
+    "title": "Guide gratuit par Microsoft pour apprendre à créer des agents IA pour",
+    "raw": "Guide gratuit par Microsoft pour apprendre à créer des agents IA pour...",
+    "len": 568,
+    "text": "Alerte bon plan si vous voulez apprendre à créer vos propres agents IA mais que vous ne savez pas par où commencer. Microsoft vient de sortir ce guide gratuit qui s'appelle « Agents IA pour les débutants ». Pour une fois, c'est disponible en français. Et c'est une série de 10 vidéos courtes avec aussi des exemples de codes. Donc il suffit d'aller sur ce lien, je vous laisse faire une capture d'écran. Si vous scrollez ici, vous pouvez choisir français. Et là, vous avez tous les cours avec en plus des ressources supplémentaires pour aller plus loin.\r\n",
+    "edu": 5,
+    "category": "formations",
+    "slug": "guide-gratuit-par-microsoft-pour-apprendre-a-creer-des-agents-ia-pour"
+  },
+  {
+    "title": "5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman",
+    "raw": "5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman ...",
+    "len": 1846,
+    "text": "5 prédictions du co-fondateur de ChatGPT de la plus probable à la plus folle pour mieux comprendre le futur de l'IA et de l'humanité. Donc prédiction n°1, la fin des tâches ennuyeuses. Aujourd'hui ChatGPT répond mais demain il agira. Ça changera la façon dont on utilise notre ordinateur et même tout notre quotidien. On peut en voir les prémices avec ChatGPT agent qui peut effectuer des tâches en autonomie, mais c'est que le début. Prédiction n°2, ça ira pour les enfants, pas trop pour les parents. Historiquement les générations qui ont grandi avec une technologie n'ont aucun problème à l'utiliser. Par contre les anciens doivent réapprendre à faire des choses, ce qui est beaucoup plus compliqué. Prédiction n°3, tous les produits et services seront plus intelligents que nous, ils seront plus efficaces et pourront répondre à tous nos besoins. Dans ce monde l'éducation sera complètement différente et les universités telles qu'on les connaît aujourd'hui n'auront rien à voir avec celles qui existeront dans 15 ans. Prédiction n°4, n'importe qui pourra créer n'importe quoi. C'est déjà presque le cas mais selon Sam Altman on pourra bientôt tous créer des technologies simplement en demandant à une IA de les créer pour nous. Ça veut dire que n'importe quelle idée sera beaucoup plus simple à concrétiser, même sans connaissance technique. Et enfin, prédiction n°5 et c'est la plus folle, il imagine que dans le futur on pourrait recevoir une quantité définie de tokens, comme une sorte de sa",
+    "edu": 4,
+    "category": "formations",
+    "slug": "5-predictions-sur-le-futur-de-l-ia-et-de-l-humanite-selon-sam-altman"
+  },
+  {
+    "title": "Réponse à @lorachett Tuto ： 3 façons d'utiliser l'IA notebook LM de G",
+    "raw": "Réponse à @lorachett Tuto ： 3 façons d'utiliser l'IA notebook LM de G...",
+    "len": 1776,
+    "text": "Tout le monde parle des podcasts qu'on peut faire avec Notebook LM, mais en vrai, il y a plein d'autres façons de l'utiliser et j'ai l'impression que personne ne le sait. Pour rappel, Notebook LM, c'est une IA gratuite qui te fait gagner énormément de temps si tu travailles avec des documents. Tu peux envoyer des fichiers pour que l'IA t'aide à les résumer, à mieux les comprendre et même à les transformer pour qu'ils prennent différentes formes. Du coup, je te donne trois exemples, autres que les podcasts, pour utiliser Notebook LM. Si t'es étudiant, imaginons t'as genre 200 pages de cours à réviser avant un examen, plutôt que de tout lire toi-même et de faire tes fiches, tu peux envoyer ton cours dans Notebook LM. L'IA pourra te donner les sujets les plus importants et tu pourras même créer des quiz pour t'entraîner, faire des fiches de révision et même avoir un glossaire avec les définitions les plus importantes. Deuxième exemple, imaginons que tu travailles en entreprise et que t'es un nouveau collègue, ou même si c'est toi le nouveau collègue et que t'as plein de trucs à apprendre. Toi et ton collègue pouvez mettre tous les documents qui parlent des process à suivre dans l'entreprise dans Notebook LM. Hélas, si tu viens d'arriver et que tu comprends rien, t'as juste à poser ta question dans Notebook LM, et au final tout le monde gagne du temps. Troisième exemple, si jamais tu dois créer du contenu comme un livre blanc ou un dossier sur un sujet complexe pour lequel t'as b",
+    "edu": 4,
+    "category": "formations",
+    "slug": "reponse-a-lorachett-tuto-3-facons-d-utiliser-l-ia-notebook-lm-de-g"
+  },
+  {
+    "title": "Nouveauté avec la meilleure IA gratuite pour apprendre plus vite et m",
+    "raw": "Nouveauté avec la meilleure IA gratuite pour apprendre plus vite et m...",
+    "len": 1192,
+    "text": "Imaginez une IA qui vous permet de discuter avec vos fichiers. Ça existe, c'est gratuit et ça s'appelle Notebook LM. Pour ceux qui ne connaissent pas encore, Notebook LM, c'est un outil qui a été créé par Google. Il peut transformer des documents en fiches de révision, nous permettre de poser des questions directement à nos notes et on peut même créer des podcasts pour les écouter et faire autre chose en même temps. Donc si vous avez une mémoire auditive et que vous n'aimez pas trop lire, ça sera parfait pour vous. Et la bonne nouvelle, c'est que les podcasts sont maintenant disponibles en français, ce qui n'était pas le cas auparavant. Donc je vous montre comment ça fonctionne. Pour l'essayer, il suffit d'aller sur ce site, puis de cliquer sur Essayer Notebook LM. Ici, vous pouvez envoyer tous vos documents qui serviront de source. Donc ça peut être du texte, des sites web, des vidéos et même de l'audio. Et une fois que c'est fait, vous verrez à droite de l'écran, il y a une partie résumé audio. Et là, si vous cliquez sur Charger, vous aurez automatiquement un podcast qui va se créer à partir de vos sources. Et maintenant, il est en français.\r\n",
+    "edu": 4,
+    "category": "formations",
+    "slug": "nouveaute-avec-la-meilleure-ia-gratuite-pour-apprendre-plus-vite-et-m"
+  },
+  {
+    "title": "Tutoriel ： comment utiliser ChatGPT pour les débutants en 4 étapes si",
+    "raw": "Tutoriel ： comment utiliser ChatGPT pour les débutants en 4 étapes si...",
+    "len": 1131,
+    "text": "60 secondes pour passer d'un niveau débutant à intermédiaire sur ChatGPT. Et on va faire ça en 4 étapes simples. Première étape, quand vous créez une conversation sur ChatGPT, il faudra lui donner un rôle. En gros, vous allez lui dire quel casquette il doit porter. Par exemple, je peux lui dire, agis comme un spécialiste des réseaux sociaux. Deuxième étape, donner à ChatGPT du contexte. Pas besoin de trop rentrer dans les détails non plus, mais il faut lui expliquer clairement qui on est et quelle est la situation. Par exemple, je suis une créatrice de contenu et j'aimerais améliorer ma biographie TikTok. Ici, je lui envoie en même temps une capture d'écran de ma biographie. Par exemple, pose-moi 3 questions pertinentes avant de me répondre. Ensuite, évidemment, il faut lire la réponse, faire vos propres modifications et vous pouvez très bien continuer la discussion avec ChatGPT dans le même chat. N'hésitez pas à partager cette vidéo avec tous vos proches qui ne savent pas encore comment utiliser ChatGPT. Si ça vous a plu, pensez à vous abonner, je partage une astuce par jour sur IA.\r\n",
+    "edu": 4,
+    "category": "formations",
+    "slug": "tutoriel-comment-utiliser-chatgpt-pour-les-debutants-en-4-etapes-si"
+  },
+  {
+    "title": "On nous a menti Ce créateur est en réalité une IA 🥀🥀",
+    "raw": "On nous a menti Ce créateur est en réalité une IA 🥀🥀 #realcreator #k...",
+    "len": 829,
+    "text": "Ce compte fait des millions de vues à chaque vidéo qu'il publie. Pourtant, le principe est toujours le même. On voit cet enfant se transformer en célébrité en claquant des doigts. Évidemment, c'est faux, il utilise l'IA pour créer cet effet. Mais ce que personne n'a encore remarqué, c'est que cet enfant lui-même est une IA. On voit que son visage est légèrement flouté. Son t-shirt change subtilement d'une vidéo à l'autre. Un jour il a les yeux bleus, le lendemain ils sont verts et le surlendemain ils sont gris. Pourtant, ça ne l'a pas empêché de gagner 300 000 abonnés et de vendre une formation à 30$ pour apprendre aux gens à faire comme lui. Alors ce créateur est-il un génie ou un arnaqueur ? Partagez cette vidéo avec quelqu'un qui pourrait se faire avoir et abonnez-vous pour plus d'astuces.\r\n",
+    "edu": 4,
+    "category": "formations",
+    "slug": "on-nous-a-menti-ce-createur-est-en-realite-une-ia"
+  },
+  {
+    "title": "Alternative gratuite (5 requêtes par jour) si vous voulez tester l'ag",
+    "raw": "Alternative gratuite (5 requêtes par jour) si vous voulez tester l'ag...",
+    "len": 782,
+    "text": "Imaginez un outil capable de faire toutes nos tâches de façon autonome. Bien cet outil existe déjà et c'est Opérator d'OpenAI. Le problème c'est qu'il est accessible qu'à une toute petite partie de la population puisqu'il coûte de 100 dollars par mois. Mais heureusement une startup britannique vient de sortir une alternative à Opérator et celle-ci est gratuite. Elle s'appelle Convergence.ai et ça vous permet de laisser l'intelligence artificielle faire des recherches sur Internet pour vous. Par exemple, je vais demander de me trouver le trajet le moins cher pour aller de Paris à Marseille ce week-end et on peut aussi l'utiliser pour analyser une entreprise ou même des actions. Et aussi si vous cherchez des informations sur une personne, cette option existe.\r\n",
+    "edu": 4,
+    "category": "formations",
+    "slug": "alternative-gratuite-5-requetes-par-jour-si-vous-voulez-tester-l-ag"
+  },
+  {
+    "title": "Plein de formations gratuites à l’intelligence artificielle sur le si",
+    "raw": "Plein de formations gratuites à l’intelligence artificielle sur le si...",
+    "len": 623,
+    "text": "Bonne nouvelle, si vous cherchez une formation gratuite à l'intelligence artificielle, pour y accéder vous avez juste à aller sur ce lien, n'hésitez pas à mettre sur pause pour bien le voir. Et là vous avez toutes les formations qui sont gratuites, il n'y a pas que de l'intelligence artificielle, il y a d'autres choses aussi. Par exemple, celle-ci va vous permettre d'apprendre à créer des agents IA. Attention par contre, pour suivre ces cours il va falloir déjà parler anglais, et surtout regardez bien au niveau des prérequis, parce que certaines formations ne seront pas adaptées à un niveau débutant.\r\n",
+    "edu": 4,
+    "category": "formations",
+    "slug": "plein-de-formations-gratuites-a-l-intelligence-artificielle-sur-le-si"
+  },
+  {
+    "title": "Formation IA gratuite + pour apprendre à coder La formation dure 17h",
+    "raw": "Formation IA gratuite + pour apprendre à coder La formation dure 17h...",
+    "len": 615,
+    "text": "Si vous débutez avec l'intelligence artificielle, que vous ne savez pas coder, mais que c'est un sujet qui vous intéresse, vous n'avez pas besoin de faire un master à 10K l'année avec des cours qui sont probablement déjà obsolètes, je vous conseille la formation IA et Python de Coursera, qui est gratuite et qui est dispensée par Andrew Ng, qui est un ancien scientifique de Google et qui explique extrêmement bien. Pour avoir la formation gratuitement, pensez bien à cliquer sur audit, mais par contre si vous voulez avoir la certification, ce qui peut être bien sur un CV, là il faudra payer 47€.\r\n",
+    "edu": 4,
+    "category": "formations",
+    "slug": "formation-ia-gratuite-pour-apprendre-a-coder-la-formation-dure-17h"
+  },
+  {
+    "title": "Réponse à @nicopasla9 Test de Thoreo ： une IA qui résume les vidéos",
+    "raw": "Réponse à @nicopasla9 Test de Thoreo ： une IA qui résume les vidéos ...",
+    "len": 1750,
+    "text": "Alors j'ai vu ce commentaire, j'étais assez sceptique, je ne pensais pas que ça allait fonctionner donc on va voir ça ensemble. Donc je vais prendre une vidéo au hasard sur YouTube. Celle-ci fait 24 minutes donc c'est une vidéo qui est assez longue. Et on va remplacer YouTube dans l'URL par Toreo. J'appuie sur entrée, trop cool, donc on a un sommaire, enfin un résumé, ah faut faire un compte. L'astuce si jamais vous voulez créer un compte et ne pas utiliser votre adresse mail, vous pouvez aller sur ce site et avoir une adresse mail temporaire. Bon j'ai changé de vidéo mais l'idée est la même. Là c'est une vidéo de 2h29 donc assez longue. Là je lui demande, résume cette vidéo en 5 points et ça n'a pas fonctionné. Je suis ultra déçue, aucun quiz possible et pas de flashcards non plus. Bon cette idée est cool mais l'exécution ne l'est pas, donc allez sur notebook.lm les amis. Bon je suis sympa, je vais essayer avec une autre vidéo YouTube, un peu plus courte de 12 minutes. J'avoue la fonction de résumé par contre est très pratique. Et là on va voir si ça arrive à faire un quiz ou pas. Et là ça fonctionne donc c'est possible que ce soit quelque chose qui marche uniquement avec des vidéos qui ne sont pas trop longues. On va essayer aussi les flashcards. Ok là j'ai essayé de regarder plusieurs flashcards, en fait au bout d'un moment on est limité avec un compte gratuit donc faut bien les voir en tête. Même pour le quiz en fait, je peux pas continuer mon quiz sans payer. Donc mon av",
+    "edu": 5,
+    "category": "no-code-apps",
+    "slug": "reponse-a-nicopasla9-test-de-thoreo-une-ia-qui-resume-les-videos"
+  },
+  {
+    "title": "Tutoriel ： comment installer n8n gratuitement pour créer vos automati",
+    "raw": "Tutoriel ： comment installer n8n gratuitement pour créer vos automati...",
+    "len": 1555,
+    "text": "Ne payez pas 20 euros par mois pour créer vos agents IA avec N8N, je vous montre comment l'avoir gratuitement en l'installant sur votre ordi. Vous allez voir c'est pas difficile, si vous n'avez pas le temps n'hésitez pas à enregistrer la vidéo, mais vraiment revenez plus tard parce que c'est trop pratique. Donc la première chose à faire ça va être d'aller sur ce site et d'installer Node.js. Donc là vous avez juste à cliquer ici, ensuite vous allez appuyer sur Windows plus R si vous êtes sur Windows ou sinon sur ces autres commandes là qui s'affichent. Donc sur Windows ça va vous ouvrir cette fenêtre, là il faudra tout simplement écrire commande donc CMD puis OK. Une fois que vous êtes là-dedans vous allez simplement coller cette commande puis appuyer sur entrée. Là vous allez devoir attendre quelques minutes et puis vous allez voir que du texte va s'afficher dans cette fenêtre. Toujours dans cette même fenêtre vous allez du coup écrire N8N puis ensuite appuyer sur entrée. Et si vous avez ce message c'est tout bon, vous avez juste à appuyer sur la lettre O de votre clavier et là vous avez N8N en local. Ensuite vous pouvez créer vos propres workflows ou bien aller ici à gauche de l'écran et là vous aurez accès à énormément de templates différentes et gratuites pour créer vos agents IA. Vous préférez un tutoriel par écrit qui sera peut-être plus simple à suivre, je vous ai mis ça dans ma description. Si ça vous a plu, n'hésitez pas à vous abonner, je partage une astuce par jour ",
+    "edu": 5,
+    "category": "no-code-apps",
+    "slug": "tutoriel-comment-installer-n8n-gratuitement-pour-creer-vos-automati"
+  },
+  {
+    "title": "Templates n8n gratuites pour créer des agents IA ： comment y accéder",
+    "raw": "Templates n8n gratuites pour créer des agents IA ： comment y accéder ...",
+    "len": 680,
+    "text": "Je voulais pas trop partager ça parce que je sais que ça va pas plaire à tout le monde, mais si vous voulez créer des agents IA, vous n'avez pas besoin de payer des templates. Il suffit d'aller sur le site de N8N, je vous laisse faire une capture d'écran, et vous aurez accès à toutes les templates gratuites qu'il y en a pour le marketing, les ventes, le support client et plein d'autres choses. Une fois que vous avez quelque chose qui vous plait, vous avez juste à cliquer dessus, puis sur utiliser gratuitement. Là, vous pouvez tout importer automatiquement ou bien simplement copier, puis coller ça dans N8N. Abonnez-vous, je partage une astuce par jour sur l'IA.\r\n",
+    "edu": 5,
+    "category": "no-code-apps",
+    "slug": "templates-n8n-gratuites-pour-creer-des-agents-ia-comment-y-acceder"
+  },
+  {
+    "title": "Réponse à @charlydevaux Tutoriel ： comment passer un appel vidéo Chat",
+    "raw": "Réponse à @charlydevaux Tutoriel ： comment passer un appel vidéo Chat...",
+    "len": 1976,
+    "text": "C'est un tutoriel pour savoir comment utiliser ChatGPT avec la caméra. Pour commencer, vous allez devoir télécharger l'application ChatGPT. Vous allez aller dans votre magasin d'applications, soit le Play Store, soit l'App Store, si jamais vous êtes sur Apple. Là, il faudrait tout simplement écrire ChatGPT et faites bien attention parce qu'il y a plein d'applications différentes qui ne sont pas ChatGPT. Et celle-ci ne faudrait surtout pas les télécharger parce que déjà, elles peuvent être dangereuses et en plus de ça, elles ne vous permettront pas d'utiliser ChatGPT avec la caméra. Une fois que vous avez téléchargé l'application, il faut quand même savoir que les appels vidéo avec ChatGPT sont uniquement disponibles pour les personnes qui ont un abonnement payant. Donc si vous payez déjà les 20 dollars par mois, vous devriez pouvoir utiliser ChatGPT avec votre caméra. Par contre, cette option n'est pas disponible en France, donc on va devoir trouver un moyen de faire croire à OpenAI qu'on se trouve aux Etats-Unis. Pour faire ça, ce n'est pas compliqué, on a juste besoin d'utiliser un VPN. Il y a plein de VPN différents, il y en a qui sont payants, il y en a qui sont gratuits, mais vous pouvez très bien utiliser GhostVPN, ExpressVPN, enfin peu importe. Et si jamais vous avez besoin d'une option gratuite, je vous conseille ProtonVPN. Une fois que tout ça est fait, vous allez mettre en route votre VPN et revenir sur l'application ChatGPT. Vous allez pouvoir cliquer sur ce bouton",
+    "edu": 4,
+    "category": "no-code-apps",
+    "slug": "reponse-a-charlydevaux-tutoriel-comment-passer-un-appel-video-chat"
+  },
+  {
+    "title": "Comment apparaître dans les résultats de ChatGPT ： tutoriel avec 2 mé",
+    "raw": "Comment apparaître dans les résultats de ChatGPT ： tutoriel avec 2 mé...",
+    "len": 1002,
+    "text": "Ok, apparemment on peut devenir les rois d'Internet et apparaître dans les résultats de ChatGPT. C'est hyper important si vous avez un business en ligne ou une entreprise parce qu'on est de plus en plus nombreux à faire nos recherches avec IA. Alors profitons-en pendant que c'est pas très connu et que c'est encore possible. Donc j'ai trouvé deux méthodes. La première, c'est d'aller directement sur le site d'OpenAI et de remplir ce formulaire. Il faudrait ajouter le lien de votre site et préciser le produit que vous vendez. La deuxième méthode, c'est de suivre les étapes qui sont mentionnées dans cet article. En fait, il explique comment faire de l'AEO, donc comme du SEO, mais pour l'IA. Les étapes sont pas très compliquées et apparemment on a des résultats en 48 heures. Je vous mets l'article en description et j'ai aussi fait un tutoriel en français que vous pouvez retrouver dans ma description. Donc dites-moi si vous essayez et abonnez-vous pour plus d'astuces sur IA.\r\n",
+    "edu": 4,
+    "category": "no-code-apps",
+    "slug": "comment-apparaitre-dans-les-resultats-de-chatgpt-tutoriel-avec-2-me"
+  },
+  {
+    "title": "Tutoriel ： comment créer un avatar hyper réaliste et poster des vidéo",
+    "raw": "Tutoriel ： comment créer un avatar hyper réaliste et poster des vidéo...",
+    "len": 736,
+    "text": "Comment créer votre avatar virtuel en moins d'une minute et créer des vidéos sur les réseaux sociaux sans montrer votre visage. Pour ça, vous avez juste à aller sur ce site et là, vous pourrez choisir parmi un grand nombre d'avatars différents. Ici, vous pouvez choisir le sujet de votre avatar, son genre et son âge. Moi, je vais choisir celle-ci. Ensuite, c'est tout simple, il suffit d'écrire votre texte ici puis de choisir parmi les différentes voix. Ici, vous pouvez même régler la vitesse de la voix. Je vous conseille d'augmenter un petit peu parce qu'en général, c'est assez lent. Pour info, en version gratuite, vous avez droit à 3 minutes de vidéo. Et après quelques minutes d'attente, voici le résultat.\r\n",
+    "edu": 4,
+    "category": "no-code-apps",
+    "slug": "tutoriel-comment-creer-un-avatar-hyper-realiste-et-poster-des-video"
+  },
+  {
+    "title": "Comment payer moins cher les abonnements à des outils d'intelligence",
+    "raw": "Comment payer moins cher les abonnements à des outils d'intelligence ...",
+    "len": 642,
+    "text": "Alerte bon plan si vous voulez utiliser des outils IA mais que vous ne voulez pas accumuler plein d'abonnements différents parce que les prix peuvent vite monter. Vous pouvez aller sur ce site qui regroupe plein d'offres intéressantes sur les outils d'intelligence artificielle. Par exemple, on a trois mois gratuits sur Eleven Labs. Il y a aussi 12 mois de Notions AI gratuits, ce qui est plutôt pas mal. Et moins 50% sur Lovaball. Bref, c'est vraiment pas mal s'il y a des outils que vous vouliez tester mais que vous ne voulez pas payer plein impôt. Si ça vous a plu, pensez à vous abonner, je partage une astuce par jour sur l'IA.\r\n",
+    "edu": 4,
+    "category": "no-code-apps",
+    "slug": "comment-payer-moins-cher-les-abonnements-a-des-outils-d-intelligence"
+  },
+  {
+    "title": "Tutoriel ： comment avoir accès à une IA, un VPN et un bloqueur de pub",
+    "raw": "Tutoriel ： comment avoir accès à une IA, un VPN et un bloqueur de pub...",
+    "len": 625,
+    "text": "Comment avoir gratuitement une IA, un VPN et un bloqueur de publicité dans une seule application ? Allez sur le Play Store, téléchargez Opera, vous verrez, il n'y a pas besoin de s'inscrire. Pour activer le VPN, vous avez juste à appuyer ici. Pour bloquer les publicités, c'est juste là. Et pour utiliser l'IA, c'est ce bouton. Par exemple, je lui envoie une photo de ma plante et là, elle me donne tous les conseils pour essayer de la sauver. L'application est hyper complète et vous verrez, c'est vraiment facile à utiliser. Bref, c'est devenu mon navigateur par défaut et je vous conseille de le télécharger.\r\n",
+    "edu": 4,
+    "category": "no-code-apps",
+    "slug": "tutoriel-comment-avoir-acces-a-une-ia-un-vpn-et-un-bloqueur-de-pub"
+  },
+  {
+    "title": "tuto ： comment vaincre ta timidité et avoir plus confiance en toi en",
+    "raw": "tuto ： comment vaincre ta timidité et avoir plus confiance en toi en ...",
+    "len": 1672,
+    "text": "L'enfer c'est les autres, mais si tu veux vivre longtemps, t'as besoin des gens. Donc si tu veux arrêter d'être handicapé socialement, il va falloir pratiquer. Et avant de te lancer dans le grand bain, tu peux utiliser ChatGPT. Moi j'utilise de trois façons. Pour ça il va juste te falloir l'application ChatGPT sur téléphone qui est totalement gratuite, avec le mode vocal. La première façon ça va être pour pratiquer le small talk. Small talk c'est vraiment ces petites conversations anodines, genre Ah il fait beau aujourd'hui ou Qu'est-ce que t'as fait ce week-end ? Ma phobie ultime, mais ChatGPT est hyper bon pour reproduire ce genre d'interaction et donc pour que tu t'entraînes à y survivre. Deuxième façon, ce sont les role play. Donc si t'as un événement auquel tu dois assister, un day de prévue, un entretien, tu peux assigner un rôle à ChatGPT et lui demander de reproduire cette situation. Surtout, hésite pas à lui demander de te faire ses retours sur ta prestation et à te donner des conseils pour que tu puisses t'améliorer. Et troisième façon, ça va être d'utiliser ChatGPT pour lui expliquer des choses. Parce que je sais qu'un de mes plus grands problèmes c'est que dans ma tête tout est clair, mais quand je dois exprimer ce que je pense, j'ai énormément de difficulté à organiser mes idées et à les communiquer clairement. Donc par exemple si t'as un sujet qui t'intéresse, tu peux t'entraîner à parler de ce sujet et à lui expliquer des concepts comme si t'étais un prof qui s",
+    "edu": 3,
+    "category": "no-code-apps",
+    "slug": "tuto-comment-vaincre-ta-timidite-et-avoir-plus-confiance-en-toi-en"
+  },
+  {
+    "title": "Réponse à @_kirbyz 2 façons de gagner de l'argent grâce à l'intellige",
+    "raw": "Réponse à @_kirbyz 2 façons de gagner de l'argent grâce à l'intellige...",
+    "len": 1558,
+    "text": "Deux façons de gagner de l'argent grâce à l'intelligence artificielle, une qui est accessible à tout le monde et l'autre qui est un petit peu plus complexe mais qui pourrait littéralement faire de vous un millionnaire. La première façon c'est d'utiliser l'intelligence artificielle pour créer du contenu sur les réseaux sociaux. Il y a des outils qui permettent de faire ça super facilement comme ce site. Donc c'est tout simple, vous avez juste à entrer un thème pour générer un quiz. Un choix difficile, pizza ou sushi ? La majorité des gens choisissent la pizza. Par exemple vous voyez que ce compte fait ça et il a littéralement des milliers de vues. Ensuite il y a trois façons de monétiser votre compte. Vous pouvez être rémunéré pour les vues, faire des vidéos sponsorisées où les marques vont vous payer pour promouvoir leurs produits ou bien vendre un article ou un service que vous pourrez mettre en lien dans votre biographie. D'ailleurs c'est exactement ce qu'ils ont fait ici. Ensuite la deuxième méthode c'est tout simplement de créer vous-même un site comme celui-ci Parce que pour la petite histoire c'est un abonné qui a créé ce site et qui me l'a envoyé. D'ailleurs félicitations ! Si vous êtes développeur vous n'avez aucune excuse. Et si jamais ce n'est pas le cas aujourd'hui il y a des outils qui nous permettent de créer des sites très facilement. Sachant que bien sûr si jamais vous voulez faire quelque chose de plus poussé il faudra nécessairement être accompagné par des dé",
+    "edu": 3,
+    "category": "no-code-apps",
+    "slug": "reponse-a-kirbyz-2-facons-de-gagner-de-l-argent-grace-a-l-intellige"
+  },
+  {
+    "title": "Gamma AI ： meilleure IA gratuite pour créer des présentations powerpo",
+    "raw": "Gamma AI ： meilleure IA gratuite pour créer des présentations powerpo...",
+    "len": 1314,
+    "text": "Ok, cette année, on arrête de perdre du temps. Si jamais vous en avez marre de créer des PowerPoints tout pourri, j'ai une IA pour vous et tout ce que je vais vous montrer est gratuit. Donc ça s'appelle Gamma AI. Je pense qu'il y en a qui doivent déjà connaître. Et perso, c'est un outil qui m'a fait gagner énormément de temps et surtout qui me permet pour la première fois de faire de belles présentations. Pour l'utiliser, il suffit d'aller sur leur site et de cliquer sur générer. Là, je lui demande une présentation sur l'intelligence artificielle en 2025 avec des agents IA, sachant que clairement, c'est pas le sujet le plus simple à traiter. Et là, ça va super vite. En quelques secondes, on a un plan complet qu'on peut évidemment modifier. Là, vous avez aussi plein d'autres fonctionnalités comme la possibilité d'ajouter des graphiques ou d'intégrer d'autres applications si vous en avez besoin. Évidemment, c'est pas un appel à la feignantes intellectuelles. S'il vous plaît, ne pensez pas que l'outil va tout faire pour vous. Mais par contre, si vous êtes étudiant ou si pour le travail, vous avez souvent besoin de créer des PowerPoint, c'est le genre d'outil qui vous permet de faire du travail de meilleure qualité plus rapidement. Et ça, c'est quand même pas mal.\r\n",
+    "edu": 3,
+    "category": "no-code-apps",
+    "slug": "gamma-ai-meilleure-ia-gratuite-pour-creer-des-presentations-powerpo"
+  },
+  {
+    "title": "Templates 100% gratuites pour créer des automatisations et agents IA",
+    "raw": "Templates 100% gratuites pour créer des automatisations et agents IA ...",
+    "len": 694,
+    "text": "Alerte bon plan si vous voulez créer des agents IA ou des automatisations, vous avez juste à aller sur ce lien et là vous avez plein d'automatisations différentes, par exemple celle-ci permet d'automatiser des publications sur les réseaux sociaux, donc c'est tout simple, il suffit de cliquer dessus, puis ensuite sur download template, là vous arrivez sur ce fichier donc il faudra juste cliquer puis faire Ctrl A pour tout prendre, puis Ctrl C pour copier, ensuite vous allez dans l'automatisation qui est faite, ensuite évidemment il faudra vous connecter un peu partout. Si ça vous a plu et que l'IA vous intéresse, n'hésitez pas à vous abonner, je partage une astuce par jour.\r\n",
+    "edu": 3,
+    "category": "no-code-apps",
+    "slug": "templates-100-gratuites-pour-creer-des-automatisations-et-agents-ia"
+  },
+  {
+    "title": "Base de données gratuite avec des templates n8n et des tutoriels pour",
+    "raw": "Base de données gratuite avec des templates n8n et des tutoriels pour...",
+    "len": 718,
+    "text": "Est-ce que vous vous souvenez de cette liste pour créer des agents IA ? Tout le monde en parlait il y a quelques jours et c'est vrai que c'est très cool, mais le problème c'est que c'est dur de s'y retrouver. Donc il y a un créateur de contenu qui a fait quelque chose de très intelligent. Il a créé une base de données avec plein de templates NUITEN et les tutoriels qui vont avec. Donc vous avez juste à aller sur ce lien, je vous le mettrai en description ou en commentaire. Par exemple je demande des automatisations en lien avec les réseaux sociaux, et là on a plusieurs résultats, avec à chaque fois le lien vers le tutoriel YouTube, la template et la ressource. Abonnez-vous pour plus d'astuces !\r\n",
+    "edu": 6,
+    "category": "outils-alternatives",
+    "slug": "base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour"
+  },
+  {
+    "title": "Tuto ： comment installer une alternative gratuite à ChatGPT pour l'ut",
+    "raw": "Tuto ： comment installer une alternative gratuite à ChatGPT pour l'ut...",
+    "len": 1880,
+    "text": "Imaginez ChatGPT en gratuit qui fonctionne même sans connexion Internet. C'est pas possible parce que ChatGPT est détenu par une entreprise qui s'appelle OpenAI. Néanmoins, on peut quand même avoir son propre LLM en local, c'est-à-dire sa propre alternative à ChatGPT directement installée dans notre machine. Et c'est vraiment pas compliqué. Pour ça, on va devoir utiliser des modèles open source. Un modèle open source, c'est un modèle d'intelligence artificielle dont le code source est public et peut être utilisé par à peu près tout le monde gratuitement. Pour faire tourner ces modèles, on va avoir besoin d'une interface. Il y en a plein qui existent, genre Olama, Anything LLM, GPT4ALL et plein d'autres que je connais pas. Donc moi, je vais vous montrer comment faire avec LM Studio parce qu'à mon sens, c'est vraiment l'interface qui est la plus simple et la plus intuitive pour des gens qui sont pas techniques comme moi et qui savent pas du tout coder ou quoi. Donc la première chose à faire, ça va être de télécharger LM Studio. Vous avez juste à chercher LM Studio sur Google et vous allez arriver sur cette page. Et là, vous pourrez télécharger le modèle qui correspond à votre système d'exploitation. Une fois que c'est téléchargé, vous allez arriver sur cette page. Ensuite, si vous appuyez sur Discover, vous allez pouvoir rechercher des modèles d'intelligence artificielle directement depuis LM Studio. Si vous voulez une alternative à ChatGPT, je vous conseille de chercher Lama, ",
+    "edu": 4,
+    "category": "outils-alternatives",
+    "slug": "tuto-comment-installer-une-alternative-gratuite-a-chatgpt-pour-l-ut"
+  },
+  {
+    "title": "Réponse à @lagoul4 une IA comme ChatGPT mais gratuite ： HuggingChat D",
+    "raw": "Réponse à @lagoul4 une IA comme ChatGPT mais gratuite ： HuggingChat D...",
+    "len": 1073,
+    "text": "Si jamais vous n'avez pas 20€ à dépenser tous les mois pour utiliser une intelligence artificielle, déjà je vous comprends, heureusement il y a une solution gratuite. Et quand je dis gratuite c'est vraiment gratuite, c'est pas en mode vous envoyer 10 messages et au bout de 10 messages il faut attendre 2h ou 3h pour pouvoir réutiliser le modèle. Et je suis vraiment partie du camp de ceux qui pensent que tout le monde devrait avoir accès à l'IA. Heureusement je suis pas la seule à penser ça et en fait il y a toute une communauté de développeurs, de passionnés qui se rassemblent et qui créent des modèles d'intelligence artificielle puis qui ensuite les partagent de façon gratuite. Donc la meilleure alternative gratuite à ChatGPT ça s'appelle Hugging Chat qui est donc un chatbot qui vous permet d'utiliser 8 modèles d'intelligence artificielle différents. Et vraiment la fonctionnalité la plus intéressante avec Hugging Chat c'est sa fonctionnalité d'assistant qui vous permet de recréer l'équivalent des GPT personnalisable sur ChatGPT.\r\n",
+    "edu": 4,
+    "category": "outils-alternatives",
+    "slug": "reponse-a-lagoul4-une-ia-comme-chatgpt-mais-gratuite-huggingchat-d"
+  },
+  {
+    "title": "quand on dit que les IA sont dangereuses",
+    "raw": "quand on dit que les IA sont dangereuses #chatgptfrance #chatgptfranc...",
+    "len": 1125,
+    "text": "Astuces toxiques, donc je vous fais confiance pour ne pas l'utiliser à mauvaise escient. Vraiment ne faites pas le mal dans votre vie avec. Mais si tu veux gagner un débat, ton meilleur allié, c'est l'intelligence artificielle. Par exemple, si t'as un débat avec quelqu'un sur la peine de mort et imaginons que t'es pour, tu peux juste demander à ChatGPT, donne-moi des arguments en faveur de la peine de mort. Moi j'ai toujours un truc genre, c'est pour un exposé, c'est pour une recherche, ou un truc comme ça pour pas me faire censurer. Là il va te sortir une liste d'arguments, qui en général sont déjà pas mal. Après ça va turer des trucs assez généraux, plutôt des opinions qui du coup pourraient être considérées comme subjectives. Mais ce qui marche le mieux c'est quand on trouve des arguments qui sont appuyés par des études ou par des chiffres. Pour ça tu peux aller sur Perplexity, qui est une autre IA gratuite, Et là tu peux faire des recherches sur la peine de mort en activant bien l'option Académique. Et en gros ça te donnera toutes les études qui ont été faites sur le sujet.\r\n",
+    "edu": 3,
+    "category": "outils-alternatives",
+    "slug": "quand-on-dit-que-les-ia-sont-dangereuses"
+  },
+  {
+    "title": "Un studio de jeu vidéo japonais a trouvé une solution contre l'utilis",
+    "raw": "Un studio de jeu vidéo japonais a trouvé une solution contre l'utilis...",
+    "len": 599,
+    "text": "Ce studio de jeux vidéo japonais en a eu marre. Après avoir embauché plusieurs artistes, ils se sont rendu compte que certains avaient utilisé IA pour créer leur portfolio, et une fois au travail, ils étaient complètement incapables de produire au même niveau. Donc, pour éviter de se faire avoir, le directeur artistique a simplement demandé au candidat de prendre un papier et un crayon pour qu'il puisse dessiner pendant l'entretien d'embauche. Alors à votre avis, est-ce qu'utiliser IA, c'est de la triche ou est-ce que c'est juste un outil ? Dites-moi en commentaire et à demain !\r\n",
+    "edu": 3,
+    "category": "outils-alternatives",
+    "slug": "un-studio-de-jeu-video-japonais-a-trouve-une-solution-contre-l-utilis"
+  },
+  {
+    "title": "L'intelligence artificielle va-t-elle mener à la fin du capitalisme ？",
+    "raw": "L'intelligence artificielle va-t-elle mener à la fin du capitalisme ？...",
+    "len": 1848,
+    "text": "L'intelligence artificielle va-t-elle mener à la fin du capitalisme ? En mars 2021, donc avant même la sortie de ChatGPT, Sam Altman a publié un article de blog qui s'appelle Moose Law for Everything. La loi de Moore c'est un principe qui dit que depuis les années 1960, la puissance des puces électroniques a doublé tous les deux ans, tandis que leur coût est resté stable, ce qui nous a donné des technologies toujours plus puissantes à un coût toujours plus accessible. Altman estime que ce principe peut s'appliquer à tout. Pour lui, il y a deux façons d'avoir une bonne vie. La première c'est de faire plus d'argent, ce qui permet à un individu de s'enrichir, et la deuxième c'est que les coûts baissent, ce qui permet à tout le monde de s'enrichir. Ce qu'il nous explique dans cet article c'est que l'intelligence artificielle pourrait faire drastiquement baisser les coûts de production. Créer un article de blog, avoir un diagnostic médical et même construire une Tout ça pourrait devenir presque gratuit grâce à l'intelligence artificielle et grâce à la robotique. Donc si le coût de tous les services de toute la production arrive à zéro, tout le monde pourrait s'enrichir. Par contre, ce qu'il explique c'est que si on a autant de richesses qui est créée, il faudra nécessairement la redistribuer. Pour ça il imagine une taxe de 2,5% sur les grandes entreprises qui seront sous forme pécuniaire, sous forme de dollars. Et cette idée de sorte de revenu universel, elle revient énormément, E",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "l-intelligence-artificielle-va-t-elle-mener-a-la-fin-du-capitalisme"
+  },
+  {
+    "title": "ChatGPT agent vient de sortir ： les agents IA feront bientôt partie d",
+    "raw": "ChatGPT agent vient de sortir ： les agents IA feront bientôt partie d...",
+    "len": 1564,
+    "text": "ChatGPT Agent vient de sortir et ça change tout. Ça veut dire qu'on a plus juste un chatbot qui répond dans une fenêtre de discussion. Maintenant, il peut agir. Avec son propre ordinateur, ChatGPT Agent peut naviguer sur le web et exécuter des tâches complexes tout seul. Il peut analyser des données, créer des présentations, organiser des voyages et même faire du shopping pour nous. Bon, si vous suivez l'actualité IA, vous savez déjà que ce type d'agents autonome existe depuis un moment. D'ailleurs, en janvier, OpenAI avait sorti un agent très similaire à celui-ci. Mais ce qu'il faut retenir, c'est que l'intelligence artificielle agentique se démocratise et que l'on va pouvoir déléguer de plus en plus de tâches à ces nouveaux agents IA. C'est plutôt une bonne nouvelle si on cherche à être plus productif et à gagner du temps. Par contre, ça signifie aussi qu'on devient de plus en plus dépendant de cette technologie et surtout que de plus en plus de métiers risquent d'être impactés. Pour le moment, ChatGPT Agents est disponible uniquement avec l'abonnement pro, c'est-à-dire celui à plus de 200 euros par mois, mais il devrait être disponible dans les prochains jours avec l'abonnement plus, en tout cas avec un VPN. Si jamais vous ne voulez pas attendre, je vous conseille ManusAI, Flowis ou Genspark, qui sont des agents IA à peu près équivalents et qu'on peut tester gratuitement. En tout cas, plus que jamais, soyez curieux, parce que l'IA commence vraiment à accélérer. Et abonnez-",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "chatgpt-agent-vient-de-sortir-les-agents-ia-feront-bientot-partie-d"
+  },
+  {
+    "title": "Tuto ： comment utiliser ChatGPT with canvas (nouveau chatgpt)",
+    "raw": "Tuto ： comment utiliser ChatGPT with canvas (nouveau chatgpt) #chatgp...",
+    "len": 1082,
+    "text": "Travailler avec ChatGPT c'était déjà cool, mais là ça devient beaucoup mieux. ChatGPT avec Canva, c'est une toute nouvelle interface qui change complètement la façon dont on collabore avec l'IA, que ce soit pour écrire ou pour coder. Maintenant, au lieu de juste discuter avec ChatGPT, tu peux ouvrir un Canva. C'est une sorte de tableau interactif où on peut écrire, réviser et modifier notre travail en direct avec l'intelligence artificielle. En gros, c'est comme si tu bossais en équipe avec l'IA, donc ça permet de faire des révisions qui sont beaucoup plus précises. Tu surlignes un bout de paragraphe ou de code, ChatGPT te proposera des améliorations. Tu peux aussi raccourcir ton texte, ajuster le niveau de lecture en utilisant des petits raccourcis. Et pour le code, ChatGPT t'aide à trouver les bugs, il peut commenter ton script et même traduire ton code en d'autres langages. Ce qui est ouf et ce qui fait vraiment gagner du temps, c'est que tout se fait vraiment dans la même interface, donc t'as pas besoin de jongouler entre différents outils.\r\n",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "tuto-comment-utiliser-chatgpt-with-canvas-nouveau-chatgpt"
+  },
+  {
+    "title": "Deepseek l’IA chinoise gratuite et open source a-t-elle copié OpenAI",
+    "raw": "Deepseek l’IA chinoise gratuite et open source a-t-elle copié OpenAI ...",
+    "len": 878,
+    "text": "OpenAI accuse DeepSec de les avoir copiés. Selon OpenAI, entreprise derrière ChatGPT, l'IA chinoise DeepSec aurait utilisé une technique appelée distillation de connaissances pour entraîner son modèle sur ChatGPT à bas coût. Cette méthode, bien sûr interdite dans les conditions d'utilisation de ChatGPT, consiste à transférer les données d'un modèle plus puissant, le professeur, vers un modèle plus petit appelé l'élève. Et effectivement, depuis sa sortie, de nombreux utilisateurs ont remarqué que quand on demande à DeepSec de se présenter, l'IA a tendance à répondre qu'elle a été créée par OpenAI. Pour rappel, OpenAI est actuellement poursuivi pour avoir eux-mêmes utilisé des données sans consentement, et notamment des articles du New York Times. L'entreprise aurait d'ailleurs accidentellement supprimé des preuves liées à l'affaire.\r\n",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "deepseek-l-ia-chinoise-gratuite-et-open-source-a-t-elle-copie-openai"
+  },
+  {
+    "title": "Code ： UNEFILLEIA pour -30% Merci",
+    "raw": "Code ： UNEFILLEIA pour -30% Merci #klapai pour le partenariat 🫶 IA po...",
+    "len": 660,
+    "text": "Il y a un métier qui n'a pas encore été trop impacté par l'IA, c'est celui de monteur vidéo. Et c'est normal parce que pour créer des vidéos, il faut une bonne accroche, comprendre le rythme et même ajouter des sous-titres. Et jusqu'à présent, l'IA a été incapable de faire tout ça. Mais avec cet outil, ça devient possible. Il suffit de prendre une vidéo horizontale, de l'envoyer, et là les vidéos courtes sont générées automatiquement. Ensuite on a accès à un éditeur de vidéos pour tout personnaliser. Je vous le dis tout de suite, l'outil est payant, mais la première vidéo est gratuite et vous avez un code promo juste en bas.\r\n",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "code-unefilleia-pour-30-merci"
+  },
+  {
+    "title": "Test des différentes versions de ChatGPT dont le nouveau ChatGPT 4.5",
+    "raw": "Test des différentes versions de ChatGPT dont le nouveau ChatGPT 4.5 ...",
+    "len": 575,
+    "text": "Le nouveau ChatGPT est nul. En tout cas, c'est ce que pense une grande majorité de ses utilisateurs. L'impression générale, c'est qu'il est trop cher et pas assez bon. Et c'est assez problématique, surtout quand on sait que des entreprises comme DeepSec proposent des modèles similaires mais gratuits. Donc j'ai posé la même question à différentes versions de ChatGPT et l'idée c'est qu'on choisisse ensemble la meilleure. Donc là vous avez les trois réponses avec les trois modèles différents de ChatGPT. Dites-moi en commentaire lequel vous avez préféré.\r\n",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "test-des-differentes-versions-de-chatgpt-dont-le-nouveau-chatgpt-4-5"
+  },
+  {
+    "title": "Google vient de sortir la meilleure IA open source ： Gemma 4 Pour l'u",
+    "raw": "Google vient de sortir la meilleure IA open source ： Gemma 4 Pour l'u...",
+    "len": 560,
+    "text": "On peut désormais utiliser l'une des IA les plus intelligentes du monde, complètement gratuitement. Google vient de sortir Gemma 4, un LLM qui peut fonctionner directement sur notre ordinateur ou sur notre téléphone. On peut l'utiliser sans abonnement mensuel, sans connexion à internet et nos données restent sur notre machine. Pour l'essayer, la façon la plus simple est de télécharger LM Studio. Ensuite, vous pourrez chercher Gemma 4 et trouver le modèle qui correspond à votre machine. Et si IA vous intéresse, n'oubliez pas de vous abonner.\r\n",
+    "edu": 2,
+    "category": "outils-alternatives",
+    "slug": "google-vient-de-sortir-la-meilleure-ia-open-source-gemma-4-pour-l-u"
+  },
+  {
+    "title": "L'IA pourra-t-elle remplacer les acteurs ？ Démo de Dream Actor M1, gé",
+    "raw": "L'IA pourra-t-elle remplacer les acteurs ？ Démo de Dream Actor M1, gé...",
+    "len": 951,
+    "text": "Hier, ChatGPT menaçait de remplacer les graphistes, mais aujourd'hui, ce sera peut-être les acteurs. Bydance, la société derrière TikTok, vient de sortir la démo de Dream Actor M1, un modèle d'intelligence artificielle capable d'imiter les mouvements humains. Concrètement, on lui donne les vidéos d'un acteur, puis une photo. L'IA peut ensuite reproduire les mouvements de l'acteur, mais en remplaçant le sujet principal par la photo. Alors, pour le moment, il y a toujours un côté un peu uncanny valley. C'est pas mal, mais ça reste bizarre et pas tout à fait humain. Par contre, au niveau animation, les résultats sont particulièrement impressionnants et ça pose quand même la question du futur des studios d'animation. Pour l'instant, le modèle n'est pas encore disponible, donc on a juste les démos. Mais si vous voulez en savoir plus sur les méthodes utilisées pour le créer, vous pouvez aller ici pour lire leur papier.\r\n",
+    "edu": 2,
+    "category": "metiers-futur",
+    "slug": "l-ia-pourra-t-elle-remplacer-les-acteurs-demo-de-dream-actor-m1-ge"
+  },
+  {
+    "title": "La preuve qu'on vit dans une simulation ？ Les scientifiques d’Eon Sys",
+    "raw": "La preuve qu'on vit dans une simulation ？ Les scientifiques d’Eon Sys...",
+    "len": 942,
+    "text": "On dirait que c'est une blague alors que pas du tout. Des scientifiques viennent de copier le cerveau d'une mouche pour le mettre dans une simulation et ça a marché. Concrètement ils ont cartographé son cerveau avec 140 000 neurones et 50 millions de connexions. Ensuite ils ont envoyé le cerveau digital dans un corps simulé et la mouche a commencé à se comporter exactement comme un insecte normal sans qu'on lui apprenne quoi que ce soit. L'entreprise s'appelle Eone et elle compte pas s'arrêter ici puisque son objectif est de réitérer l'expérience avec des animaux de plus en plus gros jusqu'à arriver aux humains. Donc on pourrait imaginer un futur dans lequel on pourrait transférer nos souvenirs et nos comportements dans une simulation. A votre avis est-ce que ça serait suffisant pour créer une conscience ou est-ce que ça resterait juste une copie ? Dites-moi en commentaire et abonnez-vous s'il vous intéresse.\r\n",
+    "edu": 2,
+    "category": "metiers-futur",
+    "slug": "la-preuve-qu-on-vit-dans-une-simulation-les-scientifiques-d-eon-sys"
+  },
+  {
+    "title": "Voici la liste des métiers avec la croissance la plus rapide en 2026",
+    "raw": "Voici la liste des métiers avec la croissance la plus rapide en 2026 ...",
+    "len": 853,
+    "text": "Je sais pas si vous êtes au courant, mais LinkedIn vient de dévoiler la liste des métiers à la croissance la plus rapide en 2026. Donc en numéro 1 on a les ingénieurs en IA, en numéro 2 les consultants en IA, en numéro 3 les commerciaux spécialisés dans l'immobilier de neuf, en numéro 4 les annotateurs de données, donc toutes les personnes qui vérifient les données qui vont être ensuite utilisées pour entraîner les modèles d'IA, et en numéro 5 on a les chercheurs en IA et en machine learning, donc vous avez compris il y a beaucoup d'IA. Et ce qui est intéressant c'est ce commentaire qui dit c'est formidable, on entend sans cesse dire que IA va nous voler nos emplois mais il est évident qu'elle en crée aussi plus que jamais. Dites-moi si vous pensez qu'il a raison et que IA va créer plus d'emplois qu'elle ne remplace.\r\n",
+    "edu": 2,
+    "category": "metiers-futur",
+    "slug": "voici-la-liste-des-metiers-avec-la-croissance-la-plus-rapide-en-2026"
+  },
+  {
+    "title": "Étude secrète sur Reddit par l'université de Zurich ： l’intelligence",
+    "raw": "Étude secrète sur Reddit par l'université de Zurich ： l’intelligence ...",
+    "len": 2166,
+    "text": "Une expérience secrète montre que l'IA a déjà manipulé des centaines d'utilisateurs et personne ne s'en est rendu compte. Pendant plusieurs mois, des chercheurs de l'université de Zurich ont mené une expérience secrète sur Reddit, un forum de discussion en ligne. Concrètement, ils ont utilisé des chatbots qui se faisaient passer pour de vrais humains et l'objectif était de tester leur capacité à convaincre. Pour ça, ils n'ont pas choisi n'importe quelle partie du forum puisqu'ils sont allés dans la partie change my view. En gros, c'est un endroit où des sujets très sensibles sont discutés comme la religion ou la politique et l'idée c'est de confronter ses propres opinions à des avis contraires pour mieux les comprendre et potentiellement changer d'avis. Donc les chercheurs ont créé 34 faux comptes et ont publié plus de 1500 commentaires, tout généré par l'IA, et ils sont allés très loin. D'abord, ils ont utilisé une première IA pour fouiller l'historique des utilisateurs et récolter toutes les infos disponibles sur eux. À partir de ça, ils ont pu estimer leur âge, leur genre et même leur opinion politique. Ensuite, toutes ces données ont été transmises à une autre IA qui a été chargée de générer des commentaires sur mesure et pour pouvoir mieux convaincre, l'IA adaptait sa personnalité à chaque cas. Par exemple, l'IA s'est fait passer pour un mineur victime d'agression sexuelle, pour un homme noir opposé au mouvement Black Lives Matter ou pour un psychologue. Évidemment, les ",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "etude-secrete-sur-reddit-par-l-universite-de-zurich-l-intelligence"
+  },
+  {
+    "title": "singularité technologique bientôt ？？ Sam Altman et l'hypothèse de la",
+    "raw": "singularité technologique bientôt ？？ Sam Altman et l'hypothèse de la ...",
+    "len": 2048,
+    "text": "Sam Altman, créateur de ChatGPT, vient de tweeter J'ai toujours voulu écrire une histoire en 6 mots, la voici. Proche de la singularité, on ne sait pas de quel côté. Alors ça paraît un petit peu mystérieux dit comme ça, mais il élabore ensuite en disant, c'est à propos de 1, l'hypothèse de la simulation ou 2, l'impossibilité de savoir quand le moment de décollage aura lieu. Si c'est toujours pas clair, c'est normal. La singularité, c'est l'idée d'un futur dans lequel on aurait une intelligence artificielle plus intelligente que tous les humains, même les humains les plus intelligents. Il faut imaginer une IA tellement intelligente qu'elle serait capable elle-même de créer des intelligences artificielles toujours plus intelligentes qu'elle ne l'a déjà. Donc vous pouvez imaginer l'effet boule de neige et les conséquences possibles sur les sociétés. Jusqu'à présent, on a beaucoup parlé de l'AGI, qui est l'intelligence artificielle générale. Une IA capable de faire toutes les tâches qu'un humain moyen peut faire. L'impossibilité de savoir quand le moment de décollage aura lieu, il nous parle de ce moment-là en rouge. On n'a pas de date précise pour ça. Et surtout, et là, restez avec moi et accrochez-vous, on ne sait pas si ce moment a déjà eu lieu ou pas. L'hypothèse de la simulation, qui est donc son point numéro 1, c'est l'idée que là, on se dirige vers la création d'une superintelligence. Si une civilisation est dotée d'une superintelligence, elle pourrait créer des simulation",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "singularite-technologique-bientot-sam-altman-et-l-hypothese-de-la"
+  },
+  {
+    "title": "Réponse à @julienleone2020 L’intelligence artificielle est-elle vraim",
+    "raw": "Réponse à @julienleone2020 L’intelligence artificielle est-elle vraim...",
+    "len": 1805,
+    "text": "Pourquoi l'intelligence artificielle est-elle aussi bête ? Quand on demande à ChatGPT d'analyser un rapport de recherche de 28 pages, il peut le faire en environ une minute. Par contre, si on lui envoie une phrase et qu'on lui demande de compter le nombre de mots qu'il y a dans cette phrase, il risque de se tromper. Et si on lui demande de remplir un lave-vaisselle, ce sera probablement encore pire. Pour autant, est-ce que ça veut dire que l'intelligence artificielle n'est pas intelligence ? Le paradoxe de Moravec, c'est l'idée que, souvent, ce qui est le plus facile pour l'homme est le plus difficile pour les robots. Et ça s'explique de plusieurs façons. Déjà, le fait que, quand une tâche est parfaitement maîtrisée par notre cerveau, elle s'exécute de façon quasiment automatique. Et, selon Moravec lui-même, qui est le scientifique à l'origine de ce paradoxe, Les tâches de motricité sont le résultat de millions d'années d'évolution, donc elles ont eu le temps d'être perfectionnées. En ce moment, on parle beaucoup de l'AGI, ou l'intelligence artificielle générale. Et l'un des arguments pour expliquer qu'on n'a pas encore atteint ce niveau, c'est d'utiliser ce genre d'exemple. Si l'intelligence humaine était représentée par une courbe, on s'attendrait à ce que l'intelligence artificielle soit toujours au-dessus. Et pourtant, ce qui se passe, c'est bien différent. L'intelligence artificielle peut être extrêmement performante en code, légèrement moins bonne en langue, puis très m",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "reponse-a-julienleone2020-l-intelligence-artificielle-est-elle-vraim"
+  },
+  {
+    "title": "ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f",
+    "raw": "ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f...",
+    "len": 1582,
+    "text": "ChatGPT est déjà meilleur que certains médecins. Cette publication a fait le tour d'Internet et des centaines de personnes expliquent avoir vécu la même expérience. Et même si c'est difficile à croire, il n'a fallu que quelques secondes pour que ChatGPT trouve la réponse à un problème que des médecins cherchaient à résoudre depuis plus de 10 ans. Pendant une décennie, un utilisateur de Reddit a souffert de douleur chronique, de fatigue et de sensations de picotement inexplicables, alors il a enchaîné les tests en tout genre entre scanner, IRM et examens sanguins, mais impossible de trouver la cause de ses symptômes, jusqu'au jour où il décide de tout envoyer à ChatGPT. L'IA a donc tout analysé et ChatGPT a finalement remarqué un détail qu'aucun autre médecin n'avait relevé, une anomalie génétique discrète mais cohérente avec l'ensemble des symptômes. Les médecins, quand même assez surpris, ont vérifié et ont ensuite confirmé le diagnostic de ChatGPT. Ils ont donc mis en place un traitement adapté et en quelques mois tous les symptômes se sont dissipés. Et c'est absolument pas un cas isolé puisqu'ils sont plusieurs centaines à avoir partagé leur expérience sous la publication. Alors est-ce qu'à votre avis il est temps d'intégrer l'intelligence artificielle dans les diagnostics médicaux ? Et si c'était vous, est-ce que vous auriez plutôt tendance à faire confiance à une IA ou à un médecin ? Je vous laisse me répondre en commentaire et si le sujet vous intéresse, abonnez-vous, j",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "chatgpt-est-deja-meilleur-que-certains-medecins-lorsqu-il-s-agit-de-f"
+  },
+  {
+    "title": "Ils ont pourri le cerveau des IA ： le papier de recherche ＂LLM can ge",
+    "raw": "Ils ont pourri le cerveau des IA ： le papier de recherche ＂LLM can ge...",
+    "len": 1546,
+    "text": "Imaginez un mélange entre BrainRot et intelligence artificielle. Des scientifiques ont fait l'expérience et le résultat est très inquiétant. Le BrainRot, c'est du contenu de mauvaise qualité qu'on retrouve sur les réseaux sociaux. Des publications sensationnelles, assez courtes et virales, un peu l'équivalent d'un McDo pour notre cerveau. Des chercheurs ont donc voulu savoir ce qu'il se passerait si on entraînait des IA sur ce genre de contenu. Donc d'un côté, ils ont donné au modèle des tweets viraux et sensationnels, et de l'autre des publications argumentées, plus longues et moins populaires. Résultat, les IA exposés aux contenus virales sont devenus plus bêtes, et pas qu'un peu. Elles ont perdu jusqu'à 23% de leur capacité de raisonnement, donc elles se mettent à sauter des étapes logiques. Elles comprennent moins bien les textes longs et deviennent moins fiables dans leurs réponses. Mais le pire dans cette expérience, c'est que même après un nouvel entraînement avec des données de qualité et non plus du BrainRot, les modèles ne retrouvent jamais leur niveau d'origine comme si leur cerveau avait été abîmé. Les auteurs du papier de recherche appellent ça le BrainRot des LLM, et leur conclusion est très simple, la qualité des données construit la qualité de la pensée. Autrement dit, si on gave les IA de contenus stupides, elles finissent par devenir stupides. Alors, est-ce que vous pensez que le phénomène est le même pour les humains ? Dites-moi en commentaire, et à demain ",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "ils-ont-pourri-le-cerveau-des-ia-le-papier-de-recherche-llm-can-ge"
+  },
+  {
+    "title": "Skild brain ： le robot qui ne s'arrête jamais Créé par l'entreprise S",
+    "raw": "Skild brain ： le robot qui ne s'arrête jamais Créé par l'entreprise S...",
+    "len": 1451,
+    "text": "Ne regardez pas cette vidéo si vous avez une âme sensible et n'oubliez pas qu'une machine ne ressent rien. Mais voici un robot dont le cerveau ne s'arrête jamais. Il s'appelle Skilled Brain et il est capable de s'adapter à toutes les situations. Ici, alors qu'un homme lui a scié les pattes, il est capable de s'adapter à la situation et de continuer à marcher avec son nouveau corps. Là, ce même robot marche sur ses deux pattes arrière et quand on ajoute un poids sur son dos, il prend un moment pour s'adapter, puis il continue de marcher. Alors comment c'est possible ? En fait, les créateurs de Skilled Brain expliquent que leur robot a passé 1000 ans à marcher dans plus de 1000 corps différents. Bien sûr pas dans la vraie vie mais dans des mondes simulés et tout ce qu'il a appris dans les simulations a ensuite été transféré dans son cerveau. C'est grâce à ça qu'il peut s'adapter à presque toutes les situations. Donc on pourrait imaginer un robot envoyé sur Mars mais qui s'adapte à une roue cassée ou bien un robot envoyé pour sauver des victimes qui continuent même avec une jambe en moins. Par contre, si on peut l'imaginer sauver des vies, on peut aussi imaginer qu'il puisse en prendre. Alors est-ce qu'à votre avis c'est une avancée incroyable pour l'humanité ou plutôt le début d'un cauchemar ? Dites-moi en commentaire et je partage une vidéo par jour sur IA donc n'oubliez pas de vous abonner !\r\n",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "skild-brain-le-robot-qui-ne-s-arrete-jamais-cree-par-l-entreprise-s"
+  },
+  {
+    "title": "Réponse à @alaindessain la théorie des trombones en intelligence arti",
+    "raw": "Réponse à @alaindessain la théorie des trombones en intelligence arti...",
+    "len": 1317,
+    "text": "La théorie des trombones, c'est une expérience de pensée qui permet de comprendre pourquoi l'intelligence artificielle pourrait mener à la fin de l'humanité. L'idée, c'est qu'on donne à une intelligence artificielle un objectif simple qui est de créer un maximum de trombones. Au début, rien d'anormal, IA crée ses petits trombones à raison d'une dizaine par jour, mais vu que son objectif est d'en créer le plus possible, elle va rapidement trouver de nouveaux moyens de produire plus de trombones. Petit à petit, elle arrive à créer des centaines de trombones, puis des milliers. À ce moment-là, on peut imaginer que l'usine devient complètement remplie de trombones. Pour aller toujours plus loin dans ses objectifs, l'IA pourrait alors décider de transformer tous les matériaux existants en trombones, de remplir toute la France de trombones, puis la Terre entière, voire l'univers. C'est une idée qui pose la question de l'alignement en IA, qui est le fait de faire correspondre des valeurs humaines avec les objectifs Sauf que c'est pas simple de trouver quelles sont ses valeurs, parce qu'en fait, elles diffèrent d'un individu à l'autre, mais aussi d'une culture à l'autre. Si vous voulez creuser sur ce sujet, je vous conseille la vidéo de Ego, qui est extrêmement intéressante.\r\n",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "reponse-a-alaindessain-la-theorie-des-trombones-en-intelligence-arti"
+  },
+  {
+    "title": "Genie 3 ： l’IA de Google capable de créer des mondes 3D interactifs e",
+    "raw": "Genie 3 ： l’IA de Google capable de créer des mondes 3D interactifs e...",
+    "len": 1202,
+    "text": "Cette fois, ça va trop loin, Google vient de sortir une IA capable de créer des mondes entiers. Elle s'appelle Genitroi et c'est un modèle de monde qu'on peut contrôler en direct, comme si on était dans une simulation. C'est le genre de technologie qui va complètement révolutionner les films, les jeux vidéo et tout le divertissement qu'on connaît aujourd'hui. Ici, on a un gorille qui se balade et chaque scène est créée en direct en fonction de la dernière scène. On peut bouger dans tous les sens et le monde reste complètement cohérent. Là, c'est un cycliste et pareil, le monde est généré en temps réel. C'est aussi possible de créer des mondes dans différents styles. Ici, c'est une luciole dans une sorte de forêt. Selon Google, c'est le genre de modèle qui pourrait nous rapprocher de l'AGI, donc l'intelligence artificielle générale. En fait, Genitroi pourrait être utilisé pour entraîner des robots ou des agents IA puisqu'il crée des données synthétiques du monde réel. Voilà donc la preuve irréfutable que l'on vit dans une simulation. Bien sûr, je rigole, mais si l'intelligence artificielle vous intéresse, abonnez-vous, j'en parle tous les jours.\r\n",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "genie-3-l-ia-de-google-capable-de-creer-des-mondes-3d-interactifs-e"
+  },
+  {
+    "title": "On va bientôt pouvoir passer des appels vidéo avec ChatGPT !!!! Je su",
+    "raw": "On va bientôt pouvoir passer des appels vidéo avec ChatGPT !!!! Je su...",
+    "len": 1062,
+    "text": "Je sais pas si on se rend compte à quel point les moments qu'on vit actuellement sont historiques. Là, j'ai terminé le live d'aujourd'hui d'OpenAI et en gros, tous les jours jusqu'à Noël, ils nous sortent une nouveauté. Et juste, je vais juste vous montrer en fait. Hey Chat, I'm Kevin, I lead product at OpenAI. Hi Kevin, it's great to meet you. What can I help you with today? Actually, I'd love to introduce you to a few of my colleagues. Does that sound good? Sure, I'd love to meet them. Hey Chat, I'm Michelle and I'm an engineer on the ChatGPT multimodal team. Hi Michelle, it's nice to meet you. An engineer on the ChatGPT multimodal team? That sounds exciting. Et juste, imaginez à quel point une technologie comme celle-ci peut nous changer la vie. Typiquement, la tringle des rideaux, ça fait environ deux ans que c'est comme ça et que du coup, j'ai pas de rideaux et que donc, j'ai un vis-à-vis direct sur les voisins. Ça veut dire que demain, je pourrais faire un FaceTime avec ChatGPT pour lui demander comment installer cette tringle.\r\n",
+    "edu": 1,
+    "category": "metiers-futur",
+    "slug": "on-va-bientot-pouvoir-passer-des-appels-video-avec-chatgpt-je-su"
+  },
+  {
+    "title": "Une étude montre que les publicités créées entièrement par l'IA augme",
+    "raw": "Une étude montre que les publicités créées entièrement par l'IA augme...",
+    "len": 1506,
+    "text": "Ça va pas plaire à tout le monde, mais les pubs créés par l'IA écrasent celles créées par les humains. Sauf que ça, personne veut l'admettre. Une étude de NYU et e-Memory vient de sortir et elle change tout ce qu'on pensait savoir sur la question. Les chercheurs ont testé trois types de publicités. Des pubs créés par des professionnels humains, d'autres où des professionnels ont été aidés par l'IA, et enfin des publicités générées à 100% par l'intelligence artificielle. Les différentes publicités ont été testées sur plus de 106 000 consommateurs en conditions réelles sur Internet. Et voici le résultat. Les publicités générées à 100% par l'intelligence artificielle augmentent les clics de 19% par rapport aux publicités humaines. Par contre, dès qu'un humain utilise l'IA, c'est la catastrophe, les performances s'effondrent et les intentions d'achat baissent. Mais le plus intéressant, c'est que dans leurs tests, quand une marque révèle que la publicité a été générée par l'IA, le taux de clic chute de 31,5%. Autrement dit, ça fonctionne tant que les gens ne savent pas que c'est de l'IA. Donc il y a un vrai paradoxe, on est nombreux à réclamer de la transparence, Sauf que dès qu'une marque nous dit que quelque chose a été créé par l'IA, on a tendance à le rejeter. Alors est-ce que vous préférez une publicité efficace mais créée par l'IA, ou une publicité humaine mais moins performante ? Dites-moi en commentaire, et à demain.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "une-etude-montre-que-les-publicites-creees-entierement-par-l-ia-augme"
+  },
+  {
+    "title": "Il y a un problème avec cette vidéo ： ce time lapse d'un dessin est f",
+    "raw": "Il y a un problème avec cette vidéo ： ce time lapse d'un dessin est f...",
+    "len": 1067,
+    "text": "Attention, c'est exactement comme ça qu'on peut nous manipuler. Cette vidéo a l'air complètement normale, pourtant, il y a quelque chose qui cloche. C'est tout nouveau, mais il y a un phénomène de plus en plus fréquent chez les artistes sur Internet. Ce sont ceux qui créent avec l'intelligence artificielle. Jusque là, aucun problème, sauf qu'ils ne précisent pas tous quand ils utilisent IA. Certains ne savent pas forcément dessiner ou peindre, mais ils prétendent que c'est le cas. C'est pour ça que ce genre de vidéo qui montre le processus de création, c'est hyper important. Sauf que vous l'avez peut-être déjà deviné, mais cette vidéo est fausse. Tout ce que vous voyez a été créé par l'intelligence artificielle. Cette fois, la personne a été honnête et a partagé sa méthode. Pour la faire simple, c'est un mélange de Quen Edit, One et StableDiffusion. Donc est-ce qu'à votre avis, les artistes devraient toujours préciser lorsqu'ils utilisent IA ? Et si vous avez aimé cette vidéo, on se dit à demain pour la prochaine !\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "il-y-a-un-probleme-avec-cette-video-ce-time-lapse-d-un-dessin-est-f"
+  },
+  {
+    "title": "La première intelligence artificielle capable de reproduire le monde",
+    "raw": "La première intelligence artificielle capable de reproduire le monde ...",
+    "len": 1033,
+    "text": "L'IA c'est cool, c'est impressionnant, on est tous contents que ça existe, mais on va pas se mentir, les vidéos générées par IA en général c'est pas incroyable. Typiquement Sora d'OpenAI, je pense qu'on est pas mal à avoir été assez déçue. Et je pense que la raison numéro 1, c'est que ce genre d'intelligence artificielle ne comprend pas les règles de physique. Donc ça nous fait des trucs avec des ombres bizarres ou alors des choses un peu comme ça qui n'ont aucun sens. Et là en fait, il y a une IA qui vient de sortir qui s'appelle Genesis. C'est open source donc vous pouvez l'utiliser si vous avez un ordinateur qui fonctionne bien. On ne se rend pas forcément compte maintenant des implications que ça va avoir. Pour entraîner les robots, on a besoin de données du monde réel, mais c'est assez difficile de trouver des données du monde réel. Donc si cette IA est vraiment capable de reproduire toutes les lois de la physique, potentiellement elle pourrait être utilisée pour entraîner les robots.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "la-premiere-intelligence-artificielle-capable-de-reproduire-le-monde"
+  },
+  {
+    "title": "Les États-Unis viennent de forcer Anthropic à désactiver ses deux IA",
+    "raw": "Les États-Unis viennent de forcer Anthropic à désactiver ses deux IA ...",
+    "len": 997,
+    "text": "Si vous avez vu passer l'info mais sans tout comprendre, je résume ça. Les Etats-Unis viennent de forcer une entreprise à désactiver sa propre IA. Les modèles s'appellent Mythos 5 et Phable 5 et il a fallu seulement 3 jours pour qu'ils soient considérés comme une menace pour la sécurité du pays. Le gouvernement a appris qu'on pouvait contourner les sécurité du modèle et c'est ce qu'on appelle un jailbreak. Le risque c'est que l'IA soit utilisé pour créer des armes biologiques ou pour pirater des systèmes. Les Etats-Unis ont donc demandé à Anthropic de couper l'accès à ces modèles à toute personne non américaine. Le problème c'est que cette mesure est presque impossible à appliquer puisqu'il faudrait vérifier la nationalité de tous les utilisateurs. Donc certains créent au scandale et d'autres pensent que c'est bien mérité pour une entreprise qui base son marketing sur la peur. En tout cas ça évolue très rapidement, abonnez-vous pour suivre tout ça.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "les-etats-unis-viennent-de-forcer-anthropic-a-desactiver-ses-deux-ia"
+  },
+  {
+    "title": "La dead internet theory (ou la théorie de l’internet mort)",
+    "raw": "La dead internet theory (ou la théorie de l’internet mort) #intellig...",
+    "len": 942,
+    "text": "La Dead Internet Theory, c'est une théorie du complot dont l'idée est que sur Internet, presque personne n'est réel. La majorité des vidéos, des interactions et des commentaires se font entre bots qui prétendent être humains. À la base, cette théorie avait été postée sur un forum en 2021 et dans son poste, l'utilisateur explique que Internet est mort entre 2016 et 2017. Il nous donne toute une timeline d'événements liés à l'intelligence artificielle. Au machine learning, il y a autres programmes lancés par des grosses entreprises de retek comme Google et Facebook. Pule termine son poste en disant que pour lui, le gouvernement américain essaie de manipuler la population avec l'intelligence artificielle. Alors on pense ce qu'on veut de ça, mais ce qui est certain c'est que Internet est de plus en plus pollué par du faux contenu et qu'il ne ressemble pas du tout à ce qu'on connaissait il y a quelques années.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "la-dead-internet-theory-ou-la-theorie-de-l-internet-mort"
+  },
+  {
+    "title": "Réponse à @redouane_king Les ＂experts en IA＂ vs les ＂personnes qui s",
+    "raw": "Réponse à @redouane_king Les ＂experts en IA＂ vs les ＂personnes qui s...",
+    "len": 856,
+    "text": "Vidéo rapide juste pour rappeler que savoir utiliser l'IA ne fait pas de nous des experts en IA. Du coup, merci pour le compliment, mais je peux absolument pas l'accepter parce que je suis pas du tout une experte, dans le sens où j'ai jamais fait de doctorat en deep learning, en machine learning ou quoi. Malgré ça, on n'a absolument pas besoin d'être un expert pour savoir utiliser l'IA et avoir de très bons résultats. Mais je pense que c'est important de faire cette distinction, de rester lucide et surtout de rester humble par rapport aux termes qu'on utilise. D'ailleurs, vous remarquerez que bien souvent, les gens qui prétendent être des experts sont ceux qui en savent le moins. Mais par contre, si vous voulez suivre des experts, il y en a sur cette plateforme, donc je vous mettrai des comptes en description que vous pourrez suivre.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "reponse-a-redouane-king-les-experts-en-ia-vs-les-personnes-qui-s"
+  },
+  {
+    "title": "Ce robot humanoïde est tellement réaliste que ses créateurs ont dû pr",
+    "raw": "Ce robot humanoïde est tellement réaliste que ses créateurs ont dû pr...",
+    "len": 795,
+    "text": "Est-ce que vous avez vu passer la vidéo de ce robot ? Il marche exactement comme le ferait un humain, au point où de nombreuses personnes ont d'abord pensé que c'était faux et qu'une femme se cachait sous la combinaison. Donc les créateurs du robot ont décidé de couper une partie du tissu pendant un événement en direct, et regardez bien ce qui se passe à ce moment-là. On voit d'abord une partie blanche qui ressemble à des os et des muscles, mais en dessous il y a bien une sorte de mollet en métal. Et des robots comme ceux-là on pourrait bientôt en avoir chez nous. D'ailleurs Elon Musk pense qu'en 2040 il y aura peut-être plus de robots que du main sur terre. Alors est-ce que vous pensez qu'il exagère ou est-ce qu'il a raison ? Dites-moi en commentaire et à demain !\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "ce-robot-humanoide-est-tellement-realiste-que-ses-createurs-ont-du-pr"
+  },
+  {
+    "title": "La bulle de l’intelligence artificielle ： combien de temps avant qu'e",
+    "raw": "La bulle de l’intelligence artificielle ： combien de temps avant qu'e...",
+    "len": 741,
+    "text": "Vous avez forcément vu passer ce graphique sur les réseaux. Ça fait quelques jours que tout le monde en parle parce qu'il représente la bulle de l'intelligence artificielle. Au milieu, Nvidia crée les GPU qui sont ensuite achetés par OpenAI, Mistral, FigureAI, XAI, etc. En retour, Nvidia investit dans ces mêmes entreprises, et ça c'est sans parler de toute la partie service et infrastructure. Bref, tout ça c'est un circuit qui s'auto-alimente et c'est très dangereux parce que chaque entreprise dépend des autres. Donc il suffirait qu'un seul maillon casse pour que tout s'effondre. Alors à votre avis, il nous reste combien de temps avant que la bulle n'explose ? Dites-moi en commentaire et n'oubliez pas de vous abonner.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "la-bulle-de-l-intelligence-artificielle-combien-de-temps-avant-qu-e"
+  },
+  {
+    "title": "Les grandes entreprises vont détester ce qu'a créé cet ado Benjamin C",
+    "raw": "Les grandes entreprises vont détester ce qu'a créé cet ado Benjamin C...",
+    "len": 738,
+    "text": "Les grandes entreprises vont détester ce qu'il a fait. Cet ado n'a que 17 ans et il vient de créer un bras robotique qu'on peut contrôler juste avec la pensée. Tout a été fait depuis chez lui avec une imprimante 3D, un algorithme IA et 20 000 lignes de code. Mais le plus fou c'est qu'il a fabriqué cette prothèse avec seulement 300$ alors que normalement un bras comme celui-ci peut coûter jusqu'à 500 000$. C'est une très bonne nouvelle pour toutes les personnes qui ont besoin de prothèses mais qui n'ont pas forcément les moyens d'en acheter. Et c'est aussi la preuve que l'intelligence artificielle peut changer le monde dans le bon sens. Si vous voulez rester au courant de ces changements, abonnez-vous et à demain.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "les-grandes-entreprises-vont-detester-ce-qu-a-cree-cet-ado-benjamin-c"
+  },
+  {
+    "title": "Trop beau pour être vrai ？ Nouvel exemple de profil généré par IA (ce",
+    "raw": "Trop beau pour être vrai ？ Nouvel exemple de profil généré par IA (ce...",
+    "len": 664,
+    "text": "Regardez ce qui se passe quand il sourit. Les filles sont super impressionnées, il y en a même une qui sort son téléphone pour le prendre en photo. Là, c'est pareil, elle a l'air surprise puis très déçue quand il quitte la conversation. Et des vidéos comme celle-ci, il y en a plein sur son profil qui compte déjà 167 000 abonnés. Pourtant il n'a pas toujours eu ce physique, comme vous pouvez le voir. Il y en a de plus en plus, et ils sont de plus en plus réalistes. Alors est-ce que les plateformes devraient réguler ce genre de contenu, ou est-ce qu'on devrait accepter que c'est la nouvelle réalité ? Dites-moi en commentaire, et à demain !\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "trop-beau-pour-etre-vrai-nouvel-exemple-de-profil-genere-par-ia-ce"
+  },
+  {
+    "title": "Démo ： Kling motion control Et encore j'ai pas pris le temps de chan",
+    "raw": "Démo ： Kling motion control Et encore j'ai pas pris le temps de chan...",
+    "len": 581,
+    "text": "Si vous pensez que l'IA ne devait pas faire ça, il est déjà trop tard, je peux me transformer, comme ça, en un claquement de doigts. L'IA suit mes mouvements, mes expressions faciales. Si vous avez toujours voulu créer du contenu sans montrer votre visage, c'est peut-être la solution. Par contre, ça veut aussi dire qu'il faut être plus vigilant que jamais sur Internet, et partir du principe que tout peut être généré par IA. Partagez cette vidéo pour tenir vos proches au courant. Et n'oubliez pas que l'IA va très vite, donc abonnez-vous pour n'en rien manquer.\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "demo-kling-motion-control-et-encore-j-ai-pas-pris-le-temps-de-chan"
+  },
+  {
+    "title": "Combien seriez-vous prêt à payer pour ne plus jamais faire le ménage",
+    "raw": "Combien seriez-vous prêt à payer pour ne plus jamais faire le ménage ...",
+    "len": 526,
+    "text": "20 000 $ ou 500 $ par mois, c'est le prix de ce robot. Il s'appelle Neo et il peut vider le lave-vaisselle, faire une lessive et même passer l'aspirateur. Il fonctionne en partie grâce à l'intelligence artificielle mais il peut aussi être téléguidé à distance par des humains si besoin. Bon par contre, selon plusieurs retours, il galère encore à faire certaines tâches. Alors, est-ce que vous seriez prêt à l'adopter ou est-ce que ça vous fait encore un peu trop peur ? Dites-moi en commentaire et à demain !\r\n",
+    "edu": 1,
+    "category": "productivite",
+    "slug": "combien-seriez-vous-pret-a-payer-pour-ne-plus-jamais-faire-le-menage"
+  }
+]

@@ -55,6 +55,18 @@ SERIES_META: dict[str, dict[str, str]] = {
     "api-rest-graphql-serie": {"badge": "API", "color": "#4f46e5", "scene": "code"},
     "communication-serie": {"badge": "Communication", "color": "#be185d", "scene": "mail"},
     DESIGN_PATTERNS_SERIES: {"badge": "Design Patterns", "color": "#16a34a", "scene": "code"},
+    # Series IA pratique (transcripts)
+    "ia-prompts-serie": {"badge": "IA Prompts", "color": "#4da9d6", "scene": "assistant"},
+    "ia-chatgpt-serie": {"badge": "ChatGPT", "color": "#10a37f", "scene": "assistant"},
+    "ia-claude-serie": {"badge": "Claude", "color": "#d97706", "scene": "assistant"},
+    "ia-gemini-serie": {"badge": "Gemini", "color": "#4285f4", "scene": "assistant"},
+    "ia-agents-serie": {"badge": "Agents IA", "color": "#7c3aed", "scene": "process"},
+    "ia-images-serie": {"badge": "IA Images", "color": "#db2777", "scene": "brand"},
+    "ia-formations-serie": {"badge": "Formations IA", "color": "#b8860b", "scene": "catalog"},
+    "ia-nocode-serie": {"badge": "No-code IA", "color": "#0e7490", "scene": "browser"},
+    "ia-outils-serie": {"badge": "Outils IA", "color": "#5b6fd6", "scene": "gear"},
+    "ia-metiers-serie": {"badge": "Métiers & IA", "color": "#be185d", "scene": "report"},
+    "ia-productivite-serie": {"badge": "Productivité", "color": "#3d8b72", "scene": "mail"},
 }
 
 
@@ -128,7 +140,14 @@ def generate_articles(
     for path in sorted(ARTICLES_DIR.glob("*.md")):
         slug = _slug_from_path(path)
         if only and slug not in only and "articles" not in only:
-            continue
+            # Prefixe : --only ia-  (tous les articles dont le slug commence par ia-)
+            prefix_ok = any(
+                (o.endswith("-") or o.endswith("*"))
+                and slug.startswith(o.rstrip("*"))
+                for o in only
+            )
+            if not prefix_ok:
+                continue
 
         meta = _parse_frontmatter(path)
         if not meta:
@@ -172,7 +191,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     parser.add_argument(
         "--only",
         nargs="*",
-        help="Filtrer : blog, articles, ou slugs d'articles",
+        help="Filtrer : blog, articles, slugs, ou prefixe (ex. ia-)",
     )
     parser.add_argument(
         "--include-design-patterns",

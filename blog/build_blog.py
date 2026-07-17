@@ -757,7 +757,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
             )
         )
 
-    meta_desc = 'Guides SEO local, visibilité Google et site vitrine pour artisans — plus articles techniques (Docker, Design Patterns) sur l’espace pro.'
+    meta_desc = 'Guides SEO local, visibilité Google, IA pratique (ChatGPT, Claude, Gemini, agents) et site vitrine — plus articles techniques sur l’espace pro.'
     page_url = _abs_blog_url('blog/index.html')
 
     # Bloc "A découvrir" : 4 articles (un par serie ou derniers)
@@ -771,7 +771,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{ASSETS}}', assets_prefix)
     html = html.replace('{{ROOT}}', '..')
     html = html.replace('{{META_DESCRIPTION}}', _escape_html(meta_desc))
-    html = html.replace('{{META_KEYWORDS}}', 'développement web, TypeScript, GEO, SEO, tutoriels, bonnes pratiques')
+    html = html.replace('{{META_KEYWORDS}}', 'IA, ChatGPT, Claude, Gemini, prompts, agents, SEO, GEO, tutoriels, formations')
     html = html.replace('{{PAGE_URL}}', page_url)
     html = html.replace('{{BREADCRUMBS}}', block_breadcrumbs(crumbs_blog_index(SITE_BASE)))
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)

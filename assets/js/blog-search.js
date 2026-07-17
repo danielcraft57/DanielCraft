@@ -42,16 +42,25 @@
     }
   });
 
+  function fold(s) {
+    return (s || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '');
+  }
+
   const normalizedArticles = articles.map((a) => {
-    const title = (a.title || '').toLowerCase();
-    const excerpt = (a.excerpt || '').toLowerCase();
-    const type = (a.type || '').toLowerCase();
-    const tags = Array.isArray(a.tags) ? a.tags.join(' ').toLowerCase() : '';
-    return { ...a, _norm: { title, excerpt, type, tags } };
+    const title = fold(a.title || '');
+    const excerpt = fold(a.excerpt || '');
+    const type = fold(a.type || '');
+    const tags = Array.isArray(a.tags) ? fold(a.tags.join(' ')) : '';
+    const series = fold(a.series || '');
+    const slug = fold(a.slug || '');
+    return { ...a, _norm: { title, excerpt, type, tags, series, slug } };
   });
 
   function normalizeQuery(q) {
-    return (q || '').toLowerCase().trim().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+    return fold(q).trim();
   }
 
   function syncChipActive() {
@@ -102,14 +111,22 @@
   }
 
   function computeScore(article, tokens) {
-    const { title, excerpt, type, tags } = article._norm;
+    const { title, excerpt, type, tags, series, slug } = article._norm;
     let score = 0;
     for (const t of tokens) {
       if (!t) continue;
       if (title.includes(t)) score += 8;
       if (tags.includes(t)) score += 6;
+      if (series.includes(t)) score += 6;
+      if (slug.includes(t)) score += 5;
       if (type.includes(t)) score += 4;
       if (excerpt.includes(t)) score += 3;
+      // Raccourcis pratiques pour la serie IA
+      if (t === 'ia' && (slug.includes('ia-') || tags.includes('ia') || series.includes('ia-'))) score += 4;
+      if ((t === 'chatgpt' || t === 'claude' || t === 'gemini' || t === 'n8n' || t === 'prompt' || t === 'prompts' || t === 'agent' || t === 'agents') &&
+          (title.includes(t) || tags.includes(t) || slug.includes(t) || series.includes(t) || excerpt.includes(t))) {
+        score += 3;
+      }
     }
     return score;
   }
