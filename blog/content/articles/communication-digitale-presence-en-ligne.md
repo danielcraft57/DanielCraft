@@ -1,7 +1,7 @@
 ---
-title: "Communication digitale : presence et coherence en ligne"
+title: "Presence en ligne : la meme histoire partout"
 date: 2024-03-19
-excerpt: "Site web, profils sociaux, contenu : construire une presence en ligne coherente et credible."
+excerpt: "Site, profils et contenus alignes pour inspirer confiance."
 type: article
 tags: [communication, digital, site web, presence en ligne]
 series: communication-serie
@@ -9,6 +9,14 @@ series_order: 9
 og_image: communication-digitale-1200x630.jpg
 ---
 
-# Communication digitale : presence en ligne
+# Presence en ligne : la meme histoire partout
 
-Base : un site web a jour, clair, mobile-friendly. Choisir 1-2 reseaux (LinkedIn B2B, Instagram/Facebook B2C). Coherence du message et du visuel. Regularite (2-3 posts/semaine) et mesure (visites, engagement). La coherence et la constance priment.
+Si ton site dit A et ton profil LinkedIn dit B, on doute.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/com-digitale.svg" alt="Schema presence digitale coherente" class="schema-inline" width="640" />
+  <figcaption>Site, profils, contenu, contact.</figcaption>
+</figure>
+
+Base = site clair. Puis les memes infos partout. Relie au [marketing digital](/blog/articles/marketing-digital-strategie-visibilite.html).
+

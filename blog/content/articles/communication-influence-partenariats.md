@@ -1,7 +1,7 @@
 ---
-title: "Communication et influence : partenariats et ambassadeurs"
+title: "Influence : des partenariats qui ont du sens"
 date: 2024-04-02
-excerpt: "Travailer avec des influenceurs, partenaires ou ambassadeurs pour elargir ta portee et renforcer ta credibilite."
+excerpt: "Affinite, transparence et valeur partagee — loin des achats opaques."
 type: article
 tags: [communication, influence, partenariats, ambassadeurs, visibilite]
 series: communication-serie
@@ -9,6 +9,14 @@ series_order: 12
 og_image: communication-influence-1200x630.jpg
 ---
 
-# Communication et influence : partenariats et ambassadeurs
+# Influence : des partenariats qui ont du sens
 
-Partenariats avec des influenceurs, medias ou ambassadeurs (clients, partenaires) pour toucher de nouvelles audiences. Choisir des profils alignes avec tes valeurs et ta cible. Cadre clair : objectifs, contrepartie, duree, message. Mesurer la portee et l'impact (reach, clics, conversions). Les ambassadeurs clients (temoignages, avis) renforcent la credibilite a moindre cout.
+Un bon partenaire, c'est quelqu'un que ton public **croit deja**.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/com-influence.svg" alt="Schema partenariats influence" class="schema-inline" width="640" />
+  <figcaption>Sain versus faux.</figcaption>
+</figure>
+
+Affinite > audience. Transparence obligatoire. Mesure un resultat concret.
+

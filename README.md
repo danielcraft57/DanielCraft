@@ -1,6 +1,6 @@
 # DanielCraft V6 - Site Portfolio Freelance
 
-Site web professionnel pour Loïc DANIEL, développeur Full-Stack TypeScript freelance avec plus de 7 ans d'expérience.
+Site web professionnel pour Loïc DANIEL, développeur Full-Stack TypeScript freelance depuis juillet 2011.
 
 Site statique moderne avec système de build Python, optimisé pour le SEO, les performances et l'expérience utilisateur.
 
@@ -160,6 +160,7 @@ Toute la documentation est disponible dans le dossier `docs/` :
 - **[GOOGLE_SETUP.md](docs/GOOGLE_SETUP.md)** - Configuration Google Analytics
 - **[PERFORMANCE.md](docs/PERFORMANCE.md)** - Optimisations de performance
 - **[CHANGELOG.md](docs/CHANGELOG.md)** - Historique des versions
+- **[BLOG_SIMPLE_REWRITE.md](docs/BLOG_SIMPLE_REWRITE.md)** - Refonte blog ton débutant (articles, schémas, OG)
 
 ## Quick Start
 

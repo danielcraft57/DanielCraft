@@ -1,7 +1,7 @@
 ---
-title: "Communication B2B vs B2C : adapter message et canaux"
+title: "B2B ou B2C : adapter le message (pas la marque)"
 date: 2024-03-05
-excerpt: "Differences entre communication B2B (entreprises) et B2C (particuliers) : cibles, canaux, ton, objectifs. Choisir la bonne approche."
+excerpt: "Decideurs multiples vs emotion claire : deux facons de parler, une meme promesse."
 type: article
 tags: [communication, B2B, B2C, cible, strategie]
 series: communication-serie
@@ -9,6 +9,14 @@ series_order: 15
 og_image: communication-b2b-b2c-1200x630.jpg
 ---
 
-# Communication B2B vs B2C
+# B2B ou B2C : adapter le message (pas la marque)
 
-En B2B : cible décideurs et prescripteurs, message rationnel (ROI, cas clients, preuves), canaux LinkedIn, email, evenementiel, contenu expert. Cycle long, plusieurs touchpoints. En B2C : cible grand public, message emotionnel et simple, canaux reseaux grand public, pub, influence. Cycle plus court. Adapter le ton, les supports et les indicateurs (leads vs ventes directes) selon le modele.
+Meme entreprise, pas le meme discours selon que tu parles a une **entreprise** ou a un **particulier**.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/com-b2b-b2c.svg" alt="Schema communication B2B versus B2C" class="schema-inline" width="640" />
+  <figcaption>Preuves et cycle long vs clarte et emotion.</figcaption>
+</figure>
+
+B2B : preuves, ROI, plusieurs decideurs. B2C : simplicite et benefice immédiat. Ta [strategie](/blog/articles/communication-strategie-objectifs-canaux.html) doit le dire clairement.
+

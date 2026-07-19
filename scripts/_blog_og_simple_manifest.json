@@ -1,0 +1,835 @@
+[
+  {
+    "slug": "accessibilite-wcag-checklist",
+    "title": "Accessibilité : pour que tout le monde puisse utiliser",
+    "series": "ux-ui-serie",
+    "og": "accessibilite-wcag-checklist-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Accessibilité : pour que tout le monde puisse utiliser\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "api-rest-bonnes-pratiques-conception",
+    "title": "REST : bien organiser ses portes et ses règles",
+    "series": "api-rest-graphql-serie",
+    "og": "api-rest-bonnes-pratiques-conception-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore restaurant / menu, echanges site-serveur, bulles de dialogue claires, icones simples API. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"REST : bien organiser ses portes et ses règles\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "api-rest-graphql-fondamentaux-comparaison",
+    "title": "API : deux façons de faire parler un site et un serveur",
+    "series": "api-rest-graphql-serie",
+    "og": "api-rest-graphql-fondamentaux-comparaison-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore restaurant / menu, echanges site-serveur, bulles de dialogue claires, icones simples API. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"API : deux façons de faire parler un site et un serveur\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "api-rest-graphql-performances-benchmarks",
+    "title": "REST ou GraphQL : lequel va plus vite (et pour qui)",
+    "series": "api-rest-graphql-serie",
+    "og": "api-rest-graphql-performances-benchmarks-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore restaurant / menu, echanges site-serveur, bulles de dialogue claires, icones simples API. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"REST ou GraphQL : lequel va plus vite (et pour qui)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-architectures-ha-scalabilite",
+    "title": "AWS : rester en ligne même si une machine tombe",
+    "series": "aws-serie",
+    "og": "aws-architectures-ha-scalabilite-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : rester en ligne même si une machine tombe\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-bases-donnees-rds-dynamodb-aurora",
+    "title": "AWS : où garder tes données",
+    "series": "aws-serie",
+    "og": "aws-bases-donnees-rds-dynamodb-aurora-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : où garder tes données\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-compute-ec2-lambda-ecs-eks",
+    "title": "AWS : où faire tourner ton programme",
+    "series": "aws-serie",
+    "og": "aws-compute-ec2-lambda-ecs-eks-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : où faire tourner ton programme\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-devops-ci-cd-codepipeline-codebuild",
+    "title": "AWS : publier du code automatiquement",
+    "series": "aws-serie",
+    "og": "aws-devops-ci-cd-codepipeline-codebuild-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : publier du code automatiquement\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-fondamentaux-cloud-aws-services",
+    "title": "AWS : le cloud Amazon expliqué simplement",
+    "series": "aws-serie",
+    "og": "aws-fondamentaux-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : le cloud Amazon expliqué simplement\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-observabilite-cloudwatch-xray-cloudtrail",
+    "title": "AWS : voir ce qui se passe (et ce qui casse)",
+    "series": "aws-serie",
+    "og": "aws-observabilite-cloudwatch-xray-cloudtrail-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : voir ce qui se passe (et ce qui casse)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-optimisation-couts-reserved-savings-spot",
+    "title": "AWS : payer moins sans casser le service",
+    "series": "aws-serie",
+    "og": "aws-optimisation-couts-reserved-savings-spot-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : payer moins sans casser le service\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-reseaux-vpc-route53-cloudfront",
+    "title": "AWS : routes, adresses et accélération web",
+    "series": "aws-serie",
+    "og": "aws-reseaux-vpc-route53-cloudfront-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : routes, adresses et accélération web\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-securite-iam-kms-waf",
+    "title": "AWS : qui a le droit d'ouvrir quoi",
+    "series": "aws-serie",
+    "og": "aws-securite-iam-kms-waf-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : qui a le droit d'ouvrir quoi\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "aws-stockage-s3-ebs-efs",
+    "title": "AWS : où ranger tes fichiers",
+    "series": "aws-serie",
+    "og": "aws-stockage-s3-ebs-efs-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, nuages stylises, batiments de services, carte simple du cloud, ambiance claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"AWS : où ranger tes fichiers\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "choisir-rest-graphql-quand-et-comment",
+    "title": "REST ou GraphQL : comment choisir (ou combiner)",
+    "series": "api-rest-graphql-serie",
+    "og": "choisir-rest-graphql-quand-et-comment-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore restaurant / menu, echanges site-serveur, bulles de dialogue claires, icones simples API. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"REST ou GraphQL : comment choisir (ou combiner)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-build-images-docker",
+    "title": "CI/CD : fabriquer et envoyer une image Docker",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-docker-images-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"CI/CD : fabriquer et envoyer une image Docker\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-fondamentaux-pipelines",
+    "title": "CI/CD : du commit a la mise en ligne, automatiquement",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-fondamentaux-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"CI/CD : du commit a la mise en ligne, automatiquement\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-github-actions-workflow-complet",
+    "title": "GitHub Actions : une recette automatique pour ton projet",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-github-actions-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GitHub Actions : une recette automatique pour ton projet\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-gitlab-ci-pipeline-complet",
+    "title": "GitLab CI : des etapes claires jusqu'au deploiement",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-gitlab-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GitLab CI : des etapes claires jusqu'au deploiement\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-gitops-argo-flux",
+    "title": "GitOps : le cluster suit Git (pas l'inverse)",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-gitops-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GitOps : le cluster suit Git (pas l'inverse)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-kubernetes-deploiement-strategies",
+    "title": "CI/CD sur Kubernetes : changer de version sans tout casser",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-k8s-deploiement-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"CI/CD sur Kubernetes : changer de version sans tout casser\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-observabilite-deploiements",
+    "title": "Apres le deploiement : voir si ca va vraiment bien",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-observabilite-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Apres le deploiement : voir si ca va vraiment bien\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-secrets-variables-environnement",
+    "title": "CI/CD : cacher les mots de passe (sans les coller dans Git)",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-secrets-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"CI/CD : cacher les mots de passe (sans les coller dans Git)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-tests-qualite-gates",
+    "title": "CI/CD : les portes qui bloquent un mauvais deploiement",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-tests-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"CI/CD : les portes qui bloquent un mauvais deploiement\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ci-cd-versioning-releases-rollbacks",
+    "title": "Versions et retours arriere : livrer sans paniquer",
+    "series": "ci-cd-serie",
+    "og": "ci-cd-versioning-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, chaine de montage ludique et propre, tapis roulant, cases verte/rouge, sans usine sombre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Versions et retours arriere : livrer sans paniquer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-b2b-b2c",
+    "title": "B2B ou B2C : adapter le message (pas la marque)",
+    "series": "communication-serie",
+    "og": "communication-b2b-b2c-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"B2B ou B2C : adapter le message (pas la marque)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-classique-vs-digitale",
+    "title": "Com classique et digitale : mieux ensemble",
+    "series": "communication-serie",
+    "og": "communication-classique-digitale-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Com classique et digitale : mieux ensemble\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-content-storytelling",
+    "title": "Storytelling : raconter pour qu'on s'en souvienne",
+    "series": "communication-serie",
+    "og": "communication-storytelling-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Storytelling : raconter pour qu'on s'en souvienne\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-crise-en-ligne",
+    "title": "Crise en ligne : reagir sans aggraver",
+    "series": "communication-serie",
+    "og": "communication-crise-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Crise en ligne : reagir sans aggraver\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-digitale-presence-en-ligne",
+    "title": "Presence en ligne : la meme histoire partout",
+    "series": "communication-serie",
+    "og": "communication-digitale-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Presence en ligne : la meme histoire partout\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-ereputation-veille",
+    "title": "E-reputation : ecouter ce qu'on dit de toi",
+    "series": "communication-serie",
+    "og": "communication-ereputation-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"E-reputation : ecouter ce qu'on dit de toi\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-evenementiel",
+    "title": "Evenementiel : avant, pendant, apres",
+    "series": "communication-serie",
+    "og": "communication-evenementiel-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Evenementiel : avant, pendant, apres\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-identite-visuelle-charte",
+    "title": "Identite visuelle : qu'on te reconnaisse en 2 secondes",
+    "series": "communication-serie",
+    "og": "communication-identite-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Identite visuelle : qu'on te reconnaisse en 2 secondes\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-influence-partenariats",
+    "title": "Influence : des partenariats qui ont du sens",
+    "series": "communication-serie",
+    "og": "communication-influence-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Influence : des partenariats qui ont du sens\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-interne-entreprise",
+    "title": "Communication interne : informer pour federer",
+    "series": "communication-serie",
+    "og": "communication-interne-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Communication interne : informer pour federer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-print-affichage",
+    "title": "Print et affichage : une idee, bien visible",
+    "series": "communication-serie",
+    "og": "communication-print-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Print et affichage : une idee, bien visible\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-prise-parole-discours",
+    "title": "Prise de parole : une idee, bien dite",
+    "series": "communication-serie",
+    "og": "communication-prise-parole-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Prise de parole : une idee, bien dite\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-relations-presse",
+    "title": "Relations presse : proposer un angle utile",
+    "series": "communication-serie",
+    "og": "communication-rp-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Relations presse : proposer un angle utile\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-reseaux-sociaux-community-management",
+    "title": "Community management : animer sans s'epuiser",
+    "series": "communication-serie",
+    "og": "communication-cm-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Community management : animer sans s'epuiser\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "communication-strategie-objectifs-canaux",
+    "title": "Communication : une strategie en 5 questions",
+    "series": "communication-serie",
+    "og": "communication-strategie-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de dialogue, megaphone doux, charte couleurs, ambiance humaine et claire. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Communication : une strategie en 5 questions\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "conformite-rgpd-nis2-iso27001",
+    "title": "RGPD, NIS2, ISO : se mettre en règle sans paniquer",
+    "series": "cybersecurite-secops-serie",
+    "og": "conformite-rgpd-nis2-iso27001-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"RGPD, NIS2, ISO : se mettre en règle sans paniquer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "cybersecurite-fondamentaux-menaces-risques",
+    "title": "Cybersécurité : ce qui peut te faire mal (et comment te protéger)",
+    "series": "cybersecurite-secops-serie",
+    "og": "cybersecurite-fondamentaux-menaces-risques-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Cybersécurité : ce qui peut te faire mal (et comment te protéger)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-abstract-factory",
+    "title": "Abstract Factory : des familles d'objets qui vont ensemble",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-abstract-factory-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Abstract Factory : des familles d'objets qui vont ensemble\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-adapter",
+    "title": "Adapter : faire marcher deux pieces incompatibles",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-adapter-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Adapter : faire marcher deux pieces incompatibles\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-bridge",
+    "title": "Bridge : deux axes independants (sans explosion de classes)",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-bridge-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Bridge : deux axes independants (sans explosion de classes)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-builder",
+    "title": "Builder : construire etape par etape",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-builder-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Builder : construire etape par etape\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-chain-of-responsibility",
+    "title": "Chain of Responsibility : passer la demande au bon maillon",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-chain-of-responsibility-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Chain of Responsibility : passer la demande au bon maillon\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-command",
+    "title": "Command : une action en paquet (qu'on peut annuler)",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-command-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Command : une action en paquet (qu'on peut annuler)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-composite",
+    "title": "Composite : traiter un arbre comme une seule piece",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-composite-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Composite : traiter un arbre comme une seule piece\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-decorator",
+    "title": "Decorator : ajouter des options comme des couches",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-decorator-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Decorator : ajouter des options comme des couches\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-facade",
+    "title": "Facade : une porte simple vers un systeme complexe",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-facade-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Facade : une porte simple vers un systeme complexe\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-factory-method",
+    "title": "Factory Method : laisser creer sans se prendre la tete",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-factory-method-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Factory Method : laisser creer sans se prendre la tete\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-flyweight",
+    "title": "Flyweight : partager pour economiser la memoire",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-flyweight-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Flyweight : partager pour economiser la memoire\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-interpreter",
+    "title": "Interpreter : comprendre un petit langage",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-interpreter-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Interpreter : comprendre un petit langage\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-introduction-gang-of-four",
+    "title": "Design patterns : des recettes pour un code plus clair",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-introduction-gang-of-four-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Design patterns : des recettes pour un code plus clair\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-iterator",
+    "title": "Iterator : parcourir sans tout reveler",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-iterator-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Iterator : parcourir sans tout reveler\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-mediator",
+    "title": "Mediator : un chef d'orchestre entre les objets",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-mediator-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Mediator : un chef d'orchestre entre les objets\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-memento",
+    "title": "Memento : sauvegarder pour pouvoir revenir en arriere",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-memento-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Memento : sauvegarder pour pouvoir revenir en arriere\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-observer",
+    "title": "Observer : prevenir plein de gens d'un coup",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-observer-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Observer : prevenir plein de gens d'un coup\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-prototype",
+    "title": "Prototype : copier un modele plutot que tout recreer",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-prototype-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Prototype : copier un modele plutot que tout recreer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-proxy",
+    "title": "Proxy : un intermediaire qui controle l'acces",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-proxy-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Proxy : un intermediaire qui controle l'acces\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-singleton",
+    "title": "Singleton : une seule copie, pas plus",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-singleton-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Singleton : une seule copie, pas plus\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-state",
+    "title": "State : le comportement change selon l'etat",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-state-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"State : le comportement change selon l'etat\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-strategy",
+    "title": "Strategy : changer de methode sans tout casser",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-strategy-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Strategy : changer de methode sans tout casser\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-template-method",
+    "title": "Template Method : meme plan, details au choix",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-template-method-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Template Method : meme plan, details au choix\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-patterns-visitor",
+    "title": "Visitor : ajouter une operation sans toucher les classes",
+    "series": "design-patterns-serie",
+    "og": "design-patterns-visitor-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Visitor : ajouter une operation sans toucher les classes\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "design-system-composants-tokens",
+    "title": "Design system : les briques pour rester cohérent",
+    "series": "ux-ui-serie",
+    "og": "design-system-composants-tokens-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Design system : les briques pour rester cohérent\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "devsecops-sast-dast-sbom",
+    "title": "Sécurité dans le code : contrôler avant de publier",
+    "series": "cybersecurite-secops-serie",
+    "og": "devsecops-sast-dast-sbom-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Sécurité dans le code : contrôler avant de publier\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "docker-build-optimisation-images",
+    "title": "Docker : des images plus légères et plus rapides",
+    "series": "docker-serie",
+    "og": "docker-build-optimisation-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore recette et gateau / boites empilees, conteneurs coloris sobres, atelier propre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Docker : des images plus légères et plus rapides\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "docker-compose-environnements-local",
+    "title": "Docker Compose : plusieurs boîtes qui travaillent ensemble",
+    "series": "docker-serie",
+    "og": "docker-compose-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore recette et gateau / boites empilees, conteneurs coloris sobres, atelier propre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Docker Compose : plusieurs boîtes qui travaillent ensemble\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "docker-fondamentaux-images-conteneurs",
+    "title": "Docker : la recette et le gâteau (image vs conteneur)",
+    "series": "docker-serie",
+    "og": "docker-fondamentaux-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore recette et gateau / boites empilees, conteneurs coloris sobres, atelier propre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Docker : la recette et le gâteau (image vs conteneur)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "docker-installation-bonnes-pratiques",
+    "title": "Docker : bien l'installer et le garder propre",
+    "series": "docker-serie",
+    "og": "docker-installation-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore recette et gateau / boites empilees, conteneurs coloris sobres, atelier propre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Docker : bien l'installer et le garder propre\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "docker-production-registry-securite",
+    "title": "Docker en prod : ranger et protéger ses boîtes",
+    "series": "docker-serie",
+    "og": "docker-production-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore recette et gateau / boites empilees, conteneurs coloris sobres, atelier propre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Docker en prod : ranger et protéger ses boîtes\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "docker-volumes-reseaux",
+    "title": "Docker : garder ses fichiers et connecter les boîtes",
+    "series": "docker-serie",
+    "og": "docker-volumes-reseaux-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore recette et gateau / boites empilees, conteneurs coloris sobres, atelier propre. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Docker : garder ses fichiers et connecter les boîtes\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "edr-xdr-endpoint-detection-response",
+    "title": "EDR et XDR : protéger les ordinateurs et réagir vite",
+    "series": "cybersecurite-secops-serie",
+    "og": "edr-xdr-endpoint-detection-response-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"EDR et XDR : protéger les ordinateurs et réagir vite\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ergonomie-heuristiques-nielsen",
+    "title": "Ergonomie : 10 règles simples pour moins frustrer",
+    "series": "ux-ui-serie",
+    "og": "ergonomie-heuristiques-nielsen-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Ergonomie : 10 règles simples pour moins frustrer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "geo-contenu-structure-formats-checklist",
+    "title": "Contenu GEO : formats clairs que les IA aiment resumer",
+    "series": "geo-serie",
+    "og": "geo-contenu-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Contenu GEO : formats clairs que les IA aiment resumer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "geo-nouveau-seo-ia-guide-complet",
+    "title": "GEO : etre cite par les IA (ChatGPT et cie)",
+    "series": "geo-serie",
+    "og": "geo-guide-complet-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GEO : etre cite par les IA (ChatGPT et cie)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "geo-off-site-mentions-autorite",
+    "title": "Autorite hors site : etre mentionne ailleurs",
+    "series": "geo-serie",
+    "og": "geo-off-site-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Autorite hors site : etre mentionne ailleurs\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "geo-optimiser-chatgpt-perplexity-sge",
+    "title": "Optimiser pour ChatGPT, Perplexity et cie",
+    "series": "geo-serie",
+    "og": "geo-plateformes-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Optimiser pour ChatGPT, Perplexity et cie\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "geo-technique-indexabilite-html-performance",
+    "title": "GEO technique : un HTML que les IA peuvent lire",
+    "series": "geo-serie",
+    "og": "geo-technique-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GEO technique : un HTML que les IA peuvent lire\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "geo-vs-seo-differences-complementarite",
+    "title": "GEO et SEO : differents, mais amis",
+    "series": "geo-serie",
+    "og": "geo-vs-seo-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GEO et SEO : differents, mais amis\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "gestion-vulnerabilites-cve-patching",
+    "title": "Les failles à réparer : trouver, trier, corriger",
+    "series": "cybersecurite-secops-serie",
+    "og": "gestion-vulnerabilites-cve-patching-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Les failles à réparer : trouver, trier, corriger\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "graphql-fondamentaux-schema-queries",
+    "title": "GraphQL : demander exactement ce qu'il te faut",
+    "series": "api-rest-graphql-serie",
+    "og": "graphql-fondamentaux-schema-queries-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore restaurant / menu, echanges site-serveur, bulles de dialogue claires, icones simples API. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"GraphQL : demander exactement ce qu'il te faut\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "iam-mfa-principes-zero-trust",
+    "title": "Accès, double verrou et confiance zéro (expliqués simplement)",
+    "series": "cybersecurite-secops-serie",
+    "og": "iam-mfa-principes-zero-trust-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Accès, double verrou et confiance zéro (expliqués simplement)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "incident-response-runbook-postmortem",
+    "title": "Quand ça casse : quoi faire, puis quoi apprendre",
+    "series": "cybersecurite-secops-serie",
+    "og": "incident-response-runbook-postmortem-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Quand ça casse : quoi faire, puis quoi apprendre\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "kubernetes-architecture-cluster",
+    "title": "Kubernetes : qui decide, qui execute",
+    "series": "kubernetes-serie",
+    "og": "k8s-architecture-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boites sur des plateaux, chef d'orchestre doux, cluster explique en image simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Kubernetes : qui decide, qui execute\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "kubernetes-ci-cd-deploiement-continu",
+    "title": "Kubernetes et CI/CD : publier sans stress",
+    "series": "kubernetes-serie",
+    "og": "k8s-ci-cd-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boites sur des plateaux, chef d'orchestre doux, cluster explique en image simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Kubernetes et CI/CD : publier sans stress\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "kubernetes-concepts-pods-nodes",
+    "title": "Kubernetes : des boites (pods) sur des machines (nodes)",
+    "series": "kubernetes-serie",
+    "og": "k8s-concepts-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boites sur des plateaux, chef d'orchestre doux, cluster explique en image simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Kubernetes : des boites (pods) sur des machines (nodes)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "kubernetes-configmaps-secrets",
+    "title": "Kubernetes : reglages et secrets hors de l'image",
+    "series": "kubernetes-serie",
+    "og": "k8s-configmaps-secrets-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boites sur des plateaux, chef d'orchestre doux, cluster explique en image simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Kubernetes : reglages et secrets hors de l'image\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "kubernetes-deployments-services",
+    "title": "Kubernetes : copies de ton app + adresse stable",
+    "series": "kubernetes-serie",
+    "og": "k8s-deployments-services-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boites sur des plateaux, chef d'orchestre doux, cluster explique en image simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Kubernetes : copies de ton app + adresse stable\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "kubernetes-observabilite-logs-metrics",
+    "title": "Kubernetes : voir ce qui se passe dans le cluster",
+    "series": "kubernetes-serie",
+    "og": "k8s-observabilite-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boites sur des plateaux, chef d'orchestre doux, cluster explique en image simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Kubernetes : voir ce qui se passe dans le cluster\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-analytics-pilotage",
+    "title": "Analytics : piloter avec peu de chiffres (mais les bons)",
+    "series": "marketing-digital-serie",
+    "og": "marketing-analytics-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Analytics : piloter avec peu de chiffres (mais les bons)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-automatisation-outils",
+    "title": "Marketing automation : automatiser sans perdre l'humain",
+    "series": "marketing-digital-serie",
+    "og": "marketing-automatisation-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Marketing automation : automatiser sans perdre l'humain\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-budget-roi-priorisation",
+    "title": "Budget marketing : ou mettre l'argent (et ou arreter)",
+    "series": "marketing-digital-serie",
+    "og": "marketing-budget-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Budget marketing : ou mettre l'argent (et ou arreter)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-contenu-inbound",
+    "title": "Contenu inbound : attirer plutot que pousser",
+    "series": "marketing-digital-serie",
+    "og": "marketing-contenu-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Contenu inbound : attirer plutot que pousser\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-conversion-optimisation",
+    "title": "Conversion : enlever ce qui freine l'action",
+    "series": "marketing-digital-serie",
+    "og": "marketing-conversion-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Conversion : enlever ce qui freine l'action\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-digital-strategie-visibilite",
+    "title": "Marketing digital : se faire trouver en ligne (sans se perdre)",
+    "series": "marketing-digital-serie",
+    "og": "marketing-strategie-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Marketing digital : se faire trouver en ligne (sans se perdre)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-email-nurturing-conversion",
+    "title": "Email : accompagner sans spammer",
+    "series": "marketing-digital-serie",
+    "og": "marketing-email-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Email : accompagner sans spammer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "marketing-reseaux-sociaux-strategie",
+    "title": "Reseaux sociaux : etre utile, pas partout",
+    "series": "marketing-digital-serie",
+    "og": "marketing-reseaux-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, entonnoir simple, canaux clairs, tableau de bord accueillant, sans dashboard charge. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Reseaux sociaux : etre utile, pas partout\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "mesurer-ux-kpis-analytics-ab-testing",
+    "title": "Mesurer l'expérience : chiffres utiles (pas de vanité)",
+    "series": "ux-ui-serie",
+    "og": "mesurer-ux-kpis-analytics-ab-testing-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Mesurer l'expérience : chiffres utiles (pas de vanité)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "micro-interactions-feedback-etats",
+    "title": "Petits signaux : dire à l'utilisateur ce qui se passe",
+    "series": "ux-ui-serie",
+    "og": "micro-interactions-feedback-etats-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Petits signaux : dire à l'utilisateur ce qui se passe\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "outils-geo-audit-suivi-citations",
+    "title": "Suivre le GEO : voir si les IA te citent",
+    "series": "geo-serie",
+    "og": "geo-outils-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, bulles de conversation IA, citations, etoiles de confiance, ambiance pedagogique. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Suivre le GEO : voir si les IA te citent\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "parcours-utilisateur-mapping-jtbd",
+    "title": "Le chemin de l'utilisateur : étapes et freins",
+    "series": "ux-ui-serie",
+    "og": "parcours-utilisateur-mapping-jtbd-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Le chemin de l'utilisateur : étapes et freins\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "secops-soc-fonctions-process",
+    "title": "SecOps et SOC : qui surveille quoi (expliqué simplement)",
+    "series": "cybersecurite-secops-serie",
+    "og": "secops-soc-fonctions-process-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SecOps et SOC : qui surveille quoi (expliqué simplement)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "securite-cloud-cspm-cwpp",
+    "title": "Sécurité cloud : les mauvais réglages qui coûtent cher",
+    "series": "cybersecurite-secops-serie",
+    "og": "securite-cloud-cspm-cwpp-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Sécurité cloud : les mauvais réglages qui coûtent cher\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-backlinks-netlinking-strategie",
+    "title": "Backlinks : les recommandations d'autres sites",
+    "series": "seo-serie",
+    "og": "seo-backlinks-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Backlinks : les recommandations d'autres sites\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-contenu-mots-cles-intention-redaction",
+    "title": "SEO contenu : repondre a ce que les gens cherchent vraiment",
+    "series": "seo-serie",
+    "og": "seo-contenu-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SEO contenu : repondre a ce que les gens cherchent vraiment\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-fondamentaux-referencement-naturel",
+    "title": "SEO : etre trouve sur Google (les bases)",
+    "series": "seo-serie",
+    "og": "seo-fondamentaux-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SEO : etre trouve sur Google (les bases)\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-local-google-business-avis",
+    "title": "SEO local : etre trouve pres de chez tes clients",
+    "series": "seo-serie",
+    "og": "seo-local-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SEO local : etre trouve pres de chez tes clients\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-mesurer-search-console-analytics-kpis",
+    "title": "Mesurer le SEO : savoir ce qui marche vraiment",
+    "series": "seo-serie",
+    "og": "seo-mesure-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Mesurer le SEO : savoir ce qui marche vraiment\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-schema-org-donnees-structurees",
+    "title": "Donnees structurees : aider Google a comprendre ta page",
+    "series": "seo-serie",
+    "og": "seo-schema-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Donnees structurees : aider Google a comprendre ta page\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-technique-audit-core-web-vitals",
+    "title": "SEO technique : un site rapide et lisible par Google",
+    "series": "seo-serie",
+    "og": "seo-technique-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SEO technique : un site rapide et lisible par Google\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "seo-vs-sea-quand-choisir",
+    "title": "SEO ou pubs Google (SEA) : quoi choisir",
+    "series": "seo-serie",
+    "og": "seo-vs-sea-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, loupe, pages web rangees, fleches vers Google stylise, tableau simple et accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SEO ou pubs Google (SEA) : quoi choisir\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "siem-log-management-detection",
+    "title": "SIEM : lire les traces de ton système sans te noyer",
+    "series": "cybersecurite-secops-serie",
+    "og": "siem-log-management-detection-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metaphore maison et cles, bouclier doux, alarme, cadenas, sans violence ni gore. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"SIEM : lire les traces de ton système sans te noyer\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ui-typographie-couleurs-grille",
+    "title": "Textes, couleurs et alignement : rendre clair",
+    "series": "ux-ui-serie",
+    "og": "ui-typographie-couleurs-grille-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Textes, couleurs et alignement : rendre clair\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ux-recherche-utilisateur-interviews-tests",
+    "title": "Écouter les utilisateurs : interviews et tests",
+    "series": "ux-ui-serie",
+    "og": "ux-recherche-utilisateur-interviews-tests-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Écouter les utilisateurs : interviews et tests\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "ux-ui-fondamentaux-differences",
+    "title": "UX et UI : la sensation contre le look",
+    "series": "ux-ui-serie",
+    "og": "ux-ui-fondamentaux-differences-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"UX et UI : la sensation contre le look\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  },
+  {
+    "slug": "wireframes-prototypage-fidelite",
+    "title": "Maquettes : du croquis au prototype",
+    "series": "ux-ui-serie",
+    "og": "wireframes-prototypage-fidelite-1200x630.jpg",
+    "prompt": "Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, ecrans amicaux, parcours utilisateur, smileys sobres d'etats UI, design accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais \"Maquettes : du croquis au prototype\" (lisible, ne pas tronquer trop tot) et marque \"DanielCraft\". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article."
+  }
+]

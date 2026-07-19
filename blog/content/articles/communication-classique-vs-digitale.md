@@ -1,7 +1,7 @@
 ---
-title: "Communication classique vs digitale : differences et complementarite"
+title: "Com classique et digitale : mieux ensemble"
 date: 2024-03-07
-excerpt: "Communication traditionnelle (presse, print, evenementiel) et digitale (web, reseaux sociaux) : avantages, limites et comment les combiner."
+excerpt: "Print, salons, presse d'un cote ; site et reseaux de l'autre — comment les combiner."
 type: article
 tags: [communication, classique, digitale, strategie, canaux]
 series: communication-serie
@@ -9,26 +9,14 @@ series_order: 2
 og_image: communication-classique-digitale-1200x630.jpg
 ---
 
-# Communication classique vs digitale : differences et complementarite
+# Com classique et digitale : mieux ensemble
 
-La communication classique (presse, print, evenementiel) et la communication digitale (web, reseaux sociaux) se completent. Ce guide compare les deux approches et aide a les articuler.
+Ce n'est pas "l'un ou l'autre". C'est **le bon mix** pour ton public.
 
----
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/com-classique-digital.svg" alt="Schema classique versus digital" class="schema-inline" width="640" />
+  <figcaption>Deux mondes complementaires.</figcaption>
+</figure>
 
-## Communication classique
+Un salon sans suivi digital perd des contacts. Un site sans ancrage local perd de la confiance. Voir [evenementiel](/blog/articles/communication-evenementiel.html) et [presence digitale](/blog/articles/communication-digitale-presence-en-ligne.html).
 
-Canaux traditionnels : relations presse, affichage, print, radio, TV, evenementiel. Atouts : credibilite, ciblage geographique, publics peu digitaux. Limites : cout, mesure difficile, delais.
-
-## Communication digitale
-
-Canaux en ligne : site web, reseaux sociaux, email, contenu, publicite en ligne. Atouts : mesure, ciblage fin, reactivite, cout maitrise. Limites : surcharge, dependance aux plateformes, e-reputation.
-
-## Complementarite
-
-Lancer avec presse + digital. Couvrir un evenement en ligne avant et apres. Notoriete locale : affichage ou presse + page Google et avis. Une couverture presse renforce le site ; un site pro renforce les actions classiques.
-
----
-
-## Conclusion
-
-Classique et digital se renforcent. Choisis les canaux selon ta cible, ton budget et tes objectifs. Une strategie integree maximise l'impact.

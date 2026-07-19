@@ -1,7 +1,7 @@
 ---
-title: "Communication print et affichage : brochures et visibilite locale"
+title: "Print et affichage : une idee, bien visible"
 date: 2024-04-09
-excerpt: "Print et affichage : quand les utiliser, quoi produire, comment les lier au digital (QR code, landing page)."
+excerpt: "Brochure, flyer, affiche : message court, visuel clair, lien vers le digital."
 type: article
 tags: [communication, print, affichage, brochure]
 series: communication-serie
@@ -9,6 +9,14 @@ series_order: 5
 og_image: communication-print-1200x630.jpg
 ---
 
-# Communication print et affichage
+# Print et affichage : une idee, bien visible
 
-Le print (brochures, flyers) et l'affichage restent utiles pour des cibles locales ou peu digitaux. Choisir les supports (carte, plaquette, flyer, panneau), respecter la charte graphique, ajouter un QR code vers une landing page pour mesurer. Integrer print et digital pour une continuite du parcours.
+Le print doit se lire **vite**. Une idee. Un visuel. Des coordonnees.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/com-print.svg" alt="Schema communication print" class="schema-inline" width="640" />
+  <figcaption>Message, visuel, coordonnees, lien digital.</figcaption>
+</figure>
+
+Ajoute un QR ou une URL simple vers une page dediee. Aligne avec ton [identite visuelle](/blog/articles/communication-identite-visuelle-charte.html).
+

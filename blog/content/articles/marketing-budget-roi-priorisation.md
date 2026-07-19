@@ -1,7 +1,7 @@
 ---
-title: "Marketing : budget, ROI et priorisation des canaux"
+title: "Budget marketing : ou mettre l'argent (et ou arreter)"
 date: 2024-05-14
-excerpt: "Allouer son budget marketing : calcul du ROI par canal, priorisation, arbitrages. Maximiser l'impact avec des ressources limitées."
+excerpt: "Prioriser 1-2 canaux, mesurer le retour, couper ce qui ne marche pas."
 type: article
 tags: [marketing digital, budget, ROI, priorisation, canaux]
 series: marketing-digital-serie
@@ -9,54 +9,14 @@ series_order: 8
 og_image: marketing-budget-1200x630.jpg
 ---
 
-# Marketing : budget, ROI et priorisation des canaux
+# Budget marketing : ou mettre l'argent (et ou arreter)
 
-Avec un budget limité, chaque euro compte. Ce guide aide à prioriser les canaux, calculer le ROI et prendre des décisions d'allocation basées sur les données.
+Le **ROI**, en clair : est-ce que ca rapporte assez par rapport a ce que ca coute ?
 
-<figure>
-<img src="../../assets/images/blog/roi-schema.svg" alt="ROI et priorisation des canaux marketing" class="schema-inline" width="400" />
-<figcaption>Calculer le ROI par canal pour prioriser ton budget.</figcaption>
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/mkt-budget.svg" alt="Schema priorisation budget marketing" class="schema-inline" width="640" />
+  <figcaption>Simple et mesure versus cher et flou.</figcaption>
 </figure>
 
----
+Choisis peu de canaux. Donne-leur une chance mesuree. Arrete le reste. Reviens a ta [strategie](/blog/articles/marketing-digital-strategie-visibilite.html).
 
-## 1. Définir son budget
-
-- **Pourcentage du CA** : 5-15 % selon le secteur et la maturité
-- **Par objectif** : combien par lead, par client acquis ?
-- **Fixer un plafond** par canal pour tester sans tout miser
-
----
-
-## 2. Calculer le ROI
-
-**ROI = (Gains - Coûts) / Coûts × 100**
-
-Exemple : 1000 € dépensés en Google Ads, 5 clients à 400 € = 2000 € de CA. ROI = (2000 - 1000) / 1000 = 100 %.
-
-Pour le SEO et le contenu, le ROI est plus long à mesurer : trafic, leads, puis attribution sur plusieurs mois.
-
----
-
-## 3. Prioriser les canaux
-
-| Canal | Coût initial | Délai de résultat | Durabilité |
-|-------|--------------|-------------------|------------|
-| SEO | Temps, contenu | 3-6 mois | Élevée |
-| Publicité | Budget | Immédiat | Nulle (arrêt = fin) |
-| Réseaux sociaux | Temps | 1-3 mois | Moyenne |
-| Email | Outil, contenu | 1-4 semaines | Élevée |
-
----
-
-## 4. Règle 70-20-10
-
-- **70 %** sur ce qui fonctionne déjà (canaux performants)
-- **20 %** sur l'optimisation (tests, amélioration)
-- **10 %** sur l'expérimentation (nouveaux canaux, formats)
-
----
-
-## Conclusion
-
-La priorisation repose sur le ROI mesuré et la maturité de chaque canal. Commence par 1-2 canaux, mesure, puis réalloue le budget selon les résultats.

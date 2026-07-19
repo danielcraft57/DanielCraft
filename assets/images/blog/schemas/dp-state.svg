@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">State</title>
+  <desc id="desc">Comportement selon l'etat</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">State</text>
+  <rect x="20" y="140" width="242" height="70" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="141.0" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Brouillon</text>
+  <path d="M264 175 H276" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <rect x="278" y="140" width="242" height="70" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="399.0" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Publie</text>
+  <path d="M522 175 H534" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <rect x="536" y="140" width="242" height="70" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="657.0" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Archive</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Selon l'etat, les actions changent</text>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

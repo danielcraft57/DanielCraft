@@ -1,7 +1,7 @@
 {
   "id": "design-patterns-serie",
-  "title": "Série Design Patterns — du plus populaire au moins (GoF pour juniors)",
-  "description": "Les 23 design patterns du Gang of Four expliqués clairement pour développeurs juniors : ordre par popularité, schémas, exemples TypeScript et Python, exercices et pièges à éviter.",
+  "title": "Serie Design Patterns — recettes de code (GoF, version simple)",
+  "description": "Les 23 design patterns du Gang of Four expliques simplement : analogies du quotidien, schemas, et liens entre articles — sans jargon inutile.",
   "slug": "design-patterns-serie",
   "articles": [
     "design-patterns-introduction-gang-of-four",
