@@ -1,7 +1,7 @@
 ---
-title: "GitOps : déployer avec Argo CD ou Flux (et arrêter les kubectl à la main)"
+title: "GitOps : le cluster suit Git (pas l'inverse)"
 date: 2025-03-27
-excerpt: "Le Git devient la source de vérité de ton cluster Kubernetes : manifests versionnés, synchronisation automatique, audit et rollbacks propres avec Argo CD ou Flux."
+excerpt: "Argo CD ou Flux : deployer en declarant l'etat souhaite dans un depot Git."
 type: article
 tags: [CI/CD, GitOps, Kubernetes, Argo CD, Flux]
 series: ci-cd-serie
@@ -9,71 +9,20 @@ series_order: 8
 og_image: ci-cd-gitops-1200x630.jpg
 ---
 
-# GitOps : déployer avec Argo CD ou Flux (et arrêter les kubectl à la main)
+# GitOps : le cluster suit Git (pas l'inverse)
 
-Le problème du déploiement "classique" (CI qui fait `kubectl apply`) :
+Le **GitOps**, c'est une idee simple : Git decrit **ce qui doit tourner**. Un outil (Argo CD, Flux) regarde Git et aligne le cluster.
 
-- tu ne sais pas toujours quel est l'état exact souhaité,
-- l'historique est dispersé dans les logs de CI,
-- les rollbacks sont moins naturels.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/cicd-gitops.svg" alt="Schema GitOps avec Argo ou Flux" class="schema-inline" width="640" />
+  <figcaption>Git, build, manifest, synchronisation cluster.</figcaption>
+</figure>
 
-Le GitOps règle ça avec une idée simple :
+## Pourquoi c'est rassurant
 
-**Le Git décrit l'état désiré du cluster.**  
-Et un contrôleur dans le cluster s'assure que la réalité suit cet état.
+- Historique clair (qui a change quoi)
+- Moins de `kubectl` a la main a 23h
+- Un ecart ? On le voit
 
----
-
-## Le principe GitOps
-
-1. Tu versionnes tes manifests (ou Helm/Kustomize) dans un repo.
-2. Argo CD / Flux surveille le repo.
-3. Dès qu'un commit est fusionné, l'outil synchronise le cluster.
-
-Résultat :
-
-- audit clair,
-- diff visible,
-- rollbacks via Git (revert commit),
-- séparation nette entre code applicatif et config de déploiement.
-
----
-
-## Argo CD vs Flux (en bref)
-
-- **Argo CD** : UI très pratique, visualisation des apps, diffs, sync manuelle/auto.
-- **Flux** : plus "Git‑native", très bien intégré pour Helm/Kustomize, souvent plus léger.
-
-Les deux sont solides. Choisis surtout selon :
-
-- ton équipe,
-- ton besoin d'UI,
-- ton stack (Helm/Kustomize).
-
----
-
-## Comment la CI s'intègre
-
-Avec GitOps, la CI ne déploie pas directement. Elle :
-
-- build l'image,
-- push l'image,
-- met à jour le repo GitOps (tag d'image),
-- crée une PR (ou commit sur une branche).
-
-Ensuite Argo/Flux fait la synchro.
-
-Ça évite qu'une CI compromise ait accès direct au cluster (selon les setups).
-
----
-
-## Rollback GitOps
-
-Rollback = revert commit.
-
-Tu reviens à un manifest précédent, Argo/Flux resynchronise, c'est propre.
-
----
-
-Prochain article : versioning, releases, rollbacks et comment garder une stratégie de livraison cohérente (tags, changelog, environments).
+Ca demande de la discipline : les manifests (fichiers de description) doivent etre **propres** et versionnes. Branche avec la [CI/CD Kubernetes](/blog/articles/ci-cd-kubernetes-deploiement-strategies.html).
 

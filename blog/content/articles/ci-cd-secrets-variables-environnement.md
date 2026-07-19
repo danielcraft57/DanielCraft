@@ -1,7 +1,7 @@
 ---
-title: "CI/CD : gérer les secrets et variables d'environnement (sans fuite)"
+title: "CI/CD : cacher les mots de passe (sans les coller dans Git)"
 date: 2025-03-13
-excerpt: "API keys, mots de passe, kubeconfig, tokens de registry : où les stocker, comment les injecter dans le pipeline, et quoi éviter absolument."
+excerpt: "Ou mettre cles API et mots de passe pour que la chaine fonctionne sans fuite."
 type: article
 tags: [CI/CD, secrets, sécurité, variables, DevOps]
 series: ci-cd-serie
@@ -9,128 +9,29 @@ series_order: 4
 og_image: ci-cd-secrets-1200x630.jpg
 ---
 
-# CI/CD : gérer les secrets et variables d'environnement (sans fuite)
+# CI/CD : cacher les mots de passe (sans les coller dans Git)
 
-La CI/CD manipule souvent des choses sensibles :
+Un **secret**, c'est un truc qu'on ne montre pas : mot de passe, cle API, certificat. Si tu le mets dans Git, considere-le **public**.
 
-- tokens registry (push/pull d'images),
-- clés API (Sentry, Stripe, OpenAI…),
-- accès base de données (staging),
-- kubeconfig / credentials cloud.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/cicd-secrets.svg" alt="Schema bons et mauvais usages des secrets" class="schema-inline" width="640" />
+  <figcaption>Coffre CI et variables masquees : jamais de secret dans le code.</figcaption>
+</figure>
 
-Une fuite de secret, c'est le genre de truc qui te ruine une soirée (et parfois un week-end).
+## Les mauvais reflexes
 
-Ici, on met des règles simples et une méthode.
+- Fichier `.env` committe "juste pour tester"
+- Secret dans un script
+- Secret imprime dans les **logs** de la CI
 
----
+## Les bons reflexes
 
-## La règle numéro 1
+- Coffre de la CI (GitHub Secrets, variables GitLab masquees…)
+- Droits **limites** : chaque job n'a que ce dont il a besoin
+- **Rotation** : changer une cle compromise rapidement
+- Pas de secret dans l'[image Docker](/blog/articles/docker-production-registry-securite.html)
 
-**Aucun secret dans le repo.**
+## Variables vs secrets
 
-Ni dans :
+Les variables (URL d'API, mode debug) peuvent etre visibles. Les secrets, non. Separe-les clairement. C'est aussi vrai sur [Kubernetes](/blog/articles/kubernetes-configmaps-secrets.html).
 
-- le code,
-- les manifests Kubernetes versionnés en clair,
-- les Dockerfile,
-- les fichiers `.env` committés.
-
-Si un secret a fuité, considère qu'il est compromis et **rotate** immédiatement.
-
----
-
-## Secrets vs variables
-
-### Variables "publiques" (ok dans le repo)
-
-- noms d'environnements,
-- flags sans impact (ex: `FEATURE_X=true`),
-- URLs non sensibles (ex: URL publique d'un endpoint).
-
-### Secrets (jamais en clair)
-
-- passwords,
-- tokens,
-- clés privées,
-- certificats,
-- kubeconfig complet.
-
----
-
-## Où stocker les secrets ?
-
-Trois niveaux :
-
-1. **Secrets CI** (GitHub Actions Secrets, GitLab CI Variables, etc.)  
-   Très bien pour commencer.
-
-2. **Secret manager** (Vault, AWS Secrets Manager, GCP Secret Manager)  
-   Plus solide, plus traçable.
-
-3. **Kubernetes Secrets** (ou External Secrets Operator)  
-   Pour que l'app récupère les secrets côté cluster.
-
-L'idée : éviter que la CI devienne un coffre‑fort géant non maîtrisé.
-
----
-
-## Comment injecter un secret dans un job CI
-
-Principe : le secret arrive en variable d'environnement au runtime.
-
-Exemple pseudo :
-
-```bash
-echo "$REGISTRY_TOKEN" | docker login ghcr.io -u "$REGISTRY_USER" --password-stdin
-```
-
-Ce qui est important :
-
-- ne jamais `echo` le secret dans les logs,
-- désactiver le debug si ça affiche l'environnement,
-- limiter le scope et la durée de vie des tokens.
-
----
-
-## Cas concret : kubeconfig
-
-Tu peux stocker un kubeconfig dans un secret CI (base64), puis le reconstruire à l'exécution :
-
-```bash
-echo "$KUBECONFIG_B64" | base64 -d > kubeconfig.yml
-export KUBECONFIG="$PWD/kubeconfig.yml"
-kubectl get nodes
-```
-
-Bonnes pratiques :
-
-- kubeconfig dédié **staging** / **prod**,
-- comptes séparés,
-- droits minimum (RBAC).
-
----
-
-## Rotations, scopes, environnements
-
-Un setup sain :
-
-- secrets par environnement (staging/prod),
-- token staging ne donne jamais accès à prod,
-- rotation régulière (automatique si possible),
-- audit (qui a accès à quoi).
-
----
-
-## Et dans Kubernetes ?
-
-La CI/CD ne devrait pas injecter directement des secrets dans les pods via des manifests committés en clair.
-
-Approches propres :
-
-- External Secrets Operator (K8s) + secret manager,
-- sealed-secrets (chiffrement dans Git),
-- Vault Agent sidecar.
-
----
-
-Prochain article : un workflow **GitHub Actions** complet (avec build d'image Docker, push registry, déploiement Kubernetes et contrôle de rollout).

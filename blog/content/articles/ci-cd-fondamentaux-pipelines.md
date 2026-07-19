@@ -1,7 +1,7 @@
 ---
-title: "CI/CD : comprendre les pipelines (vraiment) - du commit au déploiement"
+title: "CI/CD : du commit a la mise en ligne, automatiquement"
 date: 2025-03-04
-excerpt: "La CI/CD expliquée clairement : pourquoi on l'utilise, comment penser un pipeline, quelles étapes mettre, et comment éviter les usines à gaz."
+excerpt: "Une chaine qui teste et publie ton code a ta place — pour livrer plus souvent, sans trembler."
 type: article
 tags: [CI/CD, DevOps, pipeline, Git, déploiement]
 series: ci-cd-serie
@@ -9,122 +9,48 @@ series_order: 1
 og_image: ci-cd-fondamentaux-1200x630.jpg
 ---
 
-# CI/CD : comprendre les pipelines (vraiment) - du commit au déploiement
+# CI/CD : du commit a la mise en ligne, automatiquement
 
-La CI/CD, ce n'est pas "un truc de DevOps". C'est juste une manière propre de livrer du code :
+Imagine une **chaine de montage**. Tu poses une piece (ton code). Des machines verifient, emballent, puis envoient le produit. La **CI/CD**, c'est ca pour un site ou une appli.
 
-- **plus vite**,
-- **plus souvent**,
-- **sans trembler** à chaque déploiement.
+Tu n'as plus besoin de "deployer a la main le vendredi soir en croisant les doigts".
 
-Dans cette série, on va construire une vision claire et réutilisable. Pas un guide qui finit en copier-coller magique, mais une méthode.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/cicd-pipeline-simple.svg" alt="Schema d'un pipeline CI/CD simple" class="schema-inline" width="640" />
+  <figcaption>Commit, tests, build, controle, deploiement : une recette repetable.</figcaption>
+</figure>
 
----
+## CI et CD, en mots simples
 
-## CI, CD : définition simple
+La **CI** (integration continue) : a chaque changement, on verifie automatiquement que ca tient debout (tests, qualite, compilation).
 
-- **CI (Continuous Integration)** : à chaque push/merge, on vérifie automatiquement que le code tient debout (tests, lint, build).
-- **CD (Continuous Delivery/Deployment)** :
-  - **Delivery** : on prépare un artefact déployable automatiquement (image Docker, package, bundle), prêt à être lancé.
-  - **Deployment** : on déclenche le déploiement automatiquement (souvent après validation).
+La **CD** :
+- **Delivery** : on prepare un paquet pret a installer (souvent une [image Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html)).
+- **Deployment** : on l'installe vraiment (parfois apres un clic "OK").
 
-Dans les faits, beaucoup disent CD pour tout.
+Beaucoup disent "CD" pour les deux. L'important : **automatiser** ce qui se repete.
 
----
+## Pourquoi tu en as besoin (meme tout petit)
 
-## Pourquoi tu en as besoin (même sur un petit projet)
+Sans CI/CD, tu as souvent :
+- "Ca marche sur mon PC" mais pas ailleurs
+- un oubli de fichier a la mise en ligne
+- la peur de toucher a la prod
 
-Sans CI/CD, tu finis avec :
+Avec une petite chaine, tu gagnes : **meme recettes**, **preuves** (tests verts), et un historique clair.
 
-- des builds différents selon la machine,
-- des déploiements "à la main" qui oublient un fichier,
-- des hotfix en prod impossibles à reproduire.
+## Les etapes typiques
 
-Avec CI/CD, tu gagnes :
+1. Declenchement (push, merge)
+2. Installation des dependances
+3. **Tests** et controles
+4. **Build** (image, bundle)
+5. Publication de l'artefact
+6. Deploiement (staging puis prod)
 
-- de la **reproductibilité** (le pipeline fait toujours la même chose),
-- un **filet de sécurité** (tests, lint, checks),
-- une **traçabilité** (qui a déployé quoi, quand).
+Garde ca **simple** au debut. Une usine a gaz de 40 jobs pour 2 devs, ca fatigue tout le monde.
 
----
+## Ce qu'il faut retenir
 
-## Le pipeline type (la base saine)
-
-Un pipeline bien pensé suit souvent cette logique :
-
-1. **Checkout + install deps**
-2. **Qualité** (lint, format, typecheck)
-3. **Tests** (unitaires, intégration)
-4. **Build** (artefact)
-5. **Package** (image Docker)
-6. **Scan** (dépendances / image)
-7. **Déploiement** (staging, puis prod)
-8. **Vérifications post-déploiement** (healthchecks, smoke tests)
-
-Tu n'es pas obligé de tout faire dès le jour 1. L'important : l'ordre et la logique.
-
----
-
-## Ce qu'on déploie exactement ?
-
-Trois cas fréquents :
-
-- **Site statique** : build + upload (S3, Nginx, GitHub Pages).
-- **API/Back** : image Docker versionnée + déploiement (Kubernetes, VM, PaaS).
-- **Monorepo** : plusieurs builds + plusieurs déploiements.
-
-L'artefact doit être :
-
-- **versionné**,
-- **reproductible**,
-- **déployable sans rebuild** en prod.
-
----
-
-## Éviter les pièges classiques
-
-### 1. Pipeline trop lent
-
-Si ton pipeline met 20 minutes, l'équipe va le contourner.
-
-Réflexes :
-
-- cache des dépendances,
-- parallélisation (tests en shards),
-- tests ciblés (unitaires rapides -> intégration plus tard).
-
-### 2. Pipeline trop "magique"
-
-Un pipeline incompréhensible, c'est une bombe à retardement.
-
-Réflexes :
-
-- étapes nommées clairement,
-- scripts simples (Makefile, npm scripts),
-- logs lisibles.
-
-### 3. Secrets mal gérés
-
-Pas de mots de passe en dur dans le repo. Jamais.
-
-On verra ça en détail dans un article dédié : secrets, variables, vault, etc.
-
----
-
-## Comment cette série est organisée
-
-On va avancer dans cet ordre :
-
-1. **Fondamentaux** (ce que tu lis ici)
-2. **Tests + quality gates** (quand tu bloques un déploiement)
-3. **Build d'images Docker** (tags, cache, multi-stage)
-4. **Secrets / config** (sans fuite)
-5. **Exemple GitHub Actions** complet
-6. **Exemple GitLab CI** complet
-7. **Déploiement Kubernetes** (strategies, rollout, rollback)
-8. **GitOps** (Argo CD / Flux)
-9. **Versioning + releases**
-10. **Observabilité des déploiements**
-
-Objectif final : une chaîne propre du commit jusqu'à la prod, que tu peux appliquer à tes projets (Docker/Kubernetes).
+La CI/CD n'est pas un badge DevOps. C'est une **habitude** : chaque changement passe par le meme chemin. Dans la suite : tests qui bloquent, secrets bien ranges, Docker en CI, GitHub/GitLab, strategies de deploiement, et comment voir si ca s'est bien passe.
 

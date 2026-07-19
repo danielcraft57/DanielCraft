@@ -1,7 +1,7 @@
 {
   "id": "ci-cd-serie",
-  "title": "Série CI/CD - Du commit à la production",
-  "description": "Une série complète sur la CI/CD : pipelines, tests, build d'images, gestion des secrets, déploiement (Docker/Kubernetes), GitOps, stratégies de release et bonnes pratiques pour livrer vite sans casser.",
+  "title": "Série CI/CD : livrer du code sans trembler",
+  "description": "Pipelines, tests, secrets, Docker, GitHub/GitLab, Kubernetes et observabilite — expliques simplement.",
   "slug": "ci-cd-serie",
   "articles": [
     "ci-cd-fondamentaux-pipelines",
@@ -16,4 +16,3 @@
     "ci-cd-observabilite-deploiements"
   ]
 }
-
