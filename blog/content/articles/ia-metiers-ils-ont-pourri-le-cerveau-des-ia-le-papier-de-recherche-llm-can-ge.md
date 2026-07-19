@@ -1,5 +1,5 @@
 ---
-title: "Quand on pollue les modeles : pourquoi ca compte"LLM can ge"
+title: "Quand on pollue les modeles : pourquoi ca compte"
 date: 2026-08-23
 excerpt: "Donnees de mauvaise qualite = reponses plus foireuses."
 type: article

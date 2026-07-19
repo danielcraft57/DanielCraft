@@ -1,5 +1,5 @@
 ---
-title: "Agents longs / infinis : utiles, a surveiller"infini\" : il peut trava"
+title: "Agents longs / infinis : utiles, a surveiller"
 date: 2026-06-22
 excerpt: "Un agent qui travaille longtemps peut deriver : checkpoints et limites obligatoires."
 type: guide

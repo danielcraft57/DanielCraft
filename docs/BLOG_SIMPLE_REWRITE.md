@@ -58,8 +58,9 @@ API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communicati
 
 ## Suite
 
-- Articles : **toutes les séries ciblées** sont passées en ton simple (y compris toutes les séries IA).
-- OG : régénérer les JPG encore sur **anciens titres** (séries non-IA : AWS, CI/CD, Docker, SEO, GEO, Cyber, UX, API…) via les prompts du doc `prompt_og_images_articles_simple.md`, puis `install_ai_generated_blog_og.py --simple`.
+- Articles : **toutes les séries ciblées** sont passées en ton simple (y compris toutes les séries IA). Audit : `issues=0`.
+- OG : **230/230** installées (style débutant, titres à jour), y compris le lot « stale » CI/CD / SEO / GEO / K8s / UX / cyber / API. `stale=0`.
+- Build local si besoin : `python blog/build_blog.py --output dist/blog`. Pas de déploiement sauf demande.
 
 ## Déploiement
 

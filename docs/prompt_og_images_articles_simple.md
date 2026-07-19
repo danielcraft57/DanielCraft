@@ -869,12 +869,12 @@ Visuel Open Graph attirant et pedagogique pour un article grand public / debutan
 
 ---
 
-## 86. Agents longs / infinis : utiles, a surveiller"infini\" : il peut trava
+## 86. Agents longs / infinis : utiles, a surveiller
 - slug: `ia-agents-agent-ia-neo-by-flowith-le-premier-agent-ia-infini-il-peut-trava`
 - fichier: `ia-agents-agent-ia-neo-by-flowith-le-premier-agent-ia-infini-il-peut-trava-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agents longs / infinis : utiles, a surveiller"infini\" : il peut trava" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agents longs / infinis : utiles, a surveiller" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
@@ -1529,12 +1529,12 @@ Visuel Open Graph attirant et pedagogique pour un article grand public / debutan
 
 ---
 
-## 152. Quand on pollue les modeles : pourquoi ca compte"LLM can ge
+## 152. Quand on pollue les modeles : pourquoi ca compte
 - slug: `ia-metiers-ils-ont-pourri-le-cerveau-des-ia-le-papier-de-recherche-llm-can-ge`
 - fichier: `ia-metiers-ils-ont-pourri-le-cerveau-des-ia-le-papier-de-recherche-llm-can-ge-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Quand on pollue les modeles : pourquoi ca compte"LLM can ge" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Quand on pollue les modeles : pourquoi ca compte" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
@@ -1829,12 +1829,12 @@ Visuel Open Graph attirant et pedagogique pour un article grand public / debutan
 
 ---
 
-## 182. Experts IA vs pratiquants : qui avance vraiment"experts en IA\" vs les \"personnes qui s
+## 182. Experts IA vs pratiquants : qui avance vraiment
 - slug: `ia-prod-les-experts-en-ia-vs-les-personnes-qui-s`
 - fichier: `ia-prod-les-experts-en-ia-vs-les-personnes-qui-s-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Experts IA vs pratiquants : qui avance vraiment"experts en IA\" vs le…" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Experts IA vs pratiquants : qui avance vraiment" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---

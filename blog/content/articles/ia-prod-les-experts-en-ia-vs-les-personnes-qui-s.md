@@ -1,5 +1,5 @@
 ---
-title: "Experts IA vs pratiquants : qui avance vraiment"experts en IA\" vs les \"personnes qui s"
+title: "Experts IA vs pratiquants : qui avance vraiment"
 date: 2026-09-02
 excerpt: "La pratique reguliere bat souvent le titre d'expert sur LinkedIn."
 type: checklist
