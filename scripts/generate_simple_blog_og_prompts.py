@@ -40,6 +40,17 @@ SERIES = {
     "marketing-digital-serie",
     "communication-serie",
     "design-patterns-serie",
+    "ia-chatgpt-serie",
+    "ia-claude-serie",
+    "ia-prompts-serie",
+    "ia-outils-serie",
+    "ia-gemini-serie",
+    "ia-agents-serie",
+    "ia-images-serie",
+    "ia-nocode-serie",
+    "ia-formations-serie",
+    "ia-metiers-serie",
+    "ia-productivite-serie",
 }
 
 SERIES_THEMES: dict[str, str] = {
@@ -79,6 +90,39 @@ SERIES_THEMES: dict[str, str] = {
     ),
     "design-patterns-serie": (
         "blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant"
+    ),
+    "ia-chatgpt-serie": (
+        "bulles chat amicales, ecran assistant, ambiance pedagogique claire"
+    ),
+    "ia-claude-serie": (
+        "assistant ecriture/code sobre, documents, ambiance calme et claire"
+    ),
+    "ia-prompts-serie": (
+        "carte prompt etape par etape, bulles, pedagogique"
+    ),
+    "ia-outils-serie": (
+        "boite a outils IA rangee, icones simples"
+    ),
+    "ia-gemini-serie": (
+        "etoiles douces stylisees, atelier productivite accueillant"
+    ),
+    "ia-agents-serie": (
+        "petits assistants robots ranges, workflow simple"
+    ),
+    "ia-images-serie": (
+        "toile et pinceaux numeriques, creation visuelle accueillante"
+    ),
+    "ia-nocode-serie": (
+        "blocs empiles type no-code, flux simple"
+    ),
+    "ia-formations-serie": (
+        "cahier et ecran de cours, ambiance apprentissage"
+    ),
+    "ia-metiers-serie": (
+        "metiers et IA cote a cote, illustration douce"
+    ),
+    "ia-productivite-serie": (
+        "checklist et horloge douce, productivite sans stress"
     ),
 }
 

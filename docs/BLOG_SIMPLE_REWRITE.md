@@ -20,6 +20,8 @@ Objectif : articles **lisibles par un débutant**, avec **schémas SVG** et **un
 | SEO + GEO | `scripts/simplify_seo_geo_articles.py` |
 | Marketing + Communication | `scripts/simplify_marketing_com_articles.py` |
 | Design Patterns | `scripts/simplify_design_patterns_articles.py` |
+| IA ChatGPT + Claude | `scripts/simplify_ia_chatgpt_claude_articles.py` |
+| IA Prompts | `scripts/simplify_ia_prompts_articles.py` |
 | Helpers SVG | `scripts/add_series3_extra_schemas.py` (`flow_row`, `compare2`, `grid3`, `stack_layers`) |
 
 Pattern d’un script : écrire les SVG → réécrire chaque `.md` (frontmatter `title`/`excerpt` + corps) → patcher la collection.
@@ -52,12 +54,12 @@ Le hero article utilise l’OG (`og_image` / `_get_article_hero_image` dans le b
 
 ## Séries déjà passées en ton simple
 
-API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communication, Design Patterns.
+API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communication, Design Patterns, **IA ChatGPT**, **IA Claude**, **IA Prompts**.
 
 ## Suite
 
-- Séries **IA** (`ia-*`) : titres souvent tronqués → même traitement (script + prompts OG).
-- OG : beaucoup de JPG encore sur **anciens titres** ; à régénérer avec le doc `prompt_og_images_articles_simple.md`.
+- Autres séries **IA** (`ia-outils`, `ia-gemini`, `ia-agents`, `ia-images`, `ia-nocode`, `ia-formations`, `ia-metiers`, `ia-productivite`).
+- OG : continuer à générer les JPG via les prompts du doc (beaucoup encore sur anciens titres).
 
 ## Déploiement
 
