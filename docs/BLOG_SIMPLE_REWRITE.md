@@ -58,8 +58,8 @@ API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communicati
 
 ## Suite
 
-- Autres séries **IA** (`ia-outils`, `ia-gemini`, `ia-agents`, `ia-images`, `ia-nocode`, `ia-formations`, `ia-metiers`, `ia-productivite`).
-- OG : continuer à générer les JPG via les prompts du doc (beaucoup encore sur anciens titres).
+- Articles : **toutes les séries ciblées** sont passées en ton simple (y compris toutes les séries IA).
+- OG : régénérer les JPG encore sur **anciens titres** (séries non-IA : AWS, CI/CD, Docker, SEO, GEO, Cyber, UX, API…) via les prompts du doc `prompt_og_images_articles_simple.md`, puis `install_ai_generated_blog_og.py --simple`.
 
 ## Déploiement
 

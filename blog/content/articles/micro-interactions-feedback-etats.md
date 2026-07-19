@@ -1,7 +1,7 @@
 ---
 title: "Petits signaux : dire à l'utilisateur ce qui se passe"
 date: 2025-09-30
-excerpt: "Hover, chargement, erreur, succès : le timing du feedback crée la confiance."qui marche" et une UI rassurante. Patterns concrets."
+excerpt: "Hover, chargement, erreur, succes : le timing du feedback cree la confiance."
 type: article
 tags: [UX, UI, micro-interactions, feedback, design]
 series: ux-ui-serie
