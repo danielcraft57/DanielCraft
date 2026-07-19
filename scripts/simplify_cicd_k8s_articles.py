@@ -47,7 +47,14 @@ def patch_frontmatter(raw: str, title: str, excerpt: str) -> tuple[str, str]:
     return fm, body
 
 
-# ---------- SVGs ----------
+def article(slug: str, title: str, excerpt: str, body_md: str) -> None:
+    path = ARTICLES / f"{slug}.md"
+    raw = path.read_text(encoding="utf-8")
+    fm, _ = patch_frontmatter(raw, title, excerpt)
+    path.write_text(fm + "\n\n" + body_md.lstrip() + "\n", encoding="utf-8")
+    print(f"[OK] {slug}")
+
+
 SVGS = [
     ("cicd-pipeline-simple.svg", "Pipeline CI/CD", "Du commit au deploiement",
      flow_row(["Commit", "Tests", "Build", "Controle", "Deploy"],
@@ -124,15 +131,6 @@ SVGS = [
 ]
 for item in SVGS:
     write_svg(*item)
-
-
-def article(slug: str, title: str, excerpt: str, body_md: str) -> None:
-    path = ARTICLES / f"{slug}.md"
-    raw = path.read_text(encoding="utf-8")
-    fm, _ = patch_frontmatter(raw, title, excerpt)
-    # keep series etc from fm; replace body entirely after H1 handled in body_md
-    path.write_text(fm + "\n\n" + body_md.lstrip() + "\n", encoding="utf-8")
-    print(f"[OK] {slug}")
 
 
 # ===================== CI/CD =====================
