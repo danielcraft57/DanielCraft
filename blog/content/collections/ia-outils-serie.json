@@ -1,7 +1,7 @@
 {
   "id": "ia-outils-serie",
-  "title": "Série IA - Outils et alternatives",
-  "description": "Comparatifs d'outils IA, alternatives gratuites et stacks pratiques.",
+  "title": "Serie IA — Outils et alternatives (simples)",
+  "description": "Comparer, installer, tester : ChatGPT, open source, agents et stacks pratiques.",
   "slug": "ia-outils-serie",
   "articles": [
     "ia-outils-base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour",

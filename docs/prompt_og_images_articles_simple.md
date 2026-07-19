@@ -859,122 +859,122 @@ Visuel Open Graph attirant et pedagogique pour un article grand public / debutan
 
 ---
 
-## 85. 3 alternatives à Deep Research l'agent d'intelligence artificielle d'
+## 85. 3 alternatives a Deep Research (recherche longue)
 - slug: `ia-agents-3-alternatives-a-deep-research-l-agent-d-intelligence-artificielle-d`
 - fichier: `ia-agents-3-alternatives-a-deep-research-l-agent-d-intelligence-artificielle-d-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 alternatives à Deep Research l'agent d'intelligence artificielle d'" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 alternatives a Deep Research (recherche longue)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 86. Agent IA Neo by Flowith, le premier agent IA "infini" : il peut trava
+## 86. Agents longs / infinis : utiles, a surveiller"infini\" : il peut trava
 - slug: `ia-agents-agent-ia-neo-by-flowith-le-premier-agent-ia-infini-il-peut-trava`
 - fichier: `ia-agents-agent-ia-neo-by-flowith-le-premier-agent-ia-infini-il-peut-trava-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agent IA Neo by Flowith, le premier agent IA "infini" : il peut trava" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agents longs / infinis : utiles, a surveiller"infini\" : il peut trava" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 87. Agent IA pour créer des présentations style powerpoint en utilisant d
+## 87. Agent presentations : du plan aux slides
 - slug: `ia-agents-agent-ia-pour-creer-des-presentations-style-powerpoint-en-utilisant-d`
 - fichier: `ia-agents-agent-ia-pour-creer-des-presentations-style-powerpoint-en-utilisant-d-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agent IA pour créer des présentations style powerpoint en utilisant d" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agent presentations : du plan aux slides" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 88. Astuce et bon plan : comment avoir Perplexity Pro gratuitement pendan
+## 88. Perplexity Pro : bons plans (et ce qu'il faut verifier)
 - slug: `ia-agents-astuce-et-bon-plan-comment-avoir-perplexity-pro-gratuitement-pendan`
 - fichier: `ia-agents-astuce-et-bon-plan-comment-avoir-perplexity-pro-gratuitement-pendan-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Astuce et bon plan : comment avoir Perplexity Pro gratuitement pendan" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Perplexity Pro : bons plans (et ce qu'il faut verifier)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 89. Créer un agent IA gratuit avec Claude et les MCP Le Model
+## 89. Agent gratuit avec Claude + MCP : l'idee simple
 - slug: `ia-agents-creer-un-agent-ia-gratuit-avec-claude-et-les-mcp-le-model`
 - fichier: `ia-agents-creer-un-agent-ia-gratuit-avec-claude-et-les-mcp-le-model-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Créer un agent IA gratuit avec Claude et les MCP Le Model" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agent gratuit avec Claude + MCP : l'idee simple" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 90. Flowith OS : le premier OS créé pour les agents IA Flowith OS permet
+## 90. OS pour agents : une idee, encore experimentale
 - slug: `ia-agents-flowith-os-le-premier-os-cree-pour-les-agents-ia-flowith-os-permet`
 - fichier: `ia-agents-flowith-os-le-premier-os-cree-pour-les-agents-ia-flowith-os-permet-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Flowith OS : le premier OS créé pour les agents IA Flowith OS permet" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "OS pour agents : une idee, encore experimentale" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 91. Formation gratuite pour créer et vendre des agents IA, parfait
+## 91. Formation agents IA : apprendre puis vendre (si tu as un vrai offre)
 - slug: `ia-agents-formation-gratuite-pour-creer-et-vendre-des-agents-ia-parfait-si-vou`
 - fichier: `ia-agents-formation-gratuite-pour-creer-et-vendre-des-agents-ia-parfait-si-vou-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Formation gratuite pour créer et vendre des agents IA, parfait" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Formation agents IA : apprendre puis vendre (si tu as un vrai offre)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 92. Jour 2 pour comprendre les agents IA : les dangers
+## 92. Agents IA : les dangers a connaitre (jour 2)
 - slug: `ia-agents-jour-2-pour-comprendre-les-agents-ia-les-dangers`
 - fichier: `ia-agents-jour-2-pour-comprendre-les-agents-ia-les-dangers-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Jour 2 pour comprendre les agents IA : les dangers" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agents IA : les dangers a connaitre (jour 2)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 93. Le dernier examen de l’Humanité : Deep Research d’OpenAI atteint un s
+## 93. Deep Research et examens : ce que ca prouve (ou pas)
 - slug: `ia-agents-le-dernier-examen-de-l-humanite-deep-research-d-openai-atteint-un-s`
 - fichier: `ia-agents-le-dernier-examen-de-l-humanite-deep-research-d-openai-atteint-un-s-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Le dernier examen de l’Humanité : Deep Research d’OpenAI atteint un s" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Deep Research et examens : ce que ca prouve (ou pas)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 94. Manus AI : l’agent IA le plus complet, parfait pour les personnes non
+## 94. Agent tout-en-un : pour qui c'est vraiment utile
 - slug: `ia-agents-manus-ai-l-agent-ia-le-plus-complet-parfait-pour-les-personnes-non`
 - fichier: `ia-agents-manus-ai-l-agent-ia-le-plus-complet-parfait-pour-les-personnes-non-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Manus AI : l’agent IA le plus complet, parfait pour les personnes non" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Agent tout-en-un : pour qui c'est vraiment utile" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 95. Nouvel agent IA gratuit : Scout.new Il est aussi bon que Genspark et
+## 95. Nouvel agent gratuit : comment le juger vite
 - slug: `ia-agents-nouvel-agent-ia-gratuit-scout-new-il-est-aussi-bon-que-genspark-et`
 - fichier: `ia-agents-nouvel-agent-ia-gratuit-scout-new-il-est-aussi-bon-que-genspark-et-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Nouvel agent IA gratuit : Scout.new Il est aussi bon que Genspark et" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Nouvel agent gratuit : comment le juger vite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 96. Tutoriel débutant : comment créer un agent IA en quelques minutes
+## 96. Creer un agent IA en quelques minutes (debutant)
 - slug: `ia-agents-tutoriel-debutant-comment-creer-un-agent-ia-en-quelques-minutes`
 - fichier: `ia-agents-tutoriel-debutant-comment-creer-un-agent-ia-en-quelques-minutes-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Tutoriel débutant : comment créer un agent IA en quelques minutes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, petits assistants robots ranges, workflow simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Creer un agent IA en quelques minutes (debutant)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
@@ -1169,682 +1169,682 @@ Visuel Open Graph attirant et pedagogique pour un article grand public / debutan
 
 ---
 
-## 116. 3 façons d'utiliser l'IA notebook LM de G
+## 116. 3 facons d'utiliser NotebookLM
 - slug: `ia-cours-3-facons-d-utiliser-l-ia-notebook-lm-de-g`
 - fichier: `ia-cours-3-facons-d-utiliser-l-ia-notebook-lm-de-g-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 façons d'utiliser l'IA notebook LM de G" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 facons d'utiliser NotebookLM" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 117. 5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman
+## 117. Predictions IA : lire sans tout croire
 - slug: `ia-cours-5-predictions-sur-le-futur-de-l-ia-et-de-l-humanite-selon-sam-altman`
 - fichier: `ia-cours-5-predictions-sur-le-futur-de-l-ia-et-de-l-humanite-selon-sam-altman-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Predictions IA : lire sans tout croire" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 118. Alternative gratuite (5 requêtes par jour) si vous voulez tester l'ag
+## 118. Tester un agent gratuit (quota limite)
 - slug: `ia-cours-alternative-gratuite-5-requetes-par-jour-si-vous-voulez-tester-l-ag`
 - fichier: `ia-cours-alternative-gratuite-5-requetes-par-jour-si-vous-voulez-tester-l-ag-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Alternative gratuite (5 requêtes par jour) si vous voulez tester l'ag" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Tester un agent gratuit (quota limite)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 119. Comment cloner le cerveau de n'importe quel créateur en 5 minutes et
+## 119. Cloner le style d'un createur : methode rapide
 - slug: `ia-cours-comment-cloner-le-cerveau-de-n-importe-quel-createur-en-5-minutes-et`
 - fichier: `ia-cours-comment-cloner-le-cerveau-de-n-importe-quel-createur-en-5-minutes-et-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment cloner le cerveau de n'importe quel créateur en 5 minutes et" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Cloner le style d'un createur : methode rapide" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 120. Comment utiliser ChatGPT pour les débutants en 4 étapes si
+## 120. ChatGPT debutant : 4 etapes
 - slug: `ia-cours-comment-utiliser-chatgpt-pour-les-debutants-en-4-etapes-si`
 - fichier: `ia-cours-comment-utiliser-chatgpt-pour-les-debutants-en-4-etapes-si-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment utiliser ChatGPT pour les débutants en 4 étapes si" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "ChatGPT debutant : 4 etapes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 121. Formation IA gratuite + pour apprendre à coder La formation dure 17h
+## 121. Formation coder avec l'IA (parcours long)
 - slug: `ia-cours-formation-ia-gratuite-pour-apprendre-a-coder-la-formation-dure-17h`
 - fichier: `ia-cours-formation-ia-gratuite-pour-apprendre-a-coder-la-formation-dure-17h-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Formation IA gratuite + pour apprendre à coder La formation dure 17h" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Formation coder avec l'IA (parcours long)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 122. Guide gratuit par Microsoft pour apprendre à créer des agents IA
+## 122. Guide Microsoft agents IA : par ou commencer
 - slug: `ia-cours-guide-gratuit-par-microsoft-pour-apprendre-a-creer-des-agents-ia-pour`
 - fichier: `ia-cours-guide-gratuit-par-microsoft-pour-apprendre-a-creer-des-agents-ia-pour-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Guide gratuit par Microsoft pour apprendre à créer des agents IA" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Guide Microsoft agents IA : par ou commencer" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 123. Le futur du travail avec l’intelligence artificielle : plus d’opportu
+## 123. Futur du travail et IA : opportunites concretes
 - slug: `ia-cours-le-futur-du-travail-avec-l-intelligence-artificielle-plus-d-opportu`
 - fichier: `ia-cours-le-futur-du-travail-avec-l-intelligence-artificielle-plus-d-opportu-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Le futur du travail avec l’intelligence artificielle : plus d’opportu" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Futur du travail et IA : opportunites concretes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 124. Meilleurs cours pour apprendre l'IA (gratuit) Voici les meilleurs cou
+## 124. Meilleurs cours IA gratuits : comment choisir
 - slug: `ia-cours-meilleurs-cours-pour-apprendre-l-ia-gratuit-voici-les-meilleurs-cou`
 - fichier: `ia-cours-meilleurs-cours-pour-apprendre-l-ia-gratuit-voici-les-meilleurs-cou-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Meilleurs cours pour apprendre l'IA (gratuit) Voici les meilleurs cou" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Meilleurs cours IA gratuits : comment choisir" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 125. Nouveauté avec la meilleure IA gratuite pour apprendre plus vite et m
+## 125. Apprendre plus vite avec une IA gratuite
 - slug: `ia-cours-nouveaute-avec-la-meilleure-ia-gratuite-pour-apprendre-plus-vite-et-m`
 - fichier: `ia-cours-nouveaute-avec-la-meilleure-ia-gratuite-pour-apprendre-plus-vite-et-m-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Nouveauté avec la meilleure IA gratuite pour apprendre plus vite et m" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Apprendre plus vite avec une IA gratuite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 126. Plein de formations gratuites à l’intelligence artificielle sur le si
+## 126. Plein de formations IA gratuites : ne pas se noyer
 - slug: `ia-cours-plein-de-formations-gratuites-a-l-intelligence-artificielle-sur-le-si`
 - fichier: `ia-cours-plein-de-formations-gratuites-a-l-intelligence-artificielle-sur-le-si-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Plein de formations gratuites à l’intelligence artificielle sur le si" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, cahier et ecran de cours, ambiance apprentissage. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Plein de formations IA gratuites : ne pas se noyer" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 127. 3 certifications IA gratuites à ajouter sur votre CV pour les débutan
+## 127. 3 certifications IA gratuites (utiles sur un CV)
 - slug: `ia-gemini-3-certifications-ia-gratuites-a-ajouter-sur-votre-cv-pour-les-debutan`
 - fichier: `ia-gemini-3-certifications-ia-gratuites-a-ajouter-sur-votre-cv-pour-les-debutan-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 certifications IA gratuites à ajouter sur votre CV pour les débutan" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 certifications IA gratuites (utiles sur un CV)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 128. Alerte formations IA gratuites par Google avec Google Skills Il y a p
+## 128. Google Skills : formations IA gratuites a explorer
 - slug: `ia-gemini-alerte-formations-ia-gratuites-par-google-avec-google-skills-il-y-a-p`
 - fichier: `ia-gemini-alerte-formations-ia-gratuites-par-google-avec-google-skills-il-y-a-p-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Alerte formations IA gratuites par Google avec Google Skills Il y a p" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Google Skills : formations IA gratuites a explorer" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 129. Comment accéder à des milliers de mini applications créées par les ut
+## 129. Mini-apps Gemini : explorer la galerie
 - slug: `ia-gemini-comment-acceder-a-des-milliers-de-mini-applications-creees-par-les-ut`
 - fichier: `ia-gemini-comment-acceder-a-des-milliers-de-mini-applications-creees-par-les-ut-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment accéder à des milliers de mini applications créées par les ut" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Mini-apps Gemini : explorer la galerie" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 130. Comment avoir le podcast NotebookLM en français Précision
+## 130. Podcast NotebookLM en francais : reglage simple
 - slug: `ia-gemini-comment-avoir-le-podcast-notebooklm-en-francais-precision`
 - fichier: `ia-gemini-comment-avoir-le-podcast-notebooklm-en-francais-precision-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment avoir le podcast NotebookLM en français Précision" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Podcast NotebookLM en francais : reglage simple" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 131. Comment avoir un assistant gratuit sur votre ordinateur pour a
+## 131. Assistant IA sur l'ordi : gratuit et sous la main
 - slug: `ia-gemini-comment-avoir-un-assistant-gratuit-sur-votre-ordinateur-pour-a`
 - fichier: `ia-gemini-comment-avoir-un-assistant-gratuit-sur-votre-ordinateur-pour-a-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment avoir un assistant gratuit sur votre ordinateur pour a" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Assistant IA sur l'ordi : gratuit et sous la main" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 132. Comment créer un assistant IA gratuit avec Gemini l'IA de
+## 132. Assistant Gemini gratuit : creer le tien
 - slug: `ia-gemini-comment-creer-un-assistant-ia-gratuit-avec-gemini-l-ia-de`
 - fichier: `ia-gemini-comment-creer-un-assistant-ia-gratuit-avec-gemini-l-ia-de-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment créer un assistant IA gratuit avec Gemini l'IA de" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Assistant Gemini gratuit : creer le tien" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 133. Comment utiliser Gemini l'intelligence artificielle de Goo
+## 133. Gemini : demarrer en 5 minutes
 - slug: `ia-gemini-comment-utiliser-gemini-l-intelligence-artificielle-de-goo`
 - fichier: `ia-gemini-comment-utiliser-gemini-l-intelligence-artificielle-de-goo-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment utiliser Gemini l'intelligence artificielle de Goo" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Gemini : demarrer en 5 minutes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 134. Quelle IA choisir pour des projets longs comme la rédaction d'un mémo
+## 134. Projet long (memo, livre) : quelle IA et quelle methode
 - slug: `ia-gemini-quelle-ia-choisir-pour-des-projets-longs-comme-la-redaction-d-un-memo`
 - fichier: `ia-gemini-quelle-ia-choisir-pour-des-projets-longs-comme-la-redaction-d-un-memo-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Quelle IA choisir pour des projets longs comme la rédaction d'un mémo" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Projet long (memo, livre) : quelle IA et quelle methode" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 135. Un homme vient de créer un Conseil des IA, avec un tutoriel pour fair
+## 135. Conseil d'IA : faire debattre plusieurs modeles
 - slug: `ia-gemini-un-homme-vient-de-creer-un-conseil-des-ia-avec-un-tutoriel-pour-fair`
 - fichier: `ia-gemini-un-homme-vient-de-creer-un-conseil-des-ia-avec-un-tutoriel-pour-fair-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Un homme vient de créer un Conseil des IA, avec un tutoriel pour fair" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Conseil d'IA : faire debattre plusieurs modeles" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 136. Vous connaissez cette astuce sur Gemini ？ Parfait pour les étudiants
+## 136. Astuce Gemini etudiants : apprendre plus vite
 - slug: `ia-gemini-vous-connaissez-cette-astuce-sur-gemini-parfait-pour-les-etudiants`
 - fichier: `ia-gemini-vous-connaissez-cette-astuce-sur-gemini-parfait-pour-les-etudiants-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Vous connaissez cette astuce sur Gemini ？ Parfait pour les étudiants" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, etoiles douces stylisees, atelier productivite accueillant. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Astuce Gemini etudiants : apprendre plus vite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 137. 3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn
+## 137. Gagner de l'argent avec l'image IA : 3 pistes realistes
 - slug: `ia-images-3-facons-de-gagner-de-l-argent-grace-a-l-ia-avec-ces-methodes-je-gagn`
 - fichier: `ia-images-3-facons-de-gagner-de-l-argent-grace-a-l-ia-avec-ces-methodes-je-gagn-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Gagner de l'argent avec l'image IA : 3 pistes realistes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 138. Cette IA gratuite remplace Photoshop : GoogleAI Studio avec Gemini 2
+## 138. Retouche image gratuite (style Studio) : ce que ca remplace vraiment
 - slug: `ia-images-cette-ia-gratuite-remplace-photoshop-googleai-studio-avec-gemini-2`
 - fichier: `ia-images-cette-ia-gratuite-remplace-photoshop-googleai-studio-avec-gemini-2-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Cette IA gratuite remplace Photoshop : GoogleAI Studio avec Gemini 2" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Retouche image gratuite (style Studio) : ce que ca remplace vraiment" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 139. Comment accéder aux 5 IA secrètes de Whatsapp Merci @Jolan.ai d'avoi
+## 139. IA dans WhatsApp : acces et limites
 - slug: `ia-images-comment-acceder-aux-5-ia-secretes-de-whatsapp-merci-jolan-ai-d-avoi`
 - fichier: `ia-images-comment-acceder-aux-5-ia-secretes-de-whatsapp-merci-jolan-ai-d-avoi-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment accéder aux 5 IA secrètes de Whatsapp Merci @Jolan.ai d'avoi" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "IA dans WhatsApp : acces et limites" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 140. Comment créer le mock up d'une application ou d'un site we
+## 140. Mock-up app/site avec l'IA : visualiser vite
 - slug: `ia-images-comment-creer-le-mock-up-d-une-application-ou-d-un-site-we`
 - fichier: `ia-images-comment-creer-le-mock-up-d-une-application-ou-d-un-site-we-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment créer le mock up d'une application ou d'un site we" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Mock-up app/site avec l'IA : visualiser vite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 141. Comment créer un clone dans une vidéo grâce à l'IA chinois
+## 141. Clone video avec l'IA : possible, a utiliser avec ethique
 - slug: `ia-images-comment-creer-un-clone-dans-une-video-grace-a-l-ia-chinois`
 - fichier: `ia-images-comment-creer-un-clone-dans-une-video-grace-a-l-ia-chinois-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment créer un clone dans une vidéo grâce à l'IA chinois" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Clone video avec l'IA : possible, a utiliser avec ethique" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 142. Comment utiliser Nano Banana pro : la meilleure plateforme La nouvell
+## 142. Plateforme image IA : comment la juger vite
 - slug: `ia-images-comment-utiliser-nano-banana-pro-la-meilleure-plateforme-la-nouvell`
 - fichier: `ia-images-comment-utiliser-nano-banana-pro-la-meilleure-plateforme-la-nouvell-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment utiliser Nano Banana pro : la meilleure plateforme La nouvell" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Plateforme image IA : comment la juger vite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 143. DeepSeek OCR, c’est une nouvelle méthode qui permet de compresser du
+## 143. OCR et compression : lire du texte dans les images
 - slug: `ia-images-deepseek-ocr-c-est-une-nouvelle-methode-qui-permet-de-compresser-du`
 - fichier: `ia-images-deepseek-ocr-c-est-une-nouvelle-methode-qui-permet-de-compresser-du-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "DeepSeek OCR, c’est une nouvelle méthode qui permet de compresser du" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "OCR et compression : lire du texte dans les images" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 144. Dites-moi si vous voulez que je fasse un tut
+## 144. Tutoriel image IA : par ou commencer
 - slug: `ia-images-dites-moi-si-vous-voulez-que-je-fasse-un-tut`
 - fichier: `ia-images-dites-moi-si-vous-voulez-que-je-fasse-un-tut-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Dites-moi si vous voulez que je fasse un tut" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Tutoriel image IA : par ou commencer" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 145. La Chine continue de nous impressionner Pendant que les États-Unis re
+## 145. Outils image Chine vs USA : comparer sans hype
 - slug: `ia-images-la-chine-continue-de-nous-impressionner-pendant-que-les-etats-unis-re`
 - fichier: `ia-images-la-chine-continue-de-nous-impressionner-pendant-que-les-etats-unis-re-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "La Chine continue de nous impressionner Pendant que les États-Unis re" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Outils image Chine vs USA : comparer sans hype" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 146. Nouvelle IA pour créer des graphiques animés et animations visuelles
+## 146. Graphiques animes avec l'IA : pour expliquer plus vite
 - slug: `ia-images-nouvelle-ia-pour-creer-des-graphiques-animes-et-animations-visuelles`
 - fichier: `ia-images-nouvelle-ia-pour-creer-des-graphiques-animes-et-animations-visuelles-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Nouvelle IA pour créer des graphiques animés et animations visuelles" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Graphiques animes avec l'IA : pour expliquer plus vite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 147. Tutoriel Kling AI motion control Comment utiliser l’IA pour se trans
+## 147. Kling Motion Control : animer un personnage simplement
 - slug: `ia-images-tutoriel-kling-ai-motion-control-comment-utiliser-l-ia-pour-se-trans`
 - fichier: `ia-images-tutoriel-kling-ai-motion-control-comment-utiliser-l-ia-pour-se-trans-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Tutoriel Kling AI motion control Comment utiliser l’IA pour se trans" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Kling Motion Control : animer un personnage simplement" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 148. Une IA française avec toutes les fonctionnalités
+## 148. IA image francaise : pourquoi ca peut compter
 - slug: `ia-images-une-ia-francaise-avec-toutes-les-fonctionnalites`
 - fichier: `ia-images-une-ia-francaise-avec-toutes-les-fonctionnalites-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Une IA française avec toutes les fonctionnalités" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, toile et pinceaux numeriques, creation visuelle accueillante. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "IA image francaise : pourquoi ca peut compter" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 149. ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f
+## 149. IA et medecine : aide, pas remplacement
 - slug: `ia-metiers-chatgpt-est-deja-meilleur-que-certains-medecins-lorsqu-il-s-agit-de-f`
 - fichier: `ia-metiers-chatgpt-est-deja-meilleur-que-certains-medecins-lorsqu-il-s-agit-de-f-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "IA et medecine : aide, pas remplacement" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 150. Étude secrète sur Reddit par l'université de Zurich : l’intelligence
+## 150. Etudes IA sur les reseaux : garder l'esprit critique
 - slug: `ia-metiers-etude-secrete-sur-reddit-par-l-universite-de-zurich-l-intelligence`
 - fichier: `ia-metiers-etude-secrete-sur-reddit-par-l-universite-de-zurich-l-intelligence-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Étude secrète sur Reddit par l'université de Zurich : l’intelligence" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Etudes IA sur les reseaux : garder l'esprit critique" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 151. Genie 3 : l’IA de Google capable de créer des mondes 3D interactifs e
+## 151. Mondes 3D generes : promesse et limites
 - slug: `ia-metiers-genie-3-l-ia-de-google-capable-de-creer-des-mondes-3d-interactifs-e`
 - fichier: `ia-metiers-genie-3-l-ia-de-google-capable-de-creer-des-mondes-3d-interactifs-e-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Genie 3 : l’IA de Google capable de créer des mondes 3D interactifs e" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Mondes 3D generes : promesse et limites" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 152. Ils ont pourri le cerveau des IA : le papier de recherche "LLM can ge
+## 152. Quand on pollue les modeles : pourquoi ca compte"LLM can ge
 - slug: `ia-metiers-ils-ont-pourri-le-cerveau-des-ia-le-papier-de-recherche-llm-can-ge`
 - fichier: `ia-metiers-ils-ont-pourri-le-cerveau-des-ia-le-papier-de-recherche-llm-can-ge-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Ils ont pourri le cerveau des IA : le papier de recherche "LLM can ge" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Quand on pollue les modeles : pourquoi ca compte"LLM can ge" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 153. L'IA pourra-t-elle remplacer les acteurs ？ Démo de Dream Actor M1, gé
+## 153. IA et acteurs : remplacement ou outil
 - slug: `ia-metiers-l-ia-pourra-t-elle-remplacer-les-acteurs-demo-de-dream-actor-m1-ge`
 - fichier: `ia-metiers-l-ia-pourra-t-elle-remplacer-les-acteurs-demo-de-dream-actor-m1-ge-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "L'IA pourra-t-elle remplacer les acteurs ？ Démo de Dream Actor M1, gé" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "IA et acteurs : remplacement ou outil" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 154. L’intelligence artificielle est-elle vraim
+## 154. L'IA est-elle intelligente : ce que ca veut dire
 - slug: `ia-metiers-l-intelligence-artificielle-est-elle-vraim`
 - fichier: `ia-metiers-l-intelligence-artificielle-est-elle-vraim-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "L’intelligence artificielle est-elle vraim" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "L'IA est-elle intelligente : ce que ca veut dire" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 155. On va bientôt pouvoir passer des appels vidéo avec ChatGPT !!!! Je su
+## 155. Appels video avec ChatGPT : nouveau canal
 - slug: `ia-metiers-on-va-bientot-pouvoir-passer-des-appels-video-avec-chatgpt-je-su`
 - fichier: `ia-metiers-on-va-bientot-pouvoir-passer-des-appels-video-avec-chatgpt-je-su-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "On va bientôt pouvoir passer des appels vidéo avec ChatGPT !!!! Je su" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Appels video avec ChatGPT : nouveau canal" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 156. Singularité technologique bientôt ？？ Sam Altman et l'hypothèse de la
+## 156. Singularite : hypothese, pas calendrier
 - slug: `ia-metiers-singularite-technologique-bientot-sam-altman-et-l-hypothese-de-la`
 - fichier: `ia-metiers-singularite-technologique-bientot-sam-altman-et-l-hypothese-de-la-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Singularité technologique bientôt ？？ Sam Altman et l'hypothèse de la" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Singularite : hypothese, pas calendrier" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 157. Skild brain : le robot qui ne s'arrête jamais Créé par l'entreprise S
+## 157. Robots au travail : ce qui change vraiment
 - slug: `ia-metiers-skild-brain-le-robot-qui-ne-s-arrete-jamais-cree-par-l-entreprise-s`
 - fichier: `ia-metiers-skild-brain-le-robot-qui-ne-s-arrete-jamais-cree-par-l-entreprise-s-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Skild brain : le robot qui ne s'arrête jamais Créé par l'entreprise S" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Robots au travail : ce qui change vraiment" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 158. Voici la liste des métiers avec la croissance la plus rapide en 2026
+## 158. Metiers en croissance 2026 : lire une liste utilement
 - slug: `ia-metiers-voici-la-liste-des-metiers-avec-la-croissance-la-plus-rapide-en-2026`
 - fichier: `ia-metiers-voici-la-liste-des-metiers-avec-la-croissance-la-plus-rapide-en-2026-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Voici la liste des métiers avec la croissance la plus rapide en 2026" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, metiers et IA cote a cote, illustration douce. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Metiers en croissance 2026 : lire une liste utilement" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 159. 2 façons de gagner de l'argent grâce à l'intellige
+## 159. 2 facons de moneter l'IA (sans mirage)
 - slug: `ia-nocode-2-facons-de-gagner-de-l-argent-grace-a-l-intellige`
 - fichier: `ia-nocode-2-facons-de-gagner-de-l-argent-grace-a-l-intellige-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "2 façons de gagner de l'argent grâce à l'intellige" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "2 facons de moneter l'IA (sans mirage)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 160. Comment apparaître dans les résultats de ChatGPT : tutoriel avec 2 mé
+## 160. Apparaitre dans ChatGPT : 2 methodes simples
 - slug: `ia-nocode-comment-apparaitre-dans-les-resultats-de-chatgpt-tutoriel-avec-2-me`
 - fichier: `ia-nocode-comment-apparaitre-dans-les-resultats-de-chatgpt-tutoriel-avec-2-me-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment apparaître dans les résultats de ChatGPT : tutoriel avec 2 mé" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Apparaitre dans ChatGPT : 2 methodes simples" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 161. Comment créer un avatar hyper réaliste et poster des vidéo
+## 161. Avatar realiste + videos : pipeline simple
 - slug: `ia-nocode-comment-creer-un-avatar-hyper-realiste-et-poster-des-video`
 - fichier: `ia-nocode-comment-creer-un-avatar-hyper-realiste-et-poster-des-video-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment créer un avatar hyper réaliste et poster des vidéo" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Avatar realiste + videos : pipeline simple" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 162. Comment installer n8n gratuitement pour créer vos automati
+## 162. Installer n8n gratuitement : premier flux
 - slug: `ia-nocode-comment-installer-n8n-gratuitement-pour-creer-vos-automati`
 - fichier: `ia-nocode-comment-installer-n8n-gratuitement-pour-creer-vos-automati-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment installer n8n gratuitement pour créer vos automati" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Installer n8n gratuitement : premier flux" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 163. Comment passer un appel vidéo Chat
+## 163. Appel video avec une IA : a quoi ca sert
 - slug: `ia-nocode-comment-passer-un-appel-video-chat`
 - fichier: `ia-nocode-comment-passer-un-appel-video-chat-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment passer un appel vidéo Chat" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Appel video avec une IA : a quoi ca sert" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 164. Comment payer moins cher les abonnements à des outils d'intelligence
+## 164. Payer moins cher les abonnements IA : pistes
 - slug: `ia-nocode-comment-payer-moins-cher-les-abonnements-a-des-outils-d-intelligence`
 - fichier: `ia-nocode-comment-payer-moins-cher-les-abonnements-a-des-outils-d-intelligence-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment payer moins cher les abonnements à des outils d'intelligence" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Payer moins cher les abonnements IA : pistes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 165. Gamma AI : meilleure IA gratuite pour créer des présentations powerpo
+## 165. Gamma : presentations IA rapides
 - slug: `ia-nocode-gamma-ai-meilleure-ia-gratuite-pour-creer-des-presentations-powerpo`
 - fichier: `ia-nocode-gamma-ai-meilleure-ia-gratuite-pour-creer-des-presentations-powerpo-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Gamma AI : meilleure IA gratuite pour créer des présentations powerpo" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Gamma : presentations IA rapides" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 166. Templates 100% gratuites pour créer des automatisations et agents IA
+## 166. 100 templates d'automation : comment choisir
 - slug: `ia-nocode-templates-100-gratuites-pour-creer-des-automatisations-et-agents-ia`
 - fichier: `ia-nocode-templates-100-gratuites-pour-creer-des-automatisations-et-agents-ia-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Templates 100% gratuites pour créer des automatisations et agents IA" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "100 templates d'automation : comment choisir" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 167. Templates n8n gratuites pour créer des agents IA : comment y accéder
+## 167. Templates n8n pour agents : ou les trouver
 - slug: `ia-nocode-templates-n8n-gratuites-pour-creer-des-agents-ia-comment-y-acceder`
 - fichier: `ia-nocode-templates-n8n-gratuites-pour-creer-des-agents-ia-comment-y-acceder-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Templates n8n gratuites pour créer des agents IA : comment y accéder" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Templates n8n pour agents : ou les trouver" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 168. Test de Thoreo : une IA qui résume les vidéos
+## 168. Resumer des videos avec l'IA : gagner du temps
 - slug: `ia-nocode-test-de-thoreo-une-ia-qui-resume-les-videos`
 - fichier: `ia-nocode-test-de-thoreo-une-ia-qui-resume-les-videos-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Test de Thoreo : une IA qui résume les vidéos" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, blocs empiles type no-code, flux simple. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Resumer des videos avec l'IA : gagner du temps" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 169. Base de données gratuite avec des templates n8n et des tutoriels
+## 169. Base + n8n : une stack gratuite pour demarrer
 - slug: `ia-outils-base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour`
 - fichier: `ia-outils-base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Base de données gratuite avec des templates n8n et des tutoriels" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Base + n8n : une stack gratuite pour demarrer" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 170. ChatGPT agent vient de sortir : les agents IA feront bientôt partie d
+## 170. ChatGPT Agent : quand le chat commence a agir
 - slug: `ia-outils-chatgpt-agent-vient-de-sortir-les-agents-ia-feront-bientot-partie-d`
 - fichier: `ia-outils-chatgpt-agent-vient-de-sortir-les-agents-ia-feront-bientot-partie-d-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "ChatGPT agent vient de sortir : les agents IA feront bientôt partie d" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "ChatGPT Agent : quand le chat commence a agir" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 171. Comment installer une alternative gratuite à ChatGPT pour l'ut
+## 171. Alternative gratuite a ChatGPT : installer en local
 - slug: `ia-outils-comment-installer-une-alternative-gratuite-a-chatgpt-pour-l-ut`
 - fichier: `ia-outils-comment-installer-une-alternative-gratuite-a-chatgpt-pour-l-ut-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment installer une alternative gratuite à ChatGPT pour l'ut" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Alternative gratuite a ChatGPT : installer en local" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 172. Comment utiliser ChatGPT with canvas (nouveau chatgpt)
+## 172. ChatGPT Canvas : ecrire et iterer cote a cote
 - slug: `ia-outils-comment-utiliser-chatgpt-with-canvas-nouveau-chatgpt`
 - fichier: `ia-outils-comment-utiliser-chatgpt-with-canvas-nouveau-chatgpt-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Comment utiliser ChatGPT with canvas (nouveau chatgpt)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "ChatGPT Canvas : ecrire et iterer cote a cote" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 173. Deepseek l’IA chinoise gratuite et open source a-t-elle copié OpenAI
+## 173. DeepSeek vs OpenAI : comprendre la polemique (simplement)
 - slug: `ia-outils-deepseek-l-ia-chinoise-gratuite-et-open-source-a-t-elle-copie-openai`
 - fichier: `ia-outils-deepseek-l-ia-chinoise-gratuite-et-open-source-a-t-elle-copie-openai-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Deepseek l’IA chinoise gratuite et open source a-t-elle copié OpenAI" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "DeepSeek vs OpenAI : comprendre la polemique (simplement)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 174. Google vient de sortir la meilleure IA open source : Gemma 4 Pour l'u
+## 174. Gemma (Google) : une IA open a tester chez toi
 - slug: `ia-outils-google-vient-de-sortir-la-meilleure-ia-open-source-gemma-4-pour-l-u`
 - fichier: `ia-outils-google-vient-de-sortir-la-meilleure-ia-open-source-gemma-4-pour-l-u-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Google vient de sortir la meilleure IA open source : Gemma 4 Pour l'u" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Gemma (Google) : une IA open a tester chez toi" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 175. L'intelligence artificielle va-t-elle mener à la fin du capitalisme ？
+## 175. IA et economie : des idees, pas des certitudes
 - slug: `ia-outils-l-intelligence-artificielle-va-t-elle-mener-a-la-fin-du-capitalisme`
 - fichier: `ia-outils-l-intelligence-artificielle-va-t-elle-mener-a-la-fin-du-capitalisme-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "L'intelligence artificielle va-t-elle mener à la fin du capitalisme ？" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "IA et economie : des idees, pas des certitudes" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 176. Test des différentes versions de ChatGPT dont le nouveau ChatGPT 4.5
+## 176. Versions de ChatGPT : comment choisir sans se perdre
 - slug: `ia-outils-test-des-differentes-versions-de-chatgpt-dont-le-nouveau-chatgpt-4-5`
 - fichier: `ia-outils-test-des-differentes-versions-de-chatgpt-dont-le-nouveau-chatgpt-4-5-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Test des différentes versions de ChatGPT dont le nouveau ChatGPT 4.5" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Versions de ChatGPT : comment choisir sans se perdre" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 177. Un studio de jeu vidéo japonais a trouvé une solution contre l'utilis
+## 177. Portfolios et IA : comment les studios filtrent
 - slug: `ia-outils-un-studio-de-jeu-video-japonais-a-trouve-une-solution-contre-l-utilis`
 - fichier: `ia-outils-un-studio-de-jeu-video-japonais-a-trouve-une-solution-contre-l-utilis-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Un studio de jeu vidéo japonais a trouvé une solution contre l'utilis" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Portfolios et IA : comment les studios filtrent" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 178. Une IA comme ChatGPT mais gratuite : HuggingChat D
+## 178. HuggingChat : une IA gratuite dans le navigateur
 - slug: `ia-outils-une-ia-comme-chatgpt-mais-gratuite-huggingchat-d`
 - fichier: `ia-outils-une-ia-comme-chatgpt-mais-gratuite-huggingchat-d-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Une IA comme ChatGPT mais gratuite : HuggingChat D" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, boite a outils IA rangee, icones simples. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "HuggingChat : une IA gratuite dans le navigateur" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 179. Démo : Kling motion control Et encore j'ai pas pris le temps de chan
+## 179. Demo Kling : tester sans tout abandonner
 - slug: `ia-prod-demo-kling-motion-control-et-encore-j-ai-pas-pris-le-temps-de-chan`
 - fichier: `ia-prod-demo-kling-motion-control-et-encore-j-ai-pas-pris-le-temps-de-chan-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Démo : Kling motion control Et encore j'ai pas pris le temps de chan" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Demo Kling : tester sans tout abandonner" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 180. Il y a un problème avec cette vidéo : ce time lapse d'un dessin est f
+## 180. Spotter une video IA foireuse : indices simples
 - slug: `ia-prod-il-y-a-un-probleme-avec-cette-video-ce-time-lapse-d-un-dessin-est-f`
 - fichier: `ia-prod-il-y-a-un-probleme-avec-cette-video-ce-time-lapse-d-un-dessin-est-f-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Il y a un problème avec cette vidéo : ce time lapse d'un dessin est f" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Spotter une video IA foireuse : indices simples" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 181. La première intelligence artificielle capable de reproduire le monde
+## 181. Reproduire le monde en IA : demos vs realite
 - slug: `ia-prod-la-premiere-intelligence-artificielle-capable-de-reproduire-le-monde`
 - fichier: `ia-prod-la-premiere-intelligence-artificielle-capable-de-reproduire-le-monde-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "La première intelligence artificielle capable de reproduire le monde" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Reproduire le monde en IA : demos vs realite" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 182. Les "experts en IA" vs les "personnes qui s
+## 182. Experts IA vs pratiquants : qui avance vraiment"experts en IA\" vs les \"personnes qui s
 - slug: `ia-prod-les-experts-en-ia-vs-les-personnes-qui-s`
 - fichier: `ia-prod-les-experts-en-ia-vs-les-personnes-qui-s-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Les "experts en IA" vs les "personnes qui s" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Experts IA vs pratiquants : qui avance vraiment"experts en IA\" vs le…" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---
 
-## 183. Une étude montre que les publicités créées entièrement par l'IA augme
+## 183. Pubs 100% IA : ce que dit une etude (avec prudence)
 - slug: `ia-prod-une-etude-montre-que-les-publicites-creees-entierement-par-l-ia-augme`
 - fichier: `ia-prod-une-etude-montre-que-les-publicites-creees-entierement-par-l-ia-augme-1200x630.jpg`
 
 ```
-Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Une étude montre que les publicités créées entièrement par l'IA augme" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
+Visuel Open Graph attirant et pedagogique pour un article grand public / debutant, checklist et horloge douce, productivite sans stress. Une seule idee visuelle claire, composition simple et accueillante (pas un dashboard charge). Metaphores du quotidien, formes lisibles, espace blanc genereux. Palette claire premium DanielCraft : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626 utilise avec parcimonie. Bandeau bas sombre avec le titre EXACT en francais "Pubs 100% IA : ce que dit une etude (avec prudence)" (lisible, ne pas tronquer trop tot) et marque "DanielCraft". Style friendly-premium : clair, moderne, rassurant, pour quelqu'un qui debute. Pas de jargon illisible dans l'image, pas de mascotte enfantine, pas de flat design vide, pas de collage de 10 panneaux techniques. Ratio 1.91:1, 1200x630. Export JPG (puis WebP a l'install). PAS de banniere separee : cette image sert aussi de hero article.
 ```
 
 ---

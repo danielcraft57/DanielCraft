@@ -54,7 +54,7 @@ Le hero article utilise l’OG (`og_image` / `_get_article_hero_image` dans le b
 
 ## Séries déjà passées en ton simple
 
-API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communication, Design Patterns, **IA ChatGPT**, **IA Claude**, **IA Prompts**.
+API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communication, Design Patterns, et **toutes les series IA** (ChatGPT, Claude, Prompts, Outils, Gemini, Agents, Images, No-code, Formations, Metiers, Productivite).
 
 ## Suite
 

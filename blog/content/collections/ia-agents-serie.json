@@ -1,7 +1,7 @@
 {
   "id": "ia-agents-serie",
-  "title": "Série IA - Agents et automatisation",
-  "description": "Agents IA, Agent Kit, Deep Research et automatisations utiles.",
+  "title": "Serie IA — Agents (agir avec cadre)",
+  "description": "Creer, comparer et securiser des agents IA : tutoriels debutants, recherche, dangers.",
   "slug": "ia-agents-serie",
   "articles": [
     "ia-agents-creer-un-agent-ia-gratuit-avec-claude-et-les-mcp-le-model",
