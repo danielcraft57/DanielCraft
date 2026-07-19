@@ -1,7 +1,7 @@
 ---
-title: "Docker : comprendre les images et les conteneurs"
+title: "Docker : la recette et le gâteau (image vs conteneur)"
 date: 2024-11-05
-excerpt: "Les bases indispensables de Docker : différence entre image et conteneur, registres, cycle de vie et premiers réflexes pour travailler proprement."
+excerpt: "Image = plan figé. Conteneur = instance qui tourne. Les bases sans jargon."
 type: article
 tags: [Docker, conteneurs, images, DevOps, fondamentaux]
 series: docker-serie
@@ -9,49 +9,54 @@ series_order: 1
 og_image: docker-fondamentaux-1200x630.jpg
 ---
 
-# Docker : comprendre les images et les conteneurs
+# Docker : la recette et le gâteau (image vs conteneur)
 
-Docker est partout, mais beaucoup l'utilisent comme une boîte noire. Si tu veux aller plus loin (cluster, Kubernetes, CI/CD), tu dois être à l'aise avec les deux briques de base : **l'image** et le **conteneur**.
+Imagine une **recette** de gateau et le gateau lui-meme. La recette, tu la ranges. Le gateau, tu le manges. Avec Docker, c'est la meme idee.
 
-L'idée de cette première partie est simple : poser des bases solides, sans jargon inutile.
+L'**image**, c'est la recette figee. Le **conteneur**, c'est le gateau en train de tourner. Si tu melanges les deux, tout devient flou. On pose ca clairement ici.
 
 ---
 
-## Image vs conteneur : la métaphore simple
+## Image vs conteneur : la metaphore simple
 
-On peut voir Docker comme un système de fabrication et d'exécution de petites machines logicielles.
+Docker, c'est une usine a petites boites. Chaque boite fait tourner un programme (ton site, ton API, ta base).
 
-- **Une image** Docker, c'est le *plan figé* de la machine.  
-  - Contient le système de fichiers, les binaires, les dépendances, la config par défaut.  
-  - Ne tourne pas, ne consomme rien.  
-  - Versionnée et partageable via un registre (Docker Hub, GitHub Container Registry, registry privé).
+- Une **image** Docker, c'est le *plan* de la boite.
+  - Dedans : fichiers, programmes, reglages de base.
+  - Elle ne tourne pas. Elle ne mange pas de memoire.
+  - Tu la partages via un **registre** (un grand garage a images).
 
-- **Un conteneur**, c'est *une instance vivante* de cette image.  
-  - A son propre PID, sa mémoire, son réseau, son cycle de vie.  
-  - Peut avoir un état (logs, fichiers écrits localement, etc.).  
-  - On peut en lancer plusieurs à partir d'une même image.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/docker-image-vs-conteneur.svg" alt="Schema Docker image versus conteneur" class="schema-inline" width="640" />
+  <figcaption>Image = plan. Conteneur = instance. Ne les confonds plus.</figcaption>
+</figure>
+
+- Un **conteneur**, c'est une *boite vivante* creee a partir de ce plan.
+  - Elle a sa propre memoire, son reseau, sa vie.
+  - Tu peux en lancer plusieurs avec la meme image.
+  - Tu peux l'arreter, la supprimer, en recreer une autre.
 
 En pratique :
 
 ```bash
-# Télécharge une image officielle
+# Telecharge une image officielle
 docker pull nginx:1.27
 
-# Lance un conteneur nommé "web"
+# Lance un conteneur nomme "web"
 docker run --name web -p 8080:80 nginx:1.27
 ```
 
-Ici, `nginx:1.27` est l'image, `web` est le conteneur en cours d'exécution.
+Ici, `nginx:1.27` est l'image. `web` est le conteneur qui tourne.
 
 ---
 
-## Registres d'images : où vivent tes images
+## Ou vivent tes images ?
 
-Une image vit dans un **registre** :
+Une image vit dans un **registre** - un entrepot :
 
-- **Docker Hub** (`docker.io`) : public par défaut, pratique pour les images open source.
-- **GitHub Container Registry** (`ghcr.io`) : pratique si tu as déjà tout ton code sur GitHub.
-- **Registry privé** (Harbor, GitLab, registry maison) : pour les images internes, prod, clients, etc.
+- **Docker Hub** : le garage public. Pratique pour commencer.
+- **GitHub Container Registry** (`ghcr.io`) : utile si ton code est sur GitHub.
+- **Registry prive** : pour tes images internes, la prod, tes clients.
 
 Notation classique :
 
@@ -61,43 +66,45 @@ Notation classique :
 
 Exemples :
 
-- `nginx:1.27` → raccourci pour `docker.io/library/nginx:1.27`
+- `nginx:1.27` = raccourci pour `docker.io/library/nginx:1.27`
 - `ghcr.io/likedevgit/dispycluster:latest`
 - `registry.interne.local/clients/mon-projet-api:2.3.1`
 
+Le **tag** (apres le `:`), c'est l'etiquette sur la boite. Evite de ne travailler qu'avec `latest`. C'est comme ecrire "derniere version" sans date.
+
 ---
 
-## Cycle de vie d'un conteneur
+## La vie d'un conteneur
 
-Quelques commandes suffisent pour couvrir 80 % de ce que tu fais au quotidien.
+Quelques commandes couvrent 80 % du quotidien :
 
 ```bash
 # Lister les conteneurs en cours
 docker ps
 
-# Lister tous les conteneurs (y compris stoppés)
+# Lister tous (meme stoppes)
 docker ps -a
 
-# Stopper un conteneur
+# Stopper
 docker stop web
 
-# Relancer un conteneur stoppé
+# Relancer
 docker start web
 
-# Supprimer un conteneur
+# Supprimer
 docker rm web
 ```
 
-Points importants :
+Deux règles d'or :
 
-- **Le conteneur est jetable** : on doit pouvoir le supprimer et le recréer sans crise de panique.
-- **L'état persistant** (données métiers) doit vivre ailleurs : volume Docker, base externe, bucket S3, etc.
+- Le conteneur est **jetable**. Tu dois pouvoir le jeter et le recreer sans panique.
+- Les **donnees importantes** ne vivent pas dans la boite. Elles vont dans un volume, une base externe, un bucket. On detaille ca dans [Docker volumes et reseaux](/blog/articles/docker-volumes-reseaux.html).
 
 ---
 
-## Inspection rapide d'une image
+## Regarder dans une image
 
-Avant de faire confiance aveuglément à une image, regarde ce qu'elle contient.
+Avant de faire confiance a une image, regarde ce qu'elle contient :
 
 ```bash
 docker image ls
@@ -105,38 +112,31 @@ docker history nginx:1.27
 docker inspect nginx:1.27
 ```
 
-Tu peux vérifier :
+Tu verifies :
 
-- la **taille** (images énormes = temps de build et de déploiement plus longs),
-- l'**OS de base** (Debian, Alpine, Ubuntu, distroless),
-- les **ports** exposés,
-- la **commande d'entrée** (`CMD`, `ENTRYPOINT`).
-
----
-
-## Bonnes pratiques de base
-
-- **Toujours taguer tes images**  
-  Évite de ne travailler qu'avec `latest`. Utilise des tags clairs : `1.0.0`, `2026-02-21`, `prod`, `staging`.
-
-- **Une image = un rôle clair**  
-  Pas de "grosse boîte" qui fait API + worker + cron dans le même conteneur.  
-  Tu veux du découpage : 1 service = 1 image = 1 conteneur (ou plusieurs instances).
-
-- **Évite de stocker des secrets dans l'image**  
-  Mots de passe, clés API, certificats → passent par les variables d'environnement, fichiers montés, secrets Kubernetes, etc.
+- la **taille** (grosse image = build et deploiement plus lents),
+- l'OS de base (Alpine, Debian, Ubuntu...),
+- les **ports** ouverts,
+- la commande de demarrage.
 
 ---
 
-## Pour la suite de la série
+## Bons reflexes
 
-Dans les prochains articles, on va :
+- **Toujours taguer** : `1.0.0`, `2026-02-21`, `prod`. Pas seulement `latest`.
+- **Une image = un role**. Pas de boite magique API + worker + cron. Un service, une image, un conteneur.
+- **Pas de secrets dans l'image**. Mots de passe et cles passent par des variables d'environnement ou des fichiers montes.
 
-1. Installer Docker proprement sur un poste de dev (Linux, macOS, Windows WSL).  
-2. Gérer les **volumes** et les **réseaux** pour que tes conteneurs discutent entre eux.  
-3. Orchestrer un petit stack avec **docker-compose**.  
-4. Optimiser tes **Dockerfile** pour réduire la taille et le temps de build.  
-5. Préparer la prod : registry privé, sécurité minimale, stratégie de tags.
+---
 
-L’objectif : que tu sois totalement à l’aise avec Docker en solo avant de passer à Kubernetes.
+## Pour la suite
 
+Ensuite dans la serie :
+
+1. [Installer Docker proprement](/blog/articles/docker-installation-bonnes-pratiques.html) sur ta machine.
+2. Volumes et reseaux pour faire discuter les boites.
+3. [Docker Compose](/blog/articles/docker-compose-environnements-local.html) pour tout lancer d'un coup.
+4. [Optimiser tes images](/blog/articles/docker-build-optimisation-images.html).
+5. [Preparer la prod](/blog/articles/docker-production-registry-securite.html) : registry, tags, securite.
+
+L'objectif : etre a l'aise avec Docker **en solo**, avant de passer a des usines plus grosses.

@@ -1,7 +1,7 @@
 ---
-title: "APIs REST : principes, bonnes pratiques et limites"
+title: "REST : bien organiser ses portes et ses règles"
 date: 2025-07-03
-excerpt: "Revenir aux bases de REST, poser un design propre (URLs, verbes HTTP, erreurs, pagination, sécurité) et comprendre où ça commence à coincer."
+excerpt: "Ressources, verbes HTTP, pagination, sécurité : les bases pour une API claire et durable."
 type: article
 tags: [API, REST, HTTP, backend, bonnes pratiques]
 series: api-rest-graphql-serie
@@ -9,53 +9,42 @@ series_order: 2
 og_image: api-rest-bonnes-pratiques-conception-1200x630.jpg
 ---
 
-# APIs REST : principes, bonnes pratiques et limites
+# REST : bien organiser ses portes et ses règles
 
-REST reste la norme de facto pour exposer des APIs.  
-Dans cet article, on se concentre sur **un REST pragmatique bien fait** : ce qui apporte de la clarté et de la robustesse, et ce qui finit par générer de la dette si on ne le gère pas.
+Tu as deja vu des APIs ou chaque route a l'air inventee le mardi soir. Des codes qui ne veulent rien dire. Des reponses qui changent de forme selon l'humeur du serveur. Ce n'est **pas** du REST. C'est du HTTP bricole.
 
----
+La bonne nouvelle : un REST **clair** et coherent, ca se pose vite. Avec quelques regles. Et en sachant ou ca commence a grincer.
 
-## 1. Modéliser des ressources claires
+Si tu debutes la serie, repose d'abord le decor dans [REST vs GraphQL](/blog/articles/api-rest-graphql-fondamentaux-comparaison.html).
 
-- Penser en **ressources métier** : `users`, `orders`, `products`, pas en actions techniques (`/doStuff`).
-- Utiliser des **noms au pluriel** pour les collections (`/users`) et un **identifiant stable** pour un élément (`/users/{id}`).
-- Éviter les verbes dans les URLs : l’intention vient du **verbe HTTP** (`POST /orders` pour créer, `PATCH /orders/{id}` pour mettre à jour).
+## Penser objets metier, pas boutons
 
-Quelques exemples cohérents :
+Le premier mauvais reflexe : coller des verbes dans l'adresse. `/createUser`. `/doPayment`. Ca marche deux semaines. Puis tu as un catalogue d'actions impossibles a documenter.
 
-```text
-GET    /orders            # liste (filtrable/paginée)
-GET    /orders/123        # détail
-POST   /orders            # création
-PATCH  /orders/123        # mise à jour partielle
-DELETE /orders/123        # suppression
-```
+**REST** te pousse a penser en **ressources** : utilisateurs, commandes, factures. Une collection `/orders`. Un element `/orders/123`. L'intention, elle, vient du **verbe HTTP**.
 
----
+Creer : `POST /orders`. Lire : `GET /orders/123`. Modifier un peu : `PATCH /orders/123`. Supprimer : `DELETE /orders/123`. Tu vois le motif ?
 
-## 2. Bien utiliser HTTP (verbes, codes, headers)
+Le front, Postman, un partenaire - tout le monde lit la carte sans te demander un Slack a chaque fois. Pour une action bizarre (annuler, republier), reste propre : `POST /orders/123/cancellation` plutot que `/cancelOrderNowPlease`.
 
-- **Verbes** : `GET` idempotent, `POST` pour créer ou déclencher une action non idempotente, `PUT` pour remplacer, `PATCH` pour modifier partiellement.
-- **Codes HTTP** lisibles :
-  - `2xx` : succès (`200`, `201`, `204`).
-  - `4xx` : erreur côté client (`400`, `401`, `403`, `404`, `409`, `422`…).
-  - `5xx` : erreur serveur (`500`, `503`).
-- **Headers** :
-  - `Location` pour indiquer la ressource créée (`201 Created`).
-  - `ETag` + `If-None-Match` pour la mise en cache conditionnelle.
-  - `X-Request-Id` pour tracer les requêtes.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/rest-resource-verbs.svg" alt="Schéma REST : ressources, verbes HTTP et codes de statut" class="schema-inline" width="640" />
+  <figcaption>Ressources + verbes HTTP : l'intention vit dans la méthode, pas dans l'URL.</figcaption>
+</figure>
 
-Une API REST bien faite exploite vraiment HTTP, pas seulement `GET` et `POST`.
+Petite regle d'or : noms au **pluriel** pour les collections. Identifiant **stable** pour l'element. Pas `/order/abc` un jour et `/orders/abc` le lendemain. La **coherence**, c'est 80 % d'une bonne API.
 
----
+## HTTP, ce n'est pas juste GET et POST
 
-## 3. Contrats et format de réponse
+Beaucoup d'APIs "REST" utilisent GET pour tout lire et POST pour tout le reste. Pratique. Aussi un gachis.
 
-Deux points clés :
+Un `GET` ne doit **rien** changer. Un `PUT` remplace. Un `PATCH` modifie en partie. Si tu melanges tout, ton cache, tes retries et ton monitoring deviennent des cauchemars.
 
-- **Format de base** : JSON structuré, cohérent d’un endpoint à l’autre.
-- **Structure d’erreurs uniforme** :
+Un `201 Created` avec un `Location` vers la ressource neuve : le client ne joue plus aux devinettes. Un `404` clair. Un `409` en conflit. Un `422` si la validation echoue. Les `5xx` disent "c'est chez nous" - et tu les surveilles comme le lait sur le feu.
+
+Les **en-tetes** aident aussi. `ETag` pour eviter de renvoyer la meme chose. Un `X-Request-Id` pour retrouver une requete dans les logs quand un client dit "ca a plante hier a 16h".
+
+Petit exemple d'erreur coherente - souvent plus important qu'un nouvel endpoint :
 
 ```json
 {
@@ -63,58 +52,40 @@ Deux points clés :
   "message": "Certains champs sont invalides",
   "details": [
     { "field": "email", "message": "Format invalide" },
-    { "field": "password", "message": "Doit contenir au moins 12 caractères" }
+    { "field": "password", "message": "Doit contenir au moins 12 caracteres" }
   ]
 }
 ```
 
-Documenter ce contrat d’erreur est souvent plus utile que d’ajouter 30 endpoints.
+Si tous tes endpoints parlent la **meme langue** d'erreur, le front te remercie. Sinon tu paies ca pendant des annees.
 
----
+## Listes : pages, filtres, tri
 
-## 4. Pagination, filtrage, tri
+Sans **pagination**, `GET /orders` finit par renvoyer la moitie de ta base un vendredi. La version simple (`page` + `page_size`) suffit longtemps. Quand ca grossit vraiment, un **curseur** (`cursor`, `limit`) evite les surprises du `OFFSET` SQL qui devient lent.
 
-Sans pagination, les endpoints « liste » deviennent vite ingérables.
+Filtres et tri : reste explicite. `?status=paid&sort=-created_at`. Pas de mini-langage maison que personne n'ose toucher.
 
-- **Pagination** :
-  - Stratégie simple : `page` + `page_size`.
-  - Stratégie scalable : **cursor‑based** (`cursor`, `limit`) pour éviter les problèmes de `OFFSET`.
-- **Filtrage & tri** :
-  - Paramètres query explicites (`?status=paid&sort=-created_at`).
-  - Éviter les DSL maison trop complexes (préférer plusieurs filtres simples bien documentés).
+Renvoie aussi des **metadonnees** utiles : `total`, `has_next`, `next_cursor`. Le client ne doit pas inventer sa logique de "y a-t-il encore des pages ?".
 
-Expose toujours la **métadonnée de pagination** dans la réponse (`total`, `has_next`, `next_cursor`…).
+## Securite et versions sans panique
 
----
+Authentification classique (JWT, OAuth2, cles API selon le cas). Droits au niveau ressource. Validation des entrees. Limite de debit. Rien de revolutionnaire. C'est le minimum pour dormir.
 
-## 5. Sécurité et versioning
+Valider **cote serveur** n'est pas optionnel. Le client peut etre une app, un script, un attaquant. Pareil pour les logs de secu : tu veux savoir qui a tape quoi.
 
-- **Sécurité** :
-  - Authentification (JWT, OAuth2, API keys) standardisée.
-  - Autorisation au niveau ressource / champ si besoin.
-  - Rate limiting, validation forte des inputs, logs de sécurité.
+Le **versioning**, on le comprend souvent mal. Tu n'as pas besoin d'un `/v2` tous les six mois. Ajoute des champs. Deprecie avant de supprimer. Documente. Une rupture franche, parfois - avec une periode de cohabitation. Les partenaires ne lisent pas ton changelog Discord.
 
-- **Versioning** :
-  - Éviter un `v1`, `v2`, `v3` tous les 6 mois.
-  - Préférer les **évolutions compatibles** : ajouter des champs, déprécier au lieu de supprimer.
-  - Quand une rupture est inévitable, **préparer une migration** (double écriture, double lecture, période de cohabitation).
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/rest-versioning-secu.svg" alt="Schema des couches securite et versioning d'une API REST" class="schema-inline" width="640" />
+  <figcaption>Securite et versioning : des couches stables autour du contrat HTTP.</figcaption>
+</figure>
 
----
+## La ou REST commence a te fatiguer
 
-## 6. Là où REST commence à montrer ses limites
+Meme bien fait, REST a des **limites**. Un dashboard qui veut l'utilisateur, cinq commandes, des notifs et trois chiffres : soit une cascade d'appels, soit un endpoint Frankenstein `/dashboards/home`. Multiplie par mobile et partenaires : explosion de routes "speciales".
 
-Même bien fait, REST peut devenir douloureux quand :
+Les relations profondes font le meme effet. Trop d'appels... ou trop de payload. Sur un mobile en mauvais reseau, chaque octet se paie cash.
 
-- Le frontend doit agréger **beaucoup de ressources différentes** pour un seul écran.
-- On a des **relations très profondes** (ex. graphes sociaux, permissions complexes).
-- On doit **optimiser chaque octet** (mobile en réseau dégradé).
+Ce n'est pas une raison de jeter REST. C'est une raison de savoir quand il faut autre chose. La suite de la serie parle de [GraphQL](/blog/articles/graphql-fondamentaux-schema-queries.html), des [perfs](/blog/articles/api-rest-graphql-performances-benchmarks.html) et du [choix concret](/blog/articles/choisir-rest-graphql-quand-et-comment.html).
 
-Les symptômes classiques :
-
-- Prolifération de endpoints « sur mesure » : `GET /screen-home`, `GET /screen-dashboard`, etc.
-- Beaucoup de **round‑trips** côté frontend.
-- Des réponses très volumineuses alors qu’on n’affiche que quelques champs.
-
-Ce sont précisément ces problèmes que GraphQL promet d’adresser… mais avec d’autres compromis.  
-On les détaillera dans le prochain article.
-
+Pour l'instant : un REST clair, qui exploite vraiment HTTP, reste un excellent **defaut**. Le reste, c'est de la dette que tu choisis - ou que tu subis sans le savoir.

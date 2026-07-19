@@ -1,7 +1,7 @@
 ---
-title: "DevSecOps : SAST, DAST, SBOM et sécurité dans la CI/CD"
+title: "Sécurité dans le code : contrôler avant de publier"
 date: 2025-12-02
-excerpt: "Intégrer la sécurité au pipeline : scans de dépendances, SAST/DAST, secrets scanning, SBOM, politiques, et gates qualité sans ralentir l’équipe."
+excerpt: "Vérifier le code, les dépendances et les images avant la mise en ligne — sans freiner toute l'équipe."
 type: article
 tags: [DevSecOps, SAST, DAST, SBOM, CI/CD]
 series: cybersecurite-secops-serie
@@ -9,87 +9,97 @@ series_order: 9
 og_image: devsecops-sast-dast-sbom-1200x630.jpg
 ---
 
-# DevSecOps : SAST, DAST, SBOM et sécurité dans la CI/CD
+# Sécurité dans le code : contrôler avant de publier
 
-Le DevSecOps n’est pas “mettre un scanner et bloquer tout”.  
-C’est intégrer des contrôles **au bon endroit**, avec des règles pragmatiques, pour réduire le risque sans casser le delivery.
+Le **DevSecOps**, ce n'est pas "mettre un scanner et bloquer tout jusqu'a ce que l'equipe hurle". C'est integrer des controles au bon endroit, avec des regles pragmatiques, pour reduire le risque sans casser le delivery.
 
----
+Si ton pipeline passe de 8 minutes a 45 et que tout le monde bypass les checks avec un label magique, tu as perdu.
 
-## 1) Les contrôles essentiels dans un pipeline
+L'idee est simple : feedback rapide sur la PR, portes ciblees sur ce qui fait vraiment mal, inventaire de ce que tu deploies (**SBOM**), et une boucle vers le runtime. Shift-left, oui - mais aussi "ne pas oublier la droite".
 
-- **Secrets scanning** (clés API, tokens)
-- **SCA** (Software Composition Analysis) : dépendances et CVE
-- **SAST** : analyse statique (patterns, vulnérabilités)
-- **Image scanning** (conteneurs)
-- **DAST** : tests dynamiques (sur staging)
-- **IaC scanning** (Terraform/K8s manifests)
+## Les controles qui comptent vraiment dans un pipeline
 
----
+- **Secrets scanning** : attraper les cles API, jetons, mots de passe avant qu'ils partent sur GitHub
+- **SCA** (analyse de composition) : dependances et [CVE](/blog/articles/gestion-vulnerabilites-cve-patching.html) connues
+- **SAST** : analyse statique du code (injections, auth foireuse, SSRF, crypto faible)
+- Scan d'**images** [conteneurs](/blog/articles/docker-fondamentaux-images-conteneurs.html)
+- **DAST** : tests dynamiques sur un environnement qui ressemble a la vraie vie
+- Scan **IaC** : Terraform, Kubernetes, CloudFormation - parce que la mauvaise config part souvent du repo
 
-## 2) SAST : utile si tu l’industrialises
+Tu n'as pas a tout activer le meme jour. Secrets + SCA, c'est deja un enorme progres pour une equipe qui n'avait rien. Ensuite SAST sur les chemins critiques. Ensuite images. Le DAST, plus tard, quand staging est stable.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/devsecops-pipeline.svg" alt="Schéma pipeline DevSecOps : code, build, test, image, deploy, run avec gates sécurité" class="schema-inline" width="640" />
+  <figcaption>Du code au runtime : secrets scan, SAST, deps, DAST, scan d'images, policy gates - puis feedback runtime vers le code.</figcaption>
+</figure>
+
+## SAST : utile si tu l'industrialises (sinon, c'est du bruit)
+
+Le **SAST** (Static Application Security Testing), c'est "lire le code sans le lancer" pour trouver des failles. Il a mauvaise reputation parce qu'on le branche "out of the box" et qu'on noie l'equipe sous 500 alertes dont 480 sont des faux positifs ou du style.
 
 Bon usage :
 
-- règles adaptées au langage
-- réduction des faux positifs
-- focus sur les vulnérabilités critiques (injection, auth, SSRF)
+- Regles adaptees au **langage** et au framework
+- Reduction agressive du **bruit**
+- Focus sur les failles qui comptent (injection, auth, deserialisation, SSRF, path traversal)
 
-Piège : noyer l’équipe sous 500 alertes.
+Donne le feedback dans la **PR**, pas dans un PDF hebdo que personne ne lit. Un developpeur corrige plus volontiers un finding de 30 secondes apres son commit qu'un backlog de 200 items trois semaines plus tard.
 
----
+Si une regle genere trop de faux positifs, desactive-la ou affine-la. Une regle bruyante tue la confiance dans tout le scanner. Moins de regles, mieux calibrees, ca passe mieux en equipe.
 
-## 3) DAST : tester comme un attaquant… mais au bon moment
+## DAST : tester comme un attaquant, au bon moment
 
-DAST est pertinent :
+Le **DAST** (Dynamic Application Security Testing) tape sur l'appli qui **tourne**. Pertinent sur un staging stable, avec une auth realiste, et des scenarios cibles : login, upload, zones admin, APIs authentifiees.
 
-- sur un environnement stable (staging)
-- avec une auth réaliste
-- avec des scénarios ciblés (login, upload, admin)
+Un DAST "generique" sans compte, qui crawl la home page publique, donne souvent peu de valeur - sauf si tu cherches juste des misconfigs evidentes.
 
-DAST “générique” sans auth donne souvent peu de valeur.
+Ne le mets pas sur chaque commit. Nightly ou sur main / pre-prod, c'est souvent le bon rythme. Et accepte qu'il ne remplace pas le SAST ni les tests d'auth manuels sur les flows critiques. Les deux se completent : SAST voit le **code**, DAST voit le **comportement**.
 
----
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/devsecops-shift-left.svg" alt="Schema des gates securite dans un pipeline DevSecOps" class="schema-inline" width="640" />
+  <figcaption>Des gates progressives : signal tot, blocage seulement sur le critique.</figcaption>
+</figure>
 
-## 4) SBOM : savoir ce que tu déploies
+## SBOM : savoir ce que tu deploies (vraiment)
 
-SBOM (Software Bill of Materials) = inventaire des composants.
+Le **SBOM** (Software Bill of Materials), c'est l'inventaire des composants d'un artefact. Libs, versions, parfois licences.
 
-Intérêt :
+Interet concret : quand une CVE explose (Log4Shell, xz, etc.), tu reponds "suis-je expose ?" en minutes, pas en jours de grep panique. Tracabilite de la chaine d'outils. Exigences clients et audits qui demandent de plus en plus cet inventaire.
 
-- répondre vite à une CVE (suis‑je exposé ?)
-- traçabilité supply chain
-- exigences conformité (de plus en plus)
+Genere le SBOM au build, attache-le a l'image / au release, stocke-le. Ce n'est pas sexy. Le jour ou tu en as besoin, tu es content de l'avoir. Sans SBOM, chaque crise CVE devient une chasse au tresor dans des repos mal indexes.
 
----
+Petit bonus : le SBOM force aussi a regarder les dependances **transitives** - celles que tu n'as jamais choisies explicitement, mais qui sont dans ton image quand meme.
 
-## 5) Gates : bloquer intelligemment
+## Gates : bloquer intelligemment (pas tout, pas rien)
 
-Ne bloque pas tout. Bloque :
+Ne bloque pas tout. Bloque ce qui est vraiment **dangereux** :
 
-- secrets détectés
-- vulnérabilités critiques exploitées (ou exposées internet)
-- erreurs IAM/IaC dangereuses
+- Secrets detectes
+- Vulnerabilites critiques exposees (surtout internet-facing ou deja exploitees)
+- Erreurs IAM / IaC dangereuses (wildcard admin, stockage public)
+- Images non signees si tu as une politique de signature
 
-Et laisse passer le reste avec un plan :
+Le reste : ticket, delai, owner, exception temporaire avec date de fin. Un gate qui bloque pour une CVE medium sur une lib interne non exposee, ca cree des bypass. Et une fois que les gens ont goute au bypass, ton gate est mort.
 
-- ticket + SLA
-- owner
-- exception temporaire
+Seuil different selon l'environnement. Sur une PR feature : **warn**. Sur main vers prod : **fail** sur le critique. Sur un hotfix de prod : process d'exception court et trace, pas "on coupe tout le pipeline". Documente les exceptions comme une dette technique - owner, raison, date d'expiration.
 
----
+## Un workflow qui tient sur la duree
 
-## 6) Le workflow qui marche
+- Education et conventions : secure defaults, templates de repo, coffre a secrets des le jour 1
+- Scans rapides en PR (secrets, SCA critique, SAST light)
+- Scans plus lourds sur main / nightly (DAST, scan image complet)
+- Dashboard de risque **reel** - pas un mur de findings - avec priorisation
+- Feedback runtime ([CSPM / CWPP](/blog/articles/securite-cloud-cspm-cwpp.html), logs) qui remonte en tickets
 
-1. Éducation + conventions (secure defaults)
-2. Scans rapides en PR (feedback immédiat)
-3. Scans plus lourds sur main / nightly
-4. Dashboard “risque réel” + priorisation
+Pour une TPE / petite agence : secrets scanning + Dependabot/Renovate + un SAST simple sur le langage principal, c'est deja serieux. Pour un SaaS : ajoute SBOM, scan d'images, gates sur main, et un owner "securite pipeline" qui tranche les exceptions.
 
----
+## Demarrer sans paralyser l'equipe
 
-## Conclusion
+Cette semaine :
 
-DevSecOps efficace = feedback rapide + gates ciblés + SBOM + gestion vulnérabilités.  
-Dernier article : conformité (RGPD, NIS2, ISO 27001) et posture.
+1. Active le **secrets scanning** sur les repos critiques (et purge l'historique si besoin - rotation des cles, pas juste "on a delete le fichier")
+2. Branche un SCA et traite uniquement les critical/high **exposes**
+3. Genere un **SBOM** sur ton artefact de prod principal
+4. Ecris **trois** regles de gate, pas trente
 
+DevSecOps efficace = feedback rapide + gates cibles + SBOM + gestion des failles qui suit. Ca ne remplace pas un bon [IAM](/blog/articles/iam-mfa-principes-zero-trust.html) ni une reponse a [incident](/blog/articles/incident-response-runbook-postmortem.html). Mais ca ferme beaucoup de portes *avant* la prod.

@@ -13,7 +13,7 @@ series_order: 8
 Voici le cœur du sujet, organisé pour que tu puisses t'en servir demain matin sans te perdre.
 
 <figure>
-  <img src="../../assets/images/blog/illustrations/ia-cours-comment-utiliser-chatgpt-pour-les-debutants-en-4-étapes-si-banner.webp" alt="Illustration : Comment utiliser ChatGPT pour les débutants en 4 étapes si" class="schema-inline" width="720" loading="lazy" />
+  <img src="../../assets/images/blog/illustrations/ia-cours-comment-utiliser-chatgpt-pour-les-debutants-en-4-etapes-si-banner.webp" alt="Illustration : Comment utiliser ChatGPT pour les débutants en 4 étapes si" class="schema-inline" width="720" loading="lazy" />
   <figcaption>Illustration de l'article - repere visuel pour retenir la methode.</figcaption>
 </figure>
 

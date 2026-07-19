@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">UX vs UI</title>
+  <desc id="desc">Distinction experience utilisateur et interface visuelle</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">UX vs UI</text>
+
+  <rect x="40" y="70" width="340" height="280" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#2563eb">UX</text>
+  <text x="210" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">User Experience</text>
+  <text x="210" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Recherche utilisateurs</text>
+  <text x="210" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Parcours / JTBD</text>
+  <text x="210" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Architecture info</text>
+  <text x="210" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Tests d'utilisabilite</text>
+  <text x="210" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Comment ca se vit</text>
+
+  <rect x="420" y="70" width="340" height="280" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="590" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#dc2626">UI</text>
+  <text x="590" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">User Interface</text>
+  <text x="590" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Layout / grille</text>
+  <text x="590" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Typo / couleurs</text>
+  <text x="590" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Composants</text>
+  <text x="590" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">Etats / micro-interactions</text>
+  <text x="590" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#60a5fa">Comment ca se voit</text>
+
+  <text x="400" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f172a">UI sert l'UX - une belle UI ne guerit pas un mauvais parcours</text>
+</svg>

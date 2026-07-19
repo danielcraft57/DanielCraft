@@ -1,7 +1,7 @@
 {
   "id": "ux-ui-serie",
-  "title": "Série UX/UI Design - Ergonomie, UI et expérience utilisateur",
-  "description": "Une série complète sur l’UX/UI Design : ergonomie, heuristiques, recherche utilisateur, wireframes & prototypage, design systems, accessibilité, UI (typo/couleurs), micro‑interactions et mesure de l’impact (analytics, tests, A/B).",
+  "title": "Série UX/UI : rendre un produit clair et agréable",
+  "description": "Différence UX/UI, ergonomie, maquettes, écoute utilisateurs, accessibilité et mesure — pour construire des interfaces qui aident vraiment.",
   "slug": "ux-ui-serie",
   "articles": [
     "ux-ui-fondamentaux-differences",
@@ -16,4 +16,3 @@
     "mesurer-ux-kpis-analytics-ab-testing"
   ]
 }
-

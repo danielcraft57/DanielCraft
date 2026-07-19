@@ -1,7 +1,7 @@
 ---
-title: "Optimiser tes Dockerfile et la taille de tes images"
+title: "Docker : des images plus légères et plus rapides"
 date: 2024-11-19
-excerpt: "Réduire la taille de tes images Docker, accélérer les builds et éviter les mauvaises surprises en prod grâce à quelques patterns simples."
+excerpt: "Ordre du Dockerfile, cache, multi-stage : construire mieux sans se compliquer."
 type: article
 tags: [Docker, Dockerfile, optimisation, images]
 series: docker-serie
@@ -9,43 +9,42 @@ series_order: 5
 og_image: docker-build-optimisation-1200x630.jpg
 ---
 
-# Optimiser tes Dockerfile et la taille de tes images
+# [Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html) : des images plus légères et plus rapides
 
-Une image Docker trop grosse, c'est :
+Une image Docker trop grosse, c'est un **camion surcharge**. Ca met du temps a demarrer, a voyager, a se deplier. Et il y a plus de place pour les surprises de secu.
 
-- des builds lents,
-- des déploiements lents,
-- des temps de démarrage parfois pénibles,
-- plus de surface d'attaque côté sécurité.
-
-Bonne nouvelle : avec quelques réflexes, tu peux déjà faire beaucoup mieux que les Dockerfile générés à l'arrache.
+Bonne nouvelle : avec quelques reflexes, tu alleges deja beaucoup. Tu as vu [Compose](/blog/articles/docker-compose-environnements-local.html) ? Maintenant on soigne la **recette** (le Dockerfile).
 
 ---
 
 ## Choisir une bonne image de base
 
-Premier levier : le **FROM**.
+Premier levier : le `FROM`. C'est le fond de ta boite.
 
 ```dockerfile
 FROM node:22-alpine
 ```
 
-Comparé à un `node:22` classique (basé sur Debian), l'image Alpine est beaucoup plus légère.  
-Mais attention :
+Compare a un `node:22` classique (Debian), Alpine est bien plus leger. Mais attention :
 
-- Alpine utilise `musl` et non `glibc` → certaines libs natives peuvent être plus chiantes à compiler,
-- pour des applis très complexes, tu peux préférer une `-slim` (Debian allégée).
+- Alpine utilise `musl` (pas `glibc`) - certaines libs natives ralent.
+- Pour des applis complexes, une image `-slim` (Debian allégée) peut etre plus simple.
 
-Règle simple :
+Regle :
 
 - tente d'abord `*-alpine` ou `*-slim`,
-- si tu bloques sur des dépendances natives, reviens sur une image de base plus complète.
+- si ca bloque, reviens a une base plus complete.
 
 ---
 
-## Multistage builds : builder d'un côté, runner de l'autre
+## Multistage : cuisiner d'un cote, servir de l'autre
 
-Patron classique :
+Idee : une cuisine salee pour **construire**, une assiette propre pour **servir**.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/docker-build-layers.svg" alt="Schema optimisation build Docker layers cache" class="schema-inline" width="640" />
+  <figcaption>Deps avant le code, multi-stage a la fin : images plus petites et plus rapides.</figcaption>
+</figure>
 
 ```dockerfile
 FROM node:22-alpine AS build
@@ -67,18 +66,14 @@ RUN npm ci --omit=dev
 CMD ["node", "dist/main.js"]
 ```
 
-Idée :
+- La phase `build` a tous les outils (devDependencies, compilateurs...).
+- La phase `runtime` ne recoit que le code pret + les deps utiles pour tourner.
 
-- la phase `build` contient tout ce qu'il faut pour compiler (devDependencies, outils, etc.),
-- la phase `runtime` ne reçoit que le code compilé + les deps nécessaires à l'exécution.
-
-Résultat : image plus petite, et en général plus sécurisée.
+Resultat : image plus petite. Souvent plus sure aussi.
 
 ---
 
-## Éviter les caches et fichiers inutiles
-
-Quelques réflexes :
+## Ne pas mettre le desordre dans la boite
 
 - Ajoute un `.dockerignore` :
 
@@ -91,7 +86,9 @@ Dockerfile*
 docker-compose*.yml
 ```
 
-- Nettoie les caches des gestionnaires de paquets si tu dois installer des dépendances :
+Sans ca, tu copies ton `.git` et tes caches dans l'image. Inutile. Lourd.
+
+- Nettoie les caches de paquets :
 
 ```dockerfile
 RUN apk add --no-cache build-base python3
@@ -107,9 +104,9 @@ RUN apt-get update \
 
 ---
 
-## Minimiser le nombre de layers
+## Moins de couches inutiles
 
-Chaque `RUN`, `COPY`, `ADD` crée un layer. Ce n'est pas dramatique en soi, mais tu peux regrouper des commandes qui vont ensemble :
+Chaque `RUN`, `COPY`, `ADD` cree une **couche** (un etage dans le camion). Ce n'est pas grave, mais regroupe ce qui va ensemble :
 
 ```dockerfile
 RUN apt-get update \
@@ -117,32 +114,19 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 ```
 
-Plutôt que :
-
-```dockerfile
-RUN apt-get update
-RUN apt-get install -y build-essential python3
-RUN rm -rf /var/lib/apt/lists/*
-```
+Plutot que trois `RUN` separes. Et copie d'abord `package*.json` : Docker reutilise le cache des deps si ton code change.
 
 ---
 
-## Vérifier la taille et le contenu
-
-Commande simple pour voir la taille de tes images :
+## Verifier la taille
 
 ```bash
 docker image ls | sort -k 7 -h
-```
-
-Pour inspecter une image :
-
-```bash
 docker history mon-image:1.0.0
 docker inspect mon-image:1.0.0
 ```
 
-Tu peux aussi lancer une image en shell et regarder ce qu'il y a dedans :
+Pour ouvrir la boite et regarder :
 
 ```bash
 docker run -it --rm mon-image:1.0.0 sh
@@ -150,7 +134,7 @@ docker run -it --rm mon-image:1.0.0 sh
 
 ---
 
-## Exemple : API Node.js optimisée
+## Exemple API Node optimisee
 
 ```dockerfile
 FROM node:22-alpine AS build
@@ -175,15 +159,10 @@ EXPOSE 3000
 CMD ["node", "dist/main.js"]
 ```
 
-Ce Dockerfile est déjà correct pour beaucoup de projets internes.
+Ce Dockerfile convient deja a beaucoup de projets internes.
 
 ---
 
-## Ce qui reste à voir
+## Suite
 
-Dans le dernier article de la série Docker, on parlera de :
-
-- registry privé,
-- stratégie de tags (prod/staging/feature),
-- sécurité minimale (utilisateur non root, secrets),
-- comment préparer sereinement le terrain pour un futur déploiement sur Kubernetes.
+Dernier volet Docker : [registry, tags et securite pour la prod](/blog/articles/docker-production-registry-securite.html). Des images legeres, c'est bien. Des images **propres et partagees** proprement, c'est mieux.

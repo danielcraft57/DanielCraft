@@ -15,23 +15,16 @@ series_order: 24
 
 Interpreter représente une grammaire simple comme arbre d'expressions.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-interpreter.svg" alt="Schéma du pattern Interpreter" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Interpreter — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-interpreter-banner.webp" alt="Illustration Interpreter" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Interpreter (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Interpreter représente une grammaire simple comme arbre d'expressions.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-interpreter.svg" alt="Schéma du pattern Interpreter" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Interpreter — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Boucle SecOps / SOC</title>
+  <desc id="desc">Cycle Collecter, Detecter, Analyser, Repondre, Ameliorer</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Boucle SecOps / SOC</text>
+
+  <!-- Center -->
+  <circle cx="400" cy="220" r="48" fill="#2563eb"/>
+  <text x="400" y="216" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">SOC</text>
+  <text x="400" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#fff">24/7</text>
+
+  <!-- Steps -->
+  <rect x="60" y="90" width="140" height="56" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="124" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">1. Collecter</text>
+
+  <rect x="300" y="70" width="140" height="56" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="370" y="104" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">2. Detecter</text>
+
+  <rect x="600" y="90" width="140" height="56" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="670" y="124" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">3. Analyser</text>
+
+  <rect x="600" y="280" width="140" height="56" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="670" y="314" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">4. Repondre</text>
+
+  <rect x="60" y="280" width="140" height="56" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="130" y="314" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">5. Ameliorer</text>
+
+  <!-- Arrows around -->
+  <path d="M200 118 H295" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M440 98 H595" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M670 146 V275" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M600 308 H205" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M130 280 V150" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+  <text x="400" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Telemetrie ' alertes ' investigation ' containment ' lessons learned</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

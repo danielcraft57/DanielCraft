@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Menaces, risque et posture</title>
+  <desc id="desc">Schema : menaces externes, actifs, risque residuel et posture de defense</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Menaces, risque et posture de securite</text>
+
+  <!-- Menaces -->
+  <rect x="40" y="70" width="180" height="140" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="130" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#dc2626">Menaces</text>
+  <text x="130" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Phishing / ransomware</text>
+  <text x="130" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Insider / supply chain</text>
+  <text x="130" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Exploits 0-day</text>
+
+  <!-- Actifs -->
+  <rect x="310" y="70" width="180" height="140" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#2563eb">Actifs</text>
+  <text x="400" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Donnees / identites</text>
+  <text x="400" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Apps / API / cloud</text>
+  <text x="400" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Processus metier</text>
+
+  <!-- Posture -->
+  <rect x="580" y="70" width="180" height="140" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="670" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#2563eb">Posture</text>
+  <text x="670" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Prevent / Detect</text>
+  <text x="670" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Respond / Recover</text>
+  <text x="670" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Gouvernance</text>
+
+  <!-- Arrows top -->
+  <path d="M220 140 H300" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M490 140 H570" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Risque formula -->
+  <rect x="160" y="250" width="480" height="120" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Risque = Menace x Vulnerability x Impact</text>
+  <text x="400" y="315" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Objectif : reduire la probabilite et l'impact via la posture</text>
+  <text x="400" y="345" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2563eb">Risque residuel accepte et suivi</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

@@ -15,23 +15,16 @@ series_order: 21
 
 Mediator centralise les échanges entre composants (évite N×N).
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-mediator.svg" alt="Schéma du pattern Mediator" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Mediator — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-mediator-banner.webp" alt="Illustration Mediator" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Mediator (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Mediator centralise les échanges entre composants (évite N×N).
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-mediator.svg" alt="Schéma du pattern Mediator" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Mediator — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

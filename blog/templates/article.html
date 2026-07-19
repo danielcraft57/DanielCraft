@@ -31,15 +31,47 @@
     <meta name="twitter:description" content="{{EXCERPT}}">
     <meta name="twitter:image" content="{{OG_IMAGE}}">
     <meta name="theme-color" content="#2f78a6">
-    <link rel="icon" href="{{ROOT}}favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="{{ROOT}}assets/icons/favicon.svg">
-    <link rel="stylesheet" href="{{ASSETS}}/css/main.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <link rel="stylesheet" href="{{ASSETS}}/css/main.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/animations.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css{{ASSETS_QUERY}}">
+    <link rel="search" type="application/opensearchdescription+xml" title="DanielCraft Blog" href="/assets/opensearch-blog.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{JSON_HEADLINE}},
+      "description": {{JSON_DESCRIPTION}},
+      "image": {{JSON_IMAGE}},
+      "datePublished": {{JSON_DATE_PUBLISHED}},
+      "dateModified": {{JSON_DATE_MODIFIED}},
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{JSON_PAGE_URL}}
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Loïc DANIEL",
+        "url": {{JSON_SITE_BASE}}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DanielCraft",
+        "url": {{JSON_SITE_BASE}},
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{JSON_LOGO}}
+        }
+      }
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Aller au contenu</a>
@@ -62,6 +94,7 @@
                 <aside class="blog-article-sidebar" aria-label="Infos article">
                     <div class="sidebar-block sidebar-meta">
                         <time datetime="{{DATE_ISO}}" itemprop="datePublished">{{DATE_FR}}</time>
+                        <meta itemprop="dateModified" content="{{DATE_MODIFIED_ISO}}">
                     </div>
                     <div class="sidebar-block sidebar-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <span class="sidebar-label">Auteur</span>
@@ -98,7 +131,7 @@
             </div>
         </article>
     </main>
-    <script src="{{ASSETS}}/js/main.js" defer></script>
+    <script src="{{ASSETS}}/js/main.js{{ASSETS_QUERY}}" defer></script>
     <script>
       (function() {
         document.querySelectorAll('.share-copy').forEach(function(btn) {

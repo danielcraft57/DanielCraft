@@ -15,23 +15,16 @@ series_order: 18
 
 Prototype clone un exemplaire au lieu de reconstruire depuis zéro.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-prototype.svg" alt="Schéma du pattern Prototype" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Prototype — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-prototype-banner.webp" alt="Illustration Prototype" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Prototype (Créationnel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Prototype clone un exemplaire au lieu de reconstruire depuis zéro.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-prototype.svg" alt="Schéma du pattern Prototype" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Prototype — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -15,23 +15,16 @@ series_order: 5
 
 Strategy encapsule des algorithmes interchangeables injectés au runtime.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-strategy.svg" alt="Schéma du pattern Strategy" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Strategy — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-strategy-banner.webp" alt="Illustration Strategy" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Strategy (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Strategy encapsule des algorithmes interchangeables injectés au runtime.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-strategy.svg" alt="Schéma du pattern Strategy" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Strategy — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -14,7 +14,7 @@ series_order: 6
 On reste concret : ce qu'il faut comprendre, et ce que tu peux faire ensuite.
 
 <figure>
-  <img src="../../assets/images/blog/illustrations/ia-metiers-chatgpt-est-déjà-meilleur-que-certains-medecins-lorsqu-il-s-agit-de-f-banner.webp" alt="Illustration : ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f" class="schema-inline" width="720" loading="lazy" />
+  <img src="../../assets/images/blog/illustrations/ia-metiers-chatgpt-est-deja-meilleur-que-certains-medecins-lorsqu-il-s-agit-de-f-banner.webp" alt="Illustration : ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f" class="schema-inline" width="720" loading="lazy" />
   <figcaption>Illustration de l'article - repere visuel pour retenir la methode.</figcaption>
 </figure>
 

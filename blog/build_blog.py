@@ -117,11 +117,36 @@ def _get_site_layout_html() -> dict:
         'footer': _render_site_include('includes/footer.html', vars_dict),
         'analytics': _render_site_include('includes/analytics.html', vars_dict),
         'modals': (
-            _render_site_include('includes/modal-devis.html', vars_dict)
+            _render_site_include('includes/modal-prestation-devis.html', vars_dict)
             + _render_site_include('includes/modal-projet.html', vars_dict)
         ),
     }
     return _SITE_LAYOUT_CACHE
+
+
+def _get_assets_query() -> str:
+    """Cache-bust CSS/JS, aligné sur le build site principal."""
+    try:
+        sys.path.insert(0, str(PROJECT_ROOT))
+        from build import compute_assets_version
+
+        return f'?v={compute_assets_version(PROJECT_ROOT / "assets")}'
+    except Exception:
+        return ''
+
+
+def _apply_asset_paths(html: str, assets_query: Optional[str] = None) -> str:
+    """Chemins absolus /assets + cache-bust (même skin que le site)."""
+    q = _get_assets_query() if assets_query is None else assets_query
+    html = html.replace('{{ASSETS}}', '/assets')
+    html = html.replace('{{ASSETS_QUERY}}', q)
+    # Favicons / racines en absolu (indépendant de la profondeur /blog/…)
+    html = html.replace('href="{{ROOT}}/favicon.ico"', 'href="/favicon.ico"')
+    html = html.replace('href="{{ROOT}}favicon.ico"', 'href="/favicon.ico"')
+    html = html.replace('href="{{ROOT}}/assets/', 'href="/assets/')
+    html = html.replace('href="{{ROOT}}assets/', 'href="/assets/')
+    html = html.replace('{{ROOT}}', '/')
+    return html
 
 
 def _inject_site_layout(html: str) -> str:
@@ -269,31 +294,33 @@ def _abs_blog_url(path: str) -> str:
     return f"{base}/{p}"
 
 
-def _article_thumb_src(article: dict, assets_prefix: str = '../') -> str:
-    """Image de couverture d'un article (depuis blog/index.html)."""
+def _article_thumb_src(article: dict, assets_root: str = '/assets') -> str:
+    """Image de couverture d'un article (chemin absolu site, valide depuis series/types/index)."""
     og = article.get('og_image')
     if og and str(og).startswith('http'):
         return str(og)
+    root = (assets_root or '/assets').rstrip('/')
     if og:
-        return f"{assets_prefix}assets/images/og/{og}"
-    return f"{assets_prefix}assets/images/og/blog-1200x630.jpg"
+        return f"{root}/images/og/{og}"
+    return f"{root}/images/og/blog-1200x630.jpg"
 
 
 def _collection_cover_src(collection: dict, articles: list[dict]) -> str:
-    """Chemin relatif depuis blog/index.html vers l'image de couverture d'une serie."""
-    cid = collection.get('id') or collection.get('slug') or ''
+    """Image de couverture d'une serie (chemin absolu /assets/...)."""
     cover = collection.get('cover_image')
     if cover:
         if str(cover).startswith('http'):
             return str(cover)
         if str(cover).startswith('blog/'):
-            return f"../assets/images/{cover}"
-        return f"../assets/images/og/{cover}"
+            return f"/assets/images/{cover}"
+        if str(cover).startswith('/'):
+            return str(cover)
+        return f"/assets/images/og/{cover}"
     for slug in collection.get('articles', []):
         for article in articles:
             if article.get('slug') == slug and article.get('og_image'):
-                return f"../assets/images/og/{article['og_image']}"
-    return '../assets/images/og/blog-1200x630.jpg'
+                return f"/assets/images/og/{article['og_image']}"
+    return '/assets/images/og/blog-1200x630.jpg'
 
 
 def _series_featured_html(collections: list[dict], articles: list[dict]) -> str:
@@ -451,13 +478,15 @@ def _get_article_og_image(article: dict) -> str:
 
 
 def _get_article_hero_image(article: dict, assets_prefix: str) -> str:
-    """Retourne le chemin relatif de l'image hero affichee dans la page article."""
+    """Image hero de la page article (absolu /assets pour eviter les 404 selon la profondeur d'URL)."""
     og_img = article.get('og_image')
     if og_img and str(og_img).startswith('http'):
         return str(og_img)
+    # assets_prefix conserve pour compat appelants ; chemins absolus preferes
+    _ = assets_prefix
     if og_img:
-        return f"{assets_prefix}/images/og/{og_img}"
-    return f"{assets_prefix}/images/og/blog-1200x630.jpg"
+        return f"/assets/images/og/{og_img}"
+    return '/assets/images/og/blog-1200x630.jpg'
 
 
 def _type_label(article: dict) -> str:
@@ -665,10 +694,19 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
     html = html.replace('{{EXCERPT}}', excerpt)
     html = html.replace('{{CONTENT}}', article['content_html'])
     html = html.replace('{{DATE_ISO}}', date_str)
+    html = html.replace('{{DATE_MODIFIED_ISO}}', date_str)
     html = html.replace('{{DATE_FR}}', date_fr)
-    html = html.replace('{{ASSETS}}', assets_prefix_article)
-    html = html.replace('{{ROOT}}', '../../')
     html = html.replace('{{PAGE_URL}}', page_url)
+    # JSON-LD (valeurs JSON encodees)
+    _site = SITE_BASE.rstrip('/')
+    html = html.replace('{{JSON_HEADLINE}}', json.dumps(title, ensure_ascii=False))
+    html = html.replace('{{JSON_DESCRIPTION}}', json.dumps(excerpt, ensure_ascii=False))
+    html = html.replace('{{JSON_IMAGE}}', json.dumps(og_img_url, ensure_ascii=False))
+    html = html.replace('{{JSON_DATE_PUBLISHED}}', json.dumps(date_str))
+    html = html.replace('{{JSON_DATE_MODIFIED}}', json.dumps(date_str))
+    html = html.replace('{{JSON_PAGE_URL}}', json.dumps(page_url, ensure_ascii=False))
+    html = html.replace('{{JSON_SITE_BASE}}', json.dumps(_site + '/', ensure_ascii=False))
+    html = html.replace('{{JSON_LOGO}}', json.dumps(_site + '/assets/images/og/home-1200x630.jpg', ensure_ascii=False))
     html = html.replace('{{SHARE_TWITTER_URL}}', share_twitter_url)
     html = html.replace('{{SHARE_LINKEDIN_URL}}', share_linkedin_url)
     html = html.replace('{{OG_IMAGE}}', og_img_url)
@@ -694,6 +732,7 @@ def render_article_page(article: dict, articles: list[dict], collections: list[d
         ),
     )
 
+    html = _apply_asset_paths(html)
     html = _inject_site_layout(html)
 
     out_file = output_dir / 'articles' / f"{article['slug']}.html"
@@ -768,13 +807,12 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
     html = html.replace('{{ARTICLES_GRID}}', '\n'.join(cards_html))
     html = html.replace('{{ARTICLES_JSON}}', articles_json)
     html = html.replace('{{COLLECTIONS_JSON}}', collections_json)
-    html = html.replace('{{ASSETS}}', assets_prefix)
-    html = html.replace('{{ROOT}}', '..')
     html = html.replace('{{META_DESCRIPTION}}', _escape_html(meta_desc))
     html = html.replace('{{META_KEYWORDS}}', 'IA, ChatGPT, Claude, Gemini, prompts, agents, SEO, GEO, tutoriels, formations')
     html = html.replace('{{PAGE_URL}}', page_url)
-    html = html.replace('{{BREADCRUMBS}}', block_breadcrumbs(crumbs_blog_index(SITE_BASE)))
+    html = html.replace('{{SITE_BASE}}', SITE_BASE.rstrip('/'))
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
+    html = _apply_asset_paths(html)
     html = _inject_site_layout(html)
 
     out_file = output_dir / 'index.html'
@@ -859,8 +897,6 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
     html = template.replace('{{TITLE}}', _escape_html(title))
     html = html.replace('{{DESCRIPTION}}', _escape_html(desc))
     html = html.replace('{{ARTICLES_GRID}}', '\n'.join(cards))
-    html = html.replace('{{ASSETS}}', assets_prefix_series)
-    html = html.replace('{{ROOT}}', '../..')
     html = html.replace('{{PAGE_URL}}', page_url)
     html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
     html = html.replace('{{META_KEYWORDS}}', _escape_html(keywords))
@@ -869,6 +905,7 @@ def render_collection_page(collection: dict, all_articles: list[dict], output_di
         block_breadcrumbs(crumbs_collection(SITE_BASE, title)),
     )
 
+    html = _apply_asset_paths(html)
     html = _inject_site_layout(html)
 
     out_file = output_dir / 'series' / f'{slug}.html'
@@ -944,8 +981,6 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
         html = template.replace('{{TITLE}}', _escape_html(title))
         html = html.replace('{{DESCRIPTION}}', _escape_html(desc))
         html = html.replace('{{ARTICLES_GRID}}', '\n'.join(cards))
-        html = html.replace('{{ASSETS}}', assets_prefix_types)
-        html = html.replace('{{ROOT}}', '../..')
         html = html.replace('{{PAGE_URL}}', page_url)
         html = _inject_og_image_meta(html, OG_IMAGE_BLOG)
         html = html.replace('{{META_KEYWORDS}}', _escape_html(f"{title}, blog, DanielCraft"))
@@ -953,6 +988,7 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
             '{{BREADCRUMBS}}',
             block_breadcrumbs(crumbs_collection(SITE_BASE, title)),
         )
+        html = _apply_asset_paths(html)
         html = _inject_site_layout(html)
 
         out_file = output_dir / 'types' / f'{slug}.html'
@@ -962,7 +998,24 @@ def render_type_pages(articles: list[dict], output_dir: Path, assets_prefix: str
 
 def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_dir: Path) -> None:
     """Genere sitemap-blog.xml pour le referencement (namespace et lastmod optimises)."""
+    from urllib.parse import quote
+
     lastmod_blog = max((str(a.get('date', ''))[:10] for a in articles), default=datetime.now().strftime('%Y-%m-%d'))
+    # Recherches populaires (chips) — deep-links indexables via SearchAction
+    blog_search_queries = (
+        'seo local',
+        'google',
+        'visibilité',
+        'chatgpt',
+        'claude',
+        'gemini',
+        'agents ia',
+        'prompts',
+        'n8n',
+        'formation',
+        'geo',
+        'docker',
+    )
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
@@ -972,6 +1025,12 @@ def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_
         f'  <url><loc>{SITE_BASE}/blog</loc><lastmod>{lastmod_blog}</lastmod>'
         f'<changefreq>weekly</changefreq><priority>0.8</priority></url>',
     ]
+    for q in blog_search_queries:
+        url = f'{SITE_BASE}/blog/?q={quote(q, safe="")}'
+        lines.append(
+            f'  <url><loc>{url}</loc><lastmod>{lastmod_blog}</lastmod>'
+            f'<changefreq>weekly</changefreq><priority>0.55</priority></url>'
+        )
     for a in articles:
         url = f'{SITE_BASE}/blog/articles/{a["slug"]}'
         date = str(a.get('date', ''))[:10]

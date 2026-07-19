@@ -15,23 +15,16 @@ series_order: 20
 
 Chaque handler décide de traiter ou de passer au suivant.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-chain-of-responsibility.svg" alt="Schéma du pattern Chain of Responsibility" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Chain of Responsibility — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-chain-of-responsibility-banner.webp" alt="Illustration Chain of Responsibility" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Chain of Responsibility (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Chaque handler décide de traiter ou de passer au suivant.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-chain-of-responsibility.svg" alt="Schéma du pattern Chain of Responsibility" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Chain of Responsibility — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

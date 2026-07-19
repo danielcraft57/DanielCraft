@@ -15,23 +15,16 @@ series_order: 7
 
 Adapter convertit l'interface d'une classe existante en celle attendue par le client, sans modifier le code legacy.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-adapter.svg" alt="Schéma du pattern Adapter" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Adapter — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-adapter-banner.webp" alt="Illustration Adapter" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Adapter (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Adapter convertit l'interface d'une classe existante en celle attendue par le client, sans modifier le code legacy.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-adapter.svg" alt="Schéma du pattern Adapter" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Adapter — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

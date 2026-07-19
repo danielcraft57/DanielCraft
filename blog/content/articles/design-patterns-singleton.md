@@ -15,23 +15,16 @@ series_order: 2
 
 Le Singleton garantit qu'une classe n'a qu'une seule instance et fournit un point d'accès global contrôlé.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-singleton.svg" alt="Schéma du pattern Singleton" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Singleton — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-singleton-banner.webp" alt="Illustration Singleton" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Singleton (Créationnel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Le Singleton garantit qu'une classe n'a qu'une seule instance et fournit un point d'accès global contrôlé.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-singleton.svg" alt="Schéma du pattern Singleton" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Singleton — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

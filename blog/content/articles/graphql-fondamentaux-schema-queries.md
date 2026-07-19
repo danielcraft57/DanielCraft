@@ -1,7 +1,7 @@
 ---
-title: "GraphQL : schéma, requêtes et bonnes pratiques"
+title: "GraphQL : demander exactement ce qu'il te faut"
 date: 2025-07-08
-excerpt: "Comprendre le modèle mental de GraphQL : schéma typé, requêtes déclaratives, résolveurs, pagination, erreurs et évolutions sans casser les clients."
+excerpt: "Un schéma, des questions précises, et ce qui change vraiment pour l'équipe derrière."
 type: article
 tags: [API, GraphQL, backend, schema, BFF]
 series: api-rest-graphql-serie
@@ -9,16 +9,26 @@ series_order: 3
 og_image: graphql-fondamentaux-schema-queries-1200x630.jpg
 ---
 
-# GraphQL : schéma, requêtes et bonnes pratiques
+# GraphQL : demander exactement ce qu'il te faut
 
-GraphQL est souvent présenté comme « plus moderne que REST », ce qui ne veut pas dire grand‑chose.  
-Ce qui le rend intéressant, c’est surtout son **modèle déclaratif** : le client décrit les données dont il a besoin, et le serveur s’occupe de les composer.
+On entend souvent : "GraphQL, c'est plus moderne que REST." OK. Et apres ? Modernite ne construit pas une page.
 
----
+Ce qui rend **GraphQL** interessant, c'est un autre modele mental. Le client dit ce dont il a besoin. Le serveur [compose](/blog/articles/[docker](/blog/articles/docker-fondamentaux-images-conteneurs.html)-compose-environnements-local.html) la reponse. Pas magique. Juste **declaratif**. Et ca change vraiment la vie... si tu as compris le schema, les resolveurs, et les pieges.
 
-## 1. Le schéma : contrat unique entre backend et frontend
+Pour le contexte general, vois d'abord [REST vs GraphQL](/blog/articles/api-rest-graphql-fondamentaux-comparaison.html). Pour le design REST classique, vois les [bonnes pratiques REST](/blog/articles/api-rest-bonnes-pratiques-conception.html).
 
-En GraphQL, tout part du **schéma** :
+## Le schema, c'est le contrat
+
+En GraphQL, tout part du **schema**. Types, champs, relations. Ce qui est obligatoire. Ce qui est optionnel. C'est la source de verite partagee entre front et back.
+
+Tu peux generer de la doc, des types TypeScript, des mocks - a partir de ca. Si ton schema est flou, tout le reste sera flou. Contrairement a une pile d'endpoints eparpilles, ici tu as **un seul** endroit pour comprendre le graphe metier.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/graphql-schema-resolvers.svg" alt="Schéma GraphQL : types, requêtes et résolveurs" class="schema-inline" width="640" />
+  <figcaption>Du schéma aux résolveurs : le contrat d'un côté, les sources de données de l'autre.</figcaption>
+</figure>
+
+Petit extrait pour se mettre d'accord :
 
 ```graphql
 type User {
@@ -42,21 +52,15 @@ type Query {
 }
 ```
 
-- Types forts (`String`, `Int`, `Boolean`, `ID`, `DateTime` custom, etc.).
-- Champs obligatoires (`!`) vs optionnels.
-- Entrées (`input`) pour structurer les payloads complexes.
+Tu vois l'idee : le graphe est explicite. `User` a des `posts`. Une query `me` existe. Pas besoin de cinq endpoints pour raconter la meme histoire.
 
-Ce schéma devient **la source de vérité** : docs, types TypeScript, mocks de tests peuvent être générés à partir de lui.
+En revanche, soigne ce schema. Sans conventions, sans reviews, ca devient un tas de dettes en six mois. Inputs types, enums pour les statuts, scalars custom seulement si besoin - et reste lisible pour un humain qui debarque.
 
----
+## Queries, mutations, et le reste
 
-## 2. Requêtes, mutations et subscriptions
+Les **queries**, c'est la lecture. Les **mutations**, c'est l'ecriture et les effets de bord. Les **subscriptions**, c'est le temps reel - si tu en as vraiment besoin. Pas "parce que ca fait cool". Le temps reel a un cout. Beaucoup d'equipes s'en passent tres bien avec un petit polling au debut.
 
-- **Queries** : lecture de données.
-- **Mutations** : écriture / effets de bord (création, mise à jour, suppression, actions métier).
-- **Subscriptions** : flux temps réel (WebSocket, SSE).
-
-Exemple de requête côté client :
+Cote client, une query ressemble a ca :
 
 ```graphql
 query MeWithPosts {
@@ -72,78 +76,33 @@ query MeWithPosts {
 }
 ```
 
-Le serveur renvoie **exactement** la forme demandée, ni plus ni moins.
+Le serveur renvoie **exactement** cette forme. Ni le pave d'un `/users/me` gonfle, ni trois appels en cascade. Pour un mobile qui n'affiche que trois champs, tu demandes trois champs. Pour un dashboard, tu demandes plus. Meme schema, tranches differentes. C'est ca, le vrai pitch.
 
----
+## Resolveurs : la ou ca devient reel
 
-## 3. Résolveurs : coller le schéma à ton backend
+Le schema, c'est le contrat. Les **resolveurs**, c'est le collage vers tes sources : SQL, NoSQL, services REST, files... C'est pour ca que GraphQL marche bien en **BFF** : tu caches la complexite interne derriere un graphe oriente produit. Le front n'a pas a savoir que les commandes viennent d'un service et les notifs d'un autre.
 
-Chaque champ du schéma est implémenté par un **résolveur** :
+Le piege classique, c'est le **N+1**. Tu resols une liste d'utilisateurs. Puis pour chacun, tu vas chercher ses posts un par un. En local avec dix users, ca passe. En prod avec mille, tu pleures. Batching, DataLoader, cache - ce n'est pas du luxe. C'est la survie.
 
-- Découpe claire entre **contrat GraphQL** et **sources de données** (base SQL/NoSQL, REST interne, microservices, files, etc.).
-- Idéal pour faire un **BFF (Backend For Frontend)** qui agrège plusieurs microservices existants.
+Autre piege : des resolveurs qui melangent mapping GraphQL, logique metier et I/O dans le meme blob. Garde le resolveur mince. Le metier vit ailleurs. Sinon, le jour ou tu veux reutiliser une regle hors GraphQL, tu es coince.
 
-Les principaux pièges :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/graphql-n1-resolvers.svg" alt="Schema du probleme N+1 GraphQL et du batching DataLoader" class="schema-inline" width="640" />
+  <figcaption>Sans batching, chaque champ peut devenir une requete : le piege N+1.</figcaption>
+</figure>
 
-- **N+1 queries** : un résolveur qui tape la base dans une boucle (solution : DataLoader, batching).
-- Résolveurs trop gras qui mélangent logique métier, I/O et mapping GraphQL.
+## Pagination, erreurs, evolution
 
----
+Pour paginer : offset/limit (simple) ou curseurs type Relay (plus robuste pour le scroll infini). Choisis selon ton cas. Documente. Reste coherent d'un type a l'autre.
 
-## 4. Pagination, filtres et erreurs
+Pour les **erreurs**, GraphQL renvoie un bloc `errors` a cote de `data`. Garde des codes metier stables : `UNAUTHENTICATED`, `FORBIDDEN`, `VALIDATION_ERROR`. Le client branche sans parser de la prose.
 
-Deux patterns courants pour la pagination :
+Cote evolution : ajouter un champ ne casse pas les clients (ils ne le demandent pas). Tu peux deprecier avec `@deprecated` avant de supprimer. Mais "evolutif" ne veut pas dire "sans gouvernance". Qui ajoute quoi ? Qui review ? Qui possede Commandes vs Users ? Sans ca, ton schema devient un terrain vague.
 
-- **Offset/limit** simple (suffisant pour beaucoup de cas).
-- **Connections / edges / cursors** (pattern Relay) pour du scroll infini robuste.
+## Ce que ca change dans l'equipe
 
-Pour les erreurs :
+GraphQL rapproche front et back autour d'un contrat unique. Ca demande aussi du **tooling** : serveur, clients, observabilite des resolveurs, limites de profondeur, cout des queries. Securite au niveau des champs. Logs qui disent quel resolveur a pris 400 ms.
 
-- GraphQL renvoie un **bloc `errors`** en plus des `data`.
-- Tu peux exposer des **codes d’erreur métier** (ex. `UNAUTHENTICATED`, `FORBIDDEN`, `VALIDATION_ERROR`) utilisables côté client.
+Cote client : genère tes types depuis le schema. Centralise tes queries. Pense a la taille des payloads sur mobile. GraphQL n'efface pas un SQL lent ni une auth bancale. Il deplace le probleme vers le graphe.
 
-Bon réflexe : garder un **format d’erreur cohérent** avec ton monde REST existant, même si le transport est différent.
-
----
-
-## 5. Évolution du schéma sans tout casser
-
-GraphQL est très adapté aux **évolutions incrémentales** :
-
-- Ajouter des champs est non‑breaking (les clients existants ne les demandent pas).
-- Tu peux **déprécier un champ** (`@deprecated(reason: "Use foo instead")`) avant de le supprimer.
-- Les clients choisissent quand consommer les nouveautés.
-
-Mais attention :
-
-- Un schéma mal pensé devient vite **un gros monolithe** difficile à faire évoluer.
-- Il faut une vraie **gouvernance de schéma** (reviews, conventions de nommage, ownership des domaines, etc.).
-
----
-
-## 6. Bonnes pratiques côté client et côté serveur
-
-**Côté serveur** :
-
-- Sécuriser (`auth`, `authz`) au niveau des **résolveurs**.
-- Limiter la **profondeur** et la **complexité** des requêtes (query cost analysis).
-- Observer : logs détaillés, temps passé dans chaque résolveur, traces distribuées.
-
-**Côté client** :
-
-- Générer les **types TypeScript** à partir du schéma pour éviter les erreurs de champs.
-- Centraliser les requêtes plutôt que d’avoir 50 fragments copiés/collés.
-- Sur mobile, penser à la **taille des payloads** et aux stratégies de cache côté client.
-
----
-
-## 7. Ce que GraphQL change (ou pas) dans ton équipe
-
-GraphQL :
-
-- **Rapproche les équipes frontend et backend** autour d’un schéma partagé.
-- Demande une montée en compétence tooling (serveur, clients, observabilité).
-- N’efface pas les problématiques classiques : dettes métiers, performance SQL, sécurité, etc.
-
-L’article suivant plongera dans les **performances, coûts et benchmarks** REST vs GraphQL sur des cas concrets.
-
+Prochain episode : [performances, couts, benchmarks](/blog/articles/api-rest-graphql-performances-benchmarks.html) - la ou les slides marketing rencontrent la facture cloud. Puis la [grille de choix](/blog/articles/choisir-rest-graphql-quand-et-comment.html).

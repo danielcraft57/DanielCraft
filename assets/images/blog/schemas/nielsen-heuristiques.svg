@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+  <title id="title">10 heuristiques de Nielsen</title>
+  <desc id="desc">Grille compacte des 10 principes d'ergonomie de Nielsen</desc>
+  <rect width="800" height="480" fill="#f5f7fb"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Les 10 heuristiques de Nielsen</text>
+
+  <!-- Row 1 -->
+  <rect x="24" y="52" width="146" height="72" rx="8" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="97" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">1. Visibilite</text>
+  <text x="97" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Etat du systeme</text>
+
+  <rect x="182" y="52" width="146" height="72" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="255" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">2. Monde reel</text>
+  <text x="255" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Langage familier</text>
+
+  <rect x="340" y="52" width="146" height="72" rx="8" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="413" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">3. Controle</text>
+  <text x="413" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Liberte / annuler</text>
+
+  <rect x="498" y="52" width="146" height="72" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="571" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">4. Coherence</text>
+  <text x="571" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Standards UI</text>
+
+  <rect x="656" y="52" width="120" height="72" rx="8" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="716" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#dc2626">5. Prevention</text>
+  <text x="716" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Eviter l'erreur</text>
+
+  <!-- Row 2 -->
+  <rect x="24" y="140" width="146" height="72" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="97" y="166" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">6. Reconnaissance</text>
+  <text x="97" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">plutot que rappel</text>
+
+  <rect x="182" y="140" width="146" height="72" rx="8" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="255" y="166" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">7. Flexibilite</text>
+  <text x="255" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Novice / expert</text>
+
+  <rect x="340" y="140" width="146" height="72" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="413" y="166" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">8. Minimalisme</text>
+  <text x="413" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Hierarchie claire</text>
+
+  <rect x="498" y="140" width="146" height="72" rx="8" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="571" y="166" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#dc2626">9. Erreurs</text>
+  <text x="571" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Diagnostiquer</text>
+
+  <rect x="656" y="140" width="120" height="72" rx="8" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="716" y="166" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#2563eb">10. Aide</text>
+  <text x="716" y="186" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#475569">Doc courte</text>
+
+  <!-- Detail strip -->
+  <rect x="24" y="240" width="752" height="180" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="272" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a">Audit rapide : une page cle, dix questions</text>
+  <text x="48" y="304" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Feedback visible ? Termes clairs ? Annuler possible ? Patterns coherents ? Erreurs evitees ?</text>
+  <text x="48" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Infos a l'ecran (pas en memoire) ? Raccourcis pour experts ? Une intention principale ?</text>
+  <text x="48" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Messages d'erreur actionnables ? Aide ponctuelle a portee de clic ?</text>
+  <text x="400" y="396" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#2563eb">Prioriser les bloquants avant le polish</text>
+</svg>

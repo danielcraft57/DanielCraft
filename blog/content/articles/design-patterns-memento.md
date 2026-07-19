@@ -15,23 +15,16 @@ series_order: 22
 
 Memento capture l'état interne pour restauration ultérieure (undo).
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-memento.svg" alt="Schéma du pattern Memento" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Memento — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-memento-banner.webp" alt="Illustration Memento" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Memento (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Memento capture l'état interne pour restauration ultérieure (undo).
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-memento.svg" alt="Schéma du pattern Memento" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Memento — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -113,7 +113,7 @@ Montre que tu as mis en pratique : cas clients, retours d'expérience, résultat
 
 ### Expertise
 
-Auteur identifié, bio, compétences affichées. "Loïc DANIEL, développeur Full-Stack depuis 7 ans..."
+Auteur identifié, bio, compétences affichées. "Loïc DANIEL, développeur Full-Stack depuis juillet 2011..."
 
 ### Authoritativeness
 

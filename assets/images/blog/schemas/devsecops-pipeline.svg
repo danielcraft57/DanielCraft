@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Pipeline DevSecOps</title>
+  <desc id="desc">Etapes CI/CD avec controles securite</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Pipeline DevSecOps</text>
+
+  <rect x="30" y="100" width="100" height="70" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="80" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Code</text>
+  <text x="80" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0f172a">Secrets scan</text>
+
+  <rect x="155" y="100" width="100" height="70" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="205" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Build</text>
+  <text x="205" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0f172a">SAST / deps</text>
+
+  <rect x="280" y="100" width="100" height="70" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="330" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Test</text>
+  <text x="330" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0f172a">DAST / unit</text>
+
+  <rect x="405" y="100" width="100" height="70" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="455" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Image</text>
+  <text x="455" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0f172a">Scan CVE</text>
+
+  <rect x="530" y="100" width="100" height="70" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="580" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Deploy</text>
+  <text x="580" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0f172a">Policy gate</text>
+
+  <rect x="655" y="100" width="110" height="70" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="710" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#dc2626">Run</text>
+  <text x="710" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#0f172a">Runtime / RASP</text>
+
+  <path d="M130 135 H150" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M255 135 H275" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M380 135 H400" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M505 135 H525" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M630 135 H650" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+  <rect x="80" y="230" width="640" height="120" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f172a">Gates securite (fail the build)</text>
+  <text x="400" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Pas de secrets - deps critiques bloquantes - image signee</text>
+  <text x="400" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2563eb">Shift-left + feedback runtime vers le code</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

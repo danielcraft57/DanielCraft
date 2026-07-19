@@ -1,7 +1,7 @@
 ---
-title: "Mesurer l’UX : KPIs, analytics, tests et A/B testing (sans vanity metrics)"
+title: "Mesurer l'expérience : chiffres utiles (pas de vanité)"
 date: 2025-10-02
-excerpt: "Comment mesurer une expérience sans se mentir : métriques utiles, instrumentation minimale, funnels, cohortes, tests qualitatifs et A/B testing."
+excerpt: "KPIs, analytics et A/B testing : une boucle pour apprendre, pas pour se mentir."
 type: article
 tags: [UX, analytics, KPI, A/B testing, produit]
 series: ux-ui-serie
@@ -9,144 +9,84 @@ series_order: 10
 og_image: mesurer-ux-kpis-analytics-ab-testing-1200x630.jpg
 ---
 
-# Mesurer l’UX : KPIs, analytics, tests et A/B testing (sans vanity metrics)
+# Mesurer l'expérience : chiffres utiles (pas de vanité)
 
-Améliorer l’UX sans mesure, c’est possible… jusqu’à un certain point.  
-Sans données, tu ne sais pas si :
+Améliorer l'[UX](/blog/articles/ux-ui-fondamentaux-differences.html) sans mesure, c'est possible - jusqu'à un certain point. Sans données, tu ne sais pas si la friction est réelle ou juste ressentie en interne, si une amélioration marche pour 10 % ou pour 90 %, si tu as déplacé le problème ailleurs. Mais mesurer n'est pas empiler des dashboards. L'objectif, c'est de meilleures décisions.
 
-- la friction est réelle ou juste “ressentie”
-- une amélioration marche pour 10 % ou pour 90 %
-- tu as déplacé le problème ailleurs
+La boucle utile est courte : mesurer, apprendre, itérer. Pas « tout tracker ». Choisir des indicateurs qui reflètent la réussite utilisateur, comprendre pourquoi ça casse, corriger, re-mesurer.
 
-Mais attention : mesurer n’est pas empiler des dashboards. L’objectif est de prendre de meilleures décisions.
+## Les pièges : vanity metrics et fausses certitudes
 
----
+Pages vues sans contexte. Temps passé - parfois signe d'intérêt, parfois signe de friction. « Engagement » flou. Ces chiffres rassurent. Ils orientent mal.
 
-## 1) Les pièges : vanity metrics et fausses certitudes
+La question clé : quelle action représente une réussite utilisateur ? Activation, devis envoyé, paiement confirmé, tâche accomplie sans support. Tout le reste est second. Si tu ne peux pas nommer le succès, tu mesures du bruit.
 
-Vanity metrics typiques :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/ux-kpis-boucle.svg" alt="Schéma de la boucle UX : mesurer, apprendre, itérer" class="schema-inline" width="640" />
+  <figcaption>Mesurer → apprendre → itérer : une boucle courte bat un dashboard que personne ne lit.</figcaption>
+</figure>
 
-- pages vues sans contexte
-- temps passé (parfois signe de friction)
-- “engagement” flou
+Autre piège : conclure trop vite sur un échantillon minuscule, ou confondre corrélation et cause. Un pic de conversion après une release n'est pas forcément dû au bouton bleu. Regarde la saisonnalité, le trafic, les bugs simultanés. L'humilité analytique fait gagner du temps.
 
-Question clé :
+## Les métriques UX qui servent
 
-> “Quelle action représente une réussite utilisateur ?”
+Sur un parcours : taux de complétion, temps pour réussir, drop-off par étape, erreurs (fréquence et type), retours arrière. Si tu peux : tickets support liés au parcours, CSAT ou question ciblée juste après l'action - pas un NPS global qui mélange tout.
 
----
+Ces indicateurs te disent où ça casse. Ils ne te disent pas toujours pourquoi. C'est normal. Le quanti localise. Le quali explique. Tu as besoin des deux pour itérer sans te tromper de problème.
 
-## 2) Les métriques UX vraiment utiles
+## Instrumentation minimale : cinq événements bien choisis
 
-Pour un parcours, mesure :
+Tu n'as pas besoin de 200 events. Pour un funnel simple : `funnel_start`, étapes complétées, `success`, `error` avec un type. Ajoute source (mobile/web), variant si A/B, parfois un bucket de latence si la perf compte.
 
-- **taux de complétion** (conversion)
-- **temps pour réussir** (time-to-success)
-- **drop-off par étape** (où ça casse)
-- **erreurs** (fréquence, type)
-- **retours arrière** (hésitation)
+L'idée : diagnostiquer sans espionner. Moins d'événements, mieux nommés, documentés. Un dictionnaire d'events à jour vaut mieux qu'un lac de données que personne ne comprend. Et respecte le consentement et le minimum utile - mesurer l'UX n'excuse pas de tout collecter.
 
-Et si tu peux :
+## Funnels et cohortes
 
-- **support tickets** liés au parcours
-- **NPS/CSAT ciblé** après l’action (pas global)
+Le funnel montre où les gens sortent. La cohorte montre comment le comportement évolue dans le temps - nouveaux vs anciens, avant/après une release. Souvent l'amélioration n'est pas « +10 % global » mais « +25 % mobile, +5 % desktop ». Sans segmentation, tu rates l'essentiel et tu moyennes des réalités différentes.
 
----
+Regarde aussi les erreurs par étape. Un drop-off peut être un abandon volontaire - ou un mur technique. Les codes d'erreur et les messages affichés t'aident à trancher avant de « redesign » au hasard.
 
-## 3) Instrumentation minimale : 5 événements bien choisis
 
-Tu n’as pas besoin de 200 events.  
-Pour un funnel simple :
 
-- `funnel_start`
-- `step_1_completed`
-- `step_2_completed`
-- `success`
-- `error` (avec code / type)
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/ux-ab-loop.svg" alt="Schema de la boucle A/B testing UX" class="schema-inline" width="640" />
+  <figcaption>A/B utile seulement si l'hypothese et la metrique sont fixees avant.</figcaption>
+</figure>
 
-Ajoute :
+## Quali + quanti : le duo
 
-- `source` (mobile/web)
-- `variant` (si A/B)
-- `latency_bucket` (si perf)
+Chiffres : où. [Tests utilisateurs](/blog/articles/ux-recherche-utilisateur-interviews-tests.html) : pourquoi. Méthode efficace : repérer un drop-off, faire cinq tests ciblés sur cette étape, corriger, re-mesurer. Boucle courte. Moins de débats de salle. Plus de preuves.
 
-L’idée : diagnostiquer sans espionner.
+Les interviews et le support enrichissent aussi. Un verbatim récurrent + un pic d'erreur sur le même champ, c'est une priorité - pas une opinion. Documente le lien « signal quanti → insight quali → correctif » pour que l'équipe voie la boucle, pas seulement le ticket.
 
----
+## A/B testing : utile, pas magique
 
-## 4) Funnels et cohortes : la base de l’analyse
+Utile quand tu as du trafic suffisant, un impact mesurable, peu de variables. Dangereux ou inutile quand le bug UX est évident, ou quand le trafic est trop faible pour conclure autre chose que du hasard.
 
-- **Funnel** : où les gens sortent
-- **Cohorte** : comment le comportement évolue dans le temps (nouveaux vs anciens)
+Avant un A/B, un test utilisateur explique souvent plus vite. L'A/B valide à l'échelle. Il ne remplace pas la compréhension. Et un A/B mal cadré (trop de changements à la fois, métrique de succès floue, arrêt trop tôt) te donne une « victoire » que tu ne sauras pas reproduire.
 
-Souvent, l’amélioration UX n’est pas “+10 % global” mais :
+Garde une métrique primaire, quelques gardes-fous (erreurs, support, perf), une durée minimale. Sinon tu optimises le vanity du test lui-même.
 
-- +25 % sur mobile
-- +5 % sur desktop
+## KPIs propres par type de feature
 
-Sans segmentation, tu rates l’essentiel.
+Onboarding : activation (action clé atteinte), temps pour y arriver, support lié à l'inscription. Formulaire : complétion, erreurs par champ, abandon par étape. Checkout : conversion, erreur de paiement, latence. Choisis deux ou trois métriques max par surface. Au-delà, personne ne priorise.
 
----
+Relie chaque KPI à une décision possible. « Si le drop-off à l'étape 2 dépasse X, on simplifie les champs. » Sinon le KPI reste un ornement de dashboard.
 
-## 5) Quali + quanti : le duo gagnant
+## Revue régulière, pas reporting de prestige
 
-Les chiffres disent **où** ça casse.  
-Les tests utilisateurs disent **pourquoi**.
+Une revue bihebdo de vingt minutes sur un parcours critique bat un reporting mensuel de quarante slides. Regarde le funnel, les top erreurs, deux verbatims support, une décision. Qui corrige quoi avant la prochaine revue. Si personne ne sort avec une action, la mesure n'a servi à rien - tu as juste regardé des graphiques.
 
-Une méthode efficace :
+Évite aussi de changer la définition des KPIs toutes les semaines. Stabilise un mois, observe, puis ajuste. Sinon tu compares des pommes à des oranges et tu appelles ça de l'agilité.
 
-1. repérer un drop-off
-2. faire 5 tests ciblés sur cette étape
-3. corriger
-4. re-mesurer
+## Privacy et confiance
 
----
+Mesurer l'UX n'excuse pas de tout collecter. Minimum utile, consentement respecté, rétention courte, pas de champs personnels dans les events si ce n'est pas nécessaire. Un bon setup analytics inspire autant confiance côté conformité que côté produit. Les équipes qui « trackent tout au cas où » finissent avec un lac illisible - et parfois un risque [RGPD](/blog/articles/conformite-rgpd-nis2-iso27001.html).
 
-## 6) A/B testing : quand c’est utile (et quand ça ne l’est pas)
+Documente ce que tu mesures et pourquoi. Ça aide l'onboarding des nouveaux, les audits, et ça force à couper les events morts.
 
-Un A/B test est utile quand :
+## Mesurer pour décider, pas pour décorer
 
-- tu as du trafic suffisant
-- l’impact attendu est mesurable
-- tu contrôles les variantes (pas 15 variables)
+Mesurer l'UX, ce n'est pas tout tracker. C'est choisir des indicateurs de réussite utilisateur et boucler : observation (quanti), compréhension (quali), amélioration (design/dev), validation (mesure). Si tu fais ça régulièrement, tu progresses - et tu évites les débats sans fin où chacun sort son avis comme une preuve.
 
-Inutile (voire dangereux) quand :
-
-- le problème est un bug UX évident
-- le trafic est faible (tu concluras au hasard)
-
-Avant un A/B, fais souvent un test utilisateur : c’est plus rapide et plus “explicatif”.
-
----
-
-## 7) Exemple de KPIs “propres” par type de feature
-
-### Onboarding
-- activation (action clé atteinte)
-- temps pour activation
-- support lié à l’inscription
-
-### Formulaire
-- taux de complétion
-- erreurs / champ
-- abandon par étape
-
-### Checkout
-- conversion
-- erreur paiement
-- latence
-
----
-
-## Conclusion
-
-Mesurer l’UX, ce n’est pas “tout tracker”.  
-C’est **choisir des indicateurs qui reflètent la réussite utilisateur**, et boucler vite entre :
-
-- observation (quanti)
-- compréhension (quali)
-- amélioration (design/dev)
-- validation (mesure)
-
-Si tu fais ça, tu progresses régulièrement — et tu évites les débats sans fin.
-
+Commence petit : un parcours critique, cinq events, un funnel, une revue bihebdo des drop-offs. Mesurer, apprendre, itérer. Le dashboard peut attendre. La boucle, non.

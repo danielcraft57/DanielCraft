@@ -15,23 +15,16 @@ series_order: 17
 
 Bridge sépare abstraction et implémentation pour éviter l'explosion de classes.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-bridge.svg" alt="Schéma du pattern Bridge" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Bridge — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-bridge-banner.webp" alt="Illustration Bridge" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Bridge (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Bridge sépare abstraction et implémentation pour éviter l'explosion de classes.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-bridge.svg" alt="Schéma du pattern Bridge" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Bridge — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

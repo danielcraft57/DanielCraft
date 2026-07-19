@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Cycle de reponse a incident</title>
+  <desc id="desc">Preparation, detection, containment, eradication, recovery, lessons</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Cycle de reponse a incident (IR)</text>
+
+  <!-- Hex-like cycle with 6 boxes -->
+  <rect x="310" y="60" width="180" height="54" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="92" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#2563eb">1. Preparation</text>
+
+  <rect x="540" y="120" width="180" height="54" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="630" y="152" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">2. Detection</text>
+
+  <rect x="540" y="230" width="180" height="54" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="630" y="262" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#dc2626">3. Containment</text>
+
+  <rect x="310" y="300" width="180" height="54" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">4. Eradication</text>
+
+  <rect x="80" y="230" width="180" height="54" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="170" y="262" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">5. Recovery</text>
+
+  <rect x="80" y="120" width="180" height="54" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="170" y="152" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">6. Lessons learned</text>
+
+  <circle cx="400" cy="200" r="36" fill="#2563eb"/>
+  <text x="400" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">IR</text>
+
+  <path d="M490 87 H540 V145" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M630 174 V225" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M540 257 H490 V300" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M310 327 H260 V257" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M170 230 V178" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M260 147 H310 V114" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+  <text x="400" y="395" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Playbooks - forensics - communication - amelioration continue</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

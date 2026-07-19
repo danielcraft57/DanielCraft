@@ -15,23 +15,16 @@ series_order: 12
 
 Iterator accède aux éléments d'une collection sans exposer sa structure.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-iterator.svg" alt="Schéma du pattern Iterator" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Iterator — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-iterator-banner.webp" alt="Illustration Iterator" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Iterator (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Iterator accède aux éléments d'une collection sans exposer sa structure.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-iterator.svg" alt="Schéma du pattern Iterator" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Iterator — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

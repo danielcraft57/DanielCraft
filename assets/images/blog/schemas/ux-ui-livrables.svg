@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Livrables UX et UI</title>
+  <desc id="desc">Recherche, flows, wireframes vs maquettes et design system</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Livrables UX et UI</text>
+  <rect x="40" y="70" width="340" height="280" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#2563eb">UX</text>
+  <rect x="420" y="70" width="340" height="280" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="590" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#dc2626">UI</text>
+  <rect x="70" y="130" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="151" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Interviews</text>
+  <rect x="70" y="170" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="191" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Parcours / JTBD</text>
+  <rect x="70" y="210" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="231" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Wireframes</text>
+  <rect x="70" y="250" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="271" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Tests utilisateurs</text>
+  <rect x="450" y="130" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="151" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Maquettes HI-FI</text>
+  <rect x="450" y="170" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="191" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Composants</text>
+  <rect x="450" y="210" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="231" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Tokens / DS</text>
+  <rect x="450" y="250" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="271" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Specs visuelles</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Deux jobs, des livrables qui se branchent</text>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

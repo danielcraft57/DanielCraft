@@ -15,23 +15,16 @@ series_order: 10
 
 Template Method fixe le squelette d'un algorithme ; les sous-classes surchargent des étapes.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-template-method.svg" alt="Schéma du pattern Template Method" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Template Method — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-template-method-banner.webp" alt="Illustration Template Method" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Template Method (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Template Method fixe le squelette d'un algorithme ; les sous-classes surchargent des étapes.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-template-method.svg" alt="Schéma du pattern Template Method" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Template Method — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

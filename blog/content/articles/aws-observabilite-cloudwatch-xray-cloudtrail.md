@@ -1,7 +1,7 @@
 ---
-title: "Observabilité AWS : CloudWatch, X-Ray, CloudTrail – voir ce qui se passe vraiment"
+title: "AWS : voir ce qui se passe (et ce qui casse)"
 date: 2025-05-27
-excerpt: "Mettre en place logs, métriques, traces et audit sur AWS avec CloudWatch, X-Ray et CloudTrail pour diagnostiquer les problèmes et piloter ton architecture."
+excerpt: "Mesures, journaux, traces et audit : les quatre piliers pour ne pas voler à l'aveugle."
 type: article
 tags: [AWS, observabilité, CloudWatch, CloudTrail, X-Ray, monitoring]
 series: aws-serie
@@ -9,7 +9,7 @@ series_order: 7
 og_image: aws-observabilite-cloudwatch-xray-cloudtrail-1200x630.jpg
 ---
 
-# Observabilité AWS : CloudWatch, X-Ray, CloudTrail – voir ce qui se passe vraiment
+# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : voir ce qui se passe (et ce qui casse)
 
 Sans observabilité, une architecture cloud est un **boîte noire**.
 AWS propose plusieurs briques :
@@ -26,9 +26,16 @@ AWS propose plusieurs briques :
 
 CloudWatch collecte des métriques natives :
 
-- CPU, RAM, réseau des instances EC2 ;
-- métriques RDS (connexions, IOPS, latence) ;
+- CPU, RAM, réseau des instances [EC2](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html) ;
+- métriques [RDS](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html) (connexions, IOPS, latence) ;
 - métriques ELB/ALB (latence, erreurs 4xx/5xx).
+
+
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-observabilite.svg" alt="Schema observabilite AWS CloudWatch X-Ray CloudTrail" class="schema-inline" width="640" />
+  <figcaption>Metrics, logs, traces, audit : les quatre piliers a brancher tot.</figcaption>
+</figure>
 
 Tu peux aussi :
 
@@ -82,7 +89,7 @@ Usage recommandé :
 
 - qui a créé/supprimé telle ressource ;
 - quelle IP a modifié tel Security Group ;
-- quel rôle a utilisé telle clé KMS.
+- quel rôle a utilisé telle clé [KMS](/blog/articles/aws-securite-iam-kms-waf.html).
 
 Indispensable pour :
 
@@ -93,7 +100,7 @@ Indispensable pour :
 Bonnes pratiques :
 
 - activer CloudTrail au niveau de l’organisation ;
-- envoyer les logs dans un bucket S3 dédié, éventuellement chiffré ;
+- envoyer les logs dans un bucket [S3](/blog/articles/aws-stockage-s3-ebs-efs.html) dédié, éventuellement chiffré ;
 - limiter les accès à ce bucket.
 
 ---

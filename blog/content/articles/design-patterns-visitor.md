@@ -15,23 +15,16 @@ series_order: 23
 
 Visitor ajoute des opérations sur une hiérarchie sans la modifier.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-visitor.svg" alt="Schéma du pattern Visitor" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Visitor — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-visitor-banner.webp" alt="Illustration Visitor" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Visitor (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Visitor ajoute des opérations sur une hiérarchie sans la modifier.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-visitor.svg" alt="Schéma du pattern Visitor" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Visitor — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

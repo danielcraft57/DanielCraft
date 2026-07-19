@@ -15,23 +15,16 @@ series_order: 19
 
 Flyweight partage l'état intrinsèque (texture) ; l'extrinsèque (position) est à part.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-flyweight.svg" alt="Schéma du pattern Flyweight" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Flyweight — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-flyweight-banner.webp" alt="Illustration Flyweight" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Flyweight (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Flyweight partage l'état intrinsèque (texture) ; l'extrinsèque (position) est à part.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-flyweight.svg" alt="Schéma du pattern Flyweight" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Flyweight — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

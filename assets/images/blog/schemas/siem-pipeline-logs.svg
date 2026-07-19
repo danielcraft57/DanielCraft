@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Pipeline SIEM logs</title>
+  <desc id="desc">Sources, ingestion, normalisation, correlation, alertes</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Pipeline SIEM : des logs aux alertes</text>
+
+  <!-- Sources -->
+  <rect x="30" y="80" width="120" height="40" rx="6" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="90" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Firewalls</text>
+  <rect x="30" y="135" width="120" height="40" rx="6" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="90" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Endpoints</text>
+  <rect x="30" y="190" width="120" height="40" rx="6" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="90" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Cloud / IdP</text>
+  <rect x="30" y="245" width="120" height="40" rx="6" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="90" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Apps / API</text>
+  <text x="90" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Sources</text>
+
+  <!-- Pipeline stages -->
+  <rect x="200" y="140" width="110" height="90" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="255" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Ingestion</text>
+  <text x="255" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Agents / API</text>
+  <text x="255" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Collectors</text>
+
+  <rect x="350" y="140" width="110" height="90" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="405" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Normaliser</text>
+  <text x="405" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Parse / enrich</text>
+  <text x="405" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Schema commun</text>
+
+  <rect x="500" y="140" width="110" height="90" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="555" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2563eb">Correler</text>
+  <text x="555" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Regles / UEBA</text>
+  <text x="555" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Use cases</text>
+
+  <rect x="650" y="140" width="120" height="90" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="710" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#dc2626">Alertes</text>
+  <text x="710" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Tickets SOC</text>
+  <text x="710" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">Playbooks</text>
+
+  <!-- Arrows -->
+  <path d="M150 185 H195" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M310 185 H345" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M460 185 H495" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M610 185 H645" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+  <rect x="200" y="320" width="400" height="50" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="400" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Retention, recherche, dashboards, compliance evidence</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,7 +1,7 @@
 ---
-title: "Docker Compose : un environnement complet en une commande"
+title: "Docker Compose : plusieurs boîtes qui travaillent ensemble"
 date: 2024-11-14
-excerpt: "Assembler plusieurs services Docker (API, base, front, worker) dans un fichier docker-compose pour lancer un environnement complet de dev en une seule commande."
+excerpt: "Un fichier pour lancer site, base et cache comme une petite équipe locale."
 type: article
 tags: [Docker, docker-compose, environnement, dev]
 series: docker-serie
@@ -9,40 +9,41 @@ series_order: 4
 og_image: docker-compose-1200x630.jpg
 ---
 
-# Docker Compose : un environnement complet en une commande
+# [Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html) Compose : plusieurs boîtes qui travaillent ensemble
 
-Une fois que tu maîtrises les conteneurs seuls, tu veux vite **enchaîner plusieurs services** :
+Tu sais lancer un conteneur. Bien. Maintenant tu veux plusieurs boites ensemble : base, API, front, worker... Lancer tout ca a la main avec `docker run`, c'est comme preparer un repas en ouvrant chaque tiroir un par un.
 
-- base de données,
-- API,
-- front,
-- worker de fond,
-- parfois un outil type pgAdmin, RedisInsight, etc.
+**Docker Compose**, c'est la recette complete. Un fichier. Une commande. Tout demarre.
 
-Lancer tout ça à la main avec `docker run`, c'est pénible. C'est là que **docker-compose** devient ton meilleur ami.
+Si les [volumes et reseaux](/blog/articles/docker-volumes-reseaux.html) te sont encore flous, lis-les d'abord. Compose s'appuie dessus.
 
 ---
 
 ## Le principe
 
-Tu décris ton environnement dans un fichier `docker-compose.yml` :
+Tu decries ton garage dans `docker-compose.yml` :
 
-- services (nom, image, ports, volumes, variables d'env),
-- réseaux,
+- services (nom, image, ports, volumes, variables),
+- reseaux,
 - volumes.
 
-Puis tu fais simplement :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/docker-compose-stack.svg" alt="Schema d'une stack Docker Compose" class="schema-inline" width="640" />
+  <figcaption>Compose aligne services, reseaux et volumes sur un seul fichier.</figcaption>
+</figure>
+
+Puis :
 
 ```bash
 docker compose up
 docker compose down
 ```
 
+`up` = allume tout. `down` = eteint les conteneurs (les volumes nommes restent, sauf si tu ajoutes `-v`).
+
 ---
 
 ## Exemple : API + Postgres
-
-Un exemple minimal mais déjà utile :
 
 ```yaml
 version: "3.9"
@@ -76,49 +77,53 @@ networks:
   app-net:
 ```
 
-Avec ça :
+Avec ca :
 
-- `db` et `api` partagent le réseau `app-net`,
-- la base garde ses données dans `db-data`,
-- l'API est accessible sur `http://localhost:8080`.
+- `db` et `api` partagent le reseau `app-net`,
+- la base garde ses donnees dans `db-data`,
+- l'API est sur `http://localhost:8080`.
+
+Le nom du service (`db`) sert d'adresse. Comme un prenom dans la piece.
 
 ---
 
 ## Commandes de base
 
 ```bash
-# Lancer en mode attaché
+# Mode attache (tu vois les logs)
 docker compose up
 
-# Lancer en arrière-plan
+# Arriere-plan
 docker compose up -d
 
-# Voir les logs
+# Logs en direct
 docker compose logs -f
 
-# Stopper et supprimer les conteneurs (mais pas les volumes)
+# Stopper (garde les volumes)
 docker compose down
 
-# Tout supprimer (conteneurs + volumes nommés)
+# Tout supprimer (conteneurs + volumes)
 docker compose down -v
 ```
 
+`down -v`, c'est le grand menage. Sur une base de prod, reflechis deux fois.
+
 ---
 
-## Gérer plusieurs fichiers de compose
+## Plusieurs fichiers Compose
 
 Tu peux avoir :
 
-- un `docker-compose.yml` générique,
-- un `docker-compose.override.yml` pour le dev (montage de code, outils en plus).
+- un `docker-compose.yml` de base,
+- un `docker-compose.override.yml` pour le **dev** (montage du code, outils en plus).
 
-Docker compose fusionne les deux par défaut.
+Compose fusionne les deux par defaut.
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.override.yml up
 ```
 
-Exemple de `docker-compose.override.yml` :
+Exemple d'override :
 
 ```yaml
 services:
@@ -141,23 +146,19 @@ services:
       - app-net
 ```
 
----
-
-## Bonnes pratiques avec docker-compose
-
-- N'utilise pas `latest` partout : garde des tags d'images explicites.
-- Regroupe les variables communes dans un `.env` que compose peut charger.
-- Versionne les fichiers compose dans le repo → tout le monde a le même environnement.
-- Pour la prod, compose peut être une étape, mais **Kubernetes** ou un autre orchestrateur prendra souvent le relais.
+En prod, tu n'ajoutes pas pgAdmin. En local, c'est pratique.
 
 ---
 
-## Transition vers Kubernetes
+## Bons reflexes
 
-Le gros avantage de bien structurer tes fichiers docker-compose, c'est que :
+- Pas de `latest` partout. Tags clairs.
+- Variables communes dans un `.env` que Compose charge.
+- Versionne les fichiers compose dans le repo. Toute l'equipe a le **meme** environnement.
+- Pour la vraie prod, Compose peut rester une etape. Un orchestrateur plus gros (Kubernetes...) prendra souvent le relais. Avant ca, [optimise tes images](/blog/articles/docker-build-optimisation-images.html) et [prepare registry + secu](/blog/articles/docker-production-registry-securite.html).
 
-- les **services** correspondent assez naturellement aux **Deployments**,
-- les **networks** à des **Services** ou simplement au réseau du cluster,
-- les **volumes** à des **PersistentVolumeClaims**.
+---
 
-Dans la série Kubernetes, on repartira de ce type de stack pour la migrer proprement vers un cluster.
+## En resume
+
+Compose, c'est la **liste de courses** de ton environnement. Tu ecris une fois. Tu lances souvent. Moins d'erreurs, moins de "chez moi ca marche".

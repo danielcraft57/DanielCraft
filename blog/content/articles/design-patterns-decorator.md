@@ -15,23 +15,16 @@ series_order: 6
 
 Decorator ajoute des responsabilités à un objet par composition, sans modifier sa classe.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-decorator.svg" alt="Schéma du pattern Decorator" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Decorator — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-decorator-banner.webp" alt="Illustration Decorator" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Decorator (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Decorator ajoute des responsabilités à un objet par composition, sans modifier sa classe.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-decorator.svg" alt="Schéma du pattern Decorator" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Decorator — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

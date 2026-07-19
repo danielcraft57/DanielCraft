@@ -1,7 +1,7 @@
 ---
-title: "Comment choisir entre REST et GraphQL (ou mixer les deux)"
+title: "REST ou GraphQL : comment choisir (ou combiner)"
 date: 2025-07-15
-excerpt: "Une grille de décision pragmatique pour savoir quand REST suffit, quand GraphQL apporte un vrai plus, et comment les combiner sans créer une usine à gaz."
+excerpt: "Une grille simple selon ton contexte — et comment mixer les deux sans se perdre."
 type: article
 tags: [API, REST, GraphQL, architecture, décision]
 series: api-rest-graphql-serie
@@ -9,117 +9,68 @@ series_order: 5
 og_image: choisir-rest-graphql-quand-et-comment-1200x630.jpg
 ---
 
-# Comment choisir entre REST et GraphQL (ou mixer les deux)
+# REST ou GraphQL : comment choisir (ou combiner)
 
-Après avoir posé les bases de REST et de GraphQL, et regardé leurs impacts sur les perfs, il reste la question qui compte vraiment :  
-**que dois‑tu utiliser pour ton prochain projet, et comment éviter les regrets dans 2 ans ?**
+On a vu les bases, le design, les perfs. Il reste la question qui te reveille a 3h avant un kick-off : qu'est-ce que je choisis pour **ce** projet ? Et est-ce que je vais le regretter dans deux ans ?
 
----
+Spoiler : ce n'est pas une guerre de religion. C'est un choix de **friction** - entre ton metier, tes clients, ton equipe et ton infra.
 
-## 1. Quelques questions clés à te poser
+Relis vite le [decor](/blog/articles/api-rest-graphql-fondamentaux-comparaison.html), le [design REST](/blog/articles/api-rest-bonnes-pratiques-conception.html), [GraphQL](/blog/articles/graphql-fondamentaux-schema-queries.html) et les [perfs](/blog/articles/api-rest-graphql-performances-benchmarks.html) si besoin.
 
-Avant de parler outils, pose le contexte :
+## Pose le contexte avant l'outil
 
-- **Taille et maturité de l’équipe** : 2 devs full‑stack n’ont pas les mêmes besoins qu’une équipe avec plusieurs squads front/back.
-- **Type de clients** : front web riche, applications mobiles, intégrations B2B, partenaires externes, etc.
-- **Stabilité du domaine métier** : modèle encore mouvant ou déjà bien stabilisé.
-- **Contraintes non fonctionnelles** : SLA, coûts, conformité, exposition publique ou non.
+Deux devs full-stack qui sortent un MVP, ce n'est pas la meme histoire qu'une boite avec trois squads front et un paysage de microservices.
 
-Ces éléments influencent directement la pertinence d’introduire (ou non) GraphQL.
+Le type de **clients** compte : SPA riche, apps mobiles, partenaires B2B qui veulent du REST documente OpenAPI, API publique consommee par des inconnus. La stabilite du domaine aussi : si ton modele bouge tous les sprints, un schema GraphQL trop figé trop tot peut faire mal - ou au contraire t'aider si tu ajoutes des champs sans casser.
 
----
+Et les contraintes non fonctionnelles : SLA, couts, conformite, exposition publique ou non.
 
-## 2. Quand REST est un no‑brainer
+Si tu sautes cette etape et que tu choisis "parce que c'est moderne", tu as deja perdu. Le kick-off le plus productif, c'est celui ou quelqu'un demande : "qui consomme quoi, et a quelle frequence ca change ?" **avant** de parler techno.
 
-REST est souvent le meilleur choix lorsque :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/choisir-rest-graphql.svg" alt="Schéma de décision REST vs GraphQL" class="schema-inline" width="640" />
+  <figcaption>REST, GraphQL ou mix : le contexte décide, pas la hype.</figcaption>
+</figure>
 
-- Tu exposes une **API simple** (CRUD, ressources bien identifiées).
-- Tu adresses des **intégrations B2B** ou des partenaires externes qui s’attendent à du REST.
-- Tu as une **petite équipe** qui ne veut pas investir tout de suite dans du tooling GraphQL.
-- Le **frontend n’a pas des besoins de composition de données très complexes**.
+## Quand REST est un no-brainer
 
-En pratique, beaucoup de projets peuvent vivre très longtemps avec :
+**REST** gagne souvent quand tu exposes des ressources claires, un CRUD propre, des integrations partenaires qui s'attendent a du HTTP classique. Petite equipe. Peu d'envie d'investir tout de suite dans le tooling GraphQL. Frontend qui n'a pas besoin de [compose](/blog/articles/[docker](/blog/articles/docker-fondamentaux-images-conteneurs.html)-compose-environnements-local.html)r dix sources pour peindre un ecran.
 
-- Une **API REST bien conçue**.
-- Une bonne doc (OpenAPI), des exemples, un contrat d’erreurs propre.
-- Un minimum de **gouvernance de versioning** (breaking changes maîtrisées).
+Dans ce monde-la, une API REST bien concue, une doc OpenAPI correcte, un contrat d'erreurs stable, un versioning calme - tu peux vivre longtemps et bien.
 
----
+Les gens sous-estiment a quel point "REST bien fait" suffit. Ils comparent GraphQL a du REST pourri. Mauvaise comparaison. Compare GraphQL a un REST coherent, et tu verras que beaucoup de projets n'ont simplement **pas** le probleme que GraphQL resout. Inutile de soigner une maladie que tu n'as pas.
 
-## 3. Quand GraphQL fait vraiment la différence
+## Quand GraphQL change vraiment la donne
 
-GraphQL devient intéressant quand :
+La ou **GraphQL** brille : plusieurs clients (web, iOS, Android) qui ne veulent pas les memes tranches de donnees. Ecrans tres composites, widgets, agregats. Equipes front qui ont besoin d'autonomie sur la forme des reponses sans ouvrir un ticket backend pour chaque champ. Ou un **BFF** qui cache un labyrinthe de microservices REST deja en place.
 
-- Tu as plusieurs **clients front** (web, mobile, partenaires) qui consomment des vues très différentes des mêmes données.
-- Tes écrans sont **très composites** (beaucoup de sections, widgets, agrégats).
-- Tes équipes front ont besoin de **gagner en autonomie** sur la forme des données.
-- Tu veux bâtir un **BFF** pour cacher la complexité d’un paysage de microservices REST existants.
+Dans ces cas, tu reduis la proliferation d'endpoints "ecran". Le schema devient le lieu de collaboration. Attention : ca marche si le back est pret a tenir le schema, a limiter les queries couteuses, a observer les resolveurs. Sinon tu as juste deplace la dette - et parfois empire, parce que maintenant tout le monde peut inventer une query monstrueuse.
 
-Dans ces cas‑là :
+## Le mix : REST en interne, GraphQL en facade
 
-- GraphQL réduit le nombre de endpoints « spécialisés écran ».
-- Le schéma devient un **contrat unique** autour duquel front et back collaborent.
+Strategie tres repandue, et souvent la plus sage. Tu gardes tes services internes en REST (voire gRPC). Tu ajoutes une couche GraphQL orientee experience pour les fronts. Tu n'as pas jete l'existant. Tu introduis GraphQL progressivement sur les parcours qui souffrent vraiment - dashboard, profil riche - et tu laisses REST pour le reste.
 
----
+Le risque : transformer le serveur GraphQL en monolithe de glue code sans **gouvernance**. Qui change le schema ? Qui review ? Qui possede quel domaine ? Sans reponses, le mix devient une usine a gaz avec deux styles au lieu d'un.
 
-## 4. Stratégie mixte : REST interne, GraphQL en façade
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/rest-graphql-mix.svg" alt="Schema d'architecture mixte REST interne et GraphQL facade" class="schema-inline" width="640" />
+  <figcaption>Le mix gagnant : REST en interne, GraphQL en facade quand les ecrans le demandent.</figcaption>
+</figure>
 
-Une approche très répandue :
+## Transition dans les deux sens
 
-- Conserver les **microservices internes en REST** (voire gRPC).
-- Ajouter une **couche GraphQL au dessus** qui :
-  - Agrège les données pour les frontends.
-  - Expose un **schéma orienté expérience utilisateur**, pas orienté backend.
+Tu as deja du REST en prod ? Cartographie les endpoints vraiment utilises. Identifie les ecrans qui souffrent (trop d'appels, trop de complexite, trop de temps de dev). Introduis GraphQL sur un perimetre limite. Garde REST ailleurs. Pas de big bang. Un **pilote** sur un parcours douloureux vaut mieux qu'une migration "tout GraphQL d'ici la fin du trimestre".
 
-Avantages :
+Tu as commence par GraphQL et tu regrettes pour certains usages ? Tu peux geler le schema, exposer des endpoints REST pour des partenaires ou des integrations simples, et vivre avec les deux. Tu n'es pas marie a vie a un seul style. Les architectures qui durent acceptent souvent ce genre de pragmatisme.
 
-- Tu ne jettes pas l’existant.
-- Tu peux **introduire GraphQL progressivement** sur certains parcours uniquement.
+## Grille rapide (sans slide PowerPoint)
 
-Points de vigilance :
+Front simple, peu de composition → **REST**. Integrations B2B ou API publique → REST, eventuellement avec quelques agregats. Front riche SPA/mobile avec beaucoup d'ecrans composites → GraphQL ou BFF GraphQL. Microservices REST deja la → REST interne + GraphQL d'agregation. Equipe reduite, peu de temps pour le tooling → REST d'abord, GraphQL plus tard si un vrai besoin apparait.
 
-- Bien gérer la **gouvernance du schéma** (qui change quoi, comment, review).
-- Ne pas transformer le serveur GraphQL en **gros monolithe de glue code** ingérable.
+Ce n'est pas une formule magique. C'est un **filtre** pour eviter de discuter deux heures autour d'une preference personnelle. Si apres ce filtre tu hesites encore, commence simple (REST), mesure la douleur, et ajoute GraphQL la ou les tickets "endpoint pour cet ecran" s'accumulent.
 
----
+## Fin de serie, pas fin de debat
 
-## 5. Transition progressive : de REST vers GraphQL (ou inversement)
+REST reste un excellent standard pour les ressources, l'integration, la simplicite operationnelle. GraphQL brille quand tu as besoin de flexibilite cote client et de composition complexe. Le bon choix, c'est celui qui reduit la friction - pas celui qui gagne sur Twitter.
 
-Si tu as déjà une API REST en prod :
-
-- Commence par **cartographier** les endpoints réellement utilisés par les frontends.
-- Identifie les **écrans qui souffrent le plus** (nombre de requêtes, complexité, temps de dev).
-- Introduis GraphQL :
-  - Pour **un ensemble limité de parcours** (ex. dashboard, profil utilisateur).
-  - En gardant REST pour le reste.
-
-Si au contraire tu as commencé par GraphQL et que tu regrettes :
-
-- Rien n’empêche de :
-  - Geler le schéma actuel.
-  - Introduire progressivement des **endpoints REST spécialisés** pour certains usages ou partenaires.
-
-L’idée clé : **tu n’es pas marié à vie** avec un seul style.
-
----
-
-## 6. Grille de décision rapide
-
-- **Front simple, peu de composition de données** → **REST**.
-- **Intégrations B2B, API publique** → **REST**, éventuellement avec quelques endpoints agrégés.
-- **Front riche (SPA/mobile) avec beaucoup d’écrans composites** → **GraphQL ou BFF GraphQL**.
-- **Paysage microservices REST déjà en place** → **REST interne + couche GraphQL d’agrégation**.
-- **Équipe réduite, peu de temps pour le tooling** → REST, puis GraphQL plus tard si un vrai besoin apparaît.
-
----
-
-## 7. Message de fin : pas de guerre de religion
-
-REST et GraphQL sont des **outils complémentaires** :
-
-- REST reste un **excellent standard** pour les ressources, l’intégration et la simplicité opérationnelle.
-- GraphQL brille quand tu as besoin de **flexibilité côté client** et de composition de données complexes.
-
-Le bon choix n’est pas celui qui est le plus « hype », mais celui qui **réduit la friction** entre ton domaine métier, tes équipes, tes utilisateurs et ton infra.  
-Si cette série t’a aidé à clarifier ce choix, tu peux maintenant concevoir tes APIs avec un peu plus de sérénité.
-
+Si cette serie t'a aide a poser le decor, a soigner le design, a regarder les perfs sans dogme, et a choisir (ou mixer) sans panique, tu as deja gagne plus que la plupart des kick-off ou quelqu'un dit "on fait du GraphQL" avant d'avoir pose le besoin.

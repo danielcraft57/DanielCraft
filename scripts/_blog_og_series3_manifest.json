@@ -1,0 +1,177 @@
+[
+  {
+    "slug": "api-rest-graphql-fondamentaux-comparaison",
+    "title": "APIs web : REST vs GraphQL, poser le décor",
+    "series": "api-rest-graphql-serie",
+    "og": "api-rest-graphql-fondamentaux-comparaison-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, API REST, GraphQL, endpoints, documentation, schemas. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"APIs web : REST vs GraphQL, poser le décor\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "api-rest-bonnes-pratiques-conception",
+    "title": "APIs REST : principes, bonnes pratiques et limites",
+    "series": "api-rest-graphql-serie",
+    "og": "api-rest-bonnes-pratiques-conception-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, API REST, GraphQL, endpoints, documentation, schemas. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"APIs REST : principes, bonnes pratiques et limit\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "graphql-fondamentaux-schema-queries",
+    "title": "GraphQL : schéma, requêtes et bonnes pratiques",
+    "series": "api-rest-graphql-serie",
+    "og": "graphql-fondamentaux-schema-queries-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, API REST, GraphQL, endpoints, documentation, schemas. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"GraphQL : schéma, requêtes et bonnes pratiques\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "api-rest-graphql-performances-benchmarks",
+    "title": "REST vs GraphQL : performances, coûts et benchmarks",
+    "series": "api-rest-graphql-serie",
+    "og": "api-rest-graphql-performances-benchmarks-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, API REST, GraphQL, endpoints, documentation, schemas. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"REST vs GraphQL : performances, coûts et benchma\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "choisir-rest-graphql-quand-et-comment",
+    "title": "Comment choisir entre REST et GraphQL (ou mixer les deux)",
+    "series": "api-rest-graphql-serie",
+    "og": "choisir-rest-graphql-quand-et-comment-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, API REST, GraphQL, endpoints, documentation, schemas. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Comment choisir entre REST et GraphQL (ou mixer \" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "cybersecurite-fondamentaux-menaces-risques",
+    "title": "Cybersécurité : menaces, risques et posture (les bases)",
+    "series": "cybersecurite-secops-serie",
+    "og": "cybersecurite-fondamentaux-menaces-risques-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Cybersécurité : menaces, risques et posture (les\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "secops-soc-fonctions-process",
+    "title": "SecOps & SOC : rôles, processus et fonctionnement",
+    "series": "cybersecurite-secops-serie",
+    "og": "secops-soc-fonctions-process-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"SecOps & SOC : rôles, processus et fonctionnemen\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "siem-log-management-detection",
+    "title": "SIEM : logs, corrélation et détection (sans se noyer)",
+    "series": "cybersecurite-secops-serie",
+    "og": "siem-log-management-detection-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"SIEM : logs, corrélation et détection (sans se n\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "edr-xdr-endpoint-detection-response",
+    "title": "EDR / XDR : détection et réponse sur les endpoints",
+    "series": "cybersecurite-secops-serie",
+    "og": "edr-xdr-endpoint-detection-response-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"EDR / XDR : détection et réponse sur les endpoin\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "gestion-vulnerabilites-cve-patching",
+    "title": "Gestion des vulnérabilités : CVE, scanning et patching efficace",
+    "series": "cybersecurite-secops-serie",
+    "og": "gestion-vulnerabilites-cve-patching-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Gestion des vulnérabilités : CVE, scanning et pa\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "iam-mfa-principes-zero-trust",
+    "title": "IAM, MFA et Zero Trust : contrôler les accès sans freiner",
+    "series": "cybersecurite-secops-serie",
+    "og": "iam-mfa-principes-zero-trust-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"IAM, MFA et Zero Trust : contrôler les accès san\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "incident-response-runbook-postmortem",
+    "title": "Incident Response : runbooks, containment et post‑mortem",
+    "series": "cybersecurite-secops-serie",
+    "og": "incident-response-runbook-postmortem-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Incident Response : runbooks, containment et pos\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "securite-cloud-cspm-cwpp",
+    "title": "Sécurité cloud : CSPM, CWPP et erreurs de configuration",
+    "series": "cybersecurite-secops-serie",
+    "og": "securite-cloud-cspm-cwpp-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Sécurité cloud : CSPM, CWPP et erreurs de config\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "devsecops-sast-dast-sbom",
+    "title": "DevSecOps : SAST, DAST, SBOM et sécurité dans la CI/CD",
+    "series": "cybersecurite-secops-serie",
+    "og": "devsecops-sast-dast-sbom-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"DevSecOps : SAST, DAST, SBOM et sécurité dans la\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "conformite-rgpd-nis2-iso27001",
+    "title": "Conformité sécurité : RGPD, NIS2, ISO 27001 (pragmatique)",
+    "series": "cybersecurite-secops-serie",
+    "og": "conformite-rgpd-nis2-iso27001-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, SOC, logs, menaces, pare-feu, securite applicative. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Conformité sécurité : RGPD, NIS2, ISO 27001 (pra\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "ux-ui-fondamentaux-differences",
+    "title": "UX vs UI : différences, rôles et comment les faire marcher ensemble",
+    "series": "ux-ui-serie",
+    "og": "ux-ui-fondamentaux-differences-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"UX vs UI : différences, rôles et comment les fai\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "ergonomie-heuristiques-nielsen",
+    "title": "Ergonomie : les heuristiques de Nielsen (avec exemples concrets)",
+    "series": "ux-ui-serie",
+    "og": "ergonomie-heuristiques-nielsen-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Ergonomie : les heuristiques de Nielsen (avec ex\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "wireframes-prototypage-fidelite",
+    "title": "Wireframes & prototypage : choisir le bon niveau de fidélité",
+    "series": "ux-ui-serie",
+    "og": "wireframes-prototypage-fidelite-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Wireframes & prototypage : choisir le bon niveau\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "ux-recherche-utilisateur-interviews-tests",
+    "title": "Recherche utilisateur : interviews, tests et insights actionnables",
+    "series": "ux-ui-serie",
+    "og": "ux-recherche-utilisateur-interviews-tests-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Recherche utilisateur : interviews, tests et ins\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "parcours-utilisateur-mapping-jtbd",
+    "title": "Parcours utilisateur : user flows, journey map et JTBD",
+    "series": "ux-ui-serie",
+    "og": "parcours-utilisateur-mapping-jtbd-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Parcours utilisateur : user flows, journey map e\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "design-system-composants-tokens",
+    "title": "Design system : composants, tokens et cohérence à l’échelle",
+    "series": "ux-ui-serie",
+    "og": "design-system-composants-tokens-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Design system : composants, tokens et cohérence \" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "accessibilite-wcag-checklist",
+    "title": "Accessibilité : checklist WCAG simple (et vraiment utile)",
+    "series": "ux-ui-serie",
+    "og": "accessibilite-wcag-checklist-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Accessibilité : checklist WCAG simple (et vraime\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "ui-typographie-couleurs-grille",
+    "title": "UI Design : typographie, couleurs et grille pour une hiérarchie claire",
+    "series": "ux-ui-serie",
+    "og": "ui-typographie-couleurs-grille-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"UI Design : typographie, couleurs et grille pour\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "micro-interactions-feedback-etats",
+    "title": "Micro‑interactions : feedback, états et confiance utilisateur",
+    "series": "ux-ui-serie",
+    "og": "micro-interactions-feedback-etats-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Micro‑interactions : feedback, états et confianc\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  },
+  {
+    "slug": "mesurer-ux-kpis-analytics-ab-testing",
+    "title": "Mesurer l’UX : KPIs, analytics, tests et A/B testing (sans vanity metrics)",
+    "series": "ux-ui-serie",
+    "og": "mesurer-ux-kpis-analytics-ab-testing-1200x630.jpg",
+    "prompt": "Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais \"Mesurer l’UX : KPIs, analytics, tests et A/B tes\" et marque \"DanielCraft\". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP."
+  }
+]

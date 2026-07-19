@@ -1,7 +1,7 @@
 ---
-title: "Optimisation des coûts AWS : Reserved, Savings Plans, Spot et bonnes pratiques"
+title: "AWS : payer moins sans casser le service"
 date: 2025-06-03
-excerpt: "Réduire la facture AWS sans casser la prod : comprendre Reserved Instances, Savings Plans, instances Spot et mettre en place une gouvernance coûts efficace."
+excerpt: "On-demand, Savings Plans, Spot : les leviers après avoir mesuré la facture."
 type: article
 tags: [AWS, coûts, optimisation, Reserved Instances, Savings Plans, Spot]
 series: aws-serie
@@ -9,7 +9,7 @@ series_order: 9
 og_image: aws-optimisation-couts-reserved-savings-spot-1200x630.jpg
 ---
 
-# Optimisation des coûts AWS : Reserved, Savings Plans, Spot et bonnes pratiques
+# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : payer moins sans casser le service
 
 La flexibilité d’AWS a un prix : sans gouvernance, la facture peut exploser.
 L’objectif de cet article : donner une **boîte à outils concrète** pour garder le contrôle.
@@ -20,11 +20,11 @@ L’objectif de cet article : donner une **boîte à outils concrète** pour gar
 
 Postes principaux :
 
-- compute (EC2, Fargate, Lambda) ;
-- bases de données (RDS, DynamoDB, Aurora) ;
-- stockage (S3, EBS, EFS) ;
+- compute ([EC2](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html), Fargate, Lambda) ;
+- bases de données ([RDS](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html), DynamoDB, Aurora) ;
+- stockage ([S3](/blog/articles/aws-stockage-s3-ebs-efs.html), EBS, EFS) ;
 - réseau (sortie Internet, inter‑AZ, inter‑région) ;
-- services managés (CloudFront, API Gateway, etc.).
+- services managés ([CloudFront](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html), API Gateway, etc.).
 
 Première étape : **savoir où part l’argent** via Cost Explorer et les rapports de coûts (CUR).
 
@@ -45,6 +45,13 @@ Première étape : **savoir où part l’argent** via Cost Explorer et les rappo
 - Deux grandes familles :
   - Compute Savings Plans (plus flexibles) ;
   - EC2 Instance Savings Plans (plus ciblés).
+
+
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-cost-levers.svg" alt="Schema leviers d'optimisation des couts AWS" class="schema-inline" width="640" />
+  <figcaption>Baseline en Savings/Reserved, batch en Spot — apres avoir mesure.</figcaption>
+</figure>
 
 Stratégie classique :
 

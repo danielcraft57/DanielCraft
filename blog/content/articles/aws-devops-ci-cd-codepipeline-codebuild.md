@@ -1,7 +1,7 @@
 ---
-title: "DevOps sur AWS : CI/CD avec CodeCommit, CodeBuild, CodeDeploy et CodePipeline"
+title: "AWS : publier du code automatiquement"
 date: 2025-06-05
-excerpt: "Mettre en place une chaîne CI/CD complète sur AWS avec CodeCommit, CodeBuild, CodeDeploy et CodePipeline pour déployer automatiquement tes applications."
+excerpt: "Du commit au déploiement avec des contrôles qualité — pas juste un bouton magique."
 type: article
 tags: [AWS, DevOps, CI/CD, CodePipeline, CodeBuild, CodeDeploy]
 series: aws-serie
@@ -9,7 +9,7 @@ series_order: 10
 og_image: aws-devops-ci-cd-codepipeline-codebuild-1200x630.jpg
 ---
 
-# DevOps sur AWS : CI/CD avec CodeCommit, CodeBuild, CodeDeploy et CodePipeline
+# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : publier du code automatiquement
 
 Après avoir vu les briques compute, stockage, réseau et sécurité, il reste un point clé :
 **comment livrer ton application proprement et régulièrement**.
@@ -18,7 +18,7 @@ AWS propose une chaîne DevOps complète :
 
 - **CodeCommit** : dépôt Git managé ;
 - **CodeBuild** : builds et tests ;
-- **CodeDeploy** : déploiement sur EC2/ECS/Lambda ;
+- **CodeDeploy** : déploiement sur [EC2](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html)/ECS/Lambda ;
 - **CodePipeline** : orchestration de bout en bout.
 
 ---
@@ -31,11 +31,18 @@ Un pipeline typique :
 2. CodePipeline déclenche un **build CodeBuild** :
    - installation des dépendances ;
    - tests ;
-   - build des artefacts (image Docker, bundle frontend…).
-3. Les artefacts sont stockés (S3, ECR).
+   - build des artefacts ([image Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html), bundle frontend…).
+3. Les artefacts sont stockés ([S3](/blog/articles/aws-stockage-s3-ebs-efs.html), ECR).
 4. CodeDeploy (ou un job custom) déploie :
    - sur ECS/EKS (rolling, blue/green) ;
    - ou sur EC2 / Lambda.
+
+
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-cicd-pipeline.svg" alt="Schema pipeline CI/CD AWS CodePipeline CodeBuild" class="schema-inline" width="640" />
+  <figcaption>CodePipeline + CodeBuild : du commit au deploy avec des gates.</figcaption>
+</figure>
 
 ---
 

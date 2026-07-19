@@ -15,23 +15,16 @@ series_order: 3
 
 La Factory Method délègue la création d'objets aux sous-classes sans que le client connaisse la classe concrète.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-factory-method.svg" alt="Schéma du pattern Factory Method" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Factory Method — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-factory-method-banner.webp" alt="Illustration Factory Method" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Factory Method (Créationnel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 La Factory Method délègue la création d'objets aux sous-classes sans que le client connaisse la classe concrète.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-factory-method.svg" alt="Schéma du pattern Factory Method" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Factory Method — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

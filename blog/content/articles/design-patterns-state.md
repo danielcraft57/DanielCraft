@@ -15,23 +15,16 @@ series_order: 13
 
 State délègue le comportement à des objets d'état selon le contexte.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-state.svg" alt="Schéma du pattern State" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern State — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-state-banner.webp" alt="Illustration State" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern State (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 State délègue le comportement à des objets d'état selon le contexte.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-state.svg" alt="Schéma du pattern State" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern State — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -14,6 +14,7 @@
   const recommendationsSection = document.querySelector('.blog-recommendations-index');
   const seriesSection = document.querySelector('.blog-series-featured');
   const allSection = document.querySelector('.blog-all-articles');
+  const form = input && input.closest('form');
 
   if (!dataEl || !input || !grid) return;
 
@@ -27,16 +28,16 @@
 
   if (!Array.isArray(articles) || !articles.length) return;
 
+  function slugFromHref(href) {
+    if (!href) return null;
+    const last = String(href).split('/').pop() || '';
+    return last.replace(/\.html$/i, '').split(/[?#]/)[0] || null;
+  }
+
   const cardsBySlug = {};
   grid.querySelectorAll('.article-card').forEach((card) => {
     const href = card.getAttribute('href') || card.querySelector('a')?.getAttribute('href');
-    const slugMatch = href && href.match(/([^/]+)\.html$|articles\/([^/]+)$/);
-    let slug = null;
-    if (slugMatch) {
-      slug = slugMatch[1] || slugMatch[2];
-    } else if (href) {
-      slug = href.split('/').pop().replace(/\.html$/, '');
-    }
+    const slug = slugFromHref(href);
     if (slug) {
       cardsBySlug[slug] = card;
     }
@@ -46,7 +47,7 @@
     return (s || '')
       .toLowerCase()
       .normalize('NFD')
-      .replace(/\p{Diacritic}/gu, '');
+      .replace(/[\u0300-\u036f]/g, '');
   }
 
   const normalizedArticles = articles.map((a) => {
@@ -85,11 +86,19 @@
       const card = cardsBySlug[slug];
       if (card) frag.appendChild(card);
     });
+    // Append remaining cards (non-matches) after matches so DOM order stays stable
+    Object.keys(cardsBySlug).forEach((slug) => {
+      if (!slugs.includes(slug)) {
+        const card = cardsBySlug[slug];
+        if (card) frag.appendChild(card);
+      }
+    });
     grid.appendChild(frag);
   }
 
   async function applyPersonalizationRanking() {
     if (!window.Personalization || typeof window.Personalization.getContext !== 'function') return;
+    if (normalizeQuery(input.value).length >= 2) return;
     const ctx = await window.Personalization.getContext({ useCache: true });
     if (!ctx || !ctx.success || typeof window.Personalization.rankArticles !== 'function') return;
     const ranked = window.Personalization.rankArticles(normalizedArticles, ctx);
@@ -110,25 +119,60 @@
     });
   }
 
-  function computeScore(article, tokens) {
+  /** Score d'un token ; 0 = aucun match (requis pour le mode AND). */
+  function scoreToken(article, t) {
     const { title, excerpt, type, tags, series, slug } = article._norm;
+    let hit = 0;
+    if (title.includes(t)) hit += 8;
+    if (tags.includes(t)) hit += 6;
+    if (series.includes(t)) hit += 6;
+    if (slug.includes(t)) hit += 5;
+    if (type.includes(t)) hit += 4;
+    if (excerpt.includes(t)) hit += 3;
+    if (t === 'ia' && (slug.includes('ia-') || tags.includes('ia') || series.includes('ia-'))) hit += 4;
+    if (
+      (t === 'chatgpt' ||
+        t === 'claude' ||
+        t === 'gemini' ||
+        t === 'n8n' ||
+        t === 'prompt' ||
+        t === 'prompts' ||
+        t === 'agent' ||
+        t === 'agents') &&
+      (title.includes(t) || tags.includes(t) || slug.includes(t) || series.includes(t) || excerpt.includes(t))
+    ) {
+      hit += 3;
+    }
+    return hit;
+  }
+
+  function computeScore(article, tokens) {
     let score = 0;
     for (const t of tokens) {
       if (!t) continue;
-      if (title.includes(t)) score += 8;
-      if (tags.includes(t)) score += 6;
-      if (series.includes(t)) score += 6;
-      if (slug.includes(t)) score += 5;
-      if (type.includes(t)) score += 4;
-      if (excerpt.includes(t)) score += 3;
-      // Raccourcis pratiques pour la serie IA
-      if (t === 'ia' && (slug.includes('ia-') || tags.includes('ia') || series.includes('ia-'))) score += 4;
-      if ((t === 'chatgpt' || t === 'claude' || t === 'gemini' || t === 'n8n' || t === 'prompt' || t === 'prompts' || t === 'agent' || t === 'agents') &&
-          (title.includes(t) || tags.includes(t) || slug.includes(t) || series.includes(t) || excerpt.includes(t))) {
-        score += 3;
-      }
+      const hit = scoreToken(article, t);
+      if (hit === 0) return 0;
+      score += hit;
     }
     return score;
+  }
+
+  function syncSearchUrl(query) {
+    try {
+      const url = new URL(window.location.href);
+      const q = (query || '').trim();
+      if (q.length >= 2) {
+        url.searchParams.set('q', q);
+      } else {
+        url.searchParams.delete('q');
+      }
+      const next = url.pathname + url.search + url.hash;
+      if (next !== window.location.pathname + window.location.search + window.location.hash) {
+        window.history.replaceState(null, '', next);
+      }
+    } catch (_) {
+      /* ignore */
+    }
   }
 
   function applySearch(query) {
@@ -155,6 +199,7 @@
         allSection.classList.remove('blog-all-articles--search-active');
       }
       syncChipActive();
+      syncSearchUrl('');
       return;
     }
 
@@ -172,17 +217,21 @@
       return db.localeCompare(da);
     });
 
-    const keepSlugs = new Set(scored.map((x) => x.article.slug));
+    const orderedSlugs = scored.map((x) => x.article.slug);
+    const keepSlugs = new Set(orderedSlugs);
 
     Object.entries(cardsBySlug).forEach(([slug, card]) => {
       if (keepSlugs.has(slug)) {
         card.style.display = '';
-        card.classList.add('blog-card-highlight');
+        // Force visible: les cartes hors viewport restent sinon en opacity:0 (blog-reveal)
+        card.classList.add('blog-card-highlight', 'is-visible');
       } else {
         card.style.display = 'none';
         card.classList.remove('blog-card-highlight');
       }
     });
+
+    reorderCardsBySlugs(orderedSlugs);
 
     if (info) {
       const count = scored.length;
@@ -203,6 +252,14 @@
     }
 
     syncChipActive();
+    syncSearchUrl(q);
+  }
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      applySearch(input.value);
+    });
   }
 
   let debounceId = null;
@@ -248,6 +305,17 @@
 
   if (window.location.hash === '#blog-search') {
     setTimeout(() => input.focus(), 300);
+  }
+
+  // Deep-link Google / partages : /blog/?q=docker
+  try {
+    const qParam = new URLSearchParams(window.location.search).get('q');
+    if (qParam && qParam.trim()) {
+      input.value = qParam.trim();
+      applySearch(input.value);
+    }
+  } catch (_) {
+    /* ignore */
   }
 
   applyPersonalizationRanking();

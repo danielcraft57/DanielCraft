@@ -1,7 +1,7 @@
 ---
-title: "AWS : les fondamentaux et grands types de services"
+title: "AWS : le cloud Amazon expliqué simplement"
 date: 2025-05-06
-excerpt: "Comprendre la philosophie d’AWS, les grandes familles de services (compute, stockage, bases de données, réseau, sécurité, observabilité) et comment choisir les bons blocs pour ton application."
+excerpt: "Qui fait quoi (toi vs Amazon), et les familles de services sans te noyer dans le catalogue."
 type: article
 tags: [AWS, cloud, architecture, services managés, DevOps]
 series: aws-serie
@@ -9,169 +9,126 @@ series_order: 1
 og_image: aws-fondamentaux-1200x630.jpg
 ---
 
-# AWS : les fondamentaux et grands types de services
+# AWS : le cloud Amazon expliqué simplement
 
-Quand on découvre AWS pour la première fois, la sensation est souvent la même : **trop de services, trop de noms, trop d’options**.
-L’objectif de cet article est de poser une carte lisible du territoire avant d’entrer dans le détail dans les articles suivants de la série.
+Quand tu ouvres AWS la premiere fois, c'est comme entrer dans un **magasin geant**. Trop de rayons. Trop de noms. Trop d'options.
 
----
-
-## 1. Philosophie d’AWS en une phrase
-
-AWS fournit des **briques d’infrastructure managées** (serveurs, stockage, bases, réseau, sécurité, observabilité…) que tu peux assembler pour construire :
-
-- des **applications web** (sites, APIs, backends) ;
-- des **systèmes temps réel** (IoT, streaming, jeux en ligne) ;
-- des **pipelines data / analytics / IA** ;
-- des **plateformes internes** (back‑office, SaaS B2B, outils métiers).
-
-L’idée clé : **tu loues les briques dont tu as besoin, à la demande, et tu ne gères plus le matériel physique**.
+Cet article pose une **carte simple**. Pas besoin de tout memoriser. Besoin de savoir ou chercher.
 
 ---
 
-## 2. Les grandes familles de services AWS
+## AWS en une phrase
 
-Plutôt que mémoriser 200+ noms, il vaut mieux retenir quelques catégories.
+AWS te loue des **briques toutes pretes** : serveurs, disques, bases, reseau, secu, surveillance. Tu les assembles. Tu ne geres plus le materiel physique dans une cave.
 
-### 2.1 Compute (puissance de calcul)
+Tu peux construire :
 
-Services principaux :
+- un site ou une API,
+- un systeme temps reel,
+- un pipeline data,
+- une plateforme interne.
 
-- **EC2** : machines virtuelles (serveurs) que tu administres comme un VPS classique.
-- **ECS / EKS** : exécution de conteneurs (Docker) avec orchestration (ECS propriétaire, EKS = Kubernetes managé).
-- **Lambda** : fonctions serverless, facturées à l’exécution (pas de serveur à gérer).
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-shared-responsibility.svg" alt="Schema responsabilite partagee AWS" class="schema-inline" width="640" />
+  <figcaption>AWS gere l'infra de base. Toi : identites, config, donnees, apps.</figcaption>
+</figure>
 
-**Pour quels types d’applications ?**
-
-- EC2 : lift & shift, applis existantes, besoins très spécifiques (binaire, OS).
-- ECS / EKS : microservices, APIs conteneurisées, architectures modernes.
-- Lambda : APIs légères, jobs planifiés, webhooks, traitement événementiel.
-
-Nous détaillerons ces services dans l’article 2 de la série.
-
-### 2.2 Stockage
-
-- **S3** : stockage d’objets (fichiers) durable et peu cher.
-- **EBS** : disques attachés aux instances EC2 (comme un SSD local).
-- **EFS** : système de fichiers partagé entre plusieurs serveurs.
-
-Usage typique :
-
-- S3 pour les **backups, assets statiques, logs, exports** ;
-- EBS pour les **disques d’instances** (OS, données locales) ;
-- EFS pour les **applications qui nécessitent un partage de fichiers** entre plusieurs machines.
-
-### 2.3 Bases de données
-
-- **RDS** : bases relationnelles managées (PostgreSQL, MySQL, Aurora, etc.).
-- **DynamoDB** : base NoSQL clé/valeur ultra scalable.
-- **Amazon Aurora** : base relationnelle optimisée pour le cloud (version compatible MySQL / PostgreSQL).
-
-Tu choisis en fonction :
-
-- du **modèle de données** (relationnel vs clé/valeur) ;
-- des **contraintes de scalabilité et de latence** ;
-- de l’écosystème existant (ORM, outils).
-
-### 2.4 Réseau et CDN
-
-- **VPC** : réseau virtuel isolé dans lequel vivent tes ressources AWS.
-- **Route 53** : DNS managé (et parfois équilibrage global).
-- **CloudFront** : CDN pour distribuer ton contenu au plus près des utilisateurs.
-
-Ce bloc te permet de :
-
-- définir des **zones privées / publiques** ;
-- contrôler les **flux entrants / sortants** ;
-- **accélérer** la livraison de tes assets et APIs partout dans le monde.
-
-### 2.5 Sécurité, identité, conformité
-
-- **IAM** : gestion des identités (utilisateurs, rôles, permissions).
-- **KMS** : gestion de clés de chiffrement.
-- **Secrets Manager / Systems Manager Parameter Store** : stockage sécurisé de secrets.
-- **AWS WAF / Shield** : protection applicative (filtrage, attaques DDoS).
-
-La règle : on ne met **jamais** de clés d’accès en dur dans le code ou les images, on passe par IAM et des rôles bien calibrés.
-
-### 2.6 Observabilité et gouvernance
-
-- **CloudWatch** : métriques, logs, alarmes.
-- **X-Ray** : traçage des requêtes (APM léger).
-- **CloudTrail** : audit des appels API AWS (qui a fait quoi, quand).
-
-Ces briques sont indispensables pour :
-
-- comprendre le comportement de ton système ;
-- diagnostiquer les problèmes ;
-- répondre aux exigences de conformité (qui a créé/supprimé telle ressource).
+Idee cle : tu paies ce que tu utilises. Tu grandis quand tu en as besoin.
 
 ---
 
-## 3. Comment choisir les bons services ?
+## Les grandes familles (les rayons du magasin)
 
-Pour éviter la sur‑ingénierie, pars de **l’usage** :
+### Compute (la force de calcul)
 
-1. **Type d’application**
-   - Site vitrine / portfolio.
-   - API back‑office / SaaS.
-   - Pipeline data / ETL.
-   - Application temps réel (chat, IoT…).
+- **EC2** : une machine virtuelle. Comme un serveur classique que tu administres.
+- **ECS / EKS** : faire tourner des **[conteneurs](/blog/articles/docker-fondamentaux-images-conteneurs.html)** Docker (ECS = orchestrateur AWS, EKS = Kubernetes manage).
+- **Lambda** : un petit bout de code qui s'execute a la demande. Pas de serveur a soigner.
 
-2. **Contraintes**
-   - Trafic attendu (quelques centaines, milliers, millions de requêtes).
-   - Sensibilité aux pannes (tolérance aux interruptions, RPO/RTO).
-   - Budget (coût mensuel cible).
-   - Compétences de l’équipe (Linux, Docker, Kubernetes, serverless…).
+Detail dans [EC2, Lambda, ECS, EKS](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html).
 
-3. **Pattern standard AWS**
-   - **Small / MVP** : S3 + CloudFront + Lambda + RDS (ou même S3 + CloudFront + API Gateway + Lambda).
-   - **Appli web classique** : ALB + ECS/Fargate ou EC2 + RDS + S3 + CloudFront.
-   - **Data / analytics** : S3 + Glue + Athena/Redshift + Lambda/ECS.
+### Stockage
 
-Les articles suivants détailleront ces patterns avec des exemples concrets.
+- **S3** : un grand coffre a fichiers (objets). Pas cher. Tres durable.
+- **EBS** : le disque colle a une machine EC2.
+- **EFS** : un dossier partage entre plusieurs serveurs.
 
----
+Voir [S3, EBS, EFS](/blog/articles/aws-stockage-s3-ebs-efs.html).
 
-## 4. Avantages et limites d’AWS
+### Bases de donnees
 
-### 4.1 Avantages
+- **RDS** : base relationnelle managee (PostgreSQL, MySQL...).
+- **DynamoDB** : base NoSQL cle/valeur, tres scalable.
+- **Aurora** : relationnel turbo, pense pour le cloud.
 
-- **Écosystème énorme** : pratiquement tout ce dont tu as besoin existe déjà.
-- **Pay as you go** : tu démarres petit, tu montes en charge au besoin.
-- **Intégrations natives** : IAM, CloudWatch, KMS fonctionnent ensemble.
-- **Régions multiples** : possibilité de déployer près des utilisateurs.
+Voir [RDS, DynamoDB, Aurora](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html).
 
-### 4.2 Limites / points de vigilance
+### Reseau et CDN
 
-- **Complexité** : le nombre de services peut faire peur et conduire à de mauvais choix.
-- **Coût** : sans suivi ni politiques de gouvernance, la facture peut monter très vite.
-- **Verrouillage** : plus tu utilises de services managés spécifiques, plus tu es lié à AWS.
+- **VPC** : ton quartier prive dans AWS.
+- **Route 53** : le carnet d'adresses DNS.
+- **CloudFront** : livre ton contenu proche des utilisateurs (CDN).
 
-La clé est de **connaître les blocs de base**, puis de limiter les services “exotiques” aux besoins réellement différenciants.
+Voir [VPC, Route 53, CloudFront](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html).
 
----
+### Securite
 
-## 5. Optimisation et gestion : principes transverses
+- **[IAM](/blog/articles/iam-mfa-principes-zero-trust.html)** : qui a le droit de faire quoi.
+- **KMS** : les cles pour chiffrer.
+- **WAF / Shield** : filtre devant tes apps.
 
-Avant de zoomer service par service, garde ces réflexes généraux :
+Voir [IAM, KMS, WAF](/blog/articles/aws-securite-iam-kms-waf.html).
 
-- **Taguer toutes les ressources** (`env`, `project`, `owner`) pour suivre les coûts et nettoyer ce qui traîne.
-- **Automatiser** : Terraform / CloudFormation / CDK ou au minimum des scripts de provisionnement répétables.
-- **Isoler par environnements** : comptes ou VPC séparés pour `dev`, `staging`, `prod`.
-- **Mesurer en continu** : CloudWatch + Cost Explorer + budgets/alertes.
-- **Sécurité by design** : IAM minimal, pas de secrets en dur, chiffrement activé par défaut.
+### Observabilite
+
+- **CloudWatch** : metriques, logs, alarmes.
+- **X-Ray** : suivre une requete de bout en bout.
+- **CloudTrail** : qui a touche a quoi dans le compte.
+
+Voir [CloudWatch, X-Ray, CloudTrail](/blog/articles/aws-observabilite-cloudwatch-xray-cloudtrail.html).
 
 ---
 
-## 6. Pour la suite de la série
+## Comment choisir sans se perdre ?
 
-Dans les prochains articles, on va :
+Pars de l'**usage**, pas de la mode.
 
-1. Plonger dans le **compute** (EC2, Lambda, ECS, EKS) et les bons patterns de déploiement en fonction de ton application.  
-2. Comparer et positionner les **services de stockage** (S3, EBS, EFS) dans des cas concrets.  
-3. Explorer les **bases de données** managées (RDS, DynamoDB, Aurora) et comment les combiner.  
-4. Mettre en place un **réseau AWS propre** (VPC, subnets, sécurité, DNS, CDN).  
-5. Parler **sécurité, observabilité et optimisation des coûts** avec des checklists actionnables.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-families-services.svg" alt="Schema des familles de services AWS" class="schema-inline" width="640" />
+  <figcaption>Pense par familles de services : compute, data, reseau, secu, ops.</figcaption>
+</figure>
 
-L’objectif : que tu sois capable de **lire un diagramme d’architecture AWS, le critiquer et le faire évoluer** en connaissance de cause.+
+1. **Type d'appli** : site vitrine, SaaS, data, temps reel ?
+2. **Contraintes** : trafic, panne acceptable, budget, competences de l'equipe.
+3. **Patterns simples** :
+   - MVP : S3 + CloudFront + Lambda + RDS.
+   - Appli web classique : ALB + ECS/Fargate ou EC2 + RDS + S3.
+   - Data : S3 + outils analytics.
+
+Ensuite tu peaufines [haute dispo](/blog/articles/aws-architectures-ha-scalabilite.html), [couts](/blog/articles/aws-optimisation-couts-reserved-savings-spot.html) et [CI/CD](/blog/articles/aws-devops-ci-cd-codepipeline-codebuild.html).
+
+---
+
+## Avantages et pieges
+
+**Avantages** : enorme catalogue, paiement a l'usage, pieces qui s'emboitent, regions proches des users.
+
+**Pieges** : trop de choix (mauvais choix), facture qui grimpe sans suivi, verrouillage si tu t'accroches trop a des services tres "AWS-only".
+
+La cle : connaitre les **blocs de base**. Limiter les trucs exotiques au vrai besoin.
+
+---
+
+## Reflexes transverses
+
+- **Taguer** chaque ressource (`env`, `project`, `owner`).
+- **Automatiser** (Terraform, CloudFormation, CDK...).
+- **Separe** dev / staging / prod.
+- **Mesurer** (CloudWatch + Cost Explorer).
+- **Securite by design** : IAM minimal, pas de secrets en dur, chiffrement active.
+
+---
+
+## Pour la suite
+
+On zoome rayon par rayon. A la fin, tu dois pouvoir **lire un schema AWS**, le critiquer, et le faire evoluer sans panique.

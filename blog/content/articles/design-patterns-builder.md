@@ -15,23 +15,16 @@ series_order: 11
 
 Builder construit pas à pas un objet complexe avec une API fluide.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-builder.svg" alt="Schéma du pattern Builder" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Builder — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-builder-banner.webp" alt="Illustration Builder" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Builder (Créationnel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Builder construit pas à pas un objet complexe avec une API fluide.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-builder.svg" alt="Schéma du pattern Builder" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Builder — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

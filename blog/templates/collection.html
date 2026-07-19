@@ -23,11 +23,13 @@
     <meta name="twitter:title" content="{{TITLE}} | Blog DanielCraft">
     <meta name="twitter:description" content="{{DESCRIPTION}}">
     <meta name="theme-color" content="#2f78a6">
-    <link rel="icon" href="{{ROOT}}/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="{{ROOT}}/assets/icons/favicon.svg">
-    <link rel="stylesheet" href="{{ASSETS}}/css/main.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <link rel="stylesheet" href="{{ASSETS}}/css/main.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/animations.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css{{ASSETS_QUERY}}">
+    <link rel="search" type="application/opensearchdescription+xml" title="DanielCraft Blog" href="/assets/opensearch-blog.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -50,7 +52,7 @@
             </div>
         </div>
     </main>
-    <script src="{{ASSETS}}/js/main.js" defer></script>
+    <script src="{{ASSETS}}/js/main.js{{ASSETS_QUERY}}" defer></script>
 
 {{MODALS_HTML}}
 {{FOOTER_HTML}}

@@ -1,7 +1,7 @@
 ---
-title: "Préparer Docker pour la production : registry, tags et sécurité"
+title: "Docker en prod : ranger et protéger ses boîtes"
 date: 2024-11-21
-excerpt: "Passer de Docker en local à un usage plus sérieux : registry privé, stratégie de tags, bonnes pratiques de sécurité de base et liens avec Kubernetes."
+excerpt: "Registry privé, scan, non-root, secrets hors image : les bases sérieuses."
 type: article
 tags: [Docker, production, registry, sécurité, DevOps]
 series: docker-serie
@@ -9,30 +9,25 @@ series_order: 6
 og_image: docker-production-1200x630.jpg
 ---
 
-# Préparer Docker pour la production : registry, tags et sécurité
+# Docker en prod : ranger et protéger ses boîtes
 
-Dernier volet de la série Docker : on sort du cadre purement local pour parler **prod**.
+Dernier volet de la serie Docker : on sort du garage local pour parler **prod**.
 
-Objectif : que ce que tu fais sur ta machine soit déjà pensé pour une mise en production propre, que ce soit sur un simple VPS, une stack Swarm, ou un cluster Kubernetes.
+Objectif : ce que tu fais sur ta machine doit deja ressembler a une mise en ligne propre. VPS, Swarm ou Kubernetes - les memes reflexes. Tu as [optimise tes images](/blog/articles/docker-build-optimisation-images.html) ? Bien. Maintenant on range, on etiquette, on ferme a cle.
 
 ---
 
-## Registry privé : où pousser tes images
+## Registry prive : l'entrepot serieux
 
-Pour la prod, tu ne veux pas dépendre uniquement de Docker Hub public.
+En prod, tu ne veux pas dependre uniquement de Docker Hub public. Tu as besoin d'un **entrepot a toi**.
 
 Options courantes :
 
-- **GitHub Container Registry** (`ghcr.io`)  
-  Pratique si ton code est sur GitHub.
+- **GitHub Container Registry** (`ghcr.io`) - pratique si ton code est sur GitHub.
+- **GitLab Container Registry** - integre au pipeline GitLab.
+- **Registry auto-heberge** (Harbor, registry Docker) - pour environnements sensibles.
 
-- **GitLab Container Registry**  
-  Intégré au pipeline CI/CD GitLab.
-
-- **Registry auto‑hébergé** (Harbor, registry Docker, etc.)  
-  Utile pour environnements sensibles / clients.
-
-Exemple avec GitHub Container Registry :
+Exemple avec ghcr.io :
 
 ```bash
 echo $GITHUB_TOKEN | docker login ghcr.io -u likedevGit --password-stdin
@@ -41,64 +36,67 @@ docker build -t ghcr.io/likedevGit/mon-api:1.0.0 .
 docker push ghcr.io/likedevGit/mon-api:1.0.0
 ```
 
+Tu pousses une version claire. Pas "la derniere qu'on a trouvee".
+
 ---
 
-## Stratégie de tags
+## Strategie de tags
 
-Évite le **tout-latest**. Quelques conventions utiles :
+Evite le **tout-latest**. C'est comme etiqueter toutes les boites "actuel". Personne ne sait ce qu'il y a dedans.
 
-- `1.2.3` : version exacte (build reproduisible).
-- `1.2` : dernière patch de la 1.2.
-- `prod`, `staging`, `test` : dernier build déployé sur tel environnement.
+Conventions utiles :
+
+- `1.2.3` : version exacte (reproductible).
+- `1.2` : derniere patch de la 1.2.
+- `prod`, `staging` : dernier build depeye sur cet environnement.
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/docker-prod-secu.svg" alt="Schema securite Docker en production et registry" class="schema-inline" width="640" />
+  <figcaption>En prod : registry prive, scan, non-root, secrets hors image.</figcaption>
+</figure>
 
 Workflow classique :
 
-1. CI pousse une image versionnée : `1.2.3`.  
-2. Après validation, tu mets à jour le tag `prod` → `1.2.3`.  
-3. Ta config de déploiement utilise `:prod` (ou directement la version, selon ta préférence).
+1. La CI pousse une image versionnee : `1.2.3`.
+2. Apres validation, tu mets a jour le tag `prod` vers `1.2.3`.
+3. Le deploiement utilise `:prod` ou directement la version.
 
 ---
 
-## Sécurité minimale dans les images
+## Securite minimale dans les images
 
-Tu ne vas pas devenir expert sécurité en un article, mais tu peux éviter les gros pièges.
+Tu ne seras pas expert secu en un article. Mais tu peux eviter les gros pieges.
 
 ### 1. Ne pas tourner en root
-
-Dans ton Dockerfile :
 
 ```dockerfile
 RUN addgroup -S app && adduser -S app -G app
 USER app
 ```
 
-Ensuite, ton process applicatif tourne avec cet utilisateur plutôt que root.
+Ton programme tourne avec un utilisateur simple. Pas le patron de la machine.
 
-### 2. Réduire la surface d'attaque
+### 2. Reduire la surface
 
-- Utilise des images de base **minimales** (alpine, distroless, slim).  
-- N'installe que ce dont tu as besoin.  
-- Nettoie les caches de paquets (`rm -rf /var/lib/apt/lists/*`).
+- Images de base **minimales** (alpine, distroless, slim) - cf. [optimisation des images](/blog/articles/docker-build-optimisation-images.html).
+- N'installe que ce dont tu as besoin.
+- Nettoie les caches (`rm -rf /var/lib/apt/lists/*`).
 
-### 3. Ne pas embarquer les secrets
+### 3. Pas de secrets dans l'image
 
-Jamais de secrets dans :
+Jamais de mots de passe dans :
 
 - le Dockerfile,
-- le code versionné,
-- les images.
+- le code versionne,
+- l'image poussee.
 
-À la place :
-
-- variables d'env,
-- fichiers montés,
-- secrets Docker/Kubernetes.
+A la place : variables d'environnement, fichiers montes, secrets Docker/Kubernetes.
 
 ---
 
-## Intégration avec Kubernetes (aperçu)
+## Lien avec Kubernetes (apercu)
 
-Quand tu passeras sur Kubernetes, tes images Docker seront consommées par des **Deployments** :
+Quand tu passeras sur Kubernetes, tes images seront mangees par des **Deployments** :
 
 ```yaml
 apiVersion: apps/v1
@@ -122,20 +120,17 @@ spec:
             - containerPort: 3000
 ```
 
-Si tes Dockerfile sont propres, tes déploiements Kubernetes seront déjà beaucoup plus simples.
+Si tes Dockerfile sont propres, le deploiement est deja plus simple. Les [bases Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html) et [Compose](/blog/articles/docker-compose-environnements-local.html) t'ont prepare le terrain.
 
 ---
 
-## Résumé de la série Docker
+## Resume de la serie
 
-On a vu :
+1. Images vs conteneurs.
+2. [Installation propre](/blog/articles/docker-installation-bonnes-pratiques.html).
+3. [Volumes et reseaux](/blog/articles/docker-volumes-reseaux.html).
+4. Compose pour un environnement complet.
+5. Optimisation des Dockerfile.
+6. Prod : registry, tags, securite.
 
-1. **Images vs conteneurs** et le cycle de vie de base.  
-2. **Installation propre** de Docker (Linux, macOS, Windows/WSL).  
-3. **Volumes** et **réseaux** pour les données et la communication entre services.  
-4. **docker-compose** pour décrire un environnement complet en YAML.  
-5. **Optimisation des Dockerfile** et réduction de la taille des images.  
-6. **Préparation de la prod** : registry privé, tags, sécurité, lien avec Kubernetes.
-
-Avec ça, tu as un socle solide pour aborder la suite : **Kubernetes**.
-
+Avec ca, tu as un **socle solide**. Les boites sont legeres, etiquetees, et pretes a voyager hors de ton PC.

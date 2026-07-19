@@ -15,23 +15,16 @@ series_order: 8
 
 Facade offre une interface simple qui orchestre un sous-système complexe.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-facade.svg" alt="Schéma du pattern Facade" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Facade — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-facade-banner.webp" alt="Illustration Facade" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Facade (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Facade offre une interface simple qui orchestre un sous-système complexe.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-facade.svg" alt="Schéma du pattern Facade" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Facade — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

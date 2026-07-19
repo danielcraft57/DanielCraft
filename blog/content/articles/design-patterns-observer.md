@@ -15,23 +15,16 @@ series_order: 4
 
 Le Observer notifie automatiquement tous les abonnés quand l'état d'un sujet change.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-observer.svg" alt="Schéma du pattern Observer" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Observer — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-observer-banner.webp" alt="Illustration Observer" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Observer (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Le Observer notifie automatiquement tous les abonnés quand l'état d'un sujet change.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-observer.svg" alt="Schéma du pattern Observer" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Observer — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: "UX vs UI : différences, rôles et comment les faire marcher ensemble"
+title: "UX et UI : la sensation contre le look"
 date: 2025-09-02
-excerpt: "UX et UI sont souvent confondus. Voici une définition claire, les responsabilités, les livrables, et une méthode simple pour aligner produit, design et dev."
+excerpt: "L'expérience vécue vs l'interface visible — et comment les faire marcher ensemble."
 type: article
 tags: [UX, UI, design, ergonomie, produit]
 series: ux-ui-serie
@@ -9,128 +9,72 @@ series_order: 1
 og_image: ux-ui-fondamentaux-differences-1200x630.jpg
 ---
 
-# UX vs UI : différences, rôles et comment les faire marcher ensemble
+# UX et UI : la sensation contre le look
 
-« On refait l’UX ? » — parfois cette phrase veut dire : *changer les couleurs*.  
-Et « on fait l’UI » veut parfois dire : *mettre des boutons*. Résultat : confusion, tensions, et un produit qui avance au hasard.
+Tu as deja entendu "on refait l'UX" pour parler d'un changement de couleur ? Ou "on fait l'UI" pour dire "on met des boutons" ? Ca arrive tout le temps.
 
-Cet article met tout à plat, de façon **pragmatique** : ce qu’est l’UX, ce qu’est l’UI, ce que ça change dans un projet, et comment organiser le travail pour que design et dev se renforcent.
+Le probleme, ce n'est pas le vocabulaire. C'est que derriere ces mots flous, le projet avance au feeling. Produit, design et dev ne parlent plus de la meme chose. Et l'utilisateur trinque.
 
----
+Cet article remet les pieds sur terre. Ce qu'est vraiment l'**UX**. Ce qu'est l'**UI**. Ce que ca change dans un sprint. Et comment faire travailler tout le monde dans le meme sens.
 
-## 1) UX et UI : une définition simple
+## Deux mots, deux jobs (qui se croisent)
 
-- **UX (User Experience)** : l’expérience globale.  
-  L’utilisateur comprend‑il ce qui se passe ? Atteint‑il son objectif ? Est‑ce fluide, rassurant, cohérent ?
+L'UX, User Experience, c'est l'**experience** globale. Est-ce que la personne comprend ou elle est ? Est-ce qu'elle atteint son objectif sans se battre avec l'outil ? Est-ce que le parcours est rassurant ?
 
-- **UI (User Interface)** : l’interface visible et interactive.  
-  Typographie, couleurs, espacements, composants, états, micro‑interactions.
+Tu peux avoir une interface jolie et une UX pourrie : l'utilisateur clique, hesité, revient en arriere, abandonne. Il ne dira pas "l'UI est belle". Il dira "c'est complique".
 
-Une manière simple de le voir :
+L'UI, User Interface, c'est le **rendu** visible et interactif. La typo, les couleurs, les espaces, les composants, les etats d'un bouton. C'est le langage visuel du produit. Une bonne UI clarifie. Une mauvaise UI noie l'intention sous du bruit - meme si le parcours etait bien pense.
 
-- UX = **le parcours** (structure, logique, friction, clarté)
-- UI = **le rendu** (forme, hiérarchie visuelle, feedback)
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/ux-vs-ui.svg" alt="Schéma UX vs UI : expérience vécue et interface visible" class="schema-inline" width="640" />
+  <figcaption>UX = comment ça se vit. UI = comment ça se voit. Les deux se renforcent - ou s'annulent.</figcaption>
+</figure>
 
-Les deux sont inséparables : une bonne UI peut cacher un mauvais parcours pendant un temps, mais pas longtemps.
+Une image mentale qui marche bien : l'UX, c'est le **trajet**. L'UI, c'est la signaletique et le vehicule. Tu peux peindre une voiture magnifique. Si le GPS te fait faire trois detours pour une adresse a deux coins, tu ne reviendras pas.
 
----
+## Qui fait quoi (le titre compte moins que la decision)
 
-## 2) Qui fait quoi (et pourquoi ce n’est jamais “un seul rôle”)
+Dans la vraie vie, les roles se chevauchent. Un product owner clarifie l'objectif et les priorites. Un UX designer creuse le besoin, structure les taches, teste. Un UI designer systematise : composants, styles, coherence. Un developpeur rend tout ca concret - perf, accessibilite, cas limites.
 
-Dans la vraie vie :
+Ce qui compte vraiment, ce n'est pas qui porte quel badge sur LinkedIn. C'est qui prend les bonnes **decisions** avec les contraintes du moment. Petite equipe ? La meme personne peut faire UX et UI. Grosse boite ? Les roles se specialisent. Le piege reste le meme : croire que "le design" se resume a coller des pixels alors que le parcours n'est meme pas valide.
 
-- Un **Product** clarifie objectifs, KPIs, contraintes, priorités.
-- Un **UX designer** structure : besoins, tâches, parcours, tests.
-- Un **UI designer** systématise : composants, styles, hiérarchie, cohérence.
-- Un **dev** rend tout ça concret : performance, accessibilité, états réels, edge cases.
+## Des livrables qui reduisent le doute
 
-La compétence clé n’est pas le titre, c’est la capacité à **prendre de bonnes décisions** avec des contraintes.
+Certains artefacts aident vraiment. Une user story avec des criteres testables. Un **user flow** d'une page. Des **wireframes** qui montrent la structure sans se battre sur la couleur. Un prototype cliquable. Un design system vivant. Des specs d'etats : loading, vide, erreur, succes.
 
----
+Sans ca, le dev invente. Et l'utilisateur decouvre des trous.
 
-## 3) Livrables utiles (et ceux qui font perdre du temps)
+D'autres livrables font perdre du temps. La maquette pixel-perfect trop tot. Le document de 40 pages que personne ne lit. Le design system "vitrine" sans usage reel. Un bon livrable, c'est celui qui evite un aller-retour - pas celui qui impressionne en reunion.
 
-Ce qui aide réellement :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/ux-ui-livrables.svg" alt="Schema des livrables UX versus UI" class="schema-inline" width="640" />
+  <figcaption>UX produit des decisions ; UI les rend visibles et coherentes.</figcaption>
+</figure>
 
-- **User stories + critères d’acceptation** (clairs et testables)
-- **User flow / parcours** (schéma simple)
-- **Wireframes** (structure, sans fioritures)
-- **Prototype cliquable** (pour valider un scénario)
-- **Design system** (composants + règles)
-- **Spécifications d’états** (loading, empty, error, success)
+Pour aller plus loin sur les maquettes, vois [wireframes et fidelite](/blog/articles/wireframes-prototypage-fidelite.html). Sur le systeme de composants : [design system](/blog/articles/design-system-composants-tokens.html).
 
-Ce qui peut être contre‑productif :
+## Partir de la tache, pas de l'ecran
 
-- Maquettes pixel‑perfect trop tôt, sans validation du parcours
-- Docs interminables, jamais lues
-- Un design system “catalogue” sans usage réel
+Un ecran n'est qu'un moyen. La vraie question : quelle **tache** l'utilisateur veut accomplir, dans quel contexte, avec quelles contraintes ?
 
-Un bon livrable = celui qui **réduit l’incertitude** et **évite un aller‑retour**.
+Exemple banal. Objectif : envoyer un devis en deux minutes depuis un telephone. Contrainte : reseau moyen, une main libre, client qui attend. Si tu demandes douze champs obligatoires et trois pages avant validation, aucune UI "premium" ne sauvera le parcours. L'utilisateur abandonnera - ou enverra un devis bancal par WhatsApp.
 
----
+Cette regle change la facon de demarrer une feature. Tu ne commences pas par "on a besoin d'un ecran parametres". Tu commences par "la personne doit pouvoir X sans Y". Ensuite tu dessines le chemin le plus court. Ensuite seulement tu habilles. Pour cartographier ca proprement : [parcours et JTBD](/blog/articles/parcours-utilisateur-mapping-jtbd.html).
 
-## 4) La règle d’or : partir de la tâche, pas de l’écran
+## Un mini-rituel pour aligner tout le monde
 
-Un écran n’est qu’un moyen. La question est :
+Avant de plonger dans Figma ou dans le code, prends trente minutes. Objectif utilisateur en une phrase : "Je veux … pour …". Critere de succes : "On considere que c'est reussi si …". Parcours cible en cinq a sept etapes max - le happy path, plus deux echecs majeurs. Etats a prevoir. Un ou deux evenements analytics utiles.
 
-> Quelle tâche l’utilisateur veut accomplir, dans quel contexte, avec quelles contraintes ?
+Ce rituel parait simple. Il evite trois jours d'iterations floues. Produit, design et tech repartent avec la **meme carte**.
 
-Exemple (bête mais fréquent) :
+## Le piege des fausses finitions cote dev
 
-- Objectif : *envoyer un devis en 2 minutes depuis un téléphone*
-- Contrainte : réseau moyen, une main, stress, peu de temps
+Deux classiques. Tout est beau… avec des donnees parfaites : pas d'erreur, pas de latence. Ou tout "marche"… mais c'est anxiogene : pas de feedback, pas d'etat, pas de confirmation. L'utilisateur clique, rien ne bouge, il reclique, double paiement.
 
-Une UI “belle” ne compense pas un parcours qui demande 12 champs obligatoires et 3 pages.
+Un produit pro, c'est un produit qui gere les formulaires incomplets, les erreurs API, les listes vides, les droits insuffisants. UX et UI, c'est aussi - et surtout - l'interface quand ca se passe **mal**. C'est la que la confiance se gagne. Pour ces petits signaux : [micro-interactions](/blog/articles/micro-interactions-feedback-etats.html).
 
----
+## Faire marcher UX et UI ensemble
 
-## 5) Une méthode simple pour aligner tout le monde
+Si tu retiens une seule idee : l'UX, ce sont les decisions - parcours, priorites, clarte. L'UI, c'est l'execution visuelle - hierarchie, coherence, feedback. Le meilleur combo, c'est celui ou l'UX reduit la friction, l'UI rend les actions comprehensibles, et le dev rend le tout robuste et accessible.
 
-Quand tu démarres une feature, fais ce mini‑rituel :
-
-1. **Objectif utilisateur** : “Je veux … pour …”
-2. **Critère de succès** : “On considère que c’est réussi si …”
-3. **Parcours cible** : 5–7 étapes max, “happy path” + 2 échecs majeurs
-4. **États** : loading / vide / erreur / succès
-5. **Instrumentation** : 1–2 événements analytics utiles
-
-En 30 minutes, tu évites 3 jours d’itérations floues.
-
----
-
-## 6) UX/UI côté dev : le piège des “fausses finitions”
-
-Deux pièges classiques :
-
-- **Tout est beau… en données parfaites**  
-  (pas d’erreur, pas de latence, pas de permissions)
-- **Tout marche… mais c’est anxiogène**  
-  (pas de feedback, pas d’état, pas de confirmation)
-
-Un produit “pro” est un produit qui gère :
-
-- Les formulaires incomplets
-- Les erreurs API
-- Les listes vides
-- Les permissions
-- Les retards réseau
-
-UX et UI, c’est aussi ça : l’interface quand *ça se passe mal*.
-
----
-
-## 7) Conclusion : l’UX est un système, l’UI est son langage
-
-Si tu retiens une idée :
-
-- UX = **les décisions** (parcours, priorités, clarté)
-- UI = **l’exécution visuelle** (hiérarchie, cohérence, feedback)
-
-Le meilleur combo est celui où :
-
-- l’UX réduit la friction
-- l’UI rend la friction visible (et rassure)
-- le dev rend tout robuste, accessible et performant
-
-La suite de la série va creuser l’ergonomie (heuristiques), la recherche utilisateur, le design system, l’accessibilité et les micro‑interactions.
-
+Tu n'as pas besoin d'une armee. Tu as besoin d'un vocabulaire partage, d'un parcours valide avant le polish, et d'une obsession pour les etats reels. La suite de la serie creuse l'[ergonomie Nielsen](/blog/articles/ergonomie-heuristiques-nielsen.html), la [recherche utilisateur](/blog/articles/ux-recherche-utilisateur-interviews-tests.html), la [typo et la grille](/blog/articles/ui-typographie-couleurs-grille.html), l'[accessibilite](/blog/articles/accessibilite-wcag-checklist.html) et comment [mesurer l'UX](/blog/articles/mesurer-ux-kpis-analytics-ab-testing.html).

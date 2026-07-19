@@ -1,7 +1,7 @@
 ---
-title: "Installer Docker correctement sur ta machine de dev"
+title: "Docker : bien l'installer et le garder propre"
 date: 2024-11-07
-excerpt: "Installer Docker Desktop ou Docker Engine sans te tirer une balle dans le pied : Linux, macOS, Windows/WSL, droits sudo et premiers réglages utiles."
+excerpt: "Installation, droits, contextes et nettoyage : l'hygiène locale qui évite les surprises."
 type: article
 tags: [Docker, installation, Linux, WSL, macOS]
 series: docker-serie
@@ -9,17 +9,17 @@ series_order: 2
 og_image: docker-installation-1200x630.jpg
 ---
 
-# Installer Docker correctement sur ta machine de dev
+# Docker : bien l'installer et le garder propre
 
-Avant de jouer avec les conteneurs, il faut une base propre. Une mauvaise install de Docker, c'est des bugs bizarres, des permissions qui bloquent tout, ou un WSL qui hurle.
+Avant de jouer avec les boites Docker, il faut un **garage propre**. Une mauvaise install, c'est des bugs bizarres, des droits qui bloquent tout, ou un WSL qui rale.
 
-Voyons une installation **simple et propre** sur les trois cas principaux : Linux, macOS, Windows (WSL).
+Tu as deja vu [images et conteneurs](/blog/articles/docker-fondamentaux-images-conteneurs.html) ? Bien. Maintenant on installe Docker **simplement** sur Linux, macOS et Windows.
 
 ---
 
-## Linux (Ubuntu, Debian, etc.)
+## Linux (Ubuntu, Debian...)
 
-Sur un poste Linux, le plus sain est d'installer **Docker Engine** directement, sans Docker Desktop.
+Sur Linux, le plus sain : installer **Docker Engine** directement. Pas besoin de Docker Desktop.
 
 ### Installation rapide (Ubuntu/Debian)
 
@@ -41,7 +41,7 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 ### Ajouter ton utilisateur au groupe docker
 
-Par défaut, il faut `sudo` pour tout. Pour du dev, c'est vite insupportable.
+Par defaut, il faut `sudo` pour tout. En dev, ca fatigue vite.
 
 ```bash
 sudo usermod -aG docker "$USER"
@@ -49,85 +49,88 @@ newgrp docker
 docker ps
 ```
 
-Si `docker ps` fonctionne sans sudo, c'est bon.
+Si `docker ps` marche **sans sudo**, c'est bon. Tu as les cles du garage.
 
 ---
 
 ## macOS
 
-Sur macOS, le plus simple reste **Docker Desktop** :
+Sur Mac, le plus simple reste **Docker Desktop** :
 
-- Télécharge depuis le site officiel,  
-- installe,  
-- vérifie que `docker ps` fonctionne dans ton terminal.
+- telecharge depuis le site officiel,
+- installe,
+- verifie que `docker ps` marche dans le terminal.
 
-Pour un usage pro ou si tu veux éviter Docker Desktop (licence, perf), tu peux passer par **Colima** ou **Rancher Desktop**, mais c'est un poil plus avancé. Pour commencer :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/docker-install-hygiene.svg" alt="Schema bonnes pratiques installation Docker" class="schema-inline" width="640" />
+  <figcaption>Installer ne suffit pas : user, contextes et prune font l'hygiene.</figcaption>
+</figure>
+
+Avec Homebrew :
 
 ```bash
 brew install --cask docker
 ```
 
-Ensuite, lance Docker depuis le Dock, attends que le daemon démarre, puis :
+Lance Docker depuis le Dock. Attends que le moteur demarre. Puis :
 
 ```bash
 docker run hello-world
 ```
 
+Si tu vois un message de succes, le garage est ouvert. Pour aller plus loin sans Desktop (licence, perf), il y a Colima ou Rancher Desktop - mais pour commencer, Desktop suffit.
+
 ---
 
-## Windows : WSL2 obligatoire (ou presque)
+## Windows : passe par WSL2
 
-Sous Windows, il y a deux mondes :
+Sous Windows, deux mondes :
 
-- Docker Desktop qui utilise **WSL2** sous le capot.
-- Une install plus "pure" où tu travailles **directement dans WSL2** (Ubuntu, Debian, etc.) avec Docker Engine comme sur Linux.
+- Docker Desktop qui utilise **WSL2** sous le capot (WSL = un petit Linux dans Windows).
+- Une install "pure" dans WSL2, comme sur un vrai Linux.
 
-Franchement, pour du dev moderne, **travaille dans WSL2**.
+Pour du dev moderne : **travaille dans WSL2**.
 
-### Étapes rapides
+### Etapes rapides
 
-1. Activer WSL2 et installer Ubuntu depuis le Microsoft Store.  
-2. Dans WSL (Ubuntu), suivre la procédure Linux ci-dessus (install Docker Engine).  
-3. Vérifier :
+1. Active WSL2 et installe Ubuntu depuis le Microsoft Store.
+2. Dans Ubuntu, suis la procedure Linux ci-dessus.
+3. Verifie :
 
 ```bash
-wsl -l -v          # tu dois voir Ubuntu en version 2
+wsl -l -v          # Ubuntu en version 2
 docker ps          # depuis Ubuntu
 ```
 
-Tu restes dans un environnement proche d'un serveur Linux classique, ce qui te simplifiera la vie le jour où tu passeras en prod.
+Tu es dans un environnement proche d'un serveur Linux. Le jour ou tu passes en prod, tu seras moins perdu.
 
 ---
 
-## Réglages utiles au quotidien
+## Reglages utiles au quotidien
 
-Quelques petits réglages qui changent la vie :
+- **Limiter les ressources** (surtout sur laptop). Dans Docker Desktop : onglet Resources. Mets un plafond CPU/RAM raisonnable. Sinon ton PC devient une friteuse.
+- **Nettoyer regulierement** :
 
-- **Limiter les ressources** (surtout sur laptop)  
-  - Docker Desktop (macOS/Windows) → onglet Resources : limite CPU/RAM raisonnable.  
-  - Sur Linux, pense à fermer les conteneurs que tu n'utilises plus.
+```bash
+docker ps -a
+docker image ls
+docker volume ls
+docker system prune
+```
 
-- **Nettoyer régulièrement**  
-  ```bash
-  docker ps -a
-  docker image ls
-  docker volume ls
-  docker system prune
-  ```
+`prune`, c'est le balai. Ca jette les boites et images inutiles. Attention : ca ne touche pas aux volumes nommes (tes donnees).
 
-- **Activer la complétion shell** (bash/zsh)  
-  Permet d'avoir l'auto-complétion sur `docker run`, `docker image`, etc.
+- **Activer la completion shell** (bash/zsh) pour taper `docker` plus vite.
 
 ---
 
-## Checklist installation
+## Checklist
 
-Si tu coches tout ça, tu es bien :
+Coche ca, et tu es pret :
 
-- [x] `docker ps` fonctionne sans sudo (sur ta machine de dev)  
-- [x] `docker run hello-world` s'exécute correctement  
-- [x] Tu sais où Docker est installé (Linux natif / WSL / macOS)  
-- [x] Tu as limité l'usage CPU/RAM sur ta machine principale  
+- [x] `docker ps` sans sudo (en dev)
+- [x] `docker run hello-world` OK
+- [x] Tu sais ou Docker tourne (Linux / WSL / Mac)
+- [x] Tu as limite CPU/RAM sur ta machine principale
 
-Dans le prochain article, on va commencer à **brancher des volumes et des réseaux** pour que les conteneurs deviennent vraiment utiles (bases de données, front + API, etc.).
-
+Ensuite : [volumes et reseaux](/blog/articles/docker-volumes-reseaux.html) pour que tes conteneurs gardent des donnees et se parlent. Puis [Docker Compose](/blog/articles/docker-compose-environnements-local.html) pour tout lancer d'une commande.

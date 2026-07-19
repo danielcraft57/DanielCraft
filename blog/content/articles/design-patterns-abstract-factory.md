@@ -15,23 +15,16 @@ series_order: 15
 
 Abstract Factory crée des familles d'objets cohérents (UI kit, thème).
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-abstract-factory.svg" alt="Schéma du pattern Abstract Factory" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Abstract Factory — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-abstract-factory-banner.webp" alt="Illustration Abstract Factory" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Abstract Factory (Créationnel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Abstract Factory crée des familles d'objets cohérents (UI kit, thème).
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-abstract-factory.svg" alt="Schéma du pattern Abstract Factory" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Abstract Factory — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

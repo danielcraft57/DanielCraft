@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Conformite RGPD NIS2 ISO</title>
+  <desc id="desc">Chevauchement RGPD, NIS2 et ISO 27001</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Conformite : RGPD - NIS2 - ISO 27001</text>
+
+  <rect x="40" y="80" width="220" height="240" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="150" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb">RGPD</text>
+  <text x="150" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Donnees personnelles</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Bases legales</text>
+  <text x="150" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Droits des personnes</text>
+  <text x="150" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">DPO / AIPD</text>
+  <text x="150" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Notification breaches</text>
+
+  <rect x="290" y="80" width="220" height="240" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="400" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#dc2626">NIS2</text>
+  <text x="400" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Entites critiques</text>
+  <text x="400" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Gestion des risques</text>
+  <text x="400" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Signalement incidents</text>
+  <text x="400" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Chaine d'approvisionnement</text>
+  <text x="400" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Gouvernance cyber</text>
+
+  <rect x="540" y="80" width="220" height="240" rx="10" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="650" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb">ISO 27001</text>
+  <text x="650" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">SMSI</text>
+  <text x="650" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Politiques / controles</text>
+  <text x="650" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">PDCA / audits</text>
+  <text x="650" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Annex A (mesures)</text>
+  <text x="650" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Preuves continues</text>
+
+  <rect x="150" y="350" width="500" height="40" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="375" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Socle commun : risques, preuves, responsabilite, amelioration</text>
+</svg>

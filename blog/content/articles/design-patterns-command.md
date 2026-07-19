@@ -15,23 +15,16 @@ series_order: 9
 
 Command encapsule une requête en objet : exécution, annulation, file d'attente, historique.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-command.svg" alt="Schéma du pattern Command" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Command — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-command-banner.webp" alt="Illustration Command" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Command (Comportemental).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Command encapsule une requête en objet : exécution, annulation, file d'attente, historique.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-command.svg" alt="Schéma du pattern Command" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Command — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

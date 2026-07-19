@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">IAM et Zero Trust</title>
+  <desc id="desc">Couches identite, appareil, reseau, application, donnees</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">IAM &amp; Zero Trust : couches de controle</text>
+
+  <rect x="120" y="60" width="560" height="50" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="90" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#2563eb">Identite (IdP, MFA, SSO, lifecycle)</text>
+
+  <rect x="150" y="125" width="500" height="50" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="400" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Appareil (conformite, posture, EDR)</text>
+
+  <rect x="180" y="190" width="440" height="50" rx="8" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Reseau (ZTNA, micro-segmentation)</text>
+
+  <rect x="210" y="255" width="380" height="50" rx="8" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="400" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#0f172a">Application (authZ, RBAC/ABAC)</text>
+
+  <rect x="240" y="320" width="320" height="50" rx="8" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="400" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#dc2626">Donnees (chiffrement, DLP, labels)</text>
+
+  <text x="400" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Ne jamais faire confiance par defaut - verifier en continu</text>
+</svg>

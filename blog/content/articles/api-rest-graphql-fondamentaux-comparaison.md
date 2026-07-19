@@ -1,7 +1,7 @@
 ---
-title: "APIs web : REST vs GraphQL, poser le décor"
+title: "API : deux façons de faire parler un site et un serveur"
 date: 2025-07-01
-excerpt: "Comprendre clairement ce que sont REST et GraphQL, leurs philosophies, et dans quels contextes ils brillent (ou pas) avant de rentrer dans les détails techniques."
+excerpt: "REST et GraphQL, c'est quoi ? Deux styles pour demander des infos à un serveur — on pose le décor."
 type: article
 tags: [API, REST, GraphQL, backend, architecture]
 series: api-rest-graphql-serie
@@ -9,104 +9,70 @@ series_order: 1
 og_image: api-rest-graphql-fondamentaux-comparaison-1200x630.jpg
 ---
 
-# APIs web : REST vs GraphQL, poser le décor
+# API : deux façons de faire parler un site et un serveur
 
-Quand tu dois exposer une API, la question « REST ou GraphQL ? » arrive très vite.  
-Plutôt que de partir sur une solution « à la mode », l’idée de cet article est de **poser les bases** : ce que chaque approche promet, ce qu’elle implique pour ton backend, ton frontend et tes équipes.
+Imagine deux restaurants. Dans le premier, tu commandes des **plats fixes** sur un menu. Dans le second, tu dis exactement ce que tu veux dans ton assiette. Une **API**, c'est un peu ca : un moyen pour ton site (ou ton app) de demander des infos a un serveur.
 
----
+Souvent, quelqu'un dit trop vite : "On fait du GraphQL !" Ou l'inverse : "REST, point final." Trop tot. Avant de choisir, il faut comprendre ce que chaque style promet - et ce qu'il te demande en echange.
 
-## 1. Rappels : ce qu’on attend d’une bonne API
+## Une bonne API, c'est d'abord un contrat clair
 
-Avant même de parler REST ou GraphQL, une API doit :
+Oublie un instant les noms REST et GraphQL. Une bonne API, c'est un **contrat**. Tu sais comment appeler. Tu sais ce qui revient. Tu sais quoi faire si ca casse.
 
-- **Être simple à consommer** : contrat clair, erreurs explicites, docs exploitables.
-- **Être stable dans le temps** : compatibilité, versioning, gestion des breaking changes.
-- **Être observable** : logs, métriques, traces pour comprendre ce qui se passe.
-- **Être performante et prévisible** : latence, charge serveur, coûts infra.
-- **Refléter ton domaine métier** : pas juste des endpoints techniques mais un langage métier partagé.
+Les **erreurs** doivent etre lisibles. La **doc** doit servir, pas dormir dans un PDF de 2019. Et surtout : tu ne veux pas casser dix clients parce qu'un champ a change de nom un mardi.
 
-Garder ces critères en tête aidera à comparer REST et GraphQL de manière pragmatique.
+Pense aussi a la **stabilité**. Et a pouvoir expliquer pourquoi une requete a mis 800 ms un vendredi. Logs, mesures, traces - sans ca, tu cherches une aiguille dans le noir.
 
----
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/rest-vs-graphql.svg" alt="Schéma comparatif REST vs GraphQL" class="schema-inline" width="640" />
+  <figcaption>Deux styles, même objectif : un contrat clair entre clients et serveur.</figcaption>
+</figure>
 
-## 2. REST en deux minutes
+La **vitesse** compte aussi. Une API "elegante" qui fait exploser la facture cloud, ce n'est pas une bonne API. Enfin, elle doit parler le langage du metier : commandes, utilisateurs, abonnements - pas un catalogue de routes inventees au fil des tickets.
 
-REST n’est pas une librairie mais un **style d’architecture** basé sur HTTP :
+Ces criteres, c'est ta grille. REST et GraphQL ne sont que deux reponses differentes a la meme question.
 
-- Ressources identifiées par des **URLs** (`/users`, `/orders/123`).
-- Utilisation des **verbes HTTP** (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
-- Sémantique des **codes HTTP** (`200`, `201`, `400`, `404`, `500`, etc.).
-- Notion de **représentations** (JSON, XML, …) et de **stateless** (pas d’état serveur entre deux requêtes).
+## REST : des ressources et des verbes
 
-Dans la pratique, beaucoup d’APIs dites « REST » sont en réalité du **REST pragmatique** : on applique 80 % des principes, on adapte le reste en fonction du besoin et de l’outillage.
+**REST**, ce n'est pas une librairie a installer. C'est une facon d'organiser les echanges sur le web, avec **HTTP**.
 
----
+Les choses ont des adresses (des **URLs**) : `/users`, `/orders/123`. Les **verbes** disent l'action : lire (`GET`), creer (`POST`), modifier (`PATCH`), supprimer (`DELETE`). Les **codes** racontent la suite : `200` ok, `404` introuvable, `500` probleme serveur.
 
-## 3. GraphQL en deux minutes
+Chaque requete est independante. On dit "sans etat" : le serveur ne garde pas ta conversation precedente dans sa tete.
 
-GraphQL est un **langage de requête pour API** inventé chez Facebook :
+Dans la vraie vie, presque personne ne fait du REST "parfait de these". On fait du REST **pratique**. On garde les idees utiles. On adapte le reste. Et c'est bien.
 
-- On définit un **schéma typé** (types, champs, relations) côté serveur.
-- Le client envoie une **requête déclarative** : il précise exactement les champs dont il a besoin.
-- Une seule **endpoint HTTP** (souvent `/graphql`) reçoit toutes les requêtes.
-- Le serveur exécute la requête sur les résolveurs, puis renvoie **exactement** le shape demandé.
+L'avantage enorme : le monde connait deja HTTP. Caches, CDN, `curl`, Postman, OpenAPI - tout le monde s'y retrouve. Pour une API publique ou des partenaires, REST reste souvent le chemin le plus simple. Tu veux aller plus loin ? Lis les [bonnes pratiques REST](/blog/articles/api-rest-bonnes-pratiques-conception.html).
 
-L’objectif principal est d’**éviter la sous- et sur‑récupération de données** (under/over‑fetching), surtout dans des frontends riches (SPA, mobile) qui composent des écrans complexes.
+Le piege : avec le temps, tu accumules des endpoints. Le front fait trois, quatre, cinq appels pour peindre une page. Ou tu renvoies trop de champs inutiles. Ou tu crees des routes speciales `/screen-home` pour coller a l'ecran. Ca marche... jusqu'au jour ou tu ne sais plus lequel de tes 120 endpoints sert encore.
 
----
+## GraphQL : tu demandes exactement ce dont tu as besoin
 
-## 4. Forces et faiblesses (vue très haute)
+**GraphQL**, c'est un langage de requete. Ne chez Facebook. Tu decries un **schema** (une carte des types et des liens). Le client dit : "donne-moi ca, ca et ca". Souvent, tout passe par **une seule** adresse : `/graphql`.
 
-### REST – points forts
+L'idee centrale : eviter de recevoir trop peu... ou trop. Sur un ecran riche (app, dashboard), tu veux l'email, trois commandes recentes, le compteur de notifs - point. Pas un pavé JSON de 40 champs.
 
-- **S’appuie sur HTTP** : caches, proxies, CDN sont faciles à exploiter.
-- **Standard de fait** : outillage massif, facile à exposer à des partenaires.
-- **Simple à débugger** : un `curl` ou Postman suffit, les URLs sont explicites.
-- Convient très bien aux **APIs orientées ressources** (CRUD, microservices simples).
+Ca sonne magique. Ce n'est **pas** magique. Il y a une courbe d'apprentissage. Le cache CDN est moins "gratuit" qu'avec des URLs REST propres. Et une mauvaise requete peut etre monstrueuse si tu ne limites rien.
 
-### REST – points de vigilance
+Pour comprendre le schema et les requetes, vois l'article [GraphQL : schema et queries](/blog/articles/graphql-fondamentaux-schema-queries.html).
 
-- Risque d’**explosion du nombre d’endpoints** au fil du temps.
-- **Sur‑récupération** fréquente (tu récupères plus de données que nécessaire).
-- Peut nécessiter beaucoup de **round‑trips** côté frontend pour construire un écran complexe.
+## Ou chacun brille (et ou ca coince)
 
-### GraphQL – points forts
+REST brille quand tu as des ressources stables : catalogue, commandes, paiement, SMS. Integrations B2B. CRUD clair. Tu veux du standard, du cache simple, du debug lisible : REST est souvent le bon **defaut**.
 
-- **Un seul endpoint** et une requête qui décrit précisément les données voulues.
-- **Évolution du schéma** souvent plus fluide (dépréciation champ par champ).
-- Excellent pour des **frontends riches/mobiles** qui composent des écrans complexes.
+GraphQL brille quand tes fronts [compose](/blog/articles/[docker](/blog/articles/docker-fondamentaux-images-conteneurs.html)-compose-environnements-local.html)nt beaucoup. Web, iOS, Android - pas les memes tranches de donnees. Un **BFF** (une couche devant qui assemble pour l'ecran) qui cache des microservices. Un metier plein de liens. La, les requetes declaratives changent vraiment la vie du front - si le back tient le schema.
 
-### GraphQL – points de vigilance
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/rest-graphql-ou-briller.svg" alt="Schema ou REST et GraphQL excellent chacun" class="schema-inline" width="640" />
+  <figcaption>REST et GraphQL ne se battent pas sur le meme terrain : pattern d'acces d'abord.</figcaption>
+</figure>
 
-- **Courbe d’apprentissage** : schéma, résolveurs, tooling dédié.
-- Plus complexe à **mettre en cache** côté CDN (on y reviendra).
-- Risque de **requêtes très coûteuses** si le schéma n’est pas bien pensé (N+1, profondeur, etc.).
+Les faiblesses se mirent. REST : trop d'endpoints, trop d'aller-retours, payloads trop gros. GraphQL : plus complexe a operer, cache plus subtil, risque de requetes couteuses. Ni l'un ni l'autre n'efface un SQL lent ou une auth foireuse. Ils **deplacent** le probleme.
 
----
+## Comment lire la suite
 
-## 5. Cas d’usage typiques
+La question "REST ou GraphQL ?" n'a pas de gagnant universel. Elle a des **contextes**.
 
-- **REST** brille pour :
-  - APIs publiques simples (paiement, SMS, notifications, etc.).
-  - Microservices orientés ressources (catalogue produits, commandes, etc.).
-  - Intégrations B2B où les partenaires attendent du REST/HTTP classique.
+Ensuite dans la serie : design REST, schema GraphQL, [performances et couts](/blog/articles/api-rest-graphql-performances-benchmarks.html), puis une [grille pour choisir (ou mixer)](/blog/articles/choisir-rest-graphql-quand-et-comment.html).
 
-- **GraphQL** brille pour :
-  - Applications **front riches** (web/mobile) avec beaucoup d’écrans composés.
-  - **Backend For Frontend (BFF)** : adapter des microservices internes à des besoins UI.
-  - Exposer un **graphe métier** complexe (relations nombreuses, filtrages variés).
-
----
-
-## 6. Ce que la série va couvrir
-
-Dans les prochains articles, on va :
-
-1. Entrer dans le détail des **APIs REST modernes** : design, versioning, pagination, erreurs, sécurité.
-2. Explorer **GraphQL côté serveur et côté client** : schéma, résolveurs, tooling, anti‑patterns.
-3. Comparer **performances, coûts et complexité opérationnelle** dans différents scénarios.
-4. Proposer un **guide de choix concret** : quand REST est un no‑brainer, quand GraphQL fait réellement la différence, et comment mixer les deux intelligemment.
-
-L’objectif n’est pas de désigner un « gagnant », mais de te donner une **grille de lecture claire** pour ton contexte.
-
+Pour l'instant, retiens ca : ce n'est pas une guerre de religion. C'est un choix d'architecture. Si tu poses le decor correctement, tu evites deja la moitie des regrets.

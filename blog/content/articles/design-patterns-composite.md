@@ -15,23 +15,16 @@ series_order: 16
 
 Composite traite feuilles et conteneurs de la même façon.
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-composite.svg" alt="Schéma du pattern Composite" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Composite — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-composite-banner.webp" alt="Illustration Composite" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Composite (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Composite traite feuilles et conteneurs de la même façon.
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-composite.svg" alt="Schéma du pattern Composite" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Composite — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -15,23 +15,16 @@ series_order: 14
 
 Proxy contrôle l'accès à un objet coûteux ou distant (lazy, cache, sécurité).
 
-
-<figure>
-  <img src="../../assets/images/blog/dp-proxy.svg" alt="Schéma du pattern Proxy" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern Proxy — les flèches montrent qui dépend de qui.</figcaption>
-</figure>
-
-<figure>
-  <img src="../../assets/images/blog/illustrations/dp-proxy-banner.webp" alt="Illustration Proxy" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble visuelle du pattern Proxy (Structurel).</figcaption>
-</figure>
-
-
 ---
 
 ## En une phrase
 
 Proxy contrôle l'accès à un objet coûteux ou distant (lazy, cache, sécurité).
+
+<figure class="schema-figure">
+  <img src="../../assets/images/blog/dp-proxy.svg" alt="Schéma du pattern Proxy" class="schema-inline" width="480" />
+  <figcaption>Structure simplifiée du pattern Proxy — les flèches montrent qui dépend de qui.</figcaption>
+</figure>
 
 ---
 

@@ -296,7 +296,7 @@
 
 /* Schemas et images dans les articles */
 .prose figure {
-  margin: 2rem 0;
+  margin: 2.25rem 0 2.5rem;
   text-align: center;
 }
 
@@ -309,15 +309,37 @@
 }
 
 .prose figcaption {
-  font-size: 0.875rem;
-  color: var(--gray-500);
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-top: 0.65rem;
+  line-height: 1.45;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Schema pedagogique : un cran plus present, pas une deco */
+.prose figure:has(.schema-inline[src*="/schemas/"]),
+.prose figure.schema-figure {
+  margin: 2rem 0 2.75rem;
+  padding: 1rem 0.75rem 1.15rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
 }
 
 .prose .schema-inline {
   display: block;
-  margin: 1.5rem auto;
-  max-width: 100%;
+  margin: 0.25rem auto 0;
+  max-width: min(100%, 720px);
+}
+
+.prose figure:has(.schema-inline[src*="/schemas/"]) img.schema-inline,
+.prose figure.schema-figure img.schema-inline {
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
 }
 
 /* ---- Page index blog (container = meme largeur que site) ---- */
@@ -326,6 +348,11 @@
   min-height: 70vh;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Index avec hero recherche : pas de bande blanche sous la nav */
+.blog-page-section:has(> .blog-search-hero) {
+  padding-top: 0;
 }
 
 .blog-page {
@@ -347,16 +374,40 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
-/* Compteur dans le hero quand la recherche est active */
+.blog-all-header .blog-search-results-info {
+  margin: 0;
+  min-height: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  text-align: left;
+}
+
+.blog-all-header .blog-search-results-info:empty {
+  display: none;
+}
+
+.blog-all-header .blog-search-results-info.is-results-pop {
+  animation: blog-results-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes blog-results-pop {
+  0% { opacity: 0.55; transform: translateY(3px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Compteur dans le header quand la recherche est active */
 .blog-all-articles--search-active .blog-section-title {
   display: none;
 }
 
 .blog-all-articles--search-active .blog-all-header {
   justify-content: flex-start;
-  padding-top: 0.35rem;
+  padding-top: 0.15rem;
 }
 
 .blog-card-highlight {
@@ -562,6 +613,12 @@
 /* Etat compact quand une recherche est active */
 .blog-all-articles.blog-all-articles--search-active {
   margin-top: 1rem;
+}
+
+/* Les résultats filtrés doivent être visibles même hors du viewport (reveal scroll) */
+.blog-all-articles--search-active .blog-reveal-item {
+  opacity: 1;
+  transform: none;
 }
 
 .recommendations-index-grid {

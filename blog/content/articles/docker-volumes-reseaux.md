@@ -1,7 +1,7 @@
 ---
-title: "Docker : bien utiliser les volumes et les réseaux"
+title: "Docker : garder ses fichiers et connecter les boîtes"
 date: 2024-11-12
-excerpt: "Connecter tes conteneurs entre eux et gérer les données persistantes avec les volumes et les réseaux Docker, sans te retrouver avec une base de données effacée par erreur."
+excerpt: "Volumes pour persister, réseaux pour faire parler les services — sans magie noire."
 type: article
 tags: [Docker, volumes, réseaux, data, DevOps]
 series: docker-serie
@@ -9,50 +9,53 @@ series_order: 3
 og_image: docker-volumes-reseaux-1200x630.jpg
 ---
 
-# Docker : bien utiliser les volumes et les réseaux
+# Docker : garder ses fichiers et connecter les boîtes
 
-Lancer `docker run` avec une image publique, c'est sympa. Mais très vite tu as besoin de deux choses :
+Lancer `docker run` avec une image publique, c'est sympa. Mais tres vite tu as besoin de deux choses :
 
-- **garder les données** (base de données, fichiers d'upload, etc.) même quand tu recrées un conteneur ;
-- **faire discuter plusieurs conteneurs entre eux** (API + base, front + API, worker + broker, etc.).
+- **garder les donnees** (base, fichiers uploades) meme si tu recrees le conteneur ;
+- **faire discuter** plusieurs boites entre elles (API + base, front + API...).
 
-Pour ça, Docker te donne deux outils clés : **les volumes** et **les réseaux**.
+Docker te donne deux outils : les **volumes** et les **reseaux**. Si tu as rate les bases, reviens a [images et conteneurs](/blog/articles/docker-fondamentaux-images-conteneurs.html).
 
 ---
 
-## Volumes : où vivent tes données
+## Volumes : le tiroir a souvenirs
 
-Sans volume, tout ce qui vit dans le système de fichiers du conteneur disparaît dès qu'il est supprimé.
+Sans volume, tout ce qui vit dans le conteneur disparait quand tu le supprimes. C'est comme jeter une boite avec les photos dedans.
 
-### Types de volumes
+### Deux types utiles
 
-En pratique, tu verras surtout :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/docker-volumes-reseaux.svg" alt="Schema Docker volumes et reseaux" class="schema-inline" width="640" />
+  <figcaption>Volumes pour persister, reseaux pour composer — pas l'inverse.</figcaption>
+</figure>
 
-- **Volumes nommés** : gérés par Docker.
-- **Bind mounts** : montage d'un dossier de ta machine hôte dans le conteneur.
+- **Volume nomme** : Docker garde le tiroir pour toi.
+- **Bind mount** : tu ouvres une porte entre un dossier de ton PC et le conteneur.
 
 ```bash
-# Volume nommé
+# Volume nomme
 docker volume create db-data
 
 docker run -d --name db \
   -v db-data:/var/lib/postgresql/data \
   postgres:16
 
-# Bind mount (développement)
+# Bind mount (dev)
 docker run -d --name api \
   -v "$PWD/src":/app/src \
   my-api-image:latest
 ```
 
-Quelques règles simples :
+Regles simples :
 
-- Pour la **prod**, privilégie les **volumes nommés** → Docker gère l'emplacement, la portabilité.
-- Pour le **dev**, les **bind mounts** sont parfaits pour éditer le code en live.
+- En **prod** : privilegie les volumes nommes. Docker gere l'emplacement. Plus portable.
+- En **dev** : les bind mounts sont parfaits. Tu modifies le code, le conteneur voit le changement.
 
 ---
 
-## Inspecter et nettoyer les volumes
+## Inspecter et nettoyer
 
 ```bash
 docker volume ls
@@ -60,21 +63,13 @@ docker volume inspect db-data
 docker volume rm db-data
 ```
 
-Attention au ménage : supprimer un volume = perdre les données qui sont dedans.  
-Sur une base de dev, ce n'est pas grave. Sur une base prod… tu vois l'idée.
+Attention : supprimer un volume = **perdre les donnees** dedans. Sur une base de test, ok. Sur la prod... tu vois l'idee.
 
 ---
 
-## Réseaux Docker : faire parler les conteneurs
+## Reseaux : faire parler les boites
 
-Par défaut, Docker crée un réseau `bridge`. Tu peux déjà faire :
-
-```bash
-docker run -d --name db postgres:16
-docker run -d --name api --link db postgres:16
-```
-
-Mais la bonne pratique moderne, c'est de créer **ton propre réseau**.
+Par defaut, Docker cree un reseau `bridge`. La bonne pratique : creer **ton propre reseau**, comme une piece ou seules tes boites se parlent.
 
 ```bash
 docker network create mon-app-net
@@ -83,28 +78,28 @@ docker run -d --name db --network mon-app-net postgres:16
 docker run -d --name api --network mon-app-net my-api-image:latest
 ```
 
-Dans ce réseau :
+Dans ce reseau :
 
-- Le conteneur `api` peut joindre la base via `db:5432`.  
-- Tu n'as pas besoin d'exposer le port 5432 vers l'extérieur pour qu'ils se parlent.
+- `api` joint la base via `db:5432` (le nom du conteneur = l'adresse).
+- Tu n'as pas besoin d'ouvrir le port 5432 vers l'exterieur pour qu'ils se parlent.
 
 ---
 
-## Ports vs réseaux : ne pas tout exposer
+## Ports vs reseaux
 
-On distingue :
+Deux idees differentes :
 
-- **Port exposé vers l'hôte** : `-p 8080:80` → tu ouvres 8080 sur ta machine.
-- **Port interne au réseau** : `--network mon-app-net` → seulement visible entre conteneurs.
+- **Port vers ta machine** : `-p 8080:80` - tu ouvres la fenetre 8080 sur ton PC.
+- **Port dans le reseau** : visible seulement entre conteneurs.
 
 Bonne pratique :
 
-- N'ouvre vers l'extérieur que ce qui est vraiment nécessaire (souvent le reverse proxy ou l'API publique).
-- Laisse les bases, brokers, workers **cachés** derrière le réseau Docker.
+- N'ouvre vers l'exterieur que le strict necessaire (souvent l'API ou le reverse proxy).
+- Laisse bases, brokers, workers **caches** derriere le reseau Docker.
 
 ---
 
-## Exemple concret : API + base de données
+## Exemple : API + base
 
 ```bash
 docker network create app-net
@@ -122,17 +117,12 @@ docker run -d --name api \
   my-api-image:latest
 ```
 
-- L'extérieur parle à l'API via `localhost:8080`.
-- L'API parle à la base via `postgres:5432` dans le réseau `app-net`.
+- L'exterieur parle a l'API via `localhost:8080`.
+- L'API parle a la base via `postgres:5432` dans `app-net`.
+- Les donnees vivent dans le volume `db-data`.
 
 ---
 
-## Volumes et réseaux avec docker-compose
+## Suite : tout ca dans un fichier
 
-Dans le prochain article, on utilisera **docker-compose** pour décrire ce genre de stack dans un fichier YAML :
-
-- services (`api`, `db`, `redis`, etc.)  
-- réseaux (`frontend`, `backend`)  
-- volumes (`db-data`, `uploads`, etc.).
-
-L'idée : pouvoir tout lancer/arrêter avec un simple `docker compose up` / `down`.
+Ecrire ces commandes a la main, ca lasse. Avec [Docker Compose](/blog/articles/docker-compose-environnements-local.html), tu decries services, reseaux et volumes dans un YAML. Puis : `docker compose up`. Un seul geste pour tout le garage.

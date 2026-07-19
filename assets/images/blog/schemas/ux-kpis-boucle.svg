@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Boucle UX KPIs</title>
+  <desc id="desc">Boucle mesurer, apprendre, iterer pour ameliorer l UX</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Mesurer l'UX : la boucle decisionnelle</text>
+
+  <!-- Center -->
+  <circle cx="400" cy="200" r="52" fill="#2563eb"/>
+  <text x="400" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">Decisions</text>
+  <text x="400" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#fff">pas vanity</text>
+
+  <!-- Mesurer -->
+  <rect x="60" y="80" width="200" height="120" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="160" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb">1. Mesurer</text>
+  <text x="160" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Funnels, drop-off,</text>
+  <text x="160" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">erreurs, completion</text>
+
+  <!-- Apprendre -->
+  <rect x="540" y="80" width="200" height="120" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="640" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#dc2626">2. Apprendre</text>
+  <text x="640" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Tests, verbatims,</text>
+  <text x="640" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">pourquoi ca casse</text>
+
+  <!-- Iterer -->
+  <rect x="300" y="290" width="200" height="90" rx="10" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="400" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#2563eb">3. Iterer</text>
+  <text x="400" y="352" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Corriger, A/B, re-mesurer</text>
+
+  <!-- Arrows -->
+  <path d="M260 140 H340" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M460 140 H535" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M640 200 V250 H500" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M300 335 H160 V205" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+  <text x="400" y="405" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Quanti localise - quali explique - la boucle bat le dashboard</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>

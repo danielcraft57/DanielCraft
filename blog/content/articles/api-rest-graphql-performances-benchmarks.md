@@ -1,7 +1,7 @@
 ---
-title: "REST vs GraphQL : performances, coûts et benchmarks"
+title: "REST ou GraphQL : lequel va plus vite (et pour qui)"
 date: 2025-07-10
-excerpt: "Comparer REST et GraphQL sur ce qui compte en prod : latence, nombre de requêtes, charge serveur, cache, coûts cloud et complexité opérationnelle."
+excerpt: "Écran simple, dashboard chargé, mobile, cache : où chacun gagne vraiment."
 type: article
 tags: [API, REST, GraphQL, performance, benchmark]
 series: api-rest-graphql-serie
@@ -9,152 +9,66 @@ series_order: 4
 og_image: api-rest-graphql-performances-benchmarks-1200x630.jpg
 ---
 
-# REST vs GraphQL : performances, coûts et benchmarks
+# REST ou GraphQL : lequel va plus vite (et pour qui)
 
-Dire « GraphQL est plus rapide que REST » ou l’inverse n’a pas beaucoup de sens hors contexte.  
-Ce qui t’intéresse vraiment : **combien de requêtes partent vers le backend / la base de données, quelle est la latence perçue côté utilisateur, et combien ça te coûte en infra et en complexité.**
+"GraphQL est plus rapide que REST." Non. Ou plutot : ca depend tellement du contexte que la phrase ne veut **rien** dire.
 
----
+Ce qui compte en prod, c'est autre chose. Combien de **requetes** partent du client. Combien de travail ca genere cote base. Quelle **latence** l'utilisateur ressent. Combien tu paies en infra. Et a quel point ton equipe comprend ce qui se passe quand ca rame un vendredi.
 
-## 1. Scénario 1 : écran simple, peu de données
+Pour le decor, vois [REST vs GraphQL](/blog/articles/api-rest-graphql-fondamentaux-comparaison.html). Pour soigner chaque style : [REST](/blog/articles/api-rest-bonnes-pratiques-conception.html) et [GraphQL](/blog/articles/graphql-fondamentaux-schema-queries.html).
 
-Exemple : page « profil utilisateur » qui affiche les infos de base.
+## Ecran simple : match nul (presque)
 
-- **REST** :
-  - `GET /users/me` → JSON avec les infos de base.
-  - Facile à mettre en cache HTTP/CDN (ETag, `Cache-Control`, etc.).
-  - Très simple à observer, logs lisibles.
-- **GraphQL** :
-  - Query `me { id email name }`.
-  - Une requête HTTP vers `/graphql`, puis résolveur unique vers la base.
+Page profil. Infos de base. Avec REST : un `GET /users/me`, JSON propre, **cache** HTTP/CDN facile. Avec GraphQL : une query `me { id email name }`, un resolveur, meme histoire.
 
-Dans ce cas, **aucune différence majeure** : bien fait, REST comme GraphQL sont rapides et peu coûteux.  
-REST garde un léger avantage sur la **simplicité de cache côté CDN**.
+Bien fait, les deux sont rapides et peu chers. REST garde un leger avantage sur la simplicite de cache CDN : une URL stable, les proxies savent quoi en faire. GraphQL passe souvent tout par `/graphql` - le cache "gratuit" n'est plus aussi gratuit.
 
----
+Si ton produit, c'est surtout ca - des ressources stables, peu de composition - te battre sur GraphQL pour gagner 5 ms, c'est du theatre. Personne ne le sentira.
 
-## 2. Scénario 2 : écran composite (dashboard)
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/api-perf-benchmark.svg" alt="Schéma comparatif des performances REST et GraphQL" class="schema-inline" width="640" />
+  <figcaption>Latence perçue, volume de données, charge serveur : trois axes, pas un seul gagnant.</figcaption>
+</figure>
 
-Exemple : dashboard qui affiche l’utilisateur, ses dernières commandes, des agrégats, etc.
+## Dashboard composite : la, ca change
 
-- **REST naïf** :
-  - 4–6 requêtes (`/me`, `/orders?limit=5`, `/notifications`, `/stats`…).
-  - Risque de **waterfall** côté frontend si on séquence mal.
-- **REST optimisé** :
-  - Endpoint agrégé dédié `GET /dashboards/home` qui compose côté backend.
-  - Performant, mais **spécifique à un écran** → risque de prolifération d’endpoints.
-- **GraphQL** :
+Imagine un **dashboard** : user, cinq dernieres commandes, compteur de notifs, quelques chiffres. REST naif : quatre a six appels. Si le front les enchaine mal, tu as une cascade. L'utilisateur attend. Tu te demandes pourquoi "l'API est lente" alors que c'est surtout le pattern d'appels.
 
-```graphql
-query Dashboard {
-  me { id email }
-  recentOrders(limit: 5) { id total status }
-  unreadNotificationsCount
-  kpis { revenue30d newCustomers }
-}
-```
+REST optimise : un endpoint dedie `GET /dashboards/home`. Performant, oui. Specifique a un ecran, aussi. Multiplie par dix ecrans : collection de Frankenstein.
 
-Ici, GraphQL a un vrai avantage :
+GraphQL : une query qui demande exactement ces tranches. Une requete HTTP. Cote client, la latence ressentie est souvent meilleure. Cote serveur, tout depend des resolveurs : batching, DataLoader, cache. Si tu resols n'importe comment, tu as juste deplace le cout du reseau vers la base - et parfois multiplie.
 
-- **Une seule requête HTTP**, latence côté client souvent meilleure.
-- Composition déclarative de données hétérogènes **sans multiplier les endpoints**.
+## Mobile, reseau pourri
 
-Le coût côté serveur dépend ensuite de la qualité des résolveurs (batching, cache applicatif, etc.).
+Sur **mobile**, chaque octet et chaque requete comptent. GraphQL brille ici : tu peux demander un sous-ensemble vraiment mince pour le telephone, different du desktop. Moins de JSON mort.
 
----
+REST s'en sort avec des endpoints mobile dedies ou des `?fields=` - jusqu'au jour ou tu as une matrice de variantes et personne ne sait laquelle est encore vivante.
 
-## 3. Scénario 3 : mobile en réseau dégradé
+En clair : GraphQL te donne un meilleur controle sur le trade-off donnees / latence, au prix d'un backend plus exigeant. REST te donne de la simplicite, au prix parfois de payloads trop gros ou de trop d'appels. Ni l'un ni l'autre n'est "plus rapide" en soi.
 
-Sur mobile, tu veux limiter :
+## Serveur, CPU, cache : le vrai terrain
 
-- Le **nombre de requêtes**.
-- La **taille des payloads**.
+Les perfs ne se jouent pas qu'au transport. REST derriere un reverse proxy ou un CDN avec cache par URL : pain beni. Un endpoint = une intention = des logs lisibles.
 
-GraphQL :
+GraphQL : le cache CDN "par URL" marche mal. Tu compenses avec du cache applicatif par resolveur, des cles metier, eventuellement une gateway. Tu surveilles aussi la **profondeur** des queries et le cout : un client peut te demander un graphe monstrueux si tu ne limites rien.
 
-- Permet de **demander exactement les champs nécessaires** pour un écran mobile, souvent plus restreint que sur desktop.
-- Réduit le « JSON inutile » transmis sur le réseau.
+Beaucoup d'equipes font un choix hybride qui marche bien : microservices internes en REST (ou gRPC), couche GraphQL BFF devant pour les fronts. Cache et clarte en interne. Composition pour les clients. Souvent le meilleur des deux mondes - si le BFF ne devient pas un monolithe opaque.
 
-REST peut s’en sortir aussi en :
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/api-cache-layers.svg" alt="Schema des couches de cache cote API" class="schema-inline" width="640" />
+  <figcaption>Le perf game se joue souvent dans les caches, pas dans le framework.</figcaption>
+</figure>
 
-- Ajoutant des endpoints dédiés mobile (`/mobile/home`), ou des paramètres `?fields=`.
-- Mais on arrive vite à une **matrice complexe** de variantes par plateforme.
+## Couts cloud et complexite humaine
 
-Dans ce contexte, GraphQL fournit en général un **meilleur contrôle sur le trade‑off données / latence**, au prix d’un backend plus sophistiqué.
+Trois leviers : volume de requetes clients, travail par requete, capacite a **cacher** ce qui peut l'etre. GraphQL peut reduire les appels front → API tout en augmentant le travail serveur si le schema est mal pense. REST peut etre tres economique si tu exploites le cache HTTP et que tu evites l'explosion d'endpoints agreges.
 
----
+Et puis il y a le **cout humain**. REST, petites equipes, outillage classique : plus simple a operer. GraphQL : tooling, gouvernance, monitoring des resolveurs. En echange, les gros fronts gagnent en autonomie. Si tu n'as pas le budget mental pour soigner le serveur GraphQL, tu vas payer plus cher en incidents qu'en instances.
 
-## 4. Côté serveur : CPU, base de données et cache
+Sans chiffres absolus (ils dependent de ton infra), le mini-benchmark mental : REST naif multi-requetes perd souvent sur la latence ressentie. REST agrege et GraphQL bien faits sont comparables. Sur le volume de donnees, GraphQL gagne souvent. Sur le scaling "bete et mechant", REST reste plus simple.
 
-Les performances API ne se jouent pas qu’au transport :
+## Ce qui compte vraiment
 
-- **REST** :
-  - Facile à mettre derrière un **reverse proxy / CDN** avec cache par URL.
-  - Observabilité simple (un endpoint = une fonction métier).
-- **GraphQL** :
-  - Requêtes souvent non cacheables telles quelles côté CDN (une seule URL `/graphql`).
-  - Mais tu peux :
-    - Mettre en place un **cache applicatif** par résolveur ou par clé métier.
-    - Utiliser des systèmes comme Apollo, GraphQL Gateway avec cache segmenté.
-  - Exige une vigilance sur :
-    - Les **N+1 queries**.
-    - Les requêtes trop profondes / coûteuses (analyse de coût, limites).
+Au final, les deux peuvent etre rapides et peu couteux si tu observes, si tu evites les N+1, si tu caches intelligemment. **Mesure** avant de trancher. Une intuition de cafe ne remplace pas une trace.
 
-En pratique, beaucoup d’équipes :
-
-- Gardent leurs **microservices internes en REST**.
-- Ajoutent une **couche GraphQL BFF** qui agrège et simplifie pour les clients.
-
----
-
-## 5. Coûts cloud et complexité opérationnelle
-
-Les coûts dépendent de trois choses :
-
-1. **Volume de requêtes** (clients → API).
-2. **Travail par requête** (API → bases / autres services).
-3. **Capacité à mettre en cache** ce qui peut l’être.
-
-Quelques constats :
-
-- GraphQL peut **réduire le nombre de requêtes front → backend**, mais augmenter la complexité backend si le schéma est mal pensé.
-- REST peut être très économique si :
-  - Tu exploites bien le cache HTTP / CDN.
-  - Tu évites l’explosion d’endpoints agrégés spécifiques.
-
-**Complexité opérationnelle** :
-
-- REST : plus simple pour des équipes petites ou peu outillées.
-- GraphQL : nécessite tooling, gouvernance, monitoring spécifiques, mais peut **simplifier** la vie de gros frontends.
-
----
-
-## 6. Mini‑benchmark conceptuel
-
-Sans chiffres absolus (ils dépendent de ton infra), on peut comparer :
-
-- **Temps de TTFB perçu par l’utilisateur** :
-  - REST naïf (multi‑requêtes) : souvent plus mauvais.
-  - REST agrégé / GraphQL : comparables.
-- **Volume total de données transférées** :
-  - REST : dépend de la granularité des endpoints.
-  - GraphQL : généralement meilleur (moins de champs inutiles).
-- **Simplicité de scaling horizontal** :
-  - REST : très simple (stateless, cache par URL).
-  - GraphQL : nécessite de bien maîtriser le serveur, les résolveurs et leur coût.
-
----
-
-## 7. Synthèse : ce qui compte vraiment
-
-Au final, REST comme GraphQL peuvent être **rapides et peu coûteux** si :
-
-- Tu observes tes APIs (APM, traces, métriques).
-- Tu soignes le design (pas de N+1, pas de payloads monstrueux).
-- Tu mets en place un **cache intelligent**.
-
-La vraie question n’est pas « lequel est le plus rapide ? » mais :  
-**quel modèle donne à ton équipe le plus de contrôle et de lisibilité sur ces performances ?**
-
-L’article de conclusion proposera une **grille de décision concrète** pour choisir REST, GraphQL, ou un mix des deux.
-
+La question utile n'est pas "lequel est le plus rapide ?" C'est : quel modele donne a ton equipe le plus de controle et de lisibilite ? La [grille de decision](/blog/articles/choisir-rest-graphql-quand-et-comment.html) arrive juste apres - y compris le mix des deux. Oui, tu n'es pas oblige de choisir une religion.

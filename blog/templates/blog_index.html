@@ -28,28 +28,41 @@
     <meta name="twitter:description" content="{{META_DESCRIPTION}}">
     <meta name="twitter:image" content="{{OG_IMAGE}}">
     <meta name="theme-color" content="#2f78a6">
-    <link rel="icon" href="{{ROOT}}/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="{{ROOT}}/assets/icons/favicon.svg">
-    <link rel="stylesheet" href="{{ASSETS}}/css/main.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css">
-    <link rel="stylesheet" href="{{ASSETS}}/css/blog-search-hero.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <link rel="stylesheet" href="{{ASSETS}}/css/main.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/animations.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/responsive.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog.css{{ASSETS_QUERY}}">
+    <link rel="stylesheet" href="{{ASSETS}}/css/blog-search-hero.css{{ASSETS_QUERY}}">
+    <link rel="search" type="application/opensearchdescription+xml" title="DanielCraft Blog" href="/assets/opensearch-blog.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DanielCraft",
+      "url": "{{SITE_BASE}}/",
+      "inLanguage": "fr-FR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{SITE_BASE}}/blog/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Aller au contenu</a>
 {{NAV_HTML}}
 
     <main id="main-content" class="blog-page-section" itemscope itemtype="https://schema.org/Blog">
-        {{BREADCRUMBS}}
-        <aside class="blog-client-banner" aria-label="Guides artisans et commerces">
-            <div class="container blog-client-banner__inner">
-                <p><strong>Artisan ou commerce en Lorraine&nbsp;?</strong> Nos guides SEO local, visibilité Google et site vitrine sont faits pour vous — <a href="/">voir l'offre DanielCraft</a>. Contenu technique&nbsp;: <a href="/pro">espace pro</a>.</p>
-            </div>
-        </aside>
         <section class="blog-search-hero blog-search-hero--wow" aria-label="Recherche dans le blog">
             <div class="blog-search-bg" aria-hidden="true">
                 <svg class="blog-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -122,8 +135,6 @@
                     <button type="button" class="blog-search-chip blog-search-chip--pro" data-blog-search-query="docker"><i class="fas fa-code" aria-hidden="true"></i> Pro / technique</button>
                     <a href="/pro" class="blog-search-chip blog-search-chip--link"><i class="fas fa-laptop-code" aria-hidden="true"></i> Espace pro</a>
                 </div>
-
-                <p class="blog-search-results-info" id="blogSearchResultsInfo" aria-live="polite"></p>
             </div>
         </section>
 
@@ -135,6 +146,7 @@
             <section class="blog-all-articles" aria-label="Tous les articles">
                 <div class="blog-all-header">
                     <h2 class="blog-section-title">Tous les articles</h2>
+                    <p class="blog-search-results-info" id="blogSearchResultsInfo" aria-live="polite"></p>
                 </div>
                 <div class="articles-grid" id="blogArticlesGrid">
                     {{ARTICLES_GRID}}
@@ -142,14 +154,14 @@
             </section>
         </div>
     </main>
-    <script src="{{ASSETS}}/js/main.js" defer></script>
-    <script src="{{ASSETS}}/js/personalization.js" defer></script>
+    <script src="{{ASSETS}}/js/main.js{{ASSETS_QUERY}}" defer></script>
+    <script src="{{ASSETS}}/js/personalization.js{{ASSETS_QUERY}}" defer></script>
     <script id="blog-articles-data" type="application/json">
 {{ARTICLES_JSON}}
     </script>
-    <script src="{{ASSETS}}/js/blog-search.js" defer></script>
-    <script src="{{ASSETS}}/js/blog-wow.js" defer></script>
-    <script src="{{ASSETS}}/js/blog-index.js" defer></script>
+    <script src="{{ASSETS}}/js/blog-search.js{{ASSETS_QUERY}}" defer></script>
+    <script src="{{ASSETS}}/js/blog-wow.js{{ASSETS_QUERY}}" defer></script>
+    <script src="{{ASSETS}}/js/blog-index.js{{ASSETS_QUERY}}" defer></script>
 
 {{MODALS_HTML}}
 {{FOOTER_HTML}}

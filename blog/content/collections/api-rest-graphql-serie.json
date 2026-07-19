@@ -1,7 +1,7 @@
 {
   "id": "api-rest-graphql-serie",
-  "title": "Série API : REST vs GraphQL",
-  "description": "Une série complète pour comparer en profondeur les APIs REST et GraphQL : concepts, modèles d’architecture, avantages / inconvénients, performances, coûts, DX des équipes, cas d’usage et critères de choix concrets pour ton projet.",
+  "title": "Série API : faire parler un site et un serveur",
+  "description": "REST et GraphQL expliqués simplement : ce que c'est, comment ça marche, les perfs, et comment choisir (ou combiner) selon ton projet.",
   "slug": "api-rest-graphql-serie",
   "articles": [
     "api-rest-graphql-fondamentaux-comparaison",
@@ -11,4 +11,3 @@
     "choisir-rest-graphql-quand-et-comment"
   ]
 }
-

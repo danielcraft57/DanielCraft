@@ -13,7 +13,7 @@ series_order: 3
 On avance étape par étape. L'idée c'est que tu puisses le refaire sans revenir dix fois dans la video d'origine.
 
 <figure>
-  <img src="../../assets/images/blog/illustrations/ia-chatgpt-astuce-pour-que-chatgpt-résumé-des-videos-youtube-en-utilisant-l-url-banner.webp" alt="Illustration : Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l’url" class="schema-inline" width="720" loading="lazy" />
+  <img src="../../assets/images/blog/illustrations/ia-chatgpt-astuce-pour-que-chatgpt-resume-des-videos-youtube-en-utilisant-l-url-banner.webp" alt="Illustration : Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l’url" class="schema-inline" width="720" loading="lazy" />
   <figcaption>Illustration de l'article - repere visuel pour retenir la methode.</figcaption>
 </figure>
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">REST vs GraphQL</title>
+  <desc id="desc">Comparaison endpoints REST et requete GraphQL unique</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">REST vs GraphQL</text>
+
+  <!-- REST -->
+  <rect x="40" y="70" width="340" height="290" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#2563eb">REST</text>
+  <text x="210" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Plusieurs endpoints</text>
+
+  <rect x="70" y="150" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="171" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">GET /users/1</text>
+  <rect x="70" y="195" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="216" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">GET /users/1/orders</text>
+  <rect x="70" y="240" width="280" height="32" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="261" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#0f172a">GET /products?ids=...</text>
+  <text x="210" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">N+1 appels possibles</text>
+  <text x="210" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#dc2626">Over/under-fetching</text>
+
+  <!-- GraphQL -->
+  <rect x="420" y="70" width="340" height="290" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="590" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#dc2626">GraphQL</text>
+  <text x="590" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Un endpoint /graphql</text>
+
+  <rect x="450" y="155" width="280" height="120" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="470" y="180" font-family="Consolas, monospace" font-size="11" fill="#0f172a">{ user(id) {</text>
+  <text x="490" y="200" font-family="Consolas, monospace" font-size="11" fill="#0f172a">name</text>
+  <text x="490" y="220" font-family="Consolas, monospace" font-size="11" fill="#0f172a">orders { total }</text>
+  <text x="490" y="240" font-family="Consolas, monospace" font-size="11" fill="#0f172a">products { sku }</text>
+  <text x="470" y="260" font-family="Consolas, monospace" font-size="11" fill="#0f172a">}</text>
+
+  <text x="590" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">1 requete, forme exacte</text>
+  <text x="590" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2563eb">Schema + resolvers</text>
+
+  <text x="400" y="395" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Meme besoin metier, modele d'acces different</text>
+</svg>

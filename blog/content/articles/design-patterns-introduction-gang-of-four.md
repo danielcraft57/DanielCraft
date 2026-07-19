@@ -15,11 +15,6 @@ Tu as déjà copié-collé du code sans comprendre sa structure ? Ou une classe 
 
 Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à beaucoup de catalogues, nous les classons ici du **plus populaire au moins rencontré** en entreprise — pour que tu apprennes d'abord ce que tu verras le plus souvent en code review et en entretien.
 
-<figure>
-  <img src="../../assets/images/blog/design-patterns-intro-illustration.webp" alt="Illustration des trois familles de design patterns" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble : création, structure et comportement — les trois familles du catalogue GoF.</figcaption>
-</figure>
-
 ---
 
 ## Qu'est-ce qu'un design pattern ?
@@ -38,12 +33,12 @@ Un design pattern est une **solution réutilisable** à un problème récurrent 
 - Une **réponse éprouvée** à un problème précis.
 - Un **outil de réflexion** avant le dixième `if/else`.
 
-<figure>
+<figure class="schema-figure">
   <img src="../../assets/images/blog/design-patterns-families.svg" alt="Les trois familles GoF" class="schema-inline" width="520" />
   <figcaption>5 créationnels, 7 structurels, 11 comportementaux — 23 patterns au total.</figcaption>
 </figure>
 
-<figure>
+<figure class="schema-figure">
   <img src="../../assets/images/blog/design-patterns-popularity.svg" alt="Ordre de popularité de la série" class="schema-inline" width="520" />
   <figcaption>Cette série suit l'ordre de popularité (du plus au moins utilisé), pas l'ordre du livre GoF.</figcaption>
 </figure>

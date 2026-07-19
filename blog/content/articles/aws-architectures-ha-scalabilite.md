@@ -1,7 +1,7 @@
 ---
-title: "Architectures AWS : haute disponibilité et scalabilité"
+title: "AWS : rester en ligne même si une machine tombe"
 date: 2025-05-29
-excerpt: "Construire des architectures AWS hautement disponibles et scalables : patterns de base, multi-AZ, autoscaling, tolérance aux pannes et bonnes pratiques de conception."
+excerpt: "Multi-AZ, autoscaling et tests de panne : la haute dispo sans slide marketing."
 type: article
 tags: [AWS, architecture, haute disponibilité, scalabilité, résilience]
 series: aws-serie
@@ -9,7 +9,7 @@ series_order: 8
 og_image: aws-architectures-ha-scalabilite-1200x630.jpg
 ---
 
-# Architectures AWS : haute disponibilité et scalabilité
+# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : rester en ligne même si une machine tombe
 
 AWS brille quand il s’agit de **tenir la charge** et de **survivre aux pannes matérielles**.
 Encore faut‑il structurer ton architecture pour en profiter.
@@ -22,10 +22,17 @@ Encore faut‑il structurer ton architecture pour en profiter.
 
 Beaucoup de services AWS peuvent être déployés en **Multi‑AZ** :
 
-- RDS / Aurora ;
+- [RDS](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html) / Aurora ;
 - ALB (load balancers) ;
-- Auto Scaling Groups d’EC2 ;
+- Auto Scaling Groups d’[EC2](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html) ;
 - EKS, ECS (avec des nodes répartis).
+
+
+
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-ha-multi-az.svg" alt="Schema architecture haute disponibilite AWS multi-AZ" class="schema-inline" width="640" />
+  <figcaption>Haute dispo = multi-AZ, autoscaling, et des pannes qu'on a deja testees.</figcaption>
+</figure>
 
 L’idée : si une AZ tombe, une autre prend le relais.
 
@@ -42,7 +49,7 @@ L’idée : si une AZ tombe, une autre prend le relais.
 
 ### 2.1 Appli web classique robuste
 
-- Route 53 + CloudFront (optionnel) → ALB en Multi‑AZ ;
+- [Route 53](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html) + CloudFront (optionnel) → ALB en Multi‑AZ ;
 - Auto Scaling Group d’EC2 ou ECS/Fargate derrière l’ALB ;
 - RDS/Aurora en Multi‑AZ.
 
@@ -56,7 +63,7 @@ Caractéristiques :
 
 - Route 53 + CloudFront → API Gateway ;
 - Lambdas derrière API Gateway ;
-- DynamoDB / Aurora Serverless / S3.
+- DynamoDB / Aurora Serverless / [S3](/blog/articles/aws-stockage-s3-ebs-efs.html).
 
 Avantages :
 
@@ -106,7 +113,7 @@ Il faut donc :
 
 - choisir le bon **niveau de disponibilité** selon la criticité (SLA interne) ;
 - ne pas sur‑dimensionner les environnements non‑prod ;
-- utiliser les **Savings Plans / Reserved Instances** pour les charges stables.
+- utiliser les **[Savings Plans](/blog/articles/aws-optimisation-couts-reserved-savings-spot.html) / Reserved Instances** pour les charges stables.
 
 ---
 

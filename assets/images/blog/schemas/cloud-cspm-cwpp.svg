@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">CSPM et CWPP</title>
+  <desc id="desc">Posture cloud CSPM et protection workloads CWPP</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Cloud : CSPM et CWPP</text>
+
+  <rect x="40" y="70" width="340" height="280" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#2563eb">CSPM</text>
+  <text x="210" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Cloud Security Posture Management</text>
+  <rect x="70" y="150" width="280" height="40" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Misconfigurations (S3, IAM...)</text>
+  <rect x="70" y="205" width="280" height="40" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Conformite CIS / benchmarks</text>
+  <rect x="70" y="260" width="280" height="40" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="210" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Visibilite multi-comptes</text>
+
+  <rect x="420" y="70" width="340" height="280" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="590" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#dc2626">CWPP</text>
+  <text x="590" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Cloud Workload Protection</text>
+  <rect x="450" y="150" width="280" height="40" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">VM / conteneurs / serverless</text>
+  <rect x="450" y="205" width="280" height="40" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Runtime, vulns, malware</text>
+  <rect x="450" y="260" width="280" height="40" rx="6" fill="#f5f7fb" stroke="#60a5fa"/>
+  <text x="590" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Agents / eBPF / sidecar</text>
+
+  <text x="400" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">CSPM = posture config - CWPP = protection des charges de travail</text>
+</svg>

@@ -1,7 +1,7 @@
 ---
-title: "Bases de données AWS : RDS, DynamoDB, Aurora – laquelle choisir ?"
+title: "AWS : où garder tes données"
 date: 2025-05-15
-excerpt: "Panorama des bases de données managées AWS (RDS, DynamoDB, Aurora) : modèles de données, performances, scalabilité, coûts et scénarios types pour choisir la bonne base selon ton application."
+excerpt: "RDS, Aurora, DynamoDB : choisir selon comment tu lis et écris vraiment."
 type: article
 tags: [AWS, RDS, DynamoDB, Aurora, bases de données]
 series: aws-serie
@@ -9,143 +9,74 @@ series_order: 4
 og_image: aws-bases-donnees-rds-dynamodb-aurora-1200x630.jpg
 ---
 
-# Bases de données AWS : RDS, DynamoDB, Aurora – laquelle choisir ?
+# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : où garder tes données
 
-Une architecture AWS solide repose sur des **bases de données bien choisies**.
-AWS propose beaucoup d’options (RDS, DynamoDB, Aurora, document DB, time series, etc.).
-Ici, on se concentre sur les **trois piliers les plus courants** pour les applications web et SaaS.
+Une architecture AWS solide repose sur une **bonne base**. AWS en propose plein. Ici, les trois piliers pour le web et le SaaS : **RDS**, **DynamoDB**, **Aurora**.
 
----
-
-## 1. RDS : bases relationnelles managées
-
-### 1.1 Modèle
-
-**RDS (Relational Database Service)** te fournit des bases relationnelles gérées :
-
-- moteurs supportés : PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, Aurora… ;
-- AWS gère :
-  - les backups automatiques ;
-  - les mises à jour mineures ;
-  - la haute disponibilité (Multi‑AZ) si tu l’actives.
-
-Tu gardes la main sur :
-
-- le schéma, les index, les requêtes ;
-- la taille de l’instance et le tuning SQL.
-
-### 1.2 Cas d’usage
-
-- APIs / backends classiques (SaaS, e‑commerce, ERP, CRM).
-- Applications qui utilisent déjà un ORM ou du SQL classique.
-
-### 1.3 Optimisation
-
-- Activer le **Multi‑AZ** pour les environnements critiques.
-- Surveiller les métriques clés :
-  - CPU, IOPS, latence disque ;
-  - connexions actives ;
-  - temps de réponse des requêtes.
-- Indexer correctement les colonnes filtrées/jointes.
+Tu as vu le [stockage fichiers](/blog/articles/aws-stockage-s3-ebs-efs.html) ? Les bases, c'est un autre rayon.
 
 ---
 
-## 2. DynamoDB : NoSQL clé/valeur ultra scalable
+## RDS : la base relationnelle "on s'occupe du moteur"
 
-### 2.1 Modèle
+**RDS**, c'est une base SQL managee. PostgreSQL, MySQL, MariaDB, SQL Server, Oracle, Aurora...
 
-**DynamoDB** est une base NoSQL clé/valeur (et document) entièrement managée.
+AWS gere : backups, petites mises a jour, haute dispo [Multi-AZ](/blog/articles/aws-architectures-ha-scalabilite.html) si tu l'actives.
 
-- Pas de serveur à gérer, pas de capacité fixe à prévoir (en mode on‑demand).
-- Latences très faibles, même à grande échelle.
-- Modèle de données basé sur :
-  - une clé de partition (et éventuellement de tri) ;
-  - des index secondaires pour d’autres patterns d’accès.
+<figure class="schema-figure">
+  <img src="/assets/images/blog/schemas/aws-databases-choix.svg" alt="Schema choix bases de donnees AWS RDS Aurora DynamoDB" class="schema-inline" width="640" />
+  <figcaption>Relationnel ou Dynamo : le modele d'acces decide, pas la mode.</figcaption>
+</figure>
 
-### 2.2 Cas d’usage
+Tu gardes la main sur : schema, index, requetes, taille de l'instance.
 
-- Applications avec **fort trafic** et patterns d’accès bien définis.
-- Tables d’authentification, sessions, paniers, events, logs haute fréquence.
-- Systèmes temps réel et IoT.
+**Bon pour** : API classiques, SaaS, e-commerce, tout ce qui aime le SQL et les jointures.
 
-### 2.3 Optimisation
-
-- Concevoir le schéma **à partir des requêtes** (on ne “découvre” pas la structure après coup).
-- Utiliser le mode **on‑demand** pour commencer, puis provisionned si les volumes sont stables.
-- S’assurer que la clé de partition répartit bien la charge (éviter les “hot partitions”).
+**Astuces** : Multi-AZ pour le critique. Surveille CPU, IOPS, connexions, lenteur des requetes. Indexe ce que tu filtres vraiment.
 
 ---
 
-## 3. Aurora : base relationnelle optimisée pour le cloud
+## DynamoDB : le casier ultra rapide
 
-### 3.1 Modèle
+**DynamoDB**, c'est une base NoSQL cle/valeur (et document). Pas de serveur a soigner. Mode on-demand = tu paies a l'usage. Latences tres basses, meme en gros volume.
 
-**Amazon Aurora** est une base relationnelle compatible MySQL/PostgreSQL, mais **re‑architecturée pour le cloud** :
+Modele : cle de partition (+ cle de tri optionnelle), index secondaires pour d'autres chemins de lecture.
 
-- stockage distribué, séparé du compute ;
-- réplication automatique sur plusieurs AZ ;
-- restauration rapide à n’importe quel point dans le temps.
+**Bon pour** : fort trafic avec acces simples et previsibles - sessions, paniers, events, IoT.
 
-### 3.2 Cas d’usage
-
-- SaaS à fort trafic qui dépasse les capacités des RDS classiques.
-- Besoin de **haute disponibilité** et de réplication rapide en lecture.
-
-### 3.3 Optimisation
-
-- Utiliser les **réplicas en lecture** pour absorber les requêtes de reporting.
-- Surveiller la taille du cluster, la charge en lecture/écriture, les buffers.
-- Envisager **Aurora Serverless v2** pour les charges très variables.
+**Astuces** : dessine le schema **a partir des requetes** (pas "on verra apres"). Evite les hot partitions (une cle trop chaude). Commence en on-demand, passe en provisioned si la charge est stable.
 
 ---
 
-## 4. Comment choisir entre RDS, DynamoDB et Aurora ?
+## Aurora : le relationnel turbo cloud
 
-Quelques règles simples :
+**Aurora**, c'est du MySQL/PostgreSQL **reconstruit pour le cloud**. Stockage separe du calcul. Replication auto sur plusieurs AZ. Restauration a un point dans le temps.
 
-- Tu as une **appli web classique** avec SQL, relations, jointures  
-  → commence par **RDS (PostgreSQL)**.
+**Bon pour** : SaaS a fort trafic qui depasse un RDS classique, besoin de haute dispo et de lectures en parallele.
 
-- Tu as des besoins de **scalabilité extrême** sur des patterns simples, type clé/valeur ou time‑series  
-  → regarde **DynamoDB**.
-
-- Tu as déjà une base relationnelle qui commence à souffrir et tu as besoin d’un palier supérieur en termes de disponibilité et de performance  
-  → évalue **Aurora**.
-
-Combinaisons fréquentes :
-
-- RDS pour le cœur métier + DynamoDB pour des caches et événements.
-- Aurora pour les données critiques + S3 pour l’archivage long terme.
+**Astuces** : replicas en lecture pour le reporting. Aurora Serverless v2 si la charge varie beaucoup.
 
 ---
 
-## 5. Gestion, sécurité et gouvernance
+## Comment choisir ?
 
-### 5.1 Sécurité
+- Appli web classique, SQL, relations → commence par **RDS (PostgreSQL)**.
+- Patterns simples, scale extreme → regarde **DynamoDB**.
+- Relationnel qui souffre, besoin d'un cran au-dessus → **Aurora**.
 
-- Toujours restreindre l’accès réseau (VPC, security groups, pas d’accès public direct si possible).
-- IAM minimal pour les applications (un rôle par service).
-- Chiffrement au repos activé (RDS, DynamoDB, Aurora + KMS).
-
-### 5.2 Sauvegardes et reprises
-
-- Vérifier régulièrement les **politiques de backup** (réten tion, restauration testée).
-- Documenter des scénarios de reprise (perte AZ, déploiement raté, corruption applicative).
-
-### 5.3 Coûts
-
-- Surveiller la taille des bases et les I/O.
-- Nettoyer les environnements de test/démo obsolètes.
-- Adapter le gabarit des instances / throughput DynamoDB à l’usage réel.
+Combos frequents : RDS pour le coeur metier + DynamoDB pour events/cache. Aurora pour le critique + [S3](/blog/articles/aws-stockage-s3-ebs-efs.html) pour l'archive longue.
 
 ---
 
-## 6. Résumé
+## Secu, backups, facture
 
-Sur AWS, la base “par défaut” reste souvent une **relationnelle (RDS/Aurora)**, mais tu as tout intérêt à :
+- Reseau ferme ([VPC](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html), security groups). Pas d'acces public direct si possible.
+- [IAM](/blog/articles/iam-mfa-principes-zero-trust.html) minimal. Chiffrement au repos ([KMS](/blog/articles/aws-securite-iam-kms-waf.html)).
+- **Teste** une restauration. Une sauvegarde jamais restauree, c'est une histoire.
+- Nettoie les bases de demo. Adapte la taille a l'usage reel.
 
-- bien poser ton **modèle de données** et tes **pattern d’accès** ;
-- utiliser DynamoDB quand tu as un besoin clair de NoSQL scalable ;
-- combiner S3, RDS/Aurora et DynamoDB pour couvrir archivage, transactionnel et temps réel.
+---
 
-Dans le prochain article, on descendra d’un niveau pour parler **réseau** (VPC, subnets, sécurité, Route 53, CloudFront) et voir comment connecter proprement tous ces services.+
+## Resume
+
+Par defaut, pense **relationnel (RDS/Aurora)**. Passe a DynamoDB quand tu as un vrai besoin NoSQL scalable. Le modele d'acces decide - pas la mode. Ensuite : le [reseau](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html) pour brancher tout ca proprement.

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Micro-interactions etats</title>
+  <desc id="desc">Etats UI : idle, hover, loading, error, success</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Micro-interactions : les 5 etats cles</text>
+
+  <!-- Idle -->
+  <rect x="30" y="80" width="130" height="160" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="95" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#475569">Idle</text>
+  <rect x="50" y="140" width="90" height="36" rx="6" fill="#e2e8f0"/>
+  <text x="95" y="163" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Bouton</text>
+  <text x="95" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">au repos</text>
+
+  <!-- Hover -->
+  <rect x="180" y="80" width="130" height="160" rx="10" fill="#fff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="245" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#2563eb">Hover</text>
+  <rect x="200" y="140" width="90" height="36" rx="6" fill="#93c5fd"/>
+  <text x="245" y="163" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Bouton</text>
+  <text x="245" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">feedback rapide</text>
+
+  <!-- Loading -->
+  <rect x="330" y="80" width="140" height="160" rx="10" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <text x="400" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#2563eb">Loading</text>
+  <rect x="350" y="140" width="100" height="36" rx="6" fill="#2563eb"/>
+  <circle cx="375" cy="158" r="8" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="415" y="163" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#fff">Envoi&amp;</text>
+  <text x="400" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">anti double-clic</text>
+
+  <!-- Error -->
+  <rect x="490" y="80" width="130" height="160" rx="10" fill="#fff" stroke="#dc2626" stroke-width="2"/>
+  <text x="555" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#dc2626">Error</text>
+  <rect x="510" y="135" width="90" height="50" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+  <text x="555" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#dc2626">Corriger</text>
+  <text x="555" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">le champ X</text>
+  <text x="555" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">actionnable</text>
+
+  <!-- Success -->
+  <rect x="640" y="80" width="130" height="160" rx="10" fill="#fff" stroke="#16a34a" stroke-width="2"/>
+  <text x="705" y="115" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#16a34a">Success</text>
+  <rect x="660" y="140" width="90" height="36" rx="6" fill="#16a34a"/>
+  <text x="705" y="163" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#fff">Envoye</text>
+  <text x="705" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">confirmation</text>
+
+  <!-- Flow arrows -->
+  <path d="M160 160 H175" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M310 160 H325" stroke="#0f172a" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M470 140 H485" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#b)"/>
+  <path d="M470 180 H485" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#c)"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#0f172a">Loading mene a Error ou Success - jamais au silence</text>
+
+  <!-- Timeline -->
+  <rect x="80" y="300" width="640" height="70" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="400" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Timing feedback</text>
+  <text x="180" y="355" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#2563eb">&lt; 100 ms : hover/press</text>
+  <text x="400" y="355" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#2563eb">100-500 ms : spinner</text>
+  <text x="620" y="355" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#dc2626">&gt; 500 ms : loader + texte</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#0f172a"/>
+    </marker>
+    <marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+    <marker id="c" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#16a34a"/>
+    </marker>
+  </defs>
+</svg>

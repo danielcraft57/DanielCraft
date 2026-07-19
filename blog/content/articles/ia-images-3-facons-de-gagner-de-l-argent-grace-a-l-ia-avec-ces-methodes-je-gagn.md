@@ -14,7 +14,7 @@ series_order: 2
 On avance étape par étape. L'idée c'est que tu puisses le refaire sans revenir dix fois dans la video d'origine.
 
 <figure>
-  <img src="../../assets/images/blog/illustrations/ia-images-3-facons-de-gagner-de-l-argent-grace-a-l-ia-avec-ces-méthodes-je-gagn-banner.webp" alt="Illustration : 3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn" class="schema-inline" width="720" loading="lazy" />
+  <img src="../../assets/images/blog/illustrations/ia-images-3-facons-de-gagner-de-l-argent-grace-a-l-ia-avec-ces-methodes-je-gagn-banner.webp" alt="Illustration : 3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn" class="schema-inline" width="720" loading="lazy" />
   <figcaption>Illustration de l'article - repere visuel pour retenir la methode.</figcaption>
 </figure>
 
