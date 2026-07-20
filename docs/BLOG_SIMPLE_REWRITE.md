@@ -58,9 +58,9 @@ API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communicati
 
 ## Suite
 
-- Articles : **toutes les séries ciblées** sont passées en ton simple (y compris toutes les séries IA). Audit : `issues=0`.
-- OG : **230/230** installées (style débutant, titres à jour), y compris le lot « stale » CI/CD / SEO / GEO / K8s / UX / cyber / API. `stale=0`.
-- Build local si besoin : `python blog/build_blog.py --output dist/blog`. Pas de déploiement sauf demande.
+- Articles : titres / schémas « ton débutant » conservés, **mais les corps ultra-courts ont été restaurés** depuis git (erreur des scripts `simplify_*` qui avaient remplacé ~187 articles par des micro-résumés). Script : `scripts/restore_simplified_article_bodies.py`.
+- OG : **230/230** installées (style débutant). `stale=0`.
+- Build local : `python blog/build_blog.py --output dist/blog`. Pas de déploiement sauf demande.
 
 ## Déploiement
 

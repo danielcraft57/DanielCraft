@@ -9,76 +9,152 @@ series_order: 3
 og_image: aws-stockage-s3-ebs-efs-1200x630.jpg
 ---
 
-# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : où ranger tes fichiers
-
-Sur AWS, on a souvent envie de "tout mettre sur le disque du serveur". Mauvaise idee. **S3, EBS et EFS** font trois jobs differents. Comme un coffre, un tiroir de bureau, et une etagere partagee.
-
-Apres le [compute](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html), on range les fichiers.
-
----
-
-## S3 : le grand coffre a objets
-
-**S3**, tu y poses des fichiers (objets) dans des **buckets** (des seaux). Chaque objet a une cle genre `dossier/fichier.ext`. Ce n'est pas un disque monte. C'est un entrepot accessible en HTTP.
+# AWS : où ranger tes fichiers
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/aws-stockage-choix.svg" alt="Schema choix stockage AWS S3 EBS EFS" class="schema-inline" width="640" />
   <figcaption>S3 objet, EBS block, EFS fichier : trois jobs differents.</figcaption>
 </figure>
 
-Points forts :
+Sur AWS, on a souvent tendance à “tout mettre sur le disque du serveur”.
+En réalité, **S3, EBS et EFS** servent des besoins très différents.
 
-- tres **durable** (AWS annonce beaucoup de 9 apres la virgule),
-- classes de prix (Standard, IA, Glacier...) selon la frequence d'acces,
-- acces via HTTPS, SDK, CLI.
+Dans cet article, on clarifie :
 
-**Bon pour** : images/CSS/JS, backups, archives, fichiers data (CSV, logs).
-
-**Astuces** : active le versioning, des Lifecycle pour envoyer le vieux vers Glacier, et [CloudFront](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html) devant pour livrer plus vite.
-
----
-
-## EBS : le disque de ta machine EC2
-
-**EBS**, c'est un **volume bloc** colle a une instance EC2. Le systeme le voit comme un vrai disque. Tu y mets un systeme de fichiers (ext4, xfs...).
-
-**Bon pour** : disque systeme (OS), donnees d'une base que tu geres toi-meme, stockage local d'une appli.
-
-**Astuces** : choisis le type (gp3, io2...) selon IOPS et budget. Fais des **snapshots** reguliers. N'achete pas un disque geant "au cas ou".
+- ce que chaque service sait faire ;
+- les cas d’usage idéaux ;
+- les méthodes d’optimisation (coûts, perf, durabilité).
 
 ---
 
-## EFS : l'etagere partagee
+## 1. S3 : le coffre‑fort objet
 
-**EFS**, c'est un **systeme de fichiers reseau** manage (NFS). Plusieurs machines (EC2, ECS) montent le meme dossier. Tu paies a l'espace utilise. Ca grandit tout seul.
+### 1.1 Modèle
 
-**Bon pour** : applis qui ont besoin d'un vrai partage de fichiers (uploads, documents).
+**Amazon S3** est un système de **stockage d’objets** :
 
-**A eviter pour** : le stockage chaud d'une base tres exigeante. Prefere EBS ou une base managee ([RDS](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html)).
+- tu stockes des fichiers (objets) dans des buckets ;
+- chaque objet a une clé (`dossier/fichier.ext`) ;
+- pas de notion de “disque” ou de “système de fichiers monté” par défaut.
+
+Caractéristiques clés :
+
+- Durabilité annoncée de **11 9** (`99.999999999%`) ;
+- classes de stockage pour optimiser les coûts (Standard, IA, Glacier…) ;
+- accès via HTTP(S), SDKs, CLI.
+
+### 1.2 Cas d’usage
+
+- Assets statiques web (images, CSS/JS minifiés, vidéos).
+- Backups, exports, archives.
+- Fichiers de données (CSV, Parquet, logs) pour analytics.
+
+### 1.3 Optimisation
+
+- Activer **versioning** pour la sécurité, **Lifecycle** pour envoyer au Glacier ce qui vieillit.
+- Utiliser les classes IA/Glacier pour les données peu accédées.
+- Combiner avec **CloudFront** pour réduire la latence et les coûts de sortie.
 
 ---
 
-## Comment choisir ?
+## 2. EBS : le disque de ton serveur EC2
 
-- Disque pour **un** serveur → **EBS**.
-- Fichiers durables, accessibles en HTTP, pas cher → **S3**.
-- Plusieurs serveurs partagent les **memes dossiers** → **EFS**.
+### 2.1 Modèle
 
-Combos classiques :
+**EBS (Elastic Block Store)**, c’est un **volume bloc** attaché à une instance EC2.
 
-- EC2 + EBS pour tourner + S3 pour assets et backups.
-- ECS/EKS + EFS si besoin de partage simple + S3 pour le froid.
+- Le système le voit comme un **disque** (`/dev/xvdf` par exemple).
+- Tu y mets un système de fichiers (ext4, xfs…).
+- Il est stocké de façon redondante dans une AZ.
+
+### 2.2 Cas d’usage
+
+- Disque système de l’instance (OS, binaires).
+- Données applicatives nécessitant un accès bloc (bases de données auto‑gérées, caches, storage d’app métier).
+
+### 2.3 Optimisation
+
+- Choisir le bon type de volume (gp3, io1/io2, st1, sc1) selon :
+  - IOPS nécessaires ;
+  - throughput ;
+  - budget.
+- Mettre en place des **snapshots réguliers** pour la sauvegarde/restauration.
+- Éviter les sur‑dimensionnements permanents ; augmenter au besoin.
 
 ---
 
-## Secu, couts, vue
+## 3. EFS : le partage de fichiers managé
 
-- HTTPS pour S3. Roles [IAM](/blog/articles/iam-mfa-principes-zero-trust.html) minimal. Chiffrement au repos (souvent via [KMS](/blog/articles/aws-securite-iam-kms-waf.html)).
-- Surveille le volume S3 par classe. Nettoie snapshots EBS orphelins. Evite les transferts geants inutiles entre regions.
-- Logs d'acces critiques + metriques dans [CloudWatch](/blog/articles/aws-observabilite-cloudwatch-xray-cloudtrail.html).
+### 3.1 Modèle
+
+**EFS (Elastic File System)** fournit un **système de fichiers réseau managé** (NFS) :
+
+- plusieurs instances (EC2, ECS) peuvent monter le même système de fichiers ;
+- tu payes à l’espace utilisé, la capacité s’ajuste automatiquement.
+
+### 3.2 Cas d’usage
+
+- Applis legacy qui nécessitent un **partage de fichiers** (uploads, documents).
+- Environnements où plusieurs serveurs doivent lire/écrire dans les mêmes dossiers.
+
+À éviter pour :
+
+- le stockage “chaud” d’une base de données très exigeante (préférer EBS ou services managés type RDS).
+
+### 3.3 Optimisation
+
+- Choisir le bon mode de performance (General Purpose vs Max I/O).
+- Utiliser les **politiques de lifecycle** pour déplacer les fichiers froids vers des classes moins chères.
 
 ---
 
-## Resume
+## 4. Comment choisir entre S3, EBS et EFS ?
 
-S3 = coffre objet. EBS = disque local. EFS = etagere partagee. Trois boites, trois usages. Ensuite : [quelle base de donnees](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html) choisir.
+Une checklist rapide :
+
+- **Tu as besoin d’un disque pour un serveur** → EBS.
+- **Tu veux stocker des fichiers accessibles via HTTP, de façon durable et bon marché** → S3.
+- **Plusieurs serveurs doivent partager un système de fichiers commun** → EFS.
+
+Combinaisons typiques :
+
+- EC2 avec EBS pour le runtime + S3 pour les assets et backups.
+- ECS/EKS avec :
+  - EFS pour des besoins de partage simple ;
+  - S3 pour les données applicatives plus “froides”.
+
+---
+
+## 5. Gestion et bonnes pratiques
+
+### 5.1 Sécurité
+
+- Toujours utiliser **HTTPS** pour accéder à S3.
+- IAM minimal : un rôle applicatif qui ne peut lire/écrire que dans le bucket nécessaire.
+- Activer le chiffrement au repos (S3, EBS, EFS proposent des options simples).
+
+### 5.2 Coûts
+
+- Surveiller les coûts S3 par bucket / classe de stockage.
+- Nettoyer les snapshots EBS orphelins.
+- Éviter les architectures qui transfèrent en permanence des volumes énormes entre AZ/régions.
+
+### 5.3 Observabilité
+
+- Activer **S3 Access Logs** ou CloudTrail pour les accès critiques.
+- Surveiller :
+  - le volume stocké ;
+  - le nombre de requêtes ;
+  - la latence sur les usages sensibles.
+
+---
+
+## 6. Résumé
+
+Tu peux voir ces trois briques comme complémentaires :
+
+- S3 pour le **stockage objet durable** (fichiers, backups, data analytics).
+- EBS pour le **disque local performant** d’une instance.
+- EFS pour le **partage de fichiers** entre serveurs.
+
+Dans les prochains articles de la série, on va appliquer la même logique de comparaison aux **bases de données** (RDS, DynamoDB, Aurora) puis au **réseau** (VPC, Route 53, CloudFront) pour que ton architecture AWS soit cohérente de bout en bout.+

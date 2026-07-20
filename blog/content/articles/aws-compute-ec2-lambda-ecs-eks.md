@@ -11,100 +11,196 @@ og_image: aws-compute-ec2-lambda-ecs-eks-1200x630.jpg
 
 # AWS : où faire tourner ton programme
 
-Premiere question sur AWS : **ou je fais tourner mon appli ?**
-
-Tu peux tout mettre sur EC2. Mais parfois une autre boite est plus simple. Si les [fondamentaux AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) sont flous, commence la.
-
-Ici, quatre options. Comme quatre vehicules : voiture, scooter, camion, train.
-
----
-
-## EC2 : la voiture que tu conduis
-
-**EC2**, c'est une machine virtuelle. Tu choisis l'OS, la taille (CPU, RAM), les logiciels.
-
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/aws-compute-choix.svg" alt="Schema de choix compute AWS EC2 Lambda ECS EKS" class="schema-inline" width="640" />
   <figcaption>EC2, Lambda, ECS, EKS : le bon choix suit la charge et l'equipe.</figcaption>
 </figure>
 
+La première question sur AWS est souvent : **“je déploie mon appli où ?”**.
+Tu peux tout mettre sur EC2, mais tu passeras peut‑être à côté des avantages du serverless ou des conteneurs.
+
+Dans cet article, on compare **EC2, Lambda, ECS et EKS** avec une grille simple :
+
+- modèle de responsabilité ;
+- cas d’usage idéaux ;
+- coûts et optimisation ;
+- gestion et opérations.
+
+---
+
+## 1. EC2 : les “vrais” serveurs dans le cloud
+
+### 1.1 Modèle
+
+EC2 te fournit des **instances (VM)** sur lesquelles tu choisis :
+
+- l’OS (Amazon Linux, Ubuntu, Debian, Windows…) ;
+- la taille (CPU, RAM, stockage) ;
+- les logiciels installés (Nginx, Node, PHP, Docker, etc.).
+
 Tu es responsable de :
 
-- la config systeme,
-- les mises a jour de secu,
-- le dimensionnement,
+- la configuration système ;
+- les mises à jour de sécurité ;
+- le dimensionnement ;
 - les sauvegardes (snapshots EBS, AMI).
 
-**Bon pour** : migrer un serveur existant, une appli difficile a mettre en conteneur, un besoin de controle fin sur l'OS.
+### 1.2 Cas d’usage
 
-**Cout** : a l'heure / seconde selon la taille. Pour une charge stable, regarde [Reserved / Savings Plans](/blog/articles/aws-optimisation-couts-reserved-savings-spot.html). Eteins les machines de test la nuit.
+- Migration d’un **serveur existant** (lift & shift).
+- Applications monolithiques difficiles à conteneuriser.
+- Besoin de **contrôle fin** sur l’OS, les drivers, etc.
 
----
+### 1.3 Coûts et optimisation
 
-## Lambda : le scooter a la demande
-
-Avec **Lambda**, tu n'achetes plus de serveur. Tu donnes un bout de code. AWS l'execute quand un evenement arrive. Tu paies au nombre d'appels + a la duree.
-
-**Bon pour** : API legeres, webhooks, jobs planifies, traitement d'un fichier pose sur S3, trafic en dents de scie.
-
-**Moins bon pour** : traitements tres longs, besoin de controler l'OS ou le reseau en detail.
-
-Astuces : calibre bien la **memoire**, evite de recharger tout a chaque appel, ne fais pas une "fonction monstre" ni mille micro-fonctions inutiles.
+- Facturation **à l’heure / seconde** en fonction du type d’instance.
+- Optimisations :
+  - choisir la bonne famille (généraliste, optimisée CPU, RAM, stockage) ;
+  - utiliser des **Reserved Instances** ou **Savings Plans** pour les charges stables ;
+  - automatiser l’extinction des environnements non‑prod.
 
 ---
 
-## ECS : des conteneurs sans Kubernetes
+## 2. Lambda : le serverless à la demande
 
-**ECS** orchestre des conteneurs Docker pour toi.
+### 2.1 Modèle
 
-- Tu definis des **taches** (conteneurs + ressources) et des **services** (redemarrage, scaling).
-- Mode **EC2** : tu geres encore un cluster de machines.
-- Mode **Fargate** : pas de machine a soigner. Serverless pour conteneurs.
+Avec **AWS Lambda**, tu n’achètes plus des serveurs mais des **exécutions de fonctions**.
 
-**Bon pour** : API, microservices, workers derriere une file. Tu veux des conteneurs sans la complexite de Kubernetes.
+- Tu fournis du code (Node, Python, etc.).
+- AWS s’occupe de **provisionner, scaler, patcher** l’infrastructure.
+- Tu paies au **nombre d’invocations + durée d’exécution**.
 
-Pense a [Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html) avant : une image propre facilite beaucoup ECS.
+### 2.2 Cas d’usage
 
----
+- **APIs légères** (via API Gateway ou Function URLs).
+- Automatisations (traitement de fichiers S3, jobs planifiés, webhooks).
+- Backends à trafic irrégulier (pics, périodes de calme).
 
-## EKS : le train Kubernetes
+Ce n’est pas idéal pour :
 
-**EKS** te donne un **plan de controle Kubernetes** manage. Tu deploies comme d'habitude (`Deployment`, `Service`...).
+- les traitements de longue durée (au‑delà de quelques minutes) ;
+- les workloads nécessitant un contrôle précis sur l’OS ou le réseau.
 
-<figure class="schema-figure">
-  <img src="/assets/images/blog/schemas/aws-compute-ops.svg" alt="Schema operations autour du compute AWS" class="schema-inline" width="640" />
-  <figcaption>Le runtime choisi deplace le curseur entre ops et flexibilite.</figcaption>
-</figure>
+### 2.3 Optimisation
 
-Tu restes responsable des **nodes** (ou Fargate), des versions cote workloads, de la secu et de l'obs.
-
-**Bon pour** : equipe deja forte en Kubernetes, besoin de portabilite cloud / on-prem, plateformes complexes.
-
-Si tu n'as pas encore de stack K8s : ECS/Fargate ou Lambda seront souvent plus simples.
+- Bien calibrer la **mémoire** pour un bon ratio temps/coût.
+- Éviter d’initialiser des choses lourdes à chaque appel (connexions DB, SDK…).
+- Grouper du code dans des fonctions cohérentes (pas un énorme “god function”, pas mille fonctions minuscules).
 
 ---
 
-## Grille de choix rapide
+## 3. ECS : exécuter des conteneurs sans gérer Kubernetes
 
-- Tu veux SSH, OS, paquets → **EC2**.
-- Un peu de code a la demande, sans serveur → **Lambda**.
-- Conteneurs sans Kubernetes → **ECS** (idealement Fargate).
-- Ecosystème Kubernetes deja la → **EKS**.
+### 3.1 Modèle
 
-Tu peux **combiner** : EC2 pour du legacy, ECS pour les nouveaux services, Lambda pour la colle, EKS pour la plateforme avancee.
+**ECS (Elastic Container Service)** est un orchestrateur de conteneurs géré par AWS.
+
+- Tu définis des **tâches** (containers + ressources) et des **services** (scaling, redémarrage).
+- Deux modes principaux :
+  - **ECS sur EC2** : tu gères encore des instances (cluster EC2).
+  - **ECS Fargate** : serverless pour conteneurs (pas d’instance à gérer).
+
+### 3.2 Cas d’usage
+
+- API REST / GraphQL en microservices.
+- Workers asynchrones (queues SQS, Kafka).
+- Backends d’applications web modernes.
+
+ECS est un bon compromis si tu veux :
+
+- bénéficier des conteneurs ;
+- **éviter la complexité de Kubernetes** ;
+- rester dans l’écosystème AWS.
+
+### 3.3 Optimisation
+
+- En mode EC2 : bien dimensionner le cluster (autoscaling, types d’instances).
+- En mode Fargate : choisir la bonne taille CPU/RAM par tâche et ajuster l’auto‑scaling sur des métriques métier (latence, queue length).
 
 ---
 
-## Reflexes transverses
+## 4. EKS : Kubernetes managé
 
-- Decrire l'infra en code (Terraform / CloudFormation / CDK).
-- Logs et metriques dans [CloudWatch](/blog/articles/aws-observabilite-cloudwatch-xray-cloudtrail.html).
-- Roles [IAM](/blog/articles/iam-mfa-principes-zero-trust.html) minimal, secrets hors images ([IAM / KMS](/blog/articles/aws-securite-iam-kms-waf.html)).
+### 4.1 Modèle
+
+**EKS (Elastic Kubernetes Service)** te fournit un **control plane Kubernetes managé**.
+
+- Tu déploies des workloads Kubernetes “classiques” (`Deployment`, `Service`, `Ingress`…).
+- Tu peux utiliser les mêmes outils qu’on‑prem (kubectl, Helm, ArgoCD, etc.).
+
+Tu restes toutefois responsable de :
+
+- la gestion des **nodes workers** (ou Fargate pour certaines charges) ;
+- les mises à jour de versions Kubernetes côté workloads ;
+- la configuration de l’observabilité et de la sécurité.
+
+### 4.2 Cas d’usage
+
+- Organisation qui a déjà investi dans **Kubernetes** (compétences, tooling).
+- Besoin de **portabilité** entre cloud / on‑prem.
+- Plateformes multi‑tenants, architectures microservices complexes.
+
+Si tu n’as pas encore de stack Kubernetes, ECS/Fargate ou Lambda seront souvent plus simples.
 
 ---
 
-## Resume
+## 5. Comment choisir entre EC2, Lambda, ECS et EKS ?
 
-EC2 = serveur classique. Lambda = petit moteur a evenements. ECS = conteneurs sans K8s. EKS = K8s manage. Choisis selon la **charge** et l'**equipe**, pas selon la mode.
+Une grille de décision rapide :
 
-Ensuite : [ou mettre tes fichiers](/blog/articles/aws-stockage-s3-ebs-efs.html) avec S3, EBS et EFS.
+- **Tu veux gérer des serveurs** (SSH, OS, paquets)  
+  → EC2.
+
+- **Tu veux exécuter un peu de code à la demande, sans serveur**  
+  → Lambda.
+
+- **Tu veux des conteneurs mais sans Kubernetes**  
+  → ECS (idéalement Fargate).
+
+- **Tu as déjà un écosystème Kubernetes fort**  
+  → EKS.
+
+On peut aussi combiner :
+
+- EC2 pour quelques workloads “legacy” ;
+- ECS/Fargate pour les nouveaux services ;
+- Lambda pour la glue / automatisations ;
+- EKS pour des plateformes plus avancées.
+
+---
+
+## 6. Gestion et bonnes pratiques transverses
+
+### 6.1 Infrastructure as Code
+
+Quel que soit le service compute choisi :
+
+- décrire l’infra avec Terraform, CloudFormation ou CDK ;
+- versionner les manifestes ;
+- automatiser les déploiements (CI/CD).
+
+### 6.2 Observabilité
+
+- Centraliser les logs dans CloudWatch Logs, avec filtres/métriques.
+- Instrumenter la latence, les erreurs, le CPU/RAM, la saturation des queues.
+- Mettre en place des **dashboards par service** (API, workers, batch).
+
+### 6.3 Sécurité
+
+- IAM minimal : un rôle par type de workload (API, worker, batch).
+- Pas de secrets dans les images : utiliser Secrets Manager / SSM Parameter Store.
+- Reviewer régulièrement les rôles/permissions.
+
+---
+
+## 7. Résumé
+
+Pour bien exploiter AWS côté compute :
+
+- garde EC2 pour ce qui ressemble à un **serveur classique** ;
+- privilégie **Lambda** pour les petits morceaux de logique événementielle ;
+- utilise **ECS/Fargate** pour les APIs et services conteneurisés ;
+- choisis **EKS** seulement si tu as une vraie stratégie Kubernetes derrière.
+
+Dans le prochain article, on va regarder comment **S3, EBS et EFS** se complètent pour le stockage de tes données (fichiers, disques, partages).+

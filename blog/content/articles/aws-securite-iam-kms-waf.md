@@ -9,72 +9,120 @@ series_order: 6
 og_image: aws-securite-iam-kms-waf-1200x630.jpg
 ---
 
-# [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : qui a le droit d'ouvrir quoi
-
-Une architecture AWS puissante mais mal fermee, c'est une **porte ouverte** avec un joli salon. La bonne nouvelle : AWS donne les serrures. Encore faut-il les utiliser.
-
----
-
-## IAM : qui a les cles ?
-
-**IAM** gere les identites : utilisateurs, groupes, **roles**, politiques (permissions en JSON).
+# AWS : qui a le droit d'ouvrir quoi
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/aws-secu-couches.svg" alt="Schema couches securite AWS IAM KMS WAF" class="schema-inline" width="640" />
   <figcaption>IAM, KMS, reseau, WAF, detection : des couches, pas un outil unique.</figcaption>
 </figure>
 
-Principe central : **least privilege** - ne donner que le necessaire. Comme ne pas donner toutes les cles de la maison a chaque invite.
-
-Bons reflexes :
-
-- Roles pour les workloads ([EC2](/blog/articles/aws-compute-ec2-lambda-ecs-eks.html), ECS, Lambda) - **pas** de cles statiques dans le code.
-- Evite le compte racine au quotidien. Active le [MFA](/blog/articles/iam-mfa-principes-zero-trust.html). Prefere le SSO pour les humains.
-- Un role par metier : `app-backend`, `app-batch`, `deploy`.
+Une architecture AWS puissante mais mal sécurisée est une **bombe à retardement**.
+La bonne nouvelle : AWS fournit de nombreuses briques pour mettre en place une sécurité saine,
+à condition de les utiliser correctement.
 
 ---
 
-## KMS : le trousseau chiffre
+## 1. IAM : qui peut faire quoi ?
 
-**KMS** gere les cles de chiffrement utilisees par [S3](/blog/articles/aws-stockage-s3-ebs-efs.html), EBS, [RDS](/blog/articles/aws-bases-donnees-rds-dynamodb-aurora.html), DynamoDB... et par ton code si besoin.
+### 1.1 Principes de base
 
-Objectif : centraliser les cles, savoir qui les utilise.
+**IAM (Identity and Access Management)** gère :
 
-- Active le chiffrement au repos partout ou c'est simple.
-- Restreins l'usage des cles via IAM.
-- Surveille les operations sensibles avec [CloudTrail](/blog/articles/aws-observabilite-cloudwatch-xray-cloudtrail.html).
+- les **utilisateurs** et **groupes** ;
+- les **rôles** (attachés aux services, aux workloads) ;
+- les **politiques** (JSON) qui définissent les permissions.
 
----
+Le principe central : **least privilege** – ne donner que les droits nécessaires.
 
-## Secrets : hors du code
+### 1.2 Bonnes pratiques
 
-Mots de passe, cles API, chaines de connexion :
-
-- **Secrets Manager** : rotation auto, integrations fortes.
-- **Parameter Store** : config (claire ou chiffree).
-
-Regle d'or : **jamais** de secret en clair dans le code, les [images Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html), ou un fichier Git. Si tu viens de [Docker prod](/blog/articles/docker-production-registry-securite.html), c'est la meme idee.
+- Utiliser des **rôles IAM** pour les workloads (EC2, ECS, Lambda…), pas de clés statiques dans le code.
+- Éviter le compte racine, activer le MFA, limiter les utilisateurs IAM humains (préférer SSO).
+- Grouper les permissions par rôle (ex : `app-backend-role`, `app-batch-role`, `deploy-role`).
 
 ---
 
-## WAF et Shield : le filtre devant la porte
+## 2. KMS : gérer les clés de chiffrement
 
-**WAF** se place devant CloudFront, ALB, API Gateway. Tu bloques certaines IP / pays, tu limites des patterns d'attaque (SQLi, XSS, bots...).
+**AWS KMS (Key Management Service)** gère les clés de chiffrement utilisées par :
 
-**Shield** aide contre le DDoS (Standard inclus sur certaines ressources).
+- S3, EBS, RDS, EFS, DynamoDB, etc. ;
+- tes propres applications (via l’API KMS).
 
-Le duo marche bien avec un [reseau propre](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html) : CloudFront + WAF + ALB + subnets prives.
+Objectif :
+
+- centraliser le contrôle des clés ;
+- tracer qui utilise quelles clés, quand.
+
+Bonnes pratiques :
+
+- activer le chiffrement au repos sur les services qui le supportent ;
+- restreindre l’usage des clés KMS (IAM sur les clés elles‑mêmes) ;
+- surveiller les logs CloudTrail pour les opérations KMS sensibles.
 
 ---
 
-## Hygiene au quotidien
+## 3. Secrets Manager et Parameter Store
 
-- Separe **dev / staging / prod** (comptes ou VPC clairement isoles).
-- Active CloudTrail. Centralise les logs. Alerte sur creation de cles, changement de roles, ouverture de ports.
-- Revois les roles IAM chaque trimestre. Cherche les buckets S3 publics. Mets a jour AMI et deps.
+Pour stocker :
+
+- mots de passe ;
+- clés API ;
+- chaînes de connexion.
+
+Deux options principales :
+
+- **AWS Secrets Manager** : rotation automatique, intégration poussée.
+- **SSM Parameter Store** : paramètres (plain / chiffrés) pour la config applicative.
+
+Règle d’or : **jamais de secrets en clair dans le code, les images Docker ou les fichiers de config versionnés**.
 
 ---
 
-## Resume
+## 4. AWS WAF et Shield : filtrer les attaques
 
-Trois piliers : **IAM propre**, **chiffrement + secrets bien ranges**, **surface exposee minimale** (WAF, SG, VPC). Ensuite, vois vraiment ce qui se passe avec [l'observabilite](/blog/articles/aws-observabilite-cloudwatch-xray-cloudtrail.html).
+**AWS WAF** (Web Application Firewall) protège :
+
+- CloudFront ;
+- ALB ;
+- API Gateway.
+
+Tu peux y définir des règles pour :
+
+- bloquer certaines IP / pays ;
+- limiter certains patterns de requêtes (SQLi, XSS, bots…).
+
+**AWS Shield** fournit une protection DDoS gérée sur certaines ressources (inclus en version Standard).
+
+---
+
+## 5. Gouvernance et hygiène de sécurité
+
+### 5.1 Comptes et environnements
+
+- Séparer **dev/staging/prod** (par comptes AWS ou au minimum par VPC clairement isolés).
+- Appliquer des **politiques de Service Control Policy (SCP)** dans les organisations complexes.
+
+### 5.2 Journalisation et audit
+
+- Activer **CloudTrail** pour tracer les appels API AWS.
+- Centraliser les logs dans un compte dédié ou un bucket S3 sécurisé.
+- Mettre en place des alertes (CloudWatch) sur les événements critiques (création de clés, modification des rôles, ouverture de ports, etc.).
+
+### 5.3 Revue régulière
+
+- Revoir les rôles IAM au moins une fois par trimestre.
+- Auditer les buckets S3 publics, les ressources exposées sur Internet.
+- Mettre à jour les dépendances applicatives et les AMI régulièrement.
+
+---
+
+## 6. Résumé
+
+Une bonne sécurité AWS repose sur trois piliers :
+
+- **IAM propre** (rôles, least privilege, pas de clés dans le code) ;
+- **Chiffrement systématique** (KMS, secrets bien gérés) ;
+- **Surface exposée minimale** (WAF, security groups, VPC).
+
+Dans les autres articles de la série, on combine ces briques avec le compute, le stockage, les bases de données et l’observabilité pour construire des plateformes complètes, performantes **et** sécurisées.+
