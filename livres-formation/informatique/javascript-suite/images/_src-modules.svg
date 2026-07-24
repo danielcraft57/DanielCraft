@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f5fa"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a3a8f" font-weight="700">Modules : un fichier, une responsabilite</text>
+
+  <!-- Fichier api -->
+  <rect x="60" y="90" width="220" height="200" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <rect x="60" y="90" width="220" height="44" rx="14" fill="#2a3a8f"/>
+  <rect x="60" y="118" width="220" height="16" fill="#2a3a8f"/>
+  <text x="170" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">api.js</text>
+  <text x="170" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a">export</text>
+  <text x="170" y="210" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#3d52b8">charger()</text>
+  <text x="170" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14182a">reseau</text>
+
+  <!-- Fichier utils -->
+  <rect x="390" y="90" width="220" height="200" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <rect x="390" y="90" width="220" height="44" rx="14" fill="#2a3a8f"/>
+  <rect x="390" y="118" width="220" height="16" fill="#2a3a8f"/>
+  <text x="500" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">affichage.js</text>
+  <text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a">export</text>
+  <text x="500" y="210" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#3d52b8">montrer()</text>
+  <text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14182a">interface</text>
+
+  <!-- Fichier principal -->
+  <rect x="720" y="90" width="220" height="200" rx="14" fill="#a8e063" stroke="#2a3a8f" stroke-width="3"/>
+  <rect x="720" y="90" width="220" height="44" rx="14" fill="#2a3a8f"/>
+  <rect x="720" y="118" width="220" height="16" fill="#2a3a8f"/>
+  <text x="830" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">app.js</text>
+  <text x="830" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14182a">import</text>
+  <text x="830" y="205" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#2a3a8f">charger</text>
+  <text x="830" y="230" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#2a3a8f">montrer</text>
+  <text x="830" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14182a">orchestre</text>
+
+  <!-- Fleches -->
+  <defs>
+    <marker id="am" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3d52b8"/>
+    </marker>
+  </defs>
+  <path d="M280 190 C330 150, 360 150, 390 190" fill="none" stroke="#3d52b8" stroke-width="2.5" marker-end="url(#am)" opacity="0.4"/>
+  <path d="M280 220 C420 280, 620 280, 720 220" fill="none" stroke="#2a3a8f" stroke-width="3" marker-end="url(#am)"/>
+  <path d="M610 220 C650 250, 680 250, 720 220" fill="none" stroke="#2a3a8f" stroke-width="3" marker-end="url(#am)"/>
+  <text x="500" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8" font-weight="700">import � export</text>
+
+  <text x="500" y="385" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14182a">On decoupe le code : plus clair, plus facile a relire.</text>
+</svg>

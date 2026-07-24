@@ -23,7 +23,7 @@ Des livres PDF telechargeables sur 4 themes :
 
 | Domaine | Livre | PDF |
 |---------|-------|-----|
-| Informatique | HTML/CSS, JavaScript, Python, Git | `pdf/` |
+| Informatique | HTML/CSS, JS bases + suite, Python, Git | `pdf/` (dont `javascript-la-suite.pdf`) |
 | Commerce | Les bases + E-commerce | `pdf/commerce-les-bases.pdf`, `pdf/ecommerce-les-bases.pdf` |
 | Marketing | Digital - Les bases | `pdf/marketing-les-bases.pdf` |
 | Communication | Les bases | `pdf/communication-les-bases.pdf` |

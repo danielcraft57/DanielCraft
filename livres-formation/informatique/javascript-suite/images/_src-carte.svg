@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f5fa"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a3a8f" font-weight="700">Apres les bases : la carte du livre</text>
+
+  <!-- 5 etapes -->
+  <rect x="30" y="90" width="170" height="220" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <circle cx="115" cy="140" r="28" fill="#2a3a8f"/>
+  <text x="115" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">1</text>
+  <text x="115" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="700">Formulaires</text>
+  <text x="115" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">valider</text>
+  <text x="115" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">envoyer</text>
+
+  <rect x="220" y="90" width="170" height="220" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <circle cx="305" cy="140" r="28" fill="#2a3a8f"/>
+  <text x="305" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">2</text>
+  <text x="305" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="700">JSON</text>
+  <text x="305" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">objet</text>
+  <text x="305" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">texte</text>
+
+  <rect x="410" y="90" width="170" height="220" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <circle cx="495" cy="140" r="28" fill="#2a3a8f"/>
+  <text x="495" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">3</text>
+  <text x="495" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="700">fetch</text>
+  <text x="495" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">requete</text>
+  <text x="495" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">reponse</text>
+
+  <rect x="600" y="90" width="170" height="220" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <circle cx="685" cy="140" r="28" fill="#2a3a8f"/>
+  <text x="685" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">4</text>
+  <text x="685" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="700">async</text>
+  <text x="685" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">attendre</text>
+  <text x="685" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8">ordre clair</text>
+
+  <rect x="790" y="90" width="170" height="220" rx="14" fill="#a8e063" stroke="#2a3a8f" stroke-width="3"/>
+  <circle cx="875" cy="140" r="28" fill="#2a3a8f"/>
+  <text x="875" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">5</text>
+  <text x="875" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="700">Modules</text>
+  <text x="875" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2a3a8f">importer</text>
+  <text x="875" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2a3a8f">exporter</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3d52b8"/>
+    </marker>
+  </defs>
+  <line x1="200" y1="200" x2="218" y2="200" stroke="#3d52b8" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="390" y1="200" x2="408" y2="200" stroke="#3d52b8" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="580" y1="200" x2="598" y2="200" stroke="#3d52b8" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="770" y1="200" x2="788" y2="200" stroke="#3d52b8" stroke-width="3" marker-end="url(#arr)"/>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a">Cinq etapes pour faire parler ta page avec le monde exterieur.</text>
+</svg>

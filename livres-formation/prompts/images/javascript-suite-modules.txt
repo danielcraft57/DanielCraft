@@ -1,0 +1,1 @@
+Schema pedagogique francais : trois fichiers (api, afficher, main) relies par des fleches "importer" / "exporter". Couleurs indigo (#2a3a8f) et lime (#a8e063). Tout texte visible en francais. Style plat pour livre de formation.
