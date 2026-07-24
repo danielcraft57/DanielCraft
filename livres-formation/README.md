@@ -18,7 +18,7 @@ Des livres PDF telechargeables sur 6 themes :
 | Marketing | Digital - Les bases | `pdf/marketing-les-bases.pdf` |
 | Communication | Les bases | `pdf/communication-les-bases.pdf` |
 | IA | Generative / LLM, Machine Learning, Deep Learning | `pdf/ia-*.pdf` |
-| Finance | Marches et produits | `pdf/finance-les-bases.pdf` |
+| Finance | Les bases | `pdf/finance-les-bases.pdf` |
 
 ## Style
 

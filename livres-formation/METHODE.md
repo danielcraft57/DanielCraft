@@ -147,7 +147,7 @@ python livres-formation\informatique\<livre>\build_livre.py
 | IA generative / LLM | `pdf/ia-les-bases.pdf` | ~50+ pages | obsidienne + ciel (`theme="ia"`) ; tokens, RAG, agents |
 | Machine Learning | `pdf/ia-machine-learning.pdf` | ~50+ pages | acier + cuivre (`theme="ml"`) |
 | Deep Learning | `pdf/ia-deep-learning.pdf` | ~50+ pages | teal + rose (`theme="dl"`) |
-| Finance - Marches et produits | `pdf/finance-les-bases.pdf` | ~50+ pages | vert nuit + or (`theme="finance"`) ; marches, derives, banque |
+| Finance - Les bases | `pdf/finance-les-bases.pdf` | ~50+ pages | vert nuit + or (`theme="finance"`) ; budget, tresorerie, prudence |
 
 ## 9. Suites possibles
 
