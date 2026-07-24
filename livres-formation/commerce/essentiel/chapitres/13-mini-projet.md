@@ -1,44 +1,26 @@
 # Chapitre 13 - Mini-projet : ton offre en une page
 
 Tu vas construire une mini fiche offre.
-Pas un business plan de 40 pages. Une page claire.
+Pas un business plan de quarante pages. Une page claire.
 
 ## Contenu obligatoire
 
-1. Nom de l'offre
-2. Pour qui (portrait)
-3. Probleme / besoin
-4. Promesse de resultat
-5. Deroule (etapes)
-6. Prix + ce qui est inclus / exclus
-7. Canal principal
-8. Prochain pas
-9. Une objection + ta reponse
-10. Marge estimee (meme grossiere)
+Sur ta page, tu mets le nom de l'offre, pour qui c'est (portrait), le probleme ou besoin, la promesse de resultat, le deroule en etapes, le prix avec ce qui est inclus et exclus, le canal principal, le prochain pas, une objection frequente avec ta reponse, et une marge estimee meme grossiere.
 
-## Critères
+## Criteres
 
-- lisible en 2 minutes
-- concret
-- honnete
-- testable cette semaine (meme sur 1 personne)
+Ca doit etre lisible en deux minutes, concret, honnete, et testable cette semaine, meme sur une seule personne.
 
 ## Version "test"
 
-Propose l'offre a quelqu'un de réel.
-Note :
-- ce qu'il a compris
-- ce qui a freine
-- ce qu'il paierait
+Propose l'offre a quelqu'un de reel.
+Note ce qu'il a compris, ce qui a freine, et ce qu'il paierait.
 
 ## En vrai
 
 Si personne ne comprend, ce n'est pas "les gens sont betes".
 C'est l'offre qui est encore floue.
 
-## Mini defi
-
-Imprime ta fiche. Barre 20% du texte. Est-elle encore claire ?
 ## Modele de page (copie)
 
 ```text
@@ -56,3 +38,7 @@ Objection frequente : ...
 Ma reponse : ...
 Marge approx : ...
 ```
+
+## Mini defi
+
+Imprime ta fiche. Barre 20% du texte. Est-elle encore claire ?

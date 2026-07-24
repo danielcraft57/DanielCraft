@@ -4,13 +4,7 @@ Presque au bout. Encore un quiz juste apres, puis on cloture.
 
 ## En une minute
 
-- HTML = structure (les pieces de la maison)
-- CSS = style (peinture et deco)
-- Balises = etiquettes (`h1`, `p`, `a`, `img`...)
-- CSS = selecteur + proprietes
-- Boites = margin, border, padding, contenu
-- Flexbox = ranger les blocs
-- Viewport + media queries = ok sur telephone
+HTML, c'est la structure : les pieces de la maison. CSS, c'est le style : peinture et deco. Les balises, ce sont des etiquettes (`h1`, `p`, `a`, `img`...). En CSS, tu ecris un selecteur puis des proprietes. Les boites, c'est margin, border, padding, et le contenu. Flexbox sert a ranger les blocs. Et avec le viewport plus les media queries, ta page tient aussi sur telephone.
 
 ## Petites habitudes qui changent tout
 
@@ -23,19 +17,13 @@ Presque au bout. Encore un quiz juste apres, puis on cloture.
 
 ## Erreurs normales
 
-- Oublier le `<link>` vers le CSS
-- Mauvais chemin d'image (`src`)
-- Typo dans un nom de classe
-- Oublier le viewport
+Oublier le `<link>` vers le CSS. Mettre un mauvais chemin d'image dans `src`. Faire une typo dans un nom de classe. Oublier le viewport. Ca arrive a tout le monde.
 
 Ca arrive a tout le monde. Le debug, c'est juste de la chasse au detail.
 
 ## La suite (quand tu seras chaud)
 
-- Un peu plus de CSS (grid, animations legeres)
-- JavaScript pour rendre la page interactive
-- Accessibilite (clavier, contrastes, lecteurs d'ecran)
-- Mettre ton site en ligne
+Tu pourras pousser un peu plus le CSS (grid, animations legeres), puis passer a JavaScript pour rendre la page interactive. L'accessibilite (clavier, contrastes, lecteurs d'ecran) viendra aussi. Et un jour, tu mettras ton site en ligne.
 
 Mais d'abord : le quiz. Puis tu pourras vraiment dire "c'est fait".
 

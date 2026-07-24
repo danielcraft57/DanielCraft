@@ -68,10 +68,7 @@ Ca marche. Mais n'en abuse pas, sinon ca devient illisible.
 </table>
 ```
 
-- `table` = le tableau
-- `tr` = une ligne
-- `th` = cellule d'en-tete
-- `td` = cellule normale
+`table`, c'est le tableau. `tr`, c'est une ligne. `th`, c'est une cellule d'en-tete, et `td`, une cellule normale. Tu empiles ces balises comme des briques.
 
 ## Quand utiliser un tableau ?
 

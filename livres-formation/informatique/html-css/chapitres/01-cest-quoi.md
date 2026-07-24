@@ -18,8 +18,7 @@ Le navigateur le transforme en page.
 
 ## HTML et CSS, deux roles
 
-- HTML dit : "ici un titre", "ici une image", "ici un bouton"
-- CSS dit : "ce titre est grand et bleu", "cette image a des bords ronds"
+Le HTML dit : "ici un titre", "ici une image", "ici un bouton". Le CSS, lui, dit : "ce titre est grand et bleu", "cette image a des bords ronds".
 
 Les deux marchent ensemble. Toujours.
 
@@ -33,11 +32,7 @@ Mais d'abord : les bases. Solides.
 
 ## Ce que tu vas savoir faire a la fin
 
-- Creer une vraie page web
-- Ajouter du texte, des images, des liens
-- Changer les couleurs et les polices
-- Ranger les blocs proprement
-- Faire une petite page perso
+A la fin de ce livre, tu sauras creer une vraie page web. Tu pourras y mettre du texte, des images et des liens, puis changer les couleurs et les polices. Tu apprendras aussi a ranger les blocs proprement, et tu construiras une petite page perso a toi.
 
 Pas besoin d'etre un genie.
 Juste de la curiosite et un peu de patience.
@@ -89,19 +84,11 @@ Bon reflexe : d'abord une page HTML simple, puis on ajoute le CSS pour la forme.
 
 ## Mini defi
 
-- Ouvre un site que tu visites souvent
-- Clic droit > Inspecter (ou F12)
-- Clique sur une ligne de HTML dans l'inspecteur
-- Repere une regle CSS associee dans le panneau de droite
-- Note une chose structuree en HTML et une chose stylée en CSS
+Ouvre un site que tu visites souvent. Fais un clic droit, puis Inspecter (ou appuie sur F12). Clique sur une ligne de HTML dans l'inspecteur, et repere une regle CSS associee dans le panneau de droite. Note une chose structuree en HTML et une chose stylee en CSS. C'est deja de la vraie lecture de code.
 
 ## A retenir
 
-- HTML = murs et pieces (structure)
-- CSS = peinture et deco (apparence)
-- Le navigateur transforme ton code en page visible
-- Les deux travaillent toujours ensemble
-- Pas besoin d'etre expert pour commencer
+HTML, c'est les murs et les pieces : la structure. CSS, c'est la peinture et la deco : l'apparence. Le navigateur transforme ton code en page visible, et les deux travaillent toujours ensemble. Pas besoin d'etre expert pour commencer.
 
 
 ## En vrai, sur le terrain

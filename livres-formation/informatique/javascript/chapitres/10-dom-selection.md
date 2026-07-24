@@ -19,10 +19,7 @@ const titre = document.querySelector("#titre");
 const bouton = document.querySelector(".btn");
 ```
 
-- `#titre` = id
-- `.btn` = classe
-
-Comme en CSS. Pratique.
+`#titre` vise un id, `.btn` vise une classe. C'est la meme logique qu'en CSS, et c'est pour ca que ca devient vite naturel.
 
 ## querySelectorAll
 

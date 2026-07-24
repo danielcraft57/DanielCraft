@@ -28,17 +28,11 @@ console.log(equipe[0].prenom);
 
 ## Quand utiliser quoi ?
 
-- Tableau = liste d'elements du meme genre
-- Objet = une chose avec plusieurs infos
+Un tableau, c'est une liste d'elements du meme genre : plusieurs jeux, plusieurs prenoms, plusieurs prix. Un objet, c'est une seule chose avec plusieurs infos : un joueur, un livre, un produit. Souvent, tu combines les deux : un tableau d'objets.
 
 ## A toi
 
-Cree un objet `livre` avec :
-- titre
-- pages
-- lu (true/false)
-
-Affiche une phrase : "Le livre X a Y pages".
+Cree un objet `livre` avec un titre, un nombre de pages, et une propriete `lu` en true ou false. Affiche ensuite une phrase du genre "Le livre X a Y pages". Tu dois voir le titre et le nombre sortir ensemble.
 
 ## Erreur classique
 
@@ -92,17 +86,11 @@ Objets dans un tableau : combo tres courant en JS.
 
 ## Mini defi
 
-- Cree un objet `moi` avec prenom, age, ville
-- Ajoute une propriete `hobbies` (tableau de strings)
-- Affiche "J'aime : ..." en joignant les hobbies
-- Cree un tableau de 2 amis (objets) et affiche leurs prenoms
+Cree un objet `moi` avec prenom, age et ville. Ajoute aussi une propriete `hobbies` (un tableau de textes). Affiche "J'aime : ..." en joignant les hobbies. Puis cree un tableau de deux amis (des objets) et affiche leurs prenoms. Tu melanges objet et tableau : c'est exactement le reflexe a prendre.
 
 ## A retenir
 
-- Objet = fiche avec des proprietes nommees
-- `objet.cle` ou `objet["cle"]` pour lire
-- Tableau d'objets = liste de fiches
-- Tableau pour lister, objet pour decrire une chose
+Un objet, c'est une fiche avec des proprietes nommees. Tu lis avec `objet.cle` ou `objet["cle"]`. Un tableau d'objets, c'est une liste de fiches. En resume : tableau pour lister, objet pour decrire une chose.
 
 
 ## En vrai, sur le terrain

@@ -97,7 +97,4 @@
 
 ## Score
 
-- 16-18 : nickel
-- 12-15 : bien, relis conflits + undo + PR
-- 8-11 : refais 4, 6, 8, 11, 14
-- moins de 8 : refais le mini-projet tranquillement
+16-18 : nickel. 12-15 : bien, relis conflits + undo + PR. 8-11 : refais 4, 6, 8, 11, 14. Moins de 8 : refais le mini-projet tranquillement.

@@ -101,11 +101,7 @@ print(f"Etat : niveau {niveau}, xp {xp}")
 
 ## A toi
 
-Cree :
-- `prenom`
-- `points` (commence a 0)
-- ajoute 10 points
-- affiche le tout avec `print` ou une f-string
+Cree une variable `prenom` et une variable `points` qui commence a 0. Ajoute 10 points, puis affiche le tout avec `print` ou une f-string.
 
 ## En vrai, sur le terrain
 

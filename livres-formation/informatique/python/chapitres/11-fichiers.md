@@ -31,9 +31,7 @@ with open("notes.txt", "r", encoding="utf-8") as f:
 
 ## Modes utiles
 
-- `"w"` : ecrire (ecrase)
-- `"a"` : ajouter a la fin
-- `"r"` : lire
+Le mode `"w"` ecrit (et ecrase). `"a"` ajoute a la fin. `"r"` lit seulement.
 
 ## JSON (plus avance, tres utile)
 
@@ -69,9 +67,7 @@ Les deux cohabitent.
 
 ## Erreurs classiques
 
-- Mauvais dossier : fichier "introuvable"
-- Oublier `encoding="utf-8"` (accents foireux)
-- Mode `"w"` qui ecrase sans prevenir
+Un mauvais dossier donne souvent "fichier introuvable". Oublier `encoding="utf-8"` foire les accents. Et le mode `"w"` ecrase sans prevenir.
 
 ## A toi
 

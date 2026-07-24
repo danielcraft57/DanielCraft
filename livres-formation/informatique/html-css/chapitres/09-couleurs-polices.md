@@ -15,12 +15,7 @@ h1 {
 }
 ```
 
-Tu peux ecrire :
-- un nom (`red`, `teal`, `navy`)
-- un code hex (`#ff6600`)
-- du rgb (`rgb(255, 100, 50)`)
-
-Hex, c'est le plus courant sur le web.
+Tu peux ecrire un nom (`red`, `teal`, `navy`), un code hex (`#ff6600`), ou du rgb (`rgb(255, 100, 50)`). Les trois marchent. Hex, c'est le plus courant sur le web.
 `#000000` = noir. `#ffffff` = blanc.
 
 Astuce : des outils comme un color picker t'aident a choisir. Pas besoin de retenir les codes par coeur.
@@ -41,8 +36,7 @@ Si la premiere n'existe pas sur l'ordi, il prend la suivante.
 
 ### Polices "safe" pour commencer
 
-- `Arial, sans-serif` (moderne, sans empattement)
-- `Georgia, serif` (un peu plus litteraire)
+Essaie `Arial, sans-serif` si tu veux un look moderne sans empattement. Ou `Georgia, serif` si tu veux quelque chose un peu plus litteraire. Deux choix, ca suffit largement au debut.
 
 Plus tard tu pourras charger des polices web (Google Fonts, etc.). Pas obligatoire au debut.
 
@@ -82,10 +76,7 @@ h1 {
 
 ## A toi
 
-- Fond doux (pas blanc crame si tu veux etre cosy)
-- Texte sombre pour bien lire
-- Titre colore
-- Paragraphes un peu plus grands (16-18px minimum)
+Choisis un fond doux (pas blanc crame si tu veux etre cosy) et un texte sombre pour bien lire. Mets un titre colore, et des paragraphes un peu plus grands : vise 16 a 18px minimum. Tu vas sentir la difference tout de suite.
 
 
 ## En vrai, sur le terrain

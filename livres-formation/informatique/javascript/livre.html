@@ -291,7 +291,7 @@ th { background: var(--paper-deep); }
   /* Ne pas tuer les liens du sommaire a l'impression */
   a { color: inherit; text-decoration: none; }
   .toc a {
-    color: #1a4d3e !important;
+    color: var(--band) !important;
     text-decoration: underline !important;
   }
   .footer-note { break-before: avoid; }
@@ -320,8 +320,8 @@ th { background: var(--paper-deep); }
     line-height: 1.5 !important;
   }
   .toc a {
-    color: #1a4d3e !important;
-    text-decoration: none !important;
+    color: var(--band) !important;
+    text-decoration: underline !important;
   }
   .chapter {
     break-before: page !important;
@@ -394,11 +394,7 @@ th { background: var(--paper-deep); }
 <p>Sans JS, une page regarde.</p>
 <p>Avec JS, elle repond.</p>
 <h2 id="chapitre-01--image-mentale">Image mentale</h2>
-<ul>
-<li>HTML = le corps</li>
-<li>CSS = les vetements</li>
-<li>JS = le cerveau (et un peu les muscles)</li>
-</ul>
+<p>Pense a une personne. Le HTML, c&#x27;est le corps : la forme, les pieces, ce qui existe. Le CSS, ce sont les vetements : couleurs, style, presentation. JavaScript, c&#x27;est le cerveau, et un peu les muscles. C&#x27;est lui qui decide, qui reagit, qui fait bouger.</p>
 <p>Tu cliques un bouton ? JS peut compter.</p>
 <p>Tu ecris ton prenom ? JS peut te dire &quot;Salut, toi&quot;.</p>
 <p>Tu rates un champ ? JS peut te prevenir.</p>
@@ -406,15 +402,7 @@ th { background: var(--paper-deep); }
 <p>Dans le navigateur. Directement.</p>
 <p>Pas besoin d&#x27;installer un truc complique pour commencer.</p>
 <h2 id="chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</h2>
-<ul>
-<li>Ecrire tes premiers scripts</li>
-<li>Garder des infos dans des variables</li>
-<li>Prendre des decisions (if)</li>
-<li>Repeter des actions (boucles)</li>
-<li>Creer des fonctions</li>
-<li>Modifier la page (le DOM)</li>
-<li>Reagir aux clics</li>
-</ul>
+<p>A la fin de ce parcours, tu sauras ecrire tes premiers scripts et ranger des infos dans des variables. Tu apprendras a prendre des decisions avec <code>if</code>, a repeter des actions avec des boucles, et a creer des fonctions reutilisables. Tu verras aussi comment modifier la page (le DOM) et comment reagir aux clics. Bref : rendre une page vivante, pas juste jolie.</p>
 <h2 id="chapitre-01--important">Important</h2>
 <p>On reste sur les bases.</p>
 <p>Pas de framework. Pas de magie obscure.</p>
@@ -434,19 +422,9 @@ bouton.addEventListener(&quot;click&quot;, function () {
 });</code></pre></div>
 <p>Tu n&#x27;as pas besoin de tout comprendre maintenant. L&#x27;idee : JS ecoute et repond.</p>
 <h2 id="chapitre-01--mini-defi">Mini defi</h2>
-<ul>
-<li>Ouvre un site que tu aimes (YouTube, un jeu en ligne, etc.)</li>
-<li>Note 3 actions interactives (clic, scroll, formulaire...)</li>
-<li>Pour chacune, devine : HTML, CSS ou JS ?</li>
-<li>Verifie en desactivant JS dans le navigateur (option developpeur). Que se passe-t-il ?</li>
-</ul>
+<p>Ouvre un site que tu aimes (YouTube, un jeu en ligne, peu importe). Note trois actions interactives : un clic, un scroll, un formulaire... Pour chacune, demande-toi : c&#x27;est plutot HTML, CSS ou JS ? Ensuite, si tu peux, desactive JavaScript dans les options developpeur du navigateur et regarde ce qui casse. Tu verras tout de suite a quoi sert le &quot;cerveau&quot; de la page.</p>
 <h2 id="chapitre-01--a-retenir">A retenir</h2>
-<ul>
-<li>JavaScript = le cerveau interactif de la page</li>
-<li>Il tourne dans le navigateur, sans installation compliquee</li>
-<li>HTML structure, CSS habille, JS fait bouger et reagir</li>
-<li>Tu vas apprendre les bases, pas un framework</li>
-</ul>
+<p>JavaScript, c&#x27;est le cerveau interactif de la page. Il tourne dans le navigateur, sans installation compliquee pour commencer. HTML structure, CSS habille, JS fait bouger et reagir. Ici, on apprend les bases, pas un framework.</p>
 <h2 id="chapitre-01--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -518,19 +496,9 @@ console.log(&quot;Le titre dit :&quot;, titre.textContent);
 console.log(&quot;Script charge avec succes !&quot;);</code></pre></div>
 <p>Ouvre la console. Tu dois voir les deux lignes.</p>
 <h2 id="chapitre-02--mini-defi">Mini defi</h2>
-<ul>
-<li>Cree le dossier <code>mon-site/</code> avec les 3 fichiers</li>
-<li>Dans <code>script.js</code>, affiche ton age et ta ville</li>
-<li>Change le chemin volontairement (<code>scrip.js</code>) et note l&#x27;erreur dans la console</li>
-<li>Remets le bon chemin et verifie que ca marche</li>
-</ul>
+<p>Cree le dossier <code>mon-site/</code> avec les trois fichiers habituels. Dans <code>script.js</code>, affiche ton age et ta ville avec <code>console.log</code>. Ensuite, casse volontairement le chemin (<code>scrip.js</code> au lieu de <code>script.js</code>) et lis l&#x27;erreur dans la console. Remets le bon chemin, rafraichis, et verifie que tout reprend. Tu apprends autant en cassant qu&#x27;en reussissant.</p>
 <h2 id="chapitre-02--a-retenir">A retenir</h2>
-<ul>
-<li>Fichier <code>.js</code> separe = la bonne habitude</li>
-<li><code>&lt;script src=&quot;...&quot;&gt;</code> juste avant <code>&lt;/body&gt;</code> pour debuter</li>
-<li><code>console.log</code> = ton outil de debug numero 1</li>
-<li>La console (F12) permet de tester du code vite</li>
-</ul>
+<p>Un fichier <code>.js</code> separe, c&#x27;est la bonne habitude des le debut. Tu le branches avec <code>&lt;script src=&quot;...&quot;&gt;</code> juste avant <code>&lt;/body&gt;</code> pour commencer simplement. <code>console.log</code> reste ton outil de debug numero 1, et la console (F12) te laisse tester du code en deux secondes.</p>
 <h2 id="chapitre-02--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -543,13 +511,7 @@ console.log(&quot;Script charge avec succes !&quot;);</code></pre></div>
 <h2 id="chapitre-03--let-et-const">let et const</h2>
 <div class="code-block keep-block"><pre><code class="language-js">let age = 12;
 const prenom = &quot;Leo&quot;;</code></pre></div>
-<ul>
-<li><code>let</code> = tu pourras changer la valeur plus tard</li>
-<li><code>const</code> = tu ne changes pas (constante)</li>
-</ul>
-<p>Astuce debutant :</p>
-<p>utilise <code>const</code> par defaut.</p>
-<p>Passe a <code>let</code> seulement si tu dois vraiment modifier.</p>
+<p>Avec <code>let</code>, tu pourras changer la valeur plus tard. Avec <code>const</code>, tu ne changes pas : c&#x27;est une constante. Astuce debutant : utilise <code>const</code> par defaut, et passe a <code>let</code> seulement si tu dois vraiment modifier la valeur.</p>
 <h2 id="chapitre-03--changer-une-valeur">Changer une valeur</h2>
 <div class="code-block keep-block"><pre><code class="language-js">let score = 0;
 score = 10;
@@ -566,13 +528,7 @@ let a1 = &quot;Salut&quot;;</code></pre></div>
 ville = &quot;Paris&quot;; // erreur</code></pre></div>
 <p><code>const</code> protege. C&#x27;est voulu.</p>
 <h2 id="chapitre-03--a-toi">A toi</h2>
-<p>Cree :</p>
-<ul>
-<li><code>const prenom = &quot;...&quot;</code></li>
-<li><code>let points = 0</code></li>
-<li>ajoute 5 points</li>
-<li><code>console.log</code> le prenom et les points</li>
-</ul>
+<p>Cree une constante <code>prenom</code> avec ton prenom entre guillemets, puis un <code>let points = 0</code>. Ajoute 5 points, et affiche le prenom et les points avec <code>console.log</code>. Tu dois voir les deux infos dans la console.</p>
 <h2 id="chapitre-03--erreur-classique">Erreur classique</h2>
 <p>Tu reutilises un nom sans le declarer. JS cree une variable globale par accident. Ca casse tout sur une grosse page.</p>
 <p>Mauvais :</p>
@@ -600,19 +556,9 @@ if (xp &gt;= 50) {
 console.log(&quot;Etat final : niveau &quot; + niveau + &quot;, xp &quot; + xp);</code></pre></div>
 <p>Lis la console ligne par ligne. Tu vois comment les valeurs changent.</p>
 <h2 id="chapitre-03--mini-defi">Mini defi</h2>
-<ul>
-<li>Cree 3 <code>const</code> : prenom, ville, animal prefere</li>
-<li>Cree 2 <code>let</code> : compteurVisites, derniereNote</li>
-<li>Modifie les <code>let</code>, pas les <code>const</code></li>
-<li>Affiche une phrase qui melange tout avec des <code>+</code></li>
-</ul>
+<p>Cree trois <code>const</code> : prenom, ville, animal prefere. Cree aussi deux <code>let</code> : compteurVisites et derniereNote. Modifie seulement les <code>let</code>, laisse les <code>const</code> tranquilles. Ensuite, affiche une phrase qui melange tout avec des <code>+</code>. Si la console rale quand tu touches une <code>const</code>, c&#x27;est que tu as bien compris la protection.</p>
 <h2 id="chapitre-03--a-retenir">A retenir</h2>
-<ul>
-<li><code>const</code> par defaut, <code>let</code> si tu dois changer</li>
-<li>Un nom clair vaut mieux que <code>x</code> ou <code>a1</code></li>
-<li>Toujours declarer avec <code>let</code> ou <code>const</code></li>
-<li>Une variable = une boite etiquetee reutilisable</li>
-</ul>
+<p>Prends <code>const</code> par defaut, et <code>let</code> seulement si tu dois changer la valeur. Un nom clair vaut mieux que <code>x</code> ou <code>a1</code>. Declare toujours avec <code>let</code> ou <code>const</code> : une variable, c&#x27;est une boite etiquetee que tu reutilises.</p>
 <h2 id="chapitre-03--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -634,24 +580,14 @@ const total = prix * quantite;</code></pre></div>
 const aFini = false;</code></pre></div>
 <p>Utile pour les decisions.</p>
 <h2 id="chapitre-04--undefined-et-null-juste-savoir">undefined et null (juste savoir)</h2>
-<ul>
-<li><code>undefined</code> = pas encore defini</li>
-<li><code>null</code> = volontairement &quot;vide&quot;</li>
-</ul>
-<p>Pas besoin d&#x27;en faire des tartines au debut.</p>
+<p><code>undefined</code>, c&#x27;est &quot;pas encore defini&quot;. <code>null</code>, c&#x27;est volontairement &quot;vide&quot;. Pas besoin d&#x27;en faire des tartines au debut : sache juste que ces deux etats existent.</p>
 <h2 id="chapitre-04--assembler-du-texte">Assembler du texte</h2>
 <div class="code-block keep-block"><pre><code class="language-js">const prenom = &quot;Maya&quot;;
 console.log(&quot;Salut &quot; + prenom);
 console.log(`Salut ${prenom}`); // plus moderne, pratique</code></pre></div>
 <p>Les backticks \<code> \</code> permettent d&#x27;inserer <code>${...}</code> dedans.</p>
 <h2 id="chapitre-04--a-toi">A toi</h2>
-<p>Fais un mini ticket de caisse :</p>
-<ul>
-<li>prix d&#x27;un article</li>
-<li>quantite</li>
-<li>total</li>
-<li>un message : &quot;Total = ...&quot;</li>
-</ul>
+<p>Fais un mini ticket de caisse. Range le prix d&#x27;un article, la quantite, calcule le total, puis affiche un message du genre &quot;Total = ...&quot;. Tu dois voir le calcul et le texte dans la console.</p>
 <h2 id="chapitre-04--erreur-classique">Erreur classique</h2>
 <p>Tu additionnes un nombre et du texte sans faire attention. JS colle les morceaux au lieu de calculer.</p>
 <p>Mauvais :</p>
@@ -683,19 +619,9 @@ Facture pour ${client}
 console.log(recu);</code></pre></div>
 <p><code>.toFixed(2)</code> arrondit a 2 decimales. Pratique pour l&#x27;argent.</p>
 <h2 id="chapitre-04--mini-defi">Mini defi</h2>
-<ul>
-<li>Cree une variable texte, une nombre, une booleen</li>
-<li>Affiche le type de chaque valeur avec <code>typeof maVariable</code></li>
-<li>Fais un calcul prix x quantite, puis un message avec backticks</li>
-<li>Teste <code>&quot;5&quot; + 2</code> et <code>5 + 2</code>. Note la difference</li>
-</ul>
+<p>Cree une variable texte, une nombre, et une booleenne. Affiche le type de chaque valeur avec <code>typeof maVariable</code>. Fais un calcul prix fois quantite, puis un message avec des backticks. Enfin, teste <code>&quot;5&quot; + 2</code> et <code>5 + 2</code>, et note bien la difference : l&#x27;un colle du texte, l&#x27;autre calcule.</p>
 <h2 id="chapitre-04--a-retenir">A retenir</h2>
-<ul>
-<li>string = texte, number = nombre, boolean = true/false</li>
-<li><code>===</code> compare sans melanger les types</li>
-<li>Backticks \<code>...\</code> + <code>${...}</code> = facile pour assembler du texte</li>
-<li>Attention aux guillemets qui transforment un nombre en texte</li>
-</ul>
+<p>Une string, c&#x27;est du texte. Un number, c&#x27;est un nombre. Un boolean, c&#x27;est <code>true</code> ou <code>false</code>. Pour comparer sans melanger les types, utilise <code>===</code>. Les backticks \<code>...\</code> avec <code>${...}</code> simplifient l&#x27;assemblage de texte. Et attention aux guillemets : ils peuvent transformer un nombre en texte sans que tu le voies.</p>
 <h2 id="chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -722,12 +648,7 @@ if (note &gt;= 16) {
   console.log(&quot;On revise&quot;);
 }</code></pre></div>
 <h2 id="chapitre-05--comparaisons-utiles">Comparaisons utiles</h2>
-<ul>
-<li><code>===</code> egal (strict, recommande)</li>
-<li><code>!==</code> different</li>
-<li><code>&gt;</code> <code>&lt;</code> <code>&gt;=</code> <code>&lt;=</code></li>
-</ul>
-<p>Evite <code>==</code> pour l&#x27;instant. <code>===</code> est plus clair.</p>
+<p>Pour comparer, tu as surtout <code>===</code> (egal strict, recommande), <code>!==</code> (different), puis <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> et <code>&lt;=</code>. Evite <code>==</code> pour l&#x27;instant : <code>===</code> est plus clair et te protege des surprises de types.</p>
 <h2 id="chapitre-05--et-ou">Et / Ou</h2>
 <div class="code-block keep-block"><pre><code class="language-js">const aUnTicket = true;
 const estVip = false;
@@ -779,20 +700,9 @@ console.log(peutEntrer(10, true, false));
 console.log(peutEntrer(20, false, false));</code></pre></div>
 <p>Teste en changeant les valeurs en haut du fichier.</p>
 <h2 id="chapitre-05--mini-defi">Mini defi</h2>
-<ul>
-<li>Cree une variable <code>temperature</code></li>
-<li>Si &gt;= 25, affiche &quot;Chaud&quot;</li>
-<li>Sinon si &gt;= 15, affiche &quot;Correct&quot;</li>
-<li>Sinon affiche &quot;Froid&quot;</li>
-<li>Ajoute un cas : si temperature &gt; 35, affiche &quot;Canicule !&quot;</li>
-</ul>
+<p>Cree une variable <code>temperature</code>. Si elle est superieure ou egale a 25, affiche &quot;Chaud&quot;. Sinon, si elle est au moins a 15, affiche &quot;Correct&quot;. Sinon, affiche &quot;Froid&quot;. Ajoute aussi un cas special : si la temperature depasse 35, affiche &quot;Canicule !&quot;. Change la valeur plusieurs fois pour voir chaque branche.</p>
 <h2 id="chapitre-05--a-retenir">A retenir</h2>
-<ul>
-<li><code>if</code> / <code>else if</code> / <code>else</code> = decisions en chaine</li>
-<li><code>===</code> pour comparer, pas <code>=</code></li>
-<li><code>&amp;&amp;</code> = et, <code>||</code> = ou</li>
-<li>Garde les conditions simples et lisibles</li>
-</ul>
+<p><code>if</code>, <code>else if</code> et <code>else</code> enchainent tes decisions. Pour comparer, utilise <code>===</code>, pas <code>=</code>. <code>&amp;&amp;</code> veut dire &quot;et&quot;, <code>||</code> veut dire &quot;ou&quot;. Garde les conditions simples et lisibles : une idee claire par test.</p>
 <h2 id="chapitre-05--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -864,19 +774,9 @@ for (let n = 1; n &lt;= 10; n = n + 1) {
 }</code></pre></div>
 <p><code>.length</code> donne la taille d&#x27;un texte. Pratique dans les boucles.</p>
 <h2 id="chapitre-06--mini-defi">Mini defi</h2>
-<ul>
-<li>Affiche les nombres pairs de 2 a 20 avec une boucle <code>for</code></li>
-<li>Fais la somme de 1 a 100 (resultat attendu : 5050)</li>
-<li>Parcours un tableau de prenoms et affiche &quot;Salut, [prenom] !&quot;</li>
-<li>Bonus : arrete la boucle si tu trouves &quot;stop&quot; dans la liste</li>
-</ul>
+<p>Avec une boucle <code>for</code>, affiche les nombres pairs de 2 a 20. Ensuite, fais la somme de 1 a 100 (tu dois obtenir 5050). Parcours aussi un tableau de prenoms et affiche &quot;Salut, [prenom] !&quot; pour chacun. En bonus, arrete la boucle si tu trouves le mot &quot;stop&quot; dans la liste.</p>
 <h2 id="chapitre-06--a-retenir">A retenir</h2>
-<ul>
-<li><code>for</code> = quand tu connais le nombre de tours</li>
-<li><code>while</code> = tant qu&#x27;une condition est vraie</li>
-<li><code>for...of</code> = parcourir un tableau simplement</li>
-<li>Toujours faire evoluer le compteur pour eviter l&#x27;infini</li>
-</ul>
+<p><code>for</code>, c&#x27;est quand tu connais le nombre de tours. <code>while</code>, c&#x27;est tant qu&#x27;une condition reste vraie. <code>for...of</code> parcourt un tableau simplement. Dans tous les cas, fais evoluer ton compteur : sinon tu te retrouves avec une boucle infinie.</p>
 <h2 id="chapitre-06--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -908,11 +808,7 @@ const resultat = double(4);
 console.log(resultat); // 8</code></pre></div>
 <p><code>return</code> renvoie une valeur. Sans <code>return</code>, tu obtiens <code>undefined</code>.</p>
 <h2 id="chapitre-07--pourquoi-c-est-cool">Pourquoi c&#x27;est cool</h2>
-<ul>
-<li>Moins de copie</li>
-<li>Code plus clair</li>
-<li>Plus facile a corriger</li>
-</ul>
+<p>Tu copies moins. Le code devient plus clair. Et quand un bug arrive, tu corriges a un seul endroit au lieu de chasser la meme erreur partout. Une bonne fonction, c&#x27;est une petite machine fiable.</p>
 <h2 id="chapitre-07--petite-forme-moderne-juste-voir">Petite forme moderne (juste voir)</h2>
 <div class="code-block keep-block"><pre><code class="language-js">const triple = (n) =&gt; n * 3;</code></pre></div>
 <p>Tu verras ca souvent. Pour l&#x27;instant, <code>function</code> suffit largement.</p>
@@ -954,19 +850,9 @@ afficherBulletin(&quot;Leo&quot;, 12, 15, 18);
 afficherBulletin(&quot;Nina&quot;, 8, 9, 11);</code></pre></div>
 <p>Chaque fonction a un role clair. C&#x27;est plus facile a lire et a corriger.</p>
 <h2 id="chapitre-07--mini-defi">Mini defi</h2>
-<ul>
-<li>Ecris <code>aireRectangle(largeur, hauteur)</code> avec <code>return</code></li>
-<li>Ecris <code>estMajeur(age)</code> qui renvoie true ou false</li>
-<li>Ecris <code>saluer(prenom)</code> qui affiche un message (sans return)</li>
-<li>Appelle les 3 fonctions avec des valeurs differentes</li>
-</ul>
+<p>Ecris <code>aireRectangle(largeur, hauteur)</code> qui renvoie le resultat avec <code>return</code>. Ecris aussi <code>estMajeur(age)</code> qui renvoie <code>true</code> ou <code>false</code>. Puis <code>saluer(prenom)</code>, qui affiche juste un message sans <code>return</code>. Appelle les trois fonctions avec des valeurs differentes et verifie ce que la console te montre.</p>
 <h2 id="chapitre-07--a-retenir">A retenir</h2>
-<ul>
-<li>Une fonction = une recette reutilisable</li>
-<li>Parametres = ingredients, <code>return</code> = le plat fini</li>
-<li>Sans <code>return</code>, tu obtiens <code>undefined</code></li>
-<li>Petites fonctions = code plus propre</li>
-</ul>
+<p>Une fonction, c&#x27;est une recette reutilisable. Les parametres sont les ingredients, et <code>return</code> sort le plat fini. Sans <code>return</code>, tu recuperes <code>undefined</code>. Prefere plusieurs petites fonctions a une grosse usine : ton code reste propre.</p>
 <h2 id="chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -1033,19 +919,9 @@ const retire = courses.pop();
 console.log(&quot;Retire : &quot; + retire);
 console.log(&quot;Liste finale :&quot;, courses);</code></pre></div>
 <h2 id="chapitre-08--mini-defi">Mini defi</h2>
-<ul>
-<li>Cree un tableau de 5 films</li>
-<li>Affiche le 1er et le dernier</li>
-<li>Ajoute un film avec <code>push</code>, retire-en un avec <code>pop</code></li>
-<li>Parcours avec <code>for...of</code> et affiche chaque titre en majuscules (<code>.toUpperCase()</code>)</li>
-</ul>
+<p>Cree un tableau de cinq films. Affiche le premier et le dernier. Ajoute un film avec <code>push</code>, puis retires-en un avec <code>pop</code>. Ensuite, parcours la liste avec <code>for...of</code> et affiche chaque titre en majuscules grace a <code>.toUpperCase()</code>. Tu dois voir la liste evoluer dans la console.</p>
 <h2 id="chapitre-08--a-retenir">A retenir</h2>
-<ul>
-<li>Index commence a 0</li>
-<li><code>push</code> ajoute, <code>pop</code> retire a la fin</li>
-<li><code>length</code> = nombre d&#x27;elements</li>
-<li><code>includes</code> cherche un element dans le tableau</li>
-</ul>
+<p>L&#x27;index commence a 0. <code>push</code> ajoute a la fin, <code>pop</code> retire le dernier. <code>length</code> donne le nombre d&#x27;elements, et <code>includes</code> te dit si un element est deja dans le tableau.</p>
 <h2 id="chapitre-08--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -1070,18 +946,9 @@ joueur.score = joueur.score + 10;</code></pre></div>
 
 console.log(equipe[0].prenom);</code></pre></div>
 <h2 id="chapitre-09--quand-utiliser-quoi">Quand utiliser quoi ?</h2>
-<ul>
-<li>Tableau = liste d&#x27;elements du meme genre</li>
-<li>Objet = une chose avec plusieurs infos</li>
-</ul>
+<p>Un tableau, c&#x27;est une liste d&#x27;elements du meme genre : plusieurs jeux, plusieurs prenoms, plusieurs prix. Un objet, c&#x27;est une seule chose avec plusieurs infos : un joueur, un livre, un produit. Souvent, tu combines les deux : un tableau d&#x27;objets.</p>
 <h2 id="chapitre-09--a-toi">A toi</h2>
-<p>Cree un objet <code>livre</code> avec :</p>
-<ul>
-<li>titre</li>
-<li>pages</li>
-<li>lu (true/false)</li>
-</ul>
-<p>Affiche une phrase : &quot;Le livre X a Y pages&quot;.</p>
+<p>Cree un objet <code>livre</code> avec un titre, un nombre de pages, et une propriete <code>lu</code> en true ou false. Affiche ensuite une phrase du genre &quot;Le livre X a Y pages&quot;. Tu dois voir le titre et le nombre sortir ensemble.</p>
 <h2 id="chapitre-09--erreur-classique">Erreur classique</h2>
 <p>Tu melanges point et crochets. Les deux marchent, mais sois coherent.</p>
 <p>Ca marche :</p>
@@ -1118,19 +985,9 @@ afficherJeux(inventaire);
 console.log(&quot;Total heures : &quot; + totalHeures(inventaire));</code></pre></div>
 <p>Objets dans un tableau : combo tres courant en JS.</p>
 <h2 id="chapitre-09--mini-defi">Mini defi</h2>
-<ul>
-<li>Cree un objet <code>moi</code> avec prenom, age, ville</li>
-<li>Ajoute une propriete <code>hobbies</code> (tableau de strings)</li>
-<li>Affiche &quot;J&#x27;aime : ...&quot; en joignant les hobbies</li>
-<li>Cree un tableau de 2 amis (objets) et affiche leurs prenoms</li>
-</ul>
+<p>Cree un objet <code>moi</code> avec prenom, age et ville. Ajoute aussi une propriete <code>hobbies</code> (un tableau de textes). Affiche &quot;J&#x27;aime : ...&quot; en joignant les hobbies. Puis cree un tableau de deux amis (des objets) et affiche leurs prenoms. Tu melanges objet et tableau : c&#x27;est exactement le reflexe a prendre.</p>
 <h2 id="chapitre-09--a-retenir">A retenir</h2>
-<ul>
-<li>Objet = fiche avec des proprietes nommees</li>
-<li><code>objet.cle</code> ou <code>objet[&quot;cle&quot;]</code> pour lire</li>
-<li>Tableau d&#x27;objets = liste de fiches</li>
-<li>Tableau pour lister, objet pour decrire une chose</li>
-</ul>
+<p>Un objet, c&#x27;est une fiche avec des proprietes nommees. Tu lis avec <code>objet.cle</code> ou <code>objet[&quot;cle&quot;]</code>. Un tableau d&#x27;objets, c&#x27;est une liste de fiches. En resume : tableau pour lister, objet pour decrire une chose.</p>
 <h2 id="chapitre-09--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -1147,11 +1004,7 @@ console.log(&quot;Total heures : &quot; + totalHeures(inventaire));</code></pre>
 <p>JS :</p>
 <div class="code-block keep-block"><pre><code class="language-js">const titre = document.querySelector(&quot;#titre&quot;);
 const bouton = document.querySelector(&quot;.btn&quot;);</code></pre></div>
-<ul>
-<li><code>#titre</code> = id</li>
-<li><code>.btn</code> = classe</li>
-</ul>
-<p>Comme en CSS. Pratique.</p>
+<p><code>#titre</code> vise un id, <code>.btn</code> vise une classe. C&#x27;est la meme logique qu&#x27;en CSS, et c&#x27;est pour ca que ca devient vite naturel.</p>
 <h2 id="chapitre-10--queryselectorall">querySelectorAll</h2>
 <div class="code-block keep-block"><pre><code class="language-js">const items = document.querySelectorAll(&quot;li&quot;);
 console.log(items.length);</code></pre></div>
@@ -1224,11 +1077,7 @@ bouton.addEventListener(&quot;click&quot;, function () {
   message.textContent = &quot;Clics : &quot; + clics;
 });</code></pre></div>
 <h2 id="chapitre-12--autres-evenements-utiles">Autres evenements utiles</h2>
-<ul>
-<li><code>input</code> : quand on ecrit dans un champ</li>
-<li><code>submit</code> : envoi de formulaire</li>
-<li><code>mouseover</code> : souris au-dessus (moins prioritaire)</li>
-</ul>
+<p>Tu croiseras souvent <code>input</code> quand quelqu&#x27;un ecrit dans un champ, et <code>submit</code> quand un formulaire part. Il y a aussi <code>mouseover</code> quand la souris passe au-dessus, mais c&#x27;est moins prioritaire pour debuter. Commence par <code>click</code> : c&#x27;est le plus clair.</p>
 <h2 id="chapitre-12--eviter-le-rechargement-de-formulaire">Eviter le rechargement de formulaire</h2>
 <div class="code-block keep-block"><pre><code class="language-js">form.addEventListener(&quot;submit&quot;, function (event) {
   event.preventDefault();
@@ -1247,13 +1096,7 @@ bouton.addEventListener(&quot;click&quot;, function () {
 <p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1 id="chapitre-13--chapitre-13-mini-projet-compteur-de-score">Chapitre 13 - Mini-projet : compteur de score</h1>
 <p>On assemble. Un petit score interactif.</p>
 <h2 id="chapitre-13--but">But</h2>
-<ul>
-<li>Afficher un score</li>
-<li>Bouton +1</li>
-<li>Bouton -1</li>
-<li>Bouton reset</li>
-<li>Le score ne descend pas sous 0</li>
-</ul>
+<p>Tu vas afficher un score a l&#x27;ecran, avec un bouton +1, un bouton -1 et un bouton reset. Le score ne doit jamais descendre sous 0. C&#x27;est simple, mais ca assemble variables, DOM et evenements.</p>
 <h2 id="chapitre-13--html">HTML</h2>
 <div class="code-block keep-block"><pre><code class="language-html">&lt;h1&gt;Score&lt;/h1&gt;
 &lt;p id=&quot;score&quot;&gt;0&lt;/p&gt;
@@ -1309,16 +1152,9 @@ resetBtn.addEventListener(&quot;click&quot;, function () {
 
 afficher();</code></pre></div>
 <h2 id="chapitre-13--criteres-de-reussite">Criteres de reussite</h2>
-<ul>
-<li>Les 3 boutons marchent</li>
-<li>Pas de score negatif</li>
-<li>Code range (const/let, fonctions courtes)</li>
-</ul>
+<p>Les trois boutons doivent marcher. Le score ne passe jamais en negatif. Et ton code reste range : <code>const</code> / <code>let</code> bien choisis, fonctions courtes. Si ces trois points sont la, le mini-projet tient.</p>
 <h2 id="chapitre-13--bonus">Bonus</h2>
-<ul>
-<li>Change la couleur du score si score &gt;= 10</li>
-<li>Ajoute un message &quot;Belle serie !&quot;</li>
-</ul>
+<p>Quand le score atteint 10 ou plus, change sa couleur. Tu peux aussi afficher un message &quot;Belle serie !&quot; pour celebrer. Petit detail, gros effet.</p>
 <h2 id="chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
 <p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
@@ -1327,18 +1163,7 @@ afficher();</code></pre></div>
 <p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-ce-qu-il-faut-retenir">Chapitre 14 - Ce qu&#x27;il faut retenir</h1>
 <p>Presque fini. Encore quiz + bravo.</p>
 <h2 id="chapitre-14--en-une-minute">En une minute</h2>
-<ul>
-<li>JS rend la page interactive</li>
-<li>Variables : <code>const</code> / <code>let</code></li>
-<li>Types : texte, nombre, booleen</li>
-<li><code>if</code> pour decider</li>
-<li>Boucles pour repeter</li>
-<li>Fonctions pour reutiliser</li>
-<li>Tableaux = listes</li>
-<li>Objets = fiches</li>
-<li>DOM = trouver + modifier des elements</li>
-<li>Evenements = reagir (surtout <code>click</code>)</li>
-</ul>
+<p>JavaScript rend la page interactive. Tu ranges des infos avec <code>const</code> et <code>let</code>, tu manipules du texte, des nombres et des booleens. Tu decides avec <code>if</code>, tu repetes avec des boucles, tu reutilises avec des fonctions. Les tableaux sont des listes, les objets des fiches. Avec le DOM, tu trouves et tu modifies des elements. Avec les evenements, tu reagis - surtout au <code>click</code>.</p>
 <h2 id="chapitre-14--habitudes-solides">Habitudes solides</h2>
 <ol>
 <li>1. Script avant <code>&lt;/body&gt;</code></li>
@@ -1349,19 +1174,9 @@ afficher();</code></pre></div>
 <li>6. Tester apres chaque petit changement</li>
 </ol>
 <h2 id="chapitre-14--erreurs-classiques">Erreurs classiques</h2>
-<ul>
-<li>Selecteur DOM faux (<code>null</code>)</li>
-<li>Oublier d&#x27;appeler la fonction</li>
-<li>Boucle infinie</li>
-<li>Mettre le script trop haut dans le HTML</li>
-</ul>
+<p>Le selecteur DOM faux qui renvoie <code>null</code>. La fonction bien ecrite mais jamais appelee. La boucle <code>while</code> qui ne finit plus. Et le script place trop haut dans le HTML, avant que les elements existent. Ces quatre pieges reviennent souvent : tu les connaitras vite.</p>
 <h2 id="chapitre-14--suite-possible">Suite possible</h2>
-<ul>
-<li>Formulaires plus riches</li>
-<li>LocalStorage (garder des infos)</li>
-<li>Un peu d&#x27;API (<code>fetch</code>)</li>
-<li>Puis, plus tard, des outils/frameworks</li>
-</ul>
+<p>Formulaires plus riches, localStorage pour garder des infos, un peu d&#x27;API avec <code>fetch</code>. Puis, plus tard, des outils et frameworks.</p>
 <p>Mais la : bases d&#x27;abord. C&#x27;est elles qui portent tout le reste.</p>
 <h2 id="chapitre-14--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
@@ -1409,20 +1224,9 @@ bouton.addEventListener(&quot;click&quot;, function () {
 });</code></pre></div>
 <p>Dis-toi que cliquer = &quot;c&#x27;est fait, je retire&quot;.</p>
 <h2 id="chapitre-15--criteres">Criteres</h2>
-<ul>
-<li>Ajout marche</li>
-<li>Champ se vide apres ajout</li>
-<li>Pas d&#x27;ajout vide</li>
-<li>Code lisible</li>
-</ul>
+<p>L&#x27;ajout doit marcher. Le champ se vide apres chaque ajout. Tu refuses les taches vides. Et le code reste lisible. Si ces points tiennent, ton atelier est solide.</p>
 <h2 id="chapitre-15--ce-que-tu-pratiques-ici">Ce que tu pratiques ici</h2>
-<ul>
-<li>DOM</li>
-<li>Evenements</li>
-<li>Conditions</li>
-<li>Creation d&#x27;elements</li>
-</ul>
-<p>C&#x27;est pile le coeur du JS front debutant.</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Chapitre 16</div><h1 id="chapitre-16--chapitre-18-garder-des-infos-localstorage">Chapitre 18 - Garder des infos (localStorage)</h1>
+<p>Tu touches le DOM, les evenements, les conditions et la creation d&#x27;elements. C&#x27;est pile le coeur du JavaScript front pour un debutant. Continue a jouer avec : chaque petit ajout compte.</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Chapitre 16</div><h1 id="chapitre-16--chapitre-18-garder-des-infos-localstorage">Chapitre 18 - Garder des infos (localStorage)</h1>
 <p>Des fois tu veux que ca reste apres un refresh.</p>
 <p><code>localStorage</code> range des textes dans le navigateur.</p>
 <h2 id="chapitre-16--idee-simple">Idee simple</h2>
@@ -1451,11 +1255,7 @@ const retrouvees = JSON.parse(localStorage.getItem(&quot;taches&quot;) || &quot;
 <li>3. au demarrage : charger + rendu</li>
 </ol>
 <h2 id="chapitre-16--limites">Limites</h2>
-<ul>
-<li>C&#x27;est local a ce navigateur</li>
-<li>L&#x27;utilisateur peut vider ses donnees</li>
-<li>Pas pour des secrets (mots de passe, etc.)</li>
-</ul>
+<p>Les donnees restent locales a ce navigateur. L&#x27;utilisateur peut les vider quand il veut. Et ce n&#x27;est pas un coffre-fort : ne range jamais de secrets (mots de passe, tokens, etc.). <code>localStorage</code>, c&#x27;est pratique, pas magique.</p>
 <h2 id="chapitre-16--a-toi">A toi</h2>
 <p>Sauvegarde le score du compteur (chapitre 13) dans <code>localStorage</code>.</p>
 <p>Au rechargement, le score revient.</p>
@@ -1591,14 +1391,7 @@ const retrouvees = JSON.parse(localStorage.getItem(&quot;taches&quot;) || &quot;
 <p>Pas &quot;je connais tout le web&quot;.</p>
 <p>Mais &quot;je sais faire reagir une page&quot;. C&#x27;est deja un vrai cran.</p>
 <h2 id="chapitre-19--ce-que-tu-sais-faire">Ce que tu sais faire</h2>
-<ul>
-<li>Ecrire un script</li>
-<li>Utiliser variables, conditions, boucles, fonctions</li>
-<li>Manipuler listes et petits objets</li>
-<li>Modifier le DOM</li>
-<li>Reagir aux clics</li>
-<li>Construire un mini compteur</li>
-</ul>
+<p>Tu sais ecrire un script et utiliser variables, conditions, boucles et fonctions. Tu manipules des listes et de petits objets. Tu modifies le DOM, tu reagis aux clics, et tu as construit un mini compteur. Ce n&#x27;est plus du &quot;cours&quot; abstrait : c&#x27;est du vrai geste.</p>
 <h2 id="chapitre-19--petite-mission">Petite mission</h2>
 <p>Reprends le compteur.</p>
 <p>Ajoute :</p>

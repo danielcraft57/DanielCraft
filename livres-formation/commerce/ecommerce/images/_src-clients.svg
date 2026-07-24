@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f2f6fa"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0d3b66" font-weight="700">Trois chemins vers le client</text>
+  <rect x="60" y="100" width="280" height="200" rx="14" fill="#0d3b66"/>
+  <text x="200" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Organique</text>
+  <text x="200" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#f7f1e8">contenu / SEO</text>
+  <rect x="360" y="100" width="280" height="200" rx="14" fill="#1b5a8a"/>
+  <text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Pub</text>
+  <text x="500" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#f7f1e8">Meta / TikTok / Google</text>
+  <rect x="660" y="100" width="280" height="200" rx="14" fill="#f4a261"/>
+  <text x="800" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#12263a" font-weight="700">Relation</text>
+  <text x="800" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#12263a">bouche a oreille</text>
+  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5b6b7c">Un chemin bien tenu bat cinq chemins mal soignes.</text>
+</svg>

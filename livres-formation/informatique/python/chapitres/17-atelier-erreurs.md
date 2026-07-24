@@ -38,11 +38,7 @@ Mauvais chemin, mauvais dossier, fichier pas encore cree.
 
 ## Methode
 
-1. Lis la **derniere** ligne de l'erreur (le type)
-2. Va au numero de ligne
-3. Corrige le plus petit truc
-4. Relance
-5. Si besoin, entoure avec `try/except` (mais comprends d'abord)
+Lis d'abord la **derniere** ligne de l'erreur (le type). Va au numero de ligne. Corrige le plus petit truc, puis relance. Si besoin, entoure avec `try/except` - mais comprends d'abord.
 
 ## Exercice 1
 
@@ -61,7 +57,4 @@ Attrape `FileNotFoundError`. Affiche un message propre.
 
 ## Check final atelier
 
-Tu sais :
-- nommer 4 types d'erreurs courants
-- trouver la ligne fautive
-- corriger sans tout reecrire
+Tu sais nommer 4 types d'erreurs courants, trouver la ligne fautive, et corriger sans tout reecrire.

@@ -7,36 +7,21 @@ Mais "je sais versionner, brancher, fusionner, pousser, et me sortir d'un confli
 
 ## Ce que tu sais faire
 
-- Installer / configurer Git
-- `add` / `commit` / `log` / `status`
-- Branches + merge + conflits
-- `.gitignore`
-- Remote, clone, push, pull
-- Stash et annulations raisonnables
-- Pull requests
+Tu sais installer et configurer Git. Tu utilises `add`, `commit`, `log` et `status`. Tu geres branches, merge et conflits. Tu ecris un `.gitignore`. Tu manipules remote, clone, push et pull. Tu te debrouilles avec stash et les annulations raisonnables. Et tu fais des pull requests.
 
 ## Mission finale
 
-Sur un vrai mini projet (meme un site de 2 pages) :
-
-1. Depot GitHub
-2. Branche feature
-3. PR mergee
-4. README clair
-5. Aucun secret dans l'historique
+Sur un vrai mini projet (meme un site de 2 pages), cree un depot GitHub. Travaille sur une branche feature. Merge via une PR. Ecris un README clair. Verifie qu'aucun secret n'est dans l'historique.
 
 ## La suite (quand tu voudras)
 
-- Hooks / pre-commit
-- Rebase interactif (avec prudence)
-- Monorepos
-- GitHub Actions (CI)
-- Conventions d'equipe plus fines
+Tu pourras regarder les hooks / pre-commit, le rebase interactif (avec prudence), les monorepos, GitHub Actions (CI), et des conventions d'equipe plus fines.
 
 Mais la, respire.
 
 Encore bravo.
 Ton code a maintenant une memoire. Et toi aussi.
+
 ## Rituel des 2 minutes
 
 Avant chaque session :

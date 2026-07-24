@@ -33,11 +33,7 @@ Tu peux en chainer plusieurs.
 
 ## Comparaisons
 
-- `==` egal (valeur)
-- `!=` different
-- `>`, `<`, `>=`, `<=`
-
-Attention : `=` assigne. `==` compare.
+`==` teste l'egalite (valeur). `!=` veut dire different. Tu as aussi `>`, `<`, `>=` et `<=`. Attention : `=` assigne. `==` compare.
 
 ## and / or / not
 

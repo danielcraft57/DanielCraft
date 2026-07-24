@@ -35,10 +35,7 @@ Pratique pour le message de defaite.
 
 ## Variantes
 
-1. Demander si on rejoue (`o/n`)
-2. Garder le meilleur score (moins d'essais) dans un JSON
-3. Difficulte : facile 1-10, normal 1-20, dur 1-50
-4. Version objet : classe `Partie` avec `secret`, `essais`, `jouer()`
+Demande si on rejoue (`o/n`). Garde le meilleur score (moins d'essais) dans un JSON. Ajoute une difficulte : facile 1-10, normal 1-20, dur 1-50. En version objet, une classe `Partie` avec `secret`, `essais` et `jouer()`.
 
 ## Version objet (bonus)
 
@@ -74,10 +71,7 @@ if __name__ == "__main__":
 
 ## A toi
 
-Implemente au moins :
-- max essais
-- message de defaite
-- saisie protegee (`try/except`)
+Implemente au moins un max d'essais, un message de defaite, et une saisie protegee (`try/except`).
 
 ## Mini defi
 

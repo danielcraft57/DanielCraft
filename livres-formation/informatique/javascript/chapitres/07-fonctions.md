@@ -40,9 +40,7 @@ console.log(resultat); // 8
 
 ## Pourquoi c'est cool
 
-- Moins de copie
-- Code plus clair
-- Plus facile a corriger
+Tu copies moins. Le code devient plus clair. Et quand un bug arrive, tu corriges a un seul endroit au lieu de chasser la meme erreur partout. Une bonne fonction, c'est une petite machine fiable.
 
 ## Petite forme moderne (juste voir)
 
@@ -108,17 +106,11 @@ Chaque fonction a un role clair. C'est plus facile a lire et a corriger.
 
 ## Mini defi
 
-- Ecris `aireRectangle(largeur, hauteur)` avec `return`
-- Ecris `estMajeur(age)` qui renvoie true ou false
-- Ecris `saluer(prenom)` qui affiche un message (sans return)
-- Appelle les 3 fonctions avec des valeurs differentes
+Ecris `aireRectangle(largeur, hauteur)` qui renvoie le resultat avec `return`. Ecris aussi `estMajeur(age)` qui renvoie `true` ou `false`. Puis `saluer(prenom)`, qui affiche juste un message sans `return`. Appelle les trois fonctions avec des valeurs differentes et verifie ce que la console te montre.
 
 ## A retenir
 
-- Une fonction = une recette reutilisable
-- Parametres = ingredients, `return` = le plat fini
-- Sans `return`, tu obtiens `undefined`
-- Petites fonctions = code plus propre
+Une fonction, c'est une recette reutilisable. Les parametres sont les ingredients, et `return` sort le plat fini. Sans `return`, tu recuperes `undefined`. Prefere plusieurs petites fonctions a une grosse usine : ton code reste propre.
 
 
 ## En vrai, sur le terrain

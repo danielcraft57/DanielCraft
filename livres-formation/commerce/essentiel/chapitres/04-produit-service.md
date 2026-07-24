@@ -2,54 +2,35 @@
 
 ## Produit
 
-Quelque chose qu'on peut toucher / telecharger / livrer.
-Ex : un gateau, un t-shirt, un ebook.
+Quelque chose qu'on peut toucher, telecharger ou livrer.
+Un gateau, un t-shirt, un ebook : ce sont des produits.
 
 ## Service
 
 Du temps, une competence, une presence.
-Ex : coiffure, conseil, reparation, formation.
+Coiffure, conseil, reparation, formation : ce sont des services.
 
 ## Souvent, c'est un mix
 
-Tu vends un site (livrable) + de la maintenance (service).
-Ou un atelier + un support PDF.
+Tu vends un site (livrable) et de la maintenance (service).
+Ou un atelier avec un support PDF. Le client achete le resultat global, pas ton etiquette interne.
 
 ## Offre = promesse + preuve + limites
 
-Une offre claire dit :
-1. pour qui
-2. quel resultat
-3. comment ca se passe
-4. en combien de temps
-5. a quel prix
-6. ce qui n'est PAS inclus
-
-Les limites protegent.
-Elles evitent les malentendus.
+Une offre claire dit pour qui c'est, quel resultat on vise, comment ca se passe, en combien de temps, a quel prix, et ce qui n'est pas inclus. Les limites protegent. Elles evitent les malentendus.
 
 ## Exemple
 
-"Je cree une page vitrine simple pour artisans :
-- 1 page claire
-- formulaire de contact
-- livraison en 10 jours
-- hors photos pro et redaction longue
-- 450 euros"
+"Je cree une page vitrine simple pour artisans : une page claire, un formulaire de contact, livraison en 10 jours, hors photos pro et redaction longue, 450 euros."
 
 ## Packager
 
-Parfois 3 niveaux aident :
-- Essentiel
-- Confort
-- Complet
-
-Pas pour pousser au luxe a tout prix.
-Pour laisser le client choisir son niveau.
+Parfois trois niveaux aident : Essentiel, Confort, Complet.
+Pas pour pousser au luxe a tout prix. Pour laisser le client choisir son niveau sans reinventer l'offre a chaque message.
 
 ## A toi
 
-Ecris ton offre en 6 lignes (les 6 points ci-dessus).
+Ecris ton offre en six lignes avec les points ci-dessus.
 
 ## Mini defi
 

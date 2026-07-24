@@ -86,10 +86,7 @@ Mais tu le croiseras dans du vrai code.
 
 ## Pourquoi c'est bien
 
-- Moins de copie
-- Code plus clair
-- Plus facile a corriger
-- Tu testes une brique a la fois
+Tu copies moins. Le code devient plus clair. C'est plus facile a corriger, parce que tu testes une brique a la fois.
 
 ## Exemple complet
 

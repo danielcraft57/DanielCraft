@@ -102,17 +102,11 @@ console.log("Liste finale :", courses);
 
 ## Mini defi
 
-- Cree un tableau de 5 films
-- Affiche le 1er et le dernier
-- Ajoute un film avec `push`, retire-en un avec `pop`
-- Parcours avec `for...of` et affiche chaque titre en majuscules (`.toUpperCase()`)
+Cree un tableau de cinq films. Affiche le premier et le dernier. Ajoute un film avec `push`, puis retires-en un avec `pop`. Ensuite, parcours la liste avec `for...of` et affiche chaque titre en majuscules grace a `.toUpperCase()`. Tu dois voir la liste evoluer dans la console.
 
 ## A retenir
 
-- Index commence a 0
-- `push` ajoute, `pop` retire a la fin
-- `length` = nombre d'elements
-- `includes` cherche un element dans le tableau
+L'index commence a 0. `push` ajoute a la fin, `pop` retire le dernier. `length` donne le nombre d'elements, et `includes` te dit si un element est deja dans le tableau.
 
 
 ## En vrai, sur le terrain

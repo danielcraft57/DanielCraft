@@ -8,9 +8,7 @@ Avec JS, elle repond.
 
 ## Image mentale
 
-- HTML = le corps
-- CSS = les vetements
-- JS = le cerveau (et un peu les muscles)
+Pense a une personne. Le HTML, c'est le corps : la forme, les pieces, ce qui existe. Le CSS, ce sont les vetements : couleurs, style, presentation. JavaScript, c'est le cerveau, et un peu les muscles. C'est lui qui decide, qui reagit, qui fait bouger.
 
 Tu cliques un bouton ? JS peut compter.
 Tu ecris ton prenom ? JS peut te dire "Salut, toi".
@@ -23,13 +21,7 @@ Pas besoin d'installer un truc complique pour commencer.
 
 ## Ce que tu vas savoir faire
 
-- Ecrire tes premiers scripts
-- Garder des infos dans des variables
-- Prendre des decisions (if)
-- Repeter des actions (boucles)
-- Creer des fonctions
-- Modifier la page (le DOM)
-- Reagir aux clics
+A la fin de ce parcours, tu sauras ecrire tes premiers scripts et ranger des infos dans des variables. Tu apprendras a prendre des decisions avec `if`, a repeter des actions avec des boucles, et a creer des fonctions reutilisables. Tu verras aussi comment modifier la page (le DOM) et comment reagir aux clics. Bref : rendre une page vivante, pas juste jolie.
 
 ## Important
 
@@ -63,17 +55,11 @@ Tu n'as pas besoin de tout comprendre maintenant. L'idee : JS ecoute et repond.
 
 ## Mini defi
 
-- Ouvre un site que tu aimes (YouTube, un jeu en ligne, etc.)
-- Note 3 actions interactives (clic, scroll, formulaire...)
-- Pour chacune, devine : HTML, CSS ou JS ?
-- Verifie en desactivant JS dans le navigateur (option developpeur). Que se passe-t-il ?
+Ouvre un site que tu aimes (YouTube, un jeu en ligne, peu importe). Note trois actions interactives : un clic, un scroll, un formulaire... Pour chacune, demande-toi : c'est plutot HTML, CSS ou JS ? Ensuite, si tu peux, desactive JavaScript dans les options developpeur du navigateur et regarde ce qui casse. Tu verras tout de suite a quoi sert le "cerveau" de la page.
 
 ## A retenir
 
-- JavaScript = le cerveau interactif de la page
-- Il tourne dans le navigateur, sans installation compliquee
-- HTML structure, CSS habille, JS fait bouger et reagir
-- Tu vas apprendre les bases, pas un framework
+JavaScript, c'est le cerveau interactif de la page. Il tourne dans le navigateur, sans installation compliquee pour commencer. HTML structure, CSS habille, JS fait bouger et reagir. Ici, on apprend les bases, pas un framework.
 
 
 ## En vrai, sur le terrain

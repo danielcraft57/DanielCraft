@@ -103,17 +103,11 @@ Ouvre la console. Tu dois voir les deux lignes.
 
 ## Mini defi
 
-- Cree le dossier `mon-site/` avec les 3 fichiers
-- Dans `script.js`, affiche ton age et ta ville
-- Change le chemin volontairement (`scrip.js`) et note l'erreur dans la console
-- Remets le bon chemin et verifie que ca marche
+Cree le dossier `mon-site/` avec les trois fichiers habituels. Dans `script.js`, affiche ton age et ta ville avec `console.log`. Ensuite, casse volontairement le chemin (`scrip.js` au lieu de `script.js`) et lis l'erreur dans la console. Remets le bon chemin, rafraichis, et verifie que tout reprend. Tu apprends autant en cassant qu'en reussissant.
 
 ## A retenir
 
-- Fichier `.js` separe = la bonne habitude
-- `<script src="...">` juste avant `</body>` pour debuter
-- `console.log` = ton outil de debug numero 1
-- La console (F12) permet de tester du code vite
+Un fichier `.js` separe, c'est la bonne habitude des le debut. Tu le branches avec `<script src="...">` juste avant `</body>` pour commencer simplement. `console.log` reste ton outil de debug numero 1, et la console (F12) te laisse tester du code en deux secondes.
 
 
 ## En vrai, sur le terrain

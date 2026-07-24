@@ -32,29 +32,18 @@ Probleme d'identifiants (HTTPS token, SSH key, droits du depot).
 
 ## Methode
 
-1. Lis la **derniere** partie du message
-2. Ne panic pas sur le pavé rouge
-3. `git status` pour savoir ou tu es
-4. Une action a la fois
+Lis d'abord la **derniere** partie du message. Ne panic pas sur le pave rouge. Lance `git status` pour savoir ou tu es. Une action a la fois.
 
 ## Exercices
 
-1. Provoque un push reject (pull manquant) et reparer
-2. Provoque un conflit et le resoudre
-3. Ajoute un secret au mauvais moment, retire-le avec `rm --cached`
+Provoque un push reject (pull manquant) et reparer. Provoque un conflit et le resoudre. Ajoute un secret au mauvais moment, puis retire-le avec `rm --cached`.
 
 ## Check
 
 Tu sais expliquer 4 messages courants sans google.
+
 ## Traduction rapide
 
-| Message (idee) | Action |
-|----------------|--------|
-| working tree clean | Rien a commit |
-| untracked | add ou ignore |
-| ahead | push |
-| behind | pull |
-| rejected | pull puis push |
-| conflict | editer + add + commit |
+Si le working tree est clean, rien a commit. Untracked : add ou ignore. Ahead : push. Behind : pull. Rejected : pull puis push. Conflict : editer + add + commit.
 
-Garde ce tableau sous la main la premiere semaine.
+Garde ces reflexions sous la main la premiere semaine.

@@ -10,12 +10,7 @@ let age = 12;
 const prenom = "Leo";
 ```
 
-- `let` = tu pourras changer la valeur plus tard
-- `const` = tu ne changes pas (constante)
-
-Astuce debutant :
-utilise `const` par defaut.
-Passe a `let` seulement si tu dois vraiment modifier.
+Avec `let`, tu pourras changer la valeur plus tard. Avec `const`, tu ne changes pas : c'est une constante. Astuce debutant : utilise `const` par defaut, et passe a `let` seulement si tu dois vraiment modifier la valeur.
 
 ## Changer une valeur
 
@@ -52,11 +47,7 @@ ville = "Paris"; // erreur
 
 ## A toi
 
-Cree :
-- `const prenom = "..."`
-- `let points = 0`
-- ajoute 5 points
-- `console.log` le prenom et les points
+Cree une constante `prenom` avec ton prenom entre guillemets, puis un `let points = 0`. Ajoute 5 points, et affiche le prenom et les points avec `console.log`. Tu dois voir les deux infos dans la console.
 
 ## Erreur classique
 
@@ -102,17 +93,11 @@ Lis la console ligne par ligne. Tu vois comment les valeurs changent.
 
 ## Mini defi
 
-- Cree 3 `const` : prenom, ville, animal prefere
-- Cree 2 `let` : compteurVisites, derniereNote
-- Modifie les `let`, pas les `const`
-- Affiche une phrase qui melange tout avec des `+`
+Cree trois `const` : prenom, ville, animal prefere. Cree aussi deux `let` : compteurVisites et derniereNote. Modifie seulement les `let`, laisse les `const` tranquilles. Ensuite, affiche une phrase qui melange tout avec des `+`. Si la console rale quand tu touches une `const`, c'est que tu as bien compris la protection.
 
 ## A retenir
 
-- `const` par defaut, `let` si tu dois changer
-- Un nom clair vaut mieux que `x` ou `a1`
-- Toujours declarer avec `let` ou `const`
-- Une variable = une boite etiquetee reutilisable
+Prends `const` par defaut, et `let` seulement si tu dois changer la valeur. Un nom clair vaut mieux que `x` ou `a1`. Declare toujours avec `let` ou `const` : une variable, c'est une boite etiquetee que tu reutilises.
 
 
 ## En vrai, sur le terrain

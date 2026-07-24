@@ -44,9 +44,7 @@ Pseudo-plan :
 
 ## Limites
 
-- C'est local a ce navigateur
-- L'utilisateur peut vider ses donnees
-- Pas pour des secrets (mots de passe, etc.)
+Les donnees restent locales a ce navigateur. L'utilisateur peut les vider quand il veut. Et ce n'est pas un coffre-fort : ne range jamais de secrets (mots de passe, tokens, etc.). `localStorage`, c'est pratique, pas magique.
 
 ## A toi
 

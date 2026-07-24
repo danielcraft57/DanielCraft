@@ -5,9 +5,7 @@ Et ton equipe.
 
 ## Regle simple
 
-- Premiere ligne : resume court (50-72 caracteres ideaux)
-- Verbe a l'imperatif : "Ajouter", "Corriger", "Clarifier"
-- Explique le **pourquoi** si ce n'est pas evident
+La premiere ligne resume court (50-72 caracteres ideaux). Prefere un verbe a l'imperatif : "Ajouter", "Corriger", "Clarifier". Explique le **pourquoi** si ce n'est pas evident.
 
 ## Oui
 
@@ -54,10 +52,7 @@ Le juste milieu vient avec l'experience.
 
 ## A toi
 
-Reecris ces messages pourris en bons messages :
-1. `update`
-2. `fix stuff`
-3. `aaa`
+Reecris ces messages pourris en bons messages : `update`, `fix stuff`, et `aaa`.
 
 ## En vrai, sur le terrain
 

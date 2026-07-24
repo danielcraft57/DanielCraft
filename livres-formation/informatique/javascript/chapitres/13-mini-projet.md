@@ -4,11 +4,7 @@ On assemble. Un petit score interactif.
 
 ## But
 
-- Afficher un score
-- Bouton +1
-- Bouton -1
-- Bouton reset
-- Le score ne descend pas sous 0
+Tu vas afficher un score a l'ecran, avec un bouton +1, un bouton -1 et un bouton reset. Le score ne doit jamais descendre sous 0. C'est simple, mais ca assemble variables, DOM et evenements.
 
 ## HTML
 
@@ -78,14 +74,11 @@ afficher();
 
 ## Criteres de reussite
 
-- Les 3 boutons marchent
-- Pas de score negatif
-- Code range (const/let, fonctions courtes)
+Les trois boutons doivent marcher. Le score ne passe jamais en negatif. Et ton code reste range : `const` / `let` bien choisis, fonctions courtes. Si ces trois points sont la, le mini-projet tient.
 
 ## Bonus
 
-- Change la couleur du score si score >= 10
-- Ajoute un message "Belle serie !"
+Quand le score atteint 10 ou plus, change sa couleur. Tu peux aussi afficher un message "Belle serie !" pour celebrer. Petit detail, gros effet.
 
 
 ## En vrai, sur le terrain

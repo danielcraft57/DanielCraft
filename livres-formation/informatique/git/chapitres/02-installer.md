@@ -32,12 +32,7 @@ Utilise un email que tu assumeras (souvent celui de ton compte GitHub).
 
 ## Ou taper les commandes ?
 
-- Terminal Windows (PowerShell)
-- Git Bash (installe avec Git)
-- Terminal integre de VS Code
-
-Les commandes de ce livre marchent dans ces environnements.
-Sur PowerShell, c'est le meme `git ...`.
+Tu peux utiliser le terminal Windows (PowerShell), Git Bash (installe avec Git), ou le terminal integre de VS Code. Les commandes de ce livre marchent dans ces environnements. Sur PowerShell, c'est le meme `git ...`.
 
 ## Editeur de message
 
@@ -60,9 +55,7 @@ git commit -h
 
 ## A toi
 
-1. `git --version`
-2. Configure `user.name` et `user.email`
-3. Affiche la config
+Lance `git --version`. Configure `user.name` et `user.email`. Affiche la config.
 
 ## Erreur classique
 

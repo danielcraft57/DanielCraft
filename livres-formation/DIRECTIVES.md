@@ -37,5 +37,7 @@ Adapte ton langage pour que le style soit plus humain, moins formate, et ne ress
 - Phrases courtes. Mots du quotidien.
 - Expliquer comme a un ami, pas comme un manuel scolaire.
 - Eviter le jargon. Si un mot technique est indispensable, l'expliquer tout de suite avec un exemple simple.
+- **Prose d'abord (obligatoire pour les livres a venir)** : pas de murs de puces. Ecrire des paragraphes fluides qui developpent. Les listes numerotees restent OK pour de vraies etapes a suivre (install, methode). Les QCM (quiz) gardent leurs options A/B/C en puces. Si tu es tente d'ecrire 8 tirets, ecris 2-4 phrases a la place.
+- **Images et schemas a chaque livre** : couverture, illustration de fin, et plusieurs schemas FR (SVG faits main puis PNG) sur les idees cles. Pas un livre "que du texte".
 - Images et schemas : prompts ranges dans `prompts/images` et `prompts/schemas`.
 - PDF finaux : ranges dans `pdf/`, prets a telecharger.

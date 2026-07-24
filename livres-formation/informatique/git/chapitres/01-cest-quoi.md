@@ -9,18 +9,11 @@ Plus tard, tu peux revenir en arriere. Ou comparer. Ou travailler a plusieurs.
 
 ## A quoi ca sert ?
 
-- Ne plus perdre ton travail
-- Voir qui a change quoi (et quand)
-- Essayer une idee sur une branche sans casser le reste
-- Collaborer (avec GitHub, GitLab, etc.)
+Tu ne perds plus ton travail aussi facilement. Tu vois qui a change quoi, et quand. Tu peux essayer une idee sur une branche sans casser le reste. Et tu peux collaborer avec GitHub, GitLab, etc.
 
 ## Git vs GitHub
 
-- **Git** : le logiciel sur ton ordi
-- **GitHub** : un site qui heberge des depots Git en ligne
-
-Tu peux utiliser Git tout seul, sans GitHub.
-GitHub devient utile pour partager, sauvegarder au loin, et faire des pull requests.
+**Git**, c'est le logiciel sur ton ordi. **GitHub**, c'est un site qui heberge des depots Git en ligne. Tu peux utiliser Git tout seul, sans GitHub. GitHub devient utile pour partager, sauvegarder au loin, et faire des pull requests.
 
 ## Image mentale
 
@@ -30,21 +23,11 @@ Les branches = des albums paralleles.
 
 ## Ce que tu vas savoir faire
 
-- Installer Git et configurer ton nom / email
-- Creer un depot (`git init`)
-- `add` / `commit` / `status` / `log`
-- Branches, fusion, conflits
-- `.gitignore`
-- Cloner, pousser, tirer depuis GitHub
-- Stash, annulations simples
-- Lire / ouvrir une pull request
+Tu vas installer Git et configurer ton nom / email. Tu creeras un depot avec `git init`. Tu manipuleras `add`, `commit`, `status` et `log`. Tu feras des branches, des fusions et des conflits. Tu ecriras un `.gitignore`. Tu cloneras, pousseras et tireras depuis GitHub. Tu tapoteras stash et les annulations simples. Et tu liras / ouvriras une pull request.
 
 ## Comment lire ce livre
 
-1. Lis
-2. Tape les commandes dans un vrai dossier de test
-3. Regarde ce que Git repond
-4. Casse volontairement, puis repare
+Lis. Tape les commandes dans un vrai dossier de test. Regarde ce que Git repond. Casse volontairement, puis repare.
 
 Git s'apprend avec les mains.
 Pas seulement avec les yeux.

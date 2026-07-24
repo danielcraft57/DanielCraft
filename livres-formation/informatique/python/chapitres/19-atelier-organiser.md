@@ -63,11 +63,7 @@ if __name__ == "__main__":
 
 ## Decouper en fichiers (idee)
 
-- `questions.py` : donnees ou classe `Question`
-- `jeu.py` : logique
-- `main.py` : point d'entree
-
-Meme sur un petit projet, ca clarifie.
+Tu peux mettre les donnees ou la classe `Question` dans `questions.py`, la logique dans `jeu.py`, et le point d'entree dans `main.py`. Meme sur un petit projet, ca clarifie.
 
 ## Regle simple
 
@@ -77,10 +73,7 @@ Une fonction / methode = une responsabilite.
 
 ## A toi
 
-Reprends ton quiz.
-1. Decoupe avec au moins 2 fonctions
-2. Bonus : passe en classe `Question`
-3. Bonus 2 : sauve le score en JSON
+Reprends ton quiz. Decoupe avec au moins 2 fonctions. En bonus, passe en classe `Question`. En bonus 2, sauve le score en JSON.
 
 ## Check
 

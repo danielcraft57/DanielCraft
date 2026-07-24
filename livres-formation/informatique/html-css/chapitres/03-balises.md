@@ -69,10 +69,7 @@ Respire. Corrige. Rafraichis.
 
 ## Mini exo
 
-Ecris une page avec :
-- un titre h1
-- deux paragraphes
-- un mot en gras avec `<strong>`
+Ecris une page avec un titre h1, deux paragraphes, et un mot en gras avec `<strong>`. Rien de plus pour l'instant.
 
 Si ca s'affiche, tu as compris l'idee des balises.
 

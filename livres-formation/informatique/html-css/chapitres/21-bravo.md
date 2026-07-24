@@ -9,11 +9,7 @@ C'est exactement comme ca que ca marche.
 
 ## Ce que tu sais faire maintenant
 
-- Creer une page HTML propre
-- Ajouter texte, liens, images, listes, formulaires
-- Habiller avec du CSS
-- Ranger avec Flexbox
-- Penser un minimum au telephone
+Tu sais creer une page HTML propre. Tu peux y ajouter du texte, des liens, des images, des listes et des formulaires. Tu habilles le tout avec du CSS, tu ranges avec Flexbox, et tu penses un minimum au telephone.
 
 C'est deja enorme pour un debut.
 

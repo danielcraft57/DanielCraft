@@ -6,23 +6,11 @@ C'est le coeur de la collab sur GitHub.
 
 ## Scenario type
 
-1. `git switch -c feature/login`
-2. commits locaux
-3. `git push -u origin feature/login`
-4. Sur GitHub : **Compare & pull request**
-5. Remplis titre + description
-6. Quelqu'un review
-7. Merge sur GitHub
-8. En local : `git switch main` puis `git pull`
+Tu crees une branche avec `git switch -c feature/login`, tu fais tes commits locaux, puis `git push -u origin feature/login`. Sur GitHub, tu cliques **Compare & pull request**. Tu remplis titre + description. Quelqu'un review. On merge sur GitHub. En local, tu reviens avec `git switch main` puis `git pull`.
 
 ## Pourquoi pas merger en silence ?
 
-- Relecture
-- Discussion
-- CI / tests automatiques
-- Historique clair
-
-Meme en solo, une PR t'oblige a resumer ton travail. C'est sain.
+Ca permet la relecture, la discussion, les tests automatiques (CI), et un historique plus clair. Meme en solo, une PR t'oblige a resumer ton travail. C'est sain.
 
 ## Bonne description
 
@@ -50,19 +38,11 @@ Tu pousses des commits sur la meme branche : la PR se met a jour.
 
 ## Merge buttons
 
-- **Create a merge commit**
-- **Squash and merge** (souvent propre pour petites features)
-- **Rebase and merge**
-
-Demande la convention de ton equipe.
+Tu verras souvent **Create a merge commit**, **Squash and merge** (souvent propre pour petites features), et **Rebase and merge**. Demande la convention de ton equipe.
 
 ## A toi
 
-1. Branche + 1 commit
-2. Push
-3. Ouvre une PR vers `main`
-4. Merge-la toi-meme
-5. `git pull` en local
+Cree une branche avec 1 commit. Push. Ouvre une PR vers `main`. Merge-la toi-meme. Puis `git pull` en local.
 
 ## En vrai, sur le terrain
 

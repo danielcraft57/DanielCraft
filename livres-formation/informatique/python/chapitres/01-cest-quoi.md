@@ -9,14 +9,7 @@ L'ordinateur execute.
 
 ## A quoi ca sert ?
 
-- Petits scripts utiles au quotidien
-- Automatiser des trucs repetitifs
-- Apprendre la logique (conditions, boucles...)
-- Plus tard : data, IA, sites web, bots...
-
-Ici, on reste sur des bases solides.
-Puis on touche un peu a des notions plus avancees (erreurs, classes).
-Sans devenir un manuel de 800 pages.
+Tu peux ecrire de petits scripts utiles au quotidien, ou automatiser des trucs repetitifs qui te font perdre du temps. Ca t'apprend aussi la logique : conditions, boucles, et la facon de decouper un probleme. Plus tard, tu pourras aller vers la data, l'IA, les sites web ou les bots. Ici, on reste sur des bases solides. Puis on touche un peu a des notions plus avancees (erreurs, classes), sans devenir un manuel de 800 pages.
 
 ## Pourquoi commencer par Python ?
 
@@ -38,22 +31,11 @@ C'est normal. On apprend a lire ces messages.
 
 ## Ce que tu vas savoir faire
 
-- Ecrire et lancer un programme
-- Variables, types, conditions, boucles
-- Fonctions (avec parametres et return)
-- Listes, dictionnaires, et un peu de trucs plus fins
-- Lire / ecrire des fichiers (texte et JSON)
-- Utiliser des modules (`random`, `math`...)
-- Gerer des erreurs avec `try/except`
-- Creer une petite `class`
-- Faire un quiz et un jeu dans le terminal
+Tu vas ecrire et lancer un programme. Tu manipuleras variables, types, conditions et boucles. Tu ecriras des fonctions avec parametres et `return`. Tu joueras avec listes, dictionnaires, et un peu de trucs plus fins. Tu liras et ecriras des fichiers (texte et JSON). Tu utiliseras des modules comme `random` ou `math`. Tu gereras des erreurs avec `try/except`, tu creeras une petite `class`, et tu feras un quiz et un jeu dans le terminal.
 
 ## Comment lire ce livre
 
-1. Lis un chapitre
-2. Retape les exemples a la main
-3. Change une valeur. Relance
-4. Fais le mini defi
+Lis un chapitre. Retape les exemples a la main. Change une valeur, puis relance. Fais le mini defi.
 
 Si tu copies-colles sans reflechir, ca rentre moins.
 Si tu tapes, ca rentre.

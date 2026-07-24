@@ -5,16 +5,11 @@ Sauvegarde distante + collaboration + issues + pull requests.
 
 ## Compte
 
-1. Cree un compte sur github.com
-2. Confirme l'email
-3. Optionnel mais recommande : active la double authentification
+Cree un compte sur github.com. Confirme l'email. Optionnel mais recommande : active la double authentification.
 
 ## Nouveau depot en ligne
 
-Sur GitHub : **New repository**
-- Nom : `mon-carnet`
-- Public ou prive
-- Tu peux ne **pas** cocher "Add a README" si tu as deja un depot local
+Sur GitHub : **New repository**. Choisis un nom, par exemple `mon-carnet`. Public ou prive. Tu peux ne **pas** cocher "Add a README" si tu as deja un depot local.
 
 ## Lier ton depot local
 
@@ -37,10 +32,7 @@ git remote -v
 
 ## SSH ou HTTPS ?
 
-- HTTPS : simple au debut (parfois un token)
-- SSH : cles, tres confortable au quotidien
-
-Les deux marchent. Choisis-en un et avance.
+HTTPS est simple au debut (parfois un token). SSH utilise des cles et devient tres confortable au quotidien. Les deux marchent. Choisis-en un et avance.
 
 ## README.md
 
@@ -49,9 +41,7 @@ Ecris 5 lignes : but du projet + comment lancer.
 
 ## A toi
 
-1. Cree un depot GitHub de test (prive OK)
-2. Branche `origin`
-3. `push` ta branche `main`
+Cree un depot GitHub de test (prive OK). Branche `origin`. Fais `push` de ta branche `main`.
 
 ## En vrai, sur le terrain
 

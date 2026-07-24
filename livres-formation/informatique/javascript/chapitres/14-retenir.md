@@ -4,16 +4,7 @@ Presque fini. Encore quiz + bravo.
 
 ## En une minute
 
-- JS rend la page interactive
-- Variables : `const` / `let`
-- Types : texte, nombre, booleen
-- `if` pour decider
-- Boucles pour repeter
-- Fonctions pour reutiliser
-- Tableaux = listes
-- Objets = fiches
-- DOM = trouver + modifier des elements
-- Evenements = reagir (surtout `click`)
+JavaScript rend la page interactive. Tu ranges des infos avec `const` et `let`, tu manipules du texte, des nombres et des booleens. Tu decides avec `if`, tu repetes avec des boucles, tu reutilises avec des fonctions. Les tableaux sont des listes, les objets des fiches. Avec le DOM, tu trouves et tu modifies des elements. Avec les evenements, tu reagis - surtout au `click`.
 
 ## Habitudes solides
 
@@ -26,17 +17,11 @@ Presque fini. Encore quiz + bravo.
 
 ## Erreurs classiques
 
-- Selecteur DOM faux (`null`)
-- Oublier d'appeler la fonction
-- Boucle infinie
-- Mettre le script trop haut dans le HTML
+Le selecteur DOM faux qui renvoie `null`. La fonction bien ecrite mais jamais appelee. La boucle `while` qui ne finit plus. Et le script place trop haut dans le HTML, avant que les elements existent. Ces quatre pieges reviennent souvent : tu les connaitras vite.
 
 ## Suite possible
 
-- Formulaires plus riches
-- LocalStorage (garder des infos)
-- Un peu d'API (`fetch`)
-- Puis, plus tard, des outils/frameworks
+Formulaires plus riches, localStorage pour garder des infos, un peu d'API avec `fetch`. Puis, plus tard, des outils et frameworks.
 
 Mais la : bases d'abord. C'est elles qui portent tout le reste.
 

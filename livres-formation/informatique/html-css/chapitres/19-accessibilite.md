@@ -46,12 +46,7 @@ Si tu te perds, simplifie.
 
 ## Mini checklist
 
-- [ ] `alt` utiles
-- [ ] contraste ok
-- [ ] liens explicites
-- [ ] titres ranges
-- [ ] zones cliquables confortables
-- [ ] viewport present
+Avant de valider, regarde si tes `alt` sont utiles, si le contraste tient la route, et si les liens sont explicites. Les titres doivent etre ranges, les zones cliquables confortables, et le viewport present. Six petits points, un vrai plus.
 
 ## A toi
 

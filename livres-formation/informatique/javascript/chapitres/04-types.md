@@ -31,10 +31,7 @@ Utile pour les decisions.
 
 ## undefined et null (juste savoir)
 
-- `undefined` = pas encore defini
-- `null` = volontairement "vide"
-
-Pas besoin d'en faire des tartines au debut.
+`undefined`, c'est "pas encore defini". `null`, c'est volontairement "vide". Pas besoin d'en faire des tartines au debut : sache juste que ces deux etats existent.
 
 ## Assembler du texte
 
@@ -48,11 +45,7 @@ Les backticks \` \` permettent d'inserer `${...}` dedans.
 
 ## A toi
 
-Fais un mini ticket de caisse :
-- prix d'un article
-- quantite
-- total
-- un message : "Total = ..."
+Fais un mini ticket de caisse. Range le prix d'un article, la quantite, calcule le total, puis affiche un message du genre "Total = ...". Tu dois voir le calcul et le texte dans la console.
 
 ## Erreur classique
 
@@ -102,17 +95,11 @@ console.log(recu);
 
 ## Mini defi
 
-- Cree une variable texte, une nombre, une booleen
-- Affiche le type de chaque valeur avec `typeof maVariable`
-- Fais un calcul prix x quantite, puis un message avec backticks
-- Teste `"5" + 2` et `5 + 2`. Note la difference
+Cree une variable texte, une nombre, et une booleenne. Affiche le type de chaque valeur avec `typeof maVariable`. Fais un calcul prix fois quantite, puis un message avec des backticks. Enfin, teste `"5" + 2` et `5 + 2`, et note bien la difference : l'un colle du texte, l'autre calcule.
 
 ## A retenir
 
-- string = texte, number = nombre, boolean = true/false
-- `===` compare sans melanger les types
-- Backticks \`...\` + `${...}` = facile pour assembler du texte
-- Attention aux guillemets qui transforment un nombre en texte
+Une string, c'est du texte. Un number, c'est un nombre. Un boolean, c'est `true` ou `false`. Pour comparer sans melanger les types, utilise `===`. Les backticks \`...\` avec `${...}` simplifient l'assemblage de texte. Et attention aux guillemets : ils peuvent transformer un nombre en texte sans que tu le voies.
 
 
 ## En vrai, sur le terrain

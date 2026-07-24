@@ -10,10 +10,7 @@ Le texte, c'est le coeur de presque toutes les pages.
 <h3>Encore un peu plus petit</h3>
 ```
 
-Regle simple :
-- Un seul `h1` par page (le sujet principal)
-- Ensuite `h2` pour les parties
-- `h3` pour les sous-parties
+Regle simple : un seul `h1` par page (le sujet principal). Ensuite tu mets des `h2` pour les parties, et des `h3` pour les sous-parties.
 
 C'est comme un plan de redaction.
 Ca aide aussi Google a comprendre ta page. Mais surtout : ca aide le lecteur.
@@ -62,16 +59,11 @@ Utile pour te laisser des notes. Ou desactiver un bout de code sans l'effacer.
 
 ## A eviter
 
-- Utiliser `h1` juste parce que "c'est plus gros" (utilise le CSS pour la taille)
-- Sauter de `h1` a `h4` sans raison
-- Des murs de texte sans retour
+N'utilise pas `h1` juste parce que "c'est plus gros" : la taille, c'est le job du CSS. Evite aussi de sauter de `h1` a `h4` sans raison. Et coupe les murs de texte : un lecteur a besoin de respirer.
 
 ## A toi
 
-Ecris une mini page "Ma journee" :
-- h1 avec le titre
-- 3 h2 (matin, apres-midi, soir)
-- un petit paragraphe sous chaque h2
+Ecris une mini page "Ma journee". Mets un h1 avec le titre, puis trois h2 (matin, apres-midi, soir), avec un petit paragraphe sous chaque h2.
 
 
 ## En vrai, sur le terrain

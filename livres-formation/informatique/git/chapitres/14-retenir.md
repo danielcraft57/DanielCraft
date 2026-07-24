@@ -9,14 +9,7 @@ pull souvent si collab
 
 ## Commandes vitales
 
-- `git init` / `git clone`
-- `git status`
-- `git add` / `git commit`
-- `git log --oneline`
-- `git switch` / `git branch`
-- `git merge`
-- `git pull` / `git push`
-- `git remote -v`
+Tu demarres avec `git init` ou `git clone`. Tu regardes l'etat avec `git status`. Tu prepares avec `git add`, puis tu photographies avec `git commit`. Pour l'histoire : `git log --oneline`. Pour les pistes paralleles : `git switch` et `git branch`, puis `git merge`. Avec le distant : `git pull`, `git push`, et `git remote -v` pour verifier le lien.
 
 ## Zones
 
@@ -24,41 +17,22 @@ Travail -> index (`add`) -> historique (`commit`) -> remote (`push`)
 
 ## Habitudes
 
-1. `status` avant et apres
-2. Messages clairs
-3. `.gitignore` tot
-4. Petites branches
-5. Ne jamais commit un secret
+Fais `status` avant et apres. Ecris des messages clairs. Mets un `.gitignore` tot. Prefere les petites branches. Ne commit jamais un secret.
 
 ## Erreurs classiques
 
-- Commit sur la mauvaise branche
-- Push refuse car remote en avance
-- Conflit laisse avec des `<<<<<<<`
-- `git add .` sans regarder
+On commit parfois sur la mauvaise branche. Un push peut etre refuse si le remote est en avance. Un conflit laisse des `<<<<<<<` si tu oublies de nettoyer. Et `git add .` sans regarder, c'est le classique des secrets qui passent.
 
 ## Suite immediate
 
-Deux chapitres un cran au-dessus :
-- stash + annuler proprement
-- pull requests
-
-Puis ateliers + quiz.
+Deux chapitres un cran au-dessus : stash + annuler proprement, puis les pull requests. Puis ateliers + quiz.
 
 ## Mini check
 
 Sans notes : ecris la boucle `add/commit/push` et a quoi sert une branche.
+
 ## Aide-memoire express
 
-| Besoin | Commande |
-|--------|----------|
-| Etat | `git status` |
-| Preparer | `git add` |
-| Photo | `git commit -m "..."` |
-| Histoire | `git log --oneline` |
-| Branche | `git switch -c nom` |
-| Fusion | `git merge nom` |
-| Envoyer | `git push` |
-| Recevoir | `git pull` |
+Pour l'etat : `git status`. Pour preparer : `git add`. Pour la photo : `git commit -m "..."`. Pour l'histoire : `git log --oneline`. Pour une branche : `git switch -c nom`. Pour fusionner : `git merge nom`. Pour envoyer : `git push`. Pour recevoir : `git pull`.
 
 Imprime cette page mentalement.

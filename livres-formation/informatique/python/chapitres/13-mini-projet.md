@@ -54,10 +54,7 @@ print(f"Score : {score} / {len(questions)}")
 
 ## Ameliorations
 
-1. Melanger l'ordre avec `random.shuffle`
-2. Sauvegarder le meilleur score dans un fichier JSON
-3. Ajouter 2 questions perso
-4. Afficher un message selon le score (bien / moyen / a revoir)
+Tu peux melanger l'ordre avec `random.shuffle`. Sauvegarde le meilleur score dans un fichier JSON. Ajoute 2 questions perso. Affiche un message selon le score (bien / moyen / a revoir).
 
 ## Version avec shuffle + JSON
 
@@ -99,9 +96,7 @@ else:
 
 ## Criteres
 
-- 3 questions minimum (vise 5)
-- Score affiche a la fin
-- Comparaison souple (`strip`, `lower`)
+Vise au moins 3 questions (idealement 5). Affiche le score a la fin. Compare de facon souple avec `strip` et `lower`.
 
 ## En vrai, sur le terrain
 

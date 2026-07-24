@@ -4,13 +4,7 @@ On assemble tout. Une page sur toi (ou un perso invente, libre a toi).
 
 ## Objectif
 
-Une page unique `index.html` + `style.css` avec :
-- un en-tete (nom + petit menu)
-- une section "A propos"
-- une section "Ce que j'aime" (liste)
-- une image
-- un petit formulaire de contact
-- un pied de page
+Une page unique `index.html` + `style.css`. Tu y mets un en-tete avec ton nom et un petit menu, une section "A propos", une section "Ce que j'aime" (en liste), une image, un petit formulaire de contact, et un pied de page. Une seule page, mais complete.
 
 ## Structure HTML proposee
 
@@ -147,18 +141,11 @@ button {
 
 ## Criteres de reussite
 
-- Ca s'ouvre sans erreur visible
-- Le menu saute aux sections (`#apropos` etc.)
-- Lisible sur petite largeur
-- Tes couleurs a toi (change le vert si tu veux)
+La page s'ouvre sans erreur visible. Le menu saute bien aux sections (`#apropos` et les autres). C'est lisible sur petite largeur. Et surtout : tes couleurs a toi. Change le vert si tu veux, c'est ton terrain.
 
 ## Bonus
 
-- Ajoute une deuxieme page `projets.html`
-- Relie-les avec des liens
-- Mets 3 "projets" inventes dans une liste
-
-Quand c'est fait : tu as une vraie mini vitrine.
+Ajoute une deuxieme page `projets.html`, relie les deux avec des liens, et mets trois "projets" inventes dans une liste. Quand c'est fait, tu as une vraie mini vitrine.
 Pas parfaite. Mais a toi. C'est le plus important.
 
 

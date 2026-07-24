@@ -32,20 +32,11 @@ Mon carnet de tests Git
 git status
 ```
 
-Git dit souvent :
-- fichiers non suivis (untracked)
-- ou modifies
-- ou prets a commit
-
-Lis `status` souvent. C'est ton tableau de bord.
+Git dit souvent quels fichiers sont non suivis (untracked), modifies, ou prets a commit. Lis `status` souvent. C'est ton tableau de bord.
 
 ## Zones a retenir
 
-1. **Dossier de travail** : tes fichiers normaux
-2. **Index / staging** : ce que tu prepares pour la photo
-3. **Depot** : l'historique des commits
-
-On detaille `add` / `commit` au chapitre suivant.
+Le **dossier de travail**, ce sont tes fichiers normaux. L'**index / staging**, c'est ce que tu prepares pour la photo. Le **depot**, c'est l'historique des commits. On detaille `add` / `commit` au chapitre suivant.
 
 ## git init dans un projet existant
 
@@ -54,9 +45,7 @@ Puis tu choisis quoi ajouter.
 
 ## A toi
 
-1. `git init` dans `mes-tests-git` (ou `mon-carnet`)
-2. Cree un fichier texte
-3. Lance `git status` et lis le resultat a voix haute
+Fais `git init` dans `mes-tests-git` (ou `mon-carnet`). Cree un fichier texte. Lance `git status` et lis le resultat a voix haute.
 
 ## Erreur classique
 
@@ -72,13 +61,10 @@ Tu dois voir `.git` apparaitre apres `init`.
 
 Ajoute un second fichier `notes.txt`.
 Relance `status`. Compare avec avant.
+
 ## Trois zones, encore une fois
 
-Imagine une chaine :
-
-1. Tu ecris dans tes fichiers (zone de travail)
-2. Tu choisis quoi photographier (`add` = index)
-3. Tu valides la photo (`commit` = historique)
+Imagine une chaine. Tu ecris dans tes fichiers (zone de travail). Tu choisis quoi photographier (`add` = index). Tu valides la photo (`commit` = historique).
 
 Beaucoup de debutants confondent 2 et 3.
 Si `status` dit "Changes to be committed", c'est pret pour la photo.

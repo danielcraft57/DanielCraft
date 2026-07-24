@@ -8,20 +8,12 @@ Avec un client, tu as un commerce.
 Pas "tout le monde".
 "Tout le monde" = personne en particulier.
 
-Mieux :
-- un parent presse
-- un artisan qui perd du temps sur l'admin
-- une asso qui veut plus de dons
-- un ado qui cherche un cadeau a 20 euros
-
-Plus c'est precis, plus tu peux aider.
+Mieux : imagine un parent presse, un artisan qui perd du temps sur l'admin, une asso qui veut plus de dons, ou un ado qui cherche un cadeau a 20 euros. Plus c'est precis, plus tu peux aider.
 
 ## Client vs utilisateur
 
 Parfois ce n'est pas la meme personne.
-Exemple : un jeu pour enfants.
-- utilisateur = l'enfant
-- client = le parent qui paie
+Exemple : un jeu pour enfants. L'utilisateur, c'est l'enfant. Le client, c'est le parent qui paie.
 
 Tu dois parler aux deux, mais tu vends a celui qui sort la carte.
 
@@ -34,15 +26,7 @@ Tu dois parler aux deux, mais tu vends a celui qui sort la carte.
 
 ## Portrait express
 
-Ecris 8 lignes :
-- prenom fictif
-- age approximatif
-- situation
-- probleme
-- ce qu'il veut vraiment
-- budget possible
-- ou il cherche des infos
-- ce qui le ferait dire oui
+Ecris 8 lignes. Tu notes le prenom fictif, l'age approximatif, la situation, le probleme, ce qu'il veut vraiment, le budget possible, ou il cherche des infos, et ce qui le ferait dire oui. Pas besoin d'etre parfait. Besoin d'etre concret.
 
 ## Erreur classique
 

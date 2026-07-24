@@ -30,11 +30,7 @@ if (note >= 16) {
 
 ## Comparaisons utiles
 
-- `===` egal (strict, recommande)
-- `!==` different
-- `>` `<` `>=` `<=`
-
-Evite `==` pour l'instant. `===` est plus clair.
+Pour comparer, tu as surtout `===` (egal strict, recommande), `!==` (different), puis `>`, `<`, `>=` et `<=`. Evite `==` pour l'instant : `===` est plus clair et te protege des surprises de types.
 
 ## Et / Ou
 
@@ -110,18 +106,11 @@ Teste en changeant les valeurs en haut du fichier.
 
 ## Mini defi
 
-- Cree une variable `temperature`
-- Si >= 25, affiche "Chaud"
-- Sinon si >= 15, affiche "Correct"
-- Sinon affiche "Froid"
-- Ajoute un cas : si temperature > 35, affiche "Canicule !"
+Cree une variable `temperature`. Si elle est superieure ou egale a 25, affiche "Chaud". Sinon, si elle est au moins a 15, affiche "Correct". Sinon, affiche "Froid". Ajoute aussi un cas special : si la temperature depasse 35, affiche "Canicule !". Change la valeur plusieurs fois pour voir chaque branche.
 
 ## A retenir
 
-- `if` / `else if` / `else` = decisions en chaine
-- `===` pour comparer, pas `=`
-- `&&` = et, `||` = ou
-- Garde les conditions simples et lisibles
+`if`, `else if` et `else` enchainent tes decisions. Pour comparer, utilise `===`, pas `=`. `&&` veut dire "et", `||` veut dire "ou". Garde les conditions simples et lisibles : une idee claire par test.
 
 
 ## En vrai, sur le terrain

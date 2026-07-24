@@ -55,17 +55,11 @@ Vise une zone cliquable confortable (genre 40px+ de haut).
 
 ## Teste vraiment
 
-- Reduis la fenetre de ton navigateur
-- Ou ouvre les outils developpeur (F12) et le mode telephone
-- Ou regarde sur ton vrai telephone (en local c'est plus technique, on verra plus tard)
+Reduis la fenetre de ton navigateur et regarde ce qui se passe. Ou ouvre les outils developpeur (F12) et le mode telephone. Si tu peux, regarde aussi sur ton vrai telephone : en local c'est un peu plus technique, on verra plus tard, mais l'idee reste la meme.
 
 ## Checklist mobile
 
-- [ ] meta viewport presente
-- [ ] images qui ne debordent pas
-- [ ] texte lisible sans zoomer
-- [ ] boutons assez grands
-- [ ] pas de scroll horizontal bizarre
+Avant de dire "c'est bon", verifie que la meta viewport est presente, que les images ne debordent pas, et que le texte se lit sans zoomer. Les boutons doivent etre assez grands pour un doigt, et tu ne dois pas avoir de scroll horizontal bizarre.
 
 ## A toi
 

@@ -1,9 +1,6 @@
 # Chapitre 4 - add et commit (la photo)
 
-Le duo du quotidien :
-
-1. `git add` : je prepare
-2. `git commit` : je prends la photo
+Le duo du quotidien : `git add` pour preparer, puis `git commit` pour prendre la photo.
 
 ## Ajouter un fichier
 
@@ -78,9 +75,7 @@ Ca refait le dernier commit.
 
 ## A toi
 
-Fais 2 commits :
-1. creation du readme
-2. ajout d'une ligne
+Fais 2 commits : d'abord la creation du readme, puis l'ajout d'une ligne.
 
 ## En vrai, sur le terrain
 

@@ -27,8 +27,7 @@ De l'exterieur vers l'interieur :
 
 ## Margin vs padding (le piege classique)
 
-- padding = espace *dans* la boite (entre le bord et le texte)
-- margin = espace *hors* de la boite (entre cette boite et les autres)
+Le padding, c'est l'espace *dans* la boite, entre le bord et le texte. La margin, c'est l'espace *hors* de la boite, entre cette boite et les autres.
 
 Tu te tromperas. Tout le monde se trompe. Tu corrigeras.
 
@@ -58,9 +57,7 @@ Mets ca presque toujours en haut de ton CSS.
 
 ## Display : block ou inline
 
-- `block` : prend toute la largeur (comme `p`, `div`, `h1`)
-- `inline` : reste dans le flux du texte (comme `span`, `a` sans style)
-- `inline-block` : un mix utile parfois
+Avec `block`, l'element prend toute la largeur (comme `p`, `div`, `h1`). Avec `inline`, il reste dans le flux du texte (comme `span`, ou un `a` sans style). Et `inline-block`, c'est un mix utile parfois : tu gardes le cote "dans la ligne", mais tu peux aussi mettre du padding proprement.
 
 ```css
 span.badge {

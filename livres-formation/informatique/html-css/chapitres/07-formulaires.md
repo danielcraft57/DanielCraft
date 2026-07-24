@@ -69,11 +69,7 @@ La on apprend juste a construire le formulaire.
 
 ## A toi
 
-Fais un formulaire "Contact" avec :
-- nom
-- email
-- message
-- bouton Envoyer
+Fais un formulaire "Contact" avec un champ nom, un champ email, une zone message, et un bouton Envoyer. Rien de fancy : juste ces quatre pieces qui collent ensemble.
 
 
 ## En vrai, sur le terrain

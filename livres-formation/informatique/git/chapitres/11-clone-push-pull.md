@@ -55,17 +55,11 @@ toi (local) <--pull-- GitHub
 
 ## Erreurs frequentes
 
-- `rejected` : le remote a des commits que tu n'as pas -> `pull` d'abord
-- auth ratee : mauvais token / session
-- mauvaise branche : tu pushes `main` alors que tu es ailleurs
+`rejected` : le remote a des commits que tu n'as pas -> `pull` d'abord. Auth ratee : mauvais token / session. Mauvaise branche : tu pushes `main` alors que tu es ailleurs.
 
 ## A toi
 
-1. Modifie un fichier
-2. commit
-3. push
-4. Change quelque chose sur GitHub via l'interface (petit edit)
-5. `git pull` en local
+Modifie un fichier, commit, puis push. Change quelque chose sur GitHub via l'interface (petit edit). Fais `git pull` en local.
 
 ## En vrai, sur le terrain
 

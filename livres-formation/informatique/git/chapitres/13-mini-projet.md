@@ -4,12 +4,7 @@ On enchaine le vrai workflow du quotidien.
 
 ## But
 
-Un petit projet `carnet-git` avec :
-- `README.md`
-- `notes.md`
-- historique propre
-- branche de feature
-- push GitHub
+Un petit projet `carnet-git` avec un `README.md`, un `notes.md`, un historique propre, une branche de feature, et un push GitHub.
 
 ## Etapes
 
@@ -26,7 +21,7 @@ Commit : `Initialiser le carnet`
 
 ### 2. Notes
 
-Ajoute `notes.md` avec 3 puces.
+Ajoute `notes.md` avec trois idees courtes.
 Commit : `Ajouter les premieres notes`
 
 ### 3. Branche
@@ -56,16 +51,11 @@ Commit + push.
 
 ## Criteres de reussite
 
-- Au moins 4 commits lisibles
-- Une branche fusionnee
-- Un `.gitignore`
-- Projet visible sur GitHub (prive OK)
+Tu as au moins 4 commits lisibles, une branche fusionnee, un `.gitignore`, et un projet visible sur GitHub (prive OK).
 
 ## Variante avancee
 
-- Ouvre une issue "Ameliorer le README"
-- Cree une branche depuis cette idee
-- Ouvre une pull request (chapitre 16)
+Ouvre une issue "Ameliorer le README". Cree une branche depuis cette idee. Ouvre une pull request (chapitre 16).
 
 ## En vrai, sur le terrain
 

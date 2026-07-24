@@ -425,41 +425,17 @@ button, .btn-like {
 <p>Tu dis a Git : &quot;garde cette version&quot;.</p>
 <p>Plus tard, tu peux revenir en arriere. Ou comparer. Ou travailler a plusieurs.</p>
 <h2 id="chapitre-01--a-quoi-ca-sert">A quoi ca sert ?</h2>
-<ul>
-<li>Ne plus perdre ton travail</li>
-<li>Voir qui a change quoi (et quand)</li>
-<li>Essayer une idee sur une branche sans casser le reste</li>
-<li>Collaborer (avec GitHub, GitLab, etc.)</li>
-</ul>
+<p>Tu ne perds plus ton travail aussi facilement. Tu vois qui a change quoi, et quand. Tu peux essayer une idee sur une branche sans casser le reste. Et tu peux collaborer avec GitHub, GitLab, etc.</p>
 <h2 id="chapitre-01--git-vs-github">Git vs GitHub</h2>
-<ul>
-<li><strong>Git</strong> : le logiciel sur ton ordi</li>
-<li><strong>GitHub</strong> : un site qui heberge des depots Git en ligne</li>
-</ul>
-<p>Tu peux utiliser Git tout seul, sans GitHub.</p>
-<p>GitHub devient utile pour partager, sauvegarder au loin, et faire des pull requests.</p>
+<p><strong>Git</strong>, c&#x27;est le logiciel sur ton ordi. <strong>GitHub</strong>, c&#x27;est un site qui heberge des depots Git en ligne. Tu peux utiliser Git tout seul, sans GitHub. GitHub devient utile pour partager, sauvegarder au loin, et faire des pull requests.</p>
 <h2 id="chapitre-01--image-mentale">Image mentale</h2>
 <p>Ton projet = un album photo.</p>
 <p>Chaque commit = une photo datee + un petit titre.</p>
 <p>Les branches = des albums paralleles.</p>
 <h2 id="chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</h2>
-<ul>
-<li>Installer Git et configurer ton nom / email</li>
-<li>Creer un depot (<code>git init</code>)</li>
-<li><code>add</code> / <code>commit</code> / <code>status</code> / <code>log</code></li>
-<li>Branches, fusion, conflits</li>
-<li><code>.gitignore</code></li>
-<li>Cloner, pousser, tirer depuis GitHub</li>
-<li>Stash, annulations simples</li>
-<li>Lire / ouvrir une pull request</li>
-</ul>
+<p>Tu vas installer Git et configurer ton nom / email. Tu creeras un depot avec <code>git init</code>. Tu manipuleras <code>add</code>, <code>commit</code>, <code>status</code> et <code>log</code>. Tu feras des branches, des fusions et des conflits. Tu ecriras un <code>.gitignore</code>. Tu cloneras, pousseras et tireras depuis GitHub. Tu tapoteras stash et les annulations simples. Et tu liras / ouvriras une pull request.</p>
 <h2 id="chapitre-01--comment-lire-ce-livre">Comment lire ce livre</h2>
-<ol>
-<li>1. Lis</li>
-<li>2. Tape les commandes dans un vrai dossier de test</li>
-<li>3. Regarde ce que Git repond</li>
-<li>4. Casse volontairement, puis repare</li>
-</ol>
+<p>Lis. Tape les commandes dans un vrai dossier de test. Regarde ce que Git repond. Casse volontairement, puis repare.</p>
 <p>Git s&#x27;apprend avec les mains.</p>
 <p>Pas seulement avec les yeux.</p>
 <h2 id="chapitre-01--mythe-a-casser">Mythe a casser</h2>
@@ -491,13 +467,7 @@ git config --global user.email &quot;ton@email.com&quot;</code></pre></div>
 <div class="code-block keep-block"><pre><code class="language-bash">git config --global --list</code></pre></div>
 <p>Utilise un email que tu assumeras (souvent celui de ton compte GitHub).</p>
 <h2 id="chapitre-02--ou-taper-les-commandes">Ou taper les commandes ?</h2>
-<ul>
-<li>Terminal Windows (PowerShell)</li>
-<li>Git Bash (installe avec Git)</li>
-<li>Terminal integre de VS Code</li>
-</ul>
-<p>Les commandes de ce livre marchent dans ces environnements.</p>
-<p>Sur PowerShell, c&#x27;est le meme <code>git ...</code>.</p>
+<p>Tu peux utiliser le terminal Windows (PowerShell), Git Bash (installe avec Git), ou le terminal integre de VS Code. Les commandes de ce livre marchent dans ces environnements. Sur PowerShell, c&#x27;est le meme <code>git ...</code>.</p>
 <h2 id="chapitre-02--editeur-de-message">Editeur de message</h2>
 <p>Parfois Git ouvre un editeur pour ecrire un message de commit.</p>
 <p>Au debut, reste sur les messages en une ligne avec <code>-m &quot;...&quot;</code> .</p>
@@ -508,11 +478,7 @@ git help commit</code></pre></div>
 <p>Ou :</p>
 <div class="code-block keep-block"><pre><code class="language-bash">git commit -h</code></pre></div>
 <h2 id="chapitre-02--a-toi">A toi</h2>
-<ol>
-<li>1. <code>git --version</code></li>
-<li>2. Configure <code>user.name</code> et <code>user.email</code></li>
-<li>3. Affiche la config</li>
-</ol>
+<p>Lance <code>git --version</code>. Configure <code>user.name</code> et <code>user.email</code>. Affiche la config.</p>
 <h2 id="chapitre-02--erreur-classique">Erreur classique</h2>
 <p>Tu commits sans avoir configure le nom/email.</p>
 <p>Git rale. Ou pire : il utilise une fausse identite.</p>
@@ -536,29 +502,14 @@ cd mon-carnet</code></pre></div>
 <div class="code-block keep-block"><pre><code class="language-text">Mon carnet de tests Git</code></pre></div>
 <h2 id="chapitre-03--voir-l-etat">Voir l&#x27;etat</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">git status</code></pre></div>
-<p>Git dit souvent :</p>
-<ul>
-<li>fichiers non suivis (untracked)</li>
-<li>ou modifies</li>
-<li>ou prets a commit</li>
-</ul>
-<p>Lis <code>status</code> souvent. C&#x27;est ton tableau de bord.</p>
+<p>Git dit souvent quels fichiers sont non suivis (untracked), modifies, ou prets a commit. Lis <code>status</code> souvent. C&#x27;est ton tableau de bord.</p>
 <h2 id="chapitre-03--zones-a-retenir">Zones a retenir</h2>
-<ol>
-<li>1. <strong>Dossier de travail</strong> : tes fichiers normaux</li>
-<li>2. <strong>Index / staging</strong> : ce que tu prepares pour la photo</li>
-<li>3. <strong>Depot</strong> : l&#x27;historique des commits</li>
-</ol>
-<p>On detaille <code>add</code> / <code>commit</code> au chapitre suivant.</p>
+<p>Le <strong>dossier de travail</strong>, ce sont tes fichiers normaux. L&#x27;<strong>index / staging</strong>, c&#x27;est ce que tu prepares pour la photo. Le <strong>depot</strong>, c&#x27;est l&#x27;historique des commits. On detaille <code>add</code> / <code>commit</code> au chapitre suivant.</p>
 <h2 id="chapitre-03--git-init-dans-un-projet-existant">git init dans un projet existant</h2>
 <p>Tu peux lancer <code>git init</code> dans un dossier qui a deja des fichiers.</p>
 <p>Puis tu choisis quoi ajouter.</p>
 <h2 id="chapitre-03--a-toi">A toi</h2>
-<ol>
-<li>1. <code>git init</code> dans <code>mes-tests-git</code> (ou <code>mon-carnet</code>)</li>
-<li>2. Cree un fichier texte</li>
-<li>3. Lance <code>git status</code> et lis le resultat a voix haute</li>
-</ol>
+<p>Fais <code>git init</code> dans <code>mes-tests-git</code> (ou <code>mon-carnet</code>). Cree un fichier texte. Lance <code>git status</code> et lis le resultat a voix haute.</p>
 <h2 id="chapitre-03--erreur-classique">Erreur classique</h2>
 <p>Tu fais <code>git init</code> dans le mauvais dossier (ex : ton dossier utilisateur entier).</p>
 <p>Verifie avec <code>cd</code> et <code>pwd</code> (ou <code>cd</code> sous PowerShell) avant.</p>
@@ -569,21 +520,12 @@ cd mon-carnet</code></pre></div>
 <p>Ajoute un second fichier <code>notes.txt</code>.</p>
 <p>Relance <code>status</code>. Compare avec avant.</p>
 <h2 id="chapitre-03--trois-zones-encore-une-fois">Trois zones, encore une fois</h2>
-<p>Imagine une chaine :</p>
-<ol>
-<li>1. Tu ecris dans tes fichiers (zone de travail)</li>
-<li>2. Tu choisis quoi photographier (<code>add</code> = index)</li>
-<li>3. Tu valides la photo (<code>commit</code> = historique)</li>
-</ol>
+<p>Imagine une chaine. Tu ecris dans tes fichiers (zone de travail). Tu choisis quoi photographier (<code>add</code> = index). Tu valides la photo (<code>commit</code> = historique).</p>
 <p>Beaucoup de debutants confondent 2 et 3.</p>
 <p>Si <code>status</code> dit &quot;Changes to be committed&quot;, c&#x27;est pret pour la photo.</p>
 <p>Si ca dit &quot;Changes not staged&quot;, il manque un <code>add</code>.</p></article><article class="chapter chapter-break" id="chapitre-04"><div class="chapter-num">Chapitre 4</div><h1 id="chapitre-04--chapitre-4-add-et-commit-la-photo">Chapitre 4 - add et commit (la photo)</h1>
 <figure class="illus"><img src="images/print/git-commit.jpg" alt="add prepare. commit photo. Une etape claire."><figcaption>add prepare. commit photo. Une etape claire.</figcaption></figure>
-<p>Le duo du quotidien :</p>
-<ol>
-<li>1. <code>git add</code> : je prepare</li>
-<li>2. <code>git commit</code> : je prends la photo</li>
-</ol>
+<p>Le duo du quotidien : <code>git add</code> pour preparer, puis <code>git commit</code> pour prendre la photo.</p>
 <h2 id="chapitre-04--ajouter-un-fichier">Ajouter un fichier</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">git add readme.txt
 git status</code></pre></div>
@@ -620,11 +562,7 @@ git commit --amend --no-edit</code></pre></div>
 <p>Ca refait le dernier commit.</p>
 <p><strong>Ne l&#x27;utilise pas</strong> sur un commit deja pousse si tu travailles en equipe (sauf si tu sais pourquoi).</p>
 <h2 id="chapitre-04--a-toi">A toi</h2>
-<p>Fais 2 commits :</p>
-<ol>
-<li>1. creation du readme</li>
-<li>2. ajout d&#x27;une ligne</li>
-</ol>
+<p>Fais 2 commits : d&#x27;abord la creation du readme, puis l&#x27;ajout d&#x27;une ligne.</p>
 <h2 id="chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Apres chaque commit, <code>git log --oneline</code>.</p>
 <p>Tu dois voir tes messages s&#x27;empiler.</p>
@@ -660,12 +598,7 @@ git commit --amend --no-edit</code></pre></div>
 <p>(Anciennement <code>git checkout -- readme.txt</code>.)</p>
 <p>Attention : tu perds les changements non sauves dans un commit.</p>
 <h2 id="chapitre-05--a-toi">A toi</h2>
-<ol>
-<li>1. Fais un petit changement</li>
-<li>2. <code>git diff</code></li>
-<li>3. <code>add</code> + <code>commit</code></li>
-<li>4. <code>git log --oneline</code></li>
-</ol>
+<p>Fais un petit changement. Lance <code>git diff</code>. Puis <code>add</code> + <code>commit</code>. Termine avec <code>git log --oneline</code>.</p>
 <h2 id="chapitre-05--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Ouvre <code>git log --oneline --graph --all</code> une fois.</p>
 <p>Meme sur un petit projet, tu vois la forme de l&#x27;histoire.</p>
@@ -694,23 +627,14 @@ git switch idee-couleurs</code></pre></div>
 <p>Tes fichiers &quot;reviennent&quot; a l&#x27;etat de <code>main</code>.</p>
 <p>Magique la premiere fois. Normal ensuite.</p>
 <h2 id="chapitre-06--a-quoi-ca-sert-vraiment">A quoi ca sert vraiment ?</h2>
-<ul>
-<li>Feature en cours</li>
-<li>Correction urgente sur <code>main</code> pendant que tu experimentes ailleurs</li>
-<li>Essai risqué (tu peux jeter la branche)</li>
-</ul>
+<p>Tu lances une feature en cours. Tu corriges en urgence sur <code>main</code> pendant que tu experimentes ailleurs. Ou tu testes un essai risque, puis tu jettes la branche si ca ne marche pas.</p>
 <h2 id="chapitre-06--renommer-supprimer">Renommer / supprimer</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">git branch -m ancien-nom nouveau-nom
 git branch -d idee-couleurs</code></pre></div>
 <p><code>-d</code> refuse s&#x27;il reste des commits non fusionnes.</p>
 <p><code>-D</code> force (prudent).</p>
 <h2 id="chapitre-06--a-toi">A toi</h2>
-<ol>
-<li>1. Cree une branche <code>essai</code></li>
-<li>2. Ajoute un fichier <code>essai.txt</code> + commit</li>
-<li>3. Reviens sur <code>main</code></li>
-<li>4. Verifie que <code>essai.txt</code> n&#x27;est plus la (normal)</li>
-</ol>
+<p>Cree une branche <code>essai</code>. Ajoute un fichier <code>essai.txt</code> et commit. Reviens sur <code>main</code>. Verifie que <code>essai.txt</code> n&#x27;est plus la (normal).</p>
 <h2 id="chapitre-06--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Avant chaque experience : nouvelle branche.</p>
 <p>Reflexe pro, meme en solo.</p>
@@ -740,12 +664,7 @@ git branch -d idee-couleurs</code></pre></div>
 <p>Sur GitHub, on passe souvent par une <strong>pull request</strong> (chapitre 16).</p>
 <p>En local / solo, <code>merge</code> suffit pour apprendre.</p>
 <h2 id="chapitre-07--a-toi">A toi</h2>
-<ol>
-<li>1. Branche <code>ajout-note</code></li>
-<li>2. Commit un fichier</li>
-<li>3. Merge dans <code>main</code></li>
-<li>4. Regarde <code>log --graph --oneline</code></li>
-</ol>
+<p>Cree une branche <code>ajout-note</code>. Commit un fichier. Merge dans <code>main</code>. Regarde <code>log --graph --oneline</code>.</p>
 <h2 id="chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Fais un dessin : <code>main</code> et <code>feature</code> qui se rejoignent.</p>
 <p>Le merge, c&#x27;est le point de jonction.</p>
@@ -760,11 +679,7 @@ git branch -d idee-couleurs</code></pre></div>
 <p>Un conflit = Git ne sait pas choisir.</p>
 <p>Deux versions du meme endroit. Il te demande d&#x27;arbitrer.</p>
 <h2 id="chapitre-08--comment-ca-arrive">Comment ca arrive</h2>
-<ol>
-<li>1. Sur <code>main</code>, tu modifies la ligne 1 de <code>readme.txt</code></li>
-<li>2. Sur une branche, tu modifies aussi la ligne 1</li>
-<li>3. Tu merges : boum, conflit</li>
-</ol>
+<p>Sur <code>main</code>, tu modifies la ligne 1 de <code>readme.txt</code>. Sur une branche, tu modifies aussi la ligne 1. Tu merges : boum, conflit.</p>
 <h2 id="chapitre-08--a-quoi-ca-ressemble">A quoi ca ressemble</h2>
 <p>Dans le fichier :</p>
 <div class="code-block keep-block"><pre><code class="language-text">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
@@ -774,24 +689,13 @@ version de la branche
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; idee-couleurs</code></pre></div>
 <p>Tu gardes ce que tu veux. Tu enleves les marqueurs <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> etc.</p>
 <h2 id="chapitre-08--resolving">Resolving</h2>
-<ol>
-<li>1. Ouvre le fichier</li>
-<li>2. Corrige a la main</li>
-<li>3. <code>git add fichier_corrige.txt</code></li>
-<li>4. <code>git commit</code> (pour conclure le merge)</li>
-</ol>
-<p>Ou, si ton outil propose &quot;accepter actuel / entrant / les deux&quot;, OK - mais comprends ce que tu acceptes.</p>
+<p>Ouvre le fichier. Corrige a la main. Fais <code>git add fichier_corrige.txt</code>, puis <code>git commit</code> pour conclure le merge. Ou, si ton outil propose &quot;accepter actuel / entrant / les deux&quot;, OK - mais comprends ce que tu acceptes.</p>
 <h2 id="chapitre-08--annuler-un-merge-en-cours">Annuler un merge en cours</h2>
 <p>Si tu es perdu :</p>
 <div class="code-block keep-block"><pre><code class="language-bash">git merge --abort</code></pre></div>
 <p>Retour avant le merge. Ouf.</p>
 <h2 id="chapitre-08--eviter-les-conflits-un-peu">Eviter les conflits (un peu)</h2>
-<ul>
-<li>Petits commits</li>
-<li>Se parler en equipe</li>
-<li>Merger / rebaser souvent (pas attendre 3 semaines)</li>
-<li>Eviter que deux personnes editent la meme zone sans coordination</li>
-</ul>
+<p>Fais des petits commits. Parle-toi en equipe. Merge / rebase souvent (pas attendre 3 semaines). Evite que deux personnes editent la meme zone sans coordination.</p>
 <h2 id="chapitre-08--a-toi">A toi</h2>
 <p>Provoque un conflit volontairement sur <code>readme.txt</code>.</p>
 <p>Resols-le. Termine le merge.</p>
@@ -855,18 +759,9 @@ dist/
 <p>GitHub heberge tes depots Git sur internet.</p>
 <p>Sauvegarde distante + collaboration + issues + pull requests.</p>
 <h2 id="chapitre-10--compte">Compte</h2>
-<ol>
-<li>1. Cree un compte sur github.com</li>
-<li>2. Confirme l&#x27;email</li>
-<li>3. Optionnel mais recommande : active la double authentification</li>
-</ol>
+<p>Cree un compte sur github.com. Confirme l&#x27;email. Optionnel mais recommande : active la double authentification.</p>
 <h2 id="chapitre-10--nouveau-depot-en-ligne">Nouveau depot en ligne</h2>
-<p>Sur GitHub : <strong>New repository</strong></p>
-<ul>
-<li>Nom : <code>mon-carnet</code></li>
-<li>Public ou prive</li>
-<li>Tu peux ne <strong>pas</strong> cocher &quot;Add a README&quot; si tu as deja un depot local</li>
-</ul>
+<p>Sur GitHub : <strong>New repository</strong>. Choisis un nom, par exemple <code>mon-carnet</code>. Public ou prive. Tu peux ne <strong>pas</strong> cocher &quot;Add a README&quot; si tu as deja un depot local.</p>
 <h2 id="chapitre-10--lier-ton-depot-local">Lier ton depot local</h2>
 <p>Sur la page du depot vide, GitHub montre des commandes.</p>
 <p>En general :</p>
@@ -877,20 +772,12 @@ git push -u origin main</code></pre></div>
 <h2 id="chapitre-10--voir-les-remotes">Voir les remotes</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">git remote -v</code></pre></div>
 <h2 id="chapitre-10--ssh-ou-https">SSH ou HTTPS ?</h2>
-<ul>
-<li>HTTPS : simple au debut (parfois un token)</li>
-<li>SSH : cles, tres confortable au quotidien</li>
-</ul>
-<p>Les deux marchent. Choisis-en un et avance.</p>
+<p>HTTPS est simple au debut (parfois un token). SSH utilise des cles et devient tres confortable au quotidien. Les deux marchent. Choisis-en un et avance.</p>
 <h2 id="chapitre-10--readme-md">README.md</h2>
 <p>Sur GitHub, <code>README.md</code> s&#x27;affiche en vitrine.</p>
 <p>Ecris 5 lignes : but du projet + comment lancer.</p>
 <h2 id="chapitre-10--a-toi">A toi</h2>
-<ol>
-<li>1. Cree un depot GitHub de test (prive OK)</li>
-<li>2. Branche <code>origin</code></li>
-<li>3. <code>push</code> ta branche <code>main</code></li>
-</ol>
+<p>Cree un depot GitHub de test (prive OK). Branche <code>origin</code>. Fais <code>push</code> de ta branche <code>main</code>.</p>
 <h2 id="chapitre-10--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Apres le push, rafraichis la page GitHub.</p>
 <p>Tu dois voir tes fichiers. Soulagement.</p>
@@ -920,19 +807,9 @@ cd mon-carnet</code></pre></div>
 <div class="code-block keep-block"><pre><code class="language-text">toi (local) --push--&gt; GitHub
 toi (local) &lt;--pull-- GitHub</code></pre></div>
 <h2 id="chapitre-11--erreurs-frequentes">Erreurs frequentes</h2>
-<ul>
-<li><code>rejected</code> : le remote a des commits que tu n&#x27;as pas -&gt; <code>pull</code> d&#x27;abord</li>
-<li>auth ratee : mauvais token / session</li>
-<li>mauvaise branche : tu pushes <code>main</code> alors que tu es ailleurs</li>
-</ul>
+<p><code>rejected</code> : le remote a des commits que tu n&#x27;as pas -&gt; <code>pull</code> d&#x27;abord. Auth ratee : mauvais token / session. Mauvaise branche : tu pushes <code>main</code> alors que tu es ailleurs.</p>
 <h2 id="chapitre-11--a-toi">A toi</h2>
-<ol>
-<li>1. Modifie un fichier</li>
-<li>2. commit</li>
-<li>3. push</li>
-<li>4. Change quelque chose sur GitHub via l&#x27;interface (petit edit)</li>
-<li>5. <code>git pull</code> en local</li>
-</ol>
+<p>Modifie un fichier, commit, puis push. Change quelque chose sur GitHub via l&#x27;interface (petit edit). Fais <code>git pull</code> en local.</p>
 <h2 id="chapitre-11--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Sur un projet a deux : toujours <code>pull</code> avant de pousser.</p>
 <p>Ca diminue les conflits.</p>
@@ -942,11 +819,7 @@ toi (local) &lt;--pull-- GitHub</code></pre></div>
 <p>Un bon message sauve ton futur toi.</p>
 <p>Et ton equipe.</p>
 <h2 id="chapitre-12--regle-simple">Regle simple</h2>
-<ul>
-<li>Premiere ligne : resume court (50-72 caracteres ideaux)</li>
-<li>Verbe a l&#x27;imperatif : &quot;Ajouter&quot;, &quot;Corriger&quot;, &quot;Clarifier&quot;</li>
-<li>Explique le <strong>pourquoi</strong> si ce n&#x27;est pas evident</li>
-</ul>
+<p>La premiere ligne resume court (50-72 caracteres ideaux). Prefere un verbe a l&#x27;imperatif : &quot;Ajouter&quot;, &quot;Corriger&quot;, &quot;Clarifier&quot;. Explique le <strong>pourquoi</strong> si ce n&#x27;est pas evident.</p>
 <h2 id="chapitre-12--oui">Oui</h2>
 <div class="code-block keep-block"><pre><code class="language-text">Corriger le total TTC (oubli de la TVA)
 Ajouter la page contact
@@ -971,12 +844,7 @@ docs: preciser l&#x27;install Windows</code></pre></div>
 <p>Pas non plus 40 micro-commits illegibles.</p>
 <p>Le juste milieu vient avec l&#x27;experience.</p>
 <h2 id="chapitre-12--a-toi">A toi</h2>
-<p>Reecris ces messages pourris en bons messages :</p>
-<ol>
-<li>1. <code>update</code></li>
-<li>2. <code>fix stuff</code></li>
-<li>3. <code>aaa</code></li>
-</ol>
+<p>Reecris ces messages pourris en bons messages : <code>update</code>, <code>fix stuff</code>, et <code>aaa</code>.</p>
 <h2 id="chapitre-12--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Lis ton <code>git log --oneline</code>.</p>
 <p>Si tu ne comprends plus un message d&#x27;hier, renomme ta facon d&#x27;ecrire.</p>
@@ -992,14 +860,7 @@ Documenter l&#x27;installation dans le README</code></pre></div>
 <p>C&#x27;est ca, le but.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1 id="chapitre-13--chapitre-13-mini-projet-carnet-versionne">Chapitre 13 - Mini-projet : carnet versionne</h1>
 <p>On enchaine le vrai workflow du quotidien.</p>
 <h2 id="chapitre-13--but">But</h2>
-<p>Un petit projet <code>carnet-git</code> avec :</p>
-<ul>
-<li><code>README.md</code></li>
-<li><code>notes.md</code></li>
-<li>historique propre</li>
-<li>branche de feature</li>
-<li>push GitHub</li>
-</ul>
+<p>Un petit projet <code>carnet-git</code> avec un <code>README.md</code>, un <code>notes.md</code>, un historique propre, une branche de feature, et un push GitHub.</p>
 <h2 id="chapitre-13--etapes">Etapes</h2>
 <h3 id="chapitre-13--1-local">1. Local</h3>
 <div class="code-block keep-block"><pre><code class="language-bash">mkdir carnet-git
@@ -1008,7 +869,7 @@ git init</code></pre></div>
 <p>Ecris un README (but + auteur).</p>
 <p>Commit : <code>Initialiser le carnet</code></p>
 <h3 id="chapitre-13--2-notes">2. Notes</h3>
-<p>Ajoute <code>notes.md</code> avec 3 puces.</p>
+<p>Ajoute <code>notes.md</code> avec trois idees courtes.</p>
 <p>Commit : <code>Ajouter les premieres notes</code></p>
 <h3 id="chapitre-13--3-branche">3. Branche</h3>
 <div class="code-block keep-block"><pre><code class="language-bash">git switch -c feature/note-git</code></pre></div>
@@ -1025,18 +886,9 @@ git init</code></pre></div>
 <p>Copie l&#x27;URL GitHub dans ton <code>README.md</code>.</p>
 <p>Commit + push.</p>
 <h2 id="chapitre-13--criteres-de-reussite">Criteres de reussite</h2>
-<ul>
-<li>Au moins 4 commits lisibles</li>
-<li>Une branche fusionnee</li>
-<li>Un <code>.gitignore</code></li>
-<li>Projet visible sur GitHub (prive OK)</li>
-</ul>
+<p>Tu as au moins 4 commits lisibles, une branche fusionnee, un <code>.gitignore</code>, et un projet visible sur GitHub (prive OK).</p>
 <h2 id="chapitre-13--variante-avancee">Variante avancee</h2>
-<ul>
-<li>Ouvre une issue &quot;Ameliorer le README&quot;</li>
-<li>Cree une branche depuis cette idee</li>
-<li>Ouvre une pull request (chapitre 16)</li>
-</ul>
+<p>Ouvre une issue &quot;Ameliorer le README&quot;. Cree une branche depuis cette idee. Ouvre une pull request (chapitre 16).</p>
 <h2 id="chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Chronometre-toi. Vise moins de 20 minutes une fois a l&#x27;aise.</p>
 <h2 id="chapitre-13--mini-defi">Mini defi</h2>
@@ -1045,54 +897,19 @@ git init</code></pre></div>
 <div class="code-block keep-block"><pre><code class="language-text">status -&gt; add -&gt; commit -&gt; (push)
 pull souvent si collab</code></pre></div>
 <h2 id="chapitre-14--commandes-vitales">Commandes vitales</h2>
-<ul>
-<li><code>git init</code> / <code>git clone</code></li>
-<li><code>git status</code></li>
-<li><code>git add</code> / <code>git commit</code></li>
-<li><code>git log --oneline</code></li>
-<li><code>git switch</code> / <code>git branch</code></li>
-<li><code>git merge</code></li>
-<li><code>git pull</code> / <code>git push</code></li>
-<li><code>git remote -v</code></li>
-</ul>
+<p>Tu demarres avec <code>git init</code> ou <code>git clone</code>. Tu regardes l&#x27;etat avec <code>git status</code>. Tu prepares avec <code>git add</code>, puis tu photographies avec <code>git commit</code>. Pour l&#x27;histoire : <code>git log --oneline</code>. Pour les pistes paralleles : <code>git switch</code> et <code>git branch</code>, puis <code>git merge</code>. Avec le distant : <code>git pull</code>, <code>git push</code>, et <code>git remote -v</code> pour verifier le lien.</p>
 <h2 id="chapitre-14--zones">Zones</h2>
 <p>Travail -&gt; index (<code>add</code>) -&gt; historique (<code>commit</code>) -&gt; remote (<code>push</code>)</p>
 <h2 id="chapitre-14--habitudes">Habitudes</h2>
-<ol>
-<li>1. <code>status</code> avant et apres</li>
-<li>2. Messages clairs</li>
-<li>3. <code>.gitignore</code> tot</li>
-<li>4. Petites branches</li>
-<li>5. Ne jamais commit un secret</li>
-</ol>
+<p>Fais <code>status</code> avant et apres. Ecris des messages clairs. Mets un <code>.gitignore</code> tot. Prefere les petites branches. Ne commit jamais un secret.</p>
 <h2 id="chapitre-14--erreurs-classiques">Erreurs classiques</h2>
-<ul>
-<li>Commit sur la mauvaise branche</li>
-<li>Push refuse car remote en avance</li>
-<li>Conflit laisse avec des <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code></li>
-<li><code>git add .</code> sans regarder</li>
-</ul>
+<p>On commit parfois sur la mauvaise branche. Un push peut etre refuse si le remote est en avance. Un conflit laisse des <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> si tu oublies de nettoyer. Et <code>git add .</code> sans regarder, c&#x27;est le classique des secrets qui passent.</p>
 <h2 id="chapitre-14--suite-immediate">Suite immediate</h2>
-<p>Deux chapitres un cran au-dessus :</p>
-<ul>
-<li>stash + annuler proprement</li>
-<li>pull requests</li>
-</ul>
-<p>Puis ateliers + quiz.</p>
+<p>Deux chapitres un cran au-dessus : stash + annuler proprement, puis les pull requests. Puis ateliers + quiz.</p>
 <h2 id="chapitre-14--mini-check">Mini check</h2>
 <p>Sans notes : ecris la boucle <code>add/commit/push</code> et a quoi sert une branche.</p>
 <h2 id="chapitre-14--aide-memoire-express">Aide-memoire express</h2>
-<div class="table-wrap keep-block"><table>
-<tr><th>Besoin</th><th>Commande</th></tr>
-<tr><td>Etat</td><td><code>git status</code></td></tr>
-<tr><td>Preparer</td><td><code>git add</code></td></tr>
-<tr><td>Photo</td><td><code>git commit -m &quot;...&quot;</code></td></tr>
-<tr><td>Histoire</td><td><code>git log --oneline</code></td></tr>
-<tr><td>Branche</td><td><code>git switch -c nom</code></td></tr>
-<tr><td>Fusion</td><td><code>git merge nom</code></td></tr>
-<tr><td>Envoyer</td><td><code>git push</code></td></tr>
-<tr><td>Recevoir</td><td><code>git pull</code></td></tr>
-</table></div>
+<p>Pour l&#x27;etat : <code>git status</code>. Pour preparer : <code>git add</code>. Pour la photo : <code>git commit -m &quot;...&quot;</code>. Pour l&#x27;histoire : <code>git log --oneline</code>. Pour une branche : <code>git switch -c nom</code>. Pour fusionner : <code>git merge nom</code>. Pour envoyer : <code>git push</code>. Pour recevoir : <code>git pull</code>.</p>
 <p>Imprime cette page mentalement.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Chapitre 15</div><h1 id="chapitre-15--chapitre-15-stash-et-annuler-avec-prudence">Chapitre 15 - Stash et annuler (avec prudence)</h1>
 <p>Parfois tu dois changer de branche alors que tu as des modifs pas pretes.</p>
 <h2 id="chapitre-15--stash">stash</h2>
@@ -1126,17 +943,9 @@ git stash pop</code></pre></div>
 <p>Cree un <strong>nouveau</strong> commit qui annule le precedent.</p>
 <p>L&#x27;historique reste honest. Prefere ca sur <code>main</code> partage.</p>
 <h2 id="chapitre-15--regle-d-or">Regle d&#x27;or</h2>
-<ul>
-<li>Local, pas pousse : reset possible</li>
-<li>Deja pousse / equipe : revert (ou discussion)</li>
-</ul>
+<p>En local, pas pousse : reset possible. Deja pousse / equipe : revert (ou discussion).</p>
 <h2 id="chapitre-15--a-toi">A toi</h2>
-<ol>
-<li>1. Modifie un fichier</li>
-<li>2. <code>stash</code></li>
-<li>3. Verifie <code>status</code> propre</li>
-<li>4. <code>stash pop</code></li>
-</ol>
+<p>Modifie un fichier. Fais <code>stash</code>. Verifie que <code>status</code> est propre. Puis <code>stash pop</code>.</p>
 <h2 id="chapitre-15--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Avant un <code>--hard</code>, respire.</p>
 <p>Copie le dossier ailleurs si tu as un doute.</p>
@@ -1147,24 +956,9 @@ git stash pop</code></pre></div>
 <p>Une pull request = &quot;peux-tu fusionner mon travail dans la branche principale ?&quot;</p>
 <p>C&#x27;est le coeur de la collab sur GitHub.</p>
 <h2 id="chapitre-16--scenario-type">Scenario type</h2>
-<ol>
-<li>1. <code>git switch -c feature/login</code></li>
-<li>2. commits locaux</li>
-<li>3. <code>git push -u origin feature/login</code></li>
-<li>4. Sur GitHub : <strong>Compare &amp; pull request</strong></li>
-<li>5. Remplis titre + description</li>
-<li>6. Quelqu&#x27;un review</li>
-<li>7. Merge sur GitHub</li>
-<li>8. En local : <code>git switch main</code> puis <code>git pull</code></li>
-</ol>
+<p>Tu crees une branche avec <code>git switch -c feature/login</code>, tu fais tes commits locaux, puis <code>git push -u origin feature/login</code>. Sur GitHub, tu cliques <strong>Compare &amp; pull request</strong>. Tu remplis titre + description. Quelqu&#x27;un review. On merge sur GitHub. En local, tu reviens avec <code>git switch main</code> puis <code>git pull</code>.</p>
 <h2 id="chapitre-16--pourquoi-pas-merger-en-silence">Pourquoi pas merger en silence ?</h2>
-<ul>
-<li>Relecture</li>
-<li>Discussion</li>
-<li>CI / tests automatiques</li>
-<li>Historique clair</li>
-</ul>
-<p>Meme en solo, une PR t&#x27;oblige a resumer ton travail. C&#x27;est sain.</p>
+<p>Ca permet la relecture, la discussion, les tests automatiques (CI), et un historique plus clair. Meme en solo, une PR t&#x27;oblige a resumer ton travail. C&#x27;est sain.</p>
 <h2 id="chapitre-16--bonne-description">Bonne description</h2>
 <div class="code-block keep-block"><pre><code class="language-text">## But
 Ajouter un formulaire de contact.
@@ -1182,20 +976,9 @@ Ouvrir /contact et envoyer un faux message.</code></pre></div>
 <p>En review, on commente des lignes.</p>
 <p>Tu pousses des commits sur la meme branche : la PR se met a jour.</p>
 <h2 id="chapitre-16--merge-buttons">Merge buttons</h2>
-<ul>
-<li><strong>Create a merge commit</strong></li>
-<li><strong>Squash and merge</strong> (souvent propre pour petites features)</li>
-<li><strong>Rebase and merge</strong></li>
-</ul>
-<p>Demande la convention de ton equipe.</p>
+<p>Tu verras souvent <strong>Create a merge commit</strong>, <strong>Squash and merge</strong> (souvent propre pour petites features), et <strong>Rebase and merge</strong>. Demande la convention de ton equipe.</p>
 <h2 id="chapitre-16--a-toi">A toi</h2>
-<ol>
-<li>1. Branche + 1 commit</li>
-<li>2. Push</li>
-<li>3. Ouvre une PR vers <code>main</code></li>
-<li>4. Merge-la toi-meme</li>
-<li>5. <code>git pull</code> en local</li>
-</ol>
+<p>Cree une branche avec 1 commit. Push. Ouvre une PR vers <code>main</code>. Merge-la toi-meme. Puis <code>git pull</code> en local.</p>
 <h2 id="chapitre-16--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Lis 2 PR open source.</p>
 <p>Tu verras le meme format partout.</p>
@@ -1217,55 +1000,21 @@ Ouvrir /contact et envoyer un faux message.</code></pre></div>
 <h2 id="chapitre-17--permission-denied-auth">&quot;Permission denied&quot; / auth</h2>
 <p>Probleme d&#x27;identifiants (HTTPS token, SSH key, droits du depot).</p>
 <h2 id="chapitre-17--methode">Methode</h2>
-<ol>
-<li>1. Lis la <strong>derniere</strong> partie du message</li>
-<li>2. Ne panic pas sur le pavé rouge</li>
-<li>3. <code>git status</code> pour savoir ou tu es</li>
-<li>4. Une action a la fois</li>
-</ol>
+<p>Lis d&#x27;abord la <strong>derniere</strong> partie du message. Ne panic pas sur le pave rouge. Lance <code>git status</code> pour savoir ou tu es. Une action a la fois.</p>
 <h2 id="chapitre-17--exercices">Exercices</h2>
-<ol>
-<li>1. Provoque un push reject (pull manquant) et reparer</li>
-<li>2. Provoque un conflit et le resoudre</li>
-<li>3. Ajoute un secret au mauvais moment, retire-le avec <code>rm --cached</code></li>
-</ol>
+<p>Provoque un push reject (pull manquant) et reparer. Provoque un conflit et le resoudre. Ajoute un secret au mauvais moment, puis retire-le avec <code>rm --cached</code>.</p>
 <h2 id="chapitre-17--check">Check</h2>
 <p>Tu sais expliquer 4 messages courants sans google.</p>
 <h2 id="chapitre-17--traduction-rapide">Traduction rapide</h2>
-<div class="table-wrap keep-block"><table>
-<tr><th>Message (idee)</th><th>Action</th></tr>
-<tr><td>working tree clean</td><td>Rien a commit</td></tr>
-<tr><td>untracked</td><td>add ou ignore</td></tr>
-<tr><td>ahead</td><td>push</td></tr>
-<tr><td>behind</td><td>pull</td></tr>
-<tr><td>rejected</td><td>pull puis push</td></tr>
-<tr><td>conflict</td><td>editer + add + commit</td></tr>
-</table></div>
-<p>Garde ce tableau sous la main la premiere semaine.</p></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-workflow-d-equipe-simule">Chapitre 18 - Atelier : workflow d&#x27;equipe (simule)</h1>
+<p>Si le working tree est clean, rien a commit. Untracked : add ou ignore. Ahead : push. Behind : pull. Rejected : pull puis push. Conflict : editer + add + commit.</p>
+<p>Garde ces reflexions sous la main la premiere semaine.</p></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-workflow-d-equipe-simule">Chapitre 18 - Atelier : workflow d&#x27;equipe (simule)</h1>
 <p>Meme seul, tu peux simuler deux personnes.</p>
 <h2 id="chapitre-18--idee">Idee</h2>
-<p>Deux dossiers locaux :</p>
-<ul>
-<li><code>alice/carnet</code></li>
-<li><code>bob/carnet</code></li>
-</ul>
-<p>Tous deux clones du meme depot GitHub.</p>
+<p>Deux dossiers locaux : <code>alice/carnet</code> et <code>bob/carnet</code>. Tous deux clones du meme depot GitHub.</p>
 <h2 id="chapitre-18--tour-de-jeu">Tour de jeu</h2>
-<ol>
-<li>1. Alice cree une branche <code>feature/alice</code>, commit, push, PR</li>
-<li>2. Bob <code>pull</code> sur <code>main</code> apres le merge</li>
-<li>3. Bob cree <code>feature/bob</code> sur une autre zone de fichier</li>
-<li>4. PR de Bob</li>
-<li>5. Alice review (meme si c&#x27;est toi sous un autre navigateur)</li>
-</ol>
+<p>Alice cree une branche <code>feature/alice</code>, commit, push, PR. Bob fait <code>pull</code> sur <code>main</code> apres le merge. Bob cree <code>feature/bob</code> sur une autre zone de fichier, puis sa PR. Alice review (meme si c&#x27;est toi sous un autre navigateur).</p>
 <h2 id="chapitre-18--regles-d-equipe-simples">Regles d&#x27;equipe simples</h2>
-<ul>
-<li>Pas de commit direct sur <code>main</code> (branche + PR)</li>
-<li>Messages clairs</li>
-<li>PR petites</li>
-<li><code>pull</code> le matin</li>
-<li>Ne jamais forcer (<code>push --force</code>) sur <code>main</code></li>
-</ul>
+<p>Pas de commit direct sur <code>main</code> : branche + PR. Messages clairs. PR petites. <code>pull</code> le matin. Ne jamais forcer (<code>push --force</code>) sur <code>main</code>.</p>
 <h2 id="chapitre-18--force-push">force push ?</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">git push --force</code></pre></div>
 <p>A bannir sur les branches partagees tant que tu ne maitrises pas.</p>
@@ -1279,13 +1028,7 @@ Ouvrir /contact et envoyer un faux message.</code></pre></div>
 <h2 id="chapitre-18--mini-defi">Mini defi</h2>
 <p>Ecris un fichier <code>CONTRIBUTING.md</code> de 10 lignes pour ton futur projet.</p>
 <h2 id="chapitre-18--mini-charte-copie-colle">Mini charte (copie-colle)</h2>
-<ol>
-<li>1. Personne ne pousse en force sur <code>main</code></li>
-<li>2. Toute feature passe par une PR</li>
-<li>3. On review au moins 1 fois (meme soi-meme en solo)</li>
-<li>4. On ne commit pas <code>.env</code></li>
-<li>5. On ecrit des messages qui se lisent</li>
-</ol>
+<p>Personne ne pousse en force sur <code>main</code>. Toute feature passe par une PR. On review au moins 1 fois (meme soi-meme en solo). On ne commit pas <code>.env</code>. On ecrit des messages qui se lisent.</p>
 <p>Colle ca dans <code>CONTRIBUTING.md</code>.</p></article><article class="chapter chapter-break" id="chapitre-19"><div class="chapter-num">Chapitre 19</div><h1 id="chapitre-19--chapitre-19-atelier-reparer-sans-paniquer">Chapitre 19 - Atelier : reparer sans paniquer</h1>
 <h2 id="chapitre-19--cas-1-mauvais-fichier-stage">Cas 1 - Mauvais fichier stage</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">git restore --staged mauvais.txt</code></pre></div>
@@ -1308,13 +1051,7 @@ git switch feature/oubli</code></pre></div>
 <div class="code-block keep-block"><pre><code class="language-bash">git merge --abort</code></pre></div>
 <p>Repars. Demande de l&#x27;aide. Reessaye plus tard.</p>
 <h2 id="chapitre-19--checklist-anti-stress">Checklist anti-stress</h2>
-<ol>
-<li>1. <code>git status</code></li>
-<li>2. <code>git log --oneline -5</code></li>
-<li>3. Est-ce deja pousse ?</li>
-<li>4. Suis-je seul sur la branche ?</li>
-<li>5. Alors seulement : restore / reset / revert</li>
-</ol>
+<p>Commence par <code>git status</code>, puis <code>git log --oneline -5</code>. Demande-toi : est-ce deja pousse ? Suis-je seul sur la branche ? Alors seulement : restore / reset / revert.</p>
 <h2 id="chapitre-19--exercice-final-atelier">Exercice final atelier</h2>
 <p>Casse volontairement (mauvais add, mauvais message, petit conflit).</p>
 <p>Repare avec la methode ci-dessus.</p>
@@ -1434,43 +1171,17 @@ git switch feature/oubli</code></pre></div>
 <p>1 B, 2 A, 3 B, 4 A, 5 A, 6 B, 7 B, 8 B, 9 B, 10 A,</p>
 <p>11 B, 12 B, 13 A, 14 B, 15 A, 16 A, 17 A, 18 B</p>
 <h2 id="chapitre-20--score">Score</h2>
-<ul>
-<li>16-18 : nickel</li>
-<li>12-15 : bien, relis conflits + undo + PR</li>
-<li>8-11 : refais 4, 6, 8, 11, 14</li>
-<li>moins de 8 : refais le mini-projet tranquillement</li>
-</ul></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
+<p>16-18 : nickel. 12-15 : bien, relis conflits + undo + PR. 8-11 : refais 4, 6, 8, 11, 14. Moins de 8 : refais le mini-projet tranquillement.</p></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
 <figure class="illus illus-wide"><img src="images/print/git-felicitations.jpg" alt="Bravo. Tu as les bases de Git et GitHub."><figcaption>Bravo. Tu as les bases de Git et GitHub.</figcaption></figure>
 <p>Tu as fini les bases de Git et GitHub.</p>
 <p>Pas &quot;je connais toutes les options cachees&quot;.</p>
 <p>Mais &quot;je sais versionner, brancher, fusionner, pousser, et me sortir d&#x27;un conflit&quot;. C&#x27;est le coeur du metier.</p>
 <h2 id="chapitre-21--ce-que-tu-sais-faire">Ce que tu sais faire</h2>
-<ul>
-<li>Installer / configurer Git</li>
-<li><code>add</code> / <code>commit</code> / <code>log</code> / <code>status</code></li>
-<li>Branches + merge + conflits</li>
-<li><code>.gitignore</code></li>
-<li>Remote, clone, push, pull</li>
-<li>Stash et annulations raisonnables</li>
-<li>Pull requests</li>
-</ul>
+<p>Tu sais installer et configurer Git. Tu utilises <code>add</code>, <code>commit</code>, <code>log</code> et <code>status</code>. Tu geres branches, merge et conflits. Tu ecris un <code>.gitignore</code>. Tu manipules remote, clone, push et pull. Tu te debrouilles avec stash et les annulations raisonnables. Et tu fais des pull requests.</p>
 <h2 id="chapitre-21--mission-finale">Mission finale</h2>
-<p>Sur un vrai mini projet (meme un site de 2 pages) :</p>
-<ol>
-<li>1. Depot GitHub</li>
-<li>2. Branche feature</li>
-<li>3. PR mergee</li>
-<li>4. README clair</li>
-<li>5. Aucun secret dans l&#x27;historique</li>
-</ol>
+<p>Sur un vrai mini projet (meme un site de 2 pages), cree un depot GitHub. Travaille sur une branche feature. Merge via une PR. Ecris un README clair. Verifie qu&#x27;aucun secret n&#x27;est dans l&#x27;historique.</p>
 <h2 id="chapitre-21--la-suite-quand-tu-voudras">La suite (quand tu voudras)</h2>
-<ul>
-<li>Hooks / pre-commit</li>
-<li>Rebase interactif (avec prudence)</li>
-<li>Monorepos</li>
-<li>GitHub Actions (CI)</li>
-<li>Conventions d&#x27;equipe plus fines</li>
-</ul>
+<p>Tu pourras regarder les hooks / pre-commit, le rebase interactif (avec prudence), les monorepos, GitHub Actions (CI), et des conventions d&#x27;equipe plus fines.</p>
 <p>Mais la, respire.</p>
 <p>Encore bravo.</p>
 <p>Ton code a maintenant une memoire. Et toi aussi.</p>

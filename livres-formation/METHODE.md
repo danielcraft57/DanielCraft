@@ -1,6 +1,6 @@
 # Methode - Creer un livre de formation
 
-Recette issue des livres HTML/CSS, JavaScript, Python, Git et Commerce. A suivre pour les prochains.
+Recette issue des livres HTML/CSS, JavaScript, Python, Git, Commerce et E-commerce. A suivre pour les prochains.
 
 ## 0. Regles de fond (toujours)
 
@@ -55,14 +55,16 @@ Chaque chapitre commence sur une **nouvelle page**.
 
 ## 3. Ecriture
 
-- Markdown, phrases courtes
-- Exemples concrets + section "A toi" / "En vrai"
+- Markdown, phrases courtes, **prose d'abord** (peu de puces : voir DIRECTIVES.md)
+- Exemples concrets + section "A toi" / "En vrai" / "Mini defi"
 - H1 : `# Chapitre N - Titre` (ou titre libre pour quiz/bravo)
 - H2 pour les sous-parties (ils deviennent cliquables dans le sommaire)
+- QCM : options A/B/C en puces OK
 
 ## 4. Images et schemas
 
-### Prompts
+**Chaque livre** : couverture + felicitation + plusieurs schemas cles (SVG FR -> PNG).
+Ne pas livrer un PDF "que du texte".
 
 Dans `prompts/images/` et `prompts/schemas/`. Toujours :
 
@@ -132,7 +134,8 @@ python livres-formation\informatique\<livre>\build_livre.py
 | JavaScript | `pdf/javascript-les-bases.pdf` | ~51 pages | vert |
 | Python | `pdf/python-les-bases.pdf` | ~55 pages | bleu encre + abricot (`theme="python"`) ; exceptions + classes |
 | Git / GitHub | `pdf/git-les-bases.pdf` | ~49 pages | graphite + corail (`theme="git"`) ; stash, undo, PR |
-| Commerce | `pdf/commerce-les-bases.pdf` | ~38 pages | sarcelle + or sable (`theme="commerce"`) |
+| Commerce | `pdf/commerce-les-bases.pdf` | ~32-38 pages | sarcelle + or ; prose |
+| E-commerce | `pdf/ecommerce-les-bases.pdf` | ~35+ pages | ocean + orange ; clients, dropshipping, tendances 2026 |
 
 ## 9. Suites possibles
 

@@ -99,7 +99,4 @@
 
 ## Score
 
-- 16-18 : nickel
-- 12-15 : bien, relis exceptions + classes + JSON
-- 8-11 : refais 5, 6, 8, 11, 15
-- moins de 8 : reprends les chapitres 3 a 10 tranquillement
+16-18 : nickel. 12-15 : bien, relis exceptions + classes + JSON. 8-11 : refais 5, 6, 8, 11, 15. Moins de 8 : reprends les chapitres 3 a 10 tranquillement.

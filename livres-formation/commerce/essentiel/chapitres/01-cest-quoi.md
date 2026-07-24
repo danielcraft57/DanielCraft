@@ -25,15 +25,7 @@ Le commerce, c'est le pont entre les deux.
 
 ## Ce que tu vas savoir faire
 
-- Voir le monde cote client
-- Distinguer besoin et envie
-- Construire une offre claire
-- Comprendre prix, couts, marge
-- Choisir un canal
-- Argumenter sans blabla
-- Gerer une objection
-- Ecrire un devis simple
-- Penser un peu digital
+Dans ce livre, tu vas apprendre a voir le monde cote client, a distinguer besoin et envie, et a construire une offre claire. Tu comprendras aussi le prix, les couts et la marge, tu choisiras un canal, tu argumenteras sans blabla, et tu gereras une objection. A la fin, tu sauras ecrire un devis simple et penser un peu digital sans paniquer.
 
 ## Comment lire ce livre
 

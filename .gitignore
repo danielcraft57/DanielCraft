@@ -72,6 +72,15 @@ Previous_Versions/*
 # README téléchargés pour les projets (générés)
 src/data/readmes/*
 
+# --- Livres de formation (artefacts regenerables) ---
+# JPG d'impression : recrees par build_livre.py a partir des PNG source
+livres-formation/**/images/print/
+# Scripts temporaires de generation / raster (_gen1.py, _thicken.py, ...)
+livres-formation/**/_*.py
+# HTML assemble (regenerable) : on versionne surtout markdown + images source + PDF
+# (decommenter si tu veux alléger encore le depot)
+# livres-formation/**/livre.html
+
 # Secrets / config locales
 .env
 .env.*

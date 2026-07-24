@@ -2,17 +2,12 @@
 
 ## Structure
 
-1. Probleme (10s)
-2. Offre (15s)
-3. Preuve / concret (15s)
-4. Prix ou cadre (10s)
-5. Prochain pas (10s)
+En soixante secondes : le probleme, l'offre, une preuve ou un concret, le prix ou le cadre, puis le prochain pas.
+Garde une seule idee principale.
 
 ## Consignes
 
-- pas de jargon
-- pas de "voila quoi"
-- une seule idee principale
+Pas de jargon. Pas de "voila quoi". Une seule idee principale.
 
 ## Entrainement
 
@@ -25,12 +20,11 @@ Avec son : est-ce clair ?
 Juste apres le pitch, ton partenaire dit "c'est trop cher".
 Tu reponds avec la methode du chapitre 10.
 
-## Check
-
-3 passages. Le 3e doit etre plus court et plus clair que le 1er.
 ## Version ecrite
 
-Ecris ton pitch sur papier.
-Barre la moitie des mots.
-Relis a voix haute.
+Ecris ton pitch sur papier. Barre la moitie des mots. Relis a voix haute.
 Si ca sonne comme une pub creuse, recommence.
+
+## Check
+
+Trois passages. Le troisieme doit etre plus court et plus clair que le premier.

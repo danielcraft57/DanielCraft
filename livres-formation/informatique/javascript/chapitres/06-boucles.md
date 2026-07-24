@@ -97,17 +97,11 @@ for (let n = 1; n <= 10; n = n + 1) {
 
 ## Mini defi
 
-- Affiche les nombres pairs de 2 a 20 avec une boucle `for`
-- Fais la somme de 1 a 100 (resultat attendu : 5050)
-- Parcours un tableau de prenoms et affiche "Salut, [prenom] !"
-- Bonus : arrete la boucle si tu trouves "stop" dans la liste
+Avec une boucle `for`, affiche les nombres pairs de 2 a 20. Ensuite, fais la somme de 1 a 100 (tu dois obtenir 5050). Parcours aussi un tableau de prenoms et affiche "Salut, [prenom] !" pour chacun. En bonus, arrete la boucle si tu trouves le mot "stop" dans la liste.
 
 ## A retenir
 
-- `for` = quand tu connais le nombre de tours
-- `while` = tant qu'une condition est vraie
-- `for...of` = parcourir un tableau simplement
-- Toujours faire evoluer le compteur pour eviter l'infini
+`for`, c'est quand tu connais le nombre de tours. `while`, c'est tant qu'une condition reste vraie. `for...of` parcourt un tableau simplement. Dans tous les cas, fais evoluer ton compteur : sinon tu te retrouves avec une boucle infinie.
 
 
 ## En vrai, sur le terrain

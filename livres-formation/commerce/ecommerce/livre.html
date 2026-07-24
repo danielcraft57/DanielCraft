@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="DanielCraft">
+  <meta name="description" content="Formation debutant e-commerce">
+  <title>E-commerce - Les bases</title>
+  <style>
+:root {
+  --ink: #14221c;
+  --muted: #3d5248;
+  --paper: #f3f6f4;
+  --paper-deep: #e5eee9;
+  --band: #1a4d3e;
+  --band-soft: #266b56;
+  --accent: #c9a227;
+  --code-bg: #133028;
+  --code-fg: #e7f2ec;
+  --card: #ffffff;
+  --rule: #c5d4cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+.page {
+  width: min(100% - 2rem, 780px);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+.cover {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: 0 0 2rem;
+  border-radius: 14px;
+  color: #f4faf7;
+  background: #0f2f26;
+  overflow: hidden;
+}
+.cover-art {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.cover-copy {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: #0f2f26;
+}
+.cover-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-family: Segoe UI, Arial, sans-serif;
+  opacity: 0.85;
+}
+.cover h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0.45rem 0 0.6rem;
+  max-width: 12ch;
+  color: #f4faf7;
+}
+.cover .lead {
+  font-size: 1.05rem;
+  max-width: 38ch;
+  margin: 0;
+  opacity: 0.95;
+}
+.cover .meta {
+  margin: 1rem 0 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+.illus {
+  margin: 0.9rem 0 1rem;
+  padding: 0;
+  text-align: center;
+}
+.illus img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 520px);
+  max-height: 220px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+  object-fit: contain;
+}
+.illus.illus-wide img {
+  max-width: min(100%, 640px);
+  max-height: 260px;
+}
+.illus figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-family: Segoe UI, Arial, sans-serif;
+  line-height: 1.35;
+  text-align: left;
+}
+body.eco {
+  --paper: #ffffff;
+  --paper-deep: #f3f3f3;
+  --card: #ffffff;
+  --code-bg: #222;
+}
+body.eco pre { border-left-color: #666; }
+.toc {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.toc h2 { margin-top: 0; font-size: 1.25rem; }
+.toc ol { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+.toc li { margin: 0.2rem 0; }
+.toc a {
+  color: var(--band);
+  text-decoration: none;
+}
+.chapter {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.35rem 1.4rem;
+  margin: 0 0 1.35rem;
+}
+.chapter-num {
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--band-soft);
+  margin: 0 0 0.15rem;
+}
+h1, h2, h3 { line-height: 1.25; color: var(--band); }
+.chapter > h1 {
+  font-size: 1.45rem;
+  margin: 0.15rem 0 0.75rem;
+  color: var(--ink);
+}
+h2 { font-size: 1.12rem; margin: 1.15rem 0 0.45rem; }
+h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; color: var(--muted); }
+p { margin: 0.55rem 0; }
+ul, ol { margin: 0.45rem 0 0.7rem; padding-left: 1.25rem; }
+li { margin: 0.18rem 0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid var(--accent);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--paper-deep); }
+.qa strong { color: var(--band); }
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1.5rem 1rem 0.5rem;
+}
+@media print {
+  body {
+    background: white !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: auto; max-width: none; margin: 0; padding: 0; }
+  .cover {
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 8mm;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cover-art {
+    min-height: 0 !important;
+    max-height: 95mm !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .toc, .chapter {
+    background: transparent !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 7mm;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .toc {
+    break-after: page;
+    page-break-after: always;
+  }
+  .chapter {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .chapter.chapter-break {
+    break-before: page;
+    page-break-before: always;
+  }
+  .chapter-num, h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chapter > h1 {
+    font-size: 15pt;
+    margin: 0 0 3mm;
+  }
+  h2 { font-size: 12pt; margin: 4.5mm 0 2mm; }
+  h3 { font-size: 11pt; margin: 3.5mm 0 1.5mm; }
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  .illus {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 3mm auto 4mm;
+  }
+  .illus img {
+    max-width: 105mm !important;
+    max-height: 55mm !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .illus.illus-wide img {
+    max-width: 130mm !important;
+    max-height: 65mm !important;
+  }
+  pre {
+    break-inside: auto;
+    page-break-inside: auto;
+    white-space: pre-wrap;
+    font-size: 8.5pt;
+    border-radius: 0;
+  }
+  table { break-inside: auto; }
+  /* Ne pas tuer les liens du sommaire a l'impression */
+  a { color: inherit; text-decoration: none; }
+  .toc a {
+    color: var(--band) !important;
+    text-decoration: underline !important;
+  }
+  .footer-note { break-before: avoid; }
+}
+@page {
+  size: A4;
+  margin: 14mm 14mm 18mm;
+}
+
+.toc-sub {
+  list-style: disc;
+  margin: 0.15rem 0 0.55rem 0.2rem;
+  padding-left: 1.1rem;
+}
+.toc-sub li { margin: 0.12rem 0; font-size: 0.92em; }
+.toc a { color: var(--band); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.code-block { margin: 0.65rem 0 0.9rem; }
+.keep-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+@media print {
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+  .toc a {
+    color: var(--band) !important;
+    text-decoration: underline !important;
+  }
+  .chapter {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    margin: 0 0 6mm !important;
+  }
+  .toc {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+  h1, h2, h3, .chapter-num {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    break-inside: avoid !important;
+  }
+  h2 + p, h2 + ul, h2 + ol, h2 + .code-block, h2 + .illus,
+  h3 + p, h3 + ul, h3 + ol, h3 + .code-block,
+  .chapter-num + h1, h1 + p, h1 + .illus, h1 + .code-block {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+  .keep-block, .illus, .table-wrap {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .code-long {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .code-long pre {
+    break-inside: auto !important;
+  }
+  pre {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+  }
+  p, li {
+    orphans: 4;
+    widows: 4;
+  }
+}
+
+/* Theme E-commerce : ocean + orange doux */
+:root {
+  --ink: #12263a;
+  --muted: #5b6b7c;
+  --paper: #f2f6fa;
+  --paper-deep: #e2eaf2;
+  --band: #0d3b66;
+  --band-soft: #1b5a8a;
+  --accent: #f4a261;
+  --code-bg: #0b2945;
+  --code-fg: #f7f1e8;
+  --card: #ffffff;
+  --rule: #c8d5e2;
+}
+.cover,
+.cover-copy {
+  background: #0d3b66 !important;
+  color: #f7f1e8 !important;
+}
+.cover h1 { color: #f7f1e8 !important; }
+pre {
+  border-left-color: #f4a261 !important;
+}
+button, .btn-like {
+  background: #0d3b66;
+}
+@media print {
+  .toc a { color: #0d3b66 !important; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="cover">
+      <img class="cover-art" src="images/print/ecommerce-couverture.jpg" alt="Couverture E-commerce">
+      <div class="cover-copy">
+        <div class="cover-kicker">Formation e-commerce</div>
+        <h1>E-commerce</h1>
+        <p class="lead">Trouver des clients, comprendre le dropshipping, et suivre les tendances sans se faire avoir.</p>
+        <p class="meta">DanielCraft - Livre debutant</p>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Sommaire">
+      <h2 id="sommaire">Sommaire</h2>
+      <p class="toc-help">Clique un chapitre ou un sous-chapitre pour y aller.</p>
+      <ol>
+        <li><a href="#chapitre-01">Chapitre 1 - Salut, c&#x27;est quoi l&#x27;e-commerce ?</a><ol class="toc-sub"><li><a href="#chapitre-01--ce-que-tu-vas-voir-dans-ce-livre">Ce que tu vas voir dans ce livre</a></li><li><a href="#chapitre-01--petite-image-mentale">Petite image mentale</a></li></ol></li><li><a href="#chapitre-02">Chapitre 2 - Boutique propre ou marketplace ?</a><ol class="toc-sub"><li><a href="#chapitre-02--question-utile">Question utile</a></li><li><a href="#chapitre-02--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-03">Chapitre 3 - Comment trouver des clients</a><ol class="toc-sub"><li><a href="#chapitre-03--une-methode-simple">Une methode simple</a></li><li><a href="#chapitre-03--signes-que-ca-marche">Signes que ca marche</a></li><li><a href="#chapitre-03--a-toi">A toi</a></li><li><a href="#chapitre-03--exemple-de-plan-30-jours">Exemple de plan 30 jours</a></li></ol></li><li><a href="#chapitre-04">Chapitre 4 - Etre trouve sans tout payer (SEO et contenu)</a><ol class="toc-sub"><li><a href="#chapitre-04--patience">Patience</a></li><li><a href="#chapitre-04--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-05">Chapitre 5 - Les pubs (Meta, TikTok, Google)</a><ol class="toc-sub"><li><a href="#chapitre-05--regle-de-survie">Regle de survie</a></li><li><a href="#chapitre-05--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-06">Chapitre 6 - Social commerce et live shopping</a><ol class="toc-sub"><li><a href="#chapitre-06--attention">Attention</a></li><li><a href="#chapitre-06--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-07">Chapitre 7 - Confiance, emails, et clients qui reviennent</a><ol class="toc-sub"><li><a href="#chapitre-07--fidelisation-legere">Fidélisation legere</a></li><li><a href="#chapitre-07--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-08">Chapitre 8 - Dropshipping : c&#x27;est quoi ?</a><ol class="toc-sub"><li><a href="#chapitre-08--image-mentale">Image mentale</a></li><li><a href="#chapitre-08--comment-ca-se-passe-concretement">Comment ca se passe concrètement</a></li><li><a href="#chapitre-08--pour-qui-ca-peut-marcher">Pour qui ca peut marcher</a></li><li><a href="#chapitre-08--pour-qui-ca-casse-vite">Pour qui ca casse vite</a></li></ol></li><li><a href="#chapitre-09">Chapitre 9 - Dropshipping en 2026 : la vraie photo</a><ol class="toc-sub"><li><a href="#chapitre-09--questions-a-se-poser-avant">Questions a se poser avant</a></li><li><a href="#chapitre-09--a-toi">A toi</a></li><li><a href="#chapitre-09--ce-qui-marche-encore-souvent">Ce qui marche encore (souvent)</a></li><li><a href="#chapitre-09--piege-formation-miracle">Piege formation miracle</a></li></ol></li><li><a href="#chapitre-10">Chapitre 10 - Choisir un fournisseur (sans naivete)</a><ol class="toc-sub"><li><a href="#chapitre-10--checklist-mentale-en-phrases">Checklist mentale (en phrases)</a></li><li><a href="#chapitre-10--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-11">Chapitre 11 - Livraison, relais, retours</a><ol class="toc-sub"><li><a href="#chapitre-11--promesse-vs-realite">Promesse vs realite</a></li><li><a href="#chapitre-11--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-12">Chapitre 12 - Transformer un visiteur en acheteur</a><ol class="toc-sub"><li><a href="#chapitre-12--preuves-utiles">Preuves utiles</a></li><li><a href="#chapitre-12--a-toi">A toi</a></li><li><a href="#chapitre-12--micro-preuves-qui-rassurent">Micro-preuves qui rassurent</a></li></ol></li><li><a href="#chapitre-13">Chapitre 13 - Tendances 2026 (sans panique)</a><ol class="toc-sub"><li><a href="#chapitre-13--social-commerce-mature">Social commerce mature</a></li><li><a href="#chapitre-13--ia-partout-et-commerce-agentique">IA partout (et commerce &quot;agentique&quot;)</a></li><li><a href="#chapitre-13--livraison-rapide-et-locale">Livraison rapide et locale</a></li><li><a href="#chapitre-13--omnicanal-leger">Omnicanal leger</a></li><li><a href="#chapitre-13--contenu-createur-et-ugc">Contenu createur et UGC</a></li><li><a href="#chapitre-13--rentabilite-croissance-a-tout-prix">Rentabilite &gt; croissance a tout prix</a></li><li><a href="#chapitre-13--a-toi">A toi</a></li><li><a href="#chapitre-13--recherche-visuelle-et-vocale-apercu">Recherche visuelle et vocale (aperçu)</a></li><li><a href="#chapitre-13--post-achat-nouveau-marketing">Post-achat = nouveau marketing</a></li><li><a href="#chapitre-13--durable-et-transparent-sans-greenwashing">Durable et transparent (sans greenwashing)</a></li><li><a href="#chapitre-13--mobile-d-abord">Mobile d&#x27;abord</a></li></ol></li><li><a href="#chapitre-14">Chapitre 14 - Mini-projet : une offre en ligne testable</a><ol class="toc-sub"><li><a href="#chapitre-14--critere-de-reussite">Critere de reussite</a></li><li><a href="#chapitre-14--critere-de-reussite">Critere de reussite</a></li></ol></li><li><a href="#chapitre-15">Chapitre 15 - Ce qu&#x27;il faut retenir</a></li><li><a href="#chapitre-16">Chapitre 16 - Print on demand et marque propre</a><ol class="toc-sub"><li><a href="#chapitre-16--a-toi">A toi</a></li><li><a href="#chapitre-16--marque-propre-meme-petite">Marque propre, meme petite</a></li></ol></li><li><a href="#chapitre-17">Chapitre 17 - Atelier : choisir une niche sans se mentir</a><ol class="toc-sub"><li><a href="#chapitre-17--livrable">Livrable</a></li></ol></li><li><a href="#chapitre-18">Chapitre 18 - Atelier : plan d&#x27;acquisition 30 jours</a><ol class="toc-sub"><li><a href="#chapitre-18--livrable">Livrable</a></li></ol></li><li><a href="#chapitre-19">Chapitre 19 - Atelier : fiche produit qui convertit</a><ol class="toc-sub"><li><a href="#chapitre-19--livrable">Livrable</a></li></ol></li><li><a href="#chapitre-20">Quiz final - Teste-toi !</a><ol class="toc-sub"><li><a href="#chapitre-20--reponses">Reponses</a></li><li><a href="#chapitre-20--score">Score</a></li></ol></li><li><a href="#chapitre-21">Bravo.</a><ol class="toc-sub"><li><a href="#chapitre-21--mission">Mission</a></li><li><a href="#chapitre-21--rituel-mensuel">Rituel mensuel</a></li></ol></li>
+      </ol>
+    </nav>
+
+    <article class="chapter chapter-break" id="chapitre-01"><div class="chapter-num">Chapitre 1</div><h1 id="chapitre-01--chapitre-1-salut-c-est-quoi-l-e-commerce">Chapitre 1 - Salut, c&#x27;est quoi l&#x27;e-commerce ?</h1>
+<figure class="illus illus-wide"><img src="images/print/ecommerce-idee.jpg" alt="Vendre en ligne, c&#x27;est une boutique qui ne ferme pas a 19h."><figcaption>Vendre en ligne, c&#x27;est une boutique qui ne ferme pas a 19h.</figcaption></figure>
+<p>L&#x27;e-commerce, c&#x27;est vendre a distance avec internet au milieu.</p>
+<p>Le client decouvre, compare, paie, puis recoit (chez lui, en relais, ou en click and collect).</p>
+<p>Toi, tu n&#x27;as pas forcement une boutique physique. Tu as une vitrine qui ne ferme pas a 19h.</p>
+<p>Ca peut etre une boutique sur Shopify ou WooCommerce, une page sur une marketplace, ou meme un simple lien de paiement pour commencer.</p>
+<p>Le coeur reste le meme que le commerce classique : quelqu&#x27;un a un besoin, tu proposes une solution, l&#x27;echange doit etre clair et honnete.</p>
+<h2 id="chapitre-01--ce-que-tu-vas-voir-dans-ce-livre">Ce que tu vas voir dans ce livre</h2>
+<p>On va parler de comment trouver des clients sans magie noire.</p>
+<p>On regardera le dropshipping tel qu&#x27;il est vraiment en 2026, pas la version miracle des pubs TikTok.</p>
+<p>On touchera aussi aux tendances du moment : social commerce, livraison locale, shopping aide par l&#x27;IA, print on demand, marque propre.</p>
+<p>Tu n&#x27;as pas besoin d&#x27;etre expert technique.</p>
+<p>Tu as besoin de comprendre les pieces du jeu pour ne pas te faire raconter n&#x27;importe quoi.</p>
+<h2 id="chapitre-01--petite-image-mentale">Petite image mentale</h2>
+<p>Ta boutique en ligne, c&#x27;est un magasin.</p>
+<p>Les pubs et le referencement, c&#x27;est la rue qui amene les gens.</p>
+<p>La livraison et le SAV, c&#x27;est l&#x27;experience apres la caisse.</p>
+<p>Si une piece casse, le magasin a l&#x27;air beau... mais ca ne tient pas.</p>
+<p>Allez. On pose le decor.</p></article><article class="chapter chapter-break" id="chapitre-02"><div class="chapter-num">Chapitre 2</div><h1 id="chapitre-02--chapitre-2-boutique-propre-ou-marketplace">Chapitre 2 - Boutique propre ou marketplace ?</h1>
+<figure class="illus"><img src="images/print/ecommerce-boutique.jpg" alt="Marketplace = trafic deja la. Boutique = ta marque a construire."><figcaption>Marketplace = trafic deja la. Boutique = ta marque a construire.</figcaption></figure>
+<p>Deux grandes portes existent.</p>
+<p>Sur une marketplace (Amazon, Etsy, Leboncoin selon le cas), les clients sont deja la.</p>
+<p>Tu profites du trafic. En echange, tu paies des commissions, tu suis leurs regles, et tu te bats parfois sur le prix.</p>
+<p>C&#x27;est pratique pour tester vite. C&#x27;est moins confortable pour construire une marque a toi.</p>
+<p>Sur une boutique propre, le site t&#x27;appartient davantage.</p>
+<p>Tu choisis le design, l&#x27;histoire, les emails, la facon de relancer.</p>
+<p>En contrepartie, tu dois amener les gens toi-meme : contenu, pubs, reseaux, partenariats.</p>
+<p>Beaucoup de debutants font un mix.</p>
+<p>Ils testent une offre sur une marketplace ou en organique leger, puis ils montent une boutique quand l&#x27;offre tient.</p>
+<h2 id="chapitre-02--question-utile">Question utile</h2>
+<p>Est-ce que tu veux surtout &quot;vendre un produit cette semaine&quot;, ou &quot;construire un nom que les gens retiennent&quot; ?</p>
+<p>Les deux sont valides. Ils ne demandent pas le meme rythme ni le meme budget.</p>
+<h2 id="chapitre-02--a-toi">A toi</h2>
+<p>Ecris en cinq lignes pourquoi tu pencherais boutique, marketplace, ou les deux au debut.</p></article><article class="chapter chapter-break" id="chapitre-03"><div class="chapter-num">Chapitre 3</div><h1 id="chapitre-03--chapitre-3-comment-trouver-des-clients">Chapitre 3 - Comment trouver des clients</h1>
+<figure class="illus"><img src="images/print/ecommerce-clients.jpg" alt="Organique, pub, relation : trois chemins vers le client."><figcaption>Organique, pub, relation : trois chemins vers le client.</figcaption></figure>
+<p>Trouver des clients, ce n&#x27;est pas &quot;poster et prier&quot;.</p>
+<p>C&#x27;est aller la ou les gens cherchent deja une solution, puis leur proposer un prochain pas simple.</p>
+<p>Il y a trois familles d&#x27;acquisition a retenir.</p>
+<p>La premiere, c&#x27;est l&#x27;organique.</p>
+<p>Quelqu&#x27;un tape une recherche, tombe sur ton contenu, ou te decouvre via un createur.</p>
+<p>Ca prend du temps. Ca coute moins cher en argent. Ca demande de la regularite.</p>
+<p>La deuxieme, c&#x27;est la pub payante.</p>
+<p>Tu paies pour etre vu (Meta, TikTok, Google Shopping...).</p>
+<p>Ca va plus vite si l&#x27;offre est claire. Ca peut bruler du budget si le produit, la page ou le prix sont foireux.</p>
+<p>La troisieme, c&#x27;est la relation.</p>
+<p>Bouche a oreille, partenariats, communaute, clients qui reviennent.</p>
+<p>Souvent sous-estimee. Souvent la plus solide une fois que ca demarre.</p>
+<h2 id="chapitre-03--une-methode-simple">Une methode simple</h2>
+<p>Commence par une phrase : &quot;Mon client ideal cherche ___ quand il est sur ___ .&quot;</p>
+<p>Exemple : &quot;une maman cherche un cadeau original quand elle scrolle Instagram le soir&quot;.</p>
+<p>Ensuite tu choisis UN chemin principal pendant 30 jours.</p>
+<p>Pas cinq. Un.</p>
+<h2 id="chapitre-03--signes-que-ca-marche">Signes que ca marche</h2>
+<p>Des gens posent des questions precises.</p>
+<p>Des gens cliquent jusqu&#x27;au panier.</p>
+<p>Des gens reviennent ou parlent de toi a un ami.</p>
+<p>Les vues seules ne paient pas le loyer.</p>
+<h2 id="chapitre-03--a-toi">A toi</h2>
+<p>Ecris ta phrase &quot;cherche ___ sur ___&quot;.</p>
+<p>Choisis ton canal principal pour le mois.</p>
+<h2 id="chapitre-03--exemple-de-plan-30-jours">Exemple de plan 30 jours</h2>
+<p>Semaine 1 : tu precises l&#x27;offre et la page (photos reelles, delai, prix).</p>
+<p>Semaine 2 : tu publies trois contenus utiles sur UN canal (pas dix).</p>
+<p>Semaine 3 : tu testes une petite pub avec un budget plafonne, ou tu contactes deux createurs / partenaires.</p>
+<p>Semaine 4 : tu regardes ce qui a marche, tu coupes le reste, tu doubles ce qui convertit.</p>
+<p>Ce n&#x27;est pas glamour. C&#x27;est efficace.</p>
+<p>Le but n&#x27;est pas &quot;etre viral&quot;. Le but est d&#x27;apprendre vite avec peu d&#x27;argent brule.</p></article><article class="chapter chapter-break" id="chapitre-04"><div class="chapter-num">Chapitre 4</div><h1 id="chapitre-04--chapitre-4-etre-trouve-sans-tout-payer-seo-et-contenu">Chapitre 4 - Etre trouve sans tout payer (SEO et contenu)</h1>
+<p>Le SEO, c&#x27;est aider Google (et de plus en plus d&#x27;outils IA) a comprendre que ta page repond a une vraie question.</p>
+<p>Le contenu, c&#x27;est la preuve que tu connais le sujet et que tu aides avant de vendre.</p>
+<p>Une bonne fiche produit ne dit pas seulement &quot;super qualite&quot;.</p>
+<p>Elle explique pour qui c&#x27;est, quel probleme ca regle, comment ca s&#x27;utilise, quels sont les limites, et quoi faire si ca ne convient pas.</p>
+<p>Les gens comparent. Donne-leur des raisons concretes.</p>
+<p>Les articles ou videos utiles marchent pareil.</p>
+<p>&quot;Comment choisir une gourde sans BPA&quot; attire plus qu&#x27;une pub criee.</p>
+<p>Ensuite, tu places ton offre naturellement.</p>
+<h2 id="chapitre-04--patience">Patience</h2>
+<p>Le SEO rareement explose en une semaine.</p>
+<p>C&#x27;est un jardin. Tu plantes, tu arroses, tu regardes pousser.</p>
+<p>En parallele, tu peux tester la pub pour apprendre plus vite ce qui convertit.</p>
+<h2 id="chapitre-04--a-toi">A toi</h2>
+<p>Choisis une question que ton client tape vraiment.</p>
+<p>Ecris le plan d&#x27;une page ou d&#x27;une video qui y repond en vrai, sans jargon.</p></article><article class="chapter chapter-break" id="chapitre-05"><div class="chapter-num">Chapitre 5</div><h1 id="chapitre-05--chapitre-5-les-pubs-meta-tiktok-google">Chapitre 5 - Les pubs (Meta, TikTok, Google)</h1>
+<p>La pub accelere ce qui existe deja.</p>
+<p>Si ton offre est floue, la pub te le dira... en prenant ton argent.</p>
+<p>Meta Ads et TikTok Ads montrent ton produit a des gens qui matchent un comportement ou un interet.</p>
+<p>Google Ads et Shopping attrapent les gens qui cherchent deja &quot;acheter ...&quot; .</p>
+<p>Ce n&#x27;est pas la meme intention. Un scroll curieux n&#x27;est pas une recherche d&#x27;achat.</p>
+<h2 id="chapitre-05--regle-de-survie">Regle de survie</h2>
+<p>Commence petit.</p>
+<p>Teste une accroche, une image ou video, une page.</p>
+<p>Regarde : est-ce que les gens cliquent ? Est-ce qu&#x27;ils ajoutent au panier ? Est-ce qu&#x27;ils paient ?</p>
+<p>Si personne ne clique, le creative ou le ciblage pose probleme.</p>
+<p>Si beaucoup cliquent et personne n&#x27;achete, la page, le prix ou la confiance posent probleme.</p>
+<p>Les couts publicitaires ont monte ces dernieres annees.</p>
+<p>Le &quot;je mets 5 euros et je suis riche&quot; est une legende de 2019.</p>
+<p>En 2026, il faut une offre nette, une page honnete, et un suivi simple des resultats.</p>
+<h2 id="chapitre-05--a-toi">A toi</h2>
+<p>Imagine une pub en une phrase + une image mentale.</p>
+<p>Qu&#x27;est-ce que la personne doit faire juste apres (cliquer, ecrire, ajouter au panier) ?</p></article><article class="chapter chapter-break" id="chapitre-06"><div class="chapter-num">Chapitre 6</div><h1 id="chapitre-06--chapitre-6-social-commerce-et-live-shopping">Chapitre 6 - Social commerce et live shopping</h1>
+<figure class="illus"><img src="images/print/ecommerce-social.jpg" alt="Social commerce : on achete la ou l&#x27;on scrolle."><figcaption>Social commerce : on achete la ou l&#x27;on scrolle.</figcaption></figure>
+<p>Le social commerce, c&#x27;est acheter la ou on scrolle deja.</p>
+<p>TikTok Shop, lives Instagram, videos qui montrent le produit en vrai : le parcours se raccourcit.</p>
+<p>On decouvre, on croit, on achete, parfois dans la meme session.</p>
+<p>Les createurs comptent beaucoup.</p>
+<p>Une video un peu imparfaite mais vraie convertit souvent mieux qu&#x27;une pub studio trop lisse.</p>
+<p>Les gens veulent voir le produit dans une vraie vie, avec les defauts assumes.</p>
+<p>Le live shopping fonctionne comme un stand de marche filme.</p>
+<p>Tu montres, tu reponds aux questions, tu crees un peu d&#x27;urgence honnete (stock, promo limitee), tu guides vers l&#x27;achat.</p>
+<p>Ce n&#x27;est pas obligatoire tous les jours. Une regularite realiste bat le burn-out.</p>
+<h2 id="chapitre-06--attention">Attention</h2>
+<p>Le social commerce ne remplace pas la logistique ni le SAV.</p>
+<p>Si tu vends vite et que tu livres mal, les avis te rattrapent encore plus vite.</p>
+<h2 id="chapitre-06--a-toi">A toi</h2>
+<p>Decris une video de 20 secondes qui montre ton produit en situation, sans slogans vides.</p></article><article class="chapter chapter-break" id="chapitre-07"><div class="chapter-num">Chapitre 7</div><h1 id="chapitre-07--chapitre-7-confiance-emails-et-clients-qui-reviennent">Chapitre 7 - Confiance, emails, et clients qui reviennent</h1>
+<p>En ligne, on ne te serre pas la main.</p>
+<p>La confiance se construit avec des preuves : photos reelles, avis, delais clairs, retours simples, reponses humaines.</p>
+<p>L&#x27;email (ou le message) reste un outil puissant une fois que quelqu&#x27;un t&#x27;a laisse un contact.</p>
+<p>Tu peux confirmer une commande, rassurer sur l&#x27;envoi, proposer un soin du produit, puis plus tard une suite utile.</p>
+<p>Pas dix promos agressives par semaine. De l&#x27;aide, du rythme, du respect.</p>
+<p>Les retours faciles rassurent beaucoup d&#x27;acheteurs francais, meme s&#x27;ils ne retournent pas souvent.</p>
+<p>Dire clairement &quot;tu as X jours, voici comment&quot; baisse la peur avant le paiement.</p>
+<h2 id="chapitre-07--fidelisation-legere">Fidélisation legere</h2>
+<p>Un petit merci.</p>
+<p>Un suivi &quot;ca s&#x27;est bien passe ?&quot;.</p>
+<p>Une offre de second achat coherente, pas une brader permanente qui casse ta marge.</p>
+<h2 id="chapitre-07--a-toi">A toi</h2>
+<p>Ecris le mail de confirmation de commande ideal en six phrases max : clair, rassurant, humain.</p></article><article class="chapter chapter-break" id="chapitre-08"><div class="chapter-num">Chapitre 8</div><h1 id="chapitre-08--chapitre-8-dropshipping-c-est-quoi">Chapitre 8 - Dropshipping : c&#x27;est quoi ?</h1>
+<figure class="illus"><img src="images/print/ecommerce-dropshipping.jpg" alt="Dropshipping : tu vends, le fournisseur envoie."><figcaption>Dropshipping : tu vends, le fournisseur envoie.</figcaption></figure>
+<p>Le dropshipping, c&#x27;est un modele ou tu vends un produit sans le stocker toi-meme.</p>
+<p>Quand un client paie chez toi, tu transmets la commande a un fournisseur qui envoie le colis.</p>
+<p>L&#x27;avantage apparent saute aux yeux : moins de stock, moins de local, demarrage plus leger.</p>
+<p>La contrepartie est dure : tu depends du fournisseur pour la qualite, les delais, et une partie du SAV.</p>
+<p>Tu gardes la responsabilite face au client. C&#x27;est ton nom sur la boutique.</p>
+<h2 id="chapitre-08--image-mentale">Image mentale</h2>
+<p>Tu tiens la vitrine et la caisse.</p>
+<p>L&#x27;entrepot est ailleurs.</p>
+<p>Si l&#x27;entrepot rate, c&#x27;est toi que le client contacte.</p>
+<p>Ce modele n&#x27;est ni &quot;arnaque&quot; ni &quot;argent magique&quot;.</p>
+<p>C&#x27;est un outil. Bien utilise, il permet de tester.</p>
+<p>Mal utilise, il brule du budget pub et de la reputation.</p>
+<h2 id="chapitre-08--comment-ca-se-passe-concretement">Comment ca se passe concrètement</h2>
+<ol>
+<li>1. Le client paie sur ta boutique</li>
+<li>2. Tu envoies la commande (souvent automatiquement) au fournisseur</li>
+<li>3. Le fournisseur prepare et expedie</li>
+<li>4. Le client recoit, et c&#x27;est toi qu&#x27;il contacte s&#x27;il y a un souci</li>
+</ol>
+<p>Tu gagnes la difference entre ton prix de vente et ce que le fournisseur te facture, moins les pubs, moins les outils, moins les retours. La marge &quot;sur le papier&quot; n&#x27;est pas la marge reelle.</p>
+<h2 id="chapitre-08--pour-qui-ca-peut-marcher">Pour qui ca peut marcher</h2>
+<p>Pour tester une niche sans investir 2000 euros de stock.</p>
+<p>Pour valider une demande avant de fabriquer ou d&#x27;importer en gros.</p>
+<p>Pour apprendre le tunnel : pub, page, panier, SAV.</p>
+<h2 id="chapitre-08--pour-qui-ca-casse-vite">Pour qui ca casse vite</h2>
+<p>Si tu promets une livraison express alors que le colis met quinze jours.</p>
+<p>Si tu vends le meme gadget que cinquante autres pubs TikTok.</p>
+<p>Si tu ne commandes jamais d&#x27;echantillon et tu decouvres la qualite avec les avis a une etoile.</p></article><article class="chapter chapter-break" id="chapitre-09"><div class="chapter-num">Chapitre 9</div><h1 id="chapitre-09--chapitre-9-dropshipping-en-2026-la-vraie-photo">Chapitre 9 - Dropshipping en 2026 : la vraie photo</h1>
+<p>Le dropshipping &quot;gadget AliExpress + pub TikTok&quot; des annees 2018-2021 est largement use.</p>
+<p>Les niches evidentes sont saturees.</p>
+<p>Les couts de pub ont grimpe.</p>
+<p>Les clients francais tolerent mal deux ou trois semaines de livraison.</p>
+<p>Les regles (TVA, info consommateur, mediations) sont plus serrees qu&#x27;avant.</p>
+<p>Ce qui reste interessant, c&#x27;est souvent un dropshipping plus serieux.</p>
+<p>Fournisseurs europeens, delais de quelques jours, produits avec vraie valeur percue, branding soigne, niche precise.</p>
+<p>Parfois une marque propre hybride : tu testes en dropship, puis tu stocks ce qui marche.</p>
+<p>Les formateurs qui promettent &quot;10k en 30 jours sans effort&quot; vendent surtout... leur formation.</p>
+<p>Toi, tu construis un commerce. Compte plutot en mois d&#x27;apprentissage, pas en week-end miracle.</p>
+<h2 id="chapitre-09--questions-a-se-poser-avant">Questions a se poser avant</h2>
+<p>Est-ce que je peux expliquer le delai sans mentir ?</p>
+<p>Est-ce que je peux gerer un retour ?</p>
+<p>Est-ce que ma marge tient apres pub + commission + SAV ?</p>
+<p>Si trois non, ce n&#x27;est pas pret.</p>
+<h2 id="chapitre-09--a-toi">A toi</h2>
+<p>Ecris noir sur blanc : delai promis, marge visee, et ce que tu feras si un colis est perdu.</p>
+<h2 id="chapitre-09--ce-qui-marche-encore-souvent">Ce qui marche encore (souvent)</h2>
+<p>Des produits utiles dans une niche etroite, avec une histoire claire.</p>
+<p>Des fournisseurs proches (Europe) ou un print on demand mieux controle.</p>
+<p>Une page honnete sur les delais.</p>
+<p>Un SAV qui repond vraiment.</p>
+<p>Un branding minimal mais coherent (nom, photos, ton).</p>
+<p>Les agents IA et les comparateurs rendent le &quot;meme produit partout&quot; encore plus visible.</p>
+<p>Si ton seul argument est le prix le plus bas sur un objet anonyme, tu joues contre des machines et des geants. Mauvaise partie.</p>
+<h2 id="chapitre-09--piege-formation-miracle">Piege formation miracle</h2>
+<p>Beaucoup de contenus gratuits ou payants vendent un reve : lifestyle, captures d&#x27;ecran, &quot;methode secrete&quot;.</p>
+<p>Garde la tete froide. Demande les chiffres apres pub, apres retours, apres outils.</p>
+<p>Si personne ne parle de marge nette, ce n&#x27;est pas une formation. C&#x27;est une publicite.</p></article><article class="chapter chapter-break" id="chapitre-10"><div class="chapter-num">Chapitre 10</div><h1 id="chapitre-10--chapitre-10-choisir-un-fournisseur-sans-naivete">Chapitre 10 - Choisir un fournisseur (sans naivete)</h1>
+<p>Un bon fournisseur livre dans les delais annonces, repond, et tient une qualite stable.</p>
+<p>Un mauvais fournisseur te fait briller deux semaines, puis detruit tes avis.</p>
+<p>Pour un marche francais, beaucoup d&#x27;acteurs serieux regardent des stocks europeens ou des solutions de print on demand plus controlables.</p>
+<p>L&#x27;idee n&#x27;est pas de citer une marque comme seule verite. L&#x27;idee est de tester : commande toi-meme un echantillon, chronometre le delai, juge l&#x27;emballage, ecris au support.</p>
+<h2 id="chapitre-10--checklist-mentale-en-phrases">Checklist mentale (en phrases)</h2>
+<p>Tu verifies le delai reel vers la France.</p>
+<p>Tu regardes qui apparait comme expediteur sur le colis.</p>
+<p>Tu lis comment les litiges sont geres.</p>
+<p>Tu calcules le prix revient + livraison + marge apres pub.</p>
+<p>Si le fournisseur refuse un echantillon ou fuit les questions simples, ce n&#x27;est pas un partenaire. C&#x27;est un risque.</p>
+<h2 id="chapitre-10--a-toi">A toi</h2>
+<p>Imagine trois questions precises que tu poserais a un fournisseur avant de vendre son produit.</p></article><article class="chapter chapter-break" id="chapitre-11"><div class="chapter-num">Chapitre 11</div><h1 id="chapitre-11--chapitre-11-livraison-relais-retours">Chapitre 11 - Livraison, relais, retours</h1>
+<p>La logistique decide une grosse partie de la satisfaction.</p>
+<p>Les acheteurs europeens veulent choisir : domicile, point relais, parfois casier.</p>
+<p>En France, proposer plusieurs options aide clairement a finaliser l&#x27;achat.</p>
+<p>Le click and collect et le retrait local montent aussi.</p>
+<p>Ce n&#x27;est pas reserve aux geants. Meme un petit vendeur peut s&#x27;organiser avec un point de remise simple si ca colle a son offre.</p>
+<p>Les retours doivent etre expliques avant le paiement.</p>
+<p>Un retour &quot;possible mais vague&quot; fait peur.</p>
+<p>Un retour &quot;clair, cadre, honnete&quot; rassure.</p>
+<h2 id="chapitre-11--promesse-vs-realite">Promesse vs realite</h2>
+<p>Ne promets pas 48h si ton fournisseur met sept jours.</p>
+<p>Mieux vaut un delai vrai et tenu qu&#x27;un delai sexy et rate.</p>
+<h2 id="chapitre-11--a-toi">A toi</h2>
+<p>Redige la phrase livraison de ta fiche produit : options + delai + que faire si probleme.</p></article><article class="chapter chapter-break" id="chapitre-12"><div class="chapter-num">Chapitre 12</div><h1 id="chapitre-12--chapitre-12-transformer-un-visiteur-en-acheteur">Chapitre 12 - Transformer un visiteur en acheteur</h1>
+<figure class="illus"><img src="images/print/ecommerce-conversion.jpg" alt="Voir, comprendre, croire, payer : moins de friction."><figcaption>Voir, comprendre, croire, payer : moins de friction.</figcaption></figure>
+<p>La conversion, c&#x27;est le moment ou quelqu&#x27;un passe de &quot;je regarde&quot; a &quot;je paie&quot;.</p>
+<p>Ce n&#x27;est pas un bouton magique. C&#x27;est une chaine de petites frictions en moins.</p>
+<p>La page doit repondre vite : c&#x27;est quoi, pour qui, combien, quand ca arrive, comment rendre.</p>
+<p>Les photos doivent montrer le produit en vrai, pas seulement un fond blanc parfait.</p>
+<p>Le prix doit etre visible. Les frais de port aussi, avant la derniere etape.</p>
+<p>Beaucoup d&#x27;achats meurent quand les frais apparaissent trop tard comme une mauvaise surprise.</p>
+<p>Sur mobile, tout doit etre lisible au pouce.</p>
+<p>Bouton assez grand. Formulaire court. Paiement simple.</p>
+<p>Si ta page rame, les gens partent. Ils ne t&#x27;ecriront pas pour te le dire.</p>
+<h2 id="chapitre-12--preuves-utiles">Preuves utiles</h2>
+<p>Avis, photos clients, &quot;vu a la tele&quot; seulement si c&#x27;est vrai, garanties claires.</p>
+<p>Une preuve faible inventee detruit plus qu&#x27;elle n&#x27;aide.</p>
+<h2 id="chapitre-12--a-toi">A toi</h2>
+<p>Ouvre ta fiche produit (meme fictive) et barre tout ce qui est flou.</p>
+<p>Remplace par une info concrete : taille, delai, matiere, usage, limite.</p>
+<h2 id="chapitre-12--micro-preuves-qui-rassurent">Micro-preuves qui rassurent</h2>
+<p>Une photo du produit dans une vraie main.</p>
+<p>Un avis court et date.</p>
+<p>Un delai ecrit clairement.</p>
+<p>Un paiement visible (CB, PayPal...).</p>
+<p>Une FAQ honnete (&quot;ca convient si...&quot;, &quot;ca ne convient pas si...&quot;).</p>
+<p>Chaque preuve enleve un grain de sable dans le tunnel.</p>
+<p>Trop de pop-ups, trop de compte obligatoire, trop de frais caches a la fin : ca rajoute des grains.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1 id="chapitre-13--chapitre-13-tendances-2026-sans-panique">Chapitre 13 - Tendances 2026 (sans panique)</h1>
+<figure class="illus"><img src="images/print/ecommerce-tendances.jpg" alt="IA, social, livraison, marge : les tendances 2026."><figcaption>IA, social, livraison, marge : les tendances 2026.</figcaption></figure>
+<p>Les modes changent. Les bases restent.</p>
+<p>Voici ce qui revient partout chez les observateurs du e-commerce en 2026, explique simplement.</p>
+<h2 id="chapitre-13--social-commerce-mature">Social commerce mature</h2>
+<p>Acheter dans TikTok, Instagram ou un live n&#x27;est plus un gadget.</p>
+<p>Beaucoup de gens, surtout plus jeunes, decouvrent des produits en scrollant avant d&#x27;aller sur Google.</p>
+<p>Tu n&#x27;es pas oblige d&#x27;etre partout. Mais ignorer totalement le social, c&#x27;est se couper d&#x27;un rayon entier du magasin moderne.</p>
+<h2 id="chapitre-13--ia-partout-et-commerce-agentique">IA partout (et commerce &quot;agentique&quot;)</h2>
+<p>L&#x27;IA sert a rediger, resumer, personnaliser, repondre au SAV.</p>
+<p>Plus loin, des agents IA commencent a comparer et parfois commander pour le compte d&#x27;un humain.</p>
+<p>Pour toi, ca veut dire : fiches produits claires, delais vrais, donnees propres.</p>
+<p>Un texte vague &quot;super qualite&quot; ne suffit plus si une machine (ou un humain presse) compare trois offres en dix secondes.</p>
+<h2 id="chapitre-13--livraison-rapide-et-locale">Livraison rapide et locale</h2>
+<p>Le quick commerce et les attentes de rapidite poussent vers des stocks plus proches, des relais, du click and collect.</p>
+<p>Le colis &quot;trois semaines depuis l&#x27;autre bout du monde&quot; devient plus dur a vendre, sauf niche tres speciale ou prix imbattable assume.</p>
+<h2 id="chapitre-13--omnicanal-leger">Omnicanal leger</h2>
+<p>Les gens melangent en ligne et hors ligne.</p>
+<p>Commander en ligne, retirer en point, rendre en magasin partenaire : l&#x27;hybride rassure.</p>
+<p>Meme petit, tu peux proposer une option humaine (remise en main propre locale, atelier, marche).</p>
+<h2 id="chapitre-13--contenu-createur-et-ugc">Contenu createur et UGC</h2>
+<p>Les videos &quot;personne normale qui teste&quot; convertissent souvent mieux qu&#x27;une pub lisse.</p>
+<p>Encourage les vrais retours. Montre les defauts. La confiance bat le vernis.</p>
+<h2 id="chapitre-13--rentabilite-croissance-a-tout-prix">Rentabilite &gt; croissance a tout prix</h2>
+<p>La mode &quot;bruler du cash pour grossir&quot; a laisse place a une question plus saine : est-ce que chaque vente laisse une marge apres pub, SAV, retours ?</p>
+<p>Si non, tu n&#x27;as pas un business. Tu as un hobby couteux.</p>
+<h2 id="chapitre-13--a-toi">A toi</h2>
+<p>Choisis deux tendances qui collent a ton idee, et une que tu ignores volontairement pour l&#x27;instant.</p>
+<p>Ecris pourquoi. La priorisation, c&#x27;est deja du metier.</p>
+<h2 id="chapitre-13--recherche-visuelle-et-vocale-apercu">Recherche visuelle et vocale (aperçu)</h2>
+<p>De plus en plus de gens cherchent avec une photo ou la voix.</p>
+<p>Pour toi, ca veut dire des images nettes, des titres clairs, des attributs produits remplis (taille, matiere, usage).</p>
+<p>Meme sans etre &quot;expert tech&quot;, une fiche propre aide humains et machines.</p>
+<h2 id="chapitre-13--post-achat-nouveau-marketing">Post-achat = nouveau marketing</h2>
+<p>Le moment apres le paiement decide souvent si la personne revient.</p>
+<p>Suivi de colis clair, message si retard, geste si casse : ca cree des avis et du bouche a oreille.</p>
+<p>En 2026, beaucoup d&#x27;experts disent la meme chose : la fidélisation bat la chasse permanente au nouveau client froid.</p>
+<h2 id="chapitre-13--durable-et-transparent-sans-greenwashing">Durable et transparent (sans greenwashing)</h2>
+<p>Les clients posent plus de questions sur l&#x27;origine, les emballages, la reparation.</p>
+<p>Si tu n&#x27;as pas d&#x27;info, ne invente pas. Si tu as un vrai plus (rechargeable, local, reparable), dis-le simplement avec une preuve.</p>
+<h2 id="chapitre-13--mobile-d-abord">Mobile d&#x27;abord</h2>
+<p>La majorite du scroll et une grosse part des achats passent par le telephone.</p>
+<p>Ta page doit se lire au pouce : boutons larges, texte lisible, paiement simple (Apple Pay / Google Pay quand c&#x27;est possible).</p></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-mini-projet-une-offre-en-ligne-testable">Chapitre 14 - Mini-projet : une offre en ligne testable</h1>
+<p>Tu vas poser une offre e-commerce sur une page (meme un Google Doc propre au debut).</p>
+<p>Le but n&#x27;est pas la perfection technique. C&#x27;est la clarte.</p>
+<p>Sur ta page, on doit comprendre le produit, pour qui il est, le prix, le delai, la livraison, la politique de retour, et le prochain pas (acheter, precommander, ecrire).</p>
+<p>Ajoute aussi d&#x27;ou viennent les clients au debut (un canal principal) et comment tu geres un colis perdu.</p>
+<p>Ensuite, montre la page a trois personnes hors de ta bulle.</p>
+<p>Note ce qu&#x27;elles ont compris, ce qui les freine, ce qu&#x27;elles paieraient.</p>
+<p>Ajuste une chose. Une seule. Puis reteste.</p>
+<h2 id="chapitre-14--critere-de-reussite">Critere de reussite</h2>
+<p>Quelqu&#x27;un peut expliquer ton offre en trente secondes apres l&#x27;avoir lue.</p>
+<p>Si non, la page est encore floue. Pas le lecteur.</p>
+<h2 id="chapitre-14--critere-de-reussite">Critere de reussite</h2>
+<p>Une personne exterieure comprend l&#x27;offre en trente secondes.</p>
+<p>Tu sais expliquer le delai sans rougir.</p>
+<p>Tu as calcule une marge apres un cout pub imaginaire realiste.</p>
+<p>Tu as un prochain pas clair (quoi publier / qui contacter cette semaine).</p>
+<p>Si tu bloques, reviens au client et au besoin. Toujours.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Chapitre 15</div><h1 id="chapitre-15--chapitre-15-ce-qu-il-faut-retenir">Chapitre 15 - Ce qu&#x27;il faut retenir</h1>
+<p>L&#x27;e-commerce, c&#x27;est une boutique qui ne ferme pas, plus une machine a amener des gens, plus une machine a tenir les promesses apres paiement.</p>
+<p>Tu trouves des clients en organique, en pub, ou par relation. Un canal bien tenu bat cinq canaux mal soignes.</p>
+<p>Le dropshipping peut servir a tester, mais en 2026 il demande delais serieux, fournisseurs solides, et honnetete.</p>
+<p>Les tendances (social commerce, IA, livraison rapide, createurs) bougent. Ta boussole reste : offre claire, marge reelle, confiance.</p>
+<p>Si tu bloques, reviens a trois questions.</p>
+<p>Qui achete ? Pourquoi maintenant ? Est-ce que je gagne de l&#x27;argent apres les frais ?</p>
+<p>Ensuite : print on demand et marque, puis ateliers.</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Chapitre 16</div><h1 id="chapitre-16--chapitre-16-print-on-demand-et-marque-propre">Chapitre 16 - Print on demand et marque propre</h1>
+<p>Le print on demand (POD), c&#x27;est faire imprimer un produit (tee-shirt, poster, mug...) seulement quand quelqu&#x27;un commande.</p>
+<p>Tu designs. Un atelier imprime et envoie.</p>
+<p>Moins de stock. Moins de risque. Mais aussi moins de controle total sur la qualite et les marges parfois serrees.</p>
+<p>Ca marche mieux avec une vraie idee graphique ou une communaute (sport, metier, humour de niche, association).</p>
+<p>Un tee-shirt &quot;generique motivation&quot; se noie.</p>
+<p>Un design qui parle a un groupe precis a plus de chances.</p>
+<p>La marque propre, c&#x27;est aller plus loin : nom, packaging, histoire, parfois stock.</p>
+<p>Tu gagnes en controle et en marge potentielle. Tu prends aussi plus de risque.</p>
+<p>Beaucoup de parcours serieux font : tester en leger (dropship ou POD), puis industrialiser ce qui marche.</p>
+<h2 id="chapitre-16--a-toi">A toi</h2>
+<p>Decris en cinq lignes une niche + un design ou un produit que tu oserais porter toi-meme.</p>
+<p>Si tu n&#x27;oseras pas, pourquoi un client le ferait ?</p>
+<h2 id="chapitre-16--marque-propre-meme-petite">Marque propre, meme petite</h2>
+<p>Une marque, ce n&#x27;est pas un logo a 2000 euros.</p>
+<p>C&#x27;est un nom coherent, un ton reconnaissable, des photos dans le meme esprit, une promesse tenue.</p>
+<p>Le print on demand (tees, posters, objets imprimes a la commande) permet de tester une identite sans stock.</p>
+<p>Le jour ou un modele marche, tu peux passer en petite serie stockee.</p>
+<p>Le piege : 200 designs mediocres. Mieux vaut cinq idees fortes et une audience precise.</p></article><article class="chapter chapter-break" id="chapitre-17"><div class="chapter-num">Chapitre 17</div><h1 id="chapitre-17--chapitre-17-atelier-choisir-une-niche-sans-se-mentir">Chapitre 17 - Atelier : choisir une niche sans se mentir</h1>
+<p>Une niche, ce n&#x27;est pas &quot;les femmes&quot; ou &quot;le sport&quot;.</p>
+<p>C&#x27;est plus serre : &quot;cyclistes urbains qui bossent en open space et veulent un sac qui tient un laptop 15 pouces sous la pluie&quot;.</p>
+<p>Ecris trois niches candidates.</p>
+<p>Pour chacune, note un probleme precis, un endroit ou ces gens discutent deja, un concurrent visible, et une raison pour laquelle toi tu pourrais etre different (delai, design, service, local, pedagogie...).</p>
+<p>Barre celle ou tu n&#x27;as aucune envie d&#x27;apprendre pendant six mois.</p>
+<p>Garde celle ou tu peux parler aux gens sans forcer.</p>
+<h2 id="chapitre-17--livrable">Livrable</h2>
+<p>Une niche en une phrase + un produit ou offre associee en une phrase.</p></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-plan-d-acquisition-30-jours">Chapitre 18 - Atelier : plan d&#x27;acquisition 30 jours</h1>
+<p>Choisis un seul canal principal pour trente jours.</p>
+<p>Exemple : deux videos courtes par semaine, ou une campagne pub mini budget, ou un partenariat createur, ou un article SEO utile.</p>
+<p>Ecris ce que tu publies ou lances chaque semaine.</p>
+<p>Ecris le prochain pas demande au client (lien boutique, message, panier).</p>
+<p>Ecris comment tu sauras que ca marche : messages, ajouts panier, ventes, pas seulement des likes.</p>
+<p>A la fin des trente jours, tu fais un bilan honnete.</p>
+<p>Tu gardes, tu ajustes, ou tu changes de canal. Sans drama.</p>
+<h2 id="chapitre-18--livrable">Livrable</h2>
+<p>Un calendrier simple sur une page + un indicateur de succes.</p></article><article class="chapter chapter-break" id="chapitre-19"><div class="chapter-num">Chapitre 19</div><h1 id="chapitre-19--chapitre-19-atelier-fiche-produit-qui-convertit">Chapitre 19 - Atelier : fiche produit qui convertit</h1>
+<p>Prends ton produit.</p>
+<p>Ecris le titre clair (pas une poesie).</p>
+<p>Ecris le premier paragraphe pour un humain presse.</p>
+<p>Liste en phrases les infos techniques utiles.</p>
+<p>Explique le delai et les retours.</p>
+<p>Ajoute une objection frequente et ta reponse honnete.</p>
+<p>Ajoute une preuve (meme &quot;teste par moi, photo reelle&quot;).</p>
+<p>Ensuite, lis a voix haute.</p>
+<p>Si tu t&#x27;ennuies, le client aussi.</p>
+<p>Coupe le blabla. Garde le concret.</p>
+<h2 id="chapitre-19--livrable">Livrable</h2>
+<p>Une fiche produit complete, lisible en deux minutes.</p></article><article class="chapter chapter-break" id="chapitre-20"><div class="chapter-num">Quiz</div><h1 id="chapitre-20--quiz-final-teste-toi">Quiz final - Teste-toi !</h1>
+<p><strong>Q1.</strong> L&#x27;e-commerce, c&#x27;est surtout :</p>
+<ul>
+<li>A) Uniquement Amazon</li>
+<li>B) Vendre a distance via internet</li>
+<li>C) Uniquement les magasins physiques</li>
+</ul>
+<p><strong>Q2.</strong> Un canal d&#x27;acquisition &quot;organique&quot;, c&#x27;est plutot :</p>
+<ul>
+<li>A) Meta Ads uniquement</li>
+<li>B) Contenu / SEO / decouverte sans payer a chaque clic</li>
+<li>C) Un entrepot</li>
+</ul>
+<p><strong>Q3.</strong> La pub sert surtout a :</p>
+<ul>
+<li>A) Remplacer une offre floue</li>
+<li>B) Accelerer une offre deja claire</li>
+<li>C) Garantir 10k en 7 jours</li>
+</ul>
+<p><strong>Q4.</strong> Le social commerce, c&#x27;est :</p>
+<ul>
+<li>A) Acheter la ou l&#x27;on scrolle deja (lives, shops, createurs)</li>
+<li>B) Uniquement envoyer des emails</li>
+<li>C) Interdit en Europe</li>
+</ul>
+<p><strong>Q5.</strong> En dropshipping, qui envoie le colis ?</p>
+<ul>
+<li>A) Toujours toi depuis ton salon</li>
+<li>B) Le fournisseur, apres que le client ait paye chez toi</li>
+<li>C) La poste toute seule sans commande</li>
+</ul>
+<p><strong>Q6.</strong> Face au client, la responsabilite du vendeur dropship :</p>
+<ul>
+<li>A) N&#x27;existe pas</li>
+<li>B) Reste la tienne (ton nom, ton SAV)</li>
+<li>C) Est uniquement celle de TikTok</li>
+</ul>
+<p><strong>Q7.</strong> En 2026, un point faible frequent du dropshipping low-cost long delai :</p>
+<ul>
+<li>A) Trop de stock</li>
+<li>B) Clients peu patients + pubs plus cheres + concurrence</li>
+<li>C) Absence totale d&#x27;internet</li>
+</ul>
+<p><strong>Q8.</strong> Avant de vendre avec un fournisseur, le plus sage est souvent :</p>
+<ul>
+<li>A) Commander un echantillon et chronometrer</li>
+<li>B) Promettre 24h sans verifier</li>
+<li>C) Copier 50 fiches concurrentes a l&#x27;identique</li>
+</ul>
+<p><strong>Q9.</strong> Afficher les frais de port trop tard :</p>
+<ul>
+<li>A) Augmente toujours la confiance</li>
+<li>B) Fait souvent abandonner le panier</li>
+<li>C) Est obligatoire par la loi du cool</li>
+</ul>
+<p><strong>Q10.</strong> Une tendance forte citee en 2026 :</p>
+<ul>
+<li>A) Abandon total du mobile</li>
+<li>B) IA + social commerce + attentes de livraison plus rapides</li>
+<li>C) Retour exclusif au catalogue papier</li>
+</ul>
+<p><strong>Q11.</strong> Print on demand, c&#x27;est surtout :</p>
+<ul>
+<li>A) Imprimer / produire apres commande</li>
+<li>B) Acheter 10 000 pieces d&#x27;avance toujours</li>
+<li>C) Une banque</li>
+</ul>
+<p><strong>Q12.</strong> Un bon signal de conversion :</p>
+<ul>
+<li>A) Beaucoup de vues, zero question, zero panier</li>
+<li>B) Questions precises, ajouts panier, ventes</li>
+<li>C) Uniquement des emojis</li>
+</ul>
+<p><strong>Q13.</strong> &quot;Agentic commerce&quot; (idee simple) :</p>
+<ul>
+<li>A) Des agents IA qui aident a comparer / acheter</li>
+<li>B) Un type de carton</li>
+<li>C) Une taxe locale</li>
+</ul>
+<p><strong>Q14.</strong> Pour tenir dans la duree, priorise :</p>
+<ul>
+<li>A) Marge reelle apres frais</li>
+<li>B) Croissance a perte sans regarder</li>
+<li>C) Mentir sur les delais</li>
+</ul>
+<p><strong>Q15.</strong> Le prochain pas sur une page doit etre :</p>
+<ul>
+<li>A) Flou (&quot;peut-etre plus tard&quot;)</li>
+<li>B) Clair (acheter, ecrire, precommander...)</li>
+<li>C) Cache dans un PDF de 40 pages</li>
+</ul>
+<p><strong>Q16.</strong> UGC / createurs, ca aide surtout a :</p>
+<ul>
+<li>A) Remplacer toute logistique</li>
+<li>B) Creer de la confiance par du vrai</li>
+<li>C) Eviter les lois</li>
+</ul>
+<p><strong>Q17.</strong> Click and collect, c&#x27;est :</p>
+<ul>
+<li>A) Commander en ligne, retirer ailleurs / sur place</li>
+<li>B) Un virus</li>
+<li>C) Uniquement pour les multinationales</li>
+</ul>
+<p><strong>Q18.</strong> Si trois personnes ne comprennent pas ton offre :</p>
+<ul>
+<li>A) Elles ont tort</li>
+<li>B) Ta page / ton pitch est encore flou</li>
+<li>C) Il faut doubler le budget pub tout de suite</li>
+</ul>
+<h2 id="chapitre-20--reponses">Reponses</h2>
+<p>1 B, 2 B, 3 B, 4 A, 5 B, 6 B, 7 B, 8 A, 9 B, 10 B,</p>
+<p>11 A, 12 B, 13 A, 14 A, 15 B, 16 B, 17 A, 18 B</p>
+<h2 id="chapitre-20--score">Score</h2>
+<ul>
+<li>16-18 : nickel</li>
+<li>12-15 : bien, relis dropshipping + tendances + conversion</li>
+<li>8-11 : refais clients / fournisseurs / fiche produit</li>
+<li>moins de 8 : refais le mini-projet tranquillement</li>
+</ul></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
+<figure class="illus illus-wide"><img src="images/print/ecommerce-felicitations.jpg" alt="Bravo. Tu as une boussole pour vendre en ligne."><figcaption>Bravo. Tu as une boussole pour vendre en ligne.</figcaption></figure>
+<p>Tu as une boussole pour l&#x27;e-commerce.</p>
+<p>Pas une baguette magique. Une carte.</p>
+<p>Tu sais ce qu&#x27;est vendre en ligne, comment chercher des clients, ce que vaut vraiment le dropshipping en 2026, et quelles tendances regarder sans te noyer.</p>
+<p>Tu as des ateliers pour choisir une niche, poser un plan d&#x27;acquisition, et ecrire une fiche qui convertit.</p>
+<h2 id="chapitre-21--mission">Mission</h2>
+<p>Cette semaine : publie une offre testable.</p>
+<p>Montre-la a trois humains.</p>
+<p>Ajuste une chose.</p>
+<p>Mesure un vrai signal (message, panier, vente), pas seulement des likes.</p>
+<p>La suite pourra etre la technique (Shopify, pubs avancees), la marque, ou la logistique plus poussee.</p>
+<p>La, respire.</p>
+<p>Tu comprends le terrain. C&#x27;est le debut qui compte.</p>
+<h2 id="chapitre-21--rituel-mensuel">Rituel mensuel</h2>
+<p>Une fois par mois, pose-toi trois questions.</p>
+<p>Qu&#x27;est-ce qui a vraiment rapporte (ventes ou apprentissages) ?</p>
+<p>Qu&#x27;est-ce qui a brule du temps ou de l&#x27;argent sans retour ?</p>
+<p>Quelle seule chose j&#x27;ameliore le mois prochain ?</p>
+<p>L&#x27;e-commerce recompense les gens patients et lucides.</p>
+<p>Pas ceux qui changent de niche toutes les quarante-huit heures.</p></article>
+
+    <p class="footer-note">Tu as les briques. Maintenant, construis.</p>
+  </div>
+</body>
+</html>

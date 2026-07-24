@@ -72,15 +72,11 @@ L'historique reste honest. Prefere ca sur `main` partage.
 
 ## Regle d'or
 
-- Local, pas pousse : reset possible
-- Deja pousse / equipe : revert (ou discussion)
+En local, pas pousse : reset possible. Deja pousse / equipe : revert (ou discussion).
 
 ## A toi
 
-1. Modifie un fichier
-2. `stash`
-3. Verifie `status` propre
-4. `stash pop`
+Modifie un fichier. Fais `stash`. Verifie que `status` est propre. Puis `stash pop`.
 
 ## En vrai, sur le terrain
 

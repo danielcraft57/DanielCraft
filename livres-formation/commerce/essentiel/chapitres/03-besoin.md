@@ -19,35 +19,21 @@ Mais l'urgence et le budget changent.
 Les gens "embauchent" un produit pour faire un travail.
 Pas pour admirer ta brochure.
 
-Exemple :
-- ils n'achètent pas une perceuse
-- ils achètent un trou dans le mur
-- en vrai : une etagere posee
+Exemple : ils n'achetent pas une perceuse. Ils achetent un trou dans le mur.
+En vrai, ils veulent une etagere posee et un mur propre apres.
 
 ## Signaux d'urgence
 
-- delai serre
-- douleur forte (temps, argent, stress)
-- consequence claire si on attend
-
-Plus l'urgence est haute, plus la decision est rapide.
-(attention : pas d'arnaque a l'urgence fictive)
+Tu sens l'urgence quand le delai est serre, quand la douleur est forte (temps, argent, stress), et quand la consequence de rien faire est claire. Plus l'urgence est haute, plus la decision est rapide.
+Attention : pas d'arnaque a l'urgence fictive.
 
 ## Decouvrir le besoin
 
-Pose des questions ouvertes :
-- "Qu'est-ce qui t'embete le plus en ce moment ?"
-- "Si c'etait resolu, a quoi tu le verrais ?"
-- "Tu as deja essaye quoi ?"
-
-Ecoute plus que tu ne parles.
+Pose des questions ouvertes. Demande ce qui embete le plus en ce moment, a quoi on verrait que c'est resolu, et ce qui a deja ete essaye. Ecoute plus que tu ne parles.
 
 ## A toi
 
-Pour ton client du chapitre 2 :
-1. besoin principal
-2. envie secondaire
-3. niveau d'urgence (1 a 5)
+Pour ton client du chapitre 2, ecris le besoin principal, l'envie secondaire, et un niveau d'urgence de 1 a 5.
 
 ## Mini defi
 

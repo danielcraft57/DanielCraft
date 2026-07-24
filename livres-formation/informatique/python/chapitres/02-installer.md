@@ -15,13 +15,7 @@ Les deux existent. Garde celui qui repond.
 
 ## Ou ecrire le code ?
 
-Deux options debutant :
-
-1. **VS Code** (gratuit) + extension Python
-2. **IDLE** (fourni avec Python) - plus basique, mais ok
-
-Plus tard tu peux aimer PyCharm ou autre.
-Pour ce livre, VS Code ou IDLE suffisent largement.
+Deux options debutant : **VS Code** (gratuit) avec l'extension Python, ou **IDLE** (fourni avec Python), plus basique mais ok. Plus tard tu peux aimer PyCharm ou autre. Pour ce livre, VS Code ou IDLE suffisent largement.
 
 ## Fichier `.py`
 
@@ -46,9 +40,7 @@ Ou :
 py salut.py
 ```
 
-Si le terminal dit "introuvable", c'est souvent :
-- mauvais dossier (tu n'es pas au bon endroit)
-- PATH pas coche a l'install
+Si le terminal dit "introuvable", c'est souvent le mauvais dossier (tu n'es pas au bon endroit), ou le PATH pas coche a l'install.
 
 ## La console interactive
 
@@ -83,9 +75,7 @@ Mais le mot existe. Tu le reverras.
 
 ## A toi
 
-1. Verifie `python --version` (ou `py --version`)
-2. Cree le dossier + `salut.py`
-3. On ecrira dedans au chapitre suivant
+Verifie `python --version` (ou `py --version`). Cree le dossier et le fichier `salut.py`. On ecrira dedans au chapitre suivant.
 
 ## Erreur classique
 

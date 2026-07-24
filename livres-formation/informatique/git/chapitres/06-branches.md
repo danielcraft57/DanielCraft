@@ -48,9 +48,7 @@ Magique la premiere fois. Normal ensuite.
 
 ## A quoi ca sert vraiment ?
 
-- Feature en cours
-- Correction urgente sur `main` pendant que tu experimentes ailleurs
-- Essai risqué (tu peux jeter la branche)
+Tu lances une feature en cours. Tu corriges en urgence sur `main` pendant que tu experimentes ailleurs. Ou tu testes un essai risque, puis tu jettes la branche si ca ne marche pas.
 
 ## Renommer / supprimer
 
@@ -64,10 +62,7 @@ git branch -d idee-couleurs
 
 ## A toi
 
-1. Cree une branche `essai`
-2. Ajoute un fichier `essai.txt` + commit
-3. Reviens sur `main`
-4. Verifie que `essai.txt` n'est plus la (normal)
+Cree une branche `essai`. Ajoute un fichier `essai.txt` et commit. Reviens sur `main`. Verifie que `essai.txt` n'est plus la (normal).
 
 ## En vrai, sur le terrain
 

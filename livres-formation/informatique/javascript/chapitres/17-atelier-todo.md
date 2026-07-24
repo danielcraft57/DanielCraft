@@ -61,16 +61,8 @@ Dis-toi que cliquer = "c'est fait, je retire".
 
 ## Criteres
 
-- Ajout marche
-- Champ se vide apres ajout
-- Pas d'ajout vide
-- Code lisible
+L'ajout doit marcher. Le champ se vide apres chaque ajout. Tu refuses les taches vides. Et le code reste lisible. Si ces points tiennent, ton atelier est solide.
 
 ## Ce que tu pratiques ici
 
-- DOM
-- Evenements
-- Conditions
-- Creation d'elements
-
-C'est pile le coeur du JS front debutant.
+Tu touches le DOM, les evenements, les conditions et la creation d'elements. C'est pile le coeur du JavaScript front pour un debutant. Continue a jouer avec : chaque petit ajout compte.

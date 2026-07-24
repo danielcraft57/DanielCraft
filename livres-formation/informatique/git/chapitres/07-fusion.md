@@ -46,10 +46,7 @@ En local / solo, `merge` suffit pour apprendre.
 
 ## A toi
 
-1. Branche `ajout-note`
-2. Commit un fichier
-3. Merge dans `main`
-4. Regarde `log --graph --oneline`
+Cree une branche `ajout-note`. Commit un fichier. Merge dans `main`. Regarde `log --graph --oneline`.
 
 ## En vrai, sur le terrain
 

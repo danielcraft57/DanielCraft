@@ -7,12 +7,7 @@ Mais "je sais faire reagir une page". C'est deja un vrai cran.
 
 ## Ce que tu sais faire
 
-- Ecrire un script
-- Utiliser variables, conditions, boucles, fonctions
-- Manipuler listes et petits objets
-- Modifier le DOM
-- Reagir aux clics
-- Construire un mini compteur
+Tu sais ecrire un script et utiliser variables, conditions, boucles et fonctions. Tu manipules des listes et de petits objets. Tu modifies le DOM, tu reagis aux clics, et tu as construit un mini compteur. Ce n'est plus du "cours" abstrait : c'est du vrai geste.
 
 ## Petite mission
 

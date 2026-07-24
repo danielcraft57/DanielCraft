@@ -5,22 +5,11 @@ Pas un MBA. Une boussole.
 
 ## Tu sais
 
-- partir du client
-- ecrire une offre claire
-- regarder prix et marge
-- argumenter sans blabla
-- repondre a une objection
-- soigner la relation
-- poser un devis simple
-- utiliser un peu le digital sans paniquer
+Partir du client, ecrire une offre claire, regarder prix et marge, argumenter sans blabla, repondre a une objection, soigner la relation, poser un devis simple, et utiliser un peu le digital sans paniquer.
 
 ## Mission
 
-Cette semaine :
-1. Montre ton offre a 3 personnes
-2. Note leurs freins
-3. Ajuste UNE chose (pas quinze)
-4. Propose un vrai prochain pas a quelqu'un
+Cette semaine : montre ton offre a trois personnes, note leurs freins, ajuste une seule chose (pas quinze), et propose un vrai prochain pas a quelqu'un.
 
 ## Suite possible
 

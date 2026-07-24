@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f2f6fa"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0d3b66" font-weight="700">Moins de friction = plus de ventes</text>
+  <rect x="80" y="120" width="180" height="140" rx="12" fill="#1b5a8a"/>
+  <text x="170" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Voir</text>
+  <rect x="300" y="120" width="180" height="140" rx="12" fill="#0d3b66"/>
+  <text x="390" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Comprendre</text>
+  <rect x="520" y="120" width="180" height="140" rx="12" fill="#1b5a8a"/>
+  <text x="610" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Croire</text>
+  <rect x="740" y="120" width="180" height="140" rx="12" fill="#f4a261"/>
+  <text x="830" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#12263a" font-weight="700">Payer</text>
+  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5b6b7c">Prix, delai, preuves, mobile : tout compte.</text>
+</svg>

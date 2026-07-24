@@ -1,22 +1,15 @@
 # Chapitre 10 - Les objections
 
-Une objection, ce n'est pas forcément un non.
+Une objection, ce n'est pas forcement un non.
 Souvent c'est : "j'ai besoin d'etre rassure".
 
 ## Objections classiques
 
-- "C'est trop cher"
-- "Je vais reflechir"
-- "J'ai pas le temps"
-- "Je dois demander a ..."
-- "Je peux le faire moi-meme"
+Tu entendras "c'est trop cher", "je vais reflechir", "j'ai pas le temps", "je dois demander a quelqu'un", ou "je peux le faire moi-meme". Ce n'est pas une attaque. C'est souvent une frein a clarifier.
 
 ## Methode
 
-1. Accueille ("ok, je vois")
-2. Clarifie ("trop cher par rapport a quoi ?")
-3. Reponds avec un fait / une option
-4. Propose un prochain pas plus petit
+Accueille ("ok, je vois"). Clarifie ("trop cher par rapport a quoi ?"). Reponds avec un fait ou une option. Propose un prochain pas plus petit.
 
 ## Exemples
 
@@ -32,9 +25,7 @@ On a aussi une formule plus courte a X."
 
 ## Ce qu'il ne faut pas faire
 
-- contredire sèchement
-- insister 12 fois
-- brader le prix sans raison (sinon tout le monde attendra la brader)
+Contredire sechement, insister douze fois, ou brader le prix sans raison (sinon tout le monde attendra la brade). Ca casse la confiance et ta marge.
 
 ## A toi
 

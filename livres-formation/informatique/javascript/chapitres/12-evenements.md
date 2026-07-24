@@ -33,9 +33,7 @@ bouton.addEventListener("click", function () {
 
 ## Autres evenements utiles
 
-- `input` : quand on ecrit dans un champ
-- `submit` : envoi de formulaire
-- `mouseover` : souris au-dessus (moins prioritaire)
+Tu croiseras souvent `input` quand quelqu'un ecrit dans un champ, et `submit` quand un formulaire part. Il y a aussi `mouseover` quand la souris passe au-dessus, mais c'est moins prioritaire pour debuter. Commence par `click` : c'est le plus clair.
 
 ## Eviter le rechargement de formulaire
 

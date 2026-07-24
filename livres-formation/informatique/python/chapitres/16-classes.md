@@ -44,11 +44,7 @@ Pas besoin de 3 variables `score_sam`, `score_lea`...
 
 ## Methode vs fonction
 
-- Fonction : `presenter(joueur)`
-- Methode : `joueur.presenter()`
-
-Meme idee. Style different.
-Les methodes vivent avec les donnees.
+Une fonction ressemble a `presenter(joueur)`. Une methode ressemble a `joueur.presenter()`. Meme idee, style different. Les methodes vivent avec les donnees.
 
 ## __str__ (affichage joli)
 
@@ -96,11 +92,7 @@ Tu le verras dans du code recent.
 
 ## Quand utiliser une classe ?
 
-- Plusieurs donnees liees + actions dessus
-- Plusieurs "exemplaires" du meme genre (joueurs, produits, ennemis)
-
-Si c'est juste 2 fonctions et 1 variable : une fonction suffit.
-Pas besoin de classe partout.
+Quand tu as plusieurs donnees liees et des actions dessus. Ou plusieurs "exemplaires" du meme genre (joueurs, produits, ennemis). Si c'est juste 2 fonctions et 1 variable : une fonction suffit. Pas besoin de classe partout.
 
 ## A toi
 

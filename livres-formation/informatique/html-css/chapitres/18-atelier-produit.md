@@ -5,13 +5,7 @@ Comme une fiche boutique, sans boutique.
 
 ## Objectif
 
-Une page avec :
-- nom du produit
-- prix
-- courte description
-- liste d'avantages
-- bouton "Ajouter" (meme s'il ne fait rien encore)
-- joli CSS mobile-friendly
+Une page avec le nom du produit, le prix, une courte description, une liste d'avantages, et un bouton "Ajouter" (meme s'il ne fait rien encore). Le tout avec un joli CSS mobile-friendly. Une fiche claire, pas une usine a gaz.
 
 ## HTML de base
 
@@ -95,10 +89,7 @@ body {
 
 ## Criteres de qualite
 
-- Lisible sans zoomer sur telephone
-- Hierarchie claire (titre > prix > texte)
-- Pas 15 polices differentes
-- Un seul objectif : comprendre le produit
+La page doit etre lisible sans zoomer sur telephone. La hierarchie reste claire : titre, puis prix, puis texte. Pas quinze polices differentes. Et un seul objectif : comprendre le produit.
 
 ## Bonus
 

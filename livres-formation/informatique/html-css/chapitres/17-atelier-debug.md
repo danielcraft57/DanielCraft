@@ -13,18 +13,11 @@ La, on apprend a chercher sans paniquer.
 
 ## Checklist HTML
 
-- [ ] `<!DOCTYPE html>` present
-- [ ] `lang="fr"`
-- [ ] `charset` + `viewport`
-- [ ] chaque balise ouverte est fermee
-- [ ] un seul `h1` principal
+Verifie que `<!DOCTYPE html>` est present, que tu as bien `lang="fr"`, et que `charset` + `viewport` sont la. Chaque balise ouverte doit etre fermee. Et garde un seul `h1` principal.
 
 ## Checklist CSS
 
-- [ ] le `<link rel="stylesheet" href="style.css">` est bien la
-- [ ] le nom du fichier est exact (casse comprise)
-- [ ] la classe HTML match la classe CSS (`.carte` vs `carte`)
-- [ ] pas de `;` oublie a la fin d'une propriete... en vrai CSS tolere parfois, mais sois propre
+Le `<link rel="stylesheet" href="style.css">` doit etre bien la, avec le nom de fichier exact (casse comprise). La classe HTML doit matcher la classe CSS (`.carte` vs `carte`). Et sois propre sur les `;` a la fin des proprietes : CSS tolere parfois, mais autant rester propre.
 
 ## Exemple de piege classique
 

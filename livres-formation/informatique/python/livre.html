@@ -366,7 +366,7 @@ th { background: var(--paper-deep); }
   }
 }
 
-/* Theme Python : bleu encre + abricot (pas le vert des autres livres) */
+/* Theme Python : bleu encre + abricot */
 :root {
   --ink: #1a2332;
   --muted: #4a5568;
@@ -425,15 +425,7 @@ button, .btn-like {
 <p>Python la traduit.</p>
 <p>L&#x27;ordinateur execute.</p>
 <h2 id="chapitre-01--a-quoi-ca-sert">A quoi ca sert ?</h2>
-<ul>
-<li>Petits scripts utiles au quotidien</li>
-<li>Automatiser des trucs repetitifs</li>
-<li>Apprendre la logique (conditions, boucles...)</li>
-<li>Plus tard : data, IA, sites web, bots...</li>
-</ul>
-<p>Ici, on reste sur des bases solides.</p>
-<p>Puis on touche un peu a des notions plus avancees (erreurs, classes).</p>
-<p>Sans devenir un manuel de 800 pages.</p>
+<p>Tu peux ecrire de petits scripts utiles au quotidien, ou automatiser des trucs repetitifs qui te font perdre du temps. Ca t&#x27;apprend aussi la logique : conditions, boucles, et la facon de decouper un probleme. Plus tard, tu pourras aller vers la data, l&#x27;IA, les sites web ou les bots. Ici, on reste sur des bases solides. Puis on touche un peu a des notions plus avancees (erreurs, classes), sans devenir un manuel de 800 pages.</p>
 <h2 id="chapitre-01--pourquoi-commencer-par-python">Pourquoi commencer par Python ?</h2>
 <p>Parce que c&#x27;est accueillant.</p>
 <p>Moins de &quot;bruit&quot; autour.</p>
@@ -447,24 +439,9 @@ button, .btn-like {
 <p>Si le message est flou, l&#x27;ordinateur se plaint (message d&#x27;erreur).</p>
 <p>C&#x27;est normal. On apprend a lire ces messages.</p>
 <h2 id="chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</h2>
-<ul>
-<li>Ecrire et lancer un programme</li>
-<li>Variables, types, conditions, boucles</li>
-<li>Fonctions (avec parametres et return)</li>
-<li>Listes, dictionnaires, et un peu de trucs plus fins</li>
-<li>Lire / ecrire des fichiers (texte et JSON)</li>
-<li>Utiliser des modules (<code>random</code>, <code>math</code>...)</li>
-<li>Gerer des erreurs avec <code>try/except</code></li>
-<li>Creer une petite <code>class</code></li>
-<li>Faire un quiz et un jeu dans le terminal</li>
-</ul>
+<p>Tu vas ecrire et lancer un programme. Tu manipuleras variables, types, conditions et boucles. Tu ecriras des fonctions avec parametres et <code>return</code>. Tu joueras avec listes, dictionnaires, et un peu de trucs plus fins. Tu liras et ecriras des fichiers (texte et JSON). Tu utiliseras des modules comme <code>random</code> ou <code>math</code>. Tu gereras des erreurs avec <code>try/except</code>, tu creeras une petite <code>class</code>, et tu feras un quiz et un jeu dans le terminal.</p>
 <h2 id="chapitre-01--comment-lire-ce-livre">Comment lire ce livre</h2>
-<ol>
-<li>1. Lis un chapitre</li>
-<li>2. Retape les exemples a la main</li>
-<li>3. Change une valeur. Relance</li>
-<li>4. Fais le mini defi</li>
-</ol>
+<p>Lis un chapitre. Retape les exemples a la main. Change une valeur, puis relance. Fais le mini defi.</p>
 <p>Si tu copies-colles sans reflechir, ca rentre moins.</p>
 <p>Si tu tapes, ca rentre.</p>
 <h2 id="chapitre-01--mythe-a-casser">Mythe a casser</h2>
@@ -491,13 +468,7 @@ button, .btn-like {
 <p>Parfois c&#x27;est <code>py --version</code> qui marche mieux sur Windows.</p>
 <p>Les deux existent. Garde celui qui repond.</p>
 <h2 id="chapitre-02--ou-ecrire-le-code">Ou ecrire le code ?</h2>
-<p>Deux options debutant :</p>
-<ol>
-<li>1. <strong>VS Code</strong> (gratuit) + extension Python</li>
-<li>2. <strong>IDLE</strong> (fourni avec Python) - plus basique, mais ok</li>
-</ol>
-<p>Plus tard tu peux aimer PyCharm ou autre.</p>
-<p>Pour ce livre, VS Code ou IDLE suffisent largement.</p>
+<p>Deux options debutant : <strong>VS Code</strong> (gratuit) avec l&#x27;extension Python, ou <strong>IDLE</strong> (fourni avec Python), plus basique mais ok. Plus tard tu peux aimer PyCharm ou autre. Pour ce livre, VS Code ou IDLE suffisent largement.</p>
 <h2 id="chapitre-02--fichier-py">Fichier <code>.py</code></h2>
 <p>Cree un dossier <code>mes-tests-python</code>.</p>
 <p>Dedans, cree un fichier <code>salut.py</code>.</p>
@@ -509,11 +480,7 @@ button, .btn-like {
 <div class="code-block keep-block"><pre><code class="language-bash">python salut.py</code></pre></div>
 <p>Ou :</p>
 <div class="code-block keep-block"><pre><code class="language-bash">py salut.py</code></pre></div>
-<p>Si le terminal dit &quot;introuvable&quot;, c&#x27;est souvent :</p>
-<ul>
-<li>mauvais dossier (tu n&#x27;es pas au bon endroit)</li>
-<li>PATH pas coche a l&#x27;install</li>
-</ul>
+<p>Si le terminal dit &quot;introuvable&quot;, c&#x27;est souvent le mauvais dossier (tu n&#x27;es pas au bon endroit), ou le PATH pas coche a l&#x27;install.</p>
 <h2 id="chapitre-02--la-console-interactive">La console interactive</h2>
 <div class="code-block keep-block"><pre><code class="language-bash">python</code></pre></div>
 <p>Tu peux tester des lignes une par une.</p>
@@ -531,11 +498,7 @@ button, .btn-like {
 <p>Pour l&#x27;instant, tu n&#x27;en as pas besoin.</p>
 <p>Mais le mot existe. Tu le reverras.</p>
 <h2 id="chapitre-02--a-toi">A toi</h2>
-<ol>
-<li>1. Verifie <code>python --version</code> (ou <code>py --version</code>)</li>
-<li>2. Cree le dossier + <code>salut.py</code></li>
-<li>3. On ecrira dedans au chapitre suivant</li>
-</ol>
+<p>Verifie <code>python --version</code> (ou <code>py --version</code>). Cree le dossier et le fichier <code>salut.py</code>. On ecrira dedans au chapitre suivant.</p>
 <h2 id="chapitre-02--erreur-classique">Erreur classique</h2>
 <p>Tu lances <code>python salut.py</code> depuis le mauvais dossier.</p>
 <p>Le terminal dit qu&#x27;il ne trouve pas le fichier.</p>
@@ -658,13 +621,7 @@ if xp &gt;= 50:
 
 print(f&quot;Etat : niveau {niveau}, xp {xp}&quot;)</code></pre></div>
 <h2 id="chapitre-04--a-toi">A toi</h2>
-<p>Cree :</p>
-<ul>
-<li><code>prenom</code></li>
-<li><code>points</code> (commence a 0)</li>
-<li>ajoute 10 points</li>
-<li>affiche le tout avec <code>print</code> ou une f-string</li>
-</ul>
+<p>Cree une variable <code>prenom</code> et une variable <code>points</code> qui commence a 0. Ajoute 10 points, puis affiche le tout avec <code>print</code> ou une f-string.</p>
 <h2 id="chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Retape l&#x27;exemple joueur.</p>
 <p>Change le pseudo et le seuil d&#x27;xp. Relance.</p>
@@ -740,12 +697,7 @@ else:
 <p><code>elif</code> = &quot;sinon si&quot;.</p>
 <p>Tu peux en chainer plusieurs.</p>
 <h2 id="chapitre-06--comparaisons">Comparaisons</h2>
-<ul>
-<li><code>==</code> egal (valeur)</li>
-<li><code>!=</code> different</li>
-<li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
-</ul>
-<p>Attention : <code>=</code> assigne. <code>==</code> compare.</p>
+<p><code>==</code> teste l&#x27;egalite (valeur). <code>!=</code> veut dire different. Tu as aussi <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> et <code>&lt;=</code>. Attention : <code>=</code> assigne. <code>==</code> compare.</p>
 <h2 id="chapitre-06--and-or-not">and / or / not</h2>
 <div class="code-block keep-block"><pre><code class="language-python">ticket = True
 vip = False
@@ -894,12 +846,7 @@ print(somme(1, 2, 3, 4))  # 10</code></pre></div>
 <p>Tu n&#x27;es pas oblige de l&#x27;utiliser tout de suite.</p>
 <p>Mais tu le croiseras dans du vrai code.</p>
 <h2 id="chapitre-08--pourquoi-c-est-bien">Pourquoi c&#x27;est bien</h2>
-<ul>
-<li>Moins de copie</li>
-<li>Code plus clair</li>
-<li>Plus facile a corriger</li>
-<li>Tu testes une brique a la fois</li>
-</ul>
+<p>Tu copies moins. Le code devient plus clair. C&#x27;est plus facile a corriger, parce que tu testes une brique a la fois.</p>
 <h2 id="chapitre-08--exemple-complet">Exemple complet</h2>
 <div class="code-block keep-block"><pre><code class="language-python">def note_sur_20(points, total):
     if total == 0:
@@ -1038,11 +985,7 @@ print(contenu)</code></pre></div>
     for ligne in f:
         print(&quot;&gt;&quot;, ligne.strip())</code></pre></div>
 <h2 id="chapitre-11--modes-utiles">Modes utiles</h2>
-<ul>
-<li><code>&quot;w&quot;</code> : ecrire (ecrase)</li>
-<li><code>&quot;a&quot;</code> : ajouter a la fin</li>
-<li><code>&quot;r&quot;</code> : lire</li>
-</ul>
+<p>Le mode <code>&quot;w&quot;</code> ecrit (et ecrase). <code>&quot;a&quot;</code> ajoute a la fin. <code>&quot;r&quot;</code> lit seulement.</p>
 <h2 id="chapitre-11--json-plus-avance-tres-utile">JSON (plus avance, tres utile)</h2>
 <div class="code-block keep-block"><pre><code class="language-python">import json
 
@@ -1066,11 +1009,7 @@ print(p.read_text(encoding=&quot;utf-8&quot;))</code></pre></div>
 <p>Plus moderne que <code>open</code> seul pour certains cas.</p>
 <p>Les deux cohabitent.</p>
 <h2 id="chapitre-11--erreurs-classiques">Erreurs classiques</h2>
-<ul>
-<li>Mauvais dossier : fichier &quot;introuvable&quot;</li>
-<li>Oublier <code>encoding=&quot;utf-8&quot;</code> (accents foireux)</li>
-<li>Mode <code>&quot;w&quot;</code> qui ecrase sans prevenir</li>
-</ul>
+<p>Un mauvais dossier donne souvent &quot;fichier introuvable&quot;. Oublier <code>encoding=&quot;utf-8&quot;</code> foire les accents. Et le mode <code>&quot;w&quot;</code> ecrase sans prevenir.</p>
 <h2 id="chapitre-11--a-toi">A toi</h2>
 <p>Ecris ton prenom dans <code>moi.txt</code>.</p>
 <p>Relis le fichier et affiche-le.</p>
@@ -1168,12 +1107,7 @@ for item in questions:
 
 print(f&quot;Score : {score} / {len(questions)}&quot;)</code></pre></div>
 <h2 id="chapitre-13--ameliorations">Ameliorations</h2>
-<ol>
-<li>1. Melanger l&#x27;ordre avec <code>random.shuffle</code></li>
-<li>2. Sauvegarder le meilleur score dans un fichier JSON</li>
-<li>3. Ajouter 2 questions perso</li>
-<li>4. Afficher un message selon le score (bien / moyen / a revoir)</li>
-</ol>
+<p>Tu peux melanger l&#x27;ordre avec <code>random.shuffle</code>. Sauvegarde le meilleur score dans un fichier JSON. Ajoute 2 questions perso. Affiche un message selon le score (bien / moyen / a revoir).</p>
 <h2 id="chapitre-13--version-avec-shuffle-json">Version avec shuffle + JSON</h2>
 <div class="code-block code-long"><pre><code class="language-python">import json
 import random
@@ -1209,11 +1143,7 @@ if score &gt; meilleur:
 else:
     print(&quot;Record actuel :&quot;, meilleur)</code></pre></div>
 <h2 id="chapitre-13--criteres">Criteres</h2>
-<ul>
-<li>3 questions minimum (vise 5)</li>
-<li>Score affiche a la fin</li>
-<li>Comparaison souple (<code>strip</code>, <code>lower</code>)</li>
-</ul>
+<p>Vise au moins 3 questions (idealement 5). Affiche le score a la fin. Compare de facon souple avec <code>strip</code> et <code>lower</code>.</p>
 <h2 id="chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Retape la version propre sans copier-coller.</p>
 <p>Change les questions. Relance 2 fois.</p>
@@ -1221,51 +1151,15 @@ else:
 <p>Ajoute le melange + sauvegarde du record.</p></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-ce-qu-il-faut-retenir-bases">Chapitre 14 - Ce qu&#x27;il faut retenir (bases)</h1>
 <p>Tu as les bases. Ensuite : exceptions + classes, puis ateliers.</p>
 <h2 id="chapitre-14--en-une-minute">En une minute</h2>
-<ul>
-<li><code>print</code> / <code>input</code> / f-strings</li>
-<li>Variables + <code>snake_case</code></li>
-<li>Types : str, int, float, bool, None</li>
-<li><code>if</code> / <code>elif</code> / <code>else</code></li>
-<li><code>for</code> / <code>while</code> / <code>break</code> / <code>continue</code></li>
-<li>Fonctions + <code>return</code> (+ apercu <code>*args</code>)</li>
-<li>Listes (slices, comprehension), tuples, sets</li>
-<li>Dictionnaires + <code>.get</code></li>
-<li>Fichiers texte + JSON</li>
-<li><code>import</code> (math, random, json, datetime...)</li>
-</ul>
+<p>Tu as vu <code>print</code>, <code>input</code> et les f-strings. Les variables se nomment souvent en <code>snake_case</code>. Les types courants sont str, int, float, bool et None. Tu sais brancher avec <code>if</code> / <code>elif</code> / <code>else</code>, et repeter avec <code>for</code> / <code>while</code> (plus <code>break</code> et <code>continue</code>). Les fonctions renvoient avec <code>return</code> (et tu as un apercu de <code>*args</code>). Cote collections : listes (slices, comprehension), tuples, sets, et dictionnaires avec <code>.get</code>. Tu sais lire et ecrire des fichiers texte et du JSON, et importer des modules (<code>math</code>, <code>random</code>, <code>json</code>, <code>datetime</code>...).</p>
 <h2 id="chapitre-14--habitudes">Habitudes</h2>
-<ol>
-<li>1. Indentation propre (4 espaces)</li>
-<li>2. Noms clairs</li>
-<li>3. Tester souvent</li>
-<li>4. Lire les messages d&#x27;erreur</li>
-<li>5. Petites fonctions</li>
-<li>6. <code>with open(...)</code> pour les fichiers</li>
-</ol>
+<p>Garde une indentation propre (4 espaces) et des noms clairs. Teste souvent. Lis les messages d&#x27;erreur sans paniquer. Prefere des petites fonctions. Pour les fichiers, prends le reflexe <code>with open(...)</code>.</p>
 <h2 id="chapitre-14--erreurs-classiques">Erreurs classiques</h2>
-<ul>
-<li>Oublier <code>:</code> apres <code>if</code> / <code>for</code> / <code>def</code></li>
-<li>Mauvaise indentation</li>
-<li>Comparer un nombre avec un texte (<code>&quot;4&quot;</code> vs <code>4</code>)</li>
-<li>Fichier introuvable (mauvais dossier)</li>
-<li>Confondre <code>=</code> et <code>==</code></li>
-<li>Confondre <code>print</code> et <code>return</code></li>
-</ul>
+<p>On oublie souvent <code>:</code> apres <code>if</code>, <code>for</code> ou <code>def</code>. Une mauvaise indentation fait tout planter. Comparer un nombre avec un texte (<code>&quot;4&quot;</code> vs <code>4</code>) donne des resultats bizarres. Un fichier &quot;introuvable&quot;, c&#x27;est souvent le mauvais dossier. Et deux classiques : confondre <code>=</code> et <code>==</code>, ou confondre <code>print</code> et <code>return</code>.</p>
 <h2 id="chapitre-14--carte-mentale">Carte mentale</h2>
-<ol>
-<li>1. Donnees (variables, listes, dicos)</li>
-<li>2. Decisions (<code>if</code>)</li>
-<li>3. Repetitions (boucles)</li>
-<li>4. Organisation (fonctions, modules)</li>
-<li>5. Memoire (fichiers / JSON)</li>
-</ol>
+<p>D&#x27;abord les donnees (variables, listes, dicos). Puis les decisions (<code>if</code>). Ensuite les repetitions (boucles). Puis l&#x27;organisation (fonctions, modules). Enfin la memoire (fichiers / JSON).</p>
 <h2 id="chapitre-14--suite-immediate">Suite immediate</h2>
-<p>Deux chapitres un cran au-dessus :</p>
-<ul>
-<li>gerer les plantages (<code>try/except</code>)</li>
-<li>modeliser avec une <code>class</code></li>
-</ul>
-<p>Puis ateliers + quiz.</p>
+<p>Deux chapitres un cran au-dessus : gerer les plantages avec <code>try/except</code>, puis modeliser avec une <code>class</code>. Puis ateliers + quiz.</p>
 <h2 id="chapitre-14--mini-check">Mini check</h2>
 <p>Sans regarder : ecris de memoire un <code>if</code>, un <code>for</code>, une fonction avec <code>return</code>.</p>
 <p>Si ca vient, tu es pret pour la suite.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Chapitre 15</div><h1 id="chapitre-15--chapitre-15-les-exceptions-try-except">Chapitre 15 - Les exceptions (try / except)</h1>
@@ -1377,12 +1271,7 @@ for j in equipe:
 <p>Chaque joueur a son propre score.</p>
 <p>Pas besoin de 3 variables <code>score_sam</code>, <code>score_lea</code>...</p>
 <h2 id="chapitre-16--methode-vs-fonction">Methode vs fonction</h2>
-<ul>
-<li>Fonction : <code>presenter(joueur)</code></li>
-<li>Methode : <code>joueur.presenter()</code></li>
-</ul>
-<p>Meme idee. Style different.</p>
-<p>Les methodes vivent avec les donnees.</p>
+<p>Une fonction ressemble a <code>presenter(joueur)</code>. Une methode ressemble a <code>joueur.presenter()</code>. Meme idee, style different. Les methodes vivent avec les donnees.</p>
 <h2 id="chapitre-16--str-affichage-joli">__str__ (affichage joli)</h2>
 <div class="code-block keep-block"><pre><code class="language-python">class Joueur:
     def __init__(self, prenom, score=0):
@@ -1414,12 +1303,7 @@ print(p.nom, p.prix)</code></pre></div>
 <p>Python ecrit une partie du boilerplate pour toi.</p>
 <p>Tu le verras dans du code recent.</p>
 <h2 id="chapitre-16--quand-utiliser-une-classe">Quand utiliser une classe ?</h2>
-<ul>
-<li>Plusieurs donnees liees + actions dessus</li>
-<li>Plusieurs &quot;exemplaires&quot; du meme genre (joueurs, produits, ennemis)</li>
-</ul>
-<p>Si c&#x27;est juste 2 fonctions et 1 variable : une fonction suffit.</p>
-<p>Pas besoin de classe partout.</p>
+<p>Quand tu as plusieurs donnees liees et des actions dessus. Ou plusieurs &quot;exemplaires&quot; du meme genre (joueurs, produits, ennemis). Si c&#x27;est juste 2 fonctions et 1 variable : une fonction suffit. Pas besoin de classe partout.</p>
 <h2 id="chapitre-16--a-toi">A toi</h2>
 <p>Cree <code>Compte</code> avec <code>solde</code>.</p>
 <p>Methodes <code>deposer(montant)</code> et <code>retirer(montant)</code>.</p>
@@ -1452,13 +1336,7 @@ print(d[&quot;b&quot;])            # KeyError</code></pre></div>
 <h2 id="chapitre-17--filenotfounderror">FileNotFoundError</h2>
 <p>Mauvais chemin, mauvais dossier, fichier pas encore cree.</p>
 <h2 id="chapitre-17--methode">Methode</h2>
-<ol>
-<li>1. Lis la <strong>derniere</strong> ligne de l&#x27;erreur (le type)</li>
-<li>2. Va au numero de ligne</li>
-<li>3. Corrige le plus petit truc</li>
-<li>4. Relance</li>
-<li>5. Si besoin, entoure avec <code>try/except</code> (mais comprends d&#x27;abord)</li>
-</ol>
+<p>Lis d&#x27;abord la <strong>derniere</strong> ligne de l&#x27;erreur (le type). Va au numero de ligne. Corrige le plus petit truc, puis relance. Si besoin, entoure avec <code>try/except</code> - mais comprends d&#x27;abord.</p>
 <h2 id="chapitre-17--exercice-1">Exercice 1</h2>
 <p>Casse volontairement ton quiz (enleve un <code>:</code>).</p>
 <p>Lis l&#x27;erreur. Repare.</p>
@@ -1469,12 +1347,7 @@ print(d[&quot;b&quot;])            # KeyError</code></pre></div>
 <p>Ouvre un fichier qui n&#x27;existe pas.</p>
 <p>Attrape <code>FileNotFoundError</code>. Affiche un message propre.</p>
 <h2 id="chapitre-17--check-final-atelier">Check final atelier</h2>
-<p>Tu sais :</p>
-<ul>
-<li>nommer 4 types d&#x27;erreurs courants</li>
-<li>trouver la ligne fautive</li>
-<li>corriger sans tout reecrire</li>
-</ul></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-juste-prix">Chapitre 18 - Atelier : juste prix</h1>
+<p>Tu sais nommer 4 types d&#x27;erreurs courants, trouver la ligne fautive, et corriger sans tout reecrire.</p></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-juste-prix">Chapitre 18 - Atelier : juste prix</h1>
 <p>L&#x27;ordinateur choisit un nombre. Tu cherches.</p>
 <h2 id="chapitre-18--version-de-base-avec-try">Version de base (avec try)</h2>
 <div class="code-block code-long"><pre><code class="language-python">import random
@@ -1503,12 +1376,7 @@ else:
 <p>Le <code>else</code> du <code>while</code> s&#x27;execute si on ne <code>break</code> pas.</p>
 <p>Pratique pour le message de defaite.</p>
 <h2 id="chapitre-18--variantes">Variantes</h2>
-<ol>
-<li>1. Demander si on rejoue (<code>o/n</code>)</li>
-<li>2. Garder le meilleur score (moins d&#x27;essais) dans un JSON</li>
-<li>3. Difficulte : facile 1-10, normal 1-20, dur 1-50</li>
-<li>4. Version objet : classe <code>Partie</code> avec <code>secret</code>, <code>essais</code>, <code>jouer()</code></li>
-</ol>
+<p>Demande si on rejoue (<code>o/n</code>). Garde le meilleur score (moins d&#x27;essais) dans un JSON. Ajoute une difficulte : facile 1-10, normal 1-20, dur 1-50. En version objet, une classe <code>Partie</code> avec <code>secret</code>, <code>essais</code> et <code>jouer()</code>.</p>
 <h2 id="chapitre-18--version-objet-bonus">Version objet (bonus)</h2>
 <div class="code-block code-long"><pre><code class="language-python">import random
 
@@ -1538,12 +1406,7 @@ class Partie:
 if __name__ == &quot;__main__&quot;:
     Partie().jouer()</code></pre></div>
 <h2 id="chapitre-18--a-toi">A toi</h2>
-<p>Implemente au moins :</p>
-<ul>
-<li>max essais</li>
-<li>message de defaite</li>
-<li>saisie protegee (<code>try/except</code>)</li>
-</ul>
+<p>Implemente au moins un max d&#x27;essais, un message de defaite, et une saisie protegee (<code>try/except</code>).</p>
 <h2 id="chapitre-18--mini-defi">Mini defi</h2>
 <p>Ajoute le mode rejouer + sauvegarde du record.</p></article><article class="chapter chapter-break" id="chapitre-19"><div class="chapter-num">Chapitre 19</div><h1 id="chapitre-19--chapitre-19-atelier-organiser-son-code">Chapitre 19 - Atelier : organiser son code</h1>
 <p>Quand ca grandit, on coupe en fonctions (et parfois en classes).</p>
@@ -1597,23 +1460,13 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()</code></pre></div>
 <h2 id="chapitre-19--decouper-en-fichiers-idee">Decouper en fichiers (idee)</h2>
-<ul>
-<li><code>questions.py</code> : donnees ou classe <code>Question</code></li>
-<li><code>jeu.py</code> : logique</li>
-<li><code>main.py</code> : point d&#x27;entree</li>
-</ul>
-<p>Meme sur un petit projet, ca clarifie.</p>
+<p>Tu peux mettre les donnees ou la classe <code>Question</code> dans <code>questions.py</code>, la logique dans <code>jeu.py</code>, et le point d&#x27;entree dans <code>main.py</code>. Meme sur un petit projet, ca clarifie.</p>
 <h2 id="chapitre-19--regle-simple">Regle simple</h2>
 <p>Une fonction / methode = une responsabilite.</p>
 <p><code>poser</code> pose.</p>
 <p><code>main</code> organise.</p>
 <h2 id="chapitre-19--a-toi">A toi</h2>
-<p>Reprends ton quiz.</p>
-<ol>
-<li>1. Decoupe avec au moins 2 fonctions</li>
-<li>2. Bonus : passe en classe <code>Question</code></li>
-<li>3. Bonus 2 : sauve le score en JSON</li>
-</ol>
+<p>Reprends ton quiz. Decoupe avec au moins 2 fonctions. En bonus, passe en classe <code>Question</code>. En bonus 2, sauve le score en JSON.</p>
 <h2 id="chapitre-19--check">Check</h2>
 <p>Si tu rouvres le fichier dans 2 semaines et tu comprends encore :</p>
 <p>c&#x27;est bien organise.</p></article><article class="chapter chapter-break" id="chapitre-20"><div class="chapter-num">Quiz</div><h1 id="chapitre-20--quiz-final-teste-toi">Quiz final - Teste-toi !</h1>
@@ -1730,45 +1583,17 @@ if __name__ == &quot;__main__&quot;:
 <p>1 B, 2 B, 3 B, 4 A, 5 B, 6 B, 7 B, 8 B, 9 B, 10 A,</p>
 <p>11 B, 12 B, 13 B, 14 B, 15 B, 16 B, 17 A, 18 B</p>
 <h2 id="chapitre-20--score">Score</h2>
-<ul>
-<li>16-18 : nickel</li>
-<li>12-15 : bien, relis exceptions + classes + JSON</li>
-<li>8-11 : refais 5, 6, 8, 11, 15</li>
-<li>moins de 8 : reprends les chapitres 3 a 10 tranquillement</li>
-</ul></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
+<p>16-18 : nickel. 12-15 : bien, relis exceptions + classes + JSON. 8-11 : refais 5, 6, 8, 11, 15. Moins de 8 : reprends les chapitres 3 a 10 tranquillement.</p></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
 <figure class="illus"><img src="images/print/python-felicitations.jpg" alt="Bravo. Tu as les bases de Python."><figcaption>Bravo. Tu as les bases de Python.</figcaption></figure>
 <p>Tu as fini ce livre Python.</p>
 <p>Pas &quot;je connais tout&quot;.</p>
 <p>Mais &quot;je sais ecrire un programme, le faire tourner, le corriger, et le structurer&quot;. C&#x27;est deja enorme.</p>
 <h2 id="chapitre-21--ce-que-tu-sais-faire">Ce que tu sais faire</h2>
-<ul>
-<li>Installer / lancer Python</li>
-<li>Variables, types, conditions, boucles</li>
-<li>Fonctions (parametres, return, apercu *args)</li>
-<li>Listes (slices, comprehensions), dicos</li>
-<li>Fichiers texte + JSON</li>
-<li>Modules (<code>random</code>, <code>math</code>, <code>json</code>...)</li>
-<li>Exceptions (<code>try/except</code>)</li>
-<li>Une premiere <code>class</code></li>
-<li>Un quiz et un juste prix</li>
-</ul>
+<p>Tu sais installer et lancer Python. Tu manipules variables, types, conditions et boucles. Tu ecris des fonctions (parametres, return, apercu *args). Tu te debrouilles avec listes (slices, comprehensions) et dicos. Tu lis et ecris des fichiers texte et du JSON. Tu utilises des modules (<code>random</code>, <code>math</code>, <code>json</code>...). Tu geres les exceptions avec <code>try/except</code>. Tu as cree une premiere <code>class</code>. Et tu as fait un quiz et un juste prix.</p>
 <h2 id="chapitre-21--mission-finale">Mission finale</h2>
-<p>Ameliore ton juste prix en mode &quot;produit mini&quot; :</p>
-<ol>
-<li>1. max 6 essais + message de defaite</li>
-<li>2. saisie protegee</li>
-<li>3. option rejouer</li>
-<li>4. record sauve en JSON</li>
-<li>5. bonus : classe <code>Partie</code></li>
-</ol>
+<p>Ameliore ton juste prix en mode &quot;produit mini&quot;. Limite a 6 essais avec un message de defaite. Protege la saisie. Propose de rejouer. Sauve le record en JSON. En bonus, une classe <code>Partie</code>.</p>
 <h2 id="chapitre-21--la-suite-quand-tu-voudras">La suite (quand tu voudras)</h2>
-<ul>
-<li>Virtualenv + <code>pip</code></li>
-<li>Requests (parler a une API)</li>
-<li>Un peu de data (pandas) ou de web (Flask/FastAPI)</li>
-<li>Tests automatiques (<code>pytest</code>)</li>
-<li>Lire du code des autres sur GitHub</li>
-</ul>
+<p>Tu pourras explorer virtualenv et <code>pip</code>, puis Requests pour parler a une API. Un peu de data (pandas) ou de web (Flask/FastAPI). Des tests automatiques avec <code>pytest</code>. Et lire du code des autres sur GitHub.</p>
 <p>Mais la, respire.</p>
 <p>Encore bravo.</p>
 <p>Tu parles a l&#x27;ordinateur. Et maintenant, tu geres aussi quand il rale.</p></article>

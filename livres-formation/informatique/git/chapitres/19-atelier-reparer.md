@@ -49,11 +49,7 @@ Repars. Demande de l'aide. Reessaye plus tard.
 
 ## Checklist anti-stress
 
-1. `git status`
-2. `git log --oneline -5`
-3. Est-ce deja pousse ?
-4. Suis-je seul sur la branche ?
-5. Alors seulement : restore / reset / revert
+Commence par `git status`, puis `git log --oneline -5`. Demande-toi : est-ce deja pousse ? Suis-je seul sur la branche ? Alors seulement : restore / reset / revert.
 
 ## Exercice final atelier
 

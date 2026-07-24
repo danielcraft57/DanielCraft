@@ -291,7 +291,7 @@ th { background: var(--paper-deep); }
   /* Ne pas tuer les liens du sommaire a l'impression */
   a { color: inherit; text-decoration: none; }
   .toc a {
-    color: #1a4d3e !important;
+    color: var(--band) !important;
     text-decoration: underline !important;
   }
   .footer-note { break-before: avoid; }
@@ -320,8 +320,8 @@ th { background: var(--paper-deep); }
     line-height: 1.5 !important;
   }
   .toc a {
-    color: #1a4d3e !important;
-    text-decoration: none !important;
+    color: var(--band) !important;
+    text-decoration: underline !important;
   }
   .chapter {
     break-before: page !important;
@@ -400,10 +400,7 @@ th { background: var(--paper-deep); }
 <p>Tu ecris du texte special (le code).</p>
 <p>Le navigateur le transforme en page.</p>
 <h2 id="chapitre-01--html-et-css-deux-roles">HTML et CSS, deux roles</h2>
-<ul>
-<li>HTML dit : &quot;ici un titre&quot;, &quot;ici une image&quot;, &quot;ici un bouton&quot;</li>
-<li>CSS dit : &quot;ce titre est grand et bleu&quot;, &quot;cette image a des bords ronds&quot;</li>
-</ul>
+<p>Le HTML dit : &quot;ici un titre&quot;, &quot;ici une image&quot;, &quot;ici un bouton&quot;. Le CSS, lui, dit : &quot;ce titre est grand et bleu&quot;, &quot;cette image a des bords ronds&quot;.</p>
 <p>Les deux marchent ensemble. Toujours.</p>
 <h2 id="chapitre-01--pourquoi-commencer-par-ca">Pourquoi commencer par ca ?</h2>
 <p>Parce que presque tout le web repose la-dessus.</p>
@@ -411,13 +408,7 @@ th { background: var(--paper-deep); }
 <p>Tu apprendras d&#x27;autres trucs plus tard (JavaScript, etc.).</p>
 <p>Mais d&#x27;abord : les bases. Solides.</p>
 <h2 id="chapitre-01--ce-que-tu-vas-savoir-faire-a-la-fin">Ce que tu vas savoir faire a la fin</h2>
-<ul>
-<li>Creer une vraie page web</li>
-<li>Ajouter du texte, des images, des liens</li>
-<li>Changer les couleurs et les polices</li>
-<li>Ranger les blocs proprement</li>
-<li>Faire une petite page perso</li>
-</ul>
+<p>A la fin de ce livre, tu sauras creer une vraie page web. Tu pourras y mettre du texte, des images et des liens, puis changer les couleurs et les polices. Tu apprendras aussi a ranger les blocs proprement, et tu construiras une petite page perso a toi.</p>
 <p>Pas besoin d&#x27;etre un genie.</p>
 <p>Juste de la curiosite et un peu de patience.</p>
 <p>Allez, on attaque.</p>
@@ -457,21 +448,9 @@ th { background: var(--paper-deep); }
 &lt;/body&gt;
 &lt;/html&gt;</code></pre></div>
 <h2 id="chapitre-01--mini-defi">Mini defi</h2>
-<ul>
-<li>Ouvre un site que tu visites souvent</li>
-<li>Clic droit &gt; Inspecter (ou F12)</li>
-<li>Clique sur une ligne de HTML dans l&#x27;inspecteur</li>
-<li>Repere une regle CSS associee dans le panneau de droite</li>
-<li>Note une chose structuree en HTML et une chose stylée en CSS</li>
-</ul>
+<p>Ouvre un site que tu visites souvent. Fais un clic droit, puis Inspecter (ou appuie sur F12). Clique sur une ligne de HTML dans l&#x27;inspecteur, et repere une regle CSS associee dans le panneau de droite. Note une chose structuree en HTML et une chose stylee en CSS. C&#x27;est deja de la vraie lecture de code.</p>
 <h2 id="chapitre-01--a-retenir">A retenir</h2>
-<ul>
-<li>HTML = murs et pieces (structure)</li>
-<li>CSS = peinture et deco (apparence)</li>
-<li>Le navigateur transforme ton code en page visible</li>
-<li>Les deux travaillent toujours ensemble</li>
-<li>Pas besoin d&#x27;etre expert pour commencer</li>
-</ul>
+<p>HTML, c&#x27;est les murs et les pieces : la structure. CSS, c&#x27;est la peinture et la deco : l&#x27;apparence. Le navigateur transforme ton code en page visible, et les deux travaillent toujours ensemble. Pas besoin d&#x27;etre expert pour commencer.</p>
 <h2 id="chapitre-01--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
 <p>Si tu bloques, relis juste la partie qui coinçe. Puis repars.</p>
@@ -587,12 +566,7 @@ th { background: var(--paper-deep); }
 <p>Si la page a l&#x27;air cassee, regarde d&#x27;abord ca.</p>
 <p>Respire. Corrige. Rafraichis.</p>
 <h2 id="chapitre-03--mini-exo">Mini exo</h2>
-<p>Ecris une page avec :</p>
-<ul>
-<li>un titre h1</li>
-<li>deux paragraphes</li>
-<li>un mot en gras avec <code>&lt;strong&gt;</code></li>
-</ul>
+<p>Ecris une page avec un titre h1, deux paragraphes, et un mot en gras avec <code>&lt;strong&gt;</code>. Rien de plus pour l&#x27;instant.</p>
 <p>Si ca s&#x27;affiche, tu as compris l&#x27;idee des balises.</p>
 <h2 id="chapitre-03--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
@@ -611,12 +585,7 @@ th { background: var(--paper-deep); }
 <div class="code-block keep-block"><pre><code class="language-html">&lt;h1&gt;Le plus grand&lt;/h1&gt;
 &lt;h2&gt;Un cran en dessous&lt;/h2&gt;
 &lt;h3&gt;Encore un peu plus petit&lt;/h3&gt;</code></pre></div>
-<p>Regle simple :</p>
-<ul>
-<li>Un seul <code>h1</code> par page (le sujet principal)</li>
-<li>Ensuite <code>h2</code> pour les parties</li>
-<li><code>h3</code> pour les sous-parties</li>
-</ul>
+<p>Regle simple : un seul <code>h1</code> par page (le sujet principal). Ensuite tu mets des <code>h2</code> pour les parties, et des <code>h3</code> pour les sous-parties.</p>
 <p>C&#x27;est comme un plan de redaction.</p>
 <p>Ca aide aussi Google a comprendre ta page. Mais surtout : ca aide le lecteur.</p>
 <h2 id="chapitre-04--les-paragraphes">Les paragraphes</h2>
@@ -642,18 +611,9 @@ th { background: var(--paper-deep); }
 <div class="code-block keep-block"><pre><code class="language-html">&lt;!-- Ceci ne s&#x27;affiche pas sur la page --&gt;</code></pre></div>
 <p>Utile pour te laisser des notes. Ou desactiver un bout de code sans l&#x27;effacer.</p>
 <h2 id="chapitre-04--a-eviter">A eviter</h2>
-<ul>
-<li>Utiliser <code>h1</code> juste parce que &quot;c&#x27;est plus gros&quot; (utilise le CSS pour la taille)</li>
-<li>Sauter de <code>h1</code> a <code>h4</code> sans raison</li>
-<li>Des murs de texte sans retour</li>
-</ul>
+<p>N&#x27;utilise pas <code>h1</code> juste parce que &quot;c&#x27;est plus gros&quot; : la taille, c&#x27;est le job du CSS. Evite aussi de sauter de <code>h1</code> a <code>h4</code> sans raison. Et coupe les murs de texte : un lecteur a besoin de respirer.</p>
 <h2 id="chapitre-04--a-toi">A toi</h2>
-<p>Ecris une mini page &quot;Ma journee&quot; :</p>
-<ul>
-<li>h1 avec le titre</li>
-<li>3 h2 (matin, apres-midi, soir)</li>
-<li>un petit paragraphe sous chaque h2</li>
-</ul>
+<p>Ecris une mini page &quot;Ma journee&quot;. Mets un h1 avec le titre, puis trois h2 (matin, apres-midi, soir), avec un petit paragraphe sous chaque h2.</p>
 <h2 id="chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
 <p>Si tu bloques, relis juste la partie qui coinçe. Puis repars.</p>
@@ -768,12 +728,7 @@ th { background: var(--paper-deep); }
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre></div>
-<ul>
-<li><code>table</code> = le tableau</li>
-<li><code>tr</code> = une ligne</li>
-<li><code>th</code> = cellule d&#x27;en-tete</li>
-<li><code>td</code> = cellule normale</li>
-</ul>
+<p><code>table</code>, c&#x27;est le tableau. <code>tr</code>, c&#x27;est une ligne. <code>th</code>, c&#x27;est une cellule d&#x27;en-tete, et <code>td</code>, une cellule normale. Tu empiles ces balises comme des briques.</p>
 <h2 id="chapitre-06--quand-utiliser-un-tableau">Quand utiliser un tableau ?</h2>
 <p>Quand les donnees sont vraiment en lignes et colonnes.</p>
 <p>Pas pour &quot;faire un layout&quot; de page. Ca, c&#x27;est le job du CSS.</p>
@@ -833,13 +788,7 @@ th { background: var(--paper-deep); }
 <p>Plus tard tu brancheras ca a un vrai traitement (PHP, API...).</p>
 <p>La on apprend juste a construire le formulaire.</p>
 <h2 id="chapitre-07--a-toi">A toi</h2>
-<p>Fais un formulaire &quot;Contact&quot; avec :</p>
-<ul>
-<li>nom</li>
-<li>email</li>
-<li>message</li>
-<li>bouton Envoyer</li>
-</ul>
+<p>Fais un formulaire &quot;Contact&quot; avec un champ nom, un champ email, une zone message, et un bouton Envoyer. Rien de fancy : juste ces quatre pieces qui collent ensemble.</p>
 <h2 id="chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
 <p>Si tu bloques, relis juste la partie qui coinçe. Puis repars.</p>
@@ -917,13 +866,7 @@ th { background: var(--paper-deep); }
 h1 {
   color: teal;
 }</code></pre></div>
-<p>Tu peux ecrire :</p>
-<ul>
-<li>un nom (<code>red</code>, <code>teal</code>, <code>navy</code>)</li>
-<li>un code hex (<code>#ff6600</code>)</li>
-<li>du rgb (<code>rgb(255, 100, 50)</code>)</li>
-</ul>
-<p>Hex, c&#x27;est le plus courant sur le web.</p>
+<p>Tu peux ecrire un nom (<code>red</code>, <code>teal</code>, <code>navy</code>), un code hex (<code>#ff6600</code>), ou du rgb (<code>rgb(255, 100, 50)</code>). Les trois marchent. Hex, c&#x27;est le plus courant sur le web.</p>
 <p><code>#000000</code> = noir. <code>#ffffff</code> = blanc.</p>
 <p>Astuce : des outils comme un color picker t&#x27;aident a choisir. Pas besoin de retenir les codes par coeur.</p>
 <h2 id="chapitre-09--polices">Polices</h2>
@@ -936,10 +879,7 @@ h1 {
 <p>Si la premiere n&#x27;existe pas sur l&#x27;ordi, il prend la suivante.</p>
 <p><code>line-height: 1.6</code> = respirer entre les lignes. Plus agreable a lire.</p>
 <h3 id="chapitre-09--polices-safe-pour-commencer">Polices &quot;safe&quot; pour commencer</h3>
-<ul>
-<li><code>Arial, sans-serif</code> (moderne, sans empattement)</li>
-<li><code>Georgia, serif</code> (un peu plus litteraire)</li>
-</ul>
+<p>Essaie <code>Arial, sans-serif</code> si tu veux un look moderne sans empattement. Ou <code>Georgia, serif</code> si tu veux quelque chose un peu plus litteraire. Deux choix, ca suffit largement au debut.</p>
 <p>Plus tard tu pourras charger des polices web (Google Fonts, etc.). Pas obligatoire au debut.</p>
 <h2 id="chapitre-09--graisse-et-style">Graisse et style</h2>
 <div class="code-block keep-block"><pre><code class="language-css">h1 {
@@ -961,12 +901,7 @@ p  { font-size: 1rem; }</code></pre></div>
 }</code></pre></div>
 <p><code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>.</p>
 <h2 id="chapitre-09--a-toi">A toi</h2>
-<ul>
-<li>Fond doux (pas blanc crame si tu veux etre cosy)</li>
-<li>Texte sombre pour bien lire</li>
-<li>Titre colore</li>
-<li>Paragraphes un peu plus grands (16-18px minimum)</li>
-</ul>
+<p>Choisis un fond doux (pas blanc crame si tu veux etre cosy) et un texte sombre pour bien lire. Mets un titre colore, et des paragraphes un peu plus grands : vise 16 a 18px minimum. Tu vas sentir la difference tout de suite.</p>
 <h2 id="chapitre-09--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
 <p>Si tu bloques, relis juste la partie qui coinçe. Puis repars.</p>
@@ -1000,10 +935,7 @@ p  { font-size: 1rem; }</code></pre></div>
 }</code></pre></div>
 <p><code>border-radius</code> arrondit les coins. Sympa.</p>
 <h2 id="chapitre-10--margin-vs-padding-le-piege-classique">Margin vs padding (le piege classique)</h2>
-<ul>
-<li>padding = espace <em>dans</em> la boite (entre le bord et le texte)</li>
-<li>margin = espace <em>hors</em> de la boite (entre cette boite et les autres)</li>
-</ul>
+<p>Le padding, c&#x27;est l&#x27;espace <em>dans</em> la boite, entre le bord et le texte. La margin, c&#x27;est l&#x27;espace <em>hors</em> de la boite, entre cette boite et les autres.</p>
 <p>Tu te tromperas. Tout le monde se trompe. Tu corrigeras.</p>
 <h2 id="chapitre-10--largeur-et-hauteur">Largeur et hauteur</h2>
 <div class="code-block keep-block"><pre><code class="language-css">.boite {
@@ -1020,11 +952,7 @@ p  { font-size: 1rem; }</code></pre></div>
 <p>Avec <code>border-box</code>, width inclut padding et border. Plus intuitif.</p>
 <p>Mets ca presque toujours en haut de ton CSS.</p>
 <h2 id="chapitre-10--display-block-ou-inline">Display : block ou inline</h2>
-<ul>
-<li><code>block</code> : prend toute la largeur (comme <code>p</code>, <code>div</code>, <code>h1</code>)</li>
-<li><code>inline</code> : reste dans le flux du texte (comme <code>span</code>, <code>a</code> sans style)</li>
-<li><code>inline-block</code> : un mix utile parfois</li>
-</ul>
+<p>Avec <code>block</code>, l&#x27;element prend toute la largeur (comme <code>p</code>, <code>div</code>, <code>h1</code>). Avec <code>inline</code>, il reste dans le flux du texte (comme <code>span</code>, ou un <code>a</code> sans style). Et <code>inline-block</code>, c&#x27;est un mix utile parfois : tu gardes le cote &quot;dans la ligne&quot;, mais tu peux aussi mettre du padding proprement.</p>
 <div class="code-block keep-block"><pre><code class="language-css">span.badge {
   display: inline-block;
   padding: 4px 8px;
@@ -1149,19 +1077,9 @@ p  { font-size: 1rem; }</code></pre></div>
 <p>Sur mobile, les boutons trop petits c&#x27;est l&#x27;enfer.</p>
 <p>Vise une zone cliquable confortable (genre 40px+ de haut).</p>
 <h2 id="chapitre-12--teste-vraiment">Teste vraiment</h2>
-<ul>
-<li>Reduis la fenetre de ton navigateur</li>
-<li>Ou ouvre les outils developpeur (F12) et le mode telephone</li>
-<li>Ou regarde sur ton vrai telephone (en local c&#x27;est plus technique, on verra plus tard)</li>
-</ul>
+<p>Reduis la fenetre de ton navigateur et regarde ce qui se passe. Ou ouvre les outils developpeur (F12) et le mode telephone. Si tu peux, regarde aussi sur ton vrai telephone : en local c&#x27;est un peu plus technique, on verra plus tard, mais l&#x27;idee reste la meme.</p>
 <h2 id="chapitre-12--checklist-mobile">Checklist mobile</h2>
-<ul class="check">
-<li>meta viewport presente</li>
-<li>images qui ne debordent pas</li>
-<li>texte lisible sans zoomer</li>
-<li>boutons assez grands</li>
-<li>pas de scroll horizontal bizarre</li>
-</ul>
+<p>Avant de dire &quot;c&#x27;est bon&quot;, verifie que la meta viewport est presente, que les images ne debordent pas, et que le texte se lit sans zoomer. Les boutons doivent etre assez grands pour un doigt, et tu ne dois pas avoir de scroll horizontal bizarre.</p>
 <h2 id="chapitre-12--a-toi">A toi</h2>
 <p>Prends ta page et ajoute le viewport.</p>
 <p>Passe le menu en colonne sous 600px.</p>
@@ -1181,15 +1099,7 @@ p  { font-size: 1rem; }</code></pre></div>
 <figure class="illus"><img src="images/print/html-css-page-perso.jpg" alt="Le but : une petite page a toi, claire et perso."><figcaption>Le but : une petite page a toi, claire et perso.</figcaption></figure>
 <p>On assemble tout. Une page sur toi (ou un perso invente, libre a toi).</p>
 <h2 id="chapitre-13--objectif">Objectif</h2>
-<p>Une page unique <code>index.html</code> + <code>style.css</code> avec :</p>
-<ul>
-<li>un en-tete (nom + petit menu)</li>
-<li>une section &quot;A propos&quot;</li>
-<li>une section &quot;Ce que j&#x27;aime&quot; (liste)</li>
-<li>une image</li>
-<li>un petit formulaire de contact</li>
-<li>un pied de page</li>
-</ul>
+<p>Une page unique <code>index.html</code> + <code>style.css</code>. Tu y mets un en-tete avec ton nom et un petit menu, une section &quot;A propos&quot;, une section &quot;Ce que j&#x27;aime&quot; (en liste), une image, un petit formulaire de contact, et un pied de page. Une seule page, mais complete.</p>
 <h2 id="chapitre-13--structure-html-proposee">Structure HTML proposee</h2>
 <div class="code-block code-long"><pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;fr&quot;&gt;
@@ -1316,19 +1226,9 @@ button {
   .menu { flex-direction: column; align-items: center; }
 }</code></pre></div>
 <h2 id="chapitre-13--criteres-de-reussite">Criteres de reussite</h2>
-<ul>
-<li>Ca s&#x27;ouvre sans erreur visible</li>
-<li>Le menu saute aux sections (<code>#apropos</code> etc.)</li>
-<li>Lisible sur petite largeur</li>
-<li>Tes couleurs a toi (change le vert si tu veux)</li>
-</ul>
+<p>La page s&#x27;ouvre sans erreur visible. Le menu saute bien aux sections (<code>#apropos</code> et les autres). C&#x27;est lisible sur petite largeur. Et surtout : tes couleurs a toi. Change le vert si tu veux, c&#x27;est ton terrain.</p>
 <h2 id="chapitre-13--bonus">Bonus</h2>
-<ul>
-<li>Ajoute une deuxieme page <code>projets.html</code></li>
-<li>Relie-les avec des liens</li>
-<li>Mets 3 &quot;projets&quot; inventes dans une liste</li>
-</ul>
-<p>Quand c&#x27;est fait : tu as une vraie mini vitrine.</p>
+<p>Ajoute une deuxieme page <code>projets.html</code>, relie les deux avec des liens, et mets trois &quot;projets&quot; inventes dans une liste. Quand c&#x27;est fait, tu as une vraie mini vitrine.</p>
 <p>Pas parfaite. Mais a toi. C&#x27;est le plus important.</p>
 <h2 id="chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
@@ -1344,15 +1244,7 @@ button {
 <p>Garde ces notes. Elles valent plus qu&#x27;un long cours jamais relu.</p></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-ce-qu-il-faut-retenir-la-suite">Chapitre 14 - Ce qu&#x27;il faut retenir (+ la suite)</h1>
 <p>Presque au bout. Encore un quiz juste apres, puis on cloture.</p>
 <h2 id="chapitre-14--en-une-minute">En une minute</h2>
-<ul>
-<li>HTML = structure (les pieces de la maison)</li>
-<li>CSS = style (peinture et deco)</li>
-<li>Balises = etiquettes (<code>h1</code>, <code>p</code>, <code>a</code>, <code>img</code>...)</li>
-<li>CSS = selecteur + proprietes</li>
-<li>Boites = margin, border, padding, contenu</li>
-<li>Flexbox = ranger les blocs</li>
-<li>Viewport + media queries = ok sur telephone</li>
-</ul>
+<p>HTML, c&#x27;est la structure : les pieces de la maison. CSS, c&#x27;est le style : peinture et deco. Les balises, ce sont des etiquettes (<code>h1</code>, <code>p</code>, <code>a</code>, <code>img</code>...). En CSS, tu ecris un selecteur puis des proprietes. Les boites, c&#x27;est margin, border, padding, et le contenu. Flexbox sert a ranger les blocs. Et avec le viewport plus les media queries, ta page tient aussi sur telephone.</p>
 <h2 id="chapitre-14--petites-habitudes-qui-changent-tout">Petites habitudes qui changent tout</h2>
 <ol>
 <li>1. Indente ton code (lisibilite)</li>
@@ -1363,20 +1255,10 @@ button {
 <li>6. Une erreur ? Regarde la derniere chose que tu as changee</li>
 </ol>
 <h2 id="chapitre-14--erreurs-normales">Erreurs normales</h2>
-<ul>
-<li>Oublier le <code>&lt;link&gt;</code> vers le CSS</li>
-<li>Mauvais chemin d&#x27;image (<code>src</code>)</li>
-<li>Typo dans un nom de classe</li>
-<li>Oublier le viewport</li>
-</ul>
+<p>Oublier le <code>&lt;link&gt;</code> vers le CSS. Mettre un mauvais chemin d&#x27;image dans <code>src</code>. Faire une typo dans un nom de classe. Oublier le viewport. Ca arrive a tout le monde.</p>
 <p>Ca arrive a tout le monde. Le debug, c&#x27;est juste de la chasse au detail.</p>
 <h2 id="chapitre-14--la-suite-quand-tu-seras-chaud">La suite (quand tu seras chaud)</h2>
-<ul>
-<li>Un peu plus de CSS (grid, animations legeres)</li>
-<li>JavaScript pour rendre la page interactive</li>
-<li>Accessibilite (clavier, contrastes, lecteurs d&#x27;ecran)</li>
-<li>Mettre ton site en ligne</li>
-</ul>
+<p>Tu pourras pousser un peu plus le CSS (grid, animations legeres), puis passer a JavaScript pour rendre la page interactive. L&#x27;accessibilite (clavier, contrastes, lecteurs d&#x27;ecran) viendra aussi. Et un jour, tu mettras ton site en ligne.</p>
 <p>Mais d&#x27;abord : le quiz. Puis tu pourras vraiment dire &quot;c&#x27;est fait&quot;.</p>
 <h2 id="chapitre-14--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
 <p>Prends 10 minutes. Refais l&#x27;exemple du chapitre sans regarder.</p>
@@ -1401,20 +1283,9 @@ button {
 <li>5. Simplifie : commente un gros bloc, reteste</li>
 </ol>
 <h2 id="chapitre-15--checklist-html">Checklist HTML</h2>
-<ul class="check">
-<li><code>&lt;!DOCTYPE html&gt;</code> present</li>
-<li><code>lang=&quot;fr&quot;</code></li>
-<li><code>charset</code> + <code>viewport</code></li>
-<li>chaque balise ouverte est fermee</li>
-<li>un seul <code>h1</code> principal</li>
-</ul>
+<p>Verifie que <code>&lt;!DOCTYPE html&gt;</code> est present, que tu as bien <code>lang=&quot;fr&quot;</code>, et que <code>charset</code> + <code>viewport</code> sont la. Chaque balise ouverte doit etre fermee. Et garde un seul <code>h1</code> principal.</p>
 <h2 id="chapitre-15--checklist-css">Checklist CSS</h2>
-<ul class="check">
-<li>le <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code> est bien la</li>
-<li>le nom du fichier est exact (casse comprise)</li>
-<li>la classe HTML match la classe CSS (<code>.carte</code> vs <code>carte</code>)</li>
-<li>pas de <code>;</code> oublie a la fin d&#x27;une propriete... en vrai CSS tolere parfois, mais sois propre</li>
-</ul>
+<p>Le <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code> doit etre bien la, avec le nom de fichier exact (casse comprise). La classe HTML doit matcher la classe CSS (<code>.carte</code> vs <code>carte</code>). Et sois propre sur les <code>;</code> a la fin des proprietes : CSS tolere parfois, mais autant rester propre.</p>
 <h2 id="chapitre-15--exemple-de-piege-classique">Exemple de piege classique</h2>
 <div class="code-block keep-block"><pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;Style.css&quot;&gt;</code></pre></div>
 <p>Alors que le fichier s&#x27;appelle <code>style.css</code>.</p>
@@ -1429,15 +1300,7 @@ button {
 <p>On fait une page &quot;produit&quot; simple.</p>
 <p>Comme une fiche boutique, sans boutique.</p>
 <h2 id="chapitre-16--objectif">Objectif</h2>
-<p>Une page avec :</p>
-<ul>
-<li>nom du produit</li>
-<li>prix</li>
-<li>courte description</li>
-<li>liste d&#x27;avantages</li>
-<li>bouton &quot;Ajouter&quot; (meme s&#x27;il ne fait rien encore)</li>
-<li>joli CSS mobile-friendly</li>
-</ul>
+<p>Une page avec le nom du produit, le prix, une courte description, une liste d&#x27;avantages, et un bouton &quot;Ajouter&quot; (meme s&#x27;il ne fait rien encore). Le tout avec un joli CSS mobile-friendly. Une fiche claire, pas une usine a gaz.</p>
 <h2 id="chapitre-16--html-de-base">HTML de base</h2>
 <div class="code-block code-long"><pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;fr&quot;&gt;
@@ -1511,12 +1374,7 @@ body {
 <li>4. Ajoute une section &quot;Avis&quot;</li>
 </ol>
 <h2 id="chapitre-16--criteres-de-qualite">Criteres de qualite</h2>
-<ul>
-<li>Lisible sans zoomer sur telephone</li>
-<li>Hierarchie claire (titre &gt; prix &gt; texte)</li>
-<li>Pas 15 polices differentes</li>
-<li>Un seul objectif : comprendre le produit</li>
-</ul>
+<p>La page doit etre lisible sans zoomer sur telephone. La hierarchie reste claire : titre, puis prix, puis texte. Pas quinze polices differentes. Et un seul objectif : comprendre le produit.</p>
 <h2 id="chapitre-16--bonus">Bonus</h2>
 <p>Ajoute un faux tableau de tailles / couleurs.</p>
 <p>Garde-le simple. Une page propre bat une page surchargee.</p></article><article class="chapter chapter-break" id="chapitre-17"><div class="chapter-num">Chapitre 17</div><h1 id="chapitre-17--chapitre-19-accessibilite-et-bonnes-manieres">Chapitre 19 - Accessibilite et bonnes manieres</h1>
@@ -1547,14 +1405,7 @@ body {
 <p>Tu dois pouvoir atteindre liens et boutons.</p>
 <p>Si tu te perds, simplifie.</p>
 <h2 id="chapitre-17--mini-checklist">Mini checklist</h2>
-<ul class="check">
-<li><code>alt</code> utiles</li>
-<li>contraste ok</li>
-<li>liens explicites</li>
-<li>titres ranges</li>
-<li>zones cliquables confortables</li>
-<li>viewport present</li>
-</ul>
+<p>Avant de valider, regarde si tes <code>alt</code> sont utiles, si le contraste tient la route, et si les liens sont explicites. Les titres doivent etre ranges, les zones cliquables confortables, et le viewport present. Six petits points, un vrai plus.</p>
 <h2 id="chapitre-17--a-toi">A toi</h2>
 <p>Reprends ta page perso.</p>
 <p>Corrige 3 points d&#x27;accessibilite.</p>
@@ -1664,13 +1515,7 @@ body {
 <p>Pas juste &quot;j&#x27;ai regarde une video&quot;. Tu as lu. Tu as essaye. Tu as (surement) plante. Puis tu as continue.</p>
 <p>C&#x27;est exactement comme ca que ca marche.</p>
 <h2 id="chapitre-19--ce-que-tu-sais-faire-maintenant">Ce que tu sais faire maintenant</h2>
-<ul>
-<li>Creer une page HTML propre</li>
-<li>Ajouter texte, liens, images, listes, formulaires</li>
-<li>Habiller avec du CSS</li>
-<li>Ranger avec Flexbox</li>
-<li>Penser un minimum au telephone</li>
-</ul>
+<p>Tu sais creer une page HTML propre. Tu peux y ajouter du texte, des liens, des images, des listes et des formulaires. Tu habilles le tout avec du CSS, tu ranges avec Flexbox, et tu penses un minimum au telephone.</p>
 <p>C&#x27;est deja enorme pour un debut.</p>
 <h2 id="chapitre-19--petite-mission-si-tu-veux">Petite mission (si tu veux)</h2>
 <p>Reprends ta page perso du chapitre 13.</p>

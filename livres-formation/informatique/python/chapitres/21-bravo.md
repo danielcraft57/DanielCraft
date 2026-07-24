@@ -6,33 +6,15 @@ Mais "je sais ecrire un programme, le faire tourner, le corriger, et le structur
 
 ## Ce que tu sais faire
 
-- Installer / lancer Python
-- Variables, types, conditions, boucles
-- Fonctions (parametres, return, apercu *args)
-- Listes (slices, comprehensions), dicos
-- Fichiers texte + JSON
-- Modules (`random`, `math`, `json`...)
-- Exceptions (`try/except`)
-- Une premiere `class`
-- Un quiz et un juste prix
+Tu sais installer et lancer Python. Tu manipules variables, types, conditions et boucles. Tu ecris des fonctions (parametres, return, apercu *args). Tu te debrouilles avec listes (slices, comprehensions) et dicos. Tu lis et ecris des fichiers texte et du JSON. Tu utilises des modules (`random`, `math`, `json`...). Tu geres les exceptions avec `try/except`. Tu as cree une premiere `class`. Et tu as fait un quiz et un juste prix.
 
 ## Mission finale
 
-Ameliore ton juste prix en mode "produit mini" :
-
-1. max 6 essais + message de defaite
-2. saisie protegee
-3. option rejouer
-4. record sauve en JSON
-5. bonus : classe `Partie`
+Ameliore ton juste prix en mode "produit mini". Limite a 6 essais avec un message de defaite. Protege la saisie. Propose de rejouer. Sauve le record en JSON. En bonus, une classe `Partie`.
 
 ## La suite (quand tu voudras)
 
-- Virtualenv + `pip`
-- Requests (parler a une API)
-- Un peu de data (pandas) ou de web (Flask/FastAPI)
-- Tests automatiques (`pytest`)
-- Lire du code des autres sur GitHub
+Tu pourras explorer virtualenv et `pip`, puis Requests pour parler a une API. Un peu de data (pandas) ou de web (Flask/FastAPI). Des tests automatiques avec `pytest`. Et lire du code des autres sur GitHub.
 
 Mais la, respire.
 

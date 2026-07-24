@@ -71,10 +71,7 @@ Attention : tu perds les changements non sauves dans un commit.
 
 ## A toi
 
-1. Fais un petit changement
-2. `git diff`
-3. `add` + `commit`
-4. `git log --oneline`
+Fais un petit changement. Lance `git diff`. Puis `add` + `commit`. Termine avec `git log --oneline`.
 
 ## En vrai, sur le terrain
 
