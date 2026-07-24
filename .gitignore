@@ -41,6 +41,10 @@ assets/images/projets/*
 assets/images/projets/*.webp
 assets/images/projets/*.WEBP
 
+# Bannieres blog inline : crop/resize des OG (scripts/install_blog_article_banners.py)
+# Regenerer avant deploy avec les OG locaux (assets/images/og/ deja ignore).
+assets/images/blog/illustrations/
+
 # Variantes lourdes hero « à propos » (export WebP / essais)
 assets/images/about-section-hero.webp
 assets/images/about-section-hero-trial-*.png
@@ -72,14 +76,31 @@ Previous_Versions/*
 # README téléchargés pour les projets (générés)
 src/data/readmes/*
 
+# --- Scratch local / batch OG / audits (ne pas versionner) ---
+/_*.json
+/_*.txt
+/scripts/_tmp_*
+/scripts/_series3_*
+/scripts/_blog_og_*
+/scripts/_ia_og_*
+/scripts/_ia_articles_*
+/scripts/_og_*
+/scripts/_transcripts_*
+/scripts/_audit_*
+/scripts/_fix_*
+
 # --- Livres de formation (artefacts regenerables) ---
 # JPG d'impression : recrees par build_livre.py a partir des PNG source
 livres-formation/**/images/print/
+# Previews Playwright locaux
+livres-formation/**/images/_preview*
 # Scripts temporaires de generation / raster (_gen1.py, _thicken.py, ...)
 livres-formation/**/_*.py
-# HTML assemble (regenerable) : on versionne surtout markdown + images source + PDF
-# (decommenter si tu veux alléger encore le depot)
-# livres-formation/**/livre.html
+# HTML assemble (regenerable) : on versionne markdown + images source + PDF
+livres-formation/**/livre.html
+# PDF eco optionnels (build --eco)
+livres-formation/**/*-eco.pdf
+livres-formation/pdf/*-eco.pdf
 
 # Secrets / config locales
 .env
