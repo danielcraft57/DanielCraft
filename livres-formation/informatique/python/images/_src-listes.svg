@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f2f4f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2c4a6e" font-weight="700">Liste : case 0, 1, 2...</text>
+  <rect x="120" y="140" width="200" height="140" rx="14" fill="#2c4a6e"/>
+  <text x="220" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">0</text>
+  <text x="220" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">pain</text>
+  <rect x="400" y="140" width="200" height="140" rx="14" fill="#3d5f8a"/>
+  <text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">1</text>
+  <text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">lait</text>
+  <rect x="680" y="140" width="200" height="140" rx="14" fill="#e07a3d"/>
+  <text x="780" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">2</text>
+  <text x="780" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">oeufs</text>
+  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4a5568">On commence a zero. Oui, a zero.</text>
+</svg>

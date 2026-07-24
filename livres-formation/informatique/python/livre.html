@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="DanielCraft">
+  <meta name="description" content="Formation debutant a intermediaire Python">
+  <title>Python - Les bases</title>
+  <style>
+:root {
+  --ink: #14221c;
+  --muted: #3d5248;
+  --paper: #f3f6f4;
+  --paper-deep: #e5eee9;
+  --band: #1a4d3e;
+  --band-soft: #266b56;
+  --accent: #c9a227;
+  --code-bg: #133028;
+  --code-fg: #e7f2ec;
+  --card: #ffffff;
+  --rule: #c5d4cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+.page {
+  width: min(100% - 2rem, 780px);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+.cover {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: 0 0 2rem;
+  border-radius: 14px;
+  color: #f4faf7;
+  background: #0f2f26;
+  overflow: hidden;
+}
+.cover-art {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.cover-copy {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: #0f2f26;
+}
+.cover-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-family: Segoe UI, Arial, sans-serif;
+  opacity: 0.85;
+}
+.cover h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0.45rem 0 0.6rem;
+  max-width: 12ch;
+  color: #f4faf7;
+}
+.cover .lead {
+  font-size: 1.05rem;
+  max-width: 38ch;
+  margin: 0;
+  opacity: 0.95;
+}
+.cover .meta {
+  margin: 1rem 0 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+.illus {
+  margin: 0.9rem 0 1rem;
+  padding: 0;
+  text-align: center;
+}
+.illus img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 520px);
+  max-height: 220px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+  object-fit: contain;
+}
+.illus.illus-wide img {
+  max-width: min(100%, 640px);
+  max-height: 260px;
+}
+.illus figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-family: Segoe UI, Arial, sans-serif;
+  line-height: 1.35;
+  text-align: left;
+}
+body.eco {
+  --paper: #ffffff;
+  --paper-deep: #f3f3f3;
+  --card: #ffffff;
+  --code-bg: #222;
+}
+body.eco pre { border-left-color: #666; }
+.toc {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.toc h2 { margin-top: 0; font-size: 1.25rem; }
+.toc ol { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+.toc li { margin: 0.2rem 0; }
+.toc a {
+  color: var(--band);
+  text-decoration: none;
+}
+.chapter {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.35rem 1.4rem;
+  margin: 0 0 1.35rem;
+}
+.chapter-num {
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--band-soft);
+  margin: 0 0 0.15rem;
+}
+h1, h2, h3 { line-height: 1.25; color: var(--band); }
+.chapter > h1 {
+  font-size: 1.45rem;
+  margin: 0.15rem 0 0.75rem;
+  color: var(--ink);
+}
+h2 { font-size: 1.12rem; margin: 1.15rem 0 0.45rem; }
+h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; color: var(--muted); }
+p { margin: 0.55rem 0; }
+ul, ol { margin: 0.45rem 0 0.7rem; padding-left: 1.25rem; }
+li { margin: 0.18rem 0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid var(--accent);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--paper-deep); }
+.qa strong { color: var(--band); }
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1.5rem 1rem 0.5rem;
+}
+@media print {
+  body {
+    background: white !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: auto; max-width: none; margin: 0; padding: 0; }
+  .cover {
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 8mm;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cover-art {
+    min-height: 0 !important;
+    max-height: 95mm !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .toc, .chapter {
+    background: transparent !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 7mm;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .toc {
+    break-after: page;
+    page-break-after: always;
+  }
+  .chapter {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .chapter.chapter-break {
+    break-before: page;
+    page-break-before: always;
+  }
+  .chapter-num, h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chapter > h1 {
+    font-size: 15pt;
+    margin: 0 0 3mm;
+  }
+  h2 { font-size: 12pt; margin: 4.5mm 0 2mm; }
+  h3 { font-size: 11pt; margin: 3.5mm 0 1.5mm; }
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  .illus {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 3mm auto 4mm;
+  }
+  .illus img {
+    max-width: 105mm !important;
+    max-height: 55mm !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .illus.illus-wide img {
+    max-width: 130mm !important;
+    max-height: 65mm !important;
+  }
+  pre {
+    break-inside: auto;
+    page-break-inside: auto;
+    white-space: pre-wrap;
+    font-size: 8.5pt;
+    border-radius: 0;
+  }
+  table { break-inside: auto; }
+  /* Ne pas tuer les liens du sommaire a l'impression */
+  a { color: inherit; text-decoration: none; }
+  .toc a {
+    color: var(--band) !important;
+    text-decoration: underline !important;
+  }
+  .footer-note { break-before: avoid; }
+}
+@page {
+  size: A4;
+  margin: 14mm 14mm 18mm;
+}
+
+.toc-sub {
+  list-style: disc;
+  margin: 0.15rem 0 0.55rem 0.2rem;
+  padding-left: 1.1rem;
+}
+.toc-sub li { margin: 0.12rem 0; font-size: 0.92em; }
+.toc a { color: var(--band); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.code-block { margin: 0.65rem 0 0.9rem; }
+.keep-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+@media print {
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+  .toc a {
+    color: var(--band) !important;
+    text-decoration: underline !important;
+  }
+  .chapter {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    margin: 0 0 6mm !important;
+  }
+  .toc {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+  h1, h2, h3, .chapter-num {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    break-inside: avoid !important;
+  }
+  h2 + p, h2 + ul, h2 + ol, h2 + .code-block, h2 + .illus,
+  h3 + p, h3 + ul, h3 + ol, h3 + .code-block,
+  .chapter-num + h1, h1 + p, h1 + .illus, h1 + .code-block {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+  .keep-block, .illus, .table-wrap {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .code-long {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .code-long pre {
+    break-inside: auto !important;
+  }
+  pre {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+  }
+  p, li {
+    orphans: 4;
+    widows: 4;
+  }
+}
+
+/* Theme Python : bleu encre + abricot (pas le vert des autres livres) */
+:root {
+  --ink: #1a2332;
+  --muted: #4a5568;
+  --paper: #f2f4f8;
+  --paper-deep: #e3e8f0;
+  --band: #2c4a6e;
+  --band-soft: #3d5f8a;
+  --accent: #e07a3d;
+  --code-bg: #1e293b;
+  --code-fg: #e8eef6;
+  --card: #ffffff;
+  --rule: #c5ced9;
+}
+.cover,
+.cover-copy {
+  background: #1e3a5f !important;
+  color: #f4f7fb !important;
+}
+.cover h1 { color: #f4f7fb !important; }
+pre {
+  border-left-color: #e07a3d !important;
+}
+button, .btn-like {
+  background: #2c4a6e;
+}
+@media print {
+  .toc a { color: #2c4a6e !important; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="cover">
+      <img class="cover-art" src="images/print/python-couverture.jpg" alt="Couverture Python">
+      <div class="cover-copy">
+        <div class="cover-kicker">Formation informatique</div>
+        <h1>Python</h1>
+        <p class="lead">Les bases de Python, puis un cran plus loin : fichiers JSON, exceptions, classes.</p>
+        <p class="meta">DanielCraft - Livre debutant</p>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Sommaire">
+      <h2 id="sommaire">Sommaire</h2>
+      <p class="toc-help">Clique un chapitre ou un sous-chapitre pour y aller.</p>
+      <ol>
+        <li><a href="#chapitre-01">Chapitre 1 - Salut, c&#x27;est quoi Python ?</a><ol class="toc-sub"><li><a href="#chapitre-01--a-quoi-ca-sert">A quoi ca sert ?</a></li><li><a href="#chapitre-01--pourquoi-commencer-par-python">Pourquoi commencer par Python ?</a></li><li><a href="#chapitre-01--image-mentale">Image mentale</a></li><li><a href="#chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</a></li><li><a href="#chapitre-01--comment-lire-ce-livre">Comment lire ce livre</a></li><li><a href="#chapitre-01--mythe-a-casser">Mythe a casser</a></li><li><a href="#chapitre-01--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-01--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-02">Chapitre 2 - Installer et ecrire Python</a><ol class="toc-sub"><li><a href="#chapitre-02--ou-ecrire-le-code">Ou ecrire le code ?</a></li><li><a href="#chapitre-02--fichier-py">Fichier `.py`</a></li><li><a href="#chapitre-02--lancer">Lancer</a></li><li><a href="#chapitre-02--la-console-interactive">La console interactive</a></li><li><a href="#chapitre-02--virtualenv-apercu">Virtualenv ? (apercu)</a></li><li><a href="#chapitre-02--a-toi">A toi</a></li><li><a href="#chapitre-02--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-02--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-02--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-03">Chapitre 3 - Ton premier programme</a><ol class="toc-sub"><li><a href="#chapitre-03--print-c-est-quoi">print, c&#x27;est quoi ?</a></li><li><a href="#chapitre-03--f-strings-pratique">f-strings (pratique)</a></li><li><a href="#chapitre-03--commentaires">Commentaires</a></li><li><a href="#chapitre-03--input-demander-quelque-chose">input : demander quelque chose</a></li><li><a href="#chapitre-03--nettoyer-une-reponse">Nettoyer une reponse</a></li><li><a href="#chapitre-03--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-03--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-03--a-toi">A toi</a></li><li><a href="#chapitre-03--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-03--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-04">Chapitre 4 - Les variables</a><ol class="toc-sub"><li><a href="#chapitre-04--changer-une-valeur">Changer une valeur</a></li><li><a href="#chapitre-04--noms-clairs">Noms clairs</a></li><li><a href="#chapitre-04--plusieurs-infos">Plusieurs infos</a></li><li><a href="#chapitre-04--constantes-habitude">Constantes (habitude)</a></li><li><a href="#chapitre-04--attention">Attention</a></li><li><a href="#chapitre-04--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-04--a-toi">A toi</a></li><li><a href="#chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-04--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-05">Chapitre 5 - Les types (texte, nombre, vrai/faux)</a><ol class="toc-sub"><li><a href="#chapitre-05--texte-str">Texte (str)</a></li><li><a href="#chapitre-05--nombre-entier-int">Nombre entier (int)</a></li><li><a href="#chapitre-05--nombre-a-virgule-float">Nombre a virgule (float)</a></li><li><a href="#chapitre-05--booleen-bool">Booleen (bool)</a></li><li><a href="#chapitre-05--conversion">Conversion</a></li><li><a href="#chapitre-05--type">type()</a></li><li><a href="#chapitre-05--pieges-classiques">Pieges classiques</a></li><li><a href="#chapitre-05--none">None</a></li><li><a href="#chapitre-05--a-toi">A toi</a></li><li><a href="#chapitre-05--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-05--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-06">Chapitre 6 - Les conditions (if)</a><ol class="toc-sub"><li><a href="#chapitre-06--elif">elif</a></li><li><a href="#chapitre-06--comparaisons">Comparaisons</a></li><li><a href="#chapitre-06--and-or-not">and / or / not</a></li><li><a href="#chapitre-06--conditions-avec-texte">Conditions avec texte</a></li><li><a href="#chapitre-06--operateur-ternaire-apercu">Operateur ternaire (apercu)</a></li><li><a href="#chapitre-06--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-06--a-toi">A toi</a></li><li><a href="#chapitre-06--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-06--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-07">Chapitre 7 - Les boucles</a><ol class="toc-sub"><li><a href="#chapitre-07--for-range">for + range</a></li><li><a href="#chapitre-07--while">while</a></li><li><a href="#chapitre-07--boucler-sur-une-liste">Boucler sur une liste</a></li><li><a href="#chapitre-07--break-et-continue">break et continue</a></li><li><a href="#chapitre-07--while-true-motif-utile">while True (motif utile)</a></li><li><a href="#chapitre-07--exemple-table-de-multiplication">Exemple : table de multiplication</a></li><li><a href="#chapitre-07--a-toi">A toi</a></li><li><a href="#chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-07--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-08">Chapitre 8 - Les fonctions</a><ol class="toc-sub"><li><a href="#chapitre-08--avec-parametre">Avec parametre</a></li><li><a href="#chapitre-08--return">return</a></li><li><a href="#chapitre-08--valeur-par-defaut">Valeur par defaut</a></li><li><a href="#chapitre-08--plusieurs-parametres">Plusieurs parametres</a></li><li><a href="#chapitre-08--petite-doc">Petite doc</a></li><li><a href="#chapitre-08--args-apercu-avance">*args (apercu avance)</a></li><li><a href="#chapitre-08--pourquoi-c-est-bien">Pourquoi c&#x27;est bien</a></li><li><a href="#chapitre-08--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-08--a-toi">A toi</a></li><li><a href="#chapitre-08--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-08--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-09">Chapitre 9 - Les listes</a><ol class="toc-sub"><li><a href="#chapitre-09--modifier-longueur">Modifier / longueur</a></li><li><a href="#chapitre-09--ajouter-retirer">Ajouter / retirer</a></li><li><a href="#chapitre-09--parcourir">Parcourir</a></li><li><a href="#chapitre-09--in">in</a></li><li><a href="#chapitre-09--tranches-slices">Tranches (slices)</a></li><li><a href="#chapitre-09--trier">Trier</a></li><li><a href="#chapitre-09--list-comprehension-avance-soft">List comprehension (avance soft)</a></li><li><a href="#chapitre-09--tuple-cousin-fige">Tuple (cousin fige)</a></li><li><a href="#chapitre-09--ensemble-set-apercu">Ensemble set (apercu)</a></li><li><a href="#chapitre-09--a-toi">A toi</a></li><li><a href="#chapitre-09--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-09--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-10">Chapitre 10 - Les dictionnaires</a><ol class="toc-sub"><li><a href="#chapitre-10--cle-absente">Cle absente</a></li><li><a href="#chapitre-10--parcourir">Parcourir</a></li><li><a href="#chapitre-10--liste-de-dictionnaires">Liste de dictionnaires</a></li><li><a href="#chapitre-10--compter-avec-un-dico">Compter avec un dico</a></li><li><a href="#chapitre-10--json-dans-la-tete">JSON dans la tete</a></li><li><a href="#chapitre-10--a-toi">A toi</a></li><li><a href="#chapitre-10--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-10--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-11">Chapitre 11 - Lire et ecrire un fichier</a><ol class="toc-sub"><li><a href="#chapitre-11--ecrire">Ecrire</a></li><li><a href="#chapitre-11--lire">Lire</a></li><li><a href="#chapitre-11--lire-ligne-par-ligne">Lire ligne par ligne</a></li><li><a href="#chapitre-11--modes-utiles">Modes utiles</a></li><li><a href="#chapitre-11--json-plus-avance-tres-utile">JSON (plus avance, tres utile)</a></li><li><a href="#chapitre-11--pathlib-apercu">pathlib (apercu)</a></li><li><a href="#chapitre-11--erreurs-classiques">Erreurs classiques</a></li><li><a href="#chapitre-11--a-toi">A toi</a></li><li><a href="#chapitre-11--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-11--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-12">Chapitre 12 - Les modules (import)</a><ol class="toc-sub"><li><a href="#chapitre-12--random">random</a></li><li><a href="#chapitre-12--datetime-apercu">datetime (apercu)</a></li><li><a href="#chapitre-12--from-import">from ... import</a></li><li><a href="#chapitre-12--creer-ton-module">Creer ton module</a></li><li><a href="#chapitre-12--pip-apercu">pip (apercu)</a></li><li><a href="#chapitre-12--a-toi">A toi</a></li><li><a href="#chapitre-12--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-12--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-13">Chapitre 13 - Mini-projet : quiz terminal</a><ol class="toc-sub"><li><a href="#chapitre-13--version-simple">Version simple</a></li><li><a href="#chapitre-13--version-plus-propre">Version plus propre</a></li><li><a href="#chapitre-13--ameliorations">Ameliorations</a></li><li><a href="#chapitre-13--version-avec-shuffle-json">Version avec shuffle + JSON</a></li><li><a href="#chapitre-13--criteres">Criteres</a></li><li><a href="#chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-13--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-14">Chapitre 14 - Ce qu&#x27;il faut retenir (bases)</a><ol class="toc-sub"><li><a href="#chapitre-14--en-une-minute">En une minute</a></li><li><a href="#chapitre-14--habitudes">Habitudes</a></li><li><a href="#chapitre-14--erreurs-classiques">Erreurs classiques</a></li><li><a href="#chapitre-14--carte-mentale">Carte mentale</a></li><li><a href="#chapitre-14--suite-immediate">Suite immediate</a></li><li><a href="#chapitre-14--mini-check">Mini check</a></li></ol></li><li><a href="#chapitre-15">Chapitre 15 - Les exceptions (try / except)</a><ol class="toc-sub"><li><a href="#chapitre-15--plusieurs-erreurs">Plusieurs erreurs</a></li><li><a href="#chapitre-15--else-et-finally">else et finally</a></li><li><a href="#chapitre-15--raise-lever-une-erreur">raise (lever une erreur)</a></li><li><a href="#chapitre-15--ne-pas-tout-avaler">Ne pas tout avaler</a></li><li><a href="#chapitre-15--fichier-manquant">Fichier manquant</a></li><li><a href="#chapitre-15--exemple-utile-saisie-solide">Exemple utile : saisie solide</a></li><li><a href="#chapitre-15--a-toi">A toi</a></li><li><a href="#chapitre-15--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-15--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-16">Chapitre 16 - Les classes (objets)</a><ol class="toc-sub"><li><a href="#chapitre-16--premiere-classe">Premiere classe</a></li><li><a href="#chapitre-16--pourquoi-c-est-pratique">Pourquoi c&#x27;est pratique</a></li><li><a href="#chapitre-16--methode-vs-fonction">Methode vs fonction</a></li><li><a href="#chapitre-16--str-affichage-joli">__str__ (affichage joli)</a></li><li><a href="#chapitre-16--heritage-apercu">Heritage (apercu)</a></li><li><a href="#chapitre-16--dataclass-tres-moderne-apercu">Dataclass (tres moderne, apercu)</a></li><li><a href="#chapitre-16--quand-utiliser-une-classe">Quand utiliser une classe ?</a></li><li><a href="#chapitre-16--a-toi">A toi</a></li><li><a href="#chapitre-16--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-16--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-17">Chapitre 17 - Atelier : lire les erreurs</a><ol class="toc-sub"><li><a href="#chapitre-17--nameerror">NameError</a></li><li><a href="#chapitre-17--typeerror">TypeError</a></li><li><a href="#chapitre-17--valueerror">ValueError</a></li><li><a href="#chapitre-17--indexerror-keyerror">IndexError / KeyError</a></li><li><a href="#chapitre-17--indentationerror-syntaxerror">IndentationError / SyntaxError</a></li><li><a href="#chapitre-17--filenotfounderror">FileNotFoundError</a></li><li><a href="#chapitre-17--methode">Methode</a></li><li><a href="#chapitre-17--exercice-1">Exercice 1</a></li><li><a href="#chapitre-17--exercice-2">Exercice 2</a></li><li><a href="#chapitre-17--exercice-3">Exercice 3</a></li><li><a href="#chapitre-17--check-final-atelier">Check final atelier</a></li></ol></li><li><a href="#chapitre-18">Chapitre 18 - Atelier : juste prix</a><ol class="toc-sub"><li><a href="#chapitre-18--version-de-base-avec-try">Version de base (avec try)</a></li><li><a href="#chapitre-18--variantes">Variantes</a></li><li><a href="#chapitre-18--version-objet-bonus">Version objet (bonus)</a></li><li><a href="#chapitre-18--a-toi">A toi</a></li><li><a href="#chapitre-18--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-19">Chapitre 19 - Atelier : organiser son code</a><ol class="toc-sub"><li><a href="#chapitre-19--version-fonctions">Version fonctions</a></li><li><a href="#chapitre-19--pourquoi-if-name-main">Pourquoi `if __name__ == &quot;__main__&quot;` ?</a></li><li><a href="#chapitre-19--version-classe-question">Version classe Question</a></li><li><a href="#chapitre-19--decouper-en-fichiers-idee">Decouper en fichiers (idee)</a></li><li><a href="#chapitre-19--regle-simple">Regle simple</a></li><li><a href="#chapitre-19--a-toi">A toi</a></li><li><a href="#chapitre-19--check">Check</a></li></ol></li><li><a href="#chapitre-20">Quiz final - Teste-toi !</a><ol class="toc-sub"><li><a href="#chapitre-20--questions">Questions</a></li><li><a href="#chapitre-20--reponses">Reponses</a></li><li><a href="#chapitre-20--score">Score</a></li></ol></li><li><a href="#chapitre-21">Bravo.</a><ol class="toc-sub"><li><a href="#chapitre-21--ce-que-tu-sais-faire">Ce que tu sais faire</a></li><li><a href="#chapitre-21--mission-finale">Mission finale</a></li><li><a href="#chapitre-21--la-suite-quand-tu-voudras">La suite (quand tu voudras)</a></li></ol></li>
+      </ol>
+    </nav>
+
+    <article class="chapter chapter-break" id="chapitre-01"><div class="chapter-num">Chapitre 1</div><h1 id="chapitre-01--chapitre-1-salut-c-est-quoi-python">Chapitre 1 - Salut, c&#x27;est quoi Python ?</h1>
+<figure class="illus illus-wide"><img src="images/print/python-idee.jpg" alt="Python sert a donner des ordres simples a l&#x27;ordinateur."><figcaption>Python sert a donner des ordres simples a l&#x27;ordinateur.</figcaption></figure>
+<p>Python, c&#x27;est un langage pour donner des ordres a l&#x27;ordinateur.</p>
+<p>Avec des phrases plus lisibles que beaucoup d&#x27;autres langages.</p>
+<p>Tu ecris une idee.</p>
+<p>Python la traduit.</p>
+<p>L&#x27;ordinateur execute.</p>
+<h2 id="chapitre-01--a-quoi-ca-sert">A quoi ca sert ?</h2>
+<ul>
+<li>Petits scripts utiles au quotidien</li>
+<li>Automatiser des trucs repetitifs</li>
+<li>Apprendre la logique (conditions, boucles...)</li>
+<li>Plus tard : data, IA, sites web, bots...</li>
+</ul>
+<p>Ici, on reste sur des bases solides.</p>
+<p>Puis on touche un peu a des notions plus avancees (erreurs, classes).</p>
+<p>Sans devenir un manuel de 800 pages.</p>
+<h2 id="chapitre-01--pourquoi-commencer-par-python">Pourquoi commencer par Python ?</h2>
+<p>Parce que c&#x27;est accueillant.</p>
+<p>Moins de &quot;bruit&quot; autour.</p>
+<p>Tu vois vite un resultat a l&#x27;ecran.</p>
+<p>Compare a d&#x27;autres langages : souvent plus de ceremonie avant le premier &quot;Salut&quot;.</p>
+<p>Avec Python, le premier programme tient en une ligne.</p>
+<h2 id="chapitre-01--image-mentale">Image mentale</h2>
+<p>Tu es le chef.</p>
+<p>Python est le messager.</p>
+<p>L&#x27;ordinateur execute.</p>
+<p>Si le message est flou, l&#x27;ordinateur se plaint (message d&#x27;erreur).</p>
+<p>C&#x27;est normal. On apprend a lire ces messages.</p>
+<h2 id="chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</h2>
+<ul>
+<li>Ecrire et lancer un programme</li>
+<li>Variables, types, conditions, boucles</li>
+<li>Fonctions (avec parametres et return)</li>
+<li>Listes, dictionnaires, et un peu de trucs plus fins</li>
+<li>Lire / ecrire des fichiers (texte et JSON)</li>
+<li>Utiliser des modules (<code>random</code>, <code>math</code>...)</li>
+<li>Gerer des erreurs avec <code>try/except</code></li>
+<li>Creer une petite <code>class</code></li>
+<li>Faire un quiz et un jeu dans le terminal</li>
+</ul>
+<h2 id="chapitre-01--comment-lire-ce-livre">Comment lire ce livre</h2>
+<ol>
+<li>1. Lis un chapitre</li>
+<li>2. Retape les exemples a la main</li>
+<li>3. Change une valeur. Relance</li>
+<li>4. Fais le mini defi</li>
+</ol>
+<p>Si tu copies-colles sans reflechir, ca rentre moins.</p>
+<p>Si tu tapes, ca rentre.</p>
+<h2 id="chapitre-01--mythe-a-casser">Mythe a casser</h2>
+<p>&quot;Je dois tout comprendre avant d&#x27;ecrire.&quot;</p>
+<p>Non.</p>
+<p>Tu ecris. Ca casse. Tu corriges. Tu comprends mieux.</p>
+<p>Allez. On installe, puis on code.</p>
+<h2 id="chapitre-01--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Dis a voix haute ce que tu veux que le programme fasse.</p>
+<p>Ensuite seulement, ecris le code. Ca aide beaucoup.</p>
+<h2 id="chapitre-01--mini-defi">Mini defi</h2>
+<p>Ecris sur papier 3 trucs que tu aimerais automatiser un jour</p>
+<p>(ex : renommer des fichiers, calculer un score, faire un quiz).</p>
+<p>On y reviendra.</p></article><article class="chapter chapter-break" id="chapitre-02"><div class="chapter-num">Chapitre 2</div><h1 id="chapitre-02--chapitre-2-installer-et-ecrire-python">Chapitre 2 - Installer et ecrire Python</h1>
+<p>Avant de coder, il faut un Python qui marche.</p>
+<p>Sur Windows, le plus simple :</p>
+<ol>
+<li>1. Va sur le site officiel python.org</li>
+<li>2. Telecharge la version recente</li>
+<li>3. Installe (coche &quot;Add Python to PATH&quot; si tu vois l&#x27;option)</li>
+<li>4. Ouvre un terminal et tape : <code>python --version</code></li>
+</ol>
+<p>Si tu vois un numero de version, c&#x27;est bon.</p>
+<p>Parfois c&#x27;est <code>py --version</code> qui marche mieux sur Windows.</p>
+<p>Les deux existent. Garde celui qui repond.</p>
+<h2 id="chapitre-02--ou-ecrire-le-code">Ou ecrire le code ?</h2>
+<p>Deux options debutant :</p>
+<ol>
+<li>1. <strong>VS Code</strong> (gratuit) + extension Python</li>
+<li>2. <strong>IDLE</strong> (fourni avec Python) - plus basique, mais ok</li>
+</ol>
+<p>Plus tard tu peux aimer PyCharm ou autre.</p>
+<p>Pour ce livre, VS Code ou IDLE suffisent largement.</p>
+<h2 id="chapitre-02--fichier-py">Fichier <code>.py</code></h2>
+<p>Cree un dossier <code>mes-tests-python</code>.</p>
+<p>Dedans, cree un fichier <code>salut.py</code>.</p>
+<p>C&#x27;est ton programme.</p>
+<p>Astuce : un dossier par projet.</p>
+<p>Evite de tout mettre sur le Bureau en vrac.</p>
+<h2 id="chapitre-02--lancer">Lancer</h2>
+<p>Dans le dossier du fichier :</p>
+<div class="code-block keep-block"><pre><code class="language-bash">python salut.py</code></pre></div>
+<p>Ou :</p>
+<div class="code-block keep-block"><pre><code class="language-bash">py salut.py</code></pre></div>
+<p>Si le terminal dit &quot;introuvable&quot;, c&#x27;est souvent :</p>
+<ul>
+<li>mauvais dossier (tu n&#x27;es pas au bon endroit)</li>
+<li>PATH pas coche a l&#x27;install</li>
+</ul>
+<h2 id="chapitre-02--la-console-interactive">La console interactive</h2>
+<div class="code-block keep-block"><pre><code class="language-bash">python</code></pre></div>
+<p>Tu peux tester des lignes une par une.</p>
+<p>Utile pour un calcul vite fait.</p>
+<div class="code-block keep-block"><pre><code class="language-python">&gt;&gt;&gt; 2 + 2
+4
+&gt;&gt;&gt; exit()</code></pre></div>
+<p><code>exit()</code> pour quitter.</p>
+<p>Ou Ctrl+Z puis Entree sur Windows.</p>
+<h2 id="chapitre-02--virtualenv-apercu">Virtualenv ? (apercu)</h2>
+<p>Plus tard, les projets serieux utilisent un &quot;environnement virtuel&quot;.</p>
+<p>Idee : isoler les bibliotheques d&#x27;un projet.</p>
+<div class="code-block keep-block"><pre><code class="language-bash">python -m venv .venv</code></pre></div>
+<p>Puis on active, puis <code>pip install ...</code>.</p>
+<p>Pour l&#x27;instant, tu n&#x27;en as pas besoin.</p>
+<p>Mais le mot existe. Tu le reverras.</p>
+<h2 id="chapitre-02--a-toi">A toi</h2>
+<ol>
+<li>1. Verifie <code>python --version</code> (ou <code>py --version</code>)</li>
+<li>2. Cree le dossier + <code>salut.py</code></li>
+<li>3. On ecrira dedans au chapitre suivant</li>
+</ol>
+<h2 id="chapitre-02--erreur-classique">Erreur classique</h2>
+<p>Tu lances <code>python salut.py</code> depuis le mauvais dossier.</p>
+<p>Le terminal dit qu&#x27;il ne trouve pas le fichier.</p>
+<p>Solution : <code>cd</code> vers le bon dossier, puis relance.</p>
+<h2 id="chapitre-02--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre le terminal. Tape la commande de version.</p>
+<p>Note le resultat. Si ca marche, tu es pret.</p>
+<h2 id="chapitre-02--mini-defi">Mini defi</h2>
+<p>Cree aussi <code>notes.md</code> dans ton dossier.</p>
+<p>Ecris-y : version Python + outil choisi (VS Code / IDLE).</p></article><article class="chapter chapter-break" id="chapitre-03"><div class="chapter-num">Chapitre 3</div><h1 id="chapitre-03--chapitre-3-ton-premier-programme">Chapitre 3 - Ton premier programme</h1>
+<p>Ouvre <code>salut.py</code> et ecris :</p>
+<div class="code-block keep-block"><pre><code class="language-python">print(&quot;Salut Python&quot;)</code></pre></div>
+<p>Lance :</p>
+<div class="code-block keep-block"><pre><code class="language-bash">python salut.py</code></pre></div>
+<p>Si tu vois <code>Salut Python</code>, bravo. C&#x27;est parti.</p>
+<h2 id="chapitre-03--print-c-est-quoi">print, c&#x27;est quoi ?</h2>
+<p><code>print(...)</code> affiche quelque chose a l&#x27;ecran.</p>
+<p>Le texte va entre guillemets.</p>
+<div class="code-block keep-block"><pre><code class="language-python">print(&quot;Coucou&quot;)
+print(2 + 2)
+print(&quot;2 + 2 =&quot;, 2 + 2)</code></pre></div>
+<p>Tu peux afficher plusieurs choses separees par des virgules.</p>
+<p>Python ajoute un espace entre.</p>
+<h2 id="chapitre-03--f-strings-pratique">f-strings (pratique)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">prenom = &quot;Leo&quot;
+age = 12
+print(f&quot;Je m&#x27;appelle {prenom} et j&#x27;ai {age} ans&quot;)</code></pre></div>
+<p>Le <code>f</code> devant la chaine laisse coller des variables avec <code>{...}</code>.</p>
+<p>Plus lisible que coller avec <code>+</code> partout.</p>
+<h2 id="chapitre-03--commentaires">Commentaires</h2>
+<div class="code-block keep-block"><pre><code class="language-python"># Ceci est une note pour toi. Python l&#x27;ignore.
+print(&quot;Je compte&quot;)  # commentaire en fin de ligne</code></pre></div>
+<p>Ecris des commentaires utiles, pas &quot;ici j&#x27;affiche&quot;.</p>
+<p>Plutot : pourquoi tu fais un truc pas evident.</p>
+<h2 id="chapitre-03--input-demander-quelque-chose">input : demander quelque chose</h2>
+<div class="code-block keep-block"><pre><code class="language-python">prenom = input(&quot;Ton prenom ? &quot;)
+print(&quot;Salut&quot;, prenom)
+print(f&quot;Enchante, {prenom} !&quot;)</code></pre></div>
+<p><code>input</code> attend que tu ecrives puis Entree.</p>
+<p>Attention : <code>input</code> renvoie toujours du <strong>texte</strong> (str).</p>
+<h2 id="chapitre-03--nettoyer-une-reponse">Nettoyer une reponse</h2>
+<div class="code-block keep-block"><pre><code class="language-python">reponse = input(&quot;Ville ? &quot;).strip()</code></pre></div>
+<p><code>strip()</code> enleve les espaces avant/apres.</p>
+<p>Utile. Les gens tapent souvent un espace sans le voir.</p>
+<h2 id="chapitre-03--erreur-classique">Erreur classique</h2>
+<p>Oublier les guillemets :</p>
+<div class="code-block keep-block"><pre><code class="language-python">print(Salut)  # erreur : Salut n&#x27;existe pas comme variable</code></pre></div>
+<p>Le message d&#x27;erreur pointe souvent la ligne. Lis-la.</p>
+<h2 id="chapitre-03--exemple-complet">Exemple complet</h2>
+<div class="code-block keep-block"><pre><code class="language-python"># mini presentation
+prenom = input(&quot;Prenom ? &quot;).strip()
+hobby = input(&quot;Hobby ? &quot;).strip()
+print(f&quot;Salut {prenom}. Cool pour {hobby}.&quot;)
+print(&quot;Fin du programme.&quot;)</code></pre></div>
+<h2 id="chapitre-03--a-toi">A toi</h2>
+<p>Demande le prenom et l&#x27;age (age en texte pour l&#x27;instant).</p>
+<p>Affiche : <code>Bonjour, &lt;prenom&gt; ! Tu as &lt;age&gt; ans.</code></p>
+<p>Avec une f-string.</p>
+<h2 id="chapitre-03--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Retape l&#x27;exemple sans copier-coller.</p>
+<p>Change les phrases. Relance. Regarde.</p>
+<h2 id="chapitre-03--mini-defi">Mini defi</h2>
+<p>Ajoute une 3e question (ville ou animal prefere).</p>
+<p>Affiche une mini bio en 2 lignes.</p></article><article class="chapter chapter-break" id="chapitre-04"><div class="chapter-num">Chapitre 4</div><h1 id="chapitre-04--chapitre-4-les-variables">Chapitre 4 - Les variables</h1>
+<figure class="illus"><img src="images/print/python-variables.jpg" alt="Une variable, c&#x27;est une boite avec un nom."><figcaption>Une variable, c&#x27;est une boite avec un nom.</figcaption></figure>
+<p>Une variable = une boite avec un nom.</p>
+<p>Tu ranges une valeur. Tu la reutilises plus tard.</p>
+<div class="code-block keep-block"><pre><code class="language-python">age = 12
+prenom = &quot;Leo&quot;
+score = 0</code></pre></div>
+<p>Pas besoin de dire &quot;c&#x27;est un nombre&quot; ou &quot;c&#x27;est du texte&quot;.</p>
+<p>Python regarde la valeur et comprend.</p>
+<h2 id="chapitre-04--changer-une-valeur">Changer une valeur</h2>
+<div class="code-block keep-block"><pre><code class="language-python">score = 0
+score = score + 1
+score += 5  # raccourci : score = score + 5
+print(score)</code></pre></div>
+<p>Le nom reste. Le contenu peut changer.</p>
+<h2 id="chapitre-04--noms-clairs">Noms clairs</h2>
+<p>Oui :</p>
+<div class="code-block keep-block"><pre><code class="language-python">nombre_de_vies = 3
+message_accueil = &quot;Salut&quot;</code></pre></div>
+<p>Non (ou alors on se perd) :</p>
+<div class="code-block keep-block"><pre><code class="language-python">x1 = 3
+a = &quot;Salut&quot;</code></pre></div>
+<p>En Python, on utilise souvent le <code>snake_case</code> : mots separes par <code>_</code>.</p>
+<p>C&#x27;est la convention. Suis-la. Ton futur toi te remerciera.</p>
+<h2 id="chapitre-04--plusieurs-infos">Plusieurs infos</h2>
+<div class="code-block keep-block"><pre><code class="language-python">a = 3
+b = 5
+total = a + b
+print(total)</code></pre></div>
+<p>Tu peux aussi echanger :</p>
+<div class="code-block keep-block"><pre><code class="language-python">x = 1
+y = 2
+x, y = y, x
+print(x, y)  # 2 1</code></pre></div>
+<h2 id="chapitre-04--constantes-habitude">Constantes (habitude)</h2>
+<p>Python n&#x27;a pas de vrai <code>const</code> comme certains langages.</p>
+<p>Par convention, on ecrit en MAJUSCULES ce qu&#x27;on ne veut pas changer :</p>
+<div class="code-block keep-block"><pre><code class="language-python">MAX_ESSAIS = 5</code></pre></div>
+<p>Ce n&#x27;est pas bloque techniquement. C&#x27;est un signal pour les humains.</p>
+<h2 id="chapitre-04--attention">Attention</h2>
+<div class="code-block keep-block"><pre><code class="language-python"># piege : ecraser sans faire gaffe
+score = 10
+score = &quot;dix&quot;  # autorise, mais souvent une mauvaise idee</code></pre></div>
+<p>Une variable peut changer de type. Ca ne veut pas dire que c&#x27;est clair.</p>
+<h2 id="chapitre-04--exemple-complet">Exemple complet</h2>
+<div class="code-block keep-block"><pre><code class="language-python">pseudo = &quot;PixelFox&quot;
+niveau = 1
+xp = 0
+
+xp += 50
+print(f&quot;{pseudo} a {xp} xp&quot;)
+
+if xp &gt;= 50:
+    niveau += 1
+    xp -= 50
+    print(f&quot;Niveau up ! Niveau {niveau}&quot;)
+
+print(f&quot;Etat : niveau {niveau}, xp {xp}&quot;)</code></pre></div>
+<h2 id="chapitre-04--a-toi">A toi</h2>
+<p>Cree :</p>
+<ul>
+<li><code>prenom</code></li>
+<li><code>points</code> (commence a 0)</li>
+<li>ajoute 10 points</li>
+<li>affiche le tout avec <code>print</code> ou une f-string</li>
+</ul>
+<h2 id="chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Retape l&#x27;exemple joueur.</p>
+<p>Change le pseudo et le seuil d&#x27;xp. Relance.</p>
+<h2 id="chapitre-04--mini-defi">Mini defi</h2>
+<p>Invente un mini profil (jeu, sport, ecole).</p>
+<p>3 variables minimum. Affiche une phrase complete.</p></article><article class="chapter chapter-break" id="chapitre-05"><div class="chapter-num">Chapitre 5</div><h1 id="chapitre-05--chapitre-5-les-types-texte-nombre-vrai-faux">Chapitre 5 - Les types (texte, nombre, vrai/faux)</h1>
+<p>Les types, c&#x27;est la nature de ce que tu ranges dans la boite.</p>
+<h2 id="chapitre-05--texte-str">Texte (str)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">phrase = &quot;Bonjour&quot;
+ville = &#x27;Lyon&#x27;  # simples ou doubles, au choix</code></pre></div>
+<h2 id="chapitre-05--nombre-entier-int">Nombre entier (int)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">vies = 3</code></pre></div>
+<h2 id="chapitre-05--nombre-a-virgule-float">Nombre a virgule (float)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">prix = 19.99</code></pre></div>
+<h2 id="chapitre-05--booleen-bool">Booleen (bool)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">est_connecte = True
+a_fini = False</code></pre></div>
+<p>Attention : <code>True</code> / <code>False</code> avec majuscule.</p>
+<p>Pas <code>true</code> comme en JS.</p>
+<h2 id="chapitre-05--conversion">Conversion</h2>
+<p><code>input</code> donne du texte. Pour calculer, convertis :</p>
+<div class="code-block keep-block"><pre><code class="language-python">age_texte = input(&quot;Age ? &quot;)
+age = int(age_texte)
+print(&quot;Dans 10 ans :&quot;, age + 10)</code></pre></div>
+<p>Versions courtes :</p>
+<div class="code-block keep-block"><pre><code class="language-python">n = int(input(&quot;Nombre ? &quot;))
+prix = float(input(&quot;Prix ? &quot;))</code></pre></div>
+<p>Si la personne ecrit &quot;douze&quot;, <code>int(...)</code> plante.</p>
+<p>Normal. Au chapitre exceptions, on apprendra a rattraper ca.</p>
+<h2 id="chapitre-05--type">type()</h2>
+<div class="code-block keep-block"><pre><code class="language-python">print(type(3))      # int
+print(type(&quot;3&quot;))    # str
+print(type(3.0))    # float
+print(type(True))   # bool</code></pre></div>
+<p>Utile pour comprendre ce que tu as vraiment.</p>
+<h2 id="chapitre-05--pieges-classiques">Pieges classiques</h2>
+<div class="code-block keep-block"><pre><code class="language-python">print(&quot;3&quot; + &quot;1&quot;)   # &quot;31&quot; (colle du texte)
+print(3 + 1)       # 4
+# print(&quot;3&quot; + 1)   # TypeError</code></pre></div>
+<p>Et :</p>
+<div class="code-block keep-block"><pre><code class="language-python">print(bool(&quot;&quot;))     # False (texte vide)
+print(bool(&quot;0&quot;))    # True (texte non vide)
+print(bool(0))      # False</code></pre></div>
+<h2 id="chapitre-05--none">None</h2>
+<div class="code-block keep-block"><pre><code class="language-python">valeur = None  # &quot;pas de valeur&quot; volontaire</code></pre></div>
+<p>Tu le croiseras avec les fonctions qui ne renvoient rien.</p>
+<h2 id="chapitre-05--a-toi">A toi</h2>
+<p>Demande deux nombres (via <code>input</code> + <code>int</code>).</p>
+<p>Affiche leur somme, leur difference, leur produit.</p>
+<h2 id="chapitre-05--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Teste <code>type()</code> sur 4 valeurs differentes dans la console interactive.</p>
+<h2 id="chapitre-05--mini-defi">Mini defi</h2>
+<p>Demande un prix en texte, convertis en <code>float</code>, ajoute 20% (TVA simple), affiche le TTC.</p></article><article class="chapter chapter-break" id="chapitre-06"><div class="chapter-num">Chapitre 6</div><h1 id="chapitre-06--chapitre-6-les-conditions-if">Chapitre 6 - Les conditions (if)</h1>
+<p>Les conditions, c&#x27;est &quot;si ... alors ... sinon ...&quot;.</p>
+<div class="code-block keep-block"><pre><code class="language-python">age = 15
+
+if age &gt;= 18:
+    print(&quot;Majeur&quot;)
+else:
+    print(&quot;Mineur&quot;)</code></pre></div>
+<p>L&#x27;indentation (decalage) est obligatoire en Python.</p>
+<p>En general : 4 espaces.</p>
+<p>Sans ca, Python refuse. Ce n&#x27;est pas du decoratif.</p>
+<h2 id="chapitre-06--elif">elif</h2>
+<div class="code-block keep-block"><pre><code class="language-python">note = 14
+
+if note &gt;= 16:
+    print(&quot;Excellent&quot;)
+elif note &gt;= 10:
+    print(&quot;Valide&quot;)
+else:
+    print(&quot;On revise&quot;)</code></pre></div>
+<p><code>elif</code> = &quot;sinon si&quot;.</p>
+<p>Tu peux en chainer plusieurs.</p>
+<h2 id="chapitre-06--comparaisons">Comparaisons</h2>
+<ul>
+<li><code>==</code> egal (valeur)</li>
+<li><code>!=</code> different</li>
+<li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+</ul>
+<p>Attention : <code>=</code> assigne. <code>==</code> compare.</p>
+<h2 id="chapitre-06--and-or-not">and / or / not</h2>
+<div class="code-block keep-block"><pre><code class="language-python">ticket = True
+vip = False
+
+if ticket or vip:
+    print(&quot;Entre&quot;)
+
+if ticket and vip:
+    print(&quot;Acces premium&quot;)
+
+if not vip:
+    print(&quot;Pas VIP&quot;)</code></pre></div>
+<h2 id="chapitre-06--conditions-avec-texte">Conditions avec texte</h2>
+<div class="code-block keep-block"><pre><code class="language-python">mdp = input(&quot;Mot de passe ? &quot;).strip()
+if mdp == &quot;python123&quot;:
+    print(&quot;OK&quot;)
+else:
+    print(&quot;Refuse&quot;)</code></pre></div>
+<p>Souvent on compare en minuscules :</p>
+<div class="code-block keep-block"><pre><code class="language-python">if mdp.lower() == &quot;python123&quot;:
+    print(&quot;OK&quot;)</code></pre></div>
+<h2 id="chapitre-06--operateur-ternaire-apercu">Operateur ternaire (apercu)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">age = 20
+statut = &quot;majeur&quot; if age &gt;= 18 else &quot;mineur&quot;
+print(statut)</code></pre></div>
+<p>Pratique pour une petite decision. Pas obligatoire.</p>
+<h2 id="chapitre-06--exemple-complet">Exemple complet</h2>
+<div class="code-block keep-block"><pre><code class="language-python">score = int(input(&quot;Score ? &quot;))
+vies = int(input(&quot;Vies ? &quot;))
+
+if score &gt;= 100 and vies &gt; 0:
+    print(&quot;Niveau suivant&quot;)
+elif vies == 0:
+    print(&quot;Game over&quot;)
+else:
+    print(&quot;Continue&quot;)</code></pre></div>
+<h2 id="chapitre-06--a-toi">A toi</h2>
+<p>Demande un mot de passe.</p>
+<p>Si c&#x27;est <code>&quot;python123&quot;</code>, affiche &quot;OK&quot;.</p>
+<p>Sinon &quot;Refuse&quot;.</p>
+<p>Bonus : accepte aussi avec majuscules mixees via <code>.lower()</code>.</p>
+<h2 id="chapitre-06--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Change les seuils de l&#x27;exemple note. Relance avec 9, 10, 16.</p>
+<h2 id="chapitre-06--mini-defi">Mini defi</h2>
+<p>Programme &quot;meteo&quot; : si temperature &lt; 0 -&gt; &quot;froid&quot;, &lt; 20 -&gt; &quot;doux&quot;, sinon &quot;chaud&quot;.</p></article><article class="chapter chapter-break" id="chapitre-07"><div class="chapter-num">Chapitre 7</div><h1 id="chapitre-07--chapitre-7-les-boucles">Chapitre 7 - Les boucles</h1>
+<p>Une boucle = repeter sans tout retaper.</p>
+<h2 id="chapitre-07--for-range">for + range</h2>
+<div class="code-block keep-block"><pre><code class="language-python">for i in range(1, 6):
+    print(&quot;Tour&quot;, i)</code></pre></div>
+<p><code>range(1, 6)</code> = 1, 2, 3, 4, 5 (le 6 est exclu).</p>
+<div class="code-block keep-block"><pre><code class="language-python">for i in range(5):      # 0..4
+    print(i)
+
+for i in range(0, 10, 2):  # 0,2,4,6,8
+    print(i)</code></pre></div>
+<h2 id="chapitre-07--while">while</h2>
+<div class="code-block keep-block"><pre><code class="language-python">vies = 3
+while vies &gt; 0:
+    print(&quot;Il reste&quot;, vies, &quot;vies&quot;)
+    vies = vies - 1</code></pre></div>
+<p>Si tu oublies de diminuer <code>vies</code> : boucle infinie.</p>
+<p>Ctrl+C pour arreter.</p>
+<h2 id="chapitre-07--boucler-sur-une-liste">Boucler sur une liste</h2>
+<div class="code-block keep-block"><pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;kiwi&quot;]
+for fruit in fruits:
+    print(fruit)</code></pre></div>
+<p>Avec index :</p>
+<div class="code-block keep-block"><pre><code class="language-python">for i, fruit in enumerate(fruits, start=1):
+    print(i, fruit)</code></pre></div>
+<h2 id="chapitre-07--break-et-continue">break et continue</h2>
+<div class="code-block keep-block"><pre><code class="language-python">for n in range(1, 10):
+    if n == 5:
+        break      # stop complet
+    if n % 2 == 0:
+        continue   # saute le reste du tour
+    print(n)</code></pre></div>
+<p><code>break</code> = je sors.</p>
+<p><code>continue</code> = je passe au tour suivant.</p>
+<h2 id="chapitre-07--while-true-motif-utile">while True (motif utile)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">while True:
+    cmd = input(&quot;Commande (q pour quitter) : &quot;).strip().lower()
+    if cmd == &quot;q&quot;:
+        break
+    print(&quot;Tu as tape :&quot;, cmd)</code></pre></div>
+<h2 id="chapitre-07--exemple-table-de-multiplication">Exemple : table de multiplication</h2>
+<div class="code-block keep-block"><pre><code class="language-python">n = 8
+for i in range(1, 11):
+    print(f&quot;{n} x {i} = {n * i}&quot;)</code></pre></div>
+<h2 id="chapitre-07--a-toi">A toi</h2>
+<p>Affiche la table de 8 (de 8x1 a 8x10) avec <code>for</code> et <code>range</code>.</p>
+<p>Puis une version <code>while</code>.</p>
+<h2 id="chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Fais une boucle qui compte de 10 a 1, puis affiche &quot;Decollage&quot;.</p>
+<h2 id="chapitre-07--mini-defi">Mini defi</h2>
+<p>Demande un mot de passe jusqu&#x27;a ce que ce soit le bon (max 3 essais).</p>
+<p>Utilise <code>while</code> + <code>break</code>.</p></article><article class="chapter chapter-break" id="chapitre-08"><div class="chapter-num">Chapitre 8</div><h1 id="chapitre-08--chapitre-8-les-fonctions">Chapitre 8 - Les fonctions</h1>
+<p>Une fonction = une recette reutilisable.</p>
+<p>Tu la definis une fois. Tu l&#x27;appelles quand tu veux.</p>
+<div class="code-block keep-block"><pre><code class="language-python">def dire_salut():
+    print(&quot;Salut !&quot;)
+
+dire_salut()
+dire_salut()</code></pre></div>
+<h2 id="chapitre-08--avec-parametre">Avec parametre</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def dire_salut_a(prenom):
+    print(f&quot;Salut {prenom}&quot;)
+
+dire_salut_a(&quot;Nora&quot;)
+dire_salut_a(&quot;Sam&quot;)</code></pre></div>
+<h2 id="chapitre-08--return">return</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def double(n):
+    return n * 2
+
+resultat = double(4)
+print(resultat)  # 8</code></pre></div>
+<p>Sans <code>return</code>, la fonction renvoie <code>None</code>.</p>
+<p><code>print</code> affiche. <code>return</code> renvoie une valeur au code appelant.</p>
+<p>Ce n&#x27;est pas la meme chose.</p>
+<h2 id="chapitre-08--valeur-par-defaut">Valeur par defaut</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def saluer(prenom=&quot;ami&quot;):
+    print(f&quot;Salut {prenom}&quot;)
+
+saluer()
+saluer(&quot;Lea&quot;)</code></pre></div>
+<h2 id="chapitre-08--plusieurs-parametres">Plusieurs parametres</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def moyenne(a, b):
+    return (a + b) / 2
+
+print(moyenne(12, 16))</code></pre></div>
+<h2 id="chapitre-08--petite-doc">Petite doc</h2>
+<p>Au-dessus du corps, tu peux laisser un commentaire clair :</p>
+<div class="code-block keep-block"><pre><code class="language-python">def carre(n):
+    # Renvoie n au carre
+    return n * n</code></pre></div>
+<p>Plus tard tu verras aussi les &quot;docstrings&quot; (texte entre triples guillemets).</p>
+<p>Meme idee : expliquer le role de la fonction.</p>
+<h2 id="chapitre-08--args-apercu-avance">*args (apercu avance)</h2>
+<p>Parfois tu veux un nombre variable d&#x27;arguments :</p>
+<div class="code-block keep-block"><pre><code class="language-python">def somme(*nombres):
+    total = 0
+    for n in nombres:
+        total += n
+    return total
+
+print(somme(1, 2, 3, 4))  # 10</code></pre></div>
+<p>Tu n&#x27;es pas oblige de l&#x27;utiliser tout de suite.</p>
+<p>Mais tu le croiseras dans du vrai code.</p>
+<h2 id="chapitre-08--pourquoi-c-est-bien">Pourquoi c&#x27;est bien</h2>
+<ul>
+<li>Moins de copie</li>
+<li>Code plus clair</li>
+<li>Plus facile a corriger</li>
+<li>Tu testes une brique a la fois</li>
+</ul>
+<h2 id="chapitre-08--exemple-complet">Exemple complet</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def note_sur_20(points, total):
+    if total == 0:
+        return 0
+    return round(points / total * 20, 1)
+
+print(note_sur_20(15, 20))
+print(note_sur_20(7, 10))</code></pre></div>
+<h2 id="chapitre-08--a-toi">A toi</h2>
+<p>Ecris <code>moyenne(a, b)</code> qui renvoie la moyenne.</p>
+<p>Puis <code>moyenne3(a, b, c)</code>.</p>
+<p>Teste.</p>
+<h2 id="chapitre-08--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ecris une fonction <code>est_pair(n)</code> qui renvoie True/False.</p>
+<p>Teste avec 2, 3, 10.</p>
+<h2 id="chapitre-08--mini-defi">Mini defi</h2>
+<p>Fonction <code>presenter(prenom, age)</code> qui retourne une phrase (pas print).</p>
+<p>Tu printes le resultat a l&#x27;exterieur.</p></article><article class="chapter chapter-break" id="chapitre-09"><div class="chapter-num">Chapitre 9</div><h1 id="chapitre-09--chapitre-9-les-listes">Chapitre 9 - Les listes</h1>
+<figure class="illus"><img src="images/print/python-listes.jpg" alt="Une liste range plusieurs valeurs, une apres l&#x27;autre."><figcaption>Une liste range plusieurs valeurs, une apres l&#x27;autre.</figcaption></figure>
+<p>Une liste range plusieurs valeurs, une apres l&#x27;autre.</p>
+<div class="code-block keep-block"><pre><code class="language-python">courses = [&quot;pain&quot;, &quot;lait&quot;, &quot;oeufs&quot;]
+print(courses[0])  # pain
+print(courses[-1]) # oeufs (dernier)</code></pre></div>
+<p>L&#x27;index commence a <strong>0</strong>.</p>
+<p><code>-1</code> = dernier element. Pratique.</p>
+<h2 id="chapitre-09--modifier-longueur">Modifier / longueur</h2>
+<div class="code-block keep-block"><pre><code class="language-python">courses[1] = &quot;lait d&#x27;avoine&quot;
+print(len(courses))</code></pre></div>
+<h2 id="chapitre-09--ajouter-retirer">Ajouter / retirer</h2>
+<div class="code-block keep-block"><pre><code class="language-python">courses.append(&quot;beurre&quot;)
+courses.insert(0, &quot;eau&quot;)
+dernier = courses.pop()
+courses.remove(&quot;pain&quot;)  # enleve la premiere occurrence</code></pre></div>
+<h2 id="chapitre-09--parcourir">Parcourir</h2>
+<div class="code-block keep-block"><pre><code class="language-python">for item in courses:
+    print(&quot;-&quot;, item)</code></pre></div>
+<h2 id="chapitre-09--in">in</h2>
+<div class="code-block keep-block"><pre><code class="language-python">if &quot;pain&quot; in courses:
+    print(&quot;On a du pain&quot;)</code></pre></div>
+<h2 id="chapitre-09--tranches-slices">Tranches (slices)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">nums = [0, 1, 2, 3, 4, 5]
+print(nums[1:4])   # 1,2,3
+print(nums[:3])    # 0,1,2
+print(nums[3:])    # 3,4,5
+print(nums[::-1])  # inverse</code></pre></div>
+<h2 id="chapitre-09--trier">Trier</h2>
+<div class="code-block keep-block"><pre><code class="language-python">notes = [12, 8, 15, 10]
+print(sorted(notes))       # nouvelle liste
+notes.sort()               # modifie sur place
+notes.sort(reverse=True)</code></pre></div>
+<h2 id="chapitre-09--list-comprehension-avance-soft">List comprehension (avance soft)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">carres = [n * n for n in range(1, 6)]
+print(carres)  # [1, 4, 9, 16, 25]
+
+pairs = [n for n in range(10) if n % 2 == 0]</code></pre></div>
+<p>C&#x27;est une boucle <code>for</code> en une ligne.</p>
+<p>Lisible si c&#x27;est court. Sinon, garde une boucle classique.</p>
+<h2 id="chapitre-09--tuple-cousin-fige">Tuple (cousin fige)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">point = (10, 20)
+# point[0] = 11  # erreur : tuple non modifiable</code></pre></div>
+<p>Utile pour des paires fixes (coordonnees, resultat double...).</p>
+<h2 id="chapitre-09--ensemble-set-apercu">Ensemble set (apercu)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">tags = {&quot;python&quot;, &quot;debutant&quot;, &quot;python&quot;}
+print(tags)  # les doublons sautent</code></pre></div>
+<h2 id="chapitre-09--a-toi">A toi</h2>
+<p>Liste de 4 jeux.</p>
+<p>Ajoute-en un avec <code>append</code>.</p>
+<p>Affiche tout avec une boucle.</p>
+<p>Affiche aussi le dernier avec <code>[-1]</code>.</p>
+<h2 id="chapitre-09--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Fais une liste de notes. Calcule la moyenne avec une boucle.</p>
+<h2 id="chapitre-09--mini-defi">Mini defi</h2>
+<p>A partir de <code>[1,2,3,4,5,6]</code>, cree la liste des pairs avec une comprehension.</p></article><article class="chapter chapter-break" id="chapitre-10"><div class="chapter-num">Chapitre 10</div><h1 id="chapitre-10--chapitre-10-les-dictionnaires">Chapitre 10 - Les dictionnaires</h1>
+<p>Un dictionnaire = une fiche avec des cles (pas seulement des numeros).</p>
+<div class="code-block keep-block"><pre><code class="language-python">joueur = {
+    &quot;prenom&quot;: &quot;Sam&quot;,
+    &quot;score&quot;: 120,
+    &quot;actif&quot;: True,
+}
+
+print(joueur[&quot;prenom&quot;])
+joueur[&quot;score&quot;] = joueur[&quot;score&quot;] + 10
+joueur[&quot;niveau&quot;] = 2  # nouvelle cle</code></pre></div>
+<h2 id="chapitre-10--cle-absente">Cle absente</h2>
+<div class="code-block keep-block"><pre><code class="language-python">print(joueur.get(&quot;niveau&quot;, 1))</code></pre></div>
+<p>Si &quot;niveau&quot; n&#x27;existe pas, tu obtiens 1.</p>
+<p>Avec <code>joueur[&quot;niveau&quot;]</code> direct : erreur si absent.</p>
+<h2 id="chapitre-10--parcourir">Parcourir</h2>
+<div class="code-block keep-block"><pre><code class="language-python">for cle, valeur in joueur.items():
+    print(cle, &quot;-&gt;&quot;, valeur)
+
+print(joueur.keys())
+print(joueur.values())</code></pre></div>
+<h2 id="chapitre-10--liste-de-dictionnaires">Liste de dictionnaires</h2>
+<div class="code-block keep-block"><pre><code class="language-python">equipe = [
+    {&quot;prenom&quot;: &quot;Sam&quot;, &quot;score&quot;: 120},
+    {&quot;prenom&quot;: &quot;Lea&quot;, &quot;score&quot;: 95},
+]
+print(equipe[0][&quot;prenom&quot;])
+
+for j in equipe:
+    print(f&quot;{j[&#x27;prenom&#x27;]} : {j[&#x27;score&#x27;]}&quot;)</code></pre></div>
+<h2 id="chapitre-10--compter-avec-un-dico">Compter avec un dico</h2>
+<div class="code-block keep-block"><pre><code class="language-python">votes = [&quot;chat&quot;, &quot;chien&quot;, &quot;chat&quot;, &quot;oiseau&quot;, &quot;chat&quot;]
+compteur = {}
+for mot in mots:
+    compteur[mot] = compteur.get(mot, 0) + 1
+print(compteur)</code></pre></div>
+<p>Pattern tres courant.</p>
+<h2 id="chapitre-10--json-dans-la-tete">JSON dans la tete</h2>
+<p>Un dictionnaire Python ressemble beaucoup a du JSON.</p>
+<p>Tu t&#x27;en serviras pour sauvegarder des configs, des scores, des API...</p>
+<h2 id="chapitre-10--a-toi">A toi</h2>
+<p>Cree un dico <code>livre</code> avec titre, pages, lu (True/False).</p>
+<p>Affiche une phrase complete.</p>
+<p>Ajoute une cle <code>auteur</code>.</p>
+<h2 id="chapitre-10--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Fais une petite &quot;fiche eleve&quot; (nom, moyenne, classe).</p>
+<p>Modifie la moyenne. Reaffiche.</p>
+<h2 id="chapitre-10--mini-defi">Mini defi</h2>
+<p>Liste de 3 produits <code>{nom, prix}</code>.</p>
+<p>Affiche le total des prix avec une boucle.</p></article><article class="chapter chapter-break" id="chapitre-11"><div class="chapter-num">Chapitre 11</div><h1 id="chapitre-11--chapitre-11-lire-et-ecrire-un-fichier">Chapitre 11 - Lire et ecrire un fichier</h1>
+<p>Parfois tu veux garder des infos hors du programme.</p>
+<p>Sinon tout disparait a la fermeture.</p>
+<h2 id="chapitre-11--ecrire">Ecrire</h2>
+<div class="code-block keep-block"><pre><code class="language-python">with open(&quot;notes.txt&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    f.write(&quot;Salut\n&quot;)
+    f.write(&quot;Deuxieme ligne\n&quot;)</code></pre></div>
+<p><code>with</code> ferme le fichier proprement. Prends le reflexe.</p>
+<h2 id="chapitre-11--lire">Lire</h2>
+<div class="code-block keep-block"><pre><code class="language-python">with open(&quot;notes.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    contenu = f.read()
+print(contenu)</code></pre></div>
+<h2 id="chapitre-11--lire-ligne-par-ligne">Lire ligne par ligne</h2>
+<div class="code-block keep-block"><pre><code class="language-python">with open(&quot;notes.txt&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    for ligne in f:
+        print(&quot;&gt;&quot;, ligne.strip())</code></pre></div>
+<h2 id="chapitre-11--modes-utiles">Modes utiles</h2>
+<ul>
+<li><code>&quot;w&quot;</code> : ecrire (ecrase)</li>
+<li><code>&quot;a&quot;</code> : ajouter a la fin</li>
+<li><code>&quot;r&quot;</code> : lire</li>
+</ul>
+<h2 id="chapitre-11--json-plus-avance-tres-utile">JSON (plus avance, tres utile)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">import json
+
+data = {&quot;prenom&quot;: &quot;Sam&quot;, &quot;score&quot;: 120}
+
+with open(&quot;joueur.json&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+with open(&quot;joueur.json&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    charge = json.load(f)
+
+print(charge[&quot;score&quot;])</code></pre></div>
+<p>JSON = format texte standard pour echanger des donnees.</p>
+<p>Parfait pour sauvegarder un score ou une config.</p>
+<h2 id="chapitre-11--pathlib-apercu">pathlib (apercu)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">from pathlib import Path
+
+p = Path(&quot;notes.txt&quot;)
+print(p.exists())
+print(p.read_text(encoding=&quot;utf-8&quot;))</code></pre></div>
+<p>Plus moderne que <code>open</code> seul pour certains cas.</p>
+<p>Les deux cohabitent.</p>
+<h2 id="chapitre-11--erreurs-classiques">Erreurs classiques</h2>
+<ul>
+<li>Mauvais dossier : fichier &quot;introuvable&quot;</li>
+<li>Oublier <code>encoding=&quot;utf-8&quot;</code> (accents foireux)</li>
+<li>Mode <code>&quot;w&quot;</code> qui ecrase sans prevenir</li>
+</ul>
+<h2 id="chapitre-11--a-toi">A toi</h2>
+<p>Ecris ton prenom dans <code>moi.txt</code>.</p>
+<p>Relis le fichier et affiche-le.</p>
+<p>Puis sauvegarde un petit dico dans <code>moi.json</code>.</p>
+<h2 id="chapitre-11--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ajoute 3 lignes dans un journal <code>journal.txt</code> en mode <code>&quot;a&quot;</code>.</p>
+<p>Relance 2 fois. Verifie que ca s&#x27;allonge.</p>
+<h2 id="chapitre-11--mini-defi">Mini defi</h2>
+<p>Programme qui demande un score, le sauve en JSON, le recharge, l&#x27;affiche.</p></article><article class="chapter chapter-break" id="chapitre-12"><div class="chapter-num">Chapitre 12</div><h1 id="chapitre-12--chapitre-12-les-modules-import">Chapitre 12 - Les modules (import)</h1>
+<p>Un module = une boite a outils deja prete.</p>
+<div class="code-block keep-block"><pre><code class="language-python">import math
+print(math.sqrt(16))
+print(math.pi)</code></pre></div>
+<h2 id="chapitre-12--random">random</h2>
+<div class="code-block keep-block"><pre><code class="language-python">import random
+
+print(random.randint(1, 6))  # de 1 a 6 inclus
+print(random.choice([&quot;rouge&quot;, &quot;vert&quot;, &quot;bleu&quot;]))
+print(random.random())       # flottant entre 0 et 1</code></pre></div>
+<div class="code-block keep-block"><pre><code class="language-python">cartes = [1, 2, 3, 4, 5]
+random.shuffle(cartes)
+print(cartes)</code></pre></div>
+<h2 id="chapitre-12--datetime-apercu">datetime (apercu)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">from datetime import datetime
+maintenant = datetime.now()
+print(maintenant.strftime(&quot;%Y-%m-%d %H:%M&quot;))</code></pre></div>
+<p>Utile pour dater un log ou un score.</p>
+<h2 id="chapitre-12--from-import">from ... import</h2>
+<div class="code-block keep-block"><pre><code class="language-python">from math import pi, sqrt
+print(pi, sqrt(9))</code></pre></div>
+<h2 id="chapitre-12--creer-ton-module">Creer ton module</h2>
+<p>Fichier <code>outils.py</code> :</p>
+<div class="code-block keep-block"><pre><code class="language-python">def double(n):
+    return n * 2</code></pre></div>
+<p>Autre fichier :</p>
+<div class="code-block keep-block"><pre><code class="language-python">import outils
+print(outils.double(5))</code></pre></div>
+<p>Pratique quand le projet grandit.</p>
+<h2 id="chapitre-12--pip-apercu">pip (apercu)</h2>
+<p>Pour installer une bibliotheque tierce :</p>
+<div class="code-block keep-block"><pre><code class="language-bash">pip install requests</code></pre></div>
+<p>Puis :</p>
+<div class="code-block keep-block"><pre><code class="language-python"># import requests  # apres install</code></pre></div>
+<p>On ne l&#x27;utilise pas dans ce livre.</p>
+<p>Mais tu dois connaitre le reflexe : module standard d&#x27;abord, <code>pip</code> ensuite.</p>
+<h2 id="chapitre-12--a-toi">A toi</h2>
+<p>Simule un de a 6 faces 5 fois avec une boucle.</p>
+<p>Affiche aussi la somme des jets.</p>
+<h2 id="chapitre-12--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Melange une liste de 5 prenoms avec <code>shuffle</code>, affiche le premier &quot;tire au sort&quot;.</p>
+<h2 id="chapitre-12--mini-defi">Mini defi</h2>
+<p>Petit &quot;oracle&quot; : tire une phrase au hasard dans une liste de 5 conseils.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1 id="chapitre-13--chapitre-13-mini-projet-quiz-terminal">Chapitre 13 - Mini-projet : quiz terminal</h1>
+<figure class="illus"><img src="images/print/python-projet.jpg" alt="Mini projet : un petit quiz dans le terminal."><figcaption>Mini projet : un petit quiz dans le terminal.</figcaption></figure>
+<p>On assemble ce qu&#x27;on sait : variables, conditions, boucles, listes, dicos.</p>
+<h2 id="chapitre-13--version-simple">Version simple</h2>
+<div class="code-block code-long"><pre><code class="language-python">score = 0
+
+reponse = input(&quot;Capitale de la France ? &quot;)
+if reponse.strip().lower() == &quot;paris&quot;:
+    print(&quot;OK&quot;)
+    score = score + 1
+else:
+    print(&quot;Non, c&#x27;etait Paris&quot;)
+
+reponse = input(&quot;2 + 2 = ? &quot;)
+if reponse.strip() == &quot;4&quot;:
+    print(&quot;OK&quot;)
+    score = score + 1
+else:
+    print(&quot;Non, 4&quot;)
+
+reponse = input(&quot;Langage de ce livre ? &quot;)
+if reponse.strip().lower() == &quot;python&quot;:
+    print(&quot;OK&quot;)
+    score = score + 1
+else:
+    print(&quot;Python !&quot;)
+
+print(&quot;Score final :&quot;, score, &quot;/ 3&quot;)</code></pre></div>
+<h2 id="chapitre-13--version-plus-propre">Version plus propre</h2>
+<div class="code-block keep-block"><pre><code class="language-python">questions = [
+    {&quot;q&quot;: &quot;Capitale de la France ?&quot;, &quot;a&quot;: &quot;paris&quot;},
+    {&quot;q&quot;: &quot;2 + 2 = ?&quot;, &quot;a&quot;: &quot;4&quot;},
+    {&quot;q&quot;: &quot;Langage de ce livre ?&quot;, &quot;a&quot;: &quot;python&quot;},
+]
+
+score = 0
+for item in questions:
+    rep = input(item[&quot;q&quot;] + &quot; &quot;).strip().lower()
+    if rep == item[&quot;a&quot;]:
+        print(&quot;OK&quot;)
+        score += 1
+    else:
+        print(&quot;Non, reponse :&quot;, item[&quot;a&quot;])
+
+print(f&quot;Score : {score} / {len(questions)}&quot;)</code></pre></div>
+<h2 id="chapitre-13--ameliorations">Ameliorations</h2>
+<ol>
+<li>1. Melanger l&#x27;ordre avec <code>random.shuffle</code></li>
+<li>2. Sauvegarder le meilleur score dans un fichier JSON</li>
+<li>3. Ajouter 2 questions perso</li>
+<li>4. Afficher un message selon le score (bien / moyen / a revoir)</li>
+</ol>
+<h2 id="chapitre-13--version-avec-shuffle-json">Version avec shuffle + JSON</h2>
+<div class="code-block code-long"><pre><code class="language-python">import json
+import random
+from pathlib import Path
+
+questions = [
+    {&quot;q&quot;: &quot;Capitale de la France ?&quot;, &quot;a&quot;: &quot;paris&quot;},
+    {&quot;q&quot;: &quot;2 + 2 = ?&quot;, &quot;a&quot;: &quot;4&quot;},
+    {&quot;q&quot;: &quot;Langage de ce livre ?&quot;, &quot;a&quot;: &quot;python&quot;},
+    {&quot;q&quot;: &quot;Couleur du ciel (souvent) ?&quot;, &quot;a&quot;: &quot;bleu&quot;},
+]
+
+random.shuffle(questions)
+score = 0
+for item in questions:
+    rep = input(item[&quot;q&quot;] + &quot; &quot;).strip().lower()
+    if rep == item[&quot;a&quot;]:
+        print(&quot;OK&quot;)
+        score += 1
+    else:
+        print(&quot;Non :&quot;, item[&quot;a&quot;])
+
+print(f&quot;Score : {score}/{len(questions)}&quot;)
+
+fichier = Path(&quot;meilleur_score.json&quot;)
+meilleur = 0
+if fichier.exists():
+    meilleur = json.loads(fichier.read_text(encoding=&quot;utf-8&quot;)).get(&quot;score&quot;, 0)
+
+if score &gt; meilleur:
+    fichier.write_text(json.dumps({&quot;score&quot;: score}, indent=2), encoding=&quot;utf-8&quot;)
+    print(&quot;Nouveau record !&quot;)
+else:
+    print(&quot;Record actuel :&quot;, meilleur)</code></pre></div>
+<h2 id="chapitre-13--criteres">Criteres</h2>
+<ul>
+<li>3 questions minimum (vise 5)</li>
+<li>Score affiche a la fin</li>
+<li>Comparaison souple (<code>strip</code>, <code>lower</code>)</li>
+</ul>
+<h2 id="chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Retape la version propre sans copier-coller.</p>
+<p>Change les questions. Relance 2 fois.</p>
+<h2 id="chapitre-13--mini-defi">Mini defi</h2>
+<p>Ajoute le melange + sauvegarde du record.</p></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-ce-qu-il-faut-retenir-bases">Chapitre 14 - Ce qu&#x27;il faut retenir (bases)</h1>
+<p>Tu as les bases. Ensuite : exceptions + classes, puis ateliers.</p>
+<h2 id="chapitre-14--en-une-minute">En une minute</h2>
+<ul>
+<li><code>print</code> / <code>input</code> / f-strings</li>
+<li>Variables + <code>snake_case</code></li>
+<li>Types : str, int, float, bool, None</li>
+<li><code>if</code> / <code>elif</code> / <code>else</code></li>
+<li><code>for</code> / <code>while</code> / <code>break</code> / <code>continue</code></li>
+<li>Fonctions + <code>return</code> (+ apercu <code>*args</code>)</li>
+<li>Listes (slices, comprehension), tuples, sets</li>
+<li>Dictionnaires + <code>.get</code></li>
+<li>Fichiers texte + JSON</li>
+<li><code>import</code> (math, random, json, datetime...)</li>
+</ul>
+<h2 id="chapitre-14--habitudes">Habitudes</h2>
+<ol>
+<li>1. Indentation propre (4 espaces)</li>
+<li>2. Noms clairs</li>
+<li>3. Tester souvent</li>
+<li>4. Lire les messages d&#x27;erreur</li>
+<li>5. Petites fonctions</li>
+<li>6. <code>with open(...)</code> pour les fichiers</li>
+</ol>
+<h2 id="chapitre-14--erreurs-classiques">Erreurs classiques</h2>
+<ul>
+<li>Oublier <code>:</code> apres <code>if</code> / <code>for</code> / <code>def</code></li>
+<li>Mauvaise indentation</li>
+<li>Comparer un nombre avec un texte (<code>&quot;4&quot;</code> vs <code>4</code>)</li>
+<li>Fichier introuvable (mauvais dossier)</li>
+<li>Confondre <code>=</code> et <code>==</code></li>
+<li>Confondre <code>print</code> et <code>return</code></li>
+</ul>
+<h2 id="chapitre-14--carte-mentale">Carte mentale</h2>
+<ol>
+<li>1. Donnees (variables, listes, dicos)</li>
+<li>2. Decisions (<code>if</code>)</li>
+<li>3. Repetitions (boucles)</li>
+<li>4. Organisation (fonctions, modules)</li>
+<li>5. Memoire (fichiers / JSON)</li>
+</ol>
+<h2 id="chapitre-14--suite-immediate">Suite immediate</h2>
+<p>Deux chapitres un cran au-dessus :</p>
+<ul>
+<li>gerer les plantages (<code>try/except</code>)</li>
+<li>modeliser avec une <code>class</code></li>
+</ul>
+<p>Puis ateliers + quiz.</p>
+<h2 id="chapitre-14--mini-check">Mini check</h2>
+<p>Sans regarder : ecris de memoire un <code>if</code>, un <code>for</code>, une fonction avec <code>return</code>.</p>
+<p>Si ca vient, tu es pret pour la suite.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Chapitre 15</div><h1 id="chapitre-15--chapitre-15-les-exceptions-try-except">Chapitre 15 - Les exceptions (try / except)</h1>
+<figure class="illus"><img src="images/print/python-exceptions.jpg" alt="try : j&#x27;essaie. except : je rattrape."><figcaption>try : j&#x27;essaie. except : je rattrape.</figcaption></figure>
+<p>Parfois le programme plante.</p>
+<p>Pas grave. On peut rattraper.</p>
+<p>Exemple classique : l&#x27;utilisateur tape une lettre au lieu d&#x27;un nombre.</p>
+<div class="code-block keep-block"><pre><code class="language-python">texte = input(&quot;Nombre ? &quot;)
+try:
+    n = int(texte)
+    print(&quot;Tu as choisi&quot;, n)
+except ValueError:
+    print(&quot;Ce n&#x27;est pas un nombre.&quot;)</code></pre></div>
+<p><code>try</code> = j&#x27;essaie.</p>
+<p><code>except</code> = si ca casse de cette facon, je fais autre chose.</p>
+<h2 id="chapitre-15--plusieurs-erreurs">Plusieurs erreurs</h2>
+<div class="code-block keep-block"><pre><code class="language-python">try:
+    a = int(input(&quot;a ? &quot;))
+    b = int(input(&quot;b ? &quot;))
+    print(a / b)
+except ValueError:
+    print(&quot;Il faut des nombres.&quot;)
+except ZeroDivisionError:
+    print(&quot;Division par zero interdite.&quot;)</code></pre></div>
+<h2 id="chapitre-15--else-et-finally">else et finally</h2>
+<div class="code-block keep-block"><pre><code class="language-python">try:
+    n = int(input(&quot;Nombre ? &quot;))
+except ValueError:
+    print(&quot;Nope&quot;)
+else:
+    print(&quot;OK, n =&quot;, n)   # seulement si pas d&#x27;erreur
+finally:
+    print(&quot;Toujours execute&quot;)</code></pre></div>
+<p><code>finally</code> sert souvent a &quot;nettoyer&quot; (fermer un truc), meme en cas d&#x27;erreur.</p>
+<h2 id="chapitre-15--raise-lever-une-erreur">raise (lever une erreur)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def age_valide(age):
+    if age &lt; 0:
+        raise ValueError(&quot;Age negatif impossible&quot;)
+    return age
+
+print(age_valide(12))
+# print(age_valide(-1))  # plante volontairement</code></pre></div>
+<p>Utile dans tes fonctions : signaler un probleme clair.</p>
+<h2 id="chapitre-15--ne-pas-tout-avaler">Ne pas tout avaler</h2>
+<p>Mauvais reflexe :</p>
+<div class="code-block keep-block"><pre><code class="language-python">try:
+    faire_un_truc()
+except:
+    pass  # silence total = tu ne vois plus rien</code></pre></div>
+<p>Mieux : attraper l&#x27;erreur precise, ou au moins afficher un message.</p>
+<h2 id="chapitre-15--fichier-manquant">Fichier manquant</h2>
+<div class="code-block keep-block"><pre><code class="language-python">from pathlib import Path
+
+p = Path(&quot;secret.txt&quot;)
+try:
+    print(p.read_text(encoding=&quot;utf-8&quot;))
+except FileNotFoundError:
+    print(&quot;Fichier introuvable. On continue.&quot;)</code></pre></div>
+<h2 id="chapitre-15--exemple-utile-saisie-solide">Exemple utile : saisie solide</h2>
+<div class="code-block keep-block"><pre><code class="language-python">def demander_int(message):
+    while True:
+        try:
+            return int(input(message))
+        except ValueError:
+            print(&quot;Un entier, s&#x27;il te plait.&quot;)
+
+age = demander_int(&quot;Age ? &quot;)
+print(&quot;Age =&quot;, age)</code></pre></div>
+<p>Tu peux reutiliser ca partout.</p>
+<h2 id="chapitre-15--a-toi">A toi</h2>
+<p>Reprends le juste prix (ou un <code>int(input(...))</code>).</p>
+<p>Entoure la conversion avec <code>try/except</code>.</p>
+<p>Si erreur : message + redemande.</p>
+<h2 id="chapitre-15--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Fais planter volontairement <code>int(&quot;bonjour&quot;)</code> sans try.</p>
+<p>Lis l&#x27;erreur. Puis protege.</p>
+<h2 id="chapitre-15--mini-defi">Mini defi</h2>
+<p>Fonction <code>diviser(a, b)</code> qui renvoie le resultat ou <code>None</code> si division par zero,</p>
+<p>avec un message clair.</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Chapitre 16</div><h1 id="chapitre-16--chapitre-16-les-classes-objets">Chapitre 16 - Les classes (objets)</h1>
+<figure class="illus"><img src="images/print/python-classes.jpg" alt="Une classe = un moule. Un objet = un exemplaire."><figcaption>Une classe = un moule. Un objet = un exemplaire.</figcaption></figure>
+<p>Jusqu&#x27;ici : fonctions + donnees separees.</p>
+<p>Une classe, c&#x27;est coller les deux : &quot;une fiche avec des actions&quot;.</p>
+<p>Image mentale : un moule a cookies.</p>
+<p>La classe = le moule.</p>
+<p>Un objet = un cookie.</p>
+<h2 id="chapitre-16--premiere-classe">Premiere classe</h2>
+<div class="code-block keep-block"><pre><code class="language-python">class Joueur:
+    def __init__(self, prenom, score=0):
+        self.prenom = prenom
+        self.score = score
+
+    def gagner(self, points):
+        self.score += points
+
+    def presenter(self):
+        return f&quot;{self.prenom} : {self.score} pts&quot;
+
+
+j = Joueur(&quot;Sam&quot;)
+j.gagner(10)
+print(j.presenter())</code></pre></div>
+<p><code>__init__</code> = constructeur. Appele a la creation.</p>
+<p><code>self</code> = &quot;moi-meme&quot;, l&#x27;objet en cours.</p>
+<h2 id="chapitre-16--pourquoi-c-est-pratique">Pourquoi c&#x27;est pratique</h2>
+<div class="code-block keep-block"><pre><code class="language-python">equipe = [Joueur(&quot;Sam&quot;), Joueur(&quot;Lea&quot;, 50), Joueur(&quot;Noe&quot;)]
+for j in equipe:
+    j.gagner(5)
+    print(j.presenter())</code></pre></div>
+<p>Chaque joueur a son propre score.</p>
+<p>Pas besoin de 3 variables <code>score_sam</code>, <code>score_lea</code>...</p>
+<h2 id="chapitre-16--methode-vs-fonction">Methode vs fonction</h2>
+<ul>
+<li>Fonction : <code>presenter(joueur)</code></li>
+<li>Methode : <code>joueur.presenter()</code></li>
+</ul>
+<p>Meme idee. Style different.</p>
+<p>Les methodes vivent avec les donnees.</p>
+<h2 id="chapitre-16--str-affichage-joli">__str__ (affichage joli)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">class Joueur:
+    def __init__(self, prenom, score=0):
+        self.prenom = prenom
+        self.score = score
+
+    def __str__(self):
+        return f&quot;{self.prenom} ({self.score})&quot;
+
+
+print(Joueur(&quot;Sam&quot;, 12))</code></pre></div>
+<h2 id="chapitre-16--heritage-apercu">Heritage (apercu)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">class Boss(Joueur):
+    def gagner(self, points):
+        # le boss gagne double
+        self.score += points * 2</code></pre></div>
+<p>Une classe peut specialiser une autre.</p>
+<p>Utile plus tard. Pas obligatoire maintenant.</p>
+<h2 id="chapitre-16--dataclass-tres-moderne-apercu">Dataclass (tres moderne, apercu)</h2>
+<div class="code-block keep-block"><pre><code class="language-python">from dataclasses import dataclass
+
+@dataclass
+class Produit:
+    nom: str
+    prix: float
+
+p = Produit(&quot;Stylo&quot;, 1.5)
+print(p.nom, p.prix)</code></pre></div>
+<p>Python ecrit une partie du boilerplate pour toi.</p>
+<p>Tu le verras dans du code recent.</p>
+<h2 id="chapitre-16--quand-utiliser-une-classe">Quand utiliser une classe ?</h2>
+<ul>
+<li>Plusieurs donnees liees + actions dessus</li>
+<li>Plusieurs &quot;exemplaires&quot; du meme genre (joueurs, produits, ennemis)</li>
+</ul>
+<p>Si c&#x27;est juste 2 fonctions et 1 variable : une fonction suffit.</p>
+<p>Pas besoin de classe partout.</p>
+<h2 id="chapitre-16--a-toi">A toi</h2>
+<p>Cree <code>Compte</code> avec <code>solde</code>.</p>
+<p>Methodes <code>deposer(montant)</code> et <code>retirer(montant)</code>.</p>
+<p>Refuse un retrait trop grand (message ou exception).</p>
+<h2 id="chapitre-16--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Cree 2 joueurs. Fais-les gagner des points. Affiche le plus fort.</p>
+<h2 id="chapitre-16--mini-defi">Mini defi</h2>
+<p>Classe <code>Question</code> avec <code>texte</code> et <code>reponse</code>.</p>
+<p>Methode <code>poser()</code> qui fait l&#x27;input et renvoie True/False.</p>
+<p>Branche ca sur ton quiz.</p></article><article class="chapter chapter-break" id="chapitre-17"><div class="chapter-num">Chapitre 17</div><h1 id="chapitre-17--chapitre-17-atelier-lire-les-erreurs">Chapitre 17 - Atelier : lire les erreurs</h1>
+<p>Le terminal parle. Apprends a l&#x27;ecouter.</p>
+<p>Une erreur, c&#x27;est un GPS, pas une insulte.</p>
+<h2 id="chapitre-17--nameerror">NameError</h2>
+<p>Tu utilises un nom inconnu.</p>
+<p>Souvent une faute de frappe : <code>scroe</code> au lieu de <code>score</code>.</p>
+<h2 id="chapitre-17--typeerror">TypeError</h2>
+<p>Tu melanges mal les types.</p>
+<p>Ex : <code>&quot;3&quot; + 1</code></p>
+<h2 id="chapitre-17--valueerror">ValueError</h2>
+<p>Conversion impossible.</p>
+<p>Ex : <code>int(&quot;bonjour&quot;)</code></p>
+<h2 id="chapitre-17--indexerror-keyerror">IndexError / KeyError</h2>
+<div class="code-block keep-block"><pre><code class="language-python">liste = [1, 2]
+print(liste[5])          # IndexError
+d = {&quot;a&quot;: 1}
+print(d[&quot;b&quot;])            # KeyError</code></pre></div>
+<h2 id="chapitre-17--indentationerror-syntaxerror">IndentationError / SyntaxError</h2>
+<p>Deux points <code>:</code> oublie, ou decalage foireux.</p>
+<p>Ou parenthese non fermee.</p>
+<h2 id="chapitre-17--filenotfounderror">FileNotFoundError</h2>
+<p>Mauvais chemin, mauvais dossier, fichier pas encore cree.</p>
+<h2 id="chapitre-17--methode">Methode</h2>
+<ol>
+<li>1. Lis la <strong>derniere</strong> ligne de l&#x27;erreur (le type)</li>
+<li>2. Va au numero de ligne</li>
+<li>3. Corrige le plus petit truc</li>
+<li>4. Relance</li>
+<li>5. Si besoin, entoure avec <code>try/except</code> (mais comprends d&#x27;abord)</li>
+</ol>
+<h2 id="chapitre-17--exercice-1">Exercice 1</h2>
+<p>Casse volontairement ton quiz (enleve un <code>:</code>).</p>
+<p>Lis l&#x27;erreur. Repare.</p>
+<h2 id="chapitre-17--exercice-2">Exercice 2</h2>
+<p>Fais un <code>int(input(...))</code> et tape <code>abc</code>.</p>
+<p>Puis protege avec <code>try/except</code> comme au chapitre 15.</p>
+<h2 id="chapitre-17--exercice-3">Exercice 3</h2>
+<p>Ouvre un fichier qui n&#x27;existe pas.</p>
+<p>Attrape <code>FileNotFoundError</code>. Affiche un message propre.</p>
+<h2 id="chapitre-17--check-final-atelier">Check final atelier</h2>
+<p>Tu sais :</p>
+<ul>
+<li>nommer 4 types d&#x27;erreurs courants</li>
+<li>trouver la ligne fautive</li>
+<li>corriger sans tout reecrire</li>
+</ul></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-juste-prix">Chapitre 18 - Atelier : juste prix</h1>
+<p>L&#x27;ordinateur choisit un nombre. Tu cherches.</p>
+<h2 id="chapitre-18--version-de-base-avec-try">Version de base (avec try)</h2>
+<div class="code-block code-long"><pre><code class="language-python">import random
+
+secret = random.randint(1, 20)
+essais = 0
+MAX = 6
+
+while essais &lt; MAX:
+    essais += 1
+    try:
+        proposition = int(input(f&quot;Essai {essais}/{MAX} - Nombre 1..20 ? &quot;))
+    except ValueError:
+        print(&quot;Un nombre, merci.&quot;)
+        continue
+
+    if proposition &lt; secret:
+        print(&quot;Plus grand&quot;)
+    elif proposition &gt; secret:
+        print(&quot;Plus petit&quot;)
+    else:
+        print(f&quot;Bravo ! Trouve en {essais} essais&quot;)
+        break
+else:
+    print(f&quot;Perdu. C&#x27;etait {secret}&quot;)</code></pre></div>
+<p>Le <code>else</code> du <code>while</code> s&#x27;execute si on ne <code>break</code> pas.</p>
+<p>Pratique pour le message de defaite.</p>
+<h2 id="chapitre-18--variantes">Variantes</h2>
+<ol>
+<li>1. Demander si on rejoue (<code>o/n</code>)</li>
+<li>2. Garder le meilleur score (moins d&#x27;essais) dans un JSON</li>
+<li>3. Difficulte : facile 1-10, normal 1-20, dur 1-50</li>
+<li>4. Version objet : classe <code>Partie</code> avec <code>secret</code>, <code>essais</code>, <code>jouer()</code></li>
+</ol>
+<h2 id="chapitre-18--version-objet-bonus">Version objet (bonus)</h2>
+<div class="code-block code-long"><pre><code class="language-python">import random
+
+class Partie:
+    def __init__(self, maximum=20, max_essais=6):
+        self.secret = random.randint(1, maximum)
+        self.maximum = maximum
+        self.max_essais = max_essais
+        self.essais = 0
+
+    def jouer(self):
+        while self.essais &lt; self.max_essais:
+            self.essais += 1
+            try:
+                n = int(input(f&quot;1..{self.maximum} ? &quot;))
+            except ValueError:
+                print(&quot;Nombre invalide&quot;)
+                continue
+            if n == self.secret:
+                print(&quot;Gagne&quot;)
+                return True
+            print(&quot;Plus grand&quot; if n &lt; self.secret else &quot;Plus petit&quot;)
+        print(&quot;Perdu :&quot;, self.secret)
+        return False
+
+
+if __name__ == &quot;__main__&quot;:
+    Partie().jouer()</code></pre></div>
+<h2 id="chapitre-18--a-toi">A toi</h2>
+<p>Implemente au moins :</p>
+<ul>
+<li>max essais</li>
+<li>message de defaite</li>
+<li>saisie protegee (<code>try/except</code>)</li>
+</ul>
+<h2 id="chapitre-18--mini-defi">Mini defi</h2>
+<p>Ajoute le mode rejouer + sauvegarde du record.</p></article><article class="chapter chapter-break" id="chapitre-19"><div class="chapter-num">Chapitre 19</div><h1 id="chapitre-19--chapitre-19-atelier-organiser-son-code">Chapitre 19 - Atelier : organiser son code</h1>
+<p>Quand ca grandit, on coupe en fonctions (et parfois en classes).</p>
+<h2 id="chapitre-19--version-fonctions">Version fonctions</h2>
+<div class="code-block code-long"><pre><code class="language-python">def poser_question(texte, bonne):
+    rep = input(texte + &quot; &quot;).strip().lower()
+    if rep == bonne:
+        print(&quot;OK&quot;)
+        return True
+    print(&quot;Non, c&#x27;etait&quot;, bonne)
+    return False
+
+
+def main():
+    score = 0
+    if poser_question(&quot;Capitale de la France ?&quot;, &quot;paris&quot;):
+        score += 1
+    if poser_question(&quot;2 + 2 = ?&quot;, &quot;4&quot;):
+        score += 1
+    print(&quot;Score :&quot;, score)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div>
+<h2 id="chapitre-19--pourquoi-if-name-main">Pourquoi <code>if __name__ == &quot;__main__&quot;</code> ?</h2>
+<p>Ca veut dire : &quot;lance <code>main()</code> seulement si on execute ce fichier directement&quot;.</p>
+<p>Utile quand tu importeras ce fichier ailleurs.</p>
+<h2 id="chapitre-19--version-classe-question">Version classe Question</h2>
+<div class="code-block code-long"><pre><code class="language-python">class Question:
+    def __init__(self, texte, reponse):
+        self.texte = texte
+        self.reponse = reponse
+
+    def poser(self):
+        rep = input(self.texte + &quot; &quot;).strip().lower()
+        ok = rep == self.reponse
+        print(&quot;OK&quot; if ok else f&quot;Non : {self.reponse}&quot;)
+        return ok
+
+
+def main():
+    quiz = [
+        Question(&quot;Capitale de la France ?&quot;, &quot;paris&quot;),
+        Question(&quot;2 + 2 = ?&quot;, &quot;4&quot;),
+        Question(&quot;Langage de ce livre ?&quot;, &quot;python&quot;),
+    ]
+    score = sum(1 for q in quiz if q.poser())
+    print(f&quot;Score : {score}/{len(quiz)}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div>
+<h2 id="chapitre-19--decouper-en-fichiers-idee">Decouper en fichiers (idee)</h2>
+<ul>
+<li><code>questions.py</code> : donnees ou classe <code>Question</code></li>
+<li><code>jeu.py</code> : logique</li>
+<li><code>main.py</code> : point d&#x27;entree</li>
+</ul>
+<p>Meme sur un petit projet, ca clarifie.</p>
+<h2 id="chapitre-19--regle-simple">Regle simple</h2>
+<p>Une fonction / methode = une responsabilite.</p>
+<p><code>poser</code> pose.</p>
+<p><code>main</code> organise.</p>
+<h2 id="chapitre-19--a-toi">A toi</h2>
+<p>Reprends ton quiz.</p>
+<ol>
+<li>1. Decoupe avec au moins 2 fonctions</li>
+<li>2. Bonus : passe en classe <code>Question</code></li>
+<li>3. Bonus 2 : sauve le score en JSON</li>
+</ol>
+<h2 id="chapitre-19--check">Check</h2>
+<p>Si tu rouvres le fichier dans 2 semaines et tu comprends encore :</p>
+<p>c&#x27;est bien organise.</p></article><article class="chapter chapter-break" id="chapitre-20"><div class="chapter-num">Quiz</div><h1 id="chapitre-20--quiz-final-teste-toi">Quiz final - Teste-toi !</h1>
+<h2 id="chapitre-20--questions">Questions</h2>
+<p><strong>Q1.</strong> <code>print(&quot;Salut&quot;)</code> sert a :</p>
+<ul>
+<li>A) Lire un fichier</li>
+<li>B) Afficher a l&#x27;ecran</li>
+<li>C) Installer Python</li>
+</ul>
+<p><strong>Q2.</strong> <code>input(...)</code> renvoie surtout :</p>
+<ul>
+<li>A) un int</li>
+<li>B) un str (texte)</li>
+<li>C) un bool</li>
+</ul>
+<p><strong>Q3.</strong> Pour convertir <code>&quot;12&quot;</code> en nombre :</p>
+<ul>
+<li>A) <code>str(12)</code></li>
+<li>B) <code>int(&quot;12&quot;)</code></li>
+<li>C) <code>print(&quot;12&quot;)</code></li>
+</ul>
+<p><strong>Q4.</strong> Apres <code>if age &gt;= 18:</code> on doit :</p>
+<ul>
+<li>A) Indenter le bloc</li>
+<li>B) Fermer avec <code>end</code></li>
+<li>C) Mettre une virgule</li>
+</ul>
+<p><strong>Q5.</strong> <code>range(1, 4)</code> donne :</p>
+<ul>
+<li>A) 1, 2, 3, 4</li>
+<li>B) 1, 2, 3</li>
+<li>C) 0, 1, 2, 3</li>
+</ul>
+<p><strong>Q6.</strong> <code>return</code> dans une fonction :</p>
+<ul>
+<li>A) Affiche toujours</li>
+<li>B) Renvoie une valeur</li>
+<li>C) Efface la variable</li>
+</ul>
+<p><strong>Q7.</strong> Dans <code>[&quot;a&quot;, &quot;b&quot;]</code>, index de <code>&quot;a&quot;</code> :</p>
+<ul>
+<li>A) 1</li>
+<li>B) 0</li>
+<li>C) 2</li>
+</ul>
+<p><strong>Q8.</strong> Un dictionnaire associe :</p>
+<ul>
+<li>A) index numerique seulement</li>
+<li>B) cles -&gt; valeurs</li>
+<li>C) uniquement des bool</li>
+</ul>
+<p><strong>Q9.</strong> <code>with open(...) as f:</code> c&#x27;est bien parce que :</p>
+<ul>
+<li>A) Ca colore le texte</li>
+<li>B) Ca gere l&#x27;ouverture/fermeture proprement</li>
+<li>C) Ca remplace <code>print</code></li>
+</ul>
+<p><strong>Q10.</strong> <code>random.randint(1, 6)</code> :</p>
+<ul>
+<li>A) Tire un entier de 1 a 6</li>
+<li>B) Affiche toujours 6</li>
+<li>C) Cree un fichier</li>
+</ul>
+<p><strong>Q11.</strong> <code>True</code> et <code>False</code> s&#x27;ecrivent :</p>
+<ul>
+<li>A) true / false</li>
+<li>B) True / False</li>
+<li>C) TRUE / FALSE seulement</li>
+</ul>
+<p><strong>Q12.</strong> Indentation en Python :</p>
+<ul>
+<li>A) Optionnelle</li>
+<li>B) Importante (fait partie de la syntaxe)</li>
+<li>C) Interdite</li>
+</ul>
+<p><strong>Q13.</strong> <code>try/except</code> sert surtout a :</p>
+<ul>
+<li>A) Accelerer le code</li>
+<li>B) Rattraper une erreur sans tout planter</li>
+<li>C) Creer une variable</li>
+</ul>
+<p><strong>Q14.</strong> Dans une classe, <code>__init__</code> :</p>
+<ul>
+<li>A) Supprime l&#x27;objet</li>
+<li>B) Initialise l&#x27;objet a la creation</li>
+<li>C) Importe un module</li>
+</ul>
+<p><strong>Q15.</strong> <code>json.dump</code> sert a :</p>
+<ul>
+<li>A) Lire un JSON depuis un fichier</li>
+<li>B) Ecrire un objet Python en JSON dans un fichier</li>
+<li>C) Afficher du HTML</li>
+</ul>
+<p><strong>Q16.</strong> <code>liste[-1]</code> :</p>
+<ul>
+<li>A) Erreur toujours</li>
+<li>B) Dernier element</li>
+<li>C) Premier element</li>
+</ul>
+<p><strong>Q17.</strong> <code>score += 1</code> equivalent a :</p>
+<ul>
+<li>A) <code>score = score + 1</code></li>
+<li>B) <code>score = 1</code></li>
+<li>C) <code>print(score)</code></li>
+</ul>
+<p><strong>Q18.</strong> <code>break</code> dans une boucle :</p>
+<ul>
+<li>A) Recommence le tour</li>
+<li>B) Sort de la boucle</li>
+<li>C) Quitte Python</li>
+</ul>
+<h2 id="chapitre-20--reponses">Reponses</h2>
+<p>1 B, 2 B, 3 B, 4 A, 5 B, 6 B, 7 B, 8 B, 9 B, 10 A,</p>
+<p>11 B, 12 B, 13 B, 14 B, 15 B, 16 B, 17 A, 18 B</p>
+<h2 id="chapitre-20--score">Score</h2>
+<ul>
+<li>16-18 : nickel</li>
+<li>12-15 : bien, relis exceptions + classes + JSON</li>
+<li>8-11 : refais 5, 6, 8, 11, 15</li>
+<li>moins de 8 : reprends les chapitres 3 a 10 tranquillement</li>
+</ul></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
+<figure class="illus"><img src="images/print/python-felicitations.jpg" alt="Bravo. Tu as les bases de Python."><figcaption>Bravo. Tu as les bases de Python.</figcaption></figure>
+<p>Tu as fini ce livre Python.</p>
+<p>Pas &quot;je connais tout&quot;.</p>
+<p>Mais &quot;je sais ecrire un programme, le faire tourner, le corriger, et le structurer&quot;. C&#x27;est deja enorme.</p>
+<h2 id="chapitre-21--ce-que-tu-sais-faire">Ce que tu sais faire</h2>
+<ul>
+<li>Installer / lancer Python</li>
+<li>Variables, types, conditions, boucles</li>
+<li>Fonctions (parametres, return, apercu *args)</li>
+<li>Listes (slices, comprehensions), dicos</li>
+<li>Fichiers texte + JSON</li>
+<li>Modules (<code>random</code>, <code>math</code>, <code>json</code>...)</li>
+<li>Exceptions (<code>try/except</code>)</li>
+<li>Une premiere <code>class</code></li>
+<li>Un quiz et un juste prix</li>
+</ul>
+<h2 id="chapitre-21--mission-finale">Mission finale</h2>
+<p>Ameliore ton juste prix en mode &quot;produit mini&quot; :</p>
+<ol>
+<li>1. max 6 essais + message de defaite</li>
+<li>2. saisie protegee</li>
+<li>3. option rejouer</li>
+<li>4. record sauve en JSON</li>
+<li>5. bonus : classe <code>Partie</code></li>
+</ol>
+<h2 id="chapitre-21--la-suite-quand-tu-voudras">La suite (quand tu voudras)</h2>
+<ul>
+<li>Virtualenv + <code>pip</code></li>
+<li>Requests (parler a une API)</li>
+<li>Un peu de data (pandas) ou de web (Flask/FastAPI)</li>
+<li>Tests automatiques (<code>pytest</code>)</li>
+<li>Lire du code des autres sur GitHub</li>
+</ul>
+<p>Mais la, respire.</p>
+<p>Encore bravo.</p>
+<p>Tu parles a l&#x27;ordinateur. Et maintenant, tu geres aussi quand il rale.</p></article>
+
+    <p class="footer-note">Tu as les briques. Maintenant, construis.</p>
+  </div>
+</body>
+</html>

@@ -175,8 +175,8 @@ PRINT_CSS_EXTRA = """
     line-height: 1.5 !important;
   }
   .toc a {
-    color: #1a4d3e !important;
-    text-decoration: none !important;
+    color: var(--band) !important;
+    text-decoration: underline !important;
   }
   .chapter {
     break-before: page !important;
@@ -507,7 +507,7 @@ th { background: var(--paper-deep); }
   /* Ne pas tuer les liens du sommaire a l'impression */
   a { color: inherit; text-decoration: none; }
   .toc a {
-    color: #1a4d3e !important;
+    color: var(--band) !important;
     text-decoration: underline !important;
   }
   .footer-note { break-before: avoid; }
@@ -670,5 +670,41 @@ def finalize_pdf(
     )
 
 
-def get_book_css() -> str:
-    return BOOK_CSS_BASE + PRINT_CSS_EXTRA
+def get_book_css(theme: str = "default") -> str:
+    """Retourne le CSS du livre. theme='python' = bleu encre + abricot."""
+    css = BOOK_CSS_BASE + PRINT_CSS_EXTRA
+    themes = {
+        "python": """
+/* Theme Python : bleu encre + abricot (pas le vert des autres livres) */
+:root {
+  --ink: #1a2332;
+  --muted: #4a5568;
+  --paper: #f2f4f8;
+  --paper-deep: #e3e8f0;
+  --band: #2c4a6e;
+  --band-soft: #3d5f8a;
+  --accent: #e07a3d;
+  --code-bg: #1e293b;
+  --code-fg: #e8eef6;
+  --card: #ffffff;
+  --rule: #c5ced9;
+}
+.cover,
+.cover-copy {
+  background: #1e3a5f !important;
+  color: #f4f7fb !important;
+}
+.cover h1 { color: #f4f7fb !important; }
+pre {
+  border-left-color: #e07a3d !important;
+}
+button, .btn-like {
+  background: #2c4a6e;
+}
+@media print {
+  .toc a { color: #2c4a6e !important; }
+}
+""",
+    }
+    extra = themes.get(theme, "")
+    return css + extra

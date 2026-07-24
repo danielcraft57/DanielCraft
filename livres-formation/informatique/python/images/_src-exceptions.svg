@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f2f4f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2c4a6e" font-weight="700">try / except</text>
+  <rect x="80" y="100" width="360" height="220" rx="16" fill="#2c4a6e"/>
+  <text x="260" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#fff" font-weight="700">try</text>
+  <text x="260" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#e8eef6">J'essaie le code</text>
+  <rect x="560" y="100" width="360" height="220" rx="16" fill="#e07a3d"/>
+  <text x="740" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#fff" font-weight="700">except</text>
+  <text x="740" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">Si ca casse, je gere</text>
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4a5568">Le programme peut continuer au lieu de tout planter.</text>
+</svg>

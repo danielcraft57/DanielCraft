@@ -8,11 +8,14 @@ Livres de formation info, un theme a la fois.
 |-------|---------|-----|
 | HTML et CSS - Les bases | `html-css/` | `../pdf/html-css-les-bases.pdf` |
 | JavaScript - Les bases | `javascript/` | `../pdf/javascript-les-bases.pdf` |
+| Python - Les bases | `python/` | `../pdf/python-les-bases.pdf` |
 
-## Rebuild HTML/CSS
+## Rebuild
 
 ```powershell
 python livres-formation\informatique\html-css\build_livre.py
+python livres-formation\informatique\javascript\build_livre.py
+python livres-formation\informatique\python\build_livre.py
 ```
 
-Ca regenere `html-css/livre.html` et le PDF dans `livres-formation/pdf/`.
+Ca regenere le HTML du livre et le PDF dans `livres-formation/pdf/`.

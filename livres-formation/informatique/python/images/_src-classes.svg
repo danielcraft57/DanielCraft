@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f2f4f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2c4a6e" font-weight="700">Classe = moule / Objet = exemplaire</text>
+  <rect x="120" y="110" width="280" height="200" rx="16" fill="#2c4a6e"/>
+  <text x="260" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#fff" font-weight="700">Joueur</text>
+  <text x="260" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#e8eef6">classe (moule)</text>
+  <rect x="480" y="130" width="180" height="140" rx="14" fill="#e07a3d"/>
+  <text x="570" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Sam</text>
+  <text x="570" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#fff">objet</text>
+  <rect x="700" y="130" width="180" height="140" rx="14" fill="#3d5f8a"/>
+  <text x="790" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Lea</text>
+  <text x="790" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#fff">objet</text>
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4a5568">Meme moule. Deux joueurs differents.</text>
+</svg>
