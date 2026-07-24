@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f6f2f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Persona : a qui tu parles ?</text>
+  <circle cx="500" cy="210" r="70" fill="#3d2c5e"/>
+  <text x="500" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Sophie</text>
+  <text x="500" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">34 ans</text>
+  <rect x="80" y="120" width="180" height="90" rx="10" fill="#e8a87c"/>
+  <text x="170" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f1630" font-weight="700">Probleme</text>
+  <text x="170" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#1f1630">manque de temps</text>
+  <rect x="740" y="120" width="180" height="90" rx="10" fill="#e8a87c"/>
+  <text x="830" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f1630" font-weight="700">Peur</text>
+  <text x="830" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#1f1630">se faire arnaquer</text>
+  <rect x="80" y="260" width="180" height="90" rx="10" fill="#3d2c5e"/>
+  <text x="170" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="700">Canal</text>
+  <text x="170" y="322" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#e8a87c">Instagram + Google</text>
+  <rect x="740" y="260" width="180" height="90" rx="10" fill="#3d2c5e"/>
+  <text x="830" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="700">Confiance</text>
+  <text x="830" y="322" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#e8a87c">avis + photos reelles</text>
+  <line x1="260" y1="165" x2="430" y2="195" stroke="#3d2c5e" stroke-width="2"/>
+  <line x1="740" y1="165" x2="570" y2="195" stroke="#3d2c5e" stroke-width="2"/>
+  <line x1="260" y1="305" x2="430" y2="235" stroke="#3d2c5e" stroke-width="2"/>
+  <line x1="740" y1="305" x2="570" y2="235" stroke="#3d2c5e" stroke-width="2"/>
+</svg>

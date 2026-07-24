@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f6f2f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Contenu utile vs spam</text>
+  <rect x="80" y="100" width="380" height="220" rx="14" fill="#3d2c5e"/>
+  <text x="270" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Utile</text>
+  <text x="270" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#e8a87c">repond aux vraies questions</text>
+  <text x="270" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#e8a87c">montre, explique, rassure</text>
+  <text x="270" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff">confiance + partages</text>
+  <rect x="540" y="100" width="380" height="220" rx="14" fill="#e8a87c"/>
+  <text x="730" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">Spam</text>
+  <text x="730" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f1630">crie "achetez" sans valeur</text>
+  <text x="730" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f1630">copie-colle, harcelement</text>
+  <text x="730" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d2c5e">fatigue + mefiance</text>
+  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d2c5e">Une bonne publication vaut mieux que sept posts vides.</text>
+</svg>

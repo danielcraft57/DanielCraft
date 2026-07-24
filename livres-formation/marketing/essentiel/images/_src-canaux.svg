@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f6f2f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Canaux : ou etre vu ?</text>
+  <rect x="70" y="120" width="160" height="120" rx="12" fill="#3d2c5e"/>
+  <text x="150" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Google</text>
+  <text x="150" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">recherche</text>
+  <rect x="250" y="120" width="160" height="120" rx="12" fill="#3d2c5e"/>
+  <text x="330" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Reseaux</text>
+  <text x="330" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">confiance</text>
+  <rect x="430" y="120" width="160" height="120" rx="12" fill="#3d2c5e"/>
+  <text x="510" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Email</text>
+  <text x="510" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">fidelite</text>
+  <rect x="610" y="120" width="160" height="120" rx="12" fill="#3d2c5e"/>
+  <text x="690" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Pub</text>
+  <text x="690" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">accelerer</text>
+  <rect x="790" y="120" width="140" height="120" rx="12" fill="#e8a87c"/>
+  <text x="860" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Local</text>
+  <text x="860" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#1f1630">quartier</text>
+  <rect x="200" y="280" width="600" height="70" rx="12" fill="#3d2c5e" opacity="0.15"/>
+  <text x="500" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630">Debutant : 1 a 2 canaux max, bien tenus</text>
+</svg>

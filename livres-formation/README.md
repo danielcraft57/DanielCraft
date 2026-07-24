@@ -25,6 +25,7 @@ Des livres PDF telechargeables sur 4 themes :
 |---------|-------|-----|
 | Informatique | HTML/CSS, JavaScript, Python, Git | `pdf/` |
 | Commerce | Les bases + E-commerce | `pdf/commerce-les-bases.pdf`, `pdf/ecommerce-les-bases.pdf` |
+| Marketing | Digital - Les bases | `pdf/marketing-les-bases.pdf` |
 
 ## Style d'ecriture
 

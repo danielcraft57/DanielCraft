@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f6f2f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Mesurer : quelques chiffres utiles</text>
+  <rect x="100" y="110" width="220" height="140" rx="12" fill="#3d2c5e"/>
+  <text x="210" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="700">Visibilite</text>
+  <text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e8a87c">vues, visites</text>
+  <rect x="390" y="110" width="220" height="140" rx="12" fill="#3d2c5e"/>
+  <text x="500" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="700">Contacts</text>
+  <text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e8a87c">messages, formulaires</text>
+  <rect x="680" y="110" width="220" height="140" rx="12" fill="#e8a87c"/>
+  <text x="790" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1f1630" font-weight="700">Ventes</text>
+  <text x="790" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1f1630">nb + chiffre d'affaires</text>
+  <rect x="245" y="290" width="510" height="60" rx="12" fill="#3d2c5e" opacity="0.12"/>
+  <text x="500" y="328" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1f1630">1 note par semaine. Compare-toi a toi-meme.</text>
+</svg>
