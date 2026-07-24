@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f1f5f9"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Bon prompt = consigne claire</text>
+
+  <rect x="40" y="85" width="280" height="230" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="180" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="700">Vague</text>
+  <rect x="70" y="150" width="220" height="70" rx="10" fill="#e2e8f0"/>
+  <text x="180" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b">"Ecris quelque chose</text>
+  <text x="180" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b">sur mon sujet"</text>
+  <text x="180" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#94a3b8">flou, trop large</text>
+
+  <defs>
+    <marker id="ap" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#111827"/>
+    </marker>
+  </defs>
+  <line x1="340" y1="200" x2="390" y2="200" stroke="#111827" stroke-width="4" marker-end="url(#ap)"/>
+
+  <rect x="400" y="85" width="560" height="230" rx="14" fill="#111827"/>
+  <text x="680" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7dd3fc" font-weight="700">Clair</text>
+  <rect x="430" y="145" width="500" height="100" rx="10" fill="#1e293b"/>
+  <text x="680" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">Role + public + ton + longueur</text>
+  <text x="680" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7dd3fc">+ exemple ou contraintes</text>
+  <text x="680" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#94a3b8">"Ecris un mail client, ton simple, 8 lignes"</text>
+  <text x="680" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7dd3fc">reutilisable, precis</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a">Plus ta consigne est nette, plus la reponse sert.</text>
+</svg>

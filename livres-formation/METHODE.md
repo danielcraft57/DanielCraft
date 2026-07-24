@@ -143,9 +143,11 @@ python livres-formation\informatique\<livre>\build_livre.py
 | E-commerce | `pdf/ecommerce-les-bases.pdf` | ~35+ pages | ocean + orange ; clients, dropshipping, tendances 2026 |
 | Marketing digital | `pdf/marketing-les-bases.pdf` | ~35+ pages | prune + peche (`theme="marketing"`) ; cible, contenu, canaux, mesure |
 | Communication | `pdf/communication-les-bases.pdf` | ~46 pages | bordeaux + miel (`theme="communication"`) ; message, ecoute, pitch, crise |
+| IA - Les bases | `pdf/ia-les-bases.pdf` | ~40+ pages | obsidienne + ciel (`theme="ia"`) ; prompts, limites, ethique |
+| Finance - Les bases | `pdf/finance-les-bases.pdf` | ~40+ pages | vert nuit + or (`theme="finance"`) ; budget, tresorerie, prudence |
 
 ## 9. Suites possibles
 
-- Marketing / communication avances
+- Suites IA / Finance, marketing / communication avances
 - Page site pour telecharger les PDF  
 

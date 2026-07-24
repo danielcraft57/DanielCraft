@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f1f5f9"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Hallucinations : verifier avant de croire</text>
+
+  <defs>
+    <marker id="av" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="90" width="220" height="220" rx="14" fill="#111827"/>
+  <text x="140" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7dd3fc" font-weight="700">1. Reponse</text>
+  <text x="140" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">confiante</text>
+  <text x="140" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#94a3b8">ton sur, faits ?</text>
+  <text x="140" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#7dd3fc">pas une preuve</text>
+
+  <line x1="265" y1="200" x2="300" y2="200" stroke="#111827" stroke-width="4" marker-end="url(#av)"/>
+
+  <rect x="310" y="90" width="220" height="220" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <text x="420" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#111827" font-weight="700">2. Risque</text>
+  <text x="420" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">invention</text>
+  <text x="420" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">dates, noms,</text>
+  <text x="420" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">chiffres faux</text>
+
+  <line x1="545" y1="200" x2="580" y2="200" stroke="#111827" stroke-width="4" marker-end="url(#av)"/>
+
+  <rect x="590" y="90" width="180" height="220" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <text x="680" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#111827" font-weight="700">3. Verifier</text>
+  <text x="680" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="700">source</text>
+  <text x="680" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">croiser</text>
+  <text x="680" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">relire</text>
+
+  <line x1="785" y1="200" x2="820" y2="200" stroke="#111827" stroke-width="4" marker-end="url(#av)"/>
+
+  <rect x="830" y="90" width="140" height="220" rx="14" fill="#7dd3fc" stroke="#111827" stroke-width="3"/>
+  <text x="900" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">4. Garder</text>
+  <text x="900" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="700">utile</text>
+  <text x="900" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#111827">corrige</text>
+  <text x="900" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#111827">assume</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a">L'IA peut inventer avec assurance. Toi, tu verifies.</text>
+</svg>

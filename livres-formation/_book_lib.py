@@ -671,7 +671,7 @@ def finalize_pdf(
 
 
 def get_book_css(theme: str = "default") -> str:
-    """Retourne le CSS du livre. Themes: python, git, commerce, ecommerce, marketing, communication, javascript2, python2, htmlcss2, git2, commerce2."""
+    """Retourne le CSS du livre. Themes: ... git2, commerce2, ia, finance."""
     css = BOOK_CSS_BASE + PRINT_CSS_EXTRA
     themes = {
         "python": """
@@ -1013,6 +1013,68 @@ button, .btn-like {
 }
 @media print {
   .toc a { color: #0f3d4c !important; }
+}
+""",
+        "ia": """
+/* Theme IA : obsidienne + ciel */
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --paper: #f1f5f9;
+  --paper-deep: #e2e8f0;
+  --band: #111827;
+  --band-soft: #1f2937;
+  --accent: #7dd3fc;
+  --code-bg: #0b1220;
+  --code-fg: #e0f2fe;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #111827 !important;
+  color: #e0f2fe !important;
+}
+.cover h1 { color: #e0f2fe !important; }
+pre {
+  border-left-color: #7dd3fc !important;
+}
+button, .btn-like {
+  background: #111827;
+}
+@media print {
+  .toc a { color: #111827 !important; }
+}
+""",
+        "finance": """
+/* Theme Finance : vert nuit + or doux */
+:root {
+  --ink: #0c1f17;
+  --muted: #5a7266;
+  --paper: #f0f5f2;
+  --paper-deep: #dde8e1;
+  --band: #14532d;
+  --band-soft: #166534;
+  --accent: #c9a227;
+  --code-bg: #0f291c;
+  --code-fg: #f3e8c8;
+  --card: #ffffff;
+  --rule: #c5d6cb;
+}
+.cover,
+.cover-copy {
+  background: #14532d !important;
+  color: #f3e8c8 !important;
+}
+.cover h1 { color: #f3e8c8 !important; }
+pre {
+  border-left-color: #c9a227 !important;
+}
+button, .btn-like {
+  background: #14532d;
+}
+@media print {
+  .toc a { color: #14532d !important; }
 }
 """,
     }

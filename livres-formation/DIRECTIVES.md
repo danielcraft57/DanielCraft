@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Creer plusieurs livres de formation (informatique, commerce, marketing, communication).
+Creer plusieurs livres de formation (informatique, commerce, marketing, communication, IA, finance).
 Chaque livre fait plusieurs dizaines de pages. Les PDF sont beaux, interessants, telechargeables.
 Le langage reste simple : un enfant doit pouvoir comprendre.
 
@@ -14,6 +14,8 @@ livres-formation/
   commerce/
   marketing/
   communication/
+  ia/
+  finance/
   prompts/
     images/         # prompts pour generer les illustrations
     schemas/        # prompts pour generer les schemas / diagrammes

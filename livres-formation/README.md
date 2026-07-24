@@ -1,20 +1,24 @@
 # Livres de formation DanielCraft
 
-Des livres PDF telechargeables sur 4 themes :
+Des livres PDF telechargeables sur 6 themes :
 
 - informatique
 - commerce
 - marketing
 - communication
+- IA
+- finance
 
 ## Comment c'est organise
 
 | Dossier | Role |
 |---------|------|
-| `informatique/` | Texte et chapitres du livre info |
-| `commerce/` | Texte et chapitres du livre commerce |
-| `marketing/` | Texte et chapitres du livre marketing |
-| `communication/` | Texte et chapitres du livre communication |
+| `informatique/` | Livres info (web, Python, Git...) |
+| `commerce/` | Commerce, e-commerce, vente |
+| `marketing/` | Marketing digital |
+| `communication/` | Communication |
+| `ia/` | Intelligence artificielle |
+| `finance/` | Finance perso et petite activite |
 | `prompts/images/` | Prompts pour generer les illustrations |
 | `prompts/schemas/` | Prompts pour generer les schemas |
 | `pdf/` | PDF finaux a telecharger |
@@ -23,10 +27,12 @@ Des livres PDF telechargeables sur 4 themes :
 
 | Domaine | Livre | PDF |
 |---------|-------|-----|
-| Informatique | HTML/CSS bases + suite, JS bases + suite, Python bases + pratique, Git bases + equipe | `pdf/` |
-| Commerce | Les bases + E-commerce + Vente avancee | `pdf/commerce-les-bases.pdf`, `pdf/ecommerce-les-bases.pdf`, `pdf/vente-avancee.pdf` |
+| Informatique | HTML/CSS, JS, Python, Git (bases + suites) | `pdf/` |
+| Commerce | Bases, E-commerce, Vente avancee | `pdf/` |
 | Marketing | Digital - Les bases | `pdf/marketing-les-bases.pdf` |
 | Communication | Les bases | `pdf/communication-les-bases.pdf` |
+| IA | Les bases | `pdf/ia-les-bases.pdf` |
+| Finance | Les bases | `pdf/finance-les-bases.pdf` |
 
 ## Style d'ecriture
 
