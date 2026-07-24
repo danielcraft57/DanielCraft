@@ -1,0 +1,1 @@
+Schema pedagogique francais : un Terminal a gauche (commande python outil.py avec options) relie a un Script Python a droite (arguments, options, argparse). Couleurs charcoal (#243447), mint (#7dcea0), papier (#eef2f6), accent soft (#5dade2). Texte visible en francais (Terminal, Script Python, arguments, options). Style plat pour livre de formation.

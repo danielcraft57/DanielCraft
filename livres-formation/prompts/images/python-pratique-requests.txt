@@ -1,0 +1,1 @@
+Schema pedagogique francais : un Script Python envoie une Requete vers une API, recoit une Reponse JSON. Couleurs charcoal (#243447), mint (#7dcea0), papier (#eef2f6), accent soft (#5dade2). Texte visible uniquement en francais (mots Requete, Serveur ou API, Reponse, JSON, donnees). Style plat, lisible en livre imprime.
