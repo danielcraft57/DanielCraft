@@ -1,6 +1,6 @@
 # Methode - Creer un livre de formation
 
-Recette issue des livres HTML/CSS, JavaScript, Python et Git. A suivre pour les prochains.
+Recette issue des livres HTML/CSS, JavaScript, Python, Git et Commerce. A suivre pour les prochains.
 
 ## 0. Regles de fond (toujours)
 
@@ -132,8 +132,10 @@ python livres-formation\informatique\<livre>\build_livre.py
 | JavaScript | `pdf/javascript-les-bases.pdf` | ~51 pages | vert |
 | Python | `pdf/python-les-bases.pdf` | ~55 pages | bleu encre + abricot (`theme="python"`) ; exceptions + classes |
 | Git / GitHub | `pdf/git-les-bases.pdf` | ~49 pages | graphite + corail (`theme="git"`) ; stash, undo, PR |
+| Commerce | `pdf/commerce-les-bases.pdf` | ~38 pages | sarcelle + or sable (`theme="commerce"`) |
 
 ## 9. Suites possibles
 
-- Un livre commerce / marketing / communication (meme methode, moins de code)  
+- Marketing digital debutant  
+- Communication  
 - Page site pour telecharger les PDF  

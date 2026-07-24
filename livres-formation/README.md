@@ -19,6 +19,13 @@ Des livres PDF telechargeables sur 4 themes :
 | `prompts/schemas/` | Prompts pour generer les schemas |
 | `pdf/` | PDF finaux a telecharger |
 
+## Pret
+
+| Domaine | Livre | PDF |
+|---------|-------|-----|
+| Informatique | HTML/CSS, JavaScript, Python, Git | `pdf/` |
+| Commerce | Commerce - Les bases | `pdf/commerce-les-bases.pdf` |
+
 ## Style d'ecriture
 
 Tout le contenu suit la directive notee dans `DIRECTIVES.md` :
@@ -27,7 +34,3 @@ Un enfant doit pouvoir suivre.
 
 Auteur des livres : **DanielCraft**.
 Methode complete : `METHODE.md`.
-
-## Prochaine etape
-
-Ecrire les chapitres livre par livre, generer les images via les prompts, puis assembler les PDF.

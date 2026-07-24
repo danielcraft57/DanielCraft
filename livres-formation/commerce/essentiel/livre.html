@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="DanielCraft">
+  <meta name="description" content="Formation debutant commerce">
+  <title>Commerce - Les bases</title>
+  <style>
+:root {
+  --ink: #14221c;
+  --muted: #3d5248;
+  --paper: #f3f6f4;
+  --paper-deep: #e5eee9;
+  --band: #1a4d3e;
+  --band-soft: #266b56;
+  --accent: #c9a227;
+  --code-bg: #133028;
+  --code-fg: #e7f2ec;
+  --card: #ffffff;
+  --rule: #c5d4cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+.page {
+  width: min(100% - 2rem, 780px);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+.cover {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: 0 0 2rem;
+  border-radius: 14px;
+  color: #f4faf7;
+  background: #0f2f26;
+  overflow: hidden;
+}
+.cover-art {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.cover-copy {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: #0f2f26;
+}
+.cover-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-family: Segoe UI, Arial, sans-serif;
+  opacity: 0.85;
+}
+.cover h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0.45rem 0 0.6rem;
+  max-width: 12ch;
+  color: #f4faf7;
+}
+.cover .lead {
+  font-size: 1.05rem;
+  max-width: 38ch;
+  margin: 0;
+  opacity: 0.95;
+}
+.cover .meta {
+  margin: 1rem 0 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+.illus {
+  margin: 0.9rem 0 1rem;
+  padding: 0;
+  text-align: center;
+}
+.illus img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 520px);
+  max-height: 220px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+  object-fit: contain;
+}
+.illus.illus-wide img {
+  max-width: min(100%, 640px);
+  max-height: 260px;
+}
+.illus figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-family: Segoe UI, Arial, sans-serif;
+  line-height: 1.35;
+  text-align: left;
+}
+body.eco {
+  --paper: #ffffff;
+  --paper-deep: #f3f3f3;
+  --card: #ffffff;
+  --code-bg: #222;
+}
+body.eco pre { border-left-color: #666; }
+.toc {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.toc h2 { margin-top: 0; font-size: 1.25rem; }
+.toc ol { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+.toc li { margin: 0.2rem 0; }
+.toc a {
+  color: var(--band);
+  text-decoration: none;
+}
+.chapter {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.35rem 1.4rem;
+  margin: 0 0 1.35rem;
+}
+.chapter-num {
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--band-soft);
+  margin: 0 0 0.15rem;
+}
+h1, h2, h3 { line-height: 1.25; color: var(--band); }
+.chapter > h1 {
+  font-size: 1.45rem;
+  margin: 0.15rem 0 0.75rem;
+  color: var(--ink);
+}
+h2 { font-size: 1.12rem; margin: 1.15rem 0 0.45rem; }
+h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; color: var(--muted); }
+p { margin: 0.55rem 0; }
+ul, ol { margin: 0.45rem 0 0.7rem; padding-left: 1.25rem; }
+li { margin: 0.18rem 0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid var(--accent);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--paper-deep); }
+.qa strong { color: var(--band); }
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1.5rem 1rem 0.5rem;
+}
+@media print {
+  body {
+    background: white !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: auto; max-width: none; margin: 0; padding: 0; }
+  .cover {
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 8mm;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cover-art {
+    min-height: 0 !important;
+    max-height: 95mm !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .toc, .chapter {
+    background: transparent !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 7mm;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .toc {
+    break-after: page;
+    page-break-after: always;
+  }
+  .chapter {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .chapter.chapter-break {
+    break-before: page;
+    page-break-before: always;
+  }
+  .chapter-num, h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chapter > h1 {
+    font-size: 15pt;
+    margin: 0 0 3mm;
+  }
+  h2 { font-size: 12pt; margin: 4.5mm 0 2mm; }
+  h3 { font-size: 11pt; margin: 3.5mm 0 1.5mm; }
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  .illus {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 3mm auto 4mm;
+  }
+  .illus img {
+    max-width: 105mm !important;
+    max-height: 55mm !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .illus.illus-wide img {
+    max-width: 130mm !important;
+    max-height: 65mm !important;
+  }
+  pre {
+    break-inside: auto;
+    page-break-inside: auto;
+    white-space: pre-wrap;
+    font-size: 8.5pt;
+    border-radius: 0;
+  }
+  table { break-inside: auto; }
+  /* Ne pas tuer les liens du sommaire a l'impression */
+  a { color: inherit; text-decoration: none; }
+  .toc a {
+    color: var(--band) !important;
+    text-decoration: underline !important;
+  }
+  .footer-note { break-before: avoid; }
+}
+@page {
+  size: A4;
+  margin: 14mm 14mm 18mm;
+}
+
+.toc-sub {
+  list-style: disc;
+  margin: 0.15rem 0 0.55rem 0.2rem;
+  padding-left: 1.1rem;
+}
+.toc-sub li { margin: 0.12rem 0; font-size: 0.92em; }
+.toc a { color: var(--band); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.code-block { margin: 0.65rem 0 0.9rem; }
+.keep-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+@media print {
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+  .toc a {
+    color: var(--band) !important;
+    text-decoration: underline !important;
+  }
+  .chapter {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    margin: 0 0 6mm !important;
+  }
+  .toc {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+  h1, h2, h3, .chapter-num {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    break-inside: avoid !important;
+  }
+  h2 + p, h2 + ul, h2 + ol, h2 + .code-block, h2 + .illus,
+  h3 + p, h3 + ul, h3 + ol, h3 + .code-block,
+  .chapter-num + h1, h1 + p, h1 + .illus, h1 + .code-block {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+  .keep-block, .illus, .table-wrap {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .code-long {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .code-long pre {
+    break-inside: auto !important;
+  }
+  pre {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+  }
+  p, li {
+    orphans: 4;
+    widows: 4;
+  }
+}
+
+/* Theme Commerce : sarcelle + or sable */
+:root {
+  --ink: #1a2a32;
+  --muted: #5a6a72;
+  --paper: #f3f7f6;
+  --paper-deep: #e2ece9;
+  --band: #264653;
+  --band-soft: #2a6f7a;
+  --accent: #e9c46a;
+  --code-bg: #1d3557;
+  --code-fg: #f4f1e8;
+  --card: #ffffff;
+  --rule: #c5d4d0;
+}
+.cover,
+.cover-copy {
+  background: #1d3557 !important;
+  color: #f4f1e8 !important;
+}
+.cover h1 { color: #f4f1e8 !important; }
+pre {
+  border-left-color: #e9c46a !important;
+}
+button, .btn-like {
+  background: #264653;
+}
+@media print {
+  .toc a { color: #264653 !important; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="cover">
+      <img class="cover-art" src="images/print/commerce-couverture.jpg" alt="Couverture Commerce">
+      <div class="cover-copy">
+        <div class="cover-kicker">Formation commerce</div>
+        <h1>Commerce</h1>
+        <p class="lead">Comprendre le client, construire une offre, vendre sans blabla inutile.</p>
+        <p class="meta">DanielCraft - Livre debutant</p>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Sommaire">
+      <h2 id="sommaire">Sommaire</h2>
+      <p class="toc-help">Clique un chapitre ou un sous-chapitre pour y aller.</p>
+      <ol>
+        <li><a href="#chapitre-01">Chapitre 1 - Salut, c&#x27;est quoi le commerce ?</a><ol class="toc-sub"><li><a href="#chapitre-01--ce-que-ce-n-est-pas">Ce que ce n&#x27;est pas</a></li><li><a href="#chapitre-01--image-mentale">Image mentale</a></li><li><a href="#chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</a></li><li><a href="#chapitre-01--comment-lire-ce-livre">Comment lire ce livre</a></li><li><a href="#chapitre-01--petite-histoire">Petite histoire</a></li></ol></li><li><a href="#chapitre-02">Chapitre 2 - Le client d&#x27;abord</a><ol class="toc-sub"><li><a href="#chapitre-02--qui-est-le-client">Qui est &quot;le client&quot; ?</a></li><li><a href="#chapitre-02--client-vs-utilisateur">Client vs utilisateur</a></li><li><a href="#chapitre-02--questions-utiles">Questions utiles</a></li><li><a href="#chapitre-02--portrait-express">Portrait express</a></li><li><a href="#chapitre-02--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-02--a-toi">A toi</a></li><li><a href="#chapitre-02--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-03">Chapitre 3 - Besoin, envie, urgence</a><ol class="toc-sub"><li><a href="#chapitre-03--besoin">Besoin</a></li><li><a href="#chapitre-03--envie">Envie</a></li><li><a href="#chapitre-03--job-to-be-done-idee-simple">Job to be done (idee simple)</a></li><li><a href="#chapitre-03--signaux-d-urgence">Signaux d&#x27;urgence</a></li><li><a href="#chapitre-03--decouvrir-le-besoin">Decouvrir le besoin</a></li><li><a href="#chapitre-03--a-toi">A toi</a></li><li><a href="#chapitre-03--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-04">Chapitre 4 - Produit ou service ?</a><ol class="toc-sub"><li><a href="#chapitre-04--produit">Produit</a></li><li><a href="#chapitre-04--service">Service</a></li><li><a href="#chapitre-04--souvent-c-est-un-mix">Souvent, c&#x27;est un mix</a></li><li><a href="#chapitre-04--offre-promesse-preuve-limites">Offre = promesse + preuve + limites</a></li><li><a href="#chapitre-04--exemple">Exemple</a></li><li><a href="#chapitre-04--packager">Packager</a></li><li><a href="#chapitre-04--a-toi">A toi</a></li><li><a href="#chapitre-04--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-05">Chapitre 5 - Le prix</a><ol class="toc-sub"><li><a href="#chapitre-05--ce-que-le-prix-dit">Ce que le prix dit</a></li><li><a href="#chapitre-05--ancrages-simples">Ancrages simples</a></li><li><a href="#chapitre-05--prix-psychologique-sans-magie-noire">Prix psychologique (sans magie noire)</a></li><li><a href="#chapitre-05--dire-le-prix">Dire le prix</a></li><li><a href="#chapitre-05--tester">Tester</a></li><li><a href="#chapitre-05--a-toi">A toi</a></li><li><a href="#chapitre-05--mini-defi">Mini defi</a></li><li><a href="#chapitre-05--grille-simple">Grille simple</a></li></ol></li><li><a href="#chapitre-06">Chapitre 6 - Couts et marge</a><ol class="toc-sub"><li><a href="#chapitre-06--cout">Cout</a></li><li><a href="#chapitre-06--marge">Marge</a></li><li><a href="#chapitre-06--exemple-cookie">Exemple cookie</a></li><li><a href="#chapitre-06--attention-au-temps-invisible">Attention au temps &quot;invisible&quot;</a></li><li><a href="#chapitre-06--seuil-de-rentabilite-idee">Seuil de rentabilite (idee)</a></li><li><a href="#chapitre-06--a-toi">A toi</a></li><li><a href="#chapitre-06--mini-defi">Mini defi</a></li><li><a href="#chapitre-06--exemple-service-1h">Exemple service (1h)</a></li></ol></li><li><a href="#chapitre-07">Chapitre 7 - La valeur (pas seulement le prix)</a><ol class="toc-sub"><li><a href="#chapitre-07--exemples-de-valeur">Exemples de valeur</a></li><li><a href="#chapitre-07--prix-vs-valeur">Prix vs valeur</a></li><li><a href="#chapitre-07--preuves">Preuves</a></li><li><a href="#chapitre-07--differenciation">Differenciation</a></li><li><a href="#chapitre-07--a-toi">A toi</a></li><li><a href="#chapitre-07--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-08">Chapitre 8 - Ou vendre ? (les canaux)</a><ol class="toc-sub"><li><a href="#chapitre-08--exemples">Exemples</a></li><li><a href="#chapitre-08--un-canal-bien-cinq-mal">Un canal bien &gt; cinq mal</a></li><li><a href="#chapitre-08--choisir">Choisir</a></li><li><a href="#chapitre-08--tunnel-simple">Tunnel simple</a></li><li><a href="#chapitre-08--a-toi">A toi</a></li><li><a href="#chapitre-08--mini-defi">Mini defi</a></li><li><a href="#chapitre-08--exemple-concret">Exemple concret</a></li></ol></li><li><a href="#chapitre-09">Chapitre 9 - L&#x27;argumentaire</a><ol class="toc-sub"><li><a href="#chapitre-09--structure-simple-4-phrases">Structure simple (4 phrases)</a></li><li><a href="#chapitre-09--exemple">Exemple</a></li><li><a href="#chapitre-09--ce-qui-marche-mal">Ce qui marche mal</a></li><li><a href="#chapitre-09--benefice-caracteristique">Benefice &gt; caracteristique</a></li><li><a href="#chapitre-09--a-toi">A toi</a></li><li><a href="#chapitre-09--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-10">Chapitre 10 - Les objections</a><ol class="toc-sub"><li><a href="#chapitre-10--objections-classiques">Objections classiques</a></li><li><a href="#chapitre-10--methode">Methode</a></li><li><a href="#chapitre-10--exemples">Exemples</a></li><li><a href="#chapitre-10--ce-qu-il-ne-faut-pas-faire">Ce qu&#x27;il ne faut pas faire</a></li><li><a href="#chapitre-10--a-toi">A toi</a></li><li><a href="#chapitre-10--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-11">Chapitre 11 - La relation client</a><ol class="toc-sub"><li><a href="#chapitre-11--avant">Avant</a></li><li><a href="#chapitre-11--pendant">Pendant</a></li><li><a href="#chapitre-11--apres">Apres</a></li><li><a href="#chapitre-11--confiance">Confiance</a></li><li><a href="#chapitre-11--sav-simple">SAV simple</a></li><li><a href="#chapitre-11--a-toi">A toi</a></li><li><a href="#chapitre-11--mini-defi">Mini defi</a></li><li><a href="#chapitre-11--moment-de-verite">Moment de verite</a></li></ol></li><li><a href="#chapitre-12">Chapitre 12 - Faire revenir (fidelisation)</a><ol class="toc-sub"><li><a href="#chapitre-12--gestes-simples">Gestes simples</a></li><li><a href="#chapitre-12--programme-sans-usine-a-gaz">Programme sans usine a gaz</a></li><li><a href="#chapitre-12--communaute">Communaute</a></li><li><a href="#chapitre-12--a-toi">A toi</a></li><li><a href="#chapitre-12--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-13">Chapitre 13 - Mini-projet : ton offre en une page</a><ol class="toc-sub"><li><a href="#chapitre-13--contenu-obligatoire">Contenu obligatoire</a></li><li><a href="#chapitre-13--criteres">Critères</a></li><li><a href="#chapitre-13--version-test">Version &quot;test&quot;</a></li><li><a href="#chapitre-13--en-vrai">En vrai</a></li><li><a href="#chapitre-13--mini-defi">Mini defi</a></li><li><a href="#chapitre-13--modele-de-page-copie">Modele de page (copie)</a></li></ol></li><li><a href="#chapitre-14">Chapitre 14 - Ce qu&#x27;il faut retenir</a><ol class="toc-sub"><li><a href="#chapitre-14--en-une-minute">En une minute</a></li><li><a href="#chapitre-14--habitudes">Habitudes</a></li><li><a href="#chapitre-14--suite">Suite</a></li><li><a href="#chapitre-14--carte-mentale">Carte mentale</a></li></ol></li><li><a href="#chapitre-15">Chapitre 15 - Le devis simple</a><ol class="toc-sub"><li><a href="#chapitre-15--contenu-minimum">Contenu minimum</a></li><li><a href="#chapitre-15--ton">Ton</a></li><li><a href="#chapitre-15--exemple-de-blocs">Exemple de blocs</a></li><li><a href="#chapitre-15--relance">Relance</a></li><li><a href="#chapitre-15--a-toi">A toi</a></li><li><a href="#chapitre-15--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-16">Chapitre 16 - Un peu de digital (sans panique)</a><ol class="toc-sub"><li><a href="#chapitre-16--minimum-utile">Minimum utile</a></li><li><a href="#chapitre-16--pieges">Pieges</a></li><li><a href="#chapitre-16--contenu-qui-aide">Contenu qui aide</a></li><li><a href="#chapitre-16--tunnel-ultra-simple">Tunnel ultra simple</a></li><li><a href="#chapitre-16--a-toi">A toi</a></li><li><a href="#chapitre-16--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-17">Chapitre 17 - Atelier : ecouter pour de vrai</a><ol class="toc-sub"><li><a href="#chapitre-17--exercice-1">Exercice 1</a></li><li><a href="#chapitre-17--exercice-2">Exercice 2</a></li><li><a href="#chapitre-17--exercice-3">Exercice 3</a></li><li><a href="#chapitre-17--check">Check</a></li><li><a href="#chapitre-17--phrase-piege">Phrase piege</a></li></ol></li><li><a href="#chapitre-18">Chapitre 18 - Atelier : solidifier l&#x27;offre</a><ol class="toc-sub"><li><a href="#chapitre-18--passoire">Passoire</a></li><li><a href="#chapitre-18--test-taxi">Test &quot;taxi&quot;</a></li><li><a href="#chapitre-18--prix-et-marge">Prix et marge</a></li><li><a href="#chapitre-18--livrable-atelier">Livrable atelier</a></li><li><a href="#chapitre-18--test-ami-dur">Test ami dur</a></li></ol></li><li><a href="#chapitre-19">Chapitre 19 - Atelier : pitch de 60 secondes</a><ol class="toc-sub"><li><a href="#chapitre-19--structure">Structure</a></li><li><a href="#chapitre-19--consignes">Consignes</a></li><li><a href="#chapitre-19--entrainement">Entrainement</a></li><li><a href="#chapitre-19--variante-objection">Variante objection</a></li><li><a href="#chapitre-19--check">Check</a></li><li><a href="#chapitre-19--version-ecrite">Version ecrite</a></li></ol></li><li><a href="#chapitre-20">Quiz final - Teste-toi !</a><ol class="toc-sub"><li><a href="#chapitre-20--reponses">Reponses</a></li><li><a href="#chapitre-20--score">Score</a></li></ol></li><li><a href="#chapitre-21">Bravo.</a><ol class="toc-sub"><li><a href="#chapitre-21--tu-sais">Tu sais</a></li><li><a href="#chapitre-21--mission">Mission</a></li><li><a href="#chapitre-21--suite-possible">Suite possible</a></li></ol></li>
+      </ol>
+    </nav>
+
+    <article class="chapter chapter-break" id="chapitre-01"><div class="chapter-num">Chapitre 1</div><h1 id="chapitre-01--chapitre-1-salut-c-est-quoi-le-commerce">Chapitre 1 - Salut, c&#x27;est quoi le commerce ?</h1>
+<figure class="illus illus-wide"><img src="images/print/commerce-idee.jpg" alt="Commerce = creer de la valeur pour quelqu&#x27;un, et en vivre."><figcaption>Commerce = creer de la valeur pour quelqu&#x27;un, et en vivre.</figcaption></figure>
+<p>Le commerce, c&#x27;est simple a dire :</p>
+<p>tu proposes quelque chose d&#x27;utile a quelqu&#x27;un,</p>
+<p>cette personne accepte de payer,</p>
+<p>et toi tu peux continuer.</p>
+<p>Produit, service, digital, boutique, artisanat :</p>
+<p>meme coeur.</p>
+<h2 id="chapitre-01--ce-que-ce-n-est-pas">Ce que ce n&#x27;est pas</h2>
+<p>Ce n&#x27;est pas &quot;forcer quelqu&#x27;un&quot;.</p>
+<p>Ce n&#x27;est pas &quot;mentir pour vendre&quot;.</p>
+<p>Ce n&#x27;est pas seulement &quot;etre beau parleur&quot;.</p>
+<p>Un bon commerce dure parce que le client revient.</p>
+<p>Ou recommande.</p>
+<h2 id="chapitre-01--image-mentale">Image mentale</h2>
+<p>Tu as une solution.</p>
+<p>Quelqu&#x27;un a un probleme (ou un desir).</p>
+<p>Le commerce, c&#x27;est le pont entre les deux.</p>
+<h2 id="chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</h2>
+<ul>
+<li>Voir le monde cote client</li>
+<li>Distinguer besoin et envie</li>
+<li>Construire une offre claire</li>
+<li>Comprendre prix, couts, marge</li>
+<li>Choisir un canal</li>
+<li>Argumenter sans blabla</li>
+<li>Gerer une objection</li>
+<li>Ecrire un devis simple</li>
+<li>Penser un peu digital</li>
+</ul>
+<h2 id="chapitre-01--comment-lire-ce-livre">Comment lire ce livre</h2>
+<ol>
+<li>1. Lis un chapitre</li>
+<li>2. Prends un exemple perso (vrai ou invente)</li>
+<li>3. Ecris 5 lignes</li>
+<li>4. Passe au suivant</li>
+</ol>
+<p>Ici, peu de code.</p>
+<p>Beaucoup d&#x27;exemples concrets.</p>
+<p>Allez. On commence par le client.</p>
+<h2 id="chapitre-01--petite-histoire">Petite histoire</h2>
+<p>Lea repare des velos le week-end.</p>
+<p>Au debut, elle &quot;aide les potes&quot;.</p>
+<p>Puis les potes parlent a d&#x27;autres.</p>
+<p>Elle fixe un prix, un delai, une facon de prendre rendez-vous.</p>
+<p>La, ce n&#x27;est plus seulement un service rendu.</p>
+<p>C&#x27;est un commerce qui demarre.</p>
+<p>Toi aussi, tu peux commencer petit.</p>
+<p>Petit n&#x27;est pas ridicule. Petit est testable.</p></article><article class="chapter chapter-break" id="chapitre-02"><div class="chapter-num">Chapitre 2</div><h1 id="chapitre-02--chapitre-2-le-client-d-abord">Chapitre 2 - Le client d&#x27;abord</h1>
+<figure class="illus"><img src="images/print/commerce-client.jpg" alt="Sans client, pas de commerce. On commence par lui."><figcaption>Sans client, pas de commerce. On commence par lui.</figcaption></figure>
+<p>Sans client, tu as un hobby.</p>
+<p>Avec un client, tu as un commerce.</p>
+<h2 id="chapitre-02--qui-est-le-client">Qui est &quot;le client&quot; ?</h2>
+<p>Pas &quot;tout le monde&quot;.</p>
+<p>&quot;Tout le monde&quot; = personne en particulier.</p>
+<p>Mieux :</p>
+<ul>
+<li>un parent presse</li>
+<li>un artisan qui perd du temps sur l&#x27;admin</li>
+<li>une asso qui veut plus de dons</li>
+<li>un ado qui cherche un cadeau a 20 euros</li>
+</ul>
+<p>Plus c&#x27;est precis, plus tu peux aider.</p>
+<h2 id="chapitre-02--client-vs-utilisateur">Client vs utilisateur</h2>
+<p>Parfois ce n&#x27;est pas la meme personne.</p>
+<p>Exemple : un jeu pour enfants.</p>
+<ul>
+<li>utilisateur = l&#x27;enfant</li>
+<li>client = le parent qui paie</li>
+</ul>
+<p>Tu dois parler aux deux, mais tu vends a celui qui sort la carte.</p>
+<h2 id="chapitre-02--questions-utiles">Questions utiles</h2>
+<ol>
+<li>1. Qui souffre / desire quoi ?</li>
+<li>2. Qu&#x27;est-ce qu&#x27;il a deja essaye ?</li>
+<li>3. Qu&#x27;est-ce qui l&#x27;empeche d&#x27;agir ?</li>
+<li>4. Combien ca lui coute de ne rien changer ?</li>
+</ol>
+<h2 id="chapitre-02--portrait-express">Portrait express</h2>
+<p>Ecris 8 lignes :</p>
+<ul>
+<li>prenom fictif</li>
+<li>age approximatif</li>
+<li>situation</li>
+<li>probleme</li>
+<li>ce qu&#x27;il veut vraiment</li>
+<li>budget possible</li>
+<li>ou il cherche des infos</li>
+<li>ce qui le ferait dire oui</li>
+</ul>
+<h2 id="chapitre-02--erreur-classique">Erreur classique</h2>
+<p>Tu tombes amoureux de ton idee.</p>
+<p>Le client, lui, s&#x27;en fiche de ton idee.</p>
+<p>Il veut son resultat.</p>
+<h2 id="chapitre-02--a-toi">A toi</h2>
+<p>Choisis un commerce invente (ex : vente de cookies, reparation velo, aide devoirs).</p>
+<p>Ecris un portrait client en 8 lignes.</p>
+<h2 id="chapitre-02--mini-defi">Mini defi</h2>
+<p>Demande a 2 personnes reelles : &quot;Si tu pouvais payer pour gagner 1 heure par semaine, ce serait pour quoi ?&quot;</p>
+<p>Note les reponses.</p></article><article class="chapter chapter-break" id="chapitre-03"><div class="chapter-num">Chapitre 3</div><h1 id="chapitre-03--chapitre-3-besoin-envie-urgence">Chapitre 3 - Besoin, envie, urgence</h1>
+<p>Tout le monde ne veut pas la meme chose.</p>
+<p>Et tout le monde n&#x27;a pas la meme urgence.</p>
+<h2 id="chapitre-03--besoin">Besoin</h2>
+<p>&quot;J&#x27;ai besoin que mon velo marche demain pour aller au travail.&quot;</p>
+<h2 id="chapitre-03--envie">Envie</h2>
+<p>&quot;J&#x27;aimerais un velo plus joli.&quot;</p>
+<p>Les deux sont valides.</p>
+<p>Mais l&#x27;urgence et le budget changent.</p>
+<h2 id="chapitre-03--job-to-be-done-idee-simple">Job to be done (idee simple)</h2>
+<p>Les gens &quot;embauchent&quot; un produit pour faire un travail.</p>
+<p>Pas pour admirer ta brochure.</p>
+<p>Exemple :</p>
+<ul>
+<li>ils n&#x27;achètent pas une perceuse</li>
+<li>ils achètent un trou dans le mur</li>
+<li>en vrai : une etagere posee</li>
+</ul>
+<h2 id="chapitre-03--signaux-d-urgence">Signaux d&#x27;urgence</h2>
+<ul>
+<li>delai serre</li>
+<li>douleur forte (temps, argent, stress)</li>
+<li>consequence claire si on attend</li>
+</ul>
+<p>Plus l&#x27;urgence est haute, plus la decision est rapide.</p>
+<p>(attention : pas d&#x27;arnaque a l&#x27;urgence fictive)</p>
+<h2 id="chapitre-03--decouvrir-le-besoin">Decouvrir le besoin</h2>
+<p>Pose des questions ouvertes :</p>
+<ul>
+<li>&quot;Qu&#x27;est-ce qui t&#x27;embete le plus en ce moment ?&quot;</li>
+<li>&quot;Si c&#x27;etait resolu, a quoi tu le verrais ?&quot;</li>
+<li>&quot;Tu as deja essaye quoi ?&quot;</li>
+</ul>
+<p>Ecoute plus que tu ne parles.</p>
+<h2 id="chapitre-03--a-toi">A toi</h2>
+<p>Pour ton client du chapitre 2 :</p>
+<ol>
+<li>1. besoin principal</li>
+<li>2. envie secondaire</li>
+<li>3. niveau d&#x27;urgence (1 a 5)</li>
+</ol>
+<h2 id="chapitre-03--mini-defi">Mini defi</h2>
+<p>Transforme une envie vague (&quot;je veux un site&quot;) en besoin clair</p>
+<p>(&quot;je veux que des clients me trouvent et prennent rendez-vous sans m&#x27;appeler 10 fois&quot;).</p></article><article class="chapter chapter-break" id="chapitre-04"><div class="chapter-num">Chapitre 4</div><h1 id="chapitre-04--chapitre-4-produit-ou-service">Chapitre 4 - Produit ou service ?</h1>
+<h2 id="chapitre-04--produit">Produit</h2>
+<p>Quelque chose qu&#x27;on peut toucher / telecharger / livrer.</p>
+<p>Ex : un gateau, un t-shirt, un ebook.</p>
+<h2 id="chapitre-04--service">Service</h2>
+<p>Du temps, une competence, une presence.</p>
+<p>Ex : coiffure, conseil, reparation, formation.</p>
+<h2 id="chapitre-04--souvent-c-est-un-mix">Souvent, c&#x27;est un mix</h2>
+<p>Tu vends un site (livrable) + de la maintenance (service).</p>
+<p>Ou un atelier + un support PDF.</p>
+<h2 id="chapitre-04--offre-promesse-preuve-limites">Offre = promesse + preuve + limites</h2>
+<p>Une offre claire dit :</p>
+<ol>
+<li>1. pour qui</li>
+<li>2. quel resultat</li>
+<li>3. comment ca se passe</li>
+<li>4. en combien de temps</li>
+<li>5. a quel prix</li>
+<li>6. ce qui n&#x27;est PAS inclus</li>
+</ol>
+<p>Les limites protegent.</p>
+<p>Elles evitent les malentendus.</p>
+<h2 id="chapitre-04--exemple">Exemple</h2>
+<p>&quot;Je cree une page vitrine simple pour artisans :</p>
+<ul>
+<li>1 page claire</li>
+<li>formulaire de contact</li>
+<li>livraison en 10 jours</li>
+<li>hors photos pro et redaction longue</li>
+<li>450 euros&quot;</li>
+</ul>
+<h2 id="chapitre-04--packager">Packager</h2>
+<p>Parfois 3 niveaux aident :</p>
+<ul>
+<li>Essentiel</li>
+<li>Confort</li>
+<li>Complet</li>
+</ul>
+<p>Pas pour pousser au luxe a tout prix.</p>
+<p>Pour laisser le client choisir son niveau.</p>
+<h2 id="chapitre-04--a-toi">A toi</h2>
+<p>Ecris ton offre en 6 lignes (les 6 points ci-dessus).</p>
+<h2 id="chapitre-04--mini-defi">Mini defi</h2>
+<p>Ajoute une phrase &quot;ce n&#x27;est pas pour...&quot; (ex : &quot;pas pour les entreprises de 200 personnes&quot;).</p></article><article class="chapter chapter-break" id="chapitre-05"><div class="chapter-num">Chapitre 5</div><h1 id="chapitre-05--chapitre-5-le-prix">Chapitre 5 - Le prix</h1>
+<p>Le prix n&#x27;est pas un tabou.</p>
+<p>C&#x27;est une information.</p>
+<h2 id="chapitre-05--ce-que-le-prix-dit">Ce que le prix dit</h2>
+<ul>
+<li>trop bas : &quot;est-ce serieux ?&quot;</li>
+<li>trop haut sans preuve : &quot;pourquoi je paierais ca ?&quot;</li>
+<li>juste : &quot;ok, ca colle a la valeur&quot;</li>
+</ul>
+<h2 id="chapitre-05--ancrages-simples">Ancrages simples</h2>
+<p>Les gens comparent.</p>
+<p>Si tu ne donnes aucun repere, ils inventent le leur.</p>
+<p>Tu peux :</p>
+<ul>
+<li>montrer 3 formules</li>
+<li>comparer au cout de ne rien faire</li>
+<li>expliquer ce qui est inclus</li>
+</ul>
+<h2 id="chapitre-05--prix-psychologique-sans-magie-noire">Prix psychologique (sans magie noire)</h2>
+<p>19,90 existe.</p>
+<p>Mais la confiance bat le gadget.</p>
+<p>Un prix rond et assume marche tres bien si l&#x27;offre est claire.</p>
+<h2 id="chapitre-05--dire-le-prix">Dire le prix</h2>
+<p>Enonce-le calmement.</p>
+<p>Puis silence.</p>
+<p>Laisse l&#x27;autre reagir.</p>
+<p>Si tu t&#x27;excuses en disant le prix, tu affaiblis l&#x27;offre.</p>
+<h2 id="chapitre-05--tester">Tester</h2>
+<p>Tu peux ajuster.</p>
+<p>Note ce que les gens disent :</p>
+<ul>
+<li>&quot;trop cher&quot; (par rapport a quoi ?)</li>
+<li>&quot;ok&quot;</li>
+<li>&quot;je reflechis&quot; (souvent : pas convaincu ou pas le bon moment)</li>
+</ul>
+<h2 id="chapitre-05--a-toi">A toi</h2>
+<p>Choisis un prix pour ton offre.</p>
+<p>Ecris une phrase pour l&#x27;annoncer sans t&#x27;excuser.</p>
+<h2 id="chapitre-05--mini-defi">Mini defi</h2>
+<p>Calcule le prix d&#x27;une heure de ton temps &quot;au feeling&quot;.</p>
+<p>Puis on raffine au chapitre suivant avec les vrais couts.</p>
+<h2 id="chapitre-05--grille-simple">Grille simple</h2>
+<p>Pour une meme famille d&#x27;offres :</p>
+<ul>
+<li>Essentiel : moins cher, perimetre serre</li>
+<li>Standard : le coeur de ton travail</li>
+<li>Plus : options claires (urgence, deplacement, extras)</li>
+</ul>
+<p>Le client choisit.</p>
+<p>Tu evites le sur-mesure flou a chaque fois.</p></article><article class="chapter chapter-break" id="chapitre-06"><div class="chapter-num">Chapitre 6</div><h1 id="chapitre-06--chapitre-6-couts-et-marge">Chapitre 6 - Couts et marge</h1>
+<figure class="illus"><img src="images/print/commerce-marge.jpg" alt="Prix - couts = marge. Sinon tu travailles a perte."><figcaption>Prix - couts = marge. Sinon tu travailles a perte.</figcaption></figure>
+<p>Vendre cher ne suffit pas.</p>
+<p>Il faut savoir ce qui reste.</p>
+<h2 id="chapitre-06--cout">Cout</h2>
+<p>Tout ce que tu depenses pour produire / livrer :</p>
+<ul>
+<li>matieres</li>
+<li>outils</li>
+<li>deplacements</li>
+<li>pubs</li>
+<li>frais de plateforme</li>
+<li>ton temps (oui)</li>
+</ul>
+<h2 id="chapitre-06--marge">Marge</h2>
+<div class="code-block keep-block"><pre><code class="language-text">Prix de vente - couts = marge</code></pre></div>
+<p>Si la marge est nulle ou negative, tu financais le client.</p>
+<p>Rarement un plan durable.</p>
+<h2 id="chapitre-06--exemple-cookie">Exemple cookie</h2>
+<ul>
+<li>ingredients : 0,40</li>
+<li>emballage : 0,10</li>
+<li>part de four / elec : 0,15</li>
+<li>temps (disons) : 0,80</li>
+<li>total cout : 1,45</li>
+<li>prix vente : 2,50</li>
+<li>marge : 1,05</li>
+</ul>
+<h2 id="chapitre-06--attention-au-temps-invisible">Attention au temps &quot;invisible&quot;</h2>
+<p>Messages, relances, SAV, trajets.</p>
+<p>Si tu oublies ca, tu te sous-paies.</p>
+<h2 id="chapitre-06--seuil-de-rentabilite-idee">Seuil de rentabilite (idee)</h2>
+<p>Combien dois-tu vendre pour couvrir tes frais fixes du mois ?</p>
+<p>Loyer, abonnements, assurance...</p>
+<p>Meme en gros, ca evite les illusions.</p>
+<h2 id="chapitre-06--a-toi">A toi</h2>
+<p>Pour ton offre, liste 5 couts.</p>
+<p>Estime la marge.</p>
+<h2 id="chapitre-06--mini-defi">Mini defi</h2>
+<p>Augmente un cout que tu avais oublie (temps de discussion client).</p>
+<p>Recalcule. Qu&#x27;est-ce que ca change ?</p>
+<h2 id="chapitre-06--exemple-service-1h">Exemple service (1h)</h2>
+<ul>
+<li>deplacement : 4 euros</li>
+<li>outils / usure : 1 euro</li>
+<li>plateforme / pub au prorata : 2 euros</li>
+<li>ton heure &quot;cible&quot; : 25 euros</li>
+<li>total a couvrir : 32 euros</li>
+</ul>
+<p>Si tu factures 30, tu es deja juste.</p>
+<p>Si tu factures 40, tu respires un peu.</p>
+<p>Les chiffres exacts dependent de toi. L&#x27;idee compte.</p></article><article class="chapter chapter-break" id="chapitre-07"><div class="chapter-num">Chapitre 7</div><h1 id="chapitre-07--chapitre-7-la-valeur-pas-seulement-le-prix">Chapitre 7 - La valeur (pas seulement le prix)</h1>
+<p>La valeur, c&#x27;est ce que ca change pour le client.</p>
+<h2 id="chapitre-07--exemples-de-valeur">Exemples de valeur</h2>
+<ul>
+<li>gagner du temps</li>
+<li>eviter une galere</li>
+<li>faire plus beau / plus pro</li>
+<li>se sentir rassure</li>
+<li>obtenir un resultat mesurable</li>
+</ul>
+<h2 id="chapitre-07--prix-vs-valeur">Prix vs valeur</h2>
+<p>Un devis a 300 euros peut etre &quot;bon marche&quot; s&#x27;il evite 2 jours de stress.</p>
+<p>Un truc a 20 euros peut etre &quot;cher&quot; s&#x27;il ne sert a rien.</p>
+<h2 id="chapitre-07--preuves">Preuves</h2>
+<p>La valeur se croit mieux avec des preuves :</p>
+<ul>
+<li>avant / apres</li>
+<li>temoignage court</li>
+<li>demo</li>
+<li>chiffres simples (&quot;3 clients en plus / semaine&quot;)</li>
+</ul>
+<p>Sans mentir. Sans gonfler.</p>
+<h2 id="chapitre-07--differenciation">Differenciation</h2>
+<p>Pourquoi toi, et pas un autre ?</p>
+<ul>
+<li>plus rapide</li>
+<li>plus local</li>
+<li>plus pedagogue</li>
+<li>plus specialise</li>
+<li>plus sympa a suivre</li>
+</ul>
+<p>Une seule force claire vaut mieux que 12 adjectifs vides.</p>
+<h2 id="chapitre-07--a-toi">A toi</h2>
+<p>Complete :</p>
+<p>&quot;Avec mon offre, le client gagne ___ / evite ___ .&quot;</p>
+<h2 id="chapitre-07--mini-defi">Mini defi</h2>
+<p>Ecris un mini temoignage fictif realiste (3 lignes) comme s&#x27;il venait d&#x27;un client content.</p>
+<p>Puis note : comment obtenir un vrai plus tard ?</p></article><article class="chapter chapter-break" id="chapitre-08"><div class="chapter-num">Chapitre 8</div><h1 id="chapitre-08--chapitre-8-ou-vendre-les-canaux">Chapitre 8 - Ou vendre ? (les canaux)</h1>
+<p>Un canal = un chemin entre toi et le client.</p>
+<h2 id="chapitre-08--exemples">Exemples</h2>
+<ul>
+<li>bouche a oreille</li>
+<li>Instagram / LinkedIn</li>
+<li>marche local</li>
+<li>boutique</li>
+<li>site + formulaire</li>
+<li>marketplace</li>
+<li>partenariat (coiffeur, salle, ecole...)</li>
+</ul>
+<h2 id="chapitre-08--un-canal-bien-cinq-mal">Un canal bien &gt; cinq mal</h2>
+<p>Mieux vaut maitriser un chemin.</p>
+<p>Que saupoudrer partout et s&#x27;epuiser.</p>
+<h2 id="chapitre-08--choisir">Choisir</h2>
+<p>Pose-toi :</p>
+<ol>
+<li>1. Ou mon client cherche deja ?</li>
+<li>2. Est-ce que je peux y etre regulierement ?</li>
+<li>3. Combien ca me coute (temps / argent) ?</li>
+</ol>
+<h2 id="chapitre-08--tunnel-simple">Tunnel simple</h2>
+<ol>
+<li>1. Attirer l&#x27;attention</li>
+<li>2. Expliquer l&#x27;offre</li>
+<li>3. Proposer un prochain pas clair (message, devis, achat)</li>
+</ol>
+<p>Si le prochain pas est flou, les gens partent.</p>
+<h2 id="chapitre-08--a-toi">A toi</h2>
+<p>Choisis <strong>un</strong> canal principal pour ton offre.</p>
+<p>Ecris pourquoi.</p>
+<h2 id="chapitre-08--mini-defi">Mini defi</h2>
+<p>Ecris le &quot;prochain pas&quot; en une phrase</p>
+<p>(ex : &quot;Envoie-moi 3 photos et ton delai, je te reponds sous 24h&quot;).</p>
+<h2 id="chapitre-08--exemple-concret">Exemple concret</h2>
+<p>Tu vends des cookies maison.</p>
+<p>Canal principal : marche du samedi + Instagram pour rappeler le stand.</p>
+<p>Pas besoin de TikTok + site + 3 marketplaces le premier mois.</p>
+<p>D&#x27;abord : etre la ou les gens achetent deja.</p></article><article class="chapter chapter-break" id="chapitre-09"><div class="chapter-num">Chapitre 9</div><h1 id="chapitre-09--chapitre-9-l-argumentaire">Chapitre 9 - L&#x27;argumentaire</h1>
+<figure class="illus"><img src="images/print/commerce-argumentaire.jpg" alt="Un bon argument parle au besoin, pas a ton ego."><figcaption>Un bon argument parle au besoin, pas a ton ego.</figcaption></figure>
+<p>Argumenter, ce n&#x27;est pas reciter une brochure.</p>
+<p>C&#x27;est relier ton offre au besoin de la personne.</p>
+<h2 id="chapitre-09--structure-simple-4-phrases">Structure simple (4 phrases)</h2>
+<ol>
+<li>1. Je comprends ton probleme</li>
+<li>2. Voici ce que je propose</li>
+<li>3. Voici le resultat / la preuve</li>
+<li>4. Voici le prochain pas</li>
+</ol>
+<h2 id="chapitre-09--exemple">Exemple</h2>
+<p>&quot;Tu perds du temps a repondre aux memes questions sur WhatsApp.</p>
+<p>Je te fais une page claire avec FAQ + formulaire.</p>
+<p>Tes clients trouvent l&#x27;info, toi tu recois des demandes rangees.</p>
+<p>Si tu veux, on regarde ca 15 minutes demain.&quot;</p>
+<h2 id="chapitre-09--ce-qui-marche-mal">Ce qui marche mal</h2>
+<ul>
+<li>jargon</li>
+<li>20 arguments d&#x27;un coup</li>
+<li>denigrer les concurrents</li>
+<li>parler de toi pendant 10 minutes</li>
+</ul>
+<h2 id="chapitre-09--benefice-caracteristique">Benefice &gt; caracteristique</h2>
+<p>Caracteristique : &quot;papier 300g&quot;</p>
+<p>Benefice : &quot;ca fait plus cadeau, ca s&#x27;abime moins&quot;</p>
+<p>Traduis toujours.</p>
+<h2 id="chapitre-09--a-toi">A toi</h2>
+<p>Ecris ton argumentaire en 4 phrases.</p>
+<h2 id="chapitre-09--mini-defi">Mini defi</h2>
+<p>Enleve 3 adjectifs inutiles (&quot;innovant&quot;, &quot;unique&quot;, &quot;premium&quot;) et remplace par du concret.</p></article><article class="chapter chapter-break" id="chapitre-10"><div class="chapter-num">Chapitre 10</div><h1 id="chapitre-10--chapitre-10-les-objections">Chapitre 10 - Les objections</h1>
+<p>Une objection, ce n&#x27;est pas forcément un non.</p>
+<p>Souvent c&#x27;est : &quot;j&#x27;ai besoin d&#x27;etre rassure&quot;.</p>
+<h2 id="chapitre-10--objections-classiques">Objections classiques</h2>
+<ul>
+<li>&quot;C&#x27;est trop cher&quot;</li>
+<li>&quot;Je vais reflechir&quot;</li>
+<li>&quot;J&#x27;ai pas le temps&quot;</li>
+<li>&quot;Je dois demander a ...&quot;</li>
+<li>&quot;Je peux le faire moi-meme&quot;</li>
+</ul>
+<h2 id="chapitre-10--methode">Methode</h2>
+<ol>
+<li>1. Accueille (&quot;ok, je vois&quot;)</li>
+<li>2. Clarifie (&quot;trop cher par rapport a quoi ?&quot;)</li>
+<li>3. Reponds avec un fait / une option</li>
+<li>4. Propose un prochain pas plus petit</li>
+</ol>
+<h2 id="chapitre-10--exemples">Exemples</h2>
+<p><strong>Trop cher</strong></p>
+<p>&quot;Par rapport a quel budget tu te situais ?</p>
+<p>On a aussi une formule plus courte a X.&quot;</p>
+<p><strong>Je vais reflechir</strong></p>
+<p>&quot;Bien sur. Qu&#x27;est-ce qui te fait hesiter le plus : le prix, le delai, ou le resultat ?&quot;</p>
+<p><strong>Je peux le faire moi-meme</strong></p>
+<p>&quot;Oui. La question c&#x27;est surtout le temps et l&#x27;energie. Tu preferes le faire ce mois-ci ou deleguer ?&quot;</p>
+<h2 id="chapitre-10--ce-qu-il-ne-faut-pas-faire">Ce qu&#x27;il ne faut pas faire</h2>
+<ul>
+<li>contredire sèchement</li>
+<li>insister 12 fois</li>
+<li>brader le prix sans raison (sinon tout le monde attendra la brader)</li>
+</ul>
+<h2 id="chapitre-10--a-toi">A toi</h2>
+<p>Ecris une reponse a &quot;c&#x27;est trop cher&quot; pour ton offre.</p>
+<h2 id="chapitre-10--mini-defi">Mini defi</h2>
+<p>Joue l&#x27;objection &quot;je reflechis&quot; avec un ami. Note ce qui sonne faux.</p></article><article class="chapter chapter-break" id="chapitre-11"><div class="chapter-num">Chapitre 11</div><h1 id="chapitre-11--chapitre-11-la-relation-client">Chapitre 11 - La relation client</h1>
+<p>La vente ne s&#x27;arrete pas au &quot;oui&quot;.</p>
+<p>Elle continue dans la facon dont tu traites les gens.</p>
+<h2 id="chapitre-11--avant">Avant</h2>
+<ul>
+<li>repondre vite (meme pour dire &quot;je te reviens demain&quot;)</li>
+<li>etre clair sur les delais</li>
+<li>ne pas promettre l&#x27;impossible</li>
+</ul>
+<h2 id="chapitre-11--pendant">Pendant</h2>
+<ul>
+<li>tenir ce qui est dit</li>
+<li>prevenir si ca derape</li>
+<li>demander des validations intermediaires si besoin</li>
+</ul>
+<h2 id="chapitre-11--apres">Apres</h2>
+<ul>
+<li>verifier que c&#x27;est bon</li>
+<li>demander un retour</li>
+<li>proposer la suite seulement si utile</li>
+</ul>
+<h2 id="chapitre-11--confiance">Confiance</h2>
+<p>La confiance se construit avec des petites preuves repetees.</p>
+<p>Pas avec un grand discours une fois.</p>
+<h2 id="chapitre-11--sav-simple">SAV simple</h2>
+<p>Un client mecontent bien traite peut rester.</p>
+<p>Un client ignore devient une mauvaise histoire racontee a 10 personnes.</p>
+<h2 id="chapitre-11--a-toi">A toi</h2>
+<p>Ecris ta regle perso : &quot;Je reponds sous ___ .&quot;</p>
+<h2 id="chapitre-11--mini-defi">Mini defi</h2>
+<p>Imagine un retard de 2 jours. Ecris le message honnete que tu enverrais.</p>
+<h2 id="chapitre-11--moment-de-verite">Moment de verite</h2>
+<p>Le client recoit enfin le truc.</p>
+<p>Il est content ? Demande-lui ce qui a ete top.</p>
+<p>Il est tiède ? Demande ce qui manque.</p>
+<p>Ces retours valent plus qu&#x27;un like.</p></article><article class="chapter chapter-break" id="chapitre-12"><div class="chapter-num">Chapitre 12</div><h1 id="chapitre-12--chapitre-12-faire-revenir-fidelisation">Chapitre 12 - Faire revenir (fidelisation)</h1>
+<p>Un nouveau client coute souvent plus cher a obtenir qu&#x27;un client qui revient.</p>
+<p>Donc : soigne ceux qui sont deja la.</p>
+<h2 id="chapitre-12--gestes-simples">Gestes simples</h2>
+<ul>
+<li>dire merci</li>
+<li>se souvenir d&#x27;un detail</li>
+<li>offrir un petit avantage coherent (pas une brader permanente)</li>
+<li>prevenir d&#x27;une nouveaute utile</li>
+<li>demander : &quot;tu recommanderais ?&quot;</li>
+</ul>
+<h2 id="chapitre-12--programme-sans-usine-a-gaz">Programme sans usine a gaz</h2>
+<p>Idee :</p>
+<p>&quot;Apres 5 achats, un produit offert&quot;</p>
+<p>ou</p>
+<p>&quot;Parraine un ami : vous gagnez tous les deux X&quot;</p>
+<p>Simple a expliquer. Simple a tenir.</p>
+<h2 id="chapitre-12--communaute">Communaute</h2>
+<p>Parfois les gens restent pour l&#x27;ambiance autant que pour le produit.</p>
+<p>Ateliers, messages, conseils sinceres.</p>
+<h2 id="chapitre-12--a-toi">A toi</h2>
+<p>Choisis <strong>une</strong> action de fidelisation pour ton offre.</p>
+<h2 id="chapitre-12--mini-defi">Mini defi</h2>
+<p>Ecris un message de &quot;merci + suite possible&quot; en 4 lignes max.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1 id="chapitre-13--chapitre-13-mini-projet-ton-offre-en-une-page">Chapitre 13 - Mini-projet : ton offre en une page</h1>
+<figure class="illus"><img src="images/print/commerce-offre.jpg" alt="Mini projet : une offre claire, testable."><figcaption>Mini projet : une offre claire, testable.</figcaption></figure>
+<p>Tu vas construire une mini fiche offre.</p>
+<p>Pas un business plan de 40 pages. Une page claire.</p>
+<h2 id="chapitre-13--contenu-obligatoire">Contenu obligatoire</h2>
+<ol>
+<li>1. Nom de l&#x27;offre</li>
+<li>2. Pour qui (portrait)</li>
+<li>3. Probleme / besoin</li>
+<li>4. Promesse de resultat</li>
+<li>5. Deroule (etapes)</li>
+<li>6. Prix + ce qui est inclus / exclus</li>
+<li>7. Canal principal</li>
+<li>8. Prochain pas</li>
+<li>9. Une objection + ta reponse</li>
+<li>10. Marge estimee (meme grossiere)</li>
+</ol>
+<h2 id="chapitre-13--criteres">Critères</h2>
+<ul>
+<li>lisible en 2 minutes</li>
+<li>concret</li>
+<li>honnete</li>
+<li>testable cette semaine (meme sur 1 personne)</li>
+</ul>
+<h2 id="chapitre-13--version-test">Version &quot;test&quot;</h2>
+<p>Propose l&#x27;offre a quelqu&#x27;un de réel.</p>
+<p>Note :</p>
+<ul>
+<li>ce qu&#x27;il a compris</li>
+<li>ce qui a freine</li>
+<li>ce qu&#x27;il paierait</li>
+</ul>
+<h2 id="chapitre-13--en-vrai">En vrai</h2>
+<p>Si personne ne comprend, ce n&#x27;est pas &quot;les gens sont betes&quot;.</p>
+<p>C&#x27;est l&#x27;offre qui est encore floue.</p>
+<h2 id="chapitre-13--mini-defi">Mini defi</h2>
+<p>Imprime ta fiche. Barre 20% du texte. Est-elle encore claire ?</p>
+<h2 id="chapitre-13--modele-de-page-copie">Modele de page (copie)</h2>
+<div class="code-block keep-block"><pre><code class="language-text">Offre : ...
+Pour : ...
+Probleme : ...
+Resultat : ...
+Etapes : 1) ... 2) ... 3) ...
+Prix : ...
+Inclus : ...
+Exclus : ...
+Canal : ...
+Prochain pas : ...
+Objection frequente : ...
+Ma reponse : ...
+Marge approx : ...</code></pre></div></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-ce-qu-il-faut-retenir">Chapitre 14 - Ce qu&#x27;il faut retenir</h1>
+<h2 id="chapitre-14--en-une-minute">En une minute</h2>
+<ul>
+<li>Client precis &gt; &quot;tout le monde&quot;</li>
+<li>Besoin + urgence</li>
+<li>Offre = promesse + limites</li>
+<li>Prix assume</li>
+<li>Marge = survie</li>
+<li>Valeur = changement pour le client</li>
+<li>Un canal bien tenu</li>
+<li>Argument = lien au besoin</li>
+<li>Objection = clarification</li>
+<li>Relation + fidelisation</li>
+</ul>
+<h2 id="chapitre-14--habitudes">Habitudes</h2>
+<ol>
+<li>1. Ecouter avant de pitcher</li>
+<li>2. Ecrire clair</li>
+<li>3. Compter ses couts</li>
+<li>4. Tenir sa parole</li>
+<li>5. Tester petit</li>
+</ol>
+<h2 id="chapitre-14--suite">Suite</h2>
+<p>Deux chapitres utiles :</p>
+<ul>
+<li>devis</li>
+<li>digital (sans devenir &quot;expert marketing&quot; en 10 minutes)</li>
+</ul>
+<p>Puis ateliers + quiz.</p>
+<h2 id="chapitre-14--carte-mentale">Carte mentale</h2>
+<p>Client -&gt; besoin -&gt; offre -&gt; prix/marge -&gt; canal -&gt; argument -&gt; objection -&gt; relation -&gt; fidelisation</p>
+<p>Si tu bloques, reviens au client.</p>
+<p>Presque toujours.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Chapitre 15</div><h1 id="chapitre-15--chapitre-15-le-devis-simple">Chapitre 15 - Le devis simple</h1>
+<p>Un devis, c&#x27;est une offre ecrite.</p>
+<p>Ca protege les deux cotes.</p>
+<h2 id="chapitre-15--contenu-minimum">Contenu minimum</h2>
+<ul>
+<li>qui tu es / qui est le client</li>
+<li>description de la prestation</li>
+<li>prix HT / TTC si besoin (selon ton statut)</li>
+<li>delai</li>
+<li>validite du devis (ex : 15 jours)</li>
+<li>conditions courtes (acompte, annulation)</li>
+<li>date + signature / accord</li>
+</ul>
+<h2 id="chapitre-15--ton">Ton</h2>
+<p>Clair. Calme. Precis.</p>
+<p>Pas de roman.</p>
+<h2 id="chapitre-15--exemple-de-blocs">Exemple de blocs</h2>
+<div class="code-block keep-block"><pre><code class="language-text">Prestation : page vitrine 1 page
+Inclus : structure, textes fournis par le client, mise en ligne
+Exclus : photos pro, logo, redaction longue
+Delai : 10 jours ouvrés apres reception des contenus
+Prix : 450 euros
+Acompte : 30% a la commande</code></pre></div>
+<h2 id="chapitre-15--relance">Relance</h2>
+<p>Si pas de reponse :</p>
+<p>J+3 message court</p>
+<p>J+7 dernier check</p>
+<p>Puis tu passes a autre chose. Sans rancune theatrale.</p>
+<h2 id="chapitre-15--a-toi">A toi</h2>
+<p>Redige un mini devis pour ton offre (meme fictif).</p>
+<h2 id="chapitre-15--mini-defi">Mini defi</h2>
+<p>Ajoute une phrase sur l&#x27;annulation (juste pour toi et le client).</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Chapitre 16</div><h1 id="chapitre-16--chapitre-16-un-peu-de-digital-sans-panique">Chapitre 16 - Un peu de digital (sans panique)</h1>
+<p>Le digital, c&#x27;est un megaphone.</p>
+<p>Pas une obligation a etre partout.</p>
+<h2 id="chapitre-16--minimum-utile">Minimum utile</h2>
+<ul>
+<li>un moyen d&#x27;etre trouve (page, profil, fiche Google...)</li>
+<li>un moyen de contacter</li>
+<li>quelques preuves (photos, avis, exemples)</li>
+</ul>
+<h2 id="chapitre-16--pieges">Pieges</h2>
+<ul>
+<li>poster tous les jours sans offre claire</li>
+<li>acheter de la pub trop tot</li>
+<li>promettre des resultats miracles (&quot;100 clients en 7 jours&quot;)</li>
+</ul>
+<h2 id="chapitre-16--contenu-qui-aide">Contenu qui aide</h2>
+<p>Montre le travail.</p>
+<p>Explique un probleme courant.</p>
+<p>Montre un avant/apres.</p>
+<p>Reponds aux vraies questions des clients.</p>
+<h2 id="chapitre-16--tunnel-ultra-simple">Tunnel ultra simple</h2>
+<ol>
+<li>1. Post / page</li>
+<li>2. Message clair</li>
+<li>3. Lien ou bouton &quot;me contacter&quot;</li>
+<li>4. Reponse humaine rapide</li>
+</ol>
+<h2 id="chapitre-16--a-toi">A toi</h2>
+<p>Choisis ton minimum digital pour les 30 prochains jours (1 a 3 actions max).</p>
+<h2 id="chapitre-16--mini-defi">Mini defi</h2>
+<p>Ecris un post de 5 lignes qui parle du probleme client, pas de toi.</p></article><article class="chapter chapter-break" id="chapitre-17"><div class="chapter-num">Chapitre 17</div><h1 id="chapitre-17--chapitre-17-atelier-ecouter-pour-de-vrai">Chapitre 17 - Atelier : ecouter pour de vrai</h1>
+<h2 id="chapitre-17--exercice-1">Exercice 1</h2>
+<p>Interviewe quelqu&#x27;un 10 minutes sur un probleme du quotidien.</p>
+<p>Tu n&#x27;as pas le droit de vendre.</p>
+<p>Tu as le droit de poser des questions.</p>
+<p>Questions :</p>
+<ul>
+<li>C&#x27;est quoi le plus penible ?</li>
+<li>Depuis quand ?</li>
+<li>Tu as essaye quoi ?</li>
+<li>Idealement, ca se terminerait comment ?</li>
+</ul>
+<h2 id="chapitre-17--exercice-2">Exercice 2</h2>
+<p>Retranscris 10 phrases cles.</p>
+<p>Souligne les mots du client (son vocabulaire).</p>
+<p>Plus tard, reutilise CES mots dans ton offre.</p>
+<h2 id="chapitre-17--exercice-3">Exercice 3</h2>
+<p>Qu&#x27;as-tu envie de repondre trop vite ?</p>
+<p>Note-le. C&#x27;est souvent la ou tu ecoutes mal.</p>
+<h2 id="chapitre-17--check">Check</h2>
+<p>Tu sors avec :</p>
+<ul>
+<li>un probleme reformule en 1 phrase</li>
+<li>3 citations brutes</li>
+<li>1 idee d&#x27;offre (meme imparfaite)</li>
+</ul>
+<h2 id="chapitre-17--phrase-piege">Phrase piege</h2>
+<p>Si tu entends &quot;ouais ouais je vois&quot; toutes les 3 secondes, tu parles trop.</p>
+<p>Remets une question.</p>
+<p>Le silence de l&#x27;autre n&#x27;est pas un echec. C&#x27;est de la matiere.</p></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Chapitre 18</div><h1 id="chapitre-18--chapitre-18-atelier-solidifier-l-offre">Chapitre 18 - Atelier : solidifier l&#x27;offre</h1>
+<p>Reprends ta fiche du mini-projet.</p>
+<h2 id="chapitre-18--passoire">Passoire</h2>
+<p>Pour chaque ligne, demande :</p>
+<ul>
+<li>C&#x27;est concret ?</li>
+<li>C&#x27;est testable ?</li>
+<li>C&#x27;est honnete ?</li>
+<li>Un ado comprendrait ?</li>
+</ul>
+<p>Si non : reecris.</p>
+<h2 id="chapitre-18--test-taxi">Test &quot;taxi&quot;</h2>
+<p>Explique ton offre a quelqu&#x27;un en 30 secondes.</p>
+<p>S&#x27;il ne peut pas la repeter, c&#x27;est encore flou.</p>
+<h2 id="chapitre-18--prix-et-marge">Prix et marge</h2>
+<p>Recalcule avec un cout &quot;temps&quot; plus realiste.</p>
+<p>Est-ce que tu signerais encore ?</p>
+<h2 id="chapitre-18--livrable-atelier">Livrable atelier</h2>
+<p>Une fiche d&#x27;une page + 1 phrase de prochain pas.</p>
+<h2 id="chapitre-18--test-ami-dur">Test ami dur</h2>
+<p>Demande a quelqu&#x27;un de jouer le client mefiant.</p>
+<p>Il a le droit d&#x27;etre penetrant.</p>
+<p>Toi, tu n&#x27;as pas le droit de te vexer.</p>
+<p>Tu notes. Tu ameliores.</p></article><article class="chapter chapter-break" id="chapitre-19"><div class="chapter-num">Chapitre 19</div><h1 id="chapitre-19--chapitre-19-atelier-pitch-de-60-secondes">Chapitre 19 - Atelier : pitch de 60 secondes</h1>
+<h2 id="chapitre-19--structure">Structure</h2>
+<ol>
+<li>1. Probleme (10s)</li>
+<li>2. Offre (15s)</li>
+<li>3. Preuve / concret (15s)</li>
+<li>4. Prix ou cadre (10s)</li>
+<li>5. Prochain pas (10s)</li>
+</ol>
+<h2 id="chapitre-19--consignes">Consignes</h2>
+<ul>
+<li>pas de jargon</li>
+<li>pas de &quot;voila quoi&quot;</li>
+<li>une seule idee principale</li>
+</ul>
+<h2 id="chapitre-19--entrainement">Entrainement</h2>
+<p>Filme-toi une fois.</p>
+<p>Regarde sans son : est-ce que tu as l&#x27;air a l&#x27;aise ?</p>
+<p>Avec son : est-ce clair ?</p>
+<h2 id="chapitre-19--variante-objection">Variante objection</h2>
+<p>Juste apres le pitch, ton partenaire dit &quot;c&#x27;est trop cher&quot;.</p>
+<p>Tu reponds avec la methode du chapitre 10.</p>
+<h2 id="chapitre-19--check">Check</h2>
+<p>3 passages. Le 3e doit etre plus court et plus clair que le 1er.</p>
+<h2 id="chapitre-19--version-ecrite">Version ecrite</h2>
+<p>Ecris ton pitch sur papier.</p>
+<p>Barre la moitie des mots.</p>
+<p>Relis a voix haute.</p>
+<p>Si ca sonne comme une pub creuse, recommence.</p></article><article class="chapter chapter-break" id="chapitre-20"><div class="chapter-num">Quiz</div><h1 id="chapitre-20--quiz-final-teste-toi">Quiz final - Teste-toi !</h1>
+<p><strong>Q1.</strong> Sans client, tu as surtout :</p>
+<ul>
+<li>A) Un commerce solide</li>
+<li>B) Un hobby / une idee</li>
+<li>C) Une marge</li>
+</ul>
+<p><strong>Q2.</strong> &quot;Tout le monde&quot; comme cible, c&#x27;est :</p>
+<ul>
+<li>A) Ideal</li>
+<li>B) Souvent trop vague</li>
+<li>C) Obligatoire</li>
+</ul>
+<p><strong>Q3.</strong> Un besoin urgent pousse souvent a :</p>
+<ul>
+<li>A) Attendre 2 ans</li>
+<li>B) Decider plus vite</li>
+<li>C) Ignorer le prix toujours</li>
+</ul>
+<p><strong>Q4.</strong> Une bonne offre contient aussi :</p>
+<ul>
+<li>A) Seulement le prix</li>
+<li>B) Des limites / exclusions</li>
+<li>C) Aucune promesse</li>
+</ul>
+<p><strong>Q5.</strong> Marge =</p>
+<ul>
+<li>A) Prix + couts</li>
+<li>B) Prix - couts</li>
+<li>C) Couts seuls</li>
+</ul>
+<p><strong>Q6.</strong> La valeur, c&#x27;est surtout :</p>
+<ul>
+<li>A) Le changement pour le client</li>
+<li>B) La longueur du logo</li>
+<li>C) Le nombre de followers</li>
+</ul>
+<p><strong>Q7.</strong> Mieux vaut :</p>
+<ul>
+<li>A) 5 canaux mal tenus</li>
+<li>B) 1 canal bien tenu</li>
+<li>C) Aucun canal</li>
+</ul>
+<p><strong>Q8.</strong> Un argumentaire efficace relie :</p>
+<ul>
+<li>A) Ton ego au jargon</li>
+<li>B) L&#x27;offre au besoin</li>
+<li>C) Les concurrents a la critique</li>
+</ul>
+<p><strong>Q9.</strong> Une objection est souvent :</p>
+<ul>
+<li>A) La fin absolue</li>
+<li>B) Une demande de clarification / reassurance</li>
+<li>C) Une injure</li>
+</ul>
+<p><strong>Q10.</strong> Dire le prix :</p>
+<ul>
+<li>A) En s&#x27;excusant beaucoup</li>
+<li>B) Calmement, puis silence</li>
+<li>C) En le cachant toujours</li>
+</ul>
+<p><strong>Q11.</strong> Un devis sert a :</p>
+<ul>
+<li>A) Decoruer</li>
+<li>B) Clarifier l&#x27;accord par ecrit</li>
+<li>C) Remplacer le produit</li>
+</ul>
+<p><strong>Q12.</strong> Fideliser, c&#x27;est surtout :</p>
+<ul>
+<li>A) Ignorer les clients actuels</li>
+<li>B) Soigner ceux qui sont deja la</li>
+<li>C) Baisser les prix chaque jour</li>
+</ul>
+<p><strong>Q13.</strong> Digital utile, c&#x27;est d&#x27;abord :</p>
+<ul>
+<li>A) Etre partout</li>
+<li>B) Etre trouvable + contactable + prouver un peu</li>
+<li>C) Acheter de la pub tout de suite</li>
+</ul>
+<p><strong>Q14.</strong> Benefice =</p>
+<ul>
+<li>A) Detail technique seul</li>
+<li>B) Ce que ca apporte concrètement</li>
+<li>C) Un mot anglais obligatoire</li>
+</ul>
+<p><strong>Q15.</strong> Prochain pas flou =</p>
+<ul>
+<li>A) Plus de ventes</li>
+<li>B) Plus de gens qui partent</li>
+<li>C) Meilleure marge</li>
+</ul>
+<p><strong>Q16.</strong> Ecouter avant de vendre :</p>
+<ul>
+<li>A) Fait perdre son temps</li>
+<li>B) Ameliore l&#x27;offre et la confiance</li>
+<li>C) Est interdit</li>
+</ul>
+<p><strong>Q17.</strong> Sous-estimer son temps :</p>
+<ul>
+<li>A) Ameliore la marge</li>
+<li>B) Fausse les couts</li>
+<li>C) Attire les meilleurs clients automatiquement</li>
+</ul>
+<p><strong>Q18.</strong> Preuve utile :</p>
+<ul>
+<li>A) Avant/apres, temoignage, demo simple</li>
+<li>B) &quot;C&#x27;est innovant&quot; sans exemple</li>
+<li>C) Critiquer les autres</li>
+</ul>
+<h2 id="chapitre-20--reponses">Reponses</h2>
+<p>1 B, 2 B, 3 B, 4 B, 5 B, 6 A, 7 B, 8 B, 9 B, 10 B,</p>
+<p>11 B, 12 B, 13 B, 14 B, 15 B, 16 B, 17 B, 18 A</p>
+<h2 id="chapitre-20--score">Score</h2>
+<ul>
+<li>16-18 : nickel</li>
+<li>12-15 : bien, relis marge + objections + devis</li>
+<li>8-11 : refais client / offre / argumentaire</li>
+<li>moins de 8 : refais le mini-projet tranquillement</li>
+</ul></article><article class="chapter chapter-break" id="chapitre-21"><div class="chapter-num">Final</div><h1 id="chapitre-21--bravo">Bravo.</h1>
+<figure class="illus illus-wide"><img src="images/print/commerce-felicitations.jpg" alt="Bravo. Tu as les bases du commerce."><figcaption>Bravo. Tu as les bases du commerce.</figcaption></figure>
+<p>Tu as les bases du commerce.</p>
+<p>Pas un MBA. Une boussole.</p>
+<h2 id="chapitre-21--tu-sais">Tu sais</h2>
+<ul>
+<li>partir du client</li>
+<li>ecrire une offre claire</li>
+<li>regarder prix et marge</li>
+<li>argumenter sans blabla</li>
+<li>repondre a une objection</li>
+<li>soigner la relation</li>
+<li>poser un devis simple</li>
+<li>utiliser un peu le digital sans paniquer</li>
+</ul>
+<h2 id="chapitre-21--mission">Mission</h2>
+<p>Cette semaine :</p>
+<ol>
+<li>1. Montre ton offre a 3 personnes</li>
+<li>2. Note leurs freins</li>
+<li>3. Ajuste UNE chose (pas quinze)</li>
+<li>4. Propose un vrai prochain pas a quelqu&#x27;un</li>
+</ol>
+<h2 id="chapitre-21--suite-possible">Suite possible</h2>
+<p>Negociation, compta de base, marketing plus pousse, juridique selon ton pays...</p>
+<p>Plus tard.</p>
+<p>La, respire.</p>
+<p>Tu as un pont entre une solution et quelqu&#x27;un qui en a besoin.</p>
+<p>C&#x27;est deja le coeur du jeu.</p></article>
+
+    <p class="footer-note">Tu as les briques. Maintenant, construis.</p>
+  </div>
+</body>
+</html>
