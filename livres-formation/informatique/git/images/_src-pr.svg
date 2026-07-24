@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f7f4f2"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">Pull request</text>
+  <rect x="120" y="110" width="300" height="200" rx="16" fill="#3d405b"/>
+  <text x="270" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">feature</text>
+  <text x="270" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f4eef0">ton travail</text>
+  <rect x="580" y="110" width="300" height="200" rx="16" fill="#2b2d42"/>
+  <text x="730" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">main</text>
+  <text x="730" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f4eef0">branche stable</text>
+  <text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#ef476f" font-weight="700">PR</text>
+  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#5c5c66">Demander la fusion, avec relecture.</text>
+</svg>

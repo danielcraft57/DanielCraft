@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+  <rect width="1000" height="480" fill="#f7f4f2"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">Git = album de photos du projet</text>
+  <circle cx="200" cy="220" r="54" fill="#2b2d42"/>
+  <text x="200" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">v1</text>
+  <circle cx="400" cy="220" r="54" fill="#3d405b"/>
+  <text x="400" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">v2</text>
+  <circle cx="600" cy="220" r="54" fill="#ef476f"/>
+  <text x="600" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">v3</text>
+  <circle cx="800" cy="220" r="54" fill="#2b2d42"/>
+  <text x="800" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">v4</text>
+  <line x1="254" y1="220" x2="346" y2="220" stroke="#2b2d42" stroke-width="6"/>
+  <line x1="454" y1="220" x2="546" y2="220" stroke="#2b2d42" stroke-width="6"/>
+  <line x1="654" y1="220" x2="746" y2="220" stroke="#2b2d42" stroke-width="6"/>
+  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#5c5c66">Chaque commit est une photo datee.</text>
+</svg>

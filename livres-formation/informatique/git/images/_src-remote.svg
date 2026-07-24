@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f7f4f2"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">Toi et GitHub</text>
+  <rect x="100" y="120" width="280" height="180" rx="16" fill="#2b2d42"/>
+  <text x="240" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#fff" font-weight="700">Local</text>
+  <rect x="620" y="120" width="280" height="180" rx="16" fill="#ef476f"/>
+  <text x="760" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#fff" font-weight="700">GitHub</text>
+  <text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">push -&gt;</text>
+  <text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">&lt;- pull</text>
+  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#5c5c66">clone pour demarrer. push / pull pour synchroniser.</text>
+</svg>
