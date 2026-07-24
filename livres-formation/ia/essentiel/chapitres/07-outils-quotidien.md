@@ -1,61 +1,62 @@
-# Chapitre 7 - Les outils du quotidien (ou gagner du temps sans se perdre)
+# Chapitre 7 - L'IA dans le quotidien : ecrire, resumer, ideer
 
-Tu n'as pas besoin de vingt abonnements. Tu as besoin de trois a cinq gestes qui reviennent souvent, branches sur un ou deux outils que tu ouvres vraiment.
+Le meilleur usage debutant n'est pas "remplacer mon metier". C'est "debloquer les taches repetitives a bas risque". Ecrire un mail, resumer une reunion, clarifier une offre, preparer un plan, reformuler un message trop sec, generer des idees puis choisir. Ces gestes, faits proprement, changent une semaine de travail sans mettre en danger un client.
 
-Chez DanielCraft, on classe le quotidien en familles : ecrire, resumer, idees, apprendre, organiser, traduire, preparer une conversation. L'image et l'audio viennent au chapitre suivant. Ici, le texte et l'organisation - 80 % de la valeur pour beaucoup de gens.
+Chez DanielCraft, on recommande de construire une petite boite a outils personnelle : trois a cinq prompts types, ranges quelque part, reutilises, ameliores. Pas cinquante. Trois qui marchent battent cinquante oublies.
 
-## Ecrire plus vite (sans ecrire a ta place)
+## Ecrire et reformuler
 
-Mails, SMS, posts, pages "a propos", reponses FAQ, scripts d'appel. Le bon usage : tu fournis le fond (faits, offre, ton), l'IA propose la forme. Tu gardes la signature humaine : une precision que seul toi connais, une phrase moins lisse, un non assume.
+Tu as des notes brutes. Tu demandes une version claire pour un public precise. Tu fournis le ton. Tu interdis les ajouts de promesses. Tu relis. Exemples : mail de relance, reponse a une objection, page "a propos", script d'appel de deux minutes, message LinkedIn sans jargon. Lea garde un prompt "proposition client" et un prompt "mail gentil mais ferme". Max garde "devis en francais simple" et "compte-rendu de chantier".
 
-Lea garde un prompt "mail client presse" et un prompt "proposition courte". Max garde "devis en francais simple" et "relance J+3". Sam garde "consigne d'exercice claire" et "mail aux parents factuel".
+## Resumer
 
-## Resumer et clarifier
+Colle un compte-rendu long, une trame d'appel, un article. Demande : resume en 8 lignes, 5 decisions, 3 actions avec responsables. Ou : "explique ca a un collegue presse". Attention au contexte : ne colle pas un dossier confidentiel dans un outil non adapte. Anonymise. Coupe les noms si besoin. Le resume est un gain de temps enorme - et un risque RGPD si tu es negligant.
 
-Compte-rendu de reunion, long mail, PDF de notice, cahier des charges confus. Demande : resume en puces actionnables, decisions, questions ouvertes, prochaines etapes. Puis verifie les decisions - c'est la que les erreurs coutent.
+## Ideer sans te noyer
 
-Astuce : "separe faits / opinions / actions". Ca evite de transformer une hypothese en engagement.
+Brainstorm utile : "donne 12 angles, puis classe-les par facilite / impact". Ou "3 idees sages, 3 idees audacieuses, 3 idees a eviter et pourquoi". Tu ne cherches pas la verite. Tu cherches des pistes. Ensuite tu filtres avec ton metier. Sam demande des analogies ; il en jette huit ; il en garde une.
 
-## Idees et variantes
+## Apprendre et s'entrainer
 
-Brainstorm borne : "10 idees, puis classe les 3 meilleures selon [critere]". Variantes de titre, d'accroche, d'offre. Ne demande pas "des idees infinies". Demande un filtre. La creativite utile a une contrainte.
+L'IA peut jouer l'eleve, le client difficile, le recruteur. Utile pour preparer un oral, une objection, une reunion. Cadre le role. Demande un feedback structure. Ne prends pas le score invente comme une science. C'est un simulateur, pas un jury officiel.
 
-## Apprendre et expliquer
+## Integrer sans tout automatiser
 
-Fais-toi expliquer un concept "comme a un collegue presse", puis "comme a un eleve de 4e", puis "avec une analogie artisanat". Utilise l'IA comme tuteur patient. Verifie ensuite sur une source fiable si le sujet est serieux. Pour Sam, c'est un accélérateur de prep - pas un remplacement du programme officiel.
-
-## Organiser
-
-Transformer une to-do floue en plan de journee. Decouper un projet. Creer une checklist de lancement. Attention : l'IA adore les plans de 40 etapes. Impose "7 etapes max, realistes pour une personne seule".
-
-## Dans les logiciels que tu as deja
-
-Souvent, le meilleur outil est celui qui est deja la : suggestion dans le traitement de texte, resume dans la messagerie, aide dans le tableur, assistant dans le navigateur. Moins de copier-coller, moins de fuite de contexte. Teste ce que ton pack bureautique propose avant d'empiler des SaaS.
-
-## Routine minimale (15 minutes / jour)
-
-Matin : un resume ou un plan pour la tache numero 1. Midi : un mail debloque. Soir : une note de cloture ("ce qui avance / ce qui bloque") reformulee proprement. Trois usages. Pas vingt onglets.
-
-Si tu es artisan sur le terrain, dicte dans le telephone entre deux chantiers, puis fais nettoyer le texte le soir. Si tu es prof, prepare le lendemain en un bloc, pas en micro-sessions coupées de notifications.
-
-## Modeles de messages a garder sous le coude
-
-Tu peux creer trois "coquilles" reutilisables. Coquille mail : contexte en une ligne, demande claire, prochain creneau propose, signature. Coquille resume : decisions, responsables, dates, questions ouvertes. Coquille brainstorm : objectif, contraintes, 10 idees, top 3 justifie. Tu remplis la coquille, tu lances, tu corriges. En deux semaines, tu gagnes sans reflechir au cadre chaque fois.
-
-Lea a une coquille "compte-rendu d'appel client" : problemes entendus, urgences, budget evoque, prochaine etape. Max a une coquille "fin de chantier" : fait, restant, conseils entretien, rappel garantie. Sam a une coquille "apres seance" : ce qui a marche, eleves en difficulte (anonymises), ajustement pour la prochaine fois. Les coquilles sont de la methode, pas de la magie.
-
-## Ce qu'il ne faut pas automatiser trop tot
-
-Relations sensibles. Negociations fines. Feedback personnel dur. Decisions ethiques. Tout ce qui demande "etre la". L'IA peut preparer ; toi, tu rencontres. Elle peut aussi te faire croire que tu as "traite" un sujet parce qu'un beau plan existe. Un plan n'est pas une action. Garde une to-do humaine a cote.
+Beaucoup d'outils du quotidien embarquent deja l'IA : messagerie, suite bureautique, CRM, IDE. Commence la ou tu travailles deja. Evite d'empiler cinq abonnements. Un assistant bien briefe dans ton flux reel vaut mieux qu'un compte "jouet" ouvert une fois.
 
 ## Erreur classique
 
-Ouvrir l'IA pour tout, y compris ce que tu faisais mieux en deux minutes. Ou l'inverse : ne l'ouvrir que pour des taches heroiques ("refonds ma boite") et conclure que "ca ne marche pas". Le quotidien gagne sur le spectacle.
+Utiliser l'IA pour tout, y compris ce qui demande une presence humaine (annonce de mauvaise nouvelle delicate, negociation sensible mal preparee). Ou a l'inverse, refuser toute aide par principe alors que tes mails te coutent deux heures par jour. Le juste milieu : bas risque d'abord, haut jugement toujours.
 
 ## En vrai
 
-Liste tes dix dernieres taches ecrites (mails, docs, posts). Coche celles ou un brouillon IA t'aurait aide. Choisis-en une pour demain matin. Une seule. Execute. Mesure le temps gagne reellement, pas fantasme.
+Choisis une tache de cette semaine. Chronometre ta version sans IA. Puis avec IA (brief + relecture). Compare temps et qualite. Note une regle : "je garde l'IA pour X chaque semaine".
 
 ## A toi
 
-Ecris ta stack du mois : 1 outil chat principal, 1 usage ecriture, 1 usage resume, 1 usage idees. Interdiction d'en ajouter avant d'avoir tenu 14 jours.
+Cree trois prompts types nommes (ex. Mail clair, Resume action, Idees classees). Teste-les une fois. Range-les.
+## Semaine type d'un pilote
+
+Lundi : resume de reunion -> actions. Mardi : deux mails difficiles. Mercredi : plan de contenu ou de seance. Jeudi : reformulation d'une offre. Vendredi : retrospective "qu'est-ce que l'IA a rate cette semaine ?". Ce rythme bat l'usage impulsif du dimanche soir sur un sujet critique.
+
+## Modeles de messages
+
+Garde des squelettes : relance douce, relance ferme, excuse claire, demande d'information, confirmation de rendez-vous. L'IA remplit. Toi tu calibrer le niveau de chaleur et les faits. Avec le temps, tu ecriras parfois plus vite sans elle - et ce sera aussi une victoire : tu auras digere des structures.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

@@ -1,49 +1,48 @@
-# Chapitre 2 - Une histoire simple (sans chronologie ennuyeuse)
+# Chapitre 2 - Une petite histoire utile (sans chronologie ennuyeuse)
 
-Tu n'as pas besoin de retenir toutes les dates. Tu as besoin de comprendre pourquoi, en 2026, l'IA est devenue visible pour tout le monde - pas seulement pour les labos.
+Tu n'as pas besoin d'une liste de dates pour utiliser l'IA. Tu as besoin de comprendre d'ou vient le comportement actuel des outils, pour ne pas etre surpris. L'histoire de l'IA, c'est surtout l'histoire de machines qui apprennent a reconnaitre des motifs : d'abord sur des regles ecrites a la main, puis sur des donnees, puis sur des modeles de plus en plus grands capables de generer du contenu.
 
-Longtemps, l'informatique suivait des regles ecrites a la main : "si le client a paye, alors envoie la facture". Utile. Rigide. Des qu'il fallait reconnaitre un visage, traduire une phrase ambigue, ou resumer un texte mal ecrit, les regles explosaient. L'apprentissage automatique (machine learning) a change la logique : au lieu d'ecrire toutes les regles, on montre beaucoup d'exemples au programme, et il apprend des motifs.
+Dans les annees ou l'IA restait "dans les labos", on parlait surtout de systemes experts, de reconnaissance de formes, de jeux (echecs, go), de traduction automatique encore raide. Puis le machine learning a pris le dessus : au lieu d'ecrire toutes les regles, on montre des exemples et on laisse le modele ajuster ses parametres. Ensuite est arrive le deep learning : des reseaux de neurones profonds, tres bons sur l'image, la voix, puis le langage. Enfin, les grands modeles de langage (LLM) ont rendu l'IA conversationnelle accessible a tout le monde.
 
-Puis sont arrives les reseaux de neurones plus gros, l'apprentissage profond, la vision, la parole. Et surtout, a partir des annees 2020, les grands modeles de langage : des systemes capables de predire le prochain mot de facon si riche qu'ils conversent, redigent, traduisent, expliquent. ChatGPT a popularise ca aupres du grand public. Depuis, les outils se multiplient, s'integrent dans les logiciels du quotidien, et deviennent multimodaux (texte, image, son, parfois video).
+## Pourquoi ca compte pour toi
 
-## Trois vagues utiles a garder
+Parce que les outils d'aujourd'hui ne "savent" pas au sens scolaire. Ils ont ete formes a predire des suites plausibles a partir de donnees. C'est pour ca qu'ils sont brillants pour reformuler, resumer, ideer... et dangereux si tu les traites comme une encyclopedie officielle. L'histoire explique le temperament de la machine : elle est statistique, pas morale ; generative, pas omnisciente.
 
-Vague 1 : l'IA "cachee". Recommandations Netflix, spam filtre, GPS qui estime le trafic, reconnaissance faciale sur ton telephone. Tu l'utilisais deja sans dire "IA".
+Chez DanielCraft, on resume souvent ainsi : avant, l'IA classait ou predissait dans des cases etroites. Maintenant, elle ecrit, dessine, parle, code, et enchaine parfois des actions. Le passage a l'IA generative grand public a change le rapport au travail quotidien. Ce n'est plus "un outil pour data scientists seulement". C'est un outil pour Lea, Max, Sam - et toi.
 
-Vague 2 : l'IA "qui parle". Assistants conversationnels, generation de texte, aide a coder, resume de reunion. La, tout le monde voit le truc. Lea, Max et Sam aussi.
+## Quelques jalons (version poche)
 
-Vague 3 : l'IA "qui agit un peu". Agents, automatisations, outils qui enchainent des etapes (chercher, ecrire, classer). Encore immature par endroits, deja utile ailleurs. On en parle au chapitre 9 sans faire de science-fiction.
+Les annees 2010 ont popularise le deep learning sur l'image et la voix. Les annees suivantes ont vu des modeles de langage de plus en plus grands. Puis les interfaces de chat ont rendu ca utilisable sans installation savante. En parallele, les generateurs d'images, d'audio et de video ont suivi. En 2025-2026, on parle aussi d'agents (des systemes qui enchainent des outils), de RAG (relier le modele a tes documents), de multimodal (texte + image + son dans le meme fil), et de couts d'usage plus visibles via les API.
 
-Chez DanielCraft, on dit : connaitre ces trois vagues evite deux illusions. Illusion A : "l'IA n'existait pas avant 2022". Illusion B : "en 2026 tout est deja autonome et parfait". Ni l'un ni l'autre.
+Tu n'as pas a retenir les noms de papier de recherche. Retiens le mouvement : plus de donnees, plus de calcul, meilleures interfaces, plus de risques de confiance aveugle. Chaque vague apporte des gains et de nouveaux pieges.
 
-## Pourquoi ca accelere maintenant
+## Ce qui a change dans le quotidien
 
-Trois ingredients se sont rencontres : plus de donnees, plus de puissance de calcul, et des architectures de modeles qui scalent bien. Ajoute une interface simple (une boite de chat) et le grand public entre. Ce n'est pas que "les ingenieurs sont devenus plus malins du jour au lendemain". C'est qu'un produit utilisable a rencontre un besoin : ecrire plus vite, comprendre plus vite, creer plus vite.
+Avant, pour obtenir un resume, tu lisais et tu ecrivais. Pour une traduction, tu payais ou tu utilisais un outil specialise. Pour une image, tu cherchais une banque ou tu dessinais. Aujourd'hui, tu peux demander une ebauche en trente secondes. Ca ne veut pas dire que le resultat est pret a publier. Ca veut dire que le cout du premier jet a chute. La valeur se deplace vers le brief, le gout, la verification, et la responsabilite.
 
-Pour un artisan, ca veut dire qu'un outil grand public peut l'aider sans formation informatique. Pour un enseignant, qu'un eleve peut obtenir une explication a 22h. Pour un freelance, qu'un concurrent utilise deja ces outils - donc ignorer le sujet devient un choix, pas une neutralite.
-
-## Ce qui a change pour toi
-
-Avant, "utiliser l'ordinateur" voulait souvent dire : savoir ou cliquer dans un logiciel. Avec l'IA generative, tu decris le resultat souhaite en langage naturel. Le curseur n'est plus seulement sur des menus. Il est sur la qualite de ta demande et de ta relecture.
-
-Ca democratise. Ca egalise parfois. Ca cree aussi de nouvelles inegalites : ceux qui savent briefer, verifier et integrer avancent ; ceux qui collent sans lire se font remarquer (en mal).
+Lea a vu ses clients demander "une version IA" de leurs textes. Max a vu des devis generes trop beaux et trop vagues. Sam a vu des eleves coller des copies fluides mais fausses. L'histoire recente, c'est aussi celle de l'adaptation humaine : apprendre a briefer, a verifier, a dire non.
 
 ## Ce qui n'a pas change
 
-La responsabilite. Le droit. Le respect des personnes. La necessite de connaitre son metier pour juger une reponse. Un modele peut ecrire un devis plausible et faux. Un modele peut inventer une reference juridique. Un modele peut flatter ton idee mauvaise. L'histoire recente de l'IA est aussi l'histoire de ses erreurs publiques - et c'est sain de s'en souvenir.
-
-## Petite timeline mentale (a ne pas reciter)
-
-Annees 1950-80 : idees, premiers programmes "intelligents", beaucoup d'espoir, beaucoup de limites. Annees 90-2010 : apprentissage automatique dans l'industrie et le web. Annees 2010 : deep learning, vision, parole. Debut 2020s : LLM grand public. Milieu 2020s : multimodal, assistants dans les suites bureautiques, debut des agents grand public. 2026 : tu vis dedans. Ce livre te donne le mode d'emploi sobre.
+Les gens veulent encore de la clarte, de la confiance, et des preuves. Un client lit encore un devis. Un eleve a encore besoin de comprendre. Un artisan a encore besoin de connaitre ses prix. L'IA n'efface pas ces realites. Elle change la vitesse a laquelle on produit des brouillons. Si tu oublies ca, tu produis plus de bruit, pas plus de valeur.
 
 ## Erreur classique
 
-Passer trois semaines a "etudier l'histoire de l'IA" au lieu de pratiquer un prompt utile. L'histoire sert a contextualiser, pas a procrastiner. Autre erreur : croire que le prochain modele rendra tout ca obsolete demain. Les gestes (brief clair, verification, donnees sensibles, ethique) restent, meme si les marques changent.
+Croire que "l'IA est nouvelle donc les anciennes methodes sont mortes". Non. Relire, tester, demander un avis humain, verifier une source : ca reste. Autre erreur : croire que "comme ca existe depuis longtemps dans les labos, je n'ai rien a apprendre". Les interfaces grand public ont change la donne. Savoir cliquer n'est pas savoir piloter.
 
 ## En vrai
 
-Demande a un outil : "explique-moi en dix lignes, pour un artisan, ce qu'est un modele de langage, sans jargon". Compare avec ce que tu auras lu au chapitre 4. Tu verras deja l'ecart entre une reponse correcte-surface et une reponse que tu peux enseigner a quelqu'un.
+Demande a ton assistant : "Explique en dix lignes comment on est passe des systemes a regles aux LLM, pour un debutant, sans jargon." Lis. Souligne ce qui te parle. Ce chapitre doit te laisser une sensation simple : l'IA generative est une suite logique d'outils d'apprentissage, pas une espece magique tombee du ciel.
 
 ## A toi
 
-Ecris une phrase : "Avant j'utilisais deja l'IA sans le savoir pour..." (spam, maps, photos, recommandations...). Puis une phrase : "Maintenant je veux l'utiliser volontairement pour...". Le passage du cache au volontaire, c'est le coeur de ce livre.
+Ecris deux phrases : (1) ce que l'IA generative change deja dans ton quotidien, (2) ce qu'elle ne changera jamais dans ton metier (jugement, relation, responsabilite...).
+## Du laboratoire au téléphone
+
+Le basculement grand public n'est pas seulement une affaire de puissance de calcul. C'est une affaire d'interface. Tant que l'IA restait derriere des API obscures ou des logiciels specialises, elle concernait surtout des equipes techniques. Le chat a change la donne : tu ecris en francais, tu obtiens une reponse en francais. Le cout d'entree est tombe. Le risque de confiance aveugle a grimpe en meme temps, parce que la barriere technique qui forçait a ralentir a disparu.
+
+Entre temps, les modeles d'images ont rendu possible un moodboard en trente secondes. Les modeles de voix ont rendu possible une fausse presence orale. Les agents ont commence a enchaîner des outils. Chaque vague a son slogan marketing. Chaque vague a son accident typique : photo fake prise pour vraie, voix clonee pour une arnaque, agent qui envoie un mail trop tot, resume qui invente une decision de reunion.
+
+## Ce que l'histoire enseigne aux prudents
+
+Les outils changent de nom. Les pieges se rhument rarement : invention, biais, fuite de donnees, automatisation prematuree, confusion entre fluidite et competence. Si tu apprends les pieges, tu survis aux renommages. C'est pour ca que ce livre insiste plus sur les gestes que sur les logos.

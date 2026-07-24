@@ -139,15 +139,18 @@ python livres-formation\informatique\<livre>\build_livre.py
 | Git / GitHub | `pdf/git-les-bases.pdf` | ~49 pages | graphite + corail (`theme="git"`) ; stash, undo, PR |
 | Git - En equipe | `pdf/git-en-equipe.pdf` | ~40+ pages | midnight + ambre (`theme="git2"`) ; flux, revue, CI, rebase |
 | Commerce | `pdf/commerce-les-bases.pdf` | ~32-38 pages | sarcelle + or ; prose |
-| Commerce - Vente avancee | `pdf/vente-avancee.pdf` | ~40+ pages | teal + or sable (`theme="commerce2"`) ; pipeline, closing |
-| E-commerce | `pdf/ecommerce-les-bases.pdf` | ~35+ pages | ocean + orange ; clients, dropshipping, tendances 2026 |
-| Marketing digital | `pdf/marketing-les-bases.pdf` | ~35+ pages | prune + peche (`theme="marketing"`) ; cible, contenu, canaux, mesure |
-| Communication | `pdf/communication-les-bases.pdf` | ~46 pages | bordeaux + miel (`theme="communication"`) ; message, ecoute, pitch, crise |
-| IA - Les bases | `pdf/ia-les-bases.pdf` | ~40+ pages | obsidienne + ciel (`theme="ia"`) ; prompts, limites, ethique |
-| Finance - Les bases | `pdf/finance-les-bases.pdf` | ~40+ pages | vert nuit + or (`theme="finance"`) ; budget, tresorerie, prudence |
+| Commerce - Vente avancee | `pdf/vente-avancee.pdf` | ~40+ pages | teal + or sable (`theme="commerce2"`) |
+| E-commerce - Trouver des clients | `pdf/ecommerce-trouver-clients.pdf` | ~50+ pages | indigo + corail (`theme="ecom_clients"`) ; acquisition 2026 |
+| E-commerce - Dropshipping | `pdf/ecommerce-dropshipping.pdf` | ~50+ pages | graphite + orange (`theme="ecom_drop"`) ; realite FR/EU 2026 |
+| Marketing digital | `pdf/marketing-les-bases.pdf` | ~35+ pages | prune + peche (`theme="marketing"`) |
+| Communication | `pdf/communication-les-bases.pdf` | ~46 pages | bordeaux + miel (`theme="communication"`) |
+| IA generative / LLM | `pdf/ia-les-bases.pdf` | ~50+ pages | obsidienne + ciel (`theme="ia"`) ; tokens, RAG, agents |
+| Machine Learning | `pdf/ia-machine-learning.pdf` | ~50+ pages | acier + cuivre (`theme="ml"`) |
+| Deep Learning | `pdf/ia-deep-learning.pdf` | ~50+ pages | teal + rose (`theme="dl"`) |
+| Finance - Marches et produits | `pdf/finance-les-bases.pdf` | ~50+ pages | vert nuit + or (`theme="finance"`) ; marches, derives, banque |
 
 ## 9. Suites possibles
 
-- Suites IA / Finance, marketing / communication avances
+- Marketing / communication avances
 - Page site pour telecharger les PDF  
 

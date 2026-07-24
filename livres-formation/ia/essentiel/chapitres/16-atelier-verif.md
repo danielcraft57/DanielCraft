@@ -1,57 +1,46 @@
-# Chapitre 16 - Atelier : verifier comme un pro
+# Chapitre 16 - Atelier : evaluer et verifier une reponse
 
-Cet atelier muscle le chapitre 6. Tu apprends a chasser hallucinations, biais de ton, et fuites de donnees sur une sortie IA. Chronometre : 60 a 75 minutes.
+Objectif : te fabriquer une grille d'evaluation simple, reutilisable, sans jargon data science. Duree : 35 minutes.
 
-## But
+## Pourquoi evaluer
 
-Passer une grille de verification complete sur un texte genere, produire une version corrigee, et ecrire ta checklist perso reutilisable.
+Sans grille, tu juges au feeling : "ca sonne bien". Avec une grille, tu attrapes les inventions, les ton faux, les promesses dangereuses. L'evaluation n'est pas reservee aux labos. C'est un geste pro.
 
-## Materiel
+## Exercice 1 - Grille a 6 criteres (10 min)
 
-Un texte IA d'au moins 300 mots sur un sujet de ton metier (genere pour l'atelier ou issu du mini-projet). Acces web pour croiser. Feuille "Grille verif". Surligneur ou commentaires doc.
+Recopie et adapte :
+1) Fidelite au brief (0-2)
+2) Exactitude des faits (0-2)
+3) Ton et voix (0-2)
+4) Utilite actionnable (0-2)
+5) Risque (donnees / promesse) (0-2, 2 = peu de risque)
+6) Pret a signer (oui/non)
 
-## Etapes
+Total sur 10 + veto signature. Un 9/10 avec "non" au veto = on n'envoie pas.
 
-1. Genere (ou colle) le texte cible. Demande volontairement quelques faits precis (chiffres, noms, references) pour avoir de la matiere a controler - puis mefie-toi.
+## Exercice 2 - Blind test (15 min)
 
-2. Lecture 1 - impression : note en 2 minutes ce qui sonne trop lisse, trop sur, trop generique.
+Genere deux reponses differentes a la meme tache (deux prompts ou deux modes). Melange-les. Note-les avec la grille sans regarder lequel vient d'ou. Garde la meilleure. Note pourquoi.
 
-3. Lecture 2 - faits : liste tous les faits verificables (chiffres, dates, lois, produits, URLs, citations). Pour chacun : vrai / faux / inconnu, avec source si vrai.
+## Exercice 3 - Chasse a l'hallucination (10 min)
 
-4. Lecture 3 - engagement : surligne toute promesse (delai, resultat, garantie). Demande-toi si tu peux la tenir. Coupe ou borne.
+Demande volontairement des details verifies (dates, prix, references). Surligne tout fait checkable. Verifie trois faits. Calcule un petit taux : faits OK / faits checkes. Garde ce reflexe pour les contenus critiques.
 
-5. Lecture 4 - donnees et ethique : y a-t-il un nom, un detail reidentifiant, un ton discriminatoire, une image mentale problematique ? Corrige.
+## Livrable
 
-6. Lecture 5 - gout humain : remplace 3 formules IA typiques ("dans le monde d'aujourd'hui", "il est essentiel de", "revolutionnaire") par ton langage.
+Ta grille personnalisee + un exemple note + ta regle de veto.
 
-7. Produis la version corrigee. Ecris un journal : "X faits faux ou inventes, Y promesses coupees, Z reformulations".
+## Erreur a eviter
 
-8. Transforme tes lectures en checklist permanente de 8 a 12 questions max, dans ton ordre naturel.
+Noter seulement le style. Une reponse elegante et fausse doit perdre sur l'exactitude et prendre un veto. Toujours.
+## Revue a deux
 
-9. Bonus : redemande au modele de s'auto-critiquer, puis verifie son auto-critique (parfois utile, parfois complaisante).
+Si tu peux, echange avec un pair : chacun note la reponse de l'autre avec la grille, sans voir le prompt. Les ecarts de notation revelent des criteres implicites. Alignez votre definition de "pret a signer". En equipe, cet alignement vaut de l'or.
 
-## Grille minimale suggeree (a adapter, pas a recopier betement)
+## Note de rythme
 
-Le fond est-il vrai la ou ca compte ? Les sources existent-elles ? Les chiffres collent-ils a mes notes ? Ai-je anonymise ? Le ton est-il le mien ? Ai-je surpromise ? Un collegue mefiant trouverait quoi ? Est-ce diffusable tel quel ?
+Prends le temps. Un atelier fait a fond vaut mieux que trois ateliers survolés. Si tu es presse, fais la moitie aujourd'hui et l'autre demain - mais ecris le livrable. Sans livrable, le cerveau classe ca comme "lu", pas comme "su". DanielCraft forme des gens qui livrent, meme petit.
 
-Ecris-les sous forme de questions courtes dans ton doc - c'est une liste d'etapes de controle, pas un mur decoratif.
+## Pour aller plus loin sans te perdre
 
-## Criteres de reussite
-
-Au moins un fait invente ou douteux trouve (ou une preuve solide qu'il n'y en avait pas, avec methode). Version corrigee. Journal chiffre. Checklist perso sauvee. Tu peux expliquer ta methode a un stagiaire en cinq minutes.
-
-## Si ca bloque
-
-Sujet trop mou ("motivation") : change pour un sujet a faits (prix, procedure, cours). Aucune erreur trouvee : force une question piege (demande des references). Trop long : verifie seulement les faits critiques + promesses.
-
-## Exemple de sortie attendue
-
-Journal : 2 URLs inventees, 1 prix faux, 3 formules coupees, 1 promesse "resultat garanti" bornee.
-Checklist : 10 questions dans l'ordre de tes lectures.
-Fichiers : brut.md / corrige.md / checklist.md
-
-Si tu as ca, l'atelier a marche. Si tu as seulement "c'etait bien", recommence l'etape 3 avec severite.
-
-## Apres l'atelier
-
-Imprime ou epingle la checklist. Utilise-la sur le prochain mail / cours / devis important. Au bout de 5 usages, raccourcis-la : une checklist trop longue finit abandonnee.
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

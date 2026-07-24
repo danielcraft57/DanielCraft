@@ -1,49 +1,54 @@
-# Chapitre 17 - Choisir un outil (sans se faire avoir par le marketing)
+# Chapitre 17 - Choisir un outil et comprendre les couts
 
-Les marques changent. Les pubs promettent la Lune. Toi, tu as besoin d'un critere de choix simple, stable en 2026 : usage principal, contraintes donnees, budget, integration, qualite sur TES taches.
+Choisir un outil IA, ce n'est pas epouser une marque. C'est matcher un besoin, des contraintes de donnees, un budget, et une habitude de travail. Les noms changent. Tes criteres peuvent rester stables.
 
-Chez DanielCraft, on achete rarement d'abord. On teste avec un protocole. Ensuite on decide.
+## Criteres utiles
 
-## Clarifie le job
+Qualite sur TES prompts (pas sur une demo marketing). Respect de tes contraintes de donnees (training, retention, options pro). Integration (mail, docs, IDE, mobile). Limites de contexte. Multimodal si besoin. Possibilite d'instructions persistantes. Prix clair. Support / statut (compte pro, SSO, facture). Pour un artisan solo, un bon chat suffit souvent. Pour une equipe, les questions admin et RGPD montent.
 
-Une phrase : "Je veux que l'outil m'aide a ___ pour ___ avec un risque ___." Exemple : "m'aider a rediger des mails clients pour mon activite artisan, risque moyen (ton + prix)." Si tu ne peux pas finir la phrase, tu n'as pas besoin d'un nouvel abonnement. Tu as besoin de clarite.
+## L'idee des couts API
 
-## Familles d'outils (rappel orienté achat)
+En interface grand public, tu paies souvent un abonnement mensuel : un forfait d'usage. En API (quand un developpeur branche le modele dans une appli), on facture souvent a l'usage : tokens en entree, tokens en sortie, parfois le type de modele, parfois des outils (vision, recherche). Plus tu envoies de contexte, plus tu paies. Plus tu demandes des reponses longues, plus tu paies. Un agent qui boucle vingt fois peut couter cher sans que tu t'en rendes compte.
 
-Chat generaliste (ChatGPT, Claude, Gemini, etc.). Assistant bureautique integre (Microsoft, Google...). Outil image. Outil transcription. Copilote code. Automatisation / agent. Outil "RAG" entreprise (reponses sur TES documents). Ne compare pas un outil image a un chat texte sur la meme grille sans adapter.
+Meme si tu ne codes pas, comprendre ca t'aide : sois concis, attache l'extrait utile, evite les regenerations inutiles, choisis le modele "assez bon" pour la tache (pas toujours le plus gros pour reformuler un SMS). Lea a appris a couper ses PDF avant de les coller. Max a appris a ne pas demander un roman pour un mail. Sam a appris a limiter les variantes a un nombre utile.
 
-## Critères qui comptent vraiment
+## Protocole de choix en une heure
 
-Qualite sur 5 prompts de ta banque. Respect des donnees (options sans entrainement, hebergement, RGPD si pro). Prix reel (mensuel + depassements). Limites de contexte / de messages. Integration (mail, docs, telephone). Fiabilite et statut (pannes). Export de tes historiques. Fonction recherche / documents si tu en as besoin. Ergonomie : tu l'ouvriras vraiment ?
+1) Ecris 5 prompts types de ton metier. 2) Teste-les sur 1 a 2 outils max. 3) Note avec ta grille d'evaluation. 4) Verifie options donnees / prix. 5) Choisis pour un mois. 6) Reevalue. Pas besoin de cinq abonnements le jour 1.
 
-Critere sous-estime : la qualite de TES relectures. Le meilleur modele ne sauve pas une absence de methode.
+## Quand payer
 
-## Protocole de test en 7 jours
-
-Jour 1-2 : meme 5 prompts sur l'outil A et l'outil B (ou version gratuite vs payante). Jour 3 : un workflow complet du chapitre 15. Jour 4 : test donnee sensible fictive - que se passe-t-il dans les reglages ? Jour 5 : usage mobile / terrain si besoin. Jour 6 : cout et friction. Jour 7 : decision ecrite : garder / refuser / attendre.
-
-Note des scores simples sur 5 : qualite, confiance donnees, confort, rapport prix. Pas de excel de 40 colonnes.
-
-## Gratuit vs payant
-
-Gratuit : parfait pour apprendre et pour du bas risque. Limites de debit, modeles moins forts, ou donnees moins flexibles selon offre. Payant : utile quand le temps gagne depasse le cout, ou quand tu as besoin de modeles / options pro. N'empile pas trois payants "au cas ou". Un payant tenu bat trois essais morts.
-
-## Entreprise et ecole
-
-Utilise de preference les outils validés par ta structure. Un compte perso sur des donnees eleves / clients, c'est un incident en puissance. Demande la liste autorisee. Si tu es solo, choisis soberement et documente.
-
-## Quand changer
-
-Quand la qualite est systematiquement insuffisante sur tes taches. Quand la politique donnees change en mal. Quand un outil deja paye dans ta suite bureautique rattrape le besoin. Pas quand un influenceur crie au nouveau miracle.
+Paye quand le free te freine vraiment (limites, confidentialite, qualite, integration), pas par peur de manquer. Un abonnement inutile est un cout. Un outil qui te fait gagner deux heures semaine a un prix raisonnable est un investissement. Fais le calcul simple : heures gagnees x ta valeur temps vs prix.
 
 ## Erreur classique
 
-Changer d'outil chaque semaine (tu repars a zero sur les prompts). Ou choisir celui "qui ecrit le plus long". Ou signer un annuel apres une seule demo waouh.
+Suivre chaque hype la semaine de sa sortie. Ou choisir uniquement sur "c'est gratuit". Gratuit peut etre cher en donnees et en temps. Autre piege : rester sur un outil mediocre par habitude sans jamais retester tes 5 prompts ailleurs.
 
 ## En vrai
 
-Prends deux outils accessibles. Lance le meme prompt cadre de mail. Fais juger a l'aveugle par un ami (sans dire quelle version vient d'ou). Garde celui qui te fait moins corriger - ou celui qui respecte mieux tes contraintes donnees si le match est proche.
+Fais le protocole sur une heure cette semaine, meme avec un seul concurrent. Ecris la decision et la date de reevaluation (dans 30 jours).
 
 ## A toi
 
-Ecris ta decision du trimestre : outil principal, outil secondaire optionnel (ex: transcription), budget max, date de revue. Signe. Pas de nouvel outil avant la date de revue, sauf contrainte legale / travail.
+Tableau simple : outil, prix, point fort, point faible, verdict 30 jours. Une page.
+## Lire une grille tarifaire API sans paniquer
+
+Tu verras souvent un prix pour 1 million de tokens entree, un autre pour la sortie, parfois un modele "mini" moins cher, un modele "large" plus cher, des options vision. Fais un calcul d'ordre de grandeur : un prompt de 1 000 tokens + reponse de 500 tokens, combien de fois par jour, fois 30. Compare a un forfait chat. Ajoute ton temps. Choisis. Recalcule dans trente jours avec du reel, pas de la science-fiction.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

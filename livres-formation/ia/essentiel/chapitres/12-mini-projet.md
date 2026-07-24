@@ -1,68 +1,60 @@
-# Chapitre 12 - Mini-projet : un usage IA propre de bout en bout
+# Chapitre 12 - Mini-projet : un usage IA utile et verifie
 
-Assez de pieces separees. Tu vas mener un petit projet reel (ou tres realiste) : une tache de ton metier, aidee par l'IA, avec brief, generation, verification, version finale, et note ethique. But : prouver que tu sais faire, pas seulement lire.
+Assez de theorie. On construit un usage complet, petit, reel, verifiable. Objectif : partir d'une tache fatigante, produire un livrable avec l'IA, appliquer les gardes (brief, limites, donnees, relecture), et pouvoir le reutiliser la semaine prochaine.
 
-Chronometre : 2 a 4 heures etalees sur quelques jours. Livrable : un dossier simple (meme un dossier de fichiers) que tu pourrais montrer a un collegue.
+## Etape 1 - Choisir la tache
 
-## Choisis ton scenario
+Reprends ta note du chapitre 1. Choisis une tache basse risque : mail type, page de presentation, fiche produit, plan de seance, checklist d'entretien, resume de process. Evite pour ce mini-projet : conseil medical, juridique, fiscal critique, envoi automatique a des clients, generation de fausse preuve.
 
-Option A - Lea : proposition courte (1-2 pages) pour un artisan client, a partir de notes inventees ou reelles anonymisees. Option B - Max : devis + mail d'accompagnement + fiche "comment entretenir" en francais simple. Option C - Sam : seance de cours (objectifs, deroule, exercice, corrigé) sur un chapitre de ton programme. Option D : ton vrai besoin du mois (mail sequence, page web, script video, FAQ...).
+## Etape 2 - Preparer le brief
 
-Contrainte commune : l'IA aide ; toi tu signes.
+Ecris ton prompt signature + le brief de tache : role, public, contraintes, format, faits fournis, interdits. Anonymise les donnees. Decide du mode : strict ou creatif. Decide du critere de succes ("je peux envoyer apres 10 minutes de relecture").
 
-## Preparation (30-45 min)
+## Etape 3 - Produire
 
-1. Ecris le resultat attendu en une phrase.
-2. Liste les faits non negociables (prix, dates, normes, objectifs pedagogiques) - ceux-la, l'IA ne les invente pas.
-3. Choisis l'outil principal.
-4. Anonymise les donnees.
-5. Ecris ton prompt cadre (chapitre 5) et ta regle de verification (chapitre 6).
+Lance le prompt. Si l'outil le permet, colle aussi tes instructions persistantes (system). Itere au plus trois fois avec des demandes precises. Si ca part en vrille, nouveau fil + brief reconstitue.
 
-Sans ca, tu improvises et tu appelles ca un projet.
+## Etape 4 - Evaluer
 
-## Etape 1 - Brief et plan (30 min)
+Checklist : fidelite au brief, faits verifies, ton OK, pas de promesse inventee, pas de donnee sensible residuelle, longueur adaptee, tu signerais. Note les hallucinations eventuelles. Corrige a la main. Le livrable final est le tien, pas "celui de l'IA".
 
-Demande a l'IA un plan du livrable. Critique-le. Coupe. Ajoute ce qui manque. Valide un plan a toi. Critere : tu peux expliquer le plan sans regarder l'ecran.
+## Etape 5 - Industrialiser legerement
 
-## Etape 2 - Generation guidee (45-90 min)
+Range le prompt, le livrable modele, et trois lecons dans un dossier. Donne un nom clair. Si c'est un mail type, laisse des zones [NOM], [DATE], [PRIX]. Demain, tu gagnes dix minutes. Dans un mois, des heures.
 
-Genere section par section, pas tout d'un coup. Apres chaque bloc : corrige les faits, le ton, les promesses. Garde un fichier "brut IA" et un fichier "version humaine" pour voir l'ecart. Critere : aucun chiffre critique non source.
+## Variante avancee (optionnelle)
 
-## Etape 3 - Passe multimodal optionnelle (20-40 min)
+Si tu as des documents internes non sensibles, simule un mini-RAG : extrait utile colle dans le prompt, consigne "reponds uniquement a partir de cet extrait". Compare avec une reponse sans extrait. Tu verras souvent la difference de solidite.
 
-Si utile : une image non critique, ou une dictée de notes transformee en texte, ou une checklist audio. Sinon, saute. Critere : ca ameliore le livrable, ca ne le decope pas.
+## Erreur classique
 
-## Etape 4 - Verification dure (30-45 min)
+Choisir un projet trop large ("refondre tout mon business"). Ou s'arreter au premier jet "parce que c'est fluide". Ou ne pas ranger le prompt : tu recommenceras de zero a chaque fois.
 
-Applique les trois gestes : sources, experience terrain, "est-ce que je signe ?". Fais relire par un ami si possible. Pour Sam : exactitude programme. Pour Max : prix et delais. Pour Lea : perimetre et limites explicites. Critere : une liste ecrite "verifie / corrige / coupe".
+## En vrai
 
-## Etape 5 - Finalisation et ethique (20 min)
-
-Mise en propre. Mention d'usage IA si le contexte le demande. Reglages donnees ok. Archivage du prompt utile dans ta banque. Retro : temps gagne, erreurs evitees, prochaine amelioration. Critere : tu as une version finale + 10 lignes de retro.
-
-## Criteres "c'est reussi"
-
-Livrable utilisable sans honte. Faits critiques verifies. Donnees sensibles absentes ou anonymisees. Prompt reutilisable note. Tu peux raconter le process en trois minutes : brief, iteration, controle.
-
-## Planning suggere
-
-Jour 1 : prep + plan. Jour 2 : generation. Jour 3 : verif + final. Ne compacte pas tout en une nuit fatiguee : c'est la que les hallucinations passent.
-
-## Piege du perfectionnisme
-
-Ne transforme pas le mini-projet en "meilleur PDF du monde". L'objet est le processus propre. Clair et vrai bat joli et douteux.
-
-## Exemple de dossier final (structure)
-
-`01-brief.txt` : resultat attendu, faits non negociables, regle ethique.
-`02-prompts.txt` : prompts utilises (plan + sections).
-`03-brut-ia.md` : sorties brutes.
-`04-final.md` (ou PDF) : version signee.
-`05-verif.txt` : faits verifies, corrections, sources.
-`06-retro.txt` : temps, gains, erreurs, prochaine pratique.
-
-Si ton dossier ressemble a ca, tu as un portfolio personnel - utile pour toi, utile pour montrer a une equipe comment tu travailles proprement avec l'IA.
+Fais le mini-projet aujourd'hui, meme imparfait. Un usage fini bat dix intentions.
 
 ## A toi
 
-Bloque les creneaux cette semaine. Ecris le titre du livrable sur un post-it. Quand c'est fini, garde le dossier : ce sera ta preuve pour le quiz mental "est-ce que je sais vraiment ?"
+Livre attendu : (1) prompt final, (2) livrable relu, (3) 5 lignes de retrospective : ce qui a marche, ce qui a trompe, ce que tu changes la prochaine fois.
+## Criteres de reussite du mini-projet
+
+Le livrable a ete utilise (envoye, publie en interne, enseigne) ou est pret a l'etre. Le prompt est range et reutilisable. Aucune donnee sensible n'a fuité dans un outil inadapte. Tu peux expliquer en deux minutes ce que l'IA a fait et ce que tu as corrige. Tu as une lecon ecrite. Si ces cinq points sont verts, le mini-projet est reussi - meme si le texte n'est pas litteraire.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

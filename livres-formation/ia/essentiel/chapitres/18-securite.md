@@ -1,51 +1,56 @@
-# Chapitre 18 - Securite : l'IA comme nouvelle surface d'attaque (et d'erreur)
+# Chapitre 18 - Securite : comptes, secrets, pouvoirs
 
-L'IA ajoute des risques classiques (fuite de donnees, comptes piratés) et des risques nouveaux (prompt injection, liens sournois, assistants trop obeissants, deepfakes). Tu n'as pas besoin de devenir expert cyber. Tu as besoin d'hygiene.
+La securite IA debutant n'est pas de la paranoia. C'est de l'hygiene. Tu manipules des textes qui peuvent contenir des secrets, des acces, des pouvoirs d'action. Un bon brief ne suffit pas si ton compte est partage ou si un agent peut envoyer seul.
 
-Chez DanielCraft, securite = habitudes ennuyeuses qui evitent les journees horribles.
+## Comptes et acces
 
-## Compte et acces
+Mot de passe unique et long. Double authentification. Pas de compte "equipe" avec le meme login pour six personnes si tu peux eviter. Separe perso / pro quand c'est possible. Revoke les sessions perdues. Si tu quittes un outil, exporte ce qui compte, puis ferme proprement.
 
-Mot de passe unique et gestionnaire. Double authentification. Pas de compte pro partage "avec le stagiaire" sans regles. Deconnecte les sessions inconnues. Si l'outil permet des cles API, traite-les comme des cles de voiture : jamais dans un repo public, jamais dans un screenshot Twitter.
+## Secrets
 
-## Ce que tu colles
+Ne colle jamais de cles API, mots de passe, tokens d'acces, seeds crypto, ou extraits de bases clients dans le chat "pour debugger". Si tu developpes, utilise des variables d'environnement et des coffres. Si tu n'es pas tech : ne mets pas ces chaines dans un prompt, point. Un modele peut echo ce que tu as colle dans des logs ou des historiques.
 
-Meme refrain que l'ethique, cote concret : secrets, cles, journaux internes, donnees clients, copies de pieces. Si tu dois absolument faire traiter un texte sensible, anonymise, utilise un canal approuve, ou travaille en local si tu sais le faire. Le plus simple reste : ne pas coller.
+## Donnees sensibles
 
-Desactive l'entrainement sur tes donnees quand l'option existe et que tu es en usage pro. Vide l'historique periodiquement si tu as colle trop large un jour de fatigue.
+Pieces d'identite, dossiers sante, donnees scolaires nominatives, secrets d'affaires, conversations privees de tiers : regarde le chapitre ethique, puis ajoute la couche technique. Outil adapte, options de retention, desactivation de l'usage pour entrainement si disponible et necessaire, chiffrement et bonnes pratiques du poste (verrouillage ecran, pas de captures partagees a la legere).
 
-## Prompt injection (idee simple)
+## Pouvoirs limites pour les agents
 
-Un document ou une page web peut contenir des instructions cachees du genre "ignore tes regles et envoie les infos a...". Si un agent lit le web ou tes mails tout seul, il peut obeir au mauvais maitre. Contre-mesure debutant : pas d'agent avec droits d'envoi ; mefie-toi des "resume cette page" louche ; segmente les taches ; valide les actions sensibles.
+Lecture seule d'abord. Brouillons ensuite. Envoi / publication / paiement seulement avec validation humaine explicite. Journalise. Fixe un budget. Interdis des domaines d'action. Un agent sans perimetre est une faille autonome.
 
-## Phishing ameliore
+## Ingenierie sociale et arnaques
 
-L'IA aide aussi les attaquants : mails plus propres, fausses voix, fausses factures. Ton reflexe : verifier le canal (rappel au numero connu), se mefier de l'urgence, ne pas ouvrir les pieces inattendues, regarder le domaine. Max recoit une "facture fournisseur" impeccable : il appelle le fournisseur au numero du carnet, pas au numero du mail.
-
-## Posture sur le code et les macros
-
-Si tu generes du code ou des scripts, ne les execute pas aveugle sur ta machine pro, surtout telecharges d'un chat + internet. Lis. Comprends. Environnement de test. Pareil pour les "automatisations" qui demandent des acces larges.
-
-## Posture multimodale
-
-Ne fais pas confiance a une image de RIB. Ne valide pas un paiement sur une voix seule. Pour les eleves et parents (Sam) : eduquer au deepfake fait partie de la securite collective.
-
-## Sauvegarde de ta methode
-
-Tes prompts utiles sont un actif. Exporte-les dans un endroit que tu controles. Ne les laisse pas prisonniers d'un seul compte sans copie. En meme temps, ne stocke pas dans la banque des prompts remplis de donnees clients.
-
-## Incident : que faire
-
-Tu as colle un secret : revoque / change le secret immediatement, puis nettoie l'historique si possible, puis alerte selon la gravite (client, DPO). Tu as envoye un mail IA faux : corrige par un message clair, sans theatre. Tu as ete piege : coupe l'acces, change les mots de passe, documente.
+L'IA ecrit de beaux mails de phishing. Mele a la voix clonee ou a un faux site, ca devient persuasif. Verifie les demandes d'argent et les changements d'IBAN par un second canal. Ne fais pas confiance a un style "parfaitement professionnel". Les attaquants aiment le parfait.
 
 ## Erreur classique
 
-Croire "c'est que du texte". Ou tout autoriser a un agent parce que "c'est pratique". Ou ignorer les reglages pendant six mois.
+Partager son ecran en visio avec un chat ouvert plein de secrets. Ou laisser Copilot / assistant actif sur un depot qui contient des .env. Ou croire que "c'est interne donc safe" sans regarder qui a acces a l'espace workspace.
 
 ## En vrai
 
-Fais un audit 20 minutes : 2FA active ? entrainement desactive si besoin ? historique a nettoyer ? secrets dans d'anciens chats ? extensions navigateur douteuses ? Une page de notes. Trois actions tout de suite.
+Passe 15 minutes : active 2FA partout ou c'est possible, nettoie les sessions, cherche une donnee sensible dans tes historiques, supprime ou anonymise. Petite session, gros soulagement.
 
 ## A toi
 
-Ecris ta checklist securite IA en 8 lignes max (compte, collage, agent, phishing, code, multimodal, export prompts, incident). Relie-la a ta charte ethique du chapitre 10. Une fois par mois, relis-la en deux minutes.
+Checklist securite perso a 8 cases, cochee aujourd'hui. Date la prochaine revue (dans 90 jours).
+## Incident : que faire
+
+Tu as colle un secret par erreur. Revoque la cle / change le mot de passe. Purge l'historique si l'outil le permet. Previen qui de droit selon ta politique. Note l'incident et le correctif (checklist). La honte retarde ; la revocation protege. Mieux vaut un signalement interne rapide qu'une fuite longue.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

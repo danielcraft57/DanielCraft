@@ -1,63 +1,70 @@
-# Chapitre 5 - Les prompts : briefer pour obtenir utile
+# Chapitre 5 - Prompts et system prompts : briefer comme un pro
 
-Un prompt, c'est ta demande. Pas une formule magique. Un brief. Plus il est clair, plus la reponse est utilisable. Les gens disent "l'IA est nulle" quand leur prompt ressemble a "fais moi un truc bien".
+Un prompt, c'est ta demande. Pas une formule magique. Pas une incantation. Un brief. Plus il est clair, plus la reponse a des chances d'etre utile. Chez DanielCraft, on enseigne un squelette simple que tu peux enrichir : role, tache, public, contraintes, format, et faits fournis. Ensuite, on ajoute l'idee du system prompt : la consigne durable qui cadre le comportement de l'assistant avant meme ta question du jour.
 
-Chez DanielCraft, la regle courte : role + tache + public + contraintes + format + criteres de qualite. Tu n'es pas oblige de tout mettre a chaque fois. Mais si ca coinçe, ajoute la piece manquante.
+## Le squelette du prompt utile
 
-## Anatomie d'un bon prompt
+Role : qui doit "jouer" le modele (conseiller sober pour artisans, prof de 6e, relecteur exigeant). Tache : ce que tu veux exactement (plan, mail, checklist, reformulation). Public : pour qui c'est ecrit. Contraintes : longueur, ton, interdits, niveau de jargon, langue. Format : puces, tableau, email pret a envoyer, sections numerotees. Faits : ce que tu apportes (prix, dates, details vrais) pour eviter l'invention.
 
-Role : "Tu aides un artisan a ecrire des mails clients." Tache : "Reformule ce brouillon." Public : "Client particulier presse." Contraintes : "Francais simple, 8 lignes max, pas d'emojis, tutoiement." Format : "Donne 2 versions." Critere : "Garde mon prix et mon delai exacts, ne les invente pas."
+Exemple pour Max : "Tu es relecteur pour un artisan. Reecris ce devis en francais simple pour un particulier presse. Garde mes prix exacts. 12 lignes max. Pas de promesse de delai si je ne l'ai pas ecrite. Voici mes notes brutes : ..." Tu vois la difference avec "ameliorer mon devis" ?
 
-Colle ensuite ton materiel (brouillon, notes, extrait). Sans materiel, le modele invente le contexte - et invente souvent trop.
+## System prompt : le cadre durable
 
-## Mauvais vs meilleur
+Dans beaucoup d'outils (API, assistants custom, "projets", "GPTs", instructions persistantes), tu peux definir une consigne systeme : un texte qui dit comment l'assistant doit se comporter a chaque echange. Exemple : "Tu reponds toujours en francais simple. Tu signales les incertitudes. Tu ne inventes pas de chiffres. Tu proposes d'abord un plan court puis le detail si on te le demande."
 
-Mauvais : "Ecris un post LinkedIn sur mon activite." Meilleur : "Ecris un post LinkedIn pour Lea, freelance web qui aide les artisans a avoir un site qui prend rendez-vous. Angle : 1 erreur frequente (site joli sans appel a l'action). Ton : direct, bienveillant, pas corporate. 120 mots. Termine par une question. Propose aussi un titre."
+Le system prompt n'est pas une baguette. C'est une politique de maison. Il reduit les derives de style et les oublis. Il ne remplace pas un bon prompt de tache. Lea met dans ses instructions : "Ecris comme une freelance web francaise, ton clair, pas de marketing agressif, toujours proposer 2 options." Sam met : "Niveau college, analogies du quotidien, jamais de contenu sensible non demande."
 
-Mauvais : "Fais un cours sur la photosynthese." Meilleur : "Sam enseigne en 5e. Explique la photosynthese en 10 phrases. Puis 5 questions QCM avec corriges. Niveau vocabulaire simple. Evite les digressions."
+## Iterer sans tourner en rond
 
-## Iterer : le vrai superpouvoir
-
-Le premier jet est un brouillon. Tu reponds : "plus court", "moins de jargon", "version plus ferme", "enleve les formules toutes faites", "garde seulement les 3 actions". L'IA est forte en iteration. Les debutants abandonnent trop tot ou acceptent trop vite.
-
-Travaille comme avec un collegue : "ok pour le plan, mauvais pour le ton, recommence le paragraphe 2 avec mes mots ci-dessous".
+Premier jet : demande large mais cadree. Deuxieme : "garde la structure, coupe le blabla, renforce l'exemple 2". Troisieme : "maintenant version plus courte pour un SMS". L'iteration intelligente bat le "regenerer" aveugle. Si ca part en vrille, nouveau fil + brief reconstitue. Ton contexte restera propre.
 
 ## Techniques simples qui marchent
 
-Demander des options (3 variantes), puis fusionner. Demander une critique : "attaque ce texte comme un client mefiant". Demander une checklist de verification. Fournir un exemple du style que tu aimes (few-shot leger) : "ecris dans ce ton : [court paragraphe a toi]". Imposer ce qu'il ne faut pas faire : "pas de 'revolutionnaire', pas de promesse SEO garantie".
+Donne un exemple de ton style ("ecris comme ceci : ..."). Demande des variantes puis choisis. Impose "si information manquante, pose 3 questions avant de rediger". Demande une auto-critique : "liste 5 faiblesses de ta reponse". Separe clairement : "CONTEXTE :" puis "DEMANDE :". Pour le mode strict, ajoute "n'invente aucune source ; dis inconnu".
 
-Pour les faits sensibles : "si une info manque, pose des questions au lieu d'inventer". Cette seule phrase sauve des devis.
+## Ce qu'il ne faut pas faire
 
-## Prompts pour l'ecole, l'artisan, le freelance
-
-Ecole (Sam) : preparer un exercice, differencier (version simple / version challenge), generer des analogies, reformuler une consigne. Toujours : relire pedagogie et exactitude.
-
-Artisan (Max) : transformer notes vocales en devis clair, ecrire une fiche entretien chaudiere, preparer un SMS de relance poli, expliquer un diagnostic en mots non techniques.
-
-Freelance (Lea) : plan de proposition, FAQ client, variantes d'offre Essentiel/Complet, script d'appel, resume d'un cahier des charges confus.
-
-## Ce qu'il ne faut pas coller
-
-Mots de passe, numeros de carte, dossiers medicaux, donnees eleves nominatives, secrets clients, code confidentiel non autorise. Un prompt n'est pas un tiroir a secrets. Chapitre securite et ethique plus loin - mais la discipline commence ici.
-
-## Modele de carte prompt (a recopier)
-
-Contexte : qui je suis / situation.
-Objectif : ce que je veux obtenir.
-Public et ton.
-Contraintes (longueur, langue, interdits).
-Donnees fournies (et "n'invente pas le reste").
-Format de sortie.
-Test de qualite : "avant de conclure, liste ce qui est suppose vs certain".
+Prompt vide de sens. Prompt qui melange cinq taches sans priorite. Prompt qui demande "des sources academiques" sans intention de les ouvrir. Prompt qui colle des donnees sensibles "parce que ce sera plus perso". Prompt hostile ("tu es nul, recommence") : inutile. Mieux vaut preciser le critere manque.
 
 ## Erreur classique
 
-Ecrire un roman de prompt confus. Ou au contraire une phrase telegraphique sans public. Autre erreur : demander dix taches en une fois ("fais mon business plan, mon logo, mon site et ma strategie"). Une tache nette par message, puis enchaine.
+Croire qu'un mega-prompt de quatre pages est toujours mieux. Parfois tu noies le modele. Mieux vaut un brief net + pieces jointes utiles. Autre erreur : mettre toute la politique dans chaque message au lieu d'utiliser les instructions persistantes quand elles existent. Tu te fatigues, et tu oublies une regle sur deux.
 
 ## En vrai
 
-Prends un mail que tu dois envoyer cette semaine. Ecris ton prompt avec le modele ci-dessus. Genere. Relis a voix haute. Corrige deux details humains (une precision terrain, une phrase trop lisse). Envoie seulement ta version.
+Prends une tache reelle. Ecris un mauvais prompt en une ligne. Puis reecris-le avec le squelette. Compare les deux reponses. Note trois differences concretes (clarte, utilite, inventions).
 
 ## A toi
 
-Cree ta "banque de 5 prompts" sur une feuille : mail client, resume de texte, plan d'article ou de cours, reformulation simple, brainstorm d'idees. Remplis-les une fois pour ton metier. Tu viens de te fabriquer un kit.
+Cree ton "prompt signature" en 8 a 12 lignes : identite, public, ton, 3 interdits, format prefere. Colle-le dans les instructions de ton outil si possible. Sinon, garde-le dans un fichier texte a recopier.
+## Anatomie d'un system prompt solide
+
+Un bon system prompt dit qui tu es (ou qui l'assistant doit etre pour toi), pour qui tu ecris, quel ton, quelles langues, quels interdits, comment gerer l'inconnu, quel format par defaut, et parfois quelles questions poser avant de rediger. Il evite les romans. Il evite aussi le vide. Dix a vingt lignes suffisent souvent. Au-dela, tu risques les contradictions ("sois concis" + "developpe toujours").
+
+Exemple compact pour une TPE : "Tu aides une petite entreprise francaise. Francais simple. Pas de jargon. N'invente aucun prix ni delai. Si l'info manque, pose des questions. Structure : d'abord reponse courte, puis details. Signale les incertitudes clairement."
+
+## Prompts de relecture
+
+Souvent sous-estimes : "Relis ce texte comme un client mefiant. Liste objections, ambiguites, promesses dangereuses. Ne reecris pas encore." Puis seulement : "Corrige uniquement les points 2 et 5." Tu separes critique et reecriture. Tu gardes le controle.
+
+## Bibliotheque personnelle
+
+Range tes prompts par intention : Ecrire, Resumer, Ideer, Expliquer, Roleplay client, Anti-hallucination. Une bibliotheque de huit prompts battent un dossier de deux cents copies de "prompt miracle" trouvees sur les reseaux.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

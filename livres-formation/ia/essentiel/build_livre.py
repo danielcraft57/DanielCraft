@@ -44,24 +44,28 @@ CHAPTER_FILES = [
 ]
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
-    1: [("ia-carte.png", "L'IA : un outil. Toi : le pilote.")],
-    4: [("ia-llm.png", "Tu poses une question, le modele propose une reponse.")],
+    1: [("ia-carte.png", "L'IA generative : un outil. Toi : le pilote.")],
+    4: [
+        ("ia-llm.png", "Question, modele, reponse."),
+        ("ia-tokens.png", "Tokens et fenetre de contexte."),
+    ],
     5: [("ia-prompts.png", "Un bon prompt = une consigne claire.")],
-    6: [("ia-limites.png", "Verifier : l'IA peut inventer avec assurance.")],
-    7: [("ia-outils.png", "Des outils pour ecrire, resumer, ideer.")],
+    6: [("ia-limites.png", "Verifier : l'IA peut inventer.")],
+    9: [("ia-agents.png", "Agents : but, outils, boucle.")],
     10: [("ia-ethique.png", "Donnees, respect, transparence.")],
-    12: [("ia-projet.png", "Mini-projet : un usage IA utile et verifie.")],
-    21: [("ia-felicitations.png", "Bravo. Tu sais utiliser l'IA sans te faire avoir.")],
+    11: [("ia-rag.png", "Idee RAG : docs + recherche + reponse.")],
+    12: [("ia-projet.png", "Mini-projet : usage utile et verifie.")],
+    21: [("ia-felicitations.png", "Bravo. Tu pilotes l'IA generative.")],
 }
 
 COVER_IMAGE = "ia-couverture.png"
 
-BOOK_TITLE = "IA - Les bases"
-BOOK_SHORT = "IA - Les bases"
-BOOK_LEAD = "Comprendre l'IA, ecrire de bons prompts, et verifier les reponses."
+BOOK_TITLE = "IA generative - Les bases"
+BOOK_SHORT = "IA generative"
+BOOK_LEAD = "LLM, tokens, prompts, RAG, agents, multimodal, evaluation, couts et securite."
 BOOK_AUTHOR = "DanielCraft"
-BOOK_SUBJECT = "Formation debutant intelligence artificielle"
-BOOK_KEYWORDS = "IA, LLM, prompts, ChatGPT, ethique, formation, debutant"
+BOOK_SUBJECT = "Formation debutant IA generative et LLM"
+BOOK_KEYWORDS = "IA, LLM, tokens, prompts, RAG, agents, multimodal, formation, debutant"
 IMAGES_DIR = ROOT / "images"
 PRINT_DIR = IMAGES_DIR / "print"
 

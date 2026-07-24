@@ -1,51 +1,62 @@
-# Chapitre 10 - Ethique et RGPD : utiliser l'IA sans saloper le vivant
+# Chapitre 10 - Ethique, RGPD et securite des donnees
 
-L'IA touche des personnes : clients, eleves, collegues, toi. L'ethique, ce n'est pas un chapitre "pour faire joli". C'est ce qui decide si ton usage reste digne quand personne ne regarde. Le RGPD, en Europe, cadre le traitement des donnees personnelles. Tu n'as pas besoin d'etre juriste. Tu as besoin de reflexes.
+L'IA mange du contexte. Plus tu lui donnes d'infos, plus la reponse peut etre "perso". Plus tu lui donnes d'infos, plus tu exposes des personnes. Ethique et RGPD ne sont pas des chapitres ennuyeux reserves aux juristes. Ce sont des reflexes de respect : minimiser, anonymiser, informer, securiser, assumer.
 
-Chez DanielCraft, on prefere perdre un peu de vitesse que gagner une mauvaise histoire.
+Chez DanielCraft, on pose une regle simple : si tu n'aimerais pas voir cette donnee affichee sur un ecran de metro, ne la colle pas dans un outil grand public. Et si la donnee concerne quelqu'un d'autre, la barre monte encore.
 
-## Donnees personnelles : le reflexe "dois-je coller ca ?"
+## Minimiser
 
-Nom, email, telephone, adresse, notes de sante, situation familiale, notes d'eleves, contenu de mails clients, pieces d'identite : ce sont des donnees qu'on ne balance pas dans un outil cloud par facilite. Anonymise. Resume. Enleve les identifiants. Utilise des outils conformes a ta structure si tu es pro / ecole / asso - et lis les reglages (entrainement sur tes donnees : souvent a desactiver).
+Tu n'as pas besoin du numero de securite sociale pour reformuler un mail. Tu n'as pas besoin de la date de naissance pour un plan de site. Tu n'as pas besoin du nom complet d'un eleve pour generer un exercice. Enleve ce qui ne sert pas. Remplace "Mme Dupont, 12 rue..." par "une cliente particuliere a Lyon". Souvent, la qualite du brief reste bonne.
 
-Sam ne colle pas "Leo Dupont, dyslexie, parents divorces..." dans un chat public. Il demande une adaptation d'exercice "pour un eleve avec besoin de consignes courtes", sans nom. Max ne colle pas la facture complete avec IBAN. Lea ne colle pas le contrat client entier si un extrait suffit.
+## Anonymiser et pseudonymiser
 
-## Transparence
+Anonymiser vraiment est plus dur qu'on croit (un petit village + un metier rare = reidentifiability). Fais de ton mieux : enleve noms, adresses exactes, telephones, numeros de dossier. Pour un usage interne serieux, choisis des outils et des contrats adaptes - pas seulement "c'est dans le cloud donc OK".
 
-Dois-tu dire que tu as utilise l'IA ? Ca depend du contexte et des regles (ecole, client, entreprise, publication). En cas de doute, sois transparent sur l'aide a la redaction, surtout si le texte engage (offre, evaluation, contenu signe). Mentir sur une "photo reelle" generee, ou sur un devoir "entierement perso", casse la confiance.
+## Bases RGPD (idee debutant)
 
-## Biais et respect
+Le RGPD encadre le traitement des donnees personnelles en Europe. Idees cles : finalite claire, minimisation, securite, droits des personnes, responsabilite. L'IA n'efface pas ca. Elle l'accentue, parce que coller un fichier dans un chat est devenu trop facile. Si tu es pro, parle a quelqu'un de competent pour ton cas. Ce livre n'est pas un conseil juridique personnalise ; c'est une boussole de prudence.
 
-Les modeles peuvent stereotyper metiers, genres, origines. Relis avec cette lentille. Evite les prompts degradants. Pour une comm, verifie que tu ne reproduis pas une caricature. Pour un recrutement ou une evaluation, l'IA ne remplace pas un processus juste et humain.
+## Ethique au-dela de la loi
 
-## Droit d'auteur et honnetete intellectuelle
+Meme "legal", un usage peut etre moche : generer un faux avis client, cloner une voix sans accord, truquer une photo de resultat avant/apres, laisser un eleve croire qu'un devoir IA non assume est OK sans discussion. Ethique = ce que tu assumes le matin devant un miroir et devant les gens concernes. Transparence quand c'est utile. Respect quand c'est obligatoire.
 
-Generer n'efface pas les questions de droits : contenus d'entrainement, images, style d'un artiste, code copie. Pour publier, privilegie ce que tu as le droit d'utiliser, cite quand il faut, transforme vraiment, ajoute ta valeur. A l'ecole : l'IA peut aider a comprendre ; elle ne doit pas devenir la copie invisible. Sam doit poser un cadre clair a sa classe. Lea doit assumer ce qu'elle livre au client.
+## Securite des donnees (ponte vers le chapitre securite)
 
-## Ecologie et sobriete
-
-Chaque requete coute un peu (energie, infra). Ce n'est pas une raison de paniquer, ni une excuse pour spammer le modele de 80 regenerations inutiles. Prompt clair, moins d'essais. Sobriete = ethique pratique.
-
-## Lignes rouges DanielCraft
-
-Pas de deepfake non consentis. Pas d'usurpation d'identite. Pas de harcelement automatise. Pas de conseil medical / juridique / financier presenté comme certain. Pas de surveillance sournoise des gens. Pas de donnees sensibles dans un outil non maitrise. Pas de triche scolaire ni de mensonge client sur la nature du livrable.
-
-Si une demande est grise, refuse. Ton outil le fera parfois pour toi ; parfois non. Ta colonne vertebrale compte plus que la politique du modele.
-
-## RGPD en phrases simples
-
-Finalite : pourquoi je traite cette donnee ? Minimisation : est-ce que j'en ai vraiment besoin ? Base legale : ai-je un droit / un contrat / un interet legitime / un consentement ? Securite : ou ca va, qui y accede ? Duree : je ne garde pas "au cas ou" sans raison. Droits des personnes : acces, rectification, suppression - a connaitre si tu collectes.
-
-L'IA n'efface pas ces questions. Elle les rend plus urgentes, parce que coller dans un chat, c'est souvent envoyer chez un sous-traitant.
+Mots de passe uniques, double authentification, pas de compte partage "equipe" avec le meme login, pas de collages de cles API dans le chat, choix d'outils avec options pro / retention / training opt-out quand c'est critique. On detaille plus loin. Ici, retiens le lien : ethique sans securite technique, c'est un voeu pieux.
 
 ## Erreur classique
 
-"C'est anonyme" alors que le contexte reidentifie (petit village, rare metier, details). Ou "l'outil est connu donc c'est legal pour mon usage". Lis ton cas. Demande conseil si tu es une structure.
+Dire "c'est anonyme" des qu'on enleve le prenom. Ou "tout le monde fait ca". Ou "l'outil a une jolie page confiance donc je suis couvert". Autre piege : utiliser un compte perso gratuit pour des donnees pro sensibles parce que "c'est plus simple".
 
 ## En vrai
 
-Ouvre les reglages de ton outil principal. Cherche : historique, memoire, utilisation des donnees pour l'entrainement, export, suppression. Desactive ce qui est inutile. Note ou sont tes conversations sensibles - et decide d'un canal plus sur pour elles (ou de ne pas les mettre dans l'IA).
+Ouvre ton historique de chat recent. Identifie une donnee que tu n'aurais pas du coller (meme mineure). Note la lecon. Mets en place une regle d'anonymisation pour la semaine.
 
 ## A toi
 
-Ecris ta charte perso en 5 lignes : ce que je colle / ce que je ne colle jamais / quand je dis que j'ai utilise l'IA / comment je verifie / qui je contacte si doute (collegue, DPO, juriste, DanielCraft... bon, collegue ou DPO). Signe-la. Serieusement.
+Ecris ta charte perso en 6 lignes : ce que je colle, ce que je n'y colle jamais, outils autorises, qui est informe, ou je stocke les prompts, qui valide les contenus sensibles.
+## Scenarios a refuser
+
+Coller la liste complete d'eleves pour "personnaliser". Generer un faux avis 5 etoiles. Cloner la voix du dirigeant pour un message interne "drole". Utiliser des photos de clients sans base legale pour entrainer un truc. Laisser un stagiaire brancher un agent sur la boite mail partagée sans charte. Si un scenario te met mal a l'aise avant meme l'avis juridique, c'est deja un signal.
+
+## Transparence utile
+
+Tu n'as pas a mettre un bandeau "IA" sur chaque virgule. Tu as a etre honnete quand ca compte : devoir evalue, contenu journalistique sensible, decision qui affecte quelqu'un, engagement contractuel. La transparence n'est pas un gadget ; c'est une maintenance de confiance.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

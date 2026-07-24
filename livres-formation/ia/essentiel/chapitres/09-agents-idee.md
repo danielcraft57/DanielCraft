@@ -1,59 +1,62 @@
-# Chapitre 9 - Les agents : l'idee, sans science-fiction
+# Chapitre 9 - RAG et agents : documents et actions
 
-Un agent, en version simple, c'est une IA a qui tu donnes un but, et qui enchaine plusieurs actions avec des outils pour s'en approcher : chercher une info, lire un fichier, ecrire un brouillon, classer, parfois cliquer dans une interface. Ce n'est plus seulement "reponds a ma question". C'est "avance sur cette mission".
+Deux idees changent le niveau au-dessus du simple chat : le RAG et les agents. Tu n'as pas besoin de les implementer demain. Tu as besoin de comprendre ce qu'elles promettent, et ce qu'elles cassent si on les lache sans cadre.
 
-En 2026, les agents grand public existent sous des formes variees : mode "ordinateur" ou navigateur dans certains chats, automatisations Zapier/Make branchees a de l'IA, assistants dans les IDE, workflows d'entreprise. Parfois spectaculaire. Parfois fragile. Souvent couteux en attention si mal cadre.
+## RAG : brancher le modele sur tes documents
 
-Chez DanielCraft, on enseigne l'idee avant la demence automatisee.
+RAG veut dire Retrieval Augmented Generation. En francais simple : avant de repondre, le systeme cherche des morceaux pertinents dans une base (tes PDF, ton wiki, ta FAQ), puis demande au LLM de repondre en s'appuyant sur ces extraits. L'idee : moins d'invention sur ton catalogue, tes procedures, tes tarifs - parce que la reponse est "augmentee" par du contenu que tu controles.
 
-## Agent vs chatbot vs script
+Ca ne rend pas le modele infaillible. Si la recherche ramene le mauvais paragraphe, la reponse sera belle et fausse. Si tes documents sont pourris ou obsoletes, le RAG amplifie le pourri. Si tu ne cites pas les extraits, tu ne peux pas verifier. Un bon usage RAG montre ses sources internes : "d'apres la fiche tarif 2026, page 2...".
 
-Chatbot : une reponse (ou une conversation) dans une boite. Script classique : regles fixes "si ceci alors cela". Agent : boucle but -> action -> observation -> prochaine action, avec un modele qui decide un peu.
+Lea reve d'un assistant qui connait ses modeles de proposition. Max voudrait un outil qui lit sa bibliotheque de fiches d'entretien. Sam voudrait interroger son cours sans halluciner le programme. Dans les trois cas, le travail invisible est le meme : ranger des documents propres, a jour, avec des droits d'acces clairs.
 
-Exemple chatbot : "ecris un mail de relance". Exemple script : "chaque lundi a 9h, envoie ce modele". Exemple agent : "regarde mes mails non lus sur les devis, resume ceux qui attendent une reponse, prepare 3 brouillons, ne rien envoyer". La derniere phrase compte : ne rien envoyer.
+## Agents : enchaîner des actions vers un but
 
-## Ou ca aide vraiment
+Un agent, en idee simple, c'est un systeme qui ne se contente pas de repondre : il planifie, appelle des outils (recherche, calendrier, email, navigateur, base de donnees), observe le resultat, continue. Exemple : "prepare un dossier de veille sur X, resume 5 articles, propose un mail". Puissant. Aussi dangereux : un agent mal cadre peut envoyer un mail, modifier un fichier, acheter, publier.
 
-Taches repetitives multi-etapes a bas risque : collecter, resumer, classer, preparer. Recherche bornee avec sources a verifier. Assistance developpeur (lire erreur, proposer patch, lancer tests - avec revue). Prep de dossier : "a partir de ces PDF, fais une grille comparative".
+Chez DanielCraft, la regle debutant est dure : pas d'agent avec pouvoir d'envoi autonome tant que tu n'as pas de validations humaines sur les etapes critiques. L'agent propose ; toi tu valides ; ensuite seulement l'action part. Les demos marketing sautent souvent cette etape. La vraie vie ne devrait pas.
 
-Lea peut laisser un agent preparer un dossier concurrent (sites publics) avant un RDV. Max peut imaginer plus tard un flux "photo + dictée -> fiche chantier" - encore mieux avec validation. Sam peut generer des variantes d'exercices a partir d'un modele, puis selectionner.
+## Comment cadrer un agent (checklist mentale)
 
-## Ou ca casse
+But clair. Perimetre etroit. Outils autorises / interdits. Budget (temps, argent, tokens). Criteres de succes. Points de validation humaine. Journal de ce qu'il a fait. Plan de secours si ca part en vrille. Sans ca, tu as un stagiaire avec les cles de la boite et zero briefing.
 
-Acces e-mail / agenda / paiements sans garde-fous. Instructions ambigues ("occupe-toi des clients mecontents"). Sites qui changent. Captchas. Jugement social. Hallucination + action = erreur executee. Boucles infinies qui consomment du temps et de l'argent.
+## RAG + agents : la combo
 
-Un agent sans perimetre, c'est un stagiaire avec les cles du camion.
-
-## Cadre de securite mental
-
-Principe du moindre privilege : acces lecture avant ecriture, brouillon avant envoi, sandbox avant production. Demande des checkpoints : "apres chaque etape, montre-moi et attends mon OK". Log ce qui a ete fait. Budget : limite de temps, d'actions, de cout.
-
-Interdits de debutant : envoyer des mails seuls, poster seuls, modifier la compta, toucher aux notes d'eleves, acheter quoi que ce soit.
-
-## Comment demarrer sans te bruler
-
-1. Choisis une mission de 15 minutes, bas risque.
-2. Ecris le but, les outils autorises, les interdits, le format du rapport final.
-3. Lance avec supervision (tu regardes).
-4. Note ou ca a derape.
-5. Seulement ensuite, automatise un bout.
-
-Si tu n'as pas d'outil "agent" sous la main, simule : fais-toi ecrire la checklist d'actions, execute-les toi-meme, garde l'habitude du brief. L'idee d'agent commence par un bon cahier des charges.
-
-## Niveau 0, 1, 2 (pour ne pas bruler les etapes)
-
-Niveau 0 : tu es l'agent. L'IA ecrit la checklist ; tu executes. Niveau 1 : l'IA propose des actions dans un perimetre lecture seule (resumes, tris, brouillons). Tu valides chaque envoi. Niveau 2 : quelques actions ecriture bornees (creer une note, une tache), toujours avec log et plafond. Beaucoup de debutants veulent le niveau 2 lundi. Reste au 0-1 jusqu'a ce que tes prompts et ta verif soient stables.
-
-Lea au niveau 1 : "prepare un dossier a partir de pages publiques, ne contacte personne". Max au niveau 0 : checklist pieces detachees generee, commande humaine. Sam au niveau 1 : "genere 3 variantes d'exercice a partir de mon modele, n'envoie rien aux eleves".
+Beaucoup de produits melangent les deux : l'agent cherche dans tes docs (RAG), redige, puis propose une action. C'est souvent l'avenir des assistants metier. Ce n'est pas une raison de brancher ton CRM entier le premier jour. Commence lecture seule. Puis proposition. Puis action sur bac a sable. Puis production avec garde-fous.
 
 ## Erreur classique
 
-Confondre demo Twitter et fiabilite metier. Ou "autonomiser" avant d'avoir des prompts et des verifications solides. Les agents amplifient tes bonnes pratiques - et tes mauvaises. Autre piege : juger l'idee entiere apres une seule demo ratee sur un site capricieux. Cadre mieux, reduis le but, reteste.
+Confondre "j'ai un GPT custom" avec "j'ai un RAG solide". Un custom sans documents a jour reste un LLM generaliste deguise. Autre erreur : laisser un agent "etre utile" sans liste d'interdits. L'utilite sans frein devient une faille.
 
 ## En vrai
 
-Ecris le brief d'un mini-agent utile a ton metier, meme fictif. Exemple Max : "A partir de notes collees, produire fiche chantier + liste pieces + questions au client. Ne jamais inventer une reference constructeur. Sortie en 3 blocs." Tu n'as pas besoin de le brancher demain. Tu as besoin de savoir le commander.
+Sans outil special, simule un RAG humain : ouvre un de tes PDF, copie l'extrait utile dans le chat, demande une reponse "uniquement a partir de cet extrait, cite les phrases". Tu viens de comprendre l'esprit du RAG. Puis ecris les 5 regles que tu imposerais a un agent avant de lui donner acces a ta boite mail.
 
 ## A toi
 
-Complete : But / Outils autorises / Interdits / Preuve de fin / Validation humaine a quelle etape. Une demi-page. C'est ton permis de conduire agent - version papier.
+Decris un usage RAG utile chez toi (quels documents ?) et un usage agent que tu refuses encore (quelle action ?). Une page max.
+## Conception d'un agent en une page
+
+But : "preparer une veille hebdo sur X". Outils : recherche web + doc interne lecture seule. Interdits : envoi email, publication, achat. Budget : 20 appels outils max. Validation : humain lit le brouillon avant diffusion. Journal : conserver les sources. Critere de succes : 5 liens verifies + resume fidele. Avec cette page, tu peux discuter avec un prestataire sans te faire vendre une boite noire.
+
+## RAG : hygiene documentaire
+
+Documents dates, titres clairs, versions, droits d'acces, purge des doublons, separation du brouillon et de la procedure officielle. Le RAG n'est pas un sortilège sur un Drive bordélique. C'est une lampe torche : elle eclaire ce qui est la. Si ce qui est la est faux, tu eclaireras du faux.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

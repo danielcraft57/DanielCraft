@@ -1,57 +1,38 @@
-# Chapitre 14 - Atelier : muscler tes prompts
+# Chapitre 14 - Atelier : prompts et system prompts
 
-Cet atelier fait vivre le chapitre 5 avec les mains. Tu sors avec une banque de prompts testes, pas une theorie. Chronometre : 60 a 90 minutes.
+Objectif : construire et comparer des prompts, puis poser une consigne systeme durable. Duree : 30 a 45 minutes. Materiel : ton outil de chat + un editeur de texte.
 
-## But
+## Exercice 1 - Mauvais vs bon (10 min)
 
-Ecrire, tester, et ameliorer 5 prompts reels de ton metier jusqu'a obtenir une sortie utilisable apres une seule passe de relecture humaine courte.
+Choisis une tache reelle. Ecris un mauvais prompt d'une ligne. Lance-le. Puis ecris un bon prompt avec le squelette (role, tache, public, contraintes, format, faits). Lance-le. Colle les deux reponses dans un fichier. Annote en rouge ce qui est vague, invente, utile.
 
-## Materiel
+## Exercice 2 - Mode strict vs creatif (10 min)
 
-Ton outil IA principal. Une feuille ou un doc "Banque prompts". 3 exemples de tes vrais textes (mail, note, consigne) anonymises. Un minuteur. Optionnel : un ami qui joue le client / eleve / lecteur exigeant.
+Sur le meme sujet, demande d'abord : "sois strict, factuel, dis INCONNU si besoin, 8 lignes". Puis : "sois creatif, 10 variantes audacieuses". Observe la difference de temperament. Note pour quels livrables tu utiliseras chaque mode.
 
-## Etapes
+## Exercice 3 - System prompt (15 min)
 
-1. Liste 5 taches frequentes (ex: mail relance, resume de reunion, plan de proposition, exercice eleve, FAQ). Une ligne chacune.
+Redige une consigne systeme de 8 a 15 lignes : identite, ton, interdits, gestion de l'incertitude, format par defaut. Colle-la dans les instructions persistantes si disponibles, sinon simule en la collant en tete. Pose ensuite trois taches differentes. Verifie si le comportement reste stable. Ajuste une seule regle a la fois.
 
-2. Pour la tache 1, ecris un prompt flou volontaire (30 secondes). Lance. Garde la sortie dans "A - flou".
+## Exercice 4 - Anti-hallucination (10 min)
 
-3. Reecris le prompt avec le cadre : role, tache, public, contraintes, format, "n'invente pas les faits manquants". Relance. Garde "B - cadre".
+Demande une liste de sources ou de chiffres sur un sujet que tu connais. Puis refais avec interdiction d'inventer. Compare. Ecris ta phrase magique anti-invention, celle que tu recoleras souvent.
 
-4. Itere deux fois max : "plus court", ou "plus ferme", ou "enleve le jargon". Garde "C - itere".
+## Livrable
 
-5. Relis C a voix haute. Corrige 3 details humains. Sauve le prompt final + un exemple de bonne sortie dans ta banque.
+Un fichier "atelier-prompts.md" avec : mauvais prompt, bon prompt, system prompt, phrase anti-invention, 5 lignes de lecons.
 
-6. Repete les etapes 2 a 5 pour les taches 2 et 3 (les plus utiles). Pour les taches 4 et 5, ecris seulement le prompt cadre sans tout generer si le temps manque - mais ecris-les quand meme.
+## Erreur a eviter
 
-7. Ajoute a chaque fiche : risque (bas/moyen/haut) et verif obligatoire (quoi verifier).
+Changer dix variables a la fois. Tu ne sauras plus ce qui a ameliore quoi. Un changement, un test.
+## Variante avancee
 
-8. Fais tester un prompt par un ami : donne-lui le prompt sans explication orale. S'il bloque, le prompt n'est pas assez clair. Clarifie.
+Cree deux system prompts pour deux publics (ex. client particulier vs partenaire pro). Pose la meme tache. Compare. Tu verras a quel point le cadre durable change la voix sans retoucher le brief de tache. Documente lequel tu actives quand.
 
-9. Choisis ton "prompt de la semaine" : celui que tu ouvriras tous les jours. Mets-le en favori / epingle.
+## Note de rythme
 
-## Variante ecole / artisan / freelance
+Prends le temps. Un atelier fait a fond vaut mieux que trois ateliers survolés. Si tu es presse, fais la moitie aujourd'hui et l'autre demain - mais ecris le livrable. Sans livrable, le cerveau classe ca comme "lu", pas comme "su". DanielCraft forme des gens qui livrent, meme petit.
 
-Sam : un prompt "differenciation d'exercice" + un prompt "mail parents factuel". Max : "notes chantier -> devis clair" + "SMS polite de creneau". Lea : "notes call -> plan proposition" + "post LinkedIn non corporate". Adapte les 5 taches, garde la methode.
+## Pour aller plus loin sans te perdre
 
-## Criteres de reussite
-
-Au moins 3 prompts testes A/B/C. Banque lisible. Chaque prompt a contraintes + format. Au moins une sortie C que tu enverrais apres 5 minutes de relecture. Tu peux expliquer a quelqu'un pourquoi B bat A.
-
-## Si ca bloque
-
-L'outil refuse : reformule sans contenu sensible. Sortie trop generique : colle un exemple de ton vrai ton. Sortie trop longue : impose un nombre de lignes. Tentation de perfection : arrete a deux iterations - le reste c'est toi.
-
-## Exemple de sortie attendue
-
-Fiche 1 - Mail relance devis
-Prompt final : (colle le texte)
-Risque : moyen (ton + montant)
-Verif : montant, delai, nom
-Derniere bonne sortie : (extrait)
-
-Si ta banque ressemble a ca pour 3 fiches, l'atelier a marche. Si tu n'as que des idees sans tests, recommence l'etape 2.
-
-## Apres l'atelier
-
-Utilise le prompt de la semaine chaque jour ouvré pendant 5 jours. Note le temps gagne. Ajuste une contrainte vendredi. Sans ce rituel, la banque redevient un fichier mort.
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

@@ -1,55 +1,60 @@
-# Chapitre 11 - Travail et metiers : ce qui change vraiment
+# Chapitre 11 - Travail et metiers : l'IA amplifie le jugement
 
-L'IA ne "supprime pas tous les emplois" demain matin. Elle change la productivite, les attentes clients, et la valeur de certaines taches. Ceux qui ecrivent, resument, traduisent, classent, supportent, codent, designent, enseignent, vendent : tous voient une partie du travail devenir plus rapide a ebaucher. La question n'est pas "IA ou humain". C'est "humain avec methode + IA" versus "humain sans" versus "IA sans humain" (souvent mediocre ou dangereux).
+L'IA ne "vole" pas tous les metiers d'un coup. Elle change le prix du brouillon. Ce qui devient rare, ce n'est pas ecrire une phrase fluide. C'est savoir quoi demander, quoi garder, quoi promettre, quoi refuser. Chez DanielCraft, on dit souvent : l'IA amplifie celui qui sait juger et briefer. Elle amplifie aussi les erreurs de celui qui colle sans lire.
 
-Chez DanielCraft, on regarde trois profils concrets, puis les transversalites.
+## Ce qui monte en valeur
 
-## Freelance (Lea)
+Clarifier un besoin client. Poser un bon diagnostic. Choisir une strategie. Assumer une responsabilite legale ou morale. Creer une relation de confiance. Gouter un ton. Connaitre le terrain. Verifier un chiffre. Negocier. Trancher. Ces competences ne disparaitent pas parce qu'un modele ecrit vite. Elles deviennent le coeur du travail visible.
 
-Ce qui accelere : propositions, contenus, recherche, variantes d'offre, prep d'atelier, documentation. Ce qui reste rare et cher : ecoute client, arbitrage, responsabilite, relation, gout, negociation, livraison fiable. Lea qui livre plus vite doit aussi gerer l'attente : "pourquoi c'est encore facture ce prix si l'IA aide ?" Reponse : tu vends le resultat, le jugement, la responsabilite, pas les frappes clavier. Clarifie ton perimetre. N'accepte pas de devenir "usine a texte IA" sous-payee sans valeur ajoutee.
+## Ce qui se commoditise
 
-Opportunite : monter en gamme sur le conseil. Risque : tous les freelances publient le meme ton generique. Differencie-toi par le terrain et la preuve.
+Le premier jet generique. Le mail "dans le monde d'aujourd'hui". Le plan bateau. La reformulation moyenne. Si ton offre repose uniquement sur produire du texte moyen rapidement, tu es en concurrence avec un bouton. Si ton offre repose sur un resultat, une expertise, une presence, une garantie humaine, tu as encore un metier.
 
-## Artisan / TPE (Max)
+## Trois portraits
 
-Ce qui accelere : admin, devis clairs, relances, fiches, petites pages web, formation interne. Ce qui ne part pas : le geste, le diagnostic physique, la confiance de quartier, l'urgence a 2h du matin. Max gagne si l'IA lui rend des soirs. Il perd s'il promet des diagnostics "par photo seule" au-dela de ce qui est sur. Utilise l'IA comme secretaire intelligente, pas comme contremaitre fantome.
+Lea intègre l'IA comme assistante de structure : plus de propositions envoyees, meme exigence de relecture, meilleurs questions clients. Son avantage n'est pas "j'ai ChatGPT". C'est "je livre clair et juste". Max gagne du temps sur l'administratif, pas sur le diagnostic plomberie. Sam utilise l'IA pour varier les exemples, pas pour corriger sans lire. Dans les trois cas, le metier reste le pilote.
 
-## Ecole et formation (Sam)
+## Comment parler de l'IA a un client / collegue
 
-Ce qui accelere : prep, differenciation, idees d'activites, feedback de forme. Ce qui se tend : evaluation, triche, inegalites d'acces, charge mentale "il faut tout reinventer". Sam a besoin d'une politique de classe claire : quand l'IA est autorisee, comment citer l'aide, quels exercices restent sans. Il peut enseigner la verification et l'esprit critique - competence 2026 aussi importante que la grammaire.
+Sans fanfaronnade, sans honte. "Je m'aide d'outils pour ebaucher, je verifie et j'assume." Si un client exige "zero IA", clarifie le perimetre. Si un client exige "tout full IA pour moins cher", explique ce que tu ne delegueras pas. La transparence utile bat le mystere.
 
-Les eleves qui sauront briefer, douter, recouper, et creer avec gout s'en sortiront mieux que ceux qui collent.
+## Se former sans paniquer
 
-## Autres metiers (aperçu)
-
-Commerce : scripts, objection training, personnalisation - sans mensonge automatise. Marketing : idees et variantes - sans spam ni deepfake. RH : aide a rediger - sans discrimination automatisee. Sante / droit : assistance a la forme et a la recherche - decision humaine, cadre legal strict. Dev : pair programmer - revue obligatoire. Comptabilité : gain sur le repetitif - controle des chiffres.
-
-## Competences qui montent
-
-Formuler un besoin. Decouper une tache. Evaluer une sortie. Integrer dans un vrai workflow. Ethique appliquee. Gout editorial. Capacité a dire non a une belle reponse fausse. Collaboration humain-outil. Et toujours : expertise metier. L'IA amplifie celui qui sait juger.
-
-## Competences qui se commoditisent
-
-Texte generique moyen. Traduction grossiere. Premiere version "correcte". Recherche superficielle. Ca ne disparait pas, mais ca se demarque moins. Monte d'un cran : exactitude, originalite ancree, relation, execution.
-
-## Organisation du travail
-
-Une equipe devrait se mettre d'accord : outils autorises, donnees interdites, revue a deux sur les livrables critiques, partage de bons prompts, interdiction du copier-coller silencieux sur les sujets a risque. Sans ca, chacun improvise et les incidents arrivent.
-
-Meme en solo, ecris tes regles. Lea solo qui fatigue le dimanche soir est exactement la personne qui colle un contrat entier "pour aller plus vite". La regle ecrite te protege de toi-meme.
-
-## Peur du remplacement : version sobre
-
-Oui, certains postes tres repetitifs et 100 % texte bougent fort. Non, "savoir briefer + verifier + connaitre son terrain" ne se telecharge pas en un clic. Ton job, si tu le travailles, se decale vers le jugement, la relation, et l'assemblage. Ce livre pousse exactement ces muscles. La peur passive ("je regarde les actus") fatigue. La pratique active ("je construis ma methode") protege mieux.
+Tu n'as pas a suivre chaque sortie de modele. Tu as a construire des gestes stables : brief, iteration, verification, securite donnees, evaluation. Ces gestes se transferent d'un outil a l'autre. La panique vient de la dispersion. La competence vient de la repetition sur tes vraies taches.
 
 ## Erreur classique
 
-Attendre d'etre "remplace" sans apprendre. Ou apprendre uniquement les outils et oublier le metier. Ou licencier la qualite parce que "c'est plus rapide". La vitesse sans standard, c'est de la dette.
+Attendre que "l'IA soit stable" pour commencer. Elle bougera encore. Autre erreur : tout miser sur un outil unique comme identite de marque ("agence 100% GPT"). Les clients achètent un resultat, pas ton stack.
 
 ## En vrai
 
-Imagine ta semaine type. Surligne en vert ce qui est brouillon / admin / variante. En orange ce qui est jugement / relation. En rouge ce qui est risque legal ou securite. L'IA vise surtout le vert, aide l'orange, evite le rouge sans cadre.
+Liste cinq taches de ton metier. Classe-les : IA utile / IA dangereuse / IA inutile. Choisis une tache "utile" a systematiser cette semaine avec un prompt type.
 
 ## A toi
 
-Ecris "mon metier dans 12 mois avec l'IA" en un paragraphe honnete : ce que tu vas deleguer a l'outil, ce que tu vas renforcer chez toi, ce que tu refuses. Lis-le a voix haute. Si ca sonne fake, recommence.
+Ecris une phrase de positionnement : "Dans mon metier, l'IA m'aide a ... et je garde ...". Dis-la a voix haute. Si elle sonne juste, garde-la.
+## Competences a cultiver cette annee
+
+Briefing. Esprit critique. Hygiene des donnees. Evaluation. Gout editorial. Pedagogie (expliquer une offre). Negociation du perimetre avec les clients ("je m'aide d'outils, je verifie"). Curiosite technique legere (assez pour lire une fiche produit sans paniquer). Ces competences se transferent d'un modele a l'autre. Les raccourcis "prompt pack" se periment.
+
+## Management et IA
+
+Si tu managers, interdis la culture du collage non relu. Offre du temps pour construire des prompts types. Clarifie les outils autorises. Celebrer les gains de temps verifies, pas les volumes de texte generes. Un equipe qui produit trois fois plus de brouillons non lus n'a pas gagne : elle a pollue.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.

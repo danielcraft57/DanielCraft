@@ -1,57 +1,64 @@
-# Chapitre 8 - Image, audio, video : le multimodal leger
+# Chapitre 8 - Multimodal : image, audio, video
 
-En 2026, beaucoup d'outils ne sont plus "texte seul". Tu peux coller une photo, dicter, generer une image, sous-titrer une video, cloner une voix (avec des risques ethiques). On reste leger : assez pour etre utile, pas assez pour devenir studio Hollywood.
+Multimodal, en mots simples, veut dire : l'outil accepte ou produit plusieurs formes de media, pas seulement du texte. Tu colles une photo et tu demandes ce qu'elle montre. Tu dictes un message. Tu generes une image a partir d'une description. Tu transcris une reunion. Tu resumes une video. En 2026, beaucoup d'assistants melangent deja ces gestes dans le meme fil. C'est pratique. Ce n'est pas magique.
 
-Chez DanielCraft, la regle : multimodal = encore plus de verification visuelle et legale. Une belle image fausse reste fausse. Une voix convaincante peut etre une manipulation.
+Chez DanielCraft, on traite le multimodal comme un accelerateur de comprehension et de brouillon visuel ou oral - jamais comme une preuve legale automatique, jamais comme un remplacement d'une photo reelle quand la realite compte.
 
-## Image : comprendre et generer
+## Image en entree : decrire, extraire, expliquer
 
-Comprendre : "que vois-tu sur cette photo de chantier ?", "extrais le texte de cette facture", "decrit ce schema pour un eleve". Utile pour Max (photo de panne), pour Sam (schema a expliquer), pour Lea (maquette client mal commentee).
+Tu photographies un tableau blanc, une etiquette, un schema. Tu demandes une transcription, un resume, une checklist. Utile pour Max qui capture une note de chantier, pour Lea qui photographie un wireframe papier, pour Sam qui scanne un exercice. Limites : mauvaise photo, ecriture illisible, chiffres mal lus, confusion entre produits proches. Verifie toujours les nombres et les noms propres.
 
-Generer : illustration pour un article, mockup d'ambiance, icone simple, variation d'une idee visuelle. Prompt image = sujet + style + composition + interdits ("pas de texte illisible", "pas de logo de marque"). Puis tu retouches ou tu assumes le style IA.
+Ne colle pas une piece d'identite, un dossier medical complet, ou une fiche paie complete dans un outil grand public "pour voir". Anonymise. Recadre. Demande-toi si un humain non autorise pourrait nuire avec cette image.
 
-Limites : mains bizarres (moins qu'avant, encore possible), texte dans l'image pourri, droits d'auteur flous selon outil et usage, ressemblance a des personnes reelles (evite), stereotypes. Pour un usage pro client, prefere souvent une vraie photo de ton travail.
+## Image en sortie : generer un visuel
+
+Tu decris une ambiance, un style, un sujet. Le modele propose une image. Utile pour moodboards, illustrations de blog non critiques, idees de mise en page, variantes de logo tres en amont. Dangereux ou fragile pour : fausse photo de produit vendu, deepfake, imitation d'un artiste vivant sans cadre clair, visuel "temoignage" invente. Lea peut generer une direction artistique ; elle ne publie pas une fausse photo de boutique comme si c'etait la sienne.
 
 ## Audio : dicter, transcrire, resumer
 
-La killer feature pour beaucoup : parler > texte propre. Reunion client -> transcription -> resume -> liste d'actions. Cours -> notes. Idee en voiture -> note structuree le soir.
+La dictée accelere la prise de notes. La transcription transforme une reunion en texte. Le resume tire des actions. Cadre : qui a consenti a l'enregistrement ? Ou vont les fichiers ? Combien de temps sont-ils gardes ? Pour une reunion d'equipe interne avec accord, souvent OK avec outil adapte. Pour un client qui n'a pas ete informe, pause. Sam peut transcrire un oral d'entrainement ; il ne diffuse pas la voix d'un eleve sans cadre.
 
-Qualite depend du micro, des accents, du bruit de chantier. Relis toujours les noms propres, chiffres, engagements. "On signe a 3000" mal entendu devient un drame.
+## Video : encore plus lourd
 
-Voix synthetiques : pratique pour une video tuto, dangereux pour imiter quelqu'un sans consentement. Ne le fais pas. Serieux.
+Generer ou editer de la video coute cher en calcul, en temps, en risques de fake. Pour un debutant, l'usage sain est souvent : resumer une video existante dont tu as le droit, extraire des idees, preparer un script - pas fabriquer une fausse interview. Les outils evoluent vite ; la prudence humaine doit rester stable.
 
-## Video : leger seulement
+## Brief multimodal utile
 
-Sous-titres auto, decoupage d'un long enregistrement en chapitres, script pour une video courte, miniature generee (avec gout). Tu n'as pas besoin d'un pipeline cinema. Tu as besoin d'une video LinkedIn claire ou d'un tuto interne.
-
-Attention au deepfake et a la desinformation. Si tu enseigne (Sam), parle-en aux eleves : "une video peut mentir aussi".
-
-## Combiner sans te noyer
-
-Workflow simple de Lea : call client enregistre (avec accord) -> transcript -> resume -> plan de proposition -> mail de confirmation. Workflow Max : photo + note vocale -> description du probleme en langage client -> brouillon de devis. Workflow Sam : chapitre du manuel photo -> questions d'exercices -> audio d'explication courte pour eleves absents.
-
-Un enchainement clair bat trois outils "waouh" isoles.
-
-## Qualite "assez bonne" vs perfection studio
-
-Pour 90 % des usages debutants, tu veux comprehensible et honnete, pas cinema. Une transcription a 90 % relue bat une obsession du 100 % qui te fait abandonner. Une image "mood" pour un moodboard interne bat trois soirs a corriger des doigts. Une video verticale avec bon son et sous-titres bat un generique IA tape-a-l'oeil.
-
-Dis-toi la phrase : "quel niveau de fini mon public attend vraiment ?" Un client artisan veut comprendre le devis. Un eleve veut une explication claire. Un post LinkedIn veut une idee nette. Rarement : des effets speciaux.
-
-## Droits, likeness, consentement
-
-Demande-toi : ai-je le droit d'envoyer ce fichier a un service cloud ? Les eleves sont-ils identifiables ? Le client a-t-il accepte l'enregistrement ? L'image generee copie-t-elle un artiste de facon problematique pour mon usage commercial ? Quand tu hesites, choisis l'option la plus respectueuse et documente ton choix.
-
-Si tu publies une image generee, assume-le quand le contexte l'exige (pub, presse, ecole). Si tu utilises la voix de quelqu'un, demande. Si tu enregistres une reunion, dis-le au debut. Ces trois reflexes evitent la plupart des crises.
+Comme pour le texte : sois precis. "Decris cette image pour un devis plomberie : liste les elements visibles, signale ce qui est illisible, n'invente aucune dimension." Ou : "Transcris cet audio, marque [inaudible] si besoin, puis donne 5 actions." Le meme squelette role / tache / contraintes / format s'applique.
 
 ## Erreur classique
 
-Publier une image IA "temoignage client" avec un visage invente. Ou faire confiance a une transcription pour un montant. Ou passer trois soirs a generer des logos alors que ton offre n'est pas claire.
+Croire que "l'IA a vu la photo donc c'est exact". Ou publier un visuel genere comme preuve sociale. Ou dicter des secrets clients dans le metro via un assistant cloud. Autre piege : juger un outil multimodal sur une image parfaite de demo, puis l'utiliser sur des photos floues reelles sans controle.
 
 ## En vrai
 
-Prends une photo non sensible de ton quotidien pro (outil, bureau, tableau). Demande une description + 5 idees d'amelioration sobres. Puis dicte 60 secondes d'explication et fais nettoyer le texte. Tu viens de toucher image + audio sans te perdre.
+Prends une image non sensible de ton travail (schema, capture d'ecran anonyme, objet). Demande une description stricte. Corrige les erreurs a la main. Note ce que le modele rate systematiquement chez toi.
 
 ## A toi
 
-Choisis un seul usage multimodal pour ce mois : (A) photo vers texte utile, (B) voix vers compte-rendu, ou (C) image generee pour un support non critique. Ecris le workflow en 4 etapes max, avec l'etape "verification humaine" obligatoire.
+Ecris ta regle multimodal : ce que tu acceptes (dictee, moodboard, transcription interne...) et ce que tu refuses (piece ID, fausse photo produit, voix d'autrui sans accord).
+## Qualite d'entree = qualite de sortie
+
+Photo floue, contre-jour, document plie : la description souffrira. Audio avec tele et micro loin : la transcription souffrira. Avant d'accuser le modele, ameliore la capture. Puis demande explicitement de signaler les zones incertains. Un "je vois 12, peut-etre 18" est plus utile qu'un "18" invente.
+
+## Droits et deepfakes
+
+Generer l'image d'une personne reelle, cloner une voix, fabriquer une video d'un evenement invente : zone legale et ethique sensible. Par defaut, ne le fais pas sans cadre clair et consentements. Pour une marque, prefere des visuels clairement illustres / fictifs quand ce n'est pas une photo reelle, et dis-le si besoin. La confiance se construit lentement et se perd vite.
+
+## Scene de terrain (developpee)
+
+Imagine une matinee ordinaire. Tu ouvres l'outil, tu as une tache, tu as dix minutes. Sans methode, tu tapes une phrase vague, tu obtiens un texte poli, tu colles, tu regrettes. Avec methode, tu prends deux minutes pour cadrer : but, public, contraintes, faits, interdits. Tu generes. Tu verifies les faits critiques. Tu corriges le ton. Tu ranges le prompt si ca a marche. Le resultat n'est pas seulement "plus joli". Il est plus sur, plus reutilisable, plus respectueux des gens dont les donnees pourraient trainer dans le fil.
+
+Cette difference se voit peu le premier jour. Elle se voit au bout d'un mois, quand tu as une bibliotheque de huit prompts, une charte donnees, une grille d'evaluation, et zero incident majeur. C'est ca que ce chapitre prepare : pas l'effet wow, l'effet fiable.
+
+## Pieges subtils
+
+Le piege du perfectionnisme : retoucher le prompt une heure pour un mail de huit lignes. Le piege de la paresse : ne jamais retoucher. Le piege de la nouveaute : changer d'outil chaque semaine. Le piege de la peur : ne rien automatiser jamais, meme le bas risque. Le juste milieu se construit en ecrivant tes regles personnelles et en les testant. Ce livre te donne des regles candidates ; toi tu les adaptes a ton metier, ton risque, ton budget.
+
+## Lien avec le reste du livre
+
+Ce que tu lis ici se branche sur les tokens (ne noie pas), le contexte (un fil propre), la temperature (strict ou creatif), le system prompt (cadre durable), les hallucinations (verifier), le multimodal (entree propre), le RAG (documents ranges), les agents (freins), l'evaluation (grille), les couts (ordre de grandeur), la securite (2FA, secrets). Tu n'as pas a tout activer d'un coup. Active une brique, solidifie, ajoute.
+
+## Pour aller plus loin sans te perdre
+
+Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
