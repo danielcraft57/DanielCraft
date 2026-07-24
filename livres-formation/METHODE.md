@@ -137,6 +137,7 @@ python livres-formation\informatique\<livre>\build_livre.py
 | Python | `pdf/python-les-bases.pdf` | ~55 pages | bleu encre + abricot (`theme="python"`) ; exceptions + classes |
 | Python - Pratique | `pdf/python-pratique.pdf` | ~40+ pages | charcoal + menthe (`theme="python2"`) ; CSV, CLI, API, venv |
 | Git / GitHub | `pdf/git-les-bases.pdf` | ~49 pages | graphite + corail (`theme="git"`) ; stash, undo, PR |
+| Git - En equipe | `pdf/git-en-equipe.pdf` | ~40+ pages | midnight + ambre (`theme="git2"`) ; flux, revue, CI, rebase |
 | Commerce | `pdf/commerce-les-bases.pdf` | ~32-38 pages | sarcelle + or ; prose |
 | E-commerce | `pdf/ecommerce-les-bases.pdf` | ~35+ pages | ocean + orange ; clients, dropshipping, tendances 2026 |
 | Marketing digital | `pdf/marketing-les-bases.pdf` | ~35+ pages | prune + peche (`theme="marketing"`) ; cible, contenu, canaux, mesure |
@@ -144,7 +145,6 @@ python livres-formation\informatique\<livre>\build_livre.py
 
 ## 9. Suites possibles
 
-- Git equipe
 - Commerce / marketing / communication avances
 - Page site pour telecharger les PDF  
 

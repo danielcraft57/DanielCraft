@@ -671,7 +671,7 @@ def finalize_pdf(
 
 
 def get_book_css(theme: str = "default") -> str:
-    """Retourne le CSS du livre. Themes: python, git, commerce, ecommerce, marketing, communication, javascript2, python2, htmlcss2."""
+    """Retourne le CSS du livre. Themes: python, git, commerce, ecommerce, marketing, communication, javascript2, python2, htmlcss2, git2."""
     css = BOOK_CSS_BASE + PRINT_CSS_EXTRA
     themes = {
         "python": """
@@ -951,6 +951,37 @@ button, .btn-like {
 }
 @media print {
   .toc a { color: #0c4a5e !important; }
+}
+""",
+        "git2": """
+/* Theme Git equipe : midnight + ambre */
+:root {
+  --ink: #141820;
+  --muted: #5c6575;
+  --paper: #eef1f6;
+  --paper-deep: #dde3ec;
+  --band: #1a1f2e;
+  --band-soft: #2a3348;
+  --accent: #f0b429;
+  --code-bg: #12161f;
+  --code-fg: #f5e6c8;
+  --card: #ffffff;
+  --rule: #c8d0dc;
+}
+.cover,
+.cover-copy {
+  background: #1a1f2e !important;
+  color: #f5e6c8 !important;
+}
+.cover h1 { color: #f5e6c8 !important; }
+pre {
+  border-left-color: #f0b429 !important;
+}
+button, .btn-like {
+  background: #1a1f2e;
+}
+@media print {
+  .toc a { color: #1a1f2e !important; }
 }
 """,
     }

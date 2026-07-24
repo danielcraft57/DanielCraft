@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#dfe6e9"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2d3436" font-weight="700">Conflit : deux versions, un choix</text>
+
+  <defs>
+    <marker id="ac" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d3436"/>
+    </marker>
+  </defs>
+
+  <!-- version A -->
+  <rect x="40" y="90" width="260" height="220" rx="16" fill="#2d3436"/>
+  <text x="170" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#55efc4" font-weight="700">Ta version</text>
+  <rect x="70" y="160" width="200" height="50" rx="8" fill="#ffffff"/>
+  <text x="170" y="192" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d3436">titre = Bonjour</text>
+  <text x="170" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#dfe6e9">ce que tu as ecrit</text>
+
+  <!-- version B -->
+  <rect x="370" y="90" width="260" height="220" rx="16" fill="#e17055"/>
+  <text x="500" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2d3436" font-weight="700">Version collegue</text>
+  <rect x="400" y="160" width="200" height="50" rx="8" fill="#ffffff"/>
+  <text x="500" y="192" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d3436">titre = Salut</text>
+  <text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">meme endroit change</text>
+
+  <line x1="650" y1="200" x2="700" y2="200" stroke="#2d3436" stroke-width="4" marker-end="url(#ac)"/>
+
+  <!-- resolution -->
+  <rect x="720" y="90" width="240" height="220" rx="16" fill="#ffffff" stroke="#2d3436" stroke-width="3"/>
+  <text x="840" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2d3436" font-weight="700">Tu decides</text>
+  <rect x="750" y="160" width="180" height="50" rx="8" fill="#55efc4"/>
+  <text x="840" y="192" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d3436" font-weight="700">titre = Bonjour</text>
+  <text x="840" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#636e72">garder, melanger</text>
+  <text x="840" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#636e72">ou reinventer</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d3436">Git montre le choc. Toi, tu choisis la phrase finale.</text>
+</svg>

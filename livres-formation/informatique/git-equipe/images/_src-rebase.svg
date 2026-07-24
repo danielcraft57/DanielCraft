@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#dfe6e9"/>
+  <text x="500" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2d3436" font-weight="700">Rebasage : avant et apres</text>
+
+  <!-- AVANT -->
+  <rect x="30" y="70" width="450" height="280" rx="16" fill="#ffffff" stroke="#2d3436" stroke-width="2"/>
+  <text x="255" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#e17055" font-weight="700">Avant</text>
+
+  <line x1="70" y1="220" x2="430" y2="220" stroke="#2d3436" stroke-width="6"/>
+  <text x="80" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436" font-weight="700">principale</text>
+  <circle cx="140" cy="220" r="12" fill="#2d3436"/>
+  <circle cx="240" cy="220" r="12" fill="#2d3436"/>
+  <circle cx="360" cy="220" r="12" fill="#2d3436"/>
+
+  <path d="M240 220 C280 220, 280 140, 320 140 L400 140" fill="none" stroke="#e17055" stroke-width="6"/>
+  <circle cx="320" cy="140" r="12" fill="#e17055"/>
+  <circle cx="400" cy="140" r="12" fill="#e17055"/>
+  <text x="330" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e17055" font-weight="700">ta branche</text>
+  <text x="255" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#636e72">decalage : principale a avance</text>
+
+  <!-- fleche -->
+  <defs>
+    <marker id="ar" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d3436"/>
+    </marker>
+  </defs>
+  <line x1="500" y1="210" x2="540" y2="210" stroke="#2d3436" stroke-width="4" marker-end="url(#ar)"/>
+
+  <!-- APRES -->
+  <rect x="560" y="70" width="410" height="280" rx="16" fill="#ffffff" stroke="#2d3436" stroke-width="2"/>
+  <text x="765" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#55efc4" font-weight="700">Apres</text>
+
+  <line x1="600" y1="220" x2="930" y2="220" stroke="#2d3436" stroke-width="6"/>
+  <text x="610" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436" font-weight="700">principale</text>
+  <circle cx="660" cy="220" r="12" fill="#2d3436"/>
+  <circle cx="740" cy="220" r="12" fill="#2d3436"/>
+  <circle cx="820" cy="220" r="12" fill="#2d3436"/>
+
+  <path d="M820 220 C850 220, 850 140, 880 140 L930 140" fill="none" stroke="#e17055" stroke-width="6"/>
+  <circle cx="880" cy="140" r="12" fill="#e17055"/>
+  <circle cx="930" cy="140" r="12" fill="#e17055"/>
+  <text x="860" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e17055" font-weight="700">repose</text>
+  <text x="765" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#636e72">tes commits au-dessus du dernier</text>
+
+  <text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d3436">Idee simple : reposer ton travail sur le sommet actuel.</text>
+</svg>
