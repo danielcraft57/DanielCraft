@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a1418"/>
+      <stop offset="50%" stop-color="#6b1e2a"/>
+      <stop offset="100%" stop-color="#a0563a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <circle cx="800" cy="380" r="160" fill="#d4a574" opacity="0.25"/>
+  <circle cx="800" cy="380" r="110" fill="#f5efe6"/>
+  <!-- etoile simple / check -->
+  <path d="M760 380 L790 410 L860 340" fill="none" stroke="#6b1e2a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="800" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="72" fill="#f5efe6" font-weight="700">Bravo</text>
+  <text x="800" y="690" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#d4a574">Tu as une boussole pour communiquer</text>
+  <text x="800" y="760" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#f5efe6" opacity="0.9">DanielCraft - a toi de jouer</text>
+  <!-- petits ponts decoratifs -->
+  <path d="M200 200 Q400 120 600 200" fill="none" stroke="#d4a574" stroke-width="4" opacity="0.4"/>
+  <path d="M1000 200 Q1200 120 1400 200" fill="none" stroke="#d4a574" stroke-width="4" opacity="0.4"/>
+  <path d="M300 820 Q800 760 1300 820" fill="none" stroke="#f5efe6" stroke-width="3" opacity="0.25"/>
+</svg>

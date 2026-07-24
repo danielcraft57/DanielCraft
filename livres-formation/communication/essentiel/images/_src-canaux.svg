@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f7f3ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a1418" font-weight="700">Choisir le bon canal</text>
+  <rect x="50" y="110" width="210" height="160" rx="14" fill="#6b1e2a"/>
+  <text x="155" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Oral</text>
+  <text x="155" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a574">appel / visio</text>
+  <text x="155" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#f7f3ef">vivant + volatile</text>
+  <rect x="280" y="110" width="210" height="160" rx="14" fill="#8a2f3d"/>
+  <text x="385" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Ecrit</text>
+  <text x="385" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a574">mail / note</text>
+  <text x="385" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#f7f3ef">trace + precis</text>
+  <rect x="510" y="110" width="210" height="160" rx="14" fill="#6b1e2a"/>
+  <text x="615" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Digital</text>
+  <text x="615" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a574">reseaux / chat</text>
+  <text x="615" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#f7f3ef">rapide + large</text>
+  <rect x="740" y="110" width="210" height="160" rx="14" fill="#d4a574"/>
+  <text x="845" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2a1418" font-weight="700">Presentiel</text>
+  <text x="845" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2a1418">reunion / lieu</text>
+  <text x="845" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2a1418">confiance</text>
+  <text x="500" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#6b1e2a">Un canal principal + un secours battent huit canaux morts.</text>
+</svg>

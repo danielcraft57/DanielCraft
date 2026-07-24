@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f7f3ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a1418" font-weight="700">Communiquer = faire passer une idee</text>
+  <circle cx="180" cy="210" r="78" fill="#6b1e2a"/>
+  <text x="180" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Toi</text>
+  <text x="180" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a574">idee claire</text>
+  <rect x="300" y="175" width="400" height="70" rx="14" fill="#d4a574"/>
+  <text x="500" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a1418" font-weight="700">Message + canal + ton</text>
+  <text x="500" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2a1418">le pont entre deux tetes</text>
+  <circle cx="820" cy="210" r="78" fill="#6b1e2a"/>
+  <text x="820" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">L'autre</text>
+  <text x="820" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a574">comprend</text>
+  <polygon points="270,210 300,195 300,225" fill="#6b1e2a"/>
+  <polygon points="730,210 700,195 700,225" fill="#6b1e2a"/>
+  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6b1e2a">Sans magie. Juste de la clarte.</text>
+</svg>

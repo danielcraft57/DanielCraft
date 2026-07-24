@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f7f3ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a1418" font-weight="700">Public : a qui tu parles ?</text>
+  <circle cx="500" cy="200" r="72" fill="#6b1e2a"/>
+  <text x="500" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="700">Nadia</text>
+  <text x="500" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#d4a574">parent presse</text>
+  <rect x="70" y="110" width="190" height="88" rx="12" fill="#d4a574"/>
+  <text x="165" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2a1418" font-weight="700">Veut savoir</text>
+  <text x="165" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2a1418">quoi / quand / cout</text>
+  <rect x="740" y="110" width="190" height="88" rx="12" fill="#d4a574"/>
+  <text x="835" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2a1418" font-weight="700">Craint</text>
+  <text x="835" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2a1418">info incomplete</text>
+  <rect x="70" y="250" width="190" height="88" rx="12" fill="#6b1e2a"/>
+  <text x="165" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="700">Canal</text>
+  <text x="165" y="312" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#d4a574">mail le soir</text>
+  <rect x="740" y="250" width="190" height="88" rx="12" fill="#6b1e2a"/>
+  <text x="835" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="700">Action</text>
+  <text x="835" y="312" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#d4a574">signer / venir</text>
+  <line x1="260" y1="154" x2="430" y2="185" stroke="#6b1e2a" stroke-width="2"/>
+  <line x1="740" y1="154" x2="570" y2="185" stroke="#6b1e2a" stroke-width="2"/>
+  <line x1="260" y1="294" x2="430" y2="230" stroke="#6b1e2a" stroke-width="2"/>
+  <line x1="740" y1="294" x2="570" y2="230" stroke="#6b1e2a" stroke-width="2"/>
+  <text x="500" y="385" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b1e2a">Ecrire pour quelqu'un de precis, pas pour "tout le monde".</text>
+</svg>

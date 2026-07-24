@@ -1,6 +1,6 @@
 # Methode - Creer un livre de formation
 
-Recette issue des livres HTML/CSS, JavaScript, Python, Git, Commerce, E-commerce et Marketing. A suivre pour les prochains.
+Recette issue des livres HTML/CSS, JavaScript, Python, Git, Commerce, E-commerce, Marketing et Communication. A suivre pour les prochains.
 
 ## 0. Regles de fond (toujours)
 
@@ -137,8 +137,8 @@ python livres-formation\informatique\<livre>\build_livre.py
 | Commerce | `pdf/commerce-les-bases.pdf` | ~32-38 pages | sarcelle + or ; prose |
 | E-commerce | `pdf/ecommerce-les-bases.pdf` | ~35+ pages | ocean + orange ; clients, dropshipping, tendances 2026 |
 | Marketing digital | `pdf/marketing-les-bases.pdf` | ~35+ pages | prune + peche (`theme="marketing"`) ; cible, contenu, canaux, mesure |
+| Communication | `pdf/communication-les-bases.pdf` | ~46 pages | bordeaux + miel (`theme="communication"`) ; message, ecoute, pitch, crise |
 
 ## 9. Suites possibles
 
-- Communication  
 - Page site pour telecharger les PDF  
