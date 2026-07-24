@@ -1,0 +1,11 @@
+Illustration de couverture pour un livre de formation "HTML et CSS - Les bases".
+
+Style : dessin simple et chaleureux, pas photorealiste. Couleurs douces (vert sapin, creme, touche corail). Ambiance amicale, claire, pour debutants (y compris jeunes).
+
+Scene : un bureau vu de face avec un ecran qui montre une page web tres simple (gros titre + quelques blocs colores). A cote, des briques style Lego empilees qui forment une petite maison (metaphore structure HTML). Un pinceau et un pot de peinture (metaphore CSS) posés a cote.
+
+Pas de texte illisible dans l'image. Pas de logo de marque. Pas de visage detaille obligatoire (silhouette ok). Fond legerement texture papier.
+
+Format paysage large banniere, composition claire, beaucoup d'air.
+
+IMPORTANT: Tout texte visible dans l'image doit etre en FRANCAIS. Aucun mot anglais.

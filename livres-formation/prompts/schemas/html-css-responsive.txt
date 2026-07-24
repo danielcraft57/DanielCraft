@@ -1,0 +1,8 @@
+Schema "page web responsive" : le meme site sur grand ecran et sur telephone.
+
+A gauche : rectangle desktop avec header + 2 colonnes.
+A droite : rectangle mobile avec header + colonnes empilees.
+
+Fleche "s'adapte" entre les deux. Style wireframe colore, propre, pedagogique. Fond clair. Pas de texte fin illisible. Montre le concept de reorganisation du layout.
+
+IMPORTANT: Labels uniquement en FRANCAIS (ex: MARGE, BORDURE, CONTENU, CONTENEUR, Grand ecran, Telephone). Aucun mot anglais.

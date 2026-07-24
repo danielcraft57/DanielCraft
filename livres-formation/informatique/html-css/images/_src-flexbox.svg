@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760">
+  <rect width="1000" height="760" fill="#f7f4ef"/>
+  <text x="500" y="46" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Flexbox : ranger les blocs</text>
+
+  <text x="80" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#266b56" font-weight="700">1) En ligne</text>
+  <rect x="80" y="120" width="840" height="220" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="110" y="155" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">CONTENEUR</text>
+
+  <rect x="130" y="180" width="180" height="110" rx="12" fill="#f0a07a"/>
+  <text x="220" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#4a2414" font-weight="700">BLOC 1</text>
+  <rect x="350" y="180" width="180" height="110" rx="12" fill="#c9a227"/>
+  <text x="440" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#4a3a10" font-weight="700">BLOC 2</text>
+  <rect x="570" y="180" width="180" height="110" rx="12" fill="#6aa8c9"/>
+  <text x="660" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#16384a" font-weight="700">BLOC 3</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
+    </marker>
+  </defs>
+  <line x1="130" y1="320" x2="750" y2="320" stroke="#1a4d3e" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="440" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">ranger a l'horizontale</text>
+  <line x1="880" y1="170" x2="880" y2="300" stroke="#1a4d3e" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="900" y="245" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">aligner</text>
+
+  <text x="80" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#266b56" font-weight="700">2) En colonne</text>
+  <rect x="80" y="440" width="360" height="280" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="110" y="475" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">CONTENEUR</text>
+  <rect x="140" y="500" width="240" height="50" rx="10" fill="#f0a07a"/>
+  <text x="260" y="532" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4a2414" font-weight="700">BLOC 1</text>
+  <rect x="140" y="565" width="240" height="50" rx="10" fill="#c9a227"/>
+  <text x="260" y="597" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4a3a10" font-weight="700">BLOC 2</text>
+  <rect x="140" y="630" width="240" height="50" rx="10" fill="#6aa8c9"/>
+  <text x="260" y="662" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#16384a" font-weight="700">BLOC 3</text>
+
+  <text x="520" y="560" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248">Meme blocs, ranges</text>
+  <text x="520" y="590" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248">les uns sous les autres.</text>
+</svg>

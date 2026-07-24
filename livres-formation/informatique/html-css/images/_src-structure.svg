@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <rect width="1000" height="700" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Anatomie d'une page HTML</text>
+
+  <rect x="70" y="90" width="860" height="560" rx="18" fill="#d9efe6" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="100" y="130" font-family="Consolas, monospace" font-size="24" fill="#1a4d3e" font-weight="700">html</text>
+
+  <rect x="110" y="160" width="780" height="150" rx="14" fill="#cfe0f5" stroke="#3d6d9a" stroke-width="3"/>
+  <text x="140" y="200" font-family="Consolas, monospace" font-size="22" fill="#2f5678" font-weight="700">head</text>
+  <rect x="160" y="220" width="300" height="60" rx="10" fill="#eef5fc" stroke="#3d6d9a" stroke-width="2"/>
+  <text x="310" y="258" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2f5678">titre</text>
+  <rect x="490" y="220" width="300" height="60" rx="10" fill="#eef5fc" stroke="#3d6d9a" stroke-width="2"/>
+  <text x="640" y="258" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2f5678">meta</text>
+
+  <rect x="110" y="340" width="780" height="280" rx="14" fill="#f7e3c8" stroke="#a8742a" stroke-width="3"/>
+  <text x="140" y="380" font-family="Consolas, monospace" font-size="22" fill="#7a4d14" font-weight="700">body</text>
+  <rect x="160" y="410" width="680" height="70" rx="10" fill="#fff7eb" stroke="#a8742a" stroke-width="2"/>
+  <text x="500" y="455" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a4d14">gros titre (h1)</text>
+  <rect x="160" y="510" width="680" height="70" rx="10" fill="#fff7eb" stroke="#a8742a" stroke-width="2"/>
+  <text x="500" y="555" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a4d14">paragraphe (p)</text>
+</svg>

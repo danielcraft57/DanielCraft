@@ -1,0 +1,11 @@
+Illustration pedagogique : "HTML = structure, CSS = deco".
+
+Dessin simple. Deux colonnes cote a cote.
+
+A gauche : une maison en fil de fer / ossature (murs, portes, pieces) etiquetee mentalement comme structure. Couleurs grises et bleutees.
+
+A droite : la meme maison peinte, avec rideaux, plantes, couleur chaude. Sensation "habitee".
+
+Fleche douce du gauche vers la droite. Style flat illustration, friendly, pas infantile. Fond creme. Aucun texte dans l'image (les legendes seront ajoutees dans le livre).
+
+IMPORTANT: Tout texte visible dans l'image doit etre en FRANCAIS. Aucun mot anglais.

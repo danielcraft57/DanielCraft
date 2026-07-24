@@ -1,0 +1,11 @@
+Schema pedagogique du modele en boite CSS (box model).
+
+Dessin technique simple et joli :
+- rectangle exterieur pointille = margin
+- rectangle suivant = border
+- rectangle suivant = padding
+- coeur central = content
+
+Couleurs distinctes par couche (ex. margin jaune pale, border gris, padding bleu pale, content vert pale). Beaucoup d'espace. Style infographie claire pour debutants. Peu ou pas de texte (juste des zones colorees ; les labels seront dans le livre). Fond blanc casse.
+
+IMPORTANT: Labels uniquement en FRANCAIS (ex: MARGE, BORDURE, CONTENU, CONTENEUR, Grand ecran, Telephone). Aucun mot anglais.

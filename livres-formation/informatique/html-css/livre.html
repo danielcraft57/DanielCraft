@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="DanielCraft">
+  <meta name="description" content="Formation debutant HTML et CSS">
+  <title>HTML et CSS - Les bases</title>
+  <style>
+:root {
+  --ink: #14221c;
+  --muted: #3d5248;
+  --paper: #f3f6f4;
+  --paper-deep: #e5eee9;
+  --band: #1a4d3e;
+  --band-soft: #266b56;
+  --accent: #c9a227;
+  --code-bg: #133028;
+  --code-fg: #e7f2ec;
+  --card: #ffffff;
+  --rule: #c5d4cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+.page {
+  width: min(100% - 2rem, 780px);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+.cover {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: 0 0 2rem;
+  border-radius: 14px;
+  color: #f4faf7;
+  background: #0f2f26;
+  overflow: hidden;
+}
+.cover-art {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.cover-copy {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: #0f2f26;
+}
+.cover-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-family: Segoe UI, Arial, sans-serif;
+  opacity: 0.85;
+}
+.cover h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0.45rem 0 0.6rem;
+  max-width: 12ch;
+  color: #f4faf7;
+}
+.cover .lead {
+  font-size: 1.05rem;
+  max-width: 38ch;
+  margin: 0;
+  opacity: 0.95;
+}
+.cover .meta {
+  margin: 1rem 0 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+.illus {
+  margin: 0.9rem 0 1rem;
+  padding: 0;
+  text-align: center;
+}
+.illus img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 520px);
+  max-height: 220px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+  object-fit: contain;
+}
+.illus.illus-wide img {
+  max-width: min(100%, 640px);
+  max-height: 260px;
+}
+.illus figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-family: Segoe UI, Arial, sans-serif;
+  line-height: 1.35;
+  text-align: left;
+}
+body.eco {
+  --paper: #ffffff;
+  --paper-deep: #f3f3f3;
+  --card: #ffffff;
+  --code-bg: #222;
+}
+body.eco pre { border-left-color: #666; }
+.toc {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.toc h2 { margin-top: 0; font-size: 1.25rem; }
+.toc ol { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+.toc li { margin: 0.2rem 0; }
+.toc a {
+  color: var(--band);
+  text-decoration: none;
+}
+.chapter {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.35rem 1.4rem;
+  margin: 0 0 1.35rem;
+}
+.chapter-num {
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--band-soft);
+  margin: 0 0 0.15rem;
+}
+h1, h2, h3 { line-height: 1.25; color: var(--band); }
+.chapter > h1 {
+  font-size: 1.45rem;
+  margin: 0.15rem 0 0.75rem;
+  color: var(--ink);
+}
+h2 { font-size: 1.12rem; margin: 1.15rem 0 0.45rem; }
+h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; color: var(--muted); }
+p { margin: 0.55rem 0; }
+ul, ol { margin: 0.45rem 0 0.7rem; padding-left: 1.25rem; }
+li { margin: 0.18rem 0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid var(--accent);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--paper-deep); }
+.qa strong { color: var(--band); }
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1.5rem 1rem 0.5rem;
+}
+@media print {
+  body {
+    background: white !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: auto; max-width: none; margin: 0; padding: 0; }
+  .cover {
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 8mm;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cover-art {
+    min-height: 0 !important;
+    max-height: 95mm !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .toc, .chapter {
+    background: transparent !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 7mm;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .toc {
+    break-after: page;
+    page-break-after: always;
+  }
+  .chapter {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .chapter.chapter-break {
+    break-before: page;
+    page-break-before: always;
+  }
+  .chapter-num, h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chapter > h1 {
+    font-size: 15pt;
+    margin: 0 0 3mm;
+  }
+  h2 { font-size: 12pt; margin: 4.5mm 0 2mm; }
+  h3 { font-size: 11pt; margin: 3.5mm 0 1.5mm; }
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  .illus {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 3mm auto 4mm;
+  }
+  .illus img {
+    max-width: 105mm !important;
+    max-height: 55mm !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .illus.illus-wide img {
+    max-width: 130mm !important;
+    max-height: 65mm !important;
+  }
+  pre {
+    break-inside: auto;
+    page-break-inside: auto;
+    white-space: pre-wrap;
+    font-size: 8.5pt;
+    border-radius: 0;
+  }
+  table { break-inside: auto; }
+  a { color: inherit; text-decoration: none; }
+  .footer-note { break-before: avoid; }
+}
+@page {
+  size: A4;
+  margin: 14mm 14mm 18mm;
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="cover">
+      <img class="cover-art" src="images/print/html-css-couverture.jpg" alt="Couverture du livre HTML et CSS">
+      <div class="cover-copy">
+        <div class="cover-kicker">Formation informatique</div>
+        <h1>HTML et CSS</h1>
+        <p class="lead">Les bases pour construire une page web. Explique simplement, sans blabla inutile.</p>
+        <p class="meta">DanielCraft - Livre debutant</p>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="#chapitre-01">Chapitre 1 - Salut, c&#x27;est quoi une page web ?</a></li><li><a href="#chapitre-02">Chapitre 2 - Ton premier fichier HTML</a></li><li><a href="#chapitre-03">Chapitre 3 - Les balises, c&#x27;est des etiquettes</a></li><li><a href="#chapitre-04">Chapitre 4 - Titres, textes, paragraphes</a></li><li><a href="#chapitre-05">Chapitre 5 - Liens et images</a></li><li><a href="#chapitre-06">Chapitre 6 - Listes et tableaux</a></li><li><a href="#chapitre-07">Chapitre 7 - Les formulaires</a></li><li><a href="#chapitre-08">Chapitre 8 - CSS : on habille la page</a></li><li><a href="#chapitre-09">Chapitre 9 - Couleurs, polices, tailles</a></li><li><a href="#chapitre-10">Chapitre 10 - Les boites (margin, padding, border)</a></li><li><a href="#chapitre-11">Chapitre 11 - Flexbox : ranger les blocs</a></li><li><a href="#chapitre-12">Chapitre 12 - Un site qui marche sur telephone</a></li><li><a href="#chapitre-13">Chapitre 13 - Mini-projet : ta page perso</a></li><li><a href="#chapitre-14">Chapitre 14 - Ce qu&#x27;il faut retenir (+ la suite)</a></li><li><a href="#chapitre-15">Quiz final - Teste-toi !</a></li><li><a href="#chapitre-16">Bravo.</a></li>
+      </ol>
+    </nav>
+
+    <article class="chapter chapter-break" id="chapitre-01"><div class="chapter-num">Chapitre 1</div><h1>Chapitre 1 - Salut, c&#x27;est quoi une page web ?</h1>
+<figure class="illus illus-wide"><img src="images/print/html-css-maison.jpg" alt="A gauche la structure. A droite la deco. HTML puis CSS."><figcaption>A gauche la structure. A droite la deco. HTML puis CSS.</figcaption></figure>
+<p>Imagine une maison.</p>
+<p>Le HTML, c&#x27;est les murs, les pieces, les portes. La structure.</p>
+<p>Le CSS, c&#x27;est la peinture, les rideaux, les couleurs. L&#x27;apparence.</p>
+<p>Sans HTML, y&#x27;a rien a regarder.</p>
+<p>Sans CSS, ca marche, mais c&#x27;est moche. Genre page blanche avec du texte noir. Pas super sexy.</p>
+<h2>Le navigateur</h2>
+<p>Quand tu ouvres Chrome, Firefox, Edge ou Safari, tu lances un navigateur.</p>
+<p>C&#x27;est lui qui lit ton code et te montre la page.</p>
+<p>Tu ecris du texte special (le code).</p>
+<p>Le navigateur le transforme en page.</p>
+<h2>HTML et CSS, deux roles</h2>
+<ul>
+<li>HTML dit : &quot;ici un titre&quot;, &quot;ici une image&quot;, &quot;ici un bouton&quot;</li>
+<li>CSS dit : &quot;ce titre est grand et bleu&quot;, &quot;cette image a des bords ronds&quot;</li>
+</ul>
+<p>Les deux marchent ensemble. Toujours.</p>
+<h2>Pourquoi commencer par ca ?</h2>
+<p>Parce que presque tout le web repose la-dessus.</p>
+<p>Les sites, les blogs, les boutiques... Au fond, y&#x27;a du HTML et du CSS.</p>
+<p>Tu apprendras d&#x27;autres trucs plus tard (JavaScript, etc.).</p>
+<p>Mais d&#x27;abord : les bases. Solides.</p>
+<h2>Ce que tu vas savoir faire a la fin</h2>
+<ul>
+<li>Creer une vraie page web</li>
+<li>Ajouter du texte, des images, des liens</li>
+<li>Changer les couleurs et les polices</li>
+<li>Ranger les blocs proprement</li>
+<li>Faire une petite page perso</li>
+</ul>
+<p>Pas besoin d&#x27;etre un genie.</p>
+<p>Juste de la curiosite et un peu de patience.</p>
+<p>Allez, on attaque.</p></article><article class="chapter" id="chapitre-02"><div class="chapter-num">Chapitre 2</div><h1>Chapitre 2 - Ton premier fichier HTML</h1>
+<figure class="illus"><img src="images/print/html-css-premier-fichier.jpg" alt="Ton fichier s&#x27;ouvre dans le navigateur. Magie."><figcaption>Ton fichier s&#x27;ouvre dans le navigateur. Magie.</figcaption></figure>
+<figure class="illus"><img src="images/print/html-css-structure.jpg" alt="La page, c&#x27;est des boites rangees les unes dans les autres."><figcaption>La page, c&#x27;est des boites rangees les unes dans les autres.</figcaption></figure>
+<p>On va creer un fichier. Rien de complique.</p>
+<h2>De quoi tu as besoin</h2>
+<ol>
+<li>Un editeur de texte. Bloc-notes marche. VS Code c&#x27;est mieux (gratuit).</li>
+<li>Un navigateur (celui que tu utilises deja).</li>
+</ol>
+<p>C&#x27;est tout. Pas de compte. Pas de carte bleue.</p>
+<h2>Cree le fichier</h2>
+<ol>
+<li>Ouvre ton editeur.</li>
+<li>Copie le code ci-dessous.</li>
+<li>Enregistre le fichier en <code>index.html</code> (attention a l&#x27;extension <code>.html</code>).</li>
+<li>Double-clique dessus. Ca s&#x27;ouvre dans le navigateur.</li>
+</ol>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Ma premiere page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Salut !&lt;/h1&gt;
+  &lt;p&gt;Ca y est. J&#x27;ai fait une page web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Si tu vois &quot;Salut !&quot; en gros, bravo. C&#x27;est bon.</p>
+<h2>On explique ligne par ligne (sans stress)</h2>
+<p><code>&lt;!DOCTYPE html&gt;</code></p>
+<p>Ca dit au navigateur : &quot;hey, c&#x27;est du HTML moderne&quot;. Toujours en haut.</p>
+<p><code>&lt;html lang=&quot;fr&quot;&gt;</code></p>
+<p>La page commence. <code>lang=&quot;fr&quot;</code> = contenu en francais.</p>
+<p><code>&lt;head&gt; ... &lt;/head&gt;</code></p>
+<p>La tete de la page. Infos pour le navigateur, pas vraiment ce que tu vois au milieu de l&#x27;ecran.</p>
+<p>Exemple : le titre de l&#x27;onglet (<code>&lt;title&gt;</code>).</p>
+<p><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></p>
+<p>Pour que les accents marchent. Crucial en francais. Sans ca, tu peux avoir des caracteres bizarres.</p>
+<p><code>&lt;body&gt; ... &lt;/body&gt;</code></p>
+<p>Le corps. Tout ce que tu vois sur la page va ici.</p>
+<p><code>&lt;h1&gt;</code> = un gros titre.</p>
+<p><code>&lt;p&gt;</code> = un paragraphe.</p>
+<h2>Les balises ouvrantes et fermantes</h2>
+<p>Regarde : <code>&lt;p&gt;</code> ouvre. <code>&lt;/p&gt;</code> ferme.</p>
+<p>Le slash <code>/</code> veut dire &quot;c&#x27;est fini pour ce truc&quot;.</p>
+<p>Comme des parentheses. Tu ouvres, tu fermes.</p>
+<h2>A toi</h2>
+<p>Change le texte. Mets ton prenom dans le titre.</p>
+<p>Rafraichis la page (F5).</p>
+<p>Tu viens de modifier un site. Serieux.</p></article><article class="chapter" id="chapitre-03"><div class="chapter-num">Chapitre 3</div><h1>Chapitre 3 - Les balises, c&#x27;est des etiquettes</h1>
+<figure class="illus"><img src="images/print/html-css-balises.jpg" alt="Une balise, c&#x27;est une etiquette posee sur un contenu."><figcaption>Une balise, c&#x27;est une etiquette posee sur un contenu.</figcaption></figure>
+<p>Une balise, c&#x27;est une etiquette.</p>
+<p>Elle dit au navigateur : &quot;ce bout de texte, c&#x27;est un titre&quot; ou &quot;c&#x27;est un lien&quot;.</p>
+<h2>Forme generale</h2>
+<pre><code class="language-html">&lt;nom&gt;contenu&lt;/nom&gt;</code></pre>
+<p>Exemple :</p>
+<pre><code class="language-html">&lt;strong&gt;Important&lt;/strong&gt;</code></pre>
+<p>Ca met le mot en gras.</p>
+<h2>Quelques balises utiles tout de suite</h2>
+<div class="table-wrap"><table>
+<tr><th>Balise</th><th>Role simple</th></tr>
+<tr><td><code>h1</code> a <code>h6</code></td><td>Titres (h1 le plus grand)</td></tr>
+<tr><td><code>p</code></td><td>Paragraphe</td></tr>
+<tr><td><code>a</code></td><td>Lien</td></tr>
+<tr><td><code>img</code></td><td>Image</td></tr>
+<tr><td><code>ul</code> / <code>ol</code> / <code>li</code></td><td>Listes</td></tr>
+<tr><td><code>div</code></td><td>Boite generique (on range des trucs dedans)</td></tr>
+<tr><td><code>span</code></td><td>Petit bout de texte dans une phrase</td></tr>
+<tr><td><code>br</code></td><td>Retour a la ligne (balise seule)</td></tr>
+</table></div>
+<h2>Balises seules (pas de fermeture)</h2>
+<p>Certaines n&#x27;ont pas de contenu a enfermer.</p>
+<pre><code class="language-html">&lt;br&gt;
+&lt;img src=&quot;photo.jpg&quot; alt=&quot;Une photo&quot;&gt;</code></pre>
+<p><code>br</code> = aller a la ligne.</p>
+<p><code>img</code> = afficher une image.</p>
+<h2>Attributs : des infos en plus</h2>
+<p>Dans une balise, tu peux ajouter des details.</p>
+<pre><code class="language-html">&lt;a href=&quot;https://exemple.com&quot;&gt;Clique ici&lt;/a&gt;</code></pre>
+<p><code>href</code> = l&#x27;adresse du lien.</p>
+<p><code>src</code> = le chemin de l&#x27;image.</p>
+<p><code>alt</code> = texte si l&#x27;image ne charge pas (utile aussi pour l&#x27;accessibilite).</p>
+<h2>HTML, c&#x27;est de l&#x27;ordre</h2>
+<p>Le navigateur lit de haut en bas.</p>
+<p>Ce que tu mets en premier apparait en premier (sauf si le CSS change l&#x27;ordre plus tard).</p>
+<h2>Erreur classique</h2>
+<p>Oublier de fermer une balise.</p>
+<p>Ou ecrire <code>&lt;/p&gt;</code> sans avoir ouvert <code>&lt;p&gt;</code>.</p>
+<p>Si la page a l&#x27;air cassee, regarde d&#x27;abord ca.</p>
+<p>Respire. Corrige. Rafraichis.</p>
+<h2>Mini exo</h2>
+<p>Ecris une page avec :</p>
+<ul>
+<li>un titre h1</li>
+<li>deux paragraphes</li>
+<li>un mot en gras avec <code>&lt;strong&gt;</code></li>
+</ul>
+<p>Si ca s&#x27;affiche, tu as compris l&#x27;idee des balises.</p></article><article class="chapter" id="chapitre-04"><div class="chapter-num">Chapitre 4</div><h1>Chapitre 4 - Titres, textes, paragraphes</h1>
+<p>Le texte, c&#x27;est le coeur de presque toutes les pages.</p>
+<h2>Les titres : h1 a h6</h2>
+<pre><code class="language-html">&lt;h1&gt;Le plus grand&lt;/h1&gt;
+&lt;h2&gt;Un cran en dessous&lt;/h2&gt;
+&lt;h3&gt;Encore un peu plus petit&lt;/h3&gt;</code></pre>
+<p>Regle simple :</p>
+<ul>
+<li>Un seul <code>h1</code> par page (le sujet principal)</li>
+<li>Ensuite <code>h2</code> pour les parties</li>
+<li><code>h3</code> pour les sous-parties</li>
+</ul>
+<p>C&#x27;est comme un plan de redaction.</p>
+<p>Ca aide aussi Google a comprendre ta page. Mais surtout : ca aide le lecteur.</p>
+<h2>Les paragraphes</h2>
+<pre><code class="language-html">&lt;p&gt;Une idee par paragraphe, c&#x27;est souvent plus clair.&lt;/p&gt;
+&lt;p&gt;Tu peux en mettre plusieurs a la suite.&lt;/p&gt;</code></pre>
+<p>Ne mets pas tout dans un seul <code>&lt;p&gt;</code> geant.</p>
+<p>Coupe. Respire. Lis a voix haute si besoin.</p>
+<h2>Gras, italique, et cie</h2>
+<pre><code class="language-html">&lt;p&gt;Voici un mot &lt;strong&gt;important&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Voici un mot &lt;em&gt;en emphase&lt;/em&gt; (souvent en italique).&lt;/p&gt;
+&lt;p&gt;Un &lt;mark&gt;surlignage&lt;/mark&gt; pour attirer l&#x27;oeil.&lt;/p&gt;</code></pre>
+<p><code>strong</code> = vraiment important.</p>
+<p><code>em</code> = on insiste un peu.</p>
+<p>Evite de tout mettre en gras. Sinon plus rien ne ressort.</p>
+<h2>Citations et code</h2>
+<pre><code class="language-html">&lt;blockquote&gt;
+  Une citation un peu longue.
+&lt;/blockquote&gt;
+
+&lt;p&gt;En ligne, on peut citer &lt;code&gt;du code&lt;/code&gt;.&lt;/p&gt;</code></pre>
+<p><code>code</code> est pratique quand tu expliques une balise dans une phrase.</p>
+<h2>Commentaires (pour toi, pas pour le visiteur)</h2>
+<pre><code class="language-html">&lt;!-- Ceci ne s&#x27;affiche pas sur la page --&gt;</code></pre>
+<p>Utile pour te laisser des notes. Ou desactiver un bout de code sans l&#x27;effacer.</p>
+<h2>A eviter</h2>
+<ul>
+<li>Utiliser <code>h1</code> juste parce que &quot;c&#x27;est plus gros&quot; (utilise le CSS pour la taille)</li>
+<li>Sauter de <code>h1</code> a <code>h4</code> sans raison</li>
+<li>Des murs de texte sans retour</li>
+</ul>
+<h2>A toi</h2>
+<p>Ecris une mini page &quot;Ma journee&quot; :</p>
+<ul>
+<li>h1 avec le titre</li>
+<li>3 h2 (matin, apres-midi, soir)</li>
+<li>un petit paragraphe sous chaque h2</li>
+</ul></article><article class="chapter" id="chapitre-05"><div class="chapter-num">Chapitre 5</div><h1>Chapitre 5 - Liens et images</h1>
+<p>Sans liens, le web serait juste des pages isolees.</p>
+<p>Sans images, ce serait un peu triste.</p>
+<h2>Les liens</h2>
+<pre><code class="language-html">&lt;a href=&quot;https://danielcraft.fr&quot;&gt;Aller sur DanielCraft&lt;/a&gt;</code></pre>
+<p><code>a</code> comme &quot;ancre&quot; (anchor en anglais).</p>
+<p><code>href</code> = ou ca mene.</p>
+<h3>Lien vers une autre page de ton site</h3>
+<pre><code class="language-html">&lt;a href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;</code></pre>
+<h3>Lien qui ouvre un nouvel onglet</h3>
+<pre><code class="language-html">&lt;a href=&quot;https://exemple.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Site externe&lt;/a&gt;</code></pre>
+<p><code>target=&quot;_blank&quot;</code> = nouvel onglet.</p>
+<p><code>rel=&quot;noopener&quot;</code> = petite secu. Prends le reflexe.</p>
+<h3>Lien mailto</h3>
+<pre><code class="language-html">&lt;a href=&quot;mailto:salut@exemple.com&quot;&gt;M&#x27;ecrire&lt;/a&gt;</code></pre>
+<p>Ca ouvre le mail (si le visiteur a un logiciel mail configure).</p>
+<h2>Les images</h2>
+<pre><code class="language-html">&lt;img src=&quot;chat.jpg&quot; alt=&quot;Un chat orange sur un canape&quot;&gt;</code></pre>
+<p><code>src</code> = ou est le fichier image.</p>
+<p><code>alt</code> = description. Toujours. Pour ceux qui ne voient pas l&#x27;image, et pour le referencement.</p>
+<h3>Ou mettre tes images ?</h3>
+<p>Le plus simple au debut :</p>
+<pre><code>mon-site/
+  index.html
+  images/
+    chat.jpg</code></pre>
+<p>Alors :</p>
+<pre><code class="language-html">&lt;img src=&quot;images/chat.jpg&quot; alt=&quot;Un chat orange&quot;&gt;</code></pre>
+<h3>Largeur (debutant)</h3>
+<pre><code class="language-html">&lt;img src=&quot;images/chat.jpg&quot; alt=&quot;Un chat&quot; width=&quot;300&quot;&gt;</code></pre>
+<p>Plus tard, tu gereras ca mieux avec le CSS. Pour l&#x27;instant, c&#x27;est ok.</p>
+<h2>Figure + legende (plus propre)</h2>
+<pre><code class="language-html">&lt;figure&gt;
+  &lt;img src=&quot;images/chat.jpg&quot; alt=&quot;Un chat orange&quot;&gt;
+  &lt;figcaption&gt;Mon chat, Roi du canape.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+<h2>A toi</h2>
+<ol>
+<li>Ajoute un lien vers une page que tu aimes.</li>
+<li>Ajoute une image (une photo de chez toi, un dessin, peu importe).</li>
+<li>Ecris un vrai <code>alt</code>.</li>
+</ol>
+<p>Si le lien marche et l&#x27;image s&#x27;affiche, nickel.</p></article><article class="chapter" id="chapitre-06"><div class="chapter-num">Chapitre 6</div><h1>Chapitre 6 - Listes et tableaux</h1>
+<p>Des listes partout. Courses, etapes, menus...</p>
+<p>Des tableaux quand tu compares des infos.</p>
+<h2>Liste a puces</h2>
+<pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Pain&lt;/li&gt;
+  &lt;li&gt;Lait&lt;/li&gt;
+  &lt;li&gt;Beurre&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p><code>ul</code> = unordered list (liste sans ordre strict).</p>
+<p><code>li</code> = list item (un element).</p>
+<h2>Liste numerotee</h2>
+<pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Ouvrir l&#x27;editeur&lt;/li&gt;
+  &lt;li&gt;Ecrire le HTML&lt;/li&gt;
+  &lt;li&gt;Sauvegarder&lt;/li&gt;
+  &lt;li&gt;Ouvrir dans le navigateur&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+<p><code>ol</code> = ordered list. Utile pour des etapes.</p>
+<h2>Liste dans une liste</h2>
+<pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Fruits
+    &lt;ul&gt;
+      &lt;li&gt;Pommes&lt;/li&gt;
+      &lt;li&gt;Bananes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Legumes&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>Ca marche. Mais n&#x27;en abuse pas, sinon ca devient illisible.</p>
+<h2>Les tableaux</h2>
+<pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Langage&lt;/th&gt;
+      &lt;th&gt;Role&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTML&lt;/td&gt;
+      &lt;td&gt;Structure&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS&lt;/td&gt;
+      &lt;td&gt;Style&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<ul>
+<li><code>table</code> = le tableau</li>
+<li><code>tr</code> = une ligne</li>
+<li><code>th</code> = cellule d&#x27;en-tete</li>
+<li><code>td</code> = cellule normale</li>
+</ul>
+<h2>Quand utiliser un tableau ?</h2>
+<p>Quand les donnees sont vraiment en lignes et colonnes.</p>
+<p>Pas pour &quot;faire un layout&quot; de page. Ca, c&#x27;est le job du CSS.</p>
+<h2>A toi</h2>
+<p>Fais une liste de 5 choses que tu veux apprendre.</p>
+<p>Puis un petit tableau : jour / activite (ex. Lundi / HTML).</p></article><article class="chapter" id="chapitre-07"><div class="chapter-num">Chapitre 7</div><h1>Chapitre 7 - Les formulaires</h1>
+<p>Un formulaire, c&#x27;est quand tu demandes des infos a quelqu&#x27;un.</p>
+<p>Nom, email, message... Tu vois le genre.</p>
+<h2>La base</h2>
+<pre><code class="language-html">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;prenom&quot;&gt;Prenom&lt;/label&gt;
+  &lt;input id=&quot;prenom&quot; name=&quot;prenom&quot; type=&quot;text&quot;&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p><code>form</code> enveloppe tout.</p>
+<p><code>label</code> = le texte a cote du champ (important pour la clarte).</p>
+<p><code>input</code> = le champ.</p>
+<p><code>button</code> = le bouton.</p>
+<p><code>for</code> du label doit matcher <code>id</code> de l&#x27;input. Comme ca, cliquer sur le texte focus le champ. Pratique.</p>
+<h2>Types d&#x27;input utiles</h2>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; placeholder=&quot;Ton prenom&quot;&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;toi@exemple.com&quot;&gt;
+&lt;input type=&quot;password&quot;&gt;
+&lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;120&quot;&gt;
+&lt;input type=&quot;checkbox&quot;&gt; J&#x27;accepte
+&lt;input type=&quot;radio&quot; name=&quot;choix&quot; value=&quot;a&quot;&gt; Option A
+&lt;input type=&quot;radio&quot; name=&quot;choix&quot; value=&quot;b&quot;&gt; Option B</code></pre>
+<p><code>placeholder</code> = texte fantome dans le champ. Disparait quand tu ecris.</p>
+<h2>Zone de texte longue</h2>
+<pre><code class="language-html">&lt;label for=&quot;msg&quot;&gt;Message&lt;/label&gt;
+&lt;textarea id=&quot;msg&quot; name=&quot;msg&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;</code></pre>
+<h2>Liste deroulante</h2>
+<pre><code class="language-html">&lt;label for=&quot;ville&quot;&gt;Ville&lt;/label&gt;
+&lt;select id=&quot;ville&quot; name=&quot;ville&quot;&gt;
+  &lt;option value=&quot;paris&quot;&gt;Paris&lt;/option&gt;
+  &lt;option value=&quot;lyon&quot;&gt;Lyon&lt;/option&gt;
+  &lt;option value=&quot;marseille&quot;&gt;Marseille&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<h2>Requis</h2>
+<pre><code class="language-html">&lt;input type=&quot;email&quot; required&gt;</code></pre>
+<p>Le navigateur refuse d&#x27;envoyer si c&#x27;est vide. Utile, mais ce n&#x27;est pas une vraie securite cote serveur. Pour plus tard.</p>
+<h2>Petit rappel</h2>
+<p>Pour l&#x27;instant, <code>action=&quot;#&quot;</code> veut dire &quot;on n&#x27;envoie nulle part de special&quot;.</p>
+<p>Plus tard tu brancheras ca a un vrai traitement (PHP, API...).</p>
+<p>La on apprend juste a construire le formulaire.</p>
+<h2>A toi</h2>
+<p>Fais un formulaire &quot;Contact&quot; avec :</p>
+<ul>
+<li>nom</li>
+<li>email</li>
+<li>message</li>
+<li>bouton Envoyer</li>
+</ul></article><article class="chapter chapter-break" id="chapitre-08"><div class="chapter-num">Chapitre 8</div><h1>Chapitre 8 - CSS : on habille la page</h1>
+<p>La le HTML est nu. On va lui mettre des habits.</p>
+<h2>Trois facons d&#x27;ajouter du CSS</h2>
+<h3>1. Dans le fichier HTML (balise style)</h3>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: blue;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+<p>Pratique pour tester. Moins propre sur un gros site.</p>
+<h3>2. Fichier CSS separe (le mieux)</h3>
+<p><code>style.css</code> :</p>
+<pre><code class="language-css">p {
+  color: blue;
+}</code></pre>
+<p>Dans le HTML :</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code></pre>
+<p>Mets le <code>&lt;link&gt;</code> dans le <code>&lt;head&gt;</code>.</p>
+<h3>3. En ligne (a eviter souvent)</h3>
+<pre><code class="language-html">&lt;p style=&quot;color: blue;&quot;&gt;Coucou&lt;/p&gt;</code></pre>
+<p>Ca marche. Mais ca devient vite le bordel. Garde ca pour des cas rares.</p>
+<h2>Anatomie d&#x27;une regle CSS</h2>
+<pre><code class="language-css">selecteur {
+  propriete: valeur;
+}</code></pre>
+<p>Exemple :</p>
+<pre><code class="language-css">h1 {
+  color: tomato;
+  font-size: 40px;
+}</code></pre>
+<p>Le selecteur dit &quot;qui&quot;.</p>
+<p>Les proprietes disent &quot;quoi changer&quot;.</p>
+<h2>Commentaire CSS</h2>
+<pre><code class="language-css">/* Ceci est une note pour toi */</code></pre>
+<h2>Premier test</h2>
+<ol>
+<li>Cree <code>style.css</code> a cote de <code>index.html</code></li>
+<li>Relie-les avec <code>&lt;link&gt;</code></li>
+<li>Mets tous les <code>p</code> en bleu</li>
+<li>Rafraichis</li>
+</ol>
+<p>Si c&#x27;est bleu, CSS est branche. Nice.</p></article><article class="chapter" id="chapitre-09"><div class="chapter-num">Chapitre 9</div><h1>Chapitre 9 - Couleurs, polices, tailles</h1>
+<p>Maintenant on rend ca vivant.</p>
+<h2>Couleurs</h2>
+<pre><code class="language-css">body {
+  color: #222222;        /* texte */
+  background: #f7f3ee;   /* fond */
+}
+
+h1 {
+  color: teal;
+}</code></pre>
+<p>Tu peux ecrire :</p>
+<ul>
+<li>un nom (<code>red</code>, <code>teal</code>, <code>navy</code>)</li>
+<li>un code hex (<code>#ff6600</code>)</li>
+<li>du rgb (<code>rgb(255, 100, 50)</code>)</li>
+</ul>
+<p>Hex, c&#x27;est le plus courant sur le web.</p>
+<p><code>#000000</code> = noir. <code>#ffffff</code> = blanc.</p>
+<p>Astuce : des outils comme un color picker t&#x27;aident a choisir. Pas besoin de retenir les codes par coeur.</p>
+<h2>Polices</h2>
+<pre><code class="language-css">body {
+  font-family: Georgia, &quot;Times New Roman&quot;, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}</code></pre>
+<p><code>font-family</code> = la police.</p>
+<p>Si la premiere n&#x27;existe pas sur l&#x27;ordi, il prend la suivante.</p>
+<p><code>line-height: 1.6</code> = respirer entre les lignes. Plus agreable a lire.</p>
+<h3>Polices &quot;safe&quot; pour commencer</h3>
+<ul>
+<li><code>Arial, sans-serif</code> (moderne, sans empattement)</li>
+<li><code>Georgia, serif</code> (un peu plus litteraire)</li>
+</ul>
+<p>Plus tard tu pourras charger des polices web (Google Fonts, etc.). Pas obligatoire au debut.</p>
+<h2>Graisse et style</h2>
+<pre><code class="language-css">h1 {
+  font-weight: 700; /* gras */
+}
+
+em {
+  font-style: italic;
+}</code></pre>
+<h2>Taille du texte</h2>
+<pre><code class="language-css">h1 { font-size: 2.5rem; }
+p  { font-size: 1rem; }</code></pre>
+<p><code>px</code> = pixels. Simple.</p>
+<p><code>rem</code> = relatif a la taille de base. Plus souple pour l&#x27;accessibilite.</p>
+<p>Au debut, <code>px</code> c&#x27;est ok. Tu passeras a <code>rem</code> quand tu seras a l&#x27;aise.</p>
+<h2>Centrer un texte</h2>
+<pre><code class="language-css">h1 {
+  text-align: center;
+}</code></pre>
+<p><code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>.</p>
+<h2>A toi</h2>
+<ul>
+<li>Fond doux (pas blanc crame si tu veux etre cosy)</li>
+<li>Texte sombre pour bien lire</li>
+<li>Titre colore</li>
+<li>Paragraphes un peu plus grands (16-18px minimum)</li>
+</ul></article><article class="chapter" id="chapitre-10"><div class="chapter-num">Chapitre 10</div><h1>Chapitre 10 - Les boites (margin, padding, border)</h1>
+<figure class="illus"><img src="images/print/html-css-box-model.jpg" alt="Margin dehors, padding dedans, border entre les deux."><figcaption>Margin dehors, padding dedans, border entre les deux.</figcaption></figure>
+<p>En CSS, presque tout est une boite.</p>
+<p>Un paragraphe = une boite. Une image = une boite. Un bouton = une boite.</p>
+<h2>Le modele en boite</h2>
+<p>De l&#x27;exterieur vers l&#x27;interieur :</p>
+<ol>
+<li>margin (marge exterieure - l&#x27;espace autour)</li>
+<li>border (la bordure)</li>
+<li>padding (marge interieure - l&#x27;air dans la boite)</li>
+<li>le contenu</li>
+</ol>
+<h2>Exemple concret</h2>
+<pre><code class="language-css">.carte {
+  background: white;
+  border: 2px solid #333;
+  padding: 20px;
+  margin: 16px;
+  border-radius: 12px;
+}</code></pre>
+<p><code>border-radius</code> arrondit les coins. Sympa.</p>
+<h2>Margin vs padding (le piege classique)</h2>
+<ul>
+<li>padding = espace <em>dans</em> la boite (entre le bord et le texte)</li>
+<li>margin = espace <em>hors</em> de la boite (entre cette boite et les autres)</li>
+</ul>
+<p>Tu te tromperas. Tout le monde se trompe. Tu corrigeras.</p>
+<h2>Largeur et hauteur</h2>
+<pre><code class="language-css">.boite {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+<p><code>max-width: 100%</code> evite que ca deborde sur telephone. Bon reflexe.</p>
+<h2>box-sizing (important)</h2>
+<pre><code class="language-css">* {
+  box-sizing: border-box;
+}</code></pre>
+<p>Sans ca, padding + border peuvent agrandir la boite de facon bizarre.</p>
+<p>Avec <code>border-box</code>, width inclut padding et border. Plus intuitif.</p>
+<p>Mets ca presque toujours en haut de ton CSS.</p>
+<h2>Display : block ou inline</h2>
+<ul>
+<li><code>block</code> : prend toute la largeur (comme <code>p</code>, <code>div</code>, <code>h1</code>)</li>
+<li><code>inline</code> : reste dans le flux du texte (comme <code>span</code>, <code>a</code> sans style)</li>
+<li><code>inline-block</code> : un mix utile parfois</li>
+</ul>
+<pre><code class="language-css">span.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #eee;
+}</code></pre>
+<h2>A toi</h2>
+<p>Cree une classe <code>.carte</code> avec fond, padding, bordure, coins ronds.</p>
+<p>Applique-la a une <code>div</code> qui contient un titre et un paragraphe.</p></article><article class="chapter" id="chapitre-11"><div class="chapter-num">Chapitre 11</div><h1>Chapitre 11 - Flexbox : ranger les blocs</h1>
+<figure class="illus"><img src="images/print/html-css-flexbox.jpg" alt="Flexbox range les blocs en ligne ou en colonne."><figcaption>Flexbox range les blocs en ligne ou en colonne.</figcaption></figure>
+<p>Flexbox, c&#x27;est l&#x27;outil magique pour aligner des trucs.</p>
+<p>Menu en ligne, colonnes, centrage... Ca sauve des vies.</p>
+<h2>Idee simple</h2>
+<p>Tu as un parent (le conteneur).</p>
+<p>Dedans, des enfants (les items).</p>
+<p>Tu dis au parent : &quot;range tes enfants en flex&quot;.</p>
+<pre><code class="language-html">&lt;div class=&quot;rangée&quot;&gt;
+  &lt;div&gt;A&lt;/div&gt;
+  &lt;div&gt;B&lt;/div&gt;
+  &lt;div&gt;C&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Attends - apostrophe. Mieux :</p>
+<pre><code class="language-html">&lt;div class=&quot;rangee&quot;&gt;
+  &lt;div&gt;A&lt;/div&gt;
+  &lt;div&gt;B&lt;/div&gt;
+  &lt;div&gt;C&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="language-css">.rangee {
+  display: flex;
+  gap: 16px;
+}</code></pre>
+<p><code>gap</code> = l&#x27;espace entre les enfants. Clean.</p>
+<h2>Direction</h2>
+<pre><code class="language-css">.rangee {
+  display: flex;
+  flex-direction: row; /* cote a cote (defaut) */
+}
+
+.colonne {
+  display: flex;
+  flex-direction: column; /* l&#x27;un sous l&#x27;autre */
+}</code></pre>
+<h2>Aligner</h2>
+<pre><code class="language-css">.rangee {
+  display: flex;
+  justify-content: space-between; /* horizontal si row */
+  align-items: center;            /* vertical si row */
+}</code></pre>
+<p><code>justify-content</code> = sur l&#x27;axe principal.</p>
+<p><code>align-items</code> = sur l&#x27;axe croise.</p>
+<p>Tu vas experimenter. C&#x27;est normal. Change une valeur, regarde, recommence.</p>
+<h2>Centrer un truc au milieu (classique)</h2>
+<pre><code class="language-css">.centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}</code></pre>
+<h2>Les enfants peuvent grandir</h2>
+<pre><code class="language-css">.rangee &gt; div {
+  flex: 1; /* partage l&#x27;espace equitablement */
+}</code></pre>
+<h2>A toi</h2>
+<p>Fais une barre avec un logo a gauche et deux liens a droite.</p>
+<p>Indice : <code>display: flex</code> + <code>justify-content: space-between</code> + <code>align-items: center</code>.</p></article><article class="chapter" id="chapitre-12"><div class="chapter-num">Chapitre 12</div><h1>Chapitre 12 - Un site qui marche sur telephone</h1>
+<figure class="illus"><img src="images/print/html-css-responsive.jpg" alt="Meme site, grand ecran ou telephone : ca s&#x27;adapte."><figcaption>Meme site, grand ecran ou telephone : ca s&#x27;adapte.</figcaption></figure>
+<p>La plupart des gens regardent le web sur mobile.</p>
+<p>Si ta page est illisible sur telephone, c&#x27;est rate.</p>
+<h2>La balise magique (viewport)</h2>
+<p>Dans le <code>&lt;head&gt;</code> :</p>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
+<p>Sans ca, le telephone croit que ta page fait la largeur d&#x27;un grand ecran et zoom de facon horrible.</p>
+<p>Mets-la. Toujours.</p>
+<h2>Largeurs souples</h2>
+<pre><code class="language-css">img {
+  max-width: 100%;
+  height: auto;
+}
+
+.conteneur {
+  width: min(100% - 2rem, 700px);
+  margin-inline: auto;
+}</code></pre>
+<p>Traduction : la boite ne depasse pas 700px, et sur petit ecran elle prend la place dispo avec un peu d&#x27;air.</p>
+<h2>Media queries</h2>
+<pre><code class="language-css">.menu {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+  }
+}</code></pre>
+<p>En dessous de 600px de large, le menu passe en colonne.</p>
+<p>Tu adaptes. Tu ne fais pas &quot;un autre site&quot;. Tu ajustes.</p>
+<h2>Tailles de doigt</h2>
+<p>Sur mobile, les boutons trop petits c&#x27;est l&#x27;enfer.</p>
+<p>Vise une zone cliquable confortable (genre 40px+ de haut).</p>
+<h2>Teste vraiment</h2>
+<ul>
+<li>Reduis la fenetre de ton navigateur</li>
+<li>Ou ouvre les outils developpeur (F12) et le mode telephone</li>
+<li>Ou regarde sur ton vrai telephone (en local c&#x27;est plus technique, on verra plus tard)</li>
+</ul>
+<h2>Checklist mobile</h2>
+<ul class='check'>
+<li>meta viewport presente</li>
+<li>images qui ne debordent pas</li>
+<li>texte lisible sans zoomer</li>
+<li>boutons assez grands</li>
+<li>pas de scroll horizontal bizarre</li>
+</ul>
+<h2>A toi</h2>
+<p>Prends ta page et ajoute le viewport.</p>
+<p>Passe le menu en colonne sous 600px.</p>
+<p>Verifie en redimensionnant la fenetre.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1>Chapitre 13 - Mini-projet : ta page perso</h1>
+<figure class="illus"><img src="images/print/html-css-page-perso.jpg" alt="Le but : une petite page a toi, claire et perso."><figcaption>Le but : une petite page a toi, claire et perso.</figcaption></figure>
+<p>On assemble tout. Une page sur toi (ou un perso invente, libre a toi).</p>
+<h2>Objectif</h2>
+<p>Une page unique <code>index.html</code> + <code>style.css</code> avec :</p>
+<ul>
+<li>un en-tete (nom + petit menu)</li>
+<li>une section &quot;A propos&quot;</li>
+<li>une section &quot;Ce que j&#x27;aime&quot; (liste)</li>
+<li>une image</li>
+<li>un petit formulaire de contact</li>
+<li>un pied de page</li>
+</ul>
+<h2>Structure HTML proposee</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Ma page perso&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;entete&quot;&gt;
+    &lt;strong&gt;Ton Prenom&lt;/strong&gt;
+    &lt;nav class=&quot;menu&quot;&gt;
+      &lt;a href=&quot;#apropos&quot;&gt;A propos&lt;/a&gt;
+      &lt;a href=&quot;#likes&quot;&gt;J&#x27;aime&lt;/a&gt;
+      &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main class=&quot;conteneur&quot;&gt;
+    &lt;section id=&quot;apropos&quot;&gt;
+      &lt;h1&gt;Salut, moi c&#x27;est ...&lt;/h1&gt;
+      &lt;p&gt;Deux ou trois phrases sur toi.&lt;/p&gt;
+      &lt;img src=&quot;images/moi.jpg&quot; alt=&quot;Photo de ...&quot;&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;likes&quot;&gt;
+      &lt;h2&gt;Ce que j&#x27;aime&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+        &lt;li&gt;...&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot;&gt;
+      &lt;h2&gt;Me contacter&lt;/h2&gt;
+      &lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+        &lt;label for=&quot;nom&quot;&gt;Nom&lt;/label&gt;
+        &lt;input id=&quot;nom&quot; name=&quot;nom&quot; type=&quot;text&quot; required&gt;
+
+        &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input id=&quot;email&quot; name=&quot;email&quot; type=&quot;email&quot; required&gt;
+
+        &lt;label for=&quot;msg&quot;&gt;Message&lt;/label&gt;
+        &lt;textarea id=&quot;msg&quot; name=&quot;msg&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;
+
+        &lt;button type=&quot;submit&quot;&gt;Envoyer&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer class=&quot;pied&quot;&gt;
+    &lt;p&gt;Fait avec HTML et CSS. Et un peu de cafe.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>CSS de demarrage (a personnaliser)</h2>
+<pre><code class="language-css">* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #222;
+  background: #f4f1ec;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #1f6f5b;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu a { color: white; }
+
+.conteneur {
+  width: min(100% - 2rem, 720px);
+  margin: 2rem auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input, textarea, button {
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+}
+
+button {
+  background: #1f6f5b;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pied {
+  text-align: center;
+  padding: 2rem;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .entete { flex-direction: column; gap: 0.75rem; }
+  .menu { flex-direction: column; align-items: center; }
+}</code></pre>
+<h2>Criteres de reussite</h2>
+<ul>
+<li>Ca s&#x27;ouvre sans erreur visible</li>
+<li>Le menu saute aux sections (<code>#apropos</code> etc.)</li>
+<li>Lisible sur petite largeur</li>
+<li>Tes couleurs a toi (change le vert si tu veux)</li>
+</ul>
+<h2>Bonus</h2>
+<ul>
+<li>Ajoute une deuxieme page <code>projets.html</code></li>
+<li>Relie-les avec des liens</li>
+<li>Mets 3 &quot;projets&quot; inventes dans une liste</li>
+</ul>
+<p>Quand c&#x27;est fait : tu as une vraie mini vitrine.</p>
+<p>Pas parfaite. Mais a toi. C&#x27;est le plus important.</p></article><article class="chapter" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1>Chapitre 14 - Ce qu&#x27;il faut retenir (+ la suite)</h1>
+<p>Presque au bout. Encore un quiz juste apres, puis on cloture.</p>
+<h2>En une minute</h2>
+<ul>
+<li>HTML = structure (les pieces de la maison)</li>
+<li>CSS = style (peinture et deco)</li>
+<li>Balises = etiquettes (<code>h1</code>, <code>p</code>, <code>a</code>, <code>img</code>...)</li>
+<li>CSS = selecteur + proprietes</li>
+<li>Boites = margin, border, padding, contenu</li>
+<li>Flexbox = ranger les blocs</li>
+<li>Viewport + media queries = ok sur telephone</li>
+</ul>
+<h2>Petites habitudes qui changent tout</h2>
+<ol>
+<li>Indente ton code (lisibilite)</li>
+<li>Ferme tes balises</li>
+<li>Mets toujours un <code>alt</code> sur les images</li>
+<li>Relie un vrai fichier <code>.css</code></li>
+<li>Teste souvent (modifie, sauvegarde, F5)</li>
+<li>Une erreur ? Regarde la derniere chose que tu as changee</li>
+</ol>
+<h2>Erreurs normales</h2>
+<ul>
+<li>Oublier le <code>&lt;link&gt;</code> vers le CSS</li>
+<li>Mauvais chemin d&#x27;image (<code>src</code>)</li>
+<li>Typo dans un nom de classe</li>
+<li>Oublier le viewport</li>
+</ul>
+<p>Ca arrive a tout le monde. Le debug, c&#x27;est juste de la chasse au detail.</p>
+<h2>La suite (quand tu seras chaud)</h2>
+<ul>
+<li>Un peu plus de CSS (grid, animations legeres)</li>
+<li>JavaScript pour rendre la page interactive</li>
+<li>Accessibilite (clavier, contrastes, lecteurs d&#x27;ecran)</li>
+<li>Mettre ton site en ligne</li>
+</ul>
+<p>Mais d&#x27;abord : le quiz. Puis tu pourras vraiment dire &quot;c&#x27;est fait&quot;.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Quiz</div><h1>Quiz final - Teste-toi !</h1>
+<p>Avant de dire &quot;j&#x27;ai fini&quot;, on joue un peu.</p>
+<p>Lis la question. Cherche la reponse dans ta tete.</p>
+<p>Les corriges sont juste apres. Pas de triche... enfin, si tu veux. C&#x27;est ton livre.</p>
+<h2>Questions</h2>
+<p><strong>Q1.</strong> HTML, ca sert surtout a quoi ?</p>
+<ul>
+<li>A) Mettre des couleurs</li>
+<li>B) Structurer le contenu de la page</li>
+<li>C) Remplacer le navigateur</li>
+</ul>
+<p><strong>Q2.</strong> CSS, ca sert surtout a quoi ?</p>
+<ul>
+<li>A) Donner le style (couleurs, tailles, rangement...)</li>
+<li>B) Creer la base de donnees</li>
+<li>C) Envoyer des emails</li>
+</ul>
+<p><strong>Q3.</strong> Ou places-tu le vrai contenu visible de la page ?</p>
+<ul>
+<li>A) Dans <code>&lt;head&gt;</code></li>
+<li>B) Dans <code>&lt;body&gt;</code></li>
+<li>C) Dans <code>&lt;!DOCTYPE html&gt;</code></li>
+</ul>
+<p><strong>Q4.</strong> Quelle balise donne le titre principal (le plus important) ?</p>
+<ul>
+<li>A) <code>&lt;p&gt;</code></li>
+<li>B) <code>&lt;h1&gt;</code></li>
+<li>C) <code>&lt;br&gt;</code></li>
+</ul>
+<p><strong>Q5.</strong> Pour un lien, quel attribut donne l&#x27;adresse ?</p>
+<ul>
+<li>A) <code>src</code></li>
+<li>B) <code>alt</code></li>
+<li>C) <code>href</code></li>
+</ul>
+<p><strong>Q6.</strong> Sur une image, pourquoi mettre <code>alt</code> ?</p>
+<ul>
+<li>A) Pour faire joli</li>
+<li>B) Pour decrire l&#x27;image si elle ne s&#x27;affiche pas (et pour l&#x27;accessibilite)</li>
+<li>C) Pour agrandir l&#x27;image</li>
+</ul>
+<p><strong>Q7.</strong> Dans une feuille CSS, c&#x27;est quoi un selecteur ?</p>
+<ul>
+<li>A) Le nom du fichier</li>
+<li>B) La partie qui dit &quot;sur quoi&quot; s&#x27;applique le style</li>
+<li>C) Un bouton du navigateur</li>
+</ul>
+<p><strong>Q8.</strong> Margin et padding, c&#x27;est quoi la difference simple ?</p>
+<ul>
+<li>A) Margin = espace dehors, padding = espace dedans</li>
+<li>B) C&#x27;est exactement pareil</li>
+<li>C) Padding = couleur, margin = police</li>
+</ul>
+<p><strong>Q9.</strong> Flexbox, ca sert a quoi ?</p>
+<ul>
+<li>A) Compresser les images</li>
+<li>B) Ranger des blocs facilement (ligne ou colonne)</li>
+<li>C) Creer un mot de passe</li>
+</ul>
+<p><strong>Q10.</strong> Quelle balise meta aide le site sur telephone ?</p>
+<ul>
+<li>A) <code>charset</code></li>
+<li>B) <code>viewport</code></li>
+<li>C) <code>stylesheet</code></li>
+</ul>
+<p><strong>Q11.</strong> Ou mets-tu en general le <code>&lt;link rel=&quot;stylesheet&quot; ...&gt;</code> ?</p>
+<ul>
+<li>A) Dans le <code>&lt;head&gt;</code></li>
+<li>B) Apres <code>&lt;/html&gt;</code></li>
+<li>C) Dans une image</li>
+</ul>
+<p><strong>Q12.</strong> Une liste a puces, c&#x27;est surtout :</p>
+<ul>
+<li>A) <code>&lt;ol&gt;</code> + <code>&lt;li&gt;</code></li>
+<li>B) <code>&lt;ul&gt;</code> + <code>&lt;li&gt;</code></li>
+<li>C) <code>&lt;table&gt;</code> + <code>&lt;td&gt;</code></li>
+</ul>
+<h2>Reponses</h2>
+<ol>
+<li><strong>B</strong> - HTML structure.</li>
+<li><strong>A</strong> - CSS style.</li>
+<li><strong>B</strong> - le <code>&lt;body&gt;</code>.</li>
+<li><strong>B</strong> - <code>&lt;h1&gt;</code>.</li>
+<li><strong>C</strong> - <code>href</code>.</li>
+<li><strong>B</strong> - description / accessibilite.</li>
+<li><strong>B</strong> - le &quot;sur quoi&quot;.</li>
+<li><strong>A</strong> - dehors / dedans.</li>
+<li><strong>B</strong> - ranger les blocs.</li>
+<li><strong>B</strong> - viewport.</li>
+<li><strong>A</strong> - dans le <code>&lt;head&gt;</code>.</li>
+<li><strong>B</strong> - <code>&lt;ul&gt;</code> + <code>&lt;li&gt;</code>.</li>
+</ol>
+<h2>Score rapide</h2>
+<ul>
+<li>10 a 12 : nickel. Tu as les bases.</li>
+<li>7 a 9 : bien. Relis juste 2-3 chapitres faibles.</li>
+<li>moins de 7 : normal. Reprends les chapitres 2, 8 et 10. Puis reviens.</li>
+</ul>
+<p>L&#x27;important c&#x27;est pas d&#x27;etre parfait du premier coup.</p>
+<p>C&#x27;est de comprendre un peu plus a chaque essai.</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Final</div><h1>Bravo.</h1>
+<figure class="illus illus-wide"><img src="images/print/html-css-felicitations.jpg" alt="Bravo. Tu es alle au bout. C&#x27;est deja une vraie victoire."><figcaption>Bravo. Tu es alle au bout. C&#x27;est deja une vraie victoire.</figcaption></figure>
+<p>Serieusement : bravo.</p>
+<p>Tu es alle au bout d&#x27;un vrai premier livre sur le web.</p>
+<p>Pas juste &quot;j&#x27;ai regarde une video&quot;. Tu as lu. Tu as essaye. Tu as (surement) plante. Puis tu as continue.</p>
+<p>C&#x27;est exactement comme ca que ca marche.</p>
+<h2>Ce que tu sais faire maintenant</h2>
+<ul>
+<li>Creer une page HTML propre</li>
+<li>Ajouter texte, liens, images, listes, formulaires</li>
+<li>Habiller avec du CSS</li>
+<li>Ranger avec Flexbox</li>
+<li>Penser un minimum au telephone</li>
+</ul>
+<p>C&#x27;est deja enorme pour un debut.</p>
+<h2>Petite mission (si tu veux)</h2>
+<p>Reprends ta page perso du chapitre 13.</p>
+<p>Ameliore juste 3 trucs :</p>
+<ol>
+<li>une meilleure couleur</li>
+<li>une image avec un vrai <code>alt</code></li>
+<li>un menu qui marche bien sur petite largeur</li>
+</ol>
+<p>Montre-la a quelqu&#x27;un.</p>
+<p>Meme a ton chat. Le chat jugera pas.</p>
+<h2>La suite, quand tu seras chaud</h2>
+<p>JavaScript. Pour rendre la page un peu vivante.</p>
+<p>Mais pas ce soir si tu es fatigue. Repose-toi. Tu l&#x27;as merite.</p>
+<p>Encore bravo.</p>
+<p>Et a bientot pour la suite.</p></article>
+
+    <p class="footer-note">Tu as les briques. Maintenant, construis.</p>
+  </div>
+</body>
+</html>
