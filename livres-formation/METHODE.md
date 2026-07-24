@@ -131,6 +131,7 @@ python livres-formation\informatique\<livre>\build_livre.py
 | Livre | PDF | Notes |
 |-------|-----|--------|
 | HTML/CSS | `pdf/html-css-les-bases.pdf` | ~51 pages | vert |
+| HTML/CSS - La suite | `pdf/html-css-la-suite.pdf` | ~40+ pages | bleu-vert + cyan (`theme="htmlcss2"`) ; Grid, variables, a11y |
 | JavaScript | `pdf/javascript-les-bases.pdf` | ~51 pages | vert |
 | JavaScript - La suite | `pdf/javascript-la-suite.pdf` | ~40+ pages | indigo + lime (`theme="javascript2"`) ; fetch, async, modules |
 | Python | `pdf/python-les-bases.pdf` | ~55 pages | bleu encre + abricot (`theme="python"`) ; exceptions + classes |
@@ -143,7 +144,7 @@ python livres-formation\informatique\<livre>\build_livre.py
 
 ## 9. Suites possibles
 
-- HTML/CSS suite, Git equipe
+- Git equipe
 - Commerce / marketing / communication avances
 - Page site pour telecharger les PDF  
 

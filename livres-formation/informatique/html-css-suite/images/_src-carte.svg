@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef6f7"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c4a5e" font-weight="700">Apres les bases : la carte du livre</text>
+
+  <rect x="20" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <circle cx="92" cy="135" r="26" fill="#0c4a5e"/>
+  <text x="92" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">1</text>
+  <text x="92" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">Semantique</text>
+  <text x="92" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">bonnes</text>
+  <text x="92" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">balises</text>
+
+  <rect x="180" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <circle cx="252" cy="135" r="26" fill="#0c4a5e"/>
+  <text x="252" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">2</text>
+  <text x="252" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">Cascade</text>
+  <text x="252" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">qui gagne</text>
+  <text x="252" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">quand</text>
+
+  <rect x="340" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <circle cx="412" cy="135" r="26" fill="#0c4a5e"/>
+  <text x="412" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">3</text>
+  <text x="412" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">Variables</text>
+  <text x="412" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">couleurs</text>
+  <text x="412" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">coherentes</text>
+
+  <rect x="500" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <circle cx="572" cy="135" r="26" fill="#0c4a5e"/>
+  <text x="572" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">4</text>
+  <text x="572" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">Grille</text>
+  <text x="572" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">lignes</text>
+  <text x="572" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">colonnes</text>
+
+  <rect x="660" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <circle cx="732" cy="135" r="26" fill="#0c4a5e"/>
+  <text x="732" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">5</text>
+  <text x="732" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">Flex / Grid</text>
+  <text x="732" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">quand</text>
+  <text x="732" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">choisir</text>
+
+  <rect x="820" y="85" width="160" height="230" rx="14" fill="#2dd4bf" stroke="#0c4a5e" stroke-width="3"/>
+  <circle cx="900" cy="135" r="26" fill="#0c4a5e"/>
+  <text x="900" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2dd4bf" font-weight="700">6</text>
+  <text x="900" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">Projet</text>
+  <text x="900" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c4a5e">assembler</text>
+  <text x="900" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c4a5e">livrer</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#15657a"/>
+    </marker>
+  </defs>
+  <line x1="165" y1="200" x2="178" y2="200" stroke="#15657a" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="325" y1="200" x2="338" y2="200" stroke="#15657a" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="485" y1="200" x2="498" y2="200" stroke="#15657a" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="645" y1="200" x2="658" y2="200" stroke="#15657a" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="805" y1="200" x2="818" y2="200" stroke="#15657a" stroke-width="3" marker-end="url(#arr)"/>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#123038">Six etapes pour poser des pages plus propres et solides.</text>
+</svg>

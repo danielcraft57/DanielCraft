@@ -1,0 +1,1 @@
+Schema pedagogique francais : variables CSS, une source Racine (couleur principale, espace) reutilisee sur Bouton, Lien, Titre. Couleurs bleu-vert (#0c4a5e) et cyan menthe (#2dd4bf) sur papier (#eef6f7), encre (#123038), soft (#15657a). Texte visible uniquement en francais. Style plat, lisible en livre imprime (~1000x420).

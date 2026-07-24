@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef6f7"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c4a5e" font-weight="700">Mini-projet : une page solide, belle et utilisable</text>
+
+  <rect x="30" y="90" width="170" height="230" rx="14" fill="#0c4a5e"/>
+  <text x="115" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2dd4bf" font-weight="700">1. Structure</text>
+  <text x="115" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#eef6f7">semantique</text>
+  <text x="115" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#eef6f7">sections</text>
+  <text x="115" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2dd4bf">poser</text>
+
+  <defs>
+    <marker id="apr" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#0c4a5e"/>
+    </marker>
+  </defs>
+  <line x1="215" y1="200" x2="255" y2="200" stroke="#0c4a5e" stroke-width="4" marker-end="url(#apr)"/>
+
+  <rect x="270" y="90" width="170" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="355" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0c4a5e" font-weight="700">2. Style</text>
+  <text x="355" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">variables</text>
+  <text x="355" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">grille</text>
+  <text x="355" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">cascade</text>
+  <text x="355" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">habiller</text>
+
+  <line x1="455" y1="200" x2="495" y2="200" stroke="#0c4a5e" stroke-width="4" marker-end="url(#apr)"/>
+
+  <rect x="510" y="90" width="170" height="230" rx="14" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="595" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0c4a5e" font-weight="700">3. Acces</text>
+  <text x="595" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">contraste</text>
+  <text x="595" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">clavier</text>
+  <text x="595" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">verifier</text>
+
+  <line x1="695" y1="200" x2="735" y2="200" stroke="#0c4a5e" stroke-width="4" marker-end="url(#apr)"/>
+
+  <rect x="750" y="90" width="220" height="230" rx="14" fill="#2dd4bf" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="860" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#123038" font-weight="700">4. Page</text>
+  <rect x="780" y="165" width="160" height="36" rx="8" fill="#ffffff"/>
+  <text x="860" y="189" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c4a5e">lisible</text>
+  <rect x="780" y="215" width="160" height="36" rx="8" fill="#0c4a5e"/>
+  <text x="860" y="239" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2dd4bf">adaptee</text>
+  <text x="860" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">livrer</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#123038">Structure, style, acces : le cycle d'une vraie page.</text>
+</svg>

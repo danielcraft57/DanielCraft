@@ -1,0 +1,1 @@
+Schema pedagogique francais : une grille CSS avec lignes et colonnes, zones En-tete, Contenu, Laterale, Galerie. Couleurs bleu-vert (#0c4a5e) et cyan menthe (#2dd4bf) sur papier (#eef6f7), encre (#123038), soft (#15657a). Texte visible uniquement en francais. Style plat, lisible en livre imprime (~1000x420).

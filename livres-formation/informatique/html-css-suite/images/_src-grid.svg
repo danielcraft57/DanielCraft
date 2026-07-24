@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef6f7"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c4a5e" font-weight="700">Grille : lignes et colonnes pour poser la page</text>
+
+  <rect x="60" y="70" width="880" height="280" rx="16" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="90" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#15657a" font-weight="700">CONTENEUR</text>
+
+  <text x="220" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#15657a">colonne 1</text>
+  <text x="500" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#15657a">colonne 2</text>
+  <text x="780" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#15657a">colonne 3</text>
+
+  <rect x="90" y="140" width="240" height="70" rx="10" fill="#0c4a5e"/>
+  <text x="210" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2dd4bf" font-weight="700">En-tete</text>
+
+  <rect x="350" y="140" width="300" height="70" rx="10" fill="#2dd4bf"/>
+  <text x="500" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#123038" font-weight="700">Zone centrale</text>
+
+  <rect x="670" y="140" width="240" height="70" rx="10" fill="#15657a"/>
+  <text x="790" y="182" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#eef6f7" font-weight="700">Laterale</text>
+
+  <rect x="90" y="230" width="400" height="90" rx="10" fill="#2dd4bf"/>
+  <text x="290" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#123038" font-weight="700">Contenu</text>
+  <text x="290" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0c4a5e">ligne 2</text>
+
+  <rect x="510" y="230" width="400" height="90" rx="10" fill="#0c4a5e"/>
+  <text x="710" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2dd4bf" font-weight="700">Galerie</text>
+  <text x="710" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#eef6f7">ligne 2</text>
+
+  <text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#123038">Tu places chaque zone dans la grille, sans bricolage.</text>
+</svg>
