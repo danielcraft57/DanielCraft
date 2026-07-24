@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef3f0"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14241e" font-weight="700">Mini-projet : une vente de bout en bout</text>
+
+  <defs>
+    <marker id="aj" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1b3a2f"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="90" width="170" height="230" rx="14" fill="#1b3a2f"/>
+  <text x="115" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4896a" font-weight="700">1. Pipeline</text>
+  <text x="115" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">3 opportunites</text>
+  <text x="115" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">etape par etape</text>
+  <text x="115" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4896a">cadrer</text>
+
+  <line x1="215" y1="200" x2="255" y2="200" stroke="#1b3a2f" stroke-width="4" marker-end="url(#aj)"/>
+
+  <rect x="270" y="90" width="170" height="230" rx="14" fill="#2d5a45"/>
+  <text x="355" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4896a" font-weight="700">2. Script</text>
+  <text x="355" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffff">decouverte</text>
+  <text x="355" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffff">5 questions</text>
+  <text x="355" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4896a">preparer</text>
+
+  <line x1="455" y1="200" x2="495" y2="200" stroke="#1b3a2f" stroke-width="4" marker-end="url(#aj)"/>
+
+  <rect x="510" y="90" width="170" height="230" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="595" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="700">3. Objections</text>
+  <text x="595" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14241e">2 freins durs</text>
+  <text x="595" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14241e">reponses nettoyees</text>
+  <text x="595" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4896a">traiter</text>
+
+  <line x1="695" y1="200" x2="735" y2="200" stroke="#1b3a2f" stroke-width="4" marker-end="url(#aj)"/>
+
+  <rect x="750" y="90" width="220" height="230" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="860" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14241e" font-weight="700">4. Closing</text>
+  <rect x="780" y="165" width="160" height="36" rx="8" fill="#ffffff"/>
+  <text x="860" y="189" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14241e">demande nette</text>
+  <rect x="780" y="215" width="160" height="36" rx="8" fill="#1b3a2f"/>
+  <text x="860" y="239" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4896a">suite ecrite</text>
+  <text x="860" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14241e">conclure</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14241e">Pipeline, script, objections, closing : le cycle complet.</text>
+</svg>

@@ -1,0 +1,1 @@
+Schema pedagogique francais : pipeline de vente (contact, qualifier, offre, negocier, conclure). Couleurs foret (#1b3a2f) et cuivre (#d4896a), fond papier (#eef3f0). Etapes alignees en ligne avec fleches. Texte visible en francais uniquement.

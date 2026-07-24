@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef3f0"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14241e" font-weight="700">Closing : demander la decision clairement</text>
+
+  <defs>
+    <marker id="ac" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1b3a2f"/>
+    </marker>
+  </defs>
+
+  <rect x="40" y="100" width="200" height="200" rx="16" fill="#1b3a2f"/>
+  <text x="140" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4896a" font-weight="700">1. Signaux</text>
+  <text x="140" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">pret ?</text>
+  <text x="140" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#eef3f0">questions, details</text>
+
+  <line x1="255" y1="200" x2="295" y2="200" stroke="#1b3a2f" stroke-width="4" marker-end="url(#ac)"/>
+
+  <rect x="310" y="100" width="200" height="200" rx="16" fill="#2d5a45"/>
+  <text x="410" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4896a" font-weight="700">2. Demande</text>
+  <text x="410" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">claire</text>
+  <text x="410" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#eef3f0">"On avance ?"</text>
+
+  <line x1="525" y1="200" x2="565" y2="200" stroke="#1b3a2f" stroke-width="4" marker-end="url(#ac)"/>
+
+  <rect x="580" y="100" width="180" height="200" rx="16" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="670" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="700">3. Confirmer</text>
+  <text x="670" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14241e" font-weight="700">oui / non</text>
+  <text x="670" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45">sans flou</text>
+
+  <line x1="775" y1="200" x2="815" y2="200" stroke="#1b3a2f" stroke-width="4" marker-end="url(#ac)"/>
+
+  <rect x="825" y="100" width="140" height="200" rx="16" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="895" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14241e" font-weight="700">4. Suite</text>
+  <text x="895" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14241e" font-weight="700">acte</text>
+  <text x="895" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b3a2f">devis, RDV</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14241e">Le closing n'est pas une manipulation : c'est une question nette.</text>
+</svg>

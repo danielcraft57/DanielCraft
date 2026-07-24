@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef3f0"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14241e" font-weight="700">Decouverte : comprendre avant de proposer</text>
+
+  <rect x="40" y="90" width="210" height="200" rx="14" fill="#1b3a2f"/>
+  <text x="145" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4896a" font-weight="700">1. Ouvrir</text>
+  <text x="145" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">questions</text>
+  <text x="145" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#eef3f0">larges, utiles</text>
+
+  <rect x="275" y="90" width="210" height="200" rx="14" fill="#2d5a45"/>
+  <text x="380" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4896a" font-weight="700">2. Ecouter</text>
+  <text x="380" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">silence utile</text>
+  <text x="380" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#eef3f0">pas interrompre</text>
+
+  <rect x="510" y="90" width="210" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="615" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="700">3. Reformuler</text>
+  <text x="615" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14241e" font-weight="700">verifier</text>
+  <text x="615" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45">"Si je resume..."</text>
+
+  <rect x="745" y="90" width="215" height="200" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="852" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14241e" font-weight="700">4. Besoin</text>
+  <text x="852" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14241e" font-weight="700">priorite claire</text>
+  <text x="852" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b3a2f">avant l'offre</text>
+
+  <rect x="120" y="320" width="760" height="55" rx="12" fill="#ffffff" stroke="#2d5a45" stroke-width="2"/>
+  <text x="500" y="355" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1b3a2f">Une bonne decouverte evite une offre a cote de la plaque.</text>
+</svg>
