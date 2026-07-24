@@ -72,3 +72,20 @@ Ecris une mini page "Ma journee" :
 - h1 avec le titre
 - 3 h2 (matin, apres-midi, soir)
 - un petit paragraphe sous chaque h2
+
+
+## En vrai, sur le terrain
+
+Prends 10 minutes. Refais l'exemple du chapitre sans regarder.
+Si tu bloques, relis juste la partie qui coinçe. Puis repars.
+
+Le but c'est pas de memoriser. C'est de reconnaitre le motif la prochaine fois.
+
+## Mini defi
+
+Ecris 3 lignes de notes a toi-meme :
+1. ce que tu as compris
+2. ce qui reste flou
+3. un truc a retester demain
+
+Garde ces notes. Elles valent plus qu'un long cours jamais relu.

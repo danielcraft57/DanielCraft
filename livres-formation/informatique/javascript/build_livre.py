@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Assemble le livre HTML/CSS et genere un PDF telechargeable."""
+"""Assemble le livre JavaScript et genere un PDF telechargeable."""
 
 from __future__ import annotations
 
@@ -17,67 +17,56 @@ BOOK_CSS = get_book_css()
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
 OUT_HTML = ROOT / "livre.html"
-OUT_PDF = ROOT.parent.parent / "pdf" / "html-css-les-bases.pdf"
+OUT_PDF = ROOT.parent.parent / "pdf" / "javascript-les-bases.pdf"
 
 CHAPTER_FILES = [
     "01-cest-quoi.md",
-    "02-premier-fichier.md",
-    "03-balises.md",
-    "04-texte.md",
-    "05-liens-images.md",
-    "06-listes-tableaux.md",
-    "07-formulaires.md",
-    "08-css-arrive.md",
-    "09-couleurs-polices.md",
-    "10-boites.md",
-    "11-flexbox.md",
-    "12-responsive.md",
+    "02-ou-ecrire.md",
+    "03-variables.md",
+    "04-types.md",
+    "05-conditions.md",
+    "06-boucles.md",
+    "07-fonctions.md",
+    "08-tableaux.md",
+    "09-objets.md",
+    "10-dom-selection.md",
+    "11-dom-modifier.md",
+    "12-evenements.md",
     "13-mini-projet.md",
     "14-retenir.md",
-    "17-atelier-debug.md",
-    "18-atelier-produit.md",
-    "19-accessibilite.md",
+    "17-atelier-todo.md",
+    "18-localstorage.md",
+    "19-erreurs.md",
     "20-quiz.md",
     "21-bravo.md",
 ]
 
-# Images a glisser juste apres le titre de chapitre (fichier dans images/)
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
-        ("html-css-maison.png", "A gauche la structure. A droite la deco. HTML puis CSS."),
-    ],
-    2: [
-        ("html-css-premier-fichier.png", "Ton fichier s'ouvre dans le navigateur. Magie."),
-        ("html-css-structure.png", "La page, c'est des boites rangees les unes dans les autres."),
+        ("js-trio.png", "HTML structure. CSS habille. JS fait reagir."),
     ],
     3: [
-        ("html-css-balises.png", "Une balise, c'est une etiquette posee sur un contenu."),
+        ("js-variables.png", "const = fixe. let = modifiable. Des boites avec un nom."),
     ],
     10: [
-        ("html-css-box-model.png", "Margin dehors, padding dedans, border entre les deux."),
-    ],
-    11: [
-        ("html-css-flexbox.png", "Flexbox range les blocs en ligne ou en colonne."),
+        ("js-dom.png", "On trouve un element, puis on le modifie."),
     ],
     12: [
-        ("html-css-responsive.png", "Meme site, grand ecran ou telephone : ca s'adapte."),
-    ],
-    13: [
-        ("html-css-page-perso.png", "Le but : une petite page a toi, claire et perso."),
+        ("js-evenements.png", "Clic -> JS ecoute -> la page change."),
     ],
     19: [
-        ("html-css-felicitations.png", "Bravo. Tu es alle au bout. C'est deja une vraie victoire."),
+        ("js-felicitations.png", "Bravo. Tu as appris a rendre une page vivante."),
     ],
 }
 
-COVER_IMAGE = "html-css-couverture.png"
+COVER_IMAGE = "js-couverture.png"
 
-BOOK_TITLE = "HTML et CSS - Les bases"
-BOOK_SHORT = "HTML et CSS"
-BOOK_LEAD = "Les bases pour construire une page web. Explique simplement, sans blabla inutile."
+BOOK_TITLE = "JavaScript - Les bases"
+BOOK_SHORT = "JavaScript"
+BOOK_LEAD = "Les bases pour rendre une page web interactive. Explique simplement, sans blabla inutile."
 BOOK_AUTHOR = "DanielCraft"
-BOOK_SUBJECT = "Formation debutant HTML et CSS"
-BOOK_KEYWORDS = "HTML, CSS, formation, debutant, web"
+BOOK_SUBJECT = "Formation debutant JavaScript"
+BOOK_KEYWORDS = "JavaScript, JS, DOM, formation, debutant, web"
 IMAGES_DIR = ROOT / "images"
 PRINT_DIR = IMAGES_DIR / "print"
 
@@ -282,7 +271,7 @@ def html_to_pdf(html_path: Path, pdf_path: Path) -> bool:
                     'justify-content:space-between;align-items:center;">'
                     f"<span>{BOOK_AUTHOR}</span>"
                     '<span><span class="pageNumber"></span> / <span class="totalPages"></span></span>'
-                    "<span>HTML &amp; CSS</span>"
+                    f"<span>{html.escape(BOOK_SHORT)}</span>"
                     "</div>"
                 ),
                 margin={"top": "14mm", "bottom": "18mm", "left": "14mm", "right": "14mm"},
@@ -490,7 +479,7 @@ def main() -> int:
     print(f"HTML: {OUT_HTML}")
 
     pdf_name = args.pdf_name or (
-        "html-css-les-bases-eco.pdf" if args.eco else "html-css-les-bases.pdf"
+        "javascript-les-bases-eco.pdf" if args.eco else "javascript-les-bases.pdf"
     )
     pdf_path = OUT_PDF.parent / pdf_name
     pdf_path.parent.mkdir(parents=True, exist_ok=True)

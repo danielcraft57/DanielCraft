@@ -85,3 +85,20 @@ Plus tard, tu gereras ca mieux avec le CSS. Pour l'instant, c'est ok.
 3. Ecris un vrai `alt`.
 
 Si le lien marche et l'image s'affiche, nickel.
+
+
+## En vrai, sur le terrain
+
+Prends 10 minutes. Refais l'exemple du chapitre sans regarder.
+Si tu bloques, relis juste la partie qui coinçe. Puis repars.
+
+Le but c'est pas de memoriser. C'est de reconnaitre le motif la prochaine fois.
+
+## Mini defi
+
+Ecris 3 lignes de notes a toi-meme :
+1. ce que tu as compris
+2. ce qui reste flou
+3. un truc a retester demain
+
+Garde ces notes. Elles valent plus qu'un long cours jamais relu.

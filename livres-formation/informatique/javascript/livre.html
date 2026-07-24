@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="DanielCraft">
+  <meta name="description" content="Formation debutant JavaScript">
+  <title>JavaScript - Les bases</title>
+  <style>
+:root {
+  --ink: #14221c;
+  --muted: #3d5248;
+  --paper: #f3f6f4;
+  --paper-deep: #e5eee9;
+  --band: #1a4d3e;
+  --band-soft: #266b56;
+  --accent: #c9a227;
+  --code-bg: #133028;
+  --code-fg: #e7f2ec;
+  --card: #ffffff;
+  --rule: #c5d4cc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+.page {
+  width: min(100% - 2rem, 780px);
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+}
+.cover {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin: 0 0 2rem;
+  border-radius: 14px;
+  color: #f4faf7;
+  background: #0f2f26;
+  overflow: hidden;
+}
+.cover-art {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.cover-copy {
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: #0f2f26;
+}
+.cover-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-family: Segoe UI, Arial, sans-serif;
+  opacity: 0.85;
+}
+.cover h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0.45rem 0 0.6rem;
+  max-width: 12ch;
+  color: #f4faf7;
+}
+.cover .lead {
+  font-size: 1.05rem;
+  max-width: 38ch;
+  margin: 0;
+  opacity: 0.95;
+}
+.cover .meta {
+  margin: 1rem 0 0;
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+.illus {
+  margin: 0.9rem 0 1rem;
+  padding: 0;
+  text-align: center;
+}
+.illus img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 520px);
+  max-height: 220px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+  object-fit: contain;
+}
+.illus.illus-wide img {
+  max-width: min(100%, 640px);
+  max-height: 260px;
+}
+.illus figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-family: Segoe UI, Arial, sans-serif;
+  line-height: 1.35;
+  text-align: left;
+}
+body.eco {
+  --paper: #ffffff;
+  --paper-deep: #f3f3f3;
+  --card: #ffffff;
+  --code-bg: #222;
+}
+body.eco pre { border-left-color: #666; }
+.toc {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+}
+.toc h2 { margin-top: 0; font-size: 1.25rem; }
+.toc ol { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+.toc li { margin: 0.2rem 0; }
+.toc a {
+  color: var(--band);
+  text-decoration: none;
+}
+.chapter {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.2rem 1.35rem 1.4rem;
+  margin: 0 0 1.35rem;
+}
+.chapter-num {
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--band-soft);
+  margin: 0 0 0.15rem;
+}
+h1, h2, h3 { line-height: 1.25; color: var(--band); }
+.chapter > h1 {
+  font-size: 1.45rem;
+  margin: 0.15rem 0 0.75rem;
+  color: var(--ink);
+}
+h2 { font-size: 1.12rem; margin: 1.15rem 0 0.45rem; }
+h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; color: var(--muted); }
+p { margin: 0.55rem 0; }
+ul, ol { margin: 0.45rem 0 0.7rem; padding-left: 1.25rem; }
+li { margin: 0.18rem 0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: var(--paper-deep);
+  padding: 0.08em 0.3em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid var(--accent);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+th, td {
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+th { background: var(--paper-deep); }
+.qa strong { color: var(--band); }
+.footer-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 1.5rem 1rem 0.5rem;
+}
+@media print {
+  body {
+    background: white !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: auto; max-width: none; margin: 0; padding: 0; }
+  .cover {
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 0 8mm;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .cover-art {
+    min-height: 0 !important;
+    max-height: 95mm !important;
+    width: 100%;
+    object-fit: cover;
+  }
+  .toc, .chapter {
+    background: transparent !important;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 7mm;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .toc {
+    break-after: page;
+    page-break-after: always;
+  }
+  .chapter {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .chapter.chapter-break {
+    break-before: page;
+    page-break-before: always;
+  }
+  .chapter-num, h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .chapter > h1 {
+    font-size: 15pt;
+    margin: 0 0 3mm;
+  }
+  h2 { font-size: 12pt; margin: 4.5mm 0 2mm; }
+  h3 { font-size: 11pt; margin: 3.5mm 0 1.5mm; }
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+  .illus {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 3mm auto 4mm;
+  }
+  .illus img {
+    max-width: 105mm !important;
+    max-height: 55mm !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .illus.illus-wide img {
+    max-width: 130mm !important;
+    max-height: 65mm !important;
+  }
+  pre {
+    break-inside: auto;
+    page-break-inside: auto;
+    white-space: pre-wrap;
+    font-size: 8.5pt;
+    border-radius: 0;
+  }
+  table { break-inside: auto; }
+  /* Ne pas tuer les liens du sommaire a l'impression */
+  a { color: inherit; text-decoration: none; }
+  .toc a {
+    color: #1a4d3e !important;
+    text-decoration: underline !important;
+  }
+  .footer-note { break-before: avoid; }
+}
+@page {
+  size: A4;
+  margin: 14mm 14mm 18mm;
+}
+
+.toc-sub {
+  list-style: disc;
+  margin: 0.15rem 0 0.55rem 0.2rem;
+  padding-left: 1.1rem;
+}
+.toc-sub li { margin: 0.12rem 0; font-size: 0.92em; }
+.toc a { color: var(--band); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.code-block { margin: 0.65rem 0 0.9rem; }
+.keep-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+@media print {
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+  .toc a {
+    color: #1a4d3e !important;
+    text-decoration: none !important;
+  }
+  .chapter {
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    margin: 0 0 6mm !important;
+  }
+  .toc {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+  h1, h2, h3, .chapter-num {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    break-inside: avoid !important;
+  }
+  h2 + p, h2 + ul, h2 + ol, h2 + .code-block, h2 + .illus,
+  h3 + p, h3 + ul, h3 + ol, h3 + .code-block,
+  .chapter-num + h1, h1 + p, h1 + .illus, h1 + .code-block {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+  .keep-block, .illus, .table-wrap {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .code-long {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+  .code-long pre {
+    break-inside: auto !important;
+  }
+  pre {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+  }
+  p, li {
+    orphans: 4;
+    widows: 4;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="cover">
+      <img class="cover-art" src="images/print/js-couverture.jpg" alt="Couverture JavaScript">
+      <div class="cover-copy">
+        <div class="cover-kicker">Formation informatique</div>
+        <h1>JavaScript</h1>
+        <p class="lead">Les bases pour rendre une page web interactive. Explique simplement, sans blabla inutile.</p>
+        <p class="meta">DanielCraft - Livre debutant</p>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Sommaire">
+      <h2 id="sommaire">Sommaire</h2>
+      <p class="toc-help">Clique un chapitre ou un sous-chapitre pour y aller.</p>
+      <ol>
+        <li><a href="#chapitre-01">Chapitre 1 - Salut, c&#x27;est quoi JavaScript ?</a><ol class="toc-sub"><li><a href="#chapitre-01--image-mentale">Image mentale</a></li><li><a href="#chapitre-01--ou-ca-tourne">Ou ca tourne ?</a></li><li><a href="#chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</a></li><li><a href="#chapitre-01--important">Important</a></li><li><a href="#chapitre-01--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-01--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-01--mini-defi">Mini defi</a></li><li><a href="#chapitre-01--a-retenir">A retenir</a></li><li><a href="#chapitre-01--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-01--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-02">Chapitre 2 - Ou ecrire du JavaScript ?</a><ol class="toc-sub"><li><a href="#chapitre-02--1-dans-un-fichier-js-le-mieux">1. Dans un fichier .js (le mieux)</a></li><li><a href="#chapitre-02--2-direct-dans-le-html-pour-tester">2. Direct dans le HTML (pour tester)</a></li><li><a href="#chapitre-02--3-la-console-du-navigateur">3. La console du navigateur</a></li><li><a href="#chapitre-02--mini-structure-de-dossier">Mini structure de dossier</a></li><li><a href="#chapitre-02--a-toi">A toi</a></li><li><a href="#chapitre-02--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-02--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-02--mini-defi">Mini defi</a></li><li><a href="#chapitre-02--a-retenir">A retenir</a></li><li><a href="#chapitre-02--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-02--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-03">Chapitre 3 - Les variables (des boites a infos)</a><ol class="toc-sub"><li><a href="#chapitre-03--let-et-const">let et const</a></li><li><a href="#chapitre-03--changer-une-valeur">Changer une valeur</a></li><li><a href="#chapitre-03--noms-clairs">Noms clairs</a></li><li><a href="#chapitre-03--attention">Attention</a></li><li><a href="#chapitre-03--a-toi">A toi</a></li><li><a href="#chapitre-03--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-03--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-03--mini-defi">Mini defi</a></li><li><a href="#chapitre-03--a-retenir">A retenir</a></li><li><a href="#chapitre-03--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-03--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-04">Chapitre 4 - Les types simples</a><ol class="toc-sub"><li><a href="#chapitre-04--texte-string">Texte (string)</a></li><li><a href="#chapitre-04--nombre-number">Nombre (number)</a></li><li><a href="#chapitre-04--vrai-faux-boolean">Vrai / faux (boolean)</a></li><li><a href="#chapitre-04--undefined-et-null-juste-savoir">undefined et null (juste savoir)</a></li><li><a href="#chapitre-04--assembler-du-texte">Assembler du texte</a></li><li><a href="#chapitre-04--a-toi">A toi</a></li><li><a href="#chapitre-04--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-04--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-04--mini-defi">Mini defi</a></li><li><a href="#chapitre-04--a-retenir">A retenir</a></li><li><a href="#chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-04--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-05">Chapitre 5 - Les conditions (if)</a><ol class="toc-sub"><li><a href="#chapitre-05--if-else">if / else</a></li><li><a href="#chapitre-05--else-if">else if</a></li><li><a href="#chapitre-05--comparaisons-utiles">Comparaisons utiles</a></li><li><a href="#chapitre-05--et-ou">Et / Ou</a></li><li><a href="#chapitre-05--a-toi">A toi</a></li><li><a href="#chapitre-05--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-05--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-05--mini-defi">Mini defi</a></li><li><a href="#chapitre-05--a-retenir">A retenir</a></li><li><a href="#chapitre-05--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-05--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-06">Chapitre 6 - Les boucles (repete sans te fatiguer)</a><ol class="toc-sub"><li><a href="#chapitre-06--for-classique">for (classique)</a></li><li><a href="#chapitre-06--while">while</a></li><li><a href="#chapitre-06--boucler-sur-une-liste-apercu">Boucler sur une liste (aperçu)</a></li><li><a href="#chapitre-06--a-toi">A toi</a></li><li><a href="#chapitre-06--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-06--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-06--mini-defi">Mini defi</a></li><li><a href="#chapitre-06--a-retenir">A retenir</a></li><li><a href="#chapitre-06--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-06--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-07">Chapitre 7 - Les fonctions (des recettes reutilisables)</a><ol class="toc-sub"><li><a href="#chapitre-07--creer-et-appeler">Creer et appeler</a></li><li><a href="#chapitre-07--avec-des-ingredients-parametres">Avec des ingredients (parametres)</a></li><li><a href="#chapitre-07--avec-un-resultat-return">Avec un resultat (return)</a></li><li><a href="#chapitre-07--pourquoi-c-est-cool">Pourquoi c&#x27;est cool</a></li><li><a href="#chapitre-07--petite-forme-moderne-juste-voir">Petite forme moderne (juste voir)</a></li><li><a href="#chapitre-07--a-toi">A toi</a></li><li><a href="#chapitre-07--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-07--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-07--mini-defi">Mini defi</a></li><li><a href="#chapitre-07--a-retenir">A retenir</a></li><li><a href="#chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-07--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-08">Chapitre 8 - Les tableaux (des listes)</a><ol class="toc-sub"><li><a href="#chapitre-08--creer">Creer</a></li><li><a href="#chapitre-08--lire-modifier">Lire / modifier</a></li><li><a href="#chapitre-08--longueur">Longueur</a></li><li><a href="#chapitre-08--ajouter-retirer">Ajouter / retirer</a></li><li><a href="#chapitre-08--parcourir">Parcourir</a></li><li><a href="#chapitre-08--includes">Includes</a></li><li><a href="#chapitre-08--a-toi">A toi</a></li><li><a href="#chapitre-08--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-08--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-08--mini-defi">Mini defi</a></li><li><a href="#chapitre-08--a-retenir">A retenir</a></li><li><a href="#chapitre-08--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-08--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-09">Chapitre 9 - Les objets (des fiches)</a><ol class="toc-sub"><li><a href="#chapitre-09--exemple">Exemple</a></li><li><a href="#chapitre-09--objet-dans-un-tableau">Objet dans un tableau</a></li><li><a href="#chapitre-09--quand-utiliser-quoi">Quand utiliser quoi ?</a></li><li><a href="#chapitre-09--a-toi">A toi</a></li><li><a href="#chapitre-09--erreur-classique">Erreur classique</a></li><li><a href="#chapitre-09--exemple-complet">Exemple complet</a></li><li><a href="#chapitre-09--mini-defi">Mini defi</a></li><li><a href="#chapitre-09--a-retenir">A retenir</a></li><li><a href="#chapitre-09--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-09--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-10">Chapitre 10 - Le DOM : trouver des elements</a><ol class="toc-sub"><li><a href="#chapitre-10--selectionner">Selectionner</a></li><li><a href="#chapitre-10--queryselectorall">querySelectorAll</a></li><li><a href="#chapitre-10--verifier">Verifier</a></li><li><a href="#chapitre-10--a-toi">A toi</a></li><li><a href="#chapitre-10--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-10--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-11">Chapitre 11 - Le DOM : changer la page</a><ol class="toc-sub"><li><a href="#chapitre-11--changer-le-texte">Changer le texte</a></li><li><a href="#chapitre-11--changer-le-html-interne-avec-prudence">Changer le HTML interne (avec prudence)</a></li><li><a href="#chapitre-11--classes-css">Classes CSS</a></li><li><a href="#chapitre-11--style-direct-ok-pour-tester">Style direct (ok pour tester)</a></li><li><a href="#chapitre-11--creer-un-element">Creer un element</a></li><li><a href="#chapitre-11--a-toi">A toi</a></li><li><a href="#chapitre-11--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-11--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-12">Chapitre 12 - Les evenements (reagir aux clics)</a><ol class="toc-sub"><li><a href="#chapitre-12--click">click</a></li><li><a href="#chapitre-12--compteur">Compteur</a></li><li><a href="#chapitre-12--autres-evenements-utiles">Autres evenements utiles</a></li><li><a href="#chapitre-12--eviter-le-rechargement-de-formulaire">Eviter le rechargement de formulaire</a></li><li><a href="#chapitre-12--a-toi">A toi</a></li><li><a href="#chapitre-12--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-12--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-13">Chapitre 13 - Mini-projet : compteur de score</a><ol class="toc-sub"><li><a href="#chapitre-13--but">But</a></li><li><a href="#chapitre-13--html">HTML</a></li><li><a href="#chapitre-13--css-simple">CSS (simple)</a></li><li><a href="#chapitre-13--js">JS</a></li><li><a href="#chapitre-13--criteres-de-reussite">Criteres de reussite</a></li><li><a href="#chapitre-13--bonus">Bonus</a></li><li><a href="#chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-13--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-14">Chapitre 14 - Ce qu&#x27;il faut retenir</a><ol class="toc-sub"><li><a href="#chapitre-14--en-une-minute">En une minute</a></li><li><a href="#chapitre-14--habitudes-solides">Habitudes solides</a></li><li><a href="#chapitre-14--erreurs-classiques">Erreurs classiques</a></li><li><a href="#chapitre-14--suite-possible">Suite possible</a></li><li><a href="#chapitre-14--en-vrai-sur-le-terrain">En vrai, sur le terrain</a></li><li><a href="#chapitre-14--mini-defi">Mini defi</a></li></ol></li><li><a href="#chapitre-15">Chapitre 17 - Atelier : une todo liste mini</a><ol class="toc-sub"><li><a href="#chapitre-15--html">HTML</a></li><li><a href="#chapitre-15--js">JS</a></li><li><a href="#chapitre-15--pourquoi-trim">Pourquoi `trim()` ?</a></li><li><a href="#chapitre-15--bonus-1-enter-aussi">Bonus 1 : Enter aussi</a></li><li><a href="#chapitre-15--bonus-2-supprimer-une-tache">Bonus 2 : supprimer une tache</a></li><li><a href="#chapitre-15--criteres">Criteres</a></li><li><a href="#chapitre-15--ce-que-tu-pratiques-ici">Ce que tu pratiques ici</a></li></ol></li><li><a href="#chapitre-16">Chapitre 18 - Garder des infos (localStorage)</a><ol class="toc-sub"><li><a href="#chapitre-16--idee-simple">Idee simple</a></li><li><a href="#chapitre-16--attention">Attention</a></li><li><a href="#chapitre-16--brancher-sur-la-todo">Brancher sur la todo</a></li><li><a href="#chapitre-16--limites">Limites</a></li><li><a href="#chapitre-16--a-toi">A toi</a></li></ol></li><li><a href="#chapitre-17">Chapitre 19 - Erreurs JS frequentes (et comment les lire)</a><ol class="toc-sub"><li><a href="#chapitre-17--ouvre-la-console">Ouvre la console</a></li><li><a href="#chapitre-17--x-is-not-defined">&quot;X is not defined&quot;</a></li><li><a href="#chapitre-17--cannot-read-properties-of-null">&quot;Cannot read properties of null&quot;</a></li><li><a href="#chapitre-17--unexpected-token">&quot;Unexpected token&quot;</a></li><li><a href="#chapitre-17--boucle-infinie">Boucle infinie</a></li><li><a href="#chapitre-17--methode-anti-stress">Methode anti-stress</a></li><li><a href="#chapitre-17--exercice">Exercice</a></li></ol></li><li><a href="#chapitre-18">Quiz final - Teste-toi !</a><ol class="toc-sub"><li><a href="#chapitre-18--questions">Questions</a></li><li><a href="#chapitre-18--reponses">Reponses</a></li><li><a href="#chapitre-18--score">Score</a></li></ol></li><li><a href="#chapitre-19">Bravo.</a><ol class="toc-sub"><li><a href="#chapitre-19--ce-que-tu-sais-faire">Ce que tu sais faire</a></li><li><a href="#chapitre-19--petite-mission">Petite mission</a></li><li><a href="#chapitre-19--la-suite">La suite</a></li></ol></li>
+      </ol>
+    </nav>
+
+    <article class="chapter chapter-break" id="chapitre-01"><div class="chapter-num">Chapitre 1</div><h1 id="chapitre-01--chapitre-1-salut-c-est-quoi-javascript">Chapitre 1 - Salut, c&#x27;est quoi JavaScript ?</h1>
+<figure class="illus illus-wide"><img src="images/print/js-trio.jpg" alt="HTML structure. CSS habille. JS fait reagir."><figcaption>HTML structure. CSS habille. JS fait reagir.</figcaption></figure>
+<p>Tu as deja HTML (la structure) et CSS (le look).</p>
+<p>JavaScript, c&#x27;est le mouvement. La reaction. La vie.</p>
+<p>Sans JS, une page regarde.</p>
+<p>Avec JS, elle repond.</p>
+<h2 id="chapitre-01--image-mentale">Image mentale</h2>
+<ul>
+<li>HTML = le corps</li>
+<li>CSS = les vetements</li>
+<li>JS = le cerveau (et un peu les muscles)</li>
+</ul>
+<p>Tu cliques un bouton ? JS peut compter.</p>
+<p>Tu ecris ton prenom ? JS peut te dire &quot;Salut, toi&quot;.</p>
+<p>Tu rates un champ ? JS peut te prevenir.</p>
+<h2 id="chapitre-01--ou-ca-tourne">Ou ca tourne ?</h2>
+<p>Dans le navigateur. Directement.</p>
+<p>Pas besoin d&#x27;installer un truc complique pour commencer.</p>
+<h2 id="chapitre-01--ce-que-tu-vas-savoir-faire">Ce que tu vas savoir faire</h2>
+<ul>
+<li>Ecrire tes premiers scripts</li>
+<li>Garder des infos dans des variables</li>
+<li>Prendre des decisions (if)</li>
+<li>Repeter des actions (boucles)</li>
+<li>Creer des fonctions</li>
+<li>Modifier la page (le DOM)</li>
+<li>Reagir aux clics</li>
+</ul>
+<h2 id="chapitre-01--important">Important</h2>
+<p>On reste sur les bases.</p>
+<p>Pas de framework. Pas de magie obscure.</p>
+<p>Juste du JS clair, pour comprendre.</p>
+<p>Allez. On branche le cerveau de la page.</p>
+<h2 id="chapitre-01--erreur-classique">Erreur classique</h2>
+<p>Beaucoup de debutants confondent JavaScript et Java. Ce sont deux langages differents. JavaScript vit dans le navigateur pour rendre les pages vivantes. Java sert surtout a d&#x27;autres types de programmes.</p>
+<p>Autre piege : croire que JS remplace HTML ou CSS. Non. Les trois travaillent ensemble.</p>
+<h2 id="chapitre-01--exemple-complet">Exemple complet</h2>
+<p>Imagine une page avec un bouton. Sans JS, le bouton ne fait rien d&#x27;utile. Avec JS, il peut reagir :</p>
+<div class="code-block keep-block"><pre><code class="language-js">// On attend que la page soit chargee
+const bouton = document.querySelector(&quot;#direBonjour&quot;);
+
+// Quand on clique, on affiche un message
+bouton.addEventListener(&quot;click&quot;, function () {
+  alert(&quot;Salut ! La page t&#x27;a entendu.&quot;);
+});</code></pre></div>
+<p>Tu n&#x27;as pas besoin de tout comprendre maintenant. L&#x27;idee : JS ecoute et repond.</p>
+<h2 id="chapitre-01--mini-defi">Mini defi</h2>
+<ul>
+<li>Ouvre un site que tu aimes (YouTube, un jeu en ligne, etc.)</li>
+<li>Note 3 actions interactives (clic, scroll, formulaire...)</li>
+<li>Pour chacune, devine : HTML, CSS ou JS ?</li>
+<li>Verifie en desactivant JS dans le navigateur (option developpeur). Que se passe-t-il ?</li>
+</ul>
+<h2 id="chapitre-01--a-retenir">A retenir</h2>
+<ul>
+<li>JavaScript = le cerveau interactif de la page</li>
+<li>Il tourne dans le navigateur, sans installation compliquee</li>
+<li>HTML structure, CSS habille, JS fait bouger et reagir</li>
+<li>Tu vas apprendre les bases, pas un framework</li>
+</ul>
+<h2 id="chapitre-01--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-01--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-02"><div class="chapter-num">Chapitre 2</div><h1 id="chapitre-02--chapitre-2-ou-ecrire-du-javascript">Chapitre 2 - Ou ecrire du JavaScript ?</h1>
+<p>Trois facons simples. On commence par la plus claire.</p>
+<h2 id="chapitre-02--1-dans-un-fichier-js-le-mieux">1. Dans un fichier .js (le mieux)</h2>
+<p>Cree <code>script.js</code> :</p>
+<div class="code-block keep-block"><pre><code class="language-js">console.log(&quot;Salut depuis mon fichier !&quot;);</code></pre></div>
+<p>Dans ton HTML, juste avant <code>&lt;/body&gt;</code> :</p>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+<p>Pourquoi avant <code>&lt;/body&gt;</code> ?</p>
+<p>Parce que la page est deja la. Plus simple pour debuter.</p>
+<h2 id="chapitre-02--2-direct-dans-le-html-pour-tester">2. Direct dans le HTML (pour tester)</h2>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;script&gt;
+  console.log(&quot;Coucou&quot;);
+&lt;/script&gt;</code></pre></div>
+<p>Pratique 2 minutes. Sur un vrai projet, prefere un fichier <code>.js</code>.</p>
+<h2 id="chapitre-02--3-la-console-du-navigateur">3. La console du navigateur</h2>
+<ol>
+<li>1. Ouvre ta page</li>
+<li>2. F12 (outils developpeur)</li>
+<li>3. Onglet Console</li>
+<li>4. Tape : <code>console.log(&quot;test&quot;)</code></li>
+<li>5. Entree</li>
+</ol>
+<p><code>console.log</code> = &quot;affiche ca dans la console&quot;.</p>
+<p>C&#x27;est ton ami pour verifier que ca marche.</p>
+<h2 id="chapitre-02--mini-structure-de-dossier">Mini structure de dossier</h2>
+<div class="code-block keep-block"><pre><code>mon-site/
+  index.html
+  style.css
+  script.js</code></pre></div>
+<h2 id="chapitre-02--a-toi">A toi</h2>
+<ol>
+<li>1. Cree <code>index.html</code> + <code>script.js</code></li>
+<li>2. Relie-les</li>
+<li>3. Affiche ton prenom avec <code>console.log</code></li>
+<li>4. Ouvre la console. Si tu le vois : gagne.</li>
+</ol>
+<h2 id="chapitre-02--erreur-classique">Erreur classique</h2>
+<p>Tu mets le script en haut du HTML, avant le contenu. Le JS tourne avant que les elements existent. Resultat : erreur ou <code>null</code>.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;head&gt;
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id=&quot;titre&quot;&gt;Salut&lt;/h1&gt;
+&lt;/body&gt;</code></pre></div>
+<p>Bon : le <code>&lt;script&gt;</code> juste avant <code>&lt;/body&gt;</code>, ou utilise <code>defer</code> si tu le mets dans le <code>&lt;head&gt;</code>.</p>
+<h2 id="chapitre-02--exemple-complet">Exemple complet</h2>
+<p>Structure complete qui marche du premier coup :</p>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Mon premier JS&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id=&quot;titre&quot;&gt;Coucou&lt;/h1&gt;
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+<div class="code-block keep-block"><pre><code class="language-js">// script.js
+const titre = document.querySelector(&quot;#titre&quot;);
+console.log(&quot;Le titre dit :&quot;, titre.textContent);
+console.log(&quot;Script charge avec succes !&quot;);</code></pre></div>
+<p>Ouvre la console. Tu dois voir les deux lignes.</p>
+<h2 id="chapitre-02--mini-defi">Mini defi</h2>
+<ul>
+<li>Cree le dossier <code>mon-site/</code> avec les 3 fichiers</li>
+<li>Dans <code>script.js</code>, affiche ton age et ta ville</li>
+<li>Change le chemin volontairement (<code>scrip.js</code>) et note l&#x27;erreur dans la console</li>
+<li>Remets le bon chemin et verifie que ca marche</li>
+</ul>
+<h2 id="chapitre-02--a-retenir">A retenir</h2>
+<ul>
+<li>Fichier <code>.js</code> separe = la bonne habitude</li>
+<li><code>&lt;script src=&quot;...&quot;&gt;</code> juste avant <code>&lt;/body&gt;</code> pour debuter</li>
+<li><code>console.log</code> = ton outil de debug numero 1</li>
+<li>La console (F12) permet de tester du code vite</li>
+</ul>
+<h2 id="chapitre-02--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-02--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-03"><div class="chapter-num">Chapitre 3</div><h1 id="chapitre-03--chapitre-3-les-variables-des-boites-a-infos">Chapitre 3 - Les variables (des boites a infos)</h1>
+<figure class="illus"><img src="images/print/js-variables.jpg" alt="const = fixe. let = modifiable. Des boites avec un nom."><figcaption>const = fixe. let = modifiable. Des boites avec un nom.</figcaption></figure>
+<p>Une variable, c&#x27;est une boite avec une etiquette.</p>
+<p>Tu ranges une valeur. Tu la reutilises plus tard.</p>
+<h2 id="chapitre-03--let-et-const">let et const</h2>
+<div class="code-block keep-block"><pre><code class="language-js">let age = 12;
+const prenom = &quot;Leo&quot;;</code></pre></div>
+<ul>
+<li><code>let</code> = tu pourras changer la valeur plus tard</li>
+<li><code>const</code> = tu ne changes pas (constante)</li>
+</ul>
+<p>Astuce debutant :</p>
+<p>utilise <code>const</code> par defaut.</p>
+<p>Passe a <code>let</code> seulement si tu dois vraiment modifier.</p>
+<h2 id="chapitre-03--changer-une-valeur">Changer une valeur</h2>
+<div class="code-block keep-block"><pre><code class="language-js">let score = 0;
+score = 10;
+score = score + 1; // 11</code></pre></div>
+<h2 id="chapitre-03--noms-clairs">Noms clairs</h2>
+<p>Oui :</p>
+<div class="code-block keep-block"><pre><code class="language-js">let nombreDeClics = 0;
+const messageBienvenue = &quot;Salut&quot;;</code></pre></div>
+<p>Non (ou alors on se perd) :</p>
+<div class="code-block keep-block"><pre><code class="language-js">let x = 0;
+let a1 = &quot;Salut&quot;;</code></pre></div>
+<h2 id="chapitre-03--attention">Attention</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const ville = &quot;Lyon&quot;;
+ville = &quot;Paris&quot;; // erreur</code></pre></div>
+<p><code>const</code> protege. C&#x27;est voulu.</p>
+<h2 id="chapitre-03--a-toi">A toi</h2>
+<p>Cree :</p>
+<ul>
+<li><code>const prenom = &quot;...&quot;</code></li>
+<li><code>let points = 0</code></li>
+<li>ajoute 5 points</li>
+<li><code>console.log</code> le prenom et les points</li>
+</ul>
+<h2 id="chapitre-03--erreur-classique">Erreur classique</h2>
+<p>Tu reutilises un nom sans le declarer. JS cree une variable globale par accident. Ca casse tout sur une grosse page.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-js">score = 10; // oubli de let ou const</code></pre></div>
+<p>Bon :</p>
+<div class="code-block keep-block"><pre><code class="language-js">let score = 10;</code></pre></div>
+<p>Autre piege : tu changes une <code>const</code>. Le navigateur bloque. C&#x27;est normal, c&#x27;est la protection.</p>
+<h2 id="chapitre-03--exemple-complet">Exemple complet</h2>
+<div class="code-block keep-block"><pre><code class="language-js">// Un mini profil joueur
+const pseudo = &quot;PixelFox&quot;;
+let niveau = 1;
+let xp = 0;
+
+// On gagne de l&#x27;xp
+xp = xp + 50;
+console.log(pseudo + &quot; a &quot; + xp + &quot; xp&quot;);
+
+// Passage de niveau
+if (xp &gt;= 50) {
+  niveau = niveau + 1;
+  xp = xp - 50;
+  console.log(&quot;Niveau up ! Tu es niveau &quot; + niveau);
+}
+
+console.log(&quot;Etat final : niveau &quot; + niveau + &quot;, xp &quot; + xp);</code></pre></div>
+<p>Lis la console ligne par ligne. Tu vois comment les valeurs changent.</p>
+<h2 id="chapitre-03--mini-defi">Mini defi</h2>
+<ul>
+<li>Cree 3 <code>const</code> : prenom, ville, animal prefere</li>
+<li>Cree 2 <code>let</code> : compteurVisites, derniereNote</li>
+<li>Modifie les <code>let</code>, pas les <code>const</code></li>
+<li>Affiche une phrase qui melange tout avec des <code>+</code></li>
+</ul>
+<h2 id="chapitre-03--a-retenir">A retenir</h2>
+<ul>
+<li><code>const</code> par defaut, <code>let</code> si tu dois changer</li>
+<li>Un nom clair vaut mieux que <code>x</code> ou <code>a1</code></li>
+<li>Toujours declarer avec <code>let</code> ou <code>const</code></li>
+<li>Une variable = une boite etiquetee reutilisable</li>
+</ul>
+<h2 id="chapitre-03--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-03--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-04"><div class="chapter-num">Chapitre 4</div><h1 id="chapitre-04--chapitre-4-les-types-simples">Chapitre 4 - Les types simples</h1>
+<p>Les valeurs n&#x27;ont pas toutes la meme &quot;forme&quot;.</p>
+<h2 id="chapitre-04--texte-string">Texte (string)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const phrase = &quot;Bonjour&quot;;
+const autre = &#x27;Hey&#x27;;</code></pre></div>
+<p>Guillemets doubles ou simples, les deux marchent.</p>
+<p>Reste coherent dans un fichier.</p>
+<h2 id="chapitre-04--nombre-number">Nombre (number)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const prix = 19.99;
+const quantite = 3;
+const total = prix * quantite;</code></pre></div>
+<h2 id="chapitre-04--vrai-faux-boolean">Vrai / faux (boolean)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const estConnecte = true;
+const aFini = false;</code></pre></div>
+<p>Utile pour les decisions.</p>
+<h2 id="chapitre-04--undefined-et-null-juste-savoir">undefined et null (juste savoir)</h2>
+<ul>
+<li><code>undefined</code> = pas encore defini</li>
+<li><code>null</code> = volontairement &quot;vide&quot;</li>
+</ul>
+<p>Pas besoin d&#x27;en faire des tartines au debut.</p>
+<h2 id="chapitre-04--assembler-du-texte">Assembler du texte</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const prenom = &quot;Maya&quot;;
+console.log(&quot;Salut &quot; + prenom);
+console.log(`Salut ${prenom}`); // plus moderne, pratique</code></pre></div>
+<p>Les backticks \<code> \</code> permettent d&#x27;inserer <code>${...}</code> dedans.</p>
+<h2 id="chapitre-04--a-toi">A toi</h2>
+<p>Fais un mini ticket de caisse :</p>
+<ul>
+<li>prix d&#x27;un article</li>
+<li>quantite</li>
+<li>total</li>
+<li>un message : &quot;Total = ...&quot;</li>
+</ul>
+<h2 id="chapitre-04--erreur-classique">Erreur classique</h2>
+<p>Tu additionnes un nombre et du texte sans faire attention. JS colle les morceaux au lieu de calculer.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-js">const total = &quot;19&quot; + 3; // &quot;193&quot; (texte)</code></pre></div>
+<p>Bon :</p>
+<div class="code-block keep-block"><pre><code class="language-js">const total = 19 + 3; // 22 (nombre)</code></pre></div>
+<p>Ou convertis avec <code>Number(&quot;19&quot;)</code> si la valeur vient d&#x27;un champ texte.</p>
+<h2 id="chapitre-04--exemple-complet">Exemple complet</h2>
+<div class="code-block code-long"><pre><code class="language-js">// Mini facture
+const client = &quot;Maya&quot;;
+const article = &quot;Casque&quot;;
+const prixUnitaire = 29.99;
+const quantite = 2;
+const tauxTva = 0.2;
+
+// Calculs
+const sousTotal = prixUnitaire * quantite;
+const montantTva = sousTotal * tauxTva;
+const totalTTC = sousTotal + montantTva;
+
+// Message avec template literal
+const recu = `
+Facture pour ${client}
+- ${quantite} x ${article} : ${sousTotal.toFixed(2)} EUR
+- TVA : ${montantTva.toFixed(2)} EUR
+= Total : ${totalTTC.toFixed(2)} EUR
+`;
+
+console.log(recu);</code></pre></div>
+<p><code>.toFixed(2)</code> arrondit a 2 decimales. Pratique pour l&#x27;argent.</p>
+<h2 id="chapitre-04--mini-defi">Mini defi</h2>
+<ul>
+<li>Cree une variable texte, une nombre, une booleen</li>
+<li>Affiche le type de chaque valeur avec <code>typeof maVariable</code></li>
+<li>Fais un calcul prix x quantite, puis un message avec backticks</li>
+<li>Teste <code>&quot;5&quot; + 2</code> et <code>5 + 2</code>. Note la difference</li>
+</ul>
+<h2 id="chapitre-04--a-retenir">A retenir</h2>
+<ul>
+<li>string = texte, number = nombre, boolean = true/false</li>
+<li><code>===</code> compare sans melanger les types</li>
+<li>Backticks \<code>...\</code> + <code>${...}</code> = facile pour assembler du texte</li>
+<li>Attention aux guillemets qui transforment un nombre en texte</li>
+</ul>
+<h2 id="chapitre-04--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-04--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-05"><div class="chapter-num">Chapitre 5</div><h1 id="chapitre-05--chapitre-5-les-conditions-if">Chapitre 5 - Les conditions (if)</h1>
+<p>Parfois tu veux : &quot;si ca, alors ca&quot;.</p>
+<h2 id="chapitre-05--if-else">if / else</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const age = 15;
+
+if (age &gt;= 18) {
+  console.log(&quot;Majeur&quot;);
+} else {
+  console.log(&quot;Mineur&quot;);
+}</code></pre></div>
+<h2 id="chapitre-05--else-if">else if</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const note = 14;
+
+if (note &gt;= 16) {
+  console.log(&quot;Excellent&quot;);
+} else if (note &gt;= 10) {
+  console.log(&quot;C&#x27;est valide&quot;);
+} else {
+  console.log(&quot;On revise&quot;);
+}</code></pre></div>
+<h2 id="chapitre-05--comparaisons-utiles">Comparaisons utiles</h2>
+<ul>
+<li><code>===</code> egal (strict, recommande)</li>
+<li><code>!==</code> different</li>
+<li><code>&gt;</code> <code>&lt;</code> <code>&gt;=</code> <code>&lt;=</code></li>
+</ul>
+<p>Evite <code>==</code> pour l&#x27;instant. <code>===</code> est plus clair.</p>
+<h2 id="chapitre-05--et-ou">Et / Ou</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const aUnTicket = true;
+const estVip = false;
+
+if (aUnTicket || estVip) {
+  console.log(&quot;Tu peux entrer&quot;);
+}
+
+if (aUnTicket &amp;&amp; estVip) {
+  console.log(&quot;Acces premium&quot;);
+}</code></pre></div>
+<p><code>||</code> = ou</p>
+<p><code>&amp;&amp;</code> = et</p>
+<h2 id="chapitre-05--a-toi">A toi</h2>
+<p>Demande-toi (en dur dans le code) un <code>motDePasse</code>.</p>
+<p>Si c&#x27;est <code>&quot;secret123&quot;</code>, affiche &quot;OK&quot;.</p>
+<p>Sinon &quot;Refuse&quot;.</p>
+<h2 id="chapitre-05--erreur-classique">Erreur classique</h2>
+<p>Tu utilises <code>=</code> au lieu de <code>===</code> dans un <code>if</code>. <code>=</code> donne une valeur. <code>===</code> compare.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-js">if (motDePasse = &quot;secret123&quot;) { // assigne, ne compare pas !
+  console.log(&quot;OK&quot;);
+}</code></pre></div>
+<p>Bon :</p>
+<div class="code-block keep-block"><pre><code class="language-js">if (motDePasse === &quot;secret123&quot;) {
+  console.log(&quot;OK&quot;);
+}</code></pre></div>
+<h2 id="chapitre-05--exemple-complet">Exemple complet</h2>
+<div class="code-block code-long"><pre><code class="language-js">// Controle d&#x27;acces simple
+const age = 16;
+const aInvitation = true;
+const estBlackliste = false;
+
+function peutEntrer(age, invitation, blackliste) {
+  if (blackliste) {
+    return &quot;Acces refuse : compte bloque&quot;;
+  }
+  if (age &lt; 13) {
+    return &quot;Acces refuse : trop jeune&quot;;
+  }
+  if (age &gt;= 18 || invitation) {
+    return &quot;Bienvenue !&quot;;
+  }
+  return &quot;Acces refuse : invitation requise&quot;;
+}
+
+console.log(peutEntrer(age, aInvitation, estBlackliste));
+console.log(peutEntrer(10, true, false));
+console.log(peutEntrer(20, false, false));</code></pre></div>
+<p>Teste en changeant les valeurs en haut du fichier.</p>
+<h2 id="chapitre-05--mini-defi">Mini defi</h2>
+<ul>
+<li>Cree une variable <code>temperature</code></li>
+<li>Si &gt;= 25, affiche &quot;Chaud&quot;</li>
+<li>Sinon si &gt;= 15, affiche &quot;Correct&quot;</li>
+<li>Sinon affiche &quot;Froid&quot;</li>
+<li>Ajoute un cas : si temperature &gt; 35, affiche &quot;Canicule !&quot;</li>
+</ul>
+<h2 id="chapitre-05--a-retenir">A retenir</h2>
+<ul>
+<li><code>if</code> / <code>else if</code> / <code>else</code> = decisions en chaine</li>
+<li><code>===</code> pour comparer, pas <code>=</code></li>
+<li><code>&amp;&amp;</code> = et, <code>||</code> = ou</li>
+<li>Garde les conditions simples et lisibles</li>
+</ul>
+<h2 id="chapitre-05--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-05--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-06"><div class="chapter-num">Chapitre 6</div><h1 id="chapitre-06--chapitre-6-les-boucles-repete-sans-te-fatiguer">Chapitre 6 - Les boucles (repete sans te fatiguer)</h1>
+<p>Une boucle = faire la meme chose plusieurs fois.</p>
+<p>Sans copier-coller 40 lignes.</p>
+<h2 id="chapitre-06--for-classique">for (classique)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">for (let i = 1; i &lt;= 5; i = i + 1) {
+  console.log(&quot;Tour numero &quot; + i);
+}</code></pre></div>
+<p>Lecture :</p>
+<ol>
+<li>1. commence a 1</li>
+<li>2. tant que <code>i &lt;= 5</code></li>
+<li>3. a chaque tour, ajoute 1</li>
+</ol>
+<h2 id="chapitre-06--while">while</h2>
+<div class="code-block keep-block"><pre><code class="language-js">let vies = 3;
+
+while (vies &gt; 0) {
+  console.log(&quot;Il reste &quot; + vies + &quot; vies&quot;);
+  vies = vies - 1;
+}</code></pre></div>
+<p>Attention : si tu oublies de faire baisser <code>vies</code>, boucle infinie.</p>
+<p>Le navigateur va raler. Toi aussi.</p>
+<h2 id="chapitre-06--boucler-sur-une-liste-apercu">Boucler sur une liste (aperçu)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;kiwi&quot;];
+
+for (const fruit of fruits) {
+  console.log(fruit);
+}</code></pre></div>
+<p>On creusera les tableaux juste apres.</p>
+<h2 id="chapitre-06--a-toi">A toi</h2>
+<p>Affiche la table de 7 (de 7x1 a 7x10) avec une boucle <code>for</code>.</p>
+<h2 id="chapitre-06--erreur-classique">Erreur classique</h2>
+<p>Tu oublies d&#x27;avancer le compteur dans une boucle <code>while</code>. Le programme tourne a l&#x27;infini. Le navigateur freeze.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-js">let i = 0;
+while (i &lt; 5) {
+  console.log(i);
+  // oubli de i = i + 1
+}</code></pre></div>
+<p>Bon :</p>
+<div class="code-block keep-block"><pre><code class="language-js">let i = 0;
+while (i &lt; 5) {
+  console.log(i);
+  i = i + 1;
+}</code></pre></div>
+<h2 id="chapitre-06--exemple-complet">Exemple complet</h2>
+<div class="code-block keep-block"><pre><code class="language-js">// Compter les mots de 4 lettres ou plus
+const mots = [&quot;le&quot;, &quot;chat&quot;, &quot;dort&quot;, &quot;sur&quot;, &quot;tapis&quot;];
+let compteur = 0;
+
+for (const mot of mots) {
+  if (mot.length &gt;= 4) {
+    compteur = compteur + 1;
+    console.log(mot + &quot; compte !&quot;);
+  }
+}
+
+console.log(&quot;Total mots longs : &quot; + compteur);
+
+// Table de multiplication 3
+console.log(&quot;--- Table de 3 ---&quot;);
+for (let n = 1; n &lt;= 10; n = n + 1) {
+  console.log(&quot;3 x &quot; + n + &quot; = &quot; + (3 * n));
+}</code></pre></div>
+<p><code>.length</code> donne la taille d&#x27;un texte. Pratique dans les boucles.</p>
+<h2 id="chapitre-06--mini-defi">Mini defi</h2>
+<ul>
+<li>Affiche les nombres pairs de 2 a 20 avec une boucle <code>for</code></li>
+<li>Fais la somme de 1 a 100 (resultat attendu : 5050)</li>
+<li>Parcours un tableau de prenoms et affiche &quot;Salut, [prenom] !&quot;</li>
+<li>Bonus : arrete la boucle si tu trouves &quot;stop&quot; dans la liste</li>
+</ul>
+<h2 id="chapitre-06--a-retenir">A retenir</h2>
+<ul>
+<li><code>for</code> = quand tu connais le nombre de tours</li>
+<li><code>while</code> = tant qu&#x27;une condition est vraie</li>
+<li><code>for...of</code> = parcourir un tableau simplement</li>
+<li>Toujours faire evoluer le compteur pour eviter l&#x27;infini</li>
+</ul>
+<h2 id="chapitre-06--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-06--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-07"><div class="chapter-num">Chapitre 7</div><h1 id="chapitre-07--chapitre-7-les-fonctions-des-recettes-reutilisables">Chapitre 7 - Les fonctions (des recettes reutilisables)</h1>
+<p>Une fonction, c&#x27;est une recette.</p>
+<p>Tu la definis une fois. Tu l&#x27;appelles quand tu veux.</p>
+<h2 id="chapitre-07--creer-et-appeler">Creer et appeler</h2>
+<div class="code-block keep-block"><pre><code class="language-js">function direSalut() {
+  console.log(&quot;Salut !&quot;);
+}
+
+direSalut();
+direSalut();</code></pre></div>
+<h2 id="chapitre-07--avec-des-ingredients-parametres">Avec des ingredients (parametres)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">function direSalutA(prenom) {
+  console.log(&quot;Salut &quot; + prenom);
+}
+
+direSalutA(&quot;Nora&quot;);
+direSalutA(&quot;Tom&quot;);</code></pre></div>
+<h2 id="chapitre-07--avec-un-resultat-return">Avec un resultat (return)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">function double(n) {
+  return n * 2;
+}
+
+const resultat = double(4);
+console.log(resultat); // 8</code></pre></div>
+<p><code>return</code> renvoie une valeur. Sans <code>return</code>, tu obtiens <code>undefined</code>.</p>
+<h2 id="chapitre-07--pourquoi-c-est-cool">Pourquoi c&#x27;est cool</h2>
+<ul>
+<li>Moins de copie</li>
+<li>Code plus clair</li>
+<li>Plus facile a corriger</li>
+</ul>
+<h2 id="chapitre-07--petite-forme-moderne-juste-voir">Petite forme moderne (juste voir)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const triple = (n) =&gt; n * 3;</code></pre></div>
+<p>Tu verras ca souvent. Pour l&#x27;instant, <code>function</code> suffit largement.</p>
+<h2 id="chapitre-07--a-toi">A toi</h2>
+<p>Ecris <code>moyenne(a, b)</code> qui renvoie la moyenne de deux notes.</p>
+<p>Teste avec 12 et 16.</p>
+<h2 id="chapitre-07--erreur-classique">Erreur classique</h2>
+<p>Tu oublies <code>return</code>. La fonction fait son travail, mais tu recupères <code>undefined</code>.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-js">function carre(n) {
+  n * n; // resultat perdu
+}
+console.log(carre(4)); // undefined</code></pre></div>
+<p>Bon :</p>
+<div class="code-block keep-block"><pre><code class="language-js">function carre(n) {
+  return n * n;
+}
+console.log(carre(4)); // 16</code></pre></div>
+<h2 id="chapitre-07--exemple-complet">Exemple complet</h2>
+<div class="code-block code-long"><pre><code class="language-js">// Mini calculateur de notes
+function moyenne(a, b, c) {
+  return (a + b + c) / 3;
+}
+
+function mention(note) {
+  if (note &gt;= 16) return &quot;Tres bien&quot;;
+  if (note &gt;= 14) return &quot;Bien&quot;;
+  if (note &gt;= 10) return &quot;Passable&quot;;
+  return &quot;Insuffisant&quot;;
+}
+
+function afficherBulletin(prenom, n1, n2, n3) {
+  const moy = moyenne(n1, n2, n3);
+  const m = mention(moy);
+  console.log(prenom + &quot; : &quot; + moy.toFixed(1) + &quot;/20 - &quot; + m);
+}
+
+afficherBulletin(&quot;Leo&quot;, 12, 15, 18);
+afficherBulletin(&quot;Nina&quot;, 8, 9, 11);</code></pre></div>
+<p>Chaque fonction a un role clair. C&#x27;est plus facile a lire et a corriger.</p>
+<h2 id="chapitre-07--mini-defi">Mini defi</h2>
+<ul>
+<li>Ecris <code>aireRectangle(largeur, hauteur)</code> avec <code>return</code></li>
+<li>Ecris <code>estMajeur(age)</code> qui renvoie true ou false</li>
+<li>Ecris <code>saluer(prenom)</code> qui affiche un message (sans return)</li>
+<li>Appelle les 3 fonctions avec des valeurs differentes</li>
+</ul>
+<h2 id="chapitre-07--a-retenir">A retenir</h2>
+<ul>
+<li>Une fonction = une recette reutilisable</li>
+<li>Parametres = ingredients, <code>return</code> = le plat fini</li>
+<li>Sans <code>return</code>, tu obtiens <code>undefined</code></li>
+<li>Petites fonctions = code plus propre</li>
+</ul>
+<h2 id="chapitre-07--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-07--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-08"><div class="chapter-num">Chapitre 8</div><h1 id="chapitre-08--chapitre-8-les-tableaux-des-listes">Chapitre 8 - Les tableaux (des listes)</h1>
+<p>Un tableau, c&#x27;est une file d&#x27;attente d&#x27;elements.</p>
+<p>Index commence a 0. Oui, a 0. Bizarre au debut, puis normal.</p>
+<h2 id="chapitre-08--creer">Creer</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const courses = [&quot;pain&quot;, &quot;lait&quot;, &quot;oeufs&quot;];</code></pre></div>
+<h2 id="chapitre-08--lire-modifier">Lire / modifier</h2>
+<div class="code-block keep-block"><pre><code class="language-js">console.log(courses[0]); // pain
+courses[1] = &quot;lait d&#x27;avoine&quot;;</code></pre></div>
+<h2 id="chapitre-08--longueur">Longueur</h2>
+<div class="code-block keep-block"><pre><code class="language-js">console.log(courses.length); // 3</code></pre></div>
+<h2 id="chapitre-08--ajouter-retirer">Ajouter / retirer</h2>
+<div class="code-block keep-block"><pre><code class="language-js">courses.push(&quot;beurre&quot;);     // ajoute a la fin
+const dernier = courses.pop(); // retire le dernier</code></pre></div>
+<h2 id="chapitre-08--parcourir">Parcourir</h2>
+<div class="code-block keep-block"><pre><code class="language-js">for (let i = 0; i &lt; courses.length; i = i + 1) {
+  console.log(courses[i]);
+}
+
+// ou :
+for (const item of courses) {
+  console.log(item);
+}</code></pre></div>
+<h2 id="chapitre-08--includes">Includes</h2>
+<div class="code-block keep-block"><pre><code class="language-js">if (courses.includes(&quot;pain&quot;)) {
+  console.log(&quot;On a du pain&quot;);
+}</code></pre></div>
+<h2 id="chapitre-08--a-toi">A toi</h2>
+<p>Fais une liste de 4 jeux.</p>
+<p>Ajoutes-en un avec <code>push</code>.</p>
+<p>Affiche tous les jeux avec une boucle.</p>
+<h2 id="chapitre-08--erreur-classique">Erreur classique</h2>
+<p>Tu confonds l&#x27;index et la longueur. Le dernier index n&#x27;est pas <code>length</code>, c&#x27;est <code>length - 1</code>.</p>
+<p>Mauvais :</p>
+<div class="code-block keep-block"><pre><code class="language-js">const fruits = [&quot;pomme&quot;, &quot;poire&quot;];
+console.log(fruits[2]); // undefined (index 2 n&#x27;existe pas)</code></pre></div>
+<p>Bon :</p>
+<div class="code-block keep-block"><pre><code class="language-js">console.log(fruits[fruits.length - 1]); // poire</code></pre></div>
+<h2 id="chapitre-08--exemple-complet">Exemple complet</h2>
+<div class="code-block code-long"><pre><code class="language-js">// Liste de courses avec actions
+const courses = [&quot;pain&quot;, &quot;lait&quot;, &quot;oeufs&quot;];
+
+// Ajouter
+courses.push(&quot;fromage&quot;);
+console.log(&quot;Apres ajout :&quot;, courses);
+
+// Parcourir et numeroter
+for (let i = 0; i &lt; courses.length; i = i + 1) {
+  console.log(i + 1 + &quot;. &quot; + courses[i]);
+}
+
+// Chercher
+const cherche = &quot;lait&quot;;
+if (courses.includes(cherche)) {
+  console.log(cherche + &quot; est dans la liste&quot;);
+}
+
+// Retirer le dernier
+const retire = courses.pop();
+console.log(&quot;Retire : &quot; + retire);
+console.log(&quot;Liste finale :&quot;, courses);</code></pre></div>
+<h2 id="chapitre-08--mini-defi">Mini defi</h2>
+<ul>
+<li>Cree un tableau de 5 films</li>
+<li>Affiche le 1er et le dernier</li>
+<li>Ajoute un film avec <code>push</code>, retire-en un avec <code>pop</code></li>
+<li>Parcours avec <code>for...of</code> et affiche chaque titre en majuscules (<code>.toUpperCase()</code>)</li>
+</ul>
+<h2 id="chapitre-08--a-retenir">A retenir</h2>
+<ul>
+<li>Index commence a 0</li>
+<li><code>push</code> ajoute, <code>pop</code> retire a la fin</li>
+<li><code>length</code> = nombre d&#x27;elements</li>
+<li><code>includes</code> cherche un element dans le tableau</li>
+</ul>
+<h2 id="chapitre-08--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-08--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-09"><div class="chapter-num">Chapitre 9</div><h1 id="chapitre-09--chapitre-9-les-objets-des-fiches">Chapitre 9 - Les objets (des fiches)</h1>
+<p>Un objet, c&#x27;est une fiche avec des cases nommees.</p>
+<h2 id="chapitre-09--exemple">Exemple</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const joueur = {
+  prenom: &quot;Sam&quot;,
+  score: 120,
+  estActif: true
+};
+
+console.log(joueur.prenom);
+joueur.score = joueur.score + 10;</code></pre></div>
+<h2 id="chapitre-09--objet-dans-un-tableau">Objet dans un tableau</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const equipe = [
+  { prenom: &quot;Sam&quot;, score: 120 },
+  { prenom: &quot;Lea&quot;, score: 95 }
+];
+
+console.log(equipe[0].prenom);</code></pre></div>
+<h2 id="chapitre-09--quand-utiliser-quoi">Quand utiliser quoi ?</h2>
+<ul>
+<li>Tableau = liste d&#x27;elements du meme genre</li>
+<li>Objet = une chose avec plusieurs infos</li>
+</ul>
+<h2 id="chapitre-09--a-toi">A toi</h2>
+<p>Cree un objet <code>livre</code> avec :</p>
+<ul>
+<li>titre</li>
+<li>pages</li>
+<li>lu (true/false)</li>
+</ul>
+<p>Affiche une phrase : &quot;Le livre X a Y pages&quot;.</p>
+<h2 id="chapitre-09--erreur-classique">Erreur classique</h2>
+<p>Tu melanges point et crochets. Les deux marchent, mais sois coherent.</p>
+<p>Ca marche :</p>
+<div class="code-block keep-block"><pre><code class="language-js">joueur.prenom
+joueur[&quot;prenom&quot;]</code></pre></div>
+<p>Piege : si la cle a un espace ou un tiret, utilise les crochets :</p>
+<div class="code-block keep-block"><pre><code class="language-js">const user = { &quot;nom complet&quot;: &quot;Leo Martin&quot; };
+console.log(user[&quot;nom complet&quot;]); // ok
+console.log(user.nom complet);    // erreur</code></pre></div>
+<h2 id="chapitre-09--exemple-complet">Exemple complet</h2>
+<div class="code-block code-long"><pre><code class="language-js">// Inventaire de jeux
+const inventaire = [
+  { nom: &quot;Zelda&quot;, heures: 40, fini: true },
+  { nom: &quot;Minecraft&quot;, heures: 120, fini: false },
+  { nom: &quot;Tetris&quot;, heures: 5, fini: true }
+];
+
+function afficherJeux(jeux) {
+  for (const jeu of jeux) {
+    const statut = jeu.fini ? &quot;fini&quot; : &quot;en cours&quot;;
+    console.log(jeu.nom + &quot; (&quot; + jeu.heures + &quot;h) - &quot; + statut);
+  }
+}
+
+function totalHeures(jeux) {
+  let total = 0;
+  for (const jeu of jeux) {
+    total = total + jeu.heures;
+  }
+  return total;
+}
+
+afficherJeux(inventaire);
+console.log(&quot;Total heures : &quot; + totalHeures(inventaire));</code></pre></div>
+<p>Objets dans un tableau : combo tres courant en JS.</p>
+<h2 id="chapitre-09--mini-defi">Mini defi</h2>
+<ul>
+<li>Cree un objet <code>moi</code> avec prenom, age, ville</li>
+<li>Ajoute une propriete <code>hobbies</code> (tableau de strings)</li>
+<li>Affiche &quot;J&#x27;aime : ...&quot; en joignant les hobbies</li>
+<li>Cree un tableau de 2 amis (objets) et affiche leurs prenoms</li>
+</ul>
+<h2 id="chapitre-09--a-retenir">A retenir</h2>
+<ul>
+<li>Objet = fiche avec des proprietes nommees</li>
+<li><code>objet.cle</code> ou <code>objet[&quot;cle&quot;]</code> pour lire</li>
+<li>Tableau d&#x27;objets = liste de fiches</li>
+<li>Tableau pour lister, objet pour decrire une chose</li>
+</ul>
+<h2 id="chapitre-09--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-09--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-10"><div class="chapter-num">Chapitre 10</div><h1 id="chapitre-10--chapitre-10-le-dom-trouver-des-elements">Chapitre 10 - Le DOM : trouver des elements</h1>
+<figure class="illus"><img src="images/print/js-dom.jpg" alt="On trouve un element, puis on le modifie."><figcaption>On trouve un element, puis on le modifie.</figcaption></figure>
+<p>Le DOM, c&#x27;est la page vue par JavaScript.</p>
+<p>Des elements. Des noeuds. Bref : ce que tu as ecrit en HTML, accessible en JS.</p>
+<h2 id="chapitre-10--selectionner">Selectionner</h2>
+<p>HTML :</p>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;h1 id=&quot;titre&quot;&gt;Salut&lt;/h1&gt;
+&lt;button class=&quot;btn&quot;&gt;Clique&lt;/button&gt;</code></pre></div>
+<p>JS :</p>
+<div class="code-block keep-block"><pre><code class="language-js">const titre = document.querySelector(&quot;#titre&quot;);
+const bouton = document.querySelector(&quot;.btn&quot;);</code></pre></div>
+<ul>
+<li><code>#titre</code> = id</li>
+<li><code>.btn</code> = classe</li>
+</ul>
+<p>Comme en CSS. Pratique.</p>
+<h2 id="chapitre-10--queryselectorall">querySelectorAll</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const items = document.querySelectorAll(&quot;li&quot;);
+console.log(items.length);</code></pre></div>
+<p>Ca renvoie une liste d&#x27;elements.</p>
+<h2 id="chapitre-10--verifier">Verifier</h2>
+<div class="code-block keep-block"><pre><code class="language-js">console.log(titre);</code></pre></div>
+<p>Si tu vois <code>null</code>, ton selecteur est faux, ou le script tourne trop tot.</p>
+<p>Rappel : mets le <code>&lt;script&gt;</code> juste avant <code>&lt;/body&gt;</code>.</p>
+<h2 id="chapitre-10--a-toi">A toi</h2>
+<p>Dans ta page :</p>
+<ol>
+<li>1. un <code>h1</code> avec un id</li>
+<li>2. selectionne-le en JS</li>
+<li>3. <code>console.log</code> son texte avec <code>titre.textContent</code></li>
+</ol>
+<h2 id="chapitre-10--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-10--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-11"><div class="chapter-num">Chapitre 11</div><h1 id="chapitre-11--chapitre-11-le-dom-changer-la-page">Chapitre 11 - Le DOM : changer la page</h1>
+<p>Une fois l&#x27;element trouve, tu peux le modifier.</p>
+<h2 id="chapitre-11--changer-le-texte">Changer le texte</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const titre = document.querySelector(&quot;#titre&quot;);
+titre.textContent = &quot;Nouveau titre&quot;;</code></pre></div>
+<h2 id="chapitre-11--changer-le-html-interne-avec-prudence">Changer le HTML interne (avec prudence)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">titre.innerHTML = &quot;Salut &lt;strong&gt;toi&lt;/strong&gt;&quot;;</code></pre></div>
+<p><code>textContent</code> = texte simple (plus sur pour debuter).</p>
+<p><code>innerHTML</code> = peut interpreter des balises.</p>
+<h2 id="chapitre-11--classes-css">Classes CSS</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const carte = document.querySelector(&quot;.carte&quot;);
+carte.classList.add(&quot;active&quot;);
+carte.classList.remove(&quot;active&quot;);
+carte.classList.toggle(&quot;active&quot;);</code></pre></div>
+<p>Super couple avec ton CSS.</p>
+<h2 id="chapitre-11--style-direct-ok-pour-tester">Style direct (ok pour tester)</h2>
+<div class="code-block keep-block"><pre><code class="language-js">titre.style.color = &quot;teal&quot;;
+titre.style.fontSize = &quot;28px&quot;;</code></pre></div>
+<p>Sur un vrai projet, prefere souvent les classes.</p>
+<h2 id="chapitre-11--creer-un-element">Creer un element</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const p = document.createElement(&quot;p&quot;);
+p.textContent = &quot;Je viens d&#x27;apparaitre&quot;;
+document.body.appendChild(p);</code></pre></div>
+<h2 id="chapitre-11--a-toi">A toi</h2>
+<p>Change le texte d&#x27;un paragraphe au chargement de la page.</p>
+<p>Ajoute aussi une classe CSS <code>highlight</code> a un titre.</p>
+<h2 id="chapitre-11--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-11--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-12"><div class="chapter-num">Chapitre 12</div><h1 id="chapitre-12--chapitre-12-les-evenements-reagir-aux-clics">Chapitre 12 - Les evenements (reagir aux clics)</h1>
+<figure class="illus"><img src="images/print/js-evenements.jpg" alt="Clic -&gt; JS ecoute -&gt; la page change."><figcaption>Clic -&gt; JS ecoute -&gt; la page change.</figcaption></figure>
+<p>La page devient interactive ici.</p>
+<h2 id="chapitre-12--click">click</h2>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;button id=&quot;bouton&quot;&gt;Clique-moi&lt;/button&gt;
+&lt;p id=&quot;message&quot;&gt;&lt;/p&gt;</code></pre></div>
+<div class="code-block keep-block"><pre><code class="language-js">const bouton = document.querySelector(&quot;#bouton&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+
+bouton.addEventListener(&quot;click&quot;, function () {
+  message.textContent = &quot;Bravo, tu as clique !&quot;;
+});</code></pre></div>
+<p><code>addEventListener</code> = &quot;quand cet evenement arrive, fais ca&quot;.</p>
+<h2 id="chapitre-12--compteur">Compteur</h2>
+<div class="code-block keep-block"><pre><code class="language-js">let clics = 0;
+
+bouton.addEventListener(&quot;click&quot;, function () {
+  clics = clics + 1;
+  message.textContent = &quot;Clics : &quot; + clics;
+});</code></pre></div>
+<h2 id="chapitre-12--autres-evenements-utiles">Autres evenements utiles</h2>
+<ul>
+<li><code>input</code> : quand on ecrit dans un champ</li>
+<li><code>submit</code> : envoi de formulaire</li>
+<li><code>mouseover</code> : souris au-dessus (moins prioritaire)</li>
+</ul>
+<h2 id="chapitre-12--eviter-le-rechargement-de-formulaire">Eviter le rechargement de formulaire</h2>
+<div class="code-block keep-block"><pre><code class="language-js">form.addEventListener(&quot;submit&quot;, function (event) {
+  event.preventDefault();
+  // ton code ici
+});</code></pre></div>
+<p><code>preventDefault</code> dit au navigateur : &quot;laisse, je gere&quot;.</p>
+<h2 id="chapitre-12--a-toi">A toi</h2>
+<p>Bouton + compteur.</p>
+<p>Chaque clic ajoute 1.</p>
+<p>Affiche le total dans un <code>p</code>.</p>
+<h2 id="chapitre-12--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-12--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-13"><div class="chapter-num">Chapitre 13</div><h1 id="chapitre-13--chapitre-13-mini-projet-compteur-de-score">Chapitre 13 - Mini-projet : compteur de score</h1>
+<p>On assemble. Un petit score interactif.</p>
+<h2 id="chapitre-13--but">But</h2>
+<ul>
+<li>Afficher un score</li>
+<li>Bouton +1</li>
+<li>Bouton -1</li>
+<li>Bouton reset</li>
+<li>Le score ne descend pas sous 0</li>
+</ul>
+<h2 id="chapitre-13--html">HTML</h2>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;h1&gt;Score&lt;/h1&gt;
+&lt;p id=&quot;score&quot;&gt;0&lt;/p&gt;
+&lt;button id=&quot;plus&quot;&gt;+1&lt;/button&gt;
+&lt;button id=&quot;moins&quot;&gt;-1&lt;/button&gt;
+&lt;button id=&quot;reset&quot;&gt;Reset&lt;/button&gt;
+&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+<h2 id="chapitre-13--css-simple">CSS (simple)</h2>
+<div class="code-block keep-block"><pre><code class="language-css">body {
+  font-family: Georgia, serif;
+  text-align: center;
+  margin-top: 3rem;
+  background: #f4f1ec;
+}
+
+#score {
+  font-size: 3rem;
+}
+
+button {
+  font: inherit;
+  margin: 0.3rem;
+  padding: 0.5rem 0.9rem;
+}</code></pre></div>
+<h2 id="chapitre-13--js">JS</h2>
+<div class="code-block code-long"><pre><code class="language-js">const scoreEl = document.querySelector(&quot;#score&quot;);
+const plusBtn = document.querySelector(&quot;#plus&quot;);
+const moinsBtn = document.querySelector(&quot;#moins&quot;);
+const resetBtn = document.querySelector(&quot;#reset&quot;);
+
+let score = 0;
+
+function afficher() {
+  scoreEl.textContent = score;
+}
+
+plusBtn.addEventListener(&quot;click&quot;, function () {
+  score = score + 1;
+  afficher();
+});
+
+moinsBtn.addEventListener(&quot;click&quot;, function () {
+  if (score &gt; 0) {
+    score = score - 1;
+    afficher();
+  }
+});
+
+resetBtn.addEventListener(&quot;click&quot;, function () {
+  score = 0;
+  afficher();
+});
+
+afficher();</code></pre></div>
+<h2 id="chapitre-13--criteres-de-reussite">Criteres de reussite</h2>
+<ul>
+<li>Les 3 boutons marchent</li>
+<li>Pas de score negatif</li>
+<li>Code range (const/let, fonctions courtes)</li>
+</ul>
+<h2 id="chapitre-13--bonus">Bonus</h2>
+<ul>
+<li>Change la couleur du score si score &gt;= 10</li>
+<li>Ajoute un message &quot;Belle serie !&quot;</li>
+</ul>
+<h2 id="chapitre-13--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-13--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-14"><div class="chapter-num">Chapitre 14</div><h1 id="chapitre-14--chapitre-14-ce-qu-il-faut-retenir">Chapitre 14 - Ce qu&#x27;il faut retenir</h1>
+<p>Presque fini. Encore quiz + bravo.</p>
+<h2 id="chapitre-14--en-une-minute">En une minute</h2>
+<ul>
+<li>JS rend la page interactive</li>
+<li>Variables : <code>const</code> / <code>let</code></li>
+<li>Types : texte, nombre, booleen</li>
+<li><code>if</code> pour decider</li>
+<li>Boucles pour repeter</li>
+<li>Fonctions pour reutiliser</li>
+<li>Tableaux = listes</li>
+<li>Objets = fiches</li>
+<li>DOM = trouver + modifier des elements</li>
+<li>Evenements = reagir (surtout <code>click</code>)</li>
+</ul>
+<h2 id="chapitre-14--habitudes-solides">Habitudes solides</h2>
+<ol>
+<li>1. Script avant <code>&lt;/body&gt;</code></li>
+<li>2. Noms clairs</li>
+<li>3. <code>console.log</code> pour verifier</li>
+<li>4. Petites fonctions</li>
+<li>5. <code>===</code> pour comparer</li>
+<li>6. Tester apres chaque petit changement</li>
+</ol>
+<h2 id="chapitre-14--erreurs-classiques">Erreurs classiques</h2>
+<ul>
+<li>Selecteur DOM faux (<code>null</code>)</li>
+<li>Oublier d&#x27;appeler la fonction</li>
+<li>Boucle infinie</li>
+<li>Mettre le script trop haut dans le HTML</li>
+</ul>
+<h2 id="chapitre-14--suite-possible">Suite possible</h2>
+<ul>
+<li>Formulaires plus riches</li>
+<li>LocalStorage (garder des infos)</li>
+<li>Un peu d&#x27;API (<code>fetch</code>)</li>
+<li>Puis, plus tard, des outils/frameworks</li>
+</ul>
+<p>Mais la : bases d&#x27;abord. C&#x27;est elles qui portent tout le reste.</p>
+<h2 id="chapitre-14--en-vrai-sur-le-terrain">En vrai, sur le terrain</h2>
+<p>Ouvre la console. Retape l&#x27;exemple a la main.</p>
+<p>Change une valeur. Regarde ce qui bouge. C&#x27;est comme ca que ca rentre.</p>
+<h2 id="chapitre-14--mini-defi">Mini defi</h2>
+<p>Inventes un tout petit cas perso (ton prenom, ton score, ton jeu prefere).</p>
+<p>Repars de l&#x27;exemple avec TES donnees. Si ca marche, c&#x27;est bon signe.</p></article><article class="chapter chapter-break" id="chapitre-15"><div class="chapter-num">Chapitre 15</div><h1 id="chapitre-15--chapitre-17-atelier-une-todo-liste-mini">Chapitre 17 - Atelier : une todo liste mini</h1>
+<p>On fait une liste de taches.</p>
+<p>Ajouter. Afficher. (Supprimer en bonus.)</p>
+<h2 id="chapitre-15--html">HTML</h2>
+<div class="code-block keep-block"><pre><code class="language-html">&lt;h1&gt;Mes taches&lt;/h1&gt;
+&lt;input id=&quot;champ&quot; type=&quot;text&quot; placeholder=&quot;Nouvelle tache&quot;&gt;
+&lt;button id=&quot;ajouter&quot;&gt;Ajouter&lt;/button&gt;
+&lt;ul id=&quot;liste&quot;&gt;&lt;/ul&gt;
+&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></pre></div>
+<h2 id="chapitre-15--js">JS</h2>
+<div class="code-block keep-block"><pre><code class="language-js">const champ = document.querySelector(&quot;#champ&quot;);
+const bouton = document.querySelector(&quot;#ajouter&quot;);
+const liste = document.querySelector(&quot;#liste&quot;);
+
+bouton.addEventListener(&quot;click&quot;, function () {
+  const texte = champ.value.trim();
+  if (texte === &quot;&quot;) {
+    return;
+  }
+
+  const li = document.createElement(&quot;li&quot;);
+  li.textContent = texte;
+  liste.appendChild(li);
+  champ.value = &quot;&quot;;
+  champ.focus();
+});</code></pre></div>
+<h2 id="chapitre-15--pourquoi-trim">Pourquoi <code>trim()</code> ?</h2>
+<p>Pour enlever les espaces avant/apres.</p>
+<p>Sinon tu peux ajouter une tache &quot;vide&quot; pleine d&#x27;espaces. Moche.</p>
+<h2 id="chapitre-15--bonus-1-enter-aussi">Bonus 1 : Enter aussi</h2>
+<div class="code-block keep-block"><pre><code class="language-js">champ.addEventListener(&quot;keydown&quot;, function (event) {
+  if (event.key === &quot;Enter&quot;) {
+    bouton.click();
+  }
+});</code></pre></div>
+<h2 id="chapitre-15--bonus-2-supprimer-une-tache">Bonus 2 : supprimer une tache</h2>
+<div class="code-block keep-block"><pre><code class="language-js">li.addEventListener(&quot;click&quot;, function () {
+  li.remove();
+});</code></pre></div>
+<p>Dis-toi que cliquer = &quot;c&#x27;est fait, je retire&quot;.</p>
+<h2 id="chapitre-15--criteres">Criteres</h2>
+<ul>
+<li>Ajout marche</li>
+<li>Champ se vide apres ajout</li>
+<li>Pas d&#x27;ajout vide</li>
+<li>Code lisible</li>
+</ul>
+<h2 id="chapitre-15--ce-que-tu-pratiques-ici">Ce que tu pratiques ici</h2>
+<ul>
+<li>DOM</li>
+<li>Evenements</li>
+<li>Conditions</li>
+<li>Creation d&#x27;elements</li>
+</ul>
+<p>C&#x27;est pile le coeur du JS front debutant.</p></article><article class="chapter chapter-break" id="chapitre-16"><div class="chapter-num">Chapitre 16</div><h1 id="chapitre-16--chapitre-18-garder-des-infos-localstorage">Chapitre 18 - Garder des infos (localStorage)</h1>
+<p>Des fois tu veux que ca reste apres un refresh.</p>
+<p><code>localStorage</code> range des textes dans le navigateur.</p>
+<h2 id="chapitre-16--idee-simple">Idee simple</h2>
+<div class="code-block keep-block"><pre><code class="language-js">localStorage.setItem(&quot;prenom&quot;, &quot;Nora&quot;);
+const prenom = localStorage.getItem(&quot;prenom&quot;);
+console.log(prenom);</code></pre></div>
+<h2 id="chapitre-16--attention">Attention</h2>
+<p>Ca stocke des <strong>strings</strong>.</p>
+<p>Pour un nombre ou une liste, on passe souvent par JSON.</p>
+<div class="code-block keep-block"><pre><code class="language-js">const score = 12;
+localStorage.setItem(&quot;score&quot;, String(score));
+
+const lu = Number(localStorage.getItem(&quot;score&quot;));</code></pre></div>
+<p>Pour un tableau :</p>
+<div class="code-block keep-block"><pre><code class="language-js">const taches = [&quot;acheter du pain&quot;, &quot;reviser JS&quot;];
+localStorage.setItem(&quot;taches&quot;, JSON.stringify(taches));
+
+const retrouvees = JSON.parse(localStorage.getItem(&quot;taches&quot;) || &quot;[]&quot;);</code></pre></div>
+<h2 id="chapitre-16--brancher-sur-la-todo">Brancher sur la todo</h2>
+<p>Quand tu ajoutes une tache, sauvegarde la liste.</p>
+<p>Au chargement, relis et reaffiche.</p>
+<p>Pseudo-plan :</p>
+<ol>
+<li>1. tableau <code>taches = []</code></li>
+<li>2. a chaque ajout : <code>push</code> + sauvegarde + rendu</li>
+<li>3. au demarrage : charger + rendu</li>
+</ol>
+<h2 id="chapitre-16--limites">Limites</h2>
+<ul>
+<li>C&#x27;est local a ce navigateur</li>
+<li>L&#x27;utilisateur peut vider ses donnees</li>
+<li>Pas pour des secrets (mots de passe, etc.)</li>
+</ul>
+<h2 id="chapitre-16--a-toi">A toi</h2>
+<p>Sauvegarde le score du compteur (chapitre 13) dans <code>localStorage</code>.</p>
+<p>Au rechargement, le score revient.</p>
+<p>Petit pouvoir. Gros effet &quot;waouh&quot;.</p></article><article class="chapter chapter-break" id="chapitre-17"><div class="chapter-num">Chapitre 17</div><h1 id="chapitre-17--chapitre-19-erreurs-js-frequentes-et-comment-les-lire">Chapitre 19 - Erreurs JS frequentes (et comment les lire)</h1>
+<p>Le navigateur parle. Apprends a l&#x27;ecouter.</p>
+<h2 id="chapitre-17--ouvre-la-console">Ouvre la console</h2>
+<p>F12 -&gt; Console.</p>
+<p>Rouge = probleme.</p>
+<p>Lis la ligne. Souvent y&#x27;a un numero de ligne.</p>
+<h2 id="chapitre-17--x-is-not-defined">&quot;X is not defined&quot;</h2>
+<p>Tu utilises une variable qui n&#x27;existe pas.</p>
+<p>Faute de frappe classique : <code>scoree</code> au lieu de <code>score</code>.</p>
+<h2 id="chapitre-17--cannot-read-properties-of-null">&quot;Cannot read properties of null&quot;</h2>
+<p>Ton <code>querySelector</code> a renvoye <code>null</code>.</p>
+<p>Selecteur faux, ou script trop tot.</p>
+<h2 id="chapitre-17--unexpected-token">&quot;Unexpected token&quot;</h2>
+<p>Syntaxe cassee.</p>
+<p>Parenthese, crochet, ou guillemet non ferme.</p>
+<h2 id="chapitre-17--boucle-infinie">Boucle infinie</h2>
+<p>La page freeze.</p>
+<p>Tu as un <code>while</code> qui ne finit jamais.</p>
+<p>Coupe l&#x27;onglet. Corrige. Reprends.</p>
+<h2 id="chapitre-17--methode-anti-stress">Methode anti-stress</h2>
+<ol>
+<li>1. Lis le message</li>
+<li>2. Va a la ligne indiquee</li>
+<li>3. <code>console.log</code> juste avant</li>
+<li>4. Corrige le plus petit truc possible</li>
+<li>5. Reteste</li>
+</ol>
+<h2 id="chapitre-17--exercice">Exercice</h2>
+<p>Casse volontairement ton compteur (renomme un id).</p>
+<p>Lis l&#x27;erreur.</p>
+<p>Repare.</p>
+<p>Tu viens d&#x27;apprendre un vrai metier : comprendre les messages.</p></article><article class="chapter chapter-break" id="chapitre-18"><div class="chapter-num">Quiz</div><h1 id="chapitre-18--quiz-final-teste-toi">Quiz final - Teste-toi !</h1>
+<p>Meme regle : cherche d&#x27;abord. Corriges ensuite.</p>
+<h2 id="chapitre-18--questions">Questions</h2>
+<p><strong>Q1.</strong> JavaScript sert surtout a :</p>
+<ul>
+<li>A) Structurer la page</li>
+<li>B) Styliser la page</li>
+<li>C) Rendre la page interactive</li>
+</ul>
+<p><strong>Q2.</strong> Ou placer le <code>&lt;script src=&quot;script.js&quot;&gt;</code> pour debuter simplement ?</p>
+<ul>
+<li>A) Avant <code>&lt;/body&gt;</code></li>
+<li>B) Dans le CSS</li>
+<li>C) Apres <code>&lt;/html&gt;</code></li>
+</ul>
+<p><strong>Q3.</strong> Quelle declaration est faite pour ne pas etre reassignee ?</p>
+<ul>
+<li>A) <code>let</code></li>
+<li>B) <code>const</code></li>
+<li>C) <code>var</code> (et on s&#x27;en fiche pour l&#x27;instant)</li>
+</ul>
+<p><strong>Q4.</strong> <code>true</code> et <code>false</code> sont des :</p>
+<ul>
+<li>A) strings</li>
+<li>B) booleans</li>
+<li>C) tableaux</li>
+</ul>
+<p><strong>Q5.</strong> Quelle comparaison est recommandee ici ?</p>
+<ul>
+<li>A) <code>==</code></li>
+<li>B) <code>===</code></li>
+<li>C) <code>====</code></li>
+</ul>
+<p><strong>Q6.</strong> Une boucle <code>for</code> sert a :</p>
+<ul>
+<li>A) Stocker une image</li>
+<li>B) Repeter une action</li>
+<li>C) Changer la police</li>
+</ul>
+<p><strong>Q7.</strong> <code>return</code> dans une fonction :</p>
+<ul>
+<li>A) Affiche toujours dans la page</li>
+<li>B) Renvoie une valeur</li>
+<li>C) Efface la variable</li>
+</ul>
+<p><strong>Q8.</strong> Dans <code>[&quot;a&quot;, &quot;b&quot;]</code>, l&#x27;index de <code>&quot;a&quot;</code> est :</p>
+<ul>
+<li>A) 1</li>
+<li>B) 0</li>
+<li>C) 2</li>
+</ul>
+<p><strong>Q9.</strong> <code>document.querySelector(&quot;#titre&quot;)</code> selectionne :</p>
+<ul>
+<li>A) Une classe <code>titre</code></li>
+<li>B) Un id <code>titre</code></li>
+<li>C) Toutes les balises titre</li>
+</ul>
+<p><strong>Q10.</strong> <code>textContent</code> sert a :</p>
+<ul>
+<li>A) Changer le texte d&#x27;un element</li>
+<li>B) Creer un serveur</li>
+<li>C) Compresser une image</li>
+</ul>
+<p><strong>Q11.</strong> <code>addEventListener(&quot;click&quot;, ...)</code> :</p>
+<ul>
+<li>A) Change la couleur tout seul</li>
+<li>B) Ecoute un clic pour lancer du code</li>
+<li>C) Installe JavaScript</li>
+</ul>
+<p><strong>Q12.</strong> <code>event.preventDefault()</code> sur un submit :</p>
+<ul>
+<li>A) Envoie le formulaire plus vite</li>
+<li>B) Empeche le comportement par defaut</li>
+<li>C) Supprime le bouton</li>
+</ul>
+<h2 id="chapitre-18--reponses">Reponses</h2>
+<ol>
+<li>1. <strong>C</strong></li>
+<li>2. <strong>A</strong></li>
+<li>3. <strong>B</strong> (la meilleure reponse pour &quot;ne pas reassignee&quot;)</li>
+<li>4. <strong>B</strong></li>
+<li>5. <strong>B</strong></li>
+<li>6. <strong>B</strong></li>
+<li>7. <strong>B</strong></li>
+<li>8. <strong>B</strong></li>
+<li>9. <strong>B</strong></li>
+<li>10. <strong>A</strong></li>
+<li>11. <strong>B</strong></li>
+<li>12. <strong>B</strong></li>
+</ol>
+<h2 id="chapitre-18--score">Score</h2>
+<ul>
+<li>10-12 : propre</li>
+<li>7-9 : bien, relis DOM + evenements</li>
+<li>moins de 7 : refais les chapitres 3, 10, 12 puis reviens</li>
+</ul></article><article class="chapter chapter-break" id="chapitre-19"><div class="chapter-num">Final</div><h1 id="chapitre-19--bravo">Bravo.</h1>
+<figure class="illus illus-wide"><img src="images/print/js-felicitations.jpg" alt="Bravo. Tu as appris a rendre une page vivante."><figcaption>Bravo. Tu as appris a rendre une page vivante.</figcaption></figure>
+<p>Tu viens de terminer les bases de JavaScript.</p>
+<p>Pas &quot;je connais tout le web&quot;.</p>
+<p>Mais &quot;je sais faire reagir une page&quot;. C&#x27;est deja un vrai cran.</p>
+<h2 id="chapitre-19--ce-que-tu-sais-faire">Ce que tu sais faire</h2>
+<ul>
+<li>Ecrire un script</li>
+<li>Utiliser variables, conditions, boucles, fonctions</li>
+<li>Manipuler listes et petits objets</li>
+<li>Modifier le DOM</li>
+<li>Reagir aux clics</li>
+<li>Construire un mini compteur</li>
+</ul>
+<h2 id="chapitre-19--petite-mission">Petite mission</h2>
+<p>Reprends le compteur.</p>
+<p>Ajoute :</p>
+<ol>
+<li>1. un message si score &gt;= 10</li>
+<li>2. une couleur differente</li>
+<li>3. un bouton &quot; +5 &quot;</li>
+</ol>
+<p>Montre-le a quelqu&#x27;un.</p>
+<p>Meme en 2 minutes. L&#x27;important c&#x27;est le geste.</p>
+<h2 id="chapitre-19--la-suite">La suite</h2>
+<p>Quand tu seras chaud : formulaires, localStorage, puis <code>fetch</code>.</p>
+<p>Mais la, respire.</p>
+<p>Encore bravo.</p>
+<p>Le web commence a t&#x27;obeir. Doucement. Et c&#x27;est parfait.</p></article>
+
+    <p class="footer-note">Tu as les briques. Maintenant, construis.</p>
+  </div>
+</body>
+</html>

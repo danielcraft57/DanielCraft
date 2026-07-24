@@ -7,6 +7,7 @@ Livres de formation info, un theme a la fois.
 | Livre | Dossier | PDF |
 |-------|---------|-----|
 | HTML et CSS - Les bases | `html-css/` | `../pdf/html-css-les-bases.pdf` |
+| JavaScript - Les bases | `javascript/` | `../pdf/javascript-les-bases.pdf` |
 
 ## Rebuild HTML/CSS
 

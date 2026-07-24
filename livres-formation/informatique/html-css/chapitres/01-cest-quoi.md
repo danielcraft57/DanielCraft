@@ -43,3 +43,79 @@ Pas besoin d'etre un genie.
 Juste de la curiosite et un peu de patience.
 
 Allez, on attaque.
+
+## Erreur classique
+
+Penser que le HTML sert a rendre une page jolie. Beaucoup de debutants cherchent comment "mettre du bleu" directement dans le HTML. La couleur, c'est le job du CSS.
+
+Mauvais reflexe : melanger les deux roles des le depart.
+
+Bon reflexe : d'abord une page HTML simple, puis on ajoute le CSS pour la forme.
+
+## Exemple complet
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Structure vs style</title>
+  <!-- Le CSS habille la page -->
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 { color: #1a5f4a; }
+    .carte {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Le HTML structure le contenu -->
+  <div class="carte">
+    <h1>Ma page</h1>
+    <p>Ici le HTML dit : c'est un titre, c'est un paragraphe.</p>
+    <p>Le CSS dit : fond gris clair, titre vert, carte blanche.</p>
+  </div>
+</body>
+</html>
+```
+
+## Mini defi
+
+- Ouvre un site que tu visites souvent
+- Clic droit > Inspecter (ou F12)
+- Clique sur une ligne de HTML dans l'inspecteur
+- Repere une regle CSS associee dans le panneau de droite
+- Note une chose structuree en HTML et une chose stylée en CSS
+
+## A retenir
+
+- HTML = murs et pieces (structure)
+- CSS = peinture et deco (apparence)
+- Le navigateur transforme ton code en page visible
+- Les deux travaillent toujours ensemble
+- Pas besoin d'etre expert pour commencer
+
+
+## En vrai, sur le terrain
+
+Prends 10 minutes. Refais l'exemple du chapitre sans regarder.
+Si tu bloques, relis juste la partie qui coinçe. Puis repars.
+
+Le but c'est pas de memoriser. C'est de reconnaitre le motif la prochaine fois.
+
+## Mini defi
+
+Ecris 3 lignes de notes a toi-meme :
+1. ce que tu as compris
+2. ce qui reste flou
+3. un truc a retester demain
+
+Garde ces notes. Elles valent plus qu'un long cours jamais relu.

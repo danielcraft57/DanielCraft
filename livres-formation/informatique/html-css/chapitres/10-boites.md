@@ -74,3 +74,20 @@ span.badge {
 
 Cree une classe `.carte` avec fond, padding, bordure, coins ronds.
 Applique-la a une `div` qui contient un titre et un paragraphe.
+
+
+## En vrai, sur le terrain
+
+Prends 10 minutes. Refais l'exemple du chapitre sans regarder.
+Si tu bloques, relis juste la partie qui coinçe. Puis repars.
+
+Le but c'est pas de memoriser. C'est de reconnaitre le motif la prochaine fois.
+
+## Mini defi
+
+Ecris 3 lignes de notes a toi-meme :
+1. ce que tu as compris
+2. ce qui reste flou
+3. un truc a retester demain
+
+Garde ces notes. Elles valent plus qu'un long cours jamais relu.
