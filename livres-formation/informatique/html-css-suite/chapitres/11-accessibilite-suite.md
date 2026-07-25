@@ -2,7 +2,7 @@
 
 Le premier livre a plante le decor : textes lisibles, alt, structure. Ici, on solidifie trois reflexes qui changent vraiment la vie des gens : focus visible, contrastes, labels (et un peu d'ordre au clavier).
 
-Accessibilite, ce n'est pas un badge. C'est "est-ce que quelqu'un d'autre que moi peut utiliser cette page sans souffrir ?". Chez DanielCraft, on le traite comme de la qualite produit, pas comme un bonus cosmetique.
+Accessibilite, ce n'est pas un badge. C'est "est-ce que quelqu'un d'autre que moi peut utiliser cette page sans souffrir ?". Chez DanielCraft, on le traite comme de la qualite produit, pas comme un bonus cosmetique. Lea le fait avant chaque livraison. Max aussi, depuis qu'un client lui a dit "je n'arrive pas a tabber". Sam chronometre le parcours Tab en classe.
 
 ## Focus visible : savoir ou on est
 
@@ -26,17 +26,13 @@ Beaucoup de gens naviguent au clavier (Tab, Shift+Tab, Entree). Si tu enleves le
 
 Test minimal : charge ta page, cache la souris, Tab jusqu'au bout. Tu dois toujours voir clairement l'element actif.
 
+:::retenir
+Focus visible, contrastes solides, labels relies. Tester au clavier. Ce n'est pas un chapitre "en plus" : c'est la qualite de la page pour de vrai monde.
+:::
+
 ## Contrastes : lisible, pas juste joli
 
-Texte gris pale sur fond beige, ca fait "design soft"... et illegible au soleil ou avec une vue fatiguee. Vise un contraste solide entre texte et fond.
-
-Regles pratiques :
-
-Texte courant sombre sur fond clair, ou texte clair sur fond sombre.
-
-Les liens ne se distinguent pas seulement par la couleur (souligne au hover/focus, ou poids).
-
-Les placeholders tres clairs ne remplacent pas un label.
+Texte gris pale sur fond beige, ca fait "design soft"... et illegible au soleil ou avec une vue fatiguee. Vise un contraste solide entre texte et fond. Texte courant sombre sur fond clair, ou texte clair sur fond sombre. Les liens ne se distinguent pas seulement par la couleur (souligne au hover/focus, ou poids). Les placeholders tres clairs ne remplacent pas un label.
 
 Tu peux verifier avec un outil de contraste (extensions, sites de check). Si tu hesites entre deux beiges, choisis le plus lisible. La marque survit a un contraste correct.
 
@@ -86,9 +82,7 @@ Evite `tabindex` positifs inventes (1, 2, 3...) : ca devient un labyrinthe. `tab
 
 ## Images et boutons
 
-Image informative → `alt` utile.
-
-Bouton icone seul → nom accessible (texte visible, ou `aria-label` si vraiment icone seule).
+Image informative → `alt` utile. Bouton icone seul → nom accessible (texte visible, ou `aria-label` si vraiment icone seule).
 
 ```html
 <button type="button" aria-label="Fermer">X</button>
@@ -98,15 +92,7 @@ Mieux encore : un texte "Fermer" visible si tu as la place.
 
 ## Landing : checklist express
 
-Un seul `h1`.
-
-Menu atteignable au clavier.
-
-CTA avec focus visible.
-
-Contraste du texte hero (attention texte blanc sur photo claire : ajoute un voile sombre).
-
-Formulaire avec labels.
+Un seul `h1`. Menu atteignable au clavier. CTA avec focus visible. Contraste du texte hero (attention texte blanc sur photo claire : ajoute un voile sombre). Formulaire avec labels.
 
 ```css
 .hero {
@@ -118,11 +104,21 @@ Formulaire avec labels.
 
 Le degrade aide le contraste du texte sur image.
 
+## Ce que ce n'est pas
+
+Ce n'est pas croire que "personne ne navigue au clavier". Faux. Et meme parmi les souris, certains ont besoin de focus clair. Ce n'est pas non plus un badge "accessible" sans test.
+
+:::attention
+`outline: none` global. Liens oranges sur fond orange. Formulaire "flottant" sans labels. Ces trois pieges cassent une page "jolie" en page inutilisable.
+:::
+
+## Petite histoire
+
+Lea a Tabbe une landing client juste avant envoi : le CTA disparaissait au focus. Elle a remis un outline net et un voile sur le hero. Max a fait le meme geste sur sa page devis apres le retour d'un client. Sam active Narrateur cinq minutes en classe : les eleves entendent les trous.
+
 ## Erreur classique
 
-`outline: none` global. Liens oranges sur fond orange. Formulaire "flottant" sans labels. Modale ou menu qui piege le focus (sujet avance : au moins, ne casse pas Tab sur une page simple).
-
-Autre piege : croire que "personne ne navigue au clavier". Faux. Et meme parmi les souris, certains ont besoin de focus clair.
+`outline: none` global. Liens trop pales. Formulaire sans labels. Modale ou menu qui piege le focus (sujet avance : au moins, ne casse pas Tab sur une page simple).
 
 ## En vrai
 
@@ -132,4 +128,4 @@ Si tu peux, active un lecteur d'ecran basique juste cinq minutes (Narrateur sur 
 
 ## A toi
 
-Ameliore une page existante avec trois commits mentaux : (1) `:focus-visible` global propre, (2) correction de deux contrastes faibles, (3) labels complets sur un formulaire. Ecris en trois lignes ce que tu as change. C'est ton "rapport a11y" personnel.
+Ameliore une page existante avec trois commits mentaux : (1) `:focus-visible` global propre, (2) correction de deux contrastes faibles, (3) labels complets sur un formulaire. Ecris en trois lignes ce que tu as change. C'est ton "rapport a11y" personnel. Chez DanielCraft, ce petit rapport vaut plus qu'un badge sans test.

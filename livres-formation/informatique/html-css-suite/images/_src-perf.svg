@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f0ea"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2c2118" font-weight="700">Perf CSS : moins, mieux</text>
+<rect x="80" y="110" width="260" height="220" rx="14" fill="#ffffff" stroke="#2c2118" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2c2118" font-weight="700">CSS utile</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#4a3b2e" font-weight="400">pas de mort</text>
+<rect x="370" y="110" width="260" height="220" rx="14" fill="#e8e4dc" stroke="#2c2118" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2c2118" font-weight="700">images legeres</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#4a3b2e" font-weight="400">bon format</text>
+<rect x="660" y="110" width="260" height="220" rx="14" fill="#a3b18a" stroke="#2c2118" stroke-width="3"/>
+<text x="790" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2c2118" font-weight="700">chargement</text>
+<text x="790" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2c2118" font-weight="400">ressenti rapide</text>
+</svg>

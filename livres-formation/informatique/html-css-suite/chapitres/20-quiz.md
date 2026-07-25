@@ -1,6 +1,12 @@
 # Quiz final
 
-Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux avancer sans paniquer.
+Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux avancer sans paniquer. Chez DanielCraft, un quiz sert a reperer les trous, pas a humilier. Lea note ses erreurs. Max refait un atelier Grid. Sam l'utilise en fin de module. Toi, tu coches sans tricher.
+
+Une premiere passe honnete vaut mieux qu'un score maquille. Si tu bloques, marque et continue. Le but, c'est la carte des chapitres a rouvrir. Fais le quiz, note ton score, rejoue dans une semaine apres avoir touche une vraie page. Le vrai progres se voit a la deuxieme passe.
+
+:::astuce
+Entoure deux questions ratees des que tu as fini. Rouvre le chapitre correspondant le soir meme, sans attendre "plus tard".
+:::
 
 ## Questions
 
@@ -70,6 +76,22 @@ Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux avancer sa
 
 Si tu as 9/12 ou plus : tu es pret pour des pages reelles plus propres. Sinon, relis les chapitres lies (semantique, cascade, variables, Grid, images, formulaires, a11y, dark mode), sans dramatiser.
 
+## Petite histoire
+
+Lea a rate la question focus. Elle a Tabbe sa landing le soir meme et a corrige le contour. Max a confondu Flex et Grid : il a relu le chapitre 7 dix minutes. Sam affiche le score moyen : "on revoit variables et labels demain". Trois reactions, meme message : le quiz est une carte. Chez DanielCraft, on aime ces cartes.
+
+:::retenir
+Le quiz n'est pas un examen : c'est une carte des trous a boucher. Le vrai score, c'est la deuxieme passe apres une vraie page.
+:::
+
 ## Mini debrief
 
-Entoure deux questions ratees. Rouvre le chapitre correspondant. Refais l'exercice "A toi" de ce chapitre. Le quiz n'est pas un examen : c'est une carte des trous a boucher.
+Entoure deux questions ratees. Rouvre le chapitre correspondant. Refais l'exercice "A toi" de ce chapitre.
+
+## En vrai
+
+Ouvre ta derniere page. Verifie une chose liee a une question ratee : un label, une variable, un focus, une grille. Cinq minutes. Un trou a la fois.
+
+## A toi
+
+Ecris tes trois questions ratees. A cote, une phrase "ce que je confonds". Dans sept jours, rejoue seulement ces trois. Le vrai score, c'est la deuxieme passe.

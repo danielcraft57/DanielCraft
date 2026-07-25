@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f0ea"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2c2118" font-weight="700">Grid : une page en zones</text>
+<rect x="80" y="90" width="840" height="70" rx="14" fill="#a3b18a" stroke="#2c2118" stroke-width="3"/>
+<text x="500" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2c2118" font-weight="700">en-tete</text>
+<rect x="80" y="180" width="200" height="180" rx="14" fill="#ffffff" stroke="#2c2118" stroke-width="3"/>
+<text x="180" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2c2118" font-weight="700">nav</text>
+<rect x="300" y="180" width="400" height="180" rx="14" fill="#e8e4dc" stroke="#2c2118" stroke-width="3"/>
+<text x="500" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2c2118" font-weight="700">contenu</text>
+<rect x="720" y="180" width="200" height="180" rx="14" fill="#ffffff" stroke="#2c2118" stroke-width="3"/>
+<text x="820" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2c2118" font-weight="700">aside</text>
+<rect x="80" y="380" width="840" height="60" rx="14" fill="#ffffff" stroke="#2c2118" stroke-width="3"/>
+<text x="500" y="418" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2c2118" font-weight="700">pied</text>
+</svg>

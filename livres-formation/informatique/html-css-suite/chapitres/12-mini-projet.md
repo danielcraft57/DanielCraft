@@ -2,25 +2,15 @@
 
 On assemble. Tu vas construire une petite page d'accueil : marque, menu, hero, grille de cartes, bandeau d'appel, formulaire court, pied. Responsive. Theme via variables. Layout via Grid. Pas de framework.
 
-L'objectif n'est pas la perfection pixel. C'est une page coherente, lisible, utilisable au clavier, qui tient sur telephone et desktop. Le genre de base qu'on aimerait livrer pour un atelier, une boutique naive, ou une vitrine DanielCraft miniature.
+L'objectif n'est pas la perfection pixel. C'est une page coherente, lisible, utilisable au clavier, qui tient sur telephone et desktop. Le genre de base qu'on aimerait livrer pour un atelier, une boutique naive, ou une vitrine DanielCraft miniature. Lea pose toujours la question "c'est pour quoi, en cinq secondes ?". Max aussi. Sam chronometre la reponse en classe.
 
 ## Brief
 
 Sujet libre, mais concret. Exemples : "Atelier ceramique", "Cafe de quartier", "Coach sportif", "Librairie".
 
-La page contient :
+La page contient un header avec nom + navigation (2-4 liens), un hero avec `h1`, une phrase, un bouton, une section "Nos pepites" (ou equivalent) : grille de 3 ou 4 cartes (titre, texte, lien), une section contact : petit formulaire (nom, email, message), un footer simple.
 
-Un header avec nom + navigation (2-4 liens).
-
-Un hero avec `h1`, une phrase, un bouton.
-
-Une section "Nos pepites" (ou equivalent) : grille de 3 ou 4 cartes (titre, texte, lien).
-
-Une section contact : petit formulaire (nom, email, message).
-
-Un footer simple.
-
-Sur grand ecran : hero confortable, grille multi-colonnes. Sur petit ecran : tout s'empile, boutons aisees a taper.
+Sur grand ecran : hero confortable, grille multi-colonnes. Sur petit ecran : tout s'empile, boutons aises a taper.
 
 ## Etape 1 - HTML semantique
 
@@ -57,6 +47,10 @@ Un `h1` dans le hero. Des `h2` de section. Cartes en `article`. Formulaire avec 
 ```
 
 Branche `body`, liens, boutons, cartes sur ces variables. Aucune couleur magique eparpillee si tu peux l'eviter.
+
+:::retenir
+Theme 100 % variables, grille en `auto-fit`, HTML semantique, formulaire labels, Tab impeccable. Livrable imparfait > concept parfait non code.
+:::
 
 ## Etape 3 - Coquille et header
 
@@ -123,40 +117,34 @@ Flex pour le header. Serif volontaire pour sortir des stacks par defaut, tout en
 
 Images optionnelles : si tu en mets, `max-width: 100%` + `object-fit: cover` + `aspect-ratio`.
 
-## Etape 6 - Formulaire et footer
+## Etape 6 a 8 - Formulaire, transitions, a11y
 
-Reprend les patterns du chapitre 9. Formulaire en grid verticale, max-width raisonnable. Footer discret avec contraste correct.
-
-## Etape 7 - Transitions legeres
-
-Boutons et cartes : 200ms. `prefers-reduced-motion` en bas de fichier.
-
-## Etape 8 - Accessibilite express
-
-Tab complet. Focus visible. Labels. Contraste hero. `alt` si images.
+Reprend les patterns du chapitre 9. Formulaire en grid verticale, max-width raisonnable. Footer discret avec contraste correct. Boutons et cartes : transitions 200ms. `prefers-reduced-motion` en bas de fichier. Tab complet. Focus visible. Labels. Contraste hero. `alt` si images.
 
 ## Criteres de reussite
 
-La page se lit sans CSS (ordre logique).
+La page se lit sans CSS (ordre logique). Changer 2 variables change le theme de facon visible. La grille passe d'une a plusieurs colonnes sans casser. Pas de scroll horizontal sur mobile. Focus visible sur liens, boutons, champs.
 
-Changer 2 variables change le theme de facon visible.
+## Ce que ce n'est pas
 
-La grille passe d'une a plusieurs colonnes sans casser.
+Ce n'est pas tout faire en `position: absolute`. Ce n'est pas copier un theme enormement complexe. Ce n'est pas cinq CTA aussi forts les uns que les autres dans le hero.
 
-Pas de scroll horizontal sur mobile.
+:::attention
+Grille fixe `1fr 1fr 1fr` sans media query ecrase le telephone. Prefere `auto-fit` + `minmax`, ou un breakpoint qui repasse en une colonne.
+:::
 
-Focus visible sur liens, boutons, champs.
+## Petite histoire
+
+Lea a chronometre 90 minutes pour une premiere version "atelier ceramique". Livrable imparfait, mais coherent. Elle a montre la page a un ami : "c'est clair, j'irais". Max a regarde la meme page et a dit "je trouve le prix, je trouve le bouton". Sam valide des que le Tab passe - meme si une carte est encore un peu pale.
 
 ## Erreur classique
 
-Tout faire en `position: absolute`. Copier un theme enormement complexe. Oublier le formulaire labels. Mettre cinq CTA aussi forts les uns que les autres dans le hero. Grille fixe `1fr 1fr 1fr` sans media query qui ecrase le telephone.
+Oublier le formulaire labels. Mettre cinq CTA dans le hero. Grille fixe sans media query. Tout peaufiner jusqu'a minuit sans jamais montrer.
 
 ## En vrai
 
-Chronometre-toi 90 minutes. Livrable imparfait > concept parfait non code. Ensuite tu peaufines 30 minutes : contrastes, gaps, textes.
-
-Montre la page a quelqu'un. Demande : "C'est pour quoi, en cinq secondes ?" Si la reponse matche ton intention, le hero fait son job.
+Chronometre-toi 90 minutes. Livrable imparfait > concept parfait non code. Ensuite tu peaufines 30 minutes : contrastes, gaps, textes. Montre la page a quelqu'un. Demande : "C'est pour quoi, en cinq secondes ?" Si la reponse matche ton intention, le hero fait son job.
 
 ## A toi
 
-Livre `index.html` + `styles.css`. Nom du projet dans le header. Trois cartes minimum. Un formulaire. Un theme 100 % variables. Bonus : une variante en commentant une autre palette dans `:root` (tu basculeras vraiment au chapitre dark mode).
+Livre `index.html` + `styles.css`. Nom du projet dans le header. Trois cartes minimum. Un formulaire. Un theme 100 % variables. Bonus : une variante en commentant une autre palette dans `:root` (tu basculeras vraiment au chapitre dark mode). Chez DanielCraft, oser montrer bat peaufiner seul jusqu'a minuit.

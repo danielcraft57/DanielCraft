@@ -1,0 +1,2 @@
+Illustration pedagogique HTML/CSS suite - accessibilite clavier.
+Scene flat : navigation clavier, focus visible, bouton Envoyer. Texte FR seulement.

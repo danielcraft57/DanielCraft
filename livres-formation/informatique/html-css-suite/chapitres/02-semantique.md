@@ -1,34 +1,24 @@
 # Chapitre 2 - HTML semantique : donner un sens a la page
 
-Tu peux construire toute une page avec des `div`. Ca marche. Le navigateur affiche. Mais pour un humain qui lit le code, pour un lecteur d'ecran, pour un moteur de recherche, une pile de `div` anonymes, c'est un mur sans portes ni pieces nommees.
+Tu peux construire toute une page avec des `div`. Ca marche. Le navigateur affiche. Mais pour un humain qui lit le code, pour un lecteur d'ecran, pour un moteur de recherche, une pile de `div` anonymes, c'est un mur sans portes ni pieces nommees. Le HTML **semantique**, c'est nommer les pieces. `header`, `nav`, `main`, `article`, `section`, `footer` (et d'autres). Tu dis ce que c'est, pas seulement "un bloc".
 
-Le HTML semantique, c'est nommer les pieces. `header`, `nav`, `main`, `article`, `section`, `footer` (et d'autres). Tu dis ce que c'est, pas seulement "un bloc".
-
-Chez DanielCraft, on traite ca comme le plan d'une boutique : vitrine, rayon, caisse, sortie. Si tout s'appelle "piece", tu te perds. Si chaque zone a un role, la visite devient claire.
+Chez DanielCraft, on traite ca comme le plan d'une boutique : vitrine, rayon, caisse, sortie. Si tout s'appelle "piece", tu te perds. Si chaque zone a un role, la visite devient claire. Lea ouvre un fichier client six mois plus tard et retrouve le menu sans jouer aux detectives. Max comprend mieux sa page quand "entete / contenu / pied" sont des balises, pas des classes mysterieuses. Sam force ses eleves a expliquer la page a voix haute avec les noms de balises : si ca sonne juste, la structure tient.
 
 ## Pourquoi ca compte vraiment
 
-Le navigateur n'a pas besoin de `header` pour afficher un bandeau. Une `div` avec une classe ferait l'affaire pour le CSS. Alors pourquoi s'embeter ?
+Le navigateur n'a pas besoin de `header` pour afficher un bandeau. Une `div` avec une classe ferait l'affaire pour le CSS. Alors pourquoi s'embeter ? Parce que le sens voyage. Un lecteur d'ecran peut proposer "aller au contenu principal" grace a `main`. Les titres dans un `article` ont un contexte. Les moteurs comprennent mieux la structure. Toi, dans six mois, tu rouvres le fichier et tu sais ou est le menu.
 
-Parce que le sens voyage. Un lecteur d'ecran peut proposer "aller au contenu principal" grace a `main`. Les titres dans un `article` ont un contexte. Les moteurs comprennent mieux la structure. Toi, dans six mois, tu rouvres le fichier et tu sais ou est le menu sans jouer aux detectives.
+Sur une landing, le hero n'est pas "div 1". C'est souvent un `header` ou une `section` claire dans le `main`. Sur un blog, chaque billet est un `article`. Sur une page produit, la fiche peut etre un `article` ou une `section` bien titree. Le CSS viendra poser Grid ou Flex dessus. Le sens est la avant la peinture.
 
-Sur une landing, le hero n'est pas "div 1". C'est souvent un `header` ou une `section` claire dans le `main`. Sur un blog, chaque billet est un `article`. Sur une page produit, la fiche peut etre un `article` ou une `section` bien titre.
+:::astuce
+Avant de styler, lis ton HTML a voix haute : "en-tete, menu, contenu principal, article, pied". Si ca sonne comme un sommaire, tu es sur la bonne voie.
+:::
 
 ## Les balises de structure que tu vas utiliser
 
-`header` : en-tete d'une page ou d'une section. Logo, titre du site, parfois le menu. Une page peut avoir plusieurs `header` (un pour la page, un dans un article), mais commence simple : un en-tete de page.
+`header` : en-tete d'une page ou d'une section (logo, titre, parfois le menu). Commence simple : un en-tete de page. `nav` : menus reels, pas chaque lien isole. `main` : le contenu principal unique - en general un seul par page. `article` : un contenu qui tient tout seul (billet, fiche produit). `section` : regroupement thematique avec souvent un titre (Services, Contact...). `footer` : pied de page ou d'article. `aside` : contenu complementaire a cote. Pas obligatoire partout.
 
-`nav` : navigation principale (ou secondaire). Liens pour se deplacer dans le site. Pas besoin d'envelopper chaque lien isole dans un `nav`. Reserve-le aux menus reels.
-
-`main` : le contenu principal unique de la page. En general, un seul `main` par page. C'est "le coeur" : pas le menu global, pas le pied, pas la pub laterale.
-
-`article` : un contenu qui tient tout seul (billet de blog, carte produit riche, commentaire autonome). Si tu peux l'imaginer extrait et encore comprehensible, `article` colle souvent.
-
-`section` : un regroupement thematique avec souvent un titre. Sur une landing : section "Services", section "Temoignages", section "Contact". Ce n'est pas un `div` deplus : c'est un chapitre dans la page.
-
-`footer` : pied de page ou pied d'un article. Mentions, liens secondaires, copyright. Comme `header`, il peut vivre a plusieurs niveaux, mais un pied de site suffit au debut.
-
-`aside` : contenu a cote, complementaire (encart "A lire aussi", infos secondaires). Pas obligatoire partout. Utile des que tu as une vraie colonne laterale.
+Tu auras encore des `div` pour le layout neutre. Semantique = nommer les zones importantes. Si tout est `section` sans reflechir, tu n'as gagne que du bruit.
 
 ## Une page blog, version semantique
 
@@ -87,7 +77,7 @@ Sur une landing atelier, tu peux faire :
 <footer>...</footer>
 ```
 
-Le `h1` reste unique et fort. Les `h2` portent les sections. Tu ne sautes pas de `h1` a `h3` sans raison.
+Le `h1` reste unique et fort. Les `h2` portent les sections. Tu ne sautes pas de `h1` a `h3` sans raison. Lea livre souvent ce squelette avant toute couleur. Max le reconnait : "c'est comme afficher clairement l'entree, le comptoir, la sortie".
 
 ## Carte produit
 
@@ -106,26 +96,34 @@ Une grille de cartes peut etre une liste d'`article` :
 </main>
 ```
 
-Le `div.grille` sert au layout CSS. Les `article` portent le sens de chaque produit.
+Le `div.grille` sert au layout CSS. Les `article` portent le sens de chaque produit. `div` = boite neutre. Semantique = boite qui dit son role.
 
 ## Ce que ce n'est pas
 
-Ce n'est pas une religion. Tu auras encore des `div` et des `span` pour le style ou les petits morceaux. L'idee : les zones importantes de la page ont un nom utile. Si tout est `section` ou tout est `article` sans reflechir, tu n'as gagne que du bruit.
+Ce n'est pas une religion ni "ca fait pro donc j'enveloppe tout le body dans un `section` geant". Un nom sans role clair = bruit.
 
-`div` = boite neutre. Semantique = boite qui dit son role.
+## Petite histoire
+
+Sam a demande a un eleve de decrire sa page sans regarder l'ecran. L'eleve a dit "plein de divs". Ils ont renomme : `header`, `main`, deux `article`, `footer`. Meme CSS. L'oral est devenu clair en trente secondes. Lea a vecu le meme moment avec un client qui voulait "juste changer le menu" : avec un vrai `nav`, la cible etait evidente. Max a remplace son bandeau `div.haut` par un `header` et a soudain retrouve ou coller le telephone.
+
+:::attention
+Trois `main` sur la meme page, ou un `header` qui avale tout le contenu principal : tu gagnes du jargon, tu perds le sens. Un `main`, un `h1` fort, des zones nommees avec intention.
+:::
 
 ## Erreur classique
 
-Mettre trois `main` sur la meme page. Ou envelopper tout le body dans un seul `section` geant sans titre. Ou utiliser `header` uniquement parce que "ca fait pro", puis y coller le contenu principal entier.
-
-Autre piege : confondre `nav` et une liste de liens sociaux dans le pied. Un groupe de liens peut rester une liste dans le `footer` sans `nav`, ou avec un `nav` clairement libelle si c'est vraiment de la navigation.
+Mettre trois `main` sur la meme page. Ou envelopper tout le body dans un seul `section` geant sans titre. Ou utiliser `header` uniquement parce que "ca fait pro", puis y coller le contenu principal entier. Autre piege : confondre `nav` et une liste de liens sociaux dans le pied. Un groupe de liens peut rester une liste dans le `footer` sans `nav`, ou avec un `nav` clairement libelle si c'est vraiment de la navigation.
 
 ## En vrai
 
 Prends une de tes pages. Remplace mentalement (puis dans le code) les gros `div` par `header`, `main`, `footer`. Ajoute `nav` autour du vrai menu. Si tu as un billet ou une fiche, tente `article`. Recharge. Visuellement, rien ne change si le CSS ciblait des classes. Structurellement, la page respire mieux.
 
-Ouvre ensuite l'inspecteur : l'arbre DOM se lit comme un sommaire.
+Ouvre ensuite l'inspecteur : l'arbre DOM se lit comme un sommaire. C'est exactement ce que tu veux pour la suite (Grid, accessibilite, debug).
 
 ## A toi
 
 Recree une mini page "Produit" en HTML seul (presque pas de CSS). `header` avec nom de boutique + `nav`, `main` avec un `article` produit (titre, paragraphe, prix), `footer` avec une ligne de contact. Valide que tu as un seul `h1` et un seul `main`.
+
+:::retenir
+Semantique = nommer les pieces. Un `main`, un `h1` fort. Les `div` restent pour le neutre. Le sens avant la peinture.
+:::

@@ -1,12 +1,16 @@
 # Chapitre 10 - Transitions legeres : du mouvement utile
 
-Un bouton qui change de couleur d'un coup, c'est correct. Un bouton qui glisse doucement vers sa nouvelle couleur, c'est plus agreable. Les transitions CSS font ca : interpoler entre deux etats.
+Un bouton qui change de couleur d'un coup, c'est correct. Un bouton qui glisse doucement vers sa nouvelle couleur, c'est plus agreable. Les transitions CSS font ca : interpoler entre deux etats quand une propriete change. Tu survoles, le navigateur anime. Tu quittes, il revient. Rien de magique. Juste une consigne de duree et de courbe.
 
-On reste leger. Pas de cirque. Pas de page qui rebondit partout. Chez DanielCraft, le mouvement sert la clarte : "tu survoles, ca reagit". Rien de plus.
+Chez DanielCraft, le mouvement sert la clarte. "Tu survoles, ca reagit." Pas "la page rebondit partout". Lea, freelance web, ajoute 200ms sur ses CTA et ses cartes produit : le client sent que le site est soigne. Max, artisan, veut juste que son bouton devis ne sursaute pas. Sam, enseignant, montre a ses eleves qu'un hover calme vaut mieux qu'un carousel agressif. Trois usages, meme regle : leger, utile, respectueux.
 
-## L'idee de base
+## Ce que ce n'est pas
 
-Tu as un etat normal et un etat `:hover` (ou `:focus-visible`). Tu dis au navigateur : "quand ca change, prends 200ms".
+Ce n'est pas une animation permanente. Ce n'est pas un titre qui danse en boucle. Ce n'est pas un pretexte pour `transition: all 2s` sur tout le document. Et ce n'est surtout pas une excuse pour cacher un focus clavier derriere un fondu invisible. La transition embellit un etat clair. Elle ne remplace pas un etat clair.
+
+## Etat de base, puis hover
+
+Tu as un etat normal et un etat `:hover` (ou `:focus-visible`). Tu dis au navigateur : "quand ca change, prends 200ms". La propriete `transition` se place en general sur l'etat de base, pas seulement dans `:hover`. Ainsi l'aller et le retour sont doux. Sans ca, l'aller est fluide et le retour est sec - comme une porte qui s'ouvre lentement et claque au retour.
 
 ```css
 .bouton {
@@ -21,13 +25,13 @@ Tu as un etat normal et un etat `:hover` (ou `:focus-visible`). Tu dis au naviga
 }
 ```
 
-Important : la propriete `transition` se place en general sur l'etat de base (`.bouton`), pas seulement dans `:hover`. Ainsi l'aller et le retour sont doux.
+:::astuce
+Place `transition` sur `.bouton`, pas seulement dans `:hover`. Tu evites le retour sec et tu gardes un aller-retour coherent.
+:::
 
 ## Que transitionner ?
 
-De bons candidats : `color`, `background-color`, `opacity`, `transform`, `box-shadow` leger, `border-color`.
-
-Des candidats plus risques : `width`, `height`, `top`, `left` (souvent moins fluides / plus coutueux). Preferer `transform` et `opacity` quand tu peux.
+De bons candidats : `color`, `background-color`, `opacity`, `transform`, `box-shadow` leger, `border-color`. Des candidats plus risques : `width`, `height`, `top`, `left` - souvent moins fluides, plus coutueux pour le navigateur. Preferer `transform` et `opacity` quand tu peux.
 
 ```css
 .carte {
@@ -40,15 +44,13 @@ Des candidats plus risques : `width`, `height`, `top`, `left` (souvent moins flu
 }
 ```
 
-Sur une grille de produits, un leger lift au survol guide l'oeil sans hurler.
+Sur une grille de produits, un leger lift au survol guide l'oeil sans hurler. Lea l'utilise sur ses cartes boutique. Max s'en passe parfois : un site artisan peut rester tres calme et quand meme clair.
 
-## Durees raisonnables
+## Durees et courbes
 
-150ms a 300ms pour de l'UI. Au-dela, ca trainasse. En dessous de 100ms, on ne sent presque rien.
+150ms a 300ms pour de l'UI. Au-dela, ca trainasse. En dessous de 100ms, on ne sent presque rien. `ease` et `ease-out` sont naturels pour des hovers. Evite `linear` sur un bouton : ca sonne mecanique. Tu peux lister plusieurs proprietes, ou utiliser `transition: all 200ms ease` avec prudence en proto. En peaufinage, prefere la liste explicite : tu evites de transitionner des choses non voulues.
 
-`ease`, `ease-out` : naturels pour des hovers. Evite `linear` sur un bouton (souvent mecanique).
-
-## Liens et focus
+## Liens, focus, et accessibilite du mouvement
 
 ```css
 a {
@@ -66,15 +68,7 @@ a:focus-visible {
 }
 ```
 
-La transition sur la couleur, oui. Mais le focus doit rester net : un outline clair, pas uniquement un fondu invisible.
-
-## Plusieurs proprietes
-
-Tu peux lister plusieurs transitions, ou utiliser `transition: all 200ms ease` avec prudence. `all` est pratique en proto, un peu large en production : tu risques de transitionner des choses non voulues. Preferer la liste explicite quand tu peaufines.
-
-## Respecter ceux qui veulent moins de mouvement
-
-Certains reglent leur systeme pour reduire les animations.
+La transition sur la couleur, oui. Le focus doit rester net : un outline clair, pas uniquement un fondu. Certains reglent leur systeme pour reduire les animations. Respecte-les.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -87,24 +81,24 @@ Certains reglent leur systeme pour reduire les animations.
 }
 ```
 
-Version simple et efficace pour un petit site. Le site reste utilisable, sans imposer de mouvement.
+Version simple et efficace pour un petit site. Sam l'ajoute systematiquement dans ses demos : le site reste utilisable, sans imposer de mouvement.
 
-## Ce qu'on ne fait pas ici
+:::retenir
+Transitions courtes (150-300ms) sur l'etat de base. Hover doux. Focus net. `prefers-reduced-motion` respecte. Calme et net gagne.
+:::
 
-Pas de carousel auto agressif. Pas de titre qui rebondit en boucle. Pas d'animation permanente qui distrait la lecture d'un article. Les vrais `@keyframes` complexes, ce n'est pas le coeur de ce livre : une transition hover bien faite vaut mieux.
+## Petite histoire
+
+Lea avait mis des transitions de 800ms partout "pour faire pro". Les clients cliquaient avant la fin du fondu. Elle est redescendue a 200ms, a limite aux boutons et cartes, et a ajoute `prefers-reduced-motion`. Le site a soudain paru plus serieux, pas moins. Max, lui, n'avait aucune transition. Son neveu a ajoute un hover sur le bouton devis. Max a garde ca - et rien d'autre. Suffisant.
 
 ## Erreur classique
 
-Mettre `transition` seulement dans `:hover` : l'aller est doux, le retour est sec. Ou transitionner pendant 2 secondes : l'utilisateur a deja clique ailleurs.
-
-Autre piege : `transform` sur un element qui casse un layout (ok en general) combine a des marges animees (moins ok). Garde simple.
+Mettre `transition` seulement dans `:hover` : l'aller est doux, le retour est sec. Ou transitionner pendant 2 secondes. Ou animer `width`/`height` alors qu'un `transform` suffisait. Ou croire que "plus ca bouge, plus c'est moderne". Non.
 
 ## En vrai
 
-Sur une landing, ajoute une transition a : le bouton principal, les cartes, les liens du menu (couleur). Rien d'autre. Navigue a la souris, puis au clavier. Si ca semble calme et net, c'est gagne.
-
-Enleve ensuite toutes les transitions et remets-les une par une. Tu sentiras celles qui apportent vraiment.
+Sur une landing, ajoute une transition a : le bouton principal, les cartes, les liens du menu (couleur). Rien d'autre. Navigue a la souris, puis au clavier. Enleve ensuite toutes les transitions et remets-les une par une. Tu sentiras celles qui apportent vraiment. Si ca semble calme et net, c'est gagne.
 
 ## A toi
 
-Page produit avec une carte et un bouton. Transitions 200ms sur carte (ombre + leger translate) et bouton (fond). Ajoute le media `prefers-reduced-motion`. Verifie hover et focus-visible.
+Page produit avec une carte et un bouton. Transitions 200ms sur carte (ombre + leger translate) et bouton (fond). Ajoute le media `prefers-reduced-motion`. Verifie hover et focus-visible. Note en une phrase ce que tu as refuse d'animer - ce refus compte autant que ce que tu as anime.

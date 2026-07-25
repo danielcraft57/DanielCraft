@@ -2,7 +2,7 @@
 
 Tu sais faire un formulaire HTML (champs, labels, bouton submit). La, on le rend agreable et clair. Pas un theme de science-fiction. Un formulaire ou on a envie de taper son email.
 
-Sur une landing, le formulaire d'inscription est souvent le moment de verite. Sur un blog, le contact aussi. Chez DanielCraft, un champ lisible + un bouton evident, ca convertit mieux qu'une animation tape-a-l'oeil.
+Sur une landing, le formulaire d'inscription est souvent le moment de verite. Sur un blog, le contact aussi. Chez DanielCraft, un champ lisible + un bouton evident, ca convertit mieux qu'une animation tape-a-l'oeil. Lea refuse `outline: none` sans remplacement. Max a appris apres qu'un client ne pouvait pas tabber. Sam met un post-it "Tab d'abord" sur les ateliers.
 
 ## HTML d'abord, toujours
 
@@ -70,7 +70,11 @@ Quand on tabule jusqu'au champ, il faut voir ou on est.
 }
 ```
 
-Ne supprime pas `outline` sans remplacement. C'est un classique d'accessibilite (on y revient au chapitre 11).
+Ne supprime pas `outline` sans remplacement. C'est un classique d'accessibilite (on y revient au chapitre 11). Chez DanielCraft, le focus visible fait partie du style, pas d'un "plus tard a11y".
+
+:::attention
+Un formulaire joli qui perd le focus clavier, c'est un formulaire rate. Placeholder seul n'est pas un label. `outline: none` global sur tous les inputs non plus.
+:::
 
 ## Bouton coherent
 
@@ -141,17 +145,25 @@ Laisse assez d'espace cliquable. Associe toujours label et input. Evite de redui
 
 Flex pour aligner case + texte. Simple.
 
+## Ce que ce n'est pas
+
+Ce n'est pas styler uniquement l'etat "beau au repos" et oublier hover / focus / disabled. Ce n'est pas non plus un champ mystere design qui ne ressemble plus a un champ. Le tien doit rester evidemment un input.
+
+:::retenir
+Labels visibles relies, champs en pleine largeur dans un conteneur borne, focus clair, bouton de marque. Style = marque + clarte + clavier.
+:::
+
+## Petite histoire
+
+Lea a livre un formulaire "flottant" sans labels : le client a rate deux champs. Elle a remis les labels au-dessus, le focus visible, et le parcours Tab. Max a fait le meme test ami sur sa page devis. Sam chronometre le Tab en classe : si un eleve hesite, le label n'est pas assez clair.
+
 ## Erreur classique
 
-Placeholder comme seul label. Champs trop etroits au centre avec du blanc partout sur mobile. Bouton submit sans type clair. Couleur de bordure trop pale sur fond pale (contraste). `outline: none` global sur tous les inputs.
-
-Autre piege : styler uniquement l'etat "beau au repos" et oublier hover / focus / disabled.
+Placeholder comme seul label. Champs trop etroits au centre avec du blanc partout sur mobile. Bouton submit sans type clair. Couleur de bordure trop pale sur fond pale (contraste).
 
 ## En vrai
 
 Reprends le formulaire contact d'une landing. Passe-le en grille verticale, labels au-dessus, variables de marque, focus visible. Navigue au clavier uniquement. Demande a quelqu'un de le remplir sans explication : s'il hesite, clarifie les labels.
-
-Compare un champ natif non style et le tien : le tien doit rester evidemment un champ, pas un mystere design.
 
 ## A toi
 
