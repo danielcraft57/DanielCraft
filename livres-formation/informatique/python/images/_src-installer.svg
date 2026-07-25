@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Installer = atelier pret</text>
+  <defs>
+  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
+  </marker>
+</defs><rect x="80" y="140" width="240" height="140" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="200" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">1. Installer</text>
+<text x="200" y="232" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">python.org</text><rect x="380" y="140" width="240" height="140" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">2. PATH</text>
+<text x="500" y="232" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">commande OK</text><rect x="680" y="140" width="240" height="140" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="800" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">3. Editeur</text>
+<text x="800" y="232" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">VS Code / IDLE</text><path d="M320 210 L380 210" stroke="#1a4d3e" stroke-width="3" fill="none" marker-end="url(#arr)"/><path d="M620 210 L680 210" stroke="#1a4d3e" stroke-width="3" fill="none" marker-end="url(#arr)"/><rect x="250" y="340" width="500" height="80" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="384" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">python --version</text><text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Sans version qui repond, on n'avance pas.</text>
+</svg>

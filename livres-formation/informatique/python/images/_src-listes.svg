@@ -1,14 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f2f4f8"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2c4a6e" font-weight="700">Liste : case 0, 1, 2...</text>
-  <rect x="120" y="140" width="200" height="140" rx="14" fill="#2c4a6e"/>
-  <text x="220" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">0</text>
-  <text x="220" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">pain</text>
-  <rect x="400" y="140" width="200" height="140" rx="14" fill="#3d5f8a"/>
-  <text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">1</text>
-  <text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">lait</text>
-  <rect x="680" y="140" width="200" height="140" rx="14" fill="#e07a3d"/>
-  <text x="780" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff">2</text>
-  <text x="780" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">oeufs</text>
-  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4a5568">On commence a zero. Oui, a zero.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Liste = rangee de cases (index 0)</text>
+  <defs>
+  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
+  </marker>
+</defs><rect x="80" y="160" width="160" height="120" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="160" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">0</text>
+<text x="160" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">pain</text><rect x="270" y="160" width="160" height="120" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
+<text x="350" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">1</text>
+<text x="350" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">lait</text><rect x="460" y="160" width="160" height="120" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="540" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">2</text>
+<text x="540" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">oeufs</text><rect x="650" y="160" width="160" height="120" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="730" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">-1</text>
+<text x="730" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">dernier</text><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">append ajoute. for parcourt. len compte.</text>
 </svg>

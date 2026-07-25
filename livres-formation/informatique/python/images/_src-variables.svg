@@ -1,12 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
-  <rect width="1000" height="480" fill="#f2f4f8"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2c4a6e" font-weight="700">Variable = boite nommee</text>
-  <rect x="150" y="120" width="300" height="260" rx="18" fill="#dbe4f0" stroke="#2c4a6e" stroke-width="3"/>
-  <text x="300" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2c4a6e" font-weight="700">prenom</text>
-  <rect x="190" y="200" width="220" height="100" rx="12" fill="#fff" stroke="#e07a3d" stroke-width="3"/>
-  <text x="300" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a2332">"Leo"</text>
-  <rect x="550" y="120" width="300" height="260" rx="18" fill="#ffe8d9" stroke="#e07a3d" stroke-width="3"/>
-  <text x="700" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#9a4d22" font-weight="700">score</text>
-  <rect x="590" y="200" width="220" height="100" rx="12" fill="#fff" stroke="#2c4a6e" stroke-width="3"/>
-  <text x="700" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a2332">10</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Variable = boite avec un nom</text>
+  <defs>
+  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
+  </marker>
+</defs><rect x="120" y="140" width="200" height="160" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="220" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">score</text>
+<text x="220" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">0 -> 10</text><rect x="400" y="140" width="200" height="160" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">prenom</text>
+<text x="500" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">"Leo"</text><rect x="680" y="140" width="200" height="160" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="780" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">MAX</text>
+<text x="780" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">convention</text><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">L'etiquette reste. Le contenu peut changer.</text>
 </svg>

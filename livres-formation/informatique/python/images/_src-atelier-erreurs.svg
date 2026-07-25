@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Lire une erreur comme un GPS</text>
+  <defs>
+  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
+  </marker>
+</defs><rect x="70" y="150" width="270" height="140" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
+<text x="205" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">1. Type</text>
+<text x="205" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">NameError...</text><rect x="365" y="150" width="270" height="140" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">2. Ligne</text>
+<text x="500" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">numero exact</text><rect x="660" y="150" width="270" height="140" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="795" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">3. Corriger</text>
+<text x="795" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">un seul truc</text><path d="M340 220 L365 220" stroke="#1a4d3e" stroke-width="3" fill="none" marker-end="url(#arr)"/><path d="M635 220 L660 220" stroke="#1a4d3e" stroke-width="3" fill="none" marker-end="url(#arr)"/><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Une hypothese a la fois. Puis relancer.</text>
+</svg>

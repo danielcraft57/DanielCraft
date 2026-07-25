@@ -1,0 +1,6 @@
+Illustration pedagogique Python bases - fichiers JSON.
+
+Scene flat : une personne ouvre un carnet numerique a cote d'un ecran. Fichier joueur.json visible avec etiquettes francaises prenom et score. Sensation sauvegarder / relire.
+
+Fond creme. Accents vert teal et ambre. Style flat illustration, friendly.
+Texte FRANCAIS uniquement. Aucun mot anglais.

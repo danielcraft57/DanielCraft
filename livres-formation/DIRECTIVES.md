@@ -86,6 +86,6 @@ Un geste pratique a tester tout de suite.
 - Gras = priorite visuelle pour l'essentiel (pas de soulignement).
 - Callouts = notes utiles hors du fil (retenir / attention / astuce), jamais decoratives.
 - Un schema = une idee visuelle par chapitre (pas trois schemas inutiles).
-- Quelques scenes generees = ancrage emotionnel / exemple vivant, pas decoration.
+- Quelques scenes generees = ancrage emotionnel / exemple vivant, pas decoration. Placees au milieu pour aerer, jamais empilees sous le titre avec le schema.
 - Repeter une idee avec une histoire concrete apres l'explication abstraite.
 - Terminer par une micro-action ("A toi") pour ancrer.

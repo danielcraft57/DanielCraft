@@ -1,0 +1,6 @@
+Illustration pedagogique Python bases - lire une erreur.
+
+Scene flat : un enseignant et un eleve devant un terminal. Message d'erreur rouge simple en francais, type ValueError avec numero de ligne. Attitude calme, diagnostic, pas de panique.
+
+Fond creme. Accents vert teal et ambre. Style flat illustration, friendly.
+Texte FRANCAIS uniquement. Aucun mot anglais.

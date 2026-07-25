@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("python")
+BOOK_CSS = get_book_css("python") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -45,25 +64,71 @@ CHAPTER_FILES = [
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
-        ("python-idee.png", "Python sert a donner des ordres simples a l'ordinateur."),
+        ("py-cest-quoi.png", "Tu ecris. Python traduit. L'ordinateur execute."),
+        ("py-scene-premier.png", "Exemple : un print, et Salut Python apparait."),
+    ],
+    2: [
+        ("py-installer.png", "Installer, PATH, editeur : l'atelier doit repondre."),
+    ],
+    3: [
+        ("py-premier-programme.png", "print montre. input demande. f-string colle."),
     ],
     4: [
-        ("python-variables.png", "Une variable, c'est une boite avec un nom."),
+        ("py-variables.png", "Une variable, c'est une boite avec un nom."),
+    ],
+    5: [
+        ("py-types.png", "str, int, float, bool : la nature de la boite."),
+    ],
+    6: [
+        ("py-conditions.png", "if / elif / else : le programme choisit une route."),
+    ],
+    7: [
+        ("py-boucles.png", "for ou while : repeter avec une sortie claire."),
+    ],
+    8: [
+        ("py-fonctions.png", "Entrees -> fonction -> return. Ecrire une fois, appeler souvent."),
+        ("py-scene-fonctions.png", "Exemple : une recette avec entrees et resultat."),
     ],
     9: [
-        ("python-listes.png", "Une liste range plusieurs valeurs, une apres l'autre."),
+        ("py-listes.png", "Une liste range plusieurs valeurs, index a 0."),
+    ],
+    10: [
+        ("py-dictionnaires.png", "Dictionnaire : etiquettes + valeurs."),
+    ],
+    11: [
+        ("py-fichiers.png", "with open : lire, ecrire, sauver en JSON."),
+        ("py-scene-fichiers.png", "Exemple : sauvegarder un score dans joueur.json."),
+    ],
+    12: [
+        ("py-modules.png", "import : poser une boite a outils sur la table."),
     ],
     13: [
-        ("python-projet.png", "Mini projet : un petit quiz dans le terminal."),
+        ("py-projet.png", "Mini-projet : questions, boucle, score, record."),
+    ],
+    14: [
+        ("py-retenir.png", "Carte des bases : donnees, decisions, boucles, fichiers."),
     ],
     15: [
-        ("python-exceptions.png", "try : j'essaie. except : je rattrape."),
+        ("py-exceptions.png", "try : j'essaie. except : je rattrape."),
+        ("py-scene-erreurs.png", "Exemple : on lit l'erreur, sans paniquer."),
     ],
     16: [
-        ("python-classes.png", "Une classe = un moule. Un objet = un exemplaire."),
+        ("py-classes.png", "Une classe = un moule. Un objet = un exemplaire."),
+    ],
+    17: [
+        ("py-atelier-erreurs.png", "Type, ligne, corriger un seul truc, relancer."),
+    ],
+    18: [
+        ("py-atelier-jeu.png", "Juste prix : secret, boucle, indices, fin."),
+    ],
+    19: [
+        ("py-atelier-organiser.png", "Un role par fonction : poser, main, sauver."),
+    ],
+    20: [
+        ("py-quiz.png", "Verifier ce que tu as compris, sans inventer."),
     ],
     21: [
-        ("python-felicitations.png", "Bravo. Tu as les bases de Python."),
+        ("py-felicitations.png", "Bravo. Tu as les bases de Python."),
     ],
 }
 
@@ -109,8 +174,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -126,13 +196,49 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
+    """Schema juste apres le H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(
+                r"(</aside>)",
+                r"\1\n" + scene_block,
+                body_html,
+                count=1,
+            )
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:
