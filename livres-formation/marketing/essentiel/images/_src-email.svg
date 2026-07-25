@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Email : permission + utilite + 1 action</text>
+<rect x="80" y="140" width="270" height="220" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="215" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1f1630" font-weight="700">Permission</text>
+<text x="215" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a4d6a" font-weight="400">ils ont dit oui</text>
+<rect x="365" y="140" width="270" height="220" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a4a2a" font-weight="700">Utilite</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a4a2a" font-weight="400">conseil / nouvelle</text>
+<rect x="650" y="140" width="270" height="220" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="785" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">1 action</text>
+<text x="785" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#e8a87c" font-weight="400">un seul bouton</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Petite liste chaude > grosse liste froide.</text>
+</svg>

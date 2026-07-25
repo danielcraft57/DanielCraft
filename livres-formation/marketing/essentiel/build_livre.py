@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("marketing")
+BOOK_CSS = get_book_css("marketing") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -46,24 +65,66 @@ CHAPTER_FILES = [
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
         ("marketing-idee.png", "Marketing = un pont clair entre ton offre et la bonne personne."),
+        ("marketing-scene-pont.png", "Exemple : Lea pose le pont (offre claire -> artisans locaux)."),
+    ],
+    2: [
+        ("marketing-objectifs.png", "Quoi, pour qui, quel chiffre, d'ici quand : une aiguille."),
     ],
     3: [
         ("marketing-cible.png", "Parler a quelqu'un de precis, pas a tout le monde."),
+        ("marketing-scene-cible.png", "Exemple : Max parle a Thomas (fuite a 22h), pas a tout le monde."),
+    ],
+    4: [
+        ("marketing-message.png", "Offre + promesse + preuve : les trois cases du message."),
     ],
     5: [
         ("marketing-canaux.png", "Un ou deux canaux bien tenus battent huit canaux abandones."),
     ],
     6: [
-        ("marketing-contenu.png", "Du contenu utile : aider d'abord, vendre ensuite."),
+        ("marketing-contenu.png", "Du contenu utile : montrer, expliquer, rassurer."),
+    ],
+    7: [
+        ("marketing-seo.png", "Page claire + fiche propre + mots de tes clients."),
+    ],
+    8: [
+        ("marketing-reseaux.png", "Un rythme tenable bat six posts abandonnes en mars."),
+    ],
+    9: [
+        ("marketing-email.png", "Permission, utilite, une seule action."),
+    ],
+    10: [
+        ("marketing-pubs.png", "La pub amplifie un pont solide : message, page, budget, signal."),
     ],
     11: [
-        ("marketing-funnel.png", "Decouvrir, faire confiance, agir : le parcours simple."),
+        ("marketing-funnel.png", "Decouvrir, interet, confiance, action, fidelite."),
+        ("marketing-scene-funnel.png", "Exemple : Julie traverse le parcours jusqu'a la reservation."),
     ],
     12: [
-        ("marketing-mesure.png", "Mesure ce qui compte : contacts et ventes, pas seulement les likes."),
+        ("marketing-mesure.png", "Mesure ce qui decide : contacts et ventes, pas seulement les likes."),
+    ],
+    13: [
+        ("marketing-budget.png", "70 clarte, 20 outils, 10 tests : protege ton loyer."),
+    ],
+    14: [
+        ("marketing-mini-projet.png", "Plan 30 jours : fondations, contenu, etre trouve, mesurer."),
+    ],
+    15: [
+        ("marketing-retenir.png", "Cible, message, canal, preuve, chiffre : la carte a garder."),
     ],
     16: [
         ("marketing-tendances.png", "2026 : video courte, confiance, IA utile, communaute."),
+    ],
+    17: [
+        ("marketing-atelier-persona.png", "Persona : prenom, probleme, canal, ce qui rassure."),
+    ],
+    18: [
+        ("marketing-atelier-calendrier.png", "Themes, rythme, session en lot : plus de panique dimanche."),
+    ],
+    19: [
+        ("marketing-atelier-campagne.png", "Objectif, message, deux supports, bilan."),
+    ],
+    20: [
+        ("marketing-quiz.png", "Verifier ce que tu as compris, sans inventer."),
     ],
     21: [
         ("marketing-felicitations.png", "Bravo. Tu as une boussole pour demarrer ton marketing."),
@@ -112,8 +173,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -129,13 +195,49 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
+    """Schema juste apres le H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(
+                r"(</aside>)",
+                r"\1\n" + scene_block,
+                body_html,
+                count=1,
+            )
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:

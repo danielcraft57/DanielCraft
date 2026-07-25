@@ -1,35 +1,55 @@
 # Chapitre 11 - Le parcours client : decouvrir, faire confiance, acheter
 
-Un parcours client (on parle parfois de tunnel de vente ou parcours d'achat), c'est le chemin qu'une personne suit avant de te dire oui. Rarement quelqu'un te decouvre le lundi et achete le mardi sans reflechir. Souvent c'est : je te vois, je te retiens un peu, je verifie, je compare, je passe a l'action.
+Un **parcours client** (tunnel de vente ou parcours d'achat), c'est le chemin qu'une personne suit avant de te dire oui. Rarement quelqu'un te decouvre le lundi et achete le mardi sans reflechir. Souvent : je te vois, je te retiens, je verifie, je compare, j'agis. Chez DanielCraft, on eclaire le chemin sans forcer. Tu n'as pas besoin de pousser. Tu as besoin de ne pas perdre la personne en route.
 
-Etape 1 - Decouvrir : la personne te trouve via Google, un post, une recommandation, une pub. Elle ne te connait pas. Elle voit si tu parles de son probleme. Un parent voit la photo du gateau d'anniversaire d'un patissier sur Instagram. Il pense "ca pourrait plaire a ma fille". C'est la decouverte.
+Etape 1 - Decouvrir : Google, post, recommandation, pub. Elle ne te connait pas. Elle voit si tu parles de son probleme. Un parent voit le gateau d'anniversaire sur Instagram. Etape 2 - Interet : autres contenus, avis, profil. Elle compare. Normal. Etape 3 - Confiance : question, guide, preuve forte, email utile. "Sans lactose ?" Tu reponds vite. Etape 4 - Action : reserve, achete, devis, inscription. Bouton ou numero evident. Pas cache dans les mentions legales. Etape 5 - Fidelite : elle revient, recommande, laisse un avis. C'est la que tu gagnes sans tout recommencer. Le client qui revient chaque mois chez le boulanger, c'est du marketing gratuit.
 
-Etape 2 - Interet : elle regarde d'autres contenus, lit des avis, revient sur ton profil. Elle se demande si tu es serieux. Elle clique sur trois posts. Elle lit deux avis Google. Elle compare avec un autre patissier. Normal. Laisse-la faire.
+Lea a perdu des devis parce que le formulaire demandait douze champs. Max a perdu des appels parce que le numero etait en bas de page. Sam a ajoute "delai de reponse sous 24h" : la confiance a monte avant le premier message. Trois frictions enlevees, trois parcours debloques.
 
-Etape 3 - Confiance : elle te pose une question, telecharge ton guide, voit une preuve forte, recoit un email utile. Elle sent que le risque baisse. "Est-ce que vous faites sans lactose ?" Tu reponds vite et clairement. La confiance monte.
+:::retenir
+Cinq etapes, cinq panneaux : si un manque, la personne s'arrete. Enleve une friction a la fois.
+:::
 
-Etape 4 - Action : elle reserve, achete, demande un devis, s'inscrit. Ton bouton ou ton numero doit etre evident. Pas cache au bout de dix clics. Si elle doit chercher ton numero dans les mentions legales, tu perds des ventes.
+## Ce que ce n'est pas
 
-Etape 5 - Fidelite (souvent oubliee) : elle revient, te recommande, laisse un avis. C'est la que tu gagnes sans tout recommencer a zero. Le client qui revient chaque mois chez le boulanger, c'est du marketing gratuit par le bouche-a-oreille.
+Ce n'est pas une usine a quinze pages automatiques pour une petite activite. Ce n'est pas non plus manipuler avec fausse urgence ou prix caches. Ce n'est pas "plus de trafic resout tout" si le bouton reserver est casse. Et ce n'est surtout pas oublier la **fidelite** apres le premier paiement. Le parcours ne s'arrete pas a la vente. Il continue avec avis, retour, recommandation.
+
+Ce n'est pas non plus un concept reserve aux grosses entreprises. Cinq pieces suffisent : post utile + page claire + formulaire + reponse rapide + email de suivi. Chez DanielCraft, on teste le parcours sur telephone comme un inconnu. C'est brutal et utile. Le **funnel** n'a pas besoin d'etre sophistique. Il doit etre traversable.
+
+Imagine un sentier avec cinq panneaux. Si un panneau manque (prix flou, numero illisible, zero preuve), la personne s'arrete. Lea verifie chaque panneau avant de "pousser du trafic". Max enleve une friction par semaine. Sam teste le parcours sur telephone comme un inconnu. Beaucoup de debutants mettent toute l'energie sur la decouverte (plus de posts, plus de pubs) et oublient confiance et action. Resultat : beaucoup de vues, peu de clients. Mille vues et zero RDV si le bouton "reserver" est casse.
+
+:::astuce
+Parcours ton site sur telephone en mode avion, comme si tu ne connaissais personne. Note trois frictions en cinq minutes. Corrige la pire demain matin.
+:::
 
 ## Un parcours simple suffit
 
-Tu n'as pas besoin d'un tunnel ultra complexe avec quinze pages automatiques. Pour une petite activite locale, ca peut etre : post utile + page claire + formulaire + reponse rapide + email de suivi. Cinq pieces. Pas cinquante.
+Tu n'as pas besoin de quinze pages automatiques. Pour une petite activite : post utile + page claire + formulaire + reponse rapide + email de suivi. Cinq pieces. Pense a chaque etape : qu'est-ce qu'elle voit, qu'est-ce qui rassure, qu'est-ce qui bloque ? Enleve une friction a la fois : formulaire trop long, prix cache, delai flou, zero photo, numero illisible sur mobile. Chaque friction enlevee, c'est plus de oui.
 
-Pense a chaque etape : qu'est-ce que la personne voit, qu'est-ce qui la rassure, qu'est-ce qui la bloque ? Enleve une friction a la fois : formulaire trop long, prix cache, delai flou, zero photo, numero illisible sur mobile. Chaque friction enlevee, c'est plus de oui.
+Lea a coupe son formulaire de douze a quatre champs. Max a mis son numero en haut. Sam a ajoute trois temoins visibles avant le bouton. Petit geste, gros effet. Le funnel n'a pas besoin d'etre sophistique. Il doit etre traversable. Dessine cinq cases sur une feuille : decouvrir, interet, confiance, action, fidelite. Pour chaque case, une chose a ameliorer ce mois. Une seule. Pas quinze.
 
-Beaucoup de debutants mettent toute leur energie sur la decouverte (plus de posts, plus de pubs) et oublient la confiance et l'action. Resultat : beaucoup de vues, peu de clients. Un coiffeur peut avoir mille vues et zero RDV si le bouton "reserver" est casse. Un artisan peut avoir de beaux posts et zero devis si le delai n'est jamais indique.
+## Petite histoire
 
-## Exemple complet
+Julie cherche un coach. Elle voit "3 exercices sans materiel" (decouverte). Elle lit un temoignage (interet). Elle DM "adapte apres grossesse ?" et recoit une reponse claire (confiance). Elle reserve via le lien (action). Trois mois plus tard, elle recommande une amie (fidelite). Aucune usine. Paul cherche un traiteur. Il tape "traiteur sans gluten + ville". Il voit photos reelles. Il appelle, fourchette de prix le jour meme. Il commande. Apres la fete : avis + newsletter menus.
 
-Julie cherche un coach sportif. Elle voit une video "3 exercices sans materiel" (decouverte). Elle regarde le profil, lit un temoignage (interet). Elle envoie un DM "c'est adapte apres une grossesse ?" et recoit une reponse claire (confiance). Elle reserve une seance d'essai via le lien en bio (action). Trois mois plus tard, elle recommande le coach a une amie (fidelite). Aucune page automatisee. Juste un parcours logique.
+Lea a perdu des devis parce que le formulaire demandait douze champs. Elle a coupe a quatre. Max a perdu des appels parce que le numero etait en bas. Il l'a mis en haut. Sam a ajoute "delai de reponse sous 24h". Chez DanielCraft, on appelle ca enlever une friction par semaine. Max l'a fait un mardi matin. Deux appels le mercredi. Coincidence ? Peut-etre. Mais le numero etait enfin visible.
 
-Autre exemple : Paul cherche un traiteur pour un anniversaire. Il tape "traiteur sans gluten + ville" (decouverte). Il lit la page, voit des photos reelles (interet). Il appelle, on lui repond le jour meme avec une fourchette de prix (confiance). Il commande (action). Apres la fete, on lui demande un avis et on lui propose une newsletter menus (fidelite).
+:::astuce
+Dessine cinq cases sur une feuille : decouvrir, interet, confiance, action, fidelite. Pour chaque case, une chose a ameliorer ce mois. Une seule. Pas quinze.
+:::
 
-Le marketing efficace guide sans forcer. Tu eclaires le chemin. La personne avance a son rythme. Tu n'as pas besoin de la pousser. Tu as besoin de ne pas la perdre en route.
+## Erreur classique
+
+Croire que plus de trafic resout tout. Ou cacher le prix et le contact "pour qualifier". Autre piege : oublier la fidelite - le client acquis qu'on ne recontacte jamais. Le parcours ne s'arrete pas au premier paiement. Autre piege : lancer de la pub avant de verifier que la porte s'ouvre. Tu paies pour amener du monde devant une porte fermee.
+
+## En vrai
+
+Dessine ton parcours en cinq cases. Pour chaque case, une chose a ameliorer cette semaine. Une seule. Exemple : "Action = mettre mon numero en haut de la page." Petit, concret, faisable. Max l'a fait un mardi matin. Deux appels le mercredi. Lea a coupe son formulaire. Sam a ajoute le delai de reponse.
 
 ## A toi
 
-Dessine ton parcours en cinq cases sur une feuille. Pour chaque case, ecris une chose a ameliorer cette semaine. Une seule. Par exemple : "Action = mettre mon numero en haut de la page." Petit, concret, faisable.
+Parcours les cinq etapes comme un inconnu sur ton telephone. Note trois frictions. Corrige la pire demain matin.
 
-Allez. Parcours compris. Comment savoir si ca marche ?
+## Zoom : trafic vs friction
+
+Plus de trafic sur un parcours casse multiplie le gachis. Moins de friction sur un parcours simple multiplie les oui. Chez DanielCraft, on enleve une friction avant d'acheter du trafic. Le sentier d'abord. Le megaphone ensuite.

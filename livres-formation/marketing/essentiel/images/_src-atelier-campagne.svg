@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Campagne = un projecteur, une porte</text>
+<rect x="70" y="140" width="200" height="220" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="170" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">Objectif</text>
+<text x="170" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5a4d6a" font-weight="400">chiffre + date</text>
+<rect x="290" y="140" width="200" height="220" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="390" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a4a2a" font-weight="700">Message</text>
+<text x="390" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a4a2a" font-weight="400">1 phrase</text>
+<rect x="510" y="140" width="200" height="220" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="610" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">2 supports</text>
+<text x="610" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5a4d6a" font-weight="400">post + rappel</text>
+<rect x="730" y="140" width="200" height="220" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="830" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">Bilan</text>
+<text x="830" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f1630" font-weight="400">jour 14</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Focus 7 a 14 jours. Puis note la lecon.</text>
+</svg>

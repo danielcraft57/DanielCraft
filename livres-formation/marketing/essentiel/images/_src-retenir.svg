@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Carte a garder : 5 points</text>
+<rect x="60" y="110" width="170" height="280" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="145" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">Cible</text>
+<rect x="250" y="110" width="170" height="280" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="335" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4a2a" font-weight="700">Message</text>
+<rect x="440" y="110" width="170" height="280" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="525" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">Canal</text>
+<rect x="630" y="110" width="170" height="280" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="715" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Preuve</text>
+<rect x="820" y="110" width="140" height="280" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="890" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630" font-weight="700">Chiffre</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Si une piece manque, le puzzle reste incomplet.</text>
+</svg>

@@ -1,24 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f6f2f8"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Parcours : decouvrir, confiance, action</text>
-  <rect x="60" y="130" width="170" height="120" rx="12" fill="#3d2c5e"/>
-  <text x="145" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="700">Decouvrir</text>
-  <text x="145" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">post, Google</text>
-  <rect x="250" y="130" width="170" height="120" rx="12" fill="#3d2c5e"/>
-  <text x="335" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="700">Interet</text>
-  <text x="335" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">relit, compare</text>
-  <rect x="440" y="130" width="170" height="120" rx="12" fill="#3d2c5e"/>
-  <text x="525" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#fff" font-weight="700">Confiance</text>
-  <text x="525" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#e8a87c">preuves, avis</text>
-  <rect x="630" y="130" width="170" height="120" rx="12" fill="#e8a87c"/>
-  <text x="715" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1f1630" font-weight="700">Action</text>
-  <text x="715" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#1f1630">acheter, ecrire</text>
-  <rect x="820" y="130" width="120" height="120" rx="12" fill="#3d2c5e"/>
-  <text x="880" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#fff" font-weight="700">Fidelite</text>
-  <text x="880" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#e8a87c">avis, retour</text>
-  <polygon points="230,190 250,190 250,180 270,195 250,210 250,200 230,200" fill="#3d2c5e"/>
-  <polygon points="420,190 440,190 440,180 460,195 440,210 440,200 420,200" fill="#3d2c5e"/>
-  <polygon points="610,190 630,190 630,180 650,195 630,210 630,200 610,200" fill="#3d2c5e"/>
-  <polygon points="800,190 820,190 820,180 840,195 820,210 820,200 800,200" fill="#3d2c5e"/>
-  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d2c5e">Enleve une friction a la fois.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Funnel simple : 5 etapes</text>
+<rect x="40" y="160" width="160" height="160" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="120" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Decouvrir</text>
+<rect x="220" y="160" width="160" height="160" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="300" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Interet</text>
+<rect x="400" y="160" width="160" height="160" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="480" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a4a2a" font-weight="700">Confiance</text>
+<rect x="580" y="160" width="160" height="160" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="660" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Action</text>
+<rect x="760" y="160" width="180" height="160" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="850" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Fidelite</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Enleve une friction avant d'acheter du trafic.</text>
 </svg>

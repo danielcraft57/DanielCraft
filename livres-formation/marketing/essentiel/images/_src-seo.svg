@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">SEO debutant = planter un arbre</text>
+<rect x="100" y="130" width="250" height="230" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="225" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">1. Page claire</text>
+<text x="225" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a4d6a" font-weight="400">qui / quoi / ou</text>
+<rect x="375" y="130" width="250" height="230" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a4a2a" font-weight="700">2. Fiche propre</text>
+<text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a4a2a" font-weight="400">avis + photos</text>
+<rect x="650" y="130" width="250" height="230" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="775" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">3. Mots clients</text>
+<text x="775" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#e8a87c" font-weight="400">expressions reelles</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Plante, arrose, attends. Pas de fusee en 48h.</text>
+</svg>

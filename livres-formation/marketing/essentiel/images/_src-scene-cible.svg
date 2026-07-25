@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Exemple : Max parle a Thomas</text>
+<rect x="100" y="120" width="380" height="300" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="290" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1f1630" font-weight="700">Thomas, 52 ans</text>
+<text x="290" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">maison ancienne</text>
+<text x="290" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">fuite a 22h</text>
+<text x="290" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">tape : plombier urgence</text>
+<rect x="520" y="120" width="380" height="300" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="710" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a4a2a" font-weight="700">Message Max</text>
+<text x="710" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4a2a" font-weight="400">delai + zone</text>
+<text x="710" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4a2a" font-weight="400">prix indicatif</text>
+<text x="710" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4a2a" font-weight="400">numero visible</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Une personne precise > "tout le monde".</text>
+</svg>

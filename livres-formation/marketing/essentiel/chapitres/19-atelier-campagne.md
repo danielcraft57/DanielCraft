@@ -1,68 +1,61 @@
 # Chapitre 19 - Atelier : une campagne simple
 
-Une campagne, c'est une action marketing regroupee autour d'un objectif precis sur 7 a 14 jours. Pas trente idees en parallele. Pas six offres differentes. Une campagne = un objectif = un message = quelques actions coordonnees.
+Une campagne, c'est une action marketing regroupee autour d'un objectif precis sur 7 a 14 jours. Pas trente idees. Pas six offres. Une campagne = un objectif = un message = quelques actions coordonnees. Chez DanielCraft, on insiste : focus. Les gens comprennent. Les gens agissent. Imagine un coach qui lance une seance decouverte. Pendant quinze jours, tout tourne autour de ca. Pas une promo mardi, un conseil mercredi, une blague jeudi. Une boulangerie peut faire "paniers week-end" a zero euro de pub. Une coiffeuse "3 creneaux mardi" avec deux stories. L'important, c'est la coherence.
 
-Imagine un coach qui lance une seance decouverte gratuite. Pendant quinze jours, tout ce qu'il publie tourne autour de ca. Pas une promo mardi, un conseil mercredi, une blague jeudi. Focus. Les gens comprennent. Les gens agissent.
+Lea, Max et Sam lancent une campagne courte apres avoir clarifie message et page - pas avant. Lea a lance trois offres en meme temps une fois. Personne n'a compris. Elle a refait une campagne, un message, deux supports : trois devis. Max a annonce sans tester le lien : catastrophe. Il a reteste, relance, obtenu deux appels. Sam a note depense 0 euro, resultats, lecon en deux lignes. La campagne suivante etait plus facile parce qu'il avait un modele.
 
-Une campagne n'est pas reserve aux gros budgets. Une boulangerie peut faire une campagne "paniers week-end" avec zero euro de pub. Une coiffeuse peut faire une campagne "3 creneaux mardi matin" avec deux stories et un message aux clientes. L'important, c'est la coherence.
+:::retenir
+Une campagne = un objectif + un message + deux supports + un bilan. Garde la fiche pour la prochaine.
+:::
 
-## Objectif exemple
+## Ce que ce n'est pas
 
-"Obtenir 5 inscriptions a ma seance decouverte gratuite d'ici le 20 du mois." Adapte avec ton activite : 5 commandes gateaux, 3 rendez-vous coiffure, 10 inscriptions newsletter, 4 devis plomberie...
+Ce n'est pas trente idees en parallele. Ce n'est pas non plus changer d'offre en cours de route. Ce n'est pas lancer sans preuve ni lien teste. Et ce n'est surtout pas une campagne sans bilan : sans bilan, tu n'as pas appris. Une **campagne**, c'est un objectif + un message + quelques actions coordonnees sur 7 a 14 jours. Focus.
 
-Ecris ton objectif en haut d'une feuille. Un chiffre. Une date. Un canal principal. Si tu ne peux pas ecrire ces trois elements, ta campagne n'est pas encore prete.
+Ce n'est pas non plus reserve aux gros budgets. Zero euro avec deux posts bien faits et un email de rappel, ca compte. Chez DanielCraft, on insiste : le projecteur pointe sur une seule porte. Ce n'est pas non plus juger en quarante-huit heures. Une campagne courte a besoin d'une semaine pour parler. Deux jours ne prouvent rien.
 
-## Etape 1 - Message unique en une phrase
+Une campagne, c'est un projecteur pointe sur une seule porte. Si tu tournes le projecteur dans tous les sens, personne ne sait ou aller. Si tu le tiens quatorze jours sur la meme porte, avec preuve et rappel, les gens avancent. Le bilan a la fin n'est pas optionnel : sans bilan, tu n'as pas appris. Lea tient le projecteur. Max teste la porte (le lien). Sam note le bilan. Trois gestes, une campagne propre.
 
-Une phrase + date limite ou places limitees (honnetes). Pas de fausse urgence. Si tu as 5 places, dis 5 places. Si la promo finit dimanche, qu'elle finisse vraiment dimanche.
+:::attention
+Teste le lien de reservation sur telephone avant de publier. Max a perdu deux jours a cause d'un lien casse. Deux minutes de test, deux jours gagnes.
+:::
 
-Exemple : "Seance decouverte gratuite, 5 places, reserve avant vendredi 18h."
+## Objectif et message
 
-Exemple boulanger : "Paniers week-end : 20 disponibles, commande avant jeudi 12h."
+Ecris en haut : chiffre, date, canal principal. Exemple : "5 inscriptions seance decouverte d'ici le 20." Adapte : 5 gateaux, 3 RDV, 10 newsletters, 4 devis. Puis message unique en une phrase + limite honnete. "Seance decouverte, 5 places, reserve avant vendredi 18h." Boulanger : "20 paniers, commande avant jeudi 12h." Artisan : "2 devis gratuits petites cuisines, zone 10 km, reponse sous 48h." Pas de fausse urgence. Si tu as 5 places, dis 5. Si ca finit dimanche, ca finit dimanche. Une phrase. Une limite. Une action.
 
-Exemple coiffeur : "3 creneaux coloration a -15%, uniquement cette semaine."
+## Etapes de construction
 
-Exemple artisan : "2 devis gratuits pour petites cuisines, zone 10 km, reponse sous 48h."
+Supports : 1 post epingle ou mis en avant + 1 email ou story de rappel. Deux bien faits suffisent. Si mini pub, meme message. Preuve : temoignage, chiffre, photo reelle. Sans preuve, bruit. Sans avis, montre le process minute par minute. Appel a l'action : "Reserve ici" avec lien teste sur telephone. Numero visible si ta cible prefere appeler. Planning 14 jours : jour 1 annonce + preuve ; jour 3 rappel + benefice ; jour 7 dernier rappel sans agressivite ; jour 14 bilan + remerciement. Entre les rappels, reponds vite. Une campagne lente a repondre perd ce qu'elle a gagne.
 
-## Etape 2 - Choisis 2 supports
+Lea prepare les textes la veille. Max teste le lien le matin. Sam prepare la preuve (temoin ou photo). Trois roles, une meme campagne. Chez DanielCraft, on remplit les cases avant de publier. Pas de lancement a moitie.
 
-1 post epingle ou mis en avant sur ton reseau principal + 1 email ou story de rappel (story = publication ephemere de 24h sur Instagram ou Facebook).
+## Petite histoire
 
-Pas besoin de dix supports. Deux bien faits suffisent pour une petite activite locale. Si tu ajoutes une mini pub, garde le meme message. Ne change pas d'offre en cours de route.
+Lea a lance trois offres en meme temps. Personne n'a compris. Elle a refait une campagne, un message, deux supports : trois devis. Max a annonce sans tester le lien : catastrophe. Il a reteste, relance, obtenu deux appels. Sam a note depense 0 euro, resultats, lecon en deux lignes. La campagne suivante etait plus facile parce qu'il avait un modele. Chez DanielCraft, on garde la fiche. Texte, photo, heure qui ont marche. Meme un echec enseigne.
 
-## Etape 3 - Preuve
+Une boulangerie "paniers week-end" : zero euro de pub, deux posts, un email aux fideles, commande avant jeudi. Une coiffeuse "3 creneaux mardi" : deux stories, un rappel, numero visible. Un coach "seance decouverte" : un post, un email, un temoin. Trois campagnes simples. Une meme logique : focus.
 
-Temoignage, chiffre, photo reelle. "Marie a teste la seance la semaine derniere, voici ce qu'elle en dit." "Voici la photo du panier de samedi dernier." "Trois clientes ont deja reserve ce creneau."
+## Note depense et resultats
 
-Sans preuve, ta campagne ressemble a du bruit de plus. Avec preuve, elle rassure. Si tu n'as pas d'avis, montre le process : "Voici comment se passe la seance d'essai, minute par minute."
+0 euro ou budget test (ex. : 20 euros, 7 jours, zone 10 km). Resultats : vues, clics, inscriptions, ventes. Lecon : "Le rappel jour 7 a ramene 2 inscriptions." ou "Personne n'a clique : message trop vague." Meme un echec enseigne. Une campagne sans bilan, non. Garde texte, photo, heure qui ont marche. Ecris deux lignes. C'est assez pour la prochaine.
 
-## Etape 4 - Appel a l'action clair
+:::astuce
+Objectif : 5 inscriptions d'ici le 20. Message : seance decouverte, 5 places, reserve avant vendredi. Supports : post + email. Preuve : temoignage Julie. Bilan jour 14. Quatre cases remplies = campagne honnete.
+:::
 
-"Reserve ici" avec lien ou bouton teste. Clique toi-meme avant de publier. Rien n'est pire qu'un lien casse en pleine campagne. Numero de telephone visible si ta cible prefere appeler (souvent le cas pour les artisans et les services locaux).
+## Erreur classique
 
-Teste aussi sur telephone. Beaucoup de clients cliquent depuis le bus, pas depuis un grand ecran.
-
-## Etape 5 - Planning sur 14 jours
-
-Jour 1 : annonce de la campagne avec objectif et preuve.
-Jour 3 : rappel + benefice concret ("il reste 3 places", "derniere chance de commander pour samedi").
-Jour 7 : dernier rappel sans agressivite ("c'est ce soir la date limite, je reponds encore aux questions").
-Jour 14 : bilan chiffres + remerciement meme si resultat faible.
-
-Note chaque action dans ton calendrier. Decoche au fur et a mesure. Entre les rappels, continue de repondre vite aux messages. Une campagne lente a repondre perd ce qu'elle a gagne.
-
-## Etape 6 - Note depense et resultats
-
-Depense : 0 euro ou budget test pub local (ex : 20 euros sur 7 jours, zone 10 km). Resultats : vues, clics, inscriptions, ventes. Lecon apprise en 2 lignes : "Le rappel jour 7 a ramene 2 inscriptions sur 5." ou "Personne n'a clique : message trop vague, je change pour la prochaine."
-
-Meme une campagne qui echoue t'apprend quelque chose. Une campagne sans bilan, non. Garde aussi ce qui a marche : texte, photo, heure de publication. Tu reutiliseras.
+Changer d'offre en cours de route. Ou juger en quarante-huit heures. Autre piege : lancer sans preuve et sans lien teste. Tu amplifies le flou. Autre piege encore : trente idees en parallele. Le projecteur tourne. Personne ne sait ou aller. Une porte. Quatorze jours. Un bilan.
 
 ## Livrable
 
-Fiche campagne : objectif, dates, textes des 3 publications, visuels prevus, chiffres finaux, lecon apprise. Garde cette fiche. La prochaine campagne sera plus facile parce que tu auras deja un modele qui te ressemble.
+Fiche : objectif, dates, textes des 3 publications, visuels, chiffres, lecon. Garde-la. La prochaine sera plus facile. Sans fiche, tu recommences a zero chaque fois. Avec fiche, tu ameliore.
 
 ## En vrai
 
-Choisis une date de lancement dans les 14 prochains jours. Ecris le message aujourd'hui. Demain, prepare la preuve. Apres-demain, teste le lien. Puis tu lances. Pas besoin d'attendre d'etre "pret a 100 %".
+Choisis une date de lancement dans les 14 prochains jours. Ecris le message aujourd'hui. Demain, prepare la preuve. Apres-demain, teste le lien. Puis tu lances. Lea l'a fait un mardi. Max un jeudi. Sam un dimanche. Le jour importe moins que la date ecrite.
 
-Bravo. Tu sais lancer, suivre et conclure une action marketing complete. Place au quiz.
+## A toi
+
+Remplis objectif + message + deux supports + date. Si une case manque, complete avant de publier. Pas de lancement a moitie. Chez DanielCraft, on pointe le projecteur sur une seule porte - puis on mesure.

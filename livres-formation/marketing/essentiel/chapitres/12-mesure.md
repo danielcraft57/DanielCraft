@@ -1,31 +1,49 @@
 # Chapitre 12 - Mesurer sans devenir fou
 
-Mesurer, ce n'est pas remplir un tableur de cent lignes chaque dimanche. C'est regarder quelques signaux qui disent si tu avances ou si tu tournes en rond. Trois chiffres bien suivis valent mieux que trente chiffres ignores.
+Mesurer, ce n'est pas remplir un tableur de cent lignes chaque dimanche en te sentant coupable. C'est regarder quelques signaux qui disent si tu avances ou si tu tournes en rond. Trois chiffres bien suivis valent mieux que trente chiffres ignores. Chez DanielCraft, on le repete souvent : la mesure sert a **decider**, pas a te punir. Un chiffre utile te dit quoi garder, quoi couper, quoi tester la semaine prochaine. Un chiffre inutile te flatte l'ego pendant que ton agenda reste vide.
 
-Un KPI (indicateur cle de performance), c'est juste un chiffre utile pour decider. Pour un debutant, trois a cinq KPI suffisent largement. Pas besoin de jargon. "Combien de messages recus cette semaine ?" C'est deja un KPI.
+Un **KPI** (indicateur cle), c'est simplement un chiffre lie a ton argent, a ton temps ou a ton agenda. Pour un debutant, trois a cinq suffisent largement. "Combien de messages recus cette semaine ?" C'est deja un KPI. Selon ton objectif, tu peux suivre la visibilite (vues, visites, abonnes de qualite), les contacts (messages, formulaires, appels), les ventes (nombre, chiffre, panier moyen), ou la pub (cout par clic, cout par contact). Le piege, c'est de choisir ce qui impressionne sur les reseaux au lieu de ce qui paie le loyer. Lea suivait vingt chiffres et n'en regardait aucun. Max note sur un carnet papier : date, action, resultat, lecon. Sam comptait messages et essais a l'oeil avant d'ouvrir Google Analytics. Trois methodes, une posture : peu, mais vraiment.
 
-Exemples selon ton objectif. Plus de visibilite : vues, visites sur ta page, nouveaux abonnes de qualite (pas des faux comptes). Plus de contacts : messages recus, formulaires remplis, appels. Plus de ventes : nombre de ventes, chiffre d'affaires, panier moyen. Efficacite pub : cout par clic, cout par contact ou par vente.
+La mesure devient legere quand tu la fixes une fois par semaine, le meme jour, dans un carnet ou une note telephone. Tu verras des tendances : "depuis les avant-apres, plus de messages", "ma pub coute trop cher par devis". Les **tendances** comptent plus qu'un chiffre isole un mardi pluvieux. Compare-toi a toi-meme le mois dernier, pas au gros influenceur du coin. Passer de 2 a 5 messages, c'est une victoire. De 0 a 1 vente en ligne, aussi. Chez DanielCraft, on note dimanche, on decide lundi.
 
-## Une habitude legere
+:::retenir
+Trois chiffres suivis vraiment valent mieux que trente chiffres ignores. Mesure pour decider, pas pour te punir.
+:::
 
-Note tes chiffres une fois par semaine, le meme jour, dans un carnet simple. Tu verras des tendances : "depuis que je poste des avant-apres, j'ai plus de messages", ou "ma pub coute trop cher par rapport aux devis". Les tendances comptent plus qu'un chiffre isole.
+## Ce que ce n'est pas
 
-Ne te compare pas aux gros chiffres des influenceurs. Compare-toi a toi-meme le mois dernier. C'est la seule courbe qui compte au debut. Passer de 2 a 5 messages par semaine, c'est une victoire. Passer de 0 a 1 vente en ligne, c'est une victoire. Passer de 1 a 3 avis Google, c'est une victoire.
+Ce n'est pas une punition hebdomadaire ni un rituel de culpabilite. Ce n'est pas non plus mesurer ce qui flatte l'ego (likes, followers) au lieu de ce qui paie (rendez-vous, devis, ventes). Ce n'est pas Google Analytics des le jour 1 si tu n'as pas encore de trafic. Et ce n'est surtout pas abandonner apres deux semaines parce que "ca ne marche pas". Les tendances comptent plus qu'un chiffre isole. Ce n'est pas non plus comparer tes debuts au gros compte du coin. Tu mesures ta progression, pas ta popularite.
 
-Si un chiffre monte mais que tu ne gagnes pas plus (beaucoup de likes, zero vente), creuse : mauvaise cible, message confus, page qui ne convertit pas. Les metriques vanite (likes sans suite) flattent l'ego mais paient rarement le loyer. Mille likes sur une blague marrante ne remplissent pas l'agenda d'un coiffeur.
+Ce n'est pas non plus se punir avec les chiffres. Un chiffre qui baisse n'est pas un echec personnel. C'est un signal : message, canal, ou saison. Tu ajustes, tu retestes. Chez DanielCraft, on utilise la boussole, pas le fouet.
 
-Pose-toi une question mensuelle : quelle action a eu le meilleur rapport effort-resultat ? Fais plus de ca. Reduis le reste sans culpabilite. Si les avis Google t'ont ramene trois clients et que TikTok t'a ramene zero, tu sais ou mettre ton energie. Si les emails aux anciennes clientes t'ont ramene deux commandes et que les stories n'ont rien donne, tu sais aussi.
+Imagine un tableau de bord de voiture avec trois voyants, pas cinquante. Lea regarde devis demandes et devis signes. Max regarde appels, interventions et avis. Sam regarde messages, essais et forfaits convertis. Si un voyant clignote - beaucoup de likes, zero vente - tu creuses : mauvaise cible, message confus, page qui ne convertit pas. Les **metriques vanite** flattent l'ego. Elles paient rarement le loyer. Dix coeurs sur une photo drole ne remplissent pas l'agenda d'un traiteur.
 
-## Outils simples, pas usine a gaz
+:::attention
+Dix coeurs sur une photo drole ne remplissent pas l'agenda d'un traiteur. Choisis un signal lie a ton argent ou a ton agenda.
+:::
 
-Un carnet papier. Une note sur le telephone. Un tableur avec quatre colonnes : date, action, resultat, lecon. Google Analytics (outil gratuit de Google pour voir qui visite ton site) peut attendre si tu debutes. Commence par compter ce que tu vois de tes propres yeux : messages, appels, ventes.
+## Petite histoire
 
-Pour une petite boutique, "nombre de paniers abandonnes" peut attendre. Pour un artisan, "nombre de devis envoyes vs devis signes" compte tout de suite. Pour un coach, "seances d'essai reservees vs seances transformees en forfait" compte. Choisis des chiffres lies a ton argent et a ton temps.
+Lea suivait vingt chiffres dans un tableur qu'elle n'ouvrait jamais. Un dimanche, elle a coupe a trois : devis demandes, devis signes, source du contact. En un mois, elle a vu que LinkedIn ramenait mieux qu'Instagram pour elle. Max notait sur un carnet papier : date, action, resultat, lecon. Assez pour ajuster sans se noyer. Sam voulait Google Analytics des le jour 1. Il a d'abord compte messages et essais a l'oeil. Plus tard, l'outil. Pour une petite boutique, "paniers abandonnes" peut attendre. Pour un artisan, "devis envoyes vs signes" compte tout de suite.
 
-DanielCraft te le repete : mieux vaut peu de chiffres suivis que beaucoup de chiffres ignores. La mesure sert a decider, pas a se punir. Si les chiffres baissent, ce n'est pas un echec personnel. C'est un signal pour ajuster. Peut-etre le message. Peut-etre le canal. Peut-etre la saison. Tu ajustes, tu retestes.
+Chez DanielCraft, on celebre les petites victoires mesurables : de 0 a 1 avis, de 2 a 5 messages, de 1 a 3 essais convertis. Pose-toi une question mensuelle : quelle action a eu le meilleur rapport effort-resultat ? Fais plus de ca. Reduis le reste sans culpabilite. Si les avis Google t'ont ramene trois clients et TikTok zero, tu sais ou mettre ton energie. Lea ignore les vues. Max ignore les likes. Sam regarde les messages "je m'inscris". Outils simples : carnet, note telephone, tableur a quatre colonnes. Google Analytics peut attendre.
+
+:::astuce
+Ecris trois KPI sur un post-it. Chaque dimanche, note les trois. Rien d'autre. Dans quatre semaines, tu auras une mini histoire de ton marketing.
+:::
+
+## Erreur classique
+
+Mesurer ce qui est facile (likes) au lieu de ce qui paie. Ou abandonner la mesure apres deux semaines parce que le chiffre n'a pas explose. Autre piege : se punir avec les chiffres au lieu de les utiliser comme boussole. Autre piege encore : changer d'outil des qu'un chiffre baisse, au lieu de relire cible et message. Si les chiffres baissent, ce n'est pas un echec personnel. C'est un signal. Tu ajustes, tu retestes.
 
 ## En vrai
 
-Choisis trois chiffres pour ce mois. Ecris-les sur un post-it. Chaque dimanche, note les trois. Rien d'autre. Dans quatre semaines, tu auras une mini histoire de ton marketing. C'est assez pour decider.
+Choisis trois chiffres pour ce mois. Ecris-les sur un post-it. Chaque dimanche, note les trois. Rien d'autre. Dans quatre semaines, tu auras une mini histoire de ton marketing. Si tu ne peux pas nommer un chiffre utile, reprends ton objectif du chapitre 2. La mesure commence la. Max a cette habitude depuis six mois. Il sait quand une action vaut le coup avant d'acheter un nouvel outil.
 
-Allez. Mesure legere en place. Et avec quel budget ?
+## A toi
+
+Ecris tes trois KPI + le jour de revue. Colle le post-it pres de ton ecran. Si tu ne peux pas nommer un chiffre utile, reprends ton objectif du chapitre 2 avant de continuer.
+
+## Zoom : vanite vs decision
+
+Les likes flattent. Les messages decident. Chez DanielCraft, on choisit le signal qui fait bouger l'agenda ou le compte. Trois voyants. Une revue hebdo. Une decision lundi. C'est deja un systeme de mesure digne d'un pro - sans tableur de cent lignes.

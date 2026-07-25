@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Reseaux : rythme tenu, pas epuisement</text>
+<rect x="120" y="140" width="350" height="220" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="295" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1f1630" font-weight="700">Heroique</text>
+<text x="295" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">6 posts / semaine</text>
+<text x="295" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">abandon en mars</text>
+<rect x="530" y="140" width="350" height="220" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="705" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a4a2a" font-weight="700">Tenable</text>
+<text x="705" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#7a4a2a" font-weight="400">1 ou 2 / semaine</text>
+<text x="705" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#7a4a2a" font-weight="400">relation + reponses</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Un profil vivant bat cinq comptes morts.</text>
+</svg>

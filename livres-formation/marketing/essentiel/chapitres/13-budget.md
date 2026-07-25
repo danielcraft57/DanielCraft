@@ -1,31 +1,49 @@
 # Chapitre 13 - Penser petit budget (malin)
 
-Tu n'as pas besoin de dix mille euros pour commencer le marketing digital. Beaucoup d'activites locales demarrent avec du temps, de la clarte, et zero a cent euros par mois de depenses. L'argent aide, mais la clarte aide plus.
+Tu n'as pas besoin de dix mille euros pour commencer le marketing digital. Beaucoup d'activites locales demarrent avec du temps, de la clarte, et zero a cent euros par mois. L'argent aide, mais la **clarte** aide plus. Chez DanielCraft, on prefere deux heures bien placees a une pub mal reglee. Un message flou avec un budget de 500 euros ne devient pas magiquement clair. Un message net avec zero euro peut deja ramener un premier contact.
 
-Priorise le gratuit utile : fiche Google complete, profil social propre, contenu regulier, demandes d'avis, reseau local en ligne (groupes de quartier, associations). Ca coute surtout de l'energie, pas de l'argent. Un boulanger qui repond aux avis Google et poste une photo par semaine fait deja du marketing solide sans depenser un centime.
+Priorise le gratuit utile : fiche Google complete, profil social propre, contenu regulier, demandes d'avis, groupes locaux. Ca coute de l'energie, pas de l'argent. Un boulanger qui repond aux avis et poste une photo par semaine fait deja du marketing solide. Quand tu depenses, depense avec intention : outil email simple, nom de domaine, shooting basique, test pub cible. Evite d'empiler les abonnements "indispensables" a 29 euros. Trois outils a 29 euros, c'est 87 euros pour des fonctions que tu n'utilises pas encore. Lea a paye 99 euros un template jamais utilise. Max a refuse tous les outils pendant six mois : fiche Google et groupe local. Sam a echange de la visibilite avec une nutritionniste du quartier. Zero euro, deux audiences. Trois lecons, une regle : depense quand le lien euro-resultat est nommable.
 
-Quand tu depenses, depense avec une intention : outil email simple, nom de domaine, shooting photo basique, test pub cible. Evite d'empiler les abonnements "indispensables" a 29 euros par mois chacun. Ca grignote vite. Trois outils a 29 euros, ca fait 87 euros par mois pour des fonctions que tu n'utilises pas encore.
+La regle **70/20/10** n'est pas une loi gravee dans le marbre. C'est une boussole : 70 % actions gratuites et relationnelles, 20 % outils ou contenus qui durent (site, photos, mini formation), 10 % tests payants quand tu es pret. Recycle : une video devient trois posts, un email, une FAQ. Une seance photo nourrit six mois. Un temoignage sert sur Instagram, email, fiche Google, flyer. Negocie ou mutualise : echange de visibilite avec un commerce complementaire, marche local, partenariat. Le boulanger et le fromager qui se mentionnent, ca coute zero.
 
-## La regle 70/20/10 (souple)
+:::retenir
+Clarte d'abord, outils ensuite. Deux heures bien placees battent une pub mal reglee.
+:::
 
-Regle 70/20/10 pour t'inspirer (pas une loi gravee dans le marbre). 70 % de tes efforts en actions gratuites et relationnelles. 20 % en outils ou contenus qui durent (site, photos, mini formation pour toi). 10 % en tests payants quand tu es pret. Un coach qui passe deux heures par semaine a repondre aux questions sur Facebook (gratuit) avant de depenser 50 euros en pub, respecte cette logique.
+## Ce que ce n'est pas
 
-Recycle : une video devient trois posts, un email, une FAQ sur ton site. Une seance photo peut nourrir six mois de contenu. Un temoignage client peut servir sur Instagram, dans un email, sur ta fiche Google, dans un flyer. Travaille une fois, utilise plusieurs fois.
+Ce n'est pas "sans budget je ne peux rien". Ce n'est pas non plus s'abonner a cinq outils "parce que les pros le font". Ce n'est pas depenser pour "te sentir pro" au lieu de depenser pour un resultat. Et ce n'est surtout pas croire qu'un outil a 997 euros remplace la clarte. Le **marketing malin** commence souvent a zero euro et beaucoup de precision. Ce n'est pas non plus miser tout sur la pub avant d'avoir une page claire. Tu envoies du monde vers un trou si le message n'est pas net.
 
-Negocie ou mutualise : echange de visibilite avec un commerce complementaire, participation a un marche local, partenariat avec un createur de quartier. Le boulanger et le fromager qui se mentionnent mutuellement, ca coute zero et ca fait sens pour les clients. Le coiffeur et le coach du meme immeuble peuvent aussi se recommander.
+Ce n'est pas non plus se sentir coupable d'avoir peu d'argent. Le temps bien place est un budget. Une page claire vaut plus qu'un mois d'outil miracle. Demander trois avis vaut plus qu'un logo retouche. Chez DanielCraft, on le repete : clarte d'abord.
 
-Si le budget serre, le temps est ton allie. Mieux vaut deux heures bien placees qu'une pub mal reglee. Ecrire une page claire sur ton site vaut plus qu'un mois d'abonnement a un outil miracle. Demander trois avis a des clients contents vaut plus qu'un logo retouche.
+Pense portefeuille a trois poches. Poche 70 : actions gratuites et relationnelles. Poche 20 : outils ou contenus qui durent. Poche 10 : tests payants quand tu es pret. Un coach qui passe deux heures a repondre aux questions sur Facebook avant de depenser 50 euros en pub respecte cette logique. Lea, Max et Sam ont tous brule un abonnement inutile une fois. Ils ont appris. Si le budget serre, le temps est ton allie.
 
-Et surtout : ne depense pas pour "se sentir pro". Depense quand tu vois un lien clair entre l'euro sorti et un resultat que tu peux nommer. "J'ai paye 15 euros le nom de domaine, les clients me trouvent plus facilement." OK. "J'ai paye 99 euros un template que je n'ai jamais utilise." Pas OK.
+:::astuce
+Liste tes depenses marketing du mois (meme 0). En face, le resultat obtenu. Si tu ne peux pas nommer le resultat, coupe ou change.
+:::
 
-## Ce qui vaut le coup en premier
+## Petite histoire
 
-Nom de domaine propre (10-15 euros par an). Fiche Google complete (gratuit). Outil email basique quand tu as 20+ contacts (souvent gratuit au debut). Quelques photos propres de ton travail (telephone suffit). Le reste peut attendre.
+Lea a paye 99 euros un template jamais utilise. Elle a coupe. Elle a paye 15 euros un nom de domaine : les clients la trouvent chaque semaine. Max croyait qu'il "devait" payer pour exister. Sa fiche Google gratuite et ses reponses dans le groupe local ont suffi pour demarrer. Puis un test pub de 30 euros quand le message etait clair. Sam a echange de la visibilite avec une nutritionniste du quartier. Zero euro, deux audiences.
 
-Plus tard, si tu as un peu de marge : un test pub local de 30 euros, une demi-journee photo avec un ami qui s'y connait, un petit site simple. Toujours apres la clarte. Jamais avant.
+Chez DanielCraft, on prefere un nom de domaine et trois avis a cinq abonnements fantomes. Ce qui vaut le coup en premier : nom de domaine (10-15 euros/an), fiche Google (gratuit), outil email basique a 20+ contacts (souvent gratuit), photos propres au telephone. Plus tard : test pub local, demi-journee photo, petit site. Toujours apres la clarte. Jamais avant. Max a coupe un abonnement design a 29 euros. Il a reinvesti deux heures dans des photos au telephone. Resultat : plus de messages. Pas magique. Logique.
+
+:::astuce
+Repartis ton mois : 70/20/10 en heures ou en euros. Ecris une depense a couper et une action gratuite a renforcer. Fais les deux cette semaine.
+:::
+
+## Erreur classique
+
+S'abonner a cinq outils "parce que les pros le font". Ou croire que sans budget tu ne peux rien. Autre piege : depenser pour se rassurer au lieu de depenser pour un resultat. Autre piege encore : payer une pub a 500 euros sans page claire. Le marketing malin commence souvent a zero euro et beaucoup de clarte. Lea l'a appris a 99 euros pres.
+
+## En vrai
+
+Liste tes depenses marketing du mois (meme 0). En face, le resultat obtenu. Une ligne suffit. Si tu ne peux pas nommer le resultat, coupe ou change. Sam a fait cet exercice un dimanche soir. Il a retrouve 58 euros de "pro" qui ne servaient a rien. Il a garde le nom de domaine et les avis. Lea a coupe le template. Max a garde la fiche Google.
 
 ## A toi
 
-Liste tes depenses marketing du mois (meme 0). En face, ecris le resultat obtenu. Une ligne suffit. Si tu ne peux pas nommer le resultat, coupe ou change. Ton budget devient intelligent.
+Repartis ton mois : 70/20/10 en heures ou en euros. Ecris une depense a couper et une action gratuite a renforcer. Fais les deux cette semaine.
 
-Allez. Budget maitrise. Passons a la pratique avec le plan 30 jours.
+## Zoom : argent vs clarte
+
+L'argent accelere un message clair. Il ne cree pas la clarte. Chez DanielCraft, on remplit d'abord cible, message, preuve. Ensuite on depense - petit, mesure, ajuste. Le portefeuille a trois poches protege ton loyer et ton energie. Clarte d'abord. Toujours.

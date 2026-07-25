@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Atelier persona : 4 lignes</text>
+<rect x="80" y="120" width="400" height="100" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="280" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">1. Prenom fictif</text>
+<rect x="520" y="120" width="400" height="100" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="720" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a4a2a" font-weight="700">2. Probleme du soir</text>
+<rect x="80" y="250" width="400" height="100" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="280" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">3. Canal de recherche</text>
+<rect x="520" y="250" width="400" height="100" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="720" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">4. Ce qui rassure</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Un persona solide bat cinq fiches fantomes.</text>
+</svg>
