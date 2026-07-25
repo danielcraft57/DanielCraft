@@ -1,0 +1,6 @@
+Illustration pedagogique JS bases - page qui devient vivante.
+
+Scene flat : une developpeuse freelance devant un laptop. Sur l'ecran, une page web simple avec un bouton qui s'allume et un message qui apparait apres un clic. Sensation "la page reagit".
+
+Fond creme. Accents vert teal et ambre. Style flat illustration, friendly, pas infantile.
+Peu ou pas de texte. Si texte UI : FRANCAIS uniquement (ex. bouton "Bonjour"). Aucun mot anglais.

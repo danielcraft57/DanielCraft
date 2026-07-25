@@ -63,7 +63,7 @@ Chaque chapitre commence sur une **nouvelle page**.
 
 ## 4. Images et schemas
 
-**Chaque livre** : couverture + felicitation + plusieurs schemas cles (SVG FR -> PNG).
+**Chaque livre** : couverture + felicitation + **un schema par chapitre** (SVG FR -> PNG).
 Ne pas livrer un PDF "que du texte".
 
 Dans `prompts/images/` et `prompts/schemas/`. Toujours :
@@ -75,9 +75,20 @@ Dans `prompts/images/` et `prompts/schemas/`. Toujours :
 **SVG faits main** (texte FR garanti) -> raster PNG via Playwright.  
 Illustrations ambiance (couverture, bravo) : generation image OK, puis copie dans `images/`.
 
+### Exemples images generes (optionnel)
+
+Quelques scenes pedagogiques generees (2 a 5 / livre) pour ancrer un exemple concret.
+Branchées dans `CHAPTER_IMAGES` en plus du schema (caption FR).
+Ne remplacent pas le schema. Eviter une image generee a chaque chapitre (cout + poids PDF).
+
 ### Compression
 
 `build_livre.py` cree `images/print/*.jpg`.
+
+### Workflow
+
+**Un livre a la fois.** Rebuild PDF, commit cible, OK user avant le suivant.
+Interdit : section "Image mentale". Notes = `:::retenir` / `:::attention` / `:::astuce` seulement.
 
 ## 5. Build HTML + PDF
 
@@ -111,6 +122,10 @@ python livres-formation\informatique\<livre>\build_livre.py
 - [ ] 15+ chapitres + ateliers + quiz + bravo  
 - [ ] Directive style OK  
 - [ ] Images/schemas en francais  
+- [ ] Un schema par chapitre (+ couverture / felicitation)  
+- [ ] Pas de section "Image mentale"  
+- [ ] Notes = retnir / attention / astuce seulement  
+- [ ] Exemples images generes : peu, utiles, caption FR (optionnel)  
 - [ ] Chaque chapitre = nouvelle page  
 - [ ] Sommaire : liens cliquables verifies dans un lecteur PDF  
 - [ ] Signets lateraux OK  

@@ -44,6 +44,7 @@ CHAPTER_FILES = [
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
         ("js-trio.png", "HTML structure. CSS habille. JS fait reagir."),
+        ("js-scene-vivante.png", "Exemple : un clic, et la page repond (Bonjour / Salut)."),
     ],
     2: [
         ("js-ou-ecrire.png", "HTML, fichier .js, ou console : trois endroits pour ecrire."),
@@ -77,9 +78,11 @@ CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     ],
     12: [
         ("js-evenements.png", "Clic -> JS ecoute -> la page change."),
+        ("js-scene-clic.png", "Exemple : Clique-moi, et le message apparait."),
     ],
     13: [
         ("js-mini-projet.png", "HTML + JS + etat + DOM : le compteur en quatre briques."),
+        ("js-scene-compteur.png", "Exemple : chaque clic augmente le compteur."),
     ],
     14: [
         ("js-retenir.png", "Carte des bases : logique, donnees, DOM, memoire."),
@@ -92,6 +95,7 @@ CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     ],
     17: [
         ("js-erreurs.png", "F12 : lire le message, la ligne, puis corriger."),
+        ("js-scene-console.png", "Exemple : on lit l'erreur dans le journal, sans paniquer."),
     ],
     18: [
         ("js-quiz.png", "Verifier ce que tu as compris, sans inventer."),

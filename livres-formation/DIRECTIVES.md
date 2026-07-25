@@ -69,7 +69,12 @@ Un geste pratique a tester tout de suite.
   5. DanielCraft mentionne naturellement
 - **Interdit** : section titree "Image mentale" (et variantes). L'intuition passe par le **schema** + la prose, pas par un titre fixe.
 - Listes numerotees OK pour de vraies etapes. Quiz : options A/B/C en puces.
-- **Images et schemas** : couverture, felicitation, **et un schema par chapitre** (cours, ateliers, quiz inclus ; SVG -> PNG). Preferer un schema clair a une rangee d'emojis. Caption courte en francais.
+- **Images et schemas** :
+  - Couverture + felicitation.
+  - **Schema obligatoire** par chapitre (cours, ateliers, quiz inclus ; SVG FR -> PNG via `CHAPTER_IMAGES`). Caption courte en francais. Preferer un schema clair a une rangee d'emojis.
+  - **Exemples images generes** (optionnels) : oui, on peut en mettre **quelques-uns** (environ 2 a 5 par livre, sur les chapitres ou ca aide vraiment). Scene pedagogique concrete (ex. Lea devant la console, Max qui clique un bouton, ecran avec erreur lue). Caption FR. Ces images **completent** le schema, elles ne le remplacent pas. Pas une illustration a chaque chapitre (cout + PDF trop lourd).
+  - Tout texte visible dans une image = **francais uniquement**.
+- **Workflow** : un livre a la fois. Rebuild PDF, commit cible, attendre OK avant le suivant.
 - PDF finaux dans `pdf/`.
 
 ## Lecture et comprehension (bonnes pratiques)
@@ -77,5 +82,6 @@ Un geste pratique a tester tout de suite.
 - Gras = priorite visuelle pour l'essentiel (pas de soulignement).
 - Callouts = notes utiles hors du fil (retenir / attention / astuce), jamais decoratives.
 - Un schema = une idee visuelle par chapitre (pas trois schemas inutiles).
+- Quelques scenes generees = ancrage emotionnel / exemple vivant, pas decoration.
 - Repeter une idee avec une histoire concrete apres l'explication abstraite.
 - Terminer par une micro-action ("A toi") pour ancrer.

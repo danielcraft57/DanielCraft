@@ -1,0 +1,5 @@
+Illustration pedagogique JS bases - mini compteur.
+
+Scene flat : navigateur avec un compteur affichant un nombre et un bouton plus presse par une main. Badge score simple.
+
+Fond creme. Accents teal et ambre. Flat, friendly. Texte UI FRANCAIS seulement (ex. "Clics"). Aucun mot anglais.
