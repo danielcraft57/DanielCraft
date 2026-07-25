@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Liens et images</text>
+  <rect x="80" y="120" width="400" height="280" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="280" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">a + href</text>
+  <text x="280" y="296" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">route vers une page</text>
+  <rect x="520" y="120" width="400" height="280" rx="14" fill="#fff4d6" stroke="#7a6410" stroke-width="3"/>
+  <text x="720" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a6410" font-weight="700">img + alt</text>
+  <text x="720" y="296" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">photo + description</text>
+  <text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">href = destination. alt = si l image manque</text>
+</svg>

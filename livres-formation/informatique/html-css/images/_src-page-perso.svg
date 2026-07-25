@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Page perso : une vitrine claire</text>
+  <rect x="150" y="100" width="700" height="340" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <rect x="180" y="130" width="640" height="50" rx="8" fill="#1a4d3e"/>
+  <text x="500" y="163" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#ffffff">header + menu</text>
+  <rect x="180" y="200" width="640" height="70" rx="8" fill="#ffffff" stroke="#1a4d3e" stroke-width="2"/>
+  <text x="500" y="243" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">A propos</text>
+  <rect x="180" y="290" width="300" height="60" rx="8" fill="#ffffff" stroke="#1a4d3e" stroke-width="2"/>
+  <text x="330" y="328" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">Likes</text>
+  <rect x="520" y="290" width="300" height="60" rx="8" fill="#ffffff" stroke="#1a4d3e" stroke-width="2"/>
+  <text x="670" y="328" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e">Contact</text>
+  <rect x="180" y="370" width="640" height="40" rx="8" fill="#fff4d6" stroke="#c9a227" stroke-width="2"/>
+  <text x="500" y="397" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">footer</text>
+</svg>

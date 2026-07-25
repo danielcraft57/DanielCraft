@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Debug : 5 etapes</text>
+  <rect x="80" y="110" width="840" height="340" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">1. Symptome  2. Dernier changement</text>
+  <text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">3. Chemins / link / balises</text>
+  <text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">4. Simplifier  5. Retester</text>
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Un seul changement a la fois</text>
+</svg>

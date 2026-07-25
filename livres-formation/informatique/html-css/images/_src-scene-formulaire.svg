@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Exemple : label visible au-dessus du champ</text>
+  <rect x="200" y="110" width="600" height="320" rx="16" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="260" y="180" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">Ton email</text>
+  <rect x="250" y="200" width="500" height="55" rx="8" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="2"/>
+  <text x="270" y="235" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">lea@exemple.fr</text>
+  <rect x="350" y="300" width="300" height="55" rx="10" fill="#1a4d3e"/>
+  <text x="500" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#ffffff" font-weight="700">Envoyer</text>
+  <text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">Sans label, le guichet n a pas de numero</text>
+</svg>

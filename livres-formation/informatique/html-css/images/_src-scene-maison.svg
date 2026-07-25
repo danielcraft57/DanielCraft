@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Exemple : structure puis style</text>
+  <rect x="100" y="100" width="350" height="320" rx="16" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="275" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248">Sans CSS</text>
+  <text x="275" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e">Ma page</text>
+  <text x="275" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">texte noir, fond blanc</text>
+  <rect x="550" y="100" width="350" height="320" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="725" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248">Avec CSS</text>
+  <text x="725" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Ma page</text>
+  <text x="725" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a4d3e">fond doux, titre vert</text>
+</svg>

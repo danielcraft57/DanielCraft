@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Formulaire = guichet</text>
+  <rect x="180" y="110" width="640" height="340" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">label + input + button</text>
+  <rect x="260" y="200" width="480" height="50" rx="8" fill="#ffffff" stroke="#1a4d3e" stroke-width="2"/>
+  <text x="280" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Nom</text>
+  <rect x="260" y="280" width="480" height="50" rx="8" fill="#ffffff" stroke="#1a4d3e" stroke-width="2"/>
+  <text x="280" y="312" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Email</text>
+  <rect x="360" y="360" width="280" height="50" rx="10" fill="#1a4d3e"/>
+  <text x="500" y="392" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#ffffff" font-weight="700">Envoyer</text>
+</svg>

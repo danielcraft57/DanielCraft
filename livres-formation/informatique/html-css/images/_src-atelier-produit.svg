@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Fiche produit : hierarchie visuelle</text>
+  <rect x="200" y="100" width="600" height="360" rx="16" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Nom du produit</text>
+  <text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#1a4d3e" font-weight="700">29 EUR</text>
+  <text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Pourquoi c'est bien (3 points)</text>
+  <rect x="350" y="320" width="300" height="60" rx="10" fill="#1a4d3e"/>
+  <text x="500" y="358" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#ffffff" font-weight="700">Acheter</text>
+  <text x="500" y="490" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">Nom -> prix -> preuves -> action</text>
+</svg>
