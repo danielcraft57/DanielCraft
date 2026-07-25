@@ -1,48 +1,65 @@
 # Chapitre 12 - Lien avec les LLM : du neurone au chat
 
-Un LLM est un reseau de deep learning (souvent transformer decodeur) entraine a predire le prochain token sur d'enormes corpus, puis souvent aligne pour mieux suivre des instructions et respecter des politiques. Quand tu chats, tu ne "parles pas a une conscience". Tu conditionnes une machine a suites de tokens.
+Un **LLM** est un reseau de deep learning - souvent un **transformer** decodeur - entraine a predire le prochain **token** sur d'enormes corpus, puis souvent aligne pour mieux suivre des instructions et respecter des politiques. Quand tu chats, tu ne "parles pas a une conscience". Tu conditionnes une machine a suites de tokens.
+
+Chez DanielCraft, ce chapitre ferme la boucle : tout ce que tu as vu (neurone, couches, activation, backprop, attention, GPU, transfer) se reconnait dans l'outil du quotidien. Tu gagnes un vocabulaire anti-fantasme.
+
+:::retenir
+LLM = deep learning langage (souvent transformer) + alignement + usage (prompt / RAG / agents). Tu pilotes ; tu ne dialogues pas avec une ame.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas sans lien avec le deep learning - au contraire. Ce n'est pas une base de connaissances fiable par defaut (**hallucinations**). Ce n'est pas un remplacant automatique du ML classique sur un CSV metier. Et ce n'est pas "uploader un PDF une fois pour qu'il sache tout pour toujours" : sans RAG ni fine-tune evalue, le fichier du jour n'est pas grave dans les poids.
 
 ## Ce que tu reconnais maintenant
 
-Tokens et contexte : la fenetre limite ce que l'attention peut croiser d'un coup. Temperature : reglage sur l'aleas des choix de tokens. Poids et couches : milliards de parametres ajustes par descente de gradient a l'echelle industrielle. Hallucinations : prediction plausible hors verite. Multimodal : on branche vision/audio sur des representations communes ou des modules couples. RAG : on injecte des extraits dans le contexte plutot que de tout memoriser dans les poids. Agents : on boucle le LLM avec des outils.
+**Tokens** et **contexte** : la fenetre limite ce que l'attention peut croiser d'un coup. **Temperature** : reglage sur l'aleas des choix de tokens. Poids et couches : milliards de parametres ajustes par descente de gradient a l'echelle industrielle. Hallucinations : prediction plausible hors verite. Multimodal : on branche vision / audio sur des representations communes ou des modules couples. **RAG** : on injecte des extraits dans le contexte plutot que de tout memoriser dans les poids. **Agents** : on boucle le LLM avec des outils.
+
+:::idee
+Dessine 8 fleches : donnees -> transformer -> tokens -> prompt -> reponse -> verification. Place RAG et temperature sur le schema.
+:::
 
 ## Entrainer vs utiliser
 
-Entrainer un LLM fondation : hors de portee de la plupart des individus (donnees, GPU, argent, energie). Utiliser : API, produit grand public, modele open poids local selon machine. Fine-tuning leger : parfois accessible. Prompting et RAG : levier numero un. Comprendre le deep learning te protege des fantasies ("il suffit d'uploader mon PDF pour qu'il sache tout pour toujours") et t'oriente vers les bons leviers.
+Entrainer un LLM fondation : hors de portee de la plupart des individus (donnees, GPU, argent, energie). Utiliser : API, produit grand public, modele open poids local selon machine. Fine-tuning leger : parfois accessible. Prompting et RAG : levier numero un. Comprendre le deep learning te protege des fantasies et t'oriente vers les bons leviers. Lea le dit a ses clients : "on n'entraine pas ChatGPT ; on l'utilise proprement".
+
+## Alignement (idee)
+
+Apres l'entrainement "predire le prochain token", beaucoup de LLM passent par des etapes pour mieux suivre les instructions et reduire certains comportements dangereux. Ca n'efface pas les hallucinations. Ca change le temperament du produit que tu utilises. D'ou des differences de style entre outils. Sam compare : meme famille de moteurs, permis de conduire differents.
+
+## Petite histoire
+
+Ines utilise un assistant pour rediger la doc utilisateur de son appli vision. Elle fournit des faits vrais (classes, limites, seuils), interdit l'invention de chiffres, verifie. Le LLM accelere le brouillon. Le CNN, lui, classe les pieces. Deux deep learning, deux roles, une meme posture de pilote. Max demande un mail client : meme posture. Chez DanielCraft, on aime cette coexistence assumee.
 
 ## Ethique et cout
 
-Derriere le chat fluide : calcul, eau/energie selon les infrastructures, travail d'annotation et de moderation, risques de biais. Le chapitre n'est pas un proces. C'est une invitation a utiliser avec mesure, surtout en entreprise.
+Derriere le chat fluide : calcul, energie selon les infrastructures, travail d'annotation et de moderation, risques de biais. Le chapitre n'est pas un proces. C'est une invitation a utiliser avec mesure, surtout en entreprise : donnees sensibles, verification, abstention. L'argent des tokens n'est qu'une partie du cout : le cout d'une erreur confiante peut etre bien plus haut.
 
 ## Erreur classique
 
-Croire qu'un LLM rend inutile le ML classique sur un CSV metier. Souvent non. Autre piege : confondre "fine-tune" marketing et vrai changement de poids evalue proprement.
+Croire qu'un LLM rend inutile le ML classique sur un CSV. Autre piege : confondre "fine-tune" marketing et vrai changement de poids evalue proprement. Troisieme : coller des secrets dans le fil "parce que ce sera plus perso".
+
+:::attention
+Fluide n'est pas competent. Verification et limites restent ton job.
+:::
+
+## En vrai
+
+Ouvre l'assistant auquel tu as acces. Pose une question de ton metier avec faits fournis, puis la meme sans faits. Compare inventions et utilite. Note trois differences.
 
 ## A toi
 
-Relie en 8 fleches : donnees -> transformer -> tokens -> prompt -> reponse -> verification. Ou places-tu RAG et temperature ?
-## Alignement (idee)
+Relie en schema : donnees, transformer, tokens, prompt, reponse, verification, RAG, temperature. Une fleche manquante = un trou a relire.
 
-Apres l'entrainement "predire le prochain token", beaucoup de LLM passent par des etapes pour mieux suivre les instructions et reduire certains comportements dangereux. Ca n'efface pas les hallucinations. Ca change le temperament du produit que tu utilises. D'ou des differences de style entre outils.
+## Pont vers les ateliers
 
-## Developpement : ce que le deep learning change vraiment
+Tu vas solidifier l'intuition neurone/couches, ecrire un plan CNN, puis relier transformer et usage LLM. Tu as maintenant le pont conceptuel. La suite fait faire. C'est le coeur pedagogique DanielCraft : comprendre, puis agir petit, puis evaluer.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Temperature mentale
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Basse : plus deterministe, utile pour faits et procedures. Haute : plus varie, utile pour idees, risquee pour chiffres. Ines garde basse pour la doc technique. Lea monte un peu pour brainstorm, puis redescend pour l'envoi client. Le reglage n'est pas magique ; il change le profil de risque. Couple-le toujours a une verification.
 
-## Intuition des representations
+## Agents : boucler avec freins
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
-
-## Experimentation sobre
-
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Un agent enchaine LLM + outils. Puissant, fragile. Sans freins (validation, plafonds, logs), tu automatises aussi les erreurs. Ce livre introductif dit : comprends le moteur avant d'ouvrir l'autoroute. Le chapitre bonnes pratiques et limites te rappellent le frein. Chez DanielCraft, l'agent vient apres le protocole, pas avant.

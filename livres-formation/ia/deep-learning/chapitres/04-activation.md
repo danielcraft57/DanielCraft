@@ -1,44 +1,67 @@
 # Chapitre 4 - Activations : introduire du non-lineaire
 
-Si tu n'empilais que des additions et multiplications lineaires, plusieurs couches densent s'effondreraient en une seule transformation lineaire. Les fonctions d'activation cassent cette linearite. Elles permettent au reseau de tordre l'espace et d'approximer des motifs complexes.
+Si tu n'empilais que des additions et multiplications lineaires, plusieurs couches denses s'effondreraient en une seule transformation lineaire. Les fonctions d'**activation** cassent cette linearite. Elles permettent au reseau de tordre l'espace et d'approximer des motifs complexes. Sans elles, la "profondeur" serait surtout du theatre.
 
-## Intuitions courantes
+Chez DanielCraft, on retient une phrase : l'activation est le geste qui rend l'empilement utile. Tu n'as pas a collectionner vingt variantes. Tu as a comprendre le role, quelques classiques, et le piege de la saturation.
 
-ReLU : passe les valeurs positives, coupe les negatives (simple, efficace souvent). Sigmoid / softmax : ecrasent vers des probabilites (souvent en sortie de classification). Il en existe d'autres ; tu n'as pas a les collectionner. Comprends le role : sans non-linearite, pas de profondeur utile.
+:::retenir
+Sans non-linearite entre les couches, pas de profondeur utile. Activation = tordre le signal pour approximer du complexe.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas la meme chose que la fonction de **perte** (loss). L'activation transforme des signaux a l'interieur du reseau ; la loss mesure l'erreur pour apprendre. Ce n'est pas non plus une decoration de graphique. Et ce n'est pas "une seule activation pour tout" : les couches cachees et la sortie ont souvent des besoins differents.
+
+## Image mentale
+
+Imagine un score brut qui sort d'une somme ponderee. **ReLU** laisse passer les positifs et coupe les negatifs : simple, souvent efficace en couches cachees. **Sigmoid** ecrase vers 0..1 : utile parfois pour une probabilite binaire. **Softmax** transforme plusieurs scores en une distribution qui somme a 1 : langage courant des classifieurs multi-classes. Pour un LLM, la sortie ressemble a une distribution sur le vocabulaire : "quel prochain token est probable ?".
+
+Ines, pour ses pieces, pense "scores bruts puis softmax vers classes". Elle n'a pas besoin de deriver la formule pour choisir la bonne idee.
 
 ## En sortie
 
-La derniere activation depend de la tache : nombre libre (regression), probabilite (classification binaire), distribution sur classes (softmax), ou distribution sur vocabulaire (LLM). Choisir une mauvaise sortie, c'est comme demander a un thermometre d'afficher une couleur sans legende.
+La derniere activation depend de la tache : nombre libre (regression), probabilite (classification binaire), distribution sur classes (softmax), ou distribution sur vocabulaire (LLM). Choisir une mauvaise sortie, c'est comme demander a un thermometre d'afficher une couleur sans legende. Lea a vu un prestataire sortir des scores non normalises et les presenter comme des "pourcentages de confiance" a un client. Confusion garantie.
+
+:::idee
+Avant de parler "confiance", demande : cette sortie est-elle une probabilite calibree, un score brut, ou une impression marketing ?
+:::
+
+## Softmax en sortie (intuition)
+
+Pour plusieurs classes, on obtient des scores bruts puis un softmax les transforme en nombres positifs qui somment a 1. Utile pour choisir la classe ou pour lire une incertitude relative. Ce n'est pas une garantie de calibration parfaite : un modele peut etre tres "sur" et faux. Sam le dit aux eleves : distribution n'egal pas verite.
+
+## Petite histoire
+
+Max a demande a Ines pourquoi "couper les negatifs" aidait. Elle a pris l'image d'un robinet : parfois tu veux eteindre un signal inutile pour laisser d'autres chemins s'exprimer. ReLU est brutal et efficace souvent. D'autres activations existent quand ReLU "tue" trop de neurones (dying ReLU) - variantes que tu rencontreras si tu codes. Pour comprendre, retiens le besoin de non-linearite d'abord.
 
 ## Erreur classique
 
-Utiliser une activation qui sature trop et "tue" le gradient (apprentissage qui n'avance plus) - d'ou la popularite de ReLU et variantes dans beaucoup de couches cachees. Autre piege : confondre activation et fonction de perte (loss) : l'une transforme des signaux ; l'autre mesure l'erreur pour apprendre.
+Utiliser une activation qui sature trop et "tue" le **gradient** : l'apprentissage n'avance plus. D'ou la popularite de ReLU et variantes dans beaucoup de couches cachees. Autre piege : confondre activation et loss. Troisieme piege : lire un softmax comme une certitude metier sans evaluation hors distribution.
+
+:::attention
+Fluide et "99 %" a l'ecran n'egalent pas competent. Verifie sur des cas reels.
+:::
+
+## En vrai
+
+Explique a voix haute, en cinq lignes, pourquoi on active non lineairement entre les couches. Si tu bloques, relis l'image de l'effondrement lineaire.
 
 ## A toi
 
-Explique a un ami, en cinq lignes, pourquoi on active non lineairement entre les couches.
-## Softmax en sortie (intuition)
+Explique a un ami (ou sur papier) pourquoi on active non lineairement entre les couches. Ajoute un exemple de sortie pour une tache binaire et une tache multi-classes.
 
-Pour plusieurs classes, on obtient des scores bruts puis un softmax les transforme en nombres positifs qui somment a 1 : une distribution. Utile pour choisir la classe ou pour lire une incertitude relative. Ce n'est pas une garantie de calibration parfaite, mais c'est le langage courant des classifieurs modernes.
+## Lien avec la backprop
 
-## Developpement : ce que le deep learning change vraiment
+Au chapitre suivant, tu verras que l'apprentissage remonte une erreur a travers ces activations. Si une activation ecrase trop le signal, le message "monte / descends un peu" s'affaiblit. D'ou l'importance pratique du choix - pas pour le snobisme mathematique, pour que l'entrainement bouge.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Scene DanielCraft
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Lea prepare un atelier client. Elle ecrit au tableau : "lineaire empile = encore lineaire" puis "activation = pliure". La salle retient mieux que dix slides de formules. Chez DanielCraft, on prefere cette pliure mentale a une encyclopedie d'activations jamais utilisees.
 
-## Intuition des representations
+## ReLU vs saturations (terrain)
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+Ines a vu une fois une courbe plate : loss qui ne bouge presque plus. Cause probable : signaux ecrases, gradients faibles. Elle a change d'activation cachee vers une variante plus "passante", baisse legerement le learning rate, et la courbe a repris. Tu n'as pas a memoriser le nom de chaque variante. Tu as a reconnaitre le symptome : "plus rien n'apprend" peut venir d'une non-linearite mal choisie autant que d'un bug de labels.
 
-## Experimentation sobre
+## Activation et lecture metier
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Quand un softmax sort 0.91 sur une piece, Lea demande : "calibre sur quel set ?". Si le set est studio et le terrain est neon, le 0.91 ment poliment. L'activation organise des nombres ; elle ne certifie pas le monde. Sam le fait repeter : distribution utile, verite a verifier.

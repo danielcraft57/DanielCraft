@@ -1,4 +1,18 @@
-# Quiz final
+# Chapitre 20 - Quiz final
+
+Ce quiz n'est pas un piege. C'est un miroir. Chez DanielCraft, on prefere dix questions honestes a cinquante QCM pinailleurs. Lis chaque enonce, choisis A, B ou C, puis verifie. Si tu rates, relis le chapitre vise - pas tout le livre en diagonale.
+
+Ines a passe ce quiz avant de presenter son plan CNN a un partenaire. Lea s'en sert pour cadrer un atelier client. Toi, fais-le stylo en main, sans scroll vers les corriges.
+
+:::retenir
+Le quiz verifie le socle : profondeur, activation, backprop, CNN, transformers, overfitting, GPU, transfer, LLM, methode.
+:::
+
+## Avant de commencer
+
+Ferme tes notes. Garde seulement une feuille blanche pour tes lettres de reponse. Chronometre 12 minutes si tu veux jouer le jeu "a chaud". Sinon, prends le temps - la comprehension bat la vitesse.
+
+## Questions
 
 1. Le "deep" de deep learning renvoie surtout a :
 - A) La couleur sombre des GPU
@@ -6,7 +20,7 @@
 - C) Une voix grave
 
 2. Une activation non lineaire sert a :
-- A) Decorar les graphiques
+- A) Decorer les graphiques
 - B) Permettre aux couches empilees d'approximer des motifs complexes
 - C) Remplacer les donnees
 
@@ -50,33 +64,36 @@
 - B) D'acheter dix GPU sans question metier
 - C) D'ignorer la validation
 
+## Petite histoire de correction
+
+Sam fait passer le quiz a sa classe. Ceux qui ratent la 6 et la 10 ont souvent "joue" avec un gros modele trop tot. Il les renvoie aux chapitres overfitting et transfer, puis au plan CNN. Lea rate parfois la 5 si elle est fatiguee - elle relit l'exemple du pronom "il", et ca revient. Normal : le quiz sert a cibler, pas a humilier.
+
 ## Corriges
 
 1-B, 2-B, 3-A, 4-A, 5-A, 6-A, 7-A, 8-A, 9-B, 10-A.
 
-9/10+ : bon socle. Sinon, relis couches, backprop, CNN/transformers, transfer, lien LLM.
+9/10 ou plus : bon socle. 7-8 : relis les items rates et refais l'oral du chapitre 13. Moins de 7 : reprends couches, backprop, CNN / transformers, transfer, lien LLM - dans cet ordre.
+
+:::attention
+Rester sur 10/10 sans pouvoir expliquer oralement n'est pas le but. Le bonus oral compte autant.
+:::
+
 ## Bonus oral
 
-Sans notes, explique a un ami : neurone, couche, backprop, CNN, transformer, transfer learning, lien LLM. Si tu bloques sur un, relis le chapitre, recommence.
+Sans notes, explique a un ami : neurone, couche, backprop, CNN, transformer, transfer learning, lien LLM. Si tu bloques sur un, relis le chapitre, recommence. Chronometre deux minutes. Ines le fait avant chaque demo client.
 
-## Developpement : ce que le deep learning change vraiment
+## En vrai
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+Prends une question ratee. Ecris en cinq lignes pourquoi la bonne reponse est bonne, avec ton exemple metier. Coller le corrige ne suffit pas.
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+## A toi
 
-## Intuition des representations
+Note ton score, les numeros rates, le chapitre a relire, et la date du prochain oral bonus. Une ligne suffit. Puis passe au bravo - ou reviens d'abord boucler les trous.
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+## Pourquoi ces distracteurs
 
-## Experimentation sobre
+Les mauvaises reponses jouent des confusions reelles : GPU = magie, LLM sans deep learning, overfitting inverse, transformer = regression. Si tu as hesite, note la confusion : elle reviendra en reunion. Le quiz sert aussi a ca.
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
+## Apres le score
 
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Ecris trois phrases : ce que tu maitrises assez pour expliquer, ce que tu dois relire, ce que tu vas pratiquer cette semaine. Ines envoie ces trois phrases a Lea comme engagement leger. Toi, envoie-les a ton futur toi.

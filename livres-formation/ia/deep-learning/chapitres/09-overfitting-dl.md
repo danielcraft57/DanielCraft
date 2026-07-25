@@ -1,44 +1,67 @@
 # Chapitre 9 - Overfitting en deep learning
 
-Les reseaux ont souvent des millions ou des milliards de parametres. Capacite enorme = facilite a coller au train. L'overfitting est donc central. Signes : accuracy train haute, validation basse ; ecarts qui se creusent au fil des epochs ; performances magiques sur un petit jeu.
+Les reseaux ont souvent des millions ou des milliards de **parametres**. Capacite enorme = facilite a coller au train. L'**overfitting** est donc central en deep learning, plus encore qu'avec un petit modele. Signes classiques : accuracy train haute, validation basse ; ecarts qui se creusent au fil des epochs ; performances magiques sur un petit jeu trop vu.
+
+Chez DanielCraft, on traite l'overfitting comme un risque de metier, pas comme une note de bas de page. Un modele qui recite le dossier d'entrainement et se plante sur le telephone du client n'est pas "presque bon". Il est dangereux s'il decide seul.
+
+:::retenir
+Capacite sans donnees ni regularisation = memorisation. Surveille train et validation ensemble.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas "le modele est trop intelligent". C'est souvent le contraire de la generalisation utile. Ce n'est pas non plus resolu en ajoutant toujours plus de couches. Parfois il faut mieux de donnees, pas plus de profondeur. Et ce n'est pas uniquement un probleme de vision : le texte, l'audio, les series temporelles overfitent aussi.
+
+## Image mentale
+
+Imagine un eleve qui apprend par coeur dix sujets d'examen. Le jour J, le sujet change d'un cran : il panique. Le reseau fait un geste voisin s'il a trop de capacite et trop peu de diversite. La **generalisation**, c'est reussir sur des cas nouveaux issus du meme phenomene - pas reinventer le monde, mais ne pas coller au bruit du train.
+
+Ines regarde deux courbes. Train plonge. Val remonte. Elle n'ajoute pas de neurones. Elle regularise, arrete tot, ou collecte mieux.
 
 ## Remedes courants
 
-Plus de donnees reelles. Data augmentation (surtout vision). Dropout (eteindre des neurones au hasard pendant l'entrainement). Weight decay / regularisation. Early stopping (arreter quand la validation n'ameliore plus). Architectures plus petites. Transfer learning plutot que from scratch. Label smoothing parfois. Et toujours : protocole de validation honnete.
+Plus de donnees reelles. **Data augmentation** (surtout vision), avec prudence. **Dropout** (eteindre des neurones au hasard pendant l'entrainement). Weight decay / regularisation. **Early stopping** (arreter quand la validation n'ameliore plus). Architectures plus petites. **Transfer learning** plutot que from scratch. Label smoothing parfois. Et toujours : protocole de validation honnete, set de test rarement touche.
+
+:::idee
+Liste tes remedes realistes "cette semaine" separement de tes remedes "un jour". L'action bat la wishlist.
+:::
+
+## Courbes a surveiller
+
+Loss train, loss val, metrique metier val. Si train plonge et val remonte : stop / regularise. Si les deux restent hauts : underfitting, ou donnees insuffisantes / mal alignees, ou bugs. Apprends a lire ces courbes comme un medecin lit une tension. Lea demande a ses prestataires des captures de courbes, pas seulement un score final.
 
 ## Generalisation dans le vrai monde
 
-Meme avec une belle courbe, le deploiement peut casser si les photos changent (eclairage, telephone), si la langue change, si les utilisateurs detournent. Surveille. Recolte des cas d'echec. Reentraine. Le deep learning n'annule pas la boucle ML : il l'intensifie.
+Meme avec une belle courbe, le deploiement peut casser si les photos changent (eclairage, telephone), si la langue change, si les utilisateurs detournent. Surveille. Recolte des cas d'echec. Reentraine. Le deep learning n'annule pas la boucle ML : il l'intensifie. Max a vu un modele de "defaut visible" rate tous les defauts sous LED froide : le train etait sous LED chaude. Overfitting au contexte, pas seulement aux labels.
+
+## Petite histoire
+
+Sam a donne a sa classe un mini-jeu : 20 images, gros reseau, score train 100 %. Puis 5 images legerement differentes : catastrophe. Ensuite : modele plus petit + transfer + early stopping. Moins spectaculaire. Plus honnete. La classe a retenu. Chez DanielCraft, on garde cette pedagogie : faire sentir la claque avant de vendre le remede.
 
 ## Erreur classique
 
-Augmenter la taille du modele des que ca coince. Parfois il faut mieux de donnees, pas plus de couches. Autre piege : data augmentation absurde qui cree des exemples impossibles et trompe le metier.
+Augmenter la taille du modele des que ca coince. Autre piege : data augmentation absurde qui change le label. Troisieme : retoucher le test jusqu'a ce qu'il "marche" - tu overfitte alors au test lui-meme.
+
+:::attention
+Ne touche pas au test final comme a un joystick. Sinon tu perds ton juge impartial.
+:::
+
+## En vrai
+
+Ouvre (ou imagine) une courbe train/val. Ecris en une phrase ce que tu ferais a l'epoch ou val stagne. Si ta phrase est "encore 50 epochs", recommence.
 
 ## A toi
 
-Liste 4 remedes anti-overfitting applicables a ton idee de projet. Lesquels sont realistes cette semaine ?
-## Courbes a surveiller
+Liste 4 remedes anti-overfitting applicables a ton idee de projet. Lesquels sont realistes cette semaine ? Encadre-les.
 
-Loss train, loss val, metrique metier val. Si train plonge et val remonte : stop / regularise. Si les deux restent hauts : underfitting ou donnees insuffisantes / mal alignees. Apprends a lire ces courbes comme un medecin lit une tension.
+## Capacite et humilite
 
-## Developpement : ce que le deep learning change vraiment
+Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise. En 2026, la tentation du "plus gros" est partout. Ton avantage, apres ce chapitre, c'est de savoir dire non. Ines l'ecrit sur un post-it au-dessus de son ecran : "val d'abord".
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Dropout et weight decay (intuition)
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Dropout : pendant l'entrainement, tu "eteins" des neurones au hasard pour eviter que le reseau compte trop sur une co-adaptation fragile. Weight decay : tu penalises des poids trop gros, ce qui freine la memorisation excessive. Ce ne sont pas des sortileges. Ce sont des freins. Lea demande lesquels sont actifs avant d'accepter un score. Early stopping reste souvent le frein le plus simple et le plus oublie.
 
-## Intuition des representations
+## Overfitting au protocole
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
-
-## Experimentation sobre
-
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Tu peux aussi overfitter au test en le regardant trop souvent, ou a une augmentation absurde, ou a un seul telephone. Elargis la notion : ce n'est pas seulement train vs val. C'est tout ce qui fait coller a un artefact au lieu du phenomene. Chez DanielCraft, on appelle ca "generaliser au vrai usage", pas au dossier du jour.

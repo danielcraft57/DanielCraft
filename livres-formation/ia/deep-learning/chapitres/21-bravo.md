@@ -2,35 +2,60 @@
 
 Tu as maintenant une carte du deep learning : neurones, couches, activations, apprentissage par retour d'erreur, CNN, RNN en overview, transformers, overfitting, GPU, transfer learning, et le pont vers les LLM que tu utilises peut-etre deja tous les jours.
 
-Chez DanielCraft, on croit a cette clarte : tu n'as pas besoin de pretendere que tu derives des gradients sur un tableau avant le cafe. Tu as besoin de savoir ce qui se passe sous le capot assez pour choisir, questionner, et ne pas acheter de la magie.
+Chez DanielCraft, on croit a cette clarte : tu n'as pas besoin de pretendre que tu derives des gradients sur un tableau avant le cafe. Tu as besoin de savoir ce qui se passe sous le capot assez pour choisir, questionner, et ne pas acheter de la magie.
 
-## La suite
+:::retenir
+Tu as une carte et des gestes. Empile des competences evaluees, pas seulement des couches de neurones.
+:::
 
-Si tu viens du livre IA generative, tu boucles la boucle usage + mecanisme. Si tu viens du machine learning, tu vois quand passer au deep - et quand rester simple. Ensuite : un petit projet vision ou un usage LLM + RAG propre, evalue, securise.
+## Ce que tu emportes
 
-Bravo. Empile des couches de competence, pas seulement des couches de neurones.
-## Suite possible
+Tu sais matcher un probleme a une famille. Tu sais pourquoi la non-linearite compte, comment l'erreur remonte, pourquoi un CNN aime le local, pourquoi un transformer aime le contexte, pourquoi l'overfitting frappe fort, pourquoi le GPU accelere, pourquoi le transfer learning est souvent le bon premier geste, et comment un chat LLM se branche sur tout ca. Tu as ecrit des plans, des fiches, des go/no-go. Ce n'est plus seulement de la lecture.
 
-1) Mini classification d'images par transfer learning. 2) Usage LLM + RAG evalue. 3) Relire le livre ML pour les metriques et biais. Tu as le vocabulaire ; il te faut des cicatrices d'experiments - les bonnes.
+## Image mentale finale
 
-## Developpement : ce que le deep learning change vraiment
+Ines regarde son appli pieces : backbone preentraine, tete adaptee, seuil d'abstention, monitoring. Lea briefe sans jargon panique. Max verifie les delais qu'un LLM pourrait inventer. Sam fait passer la carte a l'oral. Quatre chemins, une meme posture de pilote.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Petite histoire
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Le premier jour, "deep learning" sonnait comme une salle machine interdite. Aujourd'hui, tu peux dire : "ici un CNN transfer, la un LLM + RAG, la un modele tabulaire suffit". Cette phrase seule change des reunions. Elle t'evite des devis absurdes. Elle t'ouvre des projets sobres. Bravo pour ca.
 
-## Intuition des representations
+## La suite possible
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+1) Mini classification d'images par transfer learning, avec le plan du chapitre 15 execute pour de vrai.
 
-## Experimentation sobre
+2) Usage LLM + RAG evalue, avec la fiche du chapitre 16 et une grille d'erreurs.
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
+3) Relire le livre machine learning pour metriques, biais, et baselines sur CSV.
 
-## Ethique et impact
+Tu as le vocabulaire ; il te faut des cicatrices d'experiences - les bonnes. Choisis une suite petite, bornee, mesurable. Pas trois a la fois.
 
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
+## Erreur classique apres un livre
 
-## Pour aller plus loin sans te perdre
+Empiler les tutos sans projet. Ou lancer un agent autonome "parce que j'ai compris les transformers". Ou croire que le quiz 10/10 remplace le terrain. Le livre se termine ; la boucle DanielCraft continue : tache, mesure, repli, iteration.
 
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+:::attention
+Le prochain pas utile est petit et evalue. Le prochain pas theatral peut attendre.
+:::
+
+## En vrai
+
+Ecris demain matin une seule action de 45 minutes : collecter 20 images, ou rediger un prompt + extrait RAG, ou refaire l'oral du chapitre 13 a quelqu'un. Une action. Pas une roadmap.
+
+## A toi
+
+Choisis ta suite (1, 2 ou 3). Note date, critere de succes, critere d'arret. Signe. C'est ton pont hors livre.
+
+## Remerciement utile
+
+Si ce livre t'a evite un from scratch inutile, un GPU loue trop tot, ou une confiance aveugle dans un chat fluide, il a fait son travail. Partage la carte, pas le jargon. Et souviens-toi : empile des couches de competence, pas seulement des couches de neurones.
+
+Bravo.
+
+## Message a toi dans trois mois
+
+Si tu relis ce chapitre et que tu n'as toujours pas fait un petit projet evalue, le livre est reste du papier. Reprends le "A toi" du chapitre 1 et les livrables des ateliers. Choisis le plus petit geste encore non fait. Chez DanielCraft, on prefere un transfer mediocre mesure a une culture generale brillante et sterile.
+
+## Partager sans jargon
+
+Explique a un non-tech, en une minute : "des couches qui apprennent des motifs, on reutilise souvent un modele deja forme, on mesure sur le vrai terrain, on garde un humain si doute". Si tu y arrives, tu as gagne le vrai diplome de ce livre. Bravo encore.

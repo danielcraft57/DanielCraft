@@ -1,44 +1,69 @@
 # Chapitre 17 - Choisir une architecture (carte de decision)
 
-Tu n'as pas a inventer une architecture nouvelle. Tu as a choisir une famille adaptee.
+Tu n'as pas a inventer une architecture nouvelle. Tu as a choisir une **famille** adaptee. Chez DanielCraft, le prestige d'un papier ne paie pas les faux positifs clients. On part du probleme, on descend vers le moteur - jamais l'inverse.
 
-## Carte simple
+Ce chapitre consolide ce que tu as traverse : CNN, RNN, transformers, transfer, LLM, ML classique. C'est une carte de decision, pas un catalogue de marques.
 
-Petit tableau numerique : ML classique d'abord. Images : CNN ou vision transformer preentraine + transfer. Texte generation / chat : LLM existant + prompt/RAG. Series temporelles : modeles specialised ou approches mixtes ; ne force pas un LLM partout. Audio : modeles parole/audio preentraines. Multi-taches complexes : parfois pipelines (vision puis regles puis LLM).
+:::retenir
+Pars du probleme et des contraintes (donnees, calcul, risque, latence). L'architecture suit.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas "toujours un LLM". Ce n'est pas "toujours un CNN". Ce n'est pas non plus une verite eternelle : en 2026 les familles evoluent, les principes de matching restent. Et ce n'est pas un permis d'ignorer une baseline simple.
+
+## Image mentale : carte simple
+
+Petit tableau numerique : ML classique d'abord. Images : CNN ou vision transformer preentraine + transfer. Texte generation / chat : LLM existant + prompt / RAG. Series temporelles : modeles specialises ou approches mixtes ; ne force pas un LLM partout. Audio : modeles parole / audio preentraines. Multi-taches complexes : parfois pipelines (vision puis regles puis LLM). Ines range ses sujets dans ces cases avant d'ouvrir un repo.
 
 ## Questions de decision
 
-Combien de donnees labellisees ? Quel budget calcul ? Quelle latence acceptable ? Quel besoin d'interpretabilite ? Quel risque d'erreur ? Existe-t-il un modele fondation proche ? Peut-on resoudre sans deep learning ?
+Combien de donnees labellisees ? Quel budget calcul ? Quelle latence acceptable ? Quel besoin d'interpretabilite ? Quel risque d'erreur ? Existe-t-il un modele fondation proche ? Peut-on resoudre sans deep learning ? Lea pose ces questions en reunion ; les reponses changent le devis plus surement qu'un buzzword.
+
+:::idee
+Si tu ne peux pas repondre a "que se passe-t-il si le modele se trompe ?", tu n'es pas pret a choisir l'architecture.
+:::
+
+## Anti-patterns
+
+LLM pour classer 3 categories sur un CSV de 20 colonnes. CNN from scratch avec 40 images. Agent autonome le jour 1. Transformer "parce que c'est moderne" sur une serie temporelle ou un modele simple suffit. Pipeline opaque a trois etages sans test de chaque brique. Note tes anti-patterns personnels : ils reviennent.
+
+## Petite histoire
+
+Un client a demande a Lea "un transformer sur nos exports comptables". Elle a montre qu'un modele tabulaire + regles battait un prototype LLM en cout, latence, et auditabilite. Le client a garde le LLM pour rediger des commentaires, pas pour scorer. Deux outils, deux jobs. Max a vecu l'inverse : pour reconnaitre une piece sur photo, le tableur ne suffisait pas ; le CNN transfer oui.
 
 ## Erreur classique
 
-Partir d'une architecture parce qu'elle est dans un papier a la mode. Pars du probleme. Chez DanielCraft, le prestige du papier ne paie pas les faux positifs clients.
+Partir d'une architecture parce qu'elle est a la mode. Autre piege : copier l'architecture d'un concurrent sans avoir ses donnees ni son risque. Troisieme : melanger trois familles dans un pipeline sans pouvoir expliquer le role de chacune.
+
+:::attention
+Une architecture impressionnante mal evaluee reste une dette. Choisis le minimum qui prouve la valeur.
+:::
+
+## En vrai
+
+Prends deux problemes de ton monde. Pour chacun, remplis : famille choisie, raison, alternative, critere d'echec. Dix minutes chrono.
 
 ## A toi
 
-Remplis la carte pour 2 problemes de ton monde. Architecture choisie + raison + alternative.
-## Anti-patterns
+Remplis la carte pour 2 problemes. Architecture choisie + raison + alternative + risque principal. Garde-la a cote du plan CNN et de la fiche transformer.
 
-LLM pour classer 3 categories sur un CSV de 20 colonnes. CNN from scratch avec 40 images. Agent autonome le jour 1. Transformer "parce que c'est moderne" sur une serie temporelle ou un modele simple suffit. Note tes anti-patterns personnels.
+## Pipelines mixtes
 
-## Developpement : ce que le deep learning change vraiment
+Parfois le bon systeme n'est pas "un" reseau. Vision pour classer, regles pour seuils, LLM pour expliquer a un humain. Teste chaque brique, puis l'ensemble. Sam insiste : un pipeline non teste multiplie les hallucinations operationnelles. Chez DanielCraft, on prefere trois briques claires a une boite noire unique adulee.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Lien avec limites et bonnes pratiques
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Choisir une architecture, c'est aussi accepter ses limites (prochain chapitre) et adopter des pratiques sobres (chapitre suivant). La carte de decision n'est complete que branchee sur le risque et la discipline d'execution.
 
-## Intuition des representations
+## Scene de reunion
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+"On veut du deep learning." "Quel probleme ?" "Classer 4 types de tickets texte." "Combien de labels ?" "300." "Baseline TF-IDF ou modele texte preentraine leger d'abord. LLM complet ensuite seulement si besoin d'explication riche." La reunion dure douze minutes. Le prestige du papier n'a pas parle. Chez DanielCraft, c'est une belle reunion.
 
-## Experimentation sobre
+## Matrice express (a recopier)
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
+Lignes : tableau, image, texte court classif, texte generation, serie temporelle, audio. Colonnes : famille candidate, preentraine ?, besoin GPU, risque erreur, alternative simple. Remplir en 15 minutes change une reunion. Ines l'a fait ; le partenaire a arrete de demander "du GPT sur les colonnes Excel".
 
-## Ethique et impact
+## Quand mixer
 
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Vision pour detecter, regle pour seuil, LLM pour expliquer. Chaque fleche du pipeline a un test. Si tu ne peux pas tester une fleche, tu ne la deploies pas seule. Chez DanielCraft, le mixte assume bat le monolithe mystique.

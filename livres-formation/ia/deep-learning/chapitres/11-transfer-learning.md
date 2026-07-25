@@ -1,48 +1,69 @@
 # Chapitre 11 - Transfer learning : reutiliser un cerveau deja forme
 
-Le transfer learning, c'est repartir d'un modele deja entraine sur une tache large (ex. reconnaitre des objets sur des millions d'images, ou un modele de langage sur d'enormes corpus) et l'adapter a ton cas avec moins de donnees. Au lieu d'apprendre tout from scratch, tu reutilises des representations utiles.
+Le **transfer learning**, c'est repartir d'un modele deja entraine sur une tache large - reconnaitre des objets sur des millions d'images, ou un modele de langage sur d'enormes corpus - et l'adapter a ton cas avec moins de donnees. Au lieu d'apprendre tout **from scratch**, tu reutilises des representations utiles.
 
-## Pourquoi c'est le geste 2026
+Chez DanielCraft, c'est souvent le geste 2026 par defaut. Les donnees labellisees coutent cher. Les modeles fondation existent. Reutiliser avant de reentrainer le monde n'est pas de la paresse : c'est de l'ingenierie.
 
-Parce que les donnees labellisees coutent cher, et parce que les modeles fondation existent. Ines telecharge un CNN preentraine, remplace la tete de classification, entraine surtout les dernieres couches sur ses pieces. Sur le texte, on fine-tune legerement, ou on fait du prompting / RAG sans tout retoucher. Le transfer learning est l'esprit ; le prompting est parfois la forme extreme "sans maj des poids".
+:::retenir
+Transfer learning = reutiliser un modele preentraine et l'adapter. Moins de donnees, moins de calcul, souvent meilleur depart.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas une dispense de validation. Ce n'est pas magique si ton domaine est trop eloigne ou si tes labels sont sales - tu transfers aussi vers le sale. Ce n'est pas non plus "interdire le from scratch pour toujours" : parfois le domaine l'exige, avec budget et donnees. Et ce n'est pas synonyme exact de prompting : le prompting conditionne sans maj de poids ; le transfer, au sens strict, adapte des poids (meme legerement).
+
+## Image mentale
+
+Tu embauches quelqu'un qui a deja vu des millions d'objets, et tu lui apprends tes pieces detachees. Tu ne reprends pas l'alphabet visuel a zero. Ines telecharge un CNN preentraine, remplace la tete de classification, entraine surtout les dernieres couches. Sur le texte, on fine-tune legerement, ou on fait du prompting / RAG sans tout retoucher. L'esprit est le meme : partir d'un milieu deja riche.
+
+:::idee
+Ecris "ce que je reutilise" et "ce que j'adapte". Si les deux cases sont vides, tu n'as pas encore de plan transfer.
+:::
 
 ## Strategies
 
-Geler beaucoup de couches, entrainer la tete. Puis parfois deverrouiller plus profond a petit learning rate. Adapter avec peu de parametres (LoRA et cousins dans le monde LLM). Surveiller l'overfitting : meme un modele preentraine peut coller a 100 images.
+Geler beaucoup de couches, entrainer la tete. Puis parfois deverrouiller plus profond a petit learning rate. Adapter avec peu de parametres (**LoRA** et cousins dans le monde LLM). Surveiller l'overfitting : meme un modele preentraine peut coller a 100 images. Lea met dans ses contrats : "strategie de gel / degel documentee, learning rates, critere d'arret".
+
+## Domaine shift
+
+Si tes images de pieces sont grasses, floues, mal eclairees, et que le modele preentraine a vu des photos web propres, tu as un ecart de domaine. Le transfert aide encore souvent, mais prevois plus d'exemples cibles, une augmentation realiste, et une evaluation sur le vrai terrain. Max le rappelle : "mes photos ne sont pas Instagram".
+
+## Petite histoire
+
+Ines compare from scratch (echec) et transfer (debut utile). Elle gele le backbone, entraine la tete, regarde val. Puis elle degele quelques couches a petit pas. Elle documente. Quand un investisseur demande "vous avez invente l'architecture ?", elle repond "non, on a adapte proprement". Chez DanielCraft, cette honnetete vend mieux que le mythe du genie solitaire.
 
 ## Limites
 
-Si ton domaine est trop eloigne (images medicales tres specifiques vs photos web), le transfert aide moins ou demande plus de soin. Si tes labels sont sales, tu transfers aussi vers le sale. La licence et le cout des modeles comptent.
+Domaine trop eloigne : transfert plus difficile. Labels sales : transfert du sale. Licences et couts des modeles : a lire. Catastrophic forgetting : reentrainer tout a gros learning rate peut detruire les representations utiles. Sam fait un schema au tableau : "petit pas sur un geant > grand pas qui ecrase le geant".
 
 ## Erreur classique
 
-Reentrainer tout a gros learning rate et detruire les representations utiles (catastrophe forgetting). Ou croire que transfer learning dispense de validation.
+Reentrainer tout a gros learning rate et detruire les representations utiles. Ou croire que transfer learning dispense de validation. Ou ignorer la licence du modele fondation.
+
+:::attention
+Adapter n'abolit pas mesurer. Le preentraine arrive avec des biais et des angles morts : teste sur ton terrain.
+:::
+
+## En vrai
+
+Choisis un modele fondation (vision ou texte) que tu reuserais. Ecris ce que tu adapterais : classes, style, documents, tete de sortie.
 
 ## A toi
 
-Decris un modele fondation que tu reuserais (vision ou texte) et ce que tu adapterais (classes, style, documents).
-## Domaine shift
+Decris le modele fondation, la strategie (gele / tete / LoRA...), le volume de donnees estime, et le critere go/no-go. Une demi-page max.
 
-Si tes images de pieces sont greasy, floues, mal eclairees, et que le modele preentraine a vu des photos web propres, tu as un ecart de domaine. Le transfert aide encore souvent, mais prevoyez plus d'exemples cibles, une augmentation realiste, et une evaluation sur le vrai terrain.
+## Prompting, RAG, fine-tune
 
-## Developpement : ce que le deep learning change vraiment
+Trois leviers voisins, forces differentes. Prompting : rapide, pas de maj de poids. RAG : injecte des faits dans le contexte. Fine-tune / transfer : change le comportement du modele sur ton domaine. Ines les range dans cet ordre de cout. Elle monte d'un cran seulement si le cran d'en dessous ne suffit pas. C'est la discipline du chapitre.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## LoRA et adaptation legere (idee)
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Dans le monde LLM, on adapte parfois avec peu de parametres ajoutes (LoRA et cousins) plutot que de tout retoucher. Esprit voisin du transfer : changer peu, garder beaucoup. Tu n'as pas a implementer LoRA ici. Tu dois savoir que "fine-tune" n'egal pas toujours "reecrire le geant". Lea exige qu'on precise la methode et le cout avant de signer.
 
-## Intuition des representations
+## Licence et provenance
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+Un modele fondation a une licence, une provenance de donnees, parfois des restrictions commerciales. Lire avant d'integrer. Sam le met dans sa grille ethique scolaire version legere : "d'ou vient le cerveau que tu reuses ?". Chez DanielCraft, le transfer sans lecture de licence est une dette, pas une astuce.
 
-## Experimentation sobre
+## Ordre des leviers (rappel)
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+1) Modele preentraine + tete. 2) Data meilleure / plus realiste. 3) Degeler un peu. 4) Methodes legeres type LoRA si LLM. 5) From scratch seulement avec preuves. Cet ordre evite 80 % des derivations couteuses. Lea l'imprime ; Max le simplifie en "reutiliser, mesurer, puis seulement compliquer".

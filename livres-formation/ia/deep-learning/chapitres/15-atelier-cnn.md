@@ -1,40 +1,79 @@
 # Chapitre 15 - Atelier : CNN et transfer learning (plan de projet)
 
-Objectif : ecrire un plan de projet vision realiste. Duree : 40 minutes.
+Objectif : ecrire un plan de projet vision realiste. Duree visee : environ 40 minutes. Tu n'as pas besoin d'avoir entraine pour valider le plan. Chez DanielCraft, un plan honnete bat un notebook theatral.
 
-## Etapes
+Ines utilise exactement cette grille pour ses pieces detachees. Lea s'en sert pour cadrer un prestataire. Toi, tu l'adaptes a ton jeu d'images - meme imaginaire, du moment qu'il est concret.
 
-1) Definir 3 a 10 classes d'images. 2) Estimer combien de photos par classe tu peux collecter. 3) Decrire les conditions reelles (eclairage, flou, telephone). 4) Choisir un modele preentraine a adapter. 5) Plan d'augmentation de donnees (liste). 6) Split train/val/test. 7) Metriques (accuracy + erreurs couteuses). 8) Plan anti-overfitting. 9) Critere go/no-go avant deploiement. 10) Idee GPU : local, cloud, ou seulement inference API.
+:::retenir
+Plan CNN = classes, donnees, conditions reelles, preentraine, augmentation, split, metriques, anti-overfitting, go/no-go, calcul.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas un entrainement complet. Ce n'est pas une promesse de 99 %. Ce n'est pas non plus "collecter 50 images et deployer demain". Si tu as moins de 50 images au total, reste sur proof of concept et transfer learning agressif, ou reconsidere la faisabilite.
+
+## Image mentale
+
+Tu construis un dossier de decision. Chaque section empeche un mensonge courant : "on verra bien", "le modele saura", "les photos studio suffisent". Le go/no-go signe a l'avance te protege du deploiement par enthousiasme.
+
+## Etapes (dans l'ordre)
+
+1) Definir 3 a 10 classes d'images. Noms clairs, frontieres discutees (qu'est-ce qui est ambigu ?).
+
+2) Estimer combien de photos par classe tu peux collecter cette semaine / ce mois.
+
+3) Decrire les conditions reelles : eclairage, flou, telephone, angle, mains dans le cadre, huile, pluie.
+
+4) Choisir un modele preentraine a adapter (famille CNN ou vision transformer, peu importe le detail : l'esprit transfer).
+
+5) Plan d'augmentation de donnees : liste de transformations qui existent en production sans casser le label.
+
+6) Split train / val / test. Qui touche au test ? Idealement presque personne jusqu'a la fin.
+
+7) Metriques : accuracy si utile, mais surtout erreurs couteuses (faux positif vs faux negatif selon le metier).
+
+8) Plan anti-overfitting : early stopping, dropout, moins de capacite, plus de diversite, gel de couches...
+
+9) Critere go/no-go avant deploiement. Une phrase signee.
+
+10) Idee GPU : local, cloud, ou seulement inference API.
+
+:::idee
+Ecris le go/no-go AVANT de regarder un premier score. Sinon tu deplaces la barre.
+:::
+
+## Petite histoire
+
+Ines a ecrit : "si recall sur pieces critiques < seuil X sur test terrain, on n'automatise pas ; humain valide". Un premier modele a echoue sous le seuil. Elle a ameliore les donnees, pas le marketing. Max a applique la meme idee a un "detecteur de fuite sur photo" trop frele : abstention > fausse alerte permanente.
+
+## Erreur classique
+
+Remplir le plan avec des chiffres inventes pour faire serieux. Ou oublier les conditions terrain. Ou choisir from scratch par snobisme. Ou ne jamais ecrire le no-go.
+
+:::attention
+Sans critere d'arret metier, tu deploieras par fatigue ou par slide.
+:::
+
+## En vrai
+
+Prends un timer 40 minutes. Remplis les 10 etapes au brouillon. Interdiction d'ouvrir un framework avant la fin du document.
 
 ## Livrable
 
-Document "plan CNN" de 1 a 2 pages. Pas besoin d'avoir entraine pour valider le plan.
+Document "plan CNN" de 1 a 2 pages. Titre, classes, volumes, conditions, modele preentraine, augmentation, split, metriques, anti-overfitting, go/no-go, calcul. Envoie-le a un pair pour contradiction.
 
-## Conseil
+## A toi
 
-Si tu as moins de 50 images au total, reste sur proof of concept et transfer learning agressif, ou reconsidere la faisabilite.
-## Go / no-go
+Signe ton go/no-go. Formule type : "si la metrique X sur test terrain < Y, on n'automatise pas, on garde un humain dans la boucle". Date. Initiales.
 
-Ecris a l'avance : "si la metrique X sur test terrain < Y, on n'automatise pas, on garde un humain dans la boucle". Signe-le. Tu evites le deploiement par enthousiasme.
+## Conseil DanielCraft
 
-## Developpement : ce que le deep learning change vraiment
+Si les labels sont ambigus, arrete-toi a l'etape 1 et clarifie avec un expert metier. Aucun CNN ne sauve une taxonomie pourrie. Sam le fait dire a ses eleves avant tout telechargement de backbone.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Exemple Ines (rempli partiellement)
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Classes : 6 types de pieces. Volume vise : 80 photos / classe, telephone chantier. Conditions : neon, graisse, angle 30-60 degres. Modele : CNN preentraine ImageNet-like. Augmentation : rotation legere, luminosite, crop ; pas de flip si le sens compte. Split 70/15/15. Metrique : recall sur pieces critiques + revue humaine si score bas. Go/no-go : recall terrain < seuil => pas d'automatisation. GPU : cloud ponctuel. Copie la structure, change les chiffres.
 
-## Intuition des representations
+## Revue par un pair
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
-
-## Experimentation sobre
-
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Envoie le plan a quelqu'un qui cherchera les trous : classes floues, volumes irrealistes, oubli du terrain, absence de no-go. Une contradiction amicale aujourd'hui evite un deploiement honteux demain.

@@ -1,48 +1,65 @@
 # Chapitre 8 - Transformers : l'attention (overview)
 
-Le transformer est l'architecture dominante du NLP moderne et le coeur de beaucoup de LLM. Idee centrale : l'attention. Chaque position (chaque token) peut regarder les autres positions et ponderer celles qui comptent pour construire une nouvelle representation. Contrairement aux RNN classiques, on peut paralleliser beaucoup mieux sur GPU.
+Le **transformer** est l'architecture dominante du NLP moderne et le coeur de beaucoup de **LLM**. Idee centrale : l'**attention**. Chaque position (chaque **token**) peut regarder les autres positions et ponderer celles qui comptent pour construire une nouvelle representation. Contrairement aux RNN classiques, on peut paralleliser beaucoup mieux sur **GPU**.
 
-## Attention en image mentale
+Chez DanielCraft, on veut une image nette, pas un papier de recherche. Si tu retiens "attention + profondeur + donnees + calcul", tu as le moteur. Le reste du produit (alignement, interface, garde-fous) vient autour.
 
-Quand tu lis "le chat sur le tapis, il dort", le mot "il" doit se relier a "chat". L'attention apprend des liens utiles selon la tache. Multi-tetes : plusieurs types de liens en parallele. Empilement de blocs : representations de plus en plus riches. Ajoute des encodings de position (parce que sinon l'ordre serait moins clair).
+:::retenir
+Transformer = attention entre positions / tokens, empilee en profondeur. Coeur de beaucoup de LLM.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas une garantie de qualite : "on a mis un transformer" n'egal pas "c'est bon". Ce n'est pas l'attention humaine consciente. Ce n'est pas magique hors donnees et evaluation. Et ce n'est pas gratuit : l'attention "tous sur tous" coute cher quand la sequence s'allonge - d'ou les limites de **contexte** et le prix des tokens.
+
+## Image mentale
+
+Quand tu lis "le chat sur le tapis, il dort", le mot "il" doit se relier a "chat". L'attention apprend des liens utiles selon la tache. **Multi-tetes** : plusieurs types de liens en parallele. Empilement de blocs : representations de plus en plus riches. On ajoute des encodings de position, parce que sinon l'ordre serait moins clair. Ines explique ca a Lea avec un surligneur mental : chaque mot eclaire les autres selon le besoin.
+
+:::idee
+Pour sentir l'attention, prends une phrase avec un pronom. Demande : a quoi doit se coller ce pronom ? C'est le geste.
+:::
 
 ## Encodeurs, decodeurs, seq2seq
 
-Selon les modeles : encodeur seul (classification, embeddings), decodeur seul (generation de texte style GPT), encodeur-decodeur (traduction...). Tu n'as pas a tout memoriser. Retiens : attention + profondeur + plein de donnees + plein de calcul = capacites emergentes de langage.
+Selon les modeles : encodeur seul (classification, embeddings), decodeur seul (generation de texte style GPT), encodeur-decodeur (traduction...). Tu n'as pas a tout memoriser. Retiens : attention + profondeur + plein de donnees + plein de calcul = capacites emergentes de langage. Sam resume pour sa classe : "certains lisent et classent, d'autres ecrivent la suite, d'autres traduisent".
+
+## Contexte et complexite
+
+L'attention tous-sur-tous coute cher avec la longueur. D'ou les fenetres de contexte limitees, les resumes, les decoupes, le **RAG** (chercher des morceaux puis les coller dans le contexte), ou le prix plus eleve des longues fenetres. Comprendre ca, c'est comprendre pourquoi un PDF de 200 pages ne "rentre" pas tel quel dans la tete du modele, meme si le chat a l'air confiant.
+
+## Petite histoire
+
+Max a colle un devis de 40 pages dans un chat et a demande "resume les risques". Le modele a invente un delai. Lea lui a montre : fenetre limitee, attention diluee, hallucination possible. Ils ont coupe en sections, pose des questions ciblees, verifie les chiffres. Meme architecture. Meilleur usage. Chez DanielCraft, l'architecture sans protocole reste un moteur sans frein.
 
 ## Lien pratique
 
-Fine-tuning, RAG, prompting : ce sont des facons d'utiliser ces geants sans tout reentrainer. Comprendre le transformer te permet de comprendre pourquoi le contexte a une taille limite, pourquoi les tokens coutent, pourquoi un long document doit parfois etre coupe ou recherches par morceaux.
+**Fine-tuning**, RAG, **prompting** : facons d'utiliser ces geants sans tout reentrainer. Comprendre le transformer te permet de comprendre pourquoi le contexte a une taille limite, pourquoi les tokens coutent, pourquoi un long document doit parfois etre coupe ou cherche par morceaux. Ines, cote vision, note le parallele : representations riches reutilisees, tete adaptee - meme esprit que le transfer learning.
 
 ## Erreur classique
 
-Dire "on a mis un transformer" comme garantie de qualite. L'architecture est un moteur ; donnees, alignement, evaluation et usage font le resultat. Autre piege : confondre "attention" technique et "attention" humaine consciente.
+Dire "on a mis un transformer" comme garantie. Autre piege : confondre attention technique et attention humaine. Troisieme : noyer le modele sous un contexte inutile puis accuser "l'IA" d'etre bete.
+
+:::attention
+Le contexte est un budget. Remplis-le avec ce qui sert a la decision, pas avec tout le disque dur.
+:::
+
+## En vrai
+
+Explique l'attention a un ami avec l'exemple du pronom "il". Ajoute une phrase : pourquoi un GPU aide a entrainer ca (parallelisme des calculs de matrices / attention).
 
 ## A toi
 
-Explique l'attention a un ami avec l'exemple du pronom "il". Puis ajoute : pourquoi un GPU aide a entrainer ca.
-## Contexte et complexite
+Ecris ton explication "attention + pronom" en 8 lignes. Puis note une limite de contexte pour un document de ton metier : que coupes-tu en premier ?
 
-L'attention "tous sur tous" coute cher quand la sequence s'allonge (d'ou les limites de contexte et les recherches d'attention efficace). Comprendre ca, c'est comprendre pourquoi on resume, coupe, cherche en RAG, ou paie plus cher pour de longues fenetres.
+## Du moteur au produit
 
-## Developpement : ce que le deep learning change vraiment
+Un LLM de chat, c'est souvent un transformer decodeur entraine a predire le prochain token, puis aligne pour mieux suivre des instructions. Le chapitre "lien LLM" detaille ce pont. Ici, tu as le coeur mecanique. Garde-le : il demystifie la suite.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Multi-tetes : plusieurs regards
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Une tete d'attention peut se specialiser vers la syntaxe, une autre vers des liens de long distance, une autre vers des motifs locaux - en pratique, tu n'inspectes pas chaque tete jour 1. L'idee utile : plusieurs types de liens en parallele enrichissent la representation avant la couche suivante. Sam compare a plusieurs eleves qui annotent la meme phrase avec des couleurs differentes, puis fusionnent.
 
-## Intuition des representations
+## Pourquoi le GPU aime ca
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
-
-## Experimentation sobre
-
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Les calculs d'attention et de matrices se pretent au parallelisme. D'ou l'alliance historique transformers + accelerateurs. Comprendre ce lien t'evite de croire qu'un CPU portable entrainera un geant "parce que Python". Pour l'usage via API, le GPU est chez le fournisseur ; tu paies l'inference autrement. Ines distingue clairement les deux budgets.

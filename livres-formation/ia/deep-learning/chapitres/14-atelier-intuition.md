@@ -1,36 +1,69 @@
 # Chapitre 14 - Atelier : intuition neurone et couches
 
-Objectif : solidifier l'image mentale sans code obligatoire. Duree : 30 minutes.
+Objectif : solidifier l'image mentale sans code obligatoire. Duree visee : environ 30 minutes. Tu sors avec un dessin explicable a un collegue non tech - le meilleur test de comprehension selon DanielCraft.
 
-## Exercices
+Cet atelier n'est pas un examen. C'est une gymnastique. Ines le fait avant chaque nouveau projet vision pour "remettre les briques a plat". Lea s'en sert pour briefer. Sam le transforme en exercice de classe.
 
-1) Dessine un neurone a 3 entrees, poids, biais, activation. Invente des nombres et calcule a la main une sortie ReLU simple. 2) Empile 2 couches denses sur papier (tailles 3 -> 4 -> 1). Explique oralement le passage avant. 3) Ecris la boucle d'apprentissage en 6 etapes. 4) Identifie pour ton projet : entree brute, representation utile, sortie. 5) Option code : un mini reseau toy dans un notebook (meme 20 lignes) pour voir la loss baisser sur une fonction simple.
+:::retenir
+Si tu peux expliquer ton dessin et la boucle d'apprentissage a quelqu'un, l'atelier a reussi.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas un TP PyTorch obligatoire. Le code optionnel existe pour les curieux ; le coeur est papier + oral. Ce n'est pas non plus "faire joli". Un schema sale et juste bat un schema parfait et creux.
+
+## Image mentale de depart
+
+Un neurone : entrees, poids, biais, activation, sortie. Une couche : plusieurs neurones en parallele. Un petit reseau : empilement. Une boucle : batch, avant, loss, arriere, maj des poids, repeter. Tu vas faire vivre ces quatre phrases.
+
+## Exercices (dans l'ordre)
+
+1) Dessine un neurone a 3 entrees, avec poids, biais, activation. Invente des nombres simples et calcule a la main une sortie **ReLU** (max(0, somme)). Ne cherche pas la beaute ; cherche le geste.
+
+2) Empile 2 couches denses sur papier (tailles 3 -> 4 -> 1). Explique oralement le passage avant : que recoit chaque etage, que produit-il ?
+
+3) Ecris la boucle d'apprentissage en 6 etapes. Chronometre une version orale de 40 secondes.
+
+4) Identifie pour ton projet (ou celui d'Ines : pieces sur photo) : entree brute, representation utile imaginee, sortie. Trois fleches suffisent.
+
+5) Option code : un mini reseau toy dans un notebook (meme 20 lignes) pour voir la loss baisser sur une fonction simple. Seulement si tu en as envie et le temps.
+
+:::idee
+Fais l'exercice 1 au stylo, pas au clavier. La main ralentit assez pour que le concept accroche.
+:::
+
+## Petite histoire
+
+Max a refuse d'abord : "je suis pas developpeur". Lea lui a fait faire le neurone parapluie (pluie, vent, distance). En dix minutes, il expliquait poids et seuil a son apprenti. Le code peut attendre. L'intuition, non.
+
+## Erreur classique
+
+Sauter au code optionnel sans dessin. Ou recopier un schema internet sans nombres. Ou expliquer avec des mots savants pour masquer un trou. Si tu bloques, reviens au chapitre 2 et 5, puis recommence l'oral.
+
+:::attention
+L'atelier echoue si tu ne parles a personne. Trouve un humain, meme presse, meme distant.
+:::
+
+## En vrai
+
+Appelle ou assieds quelqu'un. Montre le dessin. Demande : "reformule la backprop en une phrase". Si la personne y arrive apres toi, tu as transmis. C'est le livrable invisible.
 
 ## Livrable
 
-Une feuille dessinee + 10 lignes d'explication que tu pourrais envoyer a un collegue non tech.
-## Partage
+Une feuille dessinee + 10 lignes d'explication que tu pourrais envoyer a un collegue non tech. Garde la feuille : l'atelier CNN s'appuiera sur la meme discipline de clarte.
 
-Explique ton dessin a quelqu'un. Si cette personne peut reformuler la backprop en une phrase, ton atelier a reussi. L'enseignement est le meilleur test de comprehension.
+## A toi
 
-## Developpement : ce que le deep learning change vraiment
+Coche : neurone calcule, reseau 3-4-1 explique, boucle orale OK, fleches projet OK, explication lue a quelqu'un. Une case vide = cinq minutes de plus, pas un abandon.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Variante Ines
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Remplace le parapluie par "piece A / pas piece A". Entrees inventees : score contour, score texture, score trou. Meme neurone. Plus proche de son appli. Adapte a ton domaine : le transfert d'intuition est le vrai sujet.
 
-## Intuition des representations
+## Grille d'auto-evaluation
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+Apres l'atelier, note 1 a 5 : clarte du dessin, exactitude du calcul ReLU, fluidite de l'oral backprop, pertinence des fleches projet, qualite de l'explication non tech. Tout score sous 3 = cinq minutes de rattrapage cible. Sam utilise la grille en classe ; Lea en autofeedback.
 
-## Experimentation sobre
+## Piege du vocabulaire savant
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Si tu dis "gradient stochastique" mais tu ne sais pas raconter batch / avant / loss / arriere, tu te caches. Inverse la priorite : histoire simple d'abord, mot savant ensuite. Chez DanielCraft, le jargon arrive en recompense de la clarte, pas en camouflage.

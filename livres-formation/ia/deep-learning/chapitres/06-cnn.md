@@ -1,44 +1,65 @@
 # Chapitre 6 - CNN : voir par filtres locaux
 
-CNN signifie Convolutional Neural Network : reseau a convolutions. Idee : au lieu de relier chaque pixel a chaque neurone (trop cher, trop de parametres), on fait glisser de petits filtres qui detectent des motifs locaux (bords, textures), partages sur toute l'image. Puis on empile : motifs plus riches, cartes de features, souvent reduction spatiale, puis decision.
+**CNN** signifie Convolutional Neural Network : reseau a **convolutions**. Idee : au lieu de relier chaque pixel a chaque neurone (trop cher, trop de parametres), on fait glisser de petits **filtres** qui detectent des motifs locaux - bords, textures - partages sur toute l'image. Puis on empile : motifs plus riches, cartes de features, souvent reduction spatiale, puis decision.
 
-## Pourquoi ca marche sur l'image
+Chez DanielCraft, c'est le chapitre vision par excellence. Si tu bosses l'image, tu dois sentir pourquoi la localite compte. Si tu ne bosses pas l'image, tu comprends quand meme pourquoi "aplatir une photo dans un dense" est souvent une mauvaise premiere idee.
 
-Un chat peut etre a gauche ou a droite : un filtre de "oreille" utile partout grace au partage de poids. La localite (un pixel depend surtout de son voisinage) est un a priori puissant. Les CNN ont domine la vision pendant des annees ; d'autres architectures existent aussi aujourd'hui, mais l'intuition convolution reste essentielle.
+:::retenir
+CNN = filtres locaux partages qui glissent sur l'image. A priori de localite + partage de poids.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas la seule architecture vision en 2026 (les vision transformers existent aussi). Ce n'est pas magique avec 200 photos from scratch. Ce n'est pas non plus "regarder" comme un humain : ce sont des motifs statistiques appris. Et ce n'est pas un permis de juger sur des photos studio pour deployer sur du flou de telephone.
+
+## Image mentale
+
+Un chat peut etre a gauche ou a droite : un filtre d'"oreille" utile partout grace au partage de poids. Un pixel depend surtout de son voisinage : la localite est un a priori puissant. Les premieres couches tendent vers des motifs simples ; plus loin, des formes plus abstraites. Ines imagine deux filtres mentaux pour ses pieces : "contour metallique", "trou de vis". Elle sait que le reseau apprendra ses propres filtres ; l'exercice sert a sentir le besoin.
+
+:::idee
+Avant d'entrainer, decris les conditions reelles : eclairage, flou, angle, telephone. Le modele vivra la-bas, pas dans ton dossier "jolies photos".
+:::
 
 ## Usages
 
-Classification d'images, detection d'objets, segmentation, controle qualite sur chaine, lecture de documents scannes (avec d'autres briques). Ines peut entrainer ou, plus souvent, reutiliser un modele preentraine (transfer learning) sur ses pieces detachees.
+Classification d'images, detection d'objets, segmentation, controle qualite sur chaine, lecture de documents scannes (avec d'autres briques). Ines peut entrainer ou, plus souvent, reutiliser un modele preentraine (**transfer learning**) sur ses pieces detachees. Lea demande a ses prestataires vision : "preentraine ou from scratch ?", "quelles augmentations ?", "quel set terrain ?".
+
+## Data augmentation utile
+
+Rotation legere, crop, flip si pertinent, variation de luminosite - pour apprendre l'invariance. N'augmente pas d'une facon qui change le label : un flip peut casser un symbole directionnel. Toujours se demander : cette transformation existe-t-elle dans le vrai monde de deploiement ? Max a ri : "retourner ma piece a l'envers, ca arrive ; ecrire du texte a l'envers sur mon compteur, non".
+
+## Petite histoire
+
+Ines a 180 photos. Tentation : CNN profond from scratch. Resultat : overfitting. Elle passe a un backbone preentraine, remplace la tete de classification, augmente prudemment, valide sur photos chantier. Le score "labo" baisse. Le score "telephone sous neon" monte. Sam utilise cette histoire en cours : la realite bat le leaderboard interne.
 
 ## Erreur classique
 
-Entrainer un CNN profond from scratch avec 200 photos. Tu overfitteras. Prefere transfer learning + data augmentation (rotation, crop...) avec prudence. Autre piege : juger sur des photos studio et deployer sur des photos floues de telephone.
+Entrainer un CNN profond from scratch avec trop peu d'images. Prefere transfer learning + augmentation avec prudence. Autre piege : juger sur studio, deployer sur terrain. Troisieme : data augmentation absurde qui cree des exemples impossibles et trompe le metier.
+
+:::attention
+Un beau score sur un set propre ne prouve rien sur le flou, la pluie, ou l'angle bizarre du client.
+:::
+
+## En vrai
+
+Prends 10 photos de ton probleme (ou imagine-les). Note 3 variations que le modele verra forcement en production. Ton plan d'augmentation doit en couvrir au moins deux sans casser le label.
 
 ## A toi
 
-Decris 2 filtres mentaux utiles pour ton probleme vision (ex. "contour metallique", "trou de vis"). Pourquoi la localite aide ?
-## Data augmentation utile
+Decris 2 filtres mentaux utiles pour ton probleme vision (ex. "contour metallique", "trou de vis"). Pourquoi la localite aide ? Cinq a huit lignes.
 
-Rotation legere, crop, flip si pertinent, variation de luminosite - pour apprendre l'invariance. N'augmente pas d'une facon qui change le label (un flip peut casser un symbole directionnel). Toujours se demander : cette transformation existe-t-elle dans le vrai monde de deploiement ?
+## Lien avec la suite
 
-## Developpement : ce que le deep learning change vraiment
+Le chapitre overfitting te dira comment lire les courbes. Le transfer learning te dira comment reutiliser un cerveau deja forme. L'atelier CNN te fera ecrire un plan de projet sans pretendre avoir deja 10 000 labels. Chez DanielCraft, le plan honnete vaut mieux que le notebook theatral.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Partage de poids : economie et invariances
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Un filtre de 3x3 sur une grande image reutilise les memes dosages partout. Moins de parametres qu'un dense naif. Meilleure chance d'apprendre un motif "bord" utile a gauche comme a droite. C'est pour ca que les CNN ont domine la vision pendant des annees. Les vision transformers changent parfois la donne aujourd'hui ; l'intuition convolution reste un socle. Lea demande quand meme : "pourquoi cette famille pour mon cas ?" - la reponse doit citer la localite, pas la mode.
 
-## Intuition des representations
+## De la carte de features a la decision
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+Apres plusieurs convolutions et reductions spatiales, tu obtiens des cartes plus abstraites, puis souvent une tete dense ou une tete de detection. Ines n'a pas besoin de dessiner chaque tenseur. Elle doit savoir ou brancher le transfer : souvent garder le corps, changer la tete, evaluer sur le terrain.
 
-## Experimentation sobre
+## Detection et segmentation (apercu)
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Classer toute l'image est un cas. Detecter des objets avec des boites, ou segmenter pixel par pixel, demande d'autres tetes et plus de labels. Ines commence souvent par la classification de piece entiere. Elle note detection comme etape 2 si le besoin metier le prouve. Ne saute pas les marches : chaque marche a son cout d'annotation.

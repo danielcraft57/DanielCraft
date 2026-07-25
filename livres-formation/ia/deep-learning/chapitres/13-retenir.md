@@ -1,36 +1,57 @@
 # Chapitre 13 - A retenir
 
-Deep learning = reseaux a plusieurs couches. Neurone = melange pondere + activation. Couches = transformations empilees. Activation = non-linearite. Backprop = ajuster les poids via l'erreur. CNN = filtres locaux pour l'image. RNN = memoire sequentielle (overview historique utile). Transformers = attention, coeur des LLM. Overfitting = capacite vs donnees. GPU = parallelisme pour matrices. Transfer learning = reutiliser un modele fondation. LLM = deep learning langage + alignement + usage (prompt/RAG/agents).
+Tu as une carte. Pas un diplome de chercheur. Une carte. Le deep learning, ce sont des **reseaux a plusieurs couches** qui apprennent aussi des representations. Un **neurone** melange des entrees avec des poids, ajoute un biais, active. Les **couches** empilent des transformations. L'**activation** introduit le non-lineaire sans lequel la profondeur s'effondre. La **backprop** ajuste les poids a partir d'une erreur mesuree. Les **CNN** voient par filtres locaux. Les **RNN** portent une memoire sequentielle (overview utile). Les **transformers** misent sur l'attention, coeur de beaucoup de **LLM**. L'**overfitting** menace des que la capacite depasse le signal. Le **GPU** parallelise les matrices. Le **transfer learning** reutilise un cerveau deja forme. Les LLM sont du deep learning langage + alignement + usage (prompt, RAG, agents).
 
-## Boucle DanielCraft DL
+Chez DanielCraft, on resume autrement : matcher le probleme, reutiliser avant de reentrainer, mesurer sur le terrain, garder un humain quand le risque monte.
 
-Tache claire -> assez de donnees / transfert -> architecture adaptee -> loss et metriques -> validation -> regularisation -> deploiement mesure -> surveillance. Prefere reutiliser avant de reentrainer le monde.
+:::retenir
+Carte DL : neurone -> couches -> activation -> backprop -> CNN / RNN / transformer -> overfitting -> GPU -> transfer -> LLM.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas une checklist a reciter sans exemple. Ce n'est pas "tu peux tout deployer demain". Ce n'est pas non plus "le ML classique est mort". Sur un petit tableau, reviens au livre machine learning. Sur une image ou du langage riche, tu as maintenant les bons mots.
+
+## Image mentale : boucle DanielCraft DL
+
+Tache claire -> assez de donnees / transfert -> architecture adaptee -> loss et metriques -> validation -> regularisation -> deploiement mesure -> surveillance. Prefere reutiliser avant de reentrainer le monde. Ines a cette boucle sur une feuille A4. Lea l'a collee dans ses briefs. Max l'a simplifiee en trois questions : "ca sert ?", "on mesure quoi ?", "si ca se trompe ?".
+
+## Petite histoire
+
+Sam demande a un eleve de tout raconter en deux minutes. L'eleve bloque sur backprop. Il relit le chapitre 5, recommence, passe. La carte n'est solide que si elle passe a l'oral. Chez DanielCraft, l'oral est le vrai test : si tu peux l'expliquer a un non-tech, c'est entre.
+
+## Pont vers la pratique
+
+Si tu utilises deja un chat : tu manipules un transformer aligne. Si tu classes des images : tu toucheras CNN / transfer. Si tu as un CSV : reviens au ML. La bonne stack est celle qui matche le probleme. Ines melange parfois vision (CNN) et doc utilisateur (LLM) : deux briques, un protocole de verification pour chacune.
+
+## Erreur classique
+
+Vouloir tout retenir comme une liste de courses sans scene concrete. Autre piege : passer aux ateliers sans avoir une tache personnelle en tete. Les ateliers collent mieux a ta vie si tu apportes ton probleme.
+
+:::attention
+Une carte sans exemple personnel devient du papier peint. Ajoute le tien.
+:::
+
+## En vrai
+
+Ferme le livre (ou l'ecran). Sur une feuille blanche, reconstitue la carte en TES mots. Une seule face. Interdit de recopier les titres mot a mot : reformule.
 
 ## A toi
 
-Carte mentale une page, TES mots, un exemple vision et un exemple texte.
-## Pont vers la pratique
+Carte mentale une page : un exemple vision et un exemple texte. Relie chaque boite a une decision que tu pourrais prendre cette semaine (meme minuscule).
 
-Si tu utilises deja ChatGPT : tu manipules un transformer aligne. Si tu classes des images : tu toucheras CNN/transfer. Si tu as un CSV : reviens au livre ML. La bonne stack est celle qui matche le probleme.
+## Anti-patterns a garder en tete
 
-## Developpement : ce que le deep learning change vraiment
+LLM pour classer trois categories sur un CSV de vingt colonnes. CNN from scratch avec quarante images. Agent autonome le jour 1. Transformer "parce que c'est moderne" la ou un modele simple suffit. Note tes anti-patterns personnels a cote de la carte.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Suite immediate
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Atelier intuition (neurone et couches), atelier plan CNN, atelier transformer / usage LLM, puis choix d'architecture, limites, bonnes pratiques, quiz. Tu n'empiles plus seulement des couches de neurones. Tu empiles des gestes. C'est le but.
 
-## Intuition des representations
+## Checklist orale express
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
+En moins de deux minutes : qu'est-ce qu'un neurone ? Pourquoi activer ? Comment apprend-on ? Pourquoi CNN sur image ? Pourquoi attention sur texte ? Qu'est-ce qui overfitte ? Pourquoi GPU ? Pourquoi transfer ? Lien LLM ? Si une case manque, tu sais ou revenir. Lea fait cette checklist avant chaque atelier client. Ines avant chaque demo.
 
-## Experimentation sobre
+## Ce que tu peux deja faire demain
 
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Choisir une baseline simple sur un CSV. Planifier un transfer vision. Briefer un LLM avec faits et anti-invention. Dire non a un from scratch injustifie. Ces quatre gestes valent plus qu'une citation de papier. Chez DanielCraft, la carte sert a agir petit et juste.

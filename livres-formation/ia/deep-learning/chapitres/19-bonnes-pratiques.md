@@ -1,46 +1,69 @@
 # Chapitre 19 - Bonnes pratiques deep learning
 
+Les bonnes pratiques ne sont pas du folklore. Ce sont des garde-fous contre l'enthousiasme, l'oubli, et le "ca marche sur mon laptop". Chez DanielCraft, on les range en avant / pendant / apres, plus un mot sur les pipelines mixtes et la reproductibilite minimale.
+
+Tu peux les transformer en checklist de 12 cases. C'est l'exercice de fin. L'objectif n'est pas la perfection documentaire : c'est eviter les erreurs deja payees par d'autres.
+
+:::retenir
+Valider le besoin, reutiliser, mesurer, regulariser, inspecter les echecs, versionner, monitorer. Sobriete > theatre.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas une norme ISO a imprimer pour faire joli. Ce n'est pas non plus "ralentir pour ralentir". C'est accelerer juste : moins de retours catastrophiques, plus de cycles utiles. Et ce n'est pas reserve aux grandes equipes : Ines seule peut cocher l'essentiel.
+
 ## Avant
 
-Valider que le deep learning est necessaire. Chercher un modele preentraine. Estimer donnees et calcul. Definir metriques et risques. Preparer un set de validation propre.
+Valider que le deep learning est necessaire. Chercher un modele preentraine. Estimer donnees et calcul. Definir metriques et risques. Preparer un set de validation propre. Ecrire un go/no-go. Clarifier les labels avec le metier. Lea refuse de demarrer un sprint vision sans ces points ecrits.
 
 ## Pendant
 
-Commencer petit. Logger loss et metriques. Early stopping. Regulariser. Inspecter les echecs. Ne pas toucher au test final trop souvent. Documenter hyperparametres et versions.
+Commencer petit. Logger loss et metriques. Early stopping. Regulariser. Inspecter les echecs (les vrais fichiers, pas seulement la moyenne). Ne pas toucher au test final trop souvent. Documenter hyperparametres et versions. Changer une chose a la fois. Comparer a une baseline. Arreter quand la validation stagne. Sam appelle ca "experimentation sobre" - le mot compte moins que le geste.
+
+:::idee
+Garde un journal d'experiences en 5 colonnes : hypothese, changement, metrique, decision, date. Une demi-heure de rangement economise des jours.
+:::
 
 ## Apres
 
-Evaluer hors distribution. Monitorer. Prevoir reentrainement. Versionner. Separer experiences jouets et systeme de production. Informer les utilisateurs des limites.
+Evaluer hors distribution. Monitorer. Prevoir reentrainement. Versionner. Separer experiences jouets et systeme de production. Informer les utilisateurs des limites. Prevoir un repli humain. Mesurer le cout d'inference reel, pas seulement le cout d'entrainement. Max veut savoir ce qui se passe quand le telephone change ; Ines aussi.
 
 ## Usage LLM couple
 
-Si ton systeme mele CNN + LLM + regles, teste chaque brique, puis l'ensemble. Un pipeline opaque a trois etages multiplie les hallucinations operationnelles.
+Si ton systeme mele CNN + LLM + regles, teste chaque brique, puis l'ensemble. Un pipeline opaque a trois etages multiplie les hallucinations operationnelles. Lea exige un compte-rendu d'erreur par etage. Chez DanielCraft, "ca a l'air fluide de bout en bout" n'est pas un critere d'acceptation.
+
+## Petite histoire
+
+Ines a perdu une apres-midi a "ca marche plus". Pas de graine, pas de version donnees, pas de config sauvee. Elle a institue une reproductibilite minimale : graine, version code, version donnees, config, commit, metriques. Depuis, les regressions se discutent avec des faits. Sam a vole la checklist pour sa classe.
+
+## Reproductibilite minimale
+
+Graine, version code, version donnees, config, commit, metriques. Sans ca, tu ne sauras pas pourquoi "ca marche plus". Ce n'est pas du luxe enterprise. C'est de l'hygiene. Ajoute les droits / licences des modeles fondation si tu transfers.
+
+## Erreur classique
+
+Tout faire a la fois. Ne jamais inspecter un echec. Optimiser le test. Oublier le monitoring apres la demo. Documenter seulement quand un manager crie. Ou croire que les bonnes pratiques ralentissent les "vrais" talents.
+
+:::attention
+Une demo sans protocole n'est pas un produit. C'est une anecdote couteuse.
+:::
+
+## En vrai
+
+Cree ta checklist 12 cases a partir de ce chapitre (avant / pendant / apres melanges). Imprime-la ou epingle-la.
 
 ## A toi
 
-Checklist 12 cases. Coche sur ton prochain essai, meme toy.
-## Reproductibilite minimale
+Coche la checklist sur ton prochain essai, meme toy. Une case refusee = une phrase "pourquoi j'accepte le risque". Si tu ne peux pas l'ecrire, coche autrement : en faisant le geste.
 
-Graine, version code, version donnees, config, commit, metriques. Sans ca, tu ne sauras pas pourquoi "ca marche plus". Une demi-heure de rangement economise des jours.
+## Culture de communication
 
-## Developpement : ce que le deep learning change vraiment
+Apprends a dire "non" a un modele inutile. Apprends a dire "pas encore" quand les labels manquent. Apprends a dire "voici les limites" quand tu presentes un score. Cette honnetete te rend plus credible que n'importe quel jargon. C'est la derniere bonne pratique, et souvent la plus rentable.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Les 12 cases (modele)
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+1) Besoin DL valide. 2) Baseline / preentraine cherche. 3) Metriques et risques ecrits. 4) Val propre. 5) Go/no-go. 6) Journal d'experiences. 7) Early stopping. 8) Inspection d'echecs. 9) Test rare. 10) Versions (code/donnees/config). 11) Monitoring prevu. 12) Limites communiquees. Coche. Si tu sautes, ecris pourquoi.
 
-## Intuition des representations
+## Separer jouet et production
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
-
-## Experimentation sobre
-
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+Un notebook d'exploration peut etre sale. Un systeme qui touche un client ne peut pas heriter du sale sans rituel. Promotion volontaire : code range, metriques, rollback, responsable. Chez DanielCraft, confondre les deux est le classique qui coute le plus cher apres la demo.

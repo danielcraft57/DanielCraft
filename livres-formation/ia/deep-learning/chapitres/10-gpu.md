@@ -1,48 +1,65 @@
 # Chapitre 10 - GPU : pourquoi ca va plus vite (idee)
 
-Un GPU (processeur graphique) est tres bon pour faire beaucoup de petites operations similaires en parallele - exactement le genre de calculs des reseaux (grosses multiplications de matrices). D'ou son role central dans l'entrainement et parfois l'inference des modeles lourds.
+Un **GPU** (processeur graphique) est tres bon pour faire beaucoup de petites operations similaires en parallele - exactement le genre de calculs des reseaux (grosses multiplications de matrices, attentions, convolutions). D'ou son role central dans l'**entrainement** et parfois l'**inference** des modeles lourds.
 
-## CPU vs GPU (intuition)
+Chez DanielCraft, on demystifie le fer. Tu n'as pas besoin d'acheter une carte pour comprendre. Tu as besoin de savoir pourquoi les tutos disent "il me faut un GPU", pourquoi l'inference LLM coute de l'argent, et comment choisir entre entrainer, fine-tuner, ou seulement appeler un modele existant.
 
-CPU : excellent pour la logique variee, peu de coeurs tres flexibles. GPU : des milliers de petits coeurs pour le throughput. Entrainer un gros CNN ou un transformer sur CPU seul peut etre lent jusqu'a l'absurde. Sur GPU (ou TPU / accelerateurs), ca devient praticable.
+:::retenir
+GPU = parallelisme massif pour des calculs de matrices. Utile ; pas un sesame moral ni un prerequis pour apprendre.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas obligatoire pour comprendre le deep learning. Ce n'est pas une garantie de bon modele. Ce n'est pas non plus "CPU = inutile" : le CPU reste excellent pour la logique variee, le data loading, beaucoup de pipelines. Et ce n'est pas un permis de louer du calcul cher avant d'avoir valide la question metier sur un sous-ensemble.
+
+## Image mentale : CPU vs GPU
+
+**CPU** : peu de coeurs tres flexibles, excellent pour des taches variees. **GPU** : des milliers de petits coeurs pour le throughput sur des operations similaires. Entrainer un gros CNN ou un transformer sur CPU seul peut etre lent jusqu'a l'absurde. Sur GPU (ou TPU / accelerateurs), ca devient praticable. Lea compare : "couteau suisse vs usine a parallele". Grossier. Utile.
+
+:::idee
+Avant d'acheter ou louer, ecris : j'entraine, je fine-tune, ou j'inferre seulement ? Le besoin GPU change selon la reponse.
+:::
 
 ## Ce que ca change pour toi
 
-Tu n'as pas forcement besoin d'acheter une carte. Cloud, Google Colab, services managés, modeles deja entraines via API : autant de facons d'utiliser la puissance sans la posseder. Comprends juste pourquoi "il me faut un GPU" apparait dans les tutos, et pourquoi l'inference LLM a un cout (calcul = argent + energie).
+Cloud, notebooks heberges, services geres, modeles deja entraines via API : autant de facons d'utiliser la puissance sans la posseder. Ines protototype d'abord avec un modele preentraine et un petit set. Elle ne loue du GPU serieusement qu'apres un go metier. Max, lui, n'a besoin que d'une API vision de temps en temps : zero carte chez lui, zero honte.
 
-## Limites
+## Inference vs training
 
-Memoire GPU (VRAMs) : un gros batch ou un long contexte peuvent saturer. Optimisations : precision reduite, quantization, distillation, batching. Encore une fois : idees, pas besoin de tout implementer jour 1.
+Entrainer est souvent le plus gourmand. Inferer (servir des predictions) peut aussi couter cher a grande echelle - millions de requetes LLM, latence, energie. Optimiser l'inference (quantization, batching, petit modele) est un metier. Pour un debutant : mesure avant d'acheter du fer. Sam fait estimer a ses eleves un cout mensuel grossier : requetes x tokens x prix, plus le temps de verification humaine.
+
+## Limites memoire
+
+La **VRAM** est finie. Un gros batch ou un long contexte peuvent saturer. Optimisations possibles plus tard : precision reduite, quantization, distillation, batching, gradient checkpointing. Idees, pas besoin de tout implementer jour 1. Retiens surtout : "out of memory" n'est pas une fatalite morale, c'est un signal de dimensionnement.
+
+## Petite histoire
+
+Un prestataire a propose a Lea "on loue huit GPU une semaine pour tout reentrainer". Lea a demande le baseline transfer learning sur un seul accelerateur leger. Resultat deja utile. Les huit GPU sont restes dans le devis, non signes. Chez DanielCraft, on aime cette scene : le calcul suit la preuve, pas l'inverse.
 
 ## Erreur classique
 
-Croire que sans GPU perso on ne peut rien apprendre. Tu peux comprendre, prototyper petit, utiliser des modeles preentraines, appeler des API. Autre piege : louer du calcul cher sans d'abord valider la question metier sur un sous-ensemble.
+Croire que sans GPU perso on ne peut rien apprendre. Autre piege : louer du calcul cher sans valider la question metier. Troisieme : confondre "j'ai un GPU" et "mon protocole de validation est propre".
+
+:::attention
+Le fer accelere une boucle. Il ne remplace ni les labels, ni les metriques, ni le jugement.
+:::
+
+## En vrai
+
+Pour ton projet : entrainer, fine-tuner, ou inferer via un modele existant / une API ? Ecris la reponse en une phrase et le besoin GPU associe (aucun / ponctuel / serieux).
 
 ## A toi
 
-Estime pour ton projet : est-ce que tu as besoin d'entrainer, de fine-tuner, ou seulement d'inferer via un modele existant ? Le besoin GPU change selon la reponse.
-## Inference vs training
+Remplis le tableau mental : tache, volume de donnees, besoin calcul, alternative sans GPU. Une decision claire en bas de page.
 
-Entrainer est souvent le plus gourmand. Inferer (servir des predictions) peut aussi couter cher a grande echelle (millions de requetes LLM). Optimiser l'inference (quantization, batching, petit modele) est un metier. Pour un debutant : mesure avant d'acheter du fer.
+## Energie et argent
 
-## Developpement : ce que le deep learning change vraiment
+Calcul = argent + energie. Utiliser le plus petit modele qui fait le job, reutiliser des poids preentraines, preferer l'inference sobre : ce sont des gestes techniques et ethiques a la fois. Ines le note a cote de ses metriques. Ce n'est pas du greenwashing de slide ; c'est du dimensionnement adulte.
 
-Le deep learning a deplace le curseur : des taches autrefois impossibles sans features handicraftées deviennent abordables si tu as des donnees et du calcul. Images, parole, langue. Mais il n'a pas aboli les fondamentaux : split honnete, metriques alignees, biais, monitoring, abstention. Il les a rendus plus urgents, parce que les systemes sont plus opaques et plus couts.
+## Cloud, Colab, API : trois portes
 
-Quand tu entends "on a mis du deep learning", pose les questions de ce livre : combien de donnees ? preentraine ou from scratch ? quelle validation ? quel GPU / quel budget ? quel comportement hors distribution ? quel plan si le modele se trompe ? Tu passeras pour quelqu'un de serieux. C'est voulu.
+Porte 1 : notebook heberge avec GPU ponctuel pour apprendre. Porte 2 : cloud loue a l'heure pour un fine-tune serieux. Porte 3 : API - tu n'as pas le fer, tu achetes l'inference. Ines utilise 1 pour prototyper, 3 pour certains textes, 2 seulement apres go metier. Max reste souvent en 3. Lea met les trois portes dans ses devis pour eviter le "il nous faut huit cartes" sans preuve.
 
-## Intuition des representations
+## Precision et quantization (apercu)
 
-Une bonne representation rend le probleme plus simple pour la couche suivante. Au debut du reseau, l'entree est brute (pixels, tokens). Au milieu, des motifs. A la fin, une decision. Transfer learning = reutiliser un milieu deja riche. RAG cote LLM = injecter des faits dans le contexte plutot que de tout stocker dans les poids. Prompting = conditionner la representation de sortie sans maj de poids. Ces leviers sont differents, mais ils parlent le meme langage : influencer ce que le systeme "voit" avant de decider.
-
-## Experimentation sobre
-
-Change une chose a la fois. Logge. Compare a une baseline. Arrete-toi quand la validation stagne. Ne confonds pas agitation et progres. Un entrainement qui fait baisser la loss train sans ameliorer la val n'est pas un succes. Un petit modele qui generalise un peu est parfois preferable a un grand modele qui memorise.
-
-## Ethique et impact
-
-Derriere les perfs : energie, annotation, risques de surveillance, deepfakes, automatisation de decisions sensibles. Ce livre introductif ne tranche pas tous les debats. Il exige que tu les voies. Utiliser un outil puissant sans regarder ses effets collateraux, ce n'est pas de la neutralite technique. C'est une decision. Assume-la.
-
-## Pour aller plus loin sans te perdre
-
-Tu n'as pas a tout maitriser d'un coup. Reviens a ce chapitre quand tu butes sur un cas reel. Relis l'erreur classique. Refais le "A toi". Chez DanielCraft, on prefere trois relectures actives a une lecture passive de vingt pages. Si un paragraphe te semble encore flou, reformule-le a voix haute avec ton propre exemple. Des que ca passe a l'oral, c'est que c'est entre. Ensuite seulement, passe au chapitre suivant. Cette discipline lente cree une competence rapide sur la duree - le contraire du binge de tutos oublies le lendemain.
+On peut parfois calculer avec moins de bits pour aller plus vite ou tenir en memoire. Quantization, distillation : mots que tu rencontreras si tu optimises l'inference. Jour 1, retiens seulement : il existe des leviers avant d'acheter plus de fer. Mesure d'abord le besoin.
