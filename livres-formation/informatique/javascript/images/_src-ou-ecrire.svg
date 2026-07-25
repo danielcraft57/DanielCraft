@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Ou ecrire ton JavaScript ?</text>
+<rect x="60" y="110" width="280" height="300" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="200" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">Dans le HTML</text>
+<text x="200" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248" font-weight="400"><script></text>
+<text x="200" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">...code...</text>
+<text x="200" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248" font-weight="400"></script></text>
+<text x="200" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">rapide pour tester</text>
+<rect x="360" y="110" width="280" height="300" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+<text x="500" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">Fichier .js</text>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a6410" font-weight="700">app.js</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="400">+ balise script</text>
+<text x="500" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="400">src="app.js"</text>
+<text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410" font-weight="400">propre pour un vrai projet</text>
+<rect x="660" y="110" width="280" height="300" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="800" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">Console</text>
+<text x="800" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">F12</text>
+<text x="800" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">pour tester</text>
+<text x="800" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">sans fichier</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Debutant : fichier .js a part des que ca depasse 5 lignes.</text>
+</svg>

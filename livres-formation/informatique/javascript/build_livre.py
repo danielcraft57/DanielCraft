@@ -45,14 +45,56 @@ CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
         ("js-trio.png", "HTML structure. CSS habille. JS fait reagir."),
     ],
+    2: [
+        ("js-ou-ecrire.png", "HTML, fichier .js, ou console : trois endroits pour ecrire."),
+    ],
     3: [
         ("js-variables.png", "const = fixe. let = modifiable. Des boites avec un nom."),
+    ],
+    4: [
+        ("js-types.png", "string, number, boolean, null, undefined : ce que contient la boite."),
+    ],
+    5: [
+        ("js-conditions.png", "if / else : le navigateur choisit un chemin."),
+    ],
+    6: [
+        ("js-boucles.png", "Repeter une action tant que la condition est vraie."),
+    ],
+    7: [
+        ("js-fonctions.png", "Entrees -> fonction -> sortie. Ecrire une fois, appeler souvent."),
+    ],
+    8: [
+        ("js-tableaux.png", "Liste ordonnee. Index commence a 0."),
+    ],
+    9: [
+        ("js-objets.png", "Etiquettes + valeurs. Tu demandes par le nom."),
     ],
     10: [
         ("js-dom.png", "On trouve un element, puis on le modifie."),
     ],
+    11: [
+        ("js-dom-modifier.png", "Trouver, changer, voir le resultat a l'ecran."),
+    ],
     12: [
         ("js-evenements.png", "Clic -> JS ecoute -> la page change."),
+    ],
+    13: [
+        ("js-mini-projet.png", "HTML + JS + etat + DOM : le compteur en quatre briques."),
+    ],
+    14: [
+        ("js-retenir.png", "Carte des bases : logique, donnees, DOM, memoire."),
+    ],
+    15: [
+        ("js-atelier-todo.png", "Saisir, ajouter, afficher, supprimer."),
+    ],
+    16: [
+        ("js-localstorage.png", "Sauvegarder dans le navigateur pour survivre au refresh."),
+    ],
+    17: [
+        ("js-erreurs.png", "F12 : lire le message, la ligne, puis corriger."),
+    ],
+    18: [
+        ("js-quiz.png", "Verifier ce que tu as compris, sans inventer."),
     ],
     19: [
         ("js-felicitations.png", "Bravo. Tu as appris a rendre une page vivante."),

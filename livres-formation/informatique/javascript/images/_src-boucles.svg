@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Boucle = repeter tant que...</text>
+<rect x="120" y="160" width="220" height="120" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="230" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">debut</text>
+<rect x="390" y="160" width="220" height="120" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+<text x="500" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">action</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="400">encore ?</text>
+<rect x="660" y="160" width="220" height="120" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="770" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">fin</text>
+<path d="M610 220 L650 220" stroke="#1a4d3e" stroke-width="3" fill="none"/>
+<path d="M340 220 L380 220" stroke="#1a4d3e" stroke-width="3" fill="none"/>
+<path d="M500 280 L500 360 L230 360 L230 280" stroke="#c9a227" stroke-width="3" fill="none"/>
+<text x="370" y="395" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410" font-weight="400">retour si oui</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">for / while : meme idee, ecriture differente.</text>
+</svg>

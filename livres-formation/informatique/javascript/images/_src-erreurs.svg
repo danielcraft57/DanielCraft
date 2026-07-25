@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Lire une erreur</text>
+<rect x="100" y="130" width="800" height="280" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">Console (F12)</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a33" font-weight="400">TypeError: ... is null</text>
+<text x="500" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">ligne 12  -  fichier app.js</text>
+<text x="500" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">=> element pas trouve avant usage</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Lire le message > paniquer > corriger la ligne.</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">localStorage = memoire du navigateur</text>
+<rect x="120" y="140" width="320" height="240" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="280" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">page JS</text>
+<text x="280" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">setItem / getItem</text>
+<rect x="560" y="140" width="320" height="240" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+<text x="720" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">disque navigateur</text>
+<text x="720" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="400">survit au refresh</text>
+<line x1="440" y1="260" x2="560" y2="260" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Utile pour une todo. Pas pour des secrets.</text>
+</svg>

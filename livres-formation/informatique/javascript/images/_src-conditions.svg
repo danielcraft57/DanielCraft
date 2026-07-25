@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Condition = un carrefour</text>
+<rect x="380" y="100" width="240" height="90" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="500" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">if (age >= 18)</text>
+<line x1="500" y1="190" x2="500" y2="240" stroke="#1a4d3e" stroke-width="3"/>
+<line x1="250" y1="240" x2="750" y2="240" stroke="#1a4d3e" stroke-width="3"/>
+<line x1="250" y1="240" x2="250" y2="290" stroke="#1a4d3e" stroke-width="3"/>
+<line x1="750" y1="240" x2="750" y2="290" stroke="#1a4d3e" stroke-width="3"/>
+<rect x="120" y="290" width="260" height="140" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="250" y="345" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">true</text>
+<text x="250" y="385" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">chemin A</text>
+<rect x="620" y="290" width="260" height="140" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+<text x="750" y="345" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">false</text>
+<text x="750" y="385" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="400">chemin B (else)</text>
+<text x="500" y="500" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Le navigateur choisit une route. Pas les deux en meme temps.</text>
+</svg>

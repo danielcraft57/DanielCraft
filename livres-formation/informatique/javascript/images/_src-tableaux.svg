@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Tableau = liste ordonnee</text>
+<rect x="120" y="150" width="140" height="160" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="190" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">0</text>
+<text x="190" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">"pain"</text>
+<rect x="290" y="150" width="140" height="160" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+<text x="360" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="400">1</text>
+<text x="360" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="700">"lait"</text>
+<rect x="460" y="150" width="140" height="160" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="530" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">2</text>
+<text x="530" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">"oeufs"</text>
+<rect x="630" y="150" width="140" height="160" rx="14" fill="#ffffff" stroke="#3d5248" stroke-width="3"/>
+<text x="700" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">3</text>
+<text x="700" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">...</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Index commence a 0. fruits[1] = deuxieme element.</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f7f4ef"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Atelier todo : le flux</text>
+<rect x="80" y="160" width="180" height="140" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="170" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">saisir</text>
+<rect x="300" y="160" width="180" height="140" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+<text x="390" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">ajouter</text>
+<rect x="520" y="160" width="180" height="140" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+<text x="610" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">afficher</text>
+<rect x="740" y="160" width="180" height="140" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+<text x="830" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">supprimer</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Une liste en memoire + le DOM qui la montre.</text>
+</svg>
