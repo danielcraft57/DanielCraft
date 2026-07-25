@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Bonnes pratiques : avant / pendant / apres</text>
+
+  <rect x="60" y="120" width="280" height="300" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">Avant</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">besoin valide</text>
+  <text x="200" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">preentraine</text>
+  <text x="200" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">go / no-go</text>
+
+  <rect x="360" y="120" width="280" height="300" rx="16" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">Pendant</text>
+  <text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">logger / arreter tot</text>
+  <text x="500" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">inspecter echecs</text>
+  <text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">une chose a la fois</text>
+
+  <rect x="660" y="120" width="280" height="300" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">Apres</text>
+  <text x="800" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">monitorer</text>
+  <text x="800" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">versionner</text>
+  <text x="800" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">limites dites</text>
+
+</svg>

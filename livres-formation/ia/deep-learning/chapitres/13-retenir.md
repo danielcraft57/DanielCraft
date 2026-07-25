@@ -12,8 +12,6 @@ Carte DL : neurone -> couches -> activation -> backprop -> CNN / RNN / transform
 
 Ce n'est pas une checklist a reciter sans exemple. Ce n'est pas "tu peux tout deployer demain". Ce n'est pas non plus "le ML classique est mort". Sur un petit tableau, reviens au livre machine learning. Sur une image ou du langage riche, tu as maintenant les bons mots.
 
-## Image mentale : boucle DanielCraft DL
-
 Tache claire -> assez de donnees / transfert -> architecture adaptee -> loss et metriques -> validation -> regularisation -> deploiement mesure -> surveillance. Prefere reutiliser avant de reentrainer le monde. Ines a cette boucle sur une feuille A4. Lea l'a collee dans ses briefs. Max l'a simplifiee en trois questions : "ca sert ?", "on mesure quoi ?", "si ca se trompe ?".
 
 ## Petite histoire

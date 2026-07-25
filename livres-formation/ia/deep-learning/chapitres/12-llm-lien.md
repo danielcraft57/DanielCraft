@@ -16,7 +16,7 @@ Ce n'est pas sans lien avec le deep learning - au contraire. Ce n'est pas une ba
 
 **Tokens** et **contexte** : la fenetre limite ce que l'attention peut croiser d'un coup. **Temperature** : reglage sur l'aleas des choix de tokens. Poids et couches : milliards de parametres ajustes par descente de gradient a l'echelle industrielle. Hallucinations : prediction plausible hors verite. Multimodal : on branche vision / audio sur des representations communes ou des modules couples. **RAG** : on injecte des extraits dans le contexte plutot que de tout memoriser dans les poids. **Agents** : on boucle le LLM avec des outils.
 
-:::idee
+:::astuce
 Dessine 8 fleches : donnees -> transformer -> tokens -> prompt -> reponse -> verification. Place RAG et temperature sur le schema.
 :::
 

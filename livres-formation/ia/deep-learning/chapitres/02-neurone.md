@@ -1,6 +1,6 @@
 # Chapitre 2 - Un neurone : une petite decision ponderee
 
-Un **neurone artificiel**, en version poche, prend des entrees numeriques, les multiplie par des **poids**, ajoute un **biais**, puis passe le resultat dans une fonction d'**activation**. Image mentale : une recette qui melange des ingredients avec des dosages, puis decide si le signal continue. Ce n'est pas une cellule vivante. C'est une petite fonction flexible, ajustable sur des exemples.
+Un **neurone artificiel**, en version poche, prend des entrees numeriques, les multiplie par des **poids**, ajoute un **biais**, puis passe le resultat dans une fonction d'**activation**. Pense a une recette qui melange des ingredients avec des dosages, puis decide si le signal continue. Ce n'est pas une cellule vivante. C'est une petite fonction flexible, ajustable sur des exemples.
 
 Chez DanielCraft, on insiste sur cette sobriete : si tu comprends un neurone, tu comprends le brique de base. Le reste du livre n'est "que" de l'organisation - couches, specialisations, astuces d'apprentissage - autour de cette brique.
 
@@ -12,8 +12,6 @@ Neurone = entrees x poids + biais, puis activation. Les poids s'apprennent sur d
 
 Ce n'est pas une copie fidele du cerveau. Le nom s'inspire de la biologie ; l'ingenierie a pris ce qu'il lui fallait et a laisse le reste. Ce n'est pas non plus une unites qui "contient" a elle seule le concept chat, piece, ou spam. Les concepts emergent souvent de patterns distribues dans beaucoup d'unites. Et ce n'est pas une excuse pour fixer les poids a la main "logiquement" sur des taches complexes : l'apprentissage le fait mieux, a condition d'avoir des donnees.
 
-## Image mentale
-
 Imagine predire "prendre un parapluie". Entrees possibles : probabilite de pluie, force du vent, distance a parcourir. Chaque entree a un poids. Si la pluie compte beaucoup, son poids grossit en valeur absolue. Si le vent est du bruit, il s'attenue. Le biais decale le seuil de decision. L'activation decide comment ce score brut devient un signal utile - coupe, ecrase, laisse passer.
 
 Ines, sur ses pieces, imagine des entrees plus abstraites plus tard (motifs de texture, contours). Mais le geste mental reste le meme : melanger, ponderer, activer.
@@ -22,7 +20,7 @@ Ines, sur ses pieces, imagine des entrees plus abstraites plus tard (motifs de t
 
 Les poids s'ajustent pendant l'apprentissage. Tu n'ecris pas la regle complete a la main ; tu laisses les exemples pousser les dosages. Chaque poids est un **parametre**. Plus tu en as dans un reseau, plus tu peux coller a des motifs complexes - et au bruit. La capacite n'est pas un trophee. C'est un budget a depenser avec des donnees et de la regularisation. Un neurone unique a peu de capacite ; un LLM en a une immense.
 
-:::idee
+:::astuce
 Quand quelqu'un dit "le modele a appris", traduis : "des poids ont bouge pour reduire une erreur mesuree".
 :::
 

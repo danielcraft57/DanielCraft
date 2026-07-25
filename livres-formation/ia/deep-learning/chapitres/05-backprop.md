@@ -12,11 +12,9 @@ Apprendre = reduire une erreur mesuree en ajustant des poids via passes avant / 
 
 Ce n'est pas une comprehension du sens. La backprop optimise un critere. Si le critere est mal choisi, elle optimise mal - brillamment. Ce n'est pas non plus "comprendre comme un humain". Et ce n'est pas quelque chose que tu dois reprogrammer a la main en 2026 : les frameworks (PyTorch, TensorFlow...) calculent les gradients. Ton job : donnees, architecture raisonnable, loss adaptee, monitoring, regularisation.
 
-## Image mentale : descente de gradient
-
 Imagine etre dans le brouillard sur une colline et vouloir descendre : tu sens la pente sous tes pieds et tu fais un pas dans la direction qui descend. Le **gradient** est cette pente dans l'espace des poids. Le **taux d'apprentissage** (learning rate) est la taille du pas. Trop grand : tu sautes et tu diverges. Trop petit : tu rampes eternellement. Ines a vu une loss exploser apres avoir "mis le learning rate a fond pour aller plus vite". La colline n'aime pas les grands sauts aveugles.
 
-:::idee
+:::astuce
 Quand la loss train ne baisse pas, demande d'abord : learning rate, bugs de donnees, mauvaise loss - avant d'ajouter dix couches.
 :::
 

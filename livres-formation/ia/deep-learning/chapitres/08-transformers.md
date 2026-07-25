@@ -12,11 +12,9 @@ Transformer = attention entre positions / tokens, empilee en profondeur. Coeur d
 
 Ce n'est pas une garantie de qualite : "on a mis un transformer" n'egal pas "c'est bon". Ce n'est pas l'attention humaine consciente. Ce n'est pas magique hors donnees et evaluation. Et ce n'est pas gratuit : l'attention "tous sur tous" coute cher quand la sequence s'allonge - d'ou les limites de **contexte** et le prix des tokens.
 
-## Image mentale
-
 Quand tu lis "le chat sur le tapis, il dort", le mot "il" doit se relier a "chat". L'attention apprend des liens utiles selon la tache. **Multi-tetes** : plusieurs types de liens en parallele. Empilement de blocs : representations de plus en plus riches. On ajoute des encodings de position, parce que sinon l'ordre serait moins clair. Ines explique ca a Lea avec un surligneur mental : chaque mot eclaire les autres selon le besoin.
 
-:::idee
+:::astuce
 Pour sentir l'attention, prends une phrase avec un pronom. Demande : a quoi doit se coller ce pronom ? C'est le geste.
 :::
 

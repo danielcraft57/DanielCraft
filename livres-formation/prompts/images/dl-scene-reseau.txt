@@ -1,0 +1,1 @@
+Scene pedagogique Deep Learning ch.1 : reseau en couches qui transforme une entree en decision. Fond creme, vert #1a4d3e, ambre. Sans texte.

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Atelier : neurone + couches + boucle</text>
+
+  <rect x="60" y="120" width="280" height="300" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="200" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">1. Neurone</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">3 entrees</text>
+  <text x="200" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">poids + biais</text>
+  <text x="200" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">ReLU a la main</text>
+
+  <rect x="360" y="120" width="280" height="300" rx="16" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">2. Reseau</text>
+  <text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">3 -&gt; 4 -&gt; 1</text>
+  <text x="500" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">passe avant</text>
+  <text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">explique oralement</text>
+
+  <rect x="660" y="120" width="280" height="300" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">3. Boucle</text>
+  <text x="800" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">batch / avant</text>
+  <text x="800" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">perte / arriere</text>
+  <text x="800" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">maj / repeter</text>
+
+</svg>

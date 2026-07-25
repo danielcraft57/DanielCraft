@@ -1,6 +1,6 @@
 # Chapitre 14 - Atelier : intuition neurone et couches
 
-Objectif : solidifier l'image mentale sans code obligatoire. Duree visee : environ 30 minutes. Tu sors avec un dessin explicable a un collegue non tech - le meilleur test de comprehension selon DanielCraft.
+Objectif : solidifier l'intuition sans code obligatoire. Duree visee : environ 30 minutes. Tu sors avec un dessin explicable a un collegue non tech - le meilleur test de comprehension selon DanielCraft.
 
 Cet atelier n'est pas un examen. C'est une gymnastique. Ines le fait avant chaque nouveau projet vision pour "remettre les briques a plat". Lea s'en sert pour briefer. Sam le transforme en exercice de classe.
 
@@ -11,8 +11,6 @@ Si tu peux expliquer ton dessin et la boucle d'apprentissage a quelqu'un, l'atel
 ## Ce que ce n'est pas
 
 Ce n'est pas un TP PyTorch obligatoire. Le code optionnel existe pour les curieux ; le coeur est papier + oral. Ce n'est pas non plus "faire joli". Un schema sale et juste bat un schema parfait et creux.
-
-## Image mentale de depart
 
 Un neurone : entrees, poids, biais, activation, sortie. Une couche : plusieurs neurones en parallele. Un petit reseau : empilement. Une boucle : batch, avant, loss, arriere, maj des poids, repeter. Tu vas faire vivre ces quatre phrases.
 
@@ -28,7 +26,7 @@ Un neurone : entrees, poids, biais, activation, sortie. Une couche : plusieurs n
 
 5) Option code : un mini reseau toy dans un notebook (meme 20 lignes) pour voir la loss baisser sur une fonction simple. Seulement si tu en as envie et le temps.
 
-:::idee
+:::astuce
 Fais l'exercice 1 au stylo, pas au clavier. La main ralentit assez pour que le concept accroche.
 :::
 

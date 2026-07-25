@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Transfer learning : reutiliser puis adapter</text>
+
+  <rect x="70" y="140" width="280" height="240" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">Modele preentraine</text>
+  <text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">millions d'images</text>
+  <text x="210" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">ou grand corpus texte</text>
+  <text x="210" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">representations utiles</text>
+
+  <path d="M360 260 L430 260" stroke="#1a4d3e" stroke-width="4" fill="none"/>
+  <polygon points="430,250 450,260 430,270" fill="#1a4d3e"/>
+
+  <rect x="470" y="140" width="220" height="240" rx="16" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="580" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">Adapter</text>
+  <text x="580" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">nouvelle tete</text>
+  <text x="580" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">petit learning rate</text>
+
+  <rect x="730" y="140" width="200" height="240" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="830" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">Ton cas</text>
+  <text x="830" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">pieces, docs...</text>
+
+  <text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#3d5248">Moins de donnees, moins de calcul, meilleur depart</text>
+
+</svg>

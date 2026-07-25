@@ -14,11 +14,9 @@ Ce n'est pas une conscience. Ce n'est pas "toujours mieux que le ML classique". 
 
 Ce n'est pas non plus "un seul produit". CNN pour la vision, transformers pour le langage, modeles audio, pipelines mixtes : meme famille large, usages differents. On va les demeler sans jargon opaque.
 
-## Image mentale
-
 Tu as une entree brute. Le reseau la transforme couche apres couche en une representation plus utile, puis en une decision. En ML classique, tu ciselais souvent les **features** a la main. En deep learning, les couches apprennent aussi des features internes. Cette automatisation a un prix : opaqueite, besoin de donnees et de calcul, risque d'**overfitting**. Le jeu n'en vaut la chandelle que si le probleme le demande - image, parole, texte long, motifs trop riches pour un tableur.
 
-:::idee
+:::astuce
 Note un probleme "image ou texte" ou le deep learning semble pertinent, et un probleme "petit tableau" ou un modele simple suffit. Cette distinction te suivra tout le livre.
 :::
 

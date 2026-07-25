@@ -12,11 +12,9 @@ GPU = parallelisme massif pour des calculs de matrices. Utile ; pas un sesame mo
 
 Ce n'est pas obligatoire pour comprendre le deep learning. Ce n'est pas une garantie de bon modele. Ce n'est pas non plus "CPU = inutile" : le CPU reste excellent pour la logique variee, le data loading, beaucoup de pipelines. Et ce n'est pas un permis de louer du calcul cher avant d'avoir valide la question metier sur un sous-ensemble.
 
-## Image mentale : CPU vs GPU
-
 **CPU** : peu de coeurs tres flexibles, excellent pour des taches variees. **GPU** : des milliers de petits coeurs pour le throughput sur des operations similaires. Entrainer un gros CNN ou un transformer sur CPU seul peut etre lent jusqu'a l'absurde. Sur GPU (ou TPU / accelerateurs), ca devient praticable. Lea compare : "couteau suisse vs usine a parallele". Grossier. Utile.
 
-:::idee
+:::astuce
 Avant d'acheter ou louer, ecris : j'entraine, je fine-tune, ou j'inferre seulement ? Le besoin GPU change selon la reponse.
 :::
 

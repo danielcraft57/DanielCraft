@@ -12,11 +12,9 @@ RNN = etat qui se met a jour a chaque pas de la sequence. Intuition pedagogique 
 
 Ce n'est pas une comprehension humaine du recit. Ce n'est pas non plus "obsolete donc inutile a connaitre" : l'intuition reste, et des variantes / hybrides existent encore. Ce n'est pas le meilleur choix automatique en 2026 pour un chatbot ou un resume long : un modele preentraine transformer resoudra souvent mieux, plus vite a l'usage.
 
-## Image mentale
-
 Tu lis un journal de bord ligne apres ligne. Tu gardes en tete un resume. Chaque nouvelle ligne modifie le resume. A la fin, tu classes ou tu predits la suite. Le RNN fait un geste voisin, en vecteurs. Sur les longues sequences, les RNN simples oublient ou deviennent instables : gradients qui disparaissent ou explosent. Des variantes (**LSTM**, **GRU**) ont ameliore la memoire. Puis l'attention des transformers a change la donne en permettant de relier des positions plus directement, et de mieux paralleliser sur GPU.
 
-:::idee
+:::astuce
 Quand tu entends "sequence", demande : qu'est-ce qui depend du passe recent ? du passe lointain ? du futur (attention au split temporel) ?
 :::
 

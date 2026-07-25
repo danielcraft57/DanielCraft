@@ -12,8 +12,6 @@ Attention expliquee + contexte budgete + RAG manuel + temperature choisie + risq
 
 Ce n'est pas un fine-tune obligatoire. Ce n'est pas "construire un agent autonome". Ce n'est pas non plus un concours de prompts miracles. C'est relier ce que tu as appris au chapitre 8 et 12 a des gestes que tu peux faire aujourd'hui.
 
-## Image mentale
-
 Tu as un moteur attentionnel avec une fenetre de contexte limitee. Tu decids quoi mettre dans la fenetre, comment chercher des extraits, comment regler l'aleas, comment verifier. Lea fait ca pour ses propositions clients. Ines pour sa doc. Sam pour ses quiz. Max pour ses mails - avec interdiction d'inventer un delai.
 
 ## Etapes (dans l'ordre)
@@ -30,7 +28,7 @@ Tu as un moteur attentionnel avec une fenetre de contexte limitee. Tu decids quo
 
 6) Lister 3 risques : donnees sensibles, hallucination, cout tokens (ou temps de verification).
 
-:::idee
+:::astuce
 Le mini-RAG manuel (copier l'extrait toi-meme) enseigne mieux que trois slides sur les vector stores.
 :::
 

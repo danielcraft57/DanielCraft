@@ -12,8 +12,6 @@ Capacite sans donnees ni regularisation = memorisation. Surveille train et valid
 
 Ce n'est pas "le modele est trop intelligent". C'est souvent le contraire de la generalisation utile. Ce n'est pas non plus resolu en ajoutant toujours plus de couches. Parfois il faut mieux de donnees, pas plus de profondeur. Et ce n'est pas uniquement un probleme de vision : le texte, l'audio, les series temporelles overfitent aussi.
 
-## Image mentale
-
 Imagine un eleve qui apprend par coeur dix sujets d'examen. Le jour J, le sujet change d'un cran : il panique. Le reseau fait un geste voisin s'il a trop de capacite et trop peu de diversite. La **generalisation**, c'est reussir sur des cas nouveaux issus du meme phenomene - pas reinventer le monde, mais ne pas coller au bruit du train.
 
 Ines regarde deux courbes. Train plonge. Val remonte. Elle n'ajoute pas de neurones. Elle regularise, arrete tot, ou collecte mieux.
@@ -22,7 +20,7 @@ Ines regarde deux courbes. Train plonge. Val remonte. Elle n'ajoute pas de neuro
 
 Plus de donnees reelles. **Data augmentation** (surtout vision), avec prudence. **Dropout** (eteindre des neurones au hasard pendant l'entrainement). Weight decay / regularisation. **Early stopping** (arreter quand la validation n'ameliore plus). Architectures plus petites. **Transfer learning** plutot que from scratch. Label smoothing parfois. Et toujours : protocole de validation honnete, set de test rarement touche.
 
-:::idee
+:::astuce
 Liste tes remedes realistes "cette semaine" separement de tes remedes "un jour". L'action bat la wishlist.
 :::
 

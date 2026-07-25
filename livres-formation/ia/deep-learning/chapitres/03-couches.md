@@ -12,8 +12,6 @@ Une couche transforme une representation en une autre. La profondeur est un comp
 
 Ce n'est pas un concours : "plus deep = plus moderne = mieux". Trop de couches sans donnees, c'est de l'overfitting et du cout. Ce n'est pas non plus obligatoire de visualiser chaque neurone. Et ce n'est pas la meme chose d'elargir une couche (plus de neurones) et d'approfondir (plus de couches) : les effets different.
 
-## Image mentale
-
 Au debut du reseau, l'entree est brute. Au milieu, des motifs. A la fin, une decision. Une bonne representation rend le probleme plus simple pour la couche suivante. Sur une image, les premieres couches d'un CNN tendent a detecter des motifs locaux simples ; plus loin, des formes plus abstraites. Dans le texte, des couches successives melangent le contexte. Tu retiens l'idee : le reseau apprend aussi **comment representer** l'entree, pas seulement la derniere case a cocher.
 
 Ines dessine trois etages pour ses pieces : entree image, cachee "motifs", sortie "classe". C'est grossier. C'est deja utile pour briefer.
@@ -22,7 +20,7 @@ Ines dessine trois etages pour ses pieces : entree image, cachee "motifs", sorti
 
 Plus de couches peuvent representer des fonctions plus riches - mais coutent plus cher a entrainer, et overfitent plus facilement si les donnees manquent. Elargir augmente la capacite locale ; approfondir compose des transformations. Les architectures modernes jouent sur des blocs repetes, des connexions residuelles, des normes - details que tu rencontreras plus tard. Ici, retiens le levier : **forme du reseau = hypothese sur la structure du probleme**.
 
-:::idee
+:::astuce
 Avant d'ajouter une couche, ecris ce que tu esperes qu'elle apporte. Si tu ne sais pas, ne l'ajoute pas encore.
 :::
 

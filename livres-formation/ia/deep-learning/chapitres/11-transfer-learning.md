@@ -12,11 +12,9 @@ Transfer learning = reutiliser un modele preentraine et l'adapter. Moins de donn
 
 Ce n'est pas une dispense de validation. Ce n'est pas magique si ton domaine est trop eloigne ou si tes labels sont sales - tu transfers aussi vers le sale. Ce n'est pas non plus "interdire le from scratch pour toujours" : parfois le domaine l'exige, avec budget et donnees. Et ce n'est pas synonyme exact de prompting : le prompting conditionne sans maj de poids ; le transfer, au sens strict, adapte des poids (meme legerement).
 
-## Image mentale
-
 Tu embauches quelqu'un qui a deja vu des millions d'objets, et tu lui apprends tes pieces detachees. Tu ne reprends pas l'alphabet visuel a zero. Ines telecharge un CNN preentraine, remplace la tete de classification, entraine surtout les dernieres couches. Sur le texte, on fine-tune legerement, ou on fait du prompting / RAG sans tout retoucher. L'esprit est le meme : partir d'un milieu deja riche.
 
-:::idee
+:::astuce
 Ecris "ce que je reutilise" et "ce que j'adapte". Si les deux cases sont vides, tu n'as pas encore de plan transfer.
 :::
 

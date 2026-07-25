@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Limites : puissance sans comprehension</text>
+
+  <rect x="60" y="120" width="200" height="220" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="160" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">Donnees</text>
+  <text x="160" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d5248">cout / biais</text>
+
+  <rect x="290" y="120" width="200" height="220" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="390" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">Opaqueite</text>
+  <text x="390" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d5248">boite noire</text>
+
+  <rect x="520" y="120" width="200" height="220" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="620" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="700">Hors distrib.</text>
+  <text x="620" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a6410">fragile</text>
+
+  <rect x="750" y="120" width="200" height="220" rx="14" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="850" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="700">Abstention</text>
+  <text x="850" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a6410">humain requis</text>
+
+  <text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#3d5248">Prevois repli, mesure, et seuils avant de deployer</text>
+
+</svg>

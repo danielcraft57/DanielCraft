@@ -20,7 +20,7 @@ Valider que le deep learning est necessaire. Chercher un modele preentraine. Est
 
 Commencer petit. Logger loss et metriques. Early stopping. Regulariser. Inspecter les echecs (les vrais fichiers, pas seulement la moyenne). Ne pas toucher au test final trop souvent. Documenter hyperparametres et versions. Changer une chose a la fois. Comparer a une baseline. Arreter quand la validation stagne. Sam appelle ca "experimentation sobre" - le mot compte moins que le geste.
 
-:::idee
+:::astuce
 Garde un journal d'experiences en 5 colonnes : hypothese, changement, metrique, decision, date. Une demi-heure de rangement economise des jours.
 :::
 

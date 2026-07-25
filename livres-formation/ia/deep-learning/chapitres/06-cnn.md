@@ -12,11 +12,9 @@ CNN = filtres locaux partages qui glissent sur l'image. A priori de localite + p
 
 Ce n'est pas la seule architecture vision en 2026 (les vision transformers existent aussi). Ce n'est pas magique avec 200 photos from scratch. Ce n'est pas non plus "regarder" comme un humain : ce sont des motifs statistiques appris. Et ce n'est pas un permis de juger sur des photos studio pour deployer sur du flou de telephone.
 
-## Image mentale
-
 Un chat peut etre a gauche ou a droite : un filtre d'"oreille" utile partout grace au partage de poids. Un pixel depend surtout de son voisinage : la localite est un a priori puissant. Les premieres couches tendent vers des motifs simples ; plus loin, des formes plus abstraites. Ines imagine deux filtres mentaux pour ses pieces : "contour metallique", "trou de vis". Elle sait que le reseau apprendra ses propres filtres ; l'exercice sert a sentir le besoin.
 
-:::idee
+:::astuce
 Avant d'entrainer, decris les conditions reelles : eclairage, flou, angle, telephone. Le modele vivra la-bas, pas dans ton dossier "jolies photos".
 :::
 

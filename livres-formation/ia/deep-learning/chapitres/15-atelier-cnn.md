@@ -12,8 +12,6 @@ Plan CNN = classes, donnees, conditions reelles, preentraine, augmentation, spli
 
 Ce n'est pas un entrainement complet. Ce n'est pas une promesse de 99 %. Ce n'est pas non plus "collecter 50 images et deployer demain". Si tu as moins de 50 images au total, reste sur proof of concept et transfer learning agressif, ou reconsidere la faisabilite.
 
-## Image mentale
-
 Tu construis un dossier de decision. Chaque section empeche un mensonge courant : "on verra bien", "le modele saura", "les photos studio suffisent". Le go/no-go signe a l'avance te protege du deploiement par enthousiasme.
 
 ## Etapes (dans l'ordre)
@@ -38,7 +36,7 @@ Tu construis un dossier de decision. Chaque section empeche un mensonge courant 
 
 10) Idee GPU : local, cloud, ou seulement inference API.
 
-:::idee
+:::astuce
 Ecris le go/no-go AVANT de regarder un premier score. Sinon tu deplaces la barre.
 :::
 

@@ -12,15 +12,13 @@ Pars du probleme et des contraintes (donnees, calcul, risque, latence). L'archit
 
 Ce n'est pas "toujours un LLM". Ce n'est pas "toujours un CNN". Ce n'est pas non plus une verite eternelle : en 2026 les familles evoluent, les principes de matching restent. Et ce n'est pas un permis d'ignorer une baseline simple.
 
-## Image mentale : carte simple
-
 Petit tableau numerique : ML classique d'abord. Images : CNN ou vision transformer preentraine + transfer. Texte generation / chat : LLM existant + prompt / RAG. Series temporelles : modeles specialises ou approches mixtes ; ne force pas un LLM partout. Audio : modeles parole / audio preentraines. Multi-taches complexes : parfois pipelines (vision puis regles puis LLM). Ines range ses sujets dans ces cases avant d'ouvrir un repo.
 
 ## Questions de decision
 
 Combien de donnees labellisees ? Quel budget calcul ? Quelle latence acceptable ? Quel besoin d'interpretabilite ? Quel risque d'erreur ? Existe-t-il un modele fondation proche ? Peut-on resoudre sans deep learning ? Lea pose ces questions en reunion ; les reponses changent le devis plus surement qu'un buzzword.
 
-:::idee
+:::astuce
 Si tu ne peux pas repondre a "que se passe-t-il si le modele se trompe ?", tu n'es pas pret a choisir l'architecture.
 :::
 

@@ -12,8 +12,6 @@ Tu as une carte et des gestes. Empile des competences evaluees, pas seulement de
 
 Tu sais matcher un probleme a une famille. Tu sais pourquoi la non-linearite compte, comment l'erreur remonte, pourquoi un CNN aime le local, pourquoi un transformer aime le contexte, pourquoi l'overfitting frappe fort, pourquoi le GPU accelere, pourquoi le transfer learning est souvent le bon premier geste, et comment un chat LLM se branche sur tout ca. Tu as ecrit des plans, des fiches, des go/no-go. Ce n'est plus seulement de la lecture.
 
-## Image mentale finale
-
 Ines regarde son appli pieces : backbone preentraine, tete adaptee, seuil d'abstention, monitoring. Lea briefe sans jargon panique. Max verifie les delais qu'un LLM pourrait inventer. Sam fait passer la carte a l'oral. Quatre chemins, une meme posture de pilote.
 
 ## Petite histoire

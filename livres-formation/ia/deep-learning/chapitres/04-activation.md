@@ -12,8 +12,6 @@ Sans non-linearite entre les couches, pas de profondeur utile. Activation = tord
 
 Ce n'est pas la meme chose que la fonction de **perte** (loss). L'activation transforme des signaux a l'interieur du reseau ; la loss mesure l'erreur pour apprendre. Ce n'est pas non plus une decoration de graphique. Et ce n'est pas "une seule activation pour tout" : les couches cachees et la sortie ont souvent des besoins differents.
 
-## Image mentale
-
 Imagine un score brut qui sort d'une somme ponderee. **ReLU** laisse passer les positifs et coupe les negatifs : simple, souvent efficace en couches cachees. **Sigmoid** ecrase vers 0..1 : utile parfois pour une probabilite binaire. **Softmax** transforme plusieurs scores en une distribution qui somme a 1 : langage courant des classifieurs multi-classes. Pour un LLM, la sortie ressemble a une distribution sur le vocabulaire : "quel prochain token est probable ?".
 
 Ines, pour ses pieces, pense "scores bruts puis softmax vers classes". Elle n'a pas besoin de deriver la formule pour choisir la bonne idee.
@@ -22,7 +20,7 @@ Ines, pour ses pieces, pense "scores bruts puis softmax vers classes". Elle n'a 
 
 La derniere activation depend de la tache : nombre libre (regression), probabilite (classification binaire), distribution sur classes (softmax), ou distribution sur vocabulaire (LLM). Choisir une mauvaise sortie, c'est comme demander a un thermometre d'afficher une couleur sans legende. Lea a vu un prestataire sortir des scores non normalises et les presenter comme des "pourcentages de confiance" a un client. Confusion garantie.
 
-:::idee
+:::astuce
 Avant de parler "confiance", demande : cette sortie est-elle une probabilite calibree, un score brut, ou une impression marketing ?
 :::
 

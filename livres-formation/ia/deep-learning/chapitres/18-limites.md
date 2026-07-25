@@ -16,11 +16,9 @@ Ce n'est pas une raison d'abandonner. Ce n'est pas non plus une excuse pour tout
 
 La definition du probleme. La qualite des labels. La decision ethique. La responsabilite legale. La connaissance terrain. Les modeles simples quand ils suffisent. Les processus humains de verification. Ines peut avoir un excellent CNN ; elle reste responsable si une mauvaise piece passe. Lea le rappelle dans ses CGV de projet. Max le sent dans sa garantie chantier.
 
-## Image mentale : robustesse
-
 Change l'eclairage, l'accent, le format de document, la saison : les performances chutent parfois. Les adversaires peuvent tromper certains modeles avec des perturbations. En production, prevois des replis : regles, humain, **abstention**. Parfois la meilleure sortie est "je ne sais pas / humain requis". Concois un seuil d'abstention. En vision comme en langage, l'abstention sauve des catastrophes.
 
-:::idee
+:::astuce
 Ecris une phrase d'abstention pour ton projet avant d'ecrire une phrase de deploiement.
 :::
 

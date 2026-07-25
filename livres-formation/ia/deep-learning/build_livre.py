@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("dl")
+BOOK_CSS = get_book_css("dl") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -44,11 +63,38 @@ CHAPTER_FILES = [
 ]
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
-    1: [("dl-carte.png", "Deep learning : des reseaux a plusieurs couches.")],
+    1: [
+        ("dl-carte.png", "Deep learning : des reseaux a plusieurs couches."),
+        ("dl-scene-reseau.png", "Exemple : l'entree traverse des couches jusqu'a une decision."),
+    ],
     2: [("dl-neurone.png", "Neurone artificiel : entrees, poids, sortie.")],
-    6: [("dl-cnn.png", "CNN : voir des motifs dans les images.")],
-    8: [("dl-transformers.png", "Transformers : attention et contexte.")],
+    3: [("dl-couches.png", "Couches : entree, cachees, sortie.")],
+    4: [("dl-activation.png", "Activation : tordre le signal pour du non-lineaire.")],
+    5: [("dl-backprop.png", "Backprop : batch, avant, perte, arriere, maj, repeter.")],
+    6: [
+        ("dl-cnn.png", "CNN : voir des motifs dans les images."),
+        ("dl-scene-cnn.png", "Exemple : filtres locaux sur une photo de piece."),
+    ],
+    7: [("dl-rnn.png", "RNN : un etat memoire avance pas a pas.")],
+    8: [
+        ("dl-transformers.png", "Transformers : attention et contexte."),
+        ("dl-scene-attention.png", "Exemple : l'attention relie un pronom a son referent."),
+    ],
+    9: [("dl-overfitting.png", "Overfitting : excellent sur le train, faible sur le neuf.")],
+    10: [("dl-gpu.png", "GPU : parallelisme massif pour les matrices.")],
+    11: [("dl-transfer.png", "Transfer learning : reutiliser un modele preentraine.")],
     12: [("dl-projet.png", "Des reseaux profonds aux LLM.")],
+    13: [("dl-retenir.png", "Carte DL : des neurones aux LLM.")],
+    14: [("dl-atelier-intuition.png", "Atelier : neurone, reseau, boucle d'apprentissage.")],
+    15: [("dl-atelier-cnn.png", "Atelier CNN : plan de projet vision.")],
+    16: [("dl-atelier-transformer.png", "Atelier transformer : attention, RAG, risques.")],
+    17: [
+        ("dl-choix.png", "Choisir une architecture selon le probleme."),
+        ("dl-scene-limites.png", "Exemple : une prediction confiante peut exiger un humain."),
+    ],
+    18: [("dl-limites.png", "Limites : donnees, opaqueite, hors distribution, abstention.")],
+    19: [("dl-pratiques.png", "Bonnes pratiques : avant, pendant, apres.")],
+    20: [("dl-quiz.png", "Quiz : verifier le socle sans notes.")],
     21: [("dl-felicitations.png", "Bravo. Tu as une carte du deep learning.")],
 }
 
@@ -94,8 +140,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -111,13 +162,49 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
+    """Schema juste apres le H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(
+                r"(</aside>)",
+                r"\1\n" + scene_block,
+                body_html,
+                count=1,
+            )
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:

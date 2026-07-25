@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">CPU vs GPU : flexibilite vs parallelisme</text>
+
+  <rect x="100" y="120" width="340" height="300" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="270" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">CPU</text>
+  <text x="270" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Peu de coeurs</text>
+  <text x="270" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">tres flexibles</text>
+  <text x="270" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">logique, data loading</text>
+
+  <rect x="560" y="120" width="340" height="300" rx="16" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="730" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a6410" font-weight="700">GPU</text>
+  <text x="730" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410">Des milliers de coeurs</text>
+  <text x="730" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410">operations similaires</text>
+  <text x="730" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410">matrices, convolutions</text>
+
+  <text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#3d5248">Utile pour entrainer ; pas obligatoire pour comprendre</text>
+
+</svg>
