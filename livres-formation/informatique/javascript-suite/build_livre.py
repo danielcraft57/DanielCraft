@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("javascript2")
+BOOK_CSS = get_book_css("javascript2") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -49,21 +68,63 @@ CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     ],
     2: [
         ("js2-formulaire.png", "Valider avant d'envoyer, expliquer l'erreur clairement."),
+        ("js2-scene-formulaire.png", "Exemple : Nom, Email, Message - valider avant Envoyer."),
     ],
     3: [
         ("js2-json.png", "JSON = donnees rangees en texte, lisibles par la machine."),
     ],
     4: [
         ("js2-fetch.png", "Ta page demande des infos a un serveur, puis affiche la reponse."),
+        ("js2-scene-fetch.png", "Exemple : Charger, attendre, puis afficher la liste."),
+    ],
+    5: [
+        ("js2-promesses.png", "Promesse = un ticket. then si OK, catch si erreur."),
     ],
     6: [
         ("js2-async.png", "async/await : attendre sans bloquer, dans un ordre lisible."),
     ],
+    7: [
+        ("js2-erreurs-reseau.png", "Message simple pour l'utilisateur, details pour toi."),
+    ],
+    8: [
+        ("js2-fetch-post.png", "POST : envoyer les donnees du formulaire au serveur."),
+    ],
     9: [
         ("js2-modules.png", "Un fichier = une responsabilite. import / export."),
+        ("js2-scene-modules.png", "Exemple : main, api, afficher - chacun son role."),
+    ],
+    10: [
+        ("js2-organiser.png", "Un role par fichier pour maintenir sans peur."),
+    ],
+    11: [
+        ("js2-deboguer.png", "Reproduire, lire la console, isoler une ligne."),
     ],
     12: [
         ("js2-projet.png", "Mini-projet : recuperer des donnees et les montrer proprement."),
+    ],
+    13: [
+        ("js2-retenir.png", "Carte : formulaires, JSON, fetch, async, modules, perf."),
+    ],
+    14: [
+        ("js2-atelier-form.png", "Saisir, valider, message clair."),
+    ],
+    15: [
+        ("js2-atelier-fetch.png", "Demander, attendre, afficher ou erreur."),
+    ],
+    16: [
+        ("js2-atelier-modules.png", "export, import, utiliser."),
+    ],
+    17: [
+        ("js2-cors.png", "Sans autorisation du serveur, le navigateur bloque."),
+    ],
+    18: [
+        ("js2-debounce.png", "Agir apres la pause, pas a chaque touche."),
+    ],
+    19: [
+        ("js2-perf.png", "Moins de fetch, moins de DOM, feedback clair."),
+    ],
+    20: [
+        ("js2-quiz.png", "Verifier sans inventer."),
     ],
     21: [
         ("js2-felicitations.png", "Bravo. Tu sais faire parler ta page avec le monde exterieur."),
@@ -112,8 +173,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -129,13 +195,44 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
+    """Schema sous le H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(r"(</aside>)", r"\1\n" + scene_block, body_html, count=1)
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:

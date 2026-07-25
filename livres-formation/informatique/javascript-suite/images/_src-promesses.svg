@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Promesse = un ticket, pas encore le resultat</text>
+<rect x="80" y="120" width="240" height="200" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="200" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2a3a8f" font-weight="700">fetch</text>
+<text x="200" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="400">ticket</text>
+<rect x="380" y="120" width="240" height="200" rx="14" fill="#2a3a8f" stroke="#2a3a8f" stroke-width="3"/>
+<text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">attente</text>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#a8e063" font-weight="400">...</text>
+<rect x="680" y="100" width="240" height="110" rx="14" fill="#ffffff" stroke="#5a7a20" stroke-width="3"/>
+<text x="800" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2a3a8f" font-weight="700">then OK</text>
+<rect x="680" y="230" width="240" height="110" rx="14" fill="#e8ecf8" stroke="#2a3a8f" stroke-width="3"/>
+<text x="800" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">catch erreur</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">Tu as une reference tout de suite. Les donnees arrivent plus tard.</text>
+</svg>

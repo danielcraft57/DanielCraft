@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400">
+<rect width="1000" height="400" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Quiz : verifier sans inventer</text>
+<rect x="200" y="120" width="600" height="180" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2a3a8f" font-weight="700">Lis. Choisis A / B / C.</text>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">Si doute : reouvre le chapitre.</text>
+</svg>

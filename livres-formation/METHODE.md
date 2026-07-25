@@ -78,8 +78,10 @@ Illustrations ambiance (couverture, bravo) : generation image OK, puis copie dan
 ### Exemples images generes (optionnel)
 
 Quelques scenes pedagogiques generees (2 a 5 / livre) pour ancrer un exemple concret.
-Branchées dans `CHAPTER_IMAGES` en plus du schema (caption FR).
+Branchees dans `CHAPTER_IMAGES` en plus du schema (caption FR).
 Ne remplacent pas le schema. Eviter une image generee a chaque chapitre (cout + poids PDF).
+
+**Placement** : schema sous le H1 ; scene au milieu avant `## Petite histoire` (fallback : Erreur classique / En vrai / A toi). Prefixe `*-scene-*.png`. Voir JS bases (`inject_figures`).
 
 ### Compression
 

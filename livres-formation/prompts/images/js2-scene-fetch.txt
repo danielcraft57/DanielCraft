@@ -1,0 +1,3 @@
+Illustration pedagogique JS suite - fetch.
+Scene flat : page qui charge des donnees puis affiche une liste. Labels FR : Charger, Chargement...
+Texte UI FRANCAIS uniquement.

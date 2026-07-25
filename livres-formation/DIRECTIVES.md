@@ -73,8 +73,12 @@ Un geste pratique a tester tout de suite.
   - Couverture + felicitation.
   - **Schema obligatoire** par chapitre (cours, ateliers, quiz inclus ; SVG FR -> PNG via `CHAPTER_IMAGES`). Caption courte en francais. Preferer un schema clair a une rangee d'emojis.
   - **Exemples images generes** (optionnels) : oui, on peut en mettre **quelques-uns** (environ 2 a 5 par livre, sur les chapitres ou ca aide vraiment). Scene pedagogique concrete (ex. Lea devant la console, Max qui clique un bouton, ecran avec erreur lue). Caption FR. Ces images **completent** le schema, elles ne le remplacent pas. Pas une illustration a chaque chapitre (cout + PDF trop lourd).
+  - **Placement des visuels** (obligatoire) :
+    1. Schema juste sous le H1 (carte / idee du chapitre).
+    2. Scene generee **au milieu** du chapitre pour aerer le texte - injecter **avant** `## Petite histoire` (sinon avant Erreur classique / En vrai / A toi). Ne pas empiler schema + scene sous le titre.
+  - Fichiers scene : prefixe clair (ex. `js-scene-*.png`, `js2-scene-*.png`) pour que le build les distingue des schemas.
   - Tout texte visible dans une image = **francais uniquement**.
-- **Workflow** : un livre a la fois. Rebuild PDF, commit cible, attendre OK avant le suivant.
+- **Workflow** : un livre a la fois. Rebuild PDF, commit cible, puis enchaîner le suivant (pas d'agents paralleles multi-livres).
 - PDF finaux dans `pdf/`.
 
 ## Lecture et comprehension (bonnes pratiques)

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Deboguer : lire avant de tout reecrire</text>
+<rect x="120" y="120" width="760" height="240" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">1. Reproduire</text>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">2. Lire la console</text>
+<text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">3. Isoler une ligne</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">Un log clair bat dix essais au hasard.</text>
+</svg>

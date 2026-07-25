@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Carte JS suite</text>
+<rect x="40" y="100" width="220" height="90" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="150" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">formulaires</text>
+<rect x="280" y="100" width="220" height="90" rx="14" fill="#e8ecf8" stroke="#2a3a8f" stroke-width="3"/>
+<text x="390" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">JSON</text>
+<rect x="520" y="100" width="220" height="90" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="630" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">fetch</text>
+<rect x="760" y="100" width="200" height="90" rx="14" fill="#2a3a8f" stroke="#2a3a8f" stroke-width="3"/>
+<text x="860" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">async</text>
+<rect x="160" y="230" width="280" height="90" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="300" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">erreurs reseau</text>
+<rect x="480" y="230" width="340" height="90" rx="14" fill="#e8ecf8" stroke="#2a3a8f" stroke-width="3"/>
+<text x="650" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">modules + organisation</text>
+<rect x="280" y="360" width="440" height="90" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="500" y="415" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">CORS, debounce, perf</text>
+</svg>
