@@ -1,16 +1,24 @@
 # Chapitre 2 - Apprentissage supervise : apprendre avec les bonnes reponses
 
-L'apprentissage supervise, c'est quand chaque exemple d'entrainement vient avec la "bonne reponse". On appelle souvent X les entrees (features) et y la cible (label). Exemple : surface et quartier (X) -> prix du loyer (y). Ou : texte du mail (X) -> spam / pas spam (y). Le modele apprend une relation. Ensuite, sur de nouveaux X, il propose un y.
+L'apprentissage **supervise**, c'est quand chaque exemple d'entrainement vient avec la "bonne reponse". On appelle souvent X les entrees (**features**) et y la cible (**label**). Exemple : surface et quartier (X) -> prix du loyer (y). Ou : texte du mail (X) -> spam / pas spam (y). Le modele apprend une relation. Ensuite, sur de nouveaux X, il propose un y.
 
 Pourquoi "supervise" ? Parce que les labels jouent le role d'un superviseur : ils corrigent. Sans labels, tu ne peux pas faire de supervise classique. Or labelliser coute cher (temps humain, expertise). C'est souvent le vrai frein des projets, pas l'algorithme a la mode.
 
+:::retenir
+Sans labels clairs, pas de supervise. La definition de y est un cahier des charges, pas un detail.
+:::
+
 ## Deux grandes familles
 
-Si y est un nombre continu (prix, temperature, duree), on parle souvent de regression. Si y est une categorie (spam/ham, malade/sain, chat/chien, risque faible/moyen/eleve), on parle de classification. Les frontieres peuvent etre floues (une note sur 5 peut etre traitee comme nombre ou comme classes). L'important est de savoir ce que tu veux predire et comment tu mesureras l'erreur.
+Si y est un nombre continu (prix, temperature, duree), on parle souvent de **regression**. Si y est une categorie (spam/ham, malade/sain, chat/chien, risque faible/moyen/eleve), on parle de **classification**. Les frontieres peuvent etre floues (une note sur 5 peut etre traitee comme nombre ou comme classes). L'important est de savoir ce que tu veux predire et comment tu mesureras l'erreur.
 
 ## Le deroulement mental
 
-1) Collecter des exemples labels. 2) Nettoyer. 3) Separer train/test. 4) Choisir un modele simple. 5) Entrainer sur train. 6) Evaluer sur test. 7) Inspecter les erreurs. 8) Iterer sur les features et les donnees avant de complexifier le modele. Chez DanielCraft, on insiste : les donnees et la question metier d'abord, la usine a gaz algo ensuite.
+1) Collecter des exemples labels. 2) Nettoyer. 3) Separer **train/test**. 4) Choisir un modele simple. 5) Entrainer sur train. 6) Evaluer sur test. 7) Inspecter les erreurs. 8) Iterer sur les features et les donnees avant de complexifier le modele. Chez DanielCraft, on insiste : les donnees et la question metier d'abord, la usine a gaz algo ensuite.
+
+:::astuce
+Avant de choisir un algo, ecris en une phrase : "je predit Y a partir de X pour decider Z". Si Z est flou, pause.
+:::
 
 ## Exemple Noe
 
@@ -24,9 +32,14 @@ Si tes labels sont sales (annotateurs fatigues, definitions floues), le modele a
 
 Entrainer et "tester" sur les memes lignes, puis crier victoire. Ou changer la definition du label en cours de route sans le dire. Clarifie y comme tu clarifierais un cahier des charges.
 
+:::attention
+Tester sur les memes lignes que l'entrainement, c'est se mentir. Split d'abord, score ensuite.
+:::
+
 ## A toi
 
 Decris un jeu supervise perso : que sont X, que sont y, qui labellise, combien d'exemples tu pourrais avoir en un mois.
+
 ## Qualite des labels
 
 Un label flou produit un modele flou. Si deux annotateurs ne sont pas d'accord sur "retour abusif" versus "retour legitime", le modele apprend le desaccord. Investis du temps dans une definition ecrite, des exemples frontieres, et parfois un double annotation sur un echantillon. C'est moins glamorous que d'essayer un nouvel algo. C'est souvent ce qui decide du succes.

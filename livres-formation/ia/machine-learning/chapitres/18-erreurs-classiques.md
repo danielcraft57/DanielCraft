@@ -1,22 +1,37 @@
 # Chapitre 18 - Erreurs classiques (et comment les voir venir)
 
-Voici une galerie des pieges que presque tout le monde touche une fois. L'objectif n'est pas la honte. C'est la detection precoce.
+Voici une galerie des pieges que presque tout le monde touche une fois. L'objectif n'est pas la honte. C'est la detection precoce. Tu vas reconnaitre des symptomes : score trop beau, protocole flou, **features** interdites, metrique a cote du sujet. Ensuite tu sauras ralentir avant de deployer.
+
+Lis cette page comme une checklist de secours. Quand un resultat te surprend (en bien ou en mal), reviens ici avant d'ajouter un algorithme. Chez DanielCraft, on dit souvent : le piege n'est pas d'etre debutant, c'est de celebrer trop tot.
+
+:::retenir
+Quand le score est trop beau, suspecte d'abord le protocole (split, fuite, metrique), pas ton genie.
+:::
 
 ## Les hits
 
-Tester sur le train. Fuite temporelle. Accuracy sur classes desequilibrees. Features indisponibles en prod. IDs comme features. Optimiser jusqu'a epuiser le jeu test. Confondre correlation et causation. Deployer sans baseline. Ignorer les biais de sous-groupes. Notebook de recherche != script de prod. Metrique jolie, decision metier absente. Sur-complexifier jour 1.
+Tester sur le **train**. Fuite temporelle. **Accuracy** sur classes desequilibrees. Features indisponibles en prod. IDs comme features. Optimiser jusqu'a epuiser le jeu **test**. Confondre correlation et causation. Deployer sans **baseline**. Ignorer les **biais** de sous-groupes. Notebook de recherche != script de prod. Metrique jolie, decision metier absente. Sur-complexifier jour 1.
 
 ## Comment se rattraper
 
 Revenir au contrat : question, moment de prediction, split, baseline, metrique. Reinspecter 20 erreurs. Simplifier. Mesurer par segment. Documenter les limites. Parfois le projet s'arrete : "pas assez de signal" est un resultat honnete.
 
+:::astuce
+Garde une liste de 3 questions anti-demo : split ? baseline ? sous-groupes ? Pose-les a chaque score spectaculaire (le tien inclus).
+:::
+
 ## Mini histoires
 
 Noe a cru tenir un modele de retour a 97 % d'accuracy... en predictant presque toujours "pas de retour" sur un jeu a 8 % de positifs. Lea data (version ML) a scale sur tout le CSV avant split et a fete un score irreel. Sam a utilise la note finale pour predire le risque de decrochage... note connue trop tard. Trois lecons, un meme reflexe : ralentir et verifier le protocole.
 
+:::attention
+97 % d'accuracy avec 8 % de positifs, en predissant presque toujours "non" : le modele a gagne le score, pas le metier.
+:::
+
 ## A toi
 
 Coche les 3 erreurs que tu es le plus susceptible de faire. Ecris un antidote en une phrase pour chacune.
+
 ## Exercice miroir
 
 Prends un article ou un post qui annonce un score spectaculaire. Liste trois questions que tu poserais (split ? baseline ? sous-groupes ?). Garde cette liste pour tes propres demos.

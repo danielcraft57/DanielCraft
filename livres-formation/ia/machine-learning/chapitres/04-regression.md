@@ -1,6 +1,10 @@
 # Chapitre 4 - Regression : predire un nombre
 
-La regression vise a predire une valeur numerique. Prix, duree, temperature, nombre de visites, panier moyen. L'image mentale la plus simple : une courbe (souvent une droite au debut) qui relie des X a un y. Tu ajustes la courbe pour qu'elle passe "au mieux" pres des points d'entrainement, puis tu lis la prediction pour un nouveau X.
+La **regression** vise a predire une valeur numerique. Prix, duree, temperature, nombre de visites, panier moyen. L'idee la plus simple : une courbe (souvent une droite au debut) qui relie des X a un y. Tu ajustes la courbe pour qu'elle passe "au mieux" pres des points d'entrainement, puis tu lis la prediction pour un nouveau X.
+
+:::retenir
+Regression = predire un nombre. Commence simple, mesure, complexifie seulement si le gain est reel.
+:::
 
 ## Regression lineaire : l'intuition
 
@@ -8,15 +12,23 @@ Imagine predire le loyer a partir de la surface. En gros, loyer ≈ a * surface 
 
 ## Au-dela de la droite
 
-Tu peux ajouter des features (quartier, etage, presence d'ascenseur). Tu peux transformer (log du prix). Tu peux utiliser des modeles plus souples (arbres, forets). La regle DanielCraft : commence simple, mesure, complexifie seulement si le gain est reel sur le jeu de test et en conditions proches du deploiement.
+Tu peux ajouter des **features** (quartier, etage, presence d'ascenseur). Tu peux transformer (log du prix). Tu peux utiliser des modeles plus souples (arbres, forets). La regle DanielCraft : commence simple, mesure, complexifie seulement si le gain est reel sur le jeu de **test** et en conditions proches du deploiement.
+
+:::astuce
+Garde toujours une **baseline** "predire la moyenne". Si ta regression ne la bat pas franchement, le probleme est ailleurs (donnees, question, fuites).
+:::
 
 ## Erreurs et unites
 
-Une erreur de 50 euros sur un loyer a 500 euros n'est pas la meme chose qu'une erreur de 50 euros sur un loyer a 3 000 euros. D'ou l'importance des metriques (chapitre dedie) et du sens metier. Noe qui predit des ventes veut savoir s'il se trompe de 5 unites ou de 500 - ca change les commandes fournisseurs.
+Une erreur de 50 euros sur un loyer a 500 euros n'est pas la meme chose qu'une erreur de 50 euros sur un loyer a 3 000 euros. D'ou l'importance des **metriques** (chapitre dedie) et du sens metier. Noe qui predit des ventes veut savoir s'il se trompe de 5 unites ou de 500 - ca change les commandes fournisseurs.
 
 ## Pieges
 
 Fuites de donnees (utiliser une info du futur). Outliers qui tirent la droite. Relations non lineaires ignorees. Croire que R2 eleve sur train suffit. Predire un nombre puis le traiter comme une certitude dans une decision automatique sans marge.
+
+:::attention
+N'extrapolate pas hors de la zone vue a l'entrainement. Une droite sur 20-80 m2 ne "sait" pas predire 300 m2.
+:::
 
 ## Erreur classique
 
@@ -25,9 +37,10 @@ Extrapolateur fou : entrainer sur des surfaces de 20 a 80 m2 puis predire pour 3
 ## A toi
 
 Choisis une cible numerique. Dessine a la main une relation simple avec une feature. Ou croit-elle ? Ou casse-t-elle ?
+
 ## Interpretable d'abord
 
-Une regression lineaire bien faite te dit : "toutes choses egales par ailleurs dans le modele, +10 m2, +X euros". Attention au piege causal : ce n'est pas une preuve que agrandir cree le loyer. Mais pour diagnostiquer et communiquer, c'est precieux. Les modeles boites noires viendront plus tard, si le gain le justifie.
+Une **regression lineaire** bien faite te dit : "toutes choses egales par ailleurs dans le modele, +10 m2, +X euros". Attention au piege causal : ce n'est pas une preuve que agrandir cree le loyer. Mais pour diagnostiquer et communiquer, c'est precieux. Les modeles boites noires viendront plus tard, si le gain le justifie.
 
 ## Developpement : penser comme un artisan des modeles
 

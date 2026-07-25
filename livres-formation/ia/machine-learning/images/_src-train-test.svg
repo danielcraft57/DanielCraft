@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#edf2f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Train / test : ne pas se mentir</text>
+<rect x="80" y="140" width="400" height="240" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
+<text x="280" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#9c4221" font-weight="700">Train</text>
+<text x="280" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#9c4221" font-weight="400">apprendre</text>
+<text x="280" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">~70-80 %</text>
+<rect x="520" y="140" width="400" height="240" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="720" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a202c" font-weight="700">Test</text>
+<text x="720" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#718096" font-weight="400">evaluer</text>
+<text x="720" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">cas reserves</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Le test simule le futur. Ne l'utilise pas pour tout regler.</text>
+</svg>

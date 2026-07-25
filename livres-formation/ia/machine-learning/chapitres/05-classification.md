@@ -1,6 +1,10 @@
 # Chapitre 5 - Classification : predire une classe
 
-Classifier, c'est attribuer une categorie. Spam ou non. Client a risque ou non. Produit defaillant ou non. Langue detectee. Type de ticket support. La sortie n'est pas un prix ; c'est une case (parfois un score de probabilite avant la case).
+**Classifier**, c'est attribuer une categorie. Spam ou non. Client a risque ou non. Produit defaillant ou non. Langue detectee. Type de ticket support. La sortie n'est pas un prix ; c'est une case (parfois un score de probabilite avant la case).
+
+:::retenir
+Classification = predire une classe. Le seuil et le cout des erreurs comptent plus qu'un score "joli".
+:::
 
 ## Frontiere de decision
 
@@ -8,11 +12,19 @@ Imagine des points de deux couleurs sur un plan. Un classifieur trace une fronti
 
 ## Scores et seuils
 
-Beaucoup de modeles sortent un score ("probabilite" de spam). Tu choisis un seuil : au-dessus, tu filtres. Baisser le seuil attrape plus de spam mais risque de bloquer des mails legimes. Monter le seuil l'inverse. Le "meilleur" seuil depend du cout des erreurs - pas d'une beaute mathematique.
+Beaucoup de modeles sortent un score ("probabilite" de spam). Tu choisis un **seuil** : au-dessus, tu filtres. Baisser le seuil attrape plus de spam mais risque de bloquer des mails legimes. Monter le seuil l'inverse. Le "meilleur" seuil depend du cout des erreurs - pas d'une beaute mathematique.
+
+:::astuce
+Ecris d'abord le cout d'un **faux positif** et d'un **faux negatif**. Le seuil se deduit souvent de ca, pas d'une courbe seule.
+:::
 
 ## Classes desequilibrees
 
-Si 1 % des commandes sont frauduleuses, un modele naif qui dit toujours "pas fraude" a 99 % de exactitude globale... et zero interet. Il faut des metriques adaptees (precision, rappel, F1, cout metier) et parfois des strategies d'echantillonnage. Noe avec 8 % de retours doit regarder la detection des retours, pas seulement le taux global de bonnes reponses.
+Si 1 % des commandes sont frauduleuses, un modele naif qui dit toujours "pas fraude" a 99 % de exactitude globale... et zero interet. Il faut des **metriques** adaptees (precision, rappel, F1, cout metier) et parfois des strategies d'echantillonnage. Noe avec 8 % de retours doit regarder la detection des retours, pas seulement le taux global de bonnes reponses.
+
+:::attention
+Sur classes desequilibrees, l'**accuracy** globale peut etre excellente et le modele inutile. Regarde precision, rappel, et la matrice de confusion.
+:::
 
 ## Multclasse
 
@@ -25,7 +37,8 @@ Optimiser l'accuracy aveugle sur un jeu desequilibre. Ou deployer un classifieur
 ## A toi
 
 Pour une classification de ton monde, ecris : cout d'un faux positif, cout d'un faux negatif. Lequel est pire ? Ca guidera ton seuil.
-## Probabilites calibreés (idee)
+
+## Probabilites calibrees (idee)
 
 Un score de 0,8 devrait vouloir dire "environ 80 % de chances" si tu veux l'utiliser comme probabilite. Ce n'est pas toujours vrai hors boite. Pour debuter, traite les scores comme des ordres utiles pour ranger, choisis un seuil metier, et mefie-toi des interpretations trop litterales tant que tu n'as pas verifie la calibration.
 

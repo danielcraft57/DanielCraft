@@ -1,22 +1,34 @@
 # Chapitre 8 - Train / test : apprendre sans se mentir
 
-Si tu evalues un modele sur les memes exemples que ceux qui ont servi a l'entrainer, tu te mentiras presque toujours : le modele a pu "retenir" au lieu de generaliser. D'ou le geste sacre : separer les donnees. Train pour apprendre. Test pour juger, une fois, proprement. Parfois un jeu de validation pour choisir des reglages, puis un test final touche rarement.
+Si tu evalues un modele sur les memes exemples que ceux qui ont servi a l'entrainer, tu te mentiras presque toujours : le modele a pu "retenir" au lieu de generaliser. D'ou le geste sacre : separer les donnees. **Train** pour apprendre. **Test** pour juger, une fois, proprement. Parfois un jeu de **validation** pour choisir des reglages, puis un test final touche rarement.
+
+:::retenir
+Train pour apprendre, test pour juger. Sans split honnete, tout score est suspect.
+:::
 
 ## Comment separer
 
 Aleatoire quand les lignes sont independantes. Temporelle quand le temps compte (entraine sur le passe, teste sur le futur) - souvent plus realiste pour Noe et les ventes. Par groupe (par client) si plusieurs lignes appartiennent a la meme entite et que tu ne veux pas de fuite. Le pourcentage classique 80/20 n'est qu'une habitude ; l'important est le protocole honnete.
 
+:::astuce
+Si ton monde change dans le temps (ventes, saison), prefere un split temporel a un tirage aleatoire. C'est plus proche de la prod.
+:::
+
 ## Validation croisee (idee)
 
-Quand tu as peu de donnees, tu peux tourner plusieurs decoupes (cross-validation) et moyenner les scores. Ca stabilise l'estimation. Ca ne remplace pas un vrai test sur des donnees plus recentes si ton monde change.
+Quand tu as peu de donnees, tu peux tourner plusieurs decoupes (**cross-validation**) et moyenner les scores. Ca stabilise l'estimation. Ca ne remplace pas un vrai test sur des donnees plus recentes si ton monde change.
 
 ## Fuite (data leakage)
 
-Toute information du test qui contamine le train ou le preprocessing fait exploser les scores artificiellement. Exemples : normaliser sur tout le dataset avant split ; choisir les features en regardant le test ; inclure la cible deguisee. Le pipeline doit ajuster ses transformations sur le train uniquement, puis les appliquer au test.
+Toute information du test qui contamine le train ou le preprocessing fait exploser les scores artificiellement. Exemples : normaliser sur tout le dataset avant split ; choisir les features en regardant le test ; inclure la cible deguisee. Le **pipeline** doit ajuster ses transformations sur le train uniquement, puis les appliquer au test.
+
+:::attention
+Normaliser ou encoder sur tout le CSV avant le split, c'est de la fuite. Fit sur le train seulement.
+:::
 
 ## Ritual DanielCraft
 
-1) Definir la question et le moment de prediction. 2) Split honnete. 3) Baseline stupide (toujours predire la moyenne / la classe majoritaire). 4) Modele simple. 5) Comparer au baseline sur test. Si tu ne bats pas le baseline, tu n'as pas encore de victoire.
+1) Definir la question et le moment de prediction. 2) Split honnete. 3) **Baseline** stupide (toujours predire la moyenne / la classe majoritaire). 4) Modele simple. 5) Comparer au baseline sur test. Si tu ne bats pas le baseline, tu n'as pas encore de victoire.
 
 ## Erreur classique
 
@@ -25,6 +37,7 @@ Retoucher le modele jusqu'a ce que le score test soit parfait... en regardant le
 ## A toi
 
 Decris ton split : methode (aleatoire / temps / groupe), proportions, baseline stupide. Ecris pourquoi ce split evite (ou non) la fuite.
+
 ## Simulation de production
 
 Le meilleur test ressemble au futur : memes sources, memes delais, memes manquants. Si en labo tu as des champs complets et en prod la moitie manquent, ton score labo ment. Construis un jeu qui imite la prod, meme plus petit.

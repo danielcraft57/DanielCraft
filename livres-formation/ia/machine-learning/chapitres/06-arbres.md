@@ -1,6 +1,10 @@
 # Chapitre 6 - Arbres de decision : des questions en cascade
 
-Un arbre de decision, c'est un enchainement de questions simples sur les features, jusqu'a une feuille qui donne une prediction. Exemple : montant > 100 ? oui -> client deja revenu ? non -> risque de retour eleve. C'est lisible. Ca plait aux metiers. Ca capture des interactions (tel effet seulement si telle condition).
+Un **arbre de decision**, c'est un enchainement de questions simples sur les **features**, jusqu'a une feuille qui donne une prediction. Exemple : montant > 100 ? oui -> client deja revenu ? non -> risque de retour eleve. C'est lisible. Ca plait aux metiers. Ca capture des interactions (tel effet seulement si telle condition).
+
+:::retenir
+Un arbre pose des questions en cascade. Lisible pour le metier, fragile s'il devient trop profond.
+:::
 
 ## Pourquoi c'est pedagogique
 
@@ -8,11 +12,19 @@ Tu peux montrer l'arbre a Noe et il comprend sans equation. Tu vois ou le modele
 
 ## Limites d'un arbre seul
 
-Un arbre profond colle trop aux donnees d'entrainement (overfitting). Un arbre trop petit sous-apprend. Les frontieres sont souvent paralleles aux axes (questions du type feature > seuil), ce qui peut etre maladroit pour certaines formes. La solution courante : des ensembles d'arbres (forets, boosting). L'idee : plusieurs arbres votent ou se corrigent, plus robustes, un peu moins lisibles.
+Un arbre profond colle trop aux donnees d'entrainement (**overfitting**). Un arbre trop petit sous-apprend. Les frontieres sont souvent paralleles aux axes (questions du type feature > seuil), ce qui peut etre maladroit pour certaines formes. La solution courante : des ensembles d'arbres (**forets**, boosting). L'idee : plusieurs arbres votent ou se corrigent, plus robustes, un peu moins lisibles.
+
+:::attention
+Un arbre geant n'est pas un trophee. C'est souvent un drapeau rouge d'overfitting. Limite la profondeur et verifie sur **test**.
+:::
 
 ## Regles de bonne vie
 
 Commence par un arbre peu profond pour explorer. Controle la profondeur. Verifie sur test. Regarde l'importance des features (quelles questions servent souvent). Ne prends pas une importance comme une preuve causale : "associe a" n'est pas "cause".
+
+:::astuce
+Interdis les IDs uniques (numero de commande, email) comme features. L'arbre s'en sert comme antiseche, puis echoue en production.
+:::
 
 ## Erreur classique
 
@@ -21,9 +33,10 @@ Montrer un arbre geant comme preuve de sophistication. Un arbre geant est souven
 ## A toi
 
 Sans code, ecris un mini-arbre a 3 questions pour une decision de ton quotidien pro. Est-il juste ? Ou revele-t-il un biais ?
+
 ## Forets et boosting (apercu)
 
-Une foret aleatoire : beaucoup d'arbres, chacun voit un sous-ensemble, vote. Plus robuste, moins interpretable qu'un seul arbre. Le boosting : des arbres qui corrigent les erreurs les uns des autres, souvent tres performants sur tableaux. Tu peux les utiliser plus tard ; comprends d'abord un arbre seul pour garder l'intuition.
+Une **foret aleatoire** : beaucoup d'arbres, chacun voit un sous-ensemble, vote. Plus robuste, moins interpretable qu'un seul arbre. Le boosting : des arbres qui corrigent les erreurs les uns des autres, souvent tres performants sur tableaux. Tu peux les utiliser plus tard ; comprends d'abord un arbre seul pour garder l'intuition.
 
 ## Developpement : penser comme un artisan des modeles
 

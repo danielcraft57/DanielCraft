@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#edf2f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Regression : predire un nombre</text>
+<line x1="120" y1="400" x2="880" y2="400" stroke="#1a202c" stroke-width="2"/>
+<line x1="120" y1="400" x2="120" y2="100" stroke="#1a202c" stroke-width="2"/>
+<circle cx="220" cy="320" r="8" fill="#2d3748"/>
+<circle cx="320" cy="280" r="8" fill="#2d3748"/>
+<circle cx="420" cy="250" r="8" fill="#2d3748"/>
+<circle cx="520" cy="210" r="8" fill="#2d3748"/>
+<circle cx="620" cy="180" r="8" fill="#2d3748"/>
+<circle cx="720" cy="150" r="8" fill="#2d3748"/>
+<line x1="160" y1="360" x2="820" y2="120" stroke="#ed8936" stroke-width="4"/>
+<text x="900" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">X</text>
+<text x="90" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">y</text>
+<rect x="640" y="300" width="280" height="80" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
+<text x="780" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#9c4221" font-weight="400">prix, duree, volume...</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Une courbe (souvent une droite) relie X a un y numerique.</text>
+</svg>

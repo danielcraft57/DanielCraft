@@ -1,16 +1,24 @@
 # Chapitre 1 - Salut, c'est quoi le machine learning ?
 
-Le machine learning, c'est l'art d'apprendre a une machine a partir d'exemples, au lieu d'ecrire a la main toutes les regles. Tu montres des cas. Le modele ajuste ses parametres. Ensuite, face a un cas nouveau, il predit, classe, regroupe, ou estime un nombre. Ce n'est pas de la magie. Ce n'est pas non plus "l'IA qui ecrit des romans". C'est souvent plus discret, et partout : spam, recommandations, detection de fraude, prevision de demande, diagnostic assiste, tri de photos.
+Le **machine learning**, c'est l'art d'apprendre a une machine a partir d'exemples, au lieu d'ecrire a la main toutes les regles. Tu montres des cas. Le modele ajuste ses parametres. Ensuite, face a un cas nouveau, il predit, classe, regroupe, ou estime un nombre. Ce n'est pas de la magie. Ce n'est pas non plus "l'IA qui ecrit des romans". C'est souvent plus discret, et partout : spam, recommandations, detection de fraude, prevision de demande, diagnostic assiste, tri de photos.
 
 Chez DanielCraft, on aime partir d'une image simple. Imagine que tu veux savoir si un mail est indesirable. Au lieu d'ecrire mille regles ("si le mot viagra alors spam"), tu montres des milliers de mails deja labels "spam" ou "pas spam". Le modele cherche des motifs. Puis il score de nouveaux mails. Il se trompera parfois. Ton travail, c'est de mesurer ces erreurs, de choisir les bons exemples, et de savoir quand ne pas faire confiance.
 
+:::retenir
+Le machine learning apprend sur des exemples. Il predit, il ne "comprend" pas comme toi.
+:::
+
 ## Ce que ce livre va faire
 
-Tu vas comprendre l'apprentissage supervise et non supervise, la regression, la classification, les arbres de decision, le decoupage train/test, l'overfitting, les features, les metriques, l'idee de pipeline, les biais dans les donnees, et l'esprit de scikit-learn sans jargon opaque. Puis un recap, des ateliers, des bonnes pratiques, un quiz, un bravo. Niveau debutant curieux. Pas besoin d'etre data scientist. Besoin d'aimer les exemples concrets.
+Tu vas comprendre l'apprentissage **supervise** et non supervise, la regression, la classification, les arbres de decision, le decoupage **train/test**, l'**overfitting**, les **features**, les metriques, l'idee de pipeline, les biais dans les donnees, et l'esprit de scikit-learn sans jargon opaque. Puis un recap, des ateliers, des bonnes pratiques, un quiz, un bravo. Niveau debutant curieux. Pas besoin d'etre data scientist. Besoin d'aimer les exemples concrets.
 
 ## Machine learning vs IA generative
 
 Un LLM genere du texte. Un modele de machine learning "classique" repond souvent a une question etroite : quel prix ? quelle classe ? quel cluster ? Les deux existent en 2026. Ce livre se concentre sur le second, parce que beaucoup de decisions metier reposent encore la-dessus, et parce que comprendre ca t'aide aussi a demystifier l'IA en general.
+
+:::astuce
+Avant de lire plus loin, note une prediction utile dans ton metier (un nombre ou une classe). Tu t'en serviras comme fil rouge.
+:::
 
 ## Fil rouge
 
@@ -20,9 +28,14 @@ On suivra Noe, qui tient une petite boutique en ligne d'equipement sportif. Il v
 
 Croire que "plus de donnees = automatiquement mieux" sans regarder la qualite. Ou croire qu'un score eleve sur les donnees d'entrainement prouve que le modele est bon. Spoiler du chapitre overfitting : non.
 
+:::attention
+Un score brillant sur l'entrainement ne prouve rien. Ce qui compte, c'est le comportement sur des cas nouveaux.
+:::
+
 ## A toi
 
 Ecris une prediction utile dans ton monde (nombre ou classe). Note quelles donnees tu aurais, et ce qui se passerait si le modele se trompe. Garde ce papier.
+
 ## Ou le ML se cache dans ta vie
 
 Ton streaming te propose une serie : un modele a estime une preference. Ta banque bloque une carte : un score d'anomalie a clignote. Ton app photo regroupe des visages : un regroupement / reconnaissance. Ton outil mail range des pourriels : une classification. Rarement tu vois le mot "machine learning" sur le bouton. Souvent tu vois juste un comportement. Ce livre te rend capable de reconnaitre la logique derriere le comportement, et surtout de la construire proprement quand tu en as besoin.

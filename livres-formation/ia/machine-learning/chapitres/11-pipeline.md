@@ -1,6 +1,10 @@
-# Chapitre 11 - Pipeline : enchaîner proprement les etapes
+# Chapitre 11 - Pipeline : enchainer proprement les etapes
 
-Un pipeline, c'est une chaine : preparation des features, modele, prediction. L'interet n'est pas cosmétique. C'est d'eviter la triche et le chaos : les memes transformations au train et au test, dans le bon ordre, sans fuite, reproductibles.
+Un **pipeline**, c'est une chaine : preparation des **features**, modele, prediction. L'interet n'est pas cosmétique. C'est d'eviter la triche et le chaos : les memes transformations au train et au test, dans le bon ordre, sans fuite, reproductibles.
+
+:::retenir
+Pipeline = meme chaine train et prod, fit sur le train seulement. Moins de fuite, plus de clarte.
+:::
 
 ## Etapes typiques
 
@@ -8,7 +12,11 @@ Un pipeline, c'est une chaine : preparation des features, modele, prediction. L'
 
 ## Pourquoi scikit-learn aime ca
 
-Dans l'esprit scikit-learn (chapitre suivant), on branche des etapes qui exposent fit / transform / predict. Tu fais fit sur le train, transform sur le test, predict. Si tu ajoutes une etape, tu l'inseres dans la chaine, tu ne recopies pas six scripts divergents. Moins d'erreurs humaines. Plus de clarte.
+Dans l'esprit **scikit-learn** (chapitre suivant), on branche des etapes qui exposent **fit** / **transform** / predict. Tu fais fit sur le train, transform sur le test, predict. Si tu ajoutes une etape, tu l'inseres dans la chaine, tu ne recopies pas six scripts divergents. Moins d'erreurs humaines. Plus de clarte.
+
+:::astuce
+Dessine le pipeline en boites avant de coder. Marque clairement ou se fait le fit et ou se fait le transform.
+:::
 
 ## Reproductibilite
 
@@ -16,7 +24,11 @@ Fixe les graines aleatoires quand c'est pertinent. Versionne le code et note la 
 
 ## Monitoring apres deploiement
 
-Les donnees derivent : nouveaux produits, nouvelle saison, nouveau comportement. Surveille les distributions de features et les metriques dans le temps. Prevois un reentrainement. Un pipeline sans monitoring est une fusée sans tableau de bord.
+Les donnees derivent : nouveaux produits, nouvelle saison, nouveau comportement. Surveille les distributions de features et les **metriques** dans le temps. Prevois un reentrainement. Un pipeline sans monitoring est une fusee sans tableau de bord.
+
+:::attention
+Un notebook de recherche different du script de prod, c'est le piege classique. Unifie tot, sinon le score labo ne veut plus rien dire.
+:::
 
 ## Erreur classique
 
@@ -25,6 +37,7 @@ Preprocessing "a la main" different entre le notebook de recherche et le script 
 ## A toi
 
 Dessine ton pipeline en 6 boites. Marque ou se fait le fit, ou se fait le transform, ou se calcule la metrique.
+
 ## Tests du pipeline
 
 Meme sans framework lourd : une ligne typique traverse la chaine ; une ligne avec manquants ; une categorie inconnue ; une date future. Si ca casse en silence, tu le sauras trop tard. Automatise ces cas des que tu peux.

@@ -1,10 +1,20 @@
 # Chapitre 14 - A retenir
 
-Machine learning = apprendre a partir d'exemples. Supervise = avec labels. Non supervise = structures sans labels. Regression = nombre. Classification = classe. Arbres = questions en cascade. Features = ce que le modele voit, disponibles au bon moment. Train/test = ne pas se mentir. Overfitting = coller au train, rater le futur. Metriques = alignées au cout metier. Pipeline = chaines propres sans fuite. Biais = le modele herite des donnees. Scikit-learn = grammaire fit / transform / predict.
+**Machine learning** = apprendre a partir d'exemples. **Supervise** = avec labels. Non supervise = structures sans labels. **Regression** = nombre. Classification = classe. Arbres = questions en cascade. **Features** = ce que le modele voit, disponibles au bon moment. **Train/test** = ne pas se mentir. **Overfitting** = coller au train, rater le futur. Metriques = alignees au cout metier. **Pipeline** = chaines propres sans fuite. Biais = le modele herite des donnees. Scikit-learn = grammaire fit / transform / predict.
+
+Ce chapitre n'invente rien de nouveau. Il compacte le parcours pour que tu puisses y revenir comme a une fiche murale. Si une ligne te parait encore floue, retourne au chapitre dedie plutot que de forcer. Chez DanielCraft, on prefere une boucle courte bien digeree a une encyclopedie demi-comprise.
+
+:::retenir
+Question claire, donnees honnetes, split, baseline, modele simple, metrique metier, erreurs regardees - puis seulement la complexite.
+:::
 
 ## Boucle DanielCraft
 
 Question claire -> donnees honnetes -> split -> baseline -> modele simple -> metrique metier -> inspection des erreurs -> features -> seulement ensuite complexite -> surveillance apres deploiement.
+
+:::astuce
+Recopie la boucle en TES mots sur une page. Ajoute ton exemple (Noe ou le tien) a chaque etape. Une page bat dix slides.
+:::
 
 ## Ce que tu peux oublier
 
@@ -13,9 +23,14 @@ La liste de tous les algorithmes a la mode. Garde les gestes. Change d'outil si 
 ## A toi
 
 Recopie la boucle en TES mots sur une page. Ajoute ton exemple Noe (ou le tien) a chaque etape.
+
 ## Checklist une minute
 
 Question ? Label ? Instant T ? Split ? Baseline ? Metrique ? Erreurs regardees ? Biais ? Pipeline ? Monitoring ? Si tu coches, tu es deja au-dessus de beaucoup de demos LinkedIn.
+
+:::astuce
+Colle cette checklist pres de ton ecran. Avant chaque "victoire" de score, parcours-la en trente secondes.
+:::
 
 ## Developpement : penser comme un artisan des modeles
 

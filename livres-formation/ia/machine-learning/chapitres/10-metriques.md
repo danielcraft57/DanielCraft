@@ -1,22 +1,34 @@
 # Chapitre 10 - Metriques : mesurer sans se raconter d'histoires
 
-Une metrique traduit une erreur en nombre. Mauvaise metrique, mauvaise decision. La "bonne" metrique depend du cout metier, pas de la mode GitHub.
+Une **metrique** traduit une erreur en nombre. Mauvaise metrique, mauvaise decision. La "bonne" metrique depend du cout metier, pas de la mode GitHub.
+
+:::retenir
+Choisis la metrique pour le cout metier, pas pour impressionner. Traduis toujours le score en decision.
+:::
 
 ## Regression
 
-MAE (erreur absolue moyenne) : lisible en unites de y. RMSE : penalise plus les grosses erreurs. MAPE : en pourcentage, attention aux y proches de zero. R2 : part de variance expliquee, utile mais pas sacre. Regarde aussi des graphiques residus : les nombres seuls mentent parfois.
+**MAE** (erreur absolue moyenne) : lisible en unites de y. RMSE : penalise plus les grosses erreurs. MAPE : en pourcentage, attention aux y proches de zero. R2 : part de variance expliquee, utile mais pas sacre. Regarde aussi des graphiques residus : les nombres seuls mentent parfois.
 
 ## Classification
 
-Accuracy : part de bons labels - trompeuse si classes desequilibrees. Precision : parmi les alertes, combien sont justes. Rappel (recall) : parmi les vrais positifs, combien tu as attrapes. F1 : compromis. Matrice de confusion : le tableau qui montre ou tu te trompes. Courbes et AUC : utiles, a condition de comprendre le seuil ensuite.
+**Accuracy** : part de bons labels - trompeuse si classes desequilibrees. **Precision** : parmi les alertes, combien sont justes. **Rappel** (recall) : parmi les vrais positifs, combien tu as attrapes. F1 : compromis. Matrice de confusion : le tableau qui montre ou tu te trompes. Courbes et AUC : utiles, a condition de comprendre le seuil ensuite.
+
+:::attention
+Sur classes desequilibrees, l'accuracy peut mentir. Pair precision/rappel (ou couts) avant de celebrer.
+:::
 
 ## Cout metier > score unique
 
 Si manquer une fraude coute 1000 et deranger un client sain coute 10, tu n'optimises pas comme si les erreurs etaient egales. Ecris une petite matrice de couts. Choisis seuil et modele en consequence. Noe prefere parfois plus de fausses alertes de retour que rater des retours massifs sur une gamme - ou l'inverse, selon sa logistique.
 
+:::astuce
+Une metrique principale + une metrique de garde-fou. La premiere decide, la seconde empeche les derives.
+:::
+
 ## Baseline toujours
 
-Compare a "toujours predire la moyenne" ou "toujours la classe majoritaire". Un modele complique qui bat a peine le baseline n'est pas un succes. Un modele simple qui le bat nettement, si.
+Compare a "toujours predire la moyenne" ou "toujours la classe majoritaire". Un modele complique qui bat a peine le **baseline** n'est pas un succes. Un modele simple qui le bat nettement, si.
 
 ## Erreur classique
 
@@ -25,6 +37,7 @@ Chasser le 0.01 d'accuracy en ignorant que le label a change de definition. Ou p
 ## A toi
 
 Choisis UNE metrique principale et UNE metrique de garde-fou pour ton projet. Justifie en trois phrases metier.
+
 ## Raconter un score a un non-tech
 
 Evite "notre F1 est 0,73". Prefere : "sur 100 vrais retours, on en attrape 80, et sur 100 alertes, 40 sont des fausses peurs ; voici ce que ca coute". Traduis. Si tu ne peux pas traduire, tu ne choisis peut-etre pas la bonne metrique.

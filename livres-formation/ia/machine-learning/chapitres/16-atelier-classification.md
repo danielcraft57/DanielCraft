@@ -1,10 +1,16 @@
 # Chapitre 16 - Atelier : classification et cout des erreurs
 
-Objectif : concevoir un classifieur en pensant faux positifs / faux negatifs. Duree : 45 minutes.
+Objectif : concevoir un classifieur en pensant **faux positifs** / **faux negatifs**. Duree : 45 minutes. Ici, le score n'est pas le heros. Le heros, c'est le cout : qui souffre si tu te trompes d'un cote, qui souffre de l'autre.
+
+Prends un cas binaire de ton monde (retour oui/non, fraude, ticket urgent...). Ecris les couts avant de toucher a un modele. Ensuite seulement, choisis un **seuil**, une **metrique**, et des **features** sans fuite. Tu sortiras avec une fiche de decision, pas avec un chiffre orphelin.
+
+:::retenir
+Le seuil suit les couts. L'accuracy globale ne decide rien seule sur une classe rare.
+:::
 
 ## Etapes
 
-1) Choisis une cible binaire. 2) Ecris le cout d'un faux positif et d'un faux negatif. 3) Propose un seuil de decision (haut/bas) aligne a ces couts. 4) Dessine une matrice de confusion vide et imagine des effectifs. 5) Choisis precision ou rappel comme metrique principale + une de garde-fou. 6) Liste 5 features sans fuite temporelle. 7) Decris une baseline (classe majoritaire). 8) Option code : arbre peu profond + matrice de confusion.
+1) Choisis une cible binaire. 2) Ecris le cout d'un faux positif et d'un faux negatif. 3) Propose un seuil de decision (haut/bas) aligne a ces couts. 4) Dessine une **matrice de confusion** vide et imagine des effectifs. 5) Choisis precision ou rappel comme metrique principale + une de garde-fou. 6) Liste 5 features sans fuite temporelle. 7) Decris une **baseline** (classe majoritaire). 8) Option code : arbre peu profond + matrice de confusion.
 
 ## Livrable
 
@@ -12,10 +18,17 @@ Fiche "decision classification" avec couts, seuil, metriques, features, plan d'i
 
 ## Piege a eviter
 
-Optimiser l'accuracy globale alors que la classe rare est la seule qui compte.
+Optimiser l'**accuracy** globale alors que la classe rare est la seule qui compte.
+
+:::attention
+Si ta classe positive fait 5 %, un modele "toujours negatif" a 95 % d'accuracy et zero utilite. Regarde la detection de la classe rare.
+:::
+
 ## Prolongement
 
 Fais varier le seuil (bas / milieu / haut) et raconte pour chaque seuil qui gagne et qui perd. Choisis explicitement. Documente.
+
+Quand tu as choisi, explique ton choix a voix haute comme si Noe te demandait pourquoi. Si tu bloques sur "parce que le score est mieux", recommence : le score doit servir une decision, pas l'inverse.
 
 ## Developpement : penser comme un artisan des modeles
 

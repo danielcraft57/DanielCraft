@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#edf2f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Scikit-learn : fit / transform / predict</text>
+<rect x="80" y="150" width="260" height="220" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="210" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a202c" font-weight="700">fit</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">apprendre</text>
+<text x="210" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#718096" font-weight="400">(sur le train)</text>
+<rect x="370" y="150" width="260" height="220" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#9c4221" font-weight="700">transform</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">preparer</text>
+<text x="500" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">X -> X'</text>
+<rect x="660" y="150" width="260" height="220" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="790" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">predict</text>
+<text x="790" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">predire</text>
+<text x="790" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">y_hat</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Une grammaire claire pour encher les etapes sans chaos.</text>
+</svg>

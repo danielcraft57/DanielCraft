@@ -1,6 +1,10 @@
 # Chapitre 7 - Features : ce que le modele "voit"
 
-Les features sont les caracteristiques en entree. Le modele ne voit pas "un client". Il voit des nombres, des categories encodees, des indicateurs. Si tu lui donnes de mauvaises features, le plus bel algorithme restera myope. A l'inverse, de bonnes features avec un modele simple battent souvent un modele complexe sur des entrees pauvres.
+Les **features** sont les caracteristiques en entree. Le modele ne voit pas "un client". Il voit des nombres, des categories encodees, des indicateurs. Si tu lui donnes de mauvaises features, le plus bel algorithme restera myope. A l'inverse, de bonnes features avec un modele simple battent souvent un modele complexe sur des entrees pauvres.
+
+:::retenir
+Le modele ne voit que tes features. Qualite et disponibilite a l'instant T battent la complexite de l'algo.
+:::
 
 ## Types courants
 
@@ -8,15 +12,23 @@ Numeriques (age, montant). Categoriques (pays, categorie produit). Boolennes (de
 
 ## Disponible au bon moment
 
-Si tu predit un retour au moment de l'achat, tu n'as pas le droit d'utiliser "a contacte le support 3 jours apres". Ca n'existe pas encore. Cette fuite temporelle rend les scores magnifiques en labo et nuls en vrai. Pose toujours la question : est-ce que j'aurai cette info a l'instant T ou je predit ?
+Si tu predit un retour au moment de l'achat, tu n'as pas le droit d'utiliser "a contacte le support 3 jours apres". Ca n'existe pas encore. Cette **fuite** temporelle rend les scores magnifiques en labo et nuls en vrai. Pose toujours la question : est-ce que j'aurai cette info a l'instant T ou je predit ?
+
+:::attention
+Toute info connue seulement apres la prediction est interdite. Sinon ton score labo ment.
+:::
 
 ## Nettoyage et preparation
 
-Valeurs manquantes : imputer, signaler, ou exclure selon le cas. Unites coherentes. Outliers inspectes. Categories rares regroupees. Texte normalise si besoin. Scaling pour certains modeles (pas toujours pour les arbres). Le pipeline (chapitre dedie) industrialise ces gestes pour ne pas tricher entre train et test.
+Valeurs manquantes : imputer, signaler, ou exclure selon le cas. Unites coherentes. Outliers inspectes. Categories rares regroupees. Texte normalise si besoin. Scaling pour certains modeles (pas toujours pour les arbres). Le **pipeline** (chapitre dedie) industrialise ces gestes pour ne pas tricher entre train et test.
 
 ## Feature engineering
 
 C'est l'art de creer des variables utiles : jour ferie oui/non, distance a un entrepot, prix relatif a la categorie, nombre d'achats 90 derniers jours. Ca demande du sens metier. Noe sait que les retours explosent sur une taille de textile ; une feature "categorie = textile" + "taille commandee vs taille habituelle" peut valoir mieux qu'un reseau de neurones mal nourri.
+
+:::astuce
+Noe cree "delai promis - delai median historique" plutot que le seul delai brut. Une feature relative bat souvent une colonne brute.
+:::
 
 ## Erreur classique
 
@@ -25,6 +37,7 @@ Tout garder "au cas ou" (bruit, fuites, colonnes identifiantes). Ou tout jeter t
 ## A toi
 
 Pour ton sujet, liste 8 features candidates. Barre celles indisponibles a l'instant de prediction. Il reste quoi ?
+
 ## Documentation des features
 
 Nom, definition, formule, source, fraicheur, dispo a T, valeurs manquantes possibles, exemples. Une page tableur suffit au debut. Quand le projet grossit, cette page evite les conflits ("moi je croyais que montant = TTC"). Chez DanielCraft, on dit qu'une feature non documentee est une dette.

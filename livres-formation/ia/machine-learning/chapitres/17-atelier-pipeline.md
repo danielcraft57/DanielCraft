@@ -1,10 +1,16 @@
 # Chapitre 17 - Atelier : dessiner et valider un pipeline
 
-Objectif : produire un schema de pipeline anti-fuite. Duree : 30 minutes.
+Objectif : produire un schema de **pipeline** anti-fuite. Duree : 30 minutes. Pas besoin de code pour cet atelier. Besoin d'un crayon et de l'honnetete : chaque boite doit dire si elle voit le **train**, le **test**, ou les deux - et a quel moment.
+
+Un pipeline clair, c'est ce qui separe un notebook qui "marche une fois" d'un systeme que tu oses rejouer en production. Tu vas marquer en rouge les tentations de fuite, lister les artefacts a sauver, et prevoir trois signaux de **monitoring**. A la fin, tu dois pouvoir expliquer la chaine a un collegue non tech.
+
+:::astuce
+Si une etape n'est pas assez claire pour l'expliquer a un non-tech, elle n'est pas prete. Simplifie la boite avant d'ajouter une fleche.
+:::
 
 ## Etapes
 
-1) Decoupe : raw -> split -> prep (fit train) -> modele -> predict -> metrique. 2) Marque en rouge toute etape qui utiliserait le test trop tot. 3) Ajoute une branche "nouvelles donnees en prod". 4) Liste les artefacts a sauvegarder (modele, encodeurs, version donnees). 5) Ajoute 3 signaux de monitoring (derive d'une feature, chute metrique, hausse des manquants). 6) Option : ecris un pseudo-code Pipeline style scikit-learn.
+1) Decoupe : raw -> split -> prep (**fit** train) -> modele -> **predict** -> **metrique**. 2) Marque en rouge toute etape qui utiliserait le test trop tot. 3) Ajoute une branche "nouvelles donnees en prod". 4) Liste les artefacts a sauvegarder (modele, encodeurs, version donnees). 5) Ajoute 3 signaux de monitoring (derive d'une feature, chute metrique, hausse des manquants). 6) Option : ecris un pseudo-code Pipeline style **scikit-learn**.
 
 ## Livrable
 
@@ -13,9 +19,16 @@ Schema + checklist anti-fuite a 8 cases cochees.
 ## Conseil DanielCraft
 
 Si une etape n'est pas claire assez pour l'expliquer a un collegue non tech, elle n'est pas prete.
+
+:::attention
+Toute normalisation ou encodage "sur tout le CSV" avant le split est une fuite. Fit sur le train, transform ailleurs.
+:::
+
 ## Prolongement
 
 Ecris la liste des fichiers artefacts (modele.pkl, encodeur, config.yaml mental). Qui a le droit de les ecraser ? Ou vivent-ils ?
+
+Une fois la liste posee, imagine la premiere alerte monitoring : que fais-tu dans l'heure ? Rollback, reentrainement, ou humain dans la boucle ? Note la reponse sur le schema. Un pipeline sans plan de secours reste une demo.
 
 ## Developpement : penser comme un artisan des modeles
 

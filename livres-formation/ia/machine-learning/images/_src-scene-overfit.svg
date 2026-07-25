@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#edf2f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a202c" font-weight="700">Scene : Lea compare train et test</text>
+<rect x="60" y="140" width="280" height="280" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
+<circle cx="200" cy="200" r="26" fill="#9c4221"/>
+<text x="200" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#9c4221" font-weight="700">Lea</text>
+<text x="200" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#9c4221" font-weight="400">ouvre les</text>
+<text x="200" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#9c4221" font-weight="400">deux scores</text>
+<rect x="380" y="160" width="250" height="240" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="505" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a202c" font-weight="700">Train</text>
+<text x="505" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="#ed8936" font-weight="700">98 %</text>
+<text x="505" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#718096" font-weight="400">trop parfait</text>
+<rect x="670" y="160" width="250" height="240" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="795" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a202c" font-weight="700">Test</text>
+<text x="795" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="#1a202c" font-weight="700">62 %</text>
+<text x="795" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#718096" font-weight="400">alerte overfit</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">L'ecart train/test raconte plus qu'un seul chiffre.</text>
+</svg>

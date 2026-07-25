@@ -1,18 +1,30 @@
 # Chapitre 13 - Scikit-learn : l'idee sans jargon opaque
 
-Scikit-learn est une bibliotheque Python tres utilisee pour le machine learning "classique". Tu n'es pas oblige de coder aujourd'hui pour comprendre son esprit. L'idee : une grammaire commune pour splitter, transformer, entrainer, predire, evaluer. Les noms d'algorithmes changent ; le verbe reste : fit, transform, predict, score.
+**Scikit-learn** est une bibliotheque Python tres utilisee pour le **machine learning** "classique". Tu n'es pas oblige de coder aujourd'hui pour comprendre son esprit. L'idee : une grammaire commune pour splitter, transformer, entrainer, predire, evaluer. Les noms d'algorithmes changent ; le verbe reste : **fit**, **transform**, **predict**, score.
+
+:::retenir
+Scikit-learn = grammaire fit / transform / predict. La discipline compte plus que le nom de l'algo.
+:::
 
 ## La grammaire mentale
 
-Tu as un tableau X (lignes = exemples, colonnes = features) et souvent un vecteur y. Tu crees un objet modele. Tu appelles fit(X_train, y_train) : il apprend. Tu appelles predict(X_test) : il propose. Tu calcules une metrique entre y_test et les predictions. Pour les transformateurs (imputation, scaling, encodage), fit apprend les parametres sur le train, transform applique.
+Tu as un tableau X (lignes = exemples, colonnes = **features**) et souvent un vecteur y. Tu crees un objet modele. Tu appelles fit(X_train, y_train) : il apprend. Tu appelles predict(X_test) : il propose. Tu calcules une **metrique** entre y_test et les predictions. Pour les transformateurs (imputation, scaling, encodage), fit apprend les parametres sur le train, transform applique.
 
 ## Pipeline dans scikit-learn
 
-Tu enchaînes transformateurs + modele dans un Pipeline. Un seul fit sur le train. Un seul predict sur le nouveau. Moins de fuite. Plus propre. C'est exactement le chapitre pipeline mis en code. Meme si tu utilises un autre outil plus tard, cette discipline reste.
+Tu enchaines transformateurs + modele dans un **Pipeline**. Un seul fit sur le train. Un seul predict sur le nouveau. Moins de fuite. Plus propre. C'est exactement le chapitre pipeline mis en code. Meme si tu utilises un autre outil plus tard, cette discipline reste.
+
+:::astuce
+Sans ecrire de code, decris mentalement : colonnes de X, colonne y, premier modele simple, metrique. Si tu codes, commence par battre une baseline.
+:::
 
 ## Ce que scikit-learn fait bien
 
 Modeles solides pour tableaux (regression, classification, clustering). Outils de validation croisee, recherche de reglages, metriques. Excellent pour apprendre. Limites : ce n'est pas le coeur du deep learning a grande echelle (autres librairies), ni le traitement du langage type LLM. Pour Noe sur un CSV de commandes, c'est souvent le bon terrain.
+
+:::attention
+Ne scale pas sur tout le dataset avant le split. Fit des transformateurs sur le train uniquement - meme piege, meme regle.
+:::
 
 ## Mini parcours d'apprentissage code (optionnel)
 
@@ -25,7 +37,8 @@ Copier un notebook qui scale sur tout le dataset avant split. Ou choisir un mode
 ## A toi
 
 Sans ecrire de code, decris l'appel mental : quelles colonnes dans X, quelle colonne y, quel modele simple en premier, quelle metrique. Si tu codes deja, implemente la baseline cette semaine.
-## Ecosystème voisin
+
+## Ecosysteme voisin
 
 Pandas pour les tableaux, matplotlib/seaborn pour voir, jupyter pour explorer, puis un script propre pour produire. Scikit-learn se place au milieu : modeles et metriques. Plus tard, d'autres outils viendront ; la discipline fit/transform restera.
 

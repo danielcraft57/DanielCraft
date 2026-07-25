@@ -1,12 +1,24 @@
 # Chapitre 19 - Bonnes pratiques ML
 
+Les bonnes pratiques ne sont pas une religion. C'est une hygiene : clarifier la decision, honorer le **split**, battre une **baseline**, garder un **pipeline** propre, mesurer ce qui compte, surveiller apres coup. Si tu ne fais que ca, tu es deja devant beaucoup de demos qui enchainent les librairies.
+
+Ce chapitre resume le style DanielCraft pour le **machine learning** du quotidien. Tu peux l'afficher, le cocher, le relire avant un go/no-go. L'idee n'est pas d'etre parfait. C'est d'etre coherent du brief jusqu'au monitoring.
+
+:::retenir
+Baseline honnete + protocole clair > modele complexe mal evalue.
+:::
+
 ## Avant de coder
 
-Clarifier la decision metier. Definir y. Definir l'instant de prediction. Estimer le cout des erreurs. Verifier qu'on a (ou peut avoir) des labels. Preferer un projet petit qui decide vraiment a un modele "interessant" qui ne change rien.
+Clarifier la decision metier. Definir y. Definir l'instant de prediction. Estimer le cout des erreurs. Verifier qu'on a (ou peut avoir) des **labels**. Preferer un projet petit qui decide vraiment a un modele "interessant" qui ne change rien.
 
 ## Pendant
 
-Split honnete. Baseline. Modele simple. Pipeline. Metriques alignees. Inspection des erreurs. Features disponibles. Mesure par sous-groupes. Journaliser les experiences (ce que tu as essaye, scores, conclusions).
+Split honnete. Baseline. Modele simple. Pipeline. **Metriques** alignees. Inspection des erreurs. **Features** disponibles. Mesure par sous-groupes. Journaliser les experiences (ce que tu as essaye, scores, conclusions).
+
+:::astuce
+Journalise chaque essai en trois lignes : hypothese, score, conclusion. Tu evites de retenter le meme piege la semaine suivante.
+:::
 
 ## Apres
 
@@ -16,9 +28,14 @@ Sauvegarder artefacts + definitions. Monitoring. Plan de reentrainement. Point h
 
 Celebrer les baselines battues honnetement, pas les scores magiques. Preferer la clarte a la magie. Dire "je ne sais pas encore" quand le signal est faible.
 
+:::attention
+Un score sans limites documentees n'est pas pret pour un utilisateur metier. Ecris ce que le modele ne doit pas decider seul.
+:::
+
 ## A toi
 
 Transforme cette page en checklist murale de 12 cases. Coche a chaque projet.
+
 ## Ritual de fin de sprint
 
 Une heure : relire les erreurs, mettre a jour la doc features, verifier le monitoring, supprimer une experience morte, ecrire ce qu'on ne tentera plus. Les projets ML meurent souvent d'accumulation, pas de manque d'idees.

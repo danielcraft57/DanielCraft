@@ -1,10 +1,16 @@
 # Chapitre 15 - Atelier : une regression de bout en bout (sur papier ou code)
 
-Objectif : mener une mini regression sans te perdre. Duree : 45 minutes.
+Objectif : mener une mini **regression** sans te perdre. Duree : 45 minutes. Tu n'as pas besoin d'un dataset parfait. Tu as besoin de vivre le geste : cibler un nombre, lister des **features** disponibles a l'instant T, splitter, battre une **baseline**, lire une **metrique**.
+
+Le but n'est pas d'impressionner. C'est de sortir avec un "contrat regression" que tu pourrais montrer a un collegue. Si tu codes, tant mieux. Si tu restes sur papier avec quinze lignes inventees, le muscle s'active pareil.
+
+:::astuce
+Si tu n'as pas de donnees, invente 15 lignes coherentes a la main. Le geste compte plus que le volume.
+:::
 
 ## Etapes
 
-1) Choisis une cible numerique (ventes, duree, montant). 2) Liste 5 features disponibles a l'instant T. 3) Decris un split temporel ou aleatoire. 4) Definir la baseline (predire la moyenne train). 5) Imagine une regression lineaire a une feature principale : quelle pente sensee ? 6) Choisis MAE ou RMSE comme metrique. 7) Ecris 3 causes possibles d'overfitting sur ce sujet. 8) Si tu codes : implemente avec un Pipeline minimal et compare au baseline.
+1) Choisis une cible numerique (ventes, duree, montant). 2) Liste 5 features disponibles a l'instant T. 3) Decris un split temporel ou aleatoire. 4) Definir la baseline (predire la moyenne train). 5) Imagine une regression lineaire a une feature principale : quelle pente sensee ? 6) Choisis MAE ou RMSE comme metrique. 7) Ecris 3 causes possibles d'**overfitting** sur ce sujet. 8) Si tu codes : implemente avec un **Pipeline** minimal et compare au baseline.
 
 ## Livrable
 
@@ -13,9 +19,16 @@ Une page "contrat regression" : question, features, split, metrique, baseline, c
 ## Conseil
 
 Si tu n'as pas de donnees, invente 15 lignes coherentes a la main pour jouer le geste. Le geste compte.
+
+:::attention
+N'utilise aucune info connue seulement apres la prediction. Sinon ton atelier s'entraine a la fuite.
+:::
+
 ## Prolongement
 
 Change une feature, recalcule mentalement l'effet sur la prediction. Ecris une phrase d'interpretation prudente ("associe a", pas "cause"). Ajoute-la au livrable.
+
+Quand tu as fini, relis ton contrat a voix haute. Si tu ne peux pas expliquer le split et la metrique en trente secondes, le livrable n'est pas encore clair. Chez DanielCraft, on valide l'atelier quand le contrat tient sans jargon.
 
 ## Developpement : penser comme un artisan des modeles
 

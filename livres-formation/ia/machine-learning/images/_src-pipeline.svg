@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#edf2f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Pipeline : une chaine propre</text>
+<rect x="40" y="180" width="150" height="120" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="115" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Donnees</text>
+<line x1="190" y1="240" x2="230" y2="240" stroke="#ed8936" stroke-width="3"/>
+<rect x="230" y="180" width="150" height="120" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
+<text x="305" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="700">Split</text>
+<line x1="380" y1="240" x2="420" y2="240" stroke="#ed8936" stroke-width="3"/>
+<rect x="420" y="180" width="160" height="120" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="500" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1a202c" font-weight="700">Prepare</text>
+<text x="500" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#718096" font-weight="400">(fit train)</text>
+<line x1="580" y1="240" x2="620" y2="240" stroke="#ed8936" stroke-width="3"/>
+<rect x="620" y="180" width="150" height="120" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
+<text x="695" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="700">Modele</text>
+<line x1="770" y1="240" x2="810" y2="240" stroke="#ed8936" stroke-width="3"/>
+<rect x="810" y="180" width="150" height="120" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
+<text x="885" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Evalue</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Memes etapes en train et en prod. Fit sur le train seulement.</text>
+</svg>

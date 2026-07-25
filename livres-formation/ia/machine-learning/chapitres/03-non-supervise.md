@@ -1,6 +1,10 @@
 # Chapitre 3 - Apprentissage non supervise : trouver des structures sans label
 
-Parfois, tu n'as pas de bonne reponse y. Tu as seulement des descriptions de clients, de produits, de comportements. L'apprentissage non supervise cherche des structures : des groupes (clustering), des reductions de dimensions, des motifs inhabituels. Personne n'a dit "voici la verite" ; le modele propose une organisation. A toi de juger si elle est utile.
+Parfois, tu n'as pas de bonne reponse y. Tu as seulement des descriptions de clients, de produits, de comportements. L'apprentissage **non supervise** cherche des structures : des groupes (**clustering**), des reductions de dimensions, des motifs inhabituels. Personne n'a dit "voici la verite" ; le modele propose une organisation. A toi de juger si elle est utile.
+
+:::retenir
+Sans label, on organise. Avec label, on predit une cible. Ne confonds pas les deux outils.
+:::
 
 ## Clustering : regrouper
 
@@ -8,15 +12,23 @@ L'idee : mettre ensemble ce qui se ressemble selon certaines mesures. Noe peut r
 
 ## Quand s'en servir
 
-Explorer. Segmenter pour adapter un message. Detecter des anomalies (un point tres loin des autres). Reduire la complexite avant une autre etape. Ce n'est generalement pas le meilleur outil si tu as deja un label clair et une decision binaire a prendre - dans ce cas, le supervise est plus direct.
+Explorer. Segmenter pour adapter un message. Detecter des anomalies (un point tres loin des autres). Reduire la complexite avant une autre etape. Ce n'est generalement pas le meilleur outil si tu as deja un **label** clair et une decision binaire a prendre - dans ce cas, le **supervise** est plus direct.
+
+:::astuce
+Avant de fixer le nombre de clusters, demande : "quelle action change si ce groupe existe ?" Si aucune, tu explores encore.
+:::
 
 ## Attention aux illusions
 
-Les groupes dependent des features choisies et de l'echelle des variables. Si tu melanges "age" et "revenu annuel" sans normaliser, une variable ecrase l'autre. Si tu demandes 8 clusters parce que "ca fait joli", tu obtiendras 8 clusters meme si 3 suffisaient. Le non supervise demande de la sobriete et de la validation metier : est-ce que ces groupes changent une action ?
+Les groupes dependent des **features** choisies et de l'echelle des variables. Si tu melanges "age" et "revenu annuel" sans normaliser, une variable ecrase l'autre. Si tu demandes 8 clusters parce que "ca fait joli", tu obtiendras 8 clusters meme si 3 suffisaient. Le non supervise demande de la sobriete et de la validation metier : est-ce que ces groupes changent une action ?
+
+:::attention
+Normalise (ou standardise) avant de clusterer des variables d'echelles differentes. Sinon une seule colonne dicte les groupes.
+:::
 
 ## Lien avec le reste de l'IA
 
-Les embeddings (representations vectorielles) utilises autour des LLM sont cousins de cette logique : mettre proche ce qui "se ressemble" dans un espace. Tu n'as pas besoin des maths ici. Retiens l'intuition : sans label, on organise ; avec label, on predit une cible.
+Les **embeddings** (representations vectorielles) utilises autour des LLM sont cousins de cette logique : mettre proche ce qui "se ressemble" dans un espace. Tu n'as pas besoin des maths ici. Retiens l'intuition : sans label, on organise ; avec label, on predit une cible.
 
 ## Erreur classique
 
@@ -25,6 +37,7 @@ Prendre les clusters comme une verite sociologique. Ou les vendre a un client co
 ## A toi
 
 Liste 10 entites de ton monde (clients, tickets, articles). Quelles features utiliserais-tu pour les regrouper ? Quelle decision changerait si les groupes etaient bons ?
+
 ## Valider un clustering sans label magique
 
 Tu peux regarder la stabilite (est-ce que les groupes bougent beaucoup si tu reechantillonnes ?). Tu peux demander a un expert metier si les groupes suggerent des actions differentes. Tu peux mesurer un indicateur externe (taux de reponse a une campagne par cluster). Sans au moins une de ces validations, le clustering reste une jolie projection, pas une decision.

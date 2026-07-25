@@ -1,18 +1,30 @@
 # Chapitre 9 - Overfitting : trop coller a l'entrainement
 
-L'overfitting, c'est quand le modele apprend par coeur les particularites du train (y compris le bruit) et generalise mal sur des cas nouveaux. Image : un etudiant qui recite le corrigé des exercices deja vus et se plante a l'examen. Score train splendide. Score test decevant. En production, encore pire.
+L'**overfitting**, c'est quand le modele apprend par coeur les particularites du train (y compris le bruit) et generalise mal sur des cas nouveaux. Image : un etudiant qui recite le corrige des exercices deja vus et se plante a l'examen. Score train splendide. Score test decevant. En production, encore pire.
+
+:::retenir
+Overfitting = coller au train, rater le futur. Un 100 % train est souvent un aveu, pas un trophee.
+:::
 
 ## Sous-apprentissage aussi
 
-A l'inverse, l'underfitting, c'est un modele trop simple qui rate meme les motifs reels. Score train mediocre, test mediocre. Tu veux la zone ou le modele capture le signal sans epouser le bruit.
+A l'inverse, l'**underfitting**, c'est un modele trop simple qui rate meme les motifs reels. Score train mediocre, test mediocre. Tu veux la zone ou le modele capture le signal sans epouser le bruit.
 
 ## Signes qui doivent t'alerter
 
-Ecart train/test large. Arbre tres profond. Trop de features par rapport aux exemples. Performances magiques peu believable. Importance d'IDs ou de timestamps suspects. Forte sensibilite a une petite perturbation des donnees.
+Ecart **train/test** large. Arbre tres profond. Trop de **features** par rapport aux exemples. Performances magiques peu believable. Importance d'IDs ou de timestamps suspects. Forte sensibilite a une petite perturbation des donnees.
+
+:::attention
+Si le score train est excellent et le test mediocre, arrete d'ajouter de la complexite. Simplifie, regularise, ou revois les donnees.
+:::
 
 ## Remedes pratiques
 
-Plus de donnees utiles (pas seulement plus de lignes dupliquees). Regularisation / profondeur limitee. Moins de features pourries. Ensembles d'arbres bien reglés. Early stopping dans certains apprentissages. Surtout : protocole train/test honnete et inspection des erreurs. Parfois le vrai remede est de simplifier la question metier.
+Plus de donnees utiles (pas seulement plus de lignes dupliquees). **Regularisation** / profondeur limitee. Moins de features pourries. Ensembles d'arbres bien regles. Early stopping dans certains apprentissages. Surtout : protocole train/test honnete et inspection des erreurs. Parfois le vrai remede est de simplifier la question metier.
+
+:::astuce
+Compare toujours train et test cote a cote. L'ecart raconte plus qu'un seul chiffre isole.
+:::
 
 ## Lien avec l'IA generative
 
@@ -25,6 +37,7 @@ Ajouter de la complexite des qu'un score train n'est pas 100 %. Le 100 % train e
 ## A toi
 
 Imagine un modele qui predit parfaitement ton historique. Donne 3 raisons pour lesquelles il pourrait echouer la semaine prochaine.
+
 ## Regularisation en mots simples
 
 Freiner la complexite : penaliser les poids trop grands, limiter la profondeur, exiger plus d'exemples par feuille d'arbre, arreter l'apprentissage tot. Ce n'est pas "rendre le modele bete". C'est l'empecher d'apprendre le bruit.

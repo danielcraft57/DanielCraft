@@ -1,18 +1,30 @@
 # Chapitre 12 - Biais dans les donnees : le modele herite
 
-Un modele supervise apprend ce que tu lui montres. Si tes exemples sous-representent une population, si tes labels portent un prejudice historique, si tes mesures sont biaisées, le modele industrialise le probleme - souvent plus vite et a plus grande echelle. Ce n'est pas "la faute de l'algorithme" comme creature malveillante. C'est un miroir statistique + une decision de deploiement.
+Un modele **supervise** apprend ce que tu lui montres. Si tes exemples sous-representent une population, si tes **labels** portent un prejudice historique, si tes mesures sont biaisées, le modele industrialise le probleme - souvent plus vite et a plus grande echelle. Ce n'est pas "la faute de l'algorithme" comme creature malveillante. C'est un miroir statistique + une decision de deploiement.
+
+:::retenir
+Le modele herite des **biais** des donnees. Un beau score global ne lave pas une injustice locale.
+:::
 
 ## Types de biais utiles a connaitre
 
 Biais de selection : tu n'observes que ceux qui sont entres dans ton systeme. Biais de label : les annotateurs (ou l'historique) favorisent une classe. Biais de mesure : un capteur ou un process sous-estime un groupe. Biais de feedback : le modele influence le monde, qui renvoie des donnees qui confirment le modele. Chez DanielCraft, on demande toujours : qui manque dans le jeu ? Qui a labellise ? Qui paie l'erreur ?
 
+:::attention
+Retirer une variable sensible ne suffit pas toujours : d'autres **features** peuvent la reconstruire. Verifie les performances par sous-groupe.
+:::
+
 ## Exemple Noe
 
-Si Noe n'a historique que sur des clients urbains aises et deploie un score de retour partout, il peut mal traiter d'autres segments. Si les retours textiles sont sur-labels "abusifs" a cause d'un a priori d'equipe, le classifieur apprend l'a priori. Corriger, ce n'est pas seulement "ajouter de l'ethique en slide" : c'est revoir labels, echantillonnage, metriques par segment, et parfois refuser d'automatiser.
+Si Noe n'a historique que sur des clients urbains aises et deploie un score de retour partout, il peut mal traiter d'autres segments. Si les retours textiles sont sur-labels "abusifs" a cause d'un a priori d'equipe, le classifieur apprend l'a priori. Corriger, ce n'est pas seulement "ajouter de l'ethique en slide" : c'est revoir labels, echantillonnage, **metriques** par segment, et parfois refuser d'automatiser.
 
-## Que faire concrètement
+## Que faire concretement
 
 Mesurer les performances par sous-groupes pertinents. Inspecter les erreurs. Interroger la representativite. Documenter les limites. Garder un humain sur les decisions a fort impact. Eviter les proxies dangereux (utiliser un code postal pour estimer "fiabilite" de facon opaque). Preferer la transparence a la magie.
+
+:::astuce
+Avant deploiement a impact : metriques par groupe, recours humain, doc des limites, qui signe le go. Quatre questions, pas une slide ethique.
+:::
 
 ## Lien legal et moral
 
@@ -25,6 +37,7 @@ Croire que retirer une variable sensible (genre, origine) suffit toujours : d'au
 ## A toi
 
 Pour ton projet, nomme un sous-groupe qui pourrait etre mal servi. Quelle metrique regarderas-tu separement ?
+
 ## Processus de revue
 
 Avant deploiement a impact : qui est affecte ? Quelles metriques par groupe ? Quel recours humain ? Quelle doc des limites ? Qui signe le go ? Ce n'est pas de la paperasse gratuite. C'est ce qui distingue un prototype jouet d'un systeme responsable.
