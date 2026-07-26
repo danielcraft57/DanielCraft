@@ -1,6 +1,14 @@
 # Quiz final
 
-Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux vendre avec methode, sans paniquer ni forcer.
+Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux vendre avec methode, sans paniquer ni forcer. Chez DanielCraft, un quiz sert a reperer les trous, pas a humilier. Lea note ses erreurs et rouvre le pipeline. Max refait l'atelier nego. Sam utilise ce QCM en fin de module. Toi, tu coches sans tricher.
+
+Une premiere passe honnete vaut mieux qu'un score maquille. Si tu bloques, marque et continue. Le but, c'est la carte des chapitres a rouvrir avant la prochaine semaine commerciale. Fais le quiz, note ton score, rejoue dans une semaine apres de vrais appels. Le vrai progres se voit a la deuxieme passe - pas a la lecture seule.
+
+Ce quiz couvre le fil du livre : pipeline, qualification, decouverte, valeur, objections dures, negociation, closing, relance, CRM, ethique, equipe, indicateurs. Douze questions, une bonne reponse chacune. Pas de double piege. Si tu hesitais entre deux options, c'est souvent le signe que tu confonds encore un geste (baisser vs isoler, oui oral vs close, CRM joli vs CRM tenu).
+
+:::astuce
+Fais le quiz une premiere fois a froid. Note ton score. Dans sept jours, apres de vrais echanges, rejoue seulement les questions ratees. Le vrai progres se voit a la deuxieme passe.
+:::
 
 ## Questions
 
@@ -69,3 +77,31 @@ Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux vendre ave
 1-B, 2-B, 3-B, 4-A, 5-B, 6-B, 7-B, 8-B, 9-B, 10-B, 11-B, 12-B.
 
 Si tu as 9/12 ou plus : tu es pret a appliquer sur de vrais dossiers. Sinon, relis les chapitres lies (pipeline, qualification, decouverte, valeur, objections, nego, closing, relance, CRM, ethique, equipe, indicateurs), sans dramatiser.
+
+Carte rapide des trous : questions 1-2 = chapitres 2-3 ; 3-4 = chapitres 4-5 ; 5-6 = chapitres 6-7 ; 7-8 = chapitres 8-9 ; 9-10 = chapitres 10-11 ; 11-12 = chapitres 17-18. Rouvre seulement ce qui frotte. Une relecture ciblee bat une relecture passive du livre entier.
+
+:::retenir
+Le quiz n'est pas un examen. C'est une carte : chaque erreur pointe un chapitre a rouvrir avant la prochaine semaine commerciale.
+:::
+
+## Petite histoire
+
+Lea a rate la question close. Elle a ecrit trois phrases de close le soir meme et les a dites a voix haute. Max a confondu accueillir et baisser : il a relu l'isolement. Sam affiche le score moyen : "on revoit pipeline et ethique demain". Trois reactions, meme message : le quiz est une carte. Chez DanielCraft, on aime ces cartes avant une semaine chargee.
+
+Autre scene : Lea a refait le quiz sept jours plus tard apres trois vrais appels. Elle a gagne deux points sur close et relance - pas parce qu'elle avait "mieux lu", parce qu'elle avait pratique. Max a note "je confonds encore baisser et isoler" a cote de la question 5. La phrase l'a suivi jusqu'a l'atelier nego.
+
+## Erreur classique
+
+Tricher pour se rassurer, ou abandonner apres un mauvais score. Les deux ratent le but. Un 6/12 honnete + trois chapitres rouverts vaut mieux qu'un 12/12 maquille. Autre piege : tout relire d'un coup. Cible. Une question, un chapitre, un geste sur un vrai dossier.
+
+:::attention
+Ne maquille pas ton score. Un 6/12 honnete + trois chapitres rouverts bat un 12/12 invente. Le quiz sert a apprendre, pas a te flatter.
+:::
+
+## En vrai
+
+Coche tes mauvaises reponses. Ouvre le chapitre lie. Sur un vrai dossier, applique un seul geste corrige (prochaine action, isolement, close date). Cinq a quinze minutes. Un trou a la fois.
+
+## A toi
+
+Ecris tes trois questions ratees. A cote, une phrase "ce que je confonds". Dans sept jours, rejoue seulement ces trois. Le vrai score, c'est la deuxieme passe - apres de vrais echanges, pas seulement apres une relecture.

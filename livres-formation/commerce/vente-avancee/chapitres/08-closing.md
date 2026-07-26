@@ -1,20 +1,24 @@
 # Chapitre 8 - Closing : demander la decision
 
-Beaucoup de ventes meurent non pas faute d'interet, mais faute de question claire. Tu as bien decouvert, bien propose, bien repondu... et tu attends que le client "se sente pret". Le closing, ce n'est pas manipuler. C'est demander : on avance, ou on n'avance pas, et sous quelles conditions.
+Beaucoup de ventes meurent non pas faute d'interet, mais faute de question claire. Tu as bien decouvert, bien propose, bien repondu... et tu attends que le client "se sente pret". Le **closing**, ce n'est pas manipuler. C'est demander : on avance, ou on n'avance pas, et sous quelles conditions. Sans cette question, ton travail amont reste du theatre poli.
 
-Sans closing, ton pipeline est un salon d'attente eternel.
+Sans closing, ton **pipeline** est un salon d'attente eternel. Chez DanielCraft, on aime la phrase : un close, c'est un calendrier et un **engagement**, pas un sourire. Lea terminait par "dites-moi". Max demandait "je reviens quand ?" au lieu de "on confirme jeudi ?". Sam celebratit des oui oraux sans date de comite. Trois versions du meme trou : pas de decision demandee, pas de decision obtenue.
 
 ## Ce que le closing n'est pas
 
-Ce n'est pas harceler. Ce n'est pas pieger. Ce n'est pas faire signer sous pression artificielle. C'est proposer un prochain engagement concret : signature, acompte, date de demarrage, commande, creneau bloque. Un "oui" flou sans acte n'est pas un close. C'est une intention.
+Ce n'est pas harceler. Ce n'est pas pieger. Ce n'est pas faire signer sous pression artificielle. C'est proposer un prochain engagement concret : signature, **acompte**, date de demarrage, commande, creneau bloque. Un "oui" flou sans acte n'est pas un close. C'est une intention.
 
-Chez DanielCraft, on aime la phrase : un close, c'est un calendrier et un engagement, pas un sourire.
+Beaucoup de gens confondent closing et agressivite. Non. Tu peux closer doucement et clairement. Tu peux aussi ne jamais demander et perdre le deal dans le silence poli. Le piege n'est pas "paraitre vendeur". Le piege, c'est laisser l'autre dans le flou.
 
 ## Quand closer
 
 Quand le besoin est clair, les objections majeures traitees, le decideur est la (ou le chemin est clair), et le perimetre / prix sont compris. Si tu closes trop tot, tu brusques. Si tu closes trop tard, l'energie retombe et un concurrent entre. Le signal : ils posent des questions de mise en oeuvre ("et pour commencer, il faut quoi ?"), ils parlent "quand" plus que "si".
 
-Si tout est flou, ne closes pas : reviens en decouverte ou en qualification.
+Si tout est flou, ne closes pas : reviens en decouverte ou en qualification. Closer sur du flou, c'est forcer. Closer sur du clair, c'est servir.
+
+:::astuce
+Ecoute le vocabulaire. "Si on faisait..." = encore du si. "Quand on demarre..." = souvent pret pour un close. Rebondis sur le quand.
+:::
 
 ## Formulations simples
 
@@ -26,15 +30,15 @@ Pour Max sur place : "Je peux passer jeudi matin. On confirme ?" Pour Lea en vis
 
 Doux : resume + question. "Vu ce qu'on a dit, la suite logique c'est X. On fait comme ca ?" Net : alternative de choix. "Vous preferez demarrer en mars ou en avril ?" (les deux sont des oui). Attention : l'alternative ne doit pas etre manipulative. Les deux options doivent etre reelles et acceptables.
 
-Le close assume : "Je pense que c'est le bon moment pour vous. Je vous propose qu'on s'engage sur la phase 1." Puis silence.
+Le close assume : "Je pense que c'est le bon moment pour vous. Je vous propose qu'on s'engage sur la phase 1." Puis **silence**. Ne comble pas avec "enfin si vous voulez... bon apres on peut aussi...". Tu viens de demander. Laisse repondre. Enregistre-toi en train de dire tes trois phrases de close. Si tu t'excuses dans la phrase, coupe l'excuse. Le malaise baisse avec la repetition.
 
 ## Gerer le "je vais reflechir" au moment du close
 
-Tu l'as vu en objections. Au close, c'est critique. "Bien sur. Pour que votre reflexion soit utile : c'est surtout le prix, le timing, ou un point technique ?" Souvent ca reouvre une vraie objection. Parfois c'est un politesse pour un non. Demande une date de recontact : "Je vous rappelle mardi a 10h, ca vous va ?" Sans date, "je reflechis" = disparition lente.
+Tu l'as vu en objections. Au close, c'est critique. "Bien sur. Pour que votre reflexion soit utile : c'est surtout le prix, le timing, ou un point technique ?" Souvent ca reouvre une vraie objection. Parfois c'est une politesse pour un non. Demande une date de recontact : "Je vous rappelle mardi a 10h, ca vous va ?" Sans date, "je reflechis" = disparition lente.
 
 ## Acompte et engagement
 
-Pour beaucoup de services, le vrai close, c'est l'acompte ou la signature. Un "oui oral" suivi de "on verra pour payer" n'est pas ferme. Explique calmement pourquoi l'acompte : reserver le creneau, commander, demarrer. Ce n'est pas de la mefiance. C'est de la serieux mutuel.
+Pour beaucoup de services, le vrai close, c'est l'acompte ou la signature. Un "oui oral" suivi de "on verra pour payer" n'est pas ferme. Explique calmement pourquoi l'acompte : reserver le creneau, commander, demarrer. Ce n'est pas de la mefiance. C'est du serieux mutuel. Max bloque le creneau apres acompte. Lea demarre apres signature + acompte. Sam fait signer avant de mobiliser l'equipe.
 
 ## Apres le oui
 
@@ -44,9 +48,17 @@ Confirme par ecrit immediatement : perimetre, prix, dates, prochaines etapes. Un
 
 Tu n'attends pas la fin pour tester l'alignement. "Pour l'instant, on est d'accord que le probleme prioritaire c'est X ?" "Si on trouve une formule dans votre zone, vous seriez pret a demarrer ce mois-ci ?" Ces micro-closes ne signent pas. Ils evitent de decouvrir au bout d'une heure que le timing etait impossible. Utilise-les sans en faire un feu d'artifice de questions piege.
 
+## Petite histoire
+
+Lea terminait ses visios par "je vous envoie le devis, dites-moi". Puis silence. Elle a change : "Si le devis vous convient, on bloque avec l'acompte avant vendredi. Je vous rappelle jeudi pour le oui/non." Son taux a monte. Max sur place demandait "je reviens quand ?" au lieu de "on confirme jeudi ?" Une syllabe de difference. Plus de creneaux bloques. Sam a cesse de celebrer les oui oraux sans date de comite. Moins de fausses victoires, plus de vrais closes.
+
 ## Erreur classique
 
 Avoir peur de "paraitre vendeur" et ne jamais demander. Ou demander dix fois le meme jour. Ou celebrer un oui oral et disparaitre trois semaines avant le contrat. Autre piege : closer sur un decideur absent ("il dira oui") - tu n'as rien ferme.
+
+:::attention
+Un oui sans decideur, sans date, sans acompte, ce n'est pas un close. C'est un espoir. Note-le comme tel dans le pipeline.
+:::
 
 ## En vrai
 
@@ -55,3 +67,7 @@ Sur tes cinq derniers devis "presque", note si tu as pose une question de decisi
 ## A toi
 
 Ecris trois phrases de close dans ton ton, pour ton offre. Entraine-toi a les dire sans t'excuser. Enregistre-toi si besoin. Le malaise baisse avec la repetition.
+
+:::retenir
+Closer = demander une decision claire avec un engagement ou une date. Sans ca, ton pipeline reste un salon d'attente.
+:::
