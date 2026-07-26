@@ -42,6 +42,18 @@ def md_to_html(md: str, *, id_prefix: str = "") -> str:
     in_ol = False
     in_table = False
     table_rows: list[str] = []
+    para_buf: list[str] = []
+    in_callout = False
+    callout_kind = ""
+    callout_buf: list[str] = []
+
+    callout_labels = {
+        "astuce": "Astuce",
+        "attention": "Attention",
+        "idee": "Idee",
+        "exemple": "Exemple",
+        "retenir": "A retenir",
+    }
 
     def close_lists() -> None:
         nonlocal in_ul, in_ol
@@ -51,6 +63,31 @@ def md_to_html(md: str, *, id_prefix: str = "") -> str:
         if in_ol:
             out.append("</ol>")
             in_ol = False
+
+    def flush_para() -> None:
+        nonlocal para_buf
+        if not para_buf:
+            return
+        text = " ".join(s.strip() for s in para_buf if s.strip())
+        if text:
+            out.append(f"<p>{md_inline(text)}</p>")
+        para_buf = []
+
+    def flush_callout() -> None:
+        nonlocal in_callout, callout_kind, callout_buf
+        if not in_callout:
+            return
+        label = callout_labels.get(callout_kind, callout_kind.capitalize())
+        body = " ".join(s.strip() for s in callout_buf if s.strip())
+        out.append(
+            f'<aside class="callout callout-{html.escape(callout_kind)}" role="note">'
+            f'<div class="callout-label">{html.escape(label)}</div>'
+            f"<p>{md_inline(body)}</p>"
+            f"</aside>"
+        )
+        in_callout = False
+        callout_kind = ""
+        callout_buf = []
 
     def flush_table() -> None:
         nonlocal in_table, table_rows
@@ -75,6 +112,8 @@ def md_to_html(md: str, *, id_prefix: str = "") -> str:
         line = lines[i]
 
         if line.startswith("```"):
+            flush_para()
+            flush_callout()
             close_lists()
             flush_table()
             if not in_code:
@@ -97,7 +136,32 @@ def md_to_html(md: str, *, id_prefix: str = "") -> str:
             i += 1
             continue
 
+        # Callouts : :::astuce ... :::
+        fence = re.match(r"^:::(astuce|attention|idee|exemple|retenir)\s*$", line.strip(), re.I)
+        if fence:
+            flush_para()
+            close_lists()
+            flush_table()
+            if in_callout:
+                flush_callout()
+            else:
+                in_callout = True
+                callout_kind = fence.group(1).lower()
+                callout_buf = []
+            i += 1
+            continue
+        if line.strip() == ":::" and in_callout:
+            flush_callout()
+            i += 1
+            continue
+        if in_callout:
+            if line.strip():
+                callout_buf.append(line)
+            i += 1
+            continue
+
         if line.strip().startswith("|"):
+            flush_para()
             close_lists()
             in_table = True
             table_rows.append(line)
@@ -107,35 +171,42 @@ def md_to_html(md: str, *, id_prefix: str = "") -> str:
             flush_table()
 
         if not line.strip():
+            flush_para()
             close_lists()
             i += 1
             continue
 
         if line.startswith("# "):
+            flush_para()
             close_lists()
             title = line[2:].strip()
             out.append(f'<h1 id="{heading_id(title)}">{md_inline(title)}</h1>')
         elif line.startswith("## "):
+            flush_para()
             close_lists()
             title = line[3:].strip()
             out.append(f'<h2 id="{heading_id(title)}">{md_inline(title)}</h2>')
         elif line.startswith("### "):
+            flush_para()
             close_lists()
             title = line[4:].strip()
             out.append(f'<h3 id="{heading_id(title)}">{md_inline(title)}</h3>')
         elif re.match(r"^- \[ \]", line):
+            flush_para()
             if not in_ul:
                 close_lists()
                 out.append('<ul class="check">')
                 in_ul = True
             out.append(f"<li>{md_inline(line[6:].strip())}</li>")
         elif line.startswith("- "):
+            flush_para()
             if not in_ul:
                 close_lists()
                 out.append("<ul>")
                 in_ul = True
             out.append(f"<li>{md_inline(line[2:].strip())}</li>")
         elif re.match(r"^\d+\. ", line):
+            flush_para()
             if not in_ol:
                 close_lists()
                 out.append("<ol>")
@@ -143,9 +214,11 @@ def md_to_html(md: str, *, id_prefix: str = "") -> str:
             out.append(f"<li>{md_inline(re.sub(r'^\\d+\\. ', '', line).strip())}</li>")
         else:
             close_lists()
-            out.append(f"<p>{md_inline(line.strip())}</p>")
+            para_buf.append(line)
         i += 1
 
+    flush_para()
+    flush_callout()
     close_lists()
     flush_table()
     return "\n".join(out)
@@ -372,6 +445,60 @@ h1, h2, h3 { line-height: 1.25; color: var(--band); }
 h2 { font-size: 1.12rem; margin: 1.15rem 0 0.45rem; }
 h3 { font-size: 1rem; margin: 0.95rem 0 0.35rem; color: var(--muted); }
 p { margin: 0.55rem 0; }
+strong {
+  font-weight: 700;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  padding: 0 0.12em;
+  border-radius: 3px;
+}
+.callout {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 0.95rem 0 1.1rem;
+  padding: 0.75rem 0.9rem 0.8rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  border-left: 5px solid var(--accent);
+  background: var(--card);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+.callout-label {
+  font-family: Segoe UI, Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+  color: var(--band);
+}
+.callout p { margin: 0; font-size: 0.98em; line-height: 1.45; }
+.callout-astuce { border-left-color: var(--band-soft); background: color-mix(in srgb, var(--paper-deep) 55%, white); }
+.callout-attention { border-left-color: #c45c26; background: #fff8f3; }
+.callout-idee { border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, white); }
+.callout-exemple { border-left-color: var(--band); background: color-mix(in srgb, var(--band) 8%, white); }
+.callout-retenir { border-left-color: var(--ink); background: var(--paper-deep); }
+.callout-astuce .callout-label::before { content: "✦ "; color: var(--band-soft); }
+.callout-attention .callout-label::before { content: "⚠ "; color: #c45c26; }
+.callout-idee .callout-label::before { content: "◎ "; color: var(--accent); }
+.callout-exemple .callout-label::before { content: "▸ "; color: var(--band); }
+.callout-retenir .callout-label::before { content: "★ "; color: var(--ink); }
+.callout-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  vertical-align: -0.15em;
+}
+@media print {
+  .callout { box-shadow: none; }
+  .callout-attention { background: #fff5ee !important; }
+}
+
 ul, ol { margin: 0.45rem 0 0.7rem; padding-left: 1.25rem; }
 li { margin: 0.18rem 0; }
 code {
@@ -1076,6 +1203,90 @@ button, .btn-like {
 @media print {
   .toc a { color: #14532d !important; }
 }
+""",
+        "ecom_clients": """
+/* Theme E-com clients : indigo doux + corail */
+:root {
+  --ink: #1a2332;
+  --muted: #5c6b7a;
+  --paper: #f3f6f9;
+  --paper-deep: #e2e9f0;
+  --band: #243b55;
+  --band-soft: #355a7a;
+  --accent: #f07167;
+  --code-bg: #1a2a3a;
+  --code-fg: #fde8e4;
+  --card: #ffffff;
+  --rule: #c9d5e0;
+}
+.cover, .cover-copy { background: #243b55 !important; color: #fde8e4 !important; }
+.cover h1 { color: #fde8e4 !important; }
+pre { border-left-color: #f07167 !important; }
+button, .btn-like { background: #243b55; }
+@media print { .toc a { color: #243b55 !important; } }
+""",
+        "ecom_drop": """
+/* Theme Dropshipping : graphite + orange prudent */
+:root {
+  --ink: #1c1917;
+  --muted: #6b6560;
+  --paper: #f5f3f0;
+  --paper-deep: #e8e4df;
+  --band: #292524;
+  --band-soft: #44403c;
+  --accent: #fb923c;
+  --code-bg: #1c1917;
+  --code-fg: #ffedd5;
+  --card: #ffffff;
+  --rule: #d6d3d1;
+}
+.cover, .cover-copy { background: #292524 !important; color: #ffedd5 !important; }
+.cover h1 { color: #ffedd5 !important; }
+pre { border-left-color: #fb923c !important; }
+button, .btn-like { background: #292524; }
+@media print { .toc a { color: #292524 !important; } }
+""",
+        "ml": """
+/* Theme Machine Learning : acier + cuivre */
+:root {
+  --ink: #1a202c;
+  --muted: #718096;
+  --paper: #edf2f7;
+  --paper-deep: #e2e8f0;
+  --band: #2d3748;
+  --band-soft: #4a5568;
+  --accent: #ed8936;
+  --code-bg: #1a202c;
+  --code-fg: #feebc8;
+  --card: #ffffff;
+  --rule: #cbd5e0;
+}
+.cover, .cover-copy { background: #2d3748 !important; color: #feebc8 !important; }
+.cover h1 { color: #feebc8 !important; }
+pre { border-left-color: #ed8936 !important; }
+button, .btn-like { background: #2d3748; }
+@media print { .toc a { color: #2d3748 !important; } }
+""",
+        "dl": """
+/* Theme Deep Learning : teal profond + rose doux */
+:root {
+  --ink: #042f2e;
+  --muted: #5f7a78;
+  --paper: #f0fafa;
+  --paper-deep: #d9eeee;
+  --band: #134e4a;
+  --band-soft: #0f766e;
+  --accent: #fb7185;
+  --code-bg: #022c2a;
+  --code-fg: #ffe4e6;
+  --card: #ffffff;
+  --rule: #b8d4d2;
+}
+.cover, .cover-copy { background: #134e4a !important; color: #ffe4e6 !important; }
+.cover h1 { color: #ffe4e6 !important; }
+pre { border-left-color: #fb7185 !important; }
+button, .btn-like { background: #134e4a; }
+@media print { .toc a { color: #134e4a !important; } }
 """,
     }
     extra = themes.get(theme, "")
