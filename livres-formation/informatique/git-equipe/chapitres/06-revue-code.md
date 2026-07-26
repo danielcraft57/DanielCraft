@@ -1,34 +1,18 @@
 # Chapitre 6 - Revue de code humaine
 
-La pull request n'est pas un portail magique. C'est une conversation. Quelqu'un propose un changement. Quelqu'un d'autre regarde, pose des questions, suggere, approuve. Git transporte les diffs. Les humains portent le sens.
+La **pull request** n'est pas un portail magique. C'est une conversation. Quelqu'un propose un changement. Quelqu'un d'autre regarde, pose des questions, suggere, approuve. Git transporte les diffs. Les humains portent le sens. Sans revue, on merge des bombes polies. Avec une revue toxique, on merge moins, on cache, on a peur. L'objectif : une **revue** utile et bienveillante. Chez DanielCraft, la revue est un filet, pas un tribunal.
 
-Sans revue, on merge des bombes polies. Avec une revue toxique, on merge moins, on cache, on a peur. L'objectif : une revue utile et bienveillante.
+Parce que quatre yeux voient plus que deux. Parce que Max connait le back et peut voir que le front de Lea casse une API. Parce que Sam se souvient qu'un cas mobile n'est pas teste. Parce qu'ecrire pour etre lu oblige a clarifier. Tu n'as pas a etre un compilateur humain. Priorise : est-ce que la PR fait ce qu'elle dit ? Est-ce que le **perimetre** est raisonnable (pas trente sujets) ? Est-ce qu'il y a un risque securite evident (secret, injection grossiere, permission trop large) ? Est-ce que les noms aident ? Est-ce que tu saurais maintenir ce code dans trois mois ? Est-ce que l'auteur a indique comment tester ?
 
-## Pourquoi reviewer ?
-
-Parce que quatre yeux voient plus que deux. Parce que Max connait le back et peut voir que le front de Lea casse une API. Parce que Sam se souvient qu'un cas mobile n'est pas teste. Parce que ecrire pour etre lu oblige a clarifier.
-
-Chez DanielCraft, la revue est un filet, pas un tribunal.
-
-## Quoi regarder (sans tout relire ligne a ligne)
-
-Tu n'as pas a etre un compilateur humain. Priorise.
-
-Est-ce que la PR fait ce qu'elle dit ? Est-ce que le perimetre est raisonnable (pas 30 sujets) ? Est-ce qu'il y a un risque securite evident (secret, injection grossiere, permission trop large) ? Est-ce que les noms aident ? Est-ce que tu saurais maintenir ce code dans trois mois ? Est-ce que l'auteur a indique comment tester ?
-
-Regarde aussi ce qui manque : gestion d'erreur, cas vide, accessibilite d'un bouton, message utilisateur incomprehensible.
-
-Tu peux laisser passer un detail de style mineur si l'equipe n'a pas de regle stricte. Tu ne laisses pas passer un formulaire qui envoie des donnees en clair par erreur.
+:::retenir
+La revue aide. Elle ne juge pas. Dire aussi ce qui est clair change toute l'ambiance.
+:::
 
 ## Le ton qui aide
 
-Prefere "Ici, si l'email est vide, on n'affiche pas d'erreur - on pourrait bloquer l'envoi" a "C'est nul". Prefere "Je ne comprends pas cette condition, tu peux m'expliquer ?" a "Lol quoi". Prefere "Suggestion :" a "Obligatoire :" quand c'est vraiment une preference.
+Prefere "Ici, si l'email est vide, on n'affiche pas d'erreur - on pourrait bloquer l'envoi" a "C'est nul". Prefere "Je ne comprends pas cette condition, tu peux m'expliquer ?" a "Lol quoi". Prefere "Suggestion :" a "Obligatoire :" quand c'est vraiment une preference. Dis aussi ce qui est bien. "Claire la separation HTML / CSS" prend trois secondes et donne de l'energie. La revue n'est pas seulement une chasse aux defauts.
 
-Dis aussi ce qui est bien. "Claire la separation HTML / CSS" prend trois secondes et donne de l'energie. La revue n'est pas seulement une chasse aux defauts.
-
-## En tant qu'auteur de la PR
-
-Aide le reviewer. Titre clair. Description courte : but, changements principaux, comment tester. Capture d'ecran si c'est visuel. Lien vers une issue si elle existe.
+En tant qu'auteur, aide le reviewer. Titre clair. Description courte : but, changements principaux, comment tester. Capture d'ecran si c'est visuel. Lien vers une issue si elle existe :
 
 ```text
 ## But
@@ -45,49 +29,33 @@ Afficher les tarifs sur /offres
 3. Cliquer "Contact" depuis un tarif
 ```
 
-Reponds aux commentaires sans te defendre par principe. Si tu n'es pas d'accord, explique calmement. Si tu corriges, pousse un commit et dis "c'est a jour".
+Reponds aux commentaires sans te defendre par principe. Si tu n'es pas d'accord, explique calmement. Si tu corriges, pousse un commit et dis "c'est a jour". Une PR de cent cinquante lignes se review. Une PR de deux mille cinq cents lignes se feint. Decoupe. Si tu ne peux pas decouper, guide le reviewer : "commence par `api.js`, puis le template". En petite equipe, vise un premier regard en vingt-quatre heures quand c'est possible. Meme un "je regarde demain matin" compte.
 
-## Taille de PR
+:::astuce
+"Comment tester" dans la description, c'est un cadeau au reviewer. Trois etapes suffisent souvent.
+:::
 
-Une PR de 150 lignes se review. Une PR de 2500 lignes se feint. Decoupe. Si tu ne peux pas decouper (trop lie), guide le reviewer : "commence par `api.js`, puis le template".
+Sam sur la PR de Lea : "J'ai suivi tes etapes de test sur mobile : le bloc tarifs passe bien. Une question : sur tres petit ecran, le prix passe sous le bouton - voulu ? Si non, on peut empiler en colonne des 480px. Suggestion, pas bloqueur si tu vises desktop d'abord." Lea repond : "Pas voulu. Je pousse un correctif ce soir." Elle pousse. Sam Approuve. Merge. Quatre messages, zero ego, un meilleur site. Sur GitHub, tu peux commenter sans bloquer, demander des changements, ou approuver. Utilise "request changes" pour les vrais blocants. N'approuve pas par pitie si tu n'as pas regarde.
 
-## Temps de reponse
+Max, un jour, a Approuve "parce que c'etait petit" sans ouvrir les fichiers. Le formulaire a casse. Depuis, l'equipe dit : "Approve conscient ou pas Approve." Ce n'est pas de la rigidite. C'est du respect pour la prod et pour Lea qui devra debugger.
 
-Une PR qui attend une semaine pourrit. L'auteur rebase, le contexte se perd, la motivation tombe. En petite equipe, vise un premier regard en 24h quand c'est possible. Meme un "je regarde demain matin" compte.
+## Petite histoire
 
-## Approve, request changes, commentaire
+Max a approuve une PR "parce que c'etait petit" sans ouvrir les fichiers. Le formulaire a casse la prod le vendredi. Depuis, l'equipe dit : "Approve conscient ou pas Approve." Lea, elle, a appris a ecrire "comment tester" avant chaque PR. Les reviews sont devenues plus rapides parce qu'elles sont plus claires. Ce n'est pas de la triche. C'est de la politesse technique.
 
-Sur GitHub, tu peux commenter sans bloquer, demander des changements, ou approuver. Utilise "request changes" pour les vrais blocants. N'approuve pas par pitie si tu n'as pas regarde. N'utilise pas "request changes" pour une virgule.
+Chez DanielCraft, on repete : le ton compte autant que le fond. Une remarque juste dite mal, et la prochaine PR sera cachee. Une remarque moyenne dite bien, et l'auteur corrige avec le sourire.
 
 ## Erreur classique
 
-La revue ego : "moi j'aurais fait autrement" sur chaque ligne. Ou la revue fantome : Approve sans ouvrir les fichiers. Ou l'auteur invisible qui n'ecrit aucune description. Les trois cassent le jeu.
+La revue ego : "moi j'aurais fait autrement" sur chaque ligne. Ou la revue fantome : Approve sans ouvrir les fichiers. Ou l'auteur invisible qui n'ecrit aucune description. Les trois cassent le jeu. Tu peux quand meme aider sans etre expert du domaine : clarte des noms, cas limites evidents, secrets, "je ne comprends pas ce bloc". Dire "je ne connais pas bien cette API, Max peut-tu jeter un oeil ?" est professionnel.
+
+:::attention
+Approve fantome et Request changes pour une virgule : deux extremes qui cassent la confiance. Vise le fond, garde le ton.
+:::
 
 ## En vrai
 
 Prends une PR passee (la tienne ou une publique). Ecris trois commentaires bienveillants et utiles que tu aurais pu laisser. Puis ecris le commentaire toxique equivalent... et jette-le. Sens la difference. Garde la premiere version comme modele mental.
-
-
-## Exemple de fil de review (ton juste)
-
-Sam sur la PR de Lea :
-
-"J'ai suivi tes etapes de test sur mobile : le bloc tarifs passe bien. Une question : sur tres petit ecran, le prix passe sous le bouton - voulu ? Si non, on peut empiler en colonne des 480px. Suggestion, pas bloqueur si tu vises desktop d'abord."
-
-Lea repond : "Pas voulu. Je pousse un correctif ce soir." Elle pousse. Sam Approuve. Merge. Quatre messages, zero ego, un meilleur site.
-
-## Ce qu'on ne review pas (ou peu)
-
-Le gout personnel sans regle d'equipe ("moi j'aime les simples quotes"). La refonte totale hors sujet. Le "j'aurais tout ecrit autrement" sans proposition actionnable. La revue n'est pas un concours de style.
-
-## Check-list mentale du reviewer (sans en faire une religion)
-
-Je comprends le but. J'ai regarde les fichiers touches. J'ai teste ou j'ai dit pourquoi je ne pouvais pas. J'ai signale les risques. J'ai laisse au moins une remarque utile ou un approve conscient. C'est deja une bonne review.
-
-## Quand tu n'es pas expert du domaine
-
-Tu peux quand meme aider : clarte des noms, cas limites evidents, secrets, "je ne comprends pas ce bloc". Dire "je ne connais pas bien cette API, Max peut-tu jeter un oeil ?" est professionnel. Ce n'est pas un echec.
-
 
 ## A toi
 

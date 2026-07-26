@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#dfe6e9"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="40" fill="#2d3436" font-weight="700">Bravo</text>
+<text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#636e72" font-weight="400">Tu sais travailler Git en equipe</text>
+<text x="500" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d3436" font-weight="400">Flux, revue, CI, releases.</text>
+</svg>

@@ -1,14 +1,20 @@
 # Chapitre 16 - Atelier : conflit en equipe
 
-Les conflits font peur parce qu'ils arrivent souvent le vendredi. Ici, tu vas en creer un expres, le resoudre calmement, et voir que ce n'est qu'un fichier qui demande un choix.
+Les **conflits** font peur parce qu'ils arrivent souvent le vendredi, quand tout le monde veut partir. Ici, tu vas en creer un expres, le resoudre calmement, et voir que ce n'est qu'un fichier qui demande un choix humain. Git ne "casse" pas. Il s'arrete et te demande : "deux versions, laquelle ?" Chez DanielCraft, le meilleur conflit est celui evite tot. Le deuxieme meilleur est celui resolu sans drama. Duree : 45 a 75 minutes. Ecris le **livrable**. Sans note, le cerveau classe ca comme "lu", pas comme "su".
 
-## But
+Lea a panique la premiere fois qu'elle a vu les marqueurs. Max aussi. Sam a appris `merge --abort` avant d'apprendre a resoudre. Abandonner proprement est une competence. Tu vas en avoir besoin. Cet atelier ne te rend pas expert en fusion. Il te rend capable de respirer quand le terminal crie.
 
-Provoquer un conflit sur le meme fichier, le resoudre, finir sur une `main` propre. Duree : 45 a 75 minutes.
+:::retenir
+Un conflit, c'est un choix de contenu, pas une panne Git. Respire, choisis, enleve les marqueurs, commit.
+:::
 
-## Scenario
+Deux branches touchent le meme titre. Alex ecrit "Atelier Git equipe". Blake ecrit "Site vitrine DanielCraft". `main` recoit Alex d'abord. Blake synchronise : conflit. Marqueurs `<<<<<<<`. Tu choisis, ou tu combines. Tu enleves les marqueurs. Tu commits. Tu respires. La page affiche une seule version claire. Personne n'a "gagne". Le site a gagne.
 
-Deux branches touchent le titre de `index.html` (ou le texte du bandeau). Alex change le titre vers "Atelier Git equipe". Blake change le titre vers "Site vitrine DanielCraft". Les deux partent du meme `main`.
+Le meme scenario arrive en vrai quand Lea et Max touchent `index.html` le meme jour sans se le dire. Git fusionnera peut-etre les zones eloignees. Sur la meme ligne, il demandera un humain. Le canal ("je touche le titre aujourd'hui") reste le meilleur antidote. L'atelier, lui, entraine le muscle quand l'antidote a rate.
+
+## But et scenario
+
+Provoquer un conflit sur le meme fichier, le resoudre, finir sur une `main` propre. Deux branches touchent le titre de `index.html` (ou le bandeau). Alex et Blake partent du meme `main`. Tu peux jouer les deux roles sur un seul compte. Idealement, un ami joue Blake pour sentir le "vrai" frottement.
 
 ## Etapes
 
@@ -19,17 +25,9 @@ git switch main
 git pull
 ```
 
-2. Branche Alex :
+2. Branche Alex : `feature/titre-atelier`, modifie le titre, commit, pousse, **PR**, merge dans `main`.
 
-```bash
-git switch -c feature/titre-atelier
-```
-
-Modifie le titre. Commit. Pousse. Ouvre une PR. Merge-la dans `main` (avec review rapide ou auto-merge sur depot de test).
-
-3. Sans tirer encore, cree la branche Blake depuis l'ancien point... Astuce simple pour solo :
-
-Apres le merge d'Alex, cree la branche Blake depuis un commit ou le titre n'etait pas encore celui d'Alex, OU plus simple pour solo :
+3. Puis branche Blake depuis `main` tire :
 
 ```bash
 git switch main
@@ -37,16 +35,16 @@ git pull
 git switch -c feature/titre-vitrine
 ```
 
-Modifie le meme endroit avec un autre texte. Commit.
+Autre texte au meme endroit. Commit.
 
-4. Ramene `main` dans ta branche Blake :
+4. Ramene `main` :
 
 ```bash
 git fetch origin
 git merge origin/main
 ```
 
-Le conflit apparait. Ouvre le fichier. Tu vois les marqueurs :
+Conflit. Marqueurs :
 
 ```text
 <<<<<<< HEAD
@@ -56,48 +54,49 @@ titre d'Alex (venu de main)
 >>>>>>> ...
 ```
 
-5. Choisis une version, ou combine ("Site vitrine DanielCraft - atelier Git"). Enleve les marqueurs. Sauve.
+5. Choisis ou combine ("Site vitrine DanielCraft - atelier Git"). Enleve les marqueurs. Sauve. Relis le fichier : aucun `<<<<<<<` ne doit rester.
 
-6. Marque resolu et termine le merge :
+6. Resolu :
 
 ```bash
 git add index.html
 git commit
 ```
 
-(si Git a ouvert un message de merge, valide-le)
+7. Pousse. PR. Description : "Resolution de conflit sur le titre, version combinee telle." Review. Merge.
 
-7. Pousse. Ouvre la PR. Explique dans la description : "Resolution de conflit sur le titre, version combinee telle." Review. Merge.
+8. Tire `main`. Verifie le titre dans le navigateur. Sens le soulagement : c'etait ca, le monstre.
 
-8. Tire `main` localement. Verifie le titre final dans le navigateur.
-
-```bash
-git switch main
-git pull
-```
+:::astuce
+Si tu paniques au milieu : `git merge --abort` (ou `git rebase --abort`). Tu reviens a l'avant. Puis tu recommences a froid.
+:::
 
 ## Variante rebase
 
-Au lieu de `git merge origin/main`, tente `git rebase origin/main`, resols, `git rebase --continue`, puis `git push --force-with-lease` sur la branche perso. Compare le ressenti avec le merge.
+Au lieu de merge : `git rebase origin/main`, resols, `git rebase --continue`, puis `git push --force-with-lease` sur la branche perso. Compare le ressenti. Le **rebase** rejoue tes commits sur une base plus recente. Le merge colle les histoires avec un noeud. Les deux demandent le meme choix de contenu. Seule la forme de l'historique change. Note ce que tu preferes. On en reparlera dans le contrat d'equipe.
 
-## Criteres de reussite
+## Petite histoire
 
-Aucun marqueur `<<<<<<<` reste dans les fichiers. Le site s'affiche. L'historique montre la resolution. Tu peux expliquer a voix haute ce que tu as choisi et pourquoi.
+Lea a laisse les marqueurs dans le fichier : page cassee en prod, texte illisible avec des `=======`. Max a choisi au hasard sans parler : ego blesse, mauvaise version. Sam a combine et explique dans la PR : calme, trace, confiance. Regle d'equipe a ecrire : "si on touche aux memes zones, on se parle avant" + "on synchronise `main` souvent".
 
-## Si panique
+Chez DanielCraft, on chronometre parfois cet atelier. Quarante-cinq minutes suffisent si le depot est pret. Soixante-quinze si c'est la premiere fois que tu vois les marqueurs. Le but n'est pas la vitesse. C'est le calme.
 
-```bash
-git merge --abort
-```
+## Criteres et panique
 
-ou
+Aucun `<<<<<<<` restant. Site affiche. Historique montre la resolution. Tu expliques a voix haute ce que tu as choisi et pourquoi. Si panique : abort, pause cafe, recommence. Un conflit mal resolu pousse sur `main` est pire qu'un conflit non resolu encore local.
 
-```bash
-git rebase --abort
-```
+:::attention
+Ne force-push jamais sur `main` pour "effacer le conflit". Tu effaces aussi le travail des autres. Resols, commit, PR.
+:::
 
-Puis recommence. Abandonner proprement est une competence.
+## Erreur classique
 
-## Apres l'atelier
+Resoudre en gardant "les deux textes empiles" sans enlever les marqueurs. Ou blamer la personne au lieu de choisir le contenu. Ou synchroniser `main` une fois par semaine seulement : tu transformes un petit conflit en roman. Autre piege : ouvrir la PR sans dire "j'ai resolu un conflit, voici le choix". Le reviewer doit savoir.
 
-Ecris la regle d'equipe : "si on touche aux memes zones, on se parle avant" + "on synchronise main souvent". Le meilleur conflit est celui evite tot. Le deuxieme meilleur est celui resolu sans drama.
+## En vrai
+
+Ecris la regle d'equipe anti-conflit en deux phrases. Colle-la dans le README. Relis-la le prochain lundi avant de toucher `index.html`.
+
+## A toi
+
+Fais l'atelier. Livrable : notes du choix final + regle d'equipe + ressenti merge vs rebase si teste. Range-le. La prochaine fois que le terminal criera, tu auras deja vecu la scene.

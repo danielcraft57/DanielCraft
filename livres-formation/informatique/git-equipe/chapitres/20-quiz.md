@@ -1,6 +1,12 @@
-# Quiz final
+# Chapitre 20 - Quiz final
 
-Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux avancer en equipe sans paniquer.
+Pas de piege. Relis une fois si besoin. Le but : verifier que tu peux avancer en equipe sans paniquer. Chez DanielCraft, le vrai test, c'est la prochaine **PR** calme, pas le 12/12. Douze questions, les themes du livre : **flux**, branches, rebase, historique, revue, protection, CI, tags, cherry-pick, bisect, **secrets**. Si tu bloques, note le numero et relis le chapitre. Pas de honte. Un miroir.
+
+Lea note ses erreurs et rouvre deux chapitres. Max refait l'atelier flux. Sam utilise ce QCM en fin de module. Toi, tu coches sans tricher. Une premiere passe honnete vaut mieux qu'un score maquille. Le but, c'est la carte des chapitres a rouvrir. Fais le quiz, note ton score, rejoue dans une semaine. Le vrai progres se voit a la deuxieme passe.
+
+:::retenir
+Le quiz est un miroir, pas un jugement. Note le frein, relis le chapitre, agis quinze minutes.
+:::
 
 ## Questions
 
@@ -64,8 +70,38 @@ Pas de piege. Relis une fois si besoin. L'idee : verifier que tu peux avancer en
 - B) La mettre hors Git (ex: `.env` ignore) et fournir un `.env.example`
 - C) L'ecrire dans le titre de la PR
 
-## Corriges
+## Reponses
 
 1-B, 2-B, 3-B, 4-C, 5-B, 6-B, 7-B, 8-B, 9-B, 10-A, 11-B, 12-B.
 
-Si tu as 9/12 ou plus : tu es pret pour de vraies collabos. Sinon, relis les chapitres lies (flux, rebase, revue, protection, CI, tags, cherry-pick, bisect, secrets), sans dramatiser.
+Si tu as rate la 1 ou la 2 : chapitre 2 et 3. Rate la 3 ou la 4 : chapitre 4. Rate la 5 : chapitre 5. Rate la 6 : chapitre 6 et atelier revue. Rate la 7 : chapitre 7. Rate la 8 : chapitre 8. Rate la 9 : chapitre 9. Rate la 10 : chapitre 10. Rate la 11 : chapitre 11. Rate la 12 : chapitre 18, sans detour. Une erreur pointe un chapitre, pas une faute de caractere.
+
+## Score
+
+- 11-12 : pret pour de vraies collabos. Tiens le contrat leger cette semaine.
+- 9-10 : tres bien, relis le chapitre qui a coince, puis une micro-PR de test.
+- 7-8 : relis flux, revue, protection, secrets. Refais l'atelier flux si besoin.
+- 5-6 : refais ateliers flux et conflit. Pas de honte : les mains ancrent.
+- moins de 5 : reprends chapitres 1 a 7 sans stress. Le quiz attendra.
+
+## Petite histoire
+
+Lea a eu 8/12. Elle a relu le rebase, puis tenu une PR propre. Max a rate les secrets : il a verifie son `.gitignore` le soir meme. Sam a eu 11/12 et a quand meme protege `main` sur son depot de test. Le quiz est un miroir. Chez DanielCraft, on aime ces miroirs sans humiliation.
+
+Lea a aussi note : "j'ai coche trop vite sur cherry-pick". Elle a relance `git show` sur un depot de jouet. Cinq minutes. Le geste est revenu. Max a rate la CI : il a ecrit la phrase README avant meme d'avoir un workflow. L'intention d'abord. Sam a montre le quiz a un stagiaire : douze questions, zero piege, une carte claire.
+
+## Erreur classique
+
+Tricher pour "avoir 12". Ou lire les reponses avant. Ou noter le score sans action. Autre piege : croire que 12/12 remplace une PR calme la semaine suivante. Le quiz mesure le souvenir. La collabo mesure le geste.
+
+:::attention
+Un 12/12 sans depot de test et sans PR recente, c'est un score papier. Ancre par un geste de quinze minutes.
+:::
+
+## En vrai
+
+Note ton score et le chapitre a relire. Fais une action de quinze minutes liee (ouvrir une PR de test, ajouter `.env.example`, ecrire la regle d'equipe, proteger `main`). Le geste ancre mieux qu'une relecture passive. Si tu as 12/12, choisis quand meme une pratique a renforcer : personne n'est "fini".
+
+## A toi
+
+Ecris : score / frein principal / prochaine pratique a tenir cette semaine. Colle sous l'ecran. Dans sept jours, rejoue seulement les questions ratees. Puis coche : une PR avec description, ou `main` protegee, ou secrets verifies. Le quiz devient un plan, pas un trophee.
