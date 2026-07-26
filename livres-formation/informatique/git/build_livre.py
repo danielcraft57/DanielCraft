@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("git")
+BOOK_CSS = get_book_css("git") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -47,17 +66,65 @@ CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
         ("git-idee.png", "Git garde l'historique de ton projet, version apres version."),
     ],
+    2: [
+        ("git-installer.png", "Telecharger, installer, tester avec git --version."),
+    ],
+    3: [
+        ("git-depot.png", "git init : le depot commence dans ton dossier."),
+    ],
     4: [
         ("git-commit.png", "add prepare. commit photo. Une etape claire."),
     ],
+    5: [
+        ("git-historique.png", "Une ligne de commits : A, B, C, D."),
+        ("git-scene-historique.png", "Exemple : des versions du projet qui s'enchainent."),
+    ],
     6: [
         ("git-branches.png", "Une branche = une piste parallele pour tester sans casser."),
+        ("git-scene-branches.png", "Exemple : deux pistes, puis une fusion."),
+    ],
+    7: [
+        ("git-fusion.png", "Ramener le travail d'une branche dans main."),
+    ],
+    8: [
+        ("git-conflits.png", "Deux versions du meme endroit : choisir, puis commit."),
+    ],
+    9: [
+        ("git-gitignore.png", "Ignorer secrets et dossiers lourds des le debut."),
+    ],
+    10: [
+        ("git-github.png", "Git = outil. GitHub = depot en ligne."),
     ],
     11: [
-        ("git-remote.png", "clone / pull / push : le dialogue avec GitHub."),
+        ("git-remote.png", "clone / pull / push : le dialogue avec le distant."),
+        ("git-scene-remote.png", "Exemple : local et en ligne qui se parlent."),
+    ],
+    12: [
+        ("git-messages.png", "Un message = une phrase d'action claire."),
+    ],
+    13: [
+        ("git-projet.png", "init, commit, branche, push."),
+    ],
+    14: [
+        ("git-retenir.png", "Carte des bases Git."),
+    ],
+    15: [
+        ("git-stash.png", "Mettre de cote ou revenir en arriere, avec prudence."),
     ],
     16: [
         ("git-pr.png", "Une pull request, c'est demander de fusionner ton travail."),
+    ],
+    17: [
+        ("git-atelier-erreurs.png", "Lire le message, puis corriger un geste a la fois."),
+    ],
+    18: [
+        ("git-atelier-equipe.png", "Branches + PR pour moins de collisions."),
+    ],
+    19: [
+        ("git-atelier-reparer.png", "status, diff, log : diagnostiquer avant d'effacer."),
+    ],
+    20: [
+        ("git-quiz.png", "Verifier sans inventer."),
     ],
     21: [
         ("git-felicitations.png", "Bravo. Tu as les bases de Git et GitHub."),
@@ -106,8 +173,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -123,13 +195,44 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
+    """Schema apres H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(r"(</aside>)", r"\1\n" + scene_block, body_html, count=1)
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:

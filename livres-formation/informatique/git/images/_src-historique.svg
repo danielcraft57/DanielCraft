@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f7f4f2"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Historique = ligne de photos</text>
+<rect x="80" y="150" width="140" height="140" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="150" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">A</text>
+<rect x="260" y="150" width="140" height="140" rx="14" fill="#e8e6f0" stroke="#2b2d42" stroke-width="3"/>
+<text x="330" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">B</text>
+<rect x="440" y="150" width="140" height="140" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="510" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">C</text>
+<rect x="620" y="150" width="140" height="140" rx="14" fill="#ef476f" stroke="#2b2d42" stroke-width="3"/>
+<text x="690" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">D</text>
+<text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c5c66" font-weight="400">git log montre la chaine.</text>
+</svg>

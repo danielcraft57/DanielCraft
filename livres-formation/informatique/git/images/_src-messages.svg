@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f7f4f2"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Message de commit</text>
+<rect x="150" y="130" width="700" height="200" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">Ajouter le formulaire contact</text>
+<text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5c5c66" font-weight="400">verbe + quoi + pourquoi court</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c5c66" font-weight="400">Une phrase claire > un roman.</text>
+</svg>
