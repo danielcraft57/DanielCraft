@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f7f6"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#264653" font-weight="700">Besoin = probleme a resoudre</text>
+<rect x="120" y="120" width="350" height="220" rx="14" fill="#ffffff" stroke="#264653" stroke-width="3"/>
+<text x="295" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#264653" font-weight="700">douleur</text>
+<rect x="530" y="120" width="350" height="220" rx="14" fill="#e9c46a" stroke="#264653" stroke-width="3"/>
+<text x="705" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#264653" font-weight="700">solution</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a6a72" font-weight="400">Vendre sans besoin, c'est crier dans le vide.</text>
+</svg>

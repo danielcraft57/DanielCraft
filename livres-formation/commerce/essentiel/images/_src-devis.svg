@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f7f6"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#264653" font-weight="700">Devis clair</text>
+<rect x="180" y="110" width="640" height="250" rx="14" fill="#ffffff" stroke="#264653" stroke-width="3"/>
+<text x="500" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">quoi</text>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">combien</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">delai</text>
+<text x="500" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">conditions</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a6a72" font-weight="400">Le client doit comprendre sans te rappeler.</text>
+</svg>

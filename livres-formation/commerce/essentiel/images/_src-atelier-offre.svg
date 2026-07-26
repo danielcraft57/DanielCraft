@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f7f6"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#264653" font-weight="700">Atelier offre</text>
+<rect x="100" y="140" width="250" height="180" rx="14" fill="#ffffff" stroke="#264653" stroke-width="3"/>
+<text x="225" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">pour qui</text>
+<rect x="375" y="140" width="250" height="180" rx="14" fill="#e9c46a" stroke="#264653" stroke-width="3"/>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">quoi</text>
+<rect x="650" y="140" width="250" height="180" rx="14" fill="#ffffff" stroke="#264653" stroke-width="3"/>
+<text x="775" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#264653" font-weight="700">pourquoi</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a6a72" font-weight="400">Une offre en une page nette.</text>
+</svg>
