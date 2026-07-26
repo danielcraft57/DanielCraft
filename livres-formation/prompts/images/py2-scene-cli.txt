@@ -1,0 +1,2 @@
+Illustration pedagogique Python pratique - CLI.
+Fond bleu-gris, accents mint. Terminal avec options. Texte FR.

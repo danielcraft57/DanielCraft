@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef2f6"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#243447" font-weight="700">Atelier CLI</text>
+<rect x="150" y="130" width="700" height="200" rx="14" fill="#ffffff" stroke="#243447" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#243447" font-weight="700">python script.py --fichier data.csv</text>
+<text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5dade2" font-weight="400">argparse lit les options</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5dade2" font-weight="400">Un script callable > un script a modifier a chaque fois.</text>
+</svg>

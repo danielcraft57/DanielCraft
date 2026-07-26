@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("python2")
+BOOK_CSS = get_book_css("python2") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -52,18 +71,60 @@ CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     ],
     3: [
         ("py2-csv.png", "CSV : un tableau dans un fichier texte."),
+        ("py2-scene-csv.png", "Exemple : lignes brutes, puis un resume clair."),
     ],
     4: [
         ("py2-cli.png", "Un script que tu lances avec des options."),
+        ("py2-scene-cli.png", "Exemple : lancer le script avec --fichier."),
     ],
     5: [
         ("py2-venv.png", "venv : un coin isole pour tes paquets."),
     ],
     6: [
         ("py2-requests.png", "Ton script demande des donnees a une API."),
+        ("py2-scene-api.png", "Exemple : requete, reponse, donnees."),
+    ],
+    7: [
+        ("py2-http.png", "200 OK, 404 introuvable, 500 serveur : lire le code."),
+    ],
+    8: [
+        ("py2-env.png", ".env local, os.environ au runtime. Pas de secrets commits."),
+    ],
+    9: [
+        ("py2-logging.png", "INFO, WARNING, ERROR : des traces utiles."),
+    ],
+    10: [
+        ("py2-datetime.png", "now() + format lisible."),
+    ],
+    11: [
+        ("py2-regex.png", "Chercher un motif dans un texte."),
     ],
     12: [
         ("py2-projet.png", "Mini-projet : CLI + donnees + resume clair."),
+    ],
+    13: [
+        ("py2-retenir.png", "Carte Python pratique."),
+    ],
+    14: [
+        ("py2-atelier-csv.png", "Lire, filtrer, ecrire."),
+    ],
+    15: [
+        ("py2-atelier-cli.png", "argparse : options au lancement."),
+    ],
+    16: [
+        ("py2-atelier-api.png", "GET, JSON, affichage, erreurs."),
+    ],
+    17: [
+        ("py2-tests.png", "assert : proteger contre les regressions."),
+    ],
+    18: [
+        ("py2-organiser.png", "src, tests, README, requirements, venv."),
+    ],
+    19: [
+        ("py2-pratiques.png", "Noms clairs, petites fonctions, erreurs lues."),
+    ],
+    20: [
+        ("py2-quiz.png", "Verifier sans inventer."),
     ],
     21: [
         ("py2-felicitations.png", "Bravo. Tu sais faire des scripts Python utiles."),
@@ -112,8 +173,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -129,13 +195,44 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
+    """Schema apres H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(r"(</aside>)", r"\1\n" + scene_block, body_html, count=1)
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:

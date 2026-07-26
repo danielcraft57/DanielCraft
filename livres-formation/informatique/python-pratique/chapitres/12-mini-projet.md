@@ -1,8 +1,14 @@
 # Chapitre 12 - Mini-projet : CLI resume CSV ou API
 
-On assemble. Objectif : un petit outil en ligne de commande qui, selon le mode, lit un CSV de notes ou appelle une API meteo, puis affiche un resume clair. Avec arguments, gestion d'erreurs, et un log discret.
+On assemble. Objectif : un petit outil en ligne de commande qui, selon le mode, lit un **CSV** de notes ou appelle une **API** meteo, puis affiche un resume clair. Avec arguments, gestion d'erreurs, et un log discret. C'est le moment ou la theorie devient un outil sous le coude.
 
-Tu n'as pas besoin que ce soit parfait. Il faut que les deux chemins marchent, et que l'echec soit humain.
+Tu n'as pas besoin que ce soit parfait. Il faut que les deux chemins marchent, et que l'echec soit humain. Un seul script, deux modes. Mode notes : tu passes un fichier CSV et un nom d'eleve, tu obtiens une moyenne. Mode meteo : tu passes des coordonnees (ou des defauts Paris), tu obtiens une temperature. Les deux modes partagent la meme structure : argparse, fonctions metier, print pour l'utilisateur, logging pour le detail.
+
+C'est le moment ou Lea, Max et Sam retrouvent leurs trois fils rouges : notes CSV, meteo API, script **CLI**. Chez DanielCraft, c'est ce genre de petit outil qu'on garde parce qu'il sert vraiment.
+
+:::retenir
+Range ton fichier dans cet ordre : imports, fonctions metier, fonctions CLI, puis `main`. Tu te retrouves plus vite quand ca casse.
+:::
 
 ## Parcours
 
@@ -49,12 +55,27 @@ Le `if __name__ == "__main__"` evite d'executer `main` si le fichier est importe
 
 ## Mode notes (coeur)
 
-Reutilise `pathlib` + `csv.DictReader`. Calcule la moyenne. Si aucune ligne : message clair. Si le fichier n'existe pas : "Fichier introuvable : ..." et un `logging.error`.
+Reutilise `pathlib` + `csv.DictReader`. Calcule la moyenne. Si aucune ligne : message clair. Si le fichier n'existe pas : "Fichier introuvable : ..." et un `logging.error`. Tu as deja ecrit ces gestes dans les chapitres CSV et CLI. Ici, tu les branches derriere `--mode notes`. Sam reconnait son atelier. Lea reconnait son export client. Max reconnait ses factures sous d'autres colonnes.
+
+Idee de coeur (a adapter) :
+
+```python
+def moyenne_eleve(chemin, eleve):
+    total = 0.0
+    compte = 0
+    with Path(chemin).open(encoding="utf-8", newline="") as f:
+        for ligne in csv.DictReader(f):
+            if ligne["eleve"] == eleve:
+                total += float(ligne["note"])
+                compte += 1
+    if compte == 0:
+        return None
+    return total / compte
+```
 
 ## Mode meteo (coeur)
 
-`requests.get` avec timeout, `raise_for_status`, extraction de la temperature. En cas d'echec : "Impossible de recuperer la meteo." + log de l'exception.
-
+`requests.get` avec timeout, `raise_for_status`, extraction de la temperature. En cas d'echec : "Impossible de recuperer la meteo." + log de l'exception. Meme discipline que l'atelier API : params separes, timeout explicite, message humain. Max lance ce mode le matin. Lea ajoute parfois `--brut` pour debug. Toi, tu verifies d'abord le chemin malheureux (timeout court) avant de dire "c'est fini".
 ## Qualite minimale
 
 Pas de traceback brut comme seul resultat. Pas de secret en dur. Aide `-h` lisible. Noms de fonctions clairs (`commande_notes`, `moyenne_eleve`, `fetch_meteo`). Un resume en une ou deux lignes a l'ecran.
@@ -70,6 +91,12 @@ Il fait 18.2 C (lat=48.85, lon=2.35)
 
 Meme dans un seul `resume.py`, range dans cet ordre : imports, logging config dans `main`, fonctions metier (`moyenne_eleve`, `fetch_meteo`), fonctions CLI (`commande_notes`, `commande_meteo`), puis `main`. Tu te retrouves plus vite. Plus tard, tu pourras couper en plusieurs fichiers (chapitre organisation).
 
+## Petite histoire
+
+Sam avait lu tous les chapitres mais n'avait rien assemble. Lea lui a dit : "Fais le mini-projet ce week-end, meme moche." Sam l'a fait en deux heures. Lundi, il calculait les moyennes du trimestre en une commande. Max a ajoute le mode meteo pour son usage perso. Deux modes, un script, zero copier-coller.
+
+Lea a garde ce squelette comme modele pour ses outils clients. Chez DanielCraft, on dit souvent : un mini-projet fini bat dix chapitres survoles.
+
 ## Variante
 
 Ajoute `--seuil` en mode notes pour lister les notes au-dessus du seuil. Ou `--json` pour afficher un mini objet JSON au lieu d'une phrase. Bonus, pas obligatoire.
@@ -78,6 +105,14 @@ Ajoute `--seuil` en mode notes pour lister les notes au-dessus du seuil. Ou `--j
 
 Tu peux expliquer en trente secondes comment lancer les deux modes. Un ami peut lire `-h` et comprendre. Tu as casse au moins deux choses volontairement (mauvais fichier, mauvais reseau) et les messages tenaient la route. Le code n'a pas de cle en dur.
 
+:::attention
+Casse volontairement le CSV et le reseau avant de dire "c'est fini". Les chemins malheureux comptent autant que le chemin heureux.
+:::
+
 ## A toi
 
-Code les deux modes. Casse volontairement le chemin CSV. Casse l'URL ou coupe le reseau. Verifie les messages. Remets tout. Si les chemins heureux et malheureux sont propres, le mini-projet est reussi. Chez DanielCraft, c'est ce genre de petit outil qu'on garde sous le coude.
+Code les deux modes. Casse volontairement le chemin CSV. Casse l'URL ou coupe le reseau. Verifie les messages. Remets tout. Si les chemins heureux et malheureux sont propres, le mini-projet est reussi.
+
+:::astuce
+Deux modes, un CLI, messages humains, secrets dehors. Assemble, casse, reparer : c'est le vrai test.
+:::

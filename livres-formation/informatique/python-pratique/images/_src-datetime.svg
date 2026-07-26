@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef2f6"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#243447" font-weight="700">Dates et heures</text>
+<rect x="100" y="110" width="380" height="240" rx="14" fill="#ffffff" stroke="#243447" stroke-width="3"/>
+<text x="290" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#243447" font-weight="700">datetime.now()</text>
+<text x="290" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5dade2" font-weight="400">maintenant</text>
+<rect x="520" y="110" width="380" height="240" rx="14" fill="#d5e8f7" stroke="#243447" stroke-width="3"/>
+<text x="710" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#243447" font-weight="700">strftime</text>
+<text x="710" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5dade2" font-weight="400">format lisible</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5dade2" font-weight="400">Une date claire bat une chaine magique.</text>
+</svg>
