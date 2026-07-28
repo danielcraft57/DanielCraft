@@ -9,7 +9,7 @@ Organisation validee : **pas de refonte totale**. On garde les livres unitaires,
 | **Base** | Entree, "les bases / essentiel" | HTML/CSS, JS, Python, TS, Git, Marketing, Finance bases, IA essentiel... |
 | **Intermediaire** | Suite / pratique | HTML/CSS suite, JS suite, Python pratique, Git equipe, Vente avancee... |
 | **Expert** | Perf, archi, cas durs, prod | A creer (peu ou pas encore) |
-| **Securite** | Transversal | A creer (livre dedie + modules dans packs avances) |
+| **Securite** | Transversal | Securite web bases (fait) + modules avances a creer |
 
 Regle : ne pas fusionner base+inter+expert dans un seul PDF monstre. Un PDF = un niveau clair.
 
@@ -40,6 +40,13 @@ Vente unitaire reste possible (entree de gamme).
 | SQL - Les bases | Base | `pdf/sql-les-bases.pdf` |
 | SQL intermediaire | Inter | a creer |
 | SQL expert | Expert | a creer |
+
+## Livres Securite
+
+| Livre | Niveau | PDF |
+|-------|--------|-----|
+| Securite web - Les bases | Base | `pdf/securite-web-les-bases.pdf` |
+| Securite web inter | Inter | a creer |
 
 ## Images
 

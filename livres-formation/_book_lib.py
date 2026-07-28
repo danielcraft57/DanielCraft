@@ -1173,6 +1173,37 @@ button, .btn-like {
   .toc a { color: #111827 !important; }
 }
 """,
+        "securite": """
+/* Theme Securite web : ardoise + orange alerte (distinct SQL lime / TS marine) */
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --paper: #f8fafc;
+  --paper-deep: #e5e7eb;
+  --band: #1f2937;
+  --band-soft: #374151;
+  --accent: #fb923c;
+  --code-bg: #111827;
+  --code-fg: #ffedd5;
+  --card: #ffffff;
+  --rule: #d1d5db;
+}
+.cover,
+.cover-copy {
+  background: #1f2937 !important;
+  color: #ffedd5 !important;
+}
+.cover h1 { color: #f9fafb !important; }
+pre {
+  border-left-color: #fb923c !important;
+}
+button, .btn-like {
+  background: #1f2937;
+}
+@media print {
+  .toc a { color: #1f2937 !important; }
+}
+""",
         "sql": """
 /* Theme SQL : encre foret + lime (distinct finance vert/or et TS marine/ambre) */
 :root {
