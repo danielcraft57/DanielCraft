@@ -1173,6 +1173,37 @@ button, .btn-like {
   .toc a { color: #111827 !important; }
 }
 """,
+        "sql": """
+/* Theme SQL : encre foret + lime (distinct finance vert/or et TS marine/ambre) */
+:root {
+  --ink: #14261c;
+  --muted: #5a6e62;
+  --paper: #f3f6f2;
+  --paper-deep: #e4ebe3;
+  --band: #1a3d2b;
+  --band-soft: #245c3d;
+  --accent: #a3e635;
+  --code-bg: #0f1f16;
+  --code-fg: #ecfccb;
+  --card: #ffffff;
+  --rule: #c9d6c8;
+}
+.cover,
+.cover-copy {
+  background: #1a3d2b !important;
+  color: #ecfccb !important;
+}
+.cover h1 { color: #f7fee7 !important; }
+pre {
+  border-left-color: #a3e635 !important;
+}
+button, .btn-like {
+  background: #1a3d2b;
+}
+@media print {
+  .toc a { color: #1a3d2b !important; }
+}
+""",
         "typescript": """
 /* Theme TypeScript : marine + ambre (distinct JS vert / Python abricot) */
 :root {

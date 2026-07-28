@@ -167,8 +167,18 @@ python livres-formation\informatique\<livre>\build_livre.py
 | Deep Learning | `pdf/ia-deep-learning.pdf` | ~50+ pages | teal + rose (`theme="dl"`) |
 | Finance - Les bases | `pdf/finance-les-bases.pdf` | ~50+ pages | vert nuit + or (`theme="finance"`) ; budget, tresorerie, prudence |
 
-## 9. Suites possibles
+## 9. Catalogue : niveaux + packs (pas de refonte totale)
 
+Voir `CATALOGUE.md`. Resume :
+
+- **Base → Intermediaire → Expert** (+ piste **Securite** transversale).
+- Les livres "bases" restent Base. Les "suite / pratique / equipe" = Intermediaire (repositionner, pas tout reecrire).
+- **Vente** : packs (Web, Python, Data/SQL, Finance, IA, Securite) + unitaire.
+- Priorite : combler les trous (SQL Base, Securite...), pas regenerer les 24 livres.
+
+## 10. Suites possibles
+
+- SQL inter / expert, Securite web base
 - Marketing / communication avances
-- Page site pour telecharger les PDF  
+- Page site pour telecharger les PDF + pages packs  
 
