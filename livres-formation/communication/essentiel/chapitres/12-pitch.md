@@ -1,45 +1,49 @@
 # Chapitre 12 - Prise de parole et pitch court
 
-Parler devant des gens stress. Normal. L'objectif n'est pas de devenir comedien. C'est de faire passer trois idees propres en un temps limite. Un pitch court, c'est une version orale de ton message clair.
+Parler devant des gens stress. Normal. L'objectif n'est pas de devenir comedien. C'est de faire passer trois idees propres en un temps limite. Chez DanielCraft, un **pitch** court, c'est une version orale de ton message clair. Que tu presentes ton asso a la mairie, ton offre a un client, ton projet a une classe, ou toi-meme en reunion, la methode se ressemble. Tu guides. Tu ne fais pas visiter toute la foret. Une minute bien balisee bat trois minutes confuses.
 
-Que tu presentes ton asso a la mairie, ton offre a un client, ton projet a une classe, ou toi-meme en reunion, la methode se ressemble.
+Trame en une minute : qui tu es / ce que tu fais ; pour qui ; quel probleme tu aides a resoudre ; une preuve courte ; ce que tu proposes maintenant. Cinq briques. Pas dix. Artisan : "Menuisier a Romans. Meubles sur mesure pour petits espaces. Beaucoup galerent avec le standard trop grand. Semaine derniere, bibliotheque d'angle, un mur libere. Si ton salon est etroit, croquis gratuit." Asso : "On collecte pour les familles du quartier. Hiver dernier, deux voitures. Samedi, huit benevoles 10h-12h devant la mairie. Qui peut ?" Cinq briques. Une demande. Fin nette.
 
-## La trame en une minute
+Lea chronometre. Max coupe ce qui sonne faux. Sam apprend les idees, pas le texte mot a mot comme un robot. Arrive tot. Respire. Pieds au sol. Regarde par zones. Sourire leger si le contexte le permet. Finis net, pas "voila... bon... c'est tout". Le silence apres la demande appartient a l'autre. Laisse-le.
 
-Qui tu es / ce que tu fais. Pour qui. Quel probleme tu aides a resoudre. Une preuve courte. Ce que tu proposes maintenant. Cinq briques. Pas dix.
+:::retenir
+Cinq briques : qui, pour qui, probleme, preuve, demande. Soixante secondes max. Finis sur la demande, pas sur "voila..."
+:::
 
-Exemple artisan : "Je suis menuisier a Romans. Je fais des meubles sur mesure pour petits espaces. Beaucoup de clients galerent avec des meubles standards trop grands. La semaine derniere j'ai livre une bibliotheque d'angle qui a libere tout un mur. Si ton salon est etroit, on peut regarder ensemble un croquis gratuit." Environ soixante secondes. Clair.
+## Ce que ce n'est pas
 
-Exemple asso : "On collecte des denrees pour les familles du quartier. L'hiver dernier on a rempli l'equivalent de deux voitures. Samedi on a besoin de huit benevoles de 10h a 12h devant la mairie. Qui peut ?" Direct. Federateur.
+Ce n'est pas tout dire "parce que c'est important". Ce n'est pas s'excuser en boucle avant de commencer. Ce n'est pas finir sans demande. Ce n'est pas non plus lire mot a mot comme un teleprompter. Ce n'est pas enfin un monologue de trois minutes qui noie la preuve et la demande. Un pitch sans porte de sortie laisse les gens polis et immobiles. Ils sourient. Ils n'agissent pas. Tu as parle. Rien n'a bouge.
 
-## Preparer sans surjouer
+Beaucoup croient aussi que le pitch "doit etre parfait". En vrai, il doit etre clair. Un pitch imparfait avec une demande nette ouvre plus de portes qu'un pitch parfait sans issue. Le courage compte plus que la perf. Lea l'a appris. Max aussi. Sam encore.
 
-Ecris ton pitch. Lis-le a voix haute. Chronometre. Coupe ce qui sonne faux. Apprends les idees, pas le texte mot a mot comme un robot. Si tu bloques, reviens a ta phrase centrale.
+## En pratique
 
-Arrive tot. Respire. Pose tes pieds. Regarde les gens par zones, pas un seul visage intimidant. Sourire leger si le contexte le permet. Finis par une phrase nette, pas un "voila... bon... c'est tout".
+Le pitch, c'est un sentier balise d'une minute. Tu guides. Tu ne fais pas visiter toute la foret. Lea chronometre. Max coupe ce qui sonne faux. Sam apprend les idees, pas le texte mot a mot comme un robot. Arrive tot. Respire. Pieds au sol. Regarde par zones. Sourire leger si le contexte le permet. Finis net, pas "voila... bon... c'est tout". Sur le sentier, cinq jalons. Si tu ajoutes trop de detours, l'autre se perd. Si tu finis sans porte, l'autre reste au milieu du chemin. La demande, c'est la porte.
 
-## Gerer les questions
+## Questions et deraillements
 
-Une question n'est pas une attaque. Reformule si besoin. Reponds court. Si tu ne sais pas, dis-le et propose une date de retour. Inventer une reponse pour sauver la face coute cher ensuite.
+Une question n'est pas une attaque. Reformule si besoin. Reponds court. Si tu ne sais pas, dis-le et propose une date de retour. Inventer coute cher. Si quelqu'un coupe : "Je note ton point, je termine en une phrase, puis on y revient." Tu gardes le fil sans humilier. Le non verbal du chapitre 7 compte ici : regard, rythme, posture. Un seul ajustement si tu stress. Respire bas. Pose les pieds. Accepte un silence d'une seconde. Puis continue. Le silence n'est pas un echec. C'est un temps de digestion.
 
-Si quelqu'un coupe ou deraille, recentre poliment : "Je note ton point, je termine l'idee en une phrase, puis on y revient." Tu gardes le fil sans humiliier.
+:::astuce
+Lea : "Sites simples pour artisans. Beaucoup perdent des clients faute de page claire. Un plombier a recu trois appels la premiere semaine. Diagnostic gratuit de ta page en 15 minutes." Demande nette, preuve courte.
+:::
 
-## Contextes differents
+## Petite histoire
 
-En visio, regarde la camera de temps en temps, verifie ton son, enleve les notifs. En presentiel, attention a tourner le dos au groupe en lisant un ecran. Avec des enfants, plus d'exemples concrets, moins d'abstraction. Avec des decideurs presses, commence par la demande et le benefice, details ensuite.
+Lea lisait son pitch comme un teleprompter. Elle a passe aux idees : plus naturelle. Les gens ont commence a reagir. Max parlait trois minutes sans preuve. Il a ajoute un cas recent : plus convaincant. Sam oubliait l'appel a l'action. Il finit maintenant par une question claire. Trois pitches, trois decisions plus faciles pour l'auditoire. Dans chaque cas, la trame a sauve le stress : qui, pour qui, probleme, preuve, demande. Quand la tete vide, la trame reste. C'est pour ca qu'on l'ecrit sur une carte.
+
+## Erreur classique
+
+Tout dire "parce que c'est important". Ou s'excuser en boucle avant de commencer. Autre piege : finir sans demande. Un pitch sans porte de sortie laisse les gens polis et immobiles. Encore un piege : inventer une reponse sous pression. Mieux vaut "je ne sais pas encore, je te reviens demain" qu'une promesse impossible. La confiance se joue aussi la.
+
+:::attention
+Ne commence pas par trois excuses. Commence par la premiere brique. Les excuses, si besoin, viennent apres - et courtes.
+:::
 
 ## En vrai
 
-Ecris un pitch de 60 secondes sur ton activite ou ton projet du moment. Enregistre-toi une fois. Recoute. Enleve une phrase inutile. Reessaie. Quand tu tiens une version propre, garde-la comme base. Tu l'adapteras selon le public.
+Ecris ton pitch. Lis-le a voix haute. Chronometre. Coupe pour tenir une minute. Enregistre-toi une fois. Ajuste un point. Un seul. Trop d'ajustements d'un coup te paralysent. Un seul te fait progresser. Demain, recommence. Le pitch s'affine par couches.
 
-Allez. Pitch en poche, on aborde la crise calmement.
+## A toi
 
-## Autres exemples du quotidien
-
-Une association sportive qui change le jour d'entrainement doit le dire tot, sur le groupe de parents, et afficher un rappel au gymnase. Une boutique qui lance un click and collect doit expliquer en trois phrases comment ca marche, pas en douze ecrans. Un enseignant qui prepare une reunion parents gagne a envoyer l'ordre du jour la veille : les gens arrivent moins sur la defensive.
-
-La communication utile, c'est souvent ca : anticiper la question suivante. Si tu sens que les gens vont demander "c'est obligatoire ?", "ca coute combien ?", "je fais quoi si je ne peux pas ?", reponds dans le premier message. Tu economises dix allees-retours.
-
-## Ce que tu peux commencer demain
-
-Choisis un canal que tu negliges et un message en retard. Ecris la phrase centrale. Envoie. Observe. Tu n'as pas besoin d'attendre d'avoir "fini le livre" pour pratiquer. Le livre sert de boussole pendant que tu pratiques.
+Ecris tes cinq briques sur une carte. Repete-les demain matin. Utilise-les dans un vrai echange cette semaine (meme court, meme informel). Ensuite seulement, peaufine. Un pitch reste theorique tant qu'il n'a pas rencontre un humain. DanielCraft prefere le pitch dit au pitch parfait range dans un tiroir.

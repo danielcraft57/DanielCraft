@@ -1,45 +1,49 @@
 # Chapitre 13 - Communication de crise : les bases
 
-Une crise, ce n'est pas seulement un scandale national. C'est aussi : un accident leger a l'ecole, un bug qui bloque les commandes, un retard de chantier, une rumeur sur les reseaux, un conflit public dans une asso. La, le silence prolonge souvent le probleme. La panique aussi.
+Une crise, ce n'est pas seulement un scandale national. C'est aussi : un accident leger a l'ecole, un bug qui bloque les commandes, un retard de chantier, une rumeur sur les reseaux, un conflit public dans une asso. Chez DanielCraft, on le pose clairement : le silence prolonge souvent le probleme. La panique aussi. L'objectif n'est pas une formule parfaite. C'est proteger les gens, dire les faits connus, indiquer la suite. Calme. Honnete. Regulier. Tu n'as pas a tout savoir. Tu as a dire ce que tu sais, ce que tu fais, et quand tu reviens.
 
-L'objectif en crise n'est pas d'avoir une formule parfaite. C'est de proteger les gens, dire les faits connus, et indiquer la suite. Calme. Honnete. Regulier.
+Trois piliers. **Faits** : ce qu'on sait maintenant, sans speculation. Empathie : reconnaitre l'impact. Action : ce qu'on fait, et quand on redonne des nouvelles. Faits sans empathie = froid. Empathie sans action = vide. Action sans faits = flou. Ecole : "Ce matin un eleve s'est blesse legerement. Pris en charge. Parents concernes prevenus. Reunion 17h. On revient avant 19h si besoin." PME : "Paiement en ligne coupe depuis 14h. Pas de double debit selon verifs actuelles. On travaille avec l'hebergeur. Prochaine info a 17h." Quatre elements. Une voix. Une prochaine heure. Ca calme mieux qu'un silence de trois jours.
 
-## Les trois piliers
+Lea designe une voix principale. Max aussi sur un chantier. Sam a l'ecole. Les autres renvoient vers cette voix. Trop de porte-parole = contradictions. Et les contradictions, en crise, nourrissent la rumeur. Une voix. Des faits. Une suite. C'est deja beaucoup.
 
-Faits : ce qu'on sait maintenant, sans speculation. Empathie : reconnaitre l'impact sur les personnes. Action : ce qu'on fait, et quand on redonne des nouvelles. Si tu rates un pilier, le message boite. Des faits sans empathie sonnent froids. De l'empathie sans action sonne vide. De l'action sans faits sonne floue.
+:::attention
+Ne promets pas la lune pour calmer. Une promesse cassee casse encore plus la confiance que le silence initial.
+:::
 
-Exemple ecole : "Ce matin un eleve s'est blesse legerement en recre. Il a ete pris en charge. Les parents concernes sont prevenus. Reunion d'info a 17h pour la classe. On revient vers vous avant 19h si besoin." Faits, soin, suite.
+## Ce que ce n'est pas
 
-Exemple PME : "Le paiement en ligne est coupe depuis 14h. Aucune commande n'a ete debitée en double selon nos verifs actuelles. On travaille avec l'hebergeur. Prochaine info a 17h sur le site et Instagram." Meme logique.
+Ce n'est pas mentir pour gagner du temps. Ce n'est pas accuser sans preuve. Ce n'est pas disparaitre "le temps de gerer". Ce n'est pas promettre une date impossible ni minimiser ("ce n'est rien"). Ce n'est pas non plus se battre des heures en commentaires publics pendant que les concernes n'ont pas ete appeles. Ce n'est pas enfin diffuser des infos personnelles sous le pretexte de "transparence". Protege les gens. Dis les faits utiles. Indique la suite. Le reste attend.
 
-## Ce qu'il ne faut pas faire
+Beaucoup croient aussi qu'il faut "attendre d'avoir tout" avant de parler. En vrai, le trou d'info se remplit tout seul - souvent avec des peurs. Mieux vaut dire les faits partiels + prochaine heure d'info que laisser la rumeur courir. Lea l'a appris. Max aussi. Sam encore.
 
-Mentir pour gagner du temps. Accuser trop vite sans preuve. Disparaitre. Promettre une date impossible. Se battre en commentaires publics pendant des heures. Diffuser des infos personnelles. Minimiser la souffrance des gens ("ce n'est rien").
+## En pratique
 
-Autre erreur : trop de porte-parole differents qui se contredisent. Designe une voix principale. Les autres renvoient vers elle.
+En crise, tu tiens une lampe de poche dans le brouillard. Tu eclaires ce qui est sur, tu dis ce qui est en cours, tu annonces quand tu reviens. Tu ne pretend pas voir tout le paysage. Lea designe une voix principale. Max aussi sur un chantier. Sam a l'ecole. Les autres renvoient vers cette voix. Trop de porte-parole = contradictions. La lampe n'eclaire pas tout. Elle eclaire assez pour avancer sans tomber. Et elle revient a heure dite. C'est ca, la confiance en crise : regularite + honnetete, pas perfection.
 
-## Petite procedure utile
+## Procedure et interdits
 
-1) Securiser les personnes et le terrain. 2) Rassembler les faits verifies. 3) Decider le message court. 4) Choisir les canaux (souvent : concernes d'abord en direct, puis info plus large). 5) Publier / appeler. 6) Planifier la prochaine mise a jour. 7) Apres la crise, faire un retour a froid : ce qui a marche, ce qui manque.
+1) Securiser personnes et terrain. 2) Faits verifies. 3) Message court. 4) Canaux : concernes d'abord en direct, puis info plus large. 5) Publier / appeler. 6) Planifier la prochaine mise a jour. 7) Apres, retour a froid. Ne pas : mentir pour gagner du temps, accuser sans preuve, disparaitre, promettre une date impossible, se battre des heures en commentaires, diffuser des infos personnelles, minimiser ("ce n'est rien"). Colle la liste dans un tiroir. Le jour J, tu suis. Tu n'inventes pas sous adrenaline. Tu executes une procedure courte. C'est pour ca qu'on l'ecrit avant.
 
-Tu peux coller cette liste dans un tiroir. Le jour J, tu ne reflechis pas a froid. Tu suis.
+:::retenir
+Faits, empathie, action, prochaine info. Une voix. Concernes d'abord en direct, puis info plus large.
+:::
 
-## Apres la vague
+## Petite histoire
 
-Quand c'est retombe, communique aussi la fin : ce qui a ete corrige, ce qui change pour eviter que ca se reproduise. La confiance se reconstruit la. Une asso qui a rate une collecte peut dire "on a change le planning benevoles, voici le nouveau mode d'emploi". Une PME peut expliquer le correctif technique simplement.
+Lea a voulu "attendre d'avoir tout" : la rumeur a grandi. Elle a appris a dire les faits partiels + prochaine heure d'info. Max a minimise un retard : confiance cassee. Il a nomme l'impact et la suite. Sam a laisse trois enseignants repondre chacun de leur cote : messages contradictoires. Une voix unique a calme les parents. Trois crises differentes. Une meme lecon : ne pas disparaitre, ne pas inventer, ne pas multiplier les voix. La lampe, l'heure, la suite. Ensuite seulement, le bilan a froid pour apprendre.
+
+## Erreur classique
+
+Disparaitre "le temps de gerer". Ou tout gerer en story publique pendant que les concernes n'ont pas ete appeles. Autre piege : promettre la lune pour calmer, puis casser encore plus la confiance. Encore un piege : minimiser ("ce n'est rien") alors que l'autre vit un vrai impact. Nomme l'impact. Propose une suite. C'est plus respectueux qu'un "tout va bien" vide.
+
+:::astuce
+Modele court : "Depuis 14h, le paiement en ligne est coupe. Selon nos verifs, pas de double debit. On travaille avec l'hebergeur. Prochaine info a 17h. Desole pour la gene."
+:::
 
 ## En vrai
 
-Imagine une mini crise plausible pour ton contexte (retard, annulation, bug, incident leger). Ecris un message de 6-8 lignes avec faits / empathie / action / prochaine info. Garde-le comme modele. Tu l'adapteras. Mieux vaut un modele imparfait que le vide le jour J.
+Ecris un message de crise fictif pour ton activite (bug, retard, incident leger) avec faits / empathie / action / prochaine info. Garde-le comme modele. Tu l'adapteras. Le jour J, tu n'improviseras pas tout. Tu auras deja une structure. Ca change tout sous stress.
 
-Allez. Bases de crise posees, place au mini-projet.
+## A toi
 
-## Autres exemples du quotidien
-
-Une association sportive qui change le jour d'entrainement doit le dire tot, sur le groupe de parents, et afficher un rappel au gymnase. Une boutique qui lance un click and collect doit expliquer en trois phrases comment ca marche, pas en douze ecrans. Un enseignant qui prepare une reunion parents gagne a envoyer l'ordre du jour la veille : les gens arrivent moins sur la defensive.
-
-La communication utile, c'est souvent ca : anticiper la question suivante. Si tu sens que les gens vont demander "c'est obligatoire ?", "ca coute combien ?", "je fais quoi si je ne peux pas ?", reponds dans le premier message. Tu economises dix allees-retours.
-
-## Ce que tu peux commencer demain
-
-Choisis un canal que tu negliges et un message en retard. Ecris la phrase centrale. Envoie. Observe. Tu n'as pas besoin d'attendre d'avoir "fini le livre" pour pratiquer. Le livre sert de boussole pendant que tu pratiques.
+Designe ta voix principale + canal prioritaire pour prevenir les concernes + heure type de mise a jour. Une demi-page. Range-la. Le jour J, tu ne improvises pas tout. Relis aussi la liste des interdits. Une fois. Puis range. Le jour J, tu ouvres le tiroir. Tu suis. DanielCraft prefere une procedure simple a une panique elegante.

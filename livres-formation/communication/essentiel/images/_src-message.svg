@@ -1,14 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f7f3ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a1418" font-weight="700">Une idee = une phrase</text>
-  <rect x="80" y="100" width="840" height="90" rx="14" fill="#6b1e2a"/>
-  <text x="500" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">1. Idee principale</text>
-  <text x="500" y="168" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4a574">"La reunion est reportee a jeudi 18h."</text>
-  <rect x="80" y="210" width="400" height="90" rx="14" fill="#d4a574"/>
-  <text x="280" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a1418" font-weight="700">2. Contexte court</text>
-  <text x="280" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2a1418">pourquoi / detail utile</text>
-  <rect x="520" y="210" width="400" height="90" rx="14" fill="#8a2f3d"/>
-  <text x="720" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">3. Action</text>
-  <text x="720" y="278" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a574">quoi faire / pour quand</text>
-  <text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#6b1e2a">Le lecteur doit pouvoir repeter l'essentiel sans toi.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f7f3ef"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a1418" font-weight="700">Message clair</text>
+<rect x="200" y="130" width="600" height="200" rx="14" fill="#ffffff" stroke="#6b1e2a" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2a1418" font-weight="700">une idee = une phrase</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b1e2a" font-weight="400">le reste vient apres</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#6b1e2a" font-weight="400">Ce que l'autre doit retenir.</text>
 </svg>

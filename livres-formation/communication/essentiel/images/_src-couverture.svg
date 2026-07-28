@@ -1,33 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3a1218"/>
-      <stop offset="55%" stop-color="#6b1e2a"/>
-      <stop offset="100%" stop-color="#8a2f3d"/>
-    </linearGradient>
-    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#d4a574" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#d4a574" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <circle cx="1280" cy="160" r="220" fill="url(#glow)"/>
-  <circle cx="200" cy="720" r="180" fill="#d4a574" opacity="0.12"/>
-  <!-- pont stylise -->
-  <path d="M220 560 Q800 320 1380 560" fill="none" stroke="#d4a574" stroke-width="10" stroke-linecap="round"/>
-  <path d="M220 560 Q800 380 1380 560" fill="none" stroke="#f5efe6" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-  <!-- deux tetes / cercles -->
-  <circle cx="280" cy="520" r="70" fill="#f5efe6"/>
-  <circle cx="280" cy="500" r="28" fill="#6b1e2a"/>
-  <circle cx="1320" cy="520" r="70" fill="#d4a574"/>
-  <circle cx="1320" cy="500" r="28" fill="#2a1418"/>
-  <!-- bulles -->
-  <rect x="360" y="400" width="160" height="54" rx="16" fill="#f5efe6" opacity="0.9"/>
-  <text x="440" y="434" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#6b1e2a">Idee</text>
-  <rect x="1080" y="400" width="180" height="54" rx="16" fill="#f5efe6" opacity="0.9"/>
-  <text x="1170" y="434" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#6b1e2a">Compris</text>
-  <!-- titre zone basse -->
-  <text x="800" y="720" text-anchor="middle" font-family="Georgia, serif" font-size="64" fill="#f5efe6" font-weight="700">Communication</text>
-  <text x="800" y="780" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#d4a574">Les bases - DanielCraft</text>
-  <text x="800" y="840" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#f5efe6" opacity="0.85">Message clair. Ecoute. Confiance.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#f7f3ef"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#2a1418" font-weight="700">Communication</text>
+<text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#6b1e2a" font-weight="400">Les bases - Message et ecoute</text>
+<text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#d4a574" font-weight="400">DanielCraft</text>
 </svg>

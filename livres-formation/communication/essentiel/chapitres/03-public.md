@@ -1,47 +1,49 @@
 # Chapitre 3 - Public et destinataires : a qui tu parles ?
 
-Tu peux avoir le plus beau message du monde. S'il n'est pas adresse a la bonne personne, il rate. Communiquer "a tout le monde" donne souvent un texte flou que personne ne se sent concerne.
+Tu peux avoir le plus beau message du monde. S'il n'est pas adresse a la bonne personne, il rate. Communiquer "a tout le monde" donne souvent un texte flou que personne ne se sent concerne. Chez DanielCraft, on insiste : quand tu ecris pour Marie, Karim ou le bureau de l'asso, ton ton se precise tout seul. Quand tu ecris pour "le grand public", tu ecris souvent pour personne. Le message devient generique, poli, et inutile. Tu as l'impression d'avoir ete prudent. L'autre a l'impression que ce n'etait pas pour lui.
 
-Pense a une reunion de parents d'eleves. Le directeur ne parle pas comme a des ingenieurs informatiques. Il parle comme a des parents presses, preoccupes par leurs enfants. Un freelance qui ecrit a un client artisan n'utilise pas le meme vocabulaire qu'avec une agence digitale. Le contenu change parce que le destinataire change.
+Pense a une reunion de parents. Le directeur ne parle pas comme a des ingenieurs en conference technique. Il parle a des parents presses, preoccupes par leurs enfants, qui lisent parfois le mail tard le soir entre deux taches. Un freelance qui ecrit a un artisan n'utilise pas le meme vocabulaire qu'avec une agence marketing. Avant d'ecrire, trois questions te sauvent des heures de reformulation : qui recoit exactement ? qu'est-ce qu'il sait deja sur le sujet ? qu'est-ce qu'il a peur de rater ou de mal comprendre ? Ces trois reponses orientent tout le reste : longueur, ton, canal, niveau de detail. Sans elles, tu ecris dans le brouillard et tu corriges apres coup, sous pression.
 
-Avant d'ecrire, pose trois questions. Qui recoit ? Qu'est-ce qu'il sait deja ? Qu'est-ce qu'il a peur de rater ou de mal comprendre ? Ces trois reponses te sauvent des heures de reformulation.
+Lea adapte ses mails : jargon technique pour l'agence, langage simple pour l'artisan client. Max change de registre entre un particulier inquiet et un fournisseur habitue. Sam pense a Nadia, maman de deux enfants, quand il redige une annonce parents. Trois metiers, une meme regle : une personne concrete dans la tete, pas une foule abstraite. Des que tu peux nommer quelqu'un, le texte s'affine.
+
+:::astuce
+Pour chaque "porte" (public), ecris une phrase "ce qu'il doit retenir" et un canal prefere. Traite la porte urgente en premier.
+:::
+
+## Ce que ce n'est pas
+
+Ce n'est pas un persona de quinze pages avec un avatar dessine et un parcours client fictif complet. Ce n'est pas "tout le monde" deguise en strategie. Ce n'est pas parler a ton ego ("voici tout ce qu'on a fait cette annee") au lieu de "voici ce que ca change pour toi cette semaine". Ce n'est pas non plus inventer une autre verite selon le public : c'est choisir le niveau de detail et le vocabulaire, pas changer les faits. Ce n'est pas enfin ecrire dix versions contradictoires : une seule realite, plusieurs portes d'entree. Adapter n'est pas mentir. Adapter, c'est ouvrir la bonne porte avec les bons mots.
+
+Beaucoup confondent aussi "connaitre son public" et "deviner ce qu'il veut entendre". Tu n'as pas a flatter. Tu as a etre compris. Un parent inquiet n'a pas besoin d'un discours flatteur. Il a besoin d'une info nette. Un client presse n'a pas besoin d'un roman. Il a besoin du prix, du delai, et de la prochaine etape.
+
+## En pratique
+
+Imagine une salle avec plusieurs portes. Derriere chaque porte, un **public** different avec des attentes differentes. Tu n'ouvres pas toutes les portes avec le meme discours en esperant que chacun trie. Tu choisis la porte urgente d'abord. Lea a trois portes : client artisan, partenaire tech, ami qui lui demande conseil. Max a client presse, fournisseur, equipe sur le chantier. Sam a parents, eleves, collegues enseignants. Un evenement (fete d'ecole, lancement produit, hausse de prix) touche souvent plusieurs portes. Un seul pave pour tous, et chacun cherche sa phrase, ne la trouve pas, abandonne la lecture. Plusieurs portes, une realite. C'est le geste.
 
 ## Un public n'est pas une statistique
 
-Tu n'as pas besoin d'un persona de quinze pages. Tu as besoin d'une personne concrete dans ta tete. "Marie, maman de deux enfants, lit ses mails le soir apres 21h, veut savoir si la sortie est obligatoire." Ou "Karim, client artisan, veut le prix et le delai, pas un roman sur ta passion du bois." Ou "Le bureau de l'asso, cinq personnes, deja au courant du projet, a besoin de la decision a prendre."
+Tu n'as pas besoin d'un persona de quinze pages. Tu as besoin d'une personne concrete que tu peux nommer. "Marie, maman de deux enfants, lit ses mails apres 21h, veut savoir si la sortie est obligatoire et combien ca coute." "Karim, client artisan, veut le prix, le delai, et une photo de fin de chantier." "Le bureau de l'asso, cinq personnes, deja au courant du contexte, a besoin de la decision et du vote." Adapter, ce n'est pas inventer une autre verite. C'est choisir le niveau de detail et ce que tu mets en premier. Meme evenement, trois versions, une seule realite. Une PME annonce une hausse de prix : aux clients "matieres +5% au 1er, commandes avant le 28 au tarif actuel", aux equipes "tableau detaille + objections frequentes + script de reponse". Meme fait. Portes differentes. Confiance preservee.
 
-Quand tu ecris pour "le grand public", tu ecris souvent pour personne. Quand tu ecris pour Marie, Karim, ou le bureau, ton ton se precise tout seul.
+:::astuce
+Sam reecrit pour Nadia : "Sortie musee jeudi, facultative, 4 euros, autorisation a renvoyer avant vendredi." Au lieu de : "Conformement aux orientations pedagogiques du conseil d'ecole, une sortie culturelle est programmee..."
+:::
 
-## Adapter sans mentir
+## Petite histoire
 
-Adapter, ce n'est pas inventer une autre verite. C'est choisir le niveau de detail et les mots. A un enfant de dix ans, tu expliques une sortie scolaire simplement. Aux parents, tu ajoutes horaires, autorisation, cout. Aux enseignants, tu ajoutes le deroulement pedagogique. Meme evenement. Trois versions. Une seule realite.
+Lea envoyait le meme mail technique a tous ses contacts. Les artisans se perdaient dans le jargon, les agences trouvaient le mail trop leger. Elle a coupe le jargon pour les artisans, garde le detail technique pour les agences. Les reponses ont accelere. Max expliquait un retard de livraison comme a un collegue plombier : "fournisseur en retard, on rattrape". Le particulier paniquait, imaginait une arnaque. Il a change : fait concret, impact pour le client, date de suite garantie. Sam envoyait aux parents un message "pedagogique" plein d'acronymes administratifs. Il a reecrit pour Nadia a 21h : sortie, obligatoire ou non, prix, date limite autorisation. Moins de reponses "c'est obligatoire ?". Methode simple : liste tes publics. Pour chacun, une phrase "ce qu'il doit retenir" et un canal prefere. Traite le plus urgent d'abord. Le reste attendra. Ou aura sa version.
 
-Une PME qui annonce une hausse de prix peut dire aux clients "les matieres ont augmente, on ajuste de 5% a partir du 1er" et aux equipes internes "voici le tableau detaille et les reponses aux objections frequentes". Memes faits. Angles differents.
+## Erreur classique
 
-## Plusieurs publics, plusieurs messages
+Le jargon d'expert quand l'autre n'est pas expert. Le "ils savent deja" (souvent non, ou pas tout). Le message trop long par peur d'oublier un detail - mieux vaut court + lien ou piece jointe pour approfondir. Autre piege : parler a ton ego ("voici tout ce qu'on a fait") au lieu de "voici ce que ca change pour toi". Encore un piege : oublier que le meme evenement peut toucher des publics avec des peurs differentes. Parents : securite. Equipe : charge de travail. Clients : delai. Si tu ignores la peur, tu rates le coeur du message, meme avec des faits justes.
 
-Souvent, un seul evenement touche plusieurs groupes. Une fete d'ecole touche les eleves, les parents, les enseignants, parfois la mairie. Un lancement de produit touche les clients, les revendeurs, l'equipe. Si tu envoies le meme pavé a tous, chacun cherche sa phrase utile et abandonne.
-
-La methode simple : liste tes publics sur une feuille. Pour chacun, une phrase "ce qu'il doit retenir" et un canal prefere (mail, affiche, reunion, message WhatsApp, post). Tu n'es pas oblige de tout traiter le meme jour. Tu traites le public le plus urgent d'abord.
-
-## Les pieges classiques
-
-Le piege du jargon : tu parles comme dans ta tete d'expert. L'autre n'a pas ton contexte. Le piege du "ils savent deja" : souvent, non. Le piege du message trop long parce que tu as peur d'oublier un detail. Mieux vaut un message court + un lien ou une piece jointe pour qui veut approfondir.
-
-Autre piege : parler a ton ego. Tu veux montrer que tu as travaille. Le destinataire, lui, veut savoir ce qu'il doit faire. Centrez sur lui. "Voici ce que ca change pour toi" bat presque toujours "voici tout ce qu'on a fait en coulisses".
+:::attention
+Ecrire "a tout le monde" n'est pas neutre. C'est souvent ecrire pour personne. Nomme au moins une personne concrete avant d'envoyer.
+:::
 
 ## En vrai
 
-Prends un message recent que tu as envoye. Relis-le a voix haute en pensant a une personne precise. Est-ce qu'elle comprend en trente secondes ce que tu lui demandes ? Si non, reecris la premiere phrase pour elle seule. Souvent, le reste suit.
+Prends un message recent que tu as envoye ou recu. Relis-le a voix haute en pensant a une personne precise que tu connais. Comprend-elle en trente secondes ce que tu demandes ou ce qu'elle doit faire ? Si non, reecris la premiere phrase pour elle seule. Le reste peut suivre ou disparaitre. Souvent, la premiere phrase decide de tout : on continue, ou on abandonne.
 
-Allez. Public clair, on passe au message.
+## A toi
 
-## Autres exemples du quotidien
-
-Une association sportive qui change le jour d'entrainement doit le dire tot, sur le groupe de parents, et afficher un rappel au gymnase. Une boutique qui lance un click and collect doit expliquer en trois phrases comment ca marche, pas en douze ecrans. Un enseignant qui prepare une reunion parents gagne a envoyer l'ordre du jour la veille : les gens arrivent moins sur la defensive.
-
-La communication utile, c'est souvent ca : anticiper la question suivante. Si tu sens que les gens vont demander "c'est obligatoire ?", "ca coute combien ?", "je fais quoi si je ne peux pas ?", reponds dans le premier message. Tu economises dix allees-retours.
-
-## Ce que tu peux commencer demain
-
-Choisis un canal que tu negliges et un message en retard. Ecris la phrase centrale. Envoie. Observe. Tu n'as pas besoin d'attendre d'avoir "fini le livre" pour pratiquer. Le livre sert de boussole pendant que tu pratiques.
+Ecris le prenom de ton destinataire principal cette semaine + ce qu'il doit retenir en une phrase + son canal prefere (mail, telephone, affiche, groupe). Colle ce pense-bete avant d'ecrire ton prochain message. Garde-le visible. Si tu ne peux pas nommer de prenom, ton public n'est pas encore assez clair pour ecrire.

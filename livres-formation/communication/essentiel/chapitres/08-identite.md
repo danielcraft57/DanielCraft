@@ -1,43 +1,45 @@
 # Chapitre 8 - Identite et ton de marque (version simple)
 
-Ton de marque, ca sonne corporate. En vrai, c'est simple : comment tu parles quand tu representes ton activite, ton asso, ton ecole, ton atelier. Est-ce que tu es plutot chaleureux, sober, direct, pedagogue, joueuse ? Et est-ce que tu restes coherent d'un canal a l'autre ?
+Ton de marque, ca sonne corporate. En vrai, c'est simple : comment tu parles quand tu representes ton activite, ton asso, ton ecole, ton atelier. Es-tu plutot chaleureux, sober, direct, pedagogue ? Et restes-tu coherent d'un canal a l'autre ? Chez DanielCraft, on le dit ainsi : les gens font confiance a ce qui est **stable**. Si tu es tres familier sur Instagram et glacial sur tes devis, ca cree un decalage. Si ton ecole parle "bienveillance" mais envoie des mails secs, les parents sentent le faux. Le ton n'est pas un maquillage. C'est une voix reconnaissable.
 
-Les gens font confiance a ce qui est stable. Si tu es tres familier sur Instagram et glacial sur tes devis, ca cree un decalage. Si ton ecole parle "bienveillance" mais envoie des mails secs et menacants, les parents sentent le faux.
+Choisis trois mots qui te ressemblent. Clair, chaleureux, precis. Ou simple, honnete, calme. Ou dynamique, concret, accessible. Garde-les visibles. Avant un message public : est-ce que ca colle a mes trois mots ? Tu n'as pas besoin d'un gros brand book. Une PME : "On parle comme a un voisin competent : respectueux, sans jargon, sans promesse ridicule." Une asso jeunesse : plus vivant, toujours respectueux. Une ecole : clair et rassurant. Trois mots. Une boussole. Pas une prison. Tu peux varier le sujet. Tu gardes la voix.
 
-## Trouver ton ton sans se compliquer
+Lea sonne "claire et directe". Max "calme et precis". Sam "pedagogue et rassurant". Si la voix change selon l'humeur du jour, la confiance baisse. Un mauvais jour arrive. Le ton public, lui, doit rester stable. Si tu es en colere, ne publie pas tout de suite. Ecris le brouillon. Attends. Relis avec tes trois mots. Souvent, tu coupes deux phrases et tu sauves la relation.
 
-Choisis trois mots qui te ressemblent. Exemples : clair, chaleureux, precis. Ou : simple, honnete, calme. Ou : dynamique, concret, accessible. Ecris-les. Garde-les visibles. Avant d'envoyer un message public, demande : est-ce que ca colle a mes trois mots ?
-
-Tu n'as pas besoin d'un gros brand book. Une PME locale peut juste decider : "On parle comme a un voisin competent : respectueux, sans jargon, sans promesse ridicule." Une asso jeunesse peut choisir un ton plus vivant, toujours respectueux. Une ecole peut viser "clair et rassurant".
+:::retenir
+Trois mots stables. Relis ton dernier message public : colle-t-il ? Si non, ajuste une phrase, pas toute ta personnalite.
+:::
 
 ## Ce que le ton n'est pas
 
-Ce n'est pas copier le style d'une grande marque. Ce n'est pas non plus coller des emojis partout pour "faire jeune". Ce n'est pas changer de personnalite selon l'humeur du jour. Un mauvais jour arrive. Le ton public, lui, doit rester stable. Si tu es en colere, ne publie pas tout de suite.
+Ce n'est pas copier une grande marque. Ce n'est pas coller des emojis partout pour "faire jeune". Ce n'est pas changer de personnalite chaque semaine. Le ton n'efface pas le fond : un beau ton sur une offre floue reste flou. D'abord le message. Ensuite le vernis. Artisan : "Bonjour, votre table sera prete le 18. Photo avant livraison." Freelance : "Voici la v1. Dis-moi ce qui bloque avant mardi." Asso : "Merci aux 12 benevoles. Prochaine collecte le 5. On a encore besoin de bras." Compare avec le robot "Suite a notre echange veuillez trouver ci-joint..." - correct parfois, trop systematique = froid. Ce n'est pas non plus un ton "fun" sur une mauvaise nouvelle sensible. Le sujet dicte une partie du registre. Tes trois mots restent. L'intensite s'adapte.
 
-Le ton n'efface pas le fond. Un beau ton sur une offre floue reste une offre floue. D'abord le message. Ensuite le vernis.
+Beaucoup croient aussi que le ton se decide une fois pour toutes en reunion strategique. En vrai, il se construit message apres message. Tu observes ce qui sonne juste. Tu coupes ce qui sonne faux. Tu gardes ce que les gens reconnaissent. La coherence nait de la repetition honnete, pas d'un slogan plaque.
 
-## Exemples concrets
+## En pratique
 
-Un artisan : "Bonjour, votre table sera prete le 18. Je vous envoie une photo avant livraison." Ton net, humain. Un freelance : "Voici la v1. Dis-moi ce qui bloque pour toi avant mardi, je corrige." Direct et pro. Une asso : "Merci aux 12 benevoles de samedi. Prochaine collecte le 5. On a encore besoin de bras." Chaleureux et federateur.
+Ton **ton**, c'est la voix d'une personne que tes clients reconnaissent au telephone sans voir le numero. Imagine que Lea appelle un client : en trois phrases, on sait que c'est elle - claire, directe, sans blabla. Max laisse un message vocal : calme, precis, date nette. Sam ecrit aux parents : pedagogue, rassurant, sans jargon. Si la voix change selon l'humeur du jour, la confiance baisse. Un mauvais jour arrive pour tout le monde. Le ton public, lui, doit rester stable. Si tu es en colere, ne publie pas tout de suite. Le filtre des trois mots protege les autres de ton orage. Et te protege toi d'un regret.
 
-Compare avec des versions froides ou confuses. "Suite a notre echange veuillez trouver ci-joint..." peut rester correct, mais trop systematique ca devient robot. Alterne politesse et chaleur selon le lien. Avec un nouveau contact, un cran plus formel. Avec un client fidele, un cran plus naturel.
+:::astuce
+Trois mots de Lea : clair, chaleureux, precis. Phrase ok : "Livraison vendredi, lien joint, dis-moi si le menu te convient avant mardi." Phrase a couper : "On pourrait potentiellement envisager une eventuelle livraison sous peu..."
+:::
 
-## Coherence visuelle legere
+## Petite histoire
 
-Le ton passe aussi par l'apparence simple : une couleur dominante, une photo nette, une signature de mail stable. Pas besoin d'agence. Juste eviter dix polices differentes et des visuels qui se contredisent. Une petite charte maison suffit : logo propre, deux couleurs, une facon de signer.
+Lea parlait "cool" en stories et "juridique" en devis. Les clients etaient perdus. Ils ne savaient plus a qui ils parlaient. Elle a aligne sur clair-chaleureux-precis. Les devis sont devenus plus humains. Les stories plus utiles. Max voulait "faire pro" en devenant pompeux. Les clients trouvaient ca etrange. Il est revenu au voisin competent. Sam a ajoute une coherence visuelle legere : meme couleurs, meme facon de dire bonjour. Pas un relooking. Une reconnaissance. Les parents ont commence a ouvrir ses mails plus vite, parce qu'ils savaient a quoi s'attendre. Trois histoires. Une lecon : stabilite avant spectacle.
+
+## Erreur classique
+
+Changer de ton a chaque crise d'identite. Ou croire que le ton remplace la clarte. Autre piege : un ton "fun" sur une mauvaise nouvelle sensible. Encore un piege : copier le ton d'un concurrent qui n'a ni ton public, ni ton offre. Tu n'as pas a etre quelqu'un d'autre. Tu as a etre reconnaissable et honnete. Si tes trois mots sont faux, change-les. Si tes messages ne collent pas, ajuste les messages. Mais ne change pas de voix tous les lundis.
+
+:::attention
+Un ton "fun" sur une mauvaise nouvelle (retard, incident, hausse de prix) blesse plus qu'il ne rassure. Adapte le ton au sujet.
+:::
+
+## En vrai
+
+Ecris tes trois mots. Relis ton dernier message public. Colle-t-il ? Si non, reecris une phrase pour coller. Un seul ajustement. Puis regarde un ancien mail et un post recent. Est-ce la meme personne qui parle ? Si non, choisis laquelle tu veux garder. Aligne le reste dessus. La coherence se construit maintenant, pas "quand j'aurai le temps".
 
 ## A toi
 
-Ecris tes trois mots de ton. Reecris un ancien message (bio, presentation, mail type) pour coller a ces trois mots. Montre les deux versions a quelqu'un. Demande laquelle te ressemble le plus. Garde celle-la.
-
-Allez. Ton pose, on raconte des histoires utiles.
-
-## Autres exemples du quotidien
-
-Une association sportive qui change le jour d'entrainement doit le dire tot, sur le groupe de parents, et afficher un rappel au gymnase. Une boutique qui lance un click and collect doit expliquer en trois phrases comment ca marche, pas en douze ecrans. Un enseignant qui prepare une reunion parents gagne a envoyer l'ordre du jour la veille : les gens arrivent moins sur la defensive.
-
-La communication utile, c'est souvent ca : anticiper la question suivante. Si tu sens que les gens vont demander "c'est obligatoire ?", "ca coute combien ?", "je fais quoi si je ne peux pas ?", reponds dans le premier message. Tu economises dix allees-retours.
-
-## Ce que tu peux commencer demain
-
-Choisis un canal que tu negliges et un message en retard. Ecris la phrase centrale. Envoie. Observe. Tu n'as pas besoin d'attendre d'avoir "fini le livre" pour pratiquer. Le livre sert de boussole pendant que tu pratiques.
+Trois mots + une phrase exemple "on dit comme ca" + une phrase "on ne dit jamais comme ca". Colle le pense-bete a cote de ton ecran. Avant ton prochain envoi public, relis les deux phrases. Si ton brouillon ressemble a "on ne dit jamais", coupe. Si il ressemble a "on dit comme ca", envoie. Simple. Stable. Humain.
