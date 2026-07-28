@@ -1,55 +1,53 @@
-# Chapitre 18 - Arnaques et pressions : apprendre a dire non
+# Chapitre 18 - Arnaques, miracles et mirages (crypto et ailleurs)
 
-L'argent attire les ruses. Pas besoin d'etre naif pour se faire prendre : il suffit d'etre presse, fatigue, flatte, ou effraye. Ce chapitre est un bouclier pedagogique. Il ne couvre pas toutes les arnaques du monde. Il t'entraine a ralentir.
+La ou il y a de l'espoir d'argent facile, il y a des chasseurs. Les marches legitimes sont deja assez volatils comme ca ; les **arnaques** ajoutent le vol pur. Chez DanielCraft, ce chapitre est un pare-feu. On parle de crypto parce que c'est un terrain mine de promesses en ce moment, mais les mecaniques d'arnaque sont plus vieilles que Internet : **urgence**, secret, autorite fake, rendement **garanti**, isolement de la victime.
 
-## Signaux qui sentent mauvais
+Pedagogie et prevention. Si tu es deja victime, contacte les canaux officiels d'aide / plainte adaptes ; ce livre ne remplace pas un accompagnement.
 
-Promesse de gain eleve, rapide, sans risque. Pression temporelle ("aujourd'hui seulement", "dernier slot"). Secret ("ne dis pas a ta banque / a ta famille"). Demande de code, de code SMS, de virement vers un "coffre" inconnu. Paiement en crypto / cartes cadeaux pour un "probleme administratif". Recit emotionnel trop parfait. Usurpation (faux conseiller, faux huissier, faux support technique).
+## Les signaux qui doivent allumer le rouge
 
-Un seul signal suffit pour freiner. Plusieurs signaux : stop.
+On te promet un rendement eleve, rapide, sans risque (ou "garanti"). On te presse : "dernieres places", "bonus expire ce soir". On te demande d'etre discret ("ne dis pas a ta banque / ta famille"). On t'oriente vers une plateforme inconnue, des apps de controle a distance, des cartes cadeaux, des virements vers des comptes etranges, des cryptos a envoyer "pour debloquer". On cite de faux regulateurs, de faux conseillers, de faux supports techniques de ta banque. Un seul de ces signaux suffit a ralentir. Deux signaux : tu stops.
 
-## Phishing et faux services
+:::retenir
+Rendement eleve + sans risque + urgence + secret = non. Un signal ralentit ; deux signaux, tu stops.
+:::
 
-Mail ou SMS qui mime ta banque, ta poste, les impots, un livreur. Lien bizarre. Fautes. Urgence. Regle d'or : ne clique pas, ne rappelle pas le numero du message. Ouvre toi-meme l'appli officielle ou tape l'URL connue. Ta banque ne te demandera pas ton code secret complet par message.
+## Le classique du faux conseiller / faux courtier
 
-Nora a failli cliquer un "votre compte sera ferme demain". Elle a tape l'adresse de sa banque a la main. Rien. Arnaque. Cinq minutes sauvees d'annees de galere.
+Tu croises une pub, un faux comparateur, un faux article. Un "expert" t'appelle. Interface qui montre de beaux gains fictifs. Pour retirer, il faut payer des "taxes" ou "frais de deblocage". Plus tu paies, plus on te raconte une nouvelle etape. Les gains affiches n'existent pas. L'argent envoye, lui, existe bien - ailleurs. Sam a failli tomber la-dessus. Ce qui l'a sauve : chercher le nom de la plateforme sur le site de l'**AMF** (alertes / listes noires) et en parler a un ami mefiant. L'arnaque deteste le regard exterieur.
 
-## Pyramides et "opportunites amis"
+:::astuce
+Sam cherche le nom de la plateforme sur les alertes AMF et en parle a un ami mefiant avant de virer. Les gains affiches etaient fictifs ; le regard exterieur a casse le scenario.
+:::
 
-On te paie pour recruter, plus que pour un vrai produit. Ou on te demande d'investir dans un cercle. Les premiers peuvent "gagner" - avec l'argent des suivants. Quand ca s'arrete, il reste les derniers. Si le modele n'est clair que dans l'excitation du groupe, sors.
+## Crypto : distinguer technologie et mirage
 
-## Pression commerciale "legale mais lourde"
+La blockchain et les cryptomonnaies sont des sujets techniques et economiques reels, avec des usages, des risques extremes de volatilite, des projets serieux et une mare de tokens sans fond. Ce livre ne te dit pas "crypto = mal". Il te dit : "crypto miracle = tres souvent piege ou casino non compris". Un influenceur qui garantit x10, un serveur Discord qui "signaux VIP", un mineur cloud opaque, un "staking" a 80 % par an : traite ca comme du danger jusqu'a preuve contraire solide - et meme avec preuve, le risque reste enorme.
 
-Pas toujours illegal, parfois juste toxique : credit pousse, option cachee, "signature maintenant". Tu as le droit de partir, de comparer, de dormir 48h. Un vendeur qui t'interdit de reflechir te donne une information sur lui.
+Si un jour tu approches ce monde, les memes regles que pour le reste s'appliquent en plus dur : argent que tu peux perdre, intermediaires serieux, pas de levier debutant, pas de seed phrase donnee a quelqu'un, mefiance absolue envers qui demande d'installer un logiciel de prise en main. La crypto n'annule pas la cupidite humaine. Elle lui donne parfois de nouveaux costumes.
 
-## Petite boite : arnaques B2B
+## Usurpation banque / AMF / police
 
-Faux fournisseurs, faux techniciens, factures pour des annuaires jamais commandes, appels "votre box va couper". Verifie les commandes. Centralise qui a le droit d'acheter. Sam a mis une regle : aucun nouveau RIB fournisseur sans double check. Ennuyeux. Efficace.
+On te contacte en disant que ton compte est pirate, qu'il faut "mettre l'argent au safe", qu'un agent te guide. Les vrais etablissements ne te demandent pas ton code de carte / ton mot de passe / d'acheter des cryptos pour securiser. Raccroche. Compose toi-meme le numero officiel trouve sur le site officiel (pas le numero du formulaire douteux). Nora a recu ce type d'appel. Elle a raccroche. Elle a rappele sa banque au numero du dos de sa carte. Fausse alerte. Vrai reflexe.
 
-## Que faire si tu as doute
+:::attention
+"Je vais juste mettre 200 euros pour tester" sur une plateforme deja signalee peut devenir le premier maillon d'une manipulation. La honte d'en parler est l'alliee de l'arnaqueur.
+:::
 
-Stoppe les virements. Contacte ta banque via canal officiel. Change mots de passe si besoin. Garde preuves (captures, numeros). Porte plainte si necessaire. Parle a quelqu'un : la honte protege l'arnaqueur.
+## Pyramides et "clubs d'investissement"
 
-## Que faire si tu as deja paye
+Recrute, gagne sur le dos des suivants. Produit flou. Temoignages emotionnels. Reunion sous pression. Si le rendement vient surtout du recrutement et non d'une activite claire, fuis. Les emballages changent (formations, NFT, trading auto). La structure pyramidale, elle, se reconnait a l'insistance sur "parraine".
 
-Agis vite. Banque, opposition, signalements officiels selon le cas. N'envoie pas plus d'argent pour "debloquer" un dossier - classique de la double arnaque. Demande de l'aide sans attendre d'avoir "la solution seule".
+## Que faire pour te proteger (liste courte mais utile)
 
-## Culture DanielCraft
+Verifie la regulation et les alertes publiques (AMF et autres autorites selon sujet). Ne clique pas les liens des SMS urgents. Utilise les apps officielles. Active la double authentification. Parle de tes decisions d'argent importantes a quelqu'un de confiance. Mefie-toi des beaux gains affiches non retirables. Refuse les prises en main a distance. Si c'est trop beau, c'est que le risque (ou l'arnaque) est cache dans l'angle mort.
 
-La prudence n'est pas de la parano. C'est du respect pour ton futur. Dire non, raccrocher, verifier : gestes adultes. Se moquer de quelqu'un qui est tombe, non. Apprendre ensemble, oui.
+Ces gestes paraissent basiques. Ils bloquent pourtant la majorite des scenarios : faux support, faux courtier, "frais de deblocage", prise en main a distance. L'arnaque compte sur la panique et la solitude. Ralentir et en parler casse souvent le sortilege avant le virement.
 
-## En parler autour de toi
+## Erreur classique
 
-Les arnaques aiment l'isolement. Dire a un proche "on m'a propose ca, ca te parait normal ?" casse souvent le sortilege. Si quelqu'un autour de toi semble sous emprise d'une "opportunite", reste calme, factuel, propose de verifier ensemble sur des sources officielles. Pas de moquerie. De l'alliance.
-
-## Enfants et ado
-
-Apprendre tot a ne pas donner d'infos perso, a mefier des cadeaux trop beaux en ligne, a en parler a un adulte : c'est de la finance et de la securite. Ce livre peut se lire en famille sur ce chapitre.
-
-## En vrai
-
-Fais la liste de tes trois canaux officiels (banque, impots / URSSAF selon toi, messagerie). Ecris ou tu trouves les vrais numeros. Garde-les hors boite mail uniquement.
+"Je vais juste mettre 200 euros pour tester" sur une plateforme deja signalee - parfois le test devient le premier maillon d'une manipulation. Ou avoir honte de dire qu'on a ete approche / piaffe : la honte est l'alliee de l'arnaqueur.
 
 ## A toi
 
-Role-play : invente un message d'arnaque et ecris ta reponse ideale (souvent : aucune reponse + verification ailleurs). Entrainement court, reflexe long.
+Ecris ta phrase de rappel sur une note telephone : "Rendement eleve + sans risque + urgence = non." Relis-la avant tout nouvel interlocuteur finance inconnu.

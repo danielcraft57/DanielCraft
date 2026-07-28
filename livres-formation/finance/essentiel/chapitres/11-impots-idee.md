@@ -1,55 +1,61 @@
-# Chapitre 11 - Les impots : une idee claire (pas un cours de fiscaliste)
+# Chapitre 11 - Risque, rendement et diversification
 
-Les impots et cotisations font partie du paysage. Les ignorer ne les fait pas disparaitre. Les fantasmer non plus. Ce chapitre donne une boussole : comprendre qu'il y a des regles, des calendriers, de l'argent a provisionner - et que tu n'as pas a tout inventer seul. Ce n'est pas un conseil fiscal personnalise. C'est de la pedagogie de prudence.
+Si tu ne retenais qu'une seule loi des marches, ce serait celle-ci : en general, on ne t'offre pas un **rendement** eleve sans te demander d'accepter un **risque** eleve. Chez DanielCraft, on grave ca dans le bois. Les exceptions apparentes (arbitrage rares, erreurs de prix, chance) ne sont pas une strategie de vie pour un debutant. Les pubs qui promettent "fort rendement, zero risque, liquide demain" sont des drapeaux rouges, pas des opportunites.
 
-## Pourquoi ca existe (version courte)
+Ce chapitre est le coeur emotional du livre. Parce que le vrai sujet n'est pas "quel ETF", c'est "quel malaise je peux supporter sans faire une betise".
 
-Financer des services collectifs, redistribuer selon des regles, cotiser pour des protections (selon les systemes). On peut debattre de la politique. En attendant, en tant que particulier ou petite activite, tu as des obligations. Les connaitre un minimum evite les peurs floues et les amendes betes.
+## Risque : plusieurs visages
 
-## Particulier : l'idee
+Le risque de marche : les prix baissent. Le risque de credit : l'emprunteur ne rembourse pas. Le risque de liquidite : tu ne trouves pas d'acheteur sauf a prix casse. Le risque de change : la devise bouge. Le risque d'inflation : ton pouvoir d'achat fond. Le risque comportemental : tu vends au pire moment parce que tu as peur. Ce dernier est souvent le plus couteux pour les particuliers.
 
-Tu as des revenus. L'administration s'attend a une declaration selon les regles en vigueur. Des prelevements peuvent exister a la source. Des credits d'impot / reductions existent parfois sous conditions. Les details changent : utilise les sources officielles, ton espace en ligne, ou un pro. Ici, retiens : note tes echeances, garde tes justificatifs, ne dors pas sur une enveloppe brune non ouverte.
+Nora voit son ETF monde -18 % en quelques mois. Si c'est de l'argent de long terme, la baisse est un episode (douloureux). Si c'est l'argent du mariage dans un an, c'est un probleme de conception du plan. Le risque n'est pas seulement dans le produit. Il est dans le matching **horizon** / poche / produit.
 
-Nora met un rappel calendrier pour les dates cles et un dossier "papiers annee en cours". Moins romantique qu'un placement miracle. Plus utile.
+:::retenir
+Fort rendement sans risque + liquide demain = drapeau rouge. Risque et rendement voyagent ensemble - le matching horizon/poche decide autant que le produit.
+:::
 
-## Petite activite : l'idee
+## Rendement : ce qu'on esperer, pas ce qu'on exige
 
-Selon le statut (micro, societe, etc.), tu as des cotisations, parfois de la TVA, un benefice a declarer, des echeances. L'argent encaisse n'est pas entierement "a toi a depenser". Une part est due plus tard. D'ou la provision : mettre de cote au fil de l'eau une estimation pour les echeances, afin de ne pas tout bruler en janvier (ou a la date qui te concerne).
+Le rendement passe n'est pas le rendement futur. Un actif qui a fait +12 % par an pendant 10 ans peut faire beaucoup moins (ou plus) les 10 suivantes. Les actions offrent historiquement, sur de longues periodes et en moyenne, un rendement superieur aux livrets - avec des trous d'air violents. Les livrets offrent de la stabilite et de la liquidite - avec un rendement souvent plus bas et parfois inferieur a l'inflation. Choisir, c'est arbitrer.
 
-Max a appris a ses depens : beau mois d'ete, compte vide en automne le jour des cotisations. Depuis, chaque encaissement nourrit une poche "charges futures". Approximation, pas perfection.
+## Diversification : ne pas tout miser sur un seul cheval
 
-## TVA (image simple)
+**Diversifier**, c'est repartir. Plusieurs entreprises, plusieurs secteurs, plusieurs pays, parfois plusieurs classes d'actifs (actions / obligations). Un ETF monde fait deja une partie du travail actions. Ajouter 20 ETF thematiques ultra-correles ne diversifie pas vraiment. Diversifier mal, c'est collectionner. Diversifier bien, c'est reduire la dependance a un seul scenario.
 
-Dans beaucoup de cas, la TVA est un mecanisme ou tu collectes un montant pour le reverser (avec des regles de deduction possibles). Ce n'est pas un "cadeau" du client a mettre dans les vacances. Si tu es assujetti, apprends le rythme de declaration de ton regime. Si tu es en franchise / exonere selon les seuils, connais les limites. Encore une fois : verifie pour toi. L'image a retenir : TVA n'est pas de la marge.
+Sam avait "diversifie" avec huit valeurs tech du meme pays. Un retournement de secteur a tout fait plier ensemble. Max, plus simple : un ETF large + son livret de reserve. Moins de cocktail. Meilleur sommeil.
 
-## Provisionner
+:::astuce
+Sam : huit valeurs tech du meme pays = faux panier. Max : un ETF large + livret de reserve = vrai souffle. La quantite de lignes ne diversifie pas si tout bouge ensemble.
+:::
 
-Estime grossierement ce que tu devras. Mets de cote regulierement. Ajuste quand tu as les vrais appels. Mieux vaut trop de cote un peu que zero le jour J. Sam vire automatiquement un pourcentage des encaissements vers un compte "fiscal / social". Le pourcentage depend de sa situation - le geste compte.
+## Volatilite et perte permanente
 
-## Se faire aider sans abdiquer
+La **volatilite**, c'est l'amplitude des mouvements. Une perte non realisee sur un actif diversifie que tu gardes selon ton plan n'est pas la meme chose qu'une perte realisee parce que tu as vendu panique, ou qu'une ruine sur un produit a levier. Nuance essentielle. "Ca bouge" n'est pas toujours "c'est mort". "C'est mort" arrive quand meme : entreprise en faillite, arnaque, produit mal compris. D'ou paniers larges + intermediaires regules + argent qu'on peut laisser travailler.
 
-Expert-comptable, centre de gestion, sources officielles, ateliers locaux : utiles. Tu restes responsable de fournir des infos justes et de payer a temps. "Mon comptable s'occupe de tout" sans jamais regarder un tableau, ca marche jusqu'au jour ou ca ne marche plus. Un rendez-vous trimestriel de 30 minutes pour comprendre tes chiffres, c'est de l'hygiene.
+## Profil de risque (idee)
 
-## Pieges
+Les questionnaires banques / courtiers te classent parfois prudent / equilibre / dynamique. Ce n'est pas une etiquette de personnalite Instagram. C'est une tentative de matcher produits et tolerance. Sois honnete : si tu ne dors plus quand ca baisse de 10 %, tu n'es peut-etre pas "dynamique", meme si ton ego aime le mot. L'atelier profil risque plus loin te fera ecrire noir sur blanc.
 
-Copier le montage fiscal du cousin sans comprendre. Minimiser des revenus "au black" (illegal, risque, et hors ethique DanielCraft). Attendre le dernier jour pour declarer. Melanger perso et pro jusqu'a l'illisibilite. Croire les pubs "zero impot garanti".
+## Correlation : le piege gentil
 
-## Ce que tu peux faire tout de suite
+Deux actifs diversifient vraiment s'ils ne bougent pas toujours ensemble. En crise violente, beaucoup d'actifs "risques" baissent en meme temps : la correlation monte quand tu aurais le plus besoin qu'elle baisse. D'ou l'interet, pour certains profils, d'avoir aussi une poche stable (livrets, fonds euro selon contrat) en dehors du theatre actions. La diversification n'est pas une armure absolue. C'est un coussin relatif.
 
-Lister tes echeances connues sur 12 mois. Creer une poche de provision. Ranger factures et justificatifs. Lire une page officielle sur ton statut - pas dix forums anxieux a 1h du matin.
+## Rebalance (idee douce)
 
-## Calendrier sur 12 mois
+Si tu as decide 70 % actions / 30 % obligations (exemple pedagogique), et que les actions montent beaucoup, tu te retrouves peut-etre a 80 / 20. **Rebalancer**, c'est revenir vers ta cible en vendant un peu ce qui a trop monte / achetant ce qui a moins suivi - selon enveloppes et fiscalite. Pour un debutant a petite somme et un seul ETF actions + livrets, le "rebalance" peut etre aussi simple que : continuer a alimenter la poche qui est en retard. Pas besoin d'un cockpit. Besoin d'une cible ecrite.
 
-Meme imparfait, un calendrier annuel des echeances connues (perso et pro) reduit les crises. Tu y ajoutes les provisions. Tu y ajoutes les rdv avec un comptable si tu en as. Une heure en janvier pour poser l'annee economise dix soirs de panique.
+:::astuce
+Ecris noir sur blanc : "Je peux accepter une baisse temporaire de X % sans vendre panique." Puis : "L'argent avant 3 ans ira plutot sur ..." La honnetete bat l'ego "dynamique".
+:::
 
-## Changement de situation
+## Horizon temporel
 
-Mariage, enfant, demenagement, embauche, gros materiel, passage de seuil : les regles et montants bougent. Signale tot. Demande. Ne suppose pas que "comme l'annee derniere" suffit. La prudence, c'est aussi annoncer les changements aux bons interlocuteurs.
+Plus ton horizon est court, plus tu devrais privilegier la stabilite (livrets, fonds euro selon contrat, monetaire... selon besoin). Plus ton horizon est long et ton estomac solide, plus une part d'actions diversifiees peut avoir du sens pour chercher de la croissance. Encore une fois : pas de conseil personnalise - une direction pedagogique. L'horizon n'est pas seulement une date sur un calendrier. C'est aussi la date a laquelle tu sais que tu vendras si ca fait mal. Sois lucide sur les deux.
 
-## En vrai
+## Erreur classique
 
-Ecris : mon statut (salarie / micro / autre). Mes prochaines echeances si je les connais. Ma provision actuelle (meme 0). Un prochain pas concret (prise de RDV, lecture officielle, virement de provision).
+Chercher le rendement du voisin sans prendre son risque. Ou diversifier en quantite de lignes plutot qu'en independance des risques. Ou croire que "long terme" signifie "je ne regarde jamais" au point d'ignorer un vrai changement de situation (besoin d'argent, dette toxique, arnaque).
 
 ## A toi
 
-Sans chercher la perfection : choisis un pourcentage ou un montant mensuel de provision (meme petit) et programme-le pour les trois prochains mois. Ajuste ensuite avec un pro si besoin.
+Completee : "Je peux accepter une baisse temporaire de __ % sur mon placement long terme sans vendre panique." Puis : "L'argent dont j'ai besoin avant 3 ans ira plutot sur __." Sois brutalement honnete.

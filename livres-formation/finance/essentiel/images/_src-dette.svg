@@ -1,31 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f0f5f2"/>
-  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c1f17" font-weight="700">Dette et credit : comprendre avant de signer</text>
-
-  <rect x="40" y="90" width="210" height="220" rx="14" fill="#14532d"/>
-  <text x="145" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#c9a227" font-weight="700">1. Emprunter</text>
-  <text x="145" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">argent</text>
-  <text x="145" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">maintenant</text>
-  <text x="145" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#c9a227">besoin reel ?</text>
-
-  <rect x="275" y="90" width="210" height="220" rx="14" fill="#ffffff" stroke="#14532d" stroke-width="3"/>
-  <text x="380" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14532d" font-weight="700">2. Cout</text>
-  <text x="380" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c1f17" font-weight="700">interets</text>
-  <text x="380" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#166534">frais, duree,</text>
-  <text x="380" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#166534">mensualite</text>
-  <text x="380" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#c9a227">lire le total</text>
-
-  <rect x="510" y="90" width="210" height="220" rx="14" fill="#ffffff" stroke="#14532d" stroke-width="3"/>
-  <text x="615" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14532d" font-weight="700">3. Plan</text>
-  <text x="615" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c1f17" font-weight="700">rembourser</text>
-  <text x="615" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#166534">dates tenables</text>
-  <text x="615" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#c9a227">sans se noyer</text>
-
-  <rect x="745" y="90" width="215" height="220" rx="14" fill="#c9a227" stroke="#14532d" stroke-width="3"/>
-  <text x="852" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0c1f17" font-weight="700">4. Sortie</text>
-  <text x="852" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c1f17" font-weight="700">dette nulle</text>
-  <text x="852" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14532d">liberte retrouvee</text>
-  <text x="852" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#14532d">objectif clair</text>
-
-  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0c1f17">Emprunter peut aider. Mal calcule, ca coute cher longtemps.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Dette et credit</text>
+<rect x="120" y="120" width="350" height="220" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="295" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">mensualite</text>
+<rect x="530" y="120" width="350" height="220" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="705" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">cout total</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Comprendre avant de signer.</text>
 </svg>

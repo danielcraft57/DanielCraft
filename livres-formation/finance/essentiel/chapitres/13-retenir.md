@@ -1,61 +1,53 @@
 # Chapitre 13 - A retenir
 
-Tu n'as pas besoin de tout memoriser. Tu as besoin d'une carte mentale stable. Voici la version poche du livre, a relire quand le compte angoisse ou quand un devis t'attend.
+Tu as traverse banques, livrets, credits, enveloppes, actions, obligations, ETF, une intuition des derives, et le couple risque / rendement. Voici la boussole resserree. Chez DanielCraft, on prefere dix idees solides a cinquante slogans. Relis ce chapitre quand tu te sens tiraille par une pub ou par la peur.
 
-## Flux
+## Les idees qui restent
 
-Entrees, sorties, solde. Promis n'est pas encaisse. Regarder le film sur 30 jours, pas seulement la photo du jour.
+La **finance**, c'est d'abord des flux et des decisions, pas un club. Les **marches** relient epargne et financement, avec des prix qui bougent. Les acteurs comptent : toi, banques / courtiers, entreprises / Etats, bourses, regulateurs (AMF en idee). Le compte et les moyens de paiement sont la fondation : lire un releve bat un tutoriel ignore. L'**epargne** reglementee (livrets) protege une reserve liquide ; ce n'est pas la pour battre les actions. Le **credit** a un cout ; le TAEG et le cout total comptent plus que la mensualite maquillee. Les taux sont le prix du temps et influencent credits comme obligations.
 
-## Budget perso
+PEA, CTO, assurance-vie sont des **enveloppes** : la fiscalite et les contraintes different, le sous-jacent aussi. Une action = part d'entreprise. Une obligation = dette negociable. Un ETF / fonds = souvent un panier ; frais et indice importent. Futures, options, swaps = outils de pro / couverture / speculation a levier ; l'intuition suffit au debut, l'usage peut attendre tres longtemps. **Risque** et rendement voyagent ensemble. Diversifier, c'est reduire la dependance a un seul scenario, pas collectionner dix produits pareils. Horizon et poche d'argent decident autant que le produit.
 
-Une page. Fixes, variables, imprevu, epargne. Revue courte. Outil tenu > outil parfait. Ajuster si ca ne rentre pas - ne pas decorer le mensonge.
+:::retenir
+Ordre d'hygiene : compte clair, reserve livrets, dettes toxiques sous controle, puis seulement enveloppes et paniers long terme - jamais de levier pour "rattraper".
+:::
 
-## Epargne
+## La phrase anti-piege
 
-D'abord un peu, regulier, separe. Matelas pour respirer. Buts nommes. Automatiser si possible. Pas de miracle exige avant le premier virement.
+Si on te promet un rendement eleve, sans risque, avec urgence et secret, tu n'as pas trouve une opportunite. Tu as trouve un test de lucidite. Raccroche, verifie aupres de sources fiables (alertes AMF, regulation), ne donne pas tes codes.
 
-## Dettes et credit
+## L'ordre de construction
 
-Comprendre cout total, duree, capacite. Lister. Eviter la pression. Emprunter pour un pourquoi clair. Demander de l'aide tot si ca derape.
+(1) Voir clair sur le compte. (2) Reserve sur livrets. (3) Dettes toxiques sous controle. (4) Ensuite seulement, enveloppes et paniers diversifies pour le long terme. (5) Jamais de levier pour "rattraper". Cet ordre n'est pas une loi sacree pour chaque humain de la planete. C'est une hygiene qui evite 80 % des betises de debutant.
 
-## Interets
+:::attention
+Rendement eleve + sans risque + urgence + secret = test de lucidite, pas opportunite. Raccroche, verifie AMF, ne donne pas tes codes.
+:::
 
-Prix du temps. Mensualite ≠ cout total. TAEG pour comparer. Decouvert cher si habitude. Se mefier des courbes miracles.
+## Ce que tu n'as pas besoin de faire
 
-## Compte bancaire
+Battre le marche. Lire tous les prospectus du monde. Avoir un avis sur chaque annonce de banque centrale. Posseder des derives. Suivre vingt influenceurs finance. Tu as besoin de coherence, de frais bas, de temps, et d'honnetete sur ton sommeil.
 
-Releves, prelevements, alertes, frais. Separer quotidien et reserve. Securite basique. Compte pro dedie si activite.
+## Carte mentale en une minute
 
-## Tresorerie
+Compte pour vivre. Livrets pour l'urgence. Credit seulement si utile et remboursable. Enveloppes pour le long terme. Actions / obligations via paniers. Derives : intuition, pas jouet. Risque = prix du rendement. Arnaque = rendement + garantie + urgence. Si tu retenais ces huit lignes, tu as le squelette du livre. Le reste est du muscle.
 
-Cash disponible. Prevision 4 semaines. Acomptes, relances, saison. Travail signe ≠ argent en banque. Reserve d'activite.
+## Petit aide-memoire enveloppes
 
-## Couts et marge
+PEA : cadre actions / eligibles, plafond, fiscalite douce sous conditions de duree - toujours verifier les regles a jour. CTO : souple, fiscalite souvent moins douce. Assurance-vie : fonds euro et/ou unites de compte, frais a lire, utile aussi pour la transmission selon situations. Aucune enveloppe n'annule une baisse de marche.
 
-Temps inclus. Plancher. Prix assume. Fixes a couvrir. Baisser le prix = geste cadre, pas reflexe.
+## Petit aide-memoire risques
 
-## Devis et facture
+Court terme + argent important = stabilite. Long terme + estomac solide = possible part actions diversifiees. Argent du loyer = pas en options. Argent du "on verra dans 15 ans" = pas forcement a laisser pourrir sur le compte courant non plus. Le matching, encore.
 
-Perimetre, limites, echeance, acompte. Facturer vite. Relancer factuel. Modeles clairs.
+:::astuce
+Sans relire le livre, ecris 7 mots-cles de memoire. Compare avec ce chapitre. La feuille dans le tiroir vaut plus qu'un screenshot de perf.
+:::
 
-## Impots (idee)
+## Disclaimer final de chapitre
 
-Echeances, provisions, justificatifs, sources officielles / pro. TVA n'est pas marge. Pas de montage copie-colle opaque.
-
-## Les 10 gestes qui changent un mois
-
-Regarder le releve. Ecrire entrees et sorties. Lancer une epargne en premier. Lister une dette. Lire un TAEG. Activer une alerte. Prevoir 4 semaines si tu as une activite. Compter ton temps dans un prix. Envoyer une facture vite. Raccrocher a une pression.
-
-Si tu ne retiens que ca, tu as deja change de niveau. Le reste du livre detaille le pourquoi et le comment.
-
-## Erreurs a ne plus faire
-
-Confondre CA et cash. Confondre mensualite et cout total. Confondre TVA et marge. Confondre "ami qui conseille" et source fiable. Confondre urgence marketing et vraie urgence.
-
-## Phrase DanielCraft
-
-La finance de base, ce n'est pas "devenir genial avec l'argent". C'est "arreter de se mentir sur l'argent" - puis faire de petits gestes tenus.
+Ceci reste pedagogique. Ce n'est pas un conseil personnalise. Les regles fiscales et les taux changent. Tes decisions te regardent, avec si besoin l'aide d'un professionnel competent.
 
 ## A toi
 
-Sans regarder le livre, ecris sur papier : tes entrees typiques, tes trois plus grosses sorties, ton solde approx, une dette ou zero, une regle d'epargne. Si tu bloques, relis les chapitres 2, 3 et 4. Si tu y arrives, tu as la colonne vertebrale.
+Sans relire le livre, ecris sur une feuille les 7 mots-cles que tu retiens. Puis compare avec ce chapitre. Completee ce qui manque. Garde la feuille dans ton tiroir d'epargne mentale.

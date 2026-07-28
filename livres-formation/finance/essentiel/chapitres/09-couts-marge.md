@@ -1,57 +1,55 @@
-# Chapitre 9 - Couts, prix et marge
+# Chapitre 9 - ETF et fonds : acheter un panier plutot qu'une histoire
 
-Vendre cher ne suffit pas. Il faut savoir ce qui reste apres avoir tout paye - y compris ton temps. La marge, c'est l'air pour vivre, reparer, et continuer. Sans marge, tu travailles pour financer le client.
+Choisir une seule action, c'est choisir une histoire. Choisir un **ETF** ou un **fonds**, c'est souvent choisir un **panier**. Pour beaucoup de debutants, le panier est plus sage : tu reduis le risque specifique a une entreprise, tu gagnes du temps, et tu peux viser un marche entier (monde, Europe, obligations globales...) avec un seul ordre. Chez DanielCraft, on aime les outils simples quand ils sont bien compris. L'ETF n'est pas une baguette magique. C'est un vehicule. Le trajet depend de ce qu'il contient, de ses **frais**, et de ton horizon.
 
-## Cout
+Pas de conseil personnalise : un ETF "monde" peut etre pertinent pour beaucoup de profils long terme... ou inadapte si tu as besoin de l'argent dans neuf mois. L'outil ne remplace pas le contexte.
 
-Tout ce que tu depenses pour produire ou livrer. Matieres, pieces, deplacements, plateforme, pubs, sous-traitance, usure d'outils, software, et ton temps. Oui, ton temps. L'oublier, c'est te sous-payer sans le voir.
+## C'est quoi un fonds ?
 
-Max change une chaudiere. Piece : 420. Deplacement et temps : il estime 180. Consommables : 25. Part d'assurance / outils : 15. Cout visible : 640. S'il facture 650 "parce que le voisin fait ce prix", il a gagne 10 euros pour une demi-journee stressante. Le voisin n'est pas sa boussole.
+Un fonds (OPCVM, SICAV, FCP... les sigles viendront avec le temps) regroupe l'argent de plusieurs epargnants pour investir selon une strategie. Un gerant actif essaie de battre un indice ou d'atteindre un objectif, contre des frais souvent plus eleves. Un fonds **indiciel** cherche a repliquer un indice (CAC 40, MSCI World, etc.) avec des frais generalement plus bas. La guerre "actif vs passif" fait rage dans l'industrie. Pour un debutant, retenir au moins ceci : les frais et la diversification comptent enormement sur la duree, et battre les indices apres frais est difficile pour beaucoup de fonds actifs sur le long terme (statistiques historiques a lire avec prudence : le passe n'est pas le futur).
 
-## Prix
+## C'est quoi un ETF ?
 
-Le prix, c'est ce que le client paie. Il doit couvrir les couts, la marge visee, et rester coherent avec la valeur ressentie et le marche. Trop bas, tu t'epuises. Trop haut sans preuve, tu ne vends pas. Juste et assume, tu peux discuter.
+Un ETF (Exchange Traded Fund) est un fonds cote en bourse comme une action. Tu l'achetes et tu le vends pendant les heures de marche via ton PEA / CTO / parfois AV selon supports. Beaucoup d'ETF sont indiciels : ils suivent un panier. Il existe aussi des ETF plus exotiques (effet de levier, inverses, thematiques etroits) : fascinants pour Twitter, souvent dangereux pour un debutant qui confond "outil" et "jouet".
 
-## Marge
+Avantages frequents : diversification immediate, frais bas sur les grands indices, transparence de l'indice suivi, liquidite intraday. Points d'attention : erreur de suivi (tracking), devise (un ETF monde peut etre en USD ou hedge), replication physique ou synthetique (contrepartie), eligibilite PEA, spreads a l'achat/vente, et surtout composition : "tech" n'est pas "monde", "Chine" n'est pas "emergents complets".
 
-Prix moins couts. Marge faible sur un volume enorme peut marcher. Marge faible sur peu de chantiers, souvent non. Marge negative : tu paies pour travailler. Rarement un plan.
+:::astuce
+Sur une fiche ETF, refuse d'acheter tant que tu n'as pas : quel indice, quels frais (TER), capitalisation ou distribution, eligibilite PEA. Trois infos manquantes = pas d'ordre.
+:::
 
-Exemple cookie (ou piece detachee, ou heure de service) : meme logique. Additionne les couts. Soustrais du prix. Regarde ce qui reste. Multiplie par le volume realiste du mois. Est-ce que tu respires ?
+## Lire une fiche sans se noyer
 
-## Frais fixes et variables (idee)
+Sur une fiche ETF / DICI / document d'informations cle, cherche : objectif (quel **indice** ?), frais courants (TER), performance passee (indicateur, pas promesse), risques (echelle SRRI / SRI selon documents), devise, distribution ou capitalisation (dividendes verses ou reinvestis), taille du fonds, et pour le PEA : eligibilite. Tu n'as pas a tout maitriser jour un. Tu as a refuser d'acheter sans savoir "quel panier" et "quels frais".
 
-Variables : bougent avec l'activite (matieres, deplacements par chantier). Fixes : restent meme si tu vends moins (loyer atelier, abonnements, assurance). Pour tenir, il faut assez de marge sur les ventes pour couvrir les fixes - puis pour te payer. Le "seuil de rentabilite" (combien vendre pour couvrir les fixes) est une idee utile meme en estimation grossiere.
+Nora compare deux ETF "monde" : l'un coute 0,2 % de frais, l'autre 0,8 % pour une expo similaire. Sur 20 ans, la difference n'est pas du detail. Sam est attire par un ETF "IA du futur" en hausse recente : concentration, mode, risque de rentrer au sommet. Max lit "capitalisation" et comprend que les dividendes restent dans le fonds : pratique pour la discipline.
 
-Sam a 3 200 euros de fixes mensuels. Marge moyenne par prestation : 160. Il lui "faut" environ 20 prestations juste pour les fixes - avant de vraiment gagner. Ce calcul change ses objectifs de prospection.
+## Fonds actifs : quand meme ?
 
-## Temps invisible
+Parfois un fonds actif a un sens (certaines niches, contraintes, gestion flexible). Mais "actif" ne veut pas dire "meilleur". Ca veut dire "quelqu'un decide". Tu paies cette decision. Exige de comprendre la strategie, le track record long, les frais, et si tu n'y comprends rien, tu as le droit de passer ton chemin. La simplicite indicielle n'est pas une capitulation. C'est souvent une strategie adulte.
 
-Devis, relances, SAV, trajets, admin, attente pieces. Si tu ne le comptes jamais, ta marge reelle fond. Une heure "offerte" systematique est une politique. Une heure "oubliee" est une fuite.
+## Thematiques, smart beta, et autres sirenes
 
-## Baisser le prix
+Les ETF thematiques (cyber, vieillissement, transition...) racontent une belle histoire. Parfois l'histoire est juste. Souvent le prix d'entree est deja charge d'enthousiasme, les frais un peu plus hauts, et la concentration plus forte. Le "smart beta" / factoriel (value, momentum, qualite...) ajoute une couche de strategie. Ce n'est pas interdit. C'est avance. Pour ce livre debutant, la base reste : un large marche, des frais bas, une enveloppe adaptee, un horizon long. Tu pourras complexifier plus tard si tu en ressens le vrai besoin - pas le besoin de briller en diner.
 
-Parfois utile (fin de stock, lancement, geste commercial cadre). Souvent dangereux en reflexe. Baisser sans retirer du perimetre, c'est offrir de la marge. Preferer : options claires, perimetre serre, acompte, delai - plutot que "ok je fais moins cher" en boucle.
+Sam a achete trois thematiques apres une serie de videos. Au bout d'un an, il a realise que 70 % de son risque venait des memes grandes valeurs tech via des chemins differents. Il a simplifie. La diversite de noms n'etait pas une diversite de risques.
 
-## Particularite artisan / petite boite
+:::attention
+Cinq ETF qui se chevauchent sur les memes grandes valeurs US, ce n'est pas cinq fois plus de diversification - c'est souvent la meme concentration avec plus de frais.
+:::
 
-Le marche local influence. Tes couts aussi. Copier le prix du concurrent sans connaitre ses couts, c'est conduire les yeux bandes. Mieux : connaitre ton plancher (en dessous, tu refuses ou tu changes l'offre) et ton prix cible.
+## ETF et enveloppes
 
-## Piege
+PEA : seulement les ETF / fonds eligibles. CTO : plus large. Assurance-vie : selon la liste des supports du contrat, parfois en unites de compte avec une couche de frais supplementaire. Le meme panier peut couter plus cher dans une mauvaise enveloppe. Regarde le total. Parfois un ETF "parfait" hors PEA moins un ETF "tres bien" eligible PEA : le cadre fiscal peut pencher la balance selon ton horizon et ta situation - a verifier, pas a deviner.
 
-Regarder seulement le prix de vente concurrent. Oublier la TVA selon ton regime (renseigne-toi : ce n'est pas le meme "net" pour tout le monde). Oublier que "je me paierai sur ce qui reste" devient "il ne reste rien".
+## Erreur classique
 
-## Prix et TVA (rappel)
-
-Selon ton regime, le prix affiche TTC n'est pas ce que tu gardes. Apprends a distinguer HT / TTC si ca s'applique a toi. Facturer "au feeling TTC" sans savoir ce qui repart en TVA, c'est se tromper de marge. Si tu debutes, fais-toi expliquer une fois par un pro ou une source officielle - puis applique.
-
-## Revoir ses prix
-
-Les couts bougent. L'energie, les pieces, ton loyer. Un prix fige trois ans peut devenir un piege. Revois une fois par an au minimum. Annonce calmement. Les bons clients comprennent une hausse motivee. Les clients qui ne restent que pour un prix brade n'etaient peut-etre pas ton meilleur marche.
-
-## En vrai
-
-Prends une offre type. Liste 5 a 8 couts. Estime. Fixe un prix. Calcule la marge. Ajoute une heure d'admin. Recalcule. Qu'est-ce qui change ?
+Acheter cinq ETF qui se chevauchent tous sur les memes grandes valeurs US et croire que tu as "cinq fois plus de diversification". Ou chase la perf a 1 an. Ou ignorer les frais parce que "c'est petit". Ou utiliser un ETF a levier sans comprendre l'effet sur plusieurs jours.
 
 ## A toi
 
-Ecris ton plancher et ton prix cible pour une offre. Une phrase pour les annoncer sans t'excuser. Garde-les sous les yeux une semaine.
+Choisis un vrai ETF (sans acheter) et note sur papier : indice suivi, frais, devise, capitalisation ou distribution, eligibilite PEA oui/non. Si tu ne trouves pas trois de ces infos, tu n'es pas pret a cliquer "ordre".
+
+:::retenir
+ETF / fonds = panier : indice, frais et horizon avant le clic - le nom marketing ne diversifie pas tout seul.
+:::

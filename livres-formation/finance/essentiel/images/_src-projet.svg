@@ -1,44 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f0f5f2"/>
-  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c1f17" font-weight="700">Mini-projet : clarifier ton argent en 4 etapes</text>
-
-  <defs>
-    <marker id="aj" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
-      <path d="M0,0 L10,4 L0,8 Z" fill="#14532d"/>
-    </marker>
-  </defs>
-
-  <rect x="30" y="90" width="170" height="230" rx="14" fill="#14532d"/>
-  <text x="115" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#c9a227" font-weight="700">1. Flux</text>
-  <text x="115" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffff">entrees</text>
-  <text x="115" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffff">sorties</text>
-  <text x="115" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#c9a227">noter</text>
-
-  <line x1="215" y1="200" x2="255" y2="200" stroke="#14532d" stroke-width="4" marker-end="url(#aj)"/>
-
-  <rect x="270" y="90" width="170" height="230" rx="14" fill="#166534"/>
-  <text x="355" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#c9a227" font-weight="700">2. Budget</text>
-  <text x="355" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffff">mois type</text>
-  <text x="355" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffff">enveloppes</text>
-  <text x="355" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#c9a227">cadrer</text>
-
-  <line x1="455" y1="200" x2="495" y2="200" stroke="#14532d" stroke-width="4" marker-end="url(#aj)"/>
-
-  <rect x="510" y="90" width="170" height="230" rx="14" fill="#ffffff" stroke="#14532d" stroke-width="3"/>
-  <text x="595" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14532d" font-weight="700">3. Reserve</text>
-  <text x="595" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c1f17">epargne</text>
-  <text x="595" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c1f17">ou dette</text>
-  <text x="595" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#c9a227">decider</text>
-
-  <line x1="695" y1="200" x2="735" y2="200" stroke="#14532d" stroke-width="4" marker-end="url(#aj)"/>
-
-  <rect x="750" y="90" width="220" height="230" rx="14" fill="#c9a227" stroke="#14532d" stroke-width="3"/>
-  <text x="860" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0c1f17" font-weight="700">4. Plan</text>
-  <rect x="780" y="170" width="160" height="36" rx="8" fill="#ffffff"/>
-  <text x="860" y="194" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c1f17">vue claire</text>
-  <rect x="780" y="220" width="160" height="36" rx="8" fill="#14532d"/>
-  <text x="860" y="244" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#c9a227">prochaine action</text>
-  <text x="860" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c1f17">conclure</text>
-
-  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0c1f17">Flux, budget, reserve, plan : ton argent devient lisible.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Mini-projet</text>
+<rect x="80" y="140" width="260" height="180" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="210" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">voir clair</text>
+<rect x="370" y="140" width="260" height="180" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">mesurer</text>
+<rect x="660" y="140" width="260" height="180" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="790" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">agir</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Budget ou tresorerie claire.</text>
 </svg>

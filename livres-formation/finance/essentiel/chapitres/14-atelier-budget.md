@@ -1,59 +1,72 @@
-# Chapitre 14 - Atelier : construire ton budget
+# Chapitre 14 - Atelier : comparer des produits bancaires du quotidien
 
-Cet atelier fait vivre le chapitre 3 avec les mains. Tu sors avec un budget du mois prochain, une enveloppe imprevu, et une premiere decision d'ajustement. Chronometre : 60 a 90 minutes.
+Theorie sans comparaison, ca reste du brouillard. Cet atelier te fait mettre deux (ou trois) offres bancaires cote a cote : compte, carte, frais, decouvert, services. Chez DanielCraft, on veut que tu sortes avec un tableau rempli, pas avec une impression "ils ont l'air sympas".
 
-## But
+Cadre : atelier pedagogique. Tu ne signes rien sous pression. Tu peux faire l'exercice sur des offres publiques en ligne sans ouvrir de compte.
 
-Ecrire un budget realiste sur une page, voir si ca tient, et choisir une action (reduire, augmenter une entree, ou assumer un poste).
+## Objectif
+
+Choisir (ou confirmer) une offre de **compte courant** / package adaptee a ton usage reel : paiements, virements, eventuel **decouvert**, frais a l'etranger si tu voyages, qualite de l'appli, agence ou 100 % en ligne.
 
 ## Materiel
 
-Releves ou appli bancaire. Feuille A4 ou tableur. Minuteur. Optionnel : colocataire / partenaire pour les postes partages.
+Une feuille ou un tableur. Tes usages reels (combien de retraits, voyages, besoin d'agence, salaire domicilie ou non). Deux ou trois offres : ta banque actuelle + une banque en ligne + eventuellement une neobanque / autre etablissement.
 
-## Etapes
+:::astuce
+Remplis le tableau avec des chiffres ("2 euros/mois sous condition salaire"), pas avec "je crois que c'est gratuit". Les pubs mentent par omission ; les lignes du tableau moins.
+:::
 
-1. Ecris en haut le mois concerne et le total des entrees nettes prevues (realiste, pas espoir haut).
+## Etape 1 - Lister ton usage (15 minutes)
 
-2. Liste les charges fixes avec montant et date de prelevement approx. Additionne.
+Reponds noir sur blanc. Combien de paiements carte par mois ? Retraits especes ? Voyages hors zone ? Besoin de deposer des cheques / especes ? Besoin d'un humain en agence ? Decouvert utile ou piege pour toi ? Qui domicilie le salaire ? As-tu deja des incidents (rejets) ?
 
-3. Estime les variables : courses, transport, plaisir, sante courante, enfants si besoin. Une ligne "imprevu" (meme 30-50). Une ligne epargne (meme petite).
+Sans cet etat des lieux, tu compareras des pubs, pas des offres. Prends quinze minutes honnetes : le bon package pour un globe-trotter n'est pas celui d'un artisan qui depose encore du cash. Ton usage decide des lignes qui comptent vraiment dans le tableau.
 
-4. Additionne tout. Compare aux entrees. Ecris clairement : OK / JUSTE / TROP.
+## Etape 2 - Construire le tableau (30 minutes)
 
-5. Si TROP : choisis une variable a reduire ou un achat a decaler. Recalcule. Si encore TROP : regarde une charge renegociable ou une entree possible - sans magie.
+Colonnes : Banque A / B / C. Lignes suggerees :
 
-6. Cree trois enveloppes mentales ou reelles (ex: courses / plaisir / imprevu) avec un plafond.
+1. **Frais** mensuels du package (et conditions de gratuite)
+2. Type de carte (debit immediat / differe) et plafonds
+3. Frais retraits hors reseau / hors zone
+4. Frais paiements devises (%, commission fixe)
+5. Decouvert : plafond, tarif, conditions
+6. Virements instantanes : inclus ou payants
+7. Alertes / outils de budget
+8. Qualite appli (note personnelle 1 a 5 apres test ou avis prudents)
+9. Assistance : chat, tel, agence
+10. Points d'irritation connus (avis clients a lire avec distance)
 
-7. Programme un virement epargne ou une alerte solde. Une action dans le monde reel pendant l'atelier.
+Remplis avec des chiffres, pas avec "je crois".
 
-8. Planifie une revue de 10 minutes dans 7 jours (agenda).
+## Etape 3 - Calculer un cout mensuel estime (20 minutes)
 
-9. Ecris en bas trois regles d'hygiene. Exemple : "pas d'abonnement sans essai note", "plaisir dans l'enveloppe", "revue dimanche".
+Exemple pedagogique : frais package 2 euros + un retrait payant + change sur un voyage annuel ramene au mois. Fais un total "mois normal" et un total "mois avec voyage". Une banque gratuite en mois normal peut devenir chere en voyage. Une banque avec package peut etre rentable si elle evite des frais ailleurs - ou l'inverse.
 
-## Variante a deux
+:::astuce
+Mois normal : package 2 euros. Mois voyage : + frais change. Une offre "gratuite" chez toi peut devenir la plus chere des trois des que tu pars deux semaines - calcule les deux totaux.
+:::
 
-L'un construit. L'autre joue l'avocat du diable : "cette entree est-elle sure ?", "cet abonnement sert encore ?", "l'imprevu n'est-il pas trop bas ?". Changez. Moins de fiction.
+## Etape 4 - Decider selon critere, pas selon humeur (15 minutes)
 
-## Criteres de reussite
+Choisis tes 3 criteres non negociables (exemple : frais change bas, appli fiable, pas de pression commerciale). Elimine les offres qui cassent un non negociable. Parmi les restantes, choisis la plus simple. La simplicite est un critere sous-estime.
 
-Budget lisible en trente secondes. Total sorties vs entrees explicite. Au moins une action executee (virement, resiliation, alerte). Revue planifiee.
+## Etape 5 - Plan de bascule (si tu changes)
 
-## Si ca bloque
+Ne ferme pas l'ancien compte avant d'avoir domicilie salaire et **prelevements**. Fais une liste des prelevements a migrer. Garde l'ancien compte quelques semaines en filet. Note la date de fin de package pour eviter les frais fantomes.
 
-Trop de categories : fusionne. Honte a regarder : respire, c'est un atelier prive, pas un jugement. Revenus variables : base-toi sur un mois bas normal, mets le surplus eventuel en epargne prevue.
+## Pieges a eviter pendant l'atelier
 
-## Exemple de sortie attendue
+Se laisser offrir un cadeau de bienvenue qui coute 200 euros de frais ailleurs. Comparer uniquement le "sans frais" sans lire les conditions. Prendre un decouvert eleve "au cas ou" alors que tu as un probleme de budget. Confondre neobanque pratique et offre complete pour tous les besoins (cheques, certain credits, etc.).
 
-Entrees : 1 750.
-Fixes : 820.
-Variables + imprevu + epargne : 860.
-Total sorties : 1 680. Statut : OK.
-Enveloppes : courses 70/sem, plaisir 25/sem, imprevu 40/mois.
-Action faite : resiliation abonnement 9,99 + virement epargne 40.
-Revue : dimanche 18h.
+:::attention
+Cadeau de bienvenue + conditions cachees = souvent le piege. Compare le cout reel sur un an, pas le mug offert a l'ouverture.
+:::
 
-Si ta feuille ressemble a ca (avec tes chiffres), l'atelier a marche. Si elle ressemble a une liste d'envies sans totaux, recommence l'etape 4.
+## Livrable
 
-## Apres l'atelier
+Tu as reussi l'atelier si tu as : (1) un tableau chiffre, (2) trois criteres non negociables, (3) une decision ecrite en deux phrases, (4) si changement, une checklist de migration. Pas besoin d'avoir change de banque pour reussir : confirmer que tu restes, avec raisons, est une decision.
 
-Tiens sept jours. A la revue, ajuste une seule enveloppe max. La stabilite bat le yo-yo.
+## A toi
+
+Remplis le tableau cette semaine. Pas "un jour". Cette semaine. L'argent aime les calendriers.

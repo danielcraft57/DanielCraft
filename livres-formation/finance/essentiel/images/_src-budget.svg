@@ -1,25 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f0f5f2"/>
-  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c1f17" font-weight="700">Budget simple : predire, puis comparer</text>
-
-  <rect x="40" y="90" width="280" height="220" rx="14" fill="#14532d"/>
-  <text x="180" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#c9a227" font-weight="700">1. Lister</text>
-  <text x="180" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">revenus</text>
-  <text x="180" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" font-weight="700">et depenses</text>
-  <text x="180" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#c9a227">du mois</text>
-
-  <rect x="360" y="90" width="280" height="220" rx="14" fill="#ffffff" stroke="#14532d" stroke-width="3"/>
-  <text x="500" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14532d" font-weight="700">2. Allouer</text>
-  <text x="500" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c1f17" font-weight="700">enveloppes</text>
-  <text x="500" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#166534">fixe, variable,</text>
-  <text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#166534">epargne</text>
-  <text x="500" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#c9a227">avant de depenser</text>
-
-  <rect x="680" y="90" width="280" height="220" rx="14" fill="#c9a227" stroke="#14532d" stroke-width="3"/>
-  <text x="820" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0c1f17" font-weight="700">3. Suivre</text>
-  <text x="820" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c1f17" font-weight="700">prevu</text>
-  <text x="820" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c1f17" font-weight="700">vs reel</text>
-  <text x="820" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14532d">ajuster sans panique</text>
-
-  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0c1f17">Un budget n'est pas une prison : c'est une carte.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Budget perso</text>
+<rect x="100" y="120" width="250" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="225" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">fixe</text>
+<rect x="375" y="120" width="250" height="200" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">variable</text>
+<rect x="650" y="120" width="250" height="200" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="775" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">reste</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Voir clair avant de serrer.</text>
 </svg>

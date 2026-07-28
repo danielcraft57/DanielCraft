@@ -1,37 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f0f5f2"/>
-  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c1f17" font-weight="700">Argent : ce qui entre, ce qui sort</text>
-
-  <defs>
-    <marker id="af" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
-      <path d="M0,0 L10,4 L0,8 Z" fill="#14532d"/>
-    </marker>
-    <marker id="af2" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
-      <path d="M0,0 L10,4 L0,8 Z" fill="#854d0e"/>
-    </marker>
-  </defs>
-
-  <rect x="40" y="100" width="240" height="200" rx="16" fill="#14532d"/>
-  <text x="160" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#c9a227" font-weight="700">Entrees</text>
-  <text x="160" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#ffffff" font-weight="700">revenus</text>
-  <text x="160" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f0f5f2">salaire, ventes</text>
-
-  <line x1="300" y1="180" x2="380" y2="180" stroke="#14532d" stroke-width="4" marker-end="url(#af)"/>
-  <text x="340" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700">arrive</text>
-
-  <rect x="390" y="100" width="220" height="200" rx="16" fill="#ffffff" stroke="#14532d" stroke-width="3"/>
-  <ellipse cx="500" cy="175" rx="70" ry="40" fill="#c9a227"/>
-  <text x="500" y="183" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0c1f17" font-weight="700">Compte</text>
-  <text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0c1f17" font-weight="700">le seau</text>
-  <text x="500" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#166534">solde du jour</text>
-
-  <line x1="630" y1="220" x2="710" y2="220" stroke="#854d0e" stroke-width="4" marker-end="url(#af2)"/>
-  <text x="670" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#854d0e" font-weight="700">part</text>
-
-  <rect x="720" y="100" width="240" height="200" rx="16" fill="#c9a227" stroke="#14532d" stroke-width="3"/>
-  <text x="840" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0c1f17" font-weight="700">Sorties</text>
-  <text x="840" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0c1f17" font-weight="700">depenses</text>
-  <text x="840" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14532d">loyer, outils...</text>
-
-  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0c1f17">Regarder le robinet, le seau et les fuites sans se mentir.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Flux d'argent</text>
+<rect x="120" y="120" width="350" height="220" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="295" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1b3a2f" font-weight="700">entrees</text>
+<rect x="530" y="120" width="350" height="220" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="705" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1b3a2f" font-weight="700">sorties</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Suivre avant d'optimiser.</text>
 </svg>

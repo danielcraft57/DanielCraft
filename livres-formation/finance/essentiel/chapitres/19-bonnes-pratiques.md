@@ -1,70 +1,61 @@
-# Chapitre 19 - Bonnes pratiques : la checklist argent sous controle
+# Chapitre 19 - Bonnes pratiques pour durer
 
-Ce chapitre rassemble des pratiques tenables. Pas un ideal de milliardaire zen. Une liste a laquelle revenir quand ca part en vrac - perso ou petite activite.
+Tu peux comprendre les marches et quand meme te saboter par habitude. Ce chapitre rassemble des pratiques sobres, repetables, un peu ennuyeuses - donc efficaces. Chez DanielCraft, on croit aux systemes modestes tenus dix ans plus qu'aux eclairs de genie financiers du mois.
 
-## Chaque semaine
+Toujours pedagogique. Adapte a ta vie. Ce n'est pas une checklist sacree ni un conseil personnalise.
 
-Balayer le releve. Verifier les prelevements etrangers. Mettre a jour budget ou tresorerie en 10-15 minutes. Relancer une facture due si tu en as. Regarder le solde sans dramatiser.
+## Hygiene bancaire
 
-## Chaque mois
+Lis un **releve** (ou l'equivalent appli) chaque mois. Inventorie les prelevements une fois par trimestre. Active des alertes de solde. Separe compte quotidien et reserve. Change les mots de passe, active la double authentification, ne partage pas tes codes. Quand tu demenages ou changes de vie, mets a jour IBAN partout pour eviter rejets et frais.
 
-Comparer prevu et reel. Ajuster une enveloppe. Verser epargne / provision. Regarder dettes (reste-t-il un incident ?). Archiver devis et factures. Noter une lecon du mois (ex: "les courses explosent le week-end").
+## Hygiene d'epargne
 
-## Avant un gros achat
+**Virement automatique** vers la reserve des le salaire. Objectif de coussin ecrit. Livrets reglementes avant les acrobaties. Nomme tes comptes dans l'appli ("urgence", "vacances") pour freiner le pillage mental.
 
-Attendre 24 a 48h si ce n'est pas une urgence vraie. Verifier le budget. Comparer deux options. Lire les frais annexes. Pour l'activite : ce gros achat ameliore-t-il vraiment la tresorerie ou le travail - ou ca flatte ?
+:::astuce
+Nomme tes comptes dans l'appli ("urgence", "vacances"). Le libelle freine le pillage mental mieux qu'une bonne resolution du 1er janvier.
+:::
 
-## Avant un credit
+## Hygiene de credit
 
-Cout total, TAEG, duree, mensualite dans le budget, pourquoi clair, sommeil de 48h, refus de la pression. Lire. Poser des questions. Garder une copie.
+Un **credit** = un pourquoi clair + un cout total lu + une capacite a rembourser sous scenario degrade. Evite d'empiler les petits credits. Si tu es en difficultes, contacte tot ta banque / des structures d'aide au surendettement selon ta situation - plus tot vaut mieux que la honte silencieuse.
 
-## Avant "investir"
+## Hygiene d'investissement
 
-Reserve d'abord. Horizon clair. Comprendre le support. Mefiance du sans-risque-a-haut-rendement. Pas d'argent emprunte pour un truc opaque. Pas tout sur un seul panier.
+**Enveloppes** comprises avant d'etre remplies. Sous-jacents compris (panier, frais, risque). Versements reguliers plutot que timing heroiqe. Peu de lignes, larges, bas **frais**. Pas de levier debutant. Pas de produit miracle. Revue annuelle : est-ce que mon horizon a change ? Ma reserve est-elle intacte ? Mes frais ont-ils derive ? Est-ce que je detiens encore ce que je comprends ?
 
-## Hygiene pro
+:::astuce
+Chaque annee, le mois de ton anniversaire : photo simple du patrimoine, lecture des frais, relecture des regles de profil, un ajustement max - pas une revolution deguisee en timing.
+:::
 
-Devis avec perimetre et limites. Acomptes sur gros dossiers. Factures rapides. Relances calmes. Separation perso / pro autant que possible. Prevision 4 semaines. Provision charges.
+## Hygiene informationnelle
 
-## Securite
+Limite le nombre de sources. Preferer des educations de regulateurs, des livres sobres, des documentations d'emetteurs, plutot que des stories verticales a 2 heures du matin. Un seul suivi de portefeuille hebdomadaire suffit souvent ; le minutage minute par minute nourrit l'anxiete plus que la performance.
 
-Alertes. Codes proteges. Opposition connue. Mefiance phishing. Double check des RIB. Pas de codes donnes au telephone sur sollicitation.
+## Hygiene sociale
 
-## Relation a l'argent (humaine)
+Parle argent avec les personnes avec qui tu partages un budget. Alignement des profils de risque. Refuse la competition de salon ("j'ai fait +40 %"). Les plus bruyants ne montrent pas leurs pertes. Nora a arrete de comparer son PEA debutant au screenshot recadre d'un collegue. Son sommeil a remercie.
 
-Parler sans honte avec partenaire / associe. Eviter le secret qui pourrit. Celebrer un petit geste tenu (premier mois de budget) plus qu'un fantasme. Se pardonner un ecart et reprendre - pas tout jeter.
+## Hygiene anti-arnaque
 
-## Rythme personnel
+Phrase rappel : rendement eleve + sans risque + urgence = non. Verifie AMF / sources officielles. Pas de prise en main a distance. Pas de seed phrase partagee. Pas de carte cadeau pour "debloquer un compte".
 
-Bloque les rituels dans l'agenda comme un chantier. Sinon "je verrai ce week-end" devient jamais. Alterne serieusite et repos : un humain epuise signe n'importe quoi.
+## Hygiene documentaire
 
-Chez DanielCraft, la pratique qui marche est celle que tu repetes quand tu n'as pas envie - en version courte, mais reelle.
+Range quelque part (coffre, dossier chiffre, cloud serieux) : IBAN, numeros de contrats PEA / AV / credits, contacts opposition carte, copies d'identite utiles, clauses importantes. En cas d'urgence, tu ne veux pas chercher un PDF pendant une panique. Une fois par an, mets a jour la liste "si je ne suis pas la" pour un proche de confiance - sans transformer ca en drame, juste en hygiene d'adulte.
 
-## Semaine type (exemple)
+## Petite routine annuelle (suggestion)
 
-Lundi : tresorerie / budget 15 min.
-Mercredi : relances ou revue abonnements.
-Vendredi : epargne / provision verifiee, factures envoyees.
-Dimanche : balayage releve 5 min.
+Chaque annee, le mois de ton anniversaire : (1) photo de ton patrimoine simple (comptes, livrets, enveloppes, dettes), (2) lecture des frais, (3) relecture de tes regles de profil, (4) un ajustement max - pas une revolution. Les revolutions annuelles ressemblent souvent a du market timing deguise.
 
-Ce n'est pas sacre. C'est un rythme. Sans rythme, tu ne regardes l'argent que dans la panique - le pire moment pour decider bien.
+:::retenir
+Systemes modestes tenus dix ans battent les eclairs de genie du mois - releve, auto epargne, peu de lignes, bas frais, revue annuelle.
+:::
 
-## Erreur classique
+## Ce qu'on arrete
 
-Collectionner les applis et methodes sans en tenir une. Ou tout controler trois jours puis abandonner six mois. Choisis peu. Tiens. Ajuste.
-
-## Mini audit trimestriel
-
-Tous les trois mois : 45 minutes. Budget ou tresorerie a jour ? Dettes listees ? Reserve en hausse, stable ou en baisse ? Factures en retard ? Abonnements encore utiles ? Une seule amelioration choisie pour le trimestre suivant. Pas vingt. Une.
-
-## Transmettre le calme
-
-Si tu as un associe, un conjoint, un apprenti : partage les rituels. Une boite ou une famille ou une seule personne "porte" tout l'argent dans sa tete, c'est fragile. La clarte partagee est une bonne pratique.
-
-## En vrai
-
-Imprime ou copie cette checklist. Surligne trois pratiques pour ce mois. Une nouvelle habitude par quinzaine suffit souvent.
+Arreter de se juger sur le niveau de depart. Arreter de croire qu'il faut tout savoir avant d'agir petit. Arreter de confondre complexite et intelligence. Arreter de signer sous pression. La maturite financiere est souvent un art de retirer du bruit.
 
 ## A toi
 
-Ecris ta "regle des 5" argent : cinq phrases non negociables. Exemple : "revue dimanche", "epargne auto", "pas de credit sous pression", "facture sous 48h", "verifier avant de cliquer". Signe-la. C'est ton contrat avec toi-meme.
+Choisis trois pratiques de ce chapitre et mets-les dans ton calendrier avec une date. Une pratique sans date reste une intention. Une intention ne paie pas les agios ni n'alimente un livret.

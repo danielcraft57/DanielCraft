@@ -1,34 +1,29 @@
-# Chapitre 21 - Bravo
+# Bravo
 
-Tu as fini Finance - Les bases. Pas "tu connais toute la fiscalite et tous les marches". Mieux : tu sais regarder l'argent sans te mentir, poser un budget ou une tresorerie simple, comprendre dettes et interets, facturer plus clairement, et ralentir face aux mirages.
+Tu es alle au bout. Pas au bout de la finance - ca n'existe pas - mais au bout de ce parcours DanielCraft : marches et role de la finance, acteurs (banques, bourses, AMF en idee), compte et moyens de paiement, livrets, credit, interets, PEA / CTO / assurance-vie, actions et obligations, ETF et fonds, intuition des derives, risque et rendement, mini-projet de portefeuille fictif, ateliers, prudence d'horizon, arnaques, bonnes pratiques, quiz.
 
-Tu as une carte. Flux. Budget. Epargne. Credit. Interets. Compte. Tresorerie. Couts et marge. Devis et facture. Impots en idee. Un mini-projet. Des ateliers. Investir avec prudence. Arnaques. Des pratiques tenables.
+Ce n'etait pas un livre pour te transformer en trader. C'etait un livre pour te donner une langue, une carte, et une hygiene. Tu sais mieux distinguer le coussin du livret et le panier de l'ETF. Tu sais qu'une enveloppe n'est pas une magie. Tu sais que les derives existent sans devoir y jouer. Tu sais que le rendement eleve sans risque sent le piege. Tu sais que la prudence est une competence, pas une excuse.
 
-Chez DanielCraft, on mesure le progres a une chose simple : est-ce que ton prochain mois sera plus clair que le precedent - moins de surprises, plus de provisions, plus de decisions calmes ? Si oui, le livre a servi.
+:::retenir
+Tu as une boussole : poches A/B/C, reserve avant marches, bas frais, pas de levier miracle - maintenant, marche doucement avec tes vrais chiffres.
+:::
 
 ## Ce que tu peux faire maintenant
 
-Lire un releve sans panique. Tenir une page de budget. Mettre de cote un peu. Lister une dette. Comparer un credit sur le cout total. Separer reserve et quotidien. Prevoir quatre semaines de cash. Fixer un prix avec un plancher. Envoyer un devis net et une facture vite. Provisionner. Dire non a une pression. Verifier avant de cliquer.
+Reprendre ta feuille de poches A / B / C. Terminer l'atelier banque si ce n'est pas fait. Lire une vraie fiche ETF sans ordonner. Ecrire ton profil de risque et le garder. Verifier que ta reserve avance. Si tu ouvres une enveloppe un jour, le faire lentement, a bas frais, avec de l'argent long terme. Si tu ne l'ouvres pas encore, ce peut etre exactement la bonne decision.
 
-## Ton premier mois apres le livre
+## Ce que tu peux laisser tomber
 
-Semaine 1 : budget ou tresorerie + une fuite fermee.
-Semaine 2 : epargne ou provision lancee + releve relu.
-Semaine 3 : devis/facture ou abonnements ranges.
-Semaine 4 : revue des 5 regles + une amelioration seule.
+La honte d'avoir commence "tard". La competition avec les screenshots. Les produits que tu ne peux pas expliquer. Les urgences artificielles. Le levier pour rattraper. Le mythe du placement parfait.
 
-Pas besoin de tout revolutionner. Besoin d'un mois plus clair que le precedent.
+## Disclaimer une derniere fois
 
-## La suite
+Ce livre est pedagogique. Il ne remplace pas un conseiller en investissement agree, un banquier, un fiscaliste, ou un avocat. Il ne connait pas ta situation. Les regles fiscales, les taux, les plafonds et les produits changent. Avant une decision concrete, verifie les infos a jour et, si besoin, demande un avis professionnel competent. Investir comporte un risque de perte en capital. Emprunter comporte un cout et des engagements.
 
-La suite, c'est la vraie vie : un mois serre, un client lent, une envie d'achat, une pub trop belle. Applique une pratique a la fois. Garde ta regle des 5. Quand ca frotte, ajuste sans ego - et sans chercher le genie.
+## Une derniere image
 
-Si tu veux aller plus loin plus tard : compta plus fine, fiscalite avec un pro, financement d'entreprise, ou lecture approfondie de l'investissement. Ce livre t'a donne le socle. Le reste s'accroche dessus - avec les memes reflexes : comprendre, provisionner, ralentir.
+La finance, c'est un paysage. Les livrets sont le refuge de bord de chemin. Les marches sont la montagne : belle, utile pour certains trajets, dangereuse sans preparation. Les derives sont des sentiers d'altitude pour guides. Les arnaques sont des faux panneaux. Toi, tu es le marcheur. Tu choisis la distance du jour. Tu n'es pas oblige de sommetter demain. Tu es oblige de regarder ou tu mets les pieds.
 
-Nora, Max et Sam n'existent que pour t'entrainer. Toi, tu existes pour appliquer. Un geste cette semaine. Puis un autre.
+Nora a maintenant une reserve qui monte et un PEA minuscule qu'elle comprend. Max a un credit lu et un compte lu. Sam a vire trois fonds chers et dors mieux. Leurs histoires etaient inventees. La tienne commence ici, avec tes vrais chiffres et ta vraie prudence.
 
-## Une derniere phrase
-
-Regarde. Compte. Provisionne. Facture clair. Refuse le miracle. Recommence.
-
-Bravo. Tu sais parler d'argent avec les pieds sur terre.
+Bravo. Vraiment. Tu as une boussole. Maintenant, marche doucement - et construis.

@@ -1,60 +1,87 @@
-# Chapitre 16 - Atelier : fixer un prix avec marge
+# Chapitre 16 - Atelier : dessiner ton profil de risque
 
-Cet atelier fait vivre le chapitre 9. Tu sors avec un prix cible, un plancher, et une phrase pour l'annoncer. Chronometre : 60 a 90 minutes. Utile a l'artisan, au freelance, a la petite boite - et au particulier qui vend un service ponctuel.
+Le **profil de risque** n'est pas un badge. C'est un miroir. Cet atelier te force a ecrire ce que ton estomac accepte vraiment, pas ce que ton ego affiche devant un collegue. Chez DanielCraft, on prefere un profil honnete et un portefeuille simple a un profil "dynamique" abandonne a la premiere baisse.
 
-## But
+Pedagogique uniquement. Ca ne remplace pas un questionnaire reglementaire d'un intermediaire, et ca ne constitue pas un conseil personnalise.
 
-Arreter de "sentir" un prix. Le construire a partir des couts, du temps, et d'une marge minimale assumable.
+## Objectif
 
-## Materiel
+Produire une demi-page "profil" : **horizon**, capacite a encaisser une baisse, poches d'argent, comportement probable sous stress, consequences pour le type de produits a etudier (ou a eviter).
 
-Une offre type precise (pas "tout mon metier"). Notes de couts. Chronometre. Optionnel : un ami pour jouer le client qui dit "c'est trop cher".
+## Etape 1 - Horizons (15 minutes)
 
-## Etapes
+Liste tes projets d'argent avec une date approx :
 
-1. Decris l'offre en deux phrases : pour qui, quoi livre, delai typique.
+- 0-12 mois : ...
+- 1-3 ans : ...
+- 3-7 ans : ...
+- 7 ans et plus : ...
 
-2. Liste tous les couts directs : matieres, deplacements, frais plateforme, consommables, sous-traitance. Mets un montant meme approx.
+Pour chaque ligne, note si l'argent "doit etre la" (loyer, depot, taxe, machine) ou "serait bien si" (voyage confort, marge). Le "doit etre la" refuse presque toujours la forte **volatilite**.
 
-3. Estime le temps total : production + devis + trajets + admin + SAV leger. Convertis en euros avec un taux horaire "je me respecte" (meme imparfait).
+:::astuce
+Separe "doit etre la" et "serait bien si" sur chaque horizon. Le premier refuse presque toujours la forte volatilite - ecrit noir sur blanc, ca calme les envies de heros.
+:::
 
-4. Ajoute une part de frais fixes (loyer, assurances, outils) au prorata si tu peux - sinon une marge de securite forfaitaire.
+## Etape 2 - Test de baisse imaginee (20 minutes)
 
-5. Additionne : tu obtiens un cout de revient estime. Ajoute la marge minimale que tu veux (ex. 20 %, ou un montant fixe). Tu obtiens un prix cible.
+Imagine un placement long terme de 10 000 euros (meme si tu n'as pas cette somme - c'est un scenario). Visualise :
 
-6. Definis un plancher : en dessous, tu refuses ou tu changes le perimetre. Le plancher n'est pas le prix affiche. C'est ta ligne rouge.
+- baisse a 9 000 (-10 %)
+- baisse a 8 000 (-20 %)
+- baisse a 7 000 (-30 %)
 
-7. Ecris la phrase d'annonce du prix, calme, sans excuse. Exemple : "Pour ce perimetre, c'est 480 euros TTC / HT selon ton cas, avec acompte de 30 %."
+A chaque palier, choisis une reaction sincere :
 
-8. Prepare une reponse a "c'est trop cher" : clarifier le perimetre, proposer une version serree, ou assumer le non - pas brader en panique.
+- A) Je dors, je continue mes versements
+- B) Je stresse mais je ne vends pas
+- C) Je vends une partie
+- D) Je vends tout
+- E) J'en rachete plus (attention : pas toujours sage)
 
-9. Joue 5 minutes le dialogue avec un ami ou a voix haute. Ajuste la phrase, pas forcement le prix.
+Ton vrai profil ressemble a ta reponse au palier -20 % ou -30 %, pas a ta reponse au soleil. Prends le temps de visualiser vraiment : notification rouge, conversation avec un proche inquiet, article panique. Ce n'est pas un jeu. C'est un test d'estomac avant que le marche ne le fasse pour toi.
 
-## Variante catalogue
+## Etape 3 - Capacite vs tolerance (15 minutes)
 
-Si tu as trois formules (Essentiel / Standard / Plus), fais l'atelier sur la formule Standard d'abord, puis derive les autres par perimetre, pas par "au pif".
+**Tolerance** = ce que tu ressens. **Capacite** = ce que ta vie permet (stabilite revenus, personnes a charge, dettes, epargne de precaution deja la). Tu peux te sentir heros (tolerance haute) avec une capacite faible (CDD + loyer + zero reserve) : dans ce cas, la capacite gagne. Ecris deux notes sur 10 : tolerance / capacite. La note utile pour dimensionner le risque, c'est souvent la plus basse des deux.
 
-## Criteres de reussite
+:::attention
+Tolerance haute + capacite faible (CDD, loyer, zero reserve) : la capacite gagne. Mentir pour "faire riche" sur le questionnaire, c'est preparer une vente panique.
+:::
 
-Couts listes. Temps compte. Prix cible et plancher ecrits. Phrase d'annonce prete. Une reponse a l'objection prix preparee.
+## Etape 4 - Regles personnelles (15 minutes)
 
-## Si ca bloque
+Ecris 4 regles du type :
 
-Tu ne "connais pas" ton taux horaire : pars d'un revenu mensuel vise / heures vendables realistes. C'est grossier et deja mieux que zero. Peur de perdre des clients : note combien de clients a perte tu peux "gagner" avant de couler. Souvent ca calme la bradage.
+1. Je n'investis sur les marches que l'argent de la poche C (long terme).
+2. Ma reserve B fait au moins X euros avant d'augmenter mon exposition actions.
+3. Je refuse les produits a **levier** / options / promesses de rendement fixe eleve.
+4. Si je veux changer de strategie, j'attends 72 heures et je relis ce profil.
 
-## Exemple de sortie attendue
+Signe-les. Oui, c'est un peu solennel. Ca marche.
 
-Offre : site one-page artisan, 2 semaines.
-Couts directs : 40 (outils/stockage).
-Temps : 14 h x 35 = 490.
-Securite fixes : 70.
-Cout revient : 600. Marge mini : 150. Prix cible : 750.
-Plancher : 650 (perimetre reduit si besoin).
-Phrase : "Pour une page claire livree en deux semaines, compte 750, acompte 30 %."
-Objection : proposer Essentiel a 550 avec moins de revisions - pas 750 "parce que gentil".
+## Etape 5 - Traduction produits (sans ordre d'achat)
 
-Si tu as cet niveau de clarte, l'atelier a marche.
+Selon ton resultat, ecris une orientation pedagogique :
 
-## Apres l'atelier
+- Si capacite/tolerance basses : priorite livrets, eventuellement fonds euro selon contrat, marches tres progressifs ou plus tard.
+- Si moyennes : reserve solide + petite part ETF large via enveloppe adaptee, versements automatiques.
+- Si hautes (et reserve OK, horizon long) : part actions diversifiees plus importante possible - toujours sans levier, toujours avec frais bas.
 
-Utilise ce prix sur le prochain devis reel. Note la reaction. Ajuste avec des faits, pas avec la peur seule.
+Ce n'est pas une prescription. C'est une direction a discuter avec toi-meme (et un pro si besoin).
+
+## Pieges
+
+Mentir pour "faire riche". Copier le profil du voisin. Confondre horizon long et argent indisponible moralement (si tu sais que tu vendras au premier -15 %, ton horizon effectif est court). Utiliser le credit pour "augmenter la capacite".
+
+## Livrable
+
+Une demi-page avec : horizons, note capacite/tolerance, reaction a -20 %, quatre regles, orientation produits. Range-la. Relis-la avant tout nouvel achat d'actifs risques.
+
+:::retenir
+Profil honnete = horizon + estomac a -20 % + min(capacite, tolerance) - pas le badge "dynamique" du collegue.
+:::
+
+## A toi
+
+Fais l'atelier ce week-end. Si tu vis en couple / coloc avec finances liees, fais une version chacun puis comparez sans te moquer. Les conflits d'argent commencent souvent par des profils non dits.

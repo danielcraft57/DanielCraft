@@ -1,59 +1,79 @@
-# Chapitre 15 - Atelier : prevision de tresorerie 4 semaines
+# Chapitre 15 - Atelier : lire une fiche ETF simple
 
-Cet atelier fait vivre le chapitre 8. Tu sors avec une feuille de tresorerie realiste et une action pour proteger la semaine fragile. Chronometre : 70 a 100 minutes. Vise surtout si tu as une activite (artisan, freelance, petite boite). Un particulier avec revenus tres irreguliers peut l'adapter.
+Les ETF impressionnent parce que les fiches sont denses. Cet atelier te montre comment en lire une sans te noyer, et surtout comment refuser d'acheter si les infos cle manquent. Chez DanielCraft, savoir lire bat savoir cliquer.
 
-## But
+Encore une fois : atelier pedagogique. Choisir un ETF sur la fiche ne veut pas dire "achete celui-la avec ton vrai argent". Ca veut dire "tu sais poser les bonnes questions".
 
-Voir le cash semaine par semaine pendant un mois, sans optimisme de salon, et decide une mesure preventive.
+## Objectif
+
+Decortiquer une fiche / un DICI / une page produit d'**ETF** et remplir une carte d'identite en une page.
 
 ## Materiel
 
-Solde bancaire du jour (et caisse si besoin). Liste des factures clients avec dates d'encaissement probables. Liste des charges a venir (loyer, salaires, cotisations, fournisseurs, toi). Feuille ou tableur. Minuteur.
+Un ETF au choix (de preference un grand **indiciel** actions monde ou Europe - plus pedagogique qu'un produit a levier). Acces a la page de l'emetteur ou a ton courtier. Feuille ou tableur.
 
-## Etapes
+:::astuce
+Choisis un grand ETF indiciel monde ou Europe pour l'exercice. Un produit a levier ou ultra-thematique apprend surtout a paniquer - pas a lire une fiche.
+:::
 
-1. Ecris le solde disponible aujourd'hui en haut. Pas le chiffre d'affaires. Le cash.
+## Etape 1 - Identite (10 minutes)
 
-2. Cree quatre colonnes : S1, S2, S3, S4 (ou cinq si tu veux la semaine en cours separee).
+Note : nom commercial, code **ISIN** (identifiant), ticker si tu en vois un, emetteur (societe de gestion), domicile du fonds (Irlande, Luxembourg... info utile plus tard pour fiscalite / structure, sans en faire une these).
 
-3. Pour chaque semaine, liste les entrees vraiment probables. Un devis "chaud" n'est pas une entree. Une facture echue avec client habituellement bon payeur : ok avec prudence. Un gros client toujours en retard : decale mentalement.
+Si tu ne trouves meme pas l'ISIN, change de source d'information.
 
-4. Pour chaque semaine, liste les sorties certaines et quasi certaines. Inclus ton remuneration si tu te la verses.
+## Etape 2 - Qu'est-ce qu'il suit ? (15 minutes)
 
-5. Calcule le solde de fin de chaque semaine : solde debut + entrees - sorties. Le solde de fin devient le debut de la suivante.
+Quel **indice** ? (exemples de type : monde developpe, Europe, emergent, obligations...). Combien de lignes approx ? Poids des plus grosses valeurs ? Concentration pays / secteurs ? Ecris en une phrase humaine : "Ce panier, c'est surtout ..."
 
-6. Colorie ou entoure toute semaine ou le solde prevu passe sous ton seuil de confort (choisis un seuil : ex. 1 000, ou "un mois de fixes / 4").
+Si la phrase devient "c'est de la tech US concentree" alors que le marketing dit "innovation mondiale", tu as gagne l'atelier. Cette phrase humaine est le coeur de l'exercice : elle te force a voir le panier derriere le slogan.
 
-7. Pour la semaine la plus fragile, ecris trois leviers possibles : relancer qui ? decaler quel achat ? demander quel acompte ? negocier quel echeancier ? Evite "esperer un miracle" comme levier.
+## Etape 3 - Frais et mecanique (15 minutes)
 
-8. Execute une action de moins de quinze minutes maintenant (mail de relance, appel, decalage de commande non urgente).
+**Frais** courants (TER / ongoing charges). Il y a-t-il d'autres frais visibles ? Replication physique ou synthetique (si indique) ? Devise de cotation ? Couverture de change (hedge) ou non ? Distribution (verse des dividendes) ou **capitalisation** (reinvestit) ?
 
-9. Planifie une maj tresorerie de 15 minutes lundi prochain.
+Pour un debutant long terme en enveloppe capitale, la capitalisation est souvent pratique (discipline). Ce n'est pas un dogme.
 
-## Variante equipe (petite boite)
+:::astuce
+Deux ETF "monde" : 0,2 % vs 0,8 % de frais pour une expo proche. Sur 20 ans, ce n'est pas du detail - note le TER avant la perf a 1 an.
+:::
 
-Sam et un collegue : l'un remplit les encaissements, l'autre les sorties, puis ils challengent les dates. Un chiffre trop beau se fait gronder. C'est le but.
+## Etape 4 - Risque et historique (15 minutes)
 
-## Criteres de reussite
+Echelle de risque du document d'informations. Performances passees sur 1 / 5 / 10 ans si dispo - avec le tampon mental "le passe n'est pas le futur". Volatilite evoquee ? Objectif clairement non garanti ?
 
-Feuille complete sur 4 semaines. Au moins une semaine commentee. Une action reelle envoyee. Seuil de confort ecrit. Prochaine maj planifiee.
+Ecris : "Le pire scenario que je comprends est ..."
 
-## Si ca bloque
+## Etape 5 - Enveloppe et accessibilite (10 minutes)
 
-Pas de dates de paiement : appelle ou regarde l'historique du client ("il paie souvent a J+20"). Trop d'incertitude : fais deux scenarios (sobre / un peu mieux) et gere selon le sobre. Peur de voir le rouge : regarde quand meme - le rouge imagine fait plus de degats que le rouge ecrit.
+Eligible **PEA** ? Dispo en CTO ? En assurance-vie chez certains contrats ? Liquidite apparente (encours du fonds, volume) ? Spread indicatif si tu regardes un carnet d'ordres (avance, optionnel).
 
-## Exemple de sortie attendue
+## Etape 6 - Verdict pedagogique (10 minutes)
 
-Solde J : 2 400.
-S1 fin : 1 800 (sortie loyer).
-S2 fin : 3 100 (deux encaissements).
-S3 fin : 900 (cotisations) - FRAGILE.
-S4 fin : 2 200.
-Action : relance client Martin + decalage achat outillage non critique.
-Seuil confort : 1 200. Regle : maj lundi 9h.
+Choisis une seule case :
 
-Si ta feuille montre un film, pas un souhait, l'atelier a marche.
+- A) Je comprends assez pour l'etudier plus avant dans un cadre long terme
+- B) Interessant mais trop etroit / trop cher / trop complexe pour moi maintenant
+- C) Je ne mets pas mon argent la (levier, inverse, incomprehension)
 
-## Apres l'atelier
+Justifie en trois lignes. Pas de "on verra".
 
-Tiens la maj hebdo quatre semaines d'affilee. Ensuite tu pourras alleger. Sans rituel, la feuille redevient deco.
+## Exercice bonus (optionnel)
+
+Compare deux ETF qui affichent un objectif proche. Le moins cher avec un encours solide et un indice clair gagne souvent le match pedagogique - sauf raison structurelle forte (eligibilite PEA, etc.).
+
+## Pieges
+
+Chase la perf 1 an. Ignorer les frais. Acheter un ETF thematique parce que le nom est beau. Empiler plusieurs ETF quasi identiques. Utiliser un ordre market sans regarder le prix si le titre est peu liquide (cas avance : prefere les limites si besoin).
+
+:::attention
+Chase la perf a 1 an ou ignorer le TER parce que "c'est petit" : deux facons de rater l'atelier. Le passe n'est pas le futur ; les frais, eux, reviennent chaque annee.
+:::
+
+## Livrable
+
+Une fiche recto : Identite / Indice / Frais / Devise / Dist ou Cap / Risque / Enveloppe / Verdict A-B-C. Si tu peux la montrer a un ami et qu'il comprend, c'est gagne.
+
+## A toi
+
+Fais l'atelier sur un vrai ETF cette semaine. Sans ordre en bourse. La lecture d'abord.
