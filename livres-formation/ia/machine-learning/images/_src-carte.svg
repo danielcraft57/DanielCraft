@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-<rect width="1000" height="520" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Machine learning : apprendre a partir d'exemples</text>
-<rect x="60" y="120" width="260" height="280" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="190" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a202c" font-weight="700">Exemples</text>
-<text x="190" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">cas connus</text>
-<text x="190" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">+ labels</text>
-<line x1="320" y1="260" x2="380" y2="260" stroke="#ed8936" stroke-width="3"/>
-<rect x="380" y="120" width="240" height="280" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#9c4221" font-weight="700">Modele</text>
-<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">ajuste ses</text>
-<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">parametres</text>
-<line x1="620" y1="260" x2="680" y2="260" stroke="#ed8936" stroke-width="3"/>
-<rect x="680" y="120" width="260" height="280" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="810" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a202c" font-weight="700">Prediction</text>
-<text x="810" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">cas nouveaux</text>
-<text x="810" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">nombre / classe</text>
-<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Pas de magie : des exemples, une mesure d'erreur, une prediction.</text>
+<rect width="1000" height="520" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Machine learning : apprendre a partir d'exemples</text>
+<rect x="60" y="120" width="260" height="280" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="190" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0b1220" font-weight="700">Exemples</text>
+<text x="190" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">cas connus</text>
+<text x="190" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">+ labels</text>
+<line x1="320" y1="260" x2="380" y2="260" stroke="#2dd4bf" stroke-width="3"/>
+<rect x="380" y="120" width="240" height="280" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f766e" font-weight="700">Modele</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="400">ajuste ses</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="400">parametres</text>
+<line x1="620" y1="260" x2="680" y2="260" stroke="#2dd4bf" stroke-width="3"/>
+<rect x="680" y="120" width="260" height="280" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="810" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0b1220" font-weight="700">Prediction</text>
+<text x="810" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">cas nouveaux</text>
+<text x="810" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">nombre / classe</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Pas de magie : des exemples, une mesure d'erreur, une prediction.</text>
 </svg>

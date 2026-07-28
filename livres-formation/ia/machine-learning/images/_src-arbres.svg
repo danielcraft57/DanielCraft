@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
-<rect width="1000" height="560" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Arbre de decision : questions en cascade</text>
-<rect x="380" y="90" width="240" height="70" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="500" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="700">montant > 80 ?</text>
-<line x1="500" y1="160" x2="500" y2="200" stroke="#1a202c" stroke-width="3"/>
-<line x1="280" y1="200" x2="720" y2="200" stroke="#1a202c" stroke-width="3"/>
-<line x1="280" y1="200" x2="280" y2="240" stroke="#1a202c" stroke-width="3"/>
-<line x1="720" y1="200" x2="720" y2="240" stroke="#1a202c" stroke-width="3"/>
-<rect x="160" y="240" width="240" height="70" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="280" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1a202c" font-weight="700">Oui -> textile ?</text>
-<rect x="600" y="240" width="240" height="70" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="720" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a202c" font-weight="700">Non -> faible risque</text>
-<line x1="280" y1="310" x2="280" y2="350" stroke="#1a202c" stroke-width="3"/>
-<line x1="180" y1="350" x2="380" y2="350" stroke="#1a202c" stroke-width="3"/>
-<line x1="180" y1="350" x2="180" y2="380" stroke="#1a202c" stroke-width="3"/>
-<line x1="380" y1="350" x2="380" y2="380" stroke="#1a202c" stroke-width="3"/>
-<rect x="80" y="380" width="200" height="70" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="180" y="425" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#9c4221" font-weight="700">Risque haut</text>
-<rect x="280" y="380" width="200" height="70" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="380" y="425" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a202c" font-weight="700">Risque moyen</text>
-<text x="500" y="510" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Chaque noeud coupe. Les feuilles donnent la prediction.</text>
+<rect width="1000" height="560" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Arbre de decision : questions en cascade</text>
+<rect x="380" y="90" width="240" height="70" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="500" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">montant > 80 ?</text>
+<line x1="500" y1="160" x2="500" y2="200" stroke="#0b1220" stroke-width="3"/>
+<line x1="280" y1="200" x2="720" y2="200" stroke="#0b1220" stroke-width="3"/>
+<line x1="280" y1="200" x2="280" y2="240" stroke="#0b1220" stroke-width="3"/>
+<line x1="720" y1="200" x2="720" y2="240" stroke="#0b1220" stroke-width="3"/>
+<rect x="160" y="240" width="240" height="70" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="280" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0b1220" font-weight="700">Oui -> textile ?</text>
+<rect x="600" y="240" width="240" height="70" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="720" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0b1220" font-weight="700">Non -> faible risque</text>
+<line x1="280" y1="310" x2="280" y2="350" stroke="#0b1220" stroke-width="3"/>
+<line x1="180" y1="350" x2="380" y2="350" stroke="#0b1220" stroke-width="3"/>
+<line x1="180" y1="350" x2="180" y2="380" stroke="#0b1220" stroke-width="3"/>
+<line x1="380" y1="350" x2="380" y2="380" stroke="#0b1220" stroke-width="3"/>
+<rect x="80" y="380" width="200" height="70" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="180" y="425" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f766e" font-weight="700">Risque haut</text>
+<rect x="280" y="380" width="200" height="70" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="380" y="425" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0b1220" font-weight="700">Risque moyen</text>
+<text x="500" y="510" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Chaque noeud coupe. Les feuilles donnent la prediction.</text>
 </svg>

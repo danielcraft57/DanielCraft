@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-<rect width="1000" height="520" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Biais : le modele herite des donnees</text>
-<rect x="80" y="140" width="380" height="250" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="270" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a202c" font-weight="700">Donnees biaisees</text>
-<text x="270" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#718096" font-weight="400">sous-groupes manquants</text>
-<text x="270" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#718096" font-weight="400">labels injustes</text>
-<rect x="540" y="140" width="380" height="250" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="730" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#9c4221" font-weight="700">Predictions biaisees</text>
-<text x="730" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#9c4221" font-weight="400">erreurs inegales</text>
-<text x="730" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#9c4221" font-weight="400">par segment</text>
-<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Mesure aussi par sous-groupe, pas seulement le score global.</text>
+<rect width="1000" height="520" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Biais : le modele herite des donnees</text>
+<rect x="80" y="140" width="380" height="250" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="270" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0b1220" font-weight="700">Donnees biaisees</text>
+<text x="270" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">sous-groupes manquants</text>
+<text x="270" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">labels injustes</text>
+<rect x="540" y="140" width="380" height="250" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="730" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f766e" font-weight="700">Predictions biaisees</text>
+<text x="730" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f766e" font-weight="400">erreurs inegales</text>
+<text x="730" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f766e" font-weight="400">par segment</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Mesure aussi par sous-groupe, pas seulement le score global.</text>
 </svg>

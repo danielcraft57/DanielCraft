@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-<rect width="1000" height="520" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Overfitting : coller au train, rater le futur</text>
-<rect x="80" y="120" width="400" height="280" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="280" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#9c4221" font-weight="700">Train</text>
-<text x="280" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#9c4221" font-weight="700">score : 99 %</text>
-<text x="280" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">trop beau ?</text>
-<rect x="520" y="120" width="400" height="280" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="720" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a202c" font-weight="700">Test / prod</text>
-<text x="720" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a202c" font-weight="700">score : 61 %</text>
-<text x="720" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">generalise mal</text>
-<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#718096" font-weight="400">Comme un eleve qui recite le corrige, puis se plante a l'examen.</text>
+<rect width="1000" height="520" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Overfitting : coller au train, rater le futur</text>
+<rect x="80" y="120" width="400" height="280" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="280" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f766e" font-weight="700">Train</text>
+<text x="280" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f766e" font-weight="700">score : 99 %</text>
+<text x="280" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="400">trop beau ?</text>
+<rect x="520" y="120" width="400" height="280" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="720" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0b1220" font-weight="700">Test / prod</text>
+<text x="720" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0b1220" font-weight="700">score : 61 %</text>
+<text x="720" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">generalise mal</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">Comme un eleve qui recite le corrige, puis se plante a l'examen.</text>
 </svg>

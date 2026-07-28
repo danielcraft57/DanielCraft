@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-<rect width="1000" height="520" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Non supervise : trouver des groupes</text>
-<rect x="100" y="120" width="360" height="300" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="280" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a202c" font-weight="700">Points sans label</text>
+<rect width="1000" height="520" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Non supervise : trouver des groupes</text>
+<rect x="100" y="120" width="360" height="300" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="280" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0b1220" font-weight="700">Points sans label</text>
 <circle cx="180" cy="230" r="14" fill="#2d3748"/>
 <circle cx="210" cy="250" r="12" fill="#2d3748"/>
 <circle cx="195" cy="280" r="11" fill="#2d3748"/>
@@ -11,10 +11,10 @@
 <circle cx="300" cy="290" r="11" fill="#ed8936"/>
 <circle cx="260" cy="360" r="12" fill="#718096"/>
 <circle cx="290" cy="380" r="11" fill="#718096"/>
-<rect x="540" y="120" width="360" height="300" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="720" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#9c4221" font-weight="700">Clusters</text>
-<text x="720" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">groupes proposes</text>
-<text x="720" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">toi qui nommes</text>
-<text x="720" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="400">et valides</text>
-<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Sans y : on organise. Avec y : on predit.</text>
+<rect x="540" y="120" width="360" height="300" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="720" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f766e" font-weight="700">Clusters</text>
+<text x="720" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="400">groupes proposes</text>
+<text x="720" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="400">toi qui nommes</text>
+<text x="720" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="400">et valides</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Sans y : on organise. Avec y : on predit.</text>
 </svg>

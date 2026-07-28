@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-<rect width="1000" height="520" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Erreurs classiques a detecter tot</text>
-<rect x="70" y="120" width="280" height="140" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="700">Tester sur le train</text>
-<text x="210" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#9c4221" font-weight="400">score trop beau</text>
-<rect x="370" y="120" width="280" height="140" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="510" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Fuite temporelle</text>
-<text x="510" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#718096" font-weight="400">info connue trop tard</text>
-<rect x="670" y="120" width="270" height="140" rx="14" fill="#e2e8f0" stroke="#718096" stroke-width="3"/>
-<text x="805" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Accuracy piegee</text>
-<text x="805" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#718096" font-weight="400">classes desequilibrees</text>
-<rect x="220" y="300" width="280" height="120" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="360" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Pas de baseline</text>
-<rect x="520" y="300" width="280" height="120" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="660" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="700">Ignorer les biais</text>
-<text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#718096" font-weight="400">Quand le score est trop beau, suspecte le protocole.</text>
+<rect width="1000" height="520" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Erreurs classiques a detecter tot</text>
+<rect x="70" y="120" width="280" height="140" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">Tester sur le train</text>
+<text x="210" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f766e" font-weight="400">score trop beau</text>
+<rect x="370" y="120" width="280" height="140" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="510" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Fuite temporelle</text>
+<text x="510" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">info connue trop tard</text>
+<rect x="670" y="120" width="270" height="140" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+<text x="805" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Accuracy piegee</text>
+<text x="805" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#64748b" font-weight="400">classes desequilibrees</text>
+<rect x="220" y="300" width="280" height="120" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="360" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Pas de baseline</text>
+<rect x="520" y="300" width="280" height="120" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="660" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">Ignorer les biais</text>
+<text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Quand le score est trop beau, suspecte le protocole.</text>
 </svg>

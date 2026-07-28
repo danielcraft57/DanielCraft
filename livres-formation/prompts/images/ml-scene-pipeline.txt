@@ -1,0 +1,3 @@
+Illustration ML moderne - pipeline.
+Style charbon + teal. Sam : Donnees, Prepare, Modele, Evaluation.
+Texte FRANCAIS uniquement.

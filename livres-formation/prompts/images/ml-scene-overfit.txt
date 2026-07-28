@@ -1,0 +1,3 @@
+Illustration ML moderne - overfitting.
+Style charbon + teal. Lea compare Score train / Score test.
+Texte FRANCAIS uniquement.

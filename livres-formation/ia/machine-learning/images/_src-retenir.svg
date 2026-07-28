@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
-<rect width="1000" height="560" fill="#edf2f7"/>
-<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a202c" font-weight="700">Carte a retenir</text>
-<rect x="60" y="100" width="210" height="100" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="165" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1a202c" font-weight="700">Question claire</text>
-<rect x="290" y="100" width="210" height="100" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="395" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#9c4221" font-weight="700">Donnees honnetes</text>
-<rect x="520" y="100" width="210" height="100" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="625" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1a202c" font-weight="700">Split + baseline</text>
-<rect x="750" y="100" width="190" height="100" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="845" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#9c4221" font-weight="700">Modele simple</text>
-<rect x="160" y="250" width="280" height="100" rx="14" fill="#ffffff" stroke="#1a202c" stroke-width="3"/>
-<text x="300" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Metrique metier</text>
-<rect x="500" y="250" width="280" height="100" rx="14" fill="#feebc8" stroke="#ed8936" stroke-width="3"/>
-<text x="640" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#9c4221" font-weight="700">Erreurs regardees</text>
-<rect x="300" y="390" width="400" height="90" rx="14" fill="#e2e8f0" stroke="#718096" stroke-width="3"/>
-<text x="500" y="445" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a202c" font-weight="700">Puis seulement la complexite</text>
+<rect width="1000" height="560" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Carte a retenir</text>
+<rect x="60" y="100" width="210" height="100" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="165" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0b1220" font-weight="700">Question claire</text>
+<rect x="290" y="100" width="210" height="100" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="395" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f766e" font-weight="700">Donnees honnetes</text>
+<rect x="520" y="100" width="210" height="100" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="625" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0b1220" font-weight="700">Split + baseline</text>
+<rect x="750" y="100" width="190" height="100" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="845" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f766e" font-weight="700">Modele simple</text>
+<rect x="160" y="250" width="280" height="100" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="300" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Metrique metier</text>
+<rect x="500" y="250" width="280" height="100" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="640" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">Erreurs regardees</text>
+<rect x="300" y="390" width="400" height="90" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+<text x="500" y="445" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Puis seulement la complexite</text>
 </svg>

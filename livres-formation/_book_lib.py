@@ -1247,25 +1247,25 @@ button, .btn-like { background: #292524; }
 @media print { .toc a { color: #292524 !important; } }
 """,
         "ml": """
-/* Theme Machine Learning : acier + cuivre */
+/* Theme Machine Learning : moderne charbon + teal electrique */
 :root {
-  --ink: #1a202c;
-  --muted: #718096;
-  --paper: #edf2f7;
+  --ink: #0b1220;
+  --muted: #64748b;
+  --paper: #f8fafc;
   --paper-deep: #e2e8f0;
-  --band: #2d3748;
-  --band-soft: #4a5568;
-  --accent: #ed8936;
-  --code-bg: #1a202c;
-  --code-fg: #feebc8;
+  --band: #0f172a;
+  --band-soft: #1e293b;
+  --accent: #2dd4bf;
+  --code-bg: #0b1220;
+  --code-fg: #ccfbf1;
   --card: #ffffff;
-  --rule: #cbd5e0;
+  --rule: #cbd5e1;
 }
-.cover, .cover-copy { background: #2d3748 !important; color: #feebc8 !important; }
-.cover h1 { color: #feebc8 !important; }
-pre { border-left-color: #ed8936 !important; }
-button, .btn-like { background: #2d3748; }
-@media print { .toc a { color: #2d3748 !important; } }
+.cover, .cover-copy { background: #0f172a !important; color: #ccfbf1 !important; }
+.cover h1 { color: #f8fafc !important; }
+pre { border-left-color: #2dd4bf !important; }
+button, .btn-like { background: #0f172a; }
+@media print { .toc a { color: #0f172a !important; } }
 """,
         "dl": """
 /* Theme Deep Learning : teal profond + rose doux */
