@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#f3f0ea"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="40" fill="#1a2332" font-weight="700">Cryptomonnaies</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#5c6570" font-weight="400">Finance</text>
+<rect x="300" y="300" width="400" height="80" rx="8" fill="#c45c26" stroke="#1a2332" stroke-width="3"/>
+<text x="500" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a2332" font-weight="700">DanielCraft</text>
+<text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6570" font-weight="400">Comprendre avant de signer</text>
+</svg>

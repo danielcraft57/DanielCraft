@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f0ea"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a2332" font-weight="700">Bitcoin : actif risque</text>
+<rect x="100" y="110" width="250" height="200" rx="8" fill="#ffffff" stroke="#1a2332" stroke-width="3"/>
+<text x="225" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Offre</text>
+<text x="225" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5c6570" font-weight="400">limitee</text>
+<rect x="375" y="110" width="250" height="200" rx="8" fill="#e4e0d6" stroke="#1a2332" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Volatilite</text>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5c6570" font-weight="400">haute</text>
+<rect x="650" y="110" width="250" height="200" rx="8" fill="#c45c26" stroke="#1a2332" stroke-width="3"/>
+<text x="775" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1a2332" font-weight="700">Plafond %</text>
+<text x="775" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a2332" font-weight="400">discipline</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c6570" font-weight="400">Narrative != plan de poche.</text>
+</svg>
