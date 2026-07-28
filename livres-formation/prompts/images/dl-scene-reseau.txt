@@ -1,1 +1,3 @@
-Scene pedagogique Deep Learning ch.1 : reseau en couches qui transforme une entree en decision. Fond creme, vert #1a4d3e, ambre. Sans texte.
+Illustration DL moderne - reseau de couches.
+Style marine + corail. Entree / Couches / Decision.
+Texte FRANCAIS. Pas de teal ML, pas de neon violet.

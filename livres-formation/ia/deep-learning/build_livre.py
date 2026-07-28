@@ -20,7 +20,7 @@ BOOK_CSS = get_book_css("dl") + """
 .illus.illus-scene img {
   max-width: min(100%, 560px);
   max-height: 240px;
-  border-radius: 12px;
+  border-radius: 4px;
 }
 @media print {
   .illus.illus-scene {

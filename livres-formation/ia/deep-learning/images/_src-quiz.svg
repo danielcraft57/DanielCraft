@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Quiz : verifier le socle</text>
-
-  <rect x="120" y="140" width="760" height="280" rx="18" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-  <text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">10 questions A / B / C</text>
-  <text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">profondeur, activation, backprop, CNN</text>
-  <text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">transformers, overfitting, GPU, transfer, LLM</text>
-  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#c9a227" font-weight="700">Puis bonus oral : expliquer sans notes</text>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f5f7fb"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0b1b33" font-weight="700">Quiz</text>
+<rect x="150" y="130" width="200" height="180" rx="6" fill="#ffffff" stroke="#0b1b33" stroke-width="3"/>
+<text x="250" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#0b1b33" font-weight="700">A</text>
+<rect x="400" y="130" width="200" height="180" rx="6" fill="#e8edf5" stroke="#0b1b33" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#0b1b33" font-weight="700">B</text>
+<rect x="650" y="130" width="200" height="180" rx="6" fill="#ff7a59" stroke="#0b1b33" stroke-width="3"/>
+<text x="750" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#0b1b33" font-weight="700">C</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">Neurone, CNN, attention, limites.</text>
 </svg>

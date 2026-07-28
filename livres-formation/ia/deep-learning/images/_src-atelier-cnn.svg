@@ -1,28 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Atelier CNN : plan de projet vision</text>
-
-  <rect x="50" y="110" width="170" height="90" rx="12" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="2"/>
-  <text x="135" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a4d3e" font-weight="700">Classes</text>
-  <rect x="240" y="110" width="170" height="90" rx="12" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="2"/>
-  <text x="325" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a4d3e" font-weight="700">Donnees</text>
-  <rect x="430" y="110" width="170" height="90" rx="12" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="2"/>
-  <text x="515" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a4d3e" font-weight="700">Terrain</text>
-  <rect x="620" y="110" width="170" height="90" rx="12" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="2"/>
-  <text x="705" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a4d3e" font-weight="700">Preentraine</text>
-  <rect x="810" y="110" width="150" height="90" rx="12" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="2"/>
-  <text x="885" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a4d3e" font-weight="700">Augment.</text>
-
-  <rect x="140" y="250" width="170" height="90" rx="12" fill="#fff4d6" stroke="#c9a227" stroke-width="2"/>
-  <text x="225" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410" font-weight="700">Split</text>
-  <rect x="330" y="250" width="170" height="90" rx="12" fill="#fff4d6" stroke="#c9a227" stroke-width="2"/>
-  <text x="415" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410" font-weight="700">Metriques</text>
-  <rect x="520" y="250" width="170" height="90" rx="12" fill="#fff4d6" stroke="#c9a227" stroke-width="2"/>
-  <text x="605" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410" font-weight="700">Anti-overfit</text>
-  <rect x="710" y="250" width="170" height="90" rx="12" fill="#fff4d6" stroke="#c9a227" stroke-width="2"/>
-  <text x="795" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a6410" font-weight="700">Go / no-go</text>
-
-  <text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Un plan honnete bat un notebook theatral</text>
-  <text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">Ecrire le no-go avant le premier score</text>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f5f7fb"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0b1b33" font-weight="700">Atelier CNN</text>
+<rect x="120" y="120" width="350" height="180" rx="6" fill="#ffffff" stroke="#0b1b33" stroke-width="3"/>
+<text x="295" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Donnees images</text>
+<rect x="520" y="120" width="360" height="180" rx="6" fill="#ff7a59" stroke="#0b1b33" stroke-width="3"/>
+<text x="700" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Plan projet</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">Classes, split, metrique, baseline.</text>
 </svg>

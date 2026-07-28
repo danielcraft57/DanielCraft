@@ -1268,25 +1268,25 @@ button, .btn-like { background: #0f172a; }
 @media print { .toc a { color: #0f172a !important; } }
 """,
         "dl": """
-/* Theme Deep Learning : teal profond + rose doux */
+/* Theme Deep Learning : marine profond + corail */
 :root {
-  --ink: #042f2e;
-  --muted: #5f7a78;
-  --paper: #f0fafa;
-  --paper-deep: #d9eeee;
-  --band: #134e4a;
-  --band-soft: #0f766e;
-  --accent: #fb7185;
-  --code-bg: #022c2a;
-  --code-fg: #ffe4e6;
+  --ink: #0b1b33;
+  --muted: #64748b;
+  --paper: #f5f7fb;
+  --paper-deep: #e8edf5;
+  --band: #132337;
+  --band-soft: #1e3a5f;
+  --accent: #ff7a59;
+  --code-bg: #0b1b33;
+  --code-fg: #ffe4de;
   --card: #ffffff;
-  --rule: #b8d4d2;
+  --rule: #cbd5e1;
 }
-.cover, .cover-copy { background: #134e4a !important; color: #ffe4e6 !important; }
-.cover h1 { color: #ffe4e6 !important; }
-pre { border-left-color: #fb7185 !important; }
-button, .btn-like { background: #134e4a; }
-@media print { .toc a { color: #134e4a !important; } }
+.cover, .cover-copy { background: #132337 !important; color: #ffe4de !important; }
+.cover h1 { color: #f5f7fb !important; }
+pre { border-left-color: #ff7a59 !important; }
+button, .btn-like { background: #132337; }
+@media print { .toc a { color: #132337 !important; } }
 """,
     }
     extra = themes.get(theme, "")

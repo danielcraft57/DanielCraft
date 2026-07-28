@@ -1,1 +1,3 @@
-Scene pedagogique Deep Learning ch.17/18 : prediction confiante rejetee, abstention humaine. Fond creme, vert, ambre. Sans texte.
+Illustration DL moderne - limites.
+Style marine + corail. Prediction / Confiance / Humain requis.
+Texte FRANCAIS uniquement.

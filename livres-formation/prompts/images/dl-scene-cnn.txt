@@ -1,1 +1,3 @@
-Scene pedagogique Deep Learning ch.6 : photo piece mecanique + filtres locaux type CNN. Fond creme, vert, ambre. Sans texte.
+Illustration DL moderne - CNN.
+Style marine + corail. Filtre / Motif sur une piece.
+Texte FRANCAIS uniquement.
