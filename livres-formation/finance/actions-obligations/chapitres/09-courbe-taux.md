@@ -1,50 +1,62 @@
 # Chapitre 9 - La courbe des taux
 
-On aborde ici La courbe des taux. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **courbe des taux**, **inversion** et **BCE** avant de chercher le produit miracle.
+La **courbe des taux** montre, pour une meme qualite de credit (souvent l'Etat), quel rendement le marche exige selon la maturite : 2 ans, 5 ans, 10 ans, 30 ans. Chez DanielCraft, on la lit comme une meteo des anticipations : inflation, politique monetaire, peur de recession. Pas comme une boule de cristal.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : pedagogie. Les formes de courbe changent. Ce n'est pas un signal d'achat automatique.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Courbe normale, plate, inversee
 
-Nora, salariee curieuse mais prudente, compare ce qu'il lit avec son compte courant et son estomac. Max a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+**Courbe normale (montante)** : preter plus longtemps rapporte plus. Logique de base : tu immobilises plus longtemps, tu demandes un supplement.
 
-## Ce que courbe des taux change pour toi
+Exemple invente :
+- 2 ans : 2,0 %
+- 10 ans : 3,5 %
+- 30 ans : 4,0 %
 
-**courbe des taux** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir courbe des taux avec tes mots vaut plus qu'une heure de videos rapides.
+**Courbe plate** : peu d'ecart entre court et long. Le marche hesite, ou les anticipations se compressent.
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour courbe des taux, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+**Courbe inversee** : le court terme rapporte plus que le long terme.
 
-## Relier inversion et BCE
+Exemple invente :
+- 2 ans : 4,5 %
+- 10 ans : 3,2 %
 
-**inversion** et **BCE** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si inversion monte alors que BCE se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Historiquement, une inversion a parfois precede des ralentissements... parfois avec delai, parfois avec faux signaux. Nora refuse le slogan "inversion = crash demain". Elle note : "le marche price quelque chose ; mon job est d'ajuster duration et horizon, pas de prophetiser."
 
-Nora note sur un carnet : « quand inversion bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+## Lien avec la BCE (et les banques centrales)
+
+Quand la banque centrale monte ses taux directeurs, le court terme de la courbe bouge souvent vite. Le long terme depend aussi des anticipations d'inflation et de croissance. Une hausse agressive peut inverser la courbe. Une baisse peut la "re-normaliser". Pour toi, detenteur d'obligations : ce qui compte, c'est comment ta **duration** reagit quand toute la courbe se decale ou se tord.
+
+Choc parallele simplifie : si toute la courbe monte de +1 %, une obligation duration 6 ~ -6 % en prix (approx). Si seule la partie 2 ans monte, une obligation 30 ans bouge moins que si le 30 ans lui-meme monte.
 
 ## Petite histoire
 
-Un soir, Nora ouvre son application et voit un mouvement lie a courbe des taux. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Max lit "la Fed / la BCE va baisser". Il achete un ETF obligations tres long pour "profiter". Les baisses arrivent plus tard que prevu ; entre-temps la volatilite le fatigue. Sam lui rappelle : predire le timing des banques centrales est un sport de pros (et meme eux se trompent). Mieux vaut une duration coherente avec l'horizon qu'un pari de calendrier.
 
 ## Erreur classique
 
-Confondre courbe des taux avec une garantie, ou croire que inversion annule BCE. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Transformer la forme de la courbe en ordre de bourse automatique. Ou allonger brutalement la duration pour "chasser 0,3 % de rendement" sans buffer.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur La courbe des taux. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas courbe des taux clairement, c'est un signal orange.
+Cherche une courbe des taux souverains (France / Allemagne / US selon ton focus). Note 2 ans et 10 ans. Ecart = ? Positif, plat, negatif ?
+
+## Mini-exercice
+
+Taux 2 ans = 3,8 %, taux 10 ans = 3,1 %. Ecart = -0,7 point => courbe inversee sur ce couple. Ecris une phrase non prophetique : "je reste prudent sur ma duration max."
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur courbe des taux, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Fixe ta duration max (chapitre 10) et dis si la forme actuelle de la courbe te donne envie de la respecter... ou de la casser. Si tu veux la casser, ecris pourquoi en une ligne.
 
 :::retenir
-courbe des taux + inversion + horizon : comprendre avant d'agir sur La courbe des taux.
+Courbe des taux = carte des rendements par maturite. Inversion = signal a interpreter, pas un bouton vendre.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (BCE).
+Parier sur le prochain mouvement de banque centrale est un hobby couteux pour un debutant.
 :::
 
 :::astuce
-Carnet : « quand inversion bouge, qui gagne ? »
+Note l'ecart 2 ans / 10 ans une fois par trimestre. Tu verras la meteo sans scroller la panique.
 :::
-

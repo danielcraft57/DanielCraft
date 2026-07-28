@@ -1,60 +1,72 @@
 # Chapitre 2 - C'est quoi une action ?
 
-On aborde ici C'est quoi une action ?. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **action**, **dividende** et **PER** avant de chercher le produit miracle.
+Une **action** est une part d'entreprise. Quand tu achetes une action, tu achetes un droit (meme petit) sur le capital, les benefices futurs, et parfois un vote en assemblee. Tu n'achetes pas une rente garantie. Tu achetes un risque : le cours peut monter, stagner, ou baisser fort. Chez DanielCraft, on commence toujours par cette phrase : l'action n'est pas un livret.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Ce livre est pedagogique. Il ne remplace ni un conseiller agree, ni un fiscaliste. Les exemples sont inventes pour apprendre.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+Nora, salariee prudente, Max artisan, et Sam petite activite : trois horizons differents, meme hygiene. Avant d'acheter, ils savent ce qu'ils detiennent.
 
-Sam, petite activite avec tresorerie a gerer, compare ce qu'il lit avec son compte courant et son estomac. Nora a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+## Action, cours, et liquidite
 
-## Ce que action change pour toi
+Le **cours** est le dernier prix echange sur le marche secondaire (bourse). Ce n'est pas "la valeur vraie" de l'entreprise : c'est un compromis entre acheteurs et vendeurs aujourd'hui. La **liquidite** dit si tu peux vendre sans ecarter trop le prix. Une action tres liquide (CAC 40) se vend vite. Une petite valeur peut te coincer.
 
-**action** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir action avec tes mots vaut plus qu'une heure de videos rapides.
+Exemple invente : Nora achete 10 actions de "Atelier Nord" a 25 EUR. Elle immobilise 250 EUR (hors frais). Si le cours passe a 30 EUR, sa position vaut 300 EUR. Si le cours tombe a 18 EUR, elle vaut 180 EUR. Personne ne lui a promis 25 EUR "garanti".
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour action, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+## Dividende : redistribution, pas cadeau magique
 
-## Relier dividende et PER
+Le **dividende** est une part du benefice (ou des reserves) redistribuee aux actionnaires. Il n'est pas automatique. Une entreprise peut le baisser, le suspendre, ou ne jamais en verser et reinvestir.
 
-**dividende** et **PER** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si dividende monte alors que PER se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Rendement du dividende :
 
-Sam note sur un carnet : « quand dividende bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+Rendement dividende = Dividende annuel / Prix de l'action
 
-## Formule utile (intuition)
+Exemple :
+- Dividende = 1,20 EUR par action
+- Prix = 30 EUR
 
-Pas besoin d'un doctorat. Une formule courte aide a ancrer C'est quoi une action ? :
+Rendement = 1,20 / 30 = 4 %
 
+4 % peut sembler confortable. Mais si le cours chute de 20 % la meme annee, ton patrimoine a baisse. Le dividende ne protege pas contre une baisse de cours.
 
+## Formule : rendement total
 
-Rendement = (Prix fin - Prix debut + dividendes) / Prix debut
+Pour juger une annee, regarde le **rendement total** :
 
-Lis les symboles comme des mots : chaque terme a une unite (euros, pourcent, jours). Si tu ne peux pas expliquer chaque terme, ne calcule pas : relis le chapitre ou la fiche produit.
+Rendement total = (Prix fin - Prix debut + Dividendes) / Prix debut
+
+Exemple :
+- Prix debut = 40 EUR
+- Prix fin = 44 EUR
+- Dividendes = 1,50 EUR
+
+Rendement total = (44 - 40 + 1,50) / 40 = 5,50 / 40 = 13,75 %
+
+Sam note : "le dividende seul m'aurait dit 1,50/40 = 3,75 %. Le vrai resultat de l'annee, c'est 13,75 %." Inverse : si le prix tombe a 36 EUR avec le meme dividende, le rendement total devient (36 - 40 + 1,50) / 40 = -6,25 %.
 
 ## Petite histoire
 
-Un soir, Sam ouvre son application et voit un mouvement lie a action. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Max voit une action "qui a double en six mois" sur un forum. Il calcule le rendement total de sa propre poche C sur trois ans : +28 %. Moins spectaculaire. Plus lisible. Il garde son plan : virement automatique, frais bas, horizon long. DanielCraft preferera toujours ce geste au screenshot de perf.
 
 ## Erreur classique
 
-Confondre action avec une garantie, ou croire que dividende annule PER. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Confondre "j'ai achete une action" et "l'entreprise me doit un revenu fixe". Ou croire qu'un dividende eleve annule le risque. Ou ignorer les frais (courtages, change, fiscalite de l'enveloppe) dans le rendement.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur C'est quoi une action ?. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas action clairement, c'est un signal orange.
+Prends une action que tu connais (meme sans l'acheter). Note prix debut d'annee, prix aujourd'hui, dividende annuel. Calcule le rendement total. Compare au slogan du vendeur.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur action, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Ecris en trois lignes : ce qu'est une action pour toi, ce que le dividende n'est pas, et ton horizon min avant d'envisager une poche actions.
 
 :::retenir
-action + dividende + horizon : comprendre avant d'agir sur C'est quoi une action ?.
+Action = part d'entreprise + risque de capital. Rendement total = variation de cours + dividendes.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (PER).
+Le dividende ne garantit ni le cours, ni le prochain versement.
 :::
 
 :::astuce
-Carnet : « quand dividende bouge, qui gagne ? »
+Avant tout achat, ecris la formule du rendement total avec des chiffres inventes. Si tu ne peux pas la remplir, tu n'es pas pret.
 :::
-

@@ -1,50 +1,54 @@
-# Chapitre 12 - Diversifier actions et obligations
+# Chapitre 12 - Diversification actions / obligations
 
-On aborde ici Diversifier actions et obligations. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **correlation**, **poche** et **allocation** avant de chercher le produit miracle.
+**Diversifier**, ce n'est pas collectionner des tickers. C'est reduire la dependance a un seul scenario : une entreprise, un secteur, un pays, une duration, un type de credit. Actions et obligations ne reagissent pas toujours pareil aux chocs. Chez DanielCraft, on diversifie pour dormir, pas pour "optimiser" un backtest Instagram.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : allocations inventees. Pas une cible universelle.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Pourquoi melanger les risques
 
-Nora, salariee curieuse mais prudente, compare ce qu'il lit avec son compte courant et son estomac. Max a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+Les actions souffrent souvent quand la croissance / le risque appetite casse. Les obligations de qualite peuvent (parfois) amortir quand les taux baissent en meme temps qu'un stress equities... mais pas toujours : en 2022, actions et obligations ont souvent baisse ensemble sous inflation + hausses de taux. La diversification n'est pas une assurance tous risques. C'est une reduction de concentration.
 
-## Ce que correlation change pour toi
+Exemple pedagogique de portefeuille papier (100) :
+- 60 actions monde (ETF)
+- 30 obligations investment grade duration moderee
+- 10 liquidites / monetaire (poche souplesse)
 
-**correlation** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir correlation avec tes mots vaut plus qu'une heure de videos rapides.
+Choc invente "taux + actions" : actions -20 %, obligations -8 %, cash 0 => portefeuille ~ 60x0,8 + 30x0,92 + 10 = 48 + 27,6 + 10 = 85,6 => -14,4 %. Moins violent que -20 % pur actions. Pas agreable. Plus tenable pour Nora.
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour correlation, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+## Correlation : idee simple
 
-## Relier poche et allocation
+Si deux actifs montent et baissent toujours ensemble, diversifier entre eux sert peu. Si leurs mauvais jours ne coincident pas toujours, le panier respire. Tu n'as pas besoin du coefficient exact. Tu as besoin d'eviter : 8 ETF tech qui se ressemblent, ou 100 % d'un seul pays, ou 100 % high yield + small caps pour "maximiser".
 
-**poche** et **allocation** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si poche monte alors que allocation se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Max resume : "diversifier = plusieurs raisons de souffrir, pas une seule qui tue le plan."
 
-Nora note sur un carnet : « quand poche bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+## Rebalancing : le geste ennuyeux utile
+
+Si les actions montent fort, ta poche actions grossit (ex. 60 devient 70). **Rebalancer**, c'est revenir a la cible (revendre un peu / acheter l'autre poche). Sur papier, ca force a "vendre cher / acheter moins cher" sans emotion. En vrai : attention fiscalite (CTO) et frais. Sur PEA, pense aux regles de l'enveloppe.
 
 ## Petite histoire
 
-Un soir, Nora ouvre son application et voit un mouvement lie a correlation. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Sam a 95 % d'une seule action "parce que je connais le patron". L'entreprise rate un trimestre : -35 %. Son plan maison retarde d'un an. Il passe a un ETF large + une petite ligne "conviction" plafonnee a 5 %. DanielCraft valide le plafond plus que la conviction.
 
 ## Erreur classique
 
-Confondre correlation avec une garantie, ou croire que poche annule allocation. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Diversifier en apparence (20 lignes) mais tout expose au meme facteur (taux US, tech, immobilier commercial...). Ou diversifier tellement que tu ne sais plus ce que tu detiens.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur Diversifier actions et obligations. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas correlation clairement, c'est un signal orange.
+Liste tes 5 plus grosses expositions (titre ou facteur). Si une ligne > 20 % hors residence principale / business, justifie-la par ecrit.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur correlation, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Propose une allocation papier actions / obligations / cash pour ta poche C+B, avec horizons. Une ligne chacun.
 
 :::retenir
-correlation + poche + horizon : comprendre avant d'agir sur Diversifier actions et obligations.
+Diversifier = limiter la casse d'un seul scenario. Rebalancer = maintenir le plan.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (allocation).
+Actions + obligations peuvent baisser ensemble (inflation / taux). Garde une vraie poche liquide.
 :::
 
 :::astuce
-Carnet : « quand poche bouge, qui gagne ? »
+Plafonne toute "conviction unique" (ex. max 5 a 10 % hors ETF large).
 :::
-

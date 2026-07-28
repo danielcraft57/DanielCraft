@@ -1,60 +1,92 @@
-# Chapitre 10 - Duration : sensibilite aux taux
+# Chapitre 10 - Duration et convexite
 
-On aborde ici Duration : sensibilite aux taux. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **duration**, **sensibilite** et **taux** avant de chercher le produit miracle.
+La **duration** mesure la sensibilite du prix d'une obligation aux taux. Dit simplement : si les taux montent, le prix des obligations existantes baisse souvent ; si les taux baissent, le prix monte souvent. Plus la duration est longue, plus le choc est fort. Chez DanielCraft, on l'utilise comme radar, pas comme oracle.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : approximations pedagogiques. Pas un conseil.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Duration modifiee : formule utile
 
-Max, artisan independant, compare ce qu'il lit avec son compte courant et son estomac. Sam a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+Approximation au premier ordre :
 
-## Ce que duration change pour toi
+Variation du prix (%) ~ - D_mod x Delta y
 
-**duration** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir duration avec tes mots vaut plus qu'une heure de videos rapides.
+avec Delta y en decimal (1 % = 0,01) ou, si D_mod est exprime "par point de pourcentage", Delta y en points (1 pour 1 %).
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour duration, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+Exemple clair (Delta y en %) :
+- D_mod = 5
+- Hausse des taux = +1 point
 
-## Relier sensibilite et taux
+Variation ~ -5 x 1 % = -5 %
 
-**sensibilite** et **taux** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si sensibilite monte alors que taux se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Si le prix etait 100, estimation ~95. Ce n'est pas exact au centime, mais ca evite de croire que "obligation = stable a 0 %".
 
-Max note sur un carnet : « quand sensibilite bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+## Pourquoi certaines obligations bougent plus
 
-## Formule utile (intuition)
+Toutes choses egales par ailleurs :
+- maturite plus longue => duration plus elevee
+- coupon plus faible => duration plus elevee (plus de poids sur le nominal lointain)
+- un zero-coupon a une duration egale a sa maturite (cas simple)
 
-Pas besoin d'un doctorat. Une formule courte aide a ancrer Duration : sensibilite aux taux :
+Exemple de lecture :
+- Fonds A : duration 2 => choc taux +1 % ~ -2 %
+- Fonds B : duration 8 => choc +1 % ~ -8 %
 
+Nora, horizon 2 ans, refuse B pour sa poche "presque sure". Max, horizon 10 ans et estomac solide, peut accepter une duration plus haute dans une poche clairement separee.
 
+## Convexite : la correction au second ordre
 
-Variation prix ~ -Duration x Delta taux
+La relation prix / taux n'est pas une droite. La **convexite** corrige l'erreur de la duration seule :
 
-Lis les symboles comme des mots : chaque terme a une unite (euros, pourcent, jours). Si tu ne peux pas expliquer chaque terme, ne calcule pas : relis le chapitre ou la fiche produit.
+Variation (%) ~ - D_mod x Delta y + 0,5 x Convexite x (Delta y)^2
+
+Exemple pedagogique :
+- D_mod = 5
+- Convexite = 40 (ordre de grandeur invente pour l'exo)
+- Delta y = +0,01 (soit +1 %)
+
+Terme duration : -5 x 0,01 = -0,05 = -5 %
+Terme convexite : 0,5 x 40 x (0,01)^2 = 20 x 0,0001 = 0,002 = +0,2 %
+
+Variation estimee ~ -4,8 %
+
+Sur une hausse de taux, la convexite positive "adoucit" un peu la baisse estimee par la seule duration. Sur une baisse de taux, elle ajoute un peu de hausse. L'idee : la duration seule exagere souvent la baisse et sous-estime un peu la hausse (pour une obligation a convexite positive classique).
 
 ## Petite histoire
 
-Un soir, Max ouvre son application et voit un mouvement lie a duration. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Sam lit "rendement 4,2 %" sur un ETF obligataire. Duration 7,2. Il simule +2 % de taux : ~ -14 % avant convexite. Il decide de reduire la poche ou d'allonger son horizon. Le chiffre l'a calme plus qu'un reel "rates are dead".
 
 ## Erreur classique
 
-Confondre duration avec une garantie, ou croire que sensibilite annule taux. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Confondre duration et "je suis rembourse dans X annees" sans lire la sensibilite. Ou empiler des obligations longues pour "booster le rendement" sans buffer de volatilite. Ou ignorer le risque credit en ne regardant que la duration.
+
+## Mini-exercice (corrige)
+
+Prix = 102, D_mod = 6, Delta y = -0,5 % (baisse des taux).
+
+Variation ~ -6 x (-0,5 %) = +3 %
+
+Prix estime ~ 102 x 1,03 = 105,06
+
+Ajoute une convexite 30 et Delta y = -0,005 :
+0,5 x 30 x (0,005)^2 = 15 x 0,000025 = 0,000375 ~ +0,04 %
+Effet faible ici : la duration domine sur un petit mouvement.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur Duration : sensibilite aux taux. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas duration clairement, c'est un signal orange.
+Sur une fiche ETF obligations : duration modifiee, sensibilite, maturite moyenne, notation. Si duration absente, signal orange.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur duration, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Ecris ta baisse max acceptable (ex. -5 %). Deduits une duration max approx (si +1 % de taux te fait peur a -5 %, duration max ~ 5). Garde ce plafond sur une feuille.
 
 :::retenir
-duration + sensibilite + horizon : comprendre avant d'agir sur Duration : sensibilite aux taux.
+Duration = radar de sensibilite aux taux. Convexite = correction fine, pas une excuse pour ignorer le risque.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (taux).
+Une obligation peut baisser nettement meme avec un coupon regulier.
 :::
 
 :::astuce
-Carnet : « quand sensibilite bouge, qui gagne ? »
+Pour chaque fonds obligataire, note "choc +1 %" = -duration % avant d'augmenter la poche.
 :::
-

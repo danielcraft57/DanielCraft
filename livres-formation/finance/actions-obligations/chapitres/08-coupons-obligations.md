@@ -1,60 +1,101 @@
-# Chapitre 8 - Coupons et obligations
+# Chapitre 8 - Coupons et obligations : pricing simple
 
-On aborde ici Coupons et obligations. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **coupon**, **remboursement** et **YTM** avant de chercher le produit miracle.
+Une obligation, c'est une suite de cash-flows : coupons, puis nominal. Le **prix** theorique est la somme de ces flux **actualises** au taux du marche (YTM). Chez DanielCraft, on veut que tu saches faire un calcul pedagogique a la main, meme approximatif, avant de croire un ecran.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : exemples inventes. Pas un conseil d'achat.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Formule de prix (coupons annuels)
 
-Sam, petite activite avec tresorerie a gerer, compare ce qu'il lit avec son compte courant et son estomac. Nora a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+P = somme de t=1 a n de [ C / (1+y)^t ] + F / (1+y)^n
 
-## Ce que coupon change pour toi
+avec :
+- C = coupon annuel
+- F = nominal
+- y = taux actuariel (YTM) par an
+- n = nombre d'annees
 
-**coupon** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir coupon avec tes mots vaut plus qu'une heure de videos rapides.
+Exemple complet :
+- F = 100
+- Coupon = 5 % => C = 5
+- n = 3 ans
+- y = 5 % = 0,05
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour coupon, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+P = 5/1,05 + 5/1,05^2 + (5+100)/1,05^3
+= 4,762 + 4,535 + 90,703
+= 100,00
 
-## Relier remboursement et YTM
+A parite : quand y = taux de coupon, le prix = nominal (cas annuel simple).
 
-**remboursement** et **YTM** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si remboursement monte alors que YTM se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+## Meme obligation, taux qui montent
 
-Sam note sur un carnet : « quand remboursement bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+Garde C = 5, F = 100, n = 3, mais y = 7 % = 0,07.
 
-## Formule utile (intuition)
+P = 5/1,07 + 5/1,07^2 + 105/1,07^3
+= 4,673 + 4,367 + 85,722
+= 94,76
 
-Pas besoin d'un doctorat. Une formule courte aide a ancrer Coupons et obligations :
+Le prix baisse a ~94,76. Nora note : "mon coupon reste 5, mais la valeur de marche a baisse parce que le marche exige 7 %."
 
+## Meme obligation, taux qui baissent
 
+y = 3 % = 0,03.
 
-Prix oblig = coupons actualises + nominal actualise
+P = 5/1,03 + 5/1,03^2 + 105/1,03^3
+= 4,854 + 4,713 + 96,151
+= 105,72
 
-Lis les symboles comme des mots : chaque terme a une unite (euros, pourcent, jours). Si tu ne peux pas expliquer chaque terme, ne calcule pas : relis le chapitre ou la fiche produit.
+Prix ~105,72. Les anciennes obligations a 5 % deviennent rares / attractives : leur prix monte.
+
+## Current yield vs YTM
+
+Current yield = C / P
+
+Sur l'exemple a y = 7 % (P ~ 94,76) :
+Current yield = 5 / 94,76 ~ 5,28 %
+
+Le YTM (~7 %) est plus haut que le current yield parce qu'il integre aussi le "chemin" vers le nominal a 100 (ici un gain en capital si tu tiens jusqu'a l'echeance).
+
+YTM approx (rappel chapitre 3) :
+
+YTM approx = [C + (F-P)/n] / [(F+P)/2]
+
+= [5 + (100-94,76)/3] / [(100+94,76)/2]
+= [5 + 1,75] / 97,38
+= 6,75 / 97,38
+~ 6,9 %
+
+Proche de 7 %. Suffisant pour l'intuition.
 
 ## Petite histoire
 
-Un soir, Sam ouvre son application et voit un mouvement lie a coupon. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Max achete une obligation "parce que le coupon est joli". Il ne regarde pas le prix (108). Apres une hausse de taux, le cours tombe a 99. Il panique. Sam lui rappelle : si son horizon etait l'echeance et le credit solide, le coupon continue ; la baisse de prix le touche surtout s'il revend maintenant. Horizon = decision.
 
 ## Erreur classique
 
-Confondre coupon avec une garantie, ou croire que remboursement annule YTM. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Lire seulement le taux de coupon. Ou croire que "obligation = pas de baisse". Ou comparer deux YTM sans regarder la qualite de credit et la duration.
 
-## En vrai
+## Mini-exercice (corrige)
 
-Ouvre une fiche produit ou un article serieux sur Coupons et obligations. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas coupon clairement, c'est un signal orange.
+Obligation : F = 100, C = 4, n = 2, y = 6 %.
+
+P = 4/1,06 + 104/1,06^2
+= 3,774 + 92,560
+= 96,33
+
+Current yield = 4 / 96,33 ~ 4,15 %
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur coupon, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Refais le calcul avec y = 4 % (meme C, F, n). Le prix doit etre proche de 100. Verifie.
 
 :::retenir
-coupon + remboursement + horizon : comprendre avant d'agir sur Coupons et obligations.
+Prix obligataire = PV des coupons + PV du nominal. Taux monte => prix baisse (toutes choses egales).
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (YTM).
+YTM suppose detente jusqu'a echeance et reinvestissement des coupons : ce n'est pas une promesse de performance.
 :::
 
 :::astuce
-Carnet : « quand remboursement bouge, qui gagne ? »
+Calcule toujours le prix a deux taux (ex. +1 % / -1 %) pour sentir la sensibilite avant d'acheter.
 :::
-

@@ -1,60 +1,89 @@
 # Chapitre 3 - C'est quoi une obligation ?
 
-On aborde ici C'est quoi une obligation ?. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **coupon**, **nominal** et **taux** avant de chercher le produit miracle.
+Une **obligation** est un titre de dette. L'emetteur (Etat, entreprise) emprunte de l'argent. Toi, tu lui pretes. En echange, tu recois en general des **coupons** (interets) et, a l'echeance, le **nominal** (le capital rembourse), sauf defaut. Chez DanielCraft, on dit : l'obligation, c'est un pret emballe, pas un livret magique.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Ce livre est pedagogique. Les exemples sont inventes. Ce n'est pas un conseil personnalise.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Les trois mots a tatouer
 
-Nora, salariee curieuse mais prudente, compare ce qu'il lit avec son compte courant et son estomac. Max a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+- **Nominal** (ou face) : le montant de reference, souvent 100 ou 1 000 EUR.
+- **Taux de coupon** : le pourcentage applique au nominal pour calculer le coupon.
+- **Echeance** : la date de remboursement du nominal.
 
-## Ce que coupon change pour toi
+Formule du coupon annuel :
 
-**coupon** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir coupon avec tes mots vaut plus qu'une heure de videos rapides.
+Coupon annuel = Nominal x Taux de coupon
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour coupon, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+Exemple :
+- Nominal = 1 000 EUR
+- Taux coupon = 3 %
 
-## Relier nominal et taux
+Coupon annuel = 1 000 x 0,03 = 30 EUR
 
-**nominal** et **taux** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si nominal monte alors que taux se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Si le coupon est verse une fois par an, tu recois 30 EUR chaque annee jusqu'a l'echeance (sauf defaut).
 
-Nora note sur un carnet : « quand nominal bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+## Prix de marche vs nominal
 
-## Formule utile (intuition)
+Le prix de l'obligation sur le marche secondaire n'est pas toujours egal au nominal. Si les taux du marche montent apres emission, les anciennes obligations a coupon faible deviennent moins attractives : leur **prix baisse**. Si les taux baissent, leur prix monte souvent.
 
-Pas besoin d'un doctorat. Une formule courte aide a ancrer C'est quoi une obligation ? :
+Exemple invente :
+- Obligation A : nominal 100, coupon 2 %, reste 5 ans.
+- Nouveaux taux du marche : 4 %.
 
+Personne n'achatera A a 100 si on peut avoir 4 % ailleurs. Le prix de A doit baisser pour que le rendement global (coupons + "pull to par") redevienne competitif. Nora note : "mon coupon reste 2 EUR pour 100 de nominal, mais si j'ai achete a 92, mon rendement effectif n'est plus 2 %."
 
+## Yield to maturity (YTM) : intuition
 
-Coupon annuel = nominal x taux coupon
+Le **YTM** (taux actuariel a l'echeance) est le rendement annualise que tu obtiens si :
+1. tu achetes au prix actuel,
+2. tu touches tous les coupons,
+3. tu es rembourse au nominal a l'echeance,
+4. tu reinvestis les coupons au meme taux (hypothese).
 
-Lis les symboles comme des mots : chaque terme a une unite (euros, pourcent, jours). Si tu ne peux pas expliquer chaque terme, ne calcule pas : relis le chapitre ou la fiche produit.
+Approximation pedagogique (YTM approche) :
+
+YTM approx = [C + (F - P) / n] / [(F + P) / 2]
+
+avec :
+- C = coupon annuel
+- F = nominal (face)
+- P = prix actuel
+- n = annees restantes
+
+Exemple :
+- C = 30, F = 1 000, P = 950, n = 5
+
+YTM approx = [30 + (1 000 - 950) / 5] / [(1 000 + 950) / 2]
+= [30 + 10] / 975
+= 40 / 975
+~ 4,10 %
+
+Ce n'est pas le YTM exact (qui resout une equation de prix), mais c'est assez bon pour comprendre : prix sous le pari => rendement > coupon.
 
 ## Petite histoire
 
-Un soir, Nora ouvre son application et voit un mouvement lie a coupon. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Sam voit "obligation 5 %" et croit gagner 5 % sur son cash. En realite, le prix cote 108 : il paie une prime. Son YTM est plus bas que 5 %. Il apprend a lire prix + coupon + echeance, pas le seul chiffre marketing.
 
 ## Erreur classique
 
-Confondre coupon avec une garantie, ou croire que nominal annule taux. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Confondre taux de coupon et rendement reel. Ou croire qu'une obligation ne peut jamais baisser. Ou ignorer le **risque de credit** (l'emetteur peut defaillir).
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur C'est quoi une obligation ?. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas coupon clairement, c'est un signal orange.
+Sur une fiche obligataire ou un ETF obligations, cherche : coupon, maturite moyenne, duration, notation credit. Si une ligne manque, c'est un signal orange.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur coupon, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Inventer une obligation : nominal 100, coupon 2,5 %, prix 97, n = 4. Calcule coupon annuel et YTM approx. Ecris une phrase : "je gagne surtout grace a ...".
 
 :::retenir
-coupon + nominal + horizon : comprendre avant d'agir sur C'est quoi une obligation ?.
+Obligation = pret. Coupon = interet. Prix et taux du marche bougent a l'envers.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (taux).
+Coupon fixe ne veut pas dire prix fixe sur le marche secondaire.
 :::
 
 :::astuce
-Carnet : « quand nominal bouge, qui gagne ? »
+Toujours noter le trio : prix / coupon / echeance avant de juger "interessant".
 :::
-

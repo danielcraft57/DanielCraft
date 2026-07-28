@@ -154,9 +154,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
             sources.add(src)
 
     for name in sorted(sources):
-        src_path = IMAGES_DIR / name
+        src_path = resolve_source_asset(name)
         if not src_path.exists():
             print(f"Image manquante: {src_path}", file=sys.stderr)
+            continue
+        if src_path.suffix.lower() == ".svg":
+            mapping[name] = f"images/{src_path.name}"
+            print(f"SVG direct: {name} -> {src_path.name}")
             continue
         out_name = src_path.stem + ".jpg"
         out_path = PRINT_DIR / out_name
@@ -169,6 +173,21 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
         mapping[name] = f"images/print/{out_name}"
         print(f"Compress: {name} -> {out_name} ({out_path.stat().st_size // 1024} Ko)")
     return mapping
+
+
+def resolve_source_asset(name: str) -> Path:
+    path = IMAGES_DIR / name
+    if path.exists():
+        return path
+    if name.endswith(".png"):
+        svg_same = IMAGES_DIR / name.replace(".png", ".svg")
+        if svg_same.exists():
+            return svg_same
+        core = name.replace("fin-act-", "").replace(".png", "")
+        svg_fallback = IMAGES_DIR / f"_src-{core}.svg"
+        if svg_fallback.exists():
+            return svg_fallback
+    return path
 
 
 def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:

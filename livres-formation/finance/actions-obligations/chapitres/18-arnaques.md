@@ -1,50 +1,53 @@
-# Chapitre 18 - Arnaques et signaux orange
+# Chapitre 18 - Arnaques et red flags
 
-On aborde ici Arnaques et signaux orange. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **signal**, **urgence** et **levier** avant de chercher le produit miracle.
+Les arnaques financieres aiment les urgences, les rendements "garantis", et ta peur de rater quelque chose. Actions, obligations, "produits structures", faux conseillers : le decor change, le script revient. Chez DanielCraft, on apprend a raccrocher avant de "just verifier un dernier document".
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : ce chapitre ne couvre pas toutes les fraudes. En cas de doute, sources officielles (AMF...) et professionnels agrees.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Signaux d'alerte frequents
 
-Nora, salariee curieuse mais prudente, compare ce qu'il lit avec son compte courant et son estomac. Max a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+- Rendement eleve **garanti**, sans risque affiche
+- Pression temporelle : "offre 24 h", "derniere place"
+- Demande de codes, seed phrase, virement vers un compte perso
+- Site / interlocuteur difficile a verifier (pas d'immatriculation claire)
+- Produit incomprehensible apres deux explications
+- "Recupere tes pertes" apres un premier depot (second hook)
 
-## Ce que signal change pour toi
+Exemple invente : "obligation privee 12 % par an, capital garanti, places limitees". Nora demande l'immatriculation ORIAS / CIF, le prospectus, le risque de credit. L'interlocuteur refuse et insiste sur l'urgence. Elle coupe.
 
-**signal** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir signal avec tes mots vaut plus qu'une heure de videos rapides.
+## Hygiene minimale
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour signal, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+1. Qui est regule, ou, sous quel statut ?
+2. Ou est conserve le titre (teneur de compte connu) ?
+3. Quel est le pire scenario ecrit noir sur blanc ?
+4. Est-ce que je peux expliquer le produit a un ami en 1 minute ?
 
-## Relier urgence et levier
-
-**urgence** et **levier** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si urgence monte alors que levier se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
-
-Nora note sur un carnet : « quand urgence bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+Si une reponse manque, le defaut est **non**.
 
 ## Petite histoire
 
-Un soir, Nora ouvre son application et voit un mouvement lie a signal. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Max recoit un faux email "courtier" : lien de connexion. Il ne clique pas ; il tape l'URL officielle a la main. Faux site. Sam, lui, a presque envoye un RIB "pour debloquer un gain". La regle DanielCraft : personne de legitime ne te demande tes codes secrets.
 
 ## Erreur classique
 
-Confondre signal avec une garantie, ou croire que urgence annule levier. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Croire que "ca a marche le premier mois" prouve l'honnetete (ponzi / faux releves). Ou avoir honte de signaler.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur Arnaques et signaux orange. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas signal clairement, c'est un signal orange.
+Ajoute aux favoris une page officielle de verification / alertes AMF. Une fois. Avant le prochain cold call.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur signal, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Ecris ta phrase de raccrochage : une seule, a dire a voix haute.
 
 :::retenir
-signal + urgence + horizon : comprendre avant d'agir sur Arnaques et signaux orange.
+Garanti + urgent + opaque = non. Verifie le statut, pas le sourire.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (levier).
+Un faux gain affiche sert souvent a te faire deposer plus.
 :::
 
 :::astuce
-Carnet : « quand urgence bouge, qui gagne ? »
+Parle a une tierce personne avant tout virement "opportunite".
 :::
-

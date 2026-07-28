@@ -1,50 +1,54 @@
-# Chapitre 17 - IPO et pieges du neuf
+# Chapitre 17 - IPO et pieges du primaire
 
-On aborde ici IPO et pieges du neuf. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **IPO**, **valorisation** et **lock-up** avant de chercher le produit miracle.
+Une **IPO** (introduction en bourse), c'est le passage d'une entreprise privee vers le marche public. Sur le primaire, l'entreprise (et parfois des actionnaires vendeurs) peut lever de l'argent. Sur le secondaire le lendemain, le cours peut s'envoler... ou s'ecraser. Chez DanielCraft, on traite l'IPO comme un evenement marketing + financier, pas comme une loterie obligatoire.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : exemples inventes. Beaucoup d'IPO sous-performent apres le battage. Ce n'est pas une prediction sur un dossier precis.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Ce qui se joue vraiment
 
-Sam, petite activite avec tresorerie a gerer, compare ce qu'il lit avec son compte courant et son estomac. Nora a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+L'IPO fixe un **prix d'offre**. Si la demande est forte, le prix peut etre tendu. Les banques placent aupres d'institutionnels ; le particulier arrive souvent apres, ou via une allocation limitee. "J'ai eu des actions a l'IPO" n'est pas un droit divin.
 
-## Ce que IPO change pour toi
+Le prospectus (ou document d'enregistrement) contient risques, comptes, usage des fonds. Si tu n'ouvres pas ce document, tu achetes un story telling.
 
-**IPO** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir IPO avec tes mots vaut plus qu'une heure de videos rapides.
+Questions utiles :
+- L'entreprise leve pour croitre, ou des fondateurs sortent massivement ?
+- Benefices durables ou histoire de croissance cash-negative ?
+- Concurrence, regulation, client unique ?
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour IPO, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+## Pieges classiques
 
-## Relier valorisation et lock-up
+- **FOMO** : "si je rate le premier jour, je rate ma vie"
+- **Recit media** : une une presse != due diligence
+- **Lock-up** : quand les insiders pourront vendre plus tard
+- **Premiere seance** : volatilite extreme, spreads larges
+- **Comparer au "pop" du jour 1** : un +40 % a l'ouverture peut devenir -50 % en deux ans
 
-**valorisation** et **lock-up** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si valorisation monte alors que lock-up se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
-
-Sam note sur un carnet : « quand valorisation bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+Exemple invente : IPO a 20 EUR, ouverture 28 EUR (+40 %), six mois plus tard 14 EUR. Nora qui a "attendu une consolidation" a parfois moins souffert que Max qui a chase a 28.
 
 ## Petite histoire
 
-Un soir, Sam ouvre son application et voit un mouvement lie a IPO. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Sam souscrit parce qu'un ami "a un tuyau". Il n'a pas lu les risques. Apres 4 mois : -30 %. Il transforme la douleur en regle : pas d'IPO sans lecture du resume des risques et sans plafond (ex. 1 % du patrimoine max).
 
 ## Erreur classique
 
-Confondre IPO avec une garantie, ou croire que valorisation annule lock-up. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Traiter l'IPO comme un investissement long terme sans regarder la valo vs pairs. Ou mettre de l'argent de la poche B sur un titre tout neuf.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur IPO et pieges du neuf. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas IPO clairement, c'est un signal orange.
+Si une IPO t'excite, telecharge le document, surligne 5 risques, et dors une nuit avant tout ordre.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur IPO, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Ecris ta regle IPO : "je passe" ou "max X % et seulement si ...".
 
 :::retenir
-IPO + valorisation + horizon : comprendre avant d'agir sur IPO et pieges du neuf.
+IPO = primaire + story. Lire les risques bat le FOMO.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (lock-up).
+Un beau premier jour ne predit pas cinq belles annees.
 :::
 
 :::astuce
-Carnet : « quand valorisation bouge, qui gagne ? »
+Plafonne toute IPO / titre unique neuf (ex. 1 a 2 % max).
 :::
-

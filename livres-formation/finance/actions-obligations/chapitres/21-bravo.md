@@ -1,20 +1,34 @@
 # Bravo
 
-Tu es alle au bout de **Finance - Actions et obligations**.
+Tu as termine **Finance - Actions et obligations**.
 
-Tu as couvert : Chapitre 1 - La realite des marches actions et obligations, Chapitre 2 - C'est quoi une action ?, Chapitre 3 - C'est quoi une obligation ?, Chapitre 4 - Indices et paniers, Chapitre 5 - PEA et CTO : enveloppes utiles, Chapitre 6 - Lire un bilan (sans devenir comptable), Chapitre 7 - PER et dividendes, Chapitre 8 - Coupons et obligations. Ce n'etait pas un livre pour te transformer en trader compulsif. C'etait un livre pour te donner une langue, une carte, et une hygiene.
+Tu sais distinguer action et obligation, lire un PER, un coupon, une duration approx, et construire une allocation sur papier sans te raconter d'histoires. Ce n'est pas un diplome de gestionnaire de fonds. C'est une boussole.
 
-## Ce que tu peux faire maintenant
+Ce livre est pedagogique. Il ne remplace ni un conseiller agree, ni un fiscaliste. Investir comporte un risque de perte en capital.
 
-Reprendre tes poches A/B/C, relire les frais, noter ton horizon, un geste concret cette semaine.
+## Ce que tu emportes
 
-## Disclaimer
+- Rendement total, PER, payout
+- Pricing obligataire simple, YTM approx, duration
+- PEA vs CTO, indices / ETF, credit, diversification
+- Checklist anti-FOMO et anti-arnaque
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin. Investir comporte un risque de perte en capital.
+## Suite possible
 
-Bravo. Tu as une boussole. Marche doucement avec tes vrais chiffres.
+Reprendre Finance - Les bases pour le budget. Puis, si tu es curieux et prudent : le livre produits derives (pour comprendre les mecanismes, pas pour jouer), ou rester simple : ETF monde + obligations IG dans une enveloppe comprise.
+
+## Petite histoire
+
+Nora ferme le PDF, ouvre son carnet, et ecrit un seul geste : "virement auto 80 EUR / mois vers PEA ETF monde". Max remplit d'abord sa poche B. Sam fusionne trois lignes redondantes. Trois fins differentes. Une meme idee : agir petit, coheremment.
+
+## A toi
+
+Un geste cette semaine : remplir poche B, ou ouvrir/relire ton PEA, ou calculer un PER a la main. Un seul geste.
 
 :::retenir
-Prudence + clarte + frais bas : la competence qui dure.
+Comprendre avant d'agir. Horizon avant le bruit.
 :::
 
+:::astuce
+Reviens au chapitre 14 le jour ou un titre te donne envie de tout claquer.
+:::

@@ -1,50 +1,51 @@
 # Chapitre 1 - La realite des marches actions et obligations
 
-On aborde ici La realite des marches actions et obligations. Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **marche primaire**, **marche secondaire** et **volatilite** avant de chercher le produit miracle.
+Les marches actions et obligations ne sont pas un casino deguise, meme si certains s'y comportent comme tels. Chez DanielCraft, on les presente comme des lieux ou se rencontrent des besoins differents : des entreprises et des Etats qui veulent se financer, des epargnants qui veulent faire travailler une poche long terme, des intermediaires qui font circuler les ordres. Comprendre cette scene avant d'ouvrir un compte-titres, c'est deja reduire le nombre de betises.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Ce livre est pedagogique. Il ne remplace ni un conseiller agree, ni un fiscaliste. Les exemples sont inventes pour apprendre. Les marches comportent un risque de perte en capital.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+Nora, salariee prudente, veut savoir si "investir" veut dire "parier sur un titre vu sur TikTok". Max, artisan, a peur de bloquer de l'argent dont il aura besoin pour une machine. Sam, petite activite, veut un cadre simple : poche A (quotidien), poche B (reserve), poche C (long terme). Trois profils, une meme hygiene : ne jamais melanger l'argent du loyer et l'argent du long terme.
 
-Max, artisan independant, compare ce qu'il lit avec son compte courant et son estomac. Sam a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+## Marche primaire et marche secondaire
 
-## Ce que marche primaire change pour toi
+Sur le **marche primaire**, l'entreprise (ou l'Etat) emet des titres neufs et recoit l'argent. Une IPO, une emission d'obligations : c'est souvent la. Sur le **marche secondaire**, tu achetes a un autre investisseur. L'entreprise ne recoit rien de ton ordre du mardi. Beaucoup de debutants croient "financer Apple" chaque fois qu'ils cliquent. En realite, ils echangent avec un autre detenteur.
 
-**marche primaire** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir marche primaire avec tes mots vaut plus qu'une heure de videos rapides.
+Ca change ton regard. Le prix du secondaire bouge avec l'offre et la demande, les taux, les resultats, la peur, l'appetit pour le risque. Ce n'est pas un ticket de caisse fixe. C'est une estimation collective, revisee en continu.
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour marche primaire, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+## Volatilite : le prix du risque
 
-## Relier marche secondaire et volatilite
+La **volatilite**, c'est l'amplitude des mouvements. Une action peut baisser 30 % en un an sans que l'entreprise disparaisse. Une obligation d'Etat de haute qualite bouge en general moins, mais elle n'est pas plate non plus : quand les taux montent, les prix des anciennes obligations baissent. Si tu as besoin de l'argent dans six mois, la volatilite n'est pas un detail esthetique. C'est un risque de timing.
 
-**marche secondaire** et **volatilite** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si marche secondaire monte alors que volatilite se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Exemple invente : poche C de Nora = 10 000 EUR en ETF actions. Annee 1 : -18 %. Annee 2 : +22 %. Annee 3 : +8 %. Sur trois ans, elle n'a pas "perdu tout", mais elle a du supporter un trou visible. Sans poche B remplie, elle aurait vendu en panique a -18 %.
 
-Max note sur un carnet : « quand marche secondaire bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+## Ce que ce livre va faire
+
+On clarifie action, obligation, indice, PEA et CTO. On lit un bilan sans devenir comptable. On calcule un PER, un coupon, une duration approx. On parle risque de credit, diversification, IPO, arnaques. Puis ateliers et quiz. Pas pour te transformer en day trader. Pour que tu saches lire une fiche et refuser un produit opaque.
 
 ## Petite histoire
 
-Un soir, Max ouvre son application et voit un mouvement lie a marche primaire. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Max voit un reel "j'ai double en trois mois". Il ouvre son carnet : poche B a 1 mois de charges seulement. Il decide de remplir d'abord la reserve avant toute poche C. DanielCraft preferera toujours ce geste ennuyeux au screenshot de perf.
 
 ## Erreur classique
 
-Confondre marche primaire avec une garantie, ou croire que marche secondaire annule volatilite. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Acheter d'abord, comprendre ensuite. Ou copier une allocation "60/40" vue sur un forum sans savoir ce que signifie 40 % d'obligations (duration, credit, devise). Les marches punissent souvent l'incoherence, pas seulement l'ignorance.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur La realite des marches actions et obligations. Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas marche primaire clairement, c'est un signal orange.
+Ecris tes trois poches avec un montant approx et un horizon. Si tu n'as pas de poche B (reserve 3 a 6 mois de depenses), le reste du livre peut attendre.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur marche primaire, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Une phrase : "Je veux comprendre actions et obligations pour ... (horizon / objectif)." Colle-la en haut de ton carnet.
 
 :::retenir
-marche primaire + marche secondaire + horizon : comprendre avant d'agir sur La realite des marches actions et obligations.
+Poche C peut accepter de la volatilite. Poche A et B, presque jamais.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (volatilite).
+Rendement plus eleve vise = risque plus eleve accepte, en general. Pas de miracle gratuit.
 :::
 
 :::astuce
-Carnet : « quand marche secondaire bouge, qui gagne ? »
+Quand un influenceur dit "garanti", cherche qui paie si ca casse.
 :::
-

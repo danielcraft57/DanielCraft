@@ -1,46 +1,45 @@
 # Chapitre 15 - Atelier : analyser une action fictive
 
-Cet atelier t'ancre dans le concret du livre **Finance - Actions et obligations**. Pas de signature sous pression : tu travailles sur papier ou tableur.
+Atelier pratique. Entreprise inventee : **LumoTech**. Tu appliques PER, payout, bilan express, et une decision ecrite. Pas d'ordre en vrai.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+## Donnees LumoTech
 
-## Objectif
+- Prix = 48 EUR
+- BPA (12 mois) = 3,00 EUR
+- Dividende = 0,90 EUR
+- CA = 800 MEUR ; resultat net = 60 MEUR
+- Dettes = 220 ; capitaux propres = 280 ; cash = 40
+- BPA il y a 3 ans = 2,40 EUR
 
-Pratiquer atelier-action sans signature sous pression.
+## Travail guide
 
-## Materiel
+1. PER = 48 / 3 = 16
+2. Payout = 0,90 / 3 = 30 %
+3. Rendement dividende = 0,90 / 48 = 1,875 % ~ 1,9 %
+4. Marge nette = 60 / 800 = 7,5 %
+5. Dette nette approx = 220 - 40 = 180 ; dette nette / FP = 180 / 280 ~ 0,64
+6. Croissance BPA ~ (3,00 / 2,40) - 1 = 25 % sur 3 ans (~7,7 % annualise si compose, ordre de grandeur)
 
-Feuille, tableur, acces a des fiches publiques (pas besoin d'ouvrir un compte pour commencer).
+## Decision pedagogique
 
-## Etape 1
+Nora ecrit : "PER 16, payout sain, levier modere, croissance BPA presente. Points ouverts : concurrence, recurrence du CA, guidance. Pour ma poche C ETF-first, je n'achete pas de ligne individuelle. Si conviction max 5 %, j'attends un dossier plus complet."
 
-Lister ton objectif pedagogique en une phrase.
+Max ecrit : "Je ne comprends pas le produit LumoTech. Je passe."
 
-## Etape 2
-
-Construire un tableau avec colonnes « critere / valeur / source ».
-
-## Etape 3
-
-Remplir avec des chiffres publics, pas des impressions.
-
-## Etape 4
-
-Ecrire une decision en deux phrases et une date de relecture.
-
-## Livrable
-
-Tu as reussi si tu as un tableau chiffre, une decision ecrite en deux phrases, et une date de relecture dans trois semaines.
+Les deux reponses sont valides. L'atelier juge la clarte, pas le "oui achete".
 
 ## A toi
 
-Fais l'atelier cette semaine, pas « un jour ».
+Recalcule les 6 chiffres sans regarder. Puis ecris ta decision en 4 lignes : achete / passe / watchlist, avec pourquoi.
 
-:::astuce
-Chiffres dans le tableau, pas « je crois que c'est gratuit ».
+:::retenir
+Atelier action = ratios + decision ecrite, pas un feeling.
 :::
 
 :::attention
-Cadeau de bienvenue + conditions cachees = piege frequent.
+Des beaux ratios n'annulent pas un business que tu ne comprends pas.
 :::
 
+:::astuce
+Garde un modele de fiche (PER, payout, dette nette, BPA 3 ans) pour chaque titre regarde.
+:::

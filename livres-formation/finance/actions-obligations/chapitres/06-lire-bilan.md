@@ -1,50 +1,75 @@
-# Chapitre 6 - Lire un bilan (sans devenir comptable)
+# Chapitre 6 - Lire un bilan sans etre comptable
 
-On aborde ici Lire un bilan (sans devenir comptable). Ce n'est pas un chapitre pour devenir expert en une heure, mais pour poser une boussole claire avant d'ouvrir un ecran de courtier. Dans le parcours DanielCraft **Finance - Actions et obligations**, cette brique relie le vocabulaire au geste prudent : comprendre **actif**, **passif** et **dettes** avant de chercher le produit miracle.
+Le **bilan** dit ce que l'entreprise possede et ce qu'elle doit a un instant T. Le **compte de resultat** dit ce qu'elle a gagne ou perdu sur une periode. Tu n'as pas besoin du diplome d'expert-comptable. Tu as besoin de trois reflexes : liquidite, dette, rentabilite. Chez DanielCraft, on lit pour ecarter les mirages, pas pour devenir analyste sell-side.
 
-Ce livre est pedagogique. Il ne remplace ni un conseiller en investissement agree, ni un banquier, ni un fiscaliste. Les exemples sont inventes pour apprendre. Avant toute decision concrete, verifie les infos a jour et demande un avis competent si besoin.
+Disclaimer : exemples inventes. Pas un conseil sur un titre reel.
 
-Les marches et les produits financiers obeissent rarement aux slogans des influenceurs. Quand tu entends « rendement garanti » ou « strategie secrete », pose la question inverse : qui prend le risque, qui paie les frais, et pourquoi ce geste est propose maintenant ? La finance commence souvent par cette hygiene, pas par un graphique colore.
+## Actif, passif, capitaux propres
 
-Nora, salariee curieuse mais prudente, compare ce qu'il lit avec son compte courant et son estomac. Max a une autre contrainte de temps et de risque : leurs chiffres sont inventes, mais leurs reactions (peur, envie de rattraper, fatigue des tableaux) sont realistes. Chez DanielCraft, on apprend avec ces personnages sans copier leurs choix comme des recettes.
+Simplifie :
+- **Actif** : ce que l'entreprise controle (caisse, stocks, machines, marques...)
+- **Passif** : dettes + capitaux propres
+- Equilibre : Actif = Passif
 
-## Ce que actif change pour toi
+Les **capitaux propres**, c'est la part "actionnaires" (capital, reserves, resultat...). Si les dettes explosent pendant que les fonds propres fondent, le risque monte.
 
-**actif** n'est pas un mot decoratif sur une fiche produit. C'est un mecanisme : il influence le prix, la liquidite, la fiscalite ou le stress du portefeuille. Sans cette notion, on confond souvent « j'ai achete » et « j'ai finance l'entreprise », ou « le taux a bouge » et « mon obligation a perdu toute sa valeur ». Prendre cinq minutes pour definir actif avec tes mots vaut plus qu'une heure de videos rapides.
+Exemple invente "Atelier Nord" :
+- Actif = 500
+- Dettes = 350
+- Capitaux propres = 150
 
-Imagine un tableau simple : colonne « ce que je crois », colonne « ce que le marche fait vraiment ». Pour actif, la colonne droite inclut des surprises : spreads, delais, frais, regles d'enveloppe, horizon de sortie. Le livre ne te demande pas de tout memoriser. Il te demande de savoir ou chercher quand l'ecran affiche un chiffre que tu ne comprends pas.
+Dette / Capitaux propres = 350 / 150 ~ 2,3. L'entreprise est levee. Pas forcement mortel (selon secteur), mais Nora marque orange.
 
-## Relier passif et dettes
+## Ratios utiles (ordre de grandeur)
 
-**passif** et **dettes** forment souvent un couple : l'un visible sur l'ecran, l'autre dans le contrat ou dans la courbe. Les debutants regardent le prix du jour ; les prudents regardent aussi la structure. Si passif monte alors que dettes se degrade, ce n'est pas toujours « bonne nouvelle » : cela peut signaler un risque futur que le marche price deja partiellement.
+Liquidite courante approx :
 
-Nora note sur un carnet : « quand passif bouge, qui gagne et qui perd ? » Cette question banale evite des erreurs classiques : acheter une obligation « haute » sans voir le risque credit, ou acheter une action « pas chere » sans lire la dette. DanielCraft insiste : le prix est une information, pas une conclusion.
+Actif circulant / Dettes a court terme
+
+Si le ratio tombe sous 1, l'entreprise peut manquer de cash pour payer demain. A discuter avec le contexte (saisonnalite, lignes de credit).
+
+Marge nette approx :
+
+Resultat net / Chiffre d'affaires
+
+Exemple : resultat 20, CA 400 => marge 5 %. Stable sur 3 ans = rassurant. En chute libre = question.
+
+Free cash flow (intuition) : cash genere apres investissements necessaires. Une entreprise "beneficiaire" qui brule du cash chaque annee demande une explication.
 
 ## Petite histoire
 
-Un soir, Nora ouvre son application et voit un mouvement lie a actif. Le reflexe serait de cliquer vite. Elle decide plutot de fermer l'appli, rouvrir ce chapitre, et verifier si le mouvement touche sa poche A (quotidien), B (reserve) ou C (long terme). Rien a acheter ce soir : juste comprendre. Le lendemain, le bruit mediatique a change, mais sa carte personnelle est plus stable.
+Sam voit une action "pas chere" (PER bas). Il ouvre le bilan : dettes nettes enormes, tresorerie fragile. Le PER bas refletait un risque. Il passe son tour. Max applaudit : "tu as lu avant d'acheter. C'est deja rare."
 
 ## Erreur classique
 
-Confondre actif avec une garantie, ou croire que passif annule dettes. Autre piege : copier une allocation vue sur un forum sans horizon commun. Le marche punit rarement l'ignorance en une seconde ; il punit souvent l'incoherence entre horizon, enveloppe et produit.
+Ne regarder que le chiffre d'affaires qui monte. Ou ignorer les engagements hors bilan / leases selon presentation. Ou comparer deux secteurs avec des structures de capital tres differentes sans grille.
+
+## Mini-exercice (corrige)
+
+Donnees : CA = 1 000, resultat net = 80, dettes = 400, capitaux propres = 400, actif circulant = 250, dettes CT = 200.
+
+1. Marge nette = 80/1000 = 8 %
+2. Dette / FP = 400/400 = 1
+3. Liquidite courante = 250/200 = 1,25
+
+Lecture : rentabilite correcte, levier modere, liquidite juste au-dessus de 1. Pas de drapeau rouge evident sur ces seuls chiffres ; pas non plus un chateau impreignable.
 
 ## En vrai
 
-Ouvre une fiche produit ou un article serieux sur Lire un bilan (sans devenir comptable). Surligne trois mots que tu ne comprends pas encore. Cherche-les ici ou dans un dictionnaire AMF. Si la fiche ne definit pas actif clairement, c'est un signal orange.
+Sur une fiche ou un rapport annuel resume : dettes nettes, tresorerie, marge, tendance 3 ans. Quatre lignes.
 
 ## A toi
 
-Ecris en trois lignes : ce que tu crois sur actif, ce que tu veux verifier, et la date a laquelle tu reliras ce chapitre si tu hesites encore.
+Choisis une entreprise connue (sans acheter). Note un chiffre qui te rassure et un qui t'inquiete.
 
 :::retenir
-actif + passif + horizon : comprendre avant d'agir sur Lire un bilan (sans devenir comptable).
+Bilan = photo du risque. Resultat = film de la periode. Les deux ensemble.
 :::
 
 :::attention
-Ne confonds pas prix du jour et structure (dettes).
+Benefice comptable != cash en banque. Pose toujours la question du cash.
 :::
 
 :::astuce
-Carnet : « quand passif bouge, qui gagne ? »
+Si tu ne trouves pas la dette nette en 2 minutes sur une fiche grand public, ralentis.
 :::
-
