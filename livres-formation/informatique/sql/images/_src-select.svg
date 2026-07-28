@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">SELECT colonnes FROM table</text>
+<rect x="120" y="120" width="760" height="240" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">SELECT nom, ville</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">FROM clients;</text>
+<text x="500" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Tu choisis quoi lire, et dans quelle table.</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a6e62" font-weight="400">* = toutes les colonnes (pratique, pas toujours ideal).</text>
+</svg>

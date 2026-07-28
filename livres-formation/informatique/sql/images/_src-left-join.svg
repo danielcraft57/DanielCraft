@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">LEFT JOIN : garder la table de gauche</text>
+<rect x="100" y="140" width="350" height="240" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="275" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#3f6212" font-weight="700">clients (gauche)</text>
+<text x="275" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="400">tous gardes</text>
+<rect x="550" y="160" width="350" height="200" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="725" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#14261c" font-weight="700">commandes</text>
+<text x="725" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">match ou NULL</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a6e62" font-weight="400">Client sans commande : reste visible, colonnes droites NULL.</text>
+</svg>

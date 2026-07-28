@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">NULL = valeur absente</text>
+<rect x="70" y="130" width="280" height="240" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="210" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#14261c" font-weight="700">0</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">un zero</text>
+<rect x="360" y="130" width="280" height="240" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#3f6212" font-weight="700">''</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="400">texte vide</text>
+<rect x="650" y="130" width="280" height="240" rx="14" fill="#ffffff" stroke="#14261c" stroke-width="3"/>
+<text x="790" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="#14261c" font-weight="700">NULL</text>
+<text x="790" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">inconnu / absent</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Tester NULL : IS NULL / IS NOT NULL (pas =).</text>
+</svg>

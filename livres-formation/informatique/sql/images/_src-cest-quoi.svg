@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">SQL = langage pour interroger des tables</text>
+<rect x="80" y="120" width="260" height="260" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#14261c" font-weight="700">Tables</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">clients</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">commandes</text>
+<text x="210" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">produits</text>
+<rect x="370" y="120" width="260" height="260" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#3f6212" font-weight="700">Requete</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="400">SELECT ...</text>
+<text x="500" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">question claire</text>
+<rect x="660" y="120" width="260" height="260" rx="14" fill="#ffffff" stroke="#14261c" stroke-width="3"/>
+<text x="790" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#14261c" font-weight="700">Resultat</text>
+<text x="790" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">lignes</text>
+<text x="790" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">a lire</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Tu demandes. La base repond. Toi, tu restes le pilote.</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">Carte a retenir</text>
+<rect x="60" y="110" width="280" height="160" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="200" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">SELECT FROM</text>
+<text x="200" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">WHERE</text>
+<rect x="360" y="110" width="280" height="160" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="700">ORDER LIMIT</text>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="400">agregats</text>
+<rect x="660" y="110" width="280" height="160" rx="14" fill="#ffffff" stroke="#14261c" stroke-width="3"/>
+<text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#14261c" font-weight="700">JOIN</text>
+<text x="800" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">cles / NULL</text>
+<rect x="200" y="300" width="600" height="140" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14261c" font-weight="700">Lire d'abord. Ecrire ensuite. Toujours WHERE.</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">Petit, clair, testable - DanielCraft</text>
+</svg>

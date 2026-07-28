@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">Types de colonnes (intuition)</text>
+<rect x="60" y="130" width="210" height="220" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="165" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">TEXTE</text>
+<text x="165" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5a6e62" font-weight="400">nom, ville</text>
+<rect x="280" y="130" width="210" height="220" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="385" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="700">NOMBRE</text>
+<text x="385" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3f6212" font-weight="400">total, qte</text>
+<rect x="500" y="130" width="210" height="220" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="605" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">DATE</text>
+<text x="605" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5a6e62" font-weight="400">cree_le</text>
+<rect x="720" y="130" width="220" height="220" rx="14" fill="#ffffff" stroke="#14261c" stroke-width="3"/>
+<text x="830" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14261c" font-weight="700">BOOLEEN</text>
+<text x="830" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5a6e62" font-weight="400">actif oui/non</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Le type guide ce que tu compares et tu calcules.</text>
+</svg>

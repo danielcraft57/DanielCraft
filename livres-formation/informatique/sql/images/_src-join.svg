@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">INNER JOIN : intersection utile</text>
+<rect x="80" y="140" width="300" height="220" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="230" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#14261c" font-weight="700">clients</text>
+<text x="230" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">id, nom</text>
+<rect x="620" y="140" width="300" height="220" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="770" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#14261c" font-weight="700">commandes</text>
+<text x="770" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">client_id, total</text>
+<rect x="380" y="180" width="240" height="140" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="700">INNER JOIN</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">sur client_id</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Seules les lignes qui matchent des deux cotes.</text>
+</svg>

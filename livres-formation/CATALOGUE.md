@@ -28,10 +28,18 @@ Vente unitaire reste possible (entree de gamme).
 
 ## Priorite production
 
-1. Completer les **Base** manquantes a fort signal (ex. **SQL Base**)
+1. Completer les **Base** manquantes a fort signal (ex. **SQL Base** - en cours / fait)
 2. Repositionner les suites comme **Intermediaire** (titres / pages produit)
 3. Ajouter **Securite base** (web/dev)
 4. Completer **Expert** la ou le pack se vend deja
+
+## Livres Data / SQL
+
+| Livre | Niveau | PDF |
+|-------|--------|-----|
+| SQL - Les bases | Base | `pdf/sql-les-bases.pdf` |
+| SQL intermediaire | Inter | a creer |
+| SQL expert | Expert | a creer |
 
 ## Images
 
