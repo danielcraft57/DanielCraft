@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Journal de change</text>
+<rect x="80" y="110" width="200" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="180" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">1. Flux</text>
+<rect x="300" y="110" width="200" height="200" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="400" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">2. Taux</text>
+<rect x="520" y="110" width="200" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="620" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">3. Euros</text>
+<rect x="740" y="110" width="180" height="200" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="830" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">4. Hedge?</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Papier d'abord, compte ensuite (ou jamais).</text>
+</svg>

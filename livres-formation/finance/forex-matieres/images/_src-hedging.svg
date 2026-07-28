@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Couverture entreprise</text>
+<rect x="80" y="110" width="260" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="210" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1b3a2f" font-weight="700">Exposition</text>
+<text x="210" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">devise / matiere</text>
+<rect x="370" y="110" width="260" height="200" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="500" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Outils</text>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">forward / future</text>
+<text x="500" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">option</text>
+<rect x="660" y="110" width="260" height="200" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="790" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">But</text>
+<text x="790" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">stabiliser</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Detail payoff : livre Produits derives.</text>
+</svg>
