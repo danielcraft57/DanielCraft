@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Strategies simples (debutant)</text>
+<rect x="60" y="120" width="210" height="180" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="165" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Long call</text>
+<text x="165" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45" font-weight="400">perte = prime</text>
+<rect x="290" y="120" width="210" height="180" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="395" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Long put</text>
+<text x="395" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45" font-weight="400">perte = prime</text>
+<rect x="520" y="120" width="210" height="180" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="625" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Covered</text>
+<text x="625" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">call</text>
+<text x="625" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2d5a45" font-weight="400">action + call</text>
+<rect x="750" y="120" width="190" height="180" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="845" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b3a2f" font-weight="700">Protective</text>
+<text x="845" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">put</text>
+<text x="845" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b3a2f" font-weight="400">assurance</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Savoir le pire cas avant le meilleur cas.</text>
+</svg>

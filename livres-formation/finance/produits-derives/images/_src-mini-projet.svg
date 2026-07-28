@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Mini-projet : simuler, pas miser</text>
+<rect x="80" y="120" width="250" height="180" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="205" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">1. Objectif</text>
+<text x="205" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45" font-weight="400">couvrir / apprendre</text>
+<rect x="360" y="120" width="250" height="180" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="485" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">2. Payoff</text>
+<text x="485" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45" font-weight="400">pire cas ecrit</text>
+<rect x="640" y="120" width="280" height="180" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="780" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">3. Choc -10 %</text>
+<text x="780" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b3a2f" font-weight="400">sur papier</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Refuser le levier est une decision valide.</text>
+</svg>

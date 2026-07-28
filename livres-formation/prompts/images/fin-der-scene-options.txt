@@ -1,0 +1,4 @@
+Illustration pedagogique finance produits derives - options call/put.
+Scene : Nora compare CALL et PUT sur papier (strike K, prime, payoff).
+Style education finance debutant DanielCraft, plat, clair.
+Tout texte visible en FRANCAIS uniquement.
