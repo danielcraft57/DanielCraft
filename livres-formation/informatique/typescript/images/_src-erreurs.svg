@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f1f5f9"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Lire une erreur tsc</text>
+<rect x="100" y="130" width="800" height="280" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">Terminal / editeur</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#b91c1c" font-weight="400">Type 'string' is not assignable to type 'number'</text>
+<text x="500" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">fichier.ts  -  ligne 12</text>
+<text x="500" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">=> mauvaise valeur pour le contrat</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Lire > traduire > corriger une chose > relancer.</text>
+</svg>

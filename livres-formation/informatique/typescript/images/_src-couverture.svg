@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1400" viewBox="0 0 1000 1400">
+<rect width="1000" height="1400" fill="#f1f5f9"/>
+<rect width="1000" height="1400" fill="#1e3a8a"/>
+<text x="500" y="520" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="56" fill="#fef3c7" font-weight="700">TypeScript</text>
+<text x="500" y="600" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#ffffff" font-weight="700">Les bases</text>
+<text x="500" y="700" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#dbeafe" font-weight="400">Ajouter des types a JavaScript</text>
+<text x="500" y="760" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#dbeafe" font-weight="400">pour coder plus sur</text>
+<rect x="300" y="900" width="400" height="80" rx="14" fill="#f59e0b" stroke="#f59e0b" stroke-width="3"/>
+<text x="500" y="950" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f172a" font-weight="700">DanielCraft</text>
+<text x="500" y="1200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#dbeafe" font-weight="400">Formation debutant</text>
+</svg>

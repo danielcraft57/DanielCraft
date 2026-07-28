@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f1f5f9"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Interface = forme d'objet</text>
+<rect x="120" y="110" width="760" height="320" rx="14" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+<text x="500" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">interface Client {</text>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="400">nom: string</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="400">age: number</text>
+<text x="500" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="400">ville: string</text>
+<text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">}</text>
+<text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Tu reutilises Client pour variables et fonctions.</text>
+</svg>

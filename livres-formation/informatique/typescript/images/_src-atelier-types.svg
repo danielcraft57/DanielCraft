@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f1f5f9"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Atelier annotations</text>
+<rect x="100" y="140" width="250" height="200" rx="14" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+<text x="225" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">variables</text>
+<text x="225" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">: string ...</text>
+<rect x="375" y="140" width="250" height="200" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#b45309" font-weight="700">fonctions</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#b45309" font-weight="400">params + retour</text>
+<rect x="650" y="140" width="250" height="200" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="775" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">casser</text>
+<text x="775" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">lire l'erreur</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Annoter, compiler, casser, corriger.</text>
+</svg>

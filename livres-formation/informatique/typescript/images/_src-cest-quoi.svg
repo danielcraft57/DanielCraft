@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f1f5f9"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">TypeScript = JavaScript + types</text>
+<rect x="80" y="120" width="260" height="260" rx="14" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">Tu ecris</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">fichier .ts</text>
+<text x="210" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">+ annotations</text>
+<rect x="370" y="120" width="260" height="260" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#b45309" font-weight="700">tsc verifie</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#b45309" font-weight="400">compilateur</text>
+<text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#b45309" font-weight="400">erreurs avant</text>
+<rect x="660" y="120" width="260" height="260" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="790" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">Navigateur</text>
+<text x="790" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">fichier .js</text>
+<text x="790" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">execute le JS</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Le filet avant l'execution. Toi, tu restes le pilote.</text>
+</svg>

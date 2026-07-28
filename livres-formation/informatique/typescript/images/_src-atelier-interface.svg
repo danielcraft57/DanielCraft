@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f1f5f9"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Atelier interface</text>
+<rect x="120" y="130" width="760" height="250" rx="14" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+<text x="500" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">1. Dessiner les champs</text>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">2. Ecrire interface TodoItem</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">3. Tableau + fonctions typees</text>
+<text x="500" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">4. Erreur volontaire puis fix</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Une fiche claire bat dix champs flous.</text>
+</svg>

@@ -1173,6 +1173,37 @@ button, .btn-like {
   .toc a { color: #111827 !important; }
 }
 """,
+        "typescript": """
+/* Theme TypeScript : marine + ambre (distinct JS vert / Python abricot) */
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --paper: #f1f5f9;
+  --paper-deep: #e2e8f0;
+  --band: #1e3a8a;
+  --band-soft: #1d4ed8;
+  --accent: #f59e0b;
+  --code-bg: #0f172a;
+  --code-fg: #fef3c7;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #1e3a8a !important;
+  color: #fef3c7 !important;
+}
+.cover h1 { color: #f8fafc !important; }
+pre {
+  border-left-color: #f59e0b !important;
+}
+button, .btn-like {
+  background: #1e3a8a;
+}
+@media print {
+  .toc a { color: #1e3a8a !important; }
+}
+""",
         "finance": """
 /* Theme Finance : vert nuit + or doux */
 :root {

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f1f5f9"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">DOM legerement type</text>
+<rect x="80" y="140" width="260" height="220" rx="14" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+<text x="210" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">1. Trouver</text>
+<text x="210" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">querySelector</text>
+<rect x="370" y="140" width="260" height="220" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#b45309" font-weight="700">2. Garder</text>
+<text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#b45309" font-weight="400">null ?</text>
+<text x="500" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#b45309" font-weight="400">if (el)</text>
+<rect x="660" y="140" width="260" height="220" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="790" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="700">3. Utiliser</text>
+<text x="790" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">textContent</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">HTMLElement / HTMLInputElement + test null.</text>
+</svg>
