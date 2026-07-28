@@ -12,7 +12,26 @@ from pathlib import Path
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
-BOOK_CSS = get_book_css("ia")
+BOOK_CSS = get_book_css("ia") + """
+.illus.illus-scene {
+  margin: 1.7rem 0 1.9rem;
+  padding: 0.35rem 0;
+}
+.illus.illus-scene img {
+  max-width: min(100%, 560px);
+  max-height: 240px;
+  border-radius: 12px;
+}
+@media print {
+  .illus.illus-scene {
+    margin: 6mm auto 7mm;
+  }
+  .illus.illus-scene img {
+    max-width: 115mm !important;
+    max-height: 58mm !important;
+  }
+}
+"""
 
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
@@ -44,17 +63,41 @@ CHAPTER_FILES = [
 ]
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
-    1: [("ia-carte.png", "L'IA generative : un outil. Toi : le pilote.")],
+    1: [
+        ("ia-carte.png", "L'IA generative : un outil. Toi : le pilote."),
+        ("ia-scene-pilote.png", "Exemple : Lea briefe, l'IA propose, Lea verifie."),
+    ],
+    2: [("ia-histoire.png", "D'ou vient l'IA generative (version simple).")],
+    3: [("ia-types.png", "Classer, predire, generer, agir.")],
     4: [
         ("ia-llm.png", "Question, modele, reponse."),
         ("ia-tokens.png", "Tokens et fenetre de contexte."),
     ],
-    5: [("ia-prompts.png", "Un bon prompt = une consigne claire.")],
-    6: [("ia-limites.png", "Verifier : l'IA peut inventer.")],
+    5: [
+        ("ia-prompts.png", "Un bon prompt = une consigne claire."),
+        ("ia-scene-prompt.png", "Exemple : Max precise role, public, format."),
+    ],
+    6: [
+        ("ia-limites.png", "Verifier : l'IA peut inventer."),
+        ("ia-scene-verif.png", "Exemple : Sam croise un fait avant d'envoyer."),
+    ],
+    7: [("ia-outils.png", "Ecrire, resumer, idees, plan.")],
+    8: [("ia-multimodal.png", "Image, audio, video : toujours verifier.")],
     9: [("ia-agents.png", "Agents : but, outils, boucle.")],
     10: [("ia-ethique.png", "Donnees, respect, transparence.")],
     11: [("ia-rag.png", "Idee RAG : docs + recherche + reponse.")],
-    12: [("ia-projet.png", "Mini-projet : usage utile et verifie.")],
+    12: [
+        ("ia-projet.png", "Mini-projet : usage utile et verifie."),
+        ("ia-scene-projet.png", "Exemple : Ines livre un mini-projet signe."),
+    ],
+    13: [("ia-retenir.png", "Piloter, briefer, verifier, signer.")],
+    14: [("ia-atelier-prompts.png", "Atelier : du vague au brief net.")],
+    15: [("ia-atelier-workflow.png", "Atelier : la boucle en 6 etapes.")],
+    16: [("ia-atelier-verif.png", "Atelier : faits, sources, signature.")],
+    17: [("ia-choisir.png", "Choisir un outil selon usage et donnees.")],
+    18: [("ia-securite.png", "Comptes, secrets, pouvoirs limites.")],
+    19: [("ia-bonnes.png", "Routine plutot que hype.")],
+    20: [("ia-quiz.png", "Quiz final.")],
     21: [("ia-felicitations.png", "Bravo. Tu pilotes l'IA generative.")],
 }
 
@@ -100,8 +143,13 @@ def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, st
     return mapping
 
 
-def figure_html(src_html: str, caption: str, *, wide: bool = False) -> str:
-    cls = "illus illus-wide" if wide else "illus"
+def figure_html(src_html: str, caption: str, *, wide: bool = False, scene: bool = False) -> str:
+    classes = ["illus"]
+    if wide:
+        classes.append("illus-wide")
+    if scene:
+        classes.append("illus-scene")
+    cls = " ".join(classes)
     return (
         f'<figure class="{cls}">'
         f'<img src="{html.escape(src_html)}" alt="{html.escape(caption)}">'
@@ -119,11 +167,41 @@ def inject_figures(
 ) -> str:
     if not figures:
         return body_html
-    block = "\n".join(
-        figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
-        for src, cap in figures
-    )
-    return re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    schemas = [(src, cap) for src, cap in figures if "-scene-" not in str(src)]
+    scenes = [(src, cap) for src, cap in figures if "-scene-" in str(src)]
+
+    if schemas:
+        block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, wide=wide)
+            for src, cap in schemas
+        )
+        body_html = re.sub(r"(</h1>)", r"\1\n" + block, body_html, count=1)
+
+    if scenes:
+        scene_block = "\n".join(
+            figure_html(image_map.get(src, f"images/{src}"), cap, scene=True)
+            for src, cap in scenes
+        )
+        placed = False
+        for anchor in ("Petite histoire", "Erreur classique", "En vrai", "A toi"):
+            pattern = rf"(<h2[^>]*>\s*{re.escape(anchor)}\s*</h2>)"
+            if re.search(pattern, body_html, flags=re.I):
+                body_html = re.sub(
+                    pattern,
+                    scene_block + r"\n\1",
+                    body_html,
+                    count=1,
+                    flags=re.I,
+                )
+                placed = True
+                break
+        if not placed:
+            body_html, n = re.subn(r"(</aside>)", r"\1\n" + scene_block, body_html, count=1)
+            if n == 0:
+                body_html = re.sub(r"(</h1>)", r"\1\n" + scene_block, body_html, count=1)
+
+    return body_html
 
 
 def chapter_titles() -> list[tuple[int, str]]:

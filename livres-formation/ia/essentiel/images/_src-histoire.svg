@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f1f5f9"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f172a" font-weight="700">Petite histoire utile</text>
+<rect x="100" y="120" width="250" height="180" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="225" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">Avant</text>
+<text x="225" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">regles fixes</text>
+<rect x="375" y="120" width="250" height="180" rx="14" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="700">Apprentissage</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">sur donnees</text>
+<rect x="650" y="120" width="250" height="180" rx="14" fill="#7dd3fc" stroke="#0f172a" stroke-width="3"/>
+<text x="775" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#111827" font-weight="700">Generatif</text>
+<text x="775" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#111827" font-weight="400">produit du neuf</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#475569" font-weight="400">Comprendre d'ou ca vient, sans these.</text>
+</svg>

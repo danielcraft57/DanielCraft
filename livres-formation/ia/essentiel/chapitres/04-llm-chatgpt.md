@@ -1,20 +1,28 @@
 # Chapitre 4 - Les LLM : tokens, contexte, temperature
 
-LLM veut dire Large Language Model : grand modele de langage. En francais simple : un systeme entraine a manipuler le langage en predissant la suite probable d'un texte, a une echelle enorme. ChatGPT est un produit construit autour de tels modeles (avec interface, memoire de conversation, regles de securite, options payantes). Claude, Gemini, Copilot, Le Chat, Mistral et d'autres jouent dans la meme cour, avec des differences de style, de limites, et d'integration.
+**LLM** veut dire Large Language Model : grand modele de langage. En francais simple : un systeme entraine a manipuler le langage en predisant la suite probable d'un texte, a une echelle enorme. ChatGPT est un produit construit autour de tels modeles (avec interface, memoire de conversation, regles de securite, options payantes). Claude, Gemini, Copilot, Le Chat, Mistral et d'autres jouent dans la meme cour, avec des differences de style, de limites, et d'integration.
 
-Tu n'as pas besoin de comprendre les maths. Tu as besoin de comprendre le comportement - et trois idees pratiques qui changent tout : les tokens, la fenetre de contexte, et la temperature (ou l'esprit "creatif vs strict").
+Tu n'as pas besoin de comprendre les maths. Tu as besoin de comprendre le comportement - et trois idees pratiques qui changent tout : les **tokens**, la fenetre de **contexte**, et la **temperature** (ou l'esprit "creatif vs strict").
+
+:::retenir
+Tokens + contexte + temperature mentale : trois leviers pour piloter un LLM sans maths.
+:::
 
 ## Ce que fait vraiment un LLM
 
 Il ne "cherche pas la verite dans une base officielle" par defaut (sauf si on le couple a une recherche ou a tes documents). Il produit une reponse coherente avec ta demande et avec ce qu'il a appris. Coherent n'est pas synonyme de vrai. Fluide n'est pas synonyme de competent.
 
-Imagine un improvisateur genial qui a lu internet, des livres, des forums, du code. Il peut jouer le medecin, l'avocat, le marketeur. Parfois brillant. Parfois il invente une loi, une citation, un prix de piece detachee. D'ou l'importance des prompts, puis des hallucinations, puis de l'evaluation.
+Imagine un improvisateur genial qui a lu internet, des livres, des forums, du code. Il peut jouer le medecin, l'avocat, le marketeur. Parfois brillant. Parfois il invente une loi, une citation, un prix de piece detachee. D'ou l'importance des **prompts**, puis des hallucinations, puis de l'evaluation.
 
 ## Tokens : l'unite de lecture et d'ecriture
 
 Le modele ne lit pas vraiment "mot par mot" comme a l'ecole. Il decoupe le texte en petits morceaux appeles tokens. Un token, ce peut etre un mot court, un bout de mot, une ponctuation. "Bonjour" peut etre un token ; un mot long ou rare peut en prendre plusieurs. Pourquoi tu t'en fiches... jusqu'au jour ou tu colles un roman, ou tu paies une API au token, ou tu te demandes pourquoi le modele "oublie" le debut.
 
 En pratique, plus tu envoies de texte, plus tu consommes de tokens en entree. Plus il repond long, plus tu consommes en sortie. Les interfaces grand public masquent souvent ce compteur. Les API le montrent. Pour un debutant, retiens : sois precis, evite de coller dix PDF inutiles, demande la longueur dont tu as besoin. Tu gagnes en clarte et parfois en argent.
+
+:::astuce
+Impose "8 lignes", "pas d'introduction", "commence par la reponse" : tu pilotes tokens et patience d'un coup.
+:::
 
 ## Fenetre de contexte : ce que le modele "voit" maintenant
 
@@ -27,6 +35,10 @@ Certains produits ajoutent une "memoire" entre conversations (ils retiennent que
 La temperature, dans beaucoup d'API, est un reglage qui influence le caractere aleatoire des choix du modele. Temperature basse : reponses plus stables, plus "serrees", parfois repetitives. Temperature haute : plus de variete, plus de surprise, parfois plus d'invention. Dans les chats grand public, tu n'as pas toujours un bouton "temperature". Tu as l'equivalent mental : "sois creatif, propose 10 variantes" versus "sois strict, factuel, dis inconnu si tu ne sais pas".
 
 Pour un devis, un reglement, une note aux parents : mode strict. Pour un slogan, un brainstorm, une metaphore pedagogique : mode creatif, puis filtre humain. Lea demande dix accroches (creatif) puis en garde deux (filtre). Max demande une reformulation fidele de ses notes (strict). Sam demande trois analogies (creatif) puis choisit celle qui colle a sa classe.
+
+:::attention
+Un long contexte mal organise noie le signal. Un court contexte bien choisi bat souvent un dump geant.
+:::
 
 ## ChatGPT et la famille 2026
 
@@ -47,11 +59,12 @@ Pose la meme question de deux facons. Version floue : "parle-moi du SEO". Versio
 ## A toi
 
 Choisis ton outil principal pour ce livre. Note son nom. Ecris une phrase d'identite a recoler en debut de prompt : qui tu es, pour qui tu ecris, ton ton. Exemple : "Je suis Max, plombier independant. Public : clients particuliers. Ton : clair, calme, sans blabla."
+
 ## Tokens : exemples concrets
 
 Une phrase courte consomme peu. Un collage de cinquante pages de PDF consomme beaucoup, parfois au-dela de ce que le modele peut vraiment "exploiter" utilement meme si ca rentre. Une reponse qui demarre par trois pages de preambule "Dans un monde en constante evolution" consomme ta patience et tes tokens de sortie pour rien. D'ou les consignes : "8 lignes", "pas d'introduction", "commence par la reponse". Tu ne micro-management pas par plaisir. Tu pilotes la ressource.
 
-Certains outils affichent un compteur. D'autres non. En API, tu le verras sur la facture. Meme en forfait, un usage gaspillé te rapproche des limites. Habitude saine : chaque piece jointe doit justifier sa presence en une phrase dans ton brief ("j'attache la page tarifs seulement").
+Certains outils affichent un compteur. D'autres non. En API, tu le verras sur la facture. Meme en forfait, un usage gaspille te rapproche des limites. Habitude saine : chaque piece jointe doit justifier sa presence en une phrase dans ton brief ("j'attache la page tarifs seulement").
 
 ## Contexte long : pas une memoire magique
 

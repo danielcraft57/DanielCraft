@@ -1,8 +1,12 @@
-# Chapitre 10 - Ethique, RGPD et securite des donnees
+﻿# Chapitre 10 - Ethique, RGPD et securite des donnees
 
-L'IA mange du contexte. Plus tu lui donnes d'infos, plus la reponse peut etre "perso". Plus tu lui donnes d'infos, plus tu exposes des personnes. Ethique et RGPD ne sont pas des chapitres ennuyeux reserves aux juristes. Ce sont des reflexes de respect : minimiser, anonymiser, informer, securiser, assumer.
+L'IA mange du **contexte**. Plus tu lui donnes d'infos, plus la reponse peut etre "perso". Plus tu lui donnes d'infos, plus tu exposes des personnes. Ethique et **RGPD** ne sont pas des chapitres ennuyeux reserves aux juristes. Ce sont des reflexes de respect : **minimiser**, anonymiser, informer, securiser, assumer.
 
 Chez DanielCraft, on pose une regle simple : si tu n'aimerais pas voir cette donnee affichee sur un ecran de metro, ne la colle pas dans un outil grand public. Et si la donnee concerne quelqu'un d'autre, la barre monte encore.
+
+:::retenir
+Si tu n'aimerais pas voir cette donnee sur un ecran de metro, ne la colle pas dans un outil grand public.
+:::
 
 ## Minimiser
 
@@ -10,11 +14,15 @@ Tu n'as pas besoin du numero de securite sociale pour reformuler un mail. Tu n'a
 
 ## Anonymiser et pseudonymiser
 
-Anonymiser vraiment est plus dur qu'on croit (un petit village + un metier rare = reidentifiability). Fais de ton mieux : enleve noms, adresses exactes, telephones, numeros de dossier. Pour un usage interne serieux, choisis des outils et des contrats adaptes - pas seulement "c'est dans le cloud donc OK".
+**Anonymiser** vraiment est plus dur qu'on croit (un petit village + un metier rare = reidentifiability). Fais de ton mieux : enleve noms, adresses exactes, telephones, numeros de dossier. Pour un usage interne serieux, choisis des outils et des contrats adaptes - pas seulement "c'est dans le cloud donc OK".
 
 ## Bases RGPD (idee debutant)
 
 Le RGPD encadre le traitement des donnees personnelles en Europe. Idees cles : finalite claire, minimisation, securite, droits des personnes, responsabilite. L'IA n'efface pas ca. Elle l'accentue, parce que coller un fichier dans un chat est devenu trop facile. Si tu es pro, parle a quelqu'un de competent pour ton cas. Ce livre n'est pas un conseil juridique personnalise ; c'est une boussole de prudence.
+
+:::attention
+Dire "c'est anonyme" des qu'on enleve le prenom ne suffit pas - surtout en petit village ou metier rare.
+:::
 
 ## Ethique au-dela de la loi
 
@@ -22,7 +30,7 @@ Meme "legal", un usage peut etre moche : generer un faux avis client, cloner une
 
 ## Securite des donnees (ponte vers le chapitre securite)
 
-Mots de passe uniques, double authentification, pas de compte partage "equipe" avec le meme login, pas de collages de cles API dans le chat, choix d'outils avec options pro / retention / training opt-out quand c'est critique. On detaille plus loin. Ici, retiens le lien : ethique sans securite technique, c'est un voeu pieux.
+Mots de passe uniques, double authentification, pas de compte partage "equipe" avec le meme login, pas de collages de cles API dans le chat, choix d'outils avec options pro / retention / training opt-out quand c'est critique. On detaille plus loin. Ici, retiens le lien : ethique sans **securite** technique, c'est un voeu pieux.
 
 ## Erreur classique
 
@@ -35,13 +43,18 @@ Ouvre ton historique de chat recent. Identifie une donnee que tu n'aurais pas du
 ## A toi
 
 Ecris ta charte perso en 6 lignes : ce que je colle, ce que je n'y colle jamais, outils autorises, qui est informe, ou je stocke les prompts, qui valide les contenus sensibles.
+
 ## Scenarios a refuser
 
-Coller la liste complete d'eleves pour "personnaliser". Generer un faux avis 5 etoiles. Cloner la voix du dirigeant pour un message interne "drole". Utiliser des photos de clients sans base legale pour entrainer un truc. Laisser un stagiaire brancher un agent sur la boite mail partagée sans charte. Si un scenario te met mal a l'aise avant meme l'avis juridique, c'est deja un signal.
+Coller la liste complete d'eleves pour "personnaliser". Generer un faux avis 5 etoiles. Cloner la voix du dirigeant pour un message interne "drole". Utiliser des photos de clients sans base legale pour entrainer un truc. Laisser un stagiaire brancher un agent sur la boite mail partagee sans charte. Si un scenario te met mal a l'aise avant meme l'avis juridique, c'est deja un signal.
 
 ## Transparence utile
 
 Tu n'as pas a mettre un bandeau "IA" sur chaque virgule. Tu as a etre honnete quand ca compte : devoir evalue, contenu journalistique sensible, decision qui affecte quelqu'un, engagement contractuel. La transparence n'est pas un gadget ; c'est une maintenance de confiance.
+
+:::astuce
+Ecris ta charte perso en 6 lignes et colle-la la ou tu ouvres ton outil - avant le prochain collage.
+:::
 
 ## Scene de terrain (developpee)
 

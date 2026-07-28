@@ -1,20 +1,28 @@
-# Chapitre 2 - Une petite histoire utile (sans chronologie ennuyeuse)
+﻿# Chapitre 2 - Une petite histoire utile (sans chronologie ennuyeuse)
 
 Tu n'as pas besoin d'une liste de dates pour utiliser l'IA. Tu as besoin de comprendre d'ou vient le comportement actuel des outils, pour ne pas etre surpris. L'histoire de l'IA, c'est surtout l'histoire de machines qui apprennent a reconnaitre des motifs : d'abord sur des regles ecrites a la main, puis sur des donnees, puis sur des modeles de plus en plus grands capables de generer du contenu.
 
-Dans les annees ou l'IA restait "dans les labos", on parlait surtout de systemes experts, de reconnaissance de formes, de jeux (echecs, go), de traduction automatique encore raide. Puis le machine learning a pris le dessus : au lieu d'ecrire toutes les regles, on montre des exemples et on laisse le modele ajuster ses parametres. Ensuite est arrive le deep learning : des reseaux de neurones profonds, tres bons sur l'image, la voix, puis le langage. Enfin, les grands modeles de langage (LLM) ont rendu l'IA conversationnelle accessible a tout le monde.
+Dans les annees ou l'IA restait "dans les labos", on parlait surtout de systemes experts, de reconnaissance de formes, de jeux (echecs, go), de traduction automatique encore raide. Puis le **machine learning** a pris le dessus : au lieu d'ecrire toutes les regles, on montre des exemples et on laisse le modele ajuster ses parametres. Ensuite est arrive le **deep learning** : des reseaux de neurones profonds, tres bons sur l'image, la voix, puis le langage. Enfin, les grands modeles de langage (**LLM**) ont rendu l'IA conversationnelle accessible a tout le monde.
+
+:::retenir
+L'IA generative est statistique, pas morale : suite plausible, pas encyclopedie officielle.
+:::
 
 ## Pourquoi ca compte pour toi
 
 Parce que les outils d'aujourd'hui ne "savent" pas au sens scolaire. Ils ont ete formes a predire des suites plausibles a partir de donnees. C'est pour ca qu'ils sont brillants pour reformuler, resumer, ideer... et dangereux si tu les traites comme une encyclopedie officielle. L'histoire explique le temperament de la machine : elle est statistique, pas morale ; generative, pas omnisciente.
 
-Chez DanielCraft, on resume souvent ainsi : avant, l'IA classait ou predissait dans des cases etroites. Maintenant, elle ecrit, dessine, parle, code, et enchaine parfois des actions. Le passage a l'IA generative grand public a change le rapport au travail quotidien. Ce n'est plus "un outil pour data scientists seulement". C'est un outil pour Lea, Max, Sam - et toi.
+Chez DanielCraft, on resume souvent ainsi : avant, l'IA classait ou predissait dans des cases etroites. Maintenant, elle ecrit, dessine, parle, code, et enchaine parfois des actions. Le passage a l'**IA generative** grand public a change le rapport au travail quotidien. Ce n'est plus "un outil pour data scientists seulement". C'est un outil pour Lea, Max, Sam - et toi.
 
 ## Quelques jalons (version poche)
 
-Les annees 2010 ont popularise le deep learning sur l'image et la voix. Les annees suivantes ont vu des modeles de langage de plus en plus grands. Puis les interfaces de chat ont rendu ca utilisable sans installation savante. En parallele, les generateurs d'images, d'audio et de video ont suivi. En 2025-2026, on parle aussi d'agents (des systemes qui enchainent des outils), de RAG (relier le modele a tes documents), de multimodal (texte + image + son dans le meme fil), et de couts d'usage plus visibles via les API.
+Les annees 2010 ont popularise le deep learning sur l'image et la voix. Les annees suivantes ont vu des modeles de langage de plus en plus grands. Puis les interfaces de chat ont rendu ca utilisable sans installation savante. En parallele, les generateurs d'images, d'audio et de video ont suivi. En 2025-2026, on parle aussi d'**agents** (des systemes qui enchainent des outils), de **RAG** (relier le modele a tes documents), de multimodal (texte + image + son dans le meme fil), et de couts d'usage plus visibles via les API.
 
 Tu n'as pas a retenir les noms de papier de recherche. Retiens le mouvement : plus de donnees, plus de calcul, meilleures interfaces, plus de risques de confiance aveugle. Chaque vague apporte des gains et de nouveaux pieges.
+
+:::attention
+Chaque vague a son accident typique : photo fake, voix clonee, agent qui envoie trop tot, resume qui invente une decision.
+:::
 
 ## Ce qui a change dans le quotidien
 
@@ -37,9 +45,14 @@ Demande a ton assistant : "Explique en dix lignes comment on est passe des syste
 ## A toi
 
 Ecris deux phrases : (1) ce que l'IA generative change deja dans ton quotidien, (2) ce qu'elle ne changera jamais dans ton metier (jugement, relation, responsabilite...).
-## Du laboratoire au téléphone
+
+## Du laboratoire au telephone
 
 Le basculement grand public n'est pas seulement une affaire de puissance de calcul. C'est une affaire d'interface. Tant que l'IA restait derriere des API obscures ou des logiciels specialises, elle concernait surtout des equipes techniques. Le chat a change la donne : tu ecris en francais, tu obtiens une reponse en francais. Le cout d'entree est tombe. Le risque de confiance aveugle a grimpe en meme temps, parce que la barriere technique qui forçait a ralentir a disparu.
+
+:::astuce
+Apprends les pieges (invention, biais, fuite, automatisation prematuree) : tu survivras aux renommages d'outils.
+:::
 
 Entre temps, les modeles d'images ont rendu possible un moodboard en trente secondes. Les modeles de voix ont rendu possible une fausse presence orale. Les agents ont commence a enchaîner des outils. Chaque vague a son slogan marketing. Chaque vague a son accident typique : photo fake prise pour vraie, voix clonee pour une arnaque, agent qui envoie un mail trop tot, resume qui invente une decision de reunion.
 

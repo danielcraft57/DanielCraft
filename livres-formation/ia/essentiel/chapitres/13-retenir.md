@@ -1,4 +1,4 @@
-# Chapitre 13 - A retenir (carte mentale)
+# Chapitre 13 - A retenir (l'essentiel)
 
 Si tu ne devais garder qu'une page, ce serait celle-ci. L'IA generative est un accelerateur de brouillon, pas une source de verite automatique. Tu pilotes. Elle propose. Tu verifies. Tu assumes.
 

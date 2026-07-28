@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f1f5f9"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f172a" font-weight="700">Types d'IA (carte simple)</text>
+<rect x="70" y="110" width="200" height="200" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="170" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">Classer</text>
+<text x="170" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">detecter</text>
+<rect x="290" y="110" width="200" height="200" rx="14" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+<text x="390" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">Predire</text>
+<text x="390" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">estimer</text>
+<rect x="510" y="110" width="200" height="200" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="610" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">Generer</text>
+<text x="610" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">texte/image</text>
+<rect x="730" y="110" width="200" height="200" rx="14" fill="#7dd3fc" stroke="#0f172a" stroke-width="3"/>
+<text x="830" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827" font-weight="700">Agir</text>
+<text x="830" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#111827" font-weight="400">agents</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#475569" font-weight="400">Ce livre = surtout generer + piloter.</text>
+</svg>

@@ -1,8 +1,12 @@
-# Chapitre 7 - L'IA dans le quotidien : ecrire, resumer, ideer
+﻿# Chapitre 7 - L'IA dans le quotidien : ecrire, resumer, ideer
 
-Le meilleur usage debutant n'est pas "remplacer mon metier". C'est "debloquer les taches repetitives a bas risque". Ecrire un mail, resumer une reunion, clarifier une offre, preparer un plan, reformuler un message trop sec, generer des idees puis choisir. Ces gestes, faits proprement, changent une semaine de travail sans mettre en danger un client.
+Le meilleur usage debutant n'est pas "remplacer mon metier". C'est "debloquer les taches repetitives a bas risque". **Ecrire** un mail, **resumer** une reunion, clarifier une offre, preparer un plan, reformuler un message trop sec, **ideer** puis choisir. Ces gestes, faits proprement, changent une semaine de travail sans mettre en danger un client.
 
-Chez DanielCraft, on recommande de construire une petite boite a outils personnelle : trois a cinq prompts types, ranges quelque part, reutilises, ameliores. Pas cinquante. Trois qui marchent battent cinquante oublies.
+Chez DanielCraft, on recommande de construire une petite boite a outils personnelle : trois a cinq **prompts** types, ranges quelque part, reutilises, ameliores. Pas cinquante. Trois qui marchent battent cinquante oublies.
+
+:::astuce
+Trois prompts types nommes (Mail clair, Resume action, Idees classees) battent cinquante "prompts miracles" oublies.
+:::
 
 ## Ecrire et reformuler
 
@@ -10,7 +14,11 @@ Tu as des notes brutes. Tu demandes une version claire pour un public precise. T
 
 ## Resumer
 
-Colle un compte-rendu long, une trame d'appel, un article. Demande : resume en 8 lignes, 5 decisions, 3 actions avec responsables. Ou : "explique ca a un collegue presse". Attention au contexte : ne colle pas un dossier confidentiel dans un outil non adapte. Anonymise. Coupe les noms si besoin. Le resume est un gain de temps enorme - et un risque RGPD si tu es negligant.
+Colle un compte-rendu long, une trame d'appel, un article. Demande : resume en 8 lignes, 5 decisions, 3 actions avec responsables. Ou : "explique ca a un collegue presse". Attention au **contexte** : ne colle pas un dossier confidentiel dans un outil non adapte. Anonymise. Coupe les noms si besoin. Le resume est un gain de temps enorme - et un risque **RGPD** si tu es negligant.
+
+:::attention
+Ne colle pas un dossier confidentiel pour "gagner deux minutes" : anonymise d'abord, ou change d'outil.
+:::
 
 ## Ideer sans te noyer
 
@@ -35,13 +43,18 @@ Choisis une tache de cette semaine. Chronometre ta version sans IA. Puis avec IA
 ## A toi
 
 Cree trois prompts types nommes (ex. Mail clair, Resume action, Idees classees). Teste-les une fois. Range-les.
+
 ## Semaine type d'un pilote
 
 Lundi : resume de reunion -> actions. Mardi : deux mails difficiles. Mercredi : plan de contenu ou de seance. Jeudi : reformulation d'une offre. Vendredi : retrospective "qu'est-ce que l'IA a rate cette semaine ?". Ce rythme bat l'usage impulsif du dimanche soir sur un sujet critique.
 
 ## Modeles de messages
 
-Garde des squelettes : relance douce, relance ferme, excuse claire, demande d'information, confirmation de rendez-vous. L'IA remplit. Toi tu calibrer le niveau de chaleur et les faits. Avec le temps, tu ecriras parfois plus vite sans elle - et ce sera aussi une victoire : tu auras digere des structures.
+Garde des squelettes : relance douce, relance ferme, excuse claire, demande d'information, confirmation de rendez-vous. L'IA remplit. Toi tu calibres le niveau de chaleur et les faits. Avec le temps, tu ecriras parfois plus vite sans elle - et ce sera aussi une victoire : tu auras digere des structures.
+
+:::retenir
+Bas risque d'abord, haut jugement toujours : l'IA debloque le brouillon, pas la relation humaine.
+:::
 
 ## Scene de terrain (developpee)
 

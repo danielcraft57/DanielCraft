@@ -1,24 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
-  <rect width="1000" height="420" fill="#f1f5f9"/>
-  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Ethique et donnees : trois gardes-fous</text>
-
-  <rect x="50" y="90" width="280" height="220" rx="14" fill="#111827"/>
-  <text x="190" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7dd3fc" font-weight="700">1. Donnees</text>
-  <text x="190" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#ffffff" font-weight="700">ne pas coller</text>
-  <text x="190" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#94a3b8">secrets, clients,</text>
-  <text x="190" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#94a3b8">sante, salaires</text>
-
-  <rect x="360" y="90" width="280" height="220" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
-  <text x="500" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#111827" font-weight="700">2. Respect</text>
-  <text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a" font-weight="700">personnes</text>
-  <text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">pas de tromperie,</text>
-  <text x="500" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">pas de copie aveugle</text>
-
-  <rect x="670" y="90" width="280" height="220" rx="14" fill="#7dd3fc" stroke="#111827" stroke-width="3"/>
-  <text x="810" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="700">3. Transparence</text>
-  <text x="810" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a" font-weight="700">dire si besoin</text>
-  <text x="810" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#111827">aide IA possible,</text>
-  <text x="810" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#111827">toi responsable</text>
-
-  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a">Donnees, respect, transparence : le minimum pour bien faire.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f1f5f9"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f172a" font-weight="700">Ethique et donnees</text>
+<rect x="100" y="120" width="250" height="180" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="225" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">Minimiser</text>
+<rect x="375" y="120" width="250" height="180" rx="14" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0f172a" font-weight="700">Anonymiser</text>
+<rect x="650" y="120" width="250" height="180" rx="14" fill="#7dd3fc" stroke="#0f172a" stroke-width="3"/>
+<text x="775" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#111827" font-weight="700">Respect</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#475569" font-weight="400">Pas de secrets clients dans le prompt.</text>
 </svg>

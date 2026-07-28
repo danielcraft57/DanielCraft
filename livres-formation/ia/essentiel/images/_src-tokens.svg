@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f1f5f9"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0f172a" font-weight="700">Tokens et contexte</text>
+<rect x="100" y="110" width="350" height="200" rx="14" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+<text x="275" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">Tokens</text>
+<text x="275" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">briques de texte</text>
+<rect x="520" y="110" width="380" height="200" rx="14" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+<text x="710" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f172a" font-weight="700">Fenetre</text>
+<text x="710" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">ce que le modele voit</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#475569" font-weight="400">Trop long = coupe ou oubli.</text>
+</svg>

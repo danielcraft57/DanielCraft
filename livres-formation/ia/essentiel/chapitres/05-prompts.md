@@ -1,12 +1,20 @@
-# Chapitre 5 - Prompts et system prompts : briefer comme un pro
+﻿# Chapitre 5 - Prompts et system prompts : briefer comme un pro
 
-Un prompt, c'est ta demande. Pas une formule magique. Pas une incantation. Un brief. Plus il est clair, plus la reponse a des chances d'etre utile. Chez DanielCraft, on enseigne un squelette simple que tu peux enrichir : role, tache, public, contraintes, format, et faits fournis. Ensuite, on ajoute l'idee du system prompt : la consigne durable qui cadre le comportement de l'assistant avant meme ta question du jour.
+Un **prompt**, c'est ta demande. Pas une formule magique. Pas une incantation. Un brief. Plus il est clair, plus la reponse a des chances d'etre utile. Chez DanielCraft, on enseigne un squelette simple que tu peux enrichir : role, tache, public, contraintes, format, et faits fournis. Ensuite, on ajoute l'idee du **system prompt** : la consigne durable qui cadre le comportement de l'assistant avant meme ta question du jour.
+
+:::retenir
+Prompt = brief clair (role, tache, public, contraintes, format, faits). System prompt = politique de maison durable.
+:::
 
 ## Le squelette du prompt utile
 
-Role : qui doit "jouer" le modele (conseiller sober pour artisans, prof de 6e, relecteur exigeant). Tache : ce que tu veux exactement (plan, mail, checklist, reformulation). Public : pour qui c'est ecrit. Contraintes : longueur, ton, interdits, niveau de jargon, langue. Format : puces, tableau, email pret a envoyer, sections numerotees. Faits : ce que tu apportes (prix, dates, details vrais) pour eviter l'invention.
+**Role** : qui doit "jouer" le modele (conseiller sober pour artisans, prof de 6e, relecteur exigeant). Tache : ce que tu veux exactement (plan, mail, checklist, reformulation). Public : pour qui c'est ecrit. Contraintes : longueur, ton, interdits, niveau de jargon, langue. Format : puces, tableau, email pret a envoyer, sections numerotees. Faits : ce que tu apportes (prix, dates, details vrais) pour eviter l'invention.
 
 Exemple pour Max : "Tu es relecteur pour un artisan. Reecris ce devis en francais simple pour un particulier presse. Garde mes prix exacts. 12 lignes max. Pas de promesse de delai si je ne l'ai pas ecrite. Voici mes notes brutes : ..." Tu vois la difference avec "ameliorer mon devis" ?
+
+:::astuce
+"Tu es relecteur pour un artisan. Reecris ce devis en francais simple, 12 lignes max, garde mes prix exacts." bat "ameliorer mon devis".
+:::
 
 ## System prompt : le cadre durable
 
@@ -16,11 +24,15 @@ Le system prompt n'est pas une baguette. C'est une politique de maison. Il redui
 
 ## Iterer sans tourner en rond
 
-Premier jet : demande large mais cadree. Deuxieme : "garde la structure, coupe le blabla, renforce l'exemple 2". Troisieme : "maintenant version plus courte pour un SMS". L'iteration intelligente bat le "regenerer" aveugle. Si ca part en vrille, nouveau fil + brief reconstitue. Ton contexte restera propre.
+Premier jet : demande large mais cadree. Deuxieme : "garde la structure, coupe le blabla, renforce l'exemple 2". Troisieme : "maintenant version plus courte pour un SMS". L'**iteration** intelligente bat le "regenerer" aveugle. Si ca part en vrille, nouveau fil + brief reconstitue. Ton **contexte** restera propre.
 
 ## Techniques simples qui marchent
 
 Donne un exemple de ton style ("ecris comme ceci : ..."). Demande des variantes puis choisis. Impose "si information manquante, pose 3 questions avant de rediger". Demande une auto-critique : "liste 5 faiblesses de ta reponse". Separe clairement : "CONTEXTE :" puis "DEMANDE :". Pour le mode strict, ajoute "n'invente aucune source ; dis inconnu".
+
+:::astuce
+Separe critique et reecriture : "liste objections d'abord" puis "corrige uniquement les points 2 et 5".
+:::
 
 ## Ce qu'il ne faut pas faire
 
@@ -37,6 +49,7 @@ Prends une tache reelle. Ecris un mauvais prompt en une ligne. Puis reecris-le a
 ## A toi
 
 Cree ton "prompt signature" en 8 a 12 lignes : identite, public, ton, 3 interdits, format prefere. Colle-le dans les instructions de ton outil si possible. Sinon, garde-le dans un fichier texte a recopier.
+
 ## Anatomie d'un system prompt solide
 
 Un bon system prompt dit qui tu es (ou qui l'assistant doit etre pour toi), pour qui tu ecris, quel ton, quelles langues, quels interdits, comment gerer l'inconnu, quel format par defaut, et parfois quelles questions poser avant de rediger. Il evite les romans. Il evite aussi le vide. Dix a vingt lignes suffisent souvent. Au-dela, tu risques les contradictions ("sois concis" + "developpe toujours").

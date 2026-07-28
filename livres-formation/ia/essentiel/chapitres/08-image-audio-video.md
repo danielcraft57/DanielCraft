@@ -1,8 +1,12 @@
 # Chapitre 8 - Multimodal : image, audio, video
 
-Multimodal, en mots simples, veut dire : l'outil accepte ou produit plusieurs formes de media, pas seulement du texte. Tu colles une photo et tu demandes ce qu'elle montre. Tu dictes un message. Tu generes une image a partir d'une description. Tu transcris une reunion. Tu resumes une video. En 2026, beaucoup d'assistants melangent deja ces gestes dans le meme fil. C'est pratique. Ce n'est pas magique.
+**Multimodal**, en mots simples, veut dire : l'outil accepte ou produit plusieurs formes de media, pas seulement du texte. Tu colles une photo et tu demandes ce qu'elle montre. Tu dictes un message. Tu generes une image a partir d'une description. Tu transcris une reunion. Tu resumes une video. En 2026, beaucoup d'assistants melangent deja ces gestes dans le meme fil. C'est pratique. Ce n'est pas magique.
 
 Chez DanielCraft, on traite le multimodal comme un accelerateur de comprehension et de brouillon visuel ou oral - jamais comme une preuve legale automatique, jamais comme un remplacement d'une photo reelle quand la realite compte.
+
+:::attention
+"L'IA a vu la photo" n'egal pas "c'est exact". Verifie nombres, noms propres et zones floues.
+:::
 
 ## Image en entree : decrire, extraire, expliquer
 
@@ -12,15 +16,19 @@ Ne colle pas une piece d'identite, un dossier medical complet, ou une fiche paie
 
 ## Image en sortie : generer un visuel
 
-Tu decris une ambiance, un style, un sujet. Le modele propose une image. Utile pour moodboards, illustrations de blog non critiques, idees de mise en page, variantes de logo tres en amont. Dangereux ou fragile pour : fausse photo de produit vendu, deepfake, imitation d'un artiste vivant sans cadre clair, visuel "temoignage" invente. Lea peut generer une direction artistique ; elle ne publie pas une fausse photo de boutique comme si c'etait la sienne.
+Tu decris une ambiance, un style, un sujet. Le modele propose une image. Utile pour moodboards, illustrations de blog non critiques, idees de mise en page, variantes de logo tres en amont. Dangereux ou fragile pour : fausse photo de produit vendu, **deepfake**, imitation d'un artiste vivant sans cadre clair, visuel "temoignage" invente. Lea peut generer une direction artistique ; elle ne publie pas une fausse photo de boutique comme si c'etait la sienne.
 
 ## Audio : dicter, transcrire, resumer
 
-La dictée accelere la prise de notes. La transcription transforme une reunion en texte. Le resume tire des actions. Cadre : qui a consenti a l'enregistrement ? Ou vont les fichiers ? Combien de temps sont-ils gardes ? Pour une reunion d'equipe interne avec accord, souvent OK avec outil adapte. Pour un client qui n'a pas ete informe, pause. Sam peut transcrire un oral d'entrainement ; il ne diffuse pas la voix d'un eleve sans cadre.
+La **dictee** accelere la prise de notes. La **transcription** transforme une reunion en texte. Le resume tire des actions. Cadre : qui a consenti a l'enregistrement ? Ou vont les fichiers ? Combien de temps sont-ils gardes ? Pour une reunion d'equipe interne avec accord, souvent OK avec outil adapte. Pour un client qui n'a pas ete informe, pause. Sam peut transcrire un oral d'entrainement ; il ne diffuse pas la voix d'un eleve sans cadre.
 
 ## Video : encore plus lourd
 
-Generer ou editer de la video coute cher en calcul, en temps, en risques de fake. Pour un debutant, l'usage sain est souvent : resumer une video existante dont tu as le droit, extraire des idees, preparer un script - pas fabriquer une fausse interview. Les outils evoluent vite ; la prudence humaine doit rester stable.
+Generer ou editer de la video coute cher en calcul, en temps, en risques de fake. Pour un debutant, l'usage sain est souvent : resumer une video existante dont tu as le droit, extraire des idees, preparer un **script** - pas fabriquer une fausse interview. Les outils evoluent vite ; la prudence humaine doit rester stable.
+
+:::astuce
+Brief multimodal comme le texte : "liste les elements visibles, signale l'illisible, n'invente aucune dimension."
+:::
 
 ## Brief multimodal utile
 
@@ -37,6 +45,7 @@ Prends une image non sensible de ton travail (schema, capture d'ecran anonyme, o
 ## A toi
 
 Ecris ta regle multimodal : ce que tu acceptes (dictee, moodboard, transcription interne...) et ce que tu refuses (piece ID, fausse photo produit, voix d'autrui sans accord).
+
 ## Qualite d'entree = qualite de sortie
 
 Photo floue, contre-jour, document plie : la description souffrira. Audio avec tele et micro loin : la transcription souffrira. Avant d'accuser le modele, ameliore la capture. Puis demande explicitement de signaler les zones incertains. Un "je vois 12, peut-etre 18" est plus utile qu'un "18" invente.
@@ -44,6 +53,10 @@ Photo floue, contre-jour, document plie : la description souffrira. Audio avec t
 ## Droits et deepfakes
 
 Generer l'image d'une personne reelle, cloner une voix, fabriquer une video d'un evenement invente : zone legale et ethique sensible. Par defaut, ne le fais pas sans cadre clair et consentements. Pour une marque, prefere des visuels clairement illustres / fictifs quand ce n'est pas une photo reelle, et dis-le si besoin. La confiance se construit lentement et se perd vite.
+
+:::retenir
+Multimodal = accelerateur de brouillon visuel ou oral, jamais preuve legale automatique.
+:::
 
 ## Scene de terrain (developpee)
 
