@@ -64,13 +64,22 @@ CHAPTER_FILES = [
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [("fin-carte.png", "La finance : comprendre l'argent pour mieux decider.")],
-    2: [("fin-flux.png", "L'argent entre, l'argent sort : suivre le flux.")],
-    3: [("fin-budget.png", "Un budget simple pour voir clair.")],
+    2: [
+        ("fin-flux.png", "L'argent entre, l'argent sort : suivre le flux."),
+        ("fin-scene-flux.png", "Exemple : Nora suit salaire, loyer et epargne."),
+    ],
+    3: [
+        ("fin-budget.png", "Un budget simple pour voir clair."),
+        ("fin-scene-budget.png", "Exemple : Max separe charges fixes et reste."),
+    ],
     4: [("fin-epargne.png", "Mettre de cote, meme un peu.")],
     5: [("fin-dette.png", "Credit et dette : comprendre avant de signer.")],
     6: [("fin-interets.png", "Les taux sont le prix du temps.")],
     7: [("fin-compte.png", "Compte, carte et moyens de paiement.")],
-    8: [("fin-tresorerie.png", "Tresorerie : l'air de l'entreprise.")],
+    8: [
+        ("fin-tresorerie.png", "Tresorerie : l'air de l'entreprise."),
+        ("fin-scene-tresorerie.png", "Exemple : Sam anticipe les encaissements a 30 jours."),
+    ],
     9: [("fin-couts-marge.png", "Couts, prix, marge : voir la verite.")],
     10: [("fin-devis-facture.png", "Devis, facture et cash d'entreprise.")],
     11: [("fin-impots.png", "Impots : anticiper au lieu de subir.")],

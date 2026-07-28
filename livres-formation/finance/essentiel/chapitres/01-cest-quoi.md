@@ -14,7 +14,7 @@ Nora regarde son application bancaire et se demande a quoi servent vraiment les 
 Avant de "placer", ouvre ton appli bancaire et note simplement ce que tu as deja : compte, livrets, credits. Ta carte personnelle commence la.
 :::
 
-## Marches financiers : l'image mentale
+## Marches financiers : l'idee simple
 
 Un marche financier, c'est un lieu (souvent electronique) ou l'on echange des titres : actions, obligations, parts de fonds, parfois des contrats plus techniques. Le prix n'est pas fixe par un magasin. Il se forme par rencontre entre acheteurs et vendeurs. Si beaucoup de gens veulent la meme action et peu veulent la vendre, le prix monte. Si l'inverse arrive, le prix baisse. C'est rude, parfois bruyant, souvent imprevisible a court terme. Mais l'idee de fond est simple : quelqu'un qui a besoin de financement (une entreprise, un Etat) rencontre quelqu'un qui a de l'**epargne** a placer (toi, un fonds, une assurance). Le marche est le pont. Le pont peut trembler. D'ou la prudence.
 
