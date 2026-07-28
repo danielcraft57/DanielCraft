@@ -1,7 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
 <rect width="1000" height="440" fill="#eef3f0"/>
-<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Lire un bilan (sans devenir comptable)</text>
-<rect x="150" y="120" width="700" height="220" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
-<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Lire un bilan (sans devenir co</text>
-<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Schema pedagogique DanielCraft</text>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Bilan simplifie</text>
+<rect x="100" y="100" width="380" height="240" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="290" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1b3a2f" font-weight="700">Actif</text>
+<text x="290" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">caisse, stocks,</text>
+<text x="290" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">machines...</text>
+<rect x="520" y="100" width="380" height="110" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="710" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Dettes</text>
+<text x="710" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">ce que l'on doit</text>
+<rect x="520" y="230" width="380" height="110" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="710" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1b3a2f" font-weight="700">Capitaux propres</text>
+<text x="710" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="400">part actionnaires</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Actif = dettes + capitaux propres.</text>
 </svg>

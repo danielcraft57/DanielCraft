@@ -1,4 +1,4 @@
 Illustration pedagogique finance actions-obligations - lecture de bilan.
-Scene simple : Lea et Max devant un tableau avec Actif, Passif, Dette, Tresorerie et un mini calcul de ratio dette/capitaux propres.
+Scene : Nora et Max devant un tableau avec Actif, Passif, Dettes, Tresorerie et un mini calcul Dette / Capitaux propres.
 Style clair, plat, lisible, ambiance formation debutant DanielCraft.
 Tout texte visible en FRANCAIS uniquement.

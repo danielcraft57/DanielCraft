@@ -1,7 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
 <rect width="1000" height="440" fill="#eef3f0"/>
-<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Atelier : analyser une action fictive</text>
-<rect x="150" y="120" width="700" height="220" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
-<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Atelier : analyser une action </text>
-<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Schema pedagogique DanielCraft</text>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Atelier action : fiche LumoTech</text>
+<rect x="80" y="110" width="200" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="180" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">PER</text>
+<text x="180" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2d5a45" font-weight="700">16</text>
+<rect x="300" y="110" width="200" height="200" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="400" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Payout</text>
+<text x="400" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2d5a45" font-weight="700">30 %</text>
+<rect x="520" y="110" width="200" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="620" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Dette / FP</text>
+<text x="620" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2d5a45" font-weight="700">~0,64</text>
+<rect x="740" y="110" width="180" height="200" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="830" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Decision</text>
+<text x="830" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">ecrite</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Ratios + decision, pas un feeling.</text>
 </svg>
