@@ -6,6 +6,22 @@ Objectif : construire et comparer des prompts, puis poser une consigne systeme d
 
 Choisis une tache reelle. Ecris un mauvais prompt d'une ligne. Lance-le. Puis ecris un bon prompt avec le squelette (role, tache, public, contraintes, format, faits). Lance-le. Colle les deux reponses dans un fichier. Annote en rouge ce qui est vague, invente, utile.
 
+Modele a copier-coller :
+
+```text
+# mauvais
+ameliorer ce texte
+
+# bon
+Role : relecteur exigeant
+Tache : clarifier le texte ci-dessous
+Public : client non technique
+Contraintes : 8 lignes max, aucun chiffre invente
+Format : paragraphes courts
+Faits fournis : ...
+Texte : ...
+```
+
 ## Exercice 2 - Mode strict vs creatif (10 min)
 
 Sur le meme sujet, demande d'abord : "sois strict, factuel, dis INCONNU si besoin, 8 lignes". Puis : "sois creatif, 10 variantes audacieuses". Observe la difference de temperament. Note pour quels livrables tu utiliseras chaque mode.

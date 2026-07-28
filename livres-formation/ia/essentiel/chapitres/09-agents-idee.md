@@ -18,9 +18,46 @@ Lea reve d'un assistant qui connait ses modeles de proposition. Max voudrait un 
 Sans outil special, simule un RAG : copie l'extrait utile, demande "reponds uniquement a partir de cet extrait, cite les phrases".
 :::
 
+```python
+docs = {
+    "tarif": "Deplacement 45 EUR. Main d oeuvre 55 EUR/h.",
+    "secu": "Couper l'eau avant toute intervention.",
+}
+question = "Combien coute le deplacement ?"
+extrait = docs["tarif"]  # "recherche" naive
+prompt = (
+    "Reponds UNIQUEMENT avec cet extrait. Sinon dis INCONNU.\n"
+    f"Extrait: {extrait}\nQuestion: {question}"
+)
+print(prompt)
+# Envoie prompt au LLM (temperature basse), puis verifie la cite.
+```
+
 ## Agents : enchaîner des actions vers un but
 
 Un agent, en idee simple, c'est un systeme qui ne se contente pas de repondre : il planifie, appelle des outils (recherche, calendrier, email, navigateur, base de donnees), observe le resultat, continue. Exemple : "prepare un dossier de veille sur X, resume 5 articles, propose un mail". Puissant. Aussi dangereux : un agent mal cadre peut envoyer un mail, modifier un fichier, acheter, publier.
+
+Boucle pedagogique (pseudo-code) :
+
+```python
+but = "Resumer 3 articles sur le plomb sans envoyer d'email"
+outils_autorises = {"rechercher", "lire_page", "rediger_brouillon"}
+# outils INTERDITS ici : envoyer_email, payer, supprimer_fichier
+
+etat = {"notes": [], "brouillon": None}
+for etape in range(5):  # frein : max 5 tours
+    action = llm_decide(but, etat, outils_autorises)
+    if action["type"] not in outils_autorises:
+        raise PermissionError("Outil non autorise")
+    if action["type"] == "rediger_brouillon":
+        etat["brouillon"] = action["texte"]
+        break  # humain relit avant tout envoi
+    etat = executer(action, etat)
+
+print("Brouillon pret - validation humaine obligatoire")
+```
+
+Sans liste blanche d'outils et sans plafond de tours, "agent" veut souvent dire "accident plus vite".
 
 Chez DanielCraft, la regle debutant est dure : pas d'agent avec pouvoir d'envoi autonome tant que tu n'as pas de validations humaines sur les etapes critiques. L'agent propose ; toi tu valides ; ensuite seulement l'action part. Les demos marketing sautent souvent cette etape. La vraie vie ne devrait pas.
 

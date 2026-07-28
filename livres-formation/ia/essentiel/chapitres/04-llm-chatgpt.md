@@ -20,6 +20,28 @@ Le modele ne lit pas vraiment "mot par mot" comme a l'ecole. Il decoupe le texte
 
 En pratique, plus tu envoies de texte, plus tu consommes de tokens en entree. Plus il repond long, plus tu consommes en sortie. Les interfaces grand public masquent souvent ce compteur. Les API le montrent. Pour un debutant, retiens : sois precis, evite de coller dix PDF inutiles, demande la longueur dont tu as besoin. Tu gagnes en clarte et parfois en argent.
 
+Ordre de grandeur pedagogique (pas une loi exacte) : en francais, compte souvent ~0,7 a 1 token par mot. Un mail de 120 mots ~ 100 a 150 tokens. Un chapitre de 800 mots ~ 600 a 900 tokens. Si l'API facture 0,50 EUR / million de tokens en entree (chiffre invente pour l'exo), coller 10 fois le meme PDF de 50 000 tokens coute vite cher... pour peu de gain.
+
+```python
+# Approximation pedagogique (pas un vrai tokenizer)
+texte = "Bonjour Max, peux-tu confirmer le devis a 180 euros ?"
+mots = texte.split()
+tokens_approx = int(len(mots) * 0.9)
+print(len(mots), "mots ~", tokens_approx, "tokens")
+```
+
+Avec une API, tu envoies souvent une liste de messages (systeme + utilisateur). Idee du format :
+
+```python
+messages = [
+    {"role": "system", "content": "Tu reponds en francais simple. Signale les incertitudes."},
+    {"role": "user", "content": "Reformume ce devis en 5 lignes. Prix exacts uniquement."},
+]
+# Puis: client.chat.completions.create(model="...", messages=messages, temperature=0.2)
+```
+
+Tu n'as pas a coder pour utiliser un chat. Mais voir ce squelette t'aide a comprendre temperature, roles, et cout.
+
 :::astuce
 Impose "8 lignes", "pas d'introduction", "commence par la reponse" : tu pilotes tokens et patience d'un coup.
 :::

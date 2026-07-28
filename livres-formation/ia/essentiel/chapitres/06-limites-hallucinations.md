@@ -28,6 +28,33 @@ Ajoute dans ton prompt : "n'invente aucune reference ; si tu n'en as pas, dis-le
 
 Lea demande un plan SEO, puis verifie les pretentions "Google adore X en 2026" sur des sources serieuses. Max ne laisse jamais l'IA inventer un prix de piece : il colle son tarif. Sam fait generer un exercice, puis le resout lui-meme avant de le donner aux eleves.
 
+## Exemple concret (invente) : chiffre invente
+
+Demande floue : "Quel est le prix officiel de la piece X12 chez le fabricant Y ?"  
+Reponse fluide possible : "La piece X12 coute 47,90 EUR HT, reference catalogue 2024."  
+
+Sans source fournie, ce 47,90 peut etre **entierement invente**. Max, lui, colle ses faits :
+
+```text
+FAITS (ne pas modifier) :
+- piece : joint robinet cuisine
+- prix achat Max : 6,40 EUR
+- prix vente Max : 14,00 EUR
+DEMANDE : redige 3 lignes pour le client. Interdit d'ajouter d'autres prix.
+```
+
+Checklist rapide avant envoi (code mental, version Python) :
+
+```python
+reponse = "..."  # texte IA
+faits_a_verifier = ["14,00", "joint robinet"]
+for f in faits_a_verifier:
+    assert f in reponse, f"Manque ou altere: {f}"
+print("Controle basique OK - relis quand meme a l'oeil")
+```
+
+Ce n'est pas un antivirus magique. Ca force le reflexe : les chiffres critiques viennent de toi.
+
 ## Evaluer une reponse (idee simple)
 
 Avant d'envoyer, pose quatre questions : Est-ce fidele a mon brief ? Y a-t-il des faits inventes ? Le ton me ressemble-t-il ? Est-ce que je signerais ca demain matin devant un client difficile ? Si une reponse est non, tu iteres ou tu jettes. On approfondira l'**evaluation** plus loin, mais ce mini-filtre sauve deja des galeres.

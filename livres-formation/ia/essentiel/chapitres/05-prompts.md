@@ -10,7 +10,42 @@ Prompt = brief clair (role, tache, public, contraintes, format, faits). System p
 
 **Role** : qui doit "jouer" le modele (conseiller sober pour artisans, prof de 6e, relecteur exigeant). Tache : ce que tu veux exactement (plan, mail, checklist, reformulation). Public : pour qui c'est ecrit. Contraintes : longueur, ton, interdits, niveau de jargon, langue. Format : puces, tableau, email pret a envoyer, sections numerotees. Faits : ce que tu apportes (prix, dates, details vrais) pour eviter l'invention.
 
-Exemple pour Max : "Tu es relecteur pour un artisan. Reecris ce devis en francais simple pour un particulier presse. Garde mes prix exacts. 12 lignes max. Pas de promesse de delai si je ne l'ai pas ecrite. Voici mes notes brutes : ..." Tu vois la difference avec "ameliorer mon devis" ?
+Exemple pour Max. Mauvais prompt : `ameliorer mon devis`. Bon prompt :
+
+```text
+Role : relecteur pour un artisan plombier.
+Tache : reecrire le devis ci-dessous.
+Public : particulier presse, francais simple.
+Contraintes :
+- garde les prix exacts (ne rien inventer)
+- 12 lignes max
+- pas de promesse de delai si absente des notes
+Format : texte pret a coller dans un email.
+Notes brutes :
+- debouchage evier cuisine
+- deplacement 45 EUR
+- main d oeuvre 1h30 a 55 EUR/h
+```
+
+Compare les deux sorties une fois. Tu verras clarte, prix fideles, moins de blabla.
+
+Mini-appel API (schema pedagogique, adapte a ton fournisseur) :
+
+```python
+prompt = """Tu es relecteur pour un artisan.
+Reecris le devis en francais simple, 12 lignes max.
+Garde les prix exacts. Notes : debouchage, 45 EUR deplacement, 1h30 a 55 EUR/h."""
+
+messages = [
+    {"role": "system", "content": "Francais simple. N'invente aucun prix."},
+    {"role": "user", "content": prompt},
+]
+# reponse = client.chat.completions.create(
+#     model="ton-modele",
+#     messages=messages,
+#     temperature=0.2,
+# )
+```
 
 :::astuce
 "Tu es relecteur pour un artisan. Reecris ce devis en francais simple, 12 lignes max, garde mes prix exacts." bat "ameliorer mon devis".

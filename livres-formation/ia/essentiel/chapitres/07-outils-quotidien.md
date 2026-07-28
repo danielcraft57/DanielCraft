@@ -12,6 +12,33 @@ Trois prompts types nommes (Mail clair, Resume action, Idees classees) battent c
 
 Tu as des notes brutes. Tu demandes une version claire pour un public precise. Tu fournis le ton. Tu interdis les ajouts de promesses. Tu relis. Exemples : mail de relance, reponse a une objection, page "a propos", script d'appel de deux minutes, message LinkedIn sans jargon. Lea garde un prompt "proposition client" et un prompt "mail gentil mais ferme". Max garde "devis en francais simple" et "compte-rendu de chantier".
 
+Avant / apres concret (Max) :
+
+```text
+AVANT (notes) :
+ok client - fuite sous evier - passe mardi 10h - 90 EUR
+
+APRES (demande IA + relecture Max) :
+Bonjour,
+Je confirme l'intervention mardi a 10h pour la fuite sous evier.
+Montant convenu : 90 EUR.
+Cordialement,
+Max
+```
+
+Petit script pour enchaîner "resumer puis reformuler" (sans coller de secrets) :
+
+```python
+notes = "fuite evier, mardi 10h, 90 EUR"
+etape1 = f"Extrais les faits en puces, rien d'autre:\n{notes}"
+# -> envoie etape1 au LLM, recupere faits
+faits = "- fuite evier\n- mardi 10h\n- 90 EUR"
+etape2 = f"Redige un mail court avec UNIQUEMENT ces faits:\n{faits}"
+# -> envoie etape2, puis Max relit avant envoi
+```
+
+Deux appels battent souvent un seul prompt fourre-tout.
+
 ## Resumer
 
 Colle un compte-rendu long, une trame d'appel, un article. Demande : resume en 8 lignes, 5 decisions, 3 actions avec responsables. Ou : "explique ca a un collegue presse". Attention au **contexte** : ne colle pas un dossier confidentiel dans un outil non adapte. Anonymise. Coupe les noms si besoin. Le resume est un gain de temps enorme - et un risque **RGPD** si tu es negligant.
