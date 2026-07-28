@@ -36,7 +36,7 @@ BOOK_CSS = get_book_css("ecom_drop") + """
 ROOT = Path(__file__).resolve().parent
 CHAPITRES = ROOT / "chapitres"
 OUT_HTML = ROOT / "livre.html"
-OUT_PDF = ROOT.parent.parent / "pdf" / "ecommerce-dropshipping.pdf"
+OUT_PDF = ROOT.parent.parent / "pdf" / "dropshipping.pdf"
 
 CHAPTER_FILES = [
     "01-cest-quoi.md",
@@ -587,7 +587,7 @@ def main() -> int:
     print(f"HTML: {OUT_HTML}")
 
     pdf_name = args.pdf_name or (
-        "ecommerce-dropshipping-eco.pdf" if args.eco else "ecommerce-dropshipping.pdf"
+        "dropshipping-eco.pdf" if args.eco else "dropshipping.pdf"
     )
     pdf_path = OUT_PDF.parent / pdf_name
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
