@@ -1,36 +1,36 @@
 # Chapitre 4 - Wallets : garder tes cles
 
-Un **wallet** ne "stocke" pas vraiment tes coins comme un portefeuille billets. Il gere tes **cles** : la preuve que tu peux signer des transactions. Chez DanielCraft, wallet chaud / froid, seed phrase, et "je ne photographie jamais la seed" sont le vrai socle.
+Un **wallet** ne "stocke" pas vraiment tes coins comme un portefeuille billets. Il gere tes **cles** : la preuve que tu peux signer des transactions. Chez DanielCraft, wallet chaud / froid, seed phrase, et "je ne photographie jamais la seed" sont le vrai socle. Le reste (jargons, airdrops, yield) vient apres - ou jamais.
 
-Disclaimer : perds la seed sans backup = fonds souvent perdus. Partage la seed = fonds souvent voles.
+Disclaimer : perds la seed sans backup = fonds souvent perdus. Partage la seed = fonds souvent voles. Pedagogy, pas un conseil produit.
 
 ## Chaud vs froid
 
-- **Wallet chaud** : logiciel / mobile / extension, pratique, plus expose en ligne
-- **Wallet froid** (hardware) : cles offline, mieux pour montants qui comptent
-- **Exchange** : commodite, risque de plateforme (faillite, hack, gel)
+Le **wallet chaud** (logiciel, mobile, extension) est pratique et plus expose en ligne. Le **wallet froid** (hardware) garde les cles offline : mieux pour les montants qui comptent. L'**exchange** est une commodite : tu confies une contrepartie (faillite, hack, gel, pause de retraits).
 
-Regle pedagogique inventee de Nora : montant "cafe" en chaud, montant "loyer de plusieurs mois" plutot froid ou hors crypto.
+Regle pedagogique inventee de Nora : montant "cafe" en chaud, montant "plusieurs mois de loyer" plutot froid ou hors crypto. Sam laisse volontairement peu sur mobile. Max teste d'abord un wallet a 0 EUR avant tout vrai depot.
 
 ## Seed phrase
 
-12 ou 24 mots = backup de tes cles. Qui a la seed a les fonds. Ne jamais la taper sur un site "support". Ne jamais l'envoyer en DM. Backup physique range, pas dans le cloud photo.
+12 ou 24 mots = backup de tes cles. Qui a la seed a les fonds. Ne jamais la taper sur un site "support". Ne jamais l'envoyer en DM. Backup physique range, pas dans le cloud photo, pas dans les notes sync. Si un ecran te demande la seed pour "valider", c'est presque toujours une arnaque.
+
+La restoration se pratique a froid : wallet test, ecrire la seed, restaurer, verifier, puis detruire ce test. Apprendre le geste sans enjeu vaut mieux qu'apprendre le jour ou 2 000 EUR sont dedans.
 
 ## Petite histoire
 
-Max sauve sa seed dans les notes iCloud. Compte compromis. Histoire courte. Sam utilise un hardware + papier dans un endroit ennuyeux. Histoire longue et calme.
+Max sauve sa seed dans les notes iCloud. Compte compromis. Histoire courte et salée. Sam utilise un hardware + papier dans un endroit ennuyeux. Histoire longue et calme. Nora refuse tout "airdrop" qui demande une capture de seed. Elle perd peut-etre un jeton fantome. Elle garde son capital.
 
 ## Erreur classique
 
-Wallet "valide ta seed ici pour une airdrop". Phishing classique.
+Wallet "valide ta seed ici". Screenshot de seed. Reutiliser une seed de test pour de vrais fonds. Confondre adresse de reception et seed (ce ne sont pas les memes objets).
 
 ## En vrai
 
-Fais un wallet **test** avec 0 fonds. Ecris la seed, restaure, verifie. Puis detruis ce test. Apprends le geste sans enjeu.
+Fais un wallet **test** avec 0 fonds. Ecris la seed, restaure, verifie. Puis efface ce test. Coche mentalement : geste acquis.
 
 ## A toi
 
-Choisis ta politique : exchange only / chaud petit / froid au-dela de X EUR.
+Choisis ta politique : exchange only / chaud petit / froid au-dela de X EUR. Ecris X.
 
 :::retenir
 Cles = controle. Seed = roi. Support legit ne demande jamais la seed.

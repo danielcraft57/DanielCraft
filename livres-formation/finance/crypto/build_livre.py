@@ -13,14 +13,31 @@ import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _book_lib import extract_h2, finalize_pdf, get_book_css, md_inline, md_to_html, slugify  # noqa: E402
 BOOK_CSS = get_book_css("finance") + """
-/* Identite visuelle crypto : ardoise / cuivre (distinct du vert sapin). */
+/* Identite visuelle crypto : ardoise / sable / cuivre (distinct du vert sapin). */
 :root {
-  --dc-ink: #1a2332;
-  --dc-accent: #c45c26;
-  --dc-paper: #f3f0ea;
+  --ink: #1a2332;
+  --muted: #5a6578;
+  --paper: #f3f0ea;
+  --paper-deep: #e8e2d8;
+  --band: #243447;
+  --band-soft: #334a63;
+  --accent: #c45c26;
+  --code-bg: #1a2838;
+  --code-fg: #f3e6d8;
+  --card: #ffffff;
+  --rule: #d4cdc2;
 }
-body { background: var(--dc-paper); color: var(--dc-ink); }
-h1, h2 { color: var(--dc-ink); }
+.cover,
+.cover-copy {
+  background: #243447 !important;
+  color: #f3e6d8 !important;
+}
+.cover h1 { color: #f3e6d8 !important; }
+pre { border-left-color: #c45c26 !important; }
+button, .btn-like { background: #243447; }
+@media print {
+  .toc a { color: #243447 !important; }
+}
 .illus.illus-scene {
   margin: 1.7rem 0 1.9rem;
   padding: 0.35rem 0;
@@ -72,70 +89,70 @@ CHAPTER_FILES = [
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
-        ("fin-crypto-blockchain.png", "Blockchain : l'idee"),
+        ("fin-crypto-blockchain.png", "Blockchain = carnet partage : blocs enchaines, copies, consensus."),
     ],
     2: [
-        ("fin-crypto-bitcoin.png", "Bitcoin : premier actif"),
+        ("fin-crypto-bitcoin.png", "BTC : offre limitee programmee + volatilite reelle."),
     ],
     3: [
-        ("fin-crypto-ethereum.png", "Ethereum et smart contracts"),
+        ("fin-crypto-ethereum.png", "ETH : machine a contrats. Flexible, donc aussi fragile."),
     ],
     4: [
-        ("fin-crypto-wallets.png", "Wallets : garder tes cles"),
-        ("fin-crypto-scene-wallet.png", "Exemple : wallet chaud vs froid."),
+        ("fin-crypto-wallets.png", "Le wallet gere tes cles. La seed est le roi."),
+        ("fin-crypto-scene-wallet.png", "Exemple : Nora separe montant cafe (chaud) et montant serieux (froid)."),
     ],
     5: [
-        ("fin-crypto-exchanges.png", "Exchanges et plateformes"),
+        ("fin-crypto-exchanges.png", "Exchange = service + risque de contrepartie. Compte les frais totaux."),
     ],
     6: [
-        ("fin-crypto-volatilite.png", "Volatilite crypto"),
+        ("fin-crypto-volatilite.png", "Apres -50 %, il faut +100 % pour revenir. Dimensionne la poche."),
     ],
     7: [
-        ("fin-crypto-stablecoins.png", "Stablecoins : promesse et risque"),
+        ("fin-crypto-stablecoins.png", "Stablecoin = promesse de parite, pas un livret garanti."),
     ],
     8: [
-        ("fin-crypto-defi.png", "DeFi : introduction prudente"),
-        ("fin-crypto-scene-defi.png", "Exemple : pool DeFi simplifie."),
+        ("fin-crypto-defi.png", "DeFi : code + liquidite + incentives. APY haut = question rouge."),
+        ("fin-crypto-scene-defi.png", "Exemple : Sam lit un pool avant de deposer le moindre euro."),
     ],
     9: [
-        ("fin-crypto-regulation.png", "Regulation en France (idee)"),
+        ("fin-crypto-regulation.png", "Cadre FR/UE : verifie le statut de l'acteur avant le depot."),
     ],
     10: [
-        ("fin-crypto-taxes.png", "Taxes : grandes lignes (idee)"),
+        ("fin-crypto-taxes.png", "Journal des operations > memoire selective."),
     ],
     11: [
-        ("fin-crypto-nft.png", "NFT : prudence"),
+        ("fin-crypto-nft.png", "NFT = jeton + recit. Recit != liquidite."),
     ],
     12: [
-        ("fin-crypto-mini-projet.png", "Mini-projet : plan crypto fictif"),
-        ("fin-crypto-scene-mini-projet.png", "Exemple : plan crypto prudent fictif."),
+        ("fin-crypto-mini-projet.png", "Plan papier : plafonds, garde, choc -50 % simule."),
+        ("fin-crypto-scene-mini-projet.png", "Exemple : Max ecrit son % max avant tout ordre."),
     ],
     13: [
-        ("fin-crypto-retenir.png", "Retenir l'essentiel"),
+        ("fin-crypto-retenir.png", "Plafond + cles + journal > tip Telegram."),
     ],
     14: [
-        ("fin-crypto-atelier-wallet.png", "Atelier : configurer un wallet test"),
+        ("fin-crypto-atelier-wallet.png", "Atelier : restauration a froid, sans argent en jeu."),
     ],
     15: [
-        ("fin-crypto-atelier-portefeuille.png", "Atelier : allocation crypto fictive"),
+        ("fin-crypto-atelier-portefeuille.png", "Allocation fictive : calcule le -50 % avant de valider."),
     ],
     16: [
-        ("fin-crypto-arnaques.png", "Arnaques crypto"),
+        ("fin-crypto-arnaques.png", "Support legit ne demande jamais la seed."),
     ],
     17: [
-        ("fin-crypto-bonnes.png", "Bonnes pratiques"),
+        ("fin-crypto-bonnes.png", "Dix gestes calmes pour survivre au prochain FOMO."),
     ],
     18: [
-        ("fin-crypto-securite.png", "Securite et phishing"),
+        ("fin-crypto-securite.png", "Petit transfert test + verification d'adresse."),
     ],
     19: [
-        ("fin-crypto-staking.png", "Staking et mining (idee)"),
+        ("fin-crypto-staking.png", "Staking = rendement + lock + risques. Mining = industrie."),
     ],
     20: [
-        ("fin-crypto-quiz.png", "Quiz final"),
+        ("fin-crypto-quiz.png", "Douze questions pour verifier le filtre, pas le FOMO."),
     ],
     21: [
-        ("fin-crypto-felicitations.png", "Bravo"),
+        ("fin-crypto-felicitations.png", "Comprendre avant de signer. Plafonner avant de FOMO."),
     ],
 }
 

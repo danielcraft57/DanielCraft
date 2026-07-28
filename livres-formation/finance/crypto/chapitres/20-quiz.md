@@ -1,5 +1,7 @@
 # Quiz final
 
+Avant de dire "j'ai fini", on joue. Douze questions. Pas pour la gloire. Pour verifier le filtre. Chez DanielCraft, un sans-faute n'est pas un signal d'acheter. C'est un signal que tu as lu.
+
 ## Question 1
 Une blockchain, c'est surtout :
 - A) Une banque centrale
@@ -16,7 +18,7 @@ Une blockchain, c'est surtout :
 Une seed phrase :
 - A) Se partage au support Discord
 - B) Doit rester secrete / offline
-- C) Se post sur Instagram
+- C) Se poste sur Instagram
 
 ## Question 4
 Apres -50 %, pour revenir il faut environ :
@@ -75,6 +77,8 @@ Plafond % patrimoine crypto :
 ## Corrige
 
 1B, 2B, 3B, 4B, 5B, 6B, 7B, 8B, 9B, 10B, 11B, 12B.
+
+Si tu rates 2, 4 ou 8, relis wallets, volatilite et arnaques avant tout depot. Nora a rate la 4 la premiere fois. Elle a recalcule. Max a rate la 8 : il a ecrit sa phrase de raccrochage.
 
 :::retenir
 Cles, plafonds, journal, non au phishing.
