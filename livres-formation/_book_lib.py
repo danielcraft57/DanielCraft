@@ -1297,6 +1297,37 @@ button, .btn-like {
   .toc a { color: #00838f !important; }
 }
 """,
+        "rust": """
+/* Theme Rust : noir charbon + orange rouille (identite Rust) */
+:root {
+  --ink: #1a1210;
+  --muted: #8b7355;
+  --paper: #faf5f0;
+  --paper-deep: #f0e6d8;
+  --band: #3b1f0b;
+  --band-soft: #5c3317;
+  --accent: #e8590c;
+  --code-bg: #1a1210;
+  --code-fg: #fed7aa;
+  --card: #ffffff;
+  --rule: #d9c4a8;
+}
+.cover,
+.cover-copy {
+  background: #3b1f0b !important;
+  color: #fed7aa !important;
+}
+.cover h1 { color: #fff7ed !important; }
+pre {
+  border-left-color: #e8590c !important;
+}
+button, .btn-like {
+  background: #3b1f0b;
+}
+@media print {
+  .toc a { color: #3b1f0b !important; }
+}
+""",
         "php": """
 /* Theme PHP : indigo sombre + lavande (distinct Go turquoise / C# violet) */
 :root {
