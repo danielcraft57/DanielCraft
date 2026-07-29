@@ -1297,6 +1297,37 @@ button, .btn-like {
   .toc a { color: #7f1d1d !important; }
 }
 """,
+        "securite3": """
+/* Theme Securite expert : indigo profond + ambre (distinct bases orange / inter rouge) */
+:root {
+  --ink: #0c0a1f;
+  --muted: #64748b;
+  --paper: #f8fafc;
+  --paper-deep: #e2e8f0;
+  --band: #1e1b4b;
+  --band-soft: #312e81;
+  --accent: #f59e0b;
+  --code-bg: #0c0a1f;
+  --code-fg: #fef3c7;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #1e1b4b !important;
+  color: #fef3c7 !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #f59e0b !important;
+}
+button, .btn-like {
+  background: #1e1b4b;
+}
+@media print {
+  .toc a { color: #1e1b4b !important; }
+}
+""",
         "go": """
 /* Theme Go : bleu ciel + turquoise (distinct Python bleu-jaune / C# violet) */
 :root {
