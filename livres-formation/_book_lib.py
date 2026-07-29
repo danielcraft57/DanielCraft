@@ -1266,6 +1266,37 @@ button, .btn-like {
   .toc a { color: #4a1c2a !important; }
 }
 """,
+        "java2": """
+/* Theme Java inter : teal profond + cuivre (distinct bases bordeaux/or) */
+:root {
+  --ink: #0d1f24;
+  --muted: #5a7178;
+  --paper: #f0f7f8;
+  --paper-deep: #dce9ec;
+  --band: #0f4c5c;
+  --band-soft: #1a6b7c;
+  --accent: #d97706;
+  --code-bg: #0d1f24;
+  --code-fg: #fef3c7;
+  --card: #ffffff;
+  --rule: #c5d4d8;
+}
+.cover,
+.cover-copy {
+  background: #0f4c5c !important;
+  color: #fef3c7 !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #d97706 !important;
+}
+button, .btn-like {
+  background: #0f4c5c;
+}
+@media print {
+  .toc a { color: #0f4c5c !important; }
+}
+""",
         "securite": """
 /* Theme Securite web : ardoise + orange alerte (distinct SQL lime / TS marine) */
 :root {
@@ -1481,6 +1512,37 @@ button, .btn-like {
 }
 @media print {
   .toc a { color: #5c2d91 !important; }
+}
+""",
+        "kotlin2": """
+/* Theme Kotlin inter : indigo nuit + cyan (distinct bases violet/rose) */
+:root {
+  --ink: #0b1220;
+  --muted: #64748b;
+  --paper: #f1f5f9;
+  --paper-deep: #e2e8f0;
+  --band: #312e81;
+  --band-soft: #4338ca;
+  --accent: #22d3ee;
+  --code-bg: #0b1220;
+  --code-fg: #cffafe;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #312e81 !important;
+  color: #cffafe !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #22d3ee !important;
+}
+button, .btn-like {
+  background: #312e81;
+}
+@media print {
+  .toc a { color: #312e81 !important; }
 }
 """,
         "swift": """
