@@ -1390,6 +1390,37 @@ button, .btn-like {
   .toc a { color: #5c2d91 !important; }
 }
 """,
+        "swift": """
+/* Theme Swift : orange vif + gris anthracite (identite Apple) */
+:root {
+  --ink: #1c1c1e;
+  --muted: #8e8e93;
+  --paper: #f9f9fb;
+  --paper-deep: #ececf0;
+  --band: #e8542a;
+  --band-soft: #f05138;
+  --accent: #ff6b35;
+  --code-bg: #1c1c1e;
+  --code-fg: #ffe8df;
+  --card: #ffffff;
+  --rule: #d1d1d6;
+}
+.cover,
+.cover-copy {
+  background: #e8542a !important;
+  color: #ffe8df !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #ff6b35 !important;
+}
+button, .btn-like {
+  background: #e8542a;
+}
+@media print {
+  .toc a { color: #e8542a !important; }
+}
+""",
         "php": """
 /* Theme PHP : indigo sombre + lavande (distinct Go turquoise / C# violet) */
 :root {
