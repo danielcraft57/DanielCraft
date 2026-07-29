@@ -1,17 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Liste = rangee de cases (index 0)</text>
-  <defs>
-  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
-  </marker>
-</defs><rect x="80" y="160" width="160" height="120" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="160" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">0</text>
-<text x="160" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">pain</text><rect x="270" y="160" width="160" height="120" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="350" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a6410" font-weight="700">1</text>
-<text x="350" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">lait</text><rect x="460" y="160" width="160" height="120" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="540" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">2</text>
-<text x="540" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">oeufs</text><rect x="650" y="160" width="160" height="120" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="730" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">-1</text>
-<text x="730" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">dernier</text><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">append ajoute. for parcourt. len compte.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">Liste : collection ordonnee</text><rect x="50" y="90" width="100" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="100" y="125" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">[0]</text>
+<rect x="170" y="90" width="100" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="220" y="125" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">[1]</text>
+<rect x="290" y="90" width="100" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="340" y="125" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">[2]</text>
+<rect x="410" y="90" width="100" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="460" y="125" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">[3]</text>
+<rect x="530" y="90" width="100" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="580" y="125" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">[-1]</text>
+<rect x="100" y="220" width="200" height="55" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="200" y="252" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">.append(x)</text>
+<rect x="350" y="220" width="200" height="55" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="450" y="252" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">.remove(x)</text>
+<rect x="100" y="320" width="200" height="55" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="200" y="352" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">.sort()</text>
+<rect x="350" y="320" width="200" height="55" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="450" y="352" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">len(liste)</text>
+<text x="400" y="430" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="Arial">Index a partir de 0, negatifs depuis la fin</text></svg>

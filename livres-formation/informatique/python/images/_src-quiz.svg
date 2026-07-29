@@ -1,14 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Quiz : verifier sans inventer</text>
-  <defs>
-  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
-  </marker>
-</defs><rect x="150" y="150" width="700" height="120" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="500" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">18 questions - bases + suite</text><rect x="150" y="310" width="320" height="100" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="310" y="354" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">1e passe</text>
-<text x="310" y="382" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">honnete</text><rect x="530" y="310" width="320" height="100" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="690" y="354" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">2e passe</text>
-<text x="690" y="382" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">progres</text><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Note les trous. Relis. Rejoue dans une semaine.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">Quiz Python bases</text><rect x="200" y="100" width="400" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="135" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">10 questions</text>
+<rect x="200" y="220" width="400" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="255" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">8/10 = pret pour la suite</text>
+<text x="400" y="380" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="Arial">Verifie tes bases avant d'avancer</text></svg>

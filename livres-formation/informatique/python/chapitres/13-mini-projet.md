@@ -1,125 +1,87 @@
-# Chapitre 13 - Mini-projet : quiz terminal
+# Mini-projet : gestionnaire de contacts
 
-On assemble ce qu'on sait : variables, conditions, boucles, listes, dictionnaires, un peu de fichiers et de modules. Ce n'est pas un examen piege. C'est une preuve pour toi : tu peux construire un petit outil complet, le lancer, le casser, le reparer. Chez DanielCraft, le mini-projet sert a ca - transformer des chapitres separes en geste fluide.
+## L'objectif
 
-Lea a adapte ce quiz pour briefer un stagiaire. Max l'a transforme en questions metier (marges, TVA). Sam l'utilise tel quel en classe, puis demande deux questions perso. Trois versions, meme ossature. Tu n'as pas a inventer un reseau social. Tu as a finir un outil petit et net.
+On cree un petit programme en ligne de commande qui permet d'ajouter, lister et chercher des contacts. Ce projet combine variables, listes, dictionnaires, fonctions, boucles, conditions et fichiers.
 
-## Ce que ce n'est pas
-
-Ce n'est pas "le projet final de ta carriere". Ce n'est pas non plus une excuse pour copier-coller sans comprendre. Ce n'est pas obligatoire d'aller jusqu'a la version objet des le premier jet. Version simple d'abord. Version propre ensuite. Shuffle + JSON si tu as le temps. Une marche apres l'autre. Et ce n'est surtout pas "tout faire d'un coup et ne rien finir". Un quiz de cinq questions qui marche bat un projet "parfait" abandonne a 40 %.
-
-Tu as une liste de fiches `{question, reponse}`. Tu parcours. Tu demandes. Tu compares avec `strip` et `lower`. Tu comptes. Tu affiches. Plus tard, tu melanges l'ordre, tu sauves le record. Le quiz n'est qu'un pretexte : la vraie competence, c'est l'assemblage. Chez DanielCraft, on repete : l'assemblage, c'est le niveau au-dessus de "je connais la syntaxe".
-
-Lea voit un brief stagiaire. Max voit un quiz metier. Sam voit un exercice de classe. Trois pretexts, meme architecture.
-
-## Version simple
-
-```python
-score = 0
-
-reponse = input("Capitale de la France ? ")
-if reponse.strip().lower() == "paris":
-    print("OK")
-    score = score + 1
-else:
-    print("Non, c'etait Paris")
-
-reponse = input("2 + 2 = ? ")
-if reponse.strip() == "4":
-    print("OK")
-    score = score + 1
-else:
-    print("Non, 4")
-
-reponse = input("Langage de ce livre ? ")
-if reponse.strip().lower() == "python":
-    print("OK")
-    score = score + 1
-else:
-    print("Python !")
-
-print("Score final :", score, "/ 3")
-```
-
-Ca marche. Ca se repete. D'ou la version plus propre. Ne meprise pas cette version : elle prouve que tu pilotes conditions et score. Ensuite seulement, tu ranges.
-
-## Version plus propre
-
-```python
-questions = [
-    {"q": "Capitale de la France ?", "a": "paris"},
-    {"q": "2 + 2 = ?", "a": "4"},
-    {"q": "Langage de ce livre ?", "a": "python"},
-]
-
-score = 0
-for item in questions:
-    rep = input(item["q"] + " ").strip().lower()
-    if rep == item["a"]:
-        print("OK")
-        score += 1
-    else:
-        print("Non, reponse :", item["a"])
-
-print(f"Score : {score} / {len(questions)}")
-```
-
-Regarde ce qui a change : les donnees sont separees de la boucle. Ajouter une question devient une ligne, pas un copier-coller de huit lignes. Lea appelle ca "arreter de se mentir sur le temps gagne". Sam appelle ca "enfin un code qu'on peut montrer".
-
-## Version avec shuffle + JSON
+## Structure du programme
 
 ```python
 import json
-import random
 from pathlib import Path
 
-questions = [
-    {"q": "Capitale de la France ?", "a": "paris"},
-    {"q": "2 + 2 = ?", "a": "4"},
-    {"q": "Langage de ce livre ?", "a": "python"},
-    {"q": "Couleur du ciel (souvent) ?", "a": "bleu"},
-]
+FICHIER = Path("contacts.json")
 
-random.shuffle(questions)
-score = 0
-for item in questions:
-    rep = input(item["q"] + " ").strip().lower()
-    if rep == item["a"]:
-        print("OK")
-        score += 1
+def charger():
+    if FICHIER.exists():
+        return json.loads(FICHIER.read_text(encoding="utf-8"))
+    return []
+
+def sauvegarder(contacts):
+    FICHIER.write_text(
+        json.dumps(contacts, indent=2, ensure_ascii=False),
+        encoding="utf-8"
+    )
+
+def ajouter(contacts):
+    nom = input("Nom : ")
+    tel = input("Telephone : ")
+    contacts.append({"nom": nom, "tel": tel})
+    sauvegarder(contacts)
+    print(f"{nom} ajoute.")
+
+def lister(contacts):
+    if not contacts:
+        print("Aucun contact.")
+        return
+    for i, c in enumerate(contacts, 1):
+        print(f"  {i}. {c['nom']} - {c['tel']}")
+
+def chercher(contacts):
+    terme = input("Recherche : ").lower()
+    resultats = [c for c in contacts if terme in c["nom"].lower()]
+    if resultats:
+        for c in resultats:
+            print(f"  {c['nom']} - {c['tel']}")
     else:
-        print("Non :", item["a"])
+        print("Aucun resultat.")
 
-print(f"Score : {score}/{len(questions)}")
+def main():
+    contacts = charger()
+    while True:
+        print("\n1. Ajouter  2. Lister  3. Chercher  4. Quitter")
+        choix = input("> ")
+        if choix == "1":
+            ajouter(contacts)
+        elif choix == "2":
+            lister(contacts)
+        elif choix == "3":
+            chercher(contacts)
+        elif choix == "4":
+            print("A bientot !")
+            break
 
-fichier = Path("meilleur_score.json")
-meilleur = 0
-if fichier.exists():
-    meilleur = json.loads(fichier.read_text(encoding="utf-8")).get("score", 0)
-
-if score > meilleur:
-    fichier.write_text(json.dumps({"score": score}, indent=2), encoding="utf-8")
-    print("Nouveau record !")
-else:
-    print("Record actuel :", meilleur)
+if __name__ == "__main__":
+    main()
 ```
 
-## Petite histoire
+## Ce que tu apprends
 
-Sam a fait retaper la version propre sans coller. Les eleves qui collaient bloquaient sur le JSON. Ceux qui tapaient comprenaient `Path.exists`. Max a ajoute un message selon le score (bien / moyen / a revoir) avec un `if`. Lea a melange les questions pour que le stagiaire ne memorise pas l'ordre. Chez DanielCraft, on prefere ces ameliorations concretes aux reecritures cosmiques. Une feature utile, un test, un sourire.
+- Decouverte de `json` pour sauvegarder des donnees structurees.
+- Utilisation de `Path` pour verifier l'existence d'un fichier.
+- Boucle principale avec menu textuel.
+- Fonctions bien decoupees (une par action).
 
-## Erreur classique
+> **Astuce DanielCraft** - Commence par le squelette (menu + fonctions vides), puis remplis une fonction a la fois.
 
-Comparer sans `strip`/`lower`. Oublier d'initialiser `score = 0`. Ecraser le record JSON a chaque run sans lire l'ancien. Vouloir tout faire d'un coup et ne rien finir. Criteres minimum : au moins 3 questions (idealement 5), score final, comparaison souple. Autre piege : changer les questions sans relancer deux fois pour verifier le shuffle et le record.
+## Pour aller plus loin
 
-## En vrai
+- Ajouter un champ email.
+- Permettre la suppression d'un contact.
+- Trier les contacts par nom.
 
-Retape la version propre sans copier-coller. Change les questions. Relance 2 fois. Puis ajoute le melange + sauvegarde du record si tu peux. Note le temps. Tu verras que l'assemblage prend plus que la syntaxe - et c'est normal.
+## A retenir
 
-## A toi
-
-Livrable : un fichier `quiz.py` qui pose au moins 5 questions, affiche le score, et (bonus) sauve le record. Ecris aussi en trois lignes ce que tu reutiliserais dans un autre projet (boucle ? dico ? JSON ?). Range le livrable. Les ateliers suivants s'appuieront sur cette base.
-
-## Zoom : donnees vs logique
-
-Dans la version simple, donnees et logique sont meleés. Dans la version propre, les questions sont des donnees, la boucle est de la logique. Cette separation est le debut de l'organisation. Chez DanielCraft, on la celebre autant qu'une nouvelle fonction : demain, tu pourras charger les questions depuis un JSON sans retoucher la boucle.
+- Un projet = assemblage de notions deja vues.
+- Decouper en fonctions rend le code lisible.
+- `json` permet de sauvegarder des donnees facilement.

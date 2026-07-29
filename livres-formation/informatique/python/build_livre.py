@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Assemble le livre Python et genere un PDF telechargeable."""
+"""Assemble le livre Python - Les bases et genere un PDF telechargeable."""
 
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ BOOK_CSS = get_book_css("python") + """
 .illus.illus-scene img {
   max-width: min(100%, 560px);
   max-height: 240px;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 @media print {
   .illus.illus-scene {
@@ -50,103 +50,68 @@ CHAPTER_FILES = [
     "09-listes.md",
     "10-dictionnaires.md",
     "11-fichiers.md",
-    "12-modules.md",
+    "12-erreurs.md",
     "13-mini-projet.md",
     "14-retenir.md",
-    "15-exceptions.md",
-    "16-classes.md",
-    "17-atelier-erreurs.md",
-    "18-atelier-jeu.md",
-    "19-atelier-organiser.md",
+    "15-atelier-variables.md",
+    "16-atelier-fonctions.md",
+    "17-atelier-listes.md",
+    "18-erreurs-classiques.md",
+    "19-bonnes-pratiques.md",
     "20-quiz.md",
     "21-bravo.md",
 ]
 
 CHAPTER_IMAGES: dict[int, list[tuple[str, str]]] = {
     1: [
-        ("py-cest-quoi.png", "Tu ecris. Python traduit. L'ordinateur execute."),
-        ("py-scene-premier.png", "Exemple : un print, et Salut Python apparait."),
+        ("python-cest-quoi.png", "Python : lisible, polyvalent, populaire."),
+        ("python-scene-decouverte.png", "Nora decouvre Python un samedi matin."),
     ],
-    2: [
-        ("py-installer.png", "Installer, PATH, editeur : l'atelier doit repondre."),
-    ],
-    3: [
-        ("py-premier-programme.png", "print montre. input demande. f-string colle."),
-    ],
-    4: [
-        ("py-variables.png", "Une variable, c'est une boite avec un nom."),
-    ],
-    5: [
-        ("py-types.png", "str, int, float, bool : la nature de la boite."),
-    ],
-    6: [
-        ("py-conditions.png", "if / elif / else : le programme choisit une route."),
-    ],
+    2: [("python-installer.png", "Telecharge, installe, verifie.")],
+    3: [("python-premier.png", "print() : ta premiere ligne de code.")],
+    4: [("python-variables.png", "Variable = etiquette sur une boite.")],
+    5: [("python-types.png", "int, float, str, bool : les types de base.")],
+    6: [("python-conditions.png", "if / elif / else : choisir un chemin.")],
     7: [
-        ("py-boucles.png", "for ou while : repeter avec une sortie claire."),
+        ("python-boucles.png", "for / while : repeter sans copier."),
+        ("python-scene-boucle.png", "Sam automatise avec une boucle."),
     ],
-    8: [
-        ("py-fonctions.png", "Entrees -> fonction -> return. Ecrire une fois, appeler souvent."),
-        ("py-scene-fonctions.png", "Exemple : une recette avec entrees et resultat."),
-    ],
-    9: [
-        ("py-listes.png", "Une liste range plusieurs valeurs, index a 0."),
-    ],
-    10: [
-        ("py-dictionnaires.png", "Dictionnaire : etiquettes + valeurs."),
-    ],
-    11: [
-        ("py-fichiers.png", "with open : lire, ecrire, sauver en JSON."),
-        ("py-scene-fichiers.png", "Exemple : sauvegarder un score dans joueur.json."),
-    ],
+    8: [("python-fonctions.png", "def : ecrire une fois, appeler souvent.")],
+    9: [("python-listes.png", "Liste : collection ordonnee et mutable.")],
+    10: [("python-dictionnaires.png", "Dictionnaire : cle -> valeur.")],
+    11: [("python-fichiers.png", "open() + with : lire et ecrire proprement.")],
     12: [
-        ("py-modules.png", "import : poser une boite a outils sur la table."),
+        ("python-erreurs.png", "try/except : attraper au lieu de planter."),
+        ("python-scene-erreur.png", "Max lit le message d'erreur calmement."),
     ],
     13: [
-        ("py-projet.png", "Mini-projet : questions, boucle, score, record."),
+        ("python-mini-projet.png", "Mini-projet : un programme complet."),
+        ("python-scene-projet.png", "Nora, Max et Sam valident le projet."),
     ],
-    14: [
-        ("py-retenir.png", "Carte des bases : donnees, decisions, boucles, fichiers."),
-    ],
-    15: [
-        ("py-exceptions.png", "try : j'essaie. except : je rattrape."),
-        ("py-scene-erreurs.png", "Exemple : on lit l'erreur, sans paniquer."),
-    ],
-    16: [
-        ("py-classes.png", "Une classe = un moule. Un objet = un exemplaire."),
-    ],
-    17: [
-        ("py-atelier-erreurs.png", "Type, ligne, corriger un seul truc, relancer."),
-    ],
-    18: [
-        ("py-atelier-jeu.png", "Juste prix : secret, boucle, indices, fin."),
-    ],
-    19: [
-        ("py-atelier-organiser.png", "Un role par fonction : poser, main, sauver."),
-    ],
-    20: [
-        ("py-quiz.png", "Verifier ce que tu as compris, sans inventer."),
-    ],
-    21: [
-        ("py-felicitations.png", "Bravo. Tu as les bases de Python."),
-    ],
+    14: [("python-retenir.png", "La carte des notions essentielles.")],
+    15: [("python-atelier-variables.png", "Atelier : variables et conversions.")],
+    16: [("python-atelier-fonctions.png", "Atelier : creer des fonctions.")],
+    17: [("python-atelier-listes.png", "Atelier : listes et dictionnaires.")],
+    18: [("python-erreurs-classiques.png", "Pieges : indentation, =, index.")],
+    19: [("python-pratiques.png", "PEP 8, noms clairs, tester.")],
+    20: [("python-quiz.png", "Quiz Python bases.")],
+    21: [("python-felicitations.png", "Bravo. Tu codes en Python.")],
 }
 
 COVER_IMAGE = "python-couverture.png"
 
 BOOK_TITLE = "Python - Les bases"
 BOOK_SHORT = "Python"
-BOOK_LEAD = "Les bases de Python, puis un cran plus loin : fichiers JSON, exceptions, classes."
+BOOK_LEAD = "Apprendre a programmer clairement, pas a pas."
 BOOK_AUTHOR = "DanielCraft"
-BOOK_SUBJECT = "Formation debutant a intermediaire Python"
-BOOK_KEYWORDS = "Python, formation, debutant, exceptions, classes, JSON"
+BOOK_SUBJECT = "Formation debutant Python - Niveau Base"
+BOOK_KEYWORDS = "Python, programmation, debutant, formation, bases"
 IMAGES_DIR = ROOT / "images"
 PRINT_DIR = IMAGES_DIR / "print"
 
 
 
 def compress_images(*, max_width: int = 1400, quality: int = 75) -> dict[str, str]:
-    """Compresse les PNG source vers images/print/*.jpg. Retourne nom_source -> chemin HTML."""
     from PIL import Image
 
     PRINT_DIR.mkdir(parents=True, exist_ok=True)
@@ -196,7 +161,6 @@ def inject_figures(
     *,
     wide: bool = False,
 ) -> str:
-    """Schema juste apres le H1 ; scenes au milieu (avant Petite histoire / En vrai)."""
     if not figures:
         return body_html
 
@@ -252,7 +216,6 @@ def chapter_titles() -> list[tuple[int, str]]:
 
 
 
-
 def build_html(*, eco: bool = False, image_map: dict[str, str] | None = None) -> str:
     image_map = image_map or {}
     sections: list[str] = []
@@ -294,11 +257,6 @@ def build_html(*, eco: bool = False, image_map: dict[str, str] | None = None) ->
 
     cover_src = image_map.get(COVER_IMAGE, f"images/{COVER_IMAGE}")
     body_class = ' class="eco"' if eco else ""
-    short = globals().get("BOOK_SHORT", BOOK_TITLE.split(" -")[0])
-    lead = globals().get(
-        "BOOK_LEAD",
-        "Les bases expliquees simplement, sans blabla inutile.",
-    )
     return f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -312,12 +270,12 @@ def build_html(*, eco: bool = False, image_map: dict[str, str] | None = None) ->
 <body{body_class}>
   <div class="page">
     <header class="cover">
-      <img class="cover-art" src="{html.escape(cover_src)}" alt="Couverture {html.escape(short)}">
+      <img class="cover-art" src="{html.escape(cover_src)}" alt="Couverture {html.escape(BOOK_SHORT)}">
       <div class="cover-copy">
-        <div class="cover-kicker">Formation informatique</div>
-        <h1>{html.escape(short)}</h1>
-        <p class="lead">{html.escape(lead)}</p>
-        <p class="meta">{html.escape(BOOK_AUTHOR)} - Livre debutant</p>
+        <div class="cover-kicker">Formation Python - Les bases</div>
+        <h1>{html.escape(BOOK_SHORT)}</h1>
+        <p class="lead">{html.escape(BOOK_LEAD)}</p>
+        <p class="meta">{html.escape(BOOK_AUTHOR)} - Livre debutant - Pack Python</p>
       </div>
     </header>
 
@@ -356,7 +314,6 @@ def find_browser() -> str | None:
 
 
 def html_to_pdf(html_path: Path, pdf_path: Path) -> bool:
-    """Genere le PDF. Preferer Playwright (rendu complet), sinon Chrome CLI."""
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
     uri = html_path.resolve().as_uri()
 
@@ -424,7 +381,6 @@ html_to_pdf.used_playwright = False  # type: ignore[attr-defined]
 
 
 def enrich_pdf(pdf_path: Path, *, stamp_footers: bool = True) -> None:
-    """Metadonnees, signets, liens cliquables du sommaire."""
     chapters_payload = []
     for idx, title in chapter_titles():
         name = CHAPTER_FILES[idx - 1]
@@ -440,142 +396,13 @@ def enrich_pdf(pdf_path: Path, *, stamp_footers: bool = True) -> None:
     )
 
 
-
-
-def fallback_pdf_reportlab(pdf_path: Path) -> None:
-    from reportlab.lib.pagesizes import A4
-    from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
-    from reportlab.lib.units import mm
-    from reportlab.platypus import PageBreak, Paragraph, Preformatted, SimpleDocTemplate, Spacer
-
-    styles = getSampleStyleSheet()
-    title = ParagraphStyle(
-        "BookTitle",
-        parent=styles["Title"],
-        fontName="Times-Bold",
-        fontSize=28,
-        leading=34,
-        spaceAfter=12,
-        textColor="#1a4d3e",
-    )
-    h1 = ParagraphStyle(
-        "H1",
-        parent=styles["Heading1"],
-        fontName="Times-Bold",
-        fontSize=16,
-        leading=20,
-        spaceBefore=14,
-        spaceAfter=8,
-        textColor="#14221c",
-    )
-    h2 = ParagraphStyle(
-        "H2",
-        parent=styles["Heading2"],
-        fontName="Times-Bold",
-        fontSize=13,
-        leading=17,
-        spaceBefore=10,
-        spaceAfter=6,
-        textColor="#1a4d3e",
-    )
-    body = ParagraphStyle(
-        "Body",
-        parent=styles["Normal"],
-        fontName="Times-Roman",
-        fontSize=11,
-        leading=16,
-        spaceAfter=6,
-    )
-    code = ParagraphStyle(
-        "Code",
-        parent=styles["Code"],
-        fontName="Courier",
-        fontSize=8.5,
-        leading=11,
-        backColor="#133028",
-        textColor="#e7f2ec",
-        leftIndent=4,
-        rightIndent=4,
-        spaceBefore=6,
-        spaceAfter=8,
-    )
-
-    story = [
-        Paragraph(BOOK_TITLE, title),
-        Paragraph(
-            "Les bases pour construire une page web. Explique simplement, sans blabla inutile.",
-            body,
-        ),
-        Paragraph(f"Auteur : {BOOK_AUTHOR}", body),
-        Spacer(1, 8 * mm),
-        PageBreak(),
-    ]
-
-    for name in CHAPTER_FILES:
-        raw = (CHAPITRES / name).read_text(encoding="utf-8")
-        in_code = False
-        buf: list[str] = []
-        for line in raw.splitlines():
-            if line.startswith("```"):
-                if not in_code:
-                    in_code = True
-                    buf = []
-                else:
-                    story.append(Preformatted("\n".join(buf)[:4000], code))
-                    in_code = False
-                continue
-            if in_code:
-                buf.append(line)
-                continue
-            safe = html.escape(line).replace("`", "")
-            safe = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", safe)
-            if line.startswith("# "):
-                story.append(Paragraph(html.escape(line[2:]), h1))
-            elif line.startswith("## "):
-                story.append(Paragraph(html.escape(line[3:]), h2))
-            elif line.startswith("### "):
-                story.append(Paragraph(f"<b>{html.escape(line[4:])}</b>", body))
-            elif line.strip():
-                story.append(Paragraph(safe, body))
-            else:
-                story.append(Spacer(1, 2 * mm))
-        story.append(PageBreak())
-
-    pdf_path.parent.mkdir(parents=True, exist_ok=True)
-    doc = SimpleDocTemplate(
-        str(pdf_path),
-        pagesize=A4,
-        leftMargin=16 * mm,
-        rightMargin=16 * mm,
-        topMargin=16 * mm,
-        bottomMargin=16 * mm,
-        title=BOOK_TITLE,
-        author=BOOK_AUTHOR,
-        subject=BOOK_SUBJECT,
-        creator="DanielCraft - livres-formation",
-    )
-    doc.build(story)
-
-
 def main() -> int:
     import argparse
 
-    parser = argparse.ArgumentParser(description="Assemble le livre HTML/CSS + PDF")
-    parser.add_argument(
-        "--eco",
-        action="store_true",
-        help="Version eco impression (fonds plus clairs, contrastes sobres)",
-    )
-    parser.add_argument(
-        "--pdf-name",
-        default="",
-        help="Nom du PDF dans livres-formation/pdf/ (sinon auto)",
-    )
-    parser.add_argument(
-        "--skip-compress",
-        action="store_true",
-        help="Ne pas recompresser les images",
-    )
+    parser = argparse.ArgumentParser(description="Assemble le livre Python + PDF")
+    parser.add_argument("--eco", action="store_true")
+    parser.add_argument("--pdf-name", default="")
+    parser.add_argument("--skip-compress", action="store_true")
     args = parser.parse_args()
 
     image_map = (
@@ -592,9 +419,7 @@ def main() -> int:
     OUT_HTML.write_text(html_doc, encoding="utf-8")
     print(f"HTML: {OUT_HTML}")
 
-    pdf_name = args.pdf_name or (
-        "python-les-bases-eco.pdf" if args.eco else "python-les-bases.pdf"
-    )
+    pdf_name = args.pdf_name or ("python-les-bases-eco.pdf" if args.eco else "python-les-bases.pdf")
     pdf_path = OUT_PDF.parent / pdf_name
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -607,8 +432,8 @@ def main() -> int:
         print(f"Navigateur PDF impossible ({exc}), fallback reportlab...", file=sys.stderr)
 
     if not made:
-        fallback_pdf_reportlab(pdf_path)
-        print(f"PDF (reportlab): {pdf_path}")
+        print("PDF generation failed - install playwright or Chrome", file=sys.stderr)
+        return 1
 
     try:
         enrich_pdf(pdf_path, stamp_footers=not html_to_pdf.used_playwright)

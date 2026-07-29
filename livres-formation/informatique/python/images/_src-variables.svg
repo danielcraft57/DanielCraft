@@ -1,15 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Variable = boite avec un nom</text>
-  <defs>
-  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
-  </marker>
-</defs><rect x="120" y="140" width="200" height="160" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="220" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">score</text>
-<text x="220" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">0 -> 10</text><rect x="400" y="140" width="200" height="160" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="500" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">prenom</text>
-<text x="500" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">"Leo"</text><rect x="680" y="140" width="200" height="160" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="780" y="214" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">MAX</text>
-<text x="780" y="242" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">convention</text><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">L'etiquette reste. Le contenu peut changer.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">Variable = nom + valeur</text><rect x="80" y="100" width="200" height="70" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="180" y="140" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">prenom</text>
+<line x1="280" y1="135" x2="340" y2="135" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="340" y="100" width="200" height="70" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="440" y="140" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">"Max"</text>
+<rect x="80" y="240" width="200" height="70" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="180" y="280" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">age</text>
+<line x1="280" y1="275" x2="340" y2="275" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="340" y="240" width="200" height="70" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="440" y="280" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">24</text>
+<text x="400" y="400" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="Arial">Etiquette -> Valeur (reassignable)</text></svg>

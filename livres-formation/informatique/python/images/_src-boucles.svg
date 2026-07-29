@@ -1,15 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Boucle = repeter selon une regle</text>
-  <defs>
-  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
-  </marker>
-</defs><rect x="100" y="150" width="220" height="130" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="210" y="209" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">for</text>
-<text x="210" y="237" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">parcours connu</text><rect x="390" y="150" width="220" height="130" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="500" y="209" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">while</text>
-<text x="500" y="237" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">tant que vrai</text><rect x="680" y="150" width="220" height="130" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="790" y="209" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">sortie</text>
-<text x="790" y="237" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">break / condition</text><path d="M500 280 L500 360 L230 360 L230 280" stroke="#c9a227" stroke-width="3" fill="none"/><text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Toujours une porte de sortie claire.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">for / while</text><rect x="80" y="80" width="200" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="180" y="115" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">for i in range(n)</text>
+<rect x="80" y="200" width="200" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="180" y="235" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">while condition</text>
+<rect x="400" y="80" width="220" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="510" y="115" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Nombre connu</text>
+<rect x="400" y="200" width="220" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="510" y="235" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Condition d'arret</text>
+<line x1="280" y1="110" x2="400" y2="110" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="280" y1="230" x2="400" y2="230" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="200" y="320" width="200" height="55" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="300" y="352" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">break : sortir</text>
+<rect x="440" y="320" width="200" height="55" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="540" y="352" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">continue : suivant</text></svg>

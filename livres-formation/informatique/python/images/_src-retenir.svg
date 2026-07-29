@@ -1,20 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Carte des bases Python</text>
-  <defs>
-  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
-  </marker>
-</defs><rect x="50" y="120" width="170" height="110" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="135" y="169" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">donnees</text>
-<text x="135" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">var / list / dico</text><rect x="240" y="120" width="170" height="110" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="325" y="169" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="700">decider</text>
-<text x="325" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">if / elif</text><rect x="430" y="120" width="170" height="110" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="515" y="169" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">repeter</text>
-<text x="515" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">for / while</text><rect x="620" y="120" width="170" height="110" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="705" y="169" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a4d3e" font-weight="700">organiser</text>
-<text x="705" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">def / import</text><rect x="810" y="120" width="150" height="110" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="885" y="169" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410" font-weight="700">memoire</text>
-<text x="885" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">fichiers</text><rect x="200" y="300" width="600" height="100" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="500" y="354" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">Tape, lance, lis l'erreur, corrige.</text><text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Si ca bloque : separe les etages de la carte.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">Carte des notions</text><rect x="280" y="60" width="240" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="87" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Python bases</text>
+<rect x="50" y="150" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="130" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Variables</text>
+<rect x="230" y="150" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="310" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Fonctions</text>
+<rect x="410" y="150" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="490" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Listes</text>
+<rect x="590" y="150" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="670" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Dicos</text>
+<rect x="50" y="240" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="130" y="267" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Conditions</text>
+<rect x="230" y="240" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="310" y="267" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Boucles</text>
+<rect x="410" y="240" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="490" y="267" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Fichiers</text>
+<rect x="590" y="240" width="160" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="670" y="267" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Erreurs</text>
+<rect x="280" y="340" width="240" height="45" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="367" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Mini-projet</text></svg>

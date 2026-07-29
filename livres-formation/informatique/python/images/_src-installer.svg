@@ -1,16 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
-  <rect width="1000" height="520" fill="#f7f4ef"/>
-  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a4d3e" font-weight="700">Installer = atelier pret</text>
-  <defs>
-  <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-    <path d="M0,0 L8,3 L0,6 Z" fill="#1a4d3e"/>
-  </marker>
-</defs><rect x="80" y="140" width="240" height="140" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="200" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">1. Installer</text>
-<text x="200" y="232" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">python.org</text><rect x="380" y="140" width="240" height="140" rx="14" fill="#fff4d6" stroke="#1a4d3e" stroke-width="3"/>
-<text x="500" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">2. PATH</text>
-<text x="500" y="232" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">commande OK</text><rect x="680" y="140" width="240" height="140" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
-<text x="800" y="204" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">3. Editeur</text>
-<text x="800" y="232" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248" font-weight="400">VS Code / IDLE</text><path d="M320 210 L380 210" stroke="#1a4d3e" stroke-width="3" fill="none" marker-end="url(#arr)"/><path d="M620 210 L680 210" stroke="#1a4d3e" stroke-width="3" fill="none" marker-end="url(#arr)"/><rect x="250" y="340" width="500" height="80" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
-<text x="500" y="384" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">python --version</text><text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248" font-weight="400">Sans version qui repond, on n'avance pas.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">Installer Python</text><rect x="100" y="80" width="200" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="200" y="115" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">python.org</text>
+<line x1="300" y1="110" x2="360" y2="110" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="360" y="80" width="200" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="460" y="115" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Installeur</text>
+<line x1="460" y1="140" x2="460" y2="180" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="310" y="180" width="300" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="460" y="215" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Cocher Add to PATH</text>
+<line x1="460" y1="240" x2="460" y2="280" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="310" y="280" width="300" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="460" y="315" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">python --version</text>
+<rect x="100" y="360" width="240" height="60" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="220" y="395" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">VS Code + extension</text></svg>
