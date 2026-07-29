@@ -1173,6 +1173,68 @@ button, .btn-like {
   .toc a { color: #111827 !important; }
 }
 """,
+        "sql2": """
+/* Theme SQL intermediaire : indigo nuit + menthe (distinct SQL base lime) */
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --paper: #f1f5f9;
+  --paper-deep: #e2e8f0;
+  --band: #312e81;
+  --band-soft: #4338ca;
+  --accent: #34d399;
+  --code-bg: #0f172a;
+  --code-fg: #d1fae5;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #312e81 !important;
+  color: #d1fae5 !important;
+}
+.cover h1 { color: #f8fafc !important; }
+pre {
+  border-left-color: #34d399 !important;
+}
+button, .btn-like {
+  background: #312e81;
+}
+@media print {
+  .toc a { color: #312e81 !important; }
+}
+""",
+        "sql2": """
+/* Theme SQL intermediaire : indigo nuit + menthe (distinct SQL base lime) */
+:root {
+  --ink: #0c1222;
+  --muted: #64748b;
+  --paper: #eef2f7;
+  --paper-deep: #dce3ee;
+  --band: #1e3a5f;
+  --band-soft: #2a4a73;
+  --accent: #2dd4bf;
+  --code-bg: #0b1628;
+  --code-fg: #ccfbf1;
+  --card: #ffffff;
+  --rule: #c5d0de;
+}
+.cover,
+.cover-copy {
+  background: #1e3a5f !important;
+  color: #ccfbf1 !important;
+}
+.cover h1 { color: #f0f9ff !important; }
+pre {
+  border-left-color: #2dd4bf !important;
+}
+button, .btn-like {
+  background: #1e3a5f;
+}
+@media print {
+  .toc a { color: #1e3a5f !important; }
+}
+""",
         "securite": """
 /* Theme Securite web : ardoise + orange alerte (distinct SQL lime / TS marine) */
 :root {

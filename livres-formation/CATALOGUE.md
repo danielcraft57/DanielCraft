@@ -38,7 +38,7 @@ Vente unitaire reste possible (entree de gamme).
 | Livre | Niveau | PDF |
 |-------|--------|-----|
 | SQL - Les bases | Base | `pdf/sql-les-bases.pdf` |
-| SQL intermediaire | Inter | a creer |
+| SQL - Intermediaire | Inter | `pdf/sql-intermediaire.pdf` |
 | SQL expert | Expert | a creer |
 
 ## Livres Securite

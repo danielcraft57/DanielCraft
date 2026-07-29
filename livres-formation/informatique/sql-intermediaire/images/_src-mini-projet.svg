@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#eef2f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c1222" font-weight="700">Mini-projet rapport</text>
+<rect x="50" y="110" width="280" height="280" rx="14" fill="#ccfbf1" stroke="#0c1222" stroke-width="3"/>
+<text x="190" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0c1222" font-weight="700">Periode</text>
+<text x="190" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">claire</text>
+<text x="190" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400"></text>
+<rect x="360" y="110" width="280" height="280" rx="14" fill="#dbeafe" stroke="#2dd4bf" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0f766e" font-weight="700">Top</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f766e" font-weight="400">clients</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f766e" font-weight="400"></text>
+<rect x="670" y="110" width="280" height="280" rx="14" fill="#ffffff" stroke="#0c1222" stroke-width="3"/>
+<text x="810" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0c1222" font-weight="700">HAVING</text>
+<text x="810" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">CASE</text>
+<text x="810" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">bonus</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Chiffres + echantillon.</text>
+</svg>
