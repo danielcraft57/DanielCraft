@@ -1266,6 +1266,37 @@ button, .btn-like {
   .toc a { color: #1f2937 !important; }
 }
 """,
+        "csharp": """
+/* Theme C# : violet profond + cyan vif (distinct Java bordeaux / TS marine) */
+:root {
+  --ink: #120e1c;
+  --muted: #7c7394;
+  --paper: #f5f3fa;
+  --paper-deep: #e8e4f2;
+  --band: #2d1b69;
+  --band-soft: #3d2a80;
+  --accent: #22d3ee;
+  --code-bg: #120e1c;
+  --code-fg: #cffafe;
+  --card: #ffffff;
+  --rule: #d4cfe0;
+}
+.cover,
+.cover-copy {
+  background: #2d1b69 !important;
+  color: #cffafe !important;
+}
+.cover h1 { color: #f0fdff !important; }
+pre {
+  border-left-color: #22d3ee !important;
+}
+button, .btn-like {
+  background: #2d1b69;
+}
+@media print {
+  .toc a { color: #2d1b69 !important; }
+}
+""",
         "sql": """
 /* Theme SQL : encre foret + lime (distinct finance vert/or et TS marine/ambre) */
 :root {
