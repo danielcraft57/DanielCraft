@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#faf6f1"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1410" font-weight="700">A retenir</text>
+<rect x="50" y="110" width="280" height="280" rx="14" fill="#f5e6c8" stroke="#1c1410" stroke-width="3"/>
+<text x="190" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1410" font-weight="700">Types</text>
+<text x="190" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5e55" font-weight="400">if</text>
+<text x="190" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5e55" font-weight="400">boucles</text>
+<rect x="360" y="110" width="280" height="280" rx="14" fill="#efe6db" stroke="#d4a017" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#8a6a0a" font-weight="700">Methodes</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#8a6a0a" font-weight="400">tableaux</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#8a6a0a" font-weight="400"></text>
+<rect x="670" y="110" width="280" height="280" rx="14" fill="#ffffff" stroke="#1c1410" stroke-width="3"/>
+<text x="810" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1410" font-weight="700">Objets</text>
+<text x="810" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5e55" font-weight="400">erreurs</text>
+<text x="810" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5e55" font-weight="400"></text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6b5e55" font-weight="400">Clair, compile, teste.</text>
+</svg>

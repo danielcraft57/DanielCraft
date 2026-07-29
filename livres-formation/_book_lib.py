@@ -1176,37 +1176,6 @@ button, .btn-like {
         "sql2": """
 /* Theme SQL intermediaire : indigo nuit + menthe (distinct SQL base lime) */
 :root {
-  --ink: #0f172a;
-  --muted: #64748b;
-  --paper: #f1f5f9;
-  --paper-deep: #e2e8f0;
-  --band: #312e81;
-  --band-soft: #4338ca;
-  --accent: #34d399;
-  --code-bg: #0f172a;
-  --code-fg: #d1fae5;
-  --card: #ffffff;
-  --rule: #cbd5e1;
-}
-.cover,
-.cover-copy {
-  background: #312e81 !important;
-  color: #d1fae5 !important;
-}
-.cover h1 { color: #f8fafc !important; }
-pre {
-  border-left-color: #34d399 !important;
-}
-button, .btn-like {
-  background: #312e81;
-}
-@media print {
-  .toc a { color: #312e81 !important; }
-}
-""",
-        "sql2": """
-/* Theme SQL intermediaire : indigo nuit + menthe (distinct SQL base lime) */
-:root {
   --ink: #0c1222;
   --muted: #64748b;
   --paper: #eef2f7;
@@ -1233,6 +1202,37 @@ button, .btn-like {
 }
 @media print {
   .toc a { color: #1e3a5f !important; }
+}
+""",
+        "java": """
+/* Theme Java : bordeaux cafe + or doux (distinct TS marine / SQL lime) */
+:root {
+  --ink: #1c1410;
+  --muted: #6b5e55;
+  --paper: #faf6f1;
+  --paper-deep: #efe6db;
+  --band: #4a1c2a;
+  --band-soft: #6b2d3c;
+  --accent: #d4a017;
+  --code-bg: #1c1410;
+  --code-fg: #f5e6c8;
+  --card: #ffffff;
+  --rule: #d9cfc3;
+}
+.cover,
+.cover-copy {
+  background: #4a1c2a !important;
+  color: #f5e6c8 !important;
+}
+.cover h1 { color: #fff8f0 !important; }
+pre {
+  border-left-color: #d4a017 !important;
+}
+button, .btn-like {
+  background: #4a1c2a;
+}
+@media print {
+  .toc a { color: #4a1c2a !important; }
 }
 """,
         "securite": """
