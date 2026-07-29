@@ -1421,6 +1421,37 @@ button, .btn-like {
   .toc a { color: #e8542a !important; }
 }
 """,
+        "ruby": """
+/* Theme Ruby : rouge rubis + creme chaude (identite Matz) */
+:root {
+  --ink: #2b1214;
+  --muted: #8b6b6e;
+  --paper: #fffaf8;
+  --paper-deep: #fce8e4;
+  --band: #9b111e;
+  --band-soft: #cc342d;
+  --accent: #e85d4c;
+  --code-bg: #2b1214;
+  --code-fg: #ffe4de;
+  --card: #ffffff;
+  --rule: #e8c4bc;
+}
+.cover,
+.cover-copy {
+  background: #9b111e !important;
+  color: #ffe4de !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #e85d4c !important;
+}
+button, .btn-like {
+  background: #9b111e;
+}
+@media print {
+  .toc a { color: #9b111e !important; }
+}
+""",
         "php": """
 /* Theme PHP : indigo sombre + lavande (distinct Go turquoise / C# violet) */
 :root {
