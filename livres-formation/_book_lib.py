@@ -1359,6 +1359,37 @@ button, .btn-like {
   .toc a { color: #1e3a8a !important; }
 }
 """,
+        "kotlin": """
+/* Theme Kotlin : violet profond + rose corail (identite JetBrains) */
+:root {
+  --ink: #1a1028;
+  --muted: #7c6b8a;
+  --paper: #faf5ff;
+  --paper-deep: #f0e6f8;
+  --band: #5c2d91;
+  --band-soft: #7c3aed;
+  --accent: #f472b6;
+  --code-bg: #1a1028;
+  --code-fg: #fce7f3;
+  --card: #ffffff;
+  --rule: #e9d5f5;
+}
+.cover,
+.cover-copy {
+  background: #5c2d91 !important;
+  color: #fce7f3 !important;
+}
+.cover h1 { color: #fdf4ff !important; }
+pre {
+  border-left-color: #f472b6 !important;
+}
+button, .btn-like {
+  background: #5c2d91;
+}
+@media print {
+  .toc a { color: #5c2d91 !important; }
+}
+""",
         "php": """
 /* Theme PHP : indigo sombre + lavande (distinct Go turquoise / C# violet) */
 :root {
