@@ -1266,6 +1266,68 @@ button, .btn-like {
   .toc a { color: #1f2937 !important; }
 }
 """,
+        "go": """
+/* Theme Go : bleu ciel + turquoise (distinct Python bleu-jaune / C# violet) */
+:root {
+  --ink: #0d1b2a;
+  --muted: #5e7b8a;
+  --paper: #f0f7fa;
+  --paper-deep: #dceef5;
+  --band: #00838f;
+  --band-soft: #00acc1;
+  --accent: #4dd0e1;
+  --code-bg: #0d1b2a;
+  --code-fg: #e0f7fa;
+  --card: #ffffff;
+  --rule: #b2dfdb;
+}
+.cover,
+.cover-copy {
+  background: #00838f !important;
+  color: #e0f7fa !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #4dd0e1 !important;
+}
+button, .btn-like {
+  background: #00838f;
+}
+@media print {
+  .toc a { color: #00838f !important; }
+}
+""",
+        "go": """
+/* Theme Go : bleu ciel profond + turquoise (mascotte gopher) */
+:root {
+  --ink: #0c1a2e;
+  --muted: #6b8299;
+  --paper: #f0f6fb;
+  --paper-deep: #dde9f3;
+  --band: #00758f;
+  --band-soft: #008fa8;
+  --accent: #00add8;
+  --code-bg: #0c1a2e;
+  --code-fg: #cce7f0;
+  --card: #ffffff;
+  --rule: #c0d6e6;
+}
+.cover,
+.cover-copy {
+  background: #00758f !important;
+  color: #cce7f0 !important;
+}
+.cover h1 { color: #f0faff !important; }
+pre {
+  border-left-color: #00add8 !important;
+}
+button, .btn-like {
+  background: #00758f;
+}
+@media print {
+  .toc a { color: #00758f !important; }
+}
+""",
         "csharp": """
 /* Theme C# : violet profond + cyan vif (distinct Java bordeaux / TS marine) */
 :root {
