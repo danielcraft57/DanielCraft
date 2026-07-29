@@ -1266,6 +1266,37 @@ button, .btn-like {
   .toc a { color: #1f2937 !important; }
 }
 """,
+        "securite2": """
+/* Theme Securite inter : anthracite + rouge alerte (distinct bases orange) */
+:root {
+  --ink: #0f1419;
+  --muted: #64748b;
+  --paper: #f1f5f9;
+  --paper-deep: #e2e8f0;
+  --band: #7f1d1d;
+  --band-soft: #991b1b;
+  --accent: #ef4444;
+  --code-bg: #0f1419;
+  --code-fg: #fecaca;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #7f1d1d !important;
+  color: #fecaca !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #ef4444 !important;
+}
+button, .btn-like {
+  background: #7f1d1d;
+}
+@media print {
+  .toc a { color: #7f1d1d !important; }
+}
+""",
         "go": """
 /* Theme Go : bleu ciel + turquoise (distinct Python bleu-jaune / C# violet) */
 :root {
