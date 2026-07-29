@@ -1297,6 +1297,37 @@ button, .btn-like {
   .toc a { color: #00838f !important; }
 }
 """,
+        "php": """
+/* Theme PHP : indigo sombre + lavande (distinct Go turquoise / C# violet) */
+:root {
+  --ink: #1a1033;
+  --muted: #7e739a;
+  --paper: #f4f2fa;
+  --paper-deep: #e6e0f2;
+  --band: #4f3b78;
+  --band-soft: #634d94;
+  --accent: #a78bfa;
+  --code-bg: #1a1033;
+  --code-fg: #ede9fe;
+  --card: #ffffff;
+  --rule: #d0c8e4;
+}
+.cover,
+.cover-copy {
+  background: #4f3b78 !important;
+  color: #ede9fe !important;
+}
+.cover h1 { color: #f5f3ff !important; }
+pre {
+  border-left-color: #a78bfa !important;
+}
+button, .btn-like {
+  background: #4f3b78;
+}
+@media print {
+  .toc a { color: #4f3b78 !important; }
+}
+""",
         "go": """
 /* Theme Go : bleu ciel profond + turquoise (mascotte gopher) */
 :root {
