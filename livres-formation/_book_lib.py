@@ -1328,6 +1328,37 @@ button, .btn-like {
   .toc a { color: #3b1f0b !important; }
 }
 """,
+        "cpp": """
+/* Theme C/C++ : bleu nuit + acier electrique */
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --paper: #f8fafc;
+  --paper-deep: #e2e8f0;
+  --band: #1e3a8a;
+  --band-soft: #1d4ed8;
+  --accent: #38bdf8;
+  --code-bg: #0f172a;
+  --code-fg: #dbeafe;
+  --card: #ffffff;
+  --rule: #cbd5e1;
+}
+.cover,
+.cover-copy {
+  background: #1e3a8a !important;
+  color: #dbeafe !important;
+}
+.cover h1 { color: #eff6ff !important; }
+pre {
+  border-left-color: #38bdf8 !important;
+}
+button, .btn-like {
+  background: #1e3a8a;
+}
+@media print {
+  .toc a { color: #1e3a8a !important; }
+}
+""",
         "php": """
 /* Theme PHP : indigo sombre + lavande (distinct Go turquoise / C# violet) */
 :root {
