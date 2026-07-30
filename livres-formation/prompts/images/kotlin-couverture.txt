@@ -1,0 +1,4 @@
+Couverture Kotlin Les bases - DanielCraft.
+Photo editorial. Bureau violet (#5c2d91) accents rose (#f472b6).
+Jeune developpeur·se devant laptop, ecran flou avec formes null-safe (boite vide / remplie).
+Texte FRANCAIS : "Sur", "Variable". Aucun anglais, pas de logo JetBrains. 16:9.

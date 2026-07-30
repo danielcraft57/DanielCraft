@@ -1,0 +1,3 @@
+Scene Ruby bases - Rails idee.
+Photo editorial. Sam construit un petit site vitrine sur laptop (navigateur flou "Ma boutique").
+Texte FRANCAIS. Rubis + creme. Pas de logo Rails. Aucun anglais. 16:9.
