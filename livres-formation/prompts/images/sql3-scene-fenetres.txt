@@ -1,0 +1,3 @@
+Scene SQL expert - fonctions fenetre / rangs.
+Photo editorial. Lea numerote des tickets sur un tableau par client (rangs 1,2,3) sans agglomérer les lignes.
+Labels FRANCAIS : "Rang", "Par client". Ardoise + or. Aucun anglais. 16:9.

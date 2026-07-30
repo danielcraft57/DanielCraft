@@ -1,0 +1,3 @@
+Scene SQL inter - sous-requete.
+Photo editorial. Lea filtre d'abord une petite liste d'identifiants, puis croise avec une table plus large sur deux ecrans / feuilles.
+Labels FRANCAIS : "D'abord", "Ensuite". Indigo + menthe. Aucun anglais. 16:9.

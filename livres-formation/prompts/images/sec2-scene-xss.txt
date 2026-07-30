@@ -1,0 +1,4 @@
+Scene Securite inter - defense XSS.
+Photo editorial. Lea montre un navigateur ou le texte utilisateur s'affiche en toute securite (pas d'execution).
+Post-it FRANCAIS : "echapper", "contenu texte". Palette rouge alerte + anthracite.
+Aucun anglais, pas de payload offensif visible. 16:9 photorealiste.
