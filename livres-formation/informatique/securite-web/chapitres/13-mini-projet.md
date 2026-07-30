@@ -43,6 +43,22 @@ Reste sur ton perimetre. Pas de tests d'intrusion improvises sur le site d'autru
 
 Remplis la checklist maintenant pour un vrai site. Les cases rouges deviennent ton plan de semaine.
 
+## Deroule propose (90 min)
+
+0-10 : cadrer le site et les responsables. 10-40 : remplir la checklist a deux. 40-70 : corriger au moins deux rouges. 70-90 : documenter, dater la revue J+90, envoyer au responsable. Lea timebox. Max ecrit. Sam refuse les vert non verifies.
+
+## Preuves acceptables
+
+Capture floutee du cadenas, date de backup, liste des plugins (sans secrets), confirmation 2FA active (sans codes). Pas de mots de passe dans le livrable. DanielCraft valide le processus, pas le theatre.
+
+## Definition de fini
+
+Fini = checklist completee, au moins deux corrections faites, document envoye, revue J+90 posee. Pas "on a discute". Lea signe. Max archive. Sam valide.
+
+Si tu bloques sur une case, marque orange avec date, pas vert fantasme. L'honnetete du livrable fait partie de la securite organisationnelle.
+
+Le livrable reste simple : une page claire, des dates, un responsable. Pas besoin d'un rapport de cinquante pages pour un site vitrine. Chez DanielCraft, court et vrai bat long et flou.
+
 ## A toi
 
 Livre le document. Partage-le a la personne responsable du site. Planifie la prochaine revue (90 jours).

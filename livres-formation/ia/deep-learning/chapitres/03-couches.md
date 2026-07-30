@@ -16,6 +16,31 @@ Au debut du reseau, l'entree est brute. Au milieu, des motifs. A la fin, une dec
 
 Ines dessine trois etages pour ses pieces : entree image, cachee "motifs", sortie "classe". C'est grossier. C'est deja utile pour briefer.
 
+```python
+# Empilement dense minimal (PyTorch) : entree -> cachee -> sortie
+import torch
+import torch.nn as nn
+
+class MiniMLP(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(4, 8),   # 4 mesures en entree
+            nn.ReLU(),
+            nn.Linear(8, 3),   # 3 classes en sortie (scores bruts)
+        )
+
+    def forward(self, x):
+        return self.net(x)
+
+modele = MiniMLP()
+x = torch.randn(2, 4)          # 2 exemples, 4 features
+logits = modele(x)
+print(logits.shape)            # torch.Size([2, 3])
+```
+
+Tu n'as pas encore appris : tu as juste empile. L'apprentissage viendra avec une loss et des poids qui bougent.
+
 ## Profondeur et largeur
 
 Plus de couches peuvent representer des fonctions plus riches - mais coutent plus cher a entrainer, et overfitent plus facilement si les donnees manquent. Elargir augmente la capacite locale ; approfondir compose des transformations. Les architectures modernes jouent sur des blocs repetes, des connexions residuelles, des normes - details que tu rencontreras plus tard. Ici, retiens le levier : **forme du reseau = hypothese sur la structure du probleme**.

@@ -14,6 +14,25 @@ Ce n'est pas la meme chose que la fonction de **perte** (loss). L'activation tra
 
 Imagine un score brut qui sort d'une somme ponderee. **ReLU** laisse passer les positifs et coupe les negatifs : simple, souvent efficace en couches cachees. **Sigmoid** ecrase vers 0..1 : utile parfois pour une probabilite binaire. **Softmax** transforme plusieurs scores en une distribution qui somme a 1 : langage courant des classifieurs multi-classes. Pour un LLM, la sortie ressemble a une distribution sur le vocabulaire : "quel prochain token est probable ?".
 
+```python
+import numpy as np
+
+def relu(z):
+    return np.maximum(0, z)
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+def softmax(z):
+    e = np.exp(z - np.max(z))   # stabilite numerique
+    return e / e.sum()
+
+z = np.array([-1.0, 0.5, 2.0])
+print("ReLU   ", relu(z))
+print("sigmoid", np.round(sigmoid(z), 3))
+print("softmax", np.round(softmax(z), 3), "somme =", round(softmax(z).sum(), 3))
+```
+
 Ines, pour ses pieces, pense "scores bruts puis softmax vers classes". Elle n'a pas besoin de deriver la formule pour choisir la bonne idee.
 
 ## En sortie

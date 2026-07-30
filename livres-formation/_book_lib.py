@@ -1421,6 +1421,37 @@ button, .btn-like {
   .toc a { color: #00838f !important; }
 }
 """,
+        "go2": """
+/* Theme Go inter : ocean profond + lime (distinct bases turquoise) */
+:root {
+  --ink: #071a1f;
+  --muted: #5e7b8a;
+  --paper: #eef6f4;
+  --paper-deep: #d5e8e3;
+  --band: #134e4a;
+  --band-soft: #0f766e;
+  --accent: #a3e635;
+  --code-bg: #071a1f;
+  --code-fg: #ecfccb;
+  --card: #ffffff;
+  --rule: #b7d4cd;
+}
+.cover,
+.cover-copy {
+  background: #134e4a !important;
+  color: #ecfccb !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #a3e635 !important;
+}
+button, .btn-like {
+  background: #134e4a;
+}
+@media print {
+  .toc a { color: #134e4a !important; }
+}
+""",
         "rust": """
 /* Theme Rust : noir charbon + orange rouille (identite Rust) */
 :root {
@@ -1698,6 +1729,37 @@ button, .btn-like {
 }
 @media print {
   .toc a { color: #2d1b69 !important; }
+}
+""",
+        "csharp2": """
+/* Theme C# inter : indigo nuit + vert menthe (distinct bases violet/cyan) */
+:root {
+  --ink: #0c1020;
+  --muted: #6b7280;
+  --paper: #f3f4f8;
+  --paper-deep: #e5e7ef;
+  --band: #1e1b4b;
+  --band-soft: #3730a3;
+  --accent: #34d399;
+  --code-bg: #0c1020;
+  --code-fg: #d1fae5;
+  --card: #ffffff;
+  --rule: #c7c9d9;
+}
+.cover,
+.cover-copy {
+  background: #1e1b4b !important;
+  color: #d1fae5 !important;
+}
+.cover h1 { color: #ffffff !important; }
+pre {
+  border-left-color: #34d399 !important;
+}
+button, .btn-like {
+  background: #1e1b4b;
+}
+@media print {
+  .toc a { color: #1e1b4b !important; }
 }
 """,
         "sql": """

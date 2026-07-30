@@ -14,6 +14,34 @@ A l'inverse, l'**underfitting**, c'est un modele trop simple qui rate meme les m
 
 Ecart **train/test** large. Arbre tres profond. Trop de **features** par rapport aux exemples. Performances magiques peu believable. Importance d'IDs ou de timestamps suspects. Forte sensibilite a une petite perturbation des donnees.
 
+Mini demo (arbre trop profond vs profondeur limitee) :
+
+```python
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+rng = np.random.default_rng(0)
+X = rng.normal(size=(80, 1))
+y = (3 * X[:, 0] + rng.normal(scale=0.8, size=80))
+
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.25, random_state=0)
+profond = DecisionTreeRegressor(max_depth=None).fit(Xtr, ytr)
+simple = DecisionTreeRegressor(max_depth=2).fit(Xtr, ytr)
+
+def mae(m):
+    return (
+        mean_absolute_error(ytr, m.predict(Xtr)),
+        mean_absolute_error(yte, m.predict(Xte)),
+    )
+
+print("profond train/test MAE", tuple(round(v, 3) for v in mae(profond)))
+print("simple  train/test MAE", tuple(round(v, 3) for v in mae(simple)))
+```
+
+Souvent le profond a un train excellent et un test mediocre : overfitting visible.
+
 :::attention
 Si le score train est excellent et le test mediocre, arrete d'ajouter de la complexite. Simplifie, regularise, ou revois les donnees.
 :::

@@ -14,6 +14,27 @@ Pipeline = meme chaine train et prod, fit sur le train seulement. Moins de fuite
 
 Dans l'esprit **scikit-learn** (chapitre suivant), on branche des etapes qui exposent **fit** / **transform** / predict. Tu fais fit sur le train, transform sur le test, predict. Si tu ajoutes une etape, tu l'inseres dans la chaine, tu ne recopies pas six scripts divergents. Moins d'erreurs humaines. Plus de clarte.
 
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+
+X = [[1.0], [1.2], [3.5], [3.7], [1.1], [4.0]]
+y = [0, 0, 1, 1, 0, 1]
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.33, random_state=0)
+
+pipe = Pipeline([
+    ("scale", StandardScaler()),
+    ("clf", LogisticRegression()),
+])
+pipe.fit(Xtr, ytr)           # scale + modele : fit sur train seulement
+print(pipe.predict(Xte))     # memes etapes sur le test
+print("score", pipe.score(Xte, yte))
+```
+
+Le scaler n'a jamais "vu" le test pendant fit : moins de fuite.
+
 :::astuce
 Dessine le pipeline en boites avant de coder. Marque clairement ou se fait le fit et ou se fait le transform.
 :::

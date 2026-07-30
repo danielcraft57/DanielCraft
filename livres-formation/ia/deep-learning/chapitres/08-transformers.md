@@ -14,6 +14,23 @@ Ce n'est pas une garantie de qualite : "on a mis un transformer" n'egal pas "c'e
 
 Quand tu lis "le chat sur le tapis, il dort", le mot "il" doit se relier a "chat". L'attention apprend des liens utiles selon la tache. **Multi-tetes** : plusieurs types de liens en parallele. Empilement de blocs : representations de plus en plus riches. On ajoute des encodings de position, parce que sinon l'ordre serait moins clair. Ines explique ca a Lea avec un surligneur mental : chaque mot eclaire les autres selon le besoin.
 
+```python
+# Attention "jouet" : 3 tokens, scores manuels puis softmax
+import numpy as np
+
+def softmax(z):
+    e = np.exp(z - np.max(z))
+    return e / e.sum()
+
+# Tokens : [le, chat, dort] - scores d'attention du mot "dort" vers les autres
+scores = np.array([0.2, 2.5, 0.1])   # "chat" attire fort
+poids = softmax(scores)
+print("poids attention:", np.round(poids, 3))
+# Si chaque token a un vecteur valeur v_i, sortie = somme poids_i * v_i
+```
+
+Ce n'est pas le code d'un LLM. C'est le geste : ponderer les voisins selon l'utilite.
+
 :::astuce
 Pour sentir l'attention, prends une phrase avec un pronom. Demande : a quoi doit se coller ce pronom ? C'est le geste.
 :::

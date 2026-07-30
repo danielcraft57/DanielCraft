@@ -38,6 +38,16 @@ Si le navigateur crie, tu t'arretes. Tu ne "continues quand meme" que si tu comp
 
 Ouvre ton site (ou un site que tu geres). Note : HTTPS oui/non, redirection HTTP, domaine exact. Si non, planifie l'activation avec l'hebergeur.
 
+## HTTP vs HTTPS au quotidien
+
+HTTP envoie souvent le contenu en clair sur le trajet. HTTPS enveloppe ce trajet. Pour une page purement informative en lecture, le risque differait autrefois ; aujourd'hui, les navigateurs poussent HTTPS partout, et un formulaire en HTTP est un signal d'alarme. Lea refuse de saisir un mot de passe sans cadenas. Max regarde la barre d'adresse avant le contenu. Sam enseigne : domaine d'abord, cadenas ensuite, contenu enfin.
+
+Quand tu deployes, active la redirection automatique. Teste une URL en http et verifie que tu arrives en https. Note les ressources mixtes (images encore en HTTP) si ton outil les signale : elles peuvent casser le cadenas ou afficher des alertes.
+
+## Limites pedagogiques
+
+Tu n'as pas besoin de dechiffrer un certificat pour debuter. Tu as besoin de savoir : mon site force HTTPS ? mes logins sont en HTTPS ? je sais m'arreter si le navigateur crie ? Le reste (HSTS, versions TLS) viendra plus tard si tu administres davantage. DanielCraft garde le niveau base actionnable.
+
 ## A toi
 
 Explique a un ami, en trois phrases, ce que HTTPS protege et ce qu'il ne protege pas. Si tu peines, relis ce chapitre avant l'atelier HTTPS.

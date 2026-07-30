@@ -34,6 +34,20 @@ Pour chaque champ stocke, ecris la finalite en une phrase. Si tu bloques, retire
 
 Liste les donnees perso que ton projet touche. Pour chacune : finalite, ou c'est stocke, qui y accede.
 
+## Sous-traitants et outils
+
+Mailing, analytics, hebergement, IA : chacun peut traiter des donnees. Sache qui recoit quoi. Preferer des options avec retention claire. Lea lit les cases partage. Max desactive un tracker inutile. Sam rappelle qu'un outil gratuit se paye parfois en donnees.
+
+## Droits des personnes (idee)
+
+Acces, rectification, suppression : selon ton role, tu dois savoir a qui passer la demande. Ce livre ne remplace pas un DPO. Il te demande d'avoir un chemin clair au lieu d'improviser sous stress.
+
+## Enfants et publics sensibles
+
+Si ton public inclut des mineurs ou des donnees de sante, le niveau d'exigence monte. Ce livre ne traite pas ces cas : fais-toi accompagner. DanielCraft marque le stop plutot que d'improviser.
+
+Quand tu doutes, minimise d'abord. Moins de donnees stockees, moins de questions juridiques et techniques le jour J. DanielCraft privilegie cette sobriete.
+
 ## A toi
 
 Redige un paragraphe "ce que nous collectons et pourquoi" en langage clair (brouillon). Fais-le relire par quelqu'un de competent si tu publies en vrai.

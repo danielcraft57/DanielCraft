@@ -8,12 +8,12 @@ Image utilisee pour le partage des articles du blog : `assets/images/og/blog-120
 
 - Dimensions : 1200x630 px (ratio 1.91:1)
 - Format : JPEG haute qualite (< 1 MB)
-- Style : coherent avec le design du site (fond clair, accent rouge #dc2626)
+- Style : coherent avec le design du site, mais en version plus technique, plus logicielle, plus premium
 
 ## Prompt pour Midjourney / DALL-E / Stable Diffusion
 
 ```
-Scene : interface de blog ou de contenu web modernisee. Elements schematises : icone de cerveau ou reseau de neurones discret (IA), icone loupe ou graphique de classement (SEO), bulles de dialogue ou fenetres de chat (ChatGPT, assistants). Petit schema de flux : contenu web -> moteur generatif -> reponse citee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs avec coins arrondis, ombres legeres. Accent rouge (#dc2626) sur une ligne, un badge ou un element central (ex : "GEO"). Texte "Blog DanielCraft" en bas, police sans-serif fine, gris fonce (#374151). Sous-titre discret : "Articles et tutoriels - SEO, GEO, IA". Style flat design, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630.
+Scene : visuel Open Graph technique et premium pour le blog DanielCraft. Mélanger interface de contenu moderne, moteur génératif, analyse SEO, citation IA, dashboard éditorial et petits graphes de visibilité. Plusieurs panneaux UI superposés, légère profondeur, bandeau bas sombre avec "Blog DanielCraft" et sous-titre "Articles et tutoriels - SEO, GEO, IA". Palette claire premium : #f5f7fb, #e9eef6, bleus UI, encre sombre #0f172a, accent rouge #dc2626. Style plus logiciel, plus architecture web, moins cartoon, moins vide. Tous les textes visibles en français.
 ```
 
 ## Prompt pour ChatGPT / Claude (generation d'image)
@@ -30,10 +30,10 @@ Contenu :
 - Fond : blanc ou gris tres clair (#f9fafb)
 
 Style :
-- Moderne, epure, tech sans etre froid
+- Moderne, technique, logiciel, tech sans etre froid
 - Coherent avec le design global du site
 - Pas de texte lisible excessif
-- Pas de visage, pas de personnage
+- Pas de personnage cartoon, pas de flat design vide
 
 Format : 1200x630px, ratio 1.91:1, JPEG
 ```
@@ -41,7 +41,7 @@ Format : 1200x630px, ratio 1.91:1, JPEG
 ## Prompt court (Canva, Figma)
 
 ```
-Fond blanc ou #f9fafb. Bloc rouge #dc2626 discret (bande ou badge). Texte "Blog DanielCraft" en noir/gris. Petits pictogrammes : IA, recherche, citation. Style minimal, professionnel. 1200x630.
+Fond clair premium, plusieurs cartes UI, un graphe de visibilité, un bloc contenu, un panneau IA, accent rouge discret et bandeau sombre "Blog DanielCraft". Style technique, professionnel. 1200x630.
 ```
 
 ## Emplacement

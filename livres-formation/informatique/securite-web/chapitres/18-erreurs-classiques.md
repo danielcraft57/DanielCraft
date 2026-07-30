@@ -39,6 +39,10 @@ Affiche les trois pieges qui te concernent. Barre-les quand c'est corrige.
 
 Note ton top 3 personnel. Lie chaque item a un chapitre.
 
+## Comment utiliser ce catalogue
+
+Ne cherche pas a tout corriger en une nuit. Choisis deux lignes. Planifie. Reviens. Chez DanielCraft, la liste est un radar, pas une culpabilisation. Si tu formes une equipe, transforme trois erreurs en atelier de quinze minutes : signal, frein, case checklist.
+
 ## A toi
 
 Traite le numero 1 de ton top 3 avant demain soir.

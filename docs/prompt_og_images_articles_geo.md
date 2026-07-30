@@ -4,7 +4,16 @@ Chaque article du blog peut avoir une image OG dédiée. Place les images dans `
 
 **Important : tous les textes visibles dans les images doivent être en français.**
 
-Format commun : 1200x630 px, ratio 1.91:1, JPEG, style cohérent avec le site (fond clair, accent rouge #dc2626).
+## Charte commune
+
+- Format : `1200x630 px`, ratio `1.91:1`, JPEG
+- Direction visuelle : technique, premium, informatique
+- Composition : plusieurs panneaux UI, schémas de flux, blocs de données, profondeur légère
+- Palette : fond `#f5f7fb` vers `#e9eef6`, bleus `#2563eb` / `#60a5fa`, encre `#0f172a`, accent rouge `#dc2626`
+- Texte : bandeau bas sombre avec un titre français lisible
+- Éviter : flat design trop vide, cartoon, mascottes, logos officiels trop proches des marques
+
+Utilise cette base pour chaque prompt : "Visuel Open Graph technique et premium, plus logiciel que marketing, avec interfaces, graphes, flux de données et architecture web lisible en miniature."
 
 ---
 
@@ -13,7 +22,7 @@ Format commun : 1200x630 px, ratio 1.91:1, JPEG, style cohérent avec le site (f
 Article : GEO, le nouveau SEO pour l'IA : guide complet
 
 ```
-Scene : interface de blog ou de contenu web modernisee. Elements schematises : icone de cerveau ou reseau de neurones discret (IA), icone loupe ou graphique de classement (SEO), bulles de dialogue ou fenetres de chat (ChatGPT, assistants). Petit schema de flux : contenu web -> moteur generatif -> reponse citee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs avec coins arrondis, ombres legeres. Accent rouge (#dc2626) sur une ligne, un badge ou un element central (ex : "GEO"). Texte en français "Blog DanielCraft" ou "GEO - Guide complet" en bas, police sans-serif fine, gris fonce (#374151). Style flat design, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630.
+Visuel Open Graph technique et premium sur le GEO. Grand workspace éditorial avec page web, moteur génératif, citations, panneau de classement et flux "contenu web -> moteur génératif -> réponse citée". Plusieurs cartes UI superposées, accent rouge sur GEO, bandeau sombre avec "GEO - Guide complet". Tous les textes visibles en français.
 ```
 
 ---
@@ -23,7 +32,7 @@ Scene : interface de blog ou de contenu web modernisee. Elements schematises : i
 Article : GEO vs SEO : différences et complémentarité
 
 ```
-Scene : deux colonnes ou blocs cotes a cote. Gauche : "SEO" (liste de liens stylisee, icone loupe). Droite : "GEO" (bulle de dialogue IA, icone citation). Labels en français. Fleche ou symbole "=" entre les deux. Fond blanc ou #f9fafb. Accent rouge (#dc2626). Tous les textes en français. Ratio 1.91:1, 1200x630.
+Comparatif visuel technique en deux colonnes : SEO à gauche avec SERP, liens, suivi de positions ; GEO à droite avec réponses IA, citations, moteur conversationnel. Ajouter un axe de comparaison central. Interfaces et graphes plutôt que pictos seuls. Tous les textes visibles en français.
 ```
 
 ---
@@ -33,7 +42,7 @@ Scene : deux colonnes ou blocs cotes a cote. Gauche : "SEO" (liste de liens styl
 Article : Outils GEO : audit, suivi et vérification des citations
 
 ```
-Scene : tableau de bord ou interface d'audit schematisee. Elements : liste de requetes, indicateurs (checkmarks, pourcentages). Labels en français ("Requêtes", "Citations", "Cité"). Fond gris clair (#f3f4f6). Cartes blanches. Accent rouge (#dc2626). Tous les textes en français. Ratio 1.91:1, 1200x630.
+Dashboard d'audit GEO avec liste de requêtes, statut de citations, sources repérées, score de présence et panneau de vérification. Visuel dense, propre, très logiciel. Accent rouge sur les éléments d'audit importants. Tous les textes visibles en français.
 ```
 
 ---
@@ -43,7 +52,7 @@ Scene : tableau de bord ou interface d'audit schematisee. Elements : liste de re
 Article : GEO technique : indexabilité, HTML et performance
 
 ```
-Scene : schema technique minimaliste. Elements : blocs "HTML", "robots.txt", "Schema.org" avec fleches de flux. Icône engrenage. Tous les labels en français. Fond blanc ou #f9fafb. Accent rouge (#dc2626). Ratio 1.91:1, 1200x630.
+Schéma technique détaillé avec blocs HTML, robots, données structurées, performance, exploration et rendu. Plusieurs couches de flux entre code source, indexation et réponse générative. Ambiance architecture web moderne. Tous les textes visibles en français.
 ```
 
 ---
@@ -53,7 +62,7 @@ Scene : schema technique minimaliste. Elements : blocs "HTML", "robots.txt", "Sc
 Article : GEO et contenu : structure, formats et checklist
 
 ```
-Scene : document ou page de contenu schematisee. Elements : titres H1/H2/H3, liste a puces, bloc FAQ. Titres en français (ex. "Titre", "FAQ"). Fond clair. Structure wireframe. Accent rouge (#dc2626). Tous les textes en français. Ratio 1.91:1, 1200x630.
+Éditeur de contenu avancé avec structure H1 H2 H3, FAQ, checklist, extraits réutilisables et panneau de validation. Le visuel doit faire penser à un vrai outil éditorial moderne. Tous les textes visibles en français.
 ```
 
 ---
@@ -63,7 +72,7 @@ Scene : document ou page de contenu schematisee. Elements : titres H1/H2/H3, lis
 Article : GEO hors-site : mentions et autorité
 
 ```
-Scene : reseau ou maillage de noeuds. Centre : ton site ou marque. Autour : plateformes (LinkedIn, GitHub, medias), bulles de mention, liens. Fond gris clair. Noeuds en gris, lignes de connexion discretes. Accent rouge (#dc2626) sur le noeud central ou une connexion. Style reseau, epure. Pas de visage. Ratio 1.91:1, 1200x630.
+Carte réseau technique montrant un site central relié à des sources externes, profils, médias et référentiels. Ajouter des signaux d'autorité, mentions et propagation de réputation. Plus data graph que dessin abstrait simple. Tous les textes visibles en français.
 ```
 
 ---
@@ -73,11 +82,11 @@ Scene : reseau ou maillage de noeuds. Centre : ton site ou marque. Autour : plat
 Article : Optimiser pour ChatGPT, Perplexity et Google SGE
 
 ```
-Scene : trois blocs cotes a cote avec labels en français : "ChatGPT" (bulle chat), "Perplexity" (loupe), "Google SGE" (recherche). Representations abstraites. Fond blanc ou #f9fafb. Accent rouge (#dc2626). Tous les textes en français. Ratio 1.91:1, 1200x630.
+Trois panneaux d'interfaces IA côte à côte avec différences de rendu, citations, réponses et recherche augmentée. Le thème doit évoquer des produits logiciels, pas des logos seuls. Bandeau sombre avec titre français. Tous les textes visibles en français.
 ```
 
 ---
 
 ## Generation
 
-Utilise Midjourney, DALL-E, Stable Diffusion ou Canva avec ces prompts. Verifie les dimensions (1200x630) et compresse si necessaire (< 1 MB).
+Utilise Midjourney, DALL-E, Stable Diffusion, Flux ou ChatGPT Images avec ces prompts. Vérifie les dimensions (`1200x630`) et compresse si nécessaire (`< 1 MB`).

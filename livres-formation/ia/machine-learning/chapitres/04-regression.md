@@ -10,6 +10,24 @@ Regression = predire un nombre. Commence simple, mesure, complexifie seulement s
 
 Imagine predire le loyer a partir de la surface. En gros, loyer ≈ a * surface + b. Le modele cherche a et b qui minimisent une erreur (souvent la distance verticale aux points). Ce n'est pas toujours realiste (les relations sont courbes, il y a d'autres facteurs), mais c'est un excellent premier modele : simple, interpretable, rapide a diagnostiquer.
 
+Exemple chiffre invente : surfaces `[20, 30, 40, 50]` m2, loyers `[450, 600, 780, 900]` EUR. A la main, tu sens deja "plus c'est grand, plus c'est cher". En code (scikit-learn) :
+
+```python
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+X = np.array([[20], [30], [40], [50]])  # m2
+y = np.array([450, 600, 780, 900])      # EUR
+
+modele = LinearRegression()
+modele.fit(X, y)
+print("a (pente) ~", round(modele.coef_[0], 2))
+print("b (intercept) ~", round(modele.intercept_, 2))
+print("loyer predit 35 m2 ~", round(modele.predict([[35]])[0], 0), "EUR")
+```
+
+Lis a et b : "environ +X EUR par m2". Puis demande-toi si ca a du sens metier avant de complexifier.
+
 ## Au-dela de la droite
 
 Tu peux ajouter des **features** (quartier, etage, presence d'ascenseur). Tu peux transformer (log du prix). Tu peux utiliser des modeles plus souples (arbres, forets). La regle DanielCraft : commence simple, mesure, complexifie seulement si le gain est reel sur le jeu de **test** et en conditions proches du deploiement.

@@ -40,6 +40,20 @@ Un fichier uploade mal controle peut devenir une porte. Reste strict sur types e
 
 Prends un formulaire de ton site. Pour chaque champ : type attendu, longueur, obligatoire, ou ca part (mail, base). Complecte les trous.
 
+## Messages d'erreur et fuite d'info
+
+Un message trop precis sur un login peut aider a cartographier les comptes. Preferer des messages neutres sur les flux sensibles. Lea uniformise. Max evite d'afficher la trace technique a l'utilisateur final. Sam garde les details pour les logs internes proteges.
+
+## Confirmation et double saisie
+
+Pour les actions destructives (supprimer, transferer), demande une confirmation. Pour les emails critiques, une verification de boite aide. Ce n'est pas de la paranoia : c'est de la reduction d'accidents humains, qui sont aussi des incidents de securite.
+
+## Journalisation discrete
+
+Garde des logs utiles (tentative, horodatage) sans stocker des secrets en clair. Un log qui contient des mots de passe est une fuite en attente. Lea purge. Max masque. Sam rappelle : minimiser aussi dans les logs.
+
+Chaque nouveau formulaire repasse la checklist courte : champs utiles, validation serveur, taille, destination des donnees. Lea ne livre pas sans cette passe.
+
 ## A toi
 
 Ecris la checklist formulaire (8 cases max) que tu recocheras a chaque nouveau form.

@@ -14,6 +14,26 @@ Ce n'est pas une comprehension humaine du recit. Ce n'est pas non plus "obsolete
 
 Tu lis un journal de bord ligne apres ligne. Tu gardes en tete un resume. Chaque nouvelle ligne modifie le resume. A la fin, tu classes ou tu predits la suite. Le RNN fait un geste voisin, en vecteurs. Sur les longues sequences, les RNN simples oublient ou deviennent instables : gradients qui disparaissent ou explosent. Des variantes (**LSTM**, **GRU**) ont ameliore la memoire. Puis l'attention des transformers a change la donne en permettant de relier des positions plus directement, et de mieux paralleliser sur GPU.
 
+```python
+# RNN "jouet" : etat h mis a jour a chaque pas
+import numpy as np
+
+def tanh(z):
+    return np.tanh(z)
+
+h = np.zeros(4)                 # memoire initiale
+Wx = np.random.randn(4, 3) * 0.1
+Wh = np.random.randn(4, 4) * 0.1
+b = np.zeros(4)
+
+sequence = [np.array([1, 0, 0]), np.array([0, 1, 0]), np.array([0, 0, 1])]
+for t, x_t in enumerate(sequence):
+    h = tanh(Wx @ x_t + Wh @ h + b)
+    print(f"pas {t}: ||h||={np.linalg.norm(h):.3f}")
+```
+
+Tu sens le geste : a chaque pas, l'etat change. Sur du texte long en 2026, tu prefereras souvent un transformer preentraine - mais l'intuition "memoire qui voyage" reste utile.
+
 :::astuce
 Quand tu entends "sequence", demande : qu'est-ce qui depend du passe recent ? du passe lointain ? du futur (attention au split temporel) ?
 :::

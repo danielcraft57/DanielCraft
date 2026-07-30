@@ -12,6 +12,29 @@ Si tu n'as pas de donnees, invente 15 lignes coherentes a la main. Le geste comp
 
 1) Choisis une cible numerique (ventes, duree, montant). 2) Liste 5 features disponibles a l'instant T. 3) Decris un split temporel ou aleatoire. 4) Definir la baseline (predire la moyenne train). 5) Imagine une regression lineaire a une feature principale : quelle pente sensee ? 6) Choisis MAE ou RMSE comme metrique. 7) Ecris 3 causes possibles d'**overfitting** sur ce sujet. 8) Si tu codes : implemente avec un **Pipeline** minimal et compare au baseline.
 
+Correction type (a adapter) :
+
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error
+import numpy as np
+
+X = np.array([[20], [30], [40], [50], [60], [70], [25], [55]])
+y = np.array([450, 600, 780, 900, 1000, 1100, 520, 950])
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.25, random_state=0)
+
+baseline = np.full_like(yte, ytr.mean(), dtype=float)
+pipe = Pipeline([("reg", LinearRegression())]).fit(Xtr, ytr)
+pred = pipe.predict(Xte)
+
+print("MAE baseline", round(mean_absolute_error(yte, baseline), 1))
+print("MAE modele  ", round(mean_absolute_error(yte, pred), 1))
+```
+
+Si tu ne bats pas la moyenne, le livrable dit encore "pas de gain" - et c'est une conclusion honnete.
+
 ## Livrable
 
 Une page "contrat regression" : question, features, split, metrique, baseline, critere de succes ("battre baseline de X sur test").

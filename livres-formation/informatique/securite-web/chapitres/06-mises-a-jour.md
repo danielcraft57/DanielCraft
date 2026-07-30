@@ -39,6 +39,18 @@ Un composant abandonne n'est pas "stable". C'est souvent "plus corrige".
 
 Liste tes composants (CMS, 3 plugins max a garder, theme). Coche : a jour / a maj / a retirer.
 
+## Dependances quand tu codes
+
+Si tu construis avec un langage et des paquets, les mises a jour concernent aussi le gestionnaire de paquets. Lis les alertes de securite de ton ecosysteme. Mets a jour avec tests. Ne ignore pas indefiniment un avis critique parce que ca casse le build : planifie le correctif. Lea isole les maj securite. Max lit le changelog en diagonale pour les breaking changes. Sam refuse les projets sans lockfile ignore dans le vide.
+
+## Plugins et themes
+
+Installe peu. Chaque extension est une surface. Preferer un theme simple maintenu a une usine a effets abandonnee. Desactive avant de supprimer si tu veux tester. Documente pourquoi un plugin existe : si tu ne sais plus, il part probablement.
+
+## Fenetre et communication
+
+Annonce une courte maintenance si tu as des utilisateurs. Preferer un creneau calme. Apres maj, parcours les pages cles avec la checklist URL. Lea envoie un message court "maj faite, dites-moi si coin casse". Max garde un rollback : backup d'avant maj a portee. Sam refuse les maj surprises en plein lancement marketing.
+
 ## A toi
 
 Planifie la prochaine fenetre de maj (jour + heure + backup avant). Ecris-la. Fais-la.

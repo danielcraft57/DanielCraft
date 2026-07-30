@@ -40,6 +40,16 @@ Cree une phrase personnelle : "Si c'est urgent, je ralentis." Dis-la avant chaqu
 
 Sans cliquer, observe la boite spam ou les SMS. Liste trois motifs qui reviennent. Ajoute le frein correspondant a ta checklist.
 
+## Telephone, SMS et messageries
+
+Le phishing n'est pas reserve au mail. SMS, messages pro, fausses pages de login dans une pub : meme logique. Urgence, lien, secret. Sur mobile, l'ecran etroit cache souvent le vrai domaine : inspecte sans ouvrir ou ignore et passe par l'application officielle / le favori.
+
+Lea traite un SMS banque comme un mail : frein. Max a desactive les apercus de liens qui chargent trop vite. Sam rappelle que le support legitime te renvoie vers ton espace deja connu, pas vers un raccourci douteux.
+
+## Apres un clic malheureux
+
+Pas de honte : execute. Ferme la page, ne saisis rien de plus, change le mot de passe sur le vrai site, active 2FA, verifie les appareils connectes, previent si un compte pro est touche. Chez DanielCraft, le plan bat la rumination. Ecris ce plan avant d'en avoir besoin.
+
 ## A toi
 
 Redige un mini-protocole phishing en cinq lignes pour toi ou ton equipe. Garde-le a cote de l'ecran.

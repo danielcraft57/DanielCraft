@@ -111,7 +111,7 @@ STATIC_PAGES: list[dict] = [
         "slug": "statistiques",
         "badge": "Chiffres",
         "title": "Statistiques",
-        "subtitle": "Projets livrés, technologies et années d'expérience",
+        "subtitle": "Projets livrés, technologies et activité depuis juillet 2011",
         "chips": ["Activité", "Technos"],
         "cta": "En savoir plus →",
     },

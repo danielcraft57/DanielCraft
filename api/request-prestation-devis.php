@@ -34,7 +34,7 @@ require_once __DIR__ . '/devis-common.php';
 $prestationSlug = devis_clean_field((string) ($_POST['prestation_slug'] ?? ''), 80);
 $serviceSlug = devis_clean_field((string) ($_POST['service_slug'] ?? ''), 80);
 
-$sourcePath = '/prestations/';
+$sourcePath = '/nos-offres';
 if ($prestationSlug !== '') {
     $sourcePath .= $prestationSlug . '/';
 }

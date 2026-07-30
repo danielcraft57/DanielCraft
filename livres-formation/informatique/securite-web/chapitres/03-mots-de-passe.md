@@ -40,6 +40,16 @@ Commence par mail + hebergeur + admin. Ensuite le reste au fil de l'eau quand tu
 
 Ouvre (ou installe) un gestionnaire. Cree une entree pour un compte non critique en test. Note la regle que tu appliqueras aux trois comptes critiques.
 
+## Gerer le secret maitre
+
+Le gestionnaire a lui-meme un secret maitre. Il doit etre long, memorisable pour toi seul, jamais reutilise ailleurs. Active le verrouillage automatique de l'appareil et du coffre. Lea utilise une phrase de passe personnelle longue. Max a abandonne les quatre chiffres faciles. Sam rappelle : si le maitre fuit, le coffre fuit - d'ou l'interet de la 2FA sur le mail de recuperation et du soin porte a l'appareil.
+
+Chez DanielCraft, on prefere un coffre un peu contraignant a vingt secrets ecrits dans un carnet perdu. Si tu partages un ordinateur familial, cree un profil separe ou verrouille systematiquement. Un gestionnaire ouvert sur une session partagee n'est plus un coffre.
+
+## Reagir a une fuite suspecte
+
+Si un service annonce une fuite, ou si tu as colle un secret au mauvais endroit : change ce secret depuis le vrai site, verifie les sessions actives, active la 2FA, regarde si le meme secret existait ailleurs (et change aussi). Lea chronometre ces gestes. Max ne panique plus : il execute la liste. Sam interdit d'attendre demain.
+
 ## A toi
 
 Ecris ta politique en quatre puces : longueur, unicite, stockage, 2FA. Coche ce qui est deja vrai. Planifie les trous cette semaine.

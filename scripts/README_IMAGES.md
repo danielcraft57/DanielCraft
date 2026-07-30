@@ -17,8 +17,9 @@ pip install -r requirements-scripts.txt
 | **`apply_complementary_grades.py`** | **6 variantes** + `--blend dark\|wide\|midtone\|full` (défaut **dark** pour UI sombres) + `--punch` pour amplifier les teintes. |
 | **`portfolio_image_pipeline.py`** | Enchaîne : soften → reduce_blue → grades (sous-processus). |
 | **`og_image_pipeline.py`** | Images **Open Graph** (`assets/images/og/`) : bleu métal → reduce_blue → grades complémentaires → optionnel 1200×630 + WebP (`optimize_images`). |
-| **`generate_site_og_images.py`** | Génère les cartes OG **1200×630** cartoon/BD du site (pages statiques, prestations, vitrines, projets — hors blog). Charte bleu `#4da9d6`. |
-| **`generate_blog_og_images.py`** | Génère `blog-1200x630.jpg` et les cartes OG des articles (hors série Design Patterns par défaut). |
+| **`generate_site_og_images.py`** | Génère les cartes OG **1200×630** du site (pages statiques, prestations, vitrines, projets — hors blog). Charte bleu `#4da9d6`. |
+| **Blog OG (ton débutant)** | `python scripts/generate_simple_blog_og_prompts.py` → génère les JPG via `docs/prompt_og_images_articles_simple.md` → `python scripts/install_ai_generated_blog_og.py --simple`. **Pas de bannières** : le hero article = l’OG. |
+| **Blog OG (tous / legacy)** | `python scripts/generate_all_blog_og_prompts.py` → JPG → `install_ai_generated_blog_og.py`. Doc : `docs/prompt_og_images_articles_all.md` (ou `…_legacy.md`). Éviter `install_blog_article_banners.py` (hero = OG). |
 | `generate_favicon_pngs.py` | Pack favicons depuis le SVG. |
 | **`rasterize_about_hero.py`** | PNG + WebP 1200×1200 (ou `--size`) pour `about-section-hero`, même composition que le SVG (Pillow, sans Cairo). |
 | **`generate_home_images.py`** | Illustrations accueil (`assets/images/home/`) : hero + 4 cartes offres, charte bleu DanielCraft (PNG + WebP). |

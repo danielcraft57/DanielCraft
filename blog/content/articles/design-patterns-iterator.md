@@ -18,7 +18,7 @@ series_order: 12
 
 **Famille :** Comportemental · **Série :** Design Patterns GoF · **Article 12/24** · **Popularité :** #11 sur 23
 
-Iterator accède aux éléments d'une collection sans exposer sa structure.
+Iterator te laisse avancer élément par élément dans une collection **sans** connaître sa structure interne (tableau, arbre, liste chaînée, flux réseau…).
 
 ---
 
@@ -30,37 +30,34 @@ Iterator accède aux éléments d'une collection sans exposer sa structure.
 
 ## Le problème sans ce pattern
 
-Parcourir une liste chaînée avec des `.next` manuels partout.
-
-### Code qui sent le besoin de Iterator
-
-Le client contient trop de détails ; extrais les rôles du schéma.
+Sans Iterator, le client manipule directement les détails : `.next` sur une liste chaînée, indices sur un tableau, récursion sur un arbre. Change la structure → tu casses tous les appels. Tu mélanges aussi **parcours** et **métier** dans le même fichier.
 
 ### Symptômes dans ton code
 
-- Fichiers qui grossissent à chaque nouvelle variante.
-- Tests difficiles : trop de mocks ou d'effets de bord cachés.
-- Tu as peur de toucher une classe car « tout dépend de tout ».
+- Boucles qui connaissent trop bien la représentation interne.
+- Impossible de changer Array → Set / Map sans tout réécrire.
+- Deux parcours concurrents qui se marchent dessus (curseur partagé).
+- Tests qui doivent reconstruire toute la structure juste pour lire trois éléments.
 
 ---
 
 ## L'idée du pattern Iterator
 
-Interface commune ; le langage fournit `for..of` / générateurs.
+Tu exposes une interface simple : « donne-moi le suivant » / « y en a-t-il encore ? ». La collection crée son itérateur ; le client ne voit que cette façade. En JavaScript/TypeScript, `for…of` et les générateurs (`function*`) sont déjà des Iterator. En Python, `iter()` / `__next__` et les générateurs font le même travail.
 
 | Rôle | Responsabilité |
 |------|----------------|
-| **Client** | Déclenche l'opération |
-| **Iterator** | Structure centrale |
-| **Collaborateurs** | Implémentations ou états |
+| **Iterable / Aggregate** | Collection ; fabrique un Iterator |
+| **Iterator** | Curseur : `next`, `hasNext` (ou équivalent) |
+| **Client** | Consomme les éléments, ignore la structure |
 
 ### Analogie du quotidien
 
-Télécommande chaîne+ / chaîne-.
+Une **télécommande** : chaîne +, chaîne −. Tu ne ouvres pas le boîtier du décodeur pour changer de chaîne. Tu avances, tu recules, tu t'arrêtes — peu importe si les chaînes sont en câble, satellite ou IPTV. L'Iterator, c'est cette télécommande pour tes données.
 
 ---
 
-## Exemple complet en TypeScript
+## Exemple en TypeScript
 
 ```typescript
 class BookCollection implements Iterable<string> {
@@ -70,110 +67,107 @@ class BookCollection implements Iterable<string> {
     for (const b of this.books) yield b;
   }
 }
+
+const shelf = new BookCollection();
+shelf.add('Clean Code');
+shelf.add('Design Patterns');
+for (const title of shelf) {
+  console.log(title); // parcours uniforme
+}
 ```
 
-### Ce qu'il faut retenir du code
+Le client n'accède jamais à `books`. Demain, tu stockes dans un arbre ou un fichier : tant que `Symbol.iterator` reste correct, les boucles ne bougent pas.
 
-- Le **client** dépend d'abstractions, pas de détails partout.
-- Chaque nouvelle variante = **nouvelle classe** (ou module), pas un `if` de plus.
-- Nomme tes types pour le **métier** (noms métier explicites, pas `Strategy1`).
-
----
-
-## Exemple en Python
+### Version Python minimale
 
 ```python
-# Iterator — reproduis les classes TypeScript avec dataclasses / ABC
+class BookCollection:
+    def __init__(self):
+        self._books = []
+
+    def add(self, title: str) -> None:
+        self._books.append(title)
+
+    def __iter__(self):
+        for title in self._books:
+            yield title
+
+for title in BookCollection():  # ou après add()
+    print(title)
 ```
 
 ---
 
 ## Quand utiliser Iterator
 
-- Plusieurs variantes ou étapes.
-- Équipe qui doit nommer la solution en review.
-
----
+- Plusieurs structures de données derrière la même API de parcours.
+- Besoin de **plusieurs curseurs** indépendants (deux boucles en parallèle).
+- Collections paresseuses / flux (pages d'API, fichiers ligne à ligne).
+- Tu veux cacher une implémentation complexe (arbre, graphe).
 
 ## Quand ne pas utiliser Iterator
 
-- Script jetable.
-- Un seul `if` stable.
+- Un simple tableau lu une fois dans un script jetable.
+- Tu as besoin d'accès aléatoire indexé partout (`arr[i]`) — un Iterator séquentiel ne remplace pas ça.
+- Sur-abstraction : wrapper inutile autour d'un `for` déjà clair.
 
 ---
 
 ## Erreurs fréquentes des juniors
 
-- Sur-ingénierie.
-- Nom du pattern sans problème associé.
+- Muter la collection pendant l'itération sans règle claire.
+- Exposer quand même la structure « pour aller plus vite ».
+- Confondre Iterator (parcours) et **Visitor** (opération sur chaque type de nœud).
+- Oublier que `for…of` consomme l'itérateur : un second passage peut être vide si tu ne recrées pas l'itérateur.
 
 ---
 
 ## Patterns proches
 
-- **Voir série** : Articles patterns proches
+- **Composite** : souvent itéré (arbre de composants).
+- **Visitor** : ajoute une *opération* ; Iterator se contente de *parcourir*.
+- **Generator / yield** : forme moderne et légère d'Iterator dans JS et Python.
 
 ---
 
 ## Dans le monde réel
 
-Repère Iterator dans un framework que tu utilises (doc ou source).
+`Array`, `Map`, `Set`, jQuery-like collections, cursors de base de données, `ReadableStream`… Dès que tu fais `for (const x of something)`, tu utilises déjà le pattern. Les frameworks de data (ORM, pandas) exposent aussi des itérateurs pour ne pas charger tout en mémoire.
+
+Un cas fréquent en backend : paginer une API (`while hasNext { fetch page }`) derrière un générateur. Le reste du code consomme `for item in all_items()` sans savoir s'il y a 1 ou 40 pages HTTP. Tu as isolé le « comment avancer » du « quoi faire de chaque élément ».
 
 ---
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Iterator aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Rarement sous ce nom — on teste plutôt : « comment parcourir sans exposer l'interne ? »
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Iterator te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non — React, Express ou Spring s'en servent déjà. Comprendre Iterator t'aide à écrire des API cohérentes.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
-
----
-
-## Mini test unitaire (idée)
-
-```typescript
-// Exemple de test : mocke les collaborateurs, vérifie le comportement public
-describe('Iterator', () => {
-  it('fonctionne avec une variante', () => {
-    // Arrange → Act → Assert
-  });
-});
-```
-
-Adapte ce squelette à ton framework (Jest, Vitest, pytest).
-
----
-
-## Pas à pas : implémenter en 5 étapes
-
-1. **Nomme le problème** — est-ce vraiment Iterator ?
-2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
-3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Iterator parce que… ».
+**Je dois tout refactoriser ?** Non — introduis un Iterator quand le client dépend trop de la structure.
 
 ---
 
 ## Checklist code review
 
-- [ ] Le client ne dépend pas de classes concrètes inutiles
-- [ ] Pas de sur-abstraction sur un cas unique
-- [ ] Tests sur chaque variante / handler / état
-- [ ] Nommage métier clair
+- [ ] Le client n'accède pas aux champs internes de la collection
+- [ ] Plusieurs itérateurs peuvent coexister si besoin
+- [ ] Comportement documenté si la collection mute pendant le parcours
+- [ ] Nommage métier clair (`BookCollection`, pas `MyIteratorThing`)
 
 ---
 
 ## Exercice pratique (25–35 min)
 
-Cartographie un module de ton projet : pourrait-il devenir Iterator ?
+Crée une collection « playlist » (tableau interne). Expose uniquement un Iterator / générateur. Ajoute ensuite une variante « ordre aléatoire » sans changer le code client qui fait `for…of`.
 
 ---
 
 ## Résumé
 
-Iterator : Iterator accède aux éléments d'une collection sans exposer sa structure.
+- Iterator = télécommande : avancer sans ouvrir la boîte.
+- Sépare **parcours** et **structure**.
+- Les langages modernes l'ont intégré (`for…of`, générateurs) — apprends à le *concevoir* quand tu crées tes propres collections.
 
 ---
 

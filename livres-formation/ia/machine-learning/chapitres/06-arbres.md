@@ -10,6 +10,21 @@ Un arbre pose des questions en cascade. Lisible pour le metier, fragile s'il dev
 
 Tu peux montrer l'arbre a Noe et il comprend sans equation. Tu vois ou le modele coupe. Tu detectes des regles absurdes ("si code postal = 99999 alors ...") qui revelent un souci de donnees. Pour enseigner le machine learning, les arbres sont un pont en or entre intuition et pratique.
 
+```python
+from sklearn.tree import DecisionTreeClassifier, export_text
+import numpy as np
+
+# features : [montant, deja_revenu]
+X = np.array([[50, 0], [80, 1], [200, 0], [150, 1], [30, 0], [300, 0]])
+y = np.array([0, 0, 1, 0, 0, 1])  # 1 = risque retour eleve
+
+arbre = DecisionTreeClassifier(max_depth=2, random_state=0).fit(X, y)
+print(export_text(arbre, feature_names=["montant", "deja_revenu"]))
+print("prediction montant=180, deja=0 ->", arbre.predict([[180, 0]])[0])
+```
+
+Avec `max_depth=2`, tu restes lisible. Monte la profondeur : tu verras le modele coller plus fort au train - et souvent moins bien generaliser.
+
 ## Limites d'un arbre seul
 
 Un arbre profond colle trop aux donnees d'entrainement (**overfitting**). Un arbre trop petit sous-apprend. Les frontieres sont souvent paralleles aux axes (questions du type feature > seuil), ce qui peut etre maladroit pour certaines formes. La solution courante : des ensembles d'arbres (**forets**, boosting). L'idee : plusieurs arbres votent ou se corrigent, plus robustes, un peu moins lisibles.

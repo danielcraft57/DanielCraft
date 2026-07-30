@@ -36,6 +36,17 @@ Tu construis un dossier de decision. Chaque section empeche un mensonge courant 
 
 10) Idee GPU : local, cloud, ou seulement inference API.
 
+Esquisse code (a coller / adapter quand tu codes pour de vrai) :
+
+```python
+# Plan minimal : transfer + early stopping (pseudo)
+# 1. backbone = resnet18(weights="DEFAULT") ; geler
+# 2. remplacer fc par Linear(..., n_classes)
+# 3. DataLoader train/val avec augmentations realistes
+# 4. boucle epochs : loss, val ; early stopping patience=5
+# 5. evaluer UNE FOIS sur test terrain reserve
+```
+
 :::astuce
 Ecris le go/no-go AVANT de regarder un premier score. Sinon tu deplaces la barre.
 :::

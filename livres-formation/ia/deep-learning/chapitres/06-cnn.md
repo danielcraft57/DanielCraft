@@ -14,6 +14,22 @@ Ce n'est pas la seule architecture vision en 2026 (les vision transformers exist
 
 Un chat peut etre a gauche ou a droite : un filtre d'"oreille" utile partout grace au partage de poids. Un pixel depend surtout de son voisinage : la localite est un a priori puissant. Les premieres couches tendent vers des motifs simples ; plus loin, des formes plus abstraites. Ines imagine deux filtres mentaux pour ses pieces : "contour metallique", "trou de vis". Elle sait que le reseau apprendra ses propres filtres ; l'exercice sert a sentir le besoin.
 
+```python
+# CNN miniature (PyTorch) : image 1x28x28 -> 10 classes
+import torch.nn as nn
+
+cnn = nn.Sequential(
+    nn.Conv2d(1, 8, kernel_size=3, padding=1),  # filtres locaux
+    nn.ReLU(),
+    nn.MaxPool2d(2),                            # reduction spatiale
+    nn.Flatten(),
+    nn.Linear(8 * 14 * 14, 10),                 # tete de classification
+)
+# Entree typique : batch x canaux x H x W, ex. (32, 1, 28, 28)
+```
+
+En vrai, Ines preferera souvent un backbone preentraine + une tete fine-tunee plutot que ce jouet from scratch.
+
 :::astuce
 Avant d'entrainer, decris les conditions reelles : eclairage, flou, angle, telephone. Le modele vivra la-bas, pas dans ton dossier "jolies photos".
 :::

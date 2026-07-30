@@ -126,7 +126,7 @@
   const TIME_SLOTS = buildTimeSlots();
 
   /**
-   * Offres alignées sur /prestations/ + forfaits page d’accueil.
+   * Offres alignées sur /nos-offres + forfaits page d’accueil.
    * slug → champ POST `service` ; budget optionnel (réf. forfait affichée côté mail).
    */
   /** Besoins exprimés en langage courant (étape 1). */

@@ -16,27 +16,31 @@ og_image: geo-plateformes-1200x630.jpg
   <figcaption>Reponses directes, sources, couverture, coherence.</figcaption>
 </figure>
 
-Chaque moteur génératif a ses règles de sélection des sources. ChatGPT, Perplexity et Google SGE ne fonctionnent pas de la même manière. Ce guide détaille les spécificités de chacun et les stratégies adaptées.
+Chaque moteur génératif choisit ses sources un peu différemment. ChatGPT, Perplexity et Google SGE (ou l’AI Overview) ne « lisent » pas ton site comme un humain, ni exactement comme Google Search classique. L’objectif GEO (Generative Engine Optimization) est simple : être **compris**, **extrait** et **cité** quand quelqu’un pose une question dans ton domaine.
+
+Tu n’as pas besoin de hacker des prompts. Tu as besoin d’un contenu clair, crédible, indexable — puis d’adapter un peu le curseur selon la plateforme.
 
 ---
 
 ## 1. ChatGPT
 
-### Fonctionnement
+### Fonctionnement (version terrain)
 
-ChatGPT utilise un **contexte** pré-entraîné et peut accéder au web via Bing (mode Browse/Search) ou des intégrations. Les réponses sont générées à partir de ce contexte et, éventuellement, de pages web récupérées en temps réel.
+ChatGPT s’appuie sur un **modèle pré‑entraîné** et, selon le mode, sur une **recherche web** (souvent via Bing / outils intégrés). La réponse est une **synthèse** : ton texte peut être reformulé, condensé, parfois cité avec un lien.
 
-### Caractéristiques
+Conséquence : si ta page est floue, longue sans structure, ou inaccessible au crawl, tu as peu de chances d’être la source « propre » que le modèle préfère.
 
-- **Citations** : quand le mode web est activé, ChatGPT peut afficher des liens cliquables
-- **Synthèse** : le contenu est souvent résumé et reformulé
-- **Contexte** : la base de données d'entraînement inclut des données jusqu'à une certaine date ; le web complète pour l'actualité
+### Ce qui aide concrètement
 
-### Stratégies pour ChatGPT
+- **Réponses directes** sous le H2 : 2–4 phrases qui répondent à la question avant le détail.
+- **Titres explicites** : « Comment faire X », « Différence entre A et B », pas des jeux de mots obscurs.
+- **FAQ** avec questions réelles (celles que tes clients posent).
+- **Autorité** : auteur nommé, date de mise à jour, pages citées ailleurs (médias, docs, partenaires).
+- **Pages stables et rapides** : HTML lisible sans dépendre d’un écran blanc JS.
 
-- **Contenu structuré** : titres clairs, FAQ, réponses directes
-- **Autorité** : mentions, backlinks, présence sur des plateformes reconnues
-- **Actualité** : pour les sujets récents, le mode web est crucial ; assure-toi que ton contenu est indexable et rapidement accessible
+Pour les sujets d’actualité, le mode web compte beaucoup : un article indexable et à jour a plus de chances d’être récupéré qu’un PDF oublié.
+
+Lien utile dans la série : le [guide GEO](/blog/articles/geo-nouveau-seo-ia-guide-complet.html) et la [structure de contenu](/blog/articles/geo-contenu-structure-formats-checklist.html).
 
 ---
 
@@ -44,64 +48,82 @@ ChatGPT utilise un **contexte** pré-entraîné et peut accéder au web via Bing
 
 ### Fonctionnement
 
-Perplexity effectue une **recherche web en temps réel** pour chaque question. Les sources sont sélectionnées parmi les résultats de recherche, puis synthétisées. Les citations sont souvent **numérotées** et cliquables en bas de la réponse.
+Perplexity fait une **recherche web en temps réel** pour presque chaque question. Il sélectionne des pages, synthétise, et affiche des **citations numérotées** cliquables. La transparence est forte : l’utilisateur voit d’où vient l’info.
 
-### Caractéristiques
+### Proximité avec le SEO
 
-- **Transparence** : les sources sont toujours affichées
-- **Proximité avec le SEO** : Perplexity s'appuie sur des moteurs de recherche ; une bonne position SEO aide à être cité
-- **Qualité** : les pages bien structurées et fiables sont privilégiées
+Comme Perplexity s’appuie sur des résultats de recherche, une bonne présence SEO aide. Ce n’est pas « SEO = citation garantie », mais :
 
-### Stratégies pour Perplexity
+- pages bien positionnées sur la requête ;
+- contenu extractible (listes, tableaux, définitions) ;
+- signaux de confiance (auteur, sources, fraîcheur).
 
-- **SEO** : optimise pour les requêtes que Perplexity interroge (souvent via Bing ou Google)
-- **Structure** : contenu facilement extractible (listes, FAQ, réponses directes)
-- **E-E-A-T** : auteur, source, date de mise à jour visibles
+### Gestes pratiques
+
+1. Vise les **requêtes conversationnelles** (« meilleur outil pour… », « comment choisir… ») en plus des mots‑clés courts.
+2. Mets une **définition claire** en tête des pages piliers.
+3. Affiche **auteur + date** ; cite tes sources quand tu affirmes un chiffre.
+4. Évite le mur de texte : paragraphes courts, listes, H2/H3 scannables.
+
+Perplexity récompense souvent les pages qui « répondent déjà » comme un bon résultat Google enrichi — pas les landing pages vides de substance.
 
 ---
 
-## 3. Google SGE (Search Generative Experience)
+## 3. Google SGE / AI Overviews
 
 ### Fonctionnement
 
-SGE intègre une **réponse générative** directement dans la page de résultats Google. Un encadré IA apparaît en haut de la SERP, avec des sources citées en bas. SGE combine les données de l'index Google et des modèles de langage.
+Dans les résultats Google, un **encadré génératif** peut résumer le sujet et citer des sources. Le système s’appuie sur l’**index Google** et des signaux proches du SEO classique : pertinence, autorité, E‑E‑A‑T, qualité de page.
 
-### Caractéristiques
+### Ce qui change (et ce qui ne change pas)
 
-- **Index Google** : ton contenu doit être indexé par Google
-- **Signaux SEO** : autorité, pertinence, E-E-A-T
-- **Convergence** : SGE et SEO classique partagent beaucoup de signaux
+- **Ça ne change pas** : indexation, Core Web Vitals, backlinks de qualité, contenu utile.
+- **Ça renforce** : réponses complètes, FAQ, schema.org (FAQ, HowTo, Article), preuves d’expérience (cas, captures, méthode).
 
-### Stratégies pour SGE
+Si tu n’es pas dans l’index Google, tu n’es pas dans le jeu SGE. Point.
 
-- **SEO classique** : positions, backlinks, Core Web Vitals
-- **Contenu** : réponses complètes, format FAQ, schema.org
-- **Autorité** : tout ce qui renforce le E-E-A-T de Google
+### Stratégies concrètes
+
+- Travaille d’abord le **SEO classique** de tes pages piliers (voir aussi [mentions et autorité](/blog/articles/geo-off-site-mentions-autorite.html)).
+- Ajoute des **réponses autonomes** : un extrait de 40–60 mots qui pourrait être collé tel quel dans un aperçu.
+- Couvre le sujet **en largeur raisonnable** : une page squelette de 300 mots pure marketing sera rarement la source citée.
+- Soigne les **liens internes** : Google et les synthèses aiment un site cohérent, pas 50 pages orphelines.
 
 ---
 
 ## 4. Comparatif synthétique
 
-| Critère | ChatGPT | Perplexity | SGE |
-|---------|---------|------------|-----|
-| Source principale | Contexte + web (optionnel) | Recherche web temps réel | Index Google |
-| Citations | Variables (mode web) | Toujours affichées | Encadré IA avec sources |
-| Proximité SEO | Faible | Forte | Très forte |
-| Leviers principaux | Structure, autorité | SEO + structure | SEO + E-E-A-T |
+| Critère | ChatGPT | Perplexity | SGE / AI Overview |
+|---------|---------|------------|-------------------|
+| Source principale | Modèle + web (selon mode) | Recherche web temps réel | Index Google |
+| Citations | Variables | Presque toujours | Encadré avec sources |
+| Proximité SEO | Moyenne | Forte | Très forte |
+| Leviers clés | Structure, autorité, clarté | SEO + extractibilité | SEO + E‑E‑A‑T |
+
+Lis ce tableau comme un **curseur**, pas comme trois métiers séparés. Tu ne produiras pas trois sites : tu produiras un bon site, puis tu mesures où tu apparais.
 
 ---
 
-## 5. Stratégie universelle
+## 5. Stratégie universelle (à faire cette semaine)
 
-Malgré les différences, une stratégie **cohérente** profite aux trois :
+Malgré les différences, une base commune aide les trois :
 
-1. **Contenu** : structure claire, FAQ, réponses directes, E-E-A-T
-2. **Technique** : indexabilité, HTML initial, performance
-3. **Hors-site** : backlinks, mentions, empreinte web
-4. **Mesure** : tests réguliers sur chaque plateforme
+1. **Contenu** — H1/H2 clairs, réponse directe, FAQ, exemples concrets, auteur visible.
+2. **Technique** — indexable, HTML initial utile, perf correcte, pas de contenu critique derrière un login.
+3. **Hors‑site** — mentions, backlinks, présence sur des sources que les moteurs font déjà confiance.
+4. **Mesure** — pose les mêmes 5 questions sur ChatGPT, Perplexity et Google ; note qui est cité ; ajuste titres et intros.
+
+Mini checklist avant de publier :
+
+- Est‑ce que le premier écran répond à la question ?
+- Est‑ce qu’un extrait de 50 mots se suffit à lui‑même ?
+- Date et auteur sont‑ils visibles ?
+- La page est‑elle dans la Search Console (indexée) ?
 
 ---
 
 ## Conclusion
 
-ChatGPT, Perplexity et SGE ont des règles différentes, mais les optimisations fondamentales (structure, E-E-A-T, indexabilité) sont communes. Adapte ta priorité selon les plateformes : Perplexity et SGE sont plus proches du SEO, ChatGPT nécessite une attention particulière sur l'autorité et la structure du contenu.
+ChatGPT, Perplexity et SGE n’ont pas les mêmes règles, mais ils convergent vers la même exigence : **dire clairement des choses vraies, sur une page trouvable**. Priorise Perplexity et SGE si ton trafic passe par la recherche ; soigne structure et autorité si tu vises aussi les assistants conversationnels.
+
+Le GEO n’est pas une baguette magique : c’est du bon contenu, mesurable, un peu plus pensé pour la **citation** que pour le seul ranking bleu classique.

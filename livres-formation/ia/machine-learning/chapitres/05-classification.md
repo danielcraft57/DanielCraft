@@ -14,6 +14,28 @@ Imagine des points de deux couleurs sur un plan. Un classifieur trace une fronti
 
 Beaucoup de modeles sortent un score ("probabilite" de spam). Tu choisis un **seuil** : au-dessus, tu filtres. Baisser le seuil attrape plus de spam mais risque de bloquer des mails legimes. Monter le seuil l'inverse. Le "meilleur" seuil depend du cout des erreurs - pas d'une beaute mathematique.
 
+Exemple jouet (spam = 1) :
+
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+# feature jouet : longueur du mail (caracteres)
+X = np.array([[40], [60], [200], [220], [80], [300]])
+y = np.array([0, 0, 1, 1, 0, 1])  # 0 = ok, 1 = spam
+
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.33, random_state=0)
+clf = LogisticRegression().fit(Xtr, ytr)
+probas = clf.predict_proba(Xte)[:, 1]
+seuil = 0.5
+preds = (probas >= seuil).astype(int)
+print("probas", np.round(probas, 2))
+print("preds ", preds, "vrai", yte)
+```
+
+Change `seuil` a 0.3 puis 0.7. Tu verras le trade-off rappel / precision... meme sur 6 lignes.
+
 :::astuce
 Ecris d'abord le cout d'un **faux positif** et d'un **faux negatif**. Le seuil se deduit souvent de ca, pas d'une courbe seule.
 :::

@@ -1,22 +1,23 @@
 # Prompts pour les images Open Graph des articles Marketing Digital
 
-Images marketing pour le partage social. Style : professionnel, conversion-oriented, fond clair, accent rouge #dc2626. Format 1200x630 px, ratio 1.91:1.
+Images de partage social avec une base visuelle commune à tout le blog : plus technique, plus logiciel, plus crédible côté informatique.
 
 **Important : tous les textes visibles dans les images doivent être en français.**
 
-## Principes marketing
+## Charte commune
 
-- Hiérarchie visuelle claire
-- Signaux de confiance (badges, indicateurs)
-- Texte en français uniquement
-- Cohérence charte DanielCraft
+- Format : `1200x630 px`, ratio `1.91:1`
+- Ambiance : dashboards marketing, automation, analytics, parcours client visualisé
+- Palette : fond `#f5f7fb`, bleus UI, encre sombre, accent rouge `#dc2626`
+- Composition : plusieurs cartes, flux, graphes, indicateurs
+- Éviter : simple affiche marketing, clipart, flat design vide, cartoon
 
 ---
 
 ## marketing-strategie-1200x630.jpg
 
 ```
-Fond blanc ou gris clair. Titre "Stratégie Marketing Digital" en gras, français. Bande rouge #dc2626. Icônes : cible, canaux, objectifs. Texte secondaire "Visibilité en ligne". Style hero, professionnel. 1.91:1.
+Workspace marketing avec objectifs, canaux, tableau de pilotage, segmentation et plan d'action. Faire ressortir la logique de stratégie, pas juste une affiche avec icônes. Tous les textes visibles en français.
 ```
 
 ---
@@ -24,7 +25,7 @@ Fond blanc ou gris clair. Titre "Stratégie Marketing Digital" en gras, françai
 ## marketing-reseaux-1200x630.jpg
 
 ```
-Réseaux sociaux stylisés : icônes LinkedIn, Instagram, Facebook (représentations abstraites). Titre "Réseaux Sociaux" en français. Fond clair. Accent rouge. Badge "Engagement". 1.91:1.
+Panneau social media avec calendrier de publication, engagement, portée et différents canaux visualisés comme modules UI. Éviter les logos seuls. Tous les textes visibles en français.
 ```
 
 ---
@@ -32,7 +33,7 @@ Réseaux sociaux stylisés : icônes LinkedIn, Instagram, Facebook (représentat
 ## marketing-email-1200x630.jpg
 
 ```
-Icône enveloppe, courbe d'ouverture, indicateurs. Titre "Marketing Email" en français. Sous-titre "Nurturing & Conversion". Fond blanc. Accent rouge. Style professionnel. 1.91:1.
+Tableau email marketing avec séquences, taux d'ouverture, clics, segments et automation. Visuel logiciel, propre, dense, orienté données. Tous les textes visibles en français.
 ```
 
 ---
@@ -40,7 +41,7 @@ Icône enveloppe, courbe d'ouverture, indicateurs. Titre "Marketing Email" en fr
 ## marketing-contenu-1200x630.jpg
 
 ```
-Document, flux de contenu, entonnoir. Titre "Marketing de Contenu" en français. Sous-titre "Inbound". Fond gris clair. Accent rouge. 1.91:1.
+Écosystème de contenu avec idées, rédaction, diffusion, SEO et conversion reliés entre eux. Préférer une vision système et outil éditorial. Tous les textes visibles en français.
 ```
 
 ---
@@ -48,7 +49,7 @@ Document, flux de contenu, entonnoir. Titre "Marketing de Contenu" en français.
 ## marketing-analytics-1200x630.jpg
 
 ```
-Dashboard : graphiques, courbe, KPI. Titre "Analytics Marketing" en français. Indicateurs "Trafic", "Conversions". Fond clair. Accent rouge. 1.91:1.
+Dashboard analytics marketing avec trafic, attribution, conversions, campagnes et évolution par canal. Visuel technique, multi-cartes, lisible en miniature. Tous les textes visibles en français.
 ```
 
 ---
@@ -56,7 +57,7 @@ Dashboard : graphiques, courbe, KPI. Titre "Analytics Marketing" en français. I
 ## marketing-conversion-1200x630.jpg
 
 ```
-Entonnoir de conversion, flèche vers CTA. Titre "Optimisation Conversion" en français. Badge "CRO". Fond blanc. Accent rouge. 1.91:1.
+Funnel de conversion détaillé avec étapes, pertes, tests et optimisations. Représentation orientée produit et data, pas simple mégaphone marketing. Tous les textes visibles en français.
 ```
 
 ---
@@ -64,7 +65,7 @@ Entonnoir de conversion, flèche vers CTA. Titre "Optimisation Conversion" en fr
 ## marketing-automatisation-1200x630.jpg
 
 ```
-Workflow, engrenages, flux automatique. Titre "Automatisation" en français. Sous-titre "Workflows". Fond gris clair. Accent rouge. 1.91:1.
+Workflow d'automatisation marketing avec déclencheurs, conditions, emails, CRM et scoring. Interface de type automation builder, plus logiciel que pictogrammes abstraits. Tous les textes visibles en français.
 ```
 
 ---
@@ -72,5 +73,5 @@ Workflow, engrenages, flux automatique. Titre "Automatisation" en français. Sou
 ## marketing-budget-1200x630.jpg
 
 ```
-Graphique ROI, répartition budget, indicateurs. Titre "Budget & ROI" en français. Sous-titre "Priorisation". Fond clair. Accent rouge. 1.91:1.
+Vue budget et ROI avec arbitrage des canaux, coûts, rendement et priorisation. Afficher un vrai panneau de pilotage décisionnel. Tous les textes visibles en français.
 ```

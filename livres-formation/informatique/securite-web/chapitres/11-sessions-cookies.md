@@ -36,6 +36,20 @@ Apres un voyage / PC prete : change le mdp admin et verifie les sessions actives
 
 Sur ton CMS ou app, trouve ou se reglent duree de session / deconnexion / "se souvenir de moi". Note le reglage actuel.
 
+## Postes partages et ateliers
+
+En formation ou espace partage : navigation privee si besoin, logout visible, ne pas cocher se souvenir, verrouiller l'ecran. Lea termine chaque demo par logout. Max colle un post-it mental admin = logout. Sam controle les machines de salle.
+
+## Vol de session : idee defensive
+
+Si quelqu'un recupere un jeton de session valide, il peut agir comme toi jusqu'a expiration. D'ou HTTPS, durees raisonnables, logout, invalidation apres changement de mot de passe. On n'explique pas comment voler un jeton. On explique comment reduire la fenetre.
+
+## Multi-appareils
+
+Telephone, tablette, laptop : chaque session compte. Apres perte d'appareil, change le mot de passe et invalide les sessions si l'outil le permet. Lea a une checklist "telephone perdu". Max l'a utilisee une fois : soulagement.
+
+Si tu debogues une session, ne partage jamais le jeton sur un canal large. Preferer un compte de test dedie. Sam coupe court aux copier-coller dangereux.
+
 ## A toi
 
 Ecris trois regles perso (ex. : pas d'admin en Wi-Fi cafe sans VPN/prudence, logout atelier, 2FA mail). Affiche-les.

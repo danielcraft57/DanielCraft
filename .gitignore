@@ -89,18 +89,31 @@ src/data/readmes/*
 /scripts/_audit_*
 /scripts/_fix_*
 
-# --- Livres de formation (artefacts regenerables) ---
+# --- Livres de formation (artefacts regenerables / lourds) ---
+# PDF finaux : regeneres via build_livre.py (ne pas versionner)
+livres-formation/pdf/
+livres-formation/**/*.pdf
+# Images raster (couvertures, schemas PNG, scenes IA) : trop lourdes pour git
+livres-formation/**/images/**/*.png
+livres-formation/**/images/**/*.jpg
+livres-formation/**/images/**/*.jpeg
+livres-formation/**/images/**/*.webp
+livres-formation/**/images/**/*.PNG
+livres-formation/**/images/**/*.JPG
+# Sources SVG legeres a garder si presentes
+!livres-formation/**/images/**/*.svg
+!livres-formation/**/images/**/*.SVG
 # JPG d'impression : recrees par build_livre.py a partir des PNG source
 livres-formation/**/images/print/
 # Previews Playwright locaux
 livres-formation/**/images/_preview*
 # Scripts temporaires de generation / raster (_gen1.py, _thicken.py, ...)
 livres-formation/**/_*.py
-# HTML assemble (regenerable) : on versionne markdown + images source + PDF
+# HTML assemble (regenerable) : on versionne markdown + scripts + sources SVG
 livres-formation/**/livre.html
-# PDF eco optionnels (build --eco)
-livres-formation/**/*-eco.pdf
-livres-formation/pdf/*-eco.pdf
+# Scratch local
+livres-formation/**/_sizes_out.txt
+/50
 
 # Secrets / config locales
 .env

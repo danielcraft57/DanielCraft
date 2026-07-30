@@ -33,6 +33,7 @@ TEMPLATES_DIR = SRC_DIR / 'templates'
 PAGES_DIR = SRC_DIR / 'pages'
 DATA_DIR = SRC_DIR / 'data'
 PROJECTS_JSON = DATA_DIR / 'projects.json'
+PROJECT_SLUG_ALIASES_JSON = DATA_DIR / 'project-slug-aliases.json'
 VITRINES_JSON = DATA_DIR / 'vitrines.json'
 PRESTATIONS_JSON = DATA_DIR / 'prestations.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
@@ -151,7 +152,6 @@ SITEMAP_PAGES = [
     ('/contact', 'weekly', '0.95'),
     ('/pro', 'monthly', '0.55'),
     ('/audit', 'weekly', '0.95'),
-    ('/prestations/', 'weekly', '0.90'),
     ('/vitrines/', 'weekly', '0.85'),
     ('/processus', 'monthly', '0.75'),
     ('/metz', 'monthly', '0.80'),
@@ -177,6 +177,7 @@ SEO_GEO_LNG = 6.1757
 # Correspondance page statique → fichier OG (scripts/generate_site_og_images.py)
 OG_PAGE_FILE_SLUGS = {
     'index': 'home',
+    'nos-offres': 'prestations',
     'prestations': 'prestations',
 }
 
@@ -185,6 +186,7 @@ DEFAULT_VARS = {
     'page_title': 'DanielCraft — Sites vitrines & visibilité web | Metz',
     'page_description': 'Sites clairs, visibilité Google et assistants intelligents pour artisans et commerces. Devis par e-mail, Metz & Lorraine.',
     'page_keywords': 'site vitrine Metz, visibilité Google, création site internet, assistant IA site web, DanielCraft Lorraine',
+    'page_robots': 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     'site_base': SITE_BASE,
     'page_url': f'{SITE_BASE}/',
     # Image OG par défaut (home) - architecture dediee dans assets/images/og/
@@ -415,6 +417,18 @@ def _inject_demo_protection(html: str) -> str:
     """
     if _DEMO_PROTECTION_MARKER in html:
         return html
+    html = re.sub(
+        r'\s*<meta\s+name=["\']robots["\'][^>]*>\s*',
+        '\n',
+        html,
+        flags=re.IGNORECASE,
+    )
+    html = re.sub(
+        r'\s*<link\s+rel=["\']canonical["\'][^>]*>\s*',
+        '\n',
+        html,
+        flags=re.IGNORECASE,
+    )
     block = (
         f'\n  <!-- {_DEMO_PROTECTION_MARKER} -->\n'
         '  <meta name="robots" content="noindex, noarchive, nosnippet, noimageindex">\n'
@@ -548,6 +562,23 @@ def generate_robots_txt(output_dir: Path) -> None:
     (output_dir / 'robots.txt').write_text(content, encoding='utf-8')
 
 
+def generate_nginx_project_alias_redirects(output_dir: Path) -> None:
+    """Genere un snippet nginx (301) pour les alias /projets/<slug> -> slug canonique."""
+    aliases = load_project_slug_aliases()
+    if not aliases:
+        return
+    lines = [
+        '# Redirections 301 alias projets (genere par build.py — ne pas editer a la main)',
+    ]
+    for alias_slug, canonical_slug in sorted(aliases.items()):
+        if alias_slug == canonical_slug:
+            continue
+        lines.append(f'location = /projets/{alias_slug} {{')
+        lines.append(f'    return 301 /projets/{canonical_slug};')
+        lines.append('}')
+    (output_dir / 'nginx-project-aliases.conf').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+
 def load_page_config(page_name: str) -> Dict:
     """Charge la configuration d'une page depuis src/pages/."""
     config_file = PAGES_DIR / f"{page_name}.json"
@@ -660,6 +691,78 @@ def load_projects() -> List[Dict]:
             return []
     with open(PROJECTS_JSON, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+
+def load_project_slug_aliases() -> Dict[str, str]:
+    """Alias slug -> slug canonique (ex. ticket-caisse -> ticketcaisse)."""
+    if not PROJECT_SLUG_ALIASES_JSON.is_file():
+        return {}
+    try:
+        data = json.loads(PROJECT_SLUG_ALIASES_JSON.read_text(encoding='utf-8'))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    out: Dict[str, str] = {}
+    for alias, canonical in data.items():
+        a = str(alias or '').strip()
+        c = str(canonical or '').strip()
+        if a and c and a != c:
+            out[a] = c
+    return out
+
+
+def _render_project_alias_redirect_page(alias_slug: str, canonical_slug: str) -> str:
+    """Page HTML legere : canonical + noindex + redirection client vers le slug canonique."""
+    base = SITE_BASE.rstrip('/')
+    target = f'{base}/projets/{canonical_slug}'
+    title = f'Redirection vers {canonical_slug} — DanielCraft'
+    return f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(title)}</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{target}">
+  <meta http-equiv="refresh" content="0;url={target}">
+  <script>window.location.replace({json.dumps(target)});</script>
+</head>
+<body>
+  <p>Cette URL a ete deplacee. <a href="{target}">Continuer vers le projet</a>.</p>
+</body>
+</html>
+'''
+
+
+def _render_catalog_redirect_page() -> str:
+    """Ancien index /prestations/ → catalogue /nos-offres."""
+    base = SITE_BASE.rstrip('/')
+    target = f'{base}/nos-offres'
+    return f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirection vers Nos offres — DanielCraft</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{target}">
+  <meta http-equiv="refresh" content="0;url={target}">
+  <script>window.location.replace({json.dumps(target)});</script>
+</head>
+<body>
+  <p>Le catalogue est sur <a href="{target}">Nos offres</a>.</p>
+</body>
+</html>
+'''
+
+
+def write_prestations_catalog_redirect(output_dir: Path) -> None:
+    """Ecrit prestations/index.html (redirect client) vers /nos-offres."""
+    out = output_dir / 'prestations'
+    out.mkdir(parents=True, exist_ok=True)
+    (out / 'index.html').write_text(_render_catalog_redirect_page(), encoding='utf-8')
+    print('[OK] Redirection /prestations/ -> /nos-offres')
 
 
 def load_vitrines() -> Optional[Dict[str, Any]]:
@@ -2327,7 +2430,7 @@ def _project_recommendations_html(projects: List[dict], current_project: dict, m
 
 
 def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
-    """Genere les pages HTML pour chaque projet dans output_dir/projets/. Retourne la liste des slugs."""
+    """Genere les pages HTML pour chaque projet dans output_dir/projets/. Retourne les slugs canoniques (sitemap)."""
     projects = load_projects()
     if not projects:
         print("[WARN] Aucun projet dans projects.json - pages projet non generees")
@@ -2340,11 +2443,13 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         print("[WARN] src/pages/projet.html manquant")
         return []
     content_tpl = content_path.read_text(encoding='utf-8')
-    slugs = []
+    slugs: List[str] = []
+    canonical_set: set = set()
     for p in projects:
         slug = p.get('slug') or p.get('id', '')
         if not slug:
             continue
+        canonical_set.add(slug)
         techs = p.get('technologies') or []
         tech_html = ''.join(f'<span class="tech-tag">{t}</span>' for t in techs)
         img_url = p.get('imageUrl') or ''
@@ -2365,7 +2470,7 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
             'og_image': _og_image_url_with_cache_bust(_to_absolute_url(og_rel)),
             'og_type': 'website',
             'schema_type': 'project',
-            'page_content': '',  # sera remplace par le rendu du fragment
+            'page_content': '',
             'project_title': p.get('title', slug),
             'project_description': p.get('description') or '',
             'project_category_label': CATEGORY_LABELS.get(p.get('category', ''), p.get('category', 'Projet')),
@@ -2391,7 +2496,19 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         html_output = template_engine.render(template_path, vars_dict)
         (out_projets / f'{slug}.html').write_text(html_output, encoding='utf-8')
         slugs.append(slug)
-    print(f"[OK] {len(slugs)} page(s) projet genere(s) dans {out_projets}")
+
+    aliases = load_project_slug_aliases()
+    alias_count = 0
+    for alias_slug, canonical_slug in sorted(aliases.items()):
+        if canonical_slug not in canonical_set:
+            print(f"[WARN] Alias projet ignore (canonique absent) : {alias_slug} -> {canonical_slug}")
+            continue
+        redirect_html = _render_project_alias_redirect_page(alias_slug, canonical_slug)
+        (out_projets / f'{alias_slug}.html').write_text(redirect_html, encoding='utf-8')
+        alias_count += 1
+
+    print(f"[OK] {len(slugs)} page(s) projet genere(s) dans {out_projets}"
+          + (f" (+ {alias_count} alias redirect)" if alias_count else ''))
     return slugs
 
 
@@ -2401,7 +2518,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         build_vitrines_catalog_embed()
     if page_name == 'index':
         build_home_vitrines_teaser_embed()
-    if page_name == 'prestations':
+    if page_name == 'nos-offres':
         build_prestations_catalog_embed()
 
     # Charge la config de la page
@@ -2575,7 +2692,9 @@ def generate_sitemap_pages(
 
 
 def generate_sitemap_prestations(output_dir: Path) -> None:
-    """Genere sitemap-prestations.xml : fiches prestations détaillées."""
+    """Genere sitemap-prestations.xml : fiches prestations + recherches catalogue."""
+    from urllib.parse import quote
+
     base = SITE_BASE.rstrip('/')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -2585,6 +2704,13 @@ def generate_sitemap_prestations(output_dir: Path) -> None:
         'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
     ]
     today = datetime.now().date()
+    lastmod = today.isoformat()
+    # Catalogue + deep-links recherche (chips) pour Google SearchAction
+    lines.append(_sitemap_url_line(base, '/nos-offres', lastmod, 'weekly', '0.95'))
+    for q in ('éco', 'site vitrine', 'google', 'assistant', 'entretien'):
+        lines.append(
+            _sitemap_url_line(base, f'/nos-offres?q={quote(q, safe="")}', lastmod, 'weekly', '0.55')
+        )
     for slug in prestation_slugs_for_sitemap():
         # Donne des dates "naturelles" et stables (pas toutes identiques).
         seed = sum(ord(ch) for ch in slug)
@@ -2692,6 +2818,7 @@ def main():
 
     # Genere robots.txt (base sur SITE_BASE)
     generate_robots_txt(OUTPUT_DIR)
+    generate_nginx_project_alias_redirects(OUTPUT_DIR)
     print("[OK] robots.txt genere")
 
     # Sitemaps : generes apres le build du blog (voir plus bas)
@@ -2742,6 +2869,7 @@ def main():
     # Si une page spécifique est demandée
     if page_name and not watch_mode:
         if build_page(page_name, template_engine):
+            write_prestations_catalog_redirect(OUTPUT_DIR)
             print(f"\n[OK] Build de {page_name} termine dans {OUTPUT_DIR} !")
         else:
             sys.exit(1)
@@ -2756,7 +2884,6 @@ def main():
         'nos-offres',
         'contact',
         'vitrines',
-        'prestations',
         'processus',
         'metz',
         'portfolio',
@@ -2812,6 +2939,7 @@ def main():
     project_slugs = build_project_pages(template_engine, OUTPUT_DIR)
     build_vitrine_pages(template_engine, OUTPUT_DIR)
     build_prestation_pages(template_engine, OUTPUT_DIR)
+    write_prestations_catalog_redirect(OUTPUT_DIR)
 
     # Generation des sitemaps (pages + projets | vitrines | prestations | index)
     generate_sitemap_vitrines(OUTPUT_DIR)
@@ -2862,6 +2990,7 @@ def main():
                     ps = build_project_pages(template_engine, OUTPUT_DIR)
                     build_vitrine_pages(template_engine, OUTPUT_DIR)
                     build_prestation_pages(template_engine, OUTPUT_DIR)
+                    write_prestations_catalog_redirect(OUTPUT_DIR)
                     generate_sitemap_vitrines(OUTPUT_DIR)
                     generate_sitemap_prestations(OUTPUT_DIR)
                     generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps)

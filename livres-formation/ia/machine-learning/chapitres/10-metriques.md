@@ -14,6 +14,22 @@ Choisis la metrique pour le cout metier, pas pour impressionner. Traduis toujour
 
 **Accuracy** : part de bons labels - trompeuse si classes desequilibrees. **Precision** : parmi les alertes, combien sont justes. **Rappel** (recall) : parmi les vrais positifs, combien tu as attrapes. F1 : compromis. Matrice de confusion : le tableau qui montre ou tu te trompes. Courbes et AUC : utiles, a condition de comprendre le seuil ensuite.
 
+```python
+from sklearn.metrics import (
+    accuracy_score, precision_score, recall_score, confusion_matrix
+)
+
+y_vrai = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+y_pred = [0, 0, 0, 1, 0, 1, 1, 0, 1, 1]  # 1 = "alerte fraude"
+
+print("accuracy ", accuracy_score(y_vrai, y_pred))
+print("precision", precision_score(y_vrai, y_pred))
+print("rappel   ", recall_score(y_vrai, y_pred))
+print("matrice\n", confusion_matrix(y_vrai, y_pred))
+```
+
+Lis la matrice : lignes = vrai, colonnes = predit. Un seul chiffre "accuracy" ne raconte pas ou tu te trompes.
+
 :::attention
 Sur classes desequilibrees, l'accuracy peut mentir. Pair precision/rappel (ou couts) avant de celebrer.
 :::

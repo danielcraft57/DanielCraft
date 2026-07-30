@@ -16,6 +16,27 @@ Imagine un eleve qui apprend par coeur dix sujets d'examen. Le jour J, le sujet 
 
 Ines regarde deux courbes. Train plonge. Val remonte. Elle n'ajoute pas de neurones. Elle regularise, arrete tot, ou collecte mieux.
 
+```python
+# Pseudo-boucle : early stopping quand val ne s'ameliore plus
+meilleure_val = float("inf")
+patience, sans_gain = 3, 0
+
+for epoch in range(1, 21):
+    loss_train = 1.0 / epoch          # fictif : train baisse
+    loss_val = 0.4 + 0.05 * max(0, epoch - 8)  # val remonte apres epoch 8
+    if loss_val < meilleure_val - 1e-4:
+        meilleure_val, sans_gain = loss_val, 0
+        # sauvegarder les poids ici
+    else:
+        sans_gain += 1
+    print(f"epoch {epoch}: train={loss_train:.3f} val={loss_val:.3f}")
+    if sans_gain >= patience:
+        print("early stopping a l'epoch", epoch)
+        break
+```
+
+Le message : arreter, ce n'est pas abandonner. C'est proteger la generalisation.
+
 ## Remedes courants
 
 Plus de donnees reelles. **Data augmentation** (surtout vision), avec prudence. **Dropout** (eteindre des neurones au hasard pendant l'entrainement). Weight decay / regularisation. **Early stopping** (arreter quand la validation n'ameliore plus). Architectures plus petites. **Transfer learning** plutot que from scratch. Label smoothing parfois. Et toujours : protocole de validation honnete, set de test rarement touche.

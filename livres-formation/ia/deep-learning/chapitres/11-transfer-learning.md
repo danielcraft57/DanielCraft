@@ -14,6 +14,18 @@ Ce n'est pas une dispense de validation. Ce n'est pas magique si ton domaine est
 
 Tu embauches quelqu'un qui a deja vu des millions d'objets, et tu lui apprends tes pieces detachees. Tu ne reprends pas l'alphabet visuel a zero. Ines telecharge un CNN preentraine, remplace la tete de classification, entraine surtout les dernieres couches. Sur le texte, on fine-tune legerement, ou on fait du prompting / RAG sans tout retoucher. L'esprit est le meme : partir d'un milieu deja riche.
 
+```python
+# Esquisse PyTorch : backbone gele + tete adaptee (N classes)
+import torch.nn as nn
+from torchvision import models
+
+backbone = models.resnet18(weights="DEFAULT")
+for p in backbone.parameters():
+    p.requires_grad = False          # gele : on reutilise
+backbone.fc = nn.Linear(backbone.fc.in_features, 5)  # 5 classes metier
+# Ensuite : entrainer surtout backbone.fc, learning rate petit, early stopping
+```
+
 :::astuce
 Ecris "ce que je reutilise" et "ce que j'adapte". Si les deux cases sont vides, tu n'as pas encore de plan transfer.
 :::

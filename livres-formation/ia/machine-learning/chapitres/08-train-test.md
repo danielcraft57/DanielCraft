@@ -10,6 +10,21 @@ Train pour apprendre, test pour juger. Sans split honnete, tout score est suspec
 
 Aleatoire quand les lignes sont independantes. Temporelle quand le temps compte (entraine sur le passe, teste sur le futur) - souvent plus realiste pour Noe et les ventes. Par groupe (par client) si plusieurs lignes appartiennent a la meme entite et que tu ne veux pas de fuite. Le pourcentage classique 80/20 n'est qu'une habitude ; l'important est le protocole honnete.
 
+```python
+from sklearn.model_selection import train_test_split
+
+X = [[20], [30], [40], [50], [60], [70]]
+y = [450, 600, 780, 900, 1000, 1100]
+
+Xtr, Xte, ytr, yte = train_test_split(
+    X, y, test_size=0.33, random_state=42
+)
+print("train", len(Xtr), "test", len(Xte))
+# Fit UNIQUEMENT sur Xtr, ytr. Evalue sur Xte, yte.
+```
+
+Pour un split temporel (ventes), trie d'abord par date, puis coupe : train = ancien, test = recent. Pas de melange aleatoire.
+
 :::astuce
 Si ton monde change dans le temps (ventes, saison), prefere un split temporel a un tirage aleatoire. C'est plus proche de la prod.
 :::

@@ -10,6 +10,24 @@ Scikit-learn = grammaire fit / transform / predict. La discipline compte plus qu
 
 Tu as un tableau X (lignes = exemples, colonnes = **features**) et souvent un vecteur y. Tu crees un objet modele. Tu appelles fit(X_train, y_train) : il apprend. Tu appelles predict(X_test) : il propose. Tu calcules une **metrique** entre y_test et les predictions. Pour les transformateurs (imputation, scaling, encodage), fit apprend les parametres sur le train, transform applique.
 
+Script minimal "bout en bout" :
+
+```python
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
+
+X, y = load_diabetes(return_X_y=True)
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.2, random_state=0)
+
+modele = LinearRegression().fit(Xtr, ytr)
+pred = modele.predict(Xte)
+print("MAE test", round(mean_absolute_error(yte, pred), 2))
+```
+
+Remplace ensuite LinearRegression par un arbre, compare MAE, et garde le plus simple qui bat ta baseline.
+
 ## Pipeline dans scikit-learn
 
 Tu enchaines transformateurs + modele dans un **Pipeline**. Un seul fit sur le train. Un seul predict sur le nouveau. Moins de fuite. Plus propre. C'est exactement le chapitre pipeline mis en code. Meme si tu utilises un autre outil plus tard, cette discipline reste.

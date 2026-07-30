@@ -1,6 +1,8 @@
 # Quiz final
 
-Avant de dire "j'ai fini", on joue. Douze questions. Pas pour la gloire. Pour verifier le filtre. Chez DanielCraft, un sans-faute n'est pas un signal d'acheter. C'est un signal que tu as lu.
+Douze questions pour verifier les reflexes du livre - pas pour "debloquer" un droit d'acheter. Chez DanielCraft, un bon score signifie que tu as lu ; il ne signifie pas que le marche te doit quelque chose. Disclaimer : pedagogie. Perte totale possible. Sans-faute != signal d'entrer.
+
+Nora coche au crayon. Max se force a ne pas deviner. Sam refait les items securite. Fais comme eux : reponds avant de lire le corrige.
 
 ## Question 1
 Une blockchain, c'est surtout :
@@ -21,7 +23,7 @@ Une seed phrase :
 - C) Se poste sur Instagram
 
 ## Question 4
-Apres -50 %, pour revenir il faut environ :
+Apres -50 %, pour revenir au point de depart il faut environ :
 - A) +50 %
 - B) +100 %
 - C) +10 %
@@ -30,7 +32,7 @@ Apres -50 %, pour revenir il faut environ :
 Un stablecoin :
 - A) Est toujours exactement du cash bancaire
 - B) Vise une parite, avec risques d'emetteur / depeg
-- C) Remplace la poche B
+- C) Remplace automatiquement la poche B
 
 ## Question 6
 La DeFi expose surtout a :
@@ -42,7 +44,7 @@ La DeFi expose surtout a :
 Sur un exchange, un risque majeur est :
 - A) La couleur du logo
 - B) Le risque de contrepartie / retrait
-- C) L'absence totale de frais jamais
+- C) L'absence totale de frais
 
 ## Question 8
 Signal d'arnaque :
@@ -51,7 +53,7 @@ Signal d'arnaque :
 - C) Lire une alerte AMF
 
 ## Question 9
-Gas sur Ethereum :
+Le gas sur Ethereum :
 - A) Est un pourboire optionnel sans effet
 - B) Est le cout d'execution a surveiller avant signature
 - C) Garantit le profit
@@ -63,31 +65,31 @@ Pour un debutant prudent, le levier futures :
 - C) Annule la volatilite
 
 ## Question 11
-Journal des operations sert surtout a :
+Le journal des operations sert surtout a :
 - A) Faire joli
 - B) Suivi et hygiene fiscale / clarte
 - C) Augmenter le levier
 
 ## Question 12
-Plafond % patrimoine crypto :
-- A) Inutile
-- B) Outil central de discipline
-- C) Fixe par Twitter
+Un plafond % patrimoine crypto :
+- A) Est inutile
+- B) Est un outil central de discipline
+- C) Est fixe par Twitter
 
 ## Corrige
 
 1B, 2B, 3B, 4B, 5B, 6B, 7B, 8B, 9B, 10B, 11B, 12B.
 
-Si tu rates 2, 4 ou 8, relis wallets, volatilite et arnaques avant tout depot. Nora a rate la 4 la premiere fois. Elle a recalcule. Max a rate la 8 : il a ecrit sa phrase de raccrochage.
+Si tu as rate 2, 4 ou 8 : relis wallets, volatilite, arnaques. Si tu as tout bon : garde le % max ecrit quand meme.
 
 :::retenir
-Cles, plafonds, journal, non au phishing.
+Cles, plafonds, journal, non au phishing : les quatre piliers du quiz.
 :::
 
 :::attention
-Sans-faute != signal d'acheter.
+Sans-faute != signal d'acheter. Le marche ne te doit aucun rendement.
 :::
 
 :::astuce
-Refais 2, 4, 8.
+Refais surtout les questions 2, 4 et 8 avant un airdrop "urgent".
 :::

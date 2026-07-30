@@ -26,6 +26,10 @@ Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à
 
 Un design pattern est une **solution réutilisable** à un problème récurrent de conception. Ce n'est pas une librairie : c'est une **organisation** de classes, modules et objets pour garder le code lisible, testable et évolutif.
 
+### Analogie du quotidien
+
+Imagine une cuisine : tu ne réinventes pas la recette de la sauce béchamel à chaque fois. Tu dis « béchamel », et tout le monde sait quoi faire. Un pattern, c'est pareil : tu dis « Observer » ou « Strategy », et l'équipe visualise la même structure sans redessiner le schéma au tableau.
+
 ### Ce qu'un pattern n'est pas
 
 - Une règle absolue (« toujours Singleton » → faux).
@@ -48,6 +52,21 @@ Un design pattern est une **solution réutilisable** à un problème récurrent 
 | **Structurels** | Comment composer ? | Adapter, Decorator, Facade |
 | **Comportementaux** | Comment répartir les comportements ? | Observer, Strategy, Command |
 
+En pratique : un **créationnel** t'aide quand `new` devient un casse-tête (config, variantes, coûts). Un **structurel** colle des briques incompatibles ou ajoute des couches sans tout casser. Un **comportemental** clarifie qui parle à qui, et comment un objet change de réaction selon le contexte.
+
+Petit aperçu en code — sans pattern, tout est mélangé :
+
+```javascript
+// Tout dans une fonction : difficile à tester et à étendre
+function checkout(user, cart, mode) {
+  if (mode === 'express') { /* … */ }
+  else if (mode === 'standard') { /* … */ }
+  // + paiement, + logs, + emails…
+}
+```
+
+Avec un vocabulaire de patterns, tu sépares : **Strategy** pour le mode d'expédition, **Observer** pour les notifications, **Facade** pour l'API publique. Ce n'est pas obligatoire dès la ligne 1 — c'est un langage pour refactoriser quand ça fait mal.
+
 ---
 
 ## Ordre de la série (popularité décroissante)
@@ -65,6 +84,8 @@ Tu peux lire linéairement ou sauter vers le pattern qui correspond à ta douleu
 3. **L**iskov — les sous-types restent substituables.
 4. **I**nterface Segregation — petites interfaces.
 5. **D**ependency Inversion — dépendre d'abstractions.
+
+Les patterns et SOLID se renforcent : Strategy et Decorator aident l'Open/Closed ; Factory et Dependency Injection poussent vers Dependency Inversion. Tu n'as pas besoin de réciter les lettres en entretien — montre que tu sépares les responsabilités.
 
 ---
 
@@ -87,11 +108,13 @@ Tu peux lire linéairement ou sauter vers le pattern qui correspond à ta douleu
 | Confondre Factory / Abstract Factory / Builder | Mauvais choix | Lis les 3 articles créationnels |
 | Pas de tests | Pattern rigide | Test avant structure |
 
+Un autre piège : vouloir appliquer les 23 patterns dans un projet scolaire. Choisis **un** problème réel (switch géant, couplage N×N, undo impossible) et un pattern adapté. Le reste viendra avec l'expérience.
+
 ---
 
 ## Exercice : cartographier ton projet
 
-Sur un repo perso, note : création compliquée → créationnel ; API tierce → structurel ; gros `switch` comportement → comportemental. Pas besoin de tout refactoriser : entraîne ton **œil**.
+Sur un repo perso, note : création compliquée → créationnel ; API tierce → structurel ; gros `switch` comportement → comportemental. Pas besoin de tout refactoriser : entraîne ton **œil**. En 20 minutes, tu auras une carte mentale plus précieuse qu'une checklist mémorisée.
 
 ---
 
@@ -99,6 +122,7 @@ Sur un repo perso, note : création compliquée → créationnel ; API tierce �
 
 - 23 patterns GoF, expliqués pour juniors, avec schémas et exemples TS/Python.
 - Ordre **popularité** (pas livre) pour un apprentissage pragmatique.
+- Un pattern = un vocabulaire + une réponse à une douleur, pas une décoration.
 - Article suivant : **Singleton**.
 
 ---

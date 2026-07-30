@@ -1,34 +1,35 @@
-# Installer les images OG WebP (serie IA pratique)
+# Installer les images OG WebP (blog complet)
 
 ## Prerequis
 
-- Les JPG `*-1200x630.jpg` generes via `docs/prompt_og_images_articles_ia_pratique.md`
+- Les JPG `*-1200x630.jpg` generes via `docs/prompt_og_images_articles_all.md`
 - Python 3 + Pillow : `pip install pillow`
 
 ## Etapes
 
-1. Genere les images avec les prompts du fichier ci-dessus (Flux, ChatGPT Images, Recraft, Midjourney...).
-2. Copie tous les JPG dans `assets/images/og/` (noms exacts : `slug-1200x630.jpg`).
-3. Execute :
+1. Genere les prompts pour tout le blog :
 
 ```bash
-python scripts/install_ia_og_webp.py
+python scripts/generate_all_blog_og_prompts.py
 ```
 
-Le script :
-- trouve les JPG listes dans le fichier prompts (ou tous les `ia-*-1200x630.jpg`)
-- cree le `.webp` a cote (qualite 82)
-- recentre au ratio 1200/630 et redimensionne en 1200x630
+2. Genere les images avec les prompts (Flux, ChatGPT Images, Recraft, Midjourney...).
+3. Place les JPG dans le dossier assets Cursor ou dans `assets/images/og/`.
+4. Installe OG + WebP + bannieres inline :
 
-4. Verifie qu'un article pointe bien `og_image: slug-1200x630.jpg` dans le frontmatter.
-5. Rebuild : `python build.py` (ou `python blog/build_blog.py`)
+```bash
+python scripts/install_ai_generated_blog_og.py
+python scripts/install_blog_article_banners.py
+```
+
+5. Rebuild : `python build.py` et `python blog/build_blog.py`
+
+## Suivi
+
+- Manifest : `scripts/_blog_og_manifest.json`
+- Restants a generer : `scripts/_blog_og_remaining.json`
 
 ## Depannage
 
 - Si le WebP manque, le site peut retomber sur le JPG selon le loader.
 - Les fichiers sous `assets/images/og/` sont souvent gitignores : regenerer avant deploy.
-- Pour regenerer les articles depuis les transcripts :
-
-```bash
-python scripts/generate_ia_articles_from_transcripts.py
-```

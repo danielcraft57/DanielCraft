@@ -14,6 +14,27 @@ Ce n'est pas une comprehension du sens. La backprop optimise un critere. Si le c
 
 Imagine etre dans le brouillard sur une colline et vouloir descendre : tu sens la pente sous tes pieds et tu fais un pas dans la direction qui descend. Le **gradient** est cette pente dans l'espace des poids. Le **taux d'apprentissage** (learning rate) est la taille du pas. Trop grand : tu sautes et tu diverges. Trop petit : tu rampes eternellement. Ines a vu une loss exploser apres avoir "mis le learning rate a fond pour aller plus vite". La colline n'aime pas les grands sauts aveugles.
 
+```python
+# Une seule etape "apprendre" sur un neurone lineaire (MSE)
+import numpy as np
+
+x, y_vrai = 2.0, 5.0
+w, b = 0.0, 0.0
+lr = 0.1
+
+for etape in range(8):
+    y_pred = w * x + b
+    loss = (y_pred - y_vrai) ** 2
+    # gradients de la MSE
+    dw = 2 * (y_pred - y_vrai) * x
+    db = 2 * (y_pred - y_vrai)
+    w -= lr * dw
+    b -= lr * db
+    print(f"etape {etape}: pred={y_pred:.2f} loss={loss:.3f} w={w:.3f} b={b:.3f}")
+```
+
+Tu vois la prediction se rapprocher de 5. C'est l'idee de la backprop, en tout petit, sans framework.
+
 :::astuce
 Quand la loss train ne baisse pas, demande d'abord : learning rate, bugs de donnees, mauvaise loss - avant d'ajouter dix couches.
 :::

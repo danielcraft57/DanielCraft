@@ -80,10 +80,21 @@ function Load-DeployDefaultsFromEnv {
     }
     if (-not $PSBoundParameters.ContainsKey('RsyncPath') -or [string]::IsNullOrWhiteSpace($RsyncPath)) {
         if ($env:DEPLOY_RSYNC_PATH) { $script:RsyncPath = $env:DEPLOY_RSYNC_PATH }
+        elseif (Test-Path 'C:\cygwin64\bin\rsync.exe') { $script:RsyncPath = 'C:\cygwin64\bin\rsync.exe' }
     }
 }
 
-Load-DeployDefaultsFromEnv
+function Resolve-PythonExe {
+    foreach ($cmd in @('python', 'python3')) {
+        try {
+            $exe = (Get-Command $cmd -ErrorAction Stop).Source
+            # Evite le stub Microsoft Store (souvent sans deps du projet).
+            if ($exe -match 'WindowsApps') { continue }
+            return $cmd
+        } catch { }
+    }
+    return 'python3'
+}
 
 if ([string]::IsNullOrWhiteSpace($ServerUser) -or [string]::IsNullOrWhiteSpace($ServerHost) -or [string]::IsNullOrWhiteSpace($ServerPath)) {
     Write-ColorOutput "Erreur: parametres de deploiement incomplets." "Red"
@@ -116,7 +127,9 @@ if (-not (Test-Path "build.py")) {
 $DIST_DIR = "dist"
 Write-ColorOutput "[0/4] Lancement du build Python..." "Yellow"
 $env:SITE_BASE = $SiteBase
-$buildLines = & python3 build.py 2>&1
+$pythonExe = Resolve-PythonExe
+Write-ColorOutput "Build Python : $pythonExe" "Yellow"
+$buildLines = & $pythonExe build.py 2>&1
 $buildOutput = [string]::Join("`n", $buildLines)
 if ($LASTEXITCODE -ne 0) {
     Write-ColorOutput "Erreur lors du build Python:" "Red"
@@ -235,7 +248,94 @@ function Should-TransferFile {
     return ($localSize -ne $remoteSize)
 }
 
-# 4. Transférer les fichiers avec rsync (ou scp en fallback)
+function Get-CygwinPath {
+    param([string]$WindowsPath)
+    $cygpath = 'C:\cygwin64\bin\cygpath.exe'
+    if (-not (Test-Path $cygpath)) { return $null }
+    $resolved = (Resolve-Path -LiteralPath $WindowsPath).Path
+    return (& $cygpath -u $resolved).Trim()
+}
+
+function Resolve-RsyncExe {
+    if ($RsyncPath -and (Test-Path $RsyncPath)) {
+        return $RsyncPath
+    }
+    try {
+        return (Get-Command rsync -ErrorAction Stop).Source
+    } catch {
+        return $null
+    }
+}
+
+function Test-RsyncServerCompatible {
+    param([string]$RsyncExe)
+    if (-not $RsyncExe -or -not (Test-Path $RsyncExe)) { return $false }
+    try {
+        $line = (& $RsyncExe --version 2>&1 | Select-Object -First 1) -join ''
+        if ($line -match 'version\s+(\d+)\.(\d+)') {
+            $major = [int]$Matches[1]
+            $minor = [int]$Matches[2]
+            # Serveur rsync 3.4+ (protocole 32) : client Cygwin 3.3 echoue (code 12).
+            return ($major -gt 3 -or ($major -eq 3 -and $minor -ge 4))
+        }
+    } catch { }
+    return $false
+}
+
+function Invoke-RsyncDeploy {
+    param(
+        [string]$RsyncExe,
+        [string]$DistDir,
+        [string]$ExcludeArgs,
+        [string]$RemoteTarget
+    )
+    $sshOpts = '-o ConnectTimeout=30 -o ServerAliveInterval=15'
+    $isCygwinRsync = $RsyncExe -match 'cygwin'
+    if ($isCygwinRsync) {
+        $distSource = Get-CygwinPath $DistDir
+        if (-not $distSource) {
+            Write-ColorOutput "cygpath introuvable — rsync Cygwin ignore." "Yellow"
+            return $false
+        }
+        $openSsh = 'C:\Windows\System32\OpenSSH\ssh.exe'
+        $sshForRsync = if (Test-Path $openSsh) { (Get-CygwinPath $openSsh) } else { 'ssh' }
+        $distSource = "${distSource}/"
+        $remoteShell = "`"$sshForRsync`" $sshOpts"
+    } else {
+        $distSource = (Resolve-Path -LiteralPath $DistDir).Path.Replace('\', '/') + '/'
+        $remoteShell = "ssh $sshOpts"
+    }
+
+    Write-ColorOutput "rsync: $RsyncExe" "Yellow"
+    & $RsyncExe -avz --delete --timeout=300 $ExcludeArgs.Split(' ') -e $remoteShell $distSource $RemoteTarget
+    return ($LASTEXITCODE -eq 0)
+}
+
+function Invoke-TarSshDeploy {
+    param(
+        [string]$DistDir,
+        [string]$RemoteTarget
+    )
+    $tarCmd = Get-Command tar -ErrorAction SilentlyContinue
+    if (-not $tarCmd) {
+        Write-ColorOutput "tar introuvable — fallback tar+ssh impossible." "Yellow"
+        return $false
+    }
+    $remotePath = ($RemoteTarget -split ':', 2)[1]
+    if (-not $remotePath) { return $false }
+    $sshTarget = ($RemoteTarget -split ':', 2)[0]
+
+    Write-ColorOutput "Transfert tar+ssh (Windows tar -> serveur)..." "Yellow"
+    Push-Location $DistDir
+    try {
+        & tar --format=gnu -cf - . | & ssh -o ConnectTimeout=30 -o ServerAliveInterval=15 $sshTarget "tar -xf - -C $remotePath"
+        return ($LASTEXITCODE -eq 0)
+    } finally {
+        Pop-Location
+    }
+}
+
+# 4. Transférer les fichiers avec rsync (tar+ssh ou scp en fallback)
 Write-ColorOutput "[3/4] Transfert des fichiers..." "Yellow"
 
 # Exclusions (le blog est dans dist/blog/ et est deploye)
@@ -251,29 +351,37 @@ $excludes = @(
 )
 
 $excludeArgs = $excludes -join " "
+$remoteTarget = "${ServerUser}@${ServerHost}:${ServerPath}/"
+$transferOk = $false
 
-# Vérifier si rsync est disponible (via RsyncPath explicite ou via PATH)
-try {
-    if ($RsyncPath -and (Test-Path $RsyncPath)) {
-        $rsyncExe = $RsyncPath
-    } else {
-        $rsyncCmd = Get-Command rsync -ErrorAction Stop
-        $rsyncExe = $rsyncCmd.Source
-    }
+$forceTarSsh = ($env:DEPLOY_FORCE_TAR_SSH -match '^(1|true|yes)$')
+$rsyncExe = Resolve-RsyncExe
+$rsyncCompatible = (-not $forceTarSsh) -and (Test-RsyncServerCompatible -RsyncExe $rsyncExe)
 
+if ($forceTarSsh) {
+    Write-ColorOutput "DEPLOY_FORCE_TAR_SSH actif — rsync ignore." "Yellow"
+} elseif ($rsyncExe -and -not $rsyncCompatible) {
+    Write-ColorOutput "rsync $rsyncExe trop ancien (Cygwin 3.3 vs serveur 3.4) — tar+ssh direct." "Yellow"
+}
+
+if ($rsyncCompatible) {
     Write-ColorOutput "Utilisation de rsync (transfert optimise)..." "Yellow"
-    
-    $rsyncCommandLine = "`"$rsyncExe`" -avz --delete $excludeArgs $DIST_DIR/ ${ServerUser}@${ServerHost}:${ServerPath}/"
-    Invoke-Expression $rsyncCommandLine
-    
-    if ($LASTEXITCODE -eq 0) {
-        Write-ColorOutput "Transfert rsync reussi" "Green"
-    } else {
-        Write-ColorOutput "Erreur lors du transfert rsync" "Red"
-        exit 1
+    $transferOk = Invoke-RsyncDeploy -RsyncExe $rsyncExe -DistDir $DIST_DIR -ExcludeArgs $excludeArgs -RemoteTarget $remoteTarget
+    if (-not $transferOk) {
+        Write-ColorOutput "rsync a echoue — bascule tar+ssh." "Yellow"
     }
-} catch {
-    Write-ColorOutput "rsync non trouve, fallback scp (optimise par taille)..." "Yellow"
+} elseif (-not $rsyncExe) {
+    Write-ColorOutput "rsync introuvable — tar+ssh." "Yellow"
+}
+
+if (-not $transferOk) {
+    $transferOk = Invoke-TarSshDeploy -DistDir (Resolve-Path $DIST_DIR).Path -RemoteTarget $remoteTarget
+}
+
+if ($transferOk) {
+    Write-ColorOutput "Transfert reussi" "Green"
+} else {
+    Write-ColorOutput "Fallback scp (dossier par dossier)..." "Yellow"
     
     # Transfert fichier par fichier avec scp depuis dist/
     $htmlFiles = @(
@@ -296,7 +404,7 @@ try {
         "cgu.html",
         "politique-confidentialite.html"
     )
-    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml")
+    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml", "nginx-project-aliases.conf")
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file

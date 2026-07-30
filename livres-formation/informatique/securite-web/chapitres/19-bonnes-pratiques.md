@@ -44,6 +44,10 @@ La meilleure pratique reste inutile si elle n'a pas de date dans ton calendrier.
 
 Ecris ta routine A (hebdo) et B (mensuelle). Mets deux rappels.
 
+## Culture d'equipe legere
+
+Une phrase commune (si c'est urgent, on ralentit), une checklist partagee, un responsable des maj, un canal pour signaler un message douteux sans moquerie. Lea anime une revue courte. Max documente. Sam celebre les freins reussis autant que les features livrees.
+
 ## A toi
 
 Execute la routine A une fois aujourd'hui. Coche.

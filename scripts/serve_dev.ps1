@@ -4,7 +4,7 @@
 
 .DESCRIPTION
   Remplace l'usage séparé de serve_local.ps1 + dev_php_watch.ps1 :
-  - build.py --no-webp (initial)
+  - build.py (initial, --no-webp par défaut)
   - serveur PHP avec dist/router.php (pages + API)
   - sync api/ -> dist/api/
   - build.py --watch (optionnel)
@@ -21,10 +21,21 @@
 .PARAMETER NoKillPort
   Ne pas tuer les processus déjà sur le port.
 
+.PARAMETER WebP
+  Activer la génération WebP au build (sinon --no-webp, plus rapide).
+  Alias CLI : --webp
+
 .PARAMETER CondaEnv
   Environnement conda à activer avant le build (défaut : danielcraft ou CONDA_ENV).
+
+.EXAMPLE
+  .\scripts\serve_dev.ps1
+.EXAMPLE
+  .\scripts\serve_dev.ps1 -WebP
+.EXAMPLE
+  .\scripts\serve_dev.ps1 --webp
 #>
-[CmdletBinding()]
+[CmdletBinding(PositionalBinding = $false)]
 param(
   [ValidateRange(1, 65535)]
   [int]$Port = 8000,
@@ -32,8 +43,21 @@ param(
   [switch]$SkipBuild,
   [switch]$NoWatch,
   [switch]$NoKillPort,
-  [string]$CondaEnv = "danielcraft"
+  [switch]$WebP,
+  [string]$CondaEnv = "danielcraft",
+  [Parameter(ValueFromRemainingArguments = $true)]
+  [string[]]$RemainingArgs
 )
+
+foreach ($arg in @($RemainingArgs)) {
+  switch -Regex ($arg) {
+    '^(--webp|-webp|/webp)$' { $WebP = $true }
+    '^(--no-webp|-no-webp|/no-webp)$' { $WebP = $false }
+    default { Write-Warning "Argument ignore : $arg" }
+  }
+}
+
+$buildWebpArgs = if ($WebP) { @() } else { @('--no-webp') }
 
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
@@ -61,8 +85,12 @@ if (Test-Path $vendorScript) {
 }
 
 if (-not $SkipBuild) {
-  Write-Host "Build initial (sans WebP)..." -ForegroundColor Cyan
-  python build.py --no-webp
+  if ($WebP) {
+    Write-Host "Build initial (avec WebP)..." -ForegroundColor Cyan
+  } else {
+    Write-Host "Build initial (sans WebP)..." -ForegroundColor Cyan
+  }
+  python build.py @buildWebpArgs
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
 
@@ -139,9 +167,11 @@ $baseUrl = "http://${ServerHost}:$Port/"
 Write-Host ""
 Write-Host "Dev local (PHP + URLs propres + API)" -ForegroundColor Green
 Write-Host "  URL         : $baseUrl"
-Write-Host "  Prestations : ${baseUrl}prestations/"
+Write-Host "  Nos offres : ${baseUrl}nos-offres"
+Write-Host "  Fiches    : ${baseUrl}prestations/<slug>/"
 Write-Host "  API         : ${baseUrl}api/ (contact, devis Prestafacture…)"
 Write-Host "  Watch build : $(if ($NoWatch) { 'non' } else { 'oui' })"
+Write-Host "  WebP        : $(if ($WebP) { 'oui' } else { 'non (--no-webp)' })"
 Write-Host "  Ctrl+C pour arrêter."
 Write-Host ""
 
@@ -157,7 +187,8 @@ $server = Start-Process -FilePath $phpExe -ArgumentList @(
 $buildWatch = $null
 try {
   if (-not $NoWatch) {
-    $buildWatch = Start-Process -FilePath "python" -ArgumentList @("build.py", "--watch", "--no-webp") -NoNewWindow -PassThru
+    $watchArgs = @("build.py", "--watch") + $buildWebpArgs
+    $buildWatch = Start-Process -FilePath "python" -ArgumentList $watchArgs -NoNewWindow -PassThru
   }
 
   while ($true) {

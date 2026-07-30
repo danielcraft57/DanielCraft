@@ -454,21 +454,21 @@ series_order: {order}
 
 def prompt_for_image(slug: str, title: str, category: str) -> str:
     themes = {
-        "prompts": "bulles de dialogue, bloc de texte prompt, interface chat schematisee",
-        "chatgpt-astuces": "fenetre de chat, icone eclair, checklist",
-        "claude": "interface assistant, documents, connecteurs",
-        "gemini-google": "spark Google, notebook, ecran AI Studio",
-        "agents-ia": "flux d'agents, noeuds relies, automatisation",
-        "images-visuels": "cadre image, palette, generation visuelle",
-        "formations": "parcours formation, diplome stylise, livres",
-        "no-code-apps": "maquette site, blocs UI, laptop",
-        "outils-alternatives": "cartes outils cote a cote, balance",
-        "metiers-futur": "personnes au travail schematisees, graphiques metiers",
-        "productivite": "horloge, taches cochees, calendrier",
+        "prompts": "workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie",
+        "chatgpt-astuces": "interface conversationnelle avancee, panneau de taches, notes et checklists produit",
+        "claude": "assistant de travail, documents longs, connecteurs et panneaux d'analyse",
+        "gemini-google": "AI Studio, notebooks, sources reliees, cartes de traitement Google",
+        "agents-ia": "workflow d'automatisation, noeuds relies, orchestration, etapes d'execution",
+        "images-visuels": "pipeline image, outils de retouche, calques, generation visuelle technique",
+        "formations": "parcours d'apprentissage, modules, ressources, docs et tableaux de progression",
+        "no-code-apps": "maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux",
+        "outils-alternatives": "comparatif d'outils, cartes produit, interfaces cote a cote, mesures",
+        "metiers-futur": "visualisation de metiers, tendances, data, postes de travail modernes",
+        "productivite": "tableau de bord, calendrier, automatisations, taches et suivi",
     }
     theme = themes.get(category, "interface IA moderne")
     short = title[:48]
-    return f"""Scene : blog tech moderne, {theme}. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "{short}". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+    return f"""Scene : visuel Open Graph technique et premium pour un article informatique, {theme}. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "{short}" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 """
 
 

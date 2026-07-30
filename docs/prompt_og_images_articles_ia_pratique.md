@@ -4,8 +4,8 @@ Images Open Graph pour les **111** articles generes depuis les transcripts UneFi
 
 **Format :** 1200x630 px (ratio 1.91:1), JPG puis WebP.
 **Dossier cible :** `assets/images/og/`
-**Style :** fond clair, accent rouge #dc2626, flat design, textes en francais, pas de visage.
-**Charte :** coherent avec `docs/prompt_og_images_articles_geo.md`.
+**Style :** visuels plus techniques, plus informatiques, plus denses visuellement. Interfaces, dashboards, code, graphes, automatisations, panneaux UI, pas de cartoon simpliste.
+**Charte :** coherent avec `docs/prompt_og_images_articles_geo.md` et la regle visuelle DanielCraft mise a jour.
 
 ## Installation rapide
 
@@ -29,7 +29,7 @@ Voir aussi : `docs/INSTALL_IMAGES_IA_WEBP.md`
 Article : 4 ressources IA gratuites pour vous former et mieux comprendre
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "4 ressources IA gratuites pour vous former et mi". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "4 ressources IA gratuites pour vous former et mi" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -39,7 +39,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment créer un logo gratuit avec l’IA
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer un logo gratuit avec l’IA". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un logo gratuit avec l’IA" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -49,7 +49,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment générer un personnage cohérent avec ChatGPT
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment générer un personnage cohérent avec Chat". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment générer un personnage cohérent avec Chat" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -59,7 +59,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment humaniser un texte rédigé par l'intelligence
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment humaniser un texte rédigé par l'intellig". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment humaniser un texte rédigé par l'intellig" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -69,7 +69,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment générer des vidéos IA de meilleure qualité en utilisant
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment générer des vidéos IA de meilleure quali". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment générer des vidéos IA de meilleure quali" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -79,7 +79,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment créer de meilleurs prompt sur ChatGPT (site gratuit)
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer de meilleurs prompt sur ChatGPT (s". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer de meilleurs prompt sur ChatGPT (s" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -89,7 +89,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment créer du contenu sur les réseau
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer du contenu sur les réseau". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer du contenu sur les réseau" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -99,7 +99,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Astuce prompt chatGPT gratuit Pour
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Astuce prompt chatGPT gratuit Pour". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce prompt chatGPT gratuit Pour" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -109,7 +109,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Cette étudiante a créé une extension qui détecte en direct les
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Cette étudiante a créé une extension qui détecte". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Cette étudiante a créé une extension qui détecte" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -119,7 +119,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment garder le même personnage dans des vidéos IA
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment garder le même personnage dans des vidéo". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment garder le même personnage dans des vidéo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -129,7 +129,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment apparaître dans les réponses de ChatGPT : tutoriel rapide pou
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment apparaître dans les réponses de ChatGPT ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment apparaître dans les réponses de ChatGPT " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -139,7 +139,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment accéder et utiliser Reve
 
 ```
-Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface chat schematisee. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment accéder et utiliser Reve". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment accéder et utiliser Reve" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -149,7 +149,7 @@ Scene : blog tech moderne, bulles de dialogue, bloc de texte prompt, interface c
 Article : Comment utiliser ChatGPT 5 : template à suivre pour créer de meilleur
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment utiliser ChatGPT 5 : template à suivre p". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser ChatGPT 5 : template à suivre p" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -159,7 +159,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Comment créer un LUT avec ChatGPT pour l'importer dans un
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer un LUT avec ChatGPT pour l'importe". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un LUT avec ChatGPT pour l'importe" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -169,7 +169,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l’url
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Astuce pour que ChatGPT résume des vidéos YouTub". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce pour que ChatGPT résume des vidéos YouTub" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -179,7 +179,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Astuce si votre espace de stockage Google est plein : comment accéder
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Astuce si votre espace de stockage Google est pl". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce si votre espace de stockage Google est pl" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -189,7 +189,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Nouveauté sur ChatGPT Plus, on peut maintenant automatiser des tâches
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Nouveauté sur ChatGPT Plus, on peut maintenant a". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Nouveauté sur ChatGPT Plus, on peut maintenant a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -199,7 +199,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Comment savoir tout ce que ChatGPT sait sur vous en accédant à sa mém
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment savoir tout ce que ChatGPT sait sur vous". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment savoir tout ce que ChatGPT sait sur vous" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -209,7 +209,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Astuce ChatGPT pour tous les gomuscu et autres sportifs qui veulent c
 
 ```
-Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Astuce ChatGPT pour tous les gomuscu et autres s". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce ChatGPT pour tous les gomuscu et autres s" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -219,7 +219,7 @@ Scene : blog tech moderne, fenetre de chat, icone eclair, checklist. Fond degrad
 Article : Ressources gratuite pour apprendre à utiliser Claude Code Cours offic
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Ressources gratuite pour apprendre à utiliser Cl". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Ressources gratuite pour apprendre à utiliser Cl" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -229,7 +229,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Formation 100% gratuite pour apprendre à utiliser Claude Code Anthrop
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Formation 100% gratuite pour apprendre à utilise". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Formation 100% gratuite pour apprendre à utilise" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -239,7 +239,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Où trouver les vidéos officielles et gratuites d’Anthropic pour appre
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Où trouver les vidéos officielles et gratuites d". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Où trouver les vidéos officielles et gratuites d" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -249,7 +249,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Si vous utilisez Claude, utilisez ça Une Skill, c'est un ensemble d'i
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Si vous utilisez Claude, utilisez ça Une Skill, ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Si vous utilisez Claude, utilisez ça Une Skill, " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -259,7 +259,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : 3 ressources gratuites pour apprendre à utiliser Claude 1. Anthropic
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "3 ressources gratuites pour apprendre à utiliser". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "3 ressources gratuites pour apprendre à utiliser" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -269,7 +269,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Comment savoir quelle skill choisir dans Claude Le site c'est skills
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment savoir quelle skill choisir dans Claude ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment savoir quelle skill choisir dans Claude " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -279,7 +279,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : 3 astuces si vous venez de passer de ChatGPT à Claude et que vous en
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "3 astuces si vous venez de passer de ChatGPT à C". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "3 astuces si vous venez de passer de ChatGPT à C" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -289,7 +289,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Mon top des meilleures 3 IA
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Mon top des meilleures 3 IA". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Mon top des meilleures 3 IA" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -299,7 +299,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Nouveaux plugins Claude pour la finance Les plugins prennent 5 min
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Nouveaux plugins Claude pour la finance Les plug". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Nouveaux plugins Claude pour la finance Les plug" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -309,7 +309,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Comment utiliser l’IA chinoise gratuite et open source Deepseek en ve
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment utiliser l’IA chinoise gratuite et open ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser l’IA chinoise gratuite et open " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -319,7 +319,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Clawdbot ou Moltbot : l'IA autonome surpuissante Depuis quelques jour
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Clawdbot ou Moltbot : l'IA autonome surpuissante". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Clawdbot ou Moltbot : l'IA autonome surpuissante" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -329,7 +329,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Astuce pour éviter qu'un site vibe codé ressemble à tous les autres
 
 ```
-Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Astuce pour éviter qu'un site vibe codé ressembl". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce pour éviter qu'un site vibe codé ressembl" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -339,7 +339,7 @@ Scene : blog tech moderne, interface assistant, documents, connecteurs. Fond deg
 Article : Alerte formations IA gratuites par Google avec Google Skills Il y a p
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Alerte formations IA gratuites par Google avec G". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Alerte formations IA gratuites par Google avec G" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -349,7 +349,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Comment créer un assistant IA gratuit avec Gemini l'IA de
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer un assistant IA gratuit avec Gemin". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un assistant IA gratuit avec Gemin" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -359,7 +359,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Un homme vient de créer un Conseil des IA, avec un tutoriel pour fair
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Un homme vient de créer un Conseil des IA, avec ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Un homme vient de créer un Conseil des IA, avec " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -369,7 +369,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : 3 certifications IA gratuites à ajouter sur votre CV pour les débutan
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "3 certifications IA gratuites à ajouter sur votr". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "3 certifications IA gratuites à ajouter sur votr" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -379,7 +379,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Comment utiliser Gemini l'intelligence artificielle de Goo
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment utiliser Gemini l'intelligence artificie". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser Gemini l'intelligence artificie" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -389,7 +389,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Vous connaissez cette astuce sur Gemini ？ Parfait pour les étudiants
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Vous connaissez cette astuce sur Gemini ？ Parfai". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Vous connaissez cette astuce sur Gemini ？ Parfai" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -399,7 +399,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Comment avoir un assistant gratuit sur votre ordinateur pour a
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment avoir un assistant gratuit sur votre ord". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment avoir un assistant gratuit sur votre ord" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -409,7 +409,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Comment avoir le podcast NotebookLM en français Précision
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment avoir le podcast NotebookLM en français ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment avoir le podcast NotebookLM en français " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -419,7 +419,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Quelle IA choisir pour des projets longs comme la rédaction d'un mémo
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Quelle IA choisir pour des projets longs comme l". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Quelle IA choisir pour des projets longs comme l" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -429,7 +429,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Comment accéder à des milliers de mini applications créées par les ut
 
 ```
-Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment accéder à des milliers de mini applicati". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, AI Studio, notebooks, sources reliees, cartes de traitement Google. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment accéder à des milliers de mini applicati" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -439,7 +439,7 @@ Scene : blog tech moderne, spark Google, notebook, ecran AI Studio. Fond degrade
 Article : Créer un agent IA gratuit avec Claude et les MCP Le Model
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Créer un agent IA gratuit avec Claude et les MCP". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Créer un agent IA gratuit avec Claude et les MCP" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -449,7 +449,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Formation gratuite pour créer et vendre des agents IA, parfait
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Formation gratuite pour créer et vendre des agen". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Formation gratuite pour créer et vendre des agen" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -459,7 +459,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Nouvel agent IA gratuit : Scout.new Il est aussi bon que Genspark et
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Nouvel agent IA gratuit : Scout.new Il est aussi". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Nouvel agent IA gratuit : Scout.new Il est aussi" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -469,7 +469,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Tutoriel débutant : comment créer un agent IA en quelques minutes
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Tutoriel débutant : comment créer un agent IA en". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Tutoriel débutant : comment créer un agent IA en" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -479,7 +479,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Agent IA Neo by Flowith, le premier agent IA "infini" : il peut trava
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Agent IA Neo by Flowith, le premier agent IA 'in". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Agent IA Neo by Flowith, le premier agent IA "in" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -489,7 +489,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Manus AI : l’agent IA le plus complet, parfait pour les personnes non
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Manus AI : l’agent IA le plus complet, parfait p". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Manus AI : l’agent IA le plus complet, parfait p" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -499,7 +499,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : 3 alternatives à Deep Research l'agent d'intelligence artificielle d'
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "3 alternatives à Deep Research l'agent d'intelli". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "3 alternatives à Deep Research l'agent d'intelli" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -509,7 +509,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Astuce et bon plan : comment avoir Perplexity Pro gratuitement pendan
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Astuce et bon plan : comment avoir Perplexity Pr". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce et bon plan : comment avoir Perplexity Pr" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -519,7 +519,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Agent IA pour créer des présentations style powerpoint en utilisant d
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Agent IA pour créer des présentations style powe". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Agent IA pour créer des présentations style powe" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -529,7 +529,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Jour 2 pour comprendre les agents IA : les dangers
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Jour 2 pour comprendre les agents IA : les dange". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Jour 2 pour comprendre les agents IA : les dange" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -539,7 +539,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Le dernier examen de l’Humanité : Deep Research d’OpenAI atteint un s
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Le dernier examen de l’Humanité : Deep Research ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Le dernier examen de l’Humanité : Deep Research " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -549,7 +549,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Flowith OS : le premier OS créé pour les agents IA Flowith OS permet
 
 ```
-Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Flowith OS : le premier OS créé pour les agents ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Flowith OS : le premier OS créé pour les agents " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -559,7 +559,7 @@ Scene : blog tech moderne, flux d'agents, noeuds relies, automatisation. Fond de
 Article : Tutoriel Kling AI motion control Comment utiliser l’IA pour se trans
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Tutoriel Kling AI motion control Comment utilise". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Tutoriel Kling AI motion control Comment utilise" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -569,7 +569,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : 3 façons de gagner de l'argent grâce à l'IA Avec ces méthodes je gagn
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "3 façons de gagner de l'argent grâce à l'IA Avec". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "3 façons de gagner de l'argent grâce à l'IA Avec" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -579,7 +579,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Comment créer un clone dans une vidéo grâce à l'IA chinois
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer un clone dans une vidéo grâce à l'". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un clone dans une vidéo grâce à l'" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -589,7 +589,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Comment créer le mock up d'une application ou d'un site we
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer le mock up d'une application ou d'". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer le mock up d'une application ou d'" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -599,7 +599,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : DeepSeek OCR, c’est une nouvelle méthode qui permet de compresser du
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "DeepSeek OCR, c’est une nouvelle méthode qui per". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "DeepSeek OCR, c’est une nouvelle méthode qui per" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -609,7 +609,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Nouvelle IA pour créer des graphiques animés et animations visuelles
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Nouvelle IA pour créer des graphiques animés et ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Nouvelle IA pour créer des graphiques animés et " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -619,7 +619,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Comment accéder aux 5 IA secrètes de Whatsapp Merci @Jolan.ai d'avoi
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment accéder aux 5 IA secrètes de Whatsapp Me". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment accéder aux 5 IA secrètes de Whatsapp Me" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -629,7 +629,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Dites-moi si vous voulez que je fasse un tut
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Dites-moi si vous voulez que je fasse un tut". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Dites-moi si vous voulez que je fasse un tut" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -639,7 +639,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Comment utiliser Nano Banana pro : la meilleure plateforme La nouvell
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment utiliser Nano Banana pro : la meilleure ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser Nano Banana pro : la meilleure " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -649,7 +649,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : La Chine continue de nous impressionner Pendant que les États-Unis re
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "La Chine continue de nous impressionner Pendant ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "La Chine continue de nous impressionner Pendant " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -659,7 +659,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Une IA française avec toutes les fonctionnalités
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Une IA française avec toutes les fonctionnalités". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Une IA française avec toutes les fonctionnalités" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -669,7 +669,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Cette IA gratuite remplace Photoshop : GoogleAI Studio avec Gemini 2
 
 ```
-Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Cette IA gratuite remplace Photoshop : GoogleAI ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Cette IA gratuite remplace Photoshop : GoogleAI " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -679,7 +679,7 @@ Scene : blog tech moderne, cadre image, palette, generation visuelle. Fond degra
 Article : Meilleurs cours pour apprendre l'IA (gratuit) Voici les meilleurs cou
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Meilleurs cours pour apprendre l'IA (gratuit) Vo". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Meilleurs cours pour apprendre l'IA (gratuit) Vo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -689,7 +689,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Le futur du travail avec l’intelligence artificielle : plus d’opportu
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Le futur du travail avec l’intelligence artifici". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Le futur du travail avec l’intelligence artifici" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -699,7 +699,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Comment cloner le cerveau de n'importe quel créateur en 5 minutes et
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment cloner le cerveau de n'importe quel créa". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment cloner le cerveau de n'importe quel créa" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -709,7 +709,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Guide gratuit par Microsoft pour apprendre à créer des agents IA
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Guide gratuit par Microsoft pour apprendre à cré". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Guide gratuit par Microsoft pour apprendre à cré" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -719,7 +719,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : 5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "5 prédictions sur le futur de l’IA et de l’human". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "5 prédictions sur le futur de l’IA et de l’human" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -729,7 +729,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : 3 façons d'utiliser l'IA notebook LM de G
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "3 façons d'utiliser l'IA notebook LM de G". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "3 façons d'utiliser l'IA notebook LM de G" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -739,7 +739,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Nouveauté avec la meilleure IA gratuite pour apprendre plus vite et m
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Nouveauté avec la meilleure IA gratuite pour app". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Nouveauté avec la meilleure IA gratuite pour app" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -749,7 +749,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Comment utiliser ChatGPT pour les débutants en 4 étapes si
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment utiliser ChatGPT pour les débutants en 4". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser ChatGPT pour les débutants en 4" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -759,7 +759,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Alternative gratuite (5 requêtes par jour) si vous voulez tester l'ag
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Alternative gratuite (5 requêtes par jour) si vo". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Alternative gratuite (5 requêtes par jour) si vo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -769,7 +769,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Plein de formations gratuites à l’intelligence artificielle sur le si
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Plein de formations gratuites à l’intelligence a". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Plein de formations gratuites à l’intelligence a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -779,7 +779,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Formation IA gratuite + pour apprendre à coder La formation dure 17h
 
 ```
-Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Formation IA gratuite + pour apprendre à coder L". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Formation IA gratuite + pour apprendre à coder L" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -789,7 +789,7 @@ Scene : blog tech moderne, parcours formation, diplome stylise, livres. Fond deg
 Article : Test de Thoreo : une IA qui résume les vidéos
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Test de Thoreo : une IA qui résume les vidéos". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Test de Thoreo : une IA qui résume les vidéos" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -799,7 +799,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Comment installer n8n gratuitement pour créer vos automati
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment installer n8n gratuitement pour créer vo". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment installer n8n gratuitement pour créer vo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -809,7 +809,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Templates n8n gratuites pour créer des agents IA : comment y accéder
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Templates n8n gratuites pour créer des agents IA". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Templates n8n gratuites pour créer des agents IA" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -819,7 +819,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Comment passer un appel vidéo Chat
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment passer un appel vidéo Chat". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment passer un appel vidéo Chat" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -829,7 +829,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Comment apparaître dans les résultats de ChatGPT : tutoriel avec 2 mé
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment apparaître dans les résultats de ChatGPT". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment apparaître dans les résultats de ChatGPT" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -839,7 +839,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Comment créer un avatar hyper réaliste et poster des vidéo
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment créer un avatar hyper réaliste et poster". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un avatar hyper réaliste et poster" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -849,7 +849,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Comment payer moins cher les abonnements à des outils d'intelligence
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment payer moins cher les abonnements à des o". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment payer moins cher les abonnements à des o" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -859,7 +859,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : 2 façons de gagner de l'argent grâce à l'intellige
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "2 façons de gagner de l'argent grâce à l'intelli". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "2 façons de gagner de l'argent grâce à l'intelli" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -869,7 +869,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Gamma AI : meilleure IA gratuite pour créer des présentations powerpo
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Gamma AI : meilleure IA gratuite pour créer des ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Gamma AI : meilleure IA gratuite pour créer des " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -879,7 +879,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Templates 100% gratuites pour créer des automatisations et agents IA
 
 ```
-Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Templates 100% gratuites pour créer des automati". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, maquettes d'apps, editeur visuel, composants UI, navigateur et schema de flux. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Templates 100% gratuites pour créer des automati" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -889,7 +889,7 @@ Scene : blog tech moderne, maquette site, blocs UI, laptop. Fond degrade gris tr
 Article : Base de données gratuite avec des templates n8n et des tutoriels
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Base de données gratuite avec des templates n8n ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Base de données gratuite avec des templates n8n " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -899,7 +899,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Comment installer une alternative gratuite à ChatGPT pour l'ut
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment installer une alternative gratuite à Cha". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment installer une alternative gratuite à Cha" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -909,7 +909,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Une IA comme ChatGPT mais gratuite : HuggingChat D
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Une IA comme ChatGPT mais gratuite : HuggingChat". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Une IA comme ChatGPT mais gratuite : HuggingChat" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -919,7 +919,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Un studio de jeu vidéo japonais a trouvé une solution contre l'utilis
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Un studio de jeu vidéo japonais a trouvé une sol". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Un studio de jeu vidéo japonais a trouvé une sol" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -929,7 +929,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : L'intelligence artificielle va-t-elle mener à la fin du capitalisme ？
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "L'intelligence artificielle va-t-elle mener à la". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "L'intelligence artificielle va-t-elle mener à la" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -939,7 +939,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : ChatGPT agent vient de sortir : les agents IA feront bientôt partie d
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "ChatGPT agent vient de sortir : les agents IA fe". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "ChatGPT agent vient de sortir : les agents IA fe" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -949,7 +949,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Comment utiliser ChatGPT with canvas (nouveau chatgpt)
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Comment utiliser ChatGPT with canvas (nouveau ch". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser ChatGPT with canvas (nouveau ch" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -959,7 +959,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Deepseek l’IA chinoise gratuite et open source a-t-elle copié OpenAI
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Deepseek l’IA chinoise gratuite et open source a". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Deepseek l’IA chinoise gratuite et open source a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -969,7 +969,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Test des différentes versions de ChatGPT dont le nouveau ChatGPT 4.5
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Test des différentes versions de ChatGPT dont le". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Test des différentes versions de ChatGPT dont le" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -979,7 +979,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : Google vient de sortir la meilleure IA open source : Gemma 4 Pour l'u
 
 ```
-Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Google vient de sortir la meilleure IA open sour". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Google vient de sortir la meilleure IA open sour" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -989,7 +989,7 @@ Scene : blog tech moderne, cartes outils cote a cote, balance. Fond degrade gris
 Article : L'IA pourra-t-elle remplacer les acteurs ？ Démo de Dream Actor M1, gé
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "L'IA pourra-t-elle remplacer les acteurs ？ Démo ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "L'IA pourra-t-elle remplacer les acteurs ？ Démo " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -999,7 +999,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Voici la liste des métiers avec la croissance la plus rapide en 2026
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Voici la liste des métiers avec la croissance la". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Voici la liste des métiers avec la croissance la" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1009,7 +1009,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Étude secrète sur Reddit par l'université de Zurich : l’intelligence
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Étude secrète sur Reddit par l'université de Zur". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Étude secrète sur Reddit par l'université de Zur" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1019,7 +1019,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Singularité technologique bientôt ？？ Sam Altman et l'hypothèse de la
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Singularité technologique bientôt ？？ Sam Altman ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Singularité technologique bientôt ？？ Sam Altman " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1029,7 +1029,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : L’intelligence artificielle est-elle vraim
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "L’intelligence artificielle est-elle vraim". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "L’intelligence artificielle est-elle vraim" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1039,7 +1039,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : ChatGPT est déjà meilleur que certains médecins lorsqu'il s'agit de f
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "ChatGPT est déjà meilleur que certains médecins ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "ChatGPT est déjà meilleur que certains médecins " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1049,7 +1049,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Ils ont pourri le cerveau des IA : le papier de recherche "LLM can ge
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Ils ont pourri le cerveau des IA : le papier de ". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Ils ont pourri le cerveau des IA : le papier de " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1059,7 +1059,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Skild brain : le robot qui ne s'arrête jamais Créé par l'entreprise S
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Skild brain : le robot qui ne s'arrête jamais Cr". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Skild brain : le robot qui ne s'arrête jamais Cr" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1069,7 +1069,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Genie 3 : l’IA de Google capable de créer des mondes 3D interactifs e
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Genie 3 : l’IA de Google capable de créer des mo". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Genie 3 : l’IA de Google capable de créer des mo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1079,7 +1079,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : On va bientôt pouvoir passer des appels vidéo avec ChatGPT !!!! Je su
 
 ```
-Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "On va bientôt pouvoir passer des appels vidéo av". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "On va bientôt pouvoir passer des appels vidéo av" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1089,7 +1089,7 @@ Scene : blog tech moderne, personnes au travail schematisees, graphiques metiers
 Article : Une étude montre que les publicités créées entièrement par l'IA augme
 
 ```
-Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Une étude montre que les publicités créées entiè". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, tableau de bord, calendrier, automatisations, taches et suivi. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Une étude montre que les publicités créées entiè" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1099,7 +1099,7 @@ Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gri
 Article : Il y a un problème avec cette vidéo : ce time lapse d'un dessin est f
 
 ```
-Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Il y a un problème avec cette vidéo : ce time la". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, tableau de bord, calendrier, automatisations, taches et suivi. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Il y a un problème avec cette vidéo : ce time la" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1109,7 +1109,7 @@ Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gri
 Article : La première intelligence artificielle capable de reproduire le monde
 
 ```
-Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "La première intelligence artificielle capable de". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, tableau de bord, calendrier, automatisations, taches et suivi. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "La première intelligence artificielle capable de" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1119,7 +1119,7 @@ Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gri
 Article : Les "experts en IA" vs les "personnes qui s
 
 ```
-Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Les 'experts en IA' vs les 'personnes qui s". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, tableau de bord, calendrier, automatisations, taches et suivi. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Les "experts en IA" vs les "personnes qui s" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1129,5 +1129,5 @@ Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gri
 Article : Démo : Kling motion control Et encore j'ai pas pris le temps de chan
 
 ```
-Scene : blog tech moderne, horloge, taches cochees, calendrier. Fond degrade gris tres clair (#f8f9fa) vers blanc. Cartes ou blocs coins arrondis, ombres legeres. Accent rouge (#dc2626) sur un badge ou une ligne. Texte en francais visible : "DanielCraft" et "Démo : Kling motion control Et encore j'ai pas p". Style flat, epure, professionnel. Pas de visage. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, tableau de bord, calendrier, automatisations, taches et suivi. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Démo : Kling motion control Et encore j'ai pas p" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```

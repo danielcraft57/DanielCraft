@@ -38,6 +38,18 @@ Ajoute "test restore" dans le meme calendrier que les mises a jour.
 
 Verifie ou sont tes copies aujourd'hui. Si tu n'en as pas, cree la premiere (meme imparfaite) puis ameliore.
 
+## Retention et versions
+
+Garde plusieurs points dans le temps si possible : la corruption silencieuse d'hier se voit parfois seulement aujourd'hui. Une seule copie ecrasee chaque nuit ne sauve pas une erreur remarquee trop tard. Lea garde J-1 et J-7. Max a appris apres avoir ecrase la bonne version. Sam note la politique de retention de l'hebergeur : souvent plus courte qu'on croit.
+
+## Secrets dans les archives
+
+Une archive peut contenir des fichiers d'environnement ou des cles. Protege l'acces au stockage de backup comme un coffre. Ne l'envoie pas sur un lien public temporaire. Chez DanielCraft, sauvegarde et confidentialite voyagent ensemble.
+
+## Automatiser sans s'endormir
+
+Un job automatique est bien. Un oeil humain mensuel reste necessaire. Verifie les logs "backup OK". Si le job echoue en silence trois semaines, tu n'as plus de plan B. Lea met une alerte mail. Max regarde la taille des archives : une archive soudain minuscule sent le probleme.
+
 ## A toi
 
 Ecris ta regle 3-2-1 adaptee debutant : au moins une copie recente hors serveur live, et une date de prochain test restore.

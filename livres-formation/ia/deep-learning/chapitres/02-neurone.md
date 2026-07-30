@@ -14,6 +14,24 @@ Ce n'est pas une copie fidele du cerveau. Le nom s'inspire de la biologie ; l'in
 
 Imagine predire "prendre un parapluie". Entrees possibles : probabilite de pluie, force du vent, distance a parcourir. Chaque entree a un poids. Si la pluie compte beaucoup, son poids grossit en valeur absolue. Si le vent est du bruit, il s'attenue. Le biais decale le seuil de decision. L'activation decide comment ce score brut devient un signal utile - coupe, ecrase, laisse passer.
 
+```python
+import numpy as np
+
+x = np.array([0.8, 0.2, 0.5])   # pluie, vent, distance (normalisees)
+w = np.array([2.0, -0.3, 0.4])  # poids appris (exemple)
+b = -0.5
+
+z = float(np.dot(w, x) + b)
+
+def relu(t):
+    return max(0.0, t)
+
+y = relu(z)
+print("score brut z =", round(z, 3), "| apres ReLU =", round(y, 3))
+```
+
+Change les poids a la main : tu sens deja qu'augmenter le poids "pluie" pousse la sortie. L'apprentissage fera ca automatiquement sur des exemples.
+
 Ines, sur ses pieces, imagine des entrees plus abstraites plus tard (motifs de texture, contours). Mais le geste mental reste le meme : melanger, ponderer, activer.
 
 ## Pourquoi des poids ?

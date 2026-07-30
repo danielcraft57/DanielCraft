@@ -22,6 +22,25 @@ Tu as un moteur attentionnel avec une fenetre de contexte limitee. Tu decids quo
 
 3) Concevoir un mini-RAG : 5 documents (memes fictifs), une question, l'extrait a coller, une consigne anti-invention.
 
+Correction type de mini-RAG manuel :
+
+```python
+docs = {
+    "tarif": "Prestation diagnostic : 120 EUR HT, deplacement inclus sous 20 km.",
+    "delai": "Delai moyen annonce : 10 jours ouvres apres validation du devis.",
+}
+question = "Quel est le prix du diagnostic ?"
+extrait = docs["tarif"]  # tu choisis l'extrait ; le modele ne cherche pas seul ici
+
+prompt = f"""Reponds UNIQUEMENT avec l'extrait.
+Si l'info manque, dis "je ne sais pas".
+Extrait:
+{extrait}
+Question: {question}
+"""
+print(prompt)
+```
+
 4) Deux temperatures mentales sur la meme tache (strict vs creatif) et une petite grille d'evaluation (utile / faux / flou).
 
 5) Decrire un fine-tuning que tu NE feras pas maintenant, et pourquoi prompting / RAG suffisent pour l'instant.

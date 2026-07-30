@@ -1,4 +1,4 @@
-<section class="prestations-search-hero prestations-search-hero--wow" aria-label="Rechercher une prestation">
+<section class="prestations-search-hero prestations-search-hero--wow" aria-label="Rechercher une offre">
     <div class="prestations-search-bg" aria-hidden="true">
         <svg class="prestations-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -35,17 +35,18 @@
     </div>
 
     <div class="container prestations-search-inner">
-        <h1 class="prestations-search-title" itemprop="name">Toutes nos prestations</h1>
+        <h1 class="prestations-search-title" itemprop="name">Toutes nos offres</h1>
         <p class="prestations-search-lead" itemprop="description">Tarifs HT affichés · devis par e-mail · commencez par les <strong>3 offres en tête</strong> si vous hésitez.</p>
-        <form class="prestations-search-form" role="search" aria-label="Recherche dans le catalogue des prestations">
-            <label class="visually-hidden" for="prestationsSearchInput">Rechercher une prestation</label>
+        <form class="prestations-search-form" role="search" aria-label="Recherche dans le catalogue des offres">
+            <label class="visually-hidden" for="prestationsSearchInput">Rechercher une offre</label>
             <div class="prestations-search-input-wrapper" id="prestationsSearchWrapper">
                 <i class="fas fa-search prestations-search-icon" aria-hidden="true"></i>
                 <input
                     type="search"
                     id="prestationsSearchInput"
                     class="prestations-search-input"
-                    placeholder="Rechercher une prestation, un besoin, un mot-clé…"
+                    name="q"
+                    placeholder="Rechercher une offre, un besoin, un mot-clé…"
                     autocomplete="off"
                     enterkeyhint="search"
                 >
