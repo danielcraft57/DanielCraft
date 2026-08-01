@@ -36,6 +36,7 @@ PROJECTS_JSON = DATA_DIR / 'projects.json'
 PROJECT_SLUG_ALIASES_JSON = DATA_DIR / 'project-slug-aliases.json'
 VITRINES_JSON = DATA_DIR / 'vitrines.json'
 PRESTATIONS_JSON = DATA_DIR / 'prestations.json'
+LIVRES_JSON = DATA_DIR / 'livres.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
 READMES_DIR = DATA_DIR / 'readmes'
 # Sources vitrines (anciennement showcase/) — publiées sous /vitrines/ au build
@@ -149,6 +150,7 @@ STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
     ('/nos-offres', 'weekly', '0.95'),
+    ('/livres/', 'weekly', '0.9'),
     ('/contact', 'weekly', '0.95'),
     ('/pro', 'monthly', '0.55'),
     ('/audit', 'weekly', '0.95'),
@@ -179,6 +181,7 @@ OG_PAGE_FILE_SLUGS = {
     'index': 'home',
     'nos-offres': 'prestations',
     'prestations': 'prestations',
+    'livres': 'home',
 }
 
 # Variables par défaut
@@ -2096,12 +2099,16 @@ def build_prestations_catalog_embed() -> None:
         )
         parts.append(
             '<section class="prestations-featured" aria-labelledby="prestations-featured-title">'
+            '<div class="prestations-featured-head">'
             '<h2 id="prestations-featured-title" class="prestations-section-title">'
-            '<i class="fas fa-star" aria-hidden="true"></i> Nos 3 offres les plus utiles</h2>'
+            '<i class="fas fa-star" aria-hidden="true"></i> Services en vedette</h2>'
+            '<a class="prestations-featured-all" href="#catalogue-categories">Voir tous les services →</a>'
+            '</div>'
             '<p class="prestations-featured-lead">Site clair, visibilité Google <em>et</em> IA, ou assistant sur votre site.</p>'
             f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
             '</section>'
         )
+    parts.append('<div id="catalogue-categories" class="prestations-categories-anchor"></div>')
     for cid, cat in cats.items():
         items = grouped.get(cid) or []
         if not items:
@@ -2110,13 +2117,42 @@ def build_prestations_catalog_embed() -> None:
         icon = html.escape((cat.get('icon') or 'fa-folder').strip())
         cards = ''.join(_prestation_card_html(it) for it in items)
         parts.append(
+            f'<section class="prestations-category" aria-labelledby="{html.escape(cid)}">'
             f'<h2 id="{html.escape(cid)}" class="prestations-section-title">'
             f'<i class="fas {icon}" aria-hidden="true"></i> {title}</h2>'
             f'<div class="services-grid prestations-grid">{cards}</div>'
+            f'</section>'
         )
     out_path = INCLUDES_DIR / 'prestations-catalog-embed.html'
     out_path.write_text('\n'.join(parts), encoding='utf-8')
     print(f'[OK] prestations-catalog-embed.html genere ({len(data.get("items", []))} prestation(s))')
+
+    # Sidebar catégories (ancres + compteurs)
+    total = sum(1 for it in data.get('items', []) if it.get('has_page'))
+    side: List[str] = [
+        f'<li><a class="prestations-sidebar-link is-active" href="#prestations-featured-title">'
+        f'<i class="fas fa-th-large" aria-hidden="true"></i> '
+        f'<span>Tous les services</span> <em>{total}</em></a></li>'
+    ]
+    for cid, cat in cats.items():
+        items = grouped.get(cid) or []
+        if not items:
+            continue
+        title = html.escape((cat.get('nav_label') or cat.get('title') or cid).strip())
+        icon = html.escape((cat.get('icon') or 'fa-folder').strip())
+        n = len(items)
+        side.append(
+            f'<li><a class="prestations-sidebar-link" href="#{html.escape(cid)}">'
+            f'<i class="fas {icon}" aria-hidden="true"></i> '
+            f'<span>{title}</span> <em>{n}</em></a></li>'
+        )
+    side.append(
+        '<li><a class="prestations-sidebar-link" href="#prestations-featured-title">'
+        '<i class="fas fa-star" aria-hidden="true"></i> <span>Services populaires</span></a></li>'
+    )
+    side_path = INCLUDES_DIR / 'prestations-sidebar-nav.html'
+    side_path.write_text('\n'.join(side) + '\n', encoding='utf-8')
+    print('[OK] prestations-sidebar-nav.html genere')
 
 
 def _build_prestation_seo_bundle(
@@ -2283,6 +2319,546 @@ def prestation_slugs_for_sitemap() -> List[str]:
         for it in load_prestations().get('items', [])
         if it.get('has_page') and (it.get('slug') or '').strip()
     ]
+
+
+# --- Livres de formation (catalogue + fiches produit) ---
+
+def load_livres() -> Dict[str, Any]:
+    """Charge src/data/livres.json (catalogue livres PDF)."""
+    if not LIVRES_JSON.exists():
+        return {'categories': [], 'items': [], 'levels': [], 'featured_order': []}
+    try:
+        data = json.loads(LIVRES_JSON.read_text(encoding='utf-8'))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f'[WARN] livres.json illisible : {exc}')
+        return {'categories': [], 'items': [], 'levels': [], 'featured_order': []}
+    return data if isinstance(data, dict) else {'categories': [], 'items': []}
+
+
+def publish_livres_json_for_api(output_dir: Path) -> None:
+    """Copie livres.json vers dist/data/ et api/data/ (Stripe Checkout)."""
+    if not LIVRES_JSON.exists():
+        return
+    for dest_root in (output_dir / 'data', BASE_DIR / 'api' / 'data'):
+        dest_root.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(LIVRES_JSON, dest_root / 'livres.json')
+    print('[OK] Catalogue livres copie vers data/ et api/data/')
+
+
+def _livre_price_display(item: Dict[str, Any], catalog: Optional[Dict[str, Any]] = None) -> str:
+    raw = item.get('price_eur')
+    if raw is None and catalog:
+        raw = catalog.get('default_price_eur', 0.5)
+    try:
+        val = float(raw)
+    except (TypeError, ValueError):
+        val = 0.5
+    return f'{val:.2f}'.replace('.', ',')
+
+
+def _livre_level_label(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    level_id = (item.get('level') or 'base').strip()
+    for lv in catalog.get('levels', []):
+        if lv.get('id') == level_id:
+            return str(lv.get('label') or level_id)
+    return level_id.capitalize()
+
+
+def _livre_category_label(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    cat_id = (item.get('category') or '').strip()
+    for cat in catalog.get('categories', []):
+        if cat.get('id') == cat_id:
+            return str(cat.get('title') or cat_id)
+    return cat_id
+
+
+def _livre_items_by_category(data: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
+    grouped: Dict[str, List[Dict[str, Any]]] = {}
+    for it in data.get('items', []):
+        if not isinstance(it, dict):
+            continue
+        cid = (it.get('category') or 'informatique').strip()
+        grouped.setdefault(cid, []).append(it)
+    return grouped
+
+
+def _livre_cover_url(item: Dict[str, Any]) -> str:
+    cover = (item.get('cover') or '').strip()
+    if cover.startswith('/'):
+        local = BASE_DIR / cover.lstrip('/').replace('/', os.sep)
+        if local.is_file():
+            return cover
+    stack = item.get('cover_stack') or []
+    if stack and isinstance(stack[0], str) and stack[0].startswith('/'):
+        local = BASE_DIR / stack[0].lstrip('/').replace('/', os.sep)
+        if local.is_file():
+            return stack[0]
+    return ''
+
+
+def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    cat = html.escape((item.get('category') or 'informatique').strip())
+    icon = html.escape((item.get('icon') or 'fa-book').strip())
+    title = html.escape((item.get('title') or '').strip())
+    cover = _livre_cover_url(item)
+    stack = item.get('cover_stack') or []
+    if (item.get('kind') or '') == 'pack' and isinstance(stack, list) and len(stack) >= 2:
+        imgs = []
+        for i, url in enumerate(stack[:4]):
+            if not isinstance(url, str) or not url.startswith('/'):
+                continue
+            imgs.append(
+                f'<img class="livre-card-cover-stack-img" src="{html.escape(url, quote=True)}" '
+                f'alt="" loading="lazy" decoding="async" style="--stack-i:{i}">'
+            )
+        if imgs:
+            return (
+                f'<div class="prestation-card-visual livre-card-visual livre-card-visual--stack" '
+                f'data-livre-cat="{cat}" aria-hidden="true">'
+                f'<div class="livre-card-cover-stack">{"".join(imgs)}</div>'
+                f'</div>'
+            )
+    if cover:
+        return (
+            f'<div class="prestation-card-visual livre-card-visual livre-card-visual--cover" '
+            f'data-livre-cat="{cat}">'
+            f'<img class="livre-card-cover" src="{html.escape(cover, quote=True)}" '
+            f'alt="Couverture — {title}" loading="lazy" decoding="async" width="210" height="280">'
+            f'</div>'
+        )
+    return (
+        f'<div class="prestation-card-visual prestation-card-visual--icon" '
+        f'data-livre-cat="{cat}" aria-hidden="true">'
+        f'<i class="fas {icon}"></i></div>'
+    )
+
+
+def _livre_card_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+    *,
+    show_featured_badge: bool = False,
+) -> str:
+    slug = (item.get('slug') or '').strip()
+    title = html.escape((item.get('title') or slug).strip())
+    desc = html.escape((item.get('short_description') or item.get('description') or '').strip())
+    level = (item.get('level') or 'base').strip()
+    level_label = html.escape(_livre_level_label(item, catalog))
+    keywords = html.escape(','.join(item.get('keywords') or []))
+    price = html.escape(_livre_price_display(item, catalog))
+    price_label = html.escape((item.get('price_label') or "Prix d'appel").strip())
+    cta_href = f'/livres/{slug}/'
+    badge = ''
+    kind = (item.get('kind') or '').strip()
+    if show_featured_badge and item.get('featured') and kind != 'pack':
+        badge = '<span class="prestation-card-badge">Coup de cœur</span>'
+    if kind == 'pack':
+        badge = '<span class="prestation-card-badge">Pack</span>'
+    elif not badge:
+        badge = '<span class="prestation-card-badge livre-card-badge--pdf">PDF</span>'
+    card_class = 'service-card prestation-card livre-card'
+    if item.get('featured'):
+        card_class += ' prestation-card--featured livre-card--featured'
+    if (item.get('kind') or '') == 'pack':
+        card_class += ' livre-card--pack'
+    if _livre_cover_url(item) or item.get('cover_stack'):
+        card_class += ' livre-card--has-cover'
+    n_books = len(item.get('book_slugs') or [])
+    compare = item.get('compare_at_eur')
+    compare_html = ''
+    if compare is not None:
+        try:
+            cmp_disp = f'{float(compare):.2f}'.replace('.', ',')
+            compare_html = (
+                f'<span class="price-compare">{cmp_disp} € à l\'unité</span>'
+            )
+        except (TypeError, ValueError):
+            compare_html = ''
+    meta_extra = (
+        f'<p class="livre-card-pack-meta">{n_books} PDF inclus</p>'
+        if n_books
+        else ''
+    )
+    return (
+        f'<article class="{card_class}" data-livre-slug="{html.escape(slug, quote=True)}" '
+        f'data-livre-level="{html.escape(level, quote=True)}" '
+        f'data-livre-keywords="{keywords}">'
+        f'{badge}'
+        f'{_livre_card_visual_html(item, catalog)}'
+        f'<span class="livre-card-level">{level_label}</span>'
+        f'<h3 class="service-title">{title}</h3>'
+        f'{meta_extra}'
+        f'<p class="service-description">{desc}</p>'
+        f'<div class="service-price">'
+        f'<span class="price-label">{price_label}</span>'
+        f'<span class="price-amount">{price} € <span class="price-ht">TTC</span></span>'
+        f'{compare_html}'
+        f'</div>'
+        f'<div class="prestation-card-actions">'
+        f'<a href="{cta_href}" class="service-cta"><span>Acheter — {price} €</span>'
+        f'<i class="fas fa-arrow-right" aria-hidden="true"></i></a>'
+        f'</div>'
+        '</article>'
+    )
+
+
+def build_livres_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
+    """Bandeau commercial « Pack de la semaine » (sous la recherche)."""
+    catalog = data if data is not None else load_livres()
+    deal = catalog.get('deal_of_the_week') or {}
+    slug = (deal.get('slug') or '').strip()
+    item = None
+    for it in catalog.get('items', []):
+        if (it.get('slug') or '').strip() == slug:
+            item = it
+            break
+    if not item:
+        packs = [it for it in catalog.get('items', []) if it.get('kind') == 'pack']
+        item = packs[0] if packs else None
+    out_path = INCLUDES_DIR / 'livres-deal-week.html'
+    if not item:
+        out_path.write_text('<!-- Pas de pack de la semaine -->\n', encoding='utf-8')
+        print('[WARN] livres-deal-week : aucun pack')
+        return
+
+    slug = (item.get('slug') or '').strip()
+    title = html.escape((item.get('title') or slug).strip())
+    tagline = html.escape((item.get('tagline') or '').strip())
+    desc = html.escape((item.get('short_description') or '').strip())
+    icon = html.escape((item.get('icon') or 'fa-box-open').strip())
+    price = html.escape(_livre_price_display(item, catalog))
+    n_books = len(item.get('book_slugs') or [])
+    badge = html.escape((deal.get('badge') or 'Pack de la semaine').strip())
+    urgency = html.escape((deal.get('urgency') or 'Offre mise en avant cette semaine').strip())
+    cta = html.escape((deal.get('cta_label') or "Voir l'offre").strip())
+    compare_html = ''
+    save_html = ''
+    try:
+        compare = float(item.get('compare_at_eur')) if item.get('compare_at_eur') is not None else None
+        price_f = float(item.get('price_eur'))
+    except (TypeError, ValueError):
+        compare = None
+        price_f = 0.0
+    if compare and compare > price_f:
+        cmp_disp = f'{compare:.2f}'.replace('.', ',')
+        save = compare - price_f
+        save_disp = f'{save:.2f}'.replace('.', ',')
+        pct = int(round(100 * save / compare))
+        compare_html = f'<span class="livres-deal-compare">{html.escape(cmp_disp)}&nbsp;€</span>'
+        save_html = (
+            f'<span class="livres-deal-save">−{html.escape(save_disp)}&nbsp;€ '
+            f'<em>(−{pct}&nbsp;%)</em></span>'
+        )
+    titles = []
+    by_slug = {(it.get('slug') or ''): it for it in catalog.get('items', [])}
+    cover_urls: List[str] = []
+    for bs in item.get('book_slugs') or []:
+        bit = by_slug.get(bs) or {}
+        titles.append(html.escape((bit.get('title') or bs).strip()))
+        cov = _livre_cover_url(bit)
+        if cov:
+            cover_urls.append(cov)
+    if not cover_urls:
+        cov = _livre_cover_url(item)
+        if cov:
+            cover_urls.append(cov)
+    pills = ''.join(f'<li>{t}</li>' for t in titles[:6])
+    more = ''
+    if len(titles) > 6:
+        more = f'<li class="livres-deal-more">+{len(titles) - 6} autre(s)</li>'
+
+    if cover_urls:
+        stack_imgs = []
+        for i, url in enumerate(cover_urls[:4]):
+            stack_imgs.append(
+                f'<img class="livres-deal-cover" src="{html.escape(url, quote=True)}" '
+                f'alt="" loading="lazy" decoding="async" style="--stack-i:{i}">'
+            )
+        visual = (
+            f'<div class="livres-deal-visual livres-deal-visual--covers" aria-hidden="true">'
+            f'<div class="livres-deal-visual-glow"></div>'
+            f'<div class="livres-deal-cover-stack">{"".join(stack_imgs)}</div>'
+            f'<span class="livres-deal-ribbon">{badge}</span>'
+            f'</div>'
+        )
+    else:
+        visual = (
+            f'<div class="livres-deal-visual" aria-hidden="true">'
+            f'<div class="livres-deal-visual-glow"></div>'
+            f'<div class="livres-deal-icon"><i class="fas {icon}"></i></div>'
+            f'<span class="livres-deal-ribbon">{badge}</span>'
+            f'</div>'
+        )
+
+    html_out = f'''<aside class="livres-deal-week" aria-labelledby="livres-deal-title">
+  <div class="container livres-deal-week-inner">
+    {visual}
+    <div class="livres-deal-copy">
+      <p class="livres-deal-kicker"><i class="fas fa-fire" aria-hidden="true"></i> {urgency}</p>
+      <h2 id="livres-deal-title" class="livres-deal-title">{title}</h2>
+      <p class="livres-deal-tagline">{tagline}</p>
+      <p class="livres-deal-desc">{desc}</p>
+      <ul class="livres-deal-pills" aria-label="Contenu du pack">{pills}{more}</ul>
+    </div>
+    <div class="livres-deal-buy">
+      <p class="livres-deal-price-block">
+        {compare_html}
+        <span class="livres-deal-price">{price}&nbsp;€ <small>TTC</small></span>
+        {save_html}
+      </p>
+      <p class="livres-deal-meta">{n_books} PDF · envoi e-mail apres paiement</p>
+      <a class="btn btn-primary btn-large livres-deal-cta" href="/livres/{html.escape(slug)}/">
+        <span>{cta}</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      <a class="livres-deal-secondary" href="/livres/?q=pack">Voir tous les packs</a>
+    </div>
+  </div>
+</aside>
+'''
+    out_path.write_text(html_out, encoding='utf-8')
+    print(f'[OK] livres-deal-week.html ({slug} @ {price} EUR)')
+
+
+def build_livres_catalog_embed() -> None:
+    """Genere includes/livres-catalog-embed.html depuis livres.json."""
+    data = load_livres()
+    build_livres_deal_week_embed(data)
+    cats = {c['id']: c for c in data.get('categories', []) if c.get('id')}
+    grouped = _livre_items_by_category(data)
+    featured_order = data.get('featured_order') or []
+    order_index = {slug: i for i, slug in enumerate(featured_order)}
+    featured_raw = [it for it in data.get('items', []) if it.get('featured') and it.get('has_page')]
+    featured_pages = sorted(
+        featured_raw,
+        key=lambda it: order_index.get((it.get('slug') or '').strip(), 999),
+    )
+    parts: List[str] = []
+    shelf_links: List[str] = []
+    if featured_pages:
+        shelf_links.append(
+            '<li><a href="#livres-featured-title">'
+            '<i class="fas fa-star" aria-hidden="true"></i> Pour commencer</a></li>'
+        )
+    for cat in data.get('categories', []):
+        cid = cat.get('id')
+        if not cid or cid not in grouped:
+            continue
+        meta = cats.get(cid, cat)
+        icon = html.escape((meta.get('icon') or 'fa-book').strip())
+        label = html.escape((meta.get('nav_label') or meta.get('title') or cid).strip())
+        shelf_links.append(
+            f'<li><a href="#livres-cat-{html.escape(cid)}">'
+            f'<i class="fas {icon}" aria-hidden="true"></i> {label}</a></li>'
+        )
+    if shelf_links:
+        parts.append(
+            '<nav class="livres-shelf-nav" aria-label="Rayons du catalogue">'
+            f'<ul>{"".join(shelf_links)}</ul>'
+            '</nav>'
+        )
+    if featured_pages:
+        cards = ''.join(
+            _livre_card_html(it, data, show_featured_badge=True) for it in featured_pages[:8]
+        )
+        parts.append(
+            '<section class="prestations-featured" aria-labelledby="livres-featured-title">'
+            '<h2 id="livres-featured-title" class="prestations-section-title">'
+            '<i class="fas fa-star" aria-hidden="true"></i> Pour commencer</h2>'
+            '<p class="prestations-featured-lead">'
+            "Livre a 0,50&nbsp;€ — packs moins cher qu'a l'unite (remise volume)."
+            '</p>'
+            f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
+            '</section>'
+        )
+    for cat in data.get('categories', []):
+        cid = cat.get('id')
+        if not cid or cid not in grouped:
+            continue
+        items = grouped[cid]
+        meta = cats.get(cid, cat)
+        icon = html.escape((meta.get('icon') or 'fa-book').strip())
+        title = html.escape((meta.get('title') or cid).strip())
+        lead = html.escape((meta.get('description') or '').strip())
+        cards = ''.join(_livre_card_html(it, data) for it in items)
+        parts.append(
+            f'<section class="prestations-category" aria-labelledby="livres-cat-{html.escape(cid)}">'
+            f'<h2 id="livres-cat-{html.escape(cid)}" class="prestations-section-title">'
+            f'<i class="fas {icon}" aria-hidden="true"></i> {title}</h2>'
+            f'<p class="prestations-category-lead">{lead}</p>'
+            f'<div class="services-grid prestations-grid">{cards}</div>'
+            '</section>'
+        )
+    out_path = INCLUDES_DIR / 'livres-catalog-embed.html'
+    out_path.write_text('\n'.join(parts) + '\n', encoding='utf-8')
+    print(f'[OK] livres-catalog-embed.html genere ({len(data.get("items", []))} livre(s))')
+
+
+def _build_livre_seo_bundle(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+    slug: str,
+    page_url_abs: str,
+) -> Dict[str, str]:
+    title = (item.get('title') or slug).strip()
+    tagline = (item.get('tagline') or '').strip()
+    desc = (item.get('description') or item.get('short_description') or tagline).strip()
+    price_disp = _livre_price_display(item, catalog)
+    benefits = item.get('benefits') or []
+    includes = item.get('includes') or []
+    keywords = item.get('keywords') or []
+    benefits_html = (
+        '<ul class="prestation-benefits">'
+        + ''.join(f'<li>{html.escape(str(b))}</li>' for b in benefits)
+        + '</ul>'
+    )
+    includes_html = (
+        '<ul class="prestation-includes">'
+        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in includes)
+        + '</ul>'
+    )
+    keywords_html = html.escape(', '.join(str(k) for k in keywords))
+    promo_html = (
+        '<aside class="prestation-promo" role="note">'
+        f"<strong>Prix d'appel</strong> — {html.escape(price_disp)}&nbsp;€ TTC. "
+        'PDF envoye par e-mail apres paiement securise.'
+        '</aside>'
+    )
+    return {
+        'page_title': f'{title} — livre PDF DanielCraft',
+        'page_description': desc[:160],
+        'page_keywords': ', '.join(
+            [title] + [str(k) for k in keywords] + ['livre formation PDF', 'DanielCraft']
+        ),
+        'livre_benefits_html': benefits_html,
+        'livre_includes_html': includes_html,
+        'livre_promo_html': promo_html,
+        'livre_keywords_html': keywords_html,
+        'livre_price_display': price_disp,
+        'livre_price_eur': str(
+            item.get('price_eur')
+            if item.get('price_eur') is not None
+            else catalog.get('default_price_eur', 0.5)
+        ),
+        'livre_price_label': html.escape((item.get('price_label') or "Prix d'appel").strip()),
+        'livre_price_note': html.escape(
+            (item.get('price_note') or 'TTC — PDF envoye par e-mail apres paiement').strip()
+        ),
+        'livre_level_label': html.escape(_livre_level_label(item, catalog)),
+        'livre_category_label': html.escape(_livre_category_label(item, catalog)),
+    }
+
+
+def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
+    """Genere livres/<slug>/index.html pour les fiches produit."""
+    data = load_livres()
+    content_path = PAGES_DIR / 'livre-detail.html'
+    if not content_path.exists():
+        print('[WARN] src/pages/livre-detail.html manquant')
+        return []
+    content_raw = content_path.read_text(encoding='utf-8')
+    out_root = output_dir / 'livres'
+    out_root.mkdir(parents=True, exist_ok=True)
+    stripe_pk = _stripe_publishable_key()
+    slugs_out: List[str] = []
+    for it in data.get('items', []):
+        if not it.get('has_page'):
+            continue
+        slug = (it.get('slug') or '').strip()
+        if not slug:
+            continue
+        title = (it.get('title') or slug).strip()
+        page_url_abs = _to_absolute_url(f'/livres/{slug}/')
+        seo = _build_livre_seo_bundle(it, data, slug, page_url_abs)
+        stripe_url = (it.get('stripe_payment_link_url') or '').strip()
+        stripe_checkout = bool(stripe_pk) and not stripe_url
+        page_scripts = ['main.js']
+        if stripe_url or stripe_pk:
+            page_scripts.append('livre-stripe-checkout.js')
+        vars_dict = DEFAULT_VARS.copy()
+        extra_css = 'vitrines-portfolio.css,livres.css'
+        aq = str(DEFAULT_VARS.get('assets_query') or '')
+        extra_links = '\n'.join(
+            f'<link rel="stylesheet" href="/assets/css/{html.escape(n.strip())}{aq}">'
+            for n in extra_css.split(',')
+            if n.strip()
+        )
+        vars_dict.update({
+            'schema_type': 'livre',
+            'og_meta_profile': 'default',
+            'current_page': 'livre',
+            'page_url': page_url_abs,
+            'extra_css': extra_css,
+            'extra_css_links': extra_links,
+            'page_scripts': page_scripts,
+            'livre_slug': slug,
+            'livre_title': title,
+            'livre_tagline': (it.get('tagline') or '').strip(),
+            'livre_description': (
+                it.get('description') or it.get('short_description') or ''
+            ).strip(),
+            'livre_icon': (it.get('icon') or 'fa-book').strip(),
+            'livre_category': (it.get('category') or 'informatique').strip(),
+            'livre_cover': _livre_cover_url(it),
+            'livre_stripe_url': stripe_url,
+            'livre_pay_link': bool(stripe_url),
+            'livre_pay_checkout': stripe_checkout,
+            'stripe_publishable_key': stripe_pk,
+            'livre_mailto_subject': quote(f'Commande livre : {title}'),
+        })
+        vars_dict.update(seo)
+        _normalize_page_meta(vars_dict, 'livre')
+        vars_dict['page_scripts_content'] = build_page_scripts_content(
+            page_scripts,
+            str(vars_dict.get('assets_query') or ''),
+        )
+        content_rendered = template_engine.process_includes(content_raw, vars_dict)
+        content_rendered = template_engine.replace_variables(content_rendered, vars_dict)
+        vars_dict['page_content'] = content_rendered
+        template_path = TEMPLATES_DIR / 'base.html'
+        html_output = template_engine.render(template_path, vars_dict)
+        dest_dir = out_root / slug
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        (dest_dir / 'index.html').write_text(html_output, encoding='utf-8')
+        slugs_out.append(slug)
+    print(f'[OK] {len(slugs_out)} page(s) livre dans {out_root}')
+    return slugs_out
+
+
+def livre_slugs_for_sitemap() -> List[str]:
+    return [
+        (it.get('slug') or '').strip()
+        for it in load_livres().get('items', [])
+        if it.get('has_page') and (it.get('slug') or '').strip()
+    ]
+
+
+def generate_sitemap_livres(output_dir: Path) -> None:
+    """Genere sitemap-livres.xml : catalogue + fiches."""
+    base = SITE_BASE.rstrip('/')
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"',
+        '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
+        'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
+    ]
+    today = datetime.now().date()
+    lastmod = today.isoformat()
+    lines.append(_sitemap_url_line(base, '/livres/', lastmod, 'weekly', '0.9'))
+    for q in ('python', 'javascript', 'sql', 'ia', 'securite', 'finance'):
+        lines.append(
+            _sitemap_url_line(base, f'/livres/?q={quote(q, safe="")}', lastmod, 'weekly', '0.5')
+        )
+    for slug in livre_slugs_for_sitemap():
+        seed = sum(ord(ch) for ch in slug)
+        days_ago = 3 + (seed % 180)
+        organic_lastmod = (today - timedelta(days=days_ago)).isoformat()
+        lines.append(
+            _sitemap_url_line(base, f'/livres/{slug}/', organic_lastmod, 'monthly', '0.7')
+        )
+    lines.append('</urlset>')
+    (output_dir / 'sitemap-livres.xml').write_text('\n'.join(lines), encoding='utf-8')
 
 
 def _markdown_to_html_fallback(raw: str) -> str:
@@ -2520,6 +3096,8 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         build_home_vitrines_teaser_embed()
     if page_name == 'nos-offres':
         build_prestations_catalog_embed()
+    if page_name == 'livres':
+        build_livres_catalog_embed()
 
     # Charge la config de la page
     page_config = load_page_config(page_name)
@@ -2546,6 +3124,17 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         vars_dict['og_meta_profile'] = 'prestation'
     else:
         vars_dict['og_meta_profile'] = 'default'
+
+    # CSS additionnels (un fichier ou liste separee par des virgules)
+    extra_css_raw = vars_dict.get('extra_css')
+    if extra_css_raw:
+        aq = str(vars_dict.get('assets_query') or '')
+        names = [n.strip() for n in str(extra_css_raw).split(',') if n.strip()]
+        vars_dict['extra_css_links'] = '\n'.join(
+            f'<link rel="stylesheet" href="/assets/css/{html.escape(n)}{aq}">' for n in names
+        )
+    else:
+        vars_dict['extra_css_links'] = ''
 
     # Normalise canonical/OG a partir de SITE_BASE
     _normalize_page_meta(vars_dict, page_name)
@@ -2735,6 +3324,7 @@ def generate_sitemap_index(output_dir: Path) -> None:
         f'  <sitemap><loc>{SITE_BASE}/sitemap-pages.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-vitrines.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-prestations.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
+        f'  <sitemap><loc>{SITE_BASE}/sitemap-livres.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/blog/sitemap-blog.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         '</sitemapindex>',
     ]
@@ -2767,10 +3357,21 @@ def main():
         elif arg == '--watch':
             watch_mode = True
             i += 1
-        elif arg == '--no-webp':
+        elif arg in ('--no-webp', '-no-webp'):
             skip_webp = True
             i += 1
-        elif not arg.startswith('--'):
+        elif arg.startswith('--'):
+            # Flag inconnu : ignorer (ne pas le prendre pour un nom de page)
+            print(f"[WARN] Argument ignore : {arg}")
+            i += 1
+        elif arg.startswith('-') and not arg.startswith('--'):
+            # Ex. -no-webp mal passe par PowerShell — ne pas builder une page "-" / "p"
+            if 'no-webp' in arg or arg in ('-n', '-w'):
+                skip_webp = True
+            else:
+                print(f"[WARN] Argument ignore : {arg}")
+            i += 1
+        elif not arg.startswith('-'):
             page_name = arg
             i += 1
         else:
@@ -2815,6 +3416,7 @@ def main():
     publish_catalog_json_for_api(OUTPUT_DIR)
     publish_audits_json_for_api(OUTPUT_DIR)
     publish_prestations_json_for_api(OUTPUT_DIR)
+    publish_livres_json_for_api(OUTPUT_DIR)
 
     # Genere robots.txt (base sur SITE_BASE)
     generate_robots_txt(OUTPUT_DIR)
@@ -2870,6 +3472,13 @@ def main():
     if page_name and not watch_mode:
         if build_page(page_name, template_engine):
             write_prestations_catalog_redirect(OUTPUT_DIR)
+            if page_name in ('livres', 'nos-offres'):
+                if page_name == 'livres':
+                    build_livre_pages(template_engine, OUTPUT_DIR)
+                    generate_sitemap_livres(OUTPUT_DIR)
+                if page_name == 'nos-offres':
+                    build_prestation_pages(template_engine, OUTPUT_DIR)
+                    generate_sitemap_prestations(OUTPUT_DIR)
             print(f"\n[OK] Build de {page_name} termine dans {OUTPUT_DIR} !")
         else:
             sys.exit(1)
@@ -2882,6 +3491,7 @@ def main():
     pages = [
         'index',
         'nos-offres',
+        'livres',
         'contact',
         'vitrines',
         'processus',
@@ -2940,13 +3550,15 @@ def main():
     build_vitrine_pages(template_engine, OUTPUT_DIR)
     build_prestation_pages(template_engine, OUTPUT_DIR)
     write_prestations_catalog_redirect(OUTPUT_DIR)
+    build_livre_pages(template_engine, OUTPUT_DIR)
 
-    # Generation des sitemaps (pages + projets | vitrines | prestations | index)
+    # Generation des sitemaps (pages + projets | vitrines | prestations | livres | index)
     generate_sitemap_vitrines(OUTPUT_DIR)
     generate_sitemap_prestations(OUTPUT_DIR)
+    generate_sitemap_livres(OUTPUT_DIR)
     generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs)
     generate_sitemap_index(OUTPUT_DIR)
-    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml, sitemap-prestations.xml generes")
+    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml, sitemap-prestations.xml, sitemap-livres.xml generes")
 
     print(f"\n[OK] Build termine ! {success_count}/{len(pages)} page(s) generee(s) dans {OUTPUT_DIR}.")
     
@@ -2991,11 +3603,13 @@ def main():
                     build_vitrine_pages(template_engine, OUTPUT_DIR)
                     build_prestation_pages(template_engine, OUTPUT_DIR)
                     write_prestations_catalog_redirect(OUTPUT_DIR)
+                    build_livre_pages(template_engine, OUTPUT_DIR)
                     generate_sitemap_vitrines(OUTPUT_DIR)
                     generate_sitemap_prestations(OUTPUT_DIR)
+                    generate_sitemap_livres(OUTPUT_DIR)
                     generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps)
                     generate_sitemap_index(OUTPUT_DIR)
-                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/sitemap")
+                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/livres/sitemap")
 
                 def on_modified(self, event):
                     if event.is_directory:

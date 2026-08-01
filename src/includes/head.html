@@ -90,7 +90,9 @@
 <link rel="stylesheet" href="/assets/css/animations.css{{assets_query}}">
 <link rel="stylesheet" href="/assets/css/responsive.css{{assets_query}}">
 <link rel="stylesheet" href="/assets/css/prestations.css{{assets_query}}">
-{% if extra_css %}
+{% if extra_css_links %}
+{{extra_css_links}}
+{% elif extra_css %}
 <link rel="stylesheet" href="/assets/css/{{extra_css}}{{assets_query}}">
 {% endif %}
 

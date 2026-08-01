@@ -1,4 +1,4 @@
-/* Hero recherche blog — style WOW (thème éditorial indigo / ambre, distinct du catalogue prestations) */
+/* Hero recherche blog — teal / mint (aligné maquettes DanielCraft) */
 
 .blog-search-hero--wow {
   --spot-x: 50%;
@@ -15,8 +15,8 @@
   transition: opacity 0.35s ease;
   background: radial-gradient(
     540px circle at var(--spot-x) var(--spot-y),
-    rgba(99, 102, 241, 0.18),
-    rgba(245, 158, 11, 0.08) 38%,
+    rgba(77, 169, 214, 0.18),
+    rgba(47, 158, 106, 0.08) 38%,
     transparent 70%
   );
 }

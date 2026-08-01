@@ -1,0 +1,77 @@
+<section class="prestations-search-hero prestations-search-hero--wow livres-search-hero" aria-label="Rechercher un livre">
+    <div class="prestations-search-bg" aria-hidden="true">
+        <svg class="prestations-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="lsh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e8f6fc"/>
+                    <stop offset="45%" stop-color="#f0f7ff"/>
+                    <stop offset="100%" stop-color="#eef8f1"/>
+                </linearGradient>
+                <linearGradient id="lsh-leaf" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2f9e6a"/>
+                    <stop offset="100%" stop-color="#4da9d6"/>
+                </linearGradient>
+                <radialGradient id="lsh-orb-a" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#7bcde3" stop-opacity="0.55"/>
+                    <stop offset="100%" stop-color="#7bcde3" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="lsh-orb-b" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#91b98a" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#91b98a" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <rect width="1440" height="420" fill="url(#lsh-grad)"/>
+            <circle class="prestations-search-orb prestations-search-orb--1" cx="220" cy="120" r="140" fill="url(#lsh-orb-a)"/>
+            <circle class="prestations-search-orb prestations-search-orb--2" cx="1180" cy="280" r="160" fill="url(#lsh-orb-b)"/>
+            <circle class="prestations-search-orb prestations-search-orb--3" cx="720" cy="60" r="100" fill="url(#lsh-orb-a)" opacity="0.7"/>
+            <path class="prestations-search-wave" d="M0 340 C240 280 480 380 720 330 S1200 260 1440 310 L1440 420 L0 420 Z" fill="#c9f4f2" opacity="0.35"/>
+            <path class="prestations-search-wave prestations-search-wave--2" d="M0 360 C320 320 520 390 760 350 S1120 300 1440 340 L1440 420 L0 420 Z" fill="#7bcde3" opacity="0.18"/>
+            <g class="prestations-search-leaves">
+                <path class="prestations-search-leaf prestations-search-leaf--1" d="M180 90c-8 28 6 48 18 58-14-6-32-22-18-58z" fill="url(#lsh-leaf)" opacity="0.75"/>
+                <path class="prestations-search-leaf prestations-search-leaf--2" d="M1260 70c10 32-4 52-20 62 16-8 34-28 20-62z" fill="url(#lsh-leaf)" opacity="0.6"/>
+                <path class="prestations-search-leaf prestations-search-leaf--3" d="M1050 320c-12 24 2 40 14 48-12-4-26-18-14-48z" fill="url(#lsh-leaf)" opacity="0.5"/>
+            </g>
+        </svg>
+    </div>
+
+    <div class="container prestations-search-inner">
+        <h1 class="prestations-search-title" itemprop="name">Développez vos compétences, à votre rythme</h1>
+        <p class="prestations-search-lead" itemprop="description">PDF clairs et pratiques · livre <strong>0,50&nbsp;€</strong> · packs en <strong>remise volume</strong> · paiement sécurisé · envoi par e-mail.</p>
+        <form class="prestations-search-form livres-search-form" role="search" aria-label="Recherche dans le catalogue des livres">
+            <label class="visually-hidden" for="livresSearchInput">Rechercher un livre</label>
+            <div class="prestations-search-input-wrapper" id="livresSearchWrapper">
+                <i class="fas fa-search prestations-search-icon" aria-hidden="true"></i>
+                <input
+                    type="search"
+                    id="livresSearchInput"
+                    class="prestations-search-input"
+                    name="q"
+                    placeholder="Rechercher un livre, une technologie, un sujet…"
+                    autocomplete="off"
+                    enterkeyhint="search"
+                >
+                <button type="button" id="livresSearchClear" class="prestations-search-clear" aria-label="Effacer la recherche" hidden>
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <span class="prestations-search-kbd" aria-hidden="true">/</span>
+            </div>
+            <button type="submit" class="prestations-search-submit livres-search-submit">
+                <span>Rechercher</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </form>
+
+        <div class="prestations-search-chips" role="group" aria-label="Filtrer par thème">
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="debutant" data-livres-search-query="debutant"><i class="fas fa-rocket" aria-hidden="true"></i> Débutant</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="pack" data-livres-search-query="pack"><i class="fas fa-box-open" aria-hidden="true"></i> Packs</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="python" data-livres-search-query="python"><i class="fab fa-python" aria-hidden="true"></i> Python</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="javascript" data-livres-search-query="javascript"><i class="fab fa-js" aria-hidden="true"></i> JavaScript</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="sql" data-livres-search-query="sql"><i class="fas fa-database" aria-hidden="true"></i> SQL</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="ia" data-livres-search-query="ia"><i class="fas fa-robot" aria-hidden="true"></i> IA</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="securite" data-livres-search-query="securite"><i class="fas fa-shield-alt" aria-hidden="true"></i> Sécurité</button>
+            <button type="button" class="prestations-search-chip" data-livres-search-chip="finance" data-livres-search-query="finance"><i class="fas fa-chart-line" aria-hidden="true"></i> Finance</button>
+        </div>
+
+        <p class="prestations-search-results-info" id="livresSearchResultsInfo" aria-live="polite"></p>
+    </div>
+</section>

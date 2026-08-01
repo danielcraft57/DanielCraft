@@ -188,3 +188,132 @@ function stripe_create_checkout_session(string $slug, string $customerEmail = ''
 
     return ['ok' => true, 'url' => $url, 'session_id' => $sessionId, 'error' => ''];
 }
+
+/**
+ * @return array<string, mixed>|null
+ */
+function stripe_load_livres_catalog(): ?array
+{
+    $paths = [
+        __DIR__ . '/data/livres.json',
+        __DIR__ . '/../data/livres.json',
+        __DIR__ . '/../src/data/livres.json',
+    ];
+    foreach ($paths as $path) {
+        if (!is_file($path) || !is_readable($path)) {
+            continue;
+        }
+        $raw = file_get_contents($path);
+        if ($raw === false) {
+            continue;
+        }
+        $data = json_decode($raw, true);
+        if (is_array($data)) {
+            return $data;
+        }
+    }
+    return null;
+}
+
+/**
+ * @return array<string, mixed>|null
+ */
+function stripe_find_livre_item(string $slug): ?array
+{
+    if (!preg_match('/^[a-z0-9-]{1,80}$/', $slug)) {
+        return null;
+    }
+    $catalog = stripe_load_livres_catalog();
+    if (!$catalog || !is_array($catalog['items'] ?? null)) {
+        return null;
+    }
+    foreach ($catalog['items'] as $item) {
+        if (!is_array($item)) {
+            continue;
+        }
+        if (($item['slug'] ?? '') === $slug) {
+            return $item;
+        }
+    }
+    return null;
+}
+
+/**
+ * Prix catalogue livres (accepte 4.9 → 490 centimes).
+ */
+function stripe_livre_unit_amount_cents(array $item, array $catalog): int
+{
+    $default = (float) ($catalog['default_price_eur'] ?? 0.5);
+    $raw = $item['price_eur'] ?? $default;
+    $priceEur = is_numeric($raw) ? (float) $raw : $default;
+    if ($priceEur < 0.5 || $priceEur > 9999) {
+        return 0;
+    }
+    return (int) round($priceEur * 100);
+}
+
+/**
+ * @return array{ok: bool, url: string, session_id: string, error: string}
+ */
+function stripe_create_livre_checkout_session(string $slug, string $customerEmail = ''): array
+{
+    $item = stripe_find_livre_item($slug);
+    if ($item === null) {
+        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Livre catalogue introuvable.'];
+    }
+
+    $catalog = stripe_load_livres_catalog() ?? [];
+    $unitAmount = stripe_livre_unit_amount_cents($item, $catalog);
+    if ($unitAmount < 50) {
+        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Prix livre invalide.'];
+    }
+
+    $title = trim((string) ($item['title'] ?? $slug));
+    $isPack = (($item['kind'] ?? '') === 'pack') || str_starts_with($slug, 'pack-');
+    $productName = $isPack
+        ? ($title . ' — pack PDF DanielCraft')
+        : ($title . ' — livre PDF DanielCraft');
+    $productDesc = $isPack
+        ? 'Pack formation PDF — envoi par e-mail après paiement'
+        : 'Formation PDF — envoi par e-mail après paiement';
+    $base = api_site_base();
+    $successUrl = $base . '/livres/' . rawurlencode($slug) . '/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
+    $cancelUrl = $base . '/livres/' . rawurlencode($slug) . '/?stripe=cancel';
+
+    $params = [
+        'mode' => 'payment',
+        'success_url' => $successUrl,
+        'cancel_url' => $cancelUrl,
+        'line_items[0][quantity]' => 1,
+        'line_items[0][price_data][currency]' => 'eur',
+        'line_items[0][price_data][unit_amount]' => $unitAmount,
+        'line_items[0][price_data][product_data][name]' => $productName,
+        'line_items[0][price_data][product_data][description]' => $productDesc,
+        'metadata[livre_slug]' => $slug,
+        'metadata[livre_title]' => $title,
+        'metadata[livre_kind]' => $isPack ? 'pack' : 'livre',
+        'metadata[livre_pdf]' => trim((string) ($item['pdf'] ?? '')),
+        'payment_intent_data[metadata][livre_slug]' => $slug,
+    ];
+
+    if ($isPack && is_array($item['book_slugs'] ?? null)) {
+        $params['metadata[pack_books]'] = implode(',', array_map('strval', $item['book_slugs']));
+    }
+
+    if ($customerEmail !== '' && filter_var($customerEmail, FILTER_VALIDATE_EMAIL)) {
+        $params['customer_email'] = $customerEmail;
+    }
+
+    $res = stripe_api('POST', '/checkout/sessions', $params);
+    if (!$res['ok'] || !is_array($res['data'])) {
+        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => $res['error']];
+    }
+
+    $url = isset($res['data']['url']) ? (string) $res['data']['url'] : '';
+    $sessionId = isset($res['data']['id']) ? (string) $res['data']['id'] : '';
+    if ($url === '') {
+        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Session Checkout sans URL.'];
+    }
+
+    return ['ok' => true, 'url' => $url, 'session_id' => $sessionId, 'error' => ''];
+}

@@ -87,10 +87,12 @@ if (Test-Path $vendorScript) {
 if (-not $SkipBuild) {
   if ($WebP) {
     Write-Host "Build initial (avec WebP)..." -ForegroundColor Cyan
+    & python build.py
   } else {
     Write-Host "Build initial (sans WebP)..." -ForegroundColor Cyan
+    # Guillemets + --% : evite que PowerShell mange --no-webp
+    & python --% build.py --no-webp
   }
-  python build.py @buildWebpArgs
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
 
@@ -187,7 +189,11 @@ $server = Start-Process -FilePath $phpExe -ArgumentList @(
 $buildWatch = $null
 try {
   if (-not $NoWatch) {
-    $watchArgs = @("build.py", "--watch") + $buildWebpArgs
+    $watchArgs = if ($WebP) {
+      @("build.py", "--watch")
+    } else {
+      @("build.py", "--watch", "--no-webp")
+    }
     $buildWatch = Start-Process -FilePath "python" -ArgumentList $watchArgs -NoNewWindow -PassThru
   }
 
