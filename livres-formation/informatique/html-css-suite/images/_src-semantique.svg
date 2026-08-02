@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef6f7"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c4a5e" font-weight="700">Semantique : header, main et footer</text>
+
+  <!-- Page structuree -->
+  <rect x="40" y="70" width="420" height="290" rx="16" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="250" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0c4a5e" font-weight="700">Page claire</text>
+
+  <rect x="70" y="125" width="360" height="48" rx="8" fill="#0c4a5e"/>
+  <text x="250" y="146" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2dd4bf" font-weight="700">header</text>
+  <text x="250" y="164" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#eef6f7">en-tete de page</text>
+
+  <rect x="70" y="188" width="360" height="90" rx="8" fill="#2dd4bf"/>
+  <text x="250" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#123038" font-weight="700">main</text>
+  <text x="250" y="252" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0c4a5e">contenu principal</text>
+
+  <rect x="70" y="293" width="360" height="48" rx="8" fill="#15657a"/>
+  <text x="250" y="314" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2dd4bf" font-weight="700">footer</text>
+  <text x="250" y="332" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#eef6f7">pied de page</text>
+
+  <!-- Vs divs -->
+  <rect x="540" y="70" width="420" height="290" rx="16" fill="#ffffff" stroke="#15657a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="750" y="105" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#15657a" font-weight="700">Tout en boites vagues</text>
+
+  <rect x="570" y="125" width="360" height="40" rx="8" fill="#d4e8ec"/>
+  <text x="750" y="151" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">boite</text>
+  <rect x="570" y="180" width="360" height="40" rx="8" fill="#d4e8ec"/>
+  <text x="750" y="206" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">boite</text>
+  <rect x="570" y="235" width="360" height="40" rx="8" fill="#d4e8ec"/>
+  <text x="750" y="261" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">boite</text>
+  <rect x="570" y="290" width="360" height="40" rx="8" fill="#d4e8ec"/>
+  <text x="750" y="316" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">boite</text>
+
+  <text x="500" y="395" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#123038">Humains et machines comprennent mieux une page nommee.</text>
+</svg>

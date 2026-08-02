@@ -101,9 +101,10 @@
 
 .prestations-search-hero {
   position: relative;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 0;
-  padding: clamp(1.75rem, 4vw, 2.75rem) 0 clamp(1.25rem, 3vw, 2rem);
+  /* padding-top inclut le dégagement sous la nav fixe (comme le blog) */
+  padding: clamp(4.6rem, 8vw, 5.35rem) 0 clamp(1.25rem, 3vw, 1.85rem);
   overflow: hidden;
   isolation: isolate;
 }
@@ -525,9 +526,206 @@
   padding-top: 0.75rem;
 }
 
+/* Layout catalogue SaaS (sidebar + contenu) */
+.prestations-catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 16.5rem) minmax(0, 1fr);
+  gap: 1.75rem 2rem;
+  align-items: start;
+}
+
+.prestations-catalog-sidebar {
+  position: sticky;
+  top: 5.5rem;
+  padding: 1rem;
+  border-radius: 0.85rem;
+  background: #f3faf9;
+  border: 1px solid rgba(15, 53, 80, 0.08);
+}
+
+.prestations-sidebar-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0f3550;
+}
+
+.prestations-sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.prestations-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  color: #1a3a4d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.prestations-sidebar-link i {
+  width: 1.1rem;
+  text-align: center;
+  color: #1a5f85;
+  opacity: 0.9;
+}
+
+.prestations-sidebar-link span {
+  flex: 1;
+}
+
+.prestations-sidebar-link em {
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  background: rgba(15, 53, 80, 0.06);
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+}
+
+.prestations-sidebar-link:hover,
+.prestations-sidebar-link.is-active {
+  background: rgba(26, 95, 133, 0.12);
+  color: #0f3550;
+}
+
+.prestations-sidebar-cta {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(26, 95, 133, 0.08);
+  border: 1px solid rgba(26, 95, 133, 0.12);
+}
+
+.prestations-sidebar-cta p {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: #0f3550;
+}
+
+.prestations-sidebar-cta .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.prestations-featured-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.prestations-featured-head .prestations-section-title {
+  margin: 0;
+}
+
+.prestations-featured-all {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a5f85;
+  text-decoration: none;
+}
+
+.prestations-featured-all:hover {
+  text-decoration: underline;
+}
+
+.prestations-categories-anchor {
+  scroll-margin-top: 6rem;
+}
+
+.prestations-trust-strip {
+  margin-top: 0.5rem;
+  padding: 1.5rem 0;
+  background: #f1f5f8;
+  border-top: 1px solid rgba(15, 53, 80, 0.08);
+}
+
+.prestations-trust-inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.prestations-trust-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.prestations-trust-item i {
+  margin-top: 0.15rem;
+  color: #1a5f85;
+  font-size: 1.15rem;
+}
+
+.prestations-trust-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #0f3550;
+}
+
+.prestations-trust-item span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #5a6b78;
+}
+
+.page-prestations-catalog.is-catalog-filtering .prestations-catalog-sidebar {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+@media (max-width: 960px) {
+  .prestations-catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .prestations-catalog-sidebar {
+    position: static;
+  }
+
+  .prestations-sidebar-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .prestations-sidebar-cta {
+    display: none;
+  }
+
+  .prestations-trust-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .prestations-trust-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 767px) {
   .prestations-search-hero {
-    padding-top: 2rem;
+    /* garder le dégagement nav aussi sur mobile */
+    padding-top: clamp(4.4rem, 14vw, 5.1rem);
   }
 
   .prestations-search-input {

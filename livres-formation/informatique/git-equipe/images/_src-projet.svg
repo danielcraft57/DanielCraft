@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#dfe6e9"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2d3436" font-weight="700">Mini-projet : une contribution d'equipe</text>
+
+  <defs>
+    <marker id="ap" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d3436"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="90" width="170" height="230" rx="14" fill="#2d3436"/>
+  <text x="115" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#55efc4" font-weight="700">1. Branche</text>
+  <text x="115" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">partir de</text>
+  <text x="115" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">principale</text>
+  <text x="115" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#55efc4">isoler</text>
+
+  <line x1="215" y1="200" x2="255" y2="200" stroke="#2d3436" stroke-width="4" marker-end="url(#ap)"/>
+
+  <rect x="270" y="90" width="170" height="230" rx="14" fill="#ffffff" stroke="#2d3436" stroke-width="3"/>
+  <text x="355" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d3436" font-weight="700">2. Commits</text>
+  <text x="355" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">petits pas</text>
+  <text x="355" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">messages clairs</text>
+  <text x="355" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e17055">avancer</text>
+
+  <line x1="455" y1="200" x2="495" y2="200" stroke="#2d3436" stroke-width="4" marker-end="url(#ap)"/>
+
+  <rect x="510" y="90" width="170" height="230" rx="14" fill="#ffffff" stroke="#2d3436" stroke-width="3"/>
+  <text x="595" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d3436" font-weight="700">3. Demande</text>
+  <text x="595" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">expliquer</text>
+  <text x="595" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">faire relire</text>
+  <text x="595" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">passer la CI</text>
+  <text x="595" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e17055">proposer</text>
+
+  <line x1="695" y1="200" x2="735" y2="200" stroke="#2d3436" stroke-width="4" marker-end="url(#ap)"/>
+
+  <rect x="750" y="90" width="220" height="230" rx="14" fill="#e17055" stroke="#2d3436" stroke-width="3"/>
+  <text x="860" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d3436" font-weight="700">4. Fusion</text>
+  <rect x="780" y="165" width="160" height="36" rx="8" fill="#ffffff"/>
+  <text x="860" y="189" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">principale OK</text>
+  <rect x="780" y="215" width="160" height="36" rx="8" fill="#2d3436"/>
+  <text x="860" y="239" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#55efc4">equipe synchronisee</text>
+  <text x="860" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d3436">livrer</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d3436">Branche, commits, demande, fusion : le cycle d'equipe.</text>
+</svg>

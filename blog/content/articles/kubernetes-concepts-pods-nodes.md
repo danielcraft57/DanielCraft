@@ -16,51 +16,62 @@ og_image: k8s-concepts-1200x630.jpg
   <figcaption>Node = machine. Pod = plus petite unite qui tourne dessus.</figcaption>
 </figure>
 
-Si Docker te permet d'exécuter des conteneurs sur une machine, Kubernetes te permet de gérer **un cluster complet** de machines et de conteneurs.
+Si Docker te permet d'exécuter des conteneurs sur **une** machine, Kubernetes te permet de gérer un **cluster** : plusieurs machines qui travaillent ensemble. L'idée n'est pas de remplacer Docker, mais de décider *où* tourne chaque boîte, *combien* d'exemplaires tu en veux, et *quoi faire* si une machine tombe.
 
-Avant de parler de déploiements, de services ou d'ingress, il faut être à l'aise avec quelques notions :
+Avant de parler de Deployments, de Services ou d'Ingress, il faut être à l'aise avec quelques mots du quotidien :
 
-- **cluster**,
-- **node**,
-- **pod**,
-- **namespace**,
-- et la manière dont Kubernetes gère les ressources.
+- **cluster** : l'ensemble (cerveau + machines),
+- **node** : une machine du cluster,
+- **pod** : la plus petite unité qui tourne,
+- **namespace** : un tiroir logique pour organiser,
+- **labels** : des étiquettes pour retrouver les bons pods.
+
+Ce glossaire suffit pour lire la majorité des tutos et des `kubectl get` sans paniquer.
 
 ---
 
 ## Cluster et nodes : la vue d'ensemble
 
-Un cluster Kubernetes, c'est :
+Un cluster Kubernetes, c'est deux familles de rôles :
 
-- un **plan de contrôle** (control plane) qui prend les décisions,
-- un ensemble de **nodes** qui exécutent réellement les pods.
+1. le **plan de contrôle** (control plane) : il décide (où placer un pod, que faire si un node disparaît, quel état viser) ;
+2. les **nodes** : ils exécutent réellement les pods.
 
-### Node
+En petit labo, tout peut tourner sur une seule machine (Minikube, kind, k3s). En prod, tu sépares souvent le control plane des workers, et tu mets plusieurs nodes pour survivre à une panne.
+
+### Node : une machine qui travaille pour le cluster
 
 Un node est une machine (physique ou virtuelle) qui :
 
-- fait tourner un agent (`kubelet`),
+- fait tourner un agent appelé **kubelet** (le bras droit de Kubernetes sur cette machine),
 - exécute les conteneurs via un runtime (containerd, CRI-O…),
-- expose CPU/RAM/disque/réseau au cluster.
+- met à disposition CPU, RAM, disque et réseau.
 
-Il peut y avoir des roles (worker, control-plane, taints pour des workloads spécifiques, etc.).
+Tu verras parfois des rôles ou des **taints** : « cette machine n'accepte que certains pods » (GPU, batch, control-plane…). Pour démarrer, retiens surtout : **node = machine**, **pod = charge de travail dessus**.
+
+Commande utile :
+
+```bash
+kubectl get nodes
+kubectl describe node mon-node
+```
+
+`describe` montre la capacité (CPU/RAM), les pods déjà placés, et les conditions (Ready, MemoryPressure…). C'est souvent le premier endroit où regarder si « rien ne démarre ».
 
 ---
 
 ## Pod : l'unité de base
 
-Kubernetes ne déploie pas directement des conteneurs, mais des **pods**.
+Kubernetes ne déploie pas directement des conteneurs : il déploie des **pods**.
 
-- Un pod est le plus petit objet déployable dans Kubernetes.
-- Il peut contenir **un ou plusieurs conteneurs** qui partagent :
-  - le même **namespace réseau** (localhost commun),
-  - le même **système de fichiers** pour certains volumes.
+- Un pod est le plus petit objet déployable.
+- Il contient **un ou plusieurs** conteneurs qui partagent :
+  - le même **namespace réseau** (ils se voient en `localhost`),
+  - souvent des **volumes** communs.
 
-Dans la majorité des cas :
+Dans la vraie vie, 95 % des pods = **1 conteneur applicatif**, parfois + un **sidecar** (proxy, agent de logs, sync de config).
 
-- 1 pod = 1 conteneur applicatif (et éventuellement un **sidecar**).
-
-Exemple de pod très simple :
+Exemple minimal :
 
 ```yaml
 apiVersion: v1
@@ -75,78 +86,99 @@ spec:
         - containerPort: 80
 ```
 
-En pratique, tu ne vas pas créer beaucoup de pods "à la main". Tu passeras plutôt par des **Deployments** (on y viendra dans un autre article).
+Tu peux le créer avec `kubectl apply -f hello-pod.yaml`, puis :
+
+```bash
+kubectl get pods
+kubectl describe pod hello-pod
+kubectl logs hello-pod
+kubectl exec -it hello-pod -- sh
+```
+
+En pratique, tu crées rarement des pods « à la main » pour une appli. Tu passes par un **Deployment** (il recrée les pods s'ils meurent, gère le rolling update). Les pods restent pourtant la brique que tu observes au quotidien : crash, ImagePullBackOff, Pending… c'est toujours le pod qui parle.
+
+Si tu viens de Docker Compose, le mental model aide :
+
+| Docker Compose | Kubernetes (idée) |
+|----------------|-------------------|
+| service | Deployment + pods |
+| container | conteneur *dans* un pod |
+| machine unique | plusieurs nodes |
+
+Pour aller plus loin sur le déploiement, vois [Deployments et Services](/blog/articles/kubernetes-deployments-services.html) quand tu seras prêt.
 
 ---
 
-## Namespaces : organiser le cluster
+## Namespaces : organiser sans tout mélanger
 
-Les **namespaces** permettent de découper logiquement ton cluster :
+Les **namespaces** découpent logiquement le cluster. Ce n'est pas un mur de sécurité absolu (il faut aussi NetworkPolicy, RBAC…), mais c'est indispensable pour ne pas confondre `dev` et `prod`.
+
+Exemples courants :
 
 - `default` : namespace par défaut,
-- `kube-system` : composants internes de Kubernetes,
-- `prod`, `staging`, `dev`, etc. : pour isoler les environnements.
-
-Tu peux lister les namespaces :
+- `kube-system` : composants internes (ne touche pas au hasard),
+- `prod`, `staging`, `dev` : tes environnements,
+- `monitoring` : Prometheus, Grafana, etc.
 
 ```bash
 kubectl get namespaces
-```
-
-Et cibler un namespace particulier :
-
-```bash
 kubectl get pods -n prod
 kubectl config set-context --current --namespace=staging
 ```
 
-Travailler correctement avec les namespaces évite de mélanger les ressources et de faire des bêtises en prod.
+Astuce débutant : dès que tu travailles souvent dans un namespace, fixe-le dans le contexte. Tu évites d'appliquer un YAML en `default` alors que tu pensais être en `staging`.
 
 ---
 
-## Ressources, labels et selectors
+## Labels, selectors et ressources
 
-Chaque objet Kubernetes a :
-
-- des **labels** (paires clé/valeur),
-- éventuellement des **annotations**,
-- et parfois des **selectors** qui s'appuient sur ces labels.
-
-Exemple :
+Chaque objet Kubernetes a des **labels** (paires clé/valeur). Ce sont des étiquettes collées sur les pods, services, etc.
 
 ```yaml
 metadata:
   labels:
     app: mon-api
     tier: backend
+    env: staging
 ```
 
-Ces labels permettent à d'autres ressources (Service, Deployment, HPA…) de cibler les bons pods.
+Un **Service** ou un **Deployment** retrouve les bons pods grâce à un **selector** du type « tous les pods avec `app=mon-api` ». Sans labels cohérents, le service ne pointe nulle part — symptôme classique : « mon Service existe, mais rien ne répond ».
+
+Tu peux aussi demander des **requests/limits** CPU et mémoire sur les conteneurs. En débutant, mets des valeurs raisonnables pour éviter qu'un pod gourmand étouffe le node. Kubernetes utilisera ces infos pour le placement (scheduling).
 
 ---
 
-## kubectl : ton couteau suisse
+## kubectl : le couteau suisse du quotidien
 
-Quelques commandes que tu vas utiliser tout le temps :
+Quelques commandes que tu vas retaper des centaines de fois :
 
 ```bash
 kubectl get pods
-kubectl get pods -A          # tous les namespaces
+kubectl get pods -A                 # tous les namespaces
+kubectl get pods -o wide            # IP + node
 kubectl describe pod hello-pod
-kubectl logs hello-pod
+kubectl logs hello-pod -f
 kubectl exec -it hello-pod -- sh
+kubectl delete pod hello-pod        # souvent recréé par le Deployment
 ```
+
+Méthode de debug simple :
+
+1. `get` → le pod est-il Running ?
+2. `describe` → Events en bas (ImagePull, FailedScheduling…).
+3. `logs` → l'appli a-t-elle planté au démarrage ?
+4. `exec` → si besoin, explorer depuis l'intérieur.
 
 ---
 
 ## Pour la suite de la série
 
-Dans les prochains articles Kubernetes, on va voir :
+Dans les prochains articles Kubernetes, on verra :
 
-1. **L'architecture du cluster** : API server, scheduler, etcd, controller manager.
-2. Comment créer des **Deployments** et des **Services** propres.
-3. Comment gérer la **configuration** avec ConfigMaps et Secrets.
-4. Comment surveiller l'état du cluster (logs, métriques, events).
-5. Comment brancher **CI/CD** pour déployer proprement.
+1. l'**architecture** du control plane (API server, scheduler, etcd…) ;
+2. des **Deployments** et **Services** propres ;
+3. la **config** avec ConfigMaps et Secrets ;
+4. l'**observabilité** (logs, métriques, events) ;
+5. le branchement **CI/CD** pour déployer sans stress.
 
-L'idée est de partir de ce que tu connais déjà en Docker Compose et de le projeter sur les objets Kubernetes.
+L'objectif : partir de ce que tu connais déjà en [Docker](/blog/articles/docker-fondamentaux-images-conteneurs.html) / Compose, et le projeter sur les objets Kubernetes. Une fois pods, nodes et namespaces clairs, le reste devient beaucoup plus digeste.

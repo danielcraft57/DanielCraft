@@ -68,37 +68,37 @@
                 <svg class="blog-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="bsh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ede9fe"/>
-                            <stop offset="42%" stop-color="#f5f3ff"/>
-                            <stop offset="100%" stop-color="#fff7ed"/>
+                            <stop offset="0%" stop-color="#e8f6fc"/>
+                            <stop offset="42%" stop-color="#eef8f4"/>
+                            <stop offset="100%" stop-color="#e6f4f0"/>
                         </linearGradient>
                         <radialGradient id="bsh-orb-a" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#818cf8" stop-opacity="0.5"/>
-                            <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+                            <stop offset="0%" stop-color="#7bcde3" stop-opacity="0.55"/>
+                            <stop offset="100%" stop-color="#7bcde3" stop-opacity="0"/>
                         </radialGradient>
                         <radialGradient id="bsh-orb-b" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.4"/>
-                            <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+                            <stop offset="0%" stop-color="#91b98a" stop-opacity="0.45"/>
+                            <stop offset="100%" stop-color="#91b98a" stop-opacity="0"/>
                         </radialGradient>
                     </defs>
                     <rect width="1440" height="420" fill="url(#bsh-grad)"/>
                     <circle class="blog-search-node blog-search-node--1" cx="180" cy="110" r="130" fill="url(#bsh-orb-a)"/>
                     <circle class="blog-search-node blog-search-node--2" cx="1240" cy="90" r="150" fill="url(#bsh-orb-b)"/>
                     <circle class="blog-search-node blog-search-node--3" cx="760" cy="300" r="110" fill="url(#bsh-orb-a)" opacity="0.65"/>
-                    <g stroke="#6366f1" stroke-width="1.5" fill="none" opacity="0.22">
+                    <g stroke="#1a5f85" stroke-width="1.5" fill="none" opacity="0.2">
                         <line class="blog-search-line" x1="320" y1="80" x2="520" y2="160"/>
                         <line class="blog-search-line blog-search-line--2" x1="920" y1="120" x2="1120" y2="200"/>
                         <line class="blog-search-line" x1="600" y1="240" x2="840" y2="300"/>
                     </g>
-                    <text class="blog-search-bracket" x="1080" y="320" font-family="JetBrains Mono, monospace" font-size="48" fill="#6366f1" opacity="0.35">&lt;/&gt;</text>
-                    <text class="blog-search-bracket blog-search-bracket--2" x="260" y="280" font-family="JetBrains Mono, monospace" font-size="36" fill="#d97706" opacity="0.3">{ }</text>
-                    <path class="blog-search-wave" d="M0 350 C280 300 480 380 720 340 S1160 290 1440 330 L1440 420 L0 420 Z" fill="#c7d2fe" opacity="0.28"/>
+                    <text class="blog-search-bracket" x="1080" y="320" font-family="JetBrains Mono, monospace" font-size="48" fill="#1a5f85" opacity="0.3">&lt;/&gt;</text>
+                    <text class="blog-search-bracket blog-search-bracket--2" x="260" y="280" font-family="JetBrains Mono, monospace" font-size="36" fill="#2f9e6a" opacity="0.28">{ }</text>
+                    <path class="blog-search-wave" d="M0 350 C280 300 480 380 720 340 S1160 290 1440 330 L1440 420 L0 420 Z" fill="#c9f4f2" opacity="0.32"/>
                 </svg>
             </div>
 
             <div class="container blog-search-inner">
-                <h1 class="blog-search-title" itemprop="name">Articles et tutoriels</h1>
-                <p class="blog-search-lead" itemprop="description">{{META_DESCRIPTION}}</p>
+                <h1 class="blog-search-title" itemprop="name">Des articles concrets pour le web d’aujourd’hui</h1>
+                <p class="blog-search-lead" itemprop="description">Développement, SEO, IA et stratégie digitale : des contenus actionnables pour progresser chaque jour.</p>
 
                 <form class="blog-search-form" role="search" aria-label="Recherche d'articles">
                     <label class="visually-hidden" for="blogSearchInput">Rechercher un article</label>
@@ -111,7 +111,7 @@
                             name="q"
                             autocomplete="off"
                             enterkeyhint="search"
-                            placeholder="Rechercher un sujet (SEO local, Google, visibilité, site vitrine…)"
+                            placeholder="Rechercher un article, un sujet…"
                         />
                         <button type="button" id="blogSearchClear" class="blog-search-clear" aria-label="Effacer la recherche" hidden>
                             <i class="fas fa-times" aria-hidden="true"></i>
@@ -121,19 +121,14 @@
                 </form>
 
                 <div class="blog-search-chips" role="group" aria-label="Suggestions de recherche">
-                    <button type="button" class="blog-search-chip" data-blog-search-query="seo local"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> SEO local</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="google"><i class="fas fa-search" aria-hidden="true"></i> Google</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="visibilité"><i class="fas fa-chart-line" aria-hidden="true"></i> Visibilité</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="web"><i class="fas fa-code" aria-hidden="true"></i> Web</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="seo"><i class="fas fa-search" aria-hidden="true"></i> SEO</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="ia"><i class="fas fa-robot" aria-hidden="true"></i> IA</button>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="seo local"><i class="fas fa-briefcase" aria-hidden="true"></i> Métier</button>
                     <button type="button" class="blog-search-chip" data-blog-search-query="chatgpt"><i class="fas fa-comments" aria-hidden="true"></i> ChatGPT</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="claude"><i class="fas fa-brain" aria-hidden="true"></i> Claude</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="gemini"><i class="fas fa-star" aria-hidden="true"></i> Gemini</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="agents ia"><i class="fas fa-robot" aria-hidden="true"></i> Agents IA</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="prompts"><i class="fas fa-terminal" aria-hidden="true"></i> Prompts</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="n8n"><i class="fas fa-project-diagram" aria-hidden="true"></i> n8n</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="formation"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Formations</button>
-                    <button type="button" class="blog-search-chip" data-blog-search-query="geo"><i class="fas fa-robot" aria-hidden="true"></i> GEO / IA</button>
-                    <button type="button" class="blog-search-chip blog-search-chip--pro" data-blog-search-query="docker"><i class="fas fa-code" aria-hidden="true"></i> Pro / technique</button>
-                    <a href="/pro" class="blog-search-chip blog-search-chip--link"><i class="fas fa-laptop-code" aria-hidden="true"></i> Espace pro</a>
+                    <button type="button" class="blog-search-chip" data-blog-search-query="geo"><i class="fas fa-satellite" aria-hidden="true"></i> GEO</button>
+                    <button type="button" class="blog-search-chip blog-search-chip--pro" data-blog-search-query="docker"><i class="fas fa-laptop-code" aria-hidden="true"></i> Pro / technique</button>
+                    <a href="/pro" class="blog-search-chip blog-search-chip--link"><i class="fas fa-arrow-right" aria-hidden="true"></i> Espace pro</a>
                 </div>
             </div>
         </section>

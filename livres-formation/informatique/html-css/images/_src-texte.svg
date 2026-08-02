@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Hierarchie du texte</text>
+  <rect x="80" y="110" width="200" height="90" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="180" y="163" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">h1</text>
+  <text x="180" y="191" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">titre principal</text>
+  <rect x="300" y="130" width="180" height="70" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="390" y="173" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">h2</text>
+  <text x="390" y="201" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">section</text>
+  <rect x="500" y="145" width="160" height="55" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="580" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">h3</text>
+  <text x="580" y="208" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">sous-partie</text>
+  <rect x="80" y="280" width="840" height="140" rx="14" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="358" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">p</text>
+  <text x="500" y="386" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">paragraphe - le corps du texte</text>
+  <text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">Un seul h1. Puis h2, h3... selon le plan</text>
+</svg>

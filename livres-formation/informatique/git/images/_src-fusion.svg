@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460">
+<rect width="1000" height="460" fill="#f7f4f2"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Fusionner une branche</text>
+<rect x="120" y="120" width="280" height="180" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="260" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">feature</text>
+<rect x="600" y="120" width="280" height="180" rx="14" fill="#e8e6f0" stroke="#2b2d42" stroke-width="3"/>
+<text x="740" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">main</text>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ef476f" font-weight="700">merge</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c5c66" font-weight="400">Le travail revient sur la piste principale.</text>
+</svg>

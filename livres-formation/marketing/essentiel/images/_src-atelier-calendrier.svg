@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Calendrier : cuisiner en lot</text>
+<rect x="80" y="140" width="260" height="220" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="210" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1f1630" font-weight="700">Themes</text>
+<text x="210" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a4d6a" font-weight="400">8 idees utiles</text>
+<rect x="370" y="140" width="260" height="220" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a4a2a" font-weight="700">Rythme</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a4a2a" font-weight="400">1 ou 2 / semaine</text>
+<rect x="660" y="140" width="260" height="220" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="790" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Session lot</text>
+<text x="790" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#e8a87c" font-weight="400">2 heures</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Deux heures preparees > sept soirees paniquees.</text>
+</svg>

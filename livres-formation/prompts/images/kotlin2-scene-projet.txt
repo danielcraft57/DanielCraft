@@ -1,0 +1,7 @@
+Scene pedagogique Kotlin Intermediaire - mini-projet journal d'humeur.
+
+Photo editorial realiste.
+Sam note dans un carnet "humeur du jour" avec stickers simples (soleil / nuage), laptop ouvert sur un petit graphique de stats par groupe.
+Palette indigo #312e81 + cyan #22d3ee.
+Texte FRANCAIS uniquement : "Humeur", "Aujourd'hui", "Stats".
+Aucun anglais, pas de logo. 16:9, photorealiste editorial.

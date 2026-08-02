@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">Bonnes pratiques</text>
+<rect x="70" y="130" width="270" height="220" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="205" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">Colonnes</text>
+<text x="205" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">nommees</text>
+<rect x="365" y="130" width="270" height="220" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#3f6212" font-weight="700">WHERE</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">avant ecrire</text>
+<rect x="660" y="130" width="270" height="220" rx="14" fill="#ffffff" stroke="#14261c" stroke-width="3"/>
+<text x="795" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#14261c" font-weight="700">Tester</text>
+<text x="795" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">petit jeu</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Petit, clair, testable.</text>
+</svg>

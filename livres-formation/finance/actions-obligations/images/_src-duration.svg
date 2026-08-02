@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Duration = sensibilite aux taux</text>
+<rect x="80" y="110" width="280" height="200" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="220" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Duration 2</text>
+<text x="220" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">choc +1 %</text>
+<text x="220" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d5a45" font-weight="700">~ -2 % prix</text>
+<rect x="380" y="110" width="280" height="200" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="520" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Duration 5</text>
+<text x="520" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">choc +1 %</text>
+<text x="520" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d5a45" font-weight="700">~ -5 % prix</text>
+<rect x="680" y="110" width="240" height="200" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="800" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Duration 8</text>
+<text x="800" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">choc +1 %</text>
+<text x="800" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">~ -8 % prix</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Plus c'est long, plus ca bouge.</text>
+</svg>

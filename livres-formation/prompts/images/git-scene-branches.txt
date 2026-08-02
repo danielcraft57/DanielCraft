@@ -1,0 +1,2 @@
+Illustration pedagogique Git - branches qui fusionnent.
+Deux pistes vers une. Labels FR.

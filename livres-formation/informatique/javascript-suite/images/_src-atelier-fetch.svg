@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+<rect width="1000" height="420" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Atelier fetch</text>
+<rect x="80" y="120" width="250" height="180" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="205" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2a3a8f" font-weight="700">demander</text>
+<rect x="370" y="120" width="250" height="180" rx="14" fill="#e8ecf8" stroke="#2a3a8f" stroke-width="3"/>
+<text x="495" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2a3a8f" font-weight="700">attendre</text>
+<rect x="660" y="120" width="260" height="180" rx="14" fill="#2a3a8f" stroke="#2a3a8f" stroke-width="3"/>
+<text x="790" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">afficher / erreur</text>
+</svg>

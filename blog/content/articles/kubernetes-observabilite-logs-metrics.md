@@ -16,19 +16,21 @@ og_image: k8s-observabilite-1200x630.jpg
   <figcaption>Pods, logs, mesures, alertes, action.</figcaption>
 </figure>
 
-Déployer une appli, c'est bien. Savoir **ce qui se passe** quand elle tourne en prod, c'est vital.
+Déployer une appli, c’est bien. Savoir **ce qui se passe** quand elle tourne en prod, c’est vital.
 
-Dans un cluster Kubernetes, tu dois pouvoir répondre rapidement à des questions comme :
+Dans un cluster Kubernetes, tu dois pouvoir répondre vite à des questions concrètes :
 
-- Pourquoi ce pod crash‑loop ?  
-- Est‑ce qu'on manque de CPU/RAM ?  
-- Quels sont les pods à l'origine d'un pic de latence ?
+- Pourquoi ce pod est en `CrashLoopBackOff` ?
+- Est-ce qu’on manque de CPU ou de RAM ?
+- Quel service provoque ce pic de latence ?
+
+Sans logs, métriques et alertes, tu pilotes à l’aveugle. Si les bases pods / nodes te manquent encore, relis d’abord les [concepts Kubernetes](/blog/articles/kubernetes-concepts-pods-nodes.html) et l’[architecture du cluster](/blog/articles/kubernetes-architecture-cluster.html).
 
 ---
 
 ## Logs applicatifs
 
-Premier réflexe :
+Premier réflexe en debug :
 
 ```bash
 kubectl logs mon-pod
@@ -36,52 +38,57 @@ kubectl logs mon-pod -c nom-du-container
 kubectl logs -f mon-pod
 ```
 
-Pour plusieurs réplicas derrière un Deployment :
+Avec plusieurs réplicas derrière un [Deployment](/blog/articles/kubernetes-deployments-services.html) :
 
 ```bash
 kubectl get pods -l app=mon-api
-kubectl logs mon-api-xxxxx
+kubectl logs mon-api-xxxxx --tail=100
 ```
 
-En prod, tu voudras rapidement envoyer ces logs vers une stack centralisée :
+Astuce débutant : ajoute `--previous` si le conteneur a redémarré — tu vois les logs du crash d’avant, pas seulement le nouveau process vide.
+
+En prod, tu enverras vite ces logs vers une stack centralisée :
 
 - EFK (Elasticsearch + Fluentd + Kibana),
 - Loki + Promtail + Grafana,
-- Stack cloud (CloudWatch, GCP Logging, etc.).
+- stack cloud (CloudWatch, GCP Logging…).
 
-Mais même sans ça, `kubectl logs` reste ton couteau suisse pour du debug rapide.
+Même sans ça, `kubectl logs` reste ton couteau suisse pour un incident « maintenant ».
+
+### Checklist logs
+
+- [ ] L’app écrit sur stdout/stderr (pas seulement dans un fichier perdu dans le conteneur)
+- [ ] Les messages ont un niveau clair (`INFO`, `WARN`, `ERROR`)
+- [ ] Tu peux retrouver une requête par un `request_id` ou un user id
 
 ---
 
 ## Events Kubernetes
 
-Les **events** te racontent ce que le cluster fait :
+Les **events** racontent ce que le cluster fait (scheduling, pull d’image, probes…) :
 
 ```bash
 kubectl get events --sort-by=.metadata.creationTimestamp
-```
-
-Tu peux les filtrer par namespace ou par ressource :
-
-```bash
 kubectl describe pod mon-api-xxxxx
 ```
 
-Les events typiques :
+Events typiques :
 
-- pod qui ne trouve pas son image,
-- problème de scheduling (pas assez de ressources),
-- erreur de readiness/liveness probe.
+- image introuvable (`ImagePullBackOff`),
+- pas assez de ressources pour placer le pod,
+- readiness / liveness qui échouent.
+
+Quand un pod « ne démarre pas », `describe` + events te donnent souvent la réponse en 30 secondes — avant de fouiller dans Grafana.
 
 ---
 
 ## Probes de santé (liveness / readiness / startup)
 
-Tes deployments devraient définir des probes pour que Kubernetes sache :
+Tes Deployments devraient définir des probes pour que Kubernetes sache :
 
 - si le conteneur est vivant (**liveness**),
-- s'il est prêt à recevoir du trafic (**readiness**),
-- si l'initialisation est terminée (**startup**).
+- s’il est prêt à recevoir du trafic (**readiness**),
+- si l’init est terminée (**startup** — utile pour les apps lentes au boot).
 
 Exemple :
 
@@ -101,23 +108,26 @@ readinessProbe:
   periodSeconds: 10
 ```
 
-Avec ça :
+Avec ça : pas de trafic vers un pod pas `Ready` ; redémarrage si la liveness échoue trop longtemps.
 
-- Kubernetes ne route du trafic vers ton pod que s'il est `Ready`.
-- Si le pod bloque ou ne répond plus, la liveness probe peut déclencher un redémarrage.
+### Pièges fréquents
+
+- **Même endpoint pour liveness et readiness** : un problème de dépendance (base lente) peut tuer le pod en boucle au lieu de juste le retirer du trafic.
+- **Délais trop courts** : l’app n’a pas le temps de démarrer → crash loop.
+- **Probe qui dépend d’un service externe** sur la liveness : tu redémarres alors que le vrai problème est ailleurs.
 
 ---
 
 ## Métriques (CPU, RAM, HPA)
 
-Tu peux installer un **metrics-server** pour avoir des métriques de base :
+Installe un **metrics-server** pour les bases :
 
 ```bash
 kubectl top nodes
 kubectl top pods
 ```
 
-Ensuite, tu peux configurer un **HorizontalPodAutoscaler (HPA)** :
+Puis un **HorizontalPodAutoscaler (HPA)** pour ajuster le nombre de pods :
 
 ```yaml
 apiVersion: autoscaling/v2
@@ -140,19 +150,33 @@ spec:
           averageUtilization: 70
 ```
 
-Kubernetes ajuste alors le nombre de pods en fonction de la charge CPU.
+Exemple concret : un pic de trafic à 14 h. Le HPA passe de 2 à 6 pods. Le pic retombe, le HPA redescend. Sans métriques, tu aurais surdimensionné « au feeling » — et payé pour rien la nuit.
+
+Pense aussi aux **requests / limits** de ressources : sans requests, le scheduler et le HPA manquent de repères. Les [ConfigMaps et Secrets](/blog/articles/kubernetes-configmaps-secrets.html) ne remplacent pas une bonne config CPU/RAM.
 
 ---
 
-## Stack d'observabilité complète
+## Stack d’observabilité complète
 
-À plus long terme, vise quelque chose comme :
+À moyen terme, vise :
 
 - **Logs** : Loki ou Elasticsearch,
 - **Métriques** : Prometheus + Grafana,
 - **Traces** : OpenTelemetry,
-- **Dashboards** : Grafana (santé du cluster, services clés, latence).
+- **Dashboards** : santé cluster, latence p95, taux d’erreur 5xx.
 
-L'idée n'est pas de tout mettre en place dès le jour 1, mais de prévoir des hooks (export de métriques, endpoints `/metrics`, etc.) dès la conception de tes services.
+Tu n’as pas besoin de tout le jour 1. Prévois dès la conception : endpoint `/metrics`, logs structurés, healthchecks honnêtes. Pour la suite de la série, on branche le cluster à un pipeline propre : [CI/CD et déploiement continu sur Kubernetes](/blog/articles/kubernetes-ci-cd-deploiement-continu.html).
 
-Dans le dernier article de la série Kubernetes, on parlera **CI/CD et déploiement continu** : comment brancher ton cluster à ton pipeline pour que les déploiements soient reproductibles et fiables.
+### Checklist « je ne vole pas à l’aveugle »
+
+- [ ] Je sais lire les logs d’un pod en 1 commande
+- [ ] Les probes sont distinctes et testées
+- [ ] `kubectl top` (ou équivalent) est disponible
+- [ ] Au moins une alerte critique existe (pods down, erreur 5xx)
+- [ ] Un dashboard minimal montre CPU, RAM et latence du service clé
+
+---
+
+## En résumé
+
+L’observabilité Kubernetes, ce n’est pas « encore un outil ». C’est pouvoir **voir, comprendre, agir** : logs pour le détail, events pour le cluster, probes pour la santé, métriques pour la charge, alertes pour ne pas découvrir le problème via un client.

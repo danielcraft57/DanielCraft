@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a1033"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7e739a"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#a78bfa" font-size="20" font-weight="bold" font-family="Arial">Formulaires : GET / POST</text><rect x="80" y="80" width="280" height="55" rx="10" fill="#2a1d4a" stroke="#a78bfa" stroke-width="2"/><text x="220" y="112" text-anchor="middle" fill="#f4f2fa" font-size="15" font-family="Arial">Formulaire HTML</text>
+<line x1="360" y1="107" x2="450" y2="107" stroke="#7e739a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="450" y="80" width="270" height="55" rx="10" fill="#2a1d4a" stroke="#a78bfa" stroke-width="2"/><text x="585" y="112" text-anchor="middle" fill="#f4f2fa" font-size="15" font-family="Arial">$_POST / $_GET</text>
+<line x1="580" y1="135" x2="580" y2="190" stroke="#7e739a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="400" y="190" width="320" height="55" rx="10" fill="#2a1d4a" stroke="#a78bfa" stroke-width="2"/><text x="560" y="222" text-anchor="middle" fill="#f4f2fa" font-size="15" font-family="Arial">filter_input() valider</text>
+<line x1="580" y1="245" x2="580" y2="300" stroke="#7e739a" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="400" y="300" width="320" height="55" rx="10" fill="#2a1d4a" stroke="#a78bfa" stroke-width="2"/><text x="560" y="332" text-anchor="middle" fill="#f4f2fa" font-size="15" font-family="Arial">htmlspecialchars() securiser</text>
+<text x="400" y="420" text-anchor="middle" fill="#7e739a" font-size="14" font-family="Arial">Ne jamais faire confiance aux donnees</text></svg>

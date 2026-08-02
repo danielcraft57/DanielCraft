@@ -1,0 +1,3 @@
+Scene C/C++ - visualiser les pointeurs.
+Photo editorial. Max montre sur un tableau des fleches entre cases memoire (adresses abstraites).
+Labels FRANCAIS : "Case", "Fleche". Bleu nuit + ciel. Aucun anglais. 16:9.

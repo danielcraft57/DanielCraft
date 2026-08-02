@@ -1,0 +1,3 @@
+Illustration pedagogique JS suite - formulaire.
+Scene flat theme bleu/vert : formulaire Nom, Email, Message, bouton Envoyer. Validation claire.
+Texte UI FRANCAIS uniquement.

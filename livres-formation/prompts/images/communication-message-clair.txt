@@ -1,0 +1,5 @@
+Schema : message clair en 3 temps pour livre Communication DanielCraft.
+
+Composition horizontale : 1) Idee principale 2) Contexte court 3) Action.
+Couleurs : bordeaux #6b1e2a, miel #d4a574, fond #f7f3ef.
+Texte FRANCAIS uniquement. Style plat, lisible, pedagogique.

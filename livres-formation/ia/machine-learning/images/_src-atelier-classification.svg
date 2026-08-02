@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Atelier classification</text>
+<rect x="100" y="140" width="240" height="200" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="220" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0b1220" font-weight="700">1. Labels</text>
+<text x="220" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">classes claires</text>
+<rect x="380" y="140" width="240" height="200" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0f766e" font-weight="700">2. Split</text>
+<text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#0f766e" font-weight="400">train / test</text>
+<rect x="660" y="140" width="240" height="200" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="780" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">3. Metriques</text>
+<text x="780" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">precision,</text>
+<text x="780" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">rappel, couts</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Regarde les erreurs, pas seulement l'accuracy.</text>
+</svg>

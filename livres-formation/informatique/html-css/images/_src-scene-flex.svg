@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Exemple : trois cartes en flex</text>
+  <rect x="60" y="110" width="880" height="300" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <rect x="100" y="160" width="240" height="200" rx="12" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="220" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">Carte 1</text>
+  <rect x="380" y="160" width="240" height="200" rx="12" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">Carte 2</text>
+  <rect x="660" y="160" width="240" height="200" rx="12" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="780" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">Carte 3</text>
+  <text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">gap entre les cartes, alignement centre</text>
+</svg>

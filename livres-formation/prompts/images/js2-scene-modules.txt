@@ -1,0 +1,3 @@
+Illustration pedagogique JS suite - modules.
+Scene flat : fichiers main.js, api.js, afficher.js organises. Theme bleu/vert.
+Texte FRANCAIS uniquement (hors noms de fichiers).

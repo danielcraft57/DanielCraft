@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Avant chaque ordre</text>
+<rect x="70" y="120" width="200" height="180" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="170" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Poche</text>
+<text x="170" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2d5a45" font-weight="400">+ horizon</text>
+<rect x="290" y="120" width="200" height="180" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="390" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Frais</text>
+<text x="390" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2d5a45" font-weight="400">lus</text>
+<rect x="510" y="120" width="200" height="180" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="610" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1b3a2f" font-weight="700">Choc</text>
+<text x="610" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2d5a45" font-weight="400">simule</text>
+<rect x="730" y="120" width="200" height="180" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="830" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">Decision</text>
+<text x="830" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">ecrite</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">La checklist sert le jour ou tu veux tricher.</text>
+</svg>

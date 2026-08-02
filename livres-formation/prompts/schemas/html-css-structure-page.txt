@@ -1,0 +1,10 @@
+Schema anatomie d'une page HTML minimale.
+
+Blocs emboites styles boites :
+html
+  head (title, meta)
+  body (h1, p)
+
+Comme des boites Russes / rectangles imbriqués, couleurs differentes par niveau. Tres lisible. Style schema pedagogique. Labels courts autorises seulement si parfaitement nets : html, head, body. Sinon zones colorees sans texte.
+
+IMPORTANT: Labels uniquement en FRANCAIS (ex: MARGE, BORDURE, CONTENU, CONTENEUR, Grand ecran, Telephone). Aucun mot anglais.

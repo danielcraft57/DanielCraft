@@ -1,22 +1,23 @@
 # Prompts pour les images Open Graph des articles SEO
 
-Images marketing pour le partage social. Style : professionnel, conversion-oriented, fond clair, accent rouge #dc2626. Format 1200x630 px, ratio 1.91:1.
+Images de partage social avec une direction plus technique et plus homogène sur tout le blog.
 
 **Important : tous les textes visibles dans les images doivent être en français.**
 
-## Principes marketing des images
+## Charte commune
 
-- **Hiérarchie visuelle** : titre principal > sous-titre > éléments secondaires
-- **Signaux de confiance** : badges, indicateurs positifs, données
-- **Contraste** : lisibilité en miniature (réseaux sociaux)
-- **Cohérence** : charte DanielCraft (rouge, gris, épuré)
+- Format : `1200x630 px`, ratio `1.91:1`
+- Direction visuelle : produit logiciel, dashboard, analytics, architecture de contenu
+- Palette : fond `#f5f7fb` vers `#e9eef6`, bleu UI `#2563eb`, bleu clair `#60a5fa`, encre `#0f172a`, accent rouge `#dc2626`
+- Composition : plusieurs cartes ou panneaux UI, profondeur légère, bandeau bas sombre
+- Éviter : hero vide, icônes seules, style cartoon, flat design trop simplifié
 
 ---
 
 ## seo-fondamentaux-1200x630.jpg
 
 ```
-Fond dégradé blanc vers gris clair. Titre "SEO Fondamentaux" en gras, gris foncé (texte en français). Bande rouge #dc2626 en accent. Icônes minimalistes : loupe, flèche croissance, checklist. Style hero landing page. Professionnel, conversion-oriented. Tous les textes en français. Pas de visage. 1.91:1.
+Vue d'ensemble SEO en mode workspace logiciel : panneau d'analyse, graphe de trafic, checklist technique, requêtes et optimisation de contenu. Visuel dense mais lisible en miniature, bandeau sombre avec "SEO Fondamentaux". Tous les textes visibles en français.
 ```
 
 ---
@@ -24,7 +25,7 @@ Fond dégradé blanc vers gris clair. Titre "SEO Fondamentaux" en gras, gris fon
 ## seo-technique-1200x630.jpg
 
 ```
-Dashboard style : indicateurs de performance, jauge de vitesse, métriques Core Web Vitals. Labels en français (ex. "Performance", "Vitesse"). Cartes blanches, ombres légères. Accent rouge sur indicateur positif. Fond gris clair. Tous les textes en français. 1.91:1.
+Dashboard SEO technique avec Core Web Vitals, vitesse, indexation, rendu et score technique. Plusieurs panneaux UI reliés. Accent rouge sur un point critique ou un indicateur clé. Tous les textes visibles en français.
 ```
 
 ---
@@ -32,7 +33,7 @@ Dashboard style : indicateurs de performance, jauge de vitesse, métriques Core 
 ## seo-contenu-1200x630.jpg
 
 ```
-Vue document/éditeur : titre, listes à puces, tags mots-clés. Tous les textes en français. Fond blanc. Accent rouge sur élément mis en avant. Stratégie contenu. Lisible, professionnel. 1.91:1.
+Éditeur de contenu moderne avec structure Hn, maillage interne, suggestions sémantiques et aperçu SERP. Ambiance outil éditorial avancé. Tous les textes visibles en français.
 ```
 
 ---
@@ -40,7 +41,7 @@ Vue document/éditeur : titre, listes à puces, tags mots-clés. Tous les textes
 ## seo-local-1200x630.jpg
 
 ```
-Épinglette carte, marqueur localisation, badge 5 étoiles. Labels en français ("Local", "Avis"). Fond gris clair. Accent rouge. Tous les textes en français. 1.91:1.
+Tableau de bord SEO local avec carte, fiche établissement, avis, requêtes locales et zone de service. Représentation plus logicielle que publicitaire. Tous les textes visibles en français.
 ```
 
 ---
@@ -48,7 +49,7 @@ Vue document/éditeur : titre, listes à puces, tags mots-clés. Tous les textes
 ## seo-backlinks-1200x630.jpg
 
 ```
-Réseau de nœuds : centre "Site" avec lignes vers "Liens". Concept autorité. Labels en français. Fond clair. Accent rouge sur nœud central. 1.91:1.
+Carte d'autorité avec site central, liens entrants, médias, annuaires et signaux de confiance. Réseau propre et technique, avec profondeur et couches d'analyse. Tous les textes visibles en français.
 ```
 
 ---
@@ -56,7 +57,7 @@ Réseau de nœuds : centre "Site" avec lignes vers "Liens". Concept autorité. L
 ## seo-mesure-1200x630.jpg
 
 ```
-Dashboard : graphiques, courbe ascendante, cartes KPI. Labels en français ("Trafic", "Conversions"). Fond gris clair. Accent rouge sur indicateur positif. 1.91:1.
+Dashboard de mesure SEO avec trafic, conversions, pages d'entrée, positions et évolution. Look analytics moderne, multi-cartes, lisible en miniature. Tous les textes visibles en français.
 ```
 
 ---
@@ -64,7 +65,7 @@ Dashboard : graphiques, courbe ascendante, cartes KPI. Labels en français ("Tra
 ## seo-schema-1200x630.jpg
 
 ```
-Blocs de données structurées, style JSON. Labels en français si texte visible. Fond clair. Accent rouge. Technique mais abordable. 1.91:1.
+Visuel sur les données structurées avec extraits de balises, résultat enrichi, blocs de schéma et flux entre contenu, balisage et moteur de recherche. Tous les textes visibles en français.
 ```
 
 ---
@@ -72,5 +73,5 @@ Blocs de données structurées, style JSON. Labels en français si texte visible
 ## seo-vs-sea-1200x630.jpg
 
 ```
-Deux colonnes : gauche "SEO Organique" (feuille, croissance), droite "SEA Payant" (mégaphone, instantané). Labels en français. Comparaison visuelle claire. Fond clair. Accent rouge. Tous les textes en français. 1.91:1.
+Comparatif clair entre acquisition organique et acquisition payante avec deux panneaux analytiques, coûts, délais, volume et durabilité. Représentation produit / data, pas simple pictogramme. Tous les textes visibles en français.
 ```

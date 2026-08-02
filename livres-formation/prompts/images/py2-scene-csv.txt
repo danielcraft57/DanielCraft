@@ -1,0 +1,2 @@
+Illustration pedagogique Python pratique - CSV.
+Tableau vers resume. Labels FR (Lignes, Resume).

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">WHERE = filtre sur les lignes</text>
+<rect x="80" y="120" width="400" height="260" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="280" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">Toutes les lignes</text>
+<text x="280" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">table clients</text>
+<text x="280" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">beaucoup de bruit</text>
+<rect x="520" y="120" width="400" height="260" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="720" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="700">WHERE ville = 'Lyon'</text>
+<text x="720" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="400">seulement Lyon</text>
+<text x="720" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">resultat utile</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Sans WHERE, tu lis trop. Avec WHERE, tu cibles.</text>
+</svg>

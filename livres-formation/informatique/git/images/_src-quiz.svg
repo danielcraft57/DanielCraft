@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+<rect width="1000" height="420" fill="#f7f4f2"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Quiz</text>
+<rect x="180" y="120" width="640" height="200" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">Lis</text>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#2b2d42" font-weight="700">A / B / C</text>
+<text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5c5c66" font-weight="400">Relis si doute</text>
+</svg>

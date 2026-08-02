@@ -1,0 +1,35 @@
+<div class="page-prestations page-livres" itemscope itemtype="https://schema.org/CollectionPage">
+    <link itemprop="url" href="{{page_url}}">
+{% include "includes/livres-search-hero.html" %}
+{% include "includes/livres-deal-week.html" %}
+
+<section class="section page-prestations-catalog" aria-label="Catalogue des livres">
+    <div class="container">
+        <div id="livresSearchResultsWrap" class="prestations-search-results-wrap" hidden>
+            <div id="livresSearchResults" class="services-grid prestations-grid prestations-grid--results" role="list"></div>
+        </div>
+
+        <div id="livresCatalogBrowse" class="prestations-catalog-browse">
+            {% include "includes/livres-catalog-embed.html" %}
+        </div>
+
+        <div class="prestations-cta">
+            <p class="prestations-cta-text">Un pack (Web, Python, IA…) ou une question sur un livre&nbsp;?</p>
+            <a href="/contact" class="btn btn-primary btn-large">
+                <span>Écrire à DanielCraft</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <nav class="legal-page-links" aria-label="Navigation">
+            <a href="/">Retour à l'accueil</a>
+            <span class="separator">·</span>
+            <a href="/nos-offres">Nos offres</a>
+            <span class="separator">·</span>
+            <a href="/blog/">Blog</a>
+            <span class="separator">·</span>
+            <a href="/contact">Contact</a>
+        </nav>
+    </div>
+</section>
+</div>

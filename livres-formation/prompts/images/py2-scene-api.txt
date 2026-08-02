@@ -1,0 +1,2 @@
+Illustration pedagogique Python pratique - API.
+Requete -> reponse -> donnees. Labels FR.

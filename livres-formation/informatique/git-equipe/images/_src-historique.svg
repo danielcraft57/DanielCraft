@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#dfe6e9"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2d3436" font-weight="700">Historique propre</text>
+<rect x="80" y="140" width="180" height="160" rx="14" fill="#ffffff" stroke="#2d3436" stroke-width="3"/>
+<text x="170" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d3436" font-weight="700">petit</text>
+<rect x="300" y="140" width="180" height="160" rx="14" fill="#b2bec3" stroke="#2d3436" stroke-width="3"/>
+<text x="390" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d3436" font-weight="700">clair</text>
+<rect x="520" y="140" width="180" height="160" rx="14" fill="#ffffff" stroke="#2d3436" stroke-width="3"/>
+<text x="610" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d3436" font-weight="700">utile</text>
+<rect x="740" y="140" width="180" height="160" rx="14" fill="#55efc4" stroke="#2d3436" stroke-width="3"/>
+<text x="830" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d3436" font-weight="700">lisible</text>
+<text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#636e72" font-weight="400">Des commits que l'equipe comprend.</text>
+</svg>

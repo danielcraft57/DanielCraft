@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#120e1c"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#22d3ee" font-size="20" font-weight="bold" font-family="Arial">Mini-projet : gestionnaire</text><rect x="250" y="60" width="300" height="45" rx="10" fill="#1e1838" stroke="#22d3ee" stroke-width="2"/><text x="400" y="87" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Menu principal</text>
+<line x1="300" y1="105" x2="130" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="400" y1="105" x2="400" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="500" y1="105" x2="620" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="40" y="150" width="180" height="45" rx="10" fill="#1e1838" stroke="#22d3ee" stroke-width="2"/><text x="130" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Ajouter</text>
+<rect x="310" y="150" width="180" height="45" rx="10" fill="#1e1838" stroke="#22d3ee" stroke-width="2"/><text x="400" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Lister</text>
+<rect x="560" y="150" width="180" height="45" rx="10" fill="#1e1838" stroke="#22d3ee" stroke-width="2"/><text x="650" y="177" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Terminer</text>
+<rect x="250" y="250" width="300" height="45" rx="10" fill="#1e1838" stroke="#22d3ee" stroke-width="2"/><text x="400" y="277" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Sauvegarder JSON</text>
+<line x1="400" y1="205" x2="400" y2="250" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/></svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Metriques : mesurer ce qui compte</text>
+<rect x="70" y="130" width="200" height="220" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="170" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0b1220" font-weight="700">Accuracy</text>
+<text x="170" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#64748b" font-weight="400">souvent trompeuse</text>
+<rect x="290" y="130" width="200" height="220" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="390" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">Precision</text>
+<text x="390" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">/ Rappel</text>
+<text x="390" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#0f766e" font-weight="400">classes desequilibrees</text>
+<rect x="510" y="130" width="200" height="220" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="610" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">MAE / RMSE</text>
+<text x="610" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">regression</text>
+<rect x="730" y="130" width="200" height="220" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="3"/>
+<text x="830" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Cout metier</text>
+<text x="830" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">faux positif</text>
+<text x="830" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">vs faux negatif</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Une metrique jolie sans cout metier reste un jouet.</text>
+</svg>

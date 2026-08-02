@@ -1,0 +1,6 @@
+Illustration pedagogique Python bases - boucles et fonctions.
+
+Scene flat : un artisan devant un ecran montrant une petite recette : entrees, fonction, sortie, et une fleche de boucle. Ambiance atelier clair.
+
+Fond creme. Accents vert teal et ambre. Style flat illustration, friendly.
+Texte UI FRANCAIS uniquement (ex. "encore ?", "resultat"). Aucun mot anglais.

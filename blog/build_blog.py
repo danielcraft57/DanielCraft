@@ -401,6 +401,7 @@ def _article_card_html(
         f'<{heading_tag} itemprop="headline">{title}</{heading_tag}>'
         f'<div class="article-meta"><time datetime="{date_str}" itemprop="datePublished">{date_fr}</time></div>'
         f'<div class="article-excerpt" itemprop="description">{excerpt}</div>'
+        f'<span class="article-card-cta">Lire l’article →</span>'
         f'</div>'
         f'</a>'
     )
@@ -557,7 +558,7 @@ def _article_client_priority_score(article: dict) -> int:
 
 
 def _recommendations_index_html(articles: list[dict], collections: list[dict]) -> str:
-    """Genere le bloc "A découvrir" pour la page index du blog (4 articles mis en avant)."""
+    """Bloc « À la une » (1 grand) + grille de 3, style maquette Medium."""
     if not articles:
         return ''
     seen = set()
@@ -582,21 +583,45 @@ def _recommendations_index_html(articles: list[dict], collections: list[dict]) -
             seen.add(a['slug'])
     if not picked:
         return ''
+
+    hero = picked[0]
+    rest = picked[1:4]
+    hero_href = _article_href(hero['slug'], 'articles/')
+    hero_url = _abs_blog_url(f'blog/articles/{hero["slug"]}.html')
+    hero_img = _escape_html(_article_thumb_src(hero))
+    hero_title = _escape_html(hero['title'])
+    hero_excerpt = _escape_html((hero.get('excerpt') or '')[:220] + ('…' if len(hero.get('excerpt') or '') > 220 else ''))
+    hero_type = _escape_html(_type_label(hero))
+    reading = max(4, min(14, len((hero.get('excerpt') or '') + hero.get('title', '')) // 45 or 8))
+
     lines = [
-        '<section class="blog-recommendations-index blog-reveal" aria-label="A découvrir">',
-        '<h2 class="blog-section-title">À découvrir</h2>',
-        '<div class="recommendations-index-grid">',
+        '<section class="blog-spotlight blog-reveal" aria-label="À la une">',
+        f'<a href="{hero_href}" class="blog-spotlight-card blog-reveal-item" itemscope itemtype="https://schema.org/BlogPosting" itemid="{hero_url}">',
+        f'<link itemprop="url" href="{hero_url}">',
+        f'<div class="blog-spotlight-media"><img src="{hero_img}" alt="" width="800" height="420" loading="eager" decoding="async" itemprop="image" /></div>',
+        '<div class="blog-spotlight-body">',
+        '<p class="blog-spotlight-kicker">À la une</p>',
+        f'<h2 class="blog-spotlight-title" itemprop="headline">{hero_title}</h2>',
+        f'<p class="blog-spotlight-excerpt" itemprop="description">{hero_excerpt}</p>',
+        '<div class="blog-spotlight-meta">',
+        f'<span><i class="fas fa-clock" aria-hidden="true"></i> {reading} min de lecture</span>',
+        f'<span class="blog-spotlight-tag">{hero_type}</span>',
+        '<span class="blog-spotlight-cta">Lire l’article →</span>',
+        '</div></div></a>',
     ]
-    for i, a in enumerate(picked[:4]):
-        lines.append(
-            _article_card_html(
-                a,
-                href_prefix='articles/',
-                heading_tag='h2',
-                extra_classes=f'recommendation-featured blog-reveal-item blog-reveal-delay-{i + 1}',
+    if rest:
+        lines.append('<div class="blog-spotlight-grid">')
+        for i, a in enumerate(rest):
+            lines.append(
+                _article_card_html(
+                    a,
+                    href_prefix='articles/',
+                    heading_tag='h3',
+                    extra_classes=f'recommendation-featured blog-reveal-item blog-reveal-delay-{i + 2}',
+                )
             )
-        )
-    lines.append('</div></section>')
+        lines.append('</div>')
+    lines.append('</section>')
     return '\n'.join(lines)
 
 

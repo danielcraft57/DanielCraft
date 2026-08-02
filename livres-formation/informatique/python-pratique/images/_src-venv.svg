@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef2f6"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#243447" font-weight="700">venv : un environnement isole pour le projet</text>
+
+  <!-- Systeme global (flou / secondaire) -->
+  <rect x="40" y="100" width="280" height="230" rx="14" fill="#ffffff" stroke="#5dade2" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="180" y="145" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5dade2" font-weight="700">Python global</text>
+  <rect x="70" y="175" width="100" height="40" rx="8" fill="#eef2f6"/>
+  <text x="120" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#243447">pip A</text>
+  <rect x="190" y="175" width="100" height="40" rx="8" fill="#eef2f6"/>
+  <text x="240" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#243447">pip B</text>
+  <text x="180" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5dade2">partage</text>
+  <text x="180" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5dade2">risque de conflit</text>
+
+  <defs>
+    <marker id="av" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#243447"/>
+    </marker>
+  </defs>
+  <line x1="340" y1="210" x2="420" y2="210" stroke="#243447" stroke-width="4" marker-end="url(#av)"/>
+  <text x="380" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#243447" font-weight="700">creer</text>
+
+  <!-- venv isole -->
+  <rect x="440" y="90" width="520" height="250" rx="16" fill="#243447"/>
+  <text x="700" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7dcea0" font-weight="700">venv du projet</text>
+
+  <rect x="480" y="165" width="140" height="90" rx="12" fill="#7dcea0"/>
+  <text x="550" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a2332" font-weight="700">Python</text>
+  <text x="550" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#1a2332">local</text>
+
+  <rect x="650" y="165" width="140" height="90" rx="12" fill="#5dade2"/>
+  <text x="720" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a2332" font-weight="700">pip</text>
+  <text x="720" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#1a2332">packages</text>
+
+  <rect x="820" y="165" width="110" height="90" rx="12" fill="#eef2f6"/>
+  <text x="875" y="205" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#243447" font-weight="700">scripts</text>
+  <text x="875" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#243447">activer</text>
+
+  <text x="700" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7dcea0">isole : chaque projet garde ses versions</text>
+
+  <text x="500" y="385" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1a2332">Activer un venv = travailler dans une bulle propre.</text>
+</svg>

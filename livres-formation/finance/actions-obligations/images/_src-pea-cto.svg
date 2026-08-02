@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Enveloppes : PEA et CTO</text>
+<rect x="120" y="110" width="340" height="220" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="290" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1b3a2f" font-weight="700">PEA</text>
+<text x="290" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">cadre fiscal</text>
+<text x="290" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">titres eligibles</text>
+<text x="290" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">plafond versements</text>
+<rect x="540" y="110" width="340" height="220" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="710" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1b3a2f" font-weight="700">CTO</text>
+<text x="710" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">plus souple</text>
+<text x="710" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">titres larges</text>
+<text x="710" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">fiscalite classique</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Enveloppe d'abord, produit ensuite.</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f7f6"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#264653" font-weight="700">Offre claire</text>
+  <rect x="180" y="100" width="640" height="230" rx="16" fill="#fff" stroke="#264653" stroke-width="3"/>
+  <text x="220" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2a32">Pour qui + resultat</text>
+  <text x="220" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2a32">Deroule + delai</text>
+  <text x="220" y="260" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2a32">Prix + inclus / exclus</text>
+  <text x="220" y="310" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#e9c46a" font-weight="700">Prochain pas</text>
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6a72">Si c'est flou sur la page, ca sera flou en vrai.</text>
+</svg>

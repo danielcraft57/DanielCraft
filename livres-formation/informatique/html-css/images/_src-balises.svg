@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Balise = etiquette de sens</text>
+  <rect x="150" y="140" width="700" height="100" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="200" text-anchor="middle" font-family="Consolas, monospace" font-size="26" fill="#1a4d3e">&lt;h1&gt;Mon titre&lt;/h1&gt;</text>
+  <text x="220" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">ouvre</text>
+  <text x="500" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">contenu</text>
+  <text x="780" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">ferme</text>
+  <text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e">Le navigateur comprend : c'est un titre</text>
+</svg>

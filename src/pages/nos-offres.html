@@ -1,148 +1,38 @@
-<section id="tarifs" class="home-offers page-nos-offres" aria-labelledby="nos-offres-title" data-section="tarifs" itemscope itemtype="https://schema.org/WebPage">
-    <meta itemprop="url" content="/nos-offres">
-    <div class="container">
-        <header class="section-header scroll-reveal">
-            <span class="section-badge">Nos offres</span>
-            <h1 id="nos-offres-title" class="section-title" itemprop="name">Trois prestations pour avancer concrètement</h1>
-            <p class="section-description" itemprop="description">
-                Chaque offre est expliquée simplement, avec un prix de départ et un devis PDF par e-mail.
-                Le pack le plus demandé est mis en avant — vous pouvez aussi commencer par un <a href="/audit">audit gratuit</a>.
-            </p>
-        </header>
+<div class="page-prestations page-nos-offres" itemscope itemtype="https://schema.org/CollectionPage">
+    <link itemprop="url" href="{{page_url}}">
+{% include "includes/prestations-search-hero.html" %}
 
-        <aside class="nos-offres-fb-compare scroll-reveal" aria-labelledby="nos-offres-fb-title">
-            <h2 id="nos-offres-fb-title" class="nos-offres-fb-compare__title">Page Facebook seule ou vrai site vitrine&nbsp;?</h2>
-            <div class="nos-offres-fb-compare__grid">
-                <div class="nos-offres-fb-compare__col nos-offres-fb-compare__col--fb">
-                    <h3>Page Facebook / réseaux</h3>
-                    <ul>
-                        <li>Dépend de l'algorithme</li>
-                        <li>Peu crédible pour un devis</li>
-                        <li>Pas de référencement Google structuré</li>
-                    </ul>
-                </div>
-                <div class="nos-offres-fb-compare__col nos-offres-fb-compare__col--site">
-                    <h3>Site vitrine DanielCraft</h3>
-                    <ul>
-                        <li>Votre adresse web à vous</li>
-                        <li>Message clair sur mobile</li>
-                        <li>Contact et visibilité Google</li>
-                    </ul>
-                </div>
+<section class="section page-prestations-catalog" aria-label="Catalogue des offres">
+    <div class="container prestations-catalog-layout">
+        {% include "includes/prestations-catalog-sidebar.html" %}
+
+        <div class="prestations-catalog-main">
+            <div id="prestationsSearchResultsWrap" class="prestations-search-results-wrap" hidden>
+                <div id="prestationsSearchResults" class="services-grid prestations-grid prestations-grid--results" role="list"></div>
             </div>
-        </aside>
 
-        <div class="nos-offres-grid home-offers-grid home-stagger" id="offres">
-            <article class="home-offer-card home-offer-card--anchor" data-home-tilt>
-                <span class="home-offer-badge home-offer-badge--anchor">Pack complet</span>
-                <div class="home-offer-body">
-                    <p class="home-offer-tagline">Répond aux questions, jour et nuit</p>
-                    <h2 class="home-offer-title">Répondeur intelligent</h2>
-                    <p class="home-offer-price">990 € <span>forfait HT</span></p>
-                    <div class="nos-offres-contrast">
-                        <div class="nos-offres-contrast-col nos-offres-contrast-col--before">
-                            <h3>Avant</h3>
-                            <ul>
-                                <li>Questions répétitives par téléphone ou e-mail</li>
-                                <li>Horaires et tarifs mal expliqués en ligne</li>
-                                <li>Visiteurs qui partent sans réponse</li>
-                            </ul>
-                        </div>
-                        <div class="nos-offres-contrast-col nos-offres-contrast-col--after">
-                            <h3>Après</h3>
-                            <ul>
-                                <li>Assistant avec vos vraies informations</li>
-                                <li>Réponses 24 h/24 sur le site</li>
-                                <li>Moins de friction avant le contact</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="home-offer-actions">
-                        <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Voir le détail — 990 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="990" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-            </article>
+            <div id="prestationsCatalogBrowse" class="prestations-catalog-browse">
+                {% include "includes/prestations-catalog-embed.html" %}
+            </div>
 
-            <article class="home-offer-card home-offer-card--star" data-home-tilt>
-                <span class="home-offer-badge">Le plus demandé</span>
-                <div class="home-offer-body">
-                    <p class="home-offer-tagline">Votre vitrine en ligne</p>
-                    <h2 class="home-offer-title">Site vitrine professionnel</h2>
-                    <p class="home-offer-price">à partir de 390 € <span>forfait HT</span></p>
-                    <div class="nos-offres-contrast">
-                        <div class="nos-offres-contrast-col nos-offres-contrast-col--before">
-                            <h3>Avant</h3>
-                            <ul>
-                                <li>Pas de site ou page Facebook seule</li>
-                                <li>Clients qui ne comprennent pas votre activité</li>
-                                <li>Aucune demande de contact structurée</li>
-                            </ul>
-                        </div>
-                        <div class="nos-offres-contrast-col nos-offres-contrast-col--after">
-                            <h3>Après</h3>
-                            <ul>
-                                <li>Site clair sur mobile et ordinateur</li>
-                                <li>Présentation rassurante de votre métier</li>
-                                <li>Formulaire ou appels à l'action visibles</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="home-offer-actions">
-                        <a href="/prestations/site-vitrine-essentiel/" class="btn btn-primary btn-block"><span>Essentiel — 390 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        <a href="/prestations/site-vitrine/" class="btn btn-outline btn-block"><span>Pro 5 pages — 590 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
-                    </div>
-                    <p class="nos-offres-models-hint"><a href="/vitrines/">Ou partir d'un modèle à 42 € HT</a> puis le personnaliser.</p>
-                </div>
-            </article>
+            <div class="prestations-cta">
+                <p class="prestations-cta-text">Un besoin précis ou plusieurs offres à combiner ?</p>
+                <a href="/#contact" class="btn btn-primary btn-large">
+                    <span>Parler de votre projet</span>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
 
-            <article class="home-offer-card" data-home-tilt>
-                <div class="home-offer-body">
-                    <p class="home-offer-tagline">Google + assistants intelligents</p>
-                    <h2 class="home-offer-title">Visibilité complète</h2>
-                    <p class="home-offer-price">690 € <span>forfait HT</span></p>
-                    <div class="nos-offres-contrast">
-                        <div class="nos-offres-contrast-col nos-offres-contrast-col--before">
-                            <h3>Avant</h3>
-                            <ul>
-                                <li>Invisible quand on vous cherche sur Google</li>
-                                <li>ChatGPT ne connaît pas votre activité</li>
-                                <li>Concurrents mieux référencés</li>
-                            </ul>
-                        </div>
-                        <div class="nos-offres-contrast-col nos-offres-contrast-col--after">
-                            <h3>Après</h3>
-                            <ul>
-                                <li>Fiche Google et site alignés</li>
-                                <li>Contenus pensés pour Google et l'IA</li>
-                                <li>Priorités SEO en français clair</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="home-offer-actions">
-                        <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Voir le détail — 690 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                        <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Visibilité complète" data-prestation-price="690" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-            </article>
+            <nav class="legal-page-links" aria-label="Navigation">
+                <a href="/">Retour à l'accueil</a>
+                <span class="separator">·</span>
+                <a href="/vitrines/">Exemples</a>
+                <span class="separator">·</span>
+                <a href="/contact">Contact</a>
+            </nav>
         </div>
-
-        <aside class="home-audit-banner scroll-reveal">
-            <div>
-                <h2 class="home-audit-banner__title">Vous avez déjà un site ?</h2>
-                <p>Commencez par un audit gratuit : Google, vitesse, message — puis choisissez l'offre adaptée.</p>
-            </div>
-            <a href="/audit" class="btn btn-primary btn-large">
-                <span>Tester mon site gratuitement</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-            </a>
-        </aside>
-
-        <p class="services-more" style="margin-top: 2rem; text-align: center;">
-            <a href="/prestations/">Voir les 33 prestations du catalogue</a>
-            ·
-            <a href="/contact">Parler de mon projet</a>
-        </p>
     </div>
 </section>
+
+{% include "includes/prestations-trust-strip.html" %}
+</div>

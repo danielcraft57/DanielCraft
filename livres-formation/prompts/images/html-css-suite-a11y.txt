@@ -1,0 +1,1 @@
+Schema pedagogique francais : trois piliers de l'accessibilite web - Clavier (tabulation, focus), Contraste (texte lisible), Images (texte alternatif). Couleurs espresso (#2c2118) et sauge (#a3b18a). Texte visible uniquement en francais. Style plat, lisible en livre imprime (~1000x420).

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Funnel simple : 5 etapes</text>
+<rect x="40" y="160" width="160" height="160" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="120" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Decouvrir</text>
+<rect x="220" y="160" width="160" height="160" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="300" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Interet</text>
+<rect x="400" y="160" width="160" height="160" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="480" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a4a2a" font-weight="700">Confiance</text>
+<rect x="580" y="160" width="160" height="160" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="660" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700">Action</text>
+<rect x="760" y="160" width="180" height="160" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="850" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1630" font-weight="700">Fidelite</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Enleve une friction avant d'acheter du trafic.</text>
+</svg>

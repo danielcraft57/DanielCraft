@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f0ea"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2c2118" font-weight="700">Transitions : des changements doux, pas brusques</text>
+
+  <!-- Avant -->
+  <rect x="60" y="90" width="220" height="220" rx="16" fill="#ffffff" stroke="#4a3b2e" stroke-width="3"/>
+  <text x="170" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4a3b2e" font-weight="700">Avant</text>
+  <rect x="100" y="160" width="140" height="80" rx="12" fill="#4a3b2e"/>
+  <text x="170" y="207" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f3f0ea" font-weight="700">Bouton</text>
+  <text x="170" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#4a3b2e">etat normal</text>
+
+  <!-- Fleche douce -->
+  <defs>
+    <marker id="at" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2c2118"/>
+    </marker>
+  </defs>
+  <line x1="300" y1="200" x2="380" y2="200" stroke="#2c2118" stroke-width="4" marker-end="url(#at)"/>
+  <text x="340" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2c2118" font-weight="700">0,3 s</text>
+
+  <!-- Pendant -->
+  <rect x="400" y="90" width="220" height="220" rx="16" fill="#ffffff" stroke="#2c2118" stroke-width="3"/>
+  <text x="510" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2c2118" font-weight="700">Pendant</text>
+  <rect x="440" y="160" width="140" height="80" rx="12" fill="#a3b18a" opacity="0.7"/>
+  <text x="510" y="207" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1f1a14" font-weight="700">Bouton</text>
+  <text x="510" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#4a3b2e">en mouvement</text>
+
+  <line x1="640" y1="200" x2="720" y2="200" stroke="#2c2118" stroke-width="4" marker-end="url(#at)"/>
+
+  <!-- Apres -->
+  <rect x="740" y="90" width="220" height="220" rx="16" fill="#a3b18a" stroke="#2c2118" stroke-width="3"/>
+  <text x="850" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1a14" font-weight="700">Apres</text>
+  <rect x="780" y="160" width="140" height="80" rx="12" fill="#2c2118"/>
+  <text x="850" y="207" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3b18a" font-weight="700">Bouton</text>
+  <text x="850" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1f1a14">survol</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1f1a14">Le style glisse d'un etat a l'autre, sans saut.</text>
+</svg>

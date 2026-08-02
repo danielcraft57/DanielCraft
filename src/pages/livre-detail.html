@@ -1,0 +1,127 @@
+<article class="prestation-detail-root livre-detail-root" itemscope itemtype="https://schema.org/Product"
+    data-livre-slug="{{livre_slug}}" data-stripe-pk="{{stripe_publishable_key}}">
+    <meta itemprop="name" content="{{livre_title}}">
+    <meta itemprop="description" content="{{livre_tagline}}">
+    <link itemprop="url" href="{{page_url}}">
+    <div itemprop="brand" itemscope itemtype="https://schema.org/Brand" hidden>
+        <meta itemprop="name" content="DanielCraft">
+    </div>
+
+<section class="prestation-detail-hero">
+    <div class="container prestation-detail-hero-inner">
+        <nav class="prestation-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
+            <a href="/">Accueil</a>
+            <span aria-hidden="true">/</span>
+            <a href="/livres/">Livres</a>
+            <span aria-hidden="true">/</span>
+            <span>{{livre_title}}</span>
+        </nav>
+        <div class="prestation-detail-hero-grid">
+            <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 60ms">
+                <span class="section-badge"><i class="fas {{livre_icon}}" aria-hidden="true"></i> {{livre_level_label}} · {{livre_category_label}}</span>
+                <h1 class="section-title">{{livre_title}}</h1>
+                <p class="prestation-detail-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <span itemprop="price" content="{{livre_price_eur}}">{{livre_price_display}}</span>&nbsp;€
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="{{page_url}}">
+                    <span>{{livre_price_label}} TTC</span>
+                </p>
+                <p class="section-description prestation-detail-lead">{{livre_tagline}}</p>
+                <p class="prestation-detail-desc">{{livre_description}}</p>
+                <div class="prestation-detail-hero-actions">
+                    {% if livre_pay_checkout %}
+                    <button type="button" class="btn btn-primary btn-large" data-livre-stripe-checkout id="livreStripeCheckoutBtn">
+                        <span class="livre-stripe-btn__label">Acheter le PDF — {{livre_price_display}}&nbsp;€ TTC</span>
+                        <span class="livre-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
+                    </button>
+                    {% else %}
+                    {% if livre_pay_link %}
+                    <a class="btn btn-primary btn-large" href="{{livre_stripe_url}}" target="_blank" rel="noopener noreferrer">
+                        <span>Acheter le PDF — {{livre_price_display}}&nbsp;€ TTC</span>
+                        <i class="fab fa-cc-stripe" aria-hidden="true"></i>
+                    </a>
+                    {% else %}
+                    <a href="mailto:contact@danielcraft.fr?subject={{livre_mailto_subject}}" class="btn btn-primary btn-large">
+                        <span>Commander par e-mail — {{livre_price_display}}&nbsp;€</span>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    <a href="/livres/" class="btn btn-outline btn-large">
+                        <span>Voir tous les livres</span>
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="livre-stripe-feedback" id="livreStripeFeedback" hidden role="status" aria-live="polite"></p>
+                <p class="livre-stripe-return" id="livreStripeReturn" role="status" hidden></p>
+            </div>
+            <figure class="prestation-detail-visual {% if livre_cover %}prestation-detail-visual--cover{% else %}prestation-detail-visual--icon{% endif %} scroll-reveal" style="--reveal-delay: 120ms">
+                {% if livre_cover %}
+                <img class="livre-detail-cover" src="{{livre_cover}}" alt="Couverture — {{livre_title}}" width="360" height="480" loading="eager" decoding="async">
+                {% else %}
+                <div class="prestation-detail-visual-inner" data-livre-cat="{{livre_category}}">
+                    <i class="fas {{livre_icon}}"></i>
+                </div>
+                {% endif %}
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="prestation-detail-body">
+    <div class="container prestation-detail-layout">
+        <div class="prestation-detail-main">
+            {% if livre_promo_html %}
+            <div class="scroll-reveal" style="--reveal-delay: 0ms">
+                {{livre_promo_html}}
+            </div>
+            {% endif %}
+            <h2 class="scroll-reveal" style="--reveal-delay: 40ms">Ce que tu gagnes</h2>
+            {{livre_benefits_html}}
+            <h2 class="scroll-reveal" style="--reveal-delay: 80ms">Inclus</h2>
+            {{livre_includes_html}}
+            <p class="livre-keywords scroll-reveal" style="--reveal-delay: 100ms"><strong>Mots-clés&nbsp;:</strong> {{livre_keywords_html}}</p>
+        </div>
+        <aside class="vitrine-purchase-card livre-purchase-card scroll-reveal-scale" style="--reveal-delay: 80ms"
+            aria-labelledby="livre-buy-title"
+            data-livre-slug="{{livre_slug}}"
+            data-livre-price="{{livre_price_eur}}"
+            data-stripe-static-url="{{livre_stripe_url}}">
+            <div class="vitrine-purchase-inner">
+                <h2 id="livre-buy-title" class="vitrine-purchase-title">Ce livre PDF</h2>
+                <p class="vitrine-purchase-price">
+                    <span class="vitrine-price-value">{{livre_price_display}}</span><span class="vitrine-price-currency">€</span>
+                    <span class="vitrine-price-vat">TTC</span>
+                </p>
+                <p class="vitrine-purchase-hint">{{livre_price_note}}</p>
+                <div class="vitrine-purchase-cta-stack">
+                    {% if livre_pay_checkout %}
+                    <button type="button" class="btn btn-primary btn-large vitrine-purchase-cta-main" data-livre-stripe-checkout>
+                        <span class="livre-stripe-btn__label">Acheter — {{livre_price_display}}&nbsp;€ TTC</span>
+                        <span class="livre-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
+                    </button>
+                    {% else %}
+                    {% if livre_pay_link %}
+                    <a class="btn btn-primary btn-large vitrine-purchase-cta-main" href="{{livre_stripe_url}}" target="_blank" rel="noopener noreferrer">
+                        <span>Payer avec Stripe — {{livre_price_display}}&nbsp;€</span>
+                        <i class="fab fa-cc-stripe" aria-hidden="true"></i>
+                    </a>
+                    {% else %}
+                    <a class="btn btn-primary btn-large vitrine-purchase-cta-main" href="mailto:contact@danielcraft.fr?subject={{livre_mailto_subject}}">
+                        <span>Commander par e-mail</span>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    <a class="btn btn-outline btn-large" href="/livres/?q={{livre_category}}">
+                        <span>Autres livres {{livre_category_label}}</span>
+                    </a>
+                </div>
+                <hr class="vitrine-purchase-sep">
+                <p class="vitrine-prose">Après paiement, je t'envoie le PDF à l'e-mail Stripe (sous 24&nbsp;h en général).</p>
+            </div>
+        </aside>
+    </div>
+</section>
+</article>

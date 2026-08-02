@@ -1,0 +1,3 @@
+Scene SQL expert - EXPLAIN / plan.
+Photo editorial. Max lit un arbre de decision dessiné : parcours table vs index, boites reliees.
+Labels FRANCAIS : "Parcours", "Index", "Cout". Ardoise + or. Aucun anglais (pas "EXPLAIN" en gros). 16:9.

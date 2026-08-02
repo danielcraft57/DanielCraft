@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f0ea"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a2332" font-weight="700">Wallets et cles</text>
+<rect x="80" y="110" width="260" height="200" rx="8" fill="#d8e0ea" stroke="#1a2332" stroke-width="3"/>
+<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Chaud</text>
+<text x="210" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5c6570" font-weight="400">pratique / expose</text>
+<rect x="370" y="110" width="260" height="200" rx="8" fill="#ffffff" stroke="#1a2332" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Froid</text>
+<text x="500" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5c6570" font-weight="400">offline</text>
+<rect x="660" y="110" width="260" height="200" rx="8" fill="#c45c26" stroke="#1a2332" stroke-width="3"/>
+<text x="790" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Seed</text>
+<text x="790" y="235" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a2332" font-weight="400">jamais en ligne</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c6570" font-weight="400">Cles = controle. Seed = roi.</text>
+</svg>

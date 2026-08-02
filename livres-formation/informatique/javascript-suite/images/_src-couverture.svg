@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2458"/>
+      <stop offset="45%" stop-color="#2a3a8f"/>
+      <stop offset="100%" stop-color="#3d52b8"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8e063" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#a8e063" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <circle cx="980" cy="220" r="260" fill="url(#glow)"/>
+  <circle cx="180" cy="1380" r="220" fill="#a8e063" opacity="0.12"/>
+  <circle cx="200" cy="300" r="90" fill="#a8e063" opacity="0.18"/>
+
+  <!-- Cadre papier -->
+  <rect x="120" y="280" width="960" height="720" rx="28" fill="#f3f5fa" opacity="0.08"/>
+  <rect x="160" y="320" width="880" height="640" rx="22" fill="#f3f5fa"/>
+
+  <!-- Schema stylise page / fleches / serveur -->
+  <rect x="220" y="420" width="280" height="360" rx="16" fill="#ffffff" stroke="#2a3a8f" stroke-width="4"/>
+  <rect x="220" y="420" width="280" height="56" rx="16" fill="#2a3a8f"/>
+  <rect x="220" y="460" width="280" height="16" fill="#2a3a8f"/>
+  <text x="360" y="458" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#a8e063" font-weight="700">Page</text>
+  <rect x="260" y="520" width="200" height="28" rx="6" fill="#e8edf8"/>
+  <rect x="260" y="570" width="160" height="28" rx="6" fill="#e8edf8"/>
+  <rect x="260" y="620" width="180" height="36" rx="8" fill="#a8e063"/>
+  <text x="350" y="645" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="700">Requete</text>
+
+  <line x1="520" y1="600" x2="620" y2="600" stroke="#2a3a8f" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="620,590 645,600 620,610" fill="#2a3a8f"/>
+
+  <rect x="660" y="450" width="300" height="300" rx="20" fill="#2a3a8f"/>
+  <circle cx="810" cy="560" r="48" fill="#3d52b8"/>
+  <rect x="780" y="610" width="60" height="80" rx="8" fill="#3d52b8"/>
+  <text x="810" y="720" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#a8e063" font-weight="700">Serveur</text>
+
+  <!-- Badges themes -->
+  <rect x="220" y="880" width="150" height="44" rx="12" fill="#2a3a8f"/>
+  <text x="295" y="908" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">JSON</text>
+  <rect x="390" y="880" width="150" height="44" rx="12" fill="#2a3a8f"/>
+  <text x="465" y="908" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">fetch</text>
+  <rect x="560" y="880" width="150" height="44" rx="12" fill="#2a3a8f"/>
+  <text x="635" y="908" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a8e063" font-weight="700">async</text>
+  <rect x="730" y="880" width="170" height="44" rx="12" fill="#a8e063"/>
+  <text x="815" y="908" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="700">modules</text>
+
+  <!-- Titre -->
+  <text x="600" y="1160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="64" fill="#f3f5fa" font-weight="700">JavaScript</text>
+  <text x="600" y="1240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="52" fill="#a8e063" font-weight="700">La suite</text>
+  <text x="600" y="1320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#f3f5fa" opacity="0.9">Formulaires, JSON, fetch, async, modules</text>
+  <text x="600" y="1420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="#a8e063" font-weight="700">DanielCraft</text>
+  <text x="600" y="1480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#f3f5fa" opacity="0.75">Formation intermediaire</text>
+</svg>

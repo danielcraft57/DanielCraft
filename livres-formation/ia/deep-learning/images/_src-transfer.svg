@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f5f7fb"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0b1b33" font-weight="700">Transfer learning</text>
+<rect x="100" y="120" width="350" height="180" rx="6" fill="#ffffff" stroke="#0b1b33" stroke-width="3"/>
+<text x="275" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0b1b33" font-weight="700">Modele preentraine</text>
+<rect x="520" y="120" width="380" height="180" rx="6" fill="#ff7a59" stroke="#0b1b33" stroke-width="3"/>
+<text x="710" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#0b1b33" font-weight="700">Adapter a ton cas</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">Reutiliser plutot que tout reconstruire.</text>
+</svg>

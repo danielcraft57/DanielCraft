@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f7f6"/>
+  <text x="500" y="44" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#264653" font-weight="700">4 phrases utiles</text>
+  <rect x="70" y="90" width="200" height="220" rx="14" fill="#264653"/>
+  <text x="170" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">1. besoin</text>
+  <rect x="290" y="90" width="200" height="220" rx="14" fill="#2a6f7a"/>
+  <text x="390" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">2. offre</text>
+  <rect x="510" y="90" width="200" height="220" rx="14" fill="#1d3557"/>
+  <text x="610" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#f4f1e8" font-weight="700">3. preuve</text>
+  <rect x="730" y="90" width="200" height="220" rx="14" fill="#e9c46a"/>
+  <text x="830" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2a32" font-weight="700">4. suite</text>
+  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6a72">Court. Concret. Lie au client.</text>
+</svg>

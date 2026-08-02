@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f5fa"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a3a8f" font-weight="700">Mini-projet : API � affichage</text>
+
+  <!-- Etape 1 API -->
+  <rect x="40" y="90" width="200" height="230" rx="14" fill="#2a3a8f"/>
+  <text x="140" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a8e063" font-weight="700">1. API</text>
+  <circle cx="140" cy="200" r="40" fill="#3d52b8"/>
+  <text x="140" y="206" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f3f5fa">JSON</text>
+  <text x="140" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#f3f5fa">donnees</text>
+  <text x="140" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#a8e063">externes</text>
+
+  <!-- Fleche -->
+  <defs>
+    <marker id="ap" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2a3a8f"/>
+    </marker>
+  </defs>
+  <line x1="255" y1="200" x2="310" y2="200" stroke="#2a3a8f" stroke-width="4" marker-end="url(#ap)"/>
+
+  <!-- Etape 2 JS -->
+  <rect x="320" y="90" width="200" height="230" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <text x="420" y="140" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">2. Script</text>
+  <text x="420" y="190" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#14182a">fetch</text>
+  <text x="420" y="220" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#14182a">await</text>
+  <text x="420" y="250" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#14182a">filtrer</text>
+  <text x="420" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#3d52b8">traiter</text>
+
+  <line x1="535" y1="200" x2="590" y2="200" stroke="#2a3a8f" stroke-width="4" marker-end="url(#ap)"/>
+
+  <!-- Etape 3 Affichage -->
+  <rect x="600" y="90" width="360" height="230" rx="14" fill="#ffffff" stroke="#a8e063" stroke-width="4"/>
+  <text x="780" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">3. Affichage</text>
+  <rect x="630" y="155" width="300" height="40" rx="8" fill="#f3f5fa"/>
+  <text x="780" y="181" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14182a">Liste des resultats</text>
+  <rect x="630" y="210" width="300" height="28" rx="6" fill="#a8e063"/>
+  <text x="780" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14182a">Ada  36 ans</text>
+  <rect x="630" y="250" width="300" height="28" rx="6" fill="#e8edf8"/>
+  <text x="780" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14182a">Bob  28 ans</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14182a">Recuperer, traiter, montrer : le cycle d'une vraie appli.</text>
+</svg>

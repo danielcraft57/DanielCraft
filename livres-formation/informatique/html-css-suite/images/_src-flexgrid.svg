@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef6f7"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0c4a5e" font-weight="700">Flex ou grille : deux outils, deux usages</text>
+
+  <!-- Flex -->
+  <rect x="30" y="70" width="450" height="280" rx="16" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="255" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0c4a5e" font-weight="700">Flexbox</text>
+  <text x="255" y="138" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">une direction (ligne ou colonne)</text>
+
+  <rect x="60" y="165" width="90" height="90" rx="10" fill="#0c4a5e"/>
+  <text x="105" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2dd4bf" font-weight="700">A</text>
+  <rect x="170" y="165" width="90" height="90" rx="10" fill="#2dd4bf"/>
+  <text x="215" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#123038" font-weight="700">B</text>
+  <rect x="280" y="165" width="90" height="90" rx="10" fill="#15657a"/>
+  <text x="325" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#eef6f7" font-weight="700">C</text>
+  <rect x="390" y="165" width="60" height="90" rx="10" fill="#d4e8ec" stroke="#0c4a5e" stroke-width="2"/>
+  <text x="420" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0c4a5e" font-weight="700">+</text>
+
+  <text x="255" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">Ideal : menus, barres, aligner</text>
+  <text x="255" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">des elements sur un axe</text>
+
+  <!-- Grid -->
+  <rect x="520" y="70" width="450" height="280" rx="16" fill="#ffffff" stroke="#0c4a5e" stroke-width="3"/>
+  <text x="745" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#0c4a5e" font-weight="700">Grille</text>
+  <text x="745" y="138" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#15657a">lignes et colonnes ensemble</text>
+
+  <rect x="555" y="165" width="175" height="50" rx="8" fill="#0c4a5e"/>
+  <text x="642" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2dd4bf" font-weight="700">Haut</text>
+  <rect x="745" y="165" width="195" height="50" rx="8" fill="#2dd4bf"/>
+  <text x="842" y="197" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038" font-weight="700">Haut</text>
+
+  <rect x="555" y="230" width="120" height="70" rx="8" fill="#15657a"/>
+  <text x="615" y="272" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#eef6f7" font-weight="700">Gauche</text>
+  <rect x="690" y="230" width="250" height="70" rx="8" fill="#0c4a5e"/>
+  <text x="815" y="272" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2dd4bf" font-weight="700">Zone large</text>
+
+  <text x="745" y="335" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#123038">Ideal : mise en page de page</text>
+
+  <text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#123038">Flex pour l'axe. Grille pour le plan. Souvent les deux ensemble.</text>
+</svg>

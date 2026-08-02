@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f5f7fb"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0b1b33" font-weight="700">CNN : voir des motifs</text>
+<rect x="100" y="110" width="250" height="200" rx="6" fill="#ffffff" stroke="#0b1b33" stroke-width="3"/>
+<text x="225" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Image</text>
+<text x="225" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">pixels</text>
+<rect x="380" y="110" width="250" height="200" rx="6" fill="#e8edf5" stroke="#0b1b33" stroke-width="3"/>
+<text x="505" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Filtres</text>
+<text x="505" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">locaux</text>
+<rect x="660" y="110" width="240" height="200" rx="6" fill="#ff7a59" stroke="#0b1b33" stroke-width="3"/>
+<text x="780" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Motifs</text>
+<text x="780" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0b1b33" font-weight="400">bord / texture</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">Ideal pour la vision.</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f8fafc"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0b1220" font-weight="700">Atelier pipeline</text>
+<rect x="60" y="160" width="170" height="140" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="145" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Lecture</text>
+<rect x="250" y="160" width="170" height="140" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="335" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">Prepare</text>
+<rect x="440" y="160" width="170" height="140" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="525" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Modele</text>
+<rect x="630" y="160" width="170" height="140" rx="6" fill="#ccfbf1" stroke="#2dd4bf" stroke-width="3"/>
+<text x="715" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f766e" font-weight="700">Score</text>
+<rect x="820" y="160" width="140" height="140" rx="6" fill="#ffffff" stroke="#0b1220" stroke-width="3"/>
+<text x="890" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1220" font-weight="700">Export</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Une seule chaine. Pas deux scripts qui divergent.</text>
+</svg>

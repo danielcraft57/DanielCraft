@@ -6,7 +6,7 @@
 <meta name="description" content="{{page_description}}">
 <meta name="keywords" content="{{page_keywords}}">
 <meta name="author" content="Loïc DANIEL">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="{{page_robots}}">
 <meta name="geo.region" content="FR-57">
 <meta name="geo.placename" content="Metz">
 <meta name="geo.position" content="49.1193;6.1757">
@@ -90,7 +90,9 @@
 <link rel="stylesheet" href="/assets/css/animations.css{{assets_query}}">
 <link rel="stylesheet" href="/assets/css/responsive.css{{assets_query}}">
 <link rel="stylesheet" href="/assets/css/prestations.css{{assets_query}}">
-{% if extra_css %}
+{% if extra_css_links %}
+{{extra_css_links}}
+{% elif extra_css %}
 <link rel="stylesheet" href="/assets/css/{{extra_css}}{{assets_query}}">
 {% endif %}
 
@@ -130,4 +132,50 @@
 
 <!-- Sitemap -->
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- OpenSearch : moteur site utilisable par navigateurs / Google -->
+<link rel="search" type="application/opensearchdescription+xml" title="DanielCraft Blog" href="/assets/opensearch-blog.xml">
+<link rel="search" type="application/opensearchdescription+xml" title="DanielCraft Offres" href="/assets/opensearch-offres.xml">
+
+{% if schema_type == 'home' %}
+<!-- Sitelinks Search Box Google : recherche blog via ?q= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DanielCraft",
+  "url": "{{site_base}}/",
+  "inLanguage": "fr-FR",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{site_base}}/blog/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %}
+
+{% if schema_type == 'prestations_catalog' %}
+<!-- SearchAction catalogue offres (deep-links ?q=) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DanielCraft Offres",
+  "url": "{{site_base}}/nos-offres",
+  "inLanguage": "fr-FR",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{site_base}}/nos-offres?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %}
 

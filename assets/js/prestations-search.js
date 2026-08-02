@@ -1,5 +1,5 @@
 /**
- * Recherche client-side — catalogue prestations (/prestations/)
+ * Recherche client-side — catalogue des offres (/nos-offres)
  * Mode filtre : grille plate dédoublonnée (sans catégories ni bloc « 3 offres »).
  */
 (function () {
@@ -91,12 +91,31 @@
     });
   }
 
+  function syncSearchUrl(raw) {
+    try {
+      const url = new URL(window.location.href);
+      const q = (raw || '').trim();
+      if (q.length > 0) {
+        url.searchParams.set('q', q);
+      } else {
+        url.searchParams.delete('q');
+      }
+      const next = url.pathname + url.search + url.hash;
+      if (next !== window.location.pathname + window.location.search + window.location.hash) {
+        window.history.replaceState(null, '', next);
+      }
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
   function applySearch() {
     const raw = input.value;
     const textTokens = tokensFromQuery(raw);
     const filtering = textTokens.length > 0;
     let visibleCount = 0;
 
+    syncSearchUrl(raw);
     page.classList.toggle('is-catalog-filtering', filtering);
 
     if (filtering) {
@@ -192,6 +211,14 @@
       input.focus();
     });
   });
+
+  const form = input.closest('form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      applySearch();
+    });
+  }
 
   document.addEventListener('keydown', (e) => {
     if (e.key === '/' && document.activeElement !== input && !/input|textarea|select/i.test((document.activeElement || {}).tagName || '')) {

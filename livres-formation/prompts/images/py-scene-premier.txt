@@ -1,0 +1,6 @@
+Illustration pedagogique Python bases - premier script.
+
+Scene flat : une developpeuse freelance devant un laptop. Sur l'ecran, un terminal avec "Salut Python" apres un print. Sensation de premiere victoire calme.
+
+Fond creme. Accents vert teal et ambre. Style flat illustration, friendly, pas infantile.
+Peu ou pas de texte. Si texte UI : FRANCAIS uniquement. Aucun mot anglais.

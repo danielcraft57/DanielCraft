@@ -1,0 +1,8 @@
+Couverture Kotlin Intermediaire - DanielCraft.
+
+Photo editorial realiste, qualite livre de formation.
+Bureau indigo nuit (#312e81) avec accents cyan (#22d3ee).
+Jeune developpeur·se Android/backend devant un laptop : ecran flou avec formes d'etats (chargement / ok / erreur) et une extension metaphorique (outil qui s'ajoute a une boite).
+Lumiere douce, plant, carnet.
+Pas de logo JetBrains/Android. Si texte UI : FRANCAIS uniquement ("Etat", "Donnees").
+Aucun mot anglais. 16:9, photorealiste editorial.

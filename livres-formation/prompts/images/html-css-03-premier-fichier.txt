@@ -1,0 +1,7 @@
+Illustration : un fichier index.html qui s'ouvre dans un navigateur.
+
+Style dessin vectoriel simple. Au centre, une fenetre de navigateur fictive (sans marque) affichant un gros titre "Salut !" et un paragraphe. Derriere ou a cote, une feuille de code stylisee avec des balises generiques (formes de chevrons, pas de vrai code lisible pour eviter le texte foireux).
+
+Couleurs : fond papier chaud, accents vert teal. Ambiance "premier succes". Clair, epure, pour debutants.
+
+IMPORTANT: Tout texte visible dans l'image doit etre en FRANCAIS. Aucun mot anglais.

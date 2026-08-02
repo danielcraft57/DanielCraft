@@ -1,0 +1,2 @@
+Illustration pedagogique HTML/CSS suite - grille de page.
+Scene flat : wireframe page avec en-tete, zones contenu. Fond creme, accents sage. Texte FR seulement.

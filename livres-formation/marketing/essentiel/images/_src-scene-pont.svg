@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Exemple : Lea pose le pont</text>
+<rect x="80" y="110" width="280" height="300" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="220" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1f1630" font-weight="700">Offre</text>
+<text x="220" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">site artisan</text>
+<text x="220" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">3 semaines</text>
+<text x="220" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">devis 48h</text>
+<line x1="360" y1="260" x2="440" y2="260" stroke="#e8a87c" stroke-width="4"/>
+<rect x="440" y="160" width="120" height="200" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1f1630" font-weight="700">Pont</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630" font-weight="400">clair</text>
+<line x1="560" y1="260" x2="640" y2="260" stroke="#e8a87c" stroke-width="4"/>
+<rect x="640" y="110" width="280" height="300" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="780" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a4a2a" font-weight="700">Cible</text>
+<text x="780" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#7a4a2a" font-weight="400">artisans locaux</text>
+<text x="780" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#7a4a2a" font-weight="400">besoin simple</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Sans pont, la pub ne fait que montrer le trou.</text>
+</svg>

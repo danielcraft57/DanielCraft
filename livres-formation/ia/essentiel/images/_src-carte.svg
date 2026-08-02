@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f1f5f9"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">IA - Les bases : la carte du livre</text>
+
+  <rect x="20" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <circle cx="92" cy="135" r="26" fill="#111827"/>
+  <text x="92" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7dd3fc" font-weight="700">1</text>
+  <text x="92" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Modele</text>
+  <text x="92" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">question</text>
+  <text x="92" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">reponse</text>
+
+  <rect x="180" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <circle cx="252" cy="135" r="26" fill="#111827"/>
+  <text x="252" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7dd3fc" font-weight="700">2</text>
+  <text x="252" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Prompts</text>
+  <text x="252" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">consigne</text>
+  <text x="252" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">claire</text>
+
+  <rect x="340" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <circle cx="412" cy="135" r="26" fill="#111827"/>
+  <text x="412" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7dd3fc" font-weight="700">3</text>
+  <text x="412" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Limites</text>
+  <text x="412" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">verifier</text>
+  <text x="412" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">toujours</text>
+
+  <rect x="500" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <circle cx="572" cy="135" r="26" fill="#111827"/>
+  <text x="572" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7dd3fc" font-weight="700">4</text>
+  <text x="572" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Outils</text>
+  <text x="572" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">ecrire</text>
+  <text x="572" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">resumer</text>
+
+  <rect x="660" y="85" width="145" height="230" rx="14" fill="#ffffff" stroke="#111827" stroke-width="3"/>
+  <circle cx="732" cy="135" r="26" fill="#111827"/>
+  <text x="732" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7dd3fc" font-weight="700">5</text>
+  <text x="732" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Ethique</text>
+  <text x="732" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">donnees</text>
+  <text x="732" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">respect</text>
+
+  <rect x="820" y="85" width="160" height="230" rx="14" fill="#7dd3fc" stroke="#111827" stroke-width="3"/>
+  <circle cx="900" cy="135" r="26" fill="#111827"/>
+  <text x="900" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7dd3fc" font-weight="700">6</text>
+  <text x="900" y="195" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Projet</text>
+  <text x="900" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">usage utile</text>
+  <text x="900" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0f172a">et verifie</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#475569"/>
+    </marker>
+  </defs>
+  <line x1="165" y1="200" x2="178" y2="200" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="325" y1="200" x2="338" y2="200" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="485" y1="200" x2="498" y2="200" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="645" y1="200" x2="658" y2="200" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="805" y1="200" x2="818" y2="200" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0f172a">L'IA est un outil. Toi, tu restes le pilote.</text>
+</svg>

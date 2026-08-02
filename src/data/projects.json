@@ -91,7 +91,7 @@
       "IA"
     ],
     "year": 2026,
-    "lastUpdate": "2025-09-19",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": true,
@@ -103,7 +103,7 @@
     "forks": 0,
     "language": "Python",
     "archived": false,
-    "pushed_at": "2025-09-19T17:47:35Z"
+    "pushed_at": "2026-02-07T14:20:12Z"
   },
   {
     "id": "cvletterassistant",
@@ -198,7 +198,7 @@
       "PHP"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -210,7 +210,7 @@
     "forks": 0,
     "language": "PHP",
     "archived": false,
-    "pushed_at": "2024-04-18T15:15:37Z"
+    "pushed_at": "2026-02-07T14:20:32Z"
   },
   {
     "id": "dispycluster",
@@ -224,7 +224,7 @@
       "Dispy"
     ],
     "year": 2026,
-    "lastUpdate": "2025-11-01",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": true,
@@ -236,7 +236,7 @@
     "forks": 0,
     "language": "Python",
     "archived": false,
-    "pushed_at": "2025-11-01T17:51:21Z"
+    "pushed_at": "2026-02-07T14:21:02Z"
   },
   {
     "id": "distributionjournaux",
@@ -249,7 +249,7 @@
       "MongoDB"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -261,7 +261,7 @@
     "forks": 0,
     "language": "JavaScript",
     "archived": false,
-    "pushed_at": "2024-04-18T14:08:15Z"
+    "pushed_at": "2026-02-07T14:21:34Z"
   },
   {
     "id": "dueldedame",
@@ -275,7 +275,7 @@
       "TypeScript"
     ],
     "year": 2026,
-    "lastUpdate": "2025-09-30",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": true,
@@ -287,7 +287,7 @@
     "forks": 0,
     "language": "TypeScript",
     "archived": false,
-    "pushed_at": "2025-09-30T03:18:20Z"
+    "pushed_at": "2026-02-07T14:17:49Z"
   },
   {
     "id": "dueldedame-legacy",
@@ -377,7 +377,7 @@
       "PHP"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -389,7 +389,7 @@
     "forks": 0,
     "language": "PHP",
     "archived": false,
-    "pushed_at": "2024-04-18T13:54:40Z"
+    "pushed_at": "2026-02-07T14:22:22Z"
   },
   {
     "id": "intellireply",
@@ -402,7 +402,7 @@
       "Flask"
     ],
     "year": 2026,
-    "lastUpdate": "2025-09-12",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -414,7 +414,7 @@
     "forks": 0,
     "language": "Python",
     "archived": false,
-    "pushed_at": "2025-09-12T00:06:42Z"
+    "pushed_at": "2026-02-07T14:22:45Z"
   },
   {
     "id": "jobhunter",
@@ -455,7 +455,7 @@
       "Flutter"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-20",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -467,7 +467,7 @@
     "forks": 0,
     "language": null,
     "archived": false,
-    "pushed_at": "2024-04-20T14:04:16Z"
+    "pushed_at": "2026-02-07T14:23:11Z"
   },
   {
     "id": "latelierdusavoir",
@@ -505,7 +505,7 @@
       "NFT"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": true,
@@ -517,7 +517,7 @@
     "forks": 0,
     "language": "TypeScript",
     "archived": false,
-    "pushed_at": "2024-04-18T15:21:53Z"
+    "pushed_at": "2026-02-07T14:23:35Z"
   },
   {
     "id": "photosshare",
@@ -530,7 +530,7 @@
       "JavaScript"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -542,7 +542,7 @@
     "forks": 0,
     "language": "JavaScript",
     "archived": false,
-    "pushed_at": "2024-04-18T14:55:33Z"
+    "pushed_at": "2026-02-07T14:24:04Z"
   },
   {
     "id": "quickbill",
@@ -581,7 +581,7 @@
       "MongoDB"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": true,
@@ -593,7 +593,7 @@
     "forks": 0,
     "language": "JavaScript",
     "archived": false,
-    "pushed_at": "2024-04-18T15:06:50Z"
+    "pushed_at": "2026-02-07T14:24:36Z"
   },
   {
     "id": "scalpel-numerique",
@@ -656,7 +656,7 @@
       "PHP"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -668,7 +668,7 @@
     "forks": 0,
     "language": "PHP",
     "archived": false,
-    "pushed_at": "2024-04-18T14:22:39Z"
+    "pushed_at": "2026-02-07T14:25:50Z"
   },
   {
     "id": "ticketcaisse",
@@ -682,7 +682,7 @@
       "OCR"
     ],
     "year": 2026,
-    "lastUpdate": "2025-09-17",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": true,
@@ -694,7 +694,7 @@
     "forks": 0,
     "language": "Dart",
     "archived": false,
-    "pushed_at": "2025-09-17T23:36:47Z"
+    "pushed_at": "2026-02-07T14:26:57Z"
   },
   {
     "id": "turfrace",
@@ -733,7 +733,7 @@
       "AngularJS"
     ],
     "year": 2026,
-    "lastUpdate": "2024-04-18",
+    "lastUpdate": "2026-02-07",
     "account": "loupix57",
     "status": "active",
     "featured": false,
@@ -745,126 +745,7 @@
     "forks": 0,
     "language": "Python",
     "archived": false,
-    "pushed_at": "2024-04-18T14:49:08Z"
-  },
-  {
-    "id": "dispy-cluster",
-    "slug": "dispy-cluster",
-    "title": "DispyCluster",
-    "description": "Système de clustering distribué pour le traitement de données.",
-    "category": "tools",
-    "technologies": [
-      "Python"
-    ],
-    "year": 2025,
-    "lastUpdate": "2025-11-01",
-    "account": "loupix",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "assets/images/projets/DispyCluster.jpg",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "duel-de-dame-loupix",
-    "slug": "duel-de-dame-loupix",
-    "title": "DuelDeDame",
-    "description": "Jeu de dame développé avec des patterns designs. Pour l'apprentissage.",
-    "category": "web",
-    "technologies": [
-      "TypeScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "2025-09-30",
-    "account": "loupix",
-    "status": "active",
-    "featured": true,
-    "licence": "MIT",
-    "imageUrl": "assets/images/projets/DuelDeDame.jpg",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "crypto-spread-edge",
-    "slug": "crypto-spread-edge",
-    "title": "CryptoSpreadEdge",
-    "description": "Système de trading crypto haute fréquence avec IA et déploiement Docker Swarm.",
-    "category": "specialized",
-    "technologies": [
-      "Python",
-      "IA",
-      "Docker Swarm"
-    ],
-    "year": 2025,
-    "lastUpdate": "2025-09-19",
-    "account": "loupix",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "assets/images/projets/CryptoSpreadEdge.jpg",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "ticket-caisse",
-    "slug": "ticket-caisse",
-    "title": "TicketCaisse",
-    "description": "Application mobile de gestion de caisse et tickets.",
-    "category": "mobile",
-    "technologies": [
-      "Dart",
-      "Flutter"
-    ],
-    "year": 2025,
-    "lastUpdate": "2025-09-17",
-    "account": "loupix",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "assets/images/projets/TicketCaisse.jpg",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "intelli-reply",
-    "slug": "intelli-reply",
-    "title": "IntelliReply",
-    "description": "Système intelligent de réponse automatique.",
-    "category": "tools",
-    "technologies": [
-      "Python",
-      "IA"
-    ],
-    "year": 2025,
-    "lastUpdate": "2025-09-12",
-    "account": "loupix",
-    "status": "active",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "assets/images/projets/IntelliReply.jpg",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
+    "pushed_at": "2026-02-07T14:50:10Z"
   },
   {
     "id": "torrent-sphere-app",
@@ -874,7 +755,7 @@
     "category": "tools",
     "technologies": [],
     "year": 2025,
-    "lastUpdate": "2025-09-01",
+    "lastUpdate": "Septembre 2025",
     "account": "loupix",
     "status": "active",
     "featured": false,
@@ -895,411 +776,14 @@
     "category": "specialized",
     "technologies": [],
     "year": 2025,
-    "lastUpdate": "2025-09-01",
-    "account": "loupix",
-    "status": "active",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "journaux-gestion",
-    "slug": "journaux-gestion",
-    "title": "Journaux Gestion",
-    "description": "Système de gestion de journaux.",
-    "category": "web",
-    "technologies": [],
-    "year": 2024,
-    "lastUpdate": "2024-04-20",
-    "account": "loupix",
-    "status": "archived",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "nft-et-crypto",
-    "slug": "nft-et-crypto",
-    "title": "NFT & Crypto",
-    "description": "Recherche en Contrat virtuel / NFT.",
-    "category": "specialized",
-    "technologies": [
-      "TypeScript",
-      "Blockchain",
-      "NFT"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "design-patterns",
-    "slug": "design-patterns",
-    "title": "Design Patterns",
-    "description": "Implémentation de patterns de conception en PHP.",
-    "category": "learning",
-    "technologies": [
-      "PHP"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "restauration",
-    "slug": "restauration",
-    "title": "Plateforme de Restauration",
-    "description": "Plateforme de restauration entièrement configurable / NoCode.",
-    "category": "web",
-    "technologies": [
-      "JavaScript"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "photos-share",
-    "slug": "photos-share",
-    "title": "Partage de Photos",
-    "description": "Partage de photos développé en ReactJs.",
-    "category": "web",
-    "technologies": [
-      "JavaScript",
-      "React"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "youtube-downloader",
-    "slug": "youtube-downloader",
-    "title": "YouTube Downloader",
-    "description": "Plateforme de téléchargement de vidéo.",
-    "category": "tools",
-    "technologies": [
-      "Python"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "taptapcar",
-    "slug": "taptapcar",
-    "title": "TapTapCar",
-    "description": "Logiciel de covoiturage.",
-    "category": "web",
-    "technologies": [
-      "PHP"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "distribution-journaux",
-    "slug": "distribution-journaux",
-    "title": "Distribution de Journaux",
-    "description": "Distribution de journaux dans le grand duché.",
-    "category": "web",
-    "technologies": [
-      "JavaScript"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "gestionnaire-evenements",
-    "slug": "gestionnaire-evenements",
-    "title": "Gestionnaire d'Événements",
-    "description": "Gestionnaire d'événement.",
-    "category": "web",
-    "technologies": [
-      "PHP"
-    ],
-    "year": 2024,
-    "lastUpdate": "2024-04-18",
-    "account": "loupix",
-    "status": "archived",
-    "featured": false,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "",
-    "github_url": "",
-    "stars": 0,
-    "forks": 0,
-    "archived": true,
-    "isFork": false
-  },
-  {
-    "id": "edu-connect",
-    "slug": "edu-connect",
-    "title": "EduConnect",
-    "description": "Plateforme éducative moderne pour enseignants - Gestion de classes, devoirs, ressources et plus encore.",
-    "category": "web",
-    "technologies": [
-      "TypeScript",
-      "Next.js"
-    ],
-    "year": 2025,
     "lastUpdate": "Septembre 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "MIT",
-    "imageUrl": "",
-    "repo": "likedevGit/EduConnect",
-    "github_url": "https://github.com/likedevGit/EduConnect",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "cv-letter-assistant",
-    "slug": "cv-letter-assistant",
-    "title": "CV & Letter Assistant",
-    "description": "Assistant pour la création de CV et lettres de motivation.",
-    "category": "tools",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "Septembre 2025",
-    "account": "likedevGit",
+    "account": "loupix",
     "status": "active",
     "featured": false,
     "licence": "",
     "imageUrl": "",
-    "repo": "likedevGit/CvLetterAssistant",
-    "github_url": "https://github.com/likedevGit/CvLetterAssistant",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "delivery-track",
-    "slug": "delivery-track",
-    "title": "DeliveryTrack",
-    "description": "Application de suivi de livraisons avec thème Speed & Efficiency - Interface moderne, graphiques interactifs et animations avancées.",
-    "category": "web",
-    "technologies": [
-      "TypeScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "Août 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "likedevGit/DeliveryTrack",
-    "github_url": "https://github.com/likedevGit/DeliveryTrack",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "client-crm",
-    "slug": "client-crm",
-    "title": "ClientCRM",
-    "description": "CRM simple et modulaire pour PME - Next.js, TypeScript, Tailwind.",
-    "category": "web",
-    "technologies": [
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS"
-    ],
-    "year": 2025,
-    "lastUpdate": "Août 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "likedevGit/ClientCRM",
-    "github_url": "https://github.com/likedevGit/ClientCRM",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "duel-de-dame-likedev",
-    "slug": "duel-de-dame-likedev",
-    "title": "DuelDeDame",
-    "description": "Jeu de dame développé avec des patterns designs. Pour l'apprentissage.",
-    "category": "web",
-    "technologies": [
-      "TypeScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "Août 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "MIT",
-    "imageUrl": "",
-    "repo": "likedevGit/DuelDeDame",
-    "github_url": "https://github.com/likedevGit/DuelDeDame",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "l-atelier-du-savoir",
-    "slug": "l-atelier-du-savoir",
-    "title": "L'Atelier du Savoir",
-    "description": "Échange et vente de cours, formations et tests en ligne.",
-    "category": "web",
-    "technologies": [
-      "JavaScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "Août 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "likedevGit/LAtelierDuSavoir",
-    "github_url": "https://github.com/likedevGit/LAtelierDuSavoir",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "quick-bill",
-    "slug": "quick-bill",
-    "title": "QuickBill",
-    "description": "Gestionnaire de factures scannés, de rapports et analyses.",
-    "category": "web",
-    "technologies": [
-      "TypeScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "Août 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "likedevGit/QuickBill",
-    "github_url": "https://github.com/likedevGit/QuickBill",
-    "stars": 0,
-    "forks": 0,
-    "archived": false,
-    "isFork": false
-  },
-  {
-    "id": "social-care-hub",
-    "slug": "social-care-hub",
-    "title": "SocialCare Hub",
-    "description": "Regroupement de services sociaux sur une seule plate-forme.",
-    "category": "web",
-    "technologies": [
-      "TypeScript"
-    ],
-    "year": 2025,
-    "lastUpdate": "Août 2025",
-    "account": "likedevGit",
-    "status": "active",
-    "featured": true,
-    "licence": "",
-    "imageUrl": "",
-    "repo": "likedevGit/SocialCare-Hub",
-    "github_url": "https://github.com/likedevGit/SocialCare-Hub",
+    "repo": "",
+    "github_url": "",
     "stars": 0,
     "forks": 0,
     "archived": false,

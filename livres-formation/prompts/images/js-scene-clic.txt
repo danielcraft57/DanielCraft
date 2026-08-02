@@ -1,0 +1,5 @@
+Illustration pedagogique JS bases - reagir au clic.
+
+Scene flat : fenetre navigateur stylisee avec un gros bouton et un paragraphe. Fleche courbe du clic souris vers une petite note JS. La page change apres le clic.
+
+Fond creme. Accents teal et ambre. Flat, friendly. Texte UI en FRANCAIS seulement (ex. "Clique-moi"). Aucun mot anglais.

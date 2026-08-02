@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f7f4f2"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Mini-projet : le parcours</text>
+<rect x="60" y="140" width="160" height="160" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="140" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2b2d42" font-weight="700">init</text>
+<rect x="250" y="140" width="160" height="160" rx="14" fill="#e8e6f0" stroke="#2b2d42" stroke-width="3"/>
+<text x="330" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2b2d42" font-weight="700">commit</text>
+<rect x="440" y="140" width="160" height="160" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="520" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2b2d42" font-weight="700">branche</text>
+<rect x="630" y="140" width="160" height="160" rx="14" fill="#ef476f" stroke="#2b2d42" stroke-width="3"/>
+<text x="710" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2b2d42" font-weight="700">push</text>
+<text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c5c66" font-weight="400">Petit, clair, testable.</text>
+</svg>

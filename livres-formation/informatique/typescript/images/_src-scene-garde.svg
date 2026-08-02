@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#f1f5f9"/>
+<rect x="80" y="80" width="840" height="400" rx="4" fill="#dbeafe" stroke="#0f172a" stroke-width="3"/>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" font-weight="700">Scene : Lea et le garde-fou TS</text>
+<text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#64748b" font-weight="400">Placeholder pedagogique</text>
+<text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#64748b" font-weight="400">DanielCraft TypeScript</text>
+</svg>

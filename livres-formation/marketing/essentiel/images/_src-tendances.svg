@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">2026 : vague utile, fond intact</text>
+<rect x="70" y="130" width="200" height="220" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="170" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Video</text>
+<text x="170" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#e8a87c" font-weight="400">courte</text>
+<rect x="290" y="130" width="200" height="220" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="390" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f1630" font-weight="700">Confiance</text>
+<text x="390" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a4d6a" font-weight="400">preuves</text>
+<rect x="510" y="130" width="200" height="220" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="610" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a4a2a" font-weight="700">IA utile</text>
+<text x="610" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a4a2a" font-weight="400">puis relire</text>
+<rect x="730" y="130" width="200" height="220" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="830" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630" font-weight="700">Communaute</text>
+<text x="830" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f1630" font-weight="400">petits groupes</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Une tendance tenue bat cinq tendances abandonnees.</text>
+</svg>

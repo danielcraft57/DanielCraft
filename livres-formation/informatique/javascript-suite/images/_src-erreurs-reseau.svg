@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Deux publics : utilisateur et toi</text>
+<rect x="100" y="120" width="360" height="240" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="280" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2a3a8f" font-weight="700">Utilisateur</text>
+<text x="280" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="400">Message simple</text>
+<text x="280" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">Que faire ?</text>
+<rect x="540" y="120" width="360" height="240" rx="14" fill="#e8ecf8" stroke="#2a3a8f" stroke-width="3"/>
+<text x="720" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2a3a8f" font-weight="700">Developpeur</text>
+<text x="720" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="400">Details console</text>
+<text x="720" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">Pourquoi ?</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">Ne montre jamais le stack trace au visiteur.</text>
+</svg>

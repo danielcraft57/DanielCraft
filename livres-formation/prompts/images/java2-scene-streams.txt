@@ -1,0 +1,8 @@
+Scene pedagogique Java Intermediaire - streams.
+
+Photo editorial realiste.
+Max (jeune homme, casual) devant un ecran large : flux visuel de cartes qui passent dans un filtre puis un transformateur puis une boite resultat.
+Fleches douces, ambiance usine miniature claire sur le bureau.
+Palette teal #0f4c5c + cuivre #d97706.
+Texte UI FRANCAIS uniquement si visible : "filtrer", "transformer", "resultat".
+Aucun anglais, pas de logo. 16:9, photorealiste editorial.

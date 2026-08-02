@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Listes ou tableau ?</text>
+  <rect x="60" y="110" width="280" height="300" rx="14" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="200" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">ul</text>
+  <text x="200" y="296" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">ordre libre</text>
+  <rect x="360" y="110" width="280" height="300" rx="14" fill="#fff4d6" stroke="#7a6410" stroke-width="3"/>
+  <text x="500" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a6410" font-weight="700">ol</text>
+  <text x="500" y="296" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">etapes numerotees</text>
+  <rect x="660" y="110" width="280" height="300" rx="14" fill="#cfe3f5" stroke="#2f5678" stroke-width="3"/>
+  <text x="800" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2f5678" font-weight="700">table</text>
+  <text x="800" y="296" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3d5248">donnees croisees</text>
+
+</svg>

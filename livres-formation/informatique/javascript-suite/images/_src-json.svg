@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f5fa"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a3a8f" font-weight="700">Objet JavaScript � texte JSON</text>
+
+  <!-- Objet -->
+  <rect x="50" y="80" width="360" height="280" rx="16" fill="#2a3a8f"/>
+  <text x="230" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">Objet en memoire</text>
+  <text x="80" y="175" font-family="Consolas, monospace" font-size="18" fill="#f3f5fa">{</text>
+  <text x="100" y="215" font-family="Consolas, monospace" font-size="17" fill="#a8e063">nom :</text>
+  <text x="170" y="215" font-family="Consolas, monospace" font-size="17" fill="#f3f5fa">"Ada"</text>
+  <text x="100" y="255" font-family="Consolas, monospace" font-size="17" fill="#a8e063">age :</text>
+  <text x="170" y="255" font-family="Consolas, monospace" font-size="17" fill="#f3f5fa">36</text>
+  <text x="100" y="295" font-family="Consolas, monospace" font-size="17" fill="#a8e063">actif :</text>
+  <text x="180" y="295" font-family="Consolas, monospace" font-size="17" fill="#f3f5fa">vrai</text>
+  <text x="80" y="335" font-family="Consolas, monospace" font-size="18" fill="#f3f5fa">}</text>
+
+  <!-- Fleche -->
+  <defs>
+    <marker id="aj" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2a3a8f"/>
+    </marker>
+  </defs>
+  <line x1="430" y1="210" x2="530" y2="210" stroke="#2a3a8f" stroke-width="5" marker-end="url(#aj)"/>
+  <text x="480" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8" font-weight="700">stringify</text>
+
+  <!-- JSON texte -->
+  <rect x="550" y="80" width="400" height="280" rx="16" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <rect x="550" y="80" width="400" height="44" rx="16" fill="#a8e063"/>
+  <rect x="550" y="108" width="400" height="16" fill="#a8e063"/>
+  <text x="750" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14182a" font-weight="700">Texte JSON</text>
+  <text x="580" y="175" font-family="Consolas, monospace" font-size="17" fill="#14182a">{</text>
+  <text x="600" y="215" font-family="Consolas, monospace" font-size="16" fill="#2a3a8f">"nom": "Ada",</text>
+  <text x="600" y="255" font-family="Consolas, monospace" font-size="16" fill="#2a3a8f">"age": 36,</text>
+  <text x="600" y="295" font-family="Consolas, monospace" font-size="16" fill="#2a3a8f">"actif": true</text>
+  <text x="580" y="335" font-family="Consolas, monospace" font-size="17" fill="#14182a">}</text>
+</svg>

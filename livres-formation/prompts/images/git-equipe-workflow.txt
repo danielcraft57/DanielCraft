@@ -1,0 +1,1 @@
+Schema pedagogique francais : flux d'equipe Git (tirer, branche, pousser, revue, fusion). Couleurs midnight et ambre. Texte visible en francais uniquement.

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Exemple : Julie traverse le parcours</text>
+<rect x="50" y="140" width="160" height="200" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="130" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630" font-weight="700">Voit</text>
+<text x="130" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5a4d6a" font-weight="400">3 exercices</text>
+<rect x="230" y="140" width="160" height="200" rx="14" fill="#ffffff" stroke="#3d2c5e" stroke-width="3"/>
+<text x="310" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630" font-weight="700">Lit</text>
+<text x="310" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5a4d6a" font-weight="400">un avis</text>
+<rect x="410" y="140" width="160" height="200" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="490" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4a2a" font-weight="700">DM</text>
+<text x="490" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7a4a2a" font-weight="400">reponse claire</text>
+<rect x="590" y="140" width="160" height="200" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="670" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Reserve</text>
+<text x="670" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#e8a87c" font-weight="400">lien OK</text>
+<rect x="770" y="140" width="180" height="200" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="860" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f1630" font-weight="700">Revient</text>
+<text x="860" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1f1630" font-weight="400">+ amie</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Sam verifie chaque porte avant d'amener du monde.</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5a4d6a" font-weight="400">Friction enlevee = oui plus facile.</text>
+</svg>

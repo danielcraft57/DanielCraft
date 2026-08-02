@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f2f4f8"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2c4a6e" font-weight="700">Toi - Python - Ordinateur</text>
+  <rect x="80" y="140" width="220" height="220" rx="16" fill="#e07a3d"/>
+  <text x="190" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#fff" font-weight="700">TOI</text>
+  <rect x="390" y="140" width="220" height="220" rx="16" fill="#2c4a6e"/>
+  <text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#fff" font-weight="700">PYTHON</text>
+  <rect x="700" y="140" width="220" height="220" rx="16" fill="#1e293b"/>
+  <text x="810" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#e8eef6" font-weight="700">ORDI</text>
+  <text x="500" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#4a5568">Tu ecris. Python traduit. L'ordinateur execute.</text>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "schema_type": "livres_catalog",
+  "page_title": "Livres de formation PDF — catalogue DanielCraft",
+  "page_description": "Livres de formation PDF à prix d'appel : informatique, IA, finance, commerce, marketing. Recherche par thème ou mot-clé. Metz & en ligne.",
+  "page_keywords": "livres formation PDF, apprendre javascript, python debutant, SQL, IA bases, finance, DanielCraft",
+  "output_subpath": "livres/index.html",
+  "page_url": "/livres/",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "extra_css": "prestations-search.css,livres.css",
+  "page_scripts": ["main.js", "livres-search.js", "prestations-wow.js"]
+}

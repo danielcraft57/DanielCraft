@@ -1,0 +1,11 @@
+Schema Flexbox pour debutants.
+
+Un grand rectangle parent (conteneur) avec 3 petits rectangles enfants alignes horizontalement, espaces reguliers (gap).
+
+Petite variante en dessous : les memes 3 enfants empiles en colonne.
+
+Fleches legeres pour montrer justify-content (axe horizontal) et align-items (axe vertical) sur le schema du haut.
+
+Style infographie plate, couleurs teal / sable / corail doux. Pas de jargon ecrit dans l'image. Clair, geometrique, friendly.
+
+IMPORTANT: Labels uniquement en FRANCAIS (ex: MARGE, BORDURE, CONTENU, CONTENEUR, Grand ecran, Telephone). Aucun mot anglais.

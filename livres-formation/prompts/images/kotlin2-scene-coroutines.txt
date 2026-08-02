@@ -1,0 +1,7 @@
+Scene pedagogique Kotlin Intermediaire - coroutines / flux.
+
+Photo editorial realiste.
+Max observe un sablier / file d'attente douce a cote d'un ecran : plusieurs taches legeres qui avancent sans bloquer (metaphore concurrence structuree), cafe a cote.
+Palette indigo #312e81 + cyan #22d3ee, ambiance calme open-space.
+Texte FRANCAIS uniquement si visible : "attente", "suite".
+Aucun anglais, pas de logo. 16:9, photorealiste editorial.

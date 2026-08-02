@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f2f8"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1f1630" font-weight="700">Budget : 70 / 20 / 10</text>
+<rect x="80" y="130" width="280" height="240" rx="14" fill="#3d2c5e" stroke="#3d2c5e" stroke-width="3"/>
+<text x="220" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#fff" font-weight="700">70%</text>
+<text x="220" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#e8a87c" font-weight="400">clarte + contenu</text>
+<rect x="380" y="130" width="260" height="240" rx="14" fill="#f3e6d8" stroke="#e8a87c" stroke-width="3"/>
+<text x="510" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#7a4a2a" font-weight="700">20%</text>
+<text x="510" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#7a4a2a" font-weight="400">outils utiles</text>
+<rect x="660" y="130" width="260" height="240" rx="14" fill="#e8a87c" stroke="#e8a87c" stroke-width="3"/>
+<text x="790" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#1f1630" font-weight="700">10%</text>
+<text x="790" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1f1630" font-weight="400">tests pubs</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a4d6a" font-weight="400">Clarte d'abord. Argent ensuite.</text>
+</svg>

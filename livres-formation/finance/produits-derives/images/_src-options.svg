@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#eef3f0"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1b3a2f" font-weight="700">Options : call et put</text>
+<rect x="80" y="110" width="400" height="220" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+<text x="280" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1b3a2f" font-weight="700">CALL</text>
+<text x="280" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">droit d'acheter a K</text>
+<text x="280" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">payoff = max(S-K, 0)</text>
+<text x="280" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45" font-weight="400">- prime</text>
+<rect x="520" y="110" width="400" height="220" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+<text x="720" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1b3a2f" font-weight="700">PUT</text>
+<text x="720" y="215" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="400">droit de vendre a K</text>
+<text x="720" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="400">payoff = max(K-S, 0)</text>
+<text x="720" y="295" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="400">- prime</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#2d5a45" font-weight="400">Droit pour l'acheteur, obligation pour le vendeur.</text>
+</svg>

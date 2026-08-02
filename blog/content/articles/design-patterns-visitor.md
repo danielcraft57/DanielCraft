@@ -18,7 +18,7 @@ series_order: 23
 
 **Famille :** Comportemental · **Série :** Design Patterns GoF · **Article 23/24** · **Popularité :** #22 sur 23
 
-Visitor ajoute des opérations sur une hiérarchie sans la modifier.
+Visitor te permet d'**ajouter une opération** sur une famille d'objets (souvent une hiérarchie stable) **sans modifier** le code de chaque classe — l'opération vit dans le visiteur.
 
 ---
 
@@ -30,42 +30,58 @@ Visitor ajoute des opérations sur une hiérarchie sans la modifier.
 
 ## Le problème sans ce pattern
 
-Ajouter `exportPdf` sur 15 types de nœuds AST.
+Tu as un AST (arbre syntaxique) ou un document : `Heading`, `Paragraph`, `Image`… Tu veux `exportPdf`, puis `exportHtml`, puis `compterMots`. Sans Visitor, tu ajoutes une méthode sur **chaque** classe à chaque nouvelle opération. Les fichiers métier gonflent ; Open/Closed souffre.
 
-### Code qui sent le besoin de Visitor
-
-Le client contient trop de détails ; extrais les rôles du schéma.
+Le `switch (node.type)` dispersé pose le même problème sous une autre forme : chaque opération recopie la liste des types, et TypeScript / le compilateur ne te sauvent que si tu as une union discriminée bien typée. Visitor (ou son équivalent exhaustif) centralise cette liste *par opération*.
 
 ### Symptômes dans ton code
 
-- Fichiers qui grossissent à chaque nouvelle variante.
-- Tests difficiles : trop de mocks ou d'effets de bord cachés.
-- Tu as peur de toucher une classe car « tout dépend de tout ».
+- Quinze classes touchées pour une seule feature « export ».
+- Gros `switch (node.type)` dispersés et incomplets.
+- Logique d'affichage / export / analyse mélangée dans les nœuds.
+- Peur d'ajouter un type : il faudrait mettre à jour toutes les opérations.
 
 ---
 
 ## L'idée du pattern Visitor
 
-`accept(visitor)` double dispatch.
+Double dispatch classique : l'élément appelle `visitor.visitX(this)`, le visiteur implémente `visitHeading`, `visitParagraph`, etc.
 
 | Rôle | Responsabilité |
 |------|----------------|
-| **Client** | Déclenche l'opération |
-| **Visitor** | Structure centrale |
-| **Collaborateurs** | Implémentations ou états |
+| **Element** | `accept(visitor)` |
+| **ConcreteElement** | Délègue au bon `visit…` |
+| **Visitor** | Interface des opérations par type |
+| **ConcreteVisitor** | Export PDF, stats, validation… |
+
+Les éléments restent « bêtes » (structure) ; les visiteurs portent le comportement transversal. C'est l'inverse du réflexe junior « j'ajoute une méthode sur la classe » : ici, tu assumes que la famille de types bouge peu, et que ce sont les *actions* (export, stats, lint) qui se multiplient.
 
 ### Analogie du quotidien
 
-Plusieurs experts inspectent le même bâtiment.
+Un **immeuble** inspecté par plusieurs experts : l'électricien, le plombier, le contrôleur incendie. Le bâtiment (hiérarchie de pièces) ne change pas. Chaque expert (Visitor) parcourt les mêmes pièces mais fait un métier différent. Tu ajoutes un expert acoustique sans reconstruire l'immeuble.
 
 ---
 
-## Exemple complet en TypeScript
+## Exemple en TypeScript
 
 ```typescript
 interface DocVisitor {
   visitHeading(text: string): void;
   visitParagraph(text: string): void;
+}
+
+interface DocNode {
+  accept(v: DocVisitor): void;
+}
+
+class Heading implements DocNode {
+  constructor(public text: string) {}
+  accept(v: DocVisitor) { v.visitHeading(this.text); }
+}
+
+class Paragraph implements DocNode {
+  constructor(public text: string) {}
+  accept(v: DocVisitor) { v.visitParagraph(this.text); }
 }
 
 class MarkdownVisitor implements DocVisitor {
@@ -74,110 +90,102 @@ class MarkdownVisitor implements DocVisitor {
   visitParagraph(t: string) { this.out.push(t); }
   result() { return this.out.join('\n\n'); }
 }
+
+const doc: DocNode[] = [new Heading('Salut'), new Paragraph('Monde')];
+const md = new MarkdownVisitor();
+for (const node of doc) node.accept(md);
+console.log(md.result());
 ```
 
-### Ce qu'il faut retenir du code
+Pour un export HTML, tu ajoutes `HtmlVisitor` — sans retoucher `Heading` / `Paragraph`.
 
-- Le **client** dépend d'abstractions, pas de détails partout.
-- Chaque nouvelle variante = **nouvelle classe** (ou module), pas un `if` de plus.
-- Nomme tes types pour le **métier** (noms métier explicites, pas `Strategy1`).
-
----
-
-## Exemple en Python
+### Version Python minimale
 
 ```python
-# Visitor — reproduis les classes TypeScript avec dataclasses / ABC
+class MarkdownVisitor:
+    def __init__(self) -> None:
+        self.out: list[str] = []
+
+    def visit_heading(self, text: str) -> None:
+        self.out.append(f"# {text}")
+
+    def visit_paragraph(self, text: str) -> None:
+        self.out.append(text)
 ```
+
+(En Python, on utilise souvent `functools.singledispatch` ou un `match` sur des dataclasses — l'esprit reste « opération hors des nœuds ».)
 
 ---
 
 ## Quand utiliser Visitor
 
-- Plusieurs variantes ou étapes.
-- Équipe qui doit nommer la solution en review.
-
----
+- Hiérarchie d'éléments **stable**, opérations **nombreuses** et changeantes.
+- Compilateurs, outils d'analyse, exports multiples, reporting.
+- Tu veux centraliser une opération transversale.
 
 ## Quand ne pas utiliser Visitor
 
-- Script jetable.
-- Un seul `if` stable.
+- Tu ajoutes souvent de **nouveaux types** d'éléments → chaque Visitor explose.
+- Une seule opération simple : une méthode sur la classe suffit.
+- Équipe junior + pattern trop cérébral pour le gain.
 
 ---
 
 ## Erreurs fréquentes des juniors
 
-- Sur-ingénierie.
-- Nom du pattern sans problème associé.
+- Oublier `accept` → plus de double dispatch, juste des `if`.
+- Visiteur god-object qui fait dix métiers.
+- Muter l'arbre pendant la visite sans règles.
+- Confondre avec **Iterator** (parcours) : Visitor = *quoi faire* sur chaque type.
 
 ---
 
 ## Patterns proches
 
-- **Voir série** : Articles patterns proches
+- **Iterator** : parcourt ; Visitor *opère* en parcourant.
+- **Strategy** : algorithme interchangeable pour *un* contexte, pas une famille de types.
+- **Composite** : souvent visité (arbres UI / documents).
 
 ---
 
 ## Dans le monde réel
 
-Repère Visitor dans un framework que tu utilises (doc ou source).
+Compilateurs (visiteurs de typage, codegen), ESLint/AST browsers, serializers, outils de doc. En TypeScript, un `switch` exhaustif sur une union discriminée est parfois un « Visitor léger » sans classes.
+
+Exemple concret : un outil interne qui parcourt ton catalogue produits (`Simple`, `Bundle`, `Subscription`) pour générer un flux XML marketplace, puis un autre visiteur pour un export comptable. Les classes produit restent stables ; chaque nouveau canal d'export = un nouveau visiteur, pas une invasion de méthodes `toXml` / `toLedger` dans le domaine.
 
 ---
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Visitor aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Rare — plutôt pour montrer que tu connais Open/Closed sur les opérations.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Visitor te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non — les libs d'AST l'utilisent déjà.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
-
----
-
-## Mini test unitaire (idée)
-
-```typescript
-// Exemple de test : mocke les collaborateurs, vérifie le comportement public
-describe('Visitor', () => {
-  it('fonctionne avec une variante', () => {
-    // Arrange → Act → Assert
-  });
-});
-```
-
-Adapte ce squelette à ton framework (Jest, Vitest, pytest).
-
----
-
-## Pas à pas : implémenter en 5 étapes
-
-1. **Nomme le problème** — est-ce vraiment Visitor ?
-2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
-3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Visitor parce que… ».
+**Je dois tout refactoriser ?** Non — introduis Visitor quand la 3ᵉ opération force à toucher toutes les classes.
 
 ---
 
 ## Checklist code review
 
-- [ ] Le client ne dépend pas de classes concrètes inutiles
-- [ ] Pas de sur-abstraction sur un cas unique
-- [ ] Tests sur chaque variante / handler / état
-- [ ] Nommage métier clair
+- [ ] Chaque élément a un `accept` cohérent
+- [ ] Nouveaux visiteurs n'exigent pas de modifier les éléments
+- [ ] Types d'éléments peu fréquents à étendre (sinon autre design)
+- [ ] Tests par visiteur (export, stats…)
 
 ---
 
 ## Exercice pratique (25–35 min)
 
-Cartographie un module de ton projet : pourrait-il devenir Visitor ?
+Modélise `Heading` + `Paragraph`. Écris un visiteur Markdown et un visiteur « compteur de mots ». Ajoute un nœud `Image` et constate ce qu'il faut mettre à jour (spoiler : tous les visiteurs).
 
 ---
 
 ## Résumé
 
-Visitor : Visitor ajoute des opérations sur une hiérarchie sans la modifier.
+- Visitor = nouvel expert qui inspecte sans reconstruire le bâtiment.
+- Idéal si les **types sont stables** et les **opérations bougent**.
+- Coût : ajouter un type d'élément touche tous les visiteurs.
 
 ---
 

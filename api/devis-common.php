@@ -204,7 +204,7 @@ function devis_issue_from_input(array $input): array
 
     $serviceSlug = devis_clean_field((string) ($input['service_slug'] ?? $input['service'] ?? ''), 80);
     $prestationSlug = devis_clean_field((string) ($input['prestation_slug'] ?? ''), 80);
-    $sourcePath = devis_clean_field((string) ($input['source_path'] ?? '/prestations/'), 120);
+    $sourcePath = devis_clean_field((string) ($input['source_path'] ?? '/nos-offres'), 120);
 
     $vitrineSlug = devis_clean_field((string) ($input['vitrine_slug'] ?? ''), 80);
     $vitrineTitle = devis_clean_field((string) ($input['vitrine_title'] ?? ''), 220);

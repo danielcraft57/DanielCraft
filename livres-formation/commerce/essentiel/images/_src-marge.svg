@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f7f6"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#264653" font-weight="700">Prix - couts = marge</text>
+  <rect x="80" y="120" width="240" height="160" rx="14" fill="#264653"/>
+  <text x="200" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">prix</text>
+  <text x="350" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#264653" font-weight="700">-</text>
+  <rect x="400" y="120" width="240" height="160" rx="14" fill="#2a6f7a"/>
+  <text x="520" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">couts</text>
+  <text x="670" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#264653" font-weight="700">=</text>
+  <rect x="720" y="120" width="220" height="160" rx="14" fill="#e9c46a"/>
+  <text x="830" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a2a32" font-weight="700">marge</text>
+  <text x="500" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6a72">Sans marge, tu ne tiens pas longtemps.</text>
+</svg>

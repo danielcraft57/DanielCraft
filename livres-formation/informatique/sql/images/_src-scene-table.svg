@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#f3f6f2"/>
+<rect x="80" y="80" width="840" height="400" rx="4" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">Scene : Lea lit une table</text>
+<text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Placeholder pedagogique</text>
+<text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">DanielCraft SQL</text>
+</svg>

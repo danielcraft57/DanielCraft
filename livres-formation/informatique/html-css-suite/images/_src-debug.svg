@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460">
+<rect width="1000" height="460" fill="#f3f0ea"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2c2118" font-weight="700">Deboguer le CSS</text>
+<rect x="120" y="100" width="760" height="280" rx="14" fill="#ffffff" stroke="#2c2118" stroke-width="3"/>
+<text x="500" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2c2118" font-weight="700">Inspecteur (F12)</text>
+<text x="500" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4a3b2e" font-weight="400">1. element  2. regles  3. qui gagne</text>
+<text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#4a3b2e" font-weight="400">barre une regle, teste, recommence</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#4a3b2e" font-weight="400">La cascade se lit mieux a l'ecran qu'en theorie.</text>
+</svg>

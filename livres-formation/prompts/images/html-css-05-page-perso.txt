@@ -1,0 +1,7 @@
+# Prompts supplementaires - page perso
+
+Illustration d'une mini page personnelle sur un ecran d'ordinateur portable.
+
+On voit un header vert, une photo carree arrondie, une liste a puces, et un petit formulaire en bas. Style mockup clean, couleurs teal / creme / or doux. Pas de marque de navigateur. Pas de texte illisible : utiliser des barres grises pour simuler le texte si besoin. Ambiance "projet termine, fierte tranquille".
+
+IMPORTANT: Tout texte visible dans l'image doit etre en FRANCAIS. Aucun mot anglais.

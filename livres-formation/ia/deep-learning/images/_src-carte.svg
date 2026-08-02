@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f5f7fb"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#0b1b33" font-weight="700">Deep learning : plusieurs couches</text>
+<rect x="80" y="110" width="200" height="200" rx="6" fill="#ffffff" stroke="#0b1b33" stroke-width="3"/>
+<text x="180" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Entree</text>
+<text x="180" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">donnees</text>
+<rect x="300" y="110" width="200" height="200" rx="6" fill="#e8edf5" stroke="#0b1b33" stroke-width="3"/>
+<text x="400" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Couches</text>
+<text x="400" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">profondeur</text>
+<rect x="520" y="110" width="200" height="200" rx="6" fill="#ffe4de" stroke="#0b1b33" stroke-width="3"/>
+<text x="620" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Motifs</text>
+<text x="620" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#64748b" font-weight="400">appris</text>
+<rect x="740" y="110" width="180" height="200" rx="6" fill="#ff7a59" stroke="#0b1b33" stroke-width="3"/>
+<text x="830" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#0b1b33" font-weight="700">Sortie</text>
+<text x="830" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#0b1b33" font-weight="400">decision</text>
+<text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#64748b" font-weight="400">Empiler pour apprendre des representations.</text>
+</svg>

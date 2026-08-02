@@ -1,0 +1,12 @@
+Schema illustration flat pour chapitre "Persona / cible" - livre marketing DanielCraft.
+
+Style : boites arrondies, fleches simples, fond papier #f6f2f8, bandes violet #3d2c5e, accents peche #e8a87c, texte encre #1f1630.
+
+Contenu visuel (labels FR lisibles) :
+- Boite centrale "Persona : Sophie, 34 ans"
+- Autour : "Probleme", "Peur", "Canal prefere", "Declencheur confiance"
+- Fleches reliant le persona aux quatre elements.
+
+Pas de photo. Pas d'anglais. Format paysage ~1000x420, lisible en petit dans un PDF.
+
+IMPORTANT: Tout texte en FRANCAIS.

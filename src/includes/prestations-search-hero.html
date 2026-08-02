@@ -1,4 +1,4 @@
-<section class="prestations-search-hero prestations-search-hero--wow" aria-label="Rechercher une prestation">
+<section class="prestations-search-hero prestations-search-hero--wow" aria-label="Rechercher une offre">
     <div class="prestations-search-bg" aria-hidden="true">
         <svg class="prestations-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -35,17 +35,18 @@
     </div>
 
     <div class="container prestations-search-inner">
-        <h1 class="prestations-search-title" itemprop="name">Toutes nos prestations</h1>
-        <p class="prestations-search-lead" itemprop="description">Tarifs HT affichés · devis par e-mail · commencez par les <strong>3 offres en tête</strong> si vous hésitez.</p>
-        <form class="prestations-search-form" role="search" aria-label="Recherche dans le catalogue des prestations">
-            <label class="visually-hidden" for="prestationsSearchInput">Rechercher une prestation</label>
+        <h1 class="prestations-search-title" itemprop="name">Catalogue de services digitaux</h1>
+        <p class="prestations-search-lead" itemprop="description">Des solutions sur-mesure pour développer votre présence en ligne · tarifs HT · devis par e-mail.</p>
+        <form class="prestations-search-form" role="search" aria-label="Recherche dans le catalogue des offres">
+            <label class="visually-hidden" for="prestationsSearchInput">Rechercher une offre</label>
             <div class="prestations-search-input-wrapper" id="prestationsSearchWrapper">
                 <i class="fas fa-search prestations-search-icon" aria-hidden="true"></i>
                 <input
                     type="search"
                     id="prestationsSearchInput"
                     class="prestations-search-input"
-                    placeholder="Rechercher une prestation, un besoin, un mot-clé…"
+                    name="q"
+                    placeholder="Rechercher une offre, un besoin, un mot-clé…"
                     autocomplete="off"
                     enterkeyhint="search"
                 >
@@ -57,11 +58,12 @@
         </form>
 
         <div class="prestations-search-chips" role="group" aria-label="Filtrer par thème">
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="éco" data-prestations-search-query="éco"><i class="fas fa-leaf" aria-hidden="true"></i> Éco-conception</button>
             <button type="button" class="prestations-search-chip" data-prestations-search-chip="site" data-prestations-search-query="site vitrine"><i class="fas fa-globe" aria-hidden="true"></i> Site vitrine</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="google" data-prestations-search-query="google"><i class="fas fa-search" aria-hidden="true"></i> Google</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="assistant" data-prestations-search-query="assistant"><i class="fas fa-robot" aria-hidden="true"></i> Assistant IA</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="entretien" data-prestations-search-query="entretien"><i class="fas fa-shield-alt" aria-hidden="true"></i> Entretien</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="seo" data-prestations-search-query="seo"><i class="fas fa-search" aria-hidden="true"></i> SEO</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="auto" data-prestations-search-query="automatisation"><i class="fas fa-cogs" aria-hidden="true"></i> Automatisation</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="assistant" data-prestations-search-query="assistant"><i class="fas fa-robot" aria-hidden="true"></i> IA</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="entretien" data-prestations-search-query="entretien"><i class="fas fa-shield-alt" aria-hidden="true"></i> Maintenance</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="éco" data-prestations-search-query="éco"><i class="fas fa-leaf" aria-hidden="true"></i> Éco</button>
         </div>
 
         <p class="prestations-search-results-info" id="prestationsSearchResultsInfo" aria-live="polite"></p>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+<rect width="800" height="480" fill="#0f172a"/>
+<rect x="80" y="90" width="640" height="80" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+<text x="400" y="50" text-anchor="middle" fill="#38bdf8" font-size="24" font-family="Arial" font-weight="bold">C/C++ : classes objets</text>
+<text x="400" y="135" text-anchor="middle" fill="#f8fafc" font-size="22" font-family="Arial">Concept cle du chapitre</text>
+<rect x="120" y="230" width="220" height="120" rx="10" fill="#1e293b" stroke="#64748b"/>
+<rect x="460" y="230" width="220" height="120" rx="10" fill="#1e293b" stroke="#64748b"/>
+<text x="230" y="295" text-anchor="middle" fill="#f8fafc" font-size="16" font-family="Arial">Pratique</text>
+<text x="570" y="295" text-anchor="middle" fill="#f8fafc" font-size="16" font-family="Arial">Resultat</text>
+<line x1="340" y1="290" x2="460" y2="290" stroke="#38bdf8" stroke-width="3"/>
+</svg>

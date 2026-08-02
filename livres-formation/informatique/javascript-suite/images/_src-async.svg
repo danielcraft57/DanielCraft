@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f5fa"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a3a8f" font-weight="700">async / await : un ordre lisible</text>
+
+  <!-- Timeline verticale stylisee en horizontal -->
+  <line x1="80" y1="210" x2="920" y2="210" stroke="#3d52b8" stroke-width="4"/>
+
+  <!-- Etape 1 -->
+  <circle cx="160" cy="210" r="22" fill="#2a3a8f"/>
+  <text x="160" y="217" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a8e063" font-weight="700">1</text>
+  <rect x="80" y="80" width="160" height="70" rx="12" fill="#ffffff" stroke="#2a3a8f" stroke-width="2"/>
+  <text x="160" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="700">Lancer</text>
+  <text x="160" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#3d52b8">fetch(...)</text>
+  <line x1="160" y1="150" x2="160" y2="188" stroke="#2a3a8f" stroke-width="2"/>
+
+  <!-- Etape 2 -->
+  <circle cx="380" cy="210" r="22" fill="#2a3a8f"/>
+  <text x="380" y="217" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a8e063" font-weight="700">2</text>
+  <rect x="300" y="270" width="160" height="70" rx="12" fill="#a8e063" stroke="#2a3a8f" stroke-width="2"/>
+  <text x="380" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="700">Attendre</text>
+  <text x="380" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2a3a8f">await reponse</text>
+  <line x1="380" y1="232" x2="380" y2="270" stroke="#2a3a8f" stroke-width="2"/>
+
+  <!-- Etape 3 -->
+  <circle cx="600" cy="210" r="22" fill="#2a3a8f"/>
+  <text x="600" y="217" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a8e063" font-weight="700">3</text>
+  <rect x="520" y="80" width="160" height="70" rx="12" fill="#ffffff" stroke="#2a3a8f" stroke-width="2"/>
+  <text x="600" y="110" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="700">Lire</text>
+  <text x="600" y="135" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#3d52b8">await json()</text>
+  <line x1="600" y1="150" x2="600" y2="188" stroke="#2a3a8f" stroke-width="2"/>
+
+  <!-- Etape 4 -->
+  <circle cx="820" cy="210" r="22" fill="#2a3a8f"/>
+  <text x="820" y="217" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a8e063" font-weight="700">4</text>
+  <rect x="740" y="270" width="160" height="70" rx="12" fill="#ffffff" stroke="#2a3a8f" stroke-width="2"/>
+  <text x="820" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="700">Afficher</text>
+  <text x="820" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#3d52b8">mettre a jour</text>
+  <line x1="820" y1="232" x2="820" y2="270" stroke="#2a3a8f" stroke-width="2"/>
+
+  <text x="500" y="390" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14182a">On attend sans bloquer, et le code se lit de haut en bas.</text>
+</svg>

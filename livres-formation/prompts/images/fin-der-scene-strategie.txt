@@ -1,0 +1,4 @@
+Illustration pedagogique finance produits derives - strategie couverte.
+Scene : Max dessine une couverture simple (acheter action, vendre call).
+Style education finance debutant DanielCraft.
+Tout texte visible en FRANCAIS uniquement.

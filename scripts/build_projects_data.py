@@ -6,12 +6,14 @@ Chaque projet a : id (slug URL), title, description, category, technologies,
 year, account, status, featured, licence, imageUrl, repo, github_url, stars, forks, etc.
 """
 import json
+import re
 from pathlib import Path
 from datetime import datetime
 
 BASE_DIR = Path(__file__).parent.parent
 REPOS_FILE = BASE_DIR / 'assets' / 'data' / 'repos-loupix57.json'
 OUT_FILE = BASE_DIR / 'src' / 'data' / 'projects.json'
+ALIASES_FILE = BASE_DIR / 'src' / 'data' / 'project-slug-aliases.json'
 
 # Categories et technologies par repo name (loupix57) - aligne avec github-projects.js
 REPO_META = {
@@ -46,7 +48,6 @@ REPO_META = {
     'YoutubeDownloader': ('tools', ['Python', 'AngularJS']),
 }
 
-# Projets phares loupix57 (featured)
 FEATURED_L57 = {
     'ClientCRM', 'ClipForge', 'CryptoCluster', 'CryptoSpreadEdge',
     'CvLetterAssistant', 'DataWhisper', 'DeliveryTrack', 'DispyCluster', 'DuelDeDame',
@@ -54,12 +55,10 @@ FEATURED_L57 = {
     'RestaurationRapide', 'scalpel-numerique', 'SocialCare-Hub', 'TicketCaisse', 'turfrace',
 }
 
-# Licences connues
 REPO_LICENCE = {
     'DuelDeDame-Legacy': 'MIT', 'EduConnect': 'MIT',
 }
 
-# Projets hors loupix57 (loupix, likedevGit) - id, title, description, category, technologies, year, lastUpdate, account, status, featured, licence?, imageUrl?
 OTHER_PROJECTS = [
     {'id': 'dispy-cluster', 'title': 'DispyCluster', 'description': 'Système de clustering distribué pour le traitement de données.', 'category': 'tools', 'technologies': ['Python'], 'year': 2025, 'lastUpdate': 'Novembre 2025', 'account': 'loupix', 'status': 'active', 'featured': True, 'imageUrl': 'assets/images/projets/DispyCluster.jpg'},
     {'id': 'duel-de-dame-loupix', 'title': 'DuelDeDame', 'description': 'Jeu de dame développé avec des patterns designs. Pour l\'apprentissage.', 'category': 'web', 'technologies': ['TypeScript'], 'year': 2025, 'lastUpdate': 'Septembre 2025', 'account': 'loupix', 'status': 'active', 'featured': True, 'licence': 'MIT', 'imageUrl': 'assets/images/projets/DuelDeDame.jpg'},
@@ -87,14 +86,66 @@ OTHER_PROJECTS = [
     {'id': 'social-care-hub', 'title': 'SocialCare Hub', 'description': 'Regroupement de services sociaux sur une seule plate-forme.', 'category': 'web', 'technologies': ['TypeScript'], 'year': 2025, 'lastUpdate': 'Août 2025', 'account': 'likedevGit', 'status': 'active', 'featured': True, 'repo': 'likedevGit/SocialCare-Hub'},
 ]
 
+MANUAL_SLUG_ALIASES = {
+    'photos-share': 'photosshare',
+    'restauration': 'restaurationrapide',
+    'distribution-journaux': 'distributionjournaux',
+    'gestionnaire-evenements': 'gestionnaireevenements',
+}
+
 
 def name_to_slug(name: str) -> str:
-    """Repo name -> slug URL (ex: DuelDeDame-Legacy -> dueldedame-legacy)."""
     return name.replace('_', '-').lower()
 
 
+def _norm_title(title: str) -> str:
+    return re.sub(r'[^a-z0-9]', '', (title or '').lower())
+
+
+def _repo_basename(repo: str) -> str:
+    if not repo:
+        return ''
+    return re.sub(r'[^a-z0-9]', '', repo.split('/')[-1].lower())
+
+
+class _ProjectRegistry:
+    def __init__(self) -> None:
+        self.projects: list = []
+        self.aliases: dict[str, str] = {}
+        self._by_title: dict[str, str] = {}
+        self._by_repo: dict[str, str] = {}
+        self._by_slug: dict[str, str] = {}
+
+    def add(self, project: dict) -> bool:
+        slug = (project.get('slug') or project.get('id') or '').strip()
+        if not slug:
+            return False
+
+        title_key = _norm_title(project.get('title') or '')
+        repo_key = _repo_basename(project.get('repo') or '')
+
+        canonical = self._by_slug.get(slug)
+        if not canonical and title_key:
+            canonical = self._by_title.get(title_key)
+        if not canonical and repo_key:
+            canonical = self._by_repo.get(repo_key)
+
+        if canonical:
+            if canonical != slug:
+                self.aliases[slug] = canonical
+            return False
+
+        self.projects.append(project)
+        self._by_slug[slug] = slug
+        if title_key:
+            self._by_title[title_key] = slug
+        if repo_key:
+            self._by_repo[repo_key] = slug
+        return True
+
+
 def main():
-    projects = []
+    registry = _ProjectRegistry()
 
     if REPOS_FILE.exists():
         repos = json.loads(REPOS_FILE.read_text(encoding='utf-8-sig'))
@@ -104,9 +155,7 @@ def main():
             if not repo:
                 continue
             slug = name_to_slug(name)
-            desc = (repo.get('description') or '').strip()
-            if not desc:
-                desc = name
+            desc = (repo.get('description') or '').strip() or name
             pushed = repo.get('pushed_at') or repo.get('updated_at') or ''
             try:
                 year = int(datetime.fromisoformat(pushed.replace('Z', '+00:00')).year) if pushed else 2026
@@ -119,10 +168,8 @@ def main():
                 licence = lic
             else:
                 licence = REPO_LICENCE.get(name, '')
-            image_name = name.replace(' ', '-') + '.jpg'
-            if name == 'scalpel-numerique':
-                image_name = 'scalpel-numerique.jpg'
-            projects.append({
+            image_name = 'scalpel-numerique.jpg' if name == 'scalpel-numerique' else name.replace(' ', '-') + '.jpg'
+            registry.add({
                 'id': slug,
                 'slug': slug,
                 'title': name,
@@ -146,7 +193,10 @@ def main():
             })
 
     for p in OTHER_PROJECTS:
-        entry = {
+        pid = (p.get('id') or '').strip()
+        if pid in MANUAL_SLUG_ALIASES:
+            continue
+        registry.add({
             'id': p['id'],
             'slug': p['id'],
             'title': p['title'],
@@ -166,12 +216,24 @@ def main():
             'forks': 0,
             'archived': p.get('status') == 'archived',
             'isFork': p.get('isFork', False),
-        }
-        projects.append(entry)
+        })
+
+    canonical_slugs = {(p.get('slug') or p.get('id') or '').strip() for p in registry.projects}
+    for alias, canonical in MANUAL_SLUG_ALIASES.items():
+        a = (alias or '').strip()
+        c = (canonical or '').strip()
+        if a and c and a != c and c in canonical_slugs and a not in registry.aliases:
+            registry.aliases[a] = c
 
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    OUT_FILE.write_text(json.dumps(projects, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f"[OK] {len(projects)} projets ecrits dans {OUT_FILE}")
+    OUT_FILE.write_text(json.dumps(registry.projects, ensure_ascii=False, indent=2), encoding='utf-8')
+    ALIASES_FILE.write_text(
+        json.dumps(registry.aliases, ensure_ascii=False, indent=2, sort_keys=True),
+        encoding='utf-8',
+    )
+    print(f"[OK] {len(registry.projects)} projets ecrits dans {OUT_FILE}")
+    if registry.aliases:
+        print(f"[OK] {len(registry.aliases)} alias slug -> canonical dans {ALIASES_FILE}")
 
 
 if __name__ == '__main__':

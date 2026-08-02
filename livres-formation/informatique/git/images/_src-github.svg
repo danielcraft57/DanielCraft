@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f7f4f2"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Git vs GitHub</text>
+<rect x="100" y="120" width="360" height="220" rx="14" fill="#ffffff" stroke="#2b2d42" stroke-width="3"/>
+<text x="280" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">Git</text>
+<text x="280" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5c5c66" font-weight="400">outil local</text>
+<rect x="540" y="120" width="360" height="220" rx="14" fill="#ef476f" stroke="#2b2d42" stroke-width="3"/>
+<text x="720" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2b2d42" font-weight="700">GitHub</text>
+<text x="720" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2b2d42" font-weight="400">depot en ligne</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c5c66" font-weight="400">Les deux se completent.</text>
+</svg>

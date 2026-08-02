@@ -426,7 +426,7 @@ html {
 .page-contact-hero + .contact .section-header { display: none; }
 .page-contact-lead { max-width: 42rem; }
 
-.page-nos-offres { padding-top: 2rem; }
+.page-nos-offres { padding-top: 0; }
 .nos-offres-grid { display: grid; gap: 1.5rem; }
 .nos-offres-contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
 .nos-offres-contrast-col { padding: 1rem; border-radius: 12px; font-size: 0.92rem; }

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#eef3f0"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14241e" font-weight="700">Negociation : echanger, pas ceder</text>
+
+  <rect x="50" y="85" width="280" height="120" rx="14" fill="#1b3a2f"/>
+  <text x="190" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4896a" font-weight="700">1. Preparer</text>
+  <text x="190" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">limites + options</text>
+
+  <rect x="360" y="85" width="280" height="120" rx="14" fill="#2d5a45"/>
+  <text x="500" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4896a" font-weight="700">2. Echanger</text>
+  <text x="500" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#ffffff">interets des deux cotes</text>
+
+  <rect x="670" y="85" width="280" height="120" rx="14" fill="#ffffff" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="810" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b3a2f" font-weight="700">3. Concessions</text>
+  <text x="810" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2d5a45">contre quelque chose</text>
+
+  <rect x="120" y="240" width="360" height="90" rx="14" fill="#ffffff" stroke="#2d5a45" stroke-width="2"/>
+  <text x="300" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b3a2f" font-weight="700">Garder</text>
+  <text x="300" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2d5a45">marge, delai, perimetre</text>
+
+  <rect x="520" y="240" width="360" height="90" rx="14" fill="#d4896a" stroke="#1b3a2f" stroke-width="3"/>
+  <text x="700" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14241e" font-weight="700">Accord</text>
+  <text x="700" y="305" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b3a2f">ecrit, clair, tenable</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14241e">Negocier, c'est construire un accord viable, pas brader.</text>
+</svg>

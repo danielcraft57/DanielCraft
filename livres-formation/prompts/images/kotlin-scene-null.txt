@@ -1,0 +1,3 @@
+Scene Kotlin bases - null safety.
+Photo editorial. Max compare deux boites : une vide etiquetee "Absent", une remplie "Present".
+Labels FRANCAIS uniquement. Violet + rose. Aucun anglais. 16:9.

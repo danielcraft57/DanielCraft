@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Flexbox range les blocs</text>
+  <rect x="80" y="120" width="840" height="280" rx="16" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a4d3e" font-weight="700">display: flex</text>
+  <rect x="140" y="200" width="200" height="140" rx="12" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="240" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">A</text>
+  <rect x="400" y="200" width="200" height="140" rx="12" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">B</text>
+  <rect x="660" y="200" width="200" height="140" rx="12" fill="#ffffff" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="760" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e">C</text>
+  <text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">justify-content = axe principal. align-items = axe croise</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+  <rect width="1000" height="420" fill="#f3f5fa"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#2a3a8f" font-weight="700">Page � serveur � reponse</text>
+
+  <!-- Page -->
+  <rect x="40" y="100" width="260" height="220" rx="16" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+  <rect x="40" y="100" width="260" height="48" rx="16" fill="#2a3a8f"/>
+  <rect x="40" y="132" width="260" height="16" fill="#2a3a8f"/>
+  <text x="170" y="132" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#a8e063" font-weight="700">Ta page</text>
+  <rect x="70" y="175" width="200" height="28" rx="6" fill="#f3f5fa"/>
+  <rect x="70" y="220" width="160" height="28" rx="6" fill="#f3f5fa"/>
+  <rect x="70" y="265" width="180" height="28" rx="6" fill="#a8e063"/>
+  <text x="170" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#14182a" font-weight="700">fetch(...)</text>
+
+  <!-- Fleche requete -->
+  <defs>
+    <marker id="ar1" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2a3a8f"/>
+    </marker>
+    <marker id="ar2" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#3d52b8"/>
+    </marker>
+  </defs>
+  <line x1="320" y1="180" x2="420" y2="180" stroke="#2a3a8f" stroke-width="4" marker-end="url(#ar1)"/>
+  <text x="370" y="165" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2a3a8f" font-weight="700">Requete</text>
+
+  <!-- Serveur -->
+  <rect x="440" y="100" width="260" height="220" rx="16" fill="#2a3a8f"/>
+  <circle cx="570" cy="175" r="36" fill="#3d52b8"/>
+  <rect x="545" y="210" width="50" height="70" rx="6" fill="#3d52b8"/>
+  <text x="570" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#a8e063" font-weight="700">Serveur</text>
+
+  <!-- Fleche reponse -->
+  <line x1="720" y1="240" x2="820" y2="240" stroke="#3d52b8" stroke-width="4" marker-end="url(#ar2)"/>
+  <text x="770" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3d52b8" font-weight="700">Reponse</text>
+
+  <!-- Reponse -->
+  <rect x="840" y="100" width="120" height="220" rx="16" fill="#ffffff" stroke="#a8e063" stroke-width="4"/>
+  <text x="900" y="190" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a3a8f" font-weight="700">JSON</text>
+  <text x="900" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14182a">donnees</text>
+  <text x="900" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#14182a">pretes</text>
+
+  <text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#14182a">Ta page demande des infos, le serveur repond, tu affiches.</text>
+</svg>

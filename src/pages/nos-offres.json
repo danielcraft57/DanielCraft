@@ -1,10 +1,10 @@
 {
-  "page_title": "Nos offres web — DanielCraft Metz",
-  "page_description": "Site vitrine, visibilité Google et assistant IA : trois offres claires avec prix, avant/après et devis par e-mail. Metz & Lorraine.",
-  "page_keywords": "offres site vitrine, pack visibilité Google, assistant IA site, tarifs DanielCraft Metz",
+  "schema_type": "prestations_catalog",
+  "page_title": "Nos offres web — catalogue DanielCraft Metz",
+  "page_description": "Site vitrine, éco-conception, visibilité Google, assistants intelligents, entretien : offres expliquées simplement, prix indicatifs et devis par e-mail. Metz & Lorraine.",
+  "page_keywords": "offres web, éco-conception site, création site vitrine, SEO Metz, assistant IA site, maintenance site, devis site internet, DanielCraft",
   "page_url": "/nos-offres",
-  "og_image": "/assets/images/og/home-1200x630.jpg",
-  "schema_type": "offers",
-  "extra_css": "home-wow.css",
-  "page_scripts": ["main.js", "prestation-devis-modal.js", "home-wow.js"]
+  "og_image": "/assets/images/og/prestations-1200x630.jpg",
+  "extra_css": "prestations-search.css",
+  "page_scripts": ["main.js", "prestation-devis-modal.js", "prestations-catalog.js", "prestations-search.js", "prestations-wow.js"]
 }

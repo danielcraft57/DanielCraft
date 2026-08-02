@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f7f3ef"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a1418" font-weight="700">Tendances 2026</text>
+<rect x="100" y="120" width="250" height="200" rx="14" fill="#ffffff" stroke="#6b1e2a" stroke-width="3"/>
+<text x="225" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a1418" font-weight="700">authenticite</text>
+<rect x="375" y="120" width="250" height="200" rx="14" fill="#f0e4d8" stroke="#6b1e2a" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a1418" font-weight="700">video</text>
+<rect x="650" y="120" width="250" height="200" rx="14" fill="#d4a574" stroke="#6b1e2a" stroke-width="3"/>
+<text x="775" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2a1418" font-weight="700">transparence</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#6b1e2a" font-weight="400">IA pour brouillon, pas pour mentir.</text>
+</svg>

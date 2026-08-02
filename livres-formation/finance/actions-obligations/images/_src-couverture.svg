@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="1000" height="560" fill="#eef3f0"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="40" fill="#1b3a2f" font-weight="700">Actions et obligations</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#2d5a45" font-weight="400">Finance</text>
+<rect x="300" y="300" width="400" height="80" rx="14" fill="#dce8e1" stroke="#1b3a2f" stroke-width="3"/>
+<text x="500" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1b3a2f" font-weight="700">DanielCraft</text>
+<text x="500" y="480" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2d5a45" font-weight="400">Comprendre avant d'investir</text>
+</svg>

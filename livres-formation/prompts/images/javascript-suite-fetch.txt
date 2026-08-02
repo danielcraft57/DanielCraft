@@ -1,0 +1,1 @@
+Schema pedagogique francais : une page web envoie une Requete vers un Serveur, recoit une Reponse, puis Affiche. Couleurs indigo et lime. Texte visible uniquement en francais (mots Requete, Serveur, Reponse, Afficher). Style plat, lisible en livre imprime.

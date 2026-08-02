@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f5fa"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#2a3a8f" font-weight="700">Debounce : attendre la pause</text>
+<rect x="80" y="140" width="200" height="140" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="180" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">frappe</text>
+<rect x="320" y="140" width="200" height="140" rx="14" fill="#e8ecf8" stroke="#2a3a8f" stroke-width="3"/>
+<text x="420" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">timer</text>
+<text x="420" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">reset</text>
+<rect x="560" y="140" width="200" height="140" rx="14" fill="#ffffff" stroke="#2a3a8f" stroke-width="3"/>
+<text x="660" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a3a8f" font-weight="700">pause</text>
+<rect x="800" y="140" width="140" height="140" rx="14" fill="#2a3a8f" stroke="#2a3a8f" stroke-width="3"/>
+<text x="870" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#a8e063" font-weight="700">GO</text>
+<text x="500" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#14182a" font-weight="400">On agit apres le silence, pas a chaque touche.</text>
+</svg>

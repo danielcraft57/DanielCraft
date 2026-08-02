@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440">
+<rect width="1000" height="440" fill="#f3f0ea"/>
+<text x="500" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a2332" font-weight="700">Blockchain : carnet enchaines</text>
+<rect x="80" y="120" width="200" height="160" rx="8" fill="#d8e0ea" stroke="#1a2332" stroke-width="3"/>
+<text x="180" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Bloc 1</text>
+<rect x="320" y="120" width="200" height="160" rx="8" fill="#ffffff" stroke="#1a2332" stroke-width="3"/>
+<text x="420" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Bloc 2</text>
+<rect x="560" y="120" width="200" height="160" rx="8" fill="#e4e0d6" stroke="#1a2332" stroke-width="3"/>
+<text x="660" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a2332" font-weight="700">Bloc 3</text>
+<rect x="800" y="120" width="120" height="160" rx="8" fill="#c45c26" stroke="#1a2332" stroke-width="3"/>
+<text x="860" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a2332" font-weight="700">...</text>
+<text x="500" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5c6570" font-weight="400">Hash + consensus. Pas un gain garanti.</text>
+</svg>

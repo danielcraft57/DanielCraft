@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">Variable = une boite nommee</text>
+
+  <rect x="120" y="120" width="320" height="280" rx="18" fill="#e8f3ee" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="280" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a4d3e" font-weight="700">const prenom</text>
+  <rect x="170" y="200" width="220" height="120" rx="12" fill="#ffffff" stroke="#266b56" stroke-width="3"/>
+  <text x="280" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e">"Leo"</text>
+  <text x="280" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">on ne change pas</text>
+
+  <rect x="560" y="120" width="320" height="280" rx="18" fill="#fff4d6" stroke="#c9a227" stroke-width="3"/>
+  <text x="720" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a6410" font-weight="700">let score</text>
+  <rect x="610" y="200" width="220" height="120" rx="12" fill="#ffffff" stroke="#c9a227" stroke-width="3"/>
+  <text x="720" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#7a6410">10</text>
+  <text x="720" y="370" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410">on peut modifier</text>
+</svg>

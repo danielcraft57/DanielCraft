@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#f7f4ef"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#1a4d3e" font-weight="700">HTML + CSS + JavaScript</text>
+
+  <rect x="70" y="120" width="250" height="300" rx="16" fill="#d9efe6" stroke="#1a4d3e" stroke-width="3"/>
+  <text x="195" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#1a4d3e" font-weight="700">HTML</text>
+  <text x="195" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">structure</text>
+  <text x="195" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3d5248">les pieces</text>
+
+  <rect x="375" y="120" width="250" height="300" rx="16" fill="#f7e3c8" stroke="#a8742a" stroke-width="3"/>
+  <text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a4d14" font-weight="700">CSS</text>
+  <text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4d14">style</text>
+  <text x="500" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a4d14">les couleurs</text>
+
+  <rect x="680" y="120" width="250" height="300" rx="16" fill="#ffe7a8" stroke="#c9a227" stroke-width="3"/>
+  <text x="805" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a6410" font-weight="700">JS</text>
+  <text x="805" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410">actions</text>
+  <text x="805" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a6410">les reactions</text>
+
+  <text x="500" y="500" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3d5248">Les trois ensemble font une page vivante.</text>
+</svg>

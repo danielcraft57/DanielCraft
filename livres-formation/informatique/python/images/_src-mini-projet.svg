@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"><rect width="800" height="480" fill="#1a2744"/><defs><marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/></marker></defs><text x="400" y="38" text-anchor="middle" fill="#ffd43b" font-size="20" font-weight="bold" font-family="Arial">Mini-projet : gestionnaire</text><rect x="250" y="60" width="300" height="50" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="90" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Menu principal</text>
+<line x1="300" y1="110" x2="150" y2="160" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="400" y1="110" x2="400" y2="160" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="500" y1="110" x2="600" y2="160" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="50" y="160" width="200" height="50" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="150" y="190" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Ajouter</text>
+<rect x="300" y="160" width="200" height="50" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="190" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Lister</text>
+<rect x="520" y="160" width="200" height="50" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="620" y="190" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Chercher</text>
+<line x1="400" y1="260" x2="400" y2="300" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="250" y="300" width="300" height="50" rx="10" fill="#243656" stroke="#ffd43b" stroke-width="2"/><text x="400" y="330" text-anchor="middle" fill="#f0f4ff" font-size="15" font-family="Arial">Sauvegarde JSON</text>
+<text x="400" y="420" text-anchor="middle" fill="#94a3b8" font-size="14" font-family="Arial">Combiner toutes les notions</text></svg>

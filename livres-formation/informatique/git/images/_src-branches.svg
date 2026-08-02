@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+  <rect width="1000" height="480" fill="#f7f4f2"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#2b2d42" font-weight="700">Branches paralleles</text>
+  <line x1="120" y1="240" x2="880" y2="240" stroke="#2b2d42" stroke-width="8"/>
+  <text x="140" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2b2d42" font-weight="700">main</text>
+  <path d="M360 240 C420 240, 420 120, 520 120 L760 120" fill="none" stroke="#ef476f" stroke-width="8"/>
+  <text x="540" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ef476f" font-weight="700">feature</text>
+  <circle cx="360" cy="240" r="16" fill="#2b2d42"/>
+  <circle cx="520" cy="120" r="16" fill="#ef476f"/>
+  <circle cx="760" cy="120" r="16" fill="#ef476f"/>
+  <circle cx="700" cy="240" r="16" fill="#2b2d42"/>
+  <text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#5c5c66">Tu testes sur feature. main reste stable.</text>
+</svg>

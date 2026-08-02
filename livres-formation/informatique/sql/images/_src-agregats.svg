@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f6f2"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#14261c" font-weight="700">Agreger : compter, sommer, grouper</text>
+<rect x="50" y="120" width="170" height="200" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="135" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">COUNT</text>
+<rect x="230" y="120" width="170" height="200" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="315" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="700">SUM</text>
+<rect x="410" y="120" width="170" height="200" rx="14" fill="#dcfce7" stroke="#14261c" stroke-width="3"/>
+<text x="495" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#14261c" font-weight="700">AVG</text>
+<rect x="590" y="120" width="170" height="200" rx="14" fill="#ffffff" stroke="#14261c" stroke-width="3"/>
+<text x="675" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14261c" font-weight="700">MIN</text>
+<text x="675" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#14261c" font-weight="700">MAX</text>
+<rect x="770" y="120" width="180" height="200" rx="14" fill="#fef9c3" stroke="#84cc16" stroke-width="3"/>
+<text x="860" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="700">GROUP</text>
+<text x="860" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="700">BY</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e62" font-weight="400">Une ligne resumee par groupe (ex. par ville).</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e62" font-weight="400">COUNT(*) compte les lignes du groupe.</text>
+</svg>
