@@ -65,6 +65,11 @@
 
   function syncChipFromInput() {
     const normalized = normalizeQuery(input.value);
+    if (!normalized) {
+      activeChip = 'tous';
+      setChipActive('tous');
+      return;
+    }
     let next = '';
     chipQueries.forEach((query, chip) => {
       if (normalizeQuery(query) === normalized) next = chip;
@@ -74,8 +79,12 @@
   }
 
   function setChipActive(chip) {
+    const effective = !chip || chip === 'tous' ? 'tous' : chip;
     chips.forEach((btn) => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-livres-search-chip') === chip && chip !== '');
+      const id = btn.getAttribute('data-livres-search-chip') || '';
+      const active = id === effective;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
   }
 
@@ -181,8 +190,8 @@
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
       input.value = '';
-      activeChip = '';
-      setChipActive('');
+      activeChip = 'tous';
+      setChipActive('tous');
       applySearch();
       input.focus();
     });
@@ -191,11 +200,19 @@
   chips.forEach((btn) => {
     btn.addEventListener('click', () => {
       const chip = btn.getAttribute('data-livres-search-chip') || '';
+      if (chip === 'tous') {
+        input.value = '';
+        activeChip = 'tous';
+        setChipActive('tous');
+        applySearch();
+        input.focus();
+        return;
+      }
       const query = chipQueries.get(chip) || '';
       if (activeChip === chip && normalizeQuery(input.value) === normalizeQuery(query)) {
         input.value = '';
-        activeChip = '';
-        setChipActive('');
+        activeChip = 'tous';
+        setChipActive('tous');
       } else {
         input.value = query;
         activeChip = chip;
@@ -223,8 +240,8 @@
     }
     if (e.key === 'Escape' && document.activeElement === input) {
       input.value = '';
-      activeChip = '';
-      setChipActive('');
+      activeChip = 'tous';
+      setChipActive('tous');
       applySearch();
       input.blur();
     }
@@ -236,9 +253,13 @@
     if (q) {
       input.value = q;
       syncChipFromInput();
+    } else {
+      activeChip = 'tous';
+      setChipActive('tous');
     }
   } catch (_) {
-    /* ignore */
+    activeChip = 'tous';
+    setChipActive('tous');
   }
 
   applySearch();

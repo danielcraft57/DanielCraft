@@ -38,6 +38,20 @@ GENERATED_INCLUDE_NAMES = frozenset({
     'livres-catalog-embed.html',
     'livres-deal-week.html',
 })
+
+
+def _write_text_if_changed(path: Path, content: str, encoding: str = 'utf-8') -> bool:
+    """Écrit seulement si le contenu change — évite des events watchdog inutiles sous Windows."""
+    try:
+        if path.exists() and path.read_text(encoding=encoding) == content:
+            return False
+    except (OSError, UnicodeError):
+        pass
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding=encoding)
+    return True
+
+
 TEMPLATES_DIR = SRC_DIR / 'templates'
 PAGES_DIR = SRC_DIR / 'pages'
 DATA_DIR = SRC_DIR / 'data'
@@ -1696,8 +1710,8 @@ def build_home_vitrines_teaser_embed() -> None:
         '<a href="/vitrines/">Voir tous les modèles par métier</a>'
         '</p>\n'
     )
-    path_out.write_text(content, encoding='utf-8')
-    print(f'[OK] home-vitrines-teaser.html genere ({len(cards)} exemple(s))')
+    if _write_text_if_changed(path_out, content):
+        print(f'[OK] home-vitrines-teaser.html genere ({len(cards)} exemple(s))')
 
 
 def build_vitrines_page_collection_embed() -> None:
@@ -2027,13 +2041,13 @@ def _prestation_card_html(
         short_title = title_raw.split('—')[0].strip() if '—' in title_raw else title_raw
         if len(short_title) > 36:
             short_title = short_title[:33].rstrip() + '…'
-        cta_label = f'{short_title} — {price_eur} € HT'
+        cta_label = 'Voir'
         devis_short = short_title.lower()
         devis_label = f'Devis {devis_short} par e-mail'
         actions = (
             f'<div class="prestation-card-actions">'
             f'<a href="{cta_href}" class="service-cta"><span>{html.escape(cta_label)}</span>'
-            f'<i class="fas fa-arrow-right" aria-hidden="true"></i></a>'
+            f'<i class="fas fa-eye" aria-hidden="true"></i></a>'
             f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
             f' data-prestation-slug="{html.escape(slug, quote=True)}"'
             f' data-service-slug="{service_slug}"'
@@ -2133,8 +2147,8 @@ def build_prestations_catalog_embed() -> None:
             f'</section>'
         )
     out_path = INCLUDES_DIR / 'prestations-catalog-embed.html'
-    out_path.write_text('\n'.join(parts), encoding='utf-8')
-    print(f'[OK] prestations-catalog-embed.html genere ({len(data.get("items", []))} prestation(s))')
+    if _write_text_if_changed(out_path, '\n'.join(parts)):
+        print(f'[OK] prestations-catalog-embed.html genere ({len(data.get("items", []))} prestation(s))')
 
     # Sidebar catégories (ancres + compteurs)
     total = sum(1 for it in data.get('items', []) if it.get('has_page'))
@@ -2504,8 +2518,8 @@ def _livre_card_html(
         f'{compare_html}'
         f'</div>'
         f'<div class="prestation-card-actions">'
-        f'<a href="{cta_href}" class="service-cta"><span>Acheter — {price} €</span>'
-        f'<i class="fas fa-arrow-right" aria-hidden="true"></i></a>'
+        f'<a href="{cta_href}" class="service-cta"><span>Voir</span>'
+        f'<i class="fas fa-eye" aria-hidden="true"></i></a>'
         f'</div>'
         '</article>'
     )
@@ -2526,8 +2540,8 @@ def build_livres_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
         item = packs[0] if packs else None
     out_path = INCLUDES_DIR / 'livres-deal-week.html'
     if not item:
-        out_path.write_text('<!-- Pas de pack de la semaine -->\n', encoding='utf-8')
-        print('[WARN] livres-deal-week : aucun pack')
+        if _write_text_if_changed(out_path, '<!-- Pas de pack de la semaine -->\n'):
+            print('[WARN] livres-deal-week : aucun pack')
         return
 
     slug = (item.get('slug') or '').strip()
@@ -2625,8 +2639,8 @@ def build_livres_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
   </div>
 </aside>
 '''
-    out_path.write_text(html_out, encoding='utf-8')
-    print(f'[OK] livres-deal-week.html ({slug} @ {price} EUR)')
+    if _write_text_if_changed(out_path, html_out):
+        print(f'[OK] livres-deal-week.html ({slug} @ {price} EUR)')
 
 
 def build_livres_catalog_embed() -> None:
@@ -2699,8 +2713,8 @@ def build_livres_catalog_embed() -> None:
             '</section>'
         )
     out_path = INCLUDES_DIR / 'livres-catalog-embed.html'
-    out_path.write_text('\n'.join(parts) + '\n', encoding='utf-8')
-    print(f'[OK] livres-catalog-embed.html genere ({len(data.get("items", []))} livre(s))')
+    if _write_text_if_changed(out_path, '\n'.join(parts) + '\n'):
+        print(f'[OK] livres-catalog-embed.html genere ({len(data.get("items", []))} livre(s))')
 
 
 def _build_livre_seo_bundle(
@@ -3583,6 +3597,7 @@ def main():
                 def __init__(self):
                     self._last_event = {}
                     self._rebuilding = False
+                    self._ignore_includes_until = 0.0
 
                 def _is_debounced(self, key: str, delay_s: float = 0.35) -> bool:
                     now = time.time()
@@ -3593,10 +3608,9 @@ def main():
                     return False
 
                 def _is_generated_include(self, src: Path) -> bool:
-                    try:
-                        return INCLUDES_DIR in src.parents and src.name in GENERATED_INCLUDE_NAMES
-                    except (OSError, ValueError):
-                        return False
+                    # Nom seul : sous Windows, Path.parents vs INCLUDES_DIR peut échouer
+                    # (casse, préfixe \\?\, chemins non résolus) et relancer la boucle watch.
+                    return src.name in GENERATED_INCLUDE_NAMES
 
                 def _copy_asset_file(self, src_path: Path):
                     if not src_path.exists() or not src_path.is_file():
@@ -3630,7 +3644,8 @@ def main():
                         print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/livres/sitemap")
                     finally:
                         # Laisser le FS Windows digérer les write_text des includes générés
-                        time.sleep(0.5)
+                        time.sleep(0.75)
+                        self._ignore_includes_until = time.time() + 2.0
                         self._rebuilding = False
 
                 def _handle_src_change(self, event):
@@ -3641,6 +3656,10 @@ def main():
                     # Ignore les includes générés par le build (évite la boucle watch)
                     if self._is_generated_include(src):
                         return
+                    if time.time() < self._ignore_includes_until:
+                        # Fenêtre anti-rebond après rebuild (events FS retardés sous Windows)
+                        if 'includes' in {p.name.lower() for p in src.parents}:
+                            return
 
                     src_str = str(src)
                     ext = src.suffix.lower()
@@ -3657,27 +3676,28 @@ def main():
                     # Changement de page source => rebuild ciblé si possible
                     if ext in {'.html', '.json'} and PAGES_DIR in src.parents:
                         page = src.stem
-                        print(f"\n📝 Page modifiee : {src.name}")
+                        print(f"\n[WATCH] Page modifiee : {src.name}")
                         if page in pages:
                             self._rebuilding = True
                             try:
                                 build_page(page, template_engine)
                             finally:
-                                time.sleep(0.35)
+                                time.sleep(0.5)
+                                self._ignore_includes_until = time.time() + 1.5
                                 self._rebuilding = False
                         else:
                             self._rebuild_all_pages()
                         return
 
-                    # Donnees partagees (vitrines, etc.) => rebuild global
+                    # Donnees partagees (vitrines, livres, etc.) => rebuild global
                     if ext in {'.html', '.json'} and DATA_DIR in src.parents:
-                        print(f"\n📦 Data modifiee : {src.name}")
+                        print(f"\n[WATCH] Data modifiee : {src.name}")
                         self._rebuild_all_pages()
                         return
 
                     # Changement template/include (hors générés) => rebuild global
                     if ext in {'.html', '.json'} and (TEMPLATES_DIR in src.parents or INCLUDES_DIR in src.parents):
-                        print(f"\n🧩 Template/include modifie : {src.name}")
+                        print(f"\n[WATCH] Template/include modifie : {src.name}")
                         self._rebuild_all_pages()
                         return
 

@@ -644,3 +644,156 @@
 .page-livres.is-catalog-filtering .livres-deal-week {
   display: none;
 }
+
+/* Chip actif (Tous les livres) */
+.page-livres .prestations-search-chip.is-active {
+  background: #0f3550;
+  border-color: #0f3550;
+  color: #fff;
+}
+
+.page-livres .livre-card-level {
+  border-radius: 999px;
+}
+
+.page-livres .livre-card[data-livre-level="base"] .livre-card-level,
+.page-livres .livre-card[data-livre-level="debutant"] .livre-card-level {
+  background: #e8f7ee;
+  color: #1f7a4d;
+}
+
+.page-livres .livre-card[data-livre-level="intermediaire"] .livre-card-level {
+  background: #e8f2fb;
+  color: #1a5f85;
+}
+
+.page-livres .livre-card[data-livre-level="expert"] .livre-card-level {
+  background: #f3eef8;
+  color: #5b3d7a;
+}
+
+.page-livres .livre-card[data-livre-level="pack"] .livre-card-level {
+  background: #fff4df;
+  color: #8a5a10;
+}
+
+.page-livres .livre-card .service-cta {
+  background: #0f3550;
+  color: #fff;
+  border: none;
+}
+
+.page-livres .livre-card .service-cta:hover {
+  background: #1a5f85;
+}
+
+.livres-trust-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  margin: 2rem 0 1.5rem;
+  padding: 1rem 1.15rem;
+  list-style: none;
+  background: #f3f7f9;
+  border: 1px solid rgba(15, 53, 80, 0.08);
+  border-radius: 0.85rem;
+}
+
+.livres-trust-bar li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0f3550;
+}
+
+.livres-trust-bar i {
+  color: #4da9d6;
+}
+
+@media (max-width: 720px) {
+  .livres-trust-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Fiche livre — couverture à gauche, confiance sous CTA */
+.livre-detail-root .prestation-detail-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(14rem, 22rem) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.livre-detail-root .prestation-detail-visual {
+  order: -1;
+}
+
+@media (max-width: 800px) {
+  .livre-detail-root .prestation-detail-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .livre-detail-root .prestation-detail-visual {
+    order: 0;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+}
+
+.livre-detail-root .section-badge {
+  background: #e8f2fb;
+  color: #1a5f85;
+}
+
+.livre-delivery-hint {
+  pointer-events: none;
+  cursor: default;
+}
+
+.livre-refund-hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.88rem;
+  color: #5a6b78;
+}
+
+.livre-refund-hint i {
+  color: #1f7a4d;
+  margin-right: 0.35rem;
+}
+
+.livre-trust-inline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+  padding: 0.85rem;
+  list-style: none;
+  background: #f3f7f9;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(15, 53, 80, 0.08);
+}
+
+.livre-trust-inline li {
+  display: grid;
+  gap: 0.15rem;
+  font-size: 0.78rem;
+  color: #5a6b78;
+}
+
+.livre-trust-inline i {
+  color: #4da9d6;
+  margin-bottom: 0.15rem;
+}
+
+.livre-trust-inline strong {
+  color: #0f3550;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 720px) {
+  .livre-trust-inline {
+    grid-template-columns: 1fr;
+  }
+}

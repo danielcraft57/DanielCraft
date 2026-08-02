@@ -32,14 +32,13 @@
                 <div class="prestation-detail-hero-actions">
                     {% if livre_pay_checkout %}
                     <button type="button" class="btn btn-primary btn-large" data-livre-stripe-checkout id="livreStripeCheckoutBtn">
-                        <span class="livre-stripe-btn__label">Acheter le PDF — {{livre_price_display}}&nbsp;€ TTC</span>
+                        <span class="livre-stripe-btn__label"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Acheter maintenant — {{livre_price_display}}&nbsp;€ TTC</span>
                         <span class="livre-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
                     </button>
                     {% else %}
                     {% if livre_pay_link %}
                     <a class="btn btn-primary btn-large" href="{{livre_stripe_url}}" target="_blank" rel="noopener noreferrer">
-                        <span>Acheter le PDF — {{livre_price_display}}&nbsp;€ TTC</span>
-                        <i class="fab fa-cc-stripe" aria-hidden="true"></i>
+                        <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Acheter maintenant — {{livre_price_display}}&nbsp;€ TTC</span>
                     </a>
                     {% else %}
                     <a href="mailto:contact@danielcraft.fr?subject={{livre_mailto_subject}}" class="btn btn-primary btn-large">
@@ -48,11 +47,17 @@
                     </a>
                     {% endif %}
                     {% endif %}
-                    <a href="/livres/" class="btn btn-outline btn-large">
-                        <span>Voir tous les livres</span>
-                        <i class="fas fa-book-open" aria-hidden="true"></i>
-                    </a>
+                    <span class="btn btn-outline btn-large livre-delivery-hint" aria-hidden="true">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Envoi par e-mail après paiement</span>
+                    </span>
                 </div>
+                <p class="livre-refund-hint"><i class="fas fa-shield-alt" aria-hidden="true"></i> Satisfait ou remboursé 7&nbsp;jours</p>
+                <ul class="livre-trust-inline" aria-label="Garanties">
+                    <li><i class="fas fa-file-pdf" aria-hidden="true"></i><strong>Format PDF</strong><span>Compatible tous appareils</span></li>
+                    <li><i class="fas fa-lock" aria-hidden="true"></i><strong>Paiement sécurisé</strong><span>Stripe</span></li>
+                    <li><i class="fas fa-bolt" aria-hidden="true"></i><strong>Accès immédiat</strong><span>Téléchargement / e-mail</span></li>
+                </ul>
                 <p class="livre-stripe-feedback" id="livreStripeFeedback" hidden role="status" aria-live="polite"></p>
                 <p class="livre-stripe-return" id="livreStripeReturn" role="status" hidden></p>
             </div>
