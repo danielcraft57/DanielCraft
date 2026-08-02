@@ -1,9 +1,20 @@
-    <!-- Hero — grand public -->
-    <div itemscope itemtype="https://schema.org/WebPage" itemid="{{page_url}}">
+    <!-- Accueil e-commerce fixtures + hero split -->
+    <div itemscope itemtype="https://schema.org/WebPage" itemid="{{page_url}}" class="page-home-ecom">
     <meta itemprop="url" content="{{page_url}}">
     <meta itemprop="name" content="{{page_title}}">
     <meta itemprop="description" content="{{page_description}}">
-    <section id="home" class="hero home-hero--wow" itemprop="mainEntity" itemscope itemtype="https://schema.org/ProfessionalService">
+
+    <aside class="home-topbar" role="note" aria-label="Promotion du mois">
+        <div class="home-topbar__inner">
+            <span class="home-topbar__badge">Promo du mois</span>
+            <p class="home-topbar__text">
+                Site vitrine Essentiel à <strong>390&nbsp;€ HT</strong> — livraison indicative 5–8 jours ouvrés
+            </p>
+            <a href="#promo-mois" class="home-topbar__link">Voir l'offre <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+    </aside>
+
+    <section id="home" class="hero home-hero--wow home-hero--commerce home-hero--split" itemprop="mainEntity" itemscope itemtype="https://schema.org/ProfessionalService">
         <meta itemprop="name" content="DanielCraft">
         <link itemprop="url" href="{{site_base}}/">
         <meta itemprop="email" content="contact@danielcraft.fr">
@@ -24,267 +35,276 @@
             <link itemprop="url" href="{{site_base}}/">
             <meta itemprop="email" content="contact@danielcraft.fr">
         </div>
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
-            <div class="home-hero-orbs" aria-hidden="true">
-                <span class="home-hero-orb home-hero-orb--1"></span>
-                <span class="home-hero-orb home-hero-orb--2"></span>
-                <span class="home-hero-orb home-hero-orb--3"></span>
+
+        <div class="home-split">
+            <div class="home-split__copy">
+                <p class="home-commerce-brand">DanielCraft</p>
+                <h1 class="hero-title home-commerce-title">
+                    Plus de clients en magasin <span class="home-commerce-title-accent">grâce au web</span>
+                </h1>
+                <p class="hero-description hero-lead" itemprop="description">
+                    Des sites pensés pour les commerces et artisans de proximité —
+                    clairs sur mobile, trouvés sur Google, avec un seul interlocuteur.
+                </p>
+                <div class="hero-actions home-hero-cta">
+                    <button type="button" class="btn btn-primary btn-large home-hero-cta__primary" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait">
+                        <span>Recevoir mon devis</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    <a href="/audit" class="home-hero-cta__ghost">
+                        <span>Audit gratuit</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="hero-cta-hint">Sans engagement · réponse sous 24&nbsp;h ouvrées</p>
+                <ul class="home-trustbar" aria-label="Garanties">
+                    <li><i class="fas fa-truck" aria-hidden="true"></i> Mise en ligne 5–8 j</li>
+                    <li><i class="fas fa-file-pdf" aria-hidden="true"></i> Devis PDF immédiat</li>
+                    <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Support 14 jours</li>
+                </ul>
+            </div>
+            <div class="home-split__media" data-home-parallax>
+                <picture>
+                    <source srcset="/assets/images/home/home-hero.webp" type="image/webp">
+                    <img src="/assets/images/home/home-hero.png" width="900" height="1100" alt="Commerçant satisfait devant son site professionnel" loading="eager" decoding="async">
+                </picture>
             </div>
         </div>
+    </section>
 
-        <div class="hero-content">
-            <div class="hero-layout">
-                <div class="hero-main">
-                    <h1 class="hero-title">
-                        <span class="title-line">Pas de site, ou invisible sur Google ?</span>
-                        <span class="title-line highlight">Je m'en occupe — sans jargon technique</span>
-                    </h1>
+    <nav class="home-cats" aria-label="Rayons prestations">
+        <div class="container home-cats__inner">
+            <a class="home-cats__chip" href="#promo-mois">Promo du mois</a>
+            <a class="home-cats__chip" href="#offres">Meilleures ventes</a>
+            <a class="home-cats__chip" href="/prestations/site-vitrine-essentiel/">Vitrine</a>
+            <a class="home-cats__chip" href="/prestations/visibilite-complete/">SEO &amp; Maps</a>
+            <a class="home-cats__chip" href="/prestations/repondeur-intelligent/">Assistant IA</a>
+            <a class="home-cats__chip" href="/audit">Audit gratuit</a>
+            <a class="home-cats__chip" href="/vitrines/">Exemples</a>
+        </div>
+    </nav>
 
-                    <p class="hero-description hero-lead" itemprop="description">
-                        Artisan, commerce ou activité libérale en Lorraine : un site clair, visible sur Google
-                        <strong>et compris par l'IA</strong>, avec un seul interlocuteur de A à Z.
+    <section id="promo-mois" class="home-promo-mois" aria-labelledby="promo-mois-title">
+        <div class="container">
+            <article class="home-promo-mois__card scroll-reveal">
+                <div class="home-promo-mois__media">
+                    <span class="home-promo-mois__ribbon">Promo du mois</span>
+                    <picture>
+                        <source srcset="/assets/images/home/home-offer-vitrine.webp" type="image/webp">
+                        <img src="/assets/images/home/home-offer-vitrine.png" width="640" height="400" alt="Site vitrine essentiel en promotion" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="home-promo-mois__body">
+                    <p class="home-promo-mois__kicker">Offre limitée · août</p>
+                    <h2 id="promo-mois-title">Site vitrine Essentiel</h2>
+                    <p class="home-promo-mois__desc">
+                        Votre boutique en ligne claire sur mobile — horaires, services, contact.
+                        Tarif d'entrée affiché, devis PDF en 2 minutes.
                     </p>
-
-                    <div class="hero-reassurance">
-                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Devis par e-mail en un clic</span>
-                        <span class="reassurance-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Réponse sous 24 h ouvrées</span>
-                    </div>
-
-                    <div class="hero-actions">
-                        <button type="button" class="btn btn-primary btn-large" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait">
-                            <span>Recevoir mon devis site vitrine — PDF en 2 min</span>
-                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                        </button>
-                        <a href="/audit" class="btn btn-secondary btn-large">
-                            <span>Comprendre pourquoi mon site ne convertit pas — gratuit</span>
-                            <i class="fas fa-search" aria-hidden="true"></i>
-                        </a>
-                    </div>
-
-                    <p class="hero-cta-hint">Metz &amp; France — sans engagement</p>
-
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="50">0</div>
-                            <div class="stat-label">Projets livrés</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="7">0</div>
-                            <div class="stat-label">Années d'expérience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="100">0</div>
-                            <div class="stat-label">% Satisfaction</div>
-                        </div>
+                    <p class="home-promo-mois__price">
+                        <span class="home-promo-mois__price-now">390 € HT</span>
+                        <span class="home-promo-mois__price-note">forfait · disponible</span>
+                    </p>
+                    <ul class="home-offer-bullets">
+                        <li>« Livraison » indicative 5–8 jours ouvrés</li>
+                        <li>Devis sans panier — par e-mail</li>
+                        <li>Support 14 jours inclus</li>
+                    </ul>
+                    <div class="home-offer-actions home-offer-actions--row">
+                        <button type="button" class="btn btn-primary" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait"><span>Ajouter au devis</span><i class="fas fa-file-pdf" aria-hidden="true"></i></button>
+                        <a href="/prestations/site-vitrine-essentiel/" class="btn btn-outline"><span>Fiche produit</span></a>
                     </div>
                 </div>
-
-                <aside class="hero-visual" aria-label="Artisan devant son site professionnel" data-home-parallax>
-                    <div class="home-hero-visual-card">
-                        <picture>
-                            <source srcset="/assets/images/home/home-hero.webp" type="image/webp">
-                            <img src="/assets/images/home/home-hero.png" width="800" height="600" alt="Professionnel satisfait devant son site internet clair et moderne" loading="eager" decoding="async">
-                        </picture>
-                        <span class="home-hero-visual-glow" aria-hidden="true"></span>
-                        <div class="home-hero-badges">
-                            <a href="/prestations/site-vitrine/" class="home-hero-badge home-hero-badge--mobile"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Site qui rassure sur mobile</a>
-                            <a href="/prestations/visibilite-complete/" class="home-hero-badge home-hero-badge--google"><i class="fas fa-search" aria-hidden="true"></i> Être trouvé sur Google</a>
-                            <a href="/prestations/repondeur-intelligent/" class="home-hero-badge home-hero-badge--ia"><i class="fas fa-robot" aria-hidden="true"></i> Assistant sur mon site</a>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </div>
-
-        <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <span>Découvrir</span>
-                <div class="scroll-arrow">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
+            </article>
         </div>
     </section>
 
-    <section class="home-trend" aria-label="Tendance 2026">
-        <div class="container home-trend-inner">
-            <span class="home-trend-label"><i class="fas fa-bolt" aria-hidden="true"></i> Tendance 2026</span>
-            <p class="home-trend-text">
-                Vos clients ne vous cherchent plus seulement sur <strong>Google</strong> —
-                ils demandent aussi à <strong>ChatGPT</strong> qui contacter. Soyez prêt sur les deux.
-            </p>
-        </div>
-    </section>
-
-    <section id="offres" class="home-offers" aria-labelledby="home-offers-title" data-section="tarifs">
+    <section id="compare" class="home-compare home-compare--visual" aria-labelledby="home-compare-title">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <span class="section-badge">Nos 3 coups de cœur</span>
-                <h2 id="home-offers-title" class="section-title">Par où commencer ?</h2>
+                <span class="section-badge">Avant / Après</span>
+                <h2 id="home-compare-title" class="section-title">Page Facebook seule ou vrai site commerce&nbsp;?</h2>
                 <p class="section-description">
-                    Trois prestations concrètes, expliquées simplement. Chacune a sa page détaillée et un devis par e-mail.
+                    Vos clients cherchent horaires, preuves et contact — pas un fil d'actus qui disparaît.
+                </p>
+            </div>
+            <div class="home-compare-grid home-stagger scroll-reveal">
+                <div class="home-compare-col home-compare-col--before">
+                    <p class="home-compare-label">Avant</p>
+                    <h3>Page Facebook / réseaux</h3>
+                    <ul>
+                        <li>Dépend de l'algorithme</li>
+                        <li>Peu crédible pour un devis</li>
+                        <li>Pas de référencement Google structuré</li>
+                        <li>Infos éparpillées, horaires flous</li>
+                    </ul>
+                </div>
+                <div class="home-compare-col home-compare-col--after">
+                    <p class="home-compare-label">Après</p>
+                    <h3>Site vitrine DanielCraft</h3>
+                    <ul>
+                        <li>Votre adresse web à vous</li>
+                        <li>Message clair sur mobile</li>
+                        <li>Contact + Google / Maps</li>
+                        <li>Vitrine ouverte même boutique fermée</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offres" class="home-rayon" aria-labelledby="home-rayon-title" data-section="tarifs">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <span class="section-badge">Meilleures ventes</span>
+                <h2 id="home-rayon-title" class="section-title">Le rayon des offres</h2>
+                <p class="section-description">
+                    Comme en boutique : prix affichés, disponibilité claire, devis PDF sans panier.
                 </p>
             </div>
 
-            <div id="homeOffers" class="home-offers-grid home-stagger">
-                <article class="home-offer-card" data-home-tilt itemscope itemtype="https://schema.org/Service">
+            <div id="homeOffers" class="home-product-grid home-stagger">
+                <article class="home-product" itemscope itemtype="https://schema.org/Service">
                     <meta itemprop="provider" content="DanielCraft">
                     <link itemprop="url" href="{{site_base}}/prestations/site-vitrine-essentiel/">
-                    <div class="home-offer-visual">
+                    <div class="home-product__media">
+                        <span class="home-product__tag home-product__tag--promo">Promo</span>
                         <picture>
                             <source srcset="/assets/images/home/home-offer-vitrine.webp" type="image/webp">
-                            <img src="/assets/images/home/home-offer-vitrine.png" width="640" height="400" alt="Site vitrine professionnel sur ordinateur et téléphone" loading="lazy" decoding="async">
+                            <img src="/assets/images/home/home-offer-vitrine.png" width="640" height="400" alt="Site vitrine professionnel" loading="lazy" decoding="async">
                         </picture>
                     </div>
-                    <div class="home-offer-body">
-                        <p class="home-offer-tagline">Votre vitrine en ligne, claire et rassurante</p>
-                        <h3 class="home-offer-title" itemprop="name">Site vitrine professionnel</h3>
-                        <p class="home-offer-desc" itemprop="description">Présentez votre activité, rassurez sur mobile, recevez des demandes de contact — sans page Facebook seule.</p>
-                        <p class="home-offer-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <div class="home-product__body">
+                        <p class="home-product__stock"><i class="fas fa-circle" aria-hidden="true"></i> Disponible</p>
+                        <h3 class="home-product__title" itemprop="name">Site vitrine commerce</h3>
+                        <p class="home-product__desc" itemprop="description">Horaires, services, contact — vitrine claire sur mobile.</p>
+                        <p class="home-product__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                             <meta itemprop="priceCurrency" content="EUR">
                             <meta itemprop="price" content="390">
                             <link itemprop="availability" href="https://schema.org/InStock">
-                            à partir de 390 € <span>forfait HT</span>
+                            dès 390 € <span>HT</span>
                         </p>
-                        <div class="home-offer-actions">
-                            <a href="/prestations/site-vitrine-essentiel/" class="btn btn-primary btn-block"><span>Essentiel — 390 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <a href="/prestations/site-vitrine/" class="btn btn-outline btn-block"><span>Pro 5 pages — 590 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                        <div class="home-product__actions">
+                            <button type="button" class="btn btn-primary btn-block" data-prestation-devis-open data-prestation-slug="site-vitrine-essentiel" data-service-slug="pack_vitrine_essentiel" data-prestation-title="Site vitrine essentiel" data-prestation-price="390" data-prestation-price-label="Forfait"><span>Ajouter au devis</span></button>
+                            <a href="/prestations/site-vitrine-essentiel/" class="btn btn-outline btn-block"><span>Fiche</span></a>
                         </div>
                     </div>
                 </article>
 
-                <article class="home-offer-card home-offer-card--star" data-home-tilt itemscope itemtype="https://schema.org/Service">
+                <article class="home-product home-product--star" itemscope itemtype="https://schema.org/Service">
                     <meta itemprop="provider" content="DanielCraft">
                     <link itemprop="url" href="{{site_base}}/prestations/visibilite-complete/">
-                    <span class="home-offer-badge">Le plus demandé</span>
-                    <div class="home-offer-visual">
+                    <div class="home-product__media">
+                        <span class="home-product__tag">Best-seller</span>
                         <picture>
                             <source srcset="/assets/images/home/home-offer-visibilite.webp" type="image/webp">
-                            <img src="/assets/images/home/home-offer-visibilite.png" width="640" height="400" alt="Visibilité sur Google et assistants intelligents" loading="lazy" decoding="async">
+                            <img src="/assets/images/home/home-offer-visibilite.png" width="640" height="400" alt="Visibilité Google et Maps" loading="lazy" decoding="async">
                         </picture>
                     </div>
-                    <div class="home-offer-body">
-                        <p class="home-offer-tagline">Google + assistants intelligents</p>
-                        <h3 class="home-offer-title" itemprop="name">Être trouvé sur Google et par l'IA</h3>
-                        <p class="home-offer-desc" itemprop="description">Quand on vous cherche en ligne — ou qu'on demande à ChatGPT — on tombe sur la bonne info, au bon moment.</p>
-                        <p class="home-offer-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <div class="home-product__body">
+                        <p class="home-product__stock"><i class="fas fa-circle" aria-hidden="true"></i> Disponible</p>
+                        <h3 class="home-product__title" itemprop="name">Visibilité Google &amp; Maps</h3>
+                        <p class="home-product__desc" itemprop="description">Être trouvé près de chez vous — Google et assistants IA.</p>
+                        <p class="home-product__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                             <meta itemprop="priceCurrency" content="EUR">
                             <meta itemprop="price" content="690">
                             <link itemprop="availability" href="https://schema.org/InStock">
-                            690 € <span>forfait HT</span>
+                            690 € <span>HT</span>
                         </p>
-                        <div class="home-offer-actions">
-                            <a href="/prestations/visibilite-complete/" class="btn btn-primary btn-block"><span>Voir le détail — 690 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="690" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                        <div class="home-product__actions">
+                            <button type="button" class="btn btn-primary btn-block" data-prestation-devis-open data-prestation-slug="visibilite-complete" data-service-slug="pack_seo_complet" data-prestation-title="Être trouvé sur Google et par l'IA" data-prestation-price="690" data-prestation-price-label="Forfait"><span>Ajouter au devis</span></button>
+                            <a href="/prestations/visibilite-complete/" class="btn btn-outline btn-block"><span>Fiche</span></a>
                         </div>
                     </div>
                 </article>
 
-                <article class="home-offer-card" data-home-tilt itemscope itemtype="https://schema.org/Service">
+                <article class="home-product" itemscope itemtype="https://schema.org/Service">
                     <meta itemprop="provider" content="DanielCraft">
                     <link itemprop="url" href="{{site_base}}/prestations/repondeur-intelligent/">
-                    <div class="home-offer-visual">
+                    <div class="home-product__media">
+                        <span class="home-product__tag home-product__tag--new">Nouveau</span>
                         <picture>
                             <source srcset="/assets/images/home/home-offer-assistant.webp" type="image/webp">
-                            <img src="/assets/images/home/home-offer-assistant.png" width="640" height="400" alt="Assistant intelligent qui répond sur un site web" loading="lazy" decoding="async">
+                            <img src="/assets/images/home/home-offer-assistant.png" width="640" height="400" alt="Répondeur intelligent" loading="lazy" decoding="async">
                         </picture>
                     </div>
-                    <div class="home-offer-body">
-                        <p class="home-offer-tagline">Répond aux questions, jour et nuit</p>
-                        <h3 class="home-offer-title" itemprop="name">Répondeur intelligent sur votre site</h3>
-                        <p class="home-offer-desc" itemprop="description">Horaires, tarifs, prestations : l'assistant guide vos visiteurs avec vos vraies infos, 24 h/24.</p>
-                        <p class="home-offer-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <div class="home-product__body">
+                        <p class="home-product__stock"><i class="fas fa-circle" aria-hidden="true"></i> Disponible</p>
+                        <h3 class="home-product__title" itemprop="name">Répondeur intelligent</h3>
+                        <p class="home-product__desc" itemprop="description">Réponses 24 h/24 avec vos vraies infos.</p>
+                        <p class="home-product__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                             <meta itemprop="priceCurrency" content="EUR">
                             <meta itemprop="price" content="990">
                             <link itemprop="availability" href="https://schema.org/InStock">
-                            990 € <span>forfait HT</span>
+                            990 € <span>HT</span>
                         </p>
-                        <div class="home-offer-actions">
-                            <a href="/prestations/repondeur-intelligent/" class="btn btn-primary btn-block"><span>Voir le détail — 990 € HT</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                            <button type="button" class="btn btn-outline btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="990" data-prestation-price-label="Forfait"><span>Recevoir le devis PDF par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>
+                        <div class="home-product__actions">
+                            <button type="button" class="btn btn-primary btn-block" data-prestation-devis-open data-prestation-slug="repondeur-intelligent" data-service-slug="ia_faq_site" data-prestation-title="Répondeur intelligent sur votre site" data-prestation-price="990" data-prestation-price-label="Forfait"><span>Ajouter au devis</span></button>
+                            <a href="/prestations/repondeur-intelligent/" class="btn btn-outline btn-block"><span>Fiche</span></a>
                         </div>
                     </div>
                 </article>
-
             </div>
+
+            <aside class="home-bundle scroll-reveal" aria-labelledby="home-bundle-title">
+                <div class="home-bundle__content">
+                    <p class="home-bundle__label">Souvent achetés ensemble</p>
+                    <h3 id="home-bundle-title">Vitrine + Visibilité</h3>
+                    <p>Site clair + être trouvé sur Google / Maps — le duo le plus demandé par les commerces.</p>
+                    <p class="home-bundle__price">À partir de 390 € + 690 € HT</p>
+                </div>
+                <div class="home-bundle__actions">
+                    <a href="/nos-offres" class="btn btn-primary"><span>Voir le duo</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="/prestations/" class="btn btn-outline"><span>Tout le catalogue</span></a>
+                </div>
+            </aside>
 
             <aside class="home-audit-banner scroll-reveal">
                 <div>
-                    <h3>Vous avez déjà un site ?</h3>
-                    <p>Diagnostic Google, vitesse et clarté de votre message — avec un plan d'action en français clair.</p>
+                    <h3>Vous avez déjà un site&nbsp;?</h3>
+                    <p>Diagnostic Google, vitesse et clarté — plan d'action en français clair. Gratuit.</p>
                 </div>
                 <a href="/audit" class="btn btn-primary btn-large">
-                    <span>Tester mon site gratuitement</span>
+                    <span>Audit gratuit</span>
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </aside>
-
-            <p class="services-more" style="margin-top: 2rem; text-align: center;">
-                <a href="/nos-offres">Voir toutes nos offres</a>
-                ·
-                <a href="/prestations/">Catalogue des 32 prestations</a>
-            </p>
         </div>
     </section>
 
-    <!-- Pourquoi Choisir Section -->
-    <section id="why-choose" class="why-choose">
+    <section id="why-choose" class="why-choose why-choose--commerce">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <span class="section-badge">Pourquoi Choisir</span>
-                <h2 class="section-title">Pourquoi ça vous simplifie la vie</h2>
+                <span class="section-badge">Pourquoi DanielCraft</span>
+                <h2 class="section-title">Ce qui rassure un commerce</h2>
                 <p class="section-description">
-                    Pas besoin de comprendre le technique : je traduis votre besoin en site, visibilité ou assistant — avec des mots clairs et un budget annoncé dès le départ.
+                    Délais, budget et suivi annoncés dès le départ — sans jargon.
                 </p>
             </div>
-            
-            <div class="why-grid scroll-reveal">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="why-title">Délais annoncés dès le devis</h3>
-                    <p class="why-description">
-                        Site en ligne en 5-8 jours ouvrés pour un vitrine standard. Pas de délais cachés — vous savez quand partir.
-                    </p>
+
+            <div class="why-grid why-grid--icons scroll-reveal">
+                <div class="why-card why-card--flat">
+                    <div class="why-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                    <h3 class="why-title">Délais annoncés</h3>
+                    <p class="why-description">Vitrine standard en 5–8 jours ouvrés.</p>
                 </div>
-                
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-euro-sign"></i>
-                    </div>
-                    <h3 class="why-title">Budget cadré, pas de surprise</h3>
-                    <p class="why-description">
-                        Enveloppe validée dès le départ. Pas de frais cachés,
-                        on ajuste avec vous selon vos priorités business.
-                    </p>
+                <div class="why-card why-card--flat">
+                    <div class="why-icon"><i class="fas fa-euro-sign" aria-hidden="true"></i></div>
+                    <h3 class="why-title">Budget cadré</h3>
+                    <p class="why-description">Enveloppe validée dès le devis.</p>
                 </div>
-                
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
+                <div class="why-card why-card--flat">
+                    <div class="why-icon"><i class="fas fa-user" aria-hidden="true"></i></div>
                     <h3 class="why-title">Un seul interlocuteur</h3>
-                    <p class="why-description">
-                        Pas d'agence avec cinq contacts différents : vous parlez à la même personne du devis jusqu'à la mise en ligne.
-                    </p>
+                    <p class="why-description">De A à Z, la même personne.</p>
                 </div>
-                
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="why-title">Support 14 jours inclus</h3>
-                    <p class="why-description">
-                        Pendant 14 jours après la livraison, je corrige tous les bugs gratuitement. 
-                        Vous êtes accompagné, pas abandonné.
-                    </p>
+                <div class="why-card why-card--flat">
+                    <div class="why-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+                    <h3 class="why-title">Support 14 jours</h3>
+                    <p class="why-description">Bugs corrigés après livraison.</p>
                 </div>
-                
             </div>
-            
+
             <div class="why-cta">
                 <a href="/contact" class="btn btn-primary">
                     <span>Parler de mon projet</span>
@@ -293,55 +313,45 @@
             </div>
         </div>
     </section>
-    
-    <!-- About Section -->
-    <section id="about" class="about">
+
+    <section id="about" class="about about--commerce">
         <div class="container">
             <div class="about-content scroll-reveal">
                 <div class="about-text">
-                    <span class="section-badge">À Propos</span>
-                    <h2 class="section-title">Loïc Daniel — votre partenaire web à Metz</h2>
+                    <span class="section-badge">À propos</span>
+                    <h2 class="section-title">Loïc Daniel — partenaire web des commerces à Metz</h2>
                     <p class="about-description">
-                        Depuis plus de 7 ans, j'accompagne artisans, commerces et indépendants : site vitrine, visibilité Google,
-                        assistants intelligents, entretien. Je parle français clair, pas « dev » : vous savez ce que vous achetez
-                        et pourquoi.
+                        Depuis plus de 7 ans, j'accompagne artisans, commerces et indépendants :
+                        site vitrine, visibilité Google, assistants intelligents, entretien.
+                        Français clair, budget annoncé.
                     </p>
-
                     <div class="about-features">
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
+                            <div class="feature-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
                             <div class="feature-content">
                                 <h4>On part de votre quotidien</h4>
-                                <p>Vous m'expliquez votre activité avec vos mots — je traduis en pages, textes et outils utiles.</p>
+                                <p>Vous expliquez votre activité — je traduis en pages utiles.</p>
                             </div>
                         </div>
-
                         <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-file-invoice"></i>
-                            </div>
+                            <div class="feature-icon"><i class="fas fa-file-invoice" aria-hidden="true"></i></div>
                             <div class="feature-content">
                                 <h4>Devis par e-mail</h4>
-                                <p>Comme sur une boutique en ligne : vous choisissez une prestation, le devis part tout de suite.</p>
+                                <p>Vous choisissez une prestation, le PDF part tout de suite.</p>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="about-cta">
                         <a href="#contact" class="btn btn-primary">
                             <span>Travaillons ensemble</span>
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                         <a href="mailto:contact@danielcraft.fr" class="btn btn-secondary">
                             <span>Me contacter</span>
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="about-visual about-visual--compact">
                     <div class="about-image">
                         <picture>
@@ -359,96 +369,100 @@
         <meta itemprop="name" content="Modèles de sites DanielCraft">
         <div class="container">
             <div class="section-header scroll-reveal">
-                <span class="section-badge">Inspiration</span>
-                <h2 id="home-vitrines-title" class="section-title">Exemples pour se projeter</h2>
+                <span class="section-badge">Exemples</span>
+                <h2 id="home-vitrines-title" class="section-title">Se projeter métier par métier</h2>
                 <p class="section-description">
-                    Trois démos en vedette sur ordinateur — ouvrez un aperçu live. Votre site sera unique, adapté à votre métier.
+                    Démos live — votre site sera unique, adapté à votre activité.
                 </p>
             </div>
             {% include "includes/home-vitrines-teaser.html" %}
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <section class="home-newsletter" aria-labelledby="home-newsletter-title">
+        <div class="container home-newsletter__inner scroll-reveal">
+            <div>
+                <h2 id="home-newsletter-title">Recevoir les offres du mois</h2>
+                <p>Une alerte simple quand une promo ou un pack commerce est en avant — sans spam.</p>
+            </div>
+            <a href="/contact" class="btn btn-primary btn-large">
+                <span>Me tenir informé</span>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
+
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header scroll-reveal">
                 <span class="section-badge">Questions fréquentes</span>
-                <h2 class="section-title">Quelques réponses avant de prendre contact</h2>
-                <p class="section-description">
-                    Vous hésitez à lancer votre projet ou vous ne savez pas si c'est le bon moment ? Voici de quoi vous rassurer rapidement.
-                </p>
+                <h2 class="section-title">Avant de lancer votre vitrine</h2>
+                <p class="section-description">Quelques réponses pour y voir clair — sans pression.</p>
             </div>
-            
+
             <div class="faq-accordion" role="region" aria-label="Questions fréquentes" itemscope itemtype="https://schema.org/FAQPage">
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-1" id="faq-q1" data-faq-toggle>
-                        <span itemprop="name">Je ne sais pas exactement ce qu'il me faut, on commence par où ?</span>
+                        <span itemprop="name">Je ne sais pas exactement ce qu'il me faut, on commence par où&nbsp;?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer-wrap" id="faq-1" aria-labelledby="faq-q1" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-answer" itemprop="text">
-                        On part toujours de là. Lors du premier échange, vous m'expliquez votre activité avec vos mots, votre contexte
-                        et ce que vous aimeriez obtenir (plus d'appels, de demandes de devis, mieux expliquer votre offre...).
-                        Je reformule en plan simple : pages clés, fonctionnalités utiles, priorités et budget réaliste.
-                        Pas de jargon, pas de pression : l'objectif est que vous repartiez avec une vision claire, même si vous décidez d'attendre.
+                        On part de votre activité : plus d'appels, de demandes de devis, mieux expliquer l'offre…
+                        Je reformule en plan simple — pages clés, priorités, budget. Pas de jargon.
                     </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-2" id="faq-q2" data-faq-toggle>
-                        <span itemprop="name">Vous faites aussi des sites "simples" (vitrine, landing page) ?</span>
+                        <span itemprop="name">Vous faites aussi des sites « simples » (vitrine, une page)&nbsp;?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer-wrap" id="faq-2" role="region" aria-labelledby="faq-q2" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-answer" itemprop="text">
-                        Oui, et je les conçois comme de vrais outils de vente : message clair, structure simple, appels à l'action visibles,
-                        formulaires pensés pour être réellement utilisés. Et si votre besoin va plus loin (espace client, automatisation,
-                        tableaux de bord...), on peut faire évoluer le projet par étapes sans tout refaire.
+                        Oui : message clair, structure simple, appels à l'action visibles.
+                        On peut faire évoluer ensuite sans tout refaire.
                     </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-3" id="faq-q3" data-faq-toggle>
-                        <span itemprop="name">Quels types de projets vous réalisez concrètement ?</span>
+                        <span itemprop="name">Quels types de projets pour un commerce&nbsp;?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer-wrap" id="faq-3" aria-labelledby="faq-q3" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-answer" itemprop="text">
-                        Sites vitrines pour artisans et commerces, visibilité Google et assistants IA, entretien mensuel,
-                        formulaires et connexions à vos outils (facturation, CRM). Si votre besoin est plus spécifique,
-                        on en parle au premier échange — sans vous vendre plus que nécessaire.
+                        Sites vitrines, visibilité Google et Maps, assistants IA, entretien mensuel.
+                        On en parle au premier échange — sans vous vendre plus que nécessaire.
                     </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-4" id="faq-q4" data-faq-toggle>
-                        <span itemprop="name">Comment se passe concrètement le premier contact ?</span>
+                        <span itemprop="name">Comment se passe le premier contact&nbsp;?</span>
                         <i class="fas fa-chevron-down faq-chevron" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer-wrap" id="faq-4" aria-labelledby="faq-q4" hidden itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-answer" itemprop="text">
-                        On fixe un créneau (visio ou téléphone) de 30 à 45 minutes. Vous me donnez le contexte, vos priorités et vos contraintes
-                        (délais, budget, existant technique). Je vous explique ce qui est réaliste, je propose un découpage en étapes et,
-                        si ça vous convient, je vous envoie un devis clair avec les livrables et les prochaines actions.
+                        Visio ou téléphone 30–45 min : contexte, priorités, contraintes.
+                        Puis un devis clair avec les livrables, si ça vous convient.
                     </p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="faq-cta">
                 <a href="#contact" class="btn btn-primary btn-large">
                     <span>Parler de votre projet maintenant</span>
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     {% include "includes/contact-section.html" %}
 
     </div>

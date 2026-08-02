@@ -29,6 +29,13 @@ from urllib.parse import quote
 BASE_DIR = Path(__file__).parent
 SRC_DIR = BASE_DIR / 'src'
 INCLUDES_DIR = SRC_DIR / 'includes'
+# Includes réécrits à chaque build_page — ne pas les surveiller (sinon boucle watch).
+GENERATED_INCLUDE_NAMES = frozenset({
+    'home-vitrines-teaser.html',
+    'vitrines-page-collection.html',
+    'vitrines-catalog-embed.html',
+    'prestations-catalog-embed.html',
+})
 TEMPLATES_DIR = SRC_DIR / 'templates'
 PAGES_DIR = SRC_DIR / 'pages'
 DATA_DIR = SRC_DIR / 'data'
@@ -2833,14 +2840,21 @@ def main():
             class BuildHandler(FileSystemEventHandler):
                 def __init__(self):
                     self._last_event = {}
+                    self._rebuilding = False
 
-                def _is_debounced(self, key: str, delay_s: float = 0.25) -> bool:
+                def _is_debounced(self, key: str, delay_s: float = 0.35) -> bool:
                     now = time.time()
                     prev = self._last_event.get(key, 0.0)
                     if (now - prev) < delay_s:
                         return True
                     self._last_event[key] = now
                     return False
+
+                def _is_generated_include(self, src: Path) -> bool:
+                    try:
+                        return INCLUDES_DIR in src.parents and src.name in GENERATED_INCLUDE_NAMES
+                    except (OSError, ValueError):
+                        return False
 
                 def _copy_asset_file(self, src_path: Path):
                     if not src_path.exists() or not src_path.is_file():
@@ -2855,24 +2869,34 @@ def main():
                     print(f"[ASSET] Copie: {rel}")
 
                 def _rebuild_all_pages(self):
-                    ok = 0
-                    for p in pages:
-                        if build_page(p, template_engine):
-                            ok += 1
-                    ps = build_project_pages(template_engine, OUTPUT_DIR)
-                    build_vitrine_pages(template_engine, OUTPUT_DIR)
-                    build_prestation_pages(template_engine, OUTPUT_DIR)
-                    generate_sitemap_vitrines(OUTPUT_DIR)
-                    generate_sitemap_prestations(OUTPUT_DIR)
-                    generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps)
-                    generate_sitemap_index(OUTPUT_DIR)
-                    print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/sitemap")
+                    self._rebuilding = True
+                    try:
+                        ok = 0
+                        for p in pages:
+                            if build_page(p, template_engine):
+                                ok += 1
+                        ps = build_project_pages(template_engine, OUTPUT_DIR)
+                        build_vitrine_pages(template_engine, OUTPUT_DIR)
+                        build_prestation_pages(template_engine, OUTPUT_DIR)
+                        generate_sitemap_vitrines(OUTPUT_DIR)
+                        generate_sitemap_prestations(OUTPUT_DIR)
+                        generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps)
+                        generate_sitemap_index(OUTPUT_DIR)
+                        print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/sitemap")
+                    finally:
+                        # Laisser le FS Windows digérer les write_text des includes générés
+                        time.sleep(0.5)
+                        self._rebuilding = False
 
-                def on_modified(self, event):
-                    if event.is_directory:
+                def _handle_src_change(self, event):
+                    if event.is_directory or self._rebuilding:
                         return
 
                     src = Path(event.src_path)
+                    # Ignore les includes générés par le build (évite la boucle watch)
+                    if self._is_generated_include(src):
+                        return
+
                     src_str = str(src)
                     ext = src.suffix.lower()
 
@@ -2890,7 +2914,12 @@ def main():
                         page = src.stem
                         print(f"\n📝 Page modifiee : {src.name}")
                         if page in pages:
-                            build_page(page, template_engine)
+                            self._rebuilding = True
+                            try:
+                                build_page(page, template_engine)
+                            finally:
+                                time.sleep(0.35)
+                                self._rebuilding = False
                         else:
                             self._rebuild_all_pages()
                         return
@@ -2901,12 +2930,17 @@ def main():
                         self._rebuild_all_pages()
                         return
 
-                    # Changement template/include => rebuild global
+                    # Changement template/include (hors générés) => rebuild global
                     if ext in {'.html', '.json'} and (TEMPLATES_DIR in src.parents or INCLUDES_DIR in src.parents):
                         print(f"\n🧩 Template/include modifie : {src.name}")
                         self._rebuild_all_pages()
                         return
-            
+
+                def on_modified(self, event):
+                    self._handle_src_change(event)
+
+                def on_created(self, event):
+                    self._handle_src_change(event)
             event_handler = BuildHandler()
             observer = Observer()
             observer.schedule(event_handler, str(SRC_DIR), recursive=True)

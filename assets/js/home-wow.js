@@ -1,10 +1,10 @@
 /**
- * Accueil : tilt cartes offres, parallax hero léger, stagger reveal.
+ * Accueil : stagger reveal bandes + tilt optionnel (nos-offres).
  */
 (function () {
   'use strict';
 
-  if (!document.querySelector('.home-hero--wow')) return;
+  if (!document.querySelector('.home-hero--wow') && !document.querySelector('.home-offers')) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -29,15 +29,15 @@
 
   function initHeroParallax() {
     if (reduceMotion) return;
-    if (window.matchMedia('(max-width: 767px)').matches) return;
-    const visual = document.querySelector('[data-home-parallax]');
-    if (!visual) return;
+    if (window.matchMedia('(max-width: 959px)').matches) return;
+    const media = document.querySelector('.home-split__media img');
+    if (!media) return;
     window.addEventListener(
       'scroll',
       function () {
         const y = window.scrollY;
-        if (y > 600) return;
-        visual.style.transform = 'translateY(' + y * 0.08 + 'px)';
+        if (y > 700) return;
+        media.style.transform = 'translateY(' + y * 0.05 + 'px)';
       },
       { passive: true },
     );
@@ -63,7 +63,7 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
     );
     blocks.forEach(function (el) {
       io.observe(el);
