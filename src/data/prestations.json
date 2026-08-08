@@ -1,49 +1,296 @@
 {
   "categories": [
     {
+      "id": "packs",
+      "title": "Packs commerce",
+      "nav_label": "Packs",
+      "icon": "fa-box-open",
+      "description": "Plusieurs prestations ensemble, moins cher qu'à l'unité.",
+      "image": "/assets/images/prestations/categories/packs.jpg"
+    },
+    {
       "id": "identite",
       "title": "Image & visibilité",
       "nav_label": "Image & visibilité",
       "icon": "fa-fingerprint",
-      "description": "Une présence claire et cohérente, sur Google comme auprès des assistants intelligents."
+      "description": "Une présence claire et cohérente, sur Google comme auprès des assistants intelligents.",
+      "image": "/assets/images/prestations/categories/identite.jpg"
     },
     {
       "id": "ia",
       "title": "Assistants & automatisation",
       "nav_label": "Assistants intelligents",
       "icon": "fa-robot",
-      "description": "Des réponses utiles à vos clients, sans jargon technique."
+      "description": "Des réponses utiles à vos clients, sans jargon technique.",
+      "image": "/assets/images/prestations/categories/ia.jpg"
+    },
+    {
+      "id": "mobile",
+      "title": "Mobile & messagerie",
+      "nav_label": "Mobile & WhatsApp",
+      "icon": "fa-mobile-alt",
+      "description": "Être joignable et convaincant depuis un smartphone — PWA, WhatsApp, Google Maps.",
+      "image": "/assets/images/prestations/categories/mobile.jpg"
     },
     {
       "id": "technique",
       "title": "Connexions & organisation",
       "nav_label": "Connexions & outils",
       "icon": "fa-plug",
-      "description": "Faire communiquer vos outils entre eux et gagner du temps au quotidien."
+      "description": "Faire communiquer vos outils entre eux et gagner du temps au quotidien.",
+      "image": "/assets/images/prestations/categories/technique.jpg"
     },
     {
       "id": "site-contenu",
       "title": "Votre site & vos textes",
       "nav_label": "Site & contenu",
       "icon": "fa-paint-brush",
-      "description": "Pages, formulaires et petites retouches visuelles."
+      "description": "Pages, formulaires et petites retouches visuelles.",
+      "image": "/assets/images/prestations/categories/site-contenu.jpg"
     },
     {
       "id": "maintenance",
       "title": "Sérénité & suivi",
       "nav_label": "Entretien & support",
       "icon": "fa-shield-alt",
-      "description": "Hébergement, sauvegardes et dépannage quand vous en avez besoin."
+      "description": "Hébergement, sauvegardes et dépannage quand vous en avez besoin.",
+      "image": "/assets/images/prestations/categories/maintenance.jpg"
     },
     {
       "id": "eco",
       "title": "Web sobre & performant",
       "nav_label": "Éco-conception",
       "icon": "fa-leaf",
-      "description": "Sites plus légers, plus rapides et plus économes — bon pour la planète, pour Google et pour votre budget."
+      "description": "Sites plus légers, plus rapides et plus économes — bon pour la planète, pour Google et pour votre budget.",
+      "image": "/assets/images/prestations/categories/eco.jpg"
     }
   ],
   "items": [
+    {
+      "slug": "pack-presence-telephone",
+      "service_slug": "pack_presence_telephone",
+      "kind": "pack",
+      "category": "packs",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-mobile-alt",
+      "title": "Pack Présence téléphone",
+      "tagline": "PWA + Maps + conversion mobile",
+      "short_description": "Site installable, fiche Maps, boutons d'appel. Tout pour le client sur téléphone.",
+      "description": "La plupart de vos visiteurs sont sur mobile. Ce pack aligne l'expérience : site qui s'installe, fiche Maps propre, contact en un tap.",
+      "price_eur": 949,
+      "compare_at_eur": 1129,
+      "price_label": "Pack",
+      "price_note": "Au lieu de 1 129 € HT à l'unité",
+      "image": "/assets/images/prestations/cards/pack-presence-telephone.jpg",
+      "includes_slugs": [
+        "pwa-vitrine",
+        "fiche-google-mobile",
+        "conversion-mobile"
+      ],
+      "benefits": [
+        "Expérience \"presque appli\"",
+        "Maps + appel faciles",
+        "Remise pack"
+      ],
+      "includes": [
+        "Site installable (PWA)",
+        "Fiche Google Maps",
+        "Pack conversion mobile"
+      ],
+      "faq": [],
+      "examples": [
+        "Commerce où 80 % du trafic est mobile."
+      ],
+      "promo": "Si vos clients vivent sur le téléphone, ce pack aussi.",
+      "prestafacture_sku": "PACK-TELEPHONE",
+      "estimated_hours": 24
+    },
+    {
+      "slug": "pack-reputation-locale",
+      "service_slug": "pack_reputation_locale",
+      "kind": "pack",
+      "category": "packs",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-star",
+      "title": "Pack Réputation locale",
+      "tagline": "Maps + avis + coup de propre Google",
+      "short_description": "Fiche Google, collecte d'avis, petites corrections SEO. Le pack \"on me trouve et on me fait confiance\".",
+      "description": "Trois leviers locaux : fiche Maps au propre, parcours avis (sans harceler), et bases SEO. Idéal si le site existe déjà mais la réputation locale pêche.",
+      "price_eur": 749,
+      "compare_at_eur": 929,
+      "price_label": "Pack",
+      "price_note": "Au lieu de 929 € HT à l'unité",
+      "price_tier": "entry",
+      "image": "/assets/images/prestations/cards/pack-reputation-locale.jpg",
+      "includes_slugs": [
+        "fiche-google-mobile",
+        "ia-avis-google",
+        "referencement-google"
+      ],
+      "benefits": [
+        "Plus visible sur Maps",
+        "Plus d'avis dans le temps",
+        "Bases SEO corrigées"
+      ],
+      "includes": [
+        "Fiche Google Business Profile",
+        "Collecte & réponses avis",
+        "Remise en forme Google (bases)"
+      ],
+      "faq": [],
+      "examples": [
+        "Commerce avec peu d'avis et une fiche Google à moitié vide."
+      ],
+      "promo": "Sur mobile, Maps décide souvent avant votre site.",
+      "prestafacture_sku": "PACK-REPUTATION",
+      "estimated_hours": 20
+    },
+    {
+      "slug": "pack-whatsapp-commerce",
+      "service_slug": "pack_whatsapp_commerce",
+      "kind": "pack",
+      "category": "packs",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-comments",
+      "title": "Pack WhatsApp commerce",
+      "tagline": "Profil pro + assistant qui répond aux questions simples",
+      "short_description": "WhatsApp Business bien réglé, puis l'assistant. Le canal où vos clients écrivent déjà.",
+      "description": "D'abord on met le WhatsApp au propre (profil, messages, réponses rapides). Ensuite l'assistant gère les questions du quotidien. Ensemble, moins cher.",
+      "price_eur": 890,
+      "compare_at_eur": 1080,
+      "price_label": "Pack",
+      "price_note": "Au lieu de 1 080 € HT à l'unité",
+      "image": "/assets/images/prestations/cards/pack-whatsapp-commerce.jpg",
+      "includes_slugs": [
+        "whatsapp-business-setup",
+        "whatsapp-assistant-ia"
+      ],
+      "benefits": [
+        "Image pro dès le premier message",
+        "Réponses même quand vous êtes en clientèle",
+        "Remise pack"
+      ],
+      "includes": [
+        "Mise en place WhatsApp Business",
+        "Assistant WhatsApp intelligent",
+        "Petite formation incluse"
+      ],
+      "faq": [],
+      "examples": [
+        "Salon, resto, artisan : WhatsApp = ligne principale."
+      ],
+      "promo": "Vos clients sont déjà sur WhatsApp. Autant que ça travaille pour vous.",
+      "prestafacture_sku": "PACK-WHATSAPP",
+      "estimated_hours": 26
+    },
+    {
+      "slug": "pack-etre-trouve",
+      "service_slug": "pack_etre_trouve",
+      "kind": "pack",
+      "category": "packs",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-search-location",
+      "title": "Pack Être trouvé",
+      "tagline": "Vitrine 5 pages + visibilité Google / Maps / IA",
+      "short_description": "Le duo le plus demandé : un vrai site + être trouvé près de chez vous.",
+      "description": "Site vitrine pro jusqu'à 5 pages, plus le pack visibilité (Google, Maps, un peu d'IA). C'est le combo \"j'existe vraiment en ligne\". Remise par rapport aux deux forfaits séparés.",
+      "price_eur": 1090,
+      "compare_at_eur": 1280,
+      "price_label": "Pack",
+      "price_note": "Au lieu de 1 280 € HT à l'unité",
+      "price_tier": "growth",
+      "image": "/assets/images/prestations/cards/pack-etre-trouve.jpg",
+      "includes_slugs": [
+        "site-vitrine",
+        "visibilite-complete"
+      ],
+      "benefits": [
+        "Site solide + local SEO",
+        "Un seul interlocuteur pour les deux",
+        "Économie vs forfaits séparés"
+      ],
+      "includes": [
+        "Site vitrine professionnel (jusqu'à 5 pages)",
+        "Visibilité Google et par l'IA",
+        "Planning de livraison commun"
+      ],
+      "faq": [],
+      "examples": [
+        "Commerce établi qui veut enfin un site digne + être dans le pack local."
+      ],
+      "promo": "Souvent achetés ensemble - autant le faire en pack.",
+      "prestafacture_sku": "PACK-ETRE-TROUVE",
+      "estimated_hours": 40
+    },
+    {
+      "slug": "pack-demarrer-commerce",
+      "service_slug": "pack_demarrer_commerce",
+      "kind": "pack",
+      "category": "packs",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-store",
+      "title": "Pack Démarrer commerce",
+      "tagline": "Site + Maps + boutons d'appel - le trio pour ouvrir proprement",
+      "short_description": "Site essentiel, fiche Google au propre, conversion mobile. Moins cher qu'à l'unité.",
+      "description": "Vous démarrez ou vous sortez de Facebook ? Ce pack pose les bases : un petit site clair, une fiche Maps sérieuse, et des boutons pour vous appeler depuis le téléphone. Les trois ensemble, avec une remise.",
+      "price_eur": 890,
+      "compare_at_eur": 1029,
+      "price_label": "Pack",
+      "price_note": "Au lieu de 1 029 € HT à l'unité",
+      "price_tier": "growth",
+      "image": "/assets/images/prestations/cards/pack-demarrer-commerce.jpg",
+      "includes_slugs": [
+        "site-vitrine-essentiel",
+        "fiche-google-mobile",
+        "conversion-mobile"
+      ],
+      "benefits": [
+        "Présent en ligne + sur Maps",
+        "Contact en un tap sur téléphone",
+        "Remise pack vs 3 prestations séparées"
+      ],
+      "includes": [
+        "Site vitrine essentiel (3 pages)",
+        "Fiche Google Business Profile",
+        "Pack conversion mobile",
+        "Devis PDF unique + suivi livraison"
+      ],
+      "faq": [
+        {
+          "q": "Je peux prendre seulement le site ?",
+          "a": "Oui, chaque prestation existe seule. Le pack, c'est si vous voulez les trois d'un coup, moins cher."
+        }
+      ],
+      "examples": [
+        "Nouveau commerce de quartier qui veut être joignable dès la première semaine.",
+        "Artisan qui quitte la page Facebook pour quelque chose de sérieux."
+      ],
+      "promo": "Le pack \"je me lance\" - site, Maps, appel. Point.",
+      "prestafacture_sku": "PACK-DEMARRER",
+      "estimated_hours": 28,
+      "highlights": [
+        {
+          "icon": "fa-store",
+          "title": "Tout pour demarrer",
+          "text": "Site + Maps + conversion"
+        },
+        {
+          "icon": "fa-tags",
+          "title": "Remise pack",
+          "text": "Moins cher qu'a l'unite"
+        },
+        {
+          "icon": "fa-bolt",
+          "title": "Rapide a lancer",
+          "text": "Un seul devis, un seul suivi"
+        }
+      ]
+    },
     {
       "slug": "site-vitrine-essentiel",
       "service_slug": "pack_vitrine_essentiel",
@@ -52,17 +299,22 @@
       "has_page": true,
       "icon": "fa-globe",
       "title": "Site vitrine essentiel",
-      "tagline": "Présent en ligne rapidement, sans prototype jetable",
-      "short_description": "Un site 3 pages clair sur mobile, formulaire de contact et mise en ligne — livré en quelques jours.",
-      "description": "Je crée un site vitrine compact : accueil, prestations et contact. Idéal pour démarrer vite avec une image pro, sans le coût d'un site complet.",
+      "tagline": "Horaires, services, contact - une vitrine claire sur téléphone.",
+      "short_description": "Trois pages claires sur téléphone, formulaire de contact, mise en ligne. Livré en quelques jours.",
+      "description": "Je vous fais un petit site vitrine : accueil, prestations, contact. Idéal pour démarrer sans se ruiner, avec quelque chose de vrai en ligne (pas un brouillon abandonné).",
       "price_eur": 390,
       "price_label": "Forfait",
-      "price_note": "Forfait TPE — jusqu'à 3 pages",
-      "image": "/assets/images/prestations/site-vitrine.svg",
+      "price_note": "590 € HT pour un site jusqu'à 10 pages",
+      "image": "/assets/images/prestations/cards/site-vitrine-essentiel.jpg",
+      "before": [
+        "Pas de site, ou un site vieillot",
+        "Clients qui cherchent ailleurs",
+        "Infos éparpillées"
+      ],
       "benefits": [
-        "En ligne en quelques jours ouvrés",
-        "Visible sur mobile dès la livraison",
-        "Un vrai site livré, pas un brouillon IA"
+        "Adresse web à vous",
+        "Message clair sur mobile",
+        "Contact immédiat"
       ],
       "includes": [
         "Jusqu'à 3 pages (accueil, services, contact)",
@@ -96,16 +348,33 @@
           "prestafacture_sku": "FORM-AVANCE"
         }
       ],
-      "seo_title": "Site vitrine essentiel — Metz & Lorraine (3 pages)",
+      "seo_title": "Site vitrine essentiel - Metz & Lorraine (3 pages)",
       "seo_description": "Site vitrine 3 pages livré rapidement : mobile, formulaire contact, HTTPS. À partir de 390 € HT pour artisans et TPE en Lorraine.",
       "examples": [
         "Un auto-entrepreneur veut une page accueil, services et contact avant un salon professionnel.",
         "Un commerce de quartier remplace sa page Facebook par un site à son adresse www."
       ],
-      "promo": "L'alternative sérieuse au « site en un week-end » : livré, en ligne, avec votre nom de domaine.",
+      "promo": "Pas un site \"weekend magique\". Un vrai truc livré, en ligne, à votre nom.",
       "prestafacture_sku": "SITE-VITRINE-ESSENTIEL",
       "estimated_hours": 18,
-      "price_tier": "entry"
+      "price_tier": "entry",
+      "highlights": [
+        {
+          "icon": "fa-clock",
+          "title": "Livraison rapide",
+          "text": "Quelques jours apres validation du contenu"
+        },
+        {
+          "icon": "fa-mobile-alt",
+          "title": "Clair sur telephone",
+          "text": "Pense mobile d'abord"
+        },
+        {
+          "icon": "fa-euro-sign",
+          "title": "Petit budget",
+          "text": "L'essentiel sans superflu"
+        }
+      ]
     },
     {
       "slug": "site-vitrine",
@@ -114,14 +383,14 @@
       "featured": true,
       "has_page": true,
       "icon": "fa-globe",
-      "title": "Site vitrine professionnel",
-      "tagline": "Votre vitrine en ligne, claire et rassurante",
-      "short_description": "Un site simple à parcourir sur téléphone et ordinateur, qui présente votre activité et incite à vous contacter.",
-      "description": "Je crée un site vitrine sur mesure : jusqu'à 5 pages, textes lisibles, formulaire de contact et mise en ligne. Vous gardez la main sur vos contenus.",
+      "title": "Site vitrine pro (jusqu'à 5 pages)",
+      "tagline": "Le site \"je suis ouvert, voilà ce que je fais\"",
+      "short_description": "Jusqu'à 5 pages, clair sur téléphone, formulaire de contact, mise en ligne.",
+      "description": "Je crée un vrai site vitrine : accueil, services, à propos, contact… Vous gardez la main sur les textes après. Pensé pour un commerce ou un artisan qui veut quelque chose de propre, sans usine à gaz.",
       "price_eur": 590,
       "price_label": "Forfait",
-      "price_note": "Forfait TPE — jusqu'à 5 pages",
-      "image": "/assets/images/prestations/site-vitrine.svg",
+      "price_note": "Forfait TPE - jusqu'à 5 pages",
+      "image": "/assets/images/prestations/cards/site-vitrine.jpg",
       "benefits": [
         "Une première impression professionnelle",
         "Visible sur mobile sans effort de votre part",
@@ -161,17 +430,34 @@
           "prestafacture_product_id": 953
         }
       ],
-      "seo_title": "Création site vitrine professionnel — Metz & Lorraine",
+      "seo_title": "Création site vitrine professionnel - Metz & Lorraine",
       "seo_description": "Site vitrine clair et mobile pour artisans et commerces. Présentez votre activité, rassurez vos visiteurs et recevez des demandes de contact.",
       "examples": [
         "Un plombier à Metz veut une page « Nos services », « Tarifs indicatifs » et un formulaire : les clients appellent moins pour demander l'adresse du site.",
         "Une boutique de pâtisserie affiche ses horaires, sa carte et un bouton « Commander par téléphone » visible dès l'accueil sur mobile."
       ],
-      "promo": "Premier pas en ligne sans engagement lourd : un site clair vaut souvent plus qu'une page Facebook seule.",
+      "promo": "Le format le plus demandé quand on sort de Facebook.",
       "prestafacture_sku": "SITE-VITRINE",
       "prestafacture_product_id": 951,
       "estimated_hours": 26,
-      "price_tier": "entry"
+      "price_tier": "entry",
+      "highlights": [
+        {
+          "icon": "fa-clock",
+          "title": "Delai rapide",
+          "text": "Site livre en 2 a 3 semaines"
+        },
+        {
+          "icon": "fa-shield-alt",
+          "title": "Maintenance incluse",
+          "text": "Mises a jour et sauvegardes 3 mois"
+        },
+        {
+          "icon": "fa-chart-line",
+          "title": "SEO pret a performer",
+          "text": "Optimisation de base pour Google"
+        }
+      ]
     },
     {
       "slug": "identite-harmonieuse",
@@ -180,14 +466,14 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-fingerprint",
-      "title": "Image de marque harmonisée",
-      "tagline": "La même identité partout où l'on vous voit",
-      "short_description": "Site, réseaux sociaux et documents alignés : couleurs, messages et visuels cohérents.",
-      "description": "Je reprends votre identité visuelle et vos textes clés pour les décliner sur votre site, vos profils en ligne et vos supports imprimables ou PDF.",
+      "title": "Image cohérente partout",
+      "tagline": "Même look sur le site, les cartes, les réseaux",
+      "short_description": "Couleurs, typos, logo : on aligne tout pour que ça fasse \"marque\" sans se disperser.",
+      "description": "On pose une base visuelle simple et solide. Site, supports, réseaux : même ton. Pas besoin d'une agence à 10 000 € pour avoir l'air sérieux.",
       "price_eur": 890,
       "price_label": "Forfait",
       "price_note": "Selon le nombre de supports à harmoniser",
-      "image": "/assets/images/prestations/identite.svg",
+      "image": "/assets/images/prestations/cards/identite-harmonieuse.jpg",
       "benefits": [
         "Une image professionnelle et reconnaissable",
         "Moins de confusion pour vos clients",
@@ -206,13 +492,13 @@
         }
       ],
       "addons": [],
-      "seo_title": "Identité visuelle web & réseaux — harmonisation de marque",
+      "seo_title": "Identité visuelle web & réseaux - harmonisation de marque",
       "seo_description": "Unifiez site, réseaux et documents : image pro cohérente pour votre commerce ou votre activité libérale en Lorraine.",
       "examples": [
         "Même logo, mêmes couleurs sur le site, la page Facebook et les devis PDF envoyés aux clients.",
         "Un artisan dont les photos Instagram et le site web ne se ressemblaient pas : une charte simple pour tout aligner."
       ],
-      "promo": "Une image cohérente rassure avant même le premier rendez-vous.",
+      "promo": "Quand tout se ressemble, les gens retiennent mieux qui vous êtes.",
       "prestafacture_sku": "IDENTITE-MULTI",
       "prestafacture_product_id": 954,
       "estimated_hours": 22
@@ -222,20 +508,26 @@
       "service_slug": "pack_seo_complet",
       "category": "identite",
       "featured": true,
+      "card_badge": "Le plus demandé",
       "has_page": true,
       "icon": "fa-search",
-      "title": "Être trouvé sur Google et par l'IA",
-      "tagline": "Pack visibilité : recherche classique + assistants intelligents",
-      "short_description": "Optimisation pour Google et pour que ChatGPT et les assistants puissent parler de vous correctement.",
+      "title": "Visibilité complète",
+      "tagline": "Être trouvé près de chez vous - Google, Maps et assistants IA.",
+      "short_description": "On remet votre présence locale d'aplomb pour que les gens du coin vous trouvent.",
       "description": "Audit de votre site, corrections concrètes, contenus structurés et FAQ adaptées pour améliorer votre présence sur Google et dans les réponses des assistants IA.",
       "price_eur": 690,
       "price_label": "Forfait",
-      "price_note": "Site existant recommandé",
-      "image": "/assets/images/prestations/visibilite.svg",
+      "price_note": "Tout inclus - SEO local & fiche Maps",
+      "image": "/assets/images/prestations/cards/visibilite-complete.jpg",
+      "before": [
+        "Invisible sur Maps",
+        "Concurrents mieux placés",
+        "Appels qui n'arrivent pas"
+      ],
       "benefits": [
-        "Plus de visiteurs qualifiés depuis Google",
-        "Une fiche claire quand on vous cherche en ligne",
-        "Des contenus compréhensibles par les assistants IA"
+        "Fiche Google propre",
+        "Présent près de vous",
+        "Plus d'appels et de messages"
       ],
       "includes": [
         "Audit SEO classique + plan d'action",
@@ -245,7 +537,7 @@
       ],
       "faq": [],
       "addons": [],
-      "seo_title": "SEO Google + visibilité ChatGPT — pack complet",
+      "seo_title": "SEO Google + visibilité ChatGPT - pack complet",
       "seo_description": "Pack visibilité : référencement Google et présence auprès des assistants IA. Idéal pour commerces et indépendants en Lorraine.",
       "examples": [
         "Un restaurant local apparaît sur Google Maps et ses horaires sont corrects quand on demande à un assistant « restaurants ouverts ce soir ».",
@@ -254,7 +546,24 @@
       "promo": "Être trouvable aujourd'hui, c'est Google + les assistants que vos clients utilisent déjà.",
       "prestafacture_sku": "PACK-SEO-GOOGLE-CHATGPT",
       "prestafacture_product_id": 955,
-      "estimated_hours": 16
+      "estimated_hours": 16,
+      "highlights": [
+        {
+          "icon": "fa-map-marker-alt",
+          "title": "Google et Maps",
+          "text": "Etre trouve pres de chez vous"
+        },
+        {
+          "icon": "fa-search",
+          "title": "SEO local",
+          "text": "Bases solides pour apparaitre"
+        },
+        {
+          "icon": "fa-robot",
+          "title": "Assistants IA",
+          "text": "Infos claires pour ChatGPT et cie"
+        }
+      ]
     },
     {
       "slug": "referencement-google",
@@ -263,13 +572,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-search",
-      "title": "Remise en forme Google",
-      "tagline": "Audit et corrections pour mieux apparaître dans les recherches",
-      "short_description": "Je vérifie votre site, je corrige les points qui freinent Google et je vous explique quoi faire ensuite.",
-      "description": "Un passage en revue de votre site : titres, descriptions, vitesse de chargement, structure des pages. Vous recevez une liste claire des actions réalisées et des priorités restantes.",
+      "title": "Coup de propre sur Google",
+      "tagline": "Les bases SEO, sans jargon",
+      "short_description": "Titres, pages importantes, vitesse mobile : on corrige ce qui bloque vraiment.",
+      "description": "Petit audit + corrections prioritaires. Pas de magie, juste les gestes qui aident Google à comprendre votre activité locale.",
       "price_eur": 290,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/google.svg",
+      "image": "/assets/images/prestations/cards/referencement-google.jpg",
       "benefits": [
         "Diagnostic sans jargon",
         "Corrections incluses dans le forfait",
@@ -282,13 +591,13 @@
       ],
       "faq": [],
       "addons": [],
-      "seo_title": "Audit SEO et corrections — visibilité Google",
+      "seo_title": "Audit SEO et corrections - visibilité Google",
       "seo_description": "Audit SEO simple et corrections pour votre site vitrine. Mieux positionné sur Google, sans promesses irréalistes.",
       "examples": [
         "Correction des titres de pages (« Plombier Metz » au lieu de « Accueil ») : plus de clics depuis Google.",
         "Accélération du chargement sur mobile : moins de visiteurs qui repartent avant d'avoir lu votre numéro."
       ],
-      "promo": "Petit budget, impact mesurable : idéal si vous avez déjà un site mais peu de visites.",
+      "promo": "Idéal si vous avez déjà un site mais peu de visites.",
       "prestafacture_sku": "SEO-BASIQUE",
       "prestafacture_product_id": 956,
       "estimated_hours": 7,
@@ -301,13 +610,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-robot",
-      "title": "Recommandé par les assistants IA",
-      "tagline": "Quand on vous demande à ChatGPT, qu'on parle bien de vous",
-      "short_description": "Structure et contenus pensés pour que les assistants intelligents comprennent et citent votre activité.",
-      "description": "Je mets en forme vos pages, vos questions-réponses et vos informations clés pour qu'un assistant puisse décrire votre offre de façon fidèle.",
+      "title": "Être compris par les assistants IA",
+      "tagline": "FAQ et pages nettes pour ChatGPT & cie",
+      "short_description": "On structure vos infos pour qu'une IA vous décrive correctement.",
+      "description": "Complément du SEO classique. FAQ, faits clairs, pages bien rangées. L'objectif : qu'on parle juste de vous quand quelqu'un demande un pro du coin.",
       "price_eur": 449,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/ia-visibilite.svg",
+      "image": "/assets/images/prestations/cards/visible-assistants-ia.jpg",
       "benefits": [
         "Contenus clairs pour les IA",
         "FAQ utiles pour vos visiteurs",
@@ -320,13 +629,13 @@
       ],
       "faq": [],
       "addons": [],
-      "seo_title": "SEO pour ChatGPT et assistants IA — découvrabilité",
+      "seo_title": "SEO pour ChatGPT et assistants IA - découvrabilité",
       "seo_description": "Optimisez votre site pour être bien compris et cité par ChatGPT et les assistants. Pour entreprises locales et artisans.",
       "examples": [
         "Quand on demande « qui fait des sites vitrine à Metz », l'assistant cite votre activité avec la bonne description.",
         "FAQ structurée sur vos délais et tarifs : reprise fidèle dans les réponses automatiques."
       ],
-      "promo": "Vos futurs clients posent déjà leurs questions à ChatGPT — autant y être bien présenté.",
+      "promo": "Les gens demandent déjà à ChatGPT. Autant y être crédible.",
       "prestafacture_sku": "SEO-CHATGPT",
       "prestafacture_product_id": 957,
       "estimated_hours": 11
@@ -338,17 +647,23 @@
       "featured": true,
       "has_page": true,
       "icon": "fa-comments",
-      "title": "Répondeur intelligent sur votre site",
-      "tagline": "Répond aux questions fréquentes, jour et nuit",
-      "short_description": "Un assistant sur votre site qui guide vos visiteurs avec vos vraies informations (horaires, tarifs, prestations…).",
+      "title": "Répondeur intelligent",
+      "tagline": "Réponses 24 h/24 avec vos vraies infos - sans call center.",
+      "short_description": "Un assistant sur votre site, nourri avec vos vraies infos. Moins d'appels répétitifs.",
       "description": "J'installe et configure un assistant conversationnel alimenté par vos textes : moins d'appels répétitifs, plus de contacts qualifiés.",
       "price_eur": 990,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/assistant-site.svg",
+      "price_note": "Assistant FAQ sur votre site",
+      "image": "/assets/images/prestations/cards/repondeur-intelligent.jpg",
+      "before": [
+        "Appels manqués en atelier",
+        "Messages en vrac",
+        "Clients qui passent ailleurs"
+      ],
       "benefits": [
-        "Disponible 24h/24",
-        "Réponses alignées sur votre discours",
-        "Moins de charge au téléphone"
+        "Réponses hors horaires",
+        "Filtrage des demandes",
+        "Vous gardez les devis sérieux"
       ],
       "includes": [
         "Installation sur votre site",
@@ -372,7 +687,7 @@
           "prestafacture_product_id": 959
         }
       ],
-      "seo_title": "Assistant IA FAQ pour site web — chatbot métier",
+      "seo_title": "Assistant IA FAQ pour site web - chatbot métier",
       "seo_description": "Assistant intelligent sur votre site : réponses aux questions fréquentes, prise de contact facilitée. Installation et configuration incluses.",
       "examples": [
         "Un salon de coiffure : l'assistant répond aux horaires, tarifs coupe et adresse pendant que vous êtes en prestation.",
@@ -381,8 +696,7 @@
       "promo": "Comme un accueil téléphonique, mais sur votre site, 24 h/24.",
       "prestafacture_sku": "IA-FAQ-SITE",
       "prestafacture_product_id": 958,
-      "estimated_hours": 30,
-      "price_note": "Assistant FAQ sur votre site"
+      "estimated_hours": 30
     },
     {
       "slug": "aide-emails-clients",
@@ -391,13 +705,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-envelope",
-      "title": "Aide pour vos e-mails clients",
-      "tagline": "Des brouillons de réponses dans votre ton",
-      "short_description": "Un assistant qui propose des réponses professionnelles à partir de vos échanges passés.",
-      "description": "Je mets en place un outil qui vous aide à répondre plus vite aux demandes clients tout en gardant votre style et vos règles métier.",
+      "title": "Aide pour répondre aux e-mails",
+      "tagline": "Des brouillons dans votre ton, vous validez",
+      "short_description": "Un assistant qui propose des réponses pour les mails qui reviennent souvent.",
+      "description": "Moins de temps sur les messages répétitifs. Vous gardez le dernier mot avant d'envoyer. Utile dès que la boîte mail déborde.",
       "price_eur": 1090,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/emails.svg",
+      "image": "/assets/images/prestations/cards/aide-emails-clients.jpg",
       "benefits": [
         "Gain de temps sur les e-mails récurrents",
         "Ton homogène",
@@ -416,7 +730,7 @@
         "Demande de devis reçue le soir : brouillon de réponse prêt le lendemain matin, vous n'avez qu'à relire et envoyer.",
         "Question récurrente sur les délais : l'outil propose une réponse dans votre ton habituel."
       ],
-      "promo": "Vous gardez le contrôle : l'outil propose, vous validez avant envoi.",
+      "promo": "Vous ne devenez pas un robot. Vous gagnez juste du temps.",
       "prestafacture_sku": "IA-SUPPORT-EMAIL",
       "prestafacture_product_id": 960,
       "estimated_hours": 34
@@ -429,13 +743,13 @@
       "has_page": true,
       "icon": "fa-cogs",
       "title": "Site entretenu chaque mois",
-      "tagline": "Mises à jour, sauvegardes et petites corrections",
-      "short_description": "Je veille sur votre site : sécurité, sauvegardes et corrections mineures incluses.",
-      "description": "Un abonnement mensuel pour dormir tranquille : votre site reste à jour et joignable, je traite les petits soucis avant qu'ils deviennent gros.",
+      "tagline": "Mises à jour, sauvegardes, petits correctifs",
+      "short_description": "Je veille sur votre site tous les mois : sécurité, sauvegardes, petites corrections.",
+      "description": "Un site laissé sans suivi finit par casser ou ramer. Cet abonnement, c'est la tranquillité : je regarde, je corrige le petit, je vous préviens si y a plus gros.",
       "price_eur": 49,
       "price_label": "Mensuel",
-      "price_note": "Par site — hors gros développements",
-      "image": "/assets/images/prestations/maintenance.svg",
+      "price_note": "Par site - hors gros développements",
+      "image": "/assets/images/prestations/cards/entretien-mensuel.jpg",
       "benefits": [
         "Sérénité",
         "Interventions préventives",
@@ -449,13 +763,13 @@
       ],
       "faq": [],
       "addons": [],
-      "seo_title": "Maintenance site web mensuelle — Metz & remote",
+      "seo_title": "Maintenance site web mensuelle - Metz & remote",
       "seo_description": "Abonnement maintenance : mises à jour, sauvegardes et corrections mineures pour votre site vitrine ou professionnel.",
       "examples": [
         "Mise à jour de sécurité appliquée sans que vous ayez à y penser.",
         "Petite typo sur la page Contact corrigée dans le quota mensuel inclus."
       ],
-      "promo": "Moins cher qu'une panne ou un piratage à réparer en urgence.",
+      "promo": "49 €/mois - souvent moins cher qu'une panne un samedi.",
       "prestafacture_sku": "MAINT-MENSUEL",
       "prestafacture_product_id": 961,
       "estimated_hours": 1.5,
@@ -470,12 +784,12 @@
       "has_page": true,
       "icon": "fa-file-alt",
       "title": "Textes pour votre site",
-      "short_description": "Articles et descriptions rédigés pour vous, adaptés à votre secteur.",
+      "short_description": "Articles et descriptions rédigés pour votre métier, en français clair.",
       "price_eur": 490,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/contenus.svg",
-      "tagline": "Des textes prêts à publier, dans votre ton",
-      "description": "Je rédige ou adapte les pages et articles de votre site à partir de vos informations métier. Vous recevez des textes clairs, sans jargon inutile, prêts à mettre en ligne ou à valider.",
+      "image": "/assets/images/prestations/cards/ia-contenus.jpg",
+      "tagline": "Des pages qui se lisent, pas du blabla",
+      "description": "Vous me donnez le fond, je sors des textes utilisables. Accueil, services, FAQ… Sans jargon d'agence.",
       "benefits": [
         "Gain de temps sur la rédaction",
         "Textes adaptés à votre clientèle",
@@ -491,7 +805,7 @@
         "Page « Nos services » pour un électricien : chaque prestation expliquée en langage simple.",
         "Trois articles de blog pour un naturopathe : sujets fréquents de ses patients, optimisés pour la recherche locale."
       ],
-      "promo": "Vous savez quoi dire — je m'occupe de le mettre par écrit correctement.",
+      "promo": "Le contenu, c'est ce que Google et vos clients lisent vraiment.",
       "faq": [
         {
           "q": "Est-ce que les textes sont générés automatiquement ?",
@@ -502,7 +816,7 @@
           "a": "Le forfait couvre l'équivalent d'environ 5 à 8 pages standard ; on précise ensemble au devis."
         }
       ],
-      "seo_title": "Rédaction de textes pour site web — articles & pages",
+      "seo_title": "Rédaction de textes pour site web - articles & pages",
       "seo_description": "Textes clairs pour votre site vitrine ou blog. Rédaction adaptée à votre métier, sans jargon. Devis par e-mail, Metz & Lorraine.",
       "prestafacture_sku": "IA-CONTENUS-WEB",
       "prestafacture_product_id": 962,
@@ -516,12 +830,12 @@
       "has_page": true,
       "icon": "fa-pen-fancy",
       "title": "Aide à la rédaction commerciale",
-      "short_description": "Propositions, e-mails et messages LinkedIn préparés à partir de votre offre.",
+      "short_description": "Je vous aide à écrire des messages qui sonnent comme vous, pas comme une pub.",
       "price_eur": 449,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/redaction.svg",
-      "tagline": "Vos e-mails commerciaux, prêts plus vite",
-      "description": "Un assistant configuré avec votre offre et votre façon de parler. Il vous propose des brouillons pour devis, relances, messages LinkedIn ou newsletters — vous gardez la main sur l'envoi.",
+      "image": "/assets/images/prestations/cards/ia-redaction.jpg",
+      "tagline": "Mails, propositions, messages LinkedIn",
+      "description": "À partir de votre offre, on prépare des textes prêts à envoyer. Vous ajustez, vous envoyez. Plus rapide que la page blanche.",
       "benefits": [
         "Moins de page blanche",
         "Ton professionnel et cohérent",
@@ -537,14 +851,14 @@
         "Relance d'un prospect qui n'a pas répondu : proposition de message personnalisé en 2 minutes.",
         "Présentation de votre nouveau service sur LinkedIn : plusieurs variantes à choisir."
       ],
-      "promo": "Idéal si vous prospectez seul et manquez de temps pour écrire.",
+      "promo": "Utile quand vous savez ce que vous faites… mais pas comment le dire.",
       "faq": [
         {
           "q": "L'outil envoie-t-il les e-mails à ma place ?",
           "a": "Non par défaut : il prépare le texte, vous copiez ou validez avant envoi depuis votre messagerie."
         }
       ],
-      "seo_title": "Assistant rédaction commerciale — e-mails & LinkedIn",
+      "seo_title": "Assistant rédaction commerciale - e-mails & LinkedIn",
       "seo_description": "Gagnez du temps sur vos e-mails commerciaux et messages pro. Assistant configuré à votre image. Installation et accompagnement.",
       "prestafacture_sku": "IA-REDACTION-COMMERCIALE",
       "prestafacture_product_id": 963,
@@ -558,12 +872,12 @@
       "has_page": true,
       "icon": "fa-chart-bar",
       "title": "Comprendre vos chiffres",
-      "short_description": "Tableaux de bord et explications simples à partir de vos données.",
+      "short_description": "On met de l'ordre dans vos données et on en tire des trucs actionnables.",
       "price_eur": 1290,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/analyse.svg",
-      "tagline": "Vos chiffres expliqués simplement",
-      "description": "À partir de vos fichiers (ventes, stocks, rendez-vous…), je mets en place des tableaux de bord lisibles et des explications en français clair — pas besoin d'être comptable pour comprendre.",
+      "image": "/assets/images/prestations/cards/ia-analyse.jpg",
+      "tagline": "Tableaux simples, explications en français",
+      "description": "Pas un rapport de 40 pages. Des tableaux clairs + ce que ça veut dire pour votre activité. Pour décider sans prendre la tête.",
       "benefits": [
         "Vision claire de votre activité",
         "Moins de tableurs à manipuler",
@@ -579,14 +893,14 @@
         "Un commerce suit ses ventes par mois et ses produits les plus demandés sans ouvrir dix fichiers Excel.",
         "Un indépendant visualise son chiffre d'affaires et ses charges sur une seule page mise à jour."
       ],
-      "promo": "Arrêtez de vous noyer dans les colonnes : voyez l'essentiel d'un coup d'œil.",
+      "promo": "Les chiffres, c'est bien. Les comprendre, c'est mieux.",
       "faq": [
         {
           "q": "Quels fichiers faut-il fournir ?",
-          "a": "Export Excel, CSV ou accès à votre outil de facturation selon les cas — on définit cela au premier échange."
+          "a": "Export Excel, CSV ou accès à votre outil de facturation selon les cas - on définit cela au premier échange."
         }
       ],
-      "seo_title": "Tableaux de bord & analyse de données — PME & indépendants",
+      "seo_title": "Tableaux de bord & analyse de données - PME & indépendants",
       "seo_description": "Comprenez vos chiffres avec des tableaux clairs et des explications accessibles. Pour commerces et indépendants en Lorraine.",
       "prestafacture_sku": "IA-ANALYSE-DONNEES",
       "prestafacture_product_id": 964,
@@ -599,13 +913,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-shopping-cart",
-      "title": "Conseiller sur votre boutique",
-      "short_description": "Un assistant qui guide vos acheteurs : produits, tailles, disponibilité.",
+      "title": "Conseiller sur votre boutique en ligne",
+      "short_description": "Un assistant sur la boutique qui aide à choisir et à commander.",
       "price_eur": 1490,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/boutique.svg",
-      "tagline": "Un vendeur disponible sur votre boutique en ligne",
-      "description": "Un assistant sur votre site e-commerce qui répond aux questions produits, tailles, délais de livraison et disponibilité — comme un conseiller en magasin, mais en ligne.",
+      "image": "/assets/images/prestations/cards/ia-boutique.jpg",
+      "tagline": "Questions produits, tailles, dispo - 24 h/24",
+      "description": "Pour l'e-commerce : réponses aux questions fréquentes, orientation produit, moins d'abandons \"j'ai pas osé demander\". Configuré avec vos infos.",
       "benefits": [
         "Moins d'abandons de panier",
         "Réponses immédiates aux hésitations",
@@ -618,17 +932,17 @@
         "Tests avant mise en ligne"
       ],
       "examples": [
-        "Boutique de vêtements : « Quelle taille si je fais 1m75 ? » — réponse basée sur votre guide des tailles.",
+        "Boutique de vêtements : « Quelle taille si je fais 1m75 ? » - réponse basée sur votre guide des tailles.",
         "Épicerie fine en ligne : l'assistant suggère des accords ou précise les allergènes."
       ],
-      "promo": "Vos clients posent les mêmes questions en magasin — autant y répondre sur le site.",
+      "promo": "Comme un vendeur qui ne dort jamais - sans inventer des stocks.",
       "faq": [
         {
           "q": "Fonctionne avec quelle boutique ?",
-          "a": "Shopify, WooCommerce et la plupart des solutions courantes — faisabilité confirmée au devis."
+          "a": "Shopify, WooCommerce et la plupart des solutions courantes - faisabilité confirmée au devis."
         }
       ],
-      "seo_title": "Assistant conversationnel e-commerce — conseil produits",
+      "seo_title": "Assistant conversationnel e-commerce - conseil produits",
       "seo_description": "Assistant sur votre boutique en ligne : questions produits, recommandations, aide à la commande. Installation clé en main.",
       "prestafacture_sku": "IA-CHATBOT-ECOMMERCE",
       "prestafacture_product_id": 965,
@@ -641,13 +955,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-tasks",
-      "title": "Tâches répétitives automatisées",
-      "short_description": "Classement d'e-mails, extraction d'infos, rapports réguliers sans copier-coller.",
+      "title": "Automatiser les tâches chiantes",
+      "short_description": "Formulaires, e-mails, rapports : on relie ce qui peut tourner tout seul.",
       "price_eur": 1090,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/automatisation.svg",
-      "tagline": "Fini le copier-coller entre vos outils",
-      "description": "Je configure des automatisations pour les tâches répétitives : tri d'e-mails, extraction d'infos de formulaires, rapports hebdomadaires… Vous gagnez des heures chaque mois.",
+      "image": "/assets/images/prestations/cards/ia-automatisation.jpg",
+      "tagline": "Fini le copier-coller entre outils",
+      "description": "Si vous faites la même manip plus de 3 fois par semaine, on peut probablement l'automatiser. On part de vos outils actuels, pas d'une usine à gaz.",
       "benefits": [
         "Moins d'erreurs manuelles",
         "Temps libéré pour le métier",
@@ -663,14 +977,14 @@
         "Chaque formulaire « devis » du site crée automatiquement une fiche dans votre tableur ou CRM.",
         "Rapport chaque lundi : nombre de demandes reçues la semaine précédente, sans compilation manuelle."
       ],
-      "promo": "Si vous faites la même manipulation plus de 3 fois par semaine, on peut probablement l'automatiser.",
+      "promo": "Du temps rendu à votre métier, pas à Excel.",
       "faq": [
         {
           "q": "Faut-il changer tous mes outils ?",
           "a": "Non : on part de ce que vous utilisez déjà (mail, Excel, Notion, etc.) et on les fait travailler ensemble."
         }
       ],
-      "seo_title": "Automatisation de tâches — gain de temps PME",
+      "seo_title": "Automatisation de tâches - gain de temps PME",
       "seo_description": "Automatisez e-mails, formulaires et rapports répétitifs. Moins de copier-coller, plus de temps pour vos clients.",
       "prestafacture_sku": "IA-AUTOMATISATION-TACHES",
       "prestafacture_product_id": 966,
@@ -683,13 +997,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-wrench",
-      "title": "Entretien mensuel assistant",
-      "short_description": "Mise à jour des réponses et nouvelles connaissances chaque mois.",
+      "title": "Entretien mensuel de l'assistant",
+      "short_description": "Chaque mois, on met à jour les réponses de votre assistant.",
       "price_eur": 69,
       "price_label": "Mensuel",
-      "image": "/assets/images/prestations/assistant-site.svg",
-      "tagline": "Votre assistant reste à jour chaque mois",
-      "description": "Abonnement mensuel pour actualiser les réponses de votre assistant (nouveaux tarifs, horaires d'été, nouvelle prestation) et ajouter les questions que vos clients posent souvent.",
+      "image": "/assets/images/prestations/cards/ia-maint-mensuelle.jpg",
+      "tagline": "Tarifs, horaires, nouvelles FAQ à jour",
+      "description": "Un assistant figé devient vite faux. Cet abonnement garde vos infos juste : nouvelles questions, changements d'horaires, petits réglages.",
       "benefits": [
         "Réponses toujours exactes",
         "Évolution sans repartir de zéro",
@@ -705,14 +1019,14 @@
         "Changement de tarif en janvier : toutes les réponses de l'assistant mises à jour en 48 h.",
         "Nouvelle question récurrente détectée : ajoutée au mois suivant dans la base de l'assistant."
       ],
-      "promo": "Un assistant figé devient vite faux — cet abonnement évite les mauvaises surprises.",
+      "promo": "69 €/mois pour ne pas se faire avoir par des infos périmées.",
       "faq": [
         {
           "q": "Pour quel type d'assistant ?",
-          "a": "Assistants installés par DanielCraft ou existants — compatibilité vérifiée avant souscription."
+          "a": "Assistants installés par DanielCraft ou existants - compatibilité vérifiée avant souscription."
         }
       ],
-      "seo_title": "Maintenance mensuelle assistant IA — mises à jour",
+      "seo_title": "Maintenance mensuelle assistant IA - mises à jour",
       "seo_description": "Abonnement entretien assistant : nouvelles réponses, tarifs à jour, optimisations. Pour sites et outils déjà en place.",
       "prestafacture_sku": "IA-MAINTENANCE-MENSUEL",
       "prestafacture_product_id": 959,
@@ -726,13 +1040,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-plus-circle",
-      "title": "Nouvelle fonction pour votre assistant",
-      "short_description": "Ajout d'une capacité (nouvelle source, nouvel outil connecté).",
+      "title": "Nouvelle fonction pour l'assistant",
+      "short_description": "Une évolution ciblée : nouveau parcours, nouvelle FAQ métier, nouveau canal.",
       "price_eur": 330,
       "price_label": "À partir de",
-      "image": "/assets/images/prestations/assistant-site.svg",
-      "tagline": "Une nouvelle capacité pour votre assistant existant",
-      "description": "Votre assistant fonctionne déjà ? J'ajoute une fonction : connexion à un nouvel outil, nouvelle source d'information, prise de rendez-vous, etc.",
+      "image": "/assets/images/prestations/cards/ia-evolution.jpg",
+      "tagline": "Ajouter un cas d'usage sans tout refaire",
+      "description": "Votre assistant tourne déjà ? On lui ajoute une brique. Pas un projet from scratch - juste ce qu'il manque.",
       "benefits": [
         "Sans tout refaire",
         "Évolution progressive",
@@ -748,14 +1062,14 @@
         "L'assistant peut maintenant consulter votre agenda pour proposer des créneaux.",
         "Connexion à votre FAQ Notion pour enrichir les réponses automatiquement."
       ],
-      "promo": "À partir de 330 € selon la complexité — devis précis après description du besoin.",
+      "promo": "Évoluer sans casser ce qui marche.",
       "faq": [
         {
           "q": "Combien de temps ça prend ?",
           "a": "Souvent 3 à 10 jours ouvrés selon l'intégration demandée."
         }
       ],
-      "seo_title": "Évolution assistant IA — nouvelle fonctionnalité",
+      "seo_title": "Évolution assistant IA - nouvelle fonctionnalité",
       "seo_description": "Ajoutez une capacité à votre assistant existant : nouvel outil, source de données, prise de RDV. Devis sur mesure.",
       "prestafacture_sku": "IA-EVOLUTION-FEATURE",
       "prestafacture_product_id": 967,
@@ -769,12 +1083,12 @@
       "has_page": true,
       "icon": "fa-search",
       "title": "Bilan de votre usage de l'IA",
-      "short_description": "Où l'IA peut vraiment vous aider dans votre activité, concrètement.",
+      "short_description": "État des lieux honnête de vos outils IA et des risques (données, ton, fiabilité).",
       "price_eur": 349,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/analyse.svg",
-      "tagline": "Où l'IA peut vraiment vous aider ?",
-      "description": "Bilan de votre activité et de vos habitudes : je repère les tâches où l'IA apporte un gain réel (et celles où ce n'est pas utile). Vous repartez avec un plan d'action priorisé, sans jargon.",
+      "image": "/assets/images/prestations/cards/ia-audit.jpg",
+      "tagline": "Ce qui marche, ce qui fuit, quoi faire ensuite",
+      "description": "Beaucoup testent ChatGPT un peu au hasard. Moi je regarde ce que vous faites vraiment, ce qui est ok, et ce qu'il vaut mieux cadrer. Plan simple après.",
       "benefits": [
         "Pas de dépense inutile",
         "Idées concrètes pour votre métier",
@@ -790,14 +1104,14 @@
         "Un cabinet médical découvre que l'IA peut aider sur les rappels de documents, pas sur le diagnostic.",
         "Un artisan identifie trois e-mails types à automatiser en priorité."
       ],
-      "promo": "Avant d'investir dans un gros projet IA, 400 € pour voir clair.",
+      "promo": "Avant d'investir plus, mieux vaut savoir où on en est.",
       "faq": [
         {
           "q": "Faut-il déjà utiliser l'IA ?",
           "a": "Non : l'audit convient aussi si vous débutez et voulez savoir par où commencer."
         }
       ],
-      "seo_title": "Audit usage IA pour entreprises — bilan & recommandations",
+      "seo_title": "Audit usage IA pour entreprises - bilan & recommandations",
       "seo_description": "Audit IA en langage clair : où gagner du temps, quoi éviter. Rapport et plan d'action pour PME et indépendants.",
       "prestafacture_sku": "IA-AUDIT-USAGE",
       "prestafacture_product_id": 968,
@@ -811,12 +1125,12 @@
       "has_page": true,
       "icon": "fa-sitemap",
       "title": "Conseil avant un gros projet",
-      "short_description": "Faisabilité, budget et étapes : un plan clair avant de vous lancer.",
+      "short_description": "Une session pour cadrer : est-ce réaliste, combien, dans quel ordre.",
       "price_eur": 349,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/conseil.svg",
-      "tagline": "Un plan clair avant de vous lancer",
-      "description": "Vous avez un projet (nouveau site, application, grosse refonte) ? Je vous aide à voir ce qui est faisable, combien ça peut coûter et dans quel ordre avancer — sans vous vendre plus que nécessaire.",
+      "image": "/assets/images/prestations/cards/conseil-projet.jpg",
+      "tagline": "Faisabilité, budget, étapes - avant de vous lancer",
+      "description": "Utile avant de signer un devis trop vague. On clarifie le besoin, les risques, le budget. Vous repartez avec un plan, pas un PowerPoint de 50 slides.",
       "benefits": [
         "Décisions éclairées",
         "Budget et délais réalistes",
@@ -832,14 +1146,14 @@
         "Refonte de site + boutique en ligne : trois scénarios (minimal, standard, complet) avec budgets.",
         "Connexion entre deux logiciels métier : faisable ou non, et alternatives proposées."
       ],
-      "promo": "380 € pour éviter de dépenser 5 000 € dans la mauvaise direction.",
+      "promo": "Une heure de clarté peut vous éviter trois mois de galère.",
       "faq": [
         {
           "q": "Est-ce que vous réalisez ensuite le projet ?",
-          "a": "Si vous le souhaitez, oui — mais le conseil reste utile même si vous travaillez avec un autre prestataire."
+          "a": "Si vous le souhaitez, oui - mais le conseil reste utile même si vous travaillez avec un autre prestataire."
         }
       ],
-      "seo_title": "Conseil projet web & digital — faisabilité & budget",
+      "seo_title": "Conseil projet web & digital - faisabilité & budget",
       "seo_description": "Étude de faisabilité et estimation pour votre projet web ou digital. Rapport clair, sans engagement sur la suite.",
       "prestafacture_sku": "CONSEIL-ARCHI",
       "prestafacture_product_id": 969,
@@ -852,13 +1166,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-link",
-      "title": "Relier votre site à votre logiciel",
-      "short_description": "Contacts, devis ou commandes qui arrivent directement dans votre outil habituel.",
+      "title": "Relier le site à votre logiciel",
+      "short_description": "Formulaire / site branché sur votre CRM, tableur ou outil métier.",
       "price_eur": 299,
       "price_label": "À partir de",
-      "image": "/assets/images/prestations/connexion.svg",
-      "tagline": "Du site directement dans votre logiciel habituel",
-      "description": "Quand quelqu'un remplit un formulaire sur votre site, les informations arrivent dans votre CRM, logiciel de devis ou tableur — plus besoin de recopier à la main.",
+      "image": "/assets/images/prestations/cards/connexion-crm.jpg",
+      "tagline": "Les devis du site arrivent au bon endroit",
+      "description": "Moins de saisies doubles. Une demande sur le site crée une fiche ou un mail structuré dans votre outil. On fait avec ce que vous avez déjà.",
       "benefits": [
         "Zéro oubli de prospect",
         "Gain de temps au quotidien",
@@ -874,19 +1188,19 @@
         "Formulaire contact → fiche automatique dans HubSpot ou Pipedrive.",
         "Demande de devis → ligne ajoutée dans votre fichier Excel partagé."
       ],
-      "promo": "À partir de 290 € selon les logiciels à relier.",
+      "promo": "Le site et le bureau, enfin d'accord.",
       "faq": [
         {
           "q": "Mon logiciel est-il compatible ?",
-          "a": "La plupart des outils modernes oui — on vérifie ensemble avant de commencer."
+          "a": "La plupart des outils modernes oui - on vérifie ensemble avant de commencer."
         }
       ],
-      "seo_title": "Connexion site web & CRM — synchronisation contacts",
+      "seo_title": "Connexion site web & CRM - synchronisation contacts",
       "seo_description": "Reliez votre site à votre CRM ou logiciel métier. Formulaires, contacts et devis sans ressaisie manuelle.",
       "prestafacture_sku": "INTEG-CRM",
       "prestafacture_product_id": 970,
       "estimated_hours": 7,
-      "price_note": "Connecteur simple — devis si ERP complexe"
+      "price_note": "Connecteur simple - devis si ERP complexe"
     },
     {
       "slug": "transfert-donnees",
@@ -896,12 +1210,12 @@
       "has_page": true,
       "icon": "fa-database",
       "title": "Transférer vos anciennes données",
-      "short_description": "Passage d'un tableur ou d'un ancien site vers votre nouvel outil, sans perte.",
+      "short_description": "Migration de contacts, produits, contenus - avec contrôle.",
       "price_eur": 349,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/transfert.svg",
-      "tagline": "Vos anciennes données dans le nouvel outil",
-      "description": "Passage d'un ancien site, d'un tableur ou d'un logiciel vers un nouveau système : je prépare le transfert proprement pour ne rien perdre (clients, produits, articles…).",
+      "image": "/assets/images/prestations/cards/transfert-donnees.jpg",
+      "tagline": "De l'ancien truc vers le nouveau, proprement",
+      "description": "Changer d'outil sans perdre la moitié des infos. On mappe, on teste, on bascule. Pas de \"on verra bien\".",
       "benefits": [
         "Pas de perte d'historique",
         "Transfert contrôlé",
@@ -917,14 +1231,14 @@
         "500 fiches clients Excel importées dans un nouveau CRM.",
         "Articles d'un ancien blog WordPress repris sur le nouveau site."
       ],
-      "promo": "Indispensable lors d'un changement de site ou d'outil — mieux vaut le faire une fois bien.",
+      "promo": "La migration, c'est chiant. Autant la faire une fois bien.",
       "faq": [
         {
           "q": "Y a-t-il une interruption de service ?",
           "a": "On planifie souvent le basculement en dehors des heures d'ouverture ou le week-end."
         }
       ],
-      "seo_title": "Migration de données — transfert site & logiciels",
+      "seo_title": "Migration de données - transfert site & logiciels",
       "seo_description": "Transfert sécurisé de vos données (clients, produits, contenus) vers un nouvel outil ou site. Sans perte.",
       "prestafacture_sku": "MIGRATION-DONNEES",
       "prestafacture_product_id": 971,
@@ -938,12 +1252,12 @@
       "has_page": true,
       "icon": "fa-code-branch",
       "title": "Faire dialoguer deux outils",
-      "short_description": "Synchronisation automatique entre vos applications (commandes, stocks, contacts…).",
+      "short_description": "Deux applis qui ne se parlent pas ? On les relie pour un flux concret.",
       "price_eur": 179,
       "price_label": "À partir de",
-      "image": "/assets/images/prestations/connexion.svg",
-      "tagline": "Vos applications qui se parlent enfin",
-      "description": "Deux logiciels qui ne communiquent pas ? Je mets en place la liaison pour que les infos circulent automatiquement (commande → stock, contact → facture…).",
+      "image": "/assets/images/prestations/cards/liaison-outils.jpg",
+      "tagline": "Zapier, Make, ou du sur-mesure léger",
+      "description": "Exemple classique : formulaire → tableur → notification. Ou mail → CRM. Un besoin clair, une liaison propre.",
       "benefits": [
         "Moins de double saisie",
         "Données à jour partout",
@@ -959,19 +1273,19 @@
         "Une vente sur la boutique met à jour le stock dans l'outil de gestion.",
         "Un nouveau client dans le CRM déclenche l'envoi d'un e-mail de bienvenue."
       ],
-      "promo": "À partir de 150 € pour une liaison simple — devis selon complexité.",
+      "promo": "Petit budget, gros gain de temps si le flux est bon.",
       "faq": [
         {
           "q": "C'est compliqué à maintenir ?",
           "a": "Je documente la liaison ; en cas de changement d'outil, on évalue une mise à jour."
         }
       ],
-      "seo_title": "Intégration API & webhooks — synchronisation outils",
+      "seo_title": "Intégration API & webhooks - synchronisation outils",
       "seo_description": "Faites dialoguer vos logiciels : commandes, stocks, contacts. Synchronisation automatique pour PME.",
       "prestafacture_sku": "INTEG-API",
       "prestafacture_product_id": 972,
       "estimated_hours": 5,
-      "price_note": "Première liaison — chaque flux supplémentaire en sus"
+      "price_note": "Première liaison - chaque flux supplémentaire en sus"
     },
     {
       "slug": "rapport-vitesse",
@@ -981,12 +1295,12 @@
       "has_page": true,
       "icon": "fa-tachometer-alt",
       "title": "Votre site est-il rapide ?",
-      "short_description": "Mesure et rapport simple : ce qui ralentit et comment l'améliorer.",
+      "short_description": "Rapport clair : ce qui ralentit, quoi corriger en premier.",
       "price_eur": 129,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/vitesse.svg",
-      "tagline": "Votre site charge-t-il assez vite ?",
-      "description": "Mesure complète de la vitesse de votre site sur mobile et ordinateur. Vous recevez un rapport en français clair : ce qui ralentit et quoi améliorer en priorité.",
+      "image": "/assets/images/prestations/cards/rapport-vitesse.jpg",
+      "tagline": "Mesure mobile + ordi, priorités en français",
+      "description": "On mesure, on explique sans jargon, on liste 3-5 actions utiles. Idéal avant un redesign ou après des plaintes \"ça rame\".",
       "benefits": [
         "Comprendre pourquoi les visiteurs partent",
         "Liste d'actions prioritaires",
@@ -1002,14 +1316,14 @@
         "Images trop lourdes identifiées : gain de 3 secondes au chargement après correction.",
         "Site lent sur 4G : rapport montrant les 3 blocages principaux."
       ],
-      "promo": "120 € pour un diagnostic — souvent rentabilisé par plus de contacts.",
+      "promo": "129 € - souvent moins cher qu'ignorer les visiteurs qui partent.",
       "faq": [
         {
           "q": "Est-ce que vous corrigez aussi ?",
           "a": "Le forfait couvre le rapport ; les corrections peuvent faire l'objet d'un devis séparé."
         }
       ],
-      "seo_title": "Audit vitesse site web — rapport performances",
+      "seo_title": "Audit vitesse site web - rapport performances",
       "seo_description": "Votre site est-il rapide ? Mesure et rapport clair avec recommandations. Pour commerces et sites vitrine.",
       "prestafacture_sku": "RAPPORT-PERF",
       "prestafacture_product_id": 973,
@@ -1026,9 +1340,9 @@
       "short_description": "Nouvelle page sur votre site vitrine, prête à publier.",
       "price_eur": 59,
       "price_label": "Par page",
-      "image": "/assets/images/prestations/page.svg",
-      "tagline": "Une page de plus sur votre site, clé en main",
-      "description": "Besoin d'une page Témoignages, Tarifs, Équipe ou FAQ ? Je la crée avec la même charte que votre site actuel, textes et mise en page inclus.",
+      "image": "/assets/images/prestations/cards/page-supplementaire.jpg",
+      "tagline": "Tarifs, témoignages, équipe…",
+      "description": "Vous avez besoin d'une page de plus ? Je la fais dans le style du site. Simple, rapide.",
       "benefits": [
         "Site plus complet",
         "Cohérence visuelle",
@@ -1044,14 +1358,14 @@
         "Page « Nos réalisations » avec galerie photos pour un paysagiste.",
         "Page « Mentions légales & politique de confidentialité » mise à jour."
       ],
-      "promo": "65 € par page — idéal pour compléter un site vitrine existant.",
+      "promo": "59 € HT la page - sans refaire tout le site.",
       "faq": [
         {
           "q": "Faut-il fournir les textes ?",
           "a": "Vous pouvez fournir une ébauche ; je peux aussi rédiger (option possible)."
         }
       ],
-      "seo_title": "Ajout page site vitrine — création sur mesure",
+      "seo_title": "Ajout page site vitrine - création sur mesure",
       "seo_description": "Nouvelle page pour votre site vitrine : témoignages, tarifs, FAQ. 65 €/page, mise en ligne incluse.",
       "prestafacture_sku": "PAGE-SUPP",
       "prestafacture_product_id": 952,
@@ -1066,12 +1380,12 @@
       "has_page": true,
       "icon": "fa-wpforms",
       "title": "Formulaire sur mesure",
-      "short_description": "Demande de devis, réservation ou questionnaire adapté à votre activité.",
+      "short_description": "Devis, RDV, contact enrichi - branché pour vous arriver proprement.",
       "price_eur": 99,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/formulaire.svg",
-      "tagline": "Le bon formulaire pour votre activité",
-      "description": "Formulaire de contact enrichi, demande de devis détaillée, réservation ou questionnaire : champs adaptés à votre métier, envoi par e-mail ou vers votre outil.",
+      "image": "/assets/images/prestations/cards/formulaire-sur-mesure.jpg",
+      "tagline": "Les bons champs, au bon endroit",
+      "description": "Moins de mails vides. On pose les questions utiles et on envoie ça où il faut (mail, tableur, outil).",
       "benefits": [
         "Demandes mieux qualifiées",
         "Moins d'allers-retours",
@@ -1087,14 +1401,14 @@
         "Formulaire devis avec type de travaux, surface et photos pour un artisan.",
         "Prise de rendez-vous avec choix de créneau pour un cabinet."
       ],
-      "promo": "99 € forfait — souvent indispensable pour convertir les visiteurs.",
+      "promo": "Un bon formulaire, c'est déjà du commercial.",
       "faq": [
         {
           "q": "Peut-on connecter à mon CRM ?",
           "a": "Oui, en option via la prestation « Relier votre site à votre logiciel »."
         }
       ],
-      "seo_title": "Formulaire web sur mesure — devis & contact",
+      "seo_title": "Formulaire web sur mesure - devis & contact",
       "seo_description": "Formulaire adapté à votre activité : devis, réservation, questionnaire. Validation et envoi par e-mail.",
       "prestafacture_sku": "FORM-AVANCE",
       "prestafacture_product_id": 953,
@@ -1107,13 +1421,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-palette",
-      "title": "Nouveau look pour votre site",
-      "short_description": "Couleurs, polices et mise en page rafraîchies sans tout reconstruire.",
+      "title": "Nouveau look pour le site",
+      "short_description": "Moderniser l'apparence : couleurs, blocs, mobile - en gardant vos contenus.",
       "price_eur": 349,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/look.svg",
-      "tagline": "Un site rafraîchi sans tout reconstruire",
-      "description": "Votre site fonctionne mais a vieilli visuellement ? Je modernise couleurs, polices et mise en page en gardant vos textes et la structure actuelle.",
+      "image": "/assets/images/prestations/cards/nouveau-look.jpg",
+      "tagline": "Rafraîchir sans tout casser",
+      "description": "Le site marche mais fait vieux ? On le rafraîchit. Pas forcément une refonte totale - juste ce qu'il faut pour avoir l'air actuel.",
       "benefits": [
         "Image plus actuelle",
         "Coût maîtrisé",
@@ -1126,17 +1440,17 @@
         "Mise en ligne"
       ],
       "examples": [
-        "Site de 2018 : nouveau header, couleurs et boutons — aspect 2025 en quelques jours.",
+        "Site de 2018 : nouveau header, couleurs et boutons - aspect 2025 en quelques jours.",
         "Harmonisation avec une nouvelle carte de visite imprimée."
       ],
-      "promo": "330 € pour un coup de jeune visible sans refonte complète.",
+      "promo": "Parfois un lifting suffit. Parfois non - on le dit franchement.",
       "faq": [
         {
           "q": "Est-ce que le contenu change ?",
           "a": "Non par défaut : uniquement l'apparence. Les textes peuvent être mis à jour via un pack contenu séparé."
         }
       ],
-      "seo_title": "Refonte visuelle site web — design & couleurs",
+      "seo_title": "Refonte visuelle site web - design & couleurs",
       "seo_description": "Rafraîchissez l'apparence de votre site : couleurs, polices, mise en page. Sans reconstruire tout le site.",
       "prestafacture_sku": "REFONTE-LEGERE",
       "prestafacture_product_id": 974,
@@ -1150,12 +1464,12 @@
       "has_page": true,
       "icon": "fa-edit",
       "title": "Pack mise à jour de contenus",
-      "short_description": "5 heures pour changer textes, images et pages sur votre site.",
+      "short_description": "Lot de mises à jour pour un site qui a pris la poussière.",
       "price_eur": 249,
       "price_label": "Pack",
-      "image": "/assets/images/prestations/contenus.svg",
-      "tagline": "5 heures pour mettre votre site à jour",
-      "description": "Pack de 5 heures pour modifier textes, photos, horaires, tarifs ou pages sur votre site existant. Vous listez les changements, je les réalise.",
+      "image": "/assets/images/prestations/cards/maj-contenus.jpg",
+      "tagline": "Horaires, textes, photos - on remet à jour",
+      "description": "Vous me donnez la liste, je mets à jour. Idéal avant la saison, un salon, ou après un changement d'offre.",
       "benefits": [
         "Site à jour rapidement",
         "Pas besoin de formation technique",
@@ -1171,14 +1485,14 @@
         "Horaires d'été, nouveau numéro de téléphone et photo d'équipe remplacée.",
         "Ajout de trois nouveaux services sur la page Prestations."
       ],
-      "promo": "170 € le pack — pratique une ou deux fois par an.",
+      "promo": "249 € - plus simple que de tout laisser périmé.",
       "faq": [
         {
           "q": "Que se passe-t-il si ça dépasse 5 h ?",
           "a": "Je vous préviens avant ; le surplus peut être facturé à l'heure ou reporté sur un nouveau pack."
         }
       ],
-      "seo_title": "Mise à jour contenu site web — pack 5 heures",
+      "seo_title": "Mise à jour contenu site web - pack 5 heures",
       "seo_description": "Pack 5 h pour actualiser textes, images et pages de votre site. Simple et sans jargon technique.",
       "prestafacture_sku": "MAJ-CONTENU-5H",
       "prestafacture_product_id": 975,
@@ -1192,12 +1506,12 @@
       "has_page": true,
       "icon": "fa-server",
       "title": "Hébergement & nom de domaine",
-      "short_description": "Votre site en ligne toute l'année avec votre adresse www.",
+      "short_description": "Je m'occupe de l'hébergement et du domaine pour que le site reste joignable.",
       "price_eur": 89,
       "price_label": "Annuel",
-      "image": "/assets/images/prestations/hebergement.svg",
-      "tagline": "Votre adresse www en ligne toute l'année",
-      "description": "Hébergement fiable pour votre site et gestion de votre nom de domaine (www.monsite.fr). Renouvellement et réglages techniques inclus pour l'année.",
+      "image": "/assets/images/prestations/cards/hebergement-domaine.jpg",
+      "tagline": "En ligne, sécurisé, sans vous prendre la tête",
+      "description": "DNS, HTTPS, boîte mail si besoin : le côté \"ça marche\" sans que vous y passiez vos soirées.",
       "benefits": [
         "Site accessible 24 h/24",
         "Un interlocuteur pour le domaine",
@@ -1213,14 +1527,14 @@
         "Artisan qui veut « monsite.fr » sans gérer OVH ou Gandi lui-même.",
         "Renouvellement annuel du domaine géré en un seul contact."
       ],
-      "promo": "79 €/an — souvent couplé à la maintenance mensuelle.",
+      "promo": "Le site, c'est bien. Qu'il soit vraiment en ligne, c'est mieux.",
       "faq": [
         {
           "q": "Le site est-il créé dans ce forfait ?",
           "a": "Non : c'est l'hébergement et le domaine. La création du site est une prestation séparée."
         }
       ],
-      "seo_title": "Hébergement web & nom de domaine — forfait annuel",
+      "seo_title": "Hébergement web & nom de domaine - forfait annuel",
       "seo_description": "Hébergement et nom de domaine pour votre site pro. 79 €/an, HTTPS inclus. Metz & France.",
       "prestafacture_sku": "HEBERG-DOMAIN",
       "prestafacture_product_id": 976,
@@ -1234,12 +1548,12 @@
       "has_page": true,
       "icon": "fa-save",
       "title": "Sauvegardes & sécurité",
-      "short_description": "Copies régulières et réglages pour protéger votre site.",
+      "short_description": "Sauvegardes régulières + bases de sécurité sur le site.",
       "price_eur": 119,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/securite.svg",
-      "tagline": "Votre site protégé et sauvegardé",
-      "description": "Mise en place de copies automatiques de votre site et réglages de sécurité (HTTPS, protections de base). En cas de problème, on peut restaurer une version récente.",
+      "image": "/assets/images/prestations/cards/sauvegardes-securite.jpg",
+      "tagline": "Au cas où (et il y a toujours un \"au cas où\")",
+      "description": "On met en place des sauvegardes et les gestes de base. Si un jour ça casse, on a de quoi revenir.",
       "benefits": [
         "Sommeil tranquille",
         "Récupération possible après incident",
@@ -1255,7 +1569,7 @@
         "Site piraté : restauration de la veille en quelques heures.",
         "Mise à jour de sécurité bloquée : retour arrière grâce à la sauvegarde."
       ],
-      "promo": "99 € une fois — à combiner avec la maintenance mensuelle pour la surveillance.",
+      "promo": "Personne n'aime y penser. Tout le monde est content le jour J.",
       "faq": [
         {
           "q": "Où sont stockées les sauvegardes ?",
@@ -1275,13 +1589,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-lock",
-      "title": "Cadenas HTTPS sur votre site",
-      "short_description": "Installation du certificat pour l'adresse sécurisée (https).",
+      "title": "Cadenas HTTPS",
+      "short_description": "Certificat SSL en place, redirection propre, plus de \"site non sécurisé\".",
       "price_eur": 49,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/securite.svg",
-      "tagline": "Le cadenas vert sur votre adresse web",
-      "description": "Installation du certificat HTTPS pour afficher le cadenas dans le navigateur. Indispensable pour la confiance des visiteurs et pour Google.",
+      "image": "/assets/images/prestations/cards/https-site.jpg",
+      "tagline": "Le petit cadenas à côté de l'adresse",
+      "description": "Chrome qui hurle, clients qui doutent : on règle ça. Rapide, indispensable.",
       "benefits": [
         "Visiteurs rassurés",
         "Meilleure image professionnelle",
@@ -1297,14 +1611,14 @@
         "Site encore en « non sécurisé » : correction en une demi-journée.",
         "Avertissement Chrome supprimé après installation du certificat."
       ],
-      "promo": "45 € — rapide et souvent oublié sur les vieux sites.",
+      "promo": "49 € - et vos visiteurs respirent.",
       "faq": [
         {
           "q": "C'est obligatoire ?",
           "a": "Pas légalement pour tous, mais fortement recommandé : les navigateurs affichent des avertissements sans HTTPS."
         }
       ],
-      "seo_title": "Certificat SSL HTTPS — installation site web",
+      "seo_title": "Certificat SSL HTTPS - installation site web",
       "seo_description": "Installation du cadenas HTTPS sur votre site. 45 € forfait, configuration complète.",
       "prestafacture_sku": "SSL-CONFIG",
       "prestafacture_product_id": 946,
@@ -1319,12 +1633,12 @@
       "has_page": true,
       "icon": "fa-headset",
       "title": "Support par e-mail",
-      "short_description": "Une ligne directe pour vos questions techniques chaque mois.",
+      "short_description": "Abonnement léger : vous m'écrivez, je vous réponds sur le site / le web.",
       "price_eur": 29,
       "price_label": "Mensuel",
-      "image": "/assets/images/prestations/support.svg",
-      "tagline": "Une aide par e-mail chaque mois",
-      "description": "Abonnement léger pour poser vos questions techniques par e-mail : petites modifications, conseils, orientation quand vous êtes bloqué sur votre site.",
+      "image": "/assets/images/prestations/cards/support-mensuel.jpg",
+      "tagline": "Une question, une réponse, sans ticket usine",
+      "description": "Pour les petites questions du mois. Pas un call center. Un humain qui connaît votre projet.",
       "benefits": [
         "Pas seul face au technique",
         "Réponse sous quelques jours ouvrés",
@@ -1337,17 +1651,17 @@
         "Historique de vos demandes"
       ],
       "examples": [
-        "« Comment changer cette image sur l'accueil ? » — réponse pas à pas.",
-        "« Mon formulaire ne part plus » — diagnostic et correction simple."
+        "« Comment changer cette image sur l'accueil ? » - réponse pas à pas.",
+        "« Mon formulaire ne part plus » - diagnostic et correction simple."
       ],
-      "promo": "25 €/mois — l'alternative douce à l'accompagnement à l'heure.",
+      "promo": "29 €/mois - la tranquillité de savoir à qui écrire.",
       "faq": [
         {
           "q": "Qu'est-ce qui n'est pas inclus ?",
           "a": "Les gros développements ou refontes : ils font l'objet d'un devis séparé."
         }
       ],
-      "seo_title": "Support technique site web — abonnement mensuel",
+      "seo_title": "Support technique site web - abonnement mensuel",
       "seo_description": "Assistance par e-mail pour votre site : questions, petites corrections. 25 €/mois, sans engagement long.",
       "prestafacture_sku": "SUPPORT-ABO",
       "prestafacture_product_id": 947,
@@ -1363,12 +1677,12 @@
       "has_page": true,
       "icon": "fa-tools",
       "title": "Dépannage express (2 h)",
-      "short_description": "Bug, page cassée ou petite évolution : intervention ciblée.",
+      "short_description": "Intervention courte pour un bug, une page blanche, un formulaire mort.",
       "price_eur": 139,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/depannage.svg",
-      "tagline": "2 heures pour débloquer la situation",
-      "description": "Bug, page blanche, formulaire cassé ou petite évolution urgente : intervention ciblée de 2 heures pour remettre d'aplomb ou avancer concrètement.",
+      "image": "/assets/images/prestations/cards/depannage-2h.jpg",
+      "tagline": "Ça casse, on regarde vite",
+      "description": "Créneau de 2 heures pour diagnostiquer et corriger ce qu'on peut. Si c'est plus gros, je vous le dis clairement.",
       "benefits": [
         "Réaction rapide",
         "Forfait connu à l'avance",
@@ -1384,14 +1698,14 @@
         "Site affiche une erreur après une mise à jour : retour en ligne le jour même.",
         "Lien mort sur la page Contact réparé + test du formulaire."
       ],
-      "promo": "120 € forfait 2 h — à réserver quand ça presse.",
+      "promo": "Mieux qu'attendre trois semaines \"parce que c'est prioritaire\".",
       "faq": [
         {
           "q": "Et si 2 h ne suffisent pas ?",
           "a": "Je vous préviens avant de dépasser ; on peut étendre à l'heure ou planifier une suite."
         }
       ],
-      "seo_title": "Dépannage site web — intervention 2 heures",
+      "seo_title": "Dépannage site web - intervention 2 heures",
       "seo_description": "Dépannage express site internet : bug, page cassée, correctif. Forfait 2 h, 120 €.",
       "prestafacture_sku": "DEPANNAGE-2H",
       "prestafacture_product_id": 948,
@@ -1405,12 +1719,12 @@
       "has_page": true,
       "icon": "fa-user-cog",
       "title": "Accompagnement à l'heure",
-      "short_description": "Conseil, aide pas à pas ou relecture de ce que vous faites.",
+      "short_description": "Heure facturée pour ce dont vous avez besoin tout de suite.",
       "price_eur": 65,
       "price_label": "À l'heure",
-      "image": "/assets/images/prestations/support.svg",
-      "tagline": "Conseil et aide pas à pas, à l'heure",
-      "description": "Vous gérez votre site vous-même mais avez besoin d'un coup de main ? Je vous accompagne à l'heure : conseil, relecture, aide à la mise en place d'une fonctionnalité.",
+      "image": "/assets/images/prestations/cards/accompagnement-heure.jpg",
+      "tagline": "Conseil, retouche, formation - à la carte",
+      "description": "Flexible. Une question technique, une retouche, un coup de main WordPress… On chronomètre, on avance.",
       "benefits": [
         "Flexible",
         "Vous apprenez en faisant",
@@ -1426,14 +1740,14 @@
         "1 h pour comprendre comment mettre à jour les horaires vous-même.",
         "2 h pour configurer un outil de prise de rendez-vous avec mon aide."
       ],
-      "promo": "60 €/h — sans engagement minimum.",
+      "promo": "65 €/h - simple et transparent.",
       "faq": [
         {
           "q": "Facturation au quart d'heure ?",
           "a": "Facturation à l'heure entamée, avec transparence sur le temps passé."
         }
       ],
-      "seo_title": "Accompagnement technique — conseil à l'heure",
+      "seo_title": "Accompagnement technique - conseil à l'heure",
       "seo_description": "Aide et conseil pour votre site, à l'heure. Débutants bienvenus, explications claires. 60 €/h.",
       "prestafacture_sku": "ACCOMP-H",
       "prestafacture_product_id": 949,
@@ -1447,12 +1761,12 @@
       "has_page": true,
       "icon": "fa-bolt",
       "title": "Support prioritaire",
-      "short_description": "Réponse rapide quand vous êtes bloqué.",
+      "short_description": "File prioritaire sur vos demandes du mois.",
       "price_eur": 75,
       "price_label": "À l'heure",
-      "image": "/assets/images/prestations/support.svg",
-      "tagline": "Réponse rapide quand vous êtes bloqué",
-      "description": "Même principe que l'accompagnement à l'heure, avec priorité de traitement : pour les situations urgentes (site en panne avant un événement, lancement imminent…).",
+      "image": "/assets/images/prestations/cards/support-prioritaire.jpg",
+      "tagline": "Réponse plus rapide quand ça urge",
+      "description": "Pour ceux qui ne peuvent pas attendre. Vous êtes traités avant le flux normal, dans des délais annoncés.",
       "benefits": [
         "Délai de réponse raccourci",
         "Intervention en urgence possible",
@@ -1468,14 +1782,14 @@
         "Site inaccessible la veille d'une promo : traitement en priorité.",
         "Formulaire d'inscription événement à réparer avant l'ouverture des ventes."
       ],
-      "promo": "70 €/h — quand chaque heure compte.",
+      "promo": "Utile en haute saison ou si le site = la caisse.",
       "faq": [
         {
           "q": "Disponible le week-end ?",
-          "a": "Sur demande et selon disponibilité — précisez l'urgence dans votre message."
+          "a": "Sur demande et selon disponibilité - précisez l'urgence dans votre message."
         }
       ],
-      "seo_title": "Support prioritaire site web — intervention urgente",
+      "seo_title": "Support prioritaire site web - intervention urgente",
       "seo_description": "Support technique prioritaire pour urgences web. Réponse rapide, 70 €/h. Metz & remote.",
       "prestafacture_sku": "SUPPORT-H",
       "prestafacture_product_id": 950,
@@ -1488,14 +1802,14 @@
       "featured": true,
       "has_page": true,
       "icon": "fa-leaf",
-      "title": "Votre site pollue-t-il en silence ?",
-      "tagline": "Bilan clair : poids, vitesse, médias et gaspillages",
-      "short_description": "Mesure du poids de vos pages, scripts et médias. Rapport simple avec chiffres pour votre patron et actions prioritaires.",
-      "description": "J'analyse la sobriété numérique de votre site : poids des pages, images et vidéos, scripts tiers, autoplay. Vous recevez un rapport en français avec 3 chiffres clés (Mo transférés, temps de chargement mobile, potentiel d'allègement) et une feuille de route concrète.",
+      "title": "Votre site est-il trop lourd ?",
+      "tagline": "Poids, scripts, médias - chiffres concrets",
+      "short_description": "Mesure de sobriété + 3 chiffres clés + plan d'action.",
+      "description": "On regarde ce qui alourdit (images, vidéos, scripts). Rapport en français, priorités claires. Bon pour la planète, Google, et votre facture data.",
       "price_eur": 149,
       "price_label": "Forfait",
       "price_note": "Bilan express (pas un audit RGESN complet)",
-      "image": "/assets/images/prestations/eco-audit.svg",
+      "image": "/assets/images/prestations/cards/audit-eco-numerique.jpg",
       "benefits": [
         "Argument clair pour votre direction (coût & image)",
         "Repérage des médias et scripts superflus",
@@ -1514,13 +1828,13 @@
         }
       ],
       "addons": [],
-      "seo_title": "Audit éco-conception web — sobriété numérique",
+      "seo_title": "Audit éco-conception web - sobriété numérique",
       "seo_description": "Audit éco-numérique de votre site : poids, scripts, médias. Rapport clair pour dirigeants et artisans en Lorraine.",
       "examples": [
         "Un commerce local découvre que ses photos produits pèsent 8 Mo : allègement possible sans changer l'apparence.",
         "Vidéo d'accueil en lecture automatique identifiée : simple correction pour accélérer le site et rassurer les visiteurs."
       ],
-      "promo": "149 € pour voir clair avant d'investir dans une refonte — souvent rentabilisé en hébergement et en contacts.",
+      "promo": "Un site plus léger, c'est souvent un site plus rapide.",
       "prestafacture_sku": "ECO-AUDIT-SITE",
       "estimated_hours": 5
     },
@@ -1532,13 +1846,13 @@
       "has_page": true,
       "icon": "fa-image",
       "title": "Images et vidéos allégées",
-      "tagline": "Même rendu visuel, pages beaucoup plus légères",
-      "short_description": "Conversion des images, compression et vidéos au clic — sans autoplay qui consomme inutilement.",
-      "description": "Je convertis vos images en formats modernes, les redimensionne et compresse. Les vidéos passent en lecture au clic plut qu'en autoplay. Idéal après l'audit éco ou si votre site rame sur mobile.",
+      "tagline": "Moins de Mo, même rendu",
+      "short_description": "Compression, bons formats, plus d'autoplay inutile.",
+      "description": "Je passe vos médias au régime. Le site respire, surtout sur téléphone.",
       "price_eur": 199,
       "price_label": "Forfait",
       "price_note": "Jusqu'à ~30 images ou équivalent",
-      "image": "/assets/images/prestations/eco-medias.svg",
+      "image": "/assets/images/prestations/cards/alleger-medias.jpg",
       "benefits": [
         "Chargement nettement plus rapide",
         "Moins de données pour vos visiteurs",
@@ -1565,13 +1879,13 @@
           "prestafacture_sku": "ECO-IMAGES-EXTRA"
         }
       ],
-      "seo_title": "Optimisation images & vidéos web — allègement",
+      "seo_title": "Optimisation images & vidéos web - allègement",
       "seo_description": "Allégez les images et vidéos de votre site : formats modernes, compression, lecture au clic. Metz & France.",
       "examples": [
         "Galerie d'un artisan : 25 photos passées de 12 Mo à 800 Ko au total.",
         "Bandeau vidéo remplacé par un poster léger + lecture au clic."
       ],
-      "promo": "Le geste le plus visible après un audit éco — souvent des secondes gagnées dès la première page.",
+      "promo": "Souvent le plus gros gain pour le moins d'effort.",
       "prestafacture_sku": "ECO-MEDIAS-OPTIMIZE",
       "estimated_hours": 7
     },
@@ -1582,14 +1896,14 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-feather-alt",
-      "title": "Rendre mon site plus rapide et plus sobre",
-      "tagline": "On enlève ce qui ralentit sans casser votre site",
-      "short_description": "Suppression du superflu, scripts inutiles et médias optimisés — suite concrète de l'audit éco.",
-      "description": "Suite logique de l'audit éco-numérique : je corrige les points qui alourdissent votre site (scripts tiers, polices, cache, vidéos, images). Mesure avant/après avec gain en secondes et en Mo transférés.",
+      "title": "Rendre le site plus rapide et plus sobre",
+      "tagline": "Correctifs perf + allègement",
+      "short_description": "Pack concrètement utile : vitesse mobile, médias, scripts inutiles.",
+      "description": "On traite les freins principaux. Pas une refonte complète - une cure de vitesse.",
       "price_eur": 329,
       "price_label": "À partir de",
-      "price_note": "Selon complexité — devis après audit",
-      "image": "/assets/images/prestations/eco-perf.svg",
+      "price_note": "Selon complexité - devis après audit",
+      "image": "/assets/images/prestations/cards/site-allege.jpg",
       "benefits": [
         "Site plus fluide sur mobile",
         "Moins de ressources serveur",
@@ -1608,13 +1922,13 @@
         }
       ],
       "addons": [],
-      "seo_title": "Allègement site web — performance & sobriété",
+      "seo_title": "Allègement site web - performance & sobriété",
       "seo_description": "Corrections techniques pour un site plus rapide et plus sobre. Scripts, médias, cache. Devis selon complexité.",
       "examples": [
         "Suppression de 4 plugins inutiles : gain de 2,5 s au chargement.",
         "Polices et icônes rationalisées : page d'accueil divisée par deux en poids."
       ],
-      "promo": "À partir de 290 € — souvent couplé à la remise en forme Google.",
+      "promo": "Idéal après l'audit éco, ou si les clients se plaignent.",
       "prestafacture_sku": "ECO-PERF-FIX",
       "estimated_hours": 10
     },
@@ -1626,13 +1940,13 @@
       "has_page": true,
       "icon": "fa-seedling",
       "title": "Site vitrine sobre et rapide",
-      "tagline": "Professionnel, léger, prêt pour Google et pour vos clients sensibles à l'environnement",
-      "short_description": "Un site vitrine éco-conçu dès la création : images optimisées, pas de vidéo en autoplay, code épuré.",
-      "description": "Même exigence qu'un site vitrine classique, avec une charte éco-conçue : médias sobres dès la création, code minimal, objectif de performance mobile, page d'engagement numérique incluse. Vous montrez une image pro sans gaspillage invisible.",
+      "tagline": "Vitrine pro dès le départ, sans gaspillage",
+      "short_description": "Même exigence qu'un site vitrine, avec sobriété numérique dès la conception.",
+      "description": "Médias sobres, code léger, perf mobile en tête. Vous avez une image pro sans un site qui pèse une tonne.",
       "price_eur": 590,
       "price_label": "Forfait",
-      "price_note": "Forfait TPE — site sobre dès la création",
-      "image": "/assets/images/prestations/site-vitrine-eco.svg",
+      "price_note": "Forfait TPE - site sobre dès la création",
+      "image": "/assets/images/prestations/cards/site-vitrine-eco.jpg",
       "benefits": [
         "Différenciation RSE auprès de vos clients",
         "Chargement rapide dès le lancement",
@@ -1651,13 +1965,13 @@
         }
       ],
       "addons": [],
-      "seo_title": "Site vitrine éco-conçu — rapide & responsable",
+      "seo_title": "Site vitrine éco-conçu - rapide & responsable",
       "seo_description": "Création de site vitrine éco-conçu : léger, rapide, sans médias superflus. Metz & Lorraine.",
       "examples": [
         "Une association affiche sa page engagement numérique : les donateurs apprécient la cohérence.",
         "Un commerce local se démarque : « notre site aussi est sobre »."
       ],
-      "promo": "Vous ne payez pas plus cher — vous polluez moins, et Google le remarque.",
+      "promo": "Pour ceux qui veulent bien faire dès le premier site.",
       "prestafacture_sku": "SITE-VITRINE-ECO",
       "estimated_hours": 24,
       "price_tier": "entry"
@@ -1669,13 +1983,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-hand-holding-heart",
-      "title": "Page engagement numérique responsable",
-      "tagline": "Montrez que votre site aussi est sérieux sur l'environnement",
-      "short_description": "Une page claire sur votre démarche web sobre — argument pour les clients qui fuient les marques qui polluent en silence.",
-      "description": "Je rédige et intègre une page sur votre engagement numérique : site léger, médias sobres, hébergement, bonnes pratiques. Un argument commercial fort pour les clients sensibles à l'image RSE.",
+      "title": "Page engagement numérique",
+      "tagline": "Dire clairement vos gestes responsables",
+      "short_description": "Une page simple qui explique ce que vous faites côté sobriété / numérique.",
+      "description": "Utile pour RSE, appels d'offres, ou juste pour être transparent. Textes clairs, pas de greenwashing.",
       "price_eur": 89,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/eco-rse.svg",
+      "image": "/assets/images/prestations/cards/page-engagement-numerique.jpg",
       "benefits": [
         "Image de marque cohérente",
         "Argument de vente différenciant",
@@ -1689,13 +2003,13 @@
       ],
       "faq": [],
       "addons": [],
-      "seo_title": "Page RSE numérique — engagement web responsable",
+      "seo_title": "Page RSE numérique - engagement web responsable",
       "seo_description": "Page engagement numérique pour votre site : sobriété, médias, hébergement. Argument commercial RSE.",
       "examples": [
         "Un cabinet affiche ses choix techniques : les clients B2B sensibles à l'écologie sont rassurés.",
         "Boutique locale : « nous ne lançons pas de vidéos dans le vide »."
       ],
-      "promo": "85 € pour un argument que vos concurrents n'ont souvent pas.",
+      "promo": "89 € - une page honnête vaut mieux qu'un badge vide.",
       "prestafacture_sku": "ECO-PAGE-RSE",
       "estimated_hours": 3
     },
@@ -1706,14 +2020,14 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-chart-line",
-      "title": "Veille performance & sobriété",
-      "tagline": "Chaque mois, on vérifie que votre site reste léger",
-      "short_description": "Contrôle mensuel du poids et de la vitesse — alerte si de nouveaux contenus alourdissent le site.",
-      "description": "Nouvelles images, plugins ou contenus peuvent regonfler votre site. Chaque mois, je contrôle poids et vitesse, vous alerte en cas de dégradation et corrige les petits écarts dans un quota annuel.",
+      "title": "Veille perf & sobriété",
+      "tagline": "Le site reste léger dans le temps",
+      "short_description": "Chaque mois, un coup d'œil vitesse / poids + alertes si ça regonfle.",
+      "description": "Un site allégé une fois ne le reste pas tout seul. Petite veille pour éviter la rechute.",
       "price_eur": 35,
       "price_label": "Mensuel",
       "price_note": "30 min de corrections mineures / an incluses",
-      "image": "/assets/images/prestations/eco-monitor.svg",
+      "image": "/assets/images/prestations/cards/suivi-eco-mensuel.jpg",
       "benefits": [
         "Site qui reste performant dans le temps",
         "Alerte avant que ça dérape",
@@ -1732,13 +2046,13 @@
         }
       ],
       "addons": [],
-      "seo_title": "Suivi sobriété site web — abonnement mensuel",
+      "seo_title": "Suivi sobriété site web - abonnement mensuel",
       "seo_description": "Veille mensuelle performance et sobriété de votre site. Rapport, alertes, petites corrections.",
       "examples": [
         "Nouvelle galerie photos ajoutée par le client : alerte et compression au mois suivant.",
         "Plugin marketing installé : détecté avant que le site ne rame en permanence."
       ],
-      "promo": "29 €/mois — un site allégé une fois ne le reste pas tout seul.",
+      "promo": "35 €/mois - prévention plutôt que panique.",
       "prestafacture_sku": "ECO-MONITOR-MENSUEL",
       "estimated_hours": 0.5,
       "estimated_hours_period": "month",
@@ -1751,13 +2065,13 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-chalkboard-teacher",
-      "title": "Atelier : publier sans alourdir le site",
-      "tagline": "Vos équipes ajoutent du contenu sans casser la performance",
-      "short_description": "Bonnes pratiques images, vidéos et PDF avant publication — pour ceux qui mettent à jour le site eux-mêmes.",
-      "description": "Visio de 2 heures pour votre équipe : comment préparer images et vidéos, éviter l'autoplay, choisir les bons formats. Checklist imprimable pour ne plus regonfler le site à chaque mise à jour.",
+      "title": "Atelier : publier sans alourdir",
+      "tagline": "2 h pour vos équipes",
+      "short_description": "Bonnes pratiques images, vidéos, PDF - checklist fournie.",
+      "description": "Visio courte : comment préparer un média avant de le mettre en ligne. Pour ceux qui mettent à jour le site eux-mêmes.",
       "price_eur": 129,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/eco-atelier.svg",
+      "image": "/assets/images/prestations/cards/atelier-eco-web.jpg",
       "benefits": [
         "Moins de régressions après vos MAJ",
         "Autonomie sans sacrifier la sobriété",
@@ -1771,15 +2085,426 @@
       ],
       "faq": [],
       "addons": [],
-      "seo_title": "Atelier éco-conception web — formation 2 h",
+      "seo_title": "Atelier éco-conception web - formation 2 h",
       "seo_description": "Formation courte : publier sur le web sans alourdir le site. Images, vidéos, bonnes pratiques.",
       "examples": [
         "Secrétaire d'un cabinet : sait compresser une photo avant de la mettre en ligne.",
         "Responsable com d'une asso : ne recharge plus de vidéos 50 Mo sur l'accueil."
       ],
-      "promo": "120 € — souvent moins cher que 6 mois de corrections évitables.",
+      "promo": "Souvent moins cher que six mois de corrections évitables.",
       "prestafacture_sku": "ECO-FORMATION-2H",
       "estimated_hours": 2.5
+    },
+    {
+      "slug": "whatsapp-assistant-ia",
+      "service_slug": "ia_whatsapp_bot",
+      "category": "ia",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-comment-dots",
+      "title": "Assistant WhatsApp",
+      "tagline": "Il répond à votre place sur les questions simples",
+      "short_description": "Horaires, tarifs, \"vous êtes ouverts ?\" - l'assistant gère ça. Pour le reste, ça remonte vers vous.",
+      "description": "Vos clients vous écrivent déjà sur WhatsApp. Moi je règle un assistant qui connaît vos infos (horaires, zone, prestations) et qui répond proprement. Dès qu'il y a un vrai devis ou une urgence, ça vous arrive. Pas de robot qui invente des trucs.",
+      "price_eur": 790,
+      "price_label": "Forfait",
+      "price_note": "Configuration + scénarios métier",
+      "image": "/assets/images/prestations/cards/whatsapp-assistant-ia.jpg",
+      "benefits": [
+        "Moins de messages à retaper dix fois",
+        "Réponses même le soir et le week-end",
+        "Vous gardez la main sur devis et urgences"
+      ],
+      "includes": [
+        "On regarde ensemble vos échanges typiques",
+        "Scénarios FAQ + tri des demandes",
+        "Branchement WhatsApp Business (si c'est possible chez vous)",
+        "Petite formation + notice claire"
+      ],
+      "faq": [
+        {
+          "q": "Il faut payer l'API WhatsApp ?",
+          "a": "Ça dépend du volume. Souvent on commence simple avec WhatsApp Business, et on passe à l'API seulement si vous en avez vraiment besoin. Je vous le dis avant."
+        },
+        {
+          "q": "Il peut inventer des prix ?",
+          "a": "Non. Il s'appuie sur ce que vous validez. Et s'il ne sait pas, il vous passe la main."
+        }
+      ],
+      "addons": [
+        {
+          "id": "maint_wa",
+          "title": "Entretien mensuel WhatsApp",
+          "price_eur": 79,
+          "description": "Mise à jour FAQ, nouveaux scénarios, contrôle qualité.",
+          "prestafacture_sku": "IA-WA-MAINT"
+        }
+      ],
+      "seo_title": "Assistant WhatsApp pour commerces - Metz et Lorraine",
+      "seo_description": "Assistant WhatsApp pour artisans et commerces : réponses aux questions simples, et vous pour le reste. Mise en place par DanielCraft.",
+      "examples": [
+        "Un plombier : zone d'intervention et urgence vs devis classique, sans décrocher à chaque message.",
+        "Un salon : \"est-ce que vous avez de la place ?\" hors horaires, avec un lien pour prendre RDV."
+      ],
+      "promo": "Vous êtes en chantier ou en clientèle : WhatsApp continue de répondre sans vous.",
+      "prestafacture_sku": "IA-WHATSAPP",
+      "estimated_hours": 22,
+      "price_tier": "growth"
+    },
+    {
+      "slug": "geo-citations-ia",
+      "service_slug": "ia_geo_local",
+      "category": "ia",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-comments",
+      "title": "Être bien parlé de vous sur ChatGPT",
+      "tagline": "Quand on demande un pro du coin, autant que ça parle juste",
+      "short_description": "On prépare vos pages et vos FAQ pour que ChatGPT (et les autres) vous décrivent correctement.",
+      "description": "Les gens demandent déjà à ChatGPT ou Gemini \"un bon pro près de chez moi\". Moi je mets vos infos au clair : FAQ, faits solides, pages nettes. L'idée c'est pas de tricher. C'est juste d'être compréhensible quand une IA résume votre métier.",
+      "price_eur": 549,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/cards/geo-citations-ia.jpg",
+      "benefits": [
+        "Vous êtes plus lisible pour les assistants",
+        "Votre message reste fidèle à ce que vous faites",
+        "Ça complète (pas remplace) Google"
+      ],
+      "includes": [
+        "Petit état des lieux de votre site",
+        "Jusqu'à 12 questions/réponses claires",
+        "Retouches sur 3 pages importantes",
+        "Checklist pour les 3 mois suivants"
+      ],
+      "faq": [
+        {
+          "q": "Vous garantissez d'être cité ?",
+          "a": "Non, personne ne peut. Comme pour Google. On maximise vos chances avec des infos claires et solides."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Visibilité ChatGPT et Gemini pour commerces locaux",
+      "seo_description": "Pages et FAQ préparées pour que ChatGPT, Gemini et Perplexity présentent bien votre commerce local.",
+      "examples": [
+        "\"Boulanger à Metz\" : l'assistant reprend votre spécialité et vos horaires sans inventer.",
+        "Un cabinet : les réponses collent à vos vrais domaines, pas à du générique."
+      ],
+      "promo": "Si ChatGPT parle de vous à côté, autant que ce soit vrai.",
+      "prestafacture_sku": "IA-GEO-LOCAL",
+      "estimated_hours": 14,
+      "price_tier": "growth"
+    },
+    {
+      "slug": "ia-avis-google",
+      "service_slug": "ia_avis_google",
+      "category": "ia",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-star",
+      "title": "Plus d'avis Google (sans harceler)",
+      "tagline": "Demander l'avis au bon moment, répondre sans se prendre la tête",
+      "short_description": "QR ou SMS après la visite, plus des brouillons de réponses dans votre ton.",
+      "description": "Sur Maps, les avis comptent vraiment. Je vous mets un parcours simple : QR en caisse, SMS après intervention, le truc du quotidien. Et quand un avis arrive, vous avez un brouillon de réponse à valider. Pas d'achat d'avis. Juste faciliter le vrai.",
+      "price_eur": 349,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/cards/ia-avis-google.jpg",
+      "benefits": [
+        "Plus d'avis sans relancer comme un robot",
+        "Réponses plus rapides (et dans votre ton)",
+        "Ça rassure sur Maps"
+      ],
+      "includes": [
+        "Lien + QR code vers vos avis Google",
+        "Textes SMS / e-mail prêts à envoyer",
+        "Aide pour rédiger les réponses",
+        "45 min pour vous montrer le rythme"
+      ],
+      "faq": [
+        {
+          "q": "Vous achetez des avis ?",
+          "a": "Non. Jamais. On facilite les vrais avis clients, point."
+        }
+      ],
+      "addons": [
+        {
+          "id": "abo_avis",
+          "title": "Suivi mensuel avis",
+          "price_eur": 49,
+          "description": "Relances templates + revue des réponses.",
+          "prestafacture_sku": "IA-AVIS-MENSUEL"
+        }
+      ],
+      "seo_title": "Collecte d'avis Google pour commerces locaux",
+      "seo_description": "QR, SMS et brouillons de réponses pour vos avis Google. Simple, honnête, pensé pour les commerces locaux.",
+      "examples": [
+        "Resto : QR sur l'addition, avis en 20 secondes.",
+        "Artisan : SMS le soir de l'intervention avec le bon lien."
+      ],
+      "promo": "Sans avis récents, Maps vous enterre un peu. On rend ça naturel.",
+      "prestafacture_sku": "IA-AVIS-GOOGLE",
+      "estimated_hours": 8,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "prise-rdv-ia",
+      "service_slug": "ia_booking_qualify",
+      "category": "ia",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-calendar-check",
+      "title": "Filtrer les demandes et remplir l'agenda",
+      "tagline": "Moins de messages flous, plus de vrais RDV",
+      "short_description": "Un parcours qui pose les bonnes questions, propose des créneaux, et vous envoie des demandes propres.",
+      "description": "Si vous vivez au rythme des rendez-vous (beauté, santé, conseil, devis), je mets en place un petit parcours : questions utiles, créneaux, confirmation, et alerte vers vous. Moins de \"je voulais juste un renseignement\" qui bouffe un créneau.",
+      "price_eur": 690,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/cards/prise-rdv-ia.jpg",
+      "benefits": [
+        "Demandes mieux préparées",
+        "Agenda un peu moins le bordel",
+        "Ça marche aussi hors horaires"
+      ],
+      "includes": [
+        "5 à 8 questions de qualification",
+        "Lien avec votre agenda ou formulaire RDV",
+        "Confirmations / rappels si vos outils le permettent",
+        "Tests + réglages sur 2 semaines"
+      ],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Prise de RDV et qualification pour TPE",
+      "seo_description": "Parcours pour qualifier les demandes et proposer des créneaux. Pour métiers à rendez-vous.",
+      "examples": [
+        "Cabinet : on trie le motif avant de bloquer un créneau.",
+        "Coiffeur : proposition de créneaux + rappel la veille."
+      ],
+      "promo": "Un mauvais créneau coûte plus cher qu'un parcours bien réglé.",
+      "prestafacture_sku": "IA-PRISE-RDV",
+      "estimated_hours": 18,
+      "price_tier": "growth"
+    },
+    {
+      "slug": "pwa-vitrine",
+      "service_slug": "mobile_pwa",
+      "category": "mobile",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-mobile-alt",
+      "title": "Site qui s'installe sur le téléphone",
+      "tagline": "Comme une appli, sans passer par les stores",
+      "short_description": "Une icône sur l'écran d'accueil, un site qui charge vite, et ça marche même un peu hors ligne.",
+      "description": "On transforme votre site en truc \"presque appli\" : icône sur le téléphone, ouverture rapide, sensation plus fluide. Pas besoin de l'App Store. Idéal si vos clients reviennent souvent (carte, horaires, catalogue).",
+      "price_eur": 490,
+      "price_label": "Forfait",
+      "price_note": "Sur site existant compatible - ou avec création",
+      "image": "/assets/images/prestations/cards/pwa-vitrine.jpg",
+      "benefits": [
+        "Icône sur le téléphone du client",
+        "Plus snappy qu'un site classique",
+        "Pas de validation Apple / Google Play"
+      ],
+      "includes": [
+        "On vérifie si votre site est prêt",
+        "Mise en place de l'installation",
+        "Écran d'accueil propre",
+        "Tests iPhone et Android"
+      ],
+      "faq": [
+        {
+          "q": "Ça remplace une vraie appli ?",
+          "a": "Pour carte, RDV, infos, catalogue : souvent oui. Pour du très technique (Bluetooth, etc.), on en reparle."
+        }
+      ],
+      "addons": [
+        {
+          "id": "push",
+          "title": "Notifications push (opt-in)",
+          "price_eur": 190,
+          "description": "Campagnes ponctuelles (promo, horaires) avec consentement.",
+          "prestafacture_sku": "MOBILE-PUSH"
+        }
+      ],
+      "seo_title": "Site installable sur téléphone pour commerces",
+      "seo_description": "Votre site s'installe sur l'écran d'accueil : rapide, pratique, sans stores. DanielCraft.",
+      "examples": [
+        "Boulangerie : la carte et les horaires sur l'écran d'accueil.",
+        "Asso : accès rapide aux infos sans chercher le site dans Safari."
+      ],
+      "promo": "La plupart de vos visiteurs sont sur téléphone. Autant que ça se sente.",
+      "prestafacture_sku": "MOBILE-PWA",
+      "estimated_hours": 12,
+      "price_tier": "growth"
+    },
+    {
+      "slug": "whatsapp-business-setup",
+      "service_slug": "mobile_whatsapp_setup",
+      "category": "mobile",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-comments",
+      "title": "WhatsApp Business bien réglé",
+      "tagline": "Profil pro, messages d'accueil, réponses toutes prêtes",
+      "short_description": "Je mets votre WhatsApp en mode commerce : fiche, horaires, catalogues, étiquettes.",
+      "description": "On passe votre numéro en version pro. Profil clair, message quand vous êtes absents, réponses rapides pour les questions qui reviennent, catalogue si ça a du sens. Bref, WhatsApp qui a l'air tenu.",
+      "price_eur": 290,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/cards/whatsapp-business-setup.jpg",
+      "benefits": [
+        "Ça fait pro dès le premier message",
+        "Moins de saisie à la main",
+        "Base solide si vous voulez un assistant plus tard"
+      ],
+      "includes": [
+        "Création ou nettoyage du profil",
+        "Messages d'accueil et d'absence",
+        "Jusqu'à 15 réponses rapides",
+        "Catalogue si utile + 1 h pour vous montrer"
+      ],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Mise en place WhatsApp Business pour commerces",
+      "seo_description": "Profil WhatsApp Business, catalogues et réponses rapides pour artisans et commerces.",
+      "examples": [
+        "Fleuriste : catalogue bouquets + horaires auto.",
+        "Garage : étiquettes devis / RDV et message d'accueil clair."
+      ],
+      "promo": "C'est souvent le premier contact. Autant que ça fasse propre.",
+      "prestafacture_sku": "MOBILE-WA-SETUP",
+      "estimated_hours": 6,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "fiche-google-mobile",
+      "service_slug": "mobile_gbp",
+      "category": "mobile",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-map-marker-alt",
+      "title": "Fiche Google Maps au propre",
+      "tagline": "Souvent plus vue que votre site sur téléphone",
+      "short_description": "Catégories, services, photos, FAQ, bouton appeler - la fiche complète pour être trouvé.",
+      "description": "Sur téléphone, beaucoup de gens cliquent sur votre fiche Google avant votre site. Je la remets d'aplomb : infos justes, catégories, services avec prix si vous voulez, photos, questions fréquentes, boutons appeler et itinéraires.",
+      "price_eur": 290,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/cards/fiche-google-mobile.jpg",
+      "benefits": [
+        "Plus visible dans les résultats locaux",
+        "Appel ou itinéraires en un tap",
+        "Bonne base pour collecter des avis"
+      ],
+      "includes": [
+        "État des lieux de la fiche actuelle",
+        "Remplissage des champs utiles",
+        "Jusqu'à 15 services / produits",
+        "Conseils photos + 4 idées de posts"
+      ],
+      "faq": [
+        {
+          "q": "Vous prenez mon compte Google ?",
+          "a": "On travaille ensemble. Vous restez propriétaire de la fiche."
+        }
+      ],
+      "addons": [
+        {
+          "id": "posts_mois",
+          "title": "4 posts Google / mois",
+          "price_eur": 59,
+          "description": "Actualités, offres, événements sur la fiche.",
+          "prestafacture_sku": "MOBILE-GBP-POSTS"
+        }
+      ],
+      "seo_title": "Fiche Google Maps optimisée - Metz et Lorraine",
+      "seo_description": "Mise au propre de votre fiche Google Business : catégories, photos, services, conversion mobile.",
+      "examples": [
+        "Resto : plat du jour en post + bouton pour réserver.",
+        "Artisan : zone et services listés avec prix indicatifs."
+      ],
+      "promo": "Une fiche à jour, c'est des appels. Une fiche vide, c'est des clients chez le voisin.",
+      "prestafacture_sku": "MOBILE-GBP",
+      "estimated_hours": 7,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "conversion-mobile",
+      "service_slug": "mobile_conversion",
+      "category": "mobile",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-phone",
+      "title": "Faire appeler depuis le téléphone",
+      "tagline": "Boutons clairs, site rapide, contact en un tap",
+      "short_description": "Appeler, WhatsApp, itinéraires : tout sous le pouce, sans chercher.",
+      "description": "Je regarde votre site comme un client sur téléphone. Bouton appeler, WhatsApp, Maps, formulaires courts, vitesse. L'objectif c'est simple : que le gars qui tombe sur vous puisse vous joindre sans galérer.",
+      "price_eur": 349,
+      "price_label": "Forfait",
+      "image": "/assets/images/prestations/cards/conversion-mobile.jpg",
+      "benefits": [
+        "Contact en un tap",
+        "Moins de gens qui partent",
+        "On voit ce qui marche (clics utiles)"
+      ],
+      "includes": [
+        "Regard sur l'accueil et la page contact",
+        "Boutons appeler / WhatsApp / Maps",
+        "Barre ou bouton toujours visible sur mobile",
+        "Correctifs vitesse prioritaires"
+      ],
+      "faq": [],
+      "addons": [],
+      "seo_title": "Site mobile qui fait appeler - commerces",
+      "seo_description": "Boutons d'appel, WhatsApp et vitesse mobile pour transformer les visiteurs en contacts.",
+      "examples": [
+        "Plombier : \"Appeler\" toujours visible sur mobile.",
+        "Boutique : WhatsApp + itinéraires depuis les pages offres."
+      ],
+      "promo": "Un beau site que personne n'ose cliquer sur téléphone, ça sert à rien.",
+      "prestafacture_sku": "MOBILE-CONVERSION",
+      "estimated_hours": 9,
+      "price_tier": "entry"
+    },
+    {
+      "slug": "app-mobile-metier",
+      "service_slug": "mobile_app_metier",
+      "category": "mobile",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-tablet-alt",
+      "title": "Petit espace client sur téléphone",
+      "tagline": "Suivi, documents, RDV - sans une appli à 20 000 euros",
+      "short_description": "Une mini-appli web installable : vos clients reviennent sans vous écrire \"où j'en suis ?\".",
+      "description": "Pas besoin d'une appli native. On fait un petit espace utile (suivi, documents, historique RDV, catalogue privé) que vos clients peuvent garder sur l'écran d'accueil. On cadre un MVP simple, on livre, on ajuste.",
+      "price_eur": 990,
+      "price_label": "Forfait",
+      "price_note": "Périmètre défini ensemble (MVP)",
+      "image": "/assets/images/prestations/cards/app-mobile-metier.jpg",
+      "benefits": [
+        "Moins de \"où en est mon dossier ?\" par mail",
+        "Vos clients ont un endroit à eux",
+        "On peut faire grandir après"
+      ],
+      "includes": [
+        "1 h pour cadrer le besoin",
+        "MVP 3 à 5 écrans",
+        "Connexion simple (lien ou code)",
+        "Mise en ligne + formation"
+      ],
+      "faq": [
+        {
+          "q": "Ça prend combien de temps ?",
+          "a": "Souvent 3 à 5 semaines, selon ce qu'on valide ensemble."
+        }
+      ],
+      "addons": [],
+      "seo_title": "Espace client mobile pour TPE",
+      "seo_description": "Mini espace client sur téléphone : suivi, documents, RDV. Alternative légère à une appli native.",
+      "examples": [
+        "Cabinet : dépôt de documents et statut du dossier.",
+        "Grossiste : catalogue tarifs pour clients connectés."
+      ],
+      "promo": "Utile tous les jours > joli et jamais ouvert.",
+      "prestafacture_sku": "MOBILE-APP-METIER",
+      "estimated_hours": 32,
+      "price_tier": "premium"
     }
   ]
 }

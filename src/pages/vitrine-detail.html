@@ -154,12 +154,14 @@
                     <a class="vitrine-stripe-subtle" href="{{vitrine_stripe_url}}" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-cc-stripe" aria-hidden="true"></i> Payer tout de suite avec Stripe (lien sécurisé)
                     </a>
-                    {% elif vitrine_has_stripe_checkout %}
+                    {% else %}
+                    {% if vitrine_has_stripe_checkout %}
                     <button type="button" class="vitrine-stripe-subtle vitrine-stripe-subtle--btn" data-vitrine-stripe-checkout id="vitrineStripeCheckoutBtn">
                         <span class="vitrine-stripe-btn__label"><i class="fab fa-cc-stripe" aria-hidden="true"></i> Payer avec Stripe</span>
                         <span class="vitrine-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
                     </button>
                     <p class="vitrine-stripe-feedback" hidden role="status" aria-live="polite"></p>
+                    {% endif %}
                     {% endif %}
                 </div>
                 <hr class="vitrine-purchase-sep">

@@ -461,8 +461,8 @@
 }
 
 .prestations-grid--results {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.35rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .page-prestations-catalog.is-catalog-filtering .prestations-cta {

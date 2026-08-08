@@ -92,8 +92,10 @@
 <link rel="stylesheet" href="/assets/css/prestations.css{{assets_query}}">
 {% if extra_css_links %}
 {{extra_css_links}}
-{% elif extra_css %}
+{% else %}
+{% if extra_css %}
 <link rel="stylesheet" href="/assets/css/{{extra_css}}{{assets_query}}">
+{% endif %}
 {% endif %}
 
 <!-- Image Loader - WebP avec cache (chargé tôt pour être disponible) -->

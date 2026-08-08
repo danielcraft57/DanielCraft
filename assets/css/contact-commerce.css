@@ -1,0 +1,109 @@
+/* Page contact — hero commerce */
+
+.contact-hero-commerce {
+  background: linear-gradient(115deg, #0f3550 0%, #1a5f85 60%, #2a7a9e 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.contact-hero-commerce__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  min-height: min(52vh, 28rem);
+  align-items: stretch;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.contact-hero-commerce__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: clamp(2rem, 4vw, 3.25rem) clamp(1.25rem, 4vw, 3rem);
+  max-width: 38rem;
+}
+
+.contact-hero-commerce__brand {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #9fd4ea;
+}
+
+.contact-hero-commerce__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.8vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.contact-hero-commerce__title span {
+  color: #7bcde3;
+}
+
+.contact-hero-commerce__lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.contact-hero-commerce__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.1rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.contact-hero-commerce__trust i {
+  color: #7bcde3;
+  margin-right: 0.3rem;
+}
+
+.contact-hero-commerce__media {
+  position: relative;
+  min-height: 12rem;
+}
+
+.contact-hero-commerce__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0f3550 0%, transparent 30%);
+  pointer-events: none;
+}
+
+.contact-hero-commerce__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .contact-hero-commerce__inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .contact-hero-commerce__media {
+    min-height: 11rem;
+    order: -1;
+  }
+
+  .contact-hero-commerce__media::after {
+    background: linear-gradient(180deg, transparent 35%, #0f3550 100%);
+  }
+}
+
+/* Masquer le double titre du include contact (déjà dans le hero) */
+.contact-hero-commerce + .contact .section-header {
+  display: none;
+}

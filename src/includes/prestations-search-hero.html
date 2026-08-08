@@ -57,14 +57,21 @@
             </div>
         </form>
 
-        <div class="prestations-search-chips" role="group" aria-label="Filtrer par thème">
-            <button type="button" class="prestations-search-chip is-active" data-prestations-search-chip="tous" data-prestations-search-query="" aria-pressed="true"><i class="fas fa-th-large" aria-hidden="true"></i> Tous les services</button>
+        <div class="prestations-search-chips" role="group" aria-label="Filtrer par thème" data-chips-overflow>
+            <button type="button" class="prestations-search-chip is-active" data-prestations-search-chip="tous" data-prestations-search-query="" aria-pressed="true"><i class="fas fa-th-large" aria-hidden="true"></i> Tous</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="pack" data-prestations-search-query="pack"><i class="fas fa-box-open" aria-hidden="true"></i> Packs</button>
             <button type="button" class="prestations-search-chip" data-prestations-search-chip="site" data-prestations-search-query="site vitrine"><i class="fas fa-globe" aria-hidden="true"></i> Site vitrine</button>
             <button type="button" class="prestations-search-chip" data-prestations-search-chip="seo" data-prestations-search-query="seo"><i class="fas fa-search" aria-hidden="true"></i> SEO</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="auto" data-prestations-search-query="automatisation"><i class="fas fa-cogs" aria-hidden="true"></i> Automatisation</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="assistant" data-prestations-search-query="assistant"><i class="fas fa-robot" aria-hidden="true"></i> IA</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="entretien" data-prestations-search-query="entretien"><i class="fas fa-shield-alt" aria-hidden="true"></i> Maintenance</button>
-            <button type="button" class="prestations-search-chip" data-prestations-search-chip="éco" data-prestations-search-query="éco"><i class="fas fa-leaf" aria-hidden="true"></i> Éco</button>
+            <button type="button" class="prestations-search-chip" data-prestations-search-chip="ia" data-prestations-search-query="assistant"><i class="fas fa-robot" aria-hidden="true"></i> IA</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-prestations-search-chip="mobile" data-prestations-search-query="mobile whatsapp" hidden><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-prestations-search-chip="whatsapp" data-prestations-search-query="whatsapp" hidden><i class="fas fa-comment-dots" aria-hidden="true"></i> WhatsApp</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-prestations-search-chip="auto" data-prestations-search-query="automatisation" hidden><i class="fas fa-cogs" aria-hidden="true"></i> Automatisation</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-prestations-search-chip="entretien" data-prestations-search-query="entretien" hidden><i class="fas fa-shield-alt" aria-hidden="true"></i> Maintenance</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-prestations-search-chip="éco" data-prestations-search-query="éco" hidden><i class="fas fa-leaf" aria-hidden="true"></i> Éco</button>
+            <button type="button" class="prestations-search-chip-more" id="prestationsChipsMore" aria-expanded="false">
+                <span>Plus</span>
+                <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
         </div>
 
         <p class="prestations-search-results-info" id="prestationsSearchResultsInfo" aria-live="polite"></p>

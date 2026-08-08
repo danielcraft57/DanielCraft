@@ -9,7 +9,7 @@ Ce script :
 
 Usage:
     python3 build.py              # Build toutes les pages
-    python3 build.py --watch      # Mode watch (rebuild automatique)
+    python3 build.py --watch      # Mode watch (rebuild auto ; logs horodates dans logs/watch_dev.log)
     python3 build.py --no-webp    # Omet la conversion WebP (build plus rapide en local)
     python3 build.py index        # Build une page spécifique
 """
@@ -21,9 +21,10 @@ import sys
 import json
 import shutil
 from pathlib import Path
-from typing import Dict, Optional, List, Any
+from typing import Dict, Optional, List, Any, TextIO, Tuple
 from datetime import datetime, timedelta
 from urllib.parse import quote
+import builtins
 
 # Configuration
 BASE_DIR = Path(__file__).parent
@@ -35,9 +36,90 @@ GENERATED_INCLUDE_NAMES = frozenset({
     'vitrines-page-collection.html',
     'vitrines-catalog-embed.html',
     'prestations-catalog-embed.html',
+    'prestations-sidebar-nav.html',
+    'prestations-deal-week.html',
+    'prestations-packs-section.html',
+    'prestations-budget-filter.html',
     'livres-catalog-embed.html',
     'livres-deal-week.html',
 })
+
+# Journal mode watch (horodaté + fichier) — voir --watch / serve_dev.ps1
+WATCH_LOG_DIR = BASE_DIR / 'logs'
+WATCH_LOG_PATH = WATCH_LOG_DIR / 'watch_dev.log'
+_watch_log_fp: Optional[TextIO] = None
+_orig_print = builtins.print
+
+
+def _watch_timestamp() -> str:
+    return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+
+def _stamp_log_text(text: str) -> str:
+    """Préfixe chaque ligne non vide avec [YYYY-MM-DD HH:MM:SS]."""
+    stamp = _watch_timestamp()
+    parts: List[str] = []
+    for line in text.splitlines(keepends=True):
+        if line.strip() == '':
+            parts.append(line)
+        elif line.endswith('\n'):
+            parts.append(f'[{stamp}] {line}')
+        else:
+            parts.append(f'[{stamp}] {line}')
+    return ''.join(parts)
+
+
+def _watch_print(*args: Any, **kwargs: Any) -> None:
+    """print() avec horodatage console + append dans logs/watch_dev.log."""
+    sep = kwargs.pop('sep', ' ')
+    end = kwargs.pop('end', '\n')
+    file = kwargs.pop('file', sys.stdout)
+    flush = kwargs.pop('flush', False)
+    text = sep.join(str(a) for a in args) + end
+    if file in (sys.stdout, sys.stderr, None):
+        stamped = _stamp_log_text(text)
+        target = sys.stdout if file is None else file
+        target.write(stamped)
+        if flush or target in (sys.stdout, sys.stderr):
+            try:
+                target.flush()
+            except Exception:
+                pass
+        if _watch_log_fp is not None:
+            try:
+                _watch_log_fp.write(stamped)
+                _watch_log_fp.flush()
+            except Exception:
+                pass
+    else:
+        _orig_print(*args, sep=sep, end=end, file=file, flush=flush, **kwargs)
+
+
+def setup_watch_logging(log_path: Path = WATCH_LOG_PATH) -> Path:
+    """Active l'horodatage + fichier de log pour toute la session --watch."""
+    global _watch_log_fp
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    _watch_log_fp = open(log_path, 'a', encoding='utf-8')
+    session = _watch_timestamp()
+    header = f'\n===== watch_dev session {session} (pid {os.getpid()}) =====\n'
+    _watch_log_fp.write(header)
+    _watch_log_fp.flush()
+    builtins.print = _watch_print
+    return log_path
+
+
+def teardown_watch_logging() -> None:
+    """Restaure print() et ferme le fichier de log."""
+    global _watch_log_fp
+    builtins.print = _orig_print
+    if _watch_log_fp is not None:
+        try:
+            _watch_log_fp.write(f'===== fin session {_watch_timestamp()} =====\n')
+            _watch_log_fp.flush()
+            _watch_log_fp.close()
+        except Exception:
+            pass
+        _watch_log_fp = None
 
 
 def _write_text_if_changed(path: Path, content: str, encoding: str = 'utf-8') -> bool:
@@ -59,6 +141,7 @@ PROJECTS_JSON = DATA_DIR / 'projects.json'
 PROJECT_SLUG_ALIASES_JSON = DATA_DIR / 'project-slug-aliases.json'
 VITRINES_JSON = DATA_DIR / 'vitrines.json'
 PRESTATIONS_JSON = DATA_DIR / 'prestations.json'
+PRESTATIONS_DEAL_WEEK_JSON = DATA_DIR / 'prestations-deal-week.json'
 LIVRES_JSON = DATA_DIR / 'livres.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
 READMES_DIR = DATA_DIR / 'readmes'
@@ -927,6 +1010,54 @@ def _vitrine_og_mime_from_url(url: str) -> str:
     if u.endswith('.png'):
         return 'image/png'
     return 'image/jpeg'
+
+
+def _picture_img_html(
+    src: str,
+    *,
+    alt: str = '',
+    class_name: str = '',
+    loading: str = 'lazy',
+    decoding: str = 'async',
+    width: Optional[int] = None,
+    height: Optional[int] = None,
+    style: str = '',
+) -> str:
+    """IMG ou PICTURE (WebP + fallback) pour un chemin /assets/... jpg/png."""
+    src = (src or '').strip()
+    if not src:
+        return ''
+    attrs = [
+        f'src="{html.escape(src, quote=True)}"',
+        f'alt="{html.escape(alt)}"',
+        f'loading="{html.escape(loading)}"',
+        f'decoding="{html.escape(decoding)}"',
+    ]
+    if class_name:
+        attrs.append(f'class="{html.escape(class_name)}"')
+    if width:
+        attrs.append(f'width="{int(width)}"')
+    if height:
+        attrs.append(f'height="{int(height)}"')
+    if style:
+        attrs.append(f'style="{html.escape(style, quote=True)}"')
+    img = f'<img {" ".join(attrs)}>'
+    low = src.lower()
+    if not (low.endswith('.jpg') or low.endswith('.jpeg') or low.endswith('.png')):
+        return img
+    if not src.startswith('/assets/'):
+        return img
+    webp_rel = str(Path(src).with_suffix('.webp')).replace('\\', '/')
+    # Émettre le source WebP si le fichier source raster existe (WebP créé au build)
+    local = BASE_DIR / src.lstrip('/').replace('/', os.sep)
+    if not local.is_file():
+        return img
+    return (
+        f'<picture>'
+        f'<source srcset="{html.escape(webp_rel, quote=True)}" type="image/webp">'
+        f'{img}'
+        f'</picture>'
+    )
 
 
 def _vitrine_og_dims_from_url(url: str) -> tuple[str, str]:
@@ -1971,6 +2102,9 @@ PRESTATION_FEATURED_ORDER = (
     'site-vitrine',
     'visibilite-complete',
     'repondeur-intelligent',
+    'site-vitrine-essentiel',
+    'whatsapp-assistant-ia',
+    'pwa-vitrine',
 )
 
 HOME_VITRINE_TEASER_SLUGS = (
@@ -1994,23 +2128,39 @@ def _prestation_duration_label(item: Dict[str, Any]) -> str:
     period = (item.get('estimated_hours_period') or '').strip().lower()
     if hours < 1:
         mins = max(1, int(round(hours * 60)))
-        core = f'≈ {mins} min'
+        core = f'~ {mins} min'
     elif abs(hours - round(hours)) < 0.05:
-        core = f'≈ {int(round(hours))} h'
+        core = f'~ {int(round(hours))} h'
     else:
-        core = f'≈ {hours:.1f} h'.replace('.0 h', ' h')
+        core = f'~ {hours:.1f} h'.replace('.0 h', ' h')
     if period == 'month':
         return f'{core} / mois'
     if period == 'year':
         return f'{core} / an'
-    return f'{core} d\'intervention'
+    return f"{core} d'intervention"
 
 
 def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = False) -> str:
-    """Visuel carte : icône + dégradé (évite les SVG génériques peu parlants)."""
+    """Visuel carte : photo produit si dispo, sinon icône + dégradé."""
     icon = html.escape((item.get('icon') or 'fa-star').strip())
     cat = html.escape((item.get('category') or 'identite').strip())
     hero_class = ' prestation-card-visual--hero' if featured_hero else ''
+    img_rel = (item.get('image') or '').strip()
+    if img_rel and not img_rel.lower().endswith('.svg'):
+        local = BASE_DIR / img_rel.lstrip('/').replace('/', os.sep)
+        if local.is_file():
+            pic = _picture_img_html(
+                img_rel,
+                alt='',
+                class_name='prestation-card-photo',
+                loading='lazy',
+                width=640,
+                height=360,
+            )
+            return (
+                f'<div class="prestation-card-visual prestation-card-visual--photo{hero_class}"'
+                f' data-prestation-cat="{cat}" aria-hidden="true">{pic}</div>'
+            )
     return (
         f'<div class="prestation-card-visual prestation-card-visual--icon{hero_class}"'
         f' data-prestation-cat="{cat}" aria-hidden="true">'
@@ -2018,146 +2168,478 @@ def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = 
     )
 
 
+def _prestation_contrast_html(item: Dict[str, Any]) -> str:
+    """Blocs Avant / Après (style offres phares), à partir de before + benefits."""
+    before_raw = item.get('before') or []
+    after_raw = item.get('benefits') or []
+    if not isinstance(before_raw, list):
+        before_raw = []
+    if not isinstance(after_raw, list):
+        after_raw = []
+    before_items = [str(x).strip() for x in before_raw if str(x).strip()][:3]
+    after_items = [str(x).strip() for x in after_raw if str(x).strip()][:3]
+    if not before_items and not after_items:
+        return ''
+    parts: List[str] = ['<div class="offres-tier__contrast">']
+    if before_items:
+        lis = ''.join(f'<li>{html.escape(x)}</li>' for x in before_items)
+        parts.append(
+            '<div class="offres-tier__col offres-tier__col--before">'
+            '<h4>Avant</h4>'
+            f'<ul>{lis}</ul></div>'
+        )
+    if after_items:
+        lis = ''.join(f'<li>{html.escape(x)}</li>' for x in after_items)
+        label = 'Après' if before_items else 'Bénéfices'
+        parts.append(
+            f'<div class="offres-tier__col offres-tier__col--after">'
+            f'<h4>{label}</h4>'
+            f'<ul>{lis}</ul></div>'
+        )
+    parts.append('</div>')
+    return ''.join(parts)
+
+
 def _prestation_card_html(
     item: Dict[str, Any],
     *,
     show_featured_badge: bool = False,
     featured_hero: bool = False,
+    index: Optional[int] = None,
 ) -> str:
+    """Carte catalogue style offres-tier (média, avant/après, devis — carte cliquable)."""
     slug = (item.get('slug') or '').strip()
     title_raw = (item.get('title') or slug).strip()
     title = html.escape(title_raw)
-    desc = html.escape((item.get('short_description') or item.get('description') or '').strip())
-    icon = html.escape((item.get('icon') or 'fa-star').strip())
-    tagline = html.escape((item.get('tagline') or '').strip())
+    tagline_raw = (item.get('tagline') or item.get('short_description') or '').strip()
+    tagline = html.escape(tagline_raw)
     service_slug = html.escape((item.get('service_slug') or slug).strip())
     try:
         price_eur = int(item.get('price_eur', 0))
     except (TypeError, ValueError):
         price_eur = 0
     price_label = html.escape((item.get('price_label') or 'Forfait').strip())
-    if item.get('has_page'):
-        cta_href = f'/prestations/{slug}/'
-        short_title = title_raw.split('—')[0].strip() if '—' in title_raw else title_raw
-        if len(short_title) > 36:
-            short_title = short_title[:33].rstrip() + '…'
-        cta_label = 'Voir'
-        devis_short = short_title.lower()
-        devis_label = f'Devis {devis_short} par e-mail'
-        actions = (
-            f'<div class="prestation-card-actions">'
-            f'<a href="{cta_href}" class="service-cta"><span>{html.escape(cta_label)}</span>'
-            f'<i class="fas fa-eye" aria-hidden="true"></i></a>'
-            f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
-            f' data-prestation-slug="{html.escape(slug, quote=True)}"'
-            f' data-service-slug="{service_slug}"'
-            f' data-prestation-title="{title}"'
-            f' data-prestation-price="{price_eur}"'
-            f' data-prestation-price-label="{price_label}">'
-            f'<span>{html.escape(devis_label)}</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
-            f'</div>'
-        )
-    else:
-        actions = (
-            f'<button type="button" class="service-cta service-cta--devis" data-prestation-devis-open'
-            f' data-prestation-slug="{html.escape(slug, quote=True)}"'
-            f' data-service-slug="{service_slug}"'
-            f' data-prestation-title="{title}"'
-            f' data-prestation-price="{price_eur}"'
-            f' data-prestation-price-label="{price_label}">'
-            f'<span>Devis par e-mail</span><i class="fas fa-envelope" aria-hidden="true"></i></button>'
-        )
+    kind = (item.get('kind') or '').strip()
+    featured = bool(item.get('featured') or featured_hero)
+
     badge = ''
-    if show_featured_badge and item.get('featured'):
-        badge = '<span class="prestation-card-badge">Coup de cœur</span>'
-    card_class = 'service-card prestation-card'
-    if item.get('featured') or featured_hero:
-        card_class += ' prestation-card--featured'
-    tagline_html = (
-        f'<p class="prestation-card-tagline">{tagline}</p>' if tagline and featured_hero else ''
+    card_badge = (item.get('card_badge') or '').strip()
+    if kind == 'pack':
+        badge = (
+            '<span class="offres-tier__badge prestation-card-badge prestation-card-badge--pack">'
+            'Pack</span>'
+        )
+    elif card_badge:
+        badge = (
+            f'<span class="offres-tier__badge">'
+            f'<i class="fas fa-star" aria-hidden="true"></i> {html.escape(card_badge)}</span>'
+        )
+    elif show_featured_badge and item.get('featured'):
+        badge = (
+            '<span class="offres-tier__badge prestation-card-badge">'
+            '<i class="fas fa-star" aria-hidden="true"></i> Coup de cœur</span>'
+        )
+
+    devis_attrs = (
+        f' data-prestation-slug="{html.escape(slug, quote=True)}"'
+        f' data-service-slug="{service_slug}"'
+        f' data-prestation-title="{title}"'
+        f' data-prestation-price="{price_eur}"'
+        f' data-prestation-price-label="{price_label}"'
     )
+    devis_btn_class = 'btn btn-primary' if featured else 'btn btn-outline'
+    devis_btn = (
+        f'<button type="button" class="{devis_btn_class}" data-prestation-devis-open'
+        f'{devis_attrs}><span>Demander un devis</span></button>'
+    )
+    stretch_link = ''
+    clickable_class = ''
+    if item.get('has_page') and slug:
+        clickable_class = ' offres-tier--clickable'
+        stretch_link = (
+            f'<a class="offres-tier__stretch" href="/prestations/{html.escape(slug)}/"'
+            f' aria-label="Voir la fiche {title}"></a>'
+        )
+
+    hint_bits: List[str] = []
+    note = (item.get('price_note') or '').strip()
+    if note:
+        hint_bits.append(html.escape(note))
+    try:
+        compare = item.get('compare_at_eur')
+        if compare is not None and int(compare) > price_eur:
+            hint_bits.append(f"{int(compare)}&nbsp;€ HT à l'unité")
+    except (TypeError, ValueError):
+        pass
     duration = _prestation_duration_label(item)
-    duration_html = (
-        f'<span class="price-duration">{html.escape(duration)}</span>' if duration else ''
+    if duration and not note:
+        hint_bits.append(html.escape(duration))
+    hint_html = (
+        f'<p class="offres-tier__hint">{" · ".join(hint_bits)}</p>' if hint_bits else ''
     )
-    tier = (item.get('price_tier') or '').strip()
-    tier_html = (
-        '<span class="price-tier">Petit budget</span>' if tier == 'entry' else ''
+
+    card_class = (
+        'offres-tier service-card prestation-card prestation-card--row'
+        + clickable_class
     )
+    if featured:
+        card_class += ' offres-tier--featured prestation-card--featured'
+    if kind == 'pack':
+        card_class += ' prestation-card--pack'
+
+    lead = (
+        f'<p class="offres-tier__tagline">{tagline}</p>' if tagline else ''
+    )
+    pack_meta = ''
+    includes_slugs = item.get('includes_slugs') or []
+    if kind == 'pack' and includes_slugs:
+        pack_meta = (
+            f'<p class="prestation-card-pack-meta">'
+            f'{len(includes_slugs)} prestations incluses</p>'
+        )
+
     return (
-        f'<article class="{card_class}" data-prestation-slug="{html.escape(slug, quote=True)}">'
+        f'<article class="{card_class}" data-prestation-slug="{html.escape(slug, quote=True)}"'
+        f' data-prestation-cat="{html.escape((item.get("category") or "").strip(), quote=True)}"'
+        f' data-price-eur="{price_eur}">'
+        f'{stretch_link}'
+        f'<div class="offres-tier__media">'
         f'{badge}'
         f'{_prestation_card_visual_html(item, featured_hero=featured_hero)}'
-        f'<h3 class="service-title">{title}</h3>'
-        f'{tagline_html}'
-        f'<p class="service-description">{desc}</p>'
-        f'<div class="service-price">{tier_html}'
-        f'<span class="price-label">{price_label}</span>'
-        f'<span class="price-amount">{price_eur} € <span class="price-ht">HT</span></span>'
-        f'{duration_html}</div>'
-        f'{actions}'
+        f'</div>'
+        f'<div class="offres-tier__body prestation-card-body">'
+        f'<h3 class="offres-tier__title service-title">{title}</h3>'
+        f'{lead}{pack_meta}'
+        f'{_prestation_contrast_html(item)}'
+        f'</div>'
+        f'<div class="offres-tier__buy prestation-card-buy">'
+        f'<p class="offres-tier__price">À partir de <strong>{price_eur}&nbsp;€</strong> '
+        f'<span>HT</span></p>'
+        f'{hint_html}'
+        f'{devis_btn}'
+        f'</div>'
         '</article>'
     )
 
 
+def load_prestations_deal_week_config() -> Dict[str, Any]:
+    """Charge src/data/prestations-deal-week.json (rotation hebdo)."""
+    if not PRESTATIONS_DEAL_WEEK_JSON.is_file():
+        return {'rotation': [], 'force_slug': None, 'badge': 'Offre de la semaine'}
+    try:
+        data = json.loads(PRESTATIONS_DEAL_WEEK_JSON.read_text(encoding='utf-8'))
+        return data if isinstance(data, dict) else {'rotation': []}
+    except (json.JSONDecodeError, OSError):
+        return {'rotation': []}
+
+
+def _prestations_iso_week_index() -> int:
+    """Numéro de semaine ISO (Europe/Paris), 1-based."""
+    try:
+        from zoneinfo import ZoneInfo
+        now = datetime.now(ZoneInfo('Europe/Paris'))
+    except Exception:
+        now = datetime.now()
+    return int(now.isocalendar()[1])
+
+
+def resolve_prestations_deal_slug(
+    catalog: Optional[Dict[str, Any]] = None,
+    config: Optional[Dict[str, Any]] = None,
+) -> Optional[str]:
+    """Slug de l'offre de la semaine (force_slug ou rotation[iso_week % n])."""
+    cfg = config if config is not None else load_prestations_deal_week_config()
+    data = catalog if catalog is not None else load_prestations()
+    by_slug = {
+        (it.get('slug') or '').strip(): it
+        for it in data.get('items', [])
+        if (it.get('slug') or '').strip()
+    }
+    force = cfg.get('force_slug')
+    if isinstance(force, str) and force.strip() and force.strip() in by_slug:
+        return force.strip()
+    rotation = [
+        s.strip() for s in (cfg.get('rotation') or [])
+        if isinstance(s, str) and s.strip() and s.strip() in by_slug
+    ]
+    if not rotation:
+        packs = [
+            (it.get('slug') or '').strip()
+            for it in data.get('items', [])
+            if (it.get('kind') or '') == 'pack' and it.get('has_page')
+        ]
+        rotation = [s for s in packs if s]
+    if not rotation:
+        return None
+    week = _prestations_iso_week_index()
+    return rotation[(week - 1) % len(rotation)]
+
+
+def build_prestations_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
+    """Bandeau « Offre de la semaine » (sous la recherche /nos-offres)."""
+    catalog = data if data is not None else load_prestations()
+    cfg = load_prestations_deal_week_config()
+    slug = resolve_prestations_deal_slug(catalog, cfg) or ''
+    item = None
+    for it in catalog.get('items', []):
+        if (it.get('slug') or '').strip() == slug:
+            item = it
+            break
+    out_path = INCLUDES_DIR / 'prestations-deal-week.html'
+    if not item:
+        if _write_text_if_changed(out_path, '<!-- Pas d\'offre de la semaine -->\n'):
+            print('[WARN] prestations-deal-week : aucun item')
+        return
+
+    slug = (item.get('slug') or '').strip()
+    title = html.escape((item.get('title') or slug).strip())
+    tagline = html.escape((item.get('tagline') or '').strip())
+    desc = html.escape((item.get('short_description') or '').strip())
+    icon = html.escape((item.get('icon') or 'fa-box-open').strip())
+    badge = html.escape((cfg.get('badge') or 'Offre de la semaine').strip())
+    urgency = html.escape(
+        (cfg.get('urgency') or 'Mise en avant cette semaine').strip()
+    )
+    cta = html.escape((cfg.get('cta_label') or "Voir l'offre").strip())
+    try:
+        price_eur = int(item.get('price_eur', 0))
+    except (TypeError, ValueError):
+        price_eur = 0
+    price_label = html.escape((item.get('price_label') or 'Forfait').strip())
+    compare_html = ''
+    save_html = ''
+    try:
+        compare = item.get('compare_at_eur')
+        if compare is not None and int(compare) > price_eur:
+            cmp_i = int(compare)
+            save = cmp_i - price_eur
+            pct = int(round(100 * save / cmp_i)) if cmp_i else 0
+            compare_html = (
+                f'<span class="prestations-deal-compare">{cmp_i}&nbsp;€ HT</span>'
+            )
+            save_html = (
+                f'<span class="prestations-deal-save">−{save}&nbsp;€ '
+                f'<em>(−{pct}&nbsp;%)</em></span>'
+            )
+    except (TypeError, ValueError):
+        pass
+
+    pills = ''
+    includes = item.get('includes') or []
+    if includes:
+        pills = ''.join(
+            f'<li>{html.escape(str(x))}</li>' for x in includes[:5]
+        )
+    n_inc = len(item.get('includes_slugs') or includes or [])
+    meta = (
+        f'{n_inc} prestation(s) · devis PDF'
+        if n_inc
+        else 'Devis PDF sans engagement'
+    )
+
+    html_out = f'''<aside class="prestations-deal-week" aria-labelledby="prestations-deal-title">
+  <div class="container prestations-deal-week-inner">
+    <div class="prestations-deal-visual" aria-hidden="true">
+      <div class="prestations-deal-visual-glow"></div>
+      <div class="prestations-deal-icon"><i class="fas {icon}"></i></div>
+      <span class="prestations-deal-ribbon">{badge}</span>
+    </div>
+    <div class="prestations-deal-copy">
+      <p class="prestations-deal-kicker"><i class="fas fa-fire" aria-hidden="true"></i> {urgency}</p>
+      <h2 id="prestations-deal-title" class="prestations-deal-title">{title}</h2>
+      <p class="prestations-deal-tagline">{tagline}</p>
+      <p class="prestations-deal-desc">{desc}</p>
+      <ul class="prestations-deal-pills" aria-label="Inclus">{pills}</ul>
+    </div>
+    <div class="prestations-deal-buy">
+      <p class="prestations-deal-price-block">
+        {compare_html}
+        <span class="prestations-deal-price">{price_eur}&nbsp;€ <small>HT</small></span>
+        {save_html}
+      </p>
+      <p class="prestations-deal-meta">{html.escape(meta)} · {price_label}</p>
+      <a class="btn btn-primary btn-large prestations-deal-cta" href="/prestations/{html.escape(slug)}/">
+        <span>{cta}</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+  <a class="prestations-deal-secondary" href="#packs">Voir tous les packs</a>
+    </div>
+  </div>
+</aside>
+'''
+    if _write_text_if_changed(out_path, html_out):
+        print(f'[OK] prestations-deal-week.html ({slug} @ {price_eur} EUR HT)')
+
+
+def build_prestations_packs_section(data: Optional[Dict[str, Any]] = None) -> None:
+    """Section Packs dédiée (sous l'offre de la semaine, avant le catalogue)."""
+    catalog = data if data is not None else load_prestations()
+    packs = [
+        it for it in catalog.get('items', [])
+        if (it.get('kind') or '') == 'pack' and it.get('has_page')
+    ]
+    out_path = INCLUDES_DIR / 'prestations-packs-section.html'
+    if not packs:
+        if _write_text_if_changed(out_path, '<!-- Aucun pack -->\n'):
+            print('[WARN] prestations-packs-section : aucun pack')
+        return
+    cards = ''.join(
+        _prestation_card_html(it, show_featured_badge=False, featured_hero=True)
+        for it in packs
+    )
+    html_out = (
+        '<section id="packs" class="prestations-packs-section" '
+        'aria-labelledby="prestations-packs-title">'
+        '<div class="container">'
+        '<div class="prestations-featured-head">'
+        '<h2 id="prestations-packs-title" class="prestations-section-title">'
+        '<i class="fas fa-box-open" aria-hidden="true"></i> Packs commerce</h2>'
+        '<a class="prestations-featured-all" href="#catalogue">Catalogue →</a>'
+        '</div>'
+        '<p class="prestations-featured-lead">'
+        'Plusieurs prestations d\'un coup, avec remise. Un seul devis.</p>'
+        f'<div class="services-grid prestations-grid prestations-grid--packs">{cards}</div>'
+        '</div></section>\n'
+    )
+    if _write_text_if_changed(out_path, html_out):
+        print(f'[OK] prestations-packs-section.html ({len(packs)} pack(s))')
+
+
+def build_prestations_categories_hub(data: Dict[str, Any], grouped: Dict[str, List[Dict[str, Any]]]) -> str:
+    """Cadres categories (vue initiale catalogue)."""
+    cats = [c for c in data.get('categories', []) if c.get('id')]
+    frames: List[str] = []
+    for cat in cats:
+        cid = (cat.get('id') or '').strip()
+        items = grouped.get(cid) or []
+        if not items:
+            continue
+        title = html.escape((cat.get('title') or cid).strip())
+        nav = html.escape((cat.get('nav_label') or cat.get('title') or cid).strip())
+        icon = html.escape((cat.get('icon') or 'fa-folder').strip())
+        desc = html.escape((cat.get('description') or '').strip())
+        n = len(items)
+        prices = []
+        for it in items:
+            try:
+                prices.append(int(it.get('price_eur') or 0))
+            except (TypeError, ValueError):
+                pass
+        prices = [p for p in prices if p > 0]
+        from_price = min(prices) if prices else 0
+        price_bit = (
+            f'<span class="prestations-cat-frame-price">À partir de {from_price}&nbsp;€ HT</span>'
+            if from_price
+            else ''
+        )
+        media_inner = f'<i class="fas {icon}"></i>'
+        cat_img = (cat.get('image') or '').strip()
+        if cat_img and not cat_img.lower().endswith('.svg'):
+            local = BASE_DIR / cat_img.lstrip('/').replace('/', os.sep)
+            if local.is_file():
+                media_inner = _picture_img_html(
+                    cat_img,
+                    alt='',
+                    class_name='prestations-cat-frame-photo',
+                    loading='lazy',
+                    width=640,
+                    height=360,
+                )
+        frames.append(
+            f'<a class="prestations-cat-frame" href="#{html.escape(cid)}" '
+            f'data-cat-frame="{html.escape(cid, quote=True)}">'
+            f'<div class="prestations-cat-frame-media" data-prestation-cat="{html.escape(cid)}" aria-hidden="true">'
+            f'{media_inner}</div>'
+            f'<div class="prestations-cat-frame-body">'
+            f'<h3 class="prestations-cat-frame-title">{title}</h3>'
+            f'<p class="prestations-cat-frame-count">{n} offre{"s" if n != 1 else ""}</p>'
+            f'<p class="prestations-cat-frame-desc">{desc}</p>'
+            f'{price_bit}'
+            f'<span class="prestations-cat-frame-cta">Explorer {nav} &rarr;</span>'
+            f'</div></a>'
+        )
+    if not frames:
+        return ''
+    return (
+        '<section id="prestations-cat-hub" class="prestations-cat-hub" '
+        'aria-labelledby="prestations-cat-hub-title">'
+        '<div class="prestations-featured-head">'
+        '<h2 id="prestations-cat-hub-title" class="prestations-section-title">'
+        '<i class="fas fa-th-large" aria-hidden="true"></i> Choisir une catégorie</h2>'
+        '</div>'
+        '<p class="prestations-featured-lead">'
+        "Parcourez par thème - les offres s'affichent ensuite, sans tout déverser d'un coup.</p>"
+        f'<div class="prestations-cat-hub-grid">{"".join(frames)}</div>'
+        '</section>'
+    )
+
+
 def build_prestations_catalog_embed() -> None:
-    """Génère includes/prestations-catalog-embed.html depuis prestations.json."""
+    """Hub categories + sections produits (masquees jusqu'a selection) + sidebar + budget."""
     data = load_prestations()
+    build_prestations_deal_week_embed(data)
+    packs_stub = INCLUDES_DIR / 'prestations-packs-section.html'
+    _write_text_if_changed(packs_stub, '<!-- Packs : voir #packs dans le catalogue -->\n')
     cats = {c['id']: c for c in data.get('categories', []) if c.get('id')}
     grouped = _prestation_items_by_category(data)
-    featured_raw = [
-        it for it in data.get('items', [])
-        if it.get('featured') and it.get('has_page')
-    ]
-    order_index = {slug: i for i, slug in enumerate(PRESTATION_FEATURED_ORDER)}
-    featured_pages = sorted(
-        featured_raw,
-        key=lambda it: order_index.get((it.get('slug') or '').strip(), 999),
-    )[:3]
+
+    prices = []
+    for it in data.get('items', []):
+        if not it.get('has_page'):
+            continue
+        try:
+            prices.append(int(it.get('price_eur') or 0))
+        except (TypeError, ValueError):
+            pass
+    prices = [p for p in prices if p > 0]
+    price_min = min(prices) if prices else 0
+    price_max = max(prices) if prices else 2000
+
     parts: List[str] = []
-    if featured_pages:
-        cards = ''.join(
-            _prestation_card_html(it, show_featured_badge=True, featured_hero=True)
-            for it in featured_pages
-        )
-        parts.append(
-            '<section class="prestations-featured" aria-labelledby="prestations-featured-title">'
-            '<div class="prestations-featured-head">'
-            '<h2 id="prestations-featured-title" class="prestations-section-title">'
-            '<i class="fas fa-star" aria-hidden="true"></i> Services en vedette</h2>'
-            '<a class="prestations-featured-all" href="#catalogue-categories">Voir tous les services →</a>'
-            '</div>'
-            '<p class="prestations-featured-lead">Site clair, visibilité Google <em>et</em> IA, ou assistant sur votre site.</p>'
-            f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
-            '</section>'
-        )
+    hub = build_prestations_categories_hub(data, grouped)
+    if hub:
+        parts.append(hub)
     parts.append('<div id="catalogue-categories" class="prestations-categories-anchor"></div>')
-    for cid, cat in cats.items():
+    parts.append(
+        '<div id="prestationsCategoryProducts" class="prestations-category-products" hidden>'
+        '<button type="button" class="prestations-back-hub btn btn-outline" id="prestationsBackHub">'
+        '<i class="fas fa-arrow-left" aria-hidden="true"></i> <span>Toutes les catégories</span></button>'
+    )
+    cat_order = list(cats.keys())
+    if 'packs' in cat_order:
+        cat_order = ['packs'] + [c for c in cat_order if c != 'packs']
+    for cid in cat_order:
+        cat = cats[cid]
         items = grouped.get(cid) or []
         if not items:
             continue
         title = html.escape((cat.get('title') or cid).strip())
         icon = html.escape((cat.get('icon') or 'fa-folder').strip())
-        cards = ''.join(_prestation_card_html(it) for it in items)
+        cards = ''.join(
+            _prestation_card_html(it, index=i)
+            for i, it in enumerate(items, start=1)
+        )
         parts.append(
-            f'<section class="prestations-category" aria-labelledby="{html.escape(cid)}">'
+            f'<section class="prestations-category" data-category-section="{html.escape(cid)}" '
+            f'aria-labelledby="{html.escape(cid)}" hidden>'
             f'<h2 id="{html.escape(cid)}" class="prestations-section-title">'
             f'<i class="fas {icon}" aria-hidden="true"></i> {title}</h2>'
-            f'<div class="services-grid prestations-grid">{cards}</div>'
+            f'<div class="services-grid prestations-grid prestations-grid--rows '
+            f'offres-tiers">{cards}</div>'
             f'</section>'
         )
+    parts.append('</div>')
     out_path = INCLUDES_DIR / 'prestations-catalog-embed.html'
     if _write_text_if_changed(out_path, '\n'.join(parts)):
         print(f'[OK] prestations-catalog-embed.html genere ({len(data.get("items", []))} prestation(s))')
 
-    # Sidebar catégories (ancres + compteurs)
-    total = sum(1 for it in data.get('items', []) if it.get('has_page'))
     side: List[str] = [
-        f'<li><a class="prestations-sidebar-link is-active" href="#prestations-featured-title">'
+        f'<li><a class="prestations-sidebar-link is-active" href="#prestations-cat-hub" data-cat-nav="hub">'
         f'<i class="fas fa-th-large" aria-hidden="true"></i> '
-        f'<span>Tous les services</span> <em>{total}</em></a></li>'
+        f'<span>Catégories</span> <em>{len([c for c in cat_order if grouped.get(c)])}</em></a></li>'
     ]
-    for cid, cat in cats.items():
+    for cid in cat_order:
+        cat = cats.get(cid) or {}
         items = grouped.get(cid) or []
         if not items:
             continue
@@ -2165,17 +2647,643 @@ def build_prestations_catalog_embed() -> None:
         icon = html.escape((cat.get('icon') or 'fa-folder').strip())
         n = len(items)
         side.append(
-            f'<li><a class="prestations-sidebar-link" href="#{html.escape(cid)}">'
+            f'<li class="prestations-sidebar-item"><a class="prestations-sidebar-link" '
+            f'href="#{html.escape(cid)}" data-cat-nav="{html.escape(cid, quote=True)}">'
             f'<i class="fas {icon}" aria-hidden="true"></i> '
             f'<span>{title}</span> <em>{n}</em></a></li>'
         )
     side.append(
-        '<li><a class="prestations-sidebar-link" href="#prestations-featured-title">'
-        '<i class="fas fa-star" aria-hidden="true"></i> <span>Services populaires</span></a></li>'
+        '<li><a class="prestations-sidebar-link" href="#prestations-deal-title">'
+        '<i class="fas fa-fire" aria-hidden="true"></i> <span>Offre de la semaine</span></a></li>'
     )
     side_path = INCLUDES_DIR / 'prestations-sidebar-nav.html'
-    side_path.write_text('\n'.join(side) + '\n', encoding='utf-8')
-    print('[OK] prestations-sidebar-nav.html genere')
+    if _write_text_if_changed(side_path, '\n'.join(side) + '\n'):
+        print('[OK] prestations-sidebar-nav.html genere')
+
+    budget_html = (
+        f'<div class="prestations-budget" data-budget-root '
+        f'data-price-min="{price_min}" data-price-max="{price_max}">'
+        f'<p class="prestations-budget-label" id="prestationsBudgetLabel">'
+        f'<i class="fas fa-sliders-h" aria-hidden="true"></i> Budget max</p>'
+        f'<div class="prestations-budget-row">'
+        f'<input type="range" id="prestationsBudgetRange" class="prestations-budget-range" '
+        f'min="{price_min}" max="{price_max}" value="{price_max}" step="10" '
+        f'aria-valuemin="{price_min}" aria-valuemax="{price_max}" aria-valuenow="{price_max}" '
+        f'aria-labelledby="prestationsBudgetLabel">'
+        f'<output id="prestationsBudgetValue" class="prestations-budget-value" '
+        f'for="prestationsBudgetRange">{price_max}&nbsp;€</output>'
+        f'</div>'
+        f'<p class="prestations-budget-hint">Glissez pour filtrer les offres affichées.</p>'
+        f'</div>\n'
+    )
+    budget_path = INCLUDES_DIR / 'prestations-budget-filter.html'
+    if _write_text_if_changed(budget_path, budget_html):
+        print(f'[OK] prestations-budget-filter.html ({price_min}-{price_max} EUR)')
+
+
+def _prestation_highlights_list(item: Dict[str, Any]) -> List[Dict[str, str]]:
+    """3 points clés fiche produit (JSON highlights ou fallback)."""
+    raw = item.get('highlights')
+    out: List[Dict[str, str]] = []
+    if isinstance(raw, list):
+        for entry in raw[:3]:
+            if isinstance(entry, dict):
+                title = str(entry.get('title') or '').strip()
+                text = str(entry.get('text') or entry.get('desc') or '').strip()
+                icon = str(entry.get('icon') or 'fa-check').strip()
+                if title or text:
+                    out.append({
+                        'icon': icon if icon.startswith('fa-') else f'fa-{icon}',
+                        'title': title or text,
+                        'text': text if title else '',
+                    })
+            elif isinstance(entry, str) and entry.strip():
+                out.append({'icon': 'fa-check', 'title': entry.strip(), 'text': ''})
+    if len(out) >= 3:
+        return out[:3]
+    duration = _prestation_duration_label(item)
+    defaults = [
+        {
+            'icon': 'fa-clock',
+            'title': 'Délai calé avec vous',
+            'text': duration or 'Planning clair dès le devis',
+        },
+        {
+            'icon': 'fa-shield-alt',
+            'title': 'Accompagnement',
+            'text': 'Suivi après livraison, sans jargon',
+        },
+        {
+            'icon': 'fa-chart-line',
+            'title': 'Prêt pour Google',
+            'text': 'Bases SEO et mobile prises en compte',
+        },
+    ]
+    for d in defaults:
+        if len(out) >= 3:
+            break
+        out.append(d)
+    return out[:3]
+
+
+def _prestation_category_label(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    cid = (item.get('category') or '').strip()
+    for cat in catalog.get('categories') or []:
+        if (cat.get('id') or '') == cid:
+            return str(cat.get('title') or cat.get('nav_label') or cid).strip()
+    return cid
+
+
+def _prestation_technical_rows(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> Tuple[List[Tuple[str, str]], List[Tuple[str, str]]]:
+    """Retourne (descriptif technique, infos complémentaires) pour la fiche produit."""
+    tech: List[Tuple[str, str]] = []
+    extra: List[Tuple[str, str]] = []
+    raw = item.get('technical')
+    if isinstance(raw, list):
+        for entry in raw:
+            if isinstance(entry, dict):
+                lab = str(entry.get('label') or entry.get('title') or '').strip()
+                val = str(entry.get('value') or entry.get('text') or '').strip()
+                if lab and val:
+                    tech.append((lab, val))
+            elif isinstance(entry, str) and entry.strip():
+                if ':' in entry:
+                    lab, _, val = entry.partition(':')
+                    lab, val = lab.strip(), val.strip()
+                    if lab and val:
+                        tech.append((lab, val))
+                else:
+                    tech.append(('Détail', entry.strip()))
+
+    duration = _prestation_duration_label(item)
+    if duration:
+        tech.append(('Charge estimée', duration))
+
+    price_label = (item.get('price_label') or '').strip()
+    if price_label:
+        tech.append(('Type', price_label))
+
+    kind = (item.get('kind') or '').strip()
+    includes_slugs = item.get('includes_slugs') or []
+    if kind == 'pack' and includes_slugs:
+        tech.append(('Contenu pack', f'{len(includes_slugs)} prestations'))
+
+    try:
+        price = int(item.get('price_eur') or 0)
+    except (TypeError, ValueError):
+        price = 0
+    if price > 0:
+        tech.append(('Prix HT', f'{price} €'))
+
+    note = (item.get('price_note') or '').strip()
+    if note:
+        tech.append(('Précision tarif', note))
+
+    cid = (item.get('category') or '').strip()
+    defaults_by_cat = {
+        'identite': [('Livrable', 'Présence en ligne prête à publier'), ('Responsive', 'Mobile, tablette, ordinateur')],
+        'ia': [('Livrable', 'Assistant configuré sur vos contenus'), ('Contrôle', 'Vous validez les réponses sensibles')],
+        'mobile': [('Livrable', 'Parcours mobile / messagerie'), ('Support', 'Tests sur téléphone réel')],
+        'technique': [('Livrable', 'Branchements et process documentés'), ('Handover', 'Accès et consignes')],
+        'site-contenu': [('Livrable', 'Pages / textes intégrés'), ('Format', 'Compatible vitrine actuelle')],
+        'maintenance': [('Périmètre', 'Suivi et correctifs du forfait'), ('Alerte', 'Prévenu si ça dérape')],
+        'eco': [('Mesure', 'Indicateurs avant / après'), ('Livrable', 'Rapport + actions')],
+        'packs': [('Livrable', 'Plusieurs prestations, un suivi'), ('Facturation', 'Devis pack unique')],
+    }
+    known = {r[0].lower() for r in tech}
+    for lab, val in defaults_by_cat.get(cid, [])[:2]:
+        if lab.lower() not in known and len(tech) < 6:
+            tech.append((lab, val))
+            known.add(lab.lower())
+
+    cat_label = _prestation_category_label(item, catalog)
+    if cat_label:
+        extra.append(('Catégorie', cat_label))
+    sku = (item.get('prestafacture_sku') or '').strip()
+    if sku:
+        extra.append(('Référence', sku))
+    extra.append(('Prestataire', 'DanielCraft - Metz & Lorraine'))
+    extra.append(('Devis', 'PDF par e-mail, sans engagement'))
+    addons = item.get('addons') or []
+    if isinstance(addons, list) and addons:
+        extra.append(('Options', f'{len(addons)} en plus au devis'))
+    packs = _prestation_packs_containing(item, catalog)
+    if packs:
+        extra.append(('Aussi en pack', f'{len(packs)} pack{"s" if len(packs) != 1 else ""}'))
+    extra.append(('Mise à jour', 'Contenu catalogue 2026'))
+
+    # dédup léger
+    def _dedupe(rows: List[Tuple[str, str]], limit: int) -> List[Tuple[str, str]]:
+        out: List[Tuple[str, str]] = []
+        seen: set = set()
+        for lab, val in rows:
+            key = lab.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append((lab, val))
+            if len(out) >= limit:
+                break
+        return out
+
+    return _dedupe(tech, 7), _dedupe(extra, 7)
+
+
+def _prestation_tech_table_html(title: str, rows: List[Tuple[str, str]]) -> str:
+    if not rows:
+        return ''
+    bits = [
+        f'<tr><th scope="row">{html.escape(lab)}</th>'
+        f'<td>{html.escape(val)}</td></tr>'
+        for lab, val in rows
+    ]
+    return (
+        f'<div class="prestation-tech-panel">'
+        f'<h3 class="prestation-tech-panel-title">{html.escape(title)}</h3>'
+        f'<div class="prestation-tech-wrap">'
+        f'<table class="prestation-tech-table"><tbody>'
+        + ''.join(bits)
+        + '</tbody></table></div></div>'
+    )
+
+
+def _prestation_technical_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    """Fiche : double tableau type Amazon (descriptif + infos complémentaires)."""
+    tech, extra = _prestation_technical_rows(item, catalog)
+    if not tech and not extra:
+        return ''
+    left = _prestation_tech_table_html('Descriptif technique', tech)
+    right = _prestation_tech_table_html('Informations complémentaires', extra)
+    return f'<div class="prestation-tech-columns">{left}{right}</div>'
+
+
+def _prestation_about_html(item: Dict[str, Any]) -> str:
+    """Puces « À propos » sous le titre (style Amazon)."""
+    bullets: List[str] = []
+    for x in (item.get('benefits') or [])[:4]:
+        s = str(x).strip()
+        if s:
+            bullets.append(s)
+    if not bullets:
+        for x in (item.get('includes') or [])[:3]:
+            s = str(x).strip()
+            if s:
+                bullets.append(s)
+    if not bullets:
+        return ''
+    lis = ''.join(f'<li>{html.escape(b)}</li>' for b in bullets)
+    return (
+        '<div class="prestation-about">'
+        '<p class="prestation-about-title">À propos de cette offre</p>'
+        f'<ul class="prestation-about-list">{lis}</ul></div>'
+    )
+
+
+def _prestation_items_by_slug(catalog: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    out: Dict[str, Dict[str, Any]] = {}
+    for it in catalog.get('items') or []:
+        if not isinstance(it, dict):
+            continue
+        s = (it.get('slug') or '').strip()
+        if s:
+            out[s] = it
+    return out
+
+
+def _prestation_pack_members(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """Prestations incluses dans un pack (ordre includes_slugs)."""
+    if (item.get('kind') or '') != 'pack':
+        return []
+    by_slug = _prestation_items_by_slug(catalog)
+    members: List[Dict[str, Any]] = []
+    for s in item.get('includes_slugs') or []:
+        slug = str(s).strip()
+        if slug and slug in by_slug and by_slug[slug].get('has_page'):
+            members.append(by_slug[slug])
+    return members
+
+
+def _prestation_pack_contents_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> str:
+    """Cartes des prestations incluses dans le pack (avec prix unitaires)."""
+    members = _prestation_pack_members(item, catalog)
+    if not members:
+        return ''
+    try:
+        pack_price = int(item.get('price_eur') or 0)
+    except (TypeError, ValueError):
+        pack_price = 0
+    unit_sum = 0
+    cards: List[str] = []
+    for it in members:
+        s = html.escape((it.get('slug') or '').strip())
+        title = html.escape((it.get('title') or s).strip())
+        tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
+        icon = html.escape((it.get('icon') or 'fa-star').strip())
+        ccat = html.escape((it.get('category') or '').strip())
+        try:
+            price = int(it.get('price_eur') or 0)
+        except (TypeError, ValueError):
+            price = 0
+        unit_sum += price
+        tag_html = f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
+        cards.append(
+            f'<a class="prestation-related-card prestation-pack-member-card" href="/prestations/{s}/">'
+            f'<span class="prestation-related-media" data-prestation-cat="{ccat}" aria-hidden="true">'
+            f'<i class="fas {icon}"></i></span>'
+            f'<span class="prestation-related-body">'
+            f'<span class="prestation-related-badge">Inclus</span>'
+            f'<strong class="prestation-related-title">{title}</strong>'
+            f'{tag_html}'
+            f'<span class="prestation-related-price">'
+            f'<s class="prestation-pack-unit">{price}&nbsp;€ HT</s>'
+            f' <span class="prestation-pack-in">dans le pack</span>'
+            f'</span>'
+            f'</span></a>'
+        )
+    save_html = ''
+    if unit_sum > pack_price > 0:
+        save_html = (
+            f'<p class="prestation-pack-contents-save">'
+            f'À l\'unité : {unit_sum}&nbsp;€ HT · '
+            f'<strong>vous économisez {unit_sum - pack_price}&nbsp;€ HT</strong></p>'
+        )
+    return (
+        f'{save_html}'
+        f'<div class="prestation-related-grid prestation-pack-contents-grid">'
+        + ''.join(cards)
+        + '</div>'
+    )
+
+
+def _prestation_pack_buybox_lines_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> str:
+    """Lignes du devis : chaque prestation du pack + total barré à l'unité."""
+    members = _prestation_pack_members(item, catalog)
+    if not members:
+        return ''
+    try:
+        pack_price = int(item.get('price_eur') or 0)
+    except (TypeError, ValueError):
+        pack_price = 0
+    unit_sum = 0
+    bits: List[str] = []
+    for it in members:
+        title = html.escape((it.get('title') or it.get('slug') or '').strip())
+        try:
+            price = int(it.get('price_eur') or 0)
+        except (TypeError, ValueError):
+            price = 0
+        unit_sum += price
+        bits.append(
+            f'<div class="prestation-devis-line prestation-devis-line--pack-item">'
+            f'<span class="prestation-devis-line-label">{title}</span>'
+            f'<span class="prestation-devis-line-price">'
+            f'<s>{price}&nbsp;€</s></span></div>'
+        )
+    if unit_sum > pack_price > 0:
+        bits.append(
+            f'<div class="prestation-devis-line prestation-devis-line--save">'
+            f'<span class="prestation-devis-line-label">Économie pack</span>'
+            f'<span class="prestation-devis-line-price">-{unit_sum - pack_price}&nbsp;€</span>'
+            f'</div>'
+        )
+    return ''.join(bits)
+
+
+def _prestation_related_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+    *,
+    limit: int = 4,
+) -> str:
+    """Autres offres de la même catégorie + packs qui incluent ce slug."""
+    slug = (item.get('slug') or '').strip()
+    cat = (item.get('category') or '').strip()
+    items = [
+        it for it in (catalog.get('items') or [])
+        if isinstance(it, dict) and it.get('has_page') and (it.get('slug') or '').strip()
+    ]
+    picked: List[Dict[str, Any]] = []
+    seen = {slug}
+
+    for it in items:
+        if (it.get('kind') or '') != 'pack':
+            continue
+        includes = it.get('includes_slugs') or []
+        if slug in includes and it.get('slug') not in seen:
+            picked.append(it)
+            seen.add(it.get('slug') or '')
+        if len(picked) >= limit:
+            break
+
+    same = [
+        it for it in items
+        if (it.get('slug') or '') not in seen
+        and (it.get('category') or '') == cat
+    ]
+    same.sort(key=lambda x: (0 if x.get('featured') else 1, int(x.get('price_eur') or 0)))
+    for it in same:
+        if len(picked) >= limit:
+            break
+        picked.append(it)
+        seen.add(it.get('slug') or '')
+
+    if len(picked) < limit:
+        others = [
+            it for it in items
+            if (it.get('slug') or '') not in seen and it.get('featured')
+        ]
+        for it in others:
+            if len(picked) >= limit:
+                break
+            picked.append(it)
+
+    if not picked:
+        return ''
+
+    cards: List[str] = []
+    for it in picked[:limit]:
+        s = html.escape((it.get('slug') or '').strip())
+        title = html.escape((it.get('title') or s).strip())
+        tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
+        icon = html.escape((it.get('icon') or 'fa-star').strip())
+        ccat = html.escape((it.get('category') or '').strip())
+        try:
+            price = int(it.get('price_eur') or 0)
+        except (TypeError, ValueError):
+            price = 0
+        badge = ''
+        if (it.get('kind') or '') == 'pack':
+            badge = '<span class="prestation-related-badge">Pack</span>'
+        tag_html = (
+            f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
+        )
+        cards.append(
+            f'<a class="prestation-related-card" href="/prestations/{s}/">'
+            f'<span class="prestation-related-media" data-prestation-cat="{ccat}" aria-hidden="true">'
+            f'<i class="fas {icon}"></i></span>'
+            f'<span class="prestation-related-body">'
+            f'{badge}'
+            f'<strong class="prestation-related-title">{title}</strong>'
+            f'{tag_html}'
+            f'<span class="prestation-related-price">À partir de {price}&nbsp;€ HT</span>'
+            f'</span></a>'
+        )
+    return (
+        '<div class="prestation-related-grid">'
+        + ''.join(cards)
+        + '</div>'
+    )
+
+
+def _prestation_packs_containing(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """Packs qui incluent ce slug (hors le pack lui-même)."""
+    slug = (item.get('slug') or '').strip()
+    if not slug or (item.get('kind') or '') == 'pack':
+        return []
+    out: List[Dict[str, Any]] = []
+    for it in catalog.get('items') or []:
+        if not isinstance(it, dict) or not it.get('has_page'):
+            continue
+        if (it.get('kind') or '') != 'pack':
+            continue
+        if slug in (it.get('includes_slugs') or []):
+            out.append(it)
+    return out
+
+
+def _prestation_packs_containing_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> str:
+    packs = _prestation_packs_containing(item, catalog)
+    if not packs:
+        return ''
+    cards: List[str] = []
+    for it in packs:
+        s = html.escape((it.get('slug') or '').strip())
+        title = html.escape((it.get('title') or s).strip())
+        tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
+        icon = html.escape((it.get('icon') or 'fa-box-open').strip())
+        try:
+            price = int(it.get('price_eur') or 0)
+        except (TypeError, ValueError):
+            price = 0
+        try:
+            compare = int(it.get('compare_at_eur') or 0)
+        except (TypeError, ValueError):
+            compare = 0
+        save = ''
+        if compare > price > 0:
+            save = (
+                f'<span class="prestation-inpack-save">'
+                f'Économie {compare - price}&nbsp;€ HT</span>'
+            )
+        tag_html = f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
+        cards.append(
+            f'<a class="prestation-related-card prestation-inpack-card" href="/prestations/{s}/">'
+            f'<span class="prestation-related-media" data-prestation-cat="packs" aria-hidden="true">'
+            f'<i class="fas {icon}"></i></span>'
+            f'<span class="prestation-related-body">'
+            f'<span class="prestation-related-badge">Pack</span>'
+            f'<strong class="prestation-related-title">{title}</strong>'
+            f'{tag_html}'
+            f'<span class="prestation-related-price">À partir de {price}&nbsp;€ HT</span>'
+            f'{save}'
+            f'</span></a>'
+        )
+    return (
+        '<div class="prestation-related-grid prestation-inpack-grid">'
+        + ''.join(cards)
+        + '</div>'
+    )
+
+
+def _prestation_faq_entries(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> List[Dict[str, str]]:
+    """FAQ JSON + questions utiles (packs, devis, délai) pour atteindre ~3-5."""
+    entries: List[Dict[str, str]] = []
+    seen_q = set()
+
+    def add(q: str, a: str) -> None:
+        q = (q or '').strip()
+        a = (a or '').strip()
+        if not q or not a:
+            return
+        key = q.lower()
+        if key in seen_q:
+            return
+        seen_q.add(key)
+        entries.append({'q': q, 'a': a})
+
+    for entry in item.get('faq') or []:
+        if isinstance(entry, dict):
+            add(str(entry.get('q') or ''), str(entry.get('a') or ''))
+
+    title = (item.get('title') or 'cette offre').strip()
+    kind = (item.get('kind') or '').strip()
+    try:
+        price = int(item.get('price_eur') or 0)
+    except (TypeError, ValueError):
+        price = 0
+    duration = _prestation_duration_label(item)
+    packs = _prestation_packs_containing(item, catalog)
+
+    if packs:
+        names = ', '.join((p.get('title') or p.get('slug') or '').strip() for p in packs[:3])
+        links_hint = ' / '.join(
+            f'{(p.get("title") or "").strip()}' for p in packs[:2]
+        )
+        add(
+            "Cette offre fait-elle partie d'un pack ?",
+            (
+                f"Oui : vous la retrouvez dans {names}. "
+                f"Le pack coute souvent moins cher qu'a l'unite - voir {links_hint}."
+            ),
+        )
+
+    if kind == 'pack':
+        n = len(item.get('includes_slugs') or [])
+        pack_bit = f' ({n} ici)' if n else ''
+        add(
+            'Puis-je prendre seulement une partie du pack ?',
+            (
+                "Oui. Chaque prestation existe aussi seule. Le pack, c'est si vous voulez "
+                f"plusieurs briques d'un coup{pack_bit}, avec une remise."
+            ),
+        )
+        add(
+            'Comment se passe le devis pack ?',
+            (
+                "Un seul devis PDF pour tout le pack, suivi unique. Vous validez, on planifie "
+                "les livraisons dans l'ordre qui a du sens pour vous."
+            ),
+        )
+    else:
+        add(
+            'Comment obtenir un devis ?',
+            (
+                "Cliquez sur Demander un devis sur cette page : vous recevez un PDF par e-mail, "
+                "sans engagement. On precise ensuite le planning ensemble."
+            ),
+        )
+
+    if duration:
+        duration_plain = duration.replace("d'intervention", 'de travail')
+        add(
+            'Combien de temps ca prend ?',
+            (
+                f"Compte environ {duration_plain}. "
+                "Le delai calendaire depend de vos retours (textes, acces, validations)."
+            ),
+        )
+    else:
+        add(
+            'Combien de temps ca prend ?',
+            (
+                "On fixe un planning clair sur le devis. En general, quelques jours a quelques "
+                "semaines selon le perimetre et vos retours."
+            ),
+        )
+
+    if price > 0:
+        add(
+            'Le prix affiche est-il TTC ?',
+            (
+                f"Non : {price} € HT. La TVA s'applique selon votre situation. "
+                "Le devis PDF detaille le total."
+            ),
+        )
+
+    add(
+        "C'est adapte a mon commerce / mon activite ?",
+        (
+            f'Oui, on adapte "{title}" a votre metier (textes, visuels, parcours). '
+            "Si ce n'est pas le bon format, on vous le dit franchement avant de facturer."
+        ),
+    )
+
+    add(
+        'Que se passe-t-il apres la livraison ?',
+        (
+            "Vous gardez les acces et les consignes. Pour un suivi mensuel ou des retouches, "
+            "il y a des forfaits entretien et des options a l'heure."
+        ),
+    )
+
+    return entries[:5]
+
+
+def _prestation_faq_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    entries = _prestation_faq_entries(item, catalog)
+    if not entries:
+        return ''
+    bits = []
+    for i, entry in enumerate(entries):
+        q = html.escape(entry['q'])
+        a = html.escape(entry['a'])
+        bits.append(
+            f'<details class="prestation-faq-item shop-ux-faq" '
+            f'style="--faq-stagger:{i * 55}ms">'
+            f'<summary>{q}</summary><p>{a}</p></details>'
+        )
+    return '<div class="prestation-faq">' + ''.join(bits) + '</div>'
 
 
 def _build_prestation_seo_bundle(
@@ -2183,7 +3291,9 @@ def _build_prestation_seo_bundle(
     slug: str,
     page_url_abs: str,
     og_image_abs: str,
+    catalog: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
+    catalog = catalog or {'categories': [], 'items': []}
     title = (item.get('title') or slug).strip()
     tagline = (item.get('tagline') or '').strip()
     short = (item.get('short_description') or item.get('description') or '').strip()
@@ -2193,7 +3303,7 @@ def _build_prestation_seo_bundle(
         price = 0
 
     custom_title = (item.get('seo_title') or '').strip()
-    title_seo = custom_title or f'{title} — prestation DanielCraft'
+    title_seo = custom_title or f'{title} - prestation DanielCraft'
     page_title = _truncate_meta_text(title_seo + ' | DanielCraft', 118)
 
     custom_desc = (item.get('seo_description') or '').strip()
@@ -2210,52 +3320,49 @@ def _build_prestation_seo_bundle(
     ]
     page_keywords = _truncate_meta_text(', '.join(dict.fromkeys(k for k in kw if k)), 280)
 
-    og_alt = _truncate_meta_text(f'{title} — {tagline or short}', 190)
+    og_alt = _truncate_meta_text(f'{title} - {tagline or short}', 190)
 
     benefits = item.get('benefits') or []
     includes = item.get('includes') or []
-    faq = item.get('faq') or []
     benefits_html = (
         '<ul class="prestation-benefits">'
-        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in benefits)
+        + ''.join(
+            f'<li><span class="prestation-benefit-icon" aria-hidden="true">'
+            f'<i class="fas fa-check"></i></span>'
+            f'<span class="prestation-benefit-text">{html.escape(str(x))}</span></li>'
+            for x in benefits
+        )
         + '</ul>'
     ) if benefits else ''
     includes_html = (
         '<ul class="prestation-includes">'
-        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in includes)
+        + ''.join(
+            f'<li><i class="fas fa-check" aria-hidden="true"></i>'
+            f'<span>{html.escape(str(x))}</span></li>'
+            for x in includes
+        )
         + '</ul>'
     ) if includes else ''
-    faq_html = ''
-    if faq:
-        faq_bits = []
-        for entry in faq:
-            if not isinstance(entry, dict):
-                continue
-            q = html.escape(str(entry.get('q') or '').strip())
-            a = html.escape(str(entry.get('a') or '').strip())
-            if q and a:
-                faq_bits.append(
-                    f'<details class="prestation-faq-item"><summary>{q}</summary><p>{a}</p></details>'
-                )
-        if faq_bits:
-            faq_html = '<div class="prestation-faq">' + ''.join(faq_bits) + '</div>'
-
-    examples = item.get('examples') or []
-    examples_html = (
-        '<ul class="prestation-examples">'
-        + ''.join(f'<li>{html.escape(str(x))}</li>' for x in examples if str(x).strip())
-        + '</ul>'
-    ) if examples else ''
-
-    promo_raw = (item.get('promo') or '').strip()
-    promo_html = (
-        f'<aside class="prestation-promo" role="note">'
-        f'<i class="fas fa-lightbulb" aria-hidden="true"></i>'
-        f'<p>{html.escape(promo_raw)}</p></aside>'
-    ) if promo_raw else ''
-
     addons = item.get('addons') or []
     addons_json = json.dumps(addons, ensure_ascii=False)
+
+    contrast_html = ''
+    if item.get('before'):
+        contrast_html = _prestation_contrast_html(item)
+
+    img_rel = (item.get('image') or '').strip()
+    image_html = ''
+    if img_rel and not img_rel.lower().endswith('.svg'):
+        local = BASE_DIR / img_rel.lstrip('/').replace('/', os.sep)
+        if local.is_file():
+            image_html = _picture_img_html(
+                img_rel,
+                alt='',
+                class_name='prestation-detail-hero-photo',
+                loading='eager',
+                width=800,
+                height=450,
+            )
 
     return {
         'page_title': page_title,
@@ -2264,10 +3371,20 @@ def _build_prestation_seo_bundle(
         'prestation_og_image_alt': og_alt,
         'prestation_benefits_html': benefits_html,
         'prestation_includes_html': includes_html,
-        'prestation_examples_html': examples_html,
-        'prestation_promo_html': promo_html,
-        'prestation_faq_html': faq_html,
+        'prestation_examples_html': '',
+        'prestation_promo_html': '',
+        'prestation_faq_html': '',
         'prestation_addons_json': addons_json,
+        'prestation_highlights_html': '',
+        'prestation_contrast_html': contrast_html,
+        'prestation_technical_html': _prestation_technical_html(item, catalog),
+        'prestation_about_html': _prestation_about_html(item),
+        'prestation_related_html': _prestation_related_html(item, catalog),
+        'prestation_inpack_html': _prestation_packs_containing_html(item, catalog),
+        'prestation_pack_contents_html': _prestation_pack_contents_html(item, catalog),
+        'prestation_pack_buybox_lines_html': _prestation_pack_buybox_lines_html(item, catalog),
+        'prestation_category_label': html.escape(_prestation_category_label(item, catalog)),
+        'prestation_hero_image_html': image_html,
         'prestation_price_eur': str(price),
         'prestation_price_label': html.escape((item.get('price_label') or 'Forfait').strip()),
         'prestation_price_note': html.escape((item.get('price_note') or '').strip()),
@@ -2297,7 +3414,7 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
         og_rel = _resolve_generated_og(slug, img_rel, subdir='prestations')
         og_image_abs = _to_absolute_url(og_rel)
         page_url_abs = _to_absolute_url(f'/prestations/{slug}/')
-        seo_bundle = _build_prestation_seo_bundle(it, slug, page_url_abs, og_image_abs)
+        seo_bundle = _build_prestation_seo_bundle(it, slug, page_url_abs, og_image_abs, data)
         vars_dict = DEFAULT_VARS.copy()
         vars_dict.update({
             'schema_type': 'prestation',
@@ -2306,13 +3423,21 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
             'page_url': page_url_abs,
             'og_image': og_image_abs,
             'og_type': 'website',
-            'extra_css': 'prestations.css',
-            'page_scripts': ['main.js', 'prestation-devis-modal.js', 'prestation-devis.js'],
+            'extra_css': 'prestations-shop-ux.css',
+            'page_scripts': ['main.js', 'prestation-devis-modal.js', 'prestation-devis.js', 'prestations-shop-ux.js'],
             'prestation_slug': slug,
             'prestation_service_slug': (it.get('service_slug') or slug).strip(),
             'prestation_title': title,
             'prestation_tagline': (it.get('tagline') or '').strip(),
-            'prestation_description': (it.get('description') or it.get('short_description') or '').strip(),
+            'prestation_lead': (
+                (it.get('tagline') or '').strip()
+                or (it.get('short_description') or '').strip()
+            ),
+            'prestation_description': (
+                (it.get('short_description') or '').strip()
+                if (it.get('tagline') or '').strip()
+                else (it.get('description') or it.get('short_description') or '').strip()
+            ),
             'prestation_image': img_rel,
             'prestation_icon': (it.get('icon') or 'fa-star').strip(),
             'prestation_category': (it.get('category') or 'identite').strip(),
@@ -2322,8 +3447,14 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
         vars_dict['page_url'] = page_url_abs
         vars_dict['og_image'] = _og_image_url_with_cache_bust(og_image_abs)
         _apply_og_image_file_meta(vars_dict)
+        aq = str(vars_dict.get('assets_query') or '')
+        css_names = [n.strip() for n in str(vars_dict.get('extra_css') or '').split(',') if n.strip()]
+        vars_dict['extra_css_links'] = '\n'.join(
+            f'<link rel="stylesheet" href="/assets/css/{html.escape(n)}{aq}">' for n in css_names
+        )
+        vars_dict['extra_css'] = ''
         scripts = vars_dict.get('page_scripts') or []
-        vars_dict['page_scripts_content'] = build_page_scripts_content(scripts)
+        vars_dict['page_scripts_content'] = build_page_scripts_content(scripts, aq)
         content_rendered = template_engine.replace_variables(content_tpl, vars_dict)
         content_rendered = template_engine.process_includes(content_rendered, vars_dict)
         vars_dict['page_content'] = content_rendered
@@ -2431,8 +3562,13 @@ def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> st
             if not isinstance(url, str) or not url.startswith('/'):
                 continue
             imgs.append(
-                f'<img class="livre-card-cover-stack-img" src="{html.escape(url, quote=True)}" '
-                f'alt="" loading="lazy" decoding="async" style="--stack-i:{i}">'
+                _picture_img_html(
+                    url,
+                    alt='',
+                    class_name='livre-card-cover-stack-img',
+                    loading='lazy',
+                    style=f'--stack-i:{i}',
+                )
             )
         if imgs:
             return (
@@ -2442,11 +3578,18 @@ def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> st
                 f'</div>'
             )
     if cover:
+        pic = _picture_img_html(
+            cover,
+            alt=f'Couverture — {title}',
+            class_name='livre-card-cover',
+            loading='lazy',
+            width=210,
+            height=280,
+        )
         return (
             f'<div class="prestation-card-visual livre-card-visual livre-card-visual--cover" '
             f'data-livre-cat="{cat}">'
-            f'<img class="livre-card-cover" src="{html.escape(cover, quote=True)}" '
-            f'alt="Couverture — {title}" loading="lazy" decoding="async" width="210" height="280">'
+            f'{pic}'
             f'</div>'
         )
     return (
@@ -2493,7 +3636,7 @@ def _livre_card_html(
         try:
             cmp_disp = f'{float(compare):.2f}'.replace('.', ',')
             compare_html = (
-                f'<span class="price-compare">{cmp_disp} € à l\'unité</span>'
+                f"<span class=\"price-compare\">{cmp_disp} € à l'unité</span>"
             )
         except (TypeError, ValueError):
             compare_html = ''
@@ -2594,8 +3737,15 @@ def build_livres_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
         stack_imgs = []
         for i, url in enumerate(cover_urls[:4]):
             stack_imgs.append(
-                f'<img class="livres-deal-cover" src="{html.escape(url, quote=True)}" '
-                f'alt="" loading="lazy" decoding="async" style="--stack-i:{i}">'
+                _picture_img_html(
+                    url,
+                    alt='',
+                    class_name='livres-deal-cover',
+                    loading='lazy',
+                    width=120,
+                    height=160,
+                    style=f'--stack-i:{i}',
+                )
             )
         visual = (
             f'<div class="livres-deal-visual livres-deal-visual--covers" aria-hidden="true">'
@@ -3399,6 +4549,11 @@ def main():
             i += 1
         else:
             i += 1
+
+    watch_log_path: Optional[Path] = None
+    if watch_mode:
+        watch_log_path = setup_watch_logging()
+        print(f"[WATCH] Logs horodates -> {watch_log_path}")
     
     # Définit le dossier de sortie
     if output_dir_arg:
@@ -3431,6 +4586,8 @@ def main():
         print(f"[OK] Assets version (cache-bust) : {assets_ver}")
         # Génère les variantes WebP pour les images (optimisation UX / perf)
         if not skip_webp:
+            # Source d'abord (picture tags + sync), puis dist pour rattrapage
+            generate_webp_variants(assets_src)
             generate_webp_variants(assets_dst)
         else:
             print("[INFO] Generation WebP ignoree (--no-webp)")
@@ -3588,6 +4745,8 @@ def main():
     # Mode watch
     if watch_mode:
         print("\n[WATCH] Mode watch active. Appuyez sur Ctrl+C pour arreter.")
+        if watch_log_path:
+            print(f"[WATCH] Journal : {watch_log_path}")
         try:
             import time
             from watchdog.observers import Observer
@@ -3598,6 +4757,18 @@ def main():
                     self._last_event = {}
                     self._rebuilding = False
                     self._ignore_includes_until = 0.0
+                    self._pending_full_rebuild = False
+                    self._pending_pages: set = set()
+                    self._pending_assets: set = set()
+                    self.restart_requested = False
+                    # Chemins résolus : sous Windows, event.src_path ≠ Path non résolu
+                    self._assets_src = assets_src.resolve()
+                    self._assets_dst = assets_dst.resolve()
+                    self._pages_dir = PAGES_DIR.resolve()
+                    self._data_dir = DATA_DIR.resolve()
+                    self._templates_dir = TEMPLATES_DIR.resolve()
+                    self._includes_dir = INCLUDES_DIR.resolve()
+                    self._build_py = Path(__file__).resolve()
 
                 def _is_debounced(self, key: str, delay_s: float = 0.35) -> bool:
                     now = time.time()
@@ -3607,25 +4778,41 @@ def main():
                     self._last_event[key] = now
                     return False
 
+                def _resolve(self, path: Path) -> Path:
+                    try:
+                        return path.resolve()
+                    except OSError:
+                        return path
+
+                def _is_under(self, root: Path, path: Path) -> bool:
+                    try:
+                        path.relative_to(root)
+                        return True
+                    except ValueError:
+                        return False
+
                 def _is_generated_include(self, src: Path) -> bool:
                     # Nom seul : sous Windows, Path.parents vs INCLUDES_DIR peut échouer
                     # (casse, préfixe \\?\, chemins non résolus) et relancer la boucle watch.
                     return src.name in GENERATED_INCLUDE_NAMES
 
                 def _copy_asset_file(self, src_path: Path):
+                    src_path = self._resolve(src_path)
                     if not src_path.exists() or not src_path.is_file():
                         return
                     try:
-                        rel = src_path.relative_to(assets_src)
+                        rel = src_path.relative_to(self._assets_src)
                     except ValueError:
                         return
-                    dst_path = assets_dst / rel
+                    dst_path = self._assets_dst / rel
                     dst_path.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(src_path, dst_path)
                     print(f"[ASSET] Copie: {rel}")
 
                 def _rebuild_all_pages(self):
                     self._rebuilding = True
+                    self._pending_full_rebuild = False
+                    self._pending_pages.clear()
                     try:
                         ok = 0
                         for p in pages:
@@ -3648,55 +4835,127 @@ def main():
                         self._ignore_includes_until = time.time() + 2.0
                         self._rebuilding = False
 
+                def _rebuild_one_page(self, page: str):
+                    self._rebuilding = True
+                    try:
+                        build_page(page, template_engine)
+                    finally:
+                        time.sleep(0.5)
+                        self._ignore_includes_until = time.time() + 1.5
+                        self._rebuilding = False
+
+                def flush_pending(self):
+                    """Traite les événements reçus pendant un rebuild (sinon perdus)."""
+                    if self._rebuilding or self.restart_requested:
+                        return
+                    assets = list(self._pending_assets)
+                    self._pending_assets.clear()
+                    for asset in assets:
+                        self._copy_asset_file(Path(asset))
+                    if self._pending_full_rebuild:
+                        print("\n[WATCH] Rebuild différé (changements pendant le build précédent)")
+                        self._rebuild_all_pages()
+                        return
+                    pending = list(self._pending_pages)
+                    self._pending_pages.clear()
+                    for page in pending:
+                        if page in {'prestation-detail', 'livre-detail', 'vitrine-detail', 'projet-detail'}:
+                            print(f"\n[WATCH] Rebuild différé (fiche {page})")
+                            self._rebuild_all_pages()
+                            return
+                        if page in pages:
+                            print(f"\n[WATCH] Rebuild différé : {page}")
+                            self._rebuild_one_page(page)
+
                 def _handle_src_change(self, event):
-                    if event.is_directory or self._rebuilding:
+                    if getattr(event, 'is_directory', False):
                         return
 
-                    src = Path(event.src_path)
+                    # Windows : save atomique = moved (tmp → fichier), pas seulement modified
+                    src_raw = getattr(event, 'dest_path', None) or event.src_path
+                    src = Path(src_raw)
+                    src_resolved = self._resolve(src)
+
+                    # build.py modifié : le process garde l'ancien code en mémoire → redémarrer
+                    if src.name == 'build.py' and src_resolved == self._build_py:
+                        if self._is_debounced('__build_py_restart__', delay_s=1.0):
+                            return
+                        print("\n[WATCH] build.py modifie — redemarrage pour charger le nouveau code...")
+                        self.restart_requested = True
+                        return
+
                     # Ignore les includes générés par le build (évite la boucle watch)
                     if self._is_generated_include(src):
                         return
                     if time.time() < self._ignore_includes_until:
-                        # Fenêtre anti-rebond après rebuild (events FS retardés sous Windows)
-                        if 'includes' in {p.name.lower() for p in src.parents}:
+                        if self._is_under(self._includes_dir, src_resolved):
                             return
 
-                    src_str = str(src)
+                    src_str = str(src_resolved).casefold()
                     ext = src.suffix.lower()
 
                     if self._is_debounced(src_str):
                         return
 
+                    # Pendant un rebuild : mettre en file d'attente (ne pas jeter l'event)
+                    if self._rebuilding:
+                        if self._is_under(self._assets_src, src_resolved) and ext in {
+                            '.css', '.js', '.png', '.jpg', '.jpeg', '.webp', '.svg',
+                            '.ico', '.gif', '.json', '.woff', '.woff2', '.ttf', '.md',
+                        }:
+                            self._pending_assets.add(str(src_resolved))
+                        elif ext in {'.html', '.json'}:
+                            if self._is_under(self._pages_dir, src_resolved):
+                                page = src.stem
+                                if page in {
+                                    'prestation-detail', 'livre-detail',
+                                    'vitrine-detail', 'projet-detail',
+                                }:
+                                    self._pending_full_rebuild = True
+                                else:
+                                    self._pending_pages.add(page)
+                            elif (
+                                self._is_under(self._data_dir, src_resolved)
+                                or self._is_under(self._templates_dir, src_resolved)
+                                or self._is_under(self._includes_dir, src_resolved)
+                            ):
+                                self._pending_full_rebuild = True
+                        return
+
                     # Changement dans assets (css/js/images/...) => copie live vers dist/assets
-                    if assets_src in src.parents:
-                        if ext in {'.css', '.js', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.gif', '.json', '.woff', '.woff2', '.ttf'}:
-                            self._copy_asset_file(src)
+                    if self._is_under(self._assets_src, src_resolved):
+                        if ext in {
+                            '.css', '.js', '.png', '.jpg', '.jpeg', '.webp', '.svg',
+                            '.ico', '.gif', '.json', '.woff', '.woff2', '.ttf', '.md',
+                        }:
+                            self._copy_asset_file(src_resolved)
                             return
 
                     # Changement de page source => rebuild ciblé si possible
-                    if ext in {'.html', '.json'} and PAGES_DIR in src.parents:
+                    if ext in {'.html', '.json'} and self._is_under(self._pages_dir, src_resolved):
                         page = src.stem
                         print(f"\n[WATCH] Page modifiee : {src.name}")
+                        # Fiches dynamiques (hors pages[].json) => rebuild global
+                        if page in {'prestation-detail', 'livre-detail', 'vitrine-detail', 'projet-detail'}:
+                            self._rebuild_all_pages()
+                            return
                         if page in pages:
-                            self._rebuilding = True
-                            try:
-                                build_page(page, template_engine)
-                            finally:
-                                time.sleep(0.5)
-                                self._ignore_includes_until = time.time() + 1.5
-                                self._rebuilding = False
+                            self._rebuild_one_page(page)
                         else:
                             self._rebuild_all_pages()
                         return
 
                     # Donnees partagees (vitrines, livres, etc.) => rebuild global
-                    if ext in {'.html', '.json'} and DATA_DIR in src.parents:
+                    if ext in {'.html', '.json'} and self._is_under(self._data_dir, src_resolved):
                         print(f"\n[WATCH] Data modifiee : {src.name}")
                         self._rebuild_all_pages()
                         return
 
                     # Changement template/include (hors générés) => rebuild global
-                    if ext in {'.html', '.json'} and (TEMPLATES_DIR in src.parents or INCLUDES_DIR in src.parents):
+                    if ext in {'.html', '.json'} and (
+                        self._is_under(self._templates_dir, src_resolved)
+                        or self._is_under(self._includes_dir, src_resolved)
+                    ):
                         print(f"\n[WATCH] Template/include modifie : {src.name}")
                         self._rebuild_all_pages()
                         return
@@ -3706,19 +4965,50 @@ def main():
 
                 def on_created(self, event):
                     self._handle_src_change(event)
+
+                def on_moved(self, event):
+                    self._handle_src_change(event)
+
             event_handler = BuildHandler()
             observer = Observer()
-            observer.schedule(event_handler, str(SRC_DIR), recursive=True)
+            observer.schedule(event_handler, str(SRC_DIR.resolve()), recursive=True)
             if assets_src.exists():
-                observer.schedule(event_handler, str(assets_src), recursive=True)
+                observer.schedule(event_handler, str(assets_src.resolve()), recursive=True)
+            # build.py est à la racine (hors src/) — nécessaire pour recharger le code
+            observer.schedule(event_handler, str(BASE_DIR.resolve()), recursive=False)
             observer.start()
-            
+            print("[WATCH] Observer actif (src/, assets/, build.py).")
+
             while True:
-                time.sleep(1)
+                if event_handler.restart_requested:
+                    observer.stop()
+                    try:
+                        observer.join(timeout=3)
+                    except Exception:
+                        pass
+                    teardown_watch_logging()
+                    argv = [sys.executable, str(Path(__file__).resolve())] + sys.argv[1:]
+                    # Sous serve_dev.ps1 : exit 75 → le script PowerShell relance.
+                    # En standalone : spawn + exit (os.execv est fragile sous Windows).
+                    if os.environ.get('DANIELCRAFT_WATCH_SUPERVISOR') == '1':
+                        print("[WATCH] Sortie 75 — superviseur (serve_dev) va relancer.")
+                        sys.exit(75)
+                    print(f"[WATCH] Relance process: {' '.join(argv)}")
+                    import subprocess
+                    subprocess.Popen(
+                        argv,
+                        cwd=str(BASE_DIR.resolve()),
+                        close_fds=False,
+                    )
+                    sys.exit(0)
+                event_handler.flush_pending()
+                time.sleep(0.4)
         except ImportError:
             print("[WARN] Mode watch necessite 'watchdog'. Installez avec: pip install watchdog")
         except KeyboardInterrupt:
             print("\n\n[WATCH] Arret du mode watch.")
+        finally:
+            teardown_watch_logging()
 
 
 if __name__ == '__main__':

@@ -165,6 +165,12 @@ if (-not $NoKillPort) {
   }
 }
 
+$watchLogPath = Join-Path $root "logs\watch_dev.log"
+$watchLogDir = Split-Path -Parent $watchLogPath
+if (-not (Test-Path $watchLogDir)) {
+  New-Item -ItemType Directory -Path $watchLogDir -Force | Out-Null
+}
+
 $baseUrl = "http://${ServerHost}:$Port/"
 Write-Host ""
 Write-Host "Dev local (PHP + URLs propres + API)" -ForegroundColor Green
@@ -173,6 +179,7 @@ Write-Host "  Nos offres : ${baseUrl}nos-offres"
 Write-Host "  Fiches    : ${baseUrl}prestations/<slug>/"
 Write-Host "  API         : ${baseUrl}api/ (contact, devis Prestafacture…)"
 Write-Host "  Watch build : $(if ($NoWatch) { 'non' } else { 'oui' })"
+Write-Host "  Watch log   : $(if ($NoWatch) { 'n/a' } else { $watchLogPath })"
 Write-Host "  WebP        : $(if ($WebP) { 'oui' } else { 'non (--no-webp)' })"
 Write-Host "  Ctrl+C pour arrêter."
 Write-Host ""
@@ -187,20 +194,30 @@ $server = Start-Process -FilePath $phpExe -ArgumentList @(
 ) -NoNewWindow -PassThru
 
 $buildWatch = $null
+function Start-BuildWatch {
+  $watchArgs = if ($WebP) {
+    @("build.py", "--watch")
+  } else {
+    @("build.py", "--watch", "--no-webp")
+  }
+  $env:DANIELCRAFT_WATCH_SUPERVISOR = "1"
+  return Start-Process -FilePath "python" -ArgumentList $watchArgs -NoNewWindow -PassThru
+}
+
 try {
   if (-not $NoWatch) {
-    $watchArgs = if ($WebP) {
-      @("build.py", "--watch")
-    } else {
-      @("build.py", "--watch", "--no-webp")
-    }
-    $buildWatch = Start-Process -FilePath "python" -ArgumentList $watchArgs -NoNewWindow -PassThru
+    $buildWatch = Start-BuildWatch
   }
 
   while ($true) {
+    # Watch qui quitte (restart build.py code 75, crash) : relancer au lieu de tuer tout le dev
     if ($buildWatch -and $buildWatch.HasExited) {
-      if ($buildWatch.ExitCode -ne 0) { exit $buildWatch.ExitCode }
-      break
+      $code = $buildWatch.ExitCode
+      if ($null -eq $code) { $code = -1 }
+      Write-Host "Watch build terminé (code $code) — relance dans 1s..." -ForegroundColor Yellow
+      Start-Sleep -Seconds 1
+      $buildWatch = Start-BuildWatch
+      continue
     }
     Sync-ApiToDist -SourceDir $apiSrcDir -TargetDir $apiDistDir
     Start-Sleep -Seconds 1

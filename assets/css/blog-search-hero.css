@@ -165,20 +165,22 @@
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.025em;
+  color: #0f3550;
+}
+
+.blog-search-brand {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #4da9d6;
 }
 
 .blog-search-hero--wow .blog-search-title {
-  background: linear-gradient(
-    105deg,
-    #312e81 0%,
-    #6366f1 35%,
-    #d97706 68%,
-    #312e81 100%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #0f3550;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
 }
 
 @keyframes blog-title-shine {
@@ -187,9 +189,7 @@
 }
 
 .blog-search-hero--wow.is-visible .blog-search-title {
-  animation:
-    blog-wow-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-    blog-title-shine 11s linear 0.8s infinite;
+  animation: blog-wow-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .blog-search-lead {

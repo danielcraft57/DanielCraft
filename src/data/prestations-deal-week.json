@@ -1,0 +1,13 @@
+{
+  "badge": "Offre de la semaine",
+  "urgency": "Mise en avant cette semaine - packs avec remise",
+  "cta_label": "Voir l'offre",
+  "force_slug": null,
+  "rotation": [
+    "pack-demarrer-commerce",
+    "pack-etre-trouve",
+    "pack-whatsapp-commerce",
+    "pack-reputation-locale",
+    "pack-presence-telephone"
+  ]
+}

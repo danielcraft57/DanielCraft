@@ -95,9 +95,45 @@
   display: none;
 }
 
-/* Grille boutique : couverture dominante, prix ancré */
+/* Grille boutique : cartes plus larges, responsive */
 .page-livres .prestations-grid {
-  gap: 1.35rem;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+
+@media (min-width: 560px) {
+  .page-livres .prestations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .page-livres .prestations-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-livres .prestations-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.page-livres .prestations-grid--featured {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .page-livres .prestations-grid--featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .page-livres .prestations-grid--featured {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .page-livres .livre-card {
@@ -117,23 +153,28 @@
   box-shadow: 0 12px 28px rgba(15, 53, 80, 0.1);
 }
 
+.page-livres .livre-card .service-description {
+  flex: 1;
+  margin: 0 0.75rem 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #5a6b78;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .page-livres .livre-card .service-title {
-  font-size: 1.02rem;
-  line-height: 1.3;
-  margin: 0.55rem 0.9rem 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  margin: 0.45rem 0.75rem 0.2rem;
   color: var(--livre-ink);
 }
 
-.page-livres .livre-card .service-description {
-  flex: 1;
-  margin: 0 0.9rem 0.65rem;
-  font-size: 0.88rem;
-  line-height: 1.4;
-  color: #5a6b78;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.page-livres .livre-card--has-cover .prestation-card-visual {
+  min-height: 8.5rem;
+  aspect-ratio: 3 / 3.4;
 }
 
 .page-livres .livre-card .service-price {

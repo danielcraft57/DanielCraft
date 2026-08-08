@@ -11,10 +11,8 @@ env/
 venv/
 ENV/
 
-# Instructions locales pour agents (non versionné)
+# Instructions locales optionnelles (secrets / notes perso) — AGENTS.md est versionné
 AGENT.md
-AGENTS.md
-agents.md
 
 # IDE
 .vscode/
@@ -30,6 +28,8 @@ Thumbs.db
 
 # Logs
 *.log
+logs/*.log
+!logs/.gitkeep
 
 # --- Images & binaires lourds (régénérables ou dérivés du build) ---
 # Hero, Open Graph, vignettes projet : contenu du dossier ignoré sauf exceptions.

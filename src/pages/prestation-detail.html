@@ -10,144 +10,196 @@
         <meta itemprop="email" content="contact@danielcraft.fr">
         <link itemprop="url" href="{{site_base}}/">
     </div>
+
+<nav class="prestation-breadcrumb-bar" aria-label="Fil d'Ariane">
+    <div class="container container--fullpage">
+        <ol class="prestation-breadcrumb">
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/nos-offres">Nos offres</a></li>
+            {% if prestation_category_label %}
+            <li><a href="/nos-offres#{{prestation_category}}">{{prestation_category_label}}</a></li>
+            {% endif %}
+            <li aria-current="page"><span>{{prestation_title}}</span></li>
+        </ol>
+    </div>
+</nav>
+
 <section class="prestation-detail-hero">
-    <div class="container prestation-detail-hero-inner">
-        <nav class="prestation-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
-            <a href="/">Accueil</a>
-            <span aria-hidden="true">/</span>
-            <a href="/nos-offres">Nos offres</a>
-            <span aria-hidden="true">/</span>
-            <span>{{prestation_title}}</span>
-        </nav>
-        <div class="prestation-detail-hero-grid">
-            <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 60ms">
-                <span class="section-badge"><i class="fas {{prestation_icon}}" aria-hidden="true"></i> Prestation</span>
-                <h1 class="section-title">{{prestation_title}}</h1>
-                <p class="prestation-detail-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <span itemprop="price" content="{{prestation_price_eur}}">{{prestation_price_eur}}</span> €
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <link itemprop="availability" href="https://schema.org/InStock">
-                    <link itemprop="url" href="{{page_url}}#devis">
-                    <span>{{prestation_price_label}} HT</span>
+    <div class="container container--fullpage prestation-detail-hero-inner">
+        <div class="prestation-detail-hero-grid prestation-detail-hero-grid--product">
+            <figure class="prestation-detail-visual scroll-reveal" style="--reveal-delay: 40ms" aria-hidden="true">
+                {% if prestation_hero_image_html %}
+                <div class="prestation-detail-visual-frame">
+                    {{prestation_hero_image_html}}
+                </div>
+                {% else %}
+                <div class="prestation-detail-visual-inner prestation-detail-visual-inner--hero" data-prestation-cat="{{prestation_category}}">
+                    <i class="fas {{prestation_icon}}"></i>
+                </div>
+                {% endif %}
+            </figure>
+
+            <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 80ms">
+                {% if prestation_category_label %}
+                <p class="prestation-detail-cat">
+                    <a href="/nos-offres#{{prestation_category}}">{{prestation_category_label}}</a>
                 </p>
-                <p class="section-description prestation-detail-lead">{{prestation_tagline}}</p>
-                <p class="prestation-detail-desc">{{prestation_description}}</p>
-                <div class="prestation-detail-hero-actions">
-                    <button type="button" class="btn btn-primary btn-large" data-prestation-devis-open
+                {% endif %}
+                <h1 class="prestation-detail-title section-title">{{prestation_title}}</h1>
+                {% if prestation_lead %}
+                <p class="prestation-detail-lead">{{prestation_lead}}</p>
+                {% endif %}
+                {% if prestation_about_html %}
+                {{prestation_about_html}}
+                {% endif %}
+                {% if prestation_contrast_html %}
+                {{prestation_contrast_html}}
+                {% endif %}
+                {% if prestation_slug == 'site-vitrine' or prestation_slug == 'site-vitrine-essentiel' %}
+                <p class="prestation-detail-alt-links">
+                    <a href="/vitrines/">Partir d'un modèle à 42 € HT</a>
+                    {% if prestation_slug == 'site-vitrine-essentiel' %}
+                    <span aria-hidden="true">·</span>
+                    <a href="/prestations/site-vitrine/">Forfait Pro 5 pages - 590 € HT</a>
+                    {% endif %}
+                    {% if prestation_slug == 'site-vitrine' %}
+                    <span aria-hidden="true">·</span>
+                    <a href="/prestations/site-vitrine-essentiel/">Essentiel - 390 € HT</a>
+                    {% endif %}
+                </p>
+                {% endif %}
+            </div>
+
+            <aside class="prestation-buybox scroll-reveal" style="--reveal-delay: 100ms" id="devis" aria-labelledby="prestation-buybox-title">
+                <div class="prestation-buybox-card">
+                    <h2 id="prestation-buybox-title" class="prestation-buybox-title">Votre devis</h2>
+                    <p class="prestation-detail-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="price" content="{{prestation_price_eur}}">{{prestation_price_eur}}</span>&nbsp;€
+                        <meta itemprop="priceCurrency" content="EUR">
+                        <link itemprop="availability" href="https://schema.org/InStock">
+                        <link itemprop="url" href="{{page_url}}#devis">
+                        <span class="prestation-detail-price-ht">HT</span>
+                    </p>
+                    <p class="prestation-buybox-note">{{prestation_price_label}}{% if prestation_price_note %} - {{prestation_price_note}}{% endif %}{% if prestation_duration %} · {{prestation_duration}}{% endif %}</p>
+
+                    <div class="prestation-devis-summary" aria-live="polite">
+                        <div class="prestation-devis-line prestation-devis-line--main">
+                            <span class="prestation-devis-line-label">{{prestation_title}}</span>
+                            <span class="prestation-devis-line-price" data-prestation-base-price="{{prestation_price_eur}}">{{prestation_price_eur}} €</span>
+                        </div>
+                        {% if prestation_pack_buybox_lines_html %}
+                        <div class="prestation-devis-pack-breakdown">
+                            {{prestation_pack_buybox_lines_html}}
+                        </div>
+                        {% endif %}
+                        <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
+                        <div class="prestation-devis-total-row">
+                            <span>Total HT</span>
+                            <strong class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisOpenModal"
+                        data-prestation-devis-open
                         data-prestation-slug="{{prestation_slug}}"
                         data-service-slug="{{prestation_service_slug}}"
                         data-prestation-title="{{prestation_title}}"
                         data-prestation-price="{{prestation_price_eur}}"
                         data-prestation-price-label="{{prestation_price_label}}">
-                        <span>Recevoir mon devis PDF par e-mail</span>
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        <span>Demander un devis</span>
                     </button>
-                    {% if prestation_slug == 'site-vitrine' or prestation_slug == 'site-vitrine-essentiel' %}
-                    <a href="/vitrines/" class="btn btn-outline btn-large">
-                        <span>Ou partir d'un modèle à 42 € HT</span>
-                        <i class="fas fa-layer-group" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
-                    {% if prestation_slug == 'site-vitrine-essentiel' %}
-                    <a href="/prestations/site-vitrine/" class="btn btn-outline btn-large">
-                        <span>Besoin de 5 pages ? Voir le forfait Pro — 590 € HT</span>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
-                    {% if prestation_slug == 'site-vitrine' %}
-                    <a href="/prestations/site-vitrine-essentiel/" class="btn btn-outline btn-large">
-                        <span>Budget serré ? Voir l'essentiel — 390 € HT</span>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    {% endif %}
+
+                    <ul class="prestation-buybox-trust" aria-label="Garanties">
+                        <li><i class="fas fa-file-pdf" aria-hidden="true"></i> Devis PDF par e-mail</li>
+                        <li><i class="fas fa-handshake" aria-hidden="true"></i> Sans engagement</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Metz &amp; Lorraine</li>
+                    </ul>
+                    <input type="hidden" id="prestationDevisTotalHidden" data-prestation-total-input value="{{prestation_price_eur}}">
                 </div>
-            </div>
-            <figure class="prestation-detail-visual prestation-detail-visual--icon scroll-reveal" style="--reveal-delay: 120ms" aria-hidden="true">
-                <div class="prestation-detail-visual-inner" data-prestation-cat="{{prestation_category}}">
-                    <i class="fas {{prestation_icon}}"></i>
-                </div>
-            </figure>
+            </aside>
         </div>
     </div>
 </section>
 
-<section class="prestation-detail-body">
-    <div class="container prestation-detail-layout">
-        <div class="prestation-detail-main">
-            {% if prestation_promo_html %}
-            <div class="scroll-reveal" style="--reveal-delay: 0ms">
-                {{prestation_promo_html}}
-            </div>
-            {% endif %}
-            {% if prestation_benefits_html %}
-            <div class="scroll-reveal" style="--reveal-delay: 40ms">
-                <h2 class="section-title">Ce que vous gagnez</h2>
-                {{prestation_benefits_html}}
-            </div>
-            {% endif %}
-            {% if prestation_includes_html %}
-            <div class="scroll-reveal" style="--reveal-delay: 80ms">
-                <h2 class="section-title">Ce qui est inclus</h2>
-                {{prestation_includes_html}}
-            </div>
-            {% endif %}
-            {% if prestation_examples_html %}
-            <div class="scroll-reveal" style="--reveal-delay: 120ms">
-                <h2 class="section-title">Exemples concrets</h2>
-                <p class="prestation-examples-lead">Des situations réelles, sans jargon technique :</p>
-                {{prestation_examples_html}}
-            </div>
-            {% endif %}
-            {% if prestation_faq_html %}
-            <div class="scroll-reveal" style="--reveal-delay: 160ms" itemscope itemtype="https://schema.org/FAQPage">
-                <h2 class="section-title">Questions fréquentes</h2>
-                {{prestation_faq_html}}
-            </div>
-            {% endif %}
+<section class="prestation-detail-split" aria-label="Bénéfices et inclus">
+    <div class="container container--fullpage prestation-detail-split-grid">
+        {% if prestation_benefits_html %}
+        <div class="prestation-detail-split-col prestation-detail-split-col--benefits scroll-reveal" style="--reveal-delay: 0ms">
+            <h2 class="prestation-detail-split-title">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                Les bénéfices pour vous
+            </h2>
+            {{prestation_benefits_html}}
         </div>
-
-        <aside class="prestation-devis-panel scroll-reveal" style="--reveal-delay: 100ms" id="devis" aria-labelledby="prestation-devis-title">
-            <div class="prestation-devis-card box-soft">
-                <h2 id="prestation-devis-title" class="prestation-devis-title">Votre devis en un clic</h2>
-                <p class="prestation-devis-intro">Choisissez vos options, indiquez votre e-mail : le devis PDF arrive en quelques secondes, sans engagement.</p>
-
-                <div class="prestation-devis-summary" aria-live="polite">
-                    <div class="prestation-devis-line prestation-devis-line--main">
-                        <span class="prestation-devis-line-label">{{prestation_title}}</span>
-                        <span class="prestation-devis-line-price" data-prestation-base-price="{{prestation_price_eur}}">{{prestation_price_eur}} €</span>
-                    </div>
-                    <p class="prestation-devis-note">{{prestation_price_label}}{% if prestation_price_note %} — {{prestation_price_note}}{% endif %}{% if prestation_duration %} · {{prestation_duration}}{% endif %}</p>
-                    <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
-                    <div class="prestation-devis-total-row">
-                        <span>Total HT</span>
-                        <strong class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
-                    </div>
-                    <p class="prestation-devis-legal">Tarif de base HT. Devis PDF envoyé par e-mail, ajustable selon vos options.</p>
-                </div>
-
-                <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisOpenModal"
-                    data-prestation-devis-open
-                    data-prestation-slug="{{prestation_slug}}"
-                    data-service-slug="{{prestation_service_slug}}"
-                    data-prestation-title="{{prestation_title}}"
-                    data-prestation-price="{{prestation_price_eur}}"
-                    data-prestation-price-label="{{prestation_price_label}}">
-                    <span>Recevoir mon devis par e-mail</span>
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                </button>
-                <input type="hidden" id="prestationDevisTotalHidden" data-prestation-total-input value="{{prestation_price_eur}}">
-            </div>
-        </aside>
+        {% endif %}
+        {% if prestation_includes_html %}
+        <div class="prestation-detail-split-col prestation-detail-split-col--includes scroll-reveal" style="--reveal-delay: 60ms">
+            <h2 class="prestation-detail-split-title">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                Ce qui est inclus
+            </h2>
+            {{prestation_includes_html}}
+        </div>
+        {% endif %}
     </div>
 </section>
 
-<section class="prestation-detail-cta section">
-    <div class="container text-center">
-        <p class="section-description">Une autre offre vous intéresse ?</p>
-        <a href="/nos-offres" class="btn btn-outline btn-large">
-            <span>Voir toutes nos offres</span>
-            <i class="fas fa-th-large" aria-hidden="true"></i>
-        </a>
+{% if prestation_pack_contents_html %}
+<section class="prestation-detail-pack-contents scroll-reveal" style="--reveal-delay: 40ms" aria-labelledby="prestation-pack-contents-title">
+    <div class="container container--fullpage">
+        <div class="prestation-related-head">
+            <h2 id="prestation-pack-contents-title" class="prestation-detail-split-title">
+                <i class="fas fa-cubes" aria-hidden="true"></i>
+                Ce pack contient
+            </h2>
+        </div>
+        <p class="prestation-inpack-lead">Chaque brique existe aussi seule - le pack, c'est la remise.</p>
+        {{prestation_pack_contents_html}}
     </div>
 </section>
+{% endif %}
+
+{% if prestation_technical_html %}
+<section class="prestation-detail-tech scroll-reveal" style="--reveal-delay: 40ms" aria-labelledby="prestation-tech-title">
+    <div class="container container--fullpage">
+        <h2 id="prestation-tech-title" class="prestation-detail-split-title">
+            <i class="fas fa-cogs" aria-hidden="true"></i>
+            Informations sur le produit
+        </h2>
+        {{prestation_technical_html}}
+    </div>
+</section>
+{% endif %}
+
+{% if prestation_inpack_html %}
+<section class="prestation-detail-inpack scroll-reveal" style="--reveal-delay: 60ms" aria-labelledby="prestation-inpack-title">
+    <div class="container container--fullpage">
+        <div class="prestation-related-head">
+            <h2 id="prestation-inpack-title" class="prestation-detail-split-title">
+                <i class="fas fa-box-open" aria-hidden="true"></i>
+                Inclus dans ces packs
+            </h2>
+            <a href="/nos-offres#packs" class="prestation-related-all">Voir les packs →</a>
+        </div>
+        <p class="prestation-inpack-lead">Moins cher qu'à l'unité - un seul devis pour plusieurs prestations.</p>
+        {{prestation_inpack_html}}
+    </div>
+</section>
+{% endif %}
+
+{% if prestation_related_html %}
+<section class="prestation-detail-related scroll-reveal" style="--reveal-delay: 40ms" aria-labelledby="prestation-related-title">
+    <div class="container container--fullpage">
+        <div class="prestation-related-head">
+            <h2 id="prestation-related-title" class="prestation-detail-split-title">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                Produits relatifs à cette offre
+            </h2>
+            <a href="/nos-offres" class="prestation-related-all">Catalogue →</a>
+        </div>
+        {{prestation_related_html}}
+    </div>
+</section>
+{% endif %}
 </article>

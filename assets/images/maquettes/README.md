@@ -27,9 +27,13 @@ Références visuelles validées (30–31 juil. 2026). Palette site : teal `#0f3
 - Couvertures PDF dominantes, prix 0,50 € / packs
 
 ### Prestations
+- Flux page `/nos-offres` : **recherche** → **offre de la semaine** → **packs** → catalogue + sidebar → landing allégée
+- Rotation hebdo : `src/data/prestations-deal-week.json` (ISO week, `force_slug` optionnel)
 - Sidebar catégories + compteurs (desktop)
-- Grille « Services en vedette »
+- Grille dense desktop (3–4+ cartes)
 - Bandeau confiance (expertise, délai, accompagnement, paiement)
+- Fiche produit : visuel gauche, prix + highlights, bénéfices / inclus en 2 colonnes
+- Prompts images cartes : `prestations/PROMPTS-IMAGES.md`
 
 ### Blog
 - Hero éditorial + recherche + chips sujets

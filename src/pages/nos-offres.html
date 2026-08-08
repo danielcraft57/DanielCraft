@@ -1,14 +1,17 @@
 <div class="page-prestations page-nos-offres" itemscope itemtype="https://schema.org/CollectionPage">
     <link itemprop="url" href="{{page_url}}">
+
 {% include "includes/prestations-search-hero.html" %}
 
-<section class="section page-prestations-catalog" aria-label="Catalogue des offres">
-    <div class="container prestations-catalog-layout">
+{% include "includes/prestations-deal-week.html" %}
+
+<section id="catalogue" class="section page-prestations-catalog" aria-label="Catalogue des offres">
+    <div class="container container--fullpage prestations-catalog-layout">
         {% include "includes/prestations-catalog-sidebar.html" %}
 
         <div class="prestations-catalog-main">
             <div id="prestationsSearchResultsWrap" class="prestations-search-results-wrap" hidden>
-                <div id="prestationsSearchResults" class="services-grid prestations-grid prestations-grid--results" role="list"></div>
+                <div id="prestationsSearchResults" class="services-grid prestations-grid prestations-grid--rows prestations-grid--results offres-tiers" role="list"></div>
             </div>
 
             <div id="prestationsCatalogBrowse" class="prestations-catalog-browse">
@@ -17,7 +20,7 @@
 
             <div class="prestations-cta">
                 <p class="prestations-cta-text">Un besoin précis ou plusieurs offres à combiner ?</p>
-                <a href="/#contact" class="btn btn-primary btn-large">
+                <a href="/contact" class="btn btn-primary btn-large">
                     <span>Parler de votre projet</span>
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
@@ -25,6 +28,8 @@
 
             <nav class="legal-page-links" aria-label="Navigation">
                 <a href="/">Retour à l'accueil</a>
+                <span class="separator">·</span>
+                <a href="/livres/">Livres</a>
                 <span class="separator">·</span>
                 <a href="/vitrines/">Exemples</a>
                 <span class="separator">·</span>

@@ -1,9 +1,15 @@
-<aside class="prestations-catalog-sidebar" aria-label="Catégories du catalogue">
+<aside class="prestations-catalog-sidebar" aria-label="Filtres du catalogue">
+    {% include "includes/prestations-budget-filter.html" %}
+
     <p class="prestations-sidebar-title">Catégories</p>
-    <nav class="prestations-sidebar-nav">
-        <ul>
+    <nav class="prestations-sidebar-nav" data-sidebar-overflow>
+        <ul id="prestationsSidebarList">
             {% include "includes/prestations-sidebar-nav.html" %}
         </ul>
+        <button type="button" class="prestations-sidebar-more btn btn-outline" id="prestationsSidebarMore" hidden>
+            <span>Voir plus</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
     </nav>
     <div class="prestations-sidebar-cta">
         <p>Un projet en tête&nbsp;? Discutons de votre besoin.</p>
