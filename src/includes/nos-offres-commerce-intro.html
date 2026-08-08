@@ -34,20 +34,24 @@
         <div class="section-header">
             <span class="section-badge">Offres phares</span>
             <h2 id="offres-tiers-title" class="section-title">Choisissez le niveau qui vous correspond</h2>
-            <p class="section-description">Prix HT indicatifs - devis PDF en un clic si ça vous parle.</p>
+            <p class="section-description">Prix HT indicatifs - devis PDF en un clic si ça vous parle. Souvent une vitrine classique en moins d'une semaine une fois le brief clair.</p>
         </div>
 
-        <article class="offres-tier offres-tier--clickable">
+        <article class="offres-tier offres-tier--clickable" itemscope itemtype="https://schema.org/Service">
             <a class="offres-tier__stretch" href="/prestations/site-vitrine-essentiel/" aria-label="Voir la fiche Site vitrine"></a>
+            <link itemprop="url" href="{{site_base}}/prestations/site-vitrine-essentiel/">
+            <div itemprop="provider" itemscope itemtype="https://schema.org/Organization" hidden>
+                <meta itemprop="name" content="DanielCraft">
+            </div>
             <div class="offres-tier__media">
                 <picture>
                     <source srcset="/assets/images/home/home-offer-vitrine.webp" type="image/webp">
-                    <img src="/assets/images/home/home-offer-vitrine.png" width="640" height="400" alt="Aperçu site vitrine commerce" loading="lazy" decoding="async">
+                    <img src="/assets/images/home/home-offer-vitrine.png" width="640" height="400" alt="Aperçu site vitrine commerce" loading="lazy" decoding="async" itemprop="image">
                 </picture>
             </div>
             <div class="offres-tier__body">
-                <h3 class="offres-tier__title">Site vitrine</h3>
-                <p class="offres-tier__tagline">Horaires, services, contact - une vitrine claire sur téléphone.</p>
+                <h3 class="offres-tier__title" itemprop="name">Site vitrine</h3>
+                <p class="offres-tier__tagline" itemprop="description">Horaires, services, contact - une vitrine claire sur téléphone.</p>
                 <div class="offres-tier__contrast">
                     <div class="offres-tier__col offres-tier__col--before">
                         <h4>Avant</h4>
@@ -68,7 +72,13 @@
                 </div>
             </div>
             <div class="offres-tier__buy">
-                <p class="offres-tier__price">À partir de <strong>390&nbsp;€</strong> <span>HT</span></p>
+                <p class="offres-tier__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="price" content="390">
+                    <link itemprop="url" href="{{site_base}}/prestations/site-vitrine-essentiel/">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    À partir de <strong>390&nbsp;€</strong> <span>HT</span>
+                </p>
                 <p class="offres-tier__hint">590&nbsp;€ HT pour un site jusqu'à 10 pages</p>
                 <button type="button" class="btn btn-outline" data-prestation-devis-open
                     data-prestation-slug="site-vitrine-essentiel"
@@ -81,18 +91,22 @@
             </div>
         </article>
 
-        <article class="offres-tier offres-tier--featured offres-tier--clickable">
+        <article class="offres-tier offres-tier--featured offres-tier--clickable" itemscope itemtype="https://schema.org/Service">
             <a class="offres-tier__stretch" href="/prestations/visibilite-complete/" aria-label="Voir la fiche Visibilité complète"></a>
+            <link itemprop="url" href="{{site_base}}/prestations/visibilite-complete/">
+            <div itemprop="provider" itemscope itemtype="https://schema.org/Organization" hidden>
+                <meta itemprop="name" content="DanielCraft">
+            </div>
             <div class="offres-tier__media">
                 <span class="offres-tier__badge"><i class="fas fa-star" aria-hidden="true"></i> Le plus demandé</span>
                 <picture>
                     <source srcset="/assets/images/home/home-offer-visibilite.webp" type="image/webp">
-                    <img src="/assets/images/home/home-offer-visibilite.png" width="640" height="400" alt="Visibilité Google et Maps" loading="lazy" decoding="async">
+                    <img src="/assets/images/home/home-offer-visibilite.png" width="640" height="400" alt="Visibilité Google et Maps" loading="lazy" decoding="async" itemprop="image">
                 </picture>
             </div>
             <div class="offres-tier__body">
-                <h3 class="offres-tier__title">Visibilité complète</h3>
-                <p class="offres-tier__tagline">Être trouvé près de chez vous - Google, Maps et assistants IA.</p>
+                <h3 class="offres-tier__title" itemprop="name">Visibilité complète</h3>
+                <p class="offres-tier__tagline" itemprop="description">Être trouvé près de chez vous - Google, Maps et assistants IA.</p>
                 <div class="offres-tier__contrast">
                     <div class="offres-tier__col offres-tier__col--before">
                         <h4>Avant</h4>
@@ -113,7 +127,13 @@
                 </div>
             </div>
             <div class="offres-tier__buy">
-                <p class="offres-tier__price">À partir de <strong>690&nbsp;€</strong> <span>HT</span></p>
+                <p class="offres-tier__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="price" content="690">
+                    <link itemprop="url" href="{{site_base}}/prestations/visibilite-complete/">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    À partir de <strong>690&nbsp;€</strong> <span>HT</span>
+                </p>
                 <p class="offres-tier__hint">Tout inclus - SEO local &amp; fiche Maps</p>
                 <button type="button" class="btn btn-primary" data-prestation-devis-open
                     data-prestation-slug="visibilite-complete"
@@ -126,17 +146,21 @@
             </div>
         </article>
 
-        <article class="offres-tier offres-tier--clickable">
+        <article class="offres-tier offres-tier--clickable" itemscope itemtype="https://schema.org/Service">
             <a class="offres-tier__stretch" href="/prestations/repondeur-intelligent/" aria-label="Voir la fiche Répondeur intelligent"></a>
+            <link itemprop="url" href="{{site_base}}/prestations/repondeur-intelligent/">
+            <div itemprop="provider" itemscope itemtype="https://schema.org/Organization" hidden>
+                <meta itemprop="name" content="DanielCraft">
+            </div>
             <div class="offres-tier__media">
                 <picture>
                     <source srcset="/assets/images/home/home-offer-repondeur.webp" type="image/webp">
-                    <img src="/assets/images/home/home-offer-repondeur.png" width="640" height="400" alt="Répondeur intelligent" loading="lazy" decoding="async">
+                    <img src="/assets/images/home/home-offer-repondeur.png" width="640" height="400" alt="Répondeur intelligent" loading="lazy" decoding="async" itemprop="image">
                 </picture>
             </div>
             <div class="offres-tier__body">
-                <h3 class="offres-tier__title">Répondeur intelligent</h3>
-                <p class="offres-tier__tagline">Réponses 24&nbsp;h/24 avec vos vraies infos - sans call center.</p>
+                <h3 class="offres-tier__title" itemprop="name">Répondeur intelligent</h3>
+                <p class="offres-tier__tagline" itemprop="description">Réponses 24&nbsp;h/24 avec vos vraies infos - sans call center.</p>
                 <div class="offres-tier__contrast">
                     <div class="offres-tier__col offres-tier__col--before">
                         <h4>Avant</h4>
@@ -157,7 +181,13 @@
                 </div>
             </div>
             <div class="offres-tier__buy">
-                <p class="offres-tier__price">À partir de <strong>990&nbsp;€</strong> <span>HT</span></p>
+                <p class="offres-tier__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="price" content="990">
+                    <link itemprop="url" href="{{site_base}}/prestations/repondeur-intelligent/">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    À partir de <strong>990&nbsp;€</strong> <span>HT</span>
+                </p>
                 <p class="offres-tier__hint">Mise en place incluse</p>
                 <button type="button" class="btn btn-outline" data-prestation-devis-open
                     data-prestation-slug="repondeur-intelligent"

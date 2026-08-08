@@ -6,6 +6,8 @@ Index de toute la documentation du projet.
 
 - **[CHANGELOG.md](./CHANGELOG.md)** - Historique des versions et changements
 - **[README.md](../README.md)** - Documentation principale du projet
+- **[POSITIONNEMENT_IA.md](./POSITIONNEMENT_IA.md)** - IA depuis 2025, delais, arguments, ou placer sur le site
+- **[../AGENTS.md](../AGENTS.md)** - Style textes, public client (pas de jargon), stack, Grand Est
 
 ## Architecture et build
 

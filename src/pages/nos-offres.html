@@ -1,6 +1,12 @@
 <div class="page-prestations page-nos-offres" itemscope itemtype="https://schema.org/CollectionPage">
     <link itemprop="url" href="{{page_url}}">
-
+    <meta itemprop="name" content="{{page_title}}">
+    <meta itemprop="description" content="{{page_description}}">
+    <meta itemprop="inLanguage" content="fr-FR">
+    <div itemprop="provider" itemscope itemtype="https://schema.org/Organization" hidden>
+        <meta itemprop="name" content="DanielCraft">
+        <link itemprop="url" href="{{site_base}}/">
+    </div>
 {% include "includes/prestations-search-hero.html" %}
 
 {% include "includes/prestations-deal-week.html" %}

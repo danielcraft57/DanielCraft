@@ -28,11 +28,9 @@ WHITE = "#ffffff"
 ACCENT = "#dc2626"
 
 SCENES: dict[str, tuple[int, int]] = {
-    "home-hero": (800, 600),
     "home-offer-vitrine": (640, 400),
     "home-offer-visibilite": (640, 400),
-    "home-offer-assistant": (640, 400),
-    "home-offer-audit": (640, 400),
+    "home-offer-repondeur": (640, 400),
 }
 
 
@@ -243,11 +241,9 @@ def render_offer_audit(w: int, h: int) -> Image.Image:
 
 
 RENDERERS = {
-    "home-hero": render_home_hero,
     "home-offer-vitrine": render_offer_vitrine,
     "home-offer-visibilite": render_offer_visibilite,
-    "home-offer-assistant": render_offer_assistant,
-    "home-offer-audit": render_offer_audit,
+    "home-offer-repondeur": render_offer_assistant,
 }
 
 
@@ -264,14 +260,13 @@ def _save_pair(name: str, im: Image.Image, expected: tuple[int, int]) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", nargs="*", metavar="SLUG", help="home-hero, vitrine, visibilite, assistant, audit")
+    ap.add_argument("--only", nargs="*", metavar="SLUG", help="vitrine, visibilite, repondeur")
     args = ap.parse_args()
     alias = {
-        "hero": "home-hero",
         "vitrine": "home-offer-vitrine",
         "visibilite": "home-offer-visibilite",
-        "assistant": "home-offer-assistant",
-        "audit": "home-offer-audit",
+        "repondeur": "home-offer-repondeur",
+        "assistant": "home-offer-repondeur",
     }
     selected = set(args.only or SCENES.keys())
     for key, full in alias.items():
