@@ -97,7 +97,7 @@ Loic travaille **avec l'IA** depuis **2025**, avec une **expertise prompts** (bi
 | Accueil `#about` | Dev 2011 + IA depuis 2025 + livraison rapide |
 | Accueil FAQ | « Tu utilises l'IA ? » → oui, plus vite, je valide |
 | `/audit` | Diagnostic rapide grace au duo experience + IA |
-| `/contact` / wizard | Delais courts, un interlocuteur qui maitrise le process |
+| `/#contact` / wizard | Premier contact client ; delais courts, un interlocuteur qui maitrise le process |
 | `/processus` | Etape realisation : IA + controle humain |
 | `/nos-offres` | Rappel delai vitrine |
 | Fiches prestations | Delai indicatif + « methode moderne, controlee » (sans jargon) |
@@ -165,7 +165,7 @@ Photos de base + generation : look **ingenieur**, un peu plus **muscle / air spo
 Pipeline apres regen :
 1. Copier les PNG dans `assets/images/home/`
 2. Redimensionner (hero ~800x1200, about 800x800), compresser PNG + regenerer WebP (quality ~80-85) - supprimer les `.webp` existants avant sinon `build.py` les saute
-3. Brancher dans `src/pages/index.html` (hero + `#about`) et `src/pages/contact.html`
+3. Brancher dans `src/pages/index.html` (hero + `#about`) ; ancre contact = titre « Parlons de votre besoin » (`#contact`)
 4. `python build.py index contact` (+ sync `dist/assets`)
 
 Schema : `itemprop="image"` / `link` vers `loic-about-ingenieur.png`.

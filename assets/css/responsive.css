@@ -456,7 +456,9 @@ html {
 .vitrines-filter-more { margin-top: 0.5rem; background: none; border: none; color: var(--primary-color, #2f78a6); text-decoration: underline; cursor: pointer; font-size: 0.92rem; }
 
 .contact-progress-label { text-align: center; font-weight: 600; margin: 0.35rem 0 1rem; color: var(--primary-color, #2f78a6); }
-.contact-wizard-sticky { position: sticky; bottom: 0; padding: 0.75rem; background: linear-gradient(transparent, #fff 30%); z-index: 5; }
+.contact-wizard-sticky { position: sticky; bottom: 0; padding: 0.75rem; background: linear-gradient(transparent, #fff 30%); z-index: 5; display: flex; flex-direction: column; gap: 0.5rem; }
+.contact-wizard-sticky .btn { width: 100%; justify-content: center; }
+.contact-wizard-sticky__skip[hidden] { display: none !important; }
 .contact-type-chip.is-selected, .contact-service-card.is-selected { outline: 3px solid var(--primary-color, #2f78a6); outline-offset: 2px; }
 
 .page-404 { padding: 4rem 0; text-align: center; min-height: 50vh; }

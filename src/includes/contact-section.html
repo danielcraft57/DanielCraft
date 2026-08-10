@@ -1,11 +1,11 @@
-<section id="contact" class="contact">
+<section class="contact">
     <div class="container">
         <div class="section-header scroll-reveal">
             <span class="section-badge">Contact</span>
-            <h2 class="section-title">Parlons de votre besoin</h2>
+            <h2 id="contact" class="section-title">Parlons de votre besoin</h2>
             <p class="section-description">
-                Quelques clics pour me dire ce qui vous intéresse. Je vous rappelle sous <strong>24 h ouvrées</strong>
-                avec une estimation claire — sans engagement, sans jargon technique.
+                Premier contact : quelques clics pour me dire ce qui vous intéresse. Je vous rappelle sous <strong>24 h ouvrées</strong>
+                avec une estimation claire - sans engagement, sans jargon technique.
             </p>
         </div>
 
@@ -68,7 +68,7 @@
                             <li>Si le problème persiste, écrivez à contact@danielcraft.fr.</li>
                         </ul>
                         <div class="contact-error-overlay__actions">
-                            <a href="/contact" class="btn btn-primary btn-large">Formulaire de contact</a>
+                            <a href="/#contact" class="btn btn-primary btn-large">Formulaire de contact</a>
                             <a href="tel:+33387780916" class="btn btn-outline btn-large">03 87 78 09 16</a>
                         </div>
                     </div>
@@ -123,7 +123,12 @@
                                 <span class="contact-picked-service__price" id="contactPickedServicePrice" hidden></span>
                                 <button type="button" class="contact-picked-service__change" id="contactChangeService">Modifier</button>
                             </p>
-                            <p class="contact-step__intro">Choisissez un <strong>jour en semaine</strong>, puis un horaire qui vous convient (matin ou après-midi). <span class="contact-step__duration">Environ 1 min</span></p>
+                            <p class="contact-step__intro">Un créneau, c'est mieux si vous pouvez. Sinon on s'arrangera - je vous rappelle sous <strong>24&nbsp;h ouvrées</strong>. <span class="contact-step__duration">Environ 1 min</span></p>
+                            <p class="contact-calendar-skip contact-calendar-skip--top">
+                                <button type="button" class="contact-calendar-skip__trigger" id="wizardSkipCalendar" aria-haspopup="dialog" aria-controls="contactSkipOverlay">
+                                    Passer ou prendre un RDV
+                                </button>
+                            </p>
 
                             <div class="contact-calendar-wrap">
                                 <div class="calendar-toolbar">
@@ -163,6 +168,8 @@
                                 </div>
                             </div>
 
+                            {% include "includes/modal-contact-skip.html" %}
+
                             <p class="contact-date-summary" aria-live="polite">
                                 <span class="contact-date-summary__label">Votre choix :</span>
                                 <strong id="contactSummaryDate">—</strong>
@@ -183,7 +190,7 @@
                         <!-- Étape 4 : coordonnées -->
                         <div class="contact-step" data-step="4" role="group" aria-labelledby="contact-step3-title" aria-hidden="true">
                             <h3 id="contact-step3-title" class="contact-step__title">Comment vous joindre ?</h3>
-                            <p class="contact-step__intro">Je vous rappelle ou réponds par e-mail au créneau choisi. <span class="contact-step__duration">Environ 1 min</span></p>
+                            <p class="contact-step__intro">Je vous rappelle sous 24&nbsp;h ouvrées, ou au créneau choisi si vous en avez indiqué un. <span class="contact-step__duration">Environ 1 min</span></p>
 
                             <div class="form-group">
                                 <label for="name">Votre nom *</label>
@@ -281,6 +288,9 @@
                         <button type="button" class="btn btn-primary btn-large" id="wizardStickyContinue">
                             Continuer
                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-large contact-wizard-sticky__skip" id="wizardStickySkip" hidden aria-haspopup="dialog" aria-controls="contactSkipOverlay">
+                            Passer ou prendre un RDV
                         </button>
                     </div>
                 </form>

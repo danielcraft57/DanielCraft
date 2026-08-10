@@ -169,7 +169,7 @@
         info.textContent = '';
         info.appendChild(document.createTextNode('Aucun résultat — voici quelques livres populaires. '));
         const link = document.createElement('a');
-        link.href = '/contact';
+        link.href = '/#contact';
         link.textContent = 'Une question ? →';
         info.appendChild(link);
       } else if (visibleCount === 1) {

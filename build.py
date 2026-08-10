@@ -257,7 +257,6 @@ SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
     ('/nos-offres', 'weekly', '0.95'),
     ('/livres/', 'weekly', '0.9'),
-    ('/contact', 'weekly', '0.95'),
     ('/pro', 'monthly', '0.55'),
     ('/audit', 'weekly', '0.95'),
     ('/vitrines/', 'weekly', '0.85'),
@@ -872,6 +871,34 @@ def write_prestations_catalog_redirect(output_dir: Path) -> None:
     out.mkdir(parents=True, exist_ok=True)
     (out / 'index.html').write_text(_render_catalog_redirect_page(), encoding='utf-8')
     print('[OK] Redirection /prestations/ -> /nos-offres')
+
+
+def _render_contact_redirect_page() -> str:
+    """Ancienne page /contact → ancre formulaire sur l'accueil."""
+    base = SITE_BASE.rstrip('/')
+    target = f'{base}/#contact'
+    return f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirection vers Contact — DanielCraft</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{base}/">
+  <meta http-equiv="refresh" content="0;url={target}">
+  <script>window.location.replace({json.dumps(target)});</script>
+</head>
+<body>
+  <p>Le formulaire de contact est sur <a href="{target}">l'accueil</a>.</p>
+</body>
+</html>
+'''
+
+
+def write_contact_redirect(output_dir: Path) -> None:
+    """Ecrit contact.html (redirect client) vers /#contact."""
+    (output_dir / 'contact.html').write_text(_render_contact_redirect_page(), encoding='utf-8')
+    print('[OK] Redirection /contact -> /#contact')
 
 
 def load_vitrines() -> Optional[Dict[str, Any]]:
@@ -4652,6 +4679,7 @@ def main():
     if page_name and not watch_mode:
         if build_page(page_name, template_engine):
             write_prestations_catalog_redirect(OUTPUT_DIR)
+            write_contact_redirect(OUTPUT_DIR)
             if page_name in ('livres', 'nos-offres'):
                 if page_name == 'livres':
                     build_livre_pages(template_engine, OUTPUT_DIR)
@@ -4672,7 +4700,6 @@ def main():
         'index',
         'nos-offres',
         'livres',
-        'contact',
         'vitrines',
         'processus',
         'metz',
@@ -4730,6 +4757,7 @@ def main():
     build_vitrine_pages(template_engine, OUTPUT_DIR)
     build_prestation_pages(template_engine, OUTPUT_DIR)
     write_prestations_catalog_redirect(OUTPUT_DIR)
+    write_contact_redirect(OUTPUT_DIR)
     build_livre_pages(template_engine, OUTPUT_DIR)
 
     # Generation des sitemaps (pages + projets | vitrines | prestations | livres | index)
@@ -4822,6 +4850,7 @@ def main():
                         build_vitrine_pages(template_engine, OUTPUT_DIR)
                         build_prestation_pages(template_engine, OUTPUT_DIR)
                         write_prestations_catalog_redirect(OUTPUT_DIR)
+                        write_contact_redirect(OUTPUT_DIR)
                         build_livre_pages(template_engine, OUTPUT_DIR)
                         generate_sitemap_vitrines(OUTPUT_DIR)
                         generate_sitemap_prestations(OUTPUT_DIR)

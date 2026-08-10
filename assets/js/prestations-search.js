@@ -167,7 +167,7 @@
       } else if (visibleCount === 0) {
         info.textContent = 'Aucun résultat — voici nos prestations les plus demandées. ';
         const link = document.createElement('a');
-        link.href = '/contact';
+        link.href = '/#contact';
         link.textContent = 'Parler de mon projet →';
         info.textContent = '';
         info.appendChild(document.createTextNode('Aucun résultat — voici nos prestations les plus demandées. '));

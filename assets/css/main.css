@@ -1149,6 +1149,7 @@ section {
   font-weight: 800;
   margin-bottom: var(--space-4);
   color: var(--gray-900);
+  scroll-margin-top: 5.5rem;
 }
 
 .section-description {
@@ -3191,6 +3192,115 @@ body.contact-time-overlay-active {
 
 .contact-step-actions--split {
   justify-content: space-between;
+}
+
+.contact-calendar-skip {
+  margin: var(--space-3) 0 0;
+  text-align: center;
+}
+
+.contact-calendar-skip--top {
+  margin: 0 0 var(--space-4);
+  text-align: left;
+}
+
+.contact-calendar-skip__trigger {
+  appearance: none;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 0.75rem 1.1rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.contact-calendar-skip__trigger:hover,
+.contact-calendar-skip__trigger:focus-visible {
+  background: var(--gray-200);
+  border-color: var(--gray-300);
+  color: var(--gray-900);
+  outline: none;
+}
+
+.contact-calendar-skip__trigger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.45);
+}
+
+.contact-skip-overlay__dialog {
+  background: var(--gray-50);
+}
+
+.contact-skip-overlay__lead {
+  margin: 0 0 var(--space-5);
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.45;
+}
+
+.contact-skip-choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-skip-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-900);
+  font: inherit;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.2;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.contact-skip-choice:hover,
+.contact-skip-choice:focus-visible {
+  background: var(--gray-100);
+  border-color: var(--primary-color, #2f78a6);
+  outline: none;
+}
+
+.contact-skip-choice:focus-visible {
+  box-shadow: 0 0 0 3px rgba(77, 169, 214, 0.35);
+}
+
+.contact-skip-choice__title {
+  display: block;
+  width: 100%;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.contact-skip-choice__sub {
+  display: block;
+  width: 100%;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+
+.contact-skip-choice--inline {
+  flex: 1 1 100%;
+  margin-top: var(--space-3);
 }
 
 .contact-step-next,

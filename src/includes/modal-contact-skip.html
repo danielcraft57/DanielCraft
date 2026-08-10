@@ -1,0 +1,30 @@
+<!-- Modal choix contact : passer sans créneau OU prendre un RDV (inclus au build) -->
+<div
+    class="contact-time-overlay"
+    id="contactSkipOverlay"
+    aria-hidden="true"
+>
+    <div class="contact-time-overlay__backdrop" id="contactSkipOverlayBackdrop" tabindex="-1"></div>
+    <div
+        class="contact-time-overlay__dialog contact-skip-overlay__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactSkipOverlayTitle"
+    >
+        <button type="button" class="contact-time-overlay__close" id="contactSkipOverlayClose" aria-label="Fermer">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <h4 id="contactSkipOverlayTitle" class="contact-time-overlay__title">Passer ou prendre un RDV ?</h4>
+        <p class="contact-skip-overlay__lead">Premier contact : un créneau, c'est mieux si vous pouvez. Sinon on s'arrangera - rappel sous 24&nbsp;h ouvrées.</p>
+        <div class="contact-skip-choices" role="group" aria-label="Choisir comment continuer">
+            <button type="button" class="contact-skip-choice" id="wizardSkipCalendarConfirm">
+                <span class="contact-skip-choice__title">Passez - ça me vas</span>
+                <span class="contact-skip-choice__sub">Sans créneau - on s'arrangera</span>
+            </button>
+            <button type="button" class="contact-skip-choice" id="wizardChooseRdv">
+                <span class="contact-skip-choice__title">Prendre RDV</span>
+                <span class="contact-skip-choice__sub">Choisir un jour et une heure</span>
+            </button>
+        </div>
+    </div>
+</div>

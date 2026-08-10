@@ -129,30 +129,36 @@
    * Offres alignées sur /nos-offres + forfaits page d’accueil.
    * slug → champ POST `service` ; budget optionnel (réf. forfait affichée côté mail).
    */
-  /** Besoins exprimés en langage courant (étape 1). */
+  /** Besoins exprimés en langage courant (étape 1) — alignés sur /nos-offres. */
   const CONTACT_NEED_CATEGORIES = [
     {
       slug: 'site',
       label: 'Un site internet',
-      sub: 'Création, refonte, pages en plus…',
+      sub: 'Création, packs commerce, pages en plus…',
       icon: 'fa-globe'
     },
     {
       slug: 'visibilite',
       label: 'Être visible sur Google',
-      sub: 'Référencement, visibilité sur l’IA…',
+      sub: 'Maps, avis, ChatGPT, référencement…',
       icon: 'fa-search'
     },
     {
+      slug: 'mobile',
+      label: 'Mobile & WhatsApp',
+      sub: 'Appeler, Maps, PWA, messagerie…',
+      icon: 'fa-mobile-alt'
+    },
+    {
       slug: 'assistant',
-      label: 'Un assistant sur mon site',
-      sub: 'Réponses auto, chatbot, e-mails…',
-      icon: 'fa-comments'
+      label: 'Un assistant IA',
+      sub: 'Site, WhatsApp, e-mails, agenda…',
+      icon: 'fa-robot'
     },
     {
       slug: 'entretien',
       label: 'Entretien & dépannage',
-      sub: 'Maintenance, hébergement, sécurité…',
+      sub: 'Maintenance, hébergement, outils…',
       icon: 'fa-wrench'
     },
     {
@@ -163,9 +169,12 @@
     }
   ];
 
-  /** Offres proposées par besoin (slugs alignés sur le catalogue). */
+  /** Offres proposées par besoin (slugs = catalogue prestations.json). */
   const NEED_SERVICE_SLUGS = {
     site: [
+      'pack_demarrer_commerce',
+      'pack_etre_trouve',
+      'pack_vitrine_essentiel',
       'pack_vitrine',
       'pack_vitrine_eco',
       'pack_identite',
@@ -179,20 +188,43 @@
       'projet_sur_mesure'
     ],
     visibilite: [
+      'pack_reputation_locale',
+      'pack_etre_trouve',
       'pack_seo_complet',
       'seo_basique_290',
       'seo_chatgpt_490',
+      'ia_geo_local',
+      'ia_avis_google',
+      'mobile_gbp',
       'ia_contenu_web',
       'eco_audit_site',
       'eco_perf_fix',
       'besoin_a_preciser',
       'projet_sur_mesure'
     ],
+    mobile: [
+      'pack_presence_telephone',
+      'pack_whatsapp_commerce',
+      'mobile_pwa',
+      'mobile_whatsapp_setup',
+      'mobile_gbp',
+      'mobile_conversion',
+      'mobile_app_metier',
+      'ia_whatsapp_bot',
+      'besoin_a_preciser',
+      'projet_sur_mesure'
+    ],
     assistant: [
       'ia_faq_site',
+      'ia_whatsapp_bot',
       'ia_support_client',
       'ia_chatbot_ecom',
+      'ia_booking_qualify',
       'ia_redaction_pro',
+      'ia_contenu_web',
+      'ia_analyse_donnees',
+      'ia_automatisation',
+      'pack_whatsapp_commerce',
       'ia_abo_mensuel',
       'ia_evolution',
       'ia_audit',
@@ -209,9 +241,14 @@
       'maint_accompagnement_h',
       'maint_support_prio_h',
       'tech_perf_rapport',
+      'tech_conseil_archi',
+      'tech_integration_crm',
+      'tech_migration_donnees',
+      'tech_api_webhook',
       'eco_audit_site',
       'eco_monitor_mensuel',
       'eco_perf_fix',
+      'eco_formation_2h',
       'besoin_a_preciser',
       'projet_sur_mesure'
     ],
@@ -239,7 +276,7 @@
     {
       slug: 'voir_offres',
       title: 'Voir les 3 offres principales',
-      hint: 'Site vitrine, visibilité, assistant IA',
+      hint: 'Site, mobile, WhatsApp, assistant IA',
       icon: 'fa-star',
       action: 'link',
       href: '/nos-offres',
@@ -251,33 +288,47 @@
    * Un même slug peut apparaître dans plusieurs groupes si pertinent.
    */
   const CONTACT_SERVICE_ITEMS = [
+    { slug: 'pack_demarrer_commerce', title: 'Pack Démarrer commerce', hint: '890€ · pack', icon: 'fa-store', budget: '890', tags: ['web'] },
+    { slug: 'pack_etre_trouve', title: 'Pack Être trouvé', hint: '1090€ · pack', icon: 'fa-map-marker-alt', budget: '1090', tags: ['web'] },
+    { slug: 'pack_presence_telephone', title: 'Pack Présence téléphone', hint: '949€ · pack', icon: 'fa-phone', budget: '949', tags: ['mobile', 'web'] },
+    { slug: 'pack_reputation_locale', title: 'Pack Réputation locale', hint: '749€ · pack', icon: 'fa-star', budget: '749', tags: ['web'] },
+    { slug: 'pack_whatsapp_commerce', title: 'Pack WhatsApp commerce', hint: '890€ · pack', icon: 'fa-comments', budget: '890', tags: ['mobile', 'specialized'] },
     { slug: 'pack_vitrine_essentiel', title: 'Site vitrine essentiel', hint: '390€ · 3 pages, livré vite', icon: 'fa-globe', budget: '390', tags: ['web'] },
-    { slug: 'pack_vitrine', title: 'Site vitrine professionnel', hint: '590€ · 5 pages, clé en main', icon: 'fa-globe', budget: '590', tags: ['web'] },
-    { slug: 'pack_identite', title: 'Image de marque harmonisée', hint: '890€ · site, réseaux et documents', icon: 'fa-fingerprint', budget: '890', tags: ['web'] },
-    { slug: 'pack_seo_complet', title: 'Visible sur Google et par l’IA', hint: '690€ · pack visibilité complet', icon: 'fa-search', budget: '690', tags: ['web'] },
-    { slug: 'seo_basique_290', title: 'Remise en forme Google', hint: '290€ · audit + corrections', icon: 'fa-search', tags: ['web', 'learning'] },
-    { slug: 'seo_chatgpt_490', title: 'Recommandé par les assistants IA', hint: '449€', icon: 'fa-robot', tags: ['web', 'specialized'] },
-    { slug: 'ia_faq_site', title: 'Répondeur intelligent sur le site', hint: '990€', icon: 'fa-comments', tags: ['specialized', 'web'] },
-    { slug: 'ia_support_client', title: 'Aide pour vos e-mails clients', hint: '1090€', icon: 'fa-envelope', tags: ['specialized'] },
+    { slug: 'pack_vitrine', title: 'Site vitrine pro (jusqu\'à 5 pages)', hint: '590€ · clé en main', icon: 'fa-globe', budget: '590', tags: ['web'] },
+    { slug: 'pack_identite', title: 'Image cohérente partout', hint: '890€ · site, réseaux et documents', icon: 'fa-fingerprint', budget: '890', tags: ['web'] },
+    { slug: 'pack_seo_complet', title: 'Visibilité complète', hint: '690€ · pack visibilité', icon: 'fa-search', budget: '690', tags: ['web'] },
+    { slug: 'seo_basique_290', title: 'Coup de propre sur Google', hint: '290€ · audit + corrections', icon: 'fa-search', tags: ['web', 'learning'] },
+    { slug: 'seo_chatgpt_490', title: 'Être compris par les assistants IA', hint: '449€', icon: 'fa-robot', tags: ['web', 'specialized'] },
+    { slug: 'ia_faq_site', title: 'Répondeur intelligent', hint: '990€', icon: 'fa-comments', tags: ['specialized', 'web'] },
+    { slug: 'ia_support_client', title: 'Aide pour répondre aux e-mails', hint: '1090€', icon: 'fa-envelope', tags: ['specialized'] },
     { slug: 'ia_contenu_web', title: 'Textes pour votre site', hint: '490€', icon: 'fa-file-alt', tags: ['specialized', 'web'] },
     { slug: 'ia_redaction_pro', title: 'Aide à la rédaction commerciale', hint: '449€', icon: 'fa-pen-fancy', tags: ['specialized'] },
     { slug: 'ia_analyse_donnees', title: 'Comprendre vos chiffres', hint: '1290€', icon: 'fa-chart-bar', tags: ['specialized', 'desktop'] },
-    { slug: 'ia_chatbot_ecom', title: 'Conseiller sur votre boutique', hint: '1490€', icon: 'fa-shopping-cart', tags: ['specialized', 'mobile', 'web'] },
-    { slug: 'ia_automatisation', title: 'Tâches répétitives automatisées', hint: '1090€', icon: 'fa-tasks', tags: ['specialized', 'tools'] },
-    { slug: 'ia_abo_mensuel', title: 'Entretien mensuel de l’assistant', hint: '69€ / mois', icon: 'fa-wrench', tags: ['specialized'] },
-    { slug: 'ia_evolution', title: 'Nouvelle fonction pour l’assistant', hint: 'À partir de 330€', icon: 'fa-plus-circle', tags: ['specialized'] },
-    { slug: 'ia_audit', title: 'Bilan de votre usage de l’IA', hint: '349€', icon: 'fa-search', tags: ['specialized', 'learning'] },
+    { slug: 'ia_chatbot_ecom', title: 'Conseiller sur votre boutique en ligne', hint: '1490€', icon: 'fa-shopping-cart', tags: ['specialized', 'mobile', 'web'] },
+    { slug: 'ia_automatisation', title: 'Automatiser les tâches chiantes', hint: '1090€', icon: 'fa-tasks', tags: ['specialized', 'tools'] },
+    { slug: 'ia_abo_mensuel', title: 'Entretien mensuel de l\'assistant', hint: '69€ / mois', icon: 'fa-wrench', tags: ['specialized'] },
+    { slug: 'ia_evolution', title: 'Nouvelle fonction pour l\'assistant', hint: 'À partir de 330€', icon: 'fa-plus-circle', tags: ['specialized'] },
+    { slug: 'ia_audit', title: 'Bilan de votre usage de l\'IA', hint: '349€', icon: 'fa-search', tags: ['specialized', 'learning'] },
+    { slug: 'ia_whatsapp_bot', title: 'Assistant WhatsApp', hint: '790€', icon: 'fa-comments', tags: ['specialized', 'mobile'] },
+    { slug: 'ia_geo_local', title: 'Être bien parlé de vous sur ChatGPT', hint: '549€', icon: 'fa-robot', tags: ['specialized', 'web'] },
+    { slug: 'ia_avis_google', title: 'Plus d\'avis Google (sans harceler)', hint: '349€', icon: 'fa-star', tags: ['specialized', 'web'] },
+    { slug: 'ia_booking_qualify', title: 'Filtrer les demandes et remplir l\'agenda', hint: '690€', icon: 'fa-calendar-check', tags: ['specialized'] },
+    { slug: 'mobile_pwa', title: 'Site qui s\'installe sur le téléphone', hint: '490€', icon: 'fa-mobile-alt', tags: ['mobile', 'web'] },
+    { slug: 'mobile_whatsapp_setup', title: 'WhatsApp Business bien réglé', hint: '290€', icon: 'fa-comments', tags: ['mobile'] },
+    { slug: 'mobile_gbp', title: 'Fiche Google Maps au propre', hint: '290€', icon: 'fa-map-marked-alt', tags: ['mobile', 'web'] },
+    { slug: 'mobile_conversion', title: 'Faire appeler depuis le téléphone', hint: '349€', icon: 'fa-phone-volume', tags: ['mobile', 'web'] },
+    { slug: 'mobile_app_metier', title: 'Petit espace client sur téléphone', hint: '990€', icon: 'fa-tablet-alt', tags: ['mobile'] },
     { slug: 'tech_conseil_archi', title: 'Conseil avant un gros projet', hint: '349€', icon: 'fa-sitemap', tags: ['backend', 'mobile', 'desktop', 'tools'] },
     { slug: 'tech_integration_crm', title: 'Relier le site à votre logiciel', hint: 'À partir de 299€', icon: 'fa-link', tags: ['tools', 'backend'] },
     { slug: 'tech_migration_donnees', title: 'Transférer vos anciennes données', hint: '349€', icon: 'fa-database', tags: ['backend', 'desktop'] },
     { slug: 'tech_api_webhook', title: 'Faire dialoguer deux outils', hint: 'À partir de 179€', icon: 'fa-code-branch', tags: ['backend', 'mobile', 'web', 'tools'] },
     { slug: 'tech_perf_rapport', title: 'Votre site est-il rapide ?', hint: '129€', icon: 'fa-tachometer-alt', tags: ['web'] },
-    { slug: 'eco_audit_site', title: 'Audit éco-numérique du site', hint: '149€ · sobriété & coûts', icon: 'fa-leaf', tags: ['web'] },
+    { slug: 'eco_audit_site', title: 'Votre site est-il trop lourd ?', hint: '149€ · sobriété & coûts', icon: 'fa-leaf', tags: ['web'] },
     { slug: 'eco_medias_optimize', title: 'Images et vidéos allégées', hint: '199€', icon: 'fa-image', tags: ['web'] },
-    { slug: 'eco_perf_fix', title: 'Site plus rapide et sobre', hint: 'À partir de 329€', icon: 'fa-feather-alt', tags: ['web'] },
-    { slug: 'pack_vitrine_eco', title: 'Site vitrine éco-conçu', hint: '590€ · léger & responsable', icon: 'fa-seedling', budget: '590', tags: ['web'] },
+    { slug: 'eco_perf_fix', title: 'Rendre le site plus rapide et plus sobre', hint: 'À partir de 329€', icon: 'fa-feather-alt', tags: ['web'] },
+    { slug: 'pack_vitrine_eco', title: 'Site vitrine sobre et rapide', hint: '590€ · léger & responsable', icon: 'fa-seedling', budget: '590', tags: ['web'] },
     { slug: 'eco_page_rse', title: 'Page engagement numérique', hint: '89€', icon: 'fa-hand-holding-heart', tags: ['web'] },
-    { slug: 'eco_monitor_mensuel', title: 'Veille sobriété mensuelle', hint: '35€ / mois', icon: 'fa-chart-line', tags: ['web'] },
+    { slug: 'eco_monitor_mensuel', title: 'Veille perf & sobriété', hint: '35€ / mois', icon: 'fa-chart-line', tags: ['web'] },
     { slug: 'eco_formation_2h', title: 'Atelier publier sans alourdir', hint: '129€ · 2 h', icon: 'fa-chalkboard-teacher', tags: ['web', 'learning'] },
     { slug: 'site_page_supp', title: 'Une page en plus', hint: '59€ / page', icon: 'fa-file', tags: ['web'] },
     { slug: 'site_form_avance', title: 'Formulaire sur mesure', hint: '99€', icon: 'fa-wpforms', tags: ['web'] },
@@ -286,22 +337,22 @@
     { slug: 'maint_site_mensuel', title: 'Site entretenu chaque mois', hint: '49€ / mois', icon: 'fa-cogs', tags: ['web'] },
     { slug: 'maint_hebergement', title: 'Hébergement & nom de domaine', hint: '89€ / an', icon: 'fa-server', tags: ['web'] },
     { slug: 'maint_backup', title: 'Sauvegardes & sécurité', hint: '119€', icon: 'fa-save', tags: ['web', 'backend'] },
-    { slug: 'maint_ssl', title: 'Cadenas HTTPS sur le site', hint: '49€', icon: 'fa-lock', tags: ['web'] },
+    { slug: 'maint_ssl', title: 'Cadenas HTTPS', hint: '49€', icon: 'fa-lock', tags: ['web'] },
     { slug: 'maint_support_abo', title: 'Support par e-mail', hint: '29€ / mois', icon: 'fa-headset', tags: ['web'] },
     { slug: 'maint_depannage_2h', title: 'Dépannage express (2 h)', hint: '139€', icon: 'fa-tools', tags: ['web', 'desktop'] },
-    { slug: 'maint_accompagnement_h', title: 'Accompagnement à l’heure', hint: '65€ / h', icon: 'fa-user-cog', tags: ['web', 'desktop', 'tools'] },
+    { slug: 'maint_accompagnement_h', title: 'Accompagnement à l\'heure', hint: '65€ / h', icon: 'fa-user-cog', tags: ['web', 'desktop', 'tools'] },
     { slug: 'maint_support_prio_h', title: 'Support prioritaire', hint: '75€ / h', icon: 'fa-bolt', tags: ['web'] },
     {
       slug: 'besoin_a_preciser',
       title: 'Je ne sais pas encore',
-      hint: 'On précise ensemble au call',
+      hint: 'On précise ensemble au téléphone',
       icon: 'fa-question-circle',
       tags: ['web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other']
     },
     {
       slug: 'projet_sur_mesure',
       title: 'Projet sur mesure / autre',
-      hint: 'Estimation sur mesure',
+      hint: 'Devis adapté à votre cas',
       icon: 'fa-puzzle-piece',
       tags: ['web', 'backend', 'mobile', 'desktop', 'tools', 'specialized', 'learning', 'other']
     }
@@ -353,6 +404,8 @@
       sending: false,
       timeOverlayOpen: false,
       timeOverlayReturnFocus: null,
+      skipOverlayOpen: false,
+      skipOverlayReturnFocus: null,
       personalizationContext: null,
       usedAutoSkipCoords: false
     };
@@ -361,6 +414,11 @@
     const timeOverlayBackdrop = document.getElementById('contactTimeOverlayBackdrop');
     const timeOverlayClose = document.getElementById('contactTimeOverlayClose');
     const timeOverlayDateLine = document.getElementById('contactTimeOverlayDateLine');
+    const skipOverlay = document.getElementById('contactSkipOverlay');
+    const skipOverlayBackdrop = document.getElementById('contactSkipOverlayBackdrop');
+    const skipOverlayClose = document.getElementById('contactSkipOverlayClose');
+    const skipConfirmBtn = document.getElementById('wizardSkipCalendarConfirm');
+    const chooseRdvBtn = document.getElementById('wizardChooseRdv');
 
     const hiddenDate = form.querySelector('#preferred_date');
     const hiddenTime = form.querySelector('#preferred_time');
@@ -638,6 +696,8 @@
       summaryDate.textContent = line;
     }
 
+    const RECAP_NO_SLOT = 'On s\'arrangera - rappel sous 24 h';
+
     function escapeHtml(str) {
       return String(str).replace(/[&<>"']/g, (ch) => {
         const m = {
@@ -683,13 +743,15 @@
 
       const serviceTitle = state.selectedServiceTitle || '—';
 
-      const dateLine = state.selectedDate ? formatFrenchLong(state.selectedDate) : '—';
+      const dateLine = state.selectedDate ? formatFrenchLong(state.selectedDate) : RECAP_NO_SLOT;
       let timeLine = '—';
-      if (state.selectedTime) {
+      if (state.selectedDate && state.selectedTime) {
         timeLine =
           state.selectedTime === 'flexible'
             ? 'Créneau flexible (à définir par email)'
             : `À ${state.selectedTime.replace(':', 'h')}`;
+      } else if (!state.selectedDate) {
+        timeLine = 'À définir';
       }
 
       const lines = [
@@ -717,14 +779,16 @@
       if (recapEmailEl) recapEmailEl.textContent = (emailEl?.value || '').trim() || '—';
       if (recapPhoneEl) recapPhoneEl.textContent = (phoneEl?.value || '').trim() || '—';
 
-      recapDateEl.textContent = state.selectedDate ? formatFrenchLong(state.selectedDate) : '—';
+      recapDateEl.textContent = state.selectedDate ? formatFrenchLong(state.selectedDate) : RECAP_NO_SLOT;
 
       let timeLabel = '—';
-      if (state.selectedTime) {
+      if (state.selectedDate && state.selectedTime) {
         timeLabel =
           state.selectedTime === 'flexible'
             ? 'Flexible (à définir par email)'
             : 'À ' + state.selectedTime.replace(':', 'h');
+      } else if (!state.selectedDate) {
+        timeLabel = 'À définir';
       }
       recapTimeEl.textContent = timeLabel;
     }
@@ -863,12 +927,21 @@
       }
     }
 
+    function onSkipOverlayEscape(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeSkipOverlay();
+      }
+    }
+
     function closeTimeOverlay() {
       if (!timeOverlay || !state.timeOverlayOpen) return;
       state.timeOverlayOpen = false;
       timeOverlay.classList.remove('contact-time-overlay--open');
       timeOverlay.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('contact-time-overlay-active');
+      if (!state.skipOverlayOpen) {
+        document.body.classList.remove('contact-time-overlay-active');
+      }
       document.removeEventListener('keydown', onTimeOverlayEscape);
       const ret = state.timeOverlayReturnFocus;
       state.timeOverlayReturnFocus = null;
@@ -879,6 +952,7 @@
 
     function openTimeOverlay(focusReturnEl) {
       if (!timeOverlay || !state.selectedDate) return;
+      closeSkipOverlay({ restoreFocus: false });
       state.timeOverlayOpen = true;
       state.timeOverlayReturnFocus = focusReturnEl || null;
       if (timeOverlayDateLine) {
@@ -895,6 +969,43 @@
           firstSlot.focus();
         } else if (timeOverlayClose) {
           timeOverlayClose.focus();
+        }
+      });
+    }
+
+    function closeSkipOverlay(opts) {
+      const restoreFocus = !opts || opts.restoreFocus !== false;
+      if (!skipOverlay || !state.skipOverlayOpen) return;
+      state.skipOverlayOpen = false;
+      skipOverlay.classList.remove('contact-time-overlay--open');
+      skipOverlay.setAttribute('aria-hidden', 'true');
+      if (!state.timeOverlayOpen) {
+        document.body.classList.remove('contact-time-overlay-active');
+      }
+      document.removeEventListener('keydown', onSkipOverlayEscape);
+      const ret = state.skipOverlayReturnFocus;
+      state.skipOverlayReturnFocus = null;
+      if (restoreFocus && ret && typeof ret.focus === 'function') {
+        ret.focus({ preventScroll: true });
+      }
+    }
+
+    function openSkipOverlay(focusReturnEl) {
+      if (!skipOverlay) return;
+      closeTimeOverlay();
+      state.skipOverlayOpen = true;
+      state.skipOverlayReturnFocus = focusReturnEl || document.getElementById('wizardSkipCalendar') || null;
+      skipOverlay.setAttribute('aria-hidden', 'false');
+      skipOverlay.classList.add('contact-time-overlay--open');
+      document.body.classList.add('contact-time-overlay-active');
+      document.addEventListener('keydown', onSkipOverlayEscape);
+      announce('Passer ou prendre un RDV');
+      requestAnimationFrame(() => {
+        const focusBtn = chooseRdvBtn || skipConfirmBtn;
+        if (focusBtn && typeof focusBtn.focus === 'function') {
+          focusBtn.focus();
+        } else if (skipOverlayClose) {
+          skipOverlayClose.focus();
         }
       });
     }
@@ -922,6 +1033,7 @@
 
       if (state.step === 3 && n !== 3) {
         closeTimeOverlay();
+        closeSkipOverlay({ restoreFocus: false });
       }
 
       const leaving = form.querySelector(`.contact-step[data-step="${state.step}"]`);
@@ -973,6 +1085,10 @@
       if (sticky) {
         sticky.hidden = n === 5;
       }
+      const stickySkip = document.getElementById('wizardStickySkip');
+      if (stickySkip) {
+        stickySkip.hidden = n !== 3;
+      }
 
       const wizardAnchor = form.closest('.contact-form-container') || form;
       if (wizardAnchor && typeof wizardAnchor.scrollIntoView === 'function') {
@@ -1001,6 +1117,13 @@
       if (n === 2) {
         renderServiceGrid();
         focusTarget = entering.querySelector('.contact-service-card.is-selected') || entering.querySelector('.contact-service-card');
+      }
+
+      if (n === 3) {
+        focusTarget = document.getElementById('wizardSkipCalendar') || entering.querySelector('.contact-calendar-skip__trigger');
+        requestAnimationFrame(() => {
+          openSkipOverlay(focusTarget);
+        });
       }
 
       if (n === 5) {
@@ -1352,7 +1475,6 @@
       const selectedDateObj = hasDate ? parseISODate(state.selectedDate) : null;
       const isTodaySelected = !!selectedDateObj && isSameDay(selectedDateObj, today);
       const nowMin = nowMinutesLocal();
-      const hasAnyFutureSlot = !!selectedDateObj && hasAvailableTimeForDate(selectedDateObj);
 
       TIME_SLOTS.forEach((t) => {
         const btn = document.createElement('button');
@@ -1389,38 +1511,28 @@
         });
         timeSlotsEl.appendChild(btn);
       });
-
-      const flex = document.createElement('button');
-      flex.type = 'button';
-      flex.className = 'time-slot time-slot--flex';
-      flex.textContent = 'Flexible (on s’ajuste par email)';
-      if (!hasDate || !hasAnyFutureSlot) {
-        flex.disabled = true;
-        flex.classList.add('time-slot--disabled');
-      }
-      if (state.selectedTime === 'flexible') {
-        flex.classList.add('time-slot--selected');
-        flex.setAttribute('aria-pressed', 'true');
-      }
-      flex.addEventListener('click', () => {
-        state.selectedTime = 'flexible';
-        hiddenTime.value = 'flexible';
-        timeSlotsEl.querySelectorAll('.time-slot').forEach((b) => {
-          b.classList.remove('time-slot--selected');
-          b.setAttribute('aria-pressed', 'false');
-        });
-        flex.classList.add('time-slot--selected');
-        flex.setAttribute('aria-pressed', 'true');
-        updateSummary();
-        announce('Créneau flexible sélectionné');
-        closeTimeOverlay();
-        proceedAfterTimeSelection();
-      });
-      timeSlotsEl.appendChild(flex);
     }
 
     timeOverlayBackdrop?.addEventListener('click', () => closeTimeOverlay());
     timeOverlayClose?.addEventListener('click', () => closeTimeOverlay());
+    skipOverlayBackdrop?.addEventListener('click', () => closeSkipOverlay());
+    skipOverlayClose?.addEventListener('click', () => closeSkipOverlay());
+    skipConfirmBtn?.addEventListener('click', () => {
+      skipCalendarStep();
+    });
+    chooseRdvBtn?.addEventListener('click', () => {
+      closeSkipOverlay({ restoreFocus: false });
+      hideFeedback();
+      announce('Choisissez un jour dans le calendrier, puis un horaire.');
+      const firstDay = calendarGrid?.querySelector('.calendar-day:not(.calendar-day--disabled)');
+      if (firstDay && typeof firstDay.focus === 'function') {
+        firstDay.focus({ preventScroll: true });
+      }
+      const calendarWrap = form.querySelector('.contact-calendar-wrap');
+      if (calendarWrap && typeof calendarWrap.scrollIntoView === 'function') {
+        calendarWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
 
     btnPrevMonth.addEventListener('click', () => {
       closeTimeOverlay();
@@ -1483,9 +1595,18 @@
       return true;
     }
 
-    function proceedAfterTimeSelection() {
-      if (!validateStepCalendar()) return;
-      // Si les coordonnées sont déjà présentes (prefill), on saute l'étape 4.
+    function clearCalendarSelection() {
+      state.selectedDate = '';
+      state.selectedTime = '';
+      if (hiddenDate) hiddenDate.value = '';
+      if (hiddenTime) hiddenTime.value = '';
+      closeTimeOverlay();
+      closeSkipOverlay({ restoreFocus: false });
+      renderCalendar();
+      updateSummary();
+    }
+
+    function goAfterCalendar() {
       if (hasCoordsFilled()) {
         state.usedAutoSkipCoords = true;
         hideFeedback();
@@ -1496,6 +1617,18 @@
       }
       state.usedAutoSkipCoords = false;
       setStep(4);
+    }
+
+    function proceedAfterTimeSelection() {
+      if (!validateStepCalendar()) return;
+      goAfterCalendar();
+    }
+
+    function skipCalendarStep() {
+      clearCalendarSelection();
+      hideFeedback();
+      announce('Créneau passé - on s\'arrangera pour le rappel.');
+      goAfterCalendar();
     }
 
     function validateStepCoords() {
@@ -1564,6 +1697,10 @@
 
     wizardNextFromCalendar?.addEventListener('click', () => {
       proceedAfterTimeSelection();
+    });
+
+    document.getElementById('wizardSkipCalendar')?.addEventListener('click', () => {
+      openSkipOverlay(document.getElementById('wizardSkipCalendar'));
     });
 
     wizardBackFromCoords?.addEventListener('click', () => {
@@ -1706,9 +1843,12 @@
         setStep(2);
         return;
       }
-      if (!validateStepCalendar()) {
-        setStep(3);
-        return;
+      // Créneau facultatif : on n'exige date/heure que si un jour a déjà été choisi sans horaire.
+      if (state.selectedDate && !state.selectedTime) {
+        if (!validateStepCalendar()) {
+          setStep(3);
+          return;
+        }
       }
       if (!validateStepCoords()) {
         setStep(4);
@@ -1729,6 +1869,10 @@
         }
       });
     }
+
+    document.getElementById('wizardStickySkip')?.addEventListener('click', () => {
+      openSkipOverlay(document.getElementById('wizardStickySkip'));
+    });
 
     ensurePersonalizationContext().then(() => {
       if (state.step === 2) renderServiceGrid();
