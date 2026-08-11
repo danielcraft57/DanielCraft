@@ -655,6 +655,7 @@ def generate_robots_txt(output_dir: Path) -> None:
         f"Sitemap: {base}/sitemap-pages.xml\n"
         f"Sitemap: {base}/sitemap-vitrines.xml\n"
         f"Sitemap: {base}/sitemap-prestations.xml\n"
+        f"Sitemap: {base}/sitemap-livres.xml\n"
         f"Sitemap: {base}/blog/sitemap-blog.xml\n"
         "\n"
         "# Autoriser le blog\n"
