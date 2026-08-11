@@ -36,7 +36,7 @@ final class DevisCommonTest extends TestCase
     {
         $built = devis_build_catalog_quote('pack_vitrine');
         self::assertNotNull($built);
-        self::assertSame('Site vitrine professionnel', $built['title']);
+        self::assertSame('Site vitrine pro (jusqu\'à 5 pages)', $built['title']);
         self::assertSame(590, $built['total_ht']);
         self::assertCount(1, $built['lines']);
     }
