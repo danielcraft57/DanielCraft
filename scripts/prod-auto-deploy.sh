@@ -106,9 +106,15 @@ test -f dist/api/send-contact.php || fail "dist/api/send-contact.php manquant"
 grep -q '"price_eur": 199' dist/data/audits.json || fail "audits.json invalide"
 
 log "Rsync vers $WEB_ROOT ( .env préservé )..."
+# livres-formation/pdf : hors dist, ne pas supprimer (fulfillment livres)
+# .well-known / assets email BIMI : parfois root-owned, eviter delete en erreur
 rsync -av --delete \
   --exclude '.env' \
   --exclude 'api/.env' \
+  --exclude 'livres-formation/' \
+  --exclude '.well-known/' \
+  --exclude 'assets/icons/mail/' \
+  --exclude 'assets/images/email/' \
   dist/ "$WEB_ROOT/"
 
 find "$WEB_ROOT" -type d -exec chmod 755 {} \;
