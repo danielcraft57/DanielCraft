@@ -117,8 +117,9 @@ livres-formation/**/_sizes_out.txt
 
 # Secrets / config locales
 .env
-.env.*
 .env.local
+.env.prod
+.env.*
 *.env
 *.pem
 *.key

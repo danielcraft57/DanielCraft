@@ -3626,6 +3626,58 @@ def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> st
     )
 
 
+def _livre_detail_visual_html(item: Dict[str, Any]) -> str:
+    """Hero fiche livre : pile de couvertures (pack) ou couverture unique."""
+    cat = html.escape((item.get('category') or 'informatique').strip())
+    icon = html.escape((item.get('icon') or 'fa-book').strip())
+    title = html.escape((item.get('title') or '').strip())
+    cover = _livre_cover_url(item)
+    stack = item.get('cover_stack') or []
+    if (item.get('kind') or '') == 'pack' and isinstance(stack, list) and len(stack) >= 2:
+        imgs = []
+        for i, url in enumerate(stack[:4]):
+            if not isinstance(url, str) or not url.startswith('/'):
+                continue
+            imgs.append(
+                _picture_img_html(
+                    url,
+                    alt='',
+                    class_name='livre-detail-cover-stack-img',
+                    loading='eager',
+                    style=f'--stack-i:{i}',
+                )
+            )
+        if imgs:
+            return (
+                f'<figure class="prestation-detail-visual prestation-detail-visual--cover '
+                f'prestation-detail-visual--livre-stack">'
+                f'<div class="livre-detail-cover-stack" data-livre-cat="{cat}">'
+                f'{"".join(imgs)}'
+                f'</div></figure>'
+            )
+    if cover:
+        pic = _picture_img_html(
+            cover,
+            alt=f'Couverture — {title}',
+            class_name='livre-detail-cover',
+            loading='eager',
+            width=360,
+            height=480,
+        )
+        return (
+            f'<figure class="prestation-detail-visual prestation-detail-visual--cover" '
+            f'data-livre-cat="{cat}">'
+            f'{pic}'
+            f'</figure>'
+        )
+    return (
+        f'<figure class="prestation-detail-visual prestation-detail-visual--icon">'
+        f'<div class="prestation-detail-visual-inner" data-livre-cat="{cat}">'
+        f'<i class="fas {icon}"></i>'
+        f'</div></figure>'
+    )
+
+
 def _livre_card_html(
     item: Dict[str, Any],
     catalog: Dict[str, Any],
@@ -4000,6 +4052,7 @@ def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List
             'livre_icon': (it.get('icon') or 'fa-book').strip(),
             'livre_category': (it.get('category') or 'informatique').strip(),
             'livre_cover': _livre_cover_url(it),
+            'livre_visual_html': _livre_detail_visual_html(it),
             'livre_stripe_url': stripe_url,
             'livre_pay_link': bool(stripe_url),
             'livre_pay_checkout': stripe_checkout,
@@ -4708,6 +4761,7 @@ def main():
         'statistiques',
         'analyse',
         'audit',
+        'livres-telechargement',
         'desabonnement',
         'mentions-legales',
         'cgv',

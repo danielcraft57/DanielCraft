@@ -1,0 +1,142 @@
+<section class="ldl-page" itemscope itemtype="https://schema.org/WebPage" aria-label="Telechargement livre PDF">
+  <link itemprop="url" href="{{page_url}}">
+  <meta itemprop="name" content="Telechargement PDF DanielCraft">
+
+  <div class="ldl-atmosphere" aria-hidden="true">
+    <div class="ldl-atmosphere__wash"></div>
+    <div class="ldl-atmosphere__grid"></div>
+  </div>
+
+  <div class="container ldl-shell">
+    <header class="ldl-brand scroll-reveal" style="--reveal-delay: 0ms">
+      <a class="ldl-brand__mark" href="/livres/">
+        <span class="ldl-brand__name">DanielCraft</span>
+        <span class="ldl-brand__tag">Livres PDF</span>
+      </a>
+    </header>
+
+    <div class="ldl-stage" id="ldlRoot" data-ldl-state="boot">
+      <div class="ldl-banner" id="ldlPayBanner" hidden role="status" aria-live="polite"></div>
+
+      <!-- Chargement -->
+      <div class="ldl-panel ldl-panel--boot" data-ldl-view="boot" hidden>
+        <div class="ldl-spinner" aria-hidden="true"></div>
+        <p class="ldl-lead">Preparation de ton telechargement…</p>
+      </div>
+
+      <!-- Saisie code -->
+      <div class="ldl-panel ldl-panel--gate" data-ldl-view="gate" hidden>
+        <p class="ldl-kicker">Acces lecteur</p>
+        <h1 class="ldl-title" itemprop="name">Ton telechargement</h1>
+        <p class="ldl-lead" itemprop="description">
+          Entre le code unique recu apres paiement — ou ouvre le lien de ton e-mail.
+        </p>
+
+        <form class="ldl-form" id="ldlCodeForm" novalidate autocomplete="off">
+          <input type="hidden" name="form_ts" id="ldlFormTs" value="">
+          <!-- Honeypots anti-bot (ne pas remplir) -->
+          <div class="ldl-hp" aria-hidden="true">
+            <label for="ldlCompany">Entreprise</label>
+            <input type="text" id="ldlCompany" name="company" tabindex="-1" autocomplete="off">
+            <label for="ldlWebsite">Site web</label>
+            <input type="text" id="ldlWebsite" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <label class="ldl-label" for="ldlCodeInput">Code unique</label>
+          <div class="ldl-code-field">
+            <span class="ldl-code-field__prefix" aria-hidden="true">DC</span>
+            <input
+              type="text"
+              id="ldlCodeInput"
+              name="code"
+              class="ldl-code-input"
+              inputmode="text"
+              autocomplete="one-time-code"
+              spellcheck="false"
+              maxlength="14"
+              placeholder="XXXX-XXXX"
+              aria-describedby="ldlCodeHint"
+              required
+            >
+          </div>
+          <p class="ldl-hint" id="ldlCodeHint">Format : DC-XXXX-XXXX — sans O ni I pour eviter les confusions. 5 essais max, puis blocage 24&nbsp;h.</p>
+          <p class="ldl-feedback" id="ldlGateFeedback" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary btn-large ldl-cta" id="ldlUnlockBtn">
+            <span class="ldl-cta__label">Debloquer mon PDF</span>
+            <span class="ldl-cta__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Verification…</span>
+          </button>
+        </form>
+
+        <p class="ldl-help">
+          Pas de code sous la main ?
+          <a href="mailto:contact@danielcraft.fr?subject=Code%20telechargement%20livre">Ecris-moi</a>
+          avec l'e-mail utilise pour Stripe.
+        </p>
+      </div>
+
+      <!-- Ready -->
+      <div class="ldl-panel ldl-panel--ready" data-ldl-view="ready" hidden>
+        <div class="ldl-ready-grid">
+          <div class="ldl-ready-copy">
+            <p class="ldl-kicker ldl-kicker--ok"><i class="fas fa-check-circle" aria-hidden="true"></i> Pret a telecharger</p>
+            <h1 class="ldl-title" id="ldlReadyTitle">Ton livre PDF</h1>
+            <p class="ldl-lead" id="ldlReadyLead">Telecharge quand tu veux — le lien reste valable quelques semaines.</p>
+
+            <div class="ldl-code-card">
+              <div class="ldl-code-card__meta">
+                <span class="ldl-code-card__label">Ton code unique</span>
+                <span class="ldl-code-card__expiry" id="ldlExpiry"></span>
+              </div>
+              <div class="ldl-code-card__row">
+                <code class="ldl-code-display" id="ldlCodeDisplay" aria-live="polite">—</code>
+                <button type="button" class="ldl-copy-btn" id="ldlCopyBtn" aria-label="Copier le code">
+                  <i class="fas fa-copy" aria-hidden="true"></i>
+                  <span>Copier</span>
+                </button>
+              </div>
+              <p class="ldl-code-card__note">Garde-le : tu pourras revenir ici sans repasser par Stripe.</p>
+            </div>
+          </div>
+
+          <aside class="ldl-ready-visual" id="ldlCoverWrap" aria-hidden="true">
+            <div class="ldl-cover-frame">
+              <img class="ldl-cover" id="ldlCover" alt="" width="280" height="380" decoding="async">
+            </div>
+          </aside>
+        </div>
+
+        <ul class="ldl-files" id="ldlFiles" aria-label="Fichiers a telecharger"></ul>
+
+        <div class="ldl-ready-foot">
+          <a class="ldl-text-link" href="/livres/">Retour au catalogue</a>
+          <a class="ldl-text-link" href="mailto:contact@danielcraft.fr">Une question ?</a>
+        </div>
+      </div>
+
+      <!-- Erreur -->
+      <div class="ldl-panel ldl-panel--error" data-ldl-view="error" hidden>
+        <p class="ldl-kicker ldl-kicker--warn"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Lien expire</p>
+        <h1 class="ldl-title">On ne retrouve pas ce code</h1>
+        <p class="ldl-lead" id="ldlErrorText">
+          Il a peut-etre expire, ou une faute de frappe s'est glissee.
+        </p>
+        <div class="ldl-actions">
+          <button type="button" class="btn btn-primary" id="ldlRetryBtn">Reessayer avec un code</button>
+          <a class="btn btn-outline" href="mailto:contact@danielcraft.fr?subject=Aide%20telechargement%20livre">Contacter le support</a>
+        </div>
+      </div>
+
+      <!-- Bloque 24 h -->
+      <div class="ldl-panel ldl-panel--locked" data-ldl-view="locked" hidden>
+        <p class="ldl-kicker ldl-kicker--warn"><i class="fas fa-lock" aria-hidden="true"></i> Acces temporairement bloque</p>
+        <h1 class="ldl-title">Trop d'essais incorrects</h1>
+        <p class="ldl-lead" id="ldlLockedText">
+          Pour proteger les PDF, l'acces est bloque environ 24 h depuis cette connexion.
+        </p>
+        <div class="ldl-actions">
+          <a class="btn btn-primary" href="mailto:contact@danielcraft.fr?subject=Debloquer%20telechargement%20livre">Ecrire au support</a>
+          <a class="btn btn-outline" href="/livres/">Retour au catalogue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

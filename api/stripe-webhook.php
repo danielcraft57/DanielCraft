@@ -1,14 +1,29 @@
 <?php
 /**
- * Webhook Stripe — checkout.session.completed (audit premium → Prestafacture + ProspectLab).
+ * Webhook Stripe — checkout.session.completed (audit premium / livre PDF).
  */
 
 declare(strict_types=1);
 
 require_once __DIR__ . '/env.php';
 require_once __DIR__ . '/stripe-audit-fulfillment.php';
+require_once __DIR__ . '/stripe-livre-fulfillment.php';
 
 api_bootstrap_env();
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' || $_SERVER['REQUEST_METHOD'] === 'HEAD') {
+    header('Content-Type: application/json; charset=utf-8');
+    http_response_code(200);
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        echo json_encode([
+            'ok' => true,
+            'endpoint' => 'stripe-webhook',
+            'method' => 'POST',
+            'events' => ['checkout.session.completed'],
+        ], JSON_UNESCAPED_UNICODE);
+    }
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -48,10 +63,12 @@ if (!is_array($event) || empty($event['type'])) {
 $type = (string) $event['type'];
 if ($type === 'checkout.session.completed') {
     $object = is_array($event['data']['object'] ?? null) ? $event['data']['object'] : [];
-    if (stripe_session_is_paid_audit($object)) {
-        $sessionId = isset($object['id']) ? (string) $object['id'] : '';
-        if ($sessionId !== '') {
+    $sessionId = isset($object['id']) ? (string) $object['id'] : '';
+    if ($sessionId !== '') {
+        if (stripe_session_is_paid_audit($object)) {
             stripe_fulfill_audit_checkout_session($sessionId);
+        } elseif (stripe_session_is_paid_livre($object)) {
+            stripe_fulfill_livre_checkout_session($sessionId);
         }
     }
 }

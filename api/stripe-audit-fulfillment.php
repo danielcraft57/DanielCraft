@@ -55,21 +55,6 @@ function stripe_audit_fulfillment_mark(string $sessionId, array $patch): void
 }
 
 /**
- * @return array{ok: bool, error: string, session: array<string, mixed>|null}
- */
-function stripe_fetch_checkout_session(string $sessionId): array
-{
-    if (!preg_match('/^cs_[a-zA-Z0-9_]+$/', $sessionId)) {
-        return ['ok' => false, 'error' => 'Session Stripe invalide.', 'session' => null];
-    }
-    $res = stripe_api('GET', '/checkout/sessions/' . rawurlencode($sessionId), []);
-    if (!$res['ok'] || !is_array($res['data'])) {
-        return ['ok' => false, 'error' => $res['error'], 'session' => null];
-    }
-    return ['ok' => true, 'error' => '', 'session' => $res['data']];
-}
-
-/**
  * @param array<string, mixed> $session
  */
 function stripe_session_is_paid_audit(array $session): bool

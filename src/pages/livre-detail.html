@@ -9,7 +9,7 @@
 
 <section class="prestation-detail-hero">
     <div class="container prestation-detail-hero-inner">
-        <nav class="prestation-breadcrumb scroll-reveal" style="--reveal-delay: 0ms" aria-label="Fil d'Ariane">
+        <nav class="prestation-breadcrumb" aria-label="Fil d'Ariane">
             <a href="/">Accueil</a>
             <span aria-hidden="true">/</span>
             <a href="/livres/">Livres</a>
@@ -17,40 +17,40 @@
             <span>{{livre_title}}</span>
         </nav>
         <div class="prestation-detail-hero-grid">
-            <div class="prestation-detail-hero-copy scroll-reveal" style="--reveal-delay: 60ms">
+            <div class="prestation-detail-hero-copy">
                 <span class="section-badge"><i class="fas {{livre_icon}}" aria-hidden="true"></i> {{livre_level_label}} · {{livre_category_label}}</span>
                 <h1 class="section-title">{{livre_title}}</h1>
-                <p class="prestation-detail-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <span itemprop="price" content="{{livre_price_eur}}">{{livre_price_display}}</span>&nbsp;€
+                <p class="prestation-detail-hero-price livre-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <span class="livre-hero-price__amount" itemprop="price" content="{{livre_price_eur}}">{{livre_price_display}}&nbsp;€</span>
                     <meta itemprop="priceCurrency" content="EUR">
                     <link itemprop="availability" href="https://schema.org/InStock">
                     <link itemprop="url" href="{{page_url}}">
-                    <span>{{livre_price_label}} TTC</span>
+                    <span class="livre-hero-price__label">{{livre_price_label}} TTC</span>
                 </p>
                 <p class="section-description prestation-detail-lead">{{livre_tagline}}</p>
                 <p class="prestation-detail-desc">{{livre_description}}</p>
-                <div class="prestation-detail-hero-actions">
+                <div class="prestation-detail-hero-actions livre-hero-actions">
                     {% if livre_pay_checkout %}
-                    <button type="button" class="btn btn-primary btn-large" data-livre-stripe-checkout id="livreStripeCheckoutBtn">
+                    <button type="button" class="btn btn-primary btn-large livre-hero-cta" data-livre-stripe-checkout id="livreStripeCheckoutBtn">
                         <span class="livre-stripe-btn__label"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Acheter maintenant — {{livre_price_display}}&nbsp;€ TTC</span>
                         <span class="livre-stripe-btn__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Redirection…</span>
                     </button>
                     {% else %}
                     {% if livre_pay_link %}
-                    <a class="btn btn-primary btn-large" href="{{livre_stripe_url}}" target="_blank" rel="noopener noreferrer">
+                    <a class="btn btn-primary btn-large livre-hero-cta" href="{{livre_stripe_url}}" target="_blank" rel="noopener noreferrer">
                         <span><i class="fas fa-shopping-cart" aria-hidden="true"></i> Acheter maintenant — {{livre_price_display}}&nbsp;€ TTC</span>
                     </a>
                     {% else %}
-                    <a href="mailto:contact@danielcraft.fr?subject={{livre_mailto_subject}}" class="btn btn-primary btn-large">
+                    <a href="mailto:contact@danielcraft.fr?subject={{livre_mailto_subject}}" class="btn btn-primary btn-large livre-hero-cta">
                         <span>Commander par e-mail — {{livre_price_display}}&nbsp;€</span>
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                     </a>
                     {% endif %}
                     {% endif %}
-                    <span class="btn btn-outline btn-large livre-delivery-hint" aria-hidden="true">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <span>Envoi par e-mail après paiement</span>
-                    </span>
+                    <p class="livre-delivery-hint">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        <span>Téléchargement + code unique après paiement</span>
+                    </p>
                 </div>
                 <p class="livre-refund-hint"><i class="fas fa-shield-alt" aria-hidden="true"></i> Satisfait ou remboursé 7&nbsp;jours</p>
                 <ul class="livre-trust-inline" aria-label="Garanties">
@@ -61,15 +61,7 @@
                 <p class="livre-stripe-feedback" id="livreStripeFeedback" hidden role="status" aria-live="polite"></p>
                 <p class="livre-stripe-return" id="livreStripeReturn" role="status" hidden></p>
             </div>
-            <figure class="prestation-detail-visual {% if livre_cover %}prestation-detail-visual--cover{% else %}prestation-detail-visual--icon{% endif %} scroll-reveal" style="--reveal-delay: 120ms">
-                {% if livre_cover %}
-                <img class="livre-detail-cover" src="{{livre_cover}}" alt="Couverture — {{livre_title}}" width="360" height="480" loading="eager" decoding="async">
-                {% else %}
-                <div class="prestation-detail-visual-inner" data-livre-cat="{{livre_category}}">
-                    <i class="fas {{livre_icon}}"></i>
-                </div>
-                {% endif %}
-            </figure>
+            {{livre_visual_html}}
         </div>
     </div>
 </section>

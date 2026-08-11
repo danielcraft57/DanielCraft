@@ -82,45 +82,89 @@ function stripe_api(string $method, string $path, array $params = []): array
     }
 
     $url = 'https://api.stripe.com/v1' . $path;
-    $ch = curl_init($url);
-    if ($ch === false) {
-        return ['ok' => false, 'http' => 0, 'data' => null, 'error' => 'cURL indisponible.'];
-    }
-
-    $headers = ['Content-Type: application/x-www-form-urlencoded'];
-    curl_setopt_array($ch, [
-        CURLOPT_USERPWD => $secret . ':',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTPHEADER => $headers,
-    ]);
-
     $method = strtoupper($method);
     if ($method === 'GET' && $params !== []) {
         $url .= '?' . http_build_query($params);
-        curl_setopt($ch, CURLOPT_URL, $url);
-    } elseif ($method === 'POST') {
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-    } else {
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-        if ($params !== []) {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
-        }
     }
 
-    $body = curl_exec($ch);
-    $http = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $curlErr = curl_error($ch);
-    curl_close($ch);
+    $headers = ['Content-Type: application/x-www-form-urlencoded'];
+    $bodyFields = ($method !== 'GET' && $params !== []) ? http_build_query($params) : null;
 
-    if ($body === false) {
-        return ['ok' => false, 'http' => $http, 'data' => null, 'error' => $curlErr ?: 'Erreur réseau Stripe.'];
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        if ($ch === false) {
+            return ['ok' => false, 'http' => 0, 'data' => null, 'error' => 'cURL indisponible.'];
+        }
+
+        curl_setopt_array($ch, [
+            CURLOPT_USERPWD => $secret . ':',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTPHEADER => $headers,
+        ]);
+
+        if ($method === 'POST') {
+            curl_setopt($ch, CURLOPT_POST, true);
+            if ($bodyFields !== null) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyFields);
+            }
+        } elseif ($method !== 'GET') {
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+            if ($bodyFields !== null) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyFields);
+            }
+        }
+
+        $body = curl_exec($ch);
+        $http = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $curlErr = curl_error($ch);
+        curl_close($ch);
+
+        if ($body === false) {
+            return ['ok' => false, 'http' => $http, 'data' => null, 'error' => $curlErr ?: 'Erreur reseau Stripe.'];
+        }
+    } else {
+        $authHeader = 'Authorization: Basic ' . base64_encode($secret . ':');
+        $headerLines = $authHeader . "\r\n" . implode("\r\n", $headers);
+        if ($bodyFields !== null) {
+            $headerLines .= "\r\nContent-Length: " . strlen($bodyFields);
+        }
+        $context = stream_context_create([
+            'http' => [
+                'method' => $method,
+                'header' => $headerLines . "\r\n",
+                'content' => $bodyFields ?? '',
+                'ignore_errors' => true,
+                'timeout' => 30,
+            ],
+            'ssl' => [
+                'verify_peer' => true,
+                'verify_peer_name' => true,
+            ],
+        ]);
+        $body = @file_get_contents($url, false, $context);
+        if ($body === false) {
+            return [
+                'ok' => false,
+                'http' => 0,
+                'data' => null,
+                'error' => 'HTTP indisponible (activez l extension PHP curl ou allow_url_fopen).',
+            ];
+        }
+        $http = 200;
+        if (isset($http_response_header) && is_array($http_response_header)) {
+            foreach ($http_response_header as $line) {
+                if (preg_match('#^HTTP/\S+\s+(\d{3})#', (string) $line, $m)) {
+                    $http = (int) $m[1];
+                    break;
+                }
+            }
+        }
     }
 
     $decoded = json_decode((string) $body, true);
     if (!is_array($decoded)) {
-        return ['ok' => false, 'http' => $http, 'data' => null, 'error' => 'Réponse Stripe illisible.'];
+        return ['ok' => false, 'http' => $http, 'data' => null, 'error' => 'Reponse Stripe illisible.'];
     }
 
     if ($http < 200 || $http >= 300) {
@@ -277,7 +321,7 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
         ? 'Pack formation PDF — envoi par e-mail après paiement'
         : 'Formation PDF — envoi par e-mail après paiement';
     $base = api_site_base();
-    $successUrl = $base . '/livres/' . rawurlencode($slug) . '/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
+    $successUrl = $base . '/livres/telechargement/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
     $cancelUrl = $base . '/livres/' . rawurlencode($slug) . '/?stripe=cancel';
 
     $params = [
@@ -289,11 +333,13 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
         'line_items[0][price_data][unit_amount]' => $unitAmount,
         'line_items[0][price_data][product_data][name]' => $productName,
         'line_items[0][price_data][product_data][description]' => $productDesc,
+        'metadata[product_type]' => 'livre_pdf',
         'metadata[livre_slug]' => $slug,
         'metadata[livre_title]' => $title,
         'metadata[livre_kind]' => $isPack ? 'pack' : 'livre',
         'metadata[livre_pdf]' => trim((string) ($item['pdf'] ?? '')),
         'payment_intent_data[metadata][livre_slug]' => $slug,
+        'payment_intent_data[metadata][product_type]' => 'livre_pdf',
     ];
 
     if ($isPack && is_array($item['book_slugs'] ?? null)) {
@@ -316,4 +362,19 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
     }
 
     return ['ok' => true, 'url' => $url, 'session_id' => $sessionId, 'error' => ''];
+}
+
+/**
+ * @return array{ok: bool, error: string, session: array<string, mixed>|null}
+ */
+function stripe_fetch_checkout_session(string $sessionId): array
+{
+    if (!preg_match('/^cs_[a-zA-Z0-9_]+$/', $sessionId)) {
+        return ['ok' => false, 'error' => 'Session Stripe invalide.', 'session' => null];
+    }
+    $res = stripe_api('GET', '/checkout/sessions/' . rawurlencode($sessionId), []);
+    if (!$res['ok'] || !is_array($res['data'])) {
+        return ['ok' => false, 'error' => $res['error'], 'session' => null];
+    }
+    return ['ok' => true, 'error' => '', 'session' => $res['data']];
 }

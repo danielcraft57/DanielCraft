@@ -31,6 +31,15 @@
     if (load) load.hidden = !on;
   }
 
+  function sanitizeServerError(text) {
+    var raw = String(text || '').trim();
+    if (!raw) return 'Paiement indisponible pour le moment.';
+    if (/<[a-z][\s\S]*>/i.test(raw) || /Fatal error|curl_init|Stack trace/i.test(raw)) {
+      return 'Paiement temporairement indisponible sur ce serveur. Ecris a contact@danielcraft.fr ou reessaie plus tard.';
+    }
+    return raw.length > 220 ? raw.slice(0, 220) + '…' : raw;
+  }
+
   function parseJsonResponse(res) {
     return res.text().then(function (text) {
       var trimmed = (text || '').trim();
@@ -38,12 +47,12 @@
         try {
           return { res: res, data: JSON.parse(text) };
         } catch (e) {
-          return { res: res, data: { success: false, error: 'Réponse serveur illisible.' } };
+          return { res: res, data: { success: false, error: 'Reponse serveur illisible.' } };
         }
       }
       return {
         res: res,
-        data: { success: false, error: trimmed.slice(0, 200) || 'HTTP ' + res.status },
+        data: { success: false, error: sanitizeServerError(trimmed) || 'HTTP ' + res.status },
       };
     });
   }
@@ -54,7 +63,7 @@
       return;
     }
     if (!slug) {
-      feedback(fb, 'Référence livre manquante.', true);
+      feedback(fb, 'Reference livre manquante.', true);
       return;
     }
     setLoading(btn, true);
@@ -80,7 +89,7 @@
         setLoading(btn, false);
       })
       .catch(function () {
-        feedback(fb || feedbackEl, 'Réseau indisponible. Réessaie ou écris à contact@danielcraft.fr.', true);
+        feedback(fb || feedbackEl, 'Reseau indisponible. Reessaie ou ecris a contact@danielcraft.fr.', true);
         setLoading(btn, false);
       });
   }
@@ -94,14 +103,17 @@
   try {
     const params = new URLSearchParams(window.location.search);
     const st = params.get('stripe');
-    if (returnEl && st === 'success') {
-      returnEl.hidden = false;
-      returnEl.textContent =
-        'Paiement reçu — je t’envoie le PDF à l’e-mail utilisé pour Stripe (souvent sous 24 h). Merci !';
-      returnEl.classList.add('livre-stripe-feedback--ok');
+    if (st === 'success') {
+      const sessionId = (params.get('session_id') || '').trim();
+      const dest =
+        '/livres/telechargement/' +
+        (sessionId
+          ? '?stripe=success&session_id=' + encodeURIComponent(sessionId)
+          : '');
+      window.location.replace(dest);
     } else if (returnEl && st === 'cancel') {
       returnEl.hidden = false;
-      returnEl.textContent = 'Paiement annulé. Tu peux réessayer quand tu veux.';
+      returnEl.textContent = 'Paiement annule. Tu peux reessayer quand tu veux.';
     }
   } catch (_) {
     /* ignore */
