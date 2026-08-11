@@ -103,6 +103,10 @@
     if (successPanel) successPanel.hidden = true;
   }
 
+  var freeTrust = document.getElementById('auditFreeTrust');
+  var upsellPremium = document.getElementById('auditUpsellPremium');
+  var formWrap = document.getElementById('audit-form');
+
   function setAuditMode(mode) {
     hideAuditSuccess();
     auditMode = mode === 'premium' ? 'premium' : 'free';
@@ -111,15 +115,47 @@
       tab.classList.toggle('is-active', on);
       tab.setAttribute('aria-selected', on ? 'true' : 'false');
     });
+    var formPanel = document.getElementById('auditFormPanel');
+    if (formPanel) {
+      formPanel.setAttribute(
+        'aria-labelledby',
+        auditMode === 'premium' ? 'auditTabPremium' : 'auditTabFree'
+      );
+    }
     if (freeSubmit) freeSubmit.hidden = auditMode !== 'free';
     if (premiumSubmit) premiumSubmit.hidden = auditMode !== 'premium';
     if (payNote) payNote.hidden = auditMode !== 'premium';
+    if (freeTrust) freeTrust.hidden = auditMode !== 'free';
+    if (upsellPremium) upsellPremium.hidden = auditMode !== 'free';
     setFeedback(unifiedFeedback, '', false);
+  }
+
+  function chooseAuditMode(mode) {
+    setAuditMode(mode);
+    if (formWrap && typeof formWrap.scrollIntoView === 'function') {
+      formWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    if (unifiedUrl && typeof unifiedUrl.focus === 'function') {
+      try {
+        unifiedUrl.focus({ preventScroll: true });
+      } catch (e) {
+        unifiedUrl.focus();
+      }
+    }
   }
 
   modeTabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
       setAuditMode(tab.getAttribute('data-audit-mode'));
+    });
+  });
+
+  document.querySelectorAll('[data-audit-choose]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      var mode = el.getAttribute('data-audit-choose');
+      if (!mode) return;
+      if (el.tagName === 'A') e.preventDefault();
+      chooseAuditMode(mode);
     });
   });
 
@@ -227,7 +263,7 @@
         }
         setFeedback(
           unifiedFeedback,
-          (ref.data && ref.data.error) || 'Impossible d’ouvrir le paiement Stripe.',
+          (ref.data && ref.data.error) || "Impossible d'ouvrir le paiement Stripe.",
           true
         );
       })
@@ -301,7 +337,7 @@
         if (ref.res.ok && ref.body && ref.body.success) {
           banner.textContent =
             ref.body.message ||
-            'Merci ! Facture envoyée par email, puis lancement de l’audit complet.';
+            "Merci ! Facture envoyée par email, puis lancement de l'audit complet.";
           banner.className = 'audit-stripe-return audit-stripe-return--ok';
         } else {
           banner.textContent =

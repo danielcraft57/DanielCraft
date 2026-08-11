@@ -207,9 +207,10 @@ function stripe_fulfill_audit_run(string $sessionId, array $ctx): array
 /**
  * Après paiement : 1) facture par email, 2) audit complet (idempotent par session_id).
  *
+ * @param array{site_url?: string, email?: string} $clientHints secours si metadata Stripe incomplète
  * @return array{ok: bool, error: string, invoice_ok: bool, audit_ok: bool}
  */
-function stripe_fulfill_audit_checkout_session(string $sessionId): array
+function stripe_fulfill_audit_checkout_session(string $sessionId, array $clientHints = []): array
 {
     $fail = ['ok' => false, 'error' => '', 'invoice_ok' => false, 'audit_ok' => false];
 
@@ -226,6 +227,18 @@ function stripe_fulfill_audit_checkout_session(string $sessionId): array
     }
 
     $ctx = stripe_audit_session_context($session);
+    if ($ctx['site_url'] === '' && !empty($clientHints['site_url']) && is_string($clientHints['site_url'])) {
+        $hintSite = pl_normalize_website(trim(strip_tags($clientHints['site_url'])));
+        if ($hintSite !== '') {
+            $ctx['site_url'] = $hintSite;
+        }
+    }
+    if ($ctx['email'] === '' && !empty($clientHints['email']) && is_string($clientHints['email'])) {
+        $hintEmail = trim($clientHints['email']);
+        if (filter_var($hintEmail, FILTER_VALIDATE_EMAIL)) {
+            $ctx['email'] = $hintEmail;
+        }
+    }
     if ($ctx['email'] === '' || !filter_var($ctx['email'], FILTER_VALIDATE_EMAIL)) {
         $fail['error'] = 'Email client manquant sur la session Stripe.';
         return $fail;

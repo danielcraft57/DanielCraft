@@ -12,71 +12,81 @@
   <meta itemprop="areaServed" content="Grand Est">
   <meta itemprop="areaServed" content="France">
   <meta itemprop="serviceType" content="Audit de site web">
-  <div class="container">
-    <header class="audit-hero">
-      <div class="audit-hero__text">
-        <span class="section-badge">Audit site web</span>
-        <h1 class="section-title audit-hero__title">Votre site vous fait perdre des clients&nbsp;?</h1>
-        <p class="audit-hero__tagline">
-          On regarde ce qui freine vos visites et vos prises de contact - en clair, sans jargon.
-          Expérience depuis 2011 + IA depuis 2025 : diagnostic plus vite, priorités utiles.
-        </p>
-        <p class="audit-hero__trust">Sans engagement · Rapport par email · Réponse sous 24&nbsp;h ouvrées</p>
-      </div>
-      <figure class="audit-hero__visual">
-        <img src="/assets/images/audit/audit-hero.svg" width="800" height="420" alt="" loading="eager" decoding="async"/>
-      </figure>
-    </header>
 
-    <section class="audit-unified-form" aria-labelledby="audit-form-title">
-      <h2 id="audit-form-title" class="audit-section-title">Demander votre audit</h2>
-      <div class="audit-mode-tabs" role="tablist" aria-label="Type d'audit">
-        <button type="button" class="audit-mode-tab is-active" role="tab" id="auditTabFree" aria-selected="true" aria-controls="auditPanelFree" data-audit-mode="free">Audit gratuit (0&nbsp;€)</button>
-        <button type="button" class="audit-mode-tab" role="tab" id="auditTabPremium" aria-selected="false" aria-controls="auditPanelPremium" data-audit-mode="premium">Audit premium ({{audit_paid_price_eur}}&nbsp;€ TTC)</button>
-      </div>
-      <div class="pl-card pl-card--form audit-form-card audit-form-card--unified">
-        <form class="pl-form audit-form" id="auditUnifiedForm" novalidate>
-          <div class="form-group">
-            <label for="auditUnifiedUrl">Votre site</label>
-            <div class="pl-url-row">
-              <input id="auditUnifiedUrl" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://votre-site.fr" required/>
-              <button type="button" class="pl-url-submit" id="auditUnifiedTestBtn" aria-label="Prévisualiser">
-                <span class="pl-btn-text"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></span>
-              </button>
+  <div class="audit-hero-band">
+    <div class="container">
+      <header class="audit-hero audit-hero--b">
+        <div class="audit-hero__left">
+          <h1 class="section-title audit-hero__title">Votre site vous fait perdre des clients&nbsp;?</h1>
+          <p class="audit-hero__tagline">
+            Un diagnostic clair pour comprendre, prioriser, et transformer votre site en vrai levier.
+          </p>
+          <p class="audit-hero__exp">Expérience depuis 2011 + IA depuis 2025</p>
+
+          <div class="audit-hero__form-wrap" id="audit-form">
+            <h2 id="audit-form-title" class="visually-hidden">Demander votre audit</h2>
+            <div class="audit-mode-tabs" role="tablist" aria-label="Type d'audit">
+              <button type="button" class="audit-mode-tab is-active" role="tab" id="auditTabFree" aria-selected="true" aria-controls="auditFormPanel" data-audit-mode="free">Audit gratuit (0&nbsp;€)</button>
+              <button type="button" class="audit-mode-tab" role="tab" id="auditTabPremium" aria-selected="false" aria-controls="auditFormPanel" data-audit-mode="premium">Audit premium ({{audit_paid_price_eur}}&nbsp;€ TTC)</button>
+            </div>
+            <div class="pl-card pl-card--form audit-form-card audit-form-card--unified" id="auditFormPanel" role="tabpanel" aria-labelledby="auditTabFree">
+              <form class="pl-form audit-form" id="auditUnifiedForm" novalidate>
+                <div class="form-group">
+                  <label for="auditUnifiedUrl">Votre site</label>
+                  <div class="pl-url-row">
+                    <input id="auditUnifiedUrl" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://votre-site.fr" required/>
+                    <button type="button" class="pl-url-submit" id="auditUnifiedTestBtn" aria-label="Prévisualiser">
+                      <span class="pl-btn-text"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="auditUnifiedEmail">Votre email</label>
+                  <input id="auditUnifiedEmail" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required/>
+                </div>
+                <div class="form-group">
+                  <label for="auditUnifiedName">Nom <span class="audit-optional">(facultatif)</span></label>
+                  <input id="auditUnifiedName" name="name" type="text" autocomplete="name" placeholder="Votre nom"/>
+                </div>
+                <button type="submit" class="btn btn-primary audit-submit" id="auditUnifiedSubmitFree">
+                  <span class="audit-submit__label">Recevoir mon audit gratuit (PDF)</span>
+                  <span class="audit-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+                </button>
+                <button type="button" class="btn btn-primary audit-submit" id="auditUnifiedSubmitPremium" hidden data-audit-stripe-checkout>
+                  <span class="audit-submit__label">Commander l'audit premium</span>
+                  <span class="audit-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+                </button>
+                <p class="audit-hero__trust" id="auditFreeTrust">Sans engagement · PDF par email · Réponse sous 24&nbsp;h ouvrées</p>
+                <p class="audit-offer-card__pay-note" id="auditUnifiedPayNote" hidden>Paiement sécurisé en ligne - facture par email, puis rapport détaillé.</p>
+                <button type="button" class="audit-hero__upsell" id="auditUpsellPremium" data-audit-choose="premium">Passer au premium {{audit_paid_price_eur}}&nbsp;€ →</button>
+                <div class="form-feedback" id="auditUnifiedFeedback" hidden role="status" aria-live="polite"></div>
+              </form>
+              <div class="audit-success-panel" id="auditSuccessPanel" hidden aria-live="polite">
+                <div class="audit-success-panel__icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                <h3 class="audit-success-panel__title">Rapport en route</h3>
+                <p class="audit-success-panel__lead" id="auditSuccessLead">3 priorités pour votre site - livraison sous 48 h ouvrées.</p>
+                <ol class="audit-success-panel__steps">
+                  <li>Analyse de votre site en cours</li>
+                  <li>Rapport PDF avec 3 actions prioritaires</li>
+                  <li>Envoi à l'adresse indiquée (vérifiez les spams)</li>
+                </ol>
+                <a href="/nos-offres" class="btn btn-secondary">Voir nos offres</a>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="auditUnifiedEmail">Votre email</label>
-            <input id="auditUnifiedEmail" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required/>
-          </div>
-          <div class="form-group">
-            <label for="auditUnifiedName">Nom <span class="audit-optional">(facultatif)</span></label>
-            <input id="auditUnifiedName" name="name" type="text" autocomplete="name" placeholder="Votre nom"/>
-          </div>
-          <button type="submit" class="btn btn-primary audit-submit" id="auditUnifiedSubmitFree">
-            <span class="audit-submit__label">3 priorités pour mon site — rapport gratuit</span>
-            <span class="audit-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
-          </button>
-          <button type="button" class="btn btn-primary audit-submit" id="auditUnifiedSubmitPremium" hidden data-audit-stripe-checkout>
-            <span class="audit-submit__label">Commander l'audit premium</span>
-            <span class="audit-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
-          </button>
-          <p class="audit-offer-card__pay-note" id="auditUnifiedPayNote" hidden>Paiement sécurisé en ligne — facture par email, puis rapport détaillé.</p>
-          <div class="form-feedback" id="auditUnifiedFeedback" hidden role="status" aria-live="polite"></div>
-        </form>
-        <div class="audit-success-panel" id="auditSuccessPanel" hidden aria-live="polite">
-          <div class="audit-success-panel__icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
-          <h3 class="audit-success-panel__title">Rapport en route</h3>
-          <p class="audit-success-panel__lead" id="auditSuccessLead">3 priorités pour votre site — livraison sous 48 h ouvrées.</p>
-          <ol class="audit-success-panel__steps">
-            <li>Analyse de votre site en cours</li>
-            <li>Rapport PDF avec 3 actions prioritaires</li>
-            <li>Envoi à l’adresse indiquée (vérifiez les spams)</li>
-          </ol>
-          <a href="/nos-offres" class="btn btn-secondary">Voir nos offres</a>
         </div>
-      </div>
-    </section>
+        <figure class="audit-hero__visual">
+          <picture>
+            <source srcset="/assets/images/audit/audit-hero-rapport.webp" type="image/webp">
+            <img src="/assets/images/audit/audit-hero-rapport.jpg" width="900" height="1350" alt="Aperçu d'un rapport d'audit : score, priorités et recommandations" loading="eager" decoding="async"/>
+          </picture>
+        </figure>
+      </header>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="auditStripeReturn" class="audit-stripe-return" hidden role="status" aria-live="polite"></div>
 
     <section class="audit-benefits" aria-labelledby="audit-benefits-title">
       <h2 id="audit-benefits-title" class="audit-section-title">Pourquoi faire auditer votre site&nbsp;?</h2>
@@ -99,9 +109,7 @@
       </div>
     </section>
 
-    <div id="auditStripeReturn" class="audit-stripe-return" hidden role="status" aria-live="polite"></div>
-
-    <section class="audit-offers audit-offers--info-only" aria-labelledby="audit-offers-title">
+    <section class="audit-offers audit-offers--split" aria-labelledby="audit-offers-title">
       <h2 id="audit-offers-title" class="audit-section-title">Choisissez votre niveau d'analyse</h2>
       <div class="audit-offers__grid">
         <article id="audit-gratuit" class="audit-offer-card audit-offer-card--free" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -110,46 +118,45 @@
           <meta itemprop="priceCurrency" content="EUR">
           <link itemprop="url" href="{{page_url}}#audit-gratuit">
           <link itemprop="availability" href="https://schema.org/InStock">
-          <div class="audit-offer-card__visual">
-            <img src="/assets/images/audit/audit-offer-free.svg" width="400" height="240" alt="" loading="lazy" decoding="async"/>
-          </div>
-          <span class="audit-offer-card__label">Offre découverte</span>
+          <div class="audit-offer-card__icon" aria-hidden="true"><i class="fas fa-magnifying-glass"></i></div>
           <h3 class="audit-offer-card__name">Audit gratuit</h3>
           <p class="audit-offer-card__price"><span class="audit-offer-card__amount">0&nbsp;€</span></p>
-          <p class="audit-offer-card__pitch">Rapport complet sur l'état de votre site, livré dans votre boîte mail.</p>
+          <p class="audit-offer-card__pitch">Un audit clair et rapide pour comprendre l'essentiel de votre site.</p>
           <ul class="audit-offer-card__perks">
-            <li><i class="fas fa-check" aria-hidden="true"></i> Vue d'ensemble claire</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Points forts et axes d'amélioration</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Sans carte bancaire</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Vue d'ensemble de votre site</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Points forts et points faibles</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Sans carte bancaire, sans engagement</li>
           </ul>
+          <button type="button" class="btn btn-primary audit-offer-card__cta" data-audit-choose="free">Demander le gratuit</button>
+          <p class="audit-offer-card__foot">Rapport envoyé sous 48&nbsp;h ouvrées.</p>
         </article>
         <article id="audit-premium" class="audit-offer-card audit-offer-card--premium" data-audit-slug="{{audit_paid_slug}}" data-audit-price="{{audit_paid_price_eur}}" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <meta itemprop="name" content="Audit premium — analyse complète">
+          <meta itemprop="name" content="Audit premium - analyse complète">
           <meta itemprop="price" content="{{audit_paid_price_eur}}">
           <meta itemprop="priceCurrency" content="EUR">
           <link itemprop="url" href="{{page_url}}#audit-premium">
           <link itemprop="availability" href="https://schema.org/InStock">
           <div class="audit-offer-card__ribbon">Tarif lancement</div>
-          <div class="audit-offer-card__visual">
-            <img src="/assets/images/audit/audit-offer-premium.svg" width="400" height="240" alt="" loading="lazy" decoding="async"/>
-          </div>
-          <span class="audit-offer-card__label">Analyse approfondie</span>
+          <div class="audit-offer-card__icon audit-offer-card__icon--premium" aria-hidden="true"><i class="fas fa-bullseye"></i></div>
           <h3 class="audit-offer-card__name">Audit premium</h3>
           <p class="audit-offer-card__price"><span class="audit-offer-card__amount">{{audit_paid_price_eur}}&nbsp;€</span> <span class="audit-offer-card__vat">TTC</span></p>
-          <p class="audit-offer-card__pitch">Chaque page passée au crible, avec une liste priorisée de corrections concrètes.</p>
+          <p class="audit-offer-card__pitch">Une analyse complète et des recommandations concrètes pour passer à l'action.</p>
           <ul class="audit-offer-card__perks">
-            <li><i class="fas fa-check" aria-hidden="true"></i> Tout le gratuit, en plus détaillé</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Contenus, visuels et parcours utilisateur</li>
-            <li><i class="fas fa-check" aria-hidden="true"></i> Plan d'action prêt à appliquer</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Vos pages au crible (contenu, visibilité, technique)</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Analyse des parcours visiteurs</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Plan d'action priorisé et concret</li>
           </ul>
+          <button type="button" class="btn btn-primary audit-offer-card__cta audit-offer-card__cta--premium" data-audit-choose="premium">Commander le premium</button>
+          <p class="audit-offer-card__foot">Rapport détaillé sous 72&nbsp;h ouvrées.</p>
         </article>
       </div>
+      <p class="audit-offers__hint">Le formulaire est en haut de page - choisissez gratuit ou premium, puis envoyez.</p>
     </section>
 
     <section class="audit-closing" aria-label="Appel à l'action">
       <h2 class="audit-closing__title">Ne laissez plus votre site freiner votre activité</h2>
-      <p class="audit-closing__text">Commencez par l'audit gratuit — vous verrez tout de suite où agir en priorité.</p>
-      <a href="#audit-form-title" class="btn btn-primary"><span>Je demande mon audit gratuit</span><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      <p class="audit-closing__text">Commencez par l'audit gratuit - vous verrez tout de suite où agir en priorité.</p>
+      <a href="#audit-form" class="btn btn-primary" data-audit-choose="free"><span>Je demande mon audit gratuit</span><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
     </section>
 
     <nav class="legal-page-links audit-footer-nav" aria-label="Navigation">

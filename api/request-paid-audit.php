@@ -66,7 +66,10 @@ if ($sessionId === '') {
 set_time_limit(120);
 
 try {
-    $fulfill = stripe_fulfill_audit_checkout_session($sessionId);
+    $fulfill = stripe_fulfill_audit_checkout_session($sessionId, [
+        'site_url' => $website,
+        'email' => $email,
+    ]);
 } catch (Throwable $e) {
     error_log('[request-paid-audit] ' . $e->getMessage());
     pl_json_error(502, 'Erreur serveur lors de la finalisation. Réessayez ou contactez le support.');

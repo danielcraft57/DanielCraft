@@ -1,8 +1,10 @@
-/* Page /audit — landing marketing */
+/* Page /audit — landing B (hero form + rapport) + C (split offres) */
 
 .page-audit {
   --audit-accent: var(--primary-color, #4da9d6);
   --audit-dark: var(--primary-dark, #0f3550);
+  --audit-ice: #e8f6fc;
+  padding-top: 0;
 }
 
 .page-audit .pl-card {
@@ -15,22 +17,92 @@
 
 .page-audit .pl-card--form {
   border-top: 3px solid var(--audit-accent);
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
-/* Hero */
-.audit-hero {
+.page-audit .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hero band — style B */
+.audit-hero-band {
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 20%, rgba(77, 169, 214, 0.22), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 10% 80%, rgba(125, 212, 168, 0.12), transparent 50%),
+    linear-gradient(165deg, #f5fbfe 0%, #e8f6fc 45%, #f8fcfe 100%);
+  padding: 3.5rem 0 3rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(77, 169, 214, 0.18);
+}
+
+.audit-hero--b {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: center;
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-@media (min-width: 900px) {
-  .audit-hero {
+@media (min-width: 960px) {
+  .audit-hero--b {
     grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+/* Desktop XL — plus d'air utile, hero dans le premier ecran */
+@media (min-width: 1400px) {
+  .audit-hero-band .container,
+  .page-audit > .container {
+    max-width: 1360px;
+  }
+
+  .audit-hero-band {
+    padding: 4rem 0 2.75rem;
+  }
+
+  .audit-hero--b {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
+  }
+
+  .audit-hero__title {
+    font-size: clamp(2.2rem, 2.4vw, 2.85rem);
+  }
+
+  .audit-hero__tagline {
+    font-size: 1.2rem;
+    max-width: 38rem;
+  }
+
+  .audit-hero__visual picture,
+  .audit-hero__visual img {
+    max-width: 520px;
+    max-height: min(68vh, 640px);
+    object-fit: contain;
+  }
+
+  .page-audit .pl-card--form {
+    padding: 1.15rem 1.35rem 1.25rem;
+  }
+
+  .page-audit .form-group {
+    margin-bottom: 0.7rem;
+  }
+
+  .page-audit .audit-mode-tab {
+    padding: 0.7rem 1.15rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -46,29 +118,99 @@
   color: var(--gray-700, #475569);
   line-height: 1.6;
   max-width: 36rem;
+  margin: 0 0 0.65rem;
+}
+
+.audit-hero__exp {
   margin: 0 0 1.25rem;
-}
-
-.audit-hero__cta-row {
-  margin: 0 0 0.75rem;
-}
-
-.page-audit .btn-lg {
-  padding: 0.85rem 1.5rem;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--audit-accent);
 }
 
 .audit-hero__trust {
   font-size: 0.88rem;
   color: var(--gray-600, #64748b);
-  margin: 0;
+  margin: 0.75rem 0 0;
+  text-align: center;
 }
 
-.audit-hero__visual img {
+.audit-hero__upsell {
+  display: inline-block;
   width: 100%;
+  margin-top: 0.85rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--audit-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.audit-hero__upsell:hover {
+  color: var(--audit-dark);
+}
+
+.audit-hero__upsell[hidden] {
+  display: none !important;
+}
+
+.audit-hero__visual {
+  margin: 0;
+  text-align: center;
+}
+
+.audit-hero__visual picture,
+.audit-hero__visual img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
   height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(15, 53, 80, 0.12);
+  margin-inline: auto;
+  border-radius: 18px;
+  filter: drop-shadow(0 24px 48px rgba(15, 53, 80, 0.18));
+}
+
+@media (min-width: 960px) {
+  .audit-hero__visual picture,
+  .audit-hero__visual img {
+    max-width: 480px;
+  }
+}
+
+/* Mode tabs */
+.page-audit .audit-mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.page-audit .audit-mode-tab {
+  border: 1px solid rgba(77, 169, 214, 0.4);
+  background: #fff;
+  color: var(--audit-dark);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.page-audit .audit-mode-tab.is-active {
+  background: var(--audit-accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.page-audit .audit-mode-tab:focus-visible {
+  outline: 2px solid var(--audit-dark);
+  outline-offset: 2px;
 }
 
 /* Section titles */
@@ -131,29 +273,7 @@
   margin: 0;
 }
 
-/* Punch line */
-.audit-punch {
-  text-align: center;
-  margin: 0 0 3rem;
-  padding: 1.75rem 1.25rem;
-  background: var(--audit-dark);
-  border-radius: 18px;
-}
-
-.audit-punch__text {
-  margin: 0;
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  line-height: 1.55;
-  color: #e8f6fc;
-  max-width: 40rem;
-  margin-inline: auto;
-}
-
-.audit-punch__text strong {
-  color: #fff;
-}
-
-/* Offers */
+/* Offers — style C split */
 .audit-offers {
   margin-bottom: 3rem;
 }
@@ -175,60 +295,62 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem 1.5rem;
   border-radius: 20px;
   border: 1px solid var(--gray-200);
   background: #fff;
+  overflow: hidden;
 }
 
 .audit-offer-card--free {
-  border-color: rgba(77, 169, 214, 0.35);
+  border-color: rgba(77, 169, 214, 0.4);
   box-shadow: 0 8px 30px rgba(77, 169, 214, 0.1);
 }
 
 .audit-offer-card--premium {
   border-color: var(--audit-dark);
-  background: linear-gradient(180deg, #f8fcfe 0%, #fff 40%);
+  background: linear-gradient(180deg, #f8fcfe 0%, #fff 42%);
   box-shadow: 0 16px 40px rgba(15, 53, 80, 0.12);
 }
 
 .audit-offer-card__ribbon {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.1rem;
+  right: -2.2rem;
   background: var(--audit-dark);
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
+  padding: 0.4rem 2.5rem;
+  transform: rotate(35deg);
+  box-shadow: 0 4px 12px rgba(15, 53, 80, 0.25);
 }
 
-.audit-offer-card__visual img {
-  width: 100%;
-  max-height: 160px;
-  object-fit: contain;
-  margin-bottom: 0.75rem;
-}
-
-.audit-offer-card__label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.audit-offer-card__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.85rem;
+  background: rgba(77, 169, 214, 0.15);
   color: var(--audit-accent);
+  font-size: 1.25rem;
 }
 
-.audit-offer-card--premium .audit-offer-card__label {
-  color: var(--audit-dark);
+.audit-offer-card__icon--premium {
+  background: var(--audit-dark);
+  color: #fff;
 }
 
 .audit-offer-card__name {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   color: var(--audit-dark);
-  margin: 0.25rem 0;
+  margin: 0.15rem 0;
 }
 
 .audit-offer-card__price {
@@ -236,30 +358,20 @@
 }
 
 .audit-offer-card__amount {
-  font-size: 2rem;
+  font-size: 2.15rem;
   font-weight: 800;
+  color: var(--audit-accent);
+}
+
+.audit-offer-card--premium .audit-offer-card__amount {
   color: var(--audit-dark);
 }
 
 .audit-offer-card__vat {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--gray-600);
+  color: var(--audit-accent);
   margin-left: 0.15rem;
-}
-
-.audit-offer-card__once {
-  font-size: 0.9rem;
-  color: var(--gray-600);
-  font-weight: 500;
-}
-
-.audit-offer-card--premium .audit-offer-card__launch {
-  margin: -0.35rem 0 0.85rem;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--audit-accent, #c2410c);
-  font-weight: 600;
 }
 
 .audit-offer-card__pitch {
@@ -267,27 +379,51 @@
   line-height: 1.55;
   margin: 0 0 1rem;
   font-size: 0.95rem;
+  max-width: 28rem;
 }
 
 .audit-offer-card__perks {
   list-style: none;
   padding: 0;
-  margin: 0 0 0.5rem;
+  margin: 0 0 1.25rem;
   flex: 1;
+  width: 100%;
+  text-align: left;
 }
 
 .audit-offer-card__perks li {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.55rem;
   align-items: flex-start;
-  padding: 0.35rem 0;
-  font-size: 0.9rem;
+  padding: 0.4rem 0;
+  font-size: 0.92rem;
   color: var(--gray-800);
 }
 
 .audit-offer-card__perks i {
-  color: var(--audit-accent);
+  color: #16a34a;
   margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.audit-offer-card__cta {
+  width: 100%;
+  justify-content: center;
+}
+
+.audit-offer-card__cta--premium {
+  background: var(--audit-dark);
+  border-color: var(--audit-dark);
+}
+
+.audit-offer-card__cta--premium:hover {
+  filter: brightness(1.08);
+}
+
+.audit-offer-card__foot {
+  margin: 0.75rem 0 0;
+  font-size: 0.82rem;
+  color: var(--gray-500);
 }
 
 .audit-offer-card__pay-note {
@@ -297,8 +433,11 @@
   margin: 0.5rem 0 0;
 }
 
-.audit-form-card--paid {
-  border-top-color: var(--audit-dark);
+.audit-offers__hint {
+  text-align: center;
+  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--gray-600);
 }
 
 .audit-optional {
@@ -310,6 +449,13 @@
 .audit-submit {
   width: 100%;
   margin-top: 0.35rem;
+}
+
+.audit-submit[hidden],
+.audit-hero__upsell[hidden],
+.audit-offer-card__pay-note[hidden],
+.audit-hero__trust[hidden] {
+  display: none !important;
 }
 
 .audit-submit.is-loading .audit-submit__label {
@@ -412,10 +558,41 @@
   color: var(--audit-dark);
 }
 
+.page-audit .audit-success-panel {
+  text-align: center;
+  padding: 1.5rem 0.5rem;
+  border-radius: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  margin-top: 0.25rem;
+}
+
+.page-audit .audit-success-panel[hidden] {
+  display: none !important;
+}
+
+.page-audit .audit-success-panel__icon {
+  font-size: 2.25rem;
+  color: #16a34a;
+  margin-bottom: 0.35rem;
+}
+
+.page-audit .audit-success-panel__steps {
+  text-align: left;
+  max-width: 28rem;
+  margin: 1rem auto;
+}
+
 /* Scroll anchors */
-#offre-gratuite,
+#audit-form,
 #audit-gratuit,
-#offre-premium,
 #audit-premium {
   scroll-margin-top: 100px;
+}
+
+@media (max-width: 959px) {
+  .audit-hero__visual picture,
+  .audit-hero__visual img {
+    max-width: 260px;
+  }
 }
