@@ -220,16 +220,12 @@
   function pickBlogPool(data) {
     const pools = data.pools || [];
     if (!pools.length) return [];
-    const perDay = data.rotationPerDay || 2;
-    const hour = new Date().getHours();
-    let slot = 0;
-    if (perDay <= 1) {
-      slot = 0;
-    } else if (perDay === 2) {
-      slot = hour < 12 ? 0 : 1;
-    } else {
-      slot = hour < 8 ? 0 : hour < 16 ? 1 : 2;
-    }
+    const intervalH = Number(data.rotationIntervalHours) || 2;
+    const now = new Date();
+    const slotsPerDay = Math.max(1, Math.ceil(24 / intervalH));
+    const dayIndex = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+    const slotOfDay = Math.floor((now.getHours() * 60 + now.getMinutes()) / (intervalH * 60));
+    const slot = (dayIndex * slotsPerDay + slotOfDay) % pools.length;
     return pools[slot] || pools[0];
   }
 

@@ -1120,8 +1120,8 @@ def _home_blog_cat(article: dict, collections: list[dict]) -> str:
     return _type_label(article)
 
 
-def _pick_home_rotation_articles(articles: list[dict], collections: list[dict], total: int = 6) -> list[dict]:
-    """Six articles client (GEO, SEO, marketing, communication) pour l'accueil."""
+def _pick_home_rotation_articles(articles: list[dict], collections: list[dict], total: int = 36) -> list[dict]:
+    """Articles client (GEO, SEO, marketing, communication…) pour l'accueil."""
     seen: set[str] = set()
     picked: list[dict] = []
     per_series = max(1, total // len(_HOME_ROTATION_SERIES_ORDER))
@@ -1170,20 +1170,37 @@ def _home_rotation_item(article: dict, collections: list[dict]) -> dict:
 
 
 def build_home_rotation_payload(articles: list[dict], collections: list[dict]) -> dict:
-    """Deux jeux de 3 articles pour rotation matin / apres-midi."""
-    picked = _pick_home_rotation_articles(articles, collections, 6)
+    """Jeux de 3 articles ; rotation accueil toutes les 2 h (12 creneaux / jour)."""
+    interval_h = 2
+    slots_per_day = max(1, 24 // interval_h)
+    need = slots_per_day * 3
+    picked = _pick_home_rotation_articles(articles, collections, need)
     items = [_home_rotation_item(a, collections) for a in picked]
     if len(items) < 3:
-        return {'pools': [items], 'rotationPerDay': 2}
-    pool_a = items[:3]
-    pool_b = items[3:6] if len(items) >= 6 else items[3:]
-    while len(pool_b) < 3:
-        pool_b.append(items[len(pool_b) % len(items)])
-    return {'pools': [pool_a, pool_b[:3]], 'rotationPerDay': 2}
+        return {
+            'pools': [items],
+            'rotationIntervalHours': interval_h,
+            'rotationPerDay': slots_per_day,
+        }
+    pools: list[list[dict]] = []
+    for i in range(0, len(items) - 2, 3):
+        pools.append(items[i : i + 3])
+    # Completer jusqu'a 12 pools en glissant si besoin
+    if len(pools) < slots_per_day and items:
+        i = 0
+        while len(pools) < slots_per_day:
+            chunk = [items[(i + j) % len(items)] for j in range(3)]
+            pools.append(chunk)
+            i += 1
+    return {
+        'pools': pools[:slots_per_day],
+        'rotationIntervalHours': interval_h,
+        'rotationPerDay': slots_per_day,
+    }
 
 
 def save_home_rotation_json(articles: list[dict], collections: list[dict], output_dir: Path) -> None:
-    """Export JSON pour la section blog de l'accueil (rotation 2x/jour)."""
+    """Export JSON pour la section blog de l'accueil (rotation toutes les 2 h)."""
     payload = build_home_rotation_payload(articles, collections)
     out_file = output_dir / 'home-rotation.json'
     out_file.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
