@@ -242,7 +242,7 @@ function devis_issue_from_input(array $input): array
 
     if (devis_is_vitrine_service($serviceSlug)) {
         $built = devis_build_vitrine_quote($serviceSlug, $vitrineTitle, $vitrineSlug, $budgetHt);
-        $sourcePath = '/vitrines/' . ($vitrineSlug !== '' ? $vitrineSlug . '/' : '');
+        $sourcePath = '/echantillons/' . ($vitrineSlug !== '' ? $vitrineSlug . '/' : '');
     } else {
         $built = devis_build_catalog_quote($serviceSlug, $addonIds, $prestationSlug);
         if ($built === null) {
@@ -388,7 +388,7 @@ function devis_try_issue_for_contact(array $contactData): array
 
     $input = array_merge($contactData, [
         'service_slug' => $service,
-        'source_path' => devis_is_vitrine_service($service) ? '/vitrines/' : '/contact',
+        'source_path' => devis_is_vitrine_service($service) ? '/echantillons/' : '/contact',
     ]);
 
     $result = devis_issue_from_input($input);

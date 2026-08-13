@@ -1,12 +1,12 @@
 {
-  "page_title": "Modèles de sites par métier — démos DanielCraft",
-  "page_description": "22 maquettes : landing SaaS, onboarding, dashboard, empty states, notifications et thèmes métier (restaurant, immobilier, avocat…). Démo live et personnalisation en Lorraine.",
-  "page_keywords": "maquette landing SaaS, onboarding UX, modèle site professionnel, démo site vitrine, product design, DanielCraft Metz Lorraine",
-  "output_subpath": "vitrines/index.html",
-  "page_url": "/vitrines/",
+  "page_title": "Échantillons — exemples de sites par métier | DanielCraft",
+  "page_description": "Échantillons de sites par métier : restauration, garage, spa, commerce… Démos live desktop, tablette et mobile. Pour se projeter, puis parler d'un site sur mesure en Grand Est.",
+  "page_keywords": "échantillon site web, exemples sites métier, démo site internet Metz, DanielCraft Grand Est Lorraine",
+  "output_subpath": "echantillons/index.html",
+  "page_url": "/echantillons/",
   "og_image": "/assets/images/og/vitrines-1200x630.jpg",
-  "current_page": "vitrines",
-  "page_scripts": ["main.js", "vitrines-section.js"],
+  "current_page": "echantillons",
+  "page_scripts": ["main.js", "lazy-images.js", "vitrines-section.js"],
   "extra_css": "vitrines-portfolio.css",
   "schema_type": "vitrines_catalog"
 }

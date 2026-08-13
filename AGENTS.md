@@ -175,7 +175,8 @@ Schema : `itemprop="image"` / `link` vers `loic-about-ingenieur.png`.
 - **DanielCraft** : site portfolio / commerce local (Metz), build Python (`build.py`), templates dans `src/`, assets dans `assets/`, sortie `dist/`.
 - **Accueil** : `src/pages/index.html` (+ CSS/JS home).
 - **Catalogue offres** : `/nos-offres` (`prestations.json`, hub categories, fiches `/prestations/<slug>/`).
-- **Livres** : `/livres` + dossier source `livres-formation/`.
+- **Livres** : `/bouquins` (redirect `/livres`) + dossier source `livres-formation/`.
+- **Echantillons** : `/echantillons` (exemples de sites par metier, **pas a vendre**). Anciennes URLs `/vitrines/` et `/devantures/` redirigent. Catalogue `src/data/vitrines.json`.
 - **Portfolio** : section `#portfolio` / `assets/js/portfolio.js` (images `assets/images/projets/`).
 - **Page projets GitHub** : `src/pages/projets.html` + `assets/js/github-projects.js` / `src/data/projects.json`.
 - **Blog** : `blog/`, build `blog/build_blog.py` integre au build principal.

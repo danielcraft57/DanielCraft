@@ -637,7 +637,7 @@ def block_site_footer(
         <span itemprop="description">{esc(str(offers.get("description", "")))}</span>
         </p>"""
         if slug:
-            saas_html += f'<link itemprop="url" href="{esc(f"https://danielcraft.fr/vitrines/{slug}/demo/")}">'
+            saas_html += f'<link itemprop="url" href="{esc(f"https://danielcraft.fr/echantillons/{slug}/demo/")}">'
 
     star_html = ""
     if entity and entity.get("starRating"):
@@ -646,7 +646,7 @@ def block_site_footer(
         </p>"""
 
     if entity and slug:
-        entity_url = f'https://danielcraft.fr/vitrines/{slug}/demo/'
+        entity_url = f'https://danielcraft.fr/echantillons/{slug}/demo/'
         entity_link = f'<link itemprop="url" href="{esc(entity_url)}">'
         entity_img = f'<link itemprop="image" href="{esc(f"{entity_url}images/hero.webp")}">'
     else:

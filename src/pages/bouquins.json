@@ -7,5 +7,5 @@
   "page_url": "/bouquins/",
   "og_image": "/assets/images/og/home-1200x630.jpg",
   "extra_css": "prestations-search.css,livres.css,prestations-shop-ux.css",
-  "page_scripts": ["main.js", "livres-search.js", "prestations-wow.js", "prestations-shop-ux.js"]
+  "page_scripts": ["main.js", "lazy-images.js", "livres-search.js", "prestations-wow.js", "prestations-shop-ux.js"]
 }

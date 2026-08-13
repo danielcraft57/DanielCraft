@@ -2878,6 +2878,13 @@ html.js .home-stagger:not(.is-visible) > * {
   text-decoration: underline;
 }
 
+.home-blog-card__views {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted, #64748b);
+  margin-top: 0.15rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-livre:hover {
     transform: none;

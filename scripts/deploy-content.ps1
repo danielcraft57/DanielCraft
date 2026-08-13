@@ -84,6 +84,8 @@ function Load-DeployDefaultsFromEnv {
     }
 }
 
+Load-DeployDefaultsFromEnv
+
 function Resolve-PythonExe {
     foreach ($cmd in @('python', 'python3')) {
         try {
@@ -183,13 +185,13 @@ $filesToDeploy = @(
     "$DIST_DIR/robots.txt",
     "$DIST_DIR/sitemap.xml",
     "$DIST_DIR/sitemap-pages.xml",
-    "$DIST_DIR/sitemap-vitrines.xml",
+    "$DIST_DIR/sitemap-echantillons.xml",
     "$DIST_DIR/blog/sitemap-blog.xml",
     "$DIST_DIR/assets",
     "$DIST_DIR/api",
     "$DIST_DIR/blog",
     "$DIST_DIR/projets",
-    "$DIST_DIR/vitrines"
+    "$DIST_DIR/echantillons"
 )
 
 $missingFiles = @()
@@ -210,7 +212,7 @@ if ($missingFiles.Count -gt 0) {
 
 # 3. Créer le répertoire sur le serveur si nécessaire
 Write-ColorOutput "[2/4] Creation du repertoire sur le serveur (si necessaire)..." "Yellow"
-$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/blog && mkdir -p $ServerPath/projets && mkdir -p $ServerPath/vitrines"
+$createDirCmd = "mkdir -p $ServerPath && mkdir -p $ServerPath/assets && mkdir -p $ServerPath/assets/images/projets && mkdir -p $ServerPath/assets/images/hero && mkdir -p $ServerPath/api && mkdir -p $ServerPath/blog && mkdir -p $ServerPath/projets && mkdir -p $ServerPath/echantillons && mkdir -p $ServerPath/devantures && mkdir -p $ServerPath/vitrines"
 try {
     ssh "${ServerUser}@${ServerHost}" $createDirCmd
     Write-ColorOutput "Repertoire cree/verifie (dont assets/images/projets et assets/images/hero pour les images)" "Green"
@@ -404,7 +406,7 @@ if ($transferOk) {
         "cgu.html",
         "politique-confidentialite.html"
     )
-    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml", "sitemap-bouquins.xml", "nginx-project-aliases.conf")
+    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-echantillons.xml", "sitemap-devantures.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml", "sitemap-bouquins.xml", "nginx-project-aliases.conf")
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file
@@ -468,10 +470,20 @@ if ($transferOk) {
         scp -r $projetsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
-    # Transfert vitrines (hub, demos, captures, fiches)
+    # Transfert echantillons (hub, demos, captures, fiches) + redirects legacy
+    $echantillonsPath = Join-Path $DIST_DIR "echantillons"
+    if (Test-Path $echantillonsPath) {
+        Write-Host "  Transfert: echantillons/"
+        scp -r $echantillonsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+    $devanturesPath = Join-Path $DIST_DIR "devantures"
+    if (Test-Path $devanturesPath) {
+        Write-Host "  Transfert: devantures/ (redirects)"
+        scp -r $devanturesPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
     $vitrinesPath = Join-Path $DIST_DIR "vitrines"
     if (Test-Path $vitrinesPath) {
-        Write-Host "  Transfert: vitrines/"
+        Write-Host "  Transfert: vitrines/ (redirects)"
         scp -r $vitrinesPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
@@ -551,8 +563,8 @@ $projetsCheckCmd = 'test -d ' + $ServerPath + '/projets && (n=$(ls -1 ' + $Serve
 $projetsCheckResult = ssh "${ServerUser}@${ServerHost}" $projetsCheckCmd
 Write-Host $projetsCheckResult
 
-# Verifier dist/vitrines (hub + fiches + demos)
-$vitrinesCheckCmd = 'test -f ' + $ServerPath + '/vitrines/index.html && echo "OK: vitrines/index.html present" || echo "ATTENTION: vitrines/ manquant - relancer build puis deploy"'
+# Verifier dist/echantillons (hub + fiches + demos)
+$vitrinesCheckCmd = 'test -f ' + $ServerPath + '/echantillons/index.html && echo "OK: echantillons/index.html present" || echo "ATTENTION: echantillons/ manquant - relancer build puis deploy"'
 $vitrinesCheckResult = ssh "${ServerUser}@${ServerHost}" $vitrinesCheckCmd
 Write-Host $vitrinesCheckResult
 

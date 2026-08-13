@@ -1085,6 +1085,110 @@ def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_
     (output_dir / 'sitemap-blog.xml').write_text('\n'.join(lines), encoding='utf-8')
 
 
+_HOME_ROTATION_SERIES_KEYWORDS = ('seo', 'geo', 'marketing', 'communication')
+
+
+_HOME_ROTATION_SERIES_ORDER = (
+    'geo-serie',
+    'seo-serie',
+    'marketing-digital-serie',
+    'communication-serie',
+)
+
+
+def _home_blog_cat(article: dict, collections: list[dict]) -> str:
+    """Libelle court pour la carte blog accueil (serie, tag ou type)."""
+    series_id = article.get('series')
+    if series_id:
+        for coll in collections:
+            cid = coll.get('id') or coll.get('slug') or ''
+            if cid == series_id:
+                raw = (coll.get('title') or '').strip()
+                if raw:
+                    if raw.lower().startswith('série '):
+                        raw = raw[6:].strip()
+                    elif raw.lower().startswith('serie '):
+                        raw = raw[6:].strip()
+                    for sep in (' — ', ' - ', ' · ', ': '):
+                        if sep in raw:
+                            raw = raw.split(sep)[0].strip()
+                            break
+                    return raw[:22]
+    tags = article.get('tags') or []
+    if tags:
+        return str(tags[0])[:22]
+    return _type_label(article)
+
+
+def _pick_home_rotation_articles(articles: list[dict], collections: list[dict], total: int = 6) -> list[dict]:
+    """Six articles client (GEO, SEO, marketing, communication) pour l'accueil."""
+    seen: set[str] = set()
+    picked: list[dict] = []
+    per_series = max(1, total // len(_HOME_ROTATION_SERIES_ORDER))
+    for series_id in _HOME_ROTATION_SERIES_ORDER:
+        count = 0
+        for a in articles:
+            if a.get('series') != series_id or a['slug'] in seen:
+                continue
+            picked.append(a)
+            seen.add(a['slug'])
+            count += 1
+            if count >= per_series or len(picked) >= total:
+                break
+        if len(picked) >= total:
+            return picked[:total]
+    for coll in collections:
+        coll_id = coll.get('id') or coll.get('slug') or ''
+        cid_lower = str(coll_id).lower()
+        if not any(kw in cid_lower for kw in _HOME_ROTATION_SERIES_KEYWORDS):
+            continue
+        for a in articles:
+            if a.get('series') == coll_id and a['slug'] not in seen:
+                picked.append(a)
+                seen.add(a['slug'])
+                if len(picked) >= total:
+                    return picked[:total]
+    ranked = sorted(articles, key=_article_client_priority_score, reverse=True)
+    for a in ranked:
+        if len(picked) >= total:
+            break
+        if a['slug'] not in seen:
+            picked.append(a)
+            seen.add(a['slug'])
+    return picked[:total]
+
+
+def _home_rotation_item(article: dict, collections: list[dict]) -> dict:
+    slug = article['slug']
+    return {
+        'href': f'/blog/articles/{slug}',
+        'cat': _home_blog_cat(article, collections),
+        'title': article['title'],
+        'img': _article_thumb_src(article),
+        'views': None,
+    }
+
+
+def build_home_rotation_payload(articles: list[dict], collections: list[dict]) -> dict:
+    """Deux jeux de 3 articles pour rotation matin / apres-midi."""
+    picked = _pick_home_rotation_articles(articles, collections, 6)
+    items = [_home_rotation_item(a, collections) for a in picked]
+    if len(items) < 3:
+        return {'pools': [items], 'rotationPerDay': 2}
+    pool_a = items[:3]
+    pool_b = items[3:6] if len(items) >= 6 else items[3:]
+    while len(pool_b) < 3:
+        pool_b.append(items[len(pool_b) % len(items)])
+    return {'pools': [pool_a, pool_b[:3]], 'rotationPerDay': 2}
+
+
+def save_home_rotation_json(articles: list[dict], collections: list[dict], output_dir: Path) -> None:
+    """Export JSON pour la section blog de l'accueil (rotation 2x/jour)."""
+    payload = build_home_rotation_payload(articles, collections)
+    out_file = output_dir / 'home-rotation.json'
+    out_file.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
 def save_list_json(articles: list[dict], output_dir: Path) -> None:
     """Sauvegarde list.json pour compatibilite avec l'ancien systeme."""
     # Enleve le HTML du contenu pour l'index
@@ -1149,8 +1253,10 @@ def main():
     render_blog_index(articles, collections, output_dir, assets_prefix)
     print("  [OK] index.html")
 
-    # JSON list.json + sitemap (incl. series + types)
+    # JSON list.json + rotation accueil + sitemap (incl. series + types)
     save_list_json(articles, output_dir)
+    save_home_rotation_json(articles, collections, output_dir)
+    print("  [OK] home-rotation.json")
     generate_sitemap_blog(articles, collections, output_dir)
     print("  [OK] sitemap-blog.xml")
 

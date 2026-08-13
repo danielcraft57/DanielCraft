@@ -145,9 +145,28 @@ PRESTATIONS_DEAL_WEEK_JSON = DATA_DIR / 'prestations-deal-week.json'
 LIVRES_JSON = DATA_DIR / 'livres.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
 READMES_DIR = DATA_DIR / 'readmes'
-# Sources vitrines (anciennement showcase/) — publiées sous /vitrines/ au build
+# Sources vitrines (anciennement showcase/) — publiées sous /echantillons/ au build
 VITRINES_DEMOS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'demos'
 VITRINES_SCREENSHOTS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'screenshots'
+# Terme public Grand Est : échantillons (pas l'offre « site vitrine »)
+ECHANTILLONS_SLUG = 'echantillons'
+DEVANTURES_SLUG = ECHANTILLONS_SLUG  # alias historique (sortie dist/)
+
+
+def echantillons_url(rel: str = '') -> str:
+    """URL publique du catalogue d'exemples (/echantillons/...)."""
+    rel = (rel or '').strip().lstrip('/')
+    if not rel:
+        return f'/{ECHANTILLONS_SLUG}/'
+    last = rel.rsplit('/', 1)[-1]
+    if '.' in last:
+        return f'/{ECHANTILLONS_SLUG}/{rel}'
+    return f'/{ECHANTILLONS_SLUG}/{rel.rstrip("/")}/'
+
+
+def devantures_url(rel: str = '') -> str:
+    """Alias : anciennes URLs /devantures/ → /echantillons/."""
+    return echantillons_url(rel)
 
 # Filtres vitrines phares (mobile + raccourcis desktop)
 VITRINE_FEATURED_FILTER_KEYS = ['hcr', 'retail', 'beaute', 'sante', 'artisanat']
@@ -259,7 +278,7 @@ SITEMAP_PAGES = [
     ('/bouquins/', 'weekly', '0.9'),
     ('/pro', 'monthly', '0.55'),
     ('/audit', 'weekly', '0.95'),
-    ('/vitrines/', 'weekly', '0.85'),
+    ('/echantillons/', 'weekly', '0.85'),
     ('/processus', 'monthly', '0.75'),
     ('/metz', 'monthly', '0.80'),
     ('/portfolio', 'monthly', '0.55'),
@@ -522,7 +541,7 @@ def _inject_demo_protection(html: str) -> str:
     """
     Injecte meta robots + bandeau demo (shared/demo-protection.*) dans chaque HTML
     publie sous vitrines/<slug>/demo/. Dissuasion legere — pas une barriere technique absolue.
-    Chemins en ../../shared/ (profondeur demo/ depuis dist/vitrines/<slug>/demo/).
+    Chemins en ../../shared/ (profondeur demo/ depuis dist/devantures/<slug>/demo/).
     """
     if _DEMO_PROTECTION_MARKER in html:
         return html
@@ -639,11 +658,11 @@ def generate_robots_txt(output_dir: Path) -> None:
     demo_disallows: List[str] = []
     vdata = load_vitrines()
     if vdata and vdata.get('items'):
-        demo_disallows.append('# Dossiers /vitrines/<slug>/demo/ (HTML de demonstration — pas d’indexation)')
+        demo_disallows.append('# Dossiers /echantillons/<slug>/demo/ (HTML de demonstration — pas d’indexation)')
         for it in vdata['items']:
             slug = (it.get('slug') or '').strip()
             if slug:
-                demo_disallows.append(f'Disallow: /vitrines/{slug}/demo/')
+                demo_disallows.append(f'Disallow: {devantures_url(slug + "/demo/")}')
         demo_disallows.append('')
     demo_block = '\n'.join(demo_disallows)
 
@@ -654,7 +673,7 @@ def generate_robots_txt(output_dir: Path) -> None:
         "# Sitemap\n"
         f"Sitemap: {base}/sitemap.xml\n"
         f"Sitemap: {base}/sitemap-pages.xml\n"
-        f"Sitemap: {base}/sitemap-vitrines.xml\n"
+        f"Sitemap: {base}/sitemap-echantillons.xml\n"
         f"Sitemap: {base}/sitemap-prestations.xml\n"
         f"Sitemap: {base}/sitemap-bouquins.xml\n"
         f"Sitemap: {base}/blog/sitemap-blog.xml\n"
@@ -666,8 +685,8 @@ def generate_robots_txt(output_dir: Path) -> None:
         "Allow: /assets/\n"
         "\n"
         + demo_block
-        + "# Vitrines (hub, fiches, captures — hors dossiers demo ci-dessus)\n"
-        "Allow: /vitrines/\n"
+        + "# Echantillons (hub, fiches, captures — hors dossiers demo ci-dessus)\n"
+        "Allow: /echantillons/\n"
     )
     (output_dir / 'robots.txt').write_text(content, encoding='utf-8')
 
@@ -935,6 +954,48 @@ def write_livres_legacy_redirects(output_dir: Path) -> None:
     print(f'[OK] Redirection /livres/ -> /bouquins/ ({count + 2} page(s))')
 
 
+def write_vitrines_legacy_redirects(output_dir: Path) -> None:
+    """Ancien catalogue /vitrines/ et /devantures/ -> /echantillons/ (SEO + favoris)."""
+    target_hub = echantillons_url()
+    for old_root in ('vitrines', 'devantures'):
+        out = output_dir / old_root
+        if out.exists():
+            shutil.rmtree(out)
+        out.mkdir(parents=True, exist_ok=True)
+        (out / 'index.html').write_text(
+            _render_path_redirect_page(
+                target_hub,
+                page_title='Redirection vers les echantillons',
+                link_label='Continuer vers les echantillons',
+            ),
+            encoding='utf-8',
+        )
+        count = 0
+        for slug in vitrine_slugs_for_sitemap():
+            slug_dir = out / slug
+            slug_dir.mkdir(parents=True, exist_ok=True)
+            (slug_dir / 'index.html').write_text(
+                _render_path_redirect_page(
+                    echantillons_url(slug),
+                    page_title='Redirection echantillon',
+                    link_label='Continuer vers la fiche',
+                ),
+                encoding='utf-8',
+            )
+            demo_dir = slug_dir / 'demo'
+            demo_dir.mkdir(parents=True, exist_ok=True)
+            (demo_dir / 'index.html').write_text(
+                _render_path_redirect_page(
+                    echantillons_url(f'{slug}/demo/index.html'),
+                    page_title='Redirection demo',
+                    link_label='Continuer vers la demo',
+                ),
+                encoding='utf-8',
+            )
+            count += 1
+        print(f'[OK] Redirection /{old_root}/ -> /echantillons/ ({count * 2 + 1} page(s))')
+
+
 def _render_contact_redirect_page() -> str:
     """Ancienne page /contact → ancre formulaire sur l'accueil."""
     base = SITE_BASE.rstrip('/')
@@ -972,7 +1033,7 @@ def load_vitrines() -> Optional[Dict[str, Any]]:
 
 
 def vitrine_slugs_for_sitemap() -> List[str]:
-    """Slugs des fiches /vitrines/<slug>/ depuis le catalogue (ordre vitrines.json)."""
+    """Slugs des fiches /echantillons/<slug>/ depuis le catalogue (ordre vitrines.json)."""
     data = load_vitrines()
     if not data or not isinstance(data.get('items'), list):
         return []
@@ -1111,19 +1172,29 @@ def _picture_img_html(
     width: Optional[int] = None,
     height: Optional[int] = None,
     style: str = '',
+    defer_src: bool = False,
 ) -> str:
-    """IMG ou PICTURE (WebP + fallback) pour un chemin /assets/... jpg/png."""
+    """IMG ou PICTURE (WebP + fallback) pour un chemin /assets/... jpg/png.
+
+    defer_src=True : data-src / data-srcset + classe dc-lazy-img (lazy-images.js).
+    """
     src = (src or '').strip()
     if not src:
         return ''
+    classes = [c for c in (class_name or '').split() if c]
+    if defer_src and 'dc-lazy-img' not in classes:
+        classes.append('dc-lazy-img')
     attrs = [
-        f'src="{html.escape(src, quote=True)}"',
         f'alt="{html.escape(alt)}"',
-        f'loading="{html.escape(loading)}"',
         f'decoding="{html.escape(decoding)}"',
     ]
-    if class_name:
-        attrs.append(f'class="{html.escape(class_name)}"')
+    if defer_src:
+        attrs.insert(0, f'data-src="{html.escape(src, quote=True)}"')
+    else:
+        attrs.insert(0, f'src="{html.escape(src, quote=True)}"')
+        attrs.append(f'loading="{html.escape(loading)}"')
+    if classes:
+        attrs.append(f'class="{" ".join(html.escape(c) for c in classes)}"')
     if width:
         attrs.append(f'width="{int(width)}"')
     if height:
@@ -1141,9 +1212,10 @@ def _picture_img_html(
     local = BASE_DIR / src.lstrip('/').replace('/', os.sep)
     if not local.is_file():
         return img
+    srcset_attr = 'data-srcset' if defer_src else 'srcset'
     return (
         f'<picture>'
-        f'<source srcset="{html.escape(webp_rel, quote=True)}" type="image/webp">'
+        f'<source {srcset_attr}="{html.escape(webp_rel, quote=True)}" type="image/webp">'
         f'{img}'
         f'</picture>'
     )
@@ -1171,7 +1243,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Conversion commerce, rayons et prise de contact',
         'included': (
-            'Une <strong>maquette de site</strong> déjà structurée pour <strong>vendre en ligne</strong> : '
+            'Une <strong>devanture web</strong> déjà structurée pour <strong>vendre en ligne</strong> : '
             'offres, preuves, appels à l’action et parcours contact — vous remplacez les textes d’exemple par '
             'les vôtres pour <strong>__TITLE__</strong> et vos visuels produits. Parfait pour <strong>tester '
             'votre discours retail</strong> (drive, horaires, fidélité) avant d’industrialiser avec moi le '
@@ -1189,7 +1261,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Parcours produit, preuves et conversion côté tech',
         'included': (
-            'Une <strong>maquette de site</strong> pensée comme un <strong>site produit</strong> : '
+            'Une <strong>devanture web</strong> pensée comme un <strong>site produit</strong> : '
             'navigation claire, blocs preuve, FAQ et appels à l’action vers <strong>démo ou contact</strong>. '
             'Pour <strong>__TITLE__</strong>, vous substituez textes et captures puis présentez le rendu à vos '
             'prospects avant d’investir dans l’<strong>API</strong>, l’<strong>auth</strong> ou la '
@@ -1206,7 +1278,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Crédibilité terrain, devis et prise de contact B2B',
         'included': (
-            'Une <strong>maquette de site</strong> qui met en scène vos <strong>prestations</strong>, '
+            'Une <strong>devanture web</strong> qui met en scène vos <strong>prestations</strong>, '
             'vos <strong>références</strong> et un <strong>parcours devis</strong> lisible. Pour '
             '<strong>__TITLE__</strong>, vous adaptez les formulations à votre métier (facility, conciergerie, '
             'multi-sites…) puis vous validez le discours commercial avant de brancher vos outils métiers ou '
@@ -1223,7 +1295,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Carte, ambiance et conversion réservation',
         'included': (
-            'Une <strong>maquette de site</strong> orientée <strong>HCR</strong> : photos, menus, horaires '
+            'Une <strong>devanture web</strong> orientée <strong>HCR</strong> : photos, menus, horaires '
             'et <strong>appel à la réservation</strong>. Pour <strong>__TITLE__</strong>, vous remplacez textes '
             'et visuels puis testez votre promesse (brasserie, traiteur, bar…) avant de connecter votre '
             'moteur de réservation ou votre téléphonie.'
@@ -1238,7 +1310,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Parcours apprenant, modules et inscription',
         'included': (
-            'Une <strong>maquette de site</strong> pensée <strong>formation</strong> : parcours clair, '
+            'Une <strong>devanture web</strong> pensée <strong>formation</strong> : parcours clair, '
             'niveaux, preuves et <strong>prise de contact</strong>. Pour <strong>__TITLE__</strong>, vous '
             'personnalisez les intitulés et visuels campus avant de brancher votre LMS, votre paiement ou votre '
             'outil de gestion des sessions.'
@@ -1253,7 +1325,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Chambres, expérience et conversion réservation',
         'included': (
-            'Une <strong>maquette de site</strong> type <strong>grand hôtel</strong> : gammes de chambres, '
+            'Une <strong>devanture web</strong> type <strong>grand hôtel</strong> : gammes de chambres, '
             'spa, séminaires et CTA réservation. Pour <strong>__TITLE__</strong>, vous adaptez textes et '
             'visuels puis validez le discours avant de connecter votre moteur de réservation ou votre PMS.'
         ),
@@ -1267,7 +1339,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Soins, confiance et conversion rendez-vous',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>beauté & bien-être</strong> : fiches soins, '
+            'Une <strong>devanture web</strong> pour <strong>beauté & bien-être</strong> : fiches soins, '
             'engagements et formulaire RDV. Pour <strong>__TITLE__</strong>, vous remplacez textes et photos '
             'puis testez votre promesse avant de brancher votre agenda ou votre logiciel métier.'
         ),
@@ -1281,7 +1353,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Prestations atelier et prise de rendez-vous',
         'included': (
-            'Une <strong>maquette de site</strong> orientée <strong>atelier</strong> : expertises, visuels '
+            'Une <strong>devanture web</strong> orientée <strong>atelier</strong> : expertises, visuels '
             'véhicules et <strong>formulaire RDV</strong>. Pour <strong>__TITLE__</strong>, vous adaptez '
             'offres (pneus, carrosserie, révision…) puis validez le message avant de connecter votre planning '
             'ou votre téléphonie.'
@@ -1296,7 +1368,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Histoire de maison, coffrets et conversion',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>commerce artisanal</strong> : galerie, '
+            'Une <strong>devanture web</strong> pour <strong>commerce artisanal</strong> : galerie, '
             'storytelling et FAQ coffrets. Pour <strong>__TITLE__</strong>, vous remplacez textes et visuels '
             'produits avant de brancher votre caisse en ligne ou votre logistique.'
         ),
@@ -1310,7 +1382,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Lisibilité, confiance et prise de contact soignée',
         'included': (
-            'Une <strong>maquette de site</strong> adaptée <strong>santé</strong> : repères tarifaires, '
+            'Une <strong>devanture web</strong> adaptée <strong>santé</strong> : repères tarifaires, '
             'prévention et <strong>demande de rappel</strong>. Pour <strong>__TITLE__</strong>, vous '
             'personnalisez les contenus médicaux avec votre équipe puis branchez votre secrétariat ou votre '
             'outil de prise de rendez-vous conforme au cadre légal.'
@@ -1325,7 +1397,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Offres, transparence et prise de contact mesurée',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>finance & banque</strong> : offres comparables, '
+            'Une <strong>devanture web</strong> pour <strong>finance & banque</strong> : offres comparables, '
             'repères agences et CTA contact. Pour <strong>__TITLE__</strong>, vous adaptez formulations et '
             'mentions réglementaires avec votre conformité avant toute mise en production.'
         ),
@@ -1339,7 +1411,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Savoir-faire machine et conversion devis',
         'included': (
-            'Une <strong>maquette de site</strong> orientée <strong>industrie</strong> : process, équipements '
+            'Une <strong>devanture web</strong> orientée <strong>industrie</strong> : process, équipements '
             'et FAQ techniques. Pour <strong>__TITLE__</strong>, vous remplacez textes et preuves puis '
             'validez le discours commercial avant de connecter votre ERP ou votre pipeline commercial.'
         ),
@@ -1353,7 +1425,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Expertise, packs et prise de rendez-vous',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>cabinets & conseil</strong> : méthode, '
+            'Une <strong>devanture web</strong> pour <strong>cabinets & conseil</strong> : méthode, '
             'forfaits et CTA bilan flash ou RDV. Pour <strong>__TITLE__</strong>, vous adaptez les messages à '
             'votre cible (TPE, associations, filiales…) avant de brancher votre agenda ou votre CRM.'
         ),
@@ -1367,7 +1439,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Mobilisation, dons et bénévolat',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>ESS & associations</strong> : campagnes, '
+            'Une <strong>devanture web</strong> pour <strong>ESS & associations</strong> : campagnes, '
             'preuves d’impact et formulaires engagement. Pour <strong>__TITLE__</strong>, vous remplacez textes '
             'et visuels terrain avant de connecter votre outil de dons ou votre mailing.'
         ),
@@ -1381,7 +1453,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Biens, crédibilité locale et conversion estimation',
         'included': (
-            'Une <strong>maquette de site</strong> type <strong>agence immobilière</strong> : sélection de biens, '
+            'Une <strong>devanture web</strong> type <strong>agence immobilière</strong> : sélection de biens, '
             'équipe et formulaire d’estimation. Pour <strong>__TITLE__</strong>, vous remplacez annonces et visuels '
             'avant de brancher votre CRM ou vos portails partenaires.'
         ),
@@ -1394,7 +1466,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Expertises, méthode et prise de rendez-vous',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>cabinet d’avocats</strong> : domaines, équipe et '
+            'Une <strong>devanture web</strong> pour <strong>cabinet d’avocats</strong> : domaines, équipe et '
             'FAQ. Pour <strong>__TITLE__</strong>, vous adaptez les contenus avec votre conformité avant toute '
             'mise en ligne.'
         ),
@@ -1408,7 +1480,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Projets, méthode et brief contact',
         'included': (
-            'Une <strong>maquette de site</strong> type <strong>atelier d’architecture</strong> : réalisations, '
+            'Une <strong>devanture web</strong> type <strong>atelier d’architecture</strong> : réalisations, '
             'process et formulaire brief. Pour <strong>__TITLE__</strong>, vous intégrez vos visuels chantier '
             'et livrables avant de connecter votre outil de gestion de projet.'
         ),
@@ -1422,7 +1494,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Cours, formules et conversion essai',
         'included': (
-            'Une <strong>maquette de site</strong> pour <strong>fitness & sport</strong> : planning, offres et '
+            'Une <strong>devanture web</strong> pour <strong>fitness & sport</strong> : planning, offres et '
             'inscription. Pour <strong>__TITLE__</strong>, vous remplacez textes et visuels avant de brancher '
             'votre logiciel d’abonnement ou votre agenda cours.'
         ),
@@ -1436,7 +1508,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Portfolio, prestations et prise de contact',
         'included': (
-            'Une <strong>maquette de site</strong> type <strong>créatif / photographe</strong> : galerie masonry, '
+            'Une <strong>devanture web</strong> type <strong>créatif / photographe</strong> : galerie masonry, '
             'offres et contact. Pour <strong>__TITLE__</strong>, vous remplacez séries et tarifs avant de '
             'connecter votre galerie privée ou votre CRM.'
         ),
@@ -1494,7 +1566,7 @@ def _vitrine_body_copy(it: Dict[str, Any], price: int, demo_rel_url: str) -> Dic
             '<div class="vitrine-detail-note box-soft vitrine-prose">'
             '<p><strong>Livraison & visibilité</strong> : <strong>fichiers sources</strong> prêts à '
             'héberger — <strong>aucune base de données</strong> requise. Les formulaires sont des '
-            '<strong>maquettes</strong> (branchement e-mail, CRM ou paiement sur devis). Les captures de cette '
+            '<strong>exemples</strong> (branchement e-mail ou CRM sur devis). Les captures de cette '
             f'fiche illustrent le rendu pour <strong>{title_e}</strong> ; elles peuvent être régénérées après '
             'vos contenus définitifs. Pour installation, domaine ou hébergement, utilisez le bloc à droite ou '
             f'{contact_a}.</p>'
@@ -1502,7 +1574,7 @@ def _vitrine_body_copy(it: Dict[str, Any], price: int, demo_rel_url: str) -> Dic
         )
 
     seo_line = (
-        f'Démo live, pack visuels multi-écrans et sources prêtes au déploiement · à partir de {price} € HT'
+        f'Démo live et visuels multi-écrans — un échantillon pour vous projeter, sans achat de modèle.'
     )
 
     return {
@@ -1552,20 +1624,20 @@ def _build_vitrine_seo_bundle(
     desc = custom_desc or (
         f'{excerpt} '
         f'Démo interactive + captures desktop, tablette et mobile. '
-        f'Maquette {stack_bits} livrable. Dès {price} € HT — DanielCraft Lorraine.'
+        f'Échantillon {stack_bits} pour se projeter — DanielCraft, Grand Est.'
     )
     page_description = _truncate_meta_text(desc, 158)
 
     kw_parts = [
         'modèle site web professionnel',
-        'maquette web responsive',
+        'échantillon site web',
         'landing page secteur',
         cat_label.lower(),
         title.lower(),
         slug.replace('-', ' '),
         'démo site web',
         'capture site desktop mobile',
-        'achat maquette site',
+        'échantillon site web Grand Est',
         'DanielCraft Metz',
     ] + [str(s).lower() for s in stack[:6]]
     seen: set[str] = set()
@@ -1595,7 +1667,7 @@ def _build_vitrine_seo_bundle(
         130,
     )
 
-    hero_badge = f'Modèle de site pro · {cat_label}'
+    hero_badge = f'Échantillon · {cat_label}'
 
     return {
         'page_title': page_title,
@@ -1631,20 +1703,20 @@ def _vitrine_screenshot_paths(slug: str, prefix: str) -> tuple[str, str, str]:
     """
     Chemins pour une capture : (depuis la racine du site sans slash initial,
     depuis la fiche vitrine, absolu depuis la racine du site).
-    Exemple : ('vitrines/hub/screenshots/desktop_....webp', 'screenshots/desktop_....webp', '/vitrines/hub/screenshots/...')
+    Exemple : ('devantures/hub/screenshots/desktop_....webp', 'screenshots/desktop_....webp', '/devantures/hub/screenshots/...')
     """
     name = _vitrine_screenshot_basename(slug, prefix)
     if not name:
         return '', '', ''
     return (
-        f'vitrines/{slug}/screenshots/{name}',
+        f'{DEVANTURES_SLUG}/{slug}/screenshots/{name}',
         f'screenshots/{name}',
-        f'/vitrines/{slug}/screenshots/{name}',
+        devantures_url(f'{slug}/screenshots/{name}'),
     )
 
 
 def _rewrite_vitrine_demo_shared_refs(text: str) -> str:
-    """Les démos sont servies sous /vitrines/<slug>/demo/ : ../shared/ -> ../../shared/ (idempotent)."""
+    """Les démos sont servies sous /devantures/<slug>/demo/ : ../shared/ -> ../../shared/ (idempotent)."""
     return re.sub(r'(?:\.\./)+(?=shared/)', '../../', text)
 
 
@@ -1693,13 +1765,13 @@ def publish_audits_json_for_api(output_dir: Path) -> None:
 
 
 def publish_vitrines_to_dist(output_dir: Path) -> None:
-    """Publie assets/vitrines/* vers dist/vitrines/ (hub, shared, secteurs/demo/, captures par slug)."""
+    """Publie assets/vitrines/* vers dist/devantures/ (hub, shared, secteurs/demo/, captures par slug)."""
     demos_src = VITRINES_DEMOS_SRC
     shots_src = VITRINES_SCREENSHOTS_SRC
     if not demos_src.is_dir():
-        print('[WARN] assets/vitrines/demos absent — vitrines statiques non publiees')
+        print('[WARN] assets/vitrines/demos absent — devantures statiques non publiees')
         return
-    out = output_dir / 'vitrines'
+    out = output_dir / DEVANTURES_SLUG
     out.mkdir(parents=True, exist_ok=True)
 
     src_shared = demos_src / 'shared'
@@ -1714,6 +1786,7 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
         hub_text = hub_tpl.read_text(encoding='utf-8')
         hub_text = re.sub(r'href="([a-z]+)/index.html"', r'href="\1/demo/index.html"', hub_text)
         hub_text = hub_text.replace('ÔÇö', '—')
+        hub_text = hub_text.replace('/vitrines/', '/echantillons/')
         # Index racine réservé à la page catalogue DanielCraft (générée après copie).
         (out / 'hub-bulma.html').write_text(hub_text, encoding='utf-8')
     for name in ('hub.css', 'hub-texture.png'):
@@ -1745,6 +1818,7 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
                     continue
                 txt = _rewrite_vitrine_demo_shared_refs(txt)
                 if ext == '.html':
+                    txt = txt.replace('/vitrines/', '/echantillons/')
                     txt = _inject_demo_protection(txt)
                 dest.write_text(txt, encoding='utf-8')
             else:
@@ -1758,7 +1832,7 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
             if dst_sh.exists():
                 shutil.rmtree(dst_sh)
             shutil.copytree(sub, dst_sh)
-    print(f'[OK] vitrines/ publie dans {out}')
+    print(f'[OK] echantillons/ publie dans {out}')
 
 
 def _vitrines_distinct_category_keys(items: List[Dict[str, Any]]) -> List[str]:
@@ -1832,16 +1906,17 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
             f'style="--reveal-delay:{delay}ms">'
         )
         lines.append(
-            f'            <a class="vitrine-card-media" href="/vitrines/{html.escape(slug)}/" '
+            f'            <a class="vitrine-card-media" href="{html.escape(devantures_url(slug))}" '
             f'aria-label="{card_cta}">'
         )
         lines.append(
             '                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" '
             'data-vitrine-card-hover-scroll>'
         )
+        # data-src : lazy-images.js (évite de tout télécharger d'un coup sur /echantillons/)
         lines.append(
-            f'                    <img src="{html.escape(thumb)}" alt="" width="640" height="400" '
-            'loading="lazy" decoding="async" class="vitrine-card-img">'
+            f'                    <img data-src="{html.escape(thumb)}" alt="" width="640" height="400" '
+            'decoding="async" class="vitrine-card-img dc-lazy-img">'
         )
         lines.append('                </div>')
         lines.append('                <span class="vitrine-card-tint" aria-hidden="true"></span>')
@@ -1853,11 +1928,11 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         lines.append(f'                <p class="vitrine-card-excerpt">{excerpt}</p>')
         lines.append('                <div class="vitrine-card-actions">')
         lines.append(
-            f'                    <a class="btn btn-primary vitrine-card-btn" href="/vitrines/{html.escape(slug)}/">'
+            f'                    <a class="btn btn-primary vitrine-card-btn" href="{html.escape(devantures_url(slug))}">'
             f'{card_cta}</a>'
         )
         lines.append(
-            f'                    <a class="btn btn-outline vitrine-card-btn" href="/vitrines/{html.escape(slug)}/demo/index.html" '
+            f'                    <a class="btn btn-outline vitrine-card-btn" href="{html.escape(devantures_url(slug + "/demo/index.html"))}" '
             'target="_blank" rel="noopener noreferrer">Démo live</a>'
         )
         lines.append('                </div>')
@@ -1866,7 +1941,7 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
     lines.append('        </div>')
     lines.append(
         '        <p class="vitrines-footnote scroll-reveal">'
-        'Modèle catalogue à partir de 42&nbsp;€ HT — ou <a href="/prestations/site-vitrine/">site sur mesure à 490&nbsp;€ HT</a>.</p>'
+        'Exemples pour se projeter — ou <a href="/prestations/site-vitrine/">site sur mesure dès 390&nbsp;€ HT</a>.</p>'
     )
     return lines
 
@@ -1895,8 +1970,8 @@ def build_home_vitrines_teaser_embed() -> None:
         cat = (it.get('category') or '').strip()
         cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()))
         thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
-        demo_url = f'/vitrines/{html.escape(slug)}/demo/index.html'
-        fiche_url = f'/vitrines/{html.escape(slug)}/'
+        demo_url = html.escape(devantures_url(f'{slug}/demo/index.html'))
+        fiche_url = html.escape(devantures_url(slug))
         cls = f'home-vitrine-teaser scroll-reveal{extra_class}'
         return (
             f'<article class="{cls}">'
@@ -1927,7 +2002,7 @@ def build_home_vitrines_teaser_embed() -> None:
         '<!-- Genere par build.py : 3 exemples vitrine pour l\'accueil -->\n'
         f'<div class="home-vitrines-teaser-grid">{"".join(cards)}</div>\n'
         '<p class="home-vitrines-teaser-more">'
-        '<a href="/vitrines/">Voir tous les modèles par métier</a>'
+        f'<a href="{html.escape(echantillons_url())}">Voir tous les echantillons</a>'
         '</p>\n'
     )
     if _write_text_if_changed(path_out, content):
@@ -1935,7 +2010,7 @@ def build_home_vitrines_teaser_embed() -> None:
 
 
 def build_vitrines_page_collection_embed() -> None:
-    """Fragment catalogue (filtre + grille) pour la page /vitrines/ — theme DanielCraft."""
+    """Fragment catalogue (filtre + grille) pour la page /devantures/ — theme DanielCraft."""
     data = load_vitrines()
     path_out = INCLUDES_DIR / 'vitrines-page-collection.html'
     if not data or not data.get('items'):
@@ -1985,12 +2060,12 @@ def build_vitrines_page_collection_embed() -> None:
 
 
 def build_vitrines_catalog_embed() -> None:
-    """Genere includes/vitrines-catalog-embed.html (accueil) + vitrines-page-collection.html (page /vitrines/)."""
+    """Genere includes/vitrines-catalog-embed.html (accueil) + vitrines-page-collection.html (page /devantures/)."""
     data = load_vitrines()
     path_out = INCLUDES_DIR / 'vitrines-catalog-embed.html'
     if not data or not data.get('items'):
         path_out.write_text(
-            '<section id="vitrines" class="vitrines-showcase" data-vitrines-root><div class="container">'
+            '<section id="echantillons" class="vitrines-showcase" data-vitrines-root><div class="container">'
             '<p class="vitrines-empty">Catalogue indisponible (ajoutez <code>src/data/vitrines.json</code>).</p>'
             '</div></section>\n',
             encoding='utf-8',
@@ -1999,7 +2074,7 @@ def build_vitrines_catalog_embed() -> None:
         print('[WARN] vitrines-catalog-embed.html : pas de donnees vitrines')
         return
 
-    hub = (data.get('vitrines_hub_path') or data.get('showcase_hub_path') or '/vitrines/hub-bulma.html').strip()
+    hub = (data.get('vitrines_hub_path') or data.get('showcase_hub_path') or devantures_url('hub-bulma.html')).strip()
     if not hub.startswith('/'):
         hub = '/' + hub
 
@@ -2009,19 +2084,18 @@ def build_vitrines_catalog_embed() -> None:
 
     lines: List[str] = []
     lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
-    lines.append('<section id="vitrines" class="vitrines-showcase" data-vitrines-root>')
+    lines.append('<section id="echantillons" class="vitrines-showcase" data-vitrines-root>')
     lines.append('    <div class="container">')
     lines.append('        <div class="section-header scroll-reveal">')
-    lines.append('            <span class="section-badge">Thèmes vitrine</span>')
+    lines.append('            <span class="section-badge">Échantillons</span>')
     lines.append(
-        '            <h2 class="section-title">Dix-neuf thèmes sectoriels, prêts à accueillir votre marque</h2>'
+        '            <h2 class="section-title">Des échantillons par métier, pour voir ce que ça donne</h2>'
     )
     lines.append('            <p class="section-description">')
     lines.append(
-        '                Chaque thème est un parcours complet (navigation, contenus, médias, prise de contact) '
-        '— pas une simple maquette figée. Les aperçus sont pensés pour les pages longues : vignette fenêtrée '
-        'avec défilement léger au survol. Comparez les univers ici, puis ouvrez la '
-        f'<a href="/vitrines/">page catalogue</a> pour les fiches détaillées.'
+        '                Comme au marché : tu goûtes un bout avant de remplir le cornet. Ici c\'est pareil — '
+        'parcours, contenus, prise de contact. Comparez, ouvrez une démo, puis la '
+        f'<a href="{html.escape(echantillons_url())}">page catalogue</a> pour les fiches.'
     )
     lines.append('            </p>')
     lines.append('        </div>')
@@ -2036,7 +2110,7 @@ def build_vitrines_catalog_embed() -> None:
 
 
 def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
-    """Genere vitrines/<slug>/index.html pour chaque entree du catalogue."""
+    """Genere devantures/<slug>/index.html pour chaque entree du catalogue."""
     data = load_vitrines()
     if not data or not data.get('items'):
         return []
@@ -2046,7 +2120,7 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         return []
     content_tpl = content_path.read_text(encoding='utf-8')
     template_path = TEMPLATES_DIR / 'base.html'
-    out_root = output_dir / 'vitrines'
+    out_root = output_dir / DEVANTURES_SLUG
     default_price = int(data.get('default_price_eur') or 42)
     slugs_out: List[str] = []
     for it in data['items']:
@@ -2066,17 +2140,11 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         )
         stack = it.get('stack') or []
         stack_html = ''.join(f'<li>{html.escape(str(x))}</li>' for x in stack)
-        stripe_url = (it.get('stripe_payment_link_url') or '').strip()
-        stripe_pk = _stripe_publishable_key()
-        stripe_checkout = bool(stripe_pk) and not stripe_url
         page_scripts = [
             'main.js',
             'vitrines-screenshots.js',
-            'vitrine-detail-modals.js',
             'vitrine-detail-effects.js',
         ]
-        if stripe_url or stripe_pk:
-            page_scripts.append('vitrine-stripe-checkout.js')
         _, d_desk, a_desk = _vitrine_screenshot_paths(slug, 'desktop')
         _, d_tab, _a_tab = _vitrine_screenshot_paths(slug, 'tablet')
         _, d_mob, _a_mob = _vitrine_screenshot_paths(slug, 'mobile')
@@ -2086,8 +2154,8 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         mob = d_mob or d_desk or fallback
         og_desk = _resolve_generated_og(slug, a_desk or fallback, subdir='vitrines')
         title = (it.get('title') or slug).strip()
-        mail_subj = quote(f'Installation vitrine — {title}')
-        page_url_abs = _to_absolute_url(f'/vitrines/{slug}/')
+        mail_subj = quote(f'Echantillon — {title}')
+        page_url_abs = _to_absolute_url(devantures_url(slug))
         shot_desk_abs = _to_absolute_url(a_desk or fallback)
         shot_tab_abs = _to_absolute_url(_a_tab or a_desk or fallback)
         shot_mob_abs = _to_absolute_url(_a_mob or a_desk or fallback)
@@ -2097,8 +2165,8 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         )
         vars_dict = DEFAULT_VARS.copy()
         vars_dict.update({
-            'current_page': 'vitrine',
-            'page_url': f'{SITE_BASE.rstrip("/")}/vitrines/{slug}/',
+            'current_page': 'echantillons',
+            'page_url': page_url_abs,
             'og_image': og_desk,
             'og_type': 'website',
             'extra_css': 'vitrines-portfolio.css',
@@ -2107,24 +2175,19 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
             'vitrine_tagline': it.get('tagline') or '',
             'vitrine_excerpt': it.get('excerpt') or '',
             'vitrine_slug': slug,
-            'vitrine_demo_url': f'/vitrines/{slug}/demo/index.html',
+            'vitrine_demo_url': devantures_url(f'{slug}/demo/index.html'),
             'vitrine_shot_desktop': desk,
             'vitrine_shot_tablet': tab,
             'vitrine_shot_mobile': mob,
             'vitrine_features_html': features_html,
             'vitrine_stack_html': stack_html,
-            'vitrine_price_eur': str(price),
-            'vitrine_stripe_url': stripe_url,
-            'vitrine_has_stripe': stripe_url,
-            'stripe_publishable_key': stripe_pk,
-            'vitrine_has_stripe_checkout': stripe_checkout,
             'vitrine_mailto_subject': mail_subj,
         })
         vars_dict.update(seo_bundle)
-        demo_rel = f'/vitrines/{slug}/demo/index.html'
+        demo_rel = devantures_url(f'{slug}/demo/index.html')
         vars_dict.update(_vitrine_body_copy(it, price, demo_rel))
         _normalize_page_meta(vars_dict, slug)
-        vars_dict['page_url'] = _to_absolute_url(f'/vitrines/{slug}/')
+        vars_dict['page_url'] = page_url_abs
         vars_dict['og_image'] = _og_image_url_with_cache_bust(_to_absolute_url(og_desk))
         _apply_og_image_file_meta(vars_dict)
         scripts = vars_dict.get('page_scripts') or []
@@ -2137,7 +2200,7 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         dest_dir.mkdir(parents=True, exist_ok=True)
         (dest_dir / 'index.html').write_text(html_output, encoding='utf-8')
         slugs_out.append(slug)
-    print(f'[OK] {len(slugs_out)} page(s) vitrine dans {out_root}')
+    print(f'[OK] {len(slugs_out)} page(s) devanture dans {out_root}')
     return slugs_out
 
 
@@ -3657,6 +3720,7 @@ def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> st
                     class_name='livre-card-cover-stack-img',
                     loading='lazy',
                     style=f'--stack-i:{i}',
+                    defer_src=True,
                 )
             )
         if imgs:
@@ -3674,6 +3738,7 @@ def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> st
             loading='lazy',
             width=210,
             height=280,
+            defer_src=True,
         )
         return (
             f'<div class="prestation-card-visual livre-card-visual livre-card-visual--cover" '
@@ -4580,7 +4645,7 @@ def generate_webp_variants(assets_root: Path) -> None:
 
 
 def generate_sitemap_vitrines(output_dir: Path) -> None:
-    """Genere sitemap-vitrines.xml : catalogue /vitrines/ et fiches /vitrines/<slug>/."""
+    """Genere sitemap-echantillons.xml : catalogue /echantillons/ et fiches."""
     lastmod = datetime.now().strftime('%Y-%m-%d')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -4590,18 +4655,21 @@ def generate_sitemap_vitrines(output_dir: Path) -> None:
         'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
     ]
     base = SITE_BASE.rstrip('/')
-    lines.append(_sitemap_url_line(base, '/vitrines/', lastmod, 'weekly', '0.80'))
+    lines.append(_sitemap_url_line(base, echantillons_url(), lastmod, 'weekly', '0.80'))
     for slug in vitrine_slugs_for_sitemap():
-        lines.append(_sitemap_url_line(base, f'/vitrines/{slug}/', lastmod, 'monthly', '0.60'))
+        lines.append(_sitemap_url_line(base, echantillons_url(slug), lastmod, 'monthly', '0.60'))
     lines.append('</urlset>')
-    (output_dir / 'sitemap-vitrines.xml').write_text('\n'.join(lines), encoding='utf-8')
+    xml = '\n'.join(lines)
+    (output_dir / 'sitemap-echantillons.xml').write_text(xml, encoding='utf-8')
+    (output_dir / 'sitemap-devantures.xml').write_text(xml, encoding='utf-8')
+    (output_dir / 'sitemap-vitrines.xml').write_text(xml, encoding='utf-8')
 
 
 def generate_sitemap_pages(
     output_dir: Path,
     project_slugs: Optional[List[str]] = None,
 ) -> None:
-    """Genere sitemap-pages.xml : pages statiques + projets (vitrines dans sitemap-vitrines.xml)."""
+    """Genere sitemap-pages.xml : pages statiques + projets (echantillons dans sitemap-echantillons.xml)."""
     lastmod = datetime.now().strftime('%Y-%m-%d')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -4663,7 +4731,7 @@ def generate_sitemap_index(output_dir: Path) -> None:
         '              xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
         'http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-pages.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
-        f'  <sitemap><loc>{SITE_BASE}/sitemap-vitrines.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
+        f'  <sitemap><loc>{SITE_BASE}/sitemap-echantillons.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-prestations.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-bouquins.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/blog/sitemap-blog.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
@@ -4901,6 +4969,7 @@ def main():
     build_prestation_pages(template_engine, OUTPUT_DIR)
     write_prestations_catalog_redirect(OUTPUT_DIR)
     write_livres_legacy_redirects(OUTPUT_DIR)
+    write_vitrines_legacy_redirects(OUTPUT_DIR)
     write_contact_redirect(OUTPUT_DIR)
     build_livre_pages(template_engine, OUTPUT_DIR)
 
@@ -4910,7 +4979,7 @@ def main():
     generate_sitemap_livres(OUTPUT_DIR)
     generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs)
     generate_sitemap_index(OUTPUT_DIR)
-    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml, sitemap-prestations.xml, sitemap-bouquins.xml generes")
+    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-echantillons.xml, sitemap-prestations.xml, sitemap-bouquins.xml generes")
 
     print(f"\n[OK] Build termine ! {success_count}/{len(pages)} page(s) generee(s) dans {OUTPUT_DIR}.")
     

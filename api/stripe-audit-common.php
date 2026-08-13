@@ -163,6 +163,8 @@ function stripe_create_audit_checkout_session(
         $params['customer_email'] = $customerEmail;
     }
 
+    stripe_apply_statement_descriptor_suffix($params, 'AUDIT WEB');
+
     $res = stripe_api('POST', '/checkout/sessions', $params);
     if (!$res['ok'] || !is_array($res['data'])) {
         return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => $res['error']];

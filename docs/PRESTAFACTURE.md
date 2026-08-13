@@ -35,7 +35,8 @@ curl -s -H "Authorization: Bearer $PRESTAFACTURE_API_TOKEN" \
 
 Code PHP : `api/prestafacture-common.php`  
 - `prestafacture_issue_audit_invoice` — facture PAID + email PDF  
-- `prestafacture_issue_quote_devis` — devis + envoi
+- `prestafacture_issue_quote_devis` — devis + envoi  
+- Avoirs : **pas dans l'API publique** (a creer dans l'UI) — voir section remboursement ci-dessous
 
 ## Parcours (ce qu'on peut / ne peut pas faire)
 
@@ -167,6 +168,23 @@ Envoi : `POST /devis/:id/send` — PDF + liens accepter / refuser (`publicToken`
 - Preferer session JWT `POST /api/products` pour un import massif (hors rate limit public)
 - Via API publique : espacer les `POST /produits`
 - Avant creation : `GET /produits?search=MON-SKU`
+
+## Remboursement Stripe + avoir Prestafacture
+
+Deux systemes distincts : Stripe rend l'argent, Prestafacture corrige la compta.
+
+**Stripe** (encaissement) — helper `stripe_refund_payment_intent()` dans `api/stripe-common.php`, script :
+
+```bash
+python scripts/stripe_refund.py --session cs_live_xxx --env .env.prod
+python scripts/stripe_refund.py --payment-intent pi_xxx --env .env.prod
+```
+
+Raisons Stripe : `requested_by_customer` (defaut), `duplicate`, `fraudulent`. Pas d'endpoint HTTP public.
+
+**Prestafacture** (facture PDF) — l'API publique (`GET /api/public`) n'expose que `clients`, `produits`, `factures`, `devis`. **Pas de ressource avoirs** (`POST /avoirs`, `/factures/:id/avoir` → 404). Un `POST /factures` avec `type: AVOIR` cree une **nouvelle facture PAID**, pas un avoir.
+
+Les factures ont un champ `appliedAvoirs` : les avoirs existent dans l'app, pas dans l'API Bearer. Apres un refund Stripe : ouvrir la facture dans Prestafacture → **creer un avoir** a la main, puis l'envoyer au client si besoin.
 
 ## Pages publiques (hors jeton API)
 

@@ -65,7 +65,7 @@ FILES_TO_DEPLOY=(
     "${DIST_DIR}/robots.txt"
     "${DIST_DIR}/sitemap.xml"
     "${DIST_DIR}/sitemap-pages.xml"
-    "${DIST_DIR}/sitemap-vitrines.xml"
+    "${DIST_DIR}/sitemap-devantures.xml"
     "${DIST_DIR}/blog/sitemap-blog.xml"
     "${DIST_DIR}/assets"
     "${DIST_DIR}/api"
@@ -133,7 +133,7 @@ else
         "cgu.html"
         "politique-confidentialite.html"
     )
-    OTHER_FILES=("robots.txt" "sitemap.xml" "sitemap-pages.xml" "sitemap-vitrines.xml")
+    OTHER_FILES=("robots.txt" "sitemap.xml" "sitemap-pages.xml" "sitemap-devantures.xml")
     
     for file in "${HTML_FILES[@]}"; do
         if [ -f "${DIST_DIR}/${file}" ]; then

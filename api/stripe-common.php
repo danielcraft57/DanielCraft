@@ -21,6 +21,28 @@ function stripe_publishable_key(): string
     return trim((string) $key);
 }
 
+/** Prefixe Dashboard attendu : DCRAFT (max 10 car. pour suffixe dynamique). */
+function stripe_statement_descriptor_suffix(string $suffix): string
+{
+    $clean = strtoupper(preg_replace('/[^A-Za-z0-9 ]/', '', trim($suffix)) ?? '');
+    if ($clean === '' || !preg_match('/[A-Za-z]/', $clean)) {
+        return '';
+    }
+
+    return mb_substr($clean, 0, 14);
+}
+
+/**
+ * @param array<string, string|int|bool> $params
+ */
+function stripe_apply_statement_descriptor_suffix(array &$params, string $suffix): void
+{
+    $clean = stripe_statement_descriptor_suffix($suffix);
+    if ($clean !== '') {
+        $params['payment_intent_data[statement_descriptor_suffix]'] = $clean;
+    }
+}
+
 /**
  * @return array<string, mixed>|null
  */
@@ -199,8 +221,8 @@ function stripe_create_checkout_session(string $slug, string $customerEmail = ''
 
     $title = trim((string) ($item['title'] ?? $slug));
     $base = api_site_base();
-    $successUrl = $base . '/vitrines/' . rawurlencode($slug) . '/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
-    $cancelUrl = $base . '/vitrines/' . rawurlencode($slug) . '/?stripe=cancel';
+    $successUrl = $base . '/echantillons/' . rawurlencode($slug) . '/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
+    $cancelUrl = $base . '/echantillons/' . rawurlencode($slug) . '/?stripe=cancel';
 
     $params = [
         'mode' => 'payment',
@@ -218,6 +240,8 @@ function stripe_create_checkout_session(string $slug, string $customerEmail = ''
     if ($customerEmail !== '' && filter_var($customerEmail, FILTER_VALIDATE_EMAIL)) {
         $params['customer_email'] = $customerEmail;
     }
+
+    stripe_apply_statement_descriptor_suffix($params, 'MAQUETTE');
 
     $res = stripe_api('POST', '/checkout/sessions', $params);
     if (!$res['ok'] || !is_array($res['data'])) {
@@ -350,6 +374,8 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
         $params['customer_email'] = $customerEmail;
     }
 
+    stripe_apply_statement_descriptor_suffix($params, $isPack ? 'PACK PDF' : 'LIVRE PDF');
+
     $res = stripe_api('POST', '/checkout/sessions', $params);
     if (!$res['ok'] || !is_array($res['data'])) {
         return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => $res['error']];
@@ -377,4 +403,39 @@ function stripe_fetch_checkout_session(string $sessionId): array
         return ['ok' => false, 'error' => $res['error'], 'session' => null];
     }
     return ['ok' => true, 'error' => '', 'session' => $res['data']];
+}
+
+/**
+ * Rembourse un PaymentIntent (CLI / admin uniquement — pas d endpoint public).
+ *
+ * @return array{ok: bool, refund_id: string, status: string, amount: int, error: string}
+ */
+function stripe_refund_payment_intent(string $paymentIntentId, string $reason = 'requested_by_customer'): array
+{
+    $fail = ['ok' => false, 'refund_id' => '', 'status' => '', 'amount' => 0, 'error' => ''];
+    if (!preg_match('/^pi_[a-zA-Z0-9]+$/', $paymentIntentId)) {
+        $fail['error'] = 'PaymentIntent invalide.';
+        return $fail;
+    }
+    $allowed = ['duplicate', 'fraudulent', 'requested_by_customer'];
+    if (!in_array($reason, $allowed, true)) {
+        $reason = 'requested_by_customer';
+    }
+
+    $res = stripe_api('POST', '/refunds', [
+        'payment_intent' => $paymentIntentId,
+        'reason' => $reason,
+    ]);
+    if (!$res['ok'] || !is_array($res['data'])) {
+        $fail['error'] = $res['error'] !== '' ? $res['error'] : 'Remboursement Stripe impossible.';
+        return $fail;
+    }
+
+    return [
+        'ok' => true,
+        'refund_id' => (string) ($res['data']['id'] ?? ''),
+        'status' => (string) ($res['data']['status'] ?? ''),
+        'amount' => (int) ($res['data']['amount'] ?? 0),
+        'error' => '',
+    ];
 }

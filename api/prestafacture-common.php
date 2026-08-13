@@ -532,6 +532,7 @@ function prestafacture_ensure_client_id(string $customerEmail, string $personNam
 
 /**
  * POST /public/factures — clientEmail + paidExternally.
+ * Pas d'avoir via l'API publique (2026) : creer l'avoir dans l'UI Prestafacture.
  *
  * @return array{ok: bool, invoice_id: string, error: string}
  */

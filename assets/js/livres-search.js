@@ -100,6 +100,9 @@
       clone.classList.add('livre-card--results');
       resultsGrid.appendChild(clone);
     });
+    if (window.dcLazyImages && typeof window.dcLazyImages.observe === 'function') {
+      window.dcLazyImages.observe(resultsGrid);
+    }
   }
 
   function syncSearchUrl(raw) {

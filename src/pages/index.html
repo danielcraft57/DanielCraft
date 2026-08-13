@@ -210,20 +210,22 @@
         </div>
     </section>
 
-    <section id="vitrines" class="home-vitrines-wrap home-vitrines-wrap--ecom" aria-labelledby="home-vitrines-title" itemprop="hasPart" itemscope itemtype="https://schema.org/CollectionPage">
-        <meta itemprop="url" content="{{site_base}}/vitrines/">
-        <meta itemprop="name" content="Modèles de sites DanielCraft">
-        <meta itemprop="description" content="Exemples de sites réalisés pour se projeter métier par métier.">
+    <section id="echantillons" class="home-vitrines-wrap home-vitrines-wrap--ecom" aria-labelledby="home-vitrines-title" itemprop="hasPart" itemscope itemtype="https://schema.org/CollectionPage">
+        <span id="devantures" hidden></span>
+        <span id="vitrines" hidden></span>
+        <meta itemprop="url" content="{{site_base}}/echantillons/">
+        <meta itemprop="name" content="Échantillons DanielCraft">
+        <meta itemprop="description" content="Exemples de sites par métier, pour se projeter avant de commander.">
         <div class="container">
             <div class="section-header scroll-reveal home-section-row">
                 <div>
-                    <span class="section-badge">Exemples</span>
-                    <h2 id="home-vitrines-title" class="section-title">Exemples de sites réalisés</h2>
+                    <span class="section-badge">Échantillons</span>
+                    <h2 id="home-vitrines-title" class="section-title">Regarde voir les échantillons</h2>
                     <p class="section-description">
-                        Se projeter métier par métier - démos live, votre site sera unique.
+                        Comme au marché : tu goûtes un bout avant de remplir le cornet. Démos live, votre site sera unique.
                     </p>
                 </div>
-                <a href="/vitrines/" class="home-section-row__link">Voir tous les exemples <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="/echantillons/" class="home-section-row__link">Voir tous les échantillons <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
             {% include "includes/home-vitrines-teaser.html" %}
         </div>
@@ -305,7 +307,7 @@
                     <span class="section-badge">Blog</span>
                     <h2 id="home-blog-title" class="section-title">Sélection du jour - Le blog</h2>
                     <p class="section-description">
-                        <span class="home-blog__pill">Rotation 3x / jour</span>
+                        <span class="home-blog__pill">Rotation 2x / jour</span>
                         <span class="home-blog__hint">Conseils concrets, sans blabla</span>
                     </p>
                 </div>
@@ -317,54 +319,57 @@
                 <article class="home-blog-card" data-slot="0" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <meta itemprop="position" content="1">
                     <div itemscope itemtype="https://schema.org/BlogPosting" itemprop="item">
-                    <link itemprop="url" href="/blog/geo-vs-seo-differences-complementarite/">
-                    <link itemprop="image" href="{{site_base}}/assets/images/home/home-blog-seo.png">
-                    <a class="home-blog-card__media" href="/blog/geo-vs-seo-differences-complementarite/">
+                    <link itemprop="url" href="/blog/articles/outils-geo-audit-suivi-citations">
+                    <link itemprop="image" href="{{site_base}}/assets/images/og/geo-outils-1200x630.jpg">
+                    <a class="home-blog-card__media" href="/blog/articles/outils-geo-audit-suivi-citations">
                         <picture>
-                            <source data-srcset="/assets/images/home/home-blog-seo.webp" type="image/webp">
-                            <img data-src="/assets/images/home/home-blog-seo.png" width="640" height="360" alt="" decoding="async" class="home-lazy-img">
+                            <source data-srcset="/assets/images/og/geo-outils-1200x630.webp" type="image/webp">
+                            <img data-src="/assets/images/og/geo-outils-1200x630.jpg" width="640" height="360" alt="" decoding="async" class="home-lazy-img">
                         </picture>
                     </a>
                     <div class="home-blog-card__body">
-                        <span class="home-blog-card__cat">Visibilité</span>
-                        <h3 itemprop="headline"><a href="/blog/geo-vs-seo-differences-complementarite/">Être trouvé sur Google et par les IA : les bases</a></h3>
-                        <a class="home-blog-card__more" href="/blog/geo-vs-seo-differences-complementarite/">Lire l'article</a>
+                        <span class="home-blog-card__cat">GEO</span>
+                        <h3 itemprop="headline"><a href="/blog/articles/outils-geo-audit-suivi-citations">Suivre le GEO : voir si les IA te citent</a></h3>
+                        <span class="home-blog-card__views" hidden></span>
+                        <a class="home-blog-card__more" href="/blog/articles/outils-geo-audit-suivi-citations">Lire l'article</a>
                     </div>
                     </div>
                 </article>
                 <article class="home-blog-card" data-slot="1" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <meta itemprop="position" content="2">
                     <div itemscope itemtype="https://schema.org/BlogPosting" itemprop="item">
-                    <link itemprop="url" href="/blog/geo-contenu-structure-formats-checklist/">
-                    <link itemprop="image" href="{{site_base}}/assets/images/home/home-blog-landing.png">
-                    <a class="home-blog-card__media" href="/blog/geo-contenu-structure-formats-checklist/">
+                    <link itemprop="url" href="/blog/articles/seo-vs-sea-quand-choisir">
+                    <link itemprop="image" href="{{site_base}}/assets/images/og/seo-vs-sea-1200x630.jpg">
+                    <a class="home-blog-card__media" href="/blog/articles/seo-vs-sea-quand-choisir">
                         <picture>
-                            <source data-srcset="/assets/images/home/home-blog-landing.webp" type="image/webp">
-                            <img data-src="/assets/images/home/home-blog-landing.png" width="640" height="360" alt="" decoding="async" class="home-lazy-img">
+                            <source data-srcset="/assets/images/og/seo-vs-sea-1200x630.webp" type="image/webp">
+                            <img data-src="/assets/images/og/seo-vs-sea-1200x630.jpg" width="640" height="360" alt="" decoding="async" class="home-lazy-img">
                         </picture>
                     </a>
                     <div class="home-blog-card__body">
-                        <span class="home-blog-card__cat">Contenu</span>
-                        <h3 itemprop="headline"><a href="/blog/geo-contenu-structure-formats-checklist/">Des pages claires qui convertissent mieux</a></h3>
-                        <a class="home-blog-card__more" href="/blog/geo-contenu-structure-formats-checklist/">Lire l'article</a>
+                        <span class="home-blog-card__cat">SEO</span>
+                        <h3 itemprop="headline"><a href="/blog/articles/seo-vs-sea-quand-choisir">SEO ou pubs Google (SEA) : quoi choisir</a></h3>
+                        <span class="home-blog-card__views" hidden></span>
+                        <a class="home-blog-card__more" href="/blog/articles/seo-vs-sea-quand-choisir">Lire l'article</a>
                     </div>
                     </div>
                 </article>
                 <article class="home-blog-card" data-slot="2" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <meta itemprop="position" content="3">
                     <div itemscope itemtype="https://schema.org/BlogPosting" itemprop="item">
-                    <link itemprop="url" href="/blog/geo-outils-optimisation-moteurs-generatifs/">
-                    <link itemprop="image" href="{{site_base}}/assets/images/home/home-blog-fiche.png">
-                    <a class="home-blog-card__media" href="/blog/geo-outils-optimisation-moteurs-generatifs/">
+                    <link itemprop="url" href="/blog/articles/marketing-reseaux-sociaux-strategie">
+                    <link itemprop="image" href="{{site_base}}/assets/images/og/marketing-reseaux-1200x630.jpg">
+                    <a class="home-blog-card__media" href="/blog/articles/marketing-reseaux-sociaux-strategie">
                         <picture>
-                            <source data-srcset="/assets/images/home/home-blog-fiche.webp" type="image/webp">
-                            <img data-src="/assets/images/home/home-blog-fiche.png" width="640" height="360" alt="" decoding="async" class="home-lazy-img">
+                            <source data-srcset="/assets/images/og/marketing-reseaux-1200x630.webp" type="image/webp">
+                            <img data-src="/assets/images/og/marketing-reseaux-1200x630.jpg" width="640" height="360" alt="" decoding="async" class="home-lazy-img">
                         </picture>
                     </a>
                     <div class="home-blog-card__body">
-                        <span class="home-blog-card__cat">Outils</span>
-                        <h3 itemprop="headline"><a href="/blog/geo-outils-optimisation-moteurs-generatifs/">Outils utiles pour suivre ta visibilité</a></h3>
-                        <a class="home-blog-card__more" href="/blog/geo-outils-optimisation-moteurs-generatifs/">Lire l'article</a>
+                        <span class="home-blog-card__cat">Marketing digital</span>
+                        <h3 itemprop="headline"><a href="/blog/articles/marketing-reseaux-sociaux-strategie">Reseaux sociaux : etre utile, pas partout</a></h3>
+                        <span class="home-blog-card__views" hidden></span>
+                        <a class="home-blog-card__more" href="/blog/articles/marketing-reseaux-sociaux-strategie">Lire l'article</a>
                     </div>
                     </div>
                 </article>

@@ -97,8 +97,8 @@
     img.classList.add('is-loaded');
   }
 
-  function initScrollLazyImages() {
-    const root = document.querySelector('.page-home-ecom');
+  function initScrollLazyImages(scope) {
+    const root = scope || document.querySelector('.page-home-ecom');
     if (!root) return;
 
     root.querySelectorAll('img:not([data-home-eager])').forEach(function (img) {
@@ -153,77 +153,20 @@
     }
   }
 
-  function initBlogRotate() {
-    const root = document.querySelector('[data-home-blog-rotate]');
-    if (!root) return;
+  function ogWebpFromJpg(path) {
+    if (!path || !/\.jpe?g$/i.test(path)) return '';
+    return path.replace(/\.jpe?g$/i, '.webp');
+  }
 
-    // 3 jeux de 3 articles - rotation matin / midi / soir (heure locale)
-    const pools = [
-      [
-        {
-          href: '/blog/geo-vs-seo-differences-complementarite/',
-          cat: 'Visibilité',
-          title: 'Être trouvé sur Google et par les IA : les bases',
-          img: 'home-blog-seo',
-        },
-        {
-          href: '/blog/geo-contenu-structure-formats-checklist/',
-          cat: 'Contenu',
-          title: 'Des pages claires qui convertissent mieux',
-          img: 'home-blog-landing',
-        },
-        {
-          href: '/blog/geo-outils-optimisation-moteurs-generatifs/',
-          cat: 'Outils',
-          title: 'Outils utiles pour suivre ta visibilité',
-          img: 'home-blog-fiche',
-        },
-      ],
-      [
-        {
-          href: '/blog/geo-technique-indexabilite-html-performance/',
-          cat: 'Rapide',
-          title: 'Un site rapide : ce qui compte vraiment',
-          img: 'home-blog-landing',
-        },
-        {
-          href: '/blog/outils-geo-audit-suivi-citations/',
-          cat: 'Audit',
-          title: 'Auditer ta présence en ligne sans te perdre',
-          img: 'home-blog-seo',
-        },
-        {
-          href: '/blog/geo-off-site-mentions-autorite/',
-          cat: 'Confiance',
-          title: 'Mentions et avis : renforcer ta crédibilité',
-          img: 'home-blog-fiche',
-        },
-      ],
-      [
-        {
-          href: '/blog/les-frameworks-frontend-en-2025-react-vue-angular/',
-          cat: 'Choix',
-          title: 'Choisir la bonne techno pour ton projet',
-          img: 'home-blog-fiche',
-        },
-        {
-          href: '/blog/introduction-à-typescript-pour-les-développeurs-javascript/',
-          cat: 'Qualité',
-          title: 'Moins de bugs : pourquoi je soigne le code',
-          img: 'home-blog-landing',
-        },
-        {
-          href: '/blog/geo-outils-optimisation-moteurs-generatifs/',
-          cat: 'IA',
-          title: 'Être cité aussi par les outils IA',
-          img: 'home-blog-seo',
-        },
-      ],
-    ];
+  function formatViews(count) {
+    if (count == null || Number.isNaN(Number(count))) return '';
+    const n = Number(count);
+    if (n >= 1000000) return (n / 1000000).toFixed(1).replace('.0', '') + ' M vues';
+    if (n >= 1000) return (n / 1000).toFixed(1).replace('.0', '') + ' k vues';
+    return n + ' vues';
+  }
 
-    const hour = new Date().getHours();
-    const slot = hour < 12 ? 0 : hour < 18 ? 1 : 2;
-    const items = pools[slot];
+  function applyBlogCards(root, items) {
     const cards = root.querySelectorAll('.home-blog-card');
     cards.forEach(function (card, i) {
       const item = items[i];
@@ -236,33 +179,76 @@
       const more = card.querySelector('.home-blog-card__more');
       const schemaUrl = card.querySelector('link[itemprop="url"]');
       const schemaImg = card.querySelector('link[itemprop="image"]');
-      const png = '/assets/images/home/' + item.img + '.png';
-      const webp = '/assets/images/home/' + item.img + '.webp';
+      const viewsEl = card.querySelector('.home-blog-card__views');
+      const imgPath = item.img || '/assets/images/og/blog-1200x630.jpg';
+      const webpPath = ogWebpFromJpg(imgPath);
+
       if (media) media.setAttribute('href', item.href);
       if (schemaUrl) schemaUrl.setAttribute('href', item.href);
-      if (schemaImg) schemaImg.setAttribute('href', png);
+      if (schemaImg) schemaImg.setAttribute('href', imgPath);
       if (img) {
         img.alt = '';
         img.dataset.lazyDone = '0';
         img.classList.add('home-lazy-img');
-        if (img.hasAttribute('src') && !img.hasAttribute('data-src')) {
-          img.setAttribute('data-src', png);
-          img.removeAttribute('src');
-        } else {
-          img.setAttribute('data-src', png);
-        }
+        img.setAttribute('data-src', imgPath);
+        img.removeAttribute('src');
       }
       if (source) {
         source.removeAttribute('srcset');
-        source.setAttribute('data-srcset', webp);
+        if (webpPath) {
+          source.setAttribute('data-srcset', webpPath);
+          source.setAttribute('type', 'image/webp');
+        } else {
+          source.removeAttribute('data-srcset');
+        }
       }
-      if (cat) cat.textContent = item.cat;
+      if (cat) cat.textContent = item.cat || '';
       if (titleA) {
         titleA.href = item.href;
         titleA.textContent = item.title;
       }
       if (more) more.href = item.href;
+      if (viewsEl) {
+        const label = formatViews(item.views);
+        viewsEl.textContent = label;
+        viewsEl.hidden = !label;
+      }
     });
+    initScrollLazyImages(root);
+  }
+
+  function pickBlogPool(data) {
+    const pools = data.pools || [];
+    if (!pools.length) return [];
+    const perDay = data.rotationPerDay || 2;
+    const hour = new Date().getHours();
+    let slot = 0;
+    if (perDay <= 1) {
+      slot = 0;
+    } else if (perDay === 2) {
+      slot = hour < 12 ? 0 : 1;
+    } else {
+      slot = hour < 8 ? 0 : hour < 16 ? 1 : 2;
+    }
+    return pools[slot] || pools[0];
+  }
+
+  function initBlogRotate() {
+    const root = document.querySelector('[data-home-blog-rotate]');
+    if (!root) return;
+
+    fetch('/blog/home-rotation.json', { credentials: 'same-origin' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('home-rotation');
+        return response.json();
+      })
+      .then(function (data) {
+        const items = pickBlogPool(data);
+        if (items && items.length) applyBlogCards(root, items);
+      })
+      .catch(function () {
+        /* HTML statique = secours si le JSON est indisponible */
+      });
   }
 
   initTiltCards();

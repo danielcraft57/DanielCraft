@@ -117,7 +117,7 @@ if (-not $rsyncOk) {
         Write-Host "  Transfert: $($f.Name)"
         scp $f.FullName "${SERVER_USER}@${SERVER_HOST}:${SERVER_PATH}/"
     }
-    foreach ($file in @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml")) {
+    foreach ($file in @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-devantures.xml")) {
         $filePath = Join-Path $DIST_DIR $file
         if (Test-Path $filePath) {
             Write-Host "  Transfert: $file"

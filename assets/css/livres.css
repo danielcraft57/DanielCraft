@@ -301,6 +301,17 @@
   object-position: center top;
 }
 
+.livre-card-cover.dc-lazy-img:not(.is-loaded),
+.livre-card-cover-stack-img.dc-lazy-img:not(.is-loaded) {
+  opacity: 0;
+}
+
+.livre-card-cover.dc-lazy-img.is-loaded,
+.livre-card-cover-stack-img.dc-lazy-img.is-loaded {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
 .livre-card-visual--stack {
   display: flex;
   align-items: center;

@@ -8,7 +8,7 @@ from typing import Any
 from vitrine_ai_lib import esc
 
 SITE_BASE = "https://danielcraft.fr"
-VITRINES_BASE = f"{SITE_BASE}/vitrines"
+VITRINES_BASE = f"{SITE_BASE}/echantillons"
 SCHEMA = "https://schema.org"
 
 
