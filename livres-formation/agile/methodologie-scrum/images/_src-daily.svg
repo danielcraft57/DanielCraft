@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f4f5fb"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a1f3a" font-weight="700">Daily : 15 min pour synchroniser</text>
+<rect x="80" y="130" width="260" height="220" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Hier</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">vers le but</text>
+<rect x="370" y="130" width="260" height="220" rx="14" fill="#eef2ff" stroke="#a3e635" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="700">Aujourd'hui</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">prochain pas</text>
+<rect x="660" y="130" width="260" height="220" rx="14" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+<text x="790" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1a1f3a" font-weight="700">Freins</text>
+<text x="790" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a1f3a" font-weight="400">a lever</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6480" font-weight="400">Pas un report au chef. Une synchro d'equipe.</text>
+</svg>

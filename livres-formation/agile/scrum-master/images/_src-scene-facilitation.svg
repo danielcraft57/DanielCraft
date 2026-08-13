@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Exemple : Sam anime une planning de 40 minutes</text>
+<rect x="70" y="110" width="280" height="300" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">But affiche</text>
+<text x="210" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f0a202" font-weight="400">"page devis</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f0a202" font-weight="400">montrable"</text>
+<rect x="370" y="110" width="260" height="300" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#7a5200" font-weight="700">Tour de table</text>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5200" font-weight="400">2 min / personne</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5200" font-weight="400">timer visible</text>
+<rect x="650" y="110" width="280" height="300" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="790" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">Sortie</text>
+<text x="790" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">3 items + goal</text>
+<text x="790" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">ecrits au board</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Pas de monologue. Une decision collective tenue.</text>
+</svg>

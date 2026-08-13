@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f8f3f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#241528" font-weight="700">Metriques de valeur (pas de vanity)</text>
+<rect x="70" y="130" width="280" height="230" rx="14" fill="#5c2a4a" stroke="#5c2a4a" stroke-width="3"/>
+<text x="210" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#fff" font-weight="700">Usage</text>
+<text x="210" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#f2a65a" font-weight="400">qui s'en sert ?</text>
+<rect x="370" y="130" width="280" height="230" rx="14" fill="#f6ebe3" stroke="#f2a65a" stroke-width="3"/>
+<text x="510" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#8a4b1a" font-weight="700">Resultat</text>
+<text x="510" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#8a4b1a" font-weight="400">devis / RDV / ventes</text>
+<rect x="670" y="130" width="260" height="230" rx="14" fill="#f2a65a" stroke="#f2a65a" stroke-width="3"/>
+<text x="800" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#241528" font-weight="700">Satisfaction</text>
+<text x="800" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#241528" font-weight="400">retour humain</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#6b5a70" font-weight="400">Trois indicateurs max. Relis apres chaque release.</text>
+</svg>

@@ -20,6 +20,20 @@ if (in_array($uri, ['/autres-prestations', '/autres-prestations/', '/autres-pres
     exit;
 }
 
+// Redirection SEO : ancien catalogue livres → bouquins
+if (preg_match('#^/livres(?:/|$)#', $uri)) {
+    $dest = preg_replace('#^/livres#', '/bouquins', $uri);
+    if ($dest === '/bouquins') {
+        $dest = '/bouquins/';
+    }
+    header('Location: ' . $dest, true, 301);
+    exit;
+}
+if (in_array($uri, ['/livres.html', '/livres-telechargement.html'], true)) {
+    header('Location: /bouquins/', true, 301);
+    exit;
+}
+
 // Redirections SEO — URLs historiques / ancres courtes
 if (in_array($uri, ['/nos-offres.html'], true)) {
     header('Location: /nos-offres', true, 301);

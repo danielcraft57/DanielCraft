@@ -256,7 +256,7 @@ STATUS_LABELS = {'active': 'Actif', 'archived': 'Archive'}
 SITEMAP_PAGES = [
     ('/', 'weekly', '1.0'),
     ('/nos-offres', 'weekly', '0.95'),
-    ('/livres/', 'weekly', '0.9'),
+    ('/bouquins/', 'weekly', '0.9'),
     ('/pro', 'monthly', '0.55'),
     ('/audit', 'weekly', '0.95'),
     ('/vitrines/', 'weekly', '0.85'),
@@ -286,6 +286,7 @@ OG_PAGE_FILE_SLUGS = {
     'index': 'home',
     'nos-offres': 'prestations',
     'prestations': 'prestations',
+    'bouquins': 'home',
     'livres': 'home',
 }
 
@@ -655,7 +656,7 @@ def generate_robots_txt(output_dir: Path) -> None:
         f"Sitemap: {base}/sitemap-pages.xml\n"
         f"Sitemap: {base}/sitemap-vitrines.xml\n"
         f"Sitemap: {base}/sitemap-prestations.xml\n"
-        f"Sitemap: {base}/sitemap-livres.xml\n"
+        f"Sitemap: {base}/sitemap-bouquins.xml\n"
         f"Sitemap: {base}/blog/sitemap-blog.xml\n"
         "\n"
         "# Autoriser le blog\n"
@@ -872,6 +873,66 @@ def write_prestations_catalog_redirect(output_dir: Path) -> None:
     out.mkdir(parents=True, exist_ok=True)
     (out / 'index.html').write_text(_render_catalog_redirect_page(), encoding='utf-8')
     print('[OK] Redirection /prestations/ -> /nos-offres')
+
+
+def _render_path_redirect_page(target_path: str, *, page_title: str, link_label: str) -> str:
+    """Page HTML legere : canonical + noindex + redirection client."""
+    base = SITE_BASE.rstrip('/')
+    target = f'{base}{target_path}'
+    return f'''<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{html.escape(page_title)} — DanielCraft</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{target}">
+  <meta http-equiv="refresh" content="0;url={target}">
+  <script>window.location.replace({json.dumps(target)});</script>
+</head>
+<body>
+  <p>Cette URL a ete deplacee. <a href="{target}">{html.escape(link_label)}</a>.</p>
+</body>
+</html>
+'''
+
+
+def write_livres_legacy_redirects(output_dir: Path) -> None:
+    """Ecrit livres/** (redirect client) vers /bouquins/."""
+    out = output_dir / 'livres'
+    out.mkdir(parents=True, exist_ok=True)
+    (out / 'index.html').write_text(
+        _render_path_redirect_page(
+            '/bouquins/',
+            page_title='Redirection vers Bouquins',
+            link_label='Continuer vers le catalogue',
+        ),
+        encoding='utf-8',
+    )
+    tel = out / 'telechargement'
+    tel.mkdir(parents=True, exist_ok=True)
+    (tel / 'index.html').write_text(
+        _render_path_redirect_page(
+            '/bouquins/telechargement/',
+            page_title='Redirection telechargement',
+            link_label='Continuer vers le telechargement',
+        ),
+        encoding='utf-8',
+    )
+    count = 0
+    for slug in livre_slugs_for_sitemap():
+        slug_dir = out / slug
+        slug_dir.mkdir(parents=True, exist_ok=True)
+        (slug_dir / 'index.html').write_text(
+            _render_path_redirect_page(
+                f'/bouquins/{slug}/',
+                page_title='Redirection bouquin',
+                link_label='Continuer vers la fiche',
+            ),
+            encoding='utf-8',
+        )
+        count += 1
+    print(f'[OK] Redirection /livres/ -> /bouquins/ ({count + 2} page(s))')
 
 
 def _render_contact_redirect_page() -> str:
@@ -3693,7 +3754,7 @@ def _livre_card_html(
     keywords = html.escape(','.join(item.get('keywords') or []))
     price = html.escape(_livre_price_display(item, catalog))
     price_label = html.escape((item.get('price_label') or "Prix d'appel").strip())
-    cta_href = f'/livres/{slug}/'
+    cta_href = f'/bouquins/{slug}/'
     badge = ''
     kind = (item.get('kind') or '').strip()
     if show_featured_badge and item.get('featured') and kind != 'pack':
@@ -3860,11 +3921,11 @@ def build_livres_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
         {save_html}
       </p>
       <p class="livres-deal-meta">{n_books} PDF · envoi e-mail apres paiement</p>
-      <a class="btn btn-primary btn-large livres-deal-cta" href="/livres/{html.escape(slug)}/">
+      <a class="btn btn-primary btn-large livres-deal-cta" href="/bouquins/{html.escape(slug)}/">
         <span>{cta}</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
-      <a class="livres-deal-secondary" href="/livres/?q=pack">Voir tous les packs</a>
+      <a class="livres-deal-secondary" href="/bouquins/?q=pack">Voir tous les packs</a>
     </div>
   </div>
 </aside>
@@ -4003,14 +4064,14 @@ def _build_livre_seo_bundle(
 
 
 def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:
-    """Genere livres/<slug>/index.html pour les fiches produit."""
+    """Genere bouquins/<slug>/index.html pour les fiches produit."""
     data = load_livres()
     content_path = PAGES_DIR / 'livre-detail.html'
     if not content_path.exists():
         print('[WARN] src/pages/livre-detail.html manquant')
         return []
     content_raw = content_path.read_text(encoding='utf-8')
-    out_root = output_dir / 'livres'
+    out_root = output_dir / 'bouquins'
     out_root.mkdir(parents=True, exist_ok=True)
     stripe_pk = _stripe_publishable_key()
     slugs_out: List[str] = []
@@ -4021,7 +4082,7 @@ def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List
         if not slug:
             continue
         title = (it.get('title') or slug).strip()
-        page_url_abs = _to_absolute_url(f'/livres/{slug}/')
+        page_url_abs = _to_absolute_url(f'/bouquins/{slug}/')
         seo = _build_livre_seo_bundle(it, data, slug, page_url_abs)
         stripe_url = (it.get('stripe_payment_link_url') or '').strip()
         stripe_checkout = bool(stripe_pk) and not stripe_url
@@ -4087,8 +4148,32 @@ def livre_slugs_for_sitemap() -> List[str]:
     ]
 
 
+def _bouquins_sitemap_search_queries() -> List[str]:
+    """Requetes catalogue (?q=) pour le sitemap bouquins."""
+    data = load_livres()
+    queries: List[str] = []
+    for cat in data.get('categories') or []:
+        cid = (cat.get('id') or '').strip()
+        if cid:
+            queries.append(cid)
+    for q in (
+        'python', 'javascript', 'sql', 'git', 'ia', 'securite', 'finance',
+        'agile', 'scrum', 'pack', 'commerce', 'marketing', 'dropshipping',
+    ):
+        queries.append(q)
+    seen: set[str] = set()
+    out: List[str] = []
+    for q in queries:
+        key = q.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(q)
+    return out
+
+
 def generate_sitemap_livres(output_dir: Path) -> None:
-    """Genere sitemap-livres.xml : catalogue + fiches."""
+    """Genere sitemap-bouquins.xml : catalogue, filtres et fiches produit."""
     base = SITE_BASE.rstrip('/')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -4097,22 +4182,24 @@ def generate_sitemap_livres(output_dir: Path) -> None:
         '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 '
         'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">',
     ]
-    today = datetime.now().date()
-    lastmod = today.isoformat()
-    lines.append(_sitemap_url_line(base, '/livres/', lastmod, 'weekly', '0.9'))
-    for q in ('python', 'javascript', 'sql', 'ia', 'securite', 'finance'):
+    lastmod = datetime.now().date().isoformat()
+    lines.append(_sitemap_url_line(base, '/bouquins/', lastmod, 'weekly', '0.9'))
+    for q in _bouquins_sitemap_search_queries():
         lines.append(
-            _sitemap_url_line(base, f'/livres/?q={quote(q, safe="")}', lastmod, 'weekly', '0.5')
+            _sitemap_url_line(base, f'/bouquins/?q={quote(q, safe="")}', lastmod, 'weekly', '0.55')
         )
-    for slug in livre_slugs_for_sitemap():
-        seed = sum(ord(ch) for ch in slug)
-        days_ago = 3 + (seed % 180)
-        organic_lastmod = (today - timedelta(days=days_ago)).isoformat()
+    slugs = sorted(livre_slugs_for_sitemap())
+    for slug in slugs:
         lines.append(
-            _sitemap_url_line(base, f'/livres/{slug}/', organic_lastmod, 'monthly', '0.7')
+            _sitemap_url_line(base, f'/bouquins/{slug}/', lastmod, 'monthly', '0.7')
         )
     lines.append('</urlset>')
-    (output_dir / 'sitemap-livres.xml').write_text('\n'.join(lines), encoding='utf-8')
+    (output_dir / 'sitemap-bouquins.xml').write_text('\n'.join(lines), encoding='utf-8')
+    legacy = output_dir / 'sitemap-livres.xml'
+    if legacy.exists():
+        legacy.unlink()
+        print('[OK] sitemap-livres.xml supprime (remplace par sitemap-bouquins.xml)')
+    print(f'[OK] sitemap-bouquins.xml ({1 + len(_bouquins_sitemap_search_queries()) + len(slugs)} URL(s))')
 
 
 def _markdown_to_html_fallback(raw: str) -> str:
@@ -4350,7 +4437,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         build_home_vitrines_teaser_embed()
     if page_name == 'nos-offres':
         build_prestations_catalog_embed()
-    if page_name == 'livres':
+    if page_name == 'bouquins':
         build_livres_catalog_embed()
 
     # Charge la config de la page
@@ -4578,7 +4665,7 @@ def generate_sitemap_index(output_dir: Path) -> None:
         f'  <sitemap><loc>{SITE_BASE}/sitemap-pages.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-vitrines.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/sitemap-prestations.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
-        f'  <sitemap><loc>{SITE_BASE}/sitemap-livres.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
+        f'  <sitemap><loc>{SITE_BASE}/sitemap-bouquins.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         f'  <sitemap><loc>{SITE_BASE}/blog/sitemap-blog.xml</loc><lastmod>{lastmod}</lastmod></sitemap>',
         '</sitemapindex>',
     ]
@@ -4733,9 +4820,10 @@ def main():
     if page_name and not watch_mode:
         if build_page(page_name, template_engine):
             write_prestations_catalog_redirect(OUTPUT_DIR)
+            write_livres_legacy_redirects(OUTPUT_DIR)
             write_contact_redirect(OUTPUT_DIR)
-            if page_name in ('livres', 'nos-offres'):
-                if page_name == 'livres':
+            if page_name in ('bouquins', 'nos-offres'):
+                if page_name == 'bouquins':
                     build_livre_pages(template_engine, OUTPUT_DIR)
                     generate_sitemap_livres(OUTPUT_DIR)
                 if page_name == 'nos-offres':
@@ -4753,7 +4841,7 @@ def main():
     pages = [
         'index',
         'nos-offres',
-        'livres',
+        'bouquins',
         'vitrines',
         'processus',
         'metz',
@@ -4762,7 +4850,7 @@ def main():
         'statistiques',
         'analyse',
         'audit',
-        'livres-telechargement',
+        'bouquins-telechargement',
         'desabonnement',
         'mentions-legales',
         'cgv',
@@ -4812,16 +4900,17 @@ def main():
     build_vitrine_pages(template_engine, OUTPUT_DIR)
     build_prestation_pages(template_engine, OUTPUT_DIR)
     write_prestations_catalog_redirect(OUTPUT_DIR)
+    write_livres_legacy_redirects(OUTPUT_DIR)
     write_contact_redirect(OUTPUT_DIR)
     build_livre_pages(template_engine, OUTPUT_DIR)
 
-    # Generation des sitemaps (pages + projets | vitrines | prestations | livres | index)
+    # Generation des sitemaps (pages + projets | vitrines | prestations | bouquins | index)
     generate_sitemap_vitrines(OUTPUT_DIR)
     generate_sitemap_prestations(OUTPUT_DIR)
     generate_sitemap_livres(OUTPUT_DIR)
     generate_sitemap_pages(OUTPUT_DIR, project_slugs=project_slugs)
     generate_sitemap_index(OUTPUT_DIR)
-    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml, sitemap-prestations.xml, sitemap-livres.xml generes")
+    print("[OK] sitemap.xml, sitemap-pages.xml, sitemap-vitrines.xml, sitemap-prestations.xml, sitemap-bouquins.xml generes")
 
     print(f"\n[OK] Build termine ! {success_count}/{len(pages)} page(s) generee(s) dans {OUTPUT_DIR}.")
     
@@ -4905,6 +4994,7 @@ def main():
                         build_vitrine_pages(template_engine, OUTPUT_DIR)
                         build_prestation_pages(template_engine, OUTPUT_DIR)
                         write_prestations_catalog_redirect(OUTPUT_DIR)
+                        write_livres_legacy_redirects(OUTPUT_DIR)
                         write_contact_redirect(OUTPUT_DIR)
                         build_livre_pages(template_engine, OUTPUT_DIR)
                         generate_sitemap_vitrines(OUTPUT_DIR)
@@ -4912,7 +5002,7 @@ def main():
                         generate_sitemap_livres(OUTPUT_DIR)
                         generate_sitemap_pages(OUTPUT_DIR, project_slugs=ps)
                         generate_sitemap_index(OUTPUT_DIR)
-                        print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/livres/sitemap")
+                        print(f"[WATCH] Rebuild complet: {ok}/{len(pages)} page(s) + projets/vitrines/prestations/bouquins/sitemap")
                     finally:
                         # Laisser le FS Windows digérer les write_text des includes générés
                         time.sleep(0.75)

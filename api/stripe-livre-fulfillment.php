@@ -264,7 +264,7 @@ Page de telechargement (personnel, valable 30 jours) :
 Ton code unique :
 {$code}
 
-Tu peux aussi le saisir plus tard sur danielcraft.fr/livres/telechargement/
+Tu peux aussi le saisir plus tard sur danielcraft.fr/bouquins/telechargement/
 
 Une facture t'a aussi ete envoyee par e-mail.
 

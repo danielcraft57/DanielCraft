@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Exemple : Sam coache Lea sans prendre la decision</text>
+<rect x="70" y="110" width="400" height="300" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="270" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a5200" font-weight="700">Question</text>
+<text x="270" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">"Si tu ne fais</text>
+<text x="270" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">qu'une chose</text>
+<text x="270" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">cette semaine ?"</text>
+<rect x="520" y="110" width="410" height="300" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="725" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">Reponse Lea</text>
+<text x="725" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">formulaire devis</text>
+<text x="725" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">avant le blog</text>
+<text x="725" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">decide</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Sam n'a pas tranche. Lea a tranche mieux.</text>
+</svg>

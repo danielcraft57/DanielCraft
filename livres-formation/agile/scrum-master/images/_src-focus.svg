@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Proteger le focus du sprint</text>
+<rect x="80" y="140" width="250" height="200" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="205" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">But</text>
+<text x="205" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f0a202" font-weight="400">du sprint</text>
+<rect x="370" y="140" width="250" height="200" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="495" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a5200" font-weight="700">Interruptions</text>
+<text x="495" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">filtrees</text>
+<rect x="660" y="140" width="260" height="200" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="790" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">WIP limite</text>
+<text x="790" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">peu de choses</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Chaque "urgent" hors but a un cout. Dis-le.</text>
+</svg>

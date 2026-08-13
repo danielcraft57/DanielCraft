@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Metriques honnetes (sans vanity)</text>
+<rect x="70" y="130" width="280" height="230" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="210" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#fff" font-weight="700">Debit</text>
+<text x="210" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4a017" font-weight="400">items vraiment finis</text>
+<rect x="370" y="130" width="280" height="230" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="510" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#7a5a0a" font-weight="700">Cycle</text>
+<text x="510" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">debut -> fini</text>
+<rect x="670" y="130" width="260" height="230" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="800" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#122a2a" font-weight="700">Satisfaction</text>
+<text x="800" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">retour humain</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Trois chiffres max. Relis chaque semaine.</text>
+</svg>

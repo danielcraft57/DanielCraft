@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f4f5fb"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a1f3a" font-weight="700">Exemple : Daily de 12 minutes chez Max</text>
+<rect x="70" y="110" width="280" height="280" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Hier</text>
+<text x="210" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">formulaire</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">branche</text>
+<rect x="370" y="110" width="280" height="280" rx="14" fill="#eef2ff" stroke="#a3e635" stroke-width="3"/>
+<text x="510" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="700">Aujourd'hui</text>
+<text x="510" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">test telephone</text>
+<text x="510" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">+ textes</text>
+<rect x="670" y="110" width="260" height="280" rx="14" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+<text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a1f3a" font-weight="700">Frein</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a1f3a" font-weight="400">photo manquante</text>
+<text x="800" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a1f3a" font-weight="400">Lea appelle</text>
+<text x="800" y="345" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a1f3a" font-weight="400">le client</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6480" font-weight="400">Pas de tour de table interminable. Un frein leve.</text>
+</svg>

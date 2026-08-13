@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+<rect width="800" height="1200" fill="#3d2c5e"/>
+<rect x="0" y="880" width="800" height="320" fill="#e8a87c" opacity="0.18"/>
+<circle cx="680" cy="220" r="140" fill="#e8a87c" opacity="0.25"/>
+<circle cx="120" cy="980" r="180" fill="#e8a87c" opacity="0.12"/>
+<text x="60" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#e8a87c" font-weight="600">DanielCraft</text>
+<text x="60" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#ffffff" opacity="0.75">Formation PDF</text>
+<text x="60" y="520" font-family="Segoe UI, Arial, sans-serif" font-size="52" fill="#ffffff" font-weight="700">Devenir</text>
+<text x="60" y="590" font-family="Segoe UI, Arial, sans-serif" font-size="52" fill="#e8a87c" font-weight="700">Product Owner</text>
+<text x="60" y="680" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#ffffff" opacity="0.9">Vision, backlog, priorisation, valeur client</text>
+<rect x="60" y="760" width="120" height="6" fill="#e8a87c" rx="3"/>
+<text x="60" y="1140" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ffffff" opacity="0.65">Langage simple - schemas - ateliers</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Exemple : Max nomme un frein, Sam le suit</text>
+<rect x="70" y="110" width="280" height="280" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">Frein</text>
+<text x="210" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5e5e66" font-weight="400">acces serveur</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5e5e66" font-weight="400">bloque 2 jours</text>
+<rect x="370" y="110" width="280" height="280" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="510" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5200" font-weight="700">Qui ?</text>
+<text x="510" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">Lea appelle</text>
+<text x="510" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">l'hebergeur</text>
+<rect x="670" y="110" width="260" height="280" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">Action</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">avant 15h</text>
+<text x="800" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">statut au daily</text>
+<text x="500" y="450" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Frein suivi = frein qui finit par bouger.</text>
+</svg>

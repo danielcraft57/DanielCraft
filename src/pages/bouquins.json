@@ -1,0 +1,11 @@
+{
+  "schema_type": "livres_catalog",
+  "page_title": "Bouquins PDF — catalogue DanielCraft",
+  "page_description": "Bouquins de formation PDF a prix d'appel : informatique, IA, finance, commerce, agile. Recherche par theme ou mot-cle. Metz & en ligne.",
+  "page_keywords": "bouquins formation PDF, apprendre javascript, python debutant, SQL, IA bases, agile, DanielCraft",
+  "output_subpath": "bouquins/index.html",
+  "page_url": "/bouquins/",
+  "og_image": "/assets/images/og/home-1200x630.jpg",
+  "extra_css": "prestations-search.css,livres.css,prestations-shop-ux.css",
+  "page_scripts": ["main.js", "livres-search.js", "prestations-wow.js", "prestations-shop-ux.js"]
+}

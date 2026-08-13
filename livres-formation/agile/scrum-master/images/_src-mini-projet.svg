@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Mini-projet : plan d'action 30 jours</text>
+<rect x="50" y="140" width="170" height="180" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="135" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1c1f" font-weight="700">S1</text>
+<text x="135" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5e5e66" font-weight="400">observer</text>
+<rect x="240" y="140" width="170" height="180" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="325" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5200" font-weight="700">S2</text>
+<text x="325" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7a5200" font-weight="400">1 ceremonie</text>
+<rect x="430" y="140" width="170" height="180" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="515" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">S3</text>
+<text x="515" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f0a202" font-weight="400">1 frein</text>
+<rect x="620" y="140" width="170" height="180" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="705" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1c1f" font-weight="700">S4</text>
+<text x="705" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5e5e66" font-weight="400">retro</text>
+<rect x="810" y="160" width="140" height="140" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="880" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">Bilan</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Quatre semaines. Quatre preuves. Pas un manifesto.</text>
+</svg>

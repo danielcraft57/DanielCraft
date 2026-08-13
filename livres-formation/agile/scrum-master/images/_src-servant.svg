@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Servant leadership : servir pour que ca avance</text>
+<rect x="100" y="130" width="800" height="90" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="500" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">L'equipe d'abord</text>
+<rect x="100" y="250" width="240" height="140" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="220" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a5200" font-weight="700">Ecouter</text>
+<text x="220" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5200" font-weight="400">avant de parler</text>
+<rect x="380" y="250" width="240" height="140" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">Debloquer</text>
+<text x="500" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5e5e66" font-weight="400">sans tout faire</text>
+<rect x="660" y="250" width="240" height="140" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="780" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">Grandir</text>
+<text x="780" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">les autres</text>
+<text x="500" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Autorite par l'utilite, pas par le titre.</text>
+</svg>

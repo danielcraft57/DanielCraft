@@ -1,0 +1,42 @@
+<div class="page-prestations page-livres" itemscope itemtype="https://schema.org/CollectionPage">
+    <link itemprop="url" href="{{page_url}}">
+{% include "includes/livres-search-hero.html" %}
+{% include "includes/livres-deal-week.html" %}
+
+<section class="section page-prestations-catalog" aria-label="Catalogue des bouquins">
+    <div class="container container--fullpage">
+        <div id="livresSearchResultsWrap" class="prestations-search-results-wrap" hidden>
+            <div id="livresSearchResults" class="services-grid prestations-grid prestations-grid--results" role="list"></div>
+        </div>
+
+        <div id="livresCatalogBrowse" class="prestations-catalog-browse">
+            {% include "includes/livres-catalog-embed.html" %}
+        </div>
+
+        <div class="prestations-cta">
+            <p class="prestations-cta-text">Un pack (Web, Python, Agile…) ou une question sur un bouquin&nbsp;?</p>
+            <a href="/#contact" class="btn btn-primary btn-large">
+                <span>Ecrire a DanielCraft</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <ul class="livres-trust-bar" aria-label="Engagements boutique">
+            <li><i class="fas fa-shield-alt" aria-hidden="true"></i><span>Paiement securise</span></li>
+            <li><i class="fas fa-bolt" aria-hidden="true"></i><span>Telechargement immediat</span></li>
+            <li><i class="fas fa-file-pdf" aria-hidden="true"></i><span>PDF compatible tous appareils</span></li>
+            <li><i class="fas fa-headset" aria-hidden="true"></i><span>Support reactif</span></li>
+        </ul>
+
+        <nav class="legal-page-links" aria-label="Navigation">
+            <a href="/">Retour a l'accueil</a>
+            <span class="separator">·</span>
+            <a href="/nos-offres">Nos offres</a>
+            <span class="separator">·</span>
+            <a href="/blog/">Blog</a>
+            <span class="separator">·</span>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </div>
+</section>
+</div>

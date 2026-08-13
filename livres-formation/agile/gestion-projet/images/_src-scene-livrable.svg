@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Exemple : Lea montre une page en 7 jours</text>
+<rect x="70" y="110" width="260" height="300" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="200" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">J1-J2</text>
+<text x="200" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">cadre + textes</text>
+<text x="200" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">DoD ecrite</text>
+<line x1="330" y1="260" x2="390" y2="260" stroke="#d4a017" stroke-width="4"/>
+<rect x="390" y="110" width="220" height="300" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5a0a" font-weight="700">J3-J5</text>
+<text x="500" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">page contact</text>
+<text x="500" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">test telephone</text>
+<line x1="610" y1="260" x2="670" y2="260" stroke="#d4a017" stroke-width="4"/>
+<rect x="670" y="110" width="260" height="300" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#122a2a" font-weight="700">J7</text>
+<text x="800" y="260" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">revue cliente</text>
+<text x="800" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">page en ligne</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Pas tout le site. Un lot visible, pret a corriger.</text>
+</svg>

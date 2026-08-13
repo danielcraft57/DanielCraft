@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Atelier coaching : questions fortes</text>
+<rect x="80" y="120" width="500" height="280" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="330" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">Question ouverte</text>
+<text x="330" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5e5e66" font-weight="400">"Qu'est-ce qui bloque ?"</text>
+<text x="330" y="275" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5e5e66" font-weight="400">"Que peux-tu essayer ?"</text>
+<text x="330" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5e5e66" font-weight="400">"De quoi as-tu besoin ?"</text>
+<rect x="620" y="120" width="300" height="280" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="770" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">Silence</text>
+<text x="770" y="270" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">utile</text>
+<text x="770" y="320" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">puis reformule</text>
+<text x="500" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">40 minutes. Une conversation. Un prochain pas.</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Cascade vs boucles</text>
+<rect x="60" y="110" width="420" height="280" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="270" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#122a2a" font-weight="700">Cascade</text>
+<rect x="100" y="190" width="100" height="50" rx="8" fill="#e8f2ef" stroke="#0f4c4c" stroke-width="3"/>
+<text x="150" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#122a2a" font-weight="700">Plan</text>
+<rect x="220" y="190" width="100" height="50" rx="8" fill="#e8f2ef" stroke="#0f4c4c" stroke-width="3"/>
+<text x="270" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#122a2a" font-weight="700">Faire</text>
+<rect x="340" y="190" width="100" height="50" rx="8" fill="#e8f2ef" stroke="#0f4c4c" stroke-width="3"/>
+<text x="390" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#122a2a" font-weight="700">Livrer</text>
+<text x="270" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e6e" font-weight="400">un seul grand saut</text>
+<text x="270" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e6e" font-weight="400">feedback tardif</text>
+<rect x="520" y="110" width="420" height="280" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="730" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5a0a" font-weight="700">Boucles</text>
+<rect x="560" y="190" width="100" height="50" rx="8" fill="#ffffff" stroke="#d4a017" stroke-width="3"/>
+<text x="610" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7a5a0a" font-weight="700">Lot</text>
+<rect x="680" y="190" width="100" height="50" rx="8" fill="#ffffff" stroke="#d4a017" stroke-width="3"/>
+<text x="730" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7a5a0a" font-weight="700">Voir</text>
+<rect x="800" y="190" width="100" height="50" rx="8" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="850" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#122a2a" font-weight="700">Ajuster</text>
+<text x="730" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">plusieurs tours courts</text>
+<text x="730" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">retour a chaque tour</text>
+<text x="500" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Quand le besoin bouge, les boucles gagnent.</text>
+</svg>

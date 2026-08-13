@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Pieges classiques + sorties</text>
+<rect x="60" y="120" width="280" height="230" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="200" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#1c1c1f" font-weight="700">SM secretaire</text>
+<text x="200" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5e5e66" font-weight="400">-> rotation notes</text>
+<text x="200" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5e5e66" font-weight="400">+ facilitation</text>
+<rect x="360" y="120" width="280" height="230" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a5200" font-weight="700">SM chef</text>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">-> questions</text>
+<text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">et cadre</text>
+<rect x="660" y="120" width="280" height="230" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">Zero frein</text>
+<text x="800" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">-> board freins</text>
+<text x="800" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">chaque daily</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Piege nomme = deja a moitie leve.</text>
+</svg>

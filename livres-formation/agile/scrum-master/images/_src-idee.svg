@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Scrum Master = aide l'equipe a avancer</text>
+<rect x="80" y="120" width="240" height="220" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="200" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Cadre</text>
+<text x="200" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#f0a202" font-weight="400">tenu sans durete</text>
+<line x1="320" y1="230" x2="380" y2="230" stroke="#f0a202" stroke-width="4"/>
+<rect x="380" y="120" width="240" height="220" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5200" font-weight="700">Freins</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5200" font-weight="400">nommes et leves</text>
+<line x1="620" y1="230" x2="680" y2="230" stroke="#f0a202" stroke-width="4"/>
+<rect x="680" y="120" width="240" height="220" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1c1f" font-weight="700">Focus</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">protege</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Pas un chef. Un facilitateur utile.</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Commencer sans titre officiel</text>
+<rect x="80" y="130" width="250" height="220" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="205" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5200" font-weight="700">1 geste</text>
+<text x="205" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5200" font-weight="400">utile / semaine</text>
+<rect x="370" y="130" width="250" height="220" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="495" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">Demander</text>
+<text x="495" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5e5e66" font-weight="400">permission legere</text>
+<rect x="660" y="130" width="260" height="220" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="790" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1c1f" font-weight="700">Preuve</text>
+<text x="790" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">avant badge</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Tu agis utile. Le titre peut suivre.</text>
+</svg>

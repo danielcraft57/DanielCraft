@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Atelier retro : 25 minutes, une action</text>
+<rect x="70" y="120" width="280" height="220" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Ca marche</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">a garder</text>
+<rect x="370" y="120" width="280" height="220" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="510" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">Ca coince</text>
+<text x="510" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#5a6e6e" font-weight="400">faits, pas attaques</text>
+<rect x="670" y="120" width="260" height="220" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">1 action</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">+ une date</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Timer. Photo des colonnes. On emporte un geste.</text>
+</svg>

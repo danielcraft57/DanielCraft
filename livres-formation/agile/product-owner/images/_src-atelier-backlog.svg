@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f8f3f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#241528" font-weight="700">Atelier backlog : 8 items max, ordonnes</text>
+<rect x="80" y="110" width="500" height="280" rx="14" fill="#ffffff" stroke="#5c2a4a" stroke-width="3"/>
+<text x="330" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#241528" font-weight="700">Top candidats</text>
+<text x="330" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5a70" font-weight="400">1. ...</text>
+<text x="330" y="245" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5a70" font-weight="400">2. ...</text>
+<text x="330" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5a70" font-weight="400">3. ...</text>
+<text x="330" y="315" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5a70" font-weight="400">4. ...  5. ...</text>
+<rect x="620" y="110" width="300" height="120" rx="14" fill="#f6ebe3" stroke="#f2a65a" stroke-width="3"/>
+<text x="770" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#8a4b1a" font-weight="700">Lot sprint</text>
+<text x="770" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#8a4b1a" font-weight="400">1 ou 2 items</text>
+<rect x="620" y="250" width="300" height="140" rx="14" fill="#f2a65a" stroke="#f2a65a" stroke-width="3"/>
+<text x="770" y="310" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#241528" font-weight="700">Parking</text>
+<text x="770" y="350" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#241528" font-weight="400">le surplus</text>
+<text x="500" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6b5a70" font-weight="400">Une heure. Sortie : liste triee + lot candidat.</text>
+</svg>

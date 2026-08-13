@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f4f5fb"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a1f3a" font-weight="700">Atelier board : colonnes simples</text>
+<rect x="80" y="130" width="200" height="240" rx="14" fill="#ffffff" stroke="#2d3a7c" stroke-width="3"/>
+<text x="180" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a1f3a" font-weight="700">A faire</text>
+<rect x="300" y="130" width="200" height="240" rx="14" fill="#eef2ff" stroke="#a3e635" stroke-width="3"/>
+<text x="400" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="700">En cours</text>
+<rect x="520" y="130" width="200" height="240" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="620" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Revue</text>
+<rect x="740" y="130" width="200" height="240" rx="14" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+<text x="840" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a1f3a" font-weight="700">Done</text>
+<text x="500" y="430" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6480" font-weight="400">Quatre colonnes. Pas douze. On voit le flux.</text>
+</svg>

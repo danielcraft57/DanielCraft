@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Agile = petits pas + feedback</text>
+<rect x="80" y="120" width="240" height="220" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="200" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Petit lot</text>
+<text x="200" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">utile et visible</text>
+<line x1="320" y1="230" x2="380" y2="230" stroke="#d4a017" stroke-width="4"/>
+<rect x="380" y="120" width="240" height="220" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="500" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5a0a" font-weight="700">Feedback</text>
+<text x="500" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">retour tot</text>
+<line x1="620" y1="230" x2="680" y2="230" stroke="#d4a017" stroke-width="4"/>
+<rect x="680" y="120" width="240" height="220" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#122a2a" font-weight="700">Ajuster</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">puis recommencer</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Un rythme, pas un badge. Montrer tot, corriger vite.</text>
+</svg>

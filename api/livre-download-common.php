@@ -402,7 +402,7 @@ function livre_download_create_token(
 
 function livre_download_page_url(string $code = '', string $token = ''): string
 {
-    $base = api_site_base() . '/livres/telechargement/';
+    $base = api_site_base() . '/bouquins/telechargement/';
     $norm = $code !== '' ? livre_download_normalize_code($code) : '';
     if ($norm !== '') {
         return $base . '?code=' . rawurlencode($norm);

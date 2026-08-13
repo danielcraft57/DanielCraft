@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Remote / hybride : meme sens, plus de cadre</text>
+<rect x="70" y="130" width="280" height="230" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Agenda</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f0a202" font-weight="400">visible</text>
+<rect x="370" y="130" width="280" height="230" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="510" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5200" font-weight="700">Parole</text>
+<text x="510" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">tour de role</text>
+<rect x="670" y="130" width="260" height="230" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="700">Compte-rendu</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">court</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#5e5e66" font-weight="400">A distance, le flou coute plus cher. Ecris le cadre.</text>
+</svg>

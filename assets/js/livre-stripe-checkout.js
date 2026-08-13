@@ -106,7 +106,7 @@
     if (st === 'success') {
       const sessionId = (params.get('session_id') || '').trim();
       const dest =
-        '/livres/telechargement/' +
+        '/bouquins/telechargement/' +
         (sessionId
           ? '?stripe=success&session_id=' + encodeURIComponent(sessionId)
           : '');

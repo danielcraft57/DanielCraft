@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Triangle des roles (simple)</text>
+<rect x="350" y="100" width="300" height="120" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="500" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Qui decide</text>
+<text x="500" y="185" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">priorites</text>
+<line x1="400" y1="220" x2="250" y2="280" stroke="#d4a017" stroke-width="3"/>
+<line x1="600" y1="220" x2="750" y2="280" stroke="#d4a017" stroke-width="3"/>
+<rect x="80" y="280" width="280" height="140" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="220" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a5a0a" font-weight="700">Qui fait</text>
+<text x="220" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">le lot</text>
+<rect x="640" y="280" width="280" height="140" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="780" y="340" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">Qui aide</text>
+<text x="780" y="380" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e6e" font-weight="400">sans tout porter</text>
+<line x1="360" y1="350" x2="640" y2="350" stroke="#0f4c4c" stroke-width="3"/>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Trois casquettes claires. Pas de theatre de titres.</text>
+</svg>

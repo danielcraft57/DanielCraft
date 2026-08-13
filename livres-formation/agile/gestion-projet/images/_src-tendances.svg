@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">2026 : vague utile, fond intact</text>
+<rect x="60" y="130" width="220" height="220" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="170" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Cycles</text>
+<text x="170" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#d4a017" font-weight="400">toujours courts</text>
+<rect x="290" y="130" width="220" height="220" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="400" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">IA utile</text>
+<text x="400" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e6e" font-weight="400">+ relecture</text>
+<rect x="520" y="130" width="220" height="220" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="630" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a5a0a" font-weight="700">Process</text>
+<text x="630" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">sobres</text>
+<rect x="750" y="130" width="190" height="220" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="845" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#122a2a" font-weight="700">Preuves</text>
+<text x="845" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">visibles</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">L'outil accelere. Le rythme et le jugement restent.</text>
+</svg>

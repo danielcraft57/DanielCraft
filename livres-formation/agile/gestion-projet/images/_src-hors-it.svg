@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Agile hors IT : meme sens, moins de jargon</text>
+<rect x="70" y="120" width="280" height="230" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Commerce</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">offre testee</text>
+<rect x="370" y="120" width="280" height="230" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="510" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5a0a" font-weight="700">Asso</text>
+<text x="510" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5a0a" font-weight="400">evenement en lots</text>
+<rect x="670" y="120" width="260" height="230" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">Atelier</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#122a2a" font-weight="400">saison preparee</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Rythme + liste triee + montrer tot. Jira optionnel.</text>
+</svg>

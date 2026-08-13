@@ -293,6 +293,22 @@ PACKS = [
             "finance-crypto",
         ],
     },
+    {
+        "slug": "pack-agile-scrum",
+        "title": "Pack Agile et Scrum",
+        "tagline": "Gestion agile, Scrum, SM et PO",
+        "short_description": (
+            "4 PDF : gestion de projet agile, methodologie Scrum, Scrum Master et Product Owner."
+        ),
+        "keywords": ["pack", "agile", "scrum", "scrum master", "product owner"],
+        "icon": "fa-people-arrows",
+        "book_slugs": [
+            "gestion-projet-agile",
+            "methodologie-scrum",
+            "devenir-scrum-master",
+            "devenir-product-owner",
+        ],
+    },
 ]
 
 

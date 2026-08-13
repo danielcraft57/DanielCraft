@@ -53,6 +53,13 @@
       "nav_label": "Communication",
       "icon": "fa-comments",
       "description": "Parler clair : ecrire, presenter, convaincre."
+    },
+    {
+      "id": "agile",
+      "title": "Agile et Scrum",
+      "nav_label": "Agile",
+      "icon": "fa-people-arrows",
+      "description": "Gestion de projet agile, Scrum, roles Scrum Master et Product Owner - en langage simple."
     }
   ],
   "levels": [
@@ -1007,6 +1014,59 @@
         "/assets/images/livres/covers/finance-les-bases.jpg",
         "/assets/images/livres/covers/finance-actions-obligations.jpg",
         "/assets/images/livres/covers/finance-crypto.jpg"
+      ]
+    },
+    {
+      "slug": "pack-agile-scrum",
+      "kind": "pack",
+      "category": "packs",
+      "level": "pack",
+      "title": "Pack Agile et Scrum",
+      "tagline": "Gestion agile, Scrum, SM et PO",
+      "short_description": "4 PDF : gestion de projet agile, methodologie Scrum, Scrum Master et Product Owner.",
+      "description": "4 PDF : gestion de projet agile, methodologie Scrum, Scrum Master et Product Owner. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "keywords": [
+        "pack",
+        "agile",
+        "scrum",
+        "scrum master",
+        "product owner"
+      ],
+      "source_dir": "",
+      "pdf": "",
+      "book_slugs": [
+        "gestion-projet-agile",
+        "methodologie-scrum",
+        "devenir-scrum-master",
+        "devenir-product-owner"
+      ],
+      "icon": "fa-people-arrows",
+      "price_eur": 1.49,
+      "compare_at_eur": 2.0,
+      "price_label": "Pack",
+      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "currency": "EUR",
+      "featured": true,
+      "has_page": true,
+      "stripe_payment_link_url": "",
+      "benefits": [
+        "4 livres PDF inclus",
+        "Economie d'environ 0,51 EUR vs a l'unite",
+        "Meme pedagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail apres paiement"
+      ],
+      "includes": [
+        "PDF : Gestion de projet agile",
+        "PDF : Methodologie Scrum",
+        "PDF : Devenir Scrum Master",
+        "PDF : Devenir Product Owner"
+      ],
+      "cover": "/assets/images/livres/covers/gestion-projet-agile.jpg",
+      "cover_stack": [
+        "/assets/images/livres/covers/gestion-projet-agile.jpg",
+        "/assets/images/livres/covers/methodologie-scrum.jpg",
+        "/assets/images/livres/covers/devenir-scrum-master.jpg",
+        "/assets/images/livres/covers/devenir-product-owner.jpg"
       ]
     },
     {
@@ -2603,6 +2663,162 @@
       ],
       "kind": "livre",
       "cover": "/assets/images/livres/covers/communication-les-bases.jpg"
+    },
+    {
+      "slug": "gestion-projet-agile",
+      "category": "agile",
+      "level": "base",
+      "title": "Gestion de projet agile",
+      "tagline": "Petits pas, priorites claires, feedback tot",
+      "short_description": "Comprendre l'agile sans jargon de certif : cascade vs iteratif, backlog, ceremonies, Definition of Done.",
+      "description": "Comprendre l'agile sans jargon de certif : cascade vs iteratif, backlog, ceremonies, Definition of Done. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "keywords": [
+        "agile",
+        "gestion de projet",
+        "backlog",
+        "iteration",
+        "scrum"
+      ],
+      "source_dir": "agile/gestion-projet",
+      "pdf": "gestion-projet-agile.pdf",
+      "icon": "fa-people-arrows",
+      "price_eur": 0.5,
+      "price_label": "Prix d'appel",
+      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "currency": "EUR",
+      "featured": false,
+      "has_page": true,
+      "stripe_payment_link_url": "",
+      "benefits": [
+        "PDF clair, plusieurs dizaines de pages",
+        "Schemas et exemples concrets (Lea, Max, Sam)",
+        "Ateliers et quiz pour ancrer",
+        "Langage simple, sans jargon inutile"
+      ],
+      "includes": [
+        "Livre PDF complet",
+        "Acces a vie au fichier envoye",
+        "Mises a jour mineures si corrigees"
+      ],
+      "kind": "livre",
+      "cover": "/assets/images/livres/covers/gestion-projet-agile.jpg"
+    },
+    {
+      "slug": "methodologie-scrum",
+      "category": "agile",
+      "level": "base",
+      "title": "Methodologie Scrum",
+      "tagline": "Sprints, roles, ceremonies, Definition of Done",
+      "short_description": "Le cadre Scrum explique simplement : equipe, artefacts, evenements et anti-patterns a eviter.",
+      "description": "Le cadre Scrum explique simplement : equipe, artefacts, evenements et anti-patterns a eviter. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "keywords": [
+        "scrum",
+        "sprint",
+        "backlog",
+        "daily",
+        "retro"
+      ],
+      "source_dir": "agile/methodologie-scrum",
+      "pdf": "methodologie-scrum.pdf",
+      "icon": "fa-sync-alt",
+      "price_eur": 0.5,
+      "price_label": "Prix d'appel",
+      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "currency": "EUR",
+      "featured": false,
+      "has_page": true,
+      "stripe_payment_link_url": "",
+      "benefits": [
+        "PDF clair, plusieurs dizaines de pages",
+        "Schemas et exemples concrets (Lea, Max, Sam)",
+        "Ateliers et quiz pour ancrer",
+        "Langage simple, sans jargon inutile"
+      ],
+      "includes": [
+        "Livre PDF complet",
+        "Acces a vie au fichier envoye",
+        "Mises a jour mineures si corrigees"
+      ],
+      "kind": "livre",
+      "cover": "/assets/images/livres/covers/methodologie-scrum.jpg"
+    },
+    {
+      "slug": "devenir-scrum-master",
+      "category": "agile",
+      "level": "intermediaire",
+      "title": "Devenir Scrum Master",
+      "tagline": "Faciliter, debloquer, coacher sans prendre le volant",
+      "short_description": "Le role Scrum Master au quotidien : facilitation, obstacles, focus, coaching PO et equipe.",
+      "description": "Le role Scrum Master au quotidien : facilitation, obstacles, focus, coaching PO et equipe. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "keywords": [
+        "scrum master",
+        "facilitation",
+        "coaching",
+        "agile",
+        "equipe"
+      ],
+      "source_dir": "agile/scrum-master",
+      "pdf": "devenir-scrum-master.pdf",
+      "icon": "fa-hands-helping",
+      "price_eur": 0.5,
+      "price_label": "Prix d'appel",
+      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "currency": "EUR",
+      "featured": false,
+      "has_page": true,
+      "stripe_payment_link_url": "",
+      "benefits": [
+        "PDF clair, plusieurs dizaines de pages",
+        "Schemas et exemples concrets (Lea, Max, Sam)",
+        "Ateliers et quiz pour ancrer",
+        "Langage simple, sans jargon inutile"
+      ],
+      "includes": [
+        "Livre PDF complet",
+        "Acces a vie au fichier envoye",
+        "Mises a jour mineures si corrigees"
+      ],
+      "kind": "livre",
+      "cover": "/assets/images/livres/covers/devenir-scrum-master.jpg"
+    },
+    {
+      "slug": "devenir-product-owner",
+      "category": "agile",
+      "level": "intermediaire",
+      "title": "Devenir Product Owner",
+      "tagline": "Vision, backlog, priorisation, valeur client",
+      "short_description": "Le role Product Owner : vision produit, stakeholders, user stories, priorisation et dire non.",
+      "description": "Le role Product Owner : vision produit, stakeholders, user stories, priorisation et dire non. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "keywords": [
+        "product owner",
+        "backlog",
+        "priorisation",
+        "vision",
+        "agile"
+      ],
+      "source_dir": "agile/product-owner",
+      "pdf": "devenir-product-owner.pdf",
+      "icon": "fa-bullseye",
+      "price_eur": 0.5,
+      "price_label": "Prix d'appel",
+      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "currency": "EUR",
+      "featured": false,
+      "has_page": true,
+      "stripe_payment_link_url": "",
+      "benefits": [
+        "PDF clair, plusieurs dizaines de pages",
+        "Schemas et exemples concrets (Lea, Max, Sam)",
+        "Ateliers et quiz pour ancrer",
+        "Langage simple, sans jargon inutile"
+      ],
+      "includes": [
+        "Livre PDF complet",
+        "Acces a vie au fichier envoye",
+        "Mises a jour mineures si corrigees"
+      ],
+      "kind": "livre",
+      "cover": "/assets/images/livres/covers/devenir-product-owner.jpg"
     }
   ],
   "pricing_note": "Unitaire 0,50 EUR TTC. Pack = somme unitaire moins remise volume (prix .49/.79/.99).",

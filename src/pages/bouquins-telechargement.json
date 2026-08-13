@@ -1,0 +1,12 @@
+{
+  "page_title": "Telechargement PDF | DanielCraft",
+  "page_description": "Recupere ton bouquin PDF avec ton code unique apres paiement.",
+  "page_keywords": "telechargement, bouquin PDF, code, DanielCraft",
+  "page_url": "/bouquins/telechargement/",
+  "output_subpath": "bouquins/telechargement/index.html",
+  "og_image": "/assets/images/og/default-1200x630.jpg",
+  "schema_type": "webpage",
+  "page_robots": "noindex, nofollow",
+  "extra_css": "livre-telechargement.css",
+  "page_scripts": ["main.js", "livre-telechargement.js"]
+}

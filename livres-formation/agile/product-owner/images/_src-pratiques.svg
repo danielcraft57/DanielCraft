@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f8f3f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#241528" font-weight="700">Bonnes pratiques : check utile</text>
+<rect x="60" y="120" width="220" height="220" rx="14" fill="#5c2a4a" stroke="#5c2a4a" stroke-width="3"/>
+<text x="170" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Ordre</text>
+<text x="170" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#f2a65a" font-weight="400">visible</text>
+<rect x="290" y="120" width="220" height="220" rx="14" fill="#ffffff" stroke="#5c2a4a" stroke-width="3"/>
+<text x="400" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#241528" font-weight="700">Criteres</text>
+<text x="400" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6b5a70" font-weight="400">ecrits</text>
+<rect x="520" y="120" width="220" height="220" rx="14" fill="#f6ebe3" stroke="#f2a65a" stroke-width="3"/>
+<text x="630" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#8a4b1a" font-weight="700">Dispo</text>
+<text x="630" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#8a4b1a" font-weight="400">equipe</text>
+<rect x="750" y="120" width="190" height="220" rx="14" fill="#f2a65a" stroke="#f2a65a" stroke-width="3"/>
+<text x="845" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#241528" font-weight="700">Mesurer</text>
+<text x="845" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#241528" font-weight="400">apres</text>
+<text x="500" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6b5a70" font-weight="400">Trois pratiques du mois battent trente posters.</text>
+</svg>

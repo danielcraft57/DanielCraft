@@ -321,8 +321,8 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
         ? 'Pack formation PDF — envoi par e-mail après paiement'
         : 'Formation PDF — envoi par e-mail après paiement';
     $base = api_site_base();
-    $successUrl = $base . '/livres/telechargement/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
-    $cancelUrl = $base . '/livres/' . rawurlencode($slug) . '/?stripe=cancel';
+    $successUrl = $base . '/bouquins/telechargement/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
+    $cancelUrl = $base . '/bouquins/' . rawurlencode($slug) . '/?stripe=cancel';
 
     $params = [
         'mode' => 'payment',

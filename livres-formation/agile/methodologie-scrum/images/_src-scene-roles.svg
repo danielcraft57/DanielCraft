@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f4f5fb"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a1f3a" font-weight="700">Exemple : Lea, Max et Sam clarifient les casquettes</text>
+<rect x="70" y="110" width="280" height="300" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="210" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Lea = PO</text>
+<text x="210" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">priorite devis</text>
+<text x="210" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">cette semaine</text>
+<rect x="370" y="110" width="260" height="300" rx="14" fill="#eef2ff" stroke="#a3e635" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#3f6212" font-weight="700">Sam = SM</text>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">protege le</text>
+<text x="500" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">temps d'equipe</text>
+<rect x="650" y="110" width="280" height="300" rx="14" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+<text x="790" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a1f3a" font-weight="700">Max = Dev</text>
+<text x="790" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a1f3a" font-weight="400">livre la page</text>
+<text x="790" y="290" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a1f3a" font-weight="400">Done sur tel</text>
+<text x="500" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6480" font-weight="400">Trois jobs. Zero flou. Le sprint peut demarrer.</text>
+</svg>

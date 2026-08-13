@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     exit;
 }
 
-$page = api_site_base() . '/livres/telechargement/';
+$page = api_site_base() . '/bouquins/telechargement/';
 $ip = livre_download_client_ip();
 
 $lock = livre_download_lock_status($ip);

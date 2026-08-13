@@ -888,7 +888,10 @@ html.js .home-stagger:not(.is-visible) > * {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  padding: clamp(5.5rem, 10vh, 6.5rem) clamp(1.35rem, 4vw, 3.5rem) clamp(2.5rem, 5vh, 3.5rem);
+  padding-top: calc(var(--nav-offset, 4.5rem) + clamp(1rem, 3vh, 1.75rem));
+  padding-right: clamp(1.35rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 5vh, 3.5rem);
+  padding-left: clamp(1.35rem, 4vw, 3.5rem);
   max-width: 40rem;
 }
 
@@ -1876,7 +1879,7 @@ html.js .home-stagger:not(.is-visible) > * {
   }
 
   .home-split {
-    min-height: calc(100dvh - var(--nav-offset, 72px));
+    min-height: calc(100dvh - var(--nav-offset, 4.5rem));
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     max-width: none;
   }
@@ -2469,13 +2472,13 @@ html.js .home-stagger:not(.is-visible) > * {
 
 @media (min-width: 960px) {
   .home-split {
-    min-height: calc(100dvh - var(--nav-offset, 72px));
+    min-height: calc(100dvh - var(--nav-offset, 4.5rem));
   }
 }
 
 .home-cats--ecom {
   position: sticky;
-  top: var(--nav-offset, 72px);
+  top: var(--nav-offset, 4.5rem);
   z-index: 40;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
@@ -3392,11 +3395,6 @@ html.js .home-stagger:not(.is-visible) > * {
 
 @media (min-width: 960px) {
   .home-hero--commerce .home-split {
-    min-height: calc(100dvh - var(--nav-offset, 72px));
-  }
-
-  .home-split__copy {
-    padding-top: clamp(2rem, 5vh, 4rem);
-    padding-bottom: clamp(1.5rem, 4vh, 3rem);
+    min-height: calc(100dvh - var(--nav-offset, 4.5rem));
   }
 }

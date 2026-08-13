@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Carte a garder : 5 gestes</text>
+<rect x="50" y="110" width="170" height="280" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="135" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Petits</text>
+<text x="135" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">lots</text>
+<rect x="235" y="110" width="170" height="280" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="320" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a5a0a" font-weight="700">Priorites</text>
+<text x="320" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">assumees</text>
+<rect x="420" y="110" width="170" height="280" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="505" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#122a2a" font-weight="700">Montrer</text>
+<rect x="605" y="110" width="170" height="280" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="690" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Fini</text>
+<text x="690" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#d4a017" font-weight="400">defini</text>
+<rect x="790" y="110" width="160" height="280" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="870" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#122a2a" font-weight="700">Freins</text>
+<text x="870" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">nommes</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Deux gestes tenus battent dix principes affiches.</text>
+</svg>

@@ -166,6 +166,10 @@ python livres-formation\informatique\<livre>\build_livre.py
 | Machine Learning | `pdf/ia-machine-learning.pdf` | ~50+ pages | acier + cuivre (`theme="ml"`) |
 | Deep Learning | `pdf/ia-deep-learning.pdf` | ~50+ pages | teal + rose (`theme="dl"`) |
 | Finance - Les bases | `pdf/finance-les-bases.pdf` | ~50+ pages | vert nuit + or (`theme="finance"`) ; budget, tresorerie, prudence |
+| Gestion de projet agile | `pdf/gestion-projet-agile.pdf` | ~40+ pages | teal + or (`theme="agile"`) ; cascade, backlog, ceremonies |
+| Methodologie Scrum | `pdf/methodologie-scrum.pdf` | ~40+ pages | indigo + lime (`theme="scrum"`) ; sprints, roles, artefacts |
+| Devenir Scrum Master | `pdf/devenir-scrum-master.pdf` | ~40+ pages | graphite + ambre (`theme="scrum_master"`) ; facilitation, coaching |
+| Devenir Product Owner | `pdf/devenir-product-owner.pdf` | ~40+ pages | prune + peche (`theme="product_owner"`) ; vision, backlog, valeur |
 
 ## 9. Catalogue : niveaux + packs (pas de refonte totale)
 

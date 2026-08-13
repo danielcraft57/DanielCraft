@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f4f5fb"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a1f3a" font-weight="700">Le Sprint : une boite a temps</text>
+<rect x="80" y="140" width="180" height="180" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="170" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#fff" font-weight="700">Debut</text>
+<text x="170" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">objectif</text>
+<line x1="260" y1="230" x2="310" y2="230" stroke="#a3e635" stroke-width="4"/>
+<rect x="310" y="140" width="380" height="180" rx="14" fill="#eef2ff" stroke="#a3e635" stroke-width="3"/>
+<text x="500" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#3f6212" font-weight="700">Travail focus</text>
+<text x="500" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#3f6212" font-weight="400">sans changer le but au milieu</text>
+<line x1="690" y1="230" x2="740" y2="230" stroke="#a3e635" stroke-width="4"/>
+<rect x="740" y="140" width="180" height="180" rx="14" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+<text x="830" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1a1f3a" font-weight="700">Fin</text>
+<text x="830" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1a1f3a" font-weight="400">revue + retro</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6480" font-weight="400">Court, fixe, repetable. Pas une marathon infinie.</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="#f4f5fb"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1a1f3a" font-weight="700">Carte a garder : 5 gestes Scrum</text>
+<rect x="50" y="110" width="170" height="280" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="135" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Sprint</text>
+<text x="135" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">borne</text>
+<rect x="235" y="110" width="170" height="280" rx="14" fill="#eef2ff" stroke="#a3e635" stroke-width="3"/>
+<text x="320" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#3f6212" font-weight="700">Roles</text>
+<text x="320" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#3f6212" font-weight="400">clairs</text>
+<rect x="420" y="110" width="170" height="280" rx="14" fill="#ffffff" stroke="#2d3a7c" stroke-width="3"/>
+<text x="505" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1a1f3a" font-weight="700">Montrer</text>
+<rect x="605" y="110" width="170" height="280" rx="14" fill="#2d3a7c" stroke="#2d3a7c" stroke-width="3"/>
+<text x="690" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Done</text>
+<text x="690" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#a3e635" font-weight="400">defini</text>
+<rect x="790" y="110" width="160" height="280" rx="14" fill="#a3e635" stroke="#a3e635" stroke-width="3"/>
+<text x="870" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1a1f3a" font-weight="700">1 action</text>
+<text x="870" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1a1f3a" font-weight="400">de retro</text>
+<text x="500" y="460" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5c6480" font-weight="400">Tenir deux gestes bat dix affiches Scrum.</text>
+</svg>

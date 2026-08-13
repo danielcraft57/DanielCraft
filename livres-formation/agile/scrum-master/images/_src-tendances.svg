@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">2026 : facilitation + preuves, moins de theatre</text>
+<rect x="60" y="130" width="220" height="220" rx="14" fill="#2f3136" stroke="#2f3136" stroke-width="3"/>
+<text x="170" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">Hybride</text>
+<text x="170" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#f0a202" font-weight="400">mieux cadre</text>
+<rect x="290" y="130" width="220" height="220" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="400" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">IA utile</text>
+<text x="400" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5e5e66" font-weight="400">+ relecture</text>
+<rect x="520" y="130" width="220" height="220" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="630" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a5200" font-weight="700">Process</text>
+<text x="630" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5200" font-weight="400">legers</text>
+<rect x="750" y="130" width="190" height="220" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="845" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1c1c1f" font-weight="700">Impact</text>
+<text x="845" y="255" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1c1c1f" font-weight="400">mesure</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Le titre change peu. L'utilite se voit vite.</text>
+</svg>

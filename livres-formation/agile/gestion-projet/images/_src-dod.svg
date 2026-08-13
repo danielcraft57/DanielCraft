@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Definition du fini : checklist partagee</text>
+<rect x="100" y="110" width="800" height="70" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="500" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">[ ] Texte relu et coherent</text>
+<rect x="100" y="195" width="800" height="70" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a5a0a" font-weight="700">[ ] Visible sur telephone</text>
+<rect x="100" y="280" width="800" height="70" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="500" y="325" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">[ ] Lien / contact qui marche</text>
+<rect x="100" y="365" width="800" height="55" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#122a2a" font-weight="700">[ ] Montre a quelqu'un</text>
+<text x="500" y="455" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Fini = coches. Pas "presque".</text>
+</svg>

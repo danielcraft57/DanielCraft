@@ -404,7 +404,7 @@ if ($transferOk) {
         "cgu.html",
         "politique-confidentialite.html"
     )
-    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml", "nginx-project-aliases.conf")
+    $otherFiles = @("robots.txt", "sitemap.xml", "sitemap-pages.xml", "sitemap-vitrines.xml", "sitemap-prestations.xml", "sitemap-bouquins.xml", "nginx-project-aliases.conf")
     
     foreach ($file in $htmlFiles) {
         $filePath = Join-Path $DIST_DIR $file
@@ -482,6 +482,24 @@ if ($transferOk) {
         scp -r $prestationsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
+    # Transfert catalogue bouquins (/bouquins/<slug>/ + telechargement)
+    $bouquinsPath = Join-Path $DIST_DIR "bouquins"
+    if (Test-Path $bouquinsPath) {
+        Write-Host "  Transfert: bouquins/"
+        scp -r $bouquinsPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
+    # Redirections legacy /livres/ -> /bouquins/
+    $livresPath = Join-Path $DIST_DIR "livres"
+    if (Test-Path $livresPath) {
+        Write-Host "  Transfert: livres/ (redirects)"
+        scp -r $livresPath "${ServerUser}@${ServerHost}:${ServerPath}/"
+    }
+
+    # scp preserve parfois 700 sur les dossiers — nginx (www-data) doit pouvoir lire
+    $chmodBouquinsCmd = "find $ServerPath/bouquins $ServerPath/livres -type d -exec chmod 755 {} + 2>/dev/null; find $ServerPath/bouquins $ServerPath/livres -type f -exec chmod 644 {} + 2>/dev/null; true"
+    ssh "${ServerUser}@${ServerHost}" $chmodBouquinsCmd | Out-Null
+
     Write-ColorOutput "Transfert scp termine" "Green"
 }
 
@@ -541,6 +559,14 @@ Write-Host $vitrinesCheckResult
 $prestationsCheckCmd = 'test -f ' + $ServerPath + '/prestations/site-vitrine/index.html && echo "OK: prestations/ deploye" || echo "ATTENTION: prestations/ manquant - relancer build puis deploy"'
 $prestationsCheckResult = ssh "${ServerUser}@${ServerHost}" $prestationsCheckCmd
 Write-Host $prestationsCheckResult
+
+$bouquinsCheckCmd = 'test -f ' + $ServerPath + '/bouquins/index.html && echo "OK: bouquins/ deploye" || echo "ATTENTION: bouquins/ manquant - relancer build puis deploy"'
+$bouquinsCheckResult = ssh "${ServerUser}@${ServerHost}" $bouquinsCheckCmd
+Write-Host $bouquinsCheckResult
+
+$livresRedirectCheckCmd = 'test -f ' + $ServerPath + '/livres/index.html && echo "OK: livres/ redirects deployes" || echo "ATTENTION: livres/ redirects manquants"'
+$livresRedirectCheckResult = ssh "${ServerUser}@${ServerHost}" $livresRedirectCheckCmd
+Write-Host $livresRedirectCheckResult
 
 # Verifier assets/images/projets (placeholder.svg requis pour les vignettes)
 $imagesProjetsCmd = 'if test -d ' + $ServerPath + '/assets/images/projets; then echo "Contenu:"; ls -la ' + $ServerPath + '/assets/images/projets/ 2>/dev/null; if test -f ' + $ServerPath + '/assets/images/projets/placeholder.svg; then echo "OK: placeholder.svg present (vignettes projet)"; else echo "ATTENTION: placeholder.svg manquant - ajoute-le pour eviter les blocs rouges"; fi; else echo "ATTENTION: assets/images/projets manquant"; fi'

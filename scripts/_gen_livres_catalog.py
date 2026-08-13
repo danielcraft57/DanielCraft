@@ -51,6 +51,13 @@ CATS = [
         "icon": "fa-comments",
         "description": "Parler clair : ecrire, presenter, convaincre.",
     },
+    {
+        "id": "agile",
+        "title": "Agile et Scrum",
+        "nav_label": "Agile",
+        "icon": "fa-people-arrows",
+        "description": "Gestion de projet agile, Scrum, roles Scrum Master et Product Owner - en langage simple.",
+    },
 ]
 
 # slug, category, level, title, tagline, short, keywords, source, pdf, icon, featured
@@ -97,6 +104,10 @@ RAW = [
     ("ecommerce-dropshipping", "commerce", "intermediaire", "E-commerce & dropshipping", "Lancer sans stock (avec prudence)", "Combinaison e-commerce + dropshipping : cadre legal et lancement.", "ecommerce,dropshipping,lancement,juridique", "commerce/ecommerce-dropshipping", "ecommerce-dropshipping.pdf", "fa-store", False),
     ("marketing-les-bases", "marketing", "base", "Marketing — Les bases", "Cible, message, canaux", "Persona, funnel, contenu et mesure — le marketing utile.", "marketing,persona,funnel,seo", "marketing/essentiel", "marketing-les-bases.pdf", "fa-bullhorn", False),
     ("communication-les-bases", "communication", "base", "Communication — Les bases", "Ecrire et parler clair", "Messages nets, presentations et relation — sans blabla.", "communication,ecriture,presentation,clair", "communication/essentiel", "communication-les-bases.pdf", "fa-comments", False),
+    ("gestion-projet-agile", "agile", "base", "Gestion de projet agile", "Petits pas, priorites claires, feedback tot", "Comprendre l'agile sans jargon de certif : cascade vs iteratif, backlog, ceremonies.", "agile,gestion de projet,backlog,iteration,scrum", "agile/gestion-projet", "gestion-projet-agile.pdf", "fa-people-arrows", False),
+    ("methodologie-scrum", "agile", "base", "Methodologie Scrum", "Sprints, roles, ceremonies, Definition of Done", "Le cadre Scrum explique simplement : equipe, artefacts, evenements.", "scrum,sprint,backlog,daily,retro", "agile/methodologie-scrum", "methodologie-scrum.pdf", "fa-sync-alt", False),
+    ("devenir-scrum-master", "agile", "intermediaire", "Devenir Scrum Master", "Faciliter, debloquer, coacher sans prendre le volant", "Le role Scrum Master au quotidien : facilitation, obstacles, focus, coaching.", "scrum master,facilitation,coaching,agile,equipe", "agile/scrum-master", "devenir-scrum-master.pdf", "fa-hands-helping", False),
+    ("devenir-product-owner", "agile", "intermediaire", "Devenir Product Owner", "Vision, backlog, priorisation, valeur client", "Le role Product Owner : vision, stakeholders, user stories, priorisation.", "product owner,backlog,priorisation,vision,agile", "agile/product-owner", "devenir-product-owner.pdf", "fa-bullseye", False),
 ]
 
 

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Mini-projet : 7 jours, un lot montrable</text>
+<rect x="50" y="130" width="130" height="200" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="115" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#122a2a" font-weight="700">J1</text>
+<text x="115" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5a6e6e" font-weight="400">cadre</text>
+<rect x="190" y="130" width="130" height="200" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="255" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#122a2a" font-weight="700">J2-3</text>
+<text x="255" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#5a6e6e" font-weight="400">faire</text>
+<rect x="330" y="130" width="130" height="200" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="395" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#7a5a0a" font-weight="700">J4-5</text>
+<text x="395" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7a5a0a" font-weight="400">affiner</text>
+<rect x="470" y="130" width="130" height="200" rx="14" fill="#0f4c4c" stroke="#0f4c4c" stroke-width="3"/>
+<text x="535" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#fff" font-weight="700">J6</text>
+<text x="535" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d4a017" font-weight="400">DoD</text>
+<rect x="610" y="130" width="150" height="200" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="685" y="210" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#122a2a" font-weight="700">J7</text>
+<text x="685" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#122a2a" font-weight="400">revue</text>
+<rect x="780" y="160" width="160" height="140" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="860" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a5a0a" font-weight="700">Preuve</text>
+<text x="860" y="265" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7a5a0a" font-weight="400">visible</text>
+<text x="500" y="400" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Pas une refonte. Un resultat qu'on peut montrer.</text>
+</svg>

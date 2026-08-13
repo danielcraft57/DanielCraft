@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f6f5f3"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#1c1c1f" font-weight="700">Atelier freins : carte + action</text>
+<rect x="70" y="130" width="280" height="230" rx="14" fill="#ffffff" stroke="#2f3136" stroke-width="3"/>
+<text x="210" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#1c1c1f" font-weight="700">Lister</text>
+<text x="210" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5e5e66" font-weight="400">les blocages</text>
+<rect x="370" y="130" width="280" height="230" rx="14" fill="#f3eee6" stroke="#f0a202" stroke-width="3"/>
+<text x="510" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7a5200" font-weight="700">Trier</text>
+<text x="510" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#7a5200" font-weight="400">impact / effort</text>
+<rect x="670" y="130" width="260" height="230" rx="14" fill="#f0a202" stroke="#f0a202" stroke-width="3"/>
+<text x="800" y="200" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1c1c1f" font-weight="700">1 action</text>
+<text x="800" y="250" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1c1c1f" font-weight="400">cette semaine</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5e5e66" font-weight="400">Un frein leve bat dix freins nommes.</text>
+</svg>

@@ -1939,6 +1939,90 @@ pre { border-left-color: #ff7a59 !important; }
 button, .btn-like { background: #132337; }
 @media print { .toc a { color: #132337 !important; } }
 """,
+        "agile": """
+/* Theme Gestion agile : teal + or */
+:root {
+  --ink: #122a2a;
+  --muted: #5a6e6e;
+  --paper: #f3f8f7;
+  --paper-deep: #e2eeec;
+  --band: #0f4c4c;
+  --band-soft: #1a6a6a;
+  --accent: #d4a017;
+  --code-bg: #0d3333;
+  --code-fg: #f4f0e4;
+  --card: #ffffff;
+  --rule: #c5d8d5;
+}
+.cover, .cover-copy { background: #0f4c4c !important; color: #f4f0e4 !important; }
+.cover h1 { color: #f4f0e4 !important; }
+pre { border-left-color: #d4a017 !important; }
+button, .btn-like { background: #0f4c4c; }
+@media print { .toc a { color: #0f4c4c !important; } }
+""",
+        "scrum": """
+/* Theme Methodo Scrum : indigo + lime */
+:root {
+  --ink: #1a1f3a;
+  --muted: #5c6480;
+  --paper: #f4f5fb;
+  --paper-deep: #e4e7f2;
+  --band: #2d3a7c;
+  --band-soft: #4454a0;
+  --accent: #a3e635;
+  --code-bg: #1a2248;
+  --code-fg: #f0f4e8;
+  --card: #ffffff;
+  --rule: #c8cde0;
+}
+.cover, .cover-copy { background: #2d3a7c !important; color: #f0f4e8 !important; }
+.cover h1 { color: #f0f4e8 !important; }
+pre { border-left-color: #a3e635 !important; }
+button, .btn-like { background: #2d3a7c; }
+@media print { .toc a { color: #2d3a7c !important; } }
+""",
+        "scrum_master": """
+/* Theme Scrum Master : graphite + ambre */
+:root {
+  --ink: #1c1c1f;
+  --muted: #5e5e66;
+  --paper: #f6f5f3;
+  --paper-deep: #e9e6e0;
+  --band: #2f3136;
+  --band-soft: #454851;
+  --accent: #f0a202;
+  --code-bg: #1e1f24;
+  --code-fg: #f7f1e4;
+  --card: #ffffff;
+  --rule: #d4cfc6;
+}
+.cover, .cover-copy { background: #2f3136 !important; color: #f7f1e4 !important; }
+.cover h1 { color: #f7f1e4 !important; }
+pre { border-left-color: #f0a202 !important; }
+button, .btn-like { background: #2f3136; }
+@media print { .toc a { color: #2f3136 !important; } }
+""",
+        "product_owner": """
+/* Theme Product Owner : prune + peche */
+:root {
+  --ink: #241528;
+  --muted: #6b5a70;
+  --paper: #f8f3f7;
+  --paper-deep: #ede3eb;
+  --band: #5c2a4a;
+  --band-soft: #7a3d62;
+  --accent: #f2a65a;
+  --code-bg: #2e1a2c;
+  --code-fg: #f8efe6;
+  --card: #ffffff;
+  --rule: #dcced8;
+}
+.cover, .cover-copy { background: #5c2a4a !important; color: #f8efe6 !important; }
+.cover h1 { color: #f8efe6 !important; }
+pre { border-left-color: #f2a65a !important; }
+button, .btn-like { background: #5c2a4a; }
+@media print { .toc a { color: #5c2a4a !important; } }
+""",
     }
     extra = themes.get(theme, "")
     return css + extra

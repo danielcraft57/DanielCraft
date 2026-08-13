@@ -10,7 +10,7 @@ Organisation validee : **pas de refonte totale**. On garde les livres unitaires,
 - **Prix d'appel** : **0,50 € TTC** / livre
 - **Pack de la semaine** : `deal_of_the_week.slug` dans `livres.json` (bandeau sous la recherche)
 - Rotation : changer le slug + relancer `python scripts/update_livres_prices_packs.py` puis le build
-- Packs dispo : debutant-code, web, python, sql, ia, finance, securite, commerce, ecommerce, git, jvm, backend, mobile, systeme, marketing-com
+- Packs dispo : debutant-code, web, python, sql, ia, finance, securite, commerce, ecommerce, git, jvm, backend, mobile, systeme, marketing-com, agile-scrum
 - PDF locaux : `livres-formation/pdf/` (ignores par git, deploy a part)
 
 ## Niveaux
@@ -34,6 +34,7 @@ Regle : ne pas fusionner base+inter+expert dans un seul PDF monstre. Un PDF = un
 | **Finance** | Finance bases + actions/obligations + derives + forex + crypto |
 | **IA** | IA essentiel + ML + DL |
 | **Securite** | Livre(s) securite (add-on ou pack a part) |
+| **Agile / Scrum** | Gestion agile + methodo Scrum + SM + PO |
 
 Vente unitaire reste possible (entree de gamme).
 
@@ -47,6 +48,7 @@ Vente unitaire reste possible (entree de gamme).
 | `commerce/` | Vente, e-commerce, dropshipping |
 | `marketing/` | Marketing bases |
 | `communication/` | Communication bases |
+| `agile/` | Gestion agile, Scrum, SM, PO |
 
 ## Images
 

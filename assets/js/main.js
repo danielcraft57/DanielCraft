@@ -6,6 +6,7 @@ class DanielCraftApp {
   }
 
   init() {
+    this.syncNavOffset();
     this.setupEventListeners();
     this.initNavigation();
     this.initCounters();
@@ -29,8 +30,9 @@ class DanielCraftApp {
       link.addEventListener('click', this.handleSmoothScroll.bind(this));
     });
 
-    // Navbar scroll effect
+    // Navbar scroll effect + sync hauteur nav
     window.addEventListener('scroll', this.throttle(this.handleNavbarScroll.bind(this), 16));
+    window.addEventListener('resize', this.throttle(this.syncNavOffset.bind(this), 100));
 
     // Back to top : clic scroll en haut
     const backToTop = document.getElementById('backToTop');
@@ -42,13 +44,24 @@ class DanielCraftApp {
     }
   }
 
+  /** Hauteur nav fixe → --nav-offset (hero accueil, barre cats sticky, ancres). */
+  syncNavOffset() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+    const h = `${navbar.offsetHeight}px`;
+    document.documentElement.style.setProperty('--nav-offset', h);
+    const homeRoot = document.querySelector('.page-home-ecom');
+    if (homeRoot) homeRoot.style.setProperty('--nav-offset', h);
+  }
+
   handleSmoothScroll(e) {
     e.preventDefault();
     const targetId = e.target.closest('a').getAttribute('href');
     const targetElement = document.querySelector(targetId);
     
     if (targetElement) {
-      const offsetTop = targetElement.offsetTop - 80;
+      const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset')) || 80;
+      const offsetTop = targetElement.offsetTop - navH - 8;
       
       window.scrollTo({
         top: offsetTop,
@@ -70,6 +83,7 @@ class DanielCraftApp {
       } else {
         navbar.classList.remove('compact');
       }
+      this.syncNavOffset();
     }
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480">
+<rect width="1000" height="480" fill="#f3f8f7"/>
+<text x="500" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#122a2a" font-weight="700">Pieges classiques + sorties</text>
+<rect x="60" y="120" width="280" height="230" rx="14" fill="#ffffff" stroke="#0f4c4c" stroke-width="3"/>
+<text x="200" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#122a2a" font-weight="700">Presque fini</text>
+<text x="200" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e6e" font-weight="400">-> DoD + demo</text>
+<text x="200" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#5a6e6e" font-weight="400">vendredi</text>
+<rect x="360" y="120" width="280" height="230" rx="14" fill="#e8f2ef" stroke="#d4a017" stroke-width="3"/>
+<text x="500" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#7a5a0a" font-weight="700">Zero plan</text>
+<text x="500" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">-> backlog</text>
+<text x="500" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#7a5a0a" font-weight="400">d'une page</text>
+<rect x="660" y="120" width="280" height="230" rx="14" fill="#d4a017" stroke="#d4a017" stroke-width="3"/>
+<text x="800" y="180" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#122a2a" font-weight="700">Outil miracle</text>
+<text x="800" y="230" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#122a2a" font-weight="400">-> nommer</text>
+<text x="800" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#122a2a" font-weight="400">le frein humain</text>
+<text x="500" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#5a6e6e" font-weight="400">Piege nomme = deja a moitie leve.</text>
+</svg>
