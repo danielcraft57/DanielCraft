@@ -246,6 +246,187 @@ function pl_website_host(string $website): string
     return strtolower(preg_replace('/^www\./i', '', $host));
 }
 
+/**
+ * Accepte une URL http(s) ou un nom de domaine (parametre GET website).
+ */
+function pl_sanitize_website_query(string $website): string
+{
+    $website = trim(preg_replace('/[\r\n]+/', '', $website));
+    if ($website === '') {
+        return '';
+    }
+    if (preg_match('#^https?://#i', $website)) {
+        return pl_normalize_website($website);
+    }
+    if (str_contains($website, '/')) {
+        return '';
+    }
+    $domain = strtolower($website);
+    if (!filter_var($domain, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME)) {
+        return '';
+    }
+    return pl_normalize_website($domain);
+}
+
+/**
+ * @return list<string>
+ */
+function pl_website_lookup_candidates(string $website): array
+{
+    $raw = trim(preg_replace('/[\r\n]+/', '', $website));
+    if ($raw === '') {
+        return [];
+    }
+
+    $normalized = pl_sanitize_website_query($raw);
+    if ($normalized === '') {
+        return [];
+    }
+
+    $host = pl_website_host($normalized);
+    $candidates = [];
+    $add = static function (string $value) use (&$candidates): void {
+        $value = trim($value);
+        if ($value !== '' && !in_array($value, $candidates, true)) {
+            $candidates[] = $value;
+        }
+    };
+
+    $add($normalized);
+    if ($raw !== $normalized) {
+        $add($raw);
+    }
+    if ($host === '') {
+        return $candidates;
+    }
+
+    $add($host);
+    foreach (['https', 'http'] as $scheme) {
+        foreach (['', 'www.'] as $prefix) {
+            $add($scheme . '://' . $prefix . $host);
+            $add($scheme . '://' . $prefix . $host . '/');
+        }
+    }
+
+    return $candidates;
+}
+
+/**
+ * @param array<string, mixed> $data
+ */
+function pl_extract_entreprise_website(array $data): string
+{
+    $paths = [
+        ['data', 'website'],
+        ['data', 'entreprise', 'website'],
+        ['entreprise', 'website'],
+        ['website'],
+    ];
+    foreach ($paths as $path) {
+        $cur = $data;
+        $ok = true;
+        foreach ($path as $segment) {
+            if (!is_array($cur) || !array_key_exists($segment, $cur)) {
+                $ok = false;
+                break;
+            }
+            $cur = $cur[$segment];
+        }
+        if ($ok && is_string($cur) && trim($cur) !== '') {
+            $stored = pl_sanitize_website_query($cur);
+            if ($stored !== '') {
+                return $stored;
+            }
+        }
+    }
+    return '';
+}
+
+/**
+ * Recherche un rapport ProspectLab en essayant plusieurs formes d'URL
+ * puis un fallback entreprises/by-website.
+ *
+ * @return array{ok: bool, status: int, body: string, matched_website: string, error: string}
+ */
+function pl_fetch_website_analysis(string $website, string $full = '1'): array
+{
+    $fail = [
+        'ok' => false,
+        'status' => 404,
+        'body' => '',
+        'matched_website' => '',
+        'error' => 'Aucun rapport trouvé pour ce site.',
+    ];
+
+    $token = pl_token();
+    if ($token === '' || $token === 'REPLACE_ME') {
+        return array_merge($fail, ['status' => 500, 'error' => 'Token API non configuré côté serveur.']);
+    }
+
+    $full = ($full === '0' || $full === '1') ? $full : '1';
+    $endpoint = pl_website_analysis_endpoint();
+    $tried = [];
+
+    $tryOne = function (string $candidate) use ($endpoint, $full, &$tried): ?array {
+        if ($candidate === '' || in_array($candidate, $tried, true)) {
+            return null;
+        }
+        $tried[] = $candidate;
+        $url = $endpoint . '?website=' . rawurlencode($candidate) . '&full=' . rawurlencode($full);
+        $res = pl_http('GET', $url, null, 45);
+        if ($res['ok'] && is_string($res['body']) && trim($res['body']) !== '') {
+            return [
+                'ok' => true,
+                'status' => $res['status'],
+                'body' => $res['body'],
+                'matched_website' => $candidate,
+                'error' => '',
+            ];
+        }
+        if (!in_array((int) $res['status'], [400, 404], true)) {
+            return [
+                'ok' => false,
+                'status' => (int) ($res['status'] ?: 502),
+                'body' => is_string($res['body']) ? $res['body'] : '',
+                'matched_website' => '',
+                'error' => $res['error'] !== '' ? $res['error'] : 'Erreur API ProspectLab',
+            ];
+        }
+        return null;
+    };
+
+    foreach (pl_website_lookup_candidates($website) as $candidate) {
+        $hit = $tryOne($candidate);
+        if ($hit !== null) {
+            return $hit;
+        }
+    }
+
+    $host = pl_website_host(pl_sanitize_website_query($website));
+    $hostCandidates = array_values(array_unique(array_filter([
+        $host,
+        $host !== '' ? 'www.' . $host : '',
+    ])));
+
+    foreach ($hostCandidates as $hostTry) {
+        $byUrl = pl_api_base() . '/entreprises/by-website?website=' . rawurlencode($hostTry);
+        $byRes = pl_http('GET', $byUrl, null, 20);
+        if (!$byRes['ok'] || !is_array($byRes['data'])) {
+            continue;
+        }
+        $stored = pl_extract_entreprise_website($byRes['data']);
+        if ($stored === '') {
+            continue;
+        }
+        $hit = $tryOne($stored);
+        if ($hit !== null) {
+            return $hit;
+        }
+    }
+
+    return $fail;
+}
+
 function pl_auth_headers(): array
 {
     $headers = ['Accept: application/json'];

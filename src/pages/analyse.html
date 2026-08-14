@@ -1,95 +1,369 @@
-<section class="section" aria-label="Analyse de site web" itemscope itemtype="https://schema.org/WebPage">
+<section
+
+  class="section page-analyse"
+
+  aria-label="Rapport d'analyse de site web"
+
+  data-audit-slug="{{audit_paid_slug}}"
+
+  itemscope
+
+  itemtype="https://schema.org/WebPage"
+
+>
+
   <link itemprop="url" href="{{page_url}}">
-  <div class="container">
-    <span class="section-badge">Analyse</span>
-    <h1 class="section-title" itemprop="name">Rapport d’analyse d’un site web</h1>
-    <p class="section-description" itemprop="description">
-      Collez une URL pour afficher (ou générer) un rapport d’audit. Vous pourrez ensuite partager un lien vers ce rapport.
-    </p>
 
-    <div class="pl-card pl-card--form" style="margin-top: 2rem;">
-      <form class="pl-form" id="plForm" novalidate>
-        <div class="form-group pl-url-group">
-          <label for="plUrl">URL du site</label>
-          <div class="pl-url-row">
-            <input
-              id="plUrl"
-              name="url"
-              type="url"
-              inputmode="url"
-              autocomplete="url"
-              placeholder="https://exemple.com"
-              required
-            />
-            <button type="submit" class="pl-url-submit" id="plSubmitBtn" aria-label="Analyser l’URL">
-              <span class="pl-btn-text"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></span>
-              <span class="pl-btn-loading" aria-live="polite"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
-            </button>
+  <meta itemprop="name" content="Rapport d'analyse de site web">
+
+  <meta itemprop="description" content="{{page_description}}">
+
+
+
+  <div class="analyse-hero-band">
+
+    <div class="container">
+
+      <div class="analyse-state-boot" id="plBootWrap">
+
+        <header class="analyse-intro analyse-reveal" data-reveal-order="0">
+
+          <h1 class="analyse-intro__title section-title">Votre site en un coup d'oeil</h1>
+
+          <p class="analyse-intro__lead">Scores, points cles et pistes d'action - ouvrez le lien recu par email ou saisissez une URL.</p>
+
+        </header>
+
+
+
+        <div class="analyse-boot analyse-reveal" data-reveal-order="0" id="plBoot">
+
+          <form class="analyse-boot__form" id="plForm" novalidate>
+
+            <label class="visually-hidden" for="plUrl">URL du site</label>
+
+            <div class="pl-url-row">
+
+              <input
+
+                id="plUrl"
+
+                name="url"
+
+                type="url"
+
+                inputmode="url"
+
+                autocomplete="url"
+
+                placeholder="https://votre-site.fr"
+
+                required
+
+              />
+
+              <button type="submit" class="pl-url-submit" id="plSubmitBtn" aria-label="Charger le rapport">
+
+                <span class="pl-btn-text"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></span>
+
+                <span class="pl-btn-loading" aria-live="polite"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+
+              </button>
+
+            </div>
+
+            <p class="analyse-boot__hint">Lien email ProspectLab ou URL directe.</p>
+
+            <div class="form-feedback form-feedback--error" id="plBootFeedback" hidden role="status" aria-live="polite"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="analyse-loading" id="plLoading" hidden aria-live="polite" aria-busy="true">
+
+        <div class="analyse-loader">
+
+          <div class="analyse-loader__head">
+
+            <div class="analyse-loader__pulse" aria-hidden="true">
+
+              <span class="analyse-loader__ring analyse-loader__ring--outer"></span>
+
+              <span class="analyse-loader__ring analyse-loader__ring--inner"></span>
+
+              <i class="fas fa-magnifying-glass-chart"></i>
+
+            </div>
+
+            <div class="analyse-loader__intro">
+
+              <p class="analyse-loader__title">Analyse en cours</p>
+
+              <p class="analyse-loader__url" id="plLoadingUrl"></p>
+
+            </div>
+
           </div>
+
+          <div class="analyse-loader__scores" aria-hidden="true">
+
+            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
+
+            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
+
+            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
+
+            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
+
+          </div>
+
+          <div class="analyse-loader__progress">
+
+            <div class="analyse-loader__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progression de l'analyse">
+
+              <span class="analyse-loader__bar-fill"></span>
+
+            </div>
+
+            <p class="analyse-loader__step" id="plLoadingStep">Connexion au site…</p>
+
+          </div>
+
         </div>
 
-        <div class="pl-form-actions">
-          <button type="button" class="btn btn-secondary" id="plClearBtn">
-            <i class="fas fa-rotate-left" aria-hidden="true"></i>Réinitialiser
-          </button>
+      </div>
+
+
+
+      <header class="analyse-hero analyse-hero--report" id="plReportHero" hidden aria-label="Synthese du rapport">
+
+        <div class="analyse-hero__left analyse-reveal" data-reveal-order="1">
+
+          <p class="analyse-hero__kicker"><i class="fas fa-file-lines" aria-hidden="true"></i> Rapport d'analyse</p>
+
+          <h1 class="analyse-hero__title section-title" id="plCompanyName" itemprop="about">Votre site</h1>
+
+          <a class="analyse-hero__url" id="plSiteLink" href="#" target="_blank" rel="noopener noreferrer">
+
+            <i class="fas fa-globe" aria-hidden="true"></i>
+
+            <span id="plSiteLabel"></span>
+
+          </a>
+
+          <p class="analyse-hero__date" id="plReportDate"></p>
+
+          <div class="analyse-scores analyse-scores--hero" id="plScores" aria-label="Scores du site"></div>
+
         </div>
 
-        <div class="form-feedback form-feedback--error" id="plFeedback" hidden></div>
-        <p class="pl-hint">
-          Astuce : vous pouvez aussi ouvrir directement <code>/analyse?website=https://exemple.com&amp;full=1</code>.
-        </p>
-      </form>
+        <figure class="analyse-hero__visual analyse-reveal" data-reveal-order="2">
+
+          <div class="analyse-shot" aria-label="Capture d'ecran du site">
+
+            <div class="analyse-shot__chrome" aria-hidden="true">
+
+              <span class="analyse-shot__dots"><i></i><i></i><i></i></span>
+
+              <span class="analyse-shot__bar" id="plShotUrl">votre-site.fr</span>
+
+            </div>
+
+            <div class="analyse-shot__viewport" id="plScreenshot"></div>
+
+          </div>
+
+        </figure>
+
+      </header>
+
     </div>
 
-    <section class="pl-report" id="plReport" aria-label="Résultats" hidden>
-      <div class="pl-report-header">
-        <div class="pl-report-title">
-          <h2 class="section-title" style="margin-bottom: 0.25rem;">Résultats</h2>
-          <p class="section-description" id="plReportMeta" style="margin: 0;"></p>
-        </div>
-        <div class="pl-report-actions">
-          <button type="button" class="btn btn-secondary" id="plCopyLinkBtn">
-            <i class="fas fa-link" aria-hidden="true"></i>Copier le lien
-          </button>
-          <a class="btn btn-primary" id="plOpenSiteBtn" href="#" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Ouvrir le site
-          </a>
-        </div>
-      </div>
-
-      <div class="pl-grid">
-        <div class="pl-panel">
-          <h3 class="pl-panel-title">Scores</h3>
-          <div class="pl-scores" id="plScores"></div>
-        </div>
-
-        <div class="pl-panel">
-          <h3 class="pl-panel-title">Aperçu</h3>
-          <div class="pl-preview">
-            <div class="pl-preview-shot" id="plScreenshot" aria-label="Capture d’écran du site"></div>
-            <dl class="pl-kv" id="plKeyValues"></dl>
-          </div>
-        </div>
-      </div>
-
-      <div class="pl-panel" style="margin-top: 1.6rem;">
-        <h3 class="pl-panel-title">Points clés</h3>
-        <div class="pl-audits" id="plHighlights"></div>
-      </div>
-
-      <div class="pl-panel" style="margin-top: 1.6rem;">
-        <h3 class="pl-panel-title">Détails</h3>
-        <div class="pl-details" id="plDetails"></div>
-      </div>
-
-      <nav class="legal-page-links" style="margin-top: 2.4rem;" aria-label="Navigation">
-        <a href="/">Retour à l’accueil</a>
-        <span class="separator">·</span>
-        <a href="/projets">Voir les projets</a>
-        <span class="separator">·</span>
-        <a href="/#contact">Contact</a>
-      </nav>
-    </section>
   </div>
+
+
+
+  <div class="container analyse-report-body" id="plReport" hidden>
+
+    <section class="analyse-insights analyse-reveal" data-reveal-order="3" aria-labelledby="analyse-insights-title">
+
+      <h2 id="analyse-insights-title" class="visually-hidden">Points cles</h2>
+
+      <div class="analyse-insights__grid" id="plInsights"></div>
+
+    </section>
+
+
+
+    <section class="analyse-convert analyse-reveal" data-reveal-order="4" aria-labelledby="analyse-convert-title">
+
+      <h2 id="analyse-convert-title" class="visually-hidden">Recevoir l'audit ou passer au premium</h2>
+
+      <div class="analyse-convert__grid">
+
+        <article class="analyse-card analyse-card--lead">
+
+          <div class="analyse-card__split">
+
+            <div class="analyse-card__intro">
+
+              <div class="analyse-card__icon analyse-card__icon--lead" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+
+              <h3 class="analyse-card__title">Recevoir l'audit</h3>
+
+              <p class="analyse-card__lead">Recevez votre rapport complet par email.</p>
+
+            </div>
+
+            <div class="analyse-card__body">
+
+              <form class="analyse-lead-form" id="plLeadForm" novalidate>
+
+                <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <div class="analyse-lead-form__row">
+
+                  <div class="form-group">
+
+                    <label for="plLeadFirst">Prenom</label>
+
+                    <input id="plLeadFirst" name="first_name" type="text" autocomplete="given-name" placeholder="Prenom">
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="plLeadLast">Nom</label>
+
+                    <input id="plLeadLast" name="last_name" type="text" autocomplete="family-name" placeholder="Nom">
+
+                  </div>
+
+                </div>
+
+                <div class="analyse-lead-form__row">
+
+                  <div class="form-group">
+
+                    <label for="plLeadEmail">Email</label>
+
+                    <input id="plLeadEmail" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required>
+
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="plLeadSite">Site web</label>
+
+                    <input id="plLeadSite" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://votre-site.fr" required>
+
+                  </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary analyse-lead-form__submit" id="plLeadSubmit">
+
+                  <span class="analyse-submit__label">Recevoir l'audit</span>
+
+                  <span class="analyse-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+
+                </button>
+
+                <div class="form-feedback" id="plLeadFeedback" hidden role="status" aria-live="polite"></div>
+
+              </form>
+
+              <div class="analyse-lead-success" id="plLeadSuccess" hidden>
+
+                <p class="analyse-lead-success__title">C'est parti</p>
+
+                <p class="analyse-lead-success__text" id="plLeadSuccessText">Le rapport arrive par email. Pensez a verifier les spams.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="analyse-card analyse-card--premium">
+
+          <div class="analyse-card__split">
+
+            <div class="analyse-card__intro">
+
+              <div class="analyse-card__icon analyse-card__icon--premium" aria-hidden="true"><i class="fas fa-award"></i></div>
+
+              <h3 class="analyse-card__title">Audit premium</h3>
+
+              <p class="analyse-card__lead">Un audit approfondi avec des recommandations actionnables.</p>
+
+            </div>
+
+            <div class="analyse-card__body analyse-card__body--premium">
+
+              <ul class="analyse-premium__perks">
+
+                <li><i class="fas fa-check" aria-hidden="true"></i> Analyse approfondie de votre site</li>
+
+                <li><i class="fas fa-check" aria-hidden="true"></i> Recommandations prioritaires</li>
+
+                <li><i class="fas fa-check" aria-hidden="true"></i> Plan d'action personnalise</li>
+
+              </ul>
+
+              <button type="button" class="btn btn-outline analyse-premium__cta" id="plPremiumBtn">
+
+                <span class="analyse-submit__label">Demander l'audit premium</span>
+
+                <span class="analyse-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+
+              </button>
+
+              <div class="form-feedback" id="plPremiumFeedback" hidden role="status" aria-live="polite"></div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="analyse-offers analyse-reveal" data-reveal-order="5" aria-labelledby="analyse-offers-title">
+
+      <h2 id="analyse-offers-title" class="analyse-offers__title">Pour aller plus loin</h2>
+
+      <p class="analyse-offers__sub">Decouvrez nos offres pour ameliorer votre presence en ligne.</p>
+
+      <div class="analyse-offers__grid" id="plOffers"></div>
+
+    </section>
+
+
+
+    <section class="analyse-details-wrap analyse-reveal" data-reveal-order="6" aria-labelledby="analyse-details-title">
+
+      <h2 id="analyse-details-title" class="analyse-offers__title">Le detail</h2>
+
+      <div class="pl-details" id="plDetails"></div>
+
+    </section>
+
+  </div>
+
 </section>
+
 

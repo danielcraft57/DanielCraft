@@ -1,48 +1,132 @@
-// ===== Rapport d'analyse - Page /analyse =====
+// ===== Rapport d'analyse - Page /analyse (maquette A) =====
 
 (function () {
   const API_BASE = '';
   const ENDPOINT = '/api/website-analysis.php';
+  const FREE_AUDIT_ENDPOINT = '/api/request-free-audit.php';
+  const PREMIUM_CHECKOUT_ENDPOINT = '/api/stripe-create-audit-checkout.php';
+  const STORAGE_KEY = 'dc_audit_checkout_pending';
+
+  const pageRoot = document.querySelector('.page-analyse');
+  const auditSlug = (pageRoot && pageRoot.getAttribute('data-audit-slug')) || 'audit-complet-ia';
+
+  const OFFERS = [
+    {
+      key: 'performance',
+      slug: 'rapport-vitesse',
+      title: 'Site plus rapide',
+      desc: 'Optimisez la vitesse de chargement et l\'experience sur mobile.',
+      icon: 'fa-gauge-high',
+      iconMod: 'perf'
+    },
+    {
+      key: 'seo',
+      slug: 'referencement-google',
+      title: 'Etre trouve sur Google',
+      desc: 'Ameliorez votre referencement et votre visibilite locale.',
+      icon: 'fa-magnifying-glass',
+      iconMod: 'seo'
+    },
+    {
+      key: 'securite',
+      slug: 'sauvegardes-securite',
+      title: 'Securiser le site',
+      desc: 'Protegez votre site et vos donnees avec les bons reflexes.',
+      icon: 'fa-shield-halved',
+      iconMod: 'sec'
+    },
+    {
+      key: 'vitrine',
+      slug: 'site-vitrine',
+      title: 'Vitrine claire',
+      desc: 'Mettez en valeur votre activite avec un site clair et efficace.',
+      icon: 'fa-window-maximize',
+      iconMod: 'vitrine'
+    }
+  ];
 
   const els = {
+    bootWrap: document.getElementById('plBootWrap'),
+    boot: document.getElementById('plBoot'),
     form: document.getElementById('plForm'),
     url: document.getElementById('plUrl'),
     submit: document.getElementById('plSubmitBtn'),
-    clear: document.getElementById('plClearBtn'),
-    feedback: document.getElementById('plFeedback'),
+    bootFeedback: document.getElementById('plBootFeedback'),
+    loading: document.getElementById('plLoading'),
+    loadingUrl: document.getElementById('plLoadingUrl'),
+    loadingStep: document.getElementById('plLoadingStep'),
+    reportHero: document.getElementById('plReportHero'),
     report: document.getElementById('plReport'),
-    reportMeta: document.getElementById('plReportMeta'),
-    copyLink: document.getElementById('plCopyLinkBtn'),
-    openSite: document.getElementById('plOpenSiteBtn'),
+    companyName: document.getElementById('plCompanyName'),
+    siteLink: document.getElementById('plSiteLink'),
+    siteLabel: document.getElementById('plSiteLabel'),
+    reportDate: document.getElementById('plReportDate'),
     scores: document.getElementById('plScores'),
     screenshot: document.getElementById('plScreenshot'),
-    keyValues: document.getElementById('plKeyValues'),
-    highlights: document.getElementById('plHighlights'),
-    details: document.getElementById('plDetails')
+    shotUrl: document.getElementById('plShotUrl'),
+    intro: document.querySelector('.analyse-intro'),
+    insights: document.getElementById('plInsights'),
+    details: document.getElementById('plDetails'),
+    offers: document.getElementById('plOffers'),
+    leadForm: document.getElementById('plLeadForm'),
+    leadFirst: document.getElementById('plLeadFirst'),
+    leadLast: document.getElementById('plLeadLast'),
+    leadEmail: document.getElementById('plLeadEmail'),
+    leadSite: document.getElementById('plLeadSite'),
+    leadSubmit: document.getElementById('plLeadSubmit'),
+    leadFeedback: document.getElementById('plLeadFeedback'),
+    leadSuccess: document.getElementById('plLeadSuccess'),
+    leadSuccessText: document.getElementById('plLeadSuccessText'),
+    premiumBtn: document.getElementById('plPremiumBtn'),
+    premiumFeedback: document.getElementById('plPremiumFeedback')
   };
 
   if (!els.form || !els.url || !els.submit) return;
 
-  function setFeedback(message, isError) {
-    if (!els.feedback) return;
+  let currentWebsite = '';
+  let loadingStepTimer = null;
+  let loadingStepIndex = 0;
+
+  const LOADING_STEPS = [
+    'Connexion au site…',
+    'Mesure de la performance…',
+    'Analyse SEO et contenu…',
+    'Verification securite…',
+    'Preparation du rapport…'
+  ];
+
+  function setFeedback(el, message, isError) {
+    if (!el) return;
     if (!message) {
-      els.feedback.hidden = true;
-      els.feedback.textContent = '';
+      el.hidden = true;
+      el.textContent = '';
       return;
     }
-    els.feedback.hidden = false;
-    els.feedback.textContent = message;
-    els.feedback.className = 'form-feedback ' + (isError ? 'form-feedback--error' : 'form-feedback--success');
+    el.hidden = false;
+    el.textContent = message;
+    el.className = 'form-feedback ' + (isError ? 'form-feedback--error' : 'form-feedback--success');
   }
 
-  function setLoading(isLoading) {
+  function setBootLoading(isLoading) {
     els.submit.classList.toggle('is-loading', isLoading);
     els.submit.disabled = isLoading;
   }
 
+  function setBtnLoading(btn, isLoading) {
+    if (!btn) return;
+    btn.disabled = isLoading;
+    const label = btn.querySelector('.analyse-submit__label');
+    const loading = btn.querySelector('.analyse-submit__loading');
+    if (label) label.hidden = !!isLoading;
+    if (loading) loading.hidden = !isLoading;
+  }
+
   function safeUrl(raw) {
     try {
-      const u = new URL(raw);
+      let s = String(raw || '').trim();
+      if (!s) return null;
+      if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
+      const u = new URL(s);
       if (!['http:', 'https:'].includes(u.protocol)) return null;
       return u.toString();
     } catch {
@@ -50,10 +134,12 @@
     }
   }
 
-  function scoreColor(score0to100) {
-    if (score0to100 >= 90) return 'var(--accent-color)';
-    if (score0to100 >= 50) return '#f59e0b';
-    return 'var(--danger-color)';
+  function displayHost(url) {
+    try {
+      return new URL(url).host.replace(/^www\./, '');
+    } catch {
+      return String(url || '').replace(/^https?:\/\//, '');
+    }
   }
 
   function escapeHtml(s) {
@@ -96,135 +182,367 @@
     return 'bad';
   }
 
+  function scoreColor(score0to100, invert) {
+    const x = invert ? (100 - score0to100) : score0to100;
+    if (x >= 80) return 'var(--analyse-green, #10b981)';
+    if (x >= 50) return 'var(--analyse-amber, #f59e0b)';
+    return 'var(--analyse-red, #dc2626)';
+  }
+
+  function ringColorForKey(key) {
+    switch (key) {
+      case 'performance': return '#10b981';
+      case 'seo': return '#2563eb';
+      case 'securite': return '#0d9488';
+      case 'risque':
+      case 'pentest': return '#f59e0b';
+      default: return '#64748b';
+    }
+  }
+
+  function scoreNote(key, value) {
+    if (typeof value !== 'number') return '—';
+    if (key === 'pentest' || key === 'risque') {
+      if (value <= 30) return 'Faible';
+      if (value <= 60) return 'Moyen';
+      return 'Eleve';
+    }
+    if (key === 'securite') {
+      if (value >= 90) return 'Excellente';
+      if (value >= 75) return 'Bonne';
+      if (value >= 50) return 'Moyenne';
+      return 'Faible';
+    }
+    if (key === 'seo') {
+      if (value >= 90) return 'Excellent';
+      if (value >= 75) return 'Bien';
+      if (value >= 50) return 'Moyen';
+      return 'Faible';
+    }
+    if (value >= 90) return 'Excellente';
+    if (value >= 75) return 'Bonne';
+    if (value >= 50) return 'Moyenne';
+    return 'Faible';
+  }
+
   function tableHtml(headers, rows) {
     const th = headers.map(h => `<th>${escapeHtml(h)}</th>`).join('');
     const tr = rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
     return `<div class="pl-table"><table><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>`;
   }
 
-  function renderScores(cards) {
-    if (!els.scores) return;
-    els.scores.innerHTML = '';
+  function splitName(full) {
+    const parts = String(full || '').trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return { first: '', last: '' };
+    if (parts.length === 1) return { first: parts[0], last: '' };
+    return { first: parts[0], last: parts.slice(1).join(' ') };
+  }
 
-    const list = Array.isArray(cards) ? cards : [];
-    if (!list.length) {
-      els.scores.innerHTML = '<p style="color: var(--gray-600); margin: 0;">Aucun score disponible.</p>';
+  function setBootVisible(show) {
+    if (els.bootWrap) els.bootWrap.hidden = !show;
+  }
+
+  function setLoadingVisible(show, websiteUrl) {
+    if (els.loading) {
+      els.loading.hidden = !show;
+      els.loading.setAttribute('aria-busy', show ? 'true' : 'false');
+    }
+    if (show) {
+      if (els.loadingUrl) {
+        els.loadingUrl.textContent = websiteUrl ? displayHost(websiteUrl) : '';
+      }
+      startLoadingSteps();
+    } else {
+      stopLoadingSteps();
+    }
+  }
+
+  function startLoadingSteps() {
+    stopLoadingSteps();
+    loadingStepIndex = 0;
+    updateLoadingStep(false);
+    loadingStepTimer = window.setInterval(() => {
+      loadingStepIndex = (loadingStepIndex + 1) % LOADING_STEPS.length;
+      updateLoadingStep(true);
+    }, 1800);
+  }
+
+  function stopLoadingSteps() {
+    if (loadingStepTimer != null) {
+      window.clearInterval(loadingStepTimer);
+      loadingStepTimer = null;
+    }
+  }
+
+  function updateLoadingStep(fade) {
+    if (!els.loadingStep) return;
+    const text = LOADING_STEPS[loadingStepIndex] || LOADING_STEPS[0];
+    if (!fade) {
+      els.loadingStep.textContent = text;
+      els.loadingStep.classList.remove('is-changing');
       return;
     }
+    els.loadingStep.classList.add('is-changing');
+    window.setTimeout(() => {
+      els.loadingStep.textContent = text;
+      els.loadingStep.classList.remove('is-changing');
+    }, 160);
+  }
 
-    list.forEach((it) => {
-      const key = it?.key || it?.label || 'score';
-      const score100 = typeof it?.value === 'number' ? Math.round(it.value) : null;
-      const ring = score100 == null ? 0 : Math.max(0, Math.min(100, score100));
-      const color = score100 == null ? 'rgba(17, 24, 39, 0.18)' : scoreColor(score100);
-      const note = it?.note || (score100 == null ? '—' : (score100 >= 90 ? 'Excellent' : score100 >= 50 ? 'Moyen' : 'Faible'));
+  function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
 
-      const card = document.createElement('div');
-      card.className = 'pl-score-card';
-      card.innerHTML = `
-        <div class="pl-score-ring" style="--pl-ring:${ring}%; --pl-ring-color:${color};" aria-label="${escapeHtml(String(key))}: ${score100 ?? '—'}">
-          <div class="pl-score-value">${score100 ?? '—'}</div>
-        </div>
-        <div class="pl-score-meta">
-          <div class="pl-score-label">${escapeHtml(it?.label || String(key))}</div>
-          <div class="pl-score-note">${escapeHtml(note)}</div>
-          ${typeof it?.value === 'number' ? `<div class="pl-bar" aria-hidden="true"><div class="pl-bar-fill" style="background:${color}" data-pl-bar="${ring}"></div></div>` : ''}
-        </div>
-      `;
-      els.scores.appendChild(card);
-    });
-
+  function animateScoreRing(card) {
+    const ring = card && card.querySelector('.pl-score-ring');
+    if (!ring) return;
+    const target = ring.dataset.ringTarget || '0';
+    ring.style.setProperty('--pl-ring-live', '0%');
     requestAnimationFrame(() => {
-      document.querySelectorAll('[data-pl-bar]').forEach((el) => {
-        const v = Number(el.getAttribute('data-pl-bar') || '0');
-        el.style.width = `${Math.max(0, Math.min(100, v))}%`;
+      ring.style.setProperty('--pl-ring-live', `${target}%`);
+    });
+  }
+
+  function playBootReveal() {
+    const root = pageRoot;
+    if (!root || !els.bootWrap || els.bootWrap.hidden) return;
+    if (prefersReducedMotion()) {
+      root.querySelectorAll('#plBootWrap [data-reveal-order]').forEach((el) => el.classList.add('is-in'));
+      root.classList.add('is-revealed');
+      return;
+    }
+    root.classList.remove('is-revealed');
+    root.querySelectorAll('#plBootWrap .is-in').forEach((el) => el.classList.remove('is-in'));
+    requestAnimationFrame(() => {
+      root.classList.add('is-revealed');
+      root.querySelectorAll('#plBootWrap [data-reveal-order]').forEach((el, index) => {
+        window.setTimeout(() => el.classList.add('is-in'), 90 + index * 110);
       });
     });
   }
 
-  function renderPreview(preview) {
-    const { finalUrl, entreprise, technical, seo, pentest, osint, screenshotUrl } = preview || {};
+  function playReportReveal() {
+    const root = pageRoot;
+    if (!root) return;
 
-    if (els.screenshot) {
-      els.screenshot.innerHTML = '';
-      if (screenshotUrl) {
-        const img = document.createElement('img');
-        img.src = screenshotUrl;
-        img.alt = 'Aperçu visuel du site analysé';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.referrerPolicy = 'no-referrer';
-        els.screenshot.appendChild(img);
-      } else {
-        const box = document.createElement('div');
-        box.className = 'pl-skeleton';
-        box.style.width = '100%';
-        box.style.height = '100%';
-        box.setAttribute('aria-hidden', 'true');
-        els.screenshot.appendChild(box);
+    root.classList.remove('is-revealed');
+    root.querySelectorAll('.is-in').forEach((el) => el.classList.remove('is-in'));
+
+    if (els.reportHero) els.reportHero.hidden = false;
+    if (els.report) els.report.hidden = false;
+
+    const reduced = prefersReducedMotion();
+    const revealItems = root.querySelectorAll('[data-reveal-order]');
+    const scores = els.scores ? els.scores.querySelectorAll('.analyse-score') : [];
+    const insights = els.insights ? els.insights.querySelectorAll('.analyse-insight') : [];
+    const offers = els.offers ? els.offers.querySelectorAll('.analyse-offer') : [];
+    const accordions = els.details ? els.details.querySelectorAll('.pl-accordion') : [];
+    const shot = root.querySelector('.analyse-shot');
+
+    const markIn = (nodes, step) => {
+      nodes.forEach((node, index) => {
+        window.setTimeout(() => node.classList.add('is-in'), step * index);
+      });
+    };
+
+    requestAnimationFrame(() => {
+      root.classList.add('is-revealed');
+
+      if (reduced) {
+        revealItems.forEach((el) => el.classList.add('is-in'));
+        scores.forEach((s) => {
+          s.classList.add('is-in');
+          animateScoreRing(s);
+        });
+        if (shot) shot.classList.add('is-in');
+        insights.forEach((el) => el.classList.add('is-in'));
+        offers.forEach((el) => el.classList.add('is-in'));
+        accordions.forEach((el) => el.classList.add('is-in'));
+        return;
       }
-    }
 
-    if (els.openSite && finalUrl) {
-      els.openSite.href = finalUrl;
-      els.openSite.setAttribute('aria-disabled', 'false');
-    } else if (els.openSite) {
-      els.openSite.href = '#';
-      els.openSite.setAttribute('aria-disabled', 'true');
-    }
+      revealItems.forEach((el, index) => {
+        window.setTimeout(() => el.classList.add('is-in'), 80 * index);
+      });
 
-    if (!els.keyValues) return;
-    const rows = [];
-    if (entreprise?.nom) rows.push(['Entreprise', entreprise.nom]);
-    if (finalUrl) rows.push(['Site', finalUrl.replace(/^https?:\/\//, '')]);
-    if (entreprise?.secteur) rows.push(['Secteur', entreprise.secteur]);
-    if (entreprise?.taille_estimee) rows.push(['Taille', entreprise.taille_estimee]);
-    if (entreprise?.opportunite) rows.push(['Opportunité', entreprise.opportunite]);
-    if (technical?.latest?.cms) rows.push(['CMS', technical.latest.cms]);
-    if (technical?.latest?.cdn) rows.push(['CDN', technical.latest.cdn]);
-    if (seo?.latest?.score != null) rows.push(['Score SEO', `${seo.latest.score}/100`]);
-    if (pentest?.latest?.risk_score != null) rows.push(['Risque', `${pentest.latest.risk_score}/100`]);
-    if (osint?.latest?.summary?.emails_count != null) rows.push(['Emails trouvés', String(osint.latest.summary.emails_count)]);
-    els.keyValues.innerHTML = rows.map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`).join('');
+      window.setTimeout(() => {
+        scores.forEach((s, index) => {
+          window.setTimeout(() => {
+            s.classList.add('is-in');
+            animateScoreRing(s);
+          }, 90 * index);
+        });
+        if (shot) shot.classList.add('is-in');
+      }, 220);
+
+      window.setTimeout(() => markIn(insights, 75), 380);
+      window.setTimeout(() => markIn(offers, 65), 540);
+      window.setTimeout(() => markIn(accordions, 50), 680);
+    });
   }
 
-  function renderHighlights(items) {
-    if (!els.highlights) return;
-    const list = Array.isArray(items) ? items : [];
-    els.highlights.innerHTML = '';
+  function setIdentityPreview({ website, company, dateLine }) {
+    if (els.companyName && company) els.companyName.textContent = company;
+    if (els.siteLink && website) {
+      els.siteLink.href = website;
+      els.siteLink.removeAttribute('aria-disabled');
+    }
+    if (els.siteLabel && website) els.siteLabel.textContent = website;
+    if (els.reportDate && dateLine) els.reportDate.textContent = dateLine;
+    if (els.shotUrl && website) els.shotUrl.textContent = displayHost(website);
+  }
+
+  function prefillLead({ website, email, name, first, last }) {
+    if (website && els.leadSite) els.leadSite.value = website;
+    if (email && els.leadEmail) els.leadEmail.value = email;
+    if (first && els.leadFirst) els.leadFirst.value = first;
+    if (last && els.leadLast) els.leadLast.value = last;
+    if (name && !first && !last) {
+      const sp = splitName(name);
+      if (els.leadFirst && !els.leadFirst.value) els.leadFirst.value = sp.first;
+      if (els.leadLast && !els.leadLast.value) els.leadLast.value = sp.last;
+    }
+  }
+
+  function renderScores(cards) {
+    if (!els.scores) return;
+    els.scores.innerHTML = '';
+    const list = Array.isArray(cards) ? cards : [];
     if (!list.length) {
-      els.highlights.innerHTML = '<p style="color: var(--gray-600); margin: 0;">Aucun point clé disponible.</p>';
+      els.scores.innerHTML = '<p class="pl-muted" style="margin:0;">Aucun score disponible pour le moment.</p>';
       return;
     }
     list.forEach((it) => {
-      const div = document.createElement('div');
-      div.className = 'pl-audit ' + (it?.tone ? `pl-audit--${it.tone}` : '');
-      div.innerHTML = `
-        <div class="pl-audit-title">${escapeHtml(it.title)}</div>
-        <div class="pl-audit-desc">${escapeHtml(it.desc || '—')}</div>
+      const key = it?.key || 'score';
+      const score100 = typeof it?.value === 'number' ? Math.round(it.value) : null;
+      const ring = score100 == null ? 0 : Math.max(0, Math.min(100, score100));
+      const color = score100 == null ? 'rgba(15,23,42,0.18)' : ringColorForKey(key);
+      const note = it?.noteClient || scoreNote(key, score100);
+      const card = document.createElement('div');
+      card.className = 'analyse-score analyse-score--' + String(key).replace(/[^a-z0-9_-]/gi, '');
+      card.innerHTML = `
+        <div class="pl-score-ring" style="--pl-ring:${ring}%; --pl-ring-live:0%; --pl-ring-color:${color};" data-ring-target="${ring}" aria-label="${escapeHtml(String(it.label || key))}: ${score100 ?? '—'}">
+          <div class="pl-score-value">${score100 ?? '—'}</div>
+        </div>
+        <div>
+          <div class="analyse-score__label">${escapeHtml(it?.label || String(key))}</div>
+          <div class="analyse-score__note">${escapeHtml(note)}</div>
+        </div>
       `;
-      els.highlights.appendChild(div);
+      els.scores.appendChild(card);
     });
+  }
+
+  function renderScreenshot(screenshotUrl, companyName, websiteUrl) {
+    if (!els.screenshot) return;
+    els.screenshot.innerHTML = '';
+    if (els.shotUrl) {
+      els.shotUrl.textContent = websiteUrl ? displayHost(websiteUrl) : 'votre-site.fr';
+    }
+    if (screenshotUrl) {
+      const img = document.createElement('img');
+      img.src = screenshotUrl;
+      img.alt = companyName ? `Apercu de ${companyName}` : 'Apercu du site analyse';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
+      img.className = 'analyse-shot__img';
+      img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true });
+      els.screenshot.appendChild(img);
+    } else {
+      const box = document.createElement('div');
+      box.className = 'pl-skeleton';
+      box.style.width = '100%';
+      box.style.height = '100%';
+      box.style.minHeight = '220px';
+      box.setAttribute('aria-hidden', 'true');
+      els.screenshot.appendChild(box);
+    }
+  }
+
+  function renderInsights(highlights) {
+    if (!els.insights) return;
+    const list = Array.isArray(highlights) ? highlights : [];
+    const buckets = {
+      good: { title: 'Points forts', icon: 'fa-arrow-trend-up', tone: 'good', items: [] },
+      warn: { title: "Axes d'amelioration", icon: 'fa-magnifying-glass', tone: 'warn', items: [] },
+      bad: { title: 'Points de vigilance', icon: 'fa-triangle-exclamation', tone: 'bad', items: [] }
+    };
+    list.forEach((it) => {
+      const tone = it?.tone === 'good' || it?.tone === 'bad' ? it.tone : 'warn';
+      const text = [it?.title, it?.desc].filter(Boolean).join(' - ');
+      if (text) buckets[tone].items.push(text);
+    });
+    if (!buckets.good.items.length && !buckets.warn.items.length && !buckets.bad.items.length) {
+      buckets.warn.items.push('Les details complets sont disponibles plus bas.');
+    }
+    Object.keys(buckets).forEach((k) => {
+      if (!buckets[k].items.length) buckets[k].items.push('Rien de particulier a signaler ici.');
+    });
+
+    els.insights.innerHTML = Object.values(buckets).map((b) => `
+      <article class="analyse-insight analyse-insight--${b.tone}">
+        <div class="analyse-insight__head">
+          <i class="fas ${b.icon}" aria-hidden="true"></i>
+          <h3 class="analyse-insight__title">${escapeHtml(b.title)}</h3>
+        </div>
+        <ul class="analyse-insight__list">
+          ${b.items.slice(0, 4).map((t) => `<li><i class="fas ${b.tone === 'bad' ? 'fa-circle-exclamation' : 'fa-check'}" aria-hidden="true"></i><span>${escapeHtml(t)}</span></li>`).join('')}
+        </ul>
+        <a class="analyse-insight__more" href="#analyse-details-title">Voir le detail →</a>
+      </article>
+    `).join('');
+  }
+
+  function weakestOfferKey(scoreCards) {
+    let worstKey = 'seo';
+    let worstEffective = Infinity;
+    (scoreCards || []).forEach((c) => {
+      if (typeof c.value !== 'number') return;
+      const invert = c.key === 'pentest' || c.key === 'risque';
+      const effective = invert ? (100 - c.value) : c.value;
+      if (effective < worstEffective) {
+        worstEffective = effective;
+        if (c.key === 'performance') worstKey = 'performance';
+        else if (c.key === 'seo') worstKey = 'seo';
+        else if (c.key === 'securite' || c.key === 'pentest' || c.key === 'risque') worstKey = 'securite';
+        else worstKey = 'vitrine';
+      }
+    });
+    return worstKey;
+  }
+
+  function renderOffers(scoreCards) {
+    if (!els.offers) return;
+    const special = weakestOfferKey(scoreCards);
+    els.offers.innerHTML = OFFERS.map((o) => {
+      const isSpecial = o.key === special;
+      return `
+        <a class="analyse-offer${isSpecial ? ' analyse-offer--special' : ''}" href="/prestations/${escapeHtml(o.slug)}/" data-offer-key="${escapeHtml(o.key)}">
+          ${isSpecial ? '<span class="analyse-offer__ribbon">Offre speciale pour vous</span>' : ''}
+          <div class="analyse-offer__icon analyse-offer__icon--${escapeHtml(o.iconMod)}" aria-hidden="true"><i class="fas ${escapeHtml(o.icon)}"></i></div>
+          <h3 class="analyse-offer__title">${escapeHtml(o.title)}</h3>
+          <p class="analyse-offer__desc">${escapeHtml(o.desc)}</p>
+          <span class="analyse-offer__cta">Voir l'offre →</span>
+        </a>
+      `;
+    }).join('');
   }
 
   function renderDetails(sections) {
     if (!els.details) return;
     els.details.innerHTML = '';
-
     const list = Array.isArray(sections) ? sections : [];
     if (!list.length) {
-      els.details.innerHTML = '<p style="color: var(--gray-600); margin: 0;">Aucun détail disponible.</p>';
+      els.details.innerHTML = '<p class="pl-muted" style="margin:0;">Aucun detail disponible.</p>';
       return;
     }
-
     list.forEach((sec, idx) => {
       const title = sec?.title || `Section ${idx + 1}`;
       const pill = sec?.pill || '';
-      const bodyHtml = sec?.html || '<p class="pl-muted">Aucune donnée.</p>';
-
+      const bodyHtml = sec?.html || '<p class="pl-muted">Aucune donnee.</p>';
       const acc = document.createElement('div');
       acc.className = 'pl-accordion';
-
       const panelId = `plAccPanel_${idx}`;
       acc.innerHTML = `
         <button type="button" class="pl-accordion-btn" aria-expanded="${idx === 0 ? 'true' : 'false'}" aria-controls="${panelId}">
@@ -238,7 +556,6 @@
           ${bodyHtml}
         </div>
       `;
-
       const btn = acc.querySelector('button');
       const panel = acc.querySelector('.pl-accordion-panel');
       btn.addEventListener('click', () => {
@@ -246,7 +563,6 @@
         btn.setAttribute('aria-expanded', open ? 'false' : 'true');
         panel.hidden = open;
       });
-
       els.details.appendChild(acc);
     });
   }
@@ -262,11 +578,14 @@
     const scraping = root?.scraping || {};
 
     const scoreCards = [
-      { key: 'performance', label: 'Performance', value: entreprise?.performance_score, note: 'Temps de réponse, poids, optimisation' },
-      { key: 'seo', label: 'SEO', value: entreprise?.score_seo ?? seo?.latest?.score, note: 'Meta, structure, indexabilité' },
-      { key: 'securite', label: 'Sécurité', value: entreprise?.score_securite, note: 'Headers, SSL/TLS, hygiène' },
-      { key: 'pentest', label: 'Pentest', value: entreprise?.score_pentest ?? pentest?.latest?.risk_score, note: 'Surface & risques détectés' }
-    ].filter(x => typeof x.value === 'number');
+      { key: 'performance', label: 'Performance', value: entreprise?.performance_score },
+      { key: 'seo', label: 'SEO', value: entreprise?.score_seo ?? seo?.latest?.score },
+      { key: 'securite', label: 'Securite', value: entreprise?.score_securite },
+      { key: 'risque', label: 'Risque', value: entreprise?.score_pentest ?? pentest?.latest?.risk_score }
+    ].map((x) => ({
+      ...x,
+      noteClient: typeof x.value === 'number' ? scoreNote(x.key, x.value) : '—'
+    }));
 
     const highlights = [];
     const seoLatest = seo?.latest || {};
@@ -281,24 +600,29 @@
     const tLatest = technical?.latest || {};
     const td = tLatest?.technical_details || {};
     if (td?.mixed_content_detected) highlights.push({ title: 'Technique', desc: `Contenu mixte : ${td.mixed_content_detected}`, tone: 'warn' });
-    if (td?.mobile_friendly === false) highlights.push({ title: 'Mobile', desc: 'Site non “mobile-friendly”.', tone: 'bad' });
-    if (td?.viewport_meta === 'Manquant') highlights.push({ title: 'UX', desc: 'Meta viewport manquante.', tone: 'warn' });
+    if (td?.mobile_friendly === false) highlights.push({ title: 'Mobile', desc: 'Site peu confortable sur telephone.', tone: 'bad' });
+    if (td?.viewport_meta === 'Manquant') highlights.push({ title: 'Affichage', desc: 'Meta viewport manquante.', tone: 'warn' });
+    if (typeof entreprise?.performance_score === 'number' && entreprise.performance_score >= 80) {
+      highlights.push({ title: 'Vitesse', desc: 'Bon niveau de performance global.', tone: 'good' });
+    }
+    if (typeof (entreprise?.score_seo ?? seoLatest?.score) === 'number' && (entreprise?.score_seo ?? seoLatest?.score) >= 80) {
+      highlights.push({ title: 'Visibilite', desc: 'Bases SEO plutot solides.', tone: 'good' });
+    }
 
     const pLatest = pentest?.latest || {};
     const pSum = pLatest?.summary || {};
     if (pSum?.risk_level) {
       highlights.push({
-        title: 'Risque sécurité',
-        desc: `${pSum.risk_level} — ${pSum.total_vulnerabilities ?? 0} vulnérabilité(s)`,
+        title: 'Risque securite',
+        desc: `${pSum.risk_level} - ${pSum.total_vulnerabilities ?? 0} point(s) a surveiller`,
         tone: toneFromScore(pLatest?.risk_score, true)
       });
     }
 
     const oLatest = osint?.latest || {};
-    if (oLatest?.summary_warning) highlights.push({ title: 'OSINT', desc: stripHtml(oLatest.summary_warning), tone: 'warn' });
+    if (oLatest?.summary_warning) highlights.push({ title: 'Donnees publiques', desc: stripHtml(oLatest.summary_warning), tone: 'warn' });
 
     const sections = [];
-
     const addr = [entreprise?.address_1, entreprise?.address_2].filter(Boolean).join(', ');
     const tags = toArray(entreprise?.tags).slice(0, 12).map(t => `<span class="pl-badge">${escapeHtml(String(t))}</span>`).join(' ');
     sections.push({
@@ -306,17 +630,13 @@
       pill: entreprise?.statut ? String(entreprise.statut) : '',
       html: `
         ${entreprise?.resume ? `<p class="pl-muted">${escapeHtml(entreprise.resume)}</p>` : ''}
-        <div class="pl-topline">
-          <div class="pl-badges">
-            ${entreprise?.cms ? `<span class="pl-badge pl-badge--good"><i class="fas fa-cube" aria-hidden="true"></i>${escapeHtml(entreprise.cms)}</span>` : ''}
-            ${entreprise?.framework ? `<span class="pl-badge"><i class="fas fa-layer-group" aria-hidden="true"></i>${escapeHtml(entreprise.framework)}</span>` : ''}
-            ${entreprise?.note_google ? `<span class="pl-badge pl-badge--good"><i class="fas fa-star" aria-hidden="true"></i>${escapeHtml(String(entreprise.note_google))} (${escapeHtml(String(entreprise.nb_avis_google || 0))} avis)</span>` : ''}
-            ${entreprise?.opportunite ? `<span class="pl-badge pl-badge--warn"><i class="fas fa-bullseye" aria-hidden="true"></i>${escapeHtml(entreprise.opportunite)}</span>` : ''}
-          </div>
-        </div>
+        <div class="pl-topline"><div class="pl-badges">
+          ${entreprise?.cms ? `<span class="pl-badge pl-badge--good">${escapeHtml(entreprise.cms)}</span>` : ''}
+          ${entreprise?.opportunite ? `<span class="pl-badge pl-badge--warn">${escapeHtml(entreprise.opportunite)}</span>` : ''}
+        </div></div>
         <p class="pl-muted" style="margin-top:0.9rem;">
           ${addr ? `<strong>Adresse :</strong> ${escapeHtml(addr)}<br>` : ''}
-          ${entreprise?.telephone ? `<strong>Téléphone :</strong> <span class="pl-mono">${escapeHtml(entreprise.telephone)}</span><br>` : ''}
+          ${entreprise?.telephone ? `<strong>Telephone :</strong> <span class="pl-mono">${escapeHtml(entreprise.telephone)}</span><br>` : ''}
         </p>
         ${tags ? `<div class="pl-badges" style="margin-top:0.8rem;">${tags}</div>` : ''}
       `
@@ -324,8 +644,6 @@
 
     const pagesSummary = tLatest?.pages_summary || {};
     const pages = toArray(tLatest?.pages);
-
-    // Image d'aperçu : priorité aux meta icônes / images, puis fallback pages.
     const scrLatest = scraping?.latest || {};
     const icons = scrLatest?.metadata?.icons || {};
     let screenshotUrl =
@@ -337,7 +655,6 @@
       entreprise.favicon ||
       null;
 
-    // Si aucune image "meta", on tente de choisir une image depuis les pages.
     if (!screenshotUrl && pages.length) {
       for (let i = 0; i < pages.length; i++) {
         const p = pages[i] || {};
@@ -350,30 +667,22 @@
           break;
         }
       }
-      if (!screenshotUrl) {
-        const fallback = pages.find(p => (p?.final_url || p?.page_url || '').includes('/wp-content/')) || pages[0];
-        screenshotUrl = (fallback?.details?.final_url || fallback?.final_url || fallback?.page_url || null) || null;
-      }
     }
+
     const techRows = [
       ['CMS', tLatest?.cms || '—'],
-      ['Version', tLatest?.cms_version || '—'],
       ['CDN', tLatest?.cdn || '—'],
-      ['IP', tLatest?.ip_address ? `<span class="pl-mono">${escapeHtml(tLatest.ip_address)}</span>` : '—'],
-      ['SSL', tLatest?.ssl_valid ? 'Valide' : 'À vérifier'],
-      ['Serveur', td?.server_type || td?.server || tLatest?.server_software || '—'],
-      ['Mobile-friendly', td?.mobile_friendly === false ? 'Non' : (td?.mobile_friendly === true ? 'Oui' : '—')],
-      ['Viewport', td?.viewport_meta || '—']
+      ['SSL', tLatest?.ssl_valid ? 'Valide' : 'A verifier'],
+      ['Mobile', td?.mobile_friendly === false ? 'Non' : (td?.mobile_friendly === true ? 'Oui' : '—')]
     ];
     sections.push({
       title: 'Technique',
       pill: tLatest?.framework ? String(tLatest.framework) : '',
       html: `
-        ${tableHtml(['Indicateur', 'Valeur'], techRows.map(([a,b]) => [escapeHtml(a), (typeof b === 'string' ? b : String(b))]))}
+        ${tableHtml(['Indicateur', 'Valeur'], techRows.map(([a, b]) => [escapeHtml(a), escapeHtml(String(b))]))}
         <p class="pl-muted" style="margin-top:0.9rem;">
           <strong>Pages :</strong> ${escapeHtml(String(pagesSummary.pages_scanned ?? pagesSummary.pages_count ?? 0))} ·
-          <strong>Temps moyen :</strong> ${escapeHtml(String(pagesSummary.avg_response_time_ms ?? '—'))} ms ·
-          <strong>Poids moyen :</strong> ${escapeHtml(String(pagesSummary.avg_weight_bytes ? Math.round(pagesSummary.avg_weight_bytes/1024) + ' KB' : '—'))}
+          <strong>Temps moyen :</strong> ${escapeHtml(String(pagesSummary.avg_response_time_ms ?? '—'))} ms
         </p>
       `
     });
@@ -383,11 +692,10 @@
     const seoRows = [
       ['Score', seoLatest?.score != null ? `${seoLatest.score}/100` : '—'],
       ['Title', meta?.title ? escapeHtml(meta.title) : '—'],
-      ['Canonical', meta?.canonical ? `<span class="pl-mono">${escapeHtml(meta.canonical)}</span>` : '—'],
       ['H1', structure?.h1_count != null ? String(structure.h1_count) : '—'],
       ['Images sans alt', structure?.images_without_alt != null ? String(structure.images_without_alt) : '—']
     ];
-    const seoIssuesHtml = toArray(seoIssues).slice(0, 12).map((it) => {
+    const seoIssuesHtml = toArray(seoIssues).slice(0, 8).map((it) => {
       const impact = it?.impact || 'medium';
       const tone = impact === 'high' ? 'bad' : impact === 'medium' ? 'warn' : 'good';
       return `<div class="pl-audit pl-audit--${tone}" style="margin-top:0.7rem;">
@@ -399,171 +707,322 @@
       title: 'SEO',
       pill: seoLatest?.score != null ? `${seoLatest.score}/100` : '',
       html: `
-        ${tableHtml(['Élément', 'Valeur'], seoRows.map(([a,b]) => [escapeHtml(a), (typeof b === 'string' ? b : String(b))]))}
-        ${seoIssuesHtml ? `<div style="margin-top:1rem;"><strong>Alertes</strong>${seoIssuesHtml}</div>` : '<p class="pl-muted" style="margin-top:1rem;">Aucune alerte SEO.</p>'}
+        ${tableHtml(['Element', 'Valeur'], seoRows.map(([a, b]) => [escapeHtml(a), (typeof b === 'string' ? b : String(b))]))}
+        ${seoIssuesHtml || '<p class="pl-muted" style="margin-top:1rem;">Aucune alerte SEO.</p>'}
       `
     });
 
-    const vulns = toArray(pLatest?.vulnerabilities).slice(0, 12);
+    const vulns = toArray(pLatest?.vulnerabilities).slice(0, 10);
     const vulnHtml = vulns.map(v => {
       const sev = (v?.severity || '').toLowerCase();
       const tone = sev === 'high' ? 'bad' : sev === 'medium' ? 'warn' : 'good';
       return `<div class="pl-audit pl-audit--${tone}" style="margin-top:0.7rem;">
-        <div class="pl-audit-title">${escapeHtml(v?.name || v?.type || 'Vulnérabilité')}</div>
-        <div class="pl-audit-desc">${escapeHtml(v?.description || '')}${v?.recommendation ? `<p style="margin-top:0.5rem;"><strong>Reco :</strong> ${escapeHtml(v.recommendation)}</p>` : ''}</div>
+        <div class="pl-audit-title">${escapeHtml(v?.name || v?.type || 'Point securite')}</div>
+        <div class="pl-audit-desc">${escapeHtml(v?.description || '')}</div>
       </div>`;
     }).join('');
     sections.push({
-      title: 'Sécurité & audit',
+      title: 'Securite',
       pill: pLatest?.risk_score != null ? `${pLatest.risk_score}/100` : '',
       html: `
         <p class="pl-muted">
-          ${pSum?.risk_level ? `<strong>Niveau :</strong> ${escapeHtml(String(pSum.risk_level))} · ` : ''}
-          ${pSum?.total_vulnerabilities != null ? `<strong>Vulnérabilités :</strong> ${escapeHtml(String(pSum.total_vulnerabilities))}` : ''}
+          ${pSum?.risk_level ? `<strong>Niveau :</strong> ${escapeHtml(String(pSum.risk_level))}` : ''}
         </p>
-        ${vulnHtml || '<p class="pl-muted" style="margin-top:0.8rem;">Aucune vulnérabilité listée.</p>'}
+        ${vulnHtml || '<p class="pl-muted" style="margin-top:0.8rem;">Rien de critique liste.</p>'}
       `
     });
 
-    const dns = oLatest?.dns_records || {};
-    const emails = toArray(oLatest?.emails || oLatest?.emails_found || []).slice(0, 12);
+    const emails = toArray(oLatest?.emails || oLatest?.emails_found || []).slice(0, 8);
     const scLatest = scraping?.latest || {};
-    const scrEmails = toArray(scLatest?.emails).slice(0, 10);
-    const scrPhones = toArray(scLatest?.phones_from_scrapers || scLatest?.phones).slice(0, 10);
-    const dnsRows = Object.entries(dns).slice(0, 8).map(([k, v]) => [escapeHtml(k), escapeHtml(Array.isArray(v) ? v.join(', ') : String(v))]);
-    const emailsHtml = emails.length ? `<ul>${emails.map(e => `<li><span class="pl-mono">${escapeHtml(e)}</span></li>`).join('')}</ul>` : '<p class="pl-muted">Aucun email.</p>';
-    const scrEmailsHtml = scrEmails.length ? `<ul>${scrEmails.map(e => `<li><span class="pl-mono">${escapeHtml(e.email || '')}</span>${e.analysis?.provider ? ` <span class="pl-muted">(${escapeHtml(e.analysis.provider)})</span>` : ''}</li>`).join('')}</ul>` : '<p class="pl-muted">Aucun email.</p>';
-    const scrPhonesHtml = scrPhones.length ? `<ul>${scrPhones.map(p => `<li><span class="pl-mono">${escapeHtml(p.phone || '')}</span></li>`).join('')}</ul>` : '<p class="pl-muted">Aucun téléphone.</p>';
+    const scrEmails = toArray(scLatest?.emails).slice(0, 8);
+    const firstEmail =
+      (typeof emails[0] === 'string' ? emails[0] : null) ||
+      (scrEmails[0] && (scrEmails[0].email || scrEmails[0])) ||
+      null;
+
     sections.push({
-      title: 'Données publiques',
+      title: 'Donnees publiques',
       pill: oLatest?.status ? String(oLatest.status) : '',
       html: `
         <p class="pl-muted">
-          <strong>Statut :</strong> ${escapeHtml(String(oLatest?.status || '—'))} ·
           <strong>Date :</strong> ${escapeHtml(formatDate(oLatest?.date_analyse) || formatDate(scLatest?.date_modification) || '—')}
         </p>
-        ${dnsRows.length ? `<div style="margin-top:0.9rem;"><strong>DNS</strong>${tableHtml(['Type', 'Valeur'], dnsRows)}</div>` : ''}
-        <div style="margin-top:0.9rem;"><strong>Emails</strong>${emailsHtml}</div>
-        <div style="margin-top:0.9rem;"><strong>Emails (scraping)</strong>${scrEmailsHtml}</div>
-        <div style="margin-top:0.9rem;"><strong>Téléphones</strong>${scrPhonesHtml}</div>
       `
     });
 
     return {
       finalUrl: website,
       entreprise,
-      technical,
-      seo,
-      pentest,
-      osint,
-      scraping,
       scoreCards,
       highlights,
       sections,
       screenshotUrl,
-      metaLine: entreprise?.date_analyse ? formatDate(entreprise.date_analyse) : null
+      metaLine: entreprise?.date_analyse ? formatDate(entreprise.date_analyse) : null,
+      suggestedEmail: typeof firstEmail === 'string' ? firstEmail : null
     };
+  }
+
+  function formatLookupError(message) {
+    const msg = String(message || '').trim();
+    if (/aucun rapport/i.test(msg)) {
+      return 'Aucun rapport enregistre pour cette adresse. Reprenez l\'URL exacte du lien email, ou demandez une analyse via « Recevoir l\'audit ».';
+    }
+    return msg || 'Impossible de charger le rapport. Reessayez dans un instant.';
   }
 
   async function apiGetWebsiteAnalysis({ website, full }) {
     const u = new URL((API_BASE || '') + ENDPOINT, window.location.origin);
     u.searchParams.set('website', website);
     if (full != null) u.searchParams.set('full', String(full));
-
     const res = await fetch(u.toString(), { method: 'GET' });
     const data = await res.json().catch(() => ({}));
     if (!res.ok) {
-      const msg = data?.error || data?.message || `Erreur API (${res.status})`;
-      throw new Error(msg);
+      throw new Error(data?.error || data?.message || `Erreur API (${res.status})`);
     }
     return data;
   }
 
-  function buildShareUrl({ website, full }) {
-    const u = new URL(window.location.href);
-    u.searchParams.delete('website');
-    u.searchParams.delete('full');
+  function buildShareUrl({ website, full, email, name }) {
+    const u = new URL(window.location.origin + '/analyse');
     if (website) u.searchParams.set('website', website);
     if (full != null) u.searchParams.set('full', String(full));
-    u.hash = '';
+    if (email) u.searchParams.set('email', email);
+    if (name) u.searchParams.set('name', name);
     return u.toString();
   }
 
-  async function showReport(raw) {
+  function showReport(raw, queryPrefill) {
     const r = normalizeReport(raw);
+    currentWebsite = r.finalUrl || currentWebsite || '';
 
-    if (els.reportMeta) {
-      const metaParts = [];
-      if (r.finalUrl) metaParts.push(`Site : ${r.finalUrl}`);
-      if (r.entreprise?.nom) metaParts.push(`Entreprise : ${r.entreprise.nom}`);
-      if (r.metaLine) metaParts.push(`Analyse : ${r.metaLine}`);
-      els.reportMeta.textContent = metaParts.join(' · ');
+    const company = r.entreprise?.nom || displayHost(currentWebsite) || 'Votre site';
+    if (els.companyName) els.companyName.textContent = company;
+
+    if (els.siteLink && currentWebsite) {
+      els.siteLink.href = currentWebsite;
+      els.siteLink.removeAttribute('aria-disabled');
+    }
+    if (els.siteLabel) els.siteLabel.textContent = currentWebsite || '';
+
+    if (els.reportDate) {
+      els.reportDate.textContent = r.metaLine ? `Analyse : ${r.metaLine}` : '';
     }
 
     renderScores(r.scoreCards);
-    renderPreview(r);
-    renderHighlights(r.highlights);
+    renderScreenshot(r.screenshotUrl, company, currentWebsite);
+    renderInsights(r.highlights);
+    renderOffers(r.scoreCards);
     renderDetails(r.sections);
 
-    if (els.copyLink) {
-      const share = buildShareUrl({ website: r.finalUrl, full: 1 });
-      els.copyLink.onclick = async () => {
-        try {
-          await navigator.clipboard.writeText(share);
-          setFeedback('Lien copié dans le presse-papier.', false);
-        } catch {
-          setFeedback('Impossible de copier automatiquement. Copiez ce lien manuellement : ' + share, true);
-        }
-      };
-    }
+    prefillLead({
+      website: currentWebsite,
+      email: (queryPrefill && queryPrefill.email) || r.suggestedEmail || '',
+      name: (queryPrefill && queryPrefill.name) || '',
+      first: queryPrefill && queryPrefill.first,
+      last: queryPrefill && queryPrefill.last
+    });
 
-    if (els.report) els.report.hidden = false;
-    els.report?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (els.bootWrap) els.bootWrap.hidden = true;
+    if (els.loading) els.loading.hidden = true;
+    if (els.intro) els.intro.classList.add('is-hidden');
+    playReportReveal();
   }
 
-  async function handleSubmit(websiteUrl, full) {
-    setFeedback('', false);
-    setLoading(true);
+  async function handleSubmit(websiteUrl, full, queryPrefill) {
+    setFeedback(els.bootFeedback, '', false);
+    setBootLoading(true);
+    setBootVisible(false);
+    setLoadingVisible(true, websiteUrl);
+    if (pageRoot) pageRoot.classList.remove('is-revealed');
+    if (els.reportHero) els.reportHero.hidden = true;
     if (els.report) els.report.hidden = true;
-    if (els.scores) els.scores.innerHTML = '<div class="pl-skeleton" style="height:120px;"></div>';
-    if (els.highlights) els.highlights.innerHTML = '<div class="pl-skeleton" style="height:120px;"></div>';
-    if (els.details) els.details.innerHTML = '<div class="pl-skeleton" style="height:180px;"></div>';
-    if (els.screenshot) els.screenshot.innerHTML = '<div class="pl-skeleton" style="height:100%;"></div>';
+    if (els.intro) els.intro.classList.remove('is-hidden');
+
+    const previewCompany = displayHost(websiteUrl) || 'Votre site';
+    setIdentityPreview({
+      website: websiteUrl,
+      company: previewCompany,
+      dateLine: 'Analyse en cours…'
+    });
+    prefillLead({
+      website: websiteUrl,
+      email: (queryPrefill && queryPrefill.email) || '',
+      name: (queryPrefill && queryPrefill.name) || '',
+      first: queryPrefill && queryPrefill.first,
+      last: queryPrefill && queryPrefill.last
+    });
+
     try {
       const report = await apiGetWebsiteAnalysis({ website: websiteUrl, full: full ?? 1 });
-      await showReport(report);
-      const share = buildShareUrl({ website: websiteUrl, full: full ?? 1 });
+      currentWebsite = websiteUrl;
+      showReport(report, queryPrefill);
+      const share = buildShareUrl({
+        website: websiteUrl,
+        full: full ?? 1,
+        email: queryPrefill && queryPrefill.email,
+        name: queryPrefill && queryPrefill.name
+      });
       window.history.replaceState({}, '', share);
     } catch (e) {
-      setFeedback((e && e.message ? e.message : 'Erreur inconnue.'), true);
+      setLoadingVisible(false);
+      setBootVisible(true);
+      if (els.reportHero) els.reportHero.hidden = true;
+      if (els.report) els.report.hidden = true;
+      if (pageRoot) pageRoot.classList.remove('is-revealed');
+      setFeedback(
+        els.bootFeedback,
+        formatLookupError(e && e.message),
+        true
+      );
     } finally {
-      setLoading(false);
+      setBootLoading(false);
+      setLoadingVisible(false);
     }
+  }
+
+  function readLeadValues() {
+    const first = (els.leadFirst && els.leadFirst.value || '').trim();
+    const last = (els.leadLast && els.leadLast.value || '').trim();
+    const name = [first, last].filter(Boolean).join(' ');
+    return {
+      url: safeUrl(els.leadSite && els.leadSite.value),
+      email: (els.leadEmail && els.leadEmail.value || '').trim(),
+      name: name,
+      first: first,
+      last: last,
+      honeypot: (els.leadForm && els.leadForm.querySelector('[name="company"]') || {}).value || ''
+    };
+  }
+
+  function submitLead() {
+    const vals = readLeadValues();
+    if (vals.honeypot) return;
+    if (!vals.url) {
+      setFeedback(els.leadFeedback, 'URL du site invalide.', true);
+      return;
+    }
+    if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
+      setFeedback(els.leadFeedback, 'Email invalide.', true);
+      return;
+    }
+
+    setBtnLoading(els.leadSubmit, true);
+    setFeedback(els.leadFeedback, '', false);
+
+    fetch(FREE_AUDIT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ website: vals.url, email: vals.email, name: vals.name })
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        return { res, data };
+      })
+      .then((ref) => {
+        if (ref.res.ok && ref.data && ref.data.success) {
+          if (els.leadForm) els.leadForm.hidden = true;
+          if (els.leadSuccess) els.leadSuccess.hidden = false;
+          if (els.leadSuccessText) {
+            els.leadSuccessText.textContent =
+              (ref.data && ref.data.message) ||
+              `Le rapport arrive sur ${vals.email}. Pensez a verifier les spams.`;
+          }
+          return;
+        }
+        let errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Reessayez ou contactez-nous.';
+        if (ref.res.status === 429) {
+          errMsg = (ref.data && ref.data.error) || 'Vous avez deja demande un audit recemment. Reessayez plus tard.';
+        }
+        setFeedback(els.leadFeedback, errMsg, true);
+      })
+      .catch(() => {
+        setFeedback(els.leadFeedback, 'Serveur injoignable. Reessayez dans un instant.', true);
+      })
+      .finally(() => {
+        setBtnLoading(els.leadSubmit, false);
+      });
+  }
+
+  function startPremium() {
+    const vals = readLeadValues();
+    if (!vals.url) {
+      setFeedback(els.premiumFeedback, 'Indiquez d\'abord le site dans le formulaire a gauche.', true);
+      return;
+    }
+    if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
+      setFeedback(els.premiumFeedback, 'Renseignez un email valide a gauche, puis relancez.', true);
+      return;
+    }
+
+    try {
+      sessionStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({
+          site_url: vals.url,
+          email: vals.email,
+          name: vals.name || 'Client audit'
+        })
+      );
+    } catch (err) { /* ignore */ }
+
+    setBtnLoading(els.premiumBtn, true);
+    setFeedback(els.premiumFeedback, '', false);
+
+    fetch(PREMIUM_CHECKOUT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        audit_slug: auditSlug,
+        email: vals.email,
+        site_url: vals.url,
+        name: vals.name
+      })
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        return { res, data };
+      })
+      .then((ref) => {
+        if (ref.res.ok && ref.data && ref.data.success && ref.data.url) {
+          window.location.href = ref.data.url;
+          return;
+        }
+        setFeedback(
+          els.premiumFeedback,
+          (ref.data && ref.data.error) || "Impossible d'ouvrir le paiement pour l'instant.",
+          true
+        );
+      })
+      .catch(() => {
+        setFeedback(els.premiumFeedback, 'Serveur injoignable.', true);
+      })
+      .finally(() => {
+        setBtnLoading(els.premiumBtn, false);
+      });
   }
 
   els.form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const v = safeUrl(els.url.value.trim());
+    const v = safeUrl(els.url.value);
     if (!v) {
-      setFeedback('Veuillez saisir une URL valide (http ou https).', true);
+      setFeedback(els.bootFeedback, 'Saisissez une URL valide (http ou https).', true);
       els.url.focus();
       return;
     }
-    await handleSubmit(v, 1);
+    await handleSubmit(v, 1, null);
   });
 
-  if (els.clear) {
-    els.clear.addEventListener('click', () => {
-      setFeedback('', false);
-      els.url.value = '';
-      if (els.report) els.report.hidden = true;
-      if (els.scores) els.scores.innerHTML = '';
-      if (els.highlights) els.highlights.innerHTML = '';
-      if (els.details) els.details.innerHTML = '';
-      if (els.screenshot) els.screenshot.innerHTML = '';
-      if (els.keyValues) els.keyValues.innerHTML = '';
-      window.history.replaceState({}, '', '/analyse');
-      els.url.focus();
+  if (els.leadForm) {
+    els.leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitLead();
+    });
+  }
+
+  if (els.premiumBtn) {
+    els.premiumBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      startPremium();
     });
   }
 
@@ -571,14 +1030,26 @@
     const q = new URLSearchParams(window.location.search);
     const website = q.get('website');
     const full = q.get('full');
+    const email = q.get('email') || '';
+    const name = q.get('name') || '';
+    const first = q.get('first') || q.get('prenom') || '';
+    const last = q.get('last') || q.get('nom') || '';
+    const queryPrefill = { email, name, first, last };
+
     if (website) {
       const v = safeUrl(website);
       if (v) {
         els.url.value = v;
         const fullNum = full != null ? Number(full) : 1;
-        await handleSubmit(v, Number.isFinite(fullNum) ? fullNum : 1);
+        await handleSubmit(v, Number.isFinite(fullNum) ? fullNum : 1, queryPrefill);
+        return;
       }
     }
+
+    if (email || name || first || last) {
+      prefillLead({ website: website || '', email, name, first, last });
+    }
+
+    playBootReveal();
   })();
 })();
-
