@@ -60,11 +60,11 @@
                     <a href="/echantillons/">Voir les échantillons</a>
                     {% if prestation_slug == 'site-vitrine-essentiel' %}
                     <span aria-hidden="true">·</span>
-                    <a href="/prestations/site-vitrine/">Forfait Pro 5 pages - 590 € HT</a>
+                    <a href="/prestations/site-vitrine/">Forfait Pro 5 pages</a>
                     {% endif %}
                     {% if prestation_slug == 'site-vitrine' %}
                     <span aria-hidden="true">·</span>
-                    <a href="/prestations/site-vitrine-essentiel/">Essentiel - 390 € HT</a>
+                    <a href="/prestations/site-vitrine-essentiel/">Essentiel 3 pages</a>
                     {% endif %}
                 </p>
                 {% endif %}
@@ -72,32 +72,23 @@
 
             <aside class="prestation-buybox scroll-reveal" style="--reveal-delay: 100ms" id="devis" aria-labelledby="prestation-buybox-title">
                 <div class="prestation-buybox-card">
-                    <h2 id="prestation-buybox-title" class="prestation-buybox-title">Votre devis</h2>
-                    <p class="prestation-detail-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span itemprop="price" content="{{prestation_price_eur}}">{{prestation_price_eur}}</span>&nbsp;€
+                    <h2 id="prestation-buybox-title" class="prestation-buybox-title">Ce qui est compris</h2>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" hidden>
+                        <meta itemprop="price" content="{{prestation_price_eur}}">
                         <meta itemprop="priceCurrency" content="EUR">
                         <link itemprop="availability" href="https://schema.org/InStock">
                         <link itemprop="url" href="{{page_url}}#devis">
-                        <span class="prestation-detail-price-ht">HT</span>
-                    </p>
-                    <p class="prestation-buybox-note">{{prestation_price_label}}{% if prestation_price_note %} - {{prestation_price_note}}{% endif %}{% if prestation_duration %} · {{prestation_duration}}{% endif %}</p>
-
-                    <div class="prestation-devis-summary" aria-live="polite">
-                        <div class="prestation-devis-line prestation-devis-line--main">
-                            <span class="prestation-devis-line-label">{{prestation_title}}</span>
-                            <span class="prestation-devis-line-price" data-prestation-base-price="{{prestation_price_eur}}">{{prestation_price_eur}} €</span>
-                        </div>
-                        {% if prestation_pack_buybox_lines_html %}
-                        <div class="prestation-devis-pack-breakdown">
-                            {{prestation_pack_buybox_lines_html}}
-                        </div>
-                        {% endif %}
-                        <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
-                        <div class="prestation-devis-total-row">
-                            <span>Total HT</span>
-                            <strong class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
-                        </div>
                     </div>
+                    {% if prestation_buybox_perks_html %}
+                    {{prestation_buybox_perks_html}}
+                    {% endif %}
+                    {% if prestation_duration %}
+                    <p class="prestation-buybox-note">{{prestation_duration}}</p>
+                    {% endif %}
+
+                    <span hidden data-prestation-base-price="{{prestation_price_eur}}"></span>
+                    <strong hidden class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
+                    <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
 
                     <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisOpenModal"
                         data-prestation-devis-open

@@ -1961,7 +1961,7 @@ def build_home_vitrines_teaser_embed() -> None:
         if (it.get('slug') or '').strip()
     }
 
-    def _teaser_card(slug: str, extra_class: str = '') -> str:
+    def _teaser_card(slug: str, extra_class: str = '', slot: int = 0) -> str:
         it = by_slug.get(slug)
         if not it:
             return ''
@@ -1974,40 +1974,48 @@ def build_home_vitrines_teaser_embed() -> None:
         fiche_url = html.escape(devantures_url(slug))
         cls = f'home-vitrine-teaser scroll-reveal{extra_class}'
         return (
-            f'<article class="{cls}">'
+            f'<article class="{cls}" data-slot="{slot}">'
             f'<a class="home-vitrine-teaser-media" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
-            f'<img src="{html.escape(thumb)}" alt="" width="640" height="400" loading="lazy" decoding="async">'
+            f'<img data-src="{html.escape(thumb)}" alt="" width="640" height="400" decoding="async" '
+            f'class="home-lazy-img">'
             f'<span class="home-vitrine-teaser-cat">{cat_label}</span>'
             f'</a>'
             f'<div class="home-vitrine-teaser-body">'
             f'<h3 class="home-vitrine-teaser-title">{title}</h3>'
             f'<p class="home-vitrine-teaser-tagline">{tagline}</p>'
             f'<div class="home-vitrine-teaser-actions">'
-            f'<a class="btn btn-primary btn-sm" href="{demo_url}" target="_blank" rel="noopener noreferrer">'
+            f'<a class="btn btn-primary btn-sm home-vitrine-teaser-demo" href="{demo_url}" '
+            f'target="_blank" rel="noopener noreferrer">'
             f'<span>Aperçu live</span><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>'
-            f'<a class="btn btn-outline btn-sm" href="{fiche_url}"><span>En savoir plus</span></a>'
+            f'<a class="btn btn-outline btn-sm home-vitrine-teaser-more" href="{fiche_url}">'
+            f'<span>En savoir plus</span></a>'
             f'</div></div></article>'
         )
 
     cards: List[str] = []
-    for slug in HOME_VITRINE_TEASER_SLUGS:
-        card = _teaser_card(slug)
+    for idx, slug in enumerate(HOME_VITRINE_TEASER_SLUGS):
+        card = _teaser_card(slug, slot=idx)
         if card:
             cards.append(card)
-    tablet_card = _teaser_card(HOME_VITRINE_TEASER_TABLET_SLUG, ' home-vitrine-teaser--mid-grid-only')
+    tablet_card = _teaser_card(
+        HOME_VITRINE_TEASER_TABLET_SLUG,
+        ' home-vitrine-teaser--mid-grid-only',
+        slot=len(cards),
+    )
     if tablet_card:
         cards.append(tablet_card)
 
     content = (
-        '<!-- Genere par build.py : 3 exemples vitrine pour l\'accueil -->\n'
-        f'<div class="home-vitrines-teaser-grid">{"".join(cards)}</div>\n'
+        '<!-- Genere par build.py : teaser echantillons (rotation 2 h via home-wow.js) -->\n'
+        f'<div class="home-vitrines-teaser-grid" data-home-echantillons-rotate>'
+        f'{"".join(cards)}</div>\n'
         '<p class="home-vitrines-teaser-more">'
         f'<a href="{html.escape(echantillons_url())}">Voir tous les echantillons</a>'
         '</p>\n'
     )
     if _write_text_if_changed(path_out, content):
         print(f'[OK] home-vitrines-teaser.html genere ({len(cards)} exemple(s))')
-
+    build_home_echantillons_rotation(OUTPUT_DIR)
 
 def build_vitrines_page_collection_embed() -> None:
     """Fragment catalogue (filtre + grille) pour la page /devantures/ — theme DanielCraft."""
@@ -2268,6 +2276,116 @@ HOME_VITRINE_TEASER_SLUGS = (
 # 4e exemple vitrine : visible uniquement tablette / mobile paysage (grille 2×2)
 HOME_VITRINE_TEASER_TABLET_SLUG = 'commerce'
 
+HOME_ROTATION_INTERVAL_HOURS = 2
+HOME_ROTATION_SLOTS_PER_DAY = 12
+
+
+def _home_rotation_payload(items: List[Dict[str, Any]], pool_size: int) -> Dict[str, Any]:
+    """Découpe une liste d'items en pools pour rotation accueil (toutes les 2 h)."""
+    interval_h = HOME_ROTATION_INTERVAL_HOURS
+    slots = HOME_ROTATION_SLOTS_PER_DAY
+    if not items:
+        return {
+            'pools': [],
+            'rotationIntervalHours': interval_h,
+            'rotationPerDay': slots,
+        }
+    if len(items) < pool_size:
+        # Répète pour remplir un pool minimal
+        padded = list(items)
+        while len(padded) < pool_size:
+            padded.append(items[len(padded) % len(items)])
+        return {
+            'pools': [padded[:pool_size]],
+            'rotationIntervalHours': interval_h,
+            'rotationPerDay': slots,
+        }
+    pools: List[List[Dict[str, Any]]] = []
+    for i in range(0, len(items) - pool_size + 1, pool_size):
+        pools.append(items[i : i + pool_size])
+    # Compléter jusqu'à 12 créneaux en glissant
+    if len(pools) < slots:
+        start = 0
+        while len(pools) < slots:
+            chunk = [items[(start + j) % len(items)] for j in range(pool_size)]
+            pools.append(chunk)
+            start += 1
+    return {
+        'pools': pools[:slots],
+        'rotationIntervalHours': interval_h,
+        'rotationPerDay': slots,
+    }
+
+
+def _home_echantillon_rotation_item(it: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    slug = (it.get('slug') or '').strip()
+    if not slug:
+        return None
+    cat = (it.get('category') or '').strip()
+    thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
+    return {
+        'slug': slug,
+        'title': (it.get('title') or slug).strip(),
+        'tagline': (it.get('tagline') or '').strip(),
+        'cat': VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()),
+        'img': thumb,
+        'demo': echantillons_url(f'{slug}/demo/index.html'),
+        'href': echantillons_url(slug),
+    }
+
+
+def build_home_echantillons_rotation(output_dir: Optional[Path] = None) -> None:
+    """JSON rotation échantillons accueil -> dist/data/home-echantillons-rotation.json."""
+    out_root = output_dir or OUTPUT_DIR
+    data = load_vitrines()
+    items_raw = (data or {}).get('items') or []
+    items: List[Dict[str, Any]] = []
+    for it in items_raw:
+        if not isinstance(it, dict):
+            continue
+        row = _home_echantillon_rotation_item(it)
+        if row:
+            items.append(row)
+    payload = _home_rotation_payload(items, pool_size=4)
+    dest_dir = out_root / 'data'
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    path = dest_dir / 'home-echantillons-rotation.json'
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f'[OK] home-echantillons-rotation.json ({len(payload.get("pools", []))} pool(s))')
+
+
+def build_home_livres_rotation(output_dir: Optional[Path] = None) -> None:
+    """JSON rotation bouquins accueil -> dist/data/home-livres-rotation.json."""
+    out_root = output_dir or OUTPUT_DIR
+    data = load_livres()
+    items: List[Dict[str, Any]] = []
+    for it in data.get('items') or []:
+        if not isinstance(it, dict):
+            continue
+        if (it.get('kind') or '').strip() == 'pack':
+            continue
+        cover = _livre_cover_url(it)
+        if not cover:
+            continue
+        slug = (it.get('slug') or '').strip()
+        if not slug:
+            continue
+        title = (it.get('title') or slug).strip()
+        items.append(
+            {
+                'slug': slug,
+                'title': title,
+                'href': f'/bouquins/{slug}/',
+                'img': cover,
+            }
+        )
+    payload = _home_rotation_payload(items, pool_size=4)
+    dest_dir = out_root / 'data'
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    path = dest_dir / 'home-livres-rotation.json'
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f'[OK] home-livres-rotation.json ({len(payload.get("pools", []))} pool(s))')
+
 
 def _prestation_duration_label(item: Dict[str, Any]) -> str:
     """Libellé durée sous le prix (heures estimées, alignées Facturio)."""
@@ -2352,6 +2470,39 @@ def _prestation_contrast_html(item: Dict[str, Any]) -> str:
     return ''.join(parts)
 
 
+def _prestation_perk_items(item: Dict[str, Any], limit: int = 4) -> List[str]:
+    """Puces techniques (inclus, sinon bénéfices) - jamais le prix."""
+    out: List[str] = []
+    seen = set()
+    for key in ('benefits', 'includes'):
+        for x in item.get(key) or []:
+            s = str(x).strip()
+            if not s or s in seen:
+                continue
+            seen.add(s)
+            out.append(s)
+            if len(out) >= limit:
+                return out
+    return out
+
+
+def _prestation_first_perk(item: Dict[str, Any]) -> str:
+    perks = _prestation_perk_items(item, 1)
+    return perks[0] if perks else ''
+
+
+def _prestation_perks_ul_html(item: Dict[str, Any], class_name: str, limit: int = 4) -> str:
+    bullets = _prestation_perk_items(item, limit)
+    if not bullets:
+        return ''
+    lis = ''.join(
+        f'<li><i class="fas fa-check" aria-hidden="true"></i>'
+        f'<span>{html.escape(b)}</span></li>'
+        for b in bullets
+    )
+    return f'<ul class="{class_name}">{lis}</ul>'
+
+
 def _prestation_card_html(
     item: Dict[str, Any],
     *,
@@ -2414,17 +2565,8 @@ def _prestation_card_html(
         )
 
     hint_bits: List[str] = []
-    note = (item.get('price_note') or '').strip()
-    if note:
-        hint_bits.append(html.escape(note))
-    try:
-        compare = item.get('compare_at_eur')
-        if compare is not None and int(compare) > price_eur:
-            hint_bits.append(f"{int(compare)}&nbsp;€ HT à l'unité")
-    except (TypeError, ValueError):
-        pass
     duration = _prestation_duration_label(item)
-    if duration and not note:
+    if duration:
         hint_bits.append(html.escape(duration))
     hint_html = (
         f'<p class="offres-tier__hint">{" · ".join(hint_bits)}</p>' if hint_bits else ''
@@ -2465,8 +2607,7 @@ def _prestation_card_html(
         f'{_prestation_contrast_html(item)}'
         f'</div>'
         f'<div class="offres-tier__buy prestation-card-buy">'
-        f'<p class="offres-tier__price">À partir de <strong>{price_eur}&nbsp;€</strong> '
-        f'<span>HT</span></p>'
+        f'{_prestation_perks_ul_html(item, "offres-tier__perks", 3)}'
         f'{hint_html}'
         f'{devis_btn}'
         f'</div>'
@@ -2577,17 +2718,18 @@ def build_prestations_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> 
         pass
 
     pills = ''
-    includes = item.get('includes') or []
+    includes = item.get('includes') or item.get('benefits') or []
     if includes:
         pills = ''.join(
             f'<li>{html.escape(str(x))}</li>' for x in includes[:5]
         )
     n_inc = len(item.get('includes_slugs') or includes or [])
     meta = (
-        f'{n_inc} prestation(s) · devis PDF'
+        f'{n_inc} prestation(s) \u00b7 devis PDF'
         if n_inc
         else 'Devis PDF sans engagement'
     )
+    deal_perks = _prestation_perks_ul_html(item, 'prestations-deal-perks', 3)
 
     html_out = f'''<aside class="prestations-deal-week" aria-labelledby="prestations-deal-title">
   <div class="container prestations-deal-week-inner">
@@ -2604,12 +2746,8 @@ def build_prestations_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> 
       <ul class="prestations-deal-pills" aria-label="Inclus">{pills}</ul>
     </div>
     <div class="prestations-deal-buy">
-      <p class="prestations-deal-price-block">
-        {compare_html}
-        <span class="prestations-deal-price">{price_eur}&nbsp;€ <small>HT</small></span>
-        {save_html}
-      </p>
-      <p class="prestations-deal-meta">{html.escape(meta)} · {price_label}</p>
+      {deal_perks}
+      <p class="prestations-deal-meta">{html.escape(meta)}</p>
       <a class="btn btn-primary btn-large prestations-deal-cta" href="/prestations/{html.escape(slug)}/">
         <span>{cta}</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -2671,19 +2809,7 @@ def build_prestations_categories_hub(data: Dict[str, Any], grouped: Dict[str, Li
         icon = html.escape((cat.get('icon') or 'fa-folder').strip())
         desc = html.escape((cat.get('description') or '').strip())
         n = len(items)
-        prices = []
-        for it in items:
-            try:
-                prices.append(int(it.get('price_eur') or 0))
-            except (TypeError, ValueError):
-                pass
-        prices = [p for p in prices if p > 0]
-        from_price = min(prices) if prices else 0
-        price_bit = (
-            f'<span class="prestations-cat-frame-price">À partir de {from_price}&nbsp;€ HT</span>'
-            if from_price
-            else ''
-        )
+        price_bit = ''
         media_inner = f'<i class="fas {icon}"></i>'
         cat_img = (cat.get('image') or '').strip()
         if cat_img and not cat_img.lower().endswith('.svg'):
@@ -2928,7 +3054,13 @@ def _prestation_technical_rows(
     except (TypeError, ValueError):
         price = 0
     if price > 0:
-        tech.append(('Prix HT', f'{price} €'))
+        tech.append(('Prix HT', f'{price} \u20ac'))
+    try:
+        compare = item.get('compare_at_eur')
+        if compare is not None and int(compare) > price:
+            tech.append(('Prix \u00e0 l\'unit\u00e9 HT', f'{int(compare)} \u20ac'))
+    except (TypeError, ValueError):
+        pass
 
     note = (item.get('price_note') or '').strip()
     if note:
@@ -3087,6 +3219,11 @@ def _prestation_pack_contents_html(
             price = 0
         unit_sum += price
         tag_html = f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
+        perk = _prestation_first_perk(it)
+        perk_html = (
+            f'<span class="prestation-related-perk">{html.escape(perk)}</span>'
+            if perk else ''
+        )
         cards.append(
             f'<a class="prestation-related-card prestation-pack-member-card" href="/prestations/{s}/">'
             f'<span class="prestation-related-media" data-prestation-cat="{ccat}" aria-hidden="true">'
@@ -3095,19 +3232,10 @@ def _prestation_pack_contents_html(
             f'<span class="prestation-related-badge">Inclus</span>'
             f'<strong class="prestation-related-title">{title}</strong>'
             f'{tag_html}'
-            f'<span class="prestation-related-price">'
-            f'<s class="prestation-pack-unit">{price}&nbsp;€ HT</s>'
-            f' <span class="prestation-pack-in">dans le pack</span>'
-            f'</span>'
+            f'{perk_html}'
             f'</span></a>'
         )
     save_html = ''
-    if unit_sum > pack_price > 0:
-        save_html = (
-            f'<p class="prestation-pack-contents-save">'
-            f'À l\'unité : {unit_sum}&nbsp;€ HT · '
-            f'<strong>vous économisez {unit_sum - pack_price}&nbsp;€ HT</strong></p>'
-        )
     return (
         f'{save_html}'
         f'<div class="prestation-related-grid prestation-pack-contents-grid">'
@@ -3221,6 +3349,11 @@ def _prestation_related_html(
         tag_html = (
             f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
         )
+        perk = _prestation_first_perk(it)
+        perk_html = (
+            f'<span class="prestation-related-perk">{html.escape(perk)}</span>'
+            if perk else ''
+        )
         cards.append(
             f'<a class="prestation-related-card" href="/prestations/{s}/">'
             f'<span class="prestation-related-media" data-prestation-cat="{ccat}" aria-hidden="true">'
@@ -3229,7 +3362,7 @@ def _prestation_related_html(
             f'{badge}'
             f'<strong class="prestation-related-title">{title}</strong>'
             f'{tag_html}'
-            f'<span class="prestation-related-price">À partir de {price}&nbsp;€ HT</span>'
+            f'{perk_html}'
             f'</span></a>'
         )
     return (
@@ -3279,12 +3412,11 @@ def _prestation_packs_containing_html(
             compare = int(it.get('compare_at_eur') or 0)
         except (TypeError, ValueError):
             compare = 0
-        save = ''
-        if compare > price > 0:
-            save = (
-                f'<span class="prestation-inpack-save">'
-                f'Économie {compare - price}&nbsp;€ HT</span>'
-            )
+        perk = _prestation_first_perk(it)
+        perk_html = (
+            f'<span class="prestation-related-perk">{html.escape(perk)}</span>'
+            if perk else ''
+        )
         tag_html = f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
         cards.append(
             f'<a class="prestation-related-card prestation-inpack-card" href="/prestations/{s}/">'
@@ -3294,8 +3426,7 @@ def _prestation_packs_containing_html(
             f'<span class="prestation-related-badge">Pack</span>'
             f'<strong class="prestation-related-title">{title}</strong>'
             f'{tag_html}'
-            f'<span class="prestation-related-price">À partir de {price}&nbsp;€ HT</span>'
-            f'{save}'
+            f'{perk_html}'
             f'</span></a>'
         )
     return (
@@ -3535,6 +3666,7 @@ def _build_prestation_seo_bundle(
         'prestation_inpack_html': _prestation_packs_containing_html(item, catalog),
         'prestation_pack_contents_html': _prestation_pack_contents_html(item, catalog),
         'prestation_pack_buybox_lines_html': _prestation_pack_buybox_lines_html(item, catalog),
+        'prestation_buybox_perks_html': _prestation_perks_ul_html(item, 'prestation-buybox-perks', 4),
         'prestation_category_label': html.escape(_prestation_category_label(item, catalog)),
         'prestation_hero_image_html': image_html,
         'prestation_price_eur': str(price),
@@ -4500,6 +4632,7 @@ def build_page(page_name: str, template_engine: TemplateEngine):
         build_vitrines_catalog_embed()
     if page_name == 'index':
         build_home_vitrines_teaser_embed()
+        build_home_livres_rotation(OUTPUT_DIR)
     if page_name == 'nos-offres':
         build_prestations_catalog_embed()
     if page_name == 'bouquins':
@@ -4513,14 +4646,15 @@ def build_page(page_name: str, template_engine: TemplateEngine):
     vars_dict.update(page_config)
     vars_dict['current_page'] = page_name
 
-    if page_name == 'audit':
+    if page_name in ('audit', 'analyse'):
         audit_cfg = load_audits_config()
         paid = audit_cfg.get('paid_audit') if isinstance(audit_cfg.get('paid_audit'), dict) else {}
-        vars_dict['stripe_publishable_key'] = _stripe_publishable_key()
         vars_dict['audit_paid_slug'] = str(paid.get('slug') or 'audit-complet-ia')
         vars_dict['audit_paid_price_eur'] = format_audit_price_eur_display(paid.get('price_eur', 199))
-        if not vars_dict.get('schema_type'):
-            vars_dict['schema_type'] = 'audit'
+        if page_name == 'audit':
+            vars_dict['stripe_publishable_key'] = _stripe_publishable_key()
+            if not vars_dict.get('schema_type'):
+                vars_dict['schema_type'] = 'audit'
 
     # Profil meta OG (le moteur de template ne gère pas != )
     schema_type = str(vars_dict.get('schema_type') or '')
@@ -4833,6 +4967,8 @@ def main():
     publish_audits_json_for_api(OUTPUT_DIR)
     publish_prestations_json_for_api(OUTPUT_DIR)
     publish_livres_json_for_api(OUTPUT_DIR)
+    build_home_livres_rotation(OUTPUT_DIR)
+    build_home_echantillons_rotation(OUTPUT_DIR)
 
     # Genere robots.txt (base sur SITE_BASE)
     generate_robots_txt(OUTPUT_DIR)

@@ -89,9 +89,9 @@
         "conversion-mobile"
       ],
       "benefits": [
-        "Expérience \"presque appli\"",
-        "Maps + appel faciles",
-        "Remise pack"
+        "Site installable sur le téléphone",
+        "Fiche Maps avec appel en un tap",
+        "Boutons d'appel et d'itinéraire bien places"
       ],
       "includes": [
         "Site installable (PWA)",
@@ -130,9 +130,9 @@
         "referencement-google"
       ],
       "benefits": [
-        "Plus visible sur Maps",
-        "Plus d'avis dans le temps",
-        "Bases SEO corrigées"
+        "Fiche Google complète et à jour",
+        "Parcours pour collecter des avis",
+        "Bases de visibilité locale corrigées"
       ],
       "includes": [
         "Fiche Google Business Profile",
@@ -169,9 +169,9 @@
         "whatsapp-assistant-ia"
       ],
       "benefits": [
-        "Image pro dès le premier message",
-        "Réponses même quand vous êtes en clientèle",
-        "Remise pack"
+        "Profil WhatsApp Business au propre",
+        "Réponses automatiques aux questions simples",
+        "Vous validez devis et cas sérieux"
       ],
       "includes": [
         "Mise en place WhatsApp Business",
@@ -209,9 +209,9 @@
         "visibilite-complete"
       ],
       "benefits": [
-        "Site solide + local SEO",
-        "Un seul interlocuteur pour les deux",
-        "Économie vs forfaits séparés"
+        "Vitrine jusqu'à 5 pages, claire sur téléphone",
+        "Présence Google, Maps et assistants",
+        "Un seul suivi pour le site et la visibilité"
       ],
       "includes": [
         "Site vitrine professionnel (jusqu'à 5 pages)",
@@ -250,9 +250,9 @@
         "conversion-mobile"
       ],
       "benefits": [
-        "Présent en ligne + sur Maps",
-        "Contact en un tap sur téléphone",
-        "Remise pack vs 3 prestations séparées"
+        "Vitrine 3 pages prête à montrer",
+        "Fiche Google Maps branchée",
+        "Contact en un tap depuis le téléphone"
       ],
       "includes": [
         "Site vitrine essentiel (3 pages)",
@@ -312,9 +312,9 @@
         "Infos éparpillées"
       ],
       "benefits": [
-        "Adresse web à vous",
-        "Message clair sur mobile",
-        "Contact immédiat"
+        "Jusqu'a 3 pages (accueil, services, contact)",
+        "Lisible sur téléphone, tablette, ordi",
+        "Formulaire de contact et mise en ligne"
       ],
       "includes": [
         "Jusqu'à 3 pages (accueil, services, contact)",
@@ -392,9 +392,9 @@
       "price_note": "Forfait TPE - jusqu'à 5 pages",
       "image": "/assets/images/prestations/cards/site-vitrine.jpg",
       "benefits": [
-        "Une première impression professionnelle",
-        "Visible sur mobile sans effort de votre part",
-        "Un parcours simple vers la prise de contact"
+        "Jusqu'a 5 pages structurées",
+        "Parcours simple vers le contact",
+        "Mise en ligne, HTTPS et réglages de base"
       ],
       "includes": [
         "Jusqu'à 5 pages (accueil, services, à propos, contact…)",
@@ -475,9 +475,9 @@
       "price_note": "Selon le nombre de supports à harmoniser",
       "image": "/assets/images/prestations/cards/identite-harmonieuse.jpg",
       "benefits": [
-        "Une image professionnelle et reconnaissable",
-        "Moins de confusion pour vos clients",
-        "Des supports prêts à partager"
+        "Couleurs, typos et logo alignés",
+        "Site, réseaux et documents dans le même look",
+        "Modèles prêts à réutiliser (devis, signature)"
       ],
       "includes": [
         "Charte visuelle simplifiée (couleurs, typos, logos)",
@@ -525,9 +525,9 @@
         "Appels qui n'arrivent pas"
       ],
       "benefits": [
-        "Fiche Google propre",
-        "Présent près de vous",
-        "Plus d'appels et de messages"
+        "Fiche Google et pages locales au propre",
+        "Structure claire pour Google et les assistants",
+        "Corrections prioritaires + rapport simple"
       ],
       "includes": [
         "Audit SEO classique + plan d'action",
@@ -580,9 +580,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/referencement-google.jpg",
       "benefits": [
-        "Diagnostic sans jargon",
-        "Corrections incluses dans le forfait",
-        "Feuille de route compréhensible"
+        "Diagnostic des pages et des titres",
+        "Corrections prioritaires faites dans le forfait",
+        "Rapport avec la suite à faire, en français"
       ],
       "includes": [
         "Audit SEO",
@@ -618,9 +618,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/visible-assistants-ia.jpg",
       "benefits": [
-        "Contenus clairs pour les IA",
-        "FAQ utiles pour vos visiteurs",
-        "Meilleure cohérence de votre message"
+        "FAQ et pages relues pour être comprises",
+        "Infos structurées (horaires, services, lieu)",
+        "Reco éditoriales pour garder un message net"
       ],
       "includes": [
         "Analyse de votre site actuel",
@@ -661,9 +661,9 @@
         "Clients qui passent ailleurs"
       ],
       "benefits": [
-        "Réponses hors horaires",
-        "Filtrage des demandes",
-        "Vous gardez les devis sérieux"
+        "Réponses 24 h/24 à partir de vos vraies infos",
+        "Les devis sérieux vous arrivent, le reste est filtré",
+        "Installé sur votre site, dans votre ton"
       ],
       "includes": [
         "Installation sur votre site",
@@ -713,9 +713,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/aide-emails-clients.jpg",
       "benefits": [
-        "Gain de temps sur les e-mails récurrents",
-        "Ton homogène",
-        "Vous validez avant envoi"
+        "Brouillons prêts pour les mails qui reviennent",
+        "Même ton d'un message a l'autre",
+        "Rien ne part sans votre validation"
       ],
       "includes": [
         "Configuration de l'assistant",
@@ -751,9 +751,9 @@
       "price_note": "Par site - hors gros développements",
       "image": "/assets/images/prestations/cards/entretien-mensuel.jpg",
       "benefits": [
-        "Sérénité",
-        "Interventions préventives",
-        "Une personne de confiance"
+        "Mises à jour de sécurité chaque mois",
+        "Sauvegardes suivies",
+        "Petit quota de correctifs inclus"
       ],
       "includes": [
         "Mises à jour de sécurité",
@@ -791,9 +791,9 @@
       "tagline": "Des pages qui se lisent, pas du blabla",
       "description": "Vous me donnez le fond, je sors des textes utilisables. Accueil, services, FAQ… Sans jargon d'agence.",
       "benefits": [
-        "Gain de temps sur la rédaction",
-        "Textes adaptés à votre clientèle",
-        "Meilleure visibilité sur Google"
+        "Textes rédigés à partir de votre brief",
+        "Phrases courtes, lisibles sur téléphone",
+        "Un aller-retour de corrections inclus"
       ],
       "includes": [
         "Brief par échange ou questionnaire",
@@ -837,9 +837,9 @@
       "tagline": "Mails, propositions, messages LinkedIn",
       "description": "À partir de votre offre, on prépare des textes prêts à envoyer. Vous ajustez, vous envoyez. Plus rapide que la page blanche.",
       "benefits": [
-        "Moins de page blanche",
-        "Ton professionnel et cohérent",
-        "Réponses plus rapides aux prospects"
+        "Modèles pour mails, devis et messages",
+        "Ton aligné sur votre activité",
+        "Ajustements après 2 semaines d'usage"
       ],
       "includes": [
         "Configuration sur votre activité",
@@ -879,9 +879,9 @@
       "tagline": "Tableaux simples, explications en français",
       "description": "Pas un rapport de 40 pages. Des tableaux clairs + ce que ça veut dire pour votre activité. Pour décider sans prendre la tête.",
       "benefits": [
-        "Vision claire de votre activité",
-        "Moins de tableurs à manipuler",
-        "Repérer ce qui marche (ou non)"
+        "Tableau simple branché à vos chiffres",
+        "Explications en français, pas en jargon",
+        "Session de prise en main incluse"
       ],
       "includes": [
         "Analyse de vos sources de données",
@@ -921,9 +921,9 @@
       "tagline": "Questions produits, tailles, dispo - 24 h/24",
       "description": "Pour l'e-commerce : réponses aux questions fréquentes, orientation produit, moins d'abandons \"j'ai pas osé demander\". Configuré avec vos infos.",
       "benefits": [
-        "Moins d'abandons de panier",
-        "Réponses immédiates aux hésitations",
-        "Charge allégée sur le SAV"
+        "Réponses produits (taille, dispo, livraison)",
+        "Branchement sur votre catalogue",
+        "Tests avant mise en ligne"
       ],
       "includes": [
         "Connexion à votre catalogue produits",
@@ -963,9 +963,9 @@
       "tagline": "Fini le copier-coller entre outils",
       "description": "Si vous faites la même manip plus de 3 fois par semaine, on peut probablement l'automatiser. On part de vos outils actuels, pas d'une usine à gaz.",
       "benefits": [
-        "Moins d'erreurs manuelles",
-        "Temps libéré pour le métier",
-        "Processus documentés"
+        "Les tâches répétitives passent toutes seules",
+        "Moins de copier-coller entre outils",
+        "Notice pour que vous puissiez suivre"
       ],
       "includes": [
         "Recensement de vos tâches répétitives",
@@ -1005,9 +1005,9 @@
       "tagline": "Tarifs, horaires, nouvelles FAQ à jour",
       "description": "Un assistant figé devient vite faux. Cet abonnement garde vos infos juste : nouvelles questions, changements d'horaires, petits réglages.",
       "benefits": [
-        "Réponses toujours exactes",
-        "Évolution sans repartir de zéro",
-        "Interlocuteur unique"
+        "Horaires, tarifs et FAQ tenus à jour",
+        "Nouvelles questions ajoutées chaque mois",
+        "Court compte-rendu de ce qui a changé"
       ],
       "includes": [
         "Mise à jour des connaissances",
@@ -1048,9 +1048,9 @@
       "tagline": "Ajouter un cas d'usage sans tout refaire",
       "description": "Votre assistant tourne déjà ? On lui ajoute une brique. Pas un projet from scratch - juste ce qu'il manque.",
       "benefits": [
-        "Sans tout refaire",
-        "Évolution progressive",
-        "Devis clair à l'avance"
+        "Un nouveau cas d'usage sans tout refaire",
+        "Faisabilité et tests avant mise en ligne",
+        "Perimêtre fixe dans le devis"
       ],
       "includes": [
         "Analyse de faisabilité",
@@ -1090,9 +1090,9 @@
       "tagline": "Ce qui marche, ce qui fuit, quoi faire ensuite",
       "description": "Beaucoup testent ChatGPT un peu au hasard. Moi je regarde ce que vous faites vraiment, ce qui est ok, et ce qu'il vaut mieux cadrer. Plan simple après.",
       "benefits": [
-        "Pas de dépense inutile",
-        "Idées concrètes pour votre métier",
-        "Feuille de route claire"
+        "Tour de vos outils et de vos process",
+        "5 a 10 actions concretes, classées",
+        "Echangé de restitution (30 min)"
       ],
       "includes": [
         "Entretien sur vos processus",
@@ -1132,9 +1132,9 @@
       "tagline": "Faisabilité, budget, étapes - avant de vous lancer",
       "description": "Utile avant de signer un devis trop vague. On clarifie le besoin, les risques, le budget. Vous repartez avec un plan, pas un PowerPoint de 50 slides.",
       "benefits": [
-        "Décisions éclairées",
-        "Budget et délais réalistes",
-        "Moins de mauvaises surprises"
+        "Faisabilité avant de vous lancer",
+        "Budget et étapes posés par ecrit",
+        "Rapport court à partager (associé, banque)"
       ],
       "includes": [
         "Échange sur vos objectifs",
@@ -1174,9 +1174,9 @@
       "tagline": "Les devis du site arrivent au bon endroit",
       "description": "Moins de saisies doubles. Une demande sur le site crée une fiche ou un mail structuré dans votre outil. On fait avec ce que vous avez déjà.",
       "benefits": [
-        "Zéro oubli de prospect",
-        "Gain de temps au quotidien",
-        "Données centralisées"
+        "Les demandes du site arrivent dans votre logiciel",
+        "Moins d'oublis de prospects",
+        "Règles de transfert documentées"
       ],
       "includes": [
         "Analyse de vos outils",
@@ -1217,9 +1217,9 @@
       "tagline": "De l'ancien truc vers le nouveau, proprement",
       "description": "Changer d'outil sans perdre la moitié des infos. On mappe, on teste, on bascule. Pas de \"on verra bien\".",
       "benefits": [
-        "Pas de perte d'historique",
-        "Transfert contrôlé",
-        "Vérification avant bascule"
+        "Ancien historique repris sans trou",
+        "Contrôle avant la bascule",
+        "Jeu d'essai pour vérifier les fiches"
       ],
       "includes": [
         "Inventaire des données à migrer",
@@ -1259,9 +1259,9 @@
       "tagline": "Zapier, Make, ou du sur-mesure léger",
       "description": "Exemple classique : formulaire → tableur → notification. Ou mail → CRM. Un besoin clair, une liaison propre.",
       "benefits": [
-        "Moins de double saisie",
-        "Données à jour partout",
-        "Processus fluides"
+        "Deux outils qui se parlent sans double saisie",
+        "Donnees alignées des deux côtés",
+        "Marche a suivre si ça se décroche"
       ],
       "includes": [
         "Cartographie du flux souhaité",
@@ -1302,9 +1302,9 @@
       "tagline": "Mesure mobile + ordi, priorités en français",
       "description": "On mesure, on explique sans jargon, on liste 3-5 actions utiles. Idéal avant un redesign ou après des plaintes \"ça rame\".",
       "benefits": [
-        "Comprendre pourquoi les visiteurs partent",
-        "Liste d'actions prioritaires",
-        "Pas de jargon technique"
+        "Mesure du chargement sur téléphone",
+        "Liste d'actions classées par impact",
+        "Explications en français, pas en jargon"
       ],
       "includes": [
         "Test de performance",
@@ -1344,9 +1344,9 @@
       "tagline": "Tarifs, témoignages, équipe…",
       "description": "Vous avez besoin d'une page de plus ? Je la fais dans le style du site. Simple, rapide.",
       "benefits": [
-        "Site plus complet",
-        "Cohérence visuelle",
-        "Mise en ligne rapide"
+        "Une page de plus, dans le look du site",
+        "Liens du menu mis à jour",
+        "Mise en ligne sans casser le reste"
       ],
       "includes": [
         "Structure de la page",
@@ -1387,9 +1387,9 @@
       "tagline": "Les bons champs, au bon endroit",
       "description": "Moins de mails vides. On pose les questions utiles et on envoie ça où il faut (mail, tableur, outil).",
       "benefits": [
-        "Demandes mieux qualifiées",
-        "Moins d'allers-retours",
-        "Image professionnelle"
+        "Champs utiles (pas 20 questions inutiles)",
+        "Les demandes arrivent au bon endroit",
+        "Message de confirmation pour le client"
       ],
       "includes": [
         "Définition des champs utiles",
@@ -1429,8 +1429,8 @@
       "tagline": "Rafraîchir sans tout casser",
       "description": "Le site marche mais fait vieux ? On le rafraîchit. Pas forcément une refonte totale - juste ce qu'il faut pour avoir l'air actuel.",
       "benefits": [
-        "Image plus actuelle",
-        "Coût maîtrisé",
+        "Habillage à jour, sans changér d'adresse",
+        "Même contenu, présentation plus nette",
         "Pas de migration lourde"
       ],
       "includes": [
@@ -1471,9 +1471,9 @@
       "tagline": "Horaires, textes, photos - on remet à jour",
       "description": "Vous me donnez la liste, je mets à jour. Idéal avant la saison, un salon, ou après un changement d'offre.",
       "benefits": [
-        "Site à jour rapidement",
-        "Pas besoin de formation technique",
-        "Heures utilisables sur plusieurs petits sujets"
+        "Textes, photos, horaires : on s'en charge",
+        "Heures utilisables sur plusieurs petits sujets",
+        "Vous n'avez pas à toucher au site"
       ],
       "includes": [
         "Jusqu'à 5 h de modifications",
@@ -1513,9 +1513,9 @@
       "tagline": "En ligne, sécurisé, sans vous prendre la tête",
       "description": "DNS, HTTPS, boîte mail si besoin : le côté \"ça marche\" sans que vous y passiez vos soirées.",
       "benefits": [
-        "Site accessible 24 h/24",
-        "Un interlocuteur pour le domaine",
-        "Moins de paperasse technique"
+        "Site joignable, nom de domaine suivi",
+        "Un interlocuteur pour le technique",
+        "Renouvellements et accès centralisés"
       ],
       "includes": [
         "Hébergement web annuel",
@@ -1555,9 +1555,9 @@
       "tagline": "Au cas où (et il y a toujours un \"au cas où\")",
       "description": "On met en place des sauvegardes et les gestes de base. Si un jour ça casse, on a de quoi revenir.",
       "benefits": [
-        "Sommeil tranquille",
-        "Récupération possible après incident",
-        "Moins de risques de piratage"
+        "Copies régulières de votre site",
+        "Restauration possible si ça casse",
+        "Mises à jour de sécurité suivies"
       ],
       "includes": [
         "Sauvegardes automatiques planifiées",
@@ -1597,9 +1597,9 @@
       "tagline": "Le petit cadenas à côté de l'adresse",
       "description": "Chrome qui hurle, clients qui doutent : on règle ça. Rapide, indispensable.",
       "benefits": [
-        "Visiteurs rassurés",
-        "Meilleure image professionnelle",
-        "Exigence Google respectée"
+        "Cadenas visible dans le navigateur",
+        "Adresse en https, certificat tenu à jour",
+        "Google et les navigateurs sont contents"
       ],
       "includes": [
         "Certificat SSL",
@@ -1640,9 +1640,9 @@
       "tagline": "Une question, une réponse, sans ticket usine",
       "description": "Pour les petites questions du mois. Pas un call center. Un humain qui connaît votre projet.",
       "benefits": [
-        "Pas seul face au technique",
+        "Une adresse mail pour les pannes du quotidien",
         "Réponse sous quelques jours ouvrés",
-        "Budget prévisible"
+        "Volume d'echangé cadre dans le forfait"
       ],
       "includes": [
         "Support par e-mail",
@@ -1684,9 +1684,9 @@
       "tagline": "Ça casse, on regarde vite",
       "description": "Créneau de 2 heures pour diagnostiquer et corriger ce qu'on peut. Si c'est plus gros, je vous le dis clairement.",
       "benefits": [
-        "Réaction rapide",
-        "Forfait connu à l'avance",
-        "Pas de surprise sur la durée"
+        "Créneau de 2 h pour débloquer",
+        "Diagnostic puis correctif dans le forfait",
+        "Durée connue à l'avance"
       ],
       "includes": [
         "Jusqu'à 2 h d'intervention",
@@ -1726,9 +1726,9 @@
       "tagline": "Conseil, retouche, formation - à la carte",
       "description": "Flexible. Une question technique, une retouche, un coup de main WordPress… On chronomètre, on avance.",
       "benefits": [
-        "Flexible",
-        "Vous apprenez en faisant",
-        "Payez seulement le temps utile"
+        "On avance ensemble, écran partagé",
+        "Vous repartez avec la manip notée",
+        "Facture à l'heure vraiment passée"
       ],
       "includes": [
         "Visio ou échange écrit",
@@ -1768,9 +1768,9 @@
       "tagline": "Réponse plus rapide quand ça urge",
       "description": "Pour ceux qui ne peuvent pas attendre. Vous êtes traités avant le flux normal, dans des délais annoncés.",
       "benefits": [
-        "Délai de réponse raccourci",
-        "Intervention en urgence possible",
-        "Sérénité avant une échéance"
+        "File plus courte que le support standard",
+        "Créneau d'urgence possible",
+        "Utile avant une ouverture, un salon, une deadline"
       ],
       "includes": [
         "Canal prioritaire",
@@ -1811,9 +1811,9 @@
       "price_note": "Bilan express (pas un audit RGESN complet)",
       "image": "/assets/images/prestations/cards/audit-eco-numerique.jpg",
       "benefits": [
-        "Argument clair pour votre direction (coût & image)",
-        "Repérage des médias et scripts superflus",
-        "Plan d'action sans jargon technique"
+        "Poids des pages et des médias mesuré",
+        "Ce qui alourdit vraiment, classe par priorité",
+        "Plan d'action lisible, sans jargon"
       ],
       "includes": [
         "Test mobile + ordinateur",
@@ -1854,9 +1854,9 @@
       "price_note": "Jusqu'à ~30 images ou équivalent",
       "image": "/assets/images/prestations/cards/alleger-medias.jpg",
       "benefits": [
-        "Chargement nettement plus rapide",
-        "Moins de données pour vos visiteurs",
-        "Meilleure expérience sur 4G"
+        "Images et vidéos compressées",
+        "Chargement plus court sur 4G",
+        "Qualité visuelle conservée"
       ],
       "includes": [
         "Jusqu'à ~30 images traitées",
@@ -1905,9 +1905,9 @@
       "price_note": "Selon complexité - devis après audit",
       "image": "/assets/images/prestations/cards/site-allege.jpg",
       "benefits": [
-        "Site plus fluide sur mobile",
-        "Moins de ressources serveur",
-        "Meilleur signal pour Google"
+        "Pages plus légères à ouvrir",
+        "Moins de scripts inutiles",
+        "Meilleur ressenti sur téléphone"
       ],
       "includes": [
         "Corrections prioritaires du rapport",
@@ -1948,9 +1948,9 @@
       "price_note": "Forfait TPE - site sobre dès la création",
       "image": "/assets/images/prestations/cards/site-vitrine-eco.jpg",
       "benefits": [
-        "Différenciation RSE auprès de vos clients",
-        "Chargement rapide dès le lancement",
-        "Argument pour votre direction (coûts maîtrisés)"
+        "Vitrine conçue légère dès le départ",
+        "Chargement rapide sur téléphone",
+        "Moins de conso serveur au quotidien"
       ],
       "includes": [
         "Jusqu'à 5 pages (comme le pack vitrine)",
@@ -1991,9 +1991,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/page-engagement-numerique.jpg",
       "benefits": [
-        "Image de marque cohérente",
-        "Argument de vente différenciant",
-        "Contenu prêt à partager"
+        "Une page qui dit comment vous travaillez en ligne",
+        "Chiffres simples (poids, hebergement) si on les a",
+        "Texte pret à partager avec vos clients"
       ],
       "includes": [
         "Rédaction avec vous",
@@ -2029,9 +2029,9 @@
       "price_note": "30 min de corrections mineures / an incluses",
       "image": "/assets/images/prestations/cards/suivi-eco-mensuel.jpg",
       "benefits": [
-        "Site qui reste performant dans le temps",
-        "Alerte avant que ça dérape",
-        "Budget prévisible"
+        "Contrôle mensuel du poids et de la vitesse",
+        "Alerte si une mise à jour a alourdi le site",
+        "Petit rapport pour garder le cap"
       ],
       "includes": [
         "Rapport mensuel court",
@@ -2073,9 +2073,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/atelier-eco-web.jpg",
       "benefits": [
-        "Moins de régressions après vos MAJ",
-        "Autonomie sans sacrifier la sobriété",
-        "Checklist réutilisable"
+        "Gestes pour publier sans alourdir",
+        "Checklist à réutiliser après l'atelier",
+        "On travaille sur votre vrai site"
       ],
       "includes": [
         "Visio 2 h (jusqu'à 4 personnes)",
@@ -2111,9 +2111,9 @@
       "price_note": "Configuration + scénarios métier",
       "image": "/assets/images/prestations/cards/whatsapp-assistant-ia.jpg",
       "benefits": [
-        "Moins de messages à retaper dix fois",
-        "Réponses même le soir et le week-end",
-        "Vous gardez la main sur devis et urgences"
+        "Réponses aux questions simples, même le soir",
+        "Les devis et urgences restent pour vous",
+        "Alimenté par vos horaires, tarifs et services"
       ],
       "includes": [
         "On regarde ensemble vos échanges typiques",
@@ -2166,9 +2166,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/geo-citations-ia.jpg",
       "benefits": [
-        "Vous êtes plus lisible pour les assistants",
-        "Votre message reste fidèle à ce que vous faites",
-        "Ça complète (pas remplace) Google"
+        "Votre activité mieux decrite pour les assistants",
+        "Message aligné sur ce que vous faites vraiment",
+        "Complément a Google, pas un remplacement"
       ],
       "includes": [
         "Petit état des lieux de votre site",
@@ -2209,9 +2209,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/ia-avis-google.jpg",
       "benefits": [
-        "Plus d'avis sans relancer comme un robot",
-        "Réponses plus rapides (et dans votre ton)",
-        "Ça rassure sur Maps"
+        "Parcours d'avis sans relancer comme un robot",
+        "Réponses proposees dans votre ton",
+        "Fiche Maps plus rassurante"
       ],
       "includes": [
         "Lien + QR code vers vos avis Google",
@@ -2260,9 +2260,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/prise-rdv-ia.jpg",
       "benefits": [
-        "Demandes mieux préparées",
-        "Agenda un peu moins le bordel",
-        "Ça marche aussi hors horaires"
+        "Les demandes arrivent plus complètes",
+        "Créneaux et infos de base pré-remplis",
+        "Ça tourne aussi hors horaires"
       ],
       "includes": [
         "5 à 8 questions de qualification",
@@ -2299,9 +2299,9 @@
       "price_note": "Sur site existant compatible - ou avec création",
       "image": "/assets/images/prestations/cards/pwa-vitrine.jpg",
       "benefits": [
-        "Icône sur le téléphone du client",
-        "Plus snappy qu'un site classique",
-        "Pas de validation Apple / Google Play"
+        "Icône sur l'écran d'accueil du téléphone",
+        "Ouverture plus rapide qu'un onglet classique",
+        "Pas de passage par les stores Apple / Google"
       ],
       "includes": [
         "On vérifie si votre site est prêt",
@@ -2350,9 +2350,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/whatsapp-business-setup.jpg",
       "benefits": [
-        "Ça fait pro dès le premier message",
-        "Moins de saisie à la main",
-        "Base solide si vous voulez un assistant plus tard"
+        "Profil, horaires et messages d'accueil règles",
+        "Réponses rapides pour les questions du quotidien",
+        "Base propre si vous ajoutez un assistant plus tard"
       ],
       "includes": [
         "Création ou nettoyage du profil",
@@ -2388,9 +2388,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/fiche-google-mobile.jpg",
       "benefits": [
-        "Plus visible dans les résultats locaux",
-        "Appel ou itinéraires en un tap",
-        "Bonne base pour collecter des avis"
+        "Fiche Maps complète (horaires, photos, catégories)",
+        "Appel et itinéraire en un tap",
+        "Bonne base pour collecter des avis ensuite"
       ],
       "includes": [
         "État des lieux de la fiche actuelle",
@@ -2439,9 +2439,9 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/conversion-mobile.jpg",
       "benefits": [
-        "Contact en un tap",
-        "Moins de gens qui partent",
-        "On voit ce qui marche (clics utiles)"
+        "Bouton d'appel bien visible sur téléphone",
+        "Moins de gens qui partent sans contacter",
+        "On voit les clics utiles"
       ],
       "includes": [
         "Regard sur l'accueil et la page contact",
@@ -2478,9 +2478,9 @@
       "price_note": "Périmètre défini ensemble (MVP)",
       "image": "/assets/images/prestations/cards/app-mobile-metier.jpg",
       "benefits": [
-        "Moins de \"où en est mon dossier ?\" par mail",
-        "Vos clients ont un endroit à eux",
-        "On peut faire grandir après"
+        "Un espace simple pour suivre un dossier",
+        "Moins de 'ou en est-on ?' par mail",
+        "On peut l'agrandir plus tard"
       ],
       "includes": [
         "1 h pour cadrer le besoin",

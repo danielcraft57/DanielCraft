@@ -34,7 +34,7 @@
         <div class="section-header">
             <span class="section-badge">Offres phares</span>
             <h2 id="offres-tiers-title" class="section-title">Choisissez le niveau qui vous correspond</h2>
-            <p class="section-description">Prix HT indicatifs - devis PDF en un clic si ça vous parle. Souvent une vitrine classique en moins d'une semaine une fois le brief clair.</p>
+            <p class="section-description">On commence par ce que ça change pour vous - le montant est dans le devis PDF, sans engagement. Souvent une vitrine classique en moins d'une semaine une fois le brief clair.</p>
         </div>
 
         <article class="offres-tier offres-tier--clickable" itemscope itemtype="https://schema.org/Service">
@@ -72,14 +72,18 @@
                 </div>
             </div>
             <div class="offres-tier__buy">
-                <p class="offres-tier__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" hidden>
                     <meta itemprop="priceCurrency" content="EUR">
                     <meta itemprop="price" content="390">
                     <link itemprop="url" href="{{site_base}}/prestations/site-vitrine-essentiel/">
                     <link itemprop="availability" href="https://schema.org/InStock">
-                    À partir de <strong>390&nbsp;€</strong> <span>HT</span>
-                </p>
-                <p class="offres-tier__hint">590&nbsp;€ HT pour un site jusqu'à 10 pages</p>
+                </div>
+                <ul class="offres-tier__perks">
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Jusqu'à 3 pages (accueil, services, contact)</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Design adapté à votre métier</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Mise en ligne et HTTPS</span></li>
+                </ul>
+                <p class="offres-tier__hint">Clair sur téléphone, prêt à être trouvé</p>
                 <button type="button" class="btn btn-outline" data-prestation-devis-open
                     data-prestation-slug="site-vitrine-essentiel"
                     data-service-slug="site-vitrine-essentiel"
@@ -127,14 +131,18 @@
                 </div>
             </div>
             <div class="offres-tier__buy">
-                <p class="offres-tier__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" hidden>
                     <meta itemprop="priceCurrency" content="EUR">
                     <meta itemprop="price" content="690">
                     <link itemprop="url" href="{{site_base}}/prestations/visibilite-complete/">
                     <link itemprop="availability" href="https://schema.org/InStock">
-                    À partir de <strong>690&nbsp;€</strong> <span>HT</span>
-                </p>
-                <p class="offres-tier__hint">Tout inclus - SEO local &amp; fiche Maps</p>
+                </div>
+                <ul class="offres-tier__perks">
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Audit SEO + plan d'action</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Fiche Google / Maps au propre</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Corrections techniques prioritaires</span></li>
+                </ul>
+                <p class="offres-tier__hint">Pour être trouvé près de chez vous</p>
                 <button type="button" class="btn btn-primary" data-prestation-devis-open
                     data-prestation-slug="visibilite-complete"
                     data-service-slug="visibilite-complete"
@@ -181,14 +189,18 @@
                 </div>
             </div>
             <div class="offres-tier__buy">
-                <p class="offres-tier__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" hidden>
                     <meta itemprop="priceCurrency" content="EUR">
                     <meta itemprop="price" content="990">
                     <link itemprop="url" href="{{site_base}}/prestations/repondeur-intelligent/">
                     <link itemprop="availability" href="https://schema.org/InStock">
-                    À partir de <strong>990&nbsp;€</strong> <span>HT</span>
-                </p>
-                <p class="offres-tier__hint">Mise en place incluse</p>
+                </div>
+                <ul class="offres-tier__perks">
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Installation sur votre site</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Entraînement sur vos contenus</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i><span>Réponses hors horaires</span></li>
+                </ul>
+                <p class="offres-tier__hint">Mise en service comprise</p>
                 <button type="button" class="btn btn-outline" data-prestation-devis-open
                     data-prestation-slug="repondeur-intelligent"
                     data-service-slug="repondeur-intelligent"
@@ -211,37 +223,37 @@
                     <i class="fas fa-comment-dots" aria-hidden="true"></i>
                     <h3>Assistant WhatsApp</h3>
                     <p>Il gère les questions simples. Vous, les vrais devis.</p>
-                    <span>À partir de 790&nbsp;€ HT</span>
+                    <span>Questions simples gérées, devis à vous</span>
                 </a>
                 <a class="offres-extra__card" href="/prestations/geo-citations-ia/">
                     <i class="fas fa-robot" aria-hidden="true"></i>
                     <h3>Bien parlé de vous sur ChatGPT</h3>
                     <p>Des infos claires pour que les IA ne racontent pas n'importe quoi.</p>
-                    <span>À partir de 549&nbsp;€ HT</span>
+                    <span>Jusqu'à 12 questions/réponses claires</span>
                 </a>
                 <a class="offres-extra__card" href="/prestations/ia-avis-google/">
                     <i class="fas fa-star" aria-hidden="true"></i>
                     <h3>Plus d'avis Google</h3>
                     <p>QR / SMS après la visite, réponses sans se prendre la tête.</p>
-                    <span>À partir de 349&nbsp;€ HT</span>
+                    <span>Lien + QR vers vos avis Google</span>
                 </a>
                 <a class="offres-extra__card" href="/prestations/pwa-vitrine/">
                     <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                     <h3>Site sur l'écran d'accueil</h3>
                     <p>Comme une appli, sans passer par les stores.</p>
-                    <span>À partir de 490&nbsp;€ HT</span>
+                    <span>Installation sur l'écran d'accueil</span>
                 </a>
                 <a class="offres-extra__card" href="/prestations/fiche-google-mobile/">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <h3>Fiche Google Maps au propre</h3>
                     <p>Souvent plus vue que votre site sur téléphone.</p>
-                    <span>À partir de 290&nbsp;€ HT</span>
+                    <span>Fiche Maps complétée, services listés</span>
                 </a>
                 <a class="offres-extra__card" href="/prestations/whatsapp-business-setup/">
                     <i class="fas fa-comments" aria-hidden="true"></i>
                     <h3>WhatsApp Business bien réglé</h3>
                     <p>Profil, messages d'accueil, réponses toutes prêtes.</p>
-                    <span>À partir de 290&nbsp;€ HT</span>
+                    <span>Messages d'accueil et réponses rapides</span>
                 </a>
             </div>
         </div>

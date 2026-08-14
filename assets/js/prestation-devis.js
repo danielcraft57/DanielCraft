@@ -81,13 +81,10 @@
       input.setAttribute('data-addon-price', String(addon.price_eur || 0));
       input.addEventListener('change', recalcTotal);
       const text = document.createElement('span');
-      const price = parseInt(addon.price_eur, 10) || 0;
       text.innerHTML =
         '<strong>' +
         escapeHtml(addon.title || '') +
-        '</strong> (+' +
-        price +
-        ' €)' +
+        '</strong>' +
         (addon.description ? ' — ' + escapeHtml(addon.description) : '');
       label.appendChild(input);
       label.appendChild(text);
