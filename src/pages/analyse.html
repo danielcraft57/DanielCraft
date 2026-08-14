@@ -86,7 +86,7 @@
 
       <div class="analyse-loading" id="plLoading" hidden aria-live="polite" aria-busy="true">
 
-        <div class="analyse-loader">
+        <div class="analyse-loader" id="plLoaderChrome">
 
           <div class="analyse-loader__head">
 
@@ -110,17 +110,7 @@
 
           </div>
 
-          <div class="analyse-loader__scores" aria-hidden="true">
-
-            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
-
-            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
-
-            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
-
-            <div class="analyse-loader__score"><span class="analyse-loader__score-ring"></span><span class="analyse-loader__score-line"></span></div>
-
-          </div>
+          <div class="analyse-loader__scores" id="plLoadingScores" aria-live="polite"></div>
 
           <div class="analyse-loader__progress">
 
@@ -135,6 +125,20 @@
           </div>
 
         </div>
+
+      </div>
+
+
+
+      <div class="analyse-convert-loader-host" id="plConvertLoaderHost">
+
+        <section class="audit-offers audit-offers--split analyse-convert analyse-convert--phase" id="plConvertLoader" hidden aria-labelledby="analyse-convert-loader-title">
+
+          <h2 id="analyse-convert-loader-title" class="audit-section-title">Choisissez votre niveau d'analyse</h2>
+
+          {% include "includes/analyse-convert-cards-grid.html" %}
+
+        </section>
 
       </div>
 
@@ -190,7 +194,7 @@
 
   <div class="container analyse-report-body" id="plReport" hidden>
 
-    <section class="analyse-insights analyse-reveal" data-reveal-order="3" aria-labelledby="analyse-insights-title">
+    <section class="analyse-insights analyse-reveal" data-reveal-order="4" aria-labelledby="analyse-insights-title">
 
       <h2 id="analyse-insights-title" class="visually-hidden">Points cles</h2>
 
@@ -200,149 +204,21 @@
 
 
 
-    <section class="analyse-convert analyse-reveal" data-reveal-order="4" aria-labelledby="analyse-convert-title">
+    <div class="analyse-convert-report-host" id="plConvertReportHost">
 
-      <h2 id="analyse-convert-title" class="visually-hidden">Recevoir l'audit ou passer au premium</h2>
+      <section class="audit-offers audit-offers--split analyse-convert analyse-convert--phase analyse-reveal" data-reveal-order="5" id="plConvertReport" hidden aria-labelledby="analyse-convert-report-title">
 
-      <div class="analyse-convert__grid">
+        <h2 id="analyse-convert-report-title" class="audit-section-title">Choisissez votre niveau d'analyse</h2>
 
-        <article class="analyse-card analyse-card--lead">
+        {% include "includes/analyse-convert-cards-grid.html" %}
 
-          <div class="analyse-card__split">
+      </section>
 
-            <div class="analyse-card__intro">
+    </div>
 
-              <div class="analyse-card__icon analyse-card__icon--lead" aria-hidden="true"><i class="fas fa-envelope"></i></div>
 
-              <h3 class="analyse-card__title">Recevoir l'audit</h3>
 
-              <p class="analyse-card__lead">Recevez votre rapport complet par email.</p>
-
-            </div>
-
-            <div class="analyse-card__body">
-
-              <form class="analyse-lead-form" id="plLeadForm" novalidate>
-
-                <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-                <div class="analyse-lead-form__row">
-
-                  <div class="form-group">
-
-                    <label for="plLeadFirst">Prenom</label>
-
-                    <input id="plLeadFirst" name="first_name" type="text" autocomplete="given-name" placeholder="Prenom">
-
-                  </div>
-
-                  <div class="form-group">
-
-                    <label for="plLeadLast">Nom</label>
-
-                    <input id="plLeadLast" name="last_name" type="text" autocomplete="family-name" placeholder="Nom">
-
-                  </div>
-
-                </div>
-
-                <div class="analyse-lead-form__row">
-
-                  <div class="form-group">
-
-                    <label for="plLeadEmail">Email</label>
-
-                    <input id="plLeadEmail" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required>
-
-                  </div>
-
-                  <div class="form-group">
-
-                    <label for="plLeadSite">Site web</label>
-
-                    <input id="plLeadSite" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://votre-site.fr" required>
-
-                  </div>
-
-                </div>
-
-                <button type="submit" class="btn btn-primary analyse-lead-form__submit" id="plLeadSubmit">
-
-                  <span class="analyse-submit__label">Recevoir l'audit</span>
-
-                  <span class="analyse-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
-
-                </button>
-
-                <div class="form-feedback" id="plLeadFeedback" hidden role="status" aria-live="polite"></div>
-
-              </form>
-
-              <div class="analyse-lead-success" id="plLeadSuccess" hidden>
-
-                <p class="analyse-lead-success__title">C'est parti</p>
-
-                <p class="analyse-lead-success__text" id="plLeadSuccessText">Le rapport arrive par email. Pensez a verifier les spams.</p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="analyse-card analyse-card--premium">
-
-          <div class="analyse-card__split">
-
-            <div class="analyse-card__intro">
-
-              <div class="analyse-card__icon analyse-card__icon--premium" aria-hidden="true"><i class="fas fa-award"></i></div>
-
-              <h3 class="analyse-card__title">Audit premium</h3>
-
-              <p class="analyse-card__lead">Un audit approfondi avec des recommandations actionnables.</p>
-
-            </div>
-
-            <div class="analyse-card__body analyse-card__body--premium">
-
-              <ul class="analyse-premium__perks">
-
-                <li><i class="fas fa-check" aria-hidden="true"></i> Analyse approfondie de votre site</li>
-
-                <li><i class="fas fa-check" aria-hidden="true"></i> Recommandations prioritaires</li>
-
-                <li><i class="fas fa-check" aria-hidden="true"></i> Plan d'action personnalise</li>
-
-              </ul>
-
-              <button type="button" class="btn btn-outline analyse-premium__cta" id="plPremiumBtn">
-
-                <span class="analyse-submit__label">Demander l'audit premium</span>
-
-                <span class="analyse-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
-
-              </button>
-
-              <div class="form-feedback" id="plPremiumFeedback" hidden role="status" aria-live="polite"></div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <section class="analyse-offers analyse-reveal" data-reveal-order="5" aria-labelledby="analyse-offers-title">
+    <section class="analyse-offers analyse-reveal" data-reveal-order="6" aria-labelledby="analyse-offers-title">
 
       <h2 id="analyse-offers-title" class="analyse-offers__title">Pour aller plus loin</h2>
 
@@ -354,13 +230,89 @@
 
 
 
-    <section class="analyse-details-wrap analyse-reveal" data-reveal-order="6" aria-labelledby="analyse-details-title">
+    <section class="analyse-details-wrap analyse-reveal" data-reveal-order="7" aria-labelledby="analyse-details-title">
 
       <h2 id="analyse-details-title" class="analyse-offers__title">Le detail</h2>
 
       <div class="pl-details" id="plDetails"></div>
 
     </section>
+
+  </div>
+
+
+
+  <div class="analyse-lead-modal" id="plLeadModal" hidden aria-hidden="true">
+
+    <div class="analyse-lead-modal__backdrop" data-analyse-modal-close tabindex="-1"></div>
+
+    <div class="analyse-lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="plLeadModalTitle">
+
+      <button type="button" class="analyse-lead-modal__close" data-analyse-modal-close aria-label="Fermer">
+
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+
+      </button>
+
+      <h2 class="analyse-lead-modal__title" id="plLeadModalTitle">Recevoir l'audit</h2>
+
+      <p class="analyse-lead-modal__lead" id="plLeadModalLead">PDF par email - en general en moins d'une minute, parfois jusqu'a 1 h.</p>
+
+
+
+      <form class="analyse-lead-form analyse-lead-form--stack" id="plLeadForm" novalidate>
+
+        <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-group">
+
+          <label for="plLeadSite">Votre site</label>
+
+          <input id="plLeadSite" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://votre-site.fr" required readonly>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="plLeadEmail">Votre email</label>
+
+          <input id="plLeadEmail" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="plLeadName">Nom <span class="analyse-optional">(facultatif)</span></label>
+
+          <input id="plLeadName" name="name" type="text" autocomplete="name" placeholder="Votre nom">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary analyse-lead-form__submit" id="plLeadSubmit">
+
+          <span class="analyse-submit__label" id="plLeadSubmitLabel">Recevoir l'audit (PDF)</span>
+
+          <span class="analyse-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+
+        </button>
+
+        <div class="form-feedback" id="plLeadFeedback" hidden role="status" aria-live="polite"></div>
+
+        <div class="form-feedback analyse-convert__premium-feedback" id="plPremiumFeedback" hidden role="status" aria-live="polite"></div>
+
+      </form>
+
+
+
+      <div class="analyse-lead-success" id="plLeadSuccess" hidden>
+
+        <p class="analyse-lead-success__title">C'est parti</p>
+
+        <p class="analyse-lead-success__text" id="plLeadSuccessText">Le PDF part par email - en general en moins d'une minute.</p>
+
+      </div>
+
+    </div>
 
   </div>
 

@@ -55,6 +55,13 @@
     loading: document.getElementById('plLoading'),
     loadingUrl: document.getElementById('plLoadingUrl'),
     loadingStep: document.getElementById('plLoadingStep'),
+    loadingScores: document.getElementById('plLoadingScores'),
+    convertLoader: document.getElementById('plConvertLoader'),
+    convertReport: document.getElementById('plConvertReport'),
+    leadModal: document.getElementById('plLeadModal'),
+    leadModalTitle: document.getElementById('plLeadModalTitle'),
+    leadModalLead: document.getElementById('plLeadModalLead'),
+    leadSubmitLabel: document.getElementById('plLeadSubmitLabel'),
     reportHero: document.getElementById('plReportHero'),
     report: document.getElementById('plReport'),
     companyName: document.getElementById('plCompanyName'),
@@ -69,15 +76,13 @@
     details: document.getElementById('plDetails'),
     offers: document.getElementById('plOffers'),
     leadForm: document.getElementById('plLeadForm'),
-    leadFirst: document.getElementById('plLeadFirst'),
-    leadLast: document.getElementById('plLeadLast'),
+    leadName: document.getElementById('plLeadName'),
     leadEmail: document.getElementById('plLeadEmail'),
     leadSite: document.getElementById('plLeadSite'),
     leadSubmit: document.getElementById('plLeadSubmit'),
     leadFeedback: document.getElementById('plLeadFeedback'),
     leadSuccess: document.getElementById('plLeadSuccess'),
     leadSuccessText: document.getElementById('plLeadSuccessText'),
-    premiumBtn: document.getElementById('plPremiumBtn'),
     premiumFeedback: document.getElementById('plPremiumFeedback')
   };
 
@@ -86,6 +91,16 @@
   let currentWebsite = '';
   let loadingStepTimer = null;
   let loadingStepIndex = 0;
+  let loaderRevealToken = 0;
+  let modalMode = 'free';
+  let modalPreviousFocus = null;
+
+  const LOADER_SCORE_DEFS = [
+    { key: 'performance', label: 'Performance' },
+    { key: 'seo', label: 'SEO' },
+    { key: 'securite', label: 'Securite' },
+    { key: 'risque', label: 'Risque' }
+  ];
 
   const LOADING_STEPS = [
     'Connexion au site…',
@@ -238,8 +253,172 @@
     return { first: parts[0], last: parts.slice(1).join(' ') };
   }
 
+  function sleep(ms) {
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
+
   function setBootVisible(show) {
     if (els.bootWrap) els.bootWrap.hidden = !show;
+  }
+
+  function resetLoaderScores() {
+    loaderRevealToken += 1;
+    if (!els.loadingScores) return;
+    els.loadingScores.innerHTML = '';
+    LOADER_SCORE_DEFS.forEach((def) => {
+      const card = document.createElement('div');
+      card.className = 'analyse-loader__score analyse-loader__score--' + def.key;
+      card.dataset.scoreKey = def.key;
+      card.innerHTML = `
+        <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
+        <div class="analyse-loader__score-copy">
+          <div class="analyse-loader__score-label">${escapeHtml(def.label)}</div>
+          <div class="analyse-loader__score-value">—</div>
+        </div>
+      `;
+      els.loadingScores.appendChild(card);
+    });
+  }
+
+  async function revealLoaderScorePlaceholders() {
+    const token = loaderRevealToken;
+    const cards = els.loadingScores ? els.loadingScores.querySelectorAll('.analyse-loader__score') : [];
+    if (!cards.length) return;
+    const step = prefersReducedMotion() ? 0 : 320;
+    for (let i = 0; i < cards.length; i += 1) {
+      if (token !== loaderRevealToken) return;
+      if (step > 0) await sleep(step);
+      cards[i].classList.add('is-in');
+    }
+  }
+
+  function buildLoaderScoreValueHtml(it) {
+    const key = it?.key || 'score';
+    const score100 = typeof it?.value === 'number' ? Math.round(it.value) : null;
+    const ring = score100 == null ? 0 : Math.max(0, Math.min(100, score100));
+    const color = score100 == null ? 'rgba(15,23,42,0.18)' : ringColorForKey(key);
+    const note = it?.noteClient || scoreNote(key, score100);
+    return {
+      ringHtml: `
+        <div class="pl-score-ring analyse-loader__score-ring--live" style="--pl-ring:${ring}%; --pl-ring-live:0%; --pl-ring-color:${color};" data-ring-target="${ring}" aria-hidden="true">
+          <div class="pl-score-value">${score100 ?? '—'}</div>
+        </div>
+      `,
+      note: note
+    };
+  }
+
+  async function fillLoaderScoresFromReport(raw) {
+    const token = loaderRevealToken;
+    const cards = els.loadingScores ? els.loadingScores.querySelectorAll('.analyse-loader__score') : [];
+    if (!cards.length) return;
+    const list = normalizeReport(raw).scoreCards || [];
+    const step = prefersReducedMotion() ? 0 : 240;
+
+    for (let i = 0; i < cards.length; i += 1) {
+      if (token !== loaderRevealToken) return;
+      const card = cards[i];
+      const it = list[i] || LOADER_SCORE_DEFS[i];
+      if (!card.classList.contains('is-in')) {
+        card.classList.add('is-in');
+        if (step > 0) await sleep(120);
+      }
+      const built = buildLoaderScoreValueHtml(it);
+      const pending = card.querySelector('.analyse-loader__score-ring--pending, .analyse-loader__score-ring--live');
+      if (pending) {
+        const wrap = document.createElement('div');
+        wrap.innerHTML = built.ringHtml.trim();
+        pending.replaceWith(wrap.firstElementChild);
+      }
+      const valueEl = card.querySelector('.analyse-loader__score-value');
+      if (valueEl) valueEl.textContent = built.note;
+      card.classList.add('is-ready');
+      animateScoreRing(card);
+      if (step > 0) await sleep(step);
+    }
+  }
+
+  function convertSections() {
+    return [els.convertLoader, els.convertReport].filter(Boolean);
+  }
+
+  function resetConvertCardReveal(section) {
+    if (!section) return;
+    section.querySelectorAll('.analyse-convert-card.is-in').forEach((el) => el.classList.remove('is-in'));
+  }
+
+  function setConvertLoaderVisible(show) {
+    if (!els.convertLoader) return;
+    els.convertLoader.hidden = !show;
+    if (!show) {
+      resetConvertCardReveal(els.convertLoader);
+      return;
+    }
+    els.convertLoader.querySelectorAll('.analyse-convert-card').forEach((card) => {
+      card.classList.add('is-in');
+    });
+  }
+
+  function setConvertReportVisible(show) {
+    if (!els.convertReport) return;
+    els.convertReport.hidden = !show;
+    if (!show) {
+      resetConvertCardReveal(els.convertReport);
+      return;
+    }
+    els.convertReport.querySelectorAll('.analyse-convert-card').forEach((card) => {
+      card.classList.add('is-in');
+    });
+  }
+
+  function openLeadModal(mode) {
+    if (!els.leadModal) return;
+    modalMode = mode === 'premium' ? 'premium' : 'free';
+    if (els.leadModalTitle) {
+      els.leadModalTitle.textContent =
+        modalMode === 'premium' ? 'Commander l\'audit premium' : 'Recevoir l\'audit gratuit';
+    }
+    if (els.leadModalLead) {
+      els.leadModalLead.textContent =
+        modalMode === 'premium'
+          ? 'Renseignez votre email pour continuer vers le paiement securise.'
+          : 'PDF par email - en general en moins d\'une minute, parfois jusqu\'a 1 h.';
+    }
+    if (els.leadSubmitLabel) {
+      els.leadSubmitLabel.textContent =
+        modalMode === 'premium' ? 'Continuer vers le paiement' : 'Recevoir l\'audit (PDF)';
+    }
+    setFeedback(els.premiumFeedback, '', false);
+    setFeedback(els.leadFeedback, '', false);
+    if (els.leadSuccess) els.leadSuccess.hidden = true;
+    if (els.leadForm) els.leadForm.hidden = false;
+    modalPreviousFocus = document.activeElement;
+    els.leadModal.hidden = false;
+    els.leadModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('analyse-modal-open');
+    requestAnimationFrame(() => {
+      if (els.leadEmail) els.leadEmail.focus();
+    });
+  }
+
+  function closeLeadModal() {
+    if (!els.leadModal || els.leadModal.hidden) return;
+    els.leadModal.hidden = true;
+    els.leadModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('analyse-modal-open');
+    if (modalPreviousFocus && typeof modalPreviousFocus.focus === 'function') {
+      modalPreviousFocus.focus();
+    }
+    modalPreviousFocus = null;
+  }
+
+  async function revealConvertDuringLoad() {
+    setConvertLoaderVisible(true);
+  }
+
+  function setConvertVisible(show) {
+    setConvertLoaderVisible(show);
+    if (!show) setConvertReportVisible(false);
   }
 
   function setLoadingVisible(show, websiteUrl) {
@@ -251,9 +430,14 @@
       if (els.loadingUrl) {
         els.loadingUrl.textContent = websiteUrl ? displayHost(websiteUrl) : '';
       }
+      resetLoaderScores();
+      setConvertLoaderVisible(true);
+      setConvertReportVisible(false);
       startLoadingSteps();
+      revealConvertDuringLoad();
     } else {
       stopLoadingSteps();
+      loaderRevealToken += 1;
     }
   }
 
@@ -326,7 +510,10 @@
     if (!root) return;
 
     root.classList.remove('is-revealed');
-    root.querySelectorAll('.is-in').forEach((el) => el.classList.remove('is-in'));
+    root.querySelectorAll('.is-in').forEach((el) => {
+      if (convertSections().some((section) => section.contains(el))) return;
+      el.classList.remove('is-in');
+    });
 
     if (els.reportHero) els.reportHero.hidden = false;
     if (els.report) els.report.hidden = false;
@@ -356,6 +543,10 @@
         });
         if (shot) shot.classList.add('is-in');
         insights.forEach((el) => el.classList.add('is-in'));
+        if (els.convertReport) {
+          els.convertReport.classList.add('is-in');
+          els.convertReport.querySelectorAll('.analyse-convert-card').forEach((el) => el.classList.add('is-in'));
+        }
         offers.forEach((el) => el.classList.add('is-in'));
         accordions.forEach((el) => el.classList.add('is-in'));
         return;
@@ -376,8 +567,12 @@
       }, 220);
 
       window.setTimeout(() => markIn(insights, 75), 380);
-      window.setTimeout(() => markIn(offers, 65), 540);
-      window.setTimeout(() => markIn(accordions, 50), 680);
+      window.setTimeout(() => {
+        if (els.convertReport) els.convertReport.classList.add('is-in');
+        markIn(els.convertReport ? els.convertReport.querySelectorAll('.analyse-convert-card') : [], 90);
+      }, 520);
+      window.setTimeout(() => markIn(offers, 65), 680);
+      window.setTimeout(() => markIn(accordions, 50), 820);
     });
   }
 
@@ -395,12 +590,10 @@
   function prefillLead({ website, email, name, first, last }) {
     if (website && els.leadSite) els.leadSite.value = website;
     if (email && els.leadEmail) els.leadEmail.value = email;
-    if (first && els.leadFirst) els.leadFirst.value = first;
-    if (last && els.leadLast) els.leadLast.value = last;
-    if (name && !first && !last) {
-      const sp = splitName(name);
-      if (els.leadFirst && !els.leadFirst.value) els.leadFirst.value = sp.first;
-      if (els.leadLast && !els.leadLast.value) els.leadLast.value = sp.last;
+    if (name && els.leadName && !els.leadName.value) {
+      els.leadName.value = name;
+    } else if ((first || last) && els.leadName && !els.leadName.value) {
+      els.leadName.value = [first, last].filter(Boolean).join(' ');
     }
   }
 
@@ -824,8 +1017,25 @@
 
     if (els.bootWrap) els.bootWrap.hidden = true;
     if (els.loading) els.loading.hidden = true;
+    setConvertLoaderVisible(false);
+    setConvertReportVisible(true);
+    if (pageRoot) pageRoot.classList.add('is-report-ready');
     if (els.intro) els.intro.classList.add('is-hidden');
     playReportReveal();
+    window.scrollTo({ top: 0, left: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  }
+
+  function restoreBootAfterError(message) {
+    setLoadingVisible(false);
+    setConvertVisible(false);
+    closeLeadModal();
+    setBootVisible(true);
+    if (els.reportHero) els.reportHero.hidden = true;
+    if (els.report) els.report.hidden = true;
+    if (pageRoot) pageRoot.classList.remove('is-revealed', 'is-report-ready');
+    if (els.intro) els.intro.classList.remove('is-hidden');
+    setFeedback(els.bootFeedback, formatLookupError(message), true);
+    playBootReveal();
   }
 
   async function handleSubmit(websiteUrl, full, queryPrefill) {
@@ -833,7 +1043,7 @@
     setBootLoading(true);
     setBootVisible(false);
     setLoadingVisible(true, websiteUrl);
-    if (pageRoot) pageRoot.classList.remove('is-revealed');
+    if (pageRoot) pageRoot.classList.remove('is-revealed', 'is-report-ready');
     if (els.reportHero) els.reportHero.hidden = true;
     if (els.report) els.report.hidden = true;
     if (els.intro) els.intro.classList.remove('is-hidden');
@@ -853,7 +1063,11 @@
     });
 
     try {
+      const revealTask = revealLoaderScorePlaceholders();
       const report = await apiGetWebsiteAnalysis({ website: websiteUrl, full: full ?? 1 });
+      await revealTask;
+      await fillLoaderScoresFromReport(report);
+      if (!prefersReducedMotion()) await sleep(380);
       currentWebsite = websiteUrl;
       showReport(report, queryPrefill);
       const share = buildShareUrl({
@@ -864,16 +1078,7 @@
       });
       window.history.replaceState({}, '', share);
     } catch (e) {
-      setLoadingVisible(false);
-      setBootVisible(true);
-      if (els.reportHero) els.reportHero.hidden = true;
-      if (els.report) els.report.hidden = true;
-      if (pageRoot) pageRoot.classList.remove('is-revealed');
-      setFeedback(
-        els.bootFeedback,
-        formatLookupError(e && e.message),
-        true
-      );
+      restoreBootAfterError(e && e.message);
     } finally {
       setBootLoading(false);
       setLoadingVisible(false);
@@ -881,15 +1086,11 @@
   }
 
   function readLeadValues() {
-    const first = (els.leadFirst && els.leadFirst.value || '').trim();
-    const last = (els.leadLast && els.leadLast.value || '').trim();
-    const name = [first, last].filter(Boolean).join(' ');
+    const name = (els.leadName && els.leadName.value || '').trim();
     return {
-      url: safeUrl(els.leadSite && els.leadSite.value),
+      url: safeUrl(els.leadSite && els.leadSite.value) || safeUrl(currentWebsite),
       email: (els.leadEmail && els.leadEmail.value || '').trim(),
       name: name,
-      first: first,
-      last: last,
       honeypot: (els.leadForm && els.leadForm.querySelector('[name="company"]') || {}).value || ''
     };
   }
@@ -925,7 +1126,7 @@
           if (els.leadSuccessText) {
             els.leadSuccessText.textContent =
               (ref.data && ref.data.message) ||
-              `Le rapport arrive sur ${vals.email}. Pensez a verifier les spams.`;
+              `Le PDF part sur ${vals.email} - en general en moins d'une minute.`;
           }
           return;
         }
@@ -946,11 +1147,11 @@
   function startPremium() {
     const vals = readLeadValues();
     if (!vals.url) {
-      setFeedback(els.premiumFeedback, 'Indiquez d\'abord le site dans le formulaire a gauche.', true);
+      setFeedback(els.premiumFeedback, 'Site introuvable pour cet audit.', true);
       return;
     }
     if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
-      setFeedback(els.premiumFeedback, 'Renseignez un email valide a gauche, puis relancez.', true);
+      setFeedback(els.premiumFeedback, 'Email invalide.', true);
       return;
     }
 
@@ -965,7 +1166,7 @@
       );
     } catch (err) { /* ignore */ }
 
-    setBtnLoading(els.premiumBtn, true);
+    setBtnLoading(els.leadSubmit, true);
     setFeedback(els.premiumFeedback, '', false);
 
     fetch(PREMIUM_CHECKOUT_ENDPOINT, {
@@ -997,7 +1198,7 @@
         setFeedback(els.premiumFeedback, 'Serveur injoignable.', true);
       })
       .finally(() => {
-        setBtnLoading(els.premiumBtn, false);
+        setBtnLoading(els.leadSubmit, false);
       });
   }
 
@@ -1015,16 +1216,39 @@
   if (els.leadForm) {
     els.leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      submitLead();
+      if (modalMode === 'premium') startPremium();
+      else submitLead();
     });
   }
 
-  if (els.premiumBtn) {
-    els.premiumBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      startPremium();
+  if (pageRoot) {
+    pageRoot.addEventListener('click', (e) => {
+      const freeBtn = e.target.closest('[data-analyse-audit-free]');
+      if (freeBtn) {
+        e.preventDefault();
+        openLeadModal('free');
+        return;
+      }
+      const premiumBtn = e.target.closest('[data-analyse-audit-premium]');
+      if (premiumBtn) {
+        e.preventDefault();
+        openLeadModal('premium');
+      }
     });
   }
+
+  if (els.leadModal) {
+    els.leadModal.addEventListener('click', (e) => {
+      if (e.target.closest('[data-analyse-modal-close]')) {
+        e.preventDefault();
+        closeLeadModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLeadModal();
+  });
 
   (async function initFromQuery() {
     const q = new URLSearchParams(window.location.search);
