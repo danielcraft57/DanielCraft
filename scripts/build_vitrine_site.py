@@ -1652,25 +1652,40 @@ def build_comptable_index() -> str:
         ("ISO", "Processus qualité"),
         ("PME", "Spécialiste dirigeants"),
     ])
-    main += block_comparison_table("Ce que change un bon accompagnement", [
-        ("Clarté financière", "Excel dispersés, retards de saisie", "Tableau de bord mensuel partagé"),
-        ("Échéances fiscales", "Stress de dernière minute", "Calendrier anticipé et validé"),
-        ("Paie", "DSN en retard, questions sans réponse", "Bulletins à jour, interlocuteur dédié"),
-        ("Décisions", "Intuition seule", "Chiffres commentés en langage clair"),
-    ])
-    main += block_story(
-        "Pourquoi Verlaine & Associés ?",
-        [
-            "Implanté à Metz, nous connaissons les réalités du terrain mosellan et les attentes d'une clientèle exigeante.",
-            "Notre équipe locale combine expertise métier et relation de confiance sur le long terme.",
-        ],
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow">Diagnostic</p>
+        <h2 class="vt-section-title h3">30 min pour y voir clair</h2>
+        <p class="text-secondary mb-3">On regarde ta situation, tes echeances, et on te dit ce qui bloque - sans jargon.</p>
+        <button type="button" class="btn btn-vt-primary" data-vt-dialog-open="diagDialog">Reserver mon diagnostic</button>
+      </div>
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-6"><article class="vt-care-card h-100"><strong class="d-block">Bilan flash</strong><span class="small text-secondary">Sous 48 h</span></article></div>
+          <div class="col-6"><article class="vt-care-card h-100"><strong class="d-block">Paie</strong><span class="small text-secondary">DSN a jour</span></article></div>
+          <div class="col-6"><article class="vt-care-card h-100"><strong class="d-block">Tableau de bord</strong><span class="small text-secondary">Chaque mois</span></article></div>
+          <div class="col-6"><article class="vt-care-card h-100"><strong class="d-block">1 interlocuteur</strong><span class="small text-secondary">Toujours le meme</span></article></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="diagDialog",
+        title="Diagnostic gratuit",
+        lead="Dis-nous ton besoin - on te propose un creneau sous 24 h (demo).",
+        primary_label="Envoyer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Sujet</label><select class="form-select"><option>Tenue comptable</option><option>Paie</option><option>Bilan flash</option><option>Transmission</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
     )
-    main += block_cards_bs("Ce que nous proposons", CP_CARDS)
-    main += block_trust(
-        "Plus de 500 clients accompagnés en Grand Est — réactivité et transparence au quotidien.",
-        ["Bilan flash 48 h", "Metz & Thionville", "PME & TPE", "Conseil dirigeant"],
-    )
-    main += block_cta_band("Parlons de votre projet à Metz.", "Prendre RDV", "contact.html")
+    main += block_snackbar_m3("Demande recue (demo)")
+    main += block_fab_menu_m3([
+        {"label": "Diagnostic", "dialog": "diagDialog"},
+        {"label": "Expertises", "href": "expertises.html"},
+        {"label": "Appeler", "href": "tel:0387759012"},
+    ], main_label="Actions cabinet")
     main += "</main>"
     return _shell_comptable(
         "index.html",
@@ -1850,25 +1865,28 @@ def build_industrie_index() -> str:
         ("Proto", "Premier article contrôlé et validé."),
         ("Série", "Production traçable et livraison JIT."),
     ])
-    main += block_sector_strip([
-        ("Automobile", "IATF 16949 — équipementiers"),
-        ("Aéronautique", "EN 9100 — pièces structurales"),
-        ("Médical", "Inox & titane implantables"),
-        ("Énergie", "Séries moyennes longues"),
-    ])
-    main += block_story(
-        "Pourquoi Précisite Usinage ?",
-        [
-            "Implanté à Yutz depuis 2010, nous accompagnons les donneurs d'ordre automobile et aéronautique en Lorraine.",
-            "Parc machines récent, métrologie intégrée et culture du premier article conforme.",
-        ],
+    main += """<section class="vt-reveal py-5">
+  <div class="container text-center">
+    <p class="vt-eyebrow">RFQ</p>
+    <h2 class="vt-section-title h3 mb-3">Envoie ton plan, on repond sous 48 h</h2>
+    <p class="text-secondary mb-4">STEP, IGES ou PDF - on te dit si c'est faisable et a quel prix, sans blabla commercial.</p>
+    <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="rfqDialog">Ouvrir une RFQ</button>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="rfqDialog",
+        title="Demande RFQ",
+        lead="Reference piece + delai souhaite - reponse technique sous 48 h (demo).",
+        primary_label="Envoyer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Reference</label><input class="form-control" placeholder="REF-2026-..."></div><div class="mb-2"><label class="form-label small">Quantite</label><input class="form-control" type="number" value="100"></div><div class="mb-2"><label class="form-label small">Email</label><input class="form-control" type="email"></div>',
     )
-    main += block_cards_bs("Nos procédés", I_CARDS)
-    main += block_trust(
-        "85 collaborateurs — 12 centres 5 axes — traçabilité matière et process.",
-        ["ISO 9001", "IATF 16949", "Métrologie 3D", "Devis 48 h"],
-    )
-    main += block_cta_band("Parlons de votre RFQ — réponse technique sous 48 h.", "Demander un devis", "contact.html")
+    main += block_snackbar_m3("RFQ enregistree (demo)")
+    main += block_fab_menu_m3([
+        {"label": "RFQ", "dialog": "rfqDialog"},
+        {"label": "Capacites", "href": "savoir-faire.html"},
+        {"label": "Qualite", "href": "qualite.html"},
+    ], main_label="Actions usinage")
     main += "</main>"
     return _shell_industrie(
         "index.html",
@@ -2808,7 +2826,6 @@ def build_fitness_index() -> str:
         {"title": "Cycling", "items": ["Studio 20 places", "Playlists live", "30 ou 50 min"], "hot": False},
         {"title": "Yoga Flow", "items": ["Matin & soir", "Mobilité", "Récupération active"], "hot": False},
     ])
-    main += block_cards_bs("Nos cours", FIT_CARDS)
     main += block_schedule_grid(
         "Planning de la semaine",
         "Réservez votre créneau via l'app — places limitées.",
@@ -2817,13 +2834,29 @@ def build_fitness_index() -> str:
         quote="L'ambiance est incroyable, j'ai perdu 8 kg en 4 mois sans m'ennuyer.",
         quote_author="Julie, membre depuis 2024",
     )
-    main += block_promo_cards(FIT_PROMOS)
-    main += block_chapters(FIT_CHAPTERS)
-    main += block_trust(
-        "Coachs diplômés BPJEPS — matériel Technogym et Life Fitness.",
-        ["HIIT", "Cycling", "Yoga", "Musculation"],
+    main += """<section class="vt-reveal py-5 text-center">
+  <div class="container">
+    <p class="vt-eyebrow">Essai</p>
+    <h2 class="vt-section-title h3 mb-3">Une seance pour tester, sans engagement</h2>
+    <p class="text-secondary mb-4">Choisis un cours, on te reserve une place - vestiaire et serviette inclus.</p>
+    <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="essaiDialog">Reserver mon essai</button>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="essaiDialog",
+        title="Essai gratuit",
+        lead="Cours + creneau - confirmation sous 2 h (demo).",
+        primary_label="Reserver",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Cours</label><select class="form-select"><option>HIIT</option><option>Cycling</option><option>Yoga</option><option>Musculation libre</option></select></div><div class="mb-2"><label class="form-label small">Quand</label><input type="datetime-local" class="form-control"></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
     )
-    main += block_cta_band("Prêt à bouger ?", "Essai gratuit", "contact.html")
+    main += block_snackbar_m3("Essai reserve (demo)")
+    main += block_fab_menu_m3([
+        {"label": "Essai", "dialog": "essaiDialog"},
+        {"label": "Cours", "href": "cours.html"},
+        {"label": "Tarifs", "href": "tarifs.html"},
+    ], main_label="Actions salle")
+    main += block_sticky_cta_m3("Pret a bouger ?", "Essai", "contact.html", dialog="essaiDialog")
     main += "</main>"
     return _shell_fitness(
         "index.html",

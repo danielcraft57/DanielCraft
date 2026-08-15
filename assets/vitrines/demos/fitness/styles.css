@@ -159,3 +159,6 @@ body.vt-body-fitness {
 .vt-body-fitness .vt-trust-badge { border: 1px solid var(--vt-line); color: var(--vt-muted); }
 .vt-body-fitness .vt-tech-table th { color: var(--vt-lime); }
 .vt-body-fitness .vt-tech-table td { color: var(--vt-muted); }
+
+.vt-fab-menu-main { background: var(--vt-lime); color: var(--vt-black); }
+

@@ -116,6 +116,20 @@ body.vt-body-cabinet {
 }
 .vt-proof-stat-lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.9; }
 
+.vt-care-card {
+  background: #fff;
+  border: 1px solid var(--vt-slate);
+  border-radius: 1rem;
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 8px 24px rgba(12, 35, 64, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.vt-care-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.1);
+}
+.vt-fab-menu-main { background: var(--vt-navy); color: var(--vt-gold); }
+
 /* Credentials */
 .vt-credentials { background: var(--vt-slate); }
 .vt-cred-cell strong { display: block; color: var(--vt-navy); font-size: 0.95rem; }

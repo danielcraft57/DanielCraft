@@ -241,3 +241,6 @@ body.vt-body-industrial {
 }
 
 .vt-hours th { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
+
+.vt-fab-menu-main { background: var(--vt-orange); color: #fff; }
+
