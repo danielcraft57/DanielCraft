@@ -255,6 +255,53 @@ ENTITIES: dict[str, dict[str, Any]] = {
         "4.9",
         140,
     ),
+    "boulangerie": _entity(
+        "Bakery",
+        name="Maison Lemaire",
+        telephone="+33383351240",
+        address=_addr("14 allee de la Pepiniere", "Nancy", "54000"),
+        geo=_geo(48.6921, 6.1844),
+        openingHours=[
+            _hours(["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "07:00", "19:00"),
+        ],
+    ),
+    "artisan": _entity(
+        "Plumber",
+        name="Clanche & Cuivre",
+        telephone="+33387219040",
+        address=_addr("Zone artisanale Nord", "Metz", "57070"),
+        geo=_geo(49.1193, 6.1757),
+    ),
+    "fleuriste": _entity(
+        "Florist",
+        name="Atelier Corolle",
+        telephone="+33388241750",
+        address=_addr("22 rue de l'Orangerie", "Strasbourg", "67000"),
+        geo=_geo(48.5846, 7.7701),
+        openingHours=[
+            _hours(["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "09:00", "19:00"),
+        ],
+    ),
+    "caviste": _entity(
+        "Store",
+        name="Cave de la Gare",
+        telephone="+33382531890",
+        address=_addr("5 place de la Gare", "Thionville", "57100"),
+        geo=_geo(49.3578, 6.1694),
+        openingHours=[
+            _hours(["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "10:00", "19:30"),
+        ],
+    ),
+    "osteo": _entity(
+        "MedicalBusiness",
+        name="Cabinet des Ponts",
+        telephone="+33387362210",
+        address=_addr("9 quai Felix Marechal", "Metz", "57000"),
+        geo=_geo(49.1193, 6.1757),
+        openingHours=[
+            _hours(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "08:30", "19:00"),
+        ],
+    ),
 }
 
 

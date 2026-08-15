@@ -1,102 +1,100 @@
-/* PingFlow — SaaS rose, Inter + Plus Jakarta Sans */
+/* PingFlow — maquette saas-notifications : slate + navy + coral, Lexend */
 :root {
-  --vt-rose: #f43f5e;
-  --vt-rose-d: #be123c;
-  --vt-pink: #fda4af;
-  --vt-bg: #fff1f2;
-  --vt-text: #881337;
-  --vt-muted: #6b7280;
-  --vt-accent: var(--vt-rose);
-  --bs-body-bg: var(--vt-bg);
-  --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-rose);
-  --bs-link-color: var(--vt-rose);
-  --bs-link-hover-color: var(--vt-rose-d);
+  --vt-paper: #e8eef5;
+  --vt-navy: #1e3a5f;
+  --vt-navy-deep: #142844;
+  --vt-coral: #e11d48;
+  --vt-ink: #0f172a;
+  --vt-mute: #64748b;
+  --vt-accent: var(--vt-coral);
+  --bs-body-bg: var(--vt-paper);
+  --bs-body-color: var(--vt-ink);
+  --bs-primary: var(--vt-coral);
+  --bs-link-color: var(--vt-navy);
+  --bs-link-hover-color: var(--vt-coral);
+  --bs-font-sans-serif: "Work Sans", system-ui, sans-serif;
 }
 
-body.vt-body-saas {
-  background: var(--vt-bg);
-  color: var(--vt-text);
-  font-family: "Inter", system-ui, sans-serif;
+body.vt-body-saas-notifications {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(30, 58, 95, 0.1), transparent 48%),
+    var(--vt-paper);
+  color: var(--vt-ink);
   padding-bottom: 4.5rem;
 }
 @media (min-width: 992px) {
-  body.vt-body-saas { padding-bottom: 0; }
+  body.vt-body-saas-notifications { padding-bottom: 0; }
 }
 
-.vt-display, .vt-section-title {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  font-weight: 800;
+.vt-display,
+.vt-section-title,
+.vt-brand,
+.navbar-brand.vt-brand {
+  font-family: "Lexend", system-ui, sans-serif;
+  font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--vt-text);
-}
-
-.vt-brand, .navbar-brand.vt-brand {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  font-weight: 800;
-  color: var(--vt-rose-d) !important;
+  color: var(--vt-navy-deep);
 }
 
 .vt-eyebrow {
   letter-spacing: 0.12em;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--vt-rose);
+  color: var(--vt-coral);
   text-transform: uppercase;
 }
 
+.text-secondary { color: var(--vt-mute) !important; }
+
 .vt-navbar {
-  background: rgba(255, 241, 242, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #fecdd3;
+  background: rgba(232, 238, 245, 0.94);
+  border-bottom: 1px solid rgba(30, 58, 95, 0.12);
 }
-.vt-navbar .nav-link { color: var(--vt-muted); font-weight: 600; }
-.vt-navbar .nav-link.active { color: var(--vt-rose); }
+.vt-navbar .nav-link { color: var(--vt-mute); font-weight: 600; }
+.vt-navbar .nav-link.active { color: var(--vt-navy); }
 
 .btn-vt-primary {
-  --bs-btn-bg: var(--vt-rose);
-  --bs-btn-border-color: var(--vt-rose);
-  --bs-btn-hover-bg: var(--vt-rose-d);
-  --bs-btn-hover-border-color: var(--vt-rose-d);
+  --bs-btn-bg: var(--vt-coral);
+  --bs-btn-border-color: var(--vt-coral);
+  --bs-btn-hover-bg: #be123c;
+  --bs-btn-hover-border-color: #be123c;
   --bs-btn-color: #fff;
   font-weight: 700;
   border-radius: 999px;
 }
 .btn-vt-outline {
-  --bs-btn-color: var(--vt-rose);
-  --bs-btn-border-color: var(--vt-rose);
-  --bs-btn-hover-bg: var(--vt-rose);
+  --bs-btn-color: var(--vt-navy);
+  --bs-btn-border-color: color-mix(in srgb, var(--vt-navy) 35%, #fff);
+  --bs-btn-hover-bg: var(--vt-navy);
   --bs-btn-hover-color: #fff;
   border-radius: 999px;
 }
 
-.vt-hero-saas { background: linear-gradient(180deg, #ffe4e6 0%, var(--vt-bg) 70%); }
-.vt-orb-1 { background: var(--vt-rose); }
-.vt-orb-2 { background: var(--vt-pink); }
+.vt-saas-hero { padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem; }
 
-.vt-stats-band {
-  background: linear-gradient(90deg, var(--vt-rose-d), var(--vt-rose));
-  color: #fff;
+.vt-notif-card {
+  background: #fff;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(30, 58, 95, 0.1);
+  padding: 0.95rem 1.1rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
 }
-.vt-stats-band .vt-stat-value { color: #fef08a; }
-
-.vt-marquee { background: #fff; border-block: 1px solid #fecdd3; }
-.vt-marquee-item { color: var(--vt-rose); }
-
-.vt-notif-card { border-left-color: var(--vt-rose); }
-.vt-notif-badge { color: var(--vt-rose); }
-
-.vt-tab-btn.active, .vt-tab-btn:hover { background: var(--vt-rose); }
-.vt-tab-btn { border-color: rgba(244, 63, 94, 0.35); }
-
-.vt-pricing-tier--hot { border-color: var(--vt-rose); }
-
-.vt-cta-band {
-  background: linear-gradient(135deg, var(--vt-rose-d), #e11d48);
-  color: #fff;
+.vt-notif-card.urgent { border-color: rgba(225, 29, 72, 0.35); }
+.vt-notif-card .meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--vt-mute);
+  margin-bottom: 0.25rem;
+}
+.vt-notif-card .badge-u {
+  color: var(--vt-coral);
+  font-weight: 700;
 }
 
-.vt-site-footer { background: var(--vt-text); color: #fecdd3; }
-.vt-mobile-cta { background: var(--vt-rose-d); }
+.vt-marquee { background: #fff; border-block: 1px solid rgba(30, 58, 95, 0.1); }
+.vt-marquee-track span { color: var(--vt-navy); }
 
-.vt-read-progress { background: linear-gradient(90deg, var(--vt-rose), var(--vt-pink)); }
+.vt-footer { background: var(--vt-navy-deep) !important; }
+.vt-fab-menu-main { background: var(--vt-coral); color: #fff; }

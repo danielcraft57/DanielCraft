@@ -1,0 +1,49 @@
+/* Maison Lemaire — boulangerie : crème, brun, Fraunces + Outfit */
+:root {
+  --vt-paper: #faf6f0;
+  --vt-brown: #5c3d2e;
+  --vt-brown-deep: #3d291e;
+  --vt-peach: #f3e0d0;
+  --vt-ink: #2a1f18;
+  --vt-mute: #7a6a5c;
+  --vt-accent: var(--vt-brown);
+  --bs-body-bg: var(--vt-paper);
+  --bs-body-color: var(--vt-ink);
+  --bs-primary: var(--vt-brown);
+  --bs-link-color: var(--vt-brown);
+  --bs-font-sans-serif: "Outfit", system-ui, sans-serif;
+}
+body.vt-body-boulangerie {
+  background: radial-gradient(ellipse at 80% 0%, rgba(92, 61, 46, 0.08), transparent 45%), var(--vt-paper);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) { body.vt-body-boulangerie { padding-bottom: 0; } }
+.vt-display, .vt-section-title, .vt-brand, .navbar-brand.vt-brand {
+  font-family: "Fraunces", Georgia, serif; font-weight: 700; color: var(--vt-brown-deep);
+}
+.vt-eyebrow { letter-spacing: 0.12em; font-size: 0.7rem; font-weight: 700; color: var(--vt-brown); text-transform: uppercase; }
+.text-secondary { color: var(--vt-mute) !important; }
+.vt-topbar { background: var(--vt-brown-deep); color: rgba(255,255,255,0.9); }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-navbar { background: #fff; border-bottom: 1px solid rgba(92,61,46,0.1); }
+.vt-navbar .nav-link { color: var(--vt-ink); font-weight: 600; }
+.vt-navbar .nav-link.active { color: var(--vt-brown); }
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-brown); --bs-btn-border-color: var(--vt-brown);
+  --bs-btn-hover-bg: var(--vt-brown-deep); --bs-btn-hover-border-color: var(--vt-brown-deep);
+  --bs-btn-color: #fff; font-weight: 700; border-radius: 999px;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-brown); --bs-btn-border-color: color-mix(in srgb, var(--vt-brown) 35%, #fff);
+  --bs-btn-hover-bg: var(--vt-brown); --bs-btn-hover-color: #fff; border-radius: 999px;
+}
+.vt-bakery-hero { padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem; }
+.vt-chip { background: var(--vt-peach) !important; color: var(--vt-brown-deep) !important; border: none; }
+.vt-chip.on { background: var(--vt-brown) !important; color: #fff !important; }
+.vt-bakery-card {
+  background: #fff; border-radius: 1.35rem; overflow: hidden;
+  border: 1px solid rgba(92,61,46,0.1); box-shadow: 0 12px 28px rgba(42,31,24,0.06); height: 100%;
+}
+.vt-bakery-card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.vt-footer { background: var(--vt-brown-deep) !important; }
+.vt-fab-menu-main { background: var(--vt-brown); color: #fff; }

@@ -1,0 +1,48 @@
+/* Cave de la Gare — caviste : dark burgundy, Playfair + Source Sans */
+:root {
+  --vt-bg: #14110f;
+  --vt-panel: #1e1a17;
+  --vt-wine: #8b1e3f;
+  --vt-gold: #e8c547;
+  --vt-text: #f3ece4;
+  --vt-mute: #a89f94;
+  --vt-accent: var(--vt-wine);
+  --bs-body-bg: var(--vt-bg);
+  --bs-body-color: var(--vt-text);
+  --bs-primary: var(--vt-wine);
+  --bs-link-color: var(--vt-gold);
+  --bs-font-sans-serif: "Source Sans 3", system-ui, sans-serif;
+}
+body.vt-body-caviste {
+  background: radial-gradient(ellipse at 80% 0%, rgba(139,30,63,0.18), transparent 48%), var(--vt-bg);
+  color: var(--vt-text); padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) { body.vt-body-caviste { padding-bottom: 0; } }
+.vt-display, .vt-section-title, .vt-brand, .navbar-brand.vt-brand {
+  font-family: "Playfair Display", Georgia, serif; font-weight: 700; color: #fff;
+}
+.vt-eyebrow { letter-spacing: 0.14em; font-size: 0.7rem; font-weight: 700; color: var(--vt-gold); text-transform: uppercase; }
+.text-secondary { color: var(--vt-mute) !important; }
+.vt-topbar { background: #0a0807; color: rgba(243,236,228,0.85); }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-navbar { background: rgba(20,17,15,0.95); border-bottom: 1px solid rgba(139,30,63,0.35); }
+.vt-navbar .nav-link { color: rgba(243,236,228,0.7) !important; font-weight: 600; }
+.vt-navbar .nav-link.active { color: var(--vt-gold) !important; }
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-wine); --bs-btn-border-color: var(--vt-wine);
+  --bs-btn-hover-bg: #6e1832; --bs-btn-hover-border-color: #6e1832;
+  --bs-btn-color: #fff; font-weight: 700; border-radius: 0.65rem;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-gold); --bs-btn-border-color: rgba(232,197,71,0.4);
+  --bs-btn-hover-bg: rgba(232,197,71,0.12); --bs-btn-hover-color: #fff; border-radius: 0.65rem;
+}
+.vt-cave-hero { padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem; }
+.vt-cave-card { background: var(--vt-panel); border-radius: 1.15rem; padding: 1rem; border: 1px solid rgba(139,30,63,0.25); height: 100%; }
+.vt-cave-card img { width: 88px; height: 88px; object-fit: cover; border-radius: 0.75rem; flex-shrink: 0; }
+.vt-cave-tag { color: var(--vt-wine); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; }
+.vt-cave-price { color: var(--vt-gold); font-size: 1.1rem; }
+.vt-marquee { background: #0a0807; border-block: 1px solid rgba(139,30,63,0.3); }
+.vt-marquee-track span { color: var(--vt-gold); }
+.vt-footer { background: #0a0807 !important; }
+.vt-fab-menu-main { background: var(--vt-wine); color: #fff; }

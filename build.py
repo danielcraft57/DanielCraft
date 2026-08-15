@@ -42,6 +42,7 @@ GENERATED_INCLUDE_NAMES = frozenset({
     'prestations-budget-filter.html',
     'livres-catalog-embed.html',
     'livres-deal-week.html',
+    'echantillons-deal-week.html',
 })
 
 # Journal mode watch (horodaté + fichier) — voir --watch / serve_dev.ps1
@@ -142,6 +143,7 @@ PROJECT_SLUG_ALIASES_JSON = DATA_DIR / 'project-slug-aliases.json'
 VITRINES_JSON = DATA_DIR / 'vitrines.json'
 PRESTATIONS_JSON = DATA_DIR / 'prestations.json'
 PRESTATIONS_DEAL_WEEK_JSON = DATA_DIR / 'prestations-deal-week.json'
+ECHANTILLONS_DEAL_WEEK_JSON = DATA_DIR / 'echantillons-deal-week.json'
 LIVRES_JSON = DATA_DIR / 'livres.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
 READMES_DIR = DATA_DIR / 'readmes'
@@ -1846,45 +1848,51 @@ def _vitrines_distinct_category_keys(items: List[Dict[str, Any]]) -> List[str]:
     return sorted(cats)
 
 
-def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) -> List[str]:
+def _vitrines_catalog_inner_lines(
+    items: List[Dict[str, Any]],
+    cats: List[str],
+    *,
+    include_toolbar: bool = True,
+) -> List[str]:
     """Filtres + grille cartes + note de pied (même indentation que dans .container)."""
     lines: List[str] = []
-    lines.append('        <div class="vitrines-toolbar scroll-reveal">')
-    lines.append('            <label class="vitrines-filter-select-wrap" for="vitrineFilterSelect">')
-    lines.append('                <span class="vitrines-filter-select-label">Choisir mon secteur</span>')
-    lines.append('                <select class="vitrines-filter-select" id="vitrineFilterSelect" aria-label="Filtrer par secteur">')
-    lines.append('                    <option value="all">Tous les secteurs</option>')
-    for c in cats:
-        label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
-        lines.append(
-            f'                    <option value="{html.escape(c)}">{html.escape(label)}</option>'
-        )
-    lines.append('                </select>')
-    lines.append('            </label>')
-    lines.append('            <div class="vitrines-filter vitrines-filter--featured" role="group" aria-label="Secteurs phares">')
-    lines.append('                <button type="button" class="vitrines-filter-btn active" data-vitrine-filter="all">Tous</button>')
-    for c in VITRINE_FEATURED_FILTER_KEYS:
-        if c not in cats:
-            continue
-        label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
-        lines.append(
-            f'                <button type="button" class="vitrines-filter-btn" '
-            f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
-        )
-    lines.append('            </div>')
-    lines.append('            <div class="vitrines-filter vitrines-filter--extended" role="group" aria-label="Tous les secteurs" hidden>')
-    for c in cats:
-        if c in VITRINE_FEATURED_FILTER_KEYS:
-            continue
-        label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
-        lines.append(
-            f'                <button type="button" class="vitrines-filter-btn" '
-            f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
-        )
-    lines.append('            </div>')
-    lines.append('            <button type="button" class="vitrines-filter-more" id="vitrineFilterMore" aria-expanded="false">Voir plus de secteurs</button>')
-    lines.append('        </div>')
-    lines.append('        <div class="vitrines-grid" id="vitrinesGrid">')
+    if include_toolbar:
+        lines.append('        <div class="vitrines-toolbar scroll-reveal">')
+        lines.append('            <label class="vitrines-filter-select-wrap" for="vitrineFilterSelect">')
+        lines.append('                <span class="vitrines-filter-select-label">Choisir mon secteur</span>')
+        lines.append('                <select class="vitrines-filter-select" id="vitrineFilterSelect" aria-label="Filtrer par secteur">')
+        lines.append('                    <option value="all">Tous les secteurs</option>')
+        for c in cats:
+            label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
+            lines.append(
+                f'                    <option value="{html.escape(c)}">{html.escape(label)}</option>'
+            )
+        lines.append('                </select>')
+        lines.append('            </label>')
+        lines.append('            <div class="vitrines-filter vitrines-filter--featured" role="group" aria-label="Secteurs phares">')
+        lines.append('                <button type="button" class="vitrines-filter-btn active" data-vitrine-filter="all">Tous</button>')
+        for c in VITRINE_FEATURED_FILTER_KEYS:
+            if c not in cats:
+                continue
+            label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
+            lines.append(
+                f'                <button type="button" class="vitrines-filter-btn" '
+                f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
+            )
+        lines.append('            </div>')
+        lines.append('            <div class="vitrines-filter vitrines-filter--extended" role="group" aria-label="Tous les secteurs" hidden>')
+        for c in cats:
+            if c in VITRINE_FEATURED_FILTER_KEYS:
+                continue
+            label = VITRINE_CATEGORY_LABELS.get(c, c.replace('_', ' ').title())
+            lines.append(
+                f'                <button type="button" class="vitrines-filter-btn" '
+                f'data-vitrine-filter="{html.escape(c)}">{html.escape(label)}</button>'
+            )
+        lines.append('            </div>')
+        lines.append('            <button type="button" class="vitrines-filter-more" id="vitrineFilterMore" aria-expanded="false">Voir plus de secteurs</button>')
+        lines.append('        </div>')
+    lines.append('        <div class="vitrines-grid" id="vitrinesGrid" data-echantillons-daily-shuffle>')
     idx = 0
     for it in items:
         slug = (it.get('slug') or '').strip()
@@ -1896,15 +1904,30 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         card_cta = html.escape(f'Voir {title_raw}')
         tagline = html.escape(it.get('tagline') or '')
         excerpt = html.escape(it.get('excerpt') or '')
+        cat_label_raw = VITRINE_CATEGORY_LABELS.get(cat, cat)
+        keywords = ' '.join(
+            filter(
+                None,
+                [
+                    title_raw.lower(),
+                    (it.get('tagline') or '').lower(),
+                    (it.get('excerpt') or '').lower(),
+                    cat.lower(),
+                    cat_label_raw.lower(),
+                    slug.lower(),
+                ],
+            )
+        )
         _a_thumb = _vitrine_screenshot_paths(slug, 'tablet')[2]
         if not _a_thumb:
             _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
         thumb = _a_thumb or '/assets/images/og/home-1200x630.jpg'
-        cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat))
+        cat_label = html.escape(cat_label_raw)
         delay = min(idx * 40, 400)
         idx += 1
         lines.append(
             f'        <article class="vitrine-card scroll-reveal" data-vitrine-cat="{html.escape(cat)}" '
+            f'data-vitrine-slug="{html.escape(slug)}" data-vitrine-search="{html.escape(keywords)}" '
             f'style="--reveal-delay:{delay}ms">'
         )
         lines.append(
@@ -1918,7 +1941,7 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         # data-src : lazy-images.js (évite de tout télécharger d'un coup sur /echantillons/)
         lines.append(
             f'                    <img data-src="{html.escape(thumb)}" alt="" width="640" height="400" '
-            'decoding="async" class="vitrine-card-img dc-lazy-img">'
+            'decoding="async" class="vitrine-card-img dc-lazy-img" loading="lazy">'
         )
         lines.append('                </div>')
         lines.append('                <span class="vitrine-card-tint" aria-hidden="true"></span>')
@@ -1943,9 +1966,170 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
     lines.append('        </div>')
     lines.append(
         '        <p class="vitrines-footnote scroll-reveal">'
-        'Exemples pour se projeter — ou <a href="/prestations/site-vitrine/">site sur mesure dès 390&nbsp;€ HT</a>.</p>'
+        'Exemples pour se projeter - ou <a href="/prestations/site-vitrine/">site sur mesure dès 390&nbsp;€ HT</a>.</p>'
     )
     return lines
+
+
+def load_echantillons_deal_week_config() -> Dict[str, Any]:
+    """Charge src/data/echantillons-deal-week.json (rotation hebdo)."""
+    if not ECHANTILLONS_DEAL_WEEK_JSON.is_file():
+        return {'rotation': [], 'force_slug': None, 'badge': 'Template de la semaine'}
+    try:
+        data = json.loads(ECHANTILLONS_DEAL_WEEK_JSON.read_text(encoding='utf-8'))
+        return data if isinstance(data, dict) else {'rotation': []}
+    except (json.JSONDecodeError, OSError):
+        return {'rotation': []}
+
+
+def resolve_echantillons_deal_slug(
+    catalog: Optional[Dict[str, Any]] = None,
+    config: Optional[Dict[str, Any]] = None,
+) -> Optional[str]:
+    """Slug du template de la semaine (force_slug ou rotation[iso_week % n])."""
+    cfg = config if config is not None else load_echantillons_deal_week_config()
+    data = catalog if catalog is not None else load_vitrines()
+    if not data:
+        return None
+    by_slug = {
+        (it.get('slug') or '').strip(): it
+        for it in data.get('items', [])
+        if (it.get('slug') or '').strip()
+    }
+    force = cfg.get('force_slug')
+    if isinstance(force, str) and force.strip() and force.strip() in by_slug:
+        return force.strip()
+    rotation = [
+        s.strip() for s in (cfg.get('rotation') or [])
+        if isinstance(s, str) and s.strip() and s.strip() in by_slug
+    ]
+    if not rotation:
+        rotation = list(by_slug.keys())
+    if not rotation:
+        return None
+    week = _prestations_iso_week_index()
+    return rotation[(week - 1) % len(rotation)]
+
+
+def build_echantillons_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
+    """Bandeau « Template de la semaine » (sous la recherche /echantillons/)."""
+    catalog = data if data is not None else load_vitrines()
+    cfg = load_echantillons_deal_week_config()
+    out_path = INCLUDES_DIR / 'echantillons-deal-week.html'
+    if not catalog or not catalog.get('items'):
+        if _write_text_if_changed(out_path, '<!-- Pas de template de la semaine -->\n'):
+            print('[WARN] echantillons-deal-week : catalogue vide')
+        return
+    slug = resolve_echantillons_deal_slug(catalog, cfg) or ''
+    item = None
+    for it in catalog.get('items', []):
+        if (it.get('slug') or '').strip() == slug:
+            item = it
+            break
+    if not item:
+        if _write_text_if_changed(out_path, '<!-- Pas de template de la semaine -->\n'):
+            print('[WARN] echantillons-deal-week : aucun item')
+        return
+
+    slug = (item.get('slug') or '').strip()
+    title = html.escape((item.get('title') or slug).strip())
+    tagline = html.escape((item.get('tagline') or '').strip())
+    desc = html.escape((item.get('excerpt') or '').strip())
+    cat = (item.get('category') or '').strip()
+    cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()))
+    badge = html.escape((cfg.get('badge') or 'Template de la semaine').strip())
+    urgency = html.escape((cfg.get('urgency') or 'Mise en avant cette semaine').strip())
+    cta = html.escape((cfg.get('cta_label') or 'Voir la fiche').strip())
+    fiche = html.escape(devantures_url(slug))
+    demo = html.escape(devantures_url(f'{slug}/demo/index.html'))
+    thumb = (
+        _vitrine_screenshot_paths(slug, 'tablet')[2]
+        or _vitrine_screenshot_paths(slug, 'desktop')[2]
+        or '/assets/images/og/home-1200x630.jpg'
+    )
+    features = item.get('features') or []
+    perks = ''.join(
+        f'<li><i class="fas fa-check" aria-hidden="true"></i><span>{html.escape(str(x))}</span></li>'
+        for x in features[:3]
+    )
+    if not perks:
+        perks = (
+            '<li><i class="fas fa-check" aria-hidden="true"></i><span>Parcours complet (nav, contenus, contact)</span></li>'
+            '<li><i class="fas fa-check" aria-hidden="true"></i><span>Lisible sur telephone</span></li>'
+            '<li><i class="fas fa-check" aria-hidden="true"></i><span>Exemple pour se projeter - pas a vendre</span></li>'
+        )
+    pills = (
+        f'<li>{cat_label}</li>'
+        '<li>Grand Est</li>'
+        '<li>Demo live</li>'
+    )
+
+    html_out = f'''<aside class="echantillons-deal-week" aria-labelledby="echantillons-deal-title">
+  <div class="container">
+    <div class="echantillons-deal-week-inner">
+    <div class="echantillons-deal-visual" aria-hidden="true">
+      <div class="echantillons-deal-visual-glow"></div>
+      <div class="echantillons-deal-frame">
+        <span class="echantillons-deal-frame-dots" aria-hidden="true"></span>
+        <img data-src="{html.escape(thumb)}" alt="" width="280" height="360" decoding="async" class="echantillons-deal-shot dc-lazy-img" loading="lazy">
+      </div>
+      <span class="echantillons-deal-ribbon">{badge}</span>
+    </div>
+    <div class="echantillons-deal-copy">
+      <p class="echantillons-deal-kicker"><i class="fas fa-star" aria-hidden="true"></i> {urgency}</p>
+      <h2 id="echantillons-deal-title" class="echantillons-deal-title">{title}</h2>
+      <p class="echantillons-deal-tagline">{tagline}</p>
+      <p class="echantillons-deal-desc">{desc}</p>
+      <ul class="echantillons-deal-pills" aria-label="Repères">{pills}</ul>
+    </div>
+    <div class="echantillons-deal-buy">
+      <ul class="echantillons-deal-perks">{perks}</ul>
+      <p class="echantillons-deal-meta">Échantillon · fiche + démo</p>
+      <a class="btn btn-primary btn-large echantillons-deal-cta" href="{fiche}">
+        <span>{cta}</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      <a class="echantillons-deal-secondary" href="{demo}" target="_blank" rel="noopener noreferrer">Ouvrir la démo</a>
+    </div>
+    </div>
+  </div>
+</aside>
+'''
+    if _write_text_if_changed(out_path, html_out):
+        print(f'[OK] echantillons-deal-week.html ({slug})')
+
+
+def build_vitrines_page_collection_embed() -> None:
+    """Fragment catalogue (grille) pour la page /echantillons/ — theme DanielCraft."""
+    data = load_vitrines()
+    path_out = INCLUDES_DIR / 'vitrines-page-collection.html'
+    if not data or not data.get('items'):
+        path_out.write_text(
+            '<!-- Genere par build.py -->\n'
+            '<div class="vitrines-page-collection" data-vitrines-root data-echantillons-catalog aria-label="Catalogue modeles">\n'
+            '        <p class="vitrines-empty">Catalogue indisponible '
+            '(ajoutez <code>src/data/vitrines.json</code>).</p>\n'
+            '</div>\n',
+            encoding='utf-8',
+        )
+        return
+    items = data['items']
+    cats = _vitrines_distinct_category_keys(items)
+    # Filtres dans le hero recherche ; grille seule ici (ordre melange cote client chaque jour)
+    inner = _vitrines_catalog_inner_lines(items, cats, include_toolbar=False)
+    lines: List[str] = []
+    lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
+    lines.append(
+        '<div class="vitrines-page-collection vitrines-showcase vitrines-showcase--page" '
+        'data-vitrines-root data-echantillons-catalog aria-label="Catalogue des echantillons">'
+    )
+    lines.extend(inner)
+    lines.append('</div>')
+    new_content = '\n'.join(lines) + '\n'
+    if path_out.exists() and path_out.read_text(encoding='utf-8') == new_content:
+        return
+    path_out.write_text(new_content, encoding='utf-8')
+    print(f'[OK] vitrines-page-collection.html genere ({len(items)} vitrine(s))')
 
 
 def build_home_vitrines_teaser_embed() -> None:
@@ -2023,55 +2207,6 @@ def build_home_vitrines_teaser_embed() -> None:
         print(f'[OK] home-vitrines-teaser.html genere ({len(cards)} exemple(s))')
     build_home_echantillons_rotation(OUTPUT_DIR)
 
-def build_vitrines_page_collection_embed() -> None:
-    """Fragment catalogue (filtre + grille) pour la page /devantures/ — theme DanielCraft."""
-    data = load_vitrines()
-    path_out = INCLUDES_DIR / 'vitrines-page-collection.html'
-    if not data or not data.get('items'):
-        path_out.write_text(
-            '<!-- Genere par build.py -->\n'
-            '<section class="vitrines-page-collection" data-vitrines-root aria-label="Catalogue modèles">\n'
-            '    <div class="container">\n'
-            '        <p class="vitrines-empty">Catalogue indisponible '
-            '(ajoutez <code>src/data/vitrines.json</code>).</p>\n'
-            '    </div>\n'
-            '</section>\n',
-            encoding='utf-8',
-        )
-        return
-    items = data['items']
-    cats = _vitrines_distinct_category_keys(items)
-    inner = _vitrines_catalog_inner_lines(items, cats)
-    lines: List[str] = []
-    lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
-    lines.append(
-        '<section class="vitrines-page-collection vitrines-showcase vitrines-showcase--page" '
-        'data-vitrines-root aria-labelledby="vitrines-catalogue-heading">'
-    )
-    lines.append('    <div class="container">')
-    lines.append('        <div class="section-header scroll-reveal">')
-    lines.append('            <span class="section-badge">Thèmes sectoriels</span>')
-    lines.append(
-        '            <h2 id="vitrines-catalogue-heading" class="section-title">'
-        'Catalogue des thèmes vitrine</h2>'
-    )
-    lines.append('            <p class="section-description">')
-    lines.append(
-        '                Filtrez par univers métier, ouvrez une fiche commerciale (textes, tarif indicatif, visuels) '
-        'ou lancez la démo pleine page. Chaque carte montre une capture « fenêtrée » : aperçu long, '
-        'défilant doucement dans le cadre pour simuler le scroll sans alourdir la grille.'
-    )
-    lines.append('            </p>')
-    lines.append('        </div>')
-    lines.extend(inner)
-    lines.append('    </div>')
-    lines.append('</section>')
-    new_content = '\n'.join(lines) + '\n'
-    if path_out.exists() and path_out.read_text(encoding='utf-8') == new_content:
-        return
-    path_out.write_text(new_content, encoding='utf-8')
-    print(f'[OK] vitrines-page-collection.html genere ({len(items)} vitrine(s))')
-
 
 def build_vitrines_catalog_embed() -> None:
     """Genere includes/vitrines-catalog-embed.html (accueil) + vitrines-page-collection.html (page /devantures/)."""
@@ -2121,6 +2256,7 @@ def build_vitrines_catalog_embed() -> None:
         path_out.write_text(new_content, encoding='utf-8')
         print(f'[OK] vitrines-catalog-embed.html genere ({len(items)} vitrine(s))')
     build_vitrines_page_collection_embed()
+    build_echantillons_deal_week_embed(data)
 
 
 def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> List[str]:

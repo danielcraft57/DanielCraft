@@ -6,7 +6,7 @@
   "page_url": "/echantillons/",
   "og_image": "/assets/images/og/vitrines-1200x630.jpg",
   "current_page": "echantillons",
-  "page_scripts": ["main.js", "lazy-images.js", "vitrines-section.js"],
-  "extra_css": "vitrines-portfolio.css",
+  "page_scripts": ["main.js", "lazy-images.js", "vitrines-section.js", "prestations-wow.js", "echantillons-search.js"],
+  "extra_css": "prestations-search.css,vitrines-portfolio.css,echantillons.css",
   "schema_type": "vitrines_catalog"
 }

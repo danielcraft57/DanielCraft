@@ -312,6 +312,91 @@
       ]
     },
     {
+      "slug": "boulangerie",
+      "category": "hcr",
+      "title": "Maison Lemaire",
+      "tagline": "Boulangerie & fournil",
+      "excerpt": "Boulangerie a Nancy : pains au levain, viennoiseries et commande simple - modele HCR local.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Carte pains et patisseries avec prix visibles",
+        "Commande / retrait au fournil sans friction",
+        "Ambiance artisanale claire sur telephone"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "artisan",
+      "category": "artisanat",
+      "title": "Clanche & Cuivre",
+      "tagline": "Plomberie urgence",
+      "excerpt": "Plombier a Metz : depannage 24/7, devis rapide et zones d intervention claires.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "CTA appel et devis toujours visibles",
+        "Services depannage, SDB, chauffage",
+        "Zones Metz et alentours explicites"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "fleuriste",
+      "category": "retail",
+      "title": "Atelier Corolle",
+      "tagline": "Fleuriste & compositions",
+      "excerpt": "Fleuriste a Strasbourg : bouquets de saison, mariage et livraison quartier.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Collections et prix a partir de",
+        "Parcours mariage dedie",
+        "Livraison et retrait atelier"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "caviste",
+      "category": "retail",
+      "title": "Cave de la Gare",
+      "tagline": "Cave & conseils",
+      "excerpt": "Caviste a Thionville : selection soignee, conseils et panier demo.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Fiches vins lisibles",
+        "Ambiance cave premium sans usine",
+        "Conseil et degustation mis en avant"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique"
+      ]
+    },
+    {
+      "slug": "osteo",
+      "category": "sante",
+      "title": "Cabinet des Ponts",
+      "tagline": "Osteopathie",
+      "excerpt": "Osteopathe a Metz : creneaux visibles, tarifs clairs, prise de RDV simple.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Creneaux et demande de RDV en un geste",
+        "Tarifs et motifs de consultation explicites",
+        "Cabinet rassurant, facilement accessible"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique"
+      ]
+    },
+    {
       "slug": "saas-landing",
       "category": "saas",
       "title": "FlowMetrics",

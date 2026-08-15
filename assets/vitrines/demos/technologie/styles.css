@@ -1,24 +1,26 @@
-/* Synapse Lorraine — tech dark blue, Space Grotesk + IBM Plex Sans */
+/* Synapse Lorraine — maquette tech : slate dark, cyan */
 :root {
-  --vt-blue: #0ea5e9;
-  --vt-blue-d: #0c4a6e;
-  --vt-navy: #0f172a;
-  --vt-slate: #1e293b;
-  --vt-bg: #0b1220;
+  --vt-bg: #0f172a;
+  --vt-panel: #1e293b;
+  --vt-cyan: #22d3ee;
+  --vt-cyan-soft: #a5f3fc;
   --vt-text: #e2e8f0;
-  --vt-muted: #94a3b8;
-  --vt-accent: var(--vt-blue);
+  --vt-mute: #94a3b8;
+  --vt-line: rgba(34, 211, 238, 0.18);
+  --vt-accent: var(--vt-cyan);
   --bs-body-bg: var(--vt-bg);
   --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-blue);
-  --bs-link-color: var(--vt-blue);
-  --bs-link-hover-color: #7dd3fc;
+  --bs-primary: var(--vt-cyan);
+  --bs-link-color: var(--vt-cyan);
+  --bs-link-hover-color: #fff;
+  --bs-font-sans-serif: "IBM Plex Sans", system-ui, sans-serif;
 }
 
 body.vt-body-tech {
-  background: var(--vt-bg);
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(34, 211, 238, 0.12), transparent 50%),
+    linear-gradient(180deg, #0b1220, var(--vt-bg) 40%);
   color: var(--vt-text);
-  font-family: "IBM Plex Sans", system-ui, sans-serif;
   padding-bottom: 4.5rem;
 }
 @media (min-width: 992px) {
@@ -26,77 +28,95 @@ body.vt-body-tech {
 }
 
 .vt-display,
-.vt-section-title {
-  font-family: "Space Grotesk", system-ui, sans-serif;
-  font-weight: 600;
-  color: #f8fafc;
-}
-
+.vt-section-title,
 .vt-brand,
 .navbar-brand.vt-brand {
   font-family: "Space Grotesk", system-ui, sans-serif;
   font-weight: 700;
-  color: #f8fafc !important;
+  color: #fff;
+  letter-spacing: -0.02em;
 }
 
 .vt-eyebrow {
-  letter-spacing: 0.14em;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--vt-blue);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--vt-cyan);
   text-transform: uppercase;
 }
 
-.vt-topbar { background: var(--vt-navy); color: #cbd5e1; }
-.vt-topbar-link { color: inherit; text-decoration: none; font-weight: 600; }
+.text-secondary { color: var(--vt-mute) !important; }
+
+.vt-topbar { background: #020617; color: rgba(226, 232, 240, 0.85); }
+.vt-topbar-status { color: var(--vt-cyan-soft); font-weight: 600; }
+.vt-topbar-link { color: inherit; text-decoration: none; }
 
 .vt-navbar {
-  background: rgba(11, 18, 32, 0.95);
-  border-bottom: 1px solid rgba(14, 165, 233, 0.35);
+  background: rgba(15, 23, 42, 0.92);
+  border-bottom: 1px solid var(--vt-line);
+  backdrop-filter: blur(12px);
 }
-.vt-navbar .nav-link { color: var(--vt-muted); font-weight: 500; }
-.vt-navbar .nav-link.active { color: var(--vt-blue); font-weight: 700; }
+.vt-navbar .nav-link { color: rgba(226, 232, 240, 0.75) !important; font-weight: 500; }
+.vt-navbar .nav-link.active { color: var(--vt-cyan) !important; }
 
 .btn-vt-primary {
-  --bs-btn-bg: var(--vt-blue);
-  --bs-btn-border-color: var(--vt-blue);
-  --bs-btn-hover-bg: #0284c7;
-  --bs-btn-hover-border-color: #0284c7;
+  --bs-btn-bg: var(--vt-cyan);
+  --bs-btn-border-color: var(--vt-cyan);
+  --bs-btn-hover-bg: #06b6d4;
+  --bs-btn-hover-border-color: #06b6d4;
   --bs-btn-color: #0f172a;
   font-weight: 700;
-  border-radius: 0;
+  border-radius: 999px;
 }
 .btn-vt-outline {
-  --bs-btn-color: var(--vt-blue);
-  --bs-btn-border-color: var(--vt-blue);
-  --bs-btn-hover-bg: var(--vt-blue);
-  --bs-btn-hover-color: #0f172a;
-  border-radius: 0;
+  --bs-btn-color: var(--vt-cyan-soft);
+  --bs-btn-border-color: rgba(34, 211, 238, 0.4);
+  --bs-btn-hover-bg: rgba(34, 211, 238, 0.12);
+  --bs-btn-hover-color: #fff;
+  border-radius: 999px;
 }
 
-.vt-hero-tech { background: linear-gradient(180deg, var(--vt-slate), var(--vt-bg)); }
-.vt-spec-pill {
-  background: rgba(14, 165, 233, 0.12);
-  border-left: 3px solid var(--vt-blue);
-  color: var(--vt-muted);
+.vt-tech-dash {
+  background: color-mix(in srgb, var(--vt-panel) 92%, #fff);
+  border: 1px solid var(--vt-line);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(34, 211, 238, 0.08);
+  animation: vt-tech-float 5s ease-in-out infinite;
 }
-.vt-spec-pill strong { color: #f8fafc; }
+@keyframes vt-tech-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.vt-tech-dash .bar {
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vt-cyan), transparent);
+  margin-bottom: 0.65rem;
+}
+.vt-tech-feat {
+  background: var(--vt-panel);
+  border: 1px solid var(--vt-line);
+  border-radius: 1.25rem;
+  padding: 1.2rem 1.25rem;
+  height: 100%;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.vt-tech-feat:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  transform: translateY(-3px);
+}
+.vt-tech-feat h3 { color: var(--vt-cyan-soft); font-size: 1.05rem; }
 
-.vt-stats-band { background: var(--vt-slate); border-top: 1px solid rgba(14, 165, 233, 0.25); }
-.vt-stats-band .vt-stat-value { color: var(--vt-blue); }
+.vt-marquee {
+  background: rgba(2, 6, 23, 0.65);
+  border-block: 1px solid var(--vt-line);
+}
+.vt-marquee-track span { color: var(--vt-cyan-soft); }
 
-.vt-marquee { background: var(--vt-navy); color: var(--vt-blue); }
-.vt-marquee-item { color: #7dd3fc; }
-
-.vt-tab-btn { border-color: rgba(14, 165, 233, 0.4); color: var(--vt-muted); }
-.vt-tab-btn.active, .vt-tab-btn:hover { background: var(--vt-blue); color: #0f172a; }
-
-.vt-card-bs .card { background: var(--vt-slate); color: var(--vt-text); }
-.vt-process-step strong { color: var(--vt-blue); }
-
-.vt-site-footer { background: var(--vt-navy); color: #94a3b8; }
-.vt-cta-band { background: linear-gradient(135deg, var(--vt-blue-d), var(--vt-blue)); color: #fff; }
-
-.vt-aside-panel { background: var(--vt-slate); border-left: 3px solid var(--vt-blue) !important; }
-
-.vt-mobile-cta { background: var(--vt-navy); border-top: 1px solid var(--vt-blue); }
+.vt-footer { background: #020617 !important; }
+.vt-fab-menu-main { background: var(--vt-cyan); color: #0f172a; }
+@media (prefers-reduced-motion: reduce) {
+  .vt-tech-dash { animation: none; }
+}

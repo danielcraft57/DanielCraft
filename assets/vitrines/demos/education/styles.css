@@ -1,24 +1,24 @@
-/* Institut Mercure — académique indigo/ambre, Libre Baskerville + Source Sans 3 */
+/* Institut Mercure — maquette education : indigo, lavande, Sora */
 :root {
-  --vt-navy: #1e3a5f;
-  --vt-indigo: #1d4ed8;
-  --vt-amber: #f59e0b;
-  --vt-amber-l: #fef3c7;
-  --vt-bg: #f8fafc;
-  --vt-text: #0f172a;
-  --vt-muted: #475569;
+  --vt-paper: #f7f6fb;
+  --vt-indigo: #3730a3;
+  --vt-indigo-deep: #2e287f;
+  --vt-lavender: #e0e7ff;
+  --vt-text: #1e1b4b;
+  --vt-mute: #64748b;
   --vt-accent: var(--vt-indigo);
-  --bs-body-bg: var(--vt-bg);
+  --bs-body-bg: var(--vt-paper);
   --bs-body-color: var(--vt-text);
   --bs-primary: var(--vt-indigo);
   --bs-link-color: var(--vt-indigo);
-  --bs-link-hover-color: var(--vt-navy);
+  --bs-link-hover-color: var(--vt-indigo-deep);
+  --bs-font-sans-serif: "Source Sans 3", system-ui, sans-serif;
 }
 
 body.vt-body-education {
-  background: var(--vt-bg);
-  color: var(--vt-text);
-  font-family: "Source Sans 3", system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(55, 48, 163, 0.1), transparent 50%),
+    var(--vt-paper);
   padding-bottom: 4.5rem;
 }
 @media (min-width: 992px) {
@@ -26,155 +26,100 @@ body.vt-body-education {
 }
 
 .vt-display,
-.vt-section-title {
-  font-family: "Libre Baskerville", Georgia, serif;
-  font-weight: 700;
-  color: var(--vt-navy);
-}
-
+.vt-section-title,
 .vt-brand,
 .navbar-brand.vt-brand {
-  font-family: "Libre Baskerville", Georgia, serif;
+  font-family: "Sora", system-ui, sans-serif;
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: var(--vt-navy) !important;
-  max-width: 14rem;
+  color: var(--vt-indigo-deep);
+  letter-spacing: -0.02em;
 }
 
 .vt-eyebrow {
-  font-family: "Source Sans 3", system-ui, sans-serif;
   letter-spacing: 0.12em;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--vt-amber);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--vt-indigo);
   text-transform: uppercase;
 }
 
-.vt-topbar { background: var(--vt-navy); color: #e2e8f0; }
-.vt-topbar-link { color: inherit; text-decoration: none; font-weight: 600; }
+.text-secondary { color: var(--vt-mute) !important; }
+
+.vt-topbar { background: var(--vt-indigo); color: rgba(255, 255, 255, 0.92); }
+.vt-topbar-status { color: #c7d2fe; font-weight: 600; }
+.vt-topbar-link { color: inherit; text-decoration: none; }
 
 .vt-navbar {
   background: #fff;
-  border-bottom: 3px solid var(--vt-indigo);
+  border-bottom: 1px solid color-mix(in srgb, var(--vt-indigo) 12%, #fff);
 }
-.vt-navbar .nav-link {
-  font-family: "Source Sans 3", system-ui, sans-serif;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--vt-muted);
-}
-.vt-navbar .nav-link.active { color: var(--vt-indigo); font-weight: 700; }
+.vt-navbar .nav-link { color: var(--vt-text); font-weight: 600; }
+.vt-navbar .nav-link.active { color: var(--vt-indigo); }
 
 .btn-vt-primary {
   --bs-btn-bg: var(--vt-indigo);
   --bs-btn-border-color: var(--vt-indigo);
-  --bs-btn-hover-bg: var(--vt-navy);
-  --bs-btn-hover-border-color: var(--vt-navy);
+  --bs-btn-hover-bg: var(--vt-indigo-deep);
+  --bs-btn-hover-border-color: var(--vt-indigo-deep);
   --bs-btn-color: #fff;
   font-weight: 700;
-  border-radius: 0;
+  border-radius: 999px;
 }
 .btn-vt-outline {
   --bs-btn-color: var(--vt-indigo);
-  --bs-btn-border-color: var(--vt-indigo);
+  --bs-btn-border-color: color-mix(in srgb, var(--vt-indigo) 35%, #fff);
   --bs-btn-hover-bg: var(--vt-indigo);
-  --bs-btn-hover-border-color: var(--vt-indigo);
   --bs-btn-hover-color: #fff;
-  font-weight: 600;
-  border-radius: 0;
+  border-radius: 999px;
 }
 
-.vt-hero-tech { background: #fff; border-bottom: 4px solid var(--vt-amber); }
-.vt-spec-pill {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0.5rem 0.85rem;
-  background: var(--vt-amber-l);
-  border-left: 3px solid var(--vt-amber);
-  font-size: 0.78rem;
-  color: var(--vt-muted);
+.vt-edu-hero { padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem; }
+.vt-edu-hero-media {
+  border-radius: 1.75rem;
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(55, 48, 163, 0.16);
 }
-.vt-spec-pill strong {
-  font-size: 1.1rem;
-  color: var(--vt-navy);
-  line-height: 1.2;
+.vt-edu-hero-media img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
 }
-.vt-hero-tech-frame img { aspect-ratio: 16/10; object-fit: cover; }
 
-.vt-cred-strip {
-  background: var(--vt-navy);
-  color: #e2e8f0;
+.vt-chip {
+  background: var(--vt-lavender) !important;
+  color: var(--vt-indigo-deep) !important;
+  border: none;
 }
-.vt-cred-cell strong { color: var(--vt-amber); }
+.vt-chip.on {
+  background: var(--vt-indigo) !important;
+  color: #fff !important;
+}
 
-.vt-service-tile {
+.vt-course-card {
   background: #fff;
-  border: 1px solid #e2e8f0;
-  border-top: 3px solid var(--vt-indigo);
+  border-radius: 1.35rem;
+  overflow: hidden;
+  border: 1px solid rgba(55, 48, 163, 0.1);
+  box-shadow: 0 12px 32px rgba(55, 48, 163, 0.08);
+  height: 100%;
+  transition: transform 0.25s ease;
 }
-.vt-service-tile i { color: var(--vt-indigo); }
-
-.vt-process-flow .vt-process-step::after { background: var(--vt-amber); }
-.vt-process-step strong { color: var(--vt-indigo); }
-
-.vt-stat-narrative .vt-stat-big { color: var(--vt-indigo); }
-
-.vt-sector-strip { background: var(--vt-amber-l); }
-.vt-sector-cell strong { color: var(--vt-navy); }
-
-.vt-menu-section .vt-menu-item { border-left: 3px solid transparent; }
-.vt-menu-section .vt-menu-item:hover { border-left-color: var(--vt-amber); }
-
-.vt-specs-table th { background: var(--vt-navy); color: #fff; }
-
-.vt-gallery-masonry .vt-masonry-card { border-bottom: 3px solid var(--vt-indigo); }
-
-.vt-aside-panel { background: var(--vt-amber-l); border-left: 4px solid var(--vt-amber) !important; }
-
-.vt-cta-band {
-  background: linear-gradient(135deg, var(--vt-navy), var(--vt-indigo));
-  color: #fff;
+.vt-course-card:hover { transform: translateY(-3px); }
+.vt-course-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
 }
-.vt-cta-band .btn-vt-primary {
-  --bs-btn-bg: var(--vt-amber);
-  --bs-btn-border-color: var(--vt-amber);
-  --bs-btn-hover-bg: #d97706;
-  --bs-btn-hover-border-color: #d97706;
-  --bs-btn-color: var(--vt-navy);
+.vt-course-card-body { padding: 1.1rem 1.15rem 1.25rem; }
+.vt-course-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--vt-mute);
+  font-weight: 600;
 }
 
-.vt-mobile-cta {
-  background: var(--vt-navy);
-  border-top: 2px solid var(--vt-amber);
-}
-.vt-mobile-cta .btn { background: var(--vt-amber); color: var(--vt-navy); border: none; font-weight: 700; }
-
-.vt-site-footer {
-  background: var(--vt-navy);
-  color: #cbd5e1;
-}
-.vt-site-footer a { color: #e2e8f0; }
-.vt-site-footer .vt-footer-brand { color: #fff; font-family: "Libre Baskerville", Georgia, serif; }
-
-.vt-stats-band { background: var(--vt-indigo); color: #fff; }
-.vt-stats-band .vt-stat-value { color: var(--vt-amber); }
-
-.vt-trust-band { border-top: 3px solid var(--vt-amber); }
-
-.vt-card-bs .card { border: none; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08); }
-.vt-card-bs .card-img-top { aspect-ratio: 16/10; object-fit: cover; }
-
-.vt-compact-features .vt-compact-card { border-left: 3px solid var(--vt-indigo); }
-
-.vt-timeline::before { background: var(--vt-amber); }
-.vt-timeline-item strong { color: var(--vt-indigo); }
-
-.vt-faq .accordion-button:not(.collapsed) {
-  background: var(--vt-amber-l);
-  color: var(--vt-navy);
-}
-.vt-faq .accordion-button:focus { box-shadow: 0 0 0 0.2rem rgba(29, 78, 216, 0.2); }
-
-.vt-hero-compact { background: linear-gradient(180deg, #fff 0%, var(--vt-bg) 100%); }
+.vt-footer { background: var(--vt-indigo-deep) !important; }
+.vt-fab-menu-main { background: var(--vt-indigo); color: #fff; }

@@ -1,0 +1,16 @@
+{
+  "badge": "Template de la semaine",
+  "urgency": "Mise en avant cette semaine",
+  "cta_label": "Voir la fiche",
+  "force_slug": null,
+  "rotation": [
+    "restauration",
+    "beaute",
+    "odontologie",
+    "automobile",
+    "commerce",
+    "comptable",
+    "immobilier",
+    "fitness"
+  ]
+}

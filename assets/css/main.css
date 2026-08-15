@@ -76,6 +76,20 @@
   --secondary-color: #dff8f8;
   --accent-color: #c9f4f2;
   --danger-color: #8acde5;
+
+  /*
+   * Accents complementaires au bleu (pages catalogue / CTA secondaires) :
+   * - Ambre : complement chaud du cyan (valide maquettes /echantillons)
+   * - Vert nature : deja present dans les heros SVG, expose pour usage futur
+   */
+  --amber-color: #d97706;
+  --amber-light: #f59e0b;
+  --amber-dark: #b45309;
+  --amber-soft: #fef3c7;
+  --green-color: #2f9e6a;
+  --green-light: #91b98a;
+  --green-dark: #1f6b48;
+  --green-soft: #eef8f1;
   
   /* Neutrals */
   --white: #ffffff;

@@ -1,21 +1,24 @@
-/* Atelier Nord-Est — architecture minimal, noir/blanc, Space Grotesk + DM Sans */
+/* Atelier Nord-Est — maquette architecture : charcoal, cuivre, Instrument Serif */
 :root {
-  --vt-black: #111111;
-  --vt-gray: #6b6b6b;
-  --vt-line: #e5e5e5;
-  --vt-bg: #fafafa;
-  --vt-text: #111111;
-  --vt-muted: #6b6b6b;
-  --vt-accent: var(--vt-black);
-  --bs-body-bg: var(--vt-bg);
+  --vt-black: #121212;
+  --vt-panel: #1a1a1a;
+  --vt-copper: #b87333;
+  --vt-copper-soft: #d4a574;
+  --vt-line: rgba(255, 255, 255, 0.1);
+  --vt-text: #f5f2ee;
+  --vt-mute: #a8a29e;
+  --vt-accent: var(--vt-copper);
+  --bs-body-bg: var(--vt-black);
   --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-black);
-  --bs-link-color: var(--vt-black);
-  --bs-link-hover-color: var(--vt-gray);
+  --bs-primary: var(--vt-copper);
+  --bs-link-color: var(--vt-copper-soft);
+  --bs-link-hover-color: #fff;
+  --bs-font-sans-serif: "DM Sans", system-ui, sans-serif;
 }
 
 body.vt-body-architecture {
-  background: var(--vt-bg);
+  background: var(--vt-black);
+  color: var(--vt-text);
   padding-bottom: 4.5rem;
 }
 @media (min-width: 992px) {
@@ -24,128 +27,132 @@ body.vt-body-architecture {
 
 .vt-display,
 .vt-section-title {
-  font-family: "Space Grotesk", system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--vt-black);
-  text-transform: uppercase;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-transform: none;
 }
 
 .vt-brand,
 .navbar-brand.vt-brand {
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: -0.02em;
-  color: var(--vt-black);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #fff !important;
 }
 
 .vt-eyebrow {
-  font-family: "DM Sans", system-ui, sans-serif;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--vt-gray);
+  color: var(--vt-copper);
   text-transform: uppercase;
 }
 
-.vt-topbar { background: var(--vt-black); color: rgba(255, 255, 255, 0.9); }
-.vt-topbar-status { font-weight: 500; }
+.text-secondary { color: var(--vt-mute) !important; }
+
+.vt-topbar { background: #0a0a0a; color: rgba(255, 255, 255, 0.75); }
+.vt-topbar-status { color: var(--vt-copper-soft); }
 .vt-topbar-link { color: inherit; text-decoration: none; }
 
 .vt-navbar {
-  background: #fff;
+  background: rgba(18, 18, 18, 0.92);
   border-bottom: 1px solid var(--vt-line);
+  backdrop-filter: blur(10px);
 }
 .vt-navbar .nav-link {
-  font-family: "DM Sans", system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.85rem;
   font-weight: 500;
-  font-size: 0.88rem;
-  color: var(--vt-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
-.vt-navbar .nav-link.active { color: var(--vt-black); font-weight: 700; }
+.vt-navbar .nav-link.active { color: var(--vt-copper-soft) !important; }
 
 .btn-vt-primary {
-  --bs-btn-bg: var(--vt-black);
-  --bs-btn-border-color: var(--vt-black);
-  --bs-btn-hover-bg: #333;
-  --bs-btn-hover-border-color: #333;
+  --bs-btn-bg: var(--vt-copper);
+  --bs-btn-border-color: var(--vt-copper);
+  --bs-btn-hover-bg: #9a5f28;
+  --bs-btn-hover-border-color: #9a5f28;
   --bs-btn-color: #fff;
-  font-family: "DM Sans", system-ui, sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  border-radius: 0;
+  font-weight: 700;
+  border-radius: 999px;
 }
 .btn-vt-outline {
-  --bs-btn-color: var(--vt-black);
-  --bs-btn-border-color: var(--vt-black);
-  --bs-btn-hover-bg: var(--vt-black);
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.35);
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.08);
   --bs-btn-hover-color: #fff;
-  border-radius: 0;
+  border-radius: 999px;
 }
 
-/* Hero éditorial architecture */
-.vt-body-architecture .vt-hero-editorial .vt-display {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  text-transform: none;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+.vt-arch-hero {
+  position: relative;
+  min-height: clamp(28rem, 78vh, 42rem);
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 3rem;
+  overflow: hidden;
 }
-
-/* Bento magazine */
-.vt-body-architecture .vt-bento-card {
-  border: 1px solid var(--vt-line);
-  background: #fff;
-}
-.vt-body-architecture .vt-bento-img { aspect-ratio: 4/3; overflow: hidden; }
-.vt-body-architecture .vt-bento-body { padding: 1rem 1.25rem; }
-
-/* Grille projets */
-.vt-project-card { background: #fff; border: 1px solid var(--vt-line) !important; }
-.vt-project-img { height: 220px; object-fit: cover; }
-.vt-project-meta {
-  font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--vt-gray);
-}
-.vt-project-badge {
+.vt-arch-hero-bg {
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background: var(--vt-black);
-  color: #fff;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.25rem 0.5rem;
+  inset: 0;
+}
+.vt-arch-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+  transform: scale(1.04);
+  animation: vt-arch-ken 20s ease-in-out infinite alternate;
+}
+@keyframes vt-arch-ken {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.1) translate(-1%, -1%); }
+}
+.vt-arch-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+}
+.vt-arch-hero-copy .vt-display {
+  border-bottom: 2px solid var(--vt-copper);
+  padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
-.vt-body-architecture .vt-stats {
-  background: #fff;
-  border-top: 1px solid var(--vt-line);
-  border-bottom: 1px solid var(--vt-line);
+.vt-arch-rail {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
 }
-.vt-body-architecture .vt-stat-value {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
+.vt-arch-card {
+  flex: 0 0 min(18rem, 78vw);
+  scroll-snap-align: start;
+  background: var(--vt-panel);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--vt-line);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
+.vt-arch-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--vt-copper) 55%, transparent);
+}
+.vt-arch-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.vt-arch-card-body { padding: 1rem 1.1rem 1.2rem; }
+.vt-arch-card-body .small { color: var(--vt-mute); }
 
-.vt-compact-num { color: var(--vt-gray); font-family: "Space Grotesk", sans-serif; }
-
-.vt-mobile-cta { background: var(--vt-black); }
-.vt-footer { background: var(--vt-black); color: rgba(255, 255, 255, 0.85); }
-.vt-footer a { color: #fff; }
-.vt-footer .vt-brand { color: #fff; }
-
-.vt-cta-band { background: var(--vt-black); color: #fff; }
-.vt-cta-band .btn-vt-primary { background: #fff; color: var(--vt-black); border-color: #fff; }
-
-.vt-chapter figure { border: 1px solid var(--vt-line); }
+.vt-footer { background: #0a0a0a !important; }
+.vt-fab-menu-main { background: var(--vt-copper); color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .vt-arch-hero-bg img { animation: none; }
+}

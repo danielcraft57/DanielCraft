@@ -1,0 +1,52 @@
+/* Cabinet des Ponts — osteo : sage / crème, Plus Jakarta */
+:root {
+  --vt-paper: #f7f8f5;
+  --vt-sage: #4a5d4a;
+  --vt-sage-soft: #d9e2d5;
+  --vt-ink: #1f2a1f;
+  --vt-mute: #6b756b;
+  --vt-accent: var(--vt-sage);
+  --bs-body-bg: var(--vt-paper);
+  --bs-body-color: var(--vt-ink);
+  --bs-primary: var(--vt-sage);
+  --bs-link-color: var(--vt-sage);
+  --bs-font-sans-serif: "Source Sans 3", system-ui, sans-serif;
+}
+body.vt-body-osteo {
+  background: radial-gradient(ellipse at 90% 0%, rgba(74,93,74,0.1), transparent 45%), var(--vt-paper);
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 992px) { body.vt-body-osteo { padding-bottom: 0; } }
+.vt-display, .vt-section-title, .vt-brand, .navbar-brand.vt-brand {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-weight: 800; color: var(--vt-sage); letter-spacing: -0.02em;
+}
+.vt-eyebrow { letter-spacing: 0.12em; font-size: 0.7rem; font-weight: 700; color: var(--vt-sage); text-transform: uppercase; }
+.text-secondary { color: var(--vt-mute) !important; }
+.vt-topbar { background: var(--vt-sage); color: rgba(255,255,255,0.92); }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-navbar { background: var(--vt-sage-soft); border-bottom: 1px solid rgba(74,93,74,0.12); border-radius: 0 0 1.25rem 1.25rem; }
+.vt-navbar .nav-link { color: var(--vt-ink); font-weight: 600; }
+.vt-navbar .nav-link.active { color: var(--vt-sage); }
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-sage); --bs-btn-border-color: var(--vt-sage);
+  --bs-btn-hover-bg: #3a4a3a; --bs-btn-hover-border-color: #3a4a3a;
+  --bs-btn-color: #fff; font-weight: 700; border-radius: 999px;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-sage); --bs-btn-border-color: color-mix(in srgb, var(--vt-sage) 35%, #fff);
+  --bs-btn-hover-bg: var(--vt-sage); --bs-btn-hover-color: #fff; border-radius: 999px;
+}
+.vt-osteo-hero { padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem; }
+.vt-chip { background: var(--vt-sage-soft) !important; color: var(--vt-sage) !important; border: none; }
+.vt-chip.on { background: var(--vt-sage) !important; color: #fff !important; }
+.vt-osteo-slots { background: #fff; border-radius: 1.35rem; padding: 1rem 1.15rem; box-shadow: 0 10px 28px rgba(31,42,31,0.06); }
+.vt-osteo-media { border-radius: 1.75rem; overflow: hidden; box-shadow: 0 24px 48px rgba(74,93,74,0.14); }
+.vt-osteo-media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+.vt-osteo-stat {
+  background: #fff; border-radius: 1.25rem; padding: 1rem; text-align: center;
+  border: 1px solid rgba(74,93,74,0.1); height: 100%;
+}
+.vt-osteo-stat strong { display: block; font-size: 1.35rem; color: var(--vt-sage); }
+.vt-osteo-stat span { font-size: 0.82rem; color: var(--vt-mute); }
+.vt-footer { background: var(--vt-sage) !important; }
+.vt-fab-menu-main { background: var(--vt-sage); color: #fff; }

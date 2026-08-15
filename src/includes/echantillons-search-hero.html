@@ -1,0 +1,83 @@
+<section class="prestations-search-hero prestations-search-hero--wow echantillons-search-hero" aria-label="Rechercher un échantillon">
+    <div class="prestations-search-bg" aria-hidden="true">
+        <svg class="prestations-search-bg-svg" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="esh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e8f6fc"/>
+                    <stop offset="45%" stop-color="#f0f7ff"/>
+                    <stop offset="100%" stop-color="#eef8f1"/>
+                </linearGradient>
+                <linearGradient id="esh-leaf" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2f9e6a"/>
+                    <stop offset="100%" stop-color="#4da9d6"/>
+                </linearGradient>
+                <radialGradient id="esh-orb-a" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#7bcde3" stop-opacity="0.55"/>
+                    <stop offset="100%" stop-color="#7bcde3" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="esh-orb-b" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#91b98a" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#91b98a" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <rect width="1440" height="420" fill="url(#esh-grad)"/>
+            <circle class="prestations-search-orb prestations-search-orb--1" cx="220" cy="120" r="140" fill="url(#esh-orb-a)"/>
+            <circle class="prestations-search-orb prestations-search-orb--2" cx="1180" cy="280" r="160" fill="url(#esh-orb-b)"/>
+            <circle class="prestations-search-orb prestations-search-orb--3" cx="720" cy="60" r="100" fill="url(#esh-orb-a)" opacity="0.7"/>
+            <path class="prestations-search-wave" d="M0 340 C240 280 480 380 720 330 S1200 260 1440 310 L1440 420 L0 420 Z" fill="#c9f4f2" opacity="0.35"/>
+            <path class="prestations-search-wave prestations-search-wave--2" d="M0 360 C320 320 520 390 760 350 S1120 300 1440 340 L1440 420 L0 420 Z" fill="#7bcde3" opacity="0.18"/>
+            <g class="prestations-search-leaves">
+                <path class="prestations-search-leaf prestations-search-leaf--1" d="M180 90c-8 28 6 48 18 58-14-6-32-22-18-58z" fill="url(#esh-leaf)" opacity="0.75"/>
+                <path class="prestations-search-leaf prestations-search-leaf--2" d="M1260 70c10 32-4 52-20 62 16-8 34-28 20-62z" fill="url(#esh-leaf)" opacity="0.6"/>
+                <path class="prestations-search-leaf prestations-search-leaf--3" d="M1050 320c-12 24 2 40 14 48-12-4-26-18-14-48z" fill="url(#esh-leaf)" opacity="0.5"/>
+            </g>
+        </svg>
+    </div>
+
+    <div class="container prestations-search-inner">
+        <h1 class="prestations-search-title" itemprop="name">Des échantillons, métier par métier</h1>
+        <p class="prestations-search-lead" itemprop="description">Comme au marché : tu goûtes avant de remplir le cornet. Exemples complets pour se projeter · Grand Est · pas à vendre.</p>
+        <form class="prestations-search-form echantillons-search-form" role="search" aria-label="Recherche dans le catalogue d'échantillons">
+            <label class="visually-hidden" for="echantillonsSearchInput">Rechercher un échantillon</label>
+            <div class="prestations-search-input-wrapper" id="echantillonsSearchWrapper">
+                <i class="fas fa-search prestations-search-icon" aria-hidden="true"></i>
+                <input
+                    type="search"
+                    id="echantillonsSearchInput"
+                    class="prestations-search-input"
+                    name="q"
+                    placeholder="Rechercher un métier, un secteur…"
+                    autocomplete="off"
+                    enterkeyhint="search"
+                >
+                <button type="button" id="echantillonsSearchClear" class="prestations-search-clear" aria-label="Effacer la recherche" hidden>
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <span class="prestations-search-kbd" aria-hidden="true">/</span>
+            </div>
+            <button type="submit" class="prestations-search-submit echantillons-search-submit">
+                <span>Rechercher</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </form>
+
+        <div class="prestations-search-chips" role="group" aria-label="Filtrer par secteur" data-chips-overflow>
+            <button type="button" class="prestations-search-chip is-active" data-echantillons-filter="all" aria-pressed="true"><i class="fas fa-th-large" aria-hidden="true"></i> Tous</button>
+            <button type="button" class="prestations-search-chip" data-echantillons-filter="hcr" aria-pressed="false"><i class="fas fa-utensils" aria-hidden="true"></i> Restau</button>
+            <button type="button" class="prestations-search-chip" data-echantillons-filter="retail" aria-pressed="false"><i class="fas fa-store" aria-hidden="true"></i> Commerce</button>
+            <button type="button" class="prestations-search-chip" data-echantillons-filter="beaute" aria-pressed="false"><i class="fas fa-spa" aria-hidden="true"></i> Beauté</button>
+            <button type="button" class="prestations-search-chip" data-echantillons-filter="sante" aria-pressed="false"><i class="fas fa-heartbeat" aria-hidden="true"></i> Santé</button>
+            <button type="button" class="prestations-search-chip" data-echantillons-filter="mobilite" aria-pressed="false"><i class="fas fa-car" aria-hidden="true"></i> Auto</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-echantillons-filter="conseil" aria-pressed="false" hidden><i class="fas fa-briefcase" aria-hidden="true"></i> Conseil</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-echantillons-filter="immobilier" aria-pressed="false" hidden><i class="fas fa-home" aria-hidden="true"></i> Immobilier</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-echantillons-filter="sport" aria-pressed="false" hidden><i class="fas fa-dumbbell" aria-hidden="true"></i> Sport</button>
+            <button type="button" class="prestations-search-chip is-chip-overflow" data-echantillons-filter="saas" aria-pressed="false" hidden><i class="fas fa-cloud" aria-hidden="true"></i> SaaS</button>
+            <button type="button" class="prestations-search-chip-more" id="echantillonsChipsMore" aria-expanded="false">
+                <span>Plus</span>
+                <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <p class="prestations-search-results-info" id="echantillonsSearchResultsInfo" aria-live="polite"></p>
+    </div>
+</section>

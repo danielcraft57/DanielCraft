@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from vitrine_seo import get_entity
+from vitrine_metiers_extra import BUILDERS_EXTRA
 
 
 def _chrome_nav(slug: str, brand: str, nav: list, page: str, *, cta_label: str, cta_href: str) -> str:
@@ -58,6 +59,11 @@ from vitrine_site_blocks import (
     wrap_page_facility,
     wrap_page_saas,
     wrap_page_tech,
+    HEAD_SAAS,
+    HEAD_SAAS_ONBOARDING,
+    HEAD_SAAS_DASHBOARD,
+    HEAD_SAAS_EMPTY,
+    HEAD_SAAS_NOTIFICATIONS,
     wrap_page_hotel,
     wrap_page_association,
     wrap_page_photo,
@@ -2383,49 +2389,61 @@ def _shell_juridique(page: str, title: str, desc: str, main: str) -> str:
 
 def build_juridique_index() -> str:
     main = "<main>"
-    main += block_hero_overlay(
-        "Le droit des affaires, sans distance",
-        "Conseil et contentieux pour PME, dirigeants et particuliers exigeants en Lorraine.",
-        "hero.png",
-        "Cabinet Rivière & Partenaires à Metz",
-        eyebrow="Avocats · Barreau de Metz",
-        primary_href="contact.html",
-        primary_label="Prendre rendez-vous",
-        secondary_href="expertises.html",
-        secondary_label="Nos expertises",
-    )
-    main += block_stats(
-        [("1992", "cabinet fondé"), ("6", "associés"), ("850+", "dossiers / an"), ("24 h", "réponse")],
-    )
-    main += block_service_tiles("Domaines d'intervention", JU_PRACTICE_TILES)
-    main += block_credentials_strip([
-        ("Barreau de Metz", "Inscrit depuis 1992"),
-        ("CNB", "Déontologie avocat"),
-        ("PME", "Affaires & social"),
-        ("Médiation", "Règlement amiable"),
-    ])
-    main += block_story(
-        "Pourquoi Rivière & Partenaires ?",
-        [
-            "Installés avenue Foch à Metz, nous accompagnons dirigeants et PME mosellanes depuis 1992.",
-            "Écoute, réactivité et transparence tarifaire — forfaits ou honoraires validés par écrit.",
-        ],
-    )
-    main += block_chapters(JU_CHAPTERS)
-    main += block_cards_bs("Expertises complémentaires", JU_CARDS)
-    main += f"""<section class="py-5">
+    main += """<section class="vt-legal-hero vt-reveal">
   <div class="container">
-    <blockquote class="vt-quote-panel mb-0">
-      « Une équipe rigoureuse qui a défendu nos intérêts lors d'une acquisition complexe. » — Directeur financier, PME tertiaire
-    </blockquote>
+    <div class="row g-4 g-xl-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">Avocats · Barreau de Metz</p>
+        <h1 class="vt-display display-4 mb-3">Le droit, explique clairement</h1>
+        <p class="lead mb-4">A vos cotes a chaque etape - rigueur, humanite et transparence, sans jargon inutile.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="rdvJur">Prendre RDV</button>
+          <a class="btn btn-vt-outline btn-lg" href="expertises.html">Domaines</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-legal-hero-media mb-0">
+          <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" alt="Cabinet a Metz" decoding="async" fetchpriority="high"></picture>
+        </figure>
+      </div>
+    </div>
   </div>
 </section>"""
-    main += block_faq_accordion("Questions fréquentes", JU_FAQ)
-    main += block_trust(
-        "Secret professionnel — forfait découverte 290 € HT — médiation et contentieux.",
-        ["Barreau Metz", "6 associés", "PME & dirigeants", "Grand Est"],
+    main += """<section class="vt-cred-band vt-reveal">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-3"><div class="vt-cred-item"><span class="vt-cred-ico" aria-hidden="true">§</span><div><strong>Barreau de Metz</strong><p class="small text-secondary mb-0">Inscrits au barreau</p></div></div></div>
+      <div class="col-md-3"><div class="vt-cred-item"><span class="vt-cred-ico" aria-hidden="true">◎</span><div><strong>Mediation</strong><p class="small text-secondary mb-0">Modes amiables privilegies</p></div></div></div>
+      <div class="col-md-3"><div class="vt-cred-item"><span class="vt-cred-ico" aria-hidden="true">◈</span><div><strong>Droit des affaires</strong><p class="small text-secondary mb-0">Conseil et contentieux</p></div></div></div>
+      <div class="col-md-3"><div class="vt-cred-item"><span class="vt-cred-ico" aria-hidden="true">◇</span><div><strong>Droit de la famille</strong><p class="small text-secondary mb-0">Ecoute et confidentialite</p></div></div></div>
+    </div>
+  </div>
+</section>"""
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <p class="vt-eyebrow">Notre methode</p>
+    <h2 class="vt-section-title h3 mb-4">Un accompagnement en 4 etapes</h2>
+    <div class="row g-3 pt-2">
+      <div class="col-md-3"><article class="vt-method-step"><span>1</span><h3 class="h6 mt-2">Ecoute</h3><p class="small text-secondary mb-0">On prend le temps de comprendre ta situation et tes objectifs.</p></article></div>
+      <div class="col-md-3"><article class="vt-method-step"><span>2</span><h3 class="h6 mt-2">Analyse</h3><p class="small text-secondary mb-0">Faits, droit applicable, enjeux du dossier.</p></article></div>
+      <div class="col-md-3"><article class="vt-method-step"><span>3</span><h3 class="h6 mt-2">Strategie</h3><p class="small text-secondary mb-0">On definit avec toi la voie la plus adaptee.</p></article></div>
+      <div class="col-md-3"><article class="vt-method-step"><span>4</span><h3 class="h6 mt-2">Suivi</h3><p class="small text-secondary mb-0">Tu es informe a chaque etape, sans zone d'ombre.</p></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="rdvJur",
+        title="Prendre RDV",
+        lead="Premier echange 45 min - on te rappelle sous 24 h (demo).",
+        primary_label="Envoyer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Sujet</label><select class="form-select"><option>Affaires</option><option>Social</option><option>Famille</option><option>Contentieux</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
     )
-    main += block_cta_band("Parlons de votre projet à Metz.", "Consultation", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "RDV", "dialog": "rdvJur"},
+        {"label": "Expertises", "href": "expertises.html"},
+        {"label": "Appeler", "href": "tel:0387759012"},
+    ], main_label="Actions cabinet")
     main += "</main>"
     return _shell_juridique(
         "index.html",
@@ -2599,36 +2617,45 @@ def _shell_architecture(page: str, title: str, desc: str, main: str) -> str:
 
 def build_architecture_index() -> str:
     main = "<main>"
-    main += block_hero_editorial(
-        "Conception durable à Metz",
-        "Réhabilitation, logements et équipements publics — ancrés en Lorraine.",
-        "hero.png",
-        "Atelier Nord-Est Metz",
-        eyebrow="Architecture · Grand Est",
+    main += """<section class="vt-arch-hero vt-reveal">
+  <div class="vt-arch-hero-bg" aria-hidden="true">
+    <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" alt="" decoding="async" fetchpriority="high"></picture>
+  </div>
+  <div class="container vt-arch-hero-copy">
+    <p class="vt-eyebrow mb-2">Architecture · Grand Est</p>
+    <h1 class="vt-display display-3 mb-3">Architecture sensible</h1>
+    <p class="lead mb-4">Rehabilitation, logements et equipements - ancrage lorrain, detail soigne.</p>
+    <div class="d-flex flex-wrap gap-2">
+      <a class="btn btn-vt-primary btn-lg" href="projets.html">Voir les projets</a>
+      <button type="button" class="btn btn-vt-outline btn-lg" data-vt-dialog-open="briefArch">Brief projet</button>
+    </div>
+  </div>
+</section>"""
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <p class="vt-eyebrow">Selection</p>
+    <h2 class="vt-section-title h3 mb-4">Realisations recentes</h2>
+    <div class="vt-arch-rail vt-reveal-stagger">
+      <article class="vt-arch-card"><picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" alt="Maison Jaumont" loading="lazy"></picture><div class="vt-arch-card-body"><h3 class="h6 mb-1">Maison Jaumont</h3><p class="small mb-0">Metz · 2023</p></div></article>
+      <article class="vt-arch-card"><picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" alt="Logements Laxou" loading="lazy"></picture><div class="vt-arch-card-body"><h3 class="h6 mb-1">Collectif Laxou</h3><p class="small mb-0">RE2020 · 2024</p></div></article>
+      <article class="vt-arch-card"><picture><source srcset="images/gallery-2.webp" type="image/webp"><img src="images/gallery-2.png" alt="Equipement Thionville" loading="lazy"></picture><div class="vt-arch-card-body"><h3 class="h6 mb-1">ERP Thionville</h3><p class="small mb-0">Bois &amp; verre</p></div></article>
+      <article class="vt-arch-card"><picture><source srcset="images/gallery-1.webp" type="image/webp"><img src="images/gallery-1.png" alt="Interieur" loading="lazy"></picture><div class="vt-arch-card-body"><h3 class="h6 mb-1">Interieur Sablon</h3><p class="small mb-0">Logement · 2024</p></div></article>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="briefArch",
+        title="Brief projet",
+        lead="Type de projet + localisation - on te repond sous 48 h (demo).",
+        primary_label="Envoyer",
         primary_href="contact.html",
-        primary_label="Brief projet",
-        secondary_href="projets.html",
-        secondary_label="Voir les projets",
+        fields_html='<div class="mb-2"><label class="form-label small">Type</label><select class="form-select"><option>Rehabilitation</option><option>Logement neuf</option><option>ERP / public</option></select></div><div class="mb-2"><label class="form-label small">Ville</label><input class="form-control" placeholder="Metz, Nancy..."></div>',
     )
-    main += block_stats(
-        [("85+", "projets livrés"), ("18 ans", "à Metz"), ("RE2020", "certifié"), ("12", "collaborateurs")],
-    )
-    main += block_bento_cards(AR_BENTO)
-    main += block_story(
-        "Pourquoi Atelier Nord-Est ?",
-        [
-            "Implanté à Metz depuis 2008, nous concevons des bâtiments durables adaptés au patrimoine lorrain.",
-            "Réhabilitation Jaumont, logements RE2020 et ERP bois — de l'esquisse à la réception.",
-        ],
-    )
-    main += block_compact_features(AR_COMPACT)
-    main += block_chapters(AR_CHAPTERS)
-    main += block_project_grid("Sélection projets", AR_PROJECTS, cta_href="projets.html", cta_label="Tous les projets")
-    main += block_trust(
-        "Ordre des architectes — accompagnement permis à réception.",
-        ["RE2020", "Patrimoine", "Bois", "Metz & Moselle"],
-    )
-    main += block_cta_band("Un projet à Metz ou en Moselle ?", "Brief projet", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Brief", "dialog": "briefArch"},
+        {"label": "Projets", "href": "projets.html"},
+        {"label": "Methode", "href": "methode.html"},
+    ], main_label="Actions atelier")
     main += "</main>"
     return _shell_architecture(
         "index.html",
@@ -3273,33 +3300,57 @@ def _shell_association(page: str, title: str, desc: str, main: str) -> str:
 
 def build_association_index() -> str:
     main = "<main>"
-    main += block_hero_overlay(
-        "Agir ensemble pour un territoire plus juste",
-        "Insertion professionnelle, aide alimentaire et accompagnement social — une ESS ancrée à Metz.",
-        "hero.png",
-        "Bénévoles Solidarités Metz Métropole",
-        eyebrow="ESS · Metz Métropole",
-        primary_href="contact.html",
-        primary_label="Faire un don",
-        secondary_href="benevolat.html",
-        secondary_label="Devenir bénévole",
-    )
-    main += block_stats([("120", "Bénévoles"), ("3 200", "Familles aidées"), ("45", "Salariés"), ("68 %", "Retour emploi")])
+    main += """<section class="vt-asso-hero vt-reveal">
+  <div class="container">
+    <div class="row g-4 g-xl-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">ESS · Metz Metropole</p>
+        <h1 class="vt-display display-4 mb-3">Agir pres de chez toi</h1>
+        <p class="lead mb-4">Aide alimentaire, insertion et accompagnement - une solidarite ancree en Moselle.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="donDialog">Faire un don</button>
+          <a class="btn btn-vt-outline btn-lg" href="benevolat.html">Devenir benevole</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-asso-hero-media mb-0">
+          <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" alt="Benevoles a Metz" decoding="async" fetchpriority="high"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += """<section class="vt-reveal py-4">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-lg-3"><article class="vt-asso-stat"><strong>3 200+</strong><span>Familles aidees</span></article></div>
+      <div class="col-6 col-lg-3"><article class="vt-asso-stat"><strong>120</strong><span>Benevoles</span></article></div>
+      <div class="col-6 col-lg-3"><article class="vt-asso-stat"><strong>12</strong><span>Communes</span></article></div>
+      <div class="col-6 col-lg-3"><article class="vt-asso-stat"><strong>68 %</strong><span>Retour emploi</span></article></div>
+    </div>
+  </div>
+</section>"""
     main += block_impact_goal(
         "Campagne 2026",
         "18 400 €",
         "25 500 €",
         72,
-        "72 % de l'objectif atteint — merci à nos 340 donateurs",
+        "72 % de l'objectif - merci a nos 340 donateurs",
     )
-    main += block_cards_bs("Nos trois piliers", ASS_CARDS)
-    main += block_stat_narrative_rows(ASS_NARRATIVE)
-    main += block_chapters(ASS_CHAPTERS)
-    main += block_trust(
-        "« Grâce au parcours insertion, j'ai retrouvé un CDI en trois mois. Une équipe humaine et exigeante. » — Marc D., 2025",
-        ["Utilité publique", "Transparence", "Mécénat", "Bénévolat"],
+    main += block_dialog_m3(
+        dialog_id="donDialog",
+        title="Faire un don",
+        lead="Montant libre - recu fiscal sous 48 h (demo).",
+        primary_label="Continuer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Montant</label><select class="form-select"><option>20 euro</option><option>50 euro</option><option>100 euro</option><option>Autre</option></select></div><div class="mb-2"><label class="form-label small">Email</label><input class="form-control" type="email"></div>',
     )
-    main += block_cta_band("Chaque geste compte.", "Je m'engage", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Donner", "dialog": "donDialog"},
+        {"label": "Actions", "href": "actions.html"},
+        {"label": "Benevolat", "href": "benevolat.html"},
+    ], main_label="Actions asso")
+    main += block_sticky_cta_m3("Ton don finance un panier cette semaine", "Donner", "contact.html", dialog="donDialog")
     main += "</main>"
     return _shell_association(
         "index.html",
@@ -3485,42 +3536,55 @@ def _shell_education(page: str, title: str, desc: str, main: str) -> str:
 
 def build_education_index() -> str:
     main = "<main>"
-    main += block_hero_technical(
-        "Compétences métiers à Thionville",
-        "Alternance, reconversion et titres certifiants — 1 200 apprenants accompagnés chaque année en Moselle.",
-        "hero.png",
-        "Campus Institut Mercure Thionville",
-        eyebrow="Formation professionnelle · Grand Est",
-        specs=[("1 200", "apprenants"), ("35", "parcours"), ("92 %", "insertion")],
+    main += """<section class="vt-edu-hero vt-reveal">
+  <div class="container">
+    <div class="row g-4 g-xl-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">Formation · Grand Est</p>
+        <h1 class="vt-display display-4 mb-3">Competences metiers a Thionville</h1>
+        <p class="lead mb-3">Alternance, reconversion et titres reconnus - un campus clair, un accompagnement concret.</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button type="button" class="vt-chip on">Digital</button>
+          <button type="button" class="vt-chip">Management</button>
+          <button type="button" class="vt-chip">Technique</button>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="inscEdu">S'inscrire</button>
+          <a class="btn btn-vt-outline btn-lg" href="parcours.html">Voir les parcours</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-edu-hero-media mb-0">
+          <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" alt="Campus Institut Mercure" decoding="async" fetchpriority="high"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <p class="vt-eyebrow">Formations phares</p>
+    <h2 class="vt-section-title h3 mb-4">Des parcours utiles, avec duree et prix clairs</h2>
+    <div class="row g-3 vt-reveal-stagger">
+      <div class="col-md-4"><article class="vt-course-card"><picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" alt="Developpeur web" loading="lazy"></picture><div class="vt-course-card-body"><h3 class="h6 mb-2">Developpeur web</h3><p class="small text-secondary mb-3">Alternance 12 mois - titre RNCP.</p><div class="vt-course-meta"><span>12 mois</span><strong>CPF</strong></div></div></article></div>
+      <div class="col-md-4"><article class="vt-course-card"><picture><source srcset="images/card-2.webp" type="image/webp"><img src="images/card-2.png" alt="BTS Management" loading="lazy"></picture><div class="vt-course-card-body"><h3 class="h6 mb-2">BTS Management</h3><p class="small text-secondary mb-3">2 ans - entreprise partenaire.</p><div class="vt-course-meta"><span>24 mois</span><strong>OPCO</strong></div></div></article></div>
+      <div class="col-md-4"><article class="vt-course-card"><picture><source srcset="images/card-3.webp" type="image/webp"><img src="images/card-3.png" alt="Comptabilite" loading="lazy"></picture><div class="vt-course-card-body"><h3 class="h6 mb-2">Comptabilite</h3><p class="small text-secondary mb-3">Titre pro - reconversion ciblee.</p><div class="vt-course-meta"><span>9 mois</span><strong>des 4 900 euro</strong></div></div></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="inscEdu",
+        title="Demande d'inscription",
+        lead="Orientation gratuite - on te rappelle sous 48 h (demo).",
+        primary_label="Envoyer",
         primary_href="contact.html",
-        primary_label="S'inscrire",
-        secondary_href="parcours.html",
-        secondary_label="Nos parcours",
+        fields_html='<div class="mb-2"><label class="form-label small">Parcours</label><select class="form-select"><option>Digital</option><option>Management</option><option>Technique</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
     )
-    main += block_credentials_strip([
-        ("Qualiopi", "Certification qualité"),
-        ("RNCP", "Titres reconnus"),
-        ("CPF", "Financement éligible"),
-        ("OPCO", "Prise en charge employeur"),
-    ])
-    main += block_service_tiles("Trois domaines d'excellence", [
-        {"title": "Digital", "items": ["Développeur web alternance", "Marketing digital", "Cybersécurité"], "hot": True},
-        {"title": "Management", "items": ["BTS Management 2 ans", "Titre pro RPE", "Gestion de projet"], "hot": False},
-        {"title": "Technique", "items": ["Comptabilité titre pro", "SST initiale", "VAE & bilan compétences"], "hot": False},
-    ])
-    main += block_cards_bs("Formations phares", EDU_CARDS)
-    main += block_process_flow("Parcours d'admission", [
-        ("Candidature", "Formulaire en ligne — réponse sous 48 h."),
-        ("Entretien", "Orientation gratuite avec un conseiller pédagogique."),
-        ("Inscription", "Montage du financement et calendrier de rentrée."),
-        ("Alternance", "Mise en relation avec 180 entreprises partenaires."),
-    ])
-    main += block_stat_narrative_rows(EDU_NARRATIVE)
-    main += block_trust(
-        "« J'ai obtenu mon titre développeur web en alternance — l'équipe m'a accompagné jusqu'à la signature du CDI. » — Lucas M., 2025",
-        ["Qualiopi", "Alternance", "CPF", "Insertion 92 %"],
-    )
-    main += block_cta_band("Parlons de votre projet à Thionville.", "S'inscrire", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "S'inscrire", "dialog": "inscEdu"},
+        {"label": "Parcours", "href": "parcours.html"},
+        {"label": "Campus", "href": "campus.html"},
+    ], main_label="Actions campus")
     main += "</main>"
     return _shell_education(
         "index.html",
@@ -3729,42 +3793,54 @@ def _shell_services(page: str, title: str, desc: str, main: str) -> str:
 
 def build_services_index() -> str:
     main = "<main>"
-    main += block_hero_overlay(
-        "Facility management pour immeubles tertiaires",
-        "Maintenance, accueil et conciergerie — un interlocuteur unique pour vos sites en Lorraine.",
-        "hero.png",
-        "Hall d'accueil Proprio Facility Metz",
-        eyebrow="FM · Metz & Grand Est",
+    main += """<section class="vt-svc-hero vt-reveal">
+  <div class="container">
+    <div class="row g-4 g-xl-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">FM · Metz &amp; Grand Est</p>
+        <h1 class="vt-display display-4 mb-3">Un site qui tourne, sans friction</h1>
+        <p class="lead mb-4">Maintenance, accueil et conciergerie - un interlocuteur unique pour tes immeubles tertiaires.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="devisFm">Demander un devis</button>
+          <a class="btn btn-vt-outline btn-lg" href="tel:0387654321">Appeler</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <figure class="vt-svc-hero-media mb-0">
+          <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.png" alt="Hall Proprio Facility" decoding="async" fetchpriority="high"></picture>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <p class="vt-eyebrow">Services</p>
+    <h2 class="vt-section-title h3 mb-4">Trois piliers, un seul partenaire</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><article class="vt-svc-tile-m3"><h3 class="h6">Maintenance</h3><p class="small text-secondary mb-0">CVC, electricite, GMAO et astreinte 24/7.</p></article></div>
+      <div class="col-md-4"><article class="vt-svc-tile-m3"><h3 class="h6">Accueil</h3><p class="small text-secondary mb-0">Standard, visiteurs, courrier et colis.</p></article></div>
+      <div class="col-md-4"><article class="vt-svc-tile-m3"><h3 class="h6">Conciergerie</h3><p class="small text-secondary mb-0">Services occupants et evenementiel sur site.</p></article></div>
+    </div>
+    <div class="vt-trust-row mt-4 d-flex flex-wrap gap-3 justify-content-between align-items-center">
+      <span class="small fw-semibold">ISO 9001 · 200+ sites · SLA 98 %</span>
+      <a class="btn btn-sm btn-vt-outline" href="offres.html">Voir les offres</a>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="devisFm",
+        title="Demande de devis",
+        lead="Surface + ville - reponse sous 5 jours (demo).",
+        primary_label="Envoyer",
         primary_href="contact.html",
-        primary_label="Demander un devis",
-        secondary_href="offres.html",
-        secondary_label="Nos offres",
+        fields_html='<div class="mb-2"><label class="form-label small">Surface (m2)</label><input class="form-control" type="number" placeholder="2500"></div><div class="mb-2"><label class="form-label small">Ville</label><input class="form-control" placeholder="Metz, Nancy..."></div>',
     )
-    main += block_stats([("200+", "Sites"), ("24/7", "Astreinte"), ("ISO", "9001"), ("98 %", "SLA tenus")])
-    main += block_service_tiles("Trois piliers FM", [
-        {"title": "Maintenance", "items": ["CVC & électricité", "GMAO intégrée", "Astreinte 24/7"], "hot": True},
-        {"title": "Accueil", "items": ["Standard téléphonique", "Gestion visiteurs", "Courrier & colis"], "hot": False},
-        {"title": "Conciergerie", "items": ["Services occupants", "Événementiel", "Reprographie"], "hot": False},
-    ])
-    main += block_bento_cards(SV_BENTO)
-    main += block_process_flow("De l'audit à l'exploitation", [
-        ("Audit", "Visite site et cartographie des besoins."),
-        ("Proposition", "SLA, budget et planning sous 5 jours."),
-        ("Démarrage", "Équipes, GMAO et procédures qualité."),
-        ("Pilotage", "Reporting KPI et comité de suivi mensuel."),
-    ])
-    main += block_cert_strip([
-        ("ISO", "9001:2015", "Management qualité"),
-        ("ISO", "14001", "Environnement"),
-        ("24/7", "Astreinte", "Intervention < 2 h"),
-        ("Qualibat", "FM", "Facility management"),
-    ])
-    main += block_cards_bs("Nos expertises", SV_CARDS)
-    main += block_trust(
-        "« Proprio Facility a unifié la gestion de nos 4 immeubles à Metz — réactivité et transparence au quotidien. » — Sophie L., property manager",
-        ["ISO 9001", "200+ sites", "Astreinte 24/7", "Grand Est"],
-    )
-    main += block_cta_band("Parlons de votre portefeuille à Metz.", "Demander un devis", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Devis", "dialog": "devisFm"},
+        {"label": "Offres", "href": "offres.html"},
+        {"label": "Appeler", "href": "tel:0387654321"},
+    ], main_label="Actions FM")
     main += "</main>"
     return _shell_services(
         "index.html",
@@ -4166,30 +4242,56 @@ def _shell_technologie(page: str, title: str, desc: str, main: str) -> str:
 
 def build_technologie_index() -> str:
     main = "<main>"
-    main += block_hero_tech_glow(
-        "La plateforme data des industriels lorrains",
-        "Centralisez, analysez et partagez vos données — POC en 48 h, hébergement France.",
-        "hero.png",
-        "Bureaux Synapse Lorraine Metz",
-        eyebrow="Éditeur B2B · Metz",
-        specs=[("45", "clients"), ("99.9%", "SLA"), ("48 h", "POC"), ("RGPD", "natif")],
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <div class="row g-4 g-xl-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">Editeur B2B · Metz</p>
+        <h1 class="vt-display display-4 mb-3">La data industrielle, claire</h1>
+        <p class="lead mb-4">Centralise, analyse et partage tes donnees - POC en 48 h, hebergement France.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="demoTech">Demander une demo</button>
+          <a class="btn btn-vt-outline btn-lg" href="produit.html">Voir le produit</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="vt-tech-dash" aria-hidden="true">
+          <div class="d-flex justify-content-between small mb-3"><span class="text-secondary">Synapse · live</span><span style="color:var(--vt-cyan)">99.9% SLA</span></div>
+          <div class="bar" style="width:92%"></div>
+          <div class="bar" style="width:74%"></div>
+          <div class="bar" style="width:86%"></div>
+          <div class="bar" style="width:61%"></div>
+          <p class="small text-secondary mb-0 mt-3">Pipelines · OEE · alertes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_marquee_m3(["Renault", "ArcelorMittal", "Fives", "Safran", "GE Healthcare", "Michelin"])
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <p class="vt-eyebrow">Produit</p>
+    <h2 class="vt-section-title h3 mb-4">Trois briques, une stack</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><article class="vt-tech-feat"><h3 class="h6">Ingestion</h3><p class="small text-secondary mb-0">50+ sources, streaming IoT et ERP.</p></article></div>
+      <div class="col-md-4"><article class="vt-tech-feat"><h3 class="h6">Gouvernance</h3><p class="small text-secondary mb-0">Catalogue, qualite, droits et audit.</p></article></div>
+      <div class="col-md-4"><article class="vt-tech-feat"><h3 class="h6">Activation</h3><p class="small text-secondary mb-0">Dashboards metier et API sortantes.</p></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="demoTech",
+        title="Demander une demo",
+        lead="Atelier 2 h avec tes echantillons - on te recontacte (demo).",
+        primary_label="Reserver",
         primary_href="contact.html",
-        primary_label="Demander une démo",
-        secondary_href="produit.html",
-        secondary_label="Voir le produit",
+        fields_html='<div class="mb-2"><label class="form-label small">Societe</label><input class="form-control"></div><div class="mb-2"><label class="form-label small">Email pro</label><input class="form-control" type="email"></div>',
     )
-    main += block_marquee_strip(["Renault", "ArcelorMittal", "Fives", "Safran", "GE Healthcare", "Michelin"])
-    main += block_stats([("45", "Clients"), ("12", "Connecteurs"), ("99.9%", "SLA"), ("48 h", "POC")])
-    main += block_feature_tabs("Trois piliers produit", TE_TABS)
-    main += block_cards_bs("Modules phares", TE_CARDS)
-    main += block_process_flow("De la démo au déploiement", [
-        ("Découverte", "Atelier 2 h avec vos données d'exemple."),
-        ("POC", "Environnement dédié sous 48 h."),
-        ("Pilote", "1 site industriel — 4 à 8 semaines."),
-        ("Scale", "Multi-sites et gouvernance DSI."),
-    ])
-    main += block_trust("Éditeur lorrain — équipe support à Metz, hébergement souverain possible.", ["RGPD", "API REST", "On-prem", "Support FR"])
-    main += block_cta_band("Prêt pour une démo personnalisée ?", "Réserver", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Demo", "dialog": "demoTech"},
+        {"label": "Produit", "href": "produit.html"},
+        {"label": "Clients", "href": "clients.html"},
+    ], main_label="Actions Synapse")
     main += "</main>"
     return _shell_technologie("index.html", f"{TE_BRAND} — Data industrielle Metz", "Plateforme data B2B à Metz pour DSI et industriels du Grand Est.", main)
 
@@ -4284,28 +4386,65 @@ def _shell_saas_landing(page: str, title: str, desc: str, main: str) -> str:
     nav = _chrome_nav("saas-landing", FM_BRAND, FM_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
     foot = _chrome_foot("saas-landing", FM_BRAND, phone="", address="SaaS · Hébergé en France", email=FM_EMAIL, maps_href="#", nav_links=FM_FOOTER_NAV, hours_line="Support chat 9h–18h")
     mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
-    return wrap_page_saas(title, desc, nav + main + foot + mobile, layout="saas-landing", slug="saas-landing", page=page, site_name=FM_BRAND, nav=FM_NAV, brand=FM_BRAND, brand_desc="SaaS analytics pour equipes produit")
+    return wrap_page_saas(
+        title, desc, nav + main + foot + mobile,
+        layout="saas-landing", slug="saas-landing", page=page, site_name=FM_BRAND, nav=FM_NAV,
+        brand=FM_BRAND, brand_desc="SaaS analytics pour equipes produit",
+        head_assets=HEAD_SAAS, body_class="vt-body vt-body-saas-landing",
+    )
 
 
 def build_saas_landing_index() -> str:
     main = "<main>"
-    main += block_hero_saas_product(
-        "Transformez vos données en décisions",
-        "Analytics produit sans SQL — funnels, rétention et activation pour équipes lean.",
-        "hero.png",
-        "Interface FlowMetrics",
-        eyebrow="SaaS · Analytics produit",
+    main += """<section class="vt-saas-hero vt-reveal">
+  <div class="container">
+    <div class="row g-4 g-xl-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">SaaS · Analytics produit</p>
+        <h1 class="vt-display display-4 mb-3">Tes donnees, des decisions claires</h1>
+        <p class="lead mb-4">Funnels, retention et activation - sans SQL, pour equipes lean.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="essaiFm">Essai gratuit 14 j</button>
+          <a class="btn btn-vt-outline btn-lg" href="fonctionnalites.html">Fonctionnalites</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="vt-saas-mock" aria-hidden="true">
+          <div class="d-flex justify-content-between small mb-3"><span class="text-secondary">FlowMetrics</span><span style="color:var(--vt-teal)">live</span></div>
+          <div class="bar" style="width:88%"></div>
+          <div class="bar" style="width:72%"></div>
+          <div class="bar" style="width:64%"></div>
+          <p class="small text-secondary mb-0 mt-2">Activation · retention · alertes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_marquee_m3(["Product Hunt", "RGPD", "SOC 2", "API REST", "Slack", "Segment"])
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <p class="vt-eyebrow">Tarifs</p>
+    <h2 class="vt-section-title h3 mb-4">Des plans qui scalent avec toi</h2>
+    <div class="row g-3">
+      <div class="col-md-4"><article class="vt-saas-price"><h3 class="h6">Starter</h3><p class="h4 mb-2">49 euro/mois</p><p class="small text-secondary mb-0">3 users · dashboards · export CSV</p></article></div>
+      <div class="col-md-4"><article class="vt-saas-price hot"><h3 class="h6">Growth</h3><p class="h4 mb-2">149 euro/mois</p><p class="small text-secondary mb-0">15 users · funnels · alertes Slack</p></article></div>
+      <div class="col-md-4"><article class="vt-saas-price"><h3 class="h6">Enterprise</h3><p class="h4 mb-2">Sur devis</p><p class="small text-secondary mb-0">SSO · VPC · SLA 99.9 %</p></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="essaiFm",
+        title="Essai gratuit 14 jours",
+        lead="Sans carte bancaire - on te cree un espace demo.",
+        primary_label="Demarrer",
         primary_href="contact.html",
-        primary_label="Essai gratuit 14 jours",
-        secondary_href="fonctionnalites.html",
-        secondary_label="Fonctionnalités",
+        fields_html='<div class="mb-2"><label class="form-label small">Email pro</label><input class="form-control" type="email"></div><div class="mb-2"><label class="form-label small">Societe</label><input class="form-control"></div>',
     )
-    main += block_marquee_strip(["Product Hunt", "RGPD", "SOC 2", "API REST", "Slack", "Segment"])
-    main += block_stats([("2 400", "Équipes"), ("14 j", "Essai"), ("< 5 min", "Setup"), ("4.8", "Note G2")])
-    main += block_feature_tabs("Tout pour shipper plus vite", FM_TABS)
-    main += block_pricing_tiers("Tarifs transparents", FM_PRICING)
-    main += block_trust("« En deux semaines, toute l'équipe produit lit les mêmes KPI. » — Lead PM, scale-up Nancy", ["RGPD", "Sans CB", "Export", "SSO"])
-    main += block_cta_band("Démarrez gratuitement — sans carte bancaire.", "Essai gratuit", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Essai", "dialog": "essaiFm"},
+        {"label": "Tarifs", "href": "tarifs.html"},
+        {"label": "Features", "href": "fonctionnalites.html"},
+    ], main_label="Actions FlowMetrics")
     main += "</main>"
     return _shell_saas_landing("index.html", f"{FM_BRAND} — Analytics produit", "Landing SaaS analytics — funnels, rétention et activation.", main)
 
@@ -4394,25 +4533,47 @@ def _shell_saas_onboarding(page: str, title: str, desc: str, main: str) -> str:
     nav = _chrome_nav("saas-onboarding", TL_BRAND, TL_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
     foot = _chrome_foot("saas-onboarding", TL_BRAND, phone="", address="SaaS RH · Hébergé en France", email=TL_EMAIL, maps_href="#", nav_links=TL_FOOTER_NAV, hours_line="Support chat 9h–18h")
     mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
-    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-onboarding", slug="saas-onboarding", page=page, site_name=TL_BRAND, nav=TL_NAV, brand=TL_BRAND, brand_desc="Onboarding RH en 4 etapes")
+    return wrap_page_saas(
+        title, desc, nav + main + foot + mobile,
+        layout="saas-onboarding", slug="saas-onboarding", page=page, site_name=TL_BRAND, nav=TL_NAV,
+        brand=TL_BRAND, brand_desc="Onboarding RH en 4 etapes",
+        head_assets=HEAD_SAAS_ONBOARDING, body_class="vt-body vt-body-saas-onboarding",
+    )
 
 
 def build_saas_onboarding_index() -> str:
     main = "<main>"
-    main += block_hero_saas_product(
-        "Onboarding RH en 4 étapes",
-        "Réduisez l'abandon à l'inscription — copy orienté valeur et chemin balisé vers le aha moment.",
-        "hero.png", "TalentLoop accueil",
-        eyebrow="SaaS · Onboarding RH",
-        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
-        secondary_href="parcours.html", secondary_label="Voir le parcours",
+    main += """<section class="vt-saas-hero vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow mb-2">SaaS · Onboarding RH</p>
+    <h1 class="vt-display display-4 mb-3">Onboarding RH en 4 etapes</h1>
+    <p class="lead mb-4">Moins d'abandon a l'inscription - un chemin clair jusqu'au aha moment.</p>
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="essaiTl">Essai gratuit 14 j</button>
+      <a class="btn btn-vt-outline btn-lg" href="parcours.html">Voir le parcours</a>
+    </div>
+    <div class="vt-step-rail vt-reveal-stagger">
+      <article class="vt-step-card"><span>1</span><h3 class="h6 mt-2 mb-1">Profil</h3><p class="small text-secondary mb-0">30 s - nom, poste, arrivee.</p></article>
+      <article class="vt-step-card"><span>2</span><h3 class="h6 mt-2 mb-1">Buddy</h3><p class="small text-secondary mb-0">Un contact humain assigne.</p></article>
+      <article class="vt-step-card"><span>3</span><h3 class="h6 mt-2 mb-1">Outils</h3><p class="small text-secondary mb-0">SIRH, messagerie, acces IT.</p></article>
+      <article class="vt-step-card"><span>4</span><h3 class="h6 mt-2 mb-1">Mission</h3><p class="small text-secondary mb-0">Premiere checklist claire.</p></article>
+    </div>
+  </div>
+</section>"""
+    main += block_marquee_m3(["PayFit", "Lucca", "RGPD", "SSO", "Teams", "Slack"])
+    main += block_dialog_m3(
+        dialog_id="essaiTl",
+        title="Essai gratuit 14 jours",
+        lead="Sans carte - on te prepare un parcours demo RH.",
+        primary_label="Demarrer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Email RH</label><input class="form-control" type="email"></div><div class="mb-2"><label class="form-label small">Effectif</label><select class="form-select"><option>1-20</option><option>21-100</option><option>100+</option></select></div>',
     )
-    main += block_marquee_strip(["PayFit", "Lucca", "RGPD", "SSO", "Teams", "Slack"])
-    main += block_progress_wizard("Parcours interactif", TL_WIZARD)
-    main += block_stats([("−42 %", "Abandon"), ("4", "Étapes"), ("< 8 min", "Time-to-value"), ("98 %", "Satisfaction")])
-    main += block_feature_tabs("Tout pour intégrer plus vite", TL_TABS)
-    main += block_snap_chapters(TL_CHAPTERS)
-    main += block_cta_band("Démarrez gratuitement — sans carte bancaire.", "Essai gratuit", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Essai", "dialog": "essaiTl"},
+        {"label": "Parcours", "href": "parcours.html"},
+        {"label": "Features", "href": "fonctionnalites.html"},
+    ], main_label="Actions TalentLoop")
     main += "</main>"
     return _shell_saas_onboarding("index.html", f"{TL_BRAND} — Onboarding RH", "Onboarding RH TalentLoop — parcours en 4 étapes avec barre de progression.", main)
 
@@ -4512,30 +4673,47 @@ def _shell_saas_dashboard(page: str, title: str, desc: str, main: str) -> str:
     nav = _chrome_nav("saas-dashboard", MD_BRAND, MD_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
     foot = _chrome_foot("saas-dashboard", MD_BRAND, phone="", address="SaaS analytics · Hébergé en France", email=MD_EMAIL, maps_href="#", nav_links=MD_FOOTER_NAV, hours_line="Support chat 9h–18h")
     mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
-    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-dashboard", slug="saas-dashboard", page=page, site_name=MD_BRAND, nav=MD_NAV, brand=MD_BRAND, brand_desc="Dashboard activation produit")
+    return wrap_page_saas(
+        title, desc, nav + main + foot + mobile,
+        layout="saas-dashboard", slug="saas-dashboard", page=page, site_name=MD_BRAND, nav=MD_NAV,
+        brand=MD_BRAND, brand_desc="Dashboard activation produit",
+        head_assets=HEAD_SAAS_DASHBOARD, body_class="vt-body vt-body-saas-dashboard",
+    )
 
 
 def build_saas_dashboard_index() -> str:
     main = "<main>"
-    main += block_hero_saas_product(
-        "Dashboard activation en temps réel",
-        "KPIs time-to-value, funnel onboarding et événements récents — une sidebar par intention.",
-        "hero.png", "MetricPulse dashboard",
-        eyebrow="SaaS · Activation produit",
-        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
-        secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités",
+    main += """<section class="vt-saas-hero vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow mb-2">SaaS · Activation produit</p>
+    <h1 class="vt-display display-4 mb-3">Dashboard activation, live</h1>
+    <p class="lead mb-4">KPIs time-to-value, funnel et evenements - une vue par intention.</p>
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="essaiMd">Essai gratuit 14 j</button>
+      <a class="btn btn-vt-outline btn-lg" href="fonctionnalites.html">Fonctionnalites</a>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-lg-3"><article class="vt-kpi-card"><strong>2,4 j</strong><span>Time-to-value</span></article></div>
+      <div class="col-6 col-lg-3"><article class="vt-kpi-card"><strong>+18 %</strong><span>Activation</span></article></div>
+      <div class="col-6 col-lg-3"><article class="vt-kpi-card"><strong>61 %</strong><span>Funnel J7</span></article></div>
+      <div class="col-6 col-lg-3"><article class="vt-kpi-card"><strong>99.9 %</strong><span>SLA</span></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_marquee_m3(["Segment", "Mixpanel", "Slack", "API REST", "SOC 2", "RGPD"])
+    main += block_dialog_m3(
+        dialog_id="essaiMd",
+        title="Essai gratuit 14 jours",
+        lead="Sans CB - dashboard demo avec tes KPI fictifs.",
+        primary_label="Demarrer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Email pro</label><input class="form-control" type="email"></div>',
     )
-    main += block_kpi_grid("Métriques live", MD_KPIS)
-    main += block_marquee_strip(["Segment", "Mixpanel", "Slack", "API REST", "SOC 2", "RGPD"])
-    main += block_feature_tabs("Navigation par intention", MD_TABS)
-    main += block_process_flow("De l'event à l'insight", [
-        ("Collecte", "SDK JS, mobile et server-side."),
-        ("Agrégation", "Funnels et cohortes automatiques."),
-        ("Alerte", "Seuils et anomalies — Slack, email."),
-        ("Action", "Workflows déclenchés sans code."),
-    ])
-    main += block_trust("« En une semaine, on a identifié le goulot d'étranglement onboarding. » — Head of Product, Nancy", ["RGPD", "Sans CB", "Export", "SSO"])
-    main += block_cta_band("Démarrez gratuitement.", "Essai gratuit", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Essai", "dialog": "essaiMd"},
+        {"label": "Features", "href": "fonctionnalites.html"},
+        {"label": "Tarifs", "href": "tarifs.html"},
+    ], main_label="Actions MetricPulse")
     main += "</main>"
     return _shell_saas_dashboard("index.html", f"{MD_BRAND} — Dashboard activation", "Dashboard produit MetricPulse — KPIs activation et funnel onboarding.", main)
 
@@ -4624,35 +4802,44 @@ def _shell_saas_empty(page: str, title: str, desc: str, main: str) -> str:
     nav = _chrome_nav("saas-empty", QB_BRAND, QB_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
     foot = _chrome_foot("saas-empty", QB_BRAND, phone="", address="SaaS data · Hébergé en France", email=QB_EMAIL, maps_href="#", nav_links=QB_FOOTER_NAV, hours_line="Support chat 9h–18h")
     mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
-    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-empty", slug="saas-empty", page=page, site_name=QB_BRAND, nav=QB_NAV, brand=QB_BRAND, brand_desc="Empty states et recherche intelligente")
+    return wrap_page_saas(
+        title, desc, nav + main + foot + mobile,
+        layout="saas-empty", slug="saas-empty", page=page, site_name=QB_BRAND, nav=QB_NAV,
+        brand=QB_BRAND, brand_desc="Empty states et recherche intelligente",
+        head_assets=HEAD_SAAS_EMPTY, body_class="vt-body vt-body-saas-empty",
+    )
 
 
 def build_saas_empty_index() -> str:
     main = "<main>"
-    main += block_hero_saas_product(
-        "Zéro impasse pour vos utilisateurs",
-        "Recherche sans résultat ? Suggestions, correcteur d'intention et vote roadmap — jamais un mur blanc.",
-        "hero.png", "QueryBase recherche",
-        eyebrow="SaaS · Empty states",
-        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
-        secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités",
+    main += """<section class="vt-saas-hero vt-reveal">
+  <div class="container">
+    <p class="vt-eyebrow mb-2">SaaS · Empty states</p>
+    <h1 class="vt-display display-4 mb-3">Zero impasse pour tes users</h1>
+    <p class="lead mb-4">Recherche vide ? Suggestions, correcteur et vote roadmap - jamais un mur blanc.</p>
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="essaiQb">Essai gratuit 14 j</button>
+      <a class="btn btn-vt-outline btn-lg" href="fonctionnalites.html">Fonctionnalites</a>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6"><article class="vt-morph-card"><span class="tag">Avant</span><h3 class="h6">Recherche vide</h3><p class="small text-secondary mb-0">User perdu, churn silencieux.</p></article></div>
+      <div class="col-md-6"><article class="vt-morph-card after"><span class="tag">Apres</span><h3 class="h6">Suggestions utiles</h3><p class="small text-secondary mb-0">CTA clair, signal produit capture.</p></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="essaiQb",
+        title="Essai gratuit 14 jours",
+        lead="Sans CB - empty states demo dans ton projet.",
+        primary_label="Demarrer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Email pro</label><input class="form-control" type="email"></div>',
     )
-    main += block_state_morph("Avant / après QueryBase", {
-        "title": "Avant — données éparpillées",
-        "text": "Recherche vide, utilisateur perdu, churn silencieux.",
-        "img": "card-1.png", "alt": "Avant",
-    }, {
-        "title": "Après — données unifiées",
-        "text": "Suggestions pertinentes, CTA clair, signal produit capturé.",
-        "img": "card-3.png", "alt": "Après",
-    })
-    main += block_feature_tabs("Patterns UX éprouvés", QB_TABS)
-    main += block_comparison_table("Impact mesurable", [
-        ("Taux rebond recherche", "68 %", "12 %"),
-        ("Tickets support", "Élevé", "−45 %"),
-        ("Signaux produit", "Aucun", "Roadmap alimentée"),
-    ])
-    main += block_cta_band("Transformez l'échec en opportunité.", "Essai gratuit", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Essai", "dialog": "essaiQb"},
+        {"label": "Features", "href": "fonctionnalites.html"},
+        {"label": "Tarifs", "href": "tarifs.html"},
+    ], main_label="Actions QueryBase")
     main += "</main>"
     return _shell_saas_empty("index.html", f"{QB_BRAND} — Empty states", "QueryBase — recherche intelligente et empty states orientés action.", main)
 
@@ -4741,25 +4928,52 @@ def _shell_saas_notifications(page: str, title: str, desc: str, main: str) -> st
     nav = _chrome_nav("saas-notifications", PF_BRAND, PF_NAV, page, cta_label="Essai gratuit", cta_href="contact.html")
     foot = _chrome_foot("saas-notifications", PF_BRAND, phone="", address="SaaS notifications · Hébergé en France", email=PF_EMAIL, maps_href="#", nav_links=PF_FOOTER_NAV, hours_line="Support chat 9h–18h")
     mobile = block_mobile_cta("Essai gratuit", "contact.html", "")
-    return wrap_page_saas(title, desc, block_motion_progress() + nav + main + foot + mobile, layout="saas-notifications", slug="saas-notifications", page=page, site_name=PF_BRAND, nav=PF_NAV, brand=PF_BRAND, brand_desc="Centre notifications in-app")
+    return wrap_page_saas(
+        title, desc, nav + main + foot + mobile,
+        layout="saas-notifications", slug="saas-notifications", page=page, site_name=PF_BRAND, nav=PF_NAV,
+        brand=PF_BRAND, brand_desc="Centre notifications in-app",
+        head_assets=HEAD_SAAS_NOTIFICATIONS, body_class="vt-body vt-body-saas-notifications",
+    )
 
 
 def build_saas_notifications_index() -> str:
     main = "<main>"
-    main += block_hero_saas_product(
-        "Notifications qui respectent l'attention",
-        "Hiérarchie claire, actions requises en avant et préférences granulaires anti-spam.",
-        "hero.png", "PingFlow notifications",
-        eyebrow="SaaS · Notifications in-app",
-        primary_href="contact.html", primary_label="Essai gratuit 14 jours",
-        secondary_href="fonctionnalites.html", secondary_label="Fonctionnalités",
+    main += """<section class="vt-saas-hero vt-reveal">
+  <div class="container">
+    <div class="row g-4 g-xl-5 align-items-start">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow mb-2">SaaS · Notifications in-app</p>
+        <h1 class="vt-display display-4 mb-3">Des notifs qui respectent l'attention</h1>
+        <p class="lead mb-4">Hierarchie claire, actions en avant, preferences anti-spam.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="essaiPf">Essai gratuit 14 j</button>
+          <a class="btn btn-vt-outline btn-lg" href="fonctionnalites.html">Fonctionnalites</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="d-flex flex-column gap-2">
+          <article class="vt-notif-card urgent"><div class="meta"><span class="badge-u">Action requise</span><span>Il y a 5 min</span></div><strong class="d-block">Valider la release v2.4</strong><p class="small text-secondary mb-0">3 reviewers en attente.</p></article>
+          <article class="vt-notif-card"><div class="meta"><span>Equipe</span><span>Il y a 1 h</span></div><strong class="d-block">Marie a commente le brief</strong><p class="small text-secondary mb-0">Nouveau message sur le dashboard Q2.</p></article>
+          <article class="vt-notif-card"><div class="meta"><span>Produit</span><span>Il y a 3 h</span></div><strong class="d-block">Nouveau connecteur Slack</strong><p class="small text-secondary mb-0">Dispo dans les integrations.</p></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_marquee_m3(["Slack", "Email", "Webhooks", "RGPD", "SOC 2", "API"])
+    main += block_dialog_m3(
+        dialog_id="essaiPf",
+        title="Essai gratuit 14 jours",
+        lead="Sans CB - inbox demo avec routing inclus.",
+        primary_label="Demarrer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Email pro</label><input class="form-control" type="email"></div>',
     )
-    main += block_notification_feed("Flux en temps réel", PF_NOTIFS)
-    main += block_stats([("−60 %", "Spam perçu"), ("3", "Canaux"), ("< 1 s", "Latence"), ("4.9", "Note G2")])
-    main += block_feature_tabs("Tout pour informer sans noyer", PF_TABS)
-    main += block_marquee_strip(["Slack", "Email", "Webhooks", "RGPD", "SOC 2", "API"])
-    main += block_trust("« Enfin des notifications utiles — plus de bruit inutile. » — CTO, scale-up Metz", ["RGPD", "Sans CB", "Préférences", "SSO"])
-    main += block_cta_band("Démarrez gratuitement.", "Essai gratuit", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Essai", "dialog": "essaiPf"},
+        {"label": "Features", "href": "fonctionnalites.html"},
+        {"label": "Tarifs", "href": "tarifs.html"},
+    ], main_label="Actions PingFlow")
     main += "</main>"
     return _shell_saas_notifications("index.html", f"{PF_BRAND} — Notifications in-app", "PingFlow — centre de notifications hiérarchisé et actionnable.", main)
 
@@ -4951,6 +5165,7 @@ BUILDERS = {
         ("contact.html", build_saas_notifications_contact),
     ],
 }
+BUILDERS.update(BUILDERS_EXTRA)
 
 
 def main() -> None:
