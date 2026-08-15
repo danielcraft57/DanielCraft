@@ -71,6 +71,47 @@ from vitrine_site_blocks import (
     wrap_page_spa,
 )
 from vitrine_layouts import (
+    block_assist_chips,
+    block_booking_strip,
+    block_slot_card,
+    block_spa_fab,
+    block_spa_m3_hero,
+    block_spa_m3_nav,
+    block_spa_m3_phares,
+    block_garage_m3_hero,
+    block_garage_m3_local,
+    block_garage_m3_nav,
+    block_garage_m3_stats,
+    block_phone_fab,
+    block_immo_m3_hero,
+    block_immo_m3_listings,
+    block_immo_m3_nav,
+    block_immo_m3_search,
+    block_photo_m3_nav,
+    block_photo_m3_masonry,
+    block_photo_toast,
+    block_plus_fab,
+    block_hotel_m3_nav,
+    block_hotel_m3_hero,
+    block_hotel_m3_booking,
+    block_hotel_m3_rooms,
+    block_dialog_m3,
+    block_fab_menu_m3,
+    block_friction_m3,
+    block_health_booking_hero_m3,
+    block_health_stats_m3,
+    block_journey_m3,
+    block_marquee_m3,
+    block_menu_h_cards_m3,
+    block_motives_m3,
+    block_nav_rail_m3,
+    block_photo_chapters_m3,
+    block_pill_appbar_m3,
+    block_rail_topbar_m3,
+    block_reviews_m3,
+    block_snackbar_m3,
+    block_sticky_cta_m3,
+    block_surface_band_m3,
     block_bento_cards,
     block_compact_features,
     block_comparison_table,
@@ -192,50 +233,131 @@ MENU_SECTIONS = [
 
 
 def _shell(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Ouvert aujourd'hui · Mar–sam", address=ADDRESS, phone=PHONE, maps_href=MAPS)
-    nav = _chrome_nav("restauration", BRAND, NAV, page, cta_label="Réserver", cta_href="contact.html")
+    rail = block_nav_rail_m3(
+        BRAND,
+        NAV,
+        page,
+        hours="Ouvert aujourd'hui 12:00 - 14:30, 19:00 - 23:00",
+        address=ADDRESS,
+        phone=PHONE,
+        tagline="Metz · depuis 1924",
+    )
+    top = block_rail_topbar_m3(
+        search_placeholder="Reserver une table",
+        cta_label="Reserver",
+        cta_dialog="resaDialog" if page == "index.html" else "",
+        cta_href="contact.html",
+    )
+    # Modale resa aussi sur les pages internes (bouton topbar / FAB)
+    if page != "index.html":
+        main += block_dialog_m3(
+            dialog_id="resaDialog",
+            title="Reserver une table",
+            lead="Dis-nous le jour, l'heure et le nombre - on te repond sous 1 h (demo).",
+            primary_label="Envoyer la demande",
+            primary_href="contact.html",
+            fields_html="""<div class="row g-2">
+      <div class="col-6"><label class="form-label small">Date</label><input type="date" class="form-control"></div>
+      <div class="col-6"><label class="form-label small">Heure</label><input type="time" class="form-control" value="19:30"></div>
+      <div class="col-12"><label class="form-label small">Convives</label><input type="number" class="form-control" value="2" min="1" max="12"></div>
+    </div>""",
+        )
+        main += block_fab_menu_m3(
+            [
+                {"label": "Reserver", "dialog": "resaDialog"},
+                {"label": "La carte", "href": "carte.html"},
+                {"label": "Appeler", "href": "tel:0387751234"},
+            ],
+            main_label="Actions brasserie",
+        )
     foot = _chrome_foot("restauration", BRAND, phone=PHONE, address=ADDRESS)
     mobile = block_mobile_cta("Réserver", "contact.html", PHONE)
-    return wrap_page(title, desc, bar + nav + main + foot + mobile, slug="restauration", page=page, site_name=BRAND, nav=NAV)
+    body = f'<div class="vt-rail-shell">{rail}<div class="vt-rail-main">{top}{main}{foot}{mobile}</div></div>'
+    return wrap_page(title, desc, body, slug="restauration", page=page, site_name=BRAND, nav=NAV)
 
 
 def build_index() -> str:
     main = "<main>"
-    main += block_hero_rich(
-        "La table qui réchauffe Metz depuis 1924",
-        "Terrasse sur la place, mijotés au feu de bois et carte des vins mosellans.",
-        "hero.png",
-        "Salle de brasserie chaleureuse avec verrière à Metz",
-        eyebrow="Bienvenue à la brasserie",
+    main += """<section class="vt-br-hero vt-br-hero--bleed vt-reveal">
+  <div class="vt-br-hero-bg" aria-hidden="true">
+    <picture><source srcset="images/card-1.webp" type="image/webp"><img src="images/card-1.png" alt="" decoding="async" fetchpriority="high"></picture>
+  </div>
+  <div class="container vt-br-hero-copy">
+    <p class="vt-eyebrow text-uppercase mb-2">Brasserie · Metz · depuis 1924</p>
+    <h1 class="vt-display display-4 mb-3">Cuisine de saison &amp; partage</h1>
+    <p class="lead mb-4">Terrasse face a la cathedrale, mijotes au feu de bois, vins mosellans - sans usine a touristes.</p>
+    <div class="d-flex flex-wrap gap-2">
+      <button type="button" class="btn btn-vt-primary btn-lg px-4" data-vt-dialog-open="resaDialog">Reserver une table</button>
+      <a class="btn btn-vt-outline btn-lg px-4" href="carte.html">Voir la carte</a>
+    </div>
+  </div>
+</section>"""
+    main += block_menu_h_cards_m3(
+        [
+            {"title": "Terrine de canard", "text": "Cornichons, pain grille", "price": "12 €", "img": "card-1.png", "alt": "Terrine"},
+            {"title": "Noix de Saint-Jacques", "text": "Beurre blanc - signature", "price": "18 €", "img": "scene-1.png", "alt": "Saint-Jacques", "featured": True},
+            {"title": "Jarret confit", "text": "Puree maison, jus au thym", "price": "22 €", "img": "card-2.png", "alt": "Jarret"},
+            {"title": "Clafoutis mirabelle", "text": "Creme fraiche d'Alsace", "price": "9 €", "img": "card-3.png", "alt": "Dessert"},
+        ],
+        kicker="A la carte ce soir",
+        title="Ce que la brigade sort du passe",
+        chips=[
+            {"label": "Entrees", "active": True},
+            {"label": "Plats"},
+            {"label": "Poissons"},
+            {"label": "Desserts"},
+        ],
+    )
+    main += """<section class="vt-br-split vt-reveal">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6">
+        <figure class="mb-0 vt-br-hero-media">
+          <picture><source srcset="images/scene-2.webp" type="image/webp"><img src="images/scene-2.png" class="w-100" alt="Zinc de la brasserie" loading="lazy" decoding="async"></picture>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <p class="vt-eyebrow text-uppercase">Le zinc</p>
+        <h2 class="vt-section-title h3">Un comptoir qui a vu des generations</h2>
+        <p class="text-secondary">Zinc d'origine, presse mosellane, quarante-cinq references en cave. Tu t'assois, on te sert - comme au cafe du coin, en mieux.</p>
+        <a class="btn btn-vt-outline mt-2" href="histoire.html">L'histoire de la maison</a>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_reviews_m3(
+        title="Ce qu'on retient a table",
+        rating="4,7/5",
+        rating_label="avis",
+        reviews=[
+            {"name": "Marie L.", "meta": "Terrasse", "text": "Vue cathedrale, service souriant, mirabelle au top.", "stars": 5},
+            {"name": "Thomas B.", "meta": "Menu marche", "text": "Carte courte et honnete. Pas de mauvaise surprise.", "stars": 5},
+            {"name": "Claire D.", "meta": "Brunch", "text": "Brioche perdue a reserver. Ambiance familiale.", "stars": 5},
+        ],
+    )
+    main += block_cta_band("Table pour ce soir ? On confirme en moins d'une heure.", "Reserver", "contact.html")
+    main += block_dialog_m3(
+        dialog_id="resaDialog",
+        title="Reserver une table",
+        lead="Dis-nous le jour, l'heure et le nombre - on te repond sous 1 h (demo, rien n'est envoye).",
+        primary_label="Envoyer la demande",
         primary_href="contact.html",
-        primary_label="Réserver une table",
-        secondary_href="carte.html",
-        secondary_label="Voir la carte",
+        fields_html="""<div class="row g-2">
+      <div class="col-6"><label class="form-label small">Date</label><input type="date" class="form-control"></div>
+      <div class="col-6"><label class="form-label small">Heure</label><input type="time" class="form-control" value="19:30"></div>
+      <div class="col-12"><label class="form-label small">Convives</label><input type="number" class="form-control" value="2" min="1" max="12"></div>
+    </div>""",
     )
-    main += block_stats([("1924", "Depuis"), ("45", "Vins mosellans"), ("80 km", "Circuit court")])
-    main += block_story(
-        "Une adresse qui traverse les générations",
+    main += block_snackbar_m3("Ajoute au panier demo")
+    main += block_fab_menu_m3(
         [
-            "Installée dans l'ancienne maison du maître d'hôtel de la gare impériale, la brasserie a survécu aux guerres en gardant son zinc d'origine.",
-            "Le chef Élodie Marchal revisite le patrimoine culinaire mosellan : quiche au cow-gomme et mirabelle en dessert.",
+            {"label": "Reserver", "dialog": "resaDialog"},
+            {"label": "La carte", "href": "carte.html"},
+            {"label": "Appeler", "href": "tel:0387751234"},
         ],
+        main_label="Actions brasserie",
     )
-    main += block_chapters(CHAPTERS)
-    main += block_cards_bs("Nos signatures", SIGNATURES)
-    main += block_cross_links(
-        "Découvrir aussi",
-        [
-            ("Brunch dominical", "contact.html"),
-            ("Cave à vins", "carte.html"),
-            ("Privatisation", "contact.html"),
-            ("Jazz du vendredi", "index.html"),
-        ],
-    )
-    main += block_trust(
-        "Produits locaux, accueil sans chichi, cuisine sincère.",
-        ["Circuit court", "Vins mosellans", "Terrasse cathédrale", "Jazz le vendredi"],
-    )
-    main += block_cta_band("Réservez votre table — la terrasse se remplit vite.", "Réserver", "contact.html")
+    main += block_sticky_cta_m3("Creneau ce soir ?", "Reserver", "contact.html", dialog="resaDialog")
     main += "</main>"
     return _shell("index.html", f"{BRAND} — Accueil", "Brasserie historique à Metz : cuisine lorraine, terrasse place Saint-Jacques et réservation en ligne.", main)
 
@@ -316,185 +438,321 @@ def build_contact() -> str:
     return _shell("contact.html", f"Contact — {BRAND}", "Réservez votre table à Metz, place Saint-Jacques.", main)
 
 
-# --- Spa Thalie (beaute) ---
+# --- Spa Thalie (beaute) — layout M3 maquette (_maquettes-echantillons/images/beaute-m3.png) ---
 B_Brand = "Spa Thalie"
-B_PHONE = "03 83 56 78 90"
-B_ADDRESS = "8 rue des Mésanges, 54000 Nancy"
+B_CITY = "Metz"
+B_PHONE = "03 87 17 42 80"
+B_ADDRESS = "8 rue des Clercs, 57000 Metz"
 B_EMAIL = "bonjour@spa-thalie.fr"
-B_MAPS = "https://maps.google.com/?q=8+rue+des+Mésanges+54000+Nancy"
+B_MAPS = "https://maps.google.com/?q=8+rue+des+Clercs+57000+Metz"
 B_NAV = [
     {"file": "index.html", "label": "Accueil"},
-    {"file": "soins.html", "label": "Nos soins"},
-    {"file": "ambiance.html", "label": "L'institut"},
+    {"file": "soins.html", "label": "Soins"},
+    {"file": "soins.html#forfaits", "label": "Forfaits"},
+    {"file": "ambiance.html", "label": "Engagements"},
+    {"file": "ambiance.html#propos", "label": "À propos"},
     {"file": "contact.html", "label": "Contact"},
 ]
 B_FOOTER_NAV = [
-    ("Nos soins", "soins.html"),
-    ("L'institut", "ambiance.html"),
+    ("Soins", "soins.html"),
+    ("Forfaits", "soins.html#forfaits"),
+    ("Engagements", "ambiance.html"),
     ("Carte cadeau", "contact.html"),
     ("Prendre RDV", "contact.html"),
 ]
+B_PHARES = [
+    {
+        "title": "Soin visage éclat",
+        "text": "Nettoyage, massage et masque hydratant pour une peau lumineuse.",
+        "img": "card-1.png",
+        "alt": "Soin visage éclat",
+        "duration": "60 min",
+        "price": "75 €",
+    },
+    {
+        "title": "Massage aux pierres chaudes",
+        "text": "Chaleur des pierres volcaniques pour dénouer les tensions.",
+        "img": "card-2.png",
+        "alt": "Massage pierres chaudes",
+        "duration": "75 min",
+        "price": "95 €",
+    },
+    {
+        "title": "Massage relaxant",
+        "text": "Huiles chaudes, rythme lent - idéal après une journée chargée.",
+        "img": "scene-2.png",
+        "alt": "Massage relaxant",
+        "duration": "50 min",
+        "price": "70 €",
+    },
+    {
+        "title": "Rituel gommage & enveloppement",
+        "text": "Gommage mirabelle et enveloppement pour une peau toute douce.",
+        "img": "card-3.png",
+        "alt": "Rituel corps spa",
+        "duration": "90 min",
+        "price": "110 €",
+    },
+]
 B_CHAPTERS_INDEX = [
-    {"title": "Cabine signature", "text": "Lumière tamisée et huiles chaudes pour couper le bruit de la ville.", "img": "scene-1.png", "alt": "Cabine de massage"},
-    {"title": "Protocoles visage", "text": "LED, Kobido et acide hyaluronique maîtrisés par nos esthéticiennes diplômées.", "img": "scene-2.png", "alt": "Soin du visage en institut"},
-    {"title": "Espace détente", "text": "Hammam doux et transats chauffants — prolongez le soin après la cabine.", "img": "scene-3.png", "alt": "Espace détente au spa"},
+    {
+        "title": "Cabine calme, a deux pas de la gare",
+        "text": "Lumiere tamisee, huiles chaudes - tu coupes vraiment le bruit de Metz pendant le soin.",
+        "img": "scene-1.png",
+        "alt": "Cabine de soin Spa Thalie",
+    },
+    {
+        "title": "Protocoles visage sans vente forcee",
+        "text": "Diagnostic court a l'arrivee. On te dit ce qui est utile pour ta peau - et ce qui peut attendre.",
+        "img": "scene-2.png",
+        "alt": "Soin du visage en institut",
+    },
+    {
+        "title": "Salon de repos apres le soin",
+        "text": "Tisane, conseils maison, et le temps de te rhabiller sans te precipiter.",
+        "img": "scene-3.png",
+        "alt": "Espace detente au spa",
+    },
 ]
 B_CHAPTERS_AMBIANCE = [
     {"title": "Accueil", "text": "Thé bio dès l'arrivée et diagnostic de peau personnalisé.", "img": "scene-1.png", "alt": "Accueil spa"},
-    {"title": "Cabines doubles", "text": "Massages synchronisés à deux — idéal pour un moment à partager.", "img": "scene-2.png", "alt": "Cabine duo"},
+    {"title": "Cabines doubles", "text": "Massages synchronisés à deux - idéal pour un moment à partager.", "img": "scene-2.png", "alt": "Cabine duo"},
     {"title": "Salon de repos", "text": "Tisanes bio après chaque soin, dans le calme de la cour intérieure.", "img": "scene-3.png", "alt": "Salon de repos"},
-]
-B_UNIVERS = [
-    {"title": "Soins visage", "text": "Anti-âge, éclat, imperfections — protocoles sur-mesure.", "img": "card-1.png", "alt": "Soin visage"},
-    {"title": "Massages", "text": "Suédois, deep tissue, pierres chaudes.", "img": "card-2.png", "alt": "Massage pierres chaudes"},
-    {"title": "Rituels corps", "text": "Gommage mirabelle et modelage aux huiles chaudes.", "img": "card-3.png", "alt": "Rituel corps spa"},
 ]
 B_SOINS_SECTIONS = [
     {
         "title": "Soins visage",
         "items": [
-            {"name": "Éclat express", "desc": "Nettoyage, massage Kobido, masque hydratant", "price": "59 €", "tags": ["45 min", "Découverte"]},
+            {"name": "Soin visage éclat", "desc": "Nettoyage, massage, masque hydratant", "price": "75 €", "tags": ["60 min"]},
+            {"name": "Éclat express", "desc": "Coup de frais entre midi", "price": "59 €", "tags": ["45 min", "Découverte"]},
             {"name": "Cure anti-âge", "desc": "4 séances radiofréquence + sérum HA", "price": "320 €", "tags": ["Cure"]},
-            {"name": "Peau sensible", "desc": "Apaisement et barrière cutanée", "price": "75 €", "tags": ["60 min"]},
         ],
     },
     {
         "title": "Massages & corps",
         "items": [
-            {"name": "Rituel Stanislas", "desc": "Gommage sel de Lorraine + massage 90 min", "price": "110 €", "tags": ["Signature"]},
-            {"name": "Deep tissue", "desc": "Nuque, dos et épaules — cadres pressés", "price": "85 €", "tags": ["60 min"]},
+            {"name": "Massage relaxant", "desc": "Huiles chaudes, rythme lent", "price": "70 €", "tags": ["50 min"]},
             {"name": "Pierres chaudes", "desc": "Détente musculaire profonde", "price": "95 €", "tags": ["75 min"]},
+            {"name": "Rituel gommage & enveloppement", "desc": "Gommage mirabelle + enveloppement", "price": "110 €", "tags": ["90 min", "Signature"]},
         ],
     },
     {
-        "title": "Mains & événements",
+        "title": "Forfaits",
         "items": [
-            {"name": "Manucure spa", "desc": "Soin complet + pose vernis", "price": "45 €", "tags": []},
-            {"name": "Atelier maquillage", "desc": "Cours privé 1 h30 avant événement", "price": "70 €", "tags": ["Privé"]},
+            {"name": "Duo bien-être", "desc": "2 soins visage éclat + thé", "price": "135 €", "tags": ["Forfait"]},
             {"name": "Carte cadeau", "desc": "Montant libre, valable 12 mois", "price": "dès 50 €", "tags": ["Cadeau"]},
+            {"name": "Atelier maquillage", "desc": "Cours privé 1 h30 avant événement", "price": "70 €", "tags": ["Privé"]},
         ],
     },
 ]
 
 
 def _shell_beaute(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Ouvert aujourd'hui · Mar–sam 9h–20h", address=B_ADDRESS, phone=B_PHONE, maps_href=B_MAPS)
-    nav = _chrome_nav("beaute", B_Brand, B_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
-    foot = _chrome_foot("beaute", 
+    nav = block_spa_m3_nav(
+        B_Brand,
+        B_NAV,
+        page,
+        city=B_CITY,
+        phone=B_PHONE,
+        cta_label="Prendre RDV",
+        cta_href="contact.html",
+    )
+    foot = _chrome_foot(
+        "beaute",
         B_Brand,
         phone=B_PHONE,
         address=B_ADDRESS,
         email=B_EMAIL,
         maps_href=B_MAPS,
         nav_links=B_FOOTER_NAV,
-        hours_line="Mar–sam 9h–20h · Dim. 10h–18h sur RDV",
+        hours_line="Mar–sam 10h–19h · Dim. sur RDV",
     )
+    fab = block_spa_fab("contact.html", "Prendre rendez-vous")
     mobile = block_mobile_cta("Prendre RDV", "contact.html", B_PHONE)
-    return wrap_page_spa(title, desc, bar + nav + main + foot + mobile, slug="beaute", page=page, site_name=B_Brand, nav=B_NAV)
+    return wrap_page_spa(
+        title,
+        desc,
+        nav + main + foot + fab + mobile,
+        slug="beaute",
+        page=page,
+        site_name=B_Brand,
+        nav=B_NAV,
+        layout="spa-m3",
+    )
 
 
 def build_beaute_index() -> str:
-    main = "<main>"
-    main += block_hero_rich(
-        "Votre parenthèse bien-être au cœur de Nancy",
-        "Maison de maître rue Stanislas : expertise esthétique et rituels sensoriels.",
-        "hero.png",
-        "Spa lumineux avec fauteuils à Nancy",
-        eyebrow="Institut & spa urbain",
+    main = '<main itemscope itemtype="https://schema.org/WebPage">'
+    main += block_spa_m3_hero(
+        "L'art du bien-être, près de chez vous.",
+        "Soins visage, massages et rituels corps dans un institut calme, à deux minutes de la gare de Metz.",
+        "scene-1.png",
+        "Cabine de soin Spa Thalie à Metz",
+        eyebrow="Institut & spa à Metz",
         primary_href="contact.html",
-        primary_label="Réserver mon soin",
-        secondary_href="soins.html",
-        secondary_label="Voir nos soins",
-    )
-    main += block_stats([("2018", "Fondé"), ("6", "Cabines"), ("100 %", "Clean beauty")])
-    main += block_story(
-        "L'art du soin, version Lorraine",
-        [
-            "Fondé par deux esthéticiennes formées à Paris, Thalie mise sur des protocoles sur-mesure et produits clean.",
-            "Chaque visite commence par un diagnostic de peau et finit par un thé bio.",
+        primary_label="Prendre RDV",
+        facts=[
+            {"icon": "⏱", "title": "Ouvert aujourd'hui", "text": "10:00 – 19:00"},
+            {"icon": "🎁", "title": "Carte cadeau", "text": "Offrez un moment"},
+            {"icon": "📍", "title": "2 min de la Gare", "text": "8 rue des Clercs, Metz"},
         ],
     )
-    main += block_chapters(B_CHAPTERS_INDEX)
-    main += block_cards_bs("Nos univers", B_UNIVERS)
-    main += block_cross_links(
-        "Découvrir aussi",
-        [
-            ("Offre découverte 59 €", "contact.html"),
-            ("Rituel Stanislas", "soins.html"),
-            ("Visite de l'institut", "ambiance.html"),
-            ("Carte cadeau", "contact.html"),
+    main += block_spa_m3_phares(
+        kicker="Nos soins phares",
+        title="Prenez soin de vous",
+        chips=[
+            {"label": "Soins", "href": "soins.html", "active": True},
+            {"label": "Forfaits", "href": "soins.html#forfaits"},
+            {"label": "Engagements", "href": "ambiance.html"},
         ],
+        cards=B_PHARES,
     )
-    main += block_trust(
-        "Esthéticiennes diplômées, produits français sans parabènes.",
-        ["Clean beauty", "Diagnostic peau", "ESAT Laxou", "Eau filtrée"],
+    main += block_cta_band(
+        "Un creneau libre cette semaine ? On confirme sous 2 h.",
+        "Choisir mon soin",
+        "contact.html",
     )
-    main += block_cta_band("Offre découverte visage à 59 € — places limitées.", "Réserver mon soin", "contact.html")
+    main += """<section class="vt-reveal py-5 vt-spa-ritual">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="vt-ritual-step"><span>01</span><h3 class="h6">Tu reserves</h3><p class="small text-secondary mb-0">En ligne ou telephone - confirmation sous 2 h.</p></div></div>
+      <div class="col-md-4"><div class="vt-ritual-step"><span>02</span><h3 class="h6">Diagnostic</h3><p class="small text-secondary mb-0">A l'arrivee : ecoute, peaux sensibles bienvenues.</p></div></div>
+      <div class="col-md-4"><div class="vt-ritual-step"><span>03</span><h3 class="h6">Le soin</h3><p class="small text-secondary mb-0">Cabine calme, the apres - tu coupes vraiment.</p></div></div>
+    </div>
+  </div>
+</section>"""
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <p class="vt-eyebrow text-uppercase">Carte cadeau</p>
+        <h2 class="vt-section-title h3">Offrir un soin sans se tromper</h2>
+        <p class="text-secondary mb-3">Montant libre, PDF le jour meme, valable 12 mois.</p>
+        <button type="button" class="btn btn-vt-primary" data-vt-dialog-open="giftDialog">Offrir une carte</button>
+      </div>
+      <div class="col-lg-5">
+        <div class="p-4 rounded-4 vt-spa-gift-preview">
+          <p class="mb-2 fw-semibold">Exemple</p>
+          <p class="small text-secondary mb-0">Rituel gommage 110 euro - PDF sous 10 min (demo).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="rdvDialog",
+        title="Prendre RDV",
+        lead="Choisis un soin et un creneau - on confirme sous 2 h (demo).",
+        primary_label="Confirmer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Soin</label><select class="form-select"><option>Soin visage eclat</option><option>Massage pierres</option></select></div><div class="mb-2"><label class="form-label small">Quand</label><input type="datetime-local" class="form-control"></div>',
+    )
+    main += block_dialog_m3(
+        dialog_id="giftDialog",
+        title="Carte cadeau",
+        lead="Montant libre, valable 12 mois (demo).",
+        primary_label="Recevoir le PDF",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Montant</label><input type="number" class="form-control" value="75" min="50"></div>',
+    )
+    main += block_snackbar_m3("Demande envoyee (demo)")
+    main += block_fab_menu_m3([
+        {"label": "Prendre RDV", "dialog": "rdvDialog"},
+        {"label": "Carte cadeau", "dialog": "giftDialog"},
+        {"label": "Soins", "href": "soins.html"},
+    ], main_label="Actions spa")
     main += "</main>"
-    return _shell_beaute("index.html", f"{B_Brand} — Institut & spa à Nancy", "Spa urbain à Nancy : soins visage, massages et rituels bien-être.", main)
+    return _shell_beaute(
+        "index.html",
+        f"{B_Brand} — Institut & spa à Metz",
+        "Institut beauté et spa à Metz : soins, massages et RDV en ligne.",
+        main,
+    )
 
 
 def build_beaute_soins() -> str:
     main = "<main>"
-    main += block_hero_rich(
+    main += block_spa_m3_hero(
         "Des protocoles pensés pour votre peau",
-        "Express le midi, rituels complets le week-end.",
+        "Express entre midi, rituels complets le week-end - tarifs affichés, sans surprise.",
         "hero.png",
         "Produits de soin en cabine",
-        eyebrow="Nos soins",
+        eyebrow="Soins & forfaits",
         primary_href="contact.html",
         primary_label="Prendre RDV",
-        secondary_href="index.html",
-        secondary_label="Découvrir Thalie",
+        facts=[
+            {"icon": "⏱", "title": "Diagnostic offert", "text": "À la première visite"},
+            {"icon": "🎁", "title": "Carte cadeau", "text": "Valable 12 mois"},
+            {"icon": "📍", "title": "Metz centre", "text": "8 rue des Clercs"},
+        ],
     )
+    main += block_spa_m3_phares(
+        kicker="Sélection",
+        title="Les plus demandés",
+        chips=[
+            {"label": "Soins", "href": "#menu-title", "active": True},
+            {"label": "Forfaits", "href": "#forfaits"},
+            {"label": "Engagements", "href": "ambiance.html"},
+        ],
+        cards=B_PHARES,
+    )
+    main += '<div id="forfaits"></div>'
     main += block_menu_section(
         "Catalogue des soins",
         "Tarifs indicatifs TTC. Diagnostic offert à la première visite.",
         B_SOINS_SECTIONS,
     )
-    main += block_story("Transparence", ["Esthéticiennes diplômées, produits français sans parabènes, protocoles expliqués pas à pas."])
-    main += block_cta_band("Carte cadeau valable un an — à offrir ou s'offrir.", "Offrir un soin", "contact.html")
+    main += block_cta_band("Carte cadeau valable un an - à offrir ou s'offrir.", "Offrir un soin", "contact.html")
     main += "</main>"
-    return _shell_beaute("soins.html", f"Nos soins — {B_Brand}", "Protocoles visage, massages et rituels corps.", main)
+    return _shell_beaute("soins.html", f"Soins — {B_Brand}", "Protocoles visage, massages et forfaits à Metz.", main)
 
 
 def build_beaute_ambiance() -> str:
-    main = "<main>"
-    main += block_hero_rich(
-        "Un écrin de calme rue Stanislas",
-        "Pierre de taille et technologies dernière génération.",
+    main = '<main id="propos">'
+    main += block_spa_m3_hero(
+        "Un institut calme, près de la gare",
+        "Pierre, lumière douce et protocoles clean - le luxe responsable au quotidien.",
         "hero.png",
-        "Hall d'accueil spa nancéien",
-        eyebrow="L'institut",
+        "Hall d'accueil Spa Thalie Metz",
+        eyebrow="Engagements & à propos",
         primary_href="contact.html",
         primary_label="Planifier une visite",
-        secondary_href="soins.html",
-        secondary_label="Nos soins",
+        facts=[
+            {"icon": "⏱", "title": "Visite guidée", "text": "Mercredi 14h–17h"},
+            {"icon": "🎁", "title": "Linge local", "text": "Partenaire ESAT"},
+            {"icon": "📍", "title": "Eau filtrée", "text": "Produits français"},
+        ],
     )
-    main += block_story("Engagements", ["Eau filtrée, linge local, partenariat ESAT de Laxou — le luxe responsable au quotidien."])
+    main += block_story(
+        "Nos engagements",
+        [
+            "Eau filtrée, linge local, partenariat ESAT de Laxou - on préfère le concret au grand discours.",
+            "Chaque protocole est expliqué avant le soin : durée, produits, et ce que tu peux attendre.",
+        ],
+    )
     main += block_chapters(B_CHAPTERS_AMBIANCE)
     main += block_trust(
         "Visite sur RDV mercredi après-midi.",
-        ["Pierre de taille", "Cour intérieure", "Technologie LED", "Partenaire ESAT"],
+        ["Clean beauty", "Cour intérieure", "Technologie LED", "Partenaire ESAT"],
     )
     main += block_cta_band("Visite guidée le mercredi 14h–17h.", "Planifier une visite", "contact.html")
     main += "</main>"
-    return _shell_beaute("ambiance.html", f"L'institut — {B_Brand}", "Lieux, cabines et engagements RSE.", main)
+    return _shell_beaute("ambiance.html", f"Engagements — {B_Brand}", "Lieux, cabines et engagements du Spa Thalie à Metz.", main)
 
 
 def build_beaute_contact() -> str:
     main = """<main>
-<section class="vt-hero-compact py-5 text-center">
+<section class="vt-m3-hero pt-5 pb-4">
   <div class="container">
     <p class="vt-eyebrow text-uppercase">Contact</p>
     <h1 class="vt-display display-6">Réserver votre moment Thalie</h1>
-    <p class="lead text-secondary">8 rue des Mésanges, 54000 Nancy — réponse sous 2 h.</p>
+    <p class="lead text-secondary">8 rue des Clercs, 57000 Metz - réponse sous 2 h.</p>
   </div>
 </section>"""
     main += block_appointment_form(brand=B_Brand, address=B_ADDRESS, phone=B_PHONE, email=B_EMAIL)
-    main += block_cta_band("Annulation gratuite 24 h avant.", "Appeler l'institut", "tel:0383567890")
+    main += block_cta_band("Annulation gratuite 24 h avant.", "Appeler l'institut", "tel:0387174280")
     main += "</main>"
-    return _shell_beaute("contact.html", f"Contact — {B_Brand}", "RDV et accès à Nancy.", main)
+    return _shell_beaute("contact.html", f"Contact — {B_Brand}", "RDV et accès au Spa Thalie à Metz.", main)
 
 
 # --- Centre Mosaïque (odontologie) — layout split / bento / entonnoir ---
@@ -563,8 +821,16 @@ O_SOINS_SECTIONS = [
 
 
 def _shell_odontologie(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Ouvert aujourd'hui · Lun–sam", address=O_ADDRESS, phone=O_PHONE, maps_href=O_MAPS)
-    nav = _chrome_nav("odontologie", O_BRAND, O_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
+    app = block_pill_appbar_m3(
+        O_BRAND,
+        O_NAV,
+        page,
+        phone=O_PHONE,
+        cta_label="Prendre rendez-vous",
+        cta_dialog="rdvDent" if page == "index.html" else "",
+        cta_href="contact.html",
+        subtitle="Cabinet dentaire",
+    )
     foot = _chrome_foot("odontologie", 
         O_BRAND,
         phone=O_PHONE,
@@ -574,40 +840,74 @@ def _shell_odontologie(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–ven 8h30–19h · Sam 8h–12h",
     )
     mobile = block_mobile_cta("Prendre RDV", "contact.html", O_PHONE)
-    return wrap_page_medical(title, desc, bar + nav + main + foot + mobile, slug="odontologie", page=page, site_name=O_BRAND, nav=O_NAV)
+    if page != "index.html":
+        main += block_dialog_m3(
+            dialog_id="rdvDent",
+            title="Demander un RDV",
+            lead="On te rappelle sous 24 h (demo).",
+            primary_label="Envoyer",
+            primary_href="contact.html",
+            fields_html='<div class="mb-2"><label class="form-label small">Motif</label><select class="form-select"><option>Controle</option><option>Douleur</option><option>Devis</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
+        )
+    return wrap_page_medical(title, desc, app + main + foot + mobile, slug="odontologie", page=page, site_name=O_BRAND, nav=O_NAV)
 
 
 def build_odontologie_index() -> str:
     main = "<main>"
-    main += block_hero_split(
-        "Votre sourire, notre priorité à Thionville",
-        "Quatre praticiens, plateau technique numérique et parcours patient sans stress.",
-        "hero.png",
-        "Salle d'attente lumineuse de cabinet dentaire",
-        eyebrow="Centre dentaire Mosaïque",
+    main += block_health_booking_hero_m3(
+        "Ton dentiste a Thionville, sans stress",
+        "Quatre praticiens, explications claires et un agenda simple - tu choisis ton creneau, on confirme.",
+        badge="Soins doux & personnalises",
+        primary_label="Voir plus de disponibilites",
+        dialog="rdvDent",
+        inset_img="scene-1.png",
+        inset_alt="Salle de soins moderne",
+        status="Consultations sur rendez-vous",
+        times=["09:00", "11:00", "14:30"],
+    )
+    main += block_health_stats_m3(
+        [
+            {"icon": "👥", "value": "1 200+", "label": "Patients accompagnes"},
+            {"icon": "★", "value": "5/5", "label": "Avis Google"},
+            {"icon": "📅", "value": "8 ans", "label": "D'experience a Thionville"},
+            {"icon": "📍", "value": "Centre", "label": "Cabinet facilement accessible"},
+        ]
+    )
+    main += """<section class="vt-reveal py-5 vt-odonto-urgency">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <p class="vt-eyebrow text-uppercase">Urgences</p>
+        <h2 class="vt-section-title h3">Douleur ce matin ?</h2>
+        <p class="text-secondary mb-3">Creneaux d'urgence avant 11 h. Appele - on priorise, sans jargon.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-vt-primary" href="tel:0382884500">Appeler le 03 82 88 45 00</a>
+          <button type="button" class="btn btn-vt-outline" data-vt-dialog-open="rdvDent">Demander un RDV</button>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <article class="vt-care-card">
+          <h3 class="h6">Premier RDV decouverte</h3>
+          <p class="small text-secondary mb-0">Offert. Devis avant chaque acte - tu sais ou tu mets les pieds.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="rdvDent",
+        title="Demander un RDV",
+        lead="Motif + telephone - on te rappelle sous 24 h (demo).",
+        primary_label="Envoyer",
         primary_href="contact.html",
-        primary_label="Prendre RDV",
-        secondary_href="soins.html",
-        secondary_label="Voir nos soins",
+        fields_html='<div class="mb-2"><label class="form-label small">Motif</label><select class="form-select"><option>Controle</option><option>Douleur</option><option>Devis</option><option>Enfant</option></select></div><div class="mb-2"><label class="form-label small">Creneau souhaite</label><select class="form-select"><option>09:00</option><option>11:00</option><option>14:30</option><option>Autre</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel" placeholder="06 ..."></div>',
     )
-    main += block_trust_strip([
-        ("4", "Praticiens"),
-        ("2018", "Depuis"),
-        ("3D", "Imagerie"),
-        ("Sam.", "Matinées"),
-    ])
-    main += block_funnel_steps("Votre parcours en 3 étapes", [
-        ("Demandez un RDV", "En ligne ou par téléphone — premier RDV découverte offert."),
-        ("Diagnostic clair", "Devis détaillé avant tout acte, tiers payant accepté."),
-        ("Soins en confiance", "Protocole douceur, suivi post-opératoire par nos assistantes."),
-    ])
-    main += block_bento_cards(O_BENTO)
-    main += block_compact_features(O_COMPACT_INDEX)
-    main += block_trust(
-        "Cabinet familial, tarifs affichés, urgences chaque matin.",
-        ["Devis avant acte", "Imagerie 3D", "Espace enfants", "Créneaux samedi"],
-    )
-    main += block_cta_band("Premier rendez-vous découverte offert.", "Demander un RDV", "contact.html")
+    main += block_snackbar_m3("Demande RDV enregistree (demo)")
+    main += block_fab_menu_m3([
+        {"label": "RDV", "dialog": "rdvDent"},
+        {"label": "Soins", "href": "soins.html"},
+        {"label": "Urgence", "href": "tel:0382884500"},
+    ], main_label="Actions cabinet")
     main += "</main>"
     return _shell_odontologie(
         "index.html",
@@ -701,7 +1001,7 @@ def build_odontologie_contact() -> str:
     )
 
 
-# --- Garage Central (automobile) — overlay / tuiles / split inversé ---
+# --- Garage Central (automobile) — layout M3 maquette (_maquettes-echantillons/images/automobile-m3.png) ---
 A_BRAND = "Garage Central"
 A_BRAND_FULL = "Garage Central Plappeville"
 A_PHONE = "03 87 65 43 21"
@@ -710,7 +1010,8 @@ A_MAPS = "https://maps.google.com/?q=Zone+artisanale+des+Gravières+57050+Plappe
 A_NAV = [
     {"file": "index.html", "label": "Accueil"},
     {"file": "services.html", "label": "Services"},
-    {"file": "atelier.html", "label": "L'atelier"},
+    {"file": "atelier.html", "label": "À propos"},
+    {"file": "atelier.html#avis", "label": "Avis"},
     {"file": "contact.html", "label": "Contact"},
 ]
 A_FOOTER_NAV = [
@@ -718,6 +1019,26 @@ A_FOOTER_NAV = [
     ("L'atelier", "atelier.html"),
     ("Prendre RDV", "contact.html"),
     ("Devis assurance", "contact.html"),
+]
+A_SERVICE_CARDS_M3 = [
+    {
+        "icon": "🔧",
+        "title": "Entretien",
+        "text": "Vidange, freins, révisions constructeur - devis avant intervention.",
+        "href": "services.html",
+    },
+    {
+        "icon": "🛞",
+        "title": "Pneus",
+        "text": "Montage, équilibrage, géométrie - été comme hiver.",
+        "href": "services.html",
+    },
+    {
+        "icon": "🎨",
+        "title": "Carrosserie",
+        "text": "Devis assurance 24 h, cabine peinture, débosselage.",
+        "href": "services.html",
+    },
 ]
 A_CARDS = [
     {"title": "Entretien", "text": "Révisions constructeur respectées.", "img": "card-1.png", "alt": "Révision automobile"},
@@ -727,7 +1048,7 @@ A_CARDS = [
 A_CHAPTERS_INDEX = [
     {"title": "Le pont élévateur", "text": "Diagnostic rapide et transparence sur les pièces à changer.", "img": "scene-1.png", "alt": "Pont élévateur en atelier"},
     {"title": "La carrosserie", "text": "Peinture cabine et débosselage sans peinture.", "img": "scene-2.png", "alt": "Atelier carrosserie"},
-    {"title": "Le parc pneus", "text": "Montage, équilibrage et géométrie — toutes dimensions.", "img": "scene-3.png", "alt": "Stock de pneus en garage"},
+    {"title": "Le parc pneus", "text": "Montage, équilibrage et géométrie - toutes dimensions.", "img": "scene-3.png", "alt": "Stock de pneus en garage"},
 ]
 A_COMPACT_SERVICES = [
     {"title": "Freinage", "text": "Disques, plaquettes et liquide de frein.", "img": "scene-1.png", "alt": "Freins automobile"},
@@ -768,9 +1089,15 @@ A_SERVICES_MENU = [
 
 
 def _shell_automobile(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Ouvert aujourd'hui · Lun–sam", address=A_ADDRESS, phone=A_PHONE, maps_href=A_MAPS)
-    nav = _chrome_nav("automobile", A_BRAND_FULL, A_NAV, page, cta_label="Prendre RDV", cta_href="contact.html")
-    foot = _chrome_foot("automobile", 
+    nav = block_garage_m3_nav(
+        A_BRAND_FULL,
+        A_NAV,
+        page,
+        cta_label="Prendre RDV",
+        cta_href="contact.html",
+    )
+    foot = _chrome_foot(
+        "automobile",
         A_BRAND_FULL,
         phone=A_PHONE,
         address=A_ADDRESS,
@@ -778,69 +1105,97 @@ def _shell_automobile(page: str, title: str, desc: str, main: str) -> str:
         nav_links=A_FOOTER_NAV,
         hours_line="Lun–ven 8h–18h · Sam 8h–12h",
     )
+    fab = block_phone_fab(A_PHONE, "Appeler le garage")
     mobile = block_mobile_cta("Prendre RDV", "contact.html", A_PHONE)
-    return wrap_page_garage(title, desc, bar + nav + main + foot + mobile, slug="automobile", page=page, site_name=A_BRAND_FULL, nav=A_NAV)
+    return wrap_page_garage(
+        title,
+        desc,
+        nav + main + foot + fab + mobile,
+        slug="automobile",
+        page=page,
+        site_name=A_BRAND_FULL,
+        nav=A_NAV,
+        layout="garage-m3",
+    )
 
 
 def build_automobile_index() -> str:
-    main = "<main>"
-    main += block_hero_overlay(
-        "L'atelier de confiance des Messins depuis 1972",
-        "Mécanique générale, carrosserie et pneus — devis clair avant chaque intervention.",
+    main = '<main itemscope itemtype="https://schema.org/WebPage">'
+    main += block_garage_m3_hero(
+        "Votre garage de confiance",
+        "Entretien, pneus, carrosserie et plus encore : un service complet pour votre véhicule, toute l'année.",
         "hero.png",
-        "Atelier mécanique avec véhicule sur pont",
-        eyebrow="Garage Central · Plappeville",
-        primary_href="contact.html",
-        primary_label="Réserver un créneau",
-        secondary_href="services.html",
-        secondary_label="Nos services",
+        "Façade et atelier Garage Central Plappeville",
+        location="Plappeville, à 10 min de Metz",
+        primary_href="services.html",
+        primary_label="Découvrir nos services",
+        service_cards=A_SERVICE_CARDS_M3,
     )
-    main += block_stats([("1972", "Fondé"), ("900 m²", "Atelier"), ("6", "Mécaniciens")])
-    main += block_service_tiles("Interventions phares", [
-        {"title": "Entretien", "items": ["Vidange & filtres", "Révision constructeur", "Contrôle pollution"], "hot": False},
-        {"title": "Pneumatiques", "items": ["Montage & équilibrage", "Géométrie", "Été / hiver toutes marques"], "hot": True},
-        {"title": "Carrosserie", "items": ["Devis assurance 24 h", "Cabine peinture", "Débosselage sans peinture"], "hot": False},
-    ])
-    main += block_story(
-        "Un garage de quartier",
+    main += block_garage_m3_stats(
         [
-            "Fondé par Jean-Pierre Daniel, repris par ses fils en 2005, le Garage Central accompagne trois générations de clients entre Metz et Woippy.",
-            "Toutes marques, véhicules thermiques et hybrides.",
-        ],
+            {"icon": "🛡", "value": "25+", "label": "Années d'expérience"},
+            {"icon": "👥", "value": "1200+", "label": "Clients satisfaits"},
+            {"icon": "★", "value": "4,8/5", "label": "Avis Google"},
+            {"icon": "⏱", "value": "48 h", "label": "Délai moyen de RDV"},
+        ]
     )
-    main += block_cards_bs("Nos services", A_CARDS)
-    main += block_timeline([
-        ("1972", "Ouverture par Jean-Pierre Daniel à Plappeville."),
-        ("2005", "Reprise par la deuxième génération — extension carrosserie."),
-        ("2018", "Formation hybride Bosch et espace diagnostic."),
-        ("2024", "900 m², six mécaniciens et deux carrossiers."),
-    ])
-    main += block_trust(
-        "Pièces d'origine ou équivalent premium — garantie 2 ans sur réparations majeures.",
-        ["Devis clair", "Véhicule de courtoisie", "Multimarque", "Hybride"],
+    main += block_garage_m3_local(
+        "Un garage local, un service de proximité",
+        "Devis clair avant chaque intervention, pièces de qualité et conseils sans blabla - entre Metz et Woippy depuis 1972.",
+        ["Devis clairs et gratuits", "Pièces de qualité", "Conseils personnalisés"],
+        href="contact.html",
+        cta="Prendre RDV",
     )
-    main += block_cta_band("Contrôle anti-pollution : créneaux sans attente.", "Réserver un créneau", "contact.html")
+    main += """<section class="vt-reveal py-5 vt-garage-timeline">
+  <div class="container">
+    <p class="vt-eyebrow text-uppercase">Suivi SMS</p>
+    <h2 class="vt-section-title h3 mb-4">Tu sais ou en est la voiture</h2>
+    <ol class="vt-timeline list-unstyled mb-0">
+      <li><strong>Message</strong> - photo ou bruit, on te dit si c'est urgent</li>
+      <li><strong>Devis</strong> - rien ne part sans ton OK</li>
+      <li><strong>Atelier</strong> - SMS a chaque etape</li>
+      <li><strong>Cles</strong> - voiture lavee, garantie affichee</li>
+    </ol>
+    <div class="mt-4">
+      <button type="button" class="btn btn-vt-primary" data-vt-dialog-open="devisDialog">Envoyer une photo pour devis</button>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="devisDialog",
+        title="Devis par photo",
+        lead="Decris le probleme - on te repond sous 2 h (demo).",
+        primary_label="Envoyer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Description</label><textarea class="form-control" rows="3" placeholder="Voyant moteur, bruit frein..."></textarea></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
+    )
+    main += block_snackbar_m3("Devis demande (demo)")
+    main += block_fab_menu_m3([
+        {"label": "Devis photo", "dialog": "devisDialog"},
+        {"label": "Services", "href": "services.html"},
+        {"label": "Appeler", "href": "tel:0387654321"},
+    ], main_label="Actions garage")
+    main += block_sticky_cta_m3("Besoin d'un creneau ?", "Devis", "contact.html", dialog="devisDialog")
     main += "</main>"
     return _shell_automobile(
         "index.html",
         f"{A_BRAND_FULL} — Mécanique & carrosserie",
-        "Garage auto à Plappeville : entretien, pneus, carrosserie et contrôle technique.",
+        "Garage auto à Plappeville : entretien, pneus, carrosserie - à 10 min de Metz.",
         main,
     )
 
 
 def build_automobile_services() -> str:
     main = "<main>"
-    main += block_hero_rich(
+    main += block_garage_m3_hero(
         "Tout pour rouler serein",
-        "De la vidange à la distribution, expertise multimarque.",
+        "De la vidange à la distribution, expertise multimarque à Plappeville.",
         "hero.png",
         "Mécanicien au travail",
-        eyebrow="Services atelier",
+        location="Services atelier",
         primary_href="contact.html",
         primary_label="Demander un devis",
-        secondary_href="index.html",
-        secondary_label="Accueil",
+        service_cards=A_SERVICE_CARDS_M3,
     )
     main += block_menu_section(
         "Tarifs indicatifs",
@@ -859,33 +1214,36 @@ def build_automobile_services() -> str:
 
 
 def build_automobile_atelier() -> str:
-    main = "<main>"
-    main += block_hero_split_reverse(
+    main = '<main id="avis">'
+    main += block_garage_m3_hero(
         "900 m² dédiés à votre véhicule",
-        "Ponts, cabine peinture et espace diagnostic.",
+        "Ponts, cabine peinture et espace diagnostic - une équipe de quartier qui connaît les routes messines.",
         "hero.png",
         "Vue d'ensemble de l'atelier",
-        eyebrow="L'atelier",
+        location="L'atelier · Plappeville",
         primary_href="contact.html",
         primary_label="Planifier une visite",
-        secondary_href="services.html",
-        secondary_label="Nos services",
+        service_cards=A_SERVICE_CARDS_M3[:2]
+        + [
+            {
+                "icon": "★",
+                "title": "Avis clients",
+                "text": "4,8/5 sur Google - devis clair et voiture rendue propre.",
+                "href": "#avis",
+            }
+        ],
     )
     main += block_story(
         "L'équipe",
-        ["Six mécaniciens, deux carrossiers et une coordinatrice accueil — tous formés aux normes constructeur."],
+        ["Six mécaniciens, deux carrossiers et une coordinatrice accueil - tous formés aux normes constructeur."],
     )
     main += block_compact_features(A_COMPACT_ATELIER)
     main += block_chapters(A_CHAPTERS_INDEX)
-    main += block_trust(
-        "Visite de l'atelier sur rendez-vous — enseigne d'origine conservée.",
-        ["900 m²", "Cabine peinture", "Diagnostic OBD", "Lavage offert"],
-    )
     main += block_cta_band("Visite de l'atelier sur rendez-vous.", "Planifier une visite", "contact.html")
     main += "</main>"
     return _shell_automobile(
         "atelier.html",
-        f"L'atelier — {A_BRAND_FULL}",
+        f"À propos — {A_BRAND_FULL}",
         "Équipe, outils et méthode de travail à Plappeville.",
         main,
     )
@@ -893,9 +1251,9 @@ def build_automobile_atelier() -> str:
 
 def build_automobile_contact() -> str:
     main = """<main>
-<section class="vt-hero-compact py-5 text-center">
+<section class="vt-g-hero pt-5 pb-3">
   <div class="container">
-    <p class="vt-eyebrow text-uppercase">Contact</p>
+    <p class="vt-g-pin mb-2"><span aria-hidden="true">📍</span> Plappeville</p>
     <h1 class="vt-display display-6">Nous contacter</h1>
     <p class="lead text-secondary">Zone artisanale des Gravières, 57050 Plappeville.</p>
   </div>
@@ -978,8 +1336,21 @@ C_RAYONS_MENU = [
 
 
 def _shell_commerce(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Ouvert aujourd'hui · 7j/7", address=C_ADDRESS, phone=C_PHONE, maps_href=C_MAPS)
-    nav = _chrome_nav("commerce", C_BRAND, C_NAV, page, cta_label="Voir le drive", cta_href="drive.html")
+    rail = block_nav_rail_m3(
+        C_BRAND,
+        C_NAV,
+        page,
+        hours="Lun-sam 8h-20h · Dim 9h-12h30",
+        address=C_ADDRESS,
+        phone=C_PHONE,
+        tagline="Thionville · frais & drive",
+    )
+    top = block_rail_topbar_m3(
+        search_placeholder="Chercher un produit",
+        cta_label="Drive 2 h",
+        cta_dialog="driveDialog" if page == "index.html" else "",
+        cta_href="drive.html",
+    )
     foot = _chrome_foot("commerce", 
         C_BRAND,
         phone=C_PHONE,
@@ -990,52 +1361,97 @@ def _shell_commerce(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Lun–sam 8h–20h · Dim 9h–12h30",
     )
     mobile = block_mobile_cta("Drive 2 h", "drive.html", C_PHONE)
-    return wrap_page_retail(title, desc, bar + nav + main + foot + mobile, slug="commerce", page=page, site_name=C_BRAND, nav=C_NAV)
+    if page != "index.html":
+        main += block_dialog_m3(
+            dialog_id="driveDialog",
+            title="Drive en 2 h",
+            lead="Creneau de retrait - frais offerts 1ere commande (demo).",
+            primary_label="Continuer",
+            primary_href="drive.html",
+            fields_html='<div class="mb-2"><label class="form-label small">Creneau</label><select class="form-select"><option>Aujourd\'hui 17h-18h</option><option>Aujourd\'hui 18h-19h</option></select></div>',
+        )
+        main += block_fab_menu_m3(
+            [
+                {"label": "Drive", "dialog": "driveDialog"},
+                {"label": "Rayons", "href": "rayons.html"},
+                {"label": "Halles+", "href": "contact.html"},
+            ],
+            main_label="Actions halles",
+        )
+    body = f'<div class="vt-rail-shell">{rail}<div class="vt-rail-main">{top}{main}{foot}{mobile}</div></div>'
+    return wrap_page_retail(title, desc, body, slug="commerce", page=page, site_name=C_BRAND, nav=C_NAV)
 
 
 def build_commerce_index() -> str:
     main = "<main>"
-    main += block_hero_editorial(
-        "Le marché du quotidien, version moderne",
-        "3200 m² de rayons, boucherie artisanale et drive en 2 h chrono.",
-        "hero.png",
-        "Allée de supermarché lumineuse",
-        eyebrow="Halles Thionville",
+    main += block_marquee_m3([
+        "Livraison locale offerte des 35 euro",
+        "Drive en 2 h",
+        "Producteurs mosellans",
+        "Halles+ : 1 euro = 1 point",
+    ])
+    main += """<section class="vt-retail-hero vt-retail-hero--bleed vt-reveal">
+  <div class="vt-retail-hero-bg" aria-hidden="true">
+    <picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" alt="" decoding="async" fetchpriority="high"></picture>
+  </div>
+  <div class="container vt-retail-hero-copy">
+    <p class="vt-eyebrow text-uppercase mb-2">Thionville · Halles</p>
+    <h1 class="vt-display display-4 mb-2">Le marche du quotidien, version moderne</h1>
+    <p class="lead mb-4">3200 m2, boucherie artisanale, drive en 2 h chrono - sans l'usine a caddies.</p>
+    <div class="d-flex flex-wrap gap-2 mb-2">
+      <button type="button" class="btn btn-vt-primary btn-lg" data-vt-dialog-open="driveDialog">Commander en drive</button>
+      <a class="btn btn-vt-outline btn-lg" href="rayons.html">Voir les rayons</a>
+    </div>
+  </div>
+</section>"""
+    main += block_menu_h_cards_m3(
+        [
+            {"title": "Fraicheur du jour", "text": "Fruits et legumes locaux", "price": "Promo", "img": "scene-1.png", "alt": "Rayon frais"},
+            {"title": "Boucherie", "text": "Decoupe a la demande", "price": "Sur place", "img": "scene-2.png", "alt": "Boucherie", "featured": True},
+            {"title": "Fromages", "text": "Affineurs du coin", "price": "A la coupe", "img": "card-1.png", "alt": "Fromage"},
+            {"title": "Drive 2 h", "text": "Retrait parking", "price": "Gratuit*", "img": "scene-3.png", "alt": "Drive"},
+        ],
+        kicker="Cette semaine",
+        title="Ce qui sort des Halles",
+        chips=[
+            {"label": "Tous", "active": True},
+            {"label": "Frais"},
+            {"label": "Promos"},
+            {"label": "Local"},
+            {"label": "Drive"},
+        ],
+    )
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4"><article class="vt-gold-card h-100"><h3 class="h6">Drive express</h3><p class="small mb-3">Commande en ligne, retrait en 2 h - frais offerts 1ere fois.</p><button type="button" class="btn btn-sm btn-vt-primary" data-vt-dialog-open="driveDialog">Lancer</button></article></div>
+      <div class="col-md-4"><article class="vt-gold-card h-100"><h3 class="h6">Halles+</h3><p class="small mb-3">1 euro = 1 point. Promos reservees, cafe offert de temps en temps.</p><button type="button" class="btn btn-sm btn-vt-outline" data-vt-dialog-open="fidelityDialog">Creer ma carte</button></article></div>
+      <div class="col-md-4"><article class="vt-gold-card h-100"><h3 class="h6">Producteurs</h3><p class="small mb-3">40 fournisseurs mosellans - degustation le samedi.</p><a class="btn btn-sm btn-vt-outline" href="rayons.html">Voir</a></article></div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="driveDialog",
+        title="Drive en 2 h",
+        lead="Creneau de retrait - frais offerts 1ere commande (demo).",
+        primary_label="Continuer",
         primary_href="drive.html",
-        primary_label="Commander en drive",
-        secondary_href="rayons.html",
-        secondary_label="Découvrir les rayons",
+        fields_html='<div class="mb-2"><label class="form-label small">Creneau</label><select class="form-select"><option>Aujourd\'hui 17h-18h</option><option>Aujourd\'hui 18h-19h</option><option>Demain 10h-11h</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel" placeholder="06 ..."></div>',
     )
-    main += block_trust_strip([
-        ("3200 m²", "Surface"),
-        ("40", "Producteurs"),
-        ("7j/7", "Ouvert"),
-        ("2 h", "Drive"),
-    ])
-    main += block_promo_cards([
-        {"title": "Drive express", "text": "Commandez en ligne, retrait en 2 h — frais offerts 1ère commande.", "href": "drive.html", "label": "Commander", "accent": "green"},
-        {"title": "Halles+", "text": "1 € = 1 point. Avantages exclusifs et promos réservées.", "href": "contact.html", "label": "Créer ma carte", "accent": "orange"},
-        {"title": "Producteurs locaux", "text": "40 fournisseurs mosellans — dégustation chaque samedi.", "href": "rayons.html", "label": "Voir les rayons", "accent": "sage"},
-    ])
-    main += block_story(
-        "Ancré dans le bassin thionvillois",
-        [
-            "Les Halles Thionville travaillent avec 40 producteurs mosellans et emploient 85 collaborateurs du quartier.",
-            "Ouvert 7j/7, avec des horaires élargis le dimanche matin.",
-        ],
+    main += block_dialog_m3(
+        dialog_id="fidelityDialog",
+        title="Carte Halles+",
+        lead="1 euro = 1 point. Avantages et promos reservees (demo).",
+        primary_label="Creer ma carte",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Prenom</label><input class="form-control"></div><div class="mb-2"><label class="form-label small">Email</label><input class="form-control" type="email"></div>',
     )
-    main += block_chapters(C_CHAPTERS_INDEX)
-    main += block_cards_bs("Nos atouts", C_CARDS)
-    main += block_cross_links(
-        "Découvrir aussi",
-        [
-            ("Promos de la semaine", "rayons.html"),
-            ("Click & collect", "drive.html"),
-            ("Carte Halles+", "contact.html"),
-            ("Livraison soir", "contact.html"),
-        ],
-    )
-    main += block_cta_band("Inscrivez-vous au programme Halles+.", "Créer ma carte", "contact.html")
+    main += block_snackbar_m3("Ajoute au panier (demo)")
+    main += block_fab_menu_m3([
+        {"label": "Drive", "dialog": "driveDialog"},
+        {"label": "Halles+", "dialog": "fidelityDialog"},
+        {"label": "Rayons", "href": "rayons.html"},
+    ], main_label="Actions halles")
     main += "</main>"
     return _shell_commerce(
         "index.html",
@@ -1553,16 +1969,19 @@ def build_industrie_contact() -> str:
     )
 
 
-# --- Patrimoine Lorraine (immobilier) — hero recherche + grille annonces ---
+# --- Patrimoine Lorraine (immobilier) — layout M3 maquette (_maquettes-echantillons/images/immobilier-m3.png) ---
 IM_BRAND = "Patrimoine Lorraine"
-IM_PHONE = "03 83 35 28 90"
+IM_BRAND_FULL = "Patrimoine Lorraine Metz"
+IM_PHONE = "03 87 36 12 14"
 IM_EMAIL = "contact@patrimoine-lorraine.fr"
-IM_ADDRESS = "8 place Stanislas, 54000 Nancy"
-IM_MAPS = "https://maps.google.com/?q=8+place+Stanislas+54000+Nancy"
+IM_ADDRESS = "14 rue des Clercs, 57000 Metz"
+IM_MAPS = "https://maps.google.com/?q=14+rue+des+Clercs+57000+Metz"
 IM_NAV = [
-    {"file": "index.html", "label": "Accueil"},
-    {"file": "biens.html", "label": "Nos biens"},
+    {"file": "biens.html", "label": "Acheter"},
+    {"file": "estimation.html", "label": "Vendre"},
+    {"file": "index.html#agence", "label": "L'agence"},
     {"file": "estimation.html", "label": "Estimation"},
+    {"file": "biens.html", "label": "Nos biens"},
     {"file": "contact.html", "label": "Contact"},
 ]
 IM_FOOTER_NAV = [
@@ -1572,32 +1991,125 @@ IM_FOOTER_NAV = [
     ("Gestion locative", "biens.html"),
 ]
 IM_LISTINGS = [
-    {"title": "Maison de maître — Metz Sablon", "price": "685 000 €", "specs": "280 m² · 6 pièces · jardin 800 m²", "text": "Rénovée 2024, garage double, quartier prisé.", "img": "card-1.png", "alt": "Maison Metz Sablon", "badge": "Coup de cœur"},
-    {"title": "Appartement haussmannien — Nancy", "price": "395 000 €", "specs": "95 m² · 4 pièces · 2e étage", "text": "Parquet, moulures, vue parc de la Pépinière.", "img": "card-2.png", "alt": "Appartement Nancy centre"},
-    {"title": "Terrain constructible — Thionville", "price": "145 000 €", "specs": "620 m² · viabilisé", "text": "Lotissement calme, proche axes autoroutiers.", "img": "card-3.png", "alt": "Terrain Thionville"},
+    {
+        "title": "Appartement 3 pièces",
+        "price": "249 000 €",
+        "address": "14 Rue des Clercs, 57000 Metz",
+        "city": "Metz · Centre",
+        "kind": "Vente",
+        "surface": "68 m²",
+        "rooms": "2 ch.",
+        "baths": "1 sdb",
+        "dpe": "D",
+        "img": "card-2.png",
+        "alt": "Appartement Metz centre",
+        "specs": "68 m² · 3 pièces",
+        "text": "Proche cathédrale, parquet et balcon.",
+    },
+    {
+        "title": "Maison de maître",
+        "price": "685 000 €",
+        "address": "Metz Sablon",
+        "city": "Metz · Sablon",
+        "kind": "Vente",
+        "surface": "280 m²",
+        "rooms": "6 pièces",
+        "baths": "jardin",
+        "dpe": "C",
+        "img": "card-1.png",
+        "alt": "Maison Metz Sablon",
+        "badge": "Coup de cœur",
+        "specs": "280 m² · 6 pièces · jardin 800 m²",
+        "text": "Rénovée 2024, garage double.",
+    },
+    {
+        "title": "Appartement haussmannien",
+        "price": "395 000 €",
+        "address": "Nancy centre",
+        "city": "Nancy · Centre",
+        "kind": "Vente",
+        "surface": "95 m²",
+        "rooms": "3 ch.",
+        "baths": "1 sdb",
+        "dpe": "B",
+        "img": "scene-1.png",
+        "alt": "Appartement Nancy centre",
+        "specs": "95 m² · 4 pièces · 2e étage",
+        "text": "Parquet, moulures, vue parc.",
+    },
 ]
 IM_LISTINGS_EXTRA = [
-    {"title": "Loft contemporain — Nancy", "price": "289 000 €", "specs": "72 m² · 3 pièces", "text": "Ancien atelier reconverti, terrasse.", "img": "gallery-1.png", "alt": "Loft Nancy"},
-    {"title": "Duplex — Metz Centre", "price": "420 000 €", "specs": "110 m² · 5 pièces", "text": "Proche cathédrale, deux parkings.", "img": "scene-1.png", "alt": "Duplex Metz"},
-    {"title": "Maison récente — Laxou", "price": "365 000 €", "specs": "130 m² · 5 pièces", "text": "RT 2012, jardin clos, écoles à pied.", "img": "scene-3.png", "alt": "Maison Laxou", "badge": "Nouveau"},
+    {
+        "title": "Loft contemporain",
+        "price": "289 000 €",
+        "address": "Nancy",
+        "city": "Nancy",
+        "kind": "Vente",
+        "surface": "72 m²",
+        "rooms": "2 ch.",
+        "baths": "1 sdb",
+        "dpe": "C",
+        "img": "gallery-1.png",
+        "alt": "Loft Nancy",
+        "specs": "72 m² · 3 pièces",
+        "text": "Ancien atelier reconverti, terrasse.",
+    },
+    {
+        "title": "Duplex centre",
+        "price": "420 000 €",
+        "address": "Metz Centre",
+        "city": "Metz · Centre",
+        "kind": "Vente",
+        "surface": "110 m²",
+        "rooms": "3 ch.",
+        "baths": "2 sdb",
+        "dpe": "C",
+        "img": "scene-2.png",
+        "alt": "Duplex Metz",
+        "specs": "110 m² · 5 pièces",
+        "text": "Proche cathédrale, deux parkings.",
+    },
+    {
+        "title": "Maison récente",
+        "price": "365 000 €",
+        "address": "Laxou",
+        "city": "Laxou",
+        "kind": "Vente",
+        "surface": "130 m²",
+        "rooms": "4 ch.",
+        "baths": "jardin",
+        "dpe": "B",
+        "img": "scene-3.png",
+        "alt": "Maison Laxou",
+        "badge": "Nouveau",
+        "specs": "130 m² · 5 pièces",
+        "text": "RT 2012, jardin clos, écoles à pied.",
+    },
 ]
 IM_CHAPTERS = [
-    {"title": "Visites qualifiées", "text": "Chaque visite est préparée — dossier complet, quartier, fiscalité locale.", "img": "scene-1.png", "alt": "Visite appartement Nancy"},
-    {"title": "Équipe locale", "text": "28 ans à Nancy — nous connaissons chaque micro-marché mosellan.", "img": "scene-2.png", "alt": "Équipe agence"},
-    {"title": "Jusqu'à l'acte", "text": "340+ ventes par an — suivi notarial et accompagnement primo-accédants.", "img": "scene-3.png", "alt": "Remise des clés"},
+    {"title": "Visites qualifiées", "text": "Chaque visite est préparée - dossier complet, quartier, fiscalité locale.", "img": "scene-1.png", "alt": "Visite appartement"},
+    {"title": "Équipe locale", "text": "Ancrée à Metz et Nancy - on connaît chaque micro-marché mosellan.", "img": "scene-2.png", "alt": "Équipe agence"},
+    {"title": "Jusqu'à l'acte", "text": "340+ ventes par an - suivi notarial et accompagnement primo-accédants.", "img": "scene-3.png", "alt": "Remise des clés"},
 ]
 IM_CARDS = [
     {"title": "Vente", "text": "Mandats exclusifs, home staging et diffusion ciblée.", "img": "card-1.png", "alt": "Vente immobilière"},
     {"title": "Achat", "text": "Sélection de biens, financement et négociation.", "img": "card-2.png", "alt": "Achat immobilier"},
-    {"title": "Gestion locative", "text": "Baux, quittances et états des lieux — clé en main.", "img": "card-3.png", "alt": "Gestion locative"},
+    {"title": "Gestion locative", "text": "Baux, quittances et états des lieux - clé en main.", "img": "card-3.png", "alt": "Gestion locative"},
 ]
 
 
 def _shell_immobilier(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Agence ouverte · Lun–sam", address=IM_ADDRESS, phone=IM_PHONE, maps_href=IM_MAPS)
-    nav = _chrome_nav("immobilier", IM_BRAND, IM_NAV, page, cta_label="Estimer mon bien", cta_href="estimation.html")
-    foot = _chrome_foot("immobilier", 
-        IM_BRAND,
+    nav = block_immo_m3_nav(
+        IM_BRAND_FULL,
+        IM_NAV,
+        page,
+        phone=IM_PHONE,
+        cta_label="Estimation gratuite",
+        cta_href="estimation.html",
+    )
+    foot = _chrome_foot(
+        "immobilier",
+        IM_BRAND_FULL,
         phone=IM_PHONE,
         address=IM_ADDRESS,
         email=IM_EMAIL,
@@ -1605,58 +2117,94 @@ def _shell_immobilier(page: str, title: str, desc: str, main: str) -> str:
         nav_links=IM_FOOTER_NAV,
         hours_line="Lun–ven 9h–19h · Sam 10h–13h",
     )
-    mobile = block_mobile_cta("Estimer mon bien", "estimation.html", IM_PHONE)
-    return wrap_page_property(title, desc, bar + nav + main + foot + mobile, slug="immobilier", page=page, site_name=IM_BRAND, nav=IM_NAV)
+    mobile = block_mobile_cta("Estimation", "estimation.html", IM_PHONE)
+    return wrap_page_property(
+        title,
+        desc,
+        nav + main + foot + mobile,
+        slug="immobilier",
+        page=page,
+        site_name=IM_BRAND_FULL,
+        nav=IM_NAV,
+        layout="immo-m3",
+    )
 
 
 def build_immobilier_index() -> str:
-    main = "<main>"
-    main += block_hero_property_search(
-        "Votre patrimoine mérite une attention d'exception",
-        "Achat, vente et gestion locative à Nancy, Metz et en Moselle.",
+    main = '<main itemscope itemtype="https://schema.org/WebPage">'
+    main += block_immo_m3_hero(
+        "Votre projet immobilier, notre expertise à Metz",
+        "Achat, vente, estimation : un accompagnement sur-mesure au cœur de la Lorraine.",
         "hero.png",
-        "Maison de maître Nancy — Patrimoine Lorraine",
-        eyebrow="Nancy · Grand Est",
-        search_action="biens.html",
+        "Vue de Metz — Patrimoine Lorraine",
+        primary_href="estimation.html",
+        primary_label="Estimation gratuite",
+        secondary_href="biens.html",
+        secondary_label="Découvrir nos biens",
     )
-    main += block_stats(
-        [("340+", "ventes / an"), ("28 ans", "à Nancy"), ("4,8/5", "avis clients"), ("72 h", "estimation")],
+    main += block_immo_m3_search(action="biens.html")
+    main += block_immo_m3_listings(
+        "Sélection",
+        IM_LISTINGS,
+        count_label="36 biens disponibles",
+        cta_href="biens.html",
+        cta_label="Voir tous les biens",
     )
-    main += block_listing_grid("Sélection du moment", IM_LISTINGS, cta_href="biens.html", cta_label="Voir tous les biens")
-    main += block_neighborhood_strip("Nos secteurs", [
-        ("Nancy centre", "42 biens"),
-        ("Laxou / Jarville", "28 biens"),
-        ("Metz Sablon", "35 biens"),
-        ("Thionville", "22 biens"),
-        ("Pont-à-Mousson", "14 biens"),
-        ("Épinal", "11 biens"),
-    ])
-    main += block_story(
-        "Pourquoi Patrimoine Lorraine ?",
-        [
-            "Implanté à Nancy depuis 1998, nous connaissons les réalités du marché mosellan.",
-            "Estimation gratuite, visites qualifiées et suivi jusqu'à l'acte authentique.",
-        ],
-    )
-    main += block_chapters(IM_CHAPTERS)
-    main += block_cards_bs("Nos services", IM_CARDS)
-    main += f"""<section class="py-5">
+    main += '<div id="agence"></div>'
+    main += """<section class="vt-reveal py-5 vt-immo-quartiers">
   <div class="container">
-    <blockquote class="vt-quote-panel mb-0">
-      « Vendu en 3 semaines, 4 % au-dessus de l'estimation initiale. » — Famille R., Metz
-    </blockquote>
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow text-uppercase">Quartiers</p>
+        <h2 class="vt-section-title h3 mb-3">On connait Metz, pas juste les portails</h2>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span class="badge rounded-pill text-bg-light px-3 py-2">Sablon</span>
+          <span class="badge rounded-pill text-bg-light px-3 py-2">Queuleu</span>
+          <span class="badge rounded-pill text-bg-light px-3 py-2">Devant-les-Ponts</span>
+          <span class="badge rounded-pill text-bg-light px-3 py-2">Montigny</span>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-vt-primary" data-vt-dialog-open="estimDialog">Estimation sous 72 h</button>
+          <button type="button" class="btn btn-vt-outline" data-vt-dialog-open="visitDialog">Demander une visite</button>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <article class="vt-immo-pulse-card">
+          <p class="small text-uppercase fw-bold mb-2">Alerte bien</p>
+          <p class="mb-2">Nouveau · T3 Queuleu · 289 000 euro</p>
+          <p class="small text-secondary mb-3">Balcon, cave, proche tram - dispo visite ce week-end.</p>
+          <button type="button" class="btn btn-sm btn-vt-primary" data-vt-dialog-open="visitDialog">Reserver un creneau</button>
+        </article>
+      </div>
+    </div>
   </div>
 </section>"""
-    main += block_trust(
-        "Estimation gratuite sous 72 h — home staging partenaire — gestion locative clé en main.",
-        ["FNAIM", "Carte pro", "Assurance RC", "Garantie financière"],
+    main += block_dialog_m3(
+        dialog_id="estimDialog",
+        title="Estimation gratuite",
+        lead="Adresse et type de bien - rapport sous 72 h (demo).",
+        primary_label="Demander",
+        primary_href="estimation.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Adresse</label><input class="form-control" placeholder="Metz..."></div><div class="mb-2"><label class="form-label small">Type</label><select class="form-select"><option>Appartement</option><option>Maison</option></select></div>',
     )
-    main += block_cta_band("Un projet immobilier à Nancy ou en Moselle ?", "Estimer mon bien", "estimation.html")
+    main += block_dialog_m3(
+        dialog_id="visitDialog",
+        title="Demander une visite",
+        lead="On te propose 2 creneaux sous 24 h (demo).",
+        primary_label="Envoyer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Bien / quartier</label><input class="form-control" placeholder="Queuleu, Sablon..."></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>',
+    )
+    main += block_fab_menu_m3([
+        {"label": "Estimation", "dialog": "estimDialog"},
+        {"label": "Visite", "dialog": "visitDialog"},
+        {"label": "Biens", "href": "biens.html"},
+    ], main_label="Actions immo")
     main += "</main>"
     return _shell_immobilier(
         "index.html",
-        f"{IM_BRAND} — Immobilier Nancy",
-        "Agence immobilière à Nancy : vente, location et gestion sur le Grand Est.",
+        f"{IM_BRAND} — Immobilier Metz",
+        "Agence immobilière à Metz : vente, location et estimation sur le Grand Est.",
         main,
     )
 
@@ -1664,43 +2212,41 @@ def build_immobilier_index() -> str:
 def build_immobilier_biens() -> str:
     all_listings = IM_LISTINGS + IM_LISTINGS_EXTRA
     main = "<main>"
-    main += block_hero_split(
+    main += block_immo_m3_hero(
         "Nos biens en Moselle",
-        "186 annonces actives — maisons, appartements et terrains.",
+        "Maisons, appartements et terrains - sélection actualisée chaque semaine.",
         "hero.png",
         "Sélection Patrimoine Lorraine",
-        eyebrow="Portefeuille",
         primary_href="contact.html",
         primary_label="Demander une visite",
         secondary_href="estimation.html",
         secondary_label="Estimer mon bien",
     )
-    main += block_listing_grid("Toutes nos annonces", all_listings)
+    main += block_immo_m3_search(action="biens.html")
+    main += block_immo_m3_listings("Toutes nos annonces", all_listings, count_label=f"{len(all_listings)} biens sélectionnés")
     main += block_funnel_steps("Parcours acquéreur", [
         ("Recherche", "Définir critères, budget et secteur avec un conseiller."),
-        ("Visites", "Sélection qualifiée — dossiers complets avant chaque visite."),
+        ("Visites", "Sélection qualifiée - dossiers complets avant chaque visite."),
         ("Offre", "Négociation et montage financement accompagnés."),
         ("Acte", "Suivi notarial jusqu'à la remise des clés."),
     ])
-    main += block_cards_bs("Nos expertises", IM_CARDS)
     main += block_cta_band("Un bien vous intéresse ?", "Nous contacter", "contact.html")
     main += "</main>"
     return _shell_immobilier(
         "biens.html",
         f"Nos biens — {IM_BRAND}",
-        "Annonces immobilières Nancy, Metz et Moselle.",
+        "Annonces immobilières Metz, Nancy et Moselle.",
         main,
     )
 
 
 def build_immobilier_estimation() -> str:
     main = "<main>"
-    main += block_hero_editorial(
+    main += block_immo_m3_hero(
         "Estimation gratuite sous 72 h",
         "Analyse marché locale, visite optionnelle et fourchette de prix argumentée.",
         "hero.png",
-        "Estimation immobilière Nancy",
-        eyebrow="Estimation",
+        "Estimation immobilière Metz",
         primary_href="contact.html",
         primary_label="Demander une estimation",
         secondary_href="biens.html",
@@ -1710,40 +2256,33 @@ def build_immobilier_estimation() -> str:
         ("Visite", "Diagnostic du bien, état, travaux et environnement."),
         ("Marché", "Comparables récents dans votre quartier."),
         ("Rapport", "Fourchette de prix et conseils de mise en valeur."),
-        ("Mandat", "Si vous vendez — stratégie de commercialisation."),
-    ])
-    main += block_timeline([
-        ("1998", "Création de Patrimoine Lorraine à Nancy."),
-        ("2010", "Ouverture bureau Metz — 50 mandats exclusifs."),
-        ("2018", "Gestion locative — 400 lots gérés."),
-        ("2024", "340+ ventes par an — équipe de 18 conseillers."),
+        ("Mandat", "Si vous vendez - stratégie de commercialisation."),
     ])
     main += block_property_estimation_form(brand=IM_BRAND, address=IM_ADDRESS, phone=IM_PHONE, email=IM_EMAIL)
     main += "</main>"
     return _shell_immobilier(
         "estimation.html",
         f"Estimation — {IM_BRAND}",
-        "Estimation gratuite de votre bien à Nancy et en Moselle.",
+        "Estimation gratuite de votre bien à Metz et en Moselle.",
         main,
     )
 
 
 def build_immobilier_contact() -> str:
     main = """<main>
-<section class="vt-hero-compact py-5 text-center">
+<section class="vt-immo-hero pt-5 pb-3">
   <div class="container">
-    <p class="vt-eyebrow text-uppercase">Contact</p>
     <h1 class="vt-display display-6">Parlons de votre projet</h1>
-    <p class="lead text-secondary">8 place Stanislas, Nancy — réponse sous 24 h.</p>
+    <p class="lead text-secondary">14 rue des Clercs, Metz - réponse sous 24 h.</p>
   </div>
 </section>"""
     main += block_property_estimation_form(brand=IM_BRAND, address=IM_ADDRESS, phone=IM_PHONE, email=IM_EMAIL)
-    main += block_cta_band("Démonstration — aucune donnée transmise.", "Envoyer ma demande", "contact.html")
+    main += block_cta_band("Démonstration - aucune donnée transmise.", "Envoyer ma demande", "contact.html")
     main += "</main>"
     return _shell_immobilier(
         "contact.html",
         f"Contact — {IM_BRAND}",
-        "Contactez Patrimoine Lorraine à Nancy.",
+        "Contactez Patrimoine Lorraine à Metz.",
         main,
     )
 
@@ -2393,12 +2932,12 @@ def build_fitness_contact() -> str:
     )
 
 
-# --- Studio Lumière Grise (photographie) — hero éditorial + galerie masonry + preuves ---
+# --- Studio Lumière Grise (photographie) — layout M3 maquette (_maquettes-echantillons/images/photographie-m3.png) ---
 PH_BRAND = "Studio Lumière Grise"
-PH_PHONE = "03 83 32 18 40"
+PH_PHONE = "03 87 21 45 60"
 PH_EMAIL = "bonjour@lumiere-grise.fr"
-PH_ADDRESS = "8 place Stanislas, 54000 Nancy"
-PH_MAPS = "https://maps.google.com/?q=8+place+Stanislas+54000+Nancy"
+PH_ADDRESS = "12 rue des Clercs, 57000 Metz"
+PH_MAPS = "https://maps.google.com/?q=12+rue+des+Clercs+57000+Metz"
 PH_NAV = [
     {"file": "index.html", "label": "Accueil"},
     {"file": "portfolio.html", "label": "Portfolio"},
@@ -2412,54 +2951,60 @@ PH_FOOTER_NAV = [
     ("Mariage", "portfolio.html"),
 ]
 PH_MASONRY = [
-    {"title": "Portrait corporate", "text": "Dirigeants et équipes — lumière naturelle, retouches discrètes.", "img": "card-1.png", "alt": "Portrait corporate"},
-    {"title": "Mariage documentaire", "text": "Reportage intimiste, noir et blanc et couleur.", "img": "scene-1.png", "alt": "Mariage documentaire"},
-    {"title": "Architecture & design", "text": "Mise en valeur de volumes et matériaux.", "img": "gallery-2.png", "alt": "Photo architecture"},
+    {"title": "Architecture", "text": "Volumes et lumière.", "img": "gallery-2.png", "alt": "Photo architecture"},
+    {"title": "Mariage", "text": "Reportage documentaire.", "img": "scene-1.png", "alt": "Mariage documentaire"},
+    {"title": "Produit", "text": "Nature morte éditoriale.", "img": "card-3.png", "alt": "Photo produit"},
+    {"title": "Paysage", "text": "Grand Est.", "img": "hero.png", "alt": "Paysage"},
+    {"title": "Corporate", "text": "Équipes et dirigeants.", "img": "card-1.png", "alt": "Portrait corporate"},
+    {"title": "Événement", "text": "Séminaires et soirées.", "img": "card-2.png", "alt": "Événement"},
+    {"title": "Table", "text": "Lifestyle.", "img": "scene-3.png", "alt": "Lifestyle"},
+    {"title": "Couple", "text": "Golden hour.", "img": "gallery-1.png", "alt": "Couple"},
+    {"title": "Studio", "text": "Noir et blanc.", "img": "scene-2.png", "alt": "Studio"},
 ]
 PH_PROJECTS = [
-    {"title": "Mariage Château des Lumières", "year": "2024", "specs": "Nancy · reportage", "text": "Journée complète, 420 photos livrées.", "img": "gallery-1.png", "alt": "Mariage Nancy", "badge": "Mariage"},
+    {"title": "Mariage Château des Lumières", "year": "2024", "specs": "Metz · reportage", "text": "Journée complète, 420 photos livrées.", "img": "gallery-1.png", "alt": "Mariage Metz", "badge": "Mariage"},
     {"title": "Portraits PME Grand Est", "year": "2024", "specs": "Corporate · 12 dirigeants", "text": "Série homogène pour site et LinkedIn.", "img": "scene-2.png", "alt": "Portrait corporate"},
     {"title": "Résidence contemporaine", "year": "2023", "specs": "Architecture · intérieur", "text": "Lumière zénithale et matériaux bruts.", "img": "gallery-2.png", "alt": "Architecture photo"},
     {"title": "Lookbook mode locale", "year": "2023", "specs": "Éditorial", "text": "Direction artistique et post-production.", "img": "card-3.png", "alt": "Éditorial mode", "badge": "Éditorial"},
-    {"title": "Naissance & famille", "year": "2024", "specs": "Lifestyle · Nancy", "text": "Séance à domicile, tons doux.", "img": "scene-3.png", "alt": "Photo famille"},
+    {"title": "Naissance & famille", "year": "2024", "specs": "Lifestyle · Metz", "text": "Séance à domicile, tons doux.", "img": "scene-3.png", "alt": "Photo famille"},
     {"title": "Événement corporate", "year": "2022", "specs": "Séminaire · 200 pers.", "text": "Reportage et portraits instantanés.", "img": "card-2.png", "alt": "Événement"},
 ]
 PH_BENTO = [
-    {"title": "Mariage", "text": "Reportage documentaire — Nancy et Grand Est.", "img": "gallery-1.png", "alt": "Mariage", "size": "lg"},
+    {"title": "Mariage", "text": "Reportage documentaire - Metz et Grand Est.", "img": "gallery-1.png", "alt": "Mariage", "size": "lg"},
     {"title": "Corporate", "text": "Portraits dirigeants et équipes.", "img": "scene-2.png", "alt": "Corporate"},
     {"title": "Éditorial", "text": "Direction artistique incluse.", "img": "card-3.png", "alt": "Éditorial"},
 ]
 PH_CHAPTERS = [
     {"title": "Écoute & brief", "text": "Échange sur votre univers, vos références et vos contraintes.", "img": "scene-3.png", "alt": "Brief créatif"},
-    {"title": "Shooting", "text": "Lumière naturelle ou studio — direction bienveillante.", "img": "scene-1.png", "alt": "Séance photo"},
+    {"title": "Shooting", "text": "Lumière naturelle ou studio - direction bienveillante.", "img": "scene-1.png", "alt": "Séance photo"},
     {"title": "Livraison", "text": "Galerie web privée, retouches et tirages sur demande.", "img": "scene-2.png", "alt": "Livraison photos"},
 ]
 PH_CARDS = [
-    {"title": "Portrait", "text": "Studio ou sur site — à partir de 350 €.", "img": "card-1.png", "alt": "Portrait"},
-    {"title": "Mariage", "text": "Journée complète + album — sur devis.", "img": "card-2.png", "alt": "Mariage"},
+    {"title": "Portrait", "text": "Studio ou sur site - à partir de 350 €.", "img": "card-1.png", "alt": "Portrait"},
+    {"title": "Mariage", "text": "Journée complète + album - sur devis.", "img": "card-2.png", "alt": "Mariage"},
     {"title": "Éditorial", "text": "Lookbook et direction artistique.", "img": "card-3.png", "alt": "Éditorial"},
 ]
 PH_PRICING = [
     {
         "title": "Portraits & studio",
         "items": [
-            {"name": "Portrait individuel", "desc": "Studio Nancy — 1 tenue, 5 retouches", "price": "350 €", "tags": ["1 h"]},
-            {"name": "Portrait équipe", "desc": "Jusqu'à 8 personnes — fond uni", "price": "690 €", "tags": ["Demi-journée"]},
+            {"name": "Portrait individuel", "desc": "Studio Metz - 1 tenue, 5 retouches", "price": "350 €", "tags": ["1 h"]},
+            {"name": "Portrait équipe", "desc": "Jusqu'à 8 personnes - fond uni", "price": "690 €", "tags": ["Demi-journée"]},
             {"name": "Book artiste", "desc": "2 h studio + direction", "price": "520 €", "tags": []},
         ],
     },
     {
         "title": "Événements & mariage",
         "items": [
-            {"name": "Mariage journée", "desc": "Préparatifs à soirée — galerie web", "price": "1 890 €", "tags": ["Grand Est"]},
+            {"name": "Mariage journée", "desc": "Préparatifs à soirée - galerie web", "price": "1 890 €", "tags": ["Grand Est"]},
             {"name": "Demi-journée événement", "desc": "Séminaire, inauguration, soirée", "price": "750 €", "tags": []},
-            {"name": "Album premium", "desc": "30 pages — design inclus", "price": "390 €", "tags": ["Option"]},
+            {"name": "Album premium", "desc": "30 pages - design inclus", "price": "390 €", "tags": ["Option"]},
         ],
     },
 ]
 PH_FAQ = [
     ("Combien de photos sont livrées ?", "Mariage : 400 à 600 photos retouchées. Portrait : 15 à 25 selon la formule."),
-    ("Vous déplacez-vous hors Nancy ?", "Oui — Grand Est sans supplément jusqu'à 80 km, au-delà sur devis."),
+    ("Vous déplacez-vous hors Metz ?", "Oui - Grand Est sans supplément jusqu'à 80 km, au-delà sur devis."),
     ("Délai de livraison ?", "Galerie web sous 10 jours ouvrés. Album sous 4 semaines."),
 ]
 PH_CREDENTIALS = [
@@ -2470,55 +3015,81 @@ PH_CREDENTIALS = [
 
 
 def _shell_photo(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="Studio ouvert sur RDV · Mar–sam", address=PH_ADDRESS, phone=PH_PHONE, maps_href=PH_MAPS)
-    nav = _chrome_nav("photographie", PH_BRAND, PH_NAV, page, cta_label="Demander un devis", cta_href="contact.html")
-    foot = _chrome_foot("photographie", 
+    nav = block_photo_m3_nav(
+        PH_BRAND,
+        city="Metz",
+        chips=[
+            {"label": "Mariage", "href": "prestations.html", "active": page == "prestations.html"},
+            {"label": "Corporate", "href": "portfolio.html"},
+        ],
+        cta_label="Demander un devis",
+        cta_href="contact.html",
+    )
+    foot = _chrome_foot(
+        "photographie",
         PH_BRAND,
         phone=PH_PHONE,
         address=PH_ADDRESS,
         email=PH_EMAIL,
         maps_href=PH_MAPS,
         nav_links=PH_FOOTER_NAV,
-        hours_line="Sur rendez-vous · Nancy",
+        hours_line="Sur rendez-vous · Metz",
     )
-    mobile = block_mobile_cta("Demander un devis", "contact.html", PH_PHONE)
-    return wrap_page_photo(title, desc, bar + nav + main + foot + mobile, slug="photographie", page=page, site_name=PH_BRAND, nav=PH_NAV)
+    fab = block_plus_fab("contact.html", "Nouveau projet")
+    mobile = block_mobile_cta("Devis", "contact.html", PH_PHONE)
+    return wrap_page_photo(
+        title,
+        desc,
+        nav + main + foot + fab + mobile,
+        slug="photographie",
+        page=page,
+        site_name=PH_BRAND,
+        nav=PH_NAV,
+        layout="photo-m3",
+    )
 
 
 def build_photographie_index() -> str:
     main = "<main>"
-    main += block_hero_split_reverse(
-        "Capturer l'essentiel",
-        "Photographie éditoriale à Nancy — portrait, mariage et corporate dans la pénombre et la clarté.",
-        "hero.png",
-        "Portrait éditorial Studio Lumière Grise",
-        eyebrow="Photographie · Nancy",
-        primary_href="portfolio.html",
-        primary_label="Voir le portfolio",
-        secondary_href="contact.html",
-        secondary_label="Demander un devis",
+    main += block_photo_m3_masonry(PH_MASONRY)
+    main += block_photo_toast("Votre demande a bien été envoyée", close_href="contact.html")
+    main += """<section class="vt-reveal py-5 vt-photo-brief">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <p class="vt-eyebrow text-uppercase">Brief rapide</p>
+        <h2 class="vt-section-title h3 mb-3">Mariage, portrait, corporate</h2>
+        <p class="text-secondary mb-3">Tu coches ce dont tu as besoin - devis clair sous 24 h, galerie web sous 10 jours.</p>
+        <button type="button" class="btn btn-vt-primary" data-vt-dialog-open="devisPhoto">Demander un devis</button>
+      </div>
+      <div class="col-lg-5">
+        <div class="vt-photo-pack">
+          <button type="button" class="vt-photo-pack-item" data-vt-dialog-open="devisPhoto"><strong>Mariage</strong><span>400-600 photos</span></button>
+          <button type="button" class="vt-photo-pack-item" data-vt-dialog-open="devisPhoto"><strong>Portrait</strong><span>15-25 retouchees</span></button>
+          <button type="button" class="vt-photo-pack-item" data-vt-dialog-open="devisPhoto"><strong>Corporate</strong><span>Direction homogene</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += block_dialog_m3(
+        dialog_id="devisPhoto",
+        title="Devis photo",
+        lead="Date, type de projet, lieu - reponse sous 24 h (demo).",
+        primary_label="Envoyer",
+        primary_href="contact.html",
+        fields_html='<div class="mb-2"><label class="form-label small">Projet</label><select class="form-select"><option>Mariage</option><option>Portrait</option><option>Corporate</option></select></div><div class="mb-2"><label class="form-label small">Date souhaitee</label><input type="date" class="form-control"></div><div class="mb-2"><label class="form-label small">Lieu</label><input class="form-control" placeholder="Metz, Nancy..."></div>',
     )
-    main += block_trust_strip(PH_CREDENTIALS)
-    main += block_gallery_masonry("Sélection", PH_MASONRY, cta_href="portfolio.html", cta_label="Tout le portfolio")
-    main += block_story(
-        "Pourquoi Lumière Grise ?",
-        [
-            "Implanté à Nancy depuis 2010, le studio accompagne couples, marques et créateurs en Grand Est.",
-            "Une approche documentaire et éditoriale — sans effet superflu, avec exigence sur la lumière.",
-        ],
-    )
-    main += block_chapters(PH_CHAPTERS)
-    main += block_cards_bs("Univers", PH_CARDS)
-    main += block_trust(
-        "« Des images qui racontent notre marque sans effet superflu. » — Agence K., Nancy",
-        ["Mariage", "Corporate", "Portrait", "Éditorial"],
-    )
-    main += block_cta_band("Parlons de votre projet.", "Demander un devis", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Devis", "dialog": "devisPhoto"},
+        {"label": "Portfolio", "href": "portfolio.html"},
+        {"label": "Prestations", "href": "prestations.html"},
+    ], main_label="Actions photo")
     main += "</main>"
     return _shell_photo(
         "index.html",
-        f"{PH_BRAND} — Photographe Nancy",
-        "Photographe mariage et corporate à Nancy : reportages et portraits.",
+        f"{PH_BRAND} — Photographe Metz",
+        "Photographe mariage et corporate à Metz : reportages et portraits.",
         main,
     )
 
@@ -3281,8 +3852,9 @@ ET_EMAIL = "reservation@stanislas-collection.fr"
 ET_ADDRESS = "2 place Stanislas, 54000 Nancy"
 ET_MAPS = "https://maps.google.com/?q=2+place+Stanislas+54000+Nancy"
 ET_NAV = [
-    {"file": "index.html", "label": "Accueil"},
-    {"file": "chambres.html", "label": "Chambres"},
+    {"file": "chambres.html", "label": "Chambres & suites"},
+    {"file": "index.html#dining", "label": "Restaurant"},
+    {"file": "index.html#wellness", "label": "Bien-être"},
     {"file": "seminaires.html", "label": "Séminaires"},
     {"file": "contact.html", "label": "Contact"},
 ]
@@ -3330,9 +3902,15 @@ ET_SEMINAR_ROWS = [
 
 
 def _shell_etablissement(page: str, title: str, desc: str, main: str) -> str:
-    bar = block_info_bar(status="4 étoiles · Spa & séminaires", address=ET_ADDRESS, phone=ET_PHONE, maps_href=ET_MAPS)
-    nav = _chrome_nav("etablissement", ET_BRAND, ET_NAV, page, cta_label="Réserver", cta_href="contact.html")
-    foot = _chrome_foot("etablissement", 
+    nav = block_hotel_m3_nav(
+        ET_BRAND,
+        ET_NAV,
+        page,
+        cta_label="Réserver",
+        cta_href="contact.html",
+    )
+    foot = _chrome_foot(
+        "etablissement",
         ET_BRAND,
         phone=ET_PHONE,
         address=ET_ADDRESS,
@@ -3342,33 +3920,78 @@ def _shell_etablissement(page: str, title: str, desc: str, main: str) -> str:
         hours_line="Nancy · Place Stanislas",
     )
     mobile = block_mobile_cta("Réserver", "contact.html", ET_PHONE)
-    return wrap_page_hotel(title, desc, bar + nav + main + foot + mobile, slug="etablissement", page=page, site_name=ET_BRAND, nav=ET_NAV)
+    return wrap_page_hotel(
+        title,
+        desc,
+        nav + main + foot + mobile,
+        slug="etablissement",
+        page=page,
+        site_name=ET_BRAND,
+        nav=ET_NAV,
+        layout="hotel-m3",
+    )
 
 
 def build_etablissement_index() -> str:
     main = "<main>"
-    main += block_hero_overlay(
-        "Hospitalité premium face à Stanislas",
-        "Hôtel 4 étoiles à Nancy — chambres raffinées, spa et séminaires au cœur de la ville.",
+    main += block_hotel_m3_hero(
+        "L'élégance intemporelle au cœur de Nancy",
+        "Héritage, confort et luxe discret à deux pas de la place Stanislas.",
         "hero.png",
-        "Façade Hôtel Stanislas Collection Nancy",
-        eyebrow="Nancy · 4 étoiles",
+        "Suite Hôtel Stanislas Collection Nancy",
+        primary_href="chambres.html",
+        primary_label="Découvrir la collection",
+    )
+    main += block_hotel_m3_booking(action="contact.html", cta_label="Voir les disponibilités")
+    main += block_hotel_m3_rooms(
+        "Chambres & suites",
+        "Des espaces élégants pour se reposer, créer et savourer Nancy.",
+        [
+            {"title": "Deluxe Room", "meta": "28 m² · lit King", "price": "dès 210 € / nuit", "img": "card-1.png", "alt": "Deluxe Room", "href": "contact.html"},
+            {"title": "Executive Room", "meta": "35 m² · lit King", "price": "dès 260 € / nuit", "img": "card-2.png", "alt": "Executive Room", "href": "contact.html"},
+            {"title": "Junior Suite", "meta": "45 m² · lit King", "price": "dès 380 € / nuit", "img": "card-3.png", "alt": "Junior Suite", "href": "contact.html"},
+        ],
+    )
+    main += block_cta_band(
+        "Meilleur tarif en direct - confirmation sous 2 h.",
+        "Voir les disponibilites",
+        "contact.html",
+    )
+    main += """<section class="vt-reveal py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <p class="vt-eyebrow text-uppercase">Tarif direct</p>
+        <h2 class="vt-section-title h3">Reserver ici, pas sur une plateforme</h2>
+        <p class="text-secondary mb-3">Meilleur tarif, accueil 24 h, spa inclus pour les clients heberges - confirmation sous 2 h.</p>
+        <button type="button" class="btn btn-vt-primary" data-vt-dialog-open="resaHotel">Voir les disponibilites</button>
+      </div>
+      <div class="col-lg-6">
+        <div class="vt-hotel-perk-grid">
+          <div><strong>Spa</strong><span>Hammam &amp; sauna</span></div>
+          <div><strong>Salons</strong><span>Jusqu'a 100 pers.</span></div>
+          <div><strong>Parking</strong><span>80 places</span></div>
+          <div><strong>Bar</strong><span>Vins du terroir</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>"""
+    main += '<div id="dining"></div>'
+    main += '<div id="wellness"></div>'
+    main += block_dialog_m3(
+        dialog_id="resaHotel",
+        title="Disponibilites",
+        lead="Arrivee, depart, chambres - on confirme sous 2 h (demo).",
+        primary_label="Demander",
         primary_href="contact.html",
-        primary_label="Réserver",
-        secondary_href="chambres.html",
-        secondary_label="Nos chambres",
+        fields_html='<div class="row g-2"><div class="col-6"><label class="form-label small">Arrivee</label><input type="date" class="form-control"></div><div class="col-6"><label class="form-label small">Depart</label><input type="date" class="form-control"></div><div class="col-12"><label class="form-label small">Chambre</label><select class="form-select"><option>Deluxe</option><option>Executive</option><option>Junior Suite</option></select></div></div>',
     )
-    main += block_marquee_strip([
-        "4 étoiles", "Place Stanislas", "Spa", "Séminaires", "Parking", "Petit-déjeuner lorrain",
-    ])
-    main += block_stats([("68", "Chambres"), ("4", "Salons"), ("9.2", "Note clients"), ("1882", "Bâtiment historique")])
-    main += block_cards_bs("Nos chambres & suites", ET_CARDS)
-    main += block_snap_chapters(ET_SNAP)
-    main += block_trust(
-        "« Une adresse d'exception à deux pas de la place Stanislas — service discret et chambres magnifiques. » — Marie-Claire V., 2025",
-        ["4 étoiles", "Spa", "Séminaires", "Centre Nancy"],
-    )
-    main += block_cta_band("Réservez votre séjour à Nancy.", "Réserver", "contact.html")
+    main += block_fab_menu_m3([
+        {"label": "Reserver", "dialog": "resaHotel"},
+        {"label": "Chambres", "href": "chambres.html"},
+        {"label": "Seminaires", "href": "seminaires.html"},
+    ], main_label="Actions hotel")
     main += "</main>"
     return _shell_etablissement(
         "index.html",

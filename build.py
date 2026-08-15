@@ -1896,7 +1896,9 @@ def _vitrines_catalog_inner_lines(items: List[Dict[str, Any]], cats: List[str]) 
         card_cta = html.escape(f'Voir {title_raw}')
         tagline = html.escape(it.get('tagline') or '')
         excerpt = html.escape(it.get('excerpt') or '')
-        _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
+        _a_thumb = _vitrine_screenshot_paths(slug, 'tablet')[2]
+        if not _a_thumb:
+            _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
         thumb = _a_thumb or '/assets/images/og/home-1200x630.jpg'
         cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat))
         delay = min(idx * 40, 400)
@@ -1969,7 +1971,11 @@ def build_home_vitrines_teaser_embed() -> None:
         tagline = html.escape((it.get('tagline') or '').strip())
         cat = (it.get('category') or '').strip()
         cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()))
-        thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
+        thumb = (
+            _vitrine_screenshot_paths(slug, 'tablet')[2]
+            or _vitrine_screenshot_paths(slug, 'desktop')[2]
+            or '/assets/images/og/home-1200x630.jpg'
+        )
         demo_url = html.escape(devantures_url(f'{slug}/demo/index.html'))
         fiche_url = html.escape(devantures_url(slug))
         cls = f'home-vitrine-teaser scroll-reveal{extra_class}'
@@ -2322,7 +2328,11 @@ def _home_echantillon_rotation_item(it: Dict[str, Any]) -> Optional[Dict[str, An
     if not slug:
         return None
     cat = (it.get('category') or '').strip()
-    thumb = _vitrine_screenshot_paths(slug, 'desktop')[2] or '/assets/images/og/home-1200x630.jpg'
+    thumb = (
+        _vitrine_screenshot_paths(slug, 'tablet')[2]
+        or _vitrine_screenshot_paths(slug, 'desktop')[2]
+        or '/assets/images/og/home-1200x630.jpg'
+    )
     return {
         'slug': slug,
         'title': (it.get('title') or slug).strip(),
@@ -4628,8 +4638,16 @@ def build_project_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
 
 def build_page(page_name: str, template_engine: TemplateEngine):
     """Build une page HTML."""
-    if page_name in ('index', 'vitrines'):
+    if page_name in ('index', 'vitrines', 'echantillons'):
         build_vitrines_catalog_embed()
+        # Invalide le cache includes : le catalogue vient d'etre regenere.
+        if hasattr(template_engine, 'includes_cache'):
+            for key in list(template_engine.includes_cache):
+                if 'vitrines-' in key or 'home-vitrines' in key:
+                    template_engine.includes_cache.pop(key, None)
+    if page_name == 'echantillons':
+        # Alias historique : la page catalogue est src/pages/vitrines.html
+        page_name = 'vitrines'
     if page_name == 'index':
         build_home_vitrines_teaser_embed()
         build_home_livres_rotation(OUTPUT_DIR)

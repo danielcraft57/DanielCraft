@@ -129,3 +129,6 @@ livres-formation/**/_sizes_out.txt
 
 dist-test/
 coaching/
+
+# Brouillons maquettes echantillons (hors catalogue officiel)
+_maquettes-echantillons/

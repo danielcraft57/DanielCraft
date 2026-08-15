@@ -166,6 +166,39 @@
     return n + ' vues';
   }
 
+  function pickRotationPool(data, slotOffset) {
+    const pools = data.pools || [];
+    if (!pools.length) return [];
+    const intervalH = Number(data.rotationIntervalHours) || 2;
+    const now = new Date();
+    const slotsPerDay = Math.max(1, Math.ceil(24 / intervalH));
+    const dayIndex = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+    const slotOfDay = Math.floor((now.getHours() * 60 + now.getMinutes()) / (intervalH * 60));
+    const offset = Number(slotOffset) || 0;
+    const slot = (dayIndex * slotsPerDay + slotOfDay + offset) % pools.length;
+    return pools[slot] || pools[0];
+  }
+
+  function setLazyImg(img, src, webpPath) {
+    if (!img) return;
+    const picture = img.closest('picture');
+    const source = picture ? picture.querySelector('source') : null;
+    img.dataset.lazyDone = '0';
+    img.classList.add('home-lazy-img');
+    img.classList.remove('is-loaded');
+    img.setAttribute('data-src', src);
+    img.removeAttribute('src');
+    if (source) {
+      source.removeAttribute('srcset');
+      if (webpPath) {
+        source.setAttribute('data-srcset', webpPath);
+        source.setAttribute('type', 'image/webp');
+      } else {
+        source.removeAttribute('data-srcset');
+      }
+    }
+  }
+
   function applyBlogCards(root, items) {
     const cards = root.querySelectorAll('.home-blog-card');
     cards.forEach(function (card, i) {
@@ -173,7 +206,6 @@
       if (!item) return;
       const media = card.querySelector('.home-blog-card__media');
       const img = card.querySelector('img');
-      const source = card.querySelector('source');
       const cat = card.querySelector('.home-blog-card__cat');
       const titleA = card.querySelector('h3 a');
       const more = card.querySelector('.home-blog-card__more');
@@ -188,19 +220,7 @@
       if (schemaImg) schemaImg.setAttribute('href', imgPath);
       if (img) {
         img.alt = '';
-        img.dataset.lazyDone = '0';
-        img.classList.add('home-lazy-img');
-        img.setAttribute('data-src', imgPath);
-        img.removeAttribute('src');
-      }
-      if (source) {
-        source.removeAttribute('srcset');
-        if (webpPath) {
-          source.setAttribute('data-srcset', webpPath);
-          source.setAttribute('type', 'image/webp');
-        } else {
-          source.removeAttribute('data-srcset');
-        }
+        setLazyImg(img, imgPath, webpPath);
       }
       if (cat) cat.textContent = item.cat || '';
       if (titleA) {
@@ -217,39 +237,95 @@
     initScrollLazyImages(root);
   }
 
-  function pickBlogPool(data) {
-    const pools = data.pools || [];
-    if (!pools.length) return [];
-    const intervalH = Number(data.rotationIntervalHours) || 2;
-    const now = new Date();
-    const slotsPerDay = Math.max(1, Math.ceil(24 / intervalH));
-    const dayIndex = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
-    const slotOfDay = Math.floor((now.getHours() * 60 + now.getMinutes()) / (intervalH * 60));
-    const slot = (dayIndex * slotsPerDay + slotOfDay) % pools.length;
-    return pools[slot] || pools[0];
+  function applyLivresShelf(root, items) {
+    const links = root.querySelectorAll('.home-livre');
+    links.forEach(function (link, i) {
+      const item = items[i];
+      if (!item) return;
+      const img = link.querySelector('img');
+      const imgPath = item.img || '';
+      const webpPath = ogWebpFromJpg(imgPath);
+      link.setAttribute('href', item.href || '/bouquins/');
+      link.setAttribute('aria-label', item.title || 'Bouquin');
+      if (img) {
+        img.alt = item.title ? 'Couverture ' + item.title : '';
+        setLazyImg(img, imgPath, webpPath);
+      }
+    });
+    initScrollLazyImages(root);
+  }
+
+  function applyEchantillonsTeaser(root, items) {
+    const cards = root.querySelectorAll('.home-vitrine-teaser');
+    cards.forEach(function (card, i) {
+      const item = items[i];
+      if (!item) return;
+      const media = card.querySelector('.home-vitrine-teaser-media');
+      const img = card.querySelector('img');
+      const cat = card.querySelector('.home-vitrine-teaser-cat');
+      const title = card.querySelector('.home-vitrine-teaser-title');
+      const tagline = card.querySelector('.home-vitrine-teaser-tagline');
+      const demo = card.querySelector('.home-vitrine-teaser-demo');
+      const more = card.querySelector('.home-vitrine-teaser-more');
+      if (media) media.setAttribute('href', item.demo || item.href);
+      if (img) {
+        img.alt = '';
+        setLazyImg(img, item.img || '', '');
+      }
+      if (cat) cat.textContent = item.cat || '';
+      if (title) title.textContent = item.title || '';
+      if (tagline) tagline.textContent = item.tagline || '';
+      if (demo) demo.setAttribute('href', item.demo || item.href);
+      if (more) more.setAttribute('href', item.href || '/echantillons/');
+    });
+    initScrollLazyImages(root);
+  }
+
+  function fetchRotation(url) {
+    return fetch(url, { credentials: 'same-origin' }).then(function (response) {
+      if (!response.ok) throw new Error(url);
+      return response.json();
+    });
   }
 
   function initBlogRotate() {
     const root = document.querySelector('[data-home-blog-rotate]');
     if (!root) return;
-
-    fetch('/blog/home-rotation.json', { credentials: 'same-origin' })
-      .then(function (response) {
-        if (!response.ok) throw new Error('home-rotation');
-        return response.json();
-      })
+    fetchRotation('/blog/home-rotation.json')
       .then(function (data) {
-        const items = pickBlogPool(data);
+        const items = pickRotationPool(data, 0);
         if (items && items.length) applyBlogCards(root, items);
       })
-      .catch(function () {
-        /* HTML statique = secours si le JSON est indisponible */
-      });
+      .catch(function () {});
+  }
+
+  function initLivresRotate() {
+    const root = document.querySelector('[data-home-livres-rotate]');
+    if (!root) return;
+    fetchRotation('/data/home-livres-rotation.json')
+      .then(function (data) {
+        const items = pickRotationPool(data, 3);
+        if (items && items.length) applyLivresShelf(root, items);
+      })
+      .catch(function () {});
+  }
+
+  function initEchantillonsRotate() {
+    const root = document.querySelector('[data-home-echantillons-rotate]');
+    if (!root) return;
+    fetchRotation('/data/home-echantillons-rotation.json')
+      .then(function (data) {
+        const items = pickRotationPool(data, 7);
+        if (items && items.length) applyEchantillonsTeaser(root, items);
+      })
+      .catch(function () {});
   }
 
   initTiltCards();
   initHeroParallax();
   initStagger();
   initBlogRotate();
+  initLivresRotate();
+  initEchantillonsRotate();
   initScrollLazyImages();
 })();

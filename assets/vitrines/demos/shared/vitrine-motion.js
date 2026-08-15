@@ -173,6 +173,79 @@
     });
   }
 
+  function initDialogs() {
+    document.querySelectorAll("[data-vt-dialog-open]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        var id = btn.getAttribute("data-vt-dialog-open");
+        var dlg = id ? document.getElementById(id) : null;
+        if (!dlg) return;
+        e.preventDefault();
+        dlg.hidden = false;
+        requestAnimationFrame(function () {
+          dlg.classList.add("is-open");
+        });
+      });
+    });
+    document.querySelectorAll("[data-vt-dialog]").forEach(function (dlg) {
+      function close() {
+        dlg.classList.remove("is-open");
+        setTimeout(function () {
+          dlg.hidden = true;
+        }, 320);
+      }
+      dlg.addEventListener("click", function (e) {
+        if (e.target === dlg) close();
+      });
+      dlg.querySelectorAll("[data-vt-dialog-close]").forEach(function (b) {
+        b.addEventListener("click", close);
+      });
+    });
+  }
+
+  function initSnackbar() {
+    var snack = document.querySelector(".vt-snackbar");
+    if (!snack) return;
+    var timer = 0;
+    function show(msg) {
+      if (msg) snack.textContent = msg;
+      snack.classList.add("is-on");
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        snack.classList.remove("is-on");
+      }, 2800);
+    }
+    document.querySelectorAll("[data-vt-snack]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        show(el.getAttribute("data-vt-snack") || "OK");
+      });
+    });
+    window.vtShowSnack = show;
+  }
+
+  function initFabMenu() {
+    document.querySelectorAll("[data-vt-fab-menu]").forEach(function (wrap) {
+      var main = wrap.querySelector(".vt-fab-menu-main");
+      if (!main) return;
+      main.addEventListener("click", function () {
+        var open = wrap.classList.toggle("is-open");
+        main.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+  }
+
+  function initChipRows() {
+    document.querySelectorAll(".vt-chip-row, .vt-date-row, .vt-time-grid").forEach(function (row) {
+      row.addEventListener("click", function (e) {
+        var btn = e.target.closest("button");
+        if (!btn || !row.contains(btn)) return;
+        row.querySelectorAll("button").forEach(function (b) {
+          b.classList.remove("on");
+        });
+        btn.classList.add("on");
+      });
+    });
+  }
+
   function init() {
     initStaggerIndex();
     initReveal();
@@ -182,6 +255,10 @@
     initSaasTabs();
     initTiltCards();
     initProgressWizard();
+    initDialogs();
+    initSnackbar();
+    initFabMenu();
+    initChipRows();
   }
 
   if (document.readyState === "loading") {

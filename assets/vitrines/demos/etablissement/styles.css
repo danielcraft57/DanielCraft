@@ -1,148 +1,167 @@
-/* Hôtel Stanislas Collection — luxe or/crème, Cormorant + Plus Jakarta */
+/* Hôtel Stanislas — maquette M3 forest green */
 :root {
-  --vt-gold: #b8956a;
-  --vt-gold-d: #96784f;
-  --vt-dark: #2c2419;
-  --vt-cream: #faf6f0;
-  --vt-text: #2c2419;
-  --vt-muted: #6b5d4d;
-  --vt-accent: var(--vt-gold);
+  --vt-green: #1c2e24;
+  --vt-green-deep: #122019;
+  --vt-gold: #c4a574;
+  --vt-cream: #f6f1ea;
+  --vt-text: #1a1f1c;
+  --vt-mute: #6b726c;
+  --vt-surface-container: #ebe4d8;
+  --vt-slot-bg: #ffffff;
+  --vt-chip-bg: #e4dccf;
+  --vt-radius: 1.25rem;
   --bs-body-bg: var(--vt-cream);
   --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-gold-d);
-  --bs-link-color: var(--vt-gold-d);
-  --bs-link-hover-color: var(--vt-dark);
+  --bs-primary: var(--vt-green);
+  --bs-link-color: var(--vt-green);
 }
 
 body.vt-body-hotel {
   background: var(--vt-cream);
-  color: var(--vt-text);
-  padding-bottom: 4.5rem;
-}
-@media (min-width: 992px) {
-  body.vt-body-hotel { padding-bottom: 0; }
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 .vt-display,
 .vt-section-title {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 500;
-  color: var(--vt-dark);
+  font-weight: 600;
+  color: var(--vt-green-deep);
 }
 
 .vt-brand,
 .navbar-brand.vt-brand {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--vt-dark) !important;
-  max-width: 14rem;
-}
-
-.vt-eyebrow {
-  letter-spacing: 0.15em;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--vt-gold);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.vt-topbar { background: var(--vt-dark); color: #e8dfd0; }
-.vt-topbar-link { color: inherit; text-decoration: none; font-weight: 600; }
-
-.vt-navbar {
-  background: rgba(250, 246, 240, 0.97);
-  border-bottom: 1px solid rgba(184, 149, 106, 0.35);
+.vt-navbar-hotel-m3 {
+  background: var(--vt-green-deep);
+  border: 0;
 }
-.vt-navbar .nav-link {
+.vt-navbar-hotel-m3 .nav-link {
+  color: rgba(255,255,255,0.85);
   font-weight: 500;
-  font-size: 0.88rem;
-  color: var(--vt-muted);
+  font-size: 0.9rem;
 }
-.vt-navbar .nav-link.active { color: var(--vt-gold-d); font-weight: 700; }
-
-.btn-vt-primary {
+.vt-navbar-hotel-m3 .nav-link.active { color: #fff; }
+.vt-navbar-hotel-m3 .navbar-toggler { border-color: rgba(255,255,255,0.35); }
+.vt-navbar-hotel-m3 .navbar-toggler-icon { filter: invert(1); }
+.btn-vt-nav-cta {
   --bs-btn-bg: var(--vt-gold);
   --bs-btn-border-color: var(--vt-gold);
-  --bs-btn-hover-bg: var(--vt-gold-d);
-  --bs-btn-hover-border-color: var(--vt-gold-d);
+  --bs-btn-color: var(--vt-green-deep);
+  --bs-btn-hover-bg: #d4b88a;
+  --bs-btn-hover-border-color: #d4b88a;
+  --bs-btn-hover-color: var(--vt-green-deep);
+  font-weight: 700;
+}
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-green);
+  --bs-btn-border-color: var(--vt-green);
+  --bs-btn-hover-bg: var(--vt-green-deep);
+  --bs-btn-hover-border-color: var(--vt-green-deep);
   --bs-btn-color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  border-radius: 0;
-}
-.btn-vt-outline {
-  --bs-btn-color: #fff;
-  --bs-btn-border-color: rgba(255, 255, 255, 0.85);
-  --bs-btn-hover-bg: #fff;
-  --bs-btn-hover-color: var(--vt-dark);
-  border-radius: 0;
+  font-weight: 700;
 }
 
-.vt-hero-overlay::before {
-  background: linear-gradient(135deg, rgba(44, 36, 25, 0.75), rgba(44, 36, 25, 0.45));
+.vt-ht-hero-media {
+  position: relative;
+  min-height: 72vh;
+  overflow: hidden;
 }
-.vt-hero-overlay .vt-display { color: #fff; font-size: clamp(2.2rem, 5vw, 3.2rem); }
-.vt-hero-overlay .lead { color: rgba(255, 255, 255, 0.92); }
-
-.vt-marquee { background: var(--vt-dark); }
-.vt-marquee-item { color: var(--vt-gold); }
-
-.vt-stats-band { background: var(--vt-dark); color: #fff; }
-.vt-stats-band .vt-stat-val { color: var(--vt-gold); }
-
-.vt-snap-series { background: #fff; }
-.vt-snap-chapter {
-  min-height: min(85vh, 640px);
+.vt-ht-hero-media > picture,
+.vt-ht-hero-media > img {
+  position: absolute;
+  inset: 0;
+}
+.vt-ht-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vt-ht-hero-copy {
+  position: relative;
+  z-index: 1;
+  min-height: 72vh;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(184, 149, 106, 0.2);
+  background: linear-gradient(90deg, rgba(18,32,25,0.72), rgba(18,32,25,0.2) 55%, transparent);
+  padding: 4rem 0;
 }
-.vt-snap-chapter--flip .row { flex-direction: row-reverse; }
+.vt-ht-hero-copy .vt-display { color: #fff; max-width: 18ch; }
+.text-white-50 { color: rgba(255,255,255,0.82) !important; max-width: 36rem; }
 
-.vt-card-bs .card,
-.vt-signatures .card {
-  border: none;
-  box-shadow: 0 4px 20px rgba(44, 36, 25, 0.08);
+.vt-ht-book { margin-top: -2.5rem; position: relative; z-index: 3; margin-bottom: 1rem; }
+.vt-ht-book-card {
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 16px 40px rgba(18,32,25,0.15);
 }
-.vt-card-bs .card-img-top,
-.vt-signatures .card-img-top { aspect-ratio: 16/10; object-fit: cover; }
-
-.vt-hero-editorial { background: linear-gradient(180deg, #fff, var(--vt-cream)); }
-.vt-hero-frame img { aspect-ratio: 4/3; object-fit: cover; }
-
-.vt-gallery-masonry .vt-masonry-card { border-bottom: 3px solid var(--vt-gold); }
-
-.vt-aside-panel { background: #fff; border-left: 4px solid var(--vt-gold) !important; }
-
-.vt-cta-band {
-  background: linear-gradient(135deg, var(--vt-dark), #3d3228);
-  color: #fff;
-}
-.vt-cta-band .btn-vt-primary {
-  --bs-btn-bg: var(--vt-gold);
-  --bs-btn-color: #fff;
+@media (max-width: 991.98px) {
+  .vt-ht-book-card { border-radius: var(--vt-radius); }
 }
 
-.vt-mobile-cta {
-  background: var(--vt-dark);
-  border-top: 2px solid var(--vt-gold);
+.vt-ht-room {
+  background: #fff;
+  border-radius: var(--vt-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(18,32,25,0.08);
 }
-.vt-mobile-cta .btn { background: var(--vt-gold); color: #fff; border: none; }
-
-.vt-site-footer {
-  background: var(--vt-dark);
-  color: #d4c4a8;
+.vt-ht-room img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
-.vt-site-footer a { color: #e8dfd0; }
-.vt-site-footer .vt-footer-brand { color: #fff; font-family: "Cormorant Garamond", Georgia, serif; }
+.vt-ht-room-body { padding: 1.1rem 1.15rem 1.25rem; }
+.vt-ht-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vt-green);
+  white-space: nowrap;
+}
 
-.vt-tech-table th { background: var(--vt-cream); color: var(--vt-dark); }
+.vt-cta-band { background: var(--vt-green); }
+.vt-footer { background: var(--vt-green-deep); }
+.vt-footer .nav-link, .vt-footer .vt-brand { color: rgba(255,255,255,0.88); }
+.vt-badge { background: #e8efe9; color: var(--vt-green); border: 0; font-weight: 600; }
+.form-control:focus, .form-select:focus {
+  border-color: #8fa897;
+  box-shadow: 0 0 0 0.2rem rgba(28,46,36,0.12);
+}
 
-.vt-compact-row .vt-compact-num { color: var(--vt-gold); }
+.vt-mobile-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 1040;
+  display: flex; background: #fff; border-top: 1px solid #d5e0d8;
+}
+.vt-mobile-bar-btn {
+  flex: 1; text-align: center; padding: 1rem; font-weight: 700;
+  text-decoration: none; color: var(--vt-green);
+}
+.vt-mobile-bar-primary { background: var(--vt-green); color: #fff; }
+body.vt-body-hotel { padding-bottom: 4.5rem; }
+@media (min-width: 992px) {
+  body.vt-body-hotel { padding-bottom: 0; }
+}
 
-.vt-trust-band { border-top: 3px solid var(--vt-gold); }
+.vt-hotel-perk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.vt-hotel-perk-grid > div {
+  background: #fff;
+  border: 1px solid #d5e0d8;
+  border-radius: 1.1rem;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  box-shadow: 0 10px 28px rgba(28, 46, 36, 0.06);
+}
+.vt-hotel-perk-grid strong { color: var(--vt-green); }
+.vt-hotel-perk-grid span { font-size: 0.85rem; color: #5c6b5f; }
 
-.vt-hero-compact { background: linear-gradient(180deg, #fff, var(--vt-cream)); }
-
-.vt-menu-section .vt-menu-item:hover { border-left-color: var(--vt-gold); }

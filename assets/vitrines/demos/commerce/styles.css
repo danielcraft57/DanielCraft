@@ -1,22 +1,29 @@
-/* Halles Thionville — retail éditorial / frais */
+/* Halles Thionville — retail dark gold (maquette chocolatier / product rail) */
 :root {
-  --vt-cream: #faf8f3;
-  --vt-sage: #e8f0e6;
-  --vt-green: #2d6a4f;
-  --vt-green-dark: #1b4332;
-  --vt-orange: #e07a2f;
-  --vt-text: #1a2e1a;
-  --vt-muted: #5c6b5c;
-  --vt-accent: var(--vt-green);
-  --bs-body-bg: var(--vt-cream);
-  --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-green);
-  --bs-link-color: var(--vt-green);
-  --bs-link-hover-color: var(--vt-green-dark);
+  --vt-ink: #0c0b0a;
+  --vt-panel: #161412;
+  --vt-card: #1f1b18;
+  --vt-gold: #d4a017;
+  --vt-gold-soft: #f0d78c;
+  --vt-cream: #f4ece0;
+  --vt-mute: #a89a88;
+  --vt-line: rgba(244, 236, 224, 0.1);
+  --vt-rail-bg: #100e0c;
+  --vt-accent: var(--vt-gold);
+  --bs-body-bg: var(--vt-ink);
+  --bs-body-color: var(--vt-cream);
+  --bs-primary: var(--vt-gold);
+  --bs-secondary-color: var(--vt-mute);
+  --bs-font-sans-serif: "Source Sans 3", system-ui, sans-serif;
+  --vt-surface-container: #26211c;
+  --vt-chip-bg: rgba(212, 160, 23, 0.1);
+  --vt-chip-hover: rgba(212, 160, 23, 0.18);
+  --vt-slot-bg: var(--vt-card);
 }
 
 body.vt-body-retail {
-  background: var(--vt-cream);
+  background: var(--vt-ink);
+  color: var(--vt-cream);
   padding-bottom: 4.5rem;
 }
 @media (min-width: 992px) {
@@ -27,145 +34,130 @@ body.vt-body-retail {
 .vt-section-title {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 700;
-  color: var(--vt-text);
+  color: var(--vt-cream);
 }
 
-.vt-brand,
-.navbar-brand.vt-brand {
-  font-family: "Source Sans 3", system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--vt-green-dark);
+.vt-rail-brand a {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--vt-gold-soft);
 }
 
 .vt-eyebrow {
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--vt-orange);
-  text-transform: uppercase;
+  color: var(--vt-gold);
 }
 
-.vt-topbar { background: var(--vt-green-dark); color: rgba(255, 255, 255, 0.92); }
-.vt-topbar-status { color: #95d5b2; font-weight: 600; }
-.vt-topbar-link { color: inherit; text-decoration: none; }
-.vt-topbar-link:hover { color: #fff; }
-
-.vt-navbar {
-  background: rgba(250, 248, 243, 0.98);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--vt-sage);
-  box-shadow: 0 2px 12px rgba(45, 106, 79, 0.06);
-}
-.vt-navbar .nav-link { color: var(--vt-text); font-weight: 600; }
-.vt-navbar .nav-link.active { color: var(--vt-green); font-weight: 700; }
+.text-secondary { color: var(--vt-mute) !important; }
 
 .btn-vt-primary {
-  --bs-btn-bg: var(--vt-green);
-  --bs-btn-border-color: var(--vt-green);
-  --bs-btn-hover-bg: var(--vt-green-dark);
-  --bs-btn-hover-border-color: var(--vt-green-dark);
-  --bs-btn-color: #fff;
-  font-weight: 600;
+  --bs-btn-bg: var(--vt-gold);
+  --bs-btn-border-color: var(--vt-gold);
+  --bs-btn-hover-bg: #b8860b;
+  --bs-btn-hover-border-color: #b8860b;
+  --bs-btn-color: #1a1205;
+  --bs-btn-hover-color: #1a1205;
+  font-weight: 700;
+  border-radius: 999px;
 }
 .btn-vt-outline {
-  --bs-btn-color: var(--vt-green);
-  --bs-btn-border-color: var(--vt-green);
-  --bs-btn-hover-bg: var(--vt-green);
+  --bs-btn-color: var(--vt-gold-soft);
+  --bs-btn-border-color: rgba(212, 160, 23, 0.45);
+  --bs-btn-hover-bg: rgba(212, 160, 23, 0.12);
   --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: var(--vt-gold);
   font-weight: 600;
-}
-.btn-vt-pill {
-  --bs-btn-color: var(--vt-green);
-  --bs-btn-border-color: var(--vt-sage);
-  --bs-btn-bg: #fff;
-  font-weight: 600;
+  border-radius: 999px;
 }
 
-/* Hero éditorial */
-.vt-hero-editorial { background: linear-gradient(180deg, var(--vt-sage), var(--vt-cream)); }
-.vt-hero-frame img { aspect-ratio: 4/3; object-fit: cover; }
+.vt-retail-hero {
+  padding: clamp(2.2rem, 6vw, 3.8rem) 0 1.5rem;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(212, 160, 23, 0.16), transparent 50%),
+    var(--vt-ink);
+}
 
-/* Promos retail */
-.vt-promo-band { background: #fff; }
-.vt-promo-card {
-  border-radius: 1rem;
+.vt-chip.on {
+  background: var(--vt-gold) !important;
+  color: #1a1205 !important;
+}
+.vt-menu-card {
+  background: rgba(31, 27, 24, 0.92);
+  border: 1px solid var(--vt-line);
+}
+.vt-menu-card--feat {
+  border-color: color-mix(in srgb, var(--vt-gold) 65%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--vt-gold) 35%, transparent),
+    0 18px 40px rgba(212, 160, 23, 0.15);
+}
+
+.vt-gold-card {
+  background: linear-gradient(160deg, #221e1a, #161310);
+  border: 1px solid rgba(212, 160, 23, 0.28);
+  border-radius: 1.35rem;
+  padding: 1.25rem 1.3rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.vt-gold-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212, 160, 23, 0.55);
+}
+.vt-gold-card h3 { color: var(--vt-gold-soft); }
+
+.vt-marquee {
+  background: rgba(212, 160, 23, 0.1);
+  border-color: rgba(212, 160, 23, 0.22);
+}
+.vt-marquee-track span { color: var(--vt-gold-soft); }
+
+.vt-rail-link.is-active {
+  background: color-mix(in srgb, var(--vt-gold) 88%, #000);
+  color: #1a1205;
+}
+
+.vt-footer {
+  background: #080706 !important;
+  border-top: 1px solid var(--vt-line);
+}
+.vt-fab-menu-main {
+  background: var(--vt-gold);
+  color: #1a1205;
+}
+
+.vt-retail-hero--bleed {
+  position: relative;
+  min-height: clamp(20rem, 52vh, 30rem);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(2rem, 6vw, 3.5rem) 0 2.25rem;
   overflow: hidden;
-  border: 1px solid var(--vt-sage);
-  background: #fff;
 }
-.vt-promo-card::before {
-  content: "";
-  display: block;
-  height: 4px;
+.vt-retail-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
-.vt-promo-green::before { background: var(--vt-green); }
-.vt-promo-orange::before { background: var(--vt-orange); }
-.vt-promo-sage::before { background: #74c69d; }
-.vt-promo-body { padding: 1.25rem; color: var(--vt-muted); }
-.vt-promo-body h3 { color: var(--vt-text); font-family: "Fraunces", serif; }
-
-.vt-trust-strip { background: var(--vt-green); color: #fff; }
-.vt-trust-cell strong {
-  display: block;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+.vt-retail-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.38) saturate(1.1);
+  transform: scale(1.03);
+  animation: vt-retail-ken 16s ease-in-out infinite alternate;
 }
-.vt-trust-cell span { font-size: 0.78rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em; }
-
-.vt-stats-band { background: var(--vt-orange); color: #fff; padding-block: 1.5rem; }
-.vt-stat-val { font-family: "Fraunces", serif; font-size: clamp(1.75rem, 4vw, 2.25rem); display: block; }
-.vt-stat-lbl { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
-
-.vt-story { background: #fff; }
-.vt-chapter:nth-child(even) { background: var(--vt-sage); }
-.vt-media img { aspect-ratio: 4/3; object-fit: cover; border-radius: 0.75rem; }
-
-.vt-card { border-radius: 1rem !important; border: 1px solid var(--vt-sage) !important; }
-.vt-card-img { height: 200px; object-fit: cover; }
-.vt-card-title { font-family: "Fraunces", serif; color: var(--vt-green-dark); }
-
-.vt-funnel { background: var(--vt-sage); }
-.vt-funnel-num { background: var(--vt-green); color: #fff; width: 2.25rem; height: 2.25rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
-.vt-funnel-step { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(45, 106, 79, 0.15); }
-.vt-funnel-list { max-width: 36rem; }
-
-.vt-bento-card { border-radius: 1rem; overflow: hidden; background: #fff; border: 1px solid var(--vt-sage); }
-.vt-bento-img { height: 180px; overflow: hidden; }
-.vt-bento-img img { height: 180px; object-fit: cover; }
-.vt-bento-body { padding: 1rem; }
-
-.vt-menu { background: #fff !important; }
-.vt-menu-cat { color: var(--vt-green-dark); font-family: "Fraunces", serif; }
-.vt-menu-price { color: var(--vt-orange); font-weight: 700; }
-.vt-tag { background: var(--vt-sage); color: var(--vt-green-dark); font-size: 0.65rem; text-transform: uppercase; }
-
-.vt-compact-num { font-family: "Fraunces", serif; font-size: 2rem; color: var(--vt-orange); }
-.vt-thumb { aspect-ratio: 4/3; object-fit: cover; }
-
-.vt-cross { background: var(--vt-sage); }
-.vt-badge { background: #fff; color: var(--vt-green); border: 1px solid var(--vt-sage); }
-.vt-trust-lead { font-family: "Fraunces", serif; color: var(--vt-text); }
-
-.vt-cta-band { background: var(--vt-green-dark); }
-.vt-hero-compact { background: var(--vt-sage); }
-
-.vt-aside-panel { background: #fff !important; border: 1px solid var(--vt-sage) !important; }
-
-.vt-footer { background: var(--vt-green-dark); }
-.vt-footer .nav-link { color: rgba(255, 255, 255, 0.85); }
-
-.vt-mobile-bar {
-  position: fixed; bottom: 0; left: 0; right: 0; display: flex; z-index: 1040;
-  background: #fff; border-top: 1px solid var(--vt-sage);
+@keyframes vt-retail-ken {
+  from { transform: scale(1.03); }
+  to { transform: scale(1.09) translate(-1%, -0.5%); }
 }
-.vt-mobile-bar-btn { flex: 1; text-align: center; padding: 1rem; font-weight: 700; text-decoration: none; color: var(--vt-text); }
-.vt-mobile-bar-primary { background: var(--vt-green); color: #fff; }
-
-.form-control:focus,
-.form-select:focus {
-  border-color: var(--vt-green);
-  box-shadow: 0 0 0 0.2rem rgba(45, 106, 79, 0.2);
+.vt-retail-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
 }
-
-.vt-hours th { font-weight: 600; padding-right: 1rem; }
+.vt-retail-hero-copy .lead {
+  color: rgba(244, 236, 224, 0.9);
+}
+@media (prefers-reduced-motion: reduce) {
+  .vt-retail-hero-bg img { animation: none; }
+}

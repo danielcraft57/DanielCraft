@@ -98,13 +98,18 @@
         if (reduceMotion) return;
         const max = pane.scrollHeight - pane.clientHeight;
         if (max <= 4) return;
-        const duration = Math.min(9000, 2200 + max * 0.45);
+        // Lecture lente de la capture tablette au survol (un poil plus vive)
+        const duration = Math.min(72000, 34000 + max * 4.2);
         scrollToY(max, duration);
       });
 
       card.addEventListener('mouseleave', () => {
         stopAnim();
-        pane.scrollTop = 0;
+        if (reduceMotion) {
+          pane.scrollTop = 0;
+          return;
+        }
+        scrollToY(0, 3800);
       });
     });
   }

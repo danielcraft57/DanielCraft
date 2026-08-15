@@ -1,167 +1,226 @@
-/* Patrimoine Lorraine — immobilier sage/cream, Playfair + Jakarta */
+/* Patrimoine Lorraine — maquette M3 navy (immobilier-m3.png) */
 :root {
-  --vt-sage: #6b8f71;
-  --vt-sage-dark: #4a6b50;
-  --vt-sage-light: #e8f0e9;
-  --vt-cream: #f7f5f0;
+  --vt-navy: #0f1c3f;
+  --vt-navy-mid: #1a2f5c;
   --vt-gold: #c4a35a;
-  --vt-text: #2d3a2f;
-  --vt-muted: #5a6b5c;
-  --vt-accent: var(--vt-sage);
-  --bs-body-bg: var(--vt-cream);
+  --vt-soft: #f1ebe3;
+  --vt-bg: #fafbfc;
+  --vt-text: #1a1f2e;
+  --vt-mute: #6b7280;
+  --vt-surface-container: #eef1f7;
+  --vt-slot-bg: #ffffff;
+  --vt-chip-bg: #e4e9f4;
+  --vt-radius: 1.25rem;
+  --bs-body-bg: var(--vt-bg);
   --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-sage);
-  --bs-link-color: var(--vt-sage-dark);
-  --bs-link-hover-color: var(--vt-sage);
+  --bs-primary: var(--vt-navy);
+  --bs-link-color: var(--vt-navy-mid);
+  --bs-link-hover-color: var(--vt-navy);
+  --bs-border-radius-lg: var(--vt-radius);
 }
 
 body.vt-body-property {
-  background: var(--vt-cream);
-  padding-bottom: 4.5rem;
-}
-@media (min-width: 992px) {
-  body.vt-body-property { padding-bottom: 0; }
+  background: var(--vt-bg);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 .vt-display,
 .vt-section-title {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 700;
-  color: var(--vt-sage-dark);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 800;
+  color: var(--vt-navy);
+  letter-spacing: -0.02em;
 }
 
 .vt-brand,
 .navbar-brand.vt-brand {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--vt-sage-dark);
-}
-
-.vt-eyebrow {
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  letter-spacing: 0.14em;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--vt-sage);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
+  color: var(--vt-navy);
 }
 
-.vt-topbar { background: var(--vt-sage-dark); color: rgba(255, 255, 255, 0.92); }
-.vt-topbar-status { color: #d4e8d6; font-weight: 600; }
-.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-lead { color: var(--vt-mute); max-width: 34rem; }
 
-.vt-navbar {
+.vt-navbar-immo-m3 {
   background: #fff;
-  box-shadow: 0 1px 0 var(--vt-sage-light);
+  border-bottom: 1px solid #e8ecf1;
+  box-shadow: 0 1px 0 rgba(15, 28, 63, 0.04);
 }
-.vt-navbar .nav-link {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+.vt-navbar-immo-m3 .nav-link {
+  color: #4b5563;
   font-weight: 500;
-  color: var(--vt-muted);
+  font-size: 0.9rem;
 }
-.vt-navbar .nav-link.active { color: var(--vt-sage-dark); font-weight: 700; }
+.vt-navbar-immo-m3 .nav-link.active {
+  color: var(--vt-navy);
+  font-weight: 700;
+}
+.vt-immo-phone {
+  color: var(--vt-navy);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.vt-immo-phone:hover { color: var(--vt-navy-mid); }
 
 .btn-vt-primary {
-  --bs-btn-bg: var(--vt-sage);
-  --bs-btn-border-color: var(--vt-sage);
-  --bs-btn-hover-bg: var(--vt-sage-dark);
-  --bs-btn-hover-border-color: var(--vt-sage-dark);
+  --bs-btn-bg: var(--vt-navy);
+  --bs-btn-border-color: var(--vt-navy);
+  --bs-btn-hover-bg: var(--vt-navy-mid);
+  --bs-btn-hover-border-color: var(--vt-navy-mid);
   --bs-btn-color: #fff;
-  font-weight: 600;
+  font-weight: 700;
 }
 .btn-vt-outline {
-  --bs-btn-color: var(--vt-sage-dark);
-  --bs-btn-border-color: var(--vt-sage);
-  --bs-btn-hover-bg: var(--vt-sage-light);
-  --bs-btn-hover-color: var(--vt-sage-dark);
+  --bs-btn-color: var(--vt-navy);
+  --bs-btn-border-color: var(--vt-navy);
+  --bs-btn-hover-bg: var(--vt-navy);
+  --bs-btn-hover-color: #fff;
+  font-weight: 700;
 }
 
-/* Hero recherche */
-.vt-hero-property { background: var(--vt-sage-light); }
-.vt-hero-property-copy { background: var(--vt-sage-light); }
-.vt-hero-property-media { min-height: 280px; }
+.vt-immo-hero { padding: 2.75rem 0 1.5rem; }
 @media (min-width: 992px) {
-  .vt-hero-property-media { min-height: 480px; }
+  .vt-immo-hero { padding: 3.5rem 0 2rem; }
 }
-.vt-search-bar .form-control,
-.vt-search-bar .form-select {
-  border-color: #b8cdb9;
-  border-radius: 0.5rem;
+.vt-immo-hero-media {
+  border-radius: 2.5rem 1.25rem 1.25rem 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(15, 28, 63, 0.1);
 }
-
-/* Stats */
-.vt-stats-band {
-  background: var(--vt-sage-dark);
-  color: #fff;
-}
-.vt-stat-value {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
-}
-.vt-stat-label {
-  font-size: 0.85rem;
-  opacity: 0.9;
+.vt-immo-hero-media img {
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  display: block;
 }
 
-/* Annonces */
-.vt-listing-card { border-radius: 0.75rem; overflow: hidden; transition: transform 0.2s; }
-.vt-listing-card:hover { transform: translateY(-4px); }
-.vt-listing-img { height: 200px; object-fit: cover; }
-.vt-listing-price {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--vt-sage-dark);
+.vt-immo-search { margin-top: -0.5rem; margin-bottom: 0.5rem; position: relative; z-index: 2; }
+.vt-immo-search-card {
+  background: #fff;
+  border-radius: var(--vt-radius);
+  padding: 1rem 1.15rem;
+  box-shadow: 0 12px 36px rgba(15, 28, 63, 0.1);
 }
-.vt-listing-title { color: var(--vt-sage-dark); }
-.vt-listing-badge {
+
+.vt-immo-card {
+  background: #fff;
+  border-radius: var(--vt-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(15, 28, 63, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+.vt-immo-card-media { position: relative; }
+.vt-immo-card-media img {
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  display: block;
+}
+.vt-immo-badges {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background: var(--vt-gold);
-  color: #fff;
-  font-size: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.vt-immo-badge {
+  font-size: 0.72rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 0.25rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
 }
+.vt-immo-badge.navy { background: var(--vt-navy); color: #fff; }
+.vt-immo-badge.soft { background: var(--vt-soft); color: var(--vt-navy); }
+.vt-immo-card-body { padding: 1rem 1.1rem 1.15rem; }
+.vt-immo-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--vt-navy);
+  margin: 0;
+}
+.vt-immo-dpe {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #fff;
+  background: #c4a000;
+}
+.vt-immo-dpe[data-dpe="B"] { background: #5a9e2f; }
+.vt-immo-dpe[data-dpe="C"] { background: #8fbf2f; }
+.vt-immo-dpe[data-dpe="D"] { background: #c4a000; }
 
-/* Quartiers */
-.vt-hood-cell {
+.vt-story { background: rgba(255, 255, 255, 0.6); }
+.vt-media { border-radius: var(--vt-radius) !important; overflow: hidden; }
+.vt-card { border-radius: var(--vt-radius) !important; overflow: hidden; }
+.vt-cta-band { background: var(--vt-navy); }
+.vt-footer { background: #0a1228; }
+.vt-footer .nav-link { color: rgba(255, 255, 255, 0.85); }
+.vt-footer .vt-brand { color: #fff; }
+
+.vt-immo-pulse-card {
   background: #fff;
-  border-radius: 0.5rem;
-  padding: 1rem 0.5rem;
-  box-shadow: 0 2px 12px rgba(74, 107, 80, 0.08);
+  border-radius: 1.5rem;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.1);
+  position: relative;
+  overflow: hidden;
 }
-.vt-hood-cell strong {
-  display: block;
-  color: var(--vt-sage-dark);
-  font-size: 0.95rem;
+.vt-immo-pulse-card::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+  animation: vt-immo-pulse 1.8s ease-out infinite;
 }
-.vt-hood-cell span { color: var(--vt-muted); }
+@keyframes vt-immo-pulse {
+  70% { box-shadow: 0 0 0 12px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vt-immo-pulse-card::before { animation: none; }
+}
+.vt-badge {
+  background: var(--vt-soft);
+  color: var(--vt-navy);
+  border: 0;
+  font-weight: 600;
+}
+.vt-trust-lead { font-weight: 600; }
 
-/* Témoignage */
-.vt-quote-panel {
-  background: #fff;
-  border-left: 4px solid var(--vt-sage);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  font-style: italic;
-  color: var(--vt-muted);
+.vt-mobile-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 1040;
+  display: flex; background: #fff; border-top: 1px solid #d9e0ef;
+}
+.vt-mobile-bar-btn {
+  flex: 1; text-align: center; padding: 1rem; font-weight: 700;
+  text-decoration: none; color: var(--vt-navy);
+}
+.vt-mobile-bar-primary { background: var(--vt-navy); color: #fff; }
+body.vt-body-property { padding-bottom: 4.5rem; }
+@media (min-width: 992px) {
+  body.vt-body-property { padding-bottom: 0; }
 }
 
-.vt-aside-panel { background: var(--vt-sage-light); }
-.vt-mobile-cta {
-  background: var(--vt-sage-dark);
-  border-top: 2px solid var(--vt-gold);
+.form-control:focus,
+.form-select:focus {
+  border-color: #93a4c9;
+  box-shadow: 0 0 0 0.2rem rgba(15, 28, 63, 0.12);
 }
-.vt-footer {
-  background: var(--vt-sage-dark);
-  color: rgba(255, 255, 255, 0.88);
+
+@media (max-width: 991.98px) {
+  .vt-immo-phone { display: none; }
 }
-.vt-footer a { color: #d4e8d6; }

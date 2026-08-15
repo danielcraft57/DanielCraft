@@ -1,21 +1,27 @@
-/* Centre dentaire Mosaïque — layout split / bento / entonnoir */
+/* Centre dentaire — maquette sante M3 (osteo booking + pill appbar claire) */
 :root {
-  --vt-white: #f8fbfc;
-  --vt-mint: #e8f4f3;
-  --vt-teal: #0d9488;
-  --vt-teal-dark: #0f766e;
-  --vt-slate: #334155;
-  --vt-text: #1e293b;
-  --vt-accent: var(--vt-teal);
-  --bs-body-bg: var(--vt-white);
+  --vt-paper: #f4f7f3;
+  --vt-mint: #e3efe7;
+  --vt-forest: #1f4d3a;
+  --vt-forest-deep: #16382b;
+  --vt-teal: #2a7a5c;
+  --vt-text: #1a2e24;
+  --vt-mute: #5f7268;
+  --vt-pill-bg: #dce8df;
+  --vt-pill-ink: #1a2e24;
+  --vt-accent: var(--vt-forest);
+  --bs-body-bg: var(--vt-paper);
   --bs-body-color: var(--vt-text);
-  --bs-primary: var(--vt-teal);
-  --bs-link-color: var(--vt-teal);
-  --bs-link-hover-color: var(--vt-teal-dark);
+  --bs-primary: var(--vt-forest);
+  --bs-link-color: var(--vt-forest);
+  --bs-link-hover-color: var(--vt-forest-deep);
+  --bs-font-sans-serif: "DM Sans", system-ui, sans-serif;
 }
 
 body.vt-body-medical {
-  background: var(--vt-white);
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(31, 77, 58, 0.07), transparent 48%),
+    var(--vt-paper);
   padding-bottom: 4.5rem;
 }
 @media (min-width: 992px) {
@@ -23,12 +29,11 @@ body.vt-body-medical {
 }
 
 .vt-display,
-.vt-section-title,
-.vt-brand,
-.navbar-brand.vt-brand {
-  font-family: "Instrument Serif", Georgia, serif;
-  color: var(--vt-text);
-  font-weight: 400;
+.vt-section-title {
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: var(--vt-forest-deep);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .vt-eyebrow {
@@ -36,151 +41,48 @@ body.vt-body-medical {
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--vt-teal);
-  margin-bottom: 0.75rem;
 }
 
-.vt-topbar { background: var(--vt-slate); color: rgba(255, 255, 255, 0.92); }
-.vt-topbar-status { color: #5eead4; font-weight: 600; }
-.vt-topbar-link { color: inherit; text-decoration: none; }
-.vt-topbar-link:hover { color: #fff; text-decoration: underline; }
-
-.vt-navbar {
-  background: rgba(248, 251, 252, 0.98);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--vt-mint);
-  box-shadow: 0 2px 12px rgba(13, 148, 136, 0.06);
-}
-.vt-navbar .nav-link { color: var(--vt-text); font-weight: 500; }
-.vt-navbar .nav-link.active { color: var(--vt-teal); font-weight: 700; }
-.navbar-brand.vt-brand {
-  font-family: "DM Sans", system-ui, sans-serif;
-  letter-spacing: 0.04em;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--vt-teal-dark);
-}
+.text-secondary { color: var(--vt-mute) !important; }
 
 .btn-vt-primary {
-  --bs-btn-bg: var(--vt-teal);
-  --bs-btn-border-color: var(--vt-teal);
-  --bs-btn-hover-bg: var(--vt-teal-dark);
-  --bs-btn-hover-border-color: var(--vt-teal-dark);
+  --bs-btn-bg: var(--vt-forest);
+  --bs-btn-border-color: var(--vt-forest);
+  --bs-btn-hover-bg: var(--vt-forest-deep);
+  --bs-btn-hover-border-color: var(--vt-forest-deep);
   --bs-btn-color: #fff;
   font-weight: 600;
+  border-radius: 999px;
 }
 .btn-vt-outline {
-  --bs-btn-color: var(--vt-teal);
-  --bs-btn-border-color: var(--vt-teal);
-  --bs-btn-hover-bg: var(--vt-teal);
+  --bs-btn-color: var(--vt-forest);
+  --bs-btn-border-color: color-mix(in srgb, var(--vt-forest) 35%, #fff);
+  --bs-btn-hover-bg: var(--vt-forest);
   --bs-btn-hover-color: #fff;
   font-weight: 600;
+  border-radius: 999px;
 }
 
-/* Hero split (layout différent restauration/beauté) */
-.vt-hero-split { background: var(--vt-mint); }
-.vt-hero-split-copy { background: linear-gradient(135deg, var(--vt-white), var(--vt-mint)); }
-.vt-hero-split-media { min-height: 320px; }
-.vt-hero-split-media picture,
-.vt-hero-split-media img { display: block; min-height: 320px; }
-.vt-cover { object-fit: cover; min-height: 100%; }
-
-.min-vh-50 { min-height: 50vh; }
-
-/* Trust strip — preuve sociale rapide (UX 5 s) */
-.vt-trust-strip { background: var(--vt-teal); color: #fff; }
-.vt-trust-cell strong {
-  display: block;
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 400;
-}
-.vt-trust-cell span { font-size: 0.78rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em; }
-
-/* Entonnoir 3 étapes */
-.vt-funnel { background: #fff; }
-.vt-funnel-list { max-width: 36rem; }
-.vt-funnel-step {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--vt-mint);
-}
-.vt-funnel-num {
-  flex-shrink: 0;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-  background: var(--vt-teal);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-/* Bento grid */
-.vt-bento-card {
-  border-radius: 1rem;
-  overflow: hidden;
+.vt-care-card {
   background: #fff;
-  border: 1px solid var(--vt-mint);
-  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.06);
+  border-radius: 1.35rem;
+  padding: 1.25rem 1.3rem;
+  box-shadow: 0 12px 32px rgba(22, 56, 43, 0.08);
+  border: 1px solid rgba(31, 77, 58, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.vt-bento-img { height: 200px; overflow: hidden; }
-.vt-bento-img img { height: 200px; object-fit: cover; }
-.vt-bento-body { padding: 1.25rem; }
-
-/* Compact features (équipe / soins) */
-.vt-compact-num {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: 2rem;
-  color: var(--vt-teal);
-  line-height: 1;
-}
-.vt-thumb { aspect-ratio: 4/3; object-fit: cover; }
-
-.vt-hero-compact { background: var(--vt-mint); }
-
-.vt-story { background: rgba(255, 255, 255, 0.7); }
-.vt-chapter:nth-child(even) { background: var(--vt-white); }
-.vt-media img { aspect-ratio: 4/3; object-fit: cover; }
-
-.vt-card { border-radius: 1rem !important; }
-.vt-card-img { height: 200px; object-fit: cover; }
-
-.vt-menu-cat { color: var(--vt-teal-dark); font-family: "Instrument Serif", Georgia, serif; }
-.vt-menu-price { color: var(--vt-teal); font-weight: 700; }
-.vt-tag { background: var(--vt-mint); color: var(--vt-teal-dark); font-size: 0.65rem; text-transform: uppercase; }
-
-.vt-cta-band { background: var(--vt-teal-dark); }
-
-.vt-trust-lead {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: 1.2rem;
-  color: var(--vt-text);
+.vt-care-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(22, 56, 43, 0.12);
 }
 
-.vt-footer { background: var(--vt-slate); }
-.vt-footer .nav-link { color: rgba(255, 255, 255, 0.85); }
-.vt-footer .nav-link:hover { color: #fff; }
-
-.vt-mobile-bar {
-  position: fixed; bottom: 0; left: 0; right: 0; display: flex; z-index: 1040;
-  background: #fff; border-top: 1px solid var(--vt-mint);
-  box-shadow: 0 -4px 20px rgba(13, 148, 136, 0.12);
-}
-.vt-mobile-bar-btn {
-  flex: 1; text-align: center; padding: 1rem; font-weight: 700;
-  text-decoration: none; color: var(--vt-text);
-}
-.vt-mobile-bar-primary { background: var(--vt-teal); color: #fff; }
-
-.form-control:focus,
-.form-select:focus {
-  border-color: var(--vt-teal);
-  box-shadow: 0 0 0 0.2rem rgba(13, 148, 136, 0.2);
+.vt-odonto-urgency {
+  background: linear-gradient(180deg, transparent, rgba(220, 232, 223, 0.55));
 }
 
-.vt-hours th { font-weight: 600; padding-right: 1rem; white-space: nowrap; }
+.vt-footer {
+  background: var(--vt-forest-deep) !important;
+}
+.vt-fab-menu-main {
+  background: var(--vt-forest);
+}

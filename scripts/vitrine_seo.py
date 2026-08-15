@@ -86,12 +86,11 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "beaute": _entity(
         "BeautySalon",
         name="Spa Thalie",
-        telephone="+33383567890",
-        address=_addr("8 rue des Mésanges", "Nancy", "54000"),
-        geo=_geo(48.6921, 6.1844),
+        telephone="+33387174280",
+        address=_addr("8 rue des Clercs", "Metz", "57000"),
+        geo=_geo(49.1097, 6.1761),
         openingHours=[
-            _hours(["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "09:00", "20:00"),
-            _hours(["Sunday"], "10:00", "18:00"),
+            _hours(["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "10:00", "19:00"),
         ],
     ),
     "odontologie": _entity(
@@ -146,11 +145,11 @@ ENTITIES: dict[str, dict[str, Any]] = {
     ),
     "immobilier": _entity(
         "RealEstateAgent",
-        name="Patrimoine Lorraine",
-        description="Agence immobilière Nancy — vente, location et estimation",
-        telephone="+33383352890",
-        address=_addr("8 place Stanislas", "Nancy", "54000"),
-        geo=_geo(48.6921, 6.1844),
+        name="Patrimoine Lorraine Metz",
+        description="Agence immobilière Metz — vente, location et estimation",
+        telephone="+33387361214",
+        address=_addr("14 rue des Clercs", "Metz", "57000"),
+        geo=_geo(49.1097, 6.1761),
     ),
     "juridique": _entity(
         "LegalService",
@@ -186,10 +185,10 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "photographie": _entity(
         "ProfessionalService",
         name="Studio Lumière Grise",
-        description="Photographe mariage et corporate à Nancy — reportages et portraits",
-        telephone="+33383321840",
-        address=_addr("8 place Stanislas", "Nancy", "54000"),
-        geo=_geo(48.6921, 6.1844),
+        description="Photographe mariage et corporate à Metz — reportages et portraits",
+        telephone="+33387214560",
+        address=_addr("12 rue des Clercs", "Metz", "57000"),
+        geo=_geo(49.1097, 6.1761),
     ),
     "association": _entity(
         "NGO",
