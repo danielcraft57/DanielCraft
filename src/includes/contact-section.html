@@ -80,15 +80,19 @@
                     <input type="hidden" name="service" id="service" value="">
                     <input type="hidden" name="budget" id="budget" value="">
                     <input type="hidden" name="project_type" id="project_type" value="">
+                    <input type="hidden" name="qualif_q1" id="qualif_q1" value="">
+                    <input type="hidden" name="qualif_q2" id="qualif_q2" value="">
+                    <input type="hidden" name="qualif_context" id="qualif_context" value="">
 
-                    <ol class="contact-progress-min" role="list" aria-label="Progression du formulaire en cinq étapes">
-                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 5</span></li>
-                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 5</span></li>
-                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 5</span></li>
-                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 4 sur 5</span></li>
-                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 5 sur 5</span></li>
+                    <ol class="contact-progress-min" role="list" aria-label="Progression du formulaire en six étapes">
+                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 1 sur 6</span></li>
+                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 2 sur 6</span></li>
+                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 3 sur 6</span></li>
+                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 4 sur 6</span></li>
+                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 5 sur 6</span></li>
+                        <li class="contact-progress-min__item" role="listitem"><span class="contact-progress-min__bar" aria-hidden="true"></span><span class="sr-only">Étape 6 sur 6</span></li>
                     </ol>
-                    <p class="contact-progress-label" id="contactProgressLabel" aria-live="polite">Étape 1 sur 5</p>
+                    <p class="contact-progress-label" id="contactProgressLabel" aria-live="polite">Étape 1 sur 6</p>
 
                     <div class="contact-form-steps">
                         <!-- Étape 1 : besoin principal -->
@@ -98,9 +102,26 @@
                             <div id="contactProjectTypeMount" class="contact-type-mount" role="group" aria-label="Ton besoin principal"></div>
                         </div>
 
-                        <!-- Étape 2 : offre -->
-                        <div class="contact-step" data-step="2" role="group" aria-labelledby="contact-step2a-title" aria-hidden="true">
-                            <h3 id="contact-step2a-title" class="contact-step__title">Quelle offre t'intéresse ?</h3>
+                        <!-- Étape 2 : qualification rapide -->
+                        <div class="contact-step" data-step="2" role="group" aria-labelledby="contact-step2-title" aria-hidden="true">
+                            <h3 id="contact-step2-title" class="contact-step__title">On précise un peu ?</h3>
+                            <p class="contact-step__intro">Deux questions rapides pour te proposer les bonnes offres. <span class="contact-step__duration">Environ 30 secondes</span></p>
+                            <div id="contactQualifMount" class="contact-qualif-mount"></div>
+                            <div class="contact-step-actions contact-step-actions--split">
+                                <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromQualif">
+                                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                    Ton besoin
+                                </button>
+                                <button type="button" class="btn btn-primary btn-large" id="wizardNextFromQualif">
+                                    Voir les offres
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Étape 3 : offre -->
+                        <div class="contact-step" data-step="3" role="group" aria-labelledby="contact-step3a-title" aria-hidden="true">
+                            <h3 id="contact-step3a-title" class="contact-step__title">Quelle offre t'intéresse ?</h3>
                             <p class="contact-step__intro">Clique sur une carte pour continuer. Les prix indiqués sont des <strong>forfaits de départ</strong>. <span class="contact-step__duration">Environ 1 min</span></p>
                             <div id="contactServiceMount" class="contact-service-mount"></div>
                             <p class="contact-step__intro contact-step__intro--muted">
@@ -109,14 +130,14 @@
                             <div class="contact-step-actions contact-step-actions--split">
                                 <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromService">
                                     <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                                    Ton besoin
+                                    Précision
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Étape 3 : calendrier + heure -->
-                        <div class="contact-step" data-step="3" role="group" aria-labelledby="contact-step2-title" aria-hidden="true">
-                            <h3 id="contact-step2-title" class="contact-step__title">Quand tu préfères qu'on en parle ?</h3>
+                        <!-- Étape 4 : calendrier + heure -->
+                        <div class="contact-step" data-step="4" role="group" aria-labelledby="contact-step4-title" aria-hidden="true">
+                            <h3 id="contact-step4-title" class="contact-step__title">Quand tu préfères qu'on en parle ?</h3>
                             <p class="contact-picked-service" id="contactPickedServiceWrap" hidden>
                                 <span class="contact-picked-service__label">Offre choisie :</span>
                                 <strong id="contactPickedServiceTitle"></strong>
@@ -187,9 +208,9 @@
                             </div>
                         </div>
 
-                        <!-- Étape 4 : coordonnées -->
-                        <div class="contact-step" data-step="4" role="group" aria-labelledby="contact-step3-title" aria-hidden="true">
-                            <h3 id="contact-step3-title" class="contact-step__title">Comment te joindre ?</h3>
+                        <!-- Étape 5 : coordonnées -->
+                        <div class="contact-step" data-step="5" role="group" aria-labelledby="contact-step5-title" aria-hidden="true">
+                            <h3 id="contact-step5-title" class="contact-step__title">Comment te joindre ?</h3>
                             <p class="contact-step__intro">Je te rappelle sous 24&nbsp;h ouvrées, ou au créneau choisi si t'en as indiqué un. <span class="contact-step__duration">Environ 1 min</span></p>
 
                             <div class="form-group">
@@ -221,9 +242,9 @@
                             </div>
                         </div>
 
-                        <!-- Étape 5 : validation -->
-                        <div class="contact-step" data-step="5" role="group" aria-labelledby="contact-step4-title" aria-hidden="true">
-                            <h3 id="contact-step4-title" class="contact-step__title">Récapitulatif</h3>
+                        <!-- Étape 6 : validation -->
+                        <div class="contact-step" data-step="6" role="group" aria-labelledby="contact-step6-title" aria-hidden="true">
+                            <h3 id="contact-step6-title" class="contact-step__title">Récapitulatif</h3>
                             <p class="contact-step__intro">Vérifie tes infos avant l'envoi.</p>
                             <p class="contact-step__intro" id="contactAutoSkipNote" hidden>
                                 Coordonnées détectées automatiquement, étape contact sautée.
@@ -243,8 +264,16 @@
                                     <span class="contact-validation-value" id="contactRecapPhone">—</span>
                                 </div>
                                 <div class="contact-validation-row">
-                                    <span class="contact-validation-label">Votre besoin</span>
+                                    <span class="contact-validation-label">Ton besoin</span>
                                     <span class="contact-validation-value" id="contactRecapType">—</span>
+                                </div>
+                                <div class="contact-validation-row">
+                                    <span class="contact-validation-label">Situation</span>
+                                    <span class="contact-validation-value" id="contactRecapQualifQ1">—</span>
+                                </div>
+                                <div class="contact-validation-row">
+                                    <span class="contact-validation-label">Détail</span>
+                                    <span class="contact-validation-value" id="contactRecapQualifQ2">—</span>
                                 </div>
                                 <div class="contact-validation-row">
                                     <span class="contact-validation-label">Offre choisie</span>
@@ -280,6 +309,17 @@
                                         <li>On échange au créneau choisi ou par e-mail</li>
                                     </ol>
                                 </div>
+                            </div>
+
+                            <div class="contact-step-actions contact-step-actions--split">
+                                <button type="button" class="btn btn-secondary btn-large" id="wizardBackFromMessage">
+                                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                                    Coordonnées
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-large" id="contactSubmitBtn">
+                                    Envoyer la demande
+                                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -365,13 +365,157 @@
     }
   ];
 
-  const WIZARD_STEP_COUNT = 5;
+  /**
+   * Arbre de qualification contextuelle (étape 2).
+   * Chaque branche de besoin a 1-2 questions rapides ; les réponses servent à
+   * classer les offres (boost) et à enrichir le message envoyé.
+   */
+  const QUALIFICATION_STEPS = {
+    site: {
+      headline: 'On précise un peu ?',
+      questions: [
+        {
+          id: 'q1',
+          label: 'Tu as déjà un site ?',
+          options: [
+            { value: 'aucun', label: 'Pas encore de site', icon: 'fa-laptop-house', boost: ['pack_vitrine_essentiel', 'pack_vitrine', 'pack_demarrer_commerce', 'pack_etre_trouve'] },
+            { value: 'ancien', label: 'Oui, mais il est vieux', icon: 'fa-history', boost: ['site_refonte_visuelle', 'pack_vitrine', 'pack_identite', 'pack_etre_trouve'] },
+            { value: 'ok', label: 'Oui, je veux l\'améliorer', icon: 'fa-plus-circle', boost: ['site_page_supp', 'site_form_avance', 'site_maj_contenu_5h', 'eco_audit_site', 'eco_perf_fix'] },
+            { value: 'complexe', label: 'Gros projet en tête', icon: 'fa-rocket', boost: ['projet_sur_mesure', 'tech_conseil_archi', 'pack_whatsapp_commerce'] }
+          ]
+        },
+        {
+          id: 'q2',
+          label: 'Quel budget tu imagines ?',
+          options: [
+            { value: 'moins500', label: 'Moins de 500 €', icon: 'fa-coins', boost: ['pack_vitrine_essentiel', 'site_page_supp', 'site_form_avance'] },
+            { value: '500-1000', label: '500 à 1 000 €', icon: 'fa-money-bill-wave', boost: ['pack_vitrine', 'pack_etre_trouve', 'pack_reputation_locale'] },
+            { value: '1000-2000', label: '1 000 à 2 000 €', icon: 'fa-wallet', boost: ['pack_demarrer_commerce', 'pack_whatsapp_commerce', 'pack_identite', 'pack_presence_telephone'] },
+            { value: 'plus2000', label: 'Plus de 2 000 €', icon: 'fa-gem', boost: ['projet_sur_mesure', 'ia_chatbot_ecom', 'tech_conseil_archi'] },
+            { value: 'nsp', label: 'Je ne sais pas encore', icon: 'fa-question-circle', boost: [] }
+          ]
+        }
+      ]
+    },
+    visibilite: {
+      headline: 'On précise ta visibilité ?',
+      questions: [
+        {
+          id: 'q1',
+          label: 'Tu as déjà un site ?',
+          options: [
+            { value: 'oui', label: 'Oui', icon: 'fa-check', boost: ['seo_basique_290', 'seo_chatgpt_490', 'pack_seo_complet', 'ia_geo_local', 'ia_avis_google'] },
+            { value: 'non', label: 'Pas encore', icon: 'fa-times', boost: ['pack_etre_trouve', 'pack_reputation_locale', 'pack_vitrine_essentiel', 'pack_vitrine'] },
+            { value: 'partiel', label: 'Une page ou un réseau social', icon: 'fa-share-alt', boost: ['mobile_gbp', 'pack_reputation_locale', 'pack_etre_trouve'] }
+          ]
+        },
+        {
+          id: 'q2',
+          label: 'Tu veux être trouvé surtout où ?',
+          options: [
+            { value: 'maps', label: 'Google Maps', icon: 'fa-map-marker-alt', boost: ['mobile_gbp', 'pack_reputation_locale', 'ia_avis_google'] },
+            { value: 'google', label: 'Google classique', icon: 'fa-search', boost: ['seo_basique_290', 'pack_seo_complet', 'eco_audit_site'] },
+            { value: 'chatgpt', label: 'ChatGPT / assistants IA', icon: 'fa-robot', boost: ['seo_chatgpt_490', 'ia_geo_local'] },
+            { value: 'partout', label: 'Partout', icon: 'fa-globe', boost: ['pack_seo_complet', 'pack_reputation_locale', 'ia_geo_local'] }
+          ]
+        }
+      ]
+    },
+    mobile: {
+      headline: 'On précise le mobile ?',
+      questions: [
+        {
+          id: 'q1',
+          label: 'Tes clients te contactent comment ?',
+          options: [
+            { value: 'appel', label: 'Surtout au téléphone', icon: 'fa-phone', boost: ['mobile_conversion', 'pack_presence_telephone', 'mobile_app_metier'] },
+            { value: 'message', label: 'Par messages', icon: 'fa-comment', boost: ['mobile_whatsapp_setup', 'pack_whatsapp_commerce', 'ia_whatsapp_bot'] },
+            { value: 'mixte', label: 'Les deux', icon: 'fa-random', boost: ['pack_whatsapp_commerce', 'pack_presence_telephone', 'ia_whatsapp_bot'] },
+            { value: 'rare', label: 'Rarement', icon: 'fa-meh', boost: ['mobile_gbp', 'pack_reputation_locale', 'mobile_conversion'] }
+          ]
+        },
+        {
+          id: 'q2',
+          label: 'Tu veux privilégier quoi ?',
+          options: [
+            { value: 'whatsapp', label: 'WhatsApp Business', icon: 'fa-comments', boost: ['mobile_whatsapp_setup', 'pack_whatsapp_commerce', 'ia_whatsapp_bot'] },
+            { value: 'pwa', label: 'Site qui s\'installe sur téléphone', icon: 'fa-mobile-alt', boost: ['mobile_pwa', 'pack_presence_telephone'] },
+            { value: 'maps', label: 'Fiche Google Maps', icon: 'fa-map-marked-alt', boost: ['mobile_gbp', 'pack_reputation_locale'] },
+            { value: 'app', label: 'Petit espace client', icon: 'fa-tablet-alt', boost: ['mobile_app_metier'] }
+          ]
+        }
+      ]
+    },
+    assistant: {
+      headline: 'On précise l\'assistant ?',
+      questions: [
+        {
+          id: 'q1',
+          label: 'Tu veux l\'assistant surtout où ?',
+          options: [
+            { value: 'site', label: 'Sur le site', icon: 'fa-globe', boost: ['ia_faq_site', 'ia_chatbot_ecom', 'ia_booking_qualify'] },
+            { value: 'whatsapp', label: 'Sur WhatsApp', icon: 'fa-comments', boost: ['ia_whatsapp_bot', 'pack_whatsapp_commerce'] },
+            { value: 'email', label: 'Pour les e-mails', icon: 'fa-envelope', boost: ['ia_support_client'] },
+            { value: 'agenda', label: 'Remplir l\'agenda', icon: 'fa-calendar-check', boost: ['ia_booking_qualify'] },
+            { value: 'nsp', label: 'Je ne sais pas encore', icon: 'fa-question-circle', boost: ['ia_audit', 'ia_faq_site'] }
+          ]
+        },
+        {
+          id: 'q2',
+          label: 'Tu reçois combien de questions par jour ?',
+          options: [
+            { value: '0-5', label: '0 à 5', icon: 'fa-hand-peace', boost: ['ia_faq_site', 'ia_whatsapp_bot'] },
+            { value: '5-15', label: '5 à 15', icon: 'fa-hand-paper', boost: ['ia_support_client', 'ia_whatsapp_bot', 'ia_booking_qualify'] },
+            { value: '15plus', label: 'Plus de 15', icon: 'fa-hands', boost: ['ia_chatbot_ecom', 'ia_automatisation', 'ia_support_client'] },
+            { value: 'nsp', label: 'Je ne sais pas', icon: 'fa-question-circle', boost: ['ia_audit'] }
+          ]
+        }
+      ]
+    },
+    entretien: {
+      headline: 'On précise le souci ?',
+      questions: [
+        {
+          id: 'q1',
+          label: 'C\'est quoi le problème ?',
+          options: [
+            { value: 'casse', label: 'Site cassé / erreur', icon: 'fa-bug', boost: ['maint_depannage_2h', 'maint_site_mensuel', 'tech_conseil_archi'] },
+            { value: 'lent', label: 'Site lent', icon: 'fa-tachometer-alt', boost: ['eco_perf_fix', 'tech_perf_rapport', 'eco_audit_site'] },
+            { value: 'pirate', label: 'Piraté / spam', icon: 'fa-shield-alt', boost: ['maint_backup', 'maint_ssl', 'maint_site_mensuel'] },
+            { value: 'hebergement', label: 'Hébergement / mail', icon: 'fa-server', boost: ['maint_hebergement', 'maint_mail_pro', 'pack_serenite_sobriete'] },
+            { value: 'maj', label: 'Mises à jour', icon: 'fa-edit', boost: ['maint_site_mensuel', 'site_maj_contenu_5h', 'maint_accompagnement_h'] },
+            { value: 'maintenance', label: 'Surveillance régulière', icon: 'fa-cogs', boost: ['pack_serenite_sobriete', 'maint_site_mensuel', 'maint_support_abo'] }
+          ]
+        },
+        {
+          id: 'q2',
+          label: 'C\'est urgent ?',
+          options: [
+            { value: 'urgent', label: 'Oui, ça bloque', icon: 'fa-exclamation-circle', boost: ['maint_depannage_2h', 'maint_support_prio_h'] },
+            { value: 'semaine', label: 'Cette semaine', icon: 'fa-calendar-week', boost: ['maint_depannage_2h', 'maint_accompagnement_h'] },
+            { value: 'non', label: 'Non, c\'est du suivi', icon: 'fa-calendar-alt', boost: ['maint_site_mensuel', 'pack_serenite_sobriete', 'eco_monitor_mensuel'] }
+          ]
+        }
+      ]
+    },
+    autre: {
+      headline: 'Raconte-moi ton besoin',
+      freeText: {
+        id: 'context',
+        label: 'En deux mots, ce qui t\'amène',
+        placeholder: 'Ex. Je veux un site pour mon restaurant à Metz…'
+      }
+    }
+  };
+
+  const WIZARD_STEP_COUNT = 6;
   const STEP_DURATIONS = {
     1: '30 s',
-    2: '1 min',
+    2: '30 s',
     3: '1 min',
     4: '1 min',
-    5: 'quelques secondes',
+    5: '1 min',
+    6: 'quelques secondes',
   };
 
   function isEmailFormatValid(value) {
@@ -408,6 +552,11 @@
       selectedTime: '',
       selectedServiceTitle: '',
       selectedServicePrice: '',
+      qualifQ1: '',
+      qualifQ1Label: '',
+      qualifQ2: '',
+      qualifQ2Label: '',
+      qualifContext: '',
       sending: false,
       timeOverlayOpen: false,
       timeOverlayReturnFocus: null,
@@ -435,6 +584,12 @@
     const btnNextMonth = form.querySelector('#calendarNext');
     const timeSlotsEl = form.querySelector('#contactTimeSlots');
     const summaryDate = form.querySelector('#contactSummaryDate');
+    const qualifMount = document.getElementById('contactQualifMount');
+    const wizardBackFromQualif = document.getElementById('wizardBackFromQualif');
+    const wizardNextFromQualif = document.getElementById('wizardNextFromQualif');
+    const qualifQ1Field = form.querySelector('#qualif_q1');
+    const qualifQ2Field = form.querySelector('#qualif_q2');
+    const qualifContextField = form.querySelector('#qualif_context');
     const wizardBackFromService = document.getElementById('wizardBackFromService');
     const wizardNextFromCalendar = document.getElementById('wizardNextFromCalendar');
     const wizardBackFromCalendar = document.getElementById('wizardBackFromCalendar');
@@ -452,6 +607,8 @@
     const recapNameEl = form.querySelector('#contactRecapName');
     const recapEmailEl = form.querySelector('#contactRecapEmail');
     const recapPhoneEl = form.querySelector('#contactRecapPhone');
+    const recapQualifQ1El = form.querySelector('#contactRecapQualifQ1');
+    const recapQualifQ2El = form.querySelector('#contactRecapQualifQ2');
     const autoSkipNoteEl = form.querySelector('#contactAutoSkipNote');
     const validationRecapBlock = form.querySelector('.contact-validation-recap');
     const pendingBlock = form.querySelector('#contactValidationPending');
@@ -764,6 +921,8 @@
       const lines = [
         'Demande via le formulaire du site :',
         `- Besoin : ${typeLabel}`,
+        `- Situation : ${state.qualifQ1Label || '—'}`,
+        `- Détail : ${state.qualifQ2Label || state.qualifContext || '—'}`,
         `- Offre : ${serviceTitle}`,
         `- Date proposée : ${dateLine}`,
         `- Heure : ${timeLine}`
@@ -781,6 +940,8 @@
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
       const typeObj = CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug);
       recapTypeEl.textContent = typeObj?.label || '—';
+      if (recapQualifQ1El) recapQualifQ1El.textContent = state.qualifQ1Label || '—';
+      if (recapQualifQ2El) recapQualifQ2El.textContent = state.qualifQ2Label || state.qualifContext || '—';
       recapServiceEl.textContent = state.selectedServiceTitle || '—';
       if (recapNameEl) recapNameEl.textContent = (nameEl?.value || '').trim() || '—';
       if (recapEmailEl) recapEmailEl.textContent = (emailEl?.value || '').trim() || '—';
@@ -1038,7 +1199,7 @@
         return;
       }
 
-      if (state.step === 3 && n !== 3) {
+      if (state.step === 4 && n !== 4) {
         closeTimeOverlay();
         closeSkipOverlay({ restoreFocus: false });
       }
@@ -1090,11 +1251,11 @@
 
       const sticky = document.getElementById('contactWizardSticky');
       if (sticky) {
-        sticky.hidden = n === 5;
+        sticky.hidden = n === 6;
       }
       const stickySkip = document.getElementById('wizardStickySkip');
       if (stickySkip) {
-        stickySkip.hidden = n !== 3;
+        stickySkip.hidden = n !== 4;
       }
 
       const wizardAnchor = form.closest('.contact-form-container') || form;
@@ -1102,7 +1263,7 @@
         wizardAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
-      if (n === 5) {
+      if (n === 6) {
         updateValidationRecap();
         if (autoSkipNoteEl) {
           autoSkipNoteEl.hidden = !state.usedAutoSkipCoords;
@@ -1110,7 +1271,7 @@
       }
 
       // Evite d'afficher une erreur ancienne quand on arrive sur une nouvelle étape.
-      if (n === 4 || n === 5) {
+      if (n === 5 || n === 6) {
         hideFeedback();
       }
 
@@ -1122,18 +1283,23 @@
       }
 
       if (n === 2) {
+        renderQualificationStep();
+        focusTarget = entering.querySelector('.contact-qualif-option.is-selected') || entering.querySelector('.contact-qualif-option, .contact-qualif-text');
+      }
+
+      if (n === 3) {
         renderServiceGrid();
         focusTarget = entering.querySelector('.contact-service-card.is-selected') || entering.querySelector('.contact-service-card');
       }
 
-      if (n === 3) {
+      if (n === 4) {
         focusTarget = document.getElementById('wizardSkipCalendar') || entering.querySelector('.contact-calendar-skip__trigger');
         requestAnimationFrame(() => {
           openSkipOverlay(focusTarget);
         });
       }
 
-      if (n === 5) {
+      if (n === 6) {
         focusTarget = document.getElementById('contactSubmitBtn') || entering.querySelector('button[type="submit"]');
       }
       if (!focusTarget) {
@@ -1197,7 +1363,7 @@
         btn.setAttribute('aria-pressed', 'false');
         btn.setAttribute(
           'aria-label',
-          `Besoin : ${pt.label}. Sélectionner et passer au choix de l’offre.`
+          `Besoin : ${pt.label}. Sélectionner et préciser la situation.`
         );
         const subHtml = pt.sub
           ? '<span class="contact-type-chip__sub">' + escapeHtml(pt.sub) + '</span>'
@@ -1222,12 +1388,140 @@
           if (budgetField) budgetField.value = '';
           state.selectedServiceTitle = '';
           state.selectedServicePrice = '';
+          state.qualifQ1 = '';
+          state.qualifQ1Label = '';
+          state.qualifQ2 = '';
+          state.qualifQ2Label = '';
+          state.qualifContext = '';
+          if (qualifQ1Field) qualifQ1Field.value = '';
+          if (qualifQ2Field) qualifQ2Field.value = '';
+          if (qualifContextField) qualifContextField.value = '';
           updatePickedServiceBanner();
           setStep(2);
         });
         row.appendChild(btn);
       });
       projectTypeMount.appendChild(row);
+    }
+
+    function getQualifBranch() {
+      const pt = (projectTypeField && projectTypeField.value) || '';
+      return QUALIFICATION_STEPS[pt] || null;
+    }
+
+    function setQualifValue(qId, value, label) {
+      if (qId === 'q1') {
+        state.qualifQ1 = value;
+        state.qualifQ1Label = label;
+        if (qualifQ1Field) qualifQ1Field.value = value;
+      } else if (qId === 'q2') {
+        state.qualifQ2 = value;
+        state.qualifQ2Label = label;
+        if (qualifQ2Field) qualifQ2Field.value = value;
+      }
+    }
+
+    function renderQualificationStep() {
+      if (!qualifMount) return;
+      qualifMount.innerHTML = '';
+      const branch = getQualifBranch();
+      if (!branch) {
+        setStep(3);
+        return;
+      }
+
+      if (branch.freeText) {
+        const wrap = document.createElement('div');
+        wrap.className = 'contact-qualif-freetext';
+        const label = document.createElement('label');
+        label.htmlFor = 'contactQualifFreeText';
+        label.className = 'contact-qualif-question';
+        label.textContent = branch.freeText.label;
+        const ta = document.createElement('textarea');
+        ta.id = 'contactQualifFreeText';
+        ta.className = 'contact-qualif-text';
+        ta.rows = 3;
+        ta.placeholder = branch.freeText.placeholder;
+        ta.value = state.qualifContext || '';
+        ta.addEventListener('input', () => {
+          state.qualifContext = ta.value.trim();
+          if (qualifContextField) qualifContextField.value = state.qualifContext;
+        });
+        wrap.appendChild(label);
+        wrap.appendChild(ta);
+        qualifMount.appendChild(wrap);
+        return;
+      }
+
+      branch.questions.forEach((q, qIndex) => {
+        const fieldset = document.createElement('fieldset');
+        fieldset.className = 'contact-qualif-fieldset';
+        const legend = document.createElement('legend');
+        legend.className = 'contact-qualif-question';
+        legend.textContent = q.label;
+        fieldset.appendChild(legend);
+
+        const grid = document.createElement('div');
+        grid.className = 'contact-qualif-grid';
+        grid.setAttribute('role', 'group');
+
+        q.options.forEach((opt) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'contact-qualif-option';
+          const isSelected = (q.id === 'q1' && state.qualifQ1 === opt.value) || (q.id === 'q2' && state.qualifQ2 === opt.value);
+          if (isSelected) btn.classList.add('is-selected');
+          btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+          btn.innerHTML =
+            '<span class="contact-qualif-option__icon" aria-hidden="true"><i class="fas ' +
+            opt.icon +
+            '"></i></span><span class="contact-qualif-option__label">' +
+            escapeHtml(opt.label) +
+            '</span>';
+          btn.addEventListener('click', () => {
+            hideFeedback();
+            setQualifValue(q.id, opt.value, opt.label);
+            renderQualificationStep();
+            announce(`${q.label} : ${opt.label}`);
+            const next = branch.questions[qIndex + 1];
+            if (!next) {
+              setStep(3);
+            } else {
+              const nextLegend = qualifMount.querySelectorAll('.contact-qualif-question')[qIndex + 1];
+              if (nextLegend && nextLegend.scrollIntoView) {
+                nextLegend.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
+            }
+          });
+          grid.appendChild(btn);
+        });
+
+        fieldset.appendChild(grid);
+        qualifMount.appendChild(fieldset);
+      });
+    }
+
+    function validateQualifStep() {
+      const branch = getQualifBranch();
+      if (!branch) return true;
+      if (branch.freeText) {
+        if (!state.qualifContext.trim()) {
+          showFeedback('Dis-moi en deux mots ce qui t\'amène.', true);
+          return false;
+        }
+        return true;
+      }
+      const q1 = branch.questions[0];
+      if (q1 && !state.qualifQ1) {
+        showFeedback('Réponds à la première question pour qu\'on affine les offres.', true);
+        return false;
+      }
+      const q2 = branch.questions[1];
+      if (q2 && !state.qualifQ2) {
+        showFeedback('Réponds à la deuxième question pour qu\'on affine les offres.', true);
+        return false;
+      }
+      return true;
     }
 
     function attachServiceCardClick(btn, item) {
@@ -1248,7 +1542,7 @@
         btn.classList.add('is-selected');
         updatePickedServiceBanner();
         announce(`Offre : ${item.title}. Choix du créneau.`);
-        setStep(3);
+        setStep(4);
       });
     }
 
@@ -1285,12 +1579,29 @@
             state.selectedServicePrice = '';
             updatePickedServiceBanner();
             announce(`Choix : ${opt.title}.`);
-            setStep(3);
+            setStep(4);
           });
           row.appendChild(btn);
         });
         serviceMount.appendChild(row);
         return;
+      }
+
+      function getQualifScore(item) {
+        let score = 0;
+        const branch = getQualifBranch();
+        if (!branch || branch.freeText || !item) return score;
+        const q1 = branch.questions[0];
+        const q1Opt = q1 ? q1.options.find((o) => o.value === state.qualifQ1) : null;
+        if (q1Opt && Array.isArray(q1Opt.boost)) {
+          score += q1Opt.boost.includes(item.slug) ? 2 : 0;
+        }
+        const q2 = branch.questions[1];
+        const q2Opt = q2 ? q2.options.find((o) => o.value === state.qualifQ2) : null;
+        if (q2Opt && Array.isArray(q2Opt.boost)) {
+          score += q2Opt.boost.includes(item.slug) ? 2 : 0;
+        }
+        return score;
       }
 
       const allowedSlugs = NEED_SERVICE_SLUGS[selectedPt] || [];
@@ -1299,10 +1610,13 @@
             .map((slug) => CONTACT_SERVICE_ITEMS.find((it) => it.slug === slug))
             .filter(Boolean)
         : [];
-      const rankedItems =
+      let rankedItems =
         state.personalizationContext && window.Personalization && typeof window.Personalization.rankServices === 'function'
           ? window.Personalization.rankServices(items, state.personalizationContext)
-          : items;
+          : items.slice();
+
+      // Classement par pertinence des réponses de qualification (étape 2).
+      rankedItems.sort((a, b) => getQualifScore(b) - getQualifScore(a));
 
       if (!selectedPt || !pt || !rankedItems.length) {
         const msg = document.createElement('p');
@@ -1579,6 +1893,10 @@
       return true;
     }
 
+    function validateStepQualif() {
+      return validateQualifStep();
+    }
+
     function validateStepPrestation() {
       const v = (serviceField && serviceField.value) || '';
       if (!v) {
@@ -1618,12 +1936,12 @@
         state.usedAutoSkipCoords = true;
         hideFeedback();
         announce('Coordonnées déjà remplies, étape contact sautée.');
-        setStep(5);
+        setStep(6);
         sendContactRequest();
         return;
       }
       state.usedAutoSkipCoords = false;
-      setStep(4);
+      setStep(5);
     }
 
     function proceedAfterTimeSelection() {
@@ -1692,14 +2010,25 @@
       setStep(2);
     });
 
-    wizardBackFromService?.addEventListener('click', () => {
+    wizardBackFromQualif?.addEventListener('click', () => {
       hideFeedback();
       setStep(1);
     });
 
-    wizardBackFromCalendar?.addEventListener('click', () => {
+    wizardNextFromQualif?.addEventListener('click', () => {
+      if (!validateStepQualif()) return;
+      hideFeedback();
+      setStep(3);
+    });
+
+    wizardBackFromService?.addEventListener('click', () => {
       hideFeedback();
       setStep(2);
+    });
+
+    wizardBackFromCalendar?.addEventListener('click', () => {
+      hideFeedback();
+      setStep(3);
     });
 
     wizardNextFromCalendar?.addEventListener('click', () => {
@@ -1712,7 +2041,7 @@
 
     wizardBackFromCoords?.addEventListener('click', () => {
       hideFeedback();
-      setStep(3);
+      setStep(4);
     });
 
     async function sendContactRequest() {
@@ -1748,18 +2077,18 @@
           const err = buildErrorOverlayContent({ error: MSG_STATIC_SERVER }, res.status);
           setValidationStatus('idle');
           openErrorOverlay(err.message, err.tips);
-          setStep(4);
+          setStep(5);
         } else if (res.ok && data.success) {
           closeTimeOverlay();
           hideFeedback();
           setValidationStatus('success');
           updateSuccessCopy(data);
-          setStep(5);
+          setStep(6);
         } else {
           setValidationStatus('idle');
           const err = buildErrorOverlayContent(data, res.status);
           openErrorOverlay(err.message, err.tips);
-          setStep(4);
+          setStep(5);
         }
       } catch (err) {
         setValidationStatus('idle');
@@ -1771,7 +2100,7 @@
             'Réessayez ensuite.'
           ]
         );
-        setStep(4);
+        setStep(5);
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -1784,14 +2113,14 @@
     wizardNextFromCoords?.addEventListener('click', () => {
       if (!validateStepCoords()) return;
       hideFeedback();
-      setStep(5);
+      setStep(6);
       sendContactRequest();
     });
 
     emailEl?.addEventListener('blur', async () => {
       const before = state.personalizationContext;
       const ctx = await ensurePersonalizationContext();
-      if (ctx && (!before || before.source !== ctx.source) && state.step === 2) {
+      if (ctx && (!before || before.source !== ctx.source) && state.step === 3) {
         renderServiceGrid();
       }
     });
@@ -1835,7 +2164,7 @@
 
     wizardBackFromMessage?.addEventListener('click', () => {
       hideFeedback();
-      setStep(4);
+      setStep(5);
     });
     errorOverlayBackdrop?.addEventListener('click', closeErrorOverlay);
     errorOverlayClose?.addEventListener('click', closeErrorOverlay);
@@ -1846,19 +2175,23 @@
         setStep(1);
         return;
       }
-      if (!validateStepPrestation()) {
+      if (!validateStepQualif()) {
         setStep(2);
+        return;
+      }
+      if (!validateStepPrestation()) {
+        setStep(3);
         return;
       }
       // Créneau facultatif : on n'exige date/heure que si un jour a déjà été choisi sans horaire.
       if (state.selectedDate && !state.selectedTime) {
         if (!validateStepCalendar()) {
-          setStep(3);
+          setStep(4);
           return;
         }
       }
       if (!validateStepCoords()) {
-        setStep(4);
+        setStep(5);
         return;
       }
       await sendContactRequest();
@@ -1869,9 +2202,11 @@
     const stickyContinue = document.getElementById('wizardStickyContinue');
     if (stickyContinue) {
       stickyContinue.addEventListener('click', () => {
-        if (state.step === 3) {
-          document.getElementById('wizardNextFromCalendar')?.click();
+        if (state.step === 2) {
+          document.getElementById('wizardNextFromQualif')?.click();
         } else if (state.step === 4) {
+          document.getElementById('wizardNextFromCalendar')?.click();
+        } else if (state.step === 5) {
           document.getElementById('wizardNextFromCoords')?.click();
         }
       });
@@ -1882,7 +2217,7 @@
     });
 
     ensurePersonalizationContext().then(() => {
-      if (state.step === 2) renderServiceGrid();
+      if (state.step === 3) renderServiceGrid();
     });
     renderCalendar();
     renderTimeSlots();
