@@ -307,6 +307,40 @@ function stripe_find_livre_item(string $slug): ?array
 }
 
 /**
+ * Livre (pas pack) offert : is_free ou prix 0.
+ */
+function livre_item_is_free(array $item): bool
+{
+    $kind = trim((string) ($item['kind'] ?? ''));
+    $slug = trim((string) ($item['slug'] ?? ''));
+    if ($kind === 'pack' || str_starts_with($slug, 'pack-')) {
+        return false;
+    }
+    if (!empty($item['is_free'])) {
+        return true;
+    }
+    $raw = $item['price_eur'] ?? null;
+    if ($raw === null || $raw === '') {
+        return false;
+    }
+    if (!is_numeric($raw)) {
+        return false;
+    }
+
+    return (float) $raw <= 0.0;
+}
+
+function livre_free_download_url(string $slug): string
+{
+    $slug = trim($slug);
+    if ($slug === '' || !preg_match('/^[a-z0-9-]{1,80}$/', $slug)) {
+        return '';
+    }
+
+    return '/api/download-livre-gratuit.php?slug=' . rawurlencode($slug);
+}
+
+/**
  * Prix catalogue livres (accepte 4.9 → 490 centimes).
  */
 function stripe_livre_unit_amount_cents(array $item, array $catalog): int
@@ -328,6 +362,9 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
     $item = stripe_find_livre_item($slug);
     if ($item === null) {
         return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Livre catalogue introuvable.'];
+    }
+    if (livre_item_is_free($item)) {
+        return ['ok' => false, 'url' => '', 'session_id' => '', 'error' => 'Ce livre est gratuit - pas de paiement.'];
     }
 
     $catalog = stripe_load_livres_catalog() ?? [];

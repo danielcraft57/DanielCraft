@@ -121,13 +121,5 @@ function livre_download_serve_file(array $files, string $requested): void
         exit;
     }
 
-    $filename = basename($path);
-    header('Content-Type: application/pdf');
-    header('Content-Disposition: attachment; filename="' . str_replace('"', '', $filename) . '"');
-    header('Content-Length: ' . (string) filesize($path));
-    header('Cache-Control: private, no-store');
-    header('X-Content-Type-Options: nosniff');
-    header('X-Frame-Options: DENY');
-    readfile($path);
-    exit;
+    livre_download_stream_pdf($path);
 }

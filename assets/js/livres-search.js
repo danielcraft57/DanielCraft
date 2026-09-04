@@ -31,10 +31,36 @@
 
   const uniqueBySlug = new Map();
   searchIndex.forEach((entry) => {
-    if (!uniqueBySlug.has(entry.slug)) {
+    const existing = uniqueBySlug.get(entry.slug);
+    const isFree = entry.card.getAttribute('data-livre-free') === '1';
+    if (!existing || (isFree && existing.card.getAttribute('data-livre-free') !== '1')) {
       uniqueBySlug.set(entry.slug, entry);
     }
   });
+
+  function isFreeCard(entry) {
+    return !!(entry && entry.card && entry.card.getAttribute('data-livre-free') === '1');
+  }
+
+  function tokenLooksFree(token) {
+    const t = token || '';
+    if (['gratos', 'cadeau', 'offert', 'free', 'gratis'].includes(t)) return true;
+    if (t.length >= 4 && 'gratuits'.startsWith(t)) return true;
+    if (t.length >= 4 && 'gratuitement'.startsWith(t)) return true;
+    return false;
+  }
+
+  function queryLooksFree(tokens) {
+    return tokens.some(tokenLooksFree);
+  }
+
+  function freeEntries() {
+    const out = [];
+    uniqueBySlug.forEach((entry) => {
+      if (isFreeCard(entry)) out.push(entry);
+    });
+    return out;
+  }
 
   const chipQueries = new Map();
   chips.forEach((btn) => {
@@ -60,7 +86,11 @@
     const hay = normalizeQuery(
       `${entry.slug} ${entry.cat} ${entry.level} ${entry.keywords} ${entry.text}`,
     );
-    return tokens.every((t) => hay.includes(t));
+    const free = isFreeCard(entry);
+    return tokens.every((t) => {
+      if (tokenLooksFree(t)) return free || hay.includes('gratuit');
+      return hay.includes(t);
+    });
   }
 
   function syncChipFromInput() {
@@ -71,6 +101,11 @@
       return;
     }
     let next = '';
+    if (queryLooksFree(tokensFromQuery(normalized))) {
+      activeChip = 'gratuit';
+      setChipActive('gratuit');
+      return;
+    }
     chipQueries.forEach((query, chip) => {
       if (normalizeQuery(query) === normalized) next = chip;
     });
@@ -139,12 +174,20 @@
           matched.push(entry);
         }
       });
+      matched.sort(function (a, b) {
+        return Number(isFreeCard(b)) - Number(isFreeCard(a));
+      });
       visibleCount = matched.length;
       if (visibleCount === 0) {
-        ['javascript-les-bases', 'python-les-bases', 'ia-les-bases'].forEach((slug) => {
-          const entry = uniqueBySlug.get(slug);
-          if (entry) matched.push(entry);
-        });
+        const fallback = freeEntries();
+        if (fallback.length) {
+          fallback.forEach((entry) => matched.push(entry));
+        } else {
+          ['javascript-les-bases', 'python-les-bases', 'ia-les-bases'].forEach((slug) => {
+            const entry = uniqueBySlug.get(slug);
+            if (entry) matched.push(entry);
+          });
+        }
       }
       renderResults(matched);
       resultsWrap.hidden = false;
@@ -170,7 +213,11 @@
         info.textContent = '';
       } else if (visibleCount === 0) {
         info.textContent = '';
-        info.appendChild(document.createTextNode('Aucun résultat — voici quelques livres populaires. '));
+        info.appendChild(document.createTextNode(
+          freeEntries().length
+            ? 'Rien pour cette recherche. Voila les livres a gouter gratuitement. '
+            : 'Aucun resultat. '
+        ));
         const link = document.createElement('a');
         link.href = '/#contact';
         link.textContent = 'Une question ? →';

@@ -50,6 +50,17 @@ if ($item === null) {
     exit;
 }
 
+if (livre_item_is_free($item)) {
+    http_response_code(400);
+    echo json_encode([
+        'success' => false,
+        'free' => true,
+        'error' => 'Ce livre est gratuit. Telecharge-le sans paiement.',
+        'download_url' => livre_free_download_url($slug),
+    ]);
+    exit;
+}
+
 $staticLink = trim((string) ($item['stripe_payment_link_url'] ?? ''));
 if ($staticLink !== '' && filter_var($staticLink, FILTER_VALIDATE_URL)) {
     echo json_encode([

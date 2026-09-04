@@ -8,6 +8,7 @@
   if (!root) return;
 
   const slug = (root.getAttribute('data-livre-slug') || '').trim();
+  const isFree = /^(1|true)$/i.test(root.getAttribute('data-livre-free') || '');
   const card = document.querySelector('.livre-purchase-card');
   const staticUrl = ((card && card.getAttribute('data-stripe-static-url')) || '').trim();
   const returnEl = document.getElementById('livreStripeReturn');
@@ -85,6 +86,10 @@
           window.location.href = data.url;
           return;
         }
+        if (data && data.free && data.download_url) {
+          window.location.href = data.download_url;
+          return;
+        }
         feedback(fb || feedbackEl, (data && data.error) || 'Paiement indisponible pour le moment.', true);
         setLoading(btn, false);
       })
@@ -96,6 +101,10 @@
 
   document.querySelectorAll('[data-livre-stripe-checkout]').forEach(function (btn) {
     btn.addEventListener('click', function () {
+      if (isFree) {
+        window.location.href = '/api/download-livre-gratuit.php?slug=' + encodeURIComponent(slug);
+        return;
+      }
       startCheckout(btn, feedbackEl);
     });
   });

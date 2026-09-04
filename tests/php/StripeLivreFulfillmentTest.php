@@ -96,6 +96,28 @@ final class StripeLivreFulfillmentTest extends TestCase
         self::assertSame('html-css-les-bases.pdf', $files[0]['filename']);
     }
 
+    public function test_livre_item_is_free_from_flag_and_price(): void
+    {
+        self::assertTrue(livre_item_is_free(['kind' => 'livre', 'is_free' => true, 'price_eur' => 0.5]));
+        self::assertTrue(livre_item_is_free(['kind' => 'livre', 'price_eur' => 0]));
+        self::assertFalse(livre_item_is_free(['kind' => 'livre', 'price_eur' => 0.5]));
+        self::assertFalse(livre_item_is_free([
+            'kind' => 'pack',
+            'slug' => 'pack-web',
+            'is_free' => true,
+            'price_eur' => 0,
+        ]));
+    }
+
+    public function test_livre_free_download_url(): void
+    {
+        self::assertSame(
+            '/api/download-livre-gratuit.php?slug=html-css-les-bases',
+            livre_free_download_url('html-css-les-bases')
+        );
+        self::assertSame('', livre_free_download_url('not a slug'));
+    }
+
     public function test_resolve_pdf_files_pack(): void
     {
         $item = stripe_find_livre_item('pack-debutant-code');

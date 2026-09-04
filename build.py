@@ -307,8 +307,8 @@ OG_PAGE_FILE_SLUGS = {
     'index': 'home',
     'nos-offres': 'prestations',
     'prestations': 'prestations',
-    'bouquins': 'home',
-    'livres': 'home',
+    'bouquins': 'bouquins',
+    'livres': 'bouquins',
 }
 
 # Variables par défaut
@@ -1853,6 +1853,7 @@ def _vitrines_catalog_inner_lines(
     cats: List[str],
     *,
     include_toolbar: bool = True,
+    short_card_cta: bool = False,
 ) -> List[str]:
     """Filtres + grille cartes + note de pied (même indentation que dans .container)."""
     lines: List[str] = []
@@ -1901,7 +1902,9 @@ def _vitrines_catalog_inner_lines(
         cat = (it.get('category') or 'all').strip() or 'all'
         title_raw = (it.get('title') or slug).strip()
         title = html.escape(title_raw)
-        card_cta = html.escape(f'Voir {title_raw}')
+        # Page /echantillons/ : libelle court (maquettes) ; accueil : "Voir {titre}"
+        card_cta_aria = html.escape(f'Voir {title_raw}')
+        card_cta_label = 'Voir la fiche' if short_card_cta else card_cta_aria
         tagline = html.escape(it.get('tagline') or '')
         excerpt = html.escape(it.get('excerpt') or '')
         cat_label_raw = VITRINE_CATEGORY_LABELS.get(cat, cat)
@@ -1932,7 +1935,7 @@ def _vitrines_catalog_inner_lines(
         )
         lines.append(
             f'            <a class="vitrine-card-media" href="{html.escape(devantures_url(slug))}" '
-            f'aria-label="{card_cta}">'
+            f'aria-label="{card_cta_aria}">'
         )
         lines.append(
             '                <div class="vitrine-card-img-scroll vitrine-scroll-hide-scrollbar" '
@@ -1953,8 +1956,9 @@ def _vitrines_catalog_inner_lines(
         lines.append(f'                <p class="vitrine-card-excerpt">{excerpt}</p>')
         lines.append('                <div class="vitrine-card-actions">')
         lines.append(
-            f'                    <a class="btn btn-primary vitrine-card-btn" href="{html.escape(devantures_url(slug))}">'
-            f'{card_cta}</a>'
+            f'                    <a class="btn btn-primary{" btn-amber" if short_card_cta else ""} vitrine-card-btn" '
+            f'href="{html.escape(devantures_url(slug))}" aria-label="{card_cta_aria}">'
+            f'{card_cta_label}</a>'
         )
         lines.append(
             f'                    <a class="btn btn-outline vitrine-card-btn" href="{html.escape(devantures_url(slug + "/demo/index.html"))}" '
@@ -2060,37 +2064,37 @@ def build_echantillons_deal_week_embed(data: Optional[Dict[str, Any]] = None) ->
         )
     pills = (
         f'<li>{cat_label}</li>'
-        '<li>Grand Est</li>'
+        '<li>Metz</li>'
         '<li>Demo live</li>'
     )
 
     html_out = f'''<aside class="echantillons-deal-week" aria-labelledby="echantillons-deal-title">
   <div class="container">
     <div class="echantillons-deal-week-inner">
-    <div class="echantillons-deal-visual" aria-hidden="true">
-      <div class="echantillons-deal-visual-glow"></div>
-      <div class="echantillons-deal-frame">
-        <span class="echantillons-deal-frame-dots" aria-hidden="true"></span>
-        <img data-src="{html.escape(thumb)}" alt="" width="280" height="360" decoding="async" class="echantillons-deal-shot dc-lazy-img" loading="lazy">
-      </div>
       <span class="echantillons-deal-ribbon">{badge}</span>
-    </div>
-    <div class="echantillons-deal-copy">
-      <p class="echantillons-deal-kicker"><i class="fas fa-star" aria-hidden="true"></i> {urgency}</p>
-      <h2 id="echantillons-deal-title" class="echantillons-deal-title">{title}</h2>
-      <p class="echantillons-deal-tagline">{tagline}</p>
-      <p class="echantillons-deal-desc">{desc}</p>
-      <ul class="echantillons-deal-pills" aria-label="Repères">{pills}</ul>
-    </div>
-    <div class="echantillons-deal-buy">
-      <ul class="echantillons-deal-perks">{perks}</ul>
-      <p class="echantillons-deal-meta">Échantillon · fiche + démo</p>
-      <a class="btn btn-primary btn-large echantillons-deal-cta" href="{fiche}">
-        <span>{cta}</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-      <a class="echantillons-deal-secondary" href="{demo}" target="_blank" rel="noopener noreferrer">Ouvrir la démo</a>
-    </div>
+      <div class="echantillons-deal-visual" aria-hidden="true">
+        <div class="echantillons-deal-visual-glow"></div>
+        <div class="echantillons-deal-frame">
+          <span class="echantillons-deal-frame-dots" aria-hidden="true"></span>
+          <img data-src="{html.escape(thumb)}" alt="" width="280" height="360" decoding="async" class="echantillons-deal-shot dc-lazy-img" loading="lazy">
+        </div>
+      </div>
+      <div class="echantillons-deal-copy">
+        <p class="echantillons-deal-kicker"><i class="fas fa-star" aria-hidden="true"></i> {urgency}</p>
+        <h2 id="echantillons-deal-title" class="echantillons-deal-title">{title}</h2>
+        <p class="echantillons-deal-tagline">{tagline}</p>
+        <p class="echantillons-deal-desc">{desc}</p>
+        <ul class="echantillons-deal-pills" aria-label="Repères">{pills}</ul>
+      </div>
+      <div class="echantillons-deal-buy">
+        <ul class="echantillons-deal-perks">{perks}</ul>
+        <p class="echantillons-deal-meta">Échantillon · fiche + démo</p>
+        <a class="btn btn-primary btn-large btn-amber echantillons-deal-cta" href="{fiche}">
+          <span>{cta}</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="echantillons-deal-secondary" href="{demo}" target="_blank" rel="noopener noreferrer">Ouvrir la démo</a>
+      </div>
     </div>
   </div>
 </aside>
@@ -2116,7 +2120,7 @@ def build_vitrines_page_collection_embed() -> None:
     items = data['items']
     cats = _vitrines_distinct_category_keys(items)
     # Filtres dans le hero recherche ; grille seule ici (ordre melange cote client chaque jour)
-    inner = _vitrines_catalog_inner_lines(items, cats, include_toolbar=False)
+    inner = _vitrines_catalog_inner_lines(items, cats, include_toolbar=False, short_card_cta=True)
     lines: List[str] = []
     lines.append('<!-- Genere automatiquement par build.py depuis src/data/vitrines.json -->')
     lines.append(
@@ -2242,8 +2246,8 @@ def build_vitrines_catalog_embed() -> None:
     )
     lines.append('            <p class="section-description">')
     lines.append(
-        '                Comme au marché : tu goûtes un bout avant de remplir le cornet. Ici c\'est pareil — '
-        'parcours, contenus, prise de contact. Comparez, ouvrez une démo, puis la '
+        '                Comme au marché : tu goûtes un bout avant de remplir le cornet. Pareil ici : '
+        'pages, textes, contact. Compare, ouvre une démo, puis la '
         f'<a href="{html.escape(echantillons_url())}">page catalogue</a> pour les fiches.'
     )
     lines.append('            </p>')
@@ -2554,6 +2558,67 @@ def _prestation_duration_label(item: Dict[str, Any]) -> str:
     if period == 'year':
         return f'{core} / an'
     return f"{core} d'intervention"
+
+
+def _prestation_year1_lines(item: Dict[str, Any], catalog: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Lignes année 1 (hébergement, mail, abos) pour buybox / modale devis."""
+    by_slug = {
+        str(it.get('slug') or ''): it
+        for it in (catalog.get('items') or [])
+        if isinstance(it, dict) and it.get('slug')
+    }
+    main_slug = str(item.get('slug') or '')
+    out: List[Dict[str, Any]] = []
+    seen: set = set()
+    for raw in item.get('quote_year1_slugs') or []:
+        slug = str(raw or '').strip()
+        if not slug or slug == main_slug or slug in seen:
+            continue
+        extra = by_slug.get(slug)
+        if not extra:
+            continue
+        try:
+            unit = int(extra.get('price_eur') or 0)
+        except (TypeError, ValueError):
+            unit = 0
+        if unit <= 0:
+            continue
+        label = str(extra.get('price_label') or '').strip().lower()
+        monthly = label == 'mensuel' or 'mois' in label
+        qty = 12 if monthly else 1
+        title = str(extra.get('title') or 'Prestation').strip()
+        period = '12 mois' if monthly else (str(extra.get('price_label') or '').strip() or 'Annuel')
+        seen.add(slug)
+        out.append({
+            'slug': slug,
+            'title': title,
+            'period': period,
+            'quantity': qty,
+            'unit_price': unit,
+            'price_eur': unit * qty,
+            'label': f'{title} - {period}',
+        })
+    return out
+
+
+def _prestation_year1_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    lines = _prestation_year1_lines(item, catalog)
+    if not lines:
+        return ''
+    total = sum(int(x['price_eur']) for x in lines)
+    rows = ''.join(
+        f'<li><span>{html.escape(str(x["label"]))}</span>'
+        f'<span>{html.escape(str(x["price_eur"]))} €</span></li>'
+        for x in lines
+    )
+    return (
+        '<div class="prestation-buybox-year1">'
+        '<p class="prestation-buybox-year1-title">Sur le devis année 1</p>'
+        f'<ul class="prestation-buybox-year1-list">{rows}</ul>'
+        f'<p class="prestation-buybox-year1-total">+ {html.escape(str(total))} € HT '
+        f'(hébergement / mail / suivi)</p>'
+        '</div>'
+    )
 
 
 def _prestation_card_visual_html(item: Dict[str, Any], *, featured_hero: bool = False) -> str:
@@ -3339,6 +3404,110 @@ def _prestation_pack_members(
     return members
 
 
+def _prestation_fiche_image(item: Dict[str, Any]) -> str:
+    """URL image fiche (cards/) si le fichier existe."""
+    img = (item.get('image') or '').strip()
+    if not img.startswith('/'):
+        return ''
+    local = BASE_DIR / img.lstrip('/').replace('/', os.sep)
+    return img if local.is_file() else ''
+
+
+def _dc_reco_media_html(
+    item: Dict[str, Any],
+    *,
+    kind: str = 'prestation',
+) -> str:
+    """Media vertical pour cards reco (image fiche ou cover livre)."""
+    if kind == 'livre':
+        cat = html.escape((item.get('category') or 'informatique').strip())
+        stack = item.get('cover_stack') or []
+        if (item.get('kind') or '') == 'pack' and isinstance(stack, list) and len(stack) >= 2:
+            imgs = []
+            for i, url in enumerate(stack[:3]):
+                if not isinstance(url, str) or not url.startswith('/'):
+                    continue
+                imgs.append(
+                    _picture_img_html(
+                        url,
+                        alt='',
+                        class_name='dc-reco-cover-stack-img',
+                        loading='lazy',
+                        style=f'--stack-i:{i}',
+                        defer_src=True,
+                    )
+                )
+            if imgs:
+                return (
+                    f'<span class="dc-reco-card__media dc-reco-card__media--stack" '
+                    f'data-livre-cat="{cat}" aria-hidden="true">'
+                    f'<span class="dc-reco-cover-stack">{"".join(imgs)}</span></span>'
+                )
+        cover = _livre_cover_url(item)
+        if cover:
+            pic = _picture_img_html(
+                cover,
+                alt='',
+                class_name='dc-reco-cover',
+                loading='lazy',
+                defer_src=True,
+            )
+            return (
+                f'<span class="dc-reco-card__media dc-reco-card__media--cover" '
+                f'data-livre-cat="{cat}" aria-hidden="true">{pic}</span>'
+            )
+        icon = html.escape((item.get('icon') or 'fa-book').strip())
+        return (
+            f'<span class="dc-reco-card__media dc-reco-card__media--icon" '
+            f'data-livre-cat="{cat}" aria-hidden="true"><i class="fas {icon}"></i></span>'
+        )
+
+    # prestation
+    ccat = html.escape((item.get('category') or '').strip())
+    img = _prestation_fiche_image(item)
+    if img:
+        pic = _picture_img_html(
+            img,
+            alt='',
+            class_name='dc-reco-cover',
+            loading='lazy',
+            defer_src=True,
+        )
+        return (
+            f'<span class="dc-reco-card__media dc-reco-card__media--cover" '
+            f'data-prestation-cat="{ccat}" aria-hidden="true">{pic}</span>'
+        )
+    icon = html.escape((item.get('icon') or 'fa-star').strip())
+    return (
+        f'<span class="dc-reco-card__media dc-reco-card__media--icon" '
+        f'data-prestation-cat="{ccat}" aria-hidden="true"><i class="fas {icon}"></i></span>'
+    )
+
+
+def _dc_reco_card_html(
+    *,
+    href: str,
+    media_html: str,
+    badge: str,
+    title: str,
+    tag: str,
+    perk: str,
+) -> str:
+    badge_html = f'<span class="dc-reco-card__badge">{badge}</span>' if badge else ''
+    tag_html = f'<span class="dc-reco-card__tag">{tag}</span>' if tag else ''
+    perk_html = f'<span class="dc-reco-card__perk">{perk}</span>' if perk else ''
+    return (
+        f'<a class="dc-reco-card" href="{href}">'
+        f'{media_html}'
+        f'<span class="dc-reco-card__body">'
+        f'{badge_html}'
+        f'<strong class="dc-reco-card__title">{title}</strong>'
+        f'{tag_html}'
+        f'{perk_html}'
+        f'</span></a>'
+    )
+
+
 def _prestation_pack_contents_html(
     item: Dict[str, Any],
     catalog: Dict[str, Any],
@@ -3347,47 +3516,28 @@ def _prestation_pack_contents_html(
     members = _prestation_pack_members(item, catalog)
     if not members:
         return ''
-    try:
-        pack_price = int(item.get('price_eur') or 0)
-    except (TypeError, ValueError):
-        pack_price = 0
-    unit_sum = 0
     cards: List[str] = []
     for it in members:
         s = html.escape((it.get('slug') or '').strip())
         title = html.escape((it.get('title') or s).strip())
         tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
-        icon = html.escape((it.get('icon') or 'fa-star').strip())
-        ccat = html.escape((it.get('category') or '').strip())
         try:
             price = int(it.get('price_eur') or 0)
         except (TypeError, ValueError):
             price = 0
-        unit_sum += price
-        tag_html = f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
         perk = _prestation_first_perk(it)
-        perk_html = (
-            f'<span class="prestation-related-perk">{html.escape(perk)}</span>'
-            if perk else ''
-        )
+        perk_txt = html.escape(perk) if perk else (f'{price}&nbsp;€ HT' if price else '')
         cards.append(
-            f'<a class="prestation-related-card prestation-pack-member-card" href="/prestations/{s}/">'
-            f'<span class="prestation-related-media" data-prestation-cat="{ccat}" aria-hidden="true">'
-            f'<i class="fas {icon}"></i></span>'
-            f'<span class="prestation-related-body">'
-            f'<span class="prestation-related-badge">Inclus</span>'
-            f'<strong class="prestation-related-title">{title}</strong>'
-            f'{tag_html}'
-            f'{perk_html}'
-            f'</span></a>'
+            _dc_reco_card_html(
+                href=f'/prestations/{s}/',
+                media_html=_dc_reco_media_html(it, kind='prestation'),
+                badge='Inclus',
+                title=title,
+                tag=tag,
+                perk=perk_txt,
+            )
         )
-    save_html = ''
-    return (
-        f'{save_html}'
-        f'<div class="prestation-related-grid prestation-pack-contents-grid">'
-        + ''.join(cards)
-        + '</div>'
-    )
+    return f'<div class="dc-reco-grid">{"".join(cards)}</div>'
 
 
 def _prestation_pack_buybox_lines_html(
@@ -3483,39 +3633,24 @@ def _prestation_related_html(
         s = html.escape((it.get('slug') or '').strip())
         title = html.escape((it.get('title') or s).strip())
         tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
-        icon = html.escape((it.get('icon') or 'fa-star').strip())
-        ccat = html.escape((it.get('category') or '').strip())
         try:
             price = int(it.get('price_eur') or 0)
         except (TypeError, ValueError):
             price = 0
-        badge = ''
-        if (it.get('kind') or '') == 'pack':
-            badge = '<span class="prestation-related-badge">Pack</span>'
-        tag_html = (
-            f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
-        )
+        badge = 'Pack' if (it.get('kind') or '') == 'pack' else ''
         perk = _prestation_first_perk(it)
-        perk_html = (
-            f'<span class="prestation-related-perk">{html.escape(perk)}</span>'
-            if perk else ''
-        )
+        perk_txt = html.escape(perk) if perk else (f'{price}&nbsp;€ HT' if price else '')
         cards.append(
-            f'<a class="prestation-related-card" href="/prestations/{s}/">'
-            f'<span class="prestation-related-media" data-prestation-cat="{ccat}" aria-hidden="true">'
-            f'<i class="fas {icon}"></i></span>'
-            f'<span class="prestation-related-body">'
-            f'{badge}'
-            f'<strong class="prestation-related-title">{title}</strong>'
-            f'{tag_html}'
-            f'{perk_html}'
-            f'</span></a>'
+            _dc_reco_card_html(
+                href=f'/prestations/{s}/',
+                media_html=_dc_reco_media_html(it, kind='prestation'),
+                badge=badge,
+                title=title,
+                tag=tag,
+                perk=perk_txt,
+            )
         )
-    return (
-        '<div class="prestation-related-grid">'
-        + ''.join(cards)
-        + '</div>'
-    )
+    return f'<div class="dc-reco-grid">{"".join(cards)}</div>'
 
 
 def _prestation_packs_containing(
@@ -3549,37 +3684,23 @@ def _prestation_packs_containing_html(
         s = html.escape((it.get('slug') or '').strip())
         title = html.escape((it.get('title') or s).strip())
         tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
-        icon = html.escape((it.get('icon') or 'fa-box-open').strip())
         try:
             price = int(it.get('price_eur') or 0)
         except (TypeError, ValueError):
             price = 0
-        try:
-            compare = int(it.get('compare_at_eur') or 0)
-        except (TypeError, ValueError):
-            compare = 0
         perk = _prestation_first_perk(it)
-        perk_html = (
-            f'<span class="prestation-related-perk">{html.escape(perk)}</span>'
-            if perk else ''
-        )
-        tag_html = f'<span class="prestation-related-tag">{tag}</span>' if tag else ''
+        perk_txt = html.escape(perk) if perk else (f'{price}&nbsp;€ HT' if price else '')
         cards.append(
-            f'<a class="prestation-related-card prestation-inpack-card" href="/prestations/{s}/">'
-            f'<span class="prestation-related-media" data-prestation-cat="packs" aria-hidden="true">'
-            f'<i class="fas {icon}"></i></span>'
-            f'<span class="prestation-related-body">'
-            f'<span class="prestation-related-badge">Pack</span>'
-            f'<strong class="prestation-related-title">{title}</strong>'
-            f'{tag_html}'
-            f'{perk_html}'
-            f'</span></a>'
+            _dc_reco_card_html(
+                href=f'/prestations/{s}/',
+                media_html=_dc_reco_media_html(it, kind='prestation'),
+                badge='Pack',
+                title=title,
+                tag=tag,
+                perk=perk_txt,
+            )
         )
-    return (
-        '<div class="prestation-related-grid prestation-inpack-grid">'
-        + ''.join(cards)
-        + '</div>'
-    )
+    return f'<div class="dc-reco-grid">{"".join(cards)}</div>'
 
 
 def _prestation_faq_entries(
@@ -3774,6 +3895,8 @@ def _build_prestation_seo_bundle(
     ) if includes else ''
     addons = item.get('addons') or []
     addons_json = json.dumps(addons, ensure_ascii=False)
+    year1_json = json.dumps(_prestation_year1_lines(item, catalog), ensure_ascii=False)
+    year1_html = _prestation_year1_html(item, catalog)
 
     contrast_html = ''
     if item.get('before'):
@@ -3804,6 +3927,8 @@ def _build_prestation_seo_bundle(
         'prestation_promo_html': '',
         'prestation_faq_html': '',
         'prestation_addons_json': addons_json,
+        'prestation_year1_json': year1_json,
+        'prestation_year1_html': year1_html,
         'prestation_highlights_html': '',
         'prestation_contrast_html': contrast_html,
         'prestation_technical_html': _prestation_technical_html(item, catalog),
@@ -3854,7 +3979,7 @@ def build_prestation_pages(template_engine: TemplateEngine, output_dir: Path) ->
             'og_image': og_image_abs,
             'og_type': 'website',
             'extra_css': 'prestations-shop-ux.css',
-            'page_scripts': ['main.js', 'prestation-devis-modal.js', 'prestation-devis.js', 'prestations-shop-ux.js'],
+            'page_scripts': ['main.js', 'lazy-images.js', 'prestation-devis-modal.js', 'prestation-devis.js', 'prestations-shop-ux.js'],
             'prestation_slug': slug,
             'prestation_service_slug': (it.get('service_slug') or slug).strip(),
             'prestation_title': title,
@@ -3929,7 +4054,30 @@ def publish_livres_json_for_api(output_dir: Path) -> None:
     print('[OK] Catalogue livres copie vers data/ et api/data/')
 
 
+def _livre_is_free(item: Dict[str, Any]) -> bool:
+    """Livre unitaire offert (pas un pack)."""
+    kind = (item.get('kind') or '').strip()
+    slug = (item.get('slug') or '').strip()
+    if kind == 'pack' or slug.startswith('pack-'):
+        return False
+    if item.get('is_free') is True:
+        return True
+    try:
+        return float(item.get('price_eur')) <= 0
+    except (TypeError, ValueError):
+        return False
+
+
+def _livre_download_url(item: Dict[str, Any]) -> str:
+    slug = (item.get('slug') or '').strip()
+    if not slug:
+        return ''
+    return f'/api/download-livre-gratuit.php?slug={quote(slug, safe="")}'
+
+
 def _livre_price_display(item: Dict[str, Any], catalog: Optional[Dict[str, Any]] = None) -> str:
+    if _livre_is_free(item):
+        return 'Gratuit'
     raw = item.get('price_eur')
     if raw is None and catalog:
         raw = catalog.get('default_price_eur', 0.5)
@@ -3938,6 +4086,35 @@ def _livre_price_display(item: Dict[str, Any], catalog: Optional[Dict[str, Any]]
     except (TypeError, ValueError):
         val = 0.5
     return f'{val:.2f}'.replace('.', ',')
+
+
+def _livre_price_block_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
+    price_label = html.escape((item.get('price_label') or "Prix d'appel").strip())
+    if _livre_is_free(item):
+        return (
+            f'<div class="service-price service-price--free">'
+            f'<span class="price-label">{price_label}</span>'
+            f'<span class="price-amount price-amount--free">Gratuit</span>'
+            f'</div>'
+        )
+    price = html.escape(_livre_price_display(item, catalog))
+    compare = item.get('compare_at_eur')
+    compare_html = ''
+    if compare is not None:
+        try:
+            cmp_disp = f'{float(compare):.2f}'.replace('.', ',')
+            compare_html = (
+                f"<span class=\"price-compare\">{cmp_disp} € à l'unité</span>"
+            )
+        except (TypeError, ValueError):
+            compare_html = ''
+    return (
+        f'<div class="service-price">'
+        f'<span class="price-label">{price_label}</span>'
+        f'<span class="price-amount">{price} € <span class="price-ht">TTC</span></span>'
+        f'{compare_html}'
+        f'</div>'
+    )
 
 
 def _livre_level_label(item: Dict[str, Any], catalog: Dict[str, Any]) -> str:
@@ -3963,6 +4140,8 @@ def _livre_items_by_category(data: Dict[str, Any]) -> Dict[str, List[Dict[str, A
             continue
         cid = (it.get('category') or 'informatique').strip()
         grouped.setdefault(cid, []).append(it)
+    for cid, items in grouped.items():
+        grouped[cid] = sorted(items, key=lambda it: (0 if _livre_is_free(it) else 1))
     return grouped
 
 
@@ -4095,12 +4274,13 @@ def _livre_card_html(
     level = (item.get('level') or 'base').strip()
     level_label = html.escape(_livre_level_label(item, catalog))
     keywords = html.escape(','.join(item.get('keywords') or []))
-    price = html.escape(_livre_price_display(item, catalog))
-    price_label = html.escape((item.get('price_label') or "Prix d'appel").strip())
     cta_href = f'/bouquins/{slug}/'
+    is_free = _livre_is_free(item)
     badge = ''
     kind = (item.get('kind') or '').strip()
-    if show_featured_badge and item.get('featured') and kind != 'pack':
+    if is_free:
+        badge = '<span class="prestation-card-badge livre-card-badge--free">Gratuit</span>'
+    elif show_featured_badge and item.get('featured') and kind != 'pack':
         badge = '<span class="prestation-card-badge">Coup de cœur</span>'
     if kind == 'pack':
         badge = '<span class="prestation-card-badge">Pack</span>'
@@ -4111,43 +4291,51 @@ def _livre_card_html(
         card_class += ' prestation-card--featured livre-card--featured'
     if (item.get('kind') or '') == 'pack':
         card_class += ' livre-card--pack'
+    if is_free:
+        card_class += ' livre-card--free'
     if _livre_cover_url(item) or item.get('cover_stack'):
         card_class += ' livre-card--has-cover'
     n_books = len(item.get('book_slugs') or [])
-    compare = item.get('compare_at_eur')
-    compare_html = ''
-    if compare is not None:
-        try:
-            cmp_disp = f'{float(compare):.2f}'.replace('.', ',')
-            compare_html = (
-                f"<span class=\"price-compare\">{cmp_disp} € à l'unité</span>"
-            )
-        except (TypeError, ValueError):
-            compare_html = ''
     meta_extra = (
         f'<p class="livre-card-pack-meta">{n_books} PDF inclus</p>'
         if n_books
         else ''
     )
+    if is_free:
+        dl = html.escape(_livre_download_url(item), quote=True)
+        actions = (
+            f'<div class="prestation-card-actions">'
+            f'<a href="{dl}" class="service-cta service-cta--download" download>'
+            f'<span>Telecharger</span>'
+            f'<i class="fas fa-download" aria-hidden="true"></i></a>'
+            f'<a href="{cta_href}" class="livre-card-fiche">Voir la fiche</a>'
+            f'</div>'
+        )
+    else:
+        actions = (
+            f'<div class="prestation-card-actions">'
+            f'<a href="{cta_href}" class="service-cta"><span>Voir</span>'
+            f'<i class="fas fa-eye" aria-hidden="true"></i></a>'
+            f'</div>'
+        )
+    free_attr = ' data-livre-free="1"' if is_free else ''
+    visual = (
+        f'<a href="{cta_href}" class="livre-card-cover-link" aria-label="Voir {title}">'
+        f'{_livre_card_visual_html(item, catalog)}'
+        f'</a>'
+    )
     return (
         f'<article class="{card_class}" data-livre-slug="{html.escape(slug, quote=True)}" '
         f'data-livre-level="{html.escape(level, quote=True)}" '
-        f'data-livre-keywords="{keywords}">'
+        f'data-livre-keywords="{keywords}"{free_attr}>'
         f'{badge}'
-        f'{_livre_card_visual_html(item, catalog)}'
+        f'{visual}'
         f'<span class="livre-card-level">{level_label}</span>'
         f'<h3 class="service-title">{title}</h3>'
         f'{meta_extra}'
         f'<p class="service-description">{desc}</p>'
-        f'<div class="service-price">'
-        f'<span class="price-label">{price_label}</span>'
-        f'<span class="price-amount">{price} € <span class="price-ht">TTC</span></span>'
-        f'{compare_html}'
-        f'</div>'
-        f'<div class="prestation-card-actions">'
-        f'<a href="{cta_href}" class="service-cta"><span>Voir</span>'
-        f'<i class="fas fa-eye" aria-hidden="true"></i></a>'
-        f'</div>'
+        f'{_livre_price_block_html(item, catalog)}'
+        f'{actions}'
         '</article>'
     )
 
@@ -4285,13 +4473,25 @@ def build_livres_catalog_embed() -> None:
     grouped = _livre_items_by_category(data)
     featured_order = data.get('featured_order') or []
     order_index = {slug: i for i, slug in enumerate(featured_order)}
-    featured_raw = [it for it in data.get('items', []) if it.get('featured') and it.get('has_page')]
+    free_pages = [
+        it for it in data.get('items', [])
+        if isinstance(it, dict) and it.get('has_page') and _livre_is_free(it)
+    ]
+    featured_raw = [
+        it for it in data.get('items', [])
+        if it.get('featured') and it.get('has_page') and not _livre_is_free(it)
+    ]
     featured_pages = sorted(
         featured_raw,
         key=lambda it: order_index.get((it.get('slug') or '').strip(), 999),
     )
     parts: List[str] = []
     shelf_links: List[str] = []
+    if free_pages:
+        shelf_links.append(
+            '<li><a href="#livres-free-title">'
+            '<i class="fas fa-gift" aria-hidden="true"></i> Gratuits</a></li>'
+        )
     if featured_pages:
         shelf_links.append(
             '<li><a href="#livres-featured-title">'
@@ -4313,6 +4513,19 @@ def build_livres_catalog_embed() -> None:
             '<nav class="livres-shelf-nav" aria-label="Rayons du catalogue">'
             f'<ul>{"".join(shelf_links)}</ul>'
             '</nav>'
+        )
+    if free_pages:
+        cards = ''.join(_livre_card_html(it, data) for it in free_pages)
+        parts.append(
+            '<section class="prestations-featured livres-free-shelf" aria-labelledby="livres-free-title">'
+            '<h2 id="livres-free-title" class="prestations-section-title">'
+            '<i class="fas fa-gift" aria-hidden="true"></i> A gouter gratuitement</h2>'
+            '<p class="prestations-featured-lead">'
+            "Comme au marche : tu goutes avant de remplir le cornet. "
+            "PDF a telecharger tout de suite, sans paiement."
+            '</p>'
+            f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
+            '</section>'
         )
     if featured_pages:
         cards = ''.join(
@@ -4351,6 +4564,183 @@ def build_livres_catalog_embed() -> None:
         print(f'[OK] livres-catalog-embed.html genere ({len(data.get("items", []))} livre(s))')
 
 
+def _livre_by_slug(catalog: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    out: Dict[str, Dict[str, Any]] = {}
+    for it in catalog.get('items') or []:
+        if not isinstance(it, dict):
+            continue
+        s = (it.get('slug') or '').strip()
+        if s:
+            out[s] = it
+    return out
+
+
+def _livre_pack_members(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """Livres inclus dans un pack via book_slugs."""
+    if (item.get('kind') or '') != 'pack':
+        return []
+    by_slug = _livre_by_slug(catalog)
+    members: List[Dict[str, Any]] = []
+    for s in item.get('book_slugs') or []:
+        slug = str(s).strip()
+        if slug and slug in by_slug and by_slug[slug].get('has_page'):
+            members.append(by_slug[slug])
+    return members
+
+
+def _livre_related_media_html(item: Dict[str, Any]) -> str:
+    """Miniature cover / stack pack pour les cartes related."""
+    return _dc_reco_media_html(item, kind='livre')
+
+
+def _livre_pack_contents_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> str:
+    """Cartes des PDF inclus dans le pack."""
+    members = _livre_pack_members(item, catalog)
+    if not members:
+        return ''
+    cards: List[str] = []
+    for it in members:
+        s = html.escape((it.get('slug') or '').strip())
+        title = html.escape((it.get('title') or s).strip())
+        tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
+        price = html.escape(_livre_price_display(it, catalog))
+        perk = 'Gratuit' if _livre_is_free(it) else f"{price}&nbsp;€ à l'unité"
+        cards.append(
+            _dc_reco_card_html(
+                href=f'/bouquins/{s}/',
+                media_html=_livre_related_media_html(it),
+                badge='Gratuit' if _livre_is_free(it) else 'Inclus',
+                title=title,
+                tag=tag,
+                perk=perk,
+            )
+        )
+    return f'<div class="dc-reco-grid">{"".join(cards)}</div>'
+
+
+def _livre_packs_containing(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    """Packs qui incluent ce livre (book_slugs)."""
+    slug = (item.get('slug') or '').strip()
+    if not slug or (item.get('kind') or '') == 'pack':
+        return []
+    out: List[Dict[str, Any]] = []
+    for it in catalog.get('items') or []:
+        if not isinstance(it, dict) or not it.get('has_page'):
+            continue
+        if (it.get('kind') or '') != 'pack':
+            continue
+        if slug in (it.get('book_slugs') or []):
+            out.append(it)
+    return out
+
+
+def _livre_packs_containing_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+) -> str:
+    packs = _livre_packs_containing(item, catalog)
+    if not packs:
+        return ''
+    cards: List[str] = []
+    for it in packs:
+        s = html.escape((it.get('slug') or '').strip())
+        title = html.escape((it.get('title') or s).strip())
+        tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
+        price = html.escape(_livre_price_display(it, catalog))
+        n = len(it.get('book_slugs') or [])
+        cards.append(
+            _dc_reco_card_html(
+                href=f'/bouquins/{s}/',
+                media_html=_livre_related_media_html(it),
+                badge='Pack',
+                title=title,
+                tag=tag,
+                perk=f'{n} PDF · {price}&nbsp;€ TTC',
+            )
+        )
+    return f'<div class="dc-reco-grid">{"".join(cards)}</div>'
+
+
+def _livre_related_html(
+    item: Dict[str, Any],
+    catalog: Dict[str, Any],
+    *,
+    limit: int = 4,
+) -> str:
+    """Autres bouquins du même rayon (+ featured si besoin)."""
+    slug = (item.get('slug') or '').strip()
+    cat = (item.get('category') or '').strip()
+    kind = (item.get('kind') or '').strip()
+    items = [
+        it for it in (catalog.get('items') or [])
+        if isinstance(it, dict) and it.get('has_page') and (it.get('slug') or '').strip()
+    ]
+    picked: List[Dict[str, Any]] = []
+    seen = {slug}
+
+    same = [
+        it for it in items
+        if (it.get('slug') or '') not in seen
+        and (it.get('category') or '') == cat
+        and (it.get('kind') or '') == kind
+    ]
+    same.sort(key=lambda x: (
+        0 if _livre_is_free(x) else 1,
+        0 if x.get('featured') else 1,
+        float(x.get('price_eur') or 0),
+    ))
+    for it in same:
+        if len(picked) >= limit:
+            break
+        picked.append(it)
+        seen.add(it.get('slug') or '')
+
+    if len(picked) < limit:
+        for it in items:
+            if len(picked) >= limit:
+                break
+            s = (it.get('slug') or '').strip()
+            if s in seen:
+                continue
+            if (it.get('kind') or '') == 'pack' and kind != 'pack':
+                continue
+            if it.get('featured') or (it.get('category') or '') == cat:
+                picked.append(it)
+                seen.add(s)
+
+    if not picked:
+        return ''
+
+    cards: List[str] = []
+    for it in picked[:limit]:
+        s = html.escape((it.get('slug') or '').strip())
+        title = html.escape((it.get('title') or s).strip())
+        tag = html.escape((it.get('tagline') or it.get('short_description') or '').strip())
+        price = html.escape(_livre_price_display(it, catalog))
+        badge = 'Gratuit' if _livre_is_free(it) else ('Pack' if (it.get('kind') or '') == 'pack' else '')
+        perk = 'Gratuit' if _livre_is_free(it) else f'{price}&nbsp;€ TTC'
+        cards.append(
+            _dc_reco_card_html(
+                href=f'/bouquins/{s}/',
+                media_html=_livre_related_media_html(it),
+                badge=badge,
+                title=title,
+                tag=tag,
+                perk=perk,
+            )
+        )
+    return f'<div class="dc-reco-grid">{"".join(cards)}</div>'
+
+
 def _build_livre_seo_bundle(
     item: Dict[str, Any],
     catalog: Dict[str, Any],
@@ -4375,34 +4765,58 @@ def _build_livre_seo_bundle(
         + '</ul>'
     )
     keywords_html = html.escape(', '.join(str(k) for k in keywords))
-    promo_html = (
-        '<aside class="prestation-promo" role="note">'
-        f"<strong>Prix d'appel</strong> — {html.escape(price_disp)}&nbsp;€ TTC. "
-        'PDF envoye par e-mail apres paiement securise.'
-        '</aside>'
-    )
+    is_free = _livre_is_free(item)
+    if is_free:
+        promo_html = (
+            '<aside class="prestation-promo prestation-promo--free" role="note">'
+            '<strong>Gratuit</strong> - PDF a telecharger tout de suite, sans paiement. '
+            "Tu goutes, tu vois si ca te parle."
+            '</aside>'
+        )
+        page_title = f'{title} — livre PDF gratuit DanielCraft'
+        extra_kw = ['livre PDF gratuit', 'telecharger PDF', 'DanielCraft']
+        price_eur = '0'
+        price_note = html.escape(
+            (item.get('price_note') or 'PDF a telecharger tout de suite - sans paiement').strip()
+        )
+        price_label = html.escape((item.get('price_label') or 'Gratuit').strip())
+    else:
+        promo_html = (
+            '<aside class="prestation-promo" role="note">'
+            f"<strong>Prix d'appel</strong> — {html.escape(price_disp)}&nbsp;€ TTC. "
+            'PDF envoye par e-mail apres paiement securise.'
+            '</aside>'
+        )
+        page_title = f'{title} — livre PDF DanielCraft'
+        extra_kw = ['livre formation PDF', 'DanielCraft']
+        price_eur = str(
+            item.get('price_eur')
+            if item.get('price_eur') is not None
+            else catalog.get('default_price_eur', 0.5)
+        )
+        price_note = html.escape(
+            (item.get('price_note') or 'TTC — PDF envoye par e-mail apres paiement').strip()
+        )
+        price_label = html.escape((item.get('price_label') or "Prix d'appel").strip())
     return {
-        'page_title': f'{title} — livre PDF DanielCraft',
+        'page_title': page_title,
         'page_description': desc[:160],
         'page_keywords': ', '.join(
-            [title] + [str(k) for k in keywords] + ['livre formation PDF', 'DanielCraft']
+            [title] + [str(k) for k in keywords] + extra_kw
         ),
         'livre_benefits_html': benefits_html,
         'livre_includes_html': includes_html,
         'livre_promo_html': promo_html,
         'livre_keywords_html': keywords_html,
         'livre_price_display': price_disp,
-        'livre_price_eur': str(
-            item.get('price_eur')
-            if item.get('price_eur') is not None
-            else catalog.get('default_price_eur', 0.5)
-        ),
-        'livre_price_label': html.escape((item.get('price_label') or "Prix d'appel").strip()),
-        'livre_price_note': html.escape(
-            (item.get('price_note') or 'TTC — PDF envoye par e-mail apres paiement').strip()
-        ),
+        'livre_price_eur': price_eur,
+        'livre_price_label': price_label,
+        'livre_price_note': price_note,
         'livre_level_label': html.escape(_livre_level_label(item, catalog)),
         'livre_category_label': html.escape(_livre_category_label(item, catalog)),
+        'livre_pack_contents_html': _livre_pack_contents_html(item, catalog),
+        'livre_inpack_html': _livre_packs_containing_html(item, catalog),
+        'livre_related_html': _livre_related_html(item, catalog),
     }
 
 
@@ -4427,10 +4841,15 @@ def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List
         title = (it.get('title') or slug).strip()
         page_url_abs = _to_absolute_url(f'/bouquins/{slug}/')
         seo = _build_livre_seo_bundle(it, data, slug, page_url_abs)
+        cover_rel = _livre_cover_url(it)
+        og_fallback = cover_rel or DEFAULT_VARS['og_image']
+        og_rel = _resolve_generated_og(slug, og_fallback, subdir='livres')
+        og_image_abs = _to_absolute_url(og_rel)
         stripe_url = (it.get('stripe_payment_link_url') or '').strip()
-        stripe_checkout = bool(stripe_pk) and not stripe_url
-        page_scripts = ['main.js']
-        if stripe_url or stripe_pk:
+        is_free = _livre_is_free(it)
+        stripe_checkout = bool(stripe_pk) and not stripe_url and not is_free
+        page_scripts = ['main.js', 'lazy-images.js']
+        if not is_free and (stripe_url or stripe_pk):
             page_scripts.append('livre-stripe-checkout.js')
         vars_dict = DEFAULT_VARS.copy()
         extra_css = 'vitrines-portfolio.css,livres.css'
@@ -4443,6 +4862,8 @@ def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List
         vars_dict.update({
             'schema_type': 'livre',
             'og_meta_profile': 'default',
+            'og_type': 'website',
+            'og_image': og_image_abs,
             'current_page': 'livre',
             'page_url': page_url_abs,
             'extra_css': extra_css,
@@ -4456,16 +4877,24 @@ def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List
             ).strip(),
             'livre_icon': (it.get('icon') or 'fa-book').strip(),
             'livre_category': (it.get('category') or 'informatique').strip(),
-            'livre_cover': _livre_cover_url(it),
+            'livre_cover': cover_rel,
             'livre_visual_html': _livre_detail_visual_html(it),
             'livre_stripe_url': stripe_url,
-            'livre_pay_link': bool(stripe_url),
+            'livre_pay_link': bool(stripe_url) and not is_free,
             'livre_pay_checkout': stripe_checkout,
+            'livre_is_free': is_free,
+            'livre_download_url': _livre_download_url(it) if is_free else '',
             'stripe_publishable_key': stripe_pk,
             'livre_mailto_subject': quote(f'Commande livre : {title}'),
         })
         vars_dict.update(seo)
         _normalize_page_meta(vars_dict, 'livre')
+        vars_dict['og_image'] = _og_image_url_with_cache_bust(og_image_abs)
+        _apply_og_image_file_meta(vars_dict)
+        vars_dict['og_image_alt'] = _truncate_meta_text(
+            f'{title} — livre PDF DanielCraft',
+            110,
+        )
         vars_dict['page_scripts_content'] = build_page_scripts_content(
             page_scripts,
             str(vars_dict.get('assets_query') or ''),
@@ -4502,6 +4931,7 @@ def _bouquins_sitemap_search_queries() -> List[str]:
     for q in (
         'python', 'javascript', 'sql', 'git', 'ia', 'securite', 'finance',
         'agile', 'scrum', 'pack', 'commerce', 'marketing', 'dropshipping',
+        'gratuit',
     ):
         queries.append(q)
     seen: set[str] = set()
@@ -4908,7 +5338,11 @@ def generate_webp_variants(assets_root: Path) -> None:
 
         webp_path = img_path.with_suffix(".webp")
         if webp_path.exists():
-            continue
+            try:
+                if webp_path.stat().st_mtime >= img_path.stat().st_mtime:
+                    continue
+            except OSError:
+                continue
 
         try:
             with Image.open(img_path) as img:

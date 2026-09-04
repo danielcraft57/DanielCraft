@@ -209,6 +209,69 @@
   margin: 0 0.9rem 0.95rem;
 }
 
+.page-livres .livre-card-cover-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-livres .livre-card-cover-link:hover .livre-card-cover,
+.page-livres .livre-card-cover-link:hover .livre-card-cover-stack {
+  filter: brightness(1.06);
+}
+
+.page-livres .livre-card .prestation-card-badge {
+  top: 0.65rem;
+  left: 0.65rem;
+  background: var(--livre-deal);
+  color: #1a2e1f;
+  pointer-events: none;
+}
+
+.page-livres .livre-card--free .price-amount--free {
+  color: #1f7a4d;
+}
+
+.page-livres .livre-card-badge--free {
+  background: #2f9e6a !important;
+  color: #fff !important;
+}
+
+.page-livres .livre-card--free .service-cta--download {
+  background: #2f9e6a;
+}
+
+.page-livres .livre-card--free .service-cta--download:hover {
+  background: #247a52;
+}
+
+.page-livres .livre-card-fiche {
+  display: block;
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--livre-accent);
+  text-decoration: none;
+}
+
+.page-livres .livre-card-fiche:hover {
+  text-decoration: underline;
+}
+
+.page-livres .livres-free-shelf .prestations-section-title i {
+  color: #2f9e6a;
+}
+
+.livre-hero-price__amount--free {
+  color: #1f7a4d;
+}
+
+.prestation-promo--free {
+  border-color: rgba(47, 158, 106, 0.35);
+  background: #f3faf6;
+}
+
 .page-livres .livre-card .service-cta {
   width: 100%;
   justify-content: center;
@@ -234,13 +297,6 @@
   font-size: 0.78rem;
   font-weight: 600;
   color: #1f7a4d;
-}
-
-.page-livres .livre-card .prestation-card-badge {
-  top: 0.65rem;
-  left: 0.65rem;
-  background: var(--livre-deal);
-  color: #1a2e1f;
 }
 
 .page-livres .prestations-section-title {
@@ -738,6 +794,14 @@
   background: #1a5f85;
 }
 
+.page-livres .livre-card--free .service-cta--download {
+  background: #2f9e6a;
+}
+
+.page-livres .livre-card--free .service-cta--download:hover {
+  background: #247a52;
+}
+
 .livres-trust-bar {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1218,4 +1282,24 @@
   .page-livres .services-grid.prestations-grid--featured {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* Recommandations fiche livre */
+.livre-detail-related-block {
+  padding: 2rem 0 2.5rem;
+  background: var(--livre-paper, #f3f7f9);
+}
+
+.livre-detail-related-block + .livre-detail-related-block {
+  padding-top: 0.5rem;
+  background: #fff;
+}
+
+.livre-detail-related-block .dc-reco-card__media--cover {
+  aspect-ratio: 3 / 4;
+  background: #e6eef3;
+}
+
+.livre-detail-related-block .dc-reco-card__media--stack {
+  aspect-ratio: 4 / 3;
 }

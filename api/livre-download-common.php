@@ -772,3 +772,26 @@ function livre_download_format_retry_human(int $seconds): string
 
     return 'environ ' . $hours . ' heures';
 }
+
+/**
+ * Envoie un PDF en piece jointe. Le chemin doit deja etre valide (livre_pdf_absolute_path).
+ */
+function livre_download_stream_pdf(string $absolutePath): void
+{
+    if ($absolutePath === '' || !is_file($absolutePath) || !is_readable($absolutePath)) {
+        http_response_code(404);
+        header('Content-Type: text/plain; charset=utf-8');
+        echo 'PDF indisponible sur le serveur.';
+        exit;
+    }
+
+    $filename = basename($absolutePath);
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="' . str_replace('"', '', $filename) . '"');
+    header('Content-Length: ' . (string) filesize($absolutePath));
+    header('Cache-Control: private, no-store');
+    header('X-Content-Type-Options: nosniff');
+    header('X-Frame-Options: DENY');
+    readfile($absolutePath);
+    exit;
+}

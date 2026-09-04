@@ -1,5 +1,5 @@
 <article class="prestation-detail-root livre-detail-root" itemscope itemtype="https://schema.org/Product"
-    data-livre-slug="{{livre_slug}}" data-stripe-pk="{{stripe_publishable_key}}">
+    data-livre-slug="{{livre_slug}}" data-stripe-pk="{{stripe_publishable_key}}"{% if livre_is_free %} data-livre-free="1"{% endif %}>
     <meta itemprop="name" content="{{livre_title}}">
     <meta itemprop="description" content="{{livre_tagline}}">
     <link itemprop="url" href="{{page_url}}">
@@ -21,15 +21,33 @@
                 <span class="section-badge"><i class="fas {{livre_icon}}" aria-hidden="true"></i> {{livre_level_label}} · {{livre_category_label}}</span>
                 <h1 class="section-title">{{livre_title}}</h1>
                 <p class="prestation-detail-hero-price livre-hero-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    {% if livre_is_free %}
+                    <span class="livre-hero-price__amount livre-hero-price__amount--free">Gratuit</span>
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="{{page_url}}">
+                    <span class="livre-hero-price__label">PDF a telecharger</span>
+                    {% else %}
                     <span class="livre-hero-price__amount" itemprop="price" content="{{livre_price_eur}}">{{livre_price_display}}&nbsp;€</span>
                     <meta itemprop="priceCurrency" content="EUR">
                     <link itemprop="availability" href="https://schema.org/InStock">
                     <link itemprop="url" href="{{page_url}}">
                     <span class="livre-hero-price__label">{{livre_price_label}} TTC</span>
+                    {% endif %}
                 </p>
                 <p class="section-description prestation-detail-lead">{{livre_tagline}}</p>
                 <p class="prestation-detail-desc">{{livre_description}}</p>
                 <div class="prestation-detail-hero-actions livre-hero-actions">
+                    {% if livre_is_free %}
+                    <a class="btn btn-primary btn-large livre-hero-cta" href="{{livre_download_url}}" download>
+                        <span><i class="fas fa-download" aria-hidden="true"></i> Telecharger gratuitement</span>
+                    </a>
+                    <p class="livre-delivery-hint">
+                        <i class="fas fa-gift" aria-hidden="true"></i>
+                        <span>Clic, et le PDF se telecharge - pas de carte, pas d'attente.</span>
+                    </p>
+                    {% else %}
                     {% if livre_pay_checkout %}
                     <button type="button" class="btn btn-primary btn-large livre-hero-cta" data-livre-stripe-checkout id="livreStripeCheckoutBtn">
                         <span class="livre-stripe-btn__label"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Acheter maintenant — {{livre_price_display}}&nbsp;€ TTC</span>
@@ -51,13 +69,22 @@
                         <i class="fas fa-download" aria-hidden="true"></i>
                         <span>Téléchargement + code unique après paiement</span>
                     </p>
+                    {% endif %}
                 </div>
+                {% if livre_is_free %}
+                <ul class="livre-trust-inline" aria-label="Garanties">
+                    <li><i class="fas fa-file-pdf" aria-hidden="true"></i><strong>Format PDF</strong><span>Compatible tous appareils</span></li>
+                    <li><i class="fas fa-gift" aria-hidden="true"></i><strong>Sans paiement</strong><span>C'est cadeau</span></li>
+                    <li><i class="fas fa-bolt" aria-hidden="true"></i><strong>Acces immédiat</strong><span>Telechargement direct</span></li>
+                </ul>
+                {% else %}
                 <p class="livre-refund-hint"><i class="fas fa-shield-alt" aria-hidden="true"></i> Satisfait ou remboursé 7&nbsp;jours</p>
                 <ul class="livre-trust-inline" aria-label="Garanties">
                     <li><i class="fas fa-file-pdf" aria-hidden="true"></i><strong>Format PDF</strong><span>Compatible tous appareils</span></li>
                     <li><i class="fas fa-lock" aria-hidden="true"></i><strong>Paiement sécurisé</strong><span>Stripe</span></li>
                     <li><i class="fas fa-bolt" aria-hidden="true"></i><strong>Accès immédiat</strong><span>Téléchargement / e-mail</span></li>
                 </ul>
+                {% endif %}
                 <p class="livre-stripe-feedback" id="livreStripeFeedback" hidden role="status" aria-live="polite"></p>
                 <p class="livre-stripe-return" id="livreStripeReturn" role="status" hidden></p>
             </div>
@@ -86,6 +113,24 @@
             data-livre-price="{{livre_price_eur}}"
             data-stripe-static-url="{{livre_stripe_url}}">
             <div class="vitrine-purchase-inner">
+                {% if livre_is_free %}
+                <h2 id="livre-buy-title" class="vitrine-purchase-title">A gouter tout de suite</h2>
+                <p class="vitrine-purchase-price">
+                    <span class="vitrine-price-value">Gratuit</span>
+                </p>
+                <p class="vitrine-purchase-hint">{{livre_price_note}}</p>
+                <div class="vitrine-purchase-cta-stack">
+                    <a class="btn btn-primary btn-large vitrine-purchase-cta-main" href="{{livre_download_url}}" download>
+                        <span>Telecharger le PDF</span>
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-outline btn-large" href="/bouquins/?q={{livre_category}}">
+                        <span>Autres livres {{livre_category_label}}</span>
+                    </a>
+                </div>
+                <hr class="vitrine-purchase-sep">
+                <p class="vitrine-prose">Pas la peine de faire le nareux : tu telecharges, tu lis, tu vois si ca te parle. Le pack du rayon, c'est si tu veux la suite.</p>
+                {% else %}
                 <h2 id="livre-buy-title" class="vitrine-purchase-title">Ce livre PDF</h2>
                 <p class="vitrine-purchase-price">
                     <span class="vitrine-price-value">{{livre_price_display}}</span><span class="vitrine-price-currency">€</span>
@@ -117,8 +162,55 @@
                 </div>
                 <hr class="vitrine-purchase-sep">
                 <p class="vitrine-prose">Après paiement, je t'envoie le PDF à l'e-mail Stripe (sous 24&nbsp;h en général).</p>
+                {% endif %}
             </div>
         </aside>
     </div>
 </section>
+
+{% if livre_pack_contents_html %}
+<section class="prestation-detail-pack-contents livre-detail-related-block scroll-reveal" style="--reveal-delay: 40ms" aria-labelledby="livre-pack-contents-title">
+    <div class="container">
+        <div class="prestation-related-head">
+            <h2 id="livre-pack-contents-title" class="prestation-detail-split-title">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                Ce pack contient
+            </h2>
+        </div>
+        <p class="prestation-inpack-lead">Chaque PDF existe aussi tout seul - le pack, c'est la remise.</p>
+        {{livre_pack_contents_html}}
+    </div>
+</section>
+{% endif %}
+
+{% if livre_inpack_html %}
+<section class="prestation-detail-inpack livre-detail-related-block scroll-reveal" style="--reveal-delay: 60ms" aria-labelledby="livre-inpack-title">
+    <div class="container">
+        <div class="prestation-related-head">
+            <h2 id="livre-inpack-title" class="prestation-detail-split-title">
+                <i class="fas fa-box-open" aria-hidden="true"></i>
+                Prends le pack, c'est moins cher
+            </h2>
+            <a href="/bouquins/?q=pack" class="prestation-related-all">Voir les packs →</a>
+        </div>
+        <p class="prestation-inpack-lead">{% if livre_is_free %}Ce bouquin est deja dans le pack. Si tu veux la suite, un seul paiement.{% else %}Ce bouquin est déjà dedans - un seul paiement, plusieurs PDF.{% endif %}</p>
+        {{livre_inpack_html}}
+    </div>
+</section>
+{% endif %}
+
+{% if livre_related_html %}
+<section class="prestation-detail-related livre-detail-related-block scroll-reveal" style="--reveal-delay: 40ms" aria-labelledby="livre-related-title">
+    <div class="container">
+        <div class="prestation-related-head">
+            <h2 id="livre-related-title" class="prestation-detail-split-title">
+                <i class="fas fa-book-open" aria-hidden="true"></i>
+                Dans le même rayon
+            </h2>
+            <a href="/bouquins/?q={{livre_category}}" class="prestation-related-all">Rayon {{livre_category_label}} →</a>
+        </div>
+        {{livre_related_html}}
+    </div>
+</section>
+{% endif %}
 </article>

@@ -3,7 +3,7 @@
   "default_price_eur": 0.5,
   "price_display": "TTC",
   "stripe_note": "Checkout via api/stripe-create-livre-checkout.php (livre ou pack).",
-  "intro_note": "Livres a 0,50 EUR TTC — packs en remise volume.",
+  "intro_note": "Des livres a gouter gratuitement, le reste a 0,50 EUR TTC - packs en remise volume.",
   "categories": [
     {
       "id": "packs",
@@ -1082,14 +1082,15 @@
         "css",
         "web",
         "front",
-        "debutant"
+        "debutant",
+        "gratuit"
       ],
       "source_dir": "informatique/html-css",
       "pdf": "html-css-les-bases.pdf",
       "icon": "fa-code",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1102,11 +1103,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/html-css-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/html-css-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "html-css-la-suite",
@@ -1274,14 +1276,15 @@
         "python",
         "script",
         "debutant",
-        "backend"
+        "backend",
+        "gratuit"
       ],
       "source_dir": "informatique/python",
       "pdf": "python-les-bases.pdf",
       "icon": "fa-python",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1294,11 +1297,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/python-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/python-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "python-pratique",
@@ -2068,14 +2072,15 @@
         "ia",
         "prompt",
         "chatgpt",
-        "debutant"
+        "debutant",
+        "gratuit"
       ],
       "source_dir": "ia/essentiel",
       "pdf": "ia-les-bases.pdf",
       "icon": "fa-robot",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -2088,11 +2093,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/ia-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/ia-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "ia-machine-learning",
@@ -2182,14 +2188,15 @@
         "finance",
         "investissement",
         "debutant",
-        "epargne"
+        "epargne",
+        "gratuit"
       ],
       "source_dir": "finance/essentiel",
       "pdf": "finance-les-bases.pdf",
       "icon": "fa-wallet",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2202,11 +2209,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/finance-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/finance-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "finance-actions-obligations",
@@ -2372,14 +2380,15 @@
         "commerce",
         "vente",
         "marge",
-        "client"
+        "client",
+        "gratuit"
       ],
       "source_dir": "commerce/essentiel",
       "pdf": "commerce-les-bases.pdf",
       "icon": "fa-handshake",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2392,11 +2401,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/commerce-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/commerce-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "vente-avancee",
@@ -2600,14 +2610,15 @@
         "marketing",
         "persona",
         "funnel",
-        "seo"
+        "seo",
+        "gratuit"
       ],
       "source_dir": "marketing/essentiel",
       "pdf": "marketing-les-bases.pdf",
       "icon": "fa-bullhorn",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2620,11 +2631,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/marketing-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/marketing-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "communication-les-bases",
@@ -2638,14 +2650,15 @@
         "communication",
         "ecriture",
         "presentation",
-        "clair"
+        "clair",
+        "gratuit"
       ],
       "source_dir": "communication/essentiel",
       "pdf": "communication-les-bases.pdf",
       "icon": "fa-comments",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2658,11 +2671,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/communication-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/communication-les-bases.jpg",
+      "is_free": true
     },
     {
       "slug": "gestion-projet-agile",
@@ -2677,14 +2691,15 @@
         "gestion de projet",
         "backlog",
         "iteration",
-        "scrum"
+        "scrum",
+        "gratuit"
       ],
       "source_dir": "agile/gestion-projet",
       "pdf": "gestion-projet-agile.pdf",
       "icon": "fa-people-arrows",
-      "price_eur": 0.5,
-      "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_eur": 0,
+      "price_label": "Gratuit",
+      "price_note": "PDF a telecharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2697,11 +2712,12 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "PDF a telecharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/gestion-projet-agile.jpg"
+      "cover": "/assets/images/livres/covers/gestion-projet-agile.jpg",
+      "is_free": true
     },
     {
       "slug": "methodologie-scrum",

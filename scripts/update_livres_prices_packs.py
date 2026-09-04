@@ -21,6 +21,19 @@ PACK_DISCOUNT_BY_N = {
 # Pack mis en avant sous la recherche (rotation manuelle)
 DEAL_OF_THE_WEEK_SLUG = "pack-web"
 
+# Livres a gouter sans paiement (1 "bases" par rayon, hors packs)
+FREE_SLUGS = (
+    "html-css-les-bases",
+    "python-les-bases",
+    "ia-les-bases",
+    "finance-les-bases",
+    "commerce-les-bases",
+    "marketing-les-bases",
+    "communication-les-bases",
+    "gestion-projet-agile",
+)
+FREE_PRICE_NOTE = "PDF a telecharger tout de suite - sans paiement"
+
 
 def pack_price_eur(n_books: int, unit: float = UNIT_EUR) -> float:
     if n_books < 1:
@@ -320,7 +333,8 @@ def main() -> None:
         "Pack = somme unitaire moins remise volume (prix .49/.79/.99)."
     )
     data["intro_note"] = (
-        f"Livres a {eur_fr(UNIT_EUR)} EUR TTC — packs en remise volume."
+        "Des livres a gouter gratuitement, le reste a "
+        f"{eur_fr(UNIT_EUR)} EUR TTC - packs en remise volume."
     )
     data["stripe_note"] = "Checkout via api/stripe-create-livre-checkout.php (livre ou pack)."
     data["deal_of_the_week"] = {
@@ -356,10 +370,31 @@ def main() -> None:
     for it in data.get("items", []):
         if it.get("kind") == "pack" or str(it.get("slug", "")).startswith("pack-"):
             continue
-        it["price_eur"] = UNIT_EUR
-        it["price_label"] = "Prix d'appel"
-        it["price_note"] = "TTC — PDF envoye par e-mail apres paiement"
+        slug = str(it.get("slug") or "")
         it["kind"] = "livre"
+        if slug in FREE_SLUGS:
+            it["is_free"] = True
+            it["price_eur"] = 0
+            it["price_label"] = "Gratuit"
+            it["price_note"] = FREE_PRICE_NOTE
+            kws = [str(k) for k in (it.get("keywords") or []) if str(k).strip()]
+            if "gratuit" not in kws:
+                kws.append("gratuit")
+            it["keywords"] = kws
+            includes = []
+            for line in it.get("includes") or []:
+                text = str(line)
+                if "Acces a vie au fichier envoye" in text:
+                    includes.append("PDF a telecharger tout de suite")
+                else:
+                    includes.append(text)
+            if includes:
+                it["includes"] = includes
+        else:
+            it.pop("is_free", None)
+            it["price_eur"] = UNIT_EUR
+            it["price_label"] = "Prix d'appel"
+            it["price_note"] = "TTC — PDF envoye par e-mail apres paiement"
         items.append(it)
 
     slug_to_title = {it["slug"]: it.get("title", it["slug"]) for it in items}
@@ -430,8 +465,8 @@ def main() -> None:
 
     PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
-        f"[OK] livres={len(items)} @{eur_fr(UNIT_EUR)} | packs={len(pack_items)} | "
-        f"deal={DEAL_OF_THE_WEEK_SLUG}"
+        f"[OK] livres={len(items)} @{eur_fr(UNIT_EUR)} | gratuits={len(FREE_SLUGS)} | "
+        f"packs={len(pack_items)} | deal={DEAL_OF_THE_WEEK_SLUG}"
     )
 
 
