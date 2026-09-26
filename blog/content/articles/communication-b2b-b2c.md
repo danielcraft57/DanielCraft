@@ -38,14 +38,14 @@ En B2C, la decision est plus personnelle. Le client se demande : « Qu'est-ce qu
 - Des avis clients et preuves sociales accessibles
 - Un parcours d'achat fluide (peu de clics, paiement simple)
 
-Evite le jargon technique. Parle en termes de confort, de gain de temps, d'economie ou de plaisir — selon ce que tu vends.
+Evite le jargon technique. Parle en termes de confort, de gain de temps, d'economie ou de plaisir - selon ce que tu vends.
 
 ## Meme marque, tons differents
 
 Si tu adresses les deux cibles, garde une identite visuelle coherente mais adapte le contenu :
 
 - **Site web** : pages ou sections separees B2B / B2C si les offres divergent
-- **Reseaux sociaux** : LinkedIn plutot B2B, Instagram ou Facebook plutot B2C — ou contenus distincts sur un meme compte
+- **Reseaux sociaux** : LinkedIn plutot B2B, Instagram ou Facebook plutot B2C - ou contenus distincts sur un meme compte
 - **Supports print** : brochure pro avec etudes de cas vs flyer grand public avec offre promotionnelle
 
 L'incoherence totale (discours startup sur LinkedIn et discours institutionnel en magasin) brouille ta marque. La nuance oui, le double langage non.

@@ -5,7 +5,7 @@
       "title": "Packs commerce",
       "nav_label": "Packs",
       "icon": "fa-box-open",
-      "description": "Plusieurs prestations ensemble, moins cher qu'à l'unité.",
+      "description": "Plusieurs prestations ensemble, moins cher qu'à l'unité. Pas la peine de faire le nareux : le devis PDF détaille tout.",
       "image": "/assets/images/prestations/categories/packs.jpg"
     },
     {
@@ -13,7 +13,7 @@
       "title": "Image & visibilité",
       "nav_label": "Image & visibilité",
       "icon": "fa-fingerprint",
-      "description": "Une présence claire et cohérente, sur Google comme auprès des assistants intelligents.",
+      "description": "Être trouvé sur Google, et bien parlé de toi - y compris quand on demande aux assistants intelligents.",
       "image": "/assets/images/prestations/categories/identite.jpg"
     },
     {
@@ -21,7 +21,7 @@
       "title": "Assistants & automatisation",
       "nav_label": "Assistants intelligents",
       "icon": "fa-robot",
-      "description": "Des réponses utiles à vos clients, sans jargon technique.",
+      "description": "Des réponses utiles à tes clients, sans jargon - pour le quotidien au magasin.",
       "image": "/assets/images/prestations/categories/ia.jpg"
     },
     {
@@ -29,7 +29,7 @@
       "title": "Mobile & messagerie",
       "nav_label": "Mobile & WhatsApp",
       "icon": "fa-mobile-alt",
-      "description": "Être joignable et convaincant depuis un smartphone — PWA, WhatsApp, Google Maps.",
+      "description": "Joignable depuis le téléphone : WhatsApp, Maps, et le site sur l'écran d'accueil.",
       "image": "/assets/images/prestations/categories/mobile.jpg"
     },
     {
@@ -37,7 +37,7 @@
       "title": "Connexions & organisation",
       "nav_label": "Connexions & outils",
       "icon": "fa-plug",
-      "description": "Faire communiquer vos outils entre eux et gagner du temps au quotidien.",
+      "description": "Faire communiquer tes outils entre eux et gagner du temps au quotidien.",
       "image": "/assets/images/prestations/categories/technique.jpg"
     },
     {
@@ -45,7 +45,7 @@
       "title": "Votre site & vos textes",
       "nav_label": "Site & contenu",
       "icon": "fa-paint-brush",
-      "description": "Pages, formulaires et petites retouches visuelles.",
+      "description": "Pages, formulaires et petites retouches - sans tout recommencer.",
       "image": "/assets/images/prestations/categories/site-contenu.jpg"
     },
     {
@@ -53,7 +53,7 @@
       "title": "Sérénité & suivi",
       "nav_label": "Entretien & support",
       "icon": "fa-shield-alt",
-      "description": "Hébergement, sauvegardes et dépannage quand vous en avez besoin.",
+      "description": "Hébergement, sauvegardes et dépannage quand tu en as besoin.",
       "image": "/assets/images/prestations/categories/maintenance.jpg"
     },
     {
@@ -61,7 +61,7 @@
       "title": "Web sobre & performant",
       "nav_label": "Éco-conception",
       "icon": "fa-leaf",
-      "description": "Sites plus légers, plus rapides et plus économes — bon pour la planète, pour Google et pour votre budget.",
+      "description": "Sites plus légers, plus rapides et plus économes - bon pour la planète, pour Google et pour ton budget.",
       "image": "/assets/images/prestations/categories/eco.jpg"
     }
   ],
@@ -75,7 +75,7 @@
       "has_page": true,
       "icon": "fa-mobile-alt",
       "title": "Pack Présence téléphone",
-      "tagline": "PWA + Maps + conversion mobile",
+      "tagline": "Site sur le téléphone + Maps + contact en un tap",
       "short_description": "Site installable, fiche Maps, boutons d'appel. Tout pour le client sur téléphone.",
       "description": "La plupart de vos visiteurs sont sur mobile. Ce pack aligne l'expérience : site qui s'installe, fiche Maps propre, contact en un tap.",
       "price_eur": 949,
@@ -117,7 +117,7 @@
       "title": "Pack Réputation locale",
       "tagline": "Maps + avis + coup de propre Google",
       "short_description": "Fiche Google, collecte d'avis, petites corrections SEO. Le pack \"on me trouve et on me fait confiance\".",
-      "description": "Trois leviers locaux : fiche Maps au propre, parcours avis (sans harceler), et bases SEO. Idéal si le site existe déjà mais la réputation locale pêche.",
+      "description": "Trois gestes concrets : fiche Maps propre, avis plus simples à laisser, bases Google. Idéal si le site existe déjà mais la réputation locale pêche.",
       "price_eur": 749,
       "compare_at_eur": 929,
       "price_label": "Pack",
@@ -184,7 +184,10 @@
       ],
       "promo": "Vos clients sont déjà sur WhatsApp. Autant que ça travaille pour vous.",
       "prestafacture_sku": "PACK-WHATSAPP",
-      "estimated_hours": 26
+      "estimated_hours": 26,
+      "quote_year1_slugs": [
+        "ia-maint-mensuelle"
+      ]
     },
     {
       "slug": "pack-etre-trouve",
@@ -209,7 +212,7 @@
         "visibilite-complete"
       ],
       "benefits": [
-        "Vitrine jusqu'à 5 pages, claire sur téléphone",
+        "Vitrine jusqu'à 5 pages, horaires et contact visibles sur téléphone",
         "Présence Google, Maps et assistants",
         "Un seul suivi pour le site et la visibilité"
       ],
@@ -224,11 +227,17 @@
       ],
       "promo": "Souvent achetés ensemble - autant le faire en pack.",
       "prestafacture_sku": "PACK-ETRE-TROUVE",
-      "estimated_hours": 40
+      "estimated_hours": 40,
+      "quote_year1_slugs": [
+        "hebergement-domaine",
+        "mail-pro",
+        "entretien-mensuel"
+      ],
+      "prestafacture_product_id": 184
     },
     {
-      "slug": "pack-demarrer-commerce",
-      "service_slug": "pack_demarrer_commerce",
+      "slug": "pack-démarrer-commerce",
+      "service_slug": "pack_démarrer_commerce",
       "kind": "pack",
       "category": "packs",
       "featured": true,
@@ -243,7 +252,7 @@
       "price_label": "Pack",
       "price_note": "Au lieu de 1 029 € HT à l'unité",
       "price_tier": "growth",
-      "image": "/assets/images/prestations/cards/pack-demarrer-commerce.jpg",
+      "image": "/assets/images/prestations/cards/pack-démarrer-commerce.jpg",
       "includes_slugs": [
         "site-vitrine-essentiel",
         "fiche-google-mobile",
@@ -276,20 +285,180 @@
       "highlights": [
         {
           "icon": "fa-store",
-          "title": "Tout pour demarrer",
+          "title": "Tout pour démarrer",
           "text": "Site + Maps + conversion"
         },
         {
           "icon": "fa-tags",
           "title": "Remise pack",
-          "text": "Moins cher qu'a l'unite"
+          "text": "Moins cher qu'à l'unité"
         },
         {
           "icon": "fa-bolt",
-          "title": "Rapide a lancer",
+          "title": "Rapide à lancer",
           "text": "Un seul devis, un seul suivi"
         }
+      ],
+      "quote_year1_slugs": [
+        "hebergement-domaine",
+        "mail-pro",
+        "entretien-mensuel"
+      ],
+      "prestafacture_product_id": 183
+    },
+    {
+      "slug": "pack-complet-annee1",
+      "service_slug": "pack_complet_annee1",
+      "kind": "pack",
+      "category": "packs",
+      "featured": true,
+      "has_page": true,
+      "icon": "fa-key",
+      "title": "Pack complet première année",
+      "tagline": "Site + VPS + mail offert + suivi 12 mois",
+      "short_description": "Vitrine 3 pages, VPS, mail offert, et je veille 12 mois. Un devis, chaque ligne détaillée.",
+      "description": "Le pack « je me lance pour de vrai ». Même base que le site essentiel (analyse, réalisation, mise en ligne, VPS, mail offert), plus 12 mois de suivi. Tout listé sur le devis.",
+      "price_eur": 1132,
+      "price_label": "Pack première année",
+      "price_note": "Essentiel 460 € + entretien 56 € × 12 mois",
+      "price_tier": "growth",
+      "image": "/assets/images/prestations/cards/pack-complet-annee1.jpg",
+      "includes_slugs": [
+        "site-vitrine-essentiel",
+        "hebergement-domaine",
+        "mail-pro",
+        "entretien-mensuel"
+      ],
+      "quote_expand_includes": false,
+      "benefits": [
+        "Site 3 pages + VPS 12 mois",
+        "Mail pro offert sur le VPS",
+        "Suivi mensuel 12 mois : sécu, sauvegardes, petits correctifs"
+      ],
+      "includes": [
+        "Analyse, réalisation et mise en ligne (vitrine 3 pages)",
+        "Hébergement VPS (1 an)",
+        "Boîte mail pro offerte",
+        "Entretien mensuel (12 mois)"
+      ],
+      "faq": [
+        {
+          "q": "C'est quoi la différence avec le site à 460 € ?",
+          "a": "Le site seul, c'est la vitrine + VPS + mail. Ici tu as aussi le suivi tous les mois pendant un an."
+        },
+        {
+          "q": "Et après la première année ?",
+          "a": "On reconduit VPS et entretien si tu veux. Ou tu arrêtes. Pas d'engagement caché."
+        },
+        {
+          "q": "Le devis PDF détaille quoi ?",
+          "a": "Chaque ligne : analyse, réalisation, mise en ligne, VPS, mail offert, et l'entretien sur 12 mois."
+        }
+      ],
+      "examples": [
+        "Artisan qui ouvre et veut site + boîte mail + quelqu'un qui surveille derrière.",
+        "Commerce de quartier : vitrine claire, joignable, suivi un an sans y penser."
+      ],
+      "promo": "Le pack clé en main - site, VPS, mail offert, suivi. Point.",
+      "prestafacture_sku": "PACK-COMPLET-A1",
+      "estimated_hours": 19,
+      "seo_title": "Pack complet première année - site + hébergement + suivi (Metz)",
+      "seo_description": "Site vitrine 3 pages, VPS, mail offert et entretien 12 mois. 1 132 €. Devis détaillé pour démarrer.",
+      "highlights": [
+        {
+          "icon": "fa-key",
+          "title": "Clé en main",
+          "text": "Site + première année incluse"
+        },
+        {
+          "icon": "fa-file-invoice",
+          "title": "Devis détaillé",
+          "text": "Chaque ligne, comme en vrai"
+        },
+        {
+          "icon": "fa-shield-alt",
+          "title": "Suivi 12 mois",
+          "text": "Sécu et petites corrections"
+        }
+      ],
+      "quote_lines": [
+        {
+          "label": "Analyse / cadrage (brief, besoin, contenu)",
+          "amount_eur": 113
+        },
+        {
+          "label": "Conception + réalisation (IA + contrôle)",
+          "amount_eur": 197
+        },
+        {
+          "label": "Recette, tests, mise en ligne",
+          "amount_eur": 84
+        },
+        {
+          "label": "Hébergement VPS - 12 mois",
+          "amount_eur": 66,
+          "slug": "hebergement-domaine"
+        },
+        {
+          "label": "Boîte mail pro (offerte)",
+          "amount_eur": 0,
+          "include_zero": true,
+          "slug": "mail-pro"
+        },
+        {
+          "label": "Site entretenu chaque mois - 12 mois",
+          "amount_eur": 56,
+          "quantity": 12,
+          "slug": "entretien-mensuel"
+        }
       ]
+    },
+    {
+      "slug": "pack-serenite-sobriete",
+      "service_slug": "pack_serenite_sobriete",
+      "kind": "pack",
+      "category": "packs",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-shield-alt",
+      "title": "Pack Sérénité + Sobriété",
+      "tagline": "Site suivi chaque mois, et qui reste léger",
+      "short_description": "Entretien du site + veille perf. Ensemble, un peu moins cher qu'à l'unité.",
+      "description": "Je regarde le site tous les mois (sécu, sauvegardes, petits correctifs) et je surveille le poids / la vitesse. Le pack, c'est pour pas jongler entre deux abos.",
+      "price_eur": 79,
+      "compare_at_eur": 84,
+      "price_label": "Mensuel",
+      "price_note": "Au lieu de 84 € HT/mois à l'unité - engagement 12 mois sur le devis",
+      "image": "/assets/images/prestations/cards/pack-serenite-sobriete.jpg",
+      "includes_slugs": [
+        "entretien-mensuel",
+        "suivi-eco-mensuel"
+      ],
+      "benefits": [
+        "Mises à jour, sauvegardes, petits correctifs",
+        "Alerte si le site reprend du poids",
+        "Un seul abo, un seul interlocuteur"
+      ],
+      "includes": [
+        "Entretien mensuel du site",
+        "Veille perf & sobriété",
+        "Rapport court chaque mois"
+      ],
+      "faq": [
+        {
+          "q": "C'est pour combien de temps ?",
+          "a": "Sur le devis on met 12 mois. Après on reconduit, ou on arrête. Pas de surprise."
+        }
+      ],
+      "examples": [
+        "Commerce qui veut un site qui reste propre sans y penser tous les mois."
+      ],
+      "promo": "79 €/mois au lieu de 84 € si tu prends les deux à part.",
+      "prestafacture_sku": "PACK-SERENITE-SOBRIETE",
+      "estimated_hours": 2,
+      "estimated_hours_period": "month",
+      "price_tier": "entry",
+      "prestafacture_product_id": 172
     },
     {
       "slug": "site-vitrine-essentiel",
@@ -299,12 +468,12 @@
       "has_page": true,
       "icon": "fa-globe",
       "title": "Site vitrine essentiel",
-      "tagline": "Horaires, services, contact - une vitrine claire sur téléphone.",
-      "short_description": "Trois pages claires sur téléphone, formulaire de contact, mise en ligne. Livré en quelques jours.",
-      "description": "Je vous fais un petit site vitrine : accueil, prestations, contact. Idéal pour démarrer sans se ruiner, avec quelque chose de vrai en ligne (pas un brouillon abandonné).",
-      "price_eur": 390,
+      "tagline": "Horaires, services, contact - visibles sur téléphone.",
+      "short_description": "Trois pages avec horaires et contact visibles sur téléphone, VPS inclus 12 mois, mail offert. Devis ligne par ligne.",
+      "description": "Je te fais un petit site vitrine : accueil, prestations, contact. Analyse, réalisation avec des outils modernes (je contrôle tout), mise en ligne, et hébergement VPS pour l'année. Mail offert. Domaine fourni par toi ou devis à part.",
+      "price_eur": 460,
       "price_label": "Forfait",
-      "price_note": "590 € HT pour un site jusqu'à 10 pages",
+      "price_note": "Analyse, réalisation, mise en ligne + VPS 12 mois - mail offert. Domaine à part.",
       "image": "/assets/images/prestations/cards/site-vitrine-essentiel.jpg",
       "before": [
         "Pas de site, ou un site vieillot",
@@ -312,24 +481,33 @@
         "Infos éparpillées"
       ],
       "benefits": [
-        "Jusqu'a 3 pages (accueil, services, contact)",
-        "Lisible sur téléphone, tablette, ordi",
+        "Jusqu'à 3 pages (accueil, services, contact)",
+        "Horaires et numéro visibles sur téléphone",
         "Formulaire de contact et mise en ligne"
       ],
       "includes": [
+        "Analyse / cadrage du besoin",
         "Jusqu'à 3 pages (accueil, services, contact)",
-        "Design adapté à votre métier",
-        "Formulaire de contact opérationnel",
-        "Mise en ligne et HTTPS"
+        "Recette, tests, mise en ligne",
+        "Hébergement VPS 12 mois",
+        "Boîte mail pro offerte"
       ],
       "faq": [
         {
           "q": "Combien de temps pour avoir mon site ?",
-          "a": "En général 3 à 5 jours ouvrés après validation du contenu."
+          "a": "En général quelques jours après validation du contenu - souvent moins d'une semaine."
+        },
+        {
+          "q": "Le devis détaille quoi ?",
+          "a": "Chaque ligne : analyse, réalisation, mise en ligne, VPS, et mail offert."
+        },
+        {
+          "q": "Et le nom de domaine ?",
+          "a": "Tu l'apportes, ou on le prend à part. Pas dans ce forfait."
         },
         {
           "q": "Puis-je ajouter des pages plus tard ?",
-          "a": "Oui : page supplémentaire à 59 € HT ou passage au forfait 5 pages (590 € HT)."
+          "a": "Oui : page supplémentaire à 59 € ou passage au forfait 5 pages (660 €)."
         }
       ],
       "addons": [
@@ -338,41 +516,69 @@
           "title": "Page supplémentaire",
           "price_eur": 59,
           "description": "Une page en plus (ex. témoignages, tarifs).",
-          "prestafacture_sku": "PAGE-SUPP"
+          "prestafacture_sku": "PAGE-SUPP",
+          "prestafacture_product_id": 176
         },
         {
           "id": "form_advanced",
           "title": "Formulaire enrichi",
           "price_eur": 99,
           "description": "Champs sur mesure ou envoi vers votre outil.",
-          "prestafacture_sku": "FORM-AVANCE"
+          "prestafacture_sku": "FORM-AVANCE",
+          "prestafacture_product_id": 177
         }
       ],
       "seo_title": "Site vitrine essentiel - Metz & Lorraine (3 pages)",
-      "seo_description": "Site vitrine 3 pages livré rapidement : mobile, formulaire contact, HTTPS. À partir de 390 € HT pour artisans et TPE en Lorraine.",
+      "seo_description": "Site vitrine 3 pages pour artisans et commerces du Grand Est. 460 € : site + VPS, mail offert. Devis détaillé.",
       "examples": [
         "Un auto-entrepreneur veut une page accueil, services et contact avant un salon professionnel.",
         "Un commerce de quartier remplace sa page Facebook par un site à son adresse www."
       ],
       "promo": "Pas un site \"weekend magique\". Un vrai truc livré, en ligne, à votre nom.",
       "prestafacture_sku": "SITE-VITRINE-ESSENTIEL",
-      "estimated_hours": 18,
+      "estimated_hours": 7,
       "price_tier": "entry",
       "highlights": [
         {
           "icon": "fa-clock",
           "title": "Livraison rapide",
-          "text": "Quelques jours apres validation du contenu"
+          "text": "Quelques jours après validation du contenu"
         },
         {
           "icon": "fa-mobile-alt",
-          "title": "Clair sur telephone",
-          "text": "Pense mobile d'abord"
+          "title": "Joignable sur téléphone",
+          "text": "Horaires et numéro visibles dès l'accueil"
         },
         {
           "icon": "fa-euro-sign",
           "title": "Petit budget",
           "text": "L'essentiel sans superflu"
+        }
+      ],
+      "prestafacture_product_id": 182,
+      "quote_lines": [
+        {
+          "label": "Analyse / cadrage (brief, besoin, contenu)",
+          "amount_eur": 113
+        },
+        {
+          "label": "Conception + réalisation (IA + contrôle)",
+          "amount_eur": 197
+        },
+        {
+          "label": "Recette, tests, mise en ligne",
+          "amount_eur": 84
+        },
+        {
+          "label": "Hébergement VPS - 12 mois",
+          "amount_eur": 66,
+          "slug": "hebergement-domaine"
+        },
+        {
+          "label": "Boîte mail pro (offerte)",
+          "amount_eur": 0,
+          "include_zero": true,
+          "slug": "mail-pro"
         }
       ]
     },
@@ -385,31 +591,32 @@
       "icon": "fa-globe",
       "title": "Site vitrine pro (jusqu'à 5 pages)",
       "tagline": "Le site \"je suis ouvert, voilà ce que je fais\"",
-      "short_description": "Jusqu'à 5 pages, clair sur téléphone, formulaire de contact, mise en ligne.",
-      "description": "Je crée un vrai site vitrine : accueil, services, à propos, contact… Vous gardez la main sur les textes après. Pensé pour un commerce ou un artisan qui veut quelque chose de propre, sans usine à gaz.",
-      "price_eur": 590,
+      "short_description": "Jusqu'à 5 pages, VPS inclus 12 mois, mail offert. Devis ligne par ligne.",
+      "description": "Un vrai site vitrine : accueil, services, à propos, contact… Pensé pour un commerce ou un artisan du Grand Est. Analyse, réalisation contrôlée, mise en ligne, VPS un an. Mail offert. Domaine à part.",
+      "price_eur": 660,
       "price_label": "Forfait",
-      "price_note": "Forfait TPE - jusqu'à 5 pages",
+      "price_note": "Analyse, réalisation, mise en ligne + VPS 12 mois - mail offert. Domaine à part.",
       "image": "/assets/images/prestations/cards/site-vitrine.jpg",
       "benefits": [
-        "Jusqu'a 5 pages structurées",
+        "Jusqu'à 5 pages structurées",
         "Parcours simple vers le contact",
         "Mise en ligne, HTTPS et réglages de base"
       ],
       "includes": [
-        "Jusqu'à 5 pages (accueil, services, à propos, contact…)",
-        "Design adapté à votre métier",
-        "Formulaire de contact opérationnel",
-        "Mise en ligne et réglages de base"
+        "Analyse / cadrage du besoin",
+        "Jusqu'à 5 pages",
+        "Recette, tests, mise en ligne",
+        "Hébergement VPS 12 mois",
+        "Boîte mail pro offerte"
       ],
       "faq": [
         {
           "q": "Combien de temps pour avoir mon site ?",
-          "a": "En général 5 à 7 jours ouvrés après validation du contenu et du style."
+          "a": "En général une semaine environ après validation du contenu et du style."
         },
         {
-          "q": "Puis-je modifier les textes moi-même ?",
-          "a": "Oui, je vous explique comment faire les mises à jour simples, ou je peux m'en charger via un forfait dédié."
+          "q": "Le devis détaille quoi ?",
+          "a": "Analyse, réalisation, mise en ligne, VPS, mail offert."
         }
       ],
       "addons": [
@@ -419,7 +626,7 @@
           "price_eur": 59,
           "description": "Une page en plus (ex. témoignages, galerie, tarifs détaillés).",
           "prestafacture_sku": "PAGE-SUPP",
-          "prestafacture_product_id": 952
+          "prestafacture_product_id": 176
         },
         {
           "id": "form_advanced",
@@ -427,35 +634,60 @@
           "price_eur": 99,
           "description": "Champs sur mesure, pièces jointes ou envoi vers votre boîte mail / outil.",
           "prestafacture_sku": "FORM-AVANCE",
-          "prestafacture_product_id": 953
+          "prestafacture_product_id": 177
         }
       ],
       "seo_title": "Création site vitrine professionnel - Metz & Lorraine",
-      "seo_description": "Site vitrine clair et mobile pour artisans et commerces. Présentez votre activité, rassurez vos visiteurs et recevez des demandes de contact.",
+      "seo_description": "Site vitrine jusqu'à 5 pages pour commerces du Grand Est. 660 € site + VPS. Devis détaillé.",
       "examples": [
         "Un plombier à Metz veut une page « Nos services », « Tarifs indicatifs » et un formulaire : les clients appellent moins pour demander l'adresse du site.",
         "Une boutique de pâtisserie affiche ses horaires, sa carte et un bouton « Commander par téléphone » visible dès l'accueil sur mobile."
       ],
       "promo": "Le format le plus demandé quand on sort de Facebook.",
       "prestafacture_sku": "SITE-VITRINE",
-      "prestafacture_product_id": 951,
-      "estimated_hours": 26,
+      "prestafacture_product_id": 125,
+      "estimated_hours": 10.5,
       "price_tier": "entry",
       "highlights": [
         {
           "icon": "fa-clock",
-          "title": "Delai rapide",
-          "text": "Site livre en 2 a 3 semaines"
+          "title": "Délai rapide",
+          "text": "Souvent en une semaine une fois le brief clair"
         },
         {
-          "icon": "fa-shield-alt",
-          "title": "Maintenance incluse",
-          "text": "Mises a jour et sauvegardes 3 mois"
+          "icon": "fa-server",
+          "title": "VPS inclus",
+          "text": "12 mois d'hébergement"
         },
         {
-          "icon": "fa-chart-line",
-          "title": "SEO pret a performer",
-          "text": "Optimisation de base pour Google"
+          "icon": "fa-envelope",
+          "title": "Mail offert",
+          "text": "Boîte pro sur le VPS"
+        }
+      ],
+      "quote_lines": [
+        {
+          "label": "Analyse / cadrage",
+          "amount_eur": 141
+        },
+        {
+          "label": "Conception + réalisation (IA + contrôle)",
+          "amount_eur": 338
+        },
+        {
+          "label": "Recette, tests, mise en ligne",
+          "amount_eur": 115
+        },
+        {
+          "label": "Hébergement VPS - 12 mois",
+          "amount_eur": 66,
+          "slug": "hebergement-domaine"
+        },
+        {
+          "label": "Boîte mail pro (offerte)",
+          "amount_eur": 0,
+          "include_zero": true,
+          "slug": "mail-pro"
         }
       ]
     },
@@ -677,16 +909,7 @@
           "a": "Il s'appuie sur les informations que vous validez ; je configure des garde-fous et une escalade vers vous si besoin."
         }
       ],
-      "addons": [
-        {
-          "id": "maint_ia",
-          "title": "Entretien mensuel de l'assistant",
-          "price_eur": 69,
-          "description": "Mise à jour des réponses et ajout de nouvelles questions.",
-          "prestafacture_sku": "IA-MAINTENANCE-MENSUEL",
-          "prestafacture_product_id": 959
-        }
-      ],
+      "addons": [],
       "seo_title": "Assistant IA FAQ pour site web - chatbot métier",
       "seo_description": "Assistant intelligent sur votre site : réponses aux questions fréquentes, prise de contact facilitée. Installation et configuration incluses.",
       "examples": [
@@ -695,8 +918,11 @@
       ],
       "promo": "Comme un accueil téléphonique, mais sur votre site, 24 h/24.",
       "prestafacture_sku": "IA-FAQ-SITE",
-      "prestafacture_product_id": 958,
-      "estimated_hours": 30
+      "prestafacture_product_id": 178,
+      "estimated_hours": 30,
+      "quote_year1_slugs": [
+        "ia-maint-mensuelle"
+      ]
     },
     {
       "slug": "aide-emails-clients",
@@ -733,7 +959,10 @@
       "promo": "Vous ne devenez pas un robot. Vous gagnez juste du temps.",
       "prestafacture_sku": "IA-SUPPORT-EMAIL",
       "prestafacture_product_id": 960,
-      "estimated_hours": 34
+      "estimated_hours": 34,
+      "quote_year1_slugs": [
+        "ia-maint-mensuelle"
+      ]
     },
     {
       "slug": "entretien-mensuel",
@@ -746,9 +975,9 @@
       "tagline": "Mises à jour, sauvegardes, petits correctifs",
       "short_description": "Je veille sur votre site tous les mois : sécurité, sauvegardes, petites corrections.",
       "description": "Un site laissé sans suivi finit par casser ou ramer. Cet abonnement, c'est la tranquillité : je regarde, je corrige le petit, je vous préviens si y a plus gros.",
-      "price_eur": 49,
+      "price_eur": 56,
       "price_label": "Mensuel",
-      "price_note": "Par site - hors gros développements",
+      "price_note": "1 h/mois au TJM - hors gros développements",
       "image": "/assets/images/prestations/cards/entretien-mensuel.jpg",
       "benefits": [
         "Mises à jour de sécurité chaque mois",
@@ -769,10 +998,10 @@
         "Mise à jour de sécurité appliquée sans que vous ayez à y penser.",
         "Petite typo sur la page Contact corrigée dans le quota mensuel inclus."
       ],
-      "promo": "49 €/mois - souvent moins cher qu'une panne un samedi.",
+      "promo": "56 €/mois - souvent moins cher qu'une panne un samedi.",
       "prestafacture_sku": "MAINT-MENSUEL",
-      "prestafacture_product_id": 961,
-      "estimated_hours": 1.5,
+      "prestafacture_product_id": 180,
+      "estimated_hours": 1,
       "estimated_hours_period": "month",
       "price_tier": "entry"
     },
@@ -946,7 +1175,10 @@
       "seo_description": "Assistant sur votre boutique en ligne : questions produits, recommandations, aide à la commande. Installation clé en main.",
       "prestafacture_sku": "IA-CHATBOT-ECOMMERCE",
       "prestafacture_product_id": 965,
-      "estimated_hours": 36
+      "estimated_hours": 36,
+      "quote_year1_slugs": [
+        "ia-maint-mensuelle"
+      ]
     },
     {
       "slug": "ia-automatisation",
@@ -1029,7 +1261,7 @@
       "seo_title": "Maintenance mensuelle assistant IA - mises à jour",
       "seo_description": "Abonnement entretien assistant : nouvelles réponses, tarifs à jour, optimisations. Pour sites et outils déjà en place.",
       "prestafacture_sku": "IA-MAINTENANCE-MENSUEL",
-      "prestafacture_product_id": 959,
+      "prestafacture_product_id": 181,
       "estimated_hours": 1.5,
       "estimated_hours_period": "month"
     },
@@ -1300,7 +1532,7 @@
       "price_label": "Forfait",
       "image": "/assets/images/prestations/cards/rapport-vitesse.jpg",
       "tagline": "Mesure mobile + ordi, priorités en français",
-      "description": "On mesure, on explique sans jargon, on liste 3-5 actions utiles. Idéal avant un redesign ou après des plaintes \"ça rame\".",
+      "description": "On mesure, on expliqué sans jargon, on liste 3-5 actions utiles. Idéal avant un redesign ou après des plaintes \"ça rame\".",
       "benefits": [
         "Mesure du chargement sur téléphone",
         "Liste d'actions classées par impact",
@@ -1351,7 +1583,7 @@
       "includes": [
         "Structure de la page",
         "Intégration au menu",
-        "Mise en forme responsive",
+        "Mise en forme adaptée téléphone, tablette et ordi",
         "1 série de retours"
       ],
       "examples": [
@@ -1505,43 +1737,90 @@
       "featured": false,
       "has_page": true,
       "icon": "fa-server",
-      "title": "Hébergement & nom de domaine",
-      "short_description": "Je m'occupe de l'hébergement et du domaine pour que le site reste joignable.",
-      "price_eur": 89,
+      "title": "Hébergement VPS",
+      "short_description": "Hébergement VPS pour que ton site reste joignable. Domaine à part (fourni par toi ou devis séparé).",
+      "price_eur": 66,
       "price_label": "Annuel",
       "image": "/assets/images/prestations/cards/hebergement-domaine.jpg",
-      "tagline": "En ligne, sécurisé, sans vous prendre la tête",
-      "description": "DNS, HTTPS, boîte mail si besoin : le côté \"ça marche\" sans que vous y passiez vos soirées.",
+      "tagline": "Serveur dédié à ton site, 12 mois",
+      "description": "Un VPS pour héberger ton site : joignable, HTTPS, sans te prendre la tête. Le nom de domaine, tu l'apportes ou on le prend à part. La boîte mail pro est offerte sur ce VPS.",
       "benefits": [
-        "Site joignable, nom de domaine suivi",
-        "Un interlocuteur pour le technique",
-        "Renouvellements et accès centralisés"
+        "Site joignable sur VPS",
+        "HTTPS de base",
+        "Un interlocuteur si ça coince"
       ],
       "includes": [
-        "Hébergement web annuel",
-        "Nom de domaine .fr ou .com",
+        "Hébergement VPS 12 mois",
         "Certificat HTTPS de base",
-        "Support pour la mise en ligne"
+        "Support mise en ligne"
       ],
       "examples": [
         "Artisan qui veut « monsite.fr » sans gérer OVH ou Gandi lui-même.",
         "Renouvellement annuel du domaine géré en un seul contact."
       ],
-      "promo": "Le site, c'est bien. Qu'il soit vraiment en ligne, c'est mieux.",
+      "promo": "Le site en ligne sur un vrai VPS - mail offert.",
       "faq": [
         {
-          "q": "Le site est-il créé dans ce forfait ?",
-          "a": "Non : c'est l'hébergement et le domaine. La création du site est une prestation séparée."
+          "q": "Le nom de domaine est inclus ?",
+          "a": "Non : tu fournis ton domaine, ou on le facture à part. Comme ça le devis reste clair."
+        },
+        {
+          "q": "La boîte mail est-elle incluse ?",
+          "a": "Oui, offerte sur le VPS (une boîte type contact@tonsite.fr)."
         }
       ],
-      "seo_title": "Hébergement web & nom de domaine - forfait annuel",
-      "seo_description": "Hébergement et nom de domaine pour votre site pro. 79 €/an, HTTPS inclus. Metz & France.",
+      "seo_title": "Hébergement VPS annuel - DanielCraft",
+      "seo_description": "Hébergement VPS pour ton site pro. 66 € pour 12 mois. Mail offert. Domaine à part.",
       "prestafacture_sku": "HEBERG-DOMAIN",
-      "prestafacture_product_id": 976,
-      "estimated_hours": 2.5
+      "prestafacture_product_id": 173,
+      "estimated_hours": 2,
+      "price_note": "Environ 5,50 €/mois - hors nom de domaine"
     },
     {
-      "slug": "sauvegardes-securite",
+      "slug": "mail-pro",
+      "service_slug": "maint_mail_pro",
+      "category": "maintenance",
+      "featured": false,
+      "has_page": true,
+      "icon": "fa-envelope",
+      "title": "Boîte mail pro",
+      "tagline": "contact@tonsite.fr, sans te prendre la tête",
+      "short_description": "Boîte mail pro offerte sur le VPS (contact@tonsite.fr).",
+      "description": "Pas besoin de Gmail perso pour les clients. Une vraie boîte @tonsite.fr, hébergée sur le VPS - offerte avec l'hébergement.",
+      "price_eur": 0,
+      "price_label": "Offert",
+      "price_note": "Inclus avec le VPS - une boîte contact@tonsite.fr",
+      "image": "/assets/images/prestations/cards/mail-pro.jpg",
+      "benefits": [
+        "Adresse du type contact@tonsite.fr",
+        "Renouvellement suivi avec le domaine",
+        "Un interlocuteur si ça coince"
+      ],
+      "includes": [
+        "1 boîte mail professionnelle",
+        "Création et DNS (MX)",
+        "Aide à la config téléphone / ordi"
+      ],
+      "faq": [
+        {
+          "q": "C'est vraiment gratuit ?",
+          "a": "Oui sur le devis : la boîte est sur le même VPS. Google Workspace ou Microsoft 365, c'est un autre sujet si tu en as besoin."
+        }
+      ],
+      "examples": [
+        "Artisan qui recevait encore les devis sur une adresse @orange.fr."
+      ],
+      "promo": "Offerte avec le VPS - point.",
+      "seo_title": "Boîte mail professionnelle pour site vitrine",
+      "seo_description": "Adresse e-mail pro @votredomaine.fr, 39 € HT/an. Suivie avec l'hébergement. Metz & France.",
+      "prestafacture_sku": "MAIL-PRO-ANNUEL",
+      "estimated_hours": 1,
+      "estimated_hours_period": "year",
+      "price_tier": "entry",
+      "prestafacture_product_id": 171
+    },
+    {
+      "slug": "sauvegardes-sécurité",
       "service_slug": "maint_backup",
       "category": "maintenance",
       "featured": false,
@@ -1551,7 +1830,7 @@
       "short_description": "Sauvegardes régulières + bases de sécurité sur le site.",
       "price_eur": 119,
       "price_label": "Forfait",
-      "image": "/assets/images/prestations/cards/sauvegardes-securite.jpg",
+      "image": "/assets/images/prestations/cards/sauvegardes-sécurité.jpg",
       "tagline": "Au cas où (et il y a toujours un \"au cas où\")",
       "description": "On met en place des sauvegardes et les gestes de base. Si un jour ça casse, on a de quoi revenir.",
       "benefits": [
@@ -1662,9 +1941,9 @@
         }
       ],
       "seo_title": "Support technique site web - abonnement mensuel",
-      "seo_description": "Assistance par e-mail pour votre site : questions, petites corrections. 25 €/mois, sans engagement long.",
+      "seo_description": "Assistance par e-mail pour votre site : questions, petites corrections. 29 € HT/mois, sans engagement long.",
       "prestafacture_sku": "SUPPORT-ABO",
-      "prestafacture_product_id": 947,
+      "prestafacture_product_id": 174,
       "estimated_hours": 0.5,
       "estimated_hours_period": "month",
       "price_tier": "entry"
@@ -1724,7 +2003,7 @@
       "price_label": "À l'heure",
       "image": "/assets/images/prestations/cards/accompagnement-heure.jpg",
       "tagline": "Conseil, retouche, formation - à la carte",
-      "description": "Flexible. Une question technique, une retouche, un coup de main WordPress… On chronomètre, on avance.",
+      "description": "Flexible. Une question technique, une retouche, un coup de main sur ton site… On chronomètre, on avance.",
       "benefits": [
         "On avance ensemble, écran partagé",
         "Vous repartez avec la manip notée",
@@ -1974,7 +2253,12 @@
       "promo": "Pour ceux qui veulent bien faire dès le premier site.",
       "prestafacture_sku": "SITE-VITRINE-ECO",
       "estimated_hours": 24,
-      "price_tier": "entry"
+      "price_tier": "entry",
+      "quote_year1_slugs": [
+        "hebergement-domaine",
+        "mail-pro",
+        "entretien-mensuel"
+      ]
     },
     {
       "slug": "page-engagement-numerique",
@@ -2042,7 +2326,7 @@
       "faq": [
         {
           "q": "Peut-on le combiner avec la maintenance mensuelle ?",
-          "a": "Oui : pack « Sérénité + Sobriété » possible (maintenance + veille éco)."
+          "a": "Oui : le pack Sérénité + Sobriété (entretien + veille) à 79 €/mois au lieu de 84 €."
         }
       ],
       "addons": [],
@@ -2056,7 +2340,8 @@
       "prestafacture_sku": "ECO-MONITOR-MENSUEL",
       "estimated_hours": 0.5,
       "estimated_hours_period": "month",
-      "price_tier": "entry"
+      "price_tier": "entry",
+      "prestafacture_product_id": 175
     },
     {
       "slug": "atelier-eco-web",
@@ -2131,15 +2416,7 @@
           "a": "Non. Il s'appuie sur ce que vous validez. Et s'il ne sait pas, il vous passe la main."
         }
       ],
-      "addons": [
-        {
-          "id": "maint_wa",
-          "title": "Entretien mensuel WhatsApp",
-          "price_eur": 79,
-          "description": "Mise à jour FAQ, nouveaux scénarios, contrôle qualité.",
-          "prestafacture_sku": "IA-WA-MAINT"
-        }
-      ],
+      "addons": [],
       "seo_title": "Assistant WhatsApp pour commerces - Metz et Lorraine",
       "seo_description": "Assistant WhatsApp pour artisans et commerces : réponses aux questions simples, et vous pour le reste. Mise en place par DanielCraft.",
       "examples": [
@@ -2149,7 +2426,11 @@
       "promo": "Vous êtes en chantier ou en clientèle : WhatsApp continue de répondre sans vous.",
       "prestafacture_sku": "IA-WHATSAPP",
       "estimated_hours": 22,
-      "price_tier": "growth"
+      "price_tier": "growth",
+      "quote_year1_slugs": [
+        "ia-maint-mensuelle"
+      ],
+      "prestafacture_product_id": 179
     },
     {
       "slug": "geo-citations-ia",

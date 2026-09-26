@@ -1,7 +1,7 @@
 ---
 title: "Outils image Chine vs USA : comparer sans hype"
 date: 2026-07-09
-excerpt: "Regarde rendu, prix, conditions d'usage — pas seulement les annonces."
+excerpt: "Regarde rendu, prix, conditions d'usage - pas seulement les annonces."
 type: tutorial
 tags: [IA, images, design, visuels]
 og_image: ia-images-la-chine-continue-de-nous-impressionner-pendant-que-les-etats-unis-re-1200x630.jpg

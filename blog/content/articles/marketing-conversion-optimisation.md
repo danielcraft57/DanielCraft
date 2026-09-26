@@ -16,7 +16,7 @@ og_image: marketing-conversion-1200x630.jpg
   <figcaption>Arrivee, comprendre, confiance, action, merci.</figcaption>
 </figure>
 
-Tu investis en SEO, en publicité ou en réseaux sociaux, le trafic arrive — mais les formulaires restent vides. Avant d'augmenter le budget acquisition, regarde ce qui se passe sur ton site. La CRO (Conversion Rate Optimization) ne consiste pas à manipuler l'utilisateur : elle consiste à enlever les frictions qui l'empêchent d'agir quand il est déjà intéressé.
+Tu investis en SEO, en publicité ou en réseaux sociaux, le trafic arrive - mais les formulaires restent vides. Avant d'augmenter le budget acquisition, regarde ce qui se passe sur ton site. La CRO (Conversion Rate Optimization) ne consiste pas à manipuler l'utilisateur : elle consiste à enlever les frictions qui l'empêchent d'agir quand il est déjà intéressé.
 
 Le parcours schématisé est clair : le visiteur arrive, doit comprendre ta proposition en quelques secondes, gagner confiance, cliquer ou remplir un formulaire, puis recevoir une confirmation rassurante. Chaque étape mal exécutée fait fuir une partie des visiteurs.
 
@@ -24,7 +24,7 @@ Le parcours schématisé est clair : le visiteur arrive, doit comprendre ta prop
 
 Ouvre ton entonnoir de conversion dans GA4 : page d'atterrissage → page service → page contact → envoi formulaire. Où chute le plus fort pourcentage ? Si 60 % quittent la page d'accueil sans cliquer, le problème est le message ou la navigation. Si 40 % commencent le formulaire sans le terminer, c'est le formulaire lui-même.
 
-Segmente par source (organique vs publicité), par appareil (mobile vs desktop) et par page d'entrée. Un visiteur venant d'une annonce Google Ads attend un message cohérent avec la promesse de l'annonce — sinon, il repart immédiatement.
+Segmente par source (organique vs publicité), par appareil (mobile vs desktop) et par page d'entrée. Un visiteur venant d'une annonce Google Ads attend un message cohérent avec la promesse de l'annonce - sinon, il repart immédiatement.
 
 ## Optimiser les appels à l'action
 
@@ -34,7 +34,7 @@ Limite-toi à un CTA principal par page. Contraste visuel suffisant (couleur, ta
 
 ## Alléger les formulaires et les pages de destination
 
-Chaque champ supplémentaire filtre des prospects — parfois c'est voulu (qualification), souvent c'est de l'inertie. Demande le strict minimum : prénom, email, message. Les champs « société », « budget » ou « téléphone » peuvent attendre le deuxième contact.
+Chaque champ supplémentaire filtre des prospects - parfois c'est voulu (qualification), souvent c'est de l'inertie. Demande le strict minimum : prénom, email, message. Les champs « société », « budget » ou « téléphone » peuvent attendre le deuxième contact.
 
 Sur la landing page, le titre reprend la promesse de l'annonce ou du lien. Le bénéfice principal apparaît en haut, suivi de preuves sociales (témoignages, logos clients, chiffres). Pas de menu de navigation qui distrait, pas de liens vers dix autres pages. Une page, un objectif.
 

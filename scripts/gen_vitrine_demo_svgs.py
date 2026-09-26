@@ -15,7 +15,7 @@ def w(rel: str, body: str) -> None:
 w(
     "technologie/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Datacenter et réseau — illustration tech</title>
+  <title id="t">Datacenter et réseau - illustration tech</title>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d1b2a"/><stop offset="100%" stop-color="#1b263b"/></linearGradient>
     <linearGradient id="rack" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e3a5f"/><stop offset="100%" stop-color="#0f2744"/></linearGradient>
@@ -73,7 +73,7 @@ for i, (title, accent) in enumerate(
 w(
     "restauration/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Brasserie — salle et dressage</title>
+  <title id="t">Brasserie - salle et dressage</title>
   <defs>
     <linearGradient id="amb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3d1414"/><stop offset="100%" stop-color="#722f37"/></linearGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e8c547"/><stop offset="100%" stop-color="#c9a227"/></linearGradient>
@@ -107,7 +107,7 @@ for i, label in enumerate(["Carte du jour", "Terrasse ombragée", "Cave à vins"
 w(
     "beaute/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Institut spa — cabine bien-être</title>
+  <title id="t">Institut spa - cabine bien-être</title>
   <defs>
     <linearGradient id="rose" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8e8ee"/><stop offset="100%" stop-color="#e8d0dc"/></linearGradient>
     <linearGradient id="mauve" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8b5a6b"/><stop offset="100%" stop-color="#5c3d4d"/></linearGradient>
@@ -138,7 +138,7 @@ for i, t in enumerate(["Soin visage", "Massage relaxant", "Boutique produits"], 
 w(
     "odontologie/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Cabinet dentaire — salle de soins</title>
+  <title id="t">Cabinet dentaire - salle de soins</title>
   <defs>
     <linearGradient id="clin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8f4fc"/><stop offset="100%" stop-color="#d0e8f5"/></linearGradient>
   </defs>
@@ -170,7 +170,7 @@ for i, t in enumerate(["Salle de soins", "Équipe pluridisciplinaire", "Prévent
 w(
     "industrie/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Usine — ligne d'usinage</title>
+  <title id="t">Usine - ligne d'usinage</title>
   <defs>
     <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#2d2d2d"/></linearGradient>
   </defs>
@@ -202,7 +202,7 @@ for i, t in enumerate(["Ligne production", "Contrôle qualité", "Plan usine"], 
 w(
     "association/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Solidarité — bénévoles et quartier</title>
+  <title id="t">Solidarité - bénévoles et quartier</title>
   <defs>
     <linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4edda"/><stop offset="100%" stop-color="#a8d5b5"/></linearGradient>
   </defs>
@@ -233,7 +233,7 @@ for i, t in enumerate(["Maraude", "Cuisine solidaire", "Fête de quartier"], 1):
 w(
     "fitness/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Salle Pulse Fitness — musculation et cours</title>
+  <title id="t">Salle Pulse Fitness - musculation et cours</title>
   <defs>
     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0d0d0d"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient>
     <radialGradient id="neon" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#39ff14" stop-opacity=".35"/><stop offset="100%" stop-color="#39ff14" stop-opacity="0"/></radialGradient>
@@ -278,7 +278,7 @@ for name, title in [
 w(
     "architecture/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Façade contemporaine — atelier d'architecture</title>
+  <title id="t">Façade contemporaine - atelier d'architecture</title>
   <rect width="1200" height="520" fill="#f5f3ef"/>
   <g transform="translate(200 60)">
     <rect x="0" y="80" width="800" height="320" fill="#fff" stroke="#0a0a0a" stroke-width="3"/>
@@ -314,7 +314,7 @@ for name, title in [
 w(
     "photographie/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Studio photo — lumière naturelle</title>
+  <title id="t">Studio photo - lumière naturelle</title>
   <defs>
     <linearGradient id="sand" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5f0e8"/><stop offset="100%" stop-color="#e8dfd0"/></linearGradient>
   </defs>

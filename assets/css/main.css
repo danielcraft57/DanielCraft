@@ -18,13 +18,13 @@
 
   /*
    * Vignettes portfolio / projets : teintes complémentaires au bleu dominant
-   * (exemples théorie des couleurs — tons assourdis pour rester pro) :
+   * (exemples théorie des couleurs - tons assourdis pour rester pro) :
    * - Ambre / pêche : complément direct « chaud » du bleu cyan
    * - Corail poudré : split-complément, lien harmonieux avec le bleu
    * - Sauge : triade nature / pastel (bleu + vert doux)
    * - Or sable : chaleur légère sans saturer
    * - Lilas : complément élargi (violet doux)
-   * - Bleu glacier : rappel de marque, plus léger qu’un filtre bleu uniforme
+   * - Bleu glacier : rappel de marque, plus léger qu'un filtre bleu uniforme
    */
   /* Teintes plus marquées (moins « tout bleu ») : chauds + sauge + lilas */
   --portfolio-tint-warm: linear-gradient(
@@ -105,7 +105,7 @@
   --gray-900: #111827;
   
   /* Typography */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-primary: 'Source Sans 3', 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
   /* Spacing */
@@ -164,8 +164,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(244, 248, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: #f4f8ff;
   box-shadow: 0 1px 0 rgba(126, 161, 216, 0.22);
   z-index: 1000;
   transition: all var(--transition);
@@ -325,10 +324,13 @@ body {
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 
 .btn.nav-cta-mobile {
@@ -1934,14 +1936,16 @@ section {
 }
 
 .about-skills {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   margin-top: var(--space-12);
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-left: 0;
+  margin-right: 0;
   padding: var(--space-10) var(--space-4);
   background: linear-gradient(180deg, rgba(236, 247, 255, 0.7) 0%, rgba(249, 252, 255, 0.96) 62%, rgba(255, 255, 255, 0.98) 100%);
   border-top: 1px solid rgba(126, 161, 216, 0.22);
   border-bottom: 1px solid rgba(126, 161, 216, 0.22);
+  box-sizing: border-box;
 }
 
 .about-skills-inner {
@@ -2091,7 +2095,7 @@ section {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  /* Fond discret si l’image tarde ; évite le « bloc » bleu sous l’illustration */
+  /* Fond discret si l'image tarde ; évite le « bloc » bleu sous l'illustration */
   background: var(--gray-100);
   border-radius: 16px;
   overflow: hidden;
@@ -2237,7 +2241,7 @@ section {
   color: var(--white);
 }
 
-/* Texte réservé lecteurs d’écran */
+/* Texte réservé lecteurs d'écran */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2331,7 +2335,7 @@ section {
   font-size: 0.98rem;
 }
 
-/* Indicateur d’étapes minimal : petits segments (flat, sans texte visible) */
+/* Indicateur d'étapes minimal : petits segments (flat, sans texte visible) */
 .contact-progress-min {
   list-style: none;
   margin: 0 0 var(--space-4);
@@ -2588,7 +2592,7 @@ section {
   font-size: 0.88em;
 }
 
-/* Choix prestation — pas de scroll interne (évite la scrollbar Windows dans le formulaire) */
+/* Choix prestation - pas de scroll interne (évite la scrollbar Windows dans le formulaire) */
 .contact-service-mount {
   max-height: none;
   overflow: visible;
@@ -5217,11 +5221,13 @@ body > section:first-of-type:not(.hero) {
   padding: var(--space-4);
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   transition: visibility var(--transition), opacity var(--transition);
 }
 .modal-projet.modal-projet-open {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 .modal-projet-backdrop {
   position: absolute;

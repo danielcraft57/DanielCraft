@@ -16,21 +16,21 @@ og_image: aws-fondamentaux-1200x630.jpg
   <figcaption>AWS gere l'infra de base. Toi : identites, config, donnees, apps.</figcaption>
 </figure>
 
-Quand on découvre AWS pour la première fois, la sensation est souvent la même : **trop de services, trop de noms, trop d’options**.
-L’objectif de cet article est de poser une carte lisible du territoire avant d’entrer dans le détail dans les articles suivants de la série.
+Quand on découvre AWS pour la première fois, la sensation est souvent la même : **trop de services, trop de noms, trop d'options**.
+L'objectif de cet article est de poser une carte lisible du territoire avant d'entrer dans le détail dans les articles suivants de la série.
 
 ---
 
-## 1. Philosophie d’AWS en une phrase
+## 1. Philosophie d'AWS en une phrase
 
-AWS fournit des **briques d’infrastructure managées** (serveurs, stockage, bases, réseau, sécurité, observabilité…) que tu peux assembler pour construire :
+AWS fournit des **briques d'infrastructure managées** (serveurs, stockage, bases, réseau, sécurité, observabilité…) que tu peux assembler pour construire :
 
 - des **applications web** (sites, APIs, backends) ;
 - des **systèmes temps réel** (IoT, streaming, jeux en ligne) ;
 - des **pipelines data / analytics / IA** ;
 - des **plateformes internes** (back‑office, SaaS B2B, outils métiers).
 
-L’idée clé : **tu loues les briques dont tu as besoin, à la demande, et tu ne gères plus le matériel physique**.
+L'idée clé : **tu loues les briques dont tu as besoin, à la demande, et tu ne gères plus le matériel physique**.
 
 ---
 
@@ -44,26 +44,26 @@ Services principaux :
 
 - **EC2** : machines virtuelles (serveurs) que tu administres comme un VPS classique.
 - **ECS / EKS** : exécution de conteneurs (Docker) avec orchestration (ECS propriétaire, EKS = Kubernetes managé).
-- **Lambda** : fonctions serverless, facturées à l’exécution (pas de serveur à gérer).
+- **Lambda** : fonctions serverless, facturées à l'exécution (pas de serveur à gérer).
 
-**Pour quels types d’applications ?**
+**Pour quels types d'applications ?**
 
 - EC2 : lift & shift, applis existantes, besoins très spécifiques (binaire, OS).
 - ECS / EKS : microservices, APIs conteneurisées, architectures modernes.
 - Lambda : APIs légères, jobs planifiés, webhooks, traitement événementiel.
 
-Nous détaillerons ces services dans l’article 2 de la série.
+Nous détaillerons ces services dans l'article 2 de la série.
 
 ### 2.2 Stockage
 
-- **S3** : stockage d’objets (fichiers) durable et peu cher.
+- **S3** : stockage d'objets (fichiers) durable et peu cher.
 - **EBS** : disques attachés aux instances EC2 (comme un SSD local).
 - **EFS** : système de fichiers partagé entre plusieurs serveurs.
 
 Usage typique :
 
 - S3 pour les **backups, assets statiques, logs, exports** ;
-- EBS pour les **disques d’instances** (OS, données locales) ;
+- EBS pour les **disques d'instances** (OS, données locales) ;
 - EFS pour les **applications qui nécessitent un partage de fichiers** entre plusieurs machines.
 
 ### 2.3 Bases de données
@@ -76,7 +76,7 @@ Tu choisis en fonction :
 
 - du **modèle de données** (relationnel vs clé/valeur) ;
 - des **contraintes de scalabilité et de latence** ;
-- de l’écosystème existant (ORM, outils).
+- de l'écosystème existant (ORM, outils).
 
 ### 2.4 Réseau et CDN
 
@@ -97,7 +97,7 @@ Ce bloc te permet de :
 - **Secrets Manager / Systems Manager Parameter Store** : stockage sécurisé de secrets.
 - **AWS WAF / Shield** : protection applicative (filtrage, attaques DDoS).
 
-La règle : on ne met **jamais** de clés d’accès en dur dans le code ou les images, on passe par IAM et des rôles bien calibrés.
+La règle : on ne met **jamais** de clés d'accès en dur dans le code ou les images, on passe par IAM et des rôles bien calibrés.
 
 ### 2.6 Observabilité et gouvernance
 
@@ -115,9 +115,9 @@ Ces briques sont indispensables pour :
 
 ## 3. Comment choisir les bons services ?
 
-Pour éviter la sur‑ingénierie, pars de **l’usage** :
+Pour éviter la sur‑ingénierie, pars de **l'usage** :
 
-1. **Type d’application**
+1. **Type d'application**
    - Site vitrine / portfolio.
    - API back‑office / SaaS.
    - Pipeline data / ETL.
@@ -127,7 +127,7 @@ Pour éviter la sur‑ingénierie, pars de **l’usage** :
    - Trafic attendu (quelques centaines, milliers, millions de requêtes).
    - Sensibilité aux pannes (tolérance aux interruptions, RPO/RTO).
    - Budget (coût mensuel cible).
-   - Compétences de l’équipe (Linux, Docker, Kubernetes, serverless…).
+   - Compétences de l'équipe (Linux, Docker, Kubernetes, serverless…).
 
 3. **Pattern standard AWS**
    - **Small / MVP** : S3 + CloudFront + Lambda + RDS (ou même S3 + CloudFront + API Gateway + Lambda).
@@ -138,7 +138,7 @@ Les articles suivants détailleront ces patterns avec des exemples concrets.
 
 ---
 
-## 4. Avantages et limites d’AWS
+## 4. Avantages et limites d'AWS
 
 ### 4.1 Avantages
 
@@ -153,7 +153,7 @@ Les articles suivants détailleront ces patterns avec des exemples concrets.
 - **Coût** : sans suivi ni politiques de gouvernance, la facture peut monter très vite.
 - **Verrouillage** : plus tu utilises de services managés spécifiques, plus tu es lié à AWS.
 
-La clé est de **connaître les blocs de base**, puis de limiter les services “exotiques” aux besoins réellement différenciants.
+La clé est de **connaître les blocs de base**, puis de limiter les services "exotiques" aux besoins réellement différenciants.
 
 ---
 
@@ -179,4 +179,4 @@ Dans les prochains articles, on va :
 4. Mettre en place un **réseau AWS propre** (VPC, subnets, sécurité, DNS, CDN).  
 5. Parler **sécurité, observabilité et optimisation des coûts** avec des checklists actionnables.
 
-L’objectif : que tu sois capable de **lire un diagramme d’architecture AWS, le critiquer et le faire évoluer** en connaissance de cause.+
+L'objectif : que tu sois capable de **lire un diagramme d'architecture AWS, le critiquer et le faire évoluer** en connaissance de cause.+

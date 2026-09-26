@@ -13,7 +13,7 @@ Usage :
   python scripts/soften_white_backgrounds.py --skip-hero       # ignore hero (souvent très lourd)
 
 Suite possible : reduce_blue_cast.py + apply_complementary_grades.py
-ou portfolio_image_pipeline.py — voir scripts/README_IMAGES.md
+ou portfolio_image_pipeline.py - voir scripts/README_IMAGES.md
 """
 from __future__ import annotations
 

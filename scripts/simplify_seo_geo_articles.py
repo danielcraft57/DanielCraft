@@ -143,12 +143,12 @@ for item in SVGS:
 article(
     "seo-fondamentaux-referencement-naturel",
     "SEO : etre trouve sur Google (les bases)",
-    "Comment Google decouvre, range et classe les pages — et par ou commencer sans jargon.",
+    "Comment Google decouvre, range et classe les pages - et par ou commencer sans jargon.",
     f"""# SEO : etre trouve sur Google (les bases)
 
 Le **SEO**, c'est simplement : aider ton site a etre **trouve** quand quelqu'un cherche sur Google. Pas de magie. Des bases solides.
 
-{fig("seo-trois-piliers.svg", "Schema des trois piliers du SEO", "Technique, contenu, autorite — les trois marchent ensemble.")}
+{fig("seo-trois-piliers.svg", "Schema des trois piliers du SEO", "Technique, contenu, autorite - les trois marchent ensemble.")}
 
 ## Comment Google travaille (en 3 etapes)
 
@@ -193,7 +193,7 @@ Tu n'as pas besoin d'etre parfait. Tu as besoin d'enlever les gros cailloux. Pui
 article(
     "seo-contenu-mots-cles-intention-redaction",
     "SEO contenu : repondre a ce que les gens cherchent vraiment",
-    "Mots-cles, intention de recherche et pages utiles — ecrire pour les humains d'abord.",
+    "Mots-cles, intention de recherche et pages utiles - ecrire pour les humains d'abord.",
     f"""# SEO contenu : repondre a ce que les gens cherchent vraiment
 
 Un bon contenu SEO, ce n'est pas bourrer des mots-cles. C'est **repondre** a une question claire.
@@ -251,7 +251,7 @@ Un lien depuis un site serieux dans ton sujet vaut mieux que 100 liens douteux. 
 article(
     "seo-mesurer-search-console-analytics-kpis",
     "Mesurer le SEO : savoir ce qui marche vraiment",
-    "Search Console et analytics : impressions, clics, positions — sans vanity metrics.",
+    "Search Console et analytics : impressions, clics, positions - sans vanity metrics.",
     f"""# Mesurer le SEO : savoir ce qui marche vraiment
 
 Sans mesure, tu avances a l'aveugle. Avec trop de chiffres, tu te noies.
@@ -361,7 +361,7 @@ article(
     "Pages rapides, textes visibles, structure claire : la base technique du GEO.",
     f"""# GEO technique : un HTML que les IA peuvent lire
 
-Si le texte est cache, casse ou trop lent, l'IA lit mal — ou pas du tout.
+Si le texte est cache, casse ou trop lent, l'IA lit mal - ou pas du tout.
 
 {fig("geo-technique.svg", "Schema GEO technique", "HTML propre, performance, indexable, structure.")}
 
@@ -415,12 +415,12 @@ for path, title, desc in [
     (
         ROOT / "blog/content/collections/seo-serie.json",
         "Serie SEO : etre trouve sur Google",
-        "Bases, technique, contenu, local, liens et mesure — le referencement explique simplement.",
+        "Bases, technique, contenu, local, liens et mesure - le referencement explique simplement.",
     ),
     (
         ROOT / "blog/content/collections/geo-serie.json",
         "Serie GEO : etre cite par les IA",
-        "Optimiser pour ChatGPT, Perplexity et les moteurs generatifs — complementaire au SEO.",
+        "Optimiser pour ChatGPT, Perplexity et les moteurs generatifs - complementaire au SEO.",
     ),
 ]:
     data = json.loads(path.read_text(encoding="utf-8"))

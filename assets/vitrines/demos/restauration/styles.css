@@ -1,4 +1,4 @@
-/* Brasserie Saint-Jacques — dark Material 3 rail (maquette m3-restauration) */
+/* Brasserie Saint-Jacques - dark Material 3 rail (maquette m3-restauration) */
 :root {
   --vt-ink: #0e0c0b;
   --vt-panel: #1a1614;
@@ -19,6 +19,9 @@
   --vt-surface-container: #2a2420;
   --vt-chip-bg: rgba(243, 235, 227, 0.08);
   --vt-chip-hover: rgba(243, 235, 227, 0.14);
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-accent: var(--vt-terra);
 }
 
 body.vt-body {

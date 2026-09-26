@@ -1,7 +1,7 @@
 ---
 title: "Crise en ligne : reagir sans aggraver"
 date: 2024-03-14
-excerpt: "Detecter, verifier, repondre, corriger, debrief — une fiche simple sous stress."
+excerpt: "Detecter, verifier, repondre, corriger, debrief - une fiche simple sous stress."
 type: article
 tags: [communication, crise, e-reputation, reseaux sociaux, gestion de crise]
 series: communication-serie
@@ -70,7 +70,7 @@ Quand la tension retombe, fais un debrief interne :
 - Qu'est-ce qui a aggrave la situation ?
 - Quelles mesures preventives mettre en place ?
 
-Documente une fiche crise simple : contacts, messages types, processus d'escalade. La prochaine crise arrivera — tu seras mieux prepare. Partage les enseignements avec les equipes concernees (SAV, marketing, direction) pour que chacun sache comment reagir. Une crise bien geree peut meme renforcer la confiance si tu montres que tu assumes, corriges et progresses.
+Documente une fiche crise simple : contacts, messages types, processus d'escalade. La prochaine crise arrivera - tu seras mieux prepare. Partage les enseignements avec les equipes concernees (SAV, marketing, direction) pour que chacun sache comment reagir. Une crise bien geree peut meme renforcer la confiance si tu montres que tu assumes, corriges et progresses.
 
 ## Conclusion
 

@@ -16,9 +16,9 @@ og_image: ci-cd-tests-1200x630.jpg
   <figcaption>Lint, tests, secu : si une porte est fermee, on ne livre pas.</figcaption>
 </figure>
 
-Un pipeline CI/CD, c’est un filtre. Il doit bloquer ce qui est risqué, et laisser passer ce qui est propre. Le problème, c’est qu’on bascule souvent entre deux extrêmes : trop strict (tout le monde râle et contourne) ou pas assez (ça casse en prod).
+Un pipeline CI/CD, c'est un filtre. Il doit bloquer ce qui est risqué, et laisser passer ce qui est propre. Le problème, c'est qu'on bascule souvent entre deux extrêmes : trop strict (tout le monde râle et contourne) ou pas assez (ça casse en prod).
 
-Ici, on construit un setup équilibré, accessible même si tu débutes. Pour le cadre général des pipelines, tu peux lire d’abord les [fondamentaux CI/CD](/blog/articles/ci-cd-fondamentaux-pipelines.html).
+Ici, on construit un setup équilibré, accessible même si tu débutes. Pour le cadre général des pipelines, tu peux lire d'abord les [fondamentaux CI/CD](/blog/articles/ci-cd-fondamentaux-pipelines.html).
 
 ---
 
@@ -32,7 +32,7 @@ Rapide et peu coûteuse :
 - format (Prettier, Black),
 - typecheck (TypeScript, mypy).
 
-Objectif : attraper une grosse partie des problèmes en quelques secondes — oubli d’import, typo de type, style incohérent.
+Objectif : attraper une grosse partie des problèmes en quelques secondes - oubli d'import, typo de type, style incohérent.
 
 ### 2) Tests unitaires
 
@@ -42,16 +42,16 @@ Ils valident :
 - les fonctions pures,
 - les cas limites (liste vide, montant négatif, timezone bizarre).
 
-Objectif : un feedback rapide et fiable, sans dépendre d’un serveur distant.
+Objectif : un feedback rapide et fiable, sans dépendre d'un serveur distant.
 
-### 3) Tests d’intégration / end-to-end
+### 3) Tests d'intégration / end-to-end
 
 Ils valident :
 
 - API + base,
 - migrations,
 - workflows complets,
-- éventuellement l’UI.
+- éventuellement l'UI.
 
 Objectif : éviter le classique « ça marche chez moi ».
 
@@ -96,7 +96,7 @@ Au début, certaines alertes peuvent rester informatives :
 - warnings de perf,
 - duplication de code.
 
-L’idée : afficher, suivre, puis durcir progressivement. Une porte trop sévère jour 1 devient une porte contournée jour 15.
+L'idée : afficher, suivre, puis durcir progressivement. Une porte trop sévère jour 1 devient une porte contournée jour 15.
 
 ---
 
@@ -113,18 +113,18 @@ Le meilleur pipeline est celui qui te dit « non » en 30 secondes :
 
 Si ta CI le permet (ex. [GitHub Actions](/blog/articles/ci-cd-github-actions-workflow-complet.html) ou [GitLab CI](/blog/articles/ci-cd-gitlab-ci-pipeline-complet.html)) :
 
-- unit tests d’un côté,
-- integration tests de l’autre.
+- unit tests d'un côté,
+- integration tests de l'autre.
 
 ### Flaky tests : le vrai poison
 
-Un test flaky (parfois vert, parfois rouge) détruit la confiance. L’équipe finit par relancer le job « jusqu’à ce que ça passe » — et là, ta porte qualité n’existe plus.
+Un test flaky (parfois vert, parfois rouge) détruit la confiance. L'équipe finit par relancer le job « jusqu'à ce que ça passe » - et là, ta porte qualité n'existe plus.
 
 Réflexes :
 
 - isoler les dépendances réseau (mocks, stubs),
 - utiliser des fixtures stables,
-- figer l’heure (fake timers),
+- figer l'heure (fake timers),
 - stabiliser la base de test (containers, migrations reproductibles).
 
 ---
@@ -174,7 +174,7 @@ Ton pipeline appelle ces commandes, dans cet ordre. Rien de magique : la CI exé
 3. Mets le scan sécu en warning, puis bloque sur les critiques.
 4. Ajoute smoke staging avant toute promo prod.
 
-Tu obtiens un filet qui grandit avec la maturité de l’équipe — pas un mur qui tombe le premier sprint.
+Tu obtiens un filet qui grandit avec la maturité de l'équipe - pas un mur qui tombe le premier sprint.
 
 ---
 

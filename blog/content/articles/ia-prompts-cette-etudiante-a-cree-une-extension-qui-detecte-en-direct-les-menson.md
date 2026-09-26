@@ -1,7 +1,7 @@
 ---
 title: "Detecter les erreurs d'une IA : garder l'esprit critique"
 date: 2026-05-10
-excerpt: "Outils et reflexes pour repérer approximations et inventions — surtout sur les sujets sensibles."
+excerpt: "Outils et reflexes pour repérer approximations et inventions - surtout sur les sujets sensibles."
 type: toolbox
 tags: [IA, prompts, ChatGPT, Claude, prompt engineering]
 og_image: ia-prompts-cette-etudiante-a-cree-une-extension-qui-detecte-en-direct-les-menson-1200x630.jpg

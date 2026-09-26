@@ -125,7 +125,7 @@ function stripe_fulfill_livre_invoice(string $sessionId, array $ctx, array $item
 
     $title = trim((string) ($item['title'] ?? $ctx['title']));
     $isPack = (($item['kind'] ?? '') === 'pack') || str_starts_with((string) ($item['slug'] ?? ''), 'pack-');
-    $lineTitle = $isPack ? ($title . ' — pack PDF DanielCraft') : ($title . ' — livre PDF DanielCraft');
+    $lineTitle = $isPack ? ($title . ' - pack PDF DanielCraft') : ($title . ' - livre PDF DanielCraft');
     $catalog = stripe_load_livres_catalog() ?? [];
     $defaultPrice = (float) ($catalog['default_price_eur'] ?? 0.5);
     $priceTtc = is_numeric($item['price_eur'] ?? null) ? (float) $item['price_eur'] : $defaultPrice;
@@ -251,7 +251,7 @@ function livre_delivery_build_email(
     }
 
     $what = $isPack ? 'ton pack PDF' : 'ton livre PDF';
-    $subject = 'DanielCraft — telechargement : ' . $title;
+    $subject = 'DanielCraft - telechargement : ' . $title;
 
     $text = <<<TXT
 {$salut},
@@ -270,7 +270,7 @@ Une facture t'a aussi ete envoyee par e-mail.
 
 Question ? Reponds a cet e-mail ou ecris a contact@danielcraft.fr
 
-— Loic Daniel, DanielCraft
+- Loic Daniel, DanielCraft
 TXT;
 
     $safeTitle = htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
@@ -285,7 +285,7 @@ TXT;
         . '<p><a href="' . $safeUrl . '" style="display:inline-block;padding:12px 20px;background:#1a5f85;color:#fff;text-decoration:none;border-radius:8px;">Ouvrir ma page de telechargement</a></p>'
         . '<p style="font-size:14px;color:#555;">Lien personnel, valable 30 jours :<br><a href="' . $safeUrl . '">' . $safeUrl . '</a></p>'
         . '<p>Une facture t\'a aussi ete envoyee par e-mail.</p>'
-        . '<p>— Loic Daniel, DanielCraft<br>contact@danielcraft.fr</p>';
+        . '<p>- Loic Daniel, DanielCraft<br>contact@danielcraft.fr</p>';
 
     return ['subject' => $subject, 'text' => $text, 'html' => $html];
 }
@@ -367,7 +367,7 @@ function stripe_fulfill_livre_checkout_session(string $sessionId, array $clientH
             return $fail;
         }
     } elseif (!$invoiceOk && !$prestafactureRequired) {
-        error_log('[stripe-livre-fulfill] Prestafacture absent — livraison seule (dev) session ' . $sessionId);
+        error_log('[stripe-livre-fulfill] Prestafacture absent - livraison seule (dev) session ' . $sessionId);
     } else {
         $invoiceOk = true;
     }

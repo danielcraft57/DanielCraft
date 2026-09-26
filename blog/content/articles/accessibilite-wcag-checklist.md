@@ -1,7 +1,7 @@
 ---
 title: "Accessibilité : pour que tout le monde puisse utiliser"
 date: 2025-09-23
-excerpt: "Une checklist WCAG utile : contraste, clavier, labels — et des tests qui comptent."
+excerpt: "Une checklist WCAG utile : contraste, clavier, labels - et des tests qui comptent."
 type: article
 tags: [accessibilité, WCAG, UX, UI, front-end]
 series: ux-ui-serie

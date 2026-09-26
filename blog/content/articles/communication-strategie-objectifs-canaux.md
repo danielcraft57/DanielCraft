@@ -1,7 +1,7 @@
 ---
 title: "Communication : une strategie en 5 questions"
 date: 2024-04-23
-excerpt: "Qui, quoi, ou, quand, comment mesurer — sans plan de 40 pages."
+excerpt: "Qui, quoi, ou, quand, comment mesurer - sans plan de 40 pages."
 type: article
 tags: [communication, stratégie, objectifs, canaux, visibilité]
 series: communication-serie
@@ -44,8 +44,8 @@ Ton message cle doit tenir en une phrase : ce que tu fais, pour qui, et ce qui t
 
 Mieux vaut deux canaux bien maitrises que six canaux abandonnes. Quelques repères :
 
-- **Classique** : relations presse, evenementiel, print, affichage — notoriete locale, cibles peu digitalisees
-- **Digital** : site web, reseaux sociaux, email, contenu — ciblage, mesure, cout maitrise
+- **Classique** : relations presse, evenementiel, print, affichage - notoriete locale, cibles peu digitalisees
+- **Digital** : site web, reseaux sociaux, email, contenu - ciblage, mesure, cout maitrise
 
 Choisis selon ta cible : un artisan local combinera fiche Google et bouche-a-oreille ; une startup B2B privilegiera LinkedIn et contenu expert. Verifie que tu as les ressources pour tenir chaque canal choisi.
 
@@ -55,7 +55,7 @@ La regularite compte plus que l'intensite ponctuelle :
 
 - Definis une frequence realiste (ex. : 2 posts LinkedIn par semaine, 1 newsletter par mois)
 - Planifie les temps forts : lancements, salons, actualites sectorielles
-- Bloque des creneaux dans ton agenda — la com est un travail, pas un remplissage
+- Bloque des creneaux dans ton agenda - la com est un travail, pas un remplissage
 
 Un calendrier editorial simple (tableur ou outil type Notion) suffit pour demarrer. Note les themes, les formats et les dates.
 
@@ -68,8 +68,8 @@ Sans mesure, tu ne sais pas ce qui fonctionne. Quelques KPI selon ton objectif :
 - **Leads** : formulaires remplis, devis demandes, inscriptions
 - **Fidelisation** : taux d'ouverture newsletter, avis clients, taux de reconduction
 
-Revise tous les trimestres : garde ce qui marche, arrete ce qui consomme du temps sans resultat. Fixe-toi un maximum de trois indicateurs prioritaires selon ton objectif principal — inutile de tout mesurer si tu n'agis sur rien. Un tableau de bord simple vaut mieux qu'un reporting complexe jamais consulte.
+Revise tous les trimestres : garde ce qui marche, arrete ce qui consomme du temps sans resultat. Fixe-toi un maximum de trois indicateurs prioritaires selon ton objectif principal - inutile de tout mesurer si tu n'agis sur rien. Un tableau de bord simple vaut mieux qu'un reporting complexe jamais consulte.
 
 ## Conclusion
 
-Une strategie de communication efficace tient en cinq questions : qui, quoi, ou, quand, mesurer. Pas besoin de perfection — commence simple et ajuste. Pour articuler les canaux classiques et digitaux, consulte [Com classique et digitale : mieux ensemble](/blog/articles/communication-classique-vs-digitale.html).
+Une strategie de communication efficace tient en cinq questions : qui, quoi, ou, quand, mesurer. Pas besoin de perfection - commence simple et ajuste. Pour articuler les canaux classiques et digitaux, consulte [Com classique et digitale : mieux ensemble](/blog/articles/communication-classique-vs-digitale.html).

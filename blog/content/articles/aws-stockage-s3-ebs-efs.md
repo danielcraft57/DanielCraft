@@ -16,14 +16,14 @@ og_image: aws-stockage-s3-ebs-efs-1200x630.jpg
   <figcaption>S3 objet, EBS block, EFS fichier : trois jobs differents.</figcaption>
 </figure>
 
-Sur AWS, on a souvent tendance à “tout mettre sur le disque du serveur”.
+Sur AWS, on a souvent tendance à "tout mettre sur le disque du serveur".
 En réalité, **S3, EBS et EFS** servent des besoins très différents.
 
 Dans cet article, on clarifie :
 
 - ce que chaque service sait faire ;
-- les cas d’usage idéaux ;
-- les méthodes d’optimisation (coûts, perf, durabilité).
+- les cas d'usage idéaux ;
+- les méthodes d'optimisation (coûts, perf, durabilité).
 
 ---
 
@@ -31,11 +31,11 @@ Dans cet article, on clarifie :
 
 ### 1.1 Modèle
 
-**Amazon S3** est un système de **stockage d’objets** :
+**Amazon S3** est un système de **stockage d'objets** :
 
 - tu stockes des fichiers (objets) dans des buckets ;
 - chaque objet a une clé (`dossier/fichier.ext`) ;
-- pas de notion de “disque” ou de “système de fichiers monté” par défaut.
+- pas de notion de "disque" ou de "système de fichiers monté" par défaut.
 
 Caractéristiques clés :
 
@@ -43,7 +43,7 @@ Caractéristiques clés :
 - classes de stockage pour optimiser les coûts (Standard, IA, Glacier…) ;
 - accès via HTTP(S), SDKs, CLI.
 
-### 1.2 Cas d’usage
+### 1.2 Cas d'usage
 
 - Assets statiques web (images, CSS/JS minifiés, vidéos).
 - Backups, exports, archives.
@@ -61,16 +61,16 @@ Caractéristiques clés :
 
 ### 2.1 Modèle
 
-**EBS (Elastic Block Store)**, c’est un **volume bloc** attaché à une instance EC2.
+**EBS (Elastic Block Store)**, c'est un **volume bloc** attaché à une instance EC2.
 
 - Le système le voit comme un **disque** (`/dev/xvdf` par exemple).
 - Tu y mets un système de fichiers (ext4, xfs…).
 - Il est stocké de façon redondante dans une AZ.
 
-### 2.2 Cas d’usage
+### 2.2 Cas d'usage
 
-- Disque système de l’instance (OS, binaires).
-- Données applicatives nécessitant un accès bloc (bases de données auto‑gérées, caches, storage d’app métier).
+- Disque système de l'instance (OS, binaires).
+- Données applicatives nécessitant un accès bloc (bases de données auto‑gérées, caches, storage d'app métier).
 
 ### 2.3 Optimisation
 
@@ -90,16 +90,16 @@ Caractéristiques clés :
 **EFS (Elastic File System)** fournit un **système de fichiers réseau managé** (NFS) :
 
 - plusieurs instances (EC2, ECS) peuvent monter le même système de fichiers ;
-- tu payes à l’espace utilisé, la capacité s’ajuste automatiquement.
+- tu payes à l'espace utilisé, la capacité s'ajuste automatiquement.
 
-### 3.2 Cas d’usage
+### 3.2 Cas d'usage
 
 - Applis legacy qui nécessitent un **partage de fichiers** (uploads, documents).
 - Environnements où plusieurs serveurs doivent lire/écrire dans les mêmes dossiers.
 
 À éviter pour :
 
-- le stockage “chaud” d’une base de données très exigeante (préférer EBS ou services managés type RDS).
+- le stockage "chaud" d'une base de données très exigeante (préférer EBS ou services managés type RDS).
 
 ### 3.3 Optimisation
 
@@ -112,7 +112,7 @@ Caractéristiques clés :
 
 Une checklist rapide :
 
-- **Tu as besoin d’un disque pour un serveur** → EBS.
+- **Tu as besoin d'un disque pour un serveur** → EBS.
 - **Tu veux stocker des fichiers accessibles via HTTP, de façon durable et bon marché** → S3.
 - **Plusieurs serveurs doivent partager un système de fichiers commun** → EFS.
 
@@ -121,7 +121,7 @@ Combinaisons typiques :
 - EC2 avec EBS pour le runtime + S3 pour les assets et backups.
 - ECS/EKS avec :
   - EFS pour des besoins de partage simple ;
-  - S3 pour les données applicatives plus “froides”.
+  - S3 pour les données applicatives plus "froides".
 
 ---
 
@@ -154,7 +154,7 @@ Combinaisons typiques :
 Tu peux voir ces trois briques comme complémentaires :
 
 - S3 pour le **stockage objet durable** (fichiers, backups, data analytics).
-- EBS pour le **disque local performant** d’une instance.
+- EBS pour le **disque local performant** d'une instance.
 - EFS pour le **partage de fichiers** entre serveurs.
 
 Dans les prochains articles de la série, on va appliquer la même logique de comparaison aux **bases de données** (RDS, DynamoDB, Aurora) puis au **réseau** (VPC, Route 53, CloudFront) pour que ton architecture AWS soit cohérente de bout en bout.+

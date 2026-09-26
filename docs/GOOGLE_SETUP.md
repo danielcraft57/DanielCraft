@@ -2,7 +2,7 @@
 
 Ce guide explique comment obtenir et configurer Google Search Console (vérification) et Google Analytics pour votre site (par exemple `votre-domaine.fr`).
 
-## ✅ Configuration Actuelle
+##  Configuration Actuelle
 
 - **Google Search Console** : Vérifié via DNS TXT record
   - Code : `YCJxWstMUnz66PNyUF1JsgpqpXATeyl5D6gM1nSfJ88`

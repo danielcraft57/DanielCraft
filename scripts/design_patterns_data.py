@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Contenu détaillé des 23 patterns GoF — ordre popularité (junior-friendly)."""
+"""Contenu détaillé des 23 patterns GoF - ordre popularité (junior-friendly)."""
 
 from __future__ import annotations
 
@@ -164,11 +164,11 @@ class AppConfig:
     ],
     [
         ("Factory Method", "Délègue la création sans imposer une instance unique"),
-        ("Injection de dépendances", "Passe Config en paramètre — plus testable"),
+        ("Injection de dépendances", "Passe Config en paramètre - plus testable"),
     ],
     "Node.js : certains drivers utilisent un pool singleton. En front, évite le singleton DOM ; préfère un store (Zustand, Pinia) avec un seul provider.",
     "Remplace ton `Logger.getInstance()` par un logger injecté dans chaque service. Écris 2 tests : avec mock, sans état partagé.",
-    "Une instance, un accès — utile pour de vraies ressources uniques ; dangereux comme variable globale déguisée.",
+    "Une instance, un accès - utile pour de vraies ressources uniques ; dangereux comme variable globale déguisée.",
 )
 
 # --- Factory Method ---
@@ -187,7 +187,7 @@ function exportData(type: string, rows: Row[]) {
 }
 ```""",
     """Une classe abstraite (ou interface) déclare `createExporter()` ; chaque sous-classe retourne le bon produit. Le client appelle `run()` sur le service, pas `new PdfExporter()` partout.""",
-    "Tu commandes le **plat du jour** au restaurant : la salle ne cuisine pas — la cuisine (sous-classe) choisit le plat selon les stocks.",
+    "Tu commandes le **plat du jour** au restaurant : la salle ne cuisine pas - la cuisine (sous-classe) choisit le plat selon les stocks.",
     [
         ("Creator", "Déclare la factory method + logique qui l'utilise"),
         ("ConcreteCreator", "Implémente createProduct()"),
@@ -259,7 +259,7 @@ class CsvExportService(ExportService):
     [("Abstract Factory", "Crée des familles d'objets liés"), ("Simple Factory", "Fonction unique non GoF mais courante")],
     "Django : `Model.objects` est une factory. Les frameworks UI créent des composants via des registres de factory.",
     "Ajoute un format `xlsx` via une nouvelle sous-classe `XlsxExportService` sans modifier `download()`.",
-    "Factory Method = création polymorphe par sous-classes — idéal quand le « quel produit » varie selon le contexte.",
+    "Factory Method = création polymorphe par sous-classes - idéal quand le « quel produit » varie selon le contexte.",
 )
 
 # --- Observer (contenu enrichi) ---
@@ -344,7 +344,7 @@ class StockSubject:
     [("Mediator", "Coordonne des collègues, ne diffuse pas un état"), ("Pub/Sub", "Bus intermédiaire optionnel")],
     "React : hooks + state. Vue : réactivité. Node : `EventEmitter`. Domain-Driven Design : événements de domaine.",
     "Crée `CartSubject` + observers badge panier et analytics. Ajoute un 3e observer sans toucher `CartSubject`. Teste le désabonnement.",
-    "Subject notifie, Observer réagit — découplage fort ; pense toujours au cycle de vie des abonnements.",
+    "Subject notifie, Observer réagit - découplage fort ; pense toujours au cycle de vie des abonnements.",
     compare="""| Approche | Usage |
 |----------|-------|
 | Observer GoF | Domaine métier clair |
@@ -368,7 +368,7 @@ function shipping(cost: number, mode: string) {
 }
 ```""",
     "Interface `ShippingStrategy` + implémentations ; le `Checkout` reçoit la stratégie par injection.",
-    "GPS : mode voiture / vélo / piéton — même destination, algorithme différent.",
+    "GPS : mode voiture / vélo / piéton - même destination, algorithme différent.",
     [("Context", "Utilise une Strategy"), ("Strategy", "Interface compute()"), ("ConcreteStrategy", "Express, Standard…")],
     """```typescript
 interface ShippingStrategy {
@@ -412,7 +412,7 @@ class Checkout:
     [("State", "Change le comportement selon l'état interne"), ("Template Method", "Squelette fixe, étapes en sous-classes")],
     "Paiement Stripe (cartes, wallets). Tri : `Array.sort(compareFn)` en JS est Strategy.",
     "Implémente `DiscountStrategy` (étudiant, membre, aucun) pour un panier e-commerce.",
-    "Strategy = algorithmes plugables — évite les switch qui grossissent à chaque release.",
+    "Strategy = algorithmes plugables - évite les switch qui grossissent à chaque release.",
 )
 
 # --- Decorator ---
@@ -473,7 +473,7 @@ class EncryptionDecorator(DataSource):
     ["Peu de combinaisons possibles.", "Ordre des couches critique et non documenté."],
     ["Trop de couches = debug difficile.", "Décorateur non substituable (viole Liskov)."],
     [("Adapter", "Change l'interface"), ("Proxy", "Contrôle l'accès")],
-    "Express middleware : `app.use(logger)`, `app.use(auth)` — chaîne de décorateurs autour du handler.",
+    "Express middleware : `app.use(logger)`, `app.use(auth)` - chaîne de décorateurs autour du handler.",
     "`Coffee` + `MilkDecorator` + `SugarDecorator` qui ajoutent au prix.",
     "Decorator = composition dynamique de comportements.",
     compare="""| Pattern | Rôle |

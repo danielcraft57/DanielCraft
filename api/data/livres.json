@@ -3,35 +3,35 @@
   "default_price_eur": 0.5,
   "price_display": "TTC",
   "stripe_note": "Checkout via api/stripe-create-livre-checkout.php (livre ou pack).",
-  "intro_note": "Des livres a gouter gratuitement, le reste a 0,50 EUR TTC - packs en remise volume.",
+  "intro_note": "Des livres à goûter gratuitement, le reste à 0,50 EUR TTC - packs en remise volume.",
   "categories": [
     {
       "id": "packs",
       "title": "Packs",
       "nav_label": "Packs",
       "icon": "fa-box-open",
-      "description": "Plusieurs PDF au prix d'un cafe — le meilleur rapport volume / prix."
+      "description": "Plusieurs PDF au prix d'un café - le meilleur rapport volume / prix."
     },
     {
       "id": "informatique",
       "title": "Informatique",
       "nav_label": "Informatique",
       "icon": "fa-laptop-code",
-      "description": "Langages, web, SQL, Git et securite — du premier script au niveau expert."
+      "description": "Langages, web, SQL, Git et sécurité - du premier script au niveau expert."
     },
     {
       "id": "ia",
       "title": "Intelligence artificielle",
       "nav_label": "IA",
       "icon": "fa-robot",
-      "description": "Les bases de l'IA, le machine learning et le deep learning expliques simplement."
+      "description": "Les bases de l'IA, le machine learning et le deep learning expliqués simplement."
     },
     {
       "id": "finance",
       "title": "Finance",
       "nav_label": "Finance",
       "icon": "fa-chart-line",
-      "description": "Marches, produits et crypto : comprendre avant d'investir (pedagogie, pas un conseil perso)."
+      "description": "Marchés, produits et crypto : comprendre avant d'investir (pédagogie, pas un conseil perso)."
     },
     {
       "id": "commerce",
@@ -45,21 +45,21 @@
       "title": "Marketing",
       "nav_label": "Marketing",
       "icon": "fa-bullhorn",
-      "description": "Cible, message, canaux et mesure — sans jargon inutile."
+      "description": "Cible, message, canaux et mesure - sans jargon inutile."
     },
     {
       "id": "communication",
       "title": "Communication",
       "nav_label": "Communication",
       "icon": "fa-comments",
-      "description": "Parler clair : ecrire, presenter, convaincre."
+      "description": "Parler clair : écrire, présenter, convaincre."
     },
     {
       "id": "agile",
       "title": "Agile et Scrum",
       "nav_label": "Agile",
       "icon": "fa-people-arrows",
-      "description": "Gestion de projet agile, Scrum, roles Scrum Master et Product Owner - en langage simple."
+      "description": "Gestion de projet agile, Scrum, rôles Scrum Master et Product Owner - en langage simple."
     }
   ],
   "levels": [
@@ -69,8 +69,8 @@
       "icon": "fa-seedling"
     },
     {
-      "id": "intermediaire",
-      "label": "Intermediaire",
+      "id": "intermédiaire",
+      "label": "Intermédiaire",
       "icon": "fa-layer-group"
     },
     {
@@ -86,12 +86,12 @@
   ],
   "featured_order": [
     "pack-web",
-    "pack-debutant-code",
+    "pack-débutant-code",
     "pack-python",
     "pack-sql",
     "pack-ia",
     "pack-finance",
-    "pack-securite",
+    "pack-sécurité",
     "pack-commerce",
     "javascript-les-bases",
     "python-les-bases",
@@ -100,17 +100,17 @@
   ],
   "items": [
     {
-      "slug": "pack-debutant-code",
+      "slug": "pack-débutant-code",
       "kind": "pack",
       "category": "packs",
       "level": "pack",
-      "title": "Pack Debutant code",
-      "tagline": "HTML, JS, Python et Git — le kit demarrage",
+      "title": "Pack Débutant code",
+      "tagline": "HTML, JS, Python et Git - le kit demarrage",
       "short_description": "4 PDF pour poser des bases solides : HTML/CSS, JavaScript, Python et Git.",
-      "description": "4 PDF pour poser des bases solides : HTML/CSS, JavaScript, Python et Git. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "description": "4 PDF pour poser des bases solides : HTML/CSS, JavaScript, Python et Git. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
-        "debutant",
+        "débutant",
         "html",
         "javascript",
         "python",
@@ -128,22 +128,22 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : HTML & CSS — Les bases",
-        "PDF : JavaScript — Les bases",
-        "PDF : Python — Les bases",
-        "PDF : Git — Les bases"
+        "PDF : HTML & CSS - Les bases",
+        "PDF : JavaScript - Les bases",
+        "PDF : Python - Les bases",
+        "PDF : Git - Les bases"
       ],
       "cover": "/assets/images/livres/covers/html-css-les-bases.jpg",
       "cover_stack": [
@@ -160,8 +160,8 @@
       "level": "pack",
       "title": "Pack Web",
       "tagline": "HTML/CSS, JavaScript et TypeScript",
-      "short_description": "5 PDF pour demarrer et monter en web front : HTML/CSS base+suite, JS base+suite, TypeScript.",
-      "description": "5 PDF pour demarrer et monter en web front : HTML/CSS base+suite, JS base+suite, TypeScript. 5 livres PDF pour 1,49 EUR TTC (au lieu de 2,50 a l'unite). Chez DanielCraft.",
+      "short_description": "5 PDF pour démarrer et monter en web front : HTML/CSS base+suite, JS base+suite, TypeScript.",
+      "description": "5 PDF pour démarrer et monter en web front : HTML/CSS base+suite, JS base+suite, TypeScript. 5 livres PDF pour 1,49 EUR TTC (au lieu de 2,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "web",
@@ -183,23 +183,23 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.5,
       "price_label": "Pack",
-      "price_note": "TTC — 5 PDF (valeur 2,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 5 PDF (valeur 2,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "5 livres PDF inclus",
-        "Economie d'environ 1,01 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 1,01 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : HTML & CSS — Les bases",
-        "PDF : HTML & CSS — La suite",
-        "PDF : JavaScript — Les bases",
-        "PDF : JavaScript — La suite",
-        "PDF : TypeScript — Les bases"
+        "PDF : HTML & CSS - Les bases",
+        "PDF : HTML & CSS - La suite",
+        "PDF : JavaScript - Les bases",
+        "PDF : JavaScript - La suite",
+        "PDF : TypeScript - Les bases"
       ],
       "cover": "/assets/images/livres/covers/html-css-les-bases.jpg",
       "cover_stack": [
@@ -218,7 +218,7 @@
       "title": "Pack Python",
       "tagline": "Bases + pratique",
       "short_description": "2 PDF Python : les bases puis la pratique avec mini-projets.",
-      "description": "2 PDF Python : les bases puis la pratique avec mini-projets. 2 livres PDF pour 0,79 EUR TTC (au lieu de 1,00 a l'unite). Chez DanielCraft.",
+      "description": "2 PDF Python : les bases puis la pratique avec mini-projets. 2 livres PDF pour 0,79 EUR TTC (au lieu de 1,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "python",
@@ -234,20 +234,20 @@
       "price_eur": 0.79,
       "compare_at_eur": 1.0,
       "price_label": "Pack",
-      "price_note": "TTC — 2 PDF (valeur 1,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 2 PDF (valeur 1,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "2 livres PDF inclus",
-        "Economie d'environ 0,21 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,21 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Python — Les bases",
-        "PDF : Python — Pratique"
+        "PDF : Python - Les bases",
+        "PDF : Python - Pratique"
       ],
       "cover": "/assets/images/livres/covers/python-les-bases.jpg",
       "cover_stack": [
@@ -261,9 +261,9 @@
       "category": "packs",
       "level": "pack",
       "title": "Pack Data / SQL",
-      "tagline": "Base, intermediaire et expert",
-      "short_description": "3 PDF SQL du debutant a l'expert : requetes, sous-requetes, perf.",
-      "description": "3 PDF SQL du debutant a l'expert : requetes, sous-requetes, perf. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "tagline": "Base, intermédiaire et expert",
+      "short_description": "3 PDF SQL du débutant a l'expert : requetes, sous-requetes, perf.",
+      "description": "3 PDF SQL du débutant a l'expert : requetes, sous-requetes, perf. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "sql",
@@ -274,33 +274,33 @@
       "pdf": "",
       "book_slugs": [
         "sql-les-bases",
-        "sql-intermediaire",
+        "sql-intermédiaire",
         "sql-expert"
       ],
       "icon": "fa-database",
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : SQL — Les bases",
-        "PDF : SQL — Intermediaire",
-        "PDF : SQL — Expert"
+        "PDF : SQL - Les bases",
+        "PDF : SQL - Intermédiaire",
+        "PDF : SQL - Expert"
       ],
       "cover": "/assets/images/livres/covers/sql-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/sql-les-bases.jpg",
-        "/assets/images/livres/covers/sql-intermediaire.jpg",
+        "/assets/images/livres/covers/sql-intermédiaire.jpg",
         "/assets/images/livres/covers/sql-expert.jpg"
       ]
     },
@@ -312,7 +312,7 @@
       "title": "Pack IA",
       "tagline": "Essentiel, ML et deep learning",
       "short_description": "3 PDF IA : bases, machine learning, deep learning.",
-      "description": "3 PDF IA : bases, machine learning, deep learning. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "description": "3 PDF IA : bases, machine learning, deep learning. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "ia",
@@ -330,21 +330,21 @@
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : IA — Les bases",
-        "PDF : IA — Machine learning",
-        "PDF : IA — Deep learning"
+        "PDF : IA - Les bases",
+        "PDF : IA - Machine learning",
+        "PDF : IA - Deep learning"
       ],
       "cover": "/assets/images/livres/covers/ia-les-bases.jpg",
       "cover_stack": [
@@ -359,9 +359,9 @@
       "category": "packs",
       "level": "pack",
       "title": "Pack Finance",
-      "tagline": "Marches, produits et crypto",
-      "short_description": "5 PDF finance : bases, actions/obligations, derives, forex, crypto.",
-      "description": "5 PDF finance : bases, actions/obligations, derives, forex, crypto. 5 livres PDF pour 1,49 EUR TTC (au lieu de 2,50 a l'unite). Chez DanielCraft.",
+      "tagline": "Marchés, produits et crypto",
+      "short_description": "5 PDF finance : bases, actions/obligations, dérivés, forex, crypto.",
+      "description": "5 PDF finance : bases, actions/obligations, dérivés, forex, crypto. 5 livres PDF pour 1,49 EUR TTC (au lieu de 2,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "finance",
@@ -373,88 +373,88 @@
       "book_slugs": [
         "finance-les-bases",
         "finance-actions-obligations",
-        "finance-produits-derives",
-        "finance-forex-matieres",
+        "finance-produits-dérivés",
+        "finance-forex-matières",
         "finance-crypto"
       ],
       "icon": "fa-chart-line",
       "price_eur": 1.49,
       "compare_at_eur": 2.5,
       "price_label": "Pack",
-      "price_note": "TTC — 5 PDF (valeur 2,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 5 PDF (valeur 2,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "5 livres PDF inclus",
-        "Economie d'environ 1,01 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 1,01 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Finance — Les bases",
-        "PDF : Finance — Actions & obligations",
-        "PDF : Finance — Produits derives",
-        "PDF : Finance — Forex & matieres",
-        "PDF : Finance — Crypto"
+        "PDF : Finance - Les bases",
+        "PDF : Finance - Actions & obligations",
+        "PDF : Finance - Produits dérivés",
+        "PDF : Finance - Forex & matières",
+        "PDF : Finance - Crypto"
       ],
       "cover": "/assets/images/livres/covers/finance-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/finance-les-bases.jpg",
         "/assets/images/livres/covers/finance-actions-obligations.jpg",
-        "/assets/images/livres/covers/finance-produits-derives.jpg",
-        "/assets/images/livres/covers/finance-forex-matieres.jpg",
+        "/assets/images/livres/covers/finance-produits-dérivés.jpg",
+        "/assets/images/livres/covers/finance-forex-matières.jpg",
         "/assets/images/livres/covers/finance-crypto.jpg"
       ]
     },
     {
-      "slug": "pack-securite",
+      "slug": "pack-sécurité",
       "kind": "pack",
       "category": "packs",
       "level": "pack",
-      "title": "Pack Securite web",
-      "tagline": "Base, intermediaire et expert",
-      "short_description": "3 PDF securite web : gestes essentiels, attaques courantes, hardening.",
-      "description": "3 PDF securite web : gestes essentiels, attaques courantes, hardening. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "title": "Pack Sécurité web",
+      "tagline": "Base, intermédiaire et expert",
+      "short_description": "3 PDF sécurité web : gestes essentiels, attaques courantes, hardening.",
+      "description": "3 PDF sécurité web : gestes essentiels, attaques courantes, hardening. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
-        "securite",
+        "sécurité",
         "https",
         "owasp"
       ],
       "source_dir": "",
       "pdf": "",
       "book_slugs": [
-        "securite-web-les-bases",
-        "securite-web-intermediaire",
-        "securite-web-expert"
+        "sécurité-web-les-bases",
+        "sécurité-web-intermédiaire",
+        "sécurité-web-expert"
       ],
       "icon": "fa-shield-alt",
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Securite web — Les bases",
-        "PDF : Securite web — Intermediaire",
-        "PDF : Securite web — Expert"
+        "PDF : Sécurité web - Les bases",
+        "PDF : Sécurité web - Intermédiaire",
+        "PDF : Sécurité web - Expert"
       ],
-      "cover": "/assets/images/livres/covers/securite-web-les-bases.jpg",
+      "cover": "/assets/images/livres/covers/sécurité-web-les-bases.jpg",
       "cover_stack": [
-        "/assets/images/livres/covers/securite-web-les-bases.jpg",
-        "/assets/images/livres/covers/securite-web-intermediaire.jpg",
-        "/assets/images/livres/covers/securite-web-expert.jpg"
+        "/assets/images/livres/covers/sécurité-web-les-bases.jpg",
+        "/assets/images/livres/covers/sécurité-web-intermédiaire.jpg",
+        "/assets/images/livres/covers/sécurité-web-expert.jpg"
       ]
     },
     {
@@ -464,8 +464,8 @@
       "level": "pack",
       "title": "Pack Commerce & vente",
       "tagline": "Offre, closing et clients",
-      "short_description": "4 PDF : commerce bases, vente avancee, trouver des clients, fideliser.",
-      "description": "4 PDF : commerce bases, vente avancee, trouver des clients, fideliser. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "short_description": "4 PDF : commerce bases, vente avancée, trouver des clients, fideliser.",
+      "description": "4 PDF : commerce bases, vente avancée, trouver des clients, fideliser. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "commerce",
@@ -476,7 +476,7 @@
       "pdf": "",
       "book_slugs": [
         "commerce-les-bases",
-        "vente-avancee",
+        "vente-avancée",
         "ecommerce-trouver-clients",
         "ecommerce-clients"
       ],
@@ -484,27 +484,27 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Commerce — Les bases",
-        "PDF : Vente avancee",
-        "PDF : E-commerce — Trouver des clients",
-        "PDF : E-commerce — Clients"
+        "PDF : Commerce - Les bases",
+        "PDF : Vente avancée",
+        "PDF : E-commerce - Trouver des clients",
+        "PDF : E-commerce - Clients"
       ],
       "cover": "/assets/images/livres/covers/commerce-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/commerce-les-bases.jpg",
-        "/assets/images/livres/covers/vente-avancee.jpg",
+        "/assets/images/livres/covers/vente-avancée.jpg",
         "/assets/images/livres/covers/ecommerce-trouver-clients.jpg",
         "/assets/images/livres/covers/ecommerce-clients.jpg"
       ]
@@ -517,7 +517,7 @@
       "title": "Pack E-commerce",
       "tagline": "Boutique, dropshipping et acquisition",
       "short_description": "4 PDF e-commerce : dropshipping, lancement, acquisition et clients.",
-      "description": "4 PDF e-commerce : dropshipping, lancement, acquisition et clients. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "description": "4 PDF e-commerce : dropshipping, lancement, acquisition et clients. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "ecommerce",
@@ -536,22 +536,22 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
         "PDF : Dropshipping",
         "PDF : E-commerce & dropshipping",
-        "PDF : E-commerce — Trouver des clients",
-        "PDF : E-commerce — Clients"
+        "PDF : E-commerce - Trouver des clients",
+        "PDF : E-commerce - Clients"
       ],
       "cover": "/assets/images/livres/covers/dropshipping.jpg",
       "cover_stack": [
@@ -567,44 +567,44 @@
       "category": "packs",
       "level": "pack",
       "title": "Pack Git",
-      "tagline": "Solo puis en equipe",
-      "short_description": "2 PDF Git : les bases puis le travail en equipe (PR, CI).",
-      "description": "2 PDF Git : les bases puis le travail en equipe (PR, CI). 2 livres PDF pour 0,79 EUR TTC (au lieu de 1,00 a l'unite). Chez DanielCraft.",
+      "tagline": "Solo puis en équipe",
+      "short_description": "2 PDF Git : les bases puis le travail en équipe (PR, CI).",
+      "description": "2 PDF Git : les bases puis le travail en équipe (PR, CI). 2 livres PDF pour 0,79 EUR TTC (au lieu de 1,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "git",
         "github",
-        "equipe"
+        "équipe"
       ],
       "source_dir": "",
       "pdf": "",
       "book_slugs": [
         "git-les-bases",
-        "git-en-equipe"
+        "git-en-équipe"
       ],
       "icon": "fa-code-branch",
       "price_eur": 0.79,
       "compare_at_eur": 1.0,
       "price_label": "Pack",
-      "price_note": "TTC — 2 PDF (valeur 1,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 2 PDF (valeur 1,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "2 livres PDF inclus",
-        "Economie d'environ 0,21 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,21 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Git — Les bases",
-        "PDF : Git — En equipe"
+        "PDF : Git - Les bases",
+        "PDF : Git - En équipe"
       ],
       "cover": "/assets/images/livres/covers/git-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/git-les-bases.jpg",
-        "/assets/images/livres/covers/git-en-equipe.jpg"
+        "/assets/images/livres/covers/git-en-équipe.jpg"
       ]
     },
     {
@@ -613,9 +613,9 @@
       "category": "packs",
       "level": "pack",
       "title": "Pack Java & Kotlin",
-      "tagline": "JVM : bases et intermediaire",
-      "short_description": "4 PDF : Java et Kotlin, niveau bases puis intermediaire.",
-      "description": "4 PDF : Java et Kotlin, niveau bases puis intermediaire. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "tagline": "JVM : bases et intermédiaire",
+      "short_description": "4 PDF : Java et Kotlin, niveau bases puis intermédiaire.",
+      "description": "4 PDF : Java et Kotlin, niveau bases puis intermédiaire. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "java",
@@ -626,37 +626,37 @@
       "pdf": "",
       "book_slugs": [
         "java-les-bases",
-        "java-intermediaire",
+        "java-intermédiaire",
         "kotlin-les-bases",
-        "kotlin-intermediaire"
+        "kotlin-intermédiaire"
       ],
       "icon": "fa-mug-hot",
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Java — Les bases",
-        "PDF : Java — Intermediaire",
-        "PDF : Kotlin — Les bases",
-        "PDF : Kotlin — Intermediaire"
+        "PDF : Java - Les bases",
+        "PDF : Java - Intermédiaire",
+        "PDF : Kotlin - Les bases",
+        "PDF : Kotlin - Intermédiaire"
       ],
       "cover": "/assets/images/livres/covers/java-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/java-les-bases.jpg",
-        "/assets/images/livres/covers/java-intermediaire.jpg",
+        "/assets/images/livres/covers/java-intermédiaire.jpg",
         "/assets/images/livres/covers/kotlin-les-bases.jpg",
-        "/assets/images/livres/covers/kotlin-intermediaire.jpg"
+        "/assets/images/livres/covers/kotlin-intermédiaire.jpg"
       ]
     },
     {
@@ -667,7 +667,7 @@
       "title": "Pack Backend",
       "tagline": "PHP, Go, C# et Python",
       "short_description": "4 PDF cote serveur : PHP, Go, C# et Python bases.",
-      "description": "4 PDF cote serveur : PHP, Go, C# et Python bases. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "description": "4 PDF cote serveur : PHP, Go, C# et Python bases. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "backend",
@@ -688,22 +688,22 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : PHP — Les bases",
-        "PDF : Go — Les bases",
-        "PDF : C# — Les bases",
-        "PDF : Python — Les bases"
+        "PDF : PHP - Les bases",
+        "PDF : Go - Les bases",
+        "PDF : C# - Les bases",
+        "PDF : Python - Les bases"
       ],
       "cover": "/assets/images/livres/covers/php-les-bases.jpg",
       "cover_stack": [
@@ -720,8 +720,8 @@
       "level": "pack",
       "title": "Pack Mobile",
       "tagline": "Swift et Kotlin",
-      "short_description": "3 PDF mobile : Swift bases + Kotlin bases et intermediaire.",
-      "description": "3 PDF mobile : Swift bases + Kotlin bases et intermediaire. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "short_description": "3 PDF mobile : Swift bases + Kotlin bases et intermédiaire.",
+      "description": "3 PDF mobile : Swift bases + Kotlin bases et intermédiaire. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "mobile",
@@ -735,33 +735,33 @@
       "book_slugs": [
         "swift-les-bases",
         "kotlin-les-bases",
-        "kotlin-intermediaire"
+        "kotlin-intermédiaire"
       ],
       "icon": "fa-mobile-alt",
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Swift — Les bases",
-        "PDF : Kotlin — Les bases",
-        "PDF : Kotlin — Intermediaire"
+        "PDF : Swift - Les bases",
+        "PDF : Kotlin - Les bases",
+        "PDF : Kotlin - Intermédiaire"
       ],
       "cover": "/assets/images/livres/covers/swift-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/swift-les-bases.jpg",
         "/assets/images/livres/covers/kotlin-les-bases.jpg",
-        "/assets/images/livres/covers/kotlin-intermediaire.jpg"
+        "/assets/images/livres/covers/kotlin-intermédiaire.jpg"
       ]
     },
     {
@@ -772,7 +772,7 @@
       "title": "Pack Systeme",
       "tagline": "C/C++, Rust et Go",
       "short_description": "3 PDF proches machine : C/C++, Rust et Go.",
-      "description": "3 PDF proches machine : C/C++, Rust et Go. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "description": "3 PDF proches machine : C/C++, Rust et Go. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "systeme",
@@ -791,21 +791,21 @@
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : C / C++ — Les bases",
-        "PDF : Rust — Les bases",
-        "PDF : Go — Les bases"
+        "PDF : C / C++ - Les bases",
+        "PDF : Rust - Les bases",
+        "PDF : Go - Les bases"
       ],
       "cover": "/assets/images/livres/covers/c-cpp-les-bases.jpg",
       "cover_stack": [
@@ -821,8 +821,8 @@
       "level": "pack",
       "title": "Pack Marketing & com",
       "tagline": "Message, canaux et clarte",
-      "short_description": "3 PDF : marketing, communication et commerce — pour parler net et vendre mieux.",
-      "description": "3 PDF : marketing, communication et commerce — pour parler net et vendre mieux. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "short_description": "3 PDF : marketing, communication et commerce - pour parler net et vendre mieux.",
+      "description": "3 PDF : marketing, communication et commerce - pour parler net et vendre mieux. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "marketing",
@@ -840,21 +840,21 @@
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Marketing — Les bases",
-        "PDF : Communication — Les bases",
-        "PDF : Commerce — Les bases"
+        "PDF : Marketing - Les bases",
+        "PDF : Communication - Les bases",
+        "PDF : Commerce - Les bases"
       ],
       "cover": "/assets/images/livres/covers/marketing-les-bases.jpg",
       "cover_stack": [
@@ -871,7 +871,7 @@
       "title": "Pack Front avance",
       "tagline": "Suite HTML/CSS, JS et TypeScript",
       "short_description": "3 PDF pour monter d'un cran cote front : HTML/CSS suite, JavaScript suite, TypeScript.",
-      "description": "3 PDF pour monter d'un cran cote front : HTML/CSS suite, JavaScript suite, TypeScript. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "description": "3 PDF pour monter d'un cran cote front : HTML/CSS suite, JavaScript suite, TypeScript. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "frontend",
@@ -890,21 +890,21 @@
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : HTML & CSS — La suite",
-        "PDF : JavaScript — La suite",
-        "PDF : TypeScript — Les bases"
+        "PDF : HTML & CSS - La suite",
+        "PDF : JavaScript - La suite",
+        "PDF : TypeScript - Les bases"
       ],
       "cover": "/assets/images/livres/covers/html-css-la-suite.jpg",
       "cover_stack": [
@@ -920,8 +920,8 @@
       "level": "pack",
       "title": "Pack Data & IA",
       "tagline": "SQL + machine learning",
-      "short_description": "4 PDF : SQL bases et intermediaire, IA bases et machine learning.",
-      "description": "4 PDF : SQL bases et intermediaire, IA bases et machine learning. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "short_description": "4 PDF : SQL bases et intermédiaire, IA bases et machine learning.",
+      "description": "4 PDF : SQL bases et intermédiaire, IA bases et machine learning. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "data",
@@ -933,7 +933,7 @@
       "pdf": "",
       "book_slugs": [
         "sql-les-bases",
-        "sql-intermediaire",
+        "sql-intermédiaire",
         "ia-les-bases",
         "ia-machine-learning"
       ],
@@ -941,27 +941,27 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : SQL — Les bases",
-        "PDF : SQL — Intermediaire",
-        "PDF : IA — Les bases",
-        "PDF : IA — Machine learning"
+        "PDF : SQL - Les bases",
+        "PDF : SQL - Intermédiaire",
+        "PDF : IA - Les bases",
+        "PDF : IA - Machine learning"
       ],
       "cover": "/assets/images/livres/covers/sql-les-bases.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/sql-les-bases.jpg",
-        "/assets/images/livres/covers/sql-intermediaire.jpg",
+        "/assets/images/livres/covers/sql-intermédiaire.jpg",
         "/assets/images/livres/covers/ia-les-bases.jpg",
         "/assets/images/livres/covers/ia-machine-learning.jpg"
       ]
@@ -973,8 +973,8 @@
       "level": "pack",
       "title": "Pack Investisseur",
       "tagline": "Bases, actions et crypto",
-      "short_description": "3 PDF finance pour demarrer sans se perdre : bases, actions/obligations, crypto.",
-      "description": "3 PDF finance pour demarrer sans se perdre : bases, actions/obligations, crypto. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 a l'unite). Chez DanielCraft.",
+      "short_description": "3 PDF finance pour démarrer sans se perdre : bases, actions/obligations, crypto.",
+      "description": "3 PDF finance pour démarrer sans se perdre : bases, actions/obligations, crypto. 3 livres PDF pour 0,99 EUR TTC (au lieu de 1,50 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "investissement",
@@ -993,21 +993,21 @@
       "price_eur": 0.99,
       "compare_at_eur": 1.5,
       "price_label": "Pack",
-      "price_note": "TTC — 3 PDF (valeur 1,50 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 3 PDF (valeur 1,50 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "3 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
-        "PDF : Finance — Les bases",
-        "PDF : Finance — Actions & obligations",
-        "PDF : Finance — Crypto"
+        "PDF : Finance - Les bases",
+        "PDF : Finance - Actions & obligations",
+        "PDF : Finance - Crypto"
       ],
       "cover": "/assets/images/livres/covers/finance-les-bases.jpg",
       "cover_stack": [
@@ -1023,8 +1023,8 @@
       "level": "pack",
       "title": "Pack Agile et Scrum",
       "tagline": "Gestion agile, Scrum, SM et PO",
-      "short_description": "4 PDF : gestion de projet agile, methodologie Scrum, Scrum Master et Product Owner.",
-      "description": "4 PDF : gestion de projet agile, methodologie Scrum, Scrum Master et Product Owner. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 a l'unite). Chez DanielCraft.",
+      "short_description": "4 PDF : gestion de projet agile, méthodologie Scrum, Scrum Master et Product Owner.",
+      "description": "4 PDF : gestion de projet agile, méthodologie Scrum, Scrum Master et Product Owner. 4 livres PDF pour 1,49 EUR TTC (au lieu de 2,00 à l'unité). Chez DanielCraft.",
       "keywords": [
         "pack",
         "agile",
@@ -1036,7 +1036,7 @@
       "pdf": "",
       "book_slugs": [
         "gestion-projet-agile",
-        "methodologie-scrum",
+        "méthodologie-scrum",
         "devenir-scrum-master",
         "devenir-product-owner"
       ],
@@ -1044,16 +1044,16 @@
       "price_eur": 1.49,
       "compare_at_eur": 2.0,
       "price_label": "Pack",
-      "price_note": "TTC — 4 PDF (valeur 2,00 a l'unite) envoyes par e-mail apres paiement",
+      "price_note": "TTC - 4 PDF (valeur 2,00 à l'unité) envoyés par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
       "stripe_payment_link_url": "",
       "benefits": [
         "4 livres PDF inclus",
-        "Economie d'environ 0,51 EUR vs a l'unite",
-        "Meme pedagogie claire (Lea, Max, Sam)",
-        "Envoi par e-mail apres paiement"
+        "Économie d'environ 0,51 EUR vs à l'unité",
+        "Même pédagogie claire (Lea, Max, Sam)",
+        "Envoi par e-mail après paiement"
       ],
       "includes": [
         "PDF : Gestion de projet agile",
@@ -1064,7 +1064,7 @@
       "cover": "/assets/images/livres/covers/gestion-projet-agile.jpg",
       "cover_stack": [
         "/assets/images/livres/covers/gestion-projet-agile.jpg",
-        "/assets/images/livres/covers/methodologie-scrum.jpg",
+        "/assets/images/livres/covers/méthodologie-scrum.jpg",
         "/assets/images/livres/covers/devenir-scrum-master.jpg",
         "/assets/images/livres/covers/devenir-product-owner.jpg"
       ]
@@ -1073,16 +1073,16 @@
       "slug": "html-css-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "HTML & CSS — Les bases",
+      "title": "HTML & CSS - Les bases",
       "tagline": "Ta premiere page web, propre et responsive",
-      "short_description": "Apprends a structurer une page et a la styliser. Ideal pour demarrer le web.",
-      "description": "Apprends a structurer une page et a la styliser. Ideal pour demarrer le web. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Apprends à structurer une page et à la styliser. Idéal pour démarrer le web.",
+      "description": "Apprends à structurer une page et à la styliser. Idéal pour démarrer le web. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "html",
         "css",
         "web",
         "front",
-        "debutant",
+        "débutant",
         "gratuit"
       ],
       "source_dir": "informatique/html-css",
@@ -1090,7 +1090,7 @@
       "icon": "fa-code",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1103,7 +1103,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1113,11 +1113,11 @@
     {
       "slug": "html-css-la-suite",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "HTML & CSS — La suite",
+      "level": "intermédiaire",
+      "title": "HTML & CSS - La suite",
       "tagline": "Layouts, composants et polish",
-      "short_description": "Passe au niveau suivant : grilles, flex avance, composants reutilisables.",
-      "description": "Passe au niveau suivant : grilles, flex avance, composants reutilisables. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Passe au niveau suivant : grilles, flex avancé, composants réutilisables.",
+      "description": "Passe au niveau suivant : grilles, flex avancé, composants réutilisables. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "html",
         "css",
@@ -1130,7 +1130,7 @@
       "icon": "fa-code",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1143,7 +1143,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1153,23 +1153,23 @@
       "slug": "javascript-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "JavaScript — Les bases",
+      "title": "JavaScript - Les bases",
       "tagline": "Rendre la page vivante",
-      "short_description": "Variables, conditions, DOM et evenements — le JS utile au quotidien.",
-      "description": "Variables, conditions, DOM et evenements — le JS utile au quotidien. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Variables, conditions, DOM et événements - le JS utile au quotidien.",
+      "description": "Variables, conditions, DOM et événements - le JS utile au quotidien. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "javascript",
         "js",
         "dom",
         "front",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/javascript",
       "pdf": "javascript-les-bases.pdf",
       "icon": "fa-js",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1182,7 +1182,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1191,11 +1191,11 @@
     {
       "slug": "javascript-la-suite",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "JavaScript — La suite",
+      "level": "intermédiaire",
+      "title": "JavaScript - La suite",
       "tagline": "Modules, async et pratique",
-      "short_description": "Continue apres les bases : organisation du code, asynchrone, bons reflexes.",
-      "description": "Continue apres les bases : organisation du code, asynchrone, bons reflexes. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Continue après les bases : organisation du code, asynchrone, bons réflexes.",
+      "description": "Continue après les bases : organisation du code, asynchrone, bons réflexes. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "javascript",
         "js",
@@ -1207,7 +1207,7 @@
       "icon": "fa-js",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1220,7 +1220,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1230,10 +1230,10 @@
       "slug": "typescript-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "TypeScript — Les bases",
+      "title": "TypeScript - Les bases",
       "tagline": "Typer pour moins se tromper",
-      "short_description": "Ajoute des types a ton JS et ecris du code plus solide.",
-      "description": "Ajoute des types a ton JS et ecris du code plus solide. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Ajoute des types à ton JS et écris du code plus solide.",
+      "description": "Ajoute des types à ton JS et écris du code plus solide. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "typescript",
         "ts",
@@ -1245,7 +1245,7 @@
       "icon": "fa-file-code",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1258,7 +1258,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1268,14 +1268,14 @@
       "slug": "python-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Python — Les bases",
+      "title": "Python - Les bases",
       "tagline": "Le langage polyvalent, version claire",
-      "short_description": "Syntaxe, structures et premiers scripts — parfait pour debuter.",
-      "description": "Syntaxe, structures et premiers scripts — parfait pour debuter. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Syntaxe, structures et premiers scripts - parfait pour débuter.",
+      "description": "Syntaxe, structures et premiers scripts - parfait pour débuter. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "python",
         "script",
-        "debutant",
+        "débutant",
         "backend",
         "gratuit"
       ],
@@ -1284,7 +1284,7 @@
       "icon": "fa-python",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1297,7 +1297,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1307,11 +1307,11 @@
     {
       "slug": "python-pratique",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "Python — Pratique",
-      "tagline": "Projets concrets apres les bases",
+      "level": "intermédiaire",
+      "title": "Python - Pratique",
+      "tagline": "Projets concrets après les bases",
       "short_description": "Ateliers et mini-projets pour ancrer Python dans le vrai monde.",
-      "description": "Ateliers et mini-projets pour ancrer Python dans le vrai monde. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Ateliers et mini-projets pour ancrer Python dans le vrai monde. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "python",
         "projets",
@@ -1323,7 +1323,7 @@
       "icon": "fa-python",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1336,7 +1336,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1346,21 +1346,21 @@
       "slug": "java-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Java — Les bases",
+      "title": "Java - Les bases",
       "tagline": "OOP et premiers programmes",
-      "short_description": "Classes, objets et bases du langage Java, expliquees simplement.",
-      "description": "Classes, objets et bases du langage Java, expliquees simplement. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Classes, objets et bases du langage Java, expliquées simplement.",
+      "description": "Classes, objets et bases du langage Java, expliquées simplement. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "java",
         "oop",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/java",
       "pdf": "java-les-bases.pdf",
       "icon": "fa-mug-hot",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1373,31 +1373,31 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
       "cover": "/assets/images/livres/covers/java-les-bases.jpg"
     },
     {
-      "slug": "java-intermediaire",
+      "slug": "java-intermédiaire",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "Java — Intermediaire",
+      "level": "intermédiaire",
+      "title": "Java - Intermédiaire",
       "tagline": "Collections, exceptions, pratique",
-      "short_description": "Monte d'un cran : structures, erreurs et bons reflexes Java.",
-      "description": "Monte d'un cran : structures, erreurs et bons reflexes Java. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Monte d'un cran : structures, erreurs et bons réflexes Java.",
+      "description": "Monte d'un cran : structures, erreurs et bons réflexes Java. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "java",
         "collections",
         "exceptions"
       ],
-      "source_dir": "informatique/java-intermediaire",
-      "pdf": "java-intermediaire.pdf",
+      "source_dir": "informatique/java-intermédiaire",
+      "pdf": "java-intermédiaire.pdf",
       "icon": "fa-mug-hot",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1410,32 +1410,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/java-intermediaire.jpg"
+      "cover": "/assets/images/livres/covers/java-intermédiaire.jpg"
     },
     {
       "slug": "kotlin-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Kotlin — Les bases",
+      "title": "Kotlin - Les bases",
       "tagline": "Modernite sur la JVM",
-      "short_description": "Decouvre Kotlin : null-safety, syntaxe nette, premiers programmes.",
-      "description": "Decouvre Kotlin : null-safety, syntaxe nette, premiers programmes. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Découvre Kotlin : null-safety, syntaxe nette, premiers programmes.",
+      "description": "Découvre Kotlin : null-safety, syntaxe nette, premiers programmes. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "kotlin",
         "jvm",
         "android",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/kotlin",
       "pdf": "kotlin-les-bases.pdf",
       "icon": "fa-mobile-alt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1448,31 +1448,31 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
       "cover": "/assets/images/livres/covers/kotlin-les-bases.jpg"
     },
     {
-      "slug": "kotlin-intermediaire",
+      "slug": "kotlin-intermédiaire",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "Kotlin — Intermediaire",
+      "level": "intermédiaire",
+      "title": "Kotlin - Intermédiaire",
       "tagline": "Fonctions, classes et pratique",
-      "short_description": "Approfondis Kotlin apres les bases, avec des cas concrets.",
-      "description": "Approfondis Kotlin apres les bases, avec des cas concrets. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Approfondis Kotlin après les bases, avec des cas concrets.",
+      "description": "Approfondis Kotlin après les bases, avec des cas concrets. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "kotlin",
         "fonctions",
         "classes"
       ],
-      "source_dir": "informatique/kotlin-intermediaire",
-      "pdf": "kotlin-intermediaire.pdf",
+      "source_dir": "informatique/kotlin-intermédiaire",
+      "pdf": "kotlin-intermédiaire.pdf",
       "icon": "fa-mobile-alt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1485,32 +1485,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/kotlin-intermediaire.jpg"
+      "cover": "/assets/images/livres/covers/kotlin-intermédiaire.jpg"
     },
     {
       "slug": "csharp-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "C# — Les bases",
+      "title": "C# - Les bases",
       "tagline": "Le langage .NET, version accessible",
       "short_description": "Variables, classes et premiers programmes en C#.",
-      "description": "Variables, classes et premiers programmes en C#. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Variables, classes et premiers programmes en C#. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "csharp",
         "c#",
         "dotnet",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/csharp",
       "pdf": "csharp-les-bases.pdf",
       "icon": "fa-hashtag",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1523,7 +1523,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1533,22 +1533,22 @@
       "slug": "go-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Go — Les bases",
+      "title": "Go - Les bases",
       "tagline": "Simple, rapide, concurrent",
       "short_description": "Prends en main Go : packages, types et premiers programmes.",
-      "description": "Prends en main Go : packages, types et premiers programmes. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Prends en main Go : packages, types et premiers programmes. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "go",
         "golang",
         "backend",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/go",
       "pdf": "go-les-bases.pdf",
       "icon": "fa-bolt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1561,7 +1561,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1571,22 +1571,22 @@
       "slug": "php-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "PHP — Les bases",
+      "title": "PHP - Les bases",
       "tagline": "Le web cote serveur",
       "short_description": "Pages dynamiques, formulaires et bases de PHP pour le web.",
-      "description": "Pages dynamiques, formulaires et bases de PHP pour le web. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Pages dynamiques, formulaires et bases de PHP pour le web. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "php",
         "serveur",
         "web",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/php",
       "pdf": "php-les-bases.pdf",
       "icon": "fa-php",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1599,7 +1599,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1609,22 +1609,22 @@
       "slug": "rust-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Rust — Les bases",
+      "title": "Rust - Les bases",
       "tagline": "Memoire sure, sans panique",
-      "short_description": "Ownership et types : Rust explique sans jargon inutile.",
-      "description": "Ownership et types : Rust explique sans jargon inutile. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Ownership et types : Rust expliqué sans jargon inutile.",
+      "description": "Ownership et types : Rust expliqué sans jargon inutile. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "rust",
         "memoire",
         "systeme",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/rust",
       "pdf": "rust-les-bases.pdf",
       "icon": "fa-cog",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1637,7 +1637,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1647,21 +1647,21 @@
       "slug": "ruby-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Ruby — Les bases",
+      "title": "Ruby - Les bases",
       "tagline": "Elegant et lisible",
       "short_description": "Syntaxe douce et premiers scripts Ruby.",
-      "description": "Syntaxe douce et premiers scripts Ruby. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Syntaxe douce et premiers scripts Ruby. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "ruby",
         "script",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/ruby",
       "pdf": "ruby-les-bases.pdf",
       "icon": "fa-gem",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1674,7 +1674,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1684,22 +1684,22 @@
       "slug": "swift-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Swift — Les bases",
+      "title": "Swift - Les bases",
       "tagline": "Pour l'ecosysteme Apple",
       "short_description": "Optionals, types et premiers programmes Swift.",
-      "description": "Optionals, types et premiers programmes Swift. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Optionals, types et premiers programmes Swift. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "swift",
         "ios",
         "apple",
-        "debutant"
+        "débutant"
       ],
       "source_dir": "informatique/swift",
       "pdf": "swift-les-bases.pdf",
       "icon": "fa-apple",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1712,7 +1712,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1722,10 +1722,10 @@
       "slug": "c-cpp-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "C / C++ — Les bases",
+      "title": "C / C++ - Les bases",
       "tagline": "Proche de la machine",
-      "short_description": "Pointeurs, memoire et bases C/C++ en langage simple.",
-      "description": "Pointeurs, memoire et bases C/C++ en langage simple. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Pointeurs, mémoire et bases C/C++ en langage simple.",
+      "description": "Pointeurs, mémoire et bases C/C++ en langage simple. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "c",
         "c++",
@@ -1737,7 +1737,7 @@
       "icon": "fa-microchip",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1750,7 +1750,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1760,10 +1760,10 @@
       "slug": "sql-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "SQL — Les bases",
+      "title": "SQL - Les bases",
       "tagline": "Interroger des tables",
-      "short_description": "SELECT, JOIN, INSERT : parler a une base de donnees.",
-      "description": "SELECT, JOIN, INSERT : parler a une base de donnees. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "SELECT, JOIN, INSERT : parler a une base de données.",
+      "description": "SELECT, JOIN, INSERT : parler a une base de données. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "sql",
         "base de donnees",
@@ -1775,7 +1775,7 @@
       "icon": "fa-database",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1788,32 +1788,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
       "cover": "/assets/images/livres/covers/sql-les-bases.jpg"
     },
     {
-      "slug": "sql-intermediaire",
+      "slug": "sql-intermédiaire",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "SQL — Intermediaire",
+      "level": "intermédiaire",
+      "title": "SQL - Intermédiaire",
       "tagline": "Sous-requetes, dates, vues",
-      "short_description": "Passe a des questions plus riches : HAVING, unions, index (idee).",
-      "description": "Passe a des questions plus riches : HAVING, unions, index (idee). Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Passe à des questions plus riches : HAVING, unions, index (idée).",
+      "description": "Passe à des questions plus riches : HAVING, unions, index (idée). Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "sql",
         "sous-requetes",
         "having",
         "data"
       ],
-      "source_dir": "informatique/sql-intermediaire",
-      "pdf": "sql-intermediaire.pdf",
+      "source_dir": "informatique/sql-intermédiaire",
+      "pdf": "sql-intermédiaire.pdf",
       "icon": "fa-database",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1826,20 +1826,20 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/sql-intermediaire.jpg"
+      "cover": "/assets/images/livres/covers/sql-intermédiaire.jpg"
     },
     {
       "slug": "sql-expert",
       "category": "informatique",
       "level": "expert",
-      "title": "SQL — Expert",
+      "title": "SQL - Expert",
       "tagline": "Perf, fenetres, cas durs",
-      "short_description": "Fenetres, perf et cas metier exigeants — pour aller loin.",
-      "description": "Fenetres, perf et cas metier exigeants — pour aller loin. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Fenêtres, perf et cas metier exigeants - pour aller loin.",
+      "description": "Fenêtres, perf et cas metier exigeants - pour aller loin. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "sql",
         "window",
@@ -1851,7 +1851,7 @@
       "icon": "fa-database",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1864,7 +1864,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -1874,10 +1874,10 @@
       "slug": "git-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Git — Les bases",
+      "title": "Git - Les bases",
       "tagline": "Versionner sans stress",
       "short_description": "Commit, branche, historique : le kit minimum pour ne plus perdre ton code.",
-      "description": "Commit, branche, historique : le kit minimum pour ne plus perdre ton code. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Commit, branche, historique : le kit minimum pour ne plus perdre ton code. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "git",
         "versionning",
@@ -1889,7 +1889,7 @@
       "icon": "fa-code-branch",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1902,32 +1902,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
       "cover": "/assets/images/livres/covers/git-les-bases.jpg"
     },
     {
-      "slug": "git-en-equipe",
+      "slug": "git-en-équipe",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "Git — En equipe",
+      "level": "intermédiaire",
+      "title": "Git - En équipe",
       "tagline": "PR, rebase, CI",
-      "short_description": "Travailler a plusieurs sans panique : revue, branches, bons reflexes.",
-      "description": "Travailler a plusieurs sans panique : revue, branches, bons reflexes. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Travailler à plusieurs sans panique : revue, branches, bons réflexes.",
+      "description": "Travailler à plusieurs sans panique : revue, branches, bons réflexes. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "git",
         "pull request",
-        "equipe",
+        "équipe",
         "ci"
       ],
-      "source_dir": "informatique/git-equipe",
-      "pdf": "git-en-equipe.pdf",
+      "source_dir": "informatique/git-équipe",
+      "pdf": "git-en-équipe.pdf",
       "icon": "fa-users",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -1940,32 +1940,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/git-en-equipe.jpg"
+      "cover": "/assets/images/livres/covers/git-en-équipe.jpg"
     },
     {
-      "slug": "securite-web-les-bases",
+      "slug": "sécurité-web-les-bases",
       "category": "informatique",
       "level": "base",
-      "title": "Securite web — Les bases",
+      "title": "Sécurité web - Les bases",
       "tagline": "Proteger le quotidien",
       "short_description": "Mots de passe, HTTPS, phishing, sauvegardes : les gestes essentiels.",
-      "description": "Mots de passe, HTTPS, phishing, sauvegardes : les gestes essentiels. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Mots de passe, HTTPS, phishing, sauvegardes : les gestes essentiels. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
-        "securite",
+        "sécurité",
         "https",
         "phishing",
         "rgpd"
       ],
-      "source_dir": "informatique/securite-web",
-      "pdf": "securite-web-les-bases.pdf",
+      "source_dir": "informatique/sécurité-web",
+      "pdf": "sécurité-web-les-bases.pdf",
       "icon": "fa-shield-alt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -1978,32 +1978,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/securite-web-les-bases.jpg"
+      "cover": "/assets/images/livres/covers/sécurité-web-les-bases.jpg"
     },
     {
-      "slug": "securite-web-intermediaire",
+      "slug": "sécurité-web-intermédiaire",
       "category": "informatique",
-      "level": "intermediaire",
-      "title": "Securite web — Intermediaire",
+      "level": "intermédiaire",
+      "title": "Sécurité web - Intermédiaire",
       "tagline": "Attaques et defenses concretes",
-      "short_description": "XSS, CSRF, sessions : comprendre pour mieux proteger.",
-      "description": "XSS, CSRF, sessions : comprendre pour mieux proteger. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "XSS, CSRF, sessions : comprendre pour mieux protéger.",
+      "description": "XSS, CSRF, sessions : comprendre pour mieux protéger. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
-        "securite",
+        "sécurité",
         "xss",
         "csrf",
         "owasp"
       ],
-      "source_dir": "informatique/securite-web-intermediaire",
-      "pdf": "securite-web-intermediaire.pdf",
+      "source_dir": "informatique/sécurité-web-intermédiaire",
+      "pdf": "sécurité-web-intermédiaire.pdf",
       "icon": "fa-shield-alt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2016,32 +2016,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/securite-web-intermediaire.jpg"
+      "cover": "/assets/images/livres/covers/sécurité-web-intermédiaire.jpg"
     },
     {
-      "slug": "securite-web-expert",
+      "slug": "sécurité-web-expert",
       "category": "informatique",
       "level": "expert",
-      "title": "Securite web — Expert",
+      "title": "Sécurité web - Expert",
       "tagline": "Hardening et cas avances",
-      "short_description": "Aller plus loin : hardening, modeles de menaces, bonnes pratiques pro.",
-      "description": "Aller plus loin : hardening, modeles de menaces, bonnes pratiques pro. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Aller plus loin : hardening, modèles de menaces, bonnes pratiques pro.",
+      "description": "Aller plus loin : hardening, modèles de menaces, bonnes pratiques pro. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
-        "securite",
+        "sécurité",
         "hardening",
         "expert",
         "audit"
       ],
-      "source_dir": "informatique/securite-web-expert",
-      "pdf": "securite-web-expert.pdf",
+      "source_dir": "informatique/sécurité-web-expert",
+      "pdf": "sécurité-web-expert.pdf",
       "icon": "fa-user-shield",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2054,25 +2054,25 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/securite-web-expert.jpg"
+      "cover": "/assets/images/livres/covers/sécurité-web-expert.jpg"
     },
     {
       "slug": "ia-les-bases",
       "category": "ia",
       "level": "base",
-      "title": "IA — Les bases",
+      "title": "IA - Les bases",
       "tagline": "Comprendre avant d'automatiser",
-      "short_description": "Prompts, outils et ethique : l'IA utile au quotidien, sans magie.",
-      "description": "Prompts, outils et ethique : l'IA utile au quotidien, sans magie. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Prompts, outils et éthique : l'IA utile au quotidien, sans magie.",
+      "description": "Prompts, outils et éthique : l'IA utile au quotidien, sans magie. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "ia",
         "prompt",
         "chatgpt",
-        "debutant",
+        "débutant",
         "gratuit"
       ],
       "source_dir": "ia/essentiel",
@@ -2080,7 +2080,7 @@
       "icon": "fa-robot",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": true,
       "has_page": true,
@@ -2093,7 +2093,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2103,11 +2103,11 @@
     {
       "slug": "ia-machine-learning",
       "category": "ia",
-      "level": "intermediaire",
-      "title": "IA — Machine learning",
+      "level": "intermédiaire",
+      "title": "IA - Machine learning",
       "tagline": "Donnees, modeles, metriques",
-      "short_description": "Regression, classification et pipelines — le ML explique clairement.",
-      "description": "Regression, classification et pipelines — le ML explique clairement. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Régression, classification et pipelines - le ML expliqué clairement.",
+      "description": "Régression, classification et pipelines - le ML expliqué clairement. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "machine learning",
         "ml",
@@ -2119,7 +2119,7 @@
       "icon": "fa-brain",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2132,7 +2132,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2142,10 +2142,10 @@
       "slug": "ia-deep-learning",
       "category": "ia",
       "level": "expert",
-      "title": "IA — Deep learning",
+      "title": "IA - Deep learning",
       "tagline": "Reseaux, CNN, transformers",
       "short_description": "Neurones, couches et architectures modernes, en langage accessible.",
-      "description": "Neurones, couches et architectures modernes, en langage accessible. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Neurones, couches et architectures modernes, en langage accessible. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "deep learning",
         "cnn",
@@ -2157,7 +2157,7 @@
       "icon": "fa-network-wired",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2170,7 +2170,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2180,14 +2180,14 @@
       "slug": "finance-les-bases",
       "category": "finance",
       "level": "base",
-      "title": "Finance — Les bases",
+      "title": "Finance - Les bases",
       "tagline": "Lire les marches sans jargon",
       "short_description": "Budget, risque, produits : une boussole pour commencer.",
-      "description": "Budget, risque, produits : une boussole pour commencer. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Budget, risque, produits : une boussole pour commencer. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "finance",
         "investissement",
-        "debutant",
+        "débutant",
         "epargne",
         "gratuit"
       ],
@@ -2196,7 +2196,7 @@
       "icon": "fa-wallet",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2209,7 +2209,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2219,11 +2219,11 @@
     {
       "slug": "finance-actions-obligations",
       "category": "finance",
-      "level": "intermediaire",
-      "title": "Finance — Actions & obligations",
+      "level": "intermédiaire",
+      "title": "Finance - Actions & obligations",
       "tagline": "Actions, obligations, portefeuille",
       "short_description": "Comprendre actions et obligations avant de construire un portefeuille.",
-      "description": "Comprendre actions et obligations avant de construire un portefeuille. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Comprendre actions et obligations avant de construire un portefeuille. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "actions",
         "obligations",
@@ -2235,7 +2235,7 @@
       "icon": "fa-chart-pie",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2248,32 +2248,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
       "cover": "/assets/images/livres/covers/finance-actions-obligations.jpg"
     },
     {
-      "slug": "finance-produits-derives",
+      "slug": "finance-produits-dérivés",
       "category": "finance",
       "level": "expert",
-      "title": "Finance — Produits derives",
-      "tagline": "Options, futures (idee)",
-      "short_description": "Les derives expliques sans promesse miracle.",
-      "description": "Les derives expliques sans promesse miracle. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "title": "Finance - Produits dérivés",
+      "tagline": "Options, futures (idée)",
+      "short_description": "Les dérivés expliqués sans promesse miracle.",
+      "description": "Les dérivés expliqués sans promesse miracle. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
-        "derives",
+        "dérivés",
         "options",
         "futures",
         "hedging"
       ],
-      "source_dir": "finance/produits-derives",
-      "pdf": "finance-produits-derives.pdf",
+      "source_dir": "finance/produits-dérivés",
+      "pdf": "finance-produits-dérivés.pdf",
       "icon": "fa-exchange-alt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2286,32 +2286,32 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/finance-produits-derives.jpg"
+      "cover": "/assets/images/livres/covers/finance-produits-dérivés.jpg"
     },
     {
-      "slug": "finance-forex-matieres",
+      "slug": "finance-forex-matières",
       "category": "finance",
-      "level": "intermediaire",
-      "title": "Finance — Forex & matieres",
-      "tagline": "Devises et matieres premieres",
-      "short_description": "Forex et matieres : mecanismes, risques, vocabulaire.",
-      "description": "Forex et matieres : mecanismes, risques, vocabulaire. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "level": "intermédiaire",
+      "title": "Finance - Forex & matières",
+      "tagline": "Devises et matières premieres",
+      "short_description": "Forex et matières : mécanismes, risques, vocabulaire.",
+      "description": "Forex et matières : mécanismes, risques, vocabulaire. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "forex",
         "devises",
         "or",
         "petrole"
       ],
-      "source_dir": "finance/forex-matieres",
-      "pdf": "finance-forex-matieres.pdf",
+      "source_dir": "finance/forex-matières",
+      "pdf": "finance-forex-matières.pdf",
       "icon": "fa-globe",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2324,20 +2324,20 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/finance-forex-matieres.jpg"
+      "cover": "/assets/images/livres/covers/finance-forex-matières.jpg"
     },
     {
       "slug": "finance-crypto",
       "category": "finance",
-      "level": "intermediaire",
-      "title": "Finance — Crypto",
+      "level": "intermédiaire",
+      "title": "Finance - Crypto",
       "tagline": "Wallets, risques, bonnes pratiques",
-      "short_description": "Crypto sans hype : wallet, arnaques, securite, staking (idee).",
-      "description": "Crypto sans hype : wallet, arnaques, securite, staking (idee). Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Crypto sans hype : wallet, arnaques, sécurité, staking (idée).",
+      "description": "Crypto sans hype : wallet, arnaques, sécurité, staking (idée). Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "crypto",
         "bitcoin",
@@ -2349,7 +2349,7 @@
       "icon": "fa-coins",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2362,7 +2362,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2372,10 +2372,10 @@
       "slug": "commerce-les-bases",
       "category": "commerce",
       "level": "base",
-      "title": "Commerce — Les bases",
+      "title": "Commerce - Les bases",
       "tagline": "Offre, marge, relation client",
       "short_description": "Vendre mieux : besoin, offre, prix et relation.",
-      "description": "Vendre mieux : besoin, offre, prix et relation. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Vendre mieux : besoin, offre, prix et relation. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "commerce",
         "vente",
@@ -2388,7 +2388,7 @@
       "icon": "fa-handshake",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2401,7 +2401,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2409,25 +2409,25 @@
       "is_free": true
     },
     {
-      "slug": "vente-avancee",
+      "slug": "vente-avancée",
       "category": "commerce",
-      "level": "intermediaire",
-      "title": "Vente avancee",
+      "level": "intermédiaire",
+      "title": "Vente avancée",
       "tagline": "Negociation et closing",
-      "short_description": "Objections, closing et vente en equipe — niveau suivant.",
-      "description": "Objections, closing et vente en equipe — niveau suivant. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Objections, closing et vente en équipe - niveau suivant.",
+      "description": "Objections, closing et vente en équipe - niveau suivant. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "vente",
         "negociation",
         "closing",
         "b2b"
       ],
-      "source_dir": "commerce/vente-avancee",
-      "pdf": "vente-avancee.pdf",
+      "source_dir": "commerce/vente-avancée",
+      "pdf": "vente-avancée.pdf",
       "icon": "fa-comments-dollar",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2440,20 +2440,20 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/vente-avancee.jpg"
+      "cover": "/assets/images/livres/covers/vente-avancée.jpg"
     },
     {
       "slug": "ecommerce-trouver-clients",
       "category": "commerce",
-      "level": "intermediaire",
-      "title": "E-commerce — Trouver des clients",
+      "level": "intermédiaire",
+      "title": "E-commerce - Trouver des clients",
       "tagline": "Trafic et acquisition",
       "short_description": "Attirer des clients : canaux, mesure, funnels simples.",
-      "description": "Attirer des clients : canaux, mesure, funnels simples. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "description": "Attirer des clients : canaux, mesure, funnels simples. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "ecommerce",
         "acquisition",
@@ -2465,7 +2465,7 @@
       "icon": "fa-users",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2478,7 +2478,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2487,11 +2487,11 @@
     {
       "slug": "ecommerce-clients",
       "category": "commerce",
-      "level": "intermediaire",
-      "title": "E-commerce — Clients",
+      "level": "intermédiaire",
+      "title": "E-commerce - Clients",
       "tagline": "Retention et LTV",
-      "short_description": "Apres le clic : email, contenu, mesure et ethique.",
-      "description": "Apres le clic : email, contenu, mesure et ethique. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Après le clic : email, contenu, mesure et éthique.",
+      "description": "Après le clic : email, contenu, mesure et éthique. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "ecommerce",
         "retention",
@@ -2503,7 +2503,7 @@
       "icon": "fa-heart",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2516,7 +2516,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2525,11 +2525,11 @@
     {
       "slug": "dropshipping",
       "category": "commerce",
-      "level": "intermediaire",
+      "level": "intermédiaire",
       "title": "Dropshipping",
       "tagline": "Niche, fournisseurs, realite",
-      "short_description": "Le dropshipping sans mythes : marges, logistique, pieges.",
-      "description": "Le dropshipping sans mythes : marges, logistique, pieges. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Le dropshipping sans mythes : marges, logistique, pièges.",
+      "description": "Le dropshipping sans mythes : marges, logistique, pièges. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "dropshipping",
         "fournisseurs",
@@ -2541,7 +2541,7 @@
       "icon": "fa-box-open",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2554,7 +2554,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2563,11 +2563,11 @@
     {
       "slug": "ecommerce-dropshipping",
       "category": "commerce",
-      "level": "intermediaire",
+      "level": "intermédiaire",
       "title": "E-commerce & dropshipping",
       "tagline": "Lancer sans stock (avec prudence)",
-      "short_description": "Combinaison e-commerce + dropshipping : cadre legal et lancement.",
-      "description": "Combinaison e-commerce + dropshipping : cadre legal et lancement. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Combinaison e-commerce + dropshipping : cadre légal et lancement.",
+      "description": "Combinaison e-commerce + dropshipping : cadre légal et lancement. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "ecommerce",
         "dropshipping",
@@ -2579,7 +2579,7 @@
       "icon": "fa-store",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2592,7 +2592,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2602,10 +2602,10 @@
       "slug": "marketing-les-bases",
       "category": "marketing",
       "level": "base",
-      "title": "Marketing — Les bases",
+      "title": "Marketing - Les bases",
       "tagline": "Cible, message, canaux",
-      "short_description": "Persona, funnel, contenu et mesure — le marketing utile.",
-      "description": "Persona, funnel, contenu et mesure — le marketing utile. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Persona, funnel, contenu et mesure - le marketing utile.",
+      "description": "Persona, funnel, contenu et mesure - le marketing utile. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "marketing",
         "persona",
@@ -2618,7 +2618,7 @@
       "icon": "fa-bullhorn",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2631,7 +2631,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2642,10 +2642,10 @@
       "slug": "communication-les-bases",
       "category": "communication",
       "level": "base",
-      "title": "Communication — Les bases",
+      "title": "Communication - Les bases",
       "tagline": "Ecrire et parler clair",
-      "short_description": "Messages nets, presentations et relation — sans blabla.",
-      "description": "Messages nets, presentations et relation — sans blabla. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Messages nets, présentations et relation - sans blabla.",
+      "description": "Messages nets, présentations et relation - sans blabla. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "communication",
         "ecriture",
@@ -2658,7 +2658,7 @@
       "icon": "fa-comments",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2671,7 +2671,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2684,8 +2684,8 @@
       "level": "base",
       "title": "Gestion de projet agile",
       "tagline": "Petits pas, priorites claires, feedback tot",
-      "short_description": "Comprendre l'agile sans jargon de certif : cascade vs iteratif, backlog, ceremonies, Definition of Done.",
-      "description": "Comprendre l'agile sans jargon de certif : cascade vs iteratif, backlog, ceremonies, Definition of Done. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Comprendre l'agile sans jargon de certif : cascade vs itératif, backlog, cérémonies, Definition of Done.",
+      "description": "Comprendre l'agile sans jargon de certif : cascade vs itératif, backlog, cérémonies, Definition of Done. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "agile",
         "gestion de projet",
@@ -2699,7 +2699,7 @@
       "icon": "fa-people-arrows",
       "price_eur": 0,
       "price_label": "Gratuit",
-      "price_note": "PDF a telecharger tout de suite - sans paiement",
+      "price_note": "PDF à télécharger tout de suite - sans paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2712,7 +2712,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "PDF a telecharger tout de suite",
+        "PDF à télécharger tout de suite",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2720,13 +2720,13 @@
       "is_free": true
     },
     {
-      "slug": "methodologie-scrum",
+      "slug": "méthodologie-scrum",
       "category": "agile",
       "level": "base",
       "title": "Methodologie Scrum",
-      "tagline": "Sprints, roles, ceremonies, Definition of Done",
-      "short_description": "Le cadre Scrum explique simplement : equipe, artefacts, evenements et anti-patterns a eviter.",
-      "description": "Le cadre Scrum explique simplement : equipe, artefacts, evenements et anti-patterns a eviter. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "tagline": "Sprints, roles, cérémonies, Definition of Done",
+      "short_description": "Le cadre Scrum expliqué simplement : équipe, artefacts, événements et anti-patterns à éviter.",
+      "description": "Le cadre Scrum expliqué simplement : équipe, artefacts, événements et anti-patterns à éviter. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "scrum",
         "sprint",
@@ -2734,12 +2734,12 @@
         "daily",
         "retro"
       ],
-      "source_dir": "agile/methodologie-scrum",
-      "pdf": "methodologie-scrum.pdf",
+      "source_dir": "agile/méthodologie-scrum",
+      "pdf": "méthodologie-scrum.pdf",
       "icon": "fa-sync-alt",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2752,33 +2752,33 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
-      "cover": "/assets/images/livres/covers/methodologie-scrum.jpg"
+      "cover": "/assets/images/livres/covers/méthodologie-scrum.jpg"
     },
     {
       "slug": "devenir-scrum-master",
       "category": "agile",
-      "level": "intermediaire",
+      "level": "intermédiaire",
       "title": "Devenir Scrum Master",
       "tagline": "Faciliter, debloquer, coacher sans prendre le volant",
-      "short_description": "Le role Scrum Master au quotidien : facilitation, obstacles, focus, coaching PO et equipe.",
-      "description": "Le role Scrum Master au quotidien : facilitation, obstacles, focus, coaching PO et equipe. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Le rôle Scrum Master au quotidien : facilitation, obstacles, focus, coaching PO et équipe.",
+      "description": "Le rôle Scrum Master au quotidien : facilitation, obstacles, focus, coaching PO et équipe. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "scrum master",
         "facilitation",
         "coaching",
         "agile",
-        "equipe"
+        "équipe"
       ],
       "source_dir": "agile/scrum-master",
       "pdf": "devenir-scrum-master.pdf",
       "icon": "fa-hands-helping",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2791,7 +2791,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2800,11 +2800,11 @@
     {
       "slug": "devenir-product-owner",
       "category": "agile",
-      "level": "intermediaire",
+      "level": "intermédiaire",
       "title": "Devenir Product Owner",
       "tagline": "Vision, backlog, priorisation, valeur client",
-      "short_description": "Le role Product Owner : vision produit, stakeholders, user stories, priorisation et dire non.",
-      "description": "Le role Product Owner : vision produit, stakeholders, user stories, priorisation et dire non. Format PDF telechargeable, langage simple, exercices et schemas. Chez DanielCraft.",
+      "short_description": "Le rôle Product Owner : vision produit, stakeholders, user stories, priorisation et dire non.",
+      "description": "Le rôle Product Owner : vision produit, stakeholders, user stories, priorisation et dire non. Format PDF téléchargeable, langage simple, exercices et schémas. Chez DanielCraft.",
       "keywords": [
         "product owner",
         "backlog",
@@ -2817,7 +2817,7 @@
       "icon": "fa-bullseye",
       "price_eur": 0.5,
       "price_label": "Prix d'appel",
-      "price_note": "TTC — PDF envoye par e-mail apres paiement",
+      "price_note": "TTC - PDF envoyé par e-mail après paiement",
       "currency": "EUR",
       "featured": false,
       "has_page": true,
@@ -2830,7 +2830,7 @@
       ],
       "includes": [
         "Livre PDF complet",
-        "Acces a vie au fichier envoye",
+        "Accès à vie au fichier envoyé",
         "Mises a jour mineures si corrigees"
       ],
       "kind": "livre",
@@ -2841,7 +2841,7 @@
   "deal_of_the_week": {
     "slug": "pack-web",
     "badge": "Pack de la semaine",
-    "urgency": "Offre limitee — mise en avant cette semaine",
+    "urgency": "Offre limitee - mise en avant cette semaine",
     "cta_label": "Profiter de l'offre"
   }
 }

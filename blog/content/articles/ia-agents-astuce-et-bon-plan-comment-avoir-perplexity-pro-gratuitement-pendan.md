@@ -1,7 +1,7 @@
 ---
 title: "Perplexity Pro : bons plans (et ce qu'il faut verifier)"
 date: 2026-06-25
-excerpt: "Promos et essais existent parfois — lis les conditions, ne partage pas ton compte."
+excerpt: "Promos et essais existent parfois - lis les conditions, ne partage pas ton compte."
 type: guide
 tags: [IA, agents, automatisation, OpenAI]
 og_image: ia-agents-astuce-et-bon-plan-comment-avoir-perplexity-pro-gratuitement-pendan-1200x630.jpg

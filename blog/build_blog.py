@@ -821,7 +821,7 @@ def render_blog_index(articles: list[dict], collections: list[dict], output_dir:
             )
         )
 
-    meta_desc = 'Guides SEO local, visibilité Google, IA pratique (ChatGPT, Claude, Gemini, agents) et site vitrine — plus articles techniques sur l’espace pro.'
+    meta_desc = 'Guides SEO local, visibilité Google, IA pratique (ChatGPT, Claude, Gemini, agents) et site vitrine - plus articles techniques sur l’espace pro.'
     page_url = _abs_blog_url('blog/index.html')
 
     # Bloc "A découvrir" : 4 articles (un par serie ou derniers)
@@ -1026,7 +1026,7 @@ def generate_sitemap_blog(articles: list[dict], collections: list[dict], output_
     from urllib.parse import quote
 
     lastmod_blog = max((str(a.get('date', ''))[:10] for a in articles), default=datetime.now().strftime('%Y-%m-%d'))
-    # Recherches populaires (chips) — deep-links indexables via SearchAction
+    # Recherches populaires (chips) - deep-links indexables via SearchAction
     blog_search_queries = (
         'seo local',
         'google',
@@ -1109,7 +1109,7 @@ def _home_blog_cat(article: dict, collections: list[dict]) -> str:
                         raw = raw[6:].strip()
                     elif raw.lower().startswith('serie '):
                         raw = raw[6:].strip()
-                    for sep in (' — ', ' - ', ' · ', ': '):
+                    for sep in (' - ', ' - ', ' · ', ': '):
                         if sep in raw:
                             raw = raw.split(sep)[0].strip()
                             break

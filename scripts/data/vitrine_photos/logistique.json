@@ -1,0 +1,129 @@
+{
+  "slug": "logistique",
+  "brand": "Flux Lorraine",
+  "category": "industrie",
+  "locale": "Epinal, Grand Est, France",
+  "style_suffix": "B2B industrial logistics warehouse Epinal Vosges, documentary photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Entrepot logistique a Epinal",
+      "subject": "Large logistics warehouse interior near Epinal: high racking, forklifts, loading dock light beams, industrial B2B atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Entrepot logistique a Epinal"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Stockage palettes",
+      "subject": "Pallet storage aisles with wrapped goods, safety markings, warehouse workers distant",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Stockage palettes"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Preparation commandes",
+      "subject": "Order picking station with handheld scanner and cardboard boxes on conveyor",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Preparation commandes"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Livraison camion",
+      "subject": "Delivery truck at loading dock doors, dusk industrial zone Epinal",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Livraison camion"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Quai de chargement",
+      "subject": "Loading dock with dock levelers and pallet jack, morning activity",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Quai de chargement"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Rayonnage",
+      "subject": "Tall metal racking filled with labeled cartons (labels illegible), cool warehouse light",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Rayonnage"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Flotte",
+      "subject": "Fleet of vans and trucks parked in logistics yard, Vosges hills soft background",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Flotte"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Vue entrepot",
+      "subject": "Wide aerial-like view of warehouse campus with trucks, fencing, industrial zone Voivre",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Vue entrepot"
+        }
+      ]
+    }
+  ]
+}

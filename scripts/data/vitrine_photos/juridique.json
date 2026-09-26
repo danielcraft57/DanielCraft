@@ -13,7 +13,7 @@
       "alt": "Cabinet Rivière & Partenaires à Metz",
       "subject": "Prestigious law firm office Riviere Partenaires Metz France: dark wood library, leather chairs, golden light through tall windows, bar association atmosphere, wide hero banner",
       "contexts": [
-        { "page": "index.html", "section": "hero", "text": "Conseil stratégique à Metz — droit des affaires PME" },
+        { "page": "index.html", "section": "hero", "text": "Conseil stratégique à Metz - droit des affaires PME" },
         { "page": "expertises.html", "section": "hero", "text": "Expertises sociétés, social et contentieux" },
         { "page": "accompagnement.html", "section": "hero", "text": "Accompagnement dirigeants Lorraine" },
         { "page": "contact.html", "section": "hero", "text": "Cabinet avenue Foch Metz" }
@@ -27,9 +27,9 @@
       "alt": "Consultation avocat Metz",
       "subject": "Lawyer consulting business client in elegant Metz law firm meeting room, documents on table, professional confidential discussion",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Écoute et diagnostic — premier rendez-vous structuré" },
+        { "page": "index.html", "section": "chapter", "text": "Écoute et diagnostic - premier rendez-vous structuré" },
         { "page": "expertises.html", "section": "chapter", "text": "Analyse juridique et stratégie contentieuse" },
-        { "page": "accompagnement.html", "section": "chapter", "text": "Étape 1 — écoute et définition des objectifs" }
+        { "page": "accompagnement.html", "section": "chapter", "text": "Étape 1 - écoute et définition des objectifs" }
       ]
     },
     {
@@ -40,9 +40,9 @@
       "alt": "Équipe avocats Metz",
       "subject": "Legal team of six attorneys collaborating in modern Metz law firm conference room, case files and laptops, professional atmosphere",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "6 associés — Barreau de Metz" },
+        { "page": "index.html", "section": "chapter", "text": "6 associés - Barreau de Metz" },
         { "page": "expertises.html", "section": "chapter", "text": "Collégialité et spécialisation par domaine" },
-        { "page": "accompagnement.html", "section": "chapter", "text": "Étape 2 — mise en œuvre et points d'étape" }
+        { "page": "accompagnement.html", "section": "chapter", "text": "Étape 2 - mise en œuvre et points d'étape" }
       ]
     },
     {
@@ -53,9 +53,9 @@
       "alt": "Signature acte juridique",
       "subject": "Business handshake after successful legal contract signing in Metz law office, satisfied clients and attorney, warm professional moment",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "850+ dossiers par an — suivi jusqu'à l'acte" },
+        { "page": "index.html", "section": "chapter", "text": "850+ dossiers par an - suivi jusqu'à l'acte" },
         { "page": "expertises.html", "section": "chapter", "text": "Transmission d'entreprise conclue" },
-        { "page": "accompagnement.html", "section": "chapter", "text": "Étape 3 — bilan et pérennisation" }
+        { "page": "accompagnement.html", "section": "chapter", "text": "Étape 3 - bilan et pérennisation" }
       ]
     },
     {
@@ -66,7 +66,7 @@
       "alt": "Salle d'audience Metz",
       "subject": "Empty elegant French courtroom or tribunal waiting area in Metz, marble and wood, solemn legal architecture photography",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Contentieux — représentation devant les juridictions" },
+        { "page": "index.html", "section": "gallery", "text": "Contentieux - représentation devant les juridictions" },
         { "page": "expertises.html", "section": "gallery", "text": "Procédures commerciales et prud'hommes" }
       ]
     },
@@ -78,7 +78,7 @@
       "alt": "Locaux avenue Foch Metz",
       "subject": "Elegant law firm reception desk Metz avenue Foch, dark wood paneling, professional welcome area without readable signage",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "12 avenue Foch — permanences du lundi au vendredi" },
+        { "page": "index.html", "section": "gallery", "text": "12 avenue Foch - permanences du lundi au vendredi" },
         { "page": "contact.html", "section": "gallery", "text": "Accueil clients et rendez-vous" }
       ]
     },
@@ -90,7 +90,7 @@
       "alt": "Droit des sociétés",
       "subject": "Corporate law documents pacte associes and company statutes on desk with fountain pen, legal card image Metz law firm",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Sociétés — pactes, AG, gouvernance" },
+        { "page": "index.html", "section": "card", "text": "Sociétés - pactes, AG, gouvernance" },
         { "page": "expertises.html", "section": "card", "text": "Création et restructuration de sociétés" }
       ]
     },
@@ -102,7 +102,7 @@
       "alt": "Droit social",
       "subject": "Employment law labor contract negotiation scene, HR documents and legal counsel, professional office Metz",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Social — contrats, licenciement, CSE" },
+        { "page": "index.html", "section": "card", "text": "Social - contrats, licenciement, CSE" },
         { "page": "expertises.html", "section": "card", "text": "Conformité RH et négociation collective" }
       ]
     },
@@ -114,7 +114,7 @@
       "alt": "Contentieux commercial",
       "subject": "Commercial litigation legal strategy meeting, case files and evidence binders on conference table, law firm Metz",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Contentieux — recouvrement et médiation" },
+        { "page": "index.html", "section": "card", "text": "Contentieux - recouvrement et médiation" },
         { "page": "expertises.html", "section": "card", "text": "Défense des intérêts PME en litige" }
       ]
     }

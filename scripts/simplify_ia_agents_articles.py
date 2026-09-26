@@ -80,7 +80,7 @@ for item in SVGS:
 article(
     "ia-agents-creer-un-agent-ia-gratuit-avec-claude-et-les-mcp-le-model",
     "Agent gratuit avec Claude + MCP : l'idee simple",
-    "Connecter Claude a des outils (MCP) pour qu'il agisse — avec un perimetre clair.",
+    "Connecter Claude a des outils (MCP) pour qu'il agisse - avec un perimetre clair.",
     f"""# Agent gratuit avec Claude + MCP : l'idee simple
 
 **MCP** = brancher des outils. L'agent peut lire / agir dans ce cadre.
@@ -122,7 +122,7 @@ Liste 3 criteres (vitesse, qualite, fiabilite). Teste. Garde le gagnant.
 article(
     "ia-agents-tutoriel-debutant-comment-creer-un-agent-ia-en-quelques-minutes",
     "Creer un agent IA en quelques minutes (debutant)",
-    "But clair, consignes courtes, un outil, un test — puis on ameliore.",
+    "But clair, consignes courtes, un outil, un test - puis on ameliore.",
     f"""# Creer un agent IA en quelques minutes (debutant)
 
 1. Ecris le **but** en une phrase  
@@ -167,7 +167,7 @@ Essaye sur une tache reelle. Si ca freine, reviens au [tutoriel debutant](/blog/
 article(
     "ia-agents-3-alternatives-a-deep-research-l-agent-d-intelligence-artificielle-d",
     "3 alternatives a Deep Research (recherche longue)",
-    "Comparer des agents de recherche : sources, profondeur, prix — et toujours verifier.",
+    "Comparer des agents de recherche : sources, profondeur, prix - et toujours verifier.",
     f"""# 3 alternatives a Deep Research (recherche longue)
 
 La recherche IA aide a **cartographier**. Elle n'est pas une bibliotheque magique.
@@ -181,7 +181,7 @@ Teste 2 outils sur la meme question. Garde les sources. Voir aussi [examen Deep 
 article(
     "ia-agents-astuce-et-bon-plan-comment-avoir-perplexity-pro-gratuitement-pendan",
     "Perplexity Pro : bons plans (et ce qu'il faut verifier)",
-    "Promos et essais existent parfois — lis les conditions, ne partage pas ton compte.",
+    "Promos et essais existent parfois - lis les conditions, ne partage pas ton compte.",
     f"""# Perplexity Pro : bons plans (et ce qu'il faut verifier)
 
 Les "gratuits" ont souvent une **duree** ou des conditions.
@@ -209,7 +209,7 @@ Demande un plan 8 slides max, puis le contenu. Simplifie. Alternative : [Gamma](
 article(
     "ia-agents-jour-2-pour-comprendre-les-agents-ia-les-dangers",
     "Agents IA : les dangers a connaitre (jour 2)",
-    "Actions non voulues, donnees exposees, hallucinations en chaine — comment se proteger.",
+    "Actions non voulues, donnees exposees, hallucinations en chaine - comment se proteger.",
     f"""# Agents IA : les dangers a connaitre (jour 2)
 
 Un agent puissant sans cadre, c'est un apprentice sorcier.
@@ -236,7 +236,7 @@ Utilise l'outil pour explorer. Valide les faits critiques autrement. Alternative
 
 path = COLLECTIONS / "ia-agents-serie.json"
 col = json.loads(path.read_text(encoding="utf-8"))
-col["title"] = "Serie IA — Agents (agir avec cadre)"
+col["title"] = "Serie IA - Agents (agir avec cadre)"
 col["description"] = (
     "Creer, comparer et securiser des agents IA : tutoriels debutants, recherche, dangers."
 )

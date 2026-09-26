@@ -49,7 +49,7 @@ def extract_schema_figure(body: str) -> str | None:
 
 
 def strip_figures(body: str) -> str:
-    # remove all figures (old schemas/banners) — we re-inject current schema
+    # remove all figures (old schemas/banners) - we re-inject current schema
     body = re.sub(r"<figure\b[^>]*>.*?</figure>\s*", "", body, flags=re.S)
     # remove markdown banner images
     body = re.sub(r"!\[[^\]]*\]\([^)]*banner[^)]*\)\s*", "", body, flags=re.I)

@@ -1,7 +1,7 @@
 ---
 title: "Conseil d'IA : faire debattre plusieurs modeles"
 date: 2026-06-08
-excerpt: "Comparer plusieurs reponses sur le meme sujet pour enrichir ta decision — sans tout croire."
+excerpt: "Comparer plusieurs reponses sur le meme sujet pour enrichir ta decision - sans tout croire."
 type: tutorial
 tags: [IA, Gemini, NotebookLM, Google]
 og_image: ia-gemini-un-homme-vient-de-creer-un-conseil-des-ia-avec-un-tutoriel-pour-fair-1200x630.jpg

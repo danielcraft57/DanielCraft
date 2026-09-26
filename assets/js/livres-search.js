@@ -1,5 +1,5 @@
 /**
- * Recherche client-side — catalogue des livres (/livres)
+ * Recherche client-side - catalogue des livres (/livres)
  * Miroir de prestations-search.js (slugs, chips, ?q=, hero is-visible).
  */
 (function () {

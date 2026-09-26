@@ -27,7 +27,7 @@ Nom des fichiers attendus dans `assets/images/og/` :
 
 ## aws-fondamentaux-1200x630.jpg
 
-Image de couverture pour l’article "AWS : les fondamentaux et grands types de services".
+Image de couverture pour l'article "AWS : les fondamentaux et grands types de services".
 
 ```
 Scene : architecture cloud AWS abstraite mais riche, avec compute, stockage, données, réseau et sécurité organisés comme un vrai diagramme d'architecture moderne. Plusieurs panneaux et couches techniques, accent rouge #dc2626 sur quelques points critiques. Tous les textes visibles en français. Pas de logo officiel AWS dominant.

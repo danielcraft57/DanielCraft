@@ -1,4 +1,4 @@
-# Prompts OG — articles simplifies (ton debutant)
+# Prompts OG - articles simplifies (ton debutant)
 
 **230** articles. Style : clair, attirant, pedagogique.
 **Format :** 1200×630 (1.91:1), JPG puis WebP a l'install.

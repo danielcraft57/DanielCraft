@@ -1,4 +1,4 @@
-# Charte visuelle BD cartoon — DanielCraft
+# Charte visuelle BD cartoon - DanielCraft
 
 Document de référence pour images Open Graph, vidéos, réseaux sociaux et illustrations marketing.
 
@@ -17,7 +17,7 @@ Style **bande dessinée européenne (ligne claire)** : scènes plein cadre, pers
 
 - Scène illustrative occupant tout le cadre
 - Bandeau bas avec titre + sous-titre en blanc sur dégradé navy
-- Badge rouge pour l’offre (« Audit gratuit », etc.)
+- Badge rouge pour l'offre (« Audit gratuit », etc.)
 - Lisible en miniature (test ~400 px de large)
 
 ## Vidéo

@@ -1,4 +1,4 @@
-/* Atelier Corolle — fleuriste : rose / sage, Cormorant + Nunito Sans */
+/* Atelier Corolle - fleuriste : rose / sage, Cormorant + Nunito Sans */
 :root {
   --vt-paper: #fdf7f5;
   --vt-rose: #d17c7e;
@@ -13,6 +13,11 @@
   --bs-primary: var(--vt-rose);
   --bs-link-color: var(--vt-rose-deep);
   --bs-font-sans-serif: "Nunito Sans", system-ui, sans-serif;
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 body.vt-body-fleuriste {
   background: radial-gradient(ellipse at 85% 0%, rgba(209,124,126,0.12), transparent 45%), var(--vt-paper);

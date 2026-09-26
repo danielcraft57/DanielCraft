@@ -16,7 +16,7 @@ og_image: marketing-reseaux-1200x630.jpg
   <figcaption>Choisir, rythme, valeur, ecoute, preuves, mesure.</figcaption>
 </figure>
 
-Être présent sur cinq réseaux sociaux avec deux posts par semaine, ça représente dix contenus hebdomadaires à produire, publier et animer. Pour une PME ou un freelance, c'est rapidement insoutenable — et le résultat se voit : profils abandonnés, publications irrégulières, engagement proche de zéro. Mieux vaut être excellent sur une plateforme que médiocre sur quatre.
+Être présent sur cinq réseaux sociaux avec deux posts par semaine, ça représente dix contenus hebdomadaires à produire, publier et animer. Pour une PME ou un freelance, c'est rapidement insoutenable - et le résultat se voit : profils abandonnés, publications irrégulières, engagement proche de zéro. Mieux vaut être excellent sur une plateforme que médiocre sur quatre.
 
 Le schéma ci-dessus rappelle la boucle vertueuse : choisir le bon réseau, tenir un rythme, apporter de la valeur, écouter sa communauté, montrer des preuves, mesurer et ajuster.
 
@@ -28,7 +28,7 @@ Demande-toi une seule question : là où je poste, est-ce que mon client idéal 
 
 ## Définir un rythme soutenable et un fil éditorial
 
-Deux publications par semaine, maintenues pendant six mois, surpassent dix posts en janvier suivis de silence en février. Bloque des créneaux fixes dans ton agenda — le lundi pour rédiger, le mercredi et vendredi pour publier.
+Deux publications par semaine, maintenues pendant six mois, surpassent dix posts en janvier suivis de silence en février. Bloque des créneaux fixes dans ton agenda - le lundi pour rédiger, le mercredi et vendredi pour publier.
 
 Varie les formats sans te disperser : conseil actionnable, coulisses, témoignage client, question ouverte à l'audience. Alterne entre expertise (tu apportes de la valeur) et humanité (tu montres qui tu es). La promotion pure ne devrait pas dépasser 20 % de tes publications.
 
@@ -40,7 +40,7 @@ Repurpose intelligemment : un article long devient trois posts LinkedIn, une cit
 
 ## Planifier sans déshumaniser les interactions
 
-Buffer, Hootsuite ou Meta Business Suite permettent de programmer tes publications à l'avance — utile pour garder la régularité. Mais réserve du temps quotidien ou hebdomadaire pour répondre aux commentaires, remercier les partages et engager la conversation sur les posts d'autres acteurs de ton secteur.
+Buffer, Hootsuite ou Meta Business Suite permettent de programmer tes publications à l'avance - utile pour garder la régularité. Mais réserve du temps quotidien ou hebdomadaire pour répondre aux commentaires, remercier les partages et engager la conversation sur les posts d'autres acteurs de ton secteur.
 
 L'algorithme récompense l'interaction authentique. Un post programmé suivi de dix réponses personnalisées performe mieux qu'un contenu spontané ignoré.
 

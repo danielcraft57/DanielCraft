@@ -210,9 +210,9 @@
   function fillOrderRecap() {
     const recap = document.getElementById('vitrineOrderRecap');
     if (!recap) return;
-    const site = (document.getElementById('vd_order_site_url').value || '').trim() || '—';
+    const site = (document.getElementById('vd_order_site_url').value || '').trim() || '-';
     const billing = (document.getElementById('vd_order_billing').value || '').trim();
-    const notes = (document.getElementById('vd_order_notes').value || '').trim() || '—';
+    const notes = (document.getElementById('vd_order_notes').value || '').trim() || '-';
     const pt = PROJECT_TYPES.find(function (x) {
       return x.slug === orderProjectType.value;
     });
@@ -252,9 +252,9 @@
   }
 
   function buildOrderMessage() {
-    const site = (document.getElementById('vd_order_site_url').value || '').trim() || '—';
+    const site = (document.getElementById('vd_order_site_url').value || '').trim() || '-';
     const billing = (document.getElementById('vd_order_billing').value || '').trim();
-    const notes = (document.getElementById('vd_order_notes').value || '').trim() || '—';
+    const notes = (document.getElementById('vd_order_notes').value || '').trim() || '-';
     const slug = readVitrineSlug();
     const title = readVitrineTitle();
     const price = readVitrinePrice();
@@ -343,7 +343,7 @@
           var okMsg = data.devis_issued
             ? data.message ||
               (data.fallback
-                ? 'Demande enregistrée — devis PDF sous 24 h ouvrées.'
+                ? 'Demande enregistrée - devis PDF sous 24 h ouvrées.'
                 : 'Devis envoyé par e-mail. Vérifiez votre boîte mail.')
             : data.dry_run
               ? 'Demande acceptée (mode test sans email sur ce serveur).'

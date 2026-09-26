@@ -1,0 +1,129 @@
+{
+  "slug": "assurance",
+  "brand": "Couverture Est",
+  "category": "conseil",
+  "locale": "Strasbourg, Grand Est, France",
+  "style_suffix": "Insurance consulting office Strasbourg, trustworthy daylight, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Bureau courtier assurance Strasbourg",
+      "subject": "Bright consulting office of insurance broker in Strasbourg: glass meeting room, blue accents, city view soft, welcoming reception",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Bureau courtier assurance Strasbourg"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Assurance auto",
+      "subject": "Car keys and insurance folder on desk, advisor explaining coverage, soft office light",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Assurance auto"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Assurance habitation",
+      "subject": "Home insurance consultation with miniature house model and documents, calm professional tone",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Assurance habitation"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Assurance pro",
+      "subject": "Small business owner meeting broker about professional liability, workshop photos on wall blurred",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Assurance pro"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Conseil auto",
+      "subject": "Advisor reviewing auto policy with client, tablet device, no readable text",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Conseil auto"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Maison protegee",
+      "subject": "Suburban house exterior in Alsace region symbolizing home cover, sunny day",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Maison protegee"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Famille",
+      "subject": "Family of three meeting advisor in bright office, friendly atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Famille"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Accueil agence",
+      "subject": "Agency entrance with plants and seating area, Strasbourg streetscape soft through window",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Accueil agence"
+        }
+      ]
+    }
+  ]
+}

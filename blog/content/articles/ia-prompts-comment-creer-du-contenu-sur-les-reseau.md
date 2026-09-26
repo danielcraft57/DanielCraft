@@ -1,7 +1,7 @@
 ---
 title: "Contenu reseaux avec l'IA : un angle, pas du remplissage"
 date: 2026-05-08
-excerpt: "Idee, angle, format, appel a l'action — l'IA aide a rediger, toi tu choisis le sujet."
+excerpt: "Idee, angle, format, appel a l'action - l'IA aide a rediger, toi tu choisis le sujet."
 type: toolbox
 tags: [IA, prompts, ChatGPT, Claude, prompt engineering]
 og_image: ia-prompts-comment-creer-du-contenu-sur-les-reseau-1200x630.jpg

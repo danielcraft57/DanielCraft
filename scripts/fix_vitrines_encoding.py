@@ -53,7 +53,7 @@ def main() -> None:
     if bad:
         print(f"[WARN] Encodage suspect : {', '.join(bad)}")
     else:
-        print(f"[OK] {VITRINES_JSON} — extraits corrigés")
+        print(f"[OK] {VITRINES_JSON} - extraits corrigés")
 
 
 if __name__ == "__main__":

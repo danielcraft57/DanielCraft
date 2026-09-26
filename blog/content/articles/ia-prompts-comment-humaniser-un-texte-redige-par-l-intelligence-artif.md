@@ -1,7 +1,7 @@
 ---
 title: "Humaniser un texte IA : garder le fond, assouplir la forme"
 date: 2026-05-05
-excerpt: "Couper le trop parfait, ajouter exemples et ton — sans perdre le message."
+excerpt: "Couper le trop parfait, ajouter exemples et ton - sans perdre le message."
 type: toolbox
 tags: [IA, prompts, ChatGPT, Claude, prompt engineering]
 og_image: ia-prompts-comment-humaniser-un-texte-redige-par-l-intelligence-artif-1200x630.jpg

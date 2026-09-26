@@ -13,7 +13,7 @@ from vitrine_gen_multipage import run as run_multipage
 def main() -> None:
     print("=== Vitrines IA multi-pages (22 × 4 pages) ===")
     run_multipage()
-    print("OK — vitrines générées dans assets/vitrines/demos/")
+    print("OK - vitrines générées dans assets/vitrines/demos/")
 
 
 if __name__ == "__main__":

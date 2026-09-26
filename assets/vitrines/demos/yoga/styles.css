@@ -1,0 +1,74 @@
+/* yoga theme */
+:root {
+  --vt-paper:#f3f6f2;--vt-card:#fff;--vt-accent:#5b8c6a;--vt-ink:#243028;--vt-mute:#6d7a70;--vt-border:rgba(91,140,106,0.14);--vt-cta-bg:#5b8c6a;--vt-cta-fg:#fff;--bs-body-bg:var(--vt-paper);--bs-body-color:var(--vt-ink);--bs-primary:var(--vt-accent);--bs-link-color:var(--vt-accent);--bs-font-sans-serif:"Quicksand",system-ui,sans-serif;
+
+  --vt-surface: var(--vt-paper);
+  --vt-surface-container: var(--vt-card);
+  --vt-outline: var(--vt-border);
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent) 22%, transparent);
+  --vt-pill-bg: #e4efe6;
+  --vt-pill-ink: #243028;
+}
+body.vt-body-yoga {
+  background: var(--vt-paper);
+  color: var(--vt-ink);
+}
+.vt-display, .vt-section-title, .vt-brand, .navbar-brand.vt-brand {
+  font-family: "Fraunces",Georgia,serif; font-weight: 700; color: inherit;
+}
+.vt-eyebrow { letter-spacing: 0.12em; font-size: 0.7rem; font-weight: 700; color: var(--vt-accent); text-transform: uppercase; }
+.text-secondary { color: var(--vt-mute) !important; }
+.vt-topbar { background: #3d5c46; color: rgba(255,255,255,0.9); }
+.vt-topbar-link { color: inherit; text-decoration: none; }
+.vt-navbar { background: #fff; border-bottom: 1px solid var(--vt-border); }
+.vt-navbar .nav-link { color: inherit; font-weight: 600; opacity: 0.85; }
+.vt-navbar .nav-link.active { color: var(--vt-accent); opacity: 1; }
+.btn-vt-primary {
+  --bs-btn-bg: var(--vt-accent); --bs-btn-border-color: var(--vt-accent);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--vt-accent) 85%, #000);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--vt-accent) 85%, #000);
+  --bs-btn-color: var(--vt-cta-fg, #fff); font-weight: 700; border-radius: 999px;
+}
+.btn-vt-outline {
+  --bs-btn-color: var(--vt-accent); --bs-btn-border-color: color-mix(in srgb, var(--vt-accent) 45%, transparent);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--vt-accent) 12%, transparent); --bs-btn-hover-color: inherit;
+  border-radius: 999px;
+}
+.vt-footer { background: #3d5c46 !important; }
+.vt-fab-menu-main { background: var(--vt-accent); color: var(--vt-cta-fg, #fff); }
+.vt-hero-split { padding: clamp(2rem, 5vw, 3.5rem) 0; }
+.vt-hero-urgency { padding: clamp(2rem, 5vw, 3.5rem) 0 1.5rem; }
+
+.vt-hero-bleed { position: relative; min-height: min(72vh, 560px); display: grid; align-items: end; overflow: hidden; }
+.vt-hero-bleed-img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; z-index: 0; }
+.vt-hero-bleed-copy { position: relative; z-index: 1; padding: clamp(2.5rem, 8vw, 4.5rem) 0 clamp(2rem, 5vw, 3rem); background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.72) 100%); color: #fff; }
+.vt-hero-bleed-copy .lead, .vt-hero-bleed-copy .vt-eyebrow { color: rgba(255,255,255,0.9) !important; }
+.vt-hero-bleed-copy .vt-display { color: #fff; }
+.vt-hero-rounded { width: 100%; border-radius: 1.25rem; object-fit: cover; aspect-ratio: 4/3; display: block; }
+.vt-svc-card { background: var(--vt-card, #fff); border-radius: 1.15rem; overflow: hidden; border: 1px solid var(--vt-border, rgba(0,0,0,0.08)); height: 100%; box-shadow: 0 10px 28px rgba(0,0,0,0.06); }
+.vt-svc-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.vt-quote { background: var(--vt-card, #fff); border-left: 3px solid var(--vt-accent); padding: 1.15rem 1.25rem; border-radius: 0 1rem 1rem 0; height: 100%; margin: 0; }
+.vt-quote-wide { max-width: 40rem; }
+.vt-quote footer { margin-top: 0.75rem; font-size: 0.85rem; color: var(--vt-mute, #666); }
+.vt-cta-sticky { background: var(--vt-cta-bg, var(--vt-accent)); color: var(--vt-cta-fg, #fff); }
+.vt-cta-sticky .text-secondary, .vt-cta-sticky p { color: inherit; opacity: 0.95; }
+.vt-trust-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.vt-trust-list li { position: relative; padding-left: 1.1rem; font-weight: 600; font-size: 0.95rem; }
+.vt-trust-list li::before { content: ""; position: absolute; left: 0; top: 0.45rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--vt-accent); }
+.vt-marquee { overflow: hidden; border-block: 1px solid var(--vt-border, rgba(0,0,0,0.08)); padding: 0.65rem 0; }
+.vt-marquee-track { display: flex; gap: 2.5rem; width: max-content; animation: vt-marquee 28s linear infinite; }
+.vt-marquee-track span { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.75rem; opacity: 0.7; }
+@keyframes vt-marquee { to { transform: translateX(-50%); } }
+@media (min-width: 992px) { body[class*="vt-body-"] { padding-bottom: 0; } }
+body[class*="vt-body-"] { padding-bottom: 4.5rem; }
+
+/* Pill appbar M3 : CTA sur accent theme */
+.vt-pill-actions .btn-light,
+.vt-pill-actions .btn {
+  background: var(--vt-accent) !important;
+  color: var(--vt-cta-fg, #fff) !important;
+}
+body.vt-body-pill {
+  padding-top: 0.25rem;
+}

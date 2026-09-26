@@ -73,7 +73,7 @@ def find_sources(patterns: list[str]) -> dict[str, Path]:
 
     files: list[Path] = []
     for d in search_roots:
-        # Seulement le dossier (pas rglob profond) — plus rapide
+        # Seulement le dossier (pas rglob profond) - plus rapide
         files.extend(p for p in d.glob("prestation-*.png") if p.is_file())
         files.extend(p for p in d.glob("prestation-*.jpg") if p.is_file())
         if d == STAGING:

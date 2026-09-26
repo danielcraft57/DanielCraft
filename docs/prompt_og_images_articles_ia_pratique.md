@@ -36,10 +36,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, wor
 
 ## ia-prompts-comment-creer-un-logo-gratuit-avec-l-ia-1200x630.jpg
 
-Article : Comment créer un logo gratuit avec l’IA
+Article : Comment créer un logo gratuit avec l'IA
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un logo gratuit avec l’IA" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workspace technique avec prompt engineering, console, blocs de contexte et panneau de sortie. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment créer un logo gratuit avec l'IA" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -166,7 +166,7 @@ Scene : visuel Open Graph technique et premium pour un article informatique, int
 
 ## ia-chatgpt-astuce-pour-que-chatgpt-resume-des-videos-youtube-en-utilisant-l-url-1200x630.jpg
 
-Article : Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l’url
+Article : Astuce pour que ChatGPT résume des vidéos YouTube en utilisant l'url
 
 ```
 Scene : visuel Open Graph technique et premium pour un article informatique, interface conversationnelle avancee, panneau de taches, notes et checklists produit. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Astuce pour que ChatGPT résume des vidéos YouTub" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
@@ -236,7 +236,7 @@ Scene : visuel Open Graph technique et premium pour un article informatique, ass
 
 ## ia-claude-ou-trouver-les-videos-officielles-et-gratuites-d-anthropic-pour-appre-1200x630.jpg
 
-Article : Où trouver les vidéos officielles et gratuites d’Anthropic pour appre
+Article : Où trouver les vidéos officielles et gratuites d'Anthropic pour appre
 
 ```
 Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Où trouver les vidéos officielles et gratuites d" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
@@ -306,10 +306,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, ass
 
 ## ia-claude-comment-utiliser-l-ia-chinoise-gratuite-et-open-source-deepseek-en-ve-1200x630.jpg
 
-Article : Comment utiliser l’IA chinoise gratuite et open source Deepseek en ve
+Article : Comment utiliser l'IA chinoise gratuite et open source Deepseek en ve
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser l’IA chinoise gratuite et open " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, assistant de travail, documents longs, connecteurs et panneaux d'analyse. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Comment utiliser l'IA chinoise gratuite et open " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -486,10 +486,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, wor
 
 ## ia-agents-manus-ai-l-agent-ia-le-plus-complet-parfait-pour-les-personnes-non-1200x630.jpg
 
-Article : Manus AI : l’agent IA le plus complet, parfait pour les personnes non
+Article : Manus AI : l'agent IA le plus complet, parfait pour les personnes non
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Manus AI : l’agent IA le plus complet, parfait p" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Manus AI : l'agent IA le plus complet, parfait p" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -536,10 +536,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, wor
 
 ## ia-agents-le-dernier-examen-de-l-humanite-deep-research-d-openai-atteint-un-s-1200x630.jpg
 
-Article : Le dernier examen de l’Humanité : Deep Research d’OpenAI atteint un s
+Article : Le dernier examen de l'Humanité : Deep Research d'OpenAI atteint un s
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Le dernier examen de l’Humanité : Deep Research " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, workflow d'automatisation, noeuds relies, orchestration, etapes d'execution. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Le dernier examen de l'Humanité : Deep Research " et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -556,7 +556,7 @@ Scene : visuel Open Graph technique et premium pour un article informatique, wor
 
 ## ia-images-tutoriel-kling-ai-motion-control-comment-utiliser-l-ia-pour-se-trans-1200x630.jpg
 
-Article : Tutoriel Kling AI motion control Comment utiliser l’IA pour se trans
+Article : Tutoriel Kling AI motion control Comment utiliser l'IA pour se trans
 
 ```
 Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Tutoriel Kling AI motion control Comment utilise" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
@@ -596,10 +596,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, pip
 
 ## ia-images-deepseek-ocr-c-est-une-nouvelle-methode-qui-permet-de-compresser-du-1200x630.jpg
 
-Article : DeepSeek OCR, c’est une nouvelle méthode qui permet de compresser du
+Article : DeepSeek OCR, c'est une nouvelle méthode qui permet de compresser du
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "DeepSeek OCR, c’est une nouvelle méthode qui per" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, pipeline image, outils de retouche, calques, generation visuelle technique. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "DeepSeek OCR, c'est une nouvelle méthode qui per" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -686,10 +686,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, par
 
 ## ia-cours-le-futur-du-travail-avec-l-intelligence-artificielle-plus-d-opportu-1200x630.jpg
 
-Article : Le futur du travail avec l’intelligence artificielle : plus d’opportu
+Article : Le futur du travail avec l'intelligence artificielle : plus d'opportu
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Le futur du travail avec l’intelligence artifici" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Le futur du travail avec l'intelligence artifici" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -716,10 +716,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, par
 
 ## ia-cours-5-predictions-sur-le-futur-de-l-ia-et-de-l-humanite-selon-sam-altman-1200x630.jpg
 
-Article : 5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman
+Article : 5 prédictions sur le futur de l'IA et de l'humanité selon Sam Altman
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "5 prédictions sur le futur de l’IA et de l’human" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "5 prédictions sur le futur de l'IA et de l'human" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -766,10 +766,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, par
 
 ## ia-cours-plein-de-formations-gratuites-a-l-intelligence-artificielle-sur-le-si-1200x630.jpg
 
-Article : Plein de formations gratuites à l’intelligence artificielle sur le si
+Article : Plein de formations gratuites à l'intelligence artificielle sur le si
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Plein de formations gratuites à l’intelligence a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, parcours d'apprentissage, modules, ressources, docs et tableaux de progression. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Plein de formations gratuites à l'intelligence a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -956,10 +956,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, com
 
 ## ia-outils-deepseek-l-ia-chinoise-gratuite-et-open-source-a-t-elle-copie-openai-1200x630.jpg
 
-Article : Deepseek l’IA chinoise gratuite et open source a-t-elle copié OpenAI
+Article : Deepseek l'IA chinoise gratuite et open source a-t-elle copié OpenAI
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Deepseek l’IA chinoise gratuite et open source a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, comparatif d'outils, cartes produit, interfaces cote a cote, mesures. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Deepseek l'IA chinoise gratuite et open source a" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1006,7 +1006,7 @@ Scene : visuel Open Graph technique et premium pour un article informatique, vis
 
 ## ia-metiers-etude-secrete-sur-reddit-par-l-universite-de-zurich-l-intelligence-1200x630.jpg
 
-Article : Étude secrète sur Reddit par l'université de Zurich : l’intelligence
+Article : Étude secrète sur Reddit par l'université de Zurich : l'intelligence
 
 ```
 Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Étude secrète sur Reddit par l'université de Zur" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
@@ -1026,10 +1026,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, vis
 
 ## ia-metiers-l-intelligence-artificielle-est-elle-vraim-1200x630.jpg
 
-Article : L’intelligence artificielle est-elle vraim
+Article : L'intelligence artificielle est-elle vraim
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "L’intelligence artificielle est-elle vraim" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "L'intelligence artificielle est-elle vraim" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---
@@ -1066,10 +1066,10 @@ Scene : visuel Open Graph technique et premium pour un article informatique, vis
 
 ## ia-metiers-genie-3-l-ia-de-google-capable-de-creer-des-mondes-3d-interactifs-e-1200x630.jpg
 
-Article : Genie 3 : l’IA de Google capable de créer des mondes 3D interactifs e
+Article : Genie 3 : l'IA de Google capable de créer des mondes 3D interactifs e
 
 ```
-Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Genie 3 : l’IA de Google capable de créer des mo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Scene : visuel Open Graph technique et premium pour un article informatique, visualisation de metiers, tendances, data, postes de travail modernes. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Genie 3 : l'IA de Google capable de créer des mo" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---

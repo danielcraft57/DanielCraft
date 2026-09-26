@@ -89,6 +89,10 @@
                     <span hidden data-prestation-base-price="{{prestation_price_eur}}"></span>
                     <strong hidden class="prestation-devis-total" data-prestation-total>{{prestation_price_eur}} €</strong>
                     <div class="prestation-devis-addons" data-prestation-addons="{{prestation_addons_json}}" hidden></div>
+                    <script type="application/json" data-prestation-year1>{{prestation_year1_json}}</script>
+                    {% if prestation_year1_html %}
+                    {{prestation_year1_html}}
+                    {% endif %}
 
                     <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisOpenModal"
                         data-prestation-devis-open
@@ -119,7 +123,7 @@
         <div class="prestation-detail-split-col prestation-detail-split-col--benefits scroll-reveal" style="--reveal-delay: 0ms">
             <h2 class="prestation-detail-split-title">
                 <i class="fas fa-star" aria-hidden="true"></i>
-                Les bénéfices pour vous
+                Ce que ça change pour toi
             </h2>
             {{prestation_benefits_html}}
         </div>

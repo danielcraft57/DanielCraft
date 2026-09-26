@@ -78,7 +78,7 @@
           window.location.href = data.url;
           return;
         }
-        feedback(fb, (data && data.error) || 'Impossible d’ouvrir le paiement Stripe.', true);
+        feedback(fb, (data && data.error) || 'Impossible d'ouvrir le paiement Stripe.', true);
       })
       .catch(function () {
         feedback(fb, 'Serveur injoignable. Utilisez PHP sur dist/ (php -S … -t dist).', true);
@@ -101,7 +101,7 @@
     var banner = document.getElementById('vitrineStripeReturn');
     if (banner) {
       banner.hidden = false;
-      banner.textContent = 'Merci — votre paiement Stripe a été enregistré. Je vous contacte sous peu pour la suite.';
+      banner.textContent = 'Merci - votre paiement Stripe a été enregistré. Je vous contacte sous peu pour la suite.';
       banner.classList.add('vitrine-stripe-return--ok');
     }
   } else if (stripeParam === 'cancel') {

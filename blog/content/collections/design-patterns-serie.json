@@ -1,7 +1,7 @@
 {
   "id": "design-patterns-serie",
-  "title": "Serie Design Patterns — recettes de code (GoF, version simple)",
-  "description": "Les 23 design patterns du Gang of Four expliques simplement : analogies du quotidien, schemas, et liens entre articles — sans jargon inutile.",
+  "title": "Serie Design Patterns - recettes de code (GoF, version simple)",
+  "description": "Les 23 design patterns du Gang of Four expliqués simplement : analogies du quotidien, schémas, et liens entre articles - sans jargon inutile.",
   "slug": "design-patterns-serie",
   "articles": [
     "design-patterns-introduction-gang-of-four",

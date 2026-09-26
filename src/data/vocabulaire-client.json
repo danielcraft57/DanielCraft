@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "description": "Lexique client DanielCraft - formulations concretes pour commerces et artisans du Grand Est. Source pour agents, MCP et revue de copy.",
+  "regles": [
+    "Benefice concret avant le moyen technique",
+    "Le client doit comprendre du premier coup, sans jargon info",
+    "1 touche locale Grand Est max par bloc (voir AGENTS.md)",
+    "Apostrophes droites, tirets simples"
+  ],
+  "interdit": [
+    {
+      "id": "clair-sur-telephone",
+      "phrase": "clair sur téléphone",
+      "variantes": [
+        "clair sur telephone",
+        "clairs sur téléphone",
+        "clair sur mobile",
+        "message clair sur mobile"
+      ],
+      "raison": "Trop vague - un commerçant ne sait pas ce qu'il obtient. Dire ce que le client voit ou fait.",
+      "alternatives": [
+        "horaires et numéro visibles sur téléphone",
+        "bouton appeler en un clic",
+        "numéro et contact lisibles sans zoomer",
+        "ton client appelle en un clic"
+      ]
+    },
+    {
+      "id": "lisible-sur-telephone-seul",
+      "phrase": "lisible sur téléphone",
+      "variantes": [
+        "lisible sur mobile"
+      ],
+      "raison": "Acceptable en liste courte seulement. Préférer une action ou un élément visible (numéro, horaires, bouton).",
+      "alternatives": [
+        "bouton appeler en un clic",
+        "horaires et numéro en gros sur téléphone",
+        "contact visible sans pincer l'écran"
+      ]
+    },
+    {
+      "id": "responsive",
+      "phrase": "responsive",
+      "raison": "Jargon dev - le client ne connait pas le terme.",
+      "alternatives": [
+        "s'affiche bien sur téléphone",
+        "numéro et horaires visibles sur téléphone"
+      ]
+    },
+    {
+      "id": "mobile-first",
+      "phrase": "mobile-first",
+      "raison": "Jargon dev.",
+      "alternatives": [
+        "pensé pour le téléphone de tes clients",
+        "bouton appeler en un clic"
+      ]
+    }
+  ],
+  "benefices": {
+    "telephone": [
+      "horaires et numéro visibles sur téléphone",
+      "bouton appeler en un clic",
+      "contact visible sans zoomer",
+      "ton client appelle en un clic",
+      "adresse et itinéraire en un tap"
+    ],
+    "google": [
+      "trouvé sur Google",
+      "visible sur Google et Maps",
+      "les gens te trouvent quand ils cherchent ton métier"
+    ],
+    "vitesse": [
+      "ça charge vite",
+      "pages qui s'ouvrent sans attendre",
+      "pas de page blanche au chargement"
+    ],
+    "sécurité": [
+      "bien protégé",
+      "cadenas HTTPS sur le site",
+      "mises à jour de sécurité suivies"
+    ],
+    "sur_mesure": [
+      "fait pour toi",
+      "pas une usine toute faite",
+      "pas une boîte à plugins",
+      "on part de ton activité, pas d'un modèle pour tout le monde"
+    ],
+    "délai": [
+      "souvent en moins d'une semaine",
+      "devis PDF clair",
+      "réponse sous 24 h ouvrées"
+    ]
+  },
+  "zones": {
+    "hero_h1": {
+      "note": "1 benefice concret + promesse visibilite. Pas de slogan creux.",
+      "exemples": [
+        "Horaires et numéro visibles sur téléphone - pour que les gens te trouvent",
+        "Tes clients t'appellent en deux clics - et te trouvent sur Google"
+      ]
+    },
+    "hero_lead": {
+      "note": "3 phrases courtes : qui, benefice telephone, benefice Google, sur-mesure.",
+      "exemples": [
+        "Ton client appelle en un clic. Tu es trouvé sur Google."
+      ]
+    },
+    "checklist": {
+      "note": "Chaque puce = action ou element visible, pas un adjectif vague.",
+      "exemples": [
+        "Bouton appeler en un clic",
+        "Formulaire de contact",
+        "Trouvable sur Google"
+      ]
+    }
+  }
+}

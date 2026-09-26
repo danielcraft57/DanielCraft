@@ -1,7 +1,7 @@
 ---
 title: "SecOps et SOC : qui surveille quoi (expliqué simplement)"
 date: 2025-11-06
-excerpt: "Qui regarde les alertes, comment on trie, et comment on s'améliore après un raté — sans jargon inutile."
+excerpt: "Qui regarde les alertes, comment on trie, et comment on s'améliore après un raté - sans jargon inutile."
 type: article
 tags: [SecOps, SOC, incident, détection, opérations]
 series: cybersecurite-secops-serie

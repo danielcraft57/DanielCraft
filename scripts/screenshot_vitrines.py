@@ -299,7 +299,7 @@ def main() -> None:
     parser.add_argument(
         "--base-url",
         default="",
-        help="URL de base dist (ex. http://127.0.0.1:8000/vitrines) — pas de serveur intégré",
+        help="URL de base dist (ex. http://127.0.0.1:8000/vitrines) - pas de serveur intégré",
     )
     parser.add_argument(
         "--demos-dir",
@@ -357,7 +357,7 @@ def main() -> None:
 
     if use_external:
         base = args.base_url.strip().rstrip("/")
-        print(f"Mode dist — base : {base}")
+        print(f"Mode dist - base : {base}")
         _wait_for_base(base)
         embedded = False
     else:
@@ -375,7 +375,7 @@ def main() -> None:
         base = f"http://{args.host}:{port}"
         embedded = True
         time.sleep(0.2)
-        print(f"Mode demos — {base}")
+        print(f"Mode demos - {base}")
 
     ext = ".webp" if cfg["capture_format"] == "webp" else ".jpg"
 

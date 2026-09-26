@@ -92,7 +92,7 @@
     return isSameDay(d, easterMon) || isSameDay(d, ascension) || isSameDay(d, whitMon);
   }
 
-  /** Lundi–vendredi hors fériés (jours ouvrés). */
+  /** Lundi-vendredi hors fériés (jours ouvrés). */
   function isJourOuvre(d) {
     return !isWeekend(d) && !isFrenchPublicHoliday(d);
   }
@@ -106,7 +106,7 @@
 
   /**
    * Créneaux « circadiens » : évite le tout début de matinée et le creux post-repas,
-   * fenêtre d’éveil plus stable (fin matinée + milieu d’après-midi).
+   * fenêtre d'éveil plus stable (fin matinée + milieu d'après-midi).
    */
   function buildTimeSlots() {
     const slots = [];
@@ -126,10 +126,10 @@
   const TIME_SLOTS = buildTimeSlots();
 
   /**
-   * Offres alignées sur /nos-offres + forfaits page d’accueil.
+   * Offres alignées sur /nos-offres + forfaits page d'accueil.
    * slug → champ POST `service` ; budget optionnel (réf. forfait affichée côté mail).
    */
-  /** Besoins exprimés en langage courant (étape 1) — alignés sur /nos-offres. */
+  /** Besoins exprimés en langage courant (étape 1) - alignés sur /nos-offres. */
   const CONTACT_NEED_CATEGORIES = [
     {
       slug: 'site',
@@ -289,7 +289,7 @@
   ];
 
   /**
-   * Offres avec tags = types de projet (étape 1) pour regroupement à l’étape 2.
+   * Offres avec tags = types de projet (étape 1) pour regroupement à l'étape 2.
    * Un même slug peut apparaître dans plusieurs groupes si pertinent.
    */
   const CONTACT_SERVICE_ITEMS = [
@@ -848,12 +848,12 @@
     function updateSummary() {
       if (!summaryDate) return;
       if (!state.selectedDate) {
-        summaryDate.textContent = '—';
+        summaryDate.textContent = '-';
         return;
       }
       let line = formatFrenchLong(state.selectedDate);
       if (state.selectedTime === 'flexible') {
-        line += ' — créneau à définir par email';
+        line += ' - créneau à définir par email';
       } else if (state.selectedTime) {
         line += ' à ' + state.selectedTime.replace(':', 'h');
       }
@@ -903,12 +903,12 @@
     function buildAutoMessage() {
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
       const typeLabel = (CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug) || {})
-        .label || typeSlug || '—';
+        .label || typeSlug || '-';
 
-      const serviceTitle = state.selectedServiceTitle || '—';
+      const serviceTitle = state.selectedServiceTitle || '-';
 
       const dateLine = state.selectedDate ? formatFrenchLong(state.selectedDate) : RECAP_NO_SLOT;
-      let timeLine = '—';
+      let timeLine = '-';
       if (state.selectedDate && state.selectedTime) {
         timeLine =
           state.selectedTime === 'flexible'
@@ -921,8 +921,8 @@
       const lines = [
         'Demande via le formulaire du site :',
         `- Besoin : ${typeLabel}`,
-        `- Situation : ${state.qualifQ1Label || '—'}`,
-        `- Détail : ${state.qualifQ2Label || state.qualifContext || '—'}`,
+        `- Situation : ${state.qualifQ1Label || '-'}`,
+        `- Détail : ${state.qualifQ2Label || state.qualifContext || '-'}`,
         `- Offre : ${serviceTitle}`,
         `- Date proposée : ${dateLine}`,
         `- Heure : ${timeLine}`
@@ -939,17 +939,17 @@
 
       const typeSlug = (projectTypeField && projectTypeField.value) || '';
       const typeObj = CONTACT_NEED_CATEGORIES.find((x) => x.slug === typeSlug);
-      recapTypeEl.textContent = typeObj?.label || '—';
-      if (recapQualifQ1El) recapQualifQ1El.textContent = state.qualifQ1Label || '—';
-      if (recapQualifQ2El) recapQualifQ2El.textContent = state.qualifQ2Label || state.qualifContext || '—';
-      recapServiceEl.textContent = state.selectedServiceTitle || '—';
-      if (recapNameEl) recapNameEl.textContent = (nameEl?.value || '').trim() || '—';
-      if (recapEmailEl) recapEmailEl.textContent = (emailEl?.value || '').trim() || '—';
-      if (recapPhoneEl) recapPhoneEl.textContent = (phoneEl?.value || '').trim() || '—';
+      recapTypeEl.textContent = typeObj?.label || '-';
+      if (recapQualifQ1El) recapQualifQ1El.textContent = state.qualifQ1Label || '-';
+      if (recapQualifQ2El) recapQualifQ2El.textContent = state.qualifQ2Label || state.qualifContext || '-';
+      recapServiceEl.textContent = state.selectedServiceTitle || '-';
+      if (recapNameEl) recapNameEl.textContent = (nameEl?.value || '').trim() || '-';
+      if (recapEmailEl) recapEmailEl.textContent = (emailEl?.value || '').trim() || '-';
+      if (recapPhoneEl) recapPhoneEl.textContent = (phoneEl?.value || '').trim() || '-';
 
       recapDateEl.textContent = state.selectedDate ? formatFrenchLong(state.selectedDate) : RECAP_NO_SLOT;
 
-      let timeLabel = '—';
+      let timeLabel = '-';
       if (state.selectedDate && state.selectedTime) {
         timeLabel =
           state.selectedTime === 'flexible'
@@ -978,8 +978,8 @@
 
       if (data && data.devis_issued) {
         titleEl.textContent = data.fallback
-          ? 'Demande enregistrée — devis en cours'
-          : 'Devis envoyé — consultez votre boîte mail';
+          ? 'Demande enregistrée - devis en cours'
+          : 'Devis envoyé - consultez votre boîte mail';
         bodyEl.innerHTML =
           (data.message
             ? escapeHtml(data.message)
@@ -1000,7 +1000,7 @@
         return;
       }
 
-      titleEl.textContent = 'C’est envoyé — consultez votre boîte mail';
+      titleEl.textContent = 'C'est envoyé - consultez votre boîte mail';
       bodyEl.innerHTML =
         'Merci pour votre message. Je reviens vers vous sous <strong>24 h ouvrées</strong>.';
       if (stepsEl) {
@@ -1056,7 +1056,7 @@
       if (resStatus === 500 || /mail\(\)|PHPMailer|smtp|envoi email impossible/i.test(raw)) {
         return {
           message:
-            'L’email n’a pas pu être transmis au serveur mail. La demande n’est pas envoyée.',
+            'L'email n'a pas pu être transmis au serveur mail. La demande n'est pas envoyée.',
           tips: [
             'Vérifiez la configuration SMTP (.env : serveur, port, identifiants).',
             'Consultez les logs PHP pour le détail (authentification TLS / login).',
@@ -1075,7 +1075,7 @@
         };
       }
       return {
-        message: raw || 'Une erreur est survenue pendant l’envoi.',
+        message: raw || 'Une erreur est survenue pendant l'envoi.',
         tips: [
           'Réessayez dans quelques instants.',
           'Vérifiez votre connexion Internet.',
@@ -1245,7 +1245,7 @@
       if (progressLabel) {
         const dur = STEP_DURATIONS[n] || '';
         progressLabel.textContent = dur
-          ? `Étape ${n} sur ${WIZARD_STEP_COUNT} — environ ${dur}`
+          ? `Étape ${n} sur ${WIZARD_STEP_COUNT} - environ ${dur}`
           : `Étape ${n} sur ${WIZARD_STEP_COUNT}`;
       }
 
@@ -1529,7 +1529,7 @@
         hideFeedback();
         const pt = (projectTypeField && projectTypeField.value) || '';
         if (!pt) {
-          showFeedback('Choisissez d’abord votre besoin principal.', true);
+          showFeedback('Choisissez d'abord votre besoin principal.', true);
           setStep(1);
           return;
         }
@@ -1696,7 +1696,7 @@
       return TIME_SLOTS.some((slot) => slotToMinutes(slot) > nowMin);
     }
 
-    /** Au moins un jour ouvré sélectionnable dans ce mois (0–11) */
+    /** Au moins un jour ouvré sélectionnable dans ce mois (0-11) */
     function monthHasSelectableDays(year, month) {
       const lastDay = new Date(year, month + 1, 0).getDate();
       for (let day = 1; day <= lastDay; day++) {
@@ -1913,7 +1913,7 @@
         return false;
       }
       if (!state.selectedTime || !hiddenTime.value) {
-        showFeedback('Veuillez choisir un créneau horaire ou l’option flexible.', true);
+        showFeedback('Veuillez choisir un créneau horaire ou l'option flexible.', true);
         return false;
       }
       hideFeedback();
@@ -1980,7 +1980,7 @@
       }
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       if (!emailOk) {
-        setFieldError(emailEl, 'Format d’email invalide.');
+        setFieldError(emailEl, 'Format d'email invalide.');
         hideFeedback();
         emailEl?.focus({ preventScroll: true });
         return false;
@@ -2145,7 +2145,7 @@
       const v = (emailEl.value || '').trim();
       clearFieldError(emailEl);
       if (v && !isEmailFormatValid(v)) {
-        setFieldError(emailEl, 'Format d’email invalide.');
+        setFieldError(emailEl, 'Format d'email invalide.');
       }
     });
     phoneEl?.addEventListener('input', () => clearFieldError(phoneEl));

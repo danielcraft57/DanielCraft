@@ -2,7 +2,7 @@
  * Compléments visuels : carrousels Swiper, lightbox GLightbox, zoom léger.
  */
 
-/* ——— Swiper (vitrines image) ——— */
+/* --- Swiper (vitrines image) --- */
 .vitrine-image-swiper {
   position: relative;
   padding-bottom: 2.5rem;
@@ -42,7 +42,7 @@
   background: currentColor;
 }
 
-/* ——— GLightbox : zone cliquable pleine largeur ——— */
+/* --- GLightbox : zone cliquable pleine largeur --- */
 figure.image.is-4by3 a.glightbox {
   display: block;
   height: 100%;
@@ -66,7 +66,7 @@ figure.image a.glightbox:focus-visible {
   outline: 2px solid #3273dc;
 }
 
-/* ——— Ken Burns discret (image pleine largeur) ——— */
+/* --- Ken Burns discret (image pleine largeur) --- */
 .vitrine-figure--ken {
   overflow: hidden;
   border-radius: 10px;
@@ -104,7 +104,7 @@ figure.image a.glightbox:focus-visible {
   }
 }
 
-/* ——— Apparition au scroll (figures / colonnes) ——— */
+/* --- Apparition au scroll (figures / colonnes) --- */
 .vitrine-img-reveal {
   opacity: 0;
   transform: translateY(1.35rem) scale(0.98);
@@ -137,7 +137,7 @@ figure.image a.glightbox:focus-visible {
   }
 }
 
-/* ——— Survol : léger relief + image ——— */
+/* --- Survol : léger relief + image --- */
 .vitrine-figure--motion {
   border-radius: 10px;
   overflow: hidden;
@@ -167,7 +167,7 @@ figure.image a.glightbox:focus-visible {
   }
 }
 
-/* ——— SVG inline « dessin » animé ——— */
+/* --- SVG inline « dessin » animé --- */
 .vitrine-svg-inline-wrap {
   max-width: 22rem;
   margin-left: auto;

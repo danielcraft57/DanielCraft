@@ -91,7 +91,7 @@
     initImgReveal();
   });
 
-  /** Figures hors colonnes déjà marquées : même animation d’apparition au scroll */
+  /** Figures hors colonnes déjà marquées : même animation d'apparition au scroll */
   function augmentFigureRevealTargets() {
     document.querySelectorAll("main figure.vitrine-figure").forEach(function (fig) {
       if (fig.closest(".vitrine-img-reveal")) return;

@@ -16,7 +16,7 @@ AWS propose plusieurs briques :
 
 - **CloudWatch** pour les métriques et les logs ;
 - **X-Ray** pour les traces de requêtes ;
-- **CloudTrail** pour l’audit des appels API.
+- **CloudTrail** pour l'audit des appels API.
 
 ---
 
@@ -54,7 +54,7 @@ Tu peux aussi :
 Tu peux créer des alarmes sur :
 
 - des métriques de base (CPU > 80 %, mémoire saturée) ;
-- des métriques issues des logs (nombre d’erreurs 500/minute).
+- des métriques issues des logs (nombre d'erreurs 500/minute).
 
 Réactions possibles :
 
@@ -79,7 +79,7 @@ Usage recommandé :
 
 - activer X-Ray sur les services critiques (APIs, microservices) ;
 - échantillonner raisonnablement pour limiter les coûts ;
-- utiliser ces données pour identifier les goulots d’étranglement.
+- utiliser ces données pour identifier les goulots d'étranglement.
 
 ---
 
@@ -94,18 +94,18 @@ Usage recommandé :
 Indispensable pour :
 
 - les enquêtes de sécurité ;
-- la conformité (traçabilité des actions d’admin) ;
-- le debugging de certains problèmes d’infra.
+- la conformité (traçabilité des actions d'admin) ;
+- le debugging de certains problèmes d'infra.
 
 Bonnes pratiques :
 
-- activer CloudTrail au niveau de l’organisation ;
+- activer CloudTrail au niveau de l'organisation ;
 - envoyer les logs dans un bucket [S3](/blog/articles/aws-stockage-s3-ebs-efs.html) dédié, éventuellement chiffré ;
 - limiter les accès à ce bucket.
 
 ---
 
-## 4. Mettre en place une stack d’observabilité minimale
+## 4. Mettre en place une stack d'observabilité minimale
 
 Pour une application web/API sur AWS, une stack de base devrait inclure :
 
@@ -139,8 +139,8 @@ Pour une application web/API sur AWS, une stack de base devrait inclure :
 
 ### 5.3 Culture
 
-- Intégrer les dashboards d’observabilité dans les rituels (revues hebdo, post‑mortems).
-- Rendre visibles les métriques business (commandes, taux d’erreur…) au même titre que les métriques techniques.
+- Intégrer les dashboards d'observabilité dans les rituels (revues hebdo, post‑mortems).
+- Rendre visibles les métriques business (commandes, taux d'erreur…) au même titre que les métriques techniques.
 
 ---
 
@@ -150,6 +150,6 @@ Sur AWS, une bonne observabilité repose sur :
 
 - **CloudWatch** pour les métriques et les logs + alarmes ;
 - **X-Ray** pour voir le chemin complet des requêtes complexes ;
-- **CloudTrail** pour savoir qui a fait quoi sur l’infrastructure.
+- **CloudTrail** pour savoir qui a fait quoi sur l'infrastructure.
 
 Cette visibilité est essentielle pour exploiter sereinement les architectures construites avec le reste de la série AWS (compute, stockage, réseau, bases, sécurité).+

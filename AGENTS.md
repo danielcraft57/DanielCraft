@@ -13,54 +13,126 @@ Quand tu rediges du contenu pour les pages du site (HTML, JSON meta/SEO, fiches 
 ### Ponctuation
 
 - Apostrophes droites uniquement : `'` (pas d'apostrophes courbees)
-- Tirets simples uniquement : `-` (pas de tirets cadratins `—`)
+- Tirets simples uniquement : `-` (pas de tirets cadratins)
+
+### Orthographe et grammaire
+
+- Accents obligatoires sur le contenu visible (pas de francais « sans accents »)
+- Accords et conjugaisons corrects ; le ton oral (`t'es`, `y'a`) n'excuse pas une faute
+- Avant de livrer du copy : relire les fichiers touches (voir aussi `.cursorrules`)
 
 ### Portee
 
 S'applique au contenu visible et SEO des pages (`src/pages/`, includes de texte, `src/data/*.json` descriptifs, articles blog). Pas aux commentaires techniques de code ni aux logs de build.
 
-### Ton Grand Est / Lorrain (leger)
+### Ton Grand Est (argot populaire d'abord)
 
-Le site parle aux commerces du **Grand Est**. On peut colorer le francais avec un **levain lorrain**, sans transformer la page en patois illisible.
+Le site parle aux commerces du **Grand Est**. On colore le francais avec un **argot local courant** - celui qu'on entend au magasin, au marche, entre voisins - pas un lexique dialectal rare.
 
-**Dosage** : 1 touche locale de temps en temps (hero lead, bio, CTA soft, blog) - pas un mot dialectal par phrase. Le client doit comprendre du premier coup.
+**Priorite vocabulaire (obligatoire)** :
+1. **Argot / regionalismes populaires** (connus hors du cercle des passionnes de patois) - c'est la base du site.
+2. **Grammaire et accents** (elisions orales, cadence lorraine) - **actif** apres le vocabulaire. Voir sous-section « Grammaire et accents ». Ne pas phonetiser le texte pour « faire local ».
+3. **Dialectal rare / platt / interjections mosellanes** - hors pages marketing. Reserve aux demos fiction, blog anecdotique, ou oral imite - jamais en hero, CTA, FAQ client.
 
-**Repères locaux (OK a glisser)** :
+**Dosage** : 1 touche locale de temps en temps (hero lead, bio, CTA soft, blog) - pas un mot regional par phrase. Le client doit comprendre du premier coup, meme s'il n'est pas de Metz.
 
-| Dire | Sens / usage |
-|------|----------------|
-| `entre midi` | entre 12 h et 14 h (pas « a midi ») |
-| `ca geths` / `ca geths sa moal` | ca va ? / ca va bien (Moselle, influence platt) |
-| `comment qu'c'est ?` | comment ca va ? (tournure locale) |
-| `ca tire` | il y a un courant d'air |
-| `nareux` / `nareuse` | difficile sur la bouffe / le propre (Robert 2021) |
-| `clanche` / `clancher` | poignee / ouvrir-fermer la porte |
-| `cornet` | sac plastique |
-| `schlappe` | pantoufle |
-| `schneck` | pain au raisin |
-| `schlouk` | une gorgee |
-| `chawée` | grosse averse (w comme Waterloo) |
-| `prendre une rincee` | etre trempe sous la pluie |
-| `couarail` | discussion improvisee, papotage |
-| `bassoter` | ne pas avancer dans le boulot |
-| `beugner` | abimer, cogner, faire une bosse |
-| `trisser` | se tirer vite / gicler |
-| `vi` / `ui` | oui (familier) |
-| `Ach jo`, `oye`, `oh leck` | interjections mosellanes (tres leger, oral) |
-| article + prenom | « le Loic », « la Marie » (tournure locale) |
-| imperatif + `voir` | « regarde voir », « dis voir » |
-| Metz | on dit **Mess** a l'oral ; a l'ecrit garder Metz |
+**Vocabulaire OK (populaire, a privilegier)** :
 
-**Grand Est au sens large** : parler des villes (Nancy, Epinal, Strasbourg, Thionville…) sans jargon alsa ; ne pas confondre Lorraine et Alsace. Positionnement marketing = **Grand Est** ; ancrage perso Loic = Metz + terrain (Nancy, Epinal, Strasbourg).
+| Dire | Sens / usage | Ou l'utiliser |
+|------|----------------|---------------|
+| `entre midi` | entre 12 h et 14 h (pas « a midi ») | bio, contact, CTA soft |
+| `nareux` / `nareuse` / `faire le nareux` | difficile sur la bouffe / le propre ; au figure : tatillon sans raison | devis, prix, FAQ |
+| `clanche` / `clancher` | poignee / ouvrir-fermer la porte | image, blog, demo artisan |
+| `cornet` | sac plastique (marche, courses) | echantillons, metaphore « gouter avant » |
+| `ca tire` | il y a un courant d'air | humour leger, blog, anecdote |
+| `comment qu'c'est ?` | comment ca va ? | oral imite, jamais en H1 froid |
+| `gros` | mec / l'ami (« a plus, gros ») | tres leger, fin de phrase orale |
+| `une paire de` | plusieurs (« une paire d'actions ») | audit, livrables, FAQ |
+| `viens avec` | viens avec nous / moi (sans « moi ») | CTA doux contact |
+| `guette voir` | regarde / fais attention | variante de « regarde voir » |
+| `dis voir` / `regarde voir` | dis-moi / regarde (imperatif + voir) | CTA, titres section |
+| `couatcher` | papoter, discuter tranquillement | bio, contact, process |
+| `chtuque` | un morceau (« un chtuque d'aide ») | dosage rare, FAQ / about |
+| `attendre sur` | attendre quelqu'un (« j'attends sur toi ») | contact, delais - 1 fois max |
+| `ca caille` / `ca pele` | il fait tres froid | blog / anecdote saison, pas hero |
+| `faire bleu` | secher / zappe | humour leger seulement, pas promesse |
+| `au magasin` / `a la boutique` | ancrage commerce local | bio, contact |
+| `sur le terrain` | en vrai, chez les clients | trust, about |
+| `demeler` | clarifier un vrai probleme | CTA, FAQ |
+| article + prenom | « le Loic », « la Marie » | about, blog |
+| Metz | a l'ecrit **toujours Metz** (pas « Mess ») | partout |
 
-**A eviter sur le site** : gros mots de soif (`cheuler`, `chouille`) en hero/CTA ; argot parisien deguise en lorrain (`daron`, `schlinguer` - pas specifiquement local) ; phonetique illisible type `j'mopel`. Preferer une tournure naturelle + 1 mot local.
+**Vocabulaire a eviter sur le site** (trop rare, trop platt, ou trop « lexique souvenir ») :
+
+| Dire | Pourquoi |
+|------|----------|
+| `ca geths` / `ca geths sa moal` | platt / peu lisible hors Moselle |
+| `schlappe`, `schneck`, `schlouk`, `shmer` | germanismes locaux - OK en demo fiction, pas en marketing DanielCraft |
+| `chawée`, `prendre une rincee`, `broussiner` | meteo anecdotique - pas pour un CTA |
+| `couarail`, `bassoter`, `beugner`, `trisser`, `chpritser` | peu connus hors region / hors generation |
+| `fratz`, `boulimatche`, `staarf`, `petchave`, `zaubette` | trop argot rue / peu lisible |
+| `Ach jo`, `oye`, `oh leck`, `oh ye`, `vi` / `ui`, `veck` | interjections orales - pas sur une page web |
+| `cheuler`, `chouille`, `goutte` (eau-de-vie) | mots de soif - jamais en hero/CTA |
+| `daron`, `schlinguer`, `grailler`, etc. | argot parisien ou generique deguise en local |
+| `souffler la lumiere`, `flot` (noeud) | trop domestique / peu utile en marketing web |
+| phonetique type `j'mopel` | illisible ; voir section Grammaire - accents a l'oral seulement |
+
+**Grand Est au sens large** : parler des villes (Nancy, Epinal, Strasbourg, Thionville…) sans jargon alsacien ; ne pas confondre Lorraine et Alsace. Positionnement marketing = **Grand Est** ; ancrage perso Loic = Metz + terrain (Nancy, Epinal, Strasbourg). Touches culture OK en leger : mirabelle, marche, boutique - sans en faire un cliche.
 
 **Exemples de ton** :
 - « On peut se parler entre midi si t'es au magasin. »
 - « Pas la peine de faire le nareux avec le devis : prix affiche, PDF direct. »
 - « Dis voir ce qui bloque - on demele ca ensemble. »
+- « Comme au marche : tu goutes avant de remplir le cornet. »
+- « Viens avec ton besoin - on en parle. »
+- « Tu repars avec une paire d'actions concretes - pas un roman. »
+- « On peut juste couatcher 10 minutes pour cadrer. »
+- « Guette voir les echantillons avant de te lancer. »
+- « J'attends pas sur un miracle : brief clair, on avance. »
 
-Sources d'inspiration (lexique, pas a copier tel quel) : parler lorrain / Moselle (clanche, entre midi, ca geths, nareux), Radio Melodie / lexiques locaux.
+Sources d'inspiration (lexique courant, pas a copier tel quel) : parler lorrain quotidien (entre midi, nareux, clanche, cornet, gros, une paire de, viens avec, attendre sur), pas les listes folklore / platt.
+
+### Grammaire et accents (2e temps - actif)
+
+Le vocabulaire pose la couleur. La **grammaire** donne la cadence orale. Les **accents** (prononciation Moselle / Lorraine) restent **a l'oral** (visio, telephone, video) - **jamais** recopies en phonetique sur le site.
+
+**Principe** : francais standard lisible + tournures locales. Le client doit pouvoir lire a voix haute sans buter.
+
+#### A faire (ecrit web)
+
+| Tour | Exemple | Note |
+|------|---------|------|
+| Tutoiement client | « ton site », « tu veux » | pages commerce / contact / FAQ / audit |
+| Phrases courtes | « Brief clair. On avance. » | 1 idee par phrase quand c'est possible |
+| Pause orale avec `-` | « Dis voir - on demele ca. » | tiret simple, pas cadratin |
+| Elisions lisibles | `t'es`, `t'as`, `c'est`, `y'a` | OK ; garder l'apostrophe droite `'` |
+| Negation orale legere | « j'attends pas sur… » | 1 fois de temps en temps, pas partout |
+| Imperatif + `voir` | « dis voir », « regarde voir », « guette voir » | deja au lexique |
+| `viens avec` (sans « moi ») | « Viens avec ton besoin » | calque local courant |
+| `attendre sur` | « j'attends sur toi » | 1 fois max par page |
+| Article + prenom | « le Loic » | about / blog, pas en H1 froid |
+| Relance douce | « en vrai », « bon », « voila » | dosage rare, jamais en meta SEO |
+
+#### A ne pas faire (ecrit web)
+
+| Eviter | Pourquoi |
+|--------|----------|
+| Phonetique (`Mess`, `j'mopel`, `chuis`, `kekchose`) | illisible, faux local |
+| Recoller l'accent (`vingt` avec T force a l'ecrit, `oeuf`/`boeuf`) | ca s'entend a l'oral, ca ne s'ecrit pas |
+| Enlever tous les `ne` / ecrire en SMS | fatigue a la lecture, ton pas pro |
+| Enchainer 3 tournures locales dans la meme phrase | surcharge ; 1 touche suffit |
+| Tutoyer + vouvoyer dans le meme bloc | choisir **tu** sur le parcours client |
+| `comment qu'c'est` en titre H1 | trop oral pour un hero |
+
+#### Accents (oral seulement - note agents)
+
+A Metz / Moselle a l'oral : on entend souvent **Mess**, le **t** de *vingt*, parfois *oeuf* / *boeuf* avec le **f**. Sur le site : orthographe francaise normale (**Metz**, *vingt*, *oeufs*). Si un script video / podcast : respecter l'oral local sans le forcer a l'ecran.
+
+**Exemples de cadence** (grammaire, pas jargon) :
+- « T'es au magasin entre midi ? On peut en parler. »
+- « J'attends pas sur un miracle. Brief clair, on avance. »
+- « Viens avec ce qui bloque - on demele ca. »
+- « En vrai, trois pages bien faites battent un site a rallonge. »
 
 ### Public client (prioritaire)
 
@@ -68,7 +140,8 @@ Les clients (commerces, artisans, independants du Grand Est) **ne sont pas infor
 
 Quand tu rediges pour le site (accueil, fiches, audit, contact, FAQ, SEO grand public) :
 - **Interdit** (sauf blog tech / livres / page pro explicite) : CMS, SSR, Lighthouse, framework, TypeScript, Astro, Next, API, DevOps, CI/CD, refactoring, etc.
-- **Preferer** : site rapide, clair sur telephone, trouve sur Google, devis simple, livraison en jours, un seul interlocuteur, bien protege / suivi apres mise en ligne.
+- **Preferer** : numero et horaires visibles sur telephone, bouton appeler en un clic, trouve sur Google, devis simple, livraison en jours, un seul interlocuteur, bien protege / suivi apres mise en ligne.
+- **Eviter** les formulations vagues (`clair sur telephone`, `responsive`, `optimise`) - voir `src/data/vocabulaire-client.json` et MCP `docs/MCP_VOCABULAIRE.md`.
 - Expliquer le **benefice** avant le **moyen**. Si un terme tech est indispensable, le traduire en une phrase simple juste apres.
 - Ne jamais faire sentir le client « nul » en info : ton egal a egal, naturel.
 
@@ -130,7 +203,7 @@ Loic : **dev depuis 2011**, **licence en 2018**. DanielCraft ne vend **pas** du 
 Quand tu ecris (accueil, bio, blog, livres, fiches) :
 - **Interdit** de presenter le travail comme « un site WordPress » / « sous CMS » / page builder.
 - Preferer : sites **faits sur-mesure**, rapides, clairs - la stack precise reste en **2e rideau** sauf page tech / blog / livres.
-- Au client commerce : benefices d'abord (rapide, clair sur telephone, trouve sur Google).
+- Au client commerce : benefices concrets d'abord (numero et horaires visibles sur telephone, trouve sur Google, ca charge vite).
 
 **Stacks populaires** (usage interne / blog tech / livres - **pas** en hero client) 2025-2026 :
 

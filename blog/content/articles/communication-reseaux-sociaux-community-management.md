@@ -1,7 +1,7 @@
 ---
 title: "Community management : animer sans s'epuiser"
 date: 2024-04-18
-excerpt: "Ecouter, publier, repondre, moderer — un rythme humain et utile."
+excerpt: "Ecouter, publier, repondre, moderer - un rythme humain et utile."
 type: article
 tags: [communication, reseaux sociaux, community management, engagement, animation]
 series: communication-serie
@@ -11,7 +11,7 @@ og_image: communication-cm-1200x630.jpg
 
 # Community management : animer sans s'epuiser
 
-Le community management, c'est l'animation quotidienne de ta presence sur les reseaux sociaux : publier du contenu utile, repondre aux messages, moderer les echanges, observer ce qui fonctionne. Un bon CM ne cherche pas la viralite a tout prix. Il construit une relation reguliere et sincere avec sa communaute — sans s'epuiser au bout de trois mois.
+Le community management, c'est l'animation quotidienne de ta presence sur les reseaux sociaux : publier du contenu utile, repondre aux messages, moderer les echanges, observer ce qui fonctionne. Un bon CM ne cherche pas la viralite a tout prix. Il construit une relation reguliere et sincere avec sa communaute - sans s'epuiser au bout de trois mois.
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/com-community.svg" alt="Schema community management" class="schema-inline" width="640" />
@@ -35,7 +35,7 @@ La regularite bat le volume. Mieux vaut trois posts utiles par semaine qu'un pos
 
 - **Informatif** : conseils, actualites metier, retours d'experience
 - **Relationnel** : coulisses, equipe, temoignages clients
-- **Promotionnel** : offres, lancements, evenements — en proportion minoritaire
+- **Promotionnel** : offres, lancements, evenements - en proportion minoritaire
 
 Regle courante : 70 % de contenu utile ou relationnel, 30 % de promotion maximum. Reutilise tes contenus longs (article, video) en plusieurs formats courts. Batch la creation : consacre une demi-journee par mois a preparer plusieurs posts, plutot que de chercher chaque matin une idee sous pression. Tu gagnes en qualite et en sérénité.
 
@@ -48,7 +48,7 @@ La reponse est le coeur du community management :
 - Traite les critiques avec calme et professionnalisme
 - Vise un delai de 24 h pour les messages importants
 
-Ton de voix : humain, pas corporate froid. Evite les reponses copiees-collees. Signe avec un prenom si tu es une petite structure — ca personnalise l'echange. Meme un « merci pour votre retour, je transmets a l'equipe » sincere vaut mieux qu'un silence qui laisse penser a un compte automatique deshumanise.
+Ton de voix : humain, pas corporate froid. Evite les reponses copiees-collees. Signe avec un prenom si tu es une petite structure - ca personnalise l'echange. Meme un « merci pour votre retour, je transmets a l'equipe » sincere vaut mieux qu'un silence qui laisse penser a un compte automatique deshumanise.
 
 ## Moderer sans etouffer
 
@@ -65,7 +65,7 @@ Moderer ne veut pas dire supprimer toute critique legitime. Un desaccord exprime
 Quelques indicateurs utiles :
 
 - **Portee** : combien de personnes voient tes posts
-- **Engagement** : commentaires, partages, clics — pas seulement les likes
+- **Engagement** : commentaires, partages, clics - pas seulement les likes
 - **Trafic** : visites sur ton site depuis les reseaux
 - **Conversions** : inscriptions, devis, ventes si tracables
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Demande d'audit gratuit — lance l'analyse ProspectLab + envoi du rapport par email.
+ * Demande d'audit gratuit - lance l'analyse ProspectLab + envoi du rapport par email.
  *
  * POST JSON ou form-data :
  *   website  (URL http(s))
@@ -156,17 +156,17 @@ if ($website === '') {
     pl_json_error(400, 'URL du site invalide. Utilisez une adresse http(s).');
 }
 if ($email === '') {
-    pl_json_error(400, 'L’email est obligatoire.');
+    pl_json_error(400, 'L'email est obligatoire.');
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    pl_json_error(400, 'L’email n’est pas valide.');
+    pl_json_error(400, 'L'email n'est pas valide.');
 }
 if (preg_match("/[\r\n]/", $email)) {
     pl_json_error(400, 'Données invalides.');
 }
 
 if (!pl_has_audit_auth()) {
-    pl_json_error(500, 'Service d’audit temporairement indisponible.');
+    pl_json_error(500, 'Service d'audit temporairement indisponible.');
 }
 
 $ip = pl_client_ip();
@@ -184,7 +184,7 @@ if (!$plResult['ok']) {
         pl_json_error($status, $plResult['error'] !== '' ? $plResult['error'] : 'Demande refusée.');
     }
     error_log('[request-free-audit] ProspectLab ' . $status . ': ' . $plResult['error']);
-    pl_json_error(502, 'Impossible de lancer l’audit pour le moment. Réessayez dans quelques minutes.');
+    pl_json_error(502, 'Impossible de lancer l'audit pour le moment. Réessayez dans quelques minutes.');
 }
 
 $dryRunRaw = getenv('CONTACT_MAIL_DRY_RUN');
@@ -196,9 +196,9 @@ $safeEmail = audit_esc($email);
 $siteBase = rtrim(getenv('SITE_BASE') ?: 'https://danielcraft.fr', '/');
 
 if (!$dryRun) {
-    $adminSubject = 'Audit gratuit demandé — ' . preg_replace('#^https?://#i', '', $website);
+    $adminSubject = 'Audit gratuit demandé - ' . preg_replace('#^https?://#i', '', $website);
     $taskNote = $plResult['task_id'] !== '' ? "\nTask ID : {$plResult['task_id']}" : '';
-    $skipNote = $plResult['skipped_analysis'] ? "\n(Analyse déjà en base — PDF + email direct)" : '';
+    $skipNote = $plResult['skipped_analysis'] ? "\n(Analyse déjà en base - PDF + email direct)" : '';
     $adminText = "Demande audit gratuit\n\nSite : {$website}\nEmail : {$email}\nAPI : {$plResult['source']}{$taskNote}{$skipNote}\n";
     $adminHtml = '<p><strong>Site :</strong> <a href="' . $safeSite . '">' . $safeSite . '</a></p>'
         . '<p><strong>Email :</strong> ' . $safeEmail . '</p>'
@@ -207,18 +207,18 @@ if (!$dryRun) {
         $adminHtml .= '<p><strong>Task ID :</strong> ' . audit_esc($plResult['task_id']) . '</p>';
     }
     if ($plResult['skipped_analysis']) {
-        $adminHtml .= '<p><em>Analyse déjà en base — envoi PDF direct.</em></p>';
+        $adminHtml .= '<p><em>Analyse déjà en base - envoi PDF direct.</em></p>';
     }
     audit_send_simple_mail($adminTo, $adminSubject, $adminText, $adminHtml, $email);
 
-    $userSubject = 'Votre audit gratuit est en cours — DanielCraft';
+    $userSubject = 'Votre audit gratuit est en cours - DanielCraft';
     $userText = "Bonjour,\n\nNous avons bien reçu votre demande d'audit pour :\n{$website}\n\n"
-        . "Rapport en route — vous recevrez 3 priorités concrètes pour votre site sous 48 h ouvrées.\n\n"
+        . "Rapport en route - vous recevrez 3 priorités concrètes pour votre site sous 48 h ouvrées.\n\n"
         . $siteBase . '/analyse?website=' . rawurlencode($website) . "&full=1\n\n"
         . "DanielCraft\n";
-    $userHtml = '<p>Bonjour,</p><p>Nous avons bien reçu votre demande d’audit pour :</p>'
+    $userHtml = '<p>Bonjour,</p><p>Nous avons bien reçu votre demande d'audit pour :</p>'
         . '<p><a href="' . $safeSite . '"><strong>' . $safeSite . '</strong></a></p>'
-        . '<p><strong>Rapport en route</strong> — vous recevrez <strong>3 priorités</strong> pour votre site à <strong>'
+        . '<p><strong>Rapport en route</strong> - vous recevrez <strong>3 priorités</strong> pour votre site à <strong>'
         . $safeEmail . '</strong> sous <strong>48 h ouvrées</strong>.</p>'
         . '<p><a href="' . audit_esc($siteBase) . '/analyse?website=' . rawurlencode($website) . '&amp;full=1">Voir un aperçu en ligne</a></p>'
         . '<p>À bientôt,<br>DanielCraft</p>';
@@ -229,8 +229,8 @@ $response = [
     'success' => true,
     'queued' => (bool) $plResult['queued'],
     'message' => $plResult['skipped_analysis']
-        ? 'Merci ! Votre rapport PDF est en cours d’envoi par email.'
-        : 'Rapport en route — 3 priorités pour votre site sous 48 h ouvrées.',
+        ? 'Merci ! Votre rapport PDF est en cours d'envoi par email.'
+        : 'Rapport en route - 3 priorités pour votre site sous 48 h ouvrées.',
 ];
 if ($plResult['task_id'] !== '') {
     $response['task_id'] = $plResult['task_id'];

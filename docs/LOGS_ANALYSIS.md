@@ -2,7 +2,7 @@
 
 ## Erreurs Identifiées
 
-### 1. Favicon Manquant ✅ CORRIGÉ
+### 1. Favicon Manquant  CORRIGÉ
 
 **Problème** :
 - Les navigateurs cherchent `/favicon.ico` à la racine
@@ -13,7 +13,7 @@
 - Redirection nginx de `/favicon.ico` vers `/assets/icons/favicon.svg`
 - Ajout du favicon dans le build
 
-### 2. Requêtes Suspectes (Bots Malveillants) ✅ CORRIGÉ
+### 2. Requêtes Suspectes (Bots Malveillants)  CORRIGÉ
 
 **Problème** :
 Des bots malveillants tentent d'accéder à des fichiers suspects :

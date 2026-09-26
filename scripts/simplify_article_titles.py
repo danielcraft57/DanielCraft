@@ -17,7 +17,7 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "secops-soc-fonctions-process": (
         "SecOps et SOC : qui surveille quoi (expliqué simplement)",
-        "Qui regarde les alertes, comment on trie, et comment on s'améliore après un raté — sans jargon inutile.",
+        "Qui regarde les alertes, comment on trie, et comment on s'améliore après un raté - sans jargon inutile.",
     ),
     "siem-log-management-detection": (
         "SIEM : lire les traces de ton système sans te noyer",
@@ -45,16 +45,16 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "devsecops-sast-dast-sbom": (
         "Sécurité dans le code : contrôler avant de publier",
-        "Vérifier le code, les dépendances et les images avant la mise en ligne — sans freiner toute l'équipe.",
+        "Vérifier le code, les dépendances et les images avant la mise en ligne - sans freiner toute l'équipe.",
     ),
     "conformite-rgpd-nis2-iso27001": (
         "RGPD, NIS2, ISO : se mettre en règle sans paniquer",
-        "Ce que ces cadres demandent vraiment : des contrôles, des preuves, et du bon sens — pas un classeur poussiéreux.",
+        "Ce que ces cadres demandent vraiment : des contrôles, des preuves, et du bon sens - pas un classeur poussiéreux.",
     ),
     # API
     "api-rest-graphql-fondamentaux-comparaison": (
         "API : deux façons de faire parler un site et un serveur",
-        "REST et GraphQL, c'est quoi ? Deux styles pour demander des infos à un serveur — on pose le décor.",
+        "REST et GraphQL, c'est quoi ? Deux styles pour demander des infos à un serveur - on pose le décor.",
     ),
     "api-rest-bonnes-pratiques-conception": (
         "REST : bien organiser ses portes et ses règles",
@@ -70,12 +70,12 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "choisir-rest-graphql-quand-et-comment": (
         "REST ou GraphQL : comment choisir (ou combiner)",
-        "Une grille simple selon ton contexte — et comment mixer les deux sans se perdre.",
+        "Une grille simple selon ton contexte - et comment mixer les deux sans se perdre.",
     ),
     # UX
     "ux-ui-fondamentaux-differences": (
         "UX et UI : la sensation contre le look",
-        "L'expérience vécue vs l'interface visible — et comment les faire marcher ensemble.",
+        "L'expérience vécue vs l'interface visible - et comment les faire marcher ensemble.",
     ),
     "ergonomie-heuristiques-nielsen": (
         "Ergonomie : 10 règles simples pour moins frustrer",
@@ -91,7 +91,7 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "parcours-utilisateur-mapping-jtbd": (
         "Le chemin de l'utilisateur : étapes et freins",
-        "User flows, journey map et JTBD — pour voir où ça coince vraiment.",
+        "User flows, journey map et JTBD - pour voir où ça coince vraiment.",
     ),
     "design-system-composants-tokens": (
         "Design system : les briques pour rester cohérent",
@@ -99,7 +99,7 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "accessibilite-wcag-checklist": (
         "Accessibilité : pour que tout le monde puisse utiliser",
-        "Une checklist WCAG utile : contraste, clavier, labels — et des tests qui comptent.",
+        "Une checklist WCAG utile : contraste, clavier, labels - et des tests qui comptent.",
     ),
     "ui-typographie-couleurs-grille": (
         "Textes, couleurs et alignement : rendre clair",
@@ -124,7 +124,7 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "docker-volumes-reseaux": (
         "Docker : garder ses fichiers et connecter les boîtes",
-        "Volumes pour persister, réseaux pour faire parler les services — sans magie noire.",
+        "Volumes pour persister, réseaux pour faire parler les services - sans magie noire.",
     ),
     "docker-compose-environnements-local": (
         "Docker Compose : plusieurs boîtes qui travaillent ensemble",
@@ -177,7 +177,7 @@ TITLES: dict[str, tuple[str, str | None]] = {
     ),
     "aws-devops-ci-cd-codepipeline-codebuild": (
         "AWS : publier du code automatiquement",
-        "Du commit au déploiement avec des contrôles qualité — pas juste un bouton magique.",
+        "Du commit au déploiement avec des contrôles qualité - pas juste un bouton magique.",
     ),
 }
 

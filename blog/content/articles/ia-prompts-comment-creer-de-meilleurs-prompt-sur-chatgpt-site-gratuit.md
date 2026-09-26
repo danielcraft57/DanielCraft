@@ -1,7 +1,7 @@
 ---
 title: "Meilleurs prompts : methode + quelques aides gratuites"
 date: 2026-05-07
-excerpt: "Role, contexte, objectif, format — puis des sites d'exemples si tu bloques."
+excerpt: "Role, contexte, objectif, format - puis des sites d'exemples si tu bloques."
 type: toolbox
 tags: [IA, prompts, ChatGPT, Claude, prompt engineering]
 og_image: ia-prompts-comment-creer-de-meilleurs-prompt-sur-chatgpt-site-gratuit-1200x630.jpg

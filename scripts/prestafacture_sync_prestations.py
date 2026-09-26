@@ -137,7 +137,7 @@ def api_request(method: str, path: str, body: dict | None = None) -> tuple[int, 
         except OSError as e:
             if attempt < 3:
                 wait = 2 ** attempt
-                print(f"    [reseau] {e} — pause {wait}s...", file=sys.stderr)
+                print(f"    [reseau] {e} - pause {wait}s...", file=sys.stderr)
                 time.sleep(wait)
                 continue
             raise
@@ -160,7 +160,7 @@ class ProductCatalog:
                 raise RuntimeError("Rate limit Prestafacture (429). Attendez 1-2 minutes.")
             if status != 200 or not isinstance(data, dict):
                 msg = data.get("message", data) if isinstance(data, dict) else data
-                raise RuntimeError(f"GET /produits page {page}: HTTP {status} — {msg}")
+                raise RuntimeError(f"GET /produits page {page}: HTTP {status} - {msg}")
             items = data.get("items") or []
             if not isinstance(items, list):
                 break
@@ -412,7 +412,7 @@ def main() -> int:
     if api_copy.parent.is_dir():
         api_copy.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print(f"\n[OK] {touched} entree(s) — prestations.json (+ api/data/)")
+    print(f"\n[OK] {touched} entree(s) - prestations.json (+ api/data/)")
     if failures:
         print(f"[WARN] {failures} entree(s) en echec")
     if args.recreate or args.full:

@@ -67,7 +67,7 @@ html {
   }
 }
 
-/* Menu burger — mobile & tablette portrait */
+/* Menu burger - mobile & tablette portrait */
 @media (max-width: 959px) {
   body.menu-open {
     overflow: hidden;
@@ -75,25 +75,49 @@ html {
 
   .nav-container {
     padding: var(--space-3) var(--space-4);
+    justify-content: flex-start;
+    gap: 0.65rem;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  /* Burger a gauche, logo juste a cote - plus d'ecart a droite */
+  .nav-actions {
+    order: -1;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .nav-logo {
+    order: 0;
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: var(--nav-offset, 4.5rem);
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     background: #f8fbff;
     flex-direction: column;
     align-items: stretch;
     gap: 0.15rem;
-    padding: var(--space-3) var(--space-4) var(--space-4);
+    padding: var(--space-3) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
     box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
     border-top: 1px solid rgba(126, 161, 216, 0.45);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 999;
-    max-height: calc(100dvh - 70px);
+    max-height: calc(100dvh - var(--nav-offset, 4.5rem));
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu.active {
@@ -116,7 +140,15 @@ html {
   }
 
   .nav-toggle {
-    display: flex;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
   }
 
   .nav-cta {
@@ -421,7 +453,7 @@ html {
   }
 }
 
-/* UX backlog — pages contact, offres, vitrines, audit */
+/* UX backlog - pages contact, offres, vitrines, audit */
 .page-contact-hero { padding: 2.5rem 0 1rem; }
 .page-contact-hero + .contact .section-header { display: none; }
 .page-contact-lead { max-width: 42rem; }

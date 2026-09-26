@@ -34,7 +34,7 @@ Sans pipeline, le déploiement dépend de la personne, de la machine, du jour. A
 - l'image est versionnée (SHA ou tag semver),
 - le cluster reçoit toujours la même procédure.
 
-Exemple mental : Alice merge un fix. La CI construit `mon-api:a1b2c3`, pousse l'image, met à jour le Deployment, attend que le rollout soit OK. Bob n'a pas besoin d'être là — et Alice non plus après le merge.
+Exemple mental : Alice merge un fix. La CI construit `mon-api:a1b2c3`, pousse l'image, met à jour le Deployment, attend que le rollout soit OK. Bob n'a pas besoin d'être là - et Alice non plus après le merge.
 
 Pour le détail des images Docker dans un pipeline : [build d'images Docker en CI/CD](/blog/articles/ci-cd-build-images-docker.html).
 
@@ -143,7 +143,7 @@ La CI peut alors se limiter à : build + push image + commit du nouveau tag dans
 - **Tag `latest` partout** : tu ne sais plus quelle version tourne, et le rollback devient flou.
 - **Déployer sans attendre le rollout** : le job vert alors que les pods crashent en boucle.
 - **Pas de séparation staging / prod** : un merge = prod directe sans filet.
-- **Secrets applicatifs dans l'image** : préfère Secrets / ConfigMaps montés au runtime — voir [ConfigMaps et Secrets](/blog/articles/kubernetes-configmaps-secrets.html).
+- **Secrets applicatifs dans l'image** : préfère Secrets / ConfigMaps montés au runtime - voir [ConfigMaps et Secrets](/blog/articles/kubernetes-configmaps-secrets.html).
 
 ---
 
@@ -155,4 +155,4 @@ La CI peut alors se limiter à : build + push image + commit du nouveau tag dans
 - Préférer GitOps dès que plusieurs personnes touchent la prod.
 - Documenter le chemin de rollback en une commande (ou un revert).
 
-Avec cette chaîne — code → build Docker → push → déploiement Kubernetes — tu as une base DevOps solide, prête à évoluer vers des stratégies plus fines et une vraie observabilité une fois en prod.
+Avec cette chaîne - code → build Docker → push → déploiement Kubernetes - tu as une base DevOps solide, prête à évoluer vers des stratégies plus fines et une vraie observabilité une fois en prod.

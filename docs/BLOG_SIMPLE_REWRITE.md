@@ -24,7 +24,7 @@ Objectif : articles **lisibles par un débutant**, avec **schémas SVG** et **un
 | IA Prompts | `scripts/simplify_ia_prompts_articles.py` |
 | Helpers SVG | `scripts/add_series3_extra_schemas.py` (`flow_row`, `compare2`, `grid3`, `stack_layers`) |
 
-Pattern d’un script : écrire les SVG → réécrire chaque `.md` (frontmatter `title`/`excerpt` + corps) → patcher la collection.
+Pattern d'un script : écrire les SVG → réécrire chaque `.md` (frontmatter `title`/`excerpt` + corps) → patcher la collection.
 
 ## Images OG (pas de bannières)
 
@@ -50,7 +50,7 @@ Pattern d’un script : écrire les SVG → réécrire chaque `.md` (frontmatter
 
 5. Rebuild blog. **Ne pas** lancer `install_blog_article_banners.py`.
 
-Le hero article utilise l’OG (`og_image` / `_get_article_hero_image` dans le build).
+Le hero article utilise l'OG (`og_image` / `_get_article_hero_image` dans le build).
 
 ## Séries déjà passées en ton simple
 
@@ -64,4 +64,4 @@ API, Cyber, UX, Docker, AWS, CI/CD, Kubernetes, SEO, GEO, Marketing, Communicati
 
 ## Déploiement
 
-**Désactivé par défaut** dans ce chantier. Si besoin plus tard : `scp` vers `pi@node12.lan:/var/www/danielcraft.fr` puis `chmod -R a+rX` — uniquement sur demande.
+**Désactivé par défaut** dans ce chantier. Si besoin plus tard : `scp` vers `pi@node12.lan:/var/www/danielcraft.fr` puis `chmod -R a+rX` - uniquement sur demande.

@@ -48,7 +48,7 @@ ESTIMATED_HOURS_BY_SKU: dict[str, float] = {
     "ECO-IMAGES-EXTRA": 1,
 }
 
-# Livrables courts (2 à 3 max) — montants + heures alignés sur le réel.
+# Livrables courts (2 à 3 max) - montants + heures alignés sur le réel.
 LIVRABLES_BY_SKU: dict[str, list[dict[str, Any]]] = {
     "SITE-VITRINE-ESSENTIEL": [
         {"livrable": "Pages essentielles (jusqu'à 3)", "montant": 280, "heures": 12},
@@ -436,7 +436,7 @@ def product_description(
 
     price_label = (entry.get("price_label") or (parent or {}).get("price_label") or "Forfait").strip()
     if price_eur > 0:
-        text = f"{text} — {price_label} {price_eur} € HT"
+        text = f"{text} - {price_label} {price_eur} € HT"
 
     return text[:DESCRIPTION_MAX_LEN] if text else name[:DESCRIPTION_MAX_LEN]
 
@@ -449,7 +449,7 @@ def build_rich_product_body(
     parent: dict | None = None,
     slug: str = "",
 ) -> dict[str, Any]:
-    """Payload POST/PATCH /produits — champs catalogue + livrables + techStack."""
+    """Payload POST/PATCH /produits - champs catalogue + livrables + techStack."""
     category_key = _category_key(entry, parent)
     meta = product_meta(entry, parent)
     icon = meta["iconName"]

@@ -152,7 +152,7 @@
     const { website: rawWebsite } = readParams();
     const website = safeWebsite(rawWebsite);
 
-    els.website.textContent = website ? website : (rawWebsite || '—');
+    els.website.textContent = website ? website : (rawWebsite || '-');
 
     if (!website) {
       setFeedback('Lien invalide : paramètre "website" manquant ou incorrect.', true);
@@ -250,7 +250,7 @@
     els.btn.onclick = async () => {
       const note = getSelectedNote();
       if (note === null) {
-        setFeedback('Veuillez choisir un motif, ou cliquer sur “Continuer sans motif”.', true);
+        setFeedback('Veuillez choisir un motif, ou cliquer sur "Continuer sans motif".', true);
         return;
       }
       await doUnsubscribe(note);

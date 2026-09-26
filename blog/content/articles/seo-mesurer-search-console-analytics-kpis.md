@@ -1,7 +1,7 @@
 ---
 title: "Mesurer le SEO : savoir ce qui marche vraiment"
 date: 2024-07-16
-excerpt: "Search Console et analytics : impressions, clics, positions — sans vanity metrics."
+excerpt: "Search Console et analytics : impressions, clics, positions - sans vanity metrics."
 type: article
 tags: [SEO, mesure, Search Console, Analytics, KPIs]
 series: seo-serie

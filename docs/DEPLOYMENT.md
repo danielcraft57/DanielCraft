@@ -55,9 +55,9 @@ Depuis la racine du repo :
 
 ### Notes utiles
 
-- Si `rsync` n’est pas trouvé, le script te le dira et passera en fallback `scp`.
-- `SiteBase` sert au build (canoniques, OG, sitemaps) : mets l’URL publique finale.
-- Variante “sans paramètres” (recommandé) : mets ces valeurs dans `.env.local` :
+- Si `rsync` n'est pas trouvé, le script te le dira et passera en fallback `scp`.
+- `SiteBase` sert au build (canoniques, OG, sitemaps) : mets l'URL publique finale.
+- Variante "sans paramètres" (recommandé) : mets ces valeurs dans `.env.local` :
   - `DEPLOY_SERVER_USER`, `DEPLOY_SERVER_HOST`, `DEPLOY_SERVER_PATH`
   - `DEPLOY_SITE_BASE`, `DEPLOY_NGINX_LOG_NAME`
 - Pour consulter les logs nginx (si tu as les droits) :
@@ -156,12 +156,12 @@ sudo certbot --nginx -d ton-domaine.com -d www.ton-domaine.com
 - Catalogue vitrines DanielCraft : `https://ton-domaine.com/vitrines/` (collection + fiches)
 - Index technique des démos Bulma : `https://ton-domaine.com/vitrines/hub-bulma.html`
 - Fiche vitrine (achat, textes) : `https://ton-domaine.com/vitrines/<slug>/` (ex. `/vitrines/technologie/`)
-- Démo HTML d’un secteur : `https://ton-domaine.com/vitrines/<slug>/demo/index.html`
+- Démo HTML d'un secteur : `https://ton-domaine.com/vitrines/<slug>/demo/index.html`
 - Le build copie **`assets/vitrines/demos/`** et **`assets/vitrines/screenshots/`** vers **`dist/vitrines/`** ; le déploiement doit inclure tout le dossier **`dist/vitrines/`** (voir `scripts/deploy-content.ps1` et **[VITRINES.md](./VITRINES.md)**).
 
 ## Déploiement automatique sur le serveur (cron)
 
-Le webroot (`/var/www/danielcraft.fr`) n’est **pas** un dépôt git. Le dépôt vit à part :
+Le webroot (`/var/www/danielcraft.fr`) n'est **pas** un dépôt git. Le dépôt vit à part :
 
 | Chemin | Rôle |
 |--------|------|
@@ -170,7 +170,7 @@ Le webroot (`/var/www/danielcraft.fr`) n’est **pas** un dépôt git. Le dépô
 
 Le script `scripts/prod-auto-deploy.sh` enchaîne : `git pull` → tests PHP/Python → `build.py` → `rsync` (`.env` prod préservé).
 
-**Cron installé sur `pi@node12.lan`** — toutes les 15 minutes, déploie seulement si `master` a avancé sur GitHub :
+**Cron installé sur `pi@node12.lan`** - toutes les 15 minutes, déploie seulement si `master` a avancé sur GitHub :
 
 ```bash
 */15 * * * * REPO_DIR=/home/pi/danielcraft-src WEB_ROOT=/var/www/danielcraft.fr SITE_BASE=https://danielcraft.fr /home/pi/danielcraft-src/scripts/prod-auto-deploy.sh >> /home/pi/logs/danielcraft-deploy.log 2>&1

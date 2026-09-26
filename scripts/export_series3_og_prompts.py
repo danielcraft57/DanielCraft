@@ -33,7 +33,7 @@ def main() -> None:
     out_m.write_text(json.dumps(ordered, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     lines = [
-        "# Prompts OG — séries API REST/GraphQL, Cybersécurité, UX/UI",
+        "# Prompts OG - séries API REST/GraphQL, Cybersécurité, UX/UI",
         "",
         f"Manifest pour **{len(ordered)}** articles (régénération).",
         "",

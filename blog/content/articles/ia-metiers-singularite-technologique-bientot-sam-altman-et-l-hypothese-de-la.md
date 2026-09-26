@@ -1,7 +1,7 @@
 ---
 title: "Singularite : hypothese, pas calendrier"
 date: 2026-08-20
-excerpt: "Debats sur le futur lointain — utile pour reflechir, pas pour paniquer."
+excerpt: "Debats sur le futur lointain - utile pour reflechir, pas pour paniquer."
 type: article
 tags: [IA, metiers, emploi, futur du travail]
 og_image: ia-metiers-singularite-technologique-bientot-sam-altman-et-l-hypothese-de-la-1200x630.jpg

@@ -18,7 +18,7 @@ og_image: geo-technique-1200x630.jpg
 
 Les moteurs génératifs parcourent le web comme les crawlers classiques. Pour être cité, ton contenu doit être **accessible**, **lisible** et **rapide**. Ce guide détaille les leviers techniques : robots.txt, structure HTML, contenu initial, et performance.
 
-Le GEO (Generative Engine Optimization) ne remplace pas le [SEO classique](/blog/articles/seo-fondamentaux-referencement-naturel.html) : il s’appuie sur les mêmes bases techniques, avec une exigence encore plus forte sur le texte réellement présent dans la page. Pour le cadre global, vois aussi [GEO vs SEO](/blog/articles/geo-vs-seo-differences-complementarite.html) et le [guide GEO](/blog/articles/geo-nouveau-seo-ia-guide-complet.html).
+Le GEO (Generative Engine Optimization) ne remplace pas le [SEO classique](/blog/articles/seo-fondamentaux-referencement-naturel.html) : il s'appuie sur les mêmes bases techniques, avec une exigence encore plus forte sur le texte réellement présent dans la page. Pour le cadre global, vois aussi [GEO vs SEO](/blog/articles/geo-vs-seo-differences-complementarite.html) et le [guide GEO](/blog/articles/geo-nouveau-seo-ia-guide-complet.html).
 
 ---
 
@@ -26,7 +26,7 @@ Le GEO (Generative Engine Optimization) ne remplace pas le [SEO classique](/blog
 
 ### Ne pas bloquer les crawlers
 
-Un `Disallow: /blog/` ou `Disallow: /` dans ton robots.txt empêche les moteurs (et les bots génératifs) d’accéder à ces pages. Vérifie que les sections stratégiques sont **autorisées** :
+Un `Disallow: /blog/` ou `Disallow: /` dans ton robots.txt empêche les moteurs (et les bots génératifs) d'accéder à ces pages. Vérifie que les sections stratégiques sont **autorisées** :
 
 ```
 User-agent: *
@@ -38,7 +38,7 @@ Sitemap: https://tondomaine.fr/blog/sitemap-blog.xml
 
 ### Sitemap à jour
 
-Un sitemap XML liste tes URLs et aide à la découverte. Inclus pages clés, articles, collections. Les IA s’appuient souvent sur les mêmes mécanismes de crawl que Google : si la page n’est pas trouvable, elle ne sera pas citée.
+Un sitemap XML liste tes URLs et aide à la découverte. Inclus pages clés, articles, collections. Les IA s'appuient souvent sur les mêmes mécanismes de crawl que Google : si la page n'est pas trouvable, elle ne sera pas citée.
 
 ### Checklist indexabilité
 
@@ -52,21 +52,21 @@ Un sitemap XML liste tes URLs et aide à la découverte. Inclus pages clés, art
 
 ### Problème des SPA et du chargement JS
 
-Les apps monopages (React, Vue, Angular) chargent souvent le contenu **après** le JavaScript. Le HTML initial ne contient qu’un `<div id="root"></div>` vide. Un crawler qui n’exécute pas (ou mal) le JS ne voit rien.
+Les apps monopages (React, Vue, Angular) chargent souvent le contenu **après** le JavaScript. Le HTML initial ne contient qu'un `<div id="root"></div>` vide. Un crawler qui n'exécute pas (ou mal) le JS ne voit rien.
 
-**Impact GEO** : si ton texte n’est pas dans le HTML initial, les moteurs génératifs peuvent l’ignorer — même si un humain voit la page « correctement » dans le navigateur.
+**Impact GEO** : si ton texte n'est pas dans le HTML initial, les moteurs génératifs peuvent l'ignorer - même si un humain voit la page « correctement » dans le navigateur.
 
 ### Solutions
 
 - **SSR** (Server-Side Rendering) : Next.js, Nuxt, SvelteKit génèrent le HTML côté serveur.
-- **SSG** (Static Site Generation) : pages HTML au build — idéal pour un blog.
+- **SSG** (Static Site Generation) : pages HTML au build - idéal pour un blog.
 - **Prérendering** : snapshots HTML pour les crawlers (ex. Prerender.io).
 
 Pour un blog, SSG ou HTML statique reste la solution la plus simple et la plus fiable.
 
 ### Vérification
 
-Ouvre le code source (Ctrl+U / Cmd+U). Le titre, l’intro et les sections principales doivent apparaître en clair dans le HTML, pas seulement dans des `<script>` ou des divs vides.
+Ouvre le code source (Ctrl+U / Cmd+U). Le titre, l'intro et les sections principales doivent apparaître en clair dans le HTML, pas seulement dans des `<script>` ou des divs vides.
 
 ---
 
@@ -81,7 +81,7 @@ Utilise une hiérarchie claire :
 - des `<h3>` pour les sous-parties ;
 - balises sémantiques : `<article>`, `<section>`, `<header>`, `<main>`.
 
-Exemple concret : un article « comment choisir un hébergement » avec H2 « Critères », « Budget », « Checklist ». Un modèle d’IA qui résume la page retrouve facilement les blocs — comme un lecteur humain. Pour les formats qui aident au résumé, vois le [contenu GEO et sa structure](/blog/articles/geo-contenu-structure-formats-checklist.html).
+Exemple concret : un article « comment choisir un hébergement » avec H2 « Critères », « Budget », « Checklist ». Un modèle d'IA qui résume la page retrouve facilement les blocs - comme un lecteur humain. Pour les formats qui aident au résumé, vois le [contenu GEO et sa structure](/blog/articles/geo-contenu-structure-formats-checklist.html).
 
 ### Schema.org JSON-LD
 
@@ -90,7 +90,7 @@ Ajoute des données structurées :
 - **BlogPosting** / **Article** : titre, auteur, date, description ;
 - **FAQPage** : questions-réponses ;
 - **HowTo** : tutoriels étape par étape ;
-- **BreadcrumbList** : fil d’Ariane.
+- **BreadcrumbList** : fil d'Ariane.
 
 ```json
 {
@@ -108,7 +108,7 @@ Le détail des schemas utiles côté Google est aussi dans [données structurée
 
 ## 4. Performance et Core Web Vitals
 
-Les crawlers ont des budgets de temps et de ressources. Un site lent est moins bien exploré — et une page lente se partage / se cite moins bien.
+Les crawlers ont des budgets de temps et de ressources. Un site lent est moins bien exploré - et une page lente se partage / se cite moins bien.
 
 Cibles utiles :
 
@@ -146,7 +146,7 @@ Exemple : `/blog/articles/geo-technique-indexabilite-html-performance.html` plut
 
 ## 6. Mini-checklist avant de publier
 
-- [ ] robots.txt n’bloque pas la page
+- [ ] robots.txt n'bloque pas la page
 - [ ] Contenu visible dans le code source
 - [ ] H1 unique + H2 cohérents
 - [ ] JSON-LD Article / FAQ si pertinent
@@ -157,4 +157,4 @@ Exemple : `/blog/articles/geo-technique-indexabilite-html-performance.html` plut
 
 ## Conclusion
 
-La base technique du GEO : indexabilité, contenu dans le HTML initial, balisage sémantique et performance. Sans ces fondations, peaufiner le style ou les prompts ne suffira pas. Vérifie robots.txt, sitemap et code source **avant** d’affiner ta stratégie de contenu ou tes [optimisations pour ChatGPT / Perplexity](/blog/articles/geo-optimiser-chatgpt-perplexity-sge.html).
+La base technique du GEO : indexabilité, contenu dans le HTML initial, balisage sémantique et performance. Sans ces fondations, peaufiner le style ou les prompts ne suffira pas. Vérifie robots.txt, sitemap et code source **avant** d'affiner ta stratégie de contenu ou tes [optimisations pour ChatGPT / Perplexity](/blog/articles/geo-optimiser-chatgpt-perplexity-sge.html).

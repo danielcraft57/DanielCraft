@@ -133,7 +133,7 @@ function pl_client_ip(): string
 }
 
 /**
- * Fenêtre glissante (fichiers temp) — même logique que website-analysis.php.
+ * Fenêtre glissante (fichiers temp) - même logique que website-analysis.php.
  */
 function pl_rate_limit_or_die(string $key, int $limit, int $windowSeconds, string $userMessage = ''): void
 {
@@ -568,8 +568,8 @@ function pl_response_queued(?array $data, int $httpStatus = 200): bool
 }
 
 /**
- * POST /api/public/website-audit-report — PDF + email (audit gratuit).
- * POST /api/public/website-audit-report/complete — mode complet, réponse 202 (audit premium).
+ * POST /api/public/website-audit-report - PDF + email (audit gratuit).
+ * POST /api/public/website-audit-report/complete - mode complet, réponse 202 (audit premium).
  *
  * @return array{ok: bool, queued: bool, source: string, error: string, status: int, task_id: string, skipped_analysis: bool}
  */
@@ -624,7 +624,7 @@ function pl_request_website_audit_report(string $website, string $email, bool $c
 }
 
 /**
- * GET /api/public/website-audit-report/<task_id> — suivi Celery (PENDING, STARTED, SUCCESS, FAILURE).
+ * GET /api/public/website-audit-report/<task_id> - suivi Celery (PENDING, STARTED, SUCCESS, FAILURE).
  *
  * @return array{ok: bool, status: int, data: array<string, mixed>|null, error: string}
  */
@@ -646,7 +646,7 @@ function pl_get_website_audit_task(string $taskId): array
     return ['ok' => true, 'status' => $res['status'], 'data' => $res['data'], 'error' => ''];
 }
 
-/** Lance l’audit gratuit (PDF + email via website-audit-report). */
+/** Lance l'audit gratuit (PDF + email via website-audit-report). */
 function pl_request_free_audit(string $website, string $email, string $source = 'danielcraft_audit_gratuit'): array
 {
     unset($source);

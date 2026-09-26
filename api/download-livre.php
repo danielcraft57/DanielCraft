@@ -1,7 +1,7 @@
 <?php
 /**
  * Telechargement PDF livre via token unique (GET ?token=… [&file=…]).
- * Le parametre code= n'est plus accepte ici (anti brute-force) — passer par la page telechargement.
+ * Le parametre code= n'est plus accepte ici (anti brute-force) - passer par la page telechargement.
  */
 
 declare(strict_types=1);

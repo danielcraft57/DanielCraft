@@ -133,7 +133,7 @@ Scene : meme univers damier et pions que DuelDeDame, mais ambiance "legacy". Ter
 ---
 
 ## EcoDataHub
-**Plateforme multi-sources donnees economiques (Eurostat, INSEE, BdF, OCDE, Banque mondiale) – FastAPI, ML, LLM**
+**Plateforme multi-sources donnees economiques (Eurostat, INSEE, BdF, OCDE, Banque mondiale) - FastAPI, ML, LLM**
 
 ```
 Scene : dashboard economique. Graphiques macro (PIB, inflation, etc.) stylises, icones ou drapeaux (UE, France), liste de sources (Eurostat, INSEE, BdF). Fond clair (#f9fafb, blanc) ou degrade gris clair, graphiques en bleu/gris/rouge discret. Accent rouge (#dc2626) sur un indicateur ou un bouton. Style institutionnel mais moderne, lisible. Titre "EcoDataHub" en bas, gris fonce (#374151). Ratio 1.91:1, 1200x630.
@@ -169,7 +169,7 @@ Scene : modem 56k (boitier beige/blanc schematise), telephone filaire, et interf
 ---
 
 ## JobHunter
-**Scraping intelligent offres d'emploi et interim (Indeed, HelloWork, LinkedIn, France Travail, Actual) – FastAPI, Celery, Raspberry Pi**
+**Scraping intelligent offres d'emploi et interim (Indeed, HelloWork, LinkedIn, France Travail, Actual) - FastAPI, Celery, Raspberry Pi**
 
 ```
 Scene : agrégateur d'offres. Liste de cartes "offre" (titre, entreprise, lieu) avec filtres (secteur, date). Icones ou logos stylises de sites (Indeed, HelloWork, etc.) en discret. Fond clair (#f9fafb, blanc), cartes blanches, bordures grises. Accent rouge (#dc2626) sur un filtre actif ou un badge "nouveau". Style recrutement moderne, epure. Titre "JobHunter" en bas, gris fonce. Ratio 1.91:1, 1200x630.
@@ -178,7 +178,7 @@ Scene : agrégateur d'offres. Liste de cartes "offre" (titre, entreprise, lieu) 
 ---
 
 ## JournauxGestion
-**Gestion donnees journaux – backend Django, frontend Angular 12, mobile Flutter**
+**Gestion donnees journaux - backend Django, frontend Angular 12, mobile Flutter**
 
 ```
 Scene : ecosysteme multi-plateformes. Schema d'un back-office (tableau, formulaires), une fenetre "frontend" (Angular), et un smartphone avec une app (Flutter). Fond gris clair (#f3f4f6), blocs distincts avec coins arrondis. Accent rouge (#dc2626) sur un element central ou un lien. Style dev full-stack, epure. Titre "JournauxGestion" en bas. Ratio 1.91:1, 1200x630.
@@ -205,7 +205,7 @@ Scene : blockchain schematisee (chain de blocs, hash), token ou NFT (forme geome
 ---
 
 ## PhotosShare
-**Partage de photos privees – albums, selection (React.js)**
+**Partage de photos privees - albums, selection (React.js)**
 
 ```
 Scene : app de partage. Grille de miniatures de photos (formes/decors abstraits, pas de visages), icone cadenas ou "partage limite", liste de contacts ou d'albums. Fond clair (#f9fafb) ou blanc, cartes avec ombre legere. Accent rouge (#dc2626) sur un bouton "Partager" ou un album selectionne. Style confidentiel, moderne. Titre "PhotosShare" en bas, gris. Ratio 1.91:1, 1200x630.
@@ -232,7 +232,7 @@ Scene : ecosysteme restauration. Menu (liste de plats), interface de commande (p
 ---
 
 ## scalpel-numerique
-**Pipeline visage MediaPipe, apps Kivy – extraction, morphologie, rendu video, simulation chirurgie esthetique**
+**Pipeline visage MediaPipe, apps Kivy - extraction, morphologie, rendu video, simulation chirurgie esthetique**
 
 ```
 Scene : maillage 3D de visage (wireframe ou mesh abstrait, pas de visage reel), pipeline de traitement (etapes : capture, extraction, rendu), icone video ou MediaPipe. Fond sombre (#1f2937, #111827), maillage en gris/blanc discret. Accent rouge (#dc2626) sur une etape ou un indicateur. Style tech/sante, serieux, aucun visage photographique. Titre "scalpel-numerique" en bas, gris clair. Ratio 1.91:1, 1200x630.
@@ -241,7 +241,7 @@ Scene : maillage 3D de visage (wireframe ou mesh abstrait, pas de visage reel), 
 ---
 
 ## SocialCare-Hub
-**Plateforme SaaS travail social – microservices, digitalisation, React, TypeScript, API Gateway**
+**Plateforme SaaS travail social - microservices, digitalisation, React, TypeScript, API Gateway**
 
 ```
 Scene : ecosysteme travail social. Catalogue de services (fiches, criteres), parcours d'orientation (etapes), tableau de bord accompagnement. Fond clair (#f9fafb, blanc), cartes et listes epurees. Accent rouge (#dc2626) sur un service prioritaire ou un CTA. Style institutionnel et humain, moderne. Titre "SocialCare-Hub" en bas, gris fonce. Ratio 1.91:1, 1200x630.
@@ -268,7 +268,7 @@ Scene : smartphone affichant un ticket de caisse (lignes de produits, total), ic
 ---
 
 ## turfrace
-**Analyse et prediction des courses hippiques – collecte multi-sources, stats, modeles ML, API FastAPI**
+**Analyse et prediction des courses hippiques - collecte multi-sources, stats, modeles ML, API FastAPI**
 
 ```
 Scene : univers turf. Piste d'hippodrome schematisee (ovale), chevaux en silhouettes ou formes abstraites, graphiques (cotes, stats, ML). Fond sombre (#1f2937, #111827), piste en vert/gris, donnees en bleu/gris. Accent rouge (#dc2626) sur une courbe de prediction ou un indicateur. Style sport-data, epure, pas de photo realiste. Titre "turfrace" en bas, blanc ou gris. Ratio 1.91:1, 1200x630.
@@ -295,6 +295,6 @@ Scene : outil de telechargement. Logo YouTube ou format video stylise, barre de 
 
 ## Fichiers concernes
 
-- **Portfolio (accueil)** : `assets/js/portfolio.js` – champs optionnels `imageUrl` par projet.
-- **Page Projets** : `assets/js/github-projects.js` – donnees loupix57 avec `account: 'loupix57'`. Si tu ajoutes un champ `imageUrl` aux entrees, adapte le rendu dans `projets-page.js`.
+- **Portfolio (accueil)** : `assets/js/portfolio.js` - champs optionnels `imageUrl` par projet.
+- **Page Projets** : `assets/js/github-projects.js` - donnees loupix57 avec `account: 'loupix57'`. Si tu ajoutes un champ `imageUrl` aux entrees, adapte le rendu dans `projets-page.js`.
 - **Clone des repos** : `scripts/clone-loupix57-repos.ps1` pour telecharger tous les depots loupix57 en local et les etudier.

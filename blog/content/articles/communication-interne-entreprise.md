@@ -1,7 +1,7 @@
 ---
 title: "Communication interne : informer pour federer"
 date: 2024-04-04
-excerpt: "Qui dit quoi, sur quel canal, a quel rythme — pour eviter les rumeurs."
+excerpt: "Qui dit quoi, sur quel canal, a quel rythme - pour eviter les rumeurs."
 type: article
 tags: [communication, interne, entreprise, equipes]
 series: communication-serie
@@ -27,7 +27,7 @@ Beaucoup confondent communication interne et surveillance. Ce n'est pas la meme 
 - Creer un sentiment d'appartenance
 - Faciliter la collaboration entre services
 
-Un message interne efficace explique le « pourquoi » avant le « quoi ». Quand une equipe comprend la logique d'une reorganisation ou d'un nouveau process, elle l'adopte plus facilement — meme si elle n'est pas d'accord sur tous les points.
+Un message interne efficace explique le « pourquoi » avant le « quoi ». Quand une equipe comprend la logique d'une reorganisation ou d'un nouveau process, elle l'adopte plus facilement - meme si elle n'est pas d'accord sur tous les points.
 
 ## Qui dit quoi : clarifier les voix
 

@@ -53,7 +53,7 @@ Tu exposes une interface simple : « donne-moi le suivant » / « y en a-t-il en
 
 ### Analogie du quotidien
 
-Une **télécommande** : chaîne +, chaîne −. Tu ne ouvres pas le boîtier du décodeur pour changer de chaîne. Tu avances, tu recules, tu t'arrêtes — peu importe si les chaînes sont en câble, satellite ou IPTV. L'Iterator, c'est cette télécommande pour tes données.
+Une **télécommande** : chaîne +, chaîne −. Tu ne ouvres pas le boîtier du décodeur pour changer de chaîne. Tu avances, tu recules, tu t'arrêtes - peu importe si les chaînes sont en câble, satellite ou IPTV. L'Iterator, c'est cette télécommande pour tes données.
 
 ---
 
@@ -108,7 +108,7 @@ for title in BookCollection():  # ou après add()
 ## Quand ne pas utiliser Iterator
 
 - Un simple tableau lu une fois dans un script jetable.
-- Tu as besoin d'accès aléatoire indexé partout (`arr[i]`) — un Iterator séquentiel ne remplace pas ça.
+- Tu as besoin d'accès aléatoire indexé partout (`arr[i]`) - un Iterator séquentiel ne remplace pas ça.
 - Sur-abstraction : wrapper inutile autour d'un `for` déjà clair.
 
 ---
@@ -140,11 +140,11 @@ Un cas fréquent en backend : paginer une API (`while hasNext { fetch page }`) d
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Rarement sous ce nom — on teste plutôt : « comment parcourir sans exposer l'interne ? »
+**C'est obligatoire en entretien ?** Rarement sous ce nom - on teste plutôt : « comment parcourir sans exposer l'interne ? »
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring s'en servent déjà. Comprendre Iterator t'aide à écrire des API cohérentes.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring s'en servent déjà. Comprendre Iterator t'aide à écrire des API cohérentes.
 
-**Je dois tout refactoriser ?** Non — introduis un Iterator quand le client dépend trop de la structure.
+**Je dois tout refactoriser ?** Non - introduis un Iterator quand le client dépend trop de la structure.
 
 ---
 
@@ -157,7 +157,7 @@ Un cas fréquent en backend : paginer une API (`while hasNext { fetch page }`) d
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Crée une collection « playlist » (tableau interne). Expose uniquement un Iterator / générateur. Ajoute ensuite une variante « ordre aléatoire » sans changer le code client qui fait `for…of`.
 
@@ -167,7 +167,7 @@ Crée une collection « playlist » (tableau interne). Expose uniquement un Iter
 
 - Iterator = télécommande : avancer sans ouvrir la boîte.
 - Sépare **parcours** et **structure**.
-- Les langages modernes l'ont intégré (`for…of`, générateurs) — apprends à le *concevoir* quand tu crées tes propres collections.
+- Les langages modernes l'ont intégré (`for…of`, générateurs) - apprends à le *concevoir* quand tu crées tes propres collections.
 
 ---
 

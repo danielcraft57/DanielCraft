@@ -1,5 +1,5 @@
 /**
- * Recherche client-side — catalogue des offres (/nos-offres)
+ * Recherche client-side - catalogue des offres (/nos-offres)
  * Mode filtre : grille plate dédoublonnée (sans catégories ni bloc « 3 offres »).
  */
 (function () {
@@ -165,12 +165,12 @@
       if (!filtering) {
         info.textContent = '';
       } else if (visibleCount === 0) {
-        info.textContent = 'Aucun résultat — voici nos prestations les plus demandées. ';
+        info.textContent = 'Aucun résultat - voici nos prestations les plus demandées. ';
         const link = document.createElement('a');
         link.href = '/#contact';
         link.textContent = 'Parler de mon projet →';
         info.textContent = '';
-        info.appendChild(document.createTextNode('Aucun résultat — voici nos prestations les plus demandées. '));
+        info.appendChild(document.createTextNode('Aucun résultat - voici nos prestations les plus demandées. '));
         info.appendChild(link);
       } else if (visibleCount === 1) {
         info.textContent = '1 prestation trouvée';

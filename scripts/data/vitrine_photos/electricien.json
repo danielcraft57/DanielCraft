@@ -1,0 +1,129 @@
+{
+  "slug": "electricien",
+  "brand": "Volt & Clanche",
+  "category": "artisanat",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Trade electrician on job Metz, urgent professional documentary, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Electricien en intervention a Metz",
+      "subject": "Electrician in branded workwear opening residential electrical panel in Metz home, tools ready, focused urgency, documentary light",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Electricien en intervention a Metz"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Depannage",
+      "subject": "Emergency electrical repair with multimeter testing sockets, home hallway",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Depannage"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Tableau electrique",
+      "subject": "New electrical panel installation with neat wiring, safety gloves",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Tableau electrique"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Mise aux normes",
+      "subject": "Home electrical compliance upgrade, old wires being replaced carefully",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Mise aux normes"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Intervention urgence",
+      "subject": "Night callout electrician van headlights outside suburban house Metz",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Intervention urgence"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Renovation",
+      "subject": "Kitchen renovation electrical rough-in, unfinished walls, tools",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Renovation"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Borne IRVE",
+      "subject": "EV charger wallbox installation in garage, electrician finishing mount",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Borne IRVE"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Van artisan",
+      "subject": "Service van with ladders and tool crates parked at client driveway",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Van artisan"
+        }
+      ]
+    }
+  ]
+}

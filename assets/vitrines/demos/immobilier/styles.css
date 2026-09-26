@@ -1,4 +1,4 @@
-/* Patrimoine Lorraine — maquette M3 navy (immobilier-m3.png) */
+/* Patrimoine Lorraine - maquette M3 navy (immobilier-m3.png) */
 :root {
   --vt-navy: #0f1c3f;
   --vt-navy-mid: #1a2f5c;
@@ -17,6 +17,10 @@
   --bs-link-color: var(--vt-navy-mid);
   --bs-link-hover-color: var(--vt-navy);
   --bs-border-radius-lg: var(--vt-radius);
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
+  --vt-accent: var(--vt-navy);
 }
 
 body.vt-body-property {

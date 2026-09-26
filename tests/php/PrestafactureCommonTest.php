@@ -17,22 +17,29 @@ final class PrestafactureCommonTest extends TestCase
     {
         self::assertSame(0.2, prestafacture_tax_rate_decimal(20.0));
         self::assertSame(0.2, prestafacture_tax_rate_decimal(0.2));
+        self::assertSame(0.0, prestafacture_tax_rate_decimal(0.0));
     }
 
     public function test_unit_price_ht_from_ttc(): void
     {
         $ht = prestafacture_unit_price_ht(199.0, 20.0);
         self::assertEqualsWithDelta(165.8333, $ht, 0.001);
+        self::assertSame(199.0, prestafacture_unit_price_ht(199.0, 0.0));
     }
 
     public function test_line_from_catalog_price_ht(): void
     {
-        $line = prestafacture_line_from_price_ht('Site vitrine', 490.0, 20.0);
+        $line = prestafacture_line_from_price_ht('Site vitrine', 490.0, 0.0);
         self::assertSame('Site vitrine', $line['description']);
         self::assertSame(490.0, $line['unitPrice']);
-        self::assertSame(0.2, $line['taxRate']);
+        self::assertSame(1.0, (float) $line['quantity']);
+        self::assertSame(0.0, $line['taxRate']);
         self::assertArrayNotHasKey('productId', $line);
         self::assertLessThanOrEqual(200, mb_strlen($line['description']));
+
+        $qtyLine = prestafacture_line_from_price_ht('Entretien', 56.0, 0.0, null, 12.0);
+        self::assertSame(12.0, (float) $qtyLine['quantity']);
+        self::assertSame(56.0, $qtyLine['unitPrice']);
     }
 
     public function test_prestation_line_label_prefers_short_description(): void

@@ -20,7 +20,7 @@ Le déploiement « classique » pose un problème : la CI exécute `kubectl appl
 
 ## Le principe GitOps en quatre étapes
 
-1. Tu versionnes tes manifests Kubernetes (YAML brut, Helm charts ou overlays Kustomize) dans un dépôt Git dédié — souvent appelé « repo GitOps ».
+1. Tu versionnes tes manifests Kubernetes (YAML brut, Helm charts ou overlays Kustomize) dans un dépôt Git dédié - souvent appelé « repo GitOps ».
 2. La CI build l'image applicative, la push au registry, puis met à jour le tag d'image dans le repo GitOps (commit direct ou pull request).
 3. Argo CD ou Flux surveille ce repo en continu.
 4. Dès qu'un changement est fusionné, l'outil synchronise le cluster pour correspondre au Git.
@@ -70,7 +70,7 @@ image: ghcr.io/mon-org/mon-api:abc123def
 
 Un bot ou un job CI remplace `abc123def` par le SHA du commit fraîchement buildé. Argo CD détecte le changement et déploie.
 
-Avantage sécurité : même si la CI est compromise, l'attaquant ne peut modifier que le tag d'image dans Git — pas exécuter n'importe quelle commande kubectl arbitraire.
+Avantage sécurité : même si la CI est compromise, l'attaquant ne peut modifier que le tag d'image dans Git - pas exécuter n'importe quelle commande kubectl arbitraire.
 
 ## Structure d'un repo GitOps
 

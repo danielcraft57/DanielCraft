@@ -1,5 +1,5 @@
 /**
- * IntersectionObserver pour .vt-reveal — sections majeures au scroll.
+ * IntersectionObserver pour .vt-reveal - sections majeures au scroll.
  */
 (function () {
   "use strict";

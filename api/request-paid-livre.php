@@ -1,6 +1,6 @@
 <?php
 /**
- * Livre PDF apres paiement Stripe — facture Prestafacture + lien de telechargement par e-mail.
+ * Livre PDF apres paiement Stripe - facture Prestafacture + lien de telechargement par e-mail.
  *
  * POST JSON : stripe_session_id (requis), email (optionnel), company (honeypot)
  */
@@ -90,7 +90,7 @@ if (!$fulfill['ok']) {
     exit;
 }
 
-$message = 'Merci ! Facture envoyee par e-mail — voici ta page de telechargement.';
+$message = 'Merci ! Facture envoyee par e-mail - voici ta page de telechargement.';
 if ($fulfill['invoice_ok'] && $fulfill['delivery_ok']) {
     $message = 'Merci ! Facture par e-mail + page de telechargement prete (code unique inclus dans le mail).';
 } elseif ($fulfill['delivery_ok'] && !$fulfill['invoice_ok']) {

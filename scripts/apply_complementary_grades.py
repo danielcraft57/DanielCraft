@@ -18,12 +18,12 @@ Usage :
 Dépend recommandé : numpy (requirements-scripts.txt)
 
 --blend :
-  dark   (défaut) — poids fort sur ombres / gris (idéal maquettes sombres)
-  wide   — cloche large sur la luminance
-  midtone — centre sur gris moyen (peu visible sur fond noir)
-  full   — même poids partout (très visible)
+  dark   (défaut) - poids fort sur ombres / gris (idéal maquettes sombres)
+  wide   - cloche large sur la luminance
+  midtone - centre sur gris moyen (peu visible sur fond noir)
+  full   - même poids partout (très visible)
 
---punch — amplifie l’écart des teintes par rapport au gris neutre (0.25..3).
+--punch - amplifie l’écart des teintes par rapport au gris neutre (0.25..3).
 """
 from __future__ import annotations
 

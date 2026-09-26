@@ -55,7 +55,7 @@
     "id": "cryptocluster",
     "slug": "cryptocluster",
     "title": "CryptoCluster",
-    "description": "Plateforme distribuee de collecte et d'analyse de donnees crypto : RedisTimeSeries, InfluxDB, Dispy, CCXT. API FastAPI, web et mobile.",
+    "description": "Plateforme distribuée de collecte et d'analyse de données crypto : RedisTimeSeries, InfluxDB, Dispy, CCXT. API FastAPI, web et mobile.",
     "category": "specialized",
     "technologies": [
       "Python",
@@ -267,7 +267,7 @@
     "id": "dueldedame",
     "slug": "dueldedame",
     "title": "DuelDeDame",
-    "description": "Jeu de dames en ligne temps reel, Next.js et NestJS, design patterns (Strategy, Factory)",
+    "description": "Jeu de dames en ligne temps réel, Next.js et NestJS, design patterns (Strategy, Factory)",
     "category": "web",
     "technologies": [
       "Next.js",
@@ -317,7 +317,7 @@
     "id": "ecodatahub",
     "slug": "ecodatahub",
     "title": "EcoDataHub",
-    "description": "Plateforme multi-sources pour l'acces aux donnees economiques (Eurostat, INSEE, BdF, OCDE, Banque mondiale). API FastAPI, ML, econometrie, rapports LLM.",
+    "description": "Plateforme multi-sources pour l'accès aux données économiques (Eurostat, INSEE, BdF, OCDE, Banque mondiale). API FastAPI, ML, économétrie, rapports LLM.",
     "category": "specialized",
     "technologies": [
       "Python",
@@ -371,7 +371,7 @@
     "id": "gestionnaireevenements",
     "slug": "gestionnaireevenements",
     "title": "GestionnaireEvenements",
-    "description": "Gestionnaire d'evenements - PHP, Bower, interface de gestion",
+    "description": "Gestionnaire d'événements - PHP, Bower, interface de gestion",
     "category": "web",
     "technologies": [
       "PHP"
@@ -446,7 +446,7 @@
     "id": "journauxgestion",
     "slug": "journauxgestion",
     "title": "JournauxGestion",
-    "description": "Gestion donnees journaux - backend Django Python, frontend Angular 12, mobile Flutter",
+    "description": "Gestion données journaux - backend Django Python, frontend Angular 12, mobile Flutter",
     "category": "web",
     "technologies": [
       "Python",
@@ -726,7 +726,7 @@
     "id": "youtubedownloader",
     "slug": "youtubedownloader",
     "title": "YoutubeDownloader",
-    "description": "Plateforme telechargement videos YouTube, Dailymotion - Python AngularJS",
+    "description": "Plateforme téléchargement videos YouTube, Dailymotion - Python AngularJS",
     "category": "tools",
     "technologies": [
       "Python",

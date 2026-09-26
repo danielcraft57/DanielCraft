@@ -1,4 +1,4 @@
-"""Bibliothèque vitrines IA — pages multiples, navigation, assets."""
+"""Bibliothèque vitrines IA - pages multiples, navigation, assets."""
 from __future__ import annotations
 
 import html as html_lib
@@ -78,7 +78,7 @@ def write_ai_page(
 
 
 def write_ai_site(slug: str, title: str, description: str, body: str, css: str, *, layout: str = "ai") -> None:
-    """Compatibilité mono-page — délègue à write_ai_page index.html."""
+    """Compatibilité mono-page - délègue à write_ai_page index.html."""
     write_ai_page(slug, "index.html", title, description, body, layout=layout)
     d = ROOT / slug
     css_path = d / "styles.css"

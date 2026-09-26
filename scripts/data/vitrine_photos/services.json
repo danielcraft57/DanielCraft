@@ -40,7 +40,7 @@
       "alt": "Équipe FM en intervention",
       "subject": "FM maintenance technician fixing building systems on call, professional facility management team at work Metz",
       "contexts": [
-        { "page": "index.html", "section": "bento", "text": "Astreinte 24/7 — intervention < 2 h" },
+        { "page": "index.html", "section": "bento", "text": "Astreinte 24/7 - intervention < 2 h" },
         { "page": "offres.html", "section": "chapter", "text": "Exploitation quotidienne GMAO" },
         { "page": "secteurs.html", "section": "feature", "text": "Établissements de santé" }
       ]
@@ -53,7 +53,7 @@
       "alt": "Reporting FM qualité",
       "subject": "Facility management team reviewing KPI dashboard on screen in modern Metz office, ISO quality process",
       "contexts": [
-        { "page": "index.html", "section": "bento", "text": "ISO 9001 — audits trimestriels" },
+        { "page": "index.html", "section": "bento", "text": "ISO 9001 - audits trimestriels" },
         { "page": "offres.html", "section": "chapter", "text": "Reporting KPI mensuel" },
         { "page": "secteurs.html", "section": "chapter", "text": "Suivi et amélioration continue" }
       ]
@@ -90,7 +90,7 @@
       "alt": "Maintenance technique immeuble",
       "subject": "Building maintenance engineer checking HVAC panel in commercial building, facility management card image",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Maintenance CVC — GMAO 24/7" },
+        { "page": "index.html", "section": "card", "text": "Maintenance CVC - GMAO 24/7" },
         { "page": "offres.html", "section": "card", "text": "Offre Essentiel maintenance" }
       ]
     },

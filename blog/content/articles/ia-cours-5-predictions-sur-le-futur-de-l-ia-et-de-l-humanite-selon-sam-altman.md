@@ -1,7 +1,7 @@
 ---
 title: "Predictions IA : lire sans tout croire"
 date: 2026-07-16
-excerpt: "Des visions utiles pour reflechir — pas des garanties."
+excerpt: "Des visions utiles pour reflechir - pas des garanties."
 type: guide
 tags: [IA, formation, apprentissage, certification]
 og_image: ia-cours-5-predictions-sur-le-futur-de-l-ia-et-de-l-humanite-selon-sam-altman-1200x630.jpg
@@ -63,7 +63,7 @@ Voici le cœur du sujet, organisé pour que tu puisses t'en servir demain matin.
 
 Tu n'as pas besoin d'etre expert. Tu as juste besoin d'une methode claire, d'un premier essai, et d'un endroit ou noter ce qui marche.
 
-Sur le sujet **5 prédictions sur le futur de l’IA et de l’humanité selon Sam Altman**, le plus gros gain vient souvent du premier test serieux : tu vois tout de suite ce qui bloque, et tu ajustes.
+Sur le sujet **5 prédictions sur le futur de l'IA et de l'humanité selon Sam Altman**, le plus gros gain vient souvent du premier test serieux : tu vois tout de suite ce qui bloque, et tu ajustes.
 
 Si tu publies ensuite un contenu (article, page, fiche produit), pense structure : un `h1`, des `h2` clairs, une meta description honnete, et des microdonnées (`BlogPosting`, FAQ si tu as des questions/réponses). Ca aide Google et les moteurs IA a te citer.
 

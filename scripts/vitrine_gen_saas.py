@@ -13,15 +13,15 @@ def gen_saas_landing():
 <header class="sl-nav">
   <span class="sl-logo">FlowMetrics</span>
   <nav><a href="#features">Fonctionnalités</a><a href="#pricing">Tarifs</a><a href="#compare">Comparatif</a></nav>
-  <a class="sl-btn sl-btn--primary sl-btn--ctv" href="#pricing">Voir mon funnel en 14 jours — gratuit</a>
+  <a class="sl-btn sl-btn--primary sl-btn--ctv" href="#pricing">Voir mon funnel en 14 jours - gratuit</a>
 </header>
 <main id="contenu">
   <section class="sl-hero">
     <p class="sl-eyebrow">Pour fondateurs SaaS · analytics produit</p>
     <h1>Quoi ? Funnels &amp; cohortes. Pour qui ? Équipes produit sans data team. Pourquoi ? Décider avant lundi.</h1>
-    <p class="sl-lead">Branché en 12 minutes — pas en 12 semaines. Un seul CTA principal (loi de Hick).</p>
+    <p class="sl-lead">Branché en 12 minutes - pas en 12 semaines. Un seul CTA principal (loi de Hick).</p>
     <div class="sl-hero-cta">
-      <a class="sl-btn sl-btn--primary sl-btn--ctv" href="#pricing">Activer mon essai — 14 jours offerts</a>
+      <a class="sl-btn sl-btn--primary sl-btn--ctv" href="#pricing">Activer mon essai - 14 jours offerts</a>
     </div>
     <figure class="sl-hero-visual">{fig(g, "hero.png", "Dashboard funnel FlowMetrics", lazy=False)}</figure>
   </section>
@@ -34,7 +34,7 @@ def gen_saas_landing():
         <div class="sl-after"><strong>Après</strong><p>Tout au même endroit, alertes auto, zéro réunion.</p></div>
       </article>
       <article class="sl-feature">
-        <div class="sl-before"><strong>Avant</strong><p>Onboarding opaque — personne ne sait où cliquer.</p></div>
+        <div class="sl-before"><strong>Avant</strong><p>Onboarding opaque - personne ne sait où cliquer.</p></div>
         <div class="sl-after"><strong>Après</strong><p>Parcours guidé vers la première victoire en &lt; 2 min.</p></div>
       </article>
       <article class="sl-feature">
@@ -58,7 +58,7 @@ def gen_saas_landing():
         <span class="sl-badge">Le plus choisi</span>
         <h3>Pro</h3>
         <p class="sl-price">79 €<span>/mois</span></p>
-        <p class="sl-framing">≈ 2,60 €/jour — moins qu'un café équipe</p>
+        <p class="sl-framing">≈ 2,60 €/jour - moins qu'un café équipe</p>
         <ul><li>Projets illimités</li><li>Alertes Slack</li><li>Cohortes &amp; funnels</li></ul>
         <button type="button" class="sl-btn sl-btn--primary">Essai 14 jours</button>
       </article>
@@ -78,7 +78,7 @@ def gen_saas_landing():
       <tbody>
         <tr><td>Time-to-value</td><td class="sl-yes">✓ &lt; 15 min</td><td class="sl-no">✗ Semaines</td></tr>
         <tr><td>Alertes produit</td><td class="sl-yes">✓ Native</td><td class="sl-no">✗ Manuel</td></tr>
-        <tr><td>Onboarding guidé</td><td class="sl-yes">✓ Inclus</td><td class="sl-no">✗ —</td></tr>
+        <tr><td>Onboarding guidé</td><td class="sl-yes">✓ Inclus</td><td class="sl-no">✗ -</td></tr>
       </tbody>
     </table>
   </section>
@@ -123,7 +123,7 @@ def gen_saas_landing():
 .sl-foot{padding:2rem;text-align:center;color:var(--muted);border-top:1px solid #1e293b}
 @media(max-width:640px){.sl-feature{grid-template-columns:1fr}.sl-nav nav{display:none}}
 """
-    write_demo("saas-landing", "contrast-pricing", "tailwind", "FlowMetrics — Landing SaaS",
+    write_demo("saas-landing", "contrast-pricing", "tailwind", "FlowMetrics - Landing SaaS",
                "Landing SaaS : hero, features avant/après, pricing avec effet de contraste.", body, css)
 
 
@@ -142,7 +142,7 @@ def gen_saas_onboarding():
     <div class="ob-progress" role="progressbar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="4">
       <div class="ob-progress-fill" style="width:50%"></div>
     </div>
-    <p class="ob-step-label">Étape 2 sur 4 — Infos entreprise</p>
+    <p class="ob-step-label">Étape 2 sur 4 - Infos entreprise</p>
     <h1>Ces infos apparaîtront sur votre offre publiée</h1>
     <p class="ob-hint">Nom, logo et localisation rassurent les candidats avant même la description du poste.</p>
     <form class="ob-form" action="#" onsubmit="return false">
@@ -165,9 +165,9 @@ def gen_saas_onboarding():
     <div class="ob-victory-inner">
       <p class="ob-victory-badge">Peak moment ✓</p>
       <h2>Votre offre est en ligne</h2>
-      <p>Les candidats peuvent postuler — vous avez atteint votre aha moment en 4 étapes.</p>
+      <p>Les candidats peuvent postuler - vous avez atteint votre aha moment en 4 étapes.</p>
       <button type="button" class="ob-next">Inviter mon équipe (optionnel)</button>
-      <a href="#" class="ob-skip">Plus tard — explorer le tableau de bord</a>
+      <a href="#" class="ob-skip">Plus tard - explorer le tableau de bord</a>
     </div>
   </section>
 </main>
@@ -200,7 +200,7 @@ def gen_saas_onboarding():
 .ob-foot{padding:1rem;text-align:center;color:var(--muted);font-size:.85rem}
 @media(max-width:768px){.ob-shell{grid-template-columns:1fr}.ob-aside{display:none}}
 """
-    write_demo("saas-onboarding", "hr-path", "tailwind", "TalentLoop — Onboarding SaaS RH",
+    write_demo("saas-onboarding", "hr-path", "tailwind", "TalentLoop - Onboarding SaaS RH",
                "Onboarding en 4 étapes : barre de progression, copy orienté valeur, aha moment.", body, css)
 
 
@@ -283,7 +283,7 @@ def gen_saas_dashboard():
 .db-foot{padding:1rem 2rem 1rem 240px;color:var(--muted);font-size:.85rem}
 @media(max-width:768px){.db-layout{grid-template-columns:1fr}.db-sidebar{display:none}.db-foot{padding-left:1rem}}
 """
-    write_demo("saas-dashboard", "sidebar-analytics", "tailwind", "MetricPulse — Dashboard SaaS",
+    write_demo("saas-dashboard", "sidebar-analytics", "tailwind", "MetricPulse - Dashboard SaaS",
                "Dashboard produit : sidebar par intention, KPIs activation, funnel onboarding.", body, css)
 
 
@@ -296,7 +296,7 @@ def gen_saas_empty():
     <figure class="es-hero">{fig("es", "hero.png", "Recherche QueryBase", lazy=False)}</figure>
     <label for="q" class="visually-hidden">Rechercher</label>
     <input id="q" type="search" value="rapport fiscal Q4" readonly aria-describedby="es-hint">
-    <p id="es-hint" class="es-hint">Démo : recherche sans résultat exact — trois patterns UX.</p>
+    <p id="es-hint" class="es-hint">Démo : recherche sans résultat exact - trois patterns UX.</p>
   </div>
 
   <section class="es-empty" aria-labelledby="es-title">
@@ -312,7 +312,7 @@ def gen_saas_empty():
 
   <section class="es-roadmap" aria-labelledby="es-roadmap-title">
     <h2 id="es-roadmap-title">Pas encore disponible ?</h2>
-    <p>Dites-nous si vous voulez qu'on le développe — ça priorise notre roadmap.</p>
+    <p>Dites-nous si vous voulez qu'on le développe - ça priorise notre roadmap.</p>
     <button type="button" class="es-vote">👍 Je vote pour « rapport fiscal Q4 »</button>
     <span class="es-votes">127 votes cette semaine</span>
   </section>
@@ -320,8 +320,8 @@ def gen_saas_empty():
   <section class="es-didyou" aria-labelledby="es-didyou-title">
     <h2 id="es-didyou-title">Vouliez-vous dire…</h2>
     <ul>
-      <li><a href="#">Billing — facturation &amp; abonnements</a></li>
-      <li><a href="#">Fiscal — paramètres TVA</a></li>
+      <li><a href="#">Billing - facturation &amp; abonnements</a></li>
+      <li><a href="#">Fiscal - paramètres TVA</a></li>
     </ul>
   </section>
 </main>
@@ -352,7 +352,7 @@ def gen_saas_empty():
 .es-didyou a{color:var(--accent);text-decoration:none;font-weight:500}
 .es-foot{padding:1.5rem;text-align:center;color:var(--muted);font-size:.85rem}
 """
-    write_demo("saas-empty", "search-empty", "tailwind", "QueryBase — Empty states",
+    write_demo("saas-empty", "search-empty", "tailwind", "QueryBase - Empty states",
                "Recherche sans résultat : best-sellers, vote roadmap, correcteur d'intention.", body, css)
 
 
@@ -385,7 +385,7 @@ def gen_saas_notifications():
       </li>
       <li class="nt-item nt-item--muted">
         <span class="nt-badge">Info</span>
-        <strong>Maintenance planifiée — dim. 4 h–6 h</strong>
+        <strong>Maintenance planifiée - dim. 4 h-6 h</strong>
         <p>Aucune action de votre part. Les exports seront retardés.</p>
         <time datetime="2026-07-02">Hier</time>
       </li>
@@ -399,7 +399,7 @@ def gen_saas_notifications():
     <section class="nt-settings" aria-labelledby="nt-prefs">
       <h2 id="nt-prefs">Préférences (démo)</h2>
       <label><input type="checkbox" checked> E-mail récap hebdo</label>
-      <label><input type="checkbox" checked> Push in-app — actions requises</label>
+      <label><input type="checkbox" checked> Push in-app - actions requises</label>
       <label><input type="checkbox"> Marketing produit</label>
     </section>
   </main>
@@ -436,7 +436,7 @@ def gen_saas_notifications():
 .nt-foot{padding:1rem 2rem 1rem 200px;color:var(--muted);font-size:.85rem}
 @media(max-width:640px){.nt-layout{grid-template-columns:1fr}.nt-sidebar{display:none}.nt-foot{padding-left:1rem}}
 """
-    write_demo("saas-notifications", "in-app-center", "tailwind", "PingFlow — Notifications",
+    write_demo("saas-notifications", "in-app-center", "tailwind", "PingFlow - Notifications",
                "Centre de notifications : hiérarchie, action requise, préférences granulaires.", body, css)
 
 

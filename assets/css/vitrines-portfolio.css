@@ -243,11 +243,12 @@
   vertical-align: top;
   transform: none;
   transition: filter 0.35s ease, opacity 0.35s ease;
-  filter: saturate(1.08) contrast(1.04);
+  /* Couleurs du screenshot mises en avant (moins de voile, plus de punch) */
+  filter: saturate(1.28) contrast(1.08) brightness(1.03);
 }
 
 .vitrine-card:hover .vitrine-card-img {
-  filter: saturate(1.16) contrast(1.06);
+  filter: saturate(1.38) contrast(1.1) brightness(1.04);
 }
 
 .vitrine-card-img.dc-lazy-img:not(.is-loaded) {
@@ -259,7 +260,7 @@
   opacity: 1;
 }
 
-/* Teinte legere par carte - laisse passer les vraies couleurs du screenshot */
+/* Fade tres leger en bas uniquement (lisibilite badge) - plus de voile colore */
 .vitrine-card-tint {
   position: absolute;
   inset: 0;
@@ -267,16 +268,16 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    transparent 55%,
-    rgba(15, 23, 42, 0.28) 100%
+    transparent 72%,
+    rgba(15, 23, 42, 0.12) 100%
   );
   mix-blend-mode: normal;
-  opacity: 0.85;
+  opacity: 0.55;
   transition: opacity 0.3s ease;
 }
 
 .vitrine-card:hover .vitrine-card-tint {
-  opacity: 0.35;
+  opacity: 0.2;
 }
 
 .vitrine-card-badge {
@@ -855,7 +856,7 @@
   margin: 0 0 1rem;
 }
 
-/* Étapes : seule l’étape active participe à la hauteur (les autres en absolute = pas de « fantômes » en scroll). */
+/* Étapes : seule l'étape active participe à la hauteur (les autres en absolute = pas de « fantômes » en scroll). */
 .vitrine-cta-form .vitrine-cta-steps {
   display: block;
   position: relative;

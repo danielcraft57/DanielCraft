@@ -1,4 +1,4 @@
-/* Centre dentaire — maquette sante M3 (osteo booking + pill appbar claire) */
+/* Centre dentaire - maquette sante M3 (osteo booking + pill appbar claire) */
 :root {
   --vt-paper: #f4f7f3;
   --vt-mint: #e3efe7;
@@ -16,6 +16,11 @@
   --bs-link-color: var(--vt-forest);
   --bs-link-hover-color: var(--vt-forest-deep);
   --bs-font-sans-serif: "DM Sans", system-ui, sans-serif;
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 
 body.vt-body-medical {

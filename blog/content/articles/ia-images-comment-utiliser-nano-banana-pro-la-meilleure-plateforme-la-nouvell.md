@@ -1,7 +1,7 @@
 ---
 title: "Plateforme image IA : comment la juger vite"
 date: 2026-07-08
-excerpt: "Teste qualite, prix, controle du style — sur TON type d'image."
+excerpt: "Teste qualite, prix, controle du style - sur TON type d'image."
 type: tutorial
 tags: [IA, images, design, visuels]
 og_image: ia-images-comment-utiliser-nano-banana-pro-la-meilleure-plateforme-la-nouvell-1200x630.jpg

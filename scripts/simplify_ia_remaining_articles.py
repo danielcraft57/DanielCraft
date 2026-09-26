@@ -116,12 +116,12 @@ ARTICLES_DATA = [
      "1 sujet, 1 style, 1 outil. Documente ton prompt gagnant. [Meilleurs prompts](/blog/articles/ia-prompts-comment-creer-de-meilleurs-prompt-sur-chatgpt-site-gratuit.html)."),
     ("ia-images-comment-utiliser-nano-banana-pro-la-meilleure-plateforme-la-nouvell",
      "Plateforme image IA : comment la juger vite",
-     "Teste qualite, prix, controle du style — sur TON type d'image.",
+     "Teste qualite, prix, controle du style - sur TON type d'image.",
      "ia-images-gen.svg", "Schema comparer plateformes image", "Meme brief, deux outils.",
      "Lance le meme prompt partout. Garde celui qui respecte le mieux le brief."),
     ("ia-images-la-chine-continue-de-nous-impressionner-pendant-que-les-etats-unis-re",
      "Outils image Chine vs USA : comparer sans hype",
-     "Regarde rendu, prix, conditions d'usage — pas seulement les annonces.",
+     "Regarde rendu, prix, conditions d'usage - pas seulement les annonces.",
      "ia-images-money.svg", "Schema comparaison outils", "Juger sur le rendu.",
      "Teste 2 outils. Lis confidentialite. Choisis selon ton usage pro."),
     ("ia-images-une-ia-francaise-avec-toutes-les-fonctionnalites",
@@ -147,7 +147,7 @@ ARTICLES_DATA = [
      "Vise un flux utile (email, formulaire). Puis ajoute l'IA. [Stack base+n8n](/blog/articles/ia-outils-base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour.html)."),
     ("ia-nocode-templates-n8n-gratuites-pour-creer-des-agents-ia-comment-y-acceder",
      "Templates n8n pour agents : ou les trouver",
-     "Partir d'un modele existant accelere — adapte-le a ton cas.",
+     "Partir d'un modele existant accelere - adapte-le a ton cas.",
      "ia-nocode-flow.svg", "Schema templates agents", "Choisir et adapter.",
      "Importe, lis chaque noeud, teste. Agents : [debutant](/blog/articles/ia-agents-tutoriel-debutant-comment-creer-un-agent-ia-en-quelques-minutes.html)."),
     ("ia-nocode-comment-passer-un-appel-video-chat",
@@ -162,7 +162,7 @@ ARTICLES_DATA = [
      "Aligne avec le [GEO](/blog/articles/geo-nouveau-seo-ia-guide-complet.html) et [prompts GEO](/blog/articles/ia-prompts-comment-apparaitre-dans-les-reponses-de-chatgpt-tutoriel-rapide-pou.html)."),
     ("ia-nocode-comment-creer-un-avatar-hyper-realiste-et-poster-des-video",
      "Avatar realiste + videos : pipeline simple",
-     "Creer un visage coherent puis publier des videos courtes — avec ethique.",
+     "Creer un visage coherent puis publier des videos courtes - avec ethique.",
      "ia-images-gen.svg", "Schema avatar video", "Visage, video, publier.",
      "Fiche personnage stable. Consentement si c'est une vraie personne. [Perso coherent](/blog/articles/ia-prompts-comment-generer-un-personnage-coherent-avec-chatgpt-si-vou.html)."),
     ("ia-nocode-comment-payer-moins-cher-les-abonnements-a-des-outils-d-intelligence",
@@ -218,7 +218,7 @@ COURS = [
      "Parcours gratuit pour comprendre agents et automatisations."),
     ("ia-cours-5-predictions-sur-le-futur-de-l-ia-et-de-l-humanite-selon-sam-altman",
      "Predictions IA : lire sans tout croire",
-     "Des visions utiles pour reflechir — pas des garanties."),
+     "Des visions utiles pour reflechir - pas des garanties."),
     ("ia-cours-3-facons-d-utiliser-l-ia-notebook-lm-de-g",
      "3 facons d'utiliser NotebookLM",
      "Sources, questions, audio : tirer parti de tes documents."),
@@ -254,13 +254,13 @@ METIERS = [
      "La tech avance ; le casting et l'ethique restent humains."),
     ("ia-metiers-voici-la-liste-des-metiers-avec-la-croissance-la-plus-rapide-en-2026",
      "Metiers en croissance 2026 : lire une liste utilement",
-     "Une tendance n'est pas une promesse d'emploi — croise avec ton territoire."),
+     "Une tendance n'est pas une promesse d'emploi - croise avec ton territoire."),
     ("ia-metiers-etude-secrete-sur-reddit-par-l-universite-de-zurich-l-intelligence",
      "Etudes IA sur les reseaux : garder l'esprit critique",
      "Methodes, biais, titres choc : lire au-dela du buzz."),
     ("ia-metiers-singularite-technologique-bientot-sam-altman-et-l-hypothese-de-la",
      "Singularite : hypothese, pas calendrier",
-     "Debats sur le futur lointain — utile pour reflechir, pas pour paniquer."),
+     "Debats sur le futur lointain - utile pour reflechir, pas pour paniquer."),
     ("ia-metiers-l-intelligence-artificielle-est-elle-vraim",
      "L'IA est-elle intelligente : ce que ca veut dire",
      "Fort sur motifs ; fragile sur le jugement et le monde reel."),
@@ -305,7 +305,7 @@ PROD = [
      "La pratique reguliere bat souvent le titre d'expert sur LinkedIn."),
     ("ia-prod-demo-kling-motion-control-et-encore-j-ai-pas-pris-le-temps-de-chan",
      "Demo Kling : tester sans tout abandonner",
-     "Bloque 30 minutes, un essai, une note — puis decide."),
+     "Bloque 30 minutes, un essai, une note - puis decide."),
 ]
 for slug, title, excerpt in PROD:
     article(slug, title, excerpt, f"""# {title}
@@ -318,11 +318,11 @@ Garde une checklist. Verifie toujours avant de publier.
 """)
 
 for name, title, desc in (
-    ("ia-images-serie.json", "Serie IA — Images et visuels (simples)", "Generer, retoucher et moneter des images avec l'IA, sans jargon."),
-    ("ia-nocode-serie.json", "Serie IA — No-code et apps (pratiques)", "n8n, templates, presentations et moneter sans usine a gaz."),
-    ("ia-formations-serie.json", "Serie IA — Formations (parcours clairs)", "Cours gratuits, NotebookLM, agents : apprendre en pratiquant."),
-    ("ia-metiers-serie.json", "Serie IA — Metiers et futur (avec nuance)", "Impact sur le travail : lire, relativiser, agir."),
-    ("ia-productivite-serie.json", "Serie IA — Productivite (quotidien)", "Gagner du temps avec l'IA sans perdre le sens critique."),
+    ("ia-images-serie.json", "Serie IA - Images et visuels (simples)", "Generer, retoucher et moneter des images avec l'IA, sans jargon."),
+    ("ia-nocode-serie.json", "Serie IA - No-code et apps (pratiques)", "n8n, templates, presentations et moneter sans usine a gaz."),
+    ("ia-formations-serie.json", "Serie IA - Formations (parcours clairs)", "Cours gratuits, NotebookLM, agents : apprendre en pratiquant."),
+    ("ia-metiers-serie.json", "Serie IA - Metiers et futur (avec nuance)", "Impact sur le travail : lire, relativiser, agir."),
+    ("ia-productivite-serie.json", "Serie IA - Productivite (quotidien)", "Gagner du temps avec l'IA sans perdre le sens critique."),
 ):
     path = COLLECTIONS / name
     col = json.loads(path.read_text(encoding="utf-8"))

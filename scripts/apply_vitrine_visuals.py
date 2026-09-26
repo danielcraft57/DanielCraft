@@ -55,7 +55,7 @@ arch = re.sub(
           <p class="arch-mono arch-accent mb-3">Architecture · Urbanisme · Metz</p>
           <h1>Bâtir<br>avec<br>mesure</h1>
           <p style="max-width:32rem;margin-top:2rem;font-size:1.15rem;line-height:1.6">
-            Atelier Nord-Est — illustrations vectorielles façon plan, animations Ken Burns et lightbox.
+            Atelier Nord-Est - illustrations vectorielles façon plan, animations Ken Burns et lightbox.
           </p>
           <p style="margin-top:1.5rem">
             <a href="#projets" role="button" class="outline">Voir les réalisations</a>
@@ -84,7 +84,7 @@ grid = "\n".join([
 arch = re.sub(
     r'<section id="projets" class="container" style="padding:4rem 0">.*?</section>',
     f"""    <section id="projets" class="container" style="padding:4rem 0">
-      <h2 class="arch-mono" style="margin-bottom:2rem">Sélection 2024–2026</h2>
+      <h2 class="arch-mono" style="margin-bottom:2rem">Sélection 2024-2026</h2>
       <div class="arch-grid-projects">
 {grid}
       </div>
@@ -127,13 +127,13 @@ def fit_card(img: str, alt: str, icon: str, title: str, schedule: str) -> str:
 fit = re.sub(
     r'<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">.*?</motion>\s*</section>',
     "<div class=\"grid sm:grid-cols-2 lg:grid-cols-4 gap-4\">\n"
-    + fit_card("cours-hiit.svg", "Cours HIIT", "fa-fire", "HIIT Burn", "Lun · Mer · 19h — 45 min")
+    + fit_card("cours-hiit.svg", "Cours HIIT", "fa-fire", "HIIT Burn", "Lun · Mer · 19h - 45 min")
     + "\n"
     + fit_card("cours-hiit.svg", "Cross training", "fa-person-running", "Cross Training", "Mar · Jeu · 18h30")
     + "\n"
-    + fit_card("cours-yoga.svg", "Yoga", "fa-spa", "Yoga Flow", "Dim · 10h — récup")
+    + fit_card("cours-yoga.svg", "Yoga", "fa-spa", "Yoga Flow", "Dim · 10h - récup")
     + "\n"
-    + fit_card("cours-cycling.svg", "Cycling", "fa-bicycle", "Cycling", "Ven · 20h — salle dédiée")
+    + fit_card("cours-cycling.svg", "Cycling", "fa-bicycle", "Cycling", "Ven · 20h - salle dédiée")
     + "\n      </div>\n    </section>",
     fit,
     count=1,
@@ -179,7 +179,7 @@ ph = ph.replace(
           <a href="images/hero.svg" class="glightbox" data-gallery="photo-visuels"><img src="images/hero.svg" width="1000" height="700" alt="Illustration studio photo" loading="lazy" style="width:100%;border-radius:4px"></a>
         </figure>
         <p style="font-size:var(--font-size-2);max-width:28ch;color:var(--sand-11)">
-          Galerie illustrée — masonry animée, lightbox GLightbox et reveal au scroll.
+          Galerie illustrée - masonry animée, lightbox GLightbox et reveal au scroll.
         </p>""",
 )
 (BASE / "photographie" / "index.html").write_text(fix_tags(ph), encoding="utf-8")

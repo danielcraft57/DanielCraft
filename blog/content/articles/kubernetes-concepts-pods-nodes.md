@@ -142,7 +142,7 @@ metadata:
     env: staging
 ```
 
-Un **Service** ou un **Deployment** retrouve les bons pods grâce à un **selector** du type « tous les pods avec `app=mon-api` ». Sans labels cohérents, le service ne pointe nulle part — symptôme classique : « mon Service existe, mais rien ne répond ».
+Un **Service** ou un **Deployment** retrouve les bons pods grâce à un **selector** du type « tous les pods avec `app=mon-api` ». Sans labels cohérents, le service ne pointe nulle part - symptôme classique : « mon Service existe, mais rien ne répond ».
 
 Tu peux aussi demander des **requests/limits** CPU et mémoire sur les conteneurs. En débutant, mets des valeurs raisonnables pour éviter qu'un pod gourmand étouffe le node. Kubernetes utilisera ces infos pour le placement (scheduling).
 

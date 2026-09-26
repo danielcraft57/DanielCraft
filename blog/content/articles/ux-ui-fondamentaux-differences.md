@@ -1,7 +1,7 @@
 ---
 title: "UX et UI : la sensation contre le look"
 date: 2025-09-02
-excerpt: "L'expérience vécue vs l'interface visible — et comment les faire marcher ensemble."
+excerpt: "L'expérience vécue vs l'interface visible - et comment les faire marcher ensemble."
 type: article
 tags: [UX, UI, design, ergonomie, produit]
 series: ux-ui-serie

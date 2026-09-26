@@ -118,7 +118,7 @@ def gallery(slug: str, gid: str, images: list) -> str:
     )
     return f"""
   <section class="{slug}-galerie vt-reveal" aria-label="Galerie photos">
-    <h2>Galerie — {slug}</h2>
+    <h2>Galerie - {slug}</h2>
     <p class="pad-lead">Cliquez pour agrandir (GLightbox). Tous les visuels du dossier démo.</p>
     <div class="pad-grid">
 {items}
@@ -127,7 +127,7 @@ def gallery(slug: str, gid: str, images: list) -> str:
   <section class="pad-faq vt-reveal">
     <h2>Questions fréquentes</h2>
     <dl>
-{chr(10).join(f"      <dt>{q}</dt><dd>Réponse indicative — démonstration portfolio DanielCraft, secteur {slug} en Lorraine.</dd>" for q in FAQ)}
+{chr(10).join(f"      <dt>{q}</dt><dd>Réponse indicative - démonstration portfolio DanielCraft, secteur {slug} en Lorraine.</dd>" for q in FAQ)}
     </dl>
   </section>
   <section class="pad-contact vt-reveal">
@@ -141,7 +141,7 @@ def gallery(slug: str, gid: str, images: list) -> str:
       <label><input type="checkbox" name="rgpd"> J'accepte la politique de confidentialité (démo)</label>
       <button type="submit">Envoyer</button>
     </form>
-    <p class="pad-note">Formulaire statique — aucune donnée transmise.</p>
+    <p class="pad-note">Formulaire statique - aucune donnée transmise.</p>
   </section>
 """
 

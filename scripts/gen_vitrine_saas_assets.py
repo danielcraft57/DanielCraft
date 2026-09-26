@@ -41,7 +41,7 @@ def main() -> None:
   <rect x="120" y="100" width="280" height="12" rx="6" fill="#0ea5e9"/>
   <text x="400" y="200" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#0f172a">Offre publiée ✓</text>
   <rect x="200" y="240" width="400" height="120" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
-  <text x="400" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#166534">Première victoire — aha moment</text>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#166534">Première victoire - aha moment</text>
 </svg>""",
     )
     w(

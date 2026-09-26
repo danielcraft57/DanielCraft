@@ -18,18 +18,18 @@ Le script envoie un email à `contact@danielcraft.fr` via `mail()`. Sur le serve
 
 Variables dans `.env` (voir `.env.example`) :
 
-- `STRIPE_PUBLISHABLE_KEY` — clé publique (`pk_live_…` ou `pk_test_…`)
-- `STRIPE_SECRET_KEY` — clé secrète (`sk_live_…` ou `sk_test_…`)
+- `STRIPE_PUBLISHABLE_KEY` - clé publique (`pk_live_…` ou `pk_test_…`)
+- `STRIPE_SECRET_KEY` - clé secrète (`sk_live_…` ou `sk_test_…`)
 
 Endpoints :
 
-- `POST /api/stripe-create-checkout.php` — corps JSON `{ "vitrine_slug": "restauration", "email": "optionnel" }` → `{ "success": true, "url": "https://checkout.stripe.com/…" }`
-- `GET /api/stripe-test.php` — test API (optionnel : `?key=` si `STRIPE_TEST_KEY` est défini)
+- `POST /api/stripe-create-checkout.php` - corps JSON `{ "vitrine_slug": "restauration", "email": "optionnel" }` → `{ "success": true, "url": "https://checkout.stripe.com/…" }`
+- `GET /api/stripe-test.php` - test API (optionnel : `?key=` si `STRIPE_TEST_KEY` est défini)
 
 Scripts (depuis la racine du repo) :
 
 ```bash
-python scripts/merge_stripe_env.py   # après export des clés dans l’environnement
+python scripts/merge_stripe_env.py   # après export des clés dans l'environnement
 python scripts/stripe_test.py
 python scripts/stripe_test.py --checkout
 python scripts/stripe_sync_vitrines.py   # crée des Payment Links et met à jour src/data/vitrines.json
@@ -39,11 +39,11 @@ Le catalogue est copié vers `api/data/vitrines.json` à chaque `python build.py
 
 ## Devis prestations (Prestafacture)
 
-- `POST /api/request-prestation-devis.php` — corps `name`, `email`, `phone`, `company`, `message`, `prestation_slug`, `service_slug`, `total_eur`, `addon_id[]` (optionnel)
+- `POST /api/request-prestation-devis.php` - corps `name`, `email`, `phone`, `company`, `message`, `prestation_slug`, `service_slug`, `total_eur`, `addon_id[]` (optionnel)
 - Réponse : `{ "success": true, "message": "...", "quote_id": "..." }`
 - Flux serveur : `POST https://prestafacture.com/api/public/devis` puis `POST …/devis/:id/send`
 - Variables `.env` : `PRESTAFACTURE_API_BASE`, `PRESTAFACTURE_API_TOKEN` (jeton `fact_…`)
-- **Scopes jeton** (Prestafacture → Paramètres → API — Jetons) :
+- **Scopes jeton** (Prestafacture → Paramètres → API - Jetons) :
   - Devis catalogue : `clients.read`, `clients.write`, `devis.read`, `devis.write`, `devis.send`, `produits.read`, `produits.write`
   - Facture audit Stripe : `factures.read`, `factures.write`, `factures.send`
 - **Flux devis** : recherche/création client (`/clients`) puis `POST /devis` avec `clientId` (pas `clientEmail` seul).
@@ -51,7 +51,7 @@ Le catalogue est copié vers `api/data/vitrines.json` à chaque `python build.py
 - Les prix catalogue sont **HT** ; la TVA 20 % est ajoutée dans Prestafacture via `taxRate: 0.2`.
 
 Sync catalogue → produits Prestafacture (écrit `prestafacture_sku` + `prestafacture_product_id` dans `src/data/prestations.json`).
-Payload : **description courte** (accroche + prix, ~220 car. max), **2–3 livrables** max avec **heures réalistes**, `techStack` (`languages`, `ai`), métadonnées visuelles.
+Payload : **description courte** (accroche + prix, ~220 car. max), **2-3 livrables** max avec **heures réalistes**, `techStack` (`languages`, `ai`), métadonnées visuelles.
 Les lignes de devis PHP utilisent `short_description` (200 car. max), pas le long texte marketing.
 
 ```bash

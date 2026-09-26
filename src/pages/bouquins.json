@@ -1,8 +1,8 @@
 {
   "schema_type": "livres_catalog",
-  "page_title": "Bouquins PDF — catalogue DanielCraft",
-  "page_description": "Bouquins PDF : des livres gratuits a telecharger tout de suite, le reste a prix d'appel. Informatique, IA, finance, commerce, agile. Metz & en ligne.",
-  "page_keywords": "bouquins formation PDF, apprendre javascript, python debutant, SQL, IA bases, agile, DanielCraft",
+  "page_title": "Bouquins PDF - catalogue DanielCraft",
+  "page_description": "Bouquins PDF : des livres gratuits à télécharger tout de suite, le reste à prix d'appel. Informatique, IA, finance, commerce, agile. Metz & en ligne.",
+  "page_keywords": "bouquins formation PDF, apprendre javascript, python débutant, SQL, IA bases, agile, DanielCraft",
   "output_subpath": "bouquins/index.html",
   "page_url": "/bouquins/",
   "og_image": "/assets/images/og/bouquins-1200x630.jpg",

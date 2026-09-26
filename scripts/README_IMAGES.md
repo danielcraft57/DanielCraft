@@ -1,4 +1,4 @@
-# Scripts — traitement des images (portfolio, hero)
+# Scripts - traitement des images (portfolio, hero)
 
 Prérequis :
 
@@ -17,8 +17,8 @@ pip install -r requirements-scripts.txt
 | **`apply_complementary_grades.py`** | **6 variantes** + `--blend dark\|wide\|midtone\|full` (défaut **dark** pour UI sombres) + `--punch` pour amplifier les teintes. |
 | **`portfolio_image_pipeline.py`** | Enchaîne : soften → reduce_blue → grades (sous-processus). |
 | **`og_image_pipeline.py`** | Images **Open Graph** (`assets/images/og/`) : bleu métal → reduce_blue → grades complémentaires → optionnel 1200×630 + WebP (`optimize_images`). |
-| **`generate_site_og_images.py`** | Génère les cartes OG **1200×630** du site (pages statiques, prestations, vitrines, projets — hors blog). Charte bleu `#4da9d6`. |
-| **Blog OG (ton débutant)** | `python scripts/generate_simple_blog_og_prompts.py` → génère les JPG via `docs/prompt_og_images_articles_simple.md` → `python scripts/install_ai_generated_blog_og.py --simple`. **Pas de bannières** : le hero article = l’OG. |
+| **`generate_site_og_images.py`** | Génère les cartes OG **1200×630** du site (pages statiques, prestations, vitrines, projets - hors blog). Charte bleu `#4da9d6`. |
+| **Blog OG (ton débutant)** | `python scripts/generate_simple_blog_og_prompts.py` → génère les JPG via `docs/prompt_og_images_articles_simple.md` → `python scripts/install_ai_generated_blog_og.py --simple`. **Pas de bannières** : le hero article = l'OG. |
 | **Blog OG (tous / legacy)** | `python scripts/generate_all_blog_og_prompts.py` → JPG → `install_ai_generated_blog_og.py`. Doc : `docs/prompt_og_images_articles_all.md` (ou `…_legacy.md`). Éviter `install_blog_article_banners.py` (hero = OG). |
 | `generate_favicon_pngs.py` | Pack favicons depuis le SVG. |
 | **`rasterize_about_hero.py`** | PNG + WebP 1200×1200 (ou `--size`) pour `about-section-hero`, même composition que le SVG (Pillow, sans Cairo). |
@@ -34,13 +34,13 @@ pip install -r requirements-scripts.txt
 2. `python scripts/apply_complementary_grades.py --strength 0.30`
 3. (Optionnel) `python scripts/soften_white_backgrounds.py` si les fonds blancs ressortent encore.
 
-Ou tout d’un coup :
+Ou tout d'un coup :
 
 ```bash
 # Teintes complémentaires visibles sur captures sombres :
 python scripts/portfolio_image_pipeline.py --reduce-strength 0.45 --grade-strength 0.55 --grade-blend dark --grade-punch 1.2
 
-# Encore plus fort (toute l’image teintée) :
+# Encore plus fort (toute l'image teintée) :
 python scripts/apply_complementary_grades.py --blend full --strength 0.4 --punch 1.3
 ```
 
@@ -52,8 +52,8 @@ python scripts/portfolio_image_pipeline.py --skip-soften --dry-run
 
 ## Paramètres utiles
 
-- `reduce_blue_cast.py --strength 0..1` — intensité de la correction anti-bleu.
-- `apply_complementary_grades.py --strength 0..1` — intensité sur les **midtones** (ombres / hautes lumières préservées).
-- `apply_complementary_grades.py --include-hero` — inclut `assets/images/hero/`.
+- `reduce_blue_cast.py --strength 0..1` - intensité de la correction anti-bleu.
+- `apply_complementary_grades.py --strength 0..1` - intensité sur les **midtones** (ombres / hautes lumières préservées).
+- `apply_complementary_grades.py --include-hero` - inclut `assets/images/hero/`.
 
 Ensuite : `python build.py` (ou `--watch`) pour copier vers `dist/`.

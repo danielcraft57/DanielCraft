@@ -193,7 +193,7 @@ def collect() -> list[dict]:
 
 def write_doc(items: list[dict]) -> None:
     lines = [
-        "# Prompts OG — articles simplifies (ton debutant)",
+        "# Prompts OG - articles simplifies (ton debutant)",
         "",
         f"**{len(items)}** articles. Style : clair, attirant, pedagogique.",
         "**Format :** 1200×630 (1.91:1), JPG puis WebP a l'install.",

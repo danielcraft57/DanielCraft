@@ -1,5 +1,5 @@
 {
-  "_comment": "Modèle pour scripts/data/vitrine_photos/<slug>.json — un fichier par vitrine multi-pages.",
+  "_comment": "Modèle pour scripts/data/vitrine_photos/<slug>.json - un fichier par vitrine multi-pages.",
   "slug": "exemple",
   "brand": "Nom de la marque",
   "category": "hcr",

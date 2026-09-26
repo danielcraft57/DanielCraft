@@ -47,7 +47,7 @@ def gen_banque():
   <section class="bnq-compare vt-reveal">
     <h2>Comparer nos offres</h2>
     <table><thead><tr><th></th><th>Essentiel</th><th>Premium</th></tr></thead>
-    <tbody><tr><td>Frais carte</td><td>0 €</td><td>0 €</td></tr><tr><td>Conseiller dédié</td><td>—</td><td>Oui</td></tr></tbody></table>
+    <tbody><tr><td>Frais carte</td><td>0 €</td><td>0 €</td></tr><tr><td>Conseiller dédié</td><td>-</td><td>Oui</td></tr></tbody></table>
   </section>
   <footer class="vt-reveal">{HUB}</footer>
 </main>
@@ -71,7 +71,7 @@ body{margin:0;font-family:system-ui,sans-serif;background:#f8fafc;color:#0f172a}
 .bnq-compare table{width:100%;border-collapse:collapse}
 .bnq-compare th,.bnq-compare td{border:1px solid #cbd5e1;padding:.75rem}
 """
-    write_demo("banque", "agence-tabs", "tailwind", "Verlaine Banque — Banque",
+    write_demo("banque", "agence-tabs", "tailwind", "Verlaine Banque - Banque",
                "Banque coopérative régionale en Moselle.", body, css)
 
 
@@ -111,7 +111,7 @@ html,body{margin:0;height:100%}
 .etab-foot{padding:2rem;text-align:center;background:#1a1410;color:#c9a227}
 @media(max-width:800px){.etab-chapter{grid-template-columns:1fr}.etab-chapter img{height:50vh}}
 """
-    write_demo("etablissement", "hotel-chapters", "pico", "Hôtel Stanislas — Hébergement",
+    write_demo("etablissement", "hotel-chapters", "pico", "Hôtel Stanislas - Hébergement",
                "Hôtel 4* à Nancy, chambres spa et restauration.", body, css)
 
 
@@ -156,7 +156,7 @@ def gen_automobile():
 .auto-grid img{width:100%;height:160px;object-fit:cover}
 .auto-foot{padding:2rem;text-align:center}
 """
-    write_demo("automobile", "pit-dashboard", "daisy", "Garage Central — Automobile",
+    write_demo("automobile", "pit-dashboard", "daisy", "Garage Central - Automobile",
                "Garage multimarques à Plappeville, Moselle.", body, css)
 
 
@@ -167,7 +167,7 @@ def gen_chocolatier():
 <main id="contenu">
   <section id="timeline" class="ch-timeline vt-reveal">
     <h1 class="ch-title">Vialson · bean-to-bar</h1>
-    <article class="ch-step"><div class="ch-step__txt"><h2>Grain</h2><p>Fèves Équateur &amp; Pérou — torréfaction Nancy.</p></div>{fig(g,"cacao-origines.png","Fèves de cacao",lazy=False)}</article>
+    <article class="ch-step"><div class="ch-step__txt"><h2>Grain</h2><p>Fèves Équateur &amp; Pérou - torréfaction Nancy.</p></div>{fig(g,"cacao-origines.png","Fèves de cacao",lazy=False)}</article>
     <article class="ch-step ch-step--flip"><motion class="ch-step__txt"><h2>Tablette</h2><p>Tempérage et moulage atelier Saint-Pierre.</p></motion>{fig(g,"atelier.png","Atelier de fabrication")}</article>
     <article class="ch-step">{fig(g,"produit-1.png","Tablette noir 72%")}<div class="ch-step__txt"><h2>Boutique</h2><p>Ganaches et coffrets entreprise.</p></div></article>
     <article class="ch-step ch-step--flip">{fig(g,"choco-degustation-plateau.png","Plateau dégustation")}{fig(g,"hero.png","Vitrine chocolaterie")}</article>
@@ -216,7 +216,7 @@ def gen_immobilier():
     <article class="imm-card imm-card--2">{fig(g,"bien-yutz.svg","Maison Yutz jardin")}<h3>Yutz · 120 m²</h3></article>
     <article class="imm-card imm-card--3">{fig(g,"bien-sablon.svg","Loft Sablon")}<h3>Sablon · loft</h3></article>
   </section>
-  <section class="imm-map vt-reveal" aria-label="Carte"><div class="imm-map-ph">Carte interactive — Moselle-Est (démo)</div></section>
+  <section class="imm-map vt-reveal" aria-label="Carte"><div class="imm-map-ph">Carte interactive - Moselle-Est (démo)</div></section>
   <section class="vt-reveal">{fig(g,"hero.svg","Illustration agence")}{fig(g,"equipe-agence.svg","Équipe agence immobilière")}</section>
   <footer>{HUB}</footer>
 </main>
@@ -236,7 +236,7 @@ body{margin:0;font-family:system-ui,sans-serif;background:#faf8f4}
 .imm-map-ph{height:280px;background:repeating-linear-gradient(45deg,#d8e8d8,#d8e8d8 10px,#c5dcc5 10px,#c5dcc5 20px);display:grid;place-items:center;border-radius:12px;color:#1b4332}
 footer{padding:2rem;text-align:center}
 """
-    write_demo("immobilier", "magazine-overlap", "bootstrap", "Agence Sablon — Immobilier",
+    write_demo("immobilier", "magazine-overlap", "bootstrap", "Agence Sablon - Immobilier",
                "Immobilier prestige en Moselle.", body, css)
 
 
@@ -246,7 +246,7 @@ def gen_juridique():
 <header class="jur-mast vt-reveal">
   <p class="jur-kicker">Metz · Barreau de Metz</p>
   <h1>Lex &amp; Territoire</h1>
-  <p class="jur-deck">Cabinet d'avocats — droit des affaires et social en Lorraine.</p>
+  <p class="jur-deck">Cabinet d'avocats - droit des affaires et social en Lorraine.</p>
 </header>
 <main id="contenu" class="jur-gazette vt-reveal">
   <article class="jur-col">
@@ -263,7 +263,7 @@ def gen_juridique():
   </article>
   <article class="jur-col">
     <h2>Social</h2>
-    <p>Conseil RH, licenciement, CSE — prud'hommes de Metz.</p>
+    <p>Conseil RH, licenciement, CSE - prud'hommes de Metz.</p>
     {fig(g,"expertise-social.svg","Expertise droit social")}
     <blockquote class="jur-pull">« Un accord signé vaut mieux qu'un contentieux long. »</blockquote>
   </article>
@@ -283,5 +283,5 @@ body{margin:0;font-family:Georgia,serif;background:#f4f1ea;color:#1a1a2e}
 .jur-foot{padding:2rem;text-align:center;border-top:1px solid #c9a227}
 @media(max-width:900px){.jur-gazette{grid-template-columns:1fr}}
 """
-    write_demo("juridique", "gazette-columns", "tailwind", "Lex & Territoire — Juridique",
+    write_demo("juridique", "gazette-columns", "tailwind", "Lex & Territoire - Juridique",
                "Avocats droit des affaires et social à Metz.", body, css)

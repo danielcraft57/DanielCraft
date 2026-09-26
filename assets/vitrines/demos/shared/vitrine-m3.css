@@ -1,0 +1,405 @@
+/* Material Design 3 - couche UX/UI partagee (echantillons batch2+)
+   Tokens elevation / shape / state layers. Les themes secteur gardent leurs couleurs. */
+
+:root {
+  --md-shape-xs: 0.5rem;
+  --md-shape-sm: 0.75rem;
+  --md-shape-md: 1rem;
+  --md-shape-lg: 1.5rem;
+  --md-shape-xl: 1.75rem;
+  --md-shape-full: 999px;
+  --md-elev-1: 0 1px 2px rgba(0, 0, 0, 0.08), 0 1px 3px 1px rgba(0, 0, 0, 0.04);
+  --md-elev-2: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 6px 2px rgba(0, 0, 0, 0.06);
+  --md-elev-3: 0 4px 8px 3px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --md-elev-4: 0 6px 10px 4px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.12);
+  --md-duration: 200ms;
+  --md-ease: cubic-bezier(0.2, 0, 0, 1);
+  --md-ease-emph: cubic-bezier(0.2, 0, 0, 1.2);
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fef7ff));
+  --vt-surface-container: var(--vt-card, color-mix(in srgb, var(--vt-accent, #6750a4) 8%, #fff));
+  --vt-on-surface: var(--vt-ink, var(--bs-body-color, #1c1b1f));
+  --vt-outline: var(--vt-border, color-mix(in srgb, var(--vt-on-surface) 14%, transparent));
+}
+
+/* App bar classique : blur + elevation M3 */
+.vt-header.sticky-top .vt-navbar,
+header.vt-header .vt-navbar {
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  box-shadow: var(--md-elev-1);
+  transition: box-shadow var(--md-duration) var(--md-ease), background var(--md-duration) var(--md-ease);
+}
+.vt-navbar .nav-link {
+  border-radius: var(--md-shape-full);
+  padding-inline: 0.85rem !important;
+  transition: background var(--md-duration) var(--md-ease), color var(--md-duration) var(--md-ease);
+}
+.vt-navbar .nav-link:hover {
+  background: color-mix(in srgb, var(--vt-accent, currentColor) 10%, transparent);
+}
+.vt-navbar .nav-link.active {
+  background: color-mix(in srgb, var(--vt-accent, currentColor) 14%, transparent);
+  font-weight: 700;
+}
+
+/* Boutons filled / tonal / outlined Material */
+.btn-vt-primary {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--md-shape-full) !important;
+  box-shadow: var(--md-elev-1);
+  letter-spacing: 0.01em;
+  transition:
+    box-shadow var(--md-duration) var(--md-ease),
+    transform var(--md-duration) var(--md-ease),
+    filter var(--md-duration) var(--md-ease);
+}
+.btn-vt-primary:hover {
+  box-shadow: var(--md-elev-2);
+  transform: translateY(-1px);
+}
+.btn-vt-primary:active {
+  box-shadow: var(--md-elev-1);
+  transform: translateY(0);
+}
+.btn-vt-outline {
+  border-radius: var(--md-shape-full) !important;
+  border-width: 1px !important;
+  transition: background var(--md-duration) var(--md-ease), border-color var(--md-duration) var(--md-ease);
+}
+.btn-vt-tonal {
+  --bs-btn-bg: color-mix(in srgb, var(--vt-accent, #6750a4) 18%, transparent);
+  --bs-btn-border-color: transparent;
+  --bs-btn-color: var(--vt-accent, #6750a4);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--vt-accent, #6750a4) 26%, transparent);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-hover-color: var(--vt-accent, #6750a4);
+  border-radius: var(--md-shape-full) !important;
+  font-weight: 600;
+}
+
+/* Cards elevées (surface container) */
+.vt-svc-card,
+.vt-review-card,
+.vt-journey-card,
+.vt-quote,
+.vt-slot-card {
+  border-radius: var(--md-shape-lg) !important;
+  box-shadow: var(--md-elev-1);
+  border: 1px solid var(--vt-outline) !important;
+  transition:
+    box-shadow var(--md-duration) var(--md-ease),
+    transform var(--md-duration) var(--md-ease);
+}
+.vt-svc-card:hover,
+.vt-review-card:hover,
+.vt-journey-card:hover {
+  box-shadow: var(--md-elev-3);
+  transform: translateY(-3px);
+}
+.vt-svc-card img {
+  border-radius: var(--md-shape-lg) var(--md-shape-lg) 0 0;
+}
+
+/* Chips filter / assist */
+.vt-chip,
+.vt-chip-row .vt-chip {
+  border-radius: var(--md-shape-sm) !important;
+  min-height: 2rem;
+  padding: 0.35rem 0.9rem !important;
+  font-weight: 600;
+  font-size: 0.82rem;
+  border: 1px solid var(--vt-outline);
+  transition: background var(--md-duration) var(--md-ease), box-shadow var(--md-duration) var(--md-ease);
+}
+.vt-chip.on,
+.vt-chip-row .vt-chip.on {
+  box-shadow: var(--md-elev-1);
+}
+
+/* Hero bleed : safe area + CTA group M3 */
+.vt-hero-bleed {
+  isolation: isolate;
+}
+.vt-hero-bleed-copy .btn-vt-outline {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: rgba(255, 255, 255, 0.55);
+  --bs-btn-hover-bg: rgba(255, 255, 255, 0.12);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: #fff;
+}
+.vt-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+.vt-assist-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+.vt-assist-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--md-shape-full);
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 14%, transparent);
+  color: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+}
+.vt-assist-chip:hover {
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 22%, transparent);
+}
+
+/* Stats band */
+.vt-m3-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .vt-m3-stats { grid-template-columns: repeat(4, 1fr); }
+}
+.vt-m3-stat {
+  background: var(--vt-surface-container);
+  border-radius: var(--md-shape-md);
+  padding: 1rem 0.85rem;
+  text-align: center;
+  box-shadow: var(--md-elev-1);
+  border: 1px solid var(--vt-outline);
+}
+.vt-m3-stat strong {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--vt-accent, inherit);
+  letter-spacing: -0.02em;
+}
+.vt-m3-stat span {
+  font-size: 0.78rem;
+  color: var(--vt-mute, #6b6560);
+  font-weight: 600;
+}
+
+/* Forms filled M3 */
+.vt-m3-field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.vt-m3-field .form-control,
+.vt-m3-field .form-select,
+.vt-dialog .form-control,
+.vt-dialog .form-select {
+  border-radius: var(--md-shape-xs) var(--md-shape-xs) 0 0 !important;
+  border: none !important;
+  border-bottom: 2px solid var(--vt-outline) !important;
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 8%, transparent) !important;
+  padding: 1.1rem 0.85rem 0.55rem !important;
+  box-shadow: none !important;
+  transition: border-color var(--md-duration) var(--md-ease), background var(--md-duration) var(--md-ease);
+}
+.vt-m3-field .form-control:focus,
+.vt-m3-field .form-select:focus,
+.vt-dialog .form-control:focus,
+.vt-dialog .form-select:focus {
+  border-bottom-color: var(--vt-accent, #6750a4) !important;
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 12%, transparent) !important;
+  outline: none;
+}
+.vt-m3-field label,
+.vt-dialog .form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--vt-mute, #6b6560);
+}
+
+/* Dialog scrim + sheet M3 */
+.vt-dialog {
+  border-radius: var(--md-shape-xl) !important;
+  box-shadow: var(--md-elev-4) !important;
+  padding: 1.5rem !important;
+  max-width: min(420px, calc(100vw - 2rem));
+}
+.vt-dialog-backdrop {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* FAB Material */
+.vt-fab-menu-main {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  border-radius: var(--md-shape-lg) !important;
+  box-shadow: var(--md-elev-3) !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  transition: transform var(--md-duration) var(--md-ease-emph), box-shadow var(--md-duration) var(--md-ease);
+}
+.vt-fab-menu.is-open .vt-fab-menu-main {
+  transform: rotate(45deg);
+  border-radius: var(--md-shape-md) !important;
+}
+.vt-fab-menu-actions a,
+.vt-fab-menu-actions button {
+  border-radius: var(--md-shape-full) !important;
+  box-shadow: var(--md-elev-2);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Bottom navigation bar (mobile) - remplace la barre CTA plate */
+.vt-bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  z-index: 1030;
+  display: flex;
+  align-items: stretch;
+  gap: 0.15rem;
+  width: min(420px, calc(100% - 1.25rem));
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--md-shape-xl);
+  background: color-mix(in srgb, var(--vt-surface, #fff) 92%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: var(--md-elev-3);
+  border: 1px solid var(--vt-outline);
+}
+@media (min-width: 992px) {
+  .vt-bottom-nav { display: none; }
+}
+.vt-bottom-nav a,
+.vt-bottom-nav button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.45rem 0.25rem;
+  border: none;
+  background: transparent;
+  color: var(--vt-mute, #6b6560);
+  text-decoration: none;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--md-shape-md);
+  transition: background var(--md-duration) var(--md-ease), color var(--md-duration) var(--md-ease);
+}
+.vt-bottom-nav a.is-active,
+.vt-bottom-nav a:hover,
+.vt-bottom-nav button:hover {
+  color: var(--vt-accent, #6750a4);
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 12%, transparent);
+}
+.vt-bottom-nav .vt-bn-ico {
+  font-size: 1.15rem;
+  line-height: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+/* Masquer ancienne barre mobile si bottom-nav presente */
+body:has(.vt-bottom-nav) .vt-mobile-cta,
+body:has(.vt-bottom-nav) .vt-mobile-bar {
+  display: none !important;
+}
+/* FAB un peu plus haut au-dessus de la bottom nav */
+body:has(.vt-bottom-nav) .vt-fab-menu {
+  bottom: 5.25rem;
+}
+body:has(.vt-bottom-nav) {
+  padding-bottom: 5.5rem;
+}
+@media (min-width: 992px) {
+  body:has(.vt-bottom-nav) { padding-bottom: 0; }
+  body:has(.vt-bottom-nav) .vt-fab-menu { bottom: 1.5rem; }
+}
+
+/* Sticky CTA desktop band */
+.vt-cta-sticky {
+  border-radius: var(--md-shape-lg);
+  margin: 0 clamp(0.75rem, 3vw, 1.5rem) 1.5rem;
+  box-shadow: var(--md-elev-2);
+  padding-inline: 1.25rem !important;
+}
+.vt-sticky-cta {
+  border-radius: var(--md-shape-xl) var(--md-shape-xl) 0 0 !important;
+  box-shadow: var(--md-elev-3) !important;
+}
+
+/* Surface bands rhythm */
+.vt-surface-band--soft {
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 5%, var(--vt-surface, #fff));
+}
+.vt-surface-band--tint {
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 10%, var(--vt-surface, #fff));
+}
+
+/* Focus visible a11y M3 */
+:focus-visible {
+  outline: 2px solid var(--vt-accent, #6750a4);
+  outline-offset: 3px;
+}
+.btn:focus-visible,
+.vt-chip:focus-visible,
+.vt-bottom-nav a:focus-visible {
+  outline-offset: 2px;
+}
+
+/* Contact card */
+.vt-m3-contact-card {
+  max-width: 28rem;
+  margin-inline: auto;
+  background: var(--vt-surface-container);
+  border-radius: var(--md-shape-xl);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--md-elev-2);
+  border: 1px solid var(--vt-outline);
+  text-align: left;
+}
+.vt-m3-contact-card .vt-m3-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+}
+
+/* Segmented progress (pages internes) */
+.vt-m3-progress {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+.vt-m3-progress span {
+  flex: 1;
+  height: 0.28rem;
+  border-radius: var(--md-shape-full);
+  background: color-mix(in srgb, var(--vt-accent, #6750a4) 18%, transparent);
+}
+.vt-m3-progress span.is-on {
+  background: var(--vt-accent, #6750a4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-vt-primary,
+  .vt-svc-card,
+  .vt-fab-menu-main,
+  .vt-navbar .nav-link {
+    transition: none !important;
+  }
+  .vt-svc-card:hover,
+  .vt-review-card:hover {
+    transform: none;
+  }
+}

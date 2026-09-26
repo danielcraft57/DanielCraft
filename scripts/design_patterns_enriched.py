@@ -107,7 +107,7 @@ class PayPalAdapter(PaymentPort):
     [("Facade", "Simplifie un sous-système entier"), ("Decorator", "Ajoute un comportement, ne change pas l'interface cible")],
     "Stripe SDK derrière ton port interne. Axios + transform pour API REST legacy. Lecteurs de fichiers Node (`fs` streams).",
     "Branche `StripeAdapter` et `PayPalAdapter` sur le même `PaymentPort`. Teste le checkout avec un mock sans appeler l'API réelle.",
-    "Adapter = traduire une interface incompatible — le client reste propre.",
+    "Adapter = traduire une interface incompatible - le client reste propre.",
     compare="""| Pattern | Quand |
 |---------|-------|
 | Adapter | Interface incompatible |
@@ -177,11 +177,11 @@ class AppFacade:
         await self._db.close()
 ```""",
     ["Sous-système avec 5+ composants à initialiser.", "Tu veux une API stable pour des clients externes.", "Onboarding : un seul point d'entrée documenté."],
-    ["Le sous-système tient en 2 appels — pas besoin de facade.", "La facade devient un God Object qui connaît tout le métier."],
+    ["Le sous-système tient en 2 appels - pas besoin de facade.", "La facade devient un God Object qui connaît tout le métier."],
     ["Mettre la logique métier dans la facade.", "Exposer tous les subsystèmes au client (perd l'intérêt)."],
     [("Adapter", "Une classe legacy"), ("Mediator", "Coordonne des collègues égaux")],
     "Frameworks `NestFactory.create()`, `SpringApplication.run()`. Scripts `docker compose up` qui masquent réseau + volumes.",
-    "Écris `DeployFacade.deploy(env)` qui enchaîne build, tests, push image, rollout K8s — une commande pour l'équipe.",
+    "Écris `DeployFacade.deploy(env)` qui enchaîne build, tests, push image, rollout K8s - une commande pour l'équipe.",
     "Facade = point d'entrée simple vers la complexité.",
 )
 
@@ -199,7 +199,7 @@ function onKey(type: string) {
 
 Undo/redo devient un cauchemar de flags.""",
     "Chaque action est un objet `execute()` / `undo()`. L'**Invoker** empile l'historique sans connaître les détails.",
-    "Commande au **restaurant** : le serveur note, la cuisine exécute plus tard — la commande est l'objet.",
+    "Commande au **restaurant** : le serveur note, la cuisine exécute plus tard - la commande est l'objet.",
     [("Command", "execute / undo"), ("Invoker", "Historique"), ("Receiver", "Document modifié"), ("Client", "UI")],
     """```typescript
 interface Command {
@@ -267,7 +267,7 @@ def _bulk() -> None:
          "Builder construit pas à pas un objet complexe avec une API fluide.",
          "Un `User` a 12 champs optionnels : `new User(a,b,c,...)` illisible.",
          "Étapes nommées qui retournent `this`, `build()` valide et retourne l'objet immuable.",
-         "Composer un burger : pain, steak, sauce — étape par étape.",
+         "Composer un burger : pain, steak, sauce - étape par étape.",
          """```typescript
 class HttpRequest {
   constructor(
@@ -623,7 +623,7 @@ class Plus implements Expr {
         analogy,
         [("Client", "Déclenche l'opération"), (name, "Structure centrale"), ("Collaborateurs", "Implémentations ou états")],
         ts,
-        f"```python\n# {name} — reproduis les classes TypeScript avec dataclasses / ABC\n```",
+        f"```python\n# {name} - reproduis les classes TypeScript avec dataclasses / ABC\n```",
         ["Plusieurs variantes ou étapes.", "Équipe qui doit nommer la solution en review."],
         ["Script jetable.", "Un seul `if` stable."],
         ["Sur-ingénierie.", "Nom du pattern sans problème associé."],

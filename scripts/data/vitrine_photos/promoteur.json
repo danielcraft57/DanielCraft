@@ -1,0 +1,129 @@
+{
+  "slug": "promoteur",
+  "brand": "Habitat Horizon",
+  "category": "immobilier",
+  "locale": "Nancy, Grand Est, France",
+  "style_suffix": "Property developer new housing Nancy, architectural photography, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Residence neuve a Nancy",
+      "subject": "Contemporary residential building by property developer in Nancy suburbs: balconies, planted courtyard, golden hour facade",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Residence neuve a Nancy"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Studio et T2",
+      "subject": "Bright modern studio apartment interior with large window and kitchenette, staged furniture",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Studio et T2"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Appartement familial",
+      "subject": "Family T3 living room with balcony access, soft daylight, new-build finishes",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Appartement familial"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Maison de ville",
+      "subject": "Townhouse with small garden and terrace, contemporary brick and wood cladding",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Maison de ville"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Facade residence",
+      "subject": "Residential facade close-up with clean lines and landscaping",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Facade residence"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Showroom",
+      "subject": "Sales showroom with floor plans on wall (illegible), sample finishes boards",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Showroom"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Jardin residence",
+      "subject": "Shared residence garden with benches and young trees",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Jardin residence"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Hall d'entree",
+      "subject": "Modern lobby entrance with mailboxes and soft lighting, welcoming atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Hall d'entree"
+        }
+      ]
+    }
+  ]
+}

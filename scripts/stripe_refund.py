@@ -8,7 +8,7 @@ Usage (depuis la racine du repo) :
     python scripts/stripe_refund.py --charge ch_xxx --reason requested_by_customer
 
 Ne pas exposer ca en endpoint public. Prestafacture : l'avoir se fait a la main
-(API publique sans ressource avoirs — voir docs/PRESTAFACTURE.md).
+(API publique sans ressource avoirs - voir docs/PRESTAFACTURE.md).
 """
 from __future__ import annotations
 
@@ -84,7 +84,7 @@ def main() -> int:
     rid = refund.get('id', '')
     status = refund.get('status', '')
     amount = refund.get('amount', 0)
-    print(f'[OK] Remboursement {rid} — {status} — {amount} centimes — PI {pi}')
+    print(f'[OK] Remboursement {rid} - {status} - {amount} centimes - PI {pi}')
     print('     Avoir Prestafacture : a creer a la main (API publique sans /avoirs).')
     return 0
 

@@ -104,12 +104,12 @@ CAT_PROMPTS = {
 def main() -> None:
     packs_n = sum(1 for i in items if i.get("kind") == "pack")
     lines: list[str] = [
-        "# Prompts images — catalogue prestations & packs",
+        "# Prompts images - catalogue prestations & packs",
         "",
         "A generer (JPG/WebP 1200x630 cartes, 800x800 ou 4:3 pour fiche hero).",
         "Palette site : navy `#0f3550`, ciel `#4da9d6`, mint `#7dd4a8`, fond clair `#e8f6fc` / blanc.",
         "Pas de violet, pas de creme terracotta, pas de glow violet.",
-        "Styles varies : photo realiste, isometric soft, flat vector editorial, mockup UI, macro still-life — toujours la meme palette.",
+        "Styles varies : photo realiste, isometric soft, flat vector editorial, mockup UI, macro still-life - toujours la meme palette.",
         "",
         "Export cible :",
         "- Cadres categories : `assets/images/prestations/categories/<id>.jpg`",
@@ -151,7 +151,7 @@ def main() -> None:
             style_key = cycle[i % len(cycle)]
             cat_idx[cid] = i + 1
             scene = SCENE.get(slug) or (
-                f'visual metaphor for "{it.get("title", "")}" — local commerce / artisan context'
+                f'visual metaphor for "{it.get("title", "")}" - local commerce / artisan context'
             )
             kind = "Pack bundle composition. " if it.get("kind") == "pack" else ""
             lines.append(f"#### {slug}")
@@ -169,7 +169,7 @@ def main() -> None:
             f"navy-to-teal gradient backdrop matching site deal banner, mint ribbon space empty for overlay text. {PALETTE} 1:1.",
             "",
             "## Notes generation",
-            "- Eviter logos de marques protegees (WhatsApp, Google) — formes generiques.",
+            "- Eviter logos de marques protegees (WhatsApp, Google) - formes generiques.",
             "- Preferer UI sans texte lisible.",
             "- Une fois generes : pointer `image` dans `prestations.json` vers le JPG (pas SVG) pour activer le hero fiche.",
             "- Pour les cadres hub : optionnellement `categories[].image` dans prestations.json.",
@@ -182,7 +182,7 @@ def main() -> None:
     out.write_text("\n".join(lines), encoding="utf-8")
     text = out.read_text(encoding="utf-8")
     miss = [i["slug"] for i in items if f"#### {i['slug']}" not in text]
-    print(f"OK {out} — {len(items)} offres, {len(cats)} cats, missing={miss}")
+    print(f"OK {out} - {len(items)} offres, {len(cats)} cats, missing={miss}")
 
 
 if __name__ == "__main__":

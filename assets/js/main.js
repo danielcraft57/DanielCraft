@@ -1,10 +1,18 @@
-// ===== MAIN JAVASCRIPT - V6 FREELANCE =====
-
+/**
+ * Application principale DanielCraft (nav, formulaires, animations, FAQ).
+ */
 class DanielCraftApp {
+  /**
+   * Initialise l'application et branche tous les modules de page.
+   */
   constructor() {
     this.init();
   }
 
+  /**
+   * Point d'entrée : enregistre les listeners et modules UI.
+   * @returns {void}
+   */
   init() {
     this.syncNavOffset();
     this.setupEventListeners();
@@ -19,11 +27,18 @@ class DanielCraftApp {
     this.initBackToTop();
   }
 
-  /** Affiche/masque le bouton "retour en haut" au scroll (logique dans handleNavbarScroll). */
+  /**
+   * Affiche/masque le bouton "retour en haut" au scroll (logique dans handleNavbarScroll).
+   * @returns {void}
+   */
   initBackToTop() {
     // Le clic et la visibilité du bouton #backToTop sont gérés dans setupEventListeners et handleNavbarScroll
   }
 
+  /**
+   * Branche scroll doux, navbar, retour en haut et resize.
+   * @returns {void}
+   */
   setupEventListeners() {
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(link => {

@@ -52,7 +52,7 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 - Désabonnement emails (prospection / publicité) (`/desabonnement`)
 - Pages légales (Mentions légales, CGV, CGU, Politique de confidentialité)
 
-### API (PHP) et variables d’environnement
+### API (PHP) et variables d'environnement
 - Les endpoints PHP sont servis sous `/api/*.php` (voir `scripts/nginx.conf`)
 - Les secrets (token API, base d'URL) sont à mettre dans un fichier `.env` **à la racine** (non versionné)
 
@@ -61,7 +61,7 @@ Site statique moderne avec système de build Python, optimisé pour le SEO, les 
 - **Endpoint**: `/api/unsubscribe.php`
 - **Logique serveur**:
   - recherche de l'entreprise via `/api/public/entreprises/by-website`
-  - marquage “désabonné” via `POST /api/public/entreprises/<id>/unsubscribe`
+  - marquage "désabonné" via `POST /api/public/entreprises/<id>/unsubscribe`
 
 ## Structure du Projet
 
@@ -114,7 +114,7 @@ Génère les pages dans `dist/`, le blog dans `dist/blog/`, et les sitemaps (sit
 # ou simplement (délègue à serve_dev.ps1) :
 .\scripts\serve_local.ps1
 ```
-Ouvre `http://localhost:8000/` — blog sans `.html`, fiches `/prestations/…`, formulaires et devis Prestafacture via `/api/`.
+Ouvre `http://localhost:8000/` - blog sans `.html`, fiches `/prestations/…`, formulaires et devis Prestafacture via `/api/`.
 
 **Aperçu statique sans PHP** (CSS/JS seulement, pas de contact/devis) :
 ```powershell

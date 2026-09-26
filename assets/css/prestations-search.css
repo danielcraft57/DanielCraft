@@ -1,4 +1,4 @@
-/* Hero recherche — catalogue prestations (style Google épuré + fond SVG animé) */
+/* Hero recherche - catalogue prestations (style Google épuré + fond SVG animé) */
 
 .prestations-search-hero--wow {
   --spot-x: 50%;
@@ -455,7 +455,7 @@
   display: none;
 }
 
-/* Filtrage catalogue — grille résultats plate */
+/* Filtrage catalogue - grille résultats plate */
 .prestations-search-results-wrap {
   margin-bottom: 1.5rem;
 }

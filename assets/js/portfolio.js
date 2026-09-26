@@ -3,8 +3,8 @@
    ======================================== */
 
 /**
- * Indice de teinte complémentaire (0–5), stable par id de projet
- * (ne change pas quand on filtre la grille — même rendu couleur par carte).
+ * Indice de teinte complémentaire (0-5), stable par id de projet
+ * (ne change pas quand on filtre la grille - même rendu couleur par carte).
  */
 function portfolioTintFromId(id) {
     const s = String(id || '');
@@ -77,15 +77,15 @@ const PortfolioData = {
         {
             id: 'socialcare-hub',
             title: 'SocialCare Hub - Plateforme de services sociaux',
-            description: 'Plateforme centralisée pour regrouper des services sociaux, faciliter l’orientation et le suivi des bénéficiaires.',
+            description: 'Plateforme centralisée pour regrouper des services sociaux, faciliter l'orientation et le suivi des bénéficiaires.',
             category: 'web',
             featured: true,
             technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'API REST', 'PostgreSQL'],
             features: [
                 'Catalogue de services sociaux filtrable',
-                'Fiches détaillées et critères d’éligibilité',
+                'Fiches détaillées et critères d'éligibilité',
                 'Gestion de comptes et rôles',
-                'Intégration d’APIs externes',
+                'Intégration d'APIs externes',
                 'Interface accessible et responsive'
             ],
             year: 2025,
@@ -101,7 +101,7 @@ const PortfolioData = {
             featured: false,
             technologies: ['React', 'JavaScript', 'Node.js', 'Express', 'MongoDB'],
             features: [
-                'Gestion d’albums privés',
+                'Gestion d'albums privés',
                 'Invitations et partage sécurisé',
                 'Interface utilisateur moderne',
                 'API REST pour la gestion des médias',
@@ -115,7 +115,7 @@ const PortfolioData = {
         {
             id: 'duel-de-dame',
             title: 'DuelDeDame - Jeu de dames en ligne',
-            description: 'Jeu de dames en TypeScript conçu pour l’apprentissage des design patterns et la mise en pratique d’architectures propres.',
+            description: 'Jeu de dames en TypeScript conçu pour l'apprentissage des design patterns et la mise en pratique d'architectures propres.',
             category: 'web',
             featured: false,
             technologies: ['TypeScript', 'Next.js', 'Socket.io', 'Design Patterns'],
@@ -142,7 +142,7 @@ const PortfolioData = {
                 'Téléchargement de vidéos et audio',
                 'Conversion dans plusieurs formats',
                 'Interface desktop simple',
-                'Gestion de file d’attente',
+                'Gestion de file d'attente',
                 'Logs et gestion des erreurs'
             ],
             year: 2024,

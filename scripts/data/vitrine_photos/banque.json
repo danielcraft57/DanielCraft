@@ -1,0 +1,129 @@
+{
+  "slug": "banque",
+  "brand": "Banque des Ponts",
+  "category": "conseil",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Corporate regional bank branch Metz, sober blue tones, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Agence bancaire a Metz",
+      "subject": "Modern regional bank branch lobby in Metz: glass facade, blue and navy seating, discreet advisor desks, sober corporate finance atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Agence bancaire a Metz"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Espace particuliers",
+      "subject": "Personal banking advisor meeting with client at desk, laptop, calm professional setting",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Espace particuliers"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Espace professionnels",
+      "subject": "SME business banking discussion around documents, handshake ready mood, corporate office",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Espace professionnels"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Conseil epargne",
+      "subject": "Savings consultation with charts printed on paper (no readable text), advisor pointing calmly",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Conseil epargne"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Ouverture de compte",
+      "subject": "Account opening desk with welcome kit folder, modern bank interior",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Ouverture de compte"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Credit habitat",
+      "subject": "Home loan discussion with house keys on table, family couple with advisor",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Credit habitat"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Epargne",
+      "subject": "Quiet wealth planning corner with soft lighting and navy accents",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Epargne"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Hall d'agence",
+      "subject": "Bank branch hall with customer queue bollards, clean floors, Metz urban street visible through glass",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Hall d'agence"
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Prompts OG — séries API REST/GraphQL, Cybersécurité, UX/UI
+# Prompts OG - séries API REST/GraphQL, Cybersécurité, UX/UI
 
 Manifest pour **25** articles (régénération).
 
@@ -218,7 +218,7 @@ Visuel Open Graph technique et premium pour un article informatique, design syst
 
 ---
 
-## 21. Design system : composants, tokens et cohérence à l’échelle
+## 21. Design system : composants, tokens et cohérence à l'échelle
 - slug: `design-system-composants-tokens`
 - fichier: `design-system-composants-tokens-1200x630.jpg`
 
@@ -258,12 +258,12 @@ Visuel Open Graph technique et premium pour un article informatique, design syst
 
 ---
 
-## 25. Mesurer l’UX : KPIs, analytics, tests et A/B testing (sans vanity metrics)
+## 25. Mesurer l'UX : KPIs, analytics, tests et A/B testing (sans vanity metrics)
 - slug: `mesurer-ux-kpis-analytics-ab-testing`
 - fichier: `mesurer-ux-kpis-analytics-ab-testing-1200x630.jpg`
 
 ```
-Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Mesurer l’UX : KPIs, analytics, tests et A/B tes" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
+Visuel Open Graph technique et premium pour un article informatique, design system, maquettes UI, parcours utilisateur, composants. Composition complexe mais lisible, avec plusieurs panneaux UI, elements logiciels, flux de donnees ou modules techniques selon le sujet. Palette claire premium : fond #f5f7fb vers #e9eef6, bleus #2563eb et #60a5fa, encre #0f172a, accent rouge #dc2626. Bandeau bas sombre avec titre en francais "Mesurer l'UX : KPIs, analytics, tests et A/B tes" et marque "DanielCraft". Style plus technique, plus logiciel, plus architecture web, moins cartoon, moins simplifie, pas de mascotte naive, pas de flat design vide. Si un humain apparait, il reste secondaire et sobre. Ratio 1.91:1, 1200x630. Export JPG puis convertir en WebP.
 ```
 
 ---

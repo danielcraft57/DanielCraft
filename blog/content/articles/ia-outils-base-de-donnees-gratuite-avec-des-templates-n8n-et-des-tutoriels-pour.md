@@ -1,7 +1,7 @@
 ---
 title: "Base + n8n : une stack gratuite pour demarrer"
 date: 2026-08-04
-excerpt: "Associer une base simple, des templates d'automation et des tutos — sans tout complexifier."
+excerpt: "Associer une base simple, des templates d'automation et des tutos - sans tout complexifier."
 type: comparatif
 tags: [IA, outils, alternatives, comparatif]
 og_image: ia-outils-base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour-1200x630.jpg

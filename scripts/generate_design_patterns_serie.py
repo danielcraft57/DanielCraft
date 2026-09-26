@@ -84,7 +84,7 @@ def build_article(
     figs = f"""
 <figure>
   <img src="../../assets/images/blog/dp-{sk}.svg" alt="Schéma du pattern {name}" class="schema-inline" width="480" />
-  <figcaption>Structure simplifiée du pattern {name} — les flèches montrent qui dépend de qui.</figcaption>
+  <figcaption>Structure simplifiée du pattern {name} - les flèches montrent qui dépend de qui.</figcaption>
 </figure>
 """
     banner = f"illustrations/dp-{sk}-banner.webp"
@@ -203,11 +203,11 @@ def build_article(
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom {name} aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Non - on teste surtout ta capacité à reconnaître le problème. Le nom {name} aide à communiquer en équipe.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre {name} te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre {name} te permet de les utiliser correctement.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
+**Je dois tout refactoriser ?** Non - applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
 
 ---
 
@@ -228,11 +228,11 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ## Pas à pas : implémenter en 5 étapes
 
-1. **Nomme le problème** — est-ce vraiment {name} ?
+1. **Nomme le problème** - est-ce vraiment {name} ?
 2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
 3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise {name} parce que… ».
+4. **Implémente une variante** - valide avant d'en ajouter d'autres.
+5. **Documente en équipe** - « ici on utilise {name} parce que… ».
 
 ---
 
@@ -245,7 +245,7 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 {p['exercise']}
 
@@ -273,11 +273,11 @@ INTRO_BODY = dedent(
 
 Tu as déjà copié-collé du code sans comprendre sa structure ? Ou une classe de 800 lignes que personne n'ose toucher ? Les **design patterns** t'aident à **nommer** des solutions qui marchent, à **communiquer** avec ton équipe, et à **éviter** de réinventer la roue.
 
-Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à beaucoup de catalogues, nous les classons ici du **plus populaire au moins rencontré** en entreprise — pour que tu apprennes d'abord ce que tu verras le plus souvent en code review et en entretien.
+Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à beaucoup de catalogues, nous les classons ici du **plus populaire au moins rencontré** en entreprise - pour que tu apprennes d'abord ce que tu verras le plus souvent en code review et en entretien.
 
 <figure>
   <img src="../../assets/images/blog/design-patterns-intro-illustration.webp" alt="Illustration des trois familles de design patterns" class="schema-inline" width="720" />
-  <figcaption>Vue d'ensemble : création, structure et comportement — les trois familles du catalogue GoF.</figcaption>
+  <figcaption>Vue d'ensemble : création, structure et comportement - les trois familles du catalogue GoF.</figcaption>
 </figure>
 
 ---
@@ -300,7 +300,7 @@ Un design pattern est une **solution réutilisable** à un problème récurrent 
 
 <figure>
   <img src="../../assets/images/blog/design-patterns-families.svg" alt="Les trois familles GoF" class="schema-inline" width="520" />
-  <figcaption>5 créationnels, 7 structurels, 11 comportementaux — 23 patterns au total.</figcaption>
+  <figcaption>5 créationnels, 7 structurels, 11 comportementaux - 23 patterns au total.</figcaption>
 </figure>
 
 <figure>
@@ -330,21 +330,21 @@ Tu peux lire linéairement ou sauter vers le pattern qui correspond à ta douleu
 
 ## SOLID en version junior
 
-1. **S**ingle Responsibility — une raison de changer par classe.
-2. **O**pen/Closed — étendre sans tout casser.
-3. **L**iskov — les sous-types restent substituables.
-4. **I**nterface Segregation — petites interfaces.
-5. **D**ependency Inversion — dépendre d'abstractions.
+1. **S**ingle Responsibility - une raison de changer par classe.
+2. **O**pen/Closed - étendre sans tout casser.
+3. **L**iskov - les sous-types restent substituables.
+4. **I**nterface Segregation - petites interfaces.
+5. **D**ependency Inversion - dépendre d'abstractions.
 
 ---
 
 ## Comment lire chaque article
 
-1. **En une phrase** + **Le problème** — si ça ne parle pas, passe.
-2. **Schéma** + **TypeScript** — cœur de la série.
+1. **En une phrase** + **Le problème** - si ça ne parle pas, passe.
+2. **Schéma** + **TypeScript** - cœur de la série.
 3. **Python** si tu es plutôt backend.
-4. **Quand ne pas l'utiliser** — souvent le plus utile.
-5. **Exercice** 25–35 min sur un mini-projet.
+4. **Quand ne pas l'utiliser** - souvent le plus utile.
+5. **Exercice** 25-35 min sur un mini-projet.
 
 ---
 
@@ -414,7 +414,7 @@ def write_articles() -> list[str]:
 def write_collection(slugs: list[str]) -> None:
     data = {
         "id": SERIES,
-        "title": "Série Design Patterns — du plus populaire au moins (GoF pour juniors)",
+        "title": "Série Design Patterns - du plus populaire au moins (GoF pour juniors)",
         "description": "Les 23 design patterns du Gang of Four expliqués clairement pour développeurs juniors : ordre par popularité, schémas, exemples TypeScript et Python, exercices et pièges à éviter.",
         "slug": SERIES,
         "articles": slugs,
@@ -565,7 +565,7 @@ def _render_design_pattern_card(
     badge: str,
     color: str,
     boxes: list[tuple[str, str]],
-    footer: str = "DanielCraft — Design Patterns",
+    footer: str = "DanielCraft - Design Patterns",
 ):
     """Carte visuelle unifiée (fond clair, badge, titre, 3 blocs reliés)."""
     from PIL import Image, ImageDraw
@@ -688,7 +688,7 @@ def write_og_images() -> None:
     try:
         from PIL import Image
     except ImportError:
-        print("[WARN] Pillow manquant — pip install Pillow pour les images OG")
+        print("[WARN] Pillow manquant - pip install Pillow pour les images OG")
         return
 
     OUT_OG.mkdir(parents=True, exist_ok=True)
@@ -705,7 +705,7 @@ def write_og_images() -> None:
             ("Structurels", "7 patterns"),
             ("Comportementaux", "11 patterns"),
         ],
-        footer="DanielCraft — Série Design Patterns",
+        footer="DanielCraft - Série Design Patterns",
     )
     intro_out = OUT_OG / "design-patterns-introduction-gang-of-four-1200x630.jpg"
     intro_img.save(intro_out, "JPEG", quality=88)
@@ -724,7 +724,7 @@ def write_og_images() -> None:
             badge=fam,
             color=color,
             boxes=[("Client", "utilise"), (name[:14], "rôle central"), ("Collab.", "optionnel")],
-            footer="DanielCraft — Série Design Patterns",
+            footer="DanielCraft - Série Design Patterns",
         )
         out = OUT_OG / f"{slug}-1200x630.jpg"
         img.save(out, "JPEG", quality=88)
@@ -737,7 +737,7 @@ def main() -> None:
     write_svgs()
     write_pattern_illustrations()
     write_og_images()
-    print("Done — série Design Patterns régénérée.")
+    print("Done - série Design Patterns régénérée.")
 
 
 if __name__ == "__main__":

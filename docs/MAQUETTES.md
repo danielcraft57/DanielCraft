@@ -1,4 +1,4 @@
-# Maquettes UI — Livres, Prestations, Blog
+# Maquettes UI - Livres, Prestations, Blog
 
 Références de design validées (30/07/2026). Les PNG sont dans `assets/images/maquettes/`.
 
@@ -47,7 +47,7 @@ Références de design validées (30/07/2026). Les PNG sont dans `assets/images/
 | `maquette-prestations-fiche.png` | Fiche offre + devis |
 
 **À développer :**
-1. Hero recherche + chips (existant — peaufiner)
+1. Hero recherche + chips (existant - peaufiner)
 2. Bandeau « Services en vedette »
 3. Cartes plus SaaS (icône, prix « À partir de », CTA Voir)
 4. Trust strip bas de page
@@ -73,9 +73,9 @@ Références de design validées (30/07/2026). Les PNG sont dans `assets/images/
 
 ---
 
-## Ordre d’implémentation
+## Ordre d'implémentation
 
-1. Livres (catalogue + fiche) — base e-commerce déjà en place  
+1. Livres (catalogue + fiche) - base e-commerce déjà en place  
 2. Prestations (catalogue + trust + peaufinage cartes)  
 3. Blog (index éditorial + article)
 

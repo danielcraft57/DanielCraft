@@ -1,4 +1,4 @@
-/* Animations vitrines — reveal au scroll, stagger, compteurs, marquee */
+/* Animations vitrines - reveal au scroll, stagger, compteurs, marquee */
 @media (prefers-reduced-motion: reduce) {
   .vt-reveal,
   .vt-reveal-stagger > *,
@@ -108,7 +108,7 @@
   transform: translateY(-1px);
 }
 
-/* ——— Barre progression lecture ——— */
+/* --- Barre progression lecture --- */
 .vt-read-progress {
   position: fixed;
   top: 0;
@@ -123,7 +123,7 @@
   transition: transform 0.12s ease-out;
 }
 
-/* ——— SaaS orbes flottants ——— */
+/* --- SaaS orbes flottants --- */
 .vt-orbs-field {
   position: relative;
   overflow: hidden;
@@ -169,7 +169,7 @@
 
 .vt-reveal-delay-2 { transition-delay: 0.15s; }
 
-/* ——— Onglets SaaS ——— */
+/* --- Onglets SaaS --- */
 .vt-tab-btn {
   border: 1px solid rgba(99, 102, 241, 0.35);
   background: transparent;
@@ -198,7 +198,7 @@
   transform: none;
 }
 
-/* ——— Tarifs tilt ——— */
+/* --- Tarifs tilt --- */
 .vt-pricing-tier {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
@@ -219,7 +219,7 @@
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
 }
 
-/* ——— Hero tech scan ——— */
+/* --- Hero tech scan --- */
 .vt-hero-scan {
   position: relative;
   overflow: hidden;
@@ -256,7 +256,7 @@
   }
 }
 
-/* ——— Wizard onboarding ——— */
+/* --- Wizard onboarding --- */
 .vt-wizard-bar {
   height: 6px;
   background: rgba(0, 0, 0, 0.08);
@@ -311,7 +311,7 @@
   transform: none;
 }
 
-/* ——— KPI dashboard ——— */
+/* --- KPI dashboard --- */
 .vt-kpi-card {
   position: relative;
   background: #fff;
@@ -349,7 +349,7 @@
   color: var(--vt-accent, #10b981);
 }
 
-/* ——— Empty state morph ——— */
+/* --- Empty state morph --- */
 .vt-morph-stage {
   position: relative;
   border-radius: 0.75rem;
@@ -385,7 +385,7 @@
   background: rgba(245, 158, 11, 0.9);
 }
 
-/* ——— Notifications feed ——— */
+/* --- Notifications feed --- */
 .vt-notif-stack {
   max-width: 28rem;
   display: flex;

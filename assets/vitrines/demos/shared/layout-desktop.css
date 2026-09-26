@@ -260,7 +260,7 @@
   background: var(--md-sys-color-surface-container, #f5f5f5);
 }
 
-/* ——— Navigation type landing (5 entrées, cibles tactiles, cf. web.dev / UX) ——— */
+/* --- Navigation type landing (5 entrées, cibles tactiles, cf. web.dev / UX) --- */
 .skip-link,
 .skip {
   position: absolute;
@@ -343,7 +343,7 @@ section[id] {
   background: var(--md-sys-color-surface-container-high, rgba(0, 0, 0, 0.04));
 }
 
-/* Référence gabarit (WordPress / Joomla / Bootstrap) — texte discret en pied de vitrine */
+/* Référence gabarit (WordPress / Joomla / Bootstrap) - texte discret en pied de vitrine */
 .showcase-template-ref {
   margin-top: 1.25rem;
   padding-top: 1rem;

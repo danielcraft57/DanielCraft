@@ -1,9 +1,10 @@
 {
   "badge": "Offre de la semaine",
-  "urgency": "Mise en avant cette semaine - packs avec remise",
-  "cta_label": "Voir l'offre",
-  "force_slug": null,
+  "urgency": "Pack clé en main - site + première année, devis détaillé",
+  "cta_label": "Voir le pack",
+  "force_slug": "pack-complet-annee1",
   "rotation": [
+    "pack-complet-annee1",
     "pack-demarrer-commerce",
     "pack-etre-trouve",
     "pack-whatsapp-commerce",

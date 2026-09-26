@@ -107,7 +107,7 @@ def main() -> None:
         body = deepen_steps(body)
         body = inject_before_faq(body, EXTRA_BLOCKS[prefix])
         # Apostrophes droites
-        body = body.replace("'", "'").replace("'", "'").replace("—", "-").replace("–", "-")
+        body = body.replace("'", "'").replace("'", "'").replace("-", "-").replace("-", "-")
         # Accents utiles dans blocs ajoutes
         fixes = {
             "a l'aise": "à l'aise",

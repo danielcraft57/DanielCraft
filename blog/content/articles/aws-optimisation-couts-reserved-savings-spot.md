@@ -11,8 +11,8 @@ og_image: aws-optimisation-couts-reserved-savings-spot-1200x630.jpg
 
 # [AWS](/blog/articles/aws-fondamentaux-cloud-aws-services.html) : payer moins sans casser le service
 
-La flexibilité d’AWS a un prix : sans gouvernance, la facture peut exploser.
-L’objectif de cet article : donner une **boîte à outils concrète** pour garder le contrôle.
+La flexibilité d'AWS a un prix : sans gouvernance, la facture peut exploser.
+L'objectif de cet article : donner une **boîte à outils concrète** pour garder le contrôle.
 
 ---
 
@@ -26,7 +26,7 @@ Postes principaux :
 - réseau (sortie Internet, inter‑AZ, inter‑région) ;
 - services managés ([CloudFront](/blog/articles/aws-reseaux-vpc-route53-cloudfront.html), API Gateway, etc.).
 
-Première étape : **savoir où part l’argent** via Cost Explorer et les rapports de coûts (CUR).
+Première étape : **savoir où part l'argent** via Cost Explorer et les rapports de coûts (CUR).
 
 ---
 
@@ -34,14 +34,14 @@ Première étape : **savoir où part l’argent** via Cost Explorer et les rappo
 
 ### 2.1 Reserved Instances (RI)
 
-- Engagement sur une **famille d’instances** (ex : m6g.large) pour 1 ou 3 ans.
-- Réduction importante sur le prix horaire (jusqu’à ~70 %).
+- Engagement sur une **famille d'instances** (ex : m6g.large) pour 1 ou 3 ans.
+- Réduction importante sur le prix horaire (jusqu'à ~70 %).
 - Moins flexibles, plutôt pour des charges stables très prévisibles.
 
 ### 2.2 Savings Plans
 
 - Engagement sur un **montant de dépense horaire** (ex : 10 $/h) pour 1 ou 3 ans.
-- Plus flexibles que les RI : peuvent s’appliquer à plusieurs types d’instances/services.
+- Plus flexibles que les RI : peuvent s'appliquer à plusieurs types d'instances/services.
 - Deux grandes familles :
   - Compute Savings Plans (plus flexibles) ;
   - EC2 Instance Savings Plans (plus ciblés).
@@ -50,7 +50,7 @@ Première étape : **savoir où part l’argent** via Cost Explorer et les rappo
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/aws-cost-levers.svg" alt="Schema leviers d'optimisation des couts AWS" class="schema-inline" width="640" />
-  <figcaption>Baseline en Savings/Reserved, batch en Spot — apres avoir mesure.</figcaption>
+  <figcaption>Baseline en Savings/Reserved, batch en Spot - apres avoir mesure.</figcaption>
 </figure>
 
 Stratégie classique :
@@ -62,28 +62,28 @@ Stratégie classique :
 
 ## 3. Instances Spot
 
-Les **instances Spot** te permettent d’utiliser la capacité EC2 inutilisée à prix cassé, avec une contrainte :
+Les **instances Spot** te permettent d'utiliser la capacité EC2 inutilisée à prix cassé, avec une contrainte :
 
-- AWS peut **reprendre l’instance à tout moment** avec un préavis court.
+- AWS peut **reprendre l'instance à tout moment** avec un préavis court.
 
 Utilisation typique :
 
 - jobs batch ;
-- traitements parallélisables et tolérants à l’interruption ;
+- traitements parallélisables et tolérants à l'interruption ;
 - environnements éphémères (tests de charge, CI/CD).
 
 On évite les Spot pour :
 
 - les bases de données ;
-- les composants critiques en temps réel non tolérants à l’interruption.
+- les composants critiques en temps réel non tolérants à l'interruption.
 
 ---
 
-## 4. Bonnes pratiques générales d’optimisation
+## 4. Bonnes pratiques générales d'optimisation
 
 ### 4.1 Droitsizing
 
-- Mesurer l’utilisation CPU/RAM des instances et réduire les tailles sur‑dimensionnées.
+- Mesurer l'utilisation CPU/RAM des instances et réduire les tailles sur‑dimensionnées.
 - Utiliser les rapports de recommendation AWS (Compute Optimizer).
 
 ### 4.2 Environnements non‑prod
@@ -107,12 +107,12 @@ On évite les Spot pour :
 
 - Tagger toutes les ressources avec au moins :
   - `env` (dev, staging, prod) ;
-  - `project` (nom d’application) ;
+  - `project` (nom d'application) ;
   - `owner` (équipe/référent).
 
 Permet :
 
-- d’identifier qui consomme quoi ;
+- d'identifier qui consomme quoi ;
 - de ré‑allouer les coûts aux bons projets/équipes.
 
 ### 5.2 Budgets et alertes
@@ -133,10 +133,10 @@ Permet :
 
 ## 6. Résumé
 
-Optimiser les coûts AWS n’est pas un “one shot” mais un **processus continu** :
+Optimiser les coûts AWS n'est pas un "one shot" mais un **processus continu** :
 
 - mesurer (Cost Explorer, tagging, rapports) ;
 - agir (droitsizing, éteindre, nettoyer, engager des Savings Plans / RI) ;
 - surveiller (budgets, alertes, revues régulières).
 
-Avec ces réflexes, tu peux profiter de la puissance d’AWS **sans te faire surprendre par la facture**.+
+Avec ces réflexes, tu peux profiter de la puissance d'AWS **sans te faire surprendre par la facture**.+

@@ -86,7 +86,7 @@ CONFIG = {
             '              <p class="subtitle is-4 has-text-grey-lighter">Synapse Lorraine conçoit des outils métiers pour PME '
             "et collectivités&nbsp;: API documentées, tableaux de bord et automatisation des flux.</p>\n"
             '              <p class="subtitle is-6 has-text-grey mt-4">Livraisons incrémentales, ateliers de cadrage et '
-            "documentation vivante — hébergement UE.</p>\n"
+            "documentation vivante - hébergement UE.</p>\n"
             '              <div class="buttons mt-5">\n'
             '                <a class="button is-link is-medium has-text-weight-semibold" href="#solutions">'
             '<span class="icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>'
@@ -95,7 +95,7 @@ CONFIG = {
             '<span class="icon"><i class="fa-regular fa-calendar" aria-hidden="true"></i></span>'
             "<span>Planifier une démo</span></a>\n"
             "              </div>\n            </div>\n"
-            + fig("tech-visuels", "tech-datacenter.png", "hero.svg", "Salle serveurs et cloud régional", "Datacenter — illustration")
+            + fig("tech-visuels", "tech-datacenter.png", "hero.svg", "Salle serveurs et cloud régional", "Datacenter - illustration")
             + "          </div>\n        </div>\n      </div>\n    </section>\n    <section class=\"section vitrine-cta-banner"
         ),
         "stats": stats(

@@ -1,5 +1,5 @@
 /**
- * Page /echantillons/ : recherche, chips secteurs, ordre journalier deterministe, lazy.
+ * Page /echantillons/ : recherche, chips secteurs, groupes par metier, shuffle journalier.
  * ADN aligne /bouquins + /nos-offres.
  */
 (function () {
@@ -8,7 +8,10 @@
   var catalog = document.querySelector('[data-echantillons-catalog]');
   if (!catalog) return;
 
-  var grid = catalog.querySelector('#vitrinesGrid') || catalog.querySelector('[data-echantillons-daily-shuffle]');
+  var hero = document.querySelector('.echantillons-search-hero');
+  if (hero) hero.classList.add('is-visible');
+
+  var grids = catalog.querySelectorAll('[data-echantillons-daily-shuffle]');
   var input = document.getElementById('echantillonsSearchInput');
   var clearBtn = document.getElementById('echantillonsSearchClear');
   var info = document.getElementById('echantillonsSearchResultsInfo');
@@ -33,11 +36,11 @@
     };
   }
 
-  function shuffleDaily(container) {
+  function shuffleDaily(container, salt) {
     if (!container) return;
     var cards = Array.prototype.slice.call(container.querySelectorAll('.vitrine-card'));
     if (cards.length < 2) return;
-    var rand = mulberry32(daySeed() ^ 0xec4a);
+    var rand = mulberry32((daySeed() ^ 0xec4a) + (salt || 0));
     for (var i = cards.length - 1; i > 0; i--) {
       var j = Math.floor(rand() * (i + 1));
       var tmp = cards[i];
@@ -58,9 +61,15 @@
       .trim();
   }
 
+  function syncGroups() {
+    catalog.querySelectorAll('[data-echantillons-group]').forEach(function (group) {
+      var visible = group.querySelector('.vitrine-card:not([hidden])');
+      group.hidden = !visible;
+    });
+  }
+
   function applyFilters() {
-    if (!grid) return;
-    var cards = grid.querySelectorAll('.vitrine-card');
+    var cards = catalog.querySelectorAll('.vitrine-card');
     var q = normalize(query);
     var shown = 0;
     cards.forEach(function (card) {
@@ -72,6 +81,12 @@
       card.hidden = !show;
       if (show) shown += 1;
     });
+    syncGroups();
+    var page = document.querySelector('.page-echantillons');
+    if (page) {
+      page.classList.toggle('is-catalog-filtering', !!(q || activeFilter !== 'all'));
+      page.classList.toggle('is-catalog-grouped-focus', activeFilter !== 'all' && !q);
+    }
     if (info) {
       if (q || activeFilter !== 'all') {
         info.textContent =
@@ -83,7 +98,7 @@
       }
     }
     if (window.dcLazyImages && typeof window.dcLazyImages.observe === 'function') {
-      window.dcLazyImages.observe(grid);
+      window.dcLazyImages.observe(catalog);
     }
   }
 
@@ -97,7 +112,9 @@
     applyFilters();
   }
 
-  shuffleDaily(grid);
+  grids.forEach(function (grid, i) {
+    shuffleDaily(grid, i * 97);
+  });
 
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
@@ -123,9 +140,17 @@
     });
   }
 
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      query = input ? input.value : '';
+      applyFilters();
+    });
+  }
+
   if (input) {
     input.addEventListener('input', function () {
-      query = input.value || '';
+      query = input.value;
       if (clearBtn) clearBtn.hidden = !query;
       applyFilters();
     });
@@ -141,31 +166,16 @@
     });
   }
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      query = (input && input.value) || '';
-      applyFilters();
-      var catalogue = document.getElementById('catalogue');
-      if (catalogue) catalogue.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  }
-
   document.addEventListener('keydown', function (e) {
-    if (e.key === '/' && input && document.activeElement !== input) {
+    if (e.key === '/' && document.activeElement !== input) {
       var tag = (document.activeElement && document.activeElement.tagName) || '';
-      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || (document.activeElement && document.activeElement.isContentEditable)) {
+        return;
+      }
       e.preventDefault();
-      input.focus();
+      if (input) input.focus();
     }
   });
 
-  var params = new URLSearchParams(window.location.search);
-  var qParam = params.get('q');
-  if (qParam && input) {
-    input.value = qParam;
-    query = qParam;
-    if (clearBtn) clearBtn.hidden = false;
-  }
   applyFilters();
 })();

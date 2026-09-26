@@ -1,0 +1,129 @@
+{
+  "slug": "traiteur",
+  "brand": "Table & Cornet",
+  "category": "hcr",
+  "locale": "Nancy, Grand Est, France",
+  "style_suffix": "Elegant French catering service Nancy, soft natural light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Buffet cocktail elegant a Nancy",
+      "subject": "Elegant catering buffet for wedding cocktail in Nancy salle: silver trays of canapes, white linen, soft candlelight, floral centerpieces, guests blurred background",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Buffet cocktail elegant a Nancy"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Cocktail dinatoire",
+      "subject": "Waiter offering champagne and savory bites at standing cocktail reception, warm evening light",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Cocktail dinatoire"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Repas assis",
+      "subject": "Plated three-course seated dinner with seasonal vegetables, porcelain, crystal glasses",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Repas assis"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Plateaux bureau",
+      "subject": "Corporate lunch boxes arranged on office table with fresh salads and bread, midday Nancy office",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Plateaux bureau"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Entree de saison",
+      "subject": "Seasonal starter plating: smoked trout and greens on white plate, chef hands finishing garnish",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Entree de saison"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Plat principal",
+      "subject": "Main course roast poultry with mirabelle glaze, copper cocotte nearby, catering kitchen pass",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Plat principal"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Dessert",
+      "subject": "Dessert station with fruit tarts and macarons, pastel tones, elegant catering setup",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Dessert"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Service evenementiel",
+      "subject": "Catering team setting long banquet tables in historic Nancy venue with Place Stanislas vibe",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Service evenementiel"
+        }
+      ]
+    }
+  ]
+}

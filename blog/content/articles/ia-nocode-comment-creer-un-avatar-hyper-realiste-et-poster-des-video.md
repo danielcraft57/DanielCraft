@@ -1,7 +1,7 @@
 ---
 title: "Avatar realiste + videos : pipeline simple"
 date: 2026-07-29
-excerpt: "Creer un visage coherent puis publier des videos courtes — avec ethique."
+excerpt: "Creer un visage coherent puis publier des videos courtes - avec ethique."
 type: tutorial
 tags: [IA, no-code, apps, sites web]
 og_image: ia-nocode-comment-creer-un-avatar-hyper-realiste-et-poster-des-video-1200x630.jpg

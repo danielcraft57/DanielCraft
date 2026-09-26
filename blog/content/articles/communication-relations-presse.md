@@ -1,7 +1,7 @@
 ---
 title: "Relations presse : proposer un angle utile"
 date: 2024-04-16
-excerpt: "Communique, contacts medias et relances — sans ego, avec un vrai sujet."
+excerpt: "Communique, contacts medias et relances - sans ego, avec un vrai sujet."
 type: article
 tags: [communication, relations presse, médias, communiqué, visibilité]
 series: communication-serie
@@ -11,7 +11,7 @@ og_image: communication-rp-1200x630.jpg
 
 # Relations presse : proposer un angle utile
 
-Les relations presse (RP), ce n'est pas acheter de la visibilite. C'est proposer aux journalistes une information utile, verifiable et anglee — assez interessante pour qu'ils en parlent dans leurs colonnes, emissions ou sites. Un bon sujet presse repond a la question du journaliste : « Pourquoi mes lecteurs doivent-ils s'y interesser ? »
+Les relations presse (RP), ce n'est pas acheter de la visibilite. C'est proposer aux journalistes une information utile, verifiable et anglee - assez interessante pour qu'ils en parlent dans leurs colonnes, emissions ou sites. Un bon sujet presse repond a la question du journaliste : « Pourquoi mes lecteurs doivent-ils s'y interesser ? »
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/com-rp.svg" alt="Schema relations presse" class="schema-inline" width="640" />
@@ -27,7 +27,7 @@ Les RP offrent des benefices durables :
 - **SEO et e-reputation** : les articles en ligne generent des liens et des mentions
 - **Legitimite** : etre cite comme expert renforce ton positionnement
 
-Les retombées ne sont jamais garanties a 100 % — un journaliste peut ne pas publier. Mais une approche reguliere et professionnelle finit par payer.
+Les retombées ne sont jamais garanties a 100 % - un journaliste peut ne pas publier. Mais une approche reguliere et professionnelle finit par payer.
 
 ## Trouver un angle redactionnel
 
@@ -65,17 +65,17 @@ L'envoi massif non cible est une perte de temps. Construis une liste :
 - Webzines, podcasts, newsletters influentes dans ta niche
 - Radio ou TV locale pour certains sujets
 
-Identifie le bon journaliste : verifie ses articles recents, sa rubrique, ses sujets de prédilection. Personnalise ton email d'envoi — une ligne qui montre que tu connais son travail.
+Identifie le bon journaliste : verifie ses articles recents, sa rubrique, ses sujets de prédilection. Personnalise ton email d'envoi - une ligne qui montre que tu connais son travail.
 
 ## Relancer et repondre aux sollicitations
 
 - **Relance** : un rappel poli 5 a 7 jours apres l'envoi, pas un harcelement quotidien
-- **Disponibilite** : reponds vite si un journaliste te contacte — il travaille sous deadline
+- **Disponibilite** : reponds vite si un journaliste te contacte - il travaille sous deadline
 - **Preparation** : messages cles, chiffres, exemples prets pour une interview
 - **Honnêteté** : si tu ne sais pas, dis-le. Ne fabrique pas de citations ou de stats
 
-Construis une relation sur le long terme : un journaliste bien traite reviendra vers toi sur d'autres sujets. Envoie-lui ponctuellement des elements utiles meme hors campagne — statistiques sectorielles, retour d'experience — sans exiger une publication. Tu deviens une source fiable, pas un expéditeur de pub deguisee.
+Construis une relation sur le long terme : un journaliste bien traite reviendra vers toi sur d'autres sujets. Envoie-lui ponctuellement des elements utiles meme hors campagne - statistiques sectorielles, retour d'experience - sans exiger une publication. Tu deviens une source fiable, pas un expéditeur de pub deguisee.
 
 ## Conclusion
 
-Les relations presse demandent un vrai sujet, un angle clair, des contacts cibles et de la reactivite. Ce n'est pas de la pub deguisee — c'est de l'information bien presentee. Pour integrer les RP dans une strategie globale, voir [Communication : une strategie en 5 questions](/blog/articles/communication-strategie-objectifs-canaux.html).
+Les relations presse demandent un vrai sujet, un angle clair, des contacts cibles et de la reactivite. Ce n'est pas de la pub deguisee - c'est de l'information bien presentee. Pour integrer les RP dans une strategie globale, voir [Communication : une strategie en 5 questions](/blog/articles/communication-strategie-objectifs-canaux.html).

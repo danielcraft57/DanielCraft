@@ -26,7 +26,7 @@ Dans cet article, on structure les briques :
 
 ---
 
-## 1. VPC : ton “datacenter virtuel”
+## 1. VPC : ton "datacenter virtuel"
 
 ### 1.1 Modèle
 
@@ -34,7 +34,7 @@ Un **VPC (Virtual Private Cloud)** est un réseau logique isolé dans AWS :
 
 - tu choisis une plage IP (ex : `10.0.0.0/16`) ;
 - tu crées des **subnets** (sous‑réseaux) publics/privés ;
-- tu définis des **tables de routage** (vers Internet, vers d’autres VPC, vers on‑prem…).
+- tu définis des **tables de routage** (vers Internet, vers d'autres VPC, vers on‑prem…).
 
 ### 1.2 Organisation classique
 
@@ -44,9 +44,9 @@ Un **VPC (Virtual Private Cloud)** est un réseau logique isolé dans AWS :
 
 - Subnets **privés** :
   - contiennent les instances applicatives (EC2/ECS/EKS) et bases de données ;
-  - l’accès Internet sortant se fait via un NAT Gateway (ou pas du tout).
+  - l'accès Internet sortant se fait via un NAT Gateway (ou pas du tout).
 
-Objectif : **aucune base de données ou backend critique n’est directement exposé à Internet**.
+Objectif : **aucune base de données ou backend critique n'est directement exposé à Internet**.
 
 ---
 
@@ -62,7 +62,7 @@ Les **Security Groups** sont des **pare‑feu stateful** appliqués aux ressourc
 Pratiques recommandées :
 
 - un SG par rôle (ALB, backend API, base de données…) ;
-- utiliser des **références de SG** plutôt que des IP (ex : le SG du RDS autorise le SG de l’API).
+- utiliser des **références de SG** plutôt que des IP (ex : le SG du RDS autorise le SG de l'API).
 
 ### 2.2 NACLs
 
@@ -73,13 +73,13 @@ Dans beaucoup de projets, on les laisse proches de la configuration par défaut 
 
 ## 3. Route 53 : DNS managé
 
-**Route 53** est le service DNS d’AWS.
+**Route 53** est le service DNS d'AWS.
 
 - tu y gères la **zone DNS** de ton domaine (`ton-domaine.fr`) ;
 - tu crées des enregistrements (`A`, `AAAA`, `CNAME`, `TXT`, etc.) ;
 - tu peux utiliser des **alias** vers des ressources AWS (ALB, CloudFront, S3 static website).
 
-Cas d’usage typiques :
+Cas d'usage typiques :
 
 - `www.ton-domaine.fr` qui pointe vers un **CloudFront** ou un ALB ;
 - sous‑domaines pour des services spécifiques (`api.`, `admin.`, `static.`).
@@ -88,7 +88,7 @@ Cas d’usage typiques :
 
 ## 4. CloudFront : CDN et couche de protection
 
-**CloudFront** est le CDN d’AWS :
+**CloudFront** est le CDN d'AWS :
 
 - il met en cache ton contenu dans des **edge locations** proches des utilisateurs ;
 - il agit comme **reverse proxy** devant S3, ALB, API Gateway, etc.
@@ -101,7 +101,7 @@ Avantages :
 
 ---
 
-## 5. Exemple d’architecture réseau pour une appli web
+## 5. Exemple d'architecture réseau pour une appli web
 
 Un pattern courant pour une application web :
 
@@ -110,13 +110,13 @@ Un pattern courant pour une application web :
 3. CloudFront renvoie :
    - les **assets statiques** depuis S3 ;
    - le trafic dynamique vers un **ALB** en back‑origin.
-4. L’ALB se trouve dans des **subnets publics** du VPC.
-5. Les **instances ECS/EC2/EKS** sont dans des **subnets privés**, derrière l’ALB.
+4. L'ALB se trouve dans des **subnets publics** du VPC.
+5. Les **instances ECS/EC2/EKS** sont dans des **subnets privés**, derrière l'ALB.
 6. Les **bases de données RDS/Aurora** sont dans des subnets privés dédiés, sans accès Internet direct.
 
 Cette architecture permet :
 
-- d’exposer uniquement le strict nécessaire ;
+- d'exposer uniquement le strict nécessaire ;
 - de séparer clairement les couches (edge, web, data).
 
 ---
@@ -127,17 +127,17 @@ Cette architecture permet :
 
 - Documenter ton adressage IP, la séparation des subnets et les routes.
 - Utiliser Terraform/CloudFormation/CDK pour décrire VPC, subnets, SG, Route 53.
-- Éviter d’empiler les ressources “à la main” dans la console.
+- Éviter d'empiler les ressources "à la main" dans la console.
 
 ### 6.2 Performance
 
 - Toujours passer les assets statiques par CloudFront.
 - Activer la compression (Gzip/Brotli) au niveau serveur web.
-- Éviter les allers‑retours inter‑régions (garder l’architecture dans une région sauf besoin spécifique).
+- Éviter les allers‑retours inter‑régions (garder l'architecture dans une région sauf besoin spécifique).
 
 ### 6.3 Sécurité
 
-- Bloquer tous les ports non nécessaires (seulement 80/443 sur l’ALB, 22 uniquement via bastion/VPN si indispensable).
+- Bloquer tous les ports non nécessaires (seulement 80/443 sur l'ALB, 22 uniquement via bastion/VPN si indispensable).
 - Forcer HTTPS partout (certificats ACM sur CloudFront/ALB).
 - Désactiver toute exposition publique inutile des bases de données ou services internes.
 
@@ -145,10 +145,10 @@ Cette architecture permet :
 
 ## 7. Résumé
 
-Construire un réseau AWS propre, c’est :
+Construire un réseau AWS propre, c'est :
 
 - **penser VPC** (subnets publics/privés bien séparés) ;
 - utiliser des **Security Groups bien nommés** pour contrôler finement les flux ;
 - confier le DNS à **Route 53** et le CDN à **CloudFront** pour la performance globale.
 
-Avec ces fondations en place, les autres briques (compute, bases, file storage) s’imbriquent proprement et restent gérables à long terme.+
+Avec ces fondations en place, les autres briques (compute, bases, file storage) s'imbriquent proprement et restent gérables à long terme.+

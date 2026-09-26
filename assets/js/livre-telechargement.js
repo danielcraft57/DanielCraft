@@ -1,5 +1,5 @@
 /**
- * Page /livres/telechargement/ — code unique + telechargement PDF (securise).
+ * Page /livres/telechargement/ - code unique + telechargement PDF (securise).
  */
 (function () {
   'use strict';
@@ -134,10 +134,10 @@
     if (titleEl) titleEl.textContent = title;
     if (leadEl) {
       leadEl.textContent = isPack
-        ? 'Voici les PDF du pack — telecharge-les un par un.'
+        ? 'Voici les PDF du pack - telecharge-les un par un.'
         : 'Un clic et le PDF est a toi. Garde aussi ton code pour plus tard.';
     }
-    if (codeEl) codeEl.textContent = data.code || '—';
+    if (codeEl) codeEl.textContent = data.code || '-';
     if (expiryEl) {
       var days = Number(data.days_left || 0);
       expiryEl.textContent = days > 0 ? 'Valable encore ~' + days + ' j' : 'Bientot expire';
@@ -147,7 +147,7 @@
       var cover = (data.cover || '').trim();
       if (cover) {
         coverImg.src = cover;
-        coverImg.alt = 'Couverture — ' + title;
+        coverImg.alt = 'Couverture - ' + title;
         coverWrap.setAttribute('aria-hidden', 'false');
         coverWrap.hidden = false;
       } else {
@@ -248,7 +248,7 @@
 
   function fulfillSession(sessionId) {
     showView('boot');
-    setBanner('Paiement recu — preparation de ta facture et de ton code…', false);
+    setBanner('Paiement recu - preparation de ta facture et de ton code…', false);
     return fetch('/api/request-paid-livre.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -307,7 +307,7 @@
 
       var elapsed = Math.floor(Date.now() / 1000) - formLoadedAt;
       if (elapsed < 2) {
-        showGateError('Un peu trop rapide — reessaie dans une seconde.');
+        showGateError('Un peu trop rapide - reessaie dans une seconde.');
         return;
       }
 
@@ -343,7 +343,7 @@
     copyBtn.addEventListener('click', function () {
       var codeEl = document.getElementById('ldlCodeDisplay');
       var text = (codeEl && codeEl.textContent) || '';
-      if (!text || text === '—') return;
+      if (!text || text === '-') return;
       var done = function () {
         copyBtn.classList.add('is-copied');
         var span = copyBtn.querySelector('span');

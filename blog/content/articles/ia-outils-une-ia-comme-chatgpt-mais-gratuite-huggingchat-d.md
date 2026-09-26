@@ -1,7 +1,7 @@
 ---
 title: "HuggingChat : une IA gratuite dans le navigateur"
 date: 2026-08-06
-excerpt: "Discuter sans payer d'abonnement — utile pour tester, avec des limites selon le trafic."
+excerpt: "Discuter sans payer d'abonnement - utile pour tester, avec des limites selon le trafic."
 type: comparatif
 tags: [IA, outils, alternatives, comparatif]
 og_image: ia-outils-une-ia-comme-chatgpt-mais-gratuite-huggingchat-d-1200x630.jpg

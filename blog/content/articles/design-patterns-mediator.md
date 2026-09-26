@@ -32,7 +32,7 @@ Mediator centralise les échanges entre composants (évite N×N).
 
 Un formulaire : pays → met à jour les provinces ; code promo → recalcule le total ; case « entreprise » → affiche SIRET. Sans médiateur, chaque champ appelle directement les autres (`setState` en chaîne). Ajoute un champ → tu rewires dix fichiers. Tests : mocker tout le monde.
 
-Visuellement, ton graphe de dépendances ressemble à un plat de spaghetti : A connaît B et C, B connaît A et D, etc. Mediator transforme ça en étoile : A, B, C, D pointent vers un centre. Le centre peut grossir — d'où la discipline de le garder limité à la *coordination*, pas à tout le métier.
+Visuellement, ton graphe de dépendances ressemble à un plat de spaghetti : A connaît B et C, B connaît A et D, etc. Mediator transforme ça en étoile : A, B, C, D pointent vers un centre. Le centre peut grossir - d'où la discipline de le garder limité à la *coordination*, pas à tout le métier.
 
 ### Symptômes dans ton code
 
@@ -126,7 +126,7 @@ Les utilisateurs ne se référencent pas entre eux : la room (Mediator) diffuse.
 
 ## Quand ne pas utiliser Mediator
 
-- Deux objets qui collaborent simplement — un appel direct suffit.
+- Deux objets qui collaborent simplement - un appel direct suffit.
 - Médiateur qui devient un **God Object** (toute la logique métier dedans).
 - Besoin d'événements globaux découplés → parfois **Observer** / Event Bus plus adapté (attention à la différence : bus générique vs règles métier centralisées).
 
@@ -161,9 +161,9 @@ Pense aussi aux wizards multi-étapes : étape 1 valide → débloque étape 2 ;
 
 **C'est obligatoire en entretien ?** Parfois sous forme « comment éviter le couplage entre widgets ? »
 
-**Ça remplace les frameworks ?** Non — les stores et contextes modernes incarnent souvent l'idée.
+**Ça remplace les frameworks ?** Non - les stores et contextes modernes incarnent souvent l'idée.
 
-**Je dois tout refactoriser ?** Non — extrais d'abord le sous-graphe le plus spaghetti (3–4 champs liés).
+**Je dois tout refactoriser ?** Non - extrais d'abord le sous-graphe le plus spaghetti (3-4 champs liés).
 
 ---
 
@@ -176,7 +176,7 @@ Pense aussi aux wizards multi-étapes : étape 1 valide → débloque étape 2 ;
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Trois champs : pays, province, total. Sans médiateur, branche-les en direct. Refactorise avec un médiateur : changer le pays vide la province et recalcule. Compare le nombre d'imports croisés.
 
@@ -186,7 +186,7 @@ Trois champs : pays, province, total. Sans médiateur, branche-les en direct. Re
 
 - Mediator = tour de contrôle : moins de liens N×N, plus de règles au centre.
 - Idéal pour formulaires et collaborations locales.
-- Garde le médiateur mince — sinon tu as juste déplacé le spaghetti.
+- Garde le médiateur mince - sinon tu as juste déplacé le spaghetti.
 
 ---
 

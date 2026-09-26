@@ -18,7 +18,7 @@ series_order: 23
 
 **Famille :** Comportemental · **Série :** Design Patterns GoF · **Article 23/24** · **Popularité :** #22 sur 23
 
-Visitor te permet d'**ajouter une opération** sur une famille d'objets (souvent une hiérarchie stable) **sans modifier** le code de chaque classe — l'opération vit dans le visiteur.
+Visitor te permet d'**ajouter une opération** sur une famille d'objets (souvent une hiérarchie stable) **sans modifier** le code de chaque classe - l'opération vit dans le visiteur.
 
 ---
 
@@ -97,7 +97,7 @@ for (const node of doc) node.accept(md);
 console.log(md.result());
 ```
 
-Pour un export HTML, tu ajoutes `HtmlVisitor` — sans retoucher `Heading` / `Paragraph`.
+Pour un export HTML, tu ajoutes `HtmlVisitor` - sans retoucher `Heading` / `Paragraph`.
 
 ### Version Python minimale
 
@@ -113,7 +113,7 @@ class MarkdownVisitor:
         self.out.append(text)
 ```
 
-(En Python, on utilise souvent `functools.singledispatch` ou un `match` sur des dataclasses — l'esprit reste « opération hors des nœuds ».)
+(En Python, on utilise souvent `functools.singledispatch` ou un `match` sur des dataclasses - l'esprit reste « opération hors des nœuds ».)
 
 ---
 
@@ -158,11 +158,11 @@ Exemple concret : un outil interne qui parcourt ton catalogue produits (`Simple`
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Rare — plutôt pour montrer que tu connais Open/Closed sur les opérations.
+**C'est obligatoire en entretien ?** Rare - plutôt pour montrer que tu connais Open/Closed sur les opérations.
 
-**Ça remplace les frameworks ?** Non — les libs d'AST l'utilisent déjà.
+**Ça remplace les frameworks ?** Non - les libs d'AST l'utilisent déjà.
 
-**Je dois tout refactoriser ?** Non — introduis Visitor quand la 3ᵉ opération force à toucher toutes les classes.
+**Je dois tout refactoriser ?** Non - introduis Visitor quand la 3ᵉ opération force à toucher toutes les classes.
 
 ---
 
@@ -175,7 +175,7 @@ Exemple concret : un outil interne qui parcourt ton catalogue produits (`Simple`
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Modélise `Heading` + `Paragraph`. Écris un visiteur Markdown et un visiteur « compteur de mots ». Ajoute un nœud `Image` et constate ce qu'il faut mettre à jour (spoiler : tous les visiteurs).
 

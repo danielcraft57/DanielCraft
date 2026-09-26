@@ -1,7 +1,7 @@
 ---
 title: "Agent gratuit avec Claude + MCP : l'idee simple"
 date: 2026-06-18
-excerpt: "Connecter Claude a des outils (MCP) pour qu'il agisse — avec un perimetre clair."
+excerpt: "Connecter Claude a des outils (MCP) pour qu'il agisse - avec un perimetre clair."
 type: guide
 tags: [IA, agents, automatisation, OpenAI]
 og_image: ia-agents-creer-un-agent-ia-gratuit-avec-claude-et-les-mcp-le-model-1200x630.jpg

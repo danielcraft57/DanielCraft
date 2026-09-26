@@ -148,7 +148,7 @@ Ecris une **fiche** (look, vetements, ambiance). Recolle-la a chaque prompt. Gar
 article(
     "ia-prompts-comment-humaniser-un-texte-redige-par-l-intelligence-artif",
     "Humaniser un texte IA : garder le fond, assouplir la forme",
-    "Couper le trop parfait, ajouter exemples et ton — sans perdre le message.",
+    "Couper le trop parfait, ajouter exemples et ton - sans perdre le message.",
     f"""# Humaniser un texte IA : garder le fond, assouplir la forme
 
 Un texte "trop IA" sonne lisse et vide. On le **rend vivant**.
@@ -176,7 +176,7 @@ Precise le plan (gros plan / large), la lumiere, le mouvement, ce qu'il ne faut 
 article(
     "ia-prompts-comment-creer-de-meilleurs-prompt-sur-chatgpt-site-gratuit",
     "Meilleurs prompts : methode + quelques aides gratuites",
-    "Role, contexte, objectif, format — puis des sites d'exemples si tu bloques.",
+    "Role, contexte, objectif, format - puis des sites d'exemples si tu bloques.",
     f"""# Meilleurs prompts : methode + quelques aides gratuites
 
 Avant les sites d'exemples : une **methode**.
@@ -196,7 +196,7 @@ Les bibliotheques de prompts aident a demarrer, pas a penser a ta place. Cousin 
 article(
     "ia-prompts-comment-creer-du-contenu-sur-les-reseau",
     "Contenu reseaux avec l'IA : un angle, pas du remplissage",
-    "Idee, angle, format, appel a l'action — l'IA aide a rediger, toi tu choisis le sujet.",
+    "Idee, angle, format, appel a l'action - l'IA aide a rediger, toi tu choisis le sujet.",
     f"""# Contenu reseaux avec l'IA : un angle, pas du remplissage
 
 L'IA ecrit vite. Sans angle, ca fait du bruit.
@@ -210,7 +210,7 @@ Donne ton public et **une** promesse par post. Demande 3 variantes, garde la plu
 article(
     "ia-prompts-astuce-prompt-chatgpt-gratuit-pour-clarifie",
     "Astuce : demander a ChatGPT de clarifier (avant d'agir)",
-    "Fais reformuler ton besoin en 5 puces — tu gagnes du temps sur la suite.",
+    "Fais reformuler ton besoin en 5 puces - tu gagnes du temps sur la suite.",
     f"""# Astuce : demander a ChatGPT de clarifier (avant d'agir)
 
 Avant une longue reponse : "Reformule mon besoin en 5 puces et pose 3 questions."
@@ -224,7 +224,7 @@ Tu corriges les malentendus **tot**. Puis tu lances la vraie tache. Methode comp
 article(
     "ia-prompts-cette-etudiante-a-cree-une-extension-qui-detecte-en-direct-les-menson",
     "Detecter les erreurs d'une IA : garder l'esprit critique",
-    "Outils et reflexes pour repérer approximations et inventions — surtout sur les sujets sensibles.",
+    "Outils et reflexes pour repérer approximations et inventions - surtout sur les sujets sensibles.",
     f"""# Detecter les erreurs d'une IA : garder l'esprit critique
 
 Les IA peuvent **inventer**. Un outil d'aide, ca n'enleve pas ta verification.
@@ -279,9 +279,9 @@ Cree un compte / acces, lance un cas simple, compare a ce que tu as deja ([ChatG
 
 path = COLLECTIONS / "ia-prompts-serie.json"
 col = json.loads(path.read_text(encoding="utf-8"))
-col["title"] = "Serie IA — Prompts (parler clairement aux modeles)"
+col["title"] = "Serie IA - Prompts (parler clairement aux modeles)"
 col["description"] = (
-    "Methodes de prompting, humaniser un texte, personnages coherents et contenu reseaux — en langage simple."
+    "Methodes de prompting, humaniser un texte, personnages coherents et contenu reseaux - en langage simple."
 )
 path.write_text(json.dumps(col, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print("[OK] ia-prompts-serie.json")

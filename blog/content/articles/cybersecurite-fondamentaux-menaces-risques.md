@@ -67,7 +67,7 @@ La securite "pro" ne promet pas zero probleme. Elle promet de **reagir vite et p
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/cyber-pddr.svg" alt="Schema prevenir, detecter, repondre" class="schema-inline" width="640" />
-  <figcaption>Trois boucles : prevenir, detecter, repondre — et mesurer pour ne pas se mentir.</figcaption>
+  <figcaption>Trois boucles : prevenir, detecter, repondre - et mesurer pour ne pas se mentir.</figcaption>
 </figure>
 
 Pour une petite equipe, "repondre" peut tenir sur **une page** : qui coupe quoi, ou sont les sauvegardes, comment on previent les clients. Pas besoin d'un roman de 80 pages. Besoin d'un truc qu'on ouvrira vraiment sous stress.

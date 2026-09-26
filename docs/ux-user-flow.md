@@ -1,8 +1,8 @@
-# Parcours client — devis → appel → livraison
+# Parcours client - devis → appel → livraison
 
-Document de référence (backlog P3) pour l’alignement UX, emails et support.
+Document de référence (backlog P3) pour l'alignement UX, emails et support.
 
-## Vue d’ensemble
+## Vue d'ensemble
 
 ```mermaid
 flowchart LR
@@ -24,7 +24,7 @@ flowchart LR
 |-------|--------|-------------------------|-------|
 | 1. Découverte | J0 | Hero CTV, `/nos-offres`, fiche vitrine 42 € / 490 € | Site |
 | 2. Demande | J0 | Wizard contact ou modale devis PDF (< 2 min) | Site + email auto |
-| 3. Échange | J0–J1 | Rappel téléphone / visio, devis affiné | Téléphone, email |
+| 3. Échange | J0-J1 | Rappel téléphone / visio, devis affiné | Téléphone, email |
 | 4. Livraison | J+5 à J+8 | Mise en ligne, handover, support 14 j | Email + accès site |
 | 5. Fidélisation | M+1… | Email valeur prouvée (stats, conseils) | Email mensuel |
 
@@ -41,14 +41,14 @@ flowchart LR
 
 - **Réponse humaine** : 24 h ouvrées (contact, devis, rappel)
 - **Audit gratuit** : rapport sous 48 h ouvrées
-- **Vitrine standard** : 5–8 jours ouvrés après validation
+- **Vitrine standard** : 5-8 jours ouvrés après validation
 - **Support** : 14 jours inclus post-livraison
 
 ## Pages du parcours
 
-1. `/` — orientation (hero + 3 offres)
-2. `/nos-offres` — comparatif et pack recommandé
-3. `/contact` — wizard situation → offre → coordonnées
-4. `/prestations/{slug}/` — détail + modale devis
-5. `/vitrines/{metier}/` — achat modèle ou sur mesure
-6. `/audit` — entrée diagnostic gratuit
+1. `/` - orientation (hero + 3 offres)
+2. `/nos-offres` - comparatif et pack recommandé
+3. `/contact` - wizard situation → offre → coordonnées
+4. `/prestations/{slug}/` - détail + modale devis
+5. `/vitrines/{metier}/` - achat modèle ou sur mesure
+6. `/audit` - entrée diagnostic gratuit

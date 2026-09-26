@@ -64,7 +64,7 @@ $create = prestafacture_create_quote_devis(
     'test-devis-' . gmdate('YmdHis') . '@example.invalid',
     'Test DanielCraft',
     $lines,
-    'Test automatique scripts/prestafacture_test.php — à supprimer'
+    'Test automatique scripts/prestafacture_test.php - à supprimer'
 );
 echo 'POST /devis: ok=' . ($create['ok'] ? 'yes' : 'no')
     . ' id=' . ($create['quote_id'] ?: '-')

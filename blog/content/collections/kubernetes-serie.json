@@ -1,7 +1,7 @@
 {
   "id": "kubernetes-serie",
   "title": "Série Kubernetes : orchestrer des boites sans panique",
-  "description": "Pods, nodes, deployments, secrets et observabilite — le cluster explique avec des mots du quotidien.",
+  "description": "Pods, nodes, deployments, secrets et observabilite - le cluster explique avec des mots du quotidien.",
   "slug": "kubernetes-serie",
   "articles": [
     "kubernetes-concepts-pods-nodes",

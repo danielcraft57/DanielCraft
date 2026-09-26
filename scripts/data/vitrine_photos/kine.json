@@ -1,0 +1,129 @@
+{
+  "slug": "kine",
+  "brand": "Kinesia Metz",
+  "category": "sante",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Clean medical physiotherapy clinic Metz, trusting soft light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Salle de soins kinesitherapie Metz",
+      "subject": "Bright physiotherapy treatment room in Metz clinic: treatment table, exercise bands, clean white and teal accents, large window with soft daylight",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Salle de soins kinesitherapie Metz"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Reeducation sport",
+      "subject": "Sports rehab session with resistance bands, athlete stretching guided by physiotherapist",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Reeducation sport"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Soin du dos",
+      "subject": "Back physiotherapy manual therapy on treatment table, calm clinical setting",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Soin du dos"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Respiratoire",
+      "subject": "Respiratory physiotherapy breathing exercise with patient seated, supportive clinician",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Respiratoire"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Table de massage",
+      "subject": "Clean treatment table with fresh sheets, ultrasound device nearby, clinic cabinet",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Table de massage"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Exercices sport",
+      "subject": "Active rehab exercises with gym ball in physiotherapy room",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Exercices sport"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Bilan patient",
+      "subject": "Patient intake consultation at desk with clipboard, welcoming clinic office",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Bilan patient"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Accueil cabinet",
+      "subject": "Clinic reception desk with plants, clear opening hours signage area, accessible entrance",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Accueil cabinet"
+        }
+      ]
+    }
+  ]
+}

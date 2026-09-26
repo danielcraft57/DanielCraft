@@ -55,16 +55,16 @@ ssh deploy@server.local "echo 'Connexion OK'"
 
 Le script `deploy.ps1` fait automatiquement :
 
-1. ✅ Vérification du répertoire (présence de index.html)
-2. ✅ Création du répertoire sur le serveur
-3. ✅ Transfert des fichiers (rsync ou scp)
-4. ✅ Configuration des permissions (chown/chmod pour www-data)
-5. ✅ Préparation de la config nginx (avec ou sans SSL selon certificats)
-6. ✅ Activation de la configuration nginx
-7. ✅ Test de la configuration
-8. ✅ Création des certificats SSL (si nécessaire)
-9. ✅ Rechargement de nginx
-10. ✅ Vérification finale
+1. Vérification du répertoire (présence de index.html)
+2. Création du répertoire sur le serveur
+3. Transfert des fichiers (rsync ou scp)
+4. Configuration des permissions (chown/chmod pour www-data)
+5. Préparation de la config nginx (avec ou sans SSL selon certificats)
+6. Activation de la configuration nginx
+7. Test de la configuration
+8. Création des certificats SSL (si nécessaire)
+9. Rechargement de nginx
+10. Vérification finale
 
 ## Différences avec deploy.sh
 

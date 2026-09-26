@@ -77,7 +77,7 @@ def main() -> None:
             print(f"[SKIP] {path.name}")
             continue
         body = inject_before_faq(body, BLOCKS[prefix])
-        body = body.replace("'", "'").replace("'", "'").replace("—", "-")
+        body = body.replace("'", "'").replace("'", "'").replace("-", "-")
         for a, b in {
             "Role": "Rôle",
             "resultat": "résultat",

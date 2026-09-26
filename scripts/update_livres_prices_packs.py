@@ -68,7 +68,7 @@ PACKS = [
     {
         "slug": "pack-debutant-code",
         "title": "Pack Debutant code",
-        "tagline": "HTML, JS, Python et Git — le kit demarrage",
+        "tagline": "HTML, JS, Python et Git - le kit demarrage",
         "short_description": (
             "4 PDF pour poser des bases solides : HTML/CSS, JavaScript, Python et Git."
         ),
@@ -250,7 +250,7 @@ PACKS = [
         "title": "Pack Marketing & com",
         "tagline": "Message, canaux et clarte",
         "short_description": (
-            "3 PDF : marketing, communication et commerce — pour parler net et vendre mieux."
+            "3 PDF : marketing, communication et commerce - pour parler net et vendre mieux."
         ),
         "keywords": ["pack", "marketing", "communication", "commerce"],
         "icon": "fa-bullhorn",
@@ -340,7 +340,7 @@ def main() -> None:
     data["deal_of_the_week"] = {
         "slug": DEAL_OF_THE_WEEK_SLUG,
         "badge": "Pack de la semaine",
-        "urgency": "Offre limitee — mise en avant cette semaine",
+        "urgency": "Offre limitee - mise en avant cette semaine",
         "cta_label": "Profiter de l'offre",
     }
     data.pop("pack_price_eur", None)
@@ -355,7 +355,7 @@ def main() -> None:
                 "nav_label": "Packs",
                 "icon": "fa-box-open",
                 "description": (
-                    "Plusieurs PDF moins cher qu'a l'unite — remise volume sur le prix d'appel."
+                    "Plusieurs PDF moins cher qu'a l'unite - remise volume sur le prix d'appel."
                 ),
             },
         )
@@ -394,7 +394,7 @@ def main() -> None:
             it.pop("is_free", None)
             it["price_eur"] = UNIT_EUR
             it["price_label"] = "Prix d'appel"
-            it["price_note"] = "TTC — PDF envoye par e-mail apres paiement"
+            it["price_note"] = "TTC - PDF envoye par e-mail apres paiement"
         items.append(it)
 
     slug_to_title = {it["slug"]: it.get("title", it["slug"]) for it in items}
@@ -436,7 +436,7 @@ def main() -> None:
                 "compare_at_eur": sum_unit,
                 "price_label": "Pack",
                 "price_note": (
-                    f"TTC — {n} PDF (valeur {eur_fr(sum_unit)} a l'unite) "
+                    f"TTC - {n} PDF (valeur {eur_fr(sum_unit)} a l'unite) "
                     "envoyes par e-mail apres paiement"
                 ),
                 "currency": "EUR",

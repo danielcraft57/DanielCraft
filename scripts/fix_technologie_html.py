@@ -12,7 +12,7 @@ fig = (
     "            </div>\n"
     '            <div class="column is-6 vitrine-img-reveal">\n'
     '              <figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken vitrine-figure--motion mb-0">\n'
-    '                <a href="images/hero.svg" class="glightbox" data-gallery="tech-visuels" data-glightbox="title: Datacenter — illustration">\n'
+    '                <a href="images/hero.svg" class="glightbox" data-gallery="tech-visuels" data-glightbox="title: Datacenter - illustration">\n'
     '                  <img src="images/tech-datacenter.png" width="1200" height="675" alt="Salle serveurs et infrastructure cloud" decoding="async" fetchpriority="high">\n'
     "                </a>\n"
     "              </figure>\n"

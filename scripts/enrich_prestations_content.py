@@ -43,7 +43,7 @@ ENRICHMENTS: dict[str, dict] = {
             'Quand on demande « qui fait des sites vitrine à Metz », l\'assistant cite votre activité avec la bonne description.',
             'FAQ structurée sur vos délais et tarifs : reprise fidèle dans les réponses automatiques.',
         ],
-        'promo': 'Vos futurs clients posent déjà leurs questions à ChatGPT — autant y être bien présenté.',
+        'promo': 'Vos futurs clients posent déjà leurs questions à ChatGPT - autant y être bien présenté.',
     },
     'repondeur-intelligent': {
         'examples': [
@@ -76,18 +76,18 @@ ENRICHMENTS: dict[str, dict] = {
             'Page « Nos services » pour un électricien : chaque prestation expliquée en langage simple.',
             'Trois articles de blog pour un naturopathe : sujets fréquents de ses patients, optimisés pour la recherche locale.',
         ],
-        'promo': 'Vous savez quoi dire — je m\'occupe de le mettre par écrit correctement.',
+        'promo': 'Vous savez quoi dire - je m\'occupe de le mettre par écrit correctement.',
         'faq': [
             {'q': 'Est-ce que les textes sont générés automatiquement ?', 'a': 'J\'utilise des outils d\'aide à la rédaction, mais chaque texte est relu, adapté à vous et validé avant livraison.'},
             {'q': 'Combien de pages sont incluses ?', 'a': 'Le forfait couvre l\'équivalent d\'environ 5 à 8 pages standard ; on précise ensemble au devis.'},
         ],
-        'seo_title': 'Rédaction de textes pour site web — articles & pages',
+        'seo_title': 'Rédaction de textes pour site web - articles & pages',
         'seo_description': 'Textes clairs pour votre site vitrine ou blog. Rédaction adaptée à votre métier, sans jargon. Devis par e-mail, Metz & Lorraine.',
     },
     'ia-redaction': {
         'has_page': True,
         'tagline': 'Vos e-mails commerciaux, prêts plus vite',
-        'description': 'Un assistant configuré avec votre offre et votre façon de parler. Il vous propose des brouillons pour devis, relances, messages LinkedIn ou newsletters — vous gardez la main sur l\'envoi.',
+        'description': 'Un assistant configuré avec votre offre et votre façon de parler. Il vous propose des brouillons pour devis, relances, messages LinkedIn ou newsletters - vous gardez la main sur l\'envoi.',
         'benefits': ['Moins de page blanche', 'Ton professionnel et cohérent', 'Réponses plus rapides aux prospects'],
         'includes': ['Configuration sur votre activité', 'Modèles pour vos cas fréquents', 'Courte formation à l\'usage', 'Ajustements après 2 semaines d\'essai'],
         'examples': [
@@ -98,13 +98,13 @@ ENRICHMENTS: dict[str, dict] = {
         'faq': [
             {'q': 'L\'outil envoie-t-il les e-mails à ma place ?', 'a': 'Non par défaut : il prépare le texte, vous copiez ou validez avant envoi depuis votre messagerie.'},
         ],
-        'seo_title': 'Assistant rédaction commerciale — e-mails & LinkedIn',
+        'seo_title': 'Assistant rédaction commerciale - e-mails & LinkedIn',
         'seo_description': 'Gagnez du temps sur vos e-mails commerciaux et messages pro. Assistant configuré à votre image. Installation et accompagnement.',
     },
     'ia-analyse': {
         'has_page': True,
         'tagline': 'Vos chiffres expliqués simplement',
-        'description': 'À partir de vos fichiers (ventes, stocks, rendez-vous…), je mets en place des tableaux de bord lisibles et des explications en français clair — pas besoin d\'être comptable pour comprendre.',
+        'description': 'À partir de vos fichiers (ventes, stocks, rendez-vous…), je mets en place des tableaux de bord lisibles et des explications en français clair - pas besoin d\'être comptable pour comprendre.',
         'benefits': ['Vision claire de votre activité', 'Moins de tableurs à manipuler', 'Repérer ce qui marche (ou non)'],
         'includes': ['Analyse de vos sources de données', 'Tableau de bord adapté à votre métier', 'Documentation simple', 'Session de prise en main'],
         'examples': [
@@ -113,26 +113,26 @@ ENRICHMENTS: dict[str, dict] = {
         ],
         'promo': 'Arrêtez de vous noyer dans les colonnes : voyez l\'essentiel d\'un coup d\'œil.',
         'faq': [
-            {'q': 'Quels fichiers faut-il fournir ?', 'a': 'Export Excel, CSV ou accès à votre outil de facturation selon les cas — on définit cela au premier échange.'},
+            {'q': 'Quels fichiers faut-il fournir ?', 'a': 'Export Excel, CSV ou accès à votre outil de facturation selon les cas - on définit cela au premier échange.'},
         ],
-        'seo_title': 'Tableaux de bord & analyse de données — PME & indépendants',
+        'seo_title': 'Tableaux de bord & analyse de données - PME & indépendants',
         'seo_description': 'Comprenez vos chiffres avec des tableaux clairs et des explications accessibles. Pour commerces et indépendants en Lorraine.',
     },
     'ia-boutique': {
         'has_page': True,
         'tagline': 'Un vendeur disponible sur votre boutique en ligne',
-        'description': 'Un assistant sur votre site e-commerce qui répond aux questions produits, tailles, délais de livraison et disponibilité — comme un conseiller en magasin, mais en ligne.',
+        'description': 'Un assistant sur votre site e-commerce qui répond aux questions produits, tailles, délais de livraison et disponibilité - comme un conseiller en magasin, mais en ligne.',
         'benefits': ['Moins d\'abandons de panier', 'Réponses immédiates aux hésitations', 'Charge allégée sur le SAV'],
         'includes': ['Connexion à votre catalogue produits', 'Réponses sur les articles fréquents', 'Style adapté à votre marque', 'Tests avant mise en ligne'],
         'examples': [
-            'Boutique de vêtements : « Quelle taille si je fais 1m75 ? » — réponse basée sur votre guide des tailles.',
+            'Boutique de vêtements : « Quelle taille si je fais 1m75 ? » - réponse basée sur votre guide des tailles.',
             'Épicerie fine en ligne : l\'assistant suggère des accords ou précise les allergènes.',
         ],
-        'promo': 'Vos clients posent les mêmes questions en magasin — autant y répondre sur le site.',
+        'promo': 'Vos clients posent les mêmes questions en magasin - autant y répondre sur le site.',
         'faq': [
-            {'q': 'Fonctionne avec quelle boutique ?', 'a': 'Shopify, WooCommerce et la plupart des solutions courantes — faisabilité confirmée au devis.'},
+            {'q': 'Fonctionne avec quelle boutique ?', 'a': 'Shopify, WooCommerce et la plupart des solutions courantes - faisabilité confirmée au devis.'},
         ],
-        'seo_title': 'Assistant conversationnel e-commerce — conseil produits',
+        'seo_title': 'Assistant conversationnel e-commerce - conseil produits',
         'seo_description': 'Assistant sur votre boutique en ligne : questions produits, recommandations, aide à la commande. Installation clé en main.',
     },
     'ia-automatisation': {
@@ -149,7 +149,7 @@ ENRICHMENTS: dict[str, dict] = {
         'faq': [
             {'q': 'Faut-il changer tous mes outils ?', 'a': 'Non : on part de ce que vous utilisez déjà (mail, Excel, Notion, etc.) et on les fait travailler ensemble.'},
         ],
-        'seo_title': 'Automatisation de tâches — gain de temps PME',
+        'seo_title': 'Automatisation de tâches - gain de temps PME',
         'seo_description': 'Automatisez e-mails, formulaires et rapports répétitifs. Moins de copier-coller, plus de temps pour vos clients.',
     },
     'ia-maint-mensuelle': {
@@ -162,11 +162,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Changement de tarif en janvier : toutes les réponses de l\'assistant mises à jour en 48 h.',
             'Nouvelle question récurrente détectée : ajoutée au mois suivant dans la base de l\'assistant.',
         ],
-        'promo': 'Un assistant figé devient vite faux — cet abonnement évite les mauvaises surprises.',
+        'promo': 'Un assistant figé devient vite faux - cet abonnement évite les mauvaises surprises.',
         'faq': [
-            {'q': 'Pour quel type d\'assistant ?', 'a': 'Assistants installés par DanielCraft ou existants — compatibilité vérifiée avant souscription.'},
+            {'q': 'Pour quel type d\'assistant ?', 'a': 'Assistants installés par DanielCraft ou existants - compatibilité vérifiée avant souscription.'},
         ],
-        'seo_title': 'Maintenance mensuelle assistant IA — mises à jour',
+        'seo_title': 'Maintenance mensuelle assistant IA - mises à jour',
         'seo_description': 'Abonnement entretien assistant : nouvelles réponses, tarifs à jour, optimisations. Pour sites et outils déjà en place.',
     },
     'ia-evolution': {
@@ -179,11 +179,11 @@ ENRICHMENTS: dict[str, dict] = {
             'L\'assistant peut maintenant consulter votre agenda pour proposer des créneaux.',
             'Connexion à votre FAQ Notion pour enrichir les réponses automatiquement.',
         ],
-        'promo': 'À partir de 330 € selon la complexité — devis précis après description du besoin.',
+        'promo': 'À partir de 330 € selon la complexité - devis précis après description du besoin.',
         'faq': [
             {'q': 'Combien de temps ça prend ?', 'a': 'Souvent 3 à 10 jours ouvrés selon l\'intégration demandée.'},
         ],
-        'seo_title': 'Évolution assistant IA — nouvelle fonctionnalité',
+        'seo_title': 'Évolution assistant IA - nouvelle fonctionnalité',
         'seo_description': 'Ajoutez une capacité à votre assistant existant : nouvel outil, source de données, prise de RDV. Devis sur mesure.',
     },
     'ia-audit': {
@@ -200,13 +200,13 @@ ENRICHMENTS: dict[str, dict] = {
         'faq': [
             {'q': 'Faut-il déjà utiliser l\'IA ?', 'a': 'Non : l\'audit convient aussi si vous débutez et voulez savoir par où commencer.'},
         ],
-        'seo_title': 'Audit usage IA pour entreprises — bilan & recommandations',
+        'seo_title': 'Audit usage IA pour entreprises - bilan & recommandations',
         'seo_description': 'Audit IA en langage clair : où gagner du temps, quoi éviter. Rapport et plan d\'action pour PME et indépendants.',
     },
     'conseil-projet': {
         'has_page': True,
         'tagline': 'Un plan clair avant de vous lancer',
-        'description': 'Vous avez un projet (nouveau site, application, grosse refonte) ? Je vous aide à voir ce qui est faisable, combien ça peut coûter et dans quel ordre avancer — sans vous vendre plus que nécessaire.',
+        'description': 'Vous avez un projet (nouveau site, application, grosse refonte) ? Je vous aide à voir ce qui est faisable, combien ça peut coûter et dans quel ordre avancer - sans vous vendre plus que nécessaire.',
         'benefits': ['Décisions éclairées', 'Budget et délais réalistes', 'Moins de mauvaises surprises'],
         'includes': ['Échange sur vos objectifs', 'Étude de faisabilité', 'Estimation budget et planning', 'Rapport écrit synthétique'],
         'examples': [
@@ -215,15 +215,15 @@ ENRICHMENTS: dict[str, dict] = {
         ],
         'promo': '380 € pour éviter de dépenser 5 000 € dans la mauvaise direction.',
         'faq': [
-            {'q': 'Est-ce que vous réalisez ensuite le projet ?', 'a': 'Si vous le souhaitez, oui — mais le conseil reste utile même si vous travaillez avec un autre prestataire.'},
+            {'q': 'Est-ce que vous réalisez ensuite le projet ?', 'a': 'Si vous le souhaitez, oui - mais le conseil reste utile même si vous travaillez avec un autre prestataire.'},
         ],
-        'seo_title': 'Conseil projet web & digital — faisabilité & budget',
+        'seo_title': 'Conseil projet web & digital - faisabilité & budget',
         'seo_description': 'Étude de faisabilité et estimation pour votre projet web ou digital. Rapport clair, sans engagement sur la suite.',
     },
     'connexion-crm': {
         'has_page': True,
         'tagline': 'Du site directement dans votre logiciel habituel',
-        'description': 'Quand quelqu\'un remplit un formulaire sur votre site, les informations arrivent dans votre CRM, logiciel de devis ou tableur — plus besoin de recopier à la main.',
+        'description': 'Quand quelqu\'un remplit un formulaire sur votre site, les informations arrivent dans votre CRM, logiciel de devis ou tableur - plus besoin de recopier à la main.',
         'benefits': ['Zéro oubli de prospect', 'Gain de temps au quotidien', 'Données centralisées'],
         'includes': ['Analyse de vos outils', 'Connexion formulaire → logiciel', 'Tests avec fausses demandes', 'Courte documentation'],
         'examples': [
@@ -232,9 +232,9 @@ ENRICHMENTS: dict[str, dict] = {
         ],
         'promo': 'À partir de 290 € selon les logiciels à relier.',
         'faq': [
-            {'q': 'Mon logiciel est-il compatible ?', 'a': 'La plupart des outils modernes oui — on vérifie ensemble avant de commencer.'},
+            {'q': 'Mon logiciel est-il compatible ?', 'a': 'La plupart des outils modernes oui - on vérifie ensemble avant de commencer.'},
         ],
-        'seo_title': 'Connexion site web & CRM — synchronisation contacts',
+        'seo_title': 'Connexion site web & CRM - synchronisation contacts',
         'seo_description': 'Reliez votre site à votre CRM ou logiciel métier. Formulaires, contacts et devis sans ressaisie manuelle.',
     },
     'transfert-donnees': {
@@ -247,11 +247,11 @@ ENRICHMENTS: dict[str, dict] = {
             '500 fiches clients Excel importées dans un nouveau CRM.',
             'Articles d\'un ancien blog WordPress repris sur le nouveau site.',
         ],
-        'promo': 'Indispensable lors d\'un changement de site ou d\'outil — mieux vaut le faire une fois bien.',
+        'promo': 'Indispensable lors d\'un changement de site ou d\'outil - mieux vaut le faire une fois bien.',
         'faq': [
             {'q': 'Y a-t-il une interruption de service ?', 'a': 'On planifie souvent le basculement en dehors des heures d\'ouverture ou le week-end.'},
         ],
-        'seo_title': 'Migration de données — transfert site & logiciels',
+        'seo_title': 'Migration de données - transfert site & logiciels',
         'seo_description': 'Transfert sécurisé de vos données (clients, produits, contenus) vers un nouvel outil ou site. Sans perte.',
     },
     'liaison-outils': {
@@ -264,11 +264,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Une vente sur la boutique met à jour le stock dans l\'outil de gestion.',
             'Un nouveau client dans le CRM déclenche l\'envoi d\'un e-mail de bienvenue.',
         ],
-        'promo': 'À partir de 150 € pour une liaison simple — devis selon complexité.',
+        'promo': 'À partir de 150 € pour une liaison simple - devis selon complexité.',
         'faq': [
             {'q': 'C\'est compliqué à maintenir ?', 'a': 'Je documente la liaison ; en cas de changement d\'outil, on évalue une mise à jour.'},
         ],
-        'seo_title': 'Intégration API & webhooks — synchronisation outils',
+        'seo_title': 'Intégration API & webhooks - synchronisation outils',
         'seo_description': 'Faites dialoguer vos logiciels : commandes, stocks, contacts. Synchronisation automatique pour PME.',
     },
     'rapport-vitesse': {
@@ -281,11 +281,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Images trop lourdes identifiées : gain de 3 secondes au chargement après correction.',
             'Site lent sur 4G : rapport montrant les 3 blocages principaux.',
         ],
-        'promo': '120 € pour un diagnostic — souvent rentabilisé par plus de contacts.',
+        'promo': '120 € pour un diagnostic - souvent rentabilisé par plus de contacts.',
         'faq': [
             {'q': 'Est-ce que vous corrigez aussi ?', 'a': 'Le forfait couvre le rapport ; les corrections peuvent faire l\'objet d\'un devis séparé.'},
         ],
-        'seo_title': 'Audit vitesse site web — rapport performances',
+        'seo_title': 'Audit vitesse site web - rapport performances',
         'seo_description': 'Votre site est-il rapide ? Mesure et rapport clair avec recommandations. Pour commerces et sites vitrine.',
     },
     'page-supplementaire': {
@@ -298,11 +298,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Page « Nos réalisations » avec galerie photos pour un paysagiste.',
             'Page « Mentions légales & politique de confidentialité » mise à jour.',
         ],
-        'promo': '65 € par page — idéal pour compléter un site vitrine existant.',
+        'promo': '65 € par page - idéal pour compléter un site vitrine existant.',
         'faq': [
             {'q': 'Faut-il fournir les textes ?', 'a': 'Vous pouvez fournir une ébauche ; je peux aussi rédiger (option possible).'},
         ],
-        'seo_title': 'Ajout page site vitrine — création sur mesure',
+        'seo_title': 'Ajout page site vitrine - création sur mesure',
         'seo_description': 'Nouvelle page pour votre site vitrine : témoignages, tarifs, FAQ. 65 €/page, mise en ligne incluse.',
     },
     'formulaire-sur-mesure': {
@@ -315,11 +315,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Formulaire devis avec type de travaux, surface et photos pour un artisan.',
             'Prise de rendez-vous avec choix de créneau pour un cabinet.',
         ],
-        'promo': '99 € forfait — souvent indispensable pour convertir les visiteurs.',
+        'promo': '99 € forfait - souvent indispensable pour convertir les visiteurs.',
         'faq': [
             {'q': 'Peut-on connecter à mon CRM ?', 'a': 'Oui, en option via la prestation « Relier votre site à votre logiciel ».'},
         ],
-        'seo_title': 'Formulaire web sur mesure — devis & contact',
+        'seo_title': 'Formulaire web sur mesure - devis & contact',
         'seo_description': 'Formulaire adapté à votre activité : devis, réservation, questionnaire. Validation et envoi par e-mail.',
     },
     'nouveau-look': {
@@ -329,14 +329,14 @@ ENRICHMENTS: dict[str, dict] = {
         'benefits': ['Image plus actuelle', 'Coût maîtrisé', 'Pas de migration lourde'],
         'includes': ['Proposition de palette et typos', 'Application sur les pages existantes', 'Vérification mobile', 'Mise en ligne'],
         'examples': [
-            'Site de 2018 : nouveau header, couleurs et boutons — aspect 2025 en quelques jours.',
+            'Site de 2018 : nouveau header, couleurs et boutons - aspect 2025 en quelques jours.',
             'Harmonisation avec une nouvelle carte de visite imprimée.',
         ],
         'promo': '330 € pour un coup de jeune visible sans refonte complète.',
         'faq': [
             {'q': 'Est-ce que le contenu change ?', 'a': 'Non par défaut : uniquement l\'apparence. Les textes peuvent être mis à jour via un pack contenu séparé.'},
         ],
-        'seo_title': 'Refonte visuelle site web — design & couleurs',
+        'seo_title': 'Refonte visuelle site web - design & couleurs',
         'seo_description': 'Rafraîchissez l\'apparence de votre site : couleurs, polices, mise en page. Sans reconstruire tout le site.',
     },
     'maj-contenus': {
@@ -349,11 +349,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Horaires d\'été, nouveau numéro de téléphone et photo d\'équipe remplacée.',
             'Ajout de trois nouveaux services sur la page Prestations.',
         ],
-        'promo': '170 € le pack — pratique une ou deux fois par an.',
+        'promo': '170 € le pack - pratique une ou deux fois par an.',
         'faq': [
             {'q': 'Que se passe-t-il si ça dépasse 5 h ?', 'a': 'Je vous préviens avant ; le surplus peut être facturé à l\'heure ou reporté sur un nouveau pack.'},
         ],
-        'seo_title': 'Mise à jour contenu site web — pack 5 heures',
+        'seo_title': 'Mise à jour contenu site web - pack 5 heures',
         'seo_description': 'Pack 5 h pour actualiser textes, images et pages de votre site. Simple et sans jargon technique.',
     },
     'hebergement-domaine': {
@@ -366,11 +366,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Artisan qui veut « monsite.fr » sans gérer OVH ou Gandi lui-même.',
             'Renouvellement annuel du domaine géré en un seul contact.',
         ],
-        'promo': '79 €/an — souvent couplé à la maintenance mensuelle.',
+        'promo': '79 €/an - souvent couplé à la maintenance mensuelle.',
         'faq': [
             {'q': 'Le site est-il créé dans ce forfait ?', 'a': 'Non : c\'est l\'hébergement et le domaine. La création du site est une prestation séparée.'},
         ],
-        'seo_title': 'Hébergement web & nom de domaine — forfait annuel',
+        'seo_title': 'Hébergement web & nom de domaine - forfait annuel',
         'seo_description': 'Hébergement et nom de domaine pour votre site pro. 79 €/an, HTTPS inclus. Metz & France.',
     },
     'sauvegardes-securite': {
@@ -383,7 +383,7 @@ ENRICHMENTS: dict[str, dict] = {
             'Site piraté : restauration de la veille en quelques heures.',
             'Mise à jour de sécurité bloquée : retour arrière grâce à la sauvegarde.',
         ],
-        'promo': '99 € une fois — à combiner avec la maintenance mensuelle pour la surveillance.',
+        'promo': '99 € une fois - à combiner avec la maintenance mensuelle pour la surveillance.',
         'faq': [
             {'q': 'Où sont stockées les sauvegardes ?', 'a': 'Sur un espace séparé de l\'hébergement principal, pas sur le même serveur que le site.'},
         ],
@@ -400,11 +400,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Site encore en « non sécurisé » : correction en une demi-journée.',
             'Avertissement Chrome supprimé après installation du certificat.',
         ],
-        'promo': '45 € — rapide et souvent oublié sur les vieux sites.',
+        'promo': '45 € - rapide et souvent oublié sur les vieux sites.',
         'faq': [
             {'q': 'C\'est obligatoire ?', 'a': 'Pas légalement pour tous, mais fortement recommandé : les navigateurs affichent des avertissements sans HTTPS.'},
         ],
-        'seo_title': 'Certificat SSL HTTPS — installation site web',
+        'seo_title': 'Certificat SSL HTTPS - installation site web',
         'seo_description': 'Installation du cadenas HTTPS sur votre site. 45 € forfait, configuration complète.',
     },
     'support-mensuel': {
@@ -414,14 +414,14 @@ ENRICHMENTS: dict[str, dict] = {
         'benefits': ['Pas seul face au technique', 'Réponse sous quelques jours ouvrés', 'Budget prévisible'],
         'includes': ['Support par e-mail', 'Petites questions et orientations', 'Mises à jour mineures simples', 'Historique de vos demandes'],
         'examples': [
-            '« Comment changer cette image sur l\'accueil ? » — réponse pas à pas.',
-            '« Mon formulaire ne part plus » — diagnostic et correction simple.',
+            '« Comment changer cette image sur l\'accueil ? » - réponse pas à pas.',
+            '« Mon formulaire ne part plus » - diagnostic et correction simple.',
         ],
-        'promo': '25 €/mois — l\'alternative douce à l\'accompagnement à l\'heure.',
+        'promo': '25 €/mois - l\'alternative douce à l\'accompagnement à l\'heure.',
         'faq': [
             {'q': 'Qu\'est-ce qui n\'est pas inclus ?', 'a': 'Les gros développements ou refontes : ils font l\'objet d\'un devis séparé.'},
         ],
-        'seo_title': 'Support technique site web — abonnement mensuel',
+        'seo_title': 'Support technique site web - abonnement mensuel',
         'seo_description': 'Assistance par e-mail pour votre site : questions, petites corrections. 25 €/mois, sans engagement long.',
     },
     'depannage-2h': {
@@ -434,11 +434,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Site affiche une erreur après une mise à jour : retour en ligne le jour même.',
             'Lien mort sur la page Contact réparé + test du formulaire.',
         ],
-        'promo': '120 € forfait 2 h — à réserver quand ça presse.',
+        'promo': '120 € forfait 2 h - à réserver quand ça presse.',
         'faq': [
             {'q': 'Et si 2 h ne suffisent pas ?', 'a': 'Je vous préviens avant de dépasser ; on peut étendre à l\'heure ou planifier une suite.'},
         ],
-        'seo_title': 'Dépannage site web — intervention 2 heures',
+        'seo_title': 'Dépannage site web - intervention 2 heures',
         'seo_description': 'Dépannage express site internet : bug, page cassée, correctif. Forfait 2 h, 120 €.',
     },
     'accompagnement-heure': {
@@ -451,11 +451,11 @@ ENRICHMENTS: dict[str, dict] = {
             '1 h pour comprendre comment mettre à jour les horaires vous-même.',
             '2 h pour configurer un outil de prise de rendez-vous avec mon aide.',
         ],
-        'promo': '60 €/h — sans engagement minimum.',
+        'promo': '60 €/h - sans engagement minimum.',
         'faq': [
             {'q': 'Facturation au quart d\'heure ?', 'a': 'Facturation à l\'heure entamée, avec transparence sur le temps passé.'},
         ],
-        'seo_title': 'Accompagnement technique — conseil à l\'heure',
+        'seo_title': 'Accompagnement technique - conseil à l\'heure',
         'seo_description': 'Aide et conseil pour votre site, à l\'heure. Débutants bienvenus, explications claires. 60 €/h.',
     },
     'support-prioritaire': {
@@ -468,11 +468,11 @@ ENRICHMENTS: dict[str, dict] = {
             'Site inaccessible la veille d\'une promo : traitement en priorité.',
             'Formulaire d\'inscription événement à réparer avant l\'ouverture des ventes.',
         ],
-        'promo': '70 €/h — quand chaque heure compte.',
+        'promo': '70 €/h - quand chaque heure compte.',
         'faq': [
-            {'q': 'Disponible le week-end ?', 'a': 'Sur demande et selon disponibilité — précisez l\'urgence dans votre message.'},
+            {'q': 'Disponible le week-end ?', 'a': 'Sur demande et selon disponibilité - précisez l\'urgence dans votre message.'},
         ],
-        'seo_title': 'Support prioritaire site web — intervention urgente',
+        'seo_title': 'Support prioritaire site web - intervention urgente',
         'seo_description': 'Support technique prioritaire pour urgences web. Réponse rapide, 70 €/h. Metz & remote.',
     },
 }

@@ -1,7 +1,7 @@
 ---
 title: "Marketing automation : automatiser sans perdre l'humain"
 date: 2024-05-09
-excerpt: "Workflows simples : declencheurs, messages, relances — et quand s'arreter."
+excerpt: "Workflows simples : declencheurs, messages, relances - et quand s'arreter."
 type: article
 tags: [marketing digital, automatisation, workflows, leads, outils]
 series: marketing-digital-serie
@@ -16,7 +16,7 @@ og_image: marketing-automatisation-1200x630.jpg
   <figcaption>Declencheur, message, attente, relance, stop.</figcaption>
 </figure>
 
-L'automatisation marketing promet de gagner du temps, d'envoyer le bon message au bon moment et de ne plus laisser un lead refroidir faute de relance. C'est vrai — à condition de ne pas confondre automatisation et déshumanisation. Un workflow mal pensé envoie des emails génériques qui finissent en spam. Un workflow bien conçu accompagne le prospect comme le ferait un commercial attentif, sans être intrusif.
+L'automatisation marketing promet de gagner du temps, d'envoyer le bon message au bon moment et de ne plus laisser un lead refroidir faute de relance. C'est vrai - à condition de ne pas confondre automatisation et déshumanisation. Un workflow mal pensé envoie des emails génériques qui finissent en spam. Un workflow bien conçu accompagne le prospect comme le ferait un commercial attentif, sans être intrusif.
 
 Le schéma ci-dessus résume la logique : un déclencheur lance une action, une attente laisse respirer, une relance rappelle l'offre, et une condition d'arrêt évite de harceler. C'est cette boucle simple qu'il faut maîtriser avant de construire des scénarios complexes.
 
@@ -28,7 +28,7 @@ En revanche, une négociation commerciale, une réponse à une objection complex
 
 ## Construire un premier workflow en quatre étapes
 
-Un bon point de départ : la séquence post-inscription. Étape 1 — déclencheur : formulaire rempli ou lead magnet téléchargé. Étape 2 — email immédiat de confirmation avec le contenu promis. Étape 3 — attente de trois à cinq jours, puis un email éducatif lié au sujet du guide. Étape 4 — proposition douce : appel, démo ou ressource complémentaire. Condition de sortie : le lead a cliqué sur « demander un devis » ou s'est désinscrit.
+Un bon point de départ : la séquence post-inscription. Étape 1 - déclencheur : formulaire rempli ou lead magnet téléchargé. Étape 2 - email immédiat de confirmation avec le contenu promis. Étape 3 - attente de trois à cinq jours, puis un email éducatif lié au sujet du guide. Étape 4 - proposition douce : appel, démo ou ressource complémentaire. Condition de sortie : le lead a cliqué sur « demander un devis » ou s'est désinscrit.
 
 Teste ce scénario sur une dizaine de contacts avant de l'ouvrir à toute la base. Vérifie les déclencheurs, les fuseaux horaires et le rendu mobile. Un email automatique mal formaté nuit à ta crédibilité autant qu'un email manuel.
 

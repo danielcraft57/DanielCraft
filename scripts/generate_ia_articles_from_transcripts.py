@@ -197,7 +197,7 @@ def clean_body_text(text: str) -> str:
         t,
     )
     t = t.replace("'", "'").replace("'", "'").replace("'", "'")
-    t = t.replace("—", "-").replace("–", "-")
+    t = t.replace("-", "-").replace("-", "-")
     return t.strip()
 
 
@@ -433,7 +433,7 @@ Quand tu transformes ce genre d'astuce en page web :
 Cette page fait partie d'une série sur l'IA pratique. Enchaîne avec les autres articles de la série pour construire un vrai parcours, pas juste une astuce isolée.
 """
 
-    body = body.replace("'", "'").replace("'", "'").replace("—", "-").replace("–", "-")
+    body = body.replace("'", "'").replace("'", "'").replace("-", "-").replace("-", "-")
     body = body.replace("deja gerees", "déjà gérées")
     body = body.replace("questions/reponses", "questions/réponses")
 

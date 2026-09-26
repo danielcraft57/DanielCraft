@@ -1,4 +1,4 @@
-/* Nos offres — landing commerce (au-dessus du catalogue) */
+/* Nos offres - landing commerce (au-dessus du catalogue) */
 
 .page-nos-offres {
   --offres-ink: #0f3550;
@@ -613,7 +613,7 @@
   }
 }
 
-/* Catalogue ancre — espace sous landing */
+/* Catalogue ancre - espace sous landing */
 .page-nos-offres #catalogue {
   scroll-margin-top: 5rem;
 }

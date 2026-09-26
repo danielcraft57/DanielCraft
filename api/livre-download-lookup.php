@@ -1,6 +1,6 @@
 <?php
 /**
- * Lookup commande livre (code ou token) — JSON pour /livres/telechargement/.
+ * Lookup commande livre (code ou token) - JSON pour /livres/telechargement/.
  *
  * POST JSON (formulaire code) :
  *   code, form_ts, company (honeypot), website (honeypot), source?=form|link

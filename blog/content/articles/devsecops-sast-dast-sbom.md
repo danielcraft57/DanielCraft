@@ -1,7 +1,7 @@
 ---
 title: "Sécurité dans le code : contrôler avant de publier"
 date: 2025-12-02
-excerpt: "Vérifier le code, les dépendances et les images avant la mise en ligne — sans freiner toute l'équipe."
+excerpt: "Vérifier le code, les dépendances et les images avant la mise en ligne - sans freiner toute l'équipe."
 type: article
 tags: [DevSecOps, SAST, DAST, SBOM, CI/CD]
 series: cybersecurite-secops-serie

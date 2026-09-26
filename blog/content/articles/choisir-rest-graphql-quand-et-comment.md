@@ -1,7 +1,7 @@
 ---
 title: "REST ou GraphQL : comment choisir (ou combiner)"
 date: 2025-07-15
-excerpt: "Une grille simple selon ton contexte — et comment mixer les deux sans se perdre."
+excerpt: "Une grille simple selon ton contexte - et comment mixer les deux sans se perdre."
 type: article
 tags: [API, REST, GraphQL, architecture, décision]
 series: api-rest-graphql-serie

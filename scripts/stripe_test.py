@@ -17,7 +17,7 @@ def main() -> int:
     pk = publishable_key()
     sk = secret_key()
     if not sk:
-        print('[ERREUR] STRIPE_SECRET_KEY absente — lancez scripts/merge_stripe_env.py', file=sys.stderr)
+        print('[ERREUR] STRIPE_SECRET_KEY absente - lancez scripts/merge_stripe_env.py', file=sys.stderr)
         return 1
 
     print(f'[OK] Clé secrète : {sk[:12]}… (mode {"live" if sk.startswith("sk_live") else "test"})')
@@ -26,7 +26,7 @@ def main() -> int:
 
     balance = stripe_request('GET', '/balance')
     livemode = balance.get('livemode')
-    print(f'[OK] API Stripe — livemode={livemode}')
+    print(f'[OK] API Stripe - livemode={livemode}')
 
     if args.checkout:
         base = site_base()
@@ -38,7 +38,7 @@ def main() -> int:
             'line_items[0][quantity]': 1,
             'line_items[0][price_data][currency]': 'eur',
             'line_items[0][price_data][unit_amount]': 4200,
-            'line_items[0][price_data][product_data][name]': f'Test Checkout — {slug}',
+            'line_items[0][price_data][product_data][name]': f'Test Checkout - {slug}',
             'metadata[vitrine_slug]': slug,
         }
         session = stripe_request('POST', '/checkout/sessions', params)

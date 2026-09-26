@@ -27,7 +27,7 @@
       "alt": "Épicerie solidaire Metz",
       "subject": "Solidarity grocery store volunteers organizing food shelves Metz community center, warm authentic photography",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Aide alimentaire — épicerie solidaire" },
+        { "page": "index.html", "section": "chapter", "text": "Aide alimentaire - épicerie solidaire" },
         { "page": "actions.html", "section": "chapter", "text": "Paniers hebdomadaires à prix modiques" }
       ]
     },
@@ -39,7 +39,7 @@
       "alt": "Atelier insertion emploi",
       "subject": "Job insertion workshop Metz association, coach helping person with CV on laptop, supportive community atmosphere",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Insertion emploi — ateliers CV" },
+        { "page": "index.html", "section": "chapter", "text": "Insertion emploi - ateliers CV" },
         { "page": "actions.html", "section": "chapter", "text": "Mise en relation employeurs locaux" }
       ]
     },
@@ -51,7 +51,7 @@
       "alt": "Permanence sociale Metz",
       "subject": "Social worker listening to family in bright Metz association office, empathy and support, community photography",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Accompagnement social — permanences" },
+        { "page": "index.html", "section": "chapter", "text": "Accompagnement social - permanences" },
         { "page": "benevolat.html", "section": "chapter", "text": "Formation des bénévoles d'accueil" }
       ]
     },
@@ -63,7 +63,7 @@
       "alt": "Fête de quartier solidaire",
       "subject": "Community neighborhood festival Metz with families and volunteers, outdoor solidarity event, joyful authentic moment",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Fête de quartier — 800 participants" },
+        { "page": "index.html", "section": "gallery", "text": "Fête de quartier - 800 participants" },
         { "page": "actions.html", "section": "gallery", "text": "Événements de lien social" }
       ]
     },
@@ -75,7 +75,7 @@
       "alt": "Cuisine solidaire",
       "subject": "Community kitchen volunteers preparing meals together Metz solidarity association, warm kitchen atmosphere",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Cuisine solidaire — 200 repas/semaine" },
+        { "page": "index.html", "section": "gallery", "text": "Cuisine solidaire - 200 repas/semaine" },
         { "page": "actions.html", "section": "gallery", "text": "Ateliers cuisine partagée" }
       ]
     },
@@ -87,7 +87,7 @@
       "alt": "Maraude solidaire",
       "subject": "Street outreach volunteers with care packages Metz winter evening, solidarity association card image",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Maraude — rue et hébergement" },
+        { "page": "index.html", "section": "card", "text": "Maraude - rue et hébergement" },
         { "page": "benevolat.html", "section": "card", "text": "Mission maraude (2h/mois)" }
       ]
     },
@@ -100,7 +100,7 @@
       "subject": "Food drive collection boxes in supermarket Metz with volunteers, community solidarity card photo",
       "contexts": [
         { "page": "index.html", "section": "card", "text": "Collectes alimentaires" },
-        { "page": "benevolat.html", "section": "card", "text": "Bénévolat ponctuel — samedis" }
+        { "page": "benevolat.html", "section": "card", "text": "Bénévolat ponctuel - samedis" }
       ]
     },
     {
@@ -111,7 +111,7 @@
       "alt": "Accompagnement numérique",
       "subject": "Digital literacy workshop elderly person helped by young volunteer Metz association, intergenerational solidarity",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Aide numérique — accès aux droits" },
+        { "page": "index.html", "section": "card", "text": "Aide numérique - accès aux droits" },
         { "page": "benevolat.html", "section": "card", "text": "Mentor numérique (formation 1j)" }
       ]
     }

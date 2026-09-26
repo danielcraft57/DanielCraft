@@ -35,7 +35,7 @@ def contact_form(cta: str = "Envoyer ma demande") -> str:
   <label>E-mail <input name="email" type="email" autocomplete="email"></label>
   <label>Message <textarea name="message" rows="4"></textarea></label>
   <button class="vt-btn ai-cta" type="submit">{esc(cta)}</button>
-  <p class="ai-form-note">Démonstration — aucune donnée transmise.</p>
+  <p class="ai-form-note">Démonstration - aucune donnée transmise.</p>
 </form>"""
 
 
@@ -80,12 +80,12 @@ def body_shell(
 SITES: list[dict] = [
     {
         "slug": "technologie",
-        "title": "Synapse Lorraine — Éditeur SaaS B2B",
+        "title": "Synapse Lorraine - Éditeur SaaS B2B",
         "description": "Synapse Lorraine : plateforme SaaS B2B pour PME industrielles en Moselle. Workflows, API et hébergement souverain Grand Est.",
         "layout": "dark-terminal",
         "brand": "Synapse Lorraine",
         "h1": "L'OS métier des équipes qui livrent",
-        "lead": "Workflows, API REST et tableaux de bord temps réel — hébergés à Thionville, conformes RGPD, déployés en 48 h.",
+        "lead": "Workflows, API REST et tableaux de bord temps réel - hébergés à Thionville, conformes RGPD, déployés en 48 h.",
         "nav_links": '<a href="#offres">Modules</a><a href="#confiance">Clients</a>',
         "nav_cta": "Demander une démo",
         "stats": [("120+", "clients B2B"), ("99,9 %", "SLA cloud"), ("48 h", "time-to-value")],
@@ -96,7 +96,7 @@ SITES: list[dict] = [
         ],
         "trust": """<blockquote class="ai-quote">
   <p>« Synapse a remplacé trois outils disparates. Nos équipes logistique gagnent 6 h par semaine. »</p>
-  <footer>— Claire M., directrice ops · PME Moselle-Est</footer>
+  <footer>- Claire M., directrice ops · PME Moselle-Est</footer>
 </blockquote>""",
         "contact_title": "Planifier une démo",
         "contact_cta": "Réserver un créneau",
@@ -141,12 +141,12 @@ SITES: list[dict] = [
     },
     {
         "slug": "restauration",
-        "title": "Brasserie Saint-Jacques — Restaurant Lorraine",
+        "title": "Brasserie Saint-Jacques - Restaurant Lorraine",
         "description": "Brasserie Saint-Jacques à Metz : cuisine de saison, carte du jour et réservation en ligne. Ambiance chaleureuse au cœur de la Lorraine.",
         "layout": "brasserie-chaleur",
         "brand": "Brasserie Saint-Jacques",
         "h1": "La convivialité lorraine, assiette après assiette",
-        "lead": "Produits locaux, carte de saison et salle voûtée du XVIIIᵉ — réservez votre table en deux clics, Metz centre.",
+        "lead": "Produits locaux, carte de saison et salle voûtée du XVIIIᵉ - réservez votre table en deux clics, Metz centre.",
         "nav_links": '<a href="#offres">Carte</a><a href="#confiance">Avis</a>',
         "nav_cta": "Réserver",
         "stats": [("1987", "depuis"), ("4,8/5", "Google"), ("85", "couverts")],
@@ -156,7 +156,7 @@ SITES: list[dict] = [
             ("Privatisation", "Repas de groupe, anniversaires et séminaires gourmands.", 3),
         ],
         "trust": """<div class="ai-trust-grid">
-  <p class="ai-trust-lead">« Une adresse incontournable — service attentionné et produits du terroir. »</p>
+  <p class="ai-trust-lead">« Une adresse incontournable - service attentionné et produits du terroir. »</p>
   <div class="ai-badges">
     <span>Maître Restaurateur</span><span>Produits du terroir</span><span>Metz centre</span>
   </div>
@@ -203,12 +203,12 @@ body{margin:0;background:var(--cream);color:var(--brown)}
     },
     {
         "slug": "beaute",
-        "title": "Spa Thalie — Institut spa élégant",
+        "title": "Spa Thalie - Institut spa élégant",
         "description": "Spa Thalie à Nancy : soins visage, massages et rituels bien-être dans un cadre rose nude. Réservation en ligne, équipe certifiée.",
         "layout": "spa-rose-nude",
         "brand": "Spa Thalie",
         "h1": "Le rituel beauté qui vous ressemble",
-        "lead": "Soins sur mesure, ambiance feutrée et produits clean — votre parenthèse bien-être au cœur de Nancy, Grand Est.",
+        "lead": "Soins sur mesure, ambiance feutrée et produits clean - votre parenthèse bien-être au cœur de Nancy, Grand Est.",
         "nav_links": '<a href="#offres">Soins</a><a href="#confiance">Témoignages</a>',
         "nav_cta": "Prendre RDV",
         "stats": [("12 ans", "d'expertise"), ("4,9/5", "avis clients"), ("18", "rituels")],
@@ -218,7 +218,7 @@ body{margin:0;background:var(--cream);color:var(--brown)}
             ("Forfait mariée", "Préparation peau, manucure et coiffure partenaires.", 3),
         ],
         "trust": """<blockquote class="ai-quote">
-  <p>« Un havre de paix — l'équipe est d'une douceur rare, je ressors transformée à chaque visite. »</p>
+  <p>« Un havre de paix - l'équipe est d'une douceur rare, je ressors transformée à chaque visite. »</p>
   <footer>Sophie L. · cliente fidèle depuis 2019</footer>
 </blockquote>""",
         "contact_title": "Réserver votre soin",
@@ -261,12 +261,12 @@ body{margin:0;background:var(--soft);color:var(--text)}
     },
     {
         "slug": "odontologie",
-        "title": "Centre dentaire Mosaïque — Metz",
+        "title": "Centre dentaire Mosaïque - Metz",
         "description": "Centre dentaire Mosaïque à Metz : soins préventifs, orthodontie et implantologie. Équipe rassurante, devis transparent, urgences.",
         "layout": "dental-blue-health",
         "brand": "Centre dentaire Mosaïque",
         "h1": "Votre sourire, pris en charge sereinement",
-        "lead": "Implantologie, orthodontie invisible et soins préventifs — cabinet moderne à Metz, équipe à l'écoute, devis clair avant tout acte.",
+        "lead": "Implantologie, orthodontie invisible et soins préventifs - cabinet moderne à Metz, équipe à l'écoute, devis clair avant tout acte.",
         "nav_links": '<a href="#offres">Soins</a><a href="#confiance">Engagements</a>',
         "nav_cta": "Prendre RDV",
         "stats": [("15 ans", "d'expérience"), ("6", "praticiens"), ("4,9/5", "satisfaction")],
@@ -327,12 +327,12 @@ body{margin:0;background:var(--sky);color:var(--text)}
     },
     {
         "slug": "industrie",
-        "title": "Précisite Usinage — Usinage industriel Moselle",
+        "title": "Précisite Usinage - Usinage industriel Moselle",
         "description": "Précisite Usinage à Thionville : fraisage CNC, tournage de précision et prototypage rapide pour l'industrie lorraine.",
         "layout": "industrial-amber-steel",
         "brand": "Précisite Usinage",
         "h1": "La précision au micron, livrée à l'heure",
-        "lead": "Fraisage 5 axes, tournage CNC et contrôle tridimensionnel — atelier certifié ISO 9001, Moselle-Est, délais tenus.",
+        "lead": "Fraisage 5 axes, tournage CNC et contrôle tridimensionnel - atelier certifié ISO 9001, Moselle-Est, délais tenus.",
         "nav_links": '<a href="#offres">Capacités</a><a href="#confiance">Certifications</a>',
         "nav_cta": "Demander un devis",
         "stats": [("±5 µm", "tolérance"), ("ISO", "9001"), ("72 h", "devis")],
@@ -342,7 +342,7 @@ body{margin:0;background:var(--sky);color:var(--text)}
             ("Prototypage rapide", "Du plan au premier échantillon en 5 jours ouvrés.", 3),
         ],
         "trust": """<div class="ai-trust-grid">
-  <p>« Délais respectés, qualité constante — notre sous-traitant de confiance depuis 2018. »</p>
+  <p>« Délais respectés, qualité constante - notre sous-traitant de confiance depuis 2018. »</p>
   <div class="ai-badges"><span>ISO 9001</span><span>Matériaux certifiés</span><span>Moselle-Est</span></div>
 </div>""",
         "contact_title": "Demander un devis",
@@ -385,12 +385,12 @@ body{margin:0;background:var(--dark);color:#e4e4e7}
     },
     {
         "slug": "association",
-        "title": "Solidarités Metz Métropole — ESS",
+        "title": "Solidarités Metz Métropole - ESS",
         "description": "Solidarités Metz Métropole : insertion, aide alimentaire et accompagnement social en Économie Sociale et Solidaire, Moselle.",
         "layout": "ess-green-solidarity",
         "brand": "Solidarités Metz Métropole",
         "h1": "Agir ensemble pour un territoire plus juste",
-        "lead": "Insertion professionnelle, aide alimentaire et accompagnement social — une ESS ancrée à Metz, portée par 120 bénévoles et 45 salariés.",
+        "lead": "Insertion professionnelle, aide alimentaire et accompagnement social - une ESS ancrée à Metz, portée par 120 bénévoles et 45 salariés.",
         "nav_links": '<a href="#offres">Actions</a><a href="#confiance">Impact</a>',
         "nav_cta": "Faire un don",
         "stats": [("120", "bénévoles"), ("3 200", "familles aidées"), ("45", "salariés")],
@@ -445,12 +445,12 @@ body{margin:0;background:#f7fdf8;color:var(--text)}
     },
     {
         "slug": "commerce",
-        "title": "Halles Thionville — Épicerie & drive",
+        "title": "Halles Thionville - Épicerie & drive",
         "description": "Halles Thionville : primeurs, épicerie fine et drive en 45 minutes. Produits locaux et circuit court en Moselle.",
         "layout": "market-forest-green",
         "brand": "Halles Thionville",
         "h1": "Votre marché de quartier, en ligne comme en magasin",
-        "lead": "Primeurs mosellans, traiteur maison et click & collect en 45 min — Halles Thionville, le goût du terroir livré près de chez vous.",
+        "lead": "Primeurs mosellans, traiteur maison et click & collect en 45 min - Halles Thionville, le goût du terroir livré près de chez vous.",
         "nav_links": '<a href="#offres">Rayons</a><a href="#confiance">Engagements</a>',
         "nav_cta": "Commander",
         "stats": [("1962", "depuis"), ("4,8/5", "avis clients"), ("45 min", "drive")],
@@ -510,12 +510,12 @@ body{margin:0;background:var(--cream);color:#1b3a1b}
     },
     {
         "slug": "comptable",
-        "title": "Verlaine & Associés — Cabinet comptable Metz",
+        "title": "Verlaine & Associés - Cabinet comptable Metz",
         "description": "Verlaine & Associés : expert-comptable à Metz et Thionville. Tenue, paie, conseil et bilan flash sous 48 h pour dirigeants.",
         "layout": "cabinet-navy-pro",
         "brand": "Verlaine & Associés",
         "h1": "Vos chiffres, expliqués sans jargon",
-        "lead": "Tenue comptable, paie et conseil dirigeant pour PME de Metz et Thionville — réactivité, transparence et bilan flash sous 48 h.",
+        "lead": "Tenue comptable, paie et conseil dirigeant pour PME de Metz et Thionville - réactivité, transparence et bilan flash sous 48 h.",
         "nav_links": '<a href="#offres">Services</a><a href="#confiance">Références</a>',
         "nav_cta": "Consultation",
         "stats": [("25 ans", "d'expérience"), ("800+", "clients"), ("48 h", "bilan flash")],
@@ -525,7 +525,7 @@ body{margin:0;background:var(--cream);color:#1b3a1b}
             ("Conseil dirigeant", "Pilotage, restructuration et transmission.", 3),
         ],
         "trust": """<blockquote class="ai-quote">
-  <p>« Un cabinet réactif qui parle vrai — nos décisions sont éclairées, nos échéances toujours tenues. »</p>
+  <p>« Un cabinet réactif qui parle vrai - nos décisions sont éclairées, nos échéances toujours tenues. »</p>
   <footer>Philippe R. · gérant PME · Thionville</footer>
 </blockquote>""",
         "contact_title": "Premier échange gratuit",

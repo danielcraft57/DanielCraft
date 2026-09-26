@@ -241,7 +241,7 @@ def define_extras() -> None:
                 "Zero incident = mythe. Reactivity propre = objectif realiste",
             ),
             3,
-            "Les trois boucles : prevenir, detecter, repondre — et mesurer pour ne pas se mentir.",
+            "Les trois boucles : prevenir, detecter, repondre - et mesurer pour ne pas se mentir.",
             "Schema prevenir detecter repondre en cybersécurité",
         ),
         (
@@ -447,7 +447,7 @@ def define_extras() -> None:
                 "Mapper les emotions pour savoir ou reparer d'abord",
             ),
             2,
-            "Le journey map sert a voir ou ca fait mal — pas a faire joli.",
+            "Le journey map sert a voir ou ca fait mal - pas a faire joli.",
             "Schema parcours utilisateur avec points de friction",
         ),
         (

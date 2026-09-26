@@ -102,7 +102,7 @@ function stripe_audit_session_context(array $session): array
 }
 
 /**
- * Étape 1 — facture Prestafacture (email) uniquement.
+ * Étape 1 - facture Prestafacture (email) uniquement.
  *
  * @return array{ok: bool, error: string, invoice_id: string, email_sent: bool}
  */
@@ -151,7 +151,7 @@ function stripe_fulfill_audit_invoice(string $sessionId, array $ctx, array $item
 }
 
 /**
- * Étape 2 — audit ProspectLab (uniquement après facture envoyée).
+ * Étape 2 - audit ProspectLab (uniquement après facture envoyée).
  *
  * @return array{ok: bool, error: string, queued: bool, task_id: string}
  */
@@ -169,7 +169,7 @@ function stripe_fulfill_audit_run(string $sessionId, array $ctx): array
         return $empty;
     }
     if (!pl_has_audit_auth()) {
-        $empty['error'] = 'Service d’audit indisponible.';
+        $empty['error'] = 'Service d'audit indisponible.';
         return $empty;
     }
 
@@ -251,12 +251,12 @@ function stripe_fulfill_audit_checkout_session(string $sessionId, array $clientH
         $invoiceOk = $inv['ok'];
         if (!$invoiceOk) {
             $fail['error'] = $inv['error'] !== ''
-                ? 'La facture n’a pas pu être envoyée : ' . $inv['error']
-                : 'La facture n’a pas pu être envoyée. L’audit n’a pas été lancé.';
+                ? 'La facture n'a pas pu être envoyée : ' . $inv['error']
+                : 'La facture n'a pas pu être envoyée. L'audit n'a pas été lancé.';
             return $fail;
         }
     } elseif (!$invoiceOk && !$prestafactureRequired) {
-        error_log('[stripe-audit-fulfill] Prestafacture absent — audit seul (dev) session ' . $sessionId);
+        error_log('[stripe-audit-fulfill] Prestafacture absent - audit seul (dev) session ' . $sessionId);
         $invoiceOk = false;
     } else {
         $invoiceOk = true;
@@ -269,8 +269,8 @@ function stripe_fulfill_audit_checkout_session(string $sessionId, array $clientH
         $auditOk = $run['ok'];
         if (!$auditOk) {
             $fail['error'] = $run['error'] !== ''
-                ? 'Facture envoyée, mais l’audit n’a pas démarré : ' . $run['error']
-                : 'Facture envoyée, mais l’audit n’a pas démarré. Contactez le support.';
+                ? 'Facture envoyée, mais l'audit n'a pas démarré : ' . $run['error']
+                : 'Facture envoyée, mais l'audit n'a pas démarré. Contactez le support.';
             $fail['invoice_ok'] = $invoiceOk || $prestafactureRequired;
             return $fail;
         }

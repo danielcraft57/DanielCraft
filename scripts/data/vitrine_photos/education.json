@@ -27,7 +27,7 @@
       "alt": "Salle de cours Institut Mercure",
       "subject": "Adult students in modern computer classroom vocational training center France, teacher explaining on screen, collaborative learning",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Pédagogie active — ateliers et projets" },
+        { "page": "index.html", "section": "chapter", "text": "Pédagogie active - ateliers et projets" },
         { "page": "campus.html", "section": "feature", "text": "Salles connectées et labs code" }
       ]
     },
@@ -39,7 +39,7 @@
       "alt": "Atelier pratique formation",
       "subject": "Hands-on workshop adult vocational training Thionville, students practicing professional skills with instructor, authentic education photography",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Insertion professionnelle — 92 %" },
+        { "page": "index.html", "section": "chapter", "text": "Insertion professionnelle - 92 %" },
         { "page": "campus.html", "section": "feature", "text": "Job dating et ateliers recruteurs" }
       ]
     },
@@ -87,7 +87,7 @@
       "alt": "Formation digital web",
       "subject": "Young adult learning web development on laptop in coding bootcamp classroom, digital skills training card image",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Digital & web — alternance 12 mois" },
+        { "page": "index.html", "section": "card", "text": "Digital & web - alternance 12 mois" },
         { "page": "parcours.html", "section": "card", "text": "Développeur web RNCP" }
       ]
     },
@@ -99,7 +99,7 @@
       "alt": "Formation management",
       "subject": "Business management training session adults around table with charts, professional leadership education card photo",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Management — BTS et titres pro" },
+        { "page": "index.html", "section": "card", "text": "Management - BTS et titres pro" },
         { "page": "parcours.html", "section": "card", "text": "BTS Management 2 ans" }
       ]
     },
@@ -111,7 +111,7 @@
       "alt": "Formation technique comptabilité",
       "subject": "Accounting vocational training student with calculator and ledger in classroom France, technical skills education",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Métiers techniques — CPF/OPCO" },
+        { "page": "index.html", "section": "card", "text": "Métiers techniques - CPF/OPCO" },
         { "page": "parcours.html", "section": "card", "text": "Comptabilité titre pro" }
       ]
     }

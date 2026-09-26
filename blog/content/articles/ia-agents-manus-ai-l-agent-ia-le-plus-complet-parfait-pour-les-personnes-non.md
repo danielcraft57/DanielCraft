@@ -51,7 +51,7 @@ Heureusement maintenant tout le monde peut l'utiliser et en plus de ça il y a d
 
 Tu n'as pas besoin d'etre expert. Tu as juste besoin d'une methode claire, d'un premier essai, et d'un endroit ou noter ce qui marche.
 
-Sur le sujet **Manus AI : l’agent IA le plus complet, parfait pour les personnes non**, le plus gros gain vient souvent du premier test serieux : tu vois tout de suite ce qui bloque, et tu ajustes.
+Sur le sujet **Manus AI : l'agent IA le plus complet, parfait pour les personnes non**, le plus gros gain vient souvent du premier test serieux : tu vois tout de suite ce qui bloque, et tu ajustes.
 
 Si tu publies ensuite un contenu (article, page, fiche produit), pense structure : un `h1`, des `h2` clairs, une meta description honnete, et des microdonnées (`BlogPosting`, FAQ si tu as des questions/reponses). Ca aide Google et les moteurs IA a te citer.
 

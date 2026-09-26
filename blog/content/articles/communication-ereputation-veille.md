@@ -11,7 +11,7 @@ og_image: communication-ereputation-1200x630.jpg
 
 # E-reputation : ecouter ce qu'on dit de toi
 
-Ton e-reputation, c'est l'image que les autres construisent de toi en ligne — avec ou sans ton accord. Avis Google, commentaires Facebook, mentions sur LinkedIn, forums, articles de presse, comparateurs : tu n'controlles pas tout, mais tu peux ecouter, repondre et ameliorer. Ignorer ce qui se dit de toi, c'est laisser les autres ecrire ton histoire a ta place.
+Ton e-reputation, c'est l'image que les autres construisent de toi en ligne - avec ou sans ton accord. Avis Google, commentaires Facebook, mentions sur LinkedIn, forums, articles de presse, comparateurs : tu n'controlles pas tout, mais tu peux ecouter, repondre et ameliorer. Ignorer ce qui se dit de toi, c'est laisser les autres ecrire ton histoire a ta place.
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/com-ereputation.svg" alt="Schema e-reputation et veille" class="schema-inline" width="640" />
@@ -59,7 +59,7 @@ Au-dela de la reaction, construis activement ta credibilite :
 - Partage tes certifications, partenariats et presences medias
 - Maintiens un site a jour et une presence coherente
 
-Une e-reputation solide absorbe mieux les coups durs : un avis negatif isolé pese moins quand tu as 50 avis positifs detailles. Sollicite les avis au bon moment — apres une prestation reussie, pas des mois plus tard quand le client a oublie les details. Un mail ou SMS personnalise avec un lien direct vers la page d'avis augmente sensiblement le taux de reponse.
+Une e-reputation solide absorbe mieux les coups durs : un avis negatif isolé pese moins quand tu as 50 avis positifs detailles. Sollicite les avis au bon moment - apres une prestation reussie, pas des mois plus tard quand le client a oublie les details. Un mail ou SMS personnalise avec un lien direct vers la page d'avis augmente sensiblement le taux de reponse.
 
 ## Ameliorer le produit ou le service
 

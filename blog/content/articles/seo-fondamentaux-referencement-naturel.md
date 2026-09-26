@@ -1,7 +1,7 @@
 ---
 title: "SEO : etre trouve sur Google (les bases)"
 date: 2024-07-09
-excerpt: "Comment Google decouvre, range et classe les pages — et par ou commencer sans jargon."
+excerpt: "Comment Google decouvre, range et classe les pages - et par ou commencer sans jargon."
 type: article
 tags: [SEO, référencement, Google, fondamentaux, visibilité]
 series: seo-serie
@@ -13,10 +13,10 @@ og_image: seo-fondamentaux-1200x630.jpg
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/seo-trois-piliers.svg" alt="Schema des trois piliers du SEO" class="schema-inline" width="640" />
-  <figcaption>Technique, contenu, autorite — les trois marchent ensemble.</figcaption>
+  <figcaption>Technique, contenu, autorite - les trois marchent ensemble.</figcaption>
 </figure>
 
-Le SEO (Search Engine Optimization) désigne l'ensemble des techniques pour améliorer la visibilité d'un site dans les résultats des moteurs de recherche, principalement Google. Pas de magie : tu aides Google à découvrir tes pages, à les comprendre, puis à les proposer aux bonnes personnes. Ce guide pose les bases sans jargon inutile — et surtout, par où commencer concrètement.
+Le SEO (Search Engine Optimization) désigne l'ensemble des techniques pour améliorer la visibilité d'un site dans les résultats des moteurs de recherche, principalement Google. Pas de magie : tu aides Google à découvrir tes pages, à les comprendre, puis à les proposer aux bonnes personnes. Ce guide pose les bases sans jargon inutile - et surtout, par où commencer concrètement.
 
 ---
 
@@ -62,7 +62,7 @@ Un site lent ou mal structuré peut avoir un excellent contenu et rester invisib
 
 Objectif : des pages **pertinentes** et **utiles** pour de vraies intentions de recherche.
 
-Exemple : quelqu'un tape « comment choisir un prestataire web ». Il ne cherche pas une page d'accueil générique — il veut une réponse claire, des critères, peut-être un comparatif. Ton article doit coller à cette intention.
+Exemple : quelqu'un tape « comment choisir un prestataire web ». Il ne cherche pas une page d'accueil générique - il veut une réponse claire, des critères, peut-être un comparatif. Ton article doit coller à cette intention.
 
 Points clés :
 
@@ -91,7 +91,7 @@ Un lien depuis un blog métier ou un partenaire local vaut souvent mieux que dix
 
 1. Tape `site:ton-domaine.fr` dans Google : des pages apparaissent-elles ?
 2. Ouvre Search Console : y a-t-il des erreurs d'exploration ou de couverture ?
-3. Sur 2–3 pages clés, vérifie titre, meta, H1 et temps de chargement ressenti sur mobile.
+3. Sur 2-3 pages clés, vérifie titre, meta, H1 et temps de chargement ressenti sur mobile.
 
 ### Actions prioritaires
 
@@ -107,16 +107,16 @@ Un lien depuis un blog métier ou un partenaire local vaut souvent mieux que dix
 - Dupliquer du contenu (templates copiés, pages ville vides).
 - Remplir les titres de mots-clés sans répondre à la question.
 - Acheter des backlinks bas de gamme : souvent inutile, parfois risqué.
-- Confondre SEO et pubs Google Ads : utiles tous les deux, mais ce n'est pas la même chose — voir [SEO vs SEA](/blog/articles/seo-vs-sea-quand-choisir.html).
+- Confondre SEO et pubs Google Ads : utiles tous les deux, mais ce n'est pas la même chose - voir [SEO vs SEA](/blog/articles/seo-vs-sea-quand-choisir.html).
 
 ---
 
 ## Mini plan sur 30 jours
 
-1. **Semaine 1** — Search Console, sitemap, indexation, corrections techniques bloquantes.
-2. **Semaine 2** — Titres, metas et H1 des pages business.
-3. **Semaine 3** — Une page ou un article aligné sur une vraie requête client.
-4. **Semaine 4** — Liens internes + une piste d'autorité (partenariat, fiche locale…).
+1. **Semaine 1** - Search Console, sitemap, indexation, corrections techniques bloquantes.
+2. **Semaine 2** - Titres, metas et H1 des pages business.
+3. **Semaine 3** - Une page ou un article aligné sur une vraie requête client.
+4. **Semaine 4** - Liens internes + une piste d'autorité (partenariat, fiche locale…).
 
 Pas besoin d'être parfait : sois **régulier** et **lisible**.
 
@@ -124,4 +124,4 @@ Pas besoin d'être parfait : sois **régulier** et **lisible**.
 
 ## Conclusion
 
-Trois piliers : technique, contenu, autorité. Commence par l'indexation, puis le contenu clair, puis la confiance. Les résultats prennent du temps — c'est normal. Suite logique : [technique](/blog/articles/seo-technique-audit-core-web-vitals.html), [contenu](/blog/articles/seo-contenu-mots-cles-intention-redaction.html), [KPI](/blog/articles/seo-mesurer-search-console-analytics-kpis.html).
+Trois piliers : technique, contenu, autorité. Commence par l'indexation, puis le contenu clair, puis la confiance. Les résultats prennent du temps - c'est normal. Suite logique : [technique](/blog/articles/seo-technique-audit-core-web-vitals.html), [contenu](/blog/articles/seo-contenu-mots-cles-intention-redaction.html), [KPI](/blog/articles/seo-mesurer-search-console-analytics-kpis.html).

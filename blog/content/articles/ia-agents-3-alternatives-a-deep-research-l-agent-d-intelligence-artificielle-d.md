@@ -1,7 +1,7 @@
 ---
 title: "3 alternatives a Deep Research (recherche longue)"
 date: 2026-06-24
-excerpt: "Comparer des agents de recherche : sources, profondeur, prix — et toujours verifier."
+excerpt: "Comparer des agents de recherche : sources, profondeur, prix - et toujours verifier."
 type: guide
 tags: [IA, agents, automatisation, OpenAI]
 og_image: ia-agents-3-alternatives-a-deep-research-l-agent-d-intelligence-artificielle-d-1200x630.jpg

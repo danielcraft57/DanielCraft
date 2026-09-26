@@ -42,7 +42,7 @@ body{margin:0;font-family:system-ui,sans-serif;background:#fdf5f8;color:#5c3d4d}
 .bea-wall h3{margin:.5rem 1rem 1rem;font-size:1rem}
 footer{padding:2rem;text-align:center;background:#8b5a6b;color:#fff}
 """
-    write_demo("beaute", "spa-ritual", "bulma", "Écrin Spa — Beauté",
+    write_demo("beaute", "spa-ritual", "bulma", "Écrin Spa - Beauté",
                "Institut spa et soins à Nancy.", body, css)
 
 
@@ -51,9 +51,9 @@ def gen_odontologie():
     body = f"""
 <header class="odo-calm vt-reveal"><h1>Cabinet Mosäique</h1><p>Thionville · prévention &amp; soins</p></header>
 <main id="contenu" class="odo-path">
-  <article class="odo-step vt-reveal"><span class="odo-step-num">1</span><div class="message is-info"><div class="message-body"><strong>Accueil</strong> — bilan et pano numérique.</div></div>{fig(g,"hero.png","Accueil cabinet",lazy=False)}</article>
+  <article class="odo-step vt-reveal"><span class="odo-step-num">1</span><div class="message is-info"><div class="message-body"><strong>Accueil</strong> - bilan et pano numérique.</div></div>{fig(g,"hero.png","Accueil cabinet",lazy=False)}</article>
   <article class="odo-step vt-reveal"><span class="odo-step-num">2</span>{fig(g,"salle.png","Salle de soins")}<div class="message is-light"><motion class="message-body">Soins conservateurs, implants, orthodontie.</motion></div></article>
-  <article class="odo-step vt-reveal"><span class="odo-step-num">3</span><div class="message is-success"><div class="message-body">Prévention — détartrage &amp; fluoration.</motion></div>{fig(g,"odo-illus-brossage.png","Illustration brossage")}{fig(g,"odo-salle-soins-vide.png","Salle équipée")}</article>
+  <article class="odo-step vt-reveal"><span class="odo-step-num">3</span><div class="message is-success"><div class="message-body">Prévention - détartrage &amp; fluoration.</motion></div>{fig(g,"odo-illus-brossage.png","Illustration brossage")}{fig(g,"odo-salle-soins-vide.png","Salle équipée")}</article>
   <article class="odo-step vt-reveal"><span class="odo-step-num">4</span>{fig(g,"equipe-soins.png","Équipe pluridisciplinaire")}{fig(g,"card-1.svg","Illustration équipe")}{fig(g,"card-2.svg","Illustration prévention")}{fig(g,"card-3.svg","Illustration implants")}</article>
 </main>
 <footer>{HUB}</footer>
@@ -68,7 +68,7 @@ body{margin:0;font-family:system-ui,sans-serif;background:#e8f4fc;color:#0d7ea8}
 .odo-step img{width:100%;border-radius:8px;object-fit:cover;margin:.75rem 0}
 footer{padding:2rem;text-align:center}
 """
-    write_demo("odontologie", "patient-path", "bulma", "Mosäique — Odontologie",
+    write_demo("odontologie", "patient-path", "bulma", "Mosäique - Odontologie",
                "Cabinet dentaire à Thionville.", body, css)
 
 
@@ -83,7 +83,7 @@ def gen_industrie():
   <section id="ligne" class="ind-panel is-active vt-reveal">
   {fig(g,"ligne-production.png","Ligne d'usinage",lazy=False)}{fig(g,"industrie-soudure.png","Poste soudure")}
   <table class="table is-striped"><thead><tr><th>Machine</th><th>Précision</th><th>Cadence</th></tr></thead>
-  <tbody><tr><td>CNC-01</td><td>±0.01 mm</td><td>240 p/h</td></tr><tr><td>Robot soude</td><td>ISO 5817-B</td><td>—</td></tr></tbody></table>
+  <tbody><tr><td>CNC-01</td><td>±0.01 mm</td><td>240 p/h</td></tr><tr><td>Robot soude</td><td>ISO 5817-B</td><td>-</td></tr></tbody></table>
   </section>
   <section id="qual" class="ind-panel vt-reveal">{fig(g,"controle.png","Contrôle qualité")}{fig(g,"card-1.svg","Métrologie")}</section>
   <section id="plan" class="ind-panel vt-reveal">{fig(g,"industrie-plan-usine.png","Plan usine")}{fig(g,"hero.png","Vue usine")}{fig(g,"card-2.svg","Logistique")}{fig(g,"card-3.svg","Maintenance")}</section>
@@ -102,7 +102,7 @@ background-image:linear-gradient(rgba(56,189,248,.08) 1px,transparent 1px),linea
 .table{background:#111;color:#e5e5e5}
 footer{padding:2rem;text-align:center;color:#ffb300}
 """
-    write_demo("industrie", "blueprint-spec", "bulma", "Forja Lorraine — Industrie",
+    write_demo("industrie", "blueprint-spec", "bulma", "Forja Lorraine - Industrie",
                "Usinage et métallurgie à Yutz.", body, css)
 
 
@@ -110,7 +110,7 @@ def gen_association():
     g = "ass"
     body = f"""
 <header class="ass-head vt-reveal"><h1>Les Mains du Quartier</h1><p>Metz · solidarité</p>
-<div class="ass-thermo" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"><div class="ass-thermo-fill" style="width:72%"></div><span>72 % objectif dons 2026 — 18 400 € / 25 500 €</span></div>
+<div class="ass-thermo" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"><div class="ass-thermo-fill" style="width:72%"></div><span>72 % objectif dons 2026 - 18 400 € / 25 500 €</span></div>
 </header>
 <main id="contenu" class="ass-mosaic vt-reveal">
   <article class="tile t1">{fig(g,"hero.png","Bénévoles quartier",lazy=False)}</article>
@@ -139,5 +139,5 @@ body{margin:0;font-family:system-ui,sans-serif;background:#e8f5e9;color:#2e7d4e}
 footer{padding:2rem;text-align:center}
 @media(max-width:700px){.ass-mosaic{grid-template-columns:1fr 1fr}}
 """
-    write_demo("association", "impact-mosaic", "bulma", "Les Mains du Quartier — Association",
+    write_demo("association", "impact-mosaic", "bulma", "Les Mains du Quartier - Association",
                "Association solidaire à Metz.", body, css)

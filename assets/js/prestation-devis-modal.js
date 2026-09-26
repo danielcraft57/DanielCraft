@@ -14,7 +14,6 @@
   const subtitleEl = document.getElementById('prestationDevisDialogSubtitle');
   const recapLines = document.getElementById('prestationDevisDialogRecapLines');
   const totalHtEl = document.getElementById('prestationDevisDialogTotalHt');
-  const totalTtcEl = document.getElementById('prestationDevisDialogTotalTtc');
   const slugInput = document.getElementById('prestationDevisDialogSlug');
   const serviceInput = document.getElementById('prestationDevisDialogServiceSlug');
   const totalInput = document.getElementById('prestationDevisDialogTotal');
@@ -38,8 +37,6 @@
   const FOCUSABLE =
     'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-  const TVA = 0.2;
-
   function formatEur(n) {
     const v = Math.round(n);
     return v.toLocaleString('fr-FR') + ' €';
@@ -47,7 +44,7 @@
 
   function parsePrice(val) {
     const p = parseInt(String(val || ''), 10);
-    return Number.isFinite(p) && p > 0 ? p : 0;
+    return Number.isFinite(p) && p >= 0 ? p : 0;
   }
 
   function showStep(name) {
@@ -104,36 +101,58 @@
 
   function renderRecap(ctx) {
     const title = (ctx.title || 'Prestation').trim();
-    const basePrice = parsePrice(ctx.basePrice ?? ctx.price);
+    const detailLines = Array.isArray(ctx.lines) ? ctx.lines : null;
     const addonLines = Array.isArray(ctx.addonLines) ? ctx.addonLines : [];
-    let total = basePrice;
-    addonLines.forEach(function (line) {
-      total += parsePrice(line.price);
-    });
-    if (total <= 0 && ctx.price) total = parsePrice(ctx.price);
+    let total = 0;
 
     if (recapLines) {
       recapLines.innerHTML = '';
-      const main = document.createElement('li');
-      main.className = 'prestation-devis-dialog__recap-line';
-      main.innerHTML =
-        '<span>' + escapeHtml(title) + '</span><span>' + formatEur(basePrice) + ' HT</span>';
-      recapLines.appendChild(main);
+      if (detailLines && detailLines.length) {
+        detailLines.forEach(function (line) {
+          if (!line || !line.title) return;
+          const price = parsePrice(line.price);
+          const qty = parsePrice(line.quantity) || 1;
+          total += price * qty;
+          const li = document.createElement('li');
+          li.className = 'prestation-devis-dialog__recap-line';
+          const label =
+            qty > 1 ? escapeHtml(line.title) + ' × ' + qty : escapeHtml(line.title);
+          const amount = qty > 1 ? formatEur(price) + ' × ' + qty : formatEur(price);
+          li.innerHTML = '<span>' + label + '</span><span>' + amount + '</span>';
+          recapLines.appendChild(li);
+        });
+      } else {
+        const basePrice = parsePrice(ctx.basePrice ?? ctx.price);
+        total = basePrice;
+        const main = document.createElement('li');
+        main.className = 'prestation-devis-dialog__recap-line';
+        main.innerHTML =
+          '<span>' + escapeHtml(title) + '</span><span>' + formatEur(basePrice) + '</span>';
+        recapLines.appendChild(main);
+        addonLines.forEach(function (line) {
+          if (!line || !line.title) return;
+          const price = parsePrice(line.price);
+          total += price;
+          const li = document.createElement('li');
+          li.className = 'prestation-devis-dialog__recap-line';
+          li.innerHTML =
+            '<span>+ ' +
+            escapeHtml(line.title) +
+            '</span><span>' +
+            formatEur(price) +
+            '</span>';
+          recapLines.appendChild(li);
+        });
+      }
+    } else {
+      total = parsePrice(ctx.basePrice ?? ctx.price);
       addonLines.forEach(function (line) {
-        if (!line || !line.title) return;
-        const li = document.createElement('li');
-        li.className = 'prestation-devis-dialog__recap-line';
-        li.innerHTML =
-          '<span>+ ' +
-          escapeHtml(line.title) +
-          '</span><span>' +
-          formatEur(parsePrice(line.price)) +
-          ' HT</span>';
-        recapLines.appendChild(li);
+        total += parsePrice(line.price);
       });
     }
+    if (total <= 0 && ctx.price) total = parsePrice(ctx.price);
+
     if (totalHtEl) totalHtEl.textContent = formatEur(total);
-    if (totalTtcEl) totalTtcEl.textContent = formatEur(Math.round(total * (1 + TVA)));
     if (totalInput) totalInput.value = String(total);
   }
 
@@ -221,6 +240,7 @@
       price: price,
       basePrice: currentCtx.basePrice || price,
       addonLines: currentCtx.addonLines,
+      lines: currentCtx.lines,
     });
 
     showStep('form');
@@ -318,8 +338,8 @@
           successText.textContent =
             data.message ||
             (data.fallback
-              ? 'C’est envoyé — consultez votre boîte mail. Vous recevrez votre devis sous 24 h ouvrées.'
-              : 'C’est envoyé — consultez votre boîte mail (vérifiez les spams si besoin).');
+              ? 'C'est envoyé - consultez votre boîte mail. Vous recevrez votre devis sous 24 h ouvrées.'
+              : 'C'est envoyé - consultez votre boîte mail (vérifiez les spams si besoin).');
         }
         if (successEmail) {
           if (mail) {

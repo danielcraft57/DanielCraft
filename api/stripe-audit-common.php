@@ -95,8 +95,8 @@ function stripe_audit_checkout_session_params(array $item, string $slug, string 
         'line_items[0][price_data][product_data][name]' => mb_substr($productName, 0, 120),
         'line_items[0][price_data][product_data][description]' => mb_substr($description, 0, 500),
         'line_items[0][price_data][product_data][images][0]' => $imageUrl,
-        'custom_text[submit][message]' => 'Vous recevrez d’abord votre facture par email, puis l’audit complet sera lancé.',
-        'custom_text[after_submit][message]' => 'Merci ! Consultez vos emails : facture, puis rapport d’audit sous 24 h ouvrées.',
+        'custom_text[submit][message]' => 'Vous recevrez d'abord votre facture par email, puis l'audit complet sera lancé.',
+        'custom_text[after_submit][message]' => 'Merci ! Consultez vos emails : facture, puis rapport d'audit sous 24 h ouvrées.',
     ];
 
     if ($customerName !== '') {

@@ -1,7 +1,7 @@
 {
   "id": "ci-cd-serie",
   "title": "Série CI/CD : livrer du code sans trembler",
-  "description": "Pipelines, tests, secrets, Docker, GitHub/GitLab, Kubernetes et observabilite — expliques simplement.",
+  "description": "Pipelines, tests, secrets, Docker, GitHub/GitLab, Kubernetes et observabilite - expliqués simplement.",
   "slug": "ci-cd-serie",
   "articles": [
     "ci-cd-fondamentaux-pipelines",

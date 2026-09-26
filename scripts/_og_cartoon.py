@@ -613,7 +613,7 @@ def _draw_text_overlay(
     cta: str,
     color: str,
 ) -> None:
-    """Texte en bandeau bas — lisible sur scène plein cadre."""
+    """Texte en bandeau bas - lisible sur scène plein cadre."""
     pad = int(44 * scale)
     bottom_safe = h - int(TWITTER_BOTTOM_RESERVE * scale)
     max_w = w - 2 * pad
@@ -661,7 +661,7 @@ def render_og_card(
     badge: str = "DanielCraft",
     color: str = BLUE_MID,
     chips: Sequence[str] | None = None,
-    footer: str = "DanielCraft — Metz & Lorraine",
+    footer: str = "DanielCraft - Metz & Lorraine",
     scene: str = "browser",
     cta: str = "En savoir plus →",
     width: int = OG_W,

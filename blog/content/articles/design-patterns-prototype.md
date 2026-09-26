@@ -1,7 +1,7 @@
 ---
 title: "Prototype : copier un modele plutot que tout recreer"
 date: 2026-04-18
-excerpt: "Cloner un objet existant puis ajuster — plus simple parfois que construire a neuf."
+excerpt: "Cloner un objet existant puis ajuster - plus simple parfois que construire a neuf."
 type: article
 tags: [Design Patterns, GoF, Prototype, Créationnel, TypeScript, Python, junior]
 og_image: design-patterns-prototype-1200x630.jpg
@@ -32,7 +32,7 @@ Prototype clone un exemplaire au lieu de reconstruire depuis zéro.
 
 Tu as un modèle coûteux : carte de jeu 2 Mo, document Word prérempli, config serveur avec 40 champs. Pour chaque utilisateur / niveau / variante, tu recharges depuis la DB ou tu recopies 40 lignes de constructeur. C'est lent, verbeux, et fragile : un oubli de champ = bug silencieux.
 
-Le pattern répond aussi à un autre besoin : **créer sans connaître la classe exacte**. Si le client reçoit déjà un objet « modèle » (chargé depuis un fichier, choisi dans un menu), `clone()` suffit — pas besoin d'un `switch` sur le type pour rappeler le bon constructeur.
+Le pattern répond aussi à un autre besoin : **créer sans connaître la classe exacte**. Si le client reçoit déjà un objet « modèle » (chargé depuis un fichier, choisi dans un menu), `clone()` suffit - pas besoin d'un `switch` sur le type pour rappeler le bon constructeur.
 
 ### Symptômes dans ton code
 
@@ -135,7 +135,7 @@ hard.difficulty = 5
 
 - **Factory Method / Abstract Factory** : créent sans forcément partir d'un exemplaire.
 - **Builder** : construit étape par étape ; Prototype copie un état déjà valide.
-- **Flyweight** : partage au lieu de cloner — souvent complémentaire (partager textures, cloner positions).
+- **Flyweight** : partage au lieu de cloner - souvent complémentaire (partager textures, cloner positions).
 
 ---
 
@@ -143,17 +143,17 @@ hard.difficulty = 5
 
 `Object.create` / prototypes JS (héritage), `structuredClone`, `clone()` Java, duplication de documents (Google Docs, Figma « duplicate »), prefabs Unity / Godot. Dès que tu « dupliques puis tweakes », tu es dans l'esprit Prototype.
 
-Autre scénario métier : un **template d'e-mail** ou de contrat chargé une fois (parsing HTML, variables). Pour chaque envoi, tu clones le template, tu remplis nom / montant, tu envoies. Sans clone, tu reparserais le même fichier à chaque destinataire — inutile et plus lent.
+Autre scénario métier : un **template d'e-mail** ou de contrat chargé une fois (parsing HTML, variables). Pour chaque envoi, tu clones le template, tu remplis nom / montant, tu envoies. Sans clone, tu reparserais le même fichier à chaque destinataire - inutile et plus lent.
 
 ---
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Moins que Singleton/Factory — utile si on parle perf ou copies d'état.
+**C'est obligatoire en entretien ?** Moins que Singleton/Factory - utile si on parle perf ou copies d'état.
 
-**Ça remplace les frameworks ?** Non — les moteurs de jeu et les éditeurs l'implémentent déjà.
+**Ça remplace les frameworks ?** Non - les moteurs de jeu et les éditeurs l'implémentent déjà.
 
-**Je dois tout refactoriser ?** Non — commence par un modèle cher à créer, ajoute `clone()` propre (deep où il faut).
+**Je dois tout refactoriser ?** Non - commence par un modèle cher à créer, ajoute `clone()` propre (deep où il faut).
 
 ---
 
@@ -166,7 +166,7 @@ Autre scénario métier : un **template d'e-mail** ou de contrat chargé une foi
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Modélise une « fiche produit » (nom, prix, tags[]). Implémente `clone()` avec deep copy des tags. Vérifie qu'ajouter un tag sur la copie ne change pas l'original.
 

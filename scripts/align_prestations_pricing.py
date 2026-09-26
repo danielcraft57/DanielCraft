@@ -82,14 +82,14 @@ ADDON_ALIGNMENT: dict[str, dict[str, dict]] = {
 }
 
 PRICE_NOTE_UPDATES: dict[str, str] = {
-    "site-vitrine-essentiel": "Forfait TPE — jusqu'à 3 pages",
-    "site-vitrine": "Forfait TPE — jusqu'à 5 pages",
-    "site-vitrine-eco": "Forfait TPE — site sobre dès la création",
+    "site-vitrine-essentiel": "Forfait TPE - jusqu'à 3 pages",
+    "site-vitrine": "Forfait TPE - jusqu'à 5 pages",
+    "site-vitrine-eco": "Forfait TPE - site sobre dès la création",
     "audit-eco-numerique": "Bilan express (pas un audit RGESN complet)",
     "referencement-google": "Audit léger + corrections prioritaires",
     "repondeur-intelligent": "Assistant FAQ sur votre site",
-    "connexion-crm": "Connecteur simple — devis si ERP complexe",
-    "liaison-outils": "Première liaison — chaque flux supplémentaire en sus",
+    "connexion-crm": "Connecteur simple - devis si ERP complexe",
+    "liaison-outils": "Première liaison - chaque flux supplémentaire en sus",
 }
 
 

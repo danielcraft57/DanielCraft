@@ -11,11 +11,11 @@ def w(rel: str, body: str) -> None:
     p.write_text(body.strip() + "\n", encoding="utf-8")
 
 
-# ——— Studio Lumière Grise (photographie) ———
+# --- Studio Lumière Grise (photographie) ---
 w(
     "photographie/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Studio Lumière Grise — lumière naturelle et boîtier</title>
+  <title id="t">Studio Lumière Grise - lumière naturelle et boîtier</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2a2622"/><stop offset="100%" stop-color="#4a4540"/></linearGradient>
     <radialGradient id="spot" cx="35%" cy="30%" r="55%"><stop offset="0%" stop-color="#fff8ee" stop-opacity=".55"/><stop offset="100%" stop-color="#fff8ee" stop-opacity="0"/></radialGradient>
@@ -77,11 +77,11 @@ for name, title in [
 </svg>""",
     )
 
-# ——— Pulse Fitness Metz ———
+# --- Pulse Fitness Metz ---
 w(
     "fitness/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Pulse Fitness Metz — salle et équipement</title>
+  <title id="t">Pulse Fitness Metz - salle et équipement</title>
   <defs>
     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient>
     <radialGradient id="neon" cx="50%" cy="35%" r="60%"><stop offset="0%" stop-color="#65a30d" stop-opacity=".45"/><stop offset="100%" stop-color="#39ff14" stop-opacity="0"/></radialGradient>
@@ -127,11 +127,11 @@ for name, title, accent in [
 </svg>""",
     )
 
-# ——— Atelier Nord-Est (architecture) ———
+# --- Atelier Nord-Est (architecture) ---
 w(
     "architecture/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Atelier Nord-Est — façade et volumes</title>
+  <title id="t">Atelier Nord-Est - façade et volumes</title>
   <rect width="1200" height="520" fill="#f5f3ef"/>
   <g transform="translate(140 40)">
     <polygon points="460,0 920,100 0,100" fill="#0a0a0a"/>
@@ -168,11 +168,11 @@ for name, title, accent in [
 </svg>""",
     )
 
-# ——— Rivière & Partenaires (juridique) ———
+# --- Rivière & Partenaires (juridique) ---
 w(
     "juridique/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Rivière &amp; Partenaires — cabinet Metz</title>
+  <title id="t">Rivière &amp; Partenaires - cabinet Metz</title>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0f172a"/><stop offset="100%" stop-color="#1e293b"/></linearGradient>
   </defs>
@@ -213,11 +213,11 @@ for name, title, icon in [
 </svg>""",
     )
 
-# ——— Patrimoine Lorraine (immobilier) ———
+# --- Patrimoine Lorraine (immobilier) ---
 w(
     "immobilier/images/hero.svg",
     """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t">
-  <title id="t">Patrimoine Lorraine — maison de maître et jardin</title>
+  <title id="t">Patrimoine Lorraine - maison de maître et jardin</title>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8fb5a8"/><stop offset="100%" stop-color="#d4e8df"/></linearGradient>
     <linearGradient id="facade" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f4efe6"/><stop offset="100%" stop-color="#e0d4c4"/></linearGradient>
@@ -278,4 +278,4 @@ w(
 </svg>""",
 )
 
-print("OK — SVG premium : photographie, fitness, architecture, juridique, immobilier")
+print("OK - SVG premium : photographie, fitness, architecture, juridique, immobilier")

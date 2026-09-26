@@ -1,4 +1,4 @@
-/* Synapse Lorraine — maquette tech : slate dark, cyan */
+/* Synapse Lorraine - maquette tech : slate dark, cyan */
 :root {
   --vt-bg: #0f172a;
   --vt-panel: #1e293b;
@@ -14,6 +14,11 @@
   --bs-link-color: var(--vt-cyan);
   --bs-link-hover-color: #fff;
   --bs-font-sans-serif: "IBM Plex Sans", system-ui, sans-serif;
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 
 body.vt-body-tech {

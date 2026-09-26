@@ -178,7 +178,7 @@ Quand c'est plein, Google freine. Le fix, c'est surtout du **rangement**.
 
 {fig("ia-chatgpt-stockage.svg", "Schema liberer stockage", "Nettoyer, deplacer, compresser, prioriser.")}
 
-Vide la corbeille, cherche les gros fichiers, deplace ce qui dort. ChatGPT peut t'aider a faire une checklist — mais c'est toi qui cliques. Reviens aux [prompts utiles](/blog/articles/ia-chatgpt-comment-utiliser-chatgpt-5-template-a-suivre-pour-creer-de-meilleur.html).
+Vide la corbeille, cherche les gros fichiers, deplace ce qui dort. ChatGPT peut t'aider a faire une checklist - mais c'est toi qui cliques. Reviens aux [prompts utiles](/blog/articles/ia-chatgpt-comment-utiliser-chatgpt-5-template-a-suivre-pour-creer-de-meilleur.html).
 """,
 )
 
@@ -215,7 +215,7 @@ Parametres → memoire / personalization → parcours les items → supprime le 
 article(
     "ia-chatgpt-astuce-chatgpt-pour-tous-les-gomuscu-et-autres-sportifs-qui-veulent-c",
     "Photo de repas + ChatGPT : une estimation, pas une science exacte",
-    "Envoyer une photo pour approximer calories / macros — utile en ordre de grandeur, a verifier.",
+    "Envoyer une photo pour approximer calories / macros - utile en ordre de grandeur, a verifier.",
     f"""# Photo de repas + ChatGPT : une estimation, pas une science exacte
 
 Tu envoies une **photo** de ton assiette. ChatGPT propose un ordre de grandeur (calories, macros).
@@ -352,7 +352,7 @@ Demande-toi : quel job ? quel budget ? ai-je besoin de sources ? Teste deux outi
 article(
     "ia-claude-nouveaux-plugins-claude-pour-la-finance-les-plugins-prennent-5-min",
     "Plugins Claude finance : utiles, mais a verifier",
-    "Des extensions pour aller plus vite sur des taches finance — sans remplacer un pro.",
+    "Des extensions pour aller plus vite sur des taches finance - sans remplacer un pro.",
     f"""# Plugins Claude finance : utiles, mais a verifier
 
 Un plugin peut gagner du temps. Il ne remplace pas un **conseil pro** (comptable, banquier).
@@ -366,7 +366,7 @@ Installe, teste sur un cas simple, controle les chiffres. Pour le choix d'outil 
 article(
     "ia-claude-comment-utiliser-l-ia-chinoise-gratuite-et-open-source-deepseek-en-ve",
     "DeepSeek : une IA gratuite / open a tester",
-    "Alternative interessante pour coder ou ecrire — avec les memes regles de verification.",
+    "Alternative interessante pour coder ou ecrire - avec les memes regles de verification.",
     f"""# DeepSeek : une IA gratuite / open a tester
 
 DeepSeek est une option **gratuite / open** a comparer a ChatGPT ou Claude.
@@ -383,7 +383,7 @@ article(
     "Un agent qui enchaine des actions : utile, mais fixe des limites et verifie.",
     f"""# Agents autonomes (type bot) : puissants, a encadrer
 
-Un agent "autonome" peut enchainer des etapes. C'est pratique — et risqué si tu ne cadres rien.
+Un agent "autonome" peut enchainer des etapes. C'est pratique - et risqué si tu ne cadres rien.
 
 {fig("ia-claude-auto.svg" if False else "ia-chatgpt-auto.svg", "Schema agent autonome", "Idee, etapes, resultat, verifier.")}
 
@@ -412,7 +412,7 @@ article(
     "Un agent qui enchaine des actions : utile, mais fixe des limites et verifie.",
     f"""# Agents autonomes (type bot) : puissants, a encadrer
 
-Un agent "autonome" peut enchainer des etapes. C'est pratique — et risque si tu ne cadres rien.
+Un agent "autonome" peut enchainer des etapes. C'est pratique - et risque si tu ne cadres rien.
 
 {fig("ia-chatgpt-auto.svg", "Schema agent autonome", "Idee, etapes, resultat, verifier.")}
 
@@ -423,12 +423,12 @@ Donne un perimetre, des droits limites, et une revue humaine. Proche : [automati
 for name, title, desc in (
     (
         "ia-chatgpt-serie.json",
-        "Serie IA — ChatGPT (astuces simples)",
+        "Serie IA - ChatGPT (astuces simples)",
         "Prompts, memoire, resumes et automatisations ChatGPT expliques clairement.",
     ),
     (
         "ia-claude-serie.json",
-        "Serie IA — Claude (demarrer sans se perdre)",
+        "Serie IA - Claude (demarrer sans se perdre)",
         "Claude, skills, ressources Anthropic et bons reflexes, en langage simple.",
     ),
 ):

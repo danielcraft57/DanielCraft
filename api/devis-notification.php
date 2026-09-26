@@ -136,9 +136,9 @@ function devis_notify_fallback(
     }
 
     $ttc = round($totalHt * 1.2);
-    $adminSubject = '[DanielCraft] Demande de devis — ' . $prestationTitle;
+    $adminSubject = '[DanielCraft] Demande de devis - ' . $prestationTitle;
     $adminText = implode("\n", [
-        'Nouvelle demande de devis (Prestafacture indisponible — à traiter manuellement).',
+        'Nouvelle demande de devis (Prestafacture indisponible - à traiter manuellement).',
         '',
         'Client : ' . $customerName,
         'E-mail : ' . $customerEmail,
@@ -151,7 +151,7 @@ function devis_notify_fallback(
         $internalNote !== '' ? 'Notes :' . "\n" . $internalNote : '',
     ]);
 
-    $adminHtml = '<p><strong>Demande de devis</strong> (Prestafacture indisponible — à traiter manuellement).</p>'
+    $adminHtml = '<p><strong>Demande de devis</strong> (Prestafacture indisponible - à traiter manuellement).</p>'
         . '<ul><li><strong>Client :</strong> ' . htmlspecialchars($customerName, ENT_QUOTES, 'UTF-8') . '</li>'
         . '<li><strong>E-mail :</strong> ' . htmlspecialchars($customerEmail, ENT_QUOTES, 'UTF-8') . '</li>'
         . '<li><strong>Prestation :</strong> ' . htmlspecialchars($prestationTitle, ENT_QUOTES, 'UTF-8') . '</li>'
@@ -163,7 +163,7 @@ function devis_notify_fallback(
             . htmlspecialchars($internalNote, ENT_QUOTES, 'UTF-8') . '</pre>';
     }
 
-    $clientSubject = 'Votre demande de devis — DanielCraft';
+    $clientSubject = 'Votre demande de devis - DanielCraft';
     $clientText = implode("\n", [
         'Bonjour ' . $customerName . ',',
         '',
@@ -175,7 +175,7 @@ function devis_notify_fallback(
         '2. Vous recevez votre devis PDF à cette adresse',
         '3. Une question ? Répondez à cet e-mail',
         '',
-        '— Loïc, DanielCraft',
+        '- Loïc, DanielCraft',
     ]);
 
     $clientHtml = '<p>Bonjour ' . htmlspecialchars($customerName, ENT_QUOTES, 'UTF-8') . ',</p>'
@@ -187,7 +187,7 @@ function devis_notify_fallback(
         . '<ol><li>Je relis votre demande et les options choisies</li>'
         . '<li>Vous recevez votre devis PDF à cette adresse</li>'
         . '<li>Une question ? Répondez à cet e-mail</li></ol>'
-        . '<p>— Loïc, DanielCraft</p>';
+        . '<p>- Loïc, DanielCraft</p>';
 
     $adminSent = devis_send_simple_mail($adminTo, $adminSubject, $adminText, $adminHtml, $customerEmail);
     $clientSent = devis_send_simple_mail($customerEmail, $clientSubject, $clientText, $clientHtml, $adminTo);

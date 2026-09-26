@@ -136,7 +136,7 @@ class AppFacade:
 
 ## Quand ne pas utiliser Facade
 
-- Le sous-système tient en 2 appels — pas besoin de facade.
+- Le sous-système tient en 2 appels - pas besoin de facade.
 - La facade devient un God Object qui connaît tout le métier.
 
 ---
@@ -163,11 +163,11 @@ Frameworks `NestFactory.create()`, `SpringApplication.run()`. Scripts `docker co
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Facade aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Non - on teste surtout ta capacité à reconnaître le problème. Le nom Facade aide à communiquer en équipe.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Facade te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Facade te permet de les utiliser correctement.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
+**Je dois tout refactoriser ?** Non - applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
 
 ---
 
@@ -188,11 +188,11 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ## Pas à pas : implémenter en 5 étapes
 
-1. **Nomme le problème** — est-ce vraiment Facade ?
+1. **Nomme le problème** - est-ce vraiment Facade ?
 2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
 3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Facade parce que… ».
+4. **Implémente une variante** - valide avant d'en ajouter d'autres.
+5. **Documente en équipe** - « ici on utilise Facade parce que… ».
 
 ---
 
@@ -205,9 +205,9 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
-Écris `DeployFacade.deploy(env)` qui enchaîne build, tests, push image, rollout K8s — une commande pour l'équipe.
+Écris `DeployFacade.deploy(env)` qui enchaîne build, tests, push image, rollout K8s - une commande pour l'équipe.
 
 ---
 

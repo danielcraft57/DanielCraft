@@ -1,4 +1,4 @@
-/* Précisite Usinage — B2B industriel, grille 8px, steel/orange */
+/* Précisite Usinage - B2B industriel, grille 8px, steel/orange */
 :root {
   --vt-steel: #1e293b;
   --vt-steel-dark: #0f172a;
@@ -13,6 +13,11 @@
   --bs-primary: var(--vt-orange);
   --bs-link-color: var(--vt-steel);
   --bs-link-hover-color: var(--vt-orange);
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 
 body.vt-body-industrial {

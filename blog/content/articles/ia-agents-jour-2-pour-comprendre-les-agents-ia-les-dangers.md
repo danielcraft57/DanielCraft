@@ -1,7 +1,7 @@
 ---
 title: "Agents IA : les dangers a connaitre (jour 2)"
 date: 2026-06-27
-excerpt: "Actions non voulues, donnees exposees, hallucinations en chaine — comment se proteger."
+excerpt: "Actions non voulues, donnees exposees, hallucinations en chaine - comment se proteger."
 type: guide
 tags: [IA, agents, automatisation, OpenAI]
 og_image: ia-agents-jour-2-pour-comprendre-les-agents-ia-les-dangers-1200x630.jpg

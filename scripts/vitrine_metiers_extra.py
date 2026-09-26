@@ -111,22 +111,22 @@ def build_boulangerie_index():
     main += block_dialog_m3(dialog_id="cmdBl", title="Commander", lead="Retrait au fournil - on te confirme (demo).", primary_label="Envoyer", primary_href="contact.html", fields_html='<div class="mb-2"><label class="form-label small">Produit</label><select class="form-select"><option>Pain de campagne</option><option>Croissants x4</option><option>Assortiment</option></select></div><div class="mb-2"><label class="form-label small">Heure de retrait</label><input class="form-control" type="time" value="11:30"></div>')
     main += block_fab_menu_m3([{"label": "Commander", "dialog": "cmdBl"}, {"label": "Pains", "href": "pains.html"}, {"label": "Appeler", "href": "tel:0383351240"}], main_label="Actions fournil")
     main += "</main>"
-    return _shell_bl("index.html", f"{BL_BRAND} — Boulangerie Nancy", "Boulangerie artisanale a Nancy : pains au levain, viennoiseries et patisseries.", main)
+    return _shell_bl("index.html", f"{BL_BRAND} - Boulangerie Nancy", "Boulangerie artisanale a Nancy : pains au levain, viennoiseries et patisseries.", main)
 
 
 def build_boulangerie_pains():
     main = f"""<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Pains</p><h1 class="vt-display h2 mb-3">Levain naturel, cuisson de nuit</h1><p class="lead text-secondary mb-4">Campagne, seigle, complets - farines locales.</p><div class="row g-3"><div class="col-md-4"><article class="vt-bakery-card"><picture><source srcset="images/scene-1.webp" type="image/webp"><img src="images/scene-1.png" alt="Levain" loading="lazy"></picture><div class="p-3"><h2 class="h6">Campagne 800 g</h2><p class="small text-secondary mb-0">Croute epaisse, mie alveolee.</p></div></article></div><div class="col-md-4"><article class="vt-bakery-card"><picture><source srcset="images/scene-2.webp" type="image/webp"><img src="images/scene-2.png" alt="Seigle" loading="lazy"></picture><div class="p-3"><h2 class="h6">Seigle</h2><p class="small text-secondary mb-0">Ideal fromages et tartines.</p></div></article></div><div class="col-md-4"><article class="vt-bakery-card"><picture><source srcset="images/scene-3.webp" type="image/webp"><img src="images/scene-3.png" alt="Complet" loading="lazy"></picture><div class="p-3"><h2 class="h6">Complet</h2><p class="small text-secondary mb-0">Farine stone-ground.</p></div></article></div></div><a class="btn btn-vt-primary mt-4" href="contact.html">Commander</a></div></section></main>"""
-    return _shell_bl("pains.html", f"Pains — {BL_BRAND}", "Pains au levain Maison Lemaire Nancy.", main)
+    return _shell_bl("pains.html", f"Pains - {BL_BRAND}", "Pains au levain Maison Lemaire Nancy.", main)
 
 
 def build_boulangerie_patisseries():
     main = f"""<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Patisseries</p><h1 class="vt-display h2 mb-3">Du croissant au schneck</h1><p class="lead text-secondary mb-4">Beurre AOP, mirabelle en saison.</p><a class="btn btn-vt-primary" href="contact.html">Reserver un gateau</a></div></section></main>"""
-    return _shell_bl("patisseries.html", f"Patisseries — {BL_BRAND}", "Patisseries et viennoiseries Maison Lemaire.", main)
+    return _shell_bl("patisseries.html", f"Patisseries - {BL_BRAND}", "Patisseries et viennoiseries Maison Lemaire.", main)
 
 
 def build_boulangerie_contact():
     main = f"""<main><section class="py-5 text-center vt-reveal"><div class="container"><p class="vt-eyebrow">Contact</p><h1 class="vt-display h2">Passer commande</h1><p class="lead text-secondary">{BL_ADDRESS}</p><p><a class="btn btn-vt-primary" href="tel:0383351240">{BL_PHONE}</a></p><p class="small text-secondary">{BL_EMAIL}</p></div></section></main>"""
-    return _shell_bl("contact.html", f"Contact — {BL_BRAND}", "Commander chez Maison Lemaire Nancy.", main)
+    return _shell_bl("contact.html", f"Contact - {BL_BRAND}", "Commander chez Maison Lemaire Nancy.", main)
 
 
 # --- Artisan : Clanche & Cuivre (Metz) ---
@@ -186,22 +186,22 @@ def build_artisan_index():
     main += block_dialog_m3(dialog_id="devisArt", title="Devis gratuit", lead="Decris le souci - on te rappelle (demo).", primary_label="Envoyer", primary_href="contact.html", fields_html='<div class="mb-2"><label class="form-label small">Type</label><select class="form-select"><option>Fuite</option><option>Debouchage</option><option>Chauffage</option><option>Salle de bain</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>')
     main += block_fab_menu_m3([{"label": "Devis", "dialog": "devisArt"}, {"label": "Appeler", "href": "tel:0387219040"}, {"label": "Zones", "href": "zones.html"}], main_label="Actions urgence")
     main += "</main>"
-    return _shell_ar("index.html", f"{AR_BRAND} — Plombier Metz", "Plombier urgence a Metz : depannage 24/7, devis clair.", main)
+    return _shell_ar("index.html", f"{AR_BRAND} - Plombier Metz", "Plombier urgence a Metz : depannage 24/7, devis clair.", main)
 
 
 def build_artisan_services():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Services</p><h1 class="vt-display h2 mb-3">Ce qu'on prend en charge</h1><div class="row g-3"><div class="col-md-4"><article class="vt-art-svc p-3"><h2 class="h6">Depannage</h2><p class="small text-secondary mb-0">Fuite, WC, robinetterie.</p></article></div><div class="col-md-4"><article class="vt-art-svc p-3"><h2 class="h6">Renovation SDB</h2><p class="small text-secondary mb-0">Du devis a la reception.</p></article></div><div class="col-md-4"><article class="vt-art-svc p-3"><h2 class="h6">Chauffage</h2><p class="small text-secondary mb-0">Entretien et remplacement.</p></article></div></div></div></section></main>"""
-    return _shell_ar("services.html", f"Services — {AR_BRAND}", "Services plomberie Clanche & Cuivre Metz.", main)
+    return _shell_ar("services.html", f"Services - {AR_BRAND}", "Services plomberie Clanche & Cuivre Metz.", main)
 
 
 def build_artisan_zones():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Zones</p><h1 class="vt-display h2 mb-3">Metz et alentours</h1><p class="lead text-secondary">Metz, Montigny, Woippy, Longeville, Plappeville - 30 min en moyenne.</p></div></section></main>"""
-    return _shell_ar("zones.html", f"Zones — {AR_BRAND}", "Zones d'intervention plombier Metz.", main)
+    return _shell_ar("zones.html", f"Zones - {AR_BRAND}", "Zones d'intervention plombier Metz.", main)
 
 
 def build_artisan_contact():
     main = f"""<main><section class="py-5 text-center vt-reveal"><div class="container"><p class="vt-eyebrow">Contact</p><h1 class="vt-display h2">Urgence ou devis</h1><p class="lead text-secondary">{AR_ADDRESS}</p><p><a class="btn btn-vt-primary" href="tel:0387219040">{AR_PHONE}</a></p></div></section></main>"""
-    return _shell_ar("contact.html", f"Contact — {AR_BRAND}", "Contacter Clanche & Cuivre Metz.", main)
+    return _shell_ar("contact.html", f"Contact - {AR_BRAND}", "Contacter Clanche & Cuivre Metz.", main)
 
 
 # --- Fleuriste : Atelier Corolle (Strasbourg) ---
@@ -256,22 +256,22 @@ def build_fleuriste_index():
     main += block_dialog_m3(dialog_id="cmdFl", title="Commander un bouquet", lead="Livraison Strasbourg centre (demo).", primary_label="Continuer", primary_href="contact.html", fields_html='<div class="mb-2"><label class="form-label small">Occasion</label><select class="form-select"><option>Saison</option><option>Anniversaire</option><option>Remerciement</option></select></div>')
     main += block_fab_menu_m3([{"label": "Commander", "dialog": "cmdFl"}, {"label": "Collections", "href": "collections.html"}, {"label": "Mariage", "href": "mariage.html"}], main_label="Actions atelier")
     main += "</main>"
-    return _shell_fl("index.html", f"{FL_BRAND} — Fleuriste Strasbourg", "Fleuriste a Strasbourg : bouquets de saison, mariage, livraison.", main)
+    return _shell_fl("index.html", f"{FL_BRAND} - Fleuriste Strasbourg", "Fleuriste a Strasbourg : bouquets de saison, mariage, livraison.", main)
 
 
 def build_fleuriste_collections():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Collections</p><h1 class="vt-display h2 mb-3">Inspirations du moment</h1><p class="lead text-secondary">Saisons, couleurs, formats - on compose sur place.</p></div></section></main>"""
-    return _shell_fl("collections.html", f"Collections — {FL_BRAND}", "Collections florales Atelier Corolle.", main)
+    return _shell_fl("collections.html", f"Collections - {FL_BRAND}", "Collections florales Atelier Corolle.", main)
 
 
 def build_fleuriste_mariage():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Mariage</p><h1 class="vt-display h2 mb-3">Le jour J, en fleurs</h1><p class="lead text-secondary">Bouquet de mariee, boutonnières, arch - devis sur rendez-vous.</p><a class="btn btn-vt-primary" href="contact.html">Parler mariage</a></div></section></main>"""
-    return _shell_fl("mariage.html", f"Mariage — {FL_BRAND}", "Fleurs de mariage Atelier Corolle Strasbourg.", main)
+    return _shell_fl("mariage.html", f"Mariage - {FL_BRAND}", "Fleurs de mariage Atelier Corolle Strasbourg.", main)
 
 
 def build_fleuriste_contact():
     main = f"""<main><section class="py-5 text-center vt-reveal"><div class="container"><p class="vt-eyebrow">Contact</p><h1 class="vt-display h2">Passer a l'atelier</h1><p class="lead text-secondary">{FL_ADDRESS}</p><p><a class="btn btn-vt-primary" href="tel:0388241750">{FL_PHONE}</a></p></div></section></main>"""
-    return _shell_fl("contact.html", f"Contact — {FL_BRAND}", "Contacter Atelier Corolle Strasbourg.", main)
+    return _shell_fl("contact.html", f"Contact - {FL_BRAND}", "Contacter Atelier Corolle Strasbourg.", main)
 
 
 # --- Caviste : Cave de la Gare (Thionville) ---
@@ -318,22 +318,22 @@ def build_caviste_index():
     main += block_dialog_m3(dialog_id="panierCv", title="Ajouter au panier", lead="Demo - rien n'est commande.", primary_label="Voir le panier", primary_href="contact.html", fields_html='<div class="mb-2"><label class="form-label small">Bouteille</label><select class="form-select"><option>Terres Noires 2021</option><option>Auxerrois Moselle</option></select></div>')
     main += block_fab_menu_m3([{"label": "Panier", "dialog": "panierCv"}, {"label": "Vins", "href": "vins.html"}, {"label": "Cave", "href": "cave.html"}], main_label="Actions cave")
     main += "</main>"
-    return _shell_cv("index.html", f"{CV_BRAND} — Caviste Thionville", "Caviste a Thionville : selection soignee, conseils, degustations.", main)
+    return _shell_cv("index.html", f"{CV_BRAND} - Caviste Thionville", "Caviste a Thionville : selection soignee, conseils, degustations.", main)
 
 
 def build_caviste_vins():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Vins</p><h1 class="vt-display h2 mb-3">Tous les vins</h1><p class="lead text-secondary">Filtre par couleur, region, budget - on te guide en cave.</p></div></section></main>"""
-    return _shell_cv("vins.html", f"Vins — {CV_BRAND}", "Catalogue vins Cave de la Gare Thionville.", main)
+    return _shell_cv("vins.html", f"Vins - {CV_BRAND}", "Catalogue vins Cave de la Gare Thionville.", main)
 
 
 def build_caviste_cave():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">La cave</p><h1 class="vt-display h2 mb-3">Place de la Gare</h1><p class="lead text-secondary">Une piece fraiche, des etageres basses, du temps pour discuter.</p></div></section></main>"""
-    return _shell_cv("cave.html", f"La cave — {CV_BRAND}", "La cave Cave de la Gare Thionville.", main)
+    return _shell_cv("cave.html", f"La cave - {CV_BRAND}", "La cave Cave de la Gare Thionville.", main)
 
 
 def build_caviste_contact():
     main = f"""<main><section class="py-5 text-center vt-reveal"><div class="container"><p class="vt-eyebrow">Contact</p><h1 class="vt-display h2">Conseil & commande</h1><p class="lead text-secondary">{CV_ADDRESS}</p><p><a class="btn btn-vt-primary" href="tel:0382531890">{CV_PHONE}</a></p></div></section></main>"""
-    return _shell_cv("contact.html", f"Contact — {CV_BRAND}", "Contacter Cave de la Gare Thionville.", main)
+    return _shell_cv("contact.html", f"Contact - {CV_BRAND}", "Contacter Cave de la Gare Thionville.", main)
 
 
 # --- Osteo : Cabinet des Ponts (Metz) ---
@@ -394,22 +394,22 @@ def build_osteo_index():
     main += block_dialog_m3(dialog_id="rdvOs", title="Prendre RDV", lead="On te confirme le creneau sous 2 h (demo).", primary_label="Envoyer", primary_href="contact.html", fields_html='<div class="mb-2"><label class="form-label small">Motif</label><select class="form-select"><option>Dos / cervicales</option><option>Sport</option><option>Bebe / femme enceinte</option><option>Autre</option></select></div><div class="mb-2"><label class="form-label small">Telephone</label><input class="form-control" type="tel"></div>')
     main += block_fab_menu_m3([{"label": "RDV", "dialog": "rdvOs"}, {"label": "Tarifs", "href": "tarifs.html"}, {"label": "Appeler", "href": "tel:0387362210"}], main_label="Actions cabinet")
     main += "</main>"
-    return _shell_os("index.html", f"{OS_BRAND} — Osteopathe Metz", "Cabinet d'osteopathie a Metz : RDV en ligne, soins doux.", main)
+    return _shell_os("index.html", f"{OS_BRAND} - Osteopathe Metz", "Cabinet d'osteopathie a Metz : RDV en ligne, soins doux.", main)
 
 
 def build_osteo_soins():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Soins</p><h1 class="vt-display h2 mb-3">Pour qui ?</h1><p class="lead text-secondary">Adultes, sportifs, femmes enceintes, nourrissons - seance d'environ 45 min.</p></div></section></main>"""
-    return _shell_os("soins.html", f"Soins — {OS_BRAND}", "Soins osteopathie Cabinet des Ponts Metz.", main)
+    return _shell_os("soins.html", f"Soins - {OS_BRAND}", "Soins osteopathie Cabinet des Ponts Metz.", main)
 
 
 def build_osteo_tarifs():
     main = """<main><section class="py-5 vt-reveal"><div class="container"><p class="vt-eyebrow">Tarifs</p><h1 class="vt-display h2 mb-3">Tarifs clairs</h1><p class="lead text-secondary">Seance 55 euro - facture pour mutuelle. Pas de surprise.</p></div></section></main>"""
-    return _shell_os("tarifs.html", f"Tarifs — {OS_BRAND}", "Tarifs osteopathie Metz.", main)
+    return _shell_os("tarifs.html", f"Tarifs - {OS_BRAND}", "Tarifs osteopathie Metz.", main)
 
 
 def build_osteo_contact():
     main = f"""<main><section class="py-5 text-center vt-reveal"><div class="container"><p class="vt-eyebrow">Contact</p><h1 class="vt-display h2">Prendre rendez-vous</h1><p class="lead text-secondary">{OS_ADDRESS}</p><p><a class="btn btn-vt-primary" href="tel:0387362210">{OS_PHONE}</a></p></div></section></main>"""
-    return _shell_os("contact.html", f"Contact — {OS_BRAND}", "RDV osteopathie Cabinet des Ponts Metz.", main)
+    return _shell_os("contact.html", f"Contact - {OS_BRAND}", "RDV osteopathie Cabinet des Ponts Metz.", main)
 
 
 BUILDERS_EXTRA = {

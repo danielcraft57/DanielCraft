@@ -65,7 +65,7 @@ SVGS = [
     ("dp-singleton.svg", "Singleton", "Une seule instance",
      compare2("Sans", ["Plusieurs copies", "Etats qui divergent", "Tests galere"],
               "Avec", ["Une seule copie", "Acces partage", "Attention aux abus"],
-              "Utile rarement : config, cache — pas partout")),
+              "Utile rarement : config, cache - pas partout")),
     ("dp-factory-method.svg", "Factory Method", "Creer sans connaitre le detail",
      flow_row(["Demande", "Fabrique", "Produit adapte", "Client content"],
               "Tu demandes un truc, la fabrique choisit comment le creer")),
@@ -185,7 +185,7 @@ Ne force pas un pattern. Commence par le probleme. Si la recette colle, utilise-
 article(
     "design-patterns-singleton",
     "Singleton : une seule copie, pas plus",
-    "Garantir une seule instance partagee — utile parfois, dangereux si abuse.",
+    "Garantir une seule instance partagee - utile parfois, dangereux si abuse.",
     f"""# Singleton : une seule copie, pas plus
 
 Le **Singleton** dit : il n'existe qu'**une** copie de cet objet pour tout le programme.
@@ -509,7 +509,7 @@ Adapter repare un mauvais fit. Bridge est prevu des le debut pour evoluer. Voir 
 article(
     "design-patterns-prototype",
     "Prototype : copier un modele plutot que tout recreer",
-    "Cloner un objet existant puis ajuster — plus simple parfois que construire a neuf.",
+    "Cloner un objet existant puis ajuster - plus simple parfois que construire a neuf.",
     f"""# Prototype : copier un modele plutot que tout recreer
 
 Le **Prototype** part d'un modele, le **clone**, puis tu ajustes.
@@ -649,10 +649,10 @@ Pour un vrai langage complexe, utilise un vrai parseur. Ici : regles metier simp
 # Collection
 col_path = COLLECTIONS / "design-patterns-serie.json"
 col = json.loads(col_path.read_text(encoding="utf-8"))
-col["title"] = "Serie Design Patterns — recettes de code (GoF, version simple)"
+col["title"] = "Serie Design Patterns - recettes de code (GoF, version simple)"
 col["description"] = (
     "Les 23 design patterns du Gang of Four expliques simplement : analogies du quotidien, "
-    "schemas, et liens entre articles — sans jargon inutile."
+    "schemas, et liens entre articles - sans jargon inutile."
 )
 col_path.write_text(json.dumps(col, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"[OK] {col_path.name}")

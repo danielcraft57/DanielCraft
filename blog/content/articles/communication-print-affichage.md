@@ -11,7 +11,7 @@ og_image: communication-print-1200x630.jpg
 
 # Print et affichage : une idee, bien visible
 
-Brochure, flyer, affiche, carte de visite : le print reste un canal puissant pour capter l'attention la ou ton audience se deplace physiquement. Salons, vitrines, boites aux lettres, comptoirs — le support papier a un avantage que le digital n'a pas : il est la, tangible, sans notification a ignorer.
+Brochure, flyer, affiche, carte de visite : le print reste un canal puissant pour capter l'attention la ou ton audience se deplace physiquement. Salons, vitrines, boites aux lettres, comptoirs - le support papier a un avantage que le digital n'a pas : il est la, tangible, sans notification a ignorer.
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/com-print.svg" alt="Schema communication print" class="schema-inline" width="640" />
@@ -48,7 +48,7 @@ Le print ne vit pas en vase clos. Chaque support doit ouvrir vers le digital :
 - **URL courte** facile a retenir ou a taper
 - **Hashtag ou code promo** pour mesurer l'origine des contacts
 
-Exemple : une affiche pour un salon avec un QR menant vers une page « Salon 2024 — demandez votre demo ». Tu sauras d'ou viennent les contacts et tu pourras relancer rapidement. Pense aussi aux UTM dans tes liens pour suivre finement chaque campagne print dans tes outils d'analyse web. Le print devient ainsi mesurable, pas seulement esthetique.
+Exemple : une affiche pour un salon avec un QR menant vers une page « Salon 2024 - demandez votre demo ». Tu sauras d'ou viennent les contacts et tu pourras relancer rapidement. Pense aussi aux UTM dans tes liens pour suivre finement chaque campagne print dans tes outils d'analyse web. Le print devient ainsi mesurable, pas seulement esthetique.
 
 ## Choisir le bon format et le bon tirage
 

@@ -1,5 +1,5 @@
 /**
- * Effets créatifs légers (scroll, halo, textures) — complète AOS / Hover / etc.
+ * Effets créatifs légers (scroll, halo, textures) - complète AOS / Hover / etc.
  * Respecter prefers-reduced-motion (voir vitrine-creative.js + media ici).
  */
 
@@ -9,7 +9,7 @@
   --vg-y: 42%;
 }
 
-/* ——— Lecture de page (gradient) ——— */
+/* --- Lecture de page (gradient) --- */
 .vitrine-read-progress {
   position: fixed;
   top: 0;
@@ -30,7 +30,7 @@
   }
 }
 
-/* ——— Halo « projecteur » suivi souris (hero) ——— */
+/* --- Halo « projecteur » suivi souris (hero) --- */
 .vitrine-hero-glowspot {
   position: relative;
   overflow: hidden;
@@ -55,7 +55,7 @@
   z-index: 2;
 }
 
-/* ——— Lignes d’atelier (scan léger, industrie) ——— */
+/* --- Lignes d'atelier (scan léger, industrie) --- */
 .vitrine-hero-scans::after {
   content: "";
   position: absolute;
@@ -79,7 +79,7 @@
   }
 }
 
-/* ——— Titre reflet métal (services, fond sombre) ——— */
+/* --- Titre reflet métal (services, fond sombre) --- */
 .vitrine-shimmer-text.is-srv-shimmer {
   display: inline-block;
   background-image: linear-gradient(
@@ -117,7 +117,7 @@
   }
 }
 
-/* ——— Cartes qui « décollent » (perspective) ——— */
+/* --- Cartes qui « décollent » (perspective) --- */
 .vitrine-tilt-card {
   transition:
     transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
@@ -137,7 +137,7 @@
   }
 }
 
-/* ——— CTA association : aurora conique lente ——— */
+/* --- CTA association : aurora conique lente --- */
 .vitrine-cta-aurora {
   position: relative;
   overflow: hidden;
@@ -184,7 +184,7 @@
   }
 }
 
-/* ——— Tableau compta : apparition type « grand livre » ——— */
+/* --- Tableau compta : apparition type « grand livre » --- */
 @keyframes vitrine-row-in {
   from {
     opacity: 0;
@@ -233,7 +233,7 @@
   }
 }
 
-/* ——— Hôtel : constellation CSS (sans image) ——— */
+/* --- Hôtel : constellation CSS (sans image) --- */
 .vitrine-hero-stars {
   position: relative;
   overflow: hidden;
@@ -280,7 +280,7 @@
   }
 }
 
-/* ——— Boutons magnétiques (léger) ——— */
+/* --- Boutons magnétiques (léger) --- */
 .vitrine-magnetic-wrap .button {
   transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1);
 }

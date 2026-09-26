@@ -1,4 +1,4 @@
-"""Layouts vitrine alternatifs (split, bento, entonnoir) — inspirés bonnes pratiques landing UX."""
+"""Layouts vitrine alternatifs (split, bento, entonnoir) - inspirés bonnes pratiques landing UX."""
 from __future__ import annotations
 
 from vitrine_ai_lib import esc
@@ -100,7 +100,7 @@ def block_bento_cards(cards: list[dict]) -> str:
 
 
 def block_compact_features(items: list[dict]) -> str:
-    """Liste numérotée + vignette — faible effort cognitif."""
+    """Liste numérotée + vignette - faible effort cognitif."""
     rows = ""
     for i, it in enumerate(items, 1):
         rows += f"""<article class="vt-compact-row row g-3 align-items-center py-4 border-bottom">
@@ -130,7 +130,7 @@ def block_hero_overlay(
     secondary_href: str = "",
     secondary_label: str = "",
 ) -> str:
-    """Hero pleine largeur — image de fond + overlay (garage / industriel)."""
+    """Hero pleine largeur - image de fond + overlay (garage / industriel)."""
     sec_btn = ""
     if secondary_href and secondary_label:
         sec_btn = f'<a class="btn btn-vt-outline btn-lg rounded-0 px-4" href="{esc(secondary_href)}">{esc(secondary_label)}</a>'
@@ -190,7 +190,7 @@ def block_hero_split_reverse(
 
 
 def block_service_tiles(title: str, tiles: list[dict]) -> str:
-    """Grille 3 services — une tuile peut être mise en avant (hot)."""
+    """Grille 3 services - une tuile peut être mise en avant (hot)."""
     items = ""
     for t in tiles:
         hot = " vt-svc-tile-hot" if t.get("hot") else ""
@@ -247,7 +247,7 @@ def block_hero_editorial(
 
 
 def block_promo_cards(cards: list[dict]) -> str:
-    """Bandeau 3 promos retail — accent coloré par carte."""
+    """Bandeau 3 promos retail - accent coloré par carte."""
     items = ""
     for c in cards:
         accent = c.get("accent", "green")
@@ -281,7 +281,7 @@ def block_hero_proof_split(
     secondary_href: str = "",
     secondary_label: str = "",
 ) -> str:
-    """Hero cabinet : témoignage (gauche) + chiffres clés (droite) — tendance consulting 2026."""
+    """Hero cabinet : témoignage (gauche) + chiffres clés (droite) - tendance consulting 2026."""
     stat_cells = "".join(
         f"""<div class="vt-proof-stat">
         <strong class="vt-proof-stat-val">{esc(val)}</strong>
@@ -322,7 +322,7 @@ def block_hero_proof_split(
 
 
 def block_credentials_strip(items: list[tuple[str, str]]) -> str:
-    """Bandeau diplômes / labels — E-E-A-T cabinet comptable."""
+    """Bandeau diplômes / labels - E-E-A-T cabinet comptable."""
     cells = "".join(
         f"""<div class="col-6 col-md-3">
         <div class="vt-cred-cell">
@@ -340,7 +340,7 @@ def block_credentials_strip(items: list[tuple[str, str]]) -> str:
 
 
 def block_comparison_table(title: str, rows: list[tuple[str, str, str]]) -> str:
-    """Tableau avant / après — pattern consulting « situation → résultat »."""
+    """Tableau avant / après - pattern consulting « situation → résultat »."""
     trs = "".join(
         f"""<tr>
         <th scope="row">{esc(sit)}</th>
@@ -369,7 +369,7 @@ def block_comparison_table(title: str, rows: list[tuple[str, str, str]]) -> str:
 
 
 def block_stat_narrative_rows(items: list[dict]) -> str:
-    """Panneaux chiffre + récit alternés — rythme rapport actuariel."""
+    """Panneaux chiffre + récit alternés - rythme rapport actuariel."""
     rows = ""
     for i, it in enumerate(items):
         flip = "flex-lg-row-reverse" if i % 2 else ""
@@ -396,7 +396,7 @@ def block_stat_narrative_rows(items: list[dict]) -> str:
 
 
 def block_faq_accordion(title: str, items: list[tuple[str, str]]) -> str:
-    """FAQ accordéon Bootstrap — citations IA / featured snippets."""
+    """FAQ accordéon Bootstrap - citations IA / featured snippets."""
     acc_id = "vtFaq"
     cards = ""
     for i, (q, a) in enumerate(items):
@@ -466,7 +466,7 @@ def block_hero_technical(
 
 
 def block_spec_grid(title: str, items: list[dict]) -> str:
-    """Grille capacités techniques — cartes specs (tolerance, matériaux…)."""
+    """Grille capacités techniques - cartes specs (tolerance, matériaux…)."""
     cells = ""
     for it in items:
         cells += f"""<div class="col-sm-6 col-lg-3">
@@ -485,7 +485,7 @@ def block_spec_grid(title: str, items: list[dict]) -> str:
 
 
 def block_cert_strip(certs: list[tuple[str, str, str]]) -> str:
-    """Bandeau certifications ISO / IATF — preuve qualité industrielle."""
+    """Bandeau certifications ISO / IATF - preuve qualité industrielle."""
     items = ""
     for code, name, detail in certs:
         items += f"""<div class="col-6 col-md-3">
@@ -503,7 +503,7 @@ def block_cert_strip(certs: list[tuple[str, str, str]]) -> str:
 
 
 def block_process_flow(title: str, steps: list[tuple[str, str]]) -> str:
-    """Flux processus horizontal — parcours usinage / RFQ."""
+    """Flux processus horizontal - parcours usinage / RFQ."""
     items = ""
     for i, (t, d) in enumerate(steps, 1):
         arrow = '<span class="vt-flow-arrow" aria-hidden="true">→</span>' if i < len(steps) else ""
@@ -524,7 +524,7 @@ def block_process_flow(title: str, steps: list[tuple[str, str]]) -> str:
 
 
 def block_specs_table(title: str, rows: list[tuple[str, str]]) -> str:
-    """Tableau technique détaillé — tolérances, matériaux, capacités."""
+    """Tableau technique détaillé - tolérances, matériaux, capacités."""
     trs = "".join(
         f"<tr><th scope=\"row\">{esc(k)}</th><td>{esc(v)}</td></tr>"
         for k, v in rows
@@ -542,7 +542,7 @@ def block_specs_table(title: str, rows: list[tuple[str, str]]) -> str:
 
 
 def block_sector_strip(sectors: list[tuple[str, str]]) -> str:
-    """Bandeau secteurs clients — auto, aéro, médical…"""
+    """Bandeau secteurs clients - auto, aéro, médical…"""
     items = "".join(
         f"""<div class="col-6 col-md-3">
         <div class="vt-sector-cell">
@@ -603,7 +603,7 @@ def block_hero_property_search(
 
 
 def block_listing_grid(title: str, listings: list[dict], *, cta_href: str = "", cta_label: str = "") -> str:
-    """Grille annonces immobilières — image, prix, specs."""
+    """Grille annonces immobilières - image, prix, specs."""
     cards = []
     for item in listings:
         badge = ""
@@ -638,7 +638,7 @@ def block_listing_grid(title: str, listings: list[dict], *, cta_href: str = "", 
 
 
 def block_project_grid(title: str, projects: list[dict], *, cta_href: str = "", cta_label: str = "") -> str:
-    """Grille projets architecture — année, typologie, surface."""
+    """Grille projets architecture - année, typologie, surface."""
     cards = []
     for item in projects:
         badge = ""
@@ -672,7 +672,7 @@ def block_project_grid(title: str, projects: list[dict], *, cta_href: str = "", 
 
 
 def block_impact_goal(title: str, current: str, target: str, percent: int, label: str) -> str:
-    """Jauge objectif dons / campagne — associations ESS."""
+    """Jauge objectif dons / campagne - associations ESS."""
     return f"""<section class="vt-impact-goal py-4" aria-labelledby="impact-goal-title">
   <div class="container">
     <h2 id="impact-goal-title" class="h6 text-center text-uppercase letter-spacing mb-3">{esc(title)}</h2>
@@ -686,7 +686,7 @@ def block_impact_goal(title: str, current: str, target: str, percent: int, label
 
 
 def block_gallery_masonry(title: str, items: list[dict], *, cta_href: str = "", cta_label: str = "") -> str:
-    """Galerie photos décalée — 2e colonne descendue sur desktop (portfolio photo)."""
+    """Galerie photos décalée - 2e colonne descendue sur desktop (portfolio photo)."""
     cards = []
     for i, item in enumerate(items):
         offset = " vt-masonry-offset" if i % 3 == 1 else ""
@@ -720,7 +720,7 @@ def block_schedule_grid(
     quote: str = "",
     quote_author: str = "",
 ) -> str:
-    """Planning hebdo — grille horaire type salle de sport."""
+    """Planning hebdo - grille horaire type salle de sport."""
     head_cells = "".join(f'<th scope="col">{esc(h)}</th>' for h in headers)
     body_rows = ""
     for row in rows:
@@ -728,7 +728,7 @@ def block_schedule_grid(
         body_rows += f"<tr>{cells}</tr>"
     quote_block = ""
     if quote:
-        cite = f" — {esc(quote_author)}" if quote_author else ""
+        cite = f" - {esc(quote_author)}" if quote_author else ""
         quote_block = (
             f'<blockquote class="vt-schedule-quote text-center mt-4 mb-0">'
             f'<p class="mb-0">« {esc(quote)} »<cite class="d-block small mt-2 not-italic">{cite}</cite></p>'
@@ -771,7 +771,7 @@ def block_neighborhood_strip(title: str, areas: list[tuple[str, str]]) -> str:
 
 
 def block_marquee_strip(labels: list[str]) -> str:
-    """Bandeau défilant — labels partenaires, distinctions, tags."""
+    """Bandeau défilant - labels partenaires, distinctions, tags."""
     dup = labels + labels
     items = "".join(f'<span class="vt-marquee-item">{esc(lbl)}</span>' for lbl in dup)
     return f"""<section class="vt-marquee py-3 vt-reveal-fade" aria-hidden="true">
@@ -780,7 +780,7 @@ def block_marquee_strip(labels: list[str]) -> str:
 
 
 def block_snap_chapters(chapters: list[dict]) -> str:
-    """Chapitres plein écran avec scroll-snap — hôtellerie / storytelling."""
+    """Chapitres plein écran avec scroll-snap - hôtellerie / storytelling."""
     rows = ""
     for i, ch in enumerate(chapters):
         flip = " vt-snap-chapter--flip" if i % 2 else ""
@@ -848,7 +848,7 @@ def block_hero_saas_product(
 
 
 def block_feature_tabs(title: str, tabs: list[dict]) -> str:
-    """Onglets fonctionnalités — panneaux image + texte (animés via vitrine-motion.js)."""
+    """Onglets fonctionnalités - panneaux image + texte (animés via vitrine-motion.js)."""
     nav_btns = ""
     panels = ""
     for i, tab in enumerate(tabs):
@@ -878,7 +878,7 @@ def block_feature_tabs(title: str, tabs: list[dict]) -> str:
 
 
 def block_pricing_tiers(title: str, tiers: list[dict]) -> str:
-    """Grille tarifs SaaS — carte mise en avant animée au survol."""
+    """Grille tarifs SaaS - carte mise en avant animée au survol."""
     cards = ""
     for t in tiers:
         hot = " vt-pricing-tier--hot" if t.get("hot") else ""
@@ -943,7 +943,7 @@ def block_hero_tech_glow(
 
 
 def block_progress_wizard(title: str, steps: list[dict]) -> str:
-    """Parcours onboarding — barre de progression animée + étapes cliquables."""
+    """Parcours onboarding - barre de progression animée + étapes cliquables."""
     step_btns = ""
     panels = ""
     for i, step in enumerate(steps):
@@ -973,7 +973,7 @@ def block_progress_wizard(title: str, steps: list[dict]) -> str:
 
 
 def block_kpi_grid(title: str, kpis: list[dict]) -> str:
-    """Cartes KPI dashboard — pulse live + compteurs animés."""
+    """Cartes KPI dashboard - pulse live + compteurs animés."""
     cards = ""
     for k in kpis:
         count_attr = ""
@@ -1001,7 +1001,7 @@ def block_kpi_grid(title: str, kpis: list[dict]) -> str:
 
 
 def block_state_morph(title: str, before: dict, after: dict) -> str:
-    """Avant / après — crossfade au survol pour empty states."""
+    """Avant / après - crossfade au survol pour empty states."""
     return f"""<section class="vt-state-morph py-5 vt-reveal">
   <div class="container">
     <h2 class="vt-section-title text-center mb-4">{esc(title)}</h2>
@@ -1029,7 +1029,7 @@ def block_state_morph(title: str, before: dict, after: dict) -> str:
 
 
 def block_notification_feed(title: str, items: list[dict]) -> str:
-    """Flux notifications in-app — entrée en cascade."""
+    """Flux notifications in-app - entrée en cascade."""
     rows = ""
     for it in items:
         urgent = " vt-notif--urgent" if it.get("urgent") else ""
@@ -1075,7 +1075,7 @@ def block_slot_card(
     cta_label: str = "Prendre RDV",
     note: str = "",
 ) -> str:
-    """Carte creneaux (spa, garage) — {day, times}."""
+    """Carte creneaux (spa, garage) - {day, times}."""
     rows = ""
     for s in slots:
         rows += (

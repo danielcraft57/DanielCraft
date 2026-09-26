@@ -107,7 +107,7 @@ for item in SVGS:
 article(
     "ia-outils-base-de-donnees-gratuite-avec-des-templates-n8n-et-des-tutoriels-pour",
     "Base + n8n : une stack gratuite pour demarrer",
-    "Associer une base simple, des templates d'automation et des tutos — sans tout complexifier.",
+    "Associer une base simple, des templates d'automation et des tutos - sans tout complexifier.",
     f"""# Base + n8n : une stack gratuite pour demarrer
 
 Tu n'as pas besoin d'une usine. Une **base**, des **templates**, un peu d'IA.
@@ -124,7 +124,7 @@ article(
     "Faire tourner un chat IA sur ta machine : gratuit, plus de controle, un peu plus de setup.",
     f"""# Alternative gratuite a ChatGPT : installer en local
 
-Une IA **locale** marche sans abonnement cloud — si ta machine suit.
+Une IA **locale** marche sans abonnement cloud - si ta machine suit.
 
 {fig("ia-outils-open.svg", "Schema IA open source locale", "Modele, interface, limites, gain.")}
 
@@ -135,7 +135,7 @@ Installe une interface (type Ollama / LM Studio), choisis un modele leger, teste
 article(
     "ia-outils-une-ia-comme-chatgpt-mais-gratuite-huggingchat-d",
     "HuggingChat : une IA gratuite dans le navigateur",
-    "Discuter sans payer d'abonnement — utile pour tester, avec des limites selon le trafic.",
+    "Discuter sans payer d'abonnement - utile pour tester, avec des limites selon le trafic.",
     f"""# HuggingChat : une IA gratuite dans le navigateur
 
 Pas de carte bleue obligatoire pour **essayer**.
@@ -166,7 +166,7 @@ article(
     "Debats sur productivite et travail : lire, relativiser, garder l'esprit critique.",
     f"""# IA et economie : des idees, pas des certitudes
 
-Les essays "l'IA va tout changer" sont stimulants — pas des **preuves**.
+Les essays "l'IA va tout changer" sont stimulants - pas des **preuves**.
 
 {fig("ia-outils-compare.svg", "Schema esprit critique", "Lire, comparer, juger.")}
 
@@ -276,7 +276,7 @@ Ecris son role, ton, limites. Teste 3 questions types. Voir [utiliser Gemini](/b
 article(
     "ia-gemini-un-homme-vient-de-creer-un-conseil-des-ia-avec-un-tutoriel-pour-fair",
     "Conseil d'IA : faire debattre plusieurs modeles",
-    "Comparer plusieurs reponses sur le meme sujet pour enrichir ta decision — sans tout croire.",
+    "Comparer plusieurs reponses sur le meme sujet pour enrichir ta decision - sans tout croire.",
     f"""# Conseil d'IA : faire debattre plusieurs modeles
 
 Une idee simple : poser **la meme question** a plusieurs IA, puis trancher.
@@ -364,7 +364,7 @@ Ajoute tes PDFs, precise la langue si besoin, ecoute, corrige les erreurs. Base 
 article(
     "ia-gemini-quelle-ia-choisir-pour-des-projets-longs-comme-la-redaction-d-un-memo",
     "Projet long (memo, livre) : quelle IA et quelle methode",
-    "Decouper, garder des fichiers sources, reprendre le fil — plus important que le logo de l'outil.",
+    "Decouper, garder des fichiers sources, reprendre le fil - plus important que le logo de l'outil.",
     f"""# Projet long (memo, livre) : quelle IA et quelle methode
 
 Sur un long projet, le chat unique **oublie**. Structure.
@@ -392,12 +392,12 @@ Teste 2 apps utiles, note ce qui marche, recree une version simple pour toi.
 for name, title, desc in (
     (
         "ia-outils-serie.json",
-        "Serie IA — Outils et alternatives (simples)",
+        "Serie IA - Outils et alternatives (simples)",
         "Comparer, installer, tester : ChatGPT, open source, agents et stacks pratiques.",
     ),
     (
         "ia-gemini-serie.json",
-        "Serie IA — Gemini et Google (demarrer clairement)",
+        "Serie IA - Gemini et Google (demarrer clairement)",
         "Gemini, NotebookLM, Skills et certifications expliques simplement.",
     ),
 ):

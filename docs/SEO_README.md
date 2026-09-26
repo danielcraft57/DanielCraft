@@ -116,14 +116,14 @@ Pour valider le SEO :
 ## Google Search Console et Google Analytics
 
 ### Google Search Console (Vérification)
-- ✅ Vérification configurée via DNS TXT record
-- ✅ Code de vérification : `YCJxWstMUnz66PNyUF1JsgpqpXATeyl5D6gM1nSfJ88`
-- 📖 Voir le guide complet : [GOOGLE_SETUP.md](./GOOGLE_SETUP.md)
+- Vérification configurée via DNS TXT record
+- Code de vérification : `YCJxWstMUnz66PNyUF1JsgpqpXATeyl5D6gM1nSfJ88`
+- Voir le guide complet : [GOOGLE_SETUP.md](./GOOGLE_SETUP.md)
 
 ### Google Analytics (GA4)
-- ✅ Script Google Analytics GA4 configuré dans toutes les pages HTML
-- ✅ Measurement ID : `G-4VN3CKFP14`
-- 📖 Voir le guide complet : [GOOGLE_SETUP.md](./GOOGLE_SETUP.md)
+- Script Google Analytics GA4 configuré dans toutes les pages HTML
+- Measurement ID : `G-4VN3CKFP14`
+- Voir le guide complet : [GOOGLE_SETUP.md](./GOOGLE_SETUP.md)
 
 ## Prochaines Étapes
 

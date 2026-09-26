@@ -1,7 +1,7 @@
 ---
 title: "Templates n8n pour agents : ou les trouver"
 date: 2026-07-26
-excerpt: "Partir d'un modele existant accelere — adapte-le a ton cas."
+excerpt: "Partir d'un modele existant accelere - adapte-le a ton cas."
 type: tutorial
 tags: [IA, no-code, apps, sites web]
 og_image: ia-nocode-templates-n8n-gratuites-pour-creer-des-agents-ia-comment-y-acceder-1200x630.jpg

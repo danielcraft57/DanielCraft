@@ -1,0 +1,129 @@
+{
+  "slug": "chocolaterie",
+  "brand": "Maison Mirabelle",
+  "category": "hcr",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Artisan chocolate shop Metz, warm dark wood and amber light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Vitrine chocolats artisanaux a Metz",
+      "subject": "Warm premium chocolate boutique interior in Metz historic center: glass display of pralines and ganaches, dark wood counters, amber pendant lights, mirabelle plum accents, evening golden glow",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Vitrine chocolats artisanaux a Metz"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Bonbons ganache au comptoir",
+      "subject": "Close-up of glossy dark chocolate ganache bonbons on slate, cocoa dust, soft warm spotlight",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Bonbons ganache au comptoir"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Tablette mirabelle",
+      "subject": "Artisan chocolate bar with mirabelle filling, broken pieces revealing fruit paste, rustic linen, Metz atelier mood",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Tablette mirabelle"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Coffret cadeau chocolat",
+      "subject": "Elegant gift box of mixed chocolates tied with simple ribbon, kraft paper, boutique counter background",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Coffret cadeau chocolat"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Atelier temperage du chocolat",
+      "subject": "Chocolatier tempering chocolate on marble slab in small Metz atelier, copper tools, cocoa aroma steam",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Atelier temperage du chocolat"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Pralines assorties",
+      "subject": "Assorted praline shells with hazelnut and almond, shallow depth of field, warm brown tones",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Pralines assorties"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Tablettes d'origine",
+      "subject": "Stacked origin chocolate tablets with visible cacao nibs, wooden shelves in boutique",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Tablettes d'origine"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Boutique rue des Clercs",
+      "subject": "Street-facing chocolate shop window on cobbled Metz street, yellow Jaumont stone facade reflected, evening passersby soft blur",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Boutique rue des Clercs"
+        }
+      ]
+    }
+  ]
+}

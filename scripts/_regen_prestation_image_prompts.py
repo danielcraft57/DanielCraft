@@ -15,7 +15,7 @@ PALETTE = (
     "(Google/WhatsApp as generic shapes only). No text logos."
 )
 
-# Rotating visual styles — product-first, still on-brand
+# Rotating visual styles - product-first, still on-brand
 STYLES = [
     "Photorealistic e-commerce product hero on a clean white seamless, soft studio light, subtle navy rim light, catalog quality",
     "Soft isometric 3D product diorama on a mint-to-ice gradient podium, clean soft shadows, marketplace packshot",
@@ -112,7 +112,7 @@ for it in items:
         by_cat.setdefault(cid or "other", []).append(it)
 
 lines: list[str] = []
-lines.append("# Prompts images — catalogue prestations & packs")
+lines.append("# Prompts images - catalogue prestations & packs")
 lines.append("")
 lines.append("A generer (JPG/WebP **produit** : 1200x630 cartes, 800x800 ou 4:3 fiche hero).")
 lines.append("Palette site : navy `#0f3550`, ciel `#4da9d6`, mint `#7dd4a8`, fond clair `#e8f6fc` / blanc.")
@@ -196,7 +196,7 @@ lines.append(
 )
 lines.append("")
 lines.append("## Notes generation")
-lines.append("- Eviter logos de marques protegees (WhatsApp, Google) — formes generiques.")
+lines.append("- Eviter logos de marques protegees (WhatsApp, Google) - formes generiques.")
 lines.append("- Preferer UI sans texte lisible.")
 lines.append("- Une fois generes : pointer `image` dans `prestations.json` vers le JPG (pas SVG) pour activer le hero fiche.")
 lines.append("- Pour les cadres hub : optionnellement `categories[].image` dans prestations.json.")

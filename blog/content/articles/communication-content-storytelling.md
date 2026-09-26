@@ -58,7 +58,7 @@ Le fond reste le meme, la forme change :
 - **Article de blog** : recit developpe avec citations et details
 - **Post reseau social** : version courte, accroche forte, une seule idee
 - **Presentation orale** : anecdote d'ouverture, puis chiffres cles
-- **Video** : images, voix, rythme — montrer plutot qu'enumerer
+- **Video** : images, voix, rythme - montrer plutot qu'enumerer
 
 Un cas client complet peut devenir une serie de trois posts, un extrait pour une newsletter et un slide pour un salon. Pense aussi au fil narratif de ta marque : les memes valeurs (proximite, rigueur, innovation) peuvent revenir dans plusieurs histoires differentes. Cette repetition maitrisee renforce ta memorisation sans lasser, a condition que chaque recit apporte un angle neuf.
 

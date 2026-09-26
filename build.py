@@ -30,7 +30,7 @@ import builtins
 BASE_DIR = Path(__file__).parent
 SRC_DIR = BASE_DIR / 'src'
 INCLUDES_DIR = SRC_DIR / 'includes'
-# Includes réécrits à chaque build_page — ne pas les surveiller (sinon boucle watch).
+# Includes réécrits à chaque build_page - ne pas les surveiller (sinon boucle watch).
 GENERATED_INCLUDE_NAMES = frozenset({
     'home-vitrines-teaser.html',
     'vitrines-page-collection.html',
@@ -45,7 +45,7 @@ GENERATED_INCLUDE_NAMES = frozenset({
     'echantillons-deal-week.html',
 })
 
-# Journal mode watch (horodaté + fichier) — voir --watch / serve_dev.ps1
+# Journal mode watch (horodaté + fichier) - voir --watch / serve_dev.ps1
 WATCH_LOG_DIR = BASE_DIR / 'logs'
 WATCH_LOG_PATH = WATCH_LOG_DIR / 'watch_dev.log'
 _watch_log_fp: Optional[TextIO] = None
@@ -124,7 +124,7 @@ def teardown_watch_logging() -> None:
 
 
 def _write_text_if_changed(path: Path, content: str, encoding: str = 'utf-8') -> bool:
-    """Écrit seulement si le contenu change — évite des events watchdog inutiles sous Windows."""
+    """Écrit seulement si le contenu change - évite des events watchdog inutiles sous Windows."""
     try:
         if path.exists() and path.read_text(encoding=encoding) == content:
             return False
@@ -147,7 +147,7 @@ ECHANTILLONS_DEAL_WEEK_JSON = DATA_DIR / 'echantillons-deal-week.json'
 LIVRES_JSON = DATA_DIR / 'livres.json'
 AUDITS_JSON = DATA_DIR / 'audits.json'
 READMES_DIR = DATA_DIR / 'readmes'
-# Sources vitrines (anciennement showcase/) — publiées sous /echantillons/ au build
+# Sources vitrines (anciennement showcase/) - publiées sous /echantillons/ au build
 VITRINES_DEMOS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'demos'
 VITRINES_SCREENSHOTS_SRC = BASE_DIR / 'assets' / 'vitrines' / 'screenshots'
 # Terme public Grand Est : échantillons (pas l'offre « site vitrine »)
@@ -313,7 +313,7 @@ OG_PAGE_FILE_SLUGS = {
 
 # Variables par défaut
 DEFAULT_VARS = {
-    'page_title': 'DanielCraft — Sites vitrines & visibilité web | Metz',
+    'page_title': 'DanielCraft - Sites vitrines & visibilité web | Metz',
     'page_description': 'Sites clairs, visibilité Google et assistants intelligents pour artisans et commerces. Devis par e-mail, Metz & Lorraine.',
     'page_keywords': 'site vitrine Metz, visibilité Google, création site internet, assistant IA site web, DanielCraft Lorraine',
     'page_robots': 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
@@ -542,7 +542,7 @@ _DEMO_PROTECTION_MARKER = 'danielcraft-demo-protection'
 def _inject_demo_protection(html: str) -> str:
     """
     Injecte meta robots + bandeau demo (shared/demo-protection.*) dans chaque HTML
-    publie sous vitrines/<slug>/demo/. Dissuasion legere — pas une barriere technique absolue.
+    publie sous vitrines/<slug>/demo/. Dissuasion legere - pas une barriere technique absolue.
     Chemins en ../../shared/ (profondeur demo/ depuis dist/devantures/<slug>/demo/).
     """
     if _DEMO_PROTECTION_MARKER in html:
@@ -653,14 +653,14 @@ def generate_robots_txt(output_dir: Path) -> None:
     """
     Genere robots.txt dans dist/ avec des URLs basees sur SITE_BASE.
 
-    Ca evite de versionner un domaine "reel" dans le repo, tout en ayant des
+    Ca evite de versionner un domaine "réel" dans le repo, tout en ayant des
     sitemaps absolus corrects au moment du build/deploiement.
     """
     base = SITE_BASE.rstrip('/')
     demo_disallows: List[str] = []
     vdata = load_vitrines()
     if vdata and vdata.get('items'):
-        demo_disallows.append('# Dossiers /echantillons/<slug>/demo/ (HTML de demonstration — pas d’indexation)')
+        demo_disallows.append('# Dossiers /echantillons/<slug>/demo/ (HTML de demonstration - pas d’indexation)')
         for it in vdata['items']:
             slug = (it.get('slug') or '').strip()
             if slug:
@@ -687,7 +687,7 @@ def generate_robots_txt(output_dir: Path) -> None:
         "Allow: /assets/\n"
         "\n"
         + demo_block
-        + "# Echantillons (hub, fiches, captures — hors dossiers demo ci-dessus)\n"
+        + "# Echantillons (hub, fiches, captures - hors dossiers demo ci-dessus)\n"
         "Allow: /echantillons/\n"
     )
     (output_dir / 'robots.txt').write_text(content, encoding='utf-8')
@@ -699,7 +699,7 @@ def generate_nginx_project_alias_redirects(output_dir: Path) -> None:
     if not aliases:
         return
     lines = [
-        '# Redirections 301 alias projets (genere par build.py — ne pas editer a la main)',
+        '# Redirections 301 alias projets (genere par build.py - ne pas editer a la main)',
     ]
     for alias_slug, canonical_slug in sorted(aliases.items()):
         if alias_slug == canonical_slug:
@@ -728,7 +728,7 @@ def _to_absolute_url(url_or_path: str) -> str:
     Règles :
     - si c'est deja une URL http(s), on la retourne telle quelle (mais on remplace
       l'eventuel domaine historique par SITE_BASE si on detecte '/assets/' ou un path local)
-    - si ca commence par '/', on prefixe avec SITE_BASE
+    - si ça commence par '/', on prefixe avec SITE_BASE
     - sinon, on prefixe avec SITE_BASE + '/'
     """
     if not url_or_path:
@@ -771,7 +771,7 @@ def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
     """
     Normalise `page_url` et `og_image` pour eviter les domaines en dur.
     """
-    # Canonical: si absent, on derive d'apres la page
+    # Canonical: si absent, on derive d'après la page
     page_url = vars_dict.get('page_url')
     if not page_url:
         if page_name == 'index':
@@ -798,7 +798,7 @@ def _normalize_page_meta(vars_dict: Dict, page_name: str) -> None:
     _apply_og_image_file_meta(vars_dict)
     title = str(vars_dict.get('page_title') or 'DanielCraft').strip()
     vars_dict['og_image_alt'] = _truncate_meta_text(
-        f"Visuel de partage DanielCraft — {title}", 200
+        f"Visuel de partage DanielCraft - {title}", 200
     )
 
 
@@ -847,7 +847,7 @@ def _render_project_alias_redirect_page(alias_slug: str, canonical_slug: str) ->
     """Page HTML legere : canonical + noindex + redirection client vers le slug canonique."""
     base = SITE_BASE.rstrip('/')
     target = f'{base}/projets/{canonical_slug}'
-    title = f'Redirection vers {canonical_slug} — DanielCraft'
+    title = f'Redirection vers {canonical_slug} - DanielCraft'
     return f'''<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -875,7 +875,7 @@ def _render_catalog_redirect_page() -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirection vers Nos offres — DanielCraft</title>
+  <title>Redirection vers Nos offres - DanielCraft</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{target}">
   <meta http-equiv="refresh" content="0;url={target}">
@@ -905,7 +905,7 @@ def _render_path_redirect_page(target_path: str, *, page_title: str, link_label:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{html.escape(page_title)} — DanielCraft</title>
+  <title>{html.escape(page_title)} - DanielCraft</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{target}">
   <meta http-equiv="refresh" content="0;url={target}">
@@ -930,13 +930,13 @@ def write_livres_legacy_redirects(output_dir: Path) -> None:
         ),
         encoding='utf-8',
     )
-    tel = out / 'telechargement'
+    tel = out / 'téléchargement'
     tel.mkdir(parents=True, exist_ok=True)
     (tel / 'index.html').write_text(
         _render_path_redirect_page(
-            '/bouquins/telechargement/',
-            page_title='Redirection telechargement',
-            link_label='Continuer vers le telechargement',
+            '/bouquins/téléchargement/',
+            page_title='Redirection téléchargement',
+            link_label='Continuer vers le téléchargement',
         ),
         encoding='utf-8',
     )
@@ -1007,7 +1007,7 @@ def _render_contact_redirect_page() -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirection vers Contact — DanielCraft</title>
+  <title>Redirection vers Contact - DanielCraft</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{base}/">
   <meta http-equiv="refresh" content="0;url={target}">
@@ -1116,7 +1116,7 @@ def _apply_og_image_file_meta(vars_dict: Dict) -> None:
 def _og_image_url_with_cache_bust(url: str) -> str:
     """
     Ajoute ?v=mtime sur les images OG locales pour invalider le cache Facebook/LinkedIn/X.
-    Recommande apres regeneration des visuels (referencement social).
+    Recommande après regeneration des visuels (referencement social).
     """
     raw = (url or '').strip()
     if not raw:
@@ -1237,7 +1237,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'retail': {
         'shots_title': 'Visuels commerce & drive prêts pour Google et les réseaux sociaux',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre montre une '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque cadre montre une '
             '<strong>capture pleine page</strong> (scrollable) comme vos clients la parcourent sur '
             '<strong>ordinateur</strong>, <strong>tablette</strong> et <strong>smartphone</strong>. '
             'Idéal pour rassurer sur le rendu en magasin virtuel et alimenter vos partages Meta ou LinkedIn. '
@@ -1246,7 +1246,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         'marketing_h2': 'Conversion commerce, rayons et prise de contact',
         'included': (
             'Une <strong>devanture web</strong> déjà structurée pour <strong>vendre en ligne</strong> : '
-            'offres, preuves, appels à l’action et parcours contact — vous remplacez les textes d’exemple par '
+            'offres, preuves, appels à l’action et parcours contact - vous remplacez les textes d’exemple par '
             'les vôtres pour <strong>__TITLE__</strong> et vos visuels produits. Parfait pour <strong>tester '
             'votre discours retail</strong> (drive, horaires, fidélité) avant d’industrialiser avec moi le '
             'tunnel d’acquisition, le paiement ou le back-office.'
@@ -1255,7 +1255,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'tech': {
         'shots_title': 'Visuels produit & SaaS prêts pour Google, LinkedIn et pitch deck',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre reproduit une '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque cadre reproduit une '
             '<strong>capture pleine page</strong> scrollable sur <strong>ordinateur</strong>, '
             '<strong>tablette</strong> et <strong>smartphone</strong>. Utile pour un post LinkedIn, une annonce '
             'Google ou une slide investisseur. Ouvrez la capture en plein écran ou parcourez la __DEMO__ '
@@ -1273,8 +1273,8 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'services': {
         'shots_title': 'Captures prêtes pour vendre vos prestations (Meta, LinkedIn, Google)',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les captures déroulent le parcours comme '
-            'chez un <strong>client B2B</strong> — offres, galerie, FAQ et prise de contact. Idéal pour rassurer '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les captures déroulent le parcours comme '
+            'chez un <strong>client B2B</strong> - offres, galerie, FAQ et prise de contact. Idéal pour rassurer '
             'sur le ton pro et alimenter vos campagnes. Ouvrez une capture en grand ou testez la __DEMO__ '
             'bout en bout.'
         ),
@@ -1290,7 +1290,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'hcr': {
         'shots_title': 'Visuels restauration prêts pour réseaux sociaux et réservation',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les cadres montrent le rendu '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les cadres montrent le rendu '
             '<strong>pleine page</strong> sur <strong>ordinateur</strong>, <strong>tablette</strong> et '
             '<strong>mobile</strong> : carte, ambiance, réservation. Parfait pour donner envie sur Instagram '
             'ou Meta et rassurer sur le site. Ouvrez la capture ou la __DEMO__ comme un convive.'
@@ -1306,7 +1306,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'formation': {
         'shots_title': 'Captures formation prêtes pour Google Ads et réseaux pros',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : chaque cadre présente une '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : chaque cadre présente une '
             '<strong>capture scrollable</strong> desktop / tablette / mobile pour montrer parcours, modules '
             'et confiance pédagogique. Ouvrez la capture en grand ou la __DEMO__ pour simuler l’inscription.'
         ),
@@ -1321,7 +1321,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'hotel': {
         'shots_title': 'Visuels hôtellerie prêts pour réservation et réseaux sociaux',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les captures pleine page montrent '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les captures pleine page montrent '
             'chambres, offres et <strong>parcours réservation</strong> sur tous les écrans. Idéal pour '
             'campagnes Google Hôtels ou posts Instagram. Ouvrez la capture ou la __DEMO__ comme un voyageur.'
         ),
@@ -1335,7 +1335,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'beaute': {
         'shots_title': 'Captures institut & spa prêtes pour Meta, Google et prise de RDV',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres scrollables montrent '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres scrollables montrent '
             'soins, ambiance et <strong>demande de rendez-vous</strong> sur desktop, tablette et mobile. '
             'Ouvrez la capture ou la __DEMO__ pour un parcours client réaliste.'
         ),
@@ -1349,7 +1349,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'mobilite': {
         'shots_title': 'Visuels garage & mobilité prêts pour Google Business et réseaux',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre montre une '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque cadre montre une '
             '<strong>capture pleine page</strong> : services, atelier et <strong>prise de RDV</strong>. '
             'Ouvrez la capture en grand ou la __DEMO__ comme un automobiliste.'
         ),
@@ -1364,7 +1364,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'artisanat': {
         'shots_title': 'Captures boutique artisanale prêtes pour réseaux sociaux et SEO local',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres pleine page valorisent '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres pleine page valorisent '
             'produits, origines et <strong>parcours commande</strong> sur tous les écrans. Ouvrez la capture '
             'ou la __DEMO__ pour simuler l’achat.'
         ),
@@ -1378,7 +1378,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'sante': {
         'shots_title': 'Visuels cabinet & santé prêts pour rassurer (web et réseaux)',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les captures scrollables montrent '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les captures scrollables montrent '
             'un parcours <strong>clair et rassurant</strong> sur ordinateur, tablette et mobile (tarifs, '
             'parcours patient, contact). Ouvrez la capture ou la __DEMO__ comme un patient.'
         ),
@@ -1393,7 +1393,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'finance': {
         'shots_title': 'Captures institutionnelles prêtes pour confiance et campagnes',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres pleine page montrent un '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres pleine page montrent un '
             'parcours <strong>sobre et structuré</strong> sur tous les écrans. Ouvrez la capture ou la '
             '__DEMO__ pour valider le ton institutionnel.'
         ),
@@ -1407,7 +1407,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'industrie': {
         'shots_title': 'Visuels industriels prêts pour B2B, Google et salons',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque cadre montre une '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque cadre montre une '
             '<strong>capture pleine page</strong> : capacités, qualité et <strong>demande de devis</strong>. '
             'Ouvrez la capture ou la __DEMO__ comme un donneur d’ordre.'
         ),
@@ -1421,7 +1421,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'conseil': {
         'shots_title': 'Captures cabinet conseil prêtes pour LinkedIn et prospection',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les captures scrollables présentent '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les captures scrollables présentent '
             'méthode, offres et <strong>prise de contact</strong> sur desktop, tablette et mobile. Ouvrez la '
             'capture ou la __DEMO__ pour un parcours dirigeant.'
         ),
@@ -1435,7 +1435,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'ess': {
         'shots_title': 'Visuels association prêts pour mobilisation et campagnes',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les cadres montrent mission, '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les cadres montrent mission, '
             'actions et <strong>engagement</strong> (dons, bénévolat) sur tous les écrans. Ouvrez la capture '
             'ou la __DEMO__ comme un sympathisant.'
         ),
@@ -1449,7 +1449,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'immobilier': {
         'shots_title': 'Visuels immobilier prêts pour mandats et réseaux sociaux',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque capture pleine page montre '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque capture pleine page montre '
             'biens, services et <strong>estimation</strong> sur desktop, tablette et mobile. Ouvrez la capture '
             'ou la __DEMO__ comme un vendeur ou un acquéreur.'
         ),
@@ -1463,7 +1463,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'juridique': {
         'shots_title': 'Captures cabinet prêtes pour LinkedIn et prospection B2B',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : parcours sobre expertises, méthode et '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : parcours sobre expertises, méthode et '
             '<strong>contact</strong> sur tous les écrans. Ouvrez la capture ou la __DEMO__ comme un dirigeant.'
         ),
         'marketing_h2': 'Expertises, méthode et prise de rendez-vous',
@@ -1476,7 +1476,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'architecture': {
         'shots_title': 'Visuels atelier prêts pour concours et portfolios',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — les cadres scrollables valorisent '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les cadres scrollables valorisent '
             'projets et <strong>approche</strong> sur tous les écrans. Ouvrez la capture ou la __DEMO__ '
             'comme un maître d’ouvrage.'
         ),
@@ -1490,7 +1490,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'sport': {
         'shots_title': 'Captures salle de sport prêtes pour inscription et réseaux',
         'shots_lead': (
-            '<strong>__TITLE__</strong> — <strong>__TAG__</strong> : les cadres montrent cours, tarifs et '
+            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres montrent cours, tarifs et '
             '<strong>essai gratuit</strong> sur desktop, tablette et mobile. Ouvrez la capture ou la __DEMO__ '
             'comme un futur adhérent.'
         ),
@@ -1504,7 +1504,7 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
     'creatif': {
         'shots_title': 'Visuels portfolio prêts pour réseaux et book client',
         'shots_lead': (
-            'Pour <strong>__TITLE__</strong> — <strong>__TAG__</strong> — chaque capture pleine page met en '
+            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque capture pleine page met en '
             'scène votre <strong>portfolio</strong> et vos prestations sur tous les écrans. Ouvrez la capture '
             'ou la __DEMO__ comme un client en recherche de photographe.'
         ),
@@ -1567,7 +1567,7 @@ def _vitrine_body_copy(it: Dict[str, Any], price: int, demo_rel_url: str) -> Dic
         delivery_html = (
             '<div class="vitrine-detail-note box-soft vitrine-prose">'
             '<p><strong>Livraison & visibilité</strong> : <strong>fichiers sources</strong> prêts à '
-            'héberger — <strong>aucune base de données</strong> requise. Les formulaires sont des '
+            'héberger - <strong>aucune base de données</strong> requise. Les formulaires sont des '
             '<strong>exemples</strong> (branchement e-mail ou CRM sur devis). Les captures de cette '
             f'fiche illustrent le rendu pour <strong>{title_e}</strong> ; elles peuvent être régénérées après '
             'vos contenus définitifs. Pour installation, domaine ou hébergement, utilisez le bloc à droite ou '
@@ -1576,7 +1576,7 @@ def _vitrine_body_copy(it: Dict[str, Any], price: int, demo_rel_url: str) -> Dic
         )
 
     seo_line = (
-        f'Démo live et visuels multi-écrans — un échantillon pour vous projeter, sans achat de modèle.'
+        f'Démo live et visuels multi-écrans - un échantillon pour vous projeter, sans achat de modèle.'
     )
 
     return {
@@ -1613,8 +1613,8 @@ def _build_vitrine_seo_bundle(
     if custom_title:
         page_title = _truncate_meta_text(custom_title + suffix, 70)
     else:
-        # Titre complet (nom du modèle lisible dans l’onglet) — pas de troncature au milieu du nom.
-        compact = f'{title} — {cat_label}{suffix}'
+        # Titre complet (nom du modèle lisible dans l’onglet) - pas de troncature au milieu du nom.
+        compact = f'{title} - {cat_label}{suffix}'
         if len(compact) <= 70:
             page_title = compact
         else:
@@ -1626,7 +1626,7 @@ def _build_vitrine_seo_bundle(
     desc = custom_desc or (
         f'{excerpt} '
         f'Démo interactive + captures desktop, tablette et mobile. '
-        f'Échantillon {stack_bits} pour se projeter — DanielCraft, Grand Est.'
+        f'Échantillon {stack_bits} pour se projeter - DanielCraft, Grand Est.'
     )
     page_description = _truncate_meta_text(desc, 158)
 
@@ -1652,20 +1652,20 @@ def _build_vitrine_seo_bundle(
     page_keywords = _truncate_meta_text(', '.join(kw_unique), 280)
 
     vitrine_og_image_alt = _truncate_meta_text(
-        f'{title} — secteur {cat_label} : capture pleine page desktop (partage LinkedIn, Facebook, Google).',
+        f'{title} - secteur {cat_label} : capture pleine page desktop (partage LinkedIn, Facebook, Google).',
         190,
     )
     ow, oh, _om = _og_image_file_meta(og_image_abs)
     vitrine_img_alt_desktop = _truncate_meta_text(
-        f'Maquette « {title} » — capture desktop scrollable, secteur {cat_label}, blocs conversion.',
+        f'Maquette « {title} » - capture desktop scrollable, secteur {cat_label}, blocs conversion.',
         130,
     )
     vitrine_img_alt_tablet = _truncate_meta_text(
-        f'« {title} » — rendu tablette, navigation et offres mises en avant.',
+        f'« {title} » - rendu tablette, navigation et offres mises en avant.',
         130,
     )
     vitrine_img_alt_mobile = _truncate_meta_text(
-        f'« {title} » — version mobile, lisibilité et prise de contact rapide.',
+        f'« {title} » - version mobile, lisibilité et prise de contact rapide.',
         130,
     )
 
@@ -1771,7 +1771,7 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
     demos_src = VITRINES_DEMOS_SRC
     shots_src = VITRINES_SCREENSHOTS_SRC
     if not demos_src.is_dir():
-        print('[WARN] assets/vitrines/demos absent — devantures statiques non publiees')
+        print('[WARN] assets/vitrines/demos absent - devantures statiques non publiees')
         return
     out = output_dir / DEVANTURES_SLUG
     out.mkdir(parents=True, exist_ok=True)
@@ -1787,7 +1787,7 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
     if hub_tpl.is_file():
         hub_text = hub_tpl.read_text(encoding='utf-8')
         hub_text = re.sub(r'href="([a-z]+)/index.html"', r'href="\1/demo/index.html"', hub_text)
-        hub_text = hub_text.replace('ÔÇö', '—')
+        hub_text = hub_text.replace('ÔÇö', '-')
         hub_text = hub_text.replace('/vitrines/', '/echantillons/')
         # Index racine réservé à la page catalogue DanielCraft (générée après copie).
         (out / 'hub-bulma.html').write_text(hub_text, encoding='utf-8')
@@ -2104,7 +2104,7 @@ def build_echantillons_deal_week_embed(data: Optional[Dict[str, Any]] = None) ->
 
 
 def build_vitrines_page_collection_embed() -> None:
-    """Fragment catalogue (grille) pour la page /echantillons/ — theme DanielCraft."""
+    """Fragment catalogue (grille) pour la page /echantillons/ - theme DanielCraft."""
     data = load_vitrines()
     path_out = INCLUDES_DIR / 'vitrines-page-collection.html'
     if not data or not data.get('items'):
@@ -2308,7 +2308,7 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         mob = d_mob or d_desk or fallback
         og_desk = _resolve_generated_og(slug, a_desk or fallback, subdir='vitrines')
         title = (it.get('title') or slug).strip()
-        mail_subj = quote(f'Echantillon — {title}')
+        mail_subj = quote(f'Echantillon - {title}')
         page_url_abs = _to_absolute_url(devantures_url(slug))
         shot_desk_abs = _to_absolute_url(a_desk or fallback)
         shot_tab_abs = _to_absolute_url(_a_tab or a_desk or fallback)
@@ -2613,7 +2613,7 @@ def _prestation_year1_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> str
     )
     return (
         '<div class="prestation-buybox-year1">'
-        '<p class="prestation-buybox-year1-title">Sur le devis année 1</p>'
+        '<p class="prestation-buybox-year1-title">Sur le devis de la première année</p>'
         f'<ul class="prestation-buybox-year1-list">{rows}</ul>'
         f'<p class="prestation-buybox-year1-total">+ {html.escape(str(total))} € HT '
         f'(hébergement / mail / suivi)</p>'
@@ -2721,7 +2721,7 @@ def _prestation_card_html(
     featured_hero: bool = False,
     index: Optional[int] = None,
 ) -> str:
-    """Carte catalogue style offres-tier (média, avant/après, devis — carte cliquable)."""
+    """Carte catalogue style offres-tier (média, avant/après, devis - carte cliquable)."""
     slug = (item.get('slug') or '').strip()
     title_raw = (item.get('title') or slug).strip()
     title = html.escape(title_raw)
@@ -2775,9 +2775,10 @@ def _prestation_card_html(
             f' aria-label="Voir la fiche {title}"></a>'
         )
 
+    # Pas d'heures empilees sur les packs (creation + suivi mensuel != un forfait unique).
     hint_bits: List[str] = []
     duration = _prestation_duration_label(item)
-    if duration:
+    if duration and kind != 'pack':
         hint_bits.append(html.escape(duration))
     hint_html = (
         f'<p class="offres-tier__hint">{" · ".join(hint_bits)}</p>' if hint_bits else ''
@@ -3744,7 +3745,7 @@ def _prestation_faq_entries(
             "Cette offre fait-elle partie d'un pack ?",
             (
                 f"Oui : vous la retrouvez dans {names}. "
-                f"Le pack coute souvent moins cher qu'a l'unite - voir {links_hint}."
+                f"Le pack coûte souvent moins cher qu'à l'unité - voir {links_hint}."
             ),
         )
 
@@ -3770,22 +3771,22 @@ def _prestation_faq_entries(
             'Comment obtenir un devis ?',
             (
                 "Cliquez sur Demander un devis sur cette page : vous recevez un PDF par e-mail, "
-                "sans engagement. On precise ensuite le planning ensemble."
+                "sans engagement. On précise ensuite le planning ensemble."
             ),
         )
 
     if duration:
         duration_plain = duration.replace("d'intervention", 'de travail')
         add(
-            'Combien de temps ca prend ?',
+            'Combien de temps ça prend ?',
             (
                 f"Compte environ {duration_plain}. "
-                "Le delai calendaire depend de vos retours (textes, acces, validations)."
+                "Le délai calendaire dépend de vos retours (textes, accès, validations)."
             ),
         )
     else:
         add(
-            'Combien de temps ca prend ?',
+            'Combien de temps ça prend ?',
             (
                 "On fixe un planning clair sur le devis. En general, quelques jours a quelques "
                 "semaines selon le perimetre et vos retours."
@@ -3802,7 +3803,7 @@ def _prestation_faq_entries(
         )
 
     add(
-        "C'est adapte a mon commerce / mon activite ?",
+        "C'est adapte a mon commerce / mon activité ?",
         (
             f'Oui, on adapte "{title}" a votre metier (textes, visuels, parcours). '
             "Si ce n'est pas le bon format, on vous le dit franchement avant de facturer."
@@ -3810,9 +3811,9 @@ def _prestation_faq_entries(
     )
 
     add(
-        'Que se passe-t-il apres la livraison ?',
+        'Que se passe-t-il après la livraison ?',
         (
-            "Vous gardez les acces et les consignes. Pour un suivi mensuel ou des retouches, "
+            "Vous gardez les accès et les consignes. Pour un suivi mensuel ou des retouches, "
             "il y a des forfaits entretien et des options a l'heure."
         ),
     )
@@ -4190,7 +4191,7 @@ def _livre_card_visual_html(item: Dict[str, Any], catalog: Dict[str, Any]) -> st
     if cover:
         pic = _picture_img_html(
             cover,
-            alt=f'Couverture — {title}',
+            alt=f'Couverture - {title}',
             class_name='livre-card-cover',
             loading='lazy',
             width=210,
@@ -4242,7 +4243,7 @@ def _livre_detail_visual_html(item: Dict[str, Any]) -> str:
     if cover:
         pic = _picture_img_html(
             cover,
-            alt=f'Couverture — {title}',
+            alt=f'Couverture - {title}',
             class_name='livre-detail-cover',
             loading='eager',
             width=360,
@@ -4306,7 +4307,7 @@ def _livre_card_html(
         actions = (
             f'<div class="prestation-card-actions">'
             f'<a href="{dl}" class="service-cta service-cta--download" download>'
-            f'<span>Telecharger</span>'
+            f'<span>Télécharger</span>'
             f'<i class="fas fa-download" aria-hidden="true"></i></a>'
             f'<a href="{cta_href}" class="livre-card-fiche">Voir la fiche</a>'
             f'</div>'
@@ -4451,7 +4452,7 @@ def build_livres_deal_week_embed(data: Optional[Dict[str, Any]] = None) -> None:
         <span class="livres-deal-price">{price}&nbsp;€ <small>TTC</small></span>
         {save_html}
       </p>
-      <p class="livres-deal-meta">{n_books} PDF · envoi e-mail apres paiement</p>
+      <p class="livres-deal-meta">{n_books} PDF - envoi e-mail après paiement</p>
       <a class="btn btn-primary btn-large livres-deal-cta" href="/bouquins/{html.escape(slug)}/">
         <span>{cta}</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -4519,10 +4520,10 @@ def build_livres_catalog_embed() -> None:
         parts.append(
             '<section class="prestations-featured livres-free-shelf" aria-labelledby="livres-free-title">'
             '<h2 id="livres-free-title" class="prestations-section-title">'
-            '<i class="fas fa-gift" aria-hidden="true"></i> A gouter gratuitement</h2>'
+            '<i class="fas fa-gift" aria-hidden="true"></i> A goûter gratuitement</h2>'
             '<p class="prestations-featured-lead">'
             "Comme au marche : tu goutes avant de remplir le cornet. "
-            "PDF a telecharger tout de suite, sans paiement."
+            "PDF à télécharger tout de suite, sans paiement."
             '</p>'
             f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
             '</section>'
@@ -4536,7 +4537,7 @@ def build_livres_catalog_embed() -> None:
             '<h2 id="livres-featured-title" class="prestations-section-title">'
             '<i class="fas fa-star" aria-hidden="true"></i> Pour commencer</h2>'
             '<p class="prestations-featured-lead">'
-            "Livre a 0,50&nbsp;€ — packs moins cher qu'a l'unite (remise volume)."
+            "Livre à 0,50&nbsp;€ - packs moins cher qu'à l'unité (remise volume)."
             '</p>'
             f'<div class="services-grid prestations-grid prestations-grid--featured">{cards}</div>'
             '</section>'
@@ -4769,25 +4770,25 @@ def _build_livre_seo_bundle(
     if is_free:
         promo_html = (
             '<aside class="prestation-promo prestation-promo--free" role="note">'
-            '<strong>Gratuit</strong> - PDF a telecharger tout de suite, sans paiement. '
-            "Tu goutes, tu vois si ca te parle."
+            '<strong>Gratuit</strong> - PDF à télécharger tout de suite, sans paiement. '
+            "Tu goutes, tu vois si ça te parle."
             '</aside>'
         )
-        page_title = f'{title} — livre PDF gratuit DanielCraft'
-        extra_kw = ['livre PDF gratuit', 'telecharger PDF', 'DanielCraft']
+        page_title = f'{title} - livre PDF gratuit DanielCraft'
+        extra_kw = ['livre PDF gratuit', 'télécharger PDF', 'DanielCraft']
         price_eur = '0'
         price_note = html.escape(
-            (item.get('price_note') or 'PDF a telecharger tout de suite - sans paiement').strip()
+            (item.get('price_note') or 'PDF à télécharger tout de suite - sans paiement').strip()
         )
         price_label = html.escape((item.get('price_label') or 'Gratuit').strip())
     else:
         promo_html = (
             '<aside class="prestation-promo" role="note">'
-            f"<strong>Prix d'appel</strong> — {html.escape(price_disp)}&nbsp;€ TTC. "
-            'PDF envoye par e-mail apres paiement securise.'
+            f"<strong>Prix d'appel</strong> - {html.escape(price_disp)}&nbsp;€ TTC. "
+            'PDF envoyé par e-mail après paiement sécurisé.'
             '</aside>'
         )
-        page_title = f'{title} — livre PDF DanielCraft'
+        page_title = f'{title} - livre PDF DanielCraft'
         extra_kw = ['livre formation PDF', 'DanielCraft']
         price_eur = str(
             item.get('price_eur')
@@ -4795,7 +4796,7 @@ def _build_livre_seo_bundle(
             else catalog.get('default_price_eur', 0.5)
         )
         price_note = html.escape(
-            (item.get('price_note') or 'TTC — PDF envoye par e-mail apres paiement').strip()
+            (item.get('price_note') or 'TTC - PDF envoyé par e-mail après paiement').strip()
         )
         price_label = html.escape((item.get('price_label') or "Prix d'appel").strip())
     return {
@@ -4892,7 +4893,7 @@ def build_livre_pages(template_engine: TemplateEngine, output_dir: Path) -> List
         vars_dict['og_image'] = _og_image_url_with_cache_bust(og_image_abs)
         _apply_og_image_file_meta(vars_dict)
         vars_dict['og_image_alt'] = _truncate_meta_text(
-            f'{title} — livre PDF DanielCraft',
+            f'{title} - livre PDF DanielCraft',
             110,
         )
         vars_dict['page_scripts_content'] = build_page_scripts_content(
@@ -4929,7 +4930,7 @@ def _bouquins_sitemap_search_queries() -> List[str]:
         if cid:
             queries.append(cid)
     for q in (
-        'python', 'javascript', 'sql', 'git', 'ia', 'securite', 'finance',
+        'python', 'javascript', 'sql', 'git', 'ia', 'sécurité', 'finance',
         'agile', 'scrum', 'pack', 'commerce', 'marketing', 'dropshipping',
         'gratuit',
     ):
@@ -5496,7 +5497,7 @@ def main():
             print(f"[WARN] Argument ignore : {arg}")
             i += 1
         elif arg.startswith('-') and not arg.startswith('--'):
-            # Ex. -no-webp mal passe par PowerShell — ne pas builder une page "-" / "p"
+            # Ex. -no-webp mal passe par PowerShell - ne pas builder une page "-" / "p"
             if 'no-webp' in arg or arg in ('-n', '-w'):
                 skip_webp = True
             else:
@@ -5529,7 +5530,7 @@ def main():
     # Copie les assets dans le dossier de sortie
     assets_src = BASE_DIR / 'assets'
     assets_dst = OUTPUT_DIR / 'assets'
-    # Normalise les JPEG OG (1200×630 réels) avant sync — requis Meta / Messenger
+    # Normalise les JPEG OG (1200×630 réels) avant sync - requis Meta / Messenger
     _normalize_script = BASE_DIR / 'scripts' / 'normalize_og_images.py'
     if _normalize_script.is_file() and assets_src.is_dir():
         import subprocess
@@ -5563,7 +5564,7 @@ def main():
     generate_nginx_project_alias_redirects(OUTPUT_DIR)
     print("[OK] robots.txt genere")
 
-    # Sitemaps : generes apres le build du blog (voir plus bas)
+    # Sitemaps : generes après le build du blog (voir plus bas)
     
     # Copie manifest.json et browserconfig.xml à la racine
     # manifest.json peut être référencé depuis n'importe où, mais on le met à la racine pour simplicité
@@ -5642,7 +5643,7 @@ def main():
         'statistiques',
         'analyse',
         'audit',
-        'bouquins-telechargement',
+        'bouquins-téléchargement',
         'desabonnement',
         'mentions-legales',
         'cgv',
@@ -5847,7 +5848,7 @@ def main():
                     if src.name == 'build.py' and src_resolved == self._build_py:
                         if self._is_debounced('__build_py_restart__', delay_s=1.0):
                             return
-                        print("\n[WATCH] build.py modifie — redemarrage pour charger le nouveau code...")
+                        print("\n[WATCH] build.py modifie - redemarrage pour charger le nouveau code...")
                         self.restart_requested = True
                         return
 
@@ -5941,7 +5942,7 @@ def main():
             observer.schedule(event_handler, str(SRC_DIR.resolve()), recursive=True)
             if assets_src.exists():
                 observer.schedule(event_handler, str(assets_src.resolve()), recursive=True)
-            # build.py est à la racine (hors src/) — nécessaire pour recharger le code
+            # build.py est à la racine (hors src/) - nécessaire pour recharger le code
             observer.schedule(event_handler, str(BASE_DIR.resolve()), recursive=False)
             observer.start()
             print("[WATCH] Observer actif (src/, assets/, build.py).")
@@ -5958,7 +5959,7 @@ def main():
                     # Sous serve_dev.ps1 : exit 75 → le script PowerShell relance.
                     # En standalone : spawn + exit (os.execv est fragile sous Windows).
                     if os.environ.get('DANIELCRAFT_WATCH_SUPERVISOR') == '1':
-                        print("[WATCH] Sortie 75 — superviseur (serve_dev) va relancer.")
+                        print("[WATCH] Sortie 75 - superviseur (serve_dev) va relancer.")
                         sys.exit(75)
                     print(f"[WATCH] Relance process: {' '.join(argv)}")
                     import subprocess

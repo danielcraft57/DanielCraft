@@ -1,6 +1,6 @@
 <?php
 /**
- * Webhook Stripe — checkout.session.completed (audit premium / livre PDF).
+ * Webhook Stripe - checkout.session.completed (audit premium / livre PDF).
  */
 
 declare(strict_types=1);

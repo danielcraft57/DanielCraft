@@ -1,4 +1,4 @@
-/* Spa Thalie — maquette M3 (hero split, soins phares, FAB) */
+/* Spa Thalie - maquette M3 (hero split, soins phares, FAB) */
 :root {
   --vt-cream: #faf6f2;
   --vt-surface: #ffffff;
@@ -19,6 +19,7 @@
   --bs-link-color: var(--vt-blush);
   --bs-link-hover-color: var(--vt-blush-deep);
   --bs-border-radius-lg: var(--vt-radius);
+  --vt-accent: var(--vt-blush);
 }
 
 body.vt-body-spa {

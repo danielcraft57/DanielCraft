@@ -1,6 +1,6 @@
 <?php
 /**
- * Audit premium après paiement Stripe — vérifie la session, facture Prestafacture, lance l’audit complet.
+ * Audit premium après paiement Stripe - vérifie la session, facture Prestafacture, lance l'audit complet.
  *
  * POST JSON : website, email, stripe_session_id (requis), company (honeypot)
  */
@@ -84,9 +84,9 @@ if (!$fulfill['ok']) {
 
 $message = 'Merci ! Votre commande est finalisée : facture enregistrée et audit complet lancé.';
 if ($fulfill['invoice_ok'] && $fulfill['audit_ok']) {
-    $message = 'Merci ! Facture émise dans Prestafacture, audit complet en cours — emails sous 24 h ouvrées.';
+    $message = 'Merci ! Facture émise dans Prestafacture, audit complet en cours - emails sous 24 h ouvrées.';
 } elseif ($fulfill['invoice_ok'] && !$fulfill['audit_ok']) {
-    $message = 'Facture enregistrée. L’audit n’a pas démarré : contact@danielcraft.fr avec votre email.';
+    $message = 'Facture enregistrée. L'audit n'a pas démarré : contact@danielcraft.fr avec votre email.';
 } elseif (!$fulfill['invoice_ok'] && $fulfill['audit_ok']) {
     $message = 'Votre audit complet est en cours. Vous recevrez le rapport par email.';
 }

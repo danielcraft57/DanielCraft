@@ -1,7 +1,7 @@
 ---
 title: "Plugins Claude finance : utiles, mais a verifier"
 date: 2026-06-02
-excerpt: "Des extensions pour aller plus vite sur des taches finance — sans remplacer un pro."
+excerpt: "Des extensions pour aller plus vite sur des taches finance - sans remplacer un pro."
 type: tutorial
 tags: [IA, Claude, Anthropic, productivite]
 og_image: ia-claude-nouveaux-plugins-claude-pour-la-finance-les-plugins-prennent-5-min-1200x630.jpg

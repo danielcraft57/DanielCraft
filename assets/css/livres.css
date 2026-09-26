@@ -1,4 +1,4 @@
-/* Pages catalogue & fiches livres de formation — rayonnage e-commerce */
+/* Pages catalogue & fiches livres de formation - rayonnage e-commerce */
 
 .page-livres {
   --livre-ink: #0f3550;
@@ -833,7 +833,7 @@
   }
 }
 
-/* Fiche livre — hero produit */
+/* Fiche livre - hero produit */
 .livre-detail-root .prestation-detail-hero {
   padding: calc(5rem + 0.75rem) 0 2rem;
   overflow: visible;
@@ -1029,7 +1029,7 @@
   }
 }
 
-/* Fiche livre — desktop XL (aligné audit : container 1360px) */
+/* Fiche livre - desktop XL (aligné audit : container 1360px) */
 @media (min-width: 1400px) {
   .livre-detail-root .prestation-detail-hero .container,
   .livre-detail-root .prestation-detail-body .container {

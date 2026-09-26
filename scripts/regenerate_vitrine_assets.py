@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Regénère démos, visuels uniques et typo — pipeline complet vitrines."""
+"""Regénère démos, visuels uniques et typo - pipeline complet vitrines."""
 
 from __future__ import annotations
 
@@ -52,7 +52,7 @@ def main() -> None:
 
         subprocess.run(cmd, cwd=str(ROOT), check=True)
 
-    print("\n[OK] Pipeline vitrines terminé — lancez : python build.py")
+    print("\n[OK] Pipeline vitrines terminé - lancez : python build.py")
 
 
 

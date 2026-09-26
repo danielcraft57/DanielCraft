@@ -94,7 +94,7 @@ def resto():
     tail = [
         '            <div class="column is-6 vitrine-img-reveal">',
         f'              <figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken {MC} mb-0">',
-        '                <a href="images/hero.svg" class="glightbox" data-gallery="resto-visuels" data-glightbox="title: Brasserie — illustration">',
+        '                <a href="images/hero.svg" class="glightbox" data-gallery="resto-visuels" data-glightbox="title: Brasserie - illustration">',
         '                  <img src="images/resto-salle.png" width="1200" height="675" alt="Salle de la brasserie" decoding="async" fetchpriority="high">',
         "                </a>",
         "              </figure>",
@@ -182,7 +182,7 @@ def beaute():
         '            <div class="column is-6">',
         '              <p class="beaute-eyebrow has-text-beaute-rose mb-3">Metz centre · institut &amp; spa</p>',
         '              <p class="title is-1 has-text-white"><i class="fa-solid fa-wand-magic-sparkles mr-3 has-text-beaute-rose" aria-hidden="true"></i>Soins visage · corps · spa</p>',
-        '              <p class="subtitle is-4 has-text-white-ter">Spa Thalie — équipes diplômées, cabines doubles et rituels bien-être sur rendez-vous.</p>',
+        '              <p class="subtitle is-4 has-text-white-ter">Spa Thalie - équipes diplômées, cabines doubles et rituels bien-être sur rendez-vous.</p>',
         '              <p class="subtitle is-6 has-text-white-ter mt-4">Produits partenaires, ambiance feutrée et politique d’annulation 24&nbsp;h.</p>',
         '              <div class="buttons mt-5">',
         '                <a class="button is-warning is-medium" href="#soins"><span class="icon"><i class="fa-solid fa-list" aria-hidden="true"></i></span><span>Carte des soins</span></a>',
@@ -190,7 +190,7 @@ def beaute():
         "              </div>",
         "            </div>",
     ]
-    hero = "\n".join(left + col_fig_ok("beaute-visuels", "beaute-spa.png", "hero.svg", "Cabine spa Thalie", "Spa — illustration"))
+    hero = "\n".join(left + col_fig_ok("beaute-visuels", "beaute-spa.png", "hero.svg", "Cabine spa Thalie", "Spa - illustration"))
     inject(
         "beaute",
         hero,
@@ -224,7 +224,7 @@ def association():
             "mission-benevoles.png",
             "hero.svg",
             "Bénévoles Solidarités Metz",
-            "Association — illustration",
+            "Association - illustration",
         )
     )
     inject(
@@ -245,7 +245,7 @@ def industrie():
         '            <div class="column is-6">',
         '              <p class="ind-eyebrow has-text-warning mb-3">Saint-Avold · usinage de précision</p>',
         '              <p class="title is-1 has-text-warning">Usinage &amp; assemblage</p>',
-        '              <p class="subtitle is-4 has-text-grey-lighter">Pièces unitaires et petites séries — prototypage express et contrôle qualité intégré.</p>',
+        '              <p class="subtitle is-4 has-text-grey-lighter">Pièces unitaires et petites séries - prototypage express et contrôle qualité intégré.</p>',
         '              <p class="subtitle is-6 has-text-grey mt-4">De l’étude à la série, accompagnement technique et délais maîtrisés.</p>',
         '              <div class="buttons mt-5">',
         '                <a class="button is-warning is-medium" href="#prestations">Voir les prestations</a>',
@@ -260,7 +260,7 @@ def industrie():
             "ligne-production.png",
             "hero.svg",
             "Ligne de production Mécano-Precision",
-            "Usine — illustration",
+            "Usine - illustration",
         )
     )
     inject(

@@ -1,7 +1,7 @@
 ---
 title: "GitHub Actions : une recette automatique pour ton projet"
 date: 2025-03-18
-excerpt: "Un workflow simple : tester, construire, deployer — explique sans jargon."
+excerpt: "Un workflow simple : tester, construire, deployer - explique sans jargon."
 type: article
 tags: [CI/CD, GitHub Actions, Docker, DevOps, déploiement]
 series: ci-cd-serie

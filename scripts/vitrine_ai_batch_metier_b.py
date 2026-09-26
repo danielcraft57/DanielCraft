@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Batch B — 9 vitrines métier Grand Est (designs uniques via write_ai_site)."""
+"""Batch B - 9 vitrines métier Grand Est (designs uniques via write_ai_site)."""
 from __future__ import annotations
 
 import sys
@@ -33,7 +33,7 @@ def site_education() -> str:
       <div class="hero-copy">
         <p class="eyebrow">Grand Est · Nancy &amp; Metz</p>
         <h1>Former aujourd'hui les métiers de demain</h1>
-        <p class="lead">Alternance, certifications Qualiopi et parcours VAE pour adultes en reconversion — ancrés en Lorraine depuis 1998.</p>
+        <p class="lead">Alternance, certifications Qualiopi et parcours VAE pour adultes en reconversion - ancrés en Lorraine depuis 1998.</p>
         <div class="cta-row"><a class="btn btn--primary" href="#offres">Découvrir nos formations</a><a class="btn btn--ghost" href="#contact">Demander un entretien</a></div>
       </div>
       <figure class="hero-img vitrine-figure"><img src="images/hero.png" alt="Campus Institut Mercure Nancy" fetchpriority="high" decoding="async"></figure>
@@ -56,15 +56,15 @@ def site_education() -> str:
     <h2>Nos domaines phares</h2>
     <p class="sub">Des parcours courts et certifiants, finançables OPCO et CPF.</p>
     <div class="cards">""" + _cards(slug, [
-        ("Digital &amp; data", "Marketing digital, no-code et gestion de projet agile — 6 à 12 mois.", "Formation digital"),
+        ("Digital &amp; data", "Marketing digital, no-code et gestion de projet agile - 6 à 12 mois.", "Formation digital"),
         ("Management", "Encadrement d'équipe, QHSE et conduite du changement pour cadres.", "Formation management"),
-        ("Métiers techniques", "SST, électricité, maintenance industrielle — alternance possible.", "Formation technique"),
+        ("Métiers techniques", "SST, électricité, maintenance industrielle - alternance possible.", "Formation technique"),
     ]) + """
     </div>
   </section>
   <section class="trust">
     <blockquote><p>« Mercure m'a permis de valider mon titre Responsable QHSE en 9 mois tout en travaillant à Thionville. »</p>
-    <cite>— Karim B., diplômé 2025</cite></blockquote>
+    <cite>- Karim B., diplômé 2025</cite></blockquote>
     <p class="badges">Qualiopi · Datadock · Réseau CCI Grand Est</p>
   </section>
   <section id="contact" class="section contact">
@@ -124,7 +124,7 @@ nav a{margin-left:1rem;color:#475569;text-decoration:none;font-weight:500}
 .form input,.form select,.form textarea{padding:.65rem .75rem;border:1px solid #cbd5e1;border-radius:.5rem;font:inherit}
 .ai-foot{text-align:center;padding:1.5rem;color:#64748b;border-top:1px solid #e2e8f0}
 """
-    write_ai_site(slug, "Institut Mercure — Formation pro | démo",
+    write_ai_site(slug, "Institut Mercure - Formation pro | démo",
                   "Institut Mercure à Nancy : alternance, certifications et VAE en Grand Est.",
                   body, css, layout="timeline-formation")
     return slug
@@ -154,14 +154,14 @@ def site_services() -> str:
   <section id="services" class="sec">
     <h2>Une offre modulaire</h2>
     <div class="icon-grid">
-      <article><span class="ico">🔧</span><h3>Maintenance</h3><p>Plomberie, électricité, CVC — contrats préventifs et curatifs.</p></article>
+      <article><span class="ico">🔧</span><h3>Maintenance</h3><p>Plomberie, électricité, CVC - contrats préventifs et curatifs.</p></article>
       <article><span class="ico">✨</span><h3>Propreté</h3><p>Nettoyage quotidien, vitrerie et remise en état après travaux.</p></article>
       <article><span class="ico">🏢</span><h3>Accueil</h3><p>Standard, badgeuse et gestion des fournisseurs sur site.</p></article>
     </div>
   </section>
   <section id="zones" class="sec sec--teal">
     <h2>Intervention Grand Est</h2>
-    <p>Metz, Thionville, Forbach, Luxembourg frontalier — une seule équipe, un seul interlocuteur.</p>
+    <p>Metz, Thionville, Forbach, Luxembourg frontalier - une seule équipe, un seul interlocuteur.</p>
     <div class="cards">""" + _cards(slug, [
         ("Résidences", "Syndics et bailleurs : ascenseurs, parties communes, espaces verts.", "Gestion résidences"),
         ("Tertiaire", "Bureaux et commerces : conformité ERP et audits sécurité.", "Facility tertiaire"),
@@ -169,7 +169,7 @@ def site_services() -> str:
     ]) + """
     </div>
   </section>
-  <section class="quote"><p>« Depuis Proprio Facility, plus aucune réclamation ascenseur non traitée. »</p><cite>— Syndic Les Faïenceries, Metz</cite></section>
+  <section class="quote"><p>« Depuis Proprio Facility, plus aucune réclamation ascenseur non traitée. »</p><cite>- Syndic Les Faïenceries, Metz</cite></section>
   <section id="devis" class="sec contact">
     <h2>Devis gratuit</h2>
     <form class="form"><label>Société <input type="text" required></label><label>Surface (m²) <input type="number"></label><label>Email <input type="email" required></label><button type="submit" class="cta">Recevoir mon estimation</button></form>
@@ -216,7 +216,7 @@ body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:17p
 @media(max-width:800px){.hero-visual{position:static;transform:none;width:100%;margin-top:2rem}.float-cards{position:static;margin-top:1rem}}
 .ai-foot{text-align:center;padding:1.5rem;color:#64748b}
 """
-    write_ai_site(slug, "Proprio Facility — Facility management | démo",
+    write_ai_site(slug, "Proprio Facility - Facility management | démo",
                   "Maintenance, propreté et accueil pour immeubles et bureaux en Moselle.",
                   body, css, layout="asymmetric-teal")
     return slug
@@ -233,7 +233,7 @@ def site_etablissement() -> str:
     <div class="lux-hero-overlay">
       <p class="lux-eyebrow">Nancy · Place Stanislas</p>
       <h1>L'art de recevoir, à la lorraine</h1>
-      <p>5 étoiles, 42 chambres et un spa thermal — au cœur du patrimoine UNESCO.</p>
+      <p>5 étoiles, 42 chambres et un spa thermal - au cœur du patrimoine UNESCO.</p>
       <a href="#reserver" class="lux-btn">Réserver votre séjour</a>
     </div>
   </section>
@@ -241,7 +241,7 @@ def site_etablissement() -> str:
   <section id="suites" class="lux-sec">
     <h2>Nos univers</h2>
     <div class="lux-grid">""" + _cards(slug, [
-        ("Suite Stanislas", "Vue place, parquet d'époque et salon privé — 65 m² de raffinement.", "Suite Stanislas"),
+        ("Suite Stanislas", "Vue place, parquet d'époque et salon privé - 65 m² de raffinement.", "Suite Stanislas"),
         ("Chambre Jardin", "Terrasse ombragée sur cour intérieure, calme absolu.", "Chambre jardin"),
         ("Penthouse Lorraine", "Dernier étage, jacuzzi et panorama 360° sur la ville.", "Penthouse"),
     ]) + """
@@ -250,8 +250,8 @@ def site_etablissement() -> str:
   <section id="experience" class="lux-sec lux-sec--dark">
     <div class="lux-split">
       <div><h2>Une expérience sensorielle</h2>
-      <ul class="lux-list"><li>Restaurant Le Opéra — cuisine du terroir revisitée</li><li>Spa thermal 400 m² — soins vinotherapy</li><li>Conciergerie Clefs d'Or — transferts Metz-Nancy</li></ul></div>
-      <blockquote>« Le plus beau réveil de ma vie, face à la place Stanislas. »<cite>— Élodie M., Paris</cite></blockquote>
+      <ul class="lux-list"><li>Restaurant Le Opéra - cuisine du terroir revisitée</li><li>Spa thermal 400 m² - soins vinotherapy</li><li>Conciergerie Clefs d'Or - transferts Metz-Nancy</li></ul></div>
+      <blockquote>« Le plus beau réveil de ma vie, face à la place Stanislas. »<cite>- Élodie M., Paris</cite></blockquote>
     </div>
   </section>
   <section id="reserver" class="lux-sec lux-book">
@@ -293,7 +293,7 @@ blockquote cite{display:block;margin-top:1rem;font-style:normal;font-size:.85rem
 .lux-form input{padding:.65rem;border:1px solid #d4c4a8;font:inherit;background:#fff}
 .ai-foot{text-align:center;padding:2rem;color:#6b5d4d}
 """
-    write_ai_site(slug, "Hôtel Stanislas Collection — Luxe Nancy | démo",
+    write_ai_site(slug, "Hôtel Stanislas Collection - Luxe Nancy | démo",
                   "Hôtel 5 étoiles face à la place Stanislas : suites, spa et gastronomie.",
                   body, css, layout="fullscreen-luxe")
     return slug
@@ -309,7 +309,7 @@ def site_automobile() -> str:
     <div class="gar-hero-text">
       <span class="gar-badge">Depuis 1987 · Moselle</span>
       <h1>La mécanique sans compromis</h1>
-      <p>Entretien, diagnostic et carrosserie pour particuliers et flottes — à 10 min de Metz.</p>
+      <p>Entretien, diagnostic et carrosserie pour particuliers et flottes - à 10 min de Metz.</p>
       <a href="#rdv" class="gar-cta">Prendre rendez-vous</a>
     </div>
     <div class="gar-hero-img"><img src="images/hero.png" alt="Atelier Garage Central Plappeville"></div>
@@ -324,7 +324,7 @@ def site_automobile() -> str:
     </div>
     <div class="gar-cards">""" + _cards(slug, [
         ("Flottes pro", "Contrats d'entretien pour artisans et PME mosellanes.", "Flottes professionnelles"),
-        ("Véhicules premium", "Mercedes, BMW, Audi — pièces d'origine ou équivalent.", "Véhicule premium"),
+        ("Véhicules premium", "Mercedes, BMW, Audi - pièces d'origine ou équivalent.", "Véhicule premium"),
         ("Véhicules utilitaires", "Fourgons et pick-up : préparation CT et hayons.", "Utilitaire"),
     ]) + """
     </div>
@@ -372,7 +372,7 @@ body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:17p
 .gar-contact input,.gar-contact select{padding:.65rem;background:#262626;border:1px solid #404040;color:#fff;font:inherit;border-radius:0}
 .ai-foot{text-align:center;padding:1.5rem;color:#737373;border-top:1px solid #333}
 """
-    write_ai_site(slug, "Garage Central Plappeville — Mécanique Metz | démo",
+    write_ai_site(slug, "Garage Central Plappeville - Mécanique Metz | démo",
                   "Garage automobile à Plappeville : entretien, diagnostic et carrosserie.",
                   body, css, layout="angular-garage")
     return slug
@@ -400,9 +400,9 @@ def site_immobilier() -> str:
   <section id="biens" class="immo-sec">
     <h2>Sélection du moment</h2>
     <div class="immo-list">""" + _cards(slug, [
-        ("Maison de maître — Metz Sablon", "280 m², jardin 800 m², rénovée 2024. 685 000 €", "Maison Metz"),
-        ("Appartement haussmannien — Nancy", "4 pièces, parquet, vue parc. 395 000 €", "Appartement Nancy"),
-        ("Terrain constructible — Thionville", "Lotissement calme, viabilisé. 145 000 €", "Terrain Thionville"),
+        ("Maison de maître - Metz Sablon", "280 m², jardin 800 m², rénovée 2024. 685 000 €", "Maison Metz"),
+        ("Appartement haussmannien - Nancy", "4 pièces, parquet, vue parc. 395 000 €", "Appartement Nancy"),
+        ("Terrain constructible - Thionville", "Lotissement calme, viabilisé. 145 000 €", "Terrain Thionville"),
     ]) + """
     </div>
   </section>
@@ -411,7 +411,7 @@ def site_immobilier() -> str:
       <div><h2>Notre expertise locale</h2><p>15 ans sur le marché Grand Est. Nous connaissons chaque quartier, chaque fiscalité locale.</p></div>
       <ul><li>Estimation gratuite sous 72 h</li><li>Home staging partenaire</li><li>Gestion locative clé en main</li><li>Accompagnement primo-accédants</li></ul>
     </div>
-    <blockquote>« Vendu en 3 semaines, 4 % au-dessus de l'estimation initiale. » — Famille R., Metz</blockquote>
+    <blockquote>« Vendu en 3 semaines, 4 % au-dessus de l'estimation initiale. » - Famille R., Metz</blockquote>
   </section>
   <section id="estimation" class="immo-sec">
     <h2>Estimation gratuite</h2>
@@ -453,7 +453,7 @@ blockquote{background:#fff;padding:1.25rem 1.5rem;border-radius:.5rem;border-lef
 .immo-form button{min-height:44px;background:var(--sage);color:#fff;border:none;border-radius:.5rem;font-weight:600;cursor:pointer}
 .ai-foot{text-align:center;padding:1.5rem;color:#7a8b7c}
 """
-    write_ai_site(slug, "Patrimoine Lorraine — Immobilier Grand Est | démo",
+    write_ai_site(slug, "Patrimoine Lorraine - Immobilier Grand Est | démo",
                   "Agence immobilière Moselle : achat, vente et gestion locative.",
                   body, css, layout="search-hero-sage")
     return slug
@@ -491,8 +491,8 @@ def site_juridique() -> str:
   </section>
   <section id="cabinet" class="law-sec law-dark">
     <h2>Un cabinet ancré localement</h2>
-    <p>Installés avenue Foch à Metz depuis 2003. Nous privilégions l'écoute, la réactivité et la transparence tarifaire — forfaits ou honoraires au temps passé, toujours validés par écrit.</p>
-    <p class="law-trust">« Une équipe rigoureuse qui a défendu nos intérêts lors d'une acquisition complexe. » — Directeur financier, PME tertiaire</p>
+    <p>Installés avenue Foch à Metz depuis 2003. Nous privilégions l'écoute, la réactivité et la transparence tarifaire - forfaits ou honoraires au temps passé, toujours validés par écrit.</p>
+    <p class="law-trust">« Une équipe rigoureuse qui a défendu nos intérêts lors d'une acquisition complexe. » - Directeur financier, PME tertiaire</p>
   </section>
   <section id="consultation" class="law-sec">
     <h2>Demande de consultation</h2>
@@ -535,7 +535,7 @@ body{margin:0;font-family:"Plus Jakarta Sans",Georgia,serif;font-size:17px;color
 .law-form input,.law-form select{padding:.65rem;border:1px solid #d4c9b0;font:inherit;background:#fff}
 .ai-foot{text-align:center;padding:1.5rem;color:#8a7d6b}
 """
-    write_ai_site(slug, "Rivière & Partenaires — Avocats Metz | démo",
+    write_ai_site(slug, "Rivière & Partenaires - Avocats Metz | démo",
                   "Cabinet d'avocats à Metz : droit des affaires, social et contentieux.",
                   body, css, layout="gold-law-columns")
     return slug
@@ -549,23 +549,23 @@ def site_architecture() -> str:
 <main id="contenu">
   <section class="arc-hero">
     <h1>Formes<br>utiles.</h1>
-    <p class="arc-sub">Réhabilitation, extension et conception neuve — sobriété matérielle, exigence spatiale.</p>
+    <p class="arc-sub">Réhabilitation, extension et conception neuve - sobriété matérielle, exigence spatiale.</p>
     <figure class="arc-hero-img"><img src="images/hero.png" alt="Projet Atelier Nord-Est" fetchpriority="high"></figure>
   </section>
   <section class="arc-stats"><div>48 <small>projets livrés</small></div><div>12 <small>architectes</small></div><div>3 <small>prix régionaux</small></div></section>
   <section id="projets" class="arc-sec">
     <h2>Projets récents</h2>
     <div class="arc-mag">""" + _cards(slug, [
-        ("Maison L — Metz Queuleu", "Extension bois sur bâtisse 1930, label Bâtiment Durable.", "Maison L Metz"),
-        ("Médiathèque de Thionville", "Concours public — lumière zénithale et acoustique.", "Médiathèque Thionville"),
-        ("Bureaux Verdun", "Réhabilitation caserne — 2 400 m² tertiaires.", "Bureaux Verdun"),
+        ("Maison L - Metz Queuleu", "Extension bois sur bâtisse 1930, label Bâtiment Durable.", "Maison L Metz"),
+        ("Médiathèque de Thionville", "Concours public - lumière zénithale et acoustique.", "Médiathèque Thionville"),
+        ("Bureaux Verdun", "Réhabilitation caserne - 2 400 m² tertiaires.", "Bureaux Verdun"),
     ]) + """
     </div>
   </section>
   <section class="arc-approach">
     <div class="arc-line"></div>
     <h2>Notre approche</h2>
-    <p>Nous travaillons la matière, la lumière et le contexte lorraine. Chaque projet commence par une écoute du lieu — pas par un style imposé.</p>
+    <p>Nous travaillons la matière, la lumière et le contexte lorraine. Chaque projet commence par une écoute du lieu - pas par un style imposé.</p>
     <ul><li>Diagnostic patrimonial</li><li>Maquette numérique 3D</li><li>Suivi de chantier</li></ul>
   </section>
   <section id="contact" class="arc-sec arc-contact">
@@ -603,7 +603,7 @@ body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:17p
 .arc-contact button{margin-top:1rem;min-height:44px;background:var(--black);color:#fff;border:none;padding:.75rem 2rem;font:inherit;cursor:pointer}
 .ai-foot{text-align:center;padding:2rem;color:var(--gray);font-size:.8rem}
 """
-    write_ai_site(slug, "Atelier Nord-Est — Architecture Lorraine | démo",
+    write_ai_site(slug, "Atelier Nord-Est - Architecture Lorraine | démo",
                   "Agence d'architecture à Metz : réhabilitation, extension et neuf.",
                   body, css, layout="magazine-minimal")
     return slug
@@ -619,28 +619,28 @@ def site_fitness() -> str:
     <div class="pf-hero-left">
       <p class="pf-tag">Metz · Sablon</p>
       <h1>DÉPASSEZ<br>VOS LIMITES</h1>
-      <p>Cross-training, cycling et yoga — 1 200 m², coachs certifiés, ouvert 6h–23h.</p>
+      <p>Cross-training, cycling et yoga - 1 200 m², coachs certifiés, ouvert 6h-23h.</p>
       <a href="#essai" class="pf-cta">Séance découverte gratuite</a>
     </div>
     <div class="pf-hero-right"><img src="images/hero.png" alt="Salle Pulse Fitness Metz"></div>
   </section>
-  <section class="pf-stats"><div><b>1 200</b> m²</div><div><b>45</b> cours / semaine</div><div><b>6h–23h</b> ouvert</div></section>
+  <section class="pf-stats"><div><b>1 200</b> m²</div><div><b>45</b> cours / semaine</div><div><b>6h-23h</b> ouvert</div></section>
   <section id="cours" class="pf-sec">
     <h2>Nos disciplines</h2>
     <div class="pf-cards">""" + _cards(slug, [
-        ("HIIT &amp; Cross", "Fractionné haute intensité — 45 min, tous niveaux.", "Cours HIIT"),
+        ("HIIT &amp; Cross", "Fractionné haute intensité - 45 min, tous niveaux.", "Cours HIIT"),
         ("Cycling", "Studio immersive, playlists live, 30 ou 50 min.", "Cours cycling"),
-        ("Yoga Flow", "Mobilité et récupération — matin et soir.", "Cours yoga"),
+        ("Yoga Flow", "Mobilité et récupération - matin et soir.", "Cours yoga"),
     ]) + """
     </div>
   </section>
   <section id="planning" class="pf-sec pf-dark">
     <h2>Planning de la semaine</h2>
     <table class="pf-table"><thead><tr><th></th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th></tr></thead>
-    <tbody><tr><td>6h30</td><td>Yoga</td><td>—</td><td>HIIT</td><td>—</td><td>Cycling</td></tr>
-    <tr><td>12h15</td><td>—</td><td>Cross</td><td>—</td><td>Cross</td><td>—</td></tr>
+    <tbody><tr><td>6h30</td><td>Yoga</td><td>-</td><td>HIIT</td><td>-</td><td>Cycling</td></tr>
+    <tr><td>12h15</td><td>-</td><td>Cross</td><td>-</td><td>Cross</td><td>-</td></tr>
     <tr><td>19h00</td><td>Cycling</td><td>HIIT</td><td>Yoga</td><td>HIIT</td><td>Cross</td></tr></tbody></table>
-    <p class="pf-quote">« L'ambiance est incroyable, j'ai perdu 8 kg en 4 mois sans m'ennuyer. » — Julie, membre depuis 2024</p>
+    <p class="pf-quote">« L'ambiance est incroyable, j'ai perdu 8 kg en 4 mois sans m'ennuyer. » - Julie, membre depuis 2024</p>
   </section>
   <section id="essai" class="pf-sec">
     <h2>Réserver mon essai</h2>
@@ -680,8 +680,8 @@ body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:17p
 .pf-form input,.pf-form select{padding:.65rem;background:#171717;border:1px solid #333;color:#fff;font:inherit}
 .ai-foot{text-align:center;padding:1.5rem;color:#525252;border-top:1px solid #222}
 """
-    write_ai_site(slug, "Pulse Fitness Metz — Salle de sport | démo",
-                  "Salle de sport à Metz : cross-training, cycling, yoga — essai gratuit.",
+    write_ai_site(slug, "Pulse Fitness Metz - Salle de sport | démo",
+                  "Salle de sport à Metz : cross-training, cycling, yoga - essai gratuit.",
                   body, css, layout="energetic-schedule")
     return slug
 
@@ -704,7 +704,7 @@ def site_photographie() -> str:
   <section id="portfolio" class="ph-sec">
     <h2>Sélection</h2>
     <div class="ph-masonry">""" + _cards(slug, [
-        ("Portrait corporate", "Dirigeants et équipes — lumière naturelle, retouches discrètes.", "Portrait corporate"),
+        ("Portrait corporate", "Dirigeants et équipes - lumière naturelle, retouches discrètes.", "Portrait corporate"),
         ("Mariage documentaire", "Reportage intimiste, noir et blanc et couleur.", "Mariage documentaire"),
         ("Architecture &amp; design", "Mise en valeur de volumes et matériaux.", "Photo architecture"),
     ]) + """
@@ -712,11 +712,11 @@ def site_photographie() -> str:
   </section>
   <section id="services" class="ph-sec ph-services">
     <div class="ph-svc-grid">
-      <article><h3>Portrait</h3><p>À partir de 350 € — studio ou sur site.</p></article>
-      <article><h3>Événement</h3><p>Demi-journée ou journée — livraison sous 10 jours.</p></article>
+      <article><h3>Portrait</h3><p>À partir de 350 € - studio ou sur site.</p></article>
+      <article><h3>Événement</h3><p>Demi-journée ou journée - livraison sous 10 jours.</p></article>
       <article><h3>Éditorial</h3><p>Direction artistique et post-production incluse.</p></article>
     </div>
-    <blockquote>« Des images qui racontent notre marque sans effet superflu. » — Agence K., Nancy</blockquote>
+    <blockquote>« Des images qui racontent notre marque sans effet superflu. » - Agence K., Nancy</blockquote>
   </section>
   <section id="devis" class="ph-sec ph-contact">
     <h2>Demande de devis</h2>
@@ -754,7 +754,7 @@ blockquote{font-style:italic;color:var(--gray);border:none;margin:0;padding:0;te
 .ph-contact button{margin-top:.5rem;min-height:44px;background:var(--gray-d);color:#fff;border:none;padding:.75rem 1.5rem;font:inherit;cursor:pointer}
 .ai-foot{text-align:center;padding:2rem;color:var(--gray);font-size:.85rem}
 """
-    write_ai_site(slug, "Studio Lumière Grise — Photo éditoriale Metz | démo",
+    write_ai_site(slug, "Studio Lumière Grise - Photo éditoriale Metz | démo",
                   "Photographe éditorial à Metz : portrait, mariage et corporate.",
                   body, css, layout="editorial-masonry")
     return slug

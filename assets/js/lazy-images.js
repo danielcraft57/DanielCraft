@@ -8,6 +8,11 @@
   var CLASS = 'dc-lazy-img';
   var ROOT_MARGIN = '320px 0px';
 
+  /**
+   * Remplace data-src / data-srcset par les attributs natifs et marque l'image chargée.
+   * @param {HTMLImageElement|Element} img - Image cible (classe dc-lazy-img).
+   * @returns {void}
+   */
   function hydrate(img) {
     if (!img || img.getAttribute('data-lazy-done') === '1') return;
     var picture = img.closest('picture');
@@ -29,6 +34,11 @@
     img.classList.add('is-loaded');
   }
 
+  /**
+   * Observe les images lazy dans un sous-arbre DOM.
+   * @param {ParentNode|Document|null} [scope] - Racine de recherche (document par défaut).
+   * @returns {void}
+   */
   function observe(scope) {
     var root = scope || document;
     var targets = root.querySelectorAll('img.' + CLASS + '[data-src]');

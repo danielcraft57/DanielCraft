@@ -1,7 +1,7 @@
 <?php
 /**
  * Ancien checkout Stripe des fiches exemples (devantures).
- * Les exemples ne se vendent plus — devis / contact uniquement.
+ * Les exemples ne se vendent plus - devis / contact uniquement.
  */
 
 declare(strict_types=1);

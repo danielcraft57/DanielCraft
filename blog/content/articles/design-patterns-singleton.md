@@ -1,7 +1,7 @@
 ---
 title: "Singleton : une seule copie, pas plus"
 date: 2026-04-02
-excerpt: "Garantir une seule instance partagee — utile parfois, dangereux si abuse."
+excerpt: "Garantir une seule instance partagee - utile parfois, dangereux si abuse."
 type: article
 tags: [Design Patterns, GoF, Singleton, Créationnel, TypeScript, Python, junior]
 og_image: design-patterns-singleton-1200x630.jpg
@@ -149,7 +149,7 @@ class AppConfig:
 ## Patterns proches
 
 - **Factory Method** : Délègue la création sans imposer une instance unique
-- **Injection de dépendances** : Passe Config en paramètre — plus testable
+- **Injection de dépendances** : Passe Config en paramètre - plus testable
 
 ---
 
@@ -161,11 +161,11 @@ Node.js : certains drivers utilisent un pool singleton. En front, évite le sing
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Singleton aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Non - on teste surtout ta capacité à reconnaître le problème. Le nom Singleton aide à communiquer en équipe.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Singleton te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Singleton te permet de les utiliser correctement.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
+**Je dois tout refactoriser ?** Non - applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
 
 ---
 
@@ -186,11 +186,11 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ## Pas à pas : implémenter en 5 étapes
 
-1. **Nomme le problème** — est-ce vraiment Singleton ?
+1. **Nomme le problème** - est-ce vraiment Singleton ?
 2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
 3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Singleton parce que… ».
+4. **Implémente une variante** - valide avant d'en ajouter d'autres.
+5. **Documente en équipe** - « ici on utilise Singleton parce que… ».
 
 ---
 
@@ -203,7 +203,7 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Remplace ton `Logger.getInstance()` par un logger injecté dans chaque service. Écris 2 tests : avec mock, sans état partagé.
 
@@ -211,7 +211,7 @@ Remplace ton `Logger.getInstance()` par un logger injecté dans chaque service. 
 
 ## Résumé
 
-Une instance, un accès — utile pour de vraies ressources uniques ; dangereux comme variable globale déguisée.
+Une instance, un accès - utile pour de vraies ressources uniques ; dangereux comme variable globale déguisée.
 
 ---
 

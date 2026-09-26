@@ -13,10 +13,10 @@
       "alt": "Atelier mécanique avec véhicule sur pont",
       "subject": "Garage Central Plappeville auto repair workshop: car on hydraulic lift, mechanic working underneath, dark industrial interior with red accent lighting, professional automotive service bay near Metz",
       "contexts": [
-        { "page": "index.html", "section": "hero", "text": "L'atelier de confiance des Messins depuis 1972 — mécanique, carrosserie, pneus" },
-        { "page": "services.html", "section": "hero", "text": "Mécanicien au travail — tout pour rouler serein" },
-        { "page": "atelier.html", "section": "hero", "text": "900 m² dédiés — ponts, cabine peinture, espace diagnostic" },
-        { "page": "contact.html", "section": "hero", "text": "Façade du garage — Zone artisanale des Gravières Plappeville" }
+        { "page": "index.html", "section": "hero", "text": "L'atelier de confiance des Messins depuis 1972 - mécanique, carrosserie, pneus" },
+        { "page": "services.html", "section": "hero", "text": "Mécanicien au travail - tout pour rouler serein" },
+        { "page": "atelier.html", "section": "hero", "text": "900 m² dédiés - ponts, cabine peinture, espace diagnostic" },
+        { "page": "contact.html", "section": "hero", "text": "Façade du garage - Zone artisanale des Gravières Plappeville" }
       ]
     },
     {
@@ -27,9 +27,9 @@
       "alt": "Pont élévateur en atelier",
       "subject": "Hydraulic car lift in professional garage with mechanic inspecting vehicle underside, diagnostic tools, red and dark workshop atmosphere Plappeville",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Le pont élévateur — diagnostic rapide et transparence" },
-        { "page": "services.html", "section": "chapter", "text": "Freinage — disques, plaquettes et liquide de frein" },
-        { "page": "atelier.html", "section": "chapter", "text": "Accueil — café et wifi en salle d'attente" }
+        { "page": "index.html", "section": "chapter", "text": "Le pont élévateur - diagnostic rapide et transparence" },
+        { "page": "services.html", "section": "chapter", "text": "Freinage - disques, plaquettes et liquide de frein" },
+        { "page": "atelier.html", "section": "chapter", "text": "Accueil - café et wifi en salle d'attente" }
       ]
     },
     {
@@ -40,9 +40,9 @@
       "alt": "Atelier carrosserie",
       "subject": "Auto body shop paint booth and panel repair area, car being prepared for painting, professional carrosserie workshop red accents",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "La carrosserie — peinture cabine et débosselage sans peinture" },
-        { "page": "services.html", "section": "chapter", "text": "Échappement — ligne complète et catalyseur" },
-        { "page": "atelier.html", "section": "chapter", "text": "Outillage — clés dynamométriques et documentation constructeur" }
+        { "page": "index.html", "section": "chapter", "text": "La carrosserie - peinture cabine et débosselage sans peinture" },
+        { "page": "services.html", "section": "chapter", "text": "Échappement - ligne complète et catalyseur" },
+        { "page": "atelier.html", "section": "chapter", "text": "Outillage - clés dynamométriques et documentation constructeur" }
       ]
     },
     {
@@ -53,9 +53,9 @@
       "alt": "Stock de pneus en garage",
       "subject": "Tire storage wall in automotive garage with mechanic mounting tire on wheel balancer, summer and winter tires, professional pneumatique service",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Le parc pneus — montage, équilibrage et géométrie" },
-        { "page": "services.html", "section": "chapter", "text": "Hybride — formation Bosch véhicules rechargeables" },
-        { "page": "atelier.html", "section": "chapter", "text": "Propreté — véhicule rendu lavé intérieur/extérieur" }
+        { "page": "index.html", "section": "chapter", "text": "Le parc pneus - montage, équilibrage et géométrie" },
+        { "page": "services.html", "section": "chapter", "text": "Hybride - formation Bosch véhicules rechargeables" },
+        { "page": "atelier.html", "section": "chapter", "text": "Propreté - véhicule rendu lavé intérieur/extérieur" }
       ]
     },
     {
@@ -66,8 +66,8 @@
       "alt": "Vidange et filtres en 1 h",
       "subject": "Complete car service oil change and filter replacement in garage bay, mechanic pouring fresh oil, quick maintenance service",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Révision complète — vidange et filtres en 1 h" },
-        { "page": "atelier.html", "section": "gallery", "text": "Équipe 2024 — photo de groupe devant l'atelier" }
+        { "page": "index.html", "section": "gallery", "text": "Révision complète - vidange et filtres en 1 h" },
+        { "page": "atelier.html", "section": "gallery", "text": "Équipe 2024 - photo de groupe devant l'atelier" }
       ]
     },
     {
@@ -78,8 +78,8 @@
       "alt": "Sur demande pour les grosses réparations",
       "subject": "Courtesy replacement car parked outside family garage workshop, customer vehicle loan service, friendly local garage Plappeville",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Véhicule de courtoisie — sur demande grosses réparations" },
-        { "page": "atelier.html", "section": "gallery", "text": "Héritage — enseigne d'origine conservée" }
+        { "page": "index.html", "section": "gallery", "text": "Véhicule de courtoisie - sur demande grosses réparations" },
+        { "page": "atelier.html", "section": "gallery", "text": "Héritage - enseigne d'origine conservée" }
       ]
     },
     {
@@ -90,8 +90,8 @@
       "alt": "Révision automobile",
       "subject": "Car maintenance service checklist and engine bay inspection, professional mechanic with tablet, manufacturer service schedule respected",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Entretien — révisions constructeur respectées" },
-        { "page": "services.html", "section": "card", "text": "Distribution — kit courroie et pompe à eau" }
+        { "page": "index.html", "section": "card", "text": "Entretien - révisions constructeur respectées" },
+        { "page": "services.html", "section": "card", "text": "Distribution - kit courroie et pompe à eau" }
       ]
     },
     {
@@ -102,8 +102,8 @@
       "alt": "Montage de pneus",
       "subject": "Tire mounting machine in action, new tires being fitted on alloy wheels, professional pneumatique garage service",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Pneumatiques — été, hiver, toutes marques" },
-        { "page": "services.html", "section": "card", "text": "Climatisation — recharge et désinfection" }
+        { "page": "index.html", "section": "card", "text": "Pneumatiques - été, hiver, toutes marques" },
+        { "page": "services.html", "section": "card", "text": "Climatisation - recharge et désinfection" }
       ]
     },
     {
@@ -114,8 +114,8 @@
       "alt": "Réparation carrosserie",
       "subject": "Car body repair dent removal and panel straightening, carrossier working on damaged door, insurance repair workshop",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Carrosserie — devis assurance en 24 h" },
-        { "page": "services.html", "section": "card", "text": "Diagnostic — valise multimarque et rapport détaillé" }
+        { "page": "index.html", "section": "card", "text": "Carrosserie - devis assurance en 24 h" },
+        { "page": "services.html", "section": "card", "text": "Diagnostic - valise multimarque et rapport détaillé" }
       ]
     }
   ]

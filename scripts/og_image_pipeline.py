@@ -5,7 +5,7 @@ Pipeline images Open Graph (assets/images/og) : teinte bleu métal + filtres.
 Enchaîne (comme README_IMAGES.md pour le portfolio, adapté aux cartes 1200×630) :
   1. Recolorisation rouge/orange → bleu métal (même logique que recolor_project_hero_to_blue.py)
   2. Atténuation de la dominante bleue (reduce_blue_cast)
-  3. Grades complémentaires cyclés par fichier (apply_complementary_grades) — blend « wide » par défaut (visuels clairs)
+  3. Grades complémentaires cyclés par fichier (apply_complementary_grades) - blend « wide » par défaut (visuels clairs)
   4. Optionnel : recadrage / compression 1200×630 + WebP (optimize_images)
 
 Usage (depuis la racine du dépôt) :

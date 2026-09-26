@@ -415,7 +415,7 @@ function livre_download_page_url(string $code = '', string $token = ''): string
     return $base;
 }
 
-/** @deprecated Prefer livre_download_page_url — conserve pour compat e-mails anciens. */
+/** @deprecated Prefer livre_download_page_url - conserve pour compat e-mails anciens. */
 function livre_download_public_url(string $token): string
 {
     return livre_download_page_url('', $token);
@@ -668,7 +668,7 @@ function livre_download_record_failure(?string $ip = null, string $codeHint = ''
         }
     }
 
-    // Ralentit le brute-force (250–600 ms)
+    // Ralentit le brute-force (250-600 ms)
     usleep(random_int(250000, 600000));
 
     return livre_download_lock_status($ip);
@@ -681,7 +681,7 @@ function livre_download_clear_failures(?string $ip = null): void
 }
 
 /**
- * Soft rate-limit (fenetre glissante) — true si autorise.
+ * Soft rate-limit (fenetre glissante) - true si autorise.
  */
 function livre_download_rate_allow(string $bucket, int $limit, int $windowSeconds): bool
 {
@@ -754,7 +754,7 @@ function livre_download_verify_form_guards(
         return ['ok' => false, 'error' => 'Session formulaire expiree. Recharge la page.'];
     }
     if ($strictTiming && $age < livre_download_min_form_seconds()) {
-        return ['ok' => false, 'error' => 'Un peu trop rapide — reessaie dans une seconde.'];
+        return ['ok' => false, 'error' => 'Un peu trop rapide - reessaie dans une seconde.'];
     }
 
     return ['ok' => true, 'error' => ''];

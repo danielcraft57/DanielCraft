@@ -1,7 +1,7 @@
 /**
  * Jetons inspirés de Material Design 3 (surfaces tonales, formes, élévation, mouvement).
  * Réf. publique : https://m3.material.io/styles (couleur, typo, formes).
- * Police de référence M3 : Roboto — https://m3.material.io/styles/typography
+ * Police de référence M3 : Roboto - https://m3.material.io/styles/typography
  */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
@@ -63,7 +63,7 @@ body {
   outline-offset: 2px;
 }
 
-/* Boutons / liens d’action : arrondi M3 « full » pour pill */
+/* Boutons / liens d'action : arrondi M3 « full » pour pill */
 .md-filled-button,
 .btn {
   transition:

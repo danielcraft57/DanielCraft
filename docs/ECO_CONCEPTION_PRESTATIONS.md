@@ -1,4 +1,4 @@
-# Éco-conception web — positionnement & nouvelles prestations
+# Éco-conception web - positionnement & nouvelles prestations
 
 Document de cadrage commercial et technique pour DanielCraft.  
 Complète [PERFORMANCE.md](./PERFORMANCE.md) (optimisations internes du site) et le catalogue [`src/data/prestations.json`](../src/data/prestations.json).
@@ -39,7 +39,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 
 | Prestation existante | Slug | Lien éco-conception |
 |---------------------|------|---------------------|
-| Votre site est-il rapide ? | `rapport-vitesse` | Diagnostic partiel — manque l'angle coût/RSE et le plan médias |
+| Votre site est-il rapide ? | `rapport-vitesse` | Diagnostic partiel - manque l'angle coût/RSE et le plan médias |
 | Remise en forme Google | `referencement-google` | Mentionne la vitesse mais pas l'éco-conception |
 | Site vitrine professionnel | `site-vitrine` | Peut intégrer l'éco-conception comme **standard de livraison** ou **option nommée** |
 | Pack mise à jour contenus | `maj-contenus` | Occasion d'alléger images/vidéos lors des MAJ |
@@ -83,7 +83,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 
 ---
 
-### 3. Site allégé — corrections techniques
+### 3. Site allégé - corrections techniques
 
 | Champ | Proposition |
 |-------|-------------|
@@ -111,7 +111,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 | **Tagline** | Professionnel, léger, prêt pour Google et pour vos clients sensibles à l'environnement |
 | **Pitch** | Même livrable qu'un site vitrine, avec charte **éco-conçue by design** : pas de vidéo qui se lance seule, images optimisées dès la création, code minimal, hébergement adapté. |
 | **Inclus** | Tout le pack vitrine + engagement performance (objectif Core Web Vitals verts ou proches) + mention « site éco-conçu » sur une page dédiée |
-| **Argument vente** | « Vous ne payez pas plus cher, vous polluez moins » — fort pour artisans, associations, commerces locaux |
+| **Argument vente** | « Vous ne payez pas plus cher, vous polluez moins » - fort pour artisans, associations, commerces locaux |
 
 ---
 
@@ -125,7 +125,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 | **Prix indicatif** | 85 € HT (proche d'une page supplémentaire) |
 | **Titre client** | Page engagement numérique responsable |
 | **Tagline** | Montrez à vos clients que votre site aussi est sérieux sur l'environnement |
-| **Pitch** | Une page claire sur votre démarche (site léger, hébergeur, médias sobres) — argument commercial pour les clients qui fuient les marques « qui polluent en silence ». |
+| **Pitch** | Une page claire sur votre démarche (site léger, hébergeur, médias sobres) - argument commercial pour les clients qui fuient les marques « qui polluent en silence ». |
 | **Inclus** | Rédaction + mise en page + intégration menu, texte validé avec vous |
 
 ---
@@ -168,7 +168,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 | **P1** | Audit éco-numérique | Porte d'entrée faible, différenciante, complète `rapport-vitesse` |
 | **P1** | Allègement express | Livrable concret, visible, facile à vendre après audit |
 | **P2** | Site vitrine éco-conçu (différenciateur) | Pas forcément une nouvelle ligne : badge + process sur l'offre existante |
-| **P2** | Site allégé — corrections | Panier moyen, suite naturelle de l'audit |
+| **P2** | Site allégé - corrections | Panier moyen, suite naturelle de l'audit |
 | **P3** | Page engagement numérique | Upsell léger, argument RSE pur |
 | **P3** | Suivi sobriété mensuel | Revenu récurrent, à lancer après premiers clients éco |
 | **P3** | Atelier équipe | B2B / associations, volume plus faible |
@@ -178,7 +178,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 ## Angles de communication (site, devis, oral)
 
 ### Pour le patron
-- « Un site plus léger, c'est moins de données à chaque visite — ça peut alléger la facture d'hébergement et éviter de surdimensionner le serveur. »
+- « Un site plus léger, c'est moins de données à chaque visite - ça peut alléger la facture d'hébergement et éviter de surdimensionner le serveur. »
 - « Chaque seconde de chargement en plus, c'est des prospects qui partent avant de vous appeler. »
 
 ### Pour le client final (marque)
@@ -186,7 +186,7 @@ Ces principes sont déjà appliqués sur le site DanielCraft (voir PERFORMANCE.m
 - « Pour ceux qui ne veulent plus soutenir des marques qui polluent en silence. »
 
 ### Pour Google / visibilité
-- « Google favorise les sites rapides et agréables sur mobile — l'éco-conception et le SEO vont dans le même sens. »
+- « Google favorise les sites rapides et agréables sur mobile - l'éco-conception et le SEO vont dans le même sens. »
 - Lier à `visibilite-complete` et `referencement-google`.
 
 ---
@@ -201,7 +201,7 @@ Ajout possible dans `prestations.json` :
   "title": "Web sobre & performant",
   "nav_label": "Éco-conception",
   "icon": "fa-leaf",
-  "description": "Sites plus légers, plus rapides et plus économes — bon pour la planète, pour Google et pour votre budget."
+  "description": "Sites plus légers, plus rapides et plus économes - bon pour la planète, pour Google et pour votre budget."
 }
 ```
 
@@ -222,6 +222,6 @@ Alternative : garder les prestations éco dans `technique` + `site-contenu` pour
 
 ## Références internes
 
-- [PERFORMANCE.md](./PERFORMANCE.md) — preuves techniques sur le site DanielCraft
-- [seo-technique-audit-core-web-vitals.md](../blog/content/articles/seo-technique-audit-core-web-vitals.md) — contenu blog aligné SEO/perf
-- Prestation existante `rapport-vitesse` — ne pas cannibaliser : positionner l'audit éco comme **superset** (perf + RSE + coût)
+- [PERFORMANCE.md](./PERFORMANCE.md) - preuves techniques sur le site DanielCraft
+- [seo-technique-audit-core-web-vitals.md](../blog/content/articles/seo-technique-audit-core-web-vitals.md) - contenu blog aligné SEO/perf
+- Prestation existante `rapport-vitesse` - ne pas cannibaliser : positionner l'audit éco comme **superset** (perf + RSE + coût)

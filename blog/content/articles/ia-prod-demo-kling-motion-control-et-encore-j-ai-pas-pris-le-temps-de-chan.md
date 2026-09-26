@@ -1,7 +1,7 @@
 ---
 title: "Demo Kling : tester sans tout abandonner"
 date: 2026-09-07
-excerpt: "Bloque 30 minutes, un essai, une note — puis decide."
+excerpt: "Bloque 30 minutes, un essai, une note - puis decide."
 type: checklist
 tags: [IA, productivite, organisation]
 og_image: ia-prod-demo-kling-motion-control-et-encore-j-ai-pas-pris-le-temps-de-chan-1200x630.jpg

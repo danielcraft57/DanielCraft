@@ -1,4 +1,4 @@
-/* Hôtel Stanislas — maquette M3 forest green */
+/* Hôtel Stanislas - maquette M3 forest green */
 :root {
   --vt-green: #1c2e24;
   --vt-green-deep: #122019;
@@ -14,6 +14,10 @@
   --bs-body-color: var(--vt-text);
   --bs-primary: var(--vt-green);
   --bs-link-color: var(--vt-green);
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
+  --vt-accent: var(--vt-gold);
 }
 
 body.vt-body-hotel {

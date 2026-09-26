@@ -1892,6 +1892,12 @@ body.prestation-devis-dialog-open {
   gap: 1.25rem 1.5rem;
 }
 
+@media (max-width: 960px) {
+  .page-nos-offres .prestations-catalog-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Fiche produit type marketplace : galerie | infos | buy box */
 .prestation-detail-hero-grid--product {
@@ -1986,6 +1992,40 @@ body.prestation-devis-dialog-open {
   margin: 0 0 0.85rem;
   font-size: 0.82rem;
   color: var(--text-muted, #5a6b7a);
+}
+
+.prestation-buybox-year1 {
+  margin: 0 0 0.9rem;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid rgba(15, 53, 80, 0.12);
+  border-radius: 10px;
+  background: rgba(15, 53, 80, 0.03);
+}
+
+.prestation-buybox-year1-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.prestation-buybox-year1-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prestation-buybox-year1-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  margin: 0 0 0.28rem;
+}
+
+.prestation-buybox-year1-total {
+  margin: 0.45rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .prestation-buybox .prestation-devis-summary {
@@ -2247,6 +2287,154 @@ body.prestation-devis-dialog-open {
   font-weight: 600;
   color: #1a5f85;
   line-height: 1.3;
+}
+
+/* Cards reco verticales (livres + offres) - image fiche / cover */
+.dc-reco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1.1rem;
+}
+
+@media (min-width: 720px) {
+  .dc-reco-grid {
+    grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.dc-reco-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(15, 53, 80, 0.1);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 18px rgba(15, 53, 80, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.dc-reco-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(77, 169, 214, 0.45);
+  box-shadow: 0 16px 32px rgba(15, 53, 80, 0.12);
+}
+
+.dc-reco-card__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: linear-gradient(145deg, #e8f6fc, #d4eef9);
+  isolation: isolate;
+}
+
+.dc-reco-card__media--cover {
+  aspect-ratio: 4 / 3;
+}
+
+.dc-reco-card__media--icon {
+  display: grid;
+  place-items: center;
+  color: #0f3550;
+  font-size: 1.85rem;
+}
+
+/* Flux normal : pas d'absolute sur picture/img (évite le chevauchement texte) */
+.dc-reco-card__media > picture,
+.dc-reco-card__media > img.dc-reco-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dc-reco-card__media > picture img,
+.dc-reco-card__media > img.dc-reco-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dc-reco-card__media--stack {
+  aspect-ratio: 4 / 3;
+  background: #e6eef3;
+}
+
+.dc-reco-cover-stack {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.dc-reco-cover-stack picture,
+.dc-reco-cover-stack img {
+  position: absolute;
+  width: 44%;
+  height: 78%;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 16px rgba(15, 53, 80, 0.22);
+  border: 2px solid #fff;
+  left: calc(16% + (var(--stack-i, 0) * 18%));
+  top: calc(11% + (var(--stack-i, 0) * 5%));
+  z-index: calc(2 + var(--stack-i, 0));
+}
+
+.dc-reco-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem 1.05rem;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+.dc-reco-card__badge {
+  align-self: flex-start;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: #0f3550;
+  color: #fff;
+}
+
+.dc-reco-card__title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f3550;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dc-reco-card__tag {
+  font-size: 0.8rem;
+  color: #5a6b7a;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dc-reco-card__perk {
+  margin-top: 0.2rem;
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: #1a5f85;
 }
 
 /* Inclus dans un pack */

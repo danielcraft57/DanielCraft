@@ -1,7 +1,7 @@
 ---
 title: "Le chemin de l'utilisateur : étapes et freins"
 date: 2025-09-16
-excerpt: "User flows, journey map et JTBD — pour voir où ça coince vraiment."
+excerpt: "User flows, journey map et JTBD - pour voir où ça coince vraiment."
 type: article
 tags: [UX, parcours, journey map, JTBD, produit]
 series: ux-ui-serie
@@ -46,7 +46,7 @@ Le « job » guide l'ordre des étapes, les informations essentielles, les compr
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/parcours-emotion.svg" alt="Schema parcours utilisateur avec points de friction" class="schema-inline" width="640" />
-  <figcaption>Le journey map sert a voir ou ca fait mal — pas a faire joli.</figcaption>
+  <figcaption>Le journey map sert a voir ou ca fait mal - pas a faire joli.</figcaption>
 </figure>
 
 Le schéma situation → motivation → résultat n'est pas magique. C'est un filtre. Si tu ne peux pas écrire le job en une phrase claire, tu ne sais probablement pas encore pour qui tu conçois.

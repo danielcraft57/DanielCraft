@@ -1,7 +1,7 @@
 ---
 title: "Creer un agent IA en quelques minutes (debutant)"
 date: 2026-06-21
-excerpt: "But clair, consignes courtes, un outil, un test — puis on ameliore."
+excerpt: "But clair, consignes courtes, un outil, un test - puis on ameliore."
 type: guide
 tags: [IA, agents, automatisation, OpenAI]
 og_image: ia-agents-tutoriel-debutant-comment-creer-un-agent-ia-en-quelques-minutes-1200x630.jpg

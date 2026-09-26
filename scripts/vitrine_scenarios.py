@@ -55,7 +55,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Brasserie Saint-Jacques — Accueil',
+                "title": 'Brasserie Saint-Jacques - Accueil',
                 "description": 'Brasserie historique à Metz : cuisine lorraine, terrasse place Saint-Jacques et réservation en ligne.',
                 "hero": {
                     "h1": 'La table qui réchauffe Metz depuis 1924',
@@ -107,7 +107,7 @@ SCENARIOS: list[dict] = [
                         },
                         {
                             "title": 'Brunch dominical',
-                            "text": 'Brioche perdue à la mirabelle — réservation conseillée.',
+                            "text": 'Brioche perdue à la mirabelle - réservation conseillée.',
                             "img": 'card-2.png',
                             "alt": 'Brunch dominical',
                         },
@@ -120,14 +120,14 @@ SCENARIOS: list[dict] = [
                     ],
                 },
                 "cta": {
-                    "text": 'Réservez votre table — la terrasse se remplit vite.',
+                    "text": 'Réservez votre table - la terrasse se remplit vite.',
                     "btn": 'Réserver',
                     "href": 'contact.html',
                 },
             },
             {
                 "file": 'carte.html',
-                "title": 'La carte — Brasserie Saint-Jacques',
+                "title": 'La carte - Brasserie Saint-Jacques',
                 "description": 'Carte saisonnière : entrées lorraines, plats mijotés et bières artisanales.',
                 "hero": {
                     "h1": 'Une carte qui suit les saisons mosellanes',
@@ -179,7 +179,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'histoire.html',
-                "title": 'Notre histoire — Brasserie Saint-Jacques',
+                "title": 'Notre histoire - Brasserie Saint-Jacques',
                 "description": "Cent ans d'histoire gastronomique au cœur de Metz.",
                 "hero": {
                     "h1": 'Cent ans de convivialité messine',
@@ -216,7 +216,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Brasserie Saint-Jacques',
+                "title": 'Contact - Brasserie Saint-Jacques',
                 "description": 'Réservez votre table à Metz, place Saint-Jacques.',
                 "hero": {
                     "h1": 'Réserver ou nous écrire',
@@ -224,7 +224,7 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Entrée de brasserie à Metz',
                 },
-                "story": ('Nous trouver', ['Ouvert mar–sam midi et soir. Dimanche brunch 10h–15h. Tél. 03 87 75 12 34.']),
+                "story": ('Nous trouver', ['Ouvert mar-sam midi et soir. Dimanche brunch 10h-15h. Tél. 03 87 75 12 34.']),
                 "cta": {
                     "text": 'Groupes de 8+ : menu sur mesure.',
                     "btn": 'Envoyer ma demande',
@@ -261,7 +261,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Spa Thalie — Institut & spa à Nancy',
+                "title": 'Spa Thalie - Institut & spa à Nancy',
                 "description": 'Spa urbain à Nancy : soins visage, massages et rituels bien-être.',
                 "hero": {
                     "h1": 'Votre parenthèse bien-être au cœur de Nancy',
@@ -333,7 +333,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'soins.html',
-                "title": 'Nos soins — Spa Thalie',
+                "title": 'Nos soins - Spa Thalie',
                 "description": 'Protocoles visage, massages et rituels corps.',
                 "hero": {
                     "h1": 'Des protocoles pensés pour votre peau',
@@ -385,7 +385,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'ambiance.html',
-                "title": "L'institut — Spa Thalie",
+                "title": "L'institut - Spa Thalie",
                 "description": 'Lieux, cabines et engagements RSE.',
                 "hero": {
                     "h1": 'Un écrin de calme rue Stanislas',
@@ -434,7 +434,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Spa Thalie',
+                "title": 'Contact - Spa Thalie',
                 "description": 'RDV et accès à Nancy.',
                 "hero": {
                     "h1": 'Réserver votre moment Thalie',
@@ -442,7 +442,7 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Réception du spa',
                 },
-                "story": ('Horaires', ['Lun fermé. Mar–sam 9h–20h. Dim 10h–18h sur RDV.']),
+                "story": ('Horaires', ['Lun fermé. Mar-sam 9h-20h. Dim 10h-18h sur RDV.']),
                 "cta": {
                     "text": 'Annulation gratuite 24 h avant.',
                     "btn": 'Confirmer mon RDV',
@@ -479,7 +479,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Centre dentaire Mosaïque — Thionville',
+                "title": 'Centre dentaire Mosaïque - Thionville',
                 "description": 'Cabinet dentaire à Thionville : soins, prévention et orthodontie pour enfants et adultes.',
                 "hero": {
                     "h1": 'Votre sourire, notre priorité à Thionville',
@@ -551,7 +551,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'soins.html',
-                "title": 'Nos soins — Centre Mosaïque',
+                "title": 'Nos soins - Centre Mosaïque',
                 "description": 'Soins conservateurs, prothèses et orthodontie.',
                 "hero": {
                     "h1": 'Des soins adaptés à chaque âge',
@@ -565,7 +565,7 @@ SCENARIOS: list[dict] = [
                     "items": [
                         {
                             "title": 'Détartrage',
-                            "text": '45 € — remboursé Sécu.',
+                            "text": '45 € - remboursé Sécu.',
                             "img": 'card-1.png',
                             "alt": 'Détartrage',
                         },
@@ -611,7 +611,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'equipe.html',
-                "title": "L'équipe — Centre Mosaïque",
+                "title": "L'équipe - Centre Mosaïque",
                 "description": 'Chirurgiens-dentistes et assistantes à Thionville.',
                 "hero": {
                     "h1": 'Quatre praticiens, une même exigence',
@@ -660,7 +660,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Centre Mosaïque',
+                "title": 'Contact - Centre Mosaïque',
                 "description": 'RDV et urgences dentaires à Thionville.',
                 "hero": {
                     "h1": 'Prendre rendez-vous',
@@ -668,7 +668,7 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Accueil cabinet dentaire',
                 },
-                "story": ('Accès', ['Parking République. Bus ligne 5 arrêt Hôtel de Ville. Samedi 8h–12h.']),
+                "story": ('Accès', ['Parking République. Bus ligne 5 arrêt Hôtel de Ville. Samedi 8h-12h.']),
                 "cta": {
                     "text": 'Urgence : 03 82 88 45 00 avant 11 h.',
                     "btn": 'Réserver en ligne',
@@ -705,11 +705,11 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Garage Central Plappeville — Mécanique & carrosserie',
+                "title": 'Garage Central Plappeville - Mécanique & carrosserie',
                 "description": 'Garage auto à Plappeville : entretien, pneus, carrosserie et contrôle technique.',
                 "hero": {
                     "h1": "L'atelier de confiance des Messins depuis 1972",
-                    "lead": 'Mécanique générale, carrosserie et pneus — devis clair avant chaque intervention.',
+                    "lead": 'Mécanique générale, carrosserie et pneus - devis clair avant chaque intervention.',
                     "img": 'hero.png',
                     "alt": 'Atelier mécanique avec véhicule sur pont',
                 },
@@ -729,7 +729,7 @@ SCENARIOS: list[dict] = [
                     },
                     {
                         "title": 'Le parc pneus',
-                        "text": 'Montage, équilibrage et géométrie — toutes dimensions.',
+                        "text": 'Montage, équilibrage et géométrie - toutes dimensions.',
                         "img": 'scene-3.png',
                         "alt": 'Stock de pneus en garage',
                     },
@@ -777,7 +777,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'services.html',
-                "title": 'Services — Garage Central',
+                "title": 'Services - Garage Central',
                 "description": 'Mécanique, pneus, climatisation et diagnostic.',
                 "hero": {
                     "h1": 'Tout pour rouler serein',
@@ -837,7 +837,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'atelier.html',
-                "title": "L'atelier — Garage Central",
+                "title": "L'atelier - Garage Central",
                 "description": 'Équipe, outils et méthode de travail.',
                 "hero": {
                     "h1": '900 m² dédiés à votre véhicule',
@@ -845,7 +845,7 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": "Vue d'ensemble de l'atelier",
                 },
-                "story": ("L'équipe", ['Six mécaniciens, deux carrossiers et une coordinatrice accueil — tous formés aux normes constructeur.']),
+                "story": ("L'équipe", ['Six mécaniciens, deux carrossiers et une coordinatrice accueil - tous formés aux normes constructeur.']),
                 "chapters": [
                     {
                         "title": 'Accueil',
@@ -886,7 +886,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Garage Central',
+                "title": 'Contact - Garage Central',
                 "description": 'RDV atelier à Plappeville.',
                 "hero": {
                     "h1": 'Nous contacter',
@@ -894,7 +894,7 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Façade du garage',
                 },
-                "story": ('Horaires', ['Lun–ven 8h–18h, sam 8h–12h. Tél. 03 87 65 43 21.']),
+                "story": ('Horaires', ['Lun-ven 8h-18h, sam 8h-12h. Tél. 03 87 65 43 21.']),
                 "cta": {
                     "text": 'Panne sur autoroute ? Numéro dépannage 24h/24.',
                     "btn": 'Appeler le dépannage',
@@ -931,7 +931,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Halles Thionville — Commerce & drive',
+                "title": 'Halles Thionville - Commerce & drive',
                 "description": 'Supermarché de proximité à Thionville : frais, drive et programme fidélité.',
                 "hero": {
                     "h1": 'Le marché du quotidien, version moderne',
@@ -1003,7 +1003,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'rayons.html',
-                "title": 'Rayons — Halles Thionville',
+                "title": 'Rayons - Halles Thionville',
                 "description": 'Boucherie, poissonnerie, épicerie et bio.',
                 "hero": {
                     "h1": 'Des rayons qui respirent la fraîcheur',
@@ -1063,7 +1063,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'drive.html',
-                "title": 'Drive — Halles Thionville',
+                "title": 'Drive - Halles Thionville',
                 "description": 'Click & collect et retrait express.',
                 "hero": {
                     "h1": 'Faites vos courses sans sortir de voiture',
@@ -1112,7 +1112,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Halles Thionville',
+                "title": 'Contact - Halles Thionville',
                 "description": 'Horaires, accès et service client.',
                 "hero": {
                     "h1": 'Une question ? On vous répond',
@@ -1120,7 +1120,7 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Accueil client supermarché',
                 },
-                "story": ('Service client', ['Lun–sam 8h–20h, dim 9h–12h30. service@halles-thionville.fr']),
+                "story": ('Service client', ['Lun-sam 8h-20h, dim 9h-12h30. service@halles-thionville.fr']),
                 "cta": {
                     "text": 'Réclamation ou suggestion : formulaire dédié.',
                     "btn": 'Nous écrire',
@@ -1157,7 +1157,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Verlaine & Associés — Accueil',
+                "title": 'Verlaine & Associés - Accueil',
                 "description": "Cabinet d'expertise comptable à Metz, partenaire des PME lorraines depuis 1986.…",
                 "hero": {
                     "h1": 'Verlaine & Associés : bilan et conseil à Metz',
@@ -1189,7 +1189,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Verlaine & Associés',
                     },
                     {
@@ -1229,7 +1229,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'expertises.html',
-                "title": 'Expertises — Verlaine & Associés',
+                "title": 'Expertises - Verlaine & Associés',
                 "description": 'Expertises : détails et expertises de Verlaine & Associés à Metz.',
                 "hero": {
                     "h1": 'Expertises',
@@ -1237,24 +1237,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Expertises Verlaine & Associés',
                 },
-                "story": ('Notre vision — Expertises', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de dirigeants.']),
+                "story": ('Notre vision - Expertises', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de dirigeants.']),
                 "cards": {
                     "title": 'Expertises',
                     "items": [
                         {
-                            "title": 'Expertises — niveau 1',
+                            "title": 'Expertises - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Expertises',
                         },
                         {
-                            "title": 'Expertises — niveau 2',
+                            "title": 'Expertises - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Expertises — niveau 3',
+                            "title": 'Expertises - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -1301,7 +1301,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'methode.html',
-                "title": 'Notre méthode — Verlaine & Associés',
+                "title": 'Notre méthode - Verlaine & Associés',
                 "description": 'Notre méthode : approche et valeurs de Verlaine & Associés.',
                 "hero": {
                     "h1": 'Notre méthode',
@@ -1312,19 +1312,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Verlaine & Associés à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Verlaine & Associés',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Verlaine & Associés',
@@ -1350,17 +1350,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Verlaine & Associés',
+                "title": 'Contact - Verlaine & Associés',
                 "description": 'Contactez Verlaine & Associés à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Verlaine & Associés',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -1395,7 +1395,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Précisite Usinage — Accueil',
+                "title": 'Précisite Usinage - Accueil',
                 "description": "Usinage de précision à Yutz pour l'automobile et l'aéronautique en Lorraine.…",
                 "hero": {
                     "h1": 'Précisite Usinage : tolerances micron à Yutz',
@@ -1427,7 +1427,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Yutz',
+                        "caption": 'Moment de vie - Yutz',
                         "alt": 'Scène Précisite Usinage',
                     },
                     {
@@ -1467,7 +1467,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'savoir-faire.html',
-                "title": 'Savoir-faire — Précisite Usinage',
+                "title": 'Savoir-faire - Précisite Usinage',
                 "description": 'Savoir-faire : détails et expertises de Précisite Usinage à Yutz.',
                 "hero": {
                     "h1": 'Savoir-faire',
@@ -1475,24 +1475,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Savoir-faire Précisite Usinage',
                 },
-                "story": ('Notre vision — Savoir-faire', ["Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de donneurs d'ordre."]),
+                "story": ('Notre vision - Savoir-faire', ["Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de donneurs d'ordre."]),
                 "cards": {
                     "title": 'Savoir-faire',
                     "items": [
                         {
-                            "title": 'Savoir-faire — niveau 1',
+                            "title": 'Savoir-faire - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Savoir-faire',
                         },
                         {
-                            "title": 'Savoir-faire — niveau 2',
+                            "title": 'Savoir-faire - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Savoir-faire — niveau 3',
+                            "title": 'Savoir-faire - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -1539,7 +1539,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'qualite.html',
-                "title": 'Qualité — Précisite Usinage',
+                "title": 'Qualité - Précisite Usinage',
                 "description": 'Qualité : approche et valeurs de Précisite Usinage.',
                 "hero": {
                     "h1": 'Qualité',
@@ -1550,19 +1550,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Précisite Usinage à Yutz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Précisite Usinage',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Précisite Usinage',
@@ -1588,17 +1588,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Précisite Usinage',
+                "title": 'Contact - Précisite Usinage',
                 "description": 'Contactez Précisite Usinage à Yutz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Yutz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Yutz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Précisite Usinage',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -1633,7 +1633,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Patrimoine Lorraine — Accueil',
+                "title": 'Patrimoine Lorraine - Accueil',
                 "description": 'Agence immobilière à Nancy : vente, location et gestion sur le Grand Est.…',
                 "hero": {
                     "h1": "Patrimoine Lorraine : biens d'exception à Nancy",
@@ -1665,7 +1665,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Nancy',
+                        "caption": 'Moment de vie - Nancy',
                         "alt": 'Scène Patrimoine Lorraine',
                     },
                     {
@@ -1705,7 +1705,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'biens.html',
-                "title": 'Nos biens — Patrimoine Lorraine',
+                "title": 'Nos biens - Patrimoine Lorraine',
                 "description": 'Nos biens : détails et expertises de Patrimoine Lorraine à Nancy.',
                 "hero": {
                     "h1": 'Nos biens',
@@ -1713,24 +1713,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Nos biens Patrimoine Lorraine',
                 },
-                "story": ('Notre vision — Nos biens', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de acquéreurs.']),
+                "story": ('Notre vision - Nos biens', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de acquéreurs.']),
                 "cards": {
                     "title": 'Nos biens',
                     "items": [
                         {
-                            "title": 'Nos biens — niveau 1',
+                            "title": 'Nos biens - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Nos biens',
                         },
                         {
-                            "title": 'Nos biens — niveau 2',
+                            "title": 'Nos biens - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Nos biens — niveau 3',
+                            "title": 'Nos biens - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -1777,7 +1777,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'estimation.html',
-                "title": 'Estimation — Patrimoine Lorraine',
+                "title": 'Estimation - Patrimoine Lorraine',
                 "description": 'Estimation : approche et valeurs de Patrimoine Lorraine.',
                 "hero": {
                     "h1": 'Estimation',
@@ -1788,19 +1788,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Patrimoine Lorraine à Nancy.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Patrimoine Lorraine',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Patrimoine Lorraine',
@@ -1826,17 +1826,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Patrimoine Lorraine',
+                "title": 'Contact - Patrimoine Lorraine',
                 "description": 'Contactez Patrimoine Lorraine à Nancy.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Nancy, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Nancy, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Patrimoine Lorraine',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -1871,7 +1871,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Rivière & Partenaires — Accueil',
+                "title": 'Rivière & Partenaires - Accueil',
                 "description": "Cabinet d'avocats à Metz : droit des affaires, social et contentieux pour PME.…",
                 "hero": {
                     "h1": 'Rivière & Partenaires : conseil stratégique à Metz',
@@ -1903,7 +1903,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Rivière & Partenaires',
                     },
                     {
@@ -1943,7 +1943,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'expertises.html',
-                "title": 'Expertises — Rivière & Partenaires',
+                "title": 'Expertises - Rivière & Partenaires',
                 "description": 'Expertises : détails et expertises de Rivière & Partenaires à Metz.',
                 "hero": {
                     "h1": 'Expertises',
@@ -1951,24 +1951,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Expertises Rivière & Partenaires',
                 },
-                "story": ('Notre vision — Expertises', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de dirigeants.']),
+                "story": ('Notre vision - Expertises', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de dirigeants.']),
                 "cards": {
                     "title": 'Expertises',
                     "items": [
                         {
-                            "title": 'Expertises — niveau 1',
+                            "title": 'Expertises - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Expertises',
                         },
                         {
-                            "title": 'Expertises — niveau 2',
+                            "title": 'Expertises - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Expertises — niveau 3',
+                            "title": 'Expertises - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -2015,7 +2015,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'accompagnement.html',
-                "title": 'Accompagnement — Rivière & Partenaires',
+                "title": 'Accompagnement - Rivière & Partenaires',
                 "description": 'Accompagnement : approche et valeurs de Rivière & Partenaires.',
                 "hero": {
                     "h1": 'Accompagnement',
@@ -2026,19 +2026,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Rivière & Partenaires à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Rivière & Partenaires',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Rivière & Partenaires',
@@ -2064,17 +2064,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Rivière & Partenaires',
+                "title": 'Contact - Rivière & Partenaires',
                 "description": 'Contactez Rivière & Partenaires à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Rivière & Partenaires',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -2109,7 +2109,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Atelier Nord-Est — Accueil',
+                "title": 'Atelier Nord-Est - Accueil',
                 "description": "Agence d'architecture à Metz : réhabilitation, logements et équipements publics.…",
                 "hero": {
                     "h1": 'Atelier Nord-Est : conception durable à Metz',
@@ -2141,7 +2141,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Atelier Nord-Est',
                     },
                     {
@@ -2181,7 +2181,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'projets.html',
-                "title": 'Projets — Atelier Nord-Est',
+                "title": 'Projets - Atelier Nord-Est',
                 "description": 'Projets : détails et expertises de Atelier Nord-Est à Metz.',
                 "hero": {
                     "h1": 'Projets',
@@ -2189,24 +2189,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Projets Atelier Nord-Est',
                 },
-                "story": ('Notre vision — Projets', ["Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de maîtres d'ouvrage."]),
+                "story": ('Notre vision - Projets', ["Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de maîtres d'ouvrage."]),
                 "cards": {
                     "title": 'Projets',
                     "items": [
                         {
-                            "title": 'Projets — niveau 1',
+                            "title": 'Projets - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Projets',
                         },
                         {
-                            "title": 'Projets — niveau 2',
+                            "title": 'Projets - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Projets — niveau 3',
+                            "title": 'Projets - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -2253,7 +2253,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'methode.html',
-                "title": 'Méthode — Atelier Nord-Est',
+                "title": 'Méthode - Atelier Nord-Est',
                 "description": 'Méthode : approche et valeurs de Atelier Nord-Est.',
                 "hero": {
                     "h1": 'Méthode',
@@ -2264,19 +2264,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Atelier Nord-Est à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Atelier Nord-Est',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Atelier Nord-Est',
@@ -2302,17 +2302,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Atelier Nord-Est',
+                "title": 'Contact - Atelier Nord-Est',
                 "description": 'Contactez Atelier Nord-Est à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Atelier Nord-Est',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -2347,7 +2347,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Pulse Fitness Metz — Accueil',
+                "title": 'Pulse Fitness Metz - Accueil',
                 "description": 'Salle de sport à Metz : cours collectifs, musculation et coaching personnalisé.…',
                 "hero": {
                     "h1": 'Pulse Fitness Metz : cours collectifs à Metz',
@@ -2379,7 +2379,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Pulse Fitness Metz',
                     },
                     {
@@ -2419,7 +2419,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'cours.html',
-                "title": 'Cours — Pulse Fitness Metz',
+                "title": 'Cours - Pulse Fitness Metz',
                 "description": 'Cours : détails et expertises de Pulse Fitness Metz à Metz.',
                 "hero": {
                     "h1": 'Cours',
@@ -2427,24 +2427,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Cours Pulse Fitness Metz',
                 },
-                "story": ('Notre vision — Cours', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de sportifs.']),
+                "story": ('Notre vision - Cours', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de sportifs.']),
                 "cards": {
                     "title": 'Cours',
                     "items": [
                         {
-                            "title": 'Cours — niveau 1',
+                            "title": 'Cours - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Cours',
                         },
                         {
-                            "title": 'Cours — niveau 2',
+                            "title": 'Cours - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Cours — niveau 3',
+                            "title": 'Cours - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -2491,7 +2491,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'tarifs.html',
-                "title": 'Tarifs — Pulse Fitness Metz',
+                "title": 'Tarifs - Pulse Fitness Metz',
                 "description": 'Tarifs : approche et valeurs de Pulse Fitness Metz.',
                 "hero": {
                     "h1": 'Tarifs',
@@ -2502,19 +2502,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Pulse Fitness Metz à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Pulse Fitness Metz',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Pulse Fitness Metz',
@@ -2540,17 +2540,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Pulse Fitness Metz',
+                "title": 'Contact - Pulse Fitness Metz',
                 "description": 'Contactez Pulse Fitness Metz à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Pulse Fitness Metz',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -2585,7 +2585,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Studio Lumière Grise — Accueil',
+                "title": 'Studio Lumière Grise - Accueil',
                 "description": 'Photographe mariage et corporate à Nancy : reportages et portraits.…',
                 "hero": {
                     "h1": 'Studio Lumière Grise : reportages authentiques à Nancy',
@@ -2617,7 +2617,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Nancy',
+                        "caption": 'Moment de vie - Nancy',
                         "alt": 'Scène Studio Lumière Grise',
                     },
                     {
@@ -2657,7 +2657,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'portfolio.html',
-                "title": 'Portfolio — Studio Lumière Grise',
+                "title": 'Portfolio - Studio Lumière Grise',
                 "description": 'Portfolio : détails et expertises de Studio Lumière Grise à Nancy.',
                 "hero": {
                     "h1": 'Portfolio',
@@ -2665,24 +2665,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Portfolio Studio Lumière Grise',
                 },
-                "story": ('Notre vision — Portfolio', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de couples.']),
+                "story": ('Notre vision - Portfolio', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de couples.']),
                 "cards": {
                     "title": 'Portfolio',
                     "items": [
                         {
-                            "title": 'Portfolio — niveau 1',
+                            "title": 'Portfolio - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Portfolio',
                         },
                         {
-                            "title": 'Portfolio — niveau 2',
+                            "title": 'Portfolio - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Portfolio — niveau 3',
+                            "title": 'Portfolio - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -2729,7 +2729,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'prestations.html',
-                "title": 'Prestations — Studio Lumière Grise',
+                "title": 'Prestations - Studio Lumière Grise',
                 "description": 'Prestations : approche et valeurs de Studio Lumière Grise.',
                 "hero": {
                     "h1": 'Prestations',
@@ -2740,19 +2740,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Studio Lumière Grise à Nancy.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Studio Lumière Grise',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Studio Lumière Grise',
@@ -2778,17 +2778,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Studio Lumière Grise',
+                "title": 'Contact - Studio Lumière Grise',
                 "description": 'Contactez Studio Lumière Grise à Nancy.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Nancy, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Nancy, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Studio Lumière Grise',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -2823,7 +2823,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Solidarités Metz Métropole — Accueil',
+                "title": 'Solidarités Metz Métropole - Accueil',
                 "description": "Association d'utilité publique à Metz : aide alimentaire, insertion et bénévolat…",
                 "hero": {
                     "h1": 'Solidarités Metz Métropole : solidarité locale à Metz',
@@ -2855,7 +2855,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Solidarités Metz Métropole',
                     },
                     {
@@ -2895,7 +2895,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'actions.html',
-                "title": 'Nos actions — Solidarités Metz Métropole',
+                "title": 'Nos actions - Solidarités Metz Métropole',
                 "description": 'Nos actions : détails et expertises de Solidarités Metz Métropole à Metz.',
                 "hero": {
                     "h1": 'Nos actions',
@@ -2903,24 +2903,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Nos actions Solidarités Metz Métropole',
                 },
-                "story": ('Notre vision — Nos actions', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de bénévoles.']),
+                "story": ('Notre vision - Nos actions', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de bénévoles.']),
                 "cards": {
                     "title": 'Nos actions',
                     "items": [
                         {
-                            "title": 'Nos actions — niveau 1',
+                            "title": 'Nos actions - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Nos actions',
                         },
                         {
-                            "title": 'Nos actions — niveau 2',
+                            "title": 'Nos actions - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Nos actions — niveau 3',
+                            "title": 'Nos actions - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -2967,7 +2967,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'benevolat.html',
-                "title": 'Bénévolat — Solidarités Metz Métropole',
+                "title": 'Bénévolat - Solidarités Metz Métropole',
                 "description": 'Bénévolat : approche et valeurs de Solidarités Metz Métropole.',
                 "hero": {
                     "h1": 'Bénévolat',
@@ -2978,19 +2978,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Solidarités Metz Métropole à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Solidarités Metz Métropole',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Solidarités Metz Métropole',
@@ -3016,17 +3016,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Solidarités Metz Métropole',
+                "title": 'Contact - Solidarités Metz Métropole',
                 "description": 'Contactez Solidarités Metz Métropole à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Solidarités Metz Métropole',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -3061,7 +3061,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Institut Mercure — Accueil',
+                "title": 'Institut Mercure - Accueil',
                 "description": 'Centre de formation professionnelle à Thionville : alternance et reconversion.…',
                 "hero": {
                     "h1": 'Institut Mercure : compétences métiers à Thionville',
@@ -3093,7 +3093,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Thionville',
+                        "caption": 'Moment de vie - Thionville',
                         "alt": 'Scène Institut Mercure',
                     },
                     {
@@ -3133,7 +3133,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'parcours.html',
-                "title": 'Parcours — Institut Mercure',
+                "title": 'Parcours - Institut Mercure',
                 "description": 'Parcours : détails et expertises de Institut Mercure à Thionville.',
                 "hero": {
                     "h1": 'Parcours',
@@ -3141,24 +3141,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Parcours Institut Mercure',
                 },
-                "story": ('Notre vision — Parcours', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de apprenants.']),
+                "story": ('Notre vision - Parcours', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de apprenants.']),
                 "cards": {
                     "title": 'Parcours',
                     "items": [
                         {
-                            "title": 'Parcours — niveau 1',
+                            "title": 'Parcours - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Parcours',
                         },
                         {
-                            "title": 'Parcours — niveau 2',
+                            "title": 'Parcours - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Parcours — niveau 3',
+                            "title": 'Parcours - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -3205,7 +3205,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'campus.html',
-                "title": 'Campus — Institut Mercure',
+                "title": 'Campus - Institut Mercure',
                 "description": 'Campus : approche et valeurs de Institut Mercure.',
                 "hero": {
                     "h1": 'Campus',
@@ -3216,19 +3216,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Institut Mercure à Thionville.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Institut Mercure',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Institut Mercure',
@@ -3254,17 +3254,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Institut Mercure',
+                "title": 'Contact - Institut Mercure',
                 "description": 'Contactez Institut Mercure à Thionville.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Thionville, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Thionville, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Institut Mercure',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -3299,7 +3299,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Proprio Facility — Accueil',
+                "title": 'Proprio Facility - Accueil',
                 "description": 'Facility management et conciergerie pour immeubles tertiaires en Lorraine.…',
                 "hero": {
                     "h1": 'Proprio Facility : services sur mesure à Metz',
@@ -3331,7 +3331,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Proprio Facility',
                     },
                     {
@@ -3371,7 +3371,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'offres.html',
-                "title": 'Offres — Proprio Facility',
+                "title": 'Offres - Proprio Facility',
                 "description": 'Offres : détails et expertises de Proprio Facility à Metz.',
                 "hero": {
                     "h1": 'Offres',
@@ -3379,24 +3379,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Offres Proprio Facility',
                 },
-                "story": ('Notre vision — Offres', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de gestionnaires.']),
+                "story": ('Notre vision - Offres', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de gestionnaires.']),
                 "cards": {
                     "title": 'Offres',
                     "items": [
                         {
-                            "title": 'Offres — niveau 1',
+                            "title": 'Offres - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Offres',
                         },
                         {
-                            "title": 'Offres — niveau 2',
+                            "title": 'Offres - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Offres — niveau 3',
+                            "title": 'Offres - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -3443,7 +3443,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'secteurs.html',
-                "title": 'Secteurs — Proprio Facility',
+                "title": 'Secteurs - Proprio Facility',
                 "description": 'Secteurs : approche et valeurs de Proprio Facility.',
                 "hero": {
                     "h1": 'Secteurs',
@@ -3454,19 +3454,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Proprio Facility à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Proprio Facility',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Proprio Facility',
@@ -3492,17 +3492,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Proprio Facility',
+                "title": 'Contact - Proprio Facility',
                 "description": 'Contactez Proprio Facility à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Proprio Facility',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -3537,7 +3537,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Hôtel Stanislas Collection — Accueil',
+                "title": 'Hôtel Stanislas Collection - Accueil',
                 "description": 'Hôtel 4 étoiles à Nancy : chambres, spa et séminaires place Stanislas.…',
                 "hero": {
                     "h1": 'Hôtel Stanislas Collection : hospitalité premium à Nancy',
@@ -3569,7 +3569,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Nancy',
+                        "caption": 'Moment de vie - Nancy',
                         "alt": 'Scène Hôtel Stanislas Collection',
                     },
                     {
@@ -3609,7 +3609,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'chambres.html',
-                "title": 'Chambres — Hôtel Stanislas Collection',
+                "title": 'Chambres - Hôtel Stanislas Collection',
                 "description": 'Chambres : détails et expertises de Hôtel Stanislas Collection à Nancy.',
                 "hero": {
                     "h1": 'Chambres',
@@ -3617,24 +3617,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Chambres Hôtel Stanislas Collection',
                 },
-                "story": ('Notre vision — Chambres', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de voyageurs.']),
+                "story": ('Notre vision - Chambres', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de voyageurs.']),
                 "cards": {
                     "title": 'Chambres',
                     "items": [
                         {
-                            "title": 'Chambres — niveau 1',
+                            "title": 'Chambres - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Chambres',
                         },
                         {
-                            "title": 'Chambres — niveau 2',
+                            "title": 'Chambres - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Chambres — niveau 3',
+                            "title": 'Chambres - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -3681,7 +3681,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'seminaires.html',
-                "title": 'Séminaires — Hôtel Stanislas Collection',
+                "title": 'Séminaires - Hôtel Stanislas Collection',
                 "description": 'Séminaires : approche et valeurs de Hôtel Stanislas Collection.',
                 "hero": {
                     "h1": 'Séminaires',
@@ -3692,19 +3692,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Hôtel Stanislas Collection à Nancy.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Hôtel Stanislas Collection',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Hôtel Stanislas Collection',
@@ -3730,17 +3730,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Hôtel Stanislas Collection',
+                "title": 'Contact - Hôtel Stanislas Collection',
                 "description": 'Contactez Hôtel Stanislas Collection à Nancy.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Nancy, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Nancy, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Hôtel Stanislas Collection',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -3775,7 +3775,7 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'Synapse Lorraine — Accueil',
+                "title": 'Synapse Lorraine - Accueil',
                 "description": 'Éditeur logiciel B2B à Metz : solutions data pour industriels du Grand Est.…',
                 "hero": {
                     "h1": 'Synapse Lorraine : plateforme data à Metz',
@@ -3807,7 +3807,7 @@ SCENARIOS: list[dict] = [
                 "gallery": [
                     {
                         "img": 'gallery-1.png',
-                        "caption": 'Moment de vie — Metz',
+                        "caption": 'Moment de vie - Metz',
                         "alt": 'Scène Synapse Lorraine',
                     },
                     {
@@ -3847,7 +3847,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'produit.html',
-                "title": 'Produit — Synapse Lorraine',
+                "title": 'Produit - Synapse Lorraine',
                 "description": 'Produit : détails et expertises de Synapse Lorraine à Metz.',
                 "hero": {
                     "h1": 'Produit',
@@ -3855,24 +3855,24 @@ SCENARIOS: list[dict] = [
                     "img": 'hero.png',
                     "alt": 'Page Produit Synapse Lorraine',
                 },
-                "story": ('Notre vision — Produit', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de DSI.']),
+                "story": ('Notre vision - Produit', ['Chaque prestation est calibrée pour les réalités du marché lorrain et les objectifs de DSI.']),
                 "cards": {
                     "title": 'Produit',
                     "items": [
                         {
-                            "title": 'Produit — niveau 1',
+                            "title": 'Produit - niveau 1',
                             "text": 'Formule accessible et complète.',
                             "img": 'card-1.png',
                             "alt": 'Détail Produit',
                         },
                         {
-                            "title": 'Produit — niveau 2',
+                            "title": 'Produit - niveau 2',
                             "text": 'Approfondissement et options avancées.',
                             "img": 'card-2.png',
                             "alt": 'Option avancée',
                         },
                         {
-                            "title": 'Produit — niveau 3',
+                            "title": 'Produit - niveau 3',
                             "text": 'Solution intégrale clé en main.',
                             "img": 'card-3.png',
                             "alt": 'Solution intégrale',
@@ -3919,7 +3919,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'clients.html',
-                "title": 'Clients — Synapse Lorraine',
+                "title": 'Clients - Synapse Lorraine',
                 "description": 'Clients : approche et valeurs de Synapse Lorraine.',
                 "hero": {
                     "h1": 'Clients',
@@ -3930,19 +3930,19 @@ SCENARIOS: list[dict] = [
                 "timeline": [('2010', 'Création de Synapse Lorraine à Metz.'), ('2016', "Extension de l'équipe et nouveaux locaux."), ('2020', 'Certification qualité et partenariats régionaux.'), ('2024', 'Plus de 500 clients accompagnés en Grand Est.')],
                 "chapters": [
                     {
-                        "title": 'Étape 1 — Écoute',
+                        "title": 'Étape 1 - Écoute',
                         "text": 'Diagnostic gratuit et définition des objectifs.',
                         "img": 'scene-1.png',
                         "alt": 'Écoute client Synapse Lorraine',
                     },
                     {
-                        "title": 'Étape 2 — Action',
+                        "title": 'Étape 2 - Action',
                         "text": "Mise en œuvre avec points d'étape réguliers.",
                         "img": 'scene-2.png',
                         "alt": 'Action terrain',
                     },
                     {
-                        "title": 'Étape 3 — Suivi',
+                        "title": 'Étape 3 - Suivi',
                         "text": 'Bilan et ajustements pour pérenniser les résultats.',
                         "img": 'scene-3.png',
                         "alt": 'Suivi Synapse Lorraine',
@@ -3968,17 +3968,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — Synapse Lorraine',
+                "title": 'Contact - Synapse Lorraine',
                 "description": 'Contactez Synapse Lorraine à Metz.',
                 "hero": {
                     "h1": 'Parlons de votre projet',
-                    "lead": 'Metz, Grand Est — réponse sous 24 h ouvrées.',
+                    "lead": 'Metz, Grand Est - réponse sous 24 h ouvrées.',
                     "img": 'hero.png',
                     "alt": 'Contact Synapse Lorraine',
                 },
-                "story": ('Coordonnées', ['Du lundi au vendredi 9h–18h. Formulaire ci-dessous ou par téléphone.']),
+                "story": ('Coordonnées', ['Du lundi au vendredi 9h-18h. Formulaire ci-dessous ou par téléphone.']),
                 "cta": {
-                    "text": 'Démonstration — aucune donnée transmise.',
+                    "text": 'Démonstration - aucune donnée transmise.',
                     "btn": 'Envoyer ma demande',
                     "href": '#',
                 },
@@ -4013,13 +4013,13 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'FlowMetrics — Landing SaaS analytics pour équipes produit.',
+                "title": 'FlowMetrics - Landing SaaS analytics pour équipes produit.',
                 "description": 'Transformez vos données en décisions : hero conversion, pricing contrasté et preuves sociales.',
                 "hero": {
                     "h1": 'FlowMetrics : Landing SaaS analytics pour équipes produit.',
                     "lead": 'Transformez vos données en décisions : hero conversion, pricing contrasté et preuves sociales.',
                     "img": 'hero.png',
-                    "alt": "Interface FlowMetrics — écran d'accueil produit",
+                    "alt": "Interface FlowMetrics - écran d'accueil produit",
                 },
                 "story": ('Le problème que nous résolvons', ['Les équipes produit perdent du temps sur des outils fragmentés et des tableaux Excel obsolètes.', "FlowMetrics centralise l'essentiel dans une interface claire, pensée pour le Grand Est et au-delà."]),
                 "chapters": [
@@ -4027,7 +4027,7 @@ SCENARIOS: list[dict] = [
                         "title": 'Interface principale',
                         "text": 'Design épuré, hiérarchie visuelle et CTA visibles.',
                         "img": 'scene-1.png',
-                        "alt": 'UI FlowMetrics — dashboard',
+                        "alt": 'UI FlowMetrics - dashboard',
                     },
                     {
                         "title": 'Workflow clé',
@@ -4085,7 +4085,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'fonctionnalites.html',
-                "title": 'Fonctionnalités — FlowMetrics',
+                "title": 'Fonctionnalités - FlowMetrics',
                 "description": 'Détail des fonctionnalités FlowMetrics.',
                 "hero": {
                     "h1": 'Fonctionnalités',
@@ -4157,7 +4157,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'tarifs.html',
-                "title": 'Tarifs — FlowMetrics',
+                "title": 'Tarifs - FlowMetrics',
                 "description": 'Grille tarifaire FlowMetrics.',
                 "hero": {
                     "h1": 'Tarifs transparents',
@@ -4170,13 +4170,13 @@ SCENARIOS: list[dict] = [
                     "items": [
                         {
                             "title": 'Starter',
-                            "text": "Pour les petites équipes — jusqu'à 5 utilisateurs.",
+                            "text": "Pour les petites équipes - jusqu'à 5 utilisateurs.",
                             "img": 'card-1.png',
                             "alt": 'Plan Starter FlowMetrics',
                         },
                         {
                             "title": 'Pro',
-                            "text": 'Le plus populaire — illimité et support prioritaire.',
+                            "text": 'Le plus populaire - illimité et support prioritaire.',
                             "img": 'card-2.png',
                             "alt": 'Plan Pro FlowMetrics',
                         },
@@ -4216,17 +4216,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — FlowMetrics',
+                "title": 'Contact - FlowMetrics',
                 "description": 'Essai gratuit et démo FlowMetrics.',
                 "hero": {
                     "h1": 'Démarrer avec FlowMetrics',
-                    "lead": 'Formulaire de contact — réponse sous 24 h.',
+                    "lead": 'Formulaire de contact - réponse sous 24 h.',
                     "img": 'hero.png',
                     "alt": 'Contact FlowMetrics',
                 },
                 "story": ('Nous contacter', ['Support en français, hébergement UE, conformité RGPD.']),
                 "cta": {
-                    "text": 'Démo — aucune donnée transmise.',
+                    "text": 'Démo - aucune donnée transmise.',
                     "btn": 'Envoyer',
                     "href": '#',
                 },
@@ -4261,13 +4261,13 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'TalentLoop — Onboarding RH en 4 étapes avec barre de progression.',
+                "title": 'TalentLoop - Onboarding RH en 4 étapes avec barre de progression.',
                 "description": "Réduisez l'abandon à l'inscription : copy orienté valeur et aha moment visible.",
                 "hero": {
                     "h1": 'TalentLoop : Onboarding RH en 4 étapes avec barre de progression.',
                     "lead": "Réduisez l'abandon à l'inscription : copy orienté valeur et aha moment visible.",
                     "img": 'hero.png',
-                    "alt": "Interface TalentLoop — écran d'accueil produit",
+                    "alt": "Interface TalentLoop - écran d'accueil produit",
                 },
                 "story": ('Le problème que nous résolvons', ['Les équipes produit perdent du temps sur des outils fragmentés et des tableaux Excel obsolètes.', "TalentLoop centralise l'essentiel dans une interface claire, pensée pour le Grand Est et au-delà."]),
                 "chapters": [
@@ -4275,7 +4275,7 @@ SCENARIOS: list[dict] = [
                         "title": 'Interface principale',
                         "text": 'Design épuré, hiérarchie visuelle et CTA visibles.',
                         "img": 'scene-1.png',
-                        "alt": 'UI TalentLoop — dashboard',
+                        "alt": 'UI TalentLoop - dashboard',
                     },
                     {
                         "title": 'Workflow clé',
@@ -4333,7 +4333,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'parcours.html',
-                "title": 'Parcours — TalentLoop',
+                "title": 'Parcours - TalentLoop',
                 "description": 'Détail des étapes d onboarding TalentLoop.',
                 "hero": {
                     "h1": 'Parcours en 4 étapes',
@@ -4405,7 +4405,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'fonctionnalites.html',
-                "title": 'Fonctionnalités — TalentLoop',
+                "title": 'Fonctionnalités - TalentLoop',
                 "description": 'Modules TalentLoop.',
                 "hero": {
                     "h1": 'Toutes les fonctionnalités',
@@ -4418,13 +4418,13 @@ SCENARIOS: list[dict] = [
                     "items": [
                         {
                             "title": 'Starter',
-                            "text": "Pour les petites équipes — jusqu'à 5 utilisateurs.",
+                            "text": "Pour les petites équipes - jusqu'à 5 utilisateurs.",
                             "img": 'card-1.png',
                             "alt": 'Plan Starter TalentLoop',
                         },
                         {
                             "title": 'Pro',
-                            "text": 'Le plus populaire — illimité et support prioritaire.',
+                            "text": 'Le plus populaire - illimité et support prioritaire.',
                             "img": 'card-2.png',
                             "alt": 'Plan Pro TalentLoop',
                         },
@@ -4464,17 +4464,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — TalentLoop',
+                "title": 'Contact - TalentLoop',
                 "description": 'Essai gratuit et démo TalentLoop.',
                 "hero": {
                     "h1": 'Démarrer avec TalentLoop',
-                    "lead": 'Formulaire de contact — réponse sous 24 h.',
+                    "lead": 'Formulaire de contact - réponse sous 24 h.',
                     "img": 'hero.png',
                     "alt": 'Contact TalentLoop',
                 },
                 "story": ('Nous contacter', ['Support en français, hébergement UE, conformité RGPD.']),
                 "cta": {
-                    "text": 'Démo — aucune donnée transmise.',
+                    "text": 'Démo - aucune donnée transmise.',
                     "btn": 'Envoyer',
                     "href": '#',
                 },
@@ -4509,13 +4509,13 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'MetricPulse — Dashboard activation et funnel onboarding.',
+                "title": 'MetricPulse - Dashboard activation et funnel onboarding.',
                 "description": "KPIs time-to-value, churn et événements récents en un coup d'œil.",
                 "hero": {
                     "h1": 'MetricPulse : Dashboard activation et funnel onboarding.',
                     "lead": "KPIs time-to-value, churn et événements récents en un coup d'œil.",
                     "img": 'hero.png',
-                    "alt": "Interface MetricPulse — écran d'accueil produit",
+                    "alt": "Interface MetricPulse - écran d'accueil produit",
                 },
                 "story": ('Le problème que nous résolvons', ['Les équipes produit perdent du temps sur des outils fragmentés et des tableaux Excel obsolètes.', "MetricPulse centralise l'essentiel dans une interface claire, pensée pour le Grand Est et au-delà."]),
                 "chapters": [
@@ -4523,7 +4523,7 @@ SCENARIOS: list[dict] = [
                         "title": 'Interface principale',
                         "text": 'Design épuré, hiérarchie visuelle et CTA visibles.',
                         "img": 'scene-1.png',
-                        "alt": 'UI MetricPulse — dashboard',
+                        "alt": 'UI MetricPulse - dashboard',
                     },
                     {
                         "title": 'Workflow clé',
@@ -4581,7 +4581,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'fonctionnalites.html',
-                "title": 'Fonctionnalités — MetricPulse',
+                "title": 'Fonctionnalités - MetricPulse',
                 "description": 'Détail des fonctionnalités MetricPulse.',
                 "hero": {
                     "h1": 'Fonctionnalités',
@@ -4653,7 +4653,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'tarifs.html',
-                "title": 'Tarifs — MetricPulse',
+                "title": 'Tarifs - MetricPulse',
                 "description": 'Grille tarifaire MetricPulse.',
                 "hero": {
                     "h1": 'Tarifs transparents',
@@ -4666,13 +4666,13 @@ SCENARIOS: list[dict] = [
                     "items": [
                         {
                             "title": 'Starter',
-                            "text": "Pour les petites équipes — jusqu'à 5 utilisateurs.",
+                            "text": "Pour les petites équipes - jusqu'à 5 utilisateurs.",
                             "img": 'card-1.png',
                             "alt": 'Plan Starter MetricPulse',
                         },
                         {
                             "title": 'Pro',
-                            "text": 'Le plus populaire — illimité et support prioritaire.',
+                            "text": 'Le plus populaire - illimité et support prioritaire.',
                             "img": 'card-2.png',
                             "alt": 'Plan Pro MetricPulse',
                         },
@@ -4712,17 +4712,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — MetricPulse',
+                "title": 'Contact - MetricPulse',
                 "description": 'Essai gratuit et démo MetricPulse.',
                 "hero": {
                     "h1": 'Démarrer avec MetricPulse',
-                    "lead": 'Formulaire de contact — réponse sous 24 h.',
+                    "lead": 'Formulaire de contact - réponse sous 24 h.',
                     "img": 'hero.png',
                     "alt": 'Contact MetricPulse',
                 },
                 "story": ('Nous contacter', ['Support en français, hébergement UE, conformité RGPD.']),
                 "cta": {
-                    "text": 'Démo — aucune donnée transmise.',
+                    "text": 'Démo - aucune donnée transmise.',
                     "btn": 'Envoyer',
                     "href": '#',
                 },
@@ -4735,7 +4735,7 @@ SCENARIOS: list[dict] = [
         "category": 'saas',
         "layout": 'saas',
         "nav_cta": 'Essai gratuit',
-        "synopsis": "Suggestions, vote roadmap et correcteur d'intention — zéro impasse utilisateur.",
+        "synopsis": "Suggestions, vote roadmap et correcteur d'intention - zéro impasse utilisateur.",
         "nav": [
             {
                 "file": 'index.html',
@@ -4757,13 +4757,13 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'QueryBase — États vides et recherche sans résultat orientés action.',
-                "description": "Suggestions, vote roadmap et correcteur d'intention — zéro impasse utilisateur.",
+                "title": 'QueryBase - États vides et recherche sans résultat orientés action.',
+                "description": "Suggestions, vote roadmap et correcteur d'intention - zéro impasse utilisateur.",
                 "hero": {
                     "h1": 'QueryBase : États vides et recherche sans résultat orientés action.',
-                    "lead": "Suggestions, vote roadmap et correcteur d'intention — zéro impasse utilisateur.",
+                    "lead": "Suggestions, vote roadmap et correcteur d'intention - zéro impasse utilisateur.",
                     "img": 'hero.png',
-                    "alt": "Interface QueryBase — écran d'accueil produit",
+                    "alt": "Interface QueryBase - écran d'accueil produit",
                 },
                 "story": ('Le problème que nous résolvons', ['Les équipes produit perdent du temps sur des outils fragmentés et des tableaux Excel obsolètes.', "QueryBase centralise l'essentiel dans une interface claire, pensée pour le Grand Est et au-delà."]),
                 "chapters": [
@@ -4771,7 +4771,7 @@ SCENARIOS: list[dict] = [
                         "title": 'Interface principale',
                         "text": 'Design épuré, hiérarchie visuelle et CTA visibles.',
                         "img": 'scene-1.png',
-                        "alt": 'UI QueryBase — dashboard',
+                        "alt": 'UI QueryBase - dashboard',
                     },
                     {
                         "title": 'Workflow clé',
@@ -4829,7 +4829,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'fonctionnalites.html',
-                "title": 'Fonctionnalités — QueryBase',
+                "title": 'Fonctionnalités - QueryBase',
                 "description": 'Détail des fonctionnalités QueryBase.',
                 "hero": {
                     "h1": 'Fonctionnalités',
@@ -4901,7 +4901,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'tarifs.html',
-                "title": 'Tarifs — QueryBase',
+                "title": 'Tarifs - QueryBase',
                 "description": 'Grille tarifaire QueryBase.',
                 "hero": {
                     "h1": 'Tarifs transparents',
@@ -4914,13 +4914,13 @@ SCENARIOS: list[dict] = [
                     "items": [
                         {
                             "title": 'Starter',
-                            "text": "Pour les petites équipes — jusqu'à 5 utilisateurs.",
+                            "text": "Pour les petites équipes - jusqu'à 5 utilisateurs.",
                             "img": 'card-1.png',
                             "alt": 'Plan Starter QueryBase',
                         },
                         {
                             "title": 'Pro',
-                            "text": 'Le plus populaire — illimité et support prioritaire.',
+                            "text": 'Le plus populaire - illimité et support prioritaire.',
                             "img": 'card-2.png',
                             "alt": 'Plan Pro QueryBase',
                         },
@@ -4960,17 +4960,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — QueryBase',
+                "title": 'Contact - QueryBase',
                 "description": 'Essai gratuit et démo QueryBase.',
                 "hero": {
                     "h1": 'Démarrer avec QueryBase',
-                    "lead": 'Formulaire de contact — réponse sous 24 h.',
+                    "lead": 'Formulaire de contact - réponse sous 24 h.',
                     "img": 'hero.png',
                     "alt": 'Contact QueryBase',
                 },
                 "story": ('Nous contacter', ['Support en français, hébergement UE, conformité RGPD.']),
                 "cta": {
-                    "text": 'Démo — aucune donnée transmise.',
+                    "text": 'Démo - aucune donnée transmise.',
                     "btn": 'Envoyer',
                     "href": '#',
                 },
@@ -5005,13 +5005,13 @@ SCENARIOS: list[dict] = [
         "pages": [
             {
                 "file": 'index.html',
-                "title": 'PingFlow — Centre de notifications in-app hiérarchisé.',
+                "title": 'PingFlow - Centre de notifications in-app hiérarchisé.',
                 "description": 'Actions requises, filtres granulaires et préférences anti-spam.',
                 "hero": {
                     "h1": 'PingFlow : Centre de notifications in-app hiérarchisé.',
                     "lead": 'Actions requises, filtres granulaires et préférences anti-spam.',
                     "img": 'hero.png',
-                    "alt": "Interface PingFlow — écran d'accueil produit",
+                    "alt": "Interface PingFlow - écran d'accueil produit",
                 },
                 "story": ('Le problème que nous résolvons', ['Les équipes produit perdent du temps sur des outils fragmentés et des tableaux Excel obsolètes.', "PingFlow centralise l'essentiel dans une interface claire, pensée pour le Grand Est et au-delà."]),
                 "chapters": [
@@ -5019,7 +5019,7 @@ SCENARIOS: list[dict] = [
                         "title": 'Interface principale',
                         "text": 'Design épuré, hiérarchie visuelle et CTA visibles.',
                         "img": 'scene-1.png',
-                        "alt": 'UI PingFlow — dashboard',
+                        "alt": 'UI PingFlow - dashboard',
                     },
                     {
                         "title": 'Workflow clé',
@@ -5077,7 +5077,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'fonctionnalites.html',
-                "title": 'Fonctionnalités — PingFlow',
+                "title": 'Fonctionnalités - PingFlow',
                 "description": 'Détail des fonctionnalités PingFlow.',
                 "hero": {
                     "h1": 'Fonctionnalités',
@@ -5149,7 +5149,7 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'tarifs.html',
-                "title": 'Tarifs — PingFlow',
+                "title": 'Tarifs - PingFlow',
                 "description": 'Grille tarifaire PingFlow.',
                 "hero": {
                     "h1": 'Tarifs transparents',
@@ -5162,13 +5162,13 @@ SCENARIOS: list[dict] = [
                     "items": [
                         {
                             "title": 'Starter',
-                            "text": "Pour les petites équipes — jusqu'à 5 utilisateurs.",
+                            "text": "Pour les petites équipes - jusqu'à 5 utilisateurs.",
                             "img": 'card-1.png',
                             "alt": 'Plan Starter PingFlow',
                         },
                         {
                             "title": 'Pro',
-                            "text": 'Le plus populaire — illimité et support prioritaire.',
+                            "text": 'Le plus populaire - illimité et support prioritaire.',
                             "img": 'card-2.png',
                             "alt": 'Plan Pro PingFlow',
                         },
@@ -5208,17 +5208,17 @@ SCENARIOS: list[dict] = [
             },
             {
                 "file": 'contact.html',
-                "title": 'Contact — PingFlow',
+                "title": 'Contact - PingFlow',
                 "description": 'Essai gratuit et démo PingFlow.',
                 "hero": {
                     "h1": 'Démarrer avec PingFlow',
-                    "lead": 'Formulaire de contact — réponse sous 24 h.',
+                    "lead": 'Formulaire de contact - réponse sous 24 h.',
                     "img": 'hero.png',
                     "alt": 'Contact PingFlow',
                 },
                 "story": ('Nous contacter', ['Support en français, hébergement UE, conformité RGPD.']),
                 "cta": {
-                    "text": 'Démo — aucune donnée transmise.',
+                    "text": 'Démo - aucune donnée transmise.',
                     "btn": 'Envoyer',
                     "href": '#',
                 },

@@ -1,7 +1,7 @@
 ---
 title: "API : deux façons de faire parler un site et un serveur"
 date: 2025-07-01
-excerpt: "REST et GraphQL, c'est quoi ? Deux styles pour demander des infos à un serveur — on pose le décor."
+excerpt: "REST et GraphQL, c'est quoi ? Deux styles pour demander des infos à un serveur - on pose le décor."
 type: article
 tags: [API, REST, GraphQL, backend, architecture]
 series: api-rest-graphql-serie

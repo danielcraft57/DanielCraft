@@ -111,12 +111,12 @@ def main() -> None:
         line["productId"] = product_id
         print(f"productId catalogue (site-vitrine): {product_id}")
     else:
-        print("productId absent — ligne libre (lancez prestafacture_sync_prestations.py)")
+        print("productId absent - ligne libre (lancez prestafacture_sync_prestations.py)")
 
     devis_body = {
         "clientId": client_data["id"],
         "expiryDate": "2026-09-01",
-        "notes": "Test script prestafacture_test.py — à archiver",
+        "notes": "Test script prestafacture_test.py - à archiver",
         "lines": [line],
     }
     status, data = api_request("POST", "/devis", devis_body)

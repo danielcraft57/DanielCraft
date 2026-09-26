@@ -18,7 +18,7 @@ series_order: 22
 
 **Famille :** Comportemental · **Série :** Design Patterns GoF · **Article 22/24** · **Popularité :** #21 sur 23
 
-Memento capture un **instantané** de l'état interne d'un objet pour le restaurer plus tard — typiquement un **undo** — sans exposer cet état au reste du programme.
+Memento capture un **instantané** de l'état interne d'un objet pour le restaurer plus tard - typiquement un **undo** - sans exposer cet état au reste du programme.
 
 ---
 
@@ -53,7 +53,7 @@ Trois rôles classiques :
 | **Memento** | Instantané opaque (ou à accès restreint) |
 | **Caretaker** | Empile / dépile les mementos ; ne lit pas l'intérieur |
 
-L'Originator seul sait ce qu'il y a dans le snapshot. Le Caretaker (souvent l'UI ou un service d'historique) ne fait que ranger les boîtes. Cette séparation est le cœur du pattern : tu peux changer le format interne du snapshot (ajouter un champ `cursor`) sans que le Caretaker ait à « comprendre » quoi que ce soit — il empile et dépile des objets opaques.
+L'Originator seul sait ce qu'il y a dans le snapshot. Le Caretaker (souvent l'UI ou un service d'historique) ne fait que ranger les boîtes. Cette séparation est le cœur du pattern : tu peux changer le format interne du snapshot (ajouter un champ `cursor`) sans que le Caretaker ait à « comprendre » quoi que ce soit - il empile et dépile des objets opaques.
 
 ### Analogie du quotidien
 
@@ -155,7 +155,7 @@ class Editor:
 
 ## Dans le monde réel
 
-Historique d'éditeurs (VS Code, Word), Redux DevTools (time-travel), sauvegardes de jeux, drafts d'emails. Beaucoup de libs appellent ça « snapshot » ou « checkpoint » — c'est l'esprit Memento.
+Historique d'éditeurs (VS Code, Word), Redux DevTools (time-travel), sauvegardes de jeux, drafts d'emails. Beaucoup de libs appellent ça « snapshot » ou « checkpoint » - c'est l'esprit Memento.
 
 En pratique, tu peux combiner **Memento** (état) et **Command** (intention) : la commande enregistre *ce qui a été fait*, le memento permet un retour rapide si l'inversion est trop complexe. Pour un canvas graphique, un snapshot compressé (diff) évite de recopier toute la scène à chaque coup de pinceau.
 
@@ -165,9 +165,9 @@ En pratique, tu peux combiner **Memento** (état) et **Command** (intention) : l
 
 **C'est obligatoire en entretien ?** Parfois dans un exo « implémente undo ».
 
-**Ça remplace les frameworks ?** Non — les stores (Redux, Zustand) offrent déjà des mécanismes proches.
+**Ça remplace les frameworks ?** Non - les stores (Redux, Zustand) offrent déjà des mécanismes proches.
 
-**Je dois tout refactoriser ?** Non — commence par un Originator + pile limitée.
+**Je dois tout refactoriser ?** Non - commence par un Originator + pile limitée.
 
 ---
 
@@ -180,7 +180,7 @@ En pratique, tu peux combiner **Memento** (état) et **Command** (intention) : l
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Éditeur de texte minimal (une string). Boutons conceptuels save / undo. Ajoute ensuite le curseur (`number`) dans le snapshot et vérifie que undo le restaure aussi.
 

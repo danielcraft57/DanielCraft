@@ -1,7 +1,7 @@
 {
   "id": "aws-serie",
   "title": "Série AWS : le cloud Amazon sans prise de tête",
-  "description": "Où faire tourner ton programme, ranger tes fichiers, sécuriser et payer moins — les services AWS expliqués simplement.",
+  "description": "Où faire tourner ton programme, ranger tes fichiers, sécuriser et payer moins - les services AWS expliqués simplement.",
   "slug": "aws-serie",
   "articles": [
     "aws-fondamentaux-cloud-aws-services",

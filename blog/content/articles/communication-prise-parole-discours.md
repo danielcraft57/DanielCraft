@@ -59,7 +59,7 @@ Pendant la prise de parole :
 - **Corps** : posture ouverte, gestes naturels sans exageration
 - **Slides** : support visuel, pas teleprompter. Peu de texte, images fortes, une idee par slide
 
-Si tu lis tes slides, l'audience lit aussi — et t'ignore.
+Si tu lis tes slides, l'audience lit aussi - et t'ignore.
 
 ## Gerer le stress et les imprévus
 

@@ -1,4 +1,4 @@
-/* Clanche & Cuivre — artisan : dark + jaune, Barlow Condensed */
+/* Clanche & Cuivre - artisan : dark + jaune, Barlow Condensed */
 :root {
   --vt-bg: #121212;
   --vt-panel: #1c1c1c;
@@ -11,6 +11,11 @@
   --bs-primary: var(--vt-yellow);
   --bs-link-color: var(--vt-yellow);
   --bs-font-sans-serif: "DM Sans", system-ui, sans-serif;
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 body.vt-body-artisan {
   background: radial-gradient(ellipse at 90% 0%, rgba(255,193,7,0.1), transparent 45%), var(--vt-bg);

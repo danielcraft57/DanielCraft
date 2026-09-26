@@ -1,6 +1,6 @@
 <?php
 /**
- * Émission de devis Prestafacture (Prestafacture) — modale prestation, wizard contact, vitrine.
+ * Émission de devis Prestafacture (Prestafacture) - modale prestation, wizard contact, vitrine.
  */
 declare(strict_types=1);
 
@@ -52,6 +52,81 @@ function devis_should_issue_quote(string $service, string $prestationSlug = ''):
     return false;
 }
 
+/** Taux TVA devis prestations (micro-entreprise : non assujetti). */
+function devis_tax_rate_percent(): float
+{
+    return 0.0;
+}
+
+/**
+ * Lignes explicites catalogue (`quote_lines`) : temps, VPS, mail offert, etc.
+ *
+ * @return array{lines: list<array<string, mixed>>, title: string, total_ht: int, item: array<string, mixed>}|null
+ */
+function devis_build_from_quote_lines(array $item): ?array
+{
+    $raw = $item['quote_lines'] ?? null;
+    if (!is_array($raw) || $raw === []) {
+        return null;
+    }
+
+    $title = (string) ($item['title'] ?? 'Prestation');
+    $lines = [];
+    $totalHt = 0;
+    $tax = devis_tax_rate_percent();
+
+    foreach ($raw as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $label = trim((string) ($row['label'] ?? ''));
+        if ($label === '') {
+            continue;
+        }
+        $qty = (float) ($row['quantity'] ?? 1);
+        if ($qty <= 0) {
+            $qty = 1.0;
+        }
+        $unit = (float) ($row['amount_eur'] ?? 0);
+        $includeZero = !empty($row['include_zero']);
+        if ($unit < 0) {
+            continue;
+        }
+        if ($unit == 0.0 && !$includeZero) {
+            continue;
+        }
+
+        $productId = null;
+        $lineSlug = trim((string) ($row['slug'] ?? ''));
+        if ($lineSlug !== '') {
+            $cat = prestations_find_by_slug($lineSlug);
+            if ($cat !== null) {
+                $productId = prestafacture_product_id_from_catalog($cat);
+            }
+        }
+
+        $lines[] = prestafacture_line_from_price_ht(
+            mb_substr($label, 0, 160),
+            $unit,
+            $tax,
+            $productId,
+            $qty
+        );
+        $totalHt += (int) round($unit * $qty);
+    }
+
+    if ($lines === []) {
+        return null;
+    }
+
+    return [
+        'lines' => $lines,
+        'title' => $title,
+        'total_ht' => $totalHt,
+        'item' => $item,
+    ];
+}
+
 /**
  * @param list<string|int> $addonIds
  * @return array{lines: list<array<string, mixed>>, title: string, total_ht: int, item: array<string, mixed>}|null
@@ -69,14 +144,101 @@ function devis_build_catalog_quote(string $serviceSlug, array $addonIds = [], st
         return null;
     }
 
+    $fromLines = devis_build_from_quote_lines($item);
+    if ($fromLines !== null) {
+        // Options addons encore possibles par-dessus un devis déjà découpé.
+        $addonsCatalog = is_array($item['addons'] ?? null) ? $item['addons'] : [];
+        $addonsById = [];
+        foreach ($addonsCatalog as $a) {
+            if (is_array($a) && isset($a['id'])) {
+                $addonsById[(string) $a['id']] = $a;
+            }
+        }
+        $tax = devis_tax_rate_percent();
+        foreach ($addonIds as $aid) {
+            $aid = devis_clean_field((string) $aid, 64);
+            if ($aid === '' || !isset($addonsById[$aid])) {
+                continue;
+            }
+            $addon = $addonsById[$aid];
+            $addonTitle = (string) ($addon['title'] ?? 'Option');
+            $addonPrice = (int) ($addon['price_eur'] ?? 0);
+            if ($addonPrice <= 0) {
+                continue;
+            }
+            $fromLines['lines'][] = prestafacture_line_from_price_ht(
+                prestafacture_prestation_line_label($item, $addonTitle),
+                (float) $addonPrice,
+                $tax,
+                prestafacture_product_id_from_catalog($addon)
+            );
+            $fromLines['total_ht'] += $addonPrice;
+        }
+
+        return $fromLines;
+    }
+
     $title = (string) ($item['title'] ?? 'Prestation');
+    $tax = devis_tax_rate_percent();
+    $expandIncludes = !empty($item['quote_expand_includes'])
+        && is_array($item['includes_slugs'] ?? null)
+        && ($item['includes_slugs'] ?? []) !== [];
+
+    // Pack « détail année 1 » : une ligne par prestation incluse (mensuel × 12).
+    if ($expandIncludes) {
+        $lines = [];
+        $totalHt = 0;
+        $mainSlug = trim((string) ($item['slug'] ?? ''));
+        $seen = [];
+        foreach ($item['includes_slugs'] as $incSlug) {
+            $incSlug = trim((string) $incSlug);
+            if ($incSlug === '' || $incSlug === $mainSlug || isset($seen[$incSlug])) {
+                continue;
+            }
+            $extra = prestations_find_by_slug($incSlug);
+            if ($extra === null) {
+                continue;
+            }
+            $unit = (int) ($extra['price_eur'] ?? 0);
+            $includeZero = $unit === 0 && str_contains(
+                function_exists('mb_strtolower')
+                    ? mb_strtolower((string) ($extra['price_label'] ?? ''), 'UTF-8')
+                    : strtolower((string) ($extra['price_label'] ?? '')),
+                'offert'
+            );
+            if ($unit < 0 || ($unit === 0 && !$includeZero)) {
+                continue;
+            }
+            $qty = devis_item_is_monthly($extra) ? 12 : 1;
+            $seen[$incSlug] = true;
+            $lines[] = prestafacture_line_from_price_ht(
+                devis_year1_line_label($extra),
+                (float) $unit,
+                $tax,
+                prestafacture_product_id_from_catalog($extra),
+                (float) $qty
+            );
+            $totalHt += $unit * $qty;
+        }
+        if ($lines === []) {
+            return null;
+        }
+
+        return [
+            'lines' => $lines,
+            'title' => $title,
+            'total_ht' => $totalHt,
+            'item' => $item,
+        ];
+    }
+
     $basePrice = (int) ($item['price_eur'] ?? 0);
     $lines = [];
     $mainProductId = prestafacture_product_id_from_catalog($item);
     $lines[] = prestafacture_line_from_price_ht(
         prestafacture_prestation_line_label($item),
         (float) $basePrice,
-        20.0,
+        $tax,
         $mainProductId
     );
 
@@ -88,6 +250,7 @@ function devis_build_catalog_quote(string $serviceSlug, array $addonIds = [], st
             $addonsById[(string) $a['id']] = $a;
         }
     }
+    $skipSkus = [];
     foreach ($addonIds as $aid) {
         $aid = devis_clean_field((string) $aid, 64);
         if ($aid === '' || !isset($addonsById[$aid])) {
@@ -99,14 +262,36 @@ function devis_build_catalog_quote(string $serviceSlug, array $addonIds = [], st
         if ($addonPrice <= 0) {
             continue;
         }
+        $addonSku = strtoupper(trim((string) ($addon['prestafacture_sku'] ?? '')));
+        if ($addonSku !== '') {
+            $skipSkus[$addonSku] = true;
+        }
         $addonProductId = prestafacture_product_id_from_catalog($addon);
         $lines[] = prestafacture_line_from_price_ht(
             prestafacture_prestation_line_label($item, $addonTitle),
             (float) $addonPrice,
-            20.0,
+            $tax,
             $addonProductId
         );
         $totalHt += $addonPrice;
+    }
+
+    foreach (devis_year1_entries($item) as $extraRow) {
+        $extra = $extraRow['item'];
+        $sku = strtoupper(trim((string) ($extra['prestafacture_sku'] ?? '')));
+        if ($sku !== '' && isset($skipSkus[$sku])) {
+            continue;
+        }
+        $qty = (int) $extraRow['quantity'];
+        $unit = (int) ($extra['price_eur'] ?? 0);
+        $lines[] = prestafacture_line_from_price_ht(
+            devis_year1_line_label($extra),
+            (float) $unit,
+            $tax,
+            prestafacture_product_id_from_catalog($extra),
+            (float) $qty
+        );
+        $totalHt += $unit * $qty;
     }
 
     return [
@@ -117,6 +302,68 @@ function devis_build_catalog_quote(string $serviceSlug, array $addonIds = [], st
     ];
 }
 
+function devis_item_is_monthly(array $item): bool
+{
+    $label = function_exists('mb_strtolower')
+        ? mb_strtolower(trim((string) ($item['price_label'] ?? '')), 'UTF-8')
+        : strtolower(trim((string) ($item['price_label'] ?? '')));
+
+    return $label === 'mensuel' || str_contains($label, 'mois');
+}
+
+function devis_year1_line_label(array $item): string
+{
+    $title = trim(preg_replace('/[\r\n]+/', ' ', (string) ($item['title'] ?? 'Prestation')));
+    if (devis_item_is_monthly($item)) {
+        return mb_substr($title . ' - 12 mois', 0, 160);
+    }
+    $period = trim((string) ($item['price_label'] ?? ''));
+    if ($period !== '') {
+        return mb_substr($title . ' - ' . $period, 0, 160);
+    }
+
+    return mb_substr($title, 0, 160);
+}
+
+/**
+ * Frais fixes + abonnements année 1 attachés à une prestation (catalogue).
+ *
+ * @return list<array{item: array<string, mixed>, quantity: int, amount_ht: int}>
+ */
+function devis_year1_entries(array $item): array
+{
+    $slugs = $item['quote_year1_slugs'] ?? [];
+    if (!is_array($slugs) || $slugs === []) {
+        return [];
+    }
+    $mainSlug = trim((string) ($item['slug'] ?? ''));
+    $out = [];
+    $seen = [];
+    foreach ($slugs as $slug) {
+        $slug = trim((string) $slug);
+        if ($slug === '' || $slug === $mainSlug || isset($seen[$slug])) {
+            continue;
+        }
+        $extra = prestations_find_by_slug($slug);
+        if ($extra === null) {
+            continue;
+        }
+        $unit = (int) ($extra['price_eur'] ?? 0);
+        if ($unit <= 0) {
+            continue;
+        }
+        $qty = devis_item_is_monthly($extra) ? 12 : 1;
+        $seen[$slug] = true;
+        $out[] = [
+            'item' => $extra,
+            'quantity' => $qty,
+            'amount_ht' => $unit * $qty,
+        ];
+    }
+
+    return $out;
+}
+
 /**
  * @return array{lines: list<array<string, mixed>>, title: string, total_ht: int}
  */
@@ -124,9 +371,9 @@ function devis_build_vitrine_quote(string $service, string $vitrineTitle, string
 {
     $ref = $vitrineTitle !== '' ? $vitrineTitle : $vitrineSlug;
     if ($service === 'vitrine_catalog_devis') {
-        $label = 'Devis modèle catalogue — ' . $ref;
+        $label = 'Devis modèle catalogue - ' . $ref;
     } else {
-        $label = 'Modèle site vitrine — ' . $ref;
+        $label = 'Modèle site vitrine - ' . $ref;
     }
     if ($priceHt <= 0) {
         $priceHt = 42;
@@ -134,7 +381,7 @@ function devis_build_vitrine_quote(string $service, string $vitrineTitle, string
 
     return [
         'lines' => [
-            prestafacture_line_from_price_ht($label, (float) $priceHt, 20.0, null),
+            prestafacture_line_from_price_ht($label, (float) $priceHt, devis_tax_rate_percent(), null),
         ],
         'title' => $label,
         'total_ht' => $priceHt,
@@ -262,7 +509,7 @@ function devis_issue_from_input(array $input): array
         $name,
         $lines,
         $internalNote,
-        20.0,
+        devis_tax_rate_percent(),
         $company
     );
 
@@ -366,7 +613,7 @@ function devis_error_response(int $status, string $error, string $code = ''): ar
 }
 
 /**
- * Wizard contact / vitrine : tente l’émission Prestafacture si le service le permet.
+ * Wizard contact / vitrine : tente l'émission Prestafacture si le service le permet.
  *
  * @param array<string, string> $contactData
  * @return array{

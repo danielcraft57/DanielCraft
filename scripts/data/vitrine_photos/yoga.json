@@ -1,0 +1,129 @@
+{
+  "slug": "yoga",
+  "brand": "Studio Souffle",
+  "category": "sport",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Wellness yoga studio Metz, soft natural light, calm photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Studio de yoga a Metz",
+      "subject": "Airy yoga studio with wooden floors, plants, large windows, mats aligned, soft morning light Metz",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Studio de yoga a Metz"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Cours hatha",
+      "subject": "Hatha yoga class holding gentle pose, small group, calm instructor",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Cours hatha"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Cours vinyasa",
+      "subject": "Dynamic vinyasa flow mid-movement, warm studio lighting",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Cours vinyasa"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Cours yin",
+      "subject": "Yin yoga long hold with bolsters and blankets, serene atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Cours yin"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Posture hatha",
+      "subject": "Close-up of yoga pose on mat, natural light, wooden floor",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Posture hatha"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Flux vinyasa",
+      "subject": "Group flowing through sun salutations, motion soft blur",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Flux vinyasa"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Relaxation yin",
+      "subject": "Resting pose with eye pillow, candles soft, wellness mood",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Relaxation yin"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Espace detente",
+      "subject": "Studio lounge with herbal tea and plants, welcoming reception",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Espace detente"
+        }
+      ]
+    }
+  ]
+}

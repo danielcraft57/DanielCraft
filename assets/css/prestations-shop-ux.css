@@ -287,6 +287,10 @@
 }
 
 @media (max-width: 960px) {
+  .page-nos-offres .prestations-catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
   .shop-ux-toast-host {
     left: 0.75rem;
     right: 0.75rem;
@@ -301,6 +305,20 @@
   .shop-ux-tippy.is-tip-open::after,
   .shop-ux-tippy.is-tip-open::before {
     display: none;
+  }
+
+  .prestation-detail-root {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .shop-ux-sticky-buy-inner strong {
+    max-width: min(42vw, 9.5rem);
+    white-space: normal;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
@@ -392,6 +410,22 @@
 }
 
 .prestation-detail-root .shop-ux-faq.is-shop-in {
+  opacity: 1;
+  transform: none;
+}
+
+.prestation-detail-root .dc-reco-card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+  transition-delay: var(--shop-stagger, 0ms);
+}
+
+.prestation-detail-root .dc-reco-card.is-shop-in {
   opacity: 1;
   transform: none;
 }

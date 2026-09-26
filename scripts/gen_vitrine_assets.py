@@ -138,7 +138,7 @@ def _noise(img: Image.Image, rng: random.Random, amount: int = 12) -> Image.Imag
 
 
 def _draw_food_scene(draw: ImageDraw.ImageDraw, w: int, h: int, accent: tuple, rng: random.Random, variant: str) -> None:
-    """Brasserie / restauration — compositions chaleureuses sans texte."""
+    """Brasserie / restauration - compositions chaleureuses sans texte."""
     warm = (210, 140, 60)
     cream = (248, 236, 210)
     wood = (90, 55, 35)

@@ -8,7 +8,7 @@ D = "div"
 
 GRID = f"""
         <{D} class="grid hub-grid">
-          <a class="card" href="technologie/index.html"><span class="badge">Bulma · Tech</span><h3><i class="fa-solid fa-microchip fa-fw" aria-hidden="true"></i> Technologie</h3><p>Synapse Lorraine — SaaS &amp; cloud.</p></a>
+          <a class="card" href="technologie/index.html"><span class="badge">Bulma · Tech</span><h3><i class="fa-solid fa-microchip fa-fw" aria-hidden="true"></i> Technologie</h3><p>Synapse Lorraine - SaaS &amp; cloud.</p></a>
           <a class="card" href="restauration/index.html"><span class="badge">Bulma · HCR</span><h3><i class="fa-solid fa-utensils fa-fw" aria-hidden="true"></i> Restauration</h3><p>Brasserie Saint-Jacques.</p></a>
           <a class="card" href="beaute/index.html"><span class="badge">Bulma · Bien-être</span><h3><i class="fa-solid fa-spa fa-fw" aria-hidden="true"></i> Beauté</h3><p>Spa Thalie.</p></a>
           <a class="card" href="odontologie/index.html"><span class="badge">Bulma · Santé</span><h3><i class="fa-solid fa-tooth fa-fw" aria-hidden="true"></i> Odontologie</h3><p>Centre dentaire Mosaïque.</p></a>

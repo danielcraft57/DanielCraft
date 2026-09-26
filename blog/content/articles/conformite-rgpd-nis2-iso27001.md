@@ -1,7 +1,7 @@
 ---
 title: "RGPD, NIS2, ISO : se mettre en règle sans paniquer"
 date: 2025-12-04
-excerpt: "Ce que ces cadres demandent vraiment : des contrôles, des preuves, et du bon sens — pas un classeur poussiéreux."
+excerpt: "Ce que ces cadres demandent vraiment : des contrôles, des preuves, et du bon sens - pas un classeur poussiéreux."
 type: article
 tags: [RGPD, NIS2, ISO 27001, conformité, sécurité]
 series: cybersecurite-secops-serie

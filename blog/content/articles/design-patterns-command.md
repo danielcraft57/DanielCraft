@@ -62,7 +62,7 @@ Chaque action est un objet `execute()` / `undo()`. L'**Invoker** empile l'histor
 
 ### Analogie du quotidien
 
-Commande au **restaurant** : le serveur note, la cuisine exécute plus tard — la commande est l'objet.
+Commande au **restaurant** : le serveur note, la cuisine exécute plus tard - la commande est l'objet.
 
 ---
 
@@ -170,11 +170,11 @@ Photoshop history. Redis queues. Git commit comme snapshot (proche, pas identiqu
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Command aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Non - on teste surtout ta capacité à reconnaître le problème. Le nom Command aide à communiquer en équipe.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Command te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Command te permet de les utiliser correctement.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
+**Je dois tout refactoriser ?** Non - applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
 
 ---
 
@@ -195,11 +195,11 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ## Pas à pas : implémenter en 5 étapes
 
-1. **Nomme le problème** — est-ce vraiment Command ?
+1. **Nomme le problème** - est-ce vraiment Command ?
 2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
 3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Command parce que… ».
+4. **Implémente une variante** - valide avant d'en ajouter d'autres.
+5. **Documente en équipe** - « ici on utilise Command parce que… ».
 
 ---
 
@@ -212,7 +212,7 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Implémente `MoveItemCommand` pour un panier (ajout/retrait avec undo).
 

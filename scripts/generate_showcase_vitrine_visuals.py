@@ -43,7 +43,7 @@ def gen_edu_mosaic(path: Path, w: int = 800, h: int = 450, seed: int = 42) -> No
         font = ImageFont.truetype("arial.ttf", 22)
     except OSError:
         font = ImageFont.load_default()
-    draw.text((24, h - 52), "Campus — visuel démo", fill=(255, 240, 200), font=font)
+    draw.text((24, h - 52), "Campus - visuel démo", fill=(255, 240, 200), font=font)
     path.parent.mkdir(parents=True, exist_ok=True)
     img.save(path, optimize=True)
 
@@ -69,7 +69,7 @@ def gen_edu_modules(path: Path, w: int = 800, h: int = 450, seed: int = 43) -> N
         font = ImageFont.truetype("arial.ttf", 20)
     except OSError:
         font = ImageFont.load_default()
-    draw.text((20, 16), "Modules — maquette", fill=(25, 45, 80), font=font)
+    draw.text((20, 16), "Modules - maquette", fill=(25, 45, 80), font=font)
     img.save(path, optimize=True)
 
 
@@ -114,7 +114,7 @@ def gen_assoc_mains(path: Path, w: int = 800, h: int = 450) -> None:
         font = ImageFont.truetype("arial.ttf", 19)
     except OSError:
         font = ImageFont.load_default()
-    draw.text((20, h - 46), "Solidarité — visuel démo", fill=(230, 255, 240), font=font)
+    draw.text((20, h - 46), "Solidarité - visuel démo", fill=(230, 255, 240), font=font)
     img.save(path, optimize=True)
 
 
@@ -153,7 +153,7 @@ def gen_assoc_volontaires(path: Path, w: int = 800, h: int = 450, seed: int = 7)
         font = ImageFont.truetype("arial.ttf", 18)
     except OSError:
         font = ImageFont.load_default()
-    draw.text((w - 240, h - 40), "Bénévoles — fiction graphique", fill=(50, 70, 55), font=font)
+    draw.text((w - 240, h - 40), "Bénévoles - fiction graphique", fill=(50, 70, 55), font=font)
     img.save(path, optimize=True)
 
 
@@ -171,7 +171,7 @@ def gen_photo_png(path: Path, w: int = 1200, h: int = 520) -> None:
     draw.ellipse([80, 40, 420, 380], fill=(90, 82, 74))
     draw.rectangle([w // 2 - 80, h // 2 - 60, w // 2 + 200, h // 2 + 100], fill=(26, 24, 22), outline=(201, 162, 39), width=3)
     draw.ellipse([w // 2 + 20, h // 2 - 10, w // 2 + 120, h // 2 + 70], outline=(201, 162, 39), width=4)
-    draw.text((40, h - 36), "Studio Lumière Grise — démo", fill=(201, 162, 39), font=_font(18))
+    draw.text((40, h - 36), "Studio Lumière Grise - démo", fill=(201, 162, 39), font=_font(18))
     path.parent.mkdir(parents=True, exist_ok=True)
     img.save(path, optimize=True)
 

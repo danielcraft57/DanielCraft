@@ -105,12 +105,12 @@ python3 build.py --watch
 
 ## Avantages
 
-✅ **DRY (Don't Repeat Yourself)** : Plus de duplication de code  
-✅ **Maintenance facile** : Modifier une fois, appliqué partout  
-✅ **Cohérence** : Toutes les pages ont la même structure  
-✅ **Flexibilité** : Variables pour personnaliser chaque page  
-✅ **Prêt pour le blog** : Structure extensible pour ajouter un blog facilement  
-✅ **Performance** : Pages statiques générées, pas de traitement serveur  
+ **DRY (Don't Repeat Yourself)** : Plus de duplication de code  
+ **Maintenance facile** : Modifier une fois, appliqué partout  
+ **Cohérence** : Toutes les pages ont la même structure  
+ **Flexibilité** : Variables pour personnaliser chaque page  
+ **Prêt pour le blog** : Structure extensible pour ajouter un blog facilement  
+ **Performance** : Pages statiques générées, pas de traitement serveur  
 
 ## Migration des Pages Existantes
 
@@ -138,8 +138,8 @@ La structure est prête pour intégrer un blog :
 
 ## Notes Importantes
 
-⚠️ **Ne pas éditer directement** les fichiers HTML dans le dossier racine (index.html, processus.html, etc.)  
-✅ **Toujours éditer** les fichiers dans `src/` puis rebuilder  
-✅ **Versionner** le dossier `src/` dans Git  
-✅ **Ignorer** les fichiers générés dans `.gitignore` si nécessaire
+ **Ne pas éditer directement** les fichiers HTML dans le dossier racine (index.html, processus.html, etc.)  
+ **Toujours éditer** les fichiers dans `src/` puis rebuilder  
+ **Versionner** le dossier `src/` dans Git  
+ **Ignorer** les fichiers générés dans `.gitignore` si nécessaire
 

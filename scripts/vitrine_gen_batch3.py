@@ -44,7 +44,7 @@ body{margin:0;background:#f5f3ef;color:#0a0a0a;font-family:monospace}
 .arch-panel img{width:100%;height:220px;object-fit:cover}
 .arch-contact{padding:3rem 1.5rem;border-top:3px solid #0a0a0a}
 """
-    write_demo("architecture", "brutalist-grid", "pico", "Atelier Nord-Est — Architecture",
+    write_demo("architecture", "brutalist-grid", "pico", "Atelier Nord-Est - Architecture",
                "Architecture contemporaine à Metz.", body, css)
 
 
@@ -68,9 +68,9 @@ def gen_fitness():
   <table class="table table-zebra">
     <thead><tr><th></th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th></tr></thead>
     <tbody>
-      <tr><td>07h</td><td>HIIT</td><td>Yoga</td><td>—</td><td>HIIT</td><td>Cycling</td></tr>
-      <tr><td>12h</td><td>—</td><td>HIIT</td><td>Yoga</td><td>—</td><td>HIIT</td></tr>
-      <tr><td>19h</td><td>Cycling</td><td>—</td><td>HIIT</td><td>Yoga</td><td>—</td></tr>
+      <tr><td>07h</td><td>HIIT</td><td>Yoga</td><td>-</td><td>HIIT</td><td>Cycling</td></tr>
+      <tr><td>12h</td><td>-</td><td>HIIT</td><td>Yoga</td><td>-</td><td>HIIT</td></tr>
+      <tr><td>19h</td><td>Cycling</td><td>-</td><td>HIIT</td><td>Yoga</td><td>-</td></tr>
     </tbody>
   </table>
 </section>
@@ -89,7 +89,7 @@ def gen_fitness():
 .fit-schedule th{background:#39ff14;color:#000}
 footer{padding:2rem;text-align:center}
 """
-    write_demo("fitness", "schedule-wall", "daisy", "Pulse Fitness — Sport",
+    write_demo("fitness", "schedule-wall", "daisy", "Pulse Fitness - Sport",
                "Salle de sport et cours collectifs à Thionville.", body, css)
 
 
@@ -132,7 +132,7 @@ body{margin:0;background:#1a1816;color:#f5f0e8;font-family:Georgia,serif}
 .pho-col img{width:100%;object-fit:cover}
 footer{padding:2rem;text-align:center;color:#c9a227}
 """
-    write_demo("photographie", "filmstrip", "openprops", "Lumière du Nord — Photographie",
+    write_demo("photographie", "filmstrip", "openprops", "Lumière du Nord - Photographie",
                "Photographe professionnel à Metz.", body, css)
 
 
@@ -155,7 +155,7 @@ def gen_technologie():
   <section id="secu" class="tech-panel vt-reveal">{fig(g,"card-3.svg","Zero Trust")}{fig(g,"hero.svg","Illustration sécurité")}</section>
   <button class="button is-primary tech-demo" data-target="modalDemo">Demander une démo</button>
 </main>
-<div id="modalDemo" class="modal"><motion class="modal-background"></motion><motion class="modal-content"><motion class="box"><h2>Démo Synapse</h2><p>Formulaire statique — Moselle.</p><button class="modal-close">Fermer</button></motion></motion></motion>
+<div id="modalDemo" class="modal"><motion class="modal-background"></motion><motion class="modal-content"><motion class="box"><h2>Démo Synapse</h2><p>Formulaire statique - Moselle.</p><button class="modal-close">Fermer</button></motion></motion></motion>
 <footer>{HUB}</footer>
 <script>AOS.init({{duration:600,once:true}});document.querySelectorAll('.tech-tabs a').forEach(a=>a.addEventListener('click',e=>{{e.preventDefault();document.querySelectorAll('.tech-panel,.tech-tabs li').forEach(x=>x.classList.remove('is-active'));a.parentElement.classList.add('is-active');document.getElementById(a.dataset.tab).classList.add('is-active')}}));document.querySelector('.tech-demo').onclick=()=>document.getElementById('modalDemo').classList.add('is-active');document.querySelector('.modal-close').onclick=()=>document.getElementById('modalDemo').classList.remove('is-active')</script>
 """
@@ -172,7 +172,7 @@ body{margin:0;font-family:Consolas,monospace;background:#0d1b2a;color:#64b5f6}
 .tech-demo{margin:1.5rem}
 footer{padding:2rem;text-align:center}
 """
-    write_demo("technologie", "terminal-product", "bulma", "Synapse IT — Technologie",
+    write_demo("technologie", "terminal-product", "bulma", "Synapse IT - Technologie",
                "Cloud et cybersécurité en Lorraine.", body, css, extra=AOS)
 
 
@@ -220,5 +220,5 @@ body{margin:0;font-family:Georgia,serif;background:#fff8f0;color:#3d1414}
 footer{padding:2rem;text-align:center}
 @media(max-width:700px){.resto-book{grid-template-columns:1fr}}
 """
-    write_demo("restauration", "menu-livret", "bulma", "Auberge des Remparts — Restauration",
+    write_demo("restauration", "menu-livret", "bulma", "Auberge des Remparts - Restauration",
                "Brasserie et cuisine lorraine à Thionville.", body, css, extra=SWIPER)

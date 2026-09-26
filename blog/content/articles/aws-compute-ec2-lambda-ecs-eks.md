@@ -16,25 +16,25 @@ og_image: aws-compute-ec2-lambda-ecs-eks-1200x630.jpg
   <figcaption>EC2, Lambda, ECS, EKS : le bon choix suit la charge et l'equipe.</figcaption>
 </figure>
 
-La première question sur AWS est souvent : **“je déploie mon appli où ?”**.
+La première question sur AWS est souvent : **"je déploie mon appli où ?"**.
 Tu peux tout mettre sur EC2, mais tu passeras peut‑être à côté des avantages du serverless ou des conteneurs.
 
 Dans cet article, on compare **EC2, Lambda, ECS et EKS** avec une grille simple :
 
 - modèle de responsabilité ;
-- cas d’usage idéaux ;
+- cas d'usage idéaux ;
 - coûts et optimisation ;
 - gestion et opérations.
 
 ---
 
-## 1. EC2 : les “vrais” serveurs dans le cloud
+## 1. EC2 : les "vrais" serveurs dans le cloud
 
 ### 1.1 Modèle
 
 EC2 te fournit des **instances (VM)** sur lesquelles tu choisis :
 
-- l’OS (Amazon Linux, Ubuntu, Debian, Windows…) ;
+- l'OS (Amazon Linux, Ubuntu, Debian, Windows…) ;
 - la taille (CPU, RAM, stockage) ;
 - les logiciels installés (Nginx, Node, PHP, Docker, etc.).
 
@@ -45,19 +45,19 @@ Tu es responsable de :
 - le dimensionnement ;
 - les sauvegardes (snapshots EBS, AMI).
 
-### 1.2 Cas d’usage
+### 1.2 Cas d'usage
 
-- Migration d’un **serveur existant** (lift & shift).
+- Migration d'un **serveur existant** (lift & shift).
 - Applications monolithiques difficiles à conteneuriser.
-- Besoin de **contrôle fin** sur l’OS, les drivers, etc.
+- Besoin de **contrôle fin** sur l'OS, les drivers, etc.
 
 ### 1.3 Coûts et optimisation
 
-- Facturation **à l’heure / seconde** en fonction du type d’instance.
+- Facturation **à l'heure / seconde** en fonction du type d'instance.
 - Optimisations :
   - choisir la bonne famille (généraliste, optimisée CPU, RAM, stockage) ;
   - utiliser des **Reserved Instances** ou **Savings Plans** pour les charges stables ;
-  - automatiser l’extinction des environnements non‑prod.
+  - automatiser l'extinction des environnements non‑prod.
 
 ---
 
@@ -65,28 +65,28 @@ Tu es responsable de :
 
 ### 2.1 Modèle
 
-Avec **AWS Lambda**, tu n’achètes plus des serveurs mais des **exécutions de fonctions**.
+Avec **AWS Lambda**, tu n'achètes plus des serveurs mais des **exécutions de fonctions**.
 
 - Tu fournis du code (Node, Python, etc.).
-- AWS s’occupe de **provisionner, scaler, patcher** l’infrastructure.
-- Tu paies au **nombre d’invocations + durée d’exécution**.
+- AWS s'occupe de **provisionner, scaler, patcher** l'infrastructure.
+- Tu paies au **nombre d'invocations + durée d'exécution**.
 
-### 2.2 Cas d’usage
+### 2.2 Cas d'usage
 
 - **APIs légères** (via API Gateway ou Function URLs).
 - Automatisations (traitement de fichiers S3, jobs planifiés, webhooks).
 - Backends à trafic irrégulier (pics, périodes de calme).
 
-Ce n’est pas idéal pour :
+Ce n'est pas idéal pour :
 
 - les traitements de longue durée (au‑delà de quelques minutes) ;
-- les workloads nécessitant un contrôle précis sur l’OS ou le réseau.
+- les workloads nécessitant un contrôle précis sur l'OS ou le réseau.
 
 ### 2.3 Optimisation
 
 - Bien calibrer la **mémoire** pour un bon ratio temps/coût.
-- Éviter d’initialiser des choses lourdes à chaque appel (connexions DB, SDK…).
-- Grouper du code dans des fonctions cohérentes (pas un énorme “god function”, pas mille fonctions minuscules).
+- Éviter d'initialiser des choses lourdes à chaque appel (connexions DB, SDK…).
+- Grouper du code dans des fonctions cohérentes (pas un énorme "god function", pas mille fonctions minuscules).
 
 ---
 
@@ -99,24 +99,24 @@ Ce n’est pas idéal pour :
 - Tu définis des **tâches** (containers + ressources) et des **services** (scaling, redémarrage).
 - Deux modes principaux :
   - **ECS sur EC2** : tu gères encore des instances (cluster EC2).
-  - **ECS Fargate** : serverless pour conteneurs (pas d’instance à gérer).
+  - **ECS Fargate** : serverless pour conteneurs (pas d'instance à gérer).
 
-### 3.2 Cas d’usage
+### 3.2 Cas d'usage
 
 - API REST / GraphQL en microservices.
 - Workers asynchrones (queues SQS, Kafka).
-- Backends d’applications web modernes.
+- Backends d'applications web modernes.
 
 ECS est un bon compromis si tu veux :
 
 - bénéficier des conteneurs ;
 - **éviter la complexité de Kubernetes** ;
-- rester dans l’écosystème AWS.
+- rester dans l'écosystème AWS.
 
 ### 3.3 Optimisation
 
-- En mode EC2 : bien dimensionner le cluster (autoscaling, types d’instances).
-- En mode Fargate : choisir la bonne taille CPU/RAM par tâche et ajuster l’auto‑scaling sur des métriques métier (latence, queue length).
+- En mode EC2 : bien dimensionner le cluster (autoscaling, types d'instances).
+- En mode Fargate : choisir la bonne taille CPU/RAM par tâche et ajuster l'auto‑scaling sur des métriques métier (latence, queue length).
 
 ---
 
@@ -126,22 +126,22 @@ ECS est un bon compromis si tu veux :
 
 **EKS (Elastic Kubernetes Service)** te fournit un **control plane Kubernetes managé**.
 
-- Tu déploies des workloads Kubernetes “classiques” (`Deployment`, `Service`, `Ingress`…).
-- Tu peux utiliser les mêmes outils qu’on‑prem (kubectl, Helm, ArgoCD, etc.).
+- Tu déploies des workloads Kubernetes "classiques" (`Deployment`, `Service`, `Ingress`…).
+- Tu peux utiliser les mêmes outils qu'on‑prem (kubectl, Helm, ArgoCD, etc.).
 
 Tu restes toutefois responsable de :
 
 - la gestion des **nodes workers** (ou Fargate pour certaines charges) ;
 - les mises à jour de versions Kubernetes côté workloads ;
-- la configuration de l’observabilité et de la sécurité.
+- la configuration de l'observabilité et de la sécurité.
 
-### 4.2 Cas d’usage
+### 4.2 Cas d'usage
 
 - Organisation qui a déjà investi dans **Kubernetes** (compétences, tooling).
 - Besoin de **portabilité** entre cloud / on‑prem.
 - Plateformes multi‑tenants, architectures microservices complexes.
 
-Si tu n’as pas encore de stack Kubernetes, ECS/Fargate ou Lambda seront souvent plus simples.
+Si tu n'as pas encore de stack Kubernetes, ECS/Fargate ou Lambda seront souvent plus simples.
 
 ---
 
@@ -163,7 +163,7 @@ Une grille de décision rapide :
 
 On peut aussi combiner :
 
-- EC2 pour quelques workloads “legacy” ;
+- EC2 pour quelques workloads "legacy" ;
 - ECS/Fargate pour les nouveaux services ;
 - Lambda pour la glue / automatisations ;
 - EKS pour des plateformes plus avancées.
@@ -176,7 +176,7 @@ On peut aussi combiner :
 
 Quel que soit le service compute choisi :
 
-- décrire l’infra avec Terraform, CloudFormation ou CDK ;
+- décrire l'infra avec Terraform, CloudFormation ou CDK ;
 - versionner les manifestes ;
 - automatiser les déploiements (CI/CD).
 

@@ -18,7 +18,7 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 ### Déploiement et dépôt
 - **`scripts/deploy-content.ps1`** : vérification et transfert **`dist/vitrines/`** en fallback scp ; création du répertoire distant `vitrines/`.
-- **`.gitignore`** : **`assets/images/projets/`** (correction de l’ancien chemin `projects/`), WebP vignettes projets, variantes **`about-section-hero`**, captures **`assets/vitrines/screenshots/`** (`.gitkeep` conservé) ; commentaire explicite sur le versionnement des démos vs captures.
+- **`.gitignore`** : **`assets/images/projets/`** (correction de l'ancien chemin `projects/`), WebP vignettes projets, variantes **`about-section-hero`**, captures **`assets/vitrines/screenshots/`** (`.gitkeep` conservé) ; commentaire explicite sur le versionnement des démos vs captures.
 
 ---
 
@@ -73,9 +73,9 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 ## [1.0.0] - 2025-01-XX
 
-### 🎉 Version Initiale - Release Majeure
+###  Version Initiale - Release Majeure
 
-#### ✨ Fonctionnalités Principales
+####  Fonctionnalités Principales
 
 **Système de Build et Architecture**
 - Système de génération statique avec Python (`build.py`)
@@ -155,7 +155,7 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 - Analyse des logs et troubleshooting
 - Index de documentation (`docs/INDEX.md`)
 
-#### 🐛 Corrections de Bugs
+####  Corrections de Bugs
 
 - Correction du système de conditions `{% else %}` dans le moteur de template
 - Suppression des erreurs d'affichage liées aux conditions non traitées
@@ -164,7 +164,7 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 - Correction des erreurs de favicon (404) dans les logs Nginx
 - Blocage des requêtes suspectes pour éviter le spam dans les logs
 
-#### 🔧 Améliorations Techniques
+####  Améliorations Techniques
 
 - Refactorisation du code JavaScript (suppression de duplication)
 - Amélioration de l'accessibilité (ARIA labels, rôles)
@@ -172,7 +172,7 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 - Responsive design amélioré pour mobile et tablette
 - Amélioration de l'ergonomie du footer et de la navbar
 
-#### 📝 Structure du Projet
+####  Structure du Projet
 
 ```
 V6/
@@ -203,7 +203,7 @@ V6/
 └── README.md
 ```
 
-#### 🚀 Technologies Utilisées
+####  Technologies Utilisées
 
 - **Frontend** : HTML5, CSS3, JavaScript (ES6+)
 - **Build** : Python 3 (système de génération statique)

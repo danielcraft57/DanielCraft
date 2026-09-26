@@ -16,7 +16,7 @@ og_image: ci-cd-secrets-1200x630.jpg
   <figcaption>Coffre CI et variables masquees : jamais de secret dans le code.</figcaption>
 </figure>
 
-La CI/CD manipule souvent des choses sensibles : tokens registry (push/pull d’images), clés API (Sentry, Stripe…), accès base de données de staging, kubeconfig ou credentials cloud. Une fuite de secret, c’est le genre de truc qui te ruine une soirée — et parfois un compte bancaire ou un cluster entier.
+La CI/CD manipule souvent des choses sensibles : tokens registry (push/pull d'images), clés API (Sentry, Stripe…), accès base de données de staging, kubeconfig ou credentials cloud. Une fuite de secret, c'est le genre de truc qui te ruine une soirée - et parfois un compte bancaire ou un cluster entier.
 
 Ici, on pose des règles simples, des exemples concrets et une checklist pour dormir un peu mieux. Si tu construis encore ton pipeline, commence par les [fondamentaux CI/CD](/blog/articles/ci-cd-fondamentaux-pipelines.html), puis reviens ici pour verrouiller les accès.
 
@@ -33,11 +33,11 @@ Ni dans :
 - les Dockerfile (`ENV PASSWORD=...` est une mauvaise idée),
 - les fichiers `.env` committés.
 
-Si un secret a fuité (commit poussé, screenshot Slack, log CI), considère qu’il est compromis et **rotate** immédiatement : révoque l’ancien, crée le nouveau, mets à jour les coffres.
+Si un secret a fuité (commit poussé, screenshot Slack, log CI), considère qu'il est compromis et **rotate** immédiatement : révoque l'ancien, crée le nouveau, mets à jour les coffres.
 
 ### Piège classique
 
-Tu ajoutes un `.env` dans `.gitignore`… après l’avoir déjà commité. Git ignore le futur, pas le passé. Il faut retirer le fichier de l’historique (ou au minimum le supprimer du tracking) **et** rotator toutes les valeurs exposées.
+Tu ajoutes un `.env` dans `.gitignore`… après l'avoir déjà commité. Git ignore le futur, pas le passé. Il faut retirer le fichier de l'historique (ou au minimum le supprimer du tracking) **et** rotator toutes les valeurs exposées.
 
 ---
 
@@ -45,7 +45,7 @@ Tu ajoutes un `.env` dans `.gitignore`… après l’avoir déjà commité. Git 
 
 ### Variables « publiques » (ok dans le repo)
 
-- noms d’environnements (`APP_ENV=staging`),
+- noms d'environnements (`APP_ENV=staging`),
 - flags sans impact sécurité (`FEATURE_X=true`),
 - URLs publiques (`API_PUBLIC_URL=https://api.exemple.fr`).
 
@@ -58,7 +58,7 @@ Tu ajoutes un `.env` dans `.gitignore`… après l’avoir déjà commité. Git 
 - kubeconfig complet,
 - chaînes de connexion avec credentials.
 
-Astuce : tout ce qui permet d’agir « au nom de » quelque chose (écrire en base, déployer, payer) est un secret.
+Astuce : tout ce qui permet d'agir « au nom de » quelque chose (écrire en base, déployer, payer) est un secret.
 
 ---
 
@@ -70,18 +70,18 @@ Trois niveaux, du plus simple au plus mature :
    Très bien pour démarrer un [workflow GitHub Actions](/blog/articles/ci-cd-github-actions-workflow-complet.html) ou un [pipeline GitLab CI](/blog/articles/ci-cd-gitlab-ci-pipeline-complet.html).
 
 2. **Secret manager** (Vault, AWS Secrets Manager, GCP Secret Manager)  
-   Plus solide : rotation, audit, policies d’accès.
+   Plus solide : rotation, audit, policies d'accès.
 
 3. **Kubernetes Secrets** (idéalement via External Secrets Operator)  
-   Pour que l’app récupère les secrets côté cluster, sans les coller dans Git.
+   Pour que l'app récupère les secrets côté cluster, sans les coller dans Git.
 
-L’idée : éviter que la CI devienne un coffre-fort géant non maîtrisé. La CI *injecte* ou *récupère* ; elle n’est pas forcément la source de vérité à long terme.
+L'idée : éviter que la CI devienne un coffre-fort géant non maîtrisé. La CI *injecte* ou *récupère* ; elle n'est pas forcément la source de vérité à long terme.
 
 ---
 
 ## Comment injecter un secret dans un job CI
 
-Principe : le secret arrive en variable d’environnement au runtime, jamais écrit dans le dépôt.
+Principe : le secret arrive en variable d'environnement au runtime, jamais écrit dans le dépôt.
 
 Exemple :
 
@@ -92,7 +92,7 @@ echo "$REGISTRY_TOKEN" | docker login ghcr.io -u "$REGISTRY_USER" --password-std
 Ce qui compte vraiment :
 
 - ne jamais `echo` le secret dans les logs,
-- désactiver le mode debug qui dump l’environnement,
+- désactiver le mode debug qui dump l'environnement,
 - limiter le scope et la durée de vie des tokens (lecture seule staging ≠ admin prod),
 - préférer `--password-stdin` aux arguments en ligne de commande (visibles dans `ps`).
 
@@ -100,7 +100,7 @@ Ce qui compte vraiment :
 
 ## Cas concret : kubeconfig
 
-Tu peux stocker un kubeconfig dans un secret CI (base64), puis le reconstruire à l’exécution :
+Tu peux stocker un kubeconfig dans un secret CI (base64), puis le reconstruire à l'exécution :
 
 ```bash
 echo "$KUBECONFIG_B64" | base64 -d > kubeconfig.yml
@@ -112,7 +112,7 @@ Bonnes pratiques :
 
 - kubeconfig dédié **staging** / **prod**,
 - comptes séparés,
-- droits minimum (RBAC) : un job de déploiement n’a pas besoin de supprimer le cluster,
+- droits minimum (RBAC) : un job de déploiement n'a pas besoin de supprimer le cluster,
 - supprimer le fichier en fin de job si possible.
 
 Pour le déploiement lui-même, vois aussi les [stratégies Kubernetes](/blog/articles/ci-cd-kubernetes-deploiement-strategies.html).

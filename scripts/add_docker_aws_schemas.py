@@ -21,7 +21,7 @@ from add_series3_extra_schemas import (  # noqa: E402
 )
 
 SPECS = [
-    # Docker — 1 schema each
+    # Docker - 1 schema each
     (
         "docker-fondamentaux-images-conteneurs",
         "docker-image-vs-conteneur.svg",
@@ -64,7 +64,7 @@ SPECS = [
             "Donnees et reseau : les deux pieges du 'ca marche en local'",
         ),
         0,
-        "Volumes pour persister, reseaux pour composer — pas l'inverse.",
+        "Volumes pour persister, reseaux pour composer - pas l'inverse.",
         "Schema Docker volumes et reseaux",
     ),
     (
@@ -119,7 +119,7 @@ SPECS = [
         "En prod : registry prive, scan, non-root, secrets hors image.",
         "Schema securite Docker en production et registry",
     ),
-    # AWS — 1-2 schemas; longer articles get denser mid placement
+    # AWS - 1-2 schemas; longer articles get denser mid placement
     (
         "aws-fondamentaux-cloud-aws-services",
         "aws-shared-responsibility.svg",
@@ -299,7 +299,7 @@ SPECS = [
             "Mesure d'abord (Cost Explorer), optimise ensuite",
         ),
         1,
-        "Baseline en Savings/Reserved, batch en Spot — apres avoir mesure.",
+        "Baseline en Savings/Reserved, batch en Spot - apres avoir mesure.",
         "Schema leviers d'optimisation des couts AWS",
     ),
     (

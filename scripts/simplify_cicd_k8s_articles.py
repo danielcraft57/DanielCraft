@@ -137,7 +137,7 @@ for item in SVGS:
 article(
     "ci-cd-fondamentaux-pipelines",
     "CI/CD : du commit a la mise en ligne, automatiquement",
-    "Une chaine qui teste et publie ton code a ta place — pour livrer plus souvent, sans trembler.",
+    "Une chaine qui teste et publie ton code a ta place - pour livrer plus souvent, sans trembler.",
     f"""# CI/CD : du commit a la mise en ligne, automatiquement
 
 Imagine une **chaine de montage**. Tu poses une piece (ton code). Des machines verifient, emballent, puis envoient le produit. La **CI/CD**, c'est ca pour un site ou une appli.
@@ -254,7 +254,7 @@ La CI fabrique souvent une **image** : une boite prete a demarrer partout pareil
 
 ## Les idees cles
 
-- **Tag** clair : `1.4.2` ou le hash du commit — pas seulement `latest`
+- **Tag** clair : `1.4.2` ou le hash du commit - pas seulement `latest`
 - **Cache** de build pour aller plus vite
 - Image **legere** (voir [optimisation Docker](/blog/articles/docker-build-optimisation-images.html))
 - Scan simple des failles avant prod
@@ -268,7 +268,7 @@ Tu testes **la meme boite** que tu mets en prod. Moins de "mais ca marchait en l
 article(
     "ci-cd-github-actions-workflow-complet",
     "GitHub Actions : une recette automatique pour ton projet",
-    "Un workflow simple : tester, construire, deployer — explique sans jargon.",
+    "Un workflow simple : tester, construire, deployer - explique sans jargon.",
     f"""# GitHub Actions : une recette automatique pour ton projet
 
 **GitHub Actions**, c'est le robot de GitHub. Tu ecris une recette (YAML). A chaque push, il execute.
@@ -515,12 +515,12 @@ for path, title, desc in [
     (
         ROOT / "blog/content/collections/ci-cd-serie.json",
         "Série CI/CD : livrer du code sans trembler",
-        "Pipelines, tests, secrets, Docker, GitHub/GitLab, Kubernetes et observabilite — expliques simplement.",
+        "Pipelines, tests, secrets, Docker, GitHub/GitLab, Kubernetes et observabilite - expliques simplement.",
     ),
     (
         ROOT / "blog/content/collections/kubernetes-serie.json",
         "Série Kubernetes : orchestrer des boites sans panique",
-        "Pods, nodes, deployments, secrets et observabilite — le cluster explique avec des mots du quotidien.",
+        "Pods, nodes, deployments, secrets et observabilite - le cluster explique avec des mots du quotidien.",
     ),
 ]:
     import json

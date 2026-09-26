@@ -2,11 +2,11 @@
 
 Référence de travail vitrine par vitrine. **Modèle pilote : `restauration`** (Brasserie Saint-Jacques).
 
-Objectif : passer d’une démo IA minimaliste (hero + 3 blocs) à un **site sectoriel crédible** (navigation, contenu HTML, photos, formulaire, footer, SEO local).
+Objectif : passer d'une démo IA minimaliste (hero + 3 blocs) à un **site sectoriel crédible** (navigation, contenu HTML, photos, formulaire, footer, SEO local).
 
 ---
 
-## Vue d’ensemble du pipeline
+## Vue d'ensemble du pipeline
 
 ```
 vitrine_scenarios.py          Textes & structure multi-pages (source de vérité narrative)
@@ -34,13 +34,13 @@ Chaque page générée par `build_vitrine_site.py` inclut automatiquement (via `
 
 | Élément | Emplacement |
 |---------|-------------|
-| **Meta** | `<head>` — `title`, `description`, `robots`, `canonical`, OG, Twitter |
-| **WebSite** | `<header>` — marque avec `itemprop="url"` + `itemprop="name"` |
-| **WebPage** | `<main itemscope>` — `itemprop="url"`, `inLanguage` |
+| **Meta** | `<head>` - `title`, `description`, `robots`, `canonical`, OG, Twitter |
+| **WebSite** | `<header>` - marque avec `itemprop="url"` + `itemprop="name"` |
+| **WebPage** | `<main itemscope>` - `itemprop="url"`, `inLanguage` |
 | **Contenu page** | Premier `<h1>` → `name` ; chapô `.lead` → `description` ; 1ère image hero → `image` |
-| **Entité locale / SaaS** | `<footer itemscope>` — type sectoriel (`Restaurant`, `SoftwareApplication`…), adresse, téléphone, geo |
+| **Entité locale / SaaS** | `<footer itemscope>` - type sectoriel (`Restaurant`, `SoftwareApplication`…), adresse, téléphone, geo |
 | **BreadcrumbList** | Fil d'Ariane **visible** sous le header (pages internes uniquement) |
-| **FAQPage** | Section FAQ — `Question` / `Answer` dans l'accordéon (`vitrine_layouts.py`) |
+| **FAQPage** | Section FAQ - `Question` / `Answer` dans l'accordéon (`vitrine_layouts.py`) |
 
 Pas de JSON-LD, pas de microdata dans le `<head>`, pas de blocs `visually-hidden` pour le schema.
 
@@ -50,7 +50,7 @@ Rebuild complet : `python scripts/build_vitrine_site.py --all`
 
 ---
 
-## Étape 1 — Scénario et contenu (`vitrine_scenarios.py`)
+## Étape 1 - Scénario et contenu (`vitrine_scenarios.py`)
 
 Chaque vitrine a un bloc `SCENARIOS` avec :
 
@@ -63,7 +63,7 @@ La fonction `_collect_images()` **fusionne tous les contextes** de toutes les pa
 
 ---
 
-## Étape 2 — Prompts photo par vitrine
+## Étape 2 - Prompts photo par vitrine
 
 ### Fichier dédié
 
@@ -79,7 +79,7 @@ Remplir pour **chaque image** (`hero.png`, `scene-1..3`, `card-1..3`, `gallery-1
 |-------|------|
 | `subject` | Description visuelle détaillée pour la génération IA |
 | `style_suffix` | Suffixe commun au slug (ex. ambiance Metz, secteur HCR…) |
-| `contexts[]` | `{ page, section, text }` — lien avec le HTML |
+| `contexts[]` | `{ page, section, text }` - lien avec le HTML |
 | `alt` | Accessibilité |
 | `width` / `height` | hero 1200×520, autres 800×520 |
 
@@ -105,7 +105,7 @@ python scripts/install_vitrine_photo.py <chemin-source.png> <slug> <filename>
 
 ---
 
-## Étape 3 — Site HTML (Bootstrap 5)
+## Étape 3 - Site HTML (Bootstrap 5)
 
 ### Fichiers clés
 
@@ -120,7 +120,7 @@ python scripts/install_vitrine_photo.py <chemin-source.png> <slug> <filename>
 1. Dupliquer la section `restauration` dans `build_vitrine_site.py` → nouveau slug.
 2. Adapter : `NAV`, contenu métier (menu, services, FAQ…), blocs utilisés.
 3. Créer / adapter `styles.css` (palette sectorielle).
-4. Optionnel : blocs spécifiques dans `vitrine_site_blocks.py` si le secteur l’exige (ex. prise de RDV spa, fiche bien immobilier).
+4. Optionnel : blocs spécifiques dans `vitrine_site_blocks.py` si le secteur l'exige (ex. prise de RDV spa, fiche bien immobilier).
 
 ```bash
 python scripts/build_vitrine_site.py <slug>
@@ -168,7 +168,7 @@ Fichier layouts alternatifs : `scripts/vitrine_layouts.py`.
 
 ---
 
-## Étape 4 — Preview locale
+## Étape 4 - Preview locale
 
 Après modification :
 
@@ -180,7 +180,7 @@ python scripts/build_vitrine_site.py <slug>
 Copy-Item -Path "assets\vitrines\demos\<slug>\*" -Destination "dist\vitrines\<slug>\demo\" -Recurse -Force
 ```
 
-URL : `http://127.0.0.1:8000/vitrines/<slug>/demo/index.html` — rechargement **Ctrl+F5**.
+URL : `http://127.0.0.1:8000/vitrines/<slug>/demo/index.html` - rechargement **Ctrl+F5**.
 
 Build complet site : `python build.py` (republie toutes les vitrines).
 
@@ -192,28 +192,28 @@ Cocher au fur et à mesure :
 
 | Slug | Photos JSON | Images IA | Site BS | Statut |
 |------|-------------|-----------|---------|--------|
-| **restauration** | ✅ | ✅ | ✅ | **Pilote terminé** — hero centré + stats |
-| **beaute** | ✅ | ✅ | ✅ | **Terminé** — hero centré spa |
-| **odontologie** | ✅ | ✅ | ✅ | **Terminé** — hero split + bento + entonnoir |
-| **automobile** | ✅ | ✅ | ✅ | **Terminé** — hero overlay + tuiles + split inversé |
-| **commerce** | ✅ | ✅ | ✅ | **Terminé** — hero éditorial + promos + entonnoir drive |
-| **comptable** | ✅ | ✅ | ✅ | **Terminé** — preuve sociale + tableau + FAQ |
-| **industrie** | ✅ | ✅ | ✅ | **Terminé** — hero technique + specs + certs + flux RFQ |
-| **immobilier** | ✅ | ✅ | ✅ | **Terminé** — hero recherche + grille annonces + estimation |
-| **juridique** | ✅ | ✅ | ✅ | **Terminé** — hero overlay + tuiles expertises + FAQ |
-| **architecture** | ✅ | ✅ | ✅ | **Terminé** — hero éditorial + bento + grille projets |
-| **fitness** | ✅ | ✅ | ✅ | **Terminé** — hero overlay sombre + planning + tarifs |
-| **photographie** | ✅ | ✅ | ✅ | **Terminé** — hero éditorial + galerie masonry + preuves |
-| **association** | ✅ | ✅ | ✅ | **Terminé** — hero vert + jauge impact + mobilisation |
-| **education** | ✅ | ✅ | ✅ | **Terminé** — hero technique + Qualiopi + parcours admission |
-| **services** | ✅ | ✅ | ✅ | **Terminé** — hero overlay teal + bento FM + offres promo |
-| **etablissement** | ✅ | ✅ | ✅ | **Terminé** — hero luxe + snap chapters + marquee |
-| **technologie** | ✅ | ✅ | ✅ | **Terminé** — hero scan + tabs animés + marquee clients |
-| **saas-landing** | ✅ | ✅ | ✅ | **Terminé** — orbes + mockup flottant + tabs + pricing tilt |
-| saas-onboarding | ✅ | ✅ | ✅ | **Terminé** — wizard progression + snap chapters |
-| saas-dashboard | ✅ | ✅ | ✅ | **Terminé** — KPI pulse + compteurs live |
-| saas-empty | ✅ | ✅ | ✅ | **Terminé** — morph avant/après + tabs |
-| saas-notifications | ✅ | ✅ | ✅ | **Terminé** — feed notifications cascade |
+| **restauration** | oui | oui | oui | **Pilote terminé** - hero centré + stats |
+| **beaute** | oui | oui | oui | **Terminé** - hero centré spa |
+| **odontologie** | oui | oui | oui | **Terminé** - hero split + bento + entonnoir |
+| **automobile** | oui | oui | oui | **Terminé** - hero overlay + tuiles + split inversé |
+| **commerce** | oui | oui | oui | **Terminé** - hero éditorial + promos + entonnoir drive |
+| **comptable** | oui | oui | oui | **Terminé** - preuve sociale + tableau + FAQ |
+| **industrie** | oui | oui | oui | **Terminé** - hero technique + specs + certs + flux RFQ |
+| **immobilier** | oui | oui | oui | **Terminé** - hero recherche + grille annonces + estimation |
+| **juridique** | oui | oui | oui | **Terminé** - hero overlay + tuiles expertises + FAQ |
+| **architecture** | oui | oui | oui | **Terminé** - hero éditorial + bento + grille projets |
+| **fitness** | oui | oui | oui | **Terminé** - hero overlay sombre + planning + tarifs |
+| **photographie** | oui | oui | oui | **Terminé** - hero éditorial + galerie masonry + preuves |
+| **association** | oui | oui | oui | **Terminé** - hero vert + jauge impact + mobilisation |
+| **education** | oui | oui | oui | **Terminé** - hero technique + Qualiopi + parcours admission |
+| **services** | oui | oui | oui | **Terminé** - hero overlay teal + bento FM + offres promo |
+| **etablissement** | oui | oui | oui | **Terminé** - hero luxe + snap chapters + marquee |
+| **technologie** | oui | oui | oui | **Terminé** - hero scan + tabs animés + marquee clients |
+| **saas-landing** | oui | oui | oui | **Terminé** - orbes + mockup flottant + tabs + pricing tilt |
+| saas-onboarding | oui | oui | oui | **Terminé** - wizard progression + snap chapters |
+| saas-dashboard | oui | oui | oui | **Terminé** - KPI pulse + compteurs live |
+| saas-empty | oui | oui | oui | **Terminé** - morph avant/après + tabs |
+| saas-notifications | oui | oui | oui | **Terminé** - feed notifications cascade |
 
 ---
 
@@ -245,8 +245,8 @@ assets/vitrines/demos/restauration/
 
 ## Rappels
 
-- **`vitrine_gen_multipage.py`** : génération IA basique — ne pas l’utiliser sur un slug déjà passé en « vrai site ».
-- **`gen_vitrine_assets.py`** : placeholders PIL — remplacer par photos IA via la méthode ci-dessus.
+- **`vitrine_gen_multipage.py`** : génération IA basique - ne pas l'utiliser sur un slug déjà passé en « vrai site ».
+- **`gen_vitrine_assets.py`** : placeholders PIL - remplacer par photos IA via la méthode ci-dessus.
 - Les includes catalogue (`src/includes/vitrines-*.html`) restent gérés par `build.py`, indépendamment des démos.
 
 Voir aussi : [VITRINES.md](./VITRINES.md) (catalogue, deploy, captures).

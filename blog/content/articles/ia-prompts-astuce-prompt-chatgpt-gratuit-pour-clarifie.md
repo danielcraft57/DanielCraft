@@ -1,7 +1,7 @@
 ---
 title: "Astuce : demander a ChatGPT de clarifier (avant d'agir)"
 date: 2026-05-09
-excerpt: "Fais reformuler ton besoin en 5 puces — tu gagnes du temps sur la suite."
+excerpt: "Fais reformuler ton besoin en 5 puces - tu gagnes du temps sur la suite."
 type: toolbox
 tags: [IA, prompts, ChatGPT, Claude, prompt engineering]
 og_image: ia-prompts-astuce-prompt-chatgpt-gratuit-pour-clarifie-1200x630.jpg

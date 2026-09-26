@@ -1,5 +1,5 @@
 /**
- * Page /audit — formulaire unifié (gratuit + premium) + paiement Stripe.
+ * Page /audit - formulaire unifié (gratuit + premium) + paiement Stripe.
  */
 (function () {
   'use strict';
@@ -91,8 +91,8 @@
         successLead.textContent =
           message ||
           (email
-            ? '3 priorités pour votre site — envoyées à ' + email + ' sous 48 h ouvrées.'
-            : '3 priorités pour votre site — livraison sous 48 h ouvrées.');
+            ? '3 priorités pour votre site - envoyées à ' + email + ' sous 48 h ouvrées.'
+            : '3 priorités pour votre site - livraison sous 48 h ouvrées.');
       }
     }
     setFeedback(unifiedFeedback, '', false);
@@ -370,7 +370,7 @@
   if (stripeParam === 'success') {
     if (returnBanner) {
       returnBanner.hidden = false;
-      returnBanner.textContent = 'Paiement reçu — finalisation de votre commande en cours…';
+      returnBanner.textContent = 'Paiement reçu - finalisation de votre commande en cours…';
       returnBanner.className = 'audit-stripe-return audit-stripe-return--pending';
     }
     confirmPaidOrderAfterStripe();

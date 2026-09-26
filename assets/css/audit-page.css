@@ -1,4 +1,4 @@
-/* Page /audit — landing B (hero form + rapport) + C (split offres) */
+/* Page /audit - landing B (hero form + rapport) + C (split offres) */
 
 .page-audit {
   --audit-accent: var(--primary-color, #4da9d6);
@@ -32,7 +32,7 @@
   border: 0;
 }
 
-/* Hero band — style B */
+/* Hero band - style B */
 .audit-hero-band {
   background:
     radial-gradient(ellipse 80% 60% at 85% 20%, rgba(77, 169, 214, 0.22), transparent 55%),
@@ -60,7 +60,7 @@
   }
 }
 
-/* Desktop XL — plus d'air utile, hero dans le premier ecran */
+/* Desktop XL - plus d'air utile, hero dans le premier ecran */
 @media (min-width: 1400px) {
   .audit-hero-band .container,
   .page-audit > .container {
@@ -273,7 +273,7 @@
   margin: 0;
 }
 
-/* Offers — style C split */
+/* Offers - style C split */
 .audit-offers {
   margin-bottom: 3rem;
 }

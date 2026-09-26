@@ -15,7 +15,7 @@ stats = (
     "      </div>\n"
     "    </section>\n\n"
     '        <section id="projets" class="container" style="padding:4rem 0">\n'
-    '      <h2 class="arch-mono" style="margin-bottom:2rem">Sélection 2024–2026</h2>\n'
+    '      <h2 class="arch-mono" style="margin-bottom:2rem">Sélection 2024-2026</h2>\n'
     '      <div class="arch-grid-projects">\n'
 )
 t, n = re.subn(

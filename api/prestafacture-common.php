@@ -2,7 +2,7 @@
 /**
  * Client API Prestafacture (routes publiques).
  * Base : https://prestafacture.com/api/public
- * Auth : Authorization: Bearer fact_… (Paramètres → API — Jetons)
+ * Auth : Authorization: Bearer fact_… (Paramètres → API - Jetons)
  */
 
 declare(strict_types=1);
@@ -91,7 +91,7 @@ function prestafacture_parse_api_error(int $status, ?array $data): string
         }
     }
     if ($status === 403 && str_contains($msg, 'Permission API manquante')) {
-        $msg .= ' — recréez le jeton Prestafacture avec les scopes requis (clients : clients.read, clients.write ; devis : devis.read, devis.write, devis.send ; audit : factures.read, factures.write, factures.send).';
+        $msg .= ' - recréez le jeton Prestafacture avec les scopes requis (clients : clients.read, clients.write ; devis : devis.read, devis.write, devis.send ; audit : factures.read, factures.write, factures.send).';
     }
 
     return $msg;
@@ -185,7 +185,7 @@ function prestafacture_http(string $method, string $path, ?array $jsonBody = nul
     return ['ok' => false, 'status' => $status, 'data' => $data, 'error' => prestafacture_parse_api_error($status, $data)];
 }
 
-/** Taux TVA décimal pour l’API (20 → 0.2). */
+/** Taux TVA décimal pour l'API (20 → 0.2). */
 function prestafacture_tax_rate_decimal(float $taxRate): float
 {
     if ($taxRate <= 0) {
@@ -217,7 +217,7 @@ function prestafacture_prestation_line_label(array $item, string $addonTitle = '
 {
     $title = trim(preg_replace('/[\r\n]+/', ' ', (string) ($item['title'] ?? 'Prestation')));
     if ($addonTitle !== '') {
-        $line = $title . ' — ' . trim(preg_replace('/[\r\n]+/', ' ', $addonTitle));
+        $line = $title . ' - ' . trim(preg_replace('/[\r\n]+/', ' ', $addonTitle));
 
         return mb_substr($line, 0, 160);
     }
@@ -230,19 +230,21 @@ function prestafacture_prestation_line_label(array $item, string $addonTitle = '
 }
 
 /**
- * Ligne de devis/facture à partir d’un prix catalogue HT (prestations DanielCraft).
+ * Ligne de devis/facture à partir d'un prix catalogue HT (prestations DanielCraft).
  *
  * @return array{description: string, quantity: float, unitPrice: float, taxRate: float, productId?: int}
  */
 function prestafacture_line_from_price_ht(
     string $description,
     float $priceEurHt,
-    float $taxRatePercent = 20.0,
-    ?int $productId = null
+    float $taxRatePercent = 0.0,
+    ?int $productId = null,
+    float $quantity = 1.0
 ): array {
+    $qty = $quantity > 0 ? round($quantity, 2) : 1.0;
     $line = [
         'description' => mb_substr(trim($description), 0, 200),
-        'quantity' => 1,
+        'quantity' => $qty,
         'unitPrice' => round(max(0.0, $priceEurHt), 2),
         'taxRate' => prestafacture_tax_rate_decimal($taxRatePercent),
     ];
@@ -297,7 +299,7 @@ function prestafacture_client_display_name(string $personName, string $companyNa
     $companyName = trim(preg_replace('/[\r\n]+/', ' ', $companyName));
     $personName = trim(preg_replace('/[\r\n]+/', ' ', $personName));
     if ($companyName !== '' && $personName !== '') {
-        return $companyName . ' — ' . $personName;
+        return $companyName . ' - ' . $personName;
     }
     if ($companyName !== '') {
         return $companyName;
@@ -369,7 +371,7 @@ function prestafacture_find_client_by_email(string $email): ?array
 }
 
 /**
- * Recherche un client Prestafacture par e-mail — retourne uniquement l’id.
+ * Recherche un client Prestafacture par e-mail - retourne uniquement l'id.
  */
 function prestafacture_find_client_id_by_email(string $email): string
 {
@@ -382,7 +384,7 @@ function prestafacture_find_client_id_by_email(string $email): string
 }
 
 /**
- * POST /public/clients — crée une fiche client.
+ * POST /public/clients - crée une fiche client.
  *
  * @return array{ok: bool, client_id: string, error: string, status: int}
  */
@@ -423,7 +425,7 @@ function prestafacture_create_client(string $customerEmail, string $personName, 
 }
 
 /**
- * PATCH /public/clients/:id — met à jour une fiche client existante.
+ * PATCH /public/clients/:id - met à jour une fiche client existante.
  *
  * @param array<string, mixed> $fields
  * @return array{ok: bool, error: string}
@@ -531,7 +533,7 @@ function prestafacture_ensure_client_id(string $customerEmail, string $personNam
 }
 
 /**
- * POST /public/factures — clientEmail + paidExternally.
+ * POST /public/factures - clientEmail + paidExternally.
  * Pas d'avoir via l'API publique (2026) : creer l'avoir dans l'UI Prestafacture.
  *
  * @return array{ok: bool, invoice_id: string, error: string}
@@ -626,7 +628,7 @@ function prestafacture_send_facture_email(string $factureId, string $customerEma
 }
 
 /**
- * Crée la facture payée (paiement Stripe) puis envoie l’email.
+ * Crée la facture payée (paiement Stripe) puis envoie l'email.
  *
  * @return array{ok: bool, invoice_id: string, error: string}
  */
@@ -646,7 +648,7 @@ function prestafacture_issue_audit_invoice(
 
     $description = trim($serviceTitle);
     if ($siteUrl !== '') {
-        $description .= ' — ' . mb_substr($siteUrl, 0, 120);
+        $description .= ' - ' . mb_substr($siteUrl, 0, 120);
     }
 
     $unitHt = prestafacture_unit_price_ht($priceTtc, $taxRatePercent);
@@ -667,7 +669,7 @@ function prestafacture_issue_audit_invoice(
     $send = prestafacture_send_facture_email($invoice['invoice_id'], $customerEmail);
     if (!$send['ok']) {
         error_log('[Prestafacture] send facture ' . $invoice['invoice_id'] . ': ' . $send['error']);
-        // Facture créée (PAID) même si l’email Prestafacture échoue (ex. SMTP non configuré côté Prestafacture).
+        // Facture créée (PAID) même si l'email Prestafacture échoue (ex. SMTP non configuré côté Prestafacture).
         return [
             'ok' => true,
             'invoice_id' => $invoice['invoice_id'],
@@ -775,7 +777,7 @@ function prestafacture_create_quote_devis(
         error_log('[Prestafacture] client créé id=' . $client['client_id'] . ' email=' . $email);
     }
 
-    // L’API /devis exige clientId (clientEmail seul renvoie « Client requis »).
+    // L'API /devis exige clientId (clientEmail seul renvoie « Client requis »).
     $body = [
         'clientId' => $client['client_id'],
         'lines' => $apiLines,
@@ -849,7 +851,7 @@ function prestafacture_send_devis_email(string $devisId, string $customerEmail):
 }
 
 /**
- * Crée un devis Prestafacture puis l’envoie par e-mail au client.
+ * Crée un devis Prestafacture puis l'envoie par e-mail au client.
  *
  * @param list<array{description: string, quantity: int|float, unitPrice: float, taxRate?: float}> $lines
  * @return array{ok: bool, quote_id: string, email_sent: bool, error: string, warning: string}
@@ -859,7 +861,7 @@ function prestafacture_issue_quote_devis(
     string $personName,
     array $lines,
     string $internalNote = '',
-    float $taxRatePercent = 20.0,
+    float $taxRatePercent = 0.0,
     string $companyName = ''
 ): array {
     $empty = ['ok' => false, 'quote_id' => '', 'email_sent' => false, 'error' => '', 'warning' => ''];

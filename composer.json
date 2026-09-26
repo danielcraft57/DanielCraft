@@ -1,6 +1,6 @@
 {
   "name": "danielcraft/site",
-  "description": "Site statique DanielCraft — build Python + API PHP",
+  "description": "Site statique DanielCraft - build Python + API PHP",
   "type": "project",
   "require": {
     "php": ">=8.2"

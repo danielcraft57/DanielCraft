@@ -12,11 +12,11 @@ Ce document liste toutes les optimisations de performance mises en place pour am
 - Pas de preload
 
 #### Après
-- ✅ Chargement uniquement des poids utilisés (400, 500, 600, 700)
-- ✅ Subset latin uniquement (réduction ~30-40% de la taille)
-- ✅ `display=swap` pour éviter le FOIT (Flash of Invisible Text)
-- ✅ Chargement asynchrone avec `media="print"` et `onload`
-- ✅ Preconnect pour les domaines Google Fonts
+- Chargement uniquement des poids utilisés (400, 500, 600, 700)
+- Subset latin uniquement (réduction ~30-40% de la taille)
+- `display=swap` pour éviter le FOIT (Flash of Invisible Text)
+- Chargement asynchrone avec `media="print"` et `onload`
+- Preconnect pour les domaines Google Fonts
 
 **Gain estimé** : ~50-60% de réduction de la taille des fonts
 
@@ -26,9 +26,9 @@ Ce document liste toutes les optimisations de performance mises en place pour am
 - Chargement complet de Font Awesome 6.5.0 (~100KB)
 
 #### Après
-- ✅ Intégrité SRI (Subresource Integrity) pour la sécurité
-- ✅ `referrerpolicy="no-referrer"` pour la confidentialité
-- ⚠️ **Recommandation future** : Utiliser uniquement les icônes SVG nécessaires pour réduire à ~10-20KB
+- Intégrité SRI (Subresource Integrity) pour la sécurité
+- `referrerpolicy="no-referrer"` pour la confidentialité
+- **Recommandation future** : Utiliser uniquement les icônes SVG nécessaires pour réduire à ~10-20KB
 
 **Gain potentiel** : ~80% de réduction si on passe aux SVG uniquement
 
@@ -39,9 +39,9 @@ Ce document liste toutes les optimisations de performance mises en place pour am
 - Blocage du rendu
 
 #### Après
-- ✅ Preload pour `main.css` (CSS critique)
-- ✅ Chargement asynchrone pour `animations.css` et `responsive.css`
-- ✅ Technique `media="print"` + `onload` pour le chargement non-bloquant
+- Preload pour `main.css` (CSS critique)
+- Chargement asynchrone pour `animations.css` et `responsive.css`
+- Technique `media="print"` + `onload` pour le chargement non-bloquant
 
 **Gain estimé** : Amélioration du First Contentful Paint (FCP) de ~200-300ms
 
@@ -51,16 +51,16 @@ Ce document liste toutes les optimisations de performance mises en place pour am
 - Scripts chargés de manière synchrone
 
 #### Après
-- ✅ Attribut `defer` sur tous les scripts
-- ✅ Preload pour `main.js` (script critique)
-- ✅ Scripts exécutés après le parsing HTML
+- Attribut `defer` sur tous les scripts
+- Preload pour `main.js` (script critique)
+- Scripts exécutés après le parsing HTML
 
 **Gain estimé** : Amélioration du Time to Interactive (TTI) de ~100-200ms
 
 ### 5. DNS et Connexions
 
 #### Ajouté
-- ✅ DNS Prefetch pour :
+- DNS Prefetch pour :
   - `fonts.googleapis.com`
   - `fonts.gstatic.com`
   - `cdnjs.cloudflare.com`
@@ -74,10 +74,10 @@ Ce document liste toutes les optimisations de performance mises en place pour am
 - Compression Gzip basique
 
 #### Après
-- ✅ Gzip optimisé (niveau 6, types étendus)
-- ✅ Taille minimale réduite à 256 bytes (au lieu de 1000)
-- ✅ Support Brotli préparé (commenté, à activer si module installé)
-- ✅ Headers Vary pour la mise en cache
+- Gzip optimisé (niveau 6, types étendus)
+- Taille minimale réduite à 256 bytes (au lieu de 1000)
+- Support Brotli préparé (commenté, à activer si module installé)
+- Headers Vary pour la mise en cache
 
 **Gain estimé** : ~70-80% de réduction de la taille des fichiers textuels
 
@@ -87,10 +87,10 @@ Ce document liste toutes les optimisations de performance mises en place pour am
 - Cache de 30 jours pour les assets
 
 #### Après
-- ✅ Cache de 1 an pour les assets statiques (immutable)
-- ✅ Cache de 1 heure pour les HTML (pour permettre les mises à jour)
-- ✅ Headers Cache-Control optimisés
-- ✅ Access-Control-Allow-Origin pour les fonts
+- Cache de 1 an pour les assets statiques (immutable)
+- Cache de 1 heure pour les HTML (pour permettre les mises à jour)
+- Headers Cache-Control optimisés
+- Access-Control-Allow-Origin pour les fonts
 
 **Gain estimé** : Réduction de ~90% des requêtes répétées
 

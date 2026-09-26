@@ -18,13 +18,13 @@ og_image: marketing-strategie-1200x630.jpg
 
 Le marketing digital offre des dizaines de leviers : SEO, publicité, réseaux sociaux, email, contenu, influence, webinaires… Face à cette abondance, la plupart des PME et freelances font l'inverse de ce qu'il faudrait : ils se dispersent. Un peu de LinkedIn ici, une campagne Google Ads là, un site qu'on n'a pas mis à jour depuis deux ans. Résultat : beaucoup d'efforts, peu de visibilité, aucune vision claire de ce qui fonctionne.
 
-Une stratégie simple repose sur cinq piliers — objectif, cible, message, canaux, mesure — schématisés ci-dessus. Pas besoin d'un document de cinquante pages. Il te faut une feuille de route lisible que tu peux tenir sur six mois.
+Une stratégie simple repose sur cinq piliers - objectif, cible, message, canaux, mesure - schématisés ci-dessus. Pas besoin d'un document de cinquante pages. Il te faut une feuille de route lisible que tu peux tenir sur six mois.
 
 ## Partir d'un objectif business précis
 
 « Faire connaître ma marque » est trop vague. « Générer 15 demandes de devis qualifiées par mois d'ici septembre » est actionnable. Chaque objectif marketing doit se rattacher à un résultat mesurable : notoriété (portée, mentions), leads (inscriptions, formulaires), conversion (ventes, signatures), fidélisation (taux de renouvellement, recommandations).
 
-Un seul objectif principal par trimestre. Si tu poursuis tout en même temps — être connu, vendre plus, fidéliser — tu dilues tes moyens. Le trimestre prochain, tu ajustes selon les résultats.
+Un seul objectif principal par trimestre. Si tu poursuis tout en même temps - être connu, vendre plus, fidéliser - tu dilues tes moyens. Le trimestre prochain, tu ajustes selon les résultats.
 
 ## Connaître ta cible au-delà du persona générique
 
@@ -40,7 +40,7 @@ Teste ta phrase auprès de quelqu'un qui ne connaît pas ton activité. S'il doi
 
 ## Choisir deux ou trois canaux maximum
 
-Le SEO attire un trafic durable et crédible — idéal si tu peux publier du contenu régulièrement. Les réseaux sociaux (surtout LinkedIn en B2B) construisent la notoriété et la confiance. L'email convertit les contacts déjà acquis avec un coût marginal faible. La publicité payante (Google, Meta) apporte des résultats rapides mais disparaît dès que le budget s'arrête.
+Le SEO attire un trafic durable et crédible - idéal si tu peux publier du contenu régulièrement. Les réseaux sociaux (surtout LinkedIn en B2B) construisent la notoriété et la confiance. L'email convertit les contacts déjà acquis avec un coût marginal faible. La publicité payante (Google, Meta) apporte des résultats rapides mais disparaît dès que le budget s'arrête.
 
 Pour une PME avec un budget serré, la combinaison SEO + LinkedIn + email couvre l'essentiel du parcours : être trouvé, inspirer confiance, convertir. Ajoute la publicité quand tu as un message et une landing page qui convertissent déjà en organique.
 

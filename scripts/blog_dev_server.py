@@ -79,7 +79,7 @@ def main() -> None:
     )
     server_class = getattr(http.server, "ThreadingHTTPServer", http.server.HTTPServer)
     with server_class(("", args.port), handler) as httpd:
-        print(f"Serving HTTP on port {args.port} (blog sans .html OK) — {root}")
+        print(f"Serving HTTP on port {args.port} (blog sans .html OK) - {root}")
         httpd.serve_forever()
 
 

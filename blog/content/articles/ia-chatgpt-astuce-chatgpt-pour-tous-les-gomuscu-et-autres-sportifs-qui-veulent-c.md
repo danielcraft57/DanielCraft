@@ -1,7 +1,7 @@
 ---
 title: "Photo de repas + ChatGPT : une estimation, pas une science exacte"
 date: 2026-05-23
-excerpt: "Envoyer une photo pour approximer calories / macros — utile en ordre de grandeur, a verifier."
+excerpt: "Envoyer une photo pour approximer calories / macros - utile en ordre de grandeur, a verifier."
 type: tutorial
 tags: [IA, ChatGPT, productivite, astuces]
 og_image: ia-chatgpt-astuce-chatgpt-pour-tous-les-gomuscu-et-autres-sportifs-qui-veulent-c-1200x630.jpg

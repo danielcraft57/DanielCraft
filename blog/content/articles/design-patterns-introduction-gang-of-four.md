@@ -18,7 +18,7 @@ series_order: 1
 
 Tu as déjà copié-collé du code sans comprendre sa structure ? Ou une classe de 800 lignes que personne n'ose toucher ? Les **design patterns** t'aident à **nommer** des solutions qui marchent, à **communiquer** avec ton équipe, et à **éviter** de réinventer la roue.
 
-Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à beaucoup de catalogues, nous les classons ici du **plus populaire au moins rencontré** en entreprise — pour que tu apprennes d'abord ce que tu verras le plus souvent en code review et en entretien.
+Cette série couvre les **23 patterns du Gang of Four (1994)**. Contrairement à beaucoup de catalogues, nous les classons ici du **plus populaire au moins rencontré** en entreprise - pour que tu apprennes d'abord ce que tu verras le plus souvent en code review et en entretien.
 
 ---
 
@@ -54,7 +54,7 @@ Imagine une cuisine : tu ne réinventes pas la recette de la sauce béchamel à 
 
 En pratique : un **créationnel** t'aide quand `new` devient un casse-tête (config, variantes, coûts). Un **structurel** colle des briques incompatibles ou ajoute des couches sans tout casser. Un **comportemental** clarifie qui parle à qui, et comment un objet change de réaction selon le contexte.
 
-Petit aperçu en code — sans pattern, tout est mélangé :
+Petit aperçu en code - sans pattern, tout est mélangé :
 
 ```javascript
 // Tout dans une fonction : difficile à tester et à étendre
@@ -65,7 +65,7 @@ function checkout(user, cart, mode) {
 }
 ```
 
-Avec un vocabulaire de patterns, tu sépares : **Strategy** pour le mode d'expédition, **Observer** pour les notifications, **Facade** pour l'API publique. Ce n'est pas obligatoire dès la ligne 1 — c'est un langage pour refactoriser quand ça fait mal.
+Avec un vocabulaire de patterns, tu sépares : **Strategy** pour le mode d'expédition, **Observer** pour les notifications, **Facade** pour l'API publique. Ce n'est pas obligatoire dès la ligne 1 - c'est un langage pour refactoriser quand ça fait mal.
 
 ---
 
@@ -79,23 +79,23 @@ Tu peux lire linéairement ou sauter vers le pattern qui correspond à ta douleu
 
 ## SOLID en version junior
 
-1. **S**ingle Responsibility — une raison de changer par classe.
-2. **O**pen/Closed — étendre sans tout casser.
-3. **L**iskov — les sous-types restent substituables.
-4. **I**nterface Segregation — petites interfaces.
-5. **D**ependency Inversion — dépendre d'abstractions.
+1. **S**ingle Responsibility - une raison de changer par classe.
+2. **O**pen/Closed - étendre sans tout casser.
+3. **L**iskov - les sous-types restent substituables.
+4. **I**nterface Segregation - petites interfaces.
+5. **D**ependency Inversion - dépendre d'abstractions.
 
-Les patterns et SOLID se renforcent : Strategy et Decorator aident l'Open/Closed ; Factory et Dependency Injection poussent vers Dependency Inversion. Tu n'as pas besoin de réciter les lettres en entretien — montre que tu sépares les responsabilités.
+Les patterns et SOLID se renforcent : Strategy et Decorator aident l'Open/Closed ; Factory et Dependency Injection poussent vers Dependency Inversion. Tu n'as pas besoin de réciter les lettres en entretien - montre que tu sépares les responsabilités.
 
 ---
 
 ## Comment lire chaque article
 
-1. **En une phrase** + **Le problème** — si ça ne parle pas, passe.
-2. **Schéma** + **TypeScript** — cœur de la série.
+1. **En une phrase** + **Le problème** - si ça ne parle pas, passe.
+2. **Schéma** + **TypeScript** - cœur de la série.
 3. **Python** si tu es plutôt backend.
-4. **Quand ne pas l'utiliser** — souvent le plus utile.
-5. **Exercice** 25–35 min sur un mini-projet.
+4. **Quand ne pas l'utiliser** - souvent le plus utile.
+5. **Exercice** 25-35 min sur un mini-projet.
 
 ---
 

@@ -231,7 +231,7 @@ function stripe_create_checkout_session(string $slug, string $customerEmail = ''
         'line_items[0][quantity]' => 1,
         'line_items[0][price_data][currency]' => 'eur',
         'line_items[0][price_data][unit_amount]' => $priceEur * 100,
-        'line_items[0][price_data][product_data][name]' => $title . ' — maquette DanielCraft',
+        'line_items[0][price_data][product_data][name]' => $title . ' - maquette DanielCraft',
         'metadata[vitrine_slug]' => $slug,
         'metadata[vitrine_title]' => $title,
         'payment_intent_data[metadata][vitrine_slug]' => $slug,
@@ -376,11 +376,11 @@ function stripe_create_livre_checkout_session(string $slug, string $customerEmai
     $title = trim((string) ($item['title'] ?? $slug));
     $isPack = (($item['kind'] ?? '') === 'pack') || str_starts_with($slug, 'pack-');
     $productName = $isPack
-        ? ($title . ' — pack PDF DanielCraft')
-        : ($title . ' — livre PDF DanielCraft');
+        ? ($title . ' - pack PDF DanielCraft')
+        : ($title . ' - livre PDF DanielCraft');
     $productDesc = $isPack
-        ? 'Pack formation PDF — envoi par e-mail après paiement'
-        : 'Formation PDF — envoi par e-mail après paiement';
+        ? 'Pack formation PDF - envoi par e-mail après paiement'
+        : 'Formation PDF - envoi par e-mail après paiement';
     $base = api_site_base();
     $successUrl = $base . '/bouquins/telechargement/?stripe=success&session_id={CHECKOUT_SESSION_ID}';
     $cancelUrl = $base . '/bouquins/' . rawurlencode($slug) . '/?stripe=cancel';
@@ -443,7 +443,7 @@ function stripe_fetch_checkout_session(string $sessionId): array
 }
 
 /**
- * Rembourse un PaymentIntent (CLI / admin uniquement — pas d endpoint public).
+ * Rembourse un PaymentIntent (CLI / admin uniquement - pas d endpoint public).
  *
  * @return array{ok: bool, refund_id: string, status: string, amount: int, error: string}
  */

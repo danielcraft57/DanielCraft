@@ -1,15 +1,15 @@
 # Vitrines HTML (catalogue, démos, captures)
 
-## Ancre sur l’accueil
+## Ancre sur l'accueil
 
-La section catalogue sur la page d’accueil a l’**id `vitrines`** : liens internes du type `/#vitrines` ou `#vitrines` (navigation, hero, pied de page).
+La section catalogue sur la page d'accueil a l'**id `vitrines`** : liens internes du type `/#vitrines` ou `#vitrines` (navigation, hero, pied de page).
 
-Le style utilise toujours la classe **`vitrines-showcase`** ; seul l’identifiant d’ancre a été raccourci.
+Le style utilise toujours la classe **`vitrines-showcase`** ; seul l'identifiant d'ancre a été raccourci.
 
 ## Fichiers générés (ne pas éditer à la main)
 
-- **`src/includes/vitrines-catalog-embed.html`** — bloc catalogue sur l’accueil (`build_vitrines_catalog_embed()`).
-- **`src/includes/vitrines-page-collection.html`** — même grille pour la page **`/vitrines/`** (généré dans la foulée).
+- **`src/includes/vitrines-catalog-embed.html`** - bloc catalogue sur l'accueil (`build_vitrines_catalog_embed()`).
+- **`src/includes/vitrines-page-collection.html`** - même grille pour la page **`/vitrines/`** (généré dans la foulée).
 - Données : **`src/data/vitrines.json`**. Toute modification manuelle de ces includes est écrasée au prochain build.
 
 ## Sources et build
@@ -28,7 +28,7 @@ python build.py
 python scripts/screenshot_vitrines.py   # ou scripts/screenshot_showcases.ps1
 ```
 
-Variables d’environnement des captures : voir **`.env.example`** (`WEBSITE_SCREENSHOT_*`).
+Variables d'environnement des captures : voir **`.env.example`** (`WEBSITE_SCREENSHOT_*`).
 
 ## Git et images
 
@@ -42,13 +42,13 @@ Le dossier **`dist/vitrines/`** doit être publié avec le reste du site (HTML, 
 
 ## Versions / tags
 
-Les tags de version (ex. `v1.4.0`) et l’historique détaillé restent dans **`docs/CHANGELOG.md`** ; aligner une release vitrine avec un tag se fait au choix de publication (pas d’automatisation imposée ici).
+Les tags de version (ex. `v1.4.0`) et l'historique détaillé restent dans **`docs/CHANGELOG.md`** ; aligner une release vitrine avec un tag se fait au choix de publication (pas d'automatisation imposée ici).
 
 ## Démos « vrai site » (Bootstrap + photos IA)
 
 Méthode détaillée pour enrichir chaque vitrine multi-pages (contenu, prompts photo, build HTML) :
 
-→ **[VITRINES-SITE-METHOD.md](./VITRINES-SITE-METHOD.md)** — pilote : **`restauration`**, 21 slugs restants à traiter un par un.
+→ **[VITRINES-SITE-METHOD.md](./VITRINES-SITE-METHOD.md)** - pilote : **`restauration`**, 21 slugs restants à traiter un par un.
 
 Commandes rapides :
 

@@ -565,7 +565,7 @@ def block_reservation_form() -> str:
           <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email"></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Allergie, anniversaire, terrasse si possible…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-pill px-5">Envoyer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -581,15 +581,15 @@ def block_reservation_form() -> str:
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires</caption>
             <tbody>
-              <tr><th>Mar – Ven</th><td>12h – 14h · 19h – 22h</td></tr>
-              <tr><th>Samedi</th><td>12h – 14h30 · 19h – 23h</td></tr>
-              <tr><th>Dimanche</th><td>Brunch 10h – 15h</td></tr>
+              <tr><th>Mar - Ven</th><td>12h - 14h · 19h - 22h</td></tr>
+              <tr><th>Samedi</th><td>12h - 14h30 · 19h - 23h</td></tr>
+              <tr><th>Dimanche</th><td>Brunch 10h - 15h</td></tr>
               <tr><th>Lundi</th><td>Fermé</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
             <li>Parking Saint-Jacques à 200 m</li>
-            <li>Tram T2 — arrêt République</li>
+            <li>Tram T2 - arrêt République</li>
             <li>Terrasse ouverte dès 12 °C</li>
           </ul>
         </div>
@@ -607,7 +607,7 @@ def block_site_footer(
     email: str = "contact@brasserie-saint-jacques.fr",
     maps_href: str = "https://maps.google.com/?q=12+place+Saint-Jacques+57000+Metz",
     nav_links: list[tuple[str, str]] | None = None,
-    hours_line: str = "Mar–sam midi & soir · Dim. brunch",
+    hours_line: str = "Mar-sam midi & soir · Dim. brunch",
     entity: dict | None = None,
     slug: str = "",
 ) -> str:
@@ -781,7 +781,7 @@ def block_appointment_form(
           <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email"></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Première visite, allergies, préférences…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-pill px-5">Confirmer mon RDV</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -796,15 +796,15 @@ def block_appointment_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires</caption>
             <tbody>
-              <tr><th>Mar – Sam</th><td>9h – 20h</td></tr>
-              <tr><th>Dimanche</th><td>10h – 18h sur RDV</td></tr>
+              <tr><th>Mar - Sam</th><td>9h - 20h</td></tr>
+              <tr><th>Dimanche</th><td>10h - 18h sur RDV</td></tr>
               <tr><th>Lundi</th><td>Fermé</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Tram T1 — arrêt Stanislas</li>
+            <li>Tram T1 - arrêt Stanislas</li>
             <li>Parking Ville-Vieille à 150 m</li>
-            <li>Visite institut : mer. 14h–17h</li>
+            <li>Visite institut : mer. 14h-17h</li>
           </ul>
         </div>
       </aside>
@@ -892,7 +892,7 @@ def block_dental_appointment_form(
           <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email"></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Première visite, mutuelle, préférence praticien…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-pill px-5">Confirmer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -907,14 +907,14 @@ def block_dental_appointment_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires</caption>
             <tbody>
-              <tr><th>Lun – Ven</th><td>8h30 – 19h</td></tr>
-              <tr><th>Samedi</th><td>8h – 12h</td></tr>
+              <tr><th>Lun - Ven</th><td>8h30 - 19h</td></tr>
+              <tr><th>Samedi</th><td>8h - 12h</td></tr>
               <tr><th>Dimanche</th><td>Fermé</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
             <li>Parking République</li>
-            <li>Bus ligne 5 — Hôtel de Ville</li>
+            <li>Bus ligne 5 - Hôtel de Ville</li>
             <li>Tiers payant accepté</li>
           </ul>
         </div>
@@ -967,7 +967,7 @@ def block_garage_appointment_form(
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email"></label></div>
           <div class="col-12"><label class="form-label">Description<textarea class="form-control" name="message" rows="3" placeholder="Symptômes, bruits, voyants allumés…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-0 px-5">Confirmer mon RDV</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -978,17 +978,17 @@ def block_garage_appointment_form(
             {esc(address)}
           </address>
           <p><a href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a></p>
-          <p class="small fw-semibold mb-2">Dépannage 24h/24 — numéro dédié sur demande.</p>
+          <p class="small fw-semibold mb-2">Dépannage 24h/24 - numéro dédié sur demande.</p>
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires</caption>
             <tbody>
-              <tr><th>Lun – Ven</th><td>8h – 18h</td></tr>
-              <tr><th>Samedi</th><td>8h – 12h</td></tr>
+              <tr><th>Lun - Ven</th><td>8h - 18h</td></tr>
+              <tr><th>Samedi</th><td>8h - 12h</td></tr>
               <tr><th>Dimanche</th><td>Fermé</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Sortie A31 — Plappeville</li>
+            <li>Sortie A31 - Plappeville</li>
             <li>Parking client devant l'atelier</li>
             <li>Café &amp; wifi en salle d'attente</li>
           </ul>
@@ -1040,7 +1040,7 @@ def block_retail_contact_form(
           <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel"></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="4" placeholder="Votre message…" required></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-pill px-5">Envoyer</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1055,14 +1055,14 @@ def block_retail_contact_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires magasin</caption>
             <tbody>
-              <tr><th>Lun – Sam</th><td>8h – 20h</td></tr>
-              <tr><th>Dimanche</th><td>9h – 12h30</td></tr>
+              <tr><th>Lun - Sam</th><td>8h - 20h</td></tr>
+              <tr><th>Dimanche</th><td>9h - 12h30</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
             <li>Parking gratuit 200 places</li>
             <li>Drive : 15 emplacements couverts</li>
-            <li>Bus ligne 5 — arrêt Mail</li>
+            <li>Bus ligne 5 - arrêt Mail</li>
           </ul>
         </div>
       </aside>
@@ -1109,14 +1109,14 @@ def block_cabinet_contact_form(
         <p class="text-secondary mb-4">Réponse sous 24 h ouvrées. Premier échange sans engagement.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Besoin<select class="form-select" name="need" required><option value="">Choisir…</option><option>Création d'entreprise</option><option>Tenue &amp; fiscalité</option><option>Paie &amp; social</option><option>Conseil dirigeant</option><option>Reprise de dossier</option></select></label></div>
-          <div class="col-md-6"><label class="form-label">Effectif<select class="form-select" name="size"><option value="">Choisir…</option><option>0–5 salariés</option><option>6–20</option><option>21–50</option><option>50+</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Effectif<select class="form-select" name="size"><option value="">Choisir…</option><option>0-5 salariés</option><option>6-20</option><option>21-50</option><option>50+</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Prénom &amp; nom<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
           <div class="col-md-6"><label class="form-label">Société<input type="text" class="form-control" name="company"></label></div>
           <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel" required></label></div>
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
           <div class="col-12"><label class="form-label">Votre situation<textarea class="form-control" name="message" rows="4" placeholder="Création, reprise, difficultés de trésorerie…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-0 px-5">Envoyer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1131,12 +1131,12 @@ def block_cabinet_contact_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires</caption>
             <tbody>
-              <tr><th>Lun – Ven</th><td>9h – 18h</td></tr>
+              <tr><th>Lun - Ven</th><td>9h - 18h</td></tr>
               <tr><th>Samedi</th><td>Sur RDV</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Ordre des experts-comptables — Grand Est</li>
+            <li>Ordre des experts-comptables - Grand Est</li>
             <li>Bilan flash sous 48 h</li>
             <li>Metz &amp; Thionville</li>
           </ul>
@@ -1195,7 +1195,7 @@ def block_industrial_rfq_form(
           <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel"></label></div>
           <div class="col-12"><label class="form-label">Spécifications<textarea class="form-control" name="message" rows="4" placeholder="Référence pièce, finition, secteur (auto, aéro)…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary rounded-0 px-5">Envoyer la RFQ</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1210,7 +1210,7 @@ def block_industrial_rfq_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Horaires</caption>
             <tbody>
-              <tr><th>Lun – Ven</th><td>7h – 18h</td></tr>
+              <tr><th>Lun - Ven</th><td>7h - 18h</td></tr>
               <tr><th>Samedi</th><td>Sur demande</td></tr>
             </tbody>
           </table>
@@ -1261,7 +1261,7 @@ def block_property_estimation_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="estim-title" class="vt-section-title">Estimation gratuite</h2>
-        <p class="text-secondary mb-4">Réponse sous 72 h — visite optionnelle à Nancy et environs.</p>
+        <p class="text-secondary mb-4">Réponse sous 72 h - visite optionnelle à Nancy et environs.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Type de bien<select class="form-select" name="type" required><option value="">Choisir…</option><option>Maison</option><option>Appartement</option><option>Terrain</option><option>Immeuble</option><option>Local commercial</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Surface (m²)<input type="number" class="form-control" name="surface" min="10" placeholder="ex. 95"></label></div>
@@ -1273,7 +1273,7 @@ def block_property_estimation_form(
           <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
           <div class="col-12"><label class="form-label">Précisions<textarea class="form-control" name="message" rows="3" placeholder="État, travaux, stationnement…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary rounded-pill px-5">Recevoir mon estimation</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1288,8 +1288,8 @@ def block_property_estimation_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Permanences</caption>
             <tbody>
-              <tr><th>Lun – Ven</th><td>9h – 19h</td></tr>
-              <tr><th>Samedi</th><td>10h – 13h</td></tr>
+              <tr><th>Lun - Ven</th><td>9h - 19h</td></tr>
+              <tr><th>Samedi</th><td>10h - 13h</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
@@ -1339,7 +1339,7 @@ def block_legal_consultation_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="legal-title" class="vt-section-title">Demande de consultation</h2>
-        <p class="text-secondary mb-4">Réponse sous 24 h ouvrées — premier échange confidentiel.</p>
+        <p class="text-secondary mb-4">Réponse sous 24 h ouvrées - premier échange confidentiel.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Domaine<select class="form-select" name="domain" required><option value="">Choisir…</option><option>Droit des sociétés</option><option>Droit social</option><option>Contentieux commercial</option><option>Transmission d'entreprise</option><option>Immobilier d'affaires</option><option>Famille &amp; patrimoine</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Urgence<select class="form-select" name="urgency"><option>Standard</option><option>Sous 48 h</option><option>Urgent</option></select></label></div>
@@ -1349,7 +1349,7 @@ def block_legal_consultation_form(
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
           <div class="col-12"><label class="form-label">Votre situation<textarea class="form-control" name="message" rows="4" placeholder="Contexte, enjeux, documents disponibles…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg rounded-0 px-5">Demander une consultation</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté. Secret professionnel simulé.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté. Secret professionnel simulé.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1364,12 +1364,12 @@ def block_legal_consultation_form(
           <table class="table table-sm vt-hours">
             <caption class="caption-top fw-semibold">Permanences</caption>
             <tbody>
-              <tr><th>Lun – Ven</th><td>9h – 18h</td></tr>
+              <tr><th>Lun - Ven</th><td>9h - 18h</td></tr>
               <tr><th>Samedi</th><td>Sur RDV</td></tr>
             </tbody>
           </table>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Barreau de Metz — 6 associés</li>
+            <li>Barreau de Metz - 6 associés</li>
             <li>Forfait découverte 290 € HT</li>
             <li>Médiation et arbitrage</li>
           </ul>
@@ -1417,17 +1417,17 @@ def block_education_enrollment_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="enroll-title" class="vt-section-title">Demande d'inscription</h2>
-        <p class="text-secondary mb-4">Réponse sous 48 h — entretien d'orientation offert.</p>
+        <p class="text-secondary mb-4">Réponse sous 48 h - entretien d'orientation offert.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Prénom<input type="text" class="form-control" name="firstname" autocomplete="given-name" required></label></div>
           <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="lastname" autocomplete="family-name" required></label></div>
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
           <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel" required></label></div>
-          <div class="col-md-6"><label class="form-label">Parcours visé<select class="form-select" name="program" required><option value="">Choisir…</option><option>Développeur web (alternance)</option><option>BTS Management</option><option>Comptabilité — titre pro</option><option>Marketing digital</option><option>VAE / bilan compétences</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Parcours visé<select class="form-select" name="program" required><option value="">Choisir…</option><option>Développeur web (alternance)</option><option>BTS Management</option><option>Comptabilité - titre pro</option><option>Marketing digital</option><option>VAE / bilan compétences</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Situation<select class="form-select" name="status"><option value="">Choisir…</option><option>Demandeur d'emploi</option><option>Salarié en reconversion</option><option>Étudiant</option><option>Alternant</option></select></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Objectifs, financement CPF, date de début souhaitée…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Envoyer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1465,11 +1465,11 @@ def block_facility_quote_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="quote-title" class="vt-section-title">Demande de devis FM</h2>
-        <p class="text-secondary mb-4">Audit gratuit sur site — proposition sous 5 jours ouvrés.</p>
+        <p class="text-secondary mb-4">Audit gratuit sur site - proposition sous 5 jours ouvrés.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Type de site<select class="form-select" name="site_type" required><option value="">Choisir…</option><option>Immeuble de bureaux</option><option>Centre commercial</option><option>Établissement de santé</option><option>Entrepôt / logistique</option><option>Site mixte</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Surface (m²)<input type="text" class="form-control" name="surface" placeholder="ex. 12 000" required></label></div>
-          <div class="col-md-6"><label class="form-label">Offre visée<select class="form-select" name="offer"><option value="">Choisir…</option><option>Essentiel — maintenance</option><option>Premium — FM intégré</option><option>Sur mesure — multi-sites</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Offre visée<select class="form-select" name="offer"><option value="">Choisir…</option><option>Essentiel - maintenance</option><option>Premium - FM intégré</option><option>Sur mesure - multi-sites</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Prestations<select class="form-select" name="services" multiple size="1"><option>Maintenance CVC</option><option>Accueil &amp; standard</option><option>Conciergerie</option><option>Nettoyage</option><option>Sécurité &amp; accès</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Société / syndic<input type="text" class="form-control" name="company" required></label></div>
           <div class="col-md-6"><label class="form-label">Contact<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
@@ -1477,7 +1477,7 @@ def block_facility_quote_form(
           <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel" required></label></div>
           <div class="col-12"><label class="form-label">Contexte<textarea class="form-control" name="message" rows="3" placeholder="Adresse du site, horaires d'exploitation, contraintes…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Envoyer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1491,7 +1491,7 @@ def block_facility_quote_form(
           <a href="mailto:{esc(email)}">{esc(email)}</a></p>
           <ul class="small text-secondary ps-3 mb-0">
             <li>ISO 9001 · ISO 14001</li>
-            <li>Astreinte 24 h / 24 — 7 j / 7</li>
+            <li>Astreinte 24 h / 24 - 7 j / 7</li>
             <li>200+ sites gérés en Grand Est</li>
           </ul>
         </div>
@@ -1515,7 +1515,7 @@ def block_tech_demo_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="demo-title" class="vt-section-title">Demander une démo</h2>
-        <p class="text-secondary mb-4">Démonstration personnalisée — réponse sous 24 h.</p>
+        <p class="text-secondary mb-4">Démonstration personnalisée - réponse sous 24 h.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Société<input type="text" class="form-control" name="company" required></label></div>
           <div class="col-md-6"><label class="form-label">Fonction<select class="form-select" name="role"><option>DSI</option><option>Data / BI</option><option>Direction</option><option>Ops</option></select></label></div>
@@ -1523,7 +1523,7 @@ def block_tech_demo_form(
           <div class="col-md-6"><label class="form-label">E-mail pro<input type="email" class="form-control" name="email" required></label></div>
           <div class="col-12"><label class="form-label">Besoin<textarea class="form-control" name="message" rows="3" placeholder="Volumes data, intégrations, délais…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Réserver ma démo</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1546,14 +1546,14 @@ def block_saas_trial_form(*, brand: str = "FlowMetrics", email: str = "hello@flo
     <div class="row justify-content-center">
       <div class="col-lg-7">
         <h2 id="trial-title" class="vt-section-title text-center">Essai gratuit 14 jours</h2>
-        <p class="text-secondary text-center mb-4">Sans carte bancaire — setup en 5 minutes.</p>
+        <p class="text-secondary text-center mb-4">Sans carte bancaire - setup en 5 minutes.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Prénom<input type="text" class="form-control" name="firstname" required></label></div>
           <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="lastname" required></label></div>
           <div class="col-12"><label class="form-label">E-mail pro<input type="email" class="form-control" name="email" required></label></div>
           <div class="col-12"><label class="form-label">Entreprise<input type="text" class="form-control" name="company" required></label></div>
           <div class="col-12 text-center"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Démarrer l'essai</button></div>
-          <p class="small text-secondary text-center mb-0">Démo {esc(brand)} — <a href="mailto:{esc(email)}">{esc(email)}</a></p>
+          <p class="small text-secondary text-center mb-0">Démo {esc(brand)} - <a href="mailto:{esc(email)}">{esc(email)}</a></p>
         </form>
       </div>
     </div>
@@ -1575,7 +1575,7 @@ def block_hotel_reservation_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="book-title" class="vt-section-title">Réserver votre séjour</h2>
-        <p class="text-secondary mb-4">Confirmation sous 2 h — meilleur tarif garanti en direct.</p>
+        <p class="text-secondary mb-4">Confirmation sous 2 h - meilleur tarif garanti en direct.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Arrivée<input type="date" class="form-control" name="checkin" required></label></div>
           <div class="col-md-6"><label class="form-label">Départ<input type="date" class="form-control" name="checkout" required></label></div>
@@ -1586,7 +1586,7 @@ def block_hotel_reservation_form(
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
           <div class="col-12"><label class="form-label">Demandes particulières<textarea class="form-control" name="message" rows="2" placeholder="Arrivée tardive, lit bébé, allergies…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Vérifier les disponibilités</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1624,7 +1624,7 @@ def block_association_contact_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="engage-title" class="vt-section-title">Je m'engage</h2>
-        <p class="text-secondary mb-4">Don ponctuel ou candidature bénévole — réponse sous 48 h.</p>
+        <p class="text-secondary mb-4">Don ponctuel ou candidature bénévole - réponse sous 48 h.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-12"><label class="form-label">Je souhaite<select class="form-select" name="intent" required><option value="">Choisir…</option><option>Faire un don</option><option>Devenir bénévole</option><option>Les deux</option><option>Entreprise mécène</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Prénom et nom<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
@@ -1634,7 +1634,7 @@ def block_association_contact_form(
           <div class="col-12"><label class="form-label">Disponibilités bénévole<select class="form-select" name="availability"><option value="">Choisir…</option><option>Week-ends</option><option>Soirées en semaine</option><option>1/2 journée par mois</option><option>Maraude uniquement</option></select></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Compétences, motivation, questions…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Envoyer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté. Reçu fiscal sur demande pour les dons.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté. Reçu fiscal sur demande pour les dons.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1647,7 +1647,7 @@ def block_association_contact_form(
           <p><a href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a><br>
           <a href="mailto:{esc(email)}">{esc(email)}</a></p>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Association loi 1901 — utilité publique</li>
+            <li>Association loi 1901 - utilité publique</li>
             <li>120 bénévoles · 45 salariés</li>
             <li>Don déductible à 66 %</li>
           </ul>
@@ -1672,7 +1672,7 @@ def block_photo_quote_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="quote-title" class="vt-section-title">Demande de devis</h2>
-        <p class="text-secondary mb-4">Réponse personnalisée sous 24 h — sans engagement.</p>
+        <p class="text-secondary mb-4">Réponse personnalisée sous 24 h - sans engagement.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="name" autocomplete="name" required></label></div>
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
@@ -1682,7 +1682,7 @@ def block_photo_quote_form(
           <div class="col-md-6"><label class="form-label">Lieu<input type="text" class="form-control" name="place" placeholder="Nancy, Metz, Grand Est…"></label></div>
           <div class="col-12"><label class="form-label">Décrivez votre projet<textarea class="form-control" name="message" rows="4" placeholder="Ambiance, nombre de personnes, livrables attendus…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary px-5">Envoyer ma demande</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1720,18 +1720,18 @@ def block_fitness_trial_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="trial-title" class="vt-section-title">Réserver mon essai gratuit</h2>
-        <p class="text-secondary mb-4">Séance découverte offerte — réponse sous 24 h.</p>
+        <p class="text-secondary mb-4">Séance découverte offerte - réponse sous 24 h.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Prénom<input type="text" class="form-control" name="firstname" autocomplete="given-name" required></label></div>
           <div class="col-md-6"><label class="form-label">Nom<input type="text" class="form-control" name="lastname" autocomplete="family-name" required></label></div>
           <div class="col-md-6"><label class="form-label">Téléphone<input type="tel" class="form-control" name="phone" autocomplete="tel" required></label></div>
           <div class="col-md-6"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email"></label></div>
           <div class="col-12"><label class="form-label">Cours souhaité<select class="form-select" name="course" required><option value="">Choisir…</option><option>HIIT &amp; Cross</option><option>Cycling</option><option>Yoga Flow</option><option>Musculation libre</option></select></label></div>
-          <div class="col-md-6"><label class="form-label">Créneau préféré<select class="form-select" name="slot"><option value="">Choisir…</option><option>Matin (6h–10h)</option><option>Midi (12h–14h)</option><option>Soir (18h–21h)</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Créneau préféré<select class="form-select" name="slot"><option value="">Choisir…</option><option>Matin (6h-10h)</option><option>Midi (12h-14h)</option><option>Soir (18h-21h)</option></select></label></div>
           <div class="col-md-6"><label class="form-label">Objectif<select class="form-select" name="goal"><option value="">Choisir…</option><option>Perte de poids</option><option>Renforcement</option><option>Cardio</option><option>Bien-être</option></select></label></div>
           <div class="col-12"><label class="form-label">Message<textarea class="form-control" name="message" rows="3" placeholder="Première visite, niveau sportif, contrainte médicale…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary btn-lg px-5">Je réserve mon essai</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1744,8 +1744,8 @@ def block_fitness_trial_form(
           <p><a href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a><br>
           <a href="mailto:{esc(email)}">{esc(email)}</a></p>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Ouvert 6h–23h, 7j/7</li>
-            <li>1 200 m² — vestiaires premium</li>
+            <li>Ouvert 6h-23h, 7j/7</li>
+            <li>1 200 m² - vestiaires premium</li>
             <li>8 coachs certifiés</li>
           </ul>
         </div>
@@ -1767,10 +1767,10 @@ def block_architecture_brief_form(
     <div class="row g-5">
       <div class="col-lg-7">
         <h2 id="brief-title" class="vt-section-title">Brief projet</h2>
-        <p class="text-secondary mb-4">Réponse sous 48 h — premier échange sans engagement.</p>
+        <p class="text-secondary mb-4">Réponse sous 48 h - premier échange sans engagement.</p>
         <form class="row g-3" action="#" method="post">
           <div class="col-md-6"><label class="form-label">Type de projet<select class="form-select" name="type" required><option value="">Choisir…</option><option>Réhabilitation</option><option>Logement neuf</option><option>Extension</option><option>ERP / équipement public</option><option>Aménagement intérieur</option></select></label></div>
-          <div class="col-md-6"><label class="form-label">Budget indicatif<select class="form-select" name="budget"><option value="">Choisir…</option><option>&lt; 200 k€</option><option>200 – 500 k€</option><option>500 k€ – 1 M€</option><option>&gt; 1 M€</option></select></label></div>
+          <div class="col-md-6"><label class="form-label">Budget indicatif<select class="form-select" name="budget"><option value="">Choisir…</option><option>&lt; 200 k€</option><option>200 - 500 k€</option><option>500 k€ - 1 M€</option><option>&gt; 1 M€</option></select></label></div>
           <div class="col-12"><label class="form-label">Adresse / commune du projet<input type="text" class="form-control" name="site" placeholder="Metz, Thionville, Nancy…"></label></div>
           <div class="col-md-6"><label class="form-label">Surface (m²)<input type="number" class="form-control" name="surface" min="20" placeholder="ex. 180"></label></div>
           <div class="col-md-6"><label class="form-label">Délai souhaité<input type="text" class="form-control" name="deadline" placeholder="ex. permis en 2026"></label></div>
@@ -1779,7 +1779,7 @@ def block_architecture_brief_form(
           <div class="col-12"><label class="form-label">E-mail<input type="email" class="form-control" name="email" autocomplete="email" required></label></div>
           <div class="col-12"><label class="form-label">Description du projet<textarea class="form-control" name="message" rows="4" placeholder="Programme, contraintes, inspirations…"></textarea></label></div>
           <div class="col-12"><button type="submit" class="btn btn-vt-primary rounded-0 px-5">Envoyer mon brief</button></div>
-          <p class="small text-secondary mb-0">Démo vitrine — formulaire non connecté.</p>
+          <p class="small text-secondary mb-0">Démo vitrine - formulaire non connecté.</p>
         </form>
       </div>
       <aside class="col-lg-5">
@@ -1792,7 +1792,7 @@ def block_architecture_brief_form(
           <p><a href="tel:{esc(phone.replace(' ', ''))}">{esc(phone)}</a><br>
           <a href="mailto:{esc(email)}">{esc(email)}</a></p>
           <ul class="small text-secondary ps-3 mb-0">
-            <li>Ordre des architectes — Grand Est</li>
+            <li>Ordre des architectes - Grand Est</li>
             <li>RE2020 &amp; réhabilitation patrimoine</li>
             <li>Metz, Nancy, Thionville</li>
           </ul>

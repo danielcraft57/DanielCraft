@@ -216,7 +216,7 @@
   }
 
   function scoreNote(key, value) {
-    if (typeof value !== 'number') return '—';
+    if (typeof value !== 'number') return '-';
     if (key === 'pentest' || key === 'risque') {
       if (value <= 30) return 'Faible';
       if (value <= 60) return 'Moyen';
@@ -273,7 +273,7 @@
         <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
         <div class="analyse-loader__score-copy">
           <div class="analyse-loader__score-label">${escapeHtml(def.label)}</div>
-          <div class="analyse-loader__score-value">—</div>
+          <div class="analyse-loader__score-value">-</div>
         </div>
       `;
       els.loadingScores.appendChild(card);
@@ -301,7 +301,7 @@
     return {
       ringHtml: `
         <div class="pl-score-ring analyse-loader__score-ring--live" style="--pl-ring:${ring}%; --pl-ring-live:0%; --pl-ring-color:${color};" data-ring-target="${ring}" aria-hidden="true">
-          <div class="pl-score-value">${score100 ?? '—'}</div>
+          <div class="pl-score-value">${score100 ?? '-'}</div>
         </div>
       `,
       note: note
@@ -614,8 +614,8 @@
       const card = document.createElement('div');
       card.className = 'analyse-score analyse-score--' + String(key).replace(/[^a-z0-9_-]/gi, '');
       card.innerHTML = `
-        <div class="pl-score-ring" style="--pl-ring:${ring}%; --pl-ring-live:0%; --pl-ring-color:${color};" data-ring-target="${ring}" aria-label="${escapeHtml(String(it.label || key))}: ${score100 ?? '—'}">
-          <div class="pl-score-value">${score100 ?? '—'}</div>
+        <div class="pl-score-ring" style="--pl-ring:${ring}%; --pl-ring-live:0%; --pl-ring-color:${color};" data-ring-target="${ring}" aria-label="${escapeHtml(String(it.label || key))}: ${score100 ?? '-'}">
+          <div class="pl-score-value">${score100 ?? '-'}</div>
         </div>
         <div>
           <div class="analyse-score__label">${escapeHtml(it?.label || String(key))}</div>
@@ -777,7 +777,7 @@
       { key: 'risque', label: 'Risque', value: entreprise?.score_pentest ?? pentest?.latest?.risk_score }
     ].map((x) => ({
       ...x,
-      noteClient: typeof x.value === 'number' ? scoreNote(x.key, x.value) : '—'
+      noteClient: typeof x.value === 'number' ? scoreNote(x.key, x.value) : '-'
     }));
 
     const highlights = [];
@@ -863,10 +863,10 @@
     }
 
     const techRows = [
-      ['CMS', tLatest?.cms || '—'],
-      ['CDN', tLatest?.cdn || '—'],
+      ['CMS', tLatest?.cms || '-'],
+      ['CDN', tLatest?.cdn || '-'],
       ['SSL', tLatest?.ssl_valid ? 'Valide' : 'A verifier'],
-      ['Mobile', td?.mobile_friendly === false ? 'Non' : (td?.mobile_friendly === true ? 'Oui' : '—')]
+      ['Mobile', td?.mobile_friendly === false ? 'Non' : (td?.mobile_friendly === true ? 'Oui' : '-')]
     ];
     sections.push({
       title: 'Technique',
@@ -875,7 +875,7 @@
         ${tableHtml(['Indicateur', 'Valeur'], techRows.map(([a, b]) => [escapeHtml(a), escapeHtml(String(b))]))}
         <p class="pl-muted" style="margin-top:0.9rem;">
           <strong>Pages :</strong> ${escapeHtml(String(pagesSummary.pages_scanned ?? pagesSummary.pages_count ?? 0))} ·
-          <strong>Temps moyen :</strong> ${escapeHtml(String(pagesSummary.avg_response_time_ms ?? '—'))} ms
+          <strong>Temps moyen :</strong> ${escapeHtml(String(pagesSummary.avg_response_time_ms ?? '-'))} ms
         </p>
       `
     });
@@ -883,17 +883,17 @@
     const meta = safeJsonParse(seoLatest?.meta_tags_json) || {};
     const structure = safeJsonParse(seoLatest?.structure_json) || {};
     const seoRows = [
-      ['Score', seoLatest?.score != null ? `${seoLatest.score}/100` : '—'],
-      ['Title', meta?.title ? escapeHtml(meta.title) : '—'],
-      ['H1', structure?.h1_count != null ? String(structure.h1_count) : '—'],
-      ['Images sans alt', structure?.images_without_alt != null ? String(structure.images_without_alt) : '—']
+      ['Score', seoLatest?.score != null ? `${seoLatest.score}/100` : '-'],
+      ['Title', meta?.title ? escapeHtml(meta.title) : '-'],
+      ['H1', structure?.h1_count != null ? String(structure.h1_count) : '-'],
+      ['Images sans alt', structure?.images_without_alt != null ? String(structure.images_without_alt) : '-']
     ];
     const seoIssuesHtml = toArray(seoIssues).slice(0, 8).map((it) => {
       const impact = it?.impact || 'medium';
       const tone = impact === 'high' ? 'bad' : impact === 'medium' ? 'warn' : 'good';
       return `<div class="pl-audit pl-audit--${tone}" style="margin-top:0.7rem;">
         <div class="pl-audit-title">${escapeHtml(it?.category ? `SEO · ${it.category}` : 'SEO')}</div>
-        <div class="pl-audit-desc">${escapeHtml(it?.message || '—')}</div>
+        <div class="pl-audit-desc">${escapeHtml(it?.message || '-')}</div>
       </div>`;
     }).join('');
     sections.push({
@@ -938,7 +938,7 @@
       pill: oLatest?.status ? String(oLatest.status) : '',
       html: `
         <p class="pl-muted">
-          <strong>Date :</strong> ${escapeHtml(formatDate(oLatest?.date_analyse) || formatDate(scLatest?.date_modification) || '—')}
+          <strong>Date :</strong> ${escapeHtml(formatDate(oLatest?.date_analyse) || formatDate(scLatest?.date_modification) || '-')}
         </p>
       `
     });

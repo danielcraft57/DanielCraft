@@ -46,9 +46,9 @@ def _flowmetrics():
   <section class="ai-hero ai-hero--landing">
     <p class="ai-eyebrow">Analytics produit · sans data team</p>
     <h1>Transformez vos métriques en décisions avant le stand-up de lundi</h1>
-    <p class="ai-lead">FlowMetrics centralise funnels, cohortes et alertes en un seul tableau de bord. Branchez votre stack en douze minutes et voyez enfin où vos utilisateurs décrochent — avant qu'ils ne partent chez la concurrence.</p>
+    <p class="ai-lead">FlowMetrics centralise funnels, cohortes et alertes en un seul tableau de bord. Branchez votre stack en douze minutes et voyez enfin où vos utilisateurs décrochent - avant qu'ils ne partent chez la concurrence.</p>
     <div class="ai-hero-actions">
-      <a class="ai-cta ai-cta--primary" href="#tarifs">Démarrer l'essai — carte non requise</a>
+      <a class="ai-cta ai-cta--primary" href="#tarifs">Démarrer l'essai - carte non requise</a>
       <a class="ai-cta ai-cta--ghost" href="#preuve">Voir les témoignages</a>
     </div>
     <div class="ai-social-proof">
@@ -67,15 +67,15 @@ def _flowmetrics():
     <div class="ai-testimonials">
       <blockquote class="ai-quote">
         <p>« En trois semaines, on a identifié un goulot d'étranglement à l'étape 4 du onboarding. Le taux d'activation est passé de 31 % à 58 %. »</p>
-        <footer>— Camille Renard, CPO chez Ledgerly</footer>
+        <footer>- Camille Renard, CPO chez Ledgerly</footer>
       </blockquote>
       <blockquote class="ai-quote">
         <p>« Nos investisseurs demandaient des cohortes propres. FlowMetrics nous a évité six mois de recrutement data. »</p>
-        <footer>— Mehdi Ouali, fondateur de StackNest</footer>
+        <footer>- Mehdi Ouali, fondateur de StackNest</footer>
       </blockquote>
       <blockquote class="ai-quote">
         <p>« L'alerte Slack quand le churn hebdo dépasse 2 % a sauvé notre trimestre. Personne ne surveillait ce chiffre avant. »</p>
-        <footer>— Julie Moreau, Head of Growth chez NovaPay</footer>
+        <footer>- Julie Moreau, Head of Growth chez NovaPay</footer>
       </blockquote>
     </div>
     <div class="ai-logos-row" aria-label="Logos clients">
@@ -85,7 +85,7 @@ def _flowmetrics():
 
   <section id="avant-apres" class="ai-section ai-section--compare">
     <h2>Avant / après FlowMetrics</h2>
-    <p class="ai-prose">Ce que nos clients décrivaient le premier jour — et ce qu'ils constatent après trente jours d'usage réel.</p>
+    <p class="ai-prose">Ce que nos clients décrivaient le premier jour - et ce qu'ils constatent après trente jours d'usage réel.</p>
     <div class="ai-compare-grid">
       <article class="ai-compare-card">
         <div class="ai-before">
@@ -122,7 +122,7 @@ def _flowmetrics():
 
   <section id="tarifs" class="ai-section ai-section--pricing">
     <h2>Tarifs transparents, sans surprise</h2>
-    <p class="ai-prose">Choisissez le plan adapté à votre stade. Passez à l'échelle supérieure quand votre MRR le justifie — sans renégocier.</p>
+    <p class="ai-prose">Choisissez le plan adapté à votre stade. Passez à l'échelle supérieure quand votre MRR le justifie - sans renégocier.</p>
     <div class="ai-pricing-grid">
       <article class="ai-plan">
         <h3>Starter</h3>
@@ -140,7 +140,7 @@ def _flowmetrics():
         <span class="ai-badge">Le plus choisi</span>
         <h3>Pro</h3>
         <p class="ai-price">79 €<span>/mois</span></p>
-        <p class="ai-plan-desc">≈ 2,60 € par jour — moins qu'un café d'équipe.</p>
+        <p class="ai-plan-desc">≈ 2,60 € par jour - moins qu'un café d'équipe.</p>
         <ul>
           <li>Projets illimités</li>
           <li>365 jours de rétention</li>
@@ -248,7 +248,7 @@ body { background: var(--ai-bg); color: var(--ai-text); }
 """
     write_ai_site(
         "saas-landing",
-        "FlowMetrics — Landing SaaS conversion",
+        "FlowMetrics - Landing SaaS conversion",
         "Landing page SaaS dark indigo : preuve sociale, comparatif avant/après et grille tarifaire à trois plans.",
         body,
         css,
@@ -262,7 +262,7 @@ def _talentloop():
   <aside class="ai-split-brand">
     <a class="ai-logo" href="#">TalentLoop</a>
     <h1>Bienvenue chez NovaRH</h1>
-    <p class="ai-lead">Votre parcours d'intégration commence ici. Quatre étapes, moins de dix minutes — et vous serez opérationnel dès lundi matin.</p>
+    <p class="ai-lead">Votre parcours d'intégration commence ici. Quatre étapes, moins de dix minutes - et vous serez opérationnel dès lundi matin.</p>
     <ul class="ai-benefits">
       <li>✓ Contrat signé électroniquement</li>
       <li>✓ Accès aux outils internes</li>
@@ -270,7 +270,7 @@ def _talentloop():
       <li>✓ Premier objectif à 30 jours défini</li>
     </ul>
     <figure class="ai-brand-visual">
-      <img src="images/hero.png" alt="Interface TalentLoop — parcours d'onboarding RH en quatre étapes" width="480" height="360" decoding="async">
+      <img src="images/hero.png" alt="Interface TalentLoop - parcours d'onboarding RH en quatre étapes" width="480" height="360" decoding="async">
     </figure>
   </aside>
 
@@ -297,11 +297,11 @@ def _talentloop():
 
     <section class="ai-wizard-step" data-step="2">
       <h2>Documents administratifs</h2>
-      <p class="ai-prose">Téléversez les pièces demandées par les RH. Formats acceptés : PDF, JPG — 10 Mo max par fichier.</p>
+      <p class="ai-prose">Téléversez les pièces demandées par les RH. Formats acceptés : PDF, JPG - 10 Mo max par fichier.</p>
       <div class="ai-upload-zone">
-        <p>📄 Carte d'identité — <strong>validé</strong></p>
-        <p>📄 RIB — <strong>en attente</strong></p>
-        <p>📄 Attestation mutuelle — <strong>à fournir</strong></p>
+        <p>📄 Carte d'identité - <strong>validé</strong></p>
+        <p>📄 RIB - <strong>en attente</strong></p>
+        <p>📄 Attestation mutuelle - <strong>à fournir</strong></p>
       </div>
     </section>
 
@@ -310,10 +310,10 @@ def _talentloop():
       <p class="ai-prose">Sélectionnez les outils dont vous aurez besoin dès le premier jour. Votre manager validera la liste.</p>
       <div class="ai-checklist">
         <label><input type="checkbox" checked> Google Workspace</label>
-        <label><input type="checkbox" checked> Slack — canal #produit</label>
-        <label><input type="checkbox" checked> Notion — wiki équipe</label>
-        <label><input type="checkbox"> Figma — lecture seule</label>
-        <label><input type="checkbox"> Linear — projets actifs</label>
+        <label><input type="checkbox" checked> Slack - canal #produit</label>
+        <label><input type="checkbox" checked> Notion - wiki équipe</label>
+        <label><input type="checkbox"> Figma - lecture seule</label>
+        <label><input type="checkbox"> Linear - projets actifs</label>
       </div>
     </section>
 
@@ -401,7 +401,7 @@ body { background: var(--ai-cream); color: var(--ai-ink); }
 """
     write_ai_site(
         "saas-onboarding",
-        "TalentLoop — Onboarding RH",
+        "TalentLoop - Onboarding RH",
         "Parcours d'intégration RH en split screen : quatre étapes guidées avec barre de progression.",
         body,
         css,
@@ -463,7 +463,7 @@ def _metricpulse():
     </section>
 
     <section class="ai-section ai-section--funnel">
-      <h2>Funnel d'acquisition — campagne été</h2>
+      <h2>Funnel d'acquisition - campagne été</h2>
       <p class="ai-prose">Du clic publicitaire à la première valeur perçue. Le goulet principal reste l'étape « configuration initiale » avec 34 % d'abandon.</p>
       <div class="ai-funnel">
         <div class="ai-funnel-step" style="--ai-width:100%">
@@ -483,7 +483,7 @@ def _metricpulse():
         </div>
       </div>
       <figure class="ai-chart-visual">
-        <img src="images/hero.png" alt="Dashboard MetricPulse — graphiques KPI et entonnoir de conversion" width="800" height="450" decoding="async">
+        <img src="images/hero.png" alt="Dashboard MetricPulse - graphiques KPI et entonnoir de conversion" width="800" height="450" decoding="async">
       </figure>
     </section>
 
@@ -573,7 +573,7 @@ body { background: var(--ai-bg); color: var(--ai-text); }
 """
     write_ai_site(
         "saas-dashboard",
-        "MetricPulse — Dashboard analytics",
+        "MetricPulse - Dashboard analytics",
         "Interface dashboard SaaS : sidebar, KPIs temps réel, entonnoir de conversion et insights automatiques.",
         body,
         css,
@@ -603,17 +603,17 @@ def _querybase():
       <button type="submit" class="ai-btn ai-btn--primary">Rechercher</button>
     </form>
     <div class="ai-empty-tips">
-      <p><strong>Astuce :</strong> utilisez des guillemets pour une expression exacte — <code>"sync temps réel"</code></p>
+      <p><strong>Astuce :</strong> utilisez des guillemets pour une expression exacte - <code>"sync temps réel"</code></p>
       <p><strong>Filtres actifs :</strong> Documentation · API v3 · Français</p>
     </div>
     <figure class="ai-empty-visual">
-      <img src="images/hero.png" alt="État vide QueryBase — aucun résultat de recherche avec suggestions" width="640" height="360" decoding="async">
+      <img src="images/hero.png" alt="État vide QueryBase - aucun résultat de recherche avec suggestions" width="640" height="360" decoding="async">
     </figure>
   </section>
 
   <section id="roadmap" class="ai-section ai-section--roadmap">
     <h2>Votez pour la prochaine fonctionnalité</h2>
-    <p class="ai-prose">La roadmap QueryBase est co-construite avec la communauté. Chaque vote compte — les trois demandes les plus plébiscitées entrent en développement ce trimestre.</p>
+    <p class="ai-prose">La roadmap QueryBase est co-construite avec la communauté. Chaque vote compte - les trois demandes les plus plébiscitées entrent en développement ce trimestre.</p>
     <div class="ai-roadmap-list">
       <article class="ai-roadmap-item">
         <div class="ai-roadmap-info">
@@ -664,7 +664,7 @@ def _querybase():
         <p>Tutoriel vidéo · 8 min · 1 240 vues</p>
       </a>
       <a class="ai-suggest-card" href="#">
-        <h3>API REST — endpoints de synchronisation</h3>
+        <h3>API REST - endpoints de synchronisation</h3>
         <p>Référence technique · 12 endpoints documentés</p>
       </a>
       <a class="ai-suggest-card" href="#">
@@ -739,7 +739,7 @@ body { background: var(--ai-bg); color: var(--ai-text); }
 """
     write_ai_site(
         "saas-empty",
-        "QueryBase — Empty state & roadmap",
+        "QueryBase - Empty state & roadmap",
         "État vide de recherche, vote roadmap communautaire et suggestions de requêtes similaires.",
         body,
         css,
@@ -793,7 +793,7 @@ def _pingflow():
         <li class="ai-notif-item ai-notif-item--unread">
           <span class="ai-notif-dot" aria-hidden="true"></span>
           <div class="ai-notif-body">
-            <p><strong>Alerte MetricPulse</strong> — churn hebdo au-dessus du seuil</p>
+            <p><strong>Alerte MetricPulse</strong> - churn hebdo au-dessus du seuil</p>
             <p class="ai-notif-preview">Segment PME 10-50 : 2,1 % cette semaine (seuil : 2,0 %). Voir le dashboard.</p>
             <time>Il y a 28 min</time>
           </div>
@@ -801,7 +801,7 @@ def _pingflow():
         </li>
         <li class="ai-notif-item">
           <div class="ai-notif-body">
-            <p><strong>Déploiement réussi</strong> — API v3.14.0 en production</p>
+            <p><strong>Déploiement réussi</strong> - API v3.14.0 en production</p>
             <p class="ai-notif-preview">Durée : 3 min 42 s · zéro rollback · 99,97 % de requêtes 2xx.</p>
             <time>Il y a 1 h</time>
           </div>
@@ -810,7 +810,7 @@ def _pingflow():
         <li class="ai-notif-item ai-notif-item--unread">
           <span class="ai-notif-dot" aria-hidden="true"></span>
           <div class="ai-notif-body">
-            <p><strong>Nouveau vote roadmap</strong> — Connecteur Salesforce</p>
+            <p><strong>Nouveau vote roadmap</strong> - Connecteur Salesforce</p>
             <p class="ai-notif-preview">847 votes atteints. La fonctionnalité entre en phase de spec technique.</p>
             <time>Il y a 2 h</time>
           </div>
@@ -818,7 +818,7 @@ def _pingflow():
         </li>
         <li class="ai-notif-item">
           <div class="ai-notif-body">
-            <p><strong>Rappel TalentLoop</strong> — document RIB manquant</p>
+            <p><strong>Rappel TalentLoop</strong> - document RIB manquant</p>
             <p class="ai-notif-preview">Votre parcours d'onboarding est bloqué à l'étape 2. Téléversez votre RIB pour continuer.</p>
             <time>Hier, 17:42</time>
           </div>
@@ -827,7 +827,7 @@ def _pingflow():
       </ul>
 
       <figure class="ai-notif-visual">
-        <img src="images/hero.png" alt="Centre de notifications PingFlow — interface sombre avec filtres et priorités" width="720" height="400" decoding="async">
+        <img src="images/hero.png" alt="Centre de notifications PingFlow - interface sombre avec filtres et priorités" width="720" height="400" decoding="async">
       </figure>
     </main>
 
@@ -842,7 +842,7 @@ def _pingflow():
       </div>
       <div class="ai-pref-group">
         <h3>Mode focus</h3>
-        <label class="ai-toggle"><input type="checkbox"> Activer 9 h – 18 h</label>
+        <label class="ai-toggle"><input type="checkbox"> Activer 9 h - 18 h</label>
         <p class="ai-pref-hint">Seules les alertes « Haute » passent en mode focus.</p>
       </div>
       <div class="ai-pref-group">
@@ -932,7 +932,7 @@ body { background: var(--ai-bg); color: var(--ai-text); }
 """
     write_ai_site(
         "saas-notifications",
-        "PingFlow — Centre de notifications",
+        "PingFlow - Centre de notifications",
         "Interface sombre de gestion des notifications : filtres, priorités et panneau de préférences.",
         body,
         css,
@@ -946,7 +946,7 @@ def run() -> list[str]:
     slugs = []
     for fn in builders:
         fn()
-        # slug dérivé du dernier appel — on les connaît :
+        # slug dérivé du dernier appel - on les connaît :
     slugs = [
         "saas-landing",
         "saas-onboarding",

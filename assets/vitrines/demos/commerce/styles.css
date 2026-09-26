@@ -1,4 +1,4 @@
-/* Halles Thionville — retail dark gold (maquette chocolatier / product rail) */
+/* Halles Thionville - retail dark gold (maquette chocolatier / product rail) */
 :root {
   --vt-ink: #0c0b0a;
   --vt-panel: #161412;
@@ -19,6 +19,8 @@
   --vt-chip-bg: rgba(212, 160, 23, 0.1);
   --vt-chip-hover: rgba(212, 160, 23, 0.18);
   --vt-slot-bg: var(--vt-card);
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
 }
 
 body.vt-body-retail {

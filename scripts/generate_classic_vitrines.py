@@ -24,37 +24,37 @@ SHARED_JS = """
 CONTENT: dict[str, tuple[str, list[str], str, str]] = {
     "commerce": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                  "Votre marché de quartier, en ligne comme en magasin",
-                 "Halles Thionville — primeurs, traiteur et drive en 45 minutes. Click & collect, horaires clairs, fidélité simple."),
+                 "Halles Thionville - primeurs, traiteur et drive en 45 minutes. Click & collect, horaires clairs, fidélité simple."),
     "comptable": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                   "Vos chiffres, expliqués sans jargon",
                   "Verlaine & Associés accompagne les dirigeants de Metz et Thionville : tenue, paie, conseil et bilan flash sous 48 h."),
     "immobilier": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                    "Estimation gratuite, mandat signé sereinement",
-                   "Patrimoine Lorraine — vente, location et gestion locative en Moselle. Visites qualifiées et suivi jusqu'à l'acte."),
+                   "Patrimoine Lorraine - vente, location et gestion locative en Moselle. Visites qualifiées et suivi jusqu'à l'acte."),
     "education": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                   "Former aujourd'hui les métiers de demain",
                   "Institut Mercure à Nancy : alternance, certifications reconnues et parcours VAE pour adultes en reconversion."),
     "services": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                  "Des locaux impeccables, des équipes sereines",
-                 "Proprio Facility — accueil, propreté et facility management pour sites tertiaires en Lorraine. Devis sous 48 h."),
+                 "Proprio Facility - accueil, propreté et facility management pour sites tertiaires en Lorraine. Devis sous 48 h."),
     "juridique": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                   "Le droit des affaires, en langage clair",
-                  "Rivière & Partenaires — sociétés, social et contentieux pour PME messines. Premier échange structuré, forfait découverte."),
+                  "Rivière & Partenaires - sociétés, social et contentieux pour PME messines. Premier échange structuré, forfait découverte."),
     "etablissement": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                       "L'art de recevoir, au cœur de Nancy",
-                      "Hôtel Stanislas Collection — chambres 4*, spa, séminaires et room service. Réservation visible dès la page d'accueil."),
+                      "Hôtel Stanislas Collection - chambres 4*, spa, séminaires et room service. Réservation visible dès la page d'accueil."),
     "architecture": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                      "Construire avec mesure et lumière",
-                     "Atelier Nord-Est — résidentiel, tertiaire et suivi de chantier à Metz. Portfolio projets et brief en ligne."),
+                     "Atelier Nord-Est - résidentiel, tertiaire et suivi de chantier à Metz. Portfolio projets et brief en ligne."),
     "automobile": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
-                   "Entretien, pneus, carrosserie — sans surprise",
-                   "Garage Central Plappeville — devis transparent, véhicule de courtoisie, toutes marques. Prise de RDV en deux clics."),
+                   "Entretien, pneus, carrosserie - sans surprise",
+                   "Garage Central Plappeville - devis transparent, véhicule de courtoisie, toutes marques. Prise de RDV en deux clics."),
     "fitness": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                 "Bougez, progressez, respirez",
-                "Pulse Fitness Metz — 1 200 m², 40 cours par semaine, essai gratuit. HIIT, yoga, cycling : choisissez votre rythme."),
+                "Pulse Fitness Metz - 1 200 m², 40 cours par semaine, essai gratuit. HIIT, yoga, cycling : choisissez votre rythme."),
     "photographie": ("hero.png", ["card-1.png", "card-2.png", "card-3.png"],
                      "Capturer l'essentiel, livrer l'émotion",
-                     "Studio Lumière Grise — mariages, corporate et portraits en Grand Est. Devis personnalisé sous 24 h."),
+                     "Studio Lumière Grise - mariages, corporate et portraits en Grand Est. Devis personnalisé sous 24 h."),
 }
 
 OFFERS: dict[str, list[tuple[str, str]]] = {
@@ -263,7 +263,7 @@ def body_bootstrap(brand: str, h1: str, lead: str, hero: str, gal: str, cards: s
     </div></section>
     <section id="engagements" class="py-5 vt-muted"><div class="container col-lg-8 text-center">
       <h2 class="vt-brand h3 mb-3">Pourquoi nous faire confiance</h2>
-      <p class="text-muted mb-0">Réactivité, transparence et ancrage local — une vitrine qui transforme les visites en demandes.</p>
+      <p class="text-muted mb-0">Réactivité, transparence et ancrage local - une vitrine qui transforme les visites en demandes.</p>
     </div></section>
     <section id="contact" class="py-5"><div class="container col-lg-7">
       <h2 class="vt-brand text-center mb-4">Contact</h2>
@@ -272,12 +272,12 @@ def body_bootstrap(brand: str, h1: str, lead: str, hero: str, gal: str, cards: s
         <div class="col-md-6"><label class="form-label" for="email">E-mail</label><input class="form-control" id="email" name="email" type="email" autocomplete="email"></div>
         <div class="col-12"><label class="form-label" for="msg">Message</label><textarea class="form-control" id="msg" name="message" rows="4"></textarea></div>
         <div class="col-12 text-center"><button class="btn vt-btn btn-lg" type="submit">Envoyer ma demande</button>
-        <p class="small text-muted mt-2 mb-0">Démonstration — aucune donnée transmise.</p></div>
+        <p class="small text-muted mt-2 mb-0">Démonstration - aucune donnée transmise.</p></div>
       </form>
       <p class="text-center mt-4"><a href="../index.html">← Retour au hub des vitrines</a></p>
     </div></section>
   </main>
-  <footer class="vt-footer py-4 text-center"><p class="mb-0 small">Maquette — démonstration DanielCraft</p></footer>"""
+  <footer class="vt-footer py-4 text-center"><p class="mb-0 small">Maquette - démonstration DanielCraft</p></footer>"""
 
 
 def body_tailwind(brand: str, h1: str, lead: str, hero: str, gal: str, cards: str, stats: str) -> str:
@@ -330,7 +330,7 @@ def body_tailwind(brand: str, h1: str, lead: str, hero: str, gal: str, cards: st
       <p class="text-center mt-6 text-sm"><a href="../index.html" class="underline">← Hub vitrines</a></p>
     </div></section>
   </main>
-  <footer class="vt-footer py-6 text-center text-sm">Maquette — DanielCraft</footer>"""
+  <footer class="vt-footer py-6 text-center text-sm">Maquette - DanielCraft</footer>"""
 
 
 def body_generic(brand: str, h1: str, lead: str, hero: str, gal: str, cards: str, stats: str) -> str:
@@ -376,7 +376,7 @@ def body_generic(brand: str, h1: str, lead: str, hero: str, gal: str, cards: str
       <p><a href="../index.html">← Hub vitrines</a></p>
     </div></section>
   </main>
-  <footer class="vt-footer"><p>Maquette — DanielCraft</p></footer>"""
+  <footer class="vt-footer"><p>Maquette - DanielCraft</p></footer>"""
 
 
 def write_slug(slug: str, brand: str, page_title: str, meta_desc: str) -> None:
@@ -454,7 +454,7 @@ def main() -> None:
         it = next(x for x in data["items"] if x["slug"] == slug)
         brand = it["title"]
         h1, lead = CONTENT[slug][2], CONTENT[slug][3]
-        page_title = f"{brand} — {it.get('tagline', 'site vitrine')} | démo"
+        page_title = f"{brand} - {it.get('tagline', 'site vitrine')} | démo"
         meta_desc = f"{h1}. {lead}"[:158]
         write_slug(slug, brand, page_title, meta_desc)
         print(f"OK {slug}")

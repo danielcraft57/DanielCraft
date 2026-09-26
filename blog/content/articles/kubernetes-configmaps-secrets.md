@@ -46,7 +46,7 @@ spec:
             name: api-config
 ```
 
-Le conteneur reçoit `APP_ENV`, `LOG_LEVEL` et `API_BASE_URL` comme variables d'environnement. Tu modifies la ConfigMap, tu redémarres les pods (ou tu relies sur un mécanisme de reload), et la nouvelle config s'applique — sans rebuild d'image.
+Le conteneur reçoit `APP_ENV`, `LOG_LEVEL` et `API_BASE_URL` comme variables d'environnement. Tu modifies la ConfigMap, tu redémarres les pods (ou tu relies sur un mécanisme de reload), et la nouvelle config s'applique - sans rebuild d'image.
 
 ### Monter une ConfigMap comme fichiers
 

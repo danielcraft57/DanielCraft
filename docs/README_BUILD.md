@@ -17,7 +17,7 @@ DanielCraftFr/
 └── dist/                     # Sortie du build (ne pas éditer ; déployer ce dossier)
 ```
 
-**Vitrines :** l’ancre sur l’accueil est **`#vitrines`**. Le bloc catalogue est produit par `build.py` depuis `src/data/vitrines.json` — ne pas modifier `src/includes/vitrines-catalog-embed.html` à la main. Détails : **[VITRINES.md](./VITRINES.md)**.
+**Vitrines :** l'ancre sur l'accueil est **`#vitrines`**. Le bloc catalogue est produit par `build.py` depuis `src/data/vitrines.json` - ne pas modifier `src/includes/vitrines-catalog-embed.html` à la main. Détails : **[VITRINES.md](./VITRINES.md)**.
 
 ## Commandes
 
@@ -91,6 +91,6 @@ Chaque page a un fichier JSON dans `src/pages/` :
 
 ## Important
 
-⚠️ **Ne jamais éditer directement** les fichiers HTML dans le dossier racine  
-✅ **Toujours éditer** les fichiers dans `src/` puis rebuilder
+**Ne jamais editer directement** les fichiers HTML dans le dossier racine.
+**Toujours editer** les fichiers dans `src/` puis rebuilder.
 

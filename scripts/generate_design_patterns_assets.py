@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Régénère images OG et SVG — délègue au générateur principal de la série."""
+"""Régénère images OG et SVG - délègue au générateur principal de la série."""
 
 from __future__ import annotations
 

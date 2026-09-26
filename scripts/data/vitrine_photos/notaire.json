@@ -1,0 +1,129 @@
+{
+  "slug": "notaire",
+  "brand": "Etude Deschamps",
+  "category": "juridique",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Formal notary office Metz navy and gold accents, dignified photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Etude notariale a Metz",
+      "subject": "Elegant notary office reception in Metz historic building: navy walls, gold subtle accents, oak desk, formal calm atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Etude notariale a Metz"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Acte immobilier",
+      "subject": "Signing of real estate deed with keys and sealed folder on desk, soft window light",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Acte immobilier"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Succession",
+      "subject": "Family succession consultation around conference table, respectful mood",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Succession"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Entreprise",
+      "subject": "Business company statutes meeting with notary and entrepreneurs",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Entreprise"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Signature acte",
+      "subject": "Close-up of fountain pen signing official papers (text illegible), wax seal nearby",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Signature acte"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Bibliotheque juridique",
+      "subject": "Law book shelves in notary study, warm lamp light, navy leather chair",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Bibliotheque juridique"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Salle de reunion",
+      "subject": "Formal meeting room with long table and portraits blurred",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Salle de reunion"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Facade etude",
+      "subject": "Stone facade of notary office on Metz street, brass plaque area without readable text",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Facade etude"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "slug": "gites",
+  "brand": "Les Lucioles",
+  "category": "hotel",
+  "locale": "Gerardmer, Vosges, Grand Est, France",
+  "style_suffix": "Warm Vosges mountain gite hospitality Gerardmer, cozy photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Gite dans les Vosges",
+      "subject": "Cozy wooden gite exterior in Vosges forest near Gerardmer at golden hour, warm windows lit, fir trees, hospitality B&B mood",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Gite dans les Vosges"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Gite La Clairiere",
+      "subject": "Small chalet interior with fireplace and sofa, warm blankets, forest view window",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Gite La Clairiere"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Gite Le Refuge",
+      "subject": "Larger family gite living room with dining table and terrace doors open to woods",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Gite Le Refuge"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Gite La Mezzanine",
+      "subject": "Mezzanine loft bedroom with lake view soft through window, romantic lighting",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Gite La Mezzanine"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Interieur cosy",
+      "subject": "Rustic kitchen breakfast setup with local jam and bread, wooden counters",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Interieur cosy"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Terrasse foret",
+      "subject": "Wooden terrace overlooking fir forest, coffee cups on table, morning mist",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Terrasse foret"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Cheminee",
+      "subject": "Crackling fireplace close-up with armchairs, evening cozy atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Cheminee"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Petit-dejeuner local",
+      "subject": "Hosts serving homemade breakfast on terrace, warm hospitality, Vosges backdrop",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Petit-dejeuner local"
+        }
+      ]
+    }
+  ]
+}

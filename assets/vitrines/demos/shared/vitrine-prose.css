@@ -1,6 +1,6 @@
 /**
  * Typo & CTA calibrés conversion (2026) :
- * - corps 17–18px, interligne 1.6, mesure 45–75 car.
+ * - corps 17-18px, interligne 1.6, mesure 45-75 car.
  * - CTA zone tactile ≥ 44px, contraste fort.
  * - Hiérarchie : H1 display, H2 +25 % desktop.
  */
@@ -166,7 +166,7 @@ a.vt-btn {
   font-size: 1.05rem;
 }
 
-/* —— Body M3 : motives / friction / journey / surfaces / avis / FAQ —— */
+/* -- Body M3 : motives / friction / journey / surfaces / avis / FAQ -- */
 .vt-motives,
 .vt-friction,
 .vt-journey,
@@ -432,7 +432,7 @@ a.vt-btn {
   color: var(--bs-primary, inherit);
 }
 
-/* —— M3 commercial UI : dialog / snackbar / fab-menu / horizontal cards —— */
+/* -- M3 commercial UI : dialog / snackbar / fab-menu / horizontal cards -- */
 :root {
   --vt-m3-ease: cubic-bezier(0.2, 0, 0, 1);
   --vt-m3-dur: 0.38s;

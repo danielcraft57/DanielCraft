@@ -1,4 +1,4 @@
-"""SEO blog — fil d'Ariane visible et helpers microdata inline."""
+"""SEO blog - fil d'Ariane visible et helpers microdata inline."""
 from __future__ import annotations
 
 from html import escape

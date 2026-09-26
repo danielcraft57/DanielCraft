@@ -1,7 +1,7 @@
 ---
 title: "DeepSeek : une IA gratuite / open a tester"
 date: 2026-06-03
-excerpt: "Alternative interessante pour coder ou ecrire — avec les memes regles de verification."
+excerpt: "Alternative interessante pour coder ou ecrire - avec les memes regles de verification."
 type: tutorial
 tags: [IA, Claude, Anthropic, productivite]
 og_image: ia-claude-comment-utiliser-l-ia-chinoise-gratuite-et-open-source-deepseek-en-ve-1200x630.jpg
@@ -63,7 +63,7 @@ Perplexity est un moteur de recherche qui nous permet d'utiliser l'intelligence 
 
 Tu n'as pas besoin d'etre expert. Tu as juste besoin d'une methode claire, d'un premier essai, et d'un endroit ou noter ce qui marche.
 
-Sur le sujet **Comment utiliser l’IA chinoise gratuite et open source Deepseek en ve**, le plus gros gain vient souvent du premier test serieux : tu vois tout de suite ce qui bloque, et tu ajustes.
+Sur le sujet **Comment utiliser l'IA chinoise gratuite et open source Deepseek en ve**, le plus gros gain vient souvent du premier test serieux : tu vois tout de suite ce qui bloque, et tu ajustes.
 
 Si tu publies ensuite un contenu (article, page, fiche produit), pense structure : un `h1`, des `h2` clairs, une meta description honnete, et des microdonnées (`BlogPosting`, FAQ si tu as des questions/réponses). Ca aide Google et les moteurs IA a te citer.
 

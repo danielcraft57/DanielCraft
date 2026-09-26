@@ -161,15 +161,15 @@ $serviceLabel = contact_service_label($service);
 $projectTypeLabel = contact_project_type_label($project_type);
 if ($service === 'vitrine_catalog_order') {
     $tail = $vitrine_title !== '' ? $vitrine_title : $vitrine_slug;
-    $subject = 'Pré-commande catalogue — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 70, 'UTF-8') : substr($tail, 0, 70));
+    $subject = 'Pré-commande catalogue - ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 70, 'UTF-8') : substr($tail, 0, 70));
 } elseif ($service === 'vitrine_catalog_devis') {
     $tail = $vitrine_title !== '' ? $vitrine_title : $vitrine_slug;
-    $subject = 'Devis catalogue — ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 72, 'UTF-8') : substr($tail, 0, 72));
+    $subject = 'Devis catalogue - ' . (function_exists('mb_substr') ? mb_substr($tail, 0, 72, 'UTF-8') : substr($tail, 0, 72));
 } else {
     $subjectShort = function_exists('mb_substr')
         ? mb_substr($serviceLabel, 0, 55, 'UTF-8')
         : substr($serviceLabel, 0, 55);
-    $subject = 'Nouveau contact — ' . $subjectShort;
+    $subject = 'Nouveau contact - ' . $subjectShort;
 }
 
 $body = "Nom : " . $name . "\n";
@@ -442,7 +442,7 @@ $htmlBodyUser = '
             <tr>
               <td style="padding:14px 24px;background:#f8fafc;border-top:1px solid #eef1f7;">
                 <div style="font-size:12px;color:#64748b;">
-                  Si ce message ne vous était pas destiné, vous pouvez simplement l’ignorer.
+                  Si ce message ne vous était pas destiné, vous pouvez simplement l'ignorer.
                 </div>
               </td>
             </tr>
@@ -729,7 +729,7 @@ $smtpPass = getenv('MAIL_PASSWORD') ?: '';
 $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $mimeHeaders = implode("\r\n", $headers) . "\r\n" . 'To: ' . esc($to) . "\r\n" . 'Subject: ' . $subjectEncoded;
 
-// Dev / CI : accepter la demande sans envoyer d’email (SMTP ou mail() souvent absents en local).
+// Dev / CI : accepter la demande sans envoyer d'email (SMTP ou mail() souvent absents en local).
 $dryRunRaw = getenv('CONTACT_MAIL_DRY_RUN');
 $dryRun = $dryRunRaw !== false && in_array(strtolower(trim((string) $dryRunRaw)), ['1', 'true', 'yes', 'on'], true);
 if ($dryRun) {

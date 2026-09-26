@@ -84,7 +84,7 @@ Un **Service** :
 - sélectionne les pods via un **selector** de labels,
 - offre une IP / un nom DNS stable dans le cluster (`mon-api.default.svc.cluster.local`, souvent raccourci en `mon-api`).
 
-### ClusterIP (interne) — le défaut
+### ClusterIP (interne) - le défaut
 
 ```yaml
 apiVersion: v1
@@ -105,7 +105,7 @@ spec:
 
 Cas typique : front → API, API → base (si la base est aussi dans le cluster), workers → API interne.
 
-### NodePort — exposition simple pour debug
+### NodePort - exposition simple pour debug
 
 ```yaml
 spec:
@@ -120,7 +120,7 @@ spec:
 
 Accessible sur `http://<ip-node>:30080`. Pratique en labo ou petit cluster perso, rarement l'idéal en prod « propre » (ports élevés, TLS, multi-services…).
 
-### LoadBalancer — côté cloud
+### LoadBalancer - côté cloud
 
 Sur GKE, AKS, EKS…, un Service `LoadBalancer` demande au provider un load balancer externe branché sur ton Service :
 
@@ -134,7 +134,7 @@ spec:
       targetPort: 3000
 ```
 
-En prod, on préfère souvent **Ingress** (ou Gateway API) + Services ClusterIP : un seul point d'entrée HTTP(S), routage par host/path, certificats centralisés — plutôt que dix LoadBalancers.
+En prod, on préfère souvent **Ingress** (ou Gateway API) + Services ClusterIP : un seul point d'entrée HTTP(S), routage par host/path, certificats centralisés - plutôt que dix LoadBalancers.
 
 ---
 
@@ -154,7 +154,7 @@ kubectl rollout undo deployment/mon-api
 kubectl rollout history deployment/mon-api
 ```
 
-La stratégie par défaut remplace les pods progressivement. Sans sondes `readiness`, Kubernetes peut envoyer du trafic vers un pod encore en train de démarrer — d'où l'intérêt de les configurer tôt. Pour aller plus loin (canary, blue/green) : [stratégies de déploiement](/blog/articles/ci-cd-kubernetes-deploiement-strategies.html). Pour automatiser tout ça : [CI/CD vers Kubernetes](/blog/articles/kubernetes-ci-cd-deploiement-continu.html).
+La stratégie par défaut remplace les pods progressivement. Sans sondes `readiness`, Kubernetes peut envoyer du trafic vers un pod encore en train de démarrer - d'où l'intérêt de les configurer tôt. Pour aller plus loin (canary, blue/green) : [stratégies de déploiement](/blog/articles/ci-cd-kubernetes-deploiement-strategies.html). Pour automatiser tout ça : [CI/CD vers Kubernetes](/blog/articles/kubernetes-ci-cd-deploiement-continu.html).
 
 ---
 
@@ -166,7 +166,7 @@ La stratégie par défaut remplace les pods progressivement. Sans sondes `readin
 - [ ] `containerPort` / `targetPort` cohérents avec l'appli
 - [ ] Image taguée (pas seulement `latest`)
 - [ ] `kubectl rollout status` après chaque changement d'image
-- [ ] Config et secrets hors de l'image — [ConfigMaps et Secrets](/blog/articles/kubernetes-configmaps-secrets.html)
+- [ ] Config et secrets hors de l'image - [ConfigMaps et Secrets](/blog/articles/kubernetes-configmaps-secrets.html)
 
 ### Pièges fréquents
 
@@ -174,7 +174,7 @@ La stratégie par défaut remplace les pods progressivement. Sans sondes `readin
 - **Un seul réplica** : maintenance d'un nœud = downtime immédiat.
 - **Port 3000 exposé « partout »** sans savoir si c'est ClusterIP, NodePort ou LB.
 - **Oublier le rollback** : pas d'historique clair, tag d'image perdu.
-- **Aucun log / métrique** : difficile de comprendre pourquoi le rollout échoue — suite logique : [observabilité](/blog/articles/kubernetes-observabilite-logs-metrics.html).
+- **Aucun log / métrique** : difficile de comprendre pourquoi le rollout échoue - suite logique : [observabilité](/blog/articles/kubernetes-observabilite-logs-metrics.html).
 
 ---
 

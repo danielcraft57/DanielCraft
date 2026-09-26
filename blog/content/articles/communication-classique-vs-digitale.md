@@ -1,7 +1,7 @@
 ---
 title: "Com classique et digitale : mieux ensemble"
 date: 2024-03-07
-excerpt: "Print, salons, presse d'un cote ; site et reseaux de l'autre — comment les combiner."
+excerpt: "Print, salons, presse d'un cote ; site et reseaux de l'autre - comment les combiner."
 type: article
 tags: [communication, classique, digitale, strategie, canaux]
 series: communication-serie
@@ -20,7 +20,7 @@ Communication classique ou communication digitale ? La vraie question n'est pas 
 
 ## Ce que la communication classique fait bien
 
-Les canaux dits « classiques » — print, affichage, relations presse, radio, TV, evenementiel — offrent des atouts durables :
+Les canaux dits « classiques » - print, affichage, relations presse, radio, TV, evenementiel - offrent des atouts durables :
 
 - **Credibilite** : un article de presse ou une brochure physique inspire confiance
 - **Ancrage local** : affichage, presse regionale, salons de proximite
@@ -31,7 +31,7 @@ Limites a connaitre : cout parfois eleve, mesure moins precise, delais plus long
 
 ## Ce que la communication digitale apporte
 
-Le digital — site web, reseaux sociaux, email, contenu, publicite en ligne — excelle sur d'autres points :
+Le digital - site web, reseaux sociaux, email, contenu, publicite en ligne - excelle sur d'autres points :
 
 - **Mesure** : trafic, clics, conversions, cout par contact
 - **Ciblage fin** : geographie, interets, comportements
@@ -74,4 +74,4 @@ Cette vision croisee t'aide a investir la ou ca rapporte vraiment. Compare aussi
 
 ## Conclusion
 
-Classique et digital se renforcent mutuellement quand ils partagent le meme message et se renvoient l'un vers l'autre. Choisis tes canaux selon ta cible, ton budget et tes objectifs — pas selon la mode. Pour poser ces choix methodiquement, voir [Communication : une strategie en 5 questions](/blog/articles/communication-strategie-objectifs-canaux.html).
+Classique et digital se renforcent mutuellement quand ils partagent le meme message et se renvoient l'un vers l'autre. Choisis tes canaux selon ta cible, ton budget et tes objectifs - pas selon la mode. Pour poser ces choix methodiquement, voir [Communication : une strategie en 5 questions](/blog/articles/communication-strategie-objectifs-canaux.html).

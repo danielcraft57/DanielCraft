@@ -1,7 +1,7 @@
 ---
 title: "Metiers en croissance 2026 : lire une liste utilement"
 date: 2026-08-18
-excerpt: "Une tendance n'est pas une promesse d'emploi — croise avec ton territoire."
+excerpt: "Une tendance n'est pas une promesse d'emploi - croise avec ton territoire."
 type: article
 tags: [IA, metiers, emploi, futur du travail]
 og_image: ia-metiers-voici-la-liste-des-metiers-avec-la-croissance-la-plus-rapide-en-2026-1200x630.jpg

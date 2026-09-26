@@ -75,7 +75,7 @@ INTRO = block(
 
     ## D'où viennent les patterns GoF ?
 
-    En 1994, quatre auteurs (Gamma, Helm, Johnson, Vlissides — d'où « Gang of Four ») publient *Design Patterns: Elements of Reusable Object-Oriented Software*. Ils cataloguent **23 patterns** observés sur des projets réels en C++ et Smalltalk.
+    En 1994, quatre auteurs (Gamma, Helm, Johnson, Vlissides - d'où « Gang of Four ») publient *Design Patterns: Elements of Reusable Object-Oriented Software*. Ils cataloguent **23 patterns** observés sur des projets réels en C++ et Smalltalk.
 
     Aujourd'hui, les langages ont changé (TypeScript, Python, Rust…), mais **les problèmes restent les mêmes** : qui crée l'objet ? comment découpler l'interface de l'implémentation ? comment notifier plusieurs composants sans spaghetti ?
 
@@ -97,11 +97,11 @@ INTRO = block(
 
     Les patterns s'appuient sur des principes SOLID (résumé junior-friendly) :
 
-    1. **S**ingle Responsibility — une classe, une raison de changer.
-    2. **O**pen/Closed — ouvert à l'extension, fermé à la modification sauvage.
-    3. **L**iskov Substitution — les sous-types doivent pouvoir remplacer le type parent.
-    4. **I**nterface Segregation — petites interfaces plutôt qu'un monstre `IManager`.
-    5. **D**ependency Inversion — dépendre d'abstractions, pas de détails concrets.
+    1. **S**ingle Responsibility - une classe, une raison de changer.
+    2. **O**pen/Closed - ouvert à l'extension, fermé à la modification sauvage.
+    3. **L**iskov Substitution - les sous-types doivent pouvoir remplacer le type parent.
+    4. **I**nterface Segregation - petites interfaces plutôt qu'un monstre `IManager`.
+    5. **D**ependency Inversion - dépendre d'abstractions, pas de détails concrets.
 
     Tu n'as pas besoin de maîtriser SOLID par cœur avant de lire la série. Reviens-y quand un pattern te parle d'« inversion de dépendances » ou de « fermer à la modification ».
 
@@ -111,10 +111,10 @@ INTRO = block(
 
     Pour chaque article :
 
-    1. Lis **« En une phrase »** et **« Le problème »** — si ça ne te parle pas, passe (pour l'instant).
+    1. Lis **« En une phrase »** et **« Le problème »** - si ça ne te parle pas, passe (pour l'instant).
     2. Regarde le **schéma** et l'**exemple TypeScript** (langage principal de la série).
     3. Parcours l'**exemple Python** si tu bosses plutôt côté backend.
-    4. Note **« Quand ne pas l'utiliser »** — souvent plus utile que la théorie.
+    4. Note **« Quand ne pas l'utiliser »** - souvent plus utile que la théorie.
     5. Fais l'**exercice** en 20 minutes sur un mini-projet perso.
 
     ---
@@ -123,9 +123,9 @@ INTRO = block(
 
     Le catalogue GoF n'épuise pas tout :
 
-    - **Repository / Service** — couche d'accès aux données (souvent avec DI).
-    - **Dependency Injection** — fournir les dépendances de l'extérieur (frameworks, conteneurs IoC).
-    - **CQRS / Event Sourcing** — architectures avancées pour gros domaines.
+    - **Repository / Service** - couche d'accès aux données (souvent avec DI).
+    - **Dependency Injection** - fournir les dépendances de l'extérieur (frameworks, conteneurs IoC).
+    - **CQRS / Event Sourcing** - architectures avancées pour gros domaines.
 
     On les croise parfois avec Factory, Strategy ou Observer. Cette série reste focalisée sur les **23 GoF** pour une base solide.
 
@@ -169,7 +169,7 @@ INTRO = block(
     - Un design pattern = solution nommée à un problème de conception récurrent.
     - 23 patterns GoF en 3 familles ; cette série = 1 article par pattern + cette intro.
     - Utilise les patterns pour **communiquer** et **simplifier**, pas pour impressionner.
-    - Article suivant : **Singleton** — quand une seule instance a du sens (et quand c'en est une mauvaise idée).
+    - Article suivant : **Singleton** - quand une seule instance a du sens (et quand c'en est une mauvaise idée).
     """,
 )
 
@@ -273,7 +273,7 @@ def pattern_article(
 
         ---
 
-        ## Exercice pratique (20–30 min)
+        ## Exercice pratique (20-30 min)
 
         {exercise}
 
@@ -303,7 +303,7 @@ PATTERNS_DATA = [
         "one_liner": "Le Singleton garantit qu'une classe n'a qu'une seule instance et fournit un point d'accès global à celle-ci.",
         "problem": "Tu as besoin d'un objet unique partagé (connexion config, logger, pool) mais `new MaClasse()` partout crée des doublons, des états incohérents et des bugs difficiles à tracer.",
         "idea": "Tu **cache le constructeur** (privé ou protégé) et tu exposes une méthode statique `getInstance()` qui crée l'instance au premier appel (lazy) ou au chargement du module.",
-        "analogy": "Comme le **maire d'une ville** : il n'y en a qu'un à la fois. Tu ne « crées » pas un nouveau maire à chaque question administrative — tu passes par l'instance officielle.",
+        "analogy": "Comme le **maire d'une ville** : il n'y en a qu'un à la fois. Tu ne « crées » pas un nouveau maire à chaque question administrative - tu passes par l'instance officielle.",
         "ts_example": '''
         ```typescript
         class AppConfig {
@@ -398,8 +398,8 @@ def all_patterns() -> list[dict]:
         ("design-patterns-builder", "Builder", "Créationnel",
          "Construit un objet complexe étape par étape, en séparant la construction de sa représentation.",
          "Un objet a 15 paramètres optionnels ; les constructeurs deviennent illisibles.",
-         "Un `QueryBuilder` avec `select().from().where()` — chaque méthode retourne `this`, l'objet final est immuable.",
-         "Assembler un **burger** : pain, steak, sauce — tu choisis l'ordre sans tout passer au caissier d'un coup."),
+         "Un `QueryBuilder` avec `select().from().where()` - chaque méthode retourne `this`, l'objet final est immuable.",
+         "Assembler un **burger** : pain, steak, sauce - tu choisis l'ordre sans tout passer au caissier d'un coup."),
         ("design-patterns-prototype", "Prototype", "Créationnel",
          "Crée de nouveaux objets en copiant un prototype existant plutôt qu'en appelant `new` sur une sous-classe.",
          "Cloner une config ou un document template coûte moins que de tout recharger depuis la DB.",
@@ -412,7 +412,7 @@ def all_patterns() -> list[dict]:
          "Adaptateur prise **EU → US** : l'appareil ne change pas, la prise s'adapte."),
         ("design-patterns-bridge", "Bridge", "Structurel",
          "Sépare une abstraction de son implémentation pour qu'elles évoluent indépendamment.",
-         "Tu as des formes (cercle, carré) ET des moteurs de rendu (SVG, Canvas) — évite l'explosion de classes.",
+         "Tu as des formes (cercle, carré) ET des moteurs de rendu (SVG, Canvas) - évite l'explosion de classes.",
          "Abstraction `Shape` contient une référence vers `Renderer` injectée.",
          "Télécommande (abstraction) et téléviseur (implémentation) : change l'un sans refabriquer l'autre."),
         ("design-patterns-composite", "Composite", "Structurel",
@@ -457,7 +457,7 @@ def all_patterns() -> list[dict]:
          "Télécommande chaînes : suivant/précédent sans voir la liste interne."),
         ("design-patterns-mediator", "Mediator", "Comportemental",
          "Centralise les communications chaotiques entre objets dans un médiateur.",
-         "Formulaire : 10 champs qui se désactivent mutuellement — évite N×N liens.",
+         "Formulaire : 10 champs qui se désactivent mutuellement - évite N×N liens.",
          "Les composants parlent au `FormMediator`, pas entre eux directement.",
          "Tour de contrôle aérien : les avions ne se coordonnent pas tous à tous."),
         ("design-patterns-memento", "Memento", "Comportemental",
@@ -474,7 +474,7 @@ def all_patterns() -> list[dict]:
          "Change le comportement d'un objet selon son état interne.",
          "Commande : brouillon → payée → expédiée ; chaque état a ses actions autorisées.",
          "Classes `DraftState`, `PaidState` au lieu d'un switch géant.",
-         "Distributeur : pas de soda si pas payé — l'état décide."),
+         "Distributeur : pas de soda si pas payé - l'état décide."),
         ("design-patterns-strategy", "Strategy", "Comportemental",
          "Famille d'algorithmes interchangeables injectés au runtime.",
          "Calcul de livraison : express, standard, point relais.",
@@ -487,7 +487,7 @@ def all_patterns() -> list[dict]:
          "Recette de cuisine : étapes fixes, épices variables."),
         ("design-patterns-visitor", "Visitor", "Comportemental",
          "Sépare les opérations sur une structure d'objets de la structure elle-même.",
-         "Exporter AST en HTML, PDF, lint — sans modifier chaque nœud.",
+         "Exporter AST en HTML, PDF, lint - sans modifier chaque nœud.",
          "Double dispatch : `node.accept(visitor)`.",
          "Inspecteur bâtiment : même visite, rapports différents par expert."),
         ("design-patterns-interpreter", "Interpreter", "Comportemental",
@@ -506,8 +506,8 @@ def all_patterns() -> list[dict]:
             "problem": problem,
             "idea": idea,
             "analogy": analogy,
-            "ts_example": f"```typescript\n// {name} — adapte ce squelette à ton domaine\ninterface {name.replace(' ', '')}Role {{\n  execute(): void;\n}}\n```",
-            "py_example": f"```python\n# {name} — même logique côté Python\nclass {name.replace(' ', '')}Role(ABC):\n    @abstractmethod\n    def execute(self) -> None: ...\n```",
+            "ts_example": f"```typescript\n// {name} - adapte ce squelette à ton domaine\ninterface {name.replace(' ', '')}Role {{\n  execute(): void;\n}}\n```",
+            "py_example": f"```python\n# {name} - même logique côté Python\nclass {name.replace(' ', '')}Role(ABC):\n    @abstractmethod\n    def execute(self) -> None: ...\n```",
             "when_use": f"- Le problème décrit dans « Le problème » correspond à ton cas.\n- Tu anticipes plusieurs variantes sans `if` géants.",
             "when_not": "- Sur-ingénierie sur un script de 50 lignes.\n- Une librairie standard fait déjà le travail (ex. `itertools`, middleware framework).",
             "mistakes": "- Copier le pattern sans comprendre le problème.\n- Mélanger responsabilités (ex. Observer qui fait aussi persistance DB).",

@@ -88,7 +88,7 @@ class Folder implements FileNode {
 ## Exemple en Python
 
 ```python
-# Composite — reproduis les classes TypeScript avec dataclasses / ABC
+# Composite - reproduis les classes TypeScript avec dataclasses / ABC
 ```
 
 ---
@@ -128,11 +128,11 @@ Repère Composite dans un framework que tu utilises (doc ou source).
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Composite aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Non - on teste surtout ta capacité à reconnaître le problème. Le nom Composite aide à communiquer en équipe.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Composite te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Composite te permet de les utiliser correctement.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
+**Je dois tout refactoriser ?** Non - applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
 
 ---
 
@@ -153,11 +153,11 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ## Pas à pas : implémenter en 5 étapes
 
-1. **Nomme le problème** — est-ce vraiment Composite ?
+1. **Nomme le problème** - est-ce vraiment Composite ?
 2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
 3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Composite parce que… ».
+4. **Implémente une variante** - valide avant d'en ajouter d'autres.
+5. **Documente en équipe** - « ici on utilise Composite parce que… ».
 
 ---
 
@@ -170,7 +170,7 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Cartographie un module de ton projet : pourrait-il devenir Composite ?
 

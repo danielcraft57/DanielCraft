@@ -252,7 +252,7 @@ Titre clair, preuve, bouton visible, formulaire court. Teste une chose a la fois
 article(
     "marketing-automatisation-outils",
     "Marketing automation : automatiser sans perdre l'humain",
-    "Workflows simples : declencheurs, messages, relances — et quand s'arreter.",
+    "Workflows simples : declencheurs, messages, relances - et quand s'arreter.",
     f"""# Marketing automation : automatiser sans perdre l'humain
 
 L'**automation** sert a ne pas refaire 50 fois la meme tache. Pas a devenir un robot froid.
@@ -281,7 +281,7 @@ Choisis peu de canaux. Donne-leur une chance mesuree. Arrete le reste. Reviens a
 article(
     "communication-strategie-objectifs-canaux",
     "Communication : une strategie en 5 questions",
-    "Qui, quoi, ou, quand, comment mesurer — sans plan de 40 pages.",
+    "Qui, quoi, ou, quand, comment mesurer - sans plan de 40 pages.",
     f"""# Communication : une strategie en 5 questions
 
 Une bonne com tient souvent en **une phrase** claire, repetee au bon endroit.
@@ -295,7 +295,7 @@ Ecris tes reponses sur une page. Puis aligne [print](/blog/articles/communicatio
 article(
     "communication-classique-vs-digitale",
     "Com classique et digitale : mieux ensemble",
-    "Print, salons, presse d'un cote ; site et reseaux de l'autre — comment les combiner.",
+    "Print, salons, presse d'un cote ; site et reseaux de l'autre - comment les combiner.",
     f"""# Com classique et digitale : mieux ensemble
 
 Ce n'est pas "l'un ou l'autre". C'est **le bon mix** pour ton public.
@@ -309,7 +309,7 @@ Un salon sans suivi digital perd des contacts. Un site sans ancrage local perd d
 article(
     "communication-relations-presse",
     "Relations presse : proposer un angle utile",
-    "Communique, contacts medias et relances — sans ego, avec un vrai sujet.",
+    "Communique, contacts medias et relances - sans ego, avec un vrai sujet.",
     f"""# Relations presse : proposer un angle utile
 
 Les medias n'ont pas besoin de ton ego. Ils ont besoin d'un **angle** utile a leurs lecteurs.
@@ -379,7 +379,7 @@ Entraine-toi a voix haute. Chronometre. Coupe le jargon. Lien avec le [storytell
 article(
     "communication-interne-entreprise",
     "Communication interne : informer pour federer",
-    "Qui dit quoi, sur quel canal, a quel rythme — pour eviter les rumeurs.",
+    "Qui dit quoi, sur quel canal, a quel rythme - pour eviter les rumeurs.",
     f"""# Communication interne : informer pour federer
 
 Une equipe mal informee **invente**. Une equipe bien informee avance.
@@ -407,7 +407,7 @@ Base = site clair. Puis les memes infos partout. Relie au [marketing digital](/b
 article(
     "communication-reseaux-sociaux-community-management",
     "Community management : animer sans s'epuiser",
-    "Ecouter, publier, repondre, moderer — un rythme humain et utile.",
+    "Ecouter, publier, repondre, moderer - un rythme humain et utile.",
     f"""# Community management : animer sans s'epuiser
 
 Publier sans repondre, c'est parler dans le vide.
@@ -421,7 +421,7 @@ Repondre compte souvent plus que le volume de posts. Voir aussi [marketing resea
 article(
     "communication-crise-en-ligne",
     "Crise en ligne : reagir sans aggraver",
-    "Detecter, verifier, repondre, corriger, debrief — une fiche simple sous stress.",
+    "Detecter, verifier, repondre, corriger, debrief - une fiche simple sous stress.",
     f"""# Crise en ligne : reagir sans aggraver
 
 Le pire : paniquer **ou** disparaitre.
@@ -435,7 +435,7 @@ Verifie les faits. Reponds avec calme et preuves. Puis un debrief pour ne pas re
 article(
     "communication-influence-partenariats",
     "Influence : des partenariats qui ont du sens",
-    "Affinite, transparence et valeur partagee — loin des achats opaques.",
+    "Affinite, transparence et valeur partagee - loin des achats opaques.",
     f"""# Influence : des partenariats qui ont du sens
 
 Un bon partenaire, c'est quelqu'un que ton public **croit deja**.
@@ -492,12 +492,12 @@ for path, title, desc in [
     (
         ROOT / "blog/content/collections/marketing-digital-serie.json",
         "Série Marketing digital : se faire trouver et convertir",
-        "Strategie, reseaux, email, contenu, analytics et budget — expliques simplement.",
+        "Strategie, reseaux, email, contenu, analytics et budget - expliques simplement.",
     ),
     (
         ROOT / "blog/content/collections/communication-serie.json",
         "Série Communication : se faire comprendre (partout)",
-        "Strategie, print, digital, presse, crise et storytelling — sans jargon inutile.",
+        "Strategie, print, digital, presse, crise et storytelling - sans jargon inutile.",
     ),
 ]:
     data = json.loads(path.read_text(encoding="utf-8"))

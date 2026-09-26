@@ -34,7 +34,7 @@ if (in_array($uri, ['/livres.html', '/livres-telechargement.html'], true)) {
     exit;
 }
 
-// Redirections SEO — URLs historiques / ancres courtes
+// Redirections SEO - URLs historiques / ancres courtes
 if (in_array($uri, ['/nos-offres.html'], true)) {
     header('Location: /nos-offres', true, 301);
     exit;
@@ -114,7 +114,7 @@ function dc_resolve_static(string $root, string $uri): ?string
 
 $absolute = $root . str_replace('/', DIRECTORY_SEPARATOR, $uri);
 
-// Fichier statique existant (assets, images, favicon…) — servi explicitement
+// Fichier statique existant (assets, images, favicon…) - servi explicitement
 if ($uri !== '/' && is_file($absolute)) {
     $ext = strtolower(pathinfo($uri, PATHINFO_EXTENSION));
     if ($ext !== 'php') {

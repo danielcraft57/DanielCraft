@@ -1,5 +1,5 @@
 /**
- * Fiche vitrine : classe d’amélioration progressive (hover appareils, etc.).
+ * Fiche vitrine : classe d'amélioration progressive (hover appareils, etc.).
  * Les révélations au scroll restent gérées par main.js (scroll-reveal).
  */
 (function () {

@@ -1,4 +1,4 @@
-/* Cave de la Gare — caviste : dark burgundy, Playfair + Source Sans */
+/* Cave de la Gare - caviste : dark burgundy, Playfair + Source Sans */
 :root {
   --vt-bg: #14110f;
   --vt-panel: #1e1a17;
@@ -12,6 +12,11 @@
   --bs-primary: var(--vt-wine);
   --bs-link-color: var(--vt-gold);
   --bs-font-sans-serif: "Source Sans 3", system-ui, sans-serif;
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 body.vt-body-caviste {
   background: radial-gradient(ellipse at 80% 0%, rgba(139,30,63,0.18), transparent 48%), var(--vt-bg);

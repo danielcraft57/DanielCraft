@@ -60,7 +60,7 @@ Bénéfices :
 - Moins de packages installés → surface d'attaque réduite
 - Séparation claire build / runtime
 
-Adapte le pattern à ton stack : Go, Rust, Python, Java — le principe reste identique.
+Adapte le pattern à ton stack : Go, Rust, Python, Java - le principe reste identique.
 
 ## Cache Docker : gagner du temps sans tricher
 
@@ -105,4 +105,4 @@ Ne rebuild pas en prod. L'image qui tourne est exactement celle testée en CI. C
 
 ## Conclusion
 
-Ton pipeline doit produire une image reproductible, versionnée, scannée et poussée au registry — prête à être déployée sans rebuild. Tag avec le SHA, multi-stage pour la légèreté, cache intelligent pour la vitesse. Pour gérer les credentials de registry et les variables sensibles en CI, voir le guide sur les [secrets et variables d'environnement en CI/CD](/blog/articles/ci-cd-secrets-variables-environnement.html).
+Ton pipeline doit produire une image reproductible, versionnée, scannée et poussée au registry - prête à être déployée sans rebuild. Tag avec le SHA, multi-stage pour la légèreté, cache intelligent pour la vitesse. Pour gérer les credentials de registry et les variables sensibles en CI, voir le guide sur les [secrets et variables d'environnement en CI/CD](/blog/articles/ci-cd-secrets-variables-environnement.html).

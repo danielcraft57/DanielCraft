@@ -31,7 +31,7 @@ def ensure_product(slug: str, title: str, dry_run: bool) -> str:
     if dry_run:
         return f'prod_DRY_{slug}'
     created = stripe_request('POST', '/products', {
-        'name': f'{title} — maquette DanielCraft',
+        'name': f'{title} - maquette DanielCraft',
         'metadata[vitrine_slug]': slug,
     })
     return created['id']
@@ -89,7 +89,7 @@ def main() -> int:
         except (TypeError, ValueError):
             price_eur = default_price
 
-        print(f'— {slug} ({price_eur} € HT)')
+        print(f'- {slug} ({price_eur} € HT)')
         product_id = ensure_product(slug, title, args.dry_run)
         price_id = ensure_price(product_id, price_eur * 100, args.dry_run)
         url = ensure_payment_link(price_id, slug, args.dry_run)

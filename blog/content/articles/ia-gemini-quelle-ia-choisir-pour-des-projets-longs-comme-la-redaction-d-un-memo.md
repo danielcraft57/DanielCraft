@@ -1,7 +1,7 @@
 ---
 title: "Projet long (memo, livre) : quelle IA et quelle methode"
 date: 2026-06-16
-excerpt: "Decouper, garder des fichiers sources, reprendre le fil — plus important que le logo de l'outil."
+excerpt: "Decouper, garder des fichiers sources, reprendre le fil - plus important que le logo de l'outil."
 type: tutorial
 tags: [IA, Gemini, NotebookLM, Google]
 og_image: ia-gemini-quelle-ia-choisir-pour-des-projets-longs-comme-la-redaction-d-un-memo-1200x630.jpg

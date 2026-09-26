@@ -11,7 +11,7 @@ og_image: communication-identite-1200x630.jpg
 
 # Identite visuelle : qu'on te reconnaisse en 2 secondes
 
-Ton identite visuelle, c'est la premiere impression que tu laisses : logo, couleurs, typographies, style d'images. En deux secondes, un visiteur decide si ta marque parait serieuse, moderne, accessible ou au contraire confuse. Une identite claire et une charte graphique simple garantissent que tous tes supports — site, print, reseaux — racontent la meme histoire visuelle.
+Ton identite visuelle, c'est la premiere impression que tu laisses : logo, couleurs, typographies, style d'images. En deux secondes, un visiteur decide si ta marque parait serieuse, moderne, accessible ou au contraire confuse. Une identite claire et une charte graphique simple garantissent que tous tes supports - site, print, reseaux - racontent la meme histoire visuelle.
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/com-identite.svg" alt="Schema identite visuelle" class="schema-inline" width="640" />
@@ -56,7 +56,7 @@ Objectif : toi ou un prestataire pouvez produire un support sans reinventer a ch
 - **Print** : fichiers avec les bonnes references couleur pour l'imprimeur
 - **Presentations** : template slides coherent avec le reste
 
-Chaque support est une occasion de renforcer la reconnaissance — ou de la diluer si tu improvises. Cree un dossier partage (charte PDF, logos, templates) accessible a toute personne qui produit du contenu pour toi : prestataire web, imprimeur, community manager. Moins tu laisses place a l'interpretation, plus ton image reste nette.
+Chaque support est une occasion de renforcer la reconnaissance - ou de la diluer si tu improvises. Cree un dossier partage (charte PDF, logos, templates) accessible a toute personne qui produit du contenu pour toi : prestataire web, imprimeur, community manager. Moins tu laisses place a l'interpretation, plus ton image reste nette.
 
 ## Demarrer avec un budget limite
 

@@ -7,7 +7,7 @@ bo = "<" + "motion" + "> NO"
 mc = "vitrine-figure--" + "motion"
 block = f"""            <div class="column is-6 vitrine-img-reveal animate__animated animate__fadeInRight animate__delay-1s" style="--animate-duration: 0.95s;">
               <figure class="vitrine-figure vitrine-hero-visual vitrine-figure--ken {mc} mb-0">
-                <a href="images/hero.svg" class="glightbox" data-gallery="odo-visuels" data-glightbox="title: Cabinet Mosaïque — illustration">
+                <a href="images/hero.svg" class="glightbox" data-gallery="odo-visuels" data-glightbox="title: Cabinet Mosaïque - illustration">
                   <img src="images/hero.png" width="1200" height="675" alt="Salle d'attente lumineuse du cabinet dentaire" decoding="async" fetchpriority="high">
                 </a>
               </figure>

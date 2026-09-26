@@ -11,7 +11,7 @@ og_image: communication-evenementiel-1200x630.jpg
 
 # Evenementiel : avant, pendant, apres
 
-Salons, conferences, meetups, petits dejeuners pro : l'evenementiel reste un levier puissant pour rencontrer ta cible en face a face. Mais beaucoup d'entreprises y vont mal preparees et oublient l'essentiel — le suivi apres. Un evenement reussi se joue en trois temps : avant, pendant, apres.
+Salons, conferences, meetups, petits dejeuners pro : l'evenementiel reste un levier puissant pour rencontrer ta cible en face a face. Mais beaucoup d'entreprises y vont mal preparees et oublient l'essentiel - le suivi apres. Un evenement reussi se joue en trois temps : avant, pendant, apres.
 
 <figure class="schema-figure">
   <img src="/assets/images/blog/schemas/com-event.svg" alt="Schema evenementiel avant pendant apres" class="schema-inline" width="640" />
@@ -51,7 +51,7 @@ Sur le stand ou en conference :
 
 - **Accueil souriant** : pose des questions avant de parler de toi
 - **Qualification** : note le profil, le besoin, le niveau d'interet de chaque contact
-- **Prise de notes** : au dos de la carte ou dans un CRM mobile — tu oublieras sinon
+- **Prise de notes** : au dos de la carte ou dans un CRM mobile - tu oublieras sinon
 - **Contenu live** : photos, stories, posts pour ceux absents et pour prolonger la visibilite
 
 Evite de rester assis derriere ton stand a regarder ton telephone. L'evenementiel, c'est du contact humain.

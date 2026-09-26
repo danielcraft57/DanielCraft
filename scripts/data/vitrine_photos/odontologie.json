@@ -13,10 +13,10 @@
       "alt": "Salle d'attente lumineuse de cabinet dentaire",
       "subject": "Bright welcoming dental clinic waiting room at Centre Mosaïque Thionville: white walls, teal accents, comfortable chairs, natural daylight, modern reception desk, reassuring family dental practice atmosphere",
       "contexts": [
-        { "page": "index.html", "section": "hero", "text": "Votre sourire, notre priorité à Thionville — quatre praticiens, plateau numérique" },
-        { "page": "soins.html", "section": "hero", "text": "Instruments dentaires stériles — soins adaptés à chaque âge" },
-        { "page": "equipe.html", "section": "hero", "text": "Équipe dentaire en blouse — quatre praticiens, une même exigence" },
-        { "page": "contact.html", "section": "hero", "text": "Accueil cabinet — 42 avenue de la République Thionville" }
+        { "page": "index.html", "section": "hero", "text": "Votre sourire, notre priorité à Thionville - quatre praticiens, plateau numérique" },
+        { "page": "soins.html", "section": "hero", "text": "Instruments dentaires stériles - soins adaptés à chaque âge" },
+        { "page": "equipe.html", "section": "hero", "text": "Équipe dentaire en blouse - quatre praticiens, une même exigence" },
+        { "page": "contact.html", "section": "hero", "text": "Accueil cabinet - 42 avenue de la République Thionville" }
       ]
     },
     {
@@ -27,9 +27,9 @@
       "alt": "Équipement dentaire numérique",
       "subject": "Digital dental imaging equipment in modern clinic: panoramic X-ray machine and intraoral scanner, clean medical room, teal and white interior, Thionville dental center",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Imagerie 3D — panoramique et scanner intra-oral" },
-        { "page": "soins.html", "section": "chapter", "text": "Parcours implant — de la pose à la couronne en 3 RDV" },
-        { "page": "equipe.html", "section": "chapter", "text": "Dr Leroy — 15 ans d'expérience en implantologie" }
+        { "page": "index.html", "section": "chapter", "text": "Imagerie 3D - panoramique et scanner intra-oral" },
+        { "page": "soins.html", "section": "chapter", "text": "Parcours implant - de la pose à la couronne en 3 RDV" },
+        { "page": "equipe.html", "section": "chapter", "text": "Dr Leroy - 15 ans d'expérience en implantologie" }
       ]
     },
     {
@@ -40,9 +40,9 @@
       "alt": "Salle de soins dentaire moderne",
       "subject": "Modern dental treatment room with ergonomic chair, overhead lamp, sterile instruments tray, headphones for patient comfort, bright clean Thionville dental clinic",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Salles de soins — fauteuils ergonomiques et musique au casque" },
-        { "page": "soins.html", "section": "chapter", "text": "Soins enfants — pédodontie bienveillante dès 3 ans" },
-        { "page": "equipe.html", "section": "chapter", "text": "Dr Ben Saïd — orthodontie et aligneurs" }
+        { "page": "index.html", "section": "chapter", "text": "Salles de soins - fauteuils ergonomiques et musique au casque" },
+        { "page": "soins.html", "section": "chapter", "text": "Soins enfants - pédodontie bienveillante dès 3 ans" },
+        { "page": "equipe.html", "section": "chapter", "text": "Dr Ben Saïd - orthodontie et aligneurs" }
       ]
     },
     {
@@ -53,9 +53,9 @@
       "alt": "Espace enfants au cabinet",
       "subject": "Friendly children's corner in dental clinic with colorful toys, soft seating, gentle welcoming decor for pediatric patients, Thionville family dental practice",
       "contexts": [
-        { "page": "index.html", "section": "chapter", "text": "Espace enfants — coin ludique et protocole douceur" },
-        { "page": "soins.html", "section": "chapter", "text": "Urgences — douleur aiguë, appelez avant 11 h" },
-        { "page": "equipe.html", "section": "chapter", "text": "Assistantes — coordination RDV et suivi post-opératoire" }
+        { "page": "index.html", "section": "chapter", "text": "Espace enfants - coin ludique et protocole douceur" },
+        { "page": "soins.html", "section": "chapter", "text": "Urgences - douleur aiguë, appelez avant 11 h" },
+        { "page": "equipe.html", "section": "chapter", "text": "Assistantes - coordination RDV et suivi post-opératoire" }
       ]
     },
     {
@@ -66,8 +66,8 @@
       "alt": "Résultat naturel en une séance",
       "subject": "Natural professional teeth whitening result close-up, healthy white smile, soft clinical lighting, aesthetic dentistry outcome",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Blanchiment — résultat naturel en une séance" },
-        { "page": "equipe.html", "section": "gallery", "text": "Formation — congrès à Strasbourg" }
+        { "page": "index.html", "section": "gallery", "text": "Blanchiment - résultat naturel en une séance" },
+        { "page": "equipe.html", "section": "gallery", "text": "Formation - congrès à Strasbourg" }
       ]
     },
     {
@@ -78,8 +78,8 @@
       "alt": "Créneaux réservés chaque jour",
       "subject": "Dental team morning briefing at clinic, friendly professional atmosphere, coffee and planning, authentic workplace moment Thionville",
       "contexts": [
-        { "page": "index.html", "section": "gallery", "text": "Urgences — créneaux réservés chaque jour" },
-        { "page": "equipe.html", "section": "gallery", "text": "Vie de cabinet — petit-déjeuner d'équipe mensuel" }
+        { "page": "index.html", "section": "gallery", "text": "Urgences - créneaux réservés chaque jour" },
+        { "page": "equipe.html", "section": "gallery", "text": "Vie de cabinet - petit-déjeuner d'équipe mensuel" }
       ]
     },
     {
@@ -90,8 +90,8 @@
       "alt": "Contrôle dentaire",
       "subject": "Dental check-up and prevention: dentist examining patient with mirror and probe, clean clinical close-up, preventive care",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Prévention — détartrage, scellements et bilans annuels" },
-        { "page": "soins.html", "section": "card", "text": "Détartrage — 45 € remboursé Sécu" }
+        { "page": "index.html", "section": "card", "text": "Prévention - détartrage, scellements et bilans annuels" },
+        { "page": "soins.html", "section": "card", "text": "Détartrage - 45 € remboursé Sécu" }
       ]
     },
     {
@@ -102,8 +102,8 @@
       "alt": "Sourire blanchi",
       "subject": "Aesthetic dentistry: natural white smile after professional whitening or ceramic veneers, soft focus dental esthetics",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Esthétique — facettes et blanchiment professionnel" },
-        { "page": "soins.html", "section": "card", "text": "Couronne céramique — devis sous 48 h" }
+        { "page": "index.html", "section": "card", "text": "Esthétique - facettes et blanchiment professionnel" },
+        { "page": "soins.html", "section": "card", "text": "Couronne céramique - devis sous 48 h" }
       ]
     },
     {
@@ -114,8 +114,8 @@
       "alt": "Implant dentaire",
       "subject": "Dental implant and clear aligners on clinical tray: computer-guided implantology and invisible orthodontics, modern Thionville dental care",
       "contexts": [
-        { "page": "index.html", "section": "card", "text": "Implants — pose guidée par ordinateur" },
-        { "page": "soins.html", "section": "card", "text": "Aligneurs — orthodontie invisible adulte" }
+        { "page": "index.html", "section": "card", "text": "Implants - pose guidée par ordinateur" },
+        { "page": "soins.html", "section": "card", "text": "Aligneurs - orthodontie invisible adulte" }
       ]
     }
   ]

@@ -1,4 +1,4 @@
-"""SEO vitrines — Open Graph, Twitter, canonical, Schema.org microdata inline."""
+"""SEO vitrines - Open Graph, Twitter, canonical, Schema.org microdata inline."""
 from __future__ import annotations
 
 import json
@@ -146,7 +146,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "immobilier": _entity(
         "RealEstateAgent",
         name="Patrimoine Lorraine Metz",
-        description="Agence immobilière Metz — vente, location et estimation",
+        description="Agence immobilière Metz - vente, location et estimation",
         telephone="+33387361214",
         address=_addr("14 rue des Clercs", "Metz", "57000"),
         geo=_geo(49.1097, 6.1761),
@@ -154,7 +154,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "juridique": _entity(
         "LegalService",
         name="Rivière & Partenaires",
-        description="Cabinet d'avocats Metz — droit des affaires, social et contentieux",
+        description="Cabinet d'avocats Metz - droit des affaires, social et contentieux",
         telephone="+33387759012",
         address=_addr("12 avenue Foch", "Metz", "57000"),
         geo=_geo(49.1193, 6.1757),
@@ -162,7 +162,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "architecture": _entity(
         "ProfessionalService",
         name="Atelier Nord-Est",
-        description="Agence d'architecture Metz — réhabilitation et conception durable",
+        description="Agence d'architecture Metz - réhabilitation et conception durable",
         telephone="+33387661234",
         address=_addr("14 rue du XXe Corps", "Metz", "57000"),
         geo=_geo(49.1193, 6.1757),
@@ -170,7 +170,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "fitness": _entity(
         "SportsActivityLocation",
         name="Pulse Fitness Metz",
-        description="Salle de sport Metz — cours collectifs, musculation et essai gratuit",
+        description="Salle de sport Metz - cours collectifs, musculation et essai gratuit",
         telephone="+33387554000",
         address=_addr("42 avenue de Strasbourg", "Metz", "57000"),
         geo=_geo(49.1193, 6.1757),
@@ -185,7 +185,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "photographie": _entity(
         "ProfessionalService",
         name="Studio Lumière Grise",
-        description="Photographe mariage et corporate à Metz — reportages et portraits",
+        description="Photographe mariage et corporate à Metz - reportages et portraits",
         telephone="+33387214560",
         address=_addr("12 rue des Clercs", "Metz", "57000"),
         geo=_geo(49.1097, 6.1761),
@@ -193,7 +193,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "association": _entity(
         "NGO",
         name="Solidarités Metz Métropole",
-        description="Association d'utilité publique Metz — aide alimentaire, insertion et bénévolat",
+        description="Association d'utilité publique Metz - aide alimentaire, insertion et bénévolat",
         telephone="+33387345678",
         address=_addr("22 rue du Sablon", "Metz", "57000"),
         geo=_geo(49.1193, 6.1757),
@@ -201,7 +201,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "education": _entity(
         "EducationalOrganization",
         name="Institut Mercure",
-        description="Centre de formation professionnelle Thionville — alternance et reconversion",
+        description="Centre de formation professionnelle Thionville - alternance et reconversion",
         telephone="+33382884500",
         address=_addr("15 avenue des Deux Fontaines", "Thionville", "57100"),
         geo=_geo(49.3578, 6.1694),
@@ -217,7 +217,7 @@ ENTITIES: dict[str, dict[str, Any]] = {
     "etablissement": _entity(
         "Hotel",
         name="Hôtel Stanislas Collection",
-        description="Hôtel 4 étoiles Nancy — place Stanislas, spa et séminaires",
+        description="Hôtel 4 étoiles Nancy - place Stanislas, spa et séminaires",
         telephone="+33383541234",
         starRating="4",
         address=_addr("2 place Stanislas", "Nancy", "54000"),
@@ -225,27 +225,27 @@ ENTITIES: dict[str, dict[str, Any]] = {
     ),
     "technologie": _saas_entity(
         "Synapse Lorraine",
-        "Plateforme data B2B pour industriels du Grand Est — lakehouse, pipelines et catalogues",
+        "Plateforme data B2B pour industriels du Grand Est - lakehouse, pipelines et catalogues",
         "4.7",
         45,
     ),
     "saas-landing": _saas_entity(
         "FlowMetrics",
-        "SaaS analytics pour équipes produit — funnels, rétention et activation",
+        "SaaS analytics pour équipes produit - funnels, rétention et activation",
     ),
     "saas-onboarding": _saas_entity(
         "TalentLoop",
-        "Onboarding RH en 4 étapes — parcours guidé et barre de progression",
+        "Onboarding RH en 4 étapes - parcours guidé et barre de progression",
     ),
     "saas-dashboard": _saas_entity(
         "MetricPulse",
-        "Dashboard activation produit — KPIs time-to-value et funnel onboarding",
+        "Dashboard activation produit - KPIs time-to-value et funnel onboarding",
         "4.7",
         95,
     ),
     "saas-empty": _saas_entity(
         "QueryBase",
-        "Empty states et recherche intelligente — zéro impasse utilisateur",
+        "Empty states et recherche intelligente - zéro impasse utilisateur",
         "4.6",
         80,
     ),

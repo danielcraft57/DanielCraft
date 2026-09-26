@@ -1,5 +1,5 @@
 /**
- * Fiches vitrines : aperçu des captures longues — léger défilement automatique
+ * Fiches vitrines : aperçu des captures longues - léger défilement automatique
  * dans le cadre (une fois à l'entrée dans le viewport), puis retour en haut.
  * Respecte prefers-reduced-motion.
  */

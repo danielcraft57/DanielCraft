@@ -81,7 +81,7 @@ def write_article(slug: str, order: int, date: str, name: str, fam: str, excerpt
     print(f"{path.name}: {len(path.read_text(encoding='utf-8').splitlines())} lines")
 
 
-# Corps détaillés — Strategy (exemple de gabarit riche)
+# Corps détaillés - Strategy (exemple de gabarit riche)
 STRATEGY_BODY = """
 ---
 
@@ -104,7 +104,7 @@ function shipping(cost: number, mode: string) {
 }
 ```
 
-Chaque nouveau mode (point relais, livraison verte) force à modifier cette fonction — risque de régression sur les modes existants.
+Chaque nouveau mode (point relais, livraison verte) force à modifier cette fonction - risque de régression sur les modes existants.
 
 ---
 
@@ -231,7 +231,7 @@ class Checkout:
 ## Quand ne pas l'utiliser
 
 - Une seule implémentation, stable depuis 2 ans.
-- Deux lignes de logique — une fonction suffit.
+- Deux lignes de logique - une fonction suffit.
 
 ---
 
@@ -265,7 +265,7 @@ DECORATOR_BODY = """
 
 ## Le problème
 
-Tu as `FileReader` et tu veux : buffer, compression, chiffrement — dans n'importe quel ordre. Hériter `BufferedCompressedEncryptedReader` explose le nombre de classes.
+Tu as `FileReader` et tu veux : buffer, compression, chiffrement - dans n'importe quel ordre. Hériter `BufferedCompressedEncryptedReader` explose le nombre de classes.
 
 ---
 
@@ -372,7 +372,7 @@ class EncryptionDecorator(DataSource):
 
 ## Pièges
 
-- Trop de couches = debug difficile — loggue la chaîne.
+- Trop de couches = debug difficile - loggue la chaîne.
 - Ne pas respecter Liskov : le décorateur doit rester substituable.
 
 ---
@@ -465,17 +465,17 @@ def mk_body(
 
 ## Pas à pas : comment l'implémenter
 
-1. **Nomme le problème** — est-ce vraiment ce pattern ou un simple refactor ?
-2. **Définis les interfaces** — ce que le client voit vs les implémentations.
-3. **Écris un test** — comportement attendu avant la structure « pattern ».
-4. **Implémente une variante** — une seule suffit pour valider.
-5. **Documente en équipe** — « ici on utilise X parce que… ».
+1. **Nomme le problème** - est-ce vraiment ce pattern ou un simple refactor ?
+2. **Définis les interfaces** - ce que le client voit vs les implémentations.
+3. **Écris un test** - comportement attendu avant la structure « pattern ».
+4. **Implémente une variante** - une seule suffit pour valider.
+5. **Documente en équipe** - « ici on utilise X parce que… ».
 
 ---
 
 ## Cas réel en entreprise
 
-Tu retrouveras ce pattern dans des frameworks que tu utilises déjà : middleware web, composants UI, ORM, pipelines CI. En entretien, explique le **problème** avant le nom du pattern — c'est ce qui marque les juniors matures.
+Tu retrouveras ce pattern dans des frameworks que tu utilises déjà : middleware web, composants UI, ORM, pipelines CI. En entretien, explique le **problème** avant le nom du pattern - c'est ce qui marque les juniors matures.
 
 ---
 
@@ -488,7 +488,7 @@ Tu retrouveras ce pattern dans des frameworks que tu utilises déjà : middlewar
 
 ---
 
-## Exercice pratique (20–30 min)
+## Exercice pratique (20-30 min)
 
 {exercise}
 
@@ -511,7 +511,7 @@ def py_block(code: str) -> str:
 # (slug, order, date, name, family, excerpt, body via mk_body)
 _META = [
     ("design-patterns-singleton", 2, "2026-04-02", "Singleton", "Créationnel",
-     "Une seule instance partagée avec point d'accès contrôlé — utile pour config et logger, dangereux comme variable globale déguisée."),
+     "Une seule instance partagée avec point d'accès contrôlé - utile pour config et logger, dangereux comme variable globale déguisée."),
     ("design-patterns-factory-method", 3, "2026-04-03", "Factory Method", "Créationnel",
      "Délègue la création d'objets aux sous-classes pour supprimer les if/else de type partout dans le client."),
     ("design-patterns-abstract-factory", 4, "2026-04-04", "Abstract Factory", "Créationnel",
@@ -519,21 +519,21 @@ _META = [
     ("design-patterns-builder", 5, "2026-04-05", "Builder", "Créationnel",
      "Construit des objets complexes étape par étape (SQL, burgers, configs) sans constructeurs à 15 paramètres."),
     ("design-patterns-prototype", 6, "2026-04-06", "Prototype", "Créationnel",
-     "Clone des objets existants au lieu de recréer depuis zéro — pratique pour templates et configs lourdes."),
+     "Clone des objets existants au lieu de recréer depuis zéro - pratique pour templates et configs lourdes."),
     ("design-patterns-adapter", 7, "2026-04-07", "Adapter", "Structurel",
-     "Fait collaborer une API existante avec ton interface attendue — le pont entre legacy et code moderne."),
+     "Fait collaborer une API existante avec ton interface attendue - le pont entre legacy et code moderne."),
     ("design-patterns-bridge", 8, "2026-04-08", "Bridge", "Structurel",
      "Sépare abstraction et implémentation pour qu'elles évoluent sans explosion combinatoire de classes."),
     ("design-patterns-composite", 9, "2026-04-09", "Composite", "Structurel",
-     "Traite feuilles et conteneurs uniformément — menus, dossiers, scènes de jeu."),
+     "Traite feuilles et conteneurs uniformément - menus, dossiers, scènes de jeu."),
     ("design-patterns-facade", 11, "2026-04-11", "Facade", "Structurel",
-     "Interface simple au-dessus d'un sous-système complexe — démarrage app, SDK paiement."),
+     "Interface simple au-dessus d'un sous-système complexe - démarrage app, SDK paiement."),
     ("design-patterns-flyweight", 12, "2026-04-12", "Flyweight", "Structurel",
-     "Partage l'état intrinsèque pour des milliers d'objets similaires — jeux, éditeurs de texte."),
+     "Partage l'état intrinsèque pour des milliers d'objets similaires - jeux, éditeurs de texte."),
     ("design-patterns-proxy", 13, "2026-04-13", "Proxy", "Structurel",
      "Substitut contrôlant l'accès : lazy load, cache, permissions, logging."),
     ("design-patterns-chain-of-responsibility", 14, "2026-04-14", "Chain of Responsibility", "Comportemental",
-     "Chaîne de handlers qui traitent ou transmettent une requête — middleware HTTP."),
+     "Chaîne de handlers qui traitent ou transmettent une requête - middleware HTTP."),
     ("design-patterns-command", 15, "2026-04-15", "Command", "Comportemental",
      "Encapsule une action en objet pour undo, redo, files d'attente et macros."),
     ("design-patterns-iterator", 16, "2026-04-16", "Iterator", "Comportemental",
@@ -541,11 +541,11 @@ _META = [
     ("design-patterns-mediator", 17, "2026-04-17", "Mediator", "Comportemental",
      "Centralise les échanges entre composants pour éviter le maillage N×N."),
     ("design-patterns-memento", 18, "2026-04-18", "Memento", "Comportemental",
-     "Sauvegarde et restaure l'état sans casser l'encapsulation — undo, checkpoints."),
+     "Sauvegarde et restaure l'état sans casser l'encapsulation - undo, checkpoints."),
     ("design-patterns-state", 20, "2026-04-20", "State", "Comportemental",
-     "Comportement qui change avec l'état interne — workflow commande, machine à états."),
+     "Comportement qui change avec l'état interne - workflow commande, machine à états."),
     ("design-patterns-template-method", 22, "2026-04-22", "Template Method", "Comportemental",
-     "Squelette d'algorithme fixe, étapes variables en sous-classes — pipelines ETL."),
+     "Squelette d'algorithme fixe, étapes variables en sous-classes - pipelines ETL."),
     ("design-patterns-visitor", 23, "2026-04-23", "Visitor", "Comportemental",
      "Ajoute des opérations sur une structure sans modifier chaque classe de nœud."),
     ("design-patterns-interpreter", 24, "2026-04-24", "Interpreter", "Comportemental",
@@ -588,7 +588,7 @@ console.log(a === b);"""),
             "- Singleton par défaut partout.\n- Stocker toute l'app dedans (God Object).",
             "- **Factory** pour création.\n- Injection de dépendances.",
             "Remplace ton Singleton par injection de `Config` en paramètre ; compare les tests.",
-            "Une instance, un accès — à utiliser avec parcimonie.",
+            "Une instance, un accès - à utiliser avec parcimonie.",
         ),
         "design-patterns-factory-method": mk_body(
             "La Factory Method délègue la création aux sous-classes.",
@@ -614,7 +614,7 @@ class PdfService extends ExportService {
             "- Confondre avec Abstract Factory.\n- Hiérarchie trop profonde pour 2 cas.",
             "- **Abstract Factory**, **Simple Factory**.",
             "Notifications Email/SMS/Push : ajoute Slack sans modifier `sendAlert()`.",
-            "Création polymorphe via sous-classes — Open/Closed.",
+            "Création polymorphe via sous-classes - Open/Closed.",
         ),
         "design-patterns-abstract-factory": mk_body(
             "L'Abstract Factory produit des familles d'objets cohérents.",

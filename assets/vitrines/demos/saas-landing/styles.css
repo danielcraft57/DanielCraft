@@ -1,4 +1,4 @@
-/* FlowMetrics — maquette saas-landing : teal mint, Outfit + DM Sans */
+/* FlowMetrics - maquette saas-landing : teal mint, Outfit + DM Sans */
 :root {
   --vt-paper: #f0fdfa;
   --vt-teal: #0f766e;
@@ -13,6 +13,11 @@
   --bs-link-color: var(--vt-teal);
   --bs-link-hover-color: var(--vt-teal-deep);
   --bs-font-sans-serif: "DM Sans", system-ui, sans-serif;
+  --vt-surface: var(--vt-paper, var(--bs-body-bg, #fff));
+  --vt-surface-container: var(--vt-card, var(--vt-surface-container, #f5f5f5));
+  --vt-outline: var(--vt-border, var(--vt-line, rgba(0,0,0,0.12)));
+  --vt-chip-bg: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 14%, transparent);
+  --vt-chip-hover: color-mix(in srgb, var(--vt-accent, var(--bs-primary, #6750a4)) 22%, transparent);
 }
 
 body.vt-body-saas-landing {

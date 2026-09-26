@@ -1,0 +1,129 @@
+{
+  "slug": "coiffure",
+  "brand": "Salon Rivage",
+  "category": "beaute",
+  "locale": "Thionville, Grand Est, France",
+  "style_suffix": "Modern beauty salon magazine look Thionville Moselle, soft daylight, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Salon de coiffure a Thionville",
+      "subject": "Bright modern hair salon interior overlooking Moselle river light: mirrors, black chairs, greenery, magazine beauty aesthetic, clean floors",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Salon de coiffure a Thionville"
+        }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Coupe courte",
+      "subject": "Stylish short haircut on model, soft studio light, beauty magazine cover feel",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Coupe courte"
+        }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Balayage",
+      "subject": "Balayage hair color transformation close-up, sunlit strands, soft blush tones",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Balayage"
+        }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Brushing",
+      "subject": "Blow-dry brushing session, hairdresser with round brush, salon mirror reflection",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "card",
+          "text": "Brushing"
+        }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Coupe en cours",
+      "subject": "Hairdresser cutting hair carefully, scissors and comb, calm salon atmosphere",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Coupe en cours"
+        }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Coloration",
+      "subject": "Hair color application with foils, professional cape, pastel salon shelves",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Coloration"
+        }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Soin cheveux",
+      "subject": "Hair treatment mask application, steam towel, wellness beauty mood",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "scene",
+          "text": "Soin cheveux"
+        }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Espace lavage",
+      "subject": "Salon wash area with ceramic basins, soft towels, natural daylight from large windows",
+      "contexts": [
+        {
+          "page": "index.html",
+          "section": "gallery",
+          "text": "Espace lavage"
+        }
+      ]
+    }
+  ]
+}

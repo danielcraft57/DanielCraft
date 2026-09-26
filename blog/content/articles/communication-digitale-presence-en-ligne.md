@@ -46,7 +46,7 @@ Au-dela des faits, ton ton doit rester reconnaissable. Tu peux adapter le format
 
 - Memes valeurs et promesses
 - Memes preuves (cas clients, certifications)
-- Memes visuels (logo, couleurs — voir ta charte graphique)
+- Memes visuels (logo, couleurs - voir ta charte graphique)
 
 Si ton site parle de « accompagnement sur mesure » et ton profil LinkedIn de « solutions low cost », le decalage interpelle.
 
@@ -69,7 +69,7 @@ Une presence en ligne n'est pas un projet « one shot ». Planifie des verificat
 - Liens qui fonctionnent
 - Contenus recents (meme un article ou un post par mois montre que l'activite est vivante)
 
-Un site fige depuis trois ans laisse penser que l'entreprise aussi. Prevoyez aussi une relecture apres chaque changement d'offre, de tarif ou de coordonnees. Une simple checklist trimestrielle — site, profils, liens, contenus recents — evite les oublis qui coutent cher en credibilite.
+Un site fige depuis trois ans laisse penser que l'entreprise aussi. Prevoyez aussi une relecture apres chaque changement d'offre, de tarif ou de coordonnees. Une simple checklist trimestrielle - site, profils, liens, contenus recents - evite les oublis qui coutent cher en credibilite.
 
 ## Conclusion
 

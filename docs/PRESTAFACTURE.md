@@ -1,7 +1,7 @@
-# Prestafacture — API publique (notes DanielCraft)
+# Prestafacture - API publique (notes DanielCraft)
 
 Source : doc Prestafacture (2026). Prefixe : `/api/public/…`  
-Auth : `Authorization: Bearer fact_…` (jetons dans Parametres → API — Jetons)  
+Auth : `Authorization: Bearer fact_…` (jetons dans Parametres → API - Jetons)  
 Format : JSON UTF-8. Plan **Pro** (ou superieur) requis.
 
 ## Config locale
@@ -34,9 +34,9 @@ curl -s -H "Authorization: Bearer $PRESTAFACTURE_API_TOKEN" \
 | Facture deja payee (Stripe audit / livres) | `POST /factures` (`paidExternally: true`) puis `POST /factures/:id/send` | `factures.read`, `factures.write`, `factures.send` |
 
 Code PHP : `api/prestafacture-common.php`  
-- `prestafacture_issue_audit_invoice` — facture PAID + email PDF  
-- `prestafacture_issue_quote_devis` — devis + envoi  
-- Avoirs : **pas dans l'API publique** (a creer dans l'UI) — voir section remboursement ci-dessous
+- `prestafacture_issue_audit_invoice` - facture PAID + email PDF  
+- `prestafacture_issue_quote_devis` - devis + envoi  
+- Avoirs : **pas dans l'API publique** (a creer dans l'UI) - voir section remboursement ci-dessous
 
 ## Parcours (ce qu'on peut / ne peut pas faire)
 
@@ -44,14 +44,14 @@ Code PHP : `api/prestafacture-common.php`
 
 | Parcours | Qui encaisse ? | Role Prestafacture | Chez DanielCraft |
 |----------|----------------|--------------------|------------------|
-| **A — Devis** | Plus tard (virement / Stripe / autre) | Creer + envoyer devis ; client accepte / refuse via page publique (`publicToken`) | Prestations (`prestafacture_issue_quote_devis`) |
-| **B — Facture deja payee** | **Externe** (Stripe, Woo, virement…) | `paidExternally: true` → statut PAID → email PDF **sans** lien de paiement | Audit premium apres Stripe ; **livres PDF** apres Stripe |
-| **C — Facture a payer** | Selon config Prestafacture (lien eventuel sur page `/public/invoices/:token`) | Creer facture **sans** `paidExternally`, puis `send` — le PDF peut inclure un **lien de paiement** cote app | **Non utilise** aujourd'hui (on force le parcours B apres Stripe) |
+| **A - Devis** | Plus tard (virement / Stripe / autre) | Creer + envoyer devis ; client accepte / refuse via page publique (`publicToken`) | Prestations (`prestafacture_issue_quote_devis`) |
+| **B - Facture deja payee** | **Externe** (Stripe, Woo, virement…) | `paidExternally: true` → statut PAID → email PDF **sans** lien de paiement | Audit premium apres Stripe ; **livres PDF** apres Stripe |
+| **C - Facture a payer** | Selon config Prestafacture (lien eventuel sur page `/public/invoices/:token`) | Creer facture **sans** `paidExternally`, puis `send` - le PDF peut inclure un **lien de paiement** cote app | **Non utilise** aujourd'hui (on force le parcours B apres Stripe) |
 
 ### Reponse courte : « on peut payer avec ? »
 
 - **Payer la commande web (livres / audit)** : **oui via Stripe** sur danielcraft.fr, puis Prestafacture **enregistre** la facture payee (parcours B).
-- **Payer « dans » Prestafacture** comme checkout e-commerce : **pas via l'API publique** documentee ; au mieux un lien sur une facture non payee (parcours C), a activer dans l'UI Prestafacture — ce n'est pas le flux recommande pour la boutique livres.
+- **Payer « dans » Prestafacture** comme checkout e-commerce : **pas via l'API publique** documentee ; au mieux un lien sur une facture non payee (parcours C), a activer dans l'UI Prestafacture - ce n'est pas le flux recommande pour la boutique livres.
 
 ### Flux recommande boutique livres
 
@@ -91,18 +91,18 @@ LIVRE_DOWNLOAD_LOCK_HOURS=24
 | Timing | min. 2 s entre chargement page et envoi |
 | Rate soft | 30 lookups / 15 min / IP |
 | Download | PDF uniquement via `token` (plus via `code=`) |
-| Delai | 250–600 ms apres chaque echec |
+| Delai | 250-600 ms apres chaque echec |
 
 ### Distinction importante
 
-| | Stripe | Prestafacture |
+| oui | Stripe | Prestafacture |
 |--|--------|---------------|
 | Encaissement CB | Oui | Non (API publique) |
 | Facture comptable PDF | Non | Oui |
 | Devis accepter/refuser | Non | Oui |
 | Metadata commande (`livre_slug`, etc.) | Oui | Lignes descriptives |
 
-## Paiement externe + email (parcours B — type e-commerce)
+## Paiement externe + email (parcours B - type e-commerce)
 
 Cas : commande reglee ailleurs (Stripe, Woo…). Prestafacture enregistre la facture **payee** puis envoie le PDF.
 
@@ -138,14 +138,14 @@ Exemple corps create :
 ## Clients
 
 - `GET /clients?page=&pageSize=&search=`
-- `POST /clients` — `{ name, email, countryCode, isCompany? }` — email existant → client reutilise
+- `POST /clients` - `{ name, email, countryCode, isCompany? }` - email existant → client reutilise
 - `PATCH` / `DELETE` `/clients/:id`
 
 ## Produits
 
 - `GET /produits?search=&kind=`
-- `GET /produits/sku/:sku` — SKU exact
-- `POST /produits` — `name`, `sku`, `unitPrice`, `kind`, `techStack`, `details` / `livrables`
+- `GET /produits/sku/:sku` - SKU exact
+- `POST /produits` - `name`, `sku`, `unitPrice`, `kind`, `techStack`, `details` / `livrables`
 - Visuel omis → icon-gradient ou `library:…` aleatoire
 - Catalogue livrables : `GET /produits/livrables/catalog?q=`
 
@@ -153,7 +153,7 @@ Exemple corps create :
 
 `clientId` = **string** (ex. `"kl644kqh8r"`), pas un entier.
 
-Lignes — un seul mode par ligne :
+Lignes - un seul mode par ligne :
 
 1. Manuelle : `description` + `unitPrice` + `quantity` (+ `taxRate`)
 2. Catalogue : `productId` seul (+ `quantity`)
@@ -161,7 +161,7 @@ Lignes — un seul mode par ligne :
 
 Ne pas combiner `productId` et `productSku` sur la meme ligne.
 
-Envoi : `POST /devis/:id/send` — PDF + liens accepter / refuser (`publicToken`).
+Envoi : `POST /devis/:id/send` - PDF + liens accepter / refuser (`publicToken`).
 
 ## Import catalogue
 
@@ -173,7 +173,7 @@ Envoi : `POST /devis/:id/send` — PDF + liens accepter / refuser (`publicToken`
 
 Deux systemes distincts : Stripe rend l'argent, Prestafacture corrige la compta.
 
-**Stripe** (encaissement) — helper `stripe_refund_payment_intent()` dans `api/stripe-common.php`, script :
+**Stripe** (encaissement) - helper `stripe_refund_payment_intent()` dans `api/stripe-common.php`, script :
 
 ```bash
 python scripts/stripe_refund.py --session cs_live_xxx --env .env.prod
@@ -182,14 +182,14 @@ python scripts/stripe_refund.py --payment-intent pi_xxx --env .env.prod
 
 Raisons Stripe : `requested_by_customer` (defaut), `duplicate`, `fraudulent`. Pas d'endpoint HTTP public.
 
-**Prestafacture** (facture PDF) — l'API publique (`GET /api/public`) n'expose que `clients`, `produits`, `factures`, `devis`. **Pas de ressource avoirs** (`POST /avoirs`, `/factures/:id/avoir` → 404). Un `POST /factures` avec `type: AVOIR` cree une **nouvelle facture PAID**, pas un avoir.
+**Prestafacture** (facture PDF) - l'API publique (`GET /api/public`) n'expose que `clients`, `produits`, `factures`, `devis`. **Pas de ressource avoirs** (`POST /avoirs`, `/factures/:id/avoir` → 404). Un `POST /factures` avec `type: AVOIR` cree une **nouvelle facture PAID**, pas un avoir.
 
 Les factures ont un champ `appliedAvoirs` : les avoirs existent dans l'app, pas dans l'API Bearer. Apres un refund Stripe : ouvrir la facture dans Prestafacture → **creer un avoir** a la main, puis l'envoyer au client si besoin.
 
 ## Pages publiques (hors jeton API)
 
-`/public/invoices/:token`, etc. — distinctes de l'API Bearer.
+`/public/invoices/:token`, etc. - distinctes de l'API Bearer.
 
 ## SSE (app web)
 
-`GET /api/realtime/stream` — session JWT, hors jeton API. Un produit cree/modifie via API rafraichit le catalogue cote UI.
+`GET /api/realtime/stream` - session JWT, hors jeton API. Un produit cree/modifie via API rafraichit le catalogue cote UI.

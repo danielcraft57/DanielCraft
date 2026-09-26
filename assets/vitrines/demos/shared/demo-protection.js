@@ -20,7 +20,7 @@
   var muted = document.createElement("span");
   muted.className = "dc-demo-strip-muted";
   muted.textContent =
-    "Démo en ligne uniquement — le code source et les fichiers sont réservés aux acheteurs. " +
+    "Démo en ligne uniquement - le code source et les fichiers sont réservés aux acheteurs. " +
     "Toute réutilisation ou republication sans accord est interdite.";
 
   var link = document.createElement("a");
@@ -42,7 +42,7 @@
 
   if (typeof console !== "undefined" && console.info) {
     console.info(
-      "[DanielCraft] Maquette de démonstration — sources non libres. " +
+      "[DanielCraft] Maquette de démonstration - sources non libres. " +
         "Pour une version exploitable : achat sur la fiche vitrine."
     );
   }

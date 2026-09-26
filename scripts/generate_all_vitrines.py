@@ -25,7 +25,7 @@ def gen_education():
   <section class="edu-intro vt-reveal">
     <p class="edu-tag">Nancy · formations pro</p>
     <h1>Apprendre en <em>Moselle-Est</em></h1>
-    <p>Parcours métiers, alternance et VAE — campus digital et salles à Saint-Nicolas.</p>
+    <p>Parcours métiers, alternance et VAE - campus digital et salles à Saint-Nicolas.</p>
   </section>
   <section id="parcours" class="edu-snap vt-reveal" aria-label="Parcours">
     <h2>Parcours (scroll horizontal)</h2>
@@ -78,7 +78,7 @@ body{margin:0;font-family:system-ui,sans-serif;background:#0f2744;color:#fff}
 .edu-foot{padding:2rem;text-align:center;opacity:.8}
 @media(max-width:700px){.edu-bento-grid{grid-template-columns:1fr 1fr}}
 """
-    write_demo("education", "campus-snap", "tailwind", "Institut Mercure — Éducation",
+    write_demo("education", "campus-snap", "tailwind", "Institut Mercure - Éducation",
                "Formations professionnelles à Nancy et en Moselle.", body, css)
 
 
@@ -122,7 +122,7 @@ body{margin:0;font-family:system-ui,sans-serif}
 .svc-foot{padding:3rem 1.5rem;text-align:center;background:#0ea5e9;color:#fff}
 @media(max-width:800px){.svc-zig{grid-template-columns:1fr}.svc-zig-media img{min-height:50vh}}
 """
-    write_demo("services", "zigzag-ops", "tailwind", "Proprio Facility — Services",
+    write_demo("services", "zigzag-ops", "tailwind", "Proprio Facility - Services",
                "Facility management et services aux entreprises en Lorraine.", body, css)
 
 

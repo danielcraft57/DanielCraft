@@ -1,4 +1,4 @@
-# Prompts images — catalogue prestations & packs
+# Prompts images - catalogue prestations & packs
 
 A generer (JPG/WebP **produit** : 1200x630 cartes, 800x800 ou 4:3 fiche hero).
 Palette site : navy `#0f3550`, ciel `#4da9d6`, mint `#7dd4a8`, fond clair `#e8f6fc` / blanc.
@@ -223,7 +223,7 @@ Floating product composition over blurred French shop facade, shallow DOF, premi
 Soft isometric 3D product diorama on a mint-to-ice gradient podium, clean soft shadows, marketplace packshot. stacked soft product cards with pack icons (store, map pin, chat), navy-to-sky gradient backdrop, mint ribbon space empty for overlay text. Shot as a digital product / catalog image for a service card. Palette DanielCraft only: navy #0f3550, sky #4da9d6, mint #7dd4a8, soft ice #e8f6fc, white. No purple, no cream-terracotta, no neon glow. No readable brand logos (Google/WhatsApp as generic shapes only). No text logos. Aspect 1:1.
 
 ## Notes generation
-- Eviter logos de marques protegees (WhatsApp, Google) — formes generiques.
+- Eviter logos de marques protegees (WhatsApp, Google) - formes generiques.
 - Preferer UI sans texte lisible.
 - Une fois generes : pointer `image` dans `prestations.json` vers le JPG (pas SVG) pour activer le hero fiche.
 - Pour les cadres hub : optionnellement `categories[].image` dans prestations.json.

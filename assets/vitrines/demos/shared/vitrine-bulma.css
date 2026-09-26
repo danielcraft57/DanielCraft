@@ -1,7 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
 
 /**
- * Base vitrines DanielCraft — Bulma (CDN) + cadres lisibles, type « vitrine ».
+ * Base vitrines DanielCraft - Bulma (CDN) + cadres lisibles, type « vitrine ».
  * Réf. frameworks alternatifs : https://www.codeur.com/blog/frameworks-frontend-alternatifs-bootstrap/
  */
 /* Icônes + libellés (nav, boutons) */
@@ -86,7 +86,7 @@ section[id] {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.12);
 }
 
-/* Visuels : cadre lisible sans monopoliser l’écran (lightbox conserve le détail) */
+/* Visuels : cadre lisible sans monopoliser l'écran (lightbox conserve le détail) */
 .vitrine-figure a.glightbox {
   display: block;
 }
@@ -161,7 +161,7 @@ section[id] {
   opacity: 0.85;
 }
 
-/* Tuiles Bulma : un peu plus d’air */
+/* Tuiles Bulma : un peu plus d'air */
 .tile.is-vitrine-child .box {
   height: 100%;
   min-height: 10rem;

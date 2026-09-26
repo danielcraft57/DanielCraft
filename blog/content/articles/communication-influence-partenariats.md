@@ -1,7 +1,7 @@
 ---
 title: "Influence : des partenariats qui ont du sens"
 date: 2024-04-02
-excerpt: "Affinite, transparence et valeur partagee — loin des achats opaques."
+excerpt: "Affinite, transparence et valeur partagee - loin des achats opaques."
 type: article
 tags: [communication, influence, partenariats, ambassadeurs, visibilite]
 series: communication-serie
@@ -30,7 +30,7 @@ Exemple concret : une entreprise de logiciel B2B gagnera plus avec un consultant
 
 ## Transparence et regles legales
 
-En France, tout contenu sponsorise doit etre clairement identifie : mention « partenariat », « publicite » ou equivalent selon la plateforme. La loi encadre aussi les pratiques commerciales trompeuses. Un partenariat opaque detruit la confiance — celle du public, celle du createur, et la tienne.
+En France, tout contenu sponsorise doit etre clairement identifie : mention « partenariat », « publicite » ou equivalent selon la plateforme. La loi encadre aussi les pratiques commerciales trompeuses. Un partenariat opaque detruit la confiance - celle du public, celle du createur, et la tienne.
 
 Regles simples a respecter :
 
@@ -69,7 +69,7 @@ Les likes ne suffisent pas. Suis des resultats concrets :
 - Ventes attribuees au code promo ou lien d'affiliation
 - Qualite des commentaires (questions, demandes d'info)
 
-Compare le cout du partenariat au resultat obtenu. Un partenariat rentable mais modeste vaut mieux qu'une campagne flashy sans conversion. Apres chaque collaboration, fais un mini-bilan : reach, clics, conversions, retours qualitatifs. Garde une liste de partenaires fiables pour des operations futures plutot que de repartir de zero a chaque campagne. La confiance se construit dans la duree — des partenariats renouveles avec les memes createurs affinent le message et reduisent les risques.
+Compare le cout du partenariat au resultat obtenu. Un partenariat rentable mais modeste vaut mieux qu'une campagne flashy sans conversion. Apres chaque collaboration, fais un mini-bilan : reach, clics, conversions, retours qualitatifs. Garde une liste de partenaires fiables pour des operations futures plutot que de repartir de zero a chaque campagne. La confiance se construit dans la duree - des partenariats renouveles avec les memes createurs affinent le message et reduisent les risques.
 
 ## Conclusion
 

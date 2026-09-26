@@ -100,7 +100,7 @@
   function initStaggerCards() {
     var cards = document.querySelectorAll(
       '.page-prestations-catalog .prestation-card, .page-livres .livre-card, ' +
-        '.prestation-detail-root .prestation-related-card'
+        '.prestation-detail-root .dc-reco-card, .prestation-detail-root .prestation-related-card'
     );
     if (!cards.length) return;
     cards.forEach(function (card, i) {

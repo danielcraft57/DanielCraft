@@ -59,7 +59,7 @@ Interface `ShippingStrategy` + implémentations ; le `Checkout` reçoit la strat
 
 ### Analogie du quotidien
 
-GPS : mode voiture / vélo / piéton — même destination, algorithme différent.
+GPS : mode voiture / vélo / piéton - même destination, algorithme différent.
 
 ---
 
@@ -151,11 +151,11 @@ Paiement Stripe (cartes, wallets). Tri : `Array.sort(compareFn)` en JS est Strat
 
 ## Questions fréquentes (FAQ)
 
-**C'est obligatoire en entretien ?** Non — on teste surtout ta capacité à reconnaître le problème. Le nom Strategy aide à communiquer en équipe.
+**C'est obligatoire en entretien ?** Non - on teste surtout ta capacité à reconnaître le problème. Le nom Strategy aide à communiquer en équipe.
 
-**Ça remplace les frameworks ?** Non — React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Strategy te permet de les utiliser correctement.
+**Ça remplace les frameworks ?** Non - React, Express ou Spring implémentent souvent ces idées pour toi. Comprendre Strategy te permet de les utiliser correctement.
 
-**Je dois tout refactoriser ?** Non — applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
+**Je dois tout refactoriser ?** Non - applique le pattern quand la douleur est réelle (nouveaux bugs à chaque feature).
 
 ---
 
@@ -176,11 +176,11 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ## Pas à pas : implémenter en 5 étapes
 
-1. **Nomme le problème** — est-ce vraiment Strategy ?
+1. **Nomme le problème** - est-ce vraiment Strategy ?
 2. **Dessine les rôles** sur papier (client, abstraction, implémentations).
 3. **Écris un test** qui décrit le comportement attendu.
-4. **Implémente une variante** — valide avant d'en ajouter d'autres.
-5. **Documente en équipe** — « ici on utilise Strategy parce que… ».
+4. **Implémente une variante** - valide avant d'en ajouter d'autres.
+5. **Documente en équipe** - « ici on utilise Strategy parce que… ».
 
 ---
 
@@ -193,7 +193,7 @@ Adapte ce squelette à ton framework (Jest, Vitest, pytest).
 
 ---
 
-## Exercice pratique (25–35 min)
+## Exercice pratique (25-35 min)
 
 Implémente `DiscountStrategy` (étudiant, membre, aucun) pour un panier e-commerce.
 
@@ -201,7 +201,7 @@ Implémente `DiscountStrategy` (étudiant, membre, aucun) pour un panier e-comme
 
 ## Résumé
 
-Strategy = algorithmes plugables — évite les switch qui grossissent à chaque release.
+Strategy = algorithmes plugables - évite les switch qui grossissent à chaque release.
 
 ---
 

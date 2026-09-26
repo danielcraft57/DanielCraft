@@ -36,8 +36,8 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "<span>Audit stack &amp; migration Kubernetes</span>",
         ),
         (
-            "Aucune prestation réelle — parcours graphique pour portfolio.",
-            "Échange sous 48&nbsp;h ouvrées — premier diagnostic offert.",
+            "Aucune prestation réelle - parcours graphique pour portfolio.",
+            "Échange sous 48&nbsp;h ouvrées - premier diagnostic offert.",
         ),
         (
             "Trois piliers pour structurer la vitrine&nbsp;: plateforme, données et sécurité. Chaque carte résume un positionnement marketing imaginaire, avec des bénéfices rédigés pour tester les intitulés longs et les listes à puces dans les pages suivantes.",
@@ -48,8 +48,8 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Passerelle sécurisée, quotas configurables et journaux centralisés. Idéal pour industrialiser vos intégrations.",
         ),
         (
-            "Pipelines batch et streaming nommés pour l’exemple graphique — aucun jeu de données réel n’est exposé.",
-            "Pipelines batch et streaming orchestrés — jeux de données d’essai anonymisés sur demande.",
+            "Pipelines batch et streaming nommés pour l’exemple graphique - aucun jeu de données réel n’est exposé.",
+            "Pipelines batch et streaming orchestrés - jeux de données d’essai anonymisés sur demande.",
         ),
         (
             "MFA, SSO et rôles RBAC simulés pour illustrer une offre cybersécurité sur maquette statique.",
@@ -96,7 +96,7 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "<strong>Hébergement&nbsp;?</strong> Région UE au choix (France / Benelux) selon vos contraintes.",
         ),
         (
-            "<strong>RGPD&nbsp;?</strong> Texte placeholder — pas de DPA.",
+            "<strong>RGPD&nbsp;?</strong> Texte placeholder - pas de DPA.",
             "<strong>RGPD&nbsp;?</strong> DPA et registre des traitements fournis avec l’offre entreprise.",
         ),
         (
@@ -125,17 +125,17 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
         ),
         (
             "Vitrine fictive.",
-            "Éditeur logiciel — implantation Grand Est.",
+            "Éditeur logiciel - implantation Grand Est.",
         ),
         ("NovaStack Labs 57", "Synapse Lorraine"),
-        ("Démo fictive — éditeur logiciel &amp; cloud.", "Éditeur logiciel, API et cloud — présentation."),
+        ("Démo fictive - éditeur logiciel &amp; cloud.", "Éditeur logiciel, API et cloud - présentation."),
         ("image générée", "visuel d’ambiance"),
         (" (démo)", ""),
     ],
     "banque": [
         (
-            "Offres, tarifs et témoignages inventés — aucun agrément bancaire, maquette portfolio uniquement.",
-            "Offres indicatives et témoignages anonymisés — demandez une proposition personnalisée en agence.",
+            "Offres, tarifs et témoignages inventés - aucun agrément bancaire, maquette portfolio uniquement.",
+            "Offres indicatives et témoignages anonymisés - demandez une proposition personnalisée en agence.",
         ),
         (
             "Agence pilote (fictif)",
@@ -146,28 +146,28 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Ouvrir un compte «&nbsp;Horizon&nbsp;»",
         ),
         (
-            "Parcours fictif — boutons pour valider les CTA sur fond institutionnel.",
-            "Parcours guidé — nos conseillers complètent votre dossier en agence.",
+            "Parcours fictif - boutons pour valider les CTA sur fond institutionnel.",
+            "Parcours guidé - nos conseillers complètent votre dossier en agence.",
         ),
         (
             "0800 000 000 (fictif)",
             "03 87 18 42 60",
         ),
         (
-            "Espace sécurisé — démo",
+            "Espace sécurisé - démo",
             "Espace client sécurisé",
         ),
         (
-            "Banque des Vosges du Nord — Finance (fictif)",
-            "Verlaine Banque Régionale — Finance",
+            "Banque des Vosges du Nord - Finance (fictif)",
+            "Verlaine Banque Régionale - Finance",
         ),
         (
             "Banque des Vosges du Nord",
             "Verlaine Banque Régionale",
         ),
         (
-            "Démo fictive — banque régionale.",
-            "Banque régionale — présentation des offres.",
+            "Démo fictive - banque régionale.",
+            "Banque régionale - présentation des offres.",
         ),
         ("accueil@bvdn-demo.local", "accueil@verlaine-banque.fr"),
         ("Ville-Démo", "Metz"),
@@ -211,14 +211,14 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "garage@central-plappeville.fr",
         ),
         ("ZI fictive", "ZI Actipôle, 57140 Norroy-le-Veneur"),
-        ("Garage Delta Moteurs — Automobile (fictif)", "Garage Central Plappeville — Automobile"),
+        ("Garage Delta Moteurs - Automobile (fictif)", "Garage Central Plappeville - Automobile"),
         ("Delta Moteurs", "Garage Central"),
         ("<p class=\"is-size-6 has-text-grey-light\">Fictif.</p>", "<p class=\"is-size-6 has-text-grey-light\">Grand Est.</p>"),
-        ("Démo fictive — garage &amp; atelier.", "Garage, atelier mécanique et carrosserie."),
+        ("Démo fictive - garage &amp; atelier.", "Garage, atelier mécanique et carrosserie."),
     ],
     "chocolatier": [
         (
-            "Tablettes, pralinés et ateliers — tout est fictif pour démo portfolio. Cadres larges, prix lisibles.",
+            "Tablettes, pralinés et ateliers - tout est fictif pour démo portfolio. Cadres larges, prix lisibles.",
             "Tablettes, pralinés et ateliers découverte. Cadres larges, origines lisibles et prix nets.",
         ),
         (
@@ -234,7 +234,7 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Quatre tablettes permanentes&nbsp;: Madagascar, Pérou, Haïti, Papouasie.",
         ),
         (
-            "«&nbsp;Mendiants équilibrés — avis fictif.&nbsp;»",
+            "«&nbsp;Mendiants équilibrés - avis fictif.&nbsp;»",
             "«&nbsp;Mendiants équilibrés, cacao franc et fruits secs au top.&nbsp;»",
         ),
         (
@@ -242,15 +242,15 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Coffrets sur mesure",
         ),
         (
-            "Lun–Sam 10h–19h · 03 00 00 00 42 (fictif)",
-            "Lun–Sam 10h–19h · 03 87 32 18 90",
+            "Lun-Sam 10h-19h · 03 00 00 00 42 (fictif)",
+            "Lun-Sam 10h-19h · 03 87 32 18 90",
         ),
         (
-            "Maison Cacao &amp; Fleur — Chocolatier (fictif)",
-            "Chocolaterie Vialson — Chocolatier",
+            "Maison Cacao &amp; Fleur - Chocolatier (fictif)",
+            "Chocolaterie Vialson - Chocolatier",
         ),
         ("Maison Cacao &amp; Fleur", "Chocolaterie Vialson"),
-        ("Démo fictive — chocolatier artisanal.", "Chocolatier artisanal — boutique &amp; ateliers."),
+        ("Démo fictive - chocolatier artisanal.", "Chocolatier artisanal - boutique &amp; ateliers."),
         ("Vitrine de démonstration.", "Maison fondée à Metz."),
         (" (démo)", ""),
         ("imaginaires", "indicatifs"),
@@ -290,9 +290,9 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
         ),
         ("accueil@marche-express-demo.local", "contact@halles-thionville.fr"),
         ("Marché Express", "Halles Thionville"),
-        ("Quartier Marché Express — Commerce (fictif)", "Les Halles Thionville — Commerce"),
+        ("Quartier Marché Express - Commerce (fictif)", "Les Halles Thionville - Commerce"),
         ("<p class=\"is-size-6\">Fictif.</p>", "<p class=\"is-size-6\">Thionville.</p>"),
-        ("Démo fictive — commerce &amp; drive.", "Commerce de proximité et drive."),
+        ("Démo fictive - commerce &amp; drive.", "Commerce de proximité et drive."),
     ],
     "restauration": [
         (
@@ -336,9 +336,9 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "03 87 74 22 31 · ",
         ),
         ("resa@ligne-comptoir-demo.local", "resa@brasserie-saint-jacques.fr"),
-        ("Bistro Ligne &amp; Comptoir — Restauration (fictif)", "Brasserie Saint-Jacques — Restauration"),
+        ("Bistro Ligne &amp; Comptoir - Restauration (fictif)", "Brasserie Saint-Jacques - Restauration"),
         ("Bistro Ligne &amp; Comptoir", "Brasserie Saint-Jacques"),
-        ("Démo fictive — restaurant &amp; cave.", "Restaurant, cave et réservations."),
+        ("Démo fictive - restaurant &amp; cave.", "Restaurant, cave et réservations."),
     ],
     "education": [
         (
@@ -350,8 +350,8 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Parcours apprenant avec socle commun, ateliers pratiques et évaluation finale. Éligibilité CPF selon dossier&nbsp;: nos conseillers vous orientent.",
         ),
         (
-            "Session «&nbsp;Data literacy&nbsp;» — calendrier fictif",
-            "Session «&nbsp;Data literacy&nbsp;» — calendrier",
+            "Session «&nbsp;Data literacy&nbsp;» - calendrier fictif",
+            "Session «&nbsp;Data literacy&nbsp;» - calendrier",
         ),
         (
             "<tr><td>Excel avancé</td><td>3 jours</td><td>Présentiel fictif</td></tr>",
@@ -382,9 +382,9 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Pré-inscription",
         ),
         ("formation@campus-lumiere-demo.local", "formations@media-mercure.fr"),
-        ("Campus Lumière Académie — Éducation (fictif)", "Institut Mercure — Éducation &amp; formation"),
+        ("Campus Lumière Académie - Éducation (fictif)", "Institut Mercure - Éducation &amp; formation"),
         ("Campus Lumière", "Institut Mercure"),
-        ("Démo fictive — organisme de formation.", "Organisme de formation — catalogue &amp; inscriptions."),
+        ("Démo fictive - organisme de formation.", "Organisme de formation - catalogue &amp; inscriptions."),
         ("image générée", "photo pédagogie"),
         (" (démo)", ""),
         ("<p class=\"is-size-6\">Fictif.</p>", "<p class=\"is-size-6\">Metz.</p>"),
@@ -411,29 +411,29 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Réservation",
         ),
         ("booking@hotel-arcades-demo.local", "reservations@stanislas-collection.fr"),
-        ("Hôtel des Arcades &amp; Spa — Établissement (fictif)", "Hôtel Stanislas Collection — Établissement"),
+        ("Hôtel des Arcades &amp; Spa - Établissement (fictif)", "Hôtel Stanislas Collection - Établissement"),
         ("Hôtel des Arcades", "Hôtel Stanislas Collection"),
         ("<p class=\"is-size-6 has-text-grey-light\">Fictif.</p>", "<p class=\"is-size-6 has-text-grey-light\">Nancy.</p>"),
-        ("Démo fictive — hôtel &amp; spa.", "Hôtel 4&nbsp;étoiles, spa et séminaires."),
+        ("Démo fictive - hôtel &amp; spa.", "Hôtel 4&nbsp;étoiles, spa et séminaires."),
     ],
     "beaute": [
         (
             "institut@eclat-pur-demo.local",
             "bonjour@spa-thalie.fr",
         ),
-        ("Maison Éclat Pur — Beauté (fictif)", "Spa Thalie — Beauté &amp; bien-être"),
+        ("Maison Éclat Pur - Beauté (fictif)", "Spa Thalie - Beauté &amp; bien-être"),
         ("Maison Éclat Pur", "Spa Thalie"),
-        ("Démo fictive — institut &amp; spa.", "Institut, spa et soins sur rendez-vous."),
+        ("Démo fictive - institut &amp; spa.", "Institut, spa et soins sur rendez-vous."),
         ("<p class=\"is-size-6\">Fictif.</p>", "<p class=\"is-size-6\">Metz centre.</p>"),
     ],
     "odontologie": [
         (
-            "Soins, esthétique et urgences — grille et praticiens entièrement fictifs.",
-            "Soins conservateurs, esthétique et urgences du jour — équipe à taille humaine.",
+            "Soins, esthétique et urgences - grille et praticiens entièrement fictifs.",
+            "Soins conservateurs, esthétique et urgences du jour - équipe à taille humaine.",
         ),
         (
-            "<p><strong>Urgences</strong> · 15h – 17h (fictif)</p>",
-            "<p><strong>Urgences</strong> · 15h – 17h (créneaux dédiés)</p>",
+            "<p><strong>Urgences</strong> · 15h - 17h (fictif)</p>",
+            "<p><strong>Urgences</strong> · 15h - 17h (créneaux dédiés)</p>",
         ),
         (
             "<strong>Rappel RDV préventif (fictif)</strong>",
@@ -444,8 +444,8 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "<tr><td>Couronne</td><td>Zircone, 10 jours ouvrés</td><td>780&nbsp;€</td></tr>",
         ),
         (
-            "Scellement — <strong>28&nbsp;€</strong> / dent (fictif).",
-            "Scellement — <strong>28&nbsp;€</strong> / dent.",
+            "Scellement - <strong>28&nbsp;€</strong> / dent (fictif).",
+            "Scellement - <strong>28&nbsp;€</strong> / dent.",
         ),
         (
             "Demander un rappel (fictif)",
@@ -468,16 +468,16 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "03 87 65 12 40",
         ),
         ("contact@sourire-lorraine-demo.local", "accueil@dentaires-mosaique.fr"),
-        ("Cabinet Sourire Lorraine — Odontologie (fictif)", "Centre dentaire Mosaïque — Odontologie"),
+        ("Cabinet Sourire Lorraine - Odontologie (fictif)", "Centre dentaire Mosaïque - Odontologie"),
         ("Cabinet Sourire Lorraine", "Centre dentaire Mosaïque"),
-        ("Démo fictive — cabinet dentaire.", "Cabinet dentaire — soins et parcours patient."),
+        ("Démo fictive - cabinet dentaire.", "Cabinet dentaire - soins et parcours patient."),
         ("placeholder=\"06 00 00 00 00\"", "placeholder=\"06 12 34 56 78\""),
     ],
     "services": [
         ("contact@hexa-services-demo.local", "accueil@proprio-facility.fr"),
-        ("Hexa Services — Services (fictif)", "Proprio Facility — Services aux entreprises"),
+        ("Hexa Services - Services (fictif)", "Proprio Facility - Services aux entreprises"),
         ("Hexa Services", "Proprio Facility"),
-        ("Démo fictive — services &amp; facility.", "Facility management et conciergerie d’entreprise."),
+        ("Démo fictive - services &amp; facility.", "Facility management et conciergerie d’entreprise."),
     ],
     "industrie": [
         (
@@ -485,19 +485,19 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "*certifications selon procédé",
         ),
         (
-            "Acer 42CrMo4, inox 316L, alu 7075 — références inventées. 4&nbsp;500&nbsp;m² imaginaires, deux lignes CN, cellule climatisée fictive.",
-            "Acer 42CrMo4, inox 316L, alu 7075 — références courantes. 4&nbsp;500&nbsp;m², deux lignes CN, cellule climatisée.",
+            "Acer 42CrMo4, inox 316L, alu 7075 - références inventées. 4&nbsp;500&nbsp;m² imaginaires, deux lignes CN, cellule climatisée fictive.",
+            "Acer 42CrMo4, inox 316L, alu 7075 - références courantes. 4&nbsp;500&nbsp;m², deux lignes CN, cellule climatisée.",
         ),
         (
             "Section longue pour tester contrastes sur fond sombre&nbsp;: flux matière imaginaire, ordres de fabrication fictifs, indicateurs OEE d’exemple et revues outils simulées. Les photographies ci-dessous (soudure, plan sur établi) complètent les rendus déjà présents sur la page.",
             "Flux matière, ordres de fabrication, indicateurs OEE et revues outils suivis chaque semaine. Photographies atelier&nbsp;: soudure TIG et lecture de plan sur établi.",
         ),
         (
-            "Parc machines inventé — pas de capacité réelle.",
-            "Parc machines documenté sur devis — capacités selon planning charge.",
+            "Parc machines inventé - pas de capacité réelle.",
+            "Parc machines documenté sur devis - capacités selon planning charge.",
         ),
         (
-            "Message Bulma sur fond sombre — rappel que toutes les certifications et tolérances sont imaginaires.",
+            "Message Bulma sur fond sombre - rappel que toutes les certifications et tolérances sont imaginaires.",
             "Certifications et tolérances contractuelles précisées sur bon de commande.",
         ),
         (
@@ -509,12 +509,12 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Ø max 420&nbsp;mm.",
         ),
         (
-            "«&nbsp;Série 250 nickel — communication à renforcer (fictif).&nbsp;»",
-            "«&nbsp;Série 250 nickel — très bon suivi qualité.&nbsp;»",
+            "«&nbsp;Série 250 nickel - communication à renforcer (fictif).&nbsp;»",
+            "«&nbsp;Série 250 nickel - très bon suivi qualité.&nbsp;»",
         ),
         (
-            "Dépôt fictif — aucune CAO réelle traitée.",
-            "Dépôt sécurisé — traitement CAO sous NDA.",
+            "Dépôt fictif - aucune CAO réelle traitée.",
+            "Dépôt sécurisé - traitement CAO sous NDA.",
         ),
         (
             "placeholder=\"Cotes, finitions… (fictif)\"",
@@ -533,14 +533,14 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Devis express",
         ),
         ("contact@mecano-precision54-demo.local", "devis@precisite.fr"),
-        ("Atelier Mécano-Precision 54 — Industrie (fictif)", "Précisite Usinage — Industrie"),
+        ("Atelier Mécano-Precision 54 - Industrie (fictif)", "Précisite Usinage - Industrie"),
         ("Atelier Mécano-Precision 54", "Précisite Usinage"),
-        ("Démo fictive — usinage &amp; mécano-soudure.", "Usinage de précision et mécano-soudure."),
+        ("Démo fictive - usinage &amp; mécano-soudure.", "Usinage de précision et mécano-soudure."),
     ],
     "comptable": [
         (
-            "TPE / PME jusqu’à 15 salariés — cibles et associés entièrement fictifs.",
-            "TPE / PME jusqu’à 15 salariés — accompagnement sur-mesure.",
+            "TPE / PME jusqu’à 15 salariés - cibles et associés entièrement fictifs.",
+            "TPE / PME jusqu’à 15 salariés - accompagnement sur-mesure.",
         ),
         (
             "Six collaborateurs inventés, deux associés fictifs, charte qualité graphique.",
@@ -563,8 +563,8 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Demander un bilan flash",
         ),
         (
-            "Bilan flash — prise de contact (fictif)",
-            "Bilan flash — prise de contact",
+            "Bilan flash - prise de contact (fictif)",
+            "Bilan flash - prise de contact",
         ),
         (
             "<label class=\"label\" for=\"bf-siren\">SIREN (fictif)</label>",
@@ -583,17 +583,17 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "03 83 35 28 90",
         ),
         ("contact@bilan-carre-demo.local", "cabinet@verlaine-associes.fr"),
-        ("Bilan Carré Experts — Comptabilité (fictif)", "Verlaine &amp; Associés — Comptabilité"),
+        ("Bilan Carré Experts - Comptabilité (fictif)", "Verlaine &amp; Associés - Comptabilité"),
         ("Bilan Carré Experts", "Verlaine &amp; Associés"),
-        ("Démo fictive — cabinet comptable.", "Cabinet d’expertise comptable et de conseil."),
+        ("Démo fictive - cabinet comptable.", "Cabinet d’expertise comptable et de conseil."),
     ],
     "association": [
         (
-            "Maraude, jeunesse, cuisines solidaires — contenu entièrement fictif pour maquette portfolio.",
+            "Maraude, jeunesse, cuisines solidaires - contenu entièrement fictif pour maquette portfolio.",
             "Maraude, jeunesse et cuisines solidaires au service des quartiers de Metz et alentours.",
         ),
         (
-            "Aucune inscription réelle — boutons de maquette pour tester les CTA.",
+            "Aucune inscription réelle - boutons de maquette pour tester les CTA.",
             "Inscription bénévoles en ligne ou sur place lors des permanences.",
         ),
         (
@@ -609,7 +609,7 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "18 collégiens suivis, deux séances hebdomadaires, matériel fourni par la collectivité.",
         ),
         (
-            "Simulations d’entretiens sur six mois — partenaires et emplois inventés.",
+            "Simulations d’entretiens sur six mois - partenaires et emplois inventés.",
             "Accompagnement vers l’emploi sur six mois avec partenaires locaux.",
         ),
         (
@@ -633,8 +633,8 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Objectif&nbsp;: 12&nbsp;000&nbsp;€ pour carburant et denrées de la maraude hivernale. Les barres illustrent l’avancement de la collecte.",
         ),
         (
-            "Zones Nord et Est inventées — cartes et données sans lien avec un territoire réel.",
-            "Zones Nord et Est de l’agglomération — données indicatives d’occupation.",
+            "Zones Nord et Est inventées - cartes et données sans lien avec un territoire réel.",
+            "Zones Nord et Est de l’agglomération - données indicatives d’occupation.",
         ),
         (
             "Mairies fictives, épiceries solidaires imaginaires, associations sœurs inventées pour remplir la tuile.",
@@ -645,7 +645,7 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
             "Témoignages",
         ),
         (
-            "«&nbsp;Briefings clairs avant chaque tournée — tout est simulé pour la maquette.&nbsp;»",
+            "«&nbsp;Briefings clairs avant chaque tournée - tout est simulé pour la maquette.&nbsp;»",
             "«&nbsp;Briefings clairs avant chaque tournée, matériel fiable sur le terrain.&nbsp;»",
         ),
         (
@@ -662,14 +662,14 @@ SECTOR_PAIRS: dict[str, list[tuple[str, str]]] = {
         ),
         (
             "Association et contenus entièrement fictifs.",
-            "Association loi 1901 — reçu fiscal sur demande.",
+            "Association loi 1901 - reçu fiscal sur demande.",
         ),
         ("contact@main-tendue-57-demo.local", "contact@solidarites-metz.fr"),
         ("benevoles@main-tendue-57-demo.local", "benevoles@solidarites-metz.fr"),
-        ("Réseau Main Tendue 57 — Association (fictif)", "Solidarités Metz Métropole — Association"),
+        ("Réseau Main Tendue 57 - Association (fictif)", "Solidarités Metz Métropole - Association"),
         ("Réseau Main Tendue 57", "Solidarités Metz Métropole"),
         ("Main Tendue", "Solidarités Metz"),
-        ("Démo fictive — association &amp; solidarité.", "Association — solidarité et lien social."),
+        ("Démo fictive - association &amp; solidarité.", "Association - solidarité et lien social."),
     ],
 }
 
@@ -678,7 +678,7 @@ def polish_hub() -> None:
     path = SHOWCASE / "index.html"
     html = normalize_typography(path.read_text(encoding="utf-8"))
     pairs = [
-        ("<title>Démos vitrine — hub (fictif)</title>", "<title>Vitrines sectorielles — portfolio DanielCraft</title>"),
+        ("<title>Démos vitrine - hub (fictif)</title>", "<title>Vitrines sectorielles - portfolio DanielCraft</title>"),
         ('<p class="badge">Contenu fictif</p>', '<p class="badge">Portfolio</p>'),
         (
             "<h1 id=\"hub-title\">Vitrines démo par secteur</h1>",
@@ -689,60 +689,60 @@ def polish_hub() -> None:
             "<p class=\"lead\">Ce catalogue présente <strong>quatorze</strong> vitrines sectorielles statiques&nbsp;: chacune applique une <strong>arborescence différente</strong> (menus, regroupements de contenu) proche des usages WordPress, Joomla ou Bootstrap. Les textes et coordonnées sont rédigés comme sur un site «&nbsp;réel&nbsp;» pour tester lisibilité, contrastes et formulaires.</p>",
         ),
         (
-            "<p>NovaStack Labs 57 — SaaS, API et data fictifs&nbsp;: parcours produit, démo et documentation graphique.</p>",
-            "<p>Synapse Lorraine — SaaS, API et data&nbsp;: parcours produit, démo et documentation.</p>",
+            "<p>NovaStack Labs 57 - SaaS, API et data fictifs&nbsp;: parcours produit, démo et documentation graphique.</p>",
+            "<p>Synapse Lorraine - SaaS, API et data&nbsp;: parcours produit, démo et documentation.</p>",
         ),
         (
-            "<p>Hexa Services — nettoyage, facility et conciergerie imaginaires pour tester listes et formulaires.</p>",
-            "<p>Proprio Facility — nettoyage, facility et conciergerie pour sites tertiaires.</p>",
+            "<p>Hexa Services - nettoyage, facility et conciergerie imaginaires pour tester listes et formulaires.</p>",
+            "<p>Proprio Facility - nettoyage, facility et conciergerie pour sites tertiaires.</p>",
         ),
         (
-            "<p>Bistro Ligne &amp; Comptoir — carte, réservations et événements inventés, photos générées.</p>",
-            "<p>Brasserie Saint-Jacques — carte, réservations et événements, visuels d’ambiance.</p>",
+            "<p>Bistro Ligne &amp; Comptoir - carte, réservations et événements inventés, photos générées.</p>",
+            "<p>Brasserie Saint-Jacques - carte, réservations et événements, visuels d’ambiance.</p>",
         ),
         (
-            "<p>Marché Express — drive, rayons et fidélité fictifs, mises en page type grande distribution.</p>",
-            "<p>Halles Thionville — drive, rayons et fidélité, mise en page type grande distribution.</p>",
+            "<p>Marché Express - drive, rayons et fidélité fictifs, mises en page type grande distribution.</p>",
+            "<p>Halles Thionville - drive, rayons et fidélité, mise en page type grande distribution.</p>",
         ),
         (
-            "<p>Campus Lumière — catalogue de modules, inscriptions et pédagogie entièrement factices.</p>",
-            "<p>Institut Mercure — catalogue de modules, inscriptions et parcours pédagogiques.</p>",
+            "<p>Campus Lumière - catalogue de modules, inscriptions et pédagogie entièrement factices.</p>",
+            "<p>Institut Mercure - catalogue de modules, inscriptions et parcours pédagogiques.</p>",
         ),
         (
-            "<p>Hôtel des Arcades &amp; Spa — chambres, séminaires et réservation démo sur fond sombre.</p>",
-            "<p>Hôtel Stanislas Collection — chambres, séminaires et réservation sur fond sombre.</p>",
+            "<p>Hôtel des Arcades &amp; Spa - chambres, séminaires et réservation démo sur fond sombre.</p>",
+            "<p>Hôtel Stanislas Collection - chambres, séminaires et réservation sur fond sombre.</p>",
         ),
         (
-            "<p>Maison Éclat Pur — soins, spa et institut imaginaire avec palette rose et bordeaux.</p>",
-            "<p>Spa Thalie — soins, spa et institut, palette rose et bordeaux.</p>",
+            "<p>Maison Éclat Pur - soins, spa et institut imaginaire avec palette rose et bordeaux.</p>",
+            "<p>Spa Thalie - soins, spa et institut, palette rose et bordeaux.</p>",
         ),
         (
-            "<p>Garage Delta Moteurs — atelier, pneus et rendez-vous fictifs, style garage premium sombre.</p>",
-            "<p>Garage Central Plappeville — atelier, pneus et rendez-vous, style garage premium sombre.</p>",
+            "<p>Garage Delta Moteurs - atelier, pneus et rendez-vous fictifs, style garage premium sombre.</p>",
+            "<p>Garage Central Plappeville - atelier, pneus et rendez-vous, style garage premium sombre.</p>",
         ),
         (
-            "<p>Maison Cacao &amp; Fleur — logique <strong>commerce</strong> : maison, boutique &amp; dégustations, goûts &amp; avis.</p>",
-            "<p>Chocolaterie Vialson — logique <strong>commerce</strong>&nbsp;: maison, boutique &amp; dégustations, goûts &amp; avis.</p>",
+            "<p>Maison Cacao &amp; Fleur - logique <strong>commerce</strong> : maison, boutique &amp; dégustations, goûts &amp; avis.</p>",
+            "<p>Chocolaterie Vialson - logique <strong>commerce</strong>&nbsp;: maison, boutique &amp; dégustations, goûts &amp; avis.</p>",
         ),
         (
-            "<p>Cabinet Sourire Lorraine — fil <strong>patient</strong> : cabinet, soins, parcours &amp; avis.</p>",
-            "<p>Centre dentaire Mosaïque — fil <strong>patient</strong>&nbsp;: cabinet, soins, parcours &amp; avis.</p>",
+            "<p>Cabinet Sourire Lorraine - fil <strong>patient</strong> : cabinet, soins, parcours &amp; avis.</p>",
+            "<p>Centre dentaire Mosaïque - fil <strong>patient</strong>&nbsp;: cabinet, soins, parcours &amp; avis.</p>",
         ),
         (
-            "<p>Banque des Vosges du Nord — découpage <strong>institutionnel</strong> : institution, offres, confiance.</p>",
-            "<p>Verlaine Banque Régionale — découpage <strong>institutionnel</strong>&nbsp;: institution, offres, confiance.</p>",
+            "<p>Banque des Vosges du Nord - découpage <strong>institutionnel</strong> : institution, offres, confiance.</p>",
+            "<p>Verlaine Banque Régionale - découpage <strong>institutionnel</strong>&nbsp;: institution, offres, confiance.</p>",
         ),
         (
-            "<p>Atelier Mécano-Precision 54 — trame <strong>usine</strong> : capacités, prestations, qualité.</p>",
-            "<p>Précisite Usinage — trame <strong>usine</strong>&nbsp;: capacités, prestations, qualité.</p>",
+            "<p>Atelier Mécano-Precision 54 - trame <strong>usine</strong> : capacités, prestations, qualité.</p>",
+            "<p>Précisite Usinage - trame <strong>usine</strong>&nbsp;: capacités, prestations, qualité.</p>",
         ),
         (
-            "<p>Bilan Carré Experts — squelette <strong>cabinet</strong> : le cabinet, expertises, références.</p>",
-            "<p>Verlaine &amp; Associés — squelette <strong>cabinet</strong>&nbsp;: le cabinet, expertises, références.</p>",
+            "<p>Bilan Carré Experts - squelette <strong>cabinet</strong> : le cabinet, expertises, références.</p>",
+            "<p>Verlaine &amp; Associés - squelette <strong>cabinet</strong>&nbsp;: le cabinet, expertises, références.</p>",
         ),
         (
-            "<p>Réseau Main Tendue 57 — parcours <strong>solidarité</strong> : mission, agir, impact.</p>",
-            "<p>Solidarités Metz Métropole — parcours <strong>solidarité</strong>&nbsp;: mission, agir, impact.</p>",
+            "<p>Réseau Main Tendue 57 - parcours <strong>solidarité</strong> : mission, agir, impact.</p>",
+            "<p>Solidarités Metz Métropole - parcours <strong>solidarité</strong>&nbsp;: mission, agir, impact.</p>",
         ),
         (
             "<p>Les chemins relatifs fonctionnent derrière un serveur statique ; les images PNG sont générées ou de démo et ne représentent aucun lieu réel ; les ancres permettent de valider le <code>scroll-margin</code> et la navigation clavier sur les pages longues.</p>",
@@ -757,8 +757,8 @@ def polish_hub() -> None:
             "<div class=\"hub-kpi\" aria-label=\"Indicateurs vitrines\">",
         ),
         (
-            "<p class=\"hub-contact__p\"><strong>Usage</strong> — démonstrations internes et portfolio uniquement. Aucune donnée réelle à saisir.</p>",
-            "<p class=\"hub-contact__p\"><strong>Usage</strong> — démonstrations portfolio. Les formulaires sont statiques&nbsp;; ne saisissez pas de données personnelles sensibles.</p>",
+            "<p class=\"hub-contact__p\"><strong>Usage</strong> - démonstrations internes et portfolio uniquement. Aucune donnée réelle à saisir.</p>",
+            "<p class=\"hub-contact__p\"><strong>Usage</strong> - démonstrations portfolio. Les formulaires sont statiques&nbsp;; ne saisissez pas de données personnelles sensibles.</p>",
         ),
     ]
     for old, new in pairs:
@@ -788,7 +788,7 @@ def polish_sectors() -> None:
 def main() -> None:
     polish_hub()
     polish_sectors()
-    print("OK — showcase hub +", len(SECTOR_PAIRS), "vitrines.")
+    print("OK - showcase hub +", len(SECTOR_PAIRS), "vitrines.")
 
 
 if __name__ == "__main__":

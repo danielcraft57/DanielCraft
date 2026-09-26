@@ -1,13 +1,13 @@
-# Captures UX — audit 2026
+# Captures UX - audit 2026
 
-Captures de contrôle visuel (non versionnées — régénérer en local si besoin).
+Captures de contrôle visuel (non versionnées - régénérer en local si besoin).
 
 ## Viewports
 
 | Dossier | Résolution | Préfixe fichiers | Notes |
 |---------|------------|------------------|-------|
 | `desktop/` | 1280×900 | `d01` … `d08` | Nav complète, CTA header visible |
-| `tablet/` | 768×1024 | `t01` … `t08` | Menu burger (< 960 px), grilles 1–2 colonnes |
+| `tablet/` | 768×1024 | `t01` … `t08` | Menu burger (< 960 px), grilles 1-2 colonnes |
 | `mobile/` | 390×844 | `m01` … `m08` | CTV multi-lignes, wizard pleine largeur |
 
 ## Pages (01 → 08)
@@ -31,11 +31,11 @@ Exemple de nom : `desktop/d01-accueil.png`, `mobile/m04-audit.png`.
 |---------|---------|----------|--------|--------|
 | 24 h ouvrées (contact, audit, footer) | OK | OK | OK | OK |
 | CTV longs lisibles (devis, audit) | OK | OK | OK (retour ligne) | OK |
-| Menu burger < 960 px | — | OK | OK | OK |
+| Menu burger < 960 px | - | OK | OK | OK |
 | Comparatif Facebook empilé | 2 col | 1 col | 1 col | OK |
 | Titre vitrine non tronqué | OK | OK | OK | OK |
 | aria-label sociaux | OK | OK | OK | OK |
-| FAQ clavier (↑↓ Esc) | — | — | — | OK JS |
+| FAQ clavier (↑↓ Esc) | - | - | - | OK JS |
 
 Témoignages exclus du périmètre.
 

@@ -130,7 +130,7 @@ def main() -> None:
     manifest = {
         "name": "DanielCraft",
         "short_name": "DanielCraft",
-        "description": "Développeur Full-Stack — sites, identité, SEO",
+        "description": "Développeur Full-Stack - sites, identité, SEO",
         "start_url": "/",
         "display": "standalone",
         "background_color": BG_SPLASH,

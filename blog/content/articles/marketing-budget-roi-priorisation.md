@@ -16,7 +16,7 @@ og_image: marketing-budget-1200x630.jpg
   <figcaption>Simple et mesure versus cher et flou.</figcaption>
 </figure>
 
-Avec un budget marketing limité, chaque euro mal placé est un euro qui ne reviendra pas. La tentation est grande : tester un peu de tout — Google Ads, Instagram, salon professionnel, influenceur, refonte de site — et espérer que quelque chose fonctionne. Résultat fréquent : dispersion, fatigue et aucun canal assez alimenté pour produire des résultats mesurables.
+Avec un budget marketing limité, chaque euro mal placé est un euro qui ne reviendra pas. La tentation est grande : tester un peu de tout - Google Ads, Instagram, salon professionnel, influenceur, refonte de site - et espérer que quelque chose fonctionne. Résultat fréquent : dispersion, fatigue et aucun canal assez alimenté pour produire des résultats mesurables.
 
 Le schéma oppose deux approches : investir peu sur beaucoup de leviers flous, ou concentrer sur peu de canaux simples et mesurables. La seconde gagne presque toujours à moyen terme.
 
@@ -36,7 +36,7 @@ Inclus tous les coûts : budget média, outils (CRM, email, analytics), temps in
 
 **Coût initial** : la publicité demande du cash immédiat ; le SEO demande surtout du temps. **Délai de résultat** : Google Ads en quelques jours ; SEO en 3 à 6 mois ; réseaux sociaux en 1 à 3 mois. **Durabilité** : arrêter la pub = fin du trafic ; un bon contenu SEO continue de performer des années.
 
-Le email combine coût modéré, délai court et forte durabilité — souvent le meilleur complément au SEO pour les PME. La publicité a sa place pour les lancements, les tests rapides ou les marchés saturés où l'organique peine à décoller.
+Le email combine coût modéré, délai court et forte durabilité - souvent le meilleur complément au SEO pour les PME. La publicité a sa place pour les lancements, les tests rapides ou les marchés saturés où l'organique peine à décoller.
 
 ## Appliquer la règle 70-20-10
 
@@ -46,7 +46,7 @@ Cette répartition évite deux pièges : ne jamais innover (stagnation) et tout 
 
 ## Savoir couper sans culpabiliser
 
-Un canal qui consomme du budget depuis trois mois sans lead qualifié doit être suspendu ou repensé en profondeur. Ce n'est pas un échec — c'est une information. Peut-être que le message ne correspond pas à l'audience, que la landing page convertit mal, ou que ce canal n'est pas adapté à ta cible.
+Un canal qui consomme du budget depuis trois mois sans lead qualifié doit être suspendu ou repensé en profondeur. Ce n'est pas un échec - c'est une information. Peut-être que le message ne correspond pas à l'audience, que la landing page convertit mal, ou que ce canal n'est pas adapté à ta cible.
 
 Documente ce que tu as appris avant de couper : « LinkedIn Ads : CPC 4 €, 0 lead en 8 semaines, ciblage dirigeants PME 10-50 salariés. Hypothèse : offre trop générique. » Cette trace évite de retenter la même chose six mois plus tard sans changement.
 

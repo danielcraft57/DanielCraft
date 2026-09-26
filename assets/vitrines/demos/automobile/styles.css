@@ -1,4 +1,4 @@
-/* Garage Central — maquette M3 navy (automobile-m3.png) */
+/* Garage Central - maquette M3 navy (automobile-m3.png) */
 :root {
   --vt-navy: #0a1931;
   --vt-navy-mid: #1e3a5f;
@@ -17,6 +17,7 @@
   --bs-link-color: var(--vt-navy-mid);
   --bs-link-hover-color: var(--vt-navy);
   --bs-border-radius-lg: var(--vt-radius);
+  --vt-accent: var(--vt-navy-mid);
 }
 
 body.vt-body-garage {

@@ -1,7 +1,7 @@
 ---
 title: "SEO contenu : repondre a ce que les gens cherchent vraiment"
 date: 2024-07-04
-excerpt: "Mots-cles, intention de recherche et pages utiles — ecrire pour les humains d'abord."
+excerpt: "Mots-cles, intention de recherche et pages utiles - ecrire pour les humains d'abord."
 type: article
 tags: [SEO, contenu, mots-clés, intention, rédaction]
 series: seo-serie
@@ -84,4 +84,4 @@ Le SEO contenu n'est pas du bourrage de mots-clés. C'est de l'écriture utile, 
 
 ## Conclusion
 
-Le SEO contenu repose sur une stratégie de mots-clés alignée avec l'intention des utilisateurs. Structure claire, contenu utile et mise à jour régulière : ces principes garantissent des pages performantes sur le long terme. Une fois publié, mesure l'impact avec Search Console et Analytics — voir le guide pour [mesurer le SEO avec les bons KPIs](/blog/articles/seo-mesurer-search-console-analytics-kpis.html).
+Le SEO contenu repose sur une stratégie de mots-clés alignée avec l'intention des utilisateurs. Structure claire, contenu utile et mise à jour régulière : ces principes garantissent des pages performantes sur le long terme. Une fois publié, mesure l'impact avec Search Console et Analytics - voir le guide pour [mesurer le SEO avec les bons KPIs](/blog/articles/seo-mesurer-search-console-analytics-kpis.html).

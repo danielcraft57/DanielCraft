@@ -27,12 +27,8 @@
                 <ul class="prestation-devis-dialog__recap-lines" id="prestationDevisDialogRecapLines"></ul>
                 <div class="prestation-devis-dialog__recap-total">
                     <div class="prestation-devis-dialog__recap-row">
-                        <span>Total HT</span>
-                        <strong id="prestationDevisDialogTotalHt">—</strong>
-                    </div>
-                    <div class="prestation-devis-dialog__recap-row prestation-devis-dialog__recap-row--ttc">
-                        <span>TTC (TVA 20 %)</span>
-                        <strong id="prestationDevisDialogTotalTtc">—</strong>
+                        <span>Total</span>
+                        <strong id="prestationDevisDialogTotalHt">-</strong>
                     </div>
                 </div>
             </div>
@@ -95,7 +91,7 @@
                     <span>Recevoir mon devis par e-mail</span>
                     <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 </button>
-                <p class="prestation-devis-dialog__hint">Tarif HT selon les options choisies. Devis PDF envoyé par e-mail.</p>
+                <p class="prestation-devis-dialog__hint">Montant selon les options choisies. Devis PDF envoyé par e-mail. Pas de TVA (micro-entreprise).</p>
             </form>
         </div>
 
@@ -115,12 +111,12 @@
         <div class="prestation-devis-dialog__step" data-devis-step="success" aria-hidden="true" inert>
             <div class="prestation-devis-dialog__result prestation-devis-dialog__result--success">
                 <div class="prestation-devis-dialog__result-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
-                <h3 class="prestation-devis-dialog__result-title">C’est envoyé !</h3>
+                <h3 class="prestation-devis-dialog__result-title">C'est envoyé !</h3>
                 <p class="prestation-devis-dialog__result-text" id="prestationDevisDialogSuccessText">Consultez votre boîte mail.</p>
                 <p class="prestation-devis-dialog__result-email" id="prestationDevisDialogSuccessEmail" hidden></p>
                 <ul class="prestation-devis-dialog__next-steps">
-                    <li>Consultez le PDF ou le lien dans l’e-mail reçu</li>
-                    <li>Une question ? Répondez directement à l’e-mail — réponse sous 24 h ouvrées</li>
+                    <li>Consultez le PDF ou le lien dans l'e-mail reçu</li>
+                    <li>Une question ? Répondez directement à l'e-mail - réponse sous 24 h ouvrées</li>
                     <li>On affine ensemble les options si besoin (sans engagement)</li>
                 </ul>
                 <button type="button" class="btn btn-primary btn-large btn-block" id="prestationDevisDialogSuccessClose">Parfait, merci</button>
@@ -132,7 +128,7 @@
                 <div class="prestation-devis-dialog__result-icon" aria-hidden="true"><i class="fas fa-exclamation-circle"></i></div>
                 <h3 class="prestation-devis-dialog__result-title">Envoi impossible</h3>
                 <p class="prestation-devis-dialog__result-text" id="prestationDevisDialogErrorText">Réessayez dans un instant ou contactez-nous.</p>
-                <p class="prestation-devis-dialog__result-hint" id="prestationDevisDialogErrorHint">Si le problème persiste, <a href="/#contact">utilisez le formulaire de contact</a> ou appelez le <a href="tel:+33387780916">03 87 78 09 16</a> — réponse sous 24 h ouvrées.</p>
+                <p class="prestation-devis-dialog__result-hint" id="prestationDevisDialogErrorHint">Si le problème persiste, <a href="/#contact">utilisez le formulaire de contact</a> ou appelez le <a href="tel:+33387780916">03 87 78 09 16</a> - réponse sous 24 h ouvrées.</p>
                 <div class="prestation-devis-dialog__result-actions">
                     <button type="button" class="btn btn-primary btn-large" id="prestationDevisDialogRetry">Réessayer</button>
                     <a href="/#contact" class="btn btn-outline" id="prestationDevisDialogContactLink">Formulaire de contact</a>
