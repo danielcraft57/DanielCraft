@@ -296,7 +296,7 @@ function Invoke-RsyncDeploy {
     if ($isCygwinRsync) {
         $distSource = Get-CygwinPath $DistDir
         if (-not $distSource) {
-            Write-ColorOutput "cygpath introuvable — rsync Cygwin ignore." "Yellow"
+            Write-ColorOutput "cygpath introuvable - rsync Cygwin ignore." "Yellow"
             return $false
         }
         $openSsh = 'C:\Windows\System32\OpenSSH\ssh.exe'
@@ -320,7 +320,7 @@ function Invoke-TarSshDeploy {
     )
     $tarCmd = Get-Command tar -ErrorAction SilentlyContinue
     if (-not $tarCmd) {
-        Write-ColorOutput "tar introuvable — fallback tar+ssh impossible." "Yellow"
+        Write-ColorOutput "tar introuvable - fallback tar+ssh impossible." "Yellow"
         return $false
     }
     $remotePath = ($RemoteTarget -split ':', 2)[1]
@@ -361,19 +361,19 @@ $rsyncExe = Resolve-RsyncExe
 $rsyncCompatible = (-not $forceTarSsh) -and (Test-RsyncServerCompatible -RsyncExe $rsyncExe)
 
 if ($forceTarSsh) {
-    Write-ColorOutput "DEPLOY_FORCE_TAR_SSH actif — rsync ignore." "Yellow"
+    Write-ColorOutput "DEPLOY_FORCE_TAR_SSH actif - rsync ignore." "Yellow"
 } elseif ($rsyncExe -and -not $rsyncCompatible) {
-    Write-ColorOutput "rsync $rsyncExe trop ancien (Cygwin 3.3 vs serveur 3.4) — tar+ssh direct." "Yellow"
+    Write-ColorOutput "rsync $rsyncExe trop ancien (Cygwin 3.3 vs serveur 3.4) - tar+ssh direct." "Yellow"
 }
 
 if ($rsyncCompatible) {
     Write-ColorOutput "Utilisation de rsync (transfert optimise)..." "Yellow"
     $transferOk = Invoke-RsyncDeploy -RsyncExe $rsyncExe -DistDir $DIST_DIR -ExcludeArgs $excludeArgs -RemoteTarget $remoteTarget
     if (-not $transferOk) {
-        Write-ColorOutput "rsync a echoue — bascule tar+ssh." "Yellow"
+        Write-ColorOutput "rsync a echoue - bascule tar+ssh." "Yellow"
     }
 } elseif (-not $rsyncExe) {
-    Write-ColorOutput "rsync introuvable — tar+ssh." "Yellow"
+    Write-ColorOutput "rsync introuvable - tar+ssh." "Yellow"
 }
 
 if (-not $transferOk) {
@@ -508,7 +508,7 @@ if ($transferOk) {
         scp -r $livresPath "${ServerUser}@${ServerHost}:${ServerPath}/"
     }
 
-    # scp preserve parfois 700 sur les dossiers — nginx (www-data) doit pouvoir lire
+    # scp preserve parfois 700 sur les dossiers - nginx (www-data) doit pouvoir lire
     $chmodBouquinsCmd = "find $ServerPath/bouquins $ServerPath/livres -type d -exec chmod 755 {} + 2>/dev/null; find $ServerPath/bouquins $ServerPath/livres -type f -exec chmod 644 {} + 2>/dev/null; true"
     ssh "${ServerUser}@${ServerHost}" $chmodBouquinsCmd | Out-Null
 
