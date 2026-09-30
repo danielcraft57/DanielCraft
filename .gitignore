@@ -18,6 +18,7 @@ AGENT.md
 .vscode/
 .idea/
 .cursor/
+.cursorrules
 *.swp
 *.swo
 *~
@@ -80,6 +81,7 @@ src/data/readmes/*
 /_*.json
 /_*.txt
 /scripts/_tmp_*
+/scripts/_patch_*
 /scripts/_series3_*
 /scripts/_blog_og_*
 /scripts/_ia_og_*

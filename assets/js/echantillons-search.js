@@ -18,6 +18,7 @@
   var form = document.querySelector('.echantillons-search-form');
   var chips = document.querySelectorAll('[data-echantillons-filter]');
   var chipsMore = document.getElementById('echantillonsChipsMore');
+  var chipsRoot = document.querySelector('.echantillons-search-hero [data-chips-overflow]');
   var activeFilter = 'all';
   var query = '';
 
@@ -127,16 +128,14 @@
       var open = chipsMore.getAttribute('aria-expanded') === 'true';
       var next = !open;
       chipsMore.setAttribute('aria-expanded', next ? 'true' : 'false');
+      if (chipsRoot) chipsRoot.classList.toggle('is-chips-expanded', next);
       document.querySelectorAll('.echantillons-search-hero .is-chip-overflow').forEach(function (el) {
         el.hidden = !next;
       });
       var label = chipsMore.querySelector('span');
       if (label) label.textContent = next ? 'Moins' : 'Plus';
       var icon = chipsMore.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('fa-plus', !next);
-        icon.classList.toggle('fa-minus', next);
-      }
+      if (icon) icon.className = next ? 'fas fa-minus' : 'fas fa-plus';
     });
   }
 

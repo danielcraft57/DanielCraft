@@ -1236,7 +1236,7 @@
   }
 
   .page-livres .livres-search-form .prestations-search-input-wrapper {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     width: 100%;
   }
 

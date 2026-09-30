@@ -1,0 +1,109 @@
+{
+  "slug": "communication",
+  "brand": "Studio Signal",
+  "category": "communication",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Creative agency studio Metz, cinematic editorial photography, soft daylight, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Equipe creative Studio Signal Metz",
+      "subject": "Creative agency team reviewing brand boards in a bright loft studio Metz France, large windows, moodboards on wall, cinematic editorial photo",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "Des marques qui se voient" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Moodboard identite visuelle",
+      "subject": "Flat lay brand identity moodboard with color swatches paper textures logo sketches on oak desk, soft studio light",
+      "contexts": [
+        { "page": "index.html", "section": "services", "text": "Identite visuelle" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Maquette site web sur ecran",
+      "subject": "Laptop showing clean local business website mockup on desk with coffee, agency workspace Metz",
+      "contexts": [
+        { "page": "index.html", "section": "services", "text": "Site qui convertit" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Campagne affichage locale",
+      "subject": "Street poster campaign on Metz bus shelter for local shop, urban photography Grand Est",
+      "contexts": [
+        { "page": "index.html", "section": "services", "text": "Campagnes de terrain" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Atelier brief creatif Metz",
+      "subject": "Creative workshop meeting around table with sketches and tablets, agency loft, natural light",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Signal clair" },
+        { "page": "cases.html", "section": "chapter", "text": "Case resto" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Case retail Thionville",
+      "subject": "Retail market hall interior with branded signage and flyers, warm commerce atmosphere Thionville",
+      "contexts": [
+        { "page": "cases.html", "section": "chapter", "text": "Halles Thionville" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Case sport Metz",
+      "subject": "Modern fitness studio lobby with bold brand wall and smartphone booking screen, energetic light",
+      "contexts": [
+        { "page": "cases.html", "section": "chapter", "text": "Pulse Fitness" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Print campaign detail",
+      "subject": "Close-up of printed brochure and business cards for local brand, paper texture, soft shadows",
+      "contexts": [
+        { "page": "offres.html", "section": "gallery", "text": "Print" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Photo shoot studio",
+      "subject": "Product photography set with softboxes in creative studio, camera on tripod",
+      "contexts": [
+        { "page": "offres.html", "section": "gallery", "text": "Studio" }
+      ]
+    }
+  ]
+}

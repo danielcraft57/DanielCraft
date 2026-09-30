@@ -302,6 +302,43 @@ ENTITIES: dict[str, dict[str, Any]] = {
             _hours(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "08:30", "19:00"),
         ],
     ),
+    "btp": _entity(
+        "GeneralContractor",
+        name="Chantiers Est Construction",
+        description="Entreprise generale du batiment a Nancy - renovation, extension, ravalement",
+        telephone="+33383401822",
+        address=_addr("12 rue de la Digue", "Nancy", "54000"),
+        geo=_geo(48.6921, 6.1844),
+        openingHours=[
+            _hours(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "08:00", "18:00"),
+        ],
+    ),
+    "communication": _entity(
+        "ProfessionalService",
+        name="Studio Signal",
+        description="Agence de communication a Metz - identite, sites et campagnes locales",
+        telephone="+33387369014",
+        address=_addr("8 rue des Clercs", "Metz", "57000"),
+        geo=_geo(49.1097, 6.1761),
+        openingHours=[
+            _hours(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "09:00", "18:30"),
+        ],
+    ),
+    "transport": _entity(
+        "TaxiService",
+        name="Navette Orne & Moselle",
+        description="VTC et navettes Metz, Thionville, aeroport Luxembourg",
+        telephone="+33387552040",
+        address=_addr("Zone des Gravieres", "Woippy", "57140"),
+        geo=_geo(49.1500, 6.1500),
+        openingHours=[
+            _hours(
+                ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "05:00",
+                "23:30",
+            )
+        ],
+    ),
 }
 
 

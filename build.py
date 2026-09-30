@@ -1717,6 +1717,59 @@ def _vitrine_screenshot_paths(slug: str, prefix: str) -> tuple[str, str, str]:
     )
 
 
+def _vitrine_demo_hero_url(slug: str) -> str:
+    """
+    URL absolue du hero de la démo (webp puis png/jpg), ou chaîne vide.
+
+    @param slug: Identifiant catalogue de la vitrine
+    @returns: Chemin site ``/echantillons/<slug>/demo/images/hero.webp`` (ou équivalent), sinon ``''``
+    """
+    root = VITRINES_DEMOS_SRC / slug / 'images'
+    if not root.is_dir():
+        return ''
+    for name in ('hero.webp', 'hero.png', 'hero.jpg', 'hero.jpeg'):
+        if (root / name).is_file():
+            return devantures_url(f'{slug}/demo/images/{name}')
+    return ''
+
+
+def _vitrine_shot_is_capture(path: str) -> bool:
+    """
+    Indique si le chemin pointe vers une capture Playwright (pas hero / OG).
+
+    @param path: Chemin relatif fiche ou URL absolue site
+    @returns: True si le chemin contient ``screenshots/``
+    """
+    return 'screenshots/' in (path or '').replace('\\', '/')
+
+
+def _vitrine_shot_frame_mod(path: str) -> str:
+    """
+    Modificateur CSS figure device : ``--preview`` si pas une vraie capture.
+
+    @param path: Chemin image injecte dans la fiche
+    @returns: `` vitrine-device-frame--preview`` ou chaîne vide
+    """
+    return ' vitrine-device-frame--preview' if path and not _vitrine_shot_is_capture(path) else ''
+
+
+def _vitrine_catalog_thumb(slug: str) -> str:
+    """
+    Vignette catalogue / teaser : capture tablet, sinon desktop, sinon hero démo, sinon OG site.
+
+    Évite de coller l'image OG générique (cartoon artisan) sur des secteurs sans capture.
+
+    @param slug: Identifiant catalogue de la vitrine
+    @returns: URL absolue de l'image vignette
+    """
+    thumb = _vitrine_screenshot_paths(slug, 'tablet')[2]
+    if not thumb:
+        thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
+    if not thumb:
+        thumb = _vitrine_demo_hero_url(slug)
+    return thumb or '/assets/images/og/home-1200x630.jpg'
+
+
 def _rewrite_vitrine_demo_shared_refs(text: str) -> str:
     """Les démos sont servies sous /devantures/<slug>/demo/ : ../shared/ -> ../../shared/ (idempotent)."""
     return re.sub(r'(?:\.\./)+(?=shared/)', '../../', text)
@@ -1726,9 +1779,19 @@ def publish_catalog_json_for_api(output_dir: Path) -> None:
     """Copie src/data/vitrines.json vers dist/data/ et api/data/ (PHP Stripe + checkout)."""
     if not VITRINES_JSON.is_file():
         return
+    payload = VITRINES_JSON.read_bytes()
     for dest_root in (output_dir / 'data', BASE_DIR / 'api' / 'data'):
         dest_root.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(VITRINES_JSON, dest_root / 'vitrines.json')
+        dest = dest_root / 'vitrines.json'
+        try:
+            shutil.copy2(VITRINES_JSON, dest)
+        except OSError as exc:
+            # WinError 1224 etc. : fichier verrouille (antivirus / PHP) - ecriture directe
+            try:
+                dest.write_bytes(payload)
+                print(f'[WARN] Catalogue vitrines : fallback write ({dest.name}) - {exc}')
+            except OSError as exc2:
+                print(f'[WARN] Catalogue vitrines non copie vers {dest} : {exc2}')
     print('[OK] Catalogue vitrines copie vers data/ et api/data/')
 
 
@@ -1921,10 +1984,7 @@ def _vitrines_catalog_inner_lines(
                 ],
             )
         )
-        _a_thumb = _vitrine_screenshot_paths(slug, 'tablet')[2]
-        if not _a_thumb:
-            _a_thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
-        thumb = _a_thumb or '/assets/images/og/home-1200x630.jpg'
+        thumb = _vitrine_catalog_thumb(slug)
         cat_label = html.escape(cat_label_raw)
         delay = min(idx * 40, 400)
         idx += 1
@@ -2046,11 +2106,7 @@ def build_echantillons_deal_week_embed(data: Optional[Dict[str, Any]] = None) ->
     cta = html.escape((cfg.get('cta_label') or 'Voir la fiche').strip())
     fiche = html.escape(devantures_url(slug))
     demo = html.escape(devantures_url(f'{slug}/demo/index.html'))
-    thumb = (
-        _vitrine_screenshot_paths(slug, 'tablet')[2]
-        or _vitrine_screenshot_paths(slug, 'desktop')[2]
-        or '/assets/images/og/home-1200x630.jpg'
-    )
+    thumb = _vitrine_catalog_thumb(slug)
     features = item.get('features') or []
     perks = ''.join(
         f'<li><i class="fas fa-check" aria-hidden="true"></i><span>{html.escape(str(x))}</span></li>'
@@ -2159,11 +2215,7 @@ def build_home_vitrines_teaser_embed() -> None:
         tagline = html.escape((it.get('tagline') or '').strip())
         cat = (it.get('category') or '').strip()
         cat_label = html.escape(VITRINE_CATEGORY_LABELS.get(cat, cat.replace('_', ' ').title()))
-        thumb = (
-            _vitrine_screenshot_paths(slug, 'tablet')[2]
-            or _vitrine_screenshot_paths(slug, 'desktop')[2]
-            or '/assets/images/og/home-1200x630.jpg'
-        )
+        thumb = _vitrine_catalog_thumb(slug)
         demo_url = html.escape(devantures_url(f'{slug}/demo/index.html'))
         fiche_url = html.escape(devantures_url(slug))
         cls = f'home-vitrine-teaser scroll-reveal{extra_class}'
@@ -2302,7 +2354,8 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
         _, d_desk, a_desk = _vitrine_screenshot_paths(slug, 'desktop')
         _, d_tab, _a_tab = _vitrine_screenshot_paths(slug, 'tablet')
         _, d_mob, _a_mob = _vitrine_screenshot_paths(slug, 'mobile')
-        fallback = '/assets/images/og/home-1200x630.jpg'
+        # Hero démo avant OG générique : sinon fiche gîtes / BTP affichent le cartoon artisan
+        fallback = _vitrine_demo_hero_url(slug) or '/assets/images/og/home-1200x630.jpg'
         desk = d_desk or fallback
         tab = d_tab or d_desk or fallback
         mob = d_mob or d_desk or fallback
@@ -2333,6 +2386,9 @@ def build_vitrine_pages(template_engine: TemplateEngine, output_dir: Path) -> Li
             'vitrine_shot_desktop': desk,
             'vitrine_shot_tablet': tab,
             'vitrine_shot_mobile': mob,
+            'vitrine_frame_desktop_mod': _vitrine_shot_frame_mod(desk),
+            'vitrine_frame_tablet_mod': _vitrine_shot_frame_mod(tab),
+            'vitrine_frame_mobile_mod': _vitrine_shot_frame_mod(mob),
             'vitrine_features_html': features_html,
             'vitrine_stack_html': stack_html,
             'vitrine_mailto_subject': mail_subj,
@@ -2468,11 +2524,7 @@ def _home_echantillon_rotation_item(it: Dict[str, Any]) -> Optional[Dict[str, An
     if not slug:
         return None
     cat = (it.get('category') or '').strip()
-    thumb = (
-        _vitrine_screenshot_paths(slug, 'tablet')[2]
-        or _vitrine_screenshot_paths(slug, 'desktop')[2]
-        or '/assets/images/og/home-1200x630.jpg'
-    )
+    thumb = _vitrine_catalog_thumb(slug)
     return {
         'slug': slug,
         'title': (it.get('title') or slug).strip(),

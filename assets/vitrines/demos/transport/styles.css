@@ -1,0 +1,40 @@
+/* Navette Orne & Moselle - Transport (ADN CargoX / Hunsy) */
+:root {
+  --mv-bg: #0b1220;
+  --mv-ink: #e2e8f0;
+  --mv-muted: #94a3b8;
+  --mv-accent: #38bdf8;
+  --mv-accent-soft: #7dd3fc;
+  --mv-surface: #111827;
+  --mv-glass: rgba(15, 23, 42, 0.72);
+  --mv-font-display: "Space Grotesk", system-ui, sans-serif;
+  --mv-font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+body.vt-body-transport {
+  background: var(--mv-bg);
+  color: var(--mv-ink);
+}
+body.vt-body-transport .vt-mv-display { color: #fff; font-weight: 700; }
+body.vt-body-transport .vt-mv-section-title { color: #fff; }
+body.vt-body-transport .vt-mv-lead { color: var(--mv-muted); }
+body.vt-body-transport .vt-mv-card {
+  background: var(--mv-surface);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+body.vt-body-transport .vt-mv-card h3 { color: #fff; }
+body.vt-body-transport .vt-mv-btn-primary {
+  background: var(--mv-accent);
+  color: #0b1220;
+}
+body.vt-body-transport .vt-mv-btn-soft {
+  background: #fff;
+  color: #0b1220;
+}
+body.vt-body-transport .vt-mv-pill-nav {
+  background: rgba(11, 18, 32, 0.85);
+  border-color: rgba(148, 163, 184, 0.2);
+}
+body.vt-body-transport .vt-mv-brand { color: #fff; }
+body.vt-body-transport .vt-mv-proof { background: #111827; color: #fff; }
+body.vt-body-transport .vt-navbar,
+body.vt-body-transport .vt-topbar { display: none; }

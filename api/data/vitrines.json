@@ -312,6 +312,60 @@
       ]
     },
     {
+      "slug": "btp",
+      "category": "btp",
+      "title": "Chantiers Est Construction",
+      "tagline": "Entreprise generale BTP",
+      "excerpt": "BTP a Nancy : renovation, extension et ravalement - devis clair, suivi photo chaque semaine.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Hero plein cadre chantier + appel et devis visibles",
+        "Realisations avant/apres et methodes de suivi",
+        "Formulaire devis chantier pret a brancher"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique",
+        "Kit Movento"
+      ]
+    },
+    {
+      "slug": "communication",
+      "category": "communication",
+      "title": "Studio Signal",
+      "tagline": "Agence de communication",
+      "excerpt": "Agence com a Metz : identite, site et campagnes locales - brief court, propositions nettes.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Hero split typo geante facon agence premium",
+        "Cases locales et offres starter / vitrine / campagne",
+        "Formulaire brief en quelques lignes"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique",
+        "Kit Movento"
+      ]
+    },
+    {
+      "slug": "transport",
+      "category": "mobilite",
+      "title": "Navette Orne & Moselle",
+      "tagline": "VTC & navettes",
+      "excerpt": "VTC Metz-Thionville et aeroport : prix affiche, chauffeur local, reservation simple.",
+      "stripe_payment_link_url": "",
+      "features": [
+        "Hero flotte cinematic + CTA appeler / reserver",
+        "Zones, tarifs indicatifs et courses pro",
+        "Centrale joignable 7j/7"
+      ],
+      "stack": [
+        "Bootstrap 5",
+        "HTML statique",
+        "Kit Movento"
+      ]
+    },
+    {
       "slug": "boulangerie",
       "category": "hcr",
       "title": "Maison Lemaire",

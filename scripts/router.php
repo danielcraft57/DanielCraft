@@ -97,6 +97,16 @@ function dc_resolve_static(string $root, string $uri): ?string
             }
         }
 
+        // Priorité au dossier/index.html (ex. /echantillons/) pour ne pas
+        // servir un vieux echantillons.html vide s'il coexiste avec le hub.
+        $dir = $root . str_replace('/', DIRECTORY_SEPARATOR, rtrim($path, '/'));
+        if (is_dir($dir)) {
+            $index = $dir . DIRECTORY_SEPARATOR . 'index.html';
+            if (is_file($index)) {
+                return $index;
+            }
+        }
+
         $candidate = $root . str_replace('/', DIRECTORY_SEPARATOR, rtrim($path, '/') . '.html');
         if (is_file($candidate)) {
             return $candidate;

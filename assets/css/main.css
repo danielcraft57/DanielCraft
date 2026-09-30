@@ -384,6 +384,26 @@ body {
   background: var(--gray-200);
 }
 
+.btn-outline {
+  background: #fff;
+  color: var(--primary-dark, #0f3550);
+  border: 1.5px solid rgba(47, 120, 166, 0.45);
+  box-shadow: 0 2px 8px rgba(15, 53, 80, 0.05);
+}
+
+.btn-outline:hover {
+  background: rgba(77, 169, 214, 0.1);
+  border-color: var(--primary-color, #4da9d6);
+  color: var(--primary-dark, #0f3550);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(47, 120, 166, 0.14);
+}
+
+.btn-outline:focus-visible {
+  outline: 2px solid rgba(47, 120, 166, 0.45);
+  outline-offset: 2px;
+}
+
 .btn-large {
   padding: var(--space-4) var(--space-8);
   font-size: 1.125rem;

@@ -408,8 +408,23 @@
 .vitrine-detail-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.65rem;
   margin-top: 1.5rem;
+  align-items: stretch;
+}
+
+.vitrine-detail-actions .btn {
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .vitrine-detail-actions--hero {
+    flex-direction: column;
+  }
+
+  .vitrine-detail-actions--hero .btn {
+    width: 100%;
+  }
 }
 
 .vitrine-detail-shots {
@@ -421,7 +436,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 @media (min-width: 900px) {
@@ -440,57 +455,103 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 28rem;
 }
 
-@media (min-width: 900px) {
-  .vitrine-device-frame {
-    min-height: 32rem;
-  }
+.vitrine-device-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem 0.55rem 1rem;
+  background: linear-gradient(90deg, rgba(47, 120, 166, 0.12), transparent);
+  border-bottom: 1px solid rgba(47, 120, 166, 0.12);
 }
 
 .vitrine-device-label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1rem;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #184c70;
-  background: linear-gradient(90deg, rgba(47, 120, 166, 0.12), transparent);
-  border-bottom: 1px solid rgba(47, 120, 166, 0.12);
-}
-
-.vitrine-device-frame-tools {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.35rem 0.75rem 0;
-  background: #fff;
+  background: none;
+  border: none;
+  min-width: 0;
 }
 
 .vitrine-shot-open {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #2f78a6;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 120, 166, 0.28);
+  background: #fff;
+  color: #184c70;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(15, 53, 80, 0.06);
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease,
+    transform 0.14s ease;
+}
+
+.vitrine-shot-open i {
+  font-size: 0.68rem;
+  opacity: 0.85;
 }
 
 .vitrine-shot-open:hover {
-  text-decoration: underline;
+  background: rgba(47, 120, 166, 0.1);
+  border-color: #2f78a6;
+  color: #0f3550;
+  box-shadow: 0 4px 12px rgba(47, 120, 166, 0.14);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.vitrine-shot-open:focus-visible {
+  outline: 2px solid rgba(47, 120, 166, 0.45);
+  outline-offset: 2px;
+}
+
+.vitrine-shot-open:active {
+  transform: translateY(0);
 }
 
 .vitrine-device-inner {
   position: relative;
-  flex: 1 1 auto;
-  min-height: 0;
+  flex: 0 0 auto;
   max-height: min(58vh, 520px);
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: linear-gradient(180deg, #eef5fa, #fff);
   scroll-behavior: auto;
+}
+
+/* Hero / OG de remplacement (pas capture pleine page) : pas de vide sous l'image */
+.vitrine-device-frame--preview .vitrine-device-inner {
+  max-height: none;
+  overflow: hidden;
+}
+
+.vitrine-device-frame--preview .vitrine-device-inner img {
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+  min-height: 12rem;
 }
 
 .vitrine-device-inner:focus {
@@ -662,26 +723,32 @@
 }
 
 .vitrine-detail-actions__subtle {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   width: 100%;
-  margin-top: 0.35rem;
-  font-size: 0.88rem;
+  margin-top: 0.15rem;
+  padding: 0.35rem 0.25rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #4a6b82;
+  color: #2f78a6;
   text-decoration: none;
-  border-bottom: 1px solid rgba(47, 120, 166, 0.22);
-  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  border-radius: 8px;
+  border-bottom: none;
+  transition: color 0.18s ease, background 0.18s ease;
 }
 
 .vitrine-detail-actions__subtle:hover {
-  color: #184c70;
-  border-bottom-color: rgba(47, 120, 166, 0.45);
+  color: #0f3550;
+  background: rgba(47, 120, 166, 0.08);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .vitrine-detail-actions__subtle:focus-visible {
   outline: 2px solid rgba(47, 120, 166, 0.45);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 .vitrine-purchase-cta-stack {

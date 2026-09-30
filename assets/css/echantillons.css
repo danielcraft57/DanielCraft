@@ -90,19 +90,38 @@
   transform: translateY(-1px);
 }
 
-.echantillons-search-hero .is-chip-overflow[hidden] {
-  display: none !important;
-}
-
 @media (max-width: 640px) {
   .echantillons-search-form {
     flex-direction: column;
+  }
+
+  .echantillons-search-form .prestations-search-input-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .echantillons-search-submit {
     width: 100%;
     justify-content: center;
     min-height: 2.75rem;
+  }
+
+  .page-echantillons .prestations-search-chip.is-active {
+    background: linear-gradient(145deg, var(--primary-color), var(--metal-blue-3, #2f78a6));
+    border-color: transparent;
+    color: #fff;
+  }
+
+  .page-echantillons .vitrine-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .page-echantillons .vitrine-card-btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 2.5rem;
   }
 }
 

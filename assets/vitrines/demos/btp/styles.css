@@ -1,0 +1,30 @@
+/* Chantiers Est Construction - BTP Nancy (ADN Angelo / Graven) */
+:root {
+  --mv-bg: #f4f1ea;
+  --mv-ink: #1a1510;
+  --mv-muted: #6b6258;
+  --mv-accent: #c45c26;
+  --mv-accent-soft: #e8a87c;
+  --mv-surface: #fffdf8;
+  --mv-glass: rgba(255, 253, 248, 0.78);
+  --mv-font-display: "Instrument Serif", Georgia, serif;
+  --mv-font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+body.vt-body-btp .vt-mv-display {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+body.vt-body-btp .vt-mv-hero-bleed .vt-mv-display { color: #fff; }
+body.vt-body-btp .vt-mv-hero-bleed .vt-mv-lead { color: rgba(255,255,255,0.88); }
+body.vt-body-btp .vt-mv-btn-primary {
+  background: var(--mv-accent);
+  color: #fff;
+}
+body.vt-body-btp .vt-mv-btn-soft {
+  background: #fff;
+  color: var(--mv-ink);
+}
+body.vt-body-btp .vt-navbar,
+body.vt-body-btp .vt-topbar { display: none; }

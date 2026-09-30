@@ -1,0 +1,109 @@
+{
+  "slug": "transport",
+  "brand": "Navette Orne & Moselle",
+  "category": "mobilite",
+  "locale": "Metz, Grand Est, France",
+  "style_suffix": "Premium local VTC fleet Moselle, cinematic automotive photography, dusk light, photorealistic, no text, no watermark, no logos",
+  "images": [
+    {
+      "filename": "hero.png",
+      "width": 1200,
+      "height": 520,
+      "scene": "hero",
+      "alt": "Vehicule VTC Navette Orne et Moselle",
+      "subject": "Premium dark sedan VTC parked at dusk near Metz cathedral silhouette, cinematic automotive photo, soft city lights, professional chauffeur service mood",
+      "contexts": [
+        { "page": "index.html", "section": "hero", "text": "De Metz a Thionville" }
+      ]
+    },
+    {
+      "filename": "card-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Prise en charge gare Metz",
+      "subject": "Chauffeur holding name sign greeting traveler at Metz train station entrance, warm evening",
+      "contexts": [
+        { "page": "index.html", "section": "services", "text": "Gare et aeroport" }
+      ]
+    },
+    {
+      "filename": "card-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Transfert professionnel berline",
+      "subject": "Business traveler entering black berline with open door, airport drop-off, professional travel",
+      "contexts": [
+        { "page": "index.html", "section": "services", "text": "Trajets pro" }
+      ]
+    },
+    {
+      "filename": "card-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "card",
+      "alt": "Van navette groupe",
+      "subject": "Modern passenger van for group shuttle parked in Moselle countryside, clean fleet photography",
+      "contexts": [
+        { "page": "index.html", "section": "services", "text": "Navette groupe" }
+      ]
+    },
+    {
+      "filename": "scene-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Chauffeur local Moselle",
+      "subject": "Friendly local chauffeur at steering wheel smiling briefly, interior of premium car, soft light",
+      "contexts": [
+        { "page": "index.html", "section": "chapter", "text": "Chauffeurs du coin" },
+        { "page": "zones.html", "section": "chapter", "text": "Metz agglo" }
+      ]
+    },
+    {
+      "filename": "scene-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Zone Thionville",
+      "subject": "Thionville city skyline with Moselle river bridge at golden hour, travel destination mood",
+      "contexts": [
+        { "page": "zones.html", "section": "chapter", "text": "Thionville Nord" }
+      ]
+    },
+    {
+      "filename": "scene-3.png",
+      "width": 800,
+      "height": 520,
+      "scene": "scene",
+      "alt": "Autoroute A31",
+      "subject": "Highway A31 Lorraine at dusk with car headlights, long distance transfer atmosphere",
+      "contexts": [
+        { "page": "zones.html", "section": "chapter", "text": "Longue distance" }
+      ]
+    },
+    {
+      "filename": "gallery-1.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Interieur vehicule premium",
+      "subject": "Clean leather rear seat interior of premium VTC car, ambient lighting, comfort focus",
+      "contexts": [
+        { "page": "tarifs.html", "section": "gallery", "text": "Confort" }
+      ]
+    },
+    {
+      "filename": "gallery-2.png",
+      "width": 800,
+      "height": 520,
+      "scene": "gallery",
+      "alt": "Aeroport Luxembourg Findel",
+      "subject": "Airport terminal drop-off curb Luxembourg Findel style, modern glass architecture, travel",
+      "contexts": [
+        { "page": "tarifs.html", "section": "gallery", "text": "Aeroport" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+/* Studio Signal - Communication Metz (ADN Portiva / Dental) */
+:root {
+  --mv-bg: #f7f5f2;
+  --mv-ink: #111827;
+  --mv-muted: #64748b;
+  --mv-accent: #0f766e;
+  --mv-accent-soft: #5eead4;
+  --mv-surface: #ffffff;
+  --mv-glass: rgba(255, 255, 255, 0.82);
+  --mv-font-display: "Instrument Serif", Georgia, serif;
+  --mv-font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+body.vt-body-com .vt-mv-btn-primary {
+  background: var(--mv-accent);
+  color: #fff;
+}
+body.vt-body-com .vt-mv-glass-pill {
+  background: rgba(15, 118, 110, 0.12);
+  border-color: rgba(15, 118, 110, 0.2);
+  color: var(--mv-ink);
+}
+body.vt-body-com .vt-navbar,
+body.vt-body-com .vt-topbar { display: none; }

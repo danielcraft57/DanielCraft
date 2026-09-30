@@ -2217,3 +2217,457 @@ def block_pill_appbar_m3(
     {cta}
   </div>
 </header>"""
+
+
+# ---------------------------------------------------------------------------
+# Kit Movento (ADN dental split / Angelo bleed) - echantillons secteurs
+# ---------------------------------------------------------------------------
+
+
+def block_hero_movento_split(
+    h1: str,
+    lead: str,
+    img: str,
+    alt: str,
+    *,
+    eyebrow: str,
+    primary_href: str,
+    primary_label: str,
+    secondary_href: str = "",
+    secondary_label: str = "",
+    glass_pills: list[str] | None = None,
+) -> str:
+    """Hero split typo geante + photo + barres glass (ADN Dental Movento)."""
+    pills = glass_pills or []
+    stack = ""
+    if pills:
+        items = "".join(f'<div class="vt-mv-glass-pill">{esc(p)}</div>' for p in pills)
+        stack = f'<div class="vt-mv-glass-stack" aria-hidden="true">{items}</div>'
+    sec = ""
+    if secondary_href and secondary_label:
+        sec = (
+            f'<a class="vt-mv-btn vt-mv-btn-outline" href="{esc(secondary_href)}">'
+            f"{esc(secondary_label)}</a>"
+        )
+    return f"""<section class="vt-mv-hero-split" aria-label="Accueil">
+  <div class="vt-mv-hero-split-copy">
+    <p class="vt-mv-eyebrow">{esc(eyebrow)}</p>
+    <h1 class="vt-mv-display">{esc(h1)}</h1>
+    <p class="vt-mv-lead">{esc(lead)}</p>
+    <div class="vt-mv-cta-stack">
+      <a class="vt-mv-btn vt-mv-btn-primary" href="{esc(primary_href)}">{esc(primary_label)}</a>
+      {sec}
+    </div>
+  </div>
+  <div class="vt-mv-hero-split-media">
+    {stack}
+    {vt_picture(img, alt, css_class="vt-mv-cover", loading=None, fetchpriority="high")}
+  </div>
+</section>"""
+
+
+def block_hero_movento_bleed(
+    h1: str,
+    lead: str,
+    img: str,
+    alt: str,
+    *,
+    badge: str,
+    primary_href: str,
+    primary_label: str,
+    secondary_href: str = "",
+    secondary_label: str = "",
+    phone_href: str = "",
+    phone_label: str = "",
+) -> str:
+    """Hero full-bleed photo metier + badge lieu + CTA empiles (ADN Angelo Movento)."""
+    ctas = (
+        f'<a class="vt-mv-btn vt-mv-btn-soft" href="{esc(primary_href)}">{esc(primary_label)}</a>'
+    )
+    if phone_href and phone_label:
+        ctas += (
+            f'<a class="vt-mv-btn vt-mv-btn-primary" href="{esc(phone_href)}">{esc(phone_label)}</a>'
+        )
+    if secondary_href and secondary_label:
+        ctas += (
+            f'<a class="vt-mv-btn vt-mv-btn-ghost" href="{esc(secondary_href)}">{esc(secondary_label)}</a>'
+        )
+    return f"""<section class="vt-mv-hero-bleed" aria-label="Accueil">
+  <div class="vt-mv-hero-bleed-bg" aria-hidden="true">
+    {vt_picture(img, alt, css_class="", loading=None, fetchpriority="high")}
+  </div>
+  <div class="vt-mv-hero-bleed-inner">
+    <p class="vt-mv-eyebrow">{esc(badge)}</p>
+    <h1 class="vt-mv-display">{esc(h1)}</h1>
+    <p class="vt-mv-lead">{esc(lead)}</p>
+    <div class="vt-mv-cta-stack">{ctas}</div>
+  </div>
+</section>"""
+
+
+def block_feature_glass_pills(items: list[str]) -> str:
+    """Rangee de pastilles glass hors hero."""
+    pills = "".join(f'<span class="vt-mv-glass-pill">{esc(i)}</span>' for i in items)
+    return f'<div class="vt-mv-wrap" style="display:flex;flex-wrap:wrap;gap:.55rem;padding:1rem 1.25rem">{pills}</div>'
+
+
+def block_snap_chapter(
+    title: str,
+    text: str,
+    img: str,
+    alt: str,
+    *,
+    reverse: bool = False,
+    cta_href: str = "",
+    cta_label: str = "",
+) -> str:
+    """Chapitre plein viewport photo + texte (scroll Movento)."""
+    rev = " is-reverse" if reverse else ""
+    cta = ""
+    if cta_href and cta_label:
+        cta = f'<p class="mt-3 mb-0"><a class="vt-mv-btn vt-mv-btn-primary" href="{esc(cta_href)}">{esc(cta_label)}</a></p>'
+    return f"""<section class="vt-mv-snap{rev}">
+  <div>
+    <h2 class="vt-mv-section-title">{esc(title)}</h2>
+    <p class="vt-mv-lead mb-0">{esc(text)}</p>
+    {cta}
+  </div>
+  <div class="vt-mv-snap-media">
+    {vt_picture(img, alt, css_class="")}
+  </div>
+</section>"""
+
+
+def block_before_after(
+    before_img: str,
+    after_img: str,
+    *,
+    before_alt: str = "Avant",
+    after_alt: str = "Apres",
+    before_label: str = "Avant",
+    after_label: str = "Apres",
+    title: str = "Avant / apres",
+) -> str:
+    """Galerie avant/apres (ADN Angelo)."""
+    return f"""<section class="vt-mv-wrap" aria-label="{esc(title)}">
+  <h2 class="vt-mv-section-title">{esc(title)}</h2>
+  <div class="vt-mv-ba">
+    <figure>
+      {vt_picture(before_img, before_alt, css_class="")}
+      <figcaption>{esc(before_label)}</figcaption>
+    </figure>
+    <figure>
+      {vt_picture(after_img, after_alt, css_class="")}
+      <figcaption>{esc(after_label)}</figcaption>
+    </figure>
+  </div>
+</section>"""
+
+
+def block_movento_services(
+    title: str,
+    cards: list[dict],
+    *,
+    lead: str = "",
+) -> str:
+    """Grille 3 services photo (cards: title, text, img, alt)."""
+    lead_html = f'<p class="vt-mv-lead">{esc(lead)}</p>' if lead else ""
+    items = ""
+    for c in cards:
+        items += f"""<article class="vt-mv-card">
+  {vt_picture(c["img"], c.get("alt", c["title"]), css_class="")}
+  <div class="vt-mv-card-body">
+    <h3>{esc(c["title"])}</h3>
+    <p>{esc(c["text"])}</p>
+  </div>
+</article>"""
+    return f"""<section class="vt-mv-services">
+  <div class="vt-mv-wrap">
+    <h2 class="vt-mv-section-title">{esc(title)}</h2>
+    {lead_html}
+    <div class="vt-mv-services-grid">{items}</div>
+  </div>
+</section>"""
+
+
+def block_movento_proof(items: list[tuple[str, str]]) -> str:
+    """Bandeau chiffres cles."""
+    cells = "".join(
+        f"<article><strong>{esc(v)}</strong><span>{esc(l)}</span></article>" for v, l in items
+    )
+    return f'<section class="vt-mv-proof" aria-label="En chiffres">{cells}</section>'
+
+
+def block_movento_pill_nav(
+    brand: str,
+    pages: list[dict],
+    current: str,
+    *,
+    cta_label: str = "Contact",
+    cta_href: str = "contact.html",
+    phone: str = "",
+) -> str:
+    """Nav flottante pill glass."""
+    links = ""
+    for p in pages:
+        active = " is-active" if p["file"] == current else ""
+        links += f'<a class="{active.strip()}" href="{esc(p["file"])}">{esc(p["label"])}</a>'
+    phone_html = ""
+    if phone:
+        tel = phone.replace(" ", "")
+        phone_html = f'<a class="vt-mv-btn vt-mv-btn-outline" href="tel:{esc(tel)}" style="min-height:2.4rem;font-size:.85rem">{esc(phone)}</a>'
+    return f"""<header class="vt-mv-pill-nav" itemscope itemtype="https://schema.org/WebSite">
+  <a class="vt-mv-brand" href="index.html" itemprop="url"><span itemprop="name">{esc(brand)}</span></a>
+  <nav aria-label="Navigation principale">{links}</nav>
+  <div class="vt-mv-pill-actions">
+    {phone_html}
+    <a class="vt-mv-btn vt-mv-btn-primary" href="{esc(cta_href)}" style="min-height:2.4rem;font-size:.85rem">{esc(cta_label)}</a>
+  </div>
+</header>"""
+
+
+def block_movento_contact(
+    title: str,
+    lead: str,
+    *,
+    cta_label: str = "Envoyer",
+    phone: str = "",
+    address: str = "",
+) -> str:
+    """Formulaire contact demo."""
+    meta = ""
+    if phone or address:
+        bits = []
+        if phone:
+            tel = phone.replace(" ", "")
+            bits.append(f'<a href="tel:{esc(tel)}">{esc(phone)}</a>')
+        if address:
+            bits.append(esc(address))
+        meta = f'<p class="vt-mv-lead" style="margin:0 auto">{ " · ".join(bits)}</p>'
+    return f"""<section class="vt-mv-contact" id="contact">
+  <h2 class="vt-mv-section-title">{esc(title)}</h2>
+  <p class="vt-mv-lead" style="margin:0 auto">{esc(lead)}</p>
+  {meta}
+  <form action="#" method="get" aria-label="Formulaire de contact">
+    <label>Nom <input name="nom" type="text" autocomplete="name"></label>
+    <label>Téléphone <input name="tel" type="tel" autocomplete="tel"></label>
+    <label>Message <textarea name="message" rows="4"></textarea></label>
+    <button class="vt-mv-btn vt-mv-btn-primary" type="submit">{esc(cta_label)}</button>
+    <p class="vt-mv-note">Démonstration - aucune donnée transmise.</p>
+  </form>
+</section>"""
+
+
+def block_movento_footer(brand: str, *, note: str = "Echantillon DanielCraft - fiction Grand Est") -> str:
+    return f"""<footer class="vt-mv-foot">
+  <div class="vt-mv-foot-inner">
+    <p><strong>{esc(brand)}</strong> · {esc(note)}</p>
+    <p><a href="../../index.html">← Catalogue echantillons</a></p>
+  </div>
+</footer>"""
+
+
+def block_movento_bar_nav(
+    brand: str,
+    nav: list[dict],
+    active_file: str,
+    *,
+    cta_label: str,
+    cta_href: str,
+    phone: str = "",
+    variant: str = "solid",
+) -> str:
+    """Nav pleine largeur (solid / minimal / underline) - alternative a la pill."""
+    links = "".join(
+        f'<a class="{"is-active" if p.get("file") == active_file else ""}" '
+        f'href="{esc(p.get("file", ""))}">{esc(p.get("label", ""))}</a>'
+        for p in nav
+    )
+    phone_html = ""
+    if phone:
+        tel = "".join(c for c in phone if c.isdigit() or c == "+")
+        phone_html = (
+            f'<a class="vt-mv-btn vt-mv-btn-outline" href="tel:{esc(tel)}" '
+            f'style="min-height:2.4rem;font-size:.85rem">{esc(phone)}</a>'
+        )
+    return f"""<header class="vt-mv-bar-nav vt-mv-bar-nav--{esc(variant)}" itemscope itemtype="https://schema.org/WebSite">
+  <div class="vt-mv-bar-nav-inner">
+    <a class="vt-mv-brand" href="index.html" itemprop="url"><span itemprop="name">{esc(brand)}</span></a>
+    <nav aria-label="Navigation principale">{links}</nav>
+    <div class="vt-mv-pill-actions">
+      {phone_html}
+      <a class="vt-mv-btn vt-mv-btn-primary" href="{esc(cta_href)}" style="min-height:2.4rem;font-size:.85rem">{esc(cta_label)}</a>
+    </div>
+  </div>
+</header>"""
+
+
+def block_hero_movento_center(
+    h1: str,
+    lead: str,
+    *,
+    eyebrow: str,
+    primary_href: str,
+    primary_label: str,
+    secondary_href: str = "",
+    secondary_label: str = "",
+    img: str = "",
+    alt: str = "",
+) -> str:
+    """Hero centre editorial (typo geante, photo en fond optionnelle)."""
+    bg = ""
+    if img:
+        bg = (
+            f'<div class="vt-mv-hero-center-bg" aria-hidden="true">'
+            f'{vt_picture(img, alt or h1, css_class="vt-mv-cover", loading=None, fetchpriority="high")}'
+            f"</div>"
+        )
+    sec = ""
+    if secondary_href and secondary_label:
+        sec = (
+            f'<a class="vt-mv-btn vt-mv-btn-ghost" href="{esc(secondary_href)}">'
+            f"{esc(secondary_label)}</a>"
+        )
+    return f"""<section class="vt-mv-hero-center" aria-label="Accueil">
+  {bg}
+  <div class="vt-mv-hero-center-inner">
+    <p class="vt-mv-eyebrow">{esc(eyebrow)}</p>
+    <h1 class="vt-mv-display">{esc(h1)}</h1>
+    <p class="vt-mv-lead">{esc(lead)}</p>
+    <div class="vt-mv-cta-stack vt-mv-cta-stack--center">
+      <a class="vt-mv-btn vt-mv-btn-primary" href="{esc(primary_href)}">{esc(primary_label)}</a>
+      {sec}
+    </div>
+  </div>
+</section>"""
+
+
+def block_hero_movento_magazine(
+    h1: str,
+    lead: str,
+    img: str,
+    alt: str,
+    *,
+    eyebrow: str,
+    primary_href: str,
+    primary_label: str,
+    kicker: str = "",
+) -> str:
+    """Hero magazine : photo pleine largeur puis bandeau texte en bas."""
+    kick = f'<p class="vt-mv-kicker">{esc(kicker)}</p>' if kicker else ""
+    return f"""<section class="vt-mv-hero-mag" aria-label="Accueil">
+  <div class="vt-mv-hero-mag-media">
+    {vt_picture(img, alt, css_class="vt-mv-cover", loading=None, fetchpriority="high")}
+  </div>
+  <div class="vt-mv-hero-mag-copy">
+    <p class="vt-mv-eyebrow">{esc(eyebrow)}</p>
+    {kick}
+    <h1 class="vt-mv-display">{esc(h1)}</h1>
+    <p class="vt-mv-lead">{esc(lead)}</p>
+    <a class="vt-mv-btn vt-mv-btn-primary" href="{esc(primary_href)}">{esc(primary_label)}</a>
+  </div>
+</section>"""
+
+
+def block_movento_steps(title: str, steps: list[tuple[str, str]], *, lead: str = "") -> str:
+    """Processus numerote - sans grille de cartes photo."""
+    lead_html = f'<p class="vt-mv-lead">{esc(lead)}</p>' if lead else ""
+    items = ""
+    for i, (label, text) in enumerate(steps, 1):
+        items += (
+            f'<li class="vt-mv-step"><span class="vt-mv-step-num" aria-hidden="true">{i:02d}</span>'
+            f"<div><h3>{esc(label)}</h3><p>{esc(text)}</p></div></li>"
+        )
+    return f"""<section class="vt-mv-steps">
+  <div class="vt-mv-wrap">
+    <h2 class="vt-mv-section-title">{esc(title)}</h2>
+    {lead_html}
+    <ol class="vt-mv-steps-list">{items}</ol>
+  </div>
+</section>"""
+
+
+def block_movento_menu_list(
+    title: str,
+    rows: list[tuple[str, str, str]],
+    *,
+    lead: str = "",
+    cta_href: str = "",
+    cta_label: str = "",
+) -> str:
+    """Liste type carte resto (nom · detail · prix)."""
+    lead_html = f'<p class="vt-mv-lead">{esc(lead)}</p>' if lead else ""
+    items = ""
+    for name, detail, price in rows:
+        items += (
+            f'<li class="vt-mv-menu-row"><div><strong>{esc(name)}</strong>'
+            f'<span>{esc(detail)}</span></div><em>{esc(price)}</em></li>'
+        )
+    cta = ""
+    if cta_href and cta_label:
+        cta = (
+            f'<p class="mt-4 mb-0"><a class="vt-mv-btn vt-mv-btn-primary" href="{esc(cta_href)}">'
+            f"{esc(cta_label)}</a></p>"
+        )
+    return f"""<section class="vt-mv-menu">
+  <div class="vt-mv-wrap vt-mv-wrap--narrow">
+    <h2 class="vt-mv-section-title">{esc(title)}</h2>
+    {lead_html}
+    <ul class="vt-mv-menu-list">{items}</ul>
+    {cta}
+  </div>
+</section>"""
+
+
+def block_movento_quote(quote: str, *, author: str = "", role: str = "") -> str:
+    """Bandeau citation pleine largeur."""
+    by = ""
+    if author:
+        role_html = f'<span>{esc(role)}</span>' if role else ""
+        by = f'<footer><cite>{esc(author)}</cite>{role_html}</footer>'
+    return f"""<section class="vt-mv-quote" aria-label="Temoignage">
+  <blockquote>
+    <p>{esc(quote)}</p>
+    {by}
+  </blockquote>
+</section>"""
+
+
+def block_movento_feature_rows(
+    title: str,
+    rows: list[tuple[str, str, str, str]],
+    *,
+    lead: str = "",
+) -> str:
+    """Lignes image + texte alternees (pas de cards egales).
+
+    @param rows: tuples (titre, texte, image, alt)
+    """
+    lead_html = f'<p class="vt-mv-lead">{esc(lead)}</p>' if lead else ""
+    items = ""
+    for i, (label, text, img, alt) in enumerate(rows):
+        rev = " vt-mv-feature-row--rev" if i % 2 else ""
+        items += f"""<article class="vt-mv-feature-row{rev}">
+  <div class="vt-mv-feature-copy">
+    <h3>{esc(label)}</h3>
+    <p>{esc(text)}</p>
+  </div>
+  <div class="vt-mv-feature-media">
+    {vt_picture(img, alt, css_class="vt-mv-cover", loading="lazy")}
+  </div>
+</article>"""
+    return f"""<section class="vt-mv-features">
+  <div class="vt-mv-wrap">
+    <h2 class="vt-mv-section-title">{esc(title)}</h2>
+    {lead_html}
+    <div class="vt-mv-features-stack">{items}</div>
+  </div>
+</section>"""
+
+
+def block_movento_stat_band(items: list[tuple[str, str]]) -> str:
+    """Bandeau stats plein fond accent (plus marqueur que proof cards)."""
+    cells = "".join(
+        f"<div><strong>{esc(a)}</strong><span>{esc(b)}</span></div>" for a, b in items
+    )
+    return f'<section class="vt-mv-stat-band" aria-label="En chiffres">{cells}</section>'

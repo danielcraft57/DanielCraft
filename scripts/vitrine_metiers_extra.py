@@ -33,8 +33,9 @@ HEAD_BOULANGERIE = f"""
 HEAD_ARTISAN = f"""
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-{_BOOT}"""
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+{_BOOT}
+  <link rel="stylesheet" href="../shared/vitrine-movento.css">"""
 
 HEAD_FLEURISTE = f"""
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -412,6 +413,8 @@ def build_osteo_contact():
     return _shell_os("contact.html", f"Contact - {OS_BRAND}", "RDV osteopathie Cabinet des Ponts Metz.", main)
 
 
+from vitrine_secteurs_movento import BUILDERS_SECTEURS_MOVENTO
+
 BUILDERS_EXTRA = {
     "boulangerie": [
         ("index.html", build_boulangerie_index),
@@ -444,3 +447,4 @@ BUILDERS_EXTRA = {
         ("contact.html", build_osteo_contact),
     ],
 }
+BUILDERS_EXTRA.update(BUILDERS_SECTEURS_MOVENTO)

@@ -9,6 +9,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from vitrine_seo import get_entity
 from vitrine_metiers_extra import BUILDERS_EXTRA
+from vitrine_movento_vague_a import BUILDERS_MOVENTO_VAGUE_A
+from vitrine_movento_vague_b import BUILDERS_MOVENTO_VAGUE_B
+from vitrine_movento_vague_c import BUILDERS_MOVENTO_VAGUE_C
+from vitrine_movento_vague_d import BUILDERS_MOVENTO_VAGUE_D
 
 
 def _chrome_nav(slug: str, brand: str, nav: list, page: str, *, cta_label: str, cta_href: str) -> str:
@@ -5166,6 +5170,10 @@ BUILDERS = {
     ],
 }
 BUILDERS.update(BUILDERS_EXTRA)
+BUILDERS.update(BUILDERS_MOVENTO_VAGUE_A)
+BUILDERS.update(BUILDERS_MOVENTO_VAGUE_B)
+BUILDERS.update(BUILDERS_MOVENTO_VAGUE_C)
+BUILDERS.update(BUILDERS_MOVENTO_VAGUE_D)
 
 
 def main() -> None:

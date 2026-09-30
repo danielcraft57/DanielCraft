@@ -3023,6 +3023,15 @@ html.js .home-stagger:not(.is-visible) > * {
   text-decoration: line-through;
 }
 
+.home-deal-ice__note {
+  margin: 0.45rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  opacity: 1;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+}
+
 .home-deal-ice__body h2 {
   margin: 0 0 0.45rem;
   font-size: clamp(1.35rem, 2vw, 1.7rem);

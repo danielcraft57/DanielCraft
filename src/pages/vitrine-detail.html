@@ -29,9 +29,8 @@
                 <span>Parler de ton projet</span>
                 <i class="fas fa-comments" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-outline btn-large" href="/prestations/site-vitrine/">
-                <span>Site sur mesure - à partir de 460 €</span>
-                <i class="fas fa-magic" aria-hidden="true"></i>
+            <a class="vitrine-detail-actions__subtle" href="/prestations/site-vitrine/">
+                Site sur mesure - à partir de 460 €
             </a>
         </div>
     </div>
@@ -44,28 +43,37 @@
             {{vitrine_copy_shots_html}}
         </div>
         <div class="vitrine-device-grid">
-            <figure class="vitrine-device-frame vitrine-device-frame--desktop scroll-reveal" style="--reveal-delay: 0ms">
-                <figcaption class="vitrine-device-label"><i class="fas fa-desktop" aria-hidden="true"></i> Desktop</figcaption>
-                <div class="vitrine-device-frame-tools">
-                    <a class="vitrine-shot-open" href="{{vitrine_shot_desktop}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
+            <figure class="vitrine-device-frame vitrine-device-frame--desktop{{vitrine_frame_desktop_mod}} scroll-reveal" style="--reveal-delay: 0ms">
+                <div class="vitrine-device-head">
+                    <figcaption class="vitrine-device-label"><i class="fas fa-desktop" aria-hidden="true"></i> Desktop</figcaption>
+                    <a class="vitrine-shot-open" href="{{vitrine_shot_desktop}}" target="_blank" rel="noopener noreferrer">
+                        <span>Ouvrir</span>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
                     <img src="{{vitrine_shot_desktop}}" alt="{{vitrine_img_alt_desktop}}" width="1600" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
                 </div>
             </figure>
-            <figure class="vitrine-device-frame vitrine-device-frame--tablet scroll-reveal" style="--reveal-delay: 80ms">
-                <figcaption class="vitrine-device-label"><i class="fas fa-tablet-alt" aria-hidden="true"></i> Tablette</figcaption>
-                <div class="vitrine-device-frame-tools">
-                    <a class="vitrine-shot-open" href="{{vitrine_shot_tablet}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
+            <figure class="vitrine-device-frame vitrine-device-frame--tablet{{vitrine_frame_tablet_mod}} scroll-reveal" style="--reveal-delay: 80ms">
+                <div class="vitrine-device-head">
+                    <figcaption class="vitrine-device-label"><i class="fas fa-tablet-alt" aria-hidden="true"></i> Tablette</figcaption>
+                    <a class="vitrine-shot-open" href="{{vitrine_shot_tablet}}" target="_blank" rel="noopener noreferrer">
+                        <span>Ouvrir</span>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
                     <img src="{{vitrine_shot_tablet}}" alt="{{vitrine_img_alt_tablet}}" width="1200" height="900" loading="lazy" decoding="async" data-vitrine-fallback>
                 </div>
             </figure>
-            <figure class="vitrine-device-frame vitrine-device-frame--mobile scroll-reveal" style="--reveal-delay: 160ms">
-                <figcaption class="vitrine-device-label"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</figcaption>
-                <div class="vitrine-device-frame-tools">
-                    <a class="vitrine-shot-open" href="{{vitrine_shot_mobile}}" target="_blank" rel="noopener noreferrer">Ouvrir la capture</a>
+            <figure class="vitrine-device-frame vitrine-device-frame--mobile{{vitrine_frame_mobile_mod}} scroll-reveal" style="--reveal-delay: 160ms">
+                <div class="vitrine-device-head">
+                    <figcaption class="vitrine-device-label"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile</figcaption>
+                    <a class="vitrine-shot-open" href="{{vitrine_shot_mobile}}" target="_blank" rel="noopener noreferrer">
+                        <span>Ouvrir</span>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="vitrine-device-inner vitrine-shot-viewport vitrine-scroll-hide-scrollbar" data-vitrine-auto-scroll tabindex="0">
                     <img src="{{vitrine_shot_mobile}}" alt="{{vitrine_img_alt_mobile}}" width="800" height="1200" loading="lazy" decoding="async" data-vitrine-fallback>

@@ -256,34 +256,6 @@
   color: #5a6b7a;
 }
 
-/* Chips overflow */
-.prestations-search-chip-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.85rem;
-  border-radius: 999px;
-  border: 1px dashed rgba(15, 53, 80, 0.25);
-  background: rgba(255, 255, 255, 0.7);
-  color: #0f3550;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.prestations-search-chip-more:hover {
-  border-color: #4da9d6;
-  color: #1a5f85;
-}
-
-.prestations-search-chips.is-chips-expanded .prestations-search-chip-more {
-  border-style: solid;
-}
-
-.prestations-search-chip.is-chip-overflow[hidden] {
-  display: none !important;
-}
-
 /* Sidebar overflow */
 #prestationsSidebarList.is-side-collapsed > .is-side-overflow {
   display: none;

@@ -3,219 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Carte saisonnière : entrées lorraines, plats mijotés et bières artisanales.">
-  <title>La carte - Brasserie Saint-Jacques</title>
-  <!-- layout: brasserie-bs · Bootstrap 5 · vitrine site complet -->
+  <meta name="description" content="Carte Brasserie Saint-Jacques Metz.">
+  <title>Carte - Brasserie Saint-Jacques</title>
+  <!-- layout: movento-restau · Bootstrap 5 · vitrine site complet -->
   <link rel="canonical" href="https://danielcraft.fr/echantillons/restauration/demo/carte.html">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Brasserie Saint-Jacques">
-  <meta property="og:title" content="La carte - Brasserie Saint-Jacques">
-  <meta property="og:description" content="Carte saisonnière : entrées lorraines, plats mijotés et bières artisanales.">
+  <meta property="og:title" content="Carte - Brasserie Saint-Jacques">
+  <meta property="og:description" content="Carte Brasserie Saint-Jacques Metz.">
   <meta property="og:url" content="https://danielcraft.fr/echantillons/restauration/demo/carte.html">
   <meta property="og:image" content="https://danielcraft.fr/echantillons/restauration/demo/images/hero.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="520">
-  <meta property="og:image:alt" content="La carte - Brasserie Saint-Jacques">
+  <meta property="og:image:alt" content="Carte - Brasserie Saint-Jacques">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="La carte - Brasserie Saint-Jacques">
-  <meta name="twitter:description" content="Carte saisonnière : entrées lorraines, plats mijotés et bières artisanales.">
+  <meta name="twitter:title" content="Carte - Brasserie Saint-Jacques">
+  <meta name="twitter:description" content="Carte Brasserie Saint-Jacques Metz.">
   <meta name="twitter:image" content="https://danielcraft.fr/echantillons/restauration/demo/images/hero.webp">
-  <meta name="twitter:image:alt" content="La carte - Brasserie Saint-Jacques">
+  <meta name="twitter:image:alt" content="Carte - Brasserie Saint-Jacques">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="../shared/vitrine-prose.css">
   <link rel="stylesheet" href="../shared/vitrine-images.css">
   <link rel="stylesheet" href="../shared/vitrine-motion.css">
-  <link rel="stylesheet" href="../shared/vitrine-m3.css">
+  <link rel="stylesheet" href="../shared/vitrine-movento.css">
   <link rel="icon" href="images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="vt-body">
-<div class="vt-rail-shell"><aside class="vt-rail" aria-label="Navigation">
-  <div class="vt-rail-brand">
-    <a href="index.html">Brasserie Saint-Jacques</a>
-    <p class="vt-rail-tag">Metz · depuis 1924</p>
+<body class="vt-body vt-body-movento vt-body-restau vt-mv-restau">
+<header class="vt-mv-pill-nav" itemscope itemtype="https://schema.org/WebSite">
+  <a class="vt-mv-brand" href="index.html" itemprop="url"><span itemprop="name">Brasserie Saint-Jacques</span></a>
+  <nav aria-label="Navigation principale"><a class="" href="index.html">Accueil</a><a class="is-active" href="carte.html">Carte</a><a class="" href="histoire.html">Histoire</a><a class="" href="contact.html">Réserver</a></nav>
+  <div class="vt-mv-pill-actions">
+    <a class="vt-mv-btn vt-mv-btn-outline" href="tel:0387751234" style="min-height:2.4rem;font-size:.85rem">03 87 75 12 34</a>
+    <a class="vt-mv-btn vt-mv-btn-primary" href="contact.html" style="min-height:2.4rem;font-size:.85rem">Réserver</a>
   </div>
-  <nav class="vt-rail-nav"><a class="vt-rail-link" href="index.html"><span class="vt-rail-dot" aria-hidden="true"></span>Accueil</a><a class="vt-rail-link is-active" href="carte.html"><span class="vt-rail-dot" aria-hidden="true"></span>La carte</a><a class="vt-rail-link" href="histoire.html"><span class="vt-rail-dot" aria-hidden="true"></span>Notre histoire</a><a class="vt-rail-link" href="contact.html"><span class="vt-rail-dot" aria-hidden="true"></span>Contact</a></nav>
-  <div class="vt-rail-foot"><p class="vt-rail-meta">Ouvert aujourd&#x27;hui 12:00 - 14:30, 19:00 - 23:00</p><p class="vt-rail-meta">12 place Saint-Jacques, 57000 Metz</p><a class="vt-rail-meta" href="tel:0387751234">03 87 75 12 34</a></div>
-</aside>
-<nav class="vt-rail-mobile" aria-label="Navigation mobile"><a class="vt-rail-link" href="index.html"><span class="vt-rail-dot" aria-hidden="true"></span>Accueil</a><a class="vt-rail-link is-active" href="carte.html"><span class="vt-rail-dot" aria-hidden="true"></span>La carte</a><a class="vt-rail-link" href="histoire.html"><span class="vt-rail-dot" aria-hidden="true"></span>Notre histoire</a><a class="vt-rail-link" href="contact.html"><span class="vt-rail-dot" aria-hidden="true"></span>Contact</a></nav><div class="vt-rail-main"><div class="vt-rail-topbar">
-  <label class="vt-rail-search">
-    <span class="visually-hidden">Reserver une table</span>
-    <input type="search" placeholder="Reserver une table" readonly>
-  </label>
-  <div class="vt-rail-topbar-actions"><a class="btn btn-vt-primary btn-sm px-3" href="contact.html">Reserver</a></div>
-</div><main itemscope itemtype="https://schema.org/WebPage">
+</header>
+<nav class="vt-breadcrumb py-2 border-bottom bg-light" aria-label="Fil d'Ariane" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <div class="container">
+    <ol class="breadcrumb mb-0 small">
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <meta itemprop="position" content="1">
+        <a itemprop="item" href="https://danielcraft.fr/echantillons/restauration/demo/index.html"><span itemprop="name">Brasserie Saint-Jacques</span></a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <meta itemprop="position" content="2">
+        <span itemprop="name">Carte</span>
+      </li>
+    </ol>
+  </div>
+</nav><main itemscope itemtype="https://schema.org/WebPage">
 <link itemprop="url" href="https://danielcraft.fr/echantillons/restauration/demo/carte.html">
-<meta itemprop="inLanguage" content="fr-FR"><section class="vt-hero text-center">
-  <div class="container py-5 py-lg-6">
-    <p class="vt-eyebrow text-uppercase">La carte</p>
-    <h1 itemprop="name" class="display-5 vt-display">Une carte qui suit les saisons mosellanes</h1>
-    <p class="lead vt-lead mx-auto" itemprop="description">Du marché à votre assiette - fournisseurs à moins de 80 km.</p>
-    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-      <a class="btn btn-vt-primary btn-lg rounded-pill px-4" href="contact.html">Réserver</a>
-      <a class="btn btn-vt-outline btn-lg rounded-pill px-4" href="index.html">Découvrir la brasserie</a>
-    </div>
+<meta itemprop="inLanguage" content="fr-FR"><section class="vt-mv-snap">
+  <div>
+    <h2 class="vt-mv-section-title">La carte</h2>
+    <p class="vt-mv-lead mb-0" itemprop="description">Entrées, plats, desserts - mise à jour saisonnière.</p>
+    <p class="mt-3 mb-0"><a class="vt-mv-btn vt-mv-btn-primary" href="contact.html">Réserver</a></p>
   </div>
-  <figure class="vt-hero-media mb-0">
-    <picture><source srcset="images/hero.webp" type="image/webp"><img  itemprop="image" src="images/hero.png" class="w-100" alt="Plats colorés en cuisine lorraine" decoding="async" fetchpriority="high"></picture>
-  </figure>
-</section><section class="vt-menu py-5 bg-white" aria-labelledby="menu-title">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 id="menu-title" class="vt-section-title">Entrées, plats &amp; desserts</h2>
-      <p class="text-secondary mx-auto" style="max-width:42rem">Prix TTC, service compris. Carte renouvelée chaque semaine selon le marché Saint-Jacques.</p>
-    </div>
-    <div class="row g-5"><div class="col-lg-6">
-        <h3 class="h5 vt-menu-cat border-bottom pb-2 mb-3">Entrées</h3>
-        <ul class="list-unstyled mb-0"><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Terrine de canard maison</strong>
-            <span class="vt-menu-price">12 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Cornichons, pain de campagne grillé</p>
-          <div><span class="badge vt-tag me-1">Maison</span></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Salade de Munster</strong>
-            <span class="vt-menu-price">11 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Pommes de terre, lardons fumés, vinaigrette moutarde</p>
-          <div><span class="badge vt-tag me-1">Végétarien</span></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Soupe à l&#x27;oignon gratinée</strong>
-            <span class="vt-menu-price">10 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Bouillon 24 h, comté</p>
-          <div></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Quiche au cow-gomme</strong>
-            <span class="vt-menu-price">13 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Marché Saint-Jacques, salade verte</p>
-          <div><span class="badge vt-tag me-1">Végétarien</span></div>
-        </li></ul>
-      </div><div class="col-lg-6">
-        <h3 class="h5 vt-menu-cat border-bottom pb-2 mb-3">Plats</h3>
-        <ul class="list-unstyled mb-0"><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Bouchée à la reine</strong>
-            <span class="vt-menu-price">24 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Vol-au-vent, champignons, sauce supreme</p>
-          <div><span class="badge vt-tag me-1">Signature</span></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Jarret confit</strong>
-            <span class="vt-menu-price">22 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Purée maison, jus au thym</p>
-          <div></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Sandre du canal</strong>
-            <span class="vt-menu-price">26 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Beurre blanc, légumes de Hagondange</p>
-          <div></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Assiette du marché</strong>
-            <span class="vt-menu-price">21 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Selon arrivage - demandez au serveur</p>
-          <div><span class="badge vt-tag me-1">Saison</span></div>
-        </li></ul>
-      </div><div class="col-lg-6">
-        <h3 class="h5 vt-menu-cat border-bottom pb-2 mb-3">Desserts</h3>
-        <ul class="list-unstyled mb-0"><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Clafoutis mirabelle</strong>
-            <span class="vt-menu-price">9 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Crème fraîche d&#x27;Alsace</p>
-          <div><span class="badge vt-tag me-1">Maison</span></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Tarte aux quetsches</strong>
-            <span class="vt-menu-price">9 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Pâte sablée, glace vanille</p>
-          <div></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Brioche perdue</strong>
-            <span class="vt-menu-price">11 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Mirabelles poêlées - brunch dimanche</p>
-          <div><span class="badge vt-tag me-1">Brunch</span></div>
-        </li></ul>
-      </div><div class="col-lg-6">
-        <h3 class="h5 vt-menu-cat border-bottom pb-2 mb-3">Boissons</h3>
-        <ul class="list-unstyled mb-0"><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Riesling mosellan (verre)</strong>
-            <span class="vt-menu-price">6 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Domaine des Trésors, 2022</p>
-          <div></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Bière artisanale Lorraine</strong>
-            <span class="vt-menu-price">5 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Pression ou bouteille 33 cl</p>
-          <div></div>
-        </li><li class="vt-menu-item py-3 border-bottom">
-          <div class="d-flex justify-content-between align-items-baseline gap-3">
-            <strong>Café gourmand</strong>
-            <span class="vt-menu-price">8 €</span>
-          </div>
-          <p class="small text-secondary mb-1">Trois mignardises maison</p>
-          <div></div>
-        </li></ul>
-      </div></div>
+  <div class="vt-mv-snap-media">
+    <picture><source srcset="images/scene-1.webp" type="image/webp"><img  itemprop="image" src="images/scene-1.png" class="" alt="Carte" decoding="async" loading="lazy"></picture>
   </div>
-</section><section class="vt-story py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2 class="vt-section-title">Produits du terroir</h2>
-        <p class="mb-3">Maraîchers de Hagondange, fromager de Saint-Hubert, vigneron de la Moselle - la carte raconte la Lorraine.</p>
-      </div>
-    </div>
-  </div>
-</section><section class="vt-cta-band py-5 text-center text-white">
-  <div class="container">
-    <p class="lead mb-4">Allergies ou régimes spécifiques ? Prévenez-nous à la réservation.</p>
-    <a class="btn btn-light btn-lg rounded-pill px-4" href="contact.html">Nous contacter</a>
-  </div>
-</section></main><div class="vt-dialog-backdrop" id="resaDialog" hidden data-vt-dialog>
-  <div class="vt-dialog" role="dialog" aria-modal="true" aria-labelledby="resaDialog-title">
-    <h2 id="resaDialog-title">Reserver une table</h2>
-    <p>Dis-nous le jour, l&#x27;heure et le nombre - on te repond sous 1 h (demo).</p>
-    <div class="row g-2">
-      <div class="col-6"><label class="form-label small">Date</label><input type="date" class="form-control"></div>
-      <div class="col-6"><label class="form-label small">Heure</label><input type="time" class="form-control" value="19:30"></div>
-      <div class="col-12"><label class="form-label small">Convives</label><input type="number" class="form-control" value="2" min="1" max="12"></div>
-    </div>
-    <div class="vt-dialog-actions">
-      <button type="button" class="btn btn-vt-outline" data-vt-dialog-close>Fermer</button>
-      <a class="btn btn-vt-primary" href="contact.html">Envoyer la demande</a>
-    </div>
-  </div>
-</div><div class="vt-fab-menu" data-vt-fab-menu>
-  <div class="vt-fab-menu-actions"><button type="button" data-vt-dialog-open="resaDialog">Reserver</button><a href="carte.html">La carte</a><a href="tel:0387751234">Appeler</a></div>
-  <button type="button" class="vt-fab-menu-main" aria-expanded="false" aria-label="Actions brasserie">+</button>
-</div><footer class="vt-footer text-white" itemscope itemtype="https://schema.org/Restaurant">
+</section></main><footer class="vt-footer text-white" itemscope itemtype="https://schema.org/Restaurant">
   <div class="container py-5">
     <link itemprop="url" href="https://danielcraft.fr/echantillons/restauration/demo/">
     <link itemprop="image" href="https://danielcraft.fr/echantillons/restauration/demo/images/hero.webp">
@@ -236,13 +91,13 @@
         <a class="small" href="https://maps.google.com/?q=12+place+Saint-Jacques+57000+Metz" itemprop="hasMap">Nous trouver →</a>
       </div>
       <div class="col-md-4">
-        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="carte.html">La carte</a><a class="nav-link px-0" href="histoire.html">Notre histoire</a><a class="nav-link px-0" href="contact.html">Privatisation</a><a class="nav-link px-0" href="contact.html">Recrutement</a>
+        <nav class="nav flex-column small" aria-label="Pied de page"><a class="nav-link px-0" href="index.html">Accueil</a><a class="nav-link px-0" href="carte.html">Carte</a><a class="nav-link px-0" href="histoire.html">Histoire</a><a class="nav-link px-0" href="contact.html">Réserver</a>
         </nav>
       </div>
       <div class="col-md-4 small opacity-75">
         <p class="mb-1"><a class="text-white" href="tel:0387751234" itemprop="telephone">03 87 75 12 34</a></p>
-        <p class="mb-1"><a class="text-white" href="mailto:contact@brasserie-saint-jacques.fr" itemprop="email">contact@brasserie-saint-jacques.fr</a></p>
-        <p class="mb-0">Mar-sam midi &amp; soir · Dim. brunch</p>
+        <p class="mb-1"><a class="text-white" href="mailto:reservation@brasserie-saint-jacques.fr" itemprop="email">reservation@brasserie-saint-jacques.fr</a></p>
+        <p class="mb-0">Brasserie</p>
       </div>
     </div>
     <hr class="border-secondary opacity-25 my-4">
@@ -251,7 +106,7 @@
 </footer><div class="vt-mobile-bar d-lg-none" aria-label="Actions rapides">
   <a class="vt-mobile-bar-btn" href="tel:0387751234">Appeler</a>
   <a class="vt-mobile-bar-btn vt-mobile-bar-primary" href="contact.html">Réserver</a>
-</div></div></div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="../shared/vitrine-motion.js" defer></script>

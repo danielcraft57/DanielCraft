@@ -444,6 +444,42 @@
   color: #2f9e6a;
 }
 
+/* Chips secteurs masques (Plus / Moins) - partage echantillons, offres, bouquins */
+.prestations-search-chip-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(15, 53, 80, 0.25);
+  background: rgba(255, 255, 255, 0.7);
+  color: #0f3550;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+}
+
+.prestations-search-chip-more:hover {
+  border-color: var(--primary-color);
+  color: var(--metal-blue-3, #1a5f85);
+  background: #fff;
+}
+
+.prestations-search-chips.is-chips-expanded .prestations-search-chip-more {
+  border-style: solid;
+}
+
+.prestations-search-chip.is-chip-overflow[hidden] {
+  display: none !important;
+}
+
 .prestations-search-results-info {
   min-height: 1.35rem;
   margin: 0.85rem 0 0;
@@ -726,18 +762,73 @@
   .prestations-search-hero {
     /* garder le dégagement nav aussi sur mobile */
     padding-top: clamp(4.4rem, 14vw, 5.1rem);
+    padding-bottom: 1.65rem;
+    /* evite de couper la 2e ligne de chips */
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .prestations-search-title {
+    margin-bottom: 0.35rem;
+  }
+
+  .prestations-search-lead {
+    margin-bottom: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  /* flex-grow + pill (999px) en colonne = cercle blanc geant */
+  .prestations-search-form .prestations-search-input-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .prestations-search-input {
     font-size: 0.95rem;
   }
 
+  /* une seule rangee scrollable : chips lisibles, doigt friendly */
   .prestations-search-chips {
-    gap: 0.4rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.45rem;
+    margin-top: 0.9rem;
+    padding: 0.15rem 0.1rem 0.45rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - 1.75rem), transparent 100%);
   }
 
-  .prestations-search-chip {
-    font-size: 0.78rem;
-    padding: 0.38rem 0.7rem;
+  .prestations-search-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .prestations-search-chips.is-chips-expanded {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    mask-image: none;
+  }
+
+  .prestations-search-chip,
+  .prestations-search-chip-more {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    min-height: 2.35rem;
+    padding: 0.42rem 0.85rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(15, 53, 80, 0.06);
+  }
+
+  .prestations-search-chip.is-active {
+    background: linear-gradient(145deg, var(--primary-color), var(--metal-blue-3, #2f78a6));
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .prestations-search-chip.is-active i {
+    color: #fff;
   }
 }
