@@ -66,8 +66,11 @@
     grid.querySelectorAll('.vitrine-card').forEach((card) => {
       const pane = card.querySelector('[data-vitrine-card-hover-scroll]');
       if (!pane) return;
+      const img = pane.querySelector('img.vitrine-card-img');
 
       let rafId = 0;
+      let leaveTimer = 0;
+      let restSrc = '';
 
       function stopAnim() {
         if (rafId) cancelAnimationFrame(rafId);
@@ -94,22 +97,69 @@
         rafId = requestAnimationFrame(frame);
       }
 
+      /**
+       * Active la capture desktop pleine page pour le deroulement.
+       * @returns {Promise<void>}
+       */
+      function armPeekSrc() {
+        if (!img) return Promise.resolve();
+        const peek = img.getAttribute('data-peek-src');
+        if (!peek) return Promise.resolve();
+        const current = img.currentSrc || img.src || img.getAttribute('data-src') || '';
+        if (!restSrc) restSrc = current;
+        if (img.src === peek || img.getAttribute('src') === peek) {
+          return Promise.resolve();
+        }
+        return new Promise((resolve) => {
+          const done = () => {
+            img.removeEventListener('load', done);
+            resolve();
+          };
+          img.addEventListener('load', done);
+          img.src = peek;
+          if (img.complete) done();
+        });
+      }
+
+      function restoreRestSrc() {
+        if (!img || !restSrc) return;
+        if (img.src !== restSrc) img.src = restSrc;
+      }
+
       card.addEventListener('mouseenter', () => {
         if (reduceMotion) return;
-        const max = pane.scrollHeight - pane.clientHeight;
-        if (max <= 4) return;
-        // Lecture lente de la capture tablette au survol (un poil plus vive)
-        const duration = Math.min(72000, 34000 + max * 4.2);
-        scrollToY(max, duration);
+        if (leaveTimer) {
+          window.clearTimeout(leaveTimer);
+          leaveTimer = 0;
+        }
+        pane.classList.add('is-peeking');
+        armPeekSrc().then(() => {
+          if (!card.matches(':hover')) return;
+          const max = pane.scrollHeight - pane.clientHeight;
+          if (max <= 4) return;
+          // Lecture lente de la capture desktop au survol
+          const duration = Math.min(72000, 34000 + max * 4.2);
+          scrollToY(max, duration);
+        });
       });
 
       card.addEventListener('mouseleave', () => {
         stopAnim();
         if (reduceMotion) {
           pane.scrollTop = 0;
+          pane.classList.remove('is-peeking');
+          restoreRestSrc();
           return;
         }
-        scrollToY(0, 3800);
+        scrollToY(0, 900);
+        leaveTimer = window.setTimeout(() => {
+          if (!card.matches(':hover')) {
+            pane.classList.remove('is-peeking');
+            pane.scrollTop = 0;
+            restoreRestSrc();
+          }
+          leaveTimer = 0;
+        }, 950);
       });
     });
   }

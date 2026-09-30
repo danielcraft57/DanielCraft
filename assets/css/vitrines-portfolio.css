@@ -139,7 +139,7 @@
   --vf-accent: #15803d;
   --vf-soft: rgba(21, 128, 61, 0.18);
 }
-.vitrines-filter-btn[data-vitrine-filter="creatif"] {
+.vitrines-filter-btn[data-vitrine-filter="communication"] {
   --vf-accent: #e11d48;
   --vf-soft: rgba(225, 29, 72, 0.18);
 }
@@ -158,18 +158,6 @@
 .vitrines-filter-btn[data-vitrine-filter="juridique"] {
   --vf-accent: #1d4ed8;
   --vf-soft: rgba(29, 78, 216, 0.16);
-}
-.vitrines-filter-btn[data-vitrine-filter="architecture"] {
-  --vf-accent: #78716c;
-  --vf-soft: rgba(120, 113, 108, 0.2);
-}
-.vitrines-filter-btn[data-vitrine-filter="conseil"] {
-  --vf-accent: #0284c7;
-  --vf-soft: rgba(2, 132, 199, 0.18);
-}
-.vitrines-filter-btn[data-vitrine-filter="ess"] {
-  --vf-accent: #16a34a;
-  --vf-soft: rgba(22, 163, 74, 0.18);
 }
 .vitrines-filter-btn[data-vitrine-filter="formation"] {
   --vf-accent: #ca8a04;
@@ -239,12 +227,22 @@
 .vitrine-card-img {
   display: block;
   width: 100%;
-  height: auto;
+  /* Cadre 16:10 sur le haut de page (hero desktop) - evite le rendu « mobile etire » */
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   vertical-align: top;
   transform: none;
   transition: filter 0.35s ease, opacity 0.35s ease;
   /* Couleurs du screenshot mises en avant (moins de voile, plus de punch) */
   filter: saturate(1.28) contrast(1.08) brightness(1.03);
+}
+
+/* Au survol : on deroule la capture pleine page (desktop) */
+.vitrine-card-img-scroll.is-peeking .vitrine-card-img {
+  height: auto;
+  object-fit: fill;
+  object-position: top center;
 }
 
 .vitrine-card:hover .vitrine-card-img {

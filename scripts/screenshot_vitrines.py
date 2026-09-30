@@ -273,6 +273,40 @@ def _save_output(
         im.save(dest, "JPEG", quality=jpeg_quality, optimize=True)
 
 
+def _write_catalog_crop_from_desktop(desktop_path: Path, *, max_width: int = 960, webp_quality: int = 82) -> None:
+    """
+    Crop 16:10 du haut de la capture desktop pour le catalogue (evite le rendu tablette/mobile).
+
+    @param desktop_path: Fichier desktop_*.webp/.jpg
+    @param max_width: Largeur max vignette
+    @param webp_quality: Qualite WebP
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        return
+    if not desktop_path.is_file():
+        return
+    out = desktop_path.parent / "catalog_16x10.webp"
+    with Image.open(desktop_path) as im:
+        im = im.convert("RGB")
+        w, h = im.size
+        if w < 2 or h < 2:
+            return
+        crop_h = max(1, int(round(w * 10 / 16)))
+        if crop_h > h:
+            top = max(0, (h - crop_h) // 2)
+            box = (0, top, w, min(h, top + crop_h))
+        else:
+            box = (0, 0, w, crop_h)
+        cropped = im.crop(box)
+        if cropped.width > max_width:
+            nh = max(1, int(round(cropped.height * max_width / cropped.width)))
+            cropped = cropped.resize((max_width, nh), Image.Resampling.LANCZOS)
+        cropped.save(out, "WEBP", quality=webp_quality, method=6)
+    print(f"OK catalog crop -> {out}")
+
+
 def _demo_path_for_mode(path: str, *, embedded_demos: bool) -> str:
     if embedded_demos and path.endswith("/demo/index.html"):
         return path.replace("/demo/index.html", "/index.html")
@@ -425,6 +459,11 @@ def main() -> None:
                         webp_quality=cfg["webp_quality"],
                         brand_cfg=cfg,
                     )
+                    if label == "desktop":
+                        _write_catalog_crop_from_desktop(
+                            out_path,
+                            webp_quality=cfg["webp_quality"],
+                        )
 
                     page.close()
                     context.close()

@@ -96,7 +96,7 @@
     },
     {
       "slug": "comptable",
-      "category": "conseil",
+      "category": "finance",
       "title": "Verlaine & Associés",
       "tagline": "Expertise comptable",
       "excerpt": "Cabinet comptable : forfaits, bilan flash et contact dirigeant - crédibilité pro en un clic.",
@@ -166,7 +166,7 @@
     },
     {
       "slug": "architecture",
-      "category": "architecture",
+      "category": "artisanat",
       "title": "Atelier Nord-Est",
       "tagline": "Architecture & urbanisme",
       "excerpt": "Agence d'architecture : projets, méthode et brief - portfolio pro pour gagner vos consultations.",
@@ -202,7 +202,7 @@
     },
     {
       "slug": "photographie",
-      "category": "creatif",
+      "category": "communication",
       "title": "Studio Lumière Grise",
       "tagline": "Photographe",
       "excerpt": "Photographe mariage et corporate : portfolio, prestations et devis - studio qui inspire confiance.",
@@ -220,7 +220,7 @@
     },
     {
       "slug": "association",
-      "category": "ess",
+      "category": "services",
       "title": "Solidarités Metz Métropole",
       "tagline": "Association",
       "excerpt": "Association et ESS : dons, bénévolat et projets - vitrine mobilisatrice pour le Grand Est.",
@@ -313,7 +313,7 @@
     },
     {
       "slug": "btp",
-      "category": "btp",
+      "category": "artisanat",
       "title": "Chantiers Est Construction",
       "tagline": "Entreprise generale BTP",
       "excerpt": "BTP a Nancy : renovation, extension et ravalement - devis clair, suivi photo chaque semaine.",
@@ -520,7 +520,7 @@
     },
     {
       "slug": "banque",
-      "category": "conseil",
+      "category": "finance",
       "title": "Banque des Ponts",
       "tagline": "Banque locale",
       "excerpt": "Banque a Metz : un conseiller en face a face pour comptes, credits et projets pros.",
@@ -537,7 +537,7 @@
     },
     {
       "slug": "assurance",
-      "category": "conseil",
+      "category": "finance",
       "title": "Couverture Est",
       "tagline": "Assurance & conseil",
       "excerpt": "Courtier a Strasbourg : auto, habitation, sante, pro - on compare, tu choisis.",
@@ -656,7 +656,7 @@
     },
     {
       "slug": "saas-landing",
-      "category": "saas",
+      "category": "tech",
       "title": "FlowMetrics",
       "tagline": "Landing SaaS & conversion",
       "excerpt": "Landing produit : hero orienté bénéfice, features avant/après, pricing avec effet de contraste et tableau comparatif stratégique.",
@@ -675,7 +675,7 @@
     },
     {
       "slug": "saas-onboarding",
-      "category": "saas",
+      "category": "tech",
       "title": "TalentLoop",
       "tagline": "Onboarding produit",
       "excerpt": "Parcours onboarding RH en 4 étapes : barre de progression, copy orienté valeur et chemin balisé vers le aha moment.",
@@ -694,7 +694,7 @@
     },
     {
       "slug": "saas-dashboard",
-      "category": "saas",
+      "category": "tech",
       "title": "MetricPulse",
       "tagline": "Dashboard & analytics",
       "excerpt": "Dashboard produit : sidebar regroupée par intention, KPIs activation et funnel onboarding lisible en un coup d'œil.",
@@ -713,7 +713,7 @@
     },
     {
       "slug": "saas-empty",
-      "category": "saas",
+      "category": "tech",
       "title": "QueryBase",
       "tagline": "Empty states & recherche",
       "excerpt": "Recherche sans résultat : best-sellers alternatifs, vote roadmap et correcteur d'intention - zéro impasse pour l'utilisateur.",
@@ -732,7 +732,7 @@
     },
     {
       "slug": "saas-notifications",
-      "category": "saas",
+      "category": "tech",
       "title": "PingFlow",
       "tagline": "Notifications in-app",
       "excerpt": "Centre de notifications : hiérarchie claire, actions requises mises en avant et préférences granulaires anti-spam.",

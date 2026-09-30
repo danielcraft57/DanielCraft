@@ -172,27 +172,24 @@ def devantures_url(rel: str = '') -> str:
 
 # Filtres vitrines phares (mobile + raccourcis desktop)
 VITRINE_FEATURED_FILTER_KEYS = ['hcr', 'retail', 'beaute', 'sante', 'artisanat']
-# Libelles categories vitrines (filtre home + cartes)
+# Libelles categories vitrines (filtre home + cartes) - aligne ProspectLab, ~16 groupes
 VITRINE_CATEGORY_LABELS = {
-    'tech': 'Tech & SaaS',
-    'services': 'Services',
-    'hcr': 'HCR & restauration',
+    'hcr': 'Restauration',
     'retail': 'Commerce',
-    'formation': 'Formation',
-    'hotel': 'Hôtellerie',
-    'beaute': 'Beauté & spa',
-    'mobilite': 'Automobile',
-    'artisanat': 'Artisanat',
+    'beaute': 'Beauté',
     'sante': 'Santé',
+    'artisanat': 'Artisanat & BTP',
+    'mobilite': 'Auto & transport',
     'finance': 'Finance',
-    'industrie': 'Industrie',
-    'conseil': 'Conseil',
-    'ess': 'ESS',
     'immobilier': 'Immobilier',
     'juridique': 'Juridique',
-    'architecture': 'Architecture',
-    'sport': 'Sport & fitness',
-    'creatif': 'Créatif & médias',
+    'hotel': 'Hôtel & tourisme',
+    'industrie': 'Industrie',
+    'sport': 'Sport & loisirs',
+    'communication': 'Com & créatif',
+    'services': 'Services',
+    'formation': 'Formation',
+    'tech': 'Tech & SaaS',
 }
 # Dossier de sortie par défaut : dist/ (peut être modifié via --output)
 OUTPUT_DIR = BASE_DIR / 'dist'
@@ -1274,17 +1271,16 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         'shots_title': 'Captures prêtes pour vendre vos prestations (Meta, LinkedIn, Google)',
         'shots_lead': (
             '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les captures déroulent le parcours comme '
-            'chez un <strong>client B2B</strong> - offres, galerie, FAQ et prise de contact. Idéal pour rassurer '
-            'sur le ton pro et alimenter vos campagnes. Ouvrez une capture en grand ou testez la __DEMO__ '
-            'bout en bout.'
+            'chez un <strong>client B2B</strong> ou un sympathisant - offres, galerie, FAQ et prise de contact. '
+            'Idéal pour rassurer sur le ton pro et alimenter vos campagnes. Ouvrez une capture en grand ou '
+            'testez la __DEMO__ bout en bout.'
         ),
-        'marketing_h2': 'Crédibilité terrain, devis et prise de contact B2B',
+        'marketing_h2': 'Crédibilité terrain, devis et prise de contact',
         'included': (
             'Une <strong>devanture web</strong> qui met en scène vos <strong>prestations</strong>, '
-            'vos <strong>références</strong> et un <strong>parcours devis</strong> lisible. Pour '
-            '<strong>__TITLE__</strong>, vous adaptez les formulations à votre métier (facility, conciergerie, '
-            'multi-sites…) puis vous validez le discours commercial avant de brancher vos outils métiers ou '
-            'votre CRM.'
+            'vos <strong>références</strong> et un <strong>parcours contact</strong> lisible. Pour '
+            '<strong>__TITLE__</strong>, vous adaptez les formulations à votre métier (facility, association, '
+            'multi-sites…) puis vous validez le discours avant de brancher vos outils métiers ou votre CRM.'
         ),
     },
     'hcr': {
@@ -1362,17 +1358,17 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
     },
     'artisanat': {
-        'shots_title': 'Captures boutique artisanale prêtes pour réseaux sociaux et SEO local',
+        'shots_title': 'Captures artisanat & BTP prêtes pour réseaux sociaux et SEO local',
         'shots_lead': (
             '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres pleine page valorisent '
-            'produits, origines et <strong>parcours commande</strong> sur tous les écrans. Ouvrez la capture '
-            'ou la __DEMO__ pour simuler l’achat.'
+            'savoir-faire, chantiers ou atelier et <strong>prise de contact</strong> sur tous les écrans. '
+            'Ouvrez la capture ou la __DEMO__ pour simuler la demande de devis.'
         ),
-        'marketing_h2': 'Histoire de maison, coffrets et conversion',
+        'marketing_h2': 'Savoir-faire, urgence et conversion devis',
         'included': (
-            'Une <strong>devanture web</strong> pour <strong>commerce artisanal</strong> : galerie, '
-            'storytelling et FAQ coffrets. Pour <strong>__TITLE__</strong>, vous remplacez textes et visuels '
-            'produits avant de brancher votre caisse en ligne ou votre logistique.'
+            'Une <strong>devanture web</strong> pour <strong>artisanat, BTP ou architecture</strong> : '
+            'prestations, preuves terrain et formulaire devis. Pour <strong>__TITLE__</strong>, vous remplacez '
+            'textes et visuels avant de brancher votre planning ou votre téléphonie.'
         ),
     },
     'sante': {
@@ -1391,17 +1387,17 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
     },
     'finance': {
-        'shots_title': 'Captures institutionnelles prêtes pour confiance et campagnes',
+        'shots_title': 'Captures finance & conseil prêtes pour confiance et campagnes',
         'shots_lead': (
             '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres pleine page montrent un '
             'parcours <strong>sobre et structuré</strong> sur tous les écrans. Ouvrez la capture ou la '
-            '__DEMO__ pour valider le ton institutionnel.'
+            '__DEMO__ pour valider le ton institutionnel ou cabinet.'
         ),
         'marketing_h2': 'Offres, transparence et prise de contact mesurée',
         'included': (
-            'Une <strong>devanture web</strong> pour <strong>finance & banque</strong> : offres comparables, '
-            'repères agences et CTA contact. Pour <strong>__TITLE__</strong>, vous adaptez formulations et '
-            'mentions réglementaires avec votre conformité avant toute mise en production.'
+            'Une <strong>devanture web</strong> pour <strong>banque, assurance ou cabinet</strong> : '
+            'offres comparables, méthode et CTA contact. Pour <strong>__TITLE__</strong>, vous adaptez '
+            'formulations et mentions réglementaires avec votre conformité avant toute mise en production.'
         ),
     },
     'industrie': {
@@ -1416,34 +1412,6 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
             'Une <strong>devanture web</strong> orientée <strong>industrie</strong> : process, équipements '
             'et FAQ techniques. Pour <strong>__TITLE__</strong>, vous remplacez textes et preuves puis '
             'validez le discours commercial avant de connecter votre ERP ou votre pipeline commercial.'
-        ),
-    },
-    'conseil': {
-        'shots_title': 'Captures cabinet conseil prêtes pour LinkedIn et prospection',
-        'shots_lead': (
-            '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les captures scrollables présentent '
-            'méthode, offres et <strong>prise de contact</strong> sur desktop, tablette et mobile. Ouvrez la '
-            'capture ou la __DEMO__ pour un parcours dirigeant.'
-        ),
-        'marketing_h2': 'Expertise, packs et prise de rendez-vous',
-        'included': (
-            'Une <strong>devanture web</strong> pour <strong>cabinets & conseil</strong> : méthode, '
-            'forfaits et CTA bilan flash ou RDV. Pour <strong>__TITLE__</strong>, vous adaptez les messages à '
-            'votre cible (TPE, associations, filiales…) avant de brancher votre agenda ou votre CRM.'
-        ),
-    },
-    'ess': {
-        'shots_title': 'Visuels association prêts pour mobilisation et campagnes',
-        'shots_lead': (
-            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les cadres montrent mission, '
-            'actions et <strong>engagement</strong> (dons, bénévolat) sur tous les écrans. Ouvrez la capture '
-            'ou la __DEMO__ comme un sympathisant.'
-        ),
-        'marketing_h2': 'Mobilisation, dons et bénévolat',
-        'included': (
-            'Une <strong>devanture web</strong> pour <strong>ESS & associations</strong> : campagnes, '
-            'preuves d’impact et formulaires engagement. Pour <strong>__TITLE__</strong>, vous remplacez textes '
-            'et visuels terrain avant de connecter votre outil de dons ou votre mailing.'
         ),
     },
     'immobilier': {
@@ -1473,22 +1441,8 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
             'mise en ligne.'
         ),
     },
-    'architecture': {
-        'shots_title': 'Visuels atelier prêts pour concours et portfolios',
-        'shots_lead': (
-            'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - les cadres scrollables valorisent '
-            'projets et <strong>approche</strong> sur tous les écrans. Ouvrez la capture ou la __DEMO__ '
-            'comme un maître d’ouvrage.'
-        ),
-        'marketing_h2': 'Projets, méthode et brief contact',
-        'included': (
-            'Une <strong>devanture web</strong> type <strong>atelier d’architecture</strong> : réalisations, '
-            'process et formulaire brief. Pour <strong>__TITLE__</strong>, vous intégrez vos visuels chantier '
-            'et livrables avant de connecter votre outil de gestion de projet.'
-        ),
-    },
     'sport': {
-        'shots_title': 'Captures salle de sport prêtes pour inscription et réseaux',
+        'shots_title': 'Captures sport & loisirs prêtes pour inscription et réseaux',
         'shots_lead': (
             '<strong>__TITLE__</strong> - <strong>__TAG__</strong> : les cadres montrent cours, tarifs et '
             '<strong>essai gratuit</strong> sur desktop, tablette et mobile. Ouvrez la capture ou la __DEMO__ '
@@ -1496,22 +1450,22 @@ _VITRINE_SECTOR_COPY: Dict[str, Dict[str, str]] = {
         ),
         'marketing_h2': 'Cours, formules et conversion essai',
         'included': (
-            'Une <strong>devanture web</strong> pour <strong>fitness & sport</strong> : planning, offres et '
+            'Une <strong>devanture web</strong> pour <strong>sport & loisirs</strong> : planning, offres et '
             'inscription. Pour <strong>__TITLE__</strong>, vous remplacez textes et visuels avant de brancher '
             'votre logiciel d’abonnement ou votre agenda cours.'
         ),
     },
-    'creatif': {
-        'shots_title': 'Visuels portfolio prêts pour réseaux et book client',
+    'communication': {
+        'shots_title': 'Visuels agence & créatif prêts pour réseaux et book client',
         'shots_lead': (
             'Pour <strong>__TITLE__</strong> - <strong>__TAG__</strong> - chaque capture pleine page met en '
-            'scène votre <strong>portfolio</strong> et vos prestations sur tous les écrans. Ouvrez la capture '
-            'ou la __DEMO__ comme un client en recherche de photographe.'
+            'scène votre <strong>portfolio</strong>, vos prestations et votre méthode sur tous les écrans. '
+            'Ouvrez la capture ou la __DEMO__ comme un client en recherche d’agence ou de photographe.'
         ),
         'marketing_h2': 'Portfolio, prestations et prise de contact',
         'included': (
-            'Une <strong>devanture web</strong> type <strong>créatif / photographe</strong> : galerie masonry, '
-            'offres et contact. Pour <strong>__TITLE__</strong>, vous remplacez séries et tarifs avant de '
+            'Une <strong>devanture web</strong> type <strong>com & créatif</strong> : galerie, offres et '
+            'contact. Pour <strong>__TITLE__</strong>, vous remplacez séries, cas clients et tarifs avant de '
             'connecter votre galerie privée ou votre CRM.'
         ),
     },
@@ -1753,18 +1707,101 @@ def _vitrine_shot_frame_mod(path: str) -> str:
     return ' vitrine-device-frame--preview' if path and not _vitrine_shot_is_capture(path) else ''
 
 
+def _ensure_vitrine_catalog_crop(slug: str, *, max_width: int = 960, force: bool = False) -> Optional[Path]:
+    """
+    Genere une vignette catalogue 16:10 a partir du haut de la capture desktop.
+
+    Le catalogue affichait surtout des captures tablette (portrait) : rendu
+    « mobile sur desktop ». On cadre le hero desktop dans un ratio carte.
+
+    @param slug: Identifiant de la vitrine
+    @param max_width: Largeur max de la vignette (perf grille)
+    @param force: Regenerer meme si le fichier existe deja
+    @returns: Chemin du fichier catalog_*.webp, ou None si pas de desktop
+    """
+    root = VITRINES_SCREENSHOTS_SRC / slug
+    if not root.is_dir():
+        return None
+    desktop_files = sorted(root.glob('desktop_*.webp')) + sorted(root.glob('desktop_*.jpg'))
+    desktop_files += sorted(root.glob('desktop_*.jpeg')) + sorted(root.glob('desktop_*.png'))
+    if not desktop_files:
+        return None
+    src = desktop_files[0]
+    out = root / 'catalog_16x10.webp'
+    if out.is_file() and not force:
+        try:
+            if out.stat().st_mtime >= src.stat().st_mtime:
+                return out
+        except OSError:
+            pass
+    try:
+        from PIL import Image
+    except ImportError:
+        print('[WARN] Pillow absent - vignettes catalogue 16:10 non generees')
+        return None
+    try:
+        with Image.open(src) as im:
+            im = im.convert('RGB')
+            w, h = im.size
+            if w < 2 or h < 2:
+                return None
+            crop_h = max(1, int(round(w * 10 / 16)))
+            if crop_h > h:
+                # Image deja plus large que 16:10 : on centre verticalement
+                top = max(0, (h - crop_h) // 2)
+                box = (0, top, w, min(h, top + crop_h))
+            else:
+                box = (0, 0, w, crop_h)
+            cropped = im.crop(box)
+            if cropped.width > max_width:
+                nh = max(1, int(round(cropped.height * max_width / cropped.width)))
+                cropped = cropped.resize((max_width, nh), Image.Resampling.LANCZOS)
+            cropped.save(out, 'WEBP', quality=82, method=6)
+        print(f'[OK] vignette catalogue {slug} -> {out.name}')
+        return out
+    except OSError as exc:
+        print(f'[WARN] vignette catalogue {slug} : {exc}')
+        return None
+
+
+def ensure_vitrine_catalog_crops(*, force: bool = False) -> int:
+    """
+    Genere les crops 16:10 manquants pour toutes les captures desktop.
+
+    @param force: Regenerer meme si deja present
+    @returns: Nombre de dossiers traites avec succes (fichier present apres appel)
+    """
+    if not VITRINES_SCREENSHOTS_SRC.is_dir():
+        return 0
+    n = 0
+    for sub in sorted(VITRINES_SCREENSHOTS_SRC.iterdir()):
+        if not sub.is_dir() or sub.name.startswith('.'):
+            continue
+        path = _ensure_vitrine_catalog_crop(sub.name, force=force)
+        if path is not None and path.is_file():
+            n += 1
+    return n
+
+
 def _vitrine_catalog_thumb(slug: str) -> str:
     """
-    Vignette catalogue / teaser : capture tablet, sinon desktop, sinon hero démo, sinon OG site.
+    Vignette catalogue / teaser : crop 16:10 desktop dedie, sinon desktop,
+    puis tablet, sinon hero demo, sinon OG site.
 
-    Évite de coller l'image OG générique (cartoon artisan) sur des secteurs sans capture.
+    Evite d'afficher une capture tablette (format portrait / mobile-first) dans
+    les cartes grille du catalogue - ca donnait l'impression de sites « mobile sur desktop ».
 
     @param slug: Identifiant catalogue de la vitrine
     @returns: URL absolue de l'image vignette
     """
-    thumb = _vitrine_screenshot_paths(slug, 'tablet')[2]
+    # S'assure qu'un crop existe si on a une capture desktop
+    _ensure_vitrine_catalog_crop(slug)
+    # Crop 16:10 dedie > desktop plein ecran > tablet > hero
+    thumb = _vitrine_screenshot_paths(slug, 'catalog')[2]
     if not thumb:
         thumb = _vitrine_screenshot_paths(slug, 'desktop')[2]
+    if not thumb:
+        thumb = _vitrine_screenshot_paths(slug, 'tablet')[2]
     if not thumb:
         thumb = _vitrine_demo_hero_url(slug)
     return thumb or '/assets/images/og/home-1200x630.jpg'
@@ -1890,6 +1927,9 @@ def publish_vitrines_to_dist(output_dir: Path) -> None:
                 shutil.copy2(path, dest)
 
     if shots_src.is_dir():
+        n_crops = ensure_vitrine_catalog_crops()
+        if n_crops:
+            print(f'[OK] {n_crops} vignette(s) catalogue 16:10 (crop desktop)')
         for sub in shots_src.iterdir():
             if not sub.is_dir():
                 continue
@@ -1985,6 +2025,10 @@ def _vitrines_catalog_inner_lines(
             )
         )
         thumb = _vitrine_catalog_thumb(slug)
+        peek = _vitrine_screenshot_paths(slug, 'desktop')[2]
+        peek_attr = ''
+        if peek and peek != thumb:
+            peek_attr = f' data-peek-src="{html.escape(peek)}"'
         cat_label = html.escape(cat_label_raw)
         delay = min(idx * 40, 400)
         idx += 1
@@ -2002,9 +2046,10 @@ def _vitrines_catalog_inner_lines(
             'data-vitrine-card-hover-scroll>'
         )
         # data-src : lazy-images.js (évite de tout télécharger d'un coup sur /echantillons/)
+        # data-peek-src : capture desktop pleine page pour le deroulement au survol
         lines.append(
             f'                    <img data-src="{html.escape(thumb)}" alt="" width="640" height="400" '
-            'decoding="async" class="vitrine-card-img dc-lazy-img" loading="lazy">'
+            f'decoding="async" class="vitrine-card-img dc-lazy-img" loading="lazy"{peek_attr}>'
         )
         lines.append('                </div>')
         lines.append('                <span class="vitrine-card-tint" aria-hidden="true"></span>')

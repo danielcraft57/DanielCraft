@@ -1,7 +1,7 @@
 {
   "slug": "btp",
   "brand": "Chantiers Est Construction",
-  "category": "btp",
+  "category": "artisanat",
   "locale": "Nancy, Grand Est, France",
   "style_suffix": "Construction site Grand Est Nancy, documentary architecture photography, natural light, photorealistic, no text, no watermark, no logos",
   "images": [
@@ -13,7 +13,11 @@
       "alt": "Chantier renovation facade a Nancy",
       "subject": "Wide cinematic photo of a French construction renovation site in Nancy Lorraine: scaffolding on a stone facade, workers in safety gear, warm late afternoon light, residential street Grand Est atmosphere",
       "contexts": [
-        { "page": "index.html", "section": "hero", "text": "Du gros oeuvre au dernier coup de pinceau" }
+        {
+          "page": "index.html",
+          "section": "hero",
+          "text": "Du gros oeuvre au dernier coup de pinceau"
+        }
       ]
     },
     {
@@ -24,7 +28,11 @@
       "alt": "Equipe BTP en renovation interieure",
       "subject": "Interior renovation team plastering and painting a bright living room in Nancy home, tools tidy, professional documentary style",
       "contexts": [
-        { "page": "index.html", "section": "services", "text": "Renovation complete" }
+        {
+          "page": "index.html",
+          "section": "services",
+          "text": "Renovation complete"
+        }
       ]
     },
     {
@@ -35,7 +43,11 @@
       "alt": "Extension maison en construction",
       "subject": "Modern house extension timber frame under construction Lorraine suburb, blue sky, clean site",
       "contexts": [
-        { "page": "index.html", "section": "services", "text": "Extensions et elevations" }
+        {
+          "page": "index.html",
+          "section": "services",
+          "text": "Extensions et elevations"
+        }
       ]
     },
     {
@@ -46,7 +58,11 @@
       "alt": "Ravalement facade pierre Jaumont",
       "subject": "Facade restoration of yellow Jaumont stone building Metz-Nancy style, craftsman cleaning stone, heritage care",
       "contexts": [
-        { "page": "index.html", "section": "services", "text": "Ravalement et toiture" }
+        {
+          "page": "index.html",
+          "section": "services",
+          "text": "Ravalement et toiture"
+        }
       ]
     },
     {
@@ -57,7 +73,11 @@
       "alt": "Maison renovee a Laxou",
       "subject": "Beautiful renovated family house in Laxou near Nancy, fresh facade, garden, golden hour",
       "contexts": [
-        { "page": "realisations.html", "section": "chapter", "text": "Maison familiale Laxou" }
+        {
+          "page": "realisations.html",
+          "section": "chapter",
+          "text": "Maison familiale Laxou"
+        }
       ]
     },
     {
@@ -68,7 +88,11 @@
       "alt": "Facade commerce apres ravalement",
       "subject": "Renovated storefront commerce facade downtown Nancy after ravalement, clean glass and stone",
       "contexts": [
-        { "page": "realisations.html", "section": "chapter", "text": "Commerce Nancy centre" }
+        {
+          "page": "realisations.html",
+          "section": "chapter",
+          "text": "Commerce Nancy centre"
+        }
       ]
     },
     {
@@ -79,7 +103,11 @@
       "alt": "Extension moderne Vandoeuvre",
       "subject": "Modern glass and wood house extension Vandoeuvre-les-Nancy, completed project, architecture photo",
       "contexts": [
-        { "page": "realisations.html", "section": "chapter", "text": "Extension Vandoeuvre" }
+        {
+          "page": "realisations.html",
+          "section": "chapter",
+          "text": "Extension Vandoeuvre"
+        }
       ]
     },
     {
@@ -90,7 +118,11 @@
       "alt": "Maison avant travaux Nancy",
       "subject": "Tired outdated house exterior before renovation Lorraine, peeling paint, documentary before shot",
       "contexts": [
-        { "page": "index.html", "section": "before-after", "text": "Avant" }
+        {
+          "page": "index.html",
+          "section": "before-after",
+          "text": "Avant"
+        }
       ]
     },
     {
@@ -101,7 +133,11 @@
       "alt": "Maison apres renovation Nancy",
       "subject": "Same style Lorraine house fully renovated exterior after works, fresh render, new windows, after shot",
       "contexts": [
-        { "page": "index.html", "section": "before-after", "text": "Apres" }
+        {
+          "page": "index.html",
+          "section": "before-after",
+          "text": "Apres"
+        }
       ]
     }
   ]
