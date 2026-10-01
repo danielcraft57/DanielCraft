@@ -40,6 +40,9 @@ SERIES = {
     "marketing-digital-serie",
     "communication-serie",
     "design-patterns-serie",
+    "llm-transformers-serie",
+    "data-engineering-serie",
+    "hf-agents-serie",
     "ia-chatgpt-serie",
     "ia-claude-serie",
     "ia-prompts-serie",
@@ -90,6 +93,15 @@ SERIES_THEMES: dict[str, str] = {
     ),
     "design-patterns-serie": (
         "blocs de Lego / pieces qui s'assemblent, schemas simples, atelier code accueillant"
+    ),
+    "llm-transformers-serie": (
+        "atelier NLP/LLM, fenetre code Transformers, Hub Hugging Face stylise, ambiance pedagogique claire"
+    ),
+    "data-engineering-serie": (
+        "tuyaux de donnees, entrepot, DAG d'orchestration, dashboard clair sans usine sombre"
+    ),
+    "hf-agents-serie": (
+        "agent IA avec outils, boucle ReAct, panneaux tools et traces, atelier Hugging Face clair"
     ),
     "ia-chatgpt-serie": (
         "bulles chat amicales, ecran assistant, ambiance pedagogique claire"

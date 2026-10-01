@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img">
+  <title>Trois familles</title>
+  <desc>Encoder, decoder, les deux</desc>
+  <rect width="800" height="420" fill="#f5f7fb"/>
+  <text x="400" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" fill="#0f172a">Trois familles</text>
+  <text x="400" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">Encoder, decoder, les deux</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0f172a"/></marker></defs>
+  <rect x="33" y="145" width="170" height="120" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="55" cy="167" r="14" fill="#2563eb"/>
+  <text x="55" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">1</text>
+  <text x="118.0" y="203" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Encoder</text>
+  <text x="118.0" y="223" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" fill="#475569">comprendre / classer</text>
+  <path d="M205 205.0 H211" stroke="#0f172a" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+  <rect x="221" y="145" width="170" height="120" rx="12" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+  <circle cx="243" cy="167" r="14" fill="#0284c7"/>
+  <text x="243" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">2</text>
+  <text x="306.0" y="203" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Decoder</text>
+  <text x="306.0" y="223" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" fill="#475569">générer du texte</text>
+  <path d="M393 205.0 H399" stroke="#0f172a" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+  <rect x="409" y="145" width="170" height="120" rx="12" fill="#ffffff" stroke="#0ea5e9" stroke-width="3"/>
+  <circle cx="431" cy="167" r="14" fill="#0ea5e9"/>
+  <text x="431" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">3</text>
+  <text x="494.0" y="203" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Les deux</text>
+  <text x="494.0" y="223" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" fill="#475569">traduire / résumer</text>
+  <path d="M581 205.0 H587" stroke="#0f172a" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+  <rect x="597" y="145" width="170" height="120" rx="12" fill="#ffffff" stroke="#dc2626" stroke-width="3"/>
+  <circle cx="619" cy="167" r="14" fill="#dc2626"/>
+  <text x="619" y="172" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">4</text>
+  <text x="682.0" y="203" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Choix</text>
+  <text x="682.0" y="223" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" fill="#475569">selon ton besoin</text>
+  <rect x="80" y="300" width="640" height="70" rx="10" fill="#e2e8f0"/>
+  <text x="400" y="342" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f172a">Encoder, decoder, les deux</text>
+</svg>

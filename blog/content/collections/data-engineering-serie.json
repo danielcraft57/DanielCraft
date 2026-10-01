@@ -1,0 +1,17 @@
+{
+  "id": "data-engineering-serie",
+  "title": "Série Data Engineering : pipeline de bout en bout",
+  "description": "Des tuyaux data de bout en bout : Docker, orchestration, BigQuery, dbt, Spark, Kafka - en français simple, avec schémas. Inspiration Zoomcamp DataTalks.",
+  "slug": "data-engineering-serie",
+  "cover_image": "og/data-engineering-pipeline-end-to-end-intro-1200x630.jpg",
+  "articles": [
+    "data-engineering-pipeline-end-to-end-intro",
+    "data-engineering-docker-terraform-infra",
+    "data-engineering-orchestration-kestra",
+    "data-engineering-ingestion-api-incremental",
+    "data-engineering-warehouse-bigquery",
+    "data-engineering-dbt-analytics-engineering",
+    "data-engineering-spark-batch-processing",
+    "data-engineering-kafka-streaming"
+  ]
+}

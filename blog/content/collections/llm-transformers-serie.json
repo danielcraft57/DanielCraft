@@ -1,0 +1,17 @@
+{
+  "id": "llm-transformers-serie",
+  "title": "Série LLM & Transformers : du Hub au fine-tuning",
+  "description": "NLP, pipelines, Hub, fine-tuning et Gradio - expliqués simplement, avec schémas et images. Inspiration cours Hugging Face, texte original en français.",
+  "slug": "llm-transformers-serie",
+  "cover_image": "og/llm-nlp-vs-llm-comprendre-les-bases-1200x630.jpg",
+  "articles": [
+    "llm-nlp-vs-llm-comprendre-les-bases",
+    "llm-transformers-pipeline-premiere-inference",
+    "llm-architecture-encoder-decoder",
+    "llm-huggingface-hub-modeles-datasets",
+    "llm-tokenizers-datasets-bases",
+    "llm-finetuning-entrainer-modele",
+    "llm-gradio-demo-partager-modele",
+    "llm-finetuning-avance-lora-reasoning"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "hf-agents-serie",
+  "title": "Série Agents : comprendre sans se noyer",
+  "description": "Parcours simple inspiré du Agents Course Hugging Face : c'est quoi un agent, outils, boucle, premier agent, frameworks, doc, traces, et sujets avancés. Français clair, schémas lisibles.",
+  "slug": "hf-agents-serie",
+  "cover_image": "og/agents-hf-quest-ce-qu-un-agent-1200x630.jpg",
+  "articles": [
+    "agents-hf-quest-ce-qu-un-agent",
+    "agents-hf-outils-et-function-calling",
+    "agents-hf-react-pensee-action-observation",
+    "agents-hf-smolagents-premier-agent",
+    "agents-hf-code-agents-vs-tool-calling",
+    "agents-hf-frameworks-llamaindex-langgraph",
+    "agents-hf-rag-agentique",
+    "agents-hf-observabilite-evaluation",
+    "agents-hf-finetune-function-calling",
+    "agents-hf-langgraph-premier-graphe",
+    "agents-hf-llamaindex-agent-donnees",
+    "agents-hf-multi-agents-vision-browser"
+  ]
+}
