@@ -652,3 +652,64 @@ function pl_request_free_audit(string $website, string $email, string $source = 
     unset($source);
     return pl_request_website_audit_report($website, $email, false);
 }
+
+/**
+ * Lit le rapport Gemini d'une entreprise (null si absent / never / erreur).
+ *
+ * @return array<string, mixed>|null
+ */
+function pl_fetch_gemini_report(int $entrepriseId, int $timeout = 12): ?array
+{
+    if ($entrepriseId <= 0) {
+        return null;
+    }
+
+    $url = pl_api_base() . '/entreprises/' . $entrepriseId . '/gemini-report';
+    $res = pl_http('GET', $url, null, $timeout);
+    if (!$res['ok'] || !is_array($res['data'])) {
+        return null;
+    }
+
+    $data = $res['data'];
+    $status = isset($data['status']) ? strtolower(trim((string) $data['status'])) : '';
+    if ($status !== 'done') {
+        return null;
+    }
+
+    $report = isset($data['report']) && is_array($data['report']) ? $data['report'] : null;
+    if ($report === null) {
+        return null;
+    }
+
+    return [
+        'status' => 'done',
+        'overall_score' => $data['overall_score'] ?? ($report['overall_score'] ?? null),
+        'refonte_recommendation' => $data['refonte_recommendation'] ?? ($report['refonte_recommendation'] ?? null),
+        'source' => $data['source'] ?? ($report['source'] ?? null),
+        'analyzed_at' => $data['analyzed_at'] ?? null,
+        'report' => $report,
+    ];
+}
+
+/**
+ * Enrichit le JSON website-analysis avec une cle `gemini` (null si indisponible).
+ */
+function pl_enrich_website_analysis_body(string $body): string
+{
+    $decoded = json_decode($body, true);
+    if (!is_array($decoded)) {
+        return $body;
+    }
+
+    $entrepriseId = 0;
+    if (isset($decoded['entreprise_id']) && is_numeric($decoded['entreprise_id'])) {
+        $entrepriseId = (int) $decoded['entreprise_id'];
+    } elseif (isset($decoded['entreprise']['id']) && is_numeric($decoded['entreprise']['id'])) {
+        $entrepriseId = (int) $decoded['entreprise']['id'];
+    }
+
+    $decoded['gemini'] = $entrepriseId > 0 ? pl_fetch_gemini_report($entrepriseId, 12) : null;
+
+    $encoded = json_encode($decoded, JSON_UNESCAPED_UNICODE);
+    return is_string($encoded) ? $encoded : $body;
+}

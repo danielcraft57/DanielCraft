@@ -58,5 +58,8 @@ if (!$result['ok']) {
     json_error((int) ($result['status'] ?? 502), (string) ($result['error'] ?? 'Erreur proxy.'));
 }
 
+$body = (string) ($result['body'] ?? '');
+$body = pl_enrich_website_analysis_body($body);
+
 http_response_code((int) ($result['status'] ?? 200));
-echo (string) ($result['body'] ?? '');
+echo $body;

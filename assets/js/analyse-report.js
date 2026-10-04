@@ -45,6 +45,22 @@
     }
   ];
 
+  const CHARACTER_FILES = [
+    'dc-character-artisan.jpg',
+    'dc-character-auto.jpg',
+    'dc-character-batiment.jpg',
+    'dc-character-bureau.jpg',
+    'dc-character-coiffure.jpg',
+    'dc-character-commerce.jpg',
+    'dc-character-fleuriste.jpg',
+    'dc-character-immo.jpg',
+    'dc-character-loic.jpg',
+    'dc-character-resto.jpg',
+    'dc-character-sante.jpg',
+    'dc-character-sport.jpg'
+  ];
+  const CHARACTER_BASE = '/assets/img/analyse/characters/';
+
   const els = {
     bootWrap: document.getElementById('plBootWrap'),
     boot: document.getElementById('plBoot'),
@@ -72,7 +88,8 @@
     screenshot: document.getElementById('plScreenshot'),
     shotUrl: document.getElementById('plShotUrl'),
     intro: document.querySelector('.analyse-intro'),
-    insights: document.getElementById('plInsights'),
+    narrative: document.getElementById('plNarrative'),
+    narrativeNav: document.getElementById('plNarrativeNav'),
     details: document.getElementById('plDetails'),
     offers: document.getElementById('plOffers'),
     leadForm: document.getElementById('plLeadForm'),
@@ -92,6 +109,9 @@
   let loadingStepTimer = null;
   let loadingStepIndex = 0;
   let loaderRevealToken = 0;
+  let narrativeToken = 0;
+  let narrativeChapters = [];
+  let narrativePlaying = false;
   let modalMode = 'free';
   let modalPreviousFocus = null;
 
@@ -521,15 +541,25 @@
     const reduced = prefersReducedMotion();
     const revealItems = root.querySelectorAll('[data-reveal-order]');
     const scores = els.scores ? els.scores.querySelectorAll('.analyse-score') : [];
-    const insights = els.insights ? els.insights.querySelectorAll('.analyse-insight') : [];
-    const offers = els.offers ? els.offers.querySelectorAll('.analyse-offer') : [];
-    const accordions = els.details ? els.details.querySelectorAll('.pl-accordion') : [];
     const shot = root.querySelector('.analyse-shot');
+    const token = ++narrativeToken;
 
     const markIn = (nodes, step) => {
       nodes.forEach((node, index) => {
         window.setTimeout(() => node.classList.add('is-in'), step * index);
       });
+    };
+
+    const revealTail = () => {
+      if (token !== narrativeToken) return;
+      if (els.convertReport) {
+        els.convertReport.classList.add('is-in');
+        markIn(els.convertReport.querySelectorAll('.analyse-convert-card'), 90);
+      }
+      const offers = els.offers ? els.offers.querySelectorAll('.analyse-offer') : [];
+      const accordions = els.details ? els.details.querySelectorAll('.pl-accordion') : [];
+      window.setTimeout(() => markIn(offers, 65), 160);
+      window.setTimeout(() => markIn(accordions, 50), 300);
     };
 
     requestAnimationFrame(() => {
@@ -542,13 +572,7 @@
           animateScoreRing(s);
         });
         if (shot) shot.classList.add('is-in');
-        insights.forEach((el) => el.classList.add('is-in'));
-        if (els.convertReport) {
-          els.convertReport.classList.add('is-in');
-          els.convertReport.querySelectorAll('.analyse-convert-card').forEach((el) => el.classList.add('is-in'));
-        }
-        offers.forEach((el) => el.classList.add('is-in'));
-        accordions.forEach((el) => el.classList.add('is-in'));
+        playNarrativeSequence(token, { instant: true, onAfterSecondChapter: revealTail });
         return;
       }
 
@@ -566,13 +590,10 @@
         if (shot) shot.classList.add('is-in');
       }, 220);
 
-      window.setTimeout(() => markIn(insights, 75), 380);
+      const gaugeDoneMs = 220 + (Math.max(scores.length, 1) * 90) + 920;
       window.setTimeout(() => {
-        if (els.convertReport) els.convertReport.classList.add('is-in');
-        markIn(els.convertReport ? els.convertReport.querySelectorAll('.analyse-convert-card') : [], 90);
-      }, 520);
-      window.setTimeout(() => markIn(offers, 65), 680);
-      window.setTimeout(() => markIn(accordions, 50), 820);
+        playNarrativeSequence(token, { instant: false, onAfterSecondChapter: revealTail });
+      }, gaugeDoneMs);
     });
   }
 
@@ -587,13 +608,45 @@
     if (els.shotUrl && website) els.shotUrl.textContent = displayHost(website);
   }
 
+  /**
+   * Rejette les faux prénoms dérivés d'emails génériques (contact@, info@…).
+   * @param {string} value
+   * @returns {boolean}
+   */
+  function isGenericLeadName(value) {
+    const raw = String(value || '').trim().toLowerCase();
+    if (!raw) return true;
+    const local = raw.includes('@') ? raw.split('@')[0] : raw;
+    const token = local.replace(/[^a-z0-9]+/gi, '');
+    const generic = new Set([
+      'info', 'infos', 'contact', 'contacts', 'hello', 'bonjour', 'hi',
+      'support', 'sav', 'admin', 'administration', 'commercial', 'sales',
+      'service', 'services', 'secretariat', 'accueil', 'office', 'team',
+      'equipe', 'webmaster', 'postmaster', 'noreply', 'noreply', 'mail',
+      'email', 'newsletter', 'notification', 'notifications', 'principal',
+      'monsieur', 'madame', 'monsieurmadame', 'cherprospect', 'na', 'n/a'
+    ]);
+    if (generic.has(local) || generic.has(token)) return true;
+    const first = local.split(/[\s._+-]+/).filter(Boolean)[0] || '';
+    return generic.has(first) || generic.has(first.replace(/[^a-z0-9]+/gi, ''));
+  }
+
+  function sanitizeLeadName(value) {
+    const text = String(value || '').trim();
+    if (!text || isGenericLeadName(text)) return '';
+    return text;
+  }
+
   function prefillLead({ website, email, name, first, last }) {
     if (website && els.leadSite) els.leadSite.value = website;
     if (email && els.leadEmail) els.leadEmail.value = email;
-    if (name && els.leadName && !els.leadName.value) {
-      els.leadName.value = name;
-    } else if ((first || last) && els.leadName && !els.leadName.value) {
-      els.leadName.value = [first, last].filter(Boolean).join(' ');
+    const safeName = sanitizeLeadName(name);
+    const safeFirst = sanitizeLeadName(first);
+    const safeLast = sanitizeLeadName(last);
+    if (safeName && els.leadName && !els.leadName.value) {
+      els.leadName.value = safeName;
+    } else if ((safeFirst || safeLast) && els.leadName && !els.leadName.value) {
+      els.leadName.value = [safeFirst, safeLast].filter(Boolean).join(' ');
     }
   }
 
@@ -653,36 +706,298 @@
     }
   }
 
-  function renderInsights(highlights) {
-    if (!els.insights) return;
-    const list = Array.isArray(highlights) ? highlights : [];
-    const buckets = {
-      good: { title: 'Points forts', icon: 'fa-arrow-trend-up', tone: 'good', items: [] },
-      warn: { title: "Axes d'amelioration", icon: 'fa-magnifying-glass', tone: 'warn', items: [] },
-      bad: { title: 'Points de vigilance', icon: 'fa-triangle-exclamation', tone: 'bad', items: [] }
-    };
-    list.forEach((it) => {
-      const tone = it?.tone === 'good' || it?.tone === 'bad' ? it.tone : 'warn';
-      const text = [it?.title, it?.desc].filter(Boolean).join(' - ');
-      if (text) buckets[tone].items.push(text);
-    });
-    if (!buckets.good.items.length && !buckets.warn.items.length && !buckets.bad.items.length) {
-      buckets.warn.items.push('Les details complets sont disponibles plus bas.');
+  function hashSeed(str) {
+    let h = 2166136261;
+    const s = String(str || 'danielcraft');
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
     }
-    Object.keys(buckets).forEach((k) => {
-      if (!buckets[k].items.length) buckets[k].items.push('Rien de particulier a signaler ici.');
-    });
+    return h >>> 0;
+  }
 
-    els.insights.innerHTML = Object.values(buckets).map((b) => `
-      <article class="analyse-insight analyse-insight--${b.tone}">
-        <div class="analyse-insight__head">
-          <i class="fas ${b.icon}" aria-hidden="true"></i>
-          <h3 class="analyse-insight__title">${escapeHtml(b.title)}</h3>
+  function pickCharacterFiles(host, count) {
+    const seed = hashSeed(host);
+    const pool = CHARACTER_FILES.slice();
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = (seed + i * 2654435761) % (i + 1);
+      const tmp = pool[i];
+      pool[i] = pool[j];
+      pool[j] = tmp;
+    }
+    return pool.slice(0, Math.max(0, count));
+  }
+
+  function joinProse(items, fallback) {
+    const parts = toArray(items)
+      .map((it) => {
+        if (typeof it === 'string') return it.trim();
+        if (it && typeof it === 'object') {
+          return String(it.action || it.message || it.title || it.desc || '').trim();
+        }
+        return '';
+      })
+      .filter(Boolean)
+      .slice(0, 5);
+    if (!parts.length) return fallback;
+    return parts.map((p) => (/[.!?…]$/.test(p) ? p : p + '.')).join(' ');
+  }
+
+  function highlightsProse(highlights, tones, fallback) {
+    const wanted = new Set(tones);
+    const parts = toArray(highlights)
+      .filter((h) => wanted.has(h?.tone || 'warn'))
+      .map((h) => [h?.title, h?.desc].filter(Boolean).join(' : '))
+      .filter(Boolean)
+      .slice(0, 4);
+    return joinProse(parts, fallback);
+  }
+
+  function scoreSummaryLine(scoreCards, company) {
+    const bits = toArray(scoreCards)
+      .filter((c) => typeof c?.value === 'number')
+      .map((c) => `${c.label} ${Math.round(c.value)}/100`);
+    const name = company || 'Ce site';
+    if (!bits.length) {
+      return `${name} : on a un premier regard sur le rapport. Guette voir le détail plus bas.`;
+    }
+    return `${name} - première lecture des scores : ${bits.join(', ')}. On démêle ça juste en dessous.`;
+  }
+
+  function designFallback(highlights) {
+    const mobile = toArray(highlights).find((h) => /mobile|affichage|viewport/i.test(String(h?.title || '') + ' ' + String(h?.desc || '')));
+    if (mobile) {
+      return [mobile.title, mobile.desc].filter(Boolean).join(' - ') + '.';
+    }
+    return "Côté design, on regarde surtout la clarté sur téléphone et la première impression. Le détail technique est plus bas.";
+  }
+
+  function actionsFallback(highlights) {
+    return highlightsProse(
+      highlights,
+      ['bad', 'warn'],
+      "Priorité : clarifier les points faibles du rapport, puis avancer sur une paire d'actions concrètes."
+    );
+  }
+
+  /**
+   * Construit les chapitres narratifs a partir de Gemini + fallbacks locaux.
+   * @param {{ gemini?: object|null, highlights?: array, scoreCards?: array, entreprise?: object, finalUrl?: string }} report
+   * @returns {array}
+   */
+  function buildNarrativeChapters(report) {
+    const geminiWrap = report?.gemini || null;
+    const g = geminiWrap?.report || geminiWrap || null;
+    const highlights = report?.highlights || [];
+    const company = report?.entreprise?.nom || displayHost(report?.finalUrl) || 'Ce site';
+    const host = displayHost(report?.finalUrl || currentWebsite || company);
+    const design = g?.design_analysis || {};
+
+    const defs = [
+      {
+        id: 'resume',
+        label: 'Résumé',
+        text: String(g?.executive_summary || '').trim() || scoreSummaryLine(report?.scoreCards, company)
+      },
+      {
+        id: 'forces',
+        label: 'Forces',
+        text: joinProse(
+          g?.what_works,
+          highlightsProse(highlights, ['good'], `${company} a déjà des bases utiles - on les garde en tête.`)
+        )
+      },
+      {
+        id: 'vigilance',
+        label: 'Vigilance',
+        text: joinProse(
+          g?.whats_wrong,
+          highlightsProse(highlights, ['bad', 'warn'], 'Rien de critique listé pour l\'instant - le détail reste disponible plus bas.')
+        )
+      },
+      {
+        id: 'design',
+        label: 'Design',
+        text: String(design?.summary || design?.ux_notes || design?.ui_notes || '').trim() || designFallback(highlights)
+      },
+      {
+        id: 'actions',
+        label: 'Actions',
+        text: joinProse(g?.priority_actions, actionsFallback(highlights))
+      },
+      {
+        id: 'suite',
+        label: 'Suite',
+        text: String(g?.commercial_pitch || '').trim()
+          || 'Si tu veux, on peut en parler entre midi - devis simple, un interlocuteur, et on avance sans faire le nareux.'
+      }
+    ];
+
+    const chars = pickCharacterFiles(host, defs.length);
+    const startRight = hashSeed(host) % 2 === 1;
+
+    return defs.map((d, index) => ({
+      ...d,
+      characterSrc: CHARACTER_BASE + (chars[index] || CHARACTER_FILES[index % CHARACTER_FILES.length]),
+      side: ((startRight ? index + 1 : index) % 2 === 0) ? 'left' : 'right',
+      streamed: false
+    }));
+  }
+
+  function setNarrativeActive(chapterId) {
+    if (els.narrativeNav) {
+      els.narrativeNav.querySelectorAll('.analyse-narrative__chip').forEach((chip) => {
+        chip.classList.toggle('is-active', chip.getAttribute('data-chapter') === chapterId);
+      });
+    }
+    if (els.narrative) {
+      els.narrative.querySelectorAll('.analyse-narrative__beat').forEach((beat) => {
+        beat.classList.toggle('is-active', beat.getAttribute('data-chapter') === chapterId);
+      });
+    }
+  }
+
+  function markChapterDone(chapterId) {
+    if (!els.narrativeNav) return;
+    const chip = els.narrativeNav.querySelector(`[data-chapter="${chapterId}"]`);
+    if (chip) chip.classList.add('is-done');
+  }
+
+  function renderNarrativeWords(textEl, text, { visible }) {
+    const parts = String(text || '').split(/(\s+)/);
+    textEl.innerHTML = parts.map((part) => {
+      if (!part) return '';
+      if (/^\s+$/.test(part)) return part;
+      const cls = visible ? 'analyse-word is-visible' : 'analyse-word';
+      return `<span class="${cls}">${escapeHtml(part)}</span>`;
+    }).join('');
+    if (visible) textEl.classList.add('is-complete');
+    else textEl.classList.remove('is-complete');
+  }
+
+  async function streamNarrativeText(textEl, text, token) {
+    if (!textEl) return;
+    textEl.classList.remove('is-loading', 'is-complete');
+    if (prefersReducedMotion()) {
+      renderNarrativeWords(textEl, text, { visible: true });
+      return;
+    }
+    renderNarrativeWords(textEl, text, { visible: false });
+    const words = textEl.querySelectorAll('.analyse-word');
+    for (let i = 0; i < words.length; i++) {
+      if (token !== narrativeToken) return;
+      words[i].classList.add('is-visible');
+      const raw = words[i].textContent || '';
+      const pause = /[.!?…]$/.test(raw) ? 140 : 32;
+      await sleep(pause);
+    }
+    if (token === narrativeToken) textEl.classList.add('is-complete');
+  }
+
+  function completeChapterInstant(chapter) {
+    if (!els.narrative || !chapter) return;
+    const beat = els.narrative.querySelector(`[data-chapter="${chapter.id}"]`);
+    if (!beat) return;
+    beat.classList.add('is-in');
+    const char = beat.querySelector('.analyse-narrative__char');
+    const textEl = beat.querySelector('.analyse-narrative__text');
+    if (char) {
+      char.classList.add('is-in');
+      if (!prefersReducedMotion()) char.classList.add('is-float');
+    }
+    if (textEl) renderNarrativeWords(textEl, chapter.text, { visible: true });
+    chapter.streamed = true;
+    markChapterDone(chapter.id);
+    setNarrativeActive(chapter.id);
+  }
+
+  async function playChapter(chapter, token, instant) {
+    if (!els.narrative || !chapter) return;
+    const beat = els.narrative.querySelector(`[data-chapter="${chapter.id}"]`);
+    if (!beat) return;
+    setNarrativeActive(chapter.id);
+    beat.classList.add('is-in');
+    const char = beat.querySelector('.analyse-narrative__char');
+    const textEl = beat.querySelector('.analyse-narrative__text');
+    if (char) {
+      char.classList.add('is-in');
+      if (!prefersReducedMotion()) char.classList.add('is-float');
+    }
+    if (instant) {
+      if (textEl) renderNarrativeWords(textEl, chapter.text, { visible: true });
+    } else {
+      await streamNarrativeText(textEl, chapter.text, token);
+    }
+    if (token !== narrativeToken) return;
+    chapter.streamed = true;
+    markChapterDone(chapter.id);
+  }
+
+  /**
+   * Enchaine les chapitres apres les jauges.
+   * @param {number} token
+   * @param {{ instant?: boolean, onAfterSecondChapter?: Function }} opts
+   */
+  async function playNarrativeSequence(token, opts) {
+    const instant = !!(opts && opts.instant);
+    const onAfterSecond = opts && typeof opts.onAfterSecondChapter === 'function' ? opts.onAfterSecondChapter : null;
+    let tailStarted = false;
+    narrativePlaying = true;
+    try {
+      for (let i = 0; i < narrativeChapters.length; i++) {
+        if (token !== narrativeToken) return;
+        await playChapter(narrativeChapters[i], token, instant);
+        if (token !== narrativeToken) return;
+        if (!tailStarted && i >= 1 && onAfterSecond) {
+          tailStarted = true;
+          onAfterSecond();
+        }
+        if (!instant) await sleep(220);
+      }
+      if (!tailStarted && onAfterSecond) onAfterSecond();
+    } finally {
+      if (token === narrativeToken) narrativePlaying = false;
+    }
+  }
+
+  function jumpToNarrativeChapter(chapterId) {
+    const chapter = narrativeChapters.find((c) => c.id === chapterId);
+    if (!chapter) return;
+    narrativeToken += 1;
+    narrativePlaying = false;
+    narrativeChapters.forEach((c) => {
+      if (c.id === chapterId || c.streamed) completeChapterInstant(c);
+    });
+    const beat = els.narrative && els.narrative.querySelector(`[data-chapter="${chapterId}"]`);
+    if (beat && typeof beat.scrollIntoView === 'function') {
+      beat.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
+    }
+  }
+
+  function renderNarrative(chapters) {
+    narrativeChapters = Array.isArray(chapters) ? chapters : [];
+    if (els.narrativeNav) {
+      els.narrativeNav.innerHTML = narrativeChapters.map((c, index) => `
+        <button type="button" class="analyse-narrative__chip" data-chapter="${escapeHtml(c.id)}" aria-label="Chapitre ${index + 1} : ${escapeHtml(c.label)}">
+          ${escapeHtml(c.label)}
+        </button>
+      `).join('');
+      els.narrativeNav.querySelectorAll('.analyse-narrative__chip').forEach((chip) => {
+        chip.addEventListener('click', () => jumpToNarrativeChapter(chip.getAttribute('data-chapter')));
+      });
+    }
+    if (!els.narrative) return;
+    els.narrative.innerHTML = narrativeChapters.map((c) => `
+      <article class="analyse-narrative__beat analyse-narrative__beat--${c.side}" data-chapter="${escapeHtml(c.id)}">
+        <div class="analyse-narrative__row">
+          <figure class="analyse-narrative__char">
+            <img src="${escapeHtml(c.characterSrc)}" alt="" width="120" height="120" loading="lazy" decoding="async">
+          </figure>
+          <div class="analyse-narrative__body">
+            <p class="analyse-narrative__label">${escapeHtml(c.label)}</p>
+            <p class="analyse-narrative__text" aria-live="polite"></p>
+          </div>
         </div>
-        <ul class="analyse-insight__list">
-          ${b.items.slice(0, 4).map((t) => `<li><i class="fas ${b.tone === 'bad' ? 'fa-circle-exclamation' : 'fa-check'}" aria-hidden="true"></i><span>${escapeHtml(t)}</span></li>`).join('')}
-        </ul>
-        <a class="analyse-insight__more" href="#analyse-details-title">Voir le detail →</a>
       </article>
     `).join('');
   }
@@ -769,6 +1084,7 @@
     const pentest = root?.pentest || {};
     const osint = root?.osint || {};
     const scraping = root?.scraping || {};
+    const gemini = raw?.gemini || root?.gemini || null;
 
     const scoreCards = [
       { key: 'performance', label: 'Performance', value: entreprise?.performance_score },
@@ -948,6 +1264,7 @@
       entreprise,
       scoreCards,
       highlights,
+      gemini,
       sections,
       screenshotUrl,
       metaLine: entreprise?.date_analyse ? formatDate(entreprise.date_analyse) : null,
@@ -1003,7 +1320,7 @@
 
     renderScores(r.scoreCards);
     renderScreenshot(r.screenshotUrl, company, currentWebsite);
-    renderInsights(r.highlights);
+    renderNarrative(buildNarrativeChapters(r));
     renderOffers(r.scoreCards);
     renderDetails(r.sections);
 
