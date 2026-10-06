@@ -1,8 +1,8 @@
-  <div class="audit-offers__grid">
+  <div class="audit-offers__grid audit-offers__grid--single">
 
-    <article class="audit-offer-card audit-offer-card--free analyse-convert-card" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <article class="audit-offer-card audit-offer-card--gemini analyse-convert-card" data-audit-slug="{{audit_paid_slug}}" data-audit-price="0" data-audit-free="1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
 
-      <meta itemprop="name" content="Audit gratuit par e-mail">
+      <meta itemprop="name" content="Rapport Gemini - gratuit pour l'instant">
 
       <meta itemprop="price" content="0">
 
@@ -10,65 +10,29 @@
 
       <link itemprop="availability" href="https://schema.org/InStock">
 
-      <div class="audit-offer-card__icon" aria-hidden="true"><i class="fas fa-magnifying-glass"></i></div>
+      <div class="audit-offer-card__ribbon">Gratuit</div>
 
-      <h3 class="audit-offer-card__name">Audit gratuit</h3>
+      <div class="audit-offer-card__icon audit-offer-card__icon--gemini" aria-hidden="true"><i class="fas fa-file-arrow-down"></i></div>
+
+      <h3 class="audit-offer-card__name">Rapport Gemini</h3>
 
       <p class="audit-offer-card__price"><span class="audit-offer-card__amount">0&nbsp;€</span></p>
 
-      <p class="audit-offer-card__pitch">Un coup d'œil clair et rapide - l'essentiel de ton site, sans roman.</p>
+      <p class="audit-offer-card__pitch">Tu repars avec le rapport complet par email - la même lecture que sur cette page, en version téléchargeable.</p>
 
       <ul class="audit-offer-card__perks">
 
-        <li><i class="fas fa-check" aria-hidden="true"></i> Vue d'ensemble de ton site</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Rapport PDF envoyé par email</li>
 
-        <li><i class="fas fa-check" aria-hidden="true"></i> Points forts et points faibles</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Plan d'action priorisé, concret</li>
 
-        <li><i class="fas fa-check" aria-hidden="true"></i> Sans carte bancaire, sans engagement</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i> Sans carte bancaire pour l'instant</li>
 
       </ul>
 
-      <button type="button" class="btn btn-primary audit-offer-card__cta" data-analyse-audit-free>Demander le gratuit</button>
+      <button type="button" class="btn btn-primary audit-offer-card__cta audit-offer-card__cta--gemini" data-analyse-audit-gemini>Recevoir le rapport</button>
 
       <p class="audit-offer-card__foot">En général en moins d'une minute, parfois jusqu'à 1 h.</p>
-
-    </article>
-
-
-
-    <article class="audit-offer-card audit-offer-card--premium analyse-convert-card" data-audit-slug="{{audit_paid_slug}}" data-audit-price="{{audit_paid_price_eur}}" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-
-      <meta itemprop="name" content="Audit premium - analyse complete">
-
-      <meta itemprop="price" content="{{audit_paid_price_eur}}">
-
-      <meta itemprop="priceCurrency" content="EUR">
-
-      <link itemprop="availability" href="https://schema.org/InStock">
-
-      <div class="audit-offer-card__ribbon">Tarif lancement</div>
-
-      <div class="audit-offer-card__icon audit-offer-card__icon--premium" aria-hidden="true"><i class="fas fa-bullseye"></i></div>
-
-      <h3 class="audit-offer-card__name">Audit premium</h3>
-
-      <p class="audit-offer-card__price"><span class="audit-offer-card__amount">{{audit_paid_price_eur}}&nbsp;€</span> <span class="audit-offer-card__vat">TTC</span></p>
-
-      <p class="audit-offer-card__pitch">Une analyse complète et des recommandations concrètes pour passer à l'action.</p>
-
-      <ul class="audit-offer-card__perks">
-
-        <li><i class="fas fa-check" aria-hidden="true"></i> Vos pages au crible (contenu, visibilite, technique)</li>
-
-        <li><i class="fas fa-check" aria-hidden="true"></i> Comment les gens se baladent sur tes pages (et où ça coince)</li>
-
-        <li><i class="fas fa-check" aria-hidden="true"></i> Plan d'action priorise et concret</li>
-
-      </ul>
-
-      <button type="button" class="btn btn-primary audit-offer-card__cta audit-offer-card__cta--premium" data-analyse-audit-premium>Commander le premium</button>
-
-      <p class="audit-offer-card__foot">Rapport detaille dans les heures qui suivent.</p>
 
     </article>
 

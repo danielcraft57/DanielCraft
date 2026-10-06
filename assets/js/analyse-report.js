@@ -4,34 +4,31 @@
   const API_BASE = '';
   const ENDPOINT = '/api/website-analysis.php';
   const FREE_AUDIT_ENDPOINT = '/api/request-free-audit.php';
-  const PREMIUM_CHECKOUT_ENDPOINT = '/api/stripe-create-audit-checkout.php';
-  const STORAGE_KEY = 'dc_audit_checkout_pending';
 
   const pageRoot = document.querySelector('.page-analyse');
-  const auditSlug = (pageRoot && pageRoot.getAttribute('data-audit-slug')) || 'audit-complet-ia';
 
   const OFFERS = [
     {
       key: 'performance',
       slug: 'rapport-vitesse',
       title: 'Site plus rapide',
-      desc: 'Optimisez la vitesse de chargement et l\'experience sur mobile.',
+      desc: 'Optimise la vitesse de chargement et l\'expérience sur mobile.',
       icon: 'fa-gauge-high',
       iconMod: 'perf'
     },
     {
       key: 'seo',
       slug: 'referencement-google',
-      title: 'Etre trouve sur Google',
-      desc: 'Ameliorez votre referencement et votre visibilite locale.',
+      title: 'Être trouvé sur Google',
+      desc: 'Améliore ton référencement et ta visibilité locale.',
       icon: 'fa-magnifying-glass',
       iconMod: 'seo'
     },
     {
       key: 'securite',
       slug: 'sauvegardes-securite',
-      title: 'Securiser le site',
-      desc: 'Protegez votre site et vos donnees avec les bons reflexes.',
+      title: 'Sécuriser le site',
+      desc: 'Protège ton site et tes données avec les bons réflexes.',
       icon: 'fa-shield-halved',
       iconMod: 'sec'
     },
@@ -39,7 +36,7 @@
       key: 'vitrine',
       slug: 'site-vitrine',
       title: 'Vitrine claire',
-      desc: 'Mettez en valeur votre activite avec un site clair et efficace.',
+      desc: 'Mets en valeur ton activité avec un site clair et efficace.',
       icon: 'fa-window-maximize',
       iconMod: 'vitrine'
     }
@@ -71,25 +68,19 @@
     loading: document.getElementById('plLoading'),
     loadingUrl: document.getElementById('plLoadingUrl'),
     loadingStep: document.getElementById('plLoadingStep'),
-    loadingScores: document.getElementById('plLoadingScores'),
-    convertLoader: document.getElementById('plConvertLoader'),
     convertReport: document.getElementById('plConvertReport'),
     leadModal: document.getElementById('plLeadModal'),
     leadModalTitle: document.getElementById('plLeadModalTitle'),
     leadModalLead: document.getElementById('plLeadModalLead'),
     leadSubmitLabel: document.getElementById('plLeadSubmitLabel'),
-    reportHero: document.getElementById('plReportHero'),
+    storySection: document.getElementById('plStorySection'),
     report: document.getElementById('plReport'),
-    companyName: document.getElementById('plCompanyName'),
-    siteLink: document.getElementById('plSiteLink'),
-    siteLabel: document.getElementById('plSiteLabel'),
-    reportDate: document.getElementById('plReportDate'),
     scores: document.getElementById('plScores'),
-    screenshot: document.getElementById('plScreenshot'),
-    shotUrl: document.getElementById('plShotUrl'),
+    storyChart: document.getElementById('plStoryChart'),
     intro: document.querySelector('.analyse-intro'),
     narrative: document.getElementById('plNarrative'),
     narrativeNav: document.getElementById('plNarrativeNav'),
+    storySkip: document.getElementById('plStorySkip'),
     details: document.getElementById('plDetails'),
     offers: document.getElementById('plOffers'),
     leadForm: document.getElementById('plLeadForm'),
@@ -98,36 +89,46 @@
     leadSite: document.getElementById('plLeadSite'),
     leadSubmit: document.getElementById('plLeadSubmit'),
     leadFeedback: document.getElementById('plLeadFeedback'),
-    leadSuccess: document.getElementById('plLeadSuccess'),
-    leadSuccessText: document.getElementById('plLeadSuccessText'),
-    premiumFeedback: document.getElementById('plPremiumFeedback')
+    winModal: document.getElementById('plWinModal'),
+    winModalText: document.getElementById('plWinModalText')
   };
 
   if (!els.form || !els.url || !els.submit) return;
 
+  /** Ancien HTML prod : second bloc feedback premium - on le retire si présent. */
+  document.getElementById('plPremiumFeedback')?.remove();
+
   let currentWebsite = '';
+  let leadSubmitting = false;
   let loadingStepTimer = null;
   let loadingStepIndex = 0;
-  let loaderRevealToken = 0;
   let narrativeToken = 0;
   let narrativeChapters = [];
   let narrativePlaying = false;
-  let modalMode = 'free';
+  let narrativeTailReveal = null;
+  /** Pause entre mots pendant le stream. */
+  const STORY_WORD_MS = 85;
+  /** Pause après une ponctuation forte. */
+  const STORY_PUNCT_MS = 280;
+  /** Pause entre deux blocs empilés. */
+  const STORY_BLOCK_GAP_MS = 900;
+  /** Mots / motifs à mettre en surbrillance dans la narration. */
+  const STORY_KEYWORDS = new Set([
+    'https', 'http', 'ssl', 'hsts', 'seo', 'google', 'téléphone', 'telephone',
+    'mobile', 'sécurité', 'securite', 'cnaps', 'design', 'refonte', 'confiance',
+    'urgence', 'urgent', 'devis', 'crédibilité', 'credibilite', 'bug', 'bugs',
+    'meta', 'title', 'description', 'viewport', 'wordpress', 'amateur',
+    'professionnel', 'cliquable', 'jaune', 'noir', 'performance', 'risque',
+    'garde', 'gardiennage', 'surveillance', 'metz', 'nancy', 'lorraine'
+  ]);
   let modalPreviousFocus = null;
-
-  const LOADER_SCORE_DEFS = [
-    { key: 'performance', label: 'Performance' },
-    { key: 'seo', label: 'SEO' },
-    { key: 'securite', label: 'Securite' },
-    { key: 'risque', label: 'Risque' }
-  ];
 
   const LOADING_STEPS = [
     'Connexion au site…',
-    'Mesure de la performance…',
+    'Lecture du design…',
     'Analyse SEO et contenu…',
-    'Verification securite…',
-    'Preparation du rapport…'
+    'Vérification sécurité…',
+    'Préparation du rapport…'
   ];
 
   function setFeedback(el, message, isError) {
@@ -135,11 +136,31 @@
     if (!message) {
       el.hidden = true;
       el.textContent = '';
+      el.removeAttribute('aria-hidden');
       return;
     }
     el.hidden = false;
     el.textContent = message;
     el.className = 'form-feedback ' + (isError ? 'form-feedback--error' : 'form-feedback--success');
+    el.removeAttribute('aria-hidden');
+  }
+
+  /**
+   * Un seul message visible dans la modal (évite le doublon lead + premium en prod).
+   * @param {string} message
+   * @param {boolean} isError
+   */
+  function setLeadModalFeedback(message, isError) {
+    if (els.leadModal) {
+      els.leadModal.querySelectorAll('.form-feedback').forEach((box) => {
+        if (box !== els.leadFeedback) {
+          box.hidden = true;
+          box.textContent = '';
+          box.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }
+    setFeedback(els.leadFeedback, message, isError);
   }
 
   function setBootLoading(isLoading) {
@@ -226,6 +247,8 @@
 
   function ringColorForKey(key) {
     switch (key) {
+      case 'design': return '#4f46e5';
+      case 'gemini': return '#4f46e5';
       case 'performance': return '#10b981';
       case 'seo': return '#2563eb';
       case 'securite': return '#0d9488';
@@ -248,7 +271,7 @@
       if (value >= 50) return 'Moyenne';
       return 'Faible';
     }
-    if (key === 'seo') {
+    if (key === 'seo' || key === 'design' || key === 'gemini') {
       if (value >= 90) return 'Excellent';
       if (value >= 75) return 'Bien';
       if (value >= 50) return 'Moyen';
@@ -281,102 +304,13 @@
     if (els.bootWrap) els.bootWrap.hidden = !show;
   }
 
-  function resetLoaderScores() {
-    loaderRevealToken += 1;
-    if (!els.loadingScores) return;
-    els.loadingScores.innerHTML = '';
-    LOADER_SCORE_DEFS.forEach((def) => {
-      const card = document.createElement('div');
-      card.className = 'analyse-loader__score analyse-loader__score--' + def.key;
-      card.dataset.scoreKey = def.key;
-      card.innerHTML = `
-        <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
-        <div class="analyse-loader__score-copy">
-          <div class="analyse-loader__score-label">${escapeHtml(def.label)}</div>
-          <div class="analyse-loader__score-value">-</div>
-        </div>
-      `;
-      els.loadingScores.appendChild(card);
-    });
-  }
-
-  async function revealLoaderScorePlaceholders() {
-    const token = loaderRevealToken;
-    const cards = els.loadingScores ? els.loadingScores.querySelectorAll('.analyse-loader__score') : [];
-    if (!cards.length) return;
-    const step = prefersReducedMotion() ? 0 : 320;
-    for (let i = 0; i < cards.length; i += 1) {
-      if (token !== loaderRevealToken) return;
-      if (step > 0) await sleep(step);
-      cards[i].classList.add('is-in');
-    }
-  }
-
-  function buildLoaderScoreValueHtml(it) {
-    const key = it?.key || 'score';
-    const score100 = typeof it?.value === 'number' ? Math.round(it.value) : null;
-    const ring = score100 == null ? 0 : Math.max(0, Math.min(100, score100));
-    const color = score100 == null ? 'rgba(15,23,42,0.18)' : ringColorForKey(key);
-    const note = it?.noteClient || scoreNote(key, score100);
-    return {
-      ringHtml: `
-        <div class="pl-score-ring analyse-loader__score-ring--live" style="--pl-ring:${ring}%; --pl-ring-live:0%; --pl-ring-color:${color};" data-ring-target="${ring}" aria-hidden="true">
-          <div class="pl-score-value">${score100 ?? '-'}</div>
-        </div>
-      `,
-      note: note
-    };
-  }
-
-  async function fillLoaderScoresFromReport(raw) {
-    const token = loaderRevealToken;
-    const cards = els.loadingScores ? els.loadingScores.querySelectorAll('.analyse-loader__score') : [];
-    if (!cards.length) return;
-    const list = normalizeReport(raw).scoreCards || [];
-    const step = prefersReducedMotion() ? 0 : 240;
-
-    for (let i = 0; i < cards.length; i += 1) {
-      if (token !== loaderRevealToken) return;
-      const card = cards[i];
-      const it = list[i] || LOADER_SCORE_DEFS[i];
-      if (!card.classList.contains('is-in')) {
-        card.classList.add('is-in');
-        if (step > 0) await sleep(120);
-      }
-      const built = buildLoaderScoreValueHtml(it);
-      const pending = card.querySelector('.analyse-loader__score-ring--pending, .analyse-loader__score-ring--live');
-      if (pending) {
-        const wrap = document.createElement('div');
-        wrap.innerHTML = built.ringHtml.trim();
-        pending.replaceWith(wrap.firstElementChild);
-      }
-      const valueEl = card.querySelector('.analyse-loader__score-value');
-      if (valueEl) valueEl.textContent = built.note;
-      card.classList.add('is-ready');
-      animateScoreRing(card);
-      if (step > 0) await sleep(step);
-    }
-  }
-
   function convertSections() {
-    return [els.convertLoader, els.convertReport].filter(Boolean);
+    return [els.convertReport].filter(Boolean);
   }
 
   function resetConvertCardReveal(section) {
     if (!section) return;
     section.querySelectorAll('.analyse-convert-card.is-in').forEach((el) => el.classList.remove('is-in'));
-  }
-
-  function setConvertLoaderVisible(show) {
-    if (!els.convertLoader) return;
-    els.convertLoader.hidden = !show;
-    if (!show) {
-      resetConvertCardReveal(els.convertLoader);
-      return;
-    }
-    els.convertLoader.querySelectorAll('.analyse-convert-card').forEach((card) => {
-      card.classList.add('is-in');
-    });
   }
 
   function setConvertReportVisible(show) {
@@ -391,26 +325,15 @@
     });
   }
 
-  function openLeadModal(mode) {
+  function openLeadModal() {
     if (!els.leadModal) return;
-    modalMode = mode === 'premium' ? 'premium' : 'free';
-    if (els.leadModalTitle) {
-      els.leadModalTitle.textContent =
-        modalMode === 'premium' ? 'Commander l\'audit premium' : 'Recevoir l\'audit gratuit';
-    }
+    if (els.leadModalTitle) els.leadModalTitle.textContent = 'Recevoir le rapport Gemini';
     if (els.leadModalLead) {
       els.leadModalLead.textContent =
-        modalMode === 'premium'
-          ? 'Renseignez votre email pour continuer vers le paiement securise.'
-          : 'PDF par email - en general en moins d\'une minute, parfois jusqu\'a 1 h.';
+        'Renseigne ton email - le rapport complet part gratuitement pour l\'instant.';
     }
-    if (els.leadSubmitLabel) {
-      els.leadSubmitLabel.textContent =
-        modalMode === 'premium' ? 'Continuer vers le paiement' : 'Recevoir l\'audit (PDF)';
-    }
-    setFeedback(els.premiumFeedback, '', false);
-    setFeedback(els.leadFeedback, '', false);
-    if (els.leadSuccess) els.leadSuccess.hidden = true;
+    if (els.leadSubmitLabel) els.leadSubmitLabel.textContent = 'Recevoir le rapport';
+    setLeadModalFeedback('', false);
     if (els.leadForm) els.leadForm.hidden = false;
     modalPreviousFocus = document.activeElement;
     els.leadModal.hidden = false;
@@ -425,19 +348,43 @@
     if (!els.leadModal || els.leadModal.hidden) return;
     els.leadModal.hidden = true;
     els.leadModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('analyse-modal-open');
+    if (!els.winModal || els.winModal.hidden) {
+      document.body.classList.remove('analyse-modal-open');
+    }
     if (modalPreviousFocus && typeof modalPreviousFocus.focus === 'function') {
       modalPreviousFocus.focus();
     }
     modalPreviousFocus = null;
   }
 
-  async function revealConvertDuringLoad() {
-    setConvertLoaderVisible(true);
+  /**
+   * Ouvre la modale succès « C'est parti » (style casino).
+   * @param {string} message - Texte affiché sous le titre.
+   */
+  function openWinModal(message) {
+    if (!els.winModal) return;
+    if (els.winModalText) {
+      els.winModalText.textContent =
+        message || 'Rapport Gemini en route - tu le reçois par email.';
+    }
+    els.winModal.hidden = false;
+    els.winModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('analyse-modal-open');
+    requestAnimationFrame(() => {
+      const cta = els.winModal.querySelector('[data-analyse-win-close].analyse-win-modal__cta');
+      if (cta) cta.focus();
+    });
+  }
+
+  /** Ferme la modale succès casino. */
+  function closeWinModal() {
+    if (!els.winModal || els.winModal.hidden) return;
+    els.winModal.hidden = true;
+    els.winModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('analyse-modal-open');
   }
 
   function setConvertVisible(show) {
-    setConvertLoaderVisible(show);
     if (!show) setConvertReportVisible(false);
   }
 
@@ -450,14 +397,10 @@
       if (els.loadingUrl) {
         els.loadingUrl.textContent = websiteUrl ? displayHost(websiteUrl) : '';
       }
-      resetLoaderScores();
-      setConvertLoaderVisible(true);
       setConvertReportVisible(false);
       startLoadingSteps();
-      revealConvertDuringLoad();
     } else {
       stopLoadingSteps();
-      loaderRevealToken += 1;
     }
   }
 
@@ -535,19 +478,29 @@
       el.classList.remove('is-in');
     });
 
-    if (els.reportHero) els.reportHero.hidden = false;
+    if (els.storySection) els.storySection.hidden = false;
     if (els.report) els.report.hidden = false;
 
     const reduced = prefersReducedMotion();
-    const revealItems = root.querySelectorAll('[data-reveal-order]');
-    const scores = els.scores ? els.scores.querySelectorAll('.analyse-score') : [];
-    const shot = root.querySelector('.analyse-shot');
     const token = ++narrativeToken;
 
     const markIn = (nodes, step) => {
       nodes.forEach((node, index) => {
         window.setTimeout(() => node.classList.add('is-in'), step * index);
       });
+    };
+
+    const revealStoryVisuals = () => {
+      if (token !== narrativeToken) return;
+      const gauges = els.scores ? els.scores.querySelectorAll('.analyse-score') : [];
+      markIn(gauges, 90);
+      gauges.forEach((g) => animateScoreRing(g));
+      if (els.storyChart) {
+        els.storyChart.classList.add('is-in');
+        els.storyChart.querySelectorAll('.analyse-story__bar-fill').forEach((bar, index) => {
+          window.setTimeout(() => bar.classList.add('is-grown'), 120 + index * 90);
+        });
+      }
     };
 
     const revealTail = () => {
@@ -564,48 +517,17 @@
 
     requestAnimationFrame(() => {
       root.classList.add('is-revealed');
+      if (els.storySection) els.storySection.classList.add('is-in');
+      revealStoryVisuals();
 
       if (reduced) {
-        revealItems.forEach((el) => el.classList.add('is-in'));
-        scores.forEach((s) => {
-          s.classList.add('is-in');
-          animateScoreRing(s);
-        });
-        if (shot) shot.classList.add('is-in');
+        root.querySelectorAll('#plReport [data-reveal-order]').forEach((el) => el.classList.add('is-in'));
         playNarrativeSequence(token, { instant: true, onAfterSecondChapter: revealTail });
         return;
       }
 
-      revealItems.forEach((el, index) => {
-        window.setTimeout(() => el.classList.add('is-in'), 80 * index);
-      });
-
-      window.setTimeout(() => {
-        scores.forEach((s, index) => {
-          window.setTimeout(() => {
-            s.classList.add('is-in');
-            animateScoreRing(s);
-          }, 90 * index);
-        });
-        if (shot) shot.classList.add('is-in');
-      }, 220);
-
-      const gaugeDoneMs = 220 + (Math.max(scores.length, 1) * 90) + 920;
-      window.setTimeout(() => {
-        playNarrativeSequence(token, { instant: false, onAfterSecondChapter: revealTail });
-      }, gaugeDoneMs);
+      playNarrativeSequence(token, { instant: false, onAfterSecondChapter: revealTail });
     });
-  }
-
-  function setIdentityPreview({ website, company, dateLine }) {
-    if (els.companyName && company) els.companyName.textContent = company;
-    if (els.siteLink && website) {
-      els.siteLink.href = website;
-      els.siteLink.removeAttribute('aria-disabled');
-    }
-    if (els.siteLabel && website) els.siteLabel.textContent = website;
-    if (els.reportDate && dateLine) els.reportDate.textContent = dateLine;
-    if (els.shotUrl && website) els.shotUrl.textContent = displayHost(website);
   }
 
   /**
@@ -677,33 +599,47 @@
       `;
       els.scores.appendChild(card);
     });
+    renderScoreChart(list);
   }
 
-  function renderScreenshot(screenshotUrl, companyName, websiteUrl) {
-    if (!els.screenshot) return;
-    els.screenshot.innerHTML = '';
-    if (els.shotUrl) {
-      els.shotUrl.textContent = websiteUrl ? displayHost(websiteUrl) : 'votre-site.fr';
+  /**
+   * Barres horizontales des scores sous les jauges (argumentation).
+   * @param {array} cards
+   */
+  function renderScoreChart(cards) {
+    if (!els.storyChart) return;
+    const list = (Array.isArray(cards) ? cards : []).filter((c) => typeof c?.value === 'number');
+    if (!list.length) {
+      els.storyChart.innerHTML = '';
+      els.storyChart.hidden = true;
+      return;
     }
-    if (screenshotUrl) {
-      const img = document.createElement('img');
-      img.src = screenshotUrl;
-      img.alt = companyName ? `Apercu de ${companyName}` : 'Apercu du site analyse';
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.referrerPolicy = 'no-referrer';
-      img.className = 'analyse-shot__img';
-      img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true });
-      els.screenshot.appendChild(img);
-    } else {
-      const box = document.createElement('div');
-      box.className = 'pl-skeleton';
-      box.style.width = '100%';
-      box.style.height = '100%';
-      box.style.minHeight = '220px';
-      box.setAttribute('aria-hidden', 'true');
-      els.screenshot.appendChild(box);
-    }
+    els.storyChart.hidden = false;
+    els.storyChart.classList.remove('is-in');
+    els.storyChart.innerHTML = `
+      <p class="analyse-story__chart-title">Vue d'ensemble des notes</p>
+      <div class="analyse-story__bars">
+        ${list.map((c) => {
+          const val = Math.max(0, Math.min(100, Math.round(c.value)));
+          const color = ringColorForKey(c.key);
+          const invert = c.key === 'risque' || c.key === 'pentest';
+          const width = invert ? Math.max(0, 100 - val) : val;
+          return `
+            <div class="analyse-story__bar-row">
+              <span class="analyse-story__bar-label">${escapeHtml(c.label || c.key)}</span>
+              <div class="analyse-story__bar-track" role="img" aria-label="${escapeHtml(c.label || '')} ${val} sur 100">
+                <span class="analyse-story__bar-fill" style="--bar-color:${color}; --bar-w:${width}%"></span>
+              </div>
+              <span class="analyse-story__bar-val">${val}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  function renderScreenshot() {
+    /* Capture retiree du rapport - garder la fonction no-op pour les appels existants. */
   }
 
   function hashSeed(str) {
@@ -728,7 +664,13 @@
     return pool.slice(0, Math.max(0, count));
   }
 
-  function joinProse(items, fallback) {
+  /**
+   * Normalise une liste Gemini / highlights en paragraphes distincts.
+   * @param {array} items
+   * @param {string} fallback
+   * @returns {string[]}
+   */
+  function toParagraphs(items, fallback) {
     const parts = toArray(items)
       .map((it) => {
         if (typeof it === 'string') return it.trim();
@@ -738,19 +680,41 @@
         return '';
       })
       .filter(Boolean)
-      .slice(0, 5);
-    if (!parts.length) return fallback;
-    return parts.map((p) => (/[.!?…]$/.test(p) ? p : p + '.')).join(' ');
+      .slice(0, 6)
+      .map((p) => (/[.!?…]$/.test(p) ? p : p + '.'));
+    if (!parts.length) return [fallback];
+    return parts;
   }
 
-  function highlightsProse(highlights, tones, fallback) {
+  /**
+   * Decoupe un bloc de prose en paragraphes (double saut de ligne ou phrases longues).
+   * @param {string} text
+   * @returns {string[]}
+   */
+  function proseFromText(text) {
+    const raw = String(text || '').trim();
+    if (!raw) return [];
+    const blocks = raw.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+    if (blocks.length > 1) return blocks;
+    const sentences = raw.match(/[^.!?…]+[.!?…]+/g);
+    if (sentences && sentences.length > 2) {
+      const grouped = [];
+      for (let i = 0; i < sentences.length; i += 2) {
+        grouped.push(sentences.slice(i, i + 2).join(' ').trim());
+      }
+      return grouped.filter(Boolean);
+    }
+    return [raw];
+  }
+
+  function highlightsParagraphs(highlights, tones, fallback) {
     const wanted = new Set(tones);
     const parts = toArray(highlights)
       .filter((h) => wanted.has(h?.tone || 'warn'))
       .map((h) => [h?.title, h?.desc].filter(Boolean).join(' : '))
       .filter(Boolean)
       .slice(0, 4);
-    return joinProse(parts, fallback);
+    return toParagraphs(parts, fallback);
   }
 
   function scoreSummaryLine(scoreCards, company) {
@@ -773,7 +737,7 @@
   }
 
   function actionsFallback(highlights) {
-    return highlightsProse(
+    return highlightsParagraphs(
       highlights,
       ['bad', 'warn'],
       "Priorité : clarifier les points faibles du rapport, puis avancer sur une paire d'actions concrètes."
@@ -793,43 +757,48 @@
     const host = displayHost(report?.finalUrl || currentWebsite || company);
     const design = g?.design_analysis || {};
 
+    const resumeParas = proseFromText(g?.executive_summary);
+    const designRaw = String(design?.summary || design?.ux_notes || design?.ui_notes || '').trim();
+    const designParas = proseFromText(designRaw);
+    const suiteRaw = String(g?.commercial_pitch || '').trim()
+      || 'Si tu veux, on peut en parler entre midi - devis simple, un interlocuteur, et on avance sans faire le nareux.';
+
     const defs = [
       {
         id: 'resume',
         label: 'Résumé',
-        text: String(g?.executive_summary || '').trim() || scoreSummaryLine(report?.scoreCards, company)
+        paragraphs: resumeParas.length ? resumeParas : [scoreSummaryLine(report?.scoreCards, company)]
       },
       {
         id: 'forces',
         label: 'Forces',
-        text: joinProse(
-          g?.what_works,
-          highlightsProse(highlights, ['good'], `${company} a déjà des bases utiles - on les garde en tête.`)
-        )
+        paragraphs: toArray(g?.what_works).length
+          ? toParagraphs(g?.what_works, `${company} a déjà des bases utiles - on les garde en tête.`)
+          : highlightsParagraphs(highlights, ['good'], `${company} a déjà des bases utiles - on les garde en tête.`)
       },
       {
         id: 'vigilance',
         label: 'Vigilance',
-        text: joinProse(
-          g?.whats_wrong,
-          highlightsProse(highlights, ['bad', 'warn'], 'Rien de critique listé pour l\'instant - le détail reste disponible plus bas.')
-        )
+        paragraphs: g?.whats_wrong
+          ? toParagraphs(g?.whats_wrong, 'Rien de critique listé pour l\'instant - le détail reste disponible plus bas.')
+          : highlightsParagraphs(highlights, ['bad', 'warn'], 'Rien de critique listé pour l\'instant - le détail reste disponible plus bas.')
       },
       {
         id: 'design',
         label: 'Design',
-        text: String(design?.summary || design?.ux_notes || design?.ui_notes || '').trim() || designFallback(highlights)
+        paragraphs: designParas.length ? designParas : [designFallback(highlights)]
       },
       {
         id: 'actions',
         label: 'Actions',
-        text: joinProse(g?.priority_actions, actionsFallback(highlights))
+        paragraphs: toArray(g?.priority_actions).length
+          ? toParagraphs(g?.priority_actions, "Priorité : clarifier les points faibles du rapport, puis avancer sur une paire d'actions concrètes.")
+          : actionsFallback(highlights)
       },
       {
         id: 'suite',
         label: 'Suite',
-        text: String(g?.commercial_pitch || '').trim()
-          || 'Si tu veux, on peut en parler entre midi - devis simple, un interlocuteur, et on avance sans faire le nareux.'
+        paragraphs: proseFromText(suiteRaw).length ? proseFromText(suiteRaw) : [suiteRaw]
       }
     ];
 
@@ -838,95 +807,177 @@
 
     return defs.map((d, index) => ({
       ...d,
+      text: (d.paragraphs || []).join(' '),
       characterSrc: CHARACTER_BASE + (chars[index] || CHARACTER_FILES[index % CHARACTER_FILES.length]),
       side: ((startRight ? index + 1 : index) % 2 === 0) ? 'left' : 'right',
       streamed: false
     }));
   }
 
+  /**
+   * Met a jour la puce active dans la nav des chapitres.
+   * @param {string} chapterId
+   */
   function setNarrativeActive(chapterId) {
-    if (els.narrativeNav) {
-      els.narrativeNav.querySelectorAll('.analyse-narrative__chip').forEach((chip) => {
-        chip.classList.toggle('is-active', chip.getAttribute('data-chapter') === chapterId);
-      });
-    }
-    if (els.narrative) {
-      els.narrative.querySelectorAll('.analyse-narrative__beat').forEach((beat) => {
-        beat.classList.toggle('is-active', beat.getAttribute('data-chapter') === chapterId);
-      });
-    }
+    if (!els.narrativeNav) return;
+    els.narrativeNav.querySelectorAll('.analyse-story__chip').forEach((chip) => {
+      chip.classList.toggle('is-active', chip.getAttribute('data-chapter') === chapterId);
+    });
   }
 
+  /**
+   * Marque un chapitre comme lu dans la nav.
+   * @param {string} chapterId
+   */
   function markChapterDone(chapterId) {
     if (!els.narrativeNav) return;
     const chip = els.narrativeNav.querySelector(`[data-chapter="${chapterId}"]`);
     if (chip) chip.classList.add('is-done');
   }
 
-  function renderNarrativeWords(textEl, text, { visible }) {
-    const parts = String(text || '').split(/(\s+)/);
-    textEl.innerHTML = parts.map((part) => {
-      if (!part) return '';
-      if (/^\s+$/.test(part)) return part;
-      const cls = visible ? 'analyse-word is-visible' : 'analyse-word';
-      return `<span class="${cls}">${escapeHtml(part)}</span>`;
+  /**
+   * Affiche ou masque le bouton "Voir toute la lecture".
+   * @param {boolean} show
+   */
+  function toggleStorySkip(show) {
+    if (!els.storySkip) return;
+    els.storySkip.hidden = !show;
+  }
+
+  /**
+   * Detecte si un token merite une surbrillance (mot-cle ou chiffre fort).
+   * @param {string} token
+   * @returns {boolean}
+   */
+  function isStoryKeyword(token) {
+    const raw = String(token || '');
+    const clean = raw.replace(/^[«"'(]+|[»"'.,;:!?…)%]+$/g, '').toLowerCase();
+    if (!clean) return false;
+    if (STORY_KEYWORDS.has(clean)) return true;
+    if (/^\d+([.,]\d+)?%?$/.test(clean) && Number(clean.replace(',', '.').replace('%', '')) >= 0) return true;
+    if (/^\d+\/100$/.test(clean)) return true;
+    return false;
+  }
+
+  /**
+   * Decoupe les paragraphes en mots pour l'animation mot par mot.
+   * @param {HTMLElement} textEl
+   * @param {string[]} paragraphs
+   * @param {{ visible?: boolean }} opts
+   */
+  function renderNarrativeParagraphs(textEl, paragraphs, { visible }) {
+    const paras = Array.isArray(paragraphs) && paragraphs.length
+      ? paragraphs
+      : [String(paragraphs || '')];
+    textEl.innerHTML = paras.map((para) => {
+      const parts = String(para || '').split(/(\s+)/);
+      const inner = parts.map((part) => {
+        if (!part) return '';
+        if (/^\s+$/.test(part)) return part;
+        const cls = visible ? 'analyse-word is-visible' : 'analyse-word';
+        const body = escapeHtml(part);
+        if (isStoryKeyword(part)) {
+          return `<span class="${cls}"><mark class="analyse-story__mark">${body}</mark></span>`;
+        }
+        return `<span class="${cls}">${body}</span>`;
+      }).join('');
+      return `<p class="analyse-story__para">${inner}</p>`;
     }).join('');
     if (visible) textEl.classList.add('is-complete');
     else textEl.classList.remove('is-complete');
   }
 
-  async function streamNarrativeText(textEl, text, token) {
+  /**
+   * Anime le texte mot par mot, paragraphe par paragraphe.
+   * @param {HTMLElement} textEl
+   * @param {string[]} paragraphs
+   * @param {number} token
+   */
+  async function streamNarrativeText(textEl, paragraphs, token) {
     if (!textEl) return;
-    textEl.classList.remove('is-loading', 'is-complete');
+    textEl.classList.remove('is-complete');
     if (prefersReducedMotion()) {
-      renderNarrativeWords(textEl, text, { visible: true });
+      renderNarrativeParagraphs(textEl, paragraphs, { visible: true });
       return;
     }
-    renderNarrativeWords(textEl, text, { visible: false });
+    renderNarrativeParagraphs(textEl, paragraphs, { visible: false });
     const words = textEl.querySelectorAll('.analyse-word');
     for (let i = 0; i < words.length; i++) {
       if (token !== narrativeToken) return;
       words[i].classList.add('is-visible');
       const raw = words[i].textContent || '';
-      const pause = /[.!?…]$/.test(raw) ? 140 : 32;
+      const pause = /[.!?…]$/.test(raw) ? STORY_PUNCT_MS : STORY_WORD_MS;
       await sleep(pause);
     }
     if (token === narrativeToken) textEl.classList.add('is-complete');
   }
 
-  function completeChapterInstant(chapter) {
-    if (!els.narrative || !chapter) return;
-    const beat = els.narrative.querySelector(`[data-chapter="${chapter.id}"]`);
-    if (!beat) return;
-    beat.classList.add('is-in');
-    const char = beat.querySelector('.analyse-narrative__char');
-    const textEl = beat.querySelector('.analyse-narrative__text');
-    if (char) {
-      char.classList.add('is-in');
-      if (!prefersReducedMotion()) char.classList.add('is-float');
-    }
-    if (textEl) renderNarrativeWords(textEl, chapter.text, { visible: true });
-    chapter.streamed = true;
-    markChapterDone(chapter.id);
-    setNarrativeActive(chapter.id);
+  /**
+   * Remonte doucement un bloc s'il sort du cadre - sans plonger en bas d'un coup.
+   * @param {HTMLElement} block
+   * @param {{ force?: boolean }} opts
+   */
+  function scrollStoryBlockIntoView(block, opts) {
+    if (!block) return;
+    const force = !!(opts && opts.force);
+    const rect = block.getBoundingClientRect();
+    const viewH = window.innerHeight || document.documentElement.clientHeight || 0;
+    if (!viewH) return;
+
+    const stickyOffset = 120;
+    const bottomPad = 48;
+    const fullyOk = rect.top >= stickyOffset && rect.bottom <= viewH - bottomPad;
+    if (!force && fullyOk) return;
+
+    // Cible : le haut du bloc juste sous la nav sticky, avec un petit marge.
+    // On plafonne le deplacement pour eviter un grand saut.
+    const desiredTop = stickyOffset + 12;
+    const delta = rect.top - desiredTop;
+    if (Math.abs(delta) < 24 && !force) return;
+
+    const maxStep = Math.round(viewH * 0.42);
+    const clampedDelta = Math.max(-maxStep, Math.min(maxStep, delta));
+    const nextTop = Math.max(0, window.scrollY + clampedDelta);
+
+    window.scrollTo({
+      top: nextTop,
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
   }
 
-  async function playChapter(chapter, token, instant) {
+  /**
+   * Revele un bloc empile (personnage + texte stream).
+   * @param {object} chapter
+   * @param {number} token
+   * @param {{ instant?: boolean }} opts
+   */
+  async function playChapter(chapter, token, opts) {
     if (!els.narrative || !chapter) return;
-    const beat = els.narrative.querySelector(`[data-chapter="${chapter.id}"]`);
-    if (!beat) return;
+    const instant = !!(opts && opts.instant);
+    const block = els.narrative.querySelector(`[data-chapter="${chapter.id}"]`);
+    if (!block) return;
+
     setNarrativeActive(chapter.id);
-    beat.classList.add('is-in');
-    const char = beat.querySelector('.analyse-narrative__char');
-    const textEl = beat.querySelector('.analyse-narrative__text');
-    if (char) {
-      char.classList.add('is-in');
-      if (!prefersReducedMotion()) char.classList.add('is-float');
+    block.hidden = false;
+    block.classList.add('is-in');
+
+    const alreadyStreamed = !!chapter.streamed;
+    // Premier bloc : on reste en haut. Ensuite : petit coup de scroll si besoin.
+    const isFirstVisible = !narrativeChapters.some((c) => c.id !== chapter.id && c.streamed);
+    if (!alreadyStreamed && !isFirstVisible) {
+      window.requestAnimationFrame(() => scrollStoryBlockIntoView(block));
     }
+
+    const char = block.querySelector('.analyse-story__char');
+    const textEl = block.querySelector('.analyse-story__text');
+    if (char && !prefersReducedMotion()) {
+      char.classList.add('is-float');
+    }
+
     if (instant) {
-      if (textEl) renderNarrativeWords(textEl, chapter.text, { visible: true });
+      if (textEl) renderNarrativeParagraphs(textEl, chapter.paragraphs, { visible: true });
     } else {
-      await streamNarrativeText(textEl, chapter.text, token);
+      await streamNarrativeText(textEl, chapter.paragraphs, token);
     }
     if (token !== narrativeToken) return;
     chapter.streamed = true;
@@ -934,72 +985,135 @@
   }
 
   /**
-   * Enchaine les chapitres apres les jauges.
+   * Affiche tous les blocs d'un coup (skip / lecture complete).
+   */
+  function revealAllStoryBlocks() {
+    if (!els.narrative) return;
+    narrativeChapters.forEach((c) => {
+      const block = els.narrative.querySelector(`[data-chapter="${c.id}"]`);
+      if (!block) return;
+      block.hidden = false;
+      block.classList.add('is-in');
+      const textEl = block.querySelector('.analyse-story__text');
+      if (textEl) renderNarrativeParagraphs(textEl, c.paragraphs, { visible: true });
+      c.streamed = true;
+      markChapterDone(c.id);
+    });
+  }
+
+  /**
+   * Passe en mode lecture complete et revele la suite du rapport.
+   */
+  function skipNarrative() {
+    narrativeToken += 1;
+    narrativePlaying = false;
+    toggleStorySkip(false);
+    if (els.narrativeNav) {
+      els.narrativeNav.querySelectorAll('.analyse-story__chip').forEach((chip) => chip.classList.remove('is-active'));
+    }
+    revealAllStoryBlocks();
+    if (typeof narrativeTailReveal === 'function') narrativeTailReveal();
+  }
+
+  /**
+   * Enchaine les blocs empiles un apres l'autre.
    * @param {number} token
    * @param {{ instant?: boolean, onAfterSecondChapter?: Function }} opts
    */
   async function playNarrativeSequence(token, opts) {
     const instant = !!(opts && opts.instant);
     const onAfterSecond = opts && typeof opts.onAfterSecondChapter === 'function' ? opts.onAfterSecondChapter : null;
+    narrativeTailReveal = onAfterSecond;
     let tailStarted = false;
     narrativePlaying = true;
+    toggleStorySkip(!instant && !prefersReducedMotion());
+
     try {
       for (let i = 0; i < narrativeChapters.length; i++) {
         if (token !== narrativeToken) return;
-        await playChapter(narrativeChapters[i], token, instant);
+        await playChapter(narrativeChapters[i], token, { instant });
         if (token !== narrativeToken) return;
         if (!tailStarted && i >= 1 && onAfterSecond) {
           tailStarted = true;
           onAfterSecond();
         }
-        if (!instant) await sleep(220);
+        if (!instant && i < narrativeChapters.length - 1) {
+          await sleep(STORY_BLOCK_GAP_MS);
+        }
       }
       if (!tailStarted && onAfterSecond) onAfterSecond();
     } finally {
-      if (token === narrativeToken) narrativePlaying = false;
+      if (token === narrativeToken) {
+        narrativePlaying = false;
+        toggleStorySkip(false);
+      }
     }
   }
 
-  function jumpToNarrativeChapter(chapterId) {
-    const chapter = narrativeChapters.find((c) => c.id === chapterId);
-    if (!chapter) return;
-    narrativeToken += 1;
-    narrativePlaying = false;
-    narrativeChapters.forEach((c) => {
-      if (c.id === chapterId || c.streamed) completeChapterInstant(c);
-    });
-    const beat = els.narrative && els.narrative.querySelector(`[data-chapter="${chapterId}"]`);
-    if (beat && typeof beat.scrollIntoView === 'function') {
-      beat.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
+  /**
+   * Saute a un chapitre via la nav : revele tout avant, puis continue le stream.
+   * @param {string} chapterId
+   */
+  async function jumpToNarrativeChapter(chapterId) {
+    const index = narrativeChapters.findIndex((c) => c.id === chapterId);
+    if (index < 0) return;
+    const token = ++narrativeToken;
+    narrativePlaying = true;
+    toggleStorySkip(true);
+
+    for (let i = 0; i <= index; i++) {
+      await playChapter(narrativeChapters[i], token, { instant: true });
+    }
+    if (token !== narrativeToken) return;
+    if (index >= 1 && typeof narrativeTailReveal === 'function') narrativeTailReveal();
+
+    for (let j = index + 1; j < narrativeChapters.length; j++) {
+      if (token !== narrativeToken) return;
+      await sleep(STORY_BLOCK_GAP_MS);
+      await playChapter(narrativeChapters[j], token, { instant: false });
+    }
+    if (token === narrativeToken) {
+      narrativePlaying = false;
+      toggleStorySkip(false);
     }
   }
 
+  /**
+   * Construit la nav + tous les blocs empiles (caches jusqu'au stream).
+   * @param {array} chapters
+   */
   function renderNarrative(chapters) {
     narrativeChapters = Array.isArray(chapters) ? chapters : [];
+    narrativeChapters.forEach((c) => { c.streamed = false; });
+
     if (els.narrativeNav) {
       els.narrativeNav.innerHTML = narrativeChapters.map((c, index) => `
-        <button type="button" class="analyse-narrative__chip" data-chapter="${escapeHtml(c.id)}" aria-label="Chapitre ${index + 1} : ${escapeHtml(c.label)}">
+        <button type="button" class="analyse-story__chip" data-chapter="${escapeHtml(c.id)}" aria-label="Chapitre ${index + 1} : ${escapeHtml(c.label)}">
           ${escapeHtml(c.label)}
         </button>
       `).join('');
-      els.narrativeNav.querySelectorAll('.analyse-narrative__chip').forEach((chip) => {
+      els.narrativeNav.querySelectorAll('.analyse-story__chip').forEach((chip) => {
         chip.addEventListener('click', () => jumpToNarrativeChapter(chip.getAttribute('data-chapter')));
       });
     }
+
     if (!els.narrative) return;
-    els.narrative.innerHTML = narrativeChapters.map((c) => `
-      <article class="analyse-narrative__beat analyse-narrative__beat--${c.side}" data-chapter="${escapeHtml(c.id)}">
-        <div class="analyse-narrative__row">
-          <figure class="analyse-narrative__char">
-            <img src="${escapeHtml(c.characterSrc)}" alt="" width="120" height="120" loading="lazy" decoding="async">
-          </figure>
-          <div class="analyse-narrative__body">
-            <p class="analyse-narrative__label">${escapeHtml(c.label)}</p>
-            <p class="analyse-narrative__text" aria-live="polite"></p>
-          </div>
-        </div>
-      </article>
-    `).join('');
+    els.narrative.innerHTML = `
+      <div class="analyse-story__stack">
+        ${narrativeChapters.map((c) => `
+          <article class="analyse-story__block analyse-story__block--${escapeHtml(c.side)}" data-chapter="${escapeHtml(c.id)}" hidden>
+            <figure class="analyse-story__char">
+              <img src="${escapeHtml(c.characterSrc)}" alt="" width="220" height="260" loading="lazy" decoding="async">
+            </figure>
+            <div class="analyse-story__panel">
+              <p class="analyse-story__kicker">${escapeHtml(c.label)}</p>
+              <div class="analyse-story__text"></div>
+            </div>
+          </article>
+        `).join('')}
+      </div>
+    `;
+    toggleStorySkip(false);
   }
 
   function weakestOfferKey(scoreCards) {
@@ -1011,7 +1125,8 @@
       const effective = invert ? (100 - c.value) : c.value;
       if (effective < worstEffective) {
         worstEffective = effective;
-        if (c.key === 'performance') worstKey = 'performance';
+        if (c.key === 'design' || c.key === 'gemini') worstKey = 'vitrine';
+        else if (c.key === 'performance') worstKey = 'performance';
         else if (c.key === 'seo') worstKey = 'seo';
         else if (c.key === 'securite' || c.key === 'pentest' || c.key === 'risque') worstKey = 'securite';
         else worstKey = 'vitrine';
@@ -1027,7 +1142,7 @@
       const isSpecial = o.key === special;
       return `
         <a class="analyse-offer${isSpecial ? ' analyse-offer--special' : ''}" href="/prestations/${escapeHtml(o.slug)}/" data-offer-key="${escapeHtml(o.key)}">
-          ${isSpecial ? '<span class="analyse-offer__ribbon">Offre speciale pour vous</span>' : ''}
+          ${isSpecial ? '<span class="analyse-offer__ribbon">Offre spéciale pour toi</span>' : ''}
           <div class="analyse-offer__icon analyse-offer__icon--${escapeHtml(o.iconMod)}" aria-hidden="true"><i class="fas ${escapeHtml(o.icon)}"></i></div>
           <h3 class="analyse-offer__title">${escapeHtml(o.title)}</h3>
           <p class="analyse-offer__desc">${escapeHtml(o.desc)}</p>
@@ -1042,13 +1157,13 @@
     els.details.innerHTML = '';
     const list = Array.isArray(sections) ? sections : [];
     if (!list.length) {
-      els.details.innerHTML = '<p class="pl-muted" style="margin:0;">Aucun detail disponible.</p>';
+      els.details.innerHTML = '<p class="pl-muted" style="margin:0;">Aucun détail disponible.</p>';
       return;
     }
     list.forEach((sec, idx) => {
       const title = sec?.title || `Section ${idx + 1}`;
       const pill = sec?.pill || '';
-      const bodyHtml = sec?.html || '<p class="pl-muted">Aucune donnee.</p>';
+      const bodyHtml = sec?.html || '<p class="pl-muted">Aucune donnée.</p>';
       const acc = document.createElement('div');
       acc.className = 'pl-accordion';
       const panelId = `plAccPanel_${idx}`;
@@ -1086,10 +1201,18 @@
     const scraping = root?.scraping || {};
     const gemini = raw?.gemini || root?.gemini || null;
 
+    const geminiPayload = gemini?.report || gemini || null;
+    const designScoreRaw =
+      geminiPayload?.design_analysis?.score ??
+      gemini?.design_analysis?.score ??
+      gemini?.overall_score ??
+      geminiPayload?.overall_score;
+    const designScore = typeof designScoreRaw === 'number' ? designScoreRaw : null;
+
     const scoreCards = [
-      { key: 'performance', label: 'Performance', value: entreprise?.performance_score },
+      { key: 'design', label: 'Design', value: designScore },
       { key: 'seo', label: 'SEO', value: entreprise?.score_seo ?? seo?.latest?.score },
-      { key: 'securite', label: 'Securite', value: entreprise?.score_securite },
+      { key: 'securite', label: 'Sécurité', value: entreprise?.score_securite },
       { key: 'risque', label: 'Risque', value: entreprise?.score_pentest ?? pentest?.latest?.risk_score }
     ].map((x) => ({
       ...x,
@@ -1109,27 +1232,27 @@
     const tLatest = technical?.latest || {};
     const td = tLatest?.technical_details || {};
     if (td?.mixed_content_detected) highlights.push({ title: 'Technique', desc: `Contenu mixte : ${td.mixed_content_detected}`, tone: 'warn' });
-    if (td?.mobile_friendly === false) highlights.push({ title: 'Mobile', desc: 'Site peu confortable sur telephone.', tone: 'bad' });
+    if (td?.mobile_friendly === false) highlights.push({ title: 'Mobile', desc: 'Site peu confortable sur téléphone.', tone: 'bad' });
     if (td?.viewport_meta === 'Manquant') highlights.push({ title: 'Affichage', desc: 'Meta viewport manquante.', tone: 'warn' });
     if (typeof entreprise?.performance_score === 'number' && entreprise.performance_score >= 80) {
       highlights.push({ title: 'Vitesse', desc: 'Bon niveau de performance global.', tone: 'good' });
     }
     if (typeof (entreprise?.score_seo ?? seoLatest?.score) === 'number' && (entreprise?.score_seo ?? seoLatest?.score) >= 80) {
-      highlights.push({ title: 'Visibilite', desc: 'Bases SEO plutot solides.', tone: 'good' });
+      highlights.push({ title: 'Visibilité', desc: 'Bases SEO plutôt solides.', tone: 'good' });
     }
 
     const pLatest = pentest?.latest || {};
     const pSum = pLatest?.summary || {};
     if (pSum?.risk_level) {
       highlights.push({
-        title: 'Risque securite',
-        desc: `${pSum.risk_level} - ${pSum.total_vulnerabilities ?? 0} point(s) a surveiller`,
+        title: 'Risque sécurité',
+        desc: `${pSum.risk_level} - ${pSum.total_vulnerabilities ?? 0} point(s) à surveiller`,
         tone: toneFromScore(pLatest?.risk_score, true)
       });
     }
 
     const oLatest = osint?.latest || {};
-    if (oLatest?.summary_warning) highlights.push({ title: 'Donnees publiques', desc: stripHtml(oLatest.summary_warning), tone: 'warn' });
+    if (oLatest?.summary_warning) highlights.push({ title: 'Données publiques', desc: stripHtml(oLatest.summary_warning), tone: 'warn' });
 
     const sections = [];
     const addr = [entreprise?.address_1, entreprise?.address_2].filter(Boolean).join(', ');
@@ -1145,43 +1268,18 @@
         </div></div>
         <p class="pl-muted" style="margin-top:0.9rem;">
           ${addr ? `<strong>Adresse :</strong> ${escapeHtml(addr)}<br>` : ''}
-          ${entreprise?.telephone ? `<strong>Telephone :</strong> <span class="pl-mono">${escapeHtml(entreprise.telephone)}</span><br>` : ''}
+          ${entreprise?.telephone ? `<strong>Téléphone :</strong> <span class="pl-mono">${escapeHtml(entreprise.telephone)}</span><br>` : ''}
         </p>
         ${tags ? `<div class="pl-badges" style="margin-top:0.8rem;">${tags}</div>` : ''}
       `
     });
 
     const pagesSummary = tLatest?.pages_summary || {};
-    const pages = toArray(tLatest?.pages);
-    const scrLatest = scraping?.latest || {};
-    const icons = scrLatest?.metadata?.icons || {};
-    let screenshotUrl =
-      icons.main_image ||
-      icons.og_image ||
-      icons.twitter_image ||
-      icons.logo ||
-      entreprise.og_image ||
-      entreprise.favicon ||
-      null;
-
-    if (!screenshotUrl && pages.length) {
-      for (let i = 0; i < pages.length; i++) {
-        const p = pages[i] || {};
-        const details = p.details || {};
-        const ct = (details.content_type || p.content_type || '').toLowerCase();
-        const url = details.final_url || p.final_url || p.page_url || p.url;
-        if (!url) continue;
-        if (ct.startsWith('image/')) {
-          screenshotUrl = url;
-          break;
-        }
-      }
-    }
 
     const techRows = [
       ['CMS', tLatest?.cms || '-'],
       ['CDN', tLatest?.cdn || '-'],
-      ['SSL', tLatest?.ssl_valid ? 'Valide' : 'A verifier'],
+      ['SSL', tLatest?.ssl_valid ? 'Valide' : 'À vérifier'],
       ['Mobile', td?.mobile_friendly === false ? 'Non' : (td?.mobile_friendly === true ? 'Oui' : '-')]
     ];
     sections.push({
@@ -1216,7 +1314,7 @@
       title: 'SEO',
       pill: seoLatest?.score != null ? `${seoLatest.score}/100` : '',
       html: `
-        ${tableHtml(['Element', 'Valeur'], seoRows.map(([a, b]) => [escapeHtml(a), (typeof b === 'string' ? b : String(b))]))}
+        ${tableHtml(['Élément', 'Valeur'], seoRows.map(([a, b]) => [escapeHtml(a), (typeof b === 'string' ? b : String(b))]))}
         ${seoIssuesHtml || '<p class="pl-muted" style="margin-top:1rem;">Aucune alerte SEO.</p>'}
       `
     });
@@ -1226,18 +1324,18 @@
       const sev = (v?.severity || '').toLowerCase();
       const tone = sev === 'high' ? 'bad' : sev === 'medium' ? 'warn' : 'good';
       return `<div class="pl-audit pl-audit--${tone}" style="margin-top:0.7rem;">
-        <div class="pl-audit-title">${escapeHtml(v?.name || v?.type || 'Point securite')}</div>
+        <div class="pl-audit-title">${escapeHtml(v?.name || v?.type || 'Point sécurité')}</div>
         <div class="pl-audit-desc">${escapeHtml(v?.description || '')}</div>
       </div>`;
     }).join('');
     sections.push({
-      title: 'Securite',
+      title: 'Sécurité',
       pill: pLatest?.risk_score != null ? `${pLatest.risk_score}/100` : '',
       html: `
         <p class="pl-muted">
           ${pSum?.risk_level ? `<strong>Niveau :</strong> ${escapeHtml(String(pSum.risk_level))}` : ''}
         </p>
-        ${vulnHtml || '<p class="pl-muted" style="margin-top:0.8rem;">Rien de critique liste.</p>'}
+        ${vulnHtml || '<p class="pl-muted" style="margin-top:0.8rem;">Rien de critique listé.</p>'}
       `
     });
 
@@ -1250,7 +1348,7 @@
       null;
 
     sections.push({
-      title: 'Donnees publiques',
+      title: 'Données publiques',
       pill: oLatest?.status ? String(oLatest.status) : '',
       html: `
         <p class="pl-muted">
@@ -1266,7 +1364,6 @@
       highlights,
       gemini,
       sections,
-      screenshotUrl,
       metaLine: entreprise?.date_analyse ? formatDate(entreprise.date_analyse) : null,
       suggestedEmail: typeof firstEmail === 'string' ? firstEmail : null
     };
@@ -1275,9 +1372,9 @@
   function formatLookupError(message) {
     const msg = String(message || '').trim();
     if (/aucun rapport/i.test(msg)) {
-      return 'Aucun rapport enregistre pour cette adresse. Reprenez l\'URL exacte du lien email, ou demandez une analyse via « Recevoir l\'audit ».';
+      return 'Aucun rapport enregistré pour cette adresse. Reprends l\'URL exacte du lien email, ou demande une analyse via « Recevoir le rapport ».';
     }
-    return msg || 'Impossible de charger le rapport. Reessayez dans un instant.';
+    return msg || 'Impossible de charger le rapport. Réessaie dans un instant.';
   }
 
   async function apiGetWebsiteAnalysis({ website, full }) {
@@ -1305,21 +1402,7 @@
     const r = normalizeReport(raw);
     currentWebsite = r.finalUrl || currentWebsite || '';
 
-    const company = r.entreprise?.nom || displayHost(currentWebsite) || 'Votre site';
-    if (els.companyName) els.companyName.textContent = company;
-
-    if (els.siteLink && currentWebsite) {
-      els.siteLink.href = currentWebsite;
-      els.siteLink.removeAttribute('aria-disabled');
-    }
-    if (els.siteLabel) els.siteLabel.textContent = currentWebsite || '';
-
-    if (els.reportDate) {
-      els.reportDate.textContent = r.metaLine ? `Analyse : ${r.metaLine}` : '';
-    }
-
     renderScores(r.scoreCards);
-    renderScreenshot(r.screenshotUrl, company, currentWebsite);
     renderNarrative(buildNarrativeChapters(r));
     renderOffers(r.scoreCards);
     renderDetails(r.sections);
@@ -1334,7 +1417,6 @@
 
     if (els.bootWrap) els.bootWrap.hidden = true;
     if (els.loading) els.loading.hidden = true;
-    setConvertLoaderVisible(false);
     setConvertReportVisible(true);
     if (pageRoot) pageRoot.classList.add('is-report-ready');
     if (els.intro) els.intro.classList.add('is-hidden');
@@ -1347,7 +1429,7 @@
     setConvertVisible(false);
     closeLeadModal();
     setBootVisible(true);
-    if (els.reportHero) els.reportHero.hidden = true;
+    if (els.storySection) els.storySection.hidden = true;
     if (els.report) els.report.hidden = true;
     if (pageRoot) pageRoot.classList.remove('is-revealed', 'is-report-ready');
     if (els.intro) els.intro.classList.remove('is-hidden');
@@ -1361,16 +1443,10 @@
     setBootVisible(false);
     setLoadingVisible(true, websiteUrl);
     if (pageRoot) pageRoot.classList.remove('is-revealed', 'is-report-ready');
-    if (els.reportHero) els.reportHero.hidden = true;
+    if (els.storySection) els.storySection.hidden = true;
     if (els.report) els.report.hidden = true;
     if (els.intro) els.intro.classList.remove('is-hidden');
 
-    const previewCompany = displayHost(websiteUrl) || 'Votre site';
-    setIdentityPreview({
-      website: websiteUrl,
-      company: previewCompany,
-      dateLine: 'Analyse en cours…'
-    });
     prefillLead({
       website: websiteUrl,
       email: (queryPrefill && queryPrefill.email) || '',
@@ -1380,10 +1456,7 @@
     });
 
     try {
-      const revealTask = revealLoaderScorePlaceholders();
       const report = await apiGetWebsiteAnalysis({ website: websiteUrl, full: full ?? 1 });
-      await revealTask;
-      await fillLoaderScoresFromReport(report);
       if (!prefersReducedMotion()) await sleep(380);
       currentWebsite = websiteUrl;
       showReport(report, queryPrefill);
@@ -1412,25 +1485,34 @@
     };
   }
 
-  function submitLead() {
+  function startGeminiAudit() {
+    if (leadSubmitting) return;
+
     const vals = readLeadValues();
     if (vals.honeypot) return;
     if (!vals.url) {
-      setFeedback(els.leadFeedback, 'URL du site invalide.', true);
+      setLeadModalFeedback('URL du site invalide.', true);
       return;
     }
     if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
-      setFeedback(els.leadFeedback, 'Email invalide.', true);
+      setLeadModalFeedback('Email invalide.', true);
       return;
     }
 
+    leadSubmitting = true;
     setBtnLoading(els.leadSubmit, true);
-    setFeedback(els.leadFeedback, '', false);
+    setLeadModalFeedback('', false);
 
     fetch(FREE_AUDIT_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ website: vals.url, email: vals.email, name: vals.name })
+      body: JSON.stringify({
+        website: vals.url,
+        email: vals.email,
+        name: vals.name,
+        complete: true,
+        audit: 'gemini'
+      })
     })
       .then(async (res) => {
         const data = await res.json().catch(() => ({}));
@@ -1438,83 +1520,25 @@
       })
       .then((ref) => {
         if (ref.res.ok && ref.data && ref.data.success) {
-          if (els.leadForm) els.leadForm.hidden = true;
-          if (els.leadSuccess) els.leadSuccess.hidden = false;
-          if (els.leadSuccessText) {
-            els.leadSuccessText.textContent =
-              (ref.data && ref.data.message) ||
-              `Le PDF part sur ${vals.email} - en general en moins d'une minute.`;
-          }
+          setBtnLoading(els.leadSubmit, false);
+          closeLeadModal();
+          openWinModal(
+            (ref.data && ref.data.message) ||
+              `Le rapport Gemini part sur ${vals.email}.`
+          );
           return;
         }
-        let errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Reessayez ou contactez-nous.';
+        let errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Réessaie ou contacte-nous.';
         if (ref.res.status === 429) {
-          errMsg = (ref.data && ref.data.error) || 'Vous avez deja demande un audit recemment. Reessayez plus tard.';
+          errMsg = (ref.data && ref.data.error) || 'Tu as déjà demandé un rapport récemment. Réessaie plus tard.';
         }
-        setFeedback(els.leadFeedback, errMsg, true);
+        setLeadModalFeedback(errMsg, true);
       })
       .catch(() => {
-        setFeedback(els.leadFeedback, 'Serveur injoignable. Reessayez dans un instant.', true);
+        setLeadModalFeedback('Serveur injoignable.', true);
       })
       .finally(() => {
-        setBtnLoading(els.leadSubmit, false);
-      });
-  }
-
-  function startPremium() {
-    const vals = readLeadValues();
-    if (!vals.url) {
-      setFeedback(els.premiumFeedback, 'Site introuvable pour cet audit.', true);
-      return;
-    }
-    if (!vals.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(vals.email)) {
-      setFeedback(els.premiumFeedback, 'Email invalide.', true);
-      return;
-    }
-
-    try {
-      sessionStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({
-          site_url: vals.url,
-          email: vals.email,
-          name: vals.name || 'Client audit'
-        })
-      );
-    } catch (err) { /* ignore */ }
-
-    setBtnLoading(els.leadSubmit, true);
-    setFeedback(els.premiumFeedback, '', false);
-
-    fetch(PREMIUM_CHECKOUT_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        audit_slug: auditSlug,
-        email: vals.email,
-        site_url: vals.url,
-        name: vals.name
-      })
-    })
-      .then(async (res) => {
-        const data = await res.json().catch(() => ({}));
-        return { res, data };
-      })
-      .then((ref) => {
-        if (ref.res.ok && ref.data && ref.data.success && ref.data.url) {
-          window.location.href = ref.data.url;
-          return;
-        }
-        setFeedback(
-          els.premiumFeedback,
-          (ref.data && ref.data.error) || "Impossible d'ouvrir le paiement pour l'instant.",
-          true
-        );
-      })
-      .catch(() => {
-        setFeedback(els.premiumFeedback, 'Serveur injoignable.', true);
-      })
-      .finally(() => {
+        leadSubmitting = false;
         setBtnLoading(els.leadSubmit, false);
       });
   }
@@ -1523,33 +1547,30 @@
     e.preventDefault();
     const v = safeUrl(els.url.value);
     if (!v) {
-      setFeedback(els.bootFeedback, 'Saisissez une URL valide (http ou https).', true);
+      setFeedback(els.bootFeedback, 'Saisis une URL valide (http ou https).', true);
       els.url.focus();
       return;
     }
     await handleSubmit(v, 1, null);
   });
 
+  if (els.storySkip) {
+    els.storySkip.addEventListener('click', () => skipNarrative());
+  }
+
   if (els.leadForm) {
     els.leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (modalMode === 'premium') startPremium();
-      else submitLead();
+      startGeminiAudit();
     });
   }
 
   if (pageRoot) {
     pageRoot.addEventListener('click', (e) => {
-      const freeBtn = e.target.closest('[data-analyse-audit-free]');
-      if (freeBtn) {
+      const geminiBtn = e.target.closest('[data-analyse-audit-gemini]');
+      if (geminiBtn) {
         e.preventDefault();
-        openLeadModal('free');
-        return;
-      }
-      const premiumBtn = e.target.closest('[data-analyse-audit-premium]');
-      if (premiumBtn) {
-        e.preventDefault();
-        openLeadModal('premium');
+        openLeadModal();
       }
     });
   }
@@ -1563,8 +1584,22 @@
     });
   }
 
+  if (els.winModal) {
+    els.winModal.addEventListener('click', (e) => {
+      if (e.target.closest('[data-analyse-win-close]')) {
+        e.preventDefault();
+        closeWinModal();
+      }
+    });
+  }
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLeadModal();
+    if (e.key !== 'Escape') return;
+    if (els.winModal && !els.winModal.hidden) {
+      closeWinModal();
+      return;
+    }
+    closeLeadModal();
   });
 
   (async function initFromQuery() {

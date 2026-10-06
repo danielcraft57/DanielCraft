@@ -309,7 +309,8 @@
   box-shadow: 0 8px 30px rgba(77, 169, 214, 0.1);
 }
 
-.audit-offer-card--premium {
+.audit-offer-card--premium,
+.audit-offer-card--gemini {
   border-color: var(--audit-dark);
   background: linear-gradient(180deg, #f8fcfe 0%, #fff 42%);
   box-shadow: 0 16px 40px rgba(15, 53, 80, 0.12);
@@ -342,7 +343,8 @@
   font-size: 1.25rem;
 }
 
-.audit-offer-card__icon--premium {
+.audit-offer-card__icon--premium,
+.audit-offer-card__icon--gemini {
   background: var(--audit-dark);
   color: #fff;
 }
@@ -363,7 +365,8 @@
   color: var(--audit-accent);
 }
 
-.audit-offer-card--premium .audit-offer-card__amount {
+.audit-offer-card--premium .audit-offer-card__amount,
+.audit-offer-card--gemini .audit-offer-card__amount {
   color: var(--audit-dark);
 }
 
@@ -411,12 +414,14 @@
   justify-content: center;
 }
 
-.audit-offer-card__cta--premium {
+.audit-offer-card__cta--premium,
+.audit-offer-card__cta--gemini {
   background: var(--audit-dark);
   border-color: var(--audit-dark);
 }
 
-.audit-offer-card__cta--premium:hover {
+.audit-offer-card__cta--premium:hover,
+.audit-offer-card__cta--gemini:hover {
   filter: brightness(1.08);
 }
 

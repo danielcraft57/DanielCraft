@@ -28,9 +28,9 @@
 
         <header class="analyse-intro analyse-reveal" data-reveal-order="0">
 
-          <h1 class="analyse-intro__title section-title">Votre site en un coup d'oeil</h1>
+          <h1 class="analyse-intro__title section-title">Ton site en un coup d'œil</h1>
 
-          <p class="analyse-intro__lead">Scores, points clés et pistes d'action - ouvrez le lien reçu par email ou saisissez une URL.</p>
+          <p class="analyse-intro__lead">Scores, points clés et pistes d'action - ouvre le lien reçu par email ou saisis une URL.</p>
 
         </header>
 
@@ -56,7 +56,7 @@
 
                 autocomplete="url"
 
-                placeholder="https://votre-site.fr"
+                placeholder="https://ton-site.fr"
 
                 required
 
@@ -102,15 +102,15 @@
 
             <div class="analyse-loader__intro">
 
-              <p class="analyse-loader__title">Analyse en cours</p>
+              <p class="analyse-loader__title">On regarde ton site</p>
 
               <p class="analyse-loader__url" id="plLoadingUrl"></p>
+
+              <p class="analyse-loader__hint">Ça prend souvent moins d'une minute - on prépare la lecture juste après.</p>
 
             </div>
 
           </div>
-
-          <div class="analyse-loader__scores" id="plLoadingScores" aria-live="polite"></div>
 
           <div class="analyse-loader__progress">
 
@@ -130,61 +130,30 @@
 
 
 
-      <div class="analyse-convert-loader-host" id="plConvertLoaderHost">
+      <section class="analyse-story analyse-story--lead analyse-reveal" id="plStorySection" data-reveal-order="1" hidden aria-labelledby="analyse-story-title">
 
-        <section class="audit-offers audit-offers--split analyse-convert analyse-convert--phase" id="plConvertLoader" hidden aria-labelledby="analyse-convert-loader-title">
+        <header class="analyse-story__head">
+          <p class="analyse-story__eyebrow">Lecture du rapport</p>
+          <h2 id="analyse-story-title" class="analyse-story__title">Voyons voir ce que ton site raconte</h2>
+          <p class="analyse-story__lead">On regarde ça ensemble - point par point, sans être trop technique.</p>
+        </header>
 
-          <h2 id="analyse-convert-loader-title" class="audit-section-title">Choisis ton niveau d'analyse</h2>
-
-          {% include "includes/analyse-convert-cards-grid.html" %}
-
-        </section>
-
-      </div>
-
-
-
-      <header class="analyse-hero analyse-hero--report" id="plReportHero" hidden aria-label="Synthese du rapport">
-
-        <div class="analyse-hero__left analyse-reveal" data-reveal-order="1">
-
-          <p class="analyse-hero__kicker"><i class="fas fa-file-lines" aria-hidden="true"></i> Rapport d'analyse</p>
-
-          <h1 class="analyse-hero__title section-title" id="plCompanyName" itemprop="about">Votre site</h1>
-
-          <a class="analyse-hero__url" id="plSiteLink" href="#" target="_blank" rel="noopener noreferrer">
-
-            <i class="fas fa-globe" aria-hidden="true"></i>
-
-            <span id="plSiteLabel"></span>
-
-          </a>
-
-          <p class="analyse-hero__date" id="plReportDate"></p>
-
-          <div class="analyse-scores analyse-scores--hero" id="plScores" aria-label="Scores du site"></div>
-
+        <div class="analyse-story__visuals" id="plStoryVisuals">
+          <div class="analyse-scores analyse-story__gauges" id="plScores" aria-label="Scores du site"></div>
+          <div class="analyse-story__chart" id="plStoryChart" aria-hidden="true"></div>
         </div>
 
-        <figure class="analyse-hero__visual analyse-reveal" data-reveal-order="2">
+        <nav class="analyse-story__nav" id="plNarrativeNav" aria-label="Chapitres de la narration"></nav>
 
-          <div class="analyse-shot" aria-label="Capture d'ecran du site">
+        <div class="analyse-story__stage" id="plNarrative" aria-live="polite"></div>
 
-            <div class="analyse-shot__chrome" aria-hidden="true">
+        <div class="analyse-story__bar">
+          <button type="button" class="analyse-story__skip" id="plStorySkip" hidden>
+            Voir toute la lecture
+          </button>
+        </div>
 
-              <span class="analyse-shot__dots"><i></i><i></i><i></i></span>
-
-              <span class="analyse-shot__bar" id="plShotUrl">votre-site.fr</span>
-
-            </div>
-
-            <div class="analyse-shot__viewport" id="plScreenshot"></div>
-
-          </div>
-
-        </figure>
-
-      </header>
+      </section>
 
     </div>
 
@@ -194,25 +163,11 @@
 
   <div class="container analyse-report-body" id="plReport" hidden>
 
-    <section class="analyse-narrative analyse-reveal" data-reveal-order="4" aria-labelledby="analyse-narrative-title">
-
-      <h2 id="analyse-narrative-title" class="analyse-narrative__title">Lecture du rapport</h2>
-
-      <p class="analyse-narrative__lead">Dis voir ce que le site raconte - on démêle ça chapitre par chapitre.</p>
-
-      <nav class="analyse-narrative__nav" id="plNarrativeNav" aria-label="Chapitres du rapport"></nav>
-
-      <div class="analyse-narrative__beats" id="plNarrative"></div>
-
-    </section>
-
-
-
     <div class="analyse-convert-report-host" id="plConvertReportHost">
 
-      <section class="audit-offers audit-offers--split analyse-convert analyse-convert--phase analyse-reveal" data-reveal-order="5" id="plConvertReport" hidden aria-labelledby="analyse-convert-report-title">
+      <section class="audit-offers audit-offers--split analyse-convert analyse-convert--phase analyse-reveal" data-reveal-order="4" id="plConvertReport" hidden aria-labelledby="analyse-convert-report-title">
 
-        <h2 id="analyse-convert-report-title" class="audit-section-title">Choisis ton niveau d'analyse</h2>
+        <h2 id="analyse-convert-report-title" class="audit-section-title">Recevoir le rapport complet</h2>
 
         {% include "includes/analyse-convert-cards-grid.html" %}
 
@@ -222,7 +177,7 @@
 
 
 
-    <section class="analyse-offers analyse-reveal" data-reveal-order="6" aria-labelledby="analyse-offers-title">
+    <section class="analyse-offers analyse-reveal" data-reveal-order="5" aria-labelledby="analyse-offers-title">
 
       <h2 id="analyse-offers-title" class="analyse-offers__title">Pour aller plus loin</h2>
 
@@ -234,9 +189,9 @@
 
 
 
-    <section class="analyse-details-wrap analyse-reveal" data-reveal-order="7" aria-labelledby="analyse-details-title">
+    <section class="analyse-details-wrap analyse-reveal" data-reveal-order="6" aria-labelledby="analyse-details-title">
 
-      <h2 id="analyse-details-title" class="analyse-offers__title">Le detail</h2>
+      <h2 id="analyse-details-title" class="analyse-offers__title">Le détail</h2>
 
       <div class="pl-details" id="plDetails"></div>
 
@@ -258,7 +213,7 @@
 
       </button>
 
-      <h2 class="analyse-lead-modal__title" id="plLeadModalTitle">Recevoir l'audit</h2>
+      <h2 class="analyse-lead-modal__title" id="plLeadModalTitle">Recevoir le rapport</h2>
 
       <p class="analyse-lead-modal__lead" id="plLeadModalLead">PDF par email - en général en moins d'une minute, parfois jusqu'à 1 h.</p>
 
@@ -270,17 +225,17 @@
 
         <div class="form-group">
 
-          <label for="plLeadSite">Votre site</label>
+          <label for="plLeadSite">Ton site</label>
 
-          <input id="plLeadSite" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://votre-site.fr" required readonly>
+          <input id="plLeadSite" name="site_url" type="url" inputmode="url" autocomplete="url" placeholder="https://ton-site.fr" required readonly>
 
         </div>
 
         <div class="form-group">
 
-          <label for="plLeadEmail">Votre email</label>
+          <label for="plLeadEmail">Ton email</label>
 
-          <input id="plLeadEmail" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required>
+          <input id="plLeadEmail" name="email" type="email" autocomplete="email" placeholder="toi@entreprise.fr" required>
 
         </div>
 
@@ -288,13 +243,13 @@
 
           <label for="plLeadName">Nom <span class="analyse-optional">(facultatif)</span></label>
 
-          <input id="plLeadName" name="name" type="text" autocomplete="name" placeholder="Votre nom">
+          <input id="plLeadName" name="name" type="text" autocomplete="name" placeholder="Ton nom">
 
         </div>
 
         <button type="submit" class="btn btn-primary analyse-lead-form__submit" id="plLeadSubmit">
 
-          <span class="analyse-submit__label" id="plLeadSubmitLabel">Recevoir l'audit (PDF)</span>
+          <span class="analyse-submit__label" id="plLeadSubmitLabel">Recevoir le rapport (PDF)</span>
 
           <span class="analyse-submit__loading" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
 
@@ -302,19 +257,53 @@
 
         <div class="form-feedback" id="plLeadFeedback" hidden role="status" aria-live="polite"></div>
 
-        <div class="form-feedback analyse-convert__premium-feedback" id="plPremiumFeedback" hidden role="status" aria-live="polite"></div>
-
       </form>
 
+    </div>
+
+  </div>
 
 
-      <div class="analyse-lead-success" id="plLeadSuccess" hidden>
 
-        <p class="analyse-lead-success__title">C'est parti</p>
+  <div class="analyse-win-modal" id="plWinModal" hidden aria-hidden="true">
 
-        <p class="analyse-lead-success__text" id="plLeadSuccessText">Le PDF part par email - en général en moins d'une minute.</p>
+    <div class="analyse-win-modal__backdrop" data-analyse-win-close tabindex="-1"></div>
+
+    <div class="analyse-win-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="plWinModalTitle">
+
+      <button type="button" class="analyse-win-modal__close" data-analyse-win-close aria-label="Fermer">
+
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+
+      </button>
+
+      <div class="analyse-win-modal__decor" aria-hidden="true">
+
+        <span class="analyse-win-modal__chip analyse-win-modal__chip--1">7</span>
+
+        <span class="analyse-win-modal__chip analyse-win-modal__chip--2">★</span>
+
+        <span class="analyse-win-modal__chip analyse-win-modal__chip--3">♦</span>
 
       </div>
+
+      <p class="analyse-win-modal__badge"><i class="fas fa-star" aria-hidden="true"></i> Jackpot</p>
+
+      <div class="analyse-win-modal__slots" aria-hidden="true">
+
+        <span class="analyse-win-modal__slot">7</span>
+
+        <span class="analyse-win-modal__slot">7</span>
+
+        <span class="analyse-win-modal__slot">7</span>
+
+      </div>
+
+      <h2 class="analyse-win-modal__title" id="plWinModalTitle">C'est parti !</h2>
+
+      <p class="analyse-win-modal__text" id="plWinModalText">Rapport Gemini en route - tu le reçois par email.</p>
+
+      <button type="button" class="analyse-win-modal__cta" data-analyse-win-close>Top, j'attends !</button>
 
     </div>
 
