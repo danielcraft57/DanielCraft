@@ -86,31 +86,99 @@
 
       <div class="analyse-loading" id="plLoading" hidden aria-live="polite" aria-busy="true">
 
-        <div class="analyse-loader" id="plLoaderChrome">
+        <div class="analyse-loader analyse-loader--stage" id="plLoaderChrome">
 
-          <div class="analyse-loader__head">
+          <header class="analyse-loader__intro">
 
-            <div class="analyse-loader__pulse" aria-hidden="true">
+            <p class="analyse-loader__eyebrow">Analyse en cours</p>
 
-              <span class="analyse-loader__ring analyse-loader__ring--outer"></span>
+            <h2 class="analyse-loader__title" id="plLoadingTitle">On regarde ton site</h2>
 
-              <span class="analyse-loader__ring analyse-loader__ring--inner"></span>
+            <p class="analyse-loader__hint">Ça prend souvent moins d'une minute - on prépare la lecture juste après.</p>
 
-              <i class="fas fa-magnifying-glass-chart"></i>
+          </header>
+
+
+
+          <div class="analyse-loader__body">
+
+            <div class="analyse-loader__scores" id="plLoadingScores" aria-hidden="true">
+
+              <div class="analyse-loader__score analyse-loader__score--design" data-score-key="design">
+
+                <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
+
+                <div class="analyse-loader__score-copy">
+
+                  <div class="analyse-loader__score-label">Design</div>
+
+                  <div class="analyse-loader__score-value">En cours…</div>
+
+                </div>
+
+              </div>
+
+              <div class="analyse-loader__score analyse-loader__score--seo" data-score-key="seo">
+
+                <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
+
+                <div class="analyse-loader__score-copy">
+
+                  <div class="analyse-loader__score-label">Visibilité</div>
+
+                  <div class="analyse-loader__score-value">En cours…</div>
+
+                </div>
+
+              </div>
+
+              <div class="analyse-loader__score analyse-loader__score--securite" data-score-key="securite">
+
+                <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
+
+                <div class="analyse-loader__score-copy">
+
+                  <div class="analyse-loader__score-label">Sécurité</div>
+
+                  <div class="analyse-loader__score-value">En cours…</div>
+
+                </div>
+
+              </div>
+
+              <div class="analyse-loader__score analyse-loader__score--risque" data-score-key="risque">
+
+                <div class="analyse-loader__score-ring analyse-loader__score-ring--pending" aria-hidden="true"></div>
+
+                <div class="analyse-loader__score-copy">
+
+                  <div class="analyse-loader__score-label">Risque</div>
+
+                  <div class="analyse-loader__score-value">En cours…</div>
+
+                </div>
+
+              </div>
 
             </div>
 
-            <div class="analyse-loader__intro">
 
-              <p class="analyse-loader__title">On regarde ton site</p>
 
-              <p class="analyse-loader__url" id="plLoadingUrl"></p>
+            <ul class="analyse-loader__args" aria-label="Ce qu'on regarde">
 
-              <p class="analyse-loader__hint">Ça prend souvent moins d'une minute - on prépare la lecture juste après.</p>
+              <li><i class="fas fa-mobile-screen-button" aria-hidden="true"></i> Numéro et horaires clairs sur téléphone</li>
 
-            </div>
+              <li><i class="fas fa-magnifying-glass" aria-hidden="true"></i> Est-ce qu'on te trouve facilement sur Google</li>
+
+              <li><i class="fas fa-shield-halved" aria-hidden="true"></i> Site bien protégé, sans jargon</li>
+
+              <li><i class="fas fa-handshake" aria-hidden="true"></i> Ce qui freine (ou non) la confiance</li>
+
+            </ul>
 
           </div>
+
+
 
           <div class="analyse-loader__progress">
 
@@ -120,7 +188,7 @@
 
             </div>
 
-            <p class="analyse-loader__step" id="plLoadingStep">Connexion au site…</p>
+            <p class="analyse-loader__step" id="plLoadingStep">On se connecte au site…</p>
 
           </div>
 
@@ -167,7 +235,7 @@
 
       <section class="audit-offers audit-offers--split analyse-convert analyse-convert--phase analyse-reveal" data-reveal-order="4" id="plConvertReport" hidden aria-labelledby="analyse-convert-report-title">
 
-        <h2 id="analyse-convert-report-title" class="audit-section-title">Recevoir le rapport complet</h2>
+        <h2 id="analyse-convert-report-title" class="audit-section-title">Recevoir ton rapport</h2>
 
         {% include "includes/analyse-convert-cards-grid.html" %}
 

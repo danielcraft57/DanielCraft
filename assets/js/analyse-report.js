@@ -66,7 +66,8 @@
     submit: document.getElementById('plSubmitBtn'),
     bootFeedback: document.getElementById('plBootFeedback'),
     loading: document.getElementById('plLoading'),
-    loadingUrl: document.getElementById('plLoadingUrl'),
+    loadingTitle: document.getElementById('plLoadingTitle'),
+    loadingScores: document.getElementById('plLoadingScores'),
     loadingStep: document.getElementById('plLoadingStep'),
     convertReport: document.getElementById('plConvertReport'),
     leadModal: document.getElementById('plLeadModal'),
@@ -102,6 +103,7 @@
   let leadSubmitting = false;
   let loadingStepTimer = null;
   let loadingStepIndex = 0;
+  let loaderRevealToken = 0;
   let narrativeToken = 0;
   let narrativeChapters = [];
   let narrativePlaying = false;
@@ -121,14 +123,16 @@
     'professionnel', 'cliquable', 'jaune', 'noir', 'performance', 'risque',
     'garde', 'gardiennage', 'surveillance', 'metz', 'nancy', 'lorraine'
   ]);
+  /** Mode de la modale lead : free (rapport simple) ou gemini (complet). */
+  let modalMode = 'free';
   let modalPreviousFocus = null;
 
   const LOADING_STEPS = [
-    'Connexion au site…',
-    'Lecture du design…',
-    'Analyse SEO et contenu…',
-    'Vérification sécurité…',
-    'Préparation du rapport…'
+    'On se connecte au site…',
+    'On regarde le design…',
+    'On vérifie la visibilité sur Google…',
+    'On contrôle la sécurité…',
+    'On prépare la lecture…'
   ];
 
   function setFeedback(el, message, isError) {
@@ -325,14 +329,27 @@
     });
   }
 
-  function openLeadModal() {
+  /**
+   * Ouvre la modale email pour demander un rapport.
+   * @param {'free'|'gemini'} [mode='free'] - Rapport simple ou Gemini complet.
+   */
+  function openLeadModal(mode) {
     if (!els.leadModal) return;
-    if (els.leadModalTitle) els.leadModalTitle.textContent = 'Recevoir le rapport Gemini';
+    modalMode = mode === 'gemini' ? 'gemini' : 'free';
+    if (els.leadModalTitle) {
+      els.leadModalTitle.textContent =
+        modalMode === 'gemini' ? 'Recevoir le rapport Gemini' : 'Recevoir le rapport simple';
+    }
     if (els.leadModalLead) {
       els.leadModalLead.textContent =
-        'Renseigne ton email - le rapport complet part gratuitement pour l\'instant.';
+        modalMode === 'gemini'
+          ? 'Renseigne ton email - le rapport complet part gratuitement pour l\'instant.'
+          : 'Renseigne ton email - PDF léger par email, sans carte bancaire.';
     }
-    if (els.leadSubmitLabel) els.leadSubmitLabel.textContent = 'Recevoir le rapport';
+    if (els.leadSubmitLabel) {
+      els.leadSubmitLabel.textContent =
+        modalMode === 'gemini' ? 'Recevoir le rapport complet' : 'Recevoir le rapport simple';
+    }
     setLeadModalFeedback('', false);
     if (els.leadForm) els.leadForm.hidden = false;
     modalPreviousFocus = document.activeElement;
@@ -365,7 +382,7 @@
     if (!els.winModal) return;
     if (els.winModalText) {
       els.winModalText.textContent =
-        message || 'Rapport Gemini en route - tu le reçois par email.';
+        message || 'Rapport en route - tu le reçois par email.';
     }
     els.winModal.hidden = false;
     els.winModal.setAttribute('aria-hidden', 'false');
@@ -394,13 +411,46 @@
       els.loading.setAttribute('aria-busy', show ? 'true' : 'false');
     }
     if (show) {
-      if (els.loadingUrl) {
-        els.loadingUrl.textContent = websiteUrl ? displayHost(websiteUrl) : '';
+      const host = websiteUrl ? displayHost(websiteUrl) : '';
+      if (els.loadingTitle) {
+        els.loadingTitle.textContent = host ? `On regarde ${host}` : 'On regarde ton site';
       }
       setConvertReportVisible(false);
       startLoadingSteps();
+      revealLoaderGauges();
     } else {
       stopLoadingSteps();
+      loaderRevealToken += 1;
+      resetLoaderGauges();
+    }
+  }
+
+  /** Remet les jauges du loader à l'état « en cours ». */
+  function resetLoaderGauges() {
+    if (!els.loadingScores) return;
+    els.loadingScores.querySelectorAll('.analyse-loader__score').forEach((card) => {
+      card.classList.remove('is-in');
+      const value = card.querySelector('.analyse-loader__score-value');
+      if (value) value.textContent = 'En cours…';
+    });
+  }
+
+  /**
+   * Fait apparaître les 4 jauges du loader une par une.
+   * @returns {Promise<void>}
+   */
+  async function revealLoaderGauges() {
+    const token = ++loaderRevealToken;
+    resetLoaderGauges();
+    const cards = els.loadingScores
+      ? Array.from(els.loadingScores.querySelectorAll('.analyse-loader__score'))
+      : [];
+    if (!cards.length) return;
+    const step = prefersReducedMotion() ? 0 : 160;
+    for (let i = 0; i < cards.length; i += 1) {
+      if (token !== loaderRevealToken) return;
+      if (step > 0) await sleep(step);
+      cards[i].classList.add('is-in');
     }
   }
 
@@ -1485,7 +1535,10 @@
     };
   }
 
-  function startGeminiAudit() {
+  /**
+   * Envoie la demande de rapport (simple ou Gemini) selon modalMode.
+   */
+  function submitLeadAudit() {
     if (leadSubmitting) return;
 
     const vals = readLeadValues();
@@ -1499,20 +1552,25 @@
       return;
     }
 
+    const isGemini = modalMode === 'gemini';
     leadSubmitting = true;
     setBtnLoading(els.leadSubmit, true);
     setLeadModalFeedback('', false);
 
+    const payload = {
+      website: vals.url,
+      email: vals.email,
+      name: vals.name
+    };
+    if (isGemini) {
+      payload.complete = true;
+      payload.audit = 'gemini';
+    }
+
     fetch(FREE_AUDIT_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        website: vals.url,
-        email: vals.email,
-        name: vals.name,
-        complete: true,
-        audit: 'gemini'
-      })
+      body: JSON.stringify(payload)
     })
       .then(async (res) => {
         const data = await res.json().catch(() => ({}));
@@ -1522,10 +1580,10 @@
         if (ref.res.ok && ref.data && ref.data.success) {
           setBtnLoading(els.leadSubmit, false);
           closeLeadModal();
-          openWinModal(
-            (ref.data && ref.data.message) ||
-              `Le rapport Gemini part sur ${vals.email}.`
-          );
+          const fallback = isGemini
+            ? `Le rapport Gemini part sur ${vals.email}.`
+            : `Le rapport simple part sur ${vals.email}.`;
+          openWinModal((ref.data && ref.data.message) || fallback);
           return;
         }
         let errMsg = (ref.data && ref.data.error) || 'Envoi impossible. Réessaie ou contacte-nous.';
@@ -1561,16 +1619,22 @@
   if (els.leadForm) {
     els.leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      startGeminiAudit();
+      submitLeadAudit();
     });
   }
 
   if (pageRoot) {
     pageRoot.addEventListener('click', (e) => {
+      const freeBtn = e.target.closest('[data-analyse-audit-free]');
+      if (freeBtn) {
+        e.preventDefault();
+        openLeadModal('free');
+        return;
+      }
       const geminiBtn = e.target.closest('[data-analyse-audit-gemini]');
       if (geminiBtn) {
         e.preventDefault();
-        openLeadModal();
+        openLeadModal('gemini');
       }
     });
   }
