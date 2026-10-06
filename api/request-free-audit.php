@@ -133,7 +133,7 @@ if (str_contains($contentType, 'application/json')) {
         $honeypot = isset($decoded['company']) ? (string) $decoded['company'] : '';
         $completeMode = !empty($decoded['complete'])
             || (isset($decoded['mode']) && strtolower(trim((string) $decoded['mode'])) === 'complete')
-            || (isset($decoded['audit']) && strtolower(trim((string) $decoded['audit'])) === 'gemini');
+            || (isset($decoded['audit']) && in_array(strtolower(trim((string) $decoded['audit'])), ['complete', 'gemini'], true));
     }
 } else {
     $website = isset($_POST['website']) ? (string) $_POST['website'] : '';
@@ -144,7 +144,7 @@ if (str_contains($contentType, 'application/json')) {
     $honeypot = isset($_POST['company']) ? (string) $_POST['company'] : '';
     $completeMode = !empty($_POST['complete'])
         || (isset($_POST['mode']) && strtolower(trim((string) $_POST['mode'])) === 'complete')
-        || (isset($_POST['audit']) && strtolower(trim((string) $_POST['audit'])) === 'gemini');
+        || (isset($_POST['audit']) && in_array(strtolower(trim((string) $_POST['audit'])), ['complete', 'gemini'], true));
 }
 
 $website = pl_normalize_website(trim(strip_tags($website)));
@@ -203,8 +203,8 @@ $adminTo = getenv('CONTACT_TO') ?: getenv('MAIL_DEFAULT_RECIPIENT') ?: 'contact@
 $safeSite = audit_esc($website);
 $safeEmail = audit_esc($email);
 $siteBase = rtrim(getenv('SITE_BASE') ?: 'https://danielcraft.fr', '/');
-$labelCourt = $completeMode ? 'Rapport Gemini' : 'Audit gratuit';
-$labelAdmin = $completeMode ? 'Rapport Gemini (complet, gratuit temporaire)' : 'Audit gratuit';
+$labelCourt = $completeMode ? 'Rapport complet' : 'Audit gratuit';
+$labelAdmin = $completeMode ? 'Rapport complet (gratuit temporaire)' : 'Audit gratuit';
 
 if (!$dryRun) {
     $adminSubject = $labelAdmin . ' demandé - ' . preg_replace('#^https?://#i', '', $website);
@@ -225,14 +225,14 @@ if (!$dryRun) {
     $userSubject = 'Votre ' . strtolower($labelCourt) . ' est en cours - DanielCraft';
     $userText = "Bonjour,\n\nNous avons bien reçu votre demande pour :\n{$website}\n\n"
         . ($completeMode
-            ? "Le rapport Gemini complet part vers votre boîte mail.\n\n"
+            ? "Le rapport complet part vers votre boîte mail.\n\n"
             : "Rapport en route - vous recevrez 3 priorités concrètes pour votre site sous 48 h ouvrées.\n\n")
         . $siteBase . '/analyse?website=' . rawurlencode($website) . "&full=1\n\n"
         . "DanielCraft\n";
     $userHtml = '<p>Bonjour,</p><p>Nous avons bien reçu votre demande pour :</p>'
         . '<p><a href="' . $safeSite . '"><strong>' . $safeSite . '</strong></a></p>'
         . ($completeMode
-            ? '<p><strong>Rapport Gemini en route</strong> - le PDF complet arrive à <strong>'
+            ? '<p><strong>Rapport complet en route</strong> - le PDF arrive à <strong>'
                 . $safeEmail . '</strong>.</p>'
             : '<p><strong>Rapport en route</strong> - vous recevrez <strong>3 priorités</strong> pour votre site à <strong>'
                 . $safeEmail . '</strong> sous <strong>48 h ouvrées</strong>.</p>')
@@ -248,7 +248,7 @@ $response = [
     'message' => $plResult['skipped_analysis']
         ? 'Merci ! Ton rapport PDF est en cours d\'envoi par email.'
         : ($completeMode
-            ? 'Rapport Gemini en route - tu le reçois par email.'
+            ? 'Rapport complet en route - tu le reçois par email.'
             : 'Rapport en route - 3 priorités pour ton site sous 48 h ouvrées.'),
 ];
 if ($plResult['task_id'] !== '') {

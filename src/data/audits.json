@@ -2,12 +2,12 @@
   "currency": "EUR",
   "paid_audit": {
     "slug": "audit-complet-ia",
-    "title": "Rapport Gemini",
+    "title": "Rapport complet",
     "price_eur": 0,
     "price_cents": 0,
     "tax_rate": 20,
     "free_temporarily": true,
-    "checkout_product_name": "Rapport Gemini - analyse complète de votre site",
+    "checkout_product_name": "Rapport complet - analyse de votre site",
     "checkout_description": "Rapport détaillé par email, relu par DanielCraft. Gratuit pour l'instant (test).",
     "stripe_payment_link_url": ""
   }
